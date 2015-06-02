@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber, NSString;
-
 @interface MCCardDAVAccountPayload : MCPayload {
     NSString *_accountDescription;
     NSString *_accountPersistentUUID;
@@ -17,16 +15,16 @@
     NSString *_username;
 }
 
-@property(retain,readonly) NSString * accountDescription;
-@property(copy) NSString * accountPersistentUUID;
-@property(retain,readonly) NSString * hostname;
-@property(copy) NSString * password;
-@property(readonly) int port;
-@property(readonly) NSNumber * portNum;
-@property(retain,readonly) NSString * principalURL;
-@property(readonly) BOOL useSSL;
-@property(readonly) NSNumber * useSSLNum;
-@property(copy) NSString * username;
+@property (nonatomic, readonly, retain) NSString *accountDescription;
+@property (nonatomic, copy) NSString *accountPersistentUUID;
+@property (nonatomic, readonly, retain) NSString *hostname;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, readonly) int port;
+@property (nonatomic, readonly) NSNumber *portNum;
+@property (nonatomic, readonly, retain) NSString *principalURL;
+@property (nonatomic, readonly) BOOL useSSL;
+@property (nonatomic, readonly) NSNumber *useSSLNum;
+@property (nonatomic, copy) NSString *username;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

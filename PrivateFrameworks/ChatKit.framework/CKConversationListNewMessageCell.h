@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListNewMessageCell : UITableViewCell {
-}
+@interface CKConversationListNewMessageCell : UITableViewCell
 
 + (id)identifier;
 

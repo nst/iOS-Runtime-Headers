@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBBulletin, NSArray, NSMutableSet;
-
 @interface BBObserverGatewayEnumerator : NSObject {
     BBBulletin *_bulletin;
     BOOL _cancelled;
@@ -13,18 +11,18 @@
     NSMutableSet *_gatewaysPlayedLightsAndSirens;
 }
 
-@property(retain) BBBulletin * bulletin;
-@property unsigned int feeds;
-@property double gatewayTimeout;
-@property(copy) NSArray * gateways;
-@property(copy) NSMutableSet * gatewaysPlayedLightsAndSirens;
+@property (nonatomic, retain) BBBulletin *bulletin;
+@property (nonatomic) unsigned int feeds;
+@property (nonatomic) double gatewayTimeout;
+@property (nonatomic, copy) NSArray *gateways;
+@property (nonatomic, copy) NSMutableSet *gatewaysPlayedLightsAndSirens;
 
-- (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(BOOL)arg2 completion:(id)arg3;
+- (void)attemptNextGatewayInEnumerator:(id)arg1 playLightsAndSirens:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)bulletin;
 - (void)cancel;
 - (void)dealloc;
 - (id)defaultGateway;
-- (void)enumerateWithCompletion:(id)arg1;
+- (void)enumerateWithCompletion:(id /* block */)arg1;
 - (unsigned int)feeds;
 - (double)gatewayTimeout;
 - (id)gateways;

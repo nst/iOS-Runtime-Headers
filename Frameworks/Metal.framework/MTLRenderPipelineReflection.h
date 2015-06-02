@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSArray;
-
 @interface MTLRenderPipelineReflection : NSObject {
     struct { 
         unsigned int fragmentUsesDiscard : 1; 
@@ -19,8 +17,8 @@
     NSArray *_vertexBuiltInArguments;
 }
 
-@property(readonly) NSArray * fragmentArguments;
-@property(readonly) NSArray * vertexArguments;
+@property (readonly) NSArray *fragmentArguments;
+@property (readonly) NSArray *vertexArguments;
 
 - (id).cxx_construct;
 - (void)dealloc;

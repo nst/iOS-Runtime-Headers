@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_EditScriptData>, NSArray, NSMutableArray, _IntArray2D;
-
 @interface _EditScript : NSObject {
     int _currentOperation;
     _IntArray2D *_distanceMatrix;
@@ -14,8 +12,8 @@
     NSMutableArray *_script;
 }
 
-@property(copy) NSArray * operationPrecedenceArray;
-@property(retain) NSMutableArray * script;
+@property (nonatomic, copy) NSArray *operationPrecedenceArray;
+@property (nonatomic, retain) NSMutableArray *script;
 
 - (void)addToCurrentScriptAtomEditOperation:(int)arg1 editIndex:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 - (void)computeDistanceMatrix;

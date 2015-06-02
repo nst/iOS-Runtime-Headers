@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebActionDisablingCALayerDelegate : NSObject {
-}
+@interface WebActionDisablingCALayerDelegate : NSObject
 
 + (id)shared;
 

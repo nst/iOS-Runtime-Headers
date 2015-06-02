@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray, NSString;
-
 @interface BitmapHandView : UIView <HandView> {
     NSArray *_partViews;
     NSArray *_partViewsMaintainingOrientation;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)partInfoWithName:(id)arg1;
 + (id)partInfoWithName:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 maintainsOrientation:(BOOL)arg3;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPQuicklookCompatibilityDelegate : TPBaseCompatibilityDelegate {
-}
+@interface TPQuicklookCompatibilityDelegate : TPBaseCompatibilityDelegate
 
 @end

@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentSetupPrivacyFooterViewDelegate>, NSString, UITextView;
-
 @interface PKPaymentSetupPrivacyFooterView : UIView <UITextViewDelegate> {
     int _context;
     <PKPaymentSetupPrivacyFooterViewDelegate> *_delegate;
     UITextView *_message;
 }
 
-@property int context;
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPaymentSetupPrivacyFooterViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UITextView * message;
-@property(readonly) Class superclass;
+@property (nonatomic) int context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentSetupPrivacyFooterViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UITextView *message;
+@property (readonly) Class superclass;
 
 - (id)_linkColor;
 - (id)_linkTextAttributes;

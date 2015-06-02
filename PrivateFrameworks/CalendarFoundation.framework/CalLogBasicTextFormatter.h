@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSDateFormatter, NSString;
-
 @interface CalLogBasicTextFormatter : NSObject <CalLogFormatter> {
     NSDateFormatter *_dateFormatter;
     BOOL _includeEnvelopePartNames;
@@ -20,23 +18,23 @@
     BOOL _useTinyEnvelopePartNames;
 }
 
-@property(retain) NSDateFormatter * dateFormatter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL includeEnvelopePartNames;
-@property BOOL includeFunction;
-@property BOOL includeLevel;
-@property BOOL includeLogName;
-@property BOOL includeMachPort;
-@property BOOL includeMessage;
-@property BOOL includeProcessID;
-@property BOOL includeProcessName;
-@property BOOL includeTimestamp;
-@property(readonly) Class superclass;
-@property BOOL useCompactForm;
-@property BOOL usePrettyTimestamp;
-@property BOOL useTinyEnvelopePartNames;
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL includeEnvelopePartNames;
+@property (nonatomic) BOOL includeFunction;
+@property (nonatomic) BOOL includeLevel;
+@property (nonatomic) BOOL includeLogName;
+@property (nonatomic) BOOL includeMachPort;
+@property (nonatomic) BOOL includeMessage;
+@property (nonatomic) BOOL includeProcessID;
+@property (nonatomic) BOOL includeProcessName;
+@property (nonatomic) BOOL includeTimestamp;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useCompactForm;
+@property (nonatomic) BOOL usePrettyTimestamp;
+@property (nonatomic) BOOL useTinyEnvelopePartNames;
 
 - (void).cxx_destruct;
 - (id)dateFormatter;

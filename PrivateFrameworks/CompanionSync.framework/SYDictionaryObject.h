@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSDictionary, NSString;
-
 @interface SYDictionaryObject : NSObject <NSSecureCoding, SYObject> {
     NSDictionary *_properties;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * properties;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *properties;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

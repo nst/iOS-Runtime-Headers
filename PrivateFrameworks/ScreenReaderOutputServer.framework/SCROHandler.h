@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSLock;
-
 @interface SCROHandler : NSObject <SCROHandlerProtocol> {
     id _callbackDelegate;
     NSLock *_lock;

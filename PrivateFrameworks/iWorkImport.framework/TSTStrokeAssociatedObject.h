@@ -6,7 +6,7 @@
     BOOL dontClearBackground;
 }
 
-@property BOOL dontClearBackground;
+@property (nonatomic) BOOL dontClearBackground;
 
 - (BOOL)dontClearBackground;
 - (void)setDontClearBackground:(BOOL)arg1;

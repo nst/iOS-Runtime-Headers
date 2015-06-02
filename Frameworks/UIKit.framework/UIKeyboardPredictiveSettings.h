@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKeyboardPredictiveSettings : _UISettings {
     BOOL _alwaysShowTypedText;
     NSString *_currentInputMode;
@@ -14,9 +12,9 @@
     BOOL _nextPage;
 }
 
-@property BOOL alwaysShowTypedText;
-@property int messageCount;
-@property int minLetters;
+@property (nonatomic) BOOL alwaysShowTypedText;
+@property (nonatomic) int messageCount;
+@property (nonatomic) int minLetters;
 
 + (void)hideViaNotification;
 + (void)loadSettings;

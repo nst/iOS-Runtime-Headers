@@ -2,34 +2,11 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NEAgentServer, NEPluginPreferences, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, NSUUID;
-
 @interface NEAgentFilterPlugin : NSObject <NEAgentServerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _browserDataCompleteHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _browserDataHandler;
-
+    id /* block */ _browserDataCompleteHandler;
+    id /* block */ _browserDataHandler;
     struct __CFDictionary { } *_browserFlows;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _browserNewFlowHandler;
-
+    id /* block */ _browserNewFlowHandler;
     BOOL _builtInPlugin;
     void *_clientInfo;
     NSObject<OS_xpc_object> *_clientListener;
@@ -56,16 +33,16 @@
     struct NESocketContentFilter_s { } *_socketContentFilter;
 }
 
-@property(readonly) BOOL builtInPlugin;
-@property(retain) NSObject<OS_xpc_object> * clientListener;
-@property(retain) NSUUID * configID;
+@property (readonly) BOOL builtInPlugin;
+@property (retain) NSObject<OS_xpc_object> *clientListener;
+@property (retain) NSUUID *configID;
 @property int outstandingSetDataOps;
 @property int outstandingSetGlobalDataOps;
 @property BOOL pluginInitialized;
-@property(retain) NEPluginPreferences * pluginPrefs;
-@property(readonly) NSString * pluginType;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) NEAgentServer * server;
+@property (retain) NEPluginPreferences *pluginPrefs;
+@property (readonly) NSString *pluginType;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) NEAgentServer *server;
 
 - (void).cxx_destruct;
 - (void)acceptNewClientConnection:(id)arg1;
@@ -80,7 +57,7 @@
 - (void)handleAddDataMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleClientMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleDataCompleteMessage:(id)arg1 forConnection:(id)arg2;
-- (void)handleDisposeWithCompletionHandler:(id)arg1;
+- (void)handleDisposeWithCompletionHandler:(id /* block */)arg1;
 - (void)handleEnvironmentEvent:(id)arg1;
 - (BOOL)handleInit;
 - (void)handleInitMessage:(id)arg1;
@@ -98,10 +75,10 @@
 - (void)sendBrowserContentFilterServerRequest;
 - (void)sendEnvironmentEventComplete:(long)arg1;
 - (BOOL)sendSetPersistentData:(struct __CFDictionary { }*)arg1 ofType:(long)arg2;
-- (BOOL)sendSocketContentFilterRequestWithCompletionHandler:(id)arg1;
+- (BOOL)sendSocketContentFilterRequestWithCompletionHandler:(id /* block */)arg1;
 - (void)sendStatus:(long)arg1 withError:(long)arg2;
 - (id)server;
-- (void)setBrowserNewFlowHandler:(id)arg1 dataHandler:(id)arg2 dataCompleteHandler:(id)arg3 clientQueue:(id)arg4 andClientInfo:(void*)arg5;
+- (void)setBrowserNewFlowHandler:(id /* block */)arg1 dataHandler:(id /* block */)arg2 dataCompleteHandler:(id /* block */)arg3 clientQueue:(id)arg4 andClientInfo:(void*)arg5;
 - (void)setClientListener:(id)arg1;
 - (void)setConfigID:(id)arg1;
 - (void)setOutstandingSetDataOps:(int)arg1;

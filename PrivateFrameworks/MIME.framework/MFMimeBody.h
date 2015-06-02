@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFMimePart;
-
 @interface MFMimeBody : MFMessageBody {
-    unsigned int _numAlternatives : 16;
-    unsigned int _preferredAlternative : 16;
+    unsigned int _numAlternatives;
+    unsigned int _preferredAlternative;
     MFMimePart *_topLevelPart;
 }
 
@@ -17,7 +15,7 @@
 - (id)attachments;
 - (id)contentToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 asHTML:(BOOL)arg3 isComplete:(BOOL*)arg4;
 - (void)dealloc;
-- (id)firstPartPassingTest:(id)arg1;
+- (id)firstPartPassingTest:(id /* block */)arg1;
 - (id)init;
 - (BOOL)isHTML;
 - (BOOL)isRich;

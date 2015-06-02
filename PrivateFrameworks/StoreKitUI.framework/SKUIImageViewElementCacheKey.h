@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL;
-
 @interface SKUIImageViewElementCacheKey : NSObject {
     int _imageTreatment;
     struct CGSize { 

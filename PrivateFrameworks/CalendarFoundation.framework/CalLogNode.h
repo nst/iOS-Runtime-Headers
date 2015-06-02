@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class <CalLogWriter>, CalLogFilter, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
-
 @interface CalLogNode : NSObject {
     NSMutableArray *_accumulator;
     unsigned int _accumulatorBufferSize;
@@ -14,11 +12,11 @@
     <CalLogWriter> *_writer;
 }
 
-@property(retain) NSMutableArray * accumulator;
-@property unsigned int accumulatorBufferSize;
-@property(retain) CalLogFilter * filter;
-@property(retain) NSMutableArray * subnodes;
-@property(retain) <CalLogWriter> * writer;
+@property (nonatomic, retain) NSMutableArray *accumulator;
+@property (nonatomic) unsigned int accumulatorBufferSize;
+@property (nonatomic, retain) CalLogFilter *filter;
+@property (nonatomic, retain) NSMutableArray *subnodes;
+@property (nonatomic, retain) <CalLogWriter> *writer;
 
 - (void).cxx_destruct;
 - (id)accumulator;

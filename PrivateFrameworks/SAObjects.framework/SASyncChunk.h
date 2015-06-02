@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASyncChunk : SABaseCommand <SAServerBoundCommand>
 
-@interface SASyncChunk : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * key;
-@property(copy) NSString * postGen;
-@property(copy) NSString * preGen;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
-@property(copy) NSArray * toAdd;
-@property(copy) NSArray * toRemove;
-@property(copy) NSString * validity;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, copy) NSString *postGen;
+@property (nonatomic, copy) NSString *preGen;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *toAdd;
+@property (nonatomic, copy) NSArray *toRemove;
+@property (nonatomic, copy) NSString *validity;
 
 + (id)chunk;
 + (id)chunkWithDictionary:(id)arg1 context:(id)arg2;

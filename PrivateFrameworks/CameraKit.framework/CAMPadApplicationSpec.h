@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMPadApplicationSpec : CAMApplicationSpec {
-}
+@interface CAMPadApplicationSpec : CAMApplicationSpec
 
 - (int)rotationStyle;
 - (BOOL)shouldCreateAvalancheIndicator;

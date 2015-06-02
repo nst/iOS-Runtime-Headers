@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextTapRecognizer : UITapGestureRecognizer {
-}
+@interface UITextTapRecognizer : UITapGestureRecognizer
 
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 

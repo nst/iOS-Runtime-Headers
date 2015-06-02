@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface TSUQuicklookAssetColorMap : NSObject {
     NSString *mAppAssetPath;
     NSMutableDictionary *mAssetMap;
 }
 
-@property(retain) NSString * appAssetPath;
-@property(retain) NSMutableDictionary * assetMap;
+@property (nonatomic, retain) NSString *appAssetPath;
+@property (nonatomic, retain) NSMutableDictionary *assetMap;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)colorForResource:(id)arg1;

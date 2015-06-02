@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSArray, NSString;
-
 @interface PRSRenderFeedback : PRSFeedback {
     NSString *_fbq;
     NSArray *_hidden;
@@ -11,10 +9,10 @@
     int _trigger_timestamp;
 }
 
-@property(retain) NSString * fbq;
-@property(retain) NSArray * hidden;
-@property(retain) NSArray * results;
-@property int trigger_timestamp;
+@property (nonatomic, retain) NSString *fbq;
+@property (nonatomic, retain) NSArray *hidden;
+@property (nonatomic, retain) NSArray *results;
+@property (nonatomic) int trigger_timestamp;
 
 + (BOOL)supportsSecureCoding;
 

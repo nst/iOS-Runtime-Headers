@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@class CALayer;
-
 @interface GraphViewSegment : NSObject {
-    float avghistory[33];
+    float avghistory;
     int index;
     CALayer *layer;
-    float rssihistory[33];
+    float rssihistory;
 }
 
-@property(readonly) CALayer * layer;
+@property (nonatomic, readonly) CALayer *layer;
 
 - (void).cxx_destruct;
 - (id)accessibilityValue;

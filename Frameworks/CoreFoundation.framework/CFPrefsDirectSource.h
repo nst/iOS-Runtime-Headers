@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class CFPDSource;
-
 @interface CFPrefsDirectSource : CFPrefsPlistSource {
     unsigned long long _inode;
     BOOL _managed;

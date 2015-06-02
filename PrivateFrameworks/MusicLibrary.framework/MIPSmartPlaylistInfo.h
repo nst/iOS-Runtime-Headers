@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSData;
-
 @interface MIPSmartPlaylistInfo : PBCodable <NSCopying> {
     BOOL _dynamic;
     BOOL _enabledItemsOnly;
@@ -30,28 +28,28 @@
     NSData *_smartCriteria;
 }
 
-@property BOOL dynamic;
-@property BOOL enabledItemsOnly;
-@property unsigned int evaluationOrder;
-@property BOOL filtered;
-@property BOOL genius;
-@property BOOL hasDynamic;
-@property BOOL hasEnabledItemsOnly;
-@property BOOL hasEvaluationOrder;
-@property BOOL hasFiltered;
-@property BOOL hasGenius;
-@property BOOL hasLimitKind;
-@property BOOL hasLimitOrder;
-@property BOOL hasLimitValue;
-@property BOOL hasLimited;
-@property BOOL hasReverseLimitOrder;
-@property(readonly) BOOL hasSmartCriteria;
-@property int limitKind;
-@property unsigned int limitOrder;
-@property unsigned int limitValue;
-@property BOOL limited;
-@property BOOL reverseLimitOrder;
-@property(retain) NSData * smartCriteria;
+@property (nonatomic) BOOL dynamic;
+@property (nonatomic) BOOL enabledItemsOnly;
+@property (nonatomic) unsigned int evaluationOrder;
+@property (nonatomic) BOOL filtered;
+@property (nonatomic) BOOL genius;
+@property (nonatomic) BOOL hasDynamic;
+@property (nonatomic) BOOL hasEnabledItemsOnly;
+@property (nonatomic) BOOL hasEvaluationOrder;
+@property (nonatomic) BOOL hasFiltered;
+@property (nonatomic) BOOL hasGenius;
+@property (nonatomic) BOOL hasLimitKind;
+@property (nonatomic) BOOL hasLimitOrder;
+@property (nonatomic) BOOL hasLimitValue;
+@property (nonatomic) BOOL hasLimited;
+@property (nonatomic) BOOL hasReverseLimitOrder;
+@property (nonatomic, readonly) BOOL hasSmartCriteria;
+@property (nonatomic) int limitKind;
+@property (nonatomic) unsigned int limitOrder;
+@property (nonatomic) unsigned int limitValue;
+@property (nonatomic) BOOL limited;
+@property (nonatomic) BOOL reverseLimitOrder;
+@property (nonatomic, retain) NSData *smartCriteria;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

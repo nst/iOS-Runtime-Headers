@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSAudioRouteMessage : PBCodable <NSCopying> {
     NSString *_displayName;
     struct { 
@@ -16,14 +14,14 @@
     BOOL _supportsVideo;
 }
 
-@property(retain) NSString * displayName;
-@property(readonly) BOOL hasDisplayName;
-@property BOOL hasMacAddress;
-@property BOOL hasSelected;
-@property BOOL hasSupportsVideo;
-@property long long macAddress;
-@property BOOL selected;
-@property BOOL supportsVideo;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic) BOOL hasMacAddress;
+@property (nonatomic) BOOL hasSelected;
+@property (nonatomic) BOOL hasSupportsVideo;
+@property (nonatomic) long long macAddress;
+@property (nonatomic) BOOL selected;
+@property (nonatomic) BOOL supportsVideo;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

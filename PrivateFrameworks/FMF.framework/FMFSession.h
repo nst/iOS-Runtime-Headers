@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class <FMFSessionDelegate>, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet, NSString, NSXPCConnection;
-
 @interface FMFSession : NSObject <FMFXPCInternalClientProtocol> {
     NSMutableDictionary *_cachedCanShareLocationWithHandleByHandle;
     NSSet *_cachedGetHandlesFollowingMyLocation;
@@ -17,21 +15,21 @@
     BOOL _isModelInitialized;
 }
 
-@property(retain) NSMutableDictionary * cachedCanShareLocationWithHandleByHandle;
-@property(retain) NSSet * cachedGetHandlesFollowingMyLocation;
-@property(retain) NSSet * cachedGetHandlesSharingLocationsWithMe;
-@property(retain) NSMutableDictionary * cachedLocationForHandleByHandle;
-@property(retain) NSMutableDictionary * cachedOfferExpirationForHandleByHandle;
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <FMFSessionDelegate> * delegate;
-@property(retain) NSOperationQueue * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(copy) NSSet * handles;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableSet * internalHandles;
-@property BOOL isModelInitialized;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *cachedCanShareLocationWithHandleByHandle;
+@property (nonatomic, retain) NSSet *cachedGetHandlesFollowingMyLocation;
+@property (nonatomic, retain) NSSet *cachedGetHandlesSharingLocationsWithMe;
+@property (nonatomic, retain) NSMutableDictionary *cachedLocationForHandleByHandle;
+@property (nonatomic, retain) NSMutableDictionary *cachedOfferExpirationForHandleByHandle;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FMFSessionDelegate> *delegate;
+@property (nonatomic, retain) NSOperationQueue *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSSet *handles;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableSet *internalHandles;
+@property (nonatomic) BOOL isModelInitialized;
+@property (readonly) Class superclass;
 
 + (BOOL)FMFAllowed;
 + (BOOL)FMFRestricted;
@@ -39,12 +37,12 @@
 
 - (void).cxx_destruct;
 - (void)_checkAndDisplayMeDeviceSwitchAlert;
-- (oneway void)_iCloudAccountNameWithCompletion:(id)arg1;
+- (oneway void)_iCloudAccountNameWithCompletion:(id /* block */)arg1;
 - (void)_registerForFMFDLaunchedNotification;
 - (void)_sendAutoSwitchMeDevice;
-- (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
+- (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (void)addHandles:(id)arg1;
-- (void)approveFriendshipRequest:(id)arg1 completion:(id)arg2;
+- (void)approveFriendshipRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)cachedCanShareLocationWithHandleByHandle;
 - (id)cachedGetHandlesFollowingMyLocation;
 - (id)cachedGetHandlesSharingLocationsWithMe;
@@ -52,12 +50,12 @@
 - (id)cachedLocationForHandleByHandle;
 - (id)cachedOfferExpirationForHandleByHandle;
 - (BOOL)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
-- (void)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
+- (void)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
-- (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
+- (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)connection;
 - (void)dealloc;
-- (void)declineFriendshipRequest:(id)arg1 completion:(id)arg2;
+- (void)declineFriendshipRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
 - (id)delegateQueue;
 - (oneway void)didAddFollowerHandle:(id)arg1;
@@ -73,29 +71,29 @@
 - (oneway void)didUpdateHideFromFollowersStatus:(BOOL)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdatePendingOffersForHandles:(id)arg1;
-- (void)dispatchOnDelegateQueue:(id)arg1;
-- (void)extendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
+- (void)dispatchOnDelegateQueue:(id /* block */)arg1;
+- (void)extendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;
 - (void)forceRefresh;
-- (void)getAbRecordIdForHandle:(id)arg1 completion:(id)arg2;
+- (void)getAbRecordIdForHandle:(id)arg1 completion:(id /* block */)arg2;
 - (id)getActiveLocationSharingDevice;
-- (void)getActiveLocationSharingDevice:(id)arg1;
+- (void)getActiveLocationSharingDevice:(id /* block */)arg1;
 - (id)getAllDevices;
-- (void)getAllDevices:(id)arg1;
-- (void)getAllLocations:(id)arg1;
+- (void)getAllDevices:(id /* block */)arg1;
+- (void)getAllLocations:(id /* block */)arg1;
 - (id)getHandlesFollowingMyLocation;
-- (void)getHandlesFollowingMyLocation:(id)arg1;
-- (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(id)arg2;
+- (void)getHandlesFollowingMyLocation:(id /* block */)arg1;
+- (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(id /* block */)arg2;
 - (id)getHandlesSharingLocationsWithMe;
-- (void)getHandlesSharingLocationsWithMe:(id)arg1;
-- (void)getHandlesSharingLocationsWithMeWithGroupId:(id)arg1 completion:(id)arg2;
+- (void)getHandlesSharingLocationsWithMe:(id /* block */)arg1;
+- (void)getHandlesSharingLocationsWithMeWithGroupId:(id)arg1 completion:(id /* block */)arg2;
 - (id)getHandlesWithPendingOffers;
-- (void)getHandlesWithPendingOffers:(id)arg1;
+- (void)getHandlesWithPendingOffers:(id /* block */)arg1;
 - (id)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
-- (void)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
-- (void)getPendingFriendshipRequestsWithCompletion:(id)arg1;
-- (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(id)arg3;
-- (void)getPrettyNameForHandle:(id)arg1 completion:(id)arg2;
+- (void)getOfferExpirationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
+- (void)getPendingFriendshipRequestsWithCompletion:(id /* block */)arg1;
+- (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(id /* block */)arg3;
+- (void)getPrettyNameForHandle:(id)arg1 completion:(id /* block */)arg2;
 - (id)handles;
 - (BOOL)hasModelInitialized;
 - (id)init;
@@ -108,25 +106,25 @@
 - (BOOL)is5XXError:(id)arg1;
 - (BOOL)isModelInitialized;
 - (BOOL)isMyLocationEnabled;
-- (void)isMyLocationEnabled:(id)arg1;
+- (void)isMyLocationEnabled:(id /* block */)arg1;
 - (void)locatingInProgressChanged:(id)arg1;
-- (void)locationForHandle:(id)arg1 completion:(id)arg2;
+- (void)locationForHandle:(id)arg1 completion:(id /* block */)arg2;
 - (void)mappingPacketSendFailed:(id)arg1 toHandle:(id)arg2 withError:(id)arg3;
 - (oneway void)modelDidLoad;
 - (oneway void)networkReachabilityUpdated:(BOOL)arg1;
-- (void)receivedMappingPacket:(id)arg1 completion:(id)arg2;
-- (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id)arg4;
-- (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id)arg4;
+- (void)receivedMappingPacket:(id)arg1 completion:(id /* block */)arg2;
+- (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id /* block */)arg4;
+- (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id /* block */)arg4;
 - (void)reloadDataIfNotLoaded;
-- (void)removeDevice:(id)arg1 completion:(id)arg2;
+- (void)removeDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeHandles:(id)arg1;
-- (void)sendFriendshipInviteToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
-- (void)sendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
-- (void)sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id)arg5;
+- (void)sendFriendshipInviteToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
+- (void)sendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
+- (void)sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (oneway void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (id)serverProxy;
 - (void)sessionWasCreatedRefresh;
-- (void)setActiveDevice:(id)arg1 completion:(id)arg2;
+- (void)setActiveDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCachedCanShareLocationWithHandleByHandle:(id)arg1;
 - (void)setCachedGetHandlesFollowingMyLocation:(id)arg1;
 - (void)setCachedGetHandlesSharingLocationsWithMe:(id)arg1;
@@ -137,15 +135,15 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)setExpiredInitTimestamp;
 - (void)setHandles:(id)arg1;
-- (void)setHideMyLocationEnabled:(BOOL)arg1 completion:(id)arg2;
+- (void)setHideMyLocationEnabled:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)setInternalHandles:(id)arg1;
 - (void)setIsModelInitialized:(BOOL)arg1;
 - (oneway void)setLocations:(id)arg1;
 - (BOOL)shouldHandleErrorInFWK:(id)arg1;
-- (void)startSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
-- (void)stopSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id)arg2;
-- (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
-- (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id)arg4;
+- (void)startSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id /* block */)arg2;
+- (void)stopSharingMyLocationToFamilyMemberWithDSID:(id)arg1 completion:(id /* block */)arg2;
+- (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
+- (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)verifyRestrictionsAndShowDialogIfRequired;
 
 @end

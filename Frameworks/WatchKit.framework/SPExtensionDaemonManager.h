@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>;
-
 @interface SPExtensionDaemonManager : NSObject {
     BOOL _active;
     NSMutableDictionary *_coreLocationAsserts;
@@ -12,11 +10,11 @@
     NSObject<OS_dispatch_source> *_transactionTimer;
 }
 
-@property BOOL active;
-@property(retain) NSMutableDictionary * coreLocationAsserts;
-@property int refCount;
-@property(retain) NSMutableSet * transactionObservers;
-@property(retain) NSObject<OS_dispatch_source> * transactionTimer;
+@property (nonatomic) BOOL active;
+@property (nonatomic, retain) NSMutableDictionary *coreLocationAsserts;
+@property (nonatomic) int refCount;
+@property (nonatomic, retain) NSMutableSet *transactionObservers;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *transactionTimer;
 
 + (id)sharedInstance;
 

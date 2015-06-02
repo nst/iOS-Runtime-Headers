@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOUser, NSString;
-
 @interface GEOReview : PBCodable <NSCopying> {
     struct { 
         unsigned int reviewTime : 1; 
@@ -16,16 +14,16 @@
     NSString *_uid;
 }
 
-@property BOOL hasReviewTime;
-@property(readonly) BOOL hasReviewer;
-@property BOOL hasScore;
-@property(readonly) BOOL hasSnippet;
-@property(readonly) BOOL hasUid;
-@property double reviewTime;
-@property(retain) GEOUser * reviewer;
-@property double score;
-@property(retain) NSString * snippet;
-@property(retain) NSString * uid;
+@property (nonatomic) BOOL hasReviewTime;
+@property (nonatomic, readonly) BOOL hasReviewer;
+@property (nonatomic) BOOL hasScore;
+@property (nonatomic, readonly) BOOL hasSnippet;
+@property (nonatomic, readonly) BOOL hasUid;
+@property (nonatomic) double reviewTime;
+@property (nonatomic, retain) GEOUser *reviewer;
+@property (nonatomic) double score;
+@property (nonatomic, retain) NSString *snippet;
+@property (nonatomic, retain) NSString *uid;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

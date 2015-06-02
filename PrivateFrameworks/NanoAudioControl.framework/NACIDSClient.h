@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class <NACIDSClientDelegate>, IDSService, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NACIDSClient : NSObject <IDSServiceDelegate> {
     <NACIDSClientDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_idsDispatchQueue;
@@ -11,11 +9,11 @@
     IDSService *_idsService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <NACIDSClientDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NACIDSClientDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleAudioRoutesDidChange:(id)arg1;

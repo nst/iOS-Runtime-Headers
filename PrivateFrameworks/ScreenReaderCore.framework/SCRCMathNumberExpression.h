@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCMathNumberExpression : SCRCMathSimpleExpression {
-}
+@interface SCRCMathNumberExpression : SCRCMathSimpleExpression
 
 - (BOOL)isNumber;
 - (id)mathMLString;

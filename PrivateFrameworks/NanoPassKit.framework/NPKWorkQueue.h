@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface NPKWorkQueue : NSObject {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _performingWork;
@@ -12,11 +10,11 @@
     BOOL _takeOutTransactions;
 }
 
-@property NSObject<OS_dispatch_queue> * callbackQueue;
-@property BOOL performingWork;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableArray * remainingWork;
-@property BOOL takeOutTransactions;
+@property (nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic) BOOL performingWork;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableArray *remainingWork;
+@property (nonatomic) BOOL takeOutTransactions;
 
 - (void).cxx_destruct;
 - (void)_onQueue_doWorkIfNecessary;
@@ -24,7 +22,7 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithQueue:(id)arg1 takeOutTransactions:(BOOL)arg2;
-- (void)performWork:(id)arg1;
+- (void)performWork:(id /* block */)arg1;
 - (BOOL)performingWork;
 - (id)queue;
 - (id)remainingWork;

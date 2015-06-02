@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumPickerViewControllerPhoneSpec : PUAlbumPickerViewControllerSpec {
-}
+@interface PUAlbumPickerViewControllerPhoneSpec : PUAlbumPickerViewControllerSpec
 
 - (id)albumListViewControllerSpec;
 - (unsigned int)bannerViewStyle;

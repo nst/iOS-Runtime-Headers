@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPAccessoryServerBrowserBTLE, HAPAccessoryServerBrowserIP, NSHashTable, NSMapTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface HMDAccessoryManager : NSObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate> {
     NSMutableArray *_accessoryServerBrowsers;
     NSMapTable *_addAccessoryCompletionHandlersForAccessoryServers;
@@ -21,24 +19,24 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSMutableArray * accessoryServerBrowsers;
-@property(retain) NSMapTable * addAccessoryCompletionHandlersForAccessoryServers;
-@property(retain) HAPAccessoryServerBrowserBTLE * btleAccessoryServerBrowser;
-@property(retain) NSHashTable * currentlyPairingAccessories;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSMapTable * delegates;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) HAPAccessoryServerBrowserIP * ipAccessoryServerBrowser;
-@property(retain) NSMutableSet * pairedAccessories;
-@property(retain) NSMapTable * pairingRetryTimersForAccessoryServers;
-@property(retain) NSObject<OS_dispatch_source> * reachabilityTimerForBTLE;
-@property(retain) NSHashTable * removeAccessoryInProgressForHMDAccessories;
-@property(retain) NSMapTable * retrievalCompletionTuplesForAccessories;
-@property(readonly) Class superclass;
-@property(retain) NSMutableSet * unpairedAccessories;
-@property(retain) NSHashTable * unpairedSecondaryHAPAccessories;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSMutableArray *accessoryServerBrowsers;
+@property (nonatomic, retain) NSMapTable *addAccessoryCompletionHandlersForAccessoryServers;
+@property (nonatomic, retain) HAPAccessoryServerBrowserBTLE *btleAccessoryServerBrowser;
+@property (nonatomic, retain) NSHashTable *currentlyPairingAccessories;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSMapTable *delegates;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HAPAccessoryServerBrowserIP *ipAccessoryServerBrowser;
+@property (nonatomic, retain) NSMutableSet *pairedAccessories;
+@property (nonatomic, retain) NSMapTable *pairingRetryTimersForAccessoryServers;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *reachabilityTimerForBTLE;
+@property (nonatomic, retain) NSHashTable *removeAccessoryInProgressForHMDAccessories;
+@property (nonatomic, retain) NSMapTable *retrievalCompletionTuplesForAccessories;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *unpairedAccessories;
+@property (nonatomic, retain) NSHashTable *unpairedSecondaryHAPAccessories;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (BOOL)_accessoryServerIsBlocked:(id)arg1;
@@ -54,17 +52,17 @@
 - (void)_notifyDelegatesOfPairedAccessories:(id)arg1 addedToBridgeAccessory:(id)arg2;
 - (void)_notifyDelegatesOfPairedAccessories:(id)arg1 removedFromBridgeAccessory:(id)arg2;
 - (void)_notifyDelegatesOfRemovedNewAccessory:(id)arg1;
-- (void)_pairAccessory:(id)arg1 home:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
+- (void)_pairAccessory:(id)arg1 home:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_pairedAccessoriesForServer:(id)arg1;
 - (id)_primaryAccessoryForServer:(id)arg1;
 - (void)_promptForPairingPasswordForServer:(id)arg1;
-- (void)_removeAccessoriesForPrimaryAccessory:(id)arg1 completionHandler:(id)arg2;
-- (void)_removeAccessory:(id)arg1 completionHandler:(id)arg2;
-- (void)_removeReachableAccessory:(id)arg1 completionHandler:(id)arg2;
+- (void)_removeAccessoriesForPrimaryAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_removeReachableAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeUnpairedAccessory:(id)arg1;
-- (void)_retrieveHAPAccessoryForHMDAccessory:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)_retrieveHAPAccessoryForHMDAccessory:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_sendPairingCompletionStatusForServer:(id)arg1 accessories:(id)arg2 error:(id)arg3;
-- (void)_sendRemoveCompletionStatusForHMDAccessories:(id)arg1 withCompletion:(id)arg2 error:(id)arg3;
+- (void)_sendRemoveCompletionStatusForHMDAccessories:(id)arg1 withCompletion:(id /* block */)arg2 error:(id)arg3;
 - (void)_setBTLEPowerChangeCompletionHandler;
 - (void)_startDiscoveringAccessories;
 - (void)_startDiscoveringPairedAccessories;
@@ -76,7 +74,7 @@
 - (void)accessoryServer:(id)arg1 didReceiveBadPasswordThrottleAttemptsWithDelay:(int)arg2;
 - (void)accessoryServer:(id)arg1 didStopPairingWithError:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2;
-- (void)accessoryServer:(id)arg1 isBlockedWithCompletionHandler:(id)arg2;
+- (void)accessoryServer:(id)arg1 isBlockedWithCompletionHandler:(id /* block */)arg2;
 - (void)accessoryServer:(id)arg1 promptUserForPasswordWithType:(unsigned int)arg2;
 - (void)accessoryServer:(id)arg1 requestUserPermissionForUnauthenticatedAccessory:(id)arg2;
 - (void)accessoryServerBrowser:(id)arg1 didFailToDiscoverAccessoryServerWithIdentifier:(id)arg2;
@@ -90,7 +88,7 @@
 - (id)addAccessoryCompletionHandlersForAccessoryServers;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 - (void)addPairedAccessories:(id)arg1;
-- (void)addPairingOnPrimaryAccessory:(id)arg1 forController:(id)arg2 publicKey:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)addPairingOnPrimaryAccessory:(id)arg1 forController:(id)arg2 publicKey:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id)allPairedAccessories;
 - (id)allUnpairedAccessories;
 - (void)btleAccessoryReachabilityProbeTimer:(BOOL)arg1;
@@ -99,17 +97,17 @@
 - (id)delegates;
 - (id)initWithPairedAccessories:(id)arg1;
 - (id)ipAccessoryServerBrowser;
-- (void)pairAccessory:(id)arg1 home:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
+- (void)pairAccessory:(id)arg1 home:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)pairedAccessories;
 - (id)pairingRetryTimersForAccessoryServers;
 - (id)reachabilityTimerForBTLE;
-- (void)removeAccessory:(id)arg1 completionHandler:(id)arg2;
+- (void)removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)removeAccessoryInProgressForHMDAccessories;
 - (void)removeDelegate:(id)arg1;
-- (void)removePairingOnPrimaryAccessory:(id)arg1 forController:(id)arg2 publicKey:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)removePairingOnPrimaryAccessory:(id)arg1 forController:(id)arg2 publicKey:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)resetConfiguration;
 - (id)retrievalCompletionTuplesForAccessories;
-- (void)retrieveHAPAccessoryForHMDAccessory:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)retrieveHAPAccessoryForHMDAccessory:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)setAccessoryServerBrowsers:(id)arg1;
 - (void)setAddAccessoryCompletionHandlersForAccessoryServers:(id)arg1;
 - (void)setBtleAccessoryServerBrowser:(id)arg1;

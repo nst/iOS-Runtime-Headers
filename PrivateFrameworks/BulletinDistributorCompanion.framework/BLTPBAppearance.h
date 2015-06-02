@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBImage, NSString;
-
 @interface BLTPBAppearance : PBCodable <NSCopying> {
     BOOL _destructive;
     struct { 
@@ -13,12 +11,12 @@
     NSString *_title;
 }
 
-@property BOOL destructive;
-@property BOOL hasDestructive;
-@property(readonly) BOOL hasImage;
-@property(readonly) BOOL hasTitle;
-@property(retain) BLTPBImage * image;
-@property(retain) NSString * title;
+@property (nonatomic) BOOL destructive;
+@property (nonatomic) BOOL hasDestructive;
+@property (nonatomic, readonly) BOOL hasImage;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, retain) BLTPBImage *image;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

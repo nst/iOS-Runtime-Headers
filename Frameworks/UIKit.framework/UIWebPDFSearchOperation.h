@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSObject<UIWebPDFSearchOperationDelegate>, NSString, UIPDFDocument;
-
 @interface UIWebPDFSearchOperation : NSOperation {
     BOOL _complete;
     unsigned int _currentPageResultCount;
@@ -19,15 +17,15 @@
     unsigned int startingPageIndex;
 }
 
-@property(readonly) unsigned int currentPageIndex;
-@property(readonly) unsigned int currentPageResultCount;
-@property float documentScale;
-@property(retain) UIPDFDocument * documentToSearch;
-@property unsigned int numberOfResultsToSkip;
-@property unsigned int resultLimit;
-@property NSObject<UIWebPDFSearchOperationDelegate> * searchDelegate;
-@property(retain) NSString * searchString;
-@property unsigned int startingPageIndex;
+@property (nonatomic, readonly) unsigned int currentPageIndex;
+@property (nonatomic, readonly) unsigned int currentPageResultCount;
+@property (nonatomic) float documentScale;
+@property (retain) UIPDFDocument *documentToSearch;
+@property (nonatomic) unsigned int numberOfResultsToSkip;
+@property (nonatomic) unsigned int resultLimit;
+@property NSObject<UIWebPDFSearchOperationDelegate> *searchDelegate;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic) unsigned int startingPageIndex;
 
 - (struct __CTFont { }*)_fontWithPDFFont:(struct CGPDFFont { }*)arg1 size:(float)arg2;
 - (BOOL)_hitSearchLimit;

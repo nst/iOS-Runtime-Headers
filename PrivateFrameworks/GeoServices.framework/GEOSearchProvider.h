@@ -2,24 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface GEOSearchProvider : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _error;
-
+    id /* block */ _error;
 }
 
-@property(copy) id error;
+@property (nonatomic, copy) id /* block */ error;
 
 - (void)cancel;
 - (void)dealloc;
-- (id)error;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id)arg4 refinement:(id)arg5 error:(id)arg6 isCompletions:(BOOL)arg7;
-- (void)setError:(id)arg1;
+- (id /* block */)error;
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id /* block */)arg4 refinement:(id /* block */)arg5 error:(id /* block */)arg6 isCompletions:(BOOL)arg7;
+- (void)setError:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEConfiguration, NEConfigurationManager, NEVPNConnection, NEVPNProtocol, NSArray, NSString;
-
 @interface NEVPNManager : NSObject {
     NEConfiguration *_configuration;
     NEConfigurationManager *_configurationManager;
@@ -11,15 +9,15 @@
     BOOL _hasLoaded;
 }
 
-@property(copy) NEConfiguration * configuration;
-@property(readonly) NEConfigurationManager * configurationManager;
-@property(readonly) NEVPNConnection * connection;
-@property(getter=isEnabled) BOOL enabled;
+@property (copy) NEConfiguration *configuration;
+@property (readonly) NEConfigurationManager *configurationManager;
+@property (readonly) NEVPNConnection *connection;
+@property (getter=isEnabled) BOOL enabled;
 @property BOOL hasLoaded;
-@property(copy) NSString * localizedDescription;
-@property(getter=isOnDemandEnabled) BOOL onDemandEnabled;
-@property(copy) NSArray * onDemandRules;
-@property(retain) NEVPNProtocol * protocol;
+@property (copy) NSString *localizedDescription;
+@property (getter=isOnDemandEnabled) BOOL onDemandEnabled;
+@property (copy) NSArray *onDemandRules;
+@property (retain) NEVPNProtocol *protocol;
 
 + (id)sharedManager;
 
@@ -32,12 +30,12 @@
 - (id)initVPNManager;
 - (BOOL)isEnabled;
 - (BOOL)isOnDemandEnabled;
-- (void)loadFromPreferencesWithCompletionHandler:(id)arg1;
+- (void)loadFromPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (id)localizedDescription;
 - (id)onDemandRules;
 - (id)protocol;
-- (void)removeFromPreferencesWithCompletionHandler:(id)arg1;
-- (void)saveToPreferencesWithCompletionHandler:(id)arg1;
+- (void)removeFromPreferencesWithCompletionHandler:(id /* block */)arg1;
+- (void)saveToPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHasLoaded:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDEditableBezierPathSource, TSDFill, TSDInfoGeometry, TSDMutableStroke, TSDPathSource, TSUBezierPath;
-
 @interface TSDShapeLayout : TSDStyledLayout {
     struct CGRect { 
         struct CGPoint { 
@@ -102,8 +100,8 @@
     } mTailPoint;
 }
 
-@property(retain) TSDFill * dynamicFill;
-@property(readonly) TSDFill * fill;
+@property (nonatomic, retain) TSDFill *dynamicFill;
+@property (nonatomic, readonly) TSDFill *fill;
 
 - (void)aliasPathForScale:(float)arg1 adjustedStroke:(id*)arg2 adjustedPath:(id*)arg3 startDelta:(struct CGPoint { float x1; float x2; }*)arg4 endDelta:(struct CGPoint { float x1; float x2; }*)arg5;
 - (void)aliasPathForScale:(float)arg1 originalStroke:(id)arg2 adjustedStroke:(id*)arg3 adjustedPath:(id*)arg4 startDelta:(struct CGPoint { float x1; float x2; }*)arg5 endDelta:(struct CGPoint { float x1; float x2; }*)arg6;

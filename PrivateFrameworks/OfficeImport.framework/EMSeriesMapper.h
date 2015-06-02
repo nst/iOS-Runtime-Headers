@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EMSeriesMapper : CMMapper {
-}
+@interface EMSeriesMapper : CMMapper
 
 - (unsigned int)chartType;
 - (struct CGColor { }*)fillColor;

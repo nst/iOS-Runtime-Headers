@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAClientBoundCommand>, NSArray, NSNumber;
+@interface SAPhoneVoiceMailSnippet : SAUISnippet
 
-@interface SAPhoneVoiceMailSnippet : SAUISnippet {
-}
-
-@property(copy) NSNumber * autoPlay;
-@property(copy) NSArray * calls;
-@property(copy) NSArray * playVoiceMailCommands;
-@property(retain) <SAClientBoundCommand> * postPlayCommand;
+@property (nonatomic, copy) NSNumber *autoPlay;
+@property (nonatomic, copy) NSArray *calls;
+@property (nonatomic, copy) NSArray *playVoiceMailCommands;
+@property (nonatomic, retain) <SAClientBoundCommand> *postPlayCommand;
 
 + (id)voiceMailSnippet;
 + (id)voiceMailSnippetWithDictionary:(id)arg1 context:(id)arg2;

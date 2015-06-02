@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNSocialProfile;
+@interface ABPropertyGroupSocialProfileItem : ABPropertyGroupItem
 
-@interface ABPropertyGroupSocialProfileItem : ABPropertyGroupItem {
-}
-
-@property(readonly) CNSocialProfile * profile;
+@property (nonatomic, readonly) CNSocialProfile *profile;
 
 - (id)defaultActionURL;
 - (id)displayLabel;

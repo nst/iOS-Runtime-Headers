@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UINavigationBar;
-
 @interface PUSearchButtonItemCustomView : UIView {
     UINavigationBar *_navigationBar;
     BOOL _nudgesSearchIcon;
 }
 
-@property UINavigationBar * navigationBar;
-@property BOOL nudgesSearchIcon;
+@property (nonatomic) UINavigationBar *navigationBar;
+@property (nonatomic) BOOL nudgesSearchIcon;
 
 - (void).cxx_destruct;
 - (void)didMoveToSuperview;

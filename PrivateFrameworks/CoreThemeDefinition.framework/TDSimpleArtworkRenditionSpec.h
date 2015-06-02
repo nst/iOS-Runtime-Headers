@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSOrderedSet, NSString, TDPNGAsset;
-
 @interface TDSimpleArtworkRenditionSpec : TDRenditionSpec {
     struct CGRect { 
         struct CGPoint { 
@@ -18,12 +16,12 @@
     BOOL _allowsMultiPassEncoding;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
-@property(retain) NSString * alignmentRectString;
-@property BOOL allowsMultiPassEncoding;
-@property(retain) TDPNGAsset * asset;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } primitiveAlignmentRect;
-@property(retain) NSOrderedSet * slices;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
+@property (nonatomic, retain) NSString *alignmentRectString;
+@property (nonatomic) BOOL allowsMultiPassEncoding;
+@property (nonatomic, retain) TDPNGAsset *asset;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } primitiveAlignmentRect;
+@property (nonatomic, retain) NSOrderedSet *slices;
 
 + (void)initialize;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDRowBlock;
-
 @interface EMRowMapper : CMMapper {
     unsigned int columnCount;
     double *columnGrid;

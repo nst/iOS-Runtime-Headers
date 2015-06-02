@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData;
-
 @interface SFUDataRepresentation : NSObject {
     BOOL mHasHash;
     BOOL mHasSha1Hash;
@@ -35,6 +28,6 @@
 - (struct _xmlTextReader { }*)xmlReader;
 - (struct _xmlTextReader { }*)xmlReaderForGzippedData;
 - (struct _xmlTextReader { }*)xmlReaderForGzippedDataWithInputStream:(id*)arg1;
-- (struct _xmlTextReader { }*)xmlReaderWithReadCallback:(int (*)())arg1;
+- (struct _xmlTextReader { }*)xmlReaderWithReadCallback:(int (*)arg1;
 
 @end

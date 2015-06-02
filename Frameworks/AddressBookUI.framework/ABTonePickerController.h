@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPickerControllerDelegate>, CNContactStyle, TKTonePickerViewController;
-
 @interface ABTonePickerController : UINavigationController {
     CNContactStyle *_contactStyle;
     TKTonePickerViewController *_tonePicker;
 }
 
-@property(retain) CNContactStyle * contactStyle;
-@property <ABPickerControllerDelegate> * delegate;
-@property(retain) TKTonePickerViewController * tonePicker;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic) <ABPickerControllerDelegate> *delegate;
+@property (nonatomic, retain) TKTonePickerViewController *tonePicker;
 
 - (void)cancelButton:(id)arg1;
 - (id)contactStyle;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, UIImageView;
-
 @interface PKPaymentSetupHeroView : UIView {
     NSMutableArray *_cardViews;
     int _context;

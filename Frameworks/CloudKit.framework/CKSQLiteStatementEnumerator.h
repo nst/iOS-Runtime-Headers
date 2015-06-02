@@ -2,34 +2,24 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKSQLiteStatement;
-
 @interface CKSQLiteStatementEnumerator : NSEnumerator {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     BOOL _closed;
     CKSQLiteStatement *_statement;
 }
 
-@property(copy) id block;
-@property BOOL closed;
-@property(retain) CKSQLiteStatement * statement;
+@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic) BOOL closed;
+@property (nonatomic, retain) CKSQLiteStatement *statement;
 
 - (void).cxx_destruct;
-- (id)block;
+- (id /* block */)block;
 - (void)close;
 - (BOOL)closed;
 - (void)dealloc;
-- (id)initWithStatement:(id)arg1 block:(id)arg2;
+- (id)initWithStatement:(id)arg1 block:(id /* block */)arg2;
 - (id)nextObject;
-- (void)setBlock:(id)arg1;
+- (void)setBlock:(id /* block */)arg1;
 - (void)setClosed:(BOOL)arg1;
 - (void)setStatement:(id)arg1;
 - (id)statement;

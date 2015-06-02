@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecPadding : TSSSpec {
-}
+@interface TSWPSpecPadding : TSSSpec
 
 - (id)getUnsetSpec;
 

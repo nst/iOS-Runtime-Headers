@@ -2,72 +2,38 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CoreDAVAccountInfoProvider>, <CoreDAVTaskManager>, BookmarkDAVSyncData, NSDictionary, NSMutableSet, NSString, NSURL;
-
 @interface BookmarkDAVSyncDriver : NSObject <CoreDAVContainerInfoTaskGroupDelegate, CoreDAVDeleteTaskDelegate, CoreDAVGetAccountPropertiesTaskGroupDelegate, CoreDAVLocalDBTreeInfoProvider> {
     <CoreDAVAccountInfoProvider> *_accountInfoProvider;
     void *_changeToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _closeDBBlock;
-
+    id /* block */ _closeDBBlock;
     BOOL _forceSafariOrdering;
     BOOL _forceSave;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _getAccountPropertiesHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _getDBBlock;
-
+    id /* block */ _getAccountPropertiesHandler;
+    id /* block */ _getDBBlock;
     NSURL *_homeURL;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _openDBBlock;
-
+    id /* block */ _openDBBlock;
     NSMutableSet *_outstandingTaskGroups;
     NSString *_pushKey;
     NSDictionary *_pushTransport;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _registerForPush;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveDBBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _syncHandler;
-
+    id /* block */ _registerForPush;
+    id /* block */ _saveDBBlock;
+    id /* block */ _syncHandler;
     <CoreDAVTaskManager> *_taskManager;
     BookmarkDAVSyncData *_topLevelSyncData;
 }
 
-@property(readonly) <CoreDAVAccountInfoProvider> * accountInfoProvider;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id getAccountPropertiesHandler;
-@property(readonly) unsigned int hash;
-@property(retain) NSURL * homeURL;
-@property(readonly) unsigned int outstandingActionCount;
-@property(retain) NSString * pushKey;
-@property(retain) NSDictionary * pushTransport;
-@property(readonly) Class superclass;
-@property(copy) id syncHandler;
-@property(readonly) BookmarkDAVSyncData * topLevelSyncData;
+@property (nonatomic, readonly) <CoreDAVAccountInfoProvider> *accountInfoProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ getAccountPropertiesHandler;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSURL *homeURL;
+@property (nonatomic, readonly) unsigned int outstandingActionCount;
+@property (nonatomic, retain) NSString *pushKey;
+@property (nonatomic, retain) NSDictionary *pushTransport;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ syncHandler;
+@property (nonatomic, readonly) BookmarkDAVSyncData *topLevelSyncData;
 
 - (BOOL)_addChange:(void*)arg1 toData:(id)arg2 numActionsP:(int*)arg3 runningSizeP:(int*)arg4 maxResources:(int)arg5 maxSize:(int)arg6 foldersToAddByServerId:(struct __CFDictionary { }*)arg7 parentToArrayOfChildrenFolderChanges:(struct __CFDictionary { }*)arg8 pushedParentToArrayOfChildrenFolders:(struct __CFDictionary { }*)arg9;
 - (BOOL)_applyReturnedBookmarks:(id)arg1 withPushedBookmarks:(struct __CFArray { }*)arg2;
@@ -93,18 +59,18 @@
 - (void)_setChildrenOrder:(id)arg1 forFolderURL:(id)arg2;
 - (void)_setRootCTag:(id)arg1 rootSyncToken:(id)arg2 knownOrderings:(id)arg3;
 - (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2 suggestedId:(id)arg3;
-- (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id)arg2 skipAddChanges:(BOOL)arg3;
+- (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id /* block */)arg2 skipAddChanges:(BOOL)arg3;
 - (id)accountInfoProvider;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (id)copyAllLocalURLsInFolderWithURL:(id)arg1;
 - (id)copyLocalETagsForURLs:(id)arg1;
 - (void)dealloc;
-- (id)getAccountPropertiesHandler;
+- (id /* block */)getAccountPropertiesHandler;
 - (void)getAccountPropertiesTask:(id)arg1 completedWithError:(id)arg2;
-- (void)getAccountPropertiesWithCompletionHandler:(id)arg1;
+- (void)getAccountPropertiesWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)getCTag:(id*)arg1 pTag:(id*)arg2 forFolderWithURL:(id)arg3;
 - (id)homeURL;
-- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 openDBBlock:(id)arg3 getDBBlock:(id)arg4 saveDBBlock:(id)arg5 closeDBBlock:(id)arg6 registerForPush:(id)arg7 forceSafariOrdering:(BOOL)arg8;
+- (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 openDBBlock:(id /* block */)arg3 getDBBlock:(id /* block */)arg4 saveDBBlock:(id /* block */)arg5 closeDBBlock:(id /* block */)arg6 registerForPush:(id /* block */)arg7 forceSafariOrdering:(BOOL)arg8;
 - (void)notePutToURL:(id)arg1 withDataPayload:(id)arg2 finishedWithIgnoredError:(id)arg3;
 - (unsigned int)outstandingActionCount;
 - (id)pushKey;
@@ -113,14 +79,14 @@
 - (void)recursiveContainerSyncTask:(id)arg1 completedSyncOfFolderWithURL:(id)arg2 newCTag:(id)arg3 newPTag:(id)arg4 addedOrModified:(id)arg5 removed:(id)arg6 error:(id)arg7;
 - (void)recursiveContainerSyncTask:(id)arg1 receivedAddedOrModifiedFolder:(id)arg2;
 - (void)recursiveContainerSyncTask:(id)arg1 retrievedAddedOrModifiedActions:(id)arg2 removed:(id)arg3;
-- (void)setGetAccountPropertiesHandler:(id)arg1;
+- (void)setGetAccountPropertiesHandler:(id /* block */)arg1;
 - (void)setHomeURL:(id)arg1;
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2;
 - (void)setPushKey:(id)arg1;
 - (void)setPushTransport:(id)arg1;
-- (void)setSyncHandler:(id)arg1;
-- (id)syncHandler;
-- (void)syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)setSyncHandler:(id /* block */)arg1;
+- (id /* block */)syncHandler;
+- (void)syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)topLevelSyncData;
 
 @end

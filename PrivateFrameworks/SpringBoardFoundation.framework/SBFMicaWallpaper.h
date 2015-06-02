@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSBundle, UIView, _UICAPackageView;
-
 @interface SBFMicaWallpaper : SBFProceduralWallpaper {
     NSBundle *_loadedBundle;
     _UICAPackageView *_packageView;

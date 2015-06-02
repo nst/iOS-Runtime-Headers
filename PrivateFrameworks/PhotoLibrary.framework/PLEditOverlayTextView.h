@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, UILabel, UIView;
-
 @interface PLEditOverlayTextView : UIView {
     UIView *__backgroundView;
     UILabel *__textLabel;
 }
 
-@property(readonly) UIView * _backgroundView;
-@property(readonly) UILabel * _textLabel;
-@property(copy) NSString * text;
+@property (nonatomic, readonly) UIView *_backgroundView;
+@property (nonatomic, readonly) UILabel *_textLabel;
+@property (nonatomic, copy) NSString *text;
 
 - (id)_backgroundView;
 - (void)_commonPLEditOverlayTextViewInitialization;

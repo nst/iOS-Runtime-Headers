@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEIPv4Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_address;
     int _configMethod;
@@ -12,11 +10,11 @@
     NSString *_subnetMask;
 }
 
-@property(copy) NSString * address;
+@property (copy) NSString *address;
 @property int configMethod;
 @property BOOL overridePrimary;
-@property(copy) NSString * router;
-@property(copy) NSString * subnetMask;
+@property (copy) NSString *router;
+@property (copy) NSString *subnetMask;
 
 + (BOOL)supportsSecureCoding;
 

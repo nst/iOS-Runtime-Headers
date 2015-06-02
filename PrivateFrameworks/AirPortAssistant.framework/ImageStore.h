@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface ImageStore : NSObject {
-}
+@interface ImageStore : NSObject
 
 + (struct CGImage { }*)cgImageFromImage:(id)arg1 forContentsScale:(float)arg2;
 + (id)imageForBaseStationWithProductID:(unsigned int)arg1 subProductID:(unsigned int)arg2 deviceKind:(int)arg3 small:(BOOL)arg4 cropped:(BOOL)arg5 threeDee:(BOOL)arg6;

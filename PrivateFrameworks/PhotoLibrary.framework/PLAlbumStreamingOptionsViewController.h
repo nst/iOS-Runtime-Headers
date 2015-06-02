@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAlbumStreamingOptionsViewControllerDelegate>, AAUIProfilePictureStore, ACAccountStore, NSArray, NSMutableDictionary, NSOperationQueue, NSString, PLCloudSharedAlbum, PLCloudSharedAlbumInvitationRecord, PLComposeRecipientViewController, UIBarButtonItem, UISwitch, UITableView;
-
 @interface PLAlbumStreamingOptionsViewController : UIViewController <PLComposeRecipientViewControllerDelegate, PLInvitationRecordsObserver, UITableViewDataSource, UITableViewDelegate> {
     NSString *__lastMultiContributorsSectionFooterTitle;
     NSString *__lastPublicURLSectionFooterTitle;
@@ -34,20 +32,20 @@
     UISwitch *_wantsPublicWebsiteSwitch;
 }
 
-@property(setter=_setLastMultiContributorsSectionFooterTitle:,copy) NSString * _lastMultiContributorsSectionFooterTitle;
-@property(setter=_setLastPublicURLSectionFooterTitle:,copy) NSString * _lastPublicURLSectionFooterTitle;
-@property(setter=_setSelectedSubscriberInvitationRecord:,retain) PLCloudSharedAlbumInvitationRecord * _selectedSubscriberInvitationRecord;
-@property(setter=_setShouldScrollToTopOnNextViewLayout:) BOOL _shouldScrollToTopOnNextViewLayout;
-@property(retain) PLCloudSharedAlbum * album;
-@property BOOL albumIsFamilyStream;
-@property(copy) NSString * albumName;
-@property(copy,readonly) NSString * debugDescription;
-@property <PLAlbumStreamingOptionsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isPresentedModally;
-@property BOOL streamOwner;
-@property(readonly) Class superclass;
+@property (setter=_setLastMultiContributorsSectionFooterTitle:, nonatomic, copy) NSString *_lastMultiContributorsSectionFooterTitle;
+@property (setter=_setLastPublicURLSectionFooterTitle:, nonatomic, copy) NSString *_lastPublicURLSectionFooterTitle;
+@property (setter=_setSelectedSubscriberInvitationRecord:, nonatomic, retain) PLCloudSharedAlbumInvitationRecord *_selectedSubscriberInvitationRecord;
+@property (setter=_setShouldScrollToTopOnNextViewLayout:, nonatomic) BOOL _shouldScrollToTopOnNextViewLayout;
+@property (nonatomic, retain) PLCloudSharedAlbum *album;
+@property (nonatomic) BOOL albumIsFamilyStream;
+@property (nonatomic, copy) NSString *albumName;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLAlbumStreamingOptionsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isPresentedModally;
+@property (nonatomic) BOOL streamOwner;
+@property (readonly) Class superclass;
 
 - (BOOL)_appAllowsSupressionOfAlerts;
 - (void)_cancelAction:(id)arg1;
@@ -57,7 +55,7 @@
 - (void)_deletePhotoStream;
 - (void)_displayActivitySheet;
 - (void)_displayConfirmationForRemovalOfSelectedSubscriber;
-- (void)_displayConfirmationWithMessage:(id)arg1 destructiveTitle:(id)arg2 actionHandler:(id)arg3;
+- (void)_displayConfirmationWithMessage:(id)arg1 destructiveTitle:(id)arg2 actionHandler:(id /* block */)arg3;
 - (void)_displayDeleteConfirmation:(id)arg1;
 - (void)_doneAction:(id)arg1;
 - (void)_handleCompletionWithReason:(int)arg1;

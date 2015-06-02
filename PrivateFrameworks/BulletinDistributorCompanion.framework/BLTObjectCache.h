@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTObjectCacheDelegate>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface BLTObjectCache : NSObject {
     NSMutableDictionary *_cachedObjects;
     <BLTObjectCacheDelegate> *_delegate;

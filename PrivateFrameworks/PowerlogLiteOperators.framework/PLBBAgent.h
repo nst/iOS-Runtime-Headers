@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableDictionary, NSNumber, NSString, PLBBTelephonyActivityMsg, PLBBTelephonyRegMsg, PLBasebandLogChannel, PLEntryNotificationOperatorComposition, PLNSTimerOperatorComposition, PLTelephonyConnection;
-
 @interface PLBBAgent : PLAgent <PLBasebandLogChannelDelegate> {
     BOOL _agentInited;
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
@@ -34,30 +32,30 @@
 }
 
 @property BOOL agentInited;
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(retain) PLNSTimerOperatorComposition * cacheCommitTimer;
-@property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (retain) PLNSTimerOperatorComposition *cacheCommitTimer;
+@property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
 @property BOOL changed;
-@property(retain) PLNSTimerOperatorComposition * channelReconnectTimer;
-@property(readonly) PLTelephonyConnection * connection;
-@property(retain) NSMutableDictionary * currentCallList;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) PLEntryNotificationOperatorComposition * didNotSleepNotification;
-@property(readonly) unsigned int hash;
-@property(retain) NSNumber * inDCH;
-@property(retain) NSNumber * inUTBF;
-@property(retain) NSDate * lastBBActivityTimestamp;
-@property(retain) NSDate * lastReportRequestDate;
-@property(retain) NSNumber * lastReportedSignal;
+@property (retain) PLNSTimerOperatorComposition *channelReconnectTimer;
+@property (nonatomic, readonly) PLTelephonyConnection *connection;
+@property (retain) NSMutableDictionary *currentCallList;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) PLEntryNotificationOperatorComposition *didNotSleepNotification;
+@property (readonly) unsigned int hash;
+@property (retain) NSNumber *inDCH;
+@property (retain) NSNumber *inUTBF;
+@property (retain) NSDate *lastBBActivityTimestamp;
+@property (retain) NSDate *lastReportRequestDate;
+@property (retain) NSNumber *lastReportedSignal;
 @property BOOL lteCurrentState;
-@property(retain) NSString * operatorName;
-@property(retain) NSString * simStatus;
-@property(readonly) PLEntryNotificationOperatorComposition * sleepEntryNotifications;
-@property(readonly) Class superclass;
-@property(retain) PLBBTelephonyActivityMsg * telActMsgHelper;
-@property(retain) PLBBTelephonyRegMsg * telRegMsgHelper;
-@property(readonly) PLEntryNotificationOperatorComposition * wakeEntryNotifications;
+@property (retain) NSString *operatorName;
+@property (retain) NSString *simStatus;
+@property (readonly) PLEntryNotificationOperatorComposition *sleepEntryNotifications;
+@property (readonly) Class superclass;
+@property (retain) PLBBTelephonyActivityMsg *telActMsgHelper;
+@property (retain) PLBBTelephonyRegMsg *telRegMsgHelper;
+@property (readonly) PLEntryNotificationOperatorComposition *wakeEntryNotifications;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLLargeImageLoader : NSObject <PLPreheatItemSource> {
     int _format;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int format;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int format;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)format;
 - (id)initWithFormat:(int)arg1;

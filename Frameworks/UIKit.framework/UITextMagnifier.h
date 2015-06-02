@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder<UITextInput>, UITextMagnifierTimeWeightedPoint, UIView;
-
 @interface UITextMagnifier : UIView {
     struct CGPoint { 
         float x; 
@@ -26,12 +24,12 @@
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
-@property struct CGPoint { float x1; float x2; } animationPoint;
-@property struct CGPoint { float x1; float x2; } magnificationPoint;
-@property(retain) UIView * target;
-@property(readonly) struct CGPoint { float x1; float x2; } terminalPoint;
-@property(readonly) BOOL terminalPointPlacedCarefully;
-@property(retain) UIResponder<UITextInput> * text;
+@property (nonatomic) struct CGPoint { float x1; float x2; } animationPoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } magnificationPoint;
+@property (nonatomic, retain) UIView *target;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } terminalPoint;
+@property (nonatomic, readonly) BOOL terminalPointPlacedCarefully;
+@property (nonatomic, retain) UIResponder<UITextInput> *text;
 
 + (id)getLoupeBackgroundColor:(id)arg1;
 

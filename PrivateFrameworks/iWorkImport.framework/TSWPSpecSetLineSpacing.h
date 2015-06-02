@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPLineSpacing;
-
 @interface TSWPSpecSetLineSpacing : TSWPSpecLineSpacing {
     TSWPLineSpacing *_lineSpacing;
     BOOL _unset;

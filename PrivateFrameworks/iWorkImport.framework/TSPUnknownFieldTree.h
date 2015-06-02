@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPUnknownFieldTreeNodeWithChildren;
-
 @interface TSPUnknownFieldTree : NSObject {
     TSPUnknownFieldTreeNodeWithChildren *_rootNode;
 }

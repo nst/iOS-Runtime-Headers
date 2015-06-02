@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKMedicalIDEditorPickerCell, _HKMedicalIDMultilineStringCell;
-
 @interface HKEmergencyCardBloodTypeTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
     _HKMedicalIDMultilineStringCell *_displayCell;
     HKMedicalIDEditorPickerCell *_editableCell;

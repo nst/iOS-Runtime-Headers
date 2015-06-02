@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSDate, NSDictionary, NSString, NSUUID;
-
 @interface LSBestAppSuggestion : NSObject {
     NSString *_activityType;
     NSString *_bundleIdentifier;
@@ -17,18 +15,18 @@
     NSUUID *_uniqueIdentifier;
 }
 
-@property(copy) NSString * activityType;
-@property(copy,readonly) NSString * bundleIdentifier;
-@property(readonly) double confidence;
-@property(copy,readonly) NSDate * lastUpdateTime;
-@property(copy,readonly) NSDictionary * options;
-@property(copy,readonly) NSString * originatingDeviceIdentifier;
-@property(copy,readonly) NSString * originatingDeviceName;
-@property(copy,readonly) NSString * originatingDeviceType;
-@property(readonly) unsigned int type;
-@property(copy) NSUUID * uniqueIdentifier;
-@property(copy,readonly) NSString * userActivityTypeIdentifier;
-@property(copy,readonly) NSDate * when;
+@property (copy) NSString *activityType;
+@property (readonly, copy) NSString *bundleIdentifier;
+@property (readonly) double confidence;
+@property (readonly, copy) NSDate *lastUpdateTime;
+@property (readonly, copy) NSDictionary *options;
+@property (readonly, copy) NSString *originatingDeviceIdentifier;
+@property (readonly, copy) NSString *originatingDeviceName;
+@property (readonly, copy) NSString *originatingDeviceType;
+@property (readonly) unsigned int type;
+@property (copy) NSUUID *uniqueIdentifier;
+@property (readonly, copy) NSString *userActivityTypeIdentifier;
+@property (readonly, copy) NSDate *when;
 
 + (BOOL)supportsSecureCoding;
 

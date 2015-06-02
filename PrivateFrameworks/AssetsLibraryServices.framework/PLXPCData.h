@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface PLXPCData : NSData {
     NSObject<OS_xpc_object> *_data;
 }

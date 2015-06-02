@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDPushConnectionDisconnected : PBCodable <NSCopying> {
     unsigned int _connectionType;
     unsigned int _error;
@@ -22,20 +20,20 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int connectionType;
-@property unsigned int error;
-@property int genericError;
-@property(retain) NSString * guid;
-@property BOOL hasConnectionType;
-@property BOOL hasError;
-@property BOOL hasGenericError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasLinkQuality;
-@property BOOL hasSslError;
-@property BOOL hasTimestamp;
-@property int linkQuality;
-@property unsigned int sslError;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int error;
+@property (nonatomic) int genericError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasError;
+@property (nonatomic) BOOL hasGenericError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasSslError;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned int sslError;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

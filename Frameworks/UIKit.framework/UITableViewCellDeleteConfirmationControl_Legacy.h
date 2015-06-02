@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCellDeleteConfirmationGestureRecognizer;
-
 @interface UITableViewCellDeleteConfirmationControl_Legacy : UIControl {
     UITableViewCellDeleteConfirmationGestureRecognizer *_deleteConfirmationGesture;
     BOOL _visible;
 }
 
-@property(getter=isVisible) BOOL visible;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTitle:(id)arg1;
 

@@ -2,32 +2,18 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface IMPurgableObject : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cleanupBlock;
-
+    id /* block */ _cleanupBlock;
     id _instanceObject;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _setupBlock;
-
+    id /* block */ _setupBlock;
 }
 
 - (void)_cleanupInstance;
 - (void)_receivedMemoryWarning:(id)arg1;
 - (void)_setupInstance;
 - (void)dealloc;
-- (id)initWithSetupBlock:(id)arg1 cleanupBlock:(id)arg2 queue:(id)arg3;
+- (id)initWithSetupBlock:(id /* block */)arg1 cleanupBlock:(id /* block */)arg2 queue:(id)arg3;
 - (id)instance;
 
 @end

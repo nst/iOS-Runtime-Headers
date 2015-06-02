@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISAuthenticationChallenge, NSURLCredential;
-
 @interface ISAuthenticationChallengeOperation : ISDialogOperation {
     ISAuthenticationChallenge *_challenge;
     NSURLCredential *_credential;
 }
 
-@property(retain) ISAuthenticationChallenge * challenge;
-@property(retain) NSURLCredential * credential;
+@property (retain) ISAuthenticationChallenge *challenge;
+@property (retain) NSURLCredential *credential;
 
 + (id)operationWithChallenge:(id)arg1;
 

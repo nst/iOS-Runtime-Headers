@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableArray;
-
 @interface NPKProtoPaymentPreconditionsNotMetRequest : PBRequest <NSCopying> {
     int _failedPrecondition;
     NSMutableArray *_passIDs;
 }
 
-@property int failedPrecondition;
-@property(retain) NSMutableArray * passIDs;
+@property (nonatomic) int failedPrecondition;
+@property (nonatomic, retain) NSMutableArray *passIDs;
 
 - (void).cxx_destruct;
 - (void)addPassIDs:(id)arg1;

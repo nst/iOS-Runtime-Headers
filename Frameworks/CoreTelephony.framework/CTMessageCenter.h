@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@interface CTMessageCenter : NSObject {
-}
+@interface CTMessageCenter : NSObject
 
 + (id)sharedMessageCenter;
 

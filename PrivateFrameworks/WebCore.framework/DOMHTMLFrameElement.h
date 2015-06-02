@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMAbstractView, DOMDocument, NSString, WebFrame;
+@interface DOMHTMLFrameElement : DOMHTMLElement
 
-@interface DOMHTMLFrameElement : DOMHTMLElement {
-}
-
-@property(readonly) DOMDocument * contentDocument;
-@property(readonly) WebFrame * contentFrame;
-@property(readonly) DOMAbstractView * contentWindow;
-@property(copy) NSString * frameBorder;
-@property(readonly) int height;
-@property(copy) NSString * location;
-@property(copy) NSString * longDesc;
-@property(copy) NSString * marginHeight;
-@property(copy) NSString * marginWidth;
-@property(copy) NSString * name;
+@property (readonly) DOMDocument *contentDocument;
+@property (nonatomic, readonly) WebFrame *contentFrame;
+@property (readonly) DOMAbstractView *contentWindow;
+@property (copy) NSString *frameBorder;
+@property (readonly) int height;
+@property (copy) NSString *location;
+@property (copy) NSString *longDesc;
+@property (copy) NSString *marginHeight;
+@property (copy) NSString *marginWidth;
+@property (copy) NSString *name;
 @property BOOL noResize;
-@property(copy) NSString * scrolling;
-@property(copy) NSString * src;
-@property(readonly) int width;
+@property (copy) NSString *scrolling;
+@property (copy) NSString *src;
+@property (readonly) int width;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)contentDocument;
-- (id)contentFrame;
 - (id)contentWindow;
 - (id)frameBorder;
 - (int)height;
@@ -46,5 +44,9 @@
 - (id)src;
 - (int)structuralComplexityContribution;
 - (int)width;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
+- (id)contentFrame;
 
 @end

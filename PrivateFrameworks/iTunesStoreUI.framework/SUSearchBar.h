@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUSearchBar : UISearchBar {
-}
+@interface SUSearchBar : UISearchBar
 
 - (void)_setupCancelButtonWithAppearance:(id)arg1;
 - (void)removeFromSuperview;

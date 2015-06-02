@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLDListElement : DOMHTMLElement {
-}
+@interface DOMHTMLDListElement : DOMHTMLElement
 
 @property BOOL compact;
 

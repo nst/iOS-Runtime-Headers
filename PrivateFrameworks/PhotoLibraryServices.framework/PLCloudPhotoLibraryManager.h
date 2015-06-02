@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CPLLibraryManager, NSMutableArray, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSString, PLCloudTaskManager, PLPhotoLibrary;
-
 @interface PLCloudPhotoLibraryManager : NSObject <CPLLibraryManagerDelegate, CPLResourceProgressDelegate, PLForegroundObserver> {
     NSNumber *__numberOfOtherItemsDownloaded;
     NSNumber *__numberOfOtherItemsToPush;
@@ -30,7 +28,7 @@
     BOOL _modeChangePending;
     BOOL _needSoftReset;
     BOOL _needToResume;
-    unsigned char _nodeUUID[16];
+    unsigned char _nodeUUID;
     int _notifyToken;
     int _pauseRequest;
     PLPhotoLibrary *_photoLibrary;
@@ -47,23 +45,23 @@
     BOOL _wasRebuild;
 }
 
-@property(setter=_setNumberOfOtherItemsDownloaded:,retain) NSNumber * _numberOfOtherItemsDownloaded;
-@property(setter=_setNumberOfOtherItemsToPush:,retain) NSNumber * _numberOfOtherItemsToPush;
-@property(setter=_setNumberOfPhotosDownloaded:,retain) NSNumber * _numberOfPhotosDownloaded;
-@property(setter=_setNumberOfPhotosToPush:,retain) NSNumber * _numberOfPhotosToPush;
-@property(setter=_setNumberOfVideosDownloaded:,retain) NSNumber * _numberOfVideosDownloaded;
-@property(setter=_setNumberOfVideosToPush:,retain) NSNumber * _numberOfVideosToPush;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int numberOfOtherItemsToDownload;
-@property(readonly) unsigned int numberOfOtherItemsToUpload;
-@property(readonly) unsigned int numberOfPhotosToDownload;
-@property(readonly) unsigned int numberOfPhotosToUpload;
-@property(readonly) unsigned int numberOfPushedItems;
-@property(readonly) unsigned int numberOfVideosToDownload;
-@property(readonly) unsigned int numberOfVideosToUpload;
-@property(readonly) Class superclass;
+@property (setter=_setNumberOfOtherItemsDownloaded:, nonatomic, retain) NSNumber *_numberOfOtherItemsDownloaded;
+@property (setter=_setNumberOfOtherItemsToPush:, nonatomic, retain) NSNumber *_numberOfOtherItemsToPush;
+@property (setter=_setNumberOfPhotosDownloaded:, nonatomic, retain) NSNumber *_numberOfPhotosDownloaded;
+@property (setter=_setNumberOfPhotosToPush:, nonatomic, retain) NSNumber *_numberOfPhotosToPush;
+@property (setter=_setNumberOfVideosDownloaded:, nonatomic, retain) NSNumber *_numberOfVideosDownloaded;
+@property (setter=_setNumberOfVideosToPush:, nonatomic, retain) NSNumber *_numberOfVideosToPush;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int numberOfOtherItemsToDownload;
+@property (nonatomic, readonly) unsigned int numberOfOtherItemsToUpload;
+@property (nonatomic, readonly) unsigned int numberOfPhotosToDownload;
+@property (nonatomic, readonly) unsigned int numberOfPhotosToUpload;
+@property (nonatomic, readonly) unsigned int numberOfPushedItems;
+@property (nonatomic, readonly) unsigned int numberOfVideosToDownload;
+@property (nonatomic, readonly) unsigned int numberOfVideosToUpload;
+@property (readonly) Class superclass;
 
 + (id)descriptionForResourceType:(unsigned int)arg1;
 
@@ -106,8 +104,8 @@
 - (void)_processUploadBatchWithStartupFailureCount:(unsigned int)arg1;
 - (void)_recoverFromPauseUnderDiskPressureIfNeeded;
 - (void)_resetCPLLibrary;
-- (void)_runBlockOnIsolationQueue:(id)arg1;
-- (void)_runOnIsolationQueueAfterDelayInSeconds:(unsigned int)arg1 withBlock:(id)arg2;
+- (void)_runBlockOnIsolationQueue:(id /* block */)arg1;
+- (void)_runOnIsolationQueueAfterDelayInSeconds:(unsigned int)arg1 withBlock:(id /* block */)arg2;
 - (void)_setNumberOfOtherItemsDownloaded:(id)arg1;
 - (void)_setNumberOfOtherItemsToPush:(id)arg1;
 - (void)_setNumberOfPhotosDownloaded:(id)arg1;
@@ -128,17 +126,17 @@
 - (void)deactivateCPLLibrary;
 - (void)dealloc;
 - (void)deleteCPLPlist;
-- (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id)arg2;
+- (void)deleteResourcesIfSafe:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)diskSpaceLevel;
 - (void)doSoftResetSync;
-- (void)downloadAsset:(id)arg1 resourceType:(unsigned int)arg2 masterResourceOnly:(BOOL)arg3 highPriority:(BOOL)arg4 clientBundleID:(id)arg5 taskDidBeginHandler:(id)arg6 progressBlock:(id)arg7 completionHandler:(id)arg8;
+- (void)downloadAsset:(id)arg1 resourceType:(unsigned int)arg2 masterResourceOnly:(BOOL)arg3 highPriority:(BOOL)arg4 clientBundleID:(id)arg5 taskDidBeginHandler:(id /* block */)arg6 progressBlock:(id /* block */)arg7 completionHandler:(id /* block */)arg8;
 - (void)downloadFromCloud;
-- (void)downloadResource:(id)arg1 forAssetUuid:(id)arg2 highPriority:(BOOL)arg3 clientBundleID:(id)arg4 taskDidBeginHandler:(id)arg5 progressBlock:(id)arg6 completionHandler:(id)arg7;
+- (void)downloadResource:(id)arg1 forAssetUuid:(id)arg2 highPriority:(BOOL)arg3 clientBundleID:(id)arg4 taskDidBeginHandler:(id /* block */)arg5 progressBlock:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (void)dumpStatusIncludingDaemon:(BOOL)arg1;
-- (void)fetchAdjustmentDataForAsset:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchAdjustmentDataForAsset:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchDeletionEventsFromChangeHub;
 - (void)fetchNewEventsFromChangeHub;
-- (void)fetchPublicURLForAsset:(id)arg1 resourceType:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)fetchPublicURLForAsset:(id)arg1 resourceType:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)foregroundMonitor:(id)arg1 changedStateToForeground:(BOOL)arg2 context:(id)arg3;
 - (id)getCPLState;
 - (id)init;
@@ -185,7 +183,7 @@
 - (void)stop;
 - (void)stopAll;
 - (void)sync;
-- (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id)arg2;
+- (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)transitionToState:(unsigned int)arg1;
 - (void)unpause;
 - (void)unregisterToChangeHubNotification;

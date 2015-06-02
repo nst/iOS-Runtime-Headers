@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMDPersistence.framework/IMDPersistence
  */
 
-@interface IMDPersistentAttachmentController : NSObject {
-}
+@interface IMDPersistentAttachmentController : NSObject
 
 + (id)sharedInstance;
 

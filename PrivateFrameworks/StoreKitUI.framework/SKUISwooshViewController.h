@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISwooshViewControllerDelegate>, SKUIClientContext, SKUIColorScheme;
-
 @interface SKUISwooshViewController : UIViewController {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
     <SKUISwooshViewControllerDelegate> *_delegate;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) SKUIColorScheme * colorScheme;
-@property <SKUISwooshViewControllerDelegate> * delegate;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, copy) SKUIColorScheme *colorScheme;
+@property (nonatomic) <SKUISwooshViewControllerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)clientContext;

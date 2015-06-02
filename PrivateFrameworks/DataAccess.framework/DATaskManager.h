@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class <DATask>, DAAccount, DADuetReporter, NSArray, NSMutableArray, NSMutableSet, NSTimer;
-
 @interface DATaskManager : NSObject {
     DAAccount *_account;
     <DATask> *_activeExclusiveTask;
@@ -24,25 +22,25 @@
     NSTimer *_userInitiatedSyncTimer;
 }
 
-@property DAAccount * account;
-@property(retain) <DATask> * activeExclusiveTask;
-@property(retain) <DATask> * activeModalTask;
-@property(retain) <DATask> * activeQueuedTask;
-@property(readonly) NSArray * allTasks;
-@property BOOL didLogSyncStart;
-@property(retain) DADuetReporter * duetReporter;
-@property(retain) NSMutableSet * heldIndependentTasks;
-@property(retain) NSMutableSet * independentTasks;
-@property(retain) NSMutableArray * mQueuedTasks;
-@property(retain) NSTimer * managerIdleTimer;
-@property(retain) <DATask> * modalHeldActiveQueuedTask;
-@property(retain) NSMutableSet * modalHeldIndependentTasks;
-@property(retain) NSTimer * powerLogIdleTimer;
-@property(retain) NSMutableArray * queuedExclusiveTasks;
-@property(retain) NSMutableArray * queuedModalTasks;
-@property(readonly) NSArray * queuedTasks;
-@property int state;
-@property(retain) NSTimer * userInitiatedSyncTimer;
+@property (nonatomic) DAAccount *account;
+@property (nonatomic, retain) <DATask> *activeExclusiveTask;
+@property (nonatomic, retain) <DATask> *activeModalTask;
+@property (nonatomic, retain) <DATask> *activeQueuedTask;
+@property (nonatomic, readonly) NSArray *allTasks;
+@property (nonatomic) BOOL didLogSyncStart;
+@property (nonatomic, retain) DADuetReporter *duetReporter;
+@property (nonatomic, retain) NSMutableSet *heldIndependentTasks;
+@property (nonatomic, retain) NSMutableSet *independentTasks;
+@property (nonatomic, retain) NSMutableArray *mQueuedTasks;
+@property (nonatomic, retain) NSTimer *managerIdleTimer;
+@property (nonatomic, retain) <DATask> *modalHeldActiveQueuedTask;
+@property (nonatomic, retain) NSMutableSet *modalHeldIndependentTasks;
+@property (nonatomic, retain) NSTimer *powerLogIdleTimer;
+@property (nonatomic, retain) NSMutableArray *queuedExclusiveTasks;
+@property (nonatomic, retain) NSMutableArray *queuedModalTasks;
+@property (nonatomic, readonly) NSArray *queuedTasks;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSTimer *userInitiatedSyncTimer;
 
 - (void).cxx_destruct;
 - (void)_cancelTasksWithReason:(int)arg1;

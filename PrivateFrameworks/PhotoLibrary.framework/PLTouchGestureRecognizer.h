@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UITouch;
-
 @interface PLTouchGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 

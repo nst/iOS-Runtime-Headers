@@ -2,37 +2,27 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSDateComponents, NSLock, NSMutableDictionary, NSSet;
-
 @interface HKStatisticsCollection : NSObject {
     NSDate *_anchorDate;
     double _approximateStatisticsInterval;
     NSSet *_cachedSources;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _emptyStatisticsConstructor;
-
+    id /* block */ _emptyStatisticsConstructor;
     NSMutableDictionary *_statisticsByIndex;
     NSDateComponents *_statisticsInterval;
     NSLock *_statisticsLock;
 }
 
-@property(readonly) NSDate * anchorDate;
-@property(readonly) NSDateComponents * statisticsInterval;
+@property (nonatomic, readonly) NSDate *anchorDate;
+@property (nonatomic, readonly) NSDateComponents *statisticsInterval;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_clearSourcesCache;
-- (void)_enumerateStatisticsIndexesFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
-- (void)_enumerateTimePeriodsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
-- (id)_fakeDataWithUnit:(id)arg1;
-- (id)_fakingValueForKey:(id)arg1;
+- (void)_enumerateStatisticsIndexesFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)_enumerateTimePeriodsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id /* block */)arg3;
 - (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2;
-- (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2 emptyStatisticsConstructor:(id)arg3;
+- (id)_initWithAnchorDate:(id)arg1 statisticsInterval:(id)arg2 emptyStatisticsConstructor:(id /* block */)arg3;
 - (BOOL)_insertStatistics:(id)arg1;
 - (id)_maxSumQuantityStatistics;
 - (id)_minSumQuantityStatistics;
@@ -43,12 +33,17 @@
 - (id)_timePeriodForDate:(id)arg1;
 - (void)_timePeriodForStatisticsAtIndex:(int)arg1 startDate:(id*)arg2 endDate:(id*)arg3;
 - (id)anchorDate;
-- (void)enumerateStatisticsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id)arg3;
+- (void)enumerateStatisticsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id /* block */)arg3;
 - (id)init;
 - (id)sources;
 - (id)statistics;
 - (id)statisticsForDate:(id)arg1;
 - (id)statisticsInterval;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (id)_fakeDataWithUnit:(id)arg1;
+- (id)_fakingValueForKey:(id)arg1;
 - (double)totalWithUnit:(id)arg1;
 
 @end

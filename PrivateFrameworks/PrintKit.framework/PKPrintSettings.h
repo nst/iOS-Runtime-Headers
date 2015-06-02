@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class NSMutableDictionary, PKPaper;
-
 @interface PKPrintSettings : NSObject {
     NSMutableDictionary *_dict;
     PKPaper *paper;
 }
 
-@property(retain) NSMutableDictionary * dict;
-@property(retain) PKPaper * paper;
+@property (nonatomic, retain) NSMutableDictionary *dict;
+@property (nonatomic, retain) PKPaper *paper;
 
 + (id)default;
 + (id)photo;

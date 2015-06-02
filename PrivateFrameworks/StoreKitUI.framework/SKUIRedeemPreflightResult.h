@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSError, SKUIClientContext, SKUIRedeemConfiguration, SSAccount, SSVRedeemCodeMetadata;
-
 @interface SKUIRedeemPreflightResult : NSObject {
     SSAccount *_account;
     SKUIClientContext *_clientContext;
@@ -13,12 +11,12 @@
     int _resultType;
 }
 
-@property(retain) SSAccount * account;
-@property(retain) SKUIClientContext * clientContext;
-@property(retain) SSVRedeemCodeMetadata * codeMetadata;
-@property(copy) NSError * error;
-@property(retain) SKUIRedeemConfiguration * redeemConfiguration;
-@property int resultType;
+@property (nonatomic, retain) SSAccount *account;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, retain) SSVRedeemCodeMetadata *codeMetadata;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, retain) SKUIRedeemConfiguration *redeemConfiguration;
+@property (nonatomic) int resultType;
 
 - (void).cxx_destruct;
 - (id)account;

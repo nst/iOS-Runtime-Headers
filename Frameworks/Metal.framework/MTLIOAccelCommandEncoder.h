@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLIOAccelCommandEncoder : _MTLCommandEncoder {
-}
+@interface MTLIOAccelCommandEncoder : _MTLCommandEncoder
 
 @end

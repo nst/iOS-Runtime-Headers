@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppPlayerDelegate>, IKAppContext, IKJSPlayer, NSString;
-
 @interface IKAppPlayer : NSObject <IKDOMFeature, IKJSPlayerAppBridge> {
     IKAppContext *_appContext;
     <IKAppPlayerDelegate> *_delegate;
@@ -11,14 +9,14 @@
     IKJSPlayer *_jsPlayer;
 }
 
-@property IKAppContext * appContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <IKAppPlayerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned int hash;
-@property IKJSPlayer * jsPlayer;
-@property(readonly) Class superclass;
+@property IKAppContext *appContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IKAppPlayerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSString *featureName;
+@property (readonly) unsigned int hash;
+@property (nonatomic) IKJSPlayer *jsPlayer;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)appContext;

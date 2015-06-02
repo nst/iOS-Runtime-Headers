@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImage, VKMapSnapshot;
-
 @interface MKMapSnapshot : NSObject {
     UIImage *_image;
     VKMapSnapshot *_snapshot;
 }
 
-@property(readonly) UIImage * image;
+@property (nonatomic, readonly) UIImage *image;
 
 - (void).cxx_destruct;
 - (struct { double x1; double x2; })_coordinateForPoint:(struct CGPoint { float x1; float x2; })arg1;

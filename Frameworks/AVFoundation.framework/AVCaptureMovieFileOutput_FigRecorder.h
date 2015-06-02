@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureMovieFileOutputInternal_FigRecorder, NSArray;
-
 @interface AVCaptureMovieFileOutput_FigRecorder : AVCaptureFileOutput_FigRecorder {
     AVCaptureMovieFileOutputInternal_FigRecorder *_internal;
 }
 
-@property(copy) NSArray * metadata;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property (nonatomic, copy) NSArray *metadata;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 
 + (BOOL)consolidateMovieFragmentsInFile:(id)arg1 error:(id*)arg2;
 + (void)initialize;

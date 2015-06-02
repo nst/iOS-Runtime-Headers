@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying> {
     struct { 
         int *list; 
@@ -18,12 +16,12 @@
     BOOL _splitIntoClusters;
 }
 
-@property(readonly) int* additionalPlaceTypes;
-@property(readonly) unsigned int additionalPlaceTypesCount;
-@property BOOL hasSplitIntoClusters;
-@property(retain) NSMutableArray * locations;
-@property(retain) NSMutableArray * serviceTags;
-@property BOOL splitIntoClusters;
+@property (nonatomic, readonly) int*additionalPlaceTypes;
+@property (nonatomic, readonly) unsigned int additionalPlaceTypesCount;
+@property (nonatomic) BOOL hasSplitIntoClusters;
+@property (nonatomic, retain) NSMutableArray *locations;
+@property (nonatomic, retain) NSMutableArray *serviceTags;
+@property (nonatomic) BOOL splitIntoClusters;
 
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addLocation:(id)arg1;

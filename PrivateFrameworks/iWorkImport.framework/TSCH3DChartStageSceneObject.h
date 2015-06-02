@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DSceneObject;
-
 @interface TSCH3DChartStageSceneObject : TSCH3DSceneObject {
     TSCH3DSceneObject *mMain;
 }

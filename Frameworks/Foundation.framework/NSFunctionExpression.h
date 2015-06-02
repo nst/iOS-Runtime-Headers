@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSExpression;
-
 @interface NSFunctionExpression : NSExpression {
     NSArray *_arguments;
     NSExpression *_operand;
     SEL _selector;
 }
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (BOOL)supportsSecureCoding;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (id)_mapKVCOperatorsToFunctionsInContext:(id)arg1;
 - (BOOL)_shouldUseParensWithDescription;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)allowEvaluation;
@@ -30,9 +29,13 @@
 - (id)initWithSelector:(SEL)arg1 argumentArray:(id)arg2;
 - (id)initWithTarget:(id)arg1 selectorName:(id)arg2 arguments:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (id)minimalFormInContext:(id)arg1;
 - (id)operand;
 - (id)predicateFormat;
 - (SEL)selector;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
+- (id)_mapKVCOperatorsToFunctionsInContext:(id)arg1;
+- (id)minimalFormInContext:(id)arg1;
 
 @end

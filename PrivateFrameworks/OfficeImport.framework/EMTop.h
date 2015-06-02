@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, EMState, EMWorkbookMapper, NSString;
-
 @interface EMTop : CMTop <OIProgressiveReaderDelegate> {
     CMArchiveManager *_archiver;
     NSString *_inFileName;

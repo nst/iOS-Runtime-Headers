@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSIndexSet, NSMutableIndexSet, TSTMergeOwner, TSUSparseArray;
-
 @interface TSTMergeRangeCache : NSObject {
     NSMutableIndexSet *_mergeIndexes;
     TSTMergeOwner *_mergeOwner;
     TSUSparseArray *_mergeRanges;
 }
 
-@property(readonly) unsigned int count;
-@property(readonly) NSIndexSet * mergeIndexes;
-@property(readonly) TSTMergeOwner * mergeOwner;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) NSIndexSet *mergeIndexes;
+@property (nonatomic, readonly) TSTMergeOwner *mergeOwner;
 
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateCacheItemsIntersectingCellRegion:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateCacheItemsIntersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateCacheItemsUsingBlock:(id)arg1;
+- (void)enumerateCacheItemsIntersectingCellRegion:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateCacheItemsIntersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateCacheItemsUsingBlock:(id /* block */)arg1;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandCellRangeToCoverMergedCells:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)expandCellRegionToCoverMergedCells:(id)arg1;
 - (BOOL)hasRangeSpanningRowsForCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;

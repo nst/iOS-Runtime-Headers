@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFHeaderLabelView, UILabel;
-
 @interface MFComposeMultiView : MFComposeHeaderView {
     BOOL _accountAutoselected;
     BOOL _accountHasUnsafeDomain;
@@ -14,8 +12,8 @@
     UILabel *_placeholderImageSizeLabel;
 }
 
-@property(getter=isAccountAutoselected) BOOL accountAutoselected;
-@property BOOL accountHasUnsafeDomain;
+@property (getter=isAccountAutoselected, nonatomic) BOOL accountAutoselected;
+@property (nonatomic) BOOL accountHasUnsafeDomain;
 
 - (BOOL)accountHasUnsafeDomain;
 - (id)accountLabel;

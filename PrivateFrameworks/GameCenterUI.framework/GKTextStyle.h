@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKColorPalette, NSString, UIColor;
-
 @interface GKTextStyle : NSObject {
     float _UIKitFontLeading;
     NSString *_UIKitFontTextStyleName;
@@ -22,20 +20,20 @@
     float _zPosition;
 }
 
-@property(readonly) NSString * UIKitFontTextStyleName;
-@property(retain) UIColor * color;
-@property(readonly) NSString * fontName;
-@property SEL fontNameRebaseSelector;
-@property(readonly) float fontSize;
-@property SEL fontSizeRebaseSelector;
-@property int lineBreakMode;
-@property float m34;
-@property float minimumLineHeight;
-@property BOOL needsParagraphStyle;
-@property BOOL overrideUIKitFontSize;
-@property(retain) GKColorPalette * palette;
-@property int textAlignment;
-@property float zPosition;
+@property (nonatomic, readonly) NSString *UIKitFontTextStyleName;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, readonly) NSString *fontName;
+@property (nonatomic) SEL fontNameRebaseSelector;
+@property (nonatomic, readonly) float fontSize;
+@property (nonatomic) SEL fontSizeRebaseSelector;
+@property (nonatomic) int lineBreakMode;
+@property (nonatomic) float m34;
+@property (nonatomic) float minimumLineHeight;
+@property (nonatomic) BOOL needsParagraphStyle;
+@property (nonatomic) BOOL overrideUIKitFontSize;
+@property (nonatomic, retain) GKColorPalette *palette;
+@property (nonatomic) int textAlignment;
+@property (nonatomic) float zPosition;
 
 + (id)attributedString:(id)arg1 byReplayingFromBaseStyle:(id)arg2 systemContentSizeDidChange:(BOOL)arg3;
 + (float)bubbleTextScale;

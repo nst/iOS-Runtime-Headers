@@ -6,7 +6,7 @@
     BOOL _isLocalDevice;
 }
 
-@property BOOL isLocalDevice;
+@property (nonatomic) BOOL isLocalDevice;
 
 + (BOOL)supportsSecureCoding;
 

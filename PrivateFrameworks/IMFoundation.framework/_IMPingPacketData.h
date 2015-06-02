@@ -13,11 +13,11 @@
     BOOL _timedOut;
 }
 
-@property(readonly) int error;
-@property(readonly) double rtt;
-@property(readonly) int sequenceNumber;
-@property(readonly) struct timeval { int x1; int x2; } timeSent;
-@property(readonly) BOOL timedOut;
+@property (nonatomic, readonly) int error;
+@property (nonatomic, readonly) double rtt;
+@property (nonatomic, readonly) int sequenceNumber;
+@property (nonatomic, readonly) struct timeval { int x1; int x2; } timeSent;
+@property (nonatomic, readonly) BOOL timedOut;
 
 - (void)_markPacketAsTimedOut:(double)arg1;
 - (void)_returnPacketArrived;

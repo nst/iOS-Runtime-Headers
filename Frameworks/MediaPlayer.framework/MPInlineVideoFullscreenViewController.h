@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPInlineVideoController, MPSwipableView, MPVideoPlaybackOverlayView, MPVolumeController, MPWeakTimer, NSString, UIActivityIndicatorView, UIPinchGestureRecognizer, UITapGestureRecognizer;
-
 @interface MPInlineVideoFullscreenViewController : UIViewController <MPSwipableViewDelegate, MPTransportControlsTarget, MPVideoOverlayDelegate, MPVolumeControllerDelegate> {
     int _activeOverlayUserEvents;
     BOOL _disableTaps;
@@ -22,12 +20,12 @@
     MPVolumeController *_volumeController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPAVItem * item;
-@property MPInlineVideoController * masterController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic) MPInlineVideoController *masterController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_hideOverlayAnimated:(BOOL)arg1;

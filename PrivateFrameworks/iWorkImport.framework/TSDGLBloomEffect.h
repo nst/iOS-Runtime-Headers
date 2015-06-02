@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader;
-
 @interface TSDGLBloomEffect : NSObject {
     TSDGLShader *_bloomShader;
     struct CGSize { 
@@ -22,7 +20,7 @@
         float height; 
     } _effectSize;
     TSDGLShader *_fboTransferShader;
-    int _oldViewportRect[4];
+    int _oldViewportRect;
     BOOL _oldViewportRectInitialized;
 }
 

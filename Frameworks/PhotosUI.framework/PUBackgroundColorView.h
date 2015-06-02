@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBackgroundColorView : UIView {
-}
+@interface PUBackgroundColorView : UIView
 
 - (void)_puSetBackgroundColor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;

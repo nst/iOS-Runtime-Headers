@@ -7,7 +7,7 @@
     unsigned int _objectAddress;
 }
 
-@property(readonly) id object;
+@property (readonly) id object;
 
 + (id)weakReferenceWithObject:(id)arg1;
 

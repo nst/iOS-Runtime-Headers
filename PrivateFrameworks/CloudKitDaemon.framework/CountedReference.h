@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CountedReference : NSObject {
     BOOL _didScheduleDealloc;
     NSString *_name;
@@ -11,10 +9,10 @@
     id _referencedObject;
 }
 
-@property BOOL didScheduleDealloc;
-@property(retain) NSString * name;
-@property unsigned int referenceCount;
-@property(retain) id referencedObject;
+@property (nonatomic) BOOL didScheduleDealloc;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned int referenceCount;
+@property (nonatomic, retain) id referencedObject;
 
 - (void).cxx_destruct;
 - (BOOL)didScheduleDealloc;

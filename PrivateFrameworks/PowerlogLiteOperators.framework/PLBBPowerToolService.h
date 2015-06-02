@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableArray, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition, PLTelephonyConnection;
-
 @interface PLBBPowerToolService : PLService {
     PLEntryNotificationOperatorComposition *_audioEventCallback;
     PLEntryNotificationOperatorComposition *_bbHwOtherCallback;
@@ -30,29 +28,29 @@
     PLEntryNotificationOperatorComposition *_wcdmaRRCCallback;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * audioEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * bbHwOtherCallback;
-@property PLTelephonyConnection * connection;
-@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
-@property(retain) PLEntryNotificationOperatorComposition * displayEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *audioEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *bbHwOtherCallback;
+@property PLTelephonyConnection *connection;
+@property (retain) PLNSNotificationOperatorComposition *dailyTaskNotification;
+@property (retain) PLEntryNotificationOperatorComposition *displayEventCallback;
 @property BOOL doesCurrPackageHasProblem;
 @property BOOL doesPrevPackageHasProblem;
 @property double elapsedDenumerator;
-@property(retain) NSMutableArray * endExclusionPeriods;
+@property (retain) NSMutableArray *endExclusionPeriods;
 @property unsigned char exclusionMask;
 @property double gArmUtil;
 @property int gPerepherialMax;
-@property(retain) PLEntryNotificationOperatorComposition * hotspotEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *hotspotEventCallback;
 @property BOOL isUIAlertEnabled;
-@property(retain) PLEntryNotificationOperatorComposition * lteRRCCallback;
-@property(retain) PLEntryNotificationOperatorComposition * msgLiteCallback;
-@property(retain) NSDate * notToRemoveDate;
-@property(retain) NSDate * samplingDate;
+@property (retain) PLEntryNotificationOperatorComposition *lteRRCCallback;
+@property (retain) PLEntryNotificationOperatorComposition *msgLiteCallback;
+@property (retain) NSDate *notToRemoveDate;
+@property (retain) NSDate *samplingDate;
 @property BOOL sendAWD;
-@property(retain) NSMutableArray * startExclusionPeriods;
-@property(retain) PLEntryNotificationOperatorComposition * telActivityCallback;
+@property (retain) NSMutableArray *startExclusionPeriods;
+@property (retain) PLEntryNotificationOperatorComposition *telActivityCallback;
 @property double totalNormalARMUtility;
-@property(retain) PLEntryNotificationOperatorComposition * wcdmaRRCCallback;
+@property (retain) PLEntryNotificationOperatorComposition *wcdmaRRCCallback;
 
 + (id)entryAggregateDefinitions;
 + (id)entryArmUtil;

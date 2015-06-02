@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class TDTemplateRenderingMode;
+@interface TDSimpleArtworkElementProduction : TDElementProduction
 
-@interface TDSimpleArtworkElementProduction : TDElementProduction {
-}
-
-@property(retain) TDTemplateRenderingMode * templateRenderingMode;
+@property (nonatomic, retain) TDTemplateRenderingMode *templateRenderingMode;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;

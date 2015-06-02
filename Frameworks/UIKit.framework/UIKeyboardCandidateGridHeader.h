@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIButton, UIKBBackdropView, UILabel;
-
 @interface UIKeyboardCandidateGridHeader : UIView {
     UIKBBackdropView *_backdropView;
     UILabel *_inlineTextLabel;
@@ -11,11 +9,11 @@
     UIButton *_toggleButton;
 }
 
-@property(retain) UIKBBackdropView * backdropView;
-@property(copy) NSString * inlineText;
-@property(retain) UILabel * inlineTextLabel;
-@property float inlineTextRightMargin;
-@property(retain) UIButton * toggleButton;
+@property (nonatomic, retain) UIKBBackdropView *backdropView;
+@property (nonatomic, copy) NSString *inlineText;
+@property (nonatomic, retain) UILabel *inlineTextLabel;
+@property (nonatomic) float inlineTextRightMargin;
+@property (nonatomic, retain) UIButton *toggleButton;
 
 - (id)backdropView;
 - (void)dealloc;

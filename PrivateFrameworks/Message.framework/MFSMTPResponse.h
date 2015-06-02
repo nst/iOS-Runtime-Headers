@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString;
-
 @interface MFSMTPResponse : NSObject <NSCopying> {
     NSArray *_continuationResponses;
     id _lastResponseLine;
     int _status;
-    unsigned int _statusClass : 10;
-    unsigned int _statusDetail : 10;
+    unsigned int _statusClass;
+    unsigned int _statusDetail;
     NSString *_statusString;
-    unsigned int _statusSubject : 10;
+    unsigned int _statusSubject;
 }
 
-@property(retain) NSArray * continuationResponses;
-@property(readonly) int status;
-@property(readonly) unsigned int statusClass;
-@property(readonly) unsigned int statusDetail;
-@property(readonly) NSString * statusString;
-@property(readonly) unsigned int statusSubject;
+@property (nonatomic, retain) NSArray *continuationResponses;
+@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) unsigned int statusClass;
+@property (nonatomic, readonly) unsigned int statusDetail;
+@property (nonatomic, readonly) NSString *statusString;
+@property (nonatomic, readonly) unsigned int statusSubject;
 
 - (void)_updateEnhancedStatusCodesFromLastResponse;
 - (id)continuationResponses;

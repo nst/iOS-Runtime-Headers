@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VVNotificationInterpreter : NSObject {
-}
+@interface VVNotificationInterpreter : NSObject
 
 + (id)interpretedDictionaryForNotificationUserInfo:(struct __CFDictionary { }*)arg1;
 

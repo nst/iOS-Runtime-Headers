@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface MLException : NSException {
-}
+@interface MLException : NSException
 
 - (void)raise;
 

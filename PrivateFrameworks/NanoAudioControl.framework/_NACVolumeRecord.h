@@ -10,11 +10,11 @@
     BOOL _volumeWarningEnabled;
 }
 
-@property float EUVolumeLimit;
-@property(getter=isMuted) BOOL muted;
-@property(getter=isVolumeControlAvailable) BOOL volumeControlAvailable;
-@property float volumeValue;
-@property(getter=isVolumeWarningEnabled) BOOL volumeWarningEnabled;
+@property (nonatomic) float EUVolumeLimit;
+@property (getter=isMuted, nonatomic) BOOL muted;
+@property (getter=isVolumeControlAvailable, nonatomic) BOOL volumeControlAvailable;
+@property (nonatomic) float volumeValue;
+@property (getter=isVolumeWarningEnabled, nonatomic) BOOL volumeWarningEnabled;
 
 - (float)EUVolumeLimit;
 - (void)encodeWithCoder:(id)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSettingsFunctions : NSObject {
-}
+@interface PSSettingsFunctions : NSObject
 
 @end

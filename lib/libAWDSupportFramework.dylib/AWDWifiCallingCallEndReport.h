@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWifiCallingCallEndReport : PBCodable <NSCopying> {
     NSString *_callID;
     struct { 
@@ -44,30 +42,30 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * callID;
-@property(readonly) unsigned int* frameErasureRateHistograms;
-@property(readonly) unsigned int frameErasureRateHistogramsCount;
-@property unsigned int frameErasureRateMean;
-@property(readonly) BOOL hasCallID;
-@property BOOL hasFrameErasureRateMean;
-@property BOOL hasJitterBufferResidencyTime95Percentile;
-@property BOOL hasJitterBufferResidencyTimeMean;
-@property BOOL hasJitterBufferResidencyTimeMedian;
-@property BOOL hasJitterBufferUnderflowRateMean;
-@property BOOL hasRtpPacketLossRateMean;
-@property BOOL hasTimestamp;
-@property unsigned int jitterBufferResidencyTime95Percentile;
-@property(readonly) unsigned int* jitterBufferResidencyTimeHistograms;
-@property(readonly) unsigned int jitterBufferResidencyTimeHistogramsCount;
-@property unsigned int jitterBufferResidencyTimeMean;
-@property unsigned int jitterBufferResidencyTimeMedian;
-@property(readonly) unsigned int* jitterBufferUnderflowRateHistograms;
-@property(readonly) unsigned int jitterBufferUnderflowRateHistogramsCount;
-@property unsigned int jitterBufferUnderflowRateMean;
-@property(readonly) unsigned int* rtpPacketLossRateHistograms;
-@property(readonly) unsigned int rtpPacketLossRateHistogramsCount;
-@property unsigned int rtpPacketLossRateMean;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *callID;
+@property (nonatomic, readonly) unsigned int*frameErasureRateHistograms;
+@property (nonatomic, readonly) unsigned int frameErasureRateHistogramsCount;
+@property (nonatomic) unsigned int frameErasureRateMean;
+@property (nonatomic, readonly) BOOL hasCallID;
+@property (nonatomic) BOOL hasFrameErasureRateMean;
+@property (nonatomic) BOOL hasJitterBufferResidencyTime95Percentile;
+@property (nonatomic) BOOL hasJitterBufferResidencyTimeMean;
+@property (nonatomic) BOOL hasJitterBufferResidencyTimeMedian;
+@property (nonatomic) BOOL hasJitterBufferUnderflowRateMean;
+@property (nonatomic) BOOL hasRtpPacketLossRateMean;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int jitterBufferResidencyTime95Percentile;
+@property (nonatomic, readonly) unsigned int*jitterBufferResidencyTimeHistograms;
+@property (nonatomic, readonly) unsigned int jitterBufferResidencyTimeHistogramsCount;
+@property (nonatomic) unsigned int jitterBufferResidencyTimeMean;
+@property (nonatomic) unsigned int jitterBufferResidencyTimeMedian;
+@property (nonatomic, readonly) unsigned int*jitterBufferUnderflowRateHistograms;
+@property (nonatomic, readonly) unsigned int jitterBufferUnderflowRateHistogramsCount;
+@property (nonatomic) unsigned int jitterBufferUnderflowRateMean;
+@property (nonatomic, readonly) unsigned int*rtpPacketLossRateHistograms;
+@property (nonatomic, readonly) unsigned int rtpPacketLossRateHistogramsCount;
+@property (nonatomic) unsigned int rtpPacketLossRateMean;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addFrameErasureRateHistogram:(unsigned int)arg1;
 - (void)addJitterBufferResidencyTimeHistogram:(unsigned int)arg1;

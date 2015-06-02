@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <TSUFlushable>, NSCondition, NSThread, OITSUMemoryWatcher, OITSUPointerKeyDictionary, OITSURetainedPointerKeyDictionary;
-
 @interface OITSUFlushingManager : NSObject {
     unsigned int _activeBgThreadTask;
     BOOL _alwaysFlushing;
@@ -46,10 +44,10 @@
 - (void)didEnterBackground;
 - (void)didReceiveMemoryWarning;
 - (void)doneWithObject:(id)arg1;
-- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)eraseInfoForObject:(id)arg1;
+- (struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)eraseInfoForObject:(id)arg1;
 - (id)init;
-- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)arg1;
-- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; int x4; unsigned long x5[2]; }*)arg1;
+- (void)insertObjectInfo:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)arg1;
+- (BOOL)isNewObject:(struct TSUFlushableObjectInfo { id x1; int x2; int x3; unsigned long x4[2]; }*)arg1;
 - (void)memoryLevelDecreased:(int)arg1 was:(int)arg2;
 - (void)memoryLevelIncreased:(int)arg1 was:(int)arg2;
 - (void)protectObject:(id)arg1;

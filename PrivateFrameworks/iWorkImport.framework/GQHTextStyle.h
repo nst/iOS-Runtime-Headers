@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHTextStyle : NSObject {
-}
+@interface GQHTextStyle : NSObject
 
 + (struct __CTFont { }*)createFontFromName:(struct __CFString { }*)arg1 size:(float)arg2;
 + (BOOL)getDefaultLineHeight:(struct __CFString { }*)arg1 fontSize:(float)arg2 defLineHeight:(int*)arg3;

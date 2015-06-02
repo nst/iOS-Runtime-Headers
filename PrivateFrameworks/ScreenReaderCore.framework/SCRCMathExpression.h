@@ -2,41 +2,39 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSArray, NSString, SCRCMathExpression;
-
 @interface SCRCMathExpression : NSObject {
     unsigned int _cachedMaximumDepth;
     SCRCMathExpression *_parent;
 }
 
-@property(readonly) BOOL beginsWithSpace;
-@property(readonly) BOOL canBeUsedWithBase;
-@property(readonly) BOOL canBeUsedWithRange;
-@property(readonly) BOOL canBeWrappedInLatexMathIndicators;
-@property(readonly) NSArray * children;
-@property(readonly) BOOL endsWithSpace;
-@property(readonly) unsigned int fractionLevel;
-@property(readonly) BOOL hasSimpleArrayOfChildren;
-@property(readonly) int integerValue;
-@property(readonly) BOOL isBaseSubSuperscript;
-@property(readonly) BOOL isEllipsis;
-@property(readonly) BOOL isFenceDelimiter;
-@property(readonly) BOOL isFunctionName;
-@property(readonly) BOOL isInteger;
-@property(readonly) BOOL isMultiRowTable;
-@property(readonly) BOOL isNaturalSuperscript;
-@property(readonly) BOOL isNumber;
-@property(readonly) BOOL isOperationSymbol;
-@property(readonly) BOOL isRangeSubSuperscript;
-@property(readonly) BOOL isSimpleNumericalFraction;
-@property(readonly) BOOL isTermSeparator;
-@property(readonly) BOOL isUnlinedFraction;
-@property(readonly) BOOL isWordOrAbbreviation;
-@property(readonly) NSString * latexFormatStringAsOver;
-@property(readonly) NSString * latexFormatStringAsUnder;
-@property SCRCMathExpression * parent;
-@property(readonly) NSArray * siblings;
-@property(readonly) NSArray * subExpressions;
+@property (nonatomic, readonly) BOOL beginsWithSpace;
+@property (nonatomic, readonly) BOOL canBeUsedWithBase;
+@property (nonatomic, readonly) BOOL canBeUsedWithRange;
+@property (nonatomic, readonly) BOOL canBeWrappedInLatexMathIndicators;
+@property (nonatomic, readonly) NSArray *children;
+@property (nonatomic, readonly) BOOL endsWithSpace;
+@property (nonatomic, readonly) unsigned int fractionLevel;
+@property (nonatomic, readonly) BOOL hasSimpleArrayOfChildren;
+@property (nonatomic, readonly) int integerValue;
+@property (nonatomic, readonly) BOOL isBaseSubSuperscript;
+@property (nonatomic, readonly) BOOL isEllipsis;
+@property (nonatomic, readonly) BOOL isFenceDelimiter;
+@property (nonatomic, readonly) BOOL isFunctionName;
+@property (nonatomic, readonly) BOOL isInteger;
+@property (nonatomic, readonly) BOOL isMultiRowTable;
+@property (nonatomic, readonly) BOOL isNaturalSuperscript;
+@property (nonatomic, readonly) BOOL isNumber;
+@property (nonatomic, readonly) BOOL isOperationSymbol;
+@property (nonatomic, readonly) BOOL isRangeSubSuperscript;
+@property (nonatomic, readonly) BOOL isSimpleNumericalFraction;
+@property (nonatomic, readonly) BOOL isTermSeparator;
+@property (nonatomic, readonly) BOOL isUnlinedFraction;
+@property (nonatomic, readonly) BOOL isWordOrAbbreviation;
+@property (nonatomic, readonly) NSString *latexFormatStringAsOver;
+@property (nonatomic, readonly) NSString *latexFormatStringAsUnder;
+@property (nonatomic) SCRCMathExpression *parent;
+@property (nonatomic, readonly) NSArray *siblings;
+@property (nonatomic, readonly) NSArray *subExpressions;
 
 + (Class)_classForExpressionType:(id)arg1;
 + (id)mathExpressionWithDictionary:(id)arg1;

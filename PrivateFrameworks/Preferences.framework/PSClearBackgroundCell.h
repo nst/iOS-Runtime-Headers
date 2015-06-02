@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSClearBackgroundCell : PSTableCell {
-}
+@interface PSClearBackgroundCell : PSTableCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

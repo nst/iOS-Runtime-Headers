@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBackgroundElement, IKButtonElement, IKDocumentBannerElement, IKMenuBarElement;
+@interface IKMainTemplate : IKViewElement
 
-@interface IKMainTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKBackgroundElement * background;
-@property(retain,readonly) IKDocumentBannerElement * banner;
-@property(retain,readonly) IKButtonElement * button;
-@property(retain,readonly) IKMenuBarElement * menuBar;
+@property (nonatomic, readonly, retain) IKBackgroundElement *background;
+@property (nonatomic, readonly, retain) IKDocumentBannerElement *banner;
+@property (nonatomic, readonly, retain) IKButtonElement *button;
+@property (nonatomic, readonly, retain) IKMenuBarElement *menuBar;
 
 - (id)background;
 - (id)banner;

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSMetricsEnterEvent : SSMetricsBaseEvent
 
-@interface SSMetricsEnterEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) NSString * enterType;
-@property(retain) NSString * referringAppName;
-@property(retain) NSString * referringURL;
+@property (nonatomic, retain) NSString *enterType;
+@property (nonatomic, retain) NSString *referringAppName;
+@property (nonatomic, retain) NSString *referringURL;
 
 - (id)description;
 - (id)enterType;

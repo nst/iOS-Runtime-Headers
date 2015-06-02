@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, NSURL, SKUIArtworkList, SKUIItemOffer;
-
 @interface SKUIItem : NSObject <SKUICacheCoding, SSMetricsEventFieldProvider> {
     struct _NSRange { 
         unsigned int location; 
@@ -39,43 +37,43 @@
     NSArray *_videos;
 }
 
-@property(readonly) NSString * _downloadKind;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } ageBandRange;
-@property(readonly) NSString * artistName;
-@property(readonly) SKUIArtworkList * artworks;
-@property(readonly) NSString * bundleIdentifier;
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(readonly) NSString * categoryName;
-@property(readonly) NSArray * childItemIdentifiers;
-@property(readonly) NSString * collectionName;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int deviceFamilies;
-@property(readonly) NSString * editorialBadge;
-@property(readonly) BOOL hasInAppPurchases;
-@property(readonly) unsigned int hash;
-@property(readonly) long long itemIdentifier;
-@property(readonly) int itemKind;
-@property(readonly) NSString * itemKindString;
-@property(readonly) NSURL * largestArtworkURL;
-@property(readonly) NSArray * loadedChildItems;
-@property(getter=isNewsstandApp,readonly) BOOL newsstandApp;
-@property(readonly) SKUIArtworkList * newsstandArtworks;
-@property(readonly) int newsstandBindingEdge;
-@property(readonly) int newsstandBindingType;
-@property(readonly) int numberOfChildItems;
-@property(readonly) int numberOfUserRatings;
-@property(readonly) int parentalControlsRank;
-@property(getter=hasPrerenderedArtwork,readonly) BOOL prerenderedArtwork;
-@property(readonly) SKUIItemOffer * primaryItemOffer;
-@property(readonly) NSString * productPageURLString;
-@property(readonly) NSArray * requiredCapabilities;
-@property(readonly) Class superclass;
-@property(readonly) NSString * title;
-@property(readonly) float userRating;
-@property(readonly) long long versionIdentifier;
-@property(readonly) NSString * versionString;
-@property(readonly) NSArray * videos;
+@property (nonatomic, readonly) NSString *_downloadKind;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } ageBandRange;
+@property (nonatomic, readonly) NSString *artistName;
+@property (nonatomic, readonly) SKUIArtworkList *artworks;
+@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (nonatomic, readonly) NSString *categoryName;
+@property (nonatomic, readonly) NSArray *childItemIdentifiers;
+@property (nonatomic, readonly) NSString *collectionName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int deviceFamilies;
+@property (nonatomic, readonly) NSString *editorialBadge;
+@property (nonatomic, readonly) BOOL hasInAppPurchases;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) int itemKind;
+@property (nonatomic, readonly) NSString *itemKindString;
+@property (nonatomic, readonly) NSURL *largestArtworkURL;
+@property (nonatomic, readonly) NSArray *loadedChildItems;
+@property (getter=isNewsstandApp, nonatomic, readonly) BOOL newsstandApp;
+@property (nonatomic, readonly) SKUIArtworkList *newsstandArtworks;
+@property (nonatomic, readonly) int newsstandBindingEdge;
+@property (nonatomic, readonly) int newsstandBindingType;
+@property (nonatomic, readonly) int numberOfChildItems;
+@property (nonatomic, readonly) int numberOfUserRatings;
+@property (nonatomic, readonly) int parentalControlsRank;
+@property (getter=hasPrerenderedArtwork, nonatomic, readonly) BOOL prerenderedArtwork;
+@property (nonatomic, readonly) SKUIItemOffer *primaryItemOffer;
+@property (nonatomic, readonly) NSString *productPageURLString;
+@property (nonatomic, readonly) NSArray *requiredCapabilities;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) long long versionIdentifier;
+@property (nonatomic, readonly) NSString *versionString;
+@property (nonatomic, readonly) NSArray *videos;
 
 - (void).cxx_destruct;
 - (id)_downloadKind;

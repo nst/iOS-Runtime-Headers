@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSNumber, NSString;
-
 @interface SFRemoteHotspotDevice : NSObject <NSSecureCoding> {
     NSNumber *_batteryLife;
     NSString *_deviceIdentifier;
@@ -13,12 +11,12 @@
     NSNumber *_signalStrength;
 }
 
-@property(retain) NSNumber * batteryLife;
-@property(copy) NSString * deviceIdentifier;
-@property(copy) NSString * deviceName;
+@property (retain) NSNumber *batteryLife;
+@property (copy) NSString *deviceIdentifier;
+@property (copy) NSString *deviceName;
 @property BOOL hasDuplicates;
 @property unsigned char networkType;
-@property(retain) NSNumber * signalStrength;
+@property (retain) NSNumber *signalStrength;
 
 + (BOOL)supportsSecureCoding;
 

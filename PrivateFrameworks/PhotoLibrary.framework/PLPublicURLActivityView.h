@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface PLPublicURLActivityView : UIView {
     UILabel *_infoLabel;
     UIActivityIndicatorView *_spinner;

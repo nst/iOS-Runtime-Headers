@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFSoundController : NSObject {
-}
+@interface MFSoundController : NSObject
 
 + (void)_playAlertWithType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)_playNewMailSoundForAccount:(id)arg1;

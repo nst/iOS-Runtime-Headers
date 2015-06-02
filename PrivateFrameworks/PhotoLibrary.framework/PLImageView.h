@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLPhotoTilePlaceholderView, PLTiledLayer, PLVideoView, UILabel, UIView;
-
 @interface PLImageView : UIImageView {
     float _accessoryViewsAlpha;
     float _aspectRatio;
     UIView *_borderView;
-    unsigned int _borderViewIsVisible : 1;
+    unsigned int _borderViewIsVisible;
     UIView *_bottomRightAccessoryView;
-    unsigned int _drawsBorder : 1;
+    unsigned int _drawsBorder;
     BOOL _edgeAntialiasingEnabled;
     int _fullSizeImageOrientation;
     PLTiledLayer *_fullSizeImageTiledLayer;
@@ -24,29 +22,29 @@
     NSString *_name;
     float _placeholderScale;
     PLPhotoTilePlaceholderView *_placeholderView;
-    unsigned int _shadowEnabled : 1;
+    unsigned int _shadowEnabled;
     BOOL _showsPlaceholder;
-    unsigned int _suppressShadowDrawing : 1;
+    unsigned int _suppressShadowDrawing;
     UILabel *_textBadge;
     float _transitionProgress;
     PLVideoView *_videoView;
 }
 
-@property float accessoryViewsAlpha;
-@property float borderAndAccessoriesAlpha;
-@property(getter=isBorderAndAccessoriesVisible) BOOL borderAndAccessoriesVisible;
-@property(retain) UIView * bottomRightAccessoryView;
-@property(getter=isDimmed) BOOL dimmed;
-@property BOOL drawsBorder;
-@property(retain) UIView * leftAccessoryView;
-@property struct CGSize { float x1; float x2; } leftAccessoryViewOffset;
-@property(copy) NSString * name;
-@property float placeholderScale;
-@property(readonly) struct CGSize { float x1; float x2; } placeholderSize;
-@property(getter=isShadowEnabled) BOOL shadowEnabled;
-@property(readonly) BOOL showsPlaceholder;
-@property float transitionProgress;
-@property(retain) PLVideoView * videoView;
+@property (nonatomic) float accessoryViewsAlpha;
+@property (nonatomic) float borderAndAccessoriesAlpha;
+@property (getter=isBorderAndAccessoriesVisible, nonatomic) BOOL borderAndAccessoriesVisible;
+@property (nonatomic, retain) UIView *bottomRightAccessoryView;
+@property (getter=isDimmed, nonatomic) BOOL dimmed;
+@property (nonatomic) BOOL drawsBorder;
+@property (nonatomic, retain) UIView *leftAccessoryView;
+@property (nonatomic) struct CGSize { float x1; float x2; } leftAccessoryViewOffset;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) float placeholderScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } placeholderSize;
+@property (getter=isShadowEnabled, nonatomic) BOOL shadowEnabled;
+@property (nonatomic, readonly) BOOL showsPlaceholder;
+@property (nonatomic) float transitionProgress;
+@property (nonatomic, retain) PLVideoView *videoView;
 
 + (struct CGSize { float x1; float x2; })badgeOffset;
 + (void)initialize;

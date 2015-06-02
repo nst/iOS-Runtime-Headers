@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class _GCControllerAxisInput;
-
 @interface _GCControllerAxisButtonInput : _GCControllerButtonInput {
     _GCControllerAxisInput *_axis;
     BOOL _positive;
 }
 
-@property _GCControllerAxisInput * axis;
-@property(getter=isPositive,readonly) BOOL positive;
+@property _GCControllerAxisInput *axis;
+@property (getter=isPositive, readonly) BOOL positive;
 
 - (void).cxx_destruct;
 - (BOOL)_setValue:(float)arg1;

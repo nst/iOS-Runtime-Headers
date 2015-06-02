@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSMutableDictionary;
-
 @interface RUINavBarSpinnerManager : NSObject {
     int _activityIndicatorViewStyle;
     NSMutableDictionary *_savedRecords;
 }
 
-@property int activityIndicatorViewStyle;
+@property (nonatomic) int activityIndicatorViewStyle;
 
 + (id)sharedSpinnerManager;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PFAdjustmentSerialization : NSObject {
-}
+@interface PFAdjustmentSerialization : NSObject
 
 + (id)deserializeAdjustmentsFromData:(id)arg1 error:(id*)arg2;
 + (id)deserializeDictionaryFromData:(id)arg1 error:(id*)arg2;

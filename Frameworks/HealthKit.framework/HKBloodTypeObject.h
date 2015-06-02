@@ -6,7 +6,7 @@
     int _bloodType;
 }
 
-@property(readonly) int bloodType;
+@property (readonly) int bloodType;
 
 - (id)_initWithBloodType:(int)arg1;
 - (int)bloodType;

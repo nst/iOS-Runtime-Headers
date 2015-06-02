@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CNContact, NSString;
+@interface PKPaymentShippingAddressDataItem : PKPaymentDataItem
 
-@interface PKPaymentShippingAddressDataItem : PKPaymentDataItem {
-}
-
-@property(readonly) BOOL isShippingEditable;
-@property(readonly) CNContact * shippingAddress;
-@property(readonly) NSString * shippingType;
+@property (nonatomic, readonly) BOOL isShippingEditable;
+@property (nonatomic, readonly) CNContact *shippingAddress;
+@property (nonatomic, readonly) NSString *shippingType;
 
 + (int)dataType;
 

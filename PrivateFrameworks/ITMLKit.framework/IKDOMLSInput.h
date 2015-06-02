@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString;
-
 @interface IKDOMLSInput : IKJSObject <IKJSDOMLSInput> {
     id _byteStream;
     BOOL _certifiedText;
@@ -11,10 +9,10 @@
     NSString *_stringData;
 }
 
-@property(retain) id byteStream;
-@property BOOL certifiedText;
-@property(retain) NSString * encoding;
-@property(retain) NSString * stringData;
+@property (nonatomic, retain) id byteStream;
+@property (nonatomic) BOOL certifiedText;
+@property (nonatomic, retain) NSString *encoding;
+@property (nonatomic, retain) NSString *stringData;
 
 - (void).cxx_destruct;
 - (id)byteStream;

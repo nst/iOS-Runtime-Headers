@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODIState;
-
 @interface ODIHorizonalList3 : NSObject {
     unsigned int mMaxPointCount;
     ODIState *mState;

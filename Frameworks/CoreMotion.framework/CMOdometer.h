@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class <CMOdometerDelegate>, CMOdometerProxy;
-
 @interface CMOdometer : NSObject {
     <CMOdometerDelegate> *_delegate;
     CMOdometerProxy *_odometerProxy;
 }
 
-@property <CMOdometerDelegate> * delegate;
-@property(readonly) CMOdometerProxy * odometerProxy;
+@property (nonatomic) <CMOdometerDelegate> *delegate;
+@property (nonatomic, readonly) CMOdometerProxy *odometerProxy;
 
 + (BOOL)isOdometerAvailableForActivity:(int)arg1;
 
@@ -19,7 +17,7 @@
 - (id)init;
 - (id)odometerProxy;
 - (void)setDelegate:(id)arg1;
-- (void)startOdometerUpdatesForActivity:(int)arg1 withHandler:(id)arg2;
+- (void)startOdometerUpdatesForActivity:(int)arg1 withHandler:(id /* block */)arg2;
 - (void)stopOdometerUpdates;
 
 @end

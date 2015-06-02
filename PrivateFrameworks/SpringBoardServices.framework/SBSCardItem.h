@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class NSData, NSDictionary, NSString, UIImage;
-
 @interface SBSCardItem : NSObject <NSCopying, NSSecureCoding> {
     NSData *_attachmentData;
     NSString *_body;
@@ -16,15 +14,15 @@
     NSDictionary *_userInfo;
 }
 
-@property(copy) NSData * attachmentData;
-@property(copy) NSString * body;
-@property(copy) NSString * bundleName;
-@property(copy) NSData * iconData;
-@property(copy) NSString * identifier;
-@property BOOL requiresPasscode;
-@property(copy) UIImage * thumbnail;
-@property(copy) NSString * title;
-@property(copy) NSDictionary * userInfo;
+@property (nonatomic, copy) NSData *attachmentData;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, copy) NSString *bundleName;
+@property (nonatomic, copy) NSData *iconData;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) BOOL requiresPasscode;
+@property (nonatomic, copy) UIImage *thumbnail;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSDictionary *userInfo;
 
 + (BOOL)supportsSecureCoding;
 

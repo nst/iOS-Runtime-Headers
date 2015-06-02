@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class NSString;
-
 @interface DDTelephoneNumberAction : DDAction {
     NSString *_phoneNumber;
 }

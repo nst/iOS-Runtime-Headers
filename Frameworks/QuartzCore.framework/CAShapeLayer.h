@@ -2,28 +2,22 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface CAShapeLayer : CALayer
 
-@class NSArray, NSString;
-
-@interface CAShapeLayer : CALayer {
-}
-
-@property struct CGColor { }* fillColor;
-@property(copy) NSString * fillRule;
-@property(copy) NSString * lineCap;
-@property(copy) NSArray * lineDashPattern;
+@property struct CGColor { }*fillColor;
+@property (copy) NSString *fillRule;
+@property (copy) NSString *lineCap;
+@property (copy) NSArray *lineDashPattern;
 @property float lineDashPhase;
-@property(copy) NSString * lineJoin;
+@property (copy) NSString *lineJoin;
 @property float lineWidth;
 @property float miterLimit;
-@property struct CGPath { }* path;
-@property struct CGColor { }* strokeColor;
+@property struct CGPath { }*path;
+@property struct CGColor { }*strokeColor;
 @property float strokeEnd;
 @property float strokeStart;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)_hasRenderLayerSubclass;
@@ -44,8 +38,6 @@
 - (float)lineWidth;
 - (float)miterLimit;
 - (struct CGPath { }*)path;
-- (void)setCGLineCap:(int)arg1;
-- (void)setCGLineJoin:(int)arg1;
 - (void)setFillColor:(struct CGColor { }*)arg1;
 - (void)setFillRule:(id)arg1;
 - (void)setLineCap:(id)arg1;
@@ -61,5 +53,10 @@
 - (struct CGColor { }*)strokeColor;
 - (float)strokeEnd;
 - (float)strokeStart;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (void)setCGLineCap:(int)arg1;
+- (void)setCGLineJoin:(int)arg1;
 
 @end

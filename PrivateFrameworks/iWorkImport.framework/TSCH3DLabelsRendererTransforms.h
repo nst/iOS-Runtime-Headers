@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DCamera, TSCH3DScene;
-
 @interface TSCH3DLabelsRendererTransforms : NSObject {
-    struct ChartScenePropertyAccessor { id x1; id x2; } *mAccessor;
+    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
     TSCH3DCamera *mCamera;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
@@ -109,13 +107,13 @@
     } mWorldToStage;
 }
 
-@property(retain) TSCH3DCamera * camera;
-@property(retain) TSCH3DScene * scene;
+@property (nonatomic, retain) TSCH3DCamera *camera;
+@property (nonatomic, retain) TSCH3DScene *scene;
 
 + (id)transforms;
 
 - (id).cxx_construct;
-- (struct ChartScenePropertyAccessor { id x1; id x2; }*)accessor;
+- (struct ChartScenePropertyAccessor { id x1; }*)accessor;
 - (id)camera;
 - (void)dealloc;
 - (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)p_projector;

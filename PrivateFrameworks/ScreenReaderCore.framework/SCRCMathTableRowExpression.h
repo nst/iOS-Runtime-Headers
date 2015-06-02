@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCMathTableRowExpression : SCRCMathArrayExpression {
-}
+@interface SCRCMathTableRowExpression : SCRCMathArrayExpression
 
 - (BOOL)canBeWrappedInLatexMathIndicators;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;

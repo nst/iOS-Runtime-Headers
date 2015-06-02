@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUWelcomeViewControllerDelegate>, CADisplayLink, MPUBorderDrawingCache, NSDate, NSMutableArray, NSString, RUSignInViewController, RUTermsViewController, SKUICircleProgressIndicator, UIAlertView, UIButton, UICollectionView, UILabel, _RUWelcomeTicker;
-
 @interface RUWelcomeViewController : UIViewController <RUSignInViewControllerDelegate, RUTermsViewControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
     int _applicationState;
@@ -28,12 +26,12 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUWelcomeViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isDisplayingLoading) BOOL displayingLoading;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUWelcomeViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayingLoading, nonatomic) BOOL displayingLoading;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;
@@ -45,13 +43,13 @@
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_attemptOptForReason:(int)arg1 allowAuthentication:(BOOL)arg2;
 - (BOOL)_canAutomaticallyOptIn;
-- (void)_checkAcceptedTermsWithCompletionHandler:(id)arg1;
+- (void)_checkAcceptedTermsWithCompletionHandler:(id /* block */)arg1;
 - (void)_completeWithStatus:(int)arg1 didOptIn:(BOOL)arg2 retryInterval:(double)arg3;
 - (void)_createEndScrollingAnimation;
 - (void)_displayLinkAction:(id)arg1;
 - (void)_layoutForOrientation:(int)arg1;
 - (void)_learnMoreAction:(id)arg1;
-- (void)_optInWithActiveAccountWithCompletionHandler:(id)arg1;
+- (void)_optInWithActiveAccountWithCompletionHandler:(id /* block */)arg1;
 - (void)_presentSignInViewController;
 - (void)_scrollWithCurrentTimestemp:(double)arg1;
 - (void)_signInAction:(id)arg1;
@@ -60,7 +58,7 @@
 - (void)_updateDisplayLinkStateAnimated:(BOOL)arg1;
 - (void)_updateSignInButtonTitle;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)attemptOptInWithCompletionHandler:(id)arg1;
+- (void)attemptOptInWithCompletionHandler:(id /* block */)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;

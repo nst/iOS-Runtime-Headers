@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSIndexSet;
-
 @interface CalMessageStrings : NSObject {
     NSIndexSet *_indexSetOfCommentStrings;
     NSArray *_strings;
 }
 
-@property(readonly) NSIndexSet * indexSetOfCommentStrings;
-@property(readonly) NSArray * strings;
+@property (nonatomic, readonly) NSIndexSet *indexSetOfCommentStrings;
+@property (nonatomic, readonly) NSArray *strings;
 
 - (void).cxx_destruct;
 - (id)indexSetOfCommentStrings;

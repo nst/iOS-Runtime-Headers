@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary;
-
 @interface _PFGarbageManager : NSObject {
     NSMutableDictionary *_filesToCleanUp;
     NSMutableDictionary *_storeLinksDirs;

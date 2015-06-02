@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WFUserSettings;
-
 @interface WebBookmarkWebFilterSettings : NSObject {
     WFUserSettings *_userSettings;
 }
 
-@property(readonly) WFUserSettings * userSettings;
-@property(getter=isWebFilterEnabled,readonly) BOOL webFilterEnabled;
-@property(getter=isWebFilterWhiteListOnlyModeEnabled,readonly) BOOL webFilterWhiteListOnlyModeEnabled;
+@property (nonatomic, readonly) WFUserSettings *userSettings;
+@property (getter=isWebFilterEnabled, nonatomic, readonly) BOOL webFilterEnabled;
+@property (getter=isWebFilterWhiteListOnlyModeEnabled, nonatomic, readonly) BOOL webFilterWhiteListOnlyModeEnabled;
 
 + (id)sharedWebFilterSettings;
 

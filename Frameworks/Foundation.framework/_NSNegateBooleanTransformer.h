@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSNegateBooleanTransformer : _NSSharedValueTransformer {
-}
+@interface _NSNegateBooleanTransformer : _NSSharedValueTransformer
 
 + (Class)transformedValueClass;
 

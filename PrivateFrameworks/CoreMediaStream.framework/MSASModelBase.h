@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSASModelBase : NSObject {
     struct sqlite3 { } *_db;
     NSObject<OS_dispatch_queue> *_dbQueue;
@@ -13,12 +11,12 @@
     struct __CFDictionary { } *_statements;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * dbQueue;
-@property(readonly) struct sqlite3 { }* dbQueueDB;
-@property BOOL dbWasRecreated;
-@property(readonly) NSString * personID;
-@property(retain) NSObject<OS_dispatch_queue> * statementQueue;
-@property struct __CFDictionary { }* statements;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dbQueue;
+@property (nonatomic, readonly) struct sqlite3 { }*dbQueueDB;
+@property (nonatomic) BOOL dbWasRecreated;
+@property (nonatomic, readonly) NSString *personID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *statementQueue;
+@property (nonatomic) struct __CFDictionary { }*statements;
 
 - (void).cxx_destruct;
 - (void)beginTransaction;
@@ -50,7 +48,7 @@
 - (void)setPersistentString:(id)arg1 forKey:(id)arg2;
 - (void)setStatementQueue:(id)arg1;
 - (void)setStatements:(struct __CFDictionary { }*)arg1;
-- (void)shutDownForDestruction:(BOOL)arg1 completionBlock:(id)arg2;
+- (void)shutDownForDestruction:(BOOL)arg1 completionBlock:(id /* block */)arg2;
 - (struct sqlite3_stmt { }*)statementForString:(id)arg1;
 - (id)statementQueue;
 - (struct __CFDictionary { }*)statements;

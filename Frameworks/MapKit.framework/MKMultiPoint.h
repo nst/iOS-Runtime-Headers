@@ -17,7 +17,7 @@
     struct { double x1; double x2; } *_points;
 }
 
-@property(readonly) unsigned int pointCount;
+@property (nonatomic, readonly) unsigned int pointCount;
 
 - (void)_assignPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)_calculateBounds;

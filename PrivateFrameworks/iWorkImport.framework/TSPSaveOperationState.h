@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMapTable;
-
 @interface TSPSaveOperationState : NSObject {
     NSMapTable *_newDataStorages;
     int _sampleID;
     int _updateType;
 }
 
-@property(readonly) BOOL preserveDocumentUUID;
-@property int sampleID;
-@property(readonly) BOOL shouldUpdate;
-@property(readonly) int updateType;
+@property (nonatomic, readonly) BOOL preserveDocumentUUID;
+@property (nonatomic) int sampleID;
+@property (nonatomic, readonly) BOOL shouldUpdate;
+@property (nonatomic, readonly) int updateType;
 
 - (void).cxx_destruct;
 - (void)addNewStorage:(id)arg1 forData:(id)arg2;
-- (void)enumerateDatasAndStoragesUsingBlock:(id)arg1;
+- (void)enumerateDatasAndStoragesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasNewStorageForData:(id)arg1;
 - (id)init;
 - (id)initWithUpdateType:(int)arg1;

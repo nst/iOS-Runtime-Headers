@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureBubble : TSCHChartFeatureScatter {
-}
+@interface TSCHChartFeatureBubble : TSCHChartFeatureScatter
 
 - (id)defaultDataFileName;
 - (id)filteredStyleOwnersFromStyleOwners:(id)arg1;

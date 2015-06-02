@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIZephyrCandidate : TIKeyboardCandidateSingle {
     BOOL _isFromPhraseDictionary;
     BOOL _isFromTextChecker;
@@ -13,10 +11,10 @@
     BOOL extensionCandidate;
 }
 
-@property(getter=isExtensionCandidate) BOOL extensionCandidate;
-@property BOOL isFromPhraseDictionary;
-@property BOOL isFromTextChecker;
-@property(copy) NSString * label;
+@property (getter=isExtensionCandidate, nonatomic) BOOL extensionCandidate;
+@property (nonatomic) BOOL isFromPhraseDictionary;
+@property (nonatomic) BOOL isFromTextChecker;
+@property (nonatomic, copy) NSString *label;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;

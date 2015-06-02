@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDQueryDataSource : MPUCompletionQueryDataSource {
-}
+@interface MCDQueryDataSource : MPUCompletionQueryDataSource
 
 - (void)_defaultsDidChangeNotification:(id)arg1;
 - (id)_queryForNowPlayingComparisonAtIndex:(unsigned int)arg1;

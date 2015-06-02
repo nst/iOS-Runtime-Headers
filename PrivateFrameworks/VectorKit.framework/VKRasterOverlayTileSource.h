@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
-
 @interface VKRasterOverlayTileSource : VKTileSource {
     NSObject<OS_dispatch_queue> *_homeQ;
     NSMutableArray *_overlays;
     NSObject<OS_dispatch_group> *_renderGroup;
 }
 
-@property(readonly) NSArray * overlays;
+@property (nonatomic, readonly) NSArray *overlays;
 
 - (void)_flush;
 - (void)_queueDraw:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

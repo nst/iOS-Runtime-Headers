@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADBannerView, ADInterstitialAd, NSString, NSURL, UIViewController;
-
 @interface _ADUIViewControllerAdController : NSObject <ADBannerViewDelegate, ADInterstitialAdDelegate, _UIViewControllerContentViewEmbedding> {
     NSString *_bannerAdSection;
     NSString *_bannerAuthUserName;
@@ -20,31 +18,31 @@
     BOOL _presentingFullScreenAd;
 }
 
-@property(copy) NSString * bannerAdSection;
-@property(copy) NSString * bannerAuthUserName;
-@property(copy) NSURL * bannerServerURL;
-@property(retain) ADBannerView * bannerView;
-@property BOOL canDisplayBannerAds;
-@property BOOL canOwnSharedBanner;
-@property(readonly) UIViewController * contentViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDisplayingBannerAd,readonly) BOOL displayingBannerAd;
-@property(readonly) unsigned int hash;
-@property(retain) ADInterstitialAd * interstitialAd;
-@property(copy) NSString * interstitialAdSection;
-@property(copy) NSString * interstitialAuthUserName;
-@property int interstitialPresentationPolicy;
-@property(copy) NSURL * interstitialServerURL;
-@property(getter=isPresentingFullScreenAd) BOOL presentingFullScreenAd;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *bannerAdSection;
+@property (nonatomic, copy) NSString *bannerAuthUserName;
+@property (nonatomic, copy) NSURL *bannerServerURL;
+@property (nonatomic, retain) ADBannerView *bannerView;
+@property (nonatomic) BOOL canDisplayBannerAds;
+@property (nonatomic) BOOL canOwnSharedBanner;
+@property (nonatomic, readonly) UIViewController *contentViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayingBannerAd, nonatomic, readonly) BOOL displayingBannerAd;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ADInterstitialAd *interstitialAd;
+@property (nonatomic, copy) NSString *interstitialAdSection;
+@property (nonatomic, copy) NSString *interstitialAuthUserName;
+@property (nonatomic) int interstitialPresentationPolicy;
+@property (nonatomic, copy) NSURL *interstitialServerURL;
+@property (getter=isPresentingFullScreenAd, nonatomic) BOOL presentingFullScreenAd;
+@property (readonly) Class superclass;
 
 + (id)_sharedBannerView;
 + (void)prepareInterstitialAds;
 
 - (void)_considerTakingBannerViewAnimated:(BOOL)arg1;
 - (void)_hideBannerView;
-- (void)_layoutContentAndBannerViewAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)_layoutContentAndBannerViewAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (BOOL)_presentInterstitialIfReady;
 - (void)_setEmbeddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)bannerAdSection;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NPKProtoHash, NSMutableArray;
-
 @interface NPKProtoResyncNeededRequest : PBRequest <NSCopying> {
     NPKProtoHash *_expectedHash;
     BOOL _fullResyncNeeded;
@@ -16,14 +14,14 @@
     NSMutableArray *_uniqueIDs;
 }
 
-@property(retain) NPKProtoHash * expectedHash;
-@property BOOL fullResyncNeeded;
-@property(readonly) BOOL hasExpectedHash;
-@property BOOL hasFullResyncNeeded;
-@property BOOL hasResyncID;
-@property(retain) NSMutableArray * manifestHashes;
-@property unsigned int resyncID;
-@property(retain) NSMutableArray * uniqueIDs;
+@property (nonatomic, retain) NPKProtoHash *expectedHash;
+@property (nonatomic) BOOL fullResyncNeeded;
+@property (nonatomic, readonly) BOOL hasExpectedHash;
+@property (nonatomic) BOOL hasFullResyncNeeded;
+@property (nonatomic) BOOL hasResyncID;
+@property (nonatomic, retain) NSMutableArray *manifestHashes;
+@property (nonatomic) unsigned int resyncID;
+@property (nonatomic, retain) NSMutableArray *uniqueIDs;
 
 - (void).cxx_destruct;
 - (void)addManifestHashes:(id)arg1;

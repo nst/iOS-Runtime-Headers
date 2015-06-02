@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class IMWeakReference, NSData, NSMutableArray, NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSSet;
-
 @interface IDSSocketPairConnection : NSObject {
     long _bytesReceived;
     int _connectedSocket;
@@ -28,14 +26,14 @@
     BOOL _writeSocketIsResumed;
 }
 
-@property unsigned int fragmentationSize;
-@property(readonly) unsigned int inFlightMessageCount;
-@property unsigned int inFlightMessageCountLowWaterMark;
-@property(readonly) NSSet * inFlightMessages;
-@property(readonly) BOOL isConnected;
-@property(readonly) BOOL isEmpty;
+@property (nonatomic) unsigned int fragmentationSize;
+@property (nonatomic, readonly) unsigned int inFlightMessageCount;
+@property (nonatomic) unsigned int inFlightMessageCountLowWaterMark;
+@property (nonatomic, readonly) NSSet *inFlightMessages;
+@property (nonatomic, readonly) BOOL isConnected;
+@property (nonatomic, readonly) BOOL isEmpty;
 
-- (void)_callDelegateWithBlock:(id)arg1;
+- (void)_callDelegateWithBlock:(id /* block */)arg1;
 - (void)_endSession;
 - (void)_processBytesAvailable;
 - (BOOL)_queueNextOutgoingData;

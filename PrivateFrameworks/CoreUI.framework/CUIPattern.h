@@ -8,7 +8,7 @@
     struct CGImage { } *_patternImage;
 }
 
-@property float alpha;
+@property (nonatomic) float alpha;
 
 - (struct CGPattern { }*)_newPattern;
 - (float)alpha;

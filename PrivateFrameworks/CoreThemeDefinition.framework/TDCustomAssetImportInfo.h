@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CUIRenditionKey, NSDate, NSObject<TDCustomAssetSource>, NSString;
-
 @interface TDCustomAssetImportInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -36,19 +34,19 @@
     int _templateRenderingMode;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
-@property(retain) NSObject<TDCustomAssetSource> * customAsset;
-@property(copy) NSString * elementName;
-@property BOOL isTemplate;
-@property(copy) NSDate * modificationDate;
-@property(copy) NSString * name;
-@property(copy) NSString * partName;
-@property(copy) CUIRenditionKey * renditionKey;
-@property int renditionType;
-@property struct CGSize { float x1; float x2; } resizableSliceSize;
-@property int resizingMode;
-@property struct { float x1; float x2; float x3; float x4; } sliceInsets;
-@property int templateRenderingMode;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
+@property (retain) NSObject<TDCustomAssetSource> *customAsset;
+@property (nonatomic, copy) NSString *elementName;
+@property (nonatomic) BOOL isTemplate;
+@property (nonatomic, copy) NSDate *modificationDate;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *partName;
+@property (nonatomic, copy) CUIRenditionKey *renditionKey;
+@property (nonatomic) int renditionType;
+@property (nonatomic) struct CGSize { float x1; float x2; } resizableSliceSize;
+@property (nonatomic) int resizingMode;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } sliceInsets;
+@property (nonatomic) int templateRenderingMode;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (id)customAsset;

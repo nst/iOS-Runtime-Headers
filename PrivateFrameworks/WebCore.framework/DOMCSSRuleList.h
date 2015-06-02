@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMCSSRuleList : DOMObject {
-}
+@interface DOMCSSRuleList : DOMObject
 
-@property(readonly) unsigned int length;
+@property (readonly) unsigned int length;
 
 - (void)dealloc;
 - (void)finalize;

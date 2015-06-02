@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitDelay : AVAudioUnitEffect {
-}
+@interface AVAudioUnitDelay : AVAudioUnitEffect
 
-@property double delayTime;
-@property float feedback;
-@property float lowPassCutoff;
-@property float wetDryMix;
+@property (nonatomic) double delayTime;
+@property (nonatomic) float feedback;
+@property (nonatomic) float lowPassCutoff;
+@property (nonatomic) float wetDryMix;
 
 - (double)delayTime;
 - (float)feedback;

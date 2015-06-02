@@ -2,19 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@interface CNMutablePostalAddress : CNPostalAddress
 
-@interface CNMutablePostalAddress : CNPostalAddress {
-}
-
-@property(copy) NSString * ISOCountryCode;
-@property(copy) NSString * city;
-@property(copy) NSString * country;
-@property(copy) NSString * postalCode;
-@property(copy) NSString * state;
-@property(copy) NSString * street;
-@property(copy) NSString * subAdministrativeArea;
-@property(copy) NSString * subLocality;
+@property (copy) NSString *ISOCountryCode;
+@property (copy) NSString *city;
+@property (copy) NSString *country;
+@property (copy) NSString *postalCode;
+@property (copy) NSString *state;
+@property (copy) NSString *street;
+@property (copy) NSString *subAdministrativeArea;
+@property (copy) NSString *subLocality;
 
 + (id)postalAddress;
 

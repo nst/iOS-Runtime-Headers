@@ -2,16 +2,9 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableDictionary, NSSharedKeySet;
-
 @interface NSSharedKeyDictionary : NSMutableDictionary {
     unsigned int _count;
-    int (*_ifkIMP)();
+    int (*_ifkIMP;
     NSSharedKeySet *_keyMap;
     unsigned long _mutations;
     NSMutableDictionary *_sideDic;
@@ -23,10 +16,10 @@
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)finalize;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)initWithCoder:(id)arg1;

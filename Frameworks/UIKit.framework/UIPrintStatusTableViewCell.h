@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface UIPrintStatusTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
     UILabel *_hostLabel;
     UILabel *_titleLabel;
 }
 
-@property(retain) UILabel * hostLabel;
-@property BOOL showActive;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UILabel *hostLabel;
+@property (nonatomic) BOOL showActive;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void)dealloc;
 - (id)hostLabel;

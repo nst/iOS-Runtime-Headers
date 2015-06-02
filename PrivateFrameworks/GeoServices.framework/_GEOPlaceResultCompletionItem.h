@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOMapItem>, GEOPlaceResult, NSArray, NSData, NSString;
-
 @interface _GEOPlaceResultCompletionItem : NSObject <GEOCompletionItem, _GEOCompletionSearchHint> {
     NSData *_completionMetaData;
     GEOPlaceResult *_placeResult;
     NSString *_query;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * displayLines;
-@property(readonly) NSData * entryMetadata;
-@property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * metadata;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *displayLines;
+@property (nonatomic, readonly) NSData *entryMetadata;
+@property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *metadata;
+@property (readonly) Class superclass;
 
 - (id)calloutTitle;
 - (id)completionLocation;

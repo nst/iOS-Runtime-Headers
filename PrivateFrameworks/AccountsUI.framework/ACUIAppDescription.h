@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class NSString, UIImage;
-
 @interface ACUIAppDescription : NSObject {
     NSString *_bundleID;
     UIImage *_icon;
@@ -12,11 +10,11 @@
     NSString *_publisher;
 }
 
-@property(copy) NSString * bundleID;
-@property(retain) UIImage * icon;
-@property(copy) NSString * name;
-@property(copy) NSString * persistentID;
-@property(copy) NSString * publisher;
+@property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *persistentID;
+@property (nonatomic, copy) NSString *publisher;
 
 - (void).cxx_destruct;
 - (id)bundleID;

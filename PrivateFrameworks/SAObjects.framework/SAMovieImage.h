@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SAMovieResolution;
+@interface SAMovieImage : AceObject <SAAceSerializable>
 
-@interface SAMovieImage : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAMovieResolution * resolution;
-@property(readonly) Class superclass;
-@property(copy) NSURL * uri;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAMovieResolution *resolution;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *uri;
 
 + (id)image;
 + (id)imageWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface MSEmailModel : NSObject <NSCoding> {
     NSArray *_bcc;
     NSString *_body;
@@ -14,13 +12,13 @@
     int _type;
 }
 
-@property(copy) NSArray * bcc;
-@property(retain) NSString * body;
-@property(copy) NSArray * cc;
-@property(retain) NSURL * reference;
-@property(copy) NSString * subject;
-@property(copy) NSArray * to;
-@property int type;
+@property (nonatomic, copy) NSArray *bcc;
+@property (nonatomic, retain) NSString *body;
+@property (nonatomic, copy) NSArray *cc;
+@property (nonatomic, retain) NSURL *reference;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSArray *to;
+@property (nonatomic) int type;
 
 - (id)bcc;
 - (id)body;

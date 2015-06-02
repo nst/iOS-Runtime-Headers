@@ -27,19 +27,19 @@
     int _templateRenderingMode;
 }
 
-@property struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
-@property int blendMode;
-@property struct { float x1; float x2; float x3; float x4; } edgeInsets;
-@property int exifOrientation;
-@property int idiom;
-@property int imageType;
-@property BOOL isTemplate;
-@property int resizingMode;
-@property float scale;
-@property int sizeClassHorizontal;
-@property int sizeClassVertical;
-@property int subtype;
-@property int templateRenderingMode;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
+@property (nonatomic) int blendMode;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) int exifOrientation;
+@property (nonatomic) int idiom;
+@property (nonatomic) int imageType;
+@property (nonatomic) BOOL isTemplate;
+@property (nonatomic) int resizingMode;
+@property (nonatomic) float scale;
+@property (nonatomic) int sizeClassHorizontal;
+@property (nonatomic) int sizeClassVertical;
+@property (nonatomic) int subtype;
+@property (nonatomic) int templateRenderingMode;
 
 - (struct { float x1; float x2; float x3; float x4; })alignmentEdgeInsets;
 - (int)blendMode;

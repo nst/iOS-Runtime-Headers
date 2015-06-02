@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLPixelImageBuffer, UIImage;
-
 @interface BLRetouchImageLayer : BLRetouchLayer {
     UIImage *_image;
     BLPixelImageBuffer *_imageBuffer;
     float _imageScaleFactor;
 }
 
-@property(retain) UIImage * image;
-@property(retain) BLPixelImageBuffer * imageBuffer;
-@property float imageScaleFactor;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) BLPixelImageBuffer *imageBuffer;
+@property (nonatomic) float imageScaleFactor;
 
 - (void)dealloc;
 - (id)image;

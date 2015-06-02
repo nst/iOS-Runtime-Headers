@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSArray;
-
 @interface LKNSArrayCodingProxy : CACodingProxy {
     NSArray *_array;
 }

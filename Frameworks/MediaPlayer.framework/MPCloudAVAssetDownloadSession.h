@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPCloudAssetDownloadSessionIdentifier, MPStoreItemContext;
-
 @interface MPCloudAVAssetDownloadSession : AVAssetDownloadSession {
     MPStoreItemContext *_context;
     MPCloudAssetDownloadSessionIdentifier *_downloadSessionIdentifier;
     BOOL _isStreamingQuality;
 }
 
-@property(retain) MPStoreItemContext * context;
-@property(retain) MPCloudAssetDownloadSessionIdentifier * downloadSessionIdentifier;
-@property BOOL isStreamingQuality;
+@property (nonatomic, retain) MPStoreItemContext *context;
+@property (nonatomic, retain) MPCloudAssetDownloadSessionIdentifier *downloadSessionIdentifier;
+@property (nonatomic) BOOL isStreamingQuality;
 
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3 context:(id)arg4;
 

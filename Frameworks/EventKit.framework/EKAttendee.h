@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@interface EKAttendee : EKParticipant
 
-@interface EKAttendee : EKParticipant {
-}
-
-@property BOOL commentChanged;
-@property(readonly) NSDate * lastModifiedParticipationStatus;
-@property int pendingStatus;
-@property BOOL statusChanged;
+@property (nonatomic) BOOL commentChanged;
+@property (nonatomic, readonly) NSDate *lastModifiedParticipationStatus;
+@property (nonatomic) int pendingStatus;
+@property (nonatomic) BOOL statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;

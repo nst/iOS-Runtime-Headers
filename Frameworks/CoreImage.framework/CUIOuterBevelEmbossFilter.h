@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage, NSNumber;
-
 @interface CUIOuterBevelEmbossFilter : CIFilter {
     NSNumber *inputAngle;
     CIColor *inputHighlightColor;
@@ -14,13 +12,13 @@
     NSNumber *inputSoften;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIColor * inputHighlightColor;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputRadius;
-@property(retain) CIColor * inputShadowColor;
-@property(retain) NSNumber * inputSize;
-@property(retain) NSNumber * inputSoften;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIColor *inputHighlightColor;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputRadius;
+@property (nonatomic, retain) CIColor *inputShadowColor;
+@property (nonatomic, retain) NSNumber *inputSize;
+@property (nonatomic, retain) NSNumber *inputSoften;
 
 + (id)customAttributes;
 

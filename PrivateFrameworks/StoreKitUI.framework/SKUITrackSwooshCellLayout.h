@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UILabel, UIView;
-
 @interface SKUITrackSwooshCellLayout : SKUIItemCellLayout {
     NSString *_artistName;
     UIView *_bottomBorderView;
@@ -18,13 +16,13 @@
     unsigned int _visibleFields;
 }
 
-@property(copy) NSString * artistName;
-@property(copy) NSString * collectionName;
-@property int layoutIdiom;
-@property int lockupSize;
-@property(copy) NSString * subtitleFormatString;
-@property(copy) NSString * title;
-@property unsigned int visibleFields;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, copy) NSString *collectionName;
+@property (nonatomic) int layoutIdiom;
+@property (nonatomic) int lockupSize;
+@property (nonatomic, copy) NSString *subtitleFormatString;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) unsigned int visibleFields;
 
 - (void).cxx_destruct;
 - (void)_delayedReloadSubviewBackgroundColors;

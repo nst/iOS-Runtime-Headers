@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassField, UITextView;
-
 @interface PKBackFieldTableCell : UITableViewCell {
     PKPassField *_field;
     BOOL _showLinks;
     UITextView *_valueTextView;
 }
 
-@property(retain) PKPassField * field;
-@property BOOL showLinks;
+@property (nonatomic, retain) PKPassField *field;
+@property (nonatomic) BOOL showLinks;
 
 + (id)_linkColor;
 + (id)_linkTextAttributes;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UIAlertControllerStackManager : NSObject {
     NSMutableArray *_alertControllerStack;
     NSMutableArray *_hiddenAlertControllers;

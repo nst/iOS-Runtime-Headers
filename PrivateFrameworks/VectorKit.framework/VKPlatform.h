@@ -13,30 +13,30 @@
     BOOL _useCheapTrafficShader;
 }
 
-@property(readonly) BOOL canMakeSharingThumbnails;
-@property(readonly) BOOL isPad;
-@property(readonly) BOOL lowPerformanceDevice;
-@property(readonly) float mainScreenPPI;
-@property(readonly) float mainScreenScale;
-@property(readonly) float maxContentScaleForRendering;
-@property(readonly) unsigned int memorySize;
-@property(readonly) BOOL proceduralRoadAlpha;
-@property(readonly) BOOL roadsWithSimpleLineMeshesAvailable;
-@property(readonly) double routeLineSimplificationEpsilon;
-@property(readonly) BOOL shouldDrawWhenReady;
-@property(readonly) BOOL shouldPregenerateLabelGlyphs;
-@property(readonly) BOOL shouldStyleLabelsInParallel;
-@property(readonly) BOOL shouldUseTrafficAlphaHack;
-@property(readonly) BOOL supports3DBuildingStrokes;
-@property(readonly) BOOL supports3DBuildings;
-@property(readonly) BOOL supportsBuildingShadows;
-@property(readonly) BOOL supportsBuildingStrokes;
-@property(readonly) BOOL supportsHiResBuildings;
-@property(readonly) BOOL supportsHiResRTT;
-@property(readonly) unsigned int tileDecodeQueueWidth;
-@property(readonly) unsigned int tileMaximumLimit;
-@property(readonly) unsigned int tilePrefetchNumberOfScreens;
-@property(readonly) BOOL useCheapTrafficShader;
+@property (nonatomic, readonly) BOOL canMakeSharingThumbnails;
+@property (nonatomic, readonly) BOOL isPad;
+@property (nonatomic, readonly) BOOL lowPerformanceDevice;
+@property (nonatomic, readonly) float mainScreenPPI;
+@property (nonatomic, readonly) float mainScreenScale;
+@property (nonatomic, readonly) float maxContentScaleForRendering;
+@property (nonatomic, readonly) unsigned int memorySize;
+@property (nonatomic, readonly) BOOL proceduralRoadAlpha;
+@property (nonatomic, readonly) BOOL roadsWithSimpleLineMeshesAvailable;
+@property (nonatomic, readonly) double routeLineSimplificationEpsilon;
+@property (nonatomic, readonly) BOOL shouldDrawWhenReady;
+@property (nonatomic, readonly) BOOL shouldPregenerateLabelGlyphs;
+@property (nonatomic, readonly) BOOL shouldStyleLabelsInParallel;
+@property (nonatomic, readonly) BOOL shouldUseTrafficAlphaHack;
+@property (nonatomic, readonly) BOOL supports3DBuildingStrokes;
+@property (nonatomic, readonly) BOOL supports3DBuildings;
+@property (nonatomic, readonly) BOOL supportsBuildingShadows;
+@property (nonatomic, readonly) BOOL supportsBuildingStrokes;
+@property (nonatomic, readonly) BOOL supportsHiResBuildings;
+@property (nonatomic, readonly) BOOL supportsHiResRTT;
+@property (nonatomic, readonly) unsigned int tileDecodeQueueWidth;
+@property (nonatomic, readonly) unsigned int tileMaximumLimit;
+@property (nonatomic, readonly) unsigned int tilePrefetchNumberOfScreens;
+@property (nonatomic, readonly) BOOL useCheapTrafficShader;
 
 + (id)sharedPlatform;
 

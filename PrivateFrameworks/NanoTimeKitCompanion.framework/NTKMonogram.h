@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKMonogram : NSObject {
-}
+@interface NTKMonogram : NSObject
 
 + (id)monogram;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSMutableData;
-
 @interface BLBrushStroke : AutoEncodeDecodeObject {
     int _destinationWidth;
     BOOL _erase;
@@ -35,19 +33,19 @@
     int _type;
 }
 
-@property int destinationWidth;
-@property BOOL erase;
-@property struct CGPoint { float x1; float x2; } lastPoint;
-@property BOOL magicEdges;
-@property(retain) NSMutableData * offsets;
-@property float opacity;
-@property float size;
-@property float softness;
-@property struct CGPoint { float x1; float x2; } startPoint;
-@property BOOL startPointSet;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } strokeRect;
-@property double timestamp;
-@property int type;
+@property (nonatomic) int destinationWidth;
+@property (nonatomic) BOOL erase;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastPoint;
+@property (nonatomic) BOOL magicEdges;
+@property (nonatomic, retain) NSMutableData *offsets;
+@property (nonatomic) float opacity;
+@property (nonatomic) float size;
+@property (nonatomic) float softness;
+@property (nonatomic) struct CGPoint { float x1; float x2; } startPoint;
+@property (nonatomic) BOOL startPointSet;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } strokeRect;
+@property (nonatomic) double timestamp;
+@property (nonatomic) int type;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
@@ -60,7 +58,7 @@
 - (int)numberOfPoints;
 - (id)offsets;
 - (float)opacity;
-- (void)replayPointsWithScale:(float)arg1 pointBlock:(id)arg2;
+- (void)replayPointsWithScale:(float)arg1 pointBlock:(id /* block */)arg2;
 - (void)setDestinationWidth:(int)arg1;
 - (void)setErase:(BOOL)arg1;
 - (void)setLastPoint:(struct CGPoint { float x1; float x2; })arg1;

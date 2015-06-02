@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUINavigationBarContext, SKUIViewElementLayoutContext, UIView;
-
 @interface SKUINavigationBarSectionController : NSObject <SKUIArtworkRequestDelegate> {
     SKUINavigationBarContext *_navigationBarContext;
     SKUIViewElementLayoutContext *_viewLayoutContext;
 }
 
-@property(retain) SKUINavigationBarContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) UIView * view;
-@property(readonly) SKUIViewElementLayoutContext * viewLayoutContext;
+@property (nonatomic, retain) SKUINavigationBarContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *view;
+@property (nonatomic, readonly) SKUIViewElementLayoutContext *viewLayoutContext;
 
 - (void).cxx_destruct;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;

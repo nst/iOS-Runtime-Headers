@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSEnumerator, NSString;
-
 @interface AVAssetTrackEnumerator : NSEnumerator {
     NSEnumerator *_enumerator;
     NSArray *_mediaCharacteristics;

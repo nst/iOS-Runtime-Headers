@@ -6,7 +6,7 @@
     BOOL _ignoresGeometryChanges;
 }
 
-@property BOOL ignoresGeometryChanges;
+@property (nonatomic) BOOL ignoresGeometryChanges;
 
 + (id)_defaultAttributes;
 

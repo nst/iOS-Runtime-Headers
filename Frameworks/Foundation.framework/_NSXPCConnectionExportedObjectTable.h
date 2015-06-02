@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock;
-
 @interface _NSXPCConnectionExportedObjectTable : NSObject {
     NSLock *_lock;
     unsigned long long _next;

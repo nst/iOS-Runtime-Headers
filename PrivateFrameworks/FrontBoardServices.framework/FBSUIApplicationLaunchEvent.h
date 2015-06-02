@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSUIApplicationLaunchEvent : FBSWorkspaceEvent {
-}
+@interface FBSUIApplicationLaunchEvent : FBSWorkspaceEvent
 
 @end

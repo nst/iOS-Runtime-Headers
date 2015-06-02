@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
-
 @interface SSKeybagRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountID;
     id _contentIdentifier;
     int _options;
 }
 
-@property(readonly) NSNumber * accountID;
-@property(copy) id contentIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly) NSNumber *accountID;
+@property (copy) id contentIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int keybagOptions;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (id)accountID;
 - (id)accountIdentifier;
@@ -28,6 +26,6 @@
 - (int)keybagOptions;
 - (void)setContentIdentifier:(id)arg1;
 - (void)setKeybagOptions:(int)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
 
 @end

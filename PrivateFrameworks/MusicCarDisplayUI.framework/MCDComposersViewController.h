@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDComposersViewController : MCDArtistsViewController {
-}
+@interface MCDComposersViewController : MCDArtistsViewController
 
 + (int)containerItemType;
 + (id)itemPersistentIDProperty;

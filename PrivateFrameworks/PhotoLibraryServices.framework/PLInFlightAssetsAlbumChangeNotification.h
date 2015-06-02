@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet, NSOrderedSet, PLAssetContainerChangeNotification, PLInFlightAssetsAlbum;
-
 @interface PLInFlightAssetsAlbumChangeNotification : PLAssetContainerChangeNotification {
     PLInFlightAssetsAlbum *_album;
     PLAssetContainerChangeNotification *_backingNotification;
@@ -12,9 +10,9 @@
     NSMutableSet *_uniquedOIDs;
 }
 
-@property(retain,readonly) PLInFlightAssetsAlbum * album;
-@property(retain,readonly) PLAssetContainerChangeNotification * backingNotification;
-@property(retain,readonly) NSOrderedSet * oldOIDs;
+@property (nonatomic, readonly, retain) PLInFlightAssetsAlbum *album;
+@property (nonatomic, readonly, retain) PLAssetContainerChangeNotification *backingNotification;
+@property (nonatomic, readonly, retain) NSOrderedSet *oldOIDs;
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 

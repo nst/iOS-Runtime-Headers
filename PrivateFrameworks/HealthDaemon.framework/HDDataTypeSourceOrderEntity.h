@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDataTypeSourceOrderEntity : HDHealthEntity {
-}
+@interface HDDataTypeSourceOrderEntity : HDHealthEntity
 
 + (id)_predicateForSourceID:(id)arg1;
 + (id)createTableSQL;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WebBookmark, WebBookmarkCollection;
-
 @interface BAChangeRecord : NSObject {
     WebBookmark *_bookmark;
     int _changeType;
     WebBookmarkCollection *_collection;
 }
 
-@property(readonly) WebBookmark * bookmark;
-@property(readonly) int changeType;
-@property(readonly) WebBookmarkCollection * collection;
+@property (nonatomic, readonly) WebBookmark *bookmark;
+@property (nonatomic, readonly) int changeType;
+@property (nonatomic, readonly) WebBookmarkCollection *collection;
 
 - (id)bookmark;
 - (int)changeType;

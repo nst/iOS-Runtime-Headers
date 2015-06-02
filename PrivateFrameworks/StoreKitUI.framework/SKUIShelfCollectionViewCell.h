@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UICollectionView;
-
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView> {
     UICollectionView *_collectionView;
     struct UIEdgeInsets { 
@@ -15,13 +13,13 @@
     BOOL _rendersWithPerspective;
 }
 
-@property(retain) UICollectionView * collectionView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL rendersWithPerspective;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL rendersWithPerspective;
+@property (readonly) Class superclass;
 
 + (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 

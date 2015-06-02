@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKUIConstrainedFontUtilities : NSObject {
-}
+@interface EKUIConstrainedFontUtilities : NSObject
 
 + (void)clearFontCaches;
 + (id)constrainedBodyBoldTextLabelFont;

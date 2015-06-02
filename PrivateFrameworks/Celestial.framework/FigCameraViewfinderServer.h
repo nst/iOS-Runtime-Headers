@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
-
 @interface FigCameraViewfinderServer : NSObject <FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableArray *_connections;
     NSXPCListener *_serviceListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)start;
 

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMDocument;
+@interface DOMAbstractView : DOMObject
 
-@interface DOMAbstractView : DOMObject {
-}
-
-@property(readonly) DOMDocument * document;
+@property (readonly) DOMDocument *document;
 
 - (void)_disconnectFrame;
 - (void)dealloc;

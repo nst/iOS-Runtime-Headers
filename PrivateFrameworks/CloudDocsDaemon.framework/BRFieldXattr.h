@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSString;
-
 @interface BRFieldXattr : PBCodable <NSCopying> {
     NSString *_name;
     NSData *_value;
 }
 
-@property(retain) NSString * name;
-@property(retain) NSData * value;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSData *value;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

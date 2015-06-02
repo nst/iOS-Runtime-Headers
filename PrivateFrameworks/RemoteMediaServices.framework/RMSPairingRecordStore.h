@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSMutableDictionary;
-
 @interface RMSPairingRecordStore : NSObject {
     NSMutableDictionary *_pairingRecords;
 }

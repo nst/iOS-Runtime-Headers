@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURLAuthenticationChallenge;
-
 @interface ISURLAuthenticationChallenge : ISAuthenticationChallenge {
     NSURLAuthenticationChallenge *_challenge;
 }

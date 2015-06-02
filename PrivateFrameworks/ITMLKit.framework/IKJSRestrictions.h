@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString;
+@interface IKJSRestrictions : IKJSObject <IKJSRestrictions>
 
-@interface IKJSRestrictions : IKJSObject <IKJSRestrictions> {
-}
-
-@property(readonly) BOOL allowsErotica;
-@property(readonly) BOOL allowsExplicit;
-@property(readonly) BOOL appInstallationAllowed;
-@property(readonly) int maxAppRank;
-@property(readonly) NSString * maxAppRating;
-@property(readonly) int maxMovieRank;
-@property(readonly) int maxTVShowRank;
+@property (nonatomic, readonly) BOOL allowsErotica;
+@property (nonatomic, readonly) BOOL allowsExplicit;
+@property (nonatomic, readonly) BOOL appInstallationAllowed;
+@property (nonatomic, readonly) int maxAppRank;
+@property (nonatomic, readonly) NSString *maxAppRating;
+@property (nonatomic, readonly) int maxMovieRank;
+@property (nonatomic, readonly) int maxTVShowRank;
 
 + (id)restrictionsDidChangeNotificationName;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKShareeViewControllerDelegate>, EKSharee, UIAlertController;
-
 @interface EKShareeViewController : UITableViewController {
     BOOL _allowEditing;
     BOOL _allowResendInvitations;
@@ -13,11 +11,11 @@
     EKSharee *_sharee;
 }
 
-@property BOOL allowEditing;
-@property BOOL allowResendInvitations;
-@property BOOL allowStopSharing;
-@property <EKShareeViewControllerDelegate> * delegate;
-@property(retain) EKSharee * sharee;
+@property (nonatomic) BOOL allowEditing;
+@property (nonatomic) BOOL allowResendInvitations;
+@property (nonatomic) BOOL allowStopSharing;
+@property (nonatomic) <EKShareeViewControllerDelegate> *delegate;
+@property (nonatomic, retain) EKSharee *sharee;
 
 - (void).cxx_destruct;
 - (void)_allowEditingChanged:(id)arg1;

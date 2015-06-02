@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVRunLoopCondition, AVWeakReference, NSArray;
-
 @interface AVAssetReaderOutputInternal : NSObject {
     BOOL alwaysCopiesSampleData;
     BOOL currentConfigurationIsFinal;

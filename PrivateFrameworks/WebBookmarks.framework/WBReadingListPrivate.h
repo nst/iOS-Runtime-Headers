@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class NSString, WebBookmarksXPCConnection;
-
 @interface WBReadingListPrivate : NSObject <WebBookmarksXPCConnectionDelegate> {
     WebBookmarksXPCConnection *_connection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;

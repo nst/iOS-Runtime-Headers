@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString;
-
 @interface MFMailSignatureController : NSObject {
     NSString *_currentSignatureString;
     BOOL _firstSignaturePassComplete;

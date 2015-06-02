@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface ACSystemConfigManager : NSObject {
     int _applySkipCount;
     NSObject<OS_dispatch_queue> *_preferencesQueue;

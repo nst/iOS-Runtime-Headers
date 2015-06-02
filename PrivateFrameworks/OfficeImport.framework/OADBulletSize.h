@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADBulletSize : NSObject {
-}
+@interface OADBulletSize : NSObject
 
 @end

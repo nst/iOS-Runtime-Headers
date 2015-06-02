@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface MBAppPlugin : MBContainer {
     NSArray *_groups;
 }
 
-@property(readonly) NSString * bundleDir;
-@property(readonly) NSDictionary * entitlements;
-@property(retain) NSArray * groups;
+@property (nonatomic, readonly) NSString *bundleDir;
+@property (nonatomic, readonly) NSDictionary *entitlements;
+@property (nonatomic, retain) NSArray *groups;
 
 + (id)appPluginWithPropertyList:(id)arg1;
 

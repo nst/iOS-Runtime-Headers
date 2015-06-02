@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKContactsSearchManagerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface CKContactsSearchManager : NSObject <MFContactsSearchConsumer> {
     NSArray *_conversationCache;
     NSNumber *_currentSearchTaskID;
@@ -17,20 +15,20 @@
     BOOL _suppressGroupSuggestions;
 }
 
-@property(copy) NSArray * conversationCache;
-@property(retain) NSNumber * currentSearchTaskID;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKContactsSearchManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * enteredRecipients;
-@property(readonly) unsigned int hash;
-@property unsigned int pendingSearchTypes;
-@property(retain) NSMutableDictionary * recentsDateMap;
-@property(retain) MFContactsSearchManager * searchManager;
-@property(retain) MFContactsSearchResultsModel * searchResultsModel;
-@property(retain) NSString * searchText;
-@property(readonly) Class superclass;
-@property BOOL suppressGroupSuggestions;
+@property (nonatomic, copy) NSArray *conversationCache;
+@property (nonatomic, retain) NSNumber *currentSearchTaskID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKContactsSearchManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *enteredRecipients;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int pendingSearchTypes;
+@property (nonatomic, retain) NSMutableDictionary *recentsDateMap;
+@property (nonatomic, retain) MFContactsSearchManager *searchManager;
+@property (nonatomic, retain) MFContactsSearchResultsModel *searchResultsModel;
+@property (nonatomic, retain) NSString *searchText;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressGroupSuggestions;
 
 - (void)_generateConversationCache;
 - (void)_sortSearchResultsWithCoreRecentsResults:(id)arg1 namedSearchResults:(id)arg2;

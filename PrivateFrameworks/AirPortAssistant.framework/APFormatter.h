@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSCharacterSet;
-
 @interface APFormatter : NSFormatter {
     NSCharacterSet *_characterSet;
     NSCharacterSet *_invertedCharacterSet;
     unsigned int _maxLength;
 }
 
-@property unsigned int maxLength;
+@property (nonatomic) unsigned int maxLength;
 
 + (id)asciiFormatter:(unsigned int)arg1;
 + (id)asciiSet;

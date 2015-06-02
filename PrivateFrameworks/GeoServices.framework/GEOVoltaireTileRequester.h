@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOVoltaireSimpleTileRequester, NSMutableArray, NSString, NSThread, NSTimer;
-
 @interface GEOVoltaireTileRequester : GEOTileRequester <GEOResourceManifestTileGroupObserver, GEOTileRequesterDelegate, GEOVoltaireMultiTileDownloaderDelegate> {
     NSMutableArray *_activeDownloads;
     NSTimer *_activeTileGroupTimeoutTimer;
@@ -12,10 +10,10 @@
     NSThread *_startThread;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (unsigned int)expiringTilesetsCount;
 + (Class)multiDownloaderClass;

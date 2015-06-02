@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPlaceSearchFeedbackResponse : PBCodable <NSCopying> {
-}
+@interface GEOPlaceSearchFeedbackResponse : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

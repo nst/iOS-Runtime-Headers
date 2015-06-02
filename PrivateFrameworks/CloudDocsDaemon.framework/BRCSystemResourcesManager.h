@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRReachabilityMonitor, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface BRCSystemResourcesManager : NSObject <BRReachabilityObserver> {
     NSHashTable *_appListObservers;
     BOOL _invalidated;
@@ -25,12 +23,12 @@
     NSHashTable *_reachabilityObservers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isNetworkReachable;
-@property(readonly) BOOL isPowerOK;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isNetworkReachable;
+@property (readonly) BOOL isPowerOK;
+@property (readonly) Class superclass;
 
 + (id)manager;
 

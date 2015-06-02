@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingSetValue : SASettingCommand {
-}
+@interface SASettingSetValue : SASettingCommand
 
-@property BOOL dryRun;
-@property BOOL failOnSiriDisconnectWarnings;
+@property (nonatomic) BOOL dryRun;
+@property (nonatomic) BOOL failOnSiriDisconnectWarnings;
 
 + (id)setValue;
 + (id)setValueWithDictionary:(id)arg1 context:(id)arg2;

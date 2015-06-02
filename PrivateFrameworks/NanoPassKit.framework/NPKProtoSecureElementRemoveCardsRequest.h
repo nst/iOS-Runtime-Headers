@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableArray;
-
 @interface NPKProtoSecureElementRemoveCardsRequest : PBRequest <NSCopying> {
     NSMutableArray *_cardAIDs;
 }
 
-@property(retain) NSMutableArray * cardAIDs;
+@property (nonatomic, retain) NSMutableArray *cardAIDs;
 
 - (void).cxx_destruct;
 - (void)addCardAIDs:(id)arg1;

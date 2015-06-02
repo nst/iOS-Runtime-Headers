@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUTrackDownloadViewDelegate>, MPAVItem, MPMediaItem, MPUMediaDownloadObserver, NSArray, NSString, RadioTrack, SKUIItemOfferButton, UIViewController;
-
 @interface RUTrackDownloadView : UIView <MPStoreDownloadManagerObserver, SKStoreProductViewControllerDelegate, SKUIItemOfferButtonDelegate> {
     struct UIEdgeInsets { 
         float top; 
@@ -35,24 +33,24 @@
     UIViewController *_viewControllerForPresenting;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
-@property(setter=setAVItem:,retain) MPAVItem * avItem;
-@property(copy) NSString * baseOriginator;
-@property int buyButtonTitleStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUTrackDownloadViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGSize { float x1; float x2; } overrideSize;
-@property int overrideState;
-@property(copy) NSString * overrideTitleText;
-@property(retain) RadioTrack * radioTrack;
-@property(readonly) int state;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property(readonly) Class superclass;
-@property BOOL supportsAlbumOnly;
-@property UIViewController * viewControllerForPresenting;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property (setter=setAVItem:, nonatomic, retain) MPAVItem *avItem;
+@property (nonatomic, copy) NSString *baseOriginator;
+@property (nonatomic) int buyButtonTitleStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUTrackDownloadViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGSize { float x1; float x2; } overrideSize;
+@property (nonatomic) int overrideState;
+@property (nonatomic, copy) NSString *overrideTitleText;
+@property (nonatomic, retain) RadioTrack *radioTrack;
+@property (nonatomic, readonly) int state;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL supportsAlbumOnly;
+@property (nonatomic) UIViewController *viewControllerForPresenting;
 
 - (void).cxx_destruct;
 - (long long)_albumStoreID;

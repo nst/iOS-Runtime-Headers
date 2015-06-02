@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOComposedDrivingRouteLeg : GEOComposedRouteLeg {
-}
+@interface GEOComposedDrivingRouteLeg : GEOComposedRouteLeg
 
 - (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 

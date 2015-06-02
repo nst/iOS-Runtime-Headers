@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, SKUIIndexBarViewElement, SKUINavigationBarViewElement;
-
 @interface SKUIStackTemplateElement : SKUIViewElement {
     NSMutableArray *_collectionElements;
 }
 
-@property(readonly) NSArray * collectionElements;
-@property(readonly) SKUIIndexBarViewElement * indexBarViewElement;
-@property(readonly) SKUINavigationBarViewElement * navigationBarElement;
-@property(readonly) int numberOfSplits;
+@property (nonatomic, readonly) NSArray *collectionElements;
+@property (nonatomic, readonly) SKUIIndexBarViewElement *indexBarViewElement;
+@property (nonatomic, readonly) SKUINavigationBarViewElement *navigationBarElement;
+@property (nonatomic, readonly) int numberOfSplits;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSString;
-
 @interface CoreThemeConstantHelper : NSObject {
     NSString *_displayName;
     unsigned int _identifier;

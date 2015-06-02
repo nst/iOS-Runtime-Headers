@@ -2,23 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _PUSettingsController : PTSettingsController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _onViewDidDisappearBlock;
-
+    id /* block */ _onViewDidDisappearBlock;
 }
 
-@property(copy) id onViewDidDisappearBlock;
+@property (nonatomic, copy) id /* block */ onViewDidDisappearBlock;
 
 - (void).cxx_destruct;
-- (id)onViewDidDisappearBlock;
-- (void)setOnViewDidDisappearBlock:(id)arg1;
+- (id /* block */)onViewDidDisappearBlock;
+- (void)setOnViewDidDisappearBlock:(id /* block */)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 
 @end

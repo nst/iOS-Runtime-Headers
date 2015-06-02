@@ -2,22 +2,19 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDate, NSNumber, NSString, NSURL, PFUbiquityPeer, PFUbiquityStoreMetadata;
+@interface PFUbiquityTransactionEntry : NSManagedObject
 
-@interface PFUbiquityTransactionEntry : NSManagedObject {
-}
-
-@property(retain) PFUbiquityPeer * actingPeer;
-@property(retain) NSString * globalIDStr;
-@property(retain) NSString * knowledgeVectorString;
-@property(retain) NSString * localIDStr;
-@property(retain) PFUbiquityStoreMetadata * storeMetadata;
-@property(retain) NSDate * transactionDate;
-@property(retain) NSString * transactionLogFilename;
-@property(readonly) NSURL * transactionLogURL;
-@property(retain) NSNumber * transactionNumber;
+@property (nonatomic, retain) PFUbiquityPeer *actingPeer;
+@property (nonatomic, retain) NSString *globalIDStr;
+@property (nonatomic, retain) NSString *knowledgeVectorString;
+@property (nonatomic, retain) NSString *localIDStr;
+@property (nonatomic, retain) PFUbiquityStoreMetadata *storeMetadata;
+@property (nonatomic, retain) NSDate *transactionDate;
+@property (nonatomic, retain) NSString *transactionLogFilename;
+@property (readonly) NSURL *transactionLogURL;
+@property (nonatomic, retain) NSNumber *transactionNumber;
 @property int transactionType;
-@property(retain) NSNumber * transactionTypeNum;
+@property (nonatomic, retain) NSNumber *transactionTypeNum;
 
 + (id)createTransactionEntriesForCompressedObjectIDs:(id)arg1 withTransactionType:(int)arg2 withImportContext:(id)arg3;
 + (id)deleteTransactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2 inManagedObjectContext:(id)arg3;

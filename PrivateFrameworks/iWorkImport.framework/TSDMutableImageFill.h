@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPData, TSUColor;
+@interface TSDMutableImageFill : TSDImageFill <NSCopying>
 
-@interface TSDMutableImageFill : TSDImageFill <NSCopying> {
-}
-
-@property struct CGSize { float x1; float x2; } fillSize;
-@property(retain) TSPData * imageData;
-@property BOOL interpretsUntaggedImageDataAsGeneric;
-@property float scale;
-@property int technique;
-@property(copy) TSUColor * tintColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } fillSize;
+@property (nonatomic, retain) TSPData *imageData;
+@property (nonatomic) BOOL interpretsUntaggedImageDataAsGeneric;
+@property (nonatomic) float scale;
+@property (nonatomic) int technique;
+@property (nonatomic, copy) TSUColor *tintColor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setFillSize:(struct CGSize { float x1; float x2; })arg1;

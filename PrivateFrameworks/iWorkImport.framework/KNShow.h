@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNRecording, KNSlideTree, KNSoundtrack, KNTheme, KNUIState, TSSStylesheet;
-
 @interface KNShow : TSPObject {
     BOOL mAutomaticallyPlaysUponOpen;
     double mAutoplayBuildDelay;
@@ -32,25 +25,25 @@
     BOOL mWasImportedAsPreUFF;
 }
 
-@property(readonly) BOOL allSlidesSkipped;
-@property BOOL automaticallyPlaysUponOpen;
-@property double autoplayBuildDelay;
-@property double autoplayTransitionDelay;
-@property BOOL idleTimerActive;
-@property double idleTimerDelay;
-@property BOOL localizeDocument;
-@property BOOL loopPresentation;
-@property int mode;
-@property(readonly) BOOL needsToUpdateThumbnails;
-@property(retain) KNRecording * recording;
-@property struct CGSize { float x1; float x2; } size;
-@property(readonly) BOOL slideNumbersVisible;
-@property(retain) KNSlideTree * slideTree;
-@property(retain) KNSoundtrack * soundtrack;
-@property(readonly) TSSStylesheet * stylesheet;
-@property(retain) KNTheme * theme;
-@property(retain) KNUIState * uiState;
-@property(readonly) BOOL wasImportedAsPreUFF;
+@property (nonatomic, readonly) BOOL allSlidesSkipped;
+@property (nonatomic) BOOL automaticallyPlaysUponOpen;
+@property (nonatomic) double autoplayBuildDelay;
+@property (nonatomic) double autoplayTransitionDelay;
+@property (nonatomic) BOOL idleTimerActive;
+@property (nonatomic) double idleTimerDelay;
+@property (nonatomic) BOOL localizeDocument;
+@property (nonatomic) BOOL loopPresentation;
+@property (nonatomic) int mode;
+@property (nonatomic, readonly) BOOL needsToUpdateThumbnails;
+@property (nonatomic, retain) KNRecording *recording;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) BOOL slideNumbersVisible;
+@property (nonatomic, retain) KNSlideTree *slideTree;
+@property (nonatomic, retain) KNSoundtrack *soundtrack;
+@property (nonatomic, readonly) TSSStylesheet *stylesheet;
+@property (nonatomic, retain) KNTheme *theme;
+@property (nonatomic, retain) KNUIState *uiState;
+@property (nonatomic, readonly) BOOL wasImportedAsPreUFF;
 
 + (unsigned int)maximumHeight;
 + (unsigned int)maximumHeightForExport;

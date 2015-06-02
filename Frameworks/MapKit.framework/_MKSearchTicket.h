@@ -2,21 +2,18 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOMapRegion, GEOMapServiceTraits, NSArray, NSError, NSString;
+@interface _MKSearchTicket : _MKTicket <MKMapServiceSearchTicket>
 
-@interface _MKSearchTicket : _MKTicket <MKMapServiceSearchTicket> {
-}
-
-@property(readonly) GEOMapRegion * boundingRegion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) NSArray * exactMapItems;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * refinedMapItems;
-@property(readonly) NSString * searchQuery;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (nonatomic, readonly) GEOMapRegion *boundingRegion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSArray *exactMapItems;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *refinedMapItems;
+@property (nonatomic, readonly) NSString *searchQuery;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (id)initWithSearchTicket:(id)arg1;
 - (id)searchQuery;

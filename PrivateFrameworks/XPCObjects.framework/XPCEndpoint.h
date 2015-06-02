@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface XPCEndpoint : NSObject <NSCoding> {
     NSObject<OS_xpc_object> *_endpoint;
 }
 
-@property NSObject<OS_xpc_object> * endpoint;
+@property (nonatomic) NSObject<OS_xpc_object> *endpoint;
 
 - (id)_initWithEndpoint:(id)arg1;
 - (id)createConnection;

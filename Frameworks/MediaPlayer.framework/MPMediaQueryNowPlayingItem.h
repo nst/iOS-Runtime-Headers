@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache;
-
 @interface MPMediaQueryNowPlayingItem : MPStoreAVItem {
     NSCache *_cache;
 }
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
-+ (id)mpuReporting_allMediaItemProperties;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;
 - (id)_chapterTitleForTime:(double)arg1;
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
-- (long long)_mpuReporting_storeItemInt64ID;
 - (id)_newTimeMarkersForChapterType:(int)arg1;
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(BOOL)arg2;
 - (id)album;
@@ -46,9 +44,6 @@
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)mainTitle;
-- (BOOL)mpuReporting_isValidReportingItem;
-- (unsigned int)mpuReporting_itemType;
-- (id)mpuReporting_storeItemID;
 - (void)notePlaybackFinishedByHittingEnd;
 - (unsigned long long)persistentID;
 - (double)playbackCheckpointCurrentTime;
@@ -66,5 +61,14 @@
 - (id)urlTimeMarkers;
 - (BOOL)useEmbeddedChapterData;
 - (float)userRating;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
++ (id)mpuReporting_allMediaItemProperties;
+
+- (long long)_mpuReporting_storeItemInt64ID;
+- (BOOL)mpuReporting_isValidReportingItem;
+- (unsigned int)mpuReporting_itemType;
+- (id)mpuReporting_storeItemID;
 
 @end

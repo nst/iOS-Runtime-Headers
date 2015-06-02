@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASComment;
-
 @interface MSASCommentChange : NSObject {
     MSASComment *_comment;
     int _deletionIndex;
     int _type;
 }
 
-@property(retain) MSASComment * comment;
-@property int deletionIndex;
-@property int type;
+@property (nonatomic, retain) MSASComment *comment;
+@property (nonatomic) int deletionIndex;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)comment;

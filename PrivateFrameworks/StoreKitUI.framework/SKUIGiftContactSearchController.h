@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIGiftContactSearchDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSNumber, NSString, UITableView, UIView;
-
 @interface SKUIGiftContactSearchController : NSObject <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
     void *_addressBook;
     <SKUIGiftContactSearchDelegate> *_delegate;
@@ -15,13 +13,13 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIGiftContactSearchDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfResults;
-@property(readonly) UIView * searchResultsView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIGiftContactSearchDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int numberOfResults;
+@property (nonatomic, readonly) UIView *searchResultsView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishSearchWithResults:(id)arg1;

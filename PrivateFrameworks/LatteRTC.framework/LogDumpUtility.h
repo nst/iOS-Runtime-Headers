@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
  */
 
-@interface LogDumpUtility : NSObject {
-}
+@interface LogDumpUtility : NSObject
 
 + (void)AddFileToMarco:(id)arg1 logCategory:(int)arg2;
 + (BOOL)createDirectoy:(id)arg1;

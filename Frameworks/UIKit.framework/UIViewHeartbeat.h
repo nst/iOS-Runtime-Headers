@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, UIView;
-
 @interface UIViewHeartbeat : NSObject {
     CADisplayLink *_heartbeat;
     SEL _selector;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CPBitmapStore, NSSet;
-
 @interface UIKeyboardCache : NSObject {
     BOOL _isCommitting;
     NSSet *_layouts;

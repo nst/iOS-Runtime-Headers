@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingSetBool : SASettingSetValue {
-}
+@interface SASettingSetBool : SASettingSetValue
 
-@property BOOL toggle;
-@property BOOL value;
+@property (nonatomic) BOOL toggle;
+@property (nonatomic) BOOL value;
 
 + (id)setBool;
 + (id)setBoolWithDictionary:(id)arg1 context:(id)arg2;

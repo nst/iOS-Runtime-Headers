@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebFileUploadPanelDelegate>, DOMNode, NSArray, NSObject<WebOpenPanelResultListener>, NSString, UIAlertController, UIImagePickerController, UIPopoverController, UIViewController, UIWebDocumentView;
-
 @interface UIWebFileUploadPanel : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     BOOL _allowMultipleFiles;
     <UIWebFileUploadPanelDelegate> *_delegate;
@@ -23,16 +21,16 @@
     UIAlertController *_selectPickerTypeSheet;
 }
 
-@property BOOL allowMultipleFiles;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIWebFileUploadPanelDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property UIWebDocumentView * documentView;
-@property(readonly) unsigned int hash;
-@property BOOL isUsingCamera;
-@property(copy) NSArray * mimeTypes;
-@property(retain) NSObject<WebOpenPanelResultListener> * resultListener;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowMultipleFiles;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIWebFileUploadPanelDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIWebDocumentView *documentView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isUsingCamera;
+@property (nonatomic, copy) NSArray *mimeTypes;
+@property (nonatomic, retain) NSObject<WebOpenPanelResultListener> *resultListener;
+@property (readonly) Class superclass;
 
 - (void)_cancel;
 - (void)_chooseFilename:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
@@ -42,17 +40,17 @@
 - (void)_dispatchDidDismiss;
 - (id)_displayStringForPhotos:(unsigned int)arg1 videos:(unsigned int)arg2;
 - (id)_filePathForMediaURL:(id)arg1;
-- (void)_filePathFromMediaInfo:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)_filePathFromMediaInfo:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (id)_mediaTypesForPickerSourceType:(int)arg1;
 - (id)_photoPickerWithSourceType:(int)arg1;
 - (void)_presentFullscreenViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_presentPopoverWithContentViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id)arg6 failureBlock:(id)arg7;
-- (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id /* block */)arg6 failureBlock:(id /* block */)arg7;
+- (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (void)_showMediaSourceSelectionSheet;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;
 - (BOOL)_string:(id)arg1 hasPrefixCaseInsensitive:(id)arg2;
-- (void)_temporaryFilePathForOriginalImage:(id)arg1 successBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)_temporaryFilePathForOriginalImage:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (id)_thumbnailSizedImageForImage:(id)arg1;
 - (BOOL)_willMultipleSelectionDelegateBeCalled;
 - (BOOL)allowMultipleFiles;

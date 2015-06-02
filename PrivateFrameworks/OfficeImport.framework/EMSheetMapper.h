@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EMSheetMapper : CMMapper {
-}
+@interface EMSheetMapper : CMMapper
 
 - (struct CGSize { float x1; float x2; })adjustedSize;
 - (int)height;

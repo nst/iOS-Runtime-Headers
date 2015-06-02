@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStatusBarItem : NSObject {
     int _idiom;
     int _type;
 }
 
-@property(readonly) NSString * indicatorName;
-@property(readonly) int leftOrder;
-@property(readonly) int priority;
-@property(readonly) int rightOrder;
-@property(readonly) int type;
-@property(readonly) Class viewClass;
+@property (nonatomic, readonly) NSString *indicatorName;
+@property (nonatomic, readonly) int leftOrder;
+@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) int rightOrder;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) Class viewClass;
 
 + (BOOL)isItemWithTypeExclusive:(int)arg1;
 + (BOOL)itemType:(int)arg1 idiom:(int)arg2 appearsInRegion:(int)arg3;

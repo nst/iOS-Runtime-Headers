@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSCalendar, NSMutableArray, NSMutableDictionary, NSObject<PLAlbumProtocol>, NSSet, PLFetchingAlbum, PLGenericAlbum, PLInFlightAssetsAlbum, PLManagedAlbum, PLManagedAlbumList, PLManagedFolder, PLManagedObjectContext, PLThumbnailManager;
-
 @interface PLPhotoLibrary : NSObject {
     PLGenericAlbum *_allImportedPhotosAlbum;
     struct __CFDictionary { } *_allPhotos;
@@ -34,23 +32,23 @@
     PLManagedObjectContext *managedObjectContext;
 }
 
-@property(copy,readonly) NSArray * albums;
-@property(copy,readonly) NSArray * eventAlbums;
-@property(copy,readonly) NSArray * faceAlbums;
-@property(copy,readonly) NSArray * imagePickerAlbums;
-@property(copy,readonly) NSArray * importAlbums;
-@property(retain,readonly) NSObject<PLAlbumProtocol> * inFlightAssetsAlbum;
-@property(retain) PLManagedObjectContext * managedObjectContext;
-@property(copy,readonly) NSArray * photoStreamAlbums;
-@property(copy,readonly) NSArray * photoStreamAlbumsForPreferences;
-@property(copy,readonly) NSArray * placeAlbums;
-@property(retain,readonly) PLManagedAlbumList * rootAlbumList;
-@property(retain,readonly) PLManagedFolder * rootFolder;
-@property(retain,readonly) NSObject<PLAlbumProtocol> * savedPhotosAlbum;
-@property(retain,readonly) PLThumbnailManager * thumbnailManager;
-@property(copy,readonly) NSArray * userAlbums;
-@property(retain,readonly) NSObject<PLAlbumProtocol> * userLibraryAlbum;
-@property(copy,readonly) NSArray * wallpaperAlbums;
+@property (nonatomic, readonly, copy) NSArray *albums;
+@property (nonatomic, readonly, copy) NSArray *eventAlbums;
+@property (nonatomic, readonly, copy) NSArray *faceAlbums;
+@property (nonatomic, readonly, copy) NSArray *imagePickerAlbums;
+@property (nonatomic, readonly, copy) NSArray *importAlbums;
+@property (nonatomic, readonly, retain) NSObject<PLAlbumProtocol> *inFlightAssetsAlbum;
+@property (nonatomic, retain) PLManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly, copy) NSArray *photoStreamAlbums;
+@property (nonatomic, readonly, copy) NSArray *photoStreamAlbumsForPreferences;
+@property (nonatomic, readonly, copy) NSArray *placeAlbums;
+@property (nonatomic, readonly, retain) PLManagedAlbumList *rootAlbumList;
+@property (nonatomic, readonly, retain) PLManagedFolder *rootFolder;
+@property (nonatomic, readonly, retain) NSObject<PLAlbumProtocol> *savedPhotosAlbum;
+@property (nonatomic, readonly, retain) PLThumbnailManager *thumbnailManager;
+@property (nonatomic, readonly, copy) NSArray *userAlbums;
+@property (nonatomic, readonly, retain) NSObject<PLAlbumProtocol> *userLibraryAlbum;
+@property (nonatomic, readonly, copy) NSArray *wallpaperAlbums;
 
 + (unsigned long long)CloudPhotoLibrarySize;
 + (void)_assetsLibrary_disableSharedPhotoStreamsSupport;
@@ -62,7 +60,7 @@
 + (void)clearICloudPhotosMarker;
 + (id)cplAssetsDirectoryURL;
 + (id)crashRecoveryIndicatorFilePaths:(BOOL)arg1;
-+ (void)createPhotoStreamAlbumWithStreamID:(id)arg1 completionHandler:(id)arg2;
++ (void)createPhotoStreamAlbumWithStreamID:(id)arg1 completionHandler:(id /* block */)arg2;
 + (BOOL)createSqliteErrorIndicatorFile;
 + (id)dcimDirectory;
 + (id)dcimDirectoryURL;
@@ -180,9 +178,9 @@
 - (void)_userApplyTrashedState:(short)arg1 toAssets:(id)arg2;
 - (void)_userDeleteAlbums:(id)arg1;
 - (void)_userDeleteAssets:(id)arg1 withReason:(id)arg2;
-- (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performBlock:(id)arg3 completionHandler:(id)arg4;
-- (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performTransaction:(id)arg3 completionHandler:(id)arg4;
-- (void)addCompletionHandlerToCurrentTransaction:(id)arg1;
+- (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performBlock:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)_withDispatchGroup:(id)arg1 synchronously:(BOOL)arg2 performTransaction:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)addCompletionHandlerToCurrentTransaction:(id /* block */)arg1;
 - (id)addDCIMEntryAtFileURL:(id)arg1 toEvent:(struct NSObject { Class x1; }*)arg2 sidecarFileInfo:(id)arg3 progress:(id)arg4 importSessionIdentifier:(id)arg5 isImported:(BOOL)arg6 previewImage:(id)arg7 thumbnailImage:(id)arg8 savedAssetType:(short)arg9 replacementUUID:(id)arg10 publicGlobalUUID:(id)arg11 extendedInfo:(id)arg12 thumbnailsData:(struct __CFDictionary { }*)arg13 withUUID:(id)arg14 ignoreEmbeddedMetadata:(BOOL)arg15 isPlaceholder:(BOOL)arg16;
 - (void)addInflightAsset:(id)arg1;
 - (void)addToKnownPhotoStreamAlbums:(id)arg1;
@@ -273,13 +271,13 @@
 - (id)newImageForPhoto:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 outImageProperties:(const struct __CFDictionary {}**)arg4 outDeliveredPlaceholder:(BOOL*)arg5;
 - (id)objectWithObjectID:(id)arg1;
 - (struct NSObject { Class x1; }*)otaRestoreProgressAlbum;
-- (void)performBlock:(id)arg1;
-- (void)performBlock:(id)arg1 completionHandler:(id)arg2;
-- (void)performBlockAndWait:(id)arg1 completionHandler:(id)arg2;
-- (void)performTransaction:(id)arg1;
-- (void)performTransaction:(id)arg1 completionHandler:(id)arg2;
-- (void)performTransactionAndWait:(id)arg1;
-- (void)performTransactionAndWait:(id)arg1 completionHandler:(id)arg2;
+- (void)performBlock:(id /* block */)arg1;
+- (void)performBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (void)performBlockAndWait:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (void)performTransaction:(id /* block */)arg1;
+- (void)performTransaction:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (void)performTransactionAndWait:(id /* block */)arg1;
+- (void)performTransactionAndWait:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)photoFromAssetURL:(id)arg1;
 - (void)photoLibraryCorruptNotification;
 - (id)photoStreamAlbums;
@@ -312,8 +310,8 @@
 - (void)userUntrashAlbums:(id)arg1;
 - (void)userUntrashAssets:(id)arg1;
 - (id)wallpaperAlbums;
-- (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
-- (void)withDispatchGroup:(id)arg1 performTransaction:(id)arg2;
-- (void)withDispatchGroup:(id)arg1 performTransaction:(id)arg2 completionHandler:(id)arg3;
+- (void)withDispatchGroup:(id)arg1 performBlock:(id /* block */)arg2;
+- (void)withDispatchGroup:(id)arg1 performTransaction:(id /* block */)arg2;
+- (void)withDispatchGroup:(id)arg1 performTransaction:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 
 @end

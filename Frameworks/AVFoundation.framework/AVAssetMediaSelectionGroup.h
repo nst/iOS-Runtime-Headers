@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVMediaSelectionOption, NSArray, NSDictionary;
-
 @interface AVAssetMediaSelectionGroup : AVMediaSelectionGroup {
     AVAsset *_asset;
     AVMediaSelectionOption *_defaultOption;

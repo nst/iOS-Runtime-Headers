@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRFieldCKInfo : PBCodable <NSCopying, PQLValuable> {
     NSString *_etag;
     struct { 
@@ -14,16 +12,16 @@
     BOOL _wasCached;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property BOOL hasKnownToServer;
-@property BOOL hasWasCached;
-@property(readonly) unsigned int hash;
-@property BOOL knownToServer;
-@property(readonly) Class superclass;
-@property BOOL wasCached;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic) BOOL hasKnownToServer;
+@property (nonatomic) BOOL hasWasCached;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL knownToServer;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL wasCached;
 
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
 

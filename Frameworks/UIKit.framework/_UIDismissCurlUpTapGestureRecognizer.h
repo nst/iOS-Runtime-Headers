@@ -6,7 +6,7 @@
     float _curlUpDY;
 }
 
-@property(setter=_setCurlUpDY:) float _curlUpDY;
+@property (setter=_setCurlUpDY:, nonatomic) float _curlUpDY;
 
 - (float)_curlUpDY;
 - (BOOL)_delegateShouldReceiveTouch:(id)arg1;

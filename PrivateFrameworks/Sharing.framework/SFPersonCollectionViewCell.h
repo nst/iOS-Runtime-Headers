@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class CALayer, NSArray, NSObject<SFPersonCollectionViewCellDelegate>, NSProgress, NSString, SFAirDropNode, SFCircleProgressView, UIColor, UILabel, _SFPersonImageView;
-
 @interface SFPersonCollectionViewCell : UICollectionViewCell {
     int _cellState;
     SFCircleProgressView *_circleProgressView;
@@ -58,18 +56,18 @@
     UILabel *_waitingLabel;
 }
 
-@property int cellState;
-@property BOOL darkStyleOnLegacyApp;
-@property NSObject<SFPersonCollectionViewCellDelegate> * delegate;
-@property(retain) SFAirDropNode * person;
-@property(retain) NSProgress * progress;
-@property(retain) NSString * sessionID;
-@property BOOL stateBeingRestored;
-@property(retain) UIColor * textColor;
+@property (nonatomic) int cellState;
+@property (nonatomic) BOOL darkStyleOnLegacyApp;
+@property (nonatomic) NSObject<SFPersonCollectionViewCellDelegate> *delegate;
+@property (nonatomic, retain) SFAirDropNode *person;
+@property (nonatomic, retain) NSProgress *progress;
+@property (nonatomic, retain) NSString *sessionID;
+@property (nonatomic) BOOL stateBeingRestored;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (void)addObserverOfValuesForKeyPaths:(id)arg1 ofObject:(id)arg2;
-- (void)animateCellShow:(BOOL)arg1 delay:(double)arg2 completion:(id)arg3;
+- (void)animateCellShow:(BOOL)arg1 delay:(double)arg2 completion:(id /* block */)arg3;
 - (int)cellState;
 - (id)createLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)darkStyleOnLegacyApp;
@@ -99,7 +97,7 @@
 - (void)setStateBeingRestored:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (BOOL)stateBeingRestored;
-- (void)switchToStatusLabel:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)switchToStatusLabel:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)textColor;
 - (void)triggerKVOForKeyPaths:(id)arg1 ofObject:(id)arg2;
 - (void)updateNameLabel;

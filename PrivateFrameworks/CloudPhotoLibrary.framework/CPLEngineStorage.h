@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLEngineStore, CPLPlatformObject, NSString;
-
 @interface CPLEngineStorage : NSObject <CPLAbstractObject> {
     CPLEngineStore *_engineStore;
     NSString *_name;
@@ -11,13 +9,13 @@
     BOOL _superWasCalled;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) CPLEngineStore * engineStore;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSString * name;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CPLEngineStore *engineStore;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@class NSMutableSet, NSString, NSXPCListener, Protocol;
-
 @interface CacheDeleteListener : NSObject <NSXPCListenerDelegate> {
     NSXPCListener *_listener;
     Protocol *_protocol;
@@ -11,14 +9,14 @@
     id _xObj;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSXPCListener * listener;
-@property(retain) Protocol * protocol;
-@property(retain) NSMutableSet * requiredEntitlements;
-@property(readonly) Class superclass;
-@property(retain) id xObj;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSXPCListener *listener;
+@property (nonatomic, retain) Protocol *protocol;
+@property (nonatomic, retain) NSMutableSet *requiredEntitlements;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) id xObj;
 
 + (id)daemonListenerWithExportedObject:(id)arg1;
 

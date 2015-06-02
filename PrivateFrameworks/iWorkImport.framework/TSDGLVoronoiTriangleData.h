@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSDGLVoronoiTriangleData : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -22,10 +20,10 @@
     unsigned int *_triangleIndexToCellTriangleIndexMappingTable;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(readonly) unsigned int cellCount;
-@property(readonly) NSArray * cells;
-@property(readonly) unsigned int triangleCount;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) unsigned int cellCount;
+@property (nonatomic, readonly) NSArray *cells;
+@property (nonatomic, readonly) unsigned int triangleCount;
 
 - (id).cxx_construct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;

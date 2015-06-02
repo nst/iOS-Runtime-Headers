@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMutableArray;
-
 @interface BRFieldFinderTags : PBCodable <NSCopying> {
     NSMutableArray *_tags;
 }
 
-@property(retain) NSMutableArray * tags;
+@property (nonatomic, retain) NSMutableArray *tags;
 
 - (void).cxx_destruct;
 - (void)addTags:(id)arg1;

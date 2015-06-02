@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVPrincipalItem;
-
 @interface CoreDAVInvertItem : CoreDAVItem {
     CoreDAVPrincipalItem *_principal;
 }
 
-@property(retain) CoreDAVPrincipalItem * principal;
+@property (nonatomic, retain) CoreDAVPrincipalItem *principal;
 
 + (id)copyParseRules;
 

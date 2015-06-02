@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSArray;
-
 @interface SYChangeList : NSObject {
     NSArray *_changes;
 }
 
-@property(readonly) NSArray * changes;
+@property (nonatomic, readonly) NSArray *changes;
 
 - (void).cxx_destruct;
 - (id)changes;

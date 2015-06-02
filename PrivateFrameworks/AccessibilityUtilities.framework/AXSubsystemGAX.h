@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemGAX : AXSubsystem {
-}
+@interface AXSubsystemGAX : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

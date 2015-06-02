@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class SCNPhysicsBody, SCNPhysicsWorld;
-
 @interface SCNPhysicsCharacter : SCNPhysicsBehavior {
     struct btCapsuleShape { int (**x1)(); int x2; void *x3; struct btVector3 { float x_4_1_1[4]; } x4; struct btVector3 { float x_5_1_1[4]; } x5; float x6; float x7; int x8; } *_capsuleShape;
     struct btCharacterControllerInterface { int (**x1)(); } *_characterController;
@@ -27,8 +20,8 @@
     SCNPhysicsWorld *_world;
 }
 
-@property float jumpSpeed;
-@property float velocity;
+@property (nonatomic) float jumpSpeed;
+@property (nonatomic) float velocity;
 
 - (id).cxx_construct;
 - (void)_addToPhysicsWorld:(id)arg1;

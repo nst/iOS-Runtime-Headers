@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSISOLatin7TrigramKeySet : _NSSharedKeySetS {
-}
+@interface __NSISOLatin7TrigramKeySet : _NSSharedKeySetS
 
 - (void)dealloc;
 - (void)finalize;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <CalendarEventAlarmTableDelegate>, <EKStyleProvider>, NSIndexPath, NSString;
-
 @interface CalendarEventAlarmTable : UITableView <UITableViewDataSource, UITableViewDelegate> {
     int _alarmIdentifier;
     <CalendarEventAlarmTableDelegate> *_alarmTableDelegate;
@@ -19,18 +17,18 @@
     BOOL _useAllDayAlarms;
 }
 
-@property <CalendarEventAlarmTableDelegate> * alarmTableDelegate;
-@property BOOL customSelected;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL eventHasTravelTime;
-@property(readonly) unsigned int hash;
-@property BOOL leaveNowAlarmSelected;
-@property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
-@property BOOL shouldShowLeaveNowOption;
-@property(retain) <EKStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
-@property BOOL useAllDayAlarms;
+@property (nonatomic) <CalendarEventAlarmTableDelegate> *alarmTableDelegate;
+@property (nonatomic) BOOL customSelected;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL eventHasTravelTime;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL leaveNowAlarmSelected;
+@property (nonatomic) BOOL shouldAllowAlarmsTriggeringAfterStartDate;
+@property (nonatomic) BOOL shouldShowLeaveNowOption;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useAllDayAlarms;
 
 - (void).cxx_destruct;
 - (id)_indexPathForPresetIdentifier:(int)arg1;

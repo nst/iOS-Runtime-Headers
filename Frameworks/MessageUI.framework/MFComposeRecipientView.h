@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFComposeRecipientViewDelegate>, MFComposeRecipient, MFCorecipientsIndicatorAtom, MFModernComposeRecipientAtom, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIFont, UITapGestureRecognizer, UITextField, UIView, _MFMailRecipientTextField;
-
 @interface MFComposeRecipientView : MFComposeHeaderView <MFComposeRecipientAtomDelegate, MFCorecipientsIndicatorAtomDelegate, MFDragDestination, MFDragSource, UIGestureRecognizerDelegate, UITextFieldDelegate> {
     UIButton *_addButton;
     BOOL _allowsDragAndDrop;
@@ -38,30 +36,30 @@
     NSCountedSet *_uncommentedAddresses;
 }
 
-@property(readonly) UIView * addButton;
-@property(copy) NSArray * addresses;
-@property BOOL allowsDragAndDrop;
-@property(retain) UIFont * baseFont;
-@property(readonly) MFCorecipientsIndicatorAtom * corecipientsIndicator;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned int defaultAtomPresentationOptions;
-@property <MFComposeRecipientViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didIgnoreFirstResponderResign;
-@property BOOL editable;
-@property BOOL expanded;
-@property(readonly) unsigned int hash;
-@property int hideLastAtomComma;
-@property double inputDelay;
-@property int maxRecipients;
-@property(readonly) int numberOfRowsOfTextInField;
-@property(readonly) float offsetForRowWithTextField;
-@property(retain) MFComposeRecipient * placeholderRecipient;
-@property(readonly) NSArray * recipients;
-@property(getter=isSeparatorHidden) BOOL separatorHidden;
-@property(readonly) Class superclass;
-@property(readonly) NSString * text;
-@property(readonly) UITextField * textField;
+@property (nonatomic, readonly) UIView *addButton;
+@property (nonatomic, copy) NSArray *addresses;
+@property (nonatomic) BOOL allowsDragAndDrop;
+@property (nonatomic, retain) UIFont *baseFont;
+@property (nonatomic, readonly) MFCorecipientsIndicatorAtom *corecipientsIndicator;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned int defaultAtomPresentationOptions;
+@property (nonatomic) <MFComposeRecipientViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didIgnoreFirstResponderResign;
+@property (nonatomic) BOOL editable;
+@property (nonatomic) BOOL expanded;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int hideLastAtomComma;
+@property (nonatomic) double inputDelay;
+@property (nonatomic) int maxRecipients;
+@property (nonatomic, readonly) int numberOfRowsOfTextInField;
+@property (nonatomic, readonly) float offsetForRowWithTextField;
+@property (nonatomic, retain) MFComposeRecipient *placeholderRecipient;
+@property (nonatomic, readonly) NSArray *recipients;
+@property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) UITextField *textField;
 
 - (void)_addRecord:(void*)arg1 identifier:(int)arg2;
 - (void)_addUncommentedAddress:(id)arg1;

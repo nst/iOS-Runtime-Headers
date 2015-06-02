@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSString;
-
 @interface NNMKProtoImageAttachmentSync : PBCodable <NSCopying> {
     NSString *_contentId;
     NSData *_dateSynced;
@@ -15,16 +13,16 @@
     NSString *_messageId;
 }
 
-@property(retain) NSString * contentId;
-@property(retain) NSData * dateSynced;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasContentId;
-@property(readonly) BOOL hasDateSynced;
-@property BOOL hasFullSyncVersion;
-@property(readonly) BOOL hasImageData;
-@property(readonly) BOOL hasMessageId;
-@property(retain) NSData * imageData;
-@property(retain) NSString * messageId;
+@property (nonatomic, retain) NSString *contentId;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasContentId;
+@property (nonatomic, readonly) BOOL hasDateSynced;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic, readonly) BOOL hasImageData;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, retain) NSData *imageData;
+@property (nonatomic, retain) NSString *messageId;
 
 - (void).cxx_destruct;
 - (id)contentId;

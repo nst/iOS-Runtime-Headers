@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNMutableContact, NSString;
-
 @interface ABPostalNameGroupItem : ABCardGroupItem {
     CNMutableContact *_contact;
     NSString *_placeholder;
@@ -12,11 +10,11 @@
     NSString *_value;
 }
 
-@property(copy) CNMutableContact * contact;
-@property(copy) NSString * placeholder;
-@property(copy) NSString * property;
-@property SEL setter;
-@property(copy) NSString * value;
+@property (nonatomic, copy) CNMutableContact *contact;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) NSString *property;
+@property (nonatomic) SEL setter;
+@property (nonatomic, copy) NSString *value;
 
 - (id)contact;
 - (id)placeholder;

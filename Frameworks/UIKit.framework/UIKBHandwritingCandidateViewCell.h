@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIKeyboardCandidate, UIKBThemedView, UILabel;
-
 @interface UIKBHandwritingCandidateViewCell : UICollectionViewCell {
     TIKeyboardCandidate *_candidate;
     UILabel *_label;
@@ -18,12 +16,12 @@
     } _visualStyling;
 }
 
-@property(copy) TIKeyboardCandidate * candidate;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) UILabel * label;
-@property(retain) UILabel * secondaryLabel;
-@property(retain) UIKBThemedView * themedView;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, copy) TIKeyboardCandidate *candidate;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) UILabel *secondaryLabel;
+@property (nonatomic, retain) UIKBThemedView *themedView;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 + (id)labelFontForText:(id)arg1;
 + (id)secondaryLabelFont;

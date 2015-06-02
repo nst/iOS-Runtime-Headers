@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSInputStream;
-
 @interface PBMessageStreamReader : NSObject {
     Class _classOfNextMessage;
     unsigned int _position;
@@ -11,7 +9,7 @@
 }
 
 @property Class classOfNextMessage;
-@property(readonly) unsigned int position;
+@property (readonly) unsigned int position;
 
 - (Class)classOfNextMessage;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UITabBarItem;
-
 @interface SUMoreListController : UIMoreListController {
     UITabBarItem *_tabBarItem;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface _UIDatePickerMode_Custom : _UIDatePickerMode {
     NSArray *_components;
     int _desiredUnits;

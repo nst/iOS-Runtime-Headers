@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOFilePaths : NSObject {
-}
+@interface GEOFilePaths : NSObject
 
 + (id)phoneNumberMUIDMappingFilePath;
 + (id)placeDataCacheDirectoryPath;

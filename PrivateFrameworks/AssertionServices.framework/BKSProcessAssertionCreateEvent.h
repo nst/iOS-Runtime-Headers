@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@class NSString;
-
 @interface BKSProcessAssertionCreateEvent : BKSProcessAssertionUpdateEvent <BSXPCCoding> {
     unsigned int _reason;
     NSString *_targetBundleIdentifier;
     int _targetPID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int reason;
-@property(readonly) Class superclass;
-@property(copy) NSString * targetBundleIdentifier;
-@property int targetPID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int reason;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *targetBundleIdentifier;
+@property (nonatomic) int targetPID;
 
 - (void)dealloc;
 - (id)description;

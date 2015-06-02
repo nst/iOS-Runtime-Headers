@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSStoreMappingGenerator : NSObject {
-}
+@interface NSStoreMappingGenerator : NSObject
 
 + (id)defaultMappingGenerator;
 + (void)invalidate;

@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPadAppearanceContainer : UIDeviceAppearanceContainer {
-}
+@interface UIPadAppearanceContainer : UIDeviceAppearanceContainer
 
 @end

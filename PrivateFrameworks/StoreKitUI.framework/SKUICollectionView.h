@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIIndexBarControl;
-
 @interface SKUICollectionView : UICollectionView {
     BOOL _delegateWantsWillLayoutSubviews;
     BOOL _externalShowsHorizontalScrollIndicator;
@@ -12,8 +10,8 @@
     float _overrideBoundsWidth;
 }
 
-@property(retain) SKUIIndexBarControl * indexBarControl;
-@property float overrideBoundsWidth;
+@property (nonatomic, retain) SKUIIndexBarControl *indexBarControl;
+@property (nonatomic) float overrideBoundsWidth;
 
 - (void).cxx_destruct;
 - (void)_updateIndexBarControlFrame;

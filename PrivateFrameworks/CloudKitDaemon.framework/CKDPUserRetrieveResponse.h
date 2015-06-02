@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord;
-
 @interface CKDPUserRetrieveResponse : PBCodable <NSCopying> {
     CKDPRecord *_user;
 }
 
-@property(readonly) BOOL hasUser;
-@property(retain) CKDPRecord * user;
+@property (nonatomic, readonly) BOOL hasUser;
+@property (nonatomic, retain) CKDPRecord *user;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

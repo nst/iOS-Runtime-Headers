@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
 @interface BSAuditToken : NSObject <BSXPCCoding, NSCopying> {
     struct { 
         unsigned int val[8]; 
     } _auditToken;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct { unsigned int x1[8]; } realToken;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct { unsigned int x1[8]; } realToken;
+@property (readonly) Class superclass;
 
 + (id)tokenFromAuditToken:(struct { unsigned int x1[8]; })arg1;
 + (id)tokenFromMachMessage:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; }*)arg1;

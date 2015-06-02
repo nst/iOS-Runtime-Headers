@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class CSLUIPBPropertyValue, NSString;
-
 @interface CSLUIPBProperty : PBCodable <NSCopying> {
     NSString *_name;
     CSLUIPBPropertyValue *_value;
 }
 
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasValue;
-@property(retain) NSString * name;
-@property(retain) CSLUIPBPropertyValue * value;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) CSLUIPBPropertyValue *value;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

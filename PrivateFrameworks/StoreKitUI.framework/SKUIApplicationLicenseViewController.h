@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL, SKUIApplicationLicensePage, SSVLoadURLOperation, UIWebView;
-
 @interface SKUIApplicationLicenseViewController : SKUIViewController {
     SKUIApplicationLicensePage *_licensePage;
     SSVLoadURLOperation *_loadOperation;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSXPCConnection;
-
 @interface _NSProgressWithRemoteParent : NSProgress {
     NSXPCConnection *_parentConnection;
     unsigned long long _sequence;
 }
 
-@property(retain) NSXPCConnection * parentConnection;
+@property (retain) NSXPCConnection *parentConnection;
 @property unsigned long long sequence;
 
 - (void)_updateFractionCompletedFromOldFraction:(id)arg1 toNewFraction:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage;
-
 @interface MPArtworkRepresentation : NSObject {
     UIImage *_image;
     struct CGSize { 
@@ -12,8 +10,8 @@
     } _representationSize;
 }
 
-@property(retain) UIImage * image;
-@property struct CGSize { float x1; float x2; } representationSize;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct CGSize { float x1; float x2; } representationSize;
 
 + (id)representationWithSize:(struct CGSize { float x1; float x2; })arg1 image:(id)arg2;
 

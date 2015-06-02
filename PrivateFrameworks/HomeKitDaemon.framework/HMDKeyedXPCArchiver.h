@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSKeyedArchiver;
-
 @interface HMDKeyedXPCArchiver : NSObject {
     NSKeyedArchiver *_archiver;
 }
 
-@property(retain) NSKeyedArchiver * archiver;
+@property (nonatomic, retain) NSKeyedArchiver *archiver;
 
 - (void).cxx_destruct;
 - (void)_configure;

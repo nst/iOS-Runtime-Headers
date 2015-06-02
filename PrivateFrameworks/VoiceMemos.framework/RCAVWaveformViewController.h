@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCAVWaveformViewControllerDelegate>, NSString, RCAVState, RCCaptureSession, RCCompositionController, RCGLWaveformViewController, RCLayoutMetrics, RCPreviewController, RCUIConfiguration, RCWaveformDataSource;
-
 @interface RCAVWaveformViewController : UIViewController <RCCaptureSessionObserver, RCGLWaveformViewDelegate, RCPreviewControllerObserver> {
     RCAVState *_AVState;
     RCUIConfiguration *_UIConfiguration;
@@ -34,34 +32,34 @@
     RCGLWaveformViewController *_waveformViewController;
 }
 
-@property(readonly) RCAVState * AVState;
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property(retain) RCCaptureSession * activeCaptureSession;
-@property(retain) RCPreviewController * activePreviewController;
-@property BOOL autocenterCurrentTimeIndicatorAlways;
-@property BOOL clipsTimeMarkersToDuration;
-@property double currentTime;
-@property(readonly) float currentTimeIndicatorCoordinate;
-@property BOOL currentTimeTracksCapturedEndPoint;
-@property(copy,readonly) NSString * debugDescription;
-@property <RCAVWaveformViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property struct { double x1; double x2; } highlightTimeRange;
-@property(retain) RCLayoutMetrics * layoutMetrics;
-@property double maximumSelectionDuration;
-@property(readonly) double nextPreviewStartTime;
-@property(readonly) struct { double x1; double x2; } nextPreviewTimeRange;
-@property BOOL screenUpdatesDisabled;
-@property(readonly) struct { double x1; double x2; } selectedTimeRange;
-@property(getter=isSelectionOverlayVisible,readonly) BOOL selectionOverlayVisible;
-@property(readonly) Class superclass;
-@property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
-@property struct { double x1; double x2; } visibleTimeRange;
-@property(readonly) float waveformBottomLineInset;
-@property(retain) RCWaveformDataSource * waveformDataSource;
-@property(retain) RCGLWaveformViewController * waveformViewController;
+@property (nonatomic, readonly) RCAVState *AVState;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (nonatomic, retain) RCCaptureSession *activeCaptureSession;
+@property (nonatomic, retain) RCPreviewController *activePreviewController;
+@property (nonatomic) BOOL autocenterCurrentTimeIndicatorAlways;
+@property (nonatomic) BOOL clipsTimeMarkersToDuration;
+@property (nonatomic) double currentTime;
+@property (nonatomic, readonly) float currentTimeIndicatorCoordinate;
+@property (nonatomic) BOOL currentTimeTracksCapturedEndPoint;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RCAVWaveformViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct { double x1; double x2; } highlightTimeRange;
+@property (nonatomic, retain) RCLayoutMetrics *layoutMetrics;
+@property (nonatomic) double maximumSelectionDuration;
+@property (nonatomic, readonly) double nextPreviewStartTime;
+@property (nonatomic, readonly) struct { double x1; double x2; } nextPreviewTimeRange;
+@property (nonatomic) BOOL screenUpdatesDisabled;
+@property (nonatomic, readonly) struct { double x1; double x2; } selectedTimeRange;
+@property (getter=isSelectionOverlayVisible, nonatomic, readonly) BOOL selectionOverlayVisible;
+@property (readonly) Class superclass;
+@property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
+@property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
+@property (nonatomic, readonly) float waveformBottomLineInset;
+@property (nonatomic, retain) RCWaveformDataSource *waveformDataSource;
+@property (nonatomic, retain) RCGLWaveformViewController *waveformViewController;
 
 - (void).cxx_destruct;
 - (id)AVState;
@@ -72,12 +70,12 @@
 - (unsigned int)_currentTimeDisplayOptions;
 - (unsigned int)_currentTimeDisplayOptionsIgnoringSelectionOverlayState:(BOOL)arg1;
 - (void)_didUpdateDisplayableTime;
-- (void)_endShowingSelectionOverlayWithCompletionBlock:(id)arg1;
+- (void)_endShowingSelectionOverlayWithCompletionBlock:(id /* block */)arg1;
 - (id)_selectionOverlay;
 - (void)_setSelectionOverlayEnabled:(BOOL)arg1;
 - (void)_setWaveformDataSource:(id)arg1 initialTime:(double)arg2;
 - (void)_updateCurrentTimeForCapturedInput;
-- (void)_updateDisplayableTimesWithBlock:(id)arg1;
+- (void)_updateDisplayableTimesWithBlock:(id /* block */)arg1;
 - (void)_updateInterfaceForAVState;
 - (id)activeCaptureSession;
 - (id)activePreviewController;
@@ -93,7 +91,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
-- (void)hidSelectionOverlayWithCompletionBlock:(id)arg1;
+- (void)hidSelectionOverlayWithCompletionBlock:(id /* block */)arg1;
 - (struct { double x1; double x2; })highlightTimeRange;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithWaveformDataSource:(id)arg1 delegate:(id)arg2;

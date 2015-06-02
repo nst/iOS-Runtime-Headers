@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerContextTransitioning>, NSString, UIView;
-
 @interface UIViewControllerBuiltinTransitionViewAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
     id _delegate;
     UIView *_fromView;
@@ -13,15 +11,15 @@
     <UIViewControllerContextTransitioning> *_transitionContext;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property UIView * fromView;
-@property(readonly) unsigned int hash;
-@property BOOL removeFromView;
-@property(readonly) Class superclass;
-@property UIView * toView;
-@property int transition;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIView *fromView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL removeFromView;
+@property (readonly) Class superclass;
+@property (nonatomic) UIView *toView;
+@property (nonatomic) int transition;
 
 - (struct CGPoint { float x1; float x2; })_adjustOrigin:(struct CGPoint { float x1; float x2; })arg1 givenOtherOrigin:(struct CGPoint { float x1; float x2; })arg2 forTransition:(int)arg3;
 - (void)_prepareKeyboardForTransition:(int)arg1 fromView:(id)arg2;

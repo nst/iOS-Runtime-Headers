@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableNanoSyncActivationRestore, HDCodableNanoSyncChangeSet, HDCodableNanoSyncStatus, NSData, NSString;
-
 @interface HDCodableNanoSyncMessage : PBCodable <HDNanoSyncDescription, NSCopying> {
     HDCodableNanoSyncActivationRestore *_activationRestore;
     HDCodableNanoSyncChangeSet *_changeSet;
@@ -16,22 +14,22 @@
     int _version;
 }
 
-@property(retain) HDCodableNanoSyncActivationRestore * activationRestore;
-@property(retain) HDCodableNanoSyncChangeSet * changeSet;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasActivationRestore;
-@property(readonly) BOOL hasChangeSet;
-@property(readonly) BOOL hasHealthPairingUUID;
-@property(readonly) BOOL hasPersistentPairingUUID;
-@property(readonly) BOOL hasStatus;
-@property BOOL hasVersion;
-@property(readonly) unsigned int hash;
-@property(retain) NSData * healthPairingUUID;
-@property(retain) NSData * persistentPairingUUID;
-@property(retain) HDCodableNanoSyncStatus * status;
-@property(readonly) Class superclass;
-@property int version;
+@property (nonatomic, retain) HDCodableNanoSyncActivationRestore *activationRestore;
+@property (nonatomic, retain) HDCodableNanoSyncChangeSet *changeSet;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasActivationRestore;
+@property (nonatomic, readonly) BOOL hasChangeSet;
+@property (nonatomic, readonly) BOOL hasHealthPairingUUID;
+@property (nonatomic, readonly) BOOL hasPersistentPairingUUID;
+@property (nonatomic, readonly) BOOL hasStatus;
+@property (nonatomic) BOOL hasVersion;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *healthPairingUUID;
+@property (nonatomic, retain) NSData *persistentPairingUUID;
+@property (nonatomic, retain) HDCodableNanoSyncStatus *status;
+@property (readonly) Class superclass;
+@property (nonatomic) int version;
 
 + (id)messageFromPersistentUserInfo:(id)arg1;
 + (id)messageWithPersistentPairingUUID:(id)arg1 healthPairingUUID:(id)arg2;

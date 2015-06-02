@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFVoiceInfo, NSArray, NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface AFSettingsConnection : NSObject {
     NSXPCConnection *_connection;
     AFVoiceInfo *_selectedVoice;
@@ -14,21 +12,21 @@
 - (void).cxx_destruct;
 - (void)_clearConnection;
 - (id)_connection;
-- (void)_fetchPeerData:(id)arg1;
+- (void)_fetchPeerData:(id /* block */)arg1;
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
 - (void)_setVoices:(id)arg1;
 - (id)_settingsService;
-- (id)_settingsServiceWithErrorHandler:(id)arg1;
-- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(BOOL)arg2 completion:(id)arg3;
+- (id)_settingsServiceWithErrorHandler:(id /* block */)arg1;
+- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_updateVoicesSync;
-- (void)_updateVoicesWithCompletion:(id)arg1;
+- (void)_updateVoicesWithCompletion:(id /* block */)arg1;
 - (id)_voices;
 - (id)accounts;
 - (void)barrier;
 - (void)dealloc;
 - (void)deleteAccountWithIdentifier:(id)arg1;
-- (void)fetchSupportedLanguageCodes:(id)arg1;
-- (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 completion:(id)arg2;
+- (void)fetchSupportedLanguageCodes:(id /* block */)arg1;
+- (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (void)killDaemon;
 - (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;
@@ -36,8 +34,8 @@
 - (void)setAssistantEnabled:(BOOL)arg1;
 - (void)setDictationEnabled:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
-- (void)setLanguage:(id)arg1 withCompletion:(id)arg2;
+- (void)setLanguage:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setOutputVoice:(id)arg1;
-- (void)setOutputVoice:(id)arg1 withCompletion:(id)arg2;
+- (void)setOutputVoice:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

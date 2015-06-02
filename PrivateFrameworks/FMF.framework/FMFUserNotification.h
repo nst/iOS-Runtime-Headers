@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMFUserNotification : NSObject {
-}
+@interface FMFUserNotification : NSObject
 
 + (void)displayUserNotificationWithTitleLocKey:(id)arg1 messageLocKey:(id)arg2;
 + (BOOL)displayiCloudUserNotificationWithTitleLocKey:(id)arg1 messageLocKey:(id)arg2 switchString:(id)arg3 doNotSwitch:(id)arg4;

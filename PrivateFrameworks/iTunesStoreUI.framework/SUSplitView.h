@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView;
-
 @interface SUSplitView : UIView {
     UIView *_firstView;
     int _layoutType;
@@ -13,12 +11,12 @@
     BOOL _vertical;
 }
 
-@property(retain) UIView * firstView;
-@property int layoutType;
-@property float minimumPaneSize;
-@property(retain) UIView * secondView;
-@property float splitPosition;
-@property(getter=isVertical) BOOL vertical;
+@property (nonatomic, retain) UIView *firstView;
+@property (nonatomic) int layoutType;
+@property (nonatomic) float minimumPaneSize;
+@property (nonatomic, retain) UIView *secondView;
+@property (nonatomic) float splitPosition;
+@property (getter=isVertical, nonatomic) BOOL vertical;
 
 - (float)_minimumPaneSizeForLayout;
 - (void)dealloc;

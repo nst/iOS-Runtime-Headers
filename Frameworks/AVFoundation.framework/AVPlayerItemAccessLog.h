@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItemAccessLogInternal, NSArray;
-
 @interface AVPlayerItemAccessLog : NSObject <NSCopying> {
     AVPlayerItemAccessLogInternal *_playerItemAccessLog;
 }
 
-@property(readonly) NSArray * events;
-@property(readonly) unsigned int extendedLogDataStringEncoding;
+@property (nonatomic, readonly) NSArray *events;
+@property (nonatomic, readonly) unsigned int extendedLogDataStringEncoding;
 
 - (id)_accessLogArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

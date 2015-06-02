@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString, NSURL;
-
 @interface PKPaymentCredential : NSObject <NSSecureCoding> {
     NSString *_applicationIdentifier;
     NSString *_cardSecurityCode;
@@ -24,26 +22,26 @@
     NSURL *_termsURL;
 }
 
-@property(copy) NSString * applicationIdentifier;
-@property(copy) NSString * cardSecurityCode;
-@property(readonly) NSString * cardTypeDescription;
-@property(copy) NSString * cardholderName;
-@property int credentialType;
-@property int eligibilityStatus;
-@property(readonly) NSString * eligibilityStatusDescription;
-@property(copy) NSString * expiration;
-@property(copy) NSURL * iconURL;
-@property(copy) NSString * identifier;
-@property(copy) NSString * longDescription;
-@property(copy) NSURL * passURL;
-@property(copy) NSString * primaryAccountNumber;
-@property(copy) NSString * primaryAccountNumberPrefix;
-@property(copy) NSString * region;
-@property(copy) NSString * sanitizedPrimaryAccountNumber;
-@property int status;
-@property(readonly) NSString * statusDescription;
-@property(copy) NSString * termsID;
-@property(copy) NSURL * termsURL;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (nonatomic, copy) NSString *cardSecurityCode;
+@property (nonatomic, readonly) NSString *cardTypeDescription;
+@property (nonatomic, copy) NSString *cardholderName;
+@property (nonatomic) int credentialType;
+@property (nonatomic) int eligibilityStatus;
+@property (nonatomic, readonly) NSString *eligibilityStatusDescription;
+@property (nonatomic, copy) NSString *expiration;
+@property (nonatomic, copy) NSURL *iconURL;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *longDescription;
+@property (nonatomic, copy) NSURL *passURL;
+@property (nonatomic, copy) NSString *primaryAccountNumber;
+@property (nonatomic, copy) NSString *primaryAccountNumberPrefix;
+@property (nonatomic, copy) NSString *region;
+@property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
+@property (nonatomic) int status;
+@property (nonatomic, readonly) NSString *statusDescription;
+@property (nonatomic, copy) NSString *termsID;
+@property (nonatomic, copy) NSURL *termsURL;
 
 + (id)credentialWithDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, TSMTraceBuffer;
-
 @interface TSUQuickTestMeasurement : NSObject {
     TSMTraceBuffer *mBuffer;
     NSDictionary *mPrevious;

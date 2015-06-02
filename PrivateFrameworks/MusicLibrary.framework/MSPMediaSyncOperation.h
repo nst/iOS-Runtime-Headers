@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPAlbum, MIPArtist, MIPGenre, MIPMediaItem, MIPMultiverseIdentifier, MIPPlaylist, MIPSeries;
-
 @interface MSPMediaSyncOperation : PBCodable <NSCopying> {
     MIPAlbum *_album;
     MIPArtist *_artist;
@@ -18,22 +16,22 @@
     MIPSeries *_series;
 }
 
-@property(retain) MIPAlbum * album;
-@property(retain) MIPArtist * artist;
-@property(retain) MIPGenre * genre;
-@property(readonly) BOOL hasAlbum;
-@property(readonly) BOOL hasArtist;
-@property(readonly) BOOL hasGenre;
-@property(readonly) BOOL hasMediaItem;
-@property(readonly) BOOL hasMultiverseId;
-@property BOOL hasOperationType;
-@property(readonly) BOOL hasPlaylist;
-@property(readonly) BOOL hasSeries;
-@property(retain) MIPMediaItem * mediaItem;
-@property(retain) MIPMultiverseIdentifier * multiverseId;
-@property int operationType;
-@property(retain) MIPPlaylist * playlist;
-@property(retain) MIPSeries * series;
+@property (nonatomic, retain) MIPAlbum *album;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic, retain) MIPGenre *genre;
+@property (nonatomic, readonly) BOOL hasAlbum;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic, readonly) BOOL hasGenre;
+@property (nonatomic, readonly) BOOL hasMediaItem;
+@property (nonatomic, readonly) BOOL hasMultiverseId;
+@property (nonatomic) BOOL hasOperationType;
+@property (nonatomic, readonly) BOOL hasPlaylist;
+@property (nonatomic, readonly) BOOL hasSeries;
+@property (nonatomic, retain) MIPMediaItem *mediaItem;
+@property (nonatomic, retain) MIPMultiverseIdentifier *multiverseId;
+@property (nonatomic) int operationType;
+@property (nonatomic, retain) MIPPlaylist *playlist;
+@property (nonatomic, retain) MIPSeries *series;
 
 - (void).cxx_destruct;
 - (id)album;

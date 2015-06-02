@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSNumber, NSString, NSURL;
-
 @interface MCWebClipPayload : MCPayload {
     NSURL *_URL;
     BOOL _fullScreen;
@@ -17,16 +15,16 @@
     NSString *_savedIdentifier;
 }
 
-@property(retain,readonly) NSURL * URL;
-@property(readonly) BOOL fullScreen;
-@property(readonly) NSNumber * fullScreenNum;
-@property(retain,readonly) NSData * iconData;
-@property(readonly) BOOL isRemovable;
-@property(readonly) NSNumber * isRemovableNum;
-@property(retain,readonly) NSString * label;
-@property(readonly) BOOL precomposed;
-@property(readonly) NSNumber * precomposedNum;
-@property(retain) NSString * savedIdentifier;
+@property (nonatomic, readonly, retain) NSURL *URL;
+@property (nonatomic, readonly) BOOL fullScreen;
+@property (nonatomic, readonly) NSNumber *fullScreenNum;
+@property (nonatomic, readonly, retain) NSData *iconData;
+@property (nonatomic, readonly) BOOL isRemovable;
+@property (nonatomic, readonly) NSNumber *isRemovableNum;
+@property (nonatomic, readonly, retain) NSString *label;
+@property (nonatomic, readonly) BOOL precomposed;
+@property (nonatomic, readonly) NSNumber *precomposedNum;
+@property (nonatomic, retain) NSString *savedIdentifier;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

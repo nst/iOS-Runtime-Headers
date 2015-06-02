@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class <NSStreamDelegate>, NSError;
+@interface NSStream : NSObject
 
-@interface NSStream : NSObject {
-}
+@property <NSStreamDelegate> *delegate;
+@property (readonly, copy) NSError *streamError;
+@property (readonly) unsigned int streamStatus;
 
-@property <NSStreamDelegate> * delegate;
-@property(copy,readonly) NSError * streamError;
-@property(readonly) unsigned int streamStatus;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (void)createBoundInputStream:(id*)arg1 outputStream:(id*)arg2 bufferSize:(unsigned int)arg3;
 + (void)getBoundStreamsWithBufferSize:(unsigned int)arg1 inputStream:(id*)arg2 outputStream:(id*)arg3;
 + (void)getStreamsToHost:(id)arg1 port:(int)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
 + (void)getStreamsToHostWithName:(id)arg1 port:(int)arg2 inputStream:(id*)arg3 outputStream:(id*)arg4;
@@ -26,5 +24,9 @@
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)streamError;
 - (unsigned int)streamStatus;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (void)createBoundInputStream:(id*)arg1 outputStream:(id*)arg2 bufferSize:(unsigned int)arg3;
 
 @end

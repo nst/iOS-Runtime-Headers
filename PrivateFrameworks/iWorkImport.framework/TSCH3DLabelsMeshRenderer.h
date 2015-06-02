@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DLabelsMeshRenderer : TSCH3DSceneRenderCacheObject {
-}
+@interface TSCH3DLabelsMeshRenderer : TSCH3DSceneRenderCacheObject
 
 + (id)renderer;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class LSBundleProxy;
-
 @interface _UIActivityBundleHelper : NSObject {
     LSBundleProxy *_bundleProxy;
 }
 
-@property(retain) LSBundleProxy * bundleProxy;
+@property (nonatomic, retain) LSBundleProxy *bundleProxy;
 
 + (id)activityBundleHelperForExtension:(id)arg1;
 

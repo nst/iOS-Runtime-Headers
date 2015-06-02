@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXTextBody : NSObject {
-}
+@interface OAXTextBody : NSObject
 
 + (int)readAnchorType:(id)arg1;
 + (int)readFlowType:(id)arg1;

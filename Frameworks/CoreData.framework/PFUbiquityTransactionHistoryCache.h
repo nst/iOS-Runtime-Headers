@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSPersistentStore, NSPersistentStoreCoordinator, NSRecursiveLock, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector, PFUbiquityLocation;
-
 @interface PFUbiquityTransactionHistoryCache : NSObject {
     PFUbiquityKnowledgeVector *_cacheKV;
     NSMutableArray *_entriesToWrite;
@@ -20,11 +18,11 @@
     NSString *_storeName;
 }
 
-@property(readonly) PFUbiquityKnowledgeVector * cacheKV;
-@property(readonly) NSArray * cachedGlobalIDs;
-@property(retain) PFUbiquityGlobalObjectIDCache * globalIDCache;
-@property(readonly) PFUbiquityKnowledgeVector * minCacheKV;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property (nonatomic, readonly) PFUbiquityKnowledgeVector *cacheKV;
+@property (nonatomic, readonly) NSArray *cachedGlobalIDs;
+@property (nonatomic, retain) PFUbiquityGlobalObjectIDCache *globalIDCache;
+@property (nonatomic, readonly) PFUbiquityKnowledgeVector *minCacheKV;
+@property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
 
 - (BOOL)addTransactionEntry:(id)arg1 error:(id*)arg2;
 - (BOOL)addTransactionEntryLight:(id)arg1 needsWrite:(BOOL)arg2 error:(id*)arg3;

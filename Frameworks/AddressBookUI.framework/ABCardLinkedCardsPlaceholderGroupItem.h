@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
+@interface ABCardLinkedCardsPlaceholderGroupItem : ABCardGroupItem
 
-@interface ABCardLinkedCardsPlaceholderGroupItem : ABCardGroupItem {
-}
-
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)title;
 

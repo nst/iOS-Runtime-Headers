@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABSimpleTextInputViewControllerDelegate>, <ABStyleProvider>, NSString;
-
 @interface ABSimpleTextInputViewController : UITableViewController <ABPropertyEditingTableViewCellDelegate> {
     <ABSimpleTextInputViewControllerDelegate> *_delegate;
     NSString *_placeholder;
@@ -11,14 +9,14 @@
     id _value;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <ABSimpleTextInputViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * placeholder;
-@property(copy) NSString * stringValue;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABSimpleTextInputViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) NSString *stringValue;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreCECOverride, CoreRCInterfaceController, NSString;
-
 @interface CoreRCManagerProvider : CoreRCManager <CoreRCInterfaceControllerDelegate> {
     CoreRCInterfaceController *_interfaceController;
     CoreCECOverride *_pluginOverride;
     CoreCECOverride *_standardOverride;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CoreRCInterfaceController * interfaceController;
-@property(retain) CoreCECOverride * pluginOverride;
-@property(retain) CoreCECOverride * standardOverride;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CoreRCInterfaceController *interfaceController;
+@property (nonatomic, retain) CoreCECOverride *pluginOverride;
+@property (nonatomic, retain) CoreCECOverride *standardOverride;
+@property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

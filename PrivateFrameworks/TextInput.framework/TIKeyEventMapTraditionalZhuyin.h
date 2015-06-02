@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyEventMapTraditionalZhuyin : TIKeyEventMapChineseMecabra {
-}
+@interface TIKeyEventMapTraditionalZhuyin : TIKeyEventMapChineseMecabra
 
 + (BOOL)supportsSecureCoding;
 

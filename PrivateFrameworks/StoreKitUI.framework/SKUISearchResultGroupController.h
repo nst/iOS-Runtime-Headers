@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchResultGroupControllerDelegate>, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSOperationQueue, SKUIClientContext, SKUISearchResultGroup;
-
 @interface SKUISearchResultGroupController : NSObject {
     NSMutableDictionary *_appBundleArtworkByIndexPaths;
     NSMutableArray *_appBundleArtworkIndexPathsToLoad;
@@ -21,9 +19,9 @@
     SKUISearchResultGroup *_resultGroup;
 }
 
-@property(readonly) SKUIClientContext * clientContext;
-@property <SKUISearchResultGroupControllerDelegate> * delegate;
-@property(readonly) int numberOfEntities;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic) <SKUISearchResultGroupControllerDelegate> *delegate;
+@property (nonatomic, readonly) int numberOfEntities;
 
 - (void).cxx_destruct;
 - (id)_editorialAtIndex:(unsigned int)arg1;

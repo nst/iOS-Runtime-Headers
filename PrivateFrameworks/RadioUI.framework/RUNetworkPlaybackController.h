@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class AVAssetCache, NSObject<OS_dispatch_queue>, NSString;
-
 @interface RUNetworkPlaybackController : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     AVAssetCache *_assetCache;
@@ -11,9 +9,9 @@
     double _minimumBitrateForHighQuality;
 }
 
-@property(readonly) AVAssetCache * assetCache;
-@property(copy,readonly) NSString * highQualityAssetFlavor;
-@property(readonly) double minimumBitrateForHighQuality;
+@property (nonatomic, readonly) AVAssetCache *assetCache;
+@property (nonatomic, readonly, copy) NSString *highQualityAssetFlavor;
+@property (nonatomic, readonly) double minimumBitrateForHighQuality;
 
 + (id)sharedController;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKMedicalIDEditorHeightCell, _HKMedicalIDMultilineStringCell;
-
 @interface HKEmergencyCardHeightTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
     _HKMedicalIDMultilineStringCell *_displayCell;
     HKMedicalIDEditorHeightCell *_editableCell;

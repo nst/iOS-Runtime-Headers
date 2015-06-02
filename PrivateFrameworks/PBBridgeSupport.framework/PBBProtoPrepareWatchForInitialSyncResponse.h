@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@interface PBBProtoPrepareWatchForInitialSyncResponse : PBCodable <NSCopying> {
-}
+@interface PBBProtoPrepareWatchForInitialSyncResponse : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

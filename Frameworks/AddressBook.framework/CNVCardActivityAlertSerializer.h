@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface CNVCardActivityAlertSerializer : NSObject {
-}
+@interface CNVCardActivityAlertSerializer : NSObject
 
 + (id)serializeDictionary:(id)arg1;
 + (id)serializeString:(id)arg1;

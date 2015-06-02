@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, OADGraphicProperties;
-
 @interface CHDDataLabel : NSObject {
     unsigned int mContentFormatId;
     OADGraphicProperties *mGraphicProperties;

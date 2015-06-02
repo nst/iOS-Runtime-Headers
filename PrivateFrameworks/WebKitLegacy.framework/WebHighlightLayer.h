@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebNodeHighlightView, WebView;
-
 @interface WebHighlightLayer : CALayer {
     WebNodeHighlightView *_view;
     WebView *_webView;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DPrefilteredLineShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DPrefilteredLineShaderEffect : TSCH3DShaderEffect
 
 + (id)variablePrefilterBox;
 + (id)variablePrefilterBoxTexture;

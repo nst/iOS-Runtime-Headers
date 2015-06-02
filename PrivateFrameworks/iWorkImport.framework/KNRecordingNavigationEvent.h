@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNSlideNode, TSPLazyReference;
-
 @interface KNRecordingNavigationEvent : KNRecordingEvent {
     int mAnimationPhase;
     unsigned int mTargetEventIndex;
     TSPLazyReference *mTargetSlideNodeReference;
 }
 
-@property(readonly) int animationPhase;
-@property(readonly) unsigned int targetEventIndex;
-@property(readonly) KNSlideNode * targetSlideNode;
+@property (nonatomic, readonly) int animationPhase;
+@property (nonatomic, readonly) unsigned int targetEventIndex;
+@property (nonatomic, readonly) KNSlideNode *targetSlideNode;
 
 - (int)animationPhase;
 - (BOOL)canPrecedeDiscontinuity;

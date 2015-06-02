@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBarForegroundView, UIStatusBarItemView;
-
 @interface UIStatusBarLayoutManager : NSObject {
     UIStatusBarForegroundView *_foregroundView;
-    UIStatusBarItemView *_itemViews[31];
+    UIStatusBarItemView *_itemViews;
     BOOL _persistentAnimationsEnabled;
     int _region;
     BOOL _usesVerticalLayout;
 }
 
-@property UIStatusBarForegroundView * foregroundView;
-@property BOOL persistentAnimationsEnabled;
-@property(readonly) BOOL usesVerticalLayout;
+@property (nonatomic) UIStatusBarForegroundView *foregroundView;
+@property (nonatomic) BOOL persistentAnimationsEnabled;
+@property (nonatomic, readonly) BOOL usesVerticalLayout;
 
 - (void)_addOriginDelta:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3;

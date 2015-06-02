@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSDate, NSMutableArray, NSMutableDictionary;
-
 @interface PLTimeReferenceDynamic : PLTimeReference {
     double _accumulatedError;
     NSDate *_lastQueryTime;
@@ -14,9 +12,9 @@
 }
 
 @property double accumulatedError;
-@property(retain) NSDate * lastQueryTime;
-@property(retain) NSMutableArray * offsetHistory;
-@property(retain) NSMutableDictionary * timeChangeBlocks;
+@property (retain) NSDate *lastQueryTime;
+@property (retain) NSMutableArray *offsetHistory;
+@property (retain) NSMutableDictionary *timeChangeBlocks;
 @property double tooFarInFutureDistance;
 @property double tooFarInPastDistance;
 
@@ -32,7 +30,7 @@
 - (id)newOffsetEntry;
 - (void)notifyTimeChange:(double)arg1;
 - (id)offsetHistory;
-- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 usingBlock:(id)arg2;
+- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)registerForTimeChangedNotification;
 - (id)removeTimeOffsetFromReferenceTime:(id)arg1;
 - (void)setAccumulatedError:(double)arg1;

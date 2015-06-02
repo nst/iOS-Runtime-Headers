@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
  */
 
-@class BBSectionInfo, BPSInternalGlanceManager, NGSGlance, NPSDomainAccessor, NSMutableArray, NSMutableDictionary, NSString, PSSpecifier;
-
 @interface BPSNotificationAppController : PSListController <BPSInternalGlanceObserverDelegate> {
     NPSDomainAccessor *_bbAppsSettings;
     BBSectionInfo *_bbSectionInfo;
@@ -17,23 +15,23 @@
     unsigned int _settingsMode;
 }
 
-@property(retain) NPSDomainAccessor * bbAppsSettings;
-@property(retain) BBSectionInfo * bbSectionInfo;
-@property(copy) NSString * bundleIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NGSGlance * glance;
-@property(readonly) unsigned int hash;
-@property(retain) BPSInternalGlanceManager * manager;
-@property(readonly) BOOL mirrorSettings;
-@property(retain) NSMutableArray * notificationApplicationSpecifiers;
-@property(readonly) NSMutableArray * notificationSpecifiers;
-@property(readonly) PSSpecifier * previewSwitchSpecifier;
-@property(readonly) NSMutableDictionary * sectionInfo;
-@property unsigned int settingsMode;
-@property(readonly) BOOL showAlerts;
-@property(readonly) BOOL showPreview;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NPSDomainAccessor *bbAppsSettings;
+@property (nonatomic, retain) BBSectionInfo *bbSectionInfo;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NGSGlance *glance;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) BPSInternalGlanceManager *manager;
+@property (nonatomic, readonly) BOOL mirrorSettings;
+@property (nonatomic, retain) NSMutableArray *notificationApplicationSpecifiers;
+@property (nonatomic, readonly) NSMutableArray *notificationSpecifiers;
+@property (nonatomic, readonly) PSSpecifier *previewSwitchSpecifier;
+@property (nonatomic, readonly) NSMutableDictionary *sectionInfo;
+@property (nonatomic) unsigned int settingsMode;
+@property (nonatomic, readonly) BOOL showAlerts;
+@property (nonatomic, readonly) BOOL showPreview;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_showSettingsNotifications;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, RUAudioPreviewView, RUTrackDownloadView, UIImage, UIImageView, UILabel;
-
 @interface RUHistoryTableViewCell : RUTableViewCell <RUTrackDownloadViewDelegate> {
     RUAudioPreviewView *_audioPreviewView;
     UIImageView *_explicitImageView;
@@ -15,18 +13,18 @@
     RUTrackDownloadView *_trackDownloadView;
 }
 
-@property(copy) NSString * artist;
-@property(readonly) UIImage * artworkImage;
-@property(retain) RUAudioPreviewView * audioPreviewView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isExplicitTrack) BOOL explicitTrack;
-@property(readonly) unsigned int hash;
-@property BOOL hideArtworkImage;
-@property BOOL isAd;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(readonly) RUTrackDownloadView * trackDownloadView;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, readonly) UIImage *artworkImage;
+@property (nonatomic, retain) RUAudioPreviewView *audioPreviewView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isExplicitTrack, nonatomic) BOOL explicitTrack;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideArtworkImage;
+@property (nonatomic) BOOL isAd;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) RUTrackDownloadView *trackDownloadView;
 
 + (id)_iAdLabelFont;
 + (id)_subtitleLabelFontForTraitCollection:(id)arg1;

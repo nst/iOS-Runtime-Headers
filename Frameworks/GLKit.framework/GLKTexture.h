@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class NSData, NSString;
-
 @interface GLKTexture : NSObject {
     unsigned int GLTextureName;
     struct CGImageBlockSet { } *_blockSet;
@@ -44,34 +42,34 @@
     unsigned int type;
 }
 
-@property unsigned int GLTextureName;
-@property unsigned int bindTarget;
-@property unsigned int bitsPerPixel;
-@property int dataCategory;
-@property unsigned int format;
-@property BOOL hasAlpha;
-@property(readonly) BOOL hasPremultipliedAlpha;
-@property unsigned int height;
-@property(readonly) NSData * imageData;
-@property unsigned int index;
-@property unsigned int internalFormat;
-@property BOOL isCubeMap;
-@property BOOL isMipmapped;
-@property BOOL isPowerOfTwo;
-@property BOOL isVerticalFlipped;
-@property(copy) NSString * label;
-@property int loadMode;
-@property unsigned int nComponents;
-@property unsigned int nPrimarySurfaces;
-@property unsigned int nSurfaces;
-@property unsigned int numMipMapLevels;
-@property unsigned int orientation;
-@property BOOL reOrient;
-@property unsigned int rowBytes;
-@property int texelFormat;
-@property unsigned int textureTarget;
-@property unsigned int type;
-@property unsigned int width;
+@property (nonatomic) unsigned int GLTextureName;
+@property (nonatomic) unsigned int bindTarget;
+@property (nonatomic) unsigned int bitsPerPixel;
+@property (nonatomic) int dataCategory;
+@property (nonatomic) unsigned int format;
+@property (nonatomic) BOOL hasAlpha;
+@property (readonly) BOOL hasPremultipliedAlpha;
+@property (nonatomic) unsigned int height;
+@property (readonly) NSData *imageData;
+@property (nonatomic) unsigned int index;
+@property (nonatomic) unsigned int internalFormat;
+@property (nonatomic) BOOL isCubeMap;
+@property (nonatomic) BOOL isMipmapped;
+@property (nonatomic) BOOL isPowerOfTwo;
+@property (nonatomic) BOOL isVerticalFlipped;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) int loadMode;
+@property (nonatomic) unsigned int nComponents;
+@property (nonatomic) unsigned int nPrimarySurfaces;
+@property (nonatomic) unsigned int nSurfaces;
+@property (nonatomic) unsigned int numMipMapLevels;
+@property (nonatomic) unsigned int orientation;
+@property (nonatomic) BOOL reOrient;
+@property (nonatomic) unsigned int rowBytes;
+@property (nonatomic) int texelFormat;
+@property (nonatomic) unsigned int textureTarget;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned int width;
 
 - (unsigned int)GLTextureName;
 - (BOOL)_uploadToGLTexture:(unsigned int)arg1 data:(id)arg2 width:(int)arg3 height:(int)arg4 dataCategory:(int)arg5 cubeMapIndex:(int)arg6 mipMapIndex:(int)arg7 error:(id*)arg8;

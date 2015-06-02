@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSMutableRLEArray : NSRLEArray {
-}
+@interface NSMutableRLEArray : NSRLEArray
 
 - (void)_setBlockCapacity:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

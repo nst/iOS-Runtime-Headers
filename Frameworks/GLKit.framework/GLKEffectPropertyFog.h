@@ -36,17 +36,17 @@
     int _startLoc;
 }
 
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } color;
-@property int colorLoc;
-@property float density;
-@property int densityLoc;
-@property unsigned char enabled;
-@property float end;
-@property int endLoc;
-@property int mode;
-@property int modeLoc;
-@property float start;
-@property int startLoc;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } color;
+@property (nonatomic) int colorLoc;
+@property (nonatomic) float density;
+@property (nonatomic) int densityLoc;
+@property (nonatomic) unsigned char enabled;
+@property (nonatomic) float end;
+@property (nonatomic) int endLoc;
+@property (nonatomic) int mode;
+@property (nonatomic) int modeLoc;
+@property (nonatomic) float start;
+@property (nonatomic) int startLoc;
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HKActivityCache;
-
 @interface _HDActivityCacheUpdateJournalEntry : HDJournalEntry {
     HKActivityCache *_activityCache;
 }
 
-@property(readonly) HKActivityCache * activityCache;
+@property (nonatomic, readonly) HKActivityCache *activityCache;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

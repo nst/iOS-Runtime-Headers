@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL;
-
 @interface SKUIChartsPage : SKUIStorePage <NSCopying> {
     NSURL *_categoryURL;
 }
 
-@property(copy) NSURL * categoryURL;
+@property (nonatomic, copy) NSURL *categoryURL;
 
 - (void).cxx_destruct;
 - (id)categoryURL;

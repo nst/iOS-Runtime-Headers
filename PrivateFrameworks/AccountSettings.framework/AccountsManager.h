@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface AccountsManager : NSObject {
     NSMutableDictionary *_childAccountIDToParentAccountID;
     NSMutableDictionary *_childAccountsByID;

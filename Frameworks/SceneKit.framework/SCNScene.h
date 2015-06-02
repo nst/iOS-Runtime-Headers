@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSMutableDictionary, SCNAuthoringEnvironment, SCNMaterialProperty, SCNNode, SCNPhysicsWorld, SCNSceneSource;
-
 @interface SCNScene : NSObject <NSSecureCoding> {
     SCNAuthoringEnvironment *_authoringEnvironment;
     SCNMaterialProperty *_background;
@@ -22,14 +20,14 @@
     NSMutableDictionary *_userAttributes;
 }
 
-@property(readonly) SCNMaterialProperty * background;
-@property(retain) id fogColor;
-@property float fogDensityExponent;
-@property float fogEndDistance;
-@property float fogStartDistance;
-@property(getter=isPaused) BOOL paused;
-@property(readonly) SCNPhysicsWorld * physicsWorld;
-@property(readonly) SCNNode * rootNode;
+@property (nonatomic, readonly) SCNMaterialProperty *background;
+@property (nonatomic, retain) id fogColor;
+@property (nonatomic) float fogDensityExponent;
+@property (nonatomic) float fogEndDistance;
+@property (nonatomic) float fogStartDistance;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic, readonly) SCNPhysicsWorld *physicsWorld;
+@property (nonatomic, readonly) SCNNode *rootNode;
 
 + (id)SCNJSExportProtocol;
 + (SEL)jsConstructor;
@@ -106,6 +104,6 @@
 - (struct SCNVector3 { float x1; float x2; float x3; })upAxis;
 - (id)valueForUndefinedKey:(id)arg1;
 - (BOOL)writeToURL:(id)arg1 options:(id)arg2;
-- (BOOL)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(id)arg4;
+- (BOOL)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(id /* block */)arg4;
 
 @end

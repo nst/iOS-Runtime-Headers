@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAShapeLayer, NSDate, NSTimer;
-
 @interface PLRoundProgressView : UIView {
     CAShapeLayer *_circleLayer;
     float _increaseRate;
@@ -20,7 +18,7 @@
     float _uiProgress;
 }
 
-@property(readonly) int style;
+@property (nonatomic, readonly) int style;
 
 - (void)_setupSubviews;
 - (void)dealloc;

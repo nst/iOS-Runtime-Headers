@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString;
-
 @interface MFRecentsSearchOperation : MFContactsSearchOperation {
     NSString *_bundleIdentifier;
     unsigned int _implicitGroupThreshold;

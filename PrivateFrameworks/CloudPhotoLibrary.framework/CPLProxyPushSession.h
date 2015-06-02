@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString;
+@interface CPLProxyPushSession : CPLProxySession <CPLPushChangeSessionImplementation>
 
-@interface CPLProxyPushSession : CPLProxySession <CPLPushChangeSessionImplementation> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
++ (void)beginSessionForProxy:(id)arg1 knownVersion:(id)arg2 completionHandler:(id /* block */)arg3;
 
-+ (void)beginSessionForProxy:(id)arg1 knownVersion:(id)arg2 completionHandler:(id)arg3;
-
-- (void)commitChangeBatch:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)commitChangeBatch:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

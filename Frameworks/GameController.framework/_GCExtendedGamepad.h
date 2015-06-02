@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GCController, NSString, _GCControllerButtonInput, _GCControllerDirectionPad;
-
 @interface _GCExtendedGamepad : GCExtendedGamepad <GCNamedProfile, NSSecureCoding> {
     _GCControllerButtonInput *_button0;
     _GCControllerButtonInput *_button1;
@@ -24,18 +18,14 @@
     _GCControllerButtonInput *_rightShoulder;
     _GCControllerDirectionPad *_rightThumbstick;
     _GCControllerButtonInput *_rightTrigger;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _valueChangedHandler;
-
+    id /* block */ _valueChangedHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * name;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSString *name;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
@@ -60,7 +50,7 @@
 - (id)rightTrigger;
 - (void)setController:(id)arg1;
 - (void)setPlayerIndex:(int)arg1;
-- (void)setValueChangedHandler:(id)arg1;
-- (id)valueChangedHandler;
+- (void)setValueChangedHandler:(id /* block */)arg1;
+- (id /* block */)valueChangedHandler;
 
 @end

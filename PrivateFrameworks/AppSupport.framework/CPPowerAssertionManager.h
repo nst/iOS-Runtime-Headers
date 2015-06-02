@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class <CPPowerAssertionManagerDelegate>, NSCountedSet, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface CPPowerAssertionManager : NSObject {
     struct __CFDictionary { } *_contextToGroupIdentifier;
     NSCountedSet *_contexts;
@@ -14,8 +12,8 @@
     NSString *_uuid;
 }
 
-@property <CPPowerAssertionManagerDelegate> * delegate;
-@property(readonly) NSString * uuid;
+@property <CPPowerAssertionManagerDelegate> *delegate;
+@property (readonly) NSString *uuid;
 
 + (id)sharedInstance;
 

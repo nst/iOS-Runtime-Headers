@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKLegacyUIListHeaderCellContentView;
-
 @interface EKLegacyUIListHeaderCell : UIView {
     EKLegacyUIListHeaderCellContentView *_contentView;
     BOOL _showWeekNumber;
 }
 
-@property double date;
-@property BOOL indentsForDots;
-@property(readonly) BOOL reusable;
-@property BOOL showWeekNumber;
+@property (nonatomic) double date;
+@property (nonatomic) BOOL indentsForDots;
+@property (nonatomic, readonly) BOOL reusable;
+@property (nonatomic) BOOL showWeekNumber;
 
 - (void).cxx_destruct;
 - (id)_backgroundImage;

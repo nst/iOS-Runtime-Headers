@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAMovieMovieListSnippet : SAUISnippet
 
-@interface SAMovieMovieListSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * movies;
-@property BOOL shouldShowRottenTomatoesRating;
+@property (nonatomic, copy) NSArray *movies;
+@property (nonatomic) BOOL shouldShowRottenTomatoesRating;
 
 + (id)movieListSnippet;
 + (id)movieListSnippetWithDictionary:(id)arg1 context:(id)arg2;

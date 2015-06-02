@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDocumentPickerRemoteViewControllerTintColorView : UIView {
-}
+@interface _UIDocumentPickerRemoteViewControllerTintColorView : UIView
 
 - (void)tintColorDidChange;
 

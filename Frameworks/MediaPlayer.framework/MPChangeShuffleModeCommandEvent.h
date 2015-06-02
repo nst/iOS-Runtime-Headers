@@ -6,7 +6,7 @@
     unsigned int _shuffleType;
 }
 
-@property(readonly) unsigned int shuffleType;
+@property (nonatomic, readonly) unsigned int shuffleType;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (unsigned int)shuffleType;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class BSSettings, NSError, NSString;
-
 @interface BSActionResponse : NSObject <BSSettingDescriptionProvider, BSXPCCoding, NSCopying> {
     NSError *_error;
     BSSettings *_info;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSError * error;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) BSSettings * info;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) BSSettings *info;
+@property (readonly) Class superclass;
 
 + (id)response;
 + (id)responseForError:(id)arg1;

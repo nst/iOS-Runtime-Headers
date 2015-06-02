@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton, UILabel;
-
 @interface PKPaymentPassDetailActivationFooterView : UIView {
     UIButton *_activationButton;
     UILabel *_footerTextLabel;

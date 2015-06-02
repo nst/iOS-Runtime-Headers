@@ -2,37 +2,37 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSArray, NSData, NSDate, NSString, NSUUID, _IDSDevice;
-
 @interface IDSDevice : NSObject {
     _IDSDevice *_internal;
 }
 
-@property(getter=isConnected,readonly) BOOL connected;
-@property(retain,readonly) NSString * deviceColor;
-@property(retain,readonly) NSString * enclosureColor;
-@property(retain,readonly) NSArray * identities;
-@property(readonly) BOOL isDefaultPairedDevice;
-@property(retain,readonly) NSDate * lastActivityDate;
-@property(retain,readonly) NSArray * linkedUserURIs;
-@property(readonly) BOOL locallyPresent;
-@property(retain,readonly) NSString * modelIdentifier;
-@property(retain,readonly) NSString * name;
-@property(getter=isNearby,readonly) BOOL nearby;
-@property(setter=setNSUUID:,retain) NSUUID * nsuuid;
-@property(readonly) unsigned int pairingProtocolVersion;
-@property(readonly) NSString * productBuildVersion;
-@property(readonly) NSString * productName;
-@property(readonly) NSString * productVersion;
-@property(retain,readonly) NSData * pushToken;
-@property(retain,readonly) NSString * service;
-@property(readonly) BOOL supportsHandoff;
-@property(readonly) BOOL supportsMMSRelay;
-@property(readonly) BOOL supportsPhoneCalls;
-@property(readonly) BOOL supportsSMSRelay;
-@property(readonly) BOOL supportsTethering;
-@property(readonly) BOOL supportsiCloudPairing;
-@property(retain,readonly) NSString * uniqueID;
+@property (getter=isConnected, nonatomic, readonly) BOOL connected;
+@property (nonatomic, readonly, retain) NSString *deviceColor;
+@property (nonatomic, readonly, retain) NSString *enclosureColor;
+@property (nonatomic, readonly, retain) NSArray *identities;
+@property (nonatomic, readonly) BOOL isDefaultPairedDevice;
+@property (nonatomic, readonly, retain) NSDate *lastActivityDate;
+@property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
+@property (nonatomic, readonly) BOOL locallyPresent;
+@property (nonatomic, readonly, retain) NSString *modelIdentifier;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (getter=isNearby, nonatomic, readonly) BOOL nearby;
+@property (setter=setNSUUID:, nonatomic, retain) NSUUID *nsuuid;
+@property (nonatomic, readonly) unsigned int pairingProtocolVersion;
+@property (nonatomic, readonly) NSString *productBuildVersion;
+@property (nonatomic, readonly) NSString *productName;
+@property (nonatomic, readonly) NSString *productVersion;
+@property (nonatomic, readonly, retain) NSData *pushToken;
+@property (nonatomic, readonly, retain) NSString *service;
+@property (nonatomic, readonly) BOOL supportsHandoff;
+@property (nonatomic, readonly) BOOL supportsMMSRelay;
+@property (nonatomic, readonly) BOOL supportsPhoneCalls;
+@property (nonatomic, readonly) BOOL supportsSMSRelay;
+@property (nonatomic, readonly) BOOL supportsTethering;
+@property (nonatomic, readonly) BOOL supportsiCloudPairing;
+@property (nonatomic, readonly, retain) NSString *uniqueID;
+
+// Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
 
 - (void)_addIdentity:(id)arg1;
 - (id)_initWithDictionary:(id)arg1;
@@ -46,14 +46,13 @@
 - (id)description;
 - (id)deviceColor;
 - (id)enclosureColor;
-- (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
+- (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isConnected;
 - (BOOL)isDefaultLocalDevice;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isNearby;
-- (BOOL)isWatch;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;
 - (BOOL)locallyPresent;
@@ -62,7 +61,7 @@
 - (id)nsuuid;
 - (int)openSocketForDomain:(id)arg1;
 - (int)openSocketForDomain:(id)arg1 transportType:(int)arg2;
-- (void)openSocketWithOptions:(id)arg1 completionHandler:(id)arg2 onQueue:(id)arg3;
+- (void)openSocketWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (unsigned int)pairingProtocolVersion;
 - (id)productBuildVersion;
 - (id)productName;
@@ -78,5 +77,9 @@
 - (BOOL)supportsTethering;
 - (BOOL)supportsiCloudPairing;
 - (id)uniqueID;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (BOOL)isWatch;
 
 @end

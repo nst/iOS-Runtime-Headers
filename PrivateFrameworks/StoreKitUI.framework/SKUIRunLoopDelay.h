@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIRunLoopDelay : NSObject {
     NSString *_mode;
     struct __CFRunLoop { } *_runLoop;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface PBBProtoOfflineTerms : PBCodable <NSCopying> {
     NSMutableArray *_appleLanguages;
     NSString *_countryCode;
@@ -13,17 +11,17 @@
     NSData *_warranty;
 }
 
-@property(retain) NSMutableArray * appleLanguages;
-@property(retain) NSString * countryCode;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasLanguageCode;
-@property(readonly) BOOL hasLicense;
-@property(readonly) BOOL hasMultiterms;
-@property(readonly) BOOL hasWarranty;
-@property(retain) NSString * languageCode;
-@property(retain) NSData * license;
-@property(retain) NSData * multiterms;
-@property(retain) NSData * warranty;
+@property (nonatomic, retain) NSMutableArray *appleLanguages;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic, readonly) BOOL hasCountryCode;
+@property (nonatomic, readonly) BOOL hasLanguageCode;
+@property (nonatomic, readonly) BOOL hasLicense;
+@property (nonatomic, readonly) BOOL hasMultiterms;
+@property (nonatomic, readonly) BOOL hasWarranty;
+@property (nonatomic, retain) NSString *languageCode;
+@property (nonatomic, retain) NSData *license;
+@property (nonatomic, retain) NSData *multiterms;
+@property (nonatomic, retain) NSData *warranty;
 
 - (void).cxx_destruct;
 - (void)addAppleLanguages:(id)arg1;

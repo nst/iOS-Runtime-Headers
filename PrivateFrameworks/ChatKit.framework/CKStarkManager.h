@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIScreen, UIViewController, UIWindow;
-
 @interface CKStarkManager : NSObject {
     BOOL _isStarkConnected;
     UIViewController *_starkRootViewController;
@@ -11,10 +9,10 @@
     UIWindow *_starkWindow;
 }
 
-@property(readonly) BOOL isStarkConnected;
-@property(retain) UIViewController * starkRootViewController;
-@property(retain) UIScreen * starkScreen;
-@property(retain) UIWindow * starkWindow;
+@property (nonatomic, readonly) BOOL isStarkConnected;
+@property (nonatomic, retain) UIViewController *starkRootViewController;
+@property (nonatomic, retain) UIScreen *starkScreen;
+@property (nonatomic, retain) UIWindow *starkWindow;
 
 + (id)sharedInstance;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSArray;
-
 @interface CAMPhysicalCaptureRecognizer : UIGestureRecognizer {
     int _activeButton;
     NSArray *_desiredButtons;
@@ -11,10 +9,10 @@
     BOOL _suspended;
 }
 
-@property int activeButton;
-@property(copy) NSArray * desiredButtons;
-@property int physicalButtonType;
-@property(getter=isSuspended) BOOL suspended;
+@property (nonatomic) int activeButton;
+@property (nonatomic, copy) NSArray *desiredButtons;
+@property (nonatomic) int physicalButtonType;
+@property (getter=isSuspended, nonatomic) BOOL suspended;
 
 - (void).cxx_destruct;
 - (int)_captureButtonForPhysicalButtonType:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLImageView, PLManagedAsset, PLVideoView;
-
 @interface PLExpandableImageView : PLExpandableView {
     struct CGPoint { 
         float x; 
@@ -58,12 +56,12 @@
     float _pinchWidth;
 }
 
-@property(getter=isBorderAndAccessoriesVisible) BOOL borderAndAccessoriesVisible;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(copy) NSString * name;
-@property(retain) PLManagedAsset * photo;
-@property(readonly) BOOL showsPlaceholder;
-@property(retain) PLVideoView * videoView;
+@property (getter=isBorderAndAccessoriesVisible, nonatomic) BOOL borderAndAccessoriesVisible;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) PLManagedAsset *photo;
+@property (nonatomic, readonly) BOOL showsPlaceholder;
+@property (nonatomic, retain) PLVideoView *videoView;
 
 + (float)imageBorderWidth;
 

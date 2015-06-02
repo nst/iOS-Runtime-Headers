@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/UserFS.framework/UserFS
  */
 
-@class NSObject<OS_xpc_object>, UserFSItem;
-
 @interface UserFSStream : NSObject {
     NSObject<OS_xpc_object> *_connection;
     UserFSItem *_item;
     unsigned long long _length;
 }
 
-@property(retain) NSObject<OS_xpc_object> * connection;
-@property(retain) UserFSItem * item;
-@property unsigned long long length;
-@property(readonly) BOOL writable;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
+@property (nonatomic, retain) UserFSItem *item;
+@property (nonatomic) unsigned long long length;
+@property (nonatomic, readonly) BOOL writable;
 
 - (void).cxx_destruct;
 - (void)_cancelConnection;

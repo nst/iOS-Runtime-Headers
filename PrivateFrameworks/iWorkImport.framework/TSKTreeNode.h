@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSString;
-
 @interface TSKTreeNode : TSPObject {
     NSMutableArray *mChildren;
     NSString *mDisplayName;
     id mObject;
 }
 
-@property(retain) NSMutableArray * children;
-@property(retain) id dataObject;
-@property(retain) NSString * name;
+@property (nonatomic, retain) NSMutableArray *children;
+@property (nonatomic, retain) id dataObject;
+@property (nonatomic, retain) NSString *name;
 
 - (void)addChildWithName:(id)arg1 object:(id)arg2;
 - (void)addNode:(id)arg1 atIndex:(unsigned int)arg2;
@@ -22,7 +20,7 @@
 - (id)dataObject;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateAllChildrenWithBlock:(id)arg1;
+- (void)enumerateAllChildrenWithBlock:(id /* block */)arg1;
 - (BOOL)hasChildWithName:(id)arg1;
 - (int)indexOfNodeWithObject:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;

@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class GCControllerElement;
+@interface GCControllerElement : NSObject
 
-@interface GCControllerElement : NSObject {
-}
-
-@property(getter=isAnalog,readonly) BOOL analog;
-@property(readonly) GCControllerElement * collection;
+@property (getter=isAnalog, readonly) BOOL analog;
+@property (readonly) GCControllerElement *collection;
 
 - (BOOL)_setValue:(float)arg1;
 - (id)collection;

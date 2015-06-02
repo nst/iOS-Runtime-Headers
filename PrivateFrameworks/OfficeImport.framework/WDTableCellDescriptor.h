@@ -2,50 +2,48 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDBorder, WDShading;
-
 @interface WDTableCellDescriptor : NSObject {
     WDBorder *mBottomBorder;
-    unsigned int mBottomBorderOverridden : 1;
+    unsigned int mBottomBorderOverridden;
     short mBottomMargin;
-    unsigned int mBottomMarginOverridden : 1;
+    unsigned int mBottomMarginOverridden;
     int mBottomMarginType;
-    unsigned int mBottomMarginTypeOverridden : 1;
+    unsigned int mBottomMarginTypeOverridden;
     WDBorder *mDiagonalDownBorder;
-    unsigned int mDiagonalDownBorderOverridden : 1;
+    unsigned int mDiagonalDownBorderOverridden;
     WDBorder *mDiagonalUpBorder;
-    unsigned int mDiagonalUpBorderOverridden : 1;
-    unsigned int mFirstInSetOfVerticallyMergedCells : 1;
-    unsigned int mFirstInSetOfVerticallyMergedCellsOverridden : 1;
+    unsigned int mDiagonalUpBorderOverridden;
+    unsigned int mFirstInSetOfVerticallyMergedCells;
+    unsigned int mFirstInSetOfVerticallyMergedCellsOverridden;
     WDBorder *mLeftBorder;
-    unsigned int mLeftBorderOverridden : 1;
+    unsigned int mLeftBorderOverridden;
     short mLeftMargin;
-    unsigned int mLeftMarginOverridden : 1;
+    unsigned int mLeftMarginOverridden;
     int mLeftMarginType;
-    unsigned int mLeftMarginTypeOverridden : 1;
-    unsigned int mNoWrap : 1;
-    unsigned int mNoWrapOverridden : 1;
+    unsigned int mLeftMarginTypeOverridden;
+    unsigned int mNoWrap;
+    unsigned int mNoWrapOverridden;
     WDBorder *mRightBorder;
-    unsigned int mRightBorderOverridden : 1;
+    unsigned int mRightBorderOverridden;
     short mRightMargin;
-    unsigned int mRightMarginOverridden : 1;
+    unsigned int mRightMarginOverridden;
     int mRightMarginType;
-    unsigned int mRightMarginTypeOverridden : 1;
+    unsigned int mRightMarginTypeOverridden;
     WDShading *mShading;
-    unsigned int mShadingOverridden : 1;
+    unsigned int mShadingOverridden;
     WDBorder *mTopBorder;
-    unsigned int mTopBorderOverridden : 1;
+    unsigned int mTopBorderOverridden;
     short mTopMargin;
-    unsigned int mTopMarginOverridden : 1;
+    unsigned int mTopMarginOverridden;
     int mTopMarginType;
-    unsigned int mTopMarginTypeOverridden : 1;
+    unsigned int mTopMarginTypeOverridden;
     int mVerticalAlignment;
-    unsigned int mVerticalAlignmentOverridden : 1;
-    unsigned int mVerticallyMergedCell : 1;
-    unsigned int mVerticallyMergedCellOverridden : 1;
+    unsigned int mVerticalAlignmentOverridden;
+    unsigned int mVerticallyMergedCell;
+    unsigned int mVerticallyMergedCellOverridden;
     short mWidth;
     int mWidthType;
-    unsigned int mWidthTypeOverridden : 1;
+    unsigned int mWidthTypeOverridden;
 }
 
 - (id)bottomBorder;

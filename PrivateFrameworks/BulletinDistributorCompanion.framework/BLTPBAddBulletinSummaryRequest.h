@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBBulletinSummary;
-
 @interface BLTPBAddBulletinSummaryRequest : PBRequest <NSCopying> {
     BLTPBBulletinSummary *_bulletin;
 }
 
-@property(retain) BLTPBBulletinSummary * bulletin;
-@property(readonly) BOOL hasBulletin;
+@property (nonatomic, retain) BLTPBBulletinSummary *bulletin;
+@property (nonatomic, readonly) BOOL hasBulletin;
 
 - (void).cxx_destruct;
 - (id)bulletin;

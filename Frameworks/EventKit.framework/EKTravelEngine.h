@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKTravelAdvisor, EKTravelEngineThrottle, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, PCPersistentTimer;
-
 @interface EKTravelEngine : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _adviceBlock;
-
+    id /* block */ _adviceBlock;
     BOOL _databaseIsEncryptedAndUnreadable;
     NSMutableDictionary *_eventExternalURLsToAgendaEntries;
     BOOL _needsRefresh;
@@ -26,7 +16,7 @@
     BOOL _yieldingToSync;
 }
 
-@property(copy) id adviceBlock;
+@property (nonatomic, copy) id /* block */ adviceBlock;
 
 + (id)_engineIdentifier;
 + (int)_geoTransportTypeForCalLocationRoutingMode:(int)arg1;
@@ -50,11 +40,11 @@
 - (void)_uninstallSyncYieldTimer;
 - (void)_unregisterAllAgendaItems;
 - (void)_unregisterForNotificationObservation;
-- (id)adviceBlock;
+- (id /* block */)adviceBlock;
 - (void)ceaseMonitoringAgendaItemForEventWithExternalURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setAdviceBlock:(id)arg1;
+- (void)setAdviceBlock:(id /* block */)arg1;
 - (void)start;
 - (void)stop;
 

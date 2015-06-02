@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIFamilySetupPageDelegate>, AAFamilyEligibilityResponse, AAUIFamilySharingFeaturesView, ACAccount, ACAccountStore, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView;
-
 @interface AAUIFamilySetupGetStartedViewController : UIViewController <AAUIFamilySetupPage> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -18,11 +16,11 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIFamilySetupPageDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIFamilySetupPageDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createDescriptionLabelForText:(id)arg1;

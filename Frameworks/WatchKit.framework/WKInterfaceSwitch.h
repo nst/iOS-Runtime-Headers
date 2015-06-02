@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceSwitch : WKInterfaceObject {
-}
+@interface WKInterfaceSwitch : WKInterfaceObject
 
 - (void)setAttributedTitle:(id)arg1;
 - (void)setColor:(id)arg1;

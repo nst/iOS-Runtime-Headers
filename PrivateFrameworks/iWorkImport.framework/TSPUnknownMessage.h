@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSObject<OS_dispatch_data>, TSPLazyReferenceArray;
-
 @interface TSPUnknownMessage : NSObject {
     NSArray *_datas;
     NSObject<OS_dispatch_data> *_messageData;
@@ -49,9 +42,9 @@
     TSPLazyReferenceArray *_objects;
 }
 
-@property(retain) NSArray * datas;
-@property(readonly) NSObject<OS_dispatch_data> * messageData;
-@property(retain) TSPLazyReferenceArray * objects;
+@property (nonatomic, retain) NSArray *datas;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *messageData;
+@property (nonatomic, retain) TSPLazyReferenceArray *objects;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

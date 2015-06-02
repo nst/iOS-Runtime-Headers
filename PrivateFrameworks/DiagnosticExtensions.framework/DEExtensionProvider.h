@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@class NSString;
-
 @interface DEExtensionProvider : NSObject <NSExtensionRequestHandling> {
     BOOL _allowUserAttachmentSelection;
     BOOL _canGenerateNewAttachment;
     NSString *_loggingConsent;
 }
 
-@property BOOL allowUserAttachmentSelection;
-@property BOOL canGenerateNewAttachment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * loggingConsent;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowUserAttachmentSelection;
+@property (nonatomic) BOOL canGenerateNewAttachment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *loggingConsent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_getHostname;

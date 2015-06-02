@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSMutableArray;
-
 @interface RTBatchGeocoder : NSObject {
     NSMutableArray *_batchSliceGeocoders;
 }
@@ -11,6 +9,6 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
-- (void)geocodeLocations:(id)arg1 handler:(id)arg2;
+- (void)geocodeLocations:(id)arg1 handler:(id /* block */)arg2;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIPasscodeTextField : UITextField {
-}
+@interface SBUIPasscodeTextField : UITextField
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)becomeFirstResponder;

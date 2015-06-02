@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBRowBlocks : NSObject {
-}
+@interface EBRowBlocks : NSObject
 
 + (void)readWithState:(id)arg1;
 

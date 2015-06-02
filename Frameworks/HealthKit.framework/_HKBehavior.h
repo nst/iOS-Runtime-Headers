@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKBehavior : NSObject {
-}
+@interface _HKBehavior : NSObject
 
 + (id)currentDeviceDisplayName;
 + (id)currentDeviceProductType;

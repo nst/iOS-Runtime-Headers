@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCItemID, BRCLocalContainer, NSMutableSet, NSNumber, NSSet, NSString, NSURL;
-
 @interface BRCNotification : BRQueryItem {
     NSString *_aliasContainerID;
     BRCLocalContainer *_container;
@@ -16,18 +14,18 @@
     NSString *_unsaltedBookmarkData;
 }
 
-@property(readonly) NSString * aliasContainerID;
-@property(readonly) BRCLocalContainer * container;
-@property(retain) NSMutableSet * containerIDsWithReverseAliases;
-@property(readonly) BRCItemID * itemID;
-@property(readonly) unsigned long long oldParentFileID;
-@property(readonly) NSNumber * oldParentFileObjectID;
-@property(readonly) unsigned long long parentFileID;
-@property(readonly) NSNumber * parentFileObjectID;
-@property(readonly) BRCItemID * parentID;
-@property(retain) NSSet * parentIDs;
-@property(retain) NSString * unsaltedBookmarkData;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSString *aliasContainerID;
+@property (nonatomic, readonly) BRCLocalContainer *container;
+@property (nonatomic, retain) NSMutableSet *containerIDsWithReverseAliases;
+@property (nonatomic, readonly) BRCItemID *itemID;
+@property (nonatomic, readonly) unsigned long long oldParentFileID;
+@property (nonatomic, readonly) NSNumber *oldParentFileObjectID;
+@property (nonatomic, readonly) unsigned long long parentFileID;
+@property (nonatomic, readonly) NSNumber *parentFileObjectID;
+@property (nonatomic, readonly) BRCItemID *parentID;
+@property (nonatomic, retain) NSSet *parentIDs;
+@property (nonatomic, retain) NSString *unsaltedBookmarkData;
+@property (nonatomic, readonly) NSURL *url;
 
 + (id)notificationGatheredFromItem:(id)arg1;
 + (id)notificationWithAliasItem:(id)arg1 targetItemNotification:(id)arg2;

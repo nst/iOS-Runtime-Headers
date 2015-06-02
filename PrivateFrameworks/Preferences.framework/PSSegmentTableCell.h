@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSDictionary;
-
 @interface PSSegmentTableCell : PSControlTableCell {
     NSDictionary *_titleDict;
     NSArray *_values;

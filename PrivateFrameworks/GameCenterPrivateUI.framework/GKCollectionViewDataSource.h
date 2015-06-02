@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <GKCollectionViewDataSourceDelegate>, GKGridLayoutMetrics, GKSectionMetrics, NSHashTable, NSMutableDictionary, NSString;
-
 @interface GKCollectionViewDataSource : NSObject <GKCollectionViewDataSourceDelegate, UICollectionViewDataSource> {
     GKGridLayoutMetrics *_dataSourceMetricsInternal;
     NSString *_defaultSearchKey;
@@ -15,22 +13,22 @@
     NSMutableDictionary *_sectionsToSearchKeys;
 }
 
-@property(copy) GKGridLayoutMetrics * dataSourceMetrics;
-@property(retain) GKGridLayoutMetrics * dataSourceMetricsInternal;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSString * defaultSearchKey;
-@property(copy) GKSectionMetrics * defaultSectionMetrics;
-@property(retain) GKSectionMetrics * defaultSectionMetricsInternal;
-@property <GKCollectionViewDataSourceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isRootDataSource;
-@property(readonly) BOOL isSearchable;
-@property(retain) NSMutableDictionary * kindsToFactories;
-@property(retain) NSHashTable * listeners;
-@property(retain) NSMutableDictionary * sectionsToMetrics;
-@property(retain) NSMutableDictionary * sectionsToSearchKeys;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) GKGridLayoutMetrics *dataSourceMetrics;
+@property (nonatomic, retain) GKGridLayoutMetrics *dataSourceMetricsInternal;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSString *defaultSearchKey;
+@property (nonatomic, copy) GKSectionMetrics *defaultSectionMetrics;
+@property (nonatomic, retain) GKSectionMetrics *defaultSectionMetricsInternal;
+@property (nonatomic) <GKCollectionViewDataSourceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isRootDataSource;
+@property (nonatomic, readonly) BOOL isSearchable;
+@property (nonatomic, retain) NSMutableDictionary *kindsToFactories;
+@property (nonatomic, retain) NSHashTable *listeners;
+@property (nonatomic, retain) NSMutableDictionary *sectionsToMetrics;
+@property (nonatomic, retain) NSMutableDictionary *sectionsToSearchKeys;
+@property (readonly) Class superclass;
 
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -52,7 +50,7 @@
 - (id)defaultSectionMetricsInternal;
 - (id)delegate;
 - (id)description;
-- (void)enumerateItemsAndIndexPathsUsingBlock:(id)arg1;
+- (void)enumerateItemsAndIndexPathsUsingBlock:(id /* block */)arg1;
 - (id)indexPathsForItem:(id)arg1;
 - (id)init;
 - (BOOL)isRootDataSource;
@@ -61,12 +59,12 @@
 - (id)itemAtIndexPath:(id)arg1;
 - (id)kindsToFactories;
 - (id)listeners;
-- (void)loadDataWithCompletionHandlerAndError:(id)arg1;
+- (void)loadDataWithCompletionHandlerAndError:(id /* block */)arg1;
 - (id)localDescription;
 - (id)metricsForSection:(int)arg1;
 - (id)metricsForSectionInternal:(int)arg1;
-- (void)notifyBatchUpdate:(id)arg1;
-- (void)notifyBatchUpdate:(id)arg1 complete:(id)arg2;
+- (void)notifyBatchUpdate:(id /* block */)arg1;
+- (void)notifyBatchUpdate:(id /* block */)arg1 complete:(id /* block */)arg2;
 - (void)notifyDidReloadData;
 - (void)notifyItemMovedFromIndexPath:(id)arg1 toIndexPaths:(id)arg2;
 - (void)notifyItemsInsertedAtIndexPaths:(id)arg1;
@@ -81,7 +79,7 @@
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)registerSupplementaryViewOfKind:(id)arg1 withClass:(Class)arg2 target:(id)arg3 configurator:(SEL)arg4;
 - (void)registerSupplementaryViewOfKind:(id)arg1 withFactory:(id)arg2;
-- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)searchKeyForSection:(int)arg1;
 - (unsigned int)sectionForDataSource:(id)arg1;
 - (id)sectionsToMetrics;
@@ -101,6 +99,6 @@
 - (id)supplementaryViewFactoryForKind:(id)arg1;
 - (id)targetForAction:(SEL)arg1;
 - (int)totalItemCount;
-- (void)updateSupplementaryMetricsForKey:(id)arg1 usingBlock:(id)arg2;
+- (void)updateSupplementaryMetricsForKey:(id)arg1 usingBlock:(id /* block */)arg2;
 
 @end

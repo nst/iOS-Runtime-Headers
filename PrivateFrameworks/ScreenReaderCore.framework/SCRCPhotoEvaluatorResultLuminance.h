@@ -8,9 +8,9 @@
     float _darknessLevel;
 }
 
-@property(readonly) float averageLevel;
-@property(readonly) float brightnessLevel;
-@property(readonly) float darknessLevel;
+@property (nonatomic, readonly) float averageLevel;
+@property (nonatomic, readonly) float brightnessLevel;
+@property (nonatomic, readonly) float darknessLevel;
 
 - (float)averageLevel;
 - (float)brightnessLevel;

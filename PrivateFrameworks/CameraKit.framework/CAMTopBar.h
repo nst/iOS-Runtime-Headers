@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMTopBarDelegate>, CAMElapsedTimeView, CAMExpandableMenuButton, CAMFlashButton, CAMFlipButton, CAMHDRButton, CAMTimerButton, NSMutableArray, UIView;
-
 @interface CAMTopBar : UIView <CAMExpandableMenuButtonDelegate> {
     CAMHDRButton *_HDRButton;
     BOOL __HDRButtonExpanded;
@@ -29,24 +27,24 @@
     CAMTimerButton *_timerButton;
 }
 
-@property(retain) CAMHDRButton * HDRButton;
-@property(getter=_isHDRButtonExpanded,setter=_setHDRButtonExpanded:) BOOL _HDRButtonExpanded;
-@property(readonly) NSMutableArray * _allowedControls;
-@property(readonly) UIView * _backgroundView;
-@property(setter=_setExpandedMenuButton:,retain) CAMExpandableMenuButton * _expandedMenuButton;
-@property(setter=_setExpandedMenuButtonTappableInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _expandedMenuButtonTappableInsets;
-@property(getter=_isFlashButtonExpanded,setter=_setFlashButtonExpanded:) BOOL _flashButtonExpanded;
-@property(readonly) UIView * _flipButtonTopLayoutSpacer;
-@property(getter=_isTimerButtonExpanded,setter=_setTimerButtonExpanded:) BOOL _timerButtonExpanded;
-@property int backgroundStyle;
-@property <CAMTopBarDelegate> * delegate;
-@property(retain) CAMElapsedTimeView * elapsedTimeView;
-@property(retain) CAMFlashButton * flashButton;
-@property(retain) CAMFlipButton * flipButton;
-@property(getter=isFloating,readonly) BOOL floating;
-@property int orientation;
-@property int style;
-@property(retain) CAMTimerButton * timerButton;
+@property (nonatomic, retain) CAMHDRButton *HDRButton;
+@property (getter=_isHDRButtonExpanded, setter=_setHDRButtonExpanded:, nonatomic) BOOL _HDRButtonExpanded;
+@property (nonatomic, readonly) NSMutableArray *_allowedControls;
+@property (nonatomic, readonly) UIView *_backgroundView;
+@property (setter=_setExpandedMenuButton:, nonatomic, retain) CAMExpandableMenuButton *_expandedMenuButton;
+@property (setter=_setExpandedMenuButtonTappableInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _expandedMenuButtonTappableInsets;
+@property (getter=_isFlashButtonExpanded, setter=_setFlashButtonExpanded:, nonatomic) BOOL _flashButtonExpanded;
+@property (nonatomic, readonly) UIView *_flipButtonTopLayoutSpacer;
+@property (getter=_isTimerButtonExpanded, setter=_setTimerButtonExpanded:, nonatomic) BOOL _timerButtonExpanded;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic) <CAMTopBarDelegate> *delegate;
+@property (nonatomic, retain) CAMElapsedTimeView *elapsedTimeView;
+@property (nonatomic, retain) CAMFlashButton *flashButton;
+@property (nonatomic, retain) CAMFlipButton *flipButton;
+@property (getter=isFloating, nonatomic, readonly) BOOL floating;
+@property (nonatomic) int orientation;
+@property (nonatomic) int style;
+@property (nonatomic, retain) CAMTimerButton *timerButton;
 
 - (void).cxx_destruct;
 - (id)HDRButton;

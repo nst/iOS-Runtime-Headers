@@ -2,32 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKRemoteUIController, NSArray, NSData, NSError, NSMutableArray, NSString, NSURL, RUILoader, UINavigationController;
-
 @interface GKRemoteUIController : NSObject <GKRemoteUIAuxiliaryViewDelegate, RUILoaderDelegate, RUIObjectModelDelegate> {
     BOOL _accountChanged;
     NSString *_alias;
     NSString *_appleID;
     NSString *_authToken;
     BOOL _complete;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSError *_error;
     NSString *_firstName;
     NSString *_lastName;
     int _layoutStyle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _loadHandler;
-
+    id /* block */ _loadHandler;
     RUILoader *_loader;
     BOOL _loading;
     BOOL _loadingInitialUI;
@@ -42,36 +28,36 @@
     NSURL *_url;
 }
 
-@property BOOL accountChanged;
-@property(retain) NSString * alias;
-@property(retain) NSString * appleID;
-@property(retain) NSString * authToken;
-@property(readonly) NSString * bagKey;
-@property BOOL complete;
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) NSURL * fallbackURL;
-@property(retain) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * lastName;
-@property int layoutStyle;
-@property(copy) id loadHandler;
-@property(retain) RUILoader * loader;
-@property BOOL loading;
-@property BOOL loadingInitialUI;
-@property UINavigationController * navigationController;
-@property(retain) NSMutableArray * objectModels;
-@property(retain) NSString * playerID;
-@property(retain) GKRemoteUIController * presentedRemoteUIController;
-@property BOOL previousUseCustomBackButtonActionValue;
-@property(retain) NSData * pushToken;
-@property BOOL shouldApplyGameCenterTheme;
-@property(retain) NSArray * staticViewControllers;
-@property(readonly) Class superclass;
-@property(retain) NSURL * url;
-@property(getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
+@property (nonatomic) BOOL accountChanged;
+@property (nonatomic, retain) NSString *alias;
+@property (nonatomic, retain) NSString *appleID;
+@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic, readonly) NSString *bagKey;
+@property (nonatomic) BOOL complete;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) NSURL *fallbackURL;
+@property (nonatomic, retain) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic, copy) id /* block */ loadHandler;
+@property (nonatomic, retain) RUILoader *loader;
+@property (nonatomic) BOOL loading;
+@property (nonatomic) BOOL loadingInitialUI;
+@property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic, retain) NSMutableArray *objectModels;
+@property (nonatomic, retain) NSString *playerID;
+@property (nonatomic, retain) GKRemoteUIController *presentedRemoteUIController;
+@property (nonatomic) BOOL previousUseCustomBackButtonActionValue;
+@property (nonatomic, retain) NSData *pushToken;
+@property (nonatomic) BOOL shouldApplyGameCenterTheme;
+@property (nonatomic, retain) NSArray *staticViewControllers;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSURL *url;
+@property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
 
 + (id)remoteUIController;
 
@@ -84,8 +70,8 @@
 - (void)auxiliaryView:(id)arg1 pressedLink:(id)arg2 attributes:(id)arg3;
 - (id)bagKey;
 - (BOOL)complete;
-- (id)completionHandler;
-- (void)configureFromBagKey:(id)arg1 withCompletionHandler:(id)arg2;
+- (id /* block */)completionHandler;
+- (void)configureFromBagKey:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didLoadURL:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)error;
@@ -99,8 +85,8 @@
 - (BOOL)isUserInteractionEnabled;
 - (id)lastName;
 - (int)layoutStyle;
-- (id)loadHandler;
-- (void)loadInitialRemoteUIWithHandler:(id)arg1;
+- (id /* block */)loadHandler;
+- (void)loadInitialRemoteUIWithHandler:(id /* block */)arg1;
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (void)loadURL:(id)arg1 postData:(id)arg2;
 - (id)loader;
@@ -142,12 +128,12 @@
 - (void)setAppleID:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setComplete:(BOOL)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setError:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLayoutStyle:(int)arg1;
-- (void)setLoadHandler:(id)arg1;
+- (void)setLoadHandler:(id /* block */)arg1;
 - (void)setLoader:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setLoadingInitialUI:(BOOL)arg1;
@@ -163,9 +149,9 @@
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (BOOL)shouldApplyGameCenterTheme;
 - (id)staticViewControllers;
-- (void)takeValuesFromClientInfo:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)updateAccountAndMarkComplete:(BOOL)arg1 completionHandler:(id)arg2;
-- (void)updatePostbackDictionary:(id)arg1 withHandler:(id)arg2;
+- (void)takeValuesFromClientInfo:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)updateAccountAndMarkComplete:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)updatePostbackDictionary:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)url;
 - (id)viewControllers;
 

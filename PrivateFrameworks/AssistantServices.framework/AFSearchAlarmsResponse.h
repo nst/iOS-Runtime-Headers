@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFSearchAlarmsResponse : AFSiriResponse {
     NSArray *_results;
 }
 
-@property(copy) NSArray * results;
+@property (nonatomic, copy) NSArray *results;
 
 + (BOOL)supportsSecureCoding;
 

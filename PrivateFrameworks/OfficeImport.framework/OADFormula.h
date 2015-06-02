@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OADFormula : NSObject {
     struct OADFormulaArg { 
         int type; 
         int value; 
-    } mArgs[3];
+    } mArgs;
     NSString *mName;
     int mType;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIRedeemConfiguration, SKUIRedeemPreflightOperation, SKUIRedeemStepViewController;
-
 @interface SKUIRedeemViewController : UINavigationController {
     BOOL _attempsAutomaticRedeem;
     BOOL _cameraRedeemEnabled;
@@ -16,11 +14,11 @@
     SKUIRedeemStepViewController *_rootViewController;
 }
 
-@property BOOL attempsAutomaticRedeem;
-@property(readonly) int category;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) NSString * initialCode;
-@property(retain) NSOperationQueue * operationQueue;
+@property (nonatomic) BOOL attempsAutomaticRedeem;
+@property (nonatomic, readonly) int category;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, copy) NSString *initialCode;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 - (void).cxx_destruct;
 - (void)_attemptAutomaticRedeemWithMetadata:(id)arg1;

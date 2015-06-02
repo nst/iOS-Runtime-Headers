@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, PFUbiquityLocation;
-
 @interface PFUbiquityLocationStatus : NSObject {
     NSError *_error;
     unsigned int _hash;
@@ -22,20 +20,20 @@
     int _numNotifications;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) BOOL isDeleted;
-@property(readonly) BOOL isDownloaded;
-@property BOOL isDownloading;
-@property(readonly) BOOL isExported;
-@property(readonly) BOOL isFailed;
-@property(readonly) BOOL isImported;
-@property(readonly) BOOL isLive;
-@property(readonly) BOOL isScheduled;
-@property(readonly) BOOL isUploaded;
-@property(readonly) BOOL isUploading;
-@property(readonly) PFUbiquityLocation * location;
-@property(readonly) long long numBytes;
-@property(readonly) int numNotifications;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) BOOL isDeleted;
+@property (nonatomic, readonly) BOOL isDownloaded;
+@property (nonatomic) BOOL isDownloading;
+@property (nonatomic, readonly) BOOL isExported;
+@property (nonatomic, readonly) BOOL isFailed;
+@property (nonatomic, readonly) BOOL isImported;
+@property (nonatomic, readonly) BOOL isLive;
+@property (nonatomic, readonly) BOOL isScheduled;
+@property (nonatomic, readonly) BOOL isUploaded;
+@property (nonatomic, readonly) BOOL isUploading;
+@property (nonatomic, readonly) PFUbiquityLocation *location;
+@property (nonatomic, readonly) long long numBytes;
+@property (nonatomic, readonly) int numNotifications;
 
 - (void)checkFileURLState;
 - (void)dealloc;

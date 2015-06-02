@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUDownloadSessionDelegate>, NSError, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURLResponse, TSUBasicProgress, TSUDownloadManager, TSUProgress;
-
 @interface TSUDownloadSession : NSObject {
     NSProgress *_NSProgress;
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -25,13 +23,13 @@
     long long _totalBytesExpectedToBeDownloaded;
 }
 
-@property(readonly) NSProgress * NSProgress;
-@property(readonly) BOOL isActive;
-@property(readonly) BOOL isCancelled;
-@property(readonly) TSUProgress * progress;
-@property(readonly) NSString * sessionDescription;
-@property(readonly) long long totalBytesDownloaded;
-@property(readonly) long long totalBytesExpectedToBeDownloaded;
+@property (nonatomic, readonly) NSProgress *NSProgress;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) TSUProgress *progress;
+@property (nonatomic, readonly) NSString *sessionDescription;
+@property (nonatomic, readonly) long long totalBytesDownloaded;
+@property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
 
 - (void).cxx_destruct;
 - (id)NSProgress;
@@ -47,7 +45,7 @@
 - (BOOL)isActive;
 - (BOOL)isCancelled;
 - (id)lastResponse;
-- (void)notifyCompletionWithQueue:(id)arg1 completionHandler:(id)arg2;
+- (void)notifyCompletionWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)progress;
 - (id)sessionDescription;
 - (void)task:(id)arg1 withDescription:(id)arg2 didCompleteWithError:(id)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;

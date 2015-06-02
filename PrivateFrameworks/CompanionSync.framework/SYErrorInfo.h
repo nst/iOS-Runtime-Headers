@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSData, NSString;
-
 @interface SYErrorInfo : PBCodable <NSCopying> {
     unsigned int _code;
     NSString *_domain;
     NSData *_userInfo;
 }
 
-@property unsigned int code;
-@property(retain) NSString * domain;
-@property(readonly) BOOL hasUserInfo;
-@property(retain) NSData * userInfo;
+@property (nonatomic) unsigned int code;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, readonly) BOOL hasUserInfo;
+@property (nonatomic, retain) NSData *userInfo;
 
 + (void)initialize;
 

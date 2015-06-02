@@ -2,11 +2,9 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebViewContentProviderRegistry, _WKVisitedLinkProvider, _WKWebsiteDataStore;
-
 @interface WKWebViewConfiguration : NSObject <NSCopying> {
     BOOL _allowsInlineMediaPlayback;
-    struct WeakObjCPtr<WKWebView> { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     } _alternateWebViewForNavigationGestures;
     struct LazyInitialized<WKWebViewContentProviderRegistry> { 
@@ -33,7 +31,7 @@
             void *m_ptr; 
         } m_value; 
     } _processPool;
-    struct WeakObjCPtr<WKWebView> { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     } _relatedWebView;
     int _selectionGranularity;
@@ -58,21 +56,21 @@
     } _websiteDataStore;
 }
 
-@property(setter=_setAlternateWebViewForNavigationGestures:) WKWebView * _alternateWebViewForNavigationGestures;
-@property(setter=_setContentProviderRegistry:) WKWebViewContentProviderRegistry * _contentProviderRegistry;
-@property(setter=_setFeatureCounterEnabled:) BOOL _featureCounterEnabled;
-@property(setter=_setGroupIdentifier:,copy) NSString * _groupIdentifier;
-@property(setter=_setRelatedWebView:) WKWebView * _relatedWebView;
-@property(setter=_setVisitedLinkProvider:,retain) _WKVisitedLinkProvider * _visitedLinkProvider;
-@property(setter=_setWebsiteDataStore:,retain) _WKWebsiteDataStore * _websiteDataStore;
-@property BOOL allowsInlineMediaPlayback;
-@property BOOL mediaPlaybackAllowsAirPlay;
-@property BOOL mediaPlaybackRequiresUserAction;
-@property(retain) WKPreferences * preferences;
-@property(retain) WKProcessPool * processPool;
-@property int selectionGranularity;
-@property BOOL suppressesIncrementalRendering;
-@property(retain) WKUserContentController * userContentController;
+@property (setter=_setAlternateWebViewForNavigationGestures:, nonatomic) WKWebView *_alternateWebViewForNavigationGestures;
+@property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
+@property (setter=_setFeatureCounterEnabled:, nonatomic) BOOL _featureCounterEnabled;
+@property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
+@property (setter=_setRelatedWebView:, nonatomic) WKWebView *_relatedWebView;
+@property (setter=_setVisitedLinkProvider:, nonatomic, retain) _WKVisitedLinkProvider *_visitedLinkProvider;
+@property (setter=_setWebsiteDataStore:, nonatomic, retain) _WKWebsiteDataStore *_websiteDataStore;
+@property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
+@property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
+@property (nonatomic, retain) WKPreferences *preferences;
+@property (nonatomic, retain) WKProcessPool *processPool;
+@property (nonatomic) int selectionGranularity;
+@property (nonatomic) BOOL suppressesIncrementalRendering;
+@property (nonatomic, retain) WKUserContentController *userContentController;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

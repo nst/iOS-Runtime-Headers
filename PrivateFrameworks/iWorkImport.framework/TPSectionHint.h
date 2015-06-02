@@ -2,24 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray;
-
 @interface TPSectionHint : NSObject {
     unsigned int _documentStartPageIndex;
     NSMutableArray *_pageHints;
 }
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } documentPageRange;
-@property unsigned int documentStartPageIndex;
-@property(readonly) unsigned int lastPageIndex;
-@property(readonly) unsigned int pageCount;
-@property(readonly) unsigned int pageCountWithoutFillerPage;
-@property(readonly) NSArray * pageHints;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } documentPageRange;
+@property (nonatomic) unsigned int documentStartPageIndex;
+@property (nonatomic, readonly) unsigned int lastPageIndex;
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (nonatomic, readonly) unsigned int pageCountWithoutFillerPage;
+@property (nonatomic, readonly) NSArray *pageHints;
 
 + (BOOL)verifyHints:(id)arg1 withBodyStorage:(id)arg2 upToPageIndex:(unsigned int)arg3;
 
@@ -37,7 +30,7 @@
 - (unsigned int)pageCountWithoutFillerPage;
 - (id)pageHintForPageIndex:(unsigned int)arg1;
 - (id)pageHints;
-- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id)arg4;
+- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id /* block */)arg4;
 - (void)setDocumentStartPageIndex:(unsigned int)arg1;
 - (void)setPageHints:(id)arg1;
 - (void)trimPageHintsFromPageIndex:(unsigned int)arg1;

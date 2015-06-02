@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSTCellRegion;
-
 @interface TSTLayoutDynamicResizeInfo : NSObject <TSTLayoutDynamicResizeInfoProtocol> {
     float mCapturedColumnWidthTotal;
     float *mCapturedColumnWidths;
@@ -25,10 +23,10 @@
     BOOL mValid;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (float)applyColumnTotalWidth:(float)arg1;
 - (float)applyResizeHeightFactor:(float)arg1;
@@ -38,8 +36,8 @@
 - (struct CGSize { float x1; float x2; })capturedTableSize;
 - (id)columnWidths;
 - (void)dealloc;
-- (void)enumerateColumnWidthsUsingBlock:(id)arg1;
-- (void)enumerateRowHeightsUsingBlock:(id)arg1;
+- (void)enumerateColumnWidthsUsingBlock:(id /* block */)arg1;
+- (void)enumerateRowHeightsUsingBlock:(id /* block */)arg1;
 - (float)getColumnInitialWidth:(unsigned char)arg1;
 - (float)getColumnWidth:(unsigned char)arg1;
 - (float)getColumnWidthResize:(unsigned char)arg1;

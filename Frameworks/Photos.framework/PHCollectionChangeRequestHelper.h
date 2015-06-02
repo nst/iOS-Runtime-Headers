@@ -2,37 +2,27 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSString, PHChangeRequestHelper;
-
 @interface PHCollectionChangeRequestHelper : NSObject {
     BOOL _allowsInsert;
     BOOL _allowsMove;
     BOOL _allowsRemove;
     PHChangeRequestHelper *_changeRequestHelper;
     NSString *_destinationEntityName;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _isDestinationObjectValid;
-
+    id /* block */ _isDestinationObjectValid;
     NSMutableArray *_mutableObjectIDsAndUUIDs;
     NSArray *_originalObjectIDs;
     NSString *_relationshipName;
 }
 
-@property BOOL allowsInsert;
-@property BOOL allowsMove;
-@property BOOL allowsRemove;
-@property(retain) PHChangeRequestHelper * changeRequestHelper;
-@property(retain) NSString * destinationEntityName;
-@property(copy) id isDestinationObjectValid;
-@property(retain) NSMutableArray * mutableObjectIDsAndUUIDs;
-@property(retain) NSArray * originalObjectIDs;
-@property(readonly) NSString * relationshipName;
+@property (nonatomic) BOOL allowsInsert;
+@property (nonatomic) BOOL allowsMove;
+@property (nonatomic) BOOL allowsRemove;
+@property (nonatomic, retain) PHChangeRequestHelper *changeRequestHelper;
+@property (nonatomic, retain) NSString *destinationEntityName;
+@property (nonatomic, copy) id /* block */ isDestinationObjectValid;
+@property (nonatomic, retain) NSMutableArray *mutableObjectIDsAndUUIDs;
+@property (nonatomic, retain) NSArray *originalObjectIDs;
+@property (nonatomic, readonly) NSString *relationshipName;
 
 + (id)_offsetsFromSourceOIDs:(id)arg1 toManagedObjects:(id)arg2;
 
@@ -46,7 +36,7 @@
 - (void)encodeToXPCDict:(id)arg1;
 - (id)initWithRelationshipName:(id)arg1 changeRequestHelper:(id)arg2;
 - (id)initWithRelationshipName:(id)arg1 xpcDict:(id)arg2 changeRequestHelper:(id)arg3;
-- (id)isDestinationObjectValid;
+- (id /* block */)isDestinationObjectValid;
 - (id)mutableObjectIDsAndUUIDs;
 - (id)originalObjectIDs;
 - (id)relationshipName;
@@ -55,7 +45,7 @@
 - (void)setAllowsRemove:(BOOL)arg1;
 - (void)setChangeRequestHelper:(id)arg1;
 - (void)setDestinationEntityName:(id)arg1;
-- (void)setIsDestinationObjectValid:(id)arg1;
+- (void)setIsDestinationObjectValid:(id /* block */)arg1;
 - (void)setMutableObjectIDsAndUUIDs:(id)arg1;
 - (void)setOriginalObjectIDs:(id)arg1;
 

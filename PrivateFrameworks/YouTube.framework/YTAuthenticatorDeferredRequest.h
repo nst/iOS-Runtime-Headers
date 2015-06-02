@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableURLRequest;
-
 @interface YTAuthenticatorDeferredRequest : NSObject {
     BOOL _accountAuthRequired;
     NSMutableURLRequest *_request;

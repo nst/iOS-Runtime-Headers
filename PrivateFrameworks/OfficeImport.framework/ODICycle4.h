@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODICycle4 : ODICycle3 {
-}
+@interface ODICycle4 : ODICycle3
 
 + (unsigned int)nodeCountWithState:(id)arg1;
 

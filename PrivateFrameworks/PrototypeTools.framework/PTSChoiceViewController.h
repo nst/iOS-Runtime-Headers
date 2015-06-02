@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSIndexPath, NSString, PTSChoiceRow;
-
 @interface PTSChoiceViewController : UITableViewController <PTSRowObserver> {
     PTSChoiceRow *_row;
     NSIndexPath *_valueIndexPath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PTSChoiceRow * row;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PTSChoiceRow *row;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_checkAppropriateCell;

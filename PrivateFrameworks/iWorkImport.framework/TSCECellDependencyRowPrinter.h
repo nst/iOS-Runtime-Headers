@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCEEdgeListPrinter;
-
 @interface TSCECellDependencyRowPrinter : NSObject {
     NSString *_cellID;
     TSCEEdgeListPrinter *_dependentsList;
@@ -13,10 +11,10 @@
     TSCEEdgeListPrinter *_precedentsList;
 }
 
-@property(retain) NSString * cellID;
-@property unsigned int dirtyPrecedentCount;
-@property BOOL isFormula;
-@property BOOL isInCycle;
+@property (nonatomic, retain) NSString *cellID;
+@property (nonatomic) unsigned int dirtyPrecedentCount;
+@property (nonatomic) BOOL isFormula;
+@property (nonatomic) BOOL isInCycle;
 
 - (void)addDependentWithCellID:(id)arg1 forOwner:(id)arg2;
 - (void)addPrecedentWithCellID:(id)arg1 forOwner:(id)arg2;

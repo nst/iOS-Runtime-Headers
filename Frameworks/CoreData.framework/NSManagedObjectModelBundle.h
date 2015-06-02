@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSBundle, NSDictionary;
-
 @interface NSManagedObjectModelBundle : NSObject {
     NSBundle *_bundle;
     NSDictionary *_versionInfoDictionary;

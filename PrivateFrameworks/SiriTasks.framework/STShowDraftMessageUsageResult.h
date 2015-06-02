@@ -6,7 +6,7 @@
     int _resultCode;
 }
 
-@property int resultCode;
+@property (nonatomic) int resultCode;
 
 + (BOOL)supportsSecureCoding;
 

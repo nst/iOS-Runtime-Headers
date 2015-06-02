@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface MPUsageStatistics : NSObject {
     NSString *_domain;
     NSString *_lastAggregateStatisticsDisplayCountKey;

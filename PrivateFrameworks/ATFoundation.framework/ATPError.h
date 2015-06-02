@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSString;
-
 @interface ATPError : PBCodable <NSCopying> {
     int _code;
     NSString *_domain;
@@ -15,14 +13,14 @@
     } _has;
 }
 
-@property int code;
-@property(retain) NSString * domain;
-@property long long domainCode;
-@property(retain) NSString * errorDescription;
-@property BOOL hasCode;
-@property(readonly) BOOL hasDomain;
-@property BOOL hasDomainCode;
-@property(readonly) BOOL hasErrorDescription;
+@property (nonatomic) int code;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic) long long domainCode;
+@property (nonatomic, retain) NSString *errorDescription;
+@property (nonatomic) BOOL hasCode;
+@property (nonatomic, readonly) BOOL hasDomain;
+@property (nonatomic) BOOL hasDomainCode;
+@property (nonatomic, readonly) BOOL hasErrorDescription;
 
 - (void).cxx_destruct;
 - (int)code;

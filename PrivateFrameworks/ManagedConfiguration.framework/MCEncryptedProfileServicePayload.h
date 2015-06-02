@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString;
-
 @interface MCEncryptedProfileServicePayload : MCPayload {
     NSString *_urlString;
 }

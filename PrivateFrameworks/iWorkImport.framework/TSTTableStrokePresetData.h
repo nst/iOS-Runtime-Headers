@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSDStroke;
-
 @interface TSTTableStrokePresetData : NSObject {
     TSDStroke *mExteriorStroke;
     TSDStroke *mHorizontalStroke;
@@ -16,10 +9,10 @@
     unsigned int mVisibleMask;
 }
 
-@property(retain) TSDStroke * exteriorStroke;
-@property(retain) TSDStroke * horizontalStroke;
-@property unsigned int mask;
-@property(retain) TSDStroke * verticalStroke;
+@property (nonatomic, retain) TSDStroke *exteriorStroke;
+@property (nonatomic, retain) TSDStroke *horizontalStroke;
+@property (nonatomic) unsigned int mask;
+@property (nonatomic, retain) TSDStroke *verticalStroke;
 
 - (void)dealloc;
 - (id)exteriorStroke;

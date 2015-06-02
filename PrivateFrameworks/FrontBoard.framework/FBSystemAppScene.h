@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBSSceneDelegate>, BSAction, FBSSceneImpl, NSString;
-
 @interface FBSystemAppScene : FBSScene <FBSSceneDelegate> {
     <FBSSceneDelegate> *_delegate;
     BSAction *_invalidationAction;
     FBSSceneImpl *_scene;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (id)_initWithSceneImpl:(id)arg1 invalidationAction:(id)arg2;
@@ -30,11 +28,11 @@
 - (id)fbsDisplay;
 - (id)identifier;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
-- (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id)arg4;
+- (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
-- (void)updateClientSettingsWithBlock:(id)arg1;
+- (void)updateClientSettingsWithBlock:(id /* block */)arg1;
 
 @end

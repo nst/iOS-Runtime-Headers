@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAUIUnlockDevice : SABaseClientBoundCommand
 
-@interface SAUIUnlockDevice : SABaseClientBoundCommand {
-}
+@property (nonatomic, copy) NSArray *cancellationCommands;
+@property (nonatomic, copy) NSArray *failureCommands;
+@property (nonatomic, copy) NSArray *successCommands;
 
-@property(copy) NSArray * cancellationCommands;
-@property(copy) NSArray * failureCommands;
-@property(copy) NSArray * successCommands;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)unlockDevice;
 + (id)unlockDeviceWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)cancellationCommands;
 - (id)encodedClassName;
 - (id)failureCommands;
@@ -24,5 +22,9 @@
 - (void)setFailureCommands:(id)arg1;
 - (void)setSuccessCommands:(id)arg1;
 - (id)successCommands;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

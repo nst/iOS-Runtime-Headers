@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFSetSettingsResponse : AFSiriResponse {
     NSArray *_settingChanges;
 }

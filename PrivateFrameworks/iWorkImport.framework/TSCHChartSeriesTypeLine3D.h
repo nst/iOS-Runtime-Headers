@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeLine3D : TSCHChartSeriesTypeLine {
-}
+@interface TSCHChartSeriesTypeLine3D : TSCHChartSeriesTypeLine
 
 + (Class)sceneObjectClass;
 

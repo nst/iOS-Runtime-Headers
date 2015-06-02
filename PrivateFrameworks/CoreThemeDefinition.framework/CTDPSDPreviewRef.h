@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSArray;
-
 @interface CTDPSDPreviewRef : CUIPSDImageRef {
     int _columnWidth;
     struct _PSDImageInfo { 

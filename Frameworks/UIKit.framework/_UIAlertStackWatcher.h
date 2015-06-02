@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertStackWatcher : NSObject {
-}
+@interface _UIAlertStackWatcher : NSObject
 
 - (void)_appResumed:(id)arg1;
 - (void)_appSuspended:(id)arg1;

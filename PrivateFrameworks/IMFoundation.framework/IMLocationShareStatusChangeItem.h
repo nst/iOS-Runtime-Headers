@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMLocationShareStatusChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     BOOL _actionable;
     long long _direction;
@@ -14,16 +12,16 @@
     long long _status;
 }
 
-@property BOOL actionable;
-@property long long direction;
-@property BOOL expired;
-@property(retain) NSString * otherCountryCode;
-@property(retain) NSString * otherHandle;
-@property(retain) NSString * otherUnformattedID;
-@property long long status;
+@property (nonatomic) BOOL actionable;
+@property (nonatomic) long long direction;
+@property (nonatomic) BOOL expired;
+@property (nonatomic, retain) NSString *otherCountryCode;
+@property (nonatomic, retain) NSString *otherHandle;
+@property (nonatomic, retain) NSString *otherUnformattedID;
+@property (nonatomic) long long status;
 
-- (BOOL)_hasMessageChatItem;
-- (id)_newChatItems;
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
 - (BOOL)actionable;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -44,5 +42,10 @@
 - (void)setOtherUnformattedID:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (long long)status;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (BOOL)_hasMessageChatItem;
+- (id)_newChatItems;
 
 @end

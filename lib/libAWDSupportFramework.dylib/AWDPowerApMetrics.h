@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerApMetrics : PBCodable <NSCopying> {
     unsigned int _apAwakeDuration;
     unsigned int _cpuPowerMicroWatt;
@@ -22,19 +20,19 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int apAwakeDuration;
-@property unsigned int cpuPowerMicroWatt;
-@property(retain) NSMutableArray * datas;
-@property unsigned int dramPowerMicroWatt;
-@property unsigned int gpuPowerMicroWatt;
-@property BOOL hasApAwakeDuration;
-@property BOOL hasCpuPowerMicroWatt;
-@property BOOL hasDramPowerMicroWatt;
-@property BOOL hasGpuPowerMicroWatt;
-@property BOOL hasSocPowerMicroWatt;
-@property BOOL hasTimestamp;
-@property unsigned int socPowerMicroWatt;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int apAwakeDuration;
+@property (nonatomic) unsigned int cpuPowerMicroWatt;
+@property (nonatomic, retain) NSMutableArray *datas;
+@property (nonatomic) unsigned int dramPowerMicroWatt;
+@property (nonatomic) unsigned int gpuPowerMicroWatt;
+@property (nonatomic) BOOL hasApAwakeDuration;
+@property (nonatomic) BOOL hasCpuPowerMicroWatt;
+@property (nonatomic) BOOL hasDramPowerMicroWatt;
+@property (nonatomic) BOOL hasGpuPowerMicroWatt;
+@property (nonatomic) BOOL hasSocPowerMicroWatt;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int socPowerMicroWatt;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addData:(id)arg1;
 - (unsigned int)apAwakeDuration;

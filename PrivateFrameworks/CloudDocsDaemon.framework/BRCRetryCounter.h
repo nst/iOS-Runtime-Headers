@@ -9,9 +9,9 @@
     long long _throttleHash;
 }
 
-@property(readonly) long long latestRetry;
-@property(readonly) unsigned int retryCount;
-@property(readonly) long long throttleHash;
+@property (nonatomic, readonly) long long latestRetry;
+@property (nonatomic, readonly) unsigned int retryCount;
+@property (nonatomic, readonly) long long throttleHash;
 
 - (void)incrementRetry;
 - (id)initWithThrottleHash:(long long)arg1;

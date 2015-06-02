@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFActivityMonitor, MFMailboxUid, MailAccount;
-
 @interface MFMailMessageStore : MFMessageStore {
     MailAccount *_account;
     unsigned int _deletedMessageCount;

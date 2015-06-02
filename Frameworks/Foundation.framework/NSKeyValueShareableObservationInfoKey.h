@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueObservance, NSKeyValueObservationInfo, NSKeyValueProperty, NSObject;
-
 @interface NSKeyValueShareableObservationInfoKey : NSObject {
     BOOL _addingNotRemoving;
     void *_additionContext;

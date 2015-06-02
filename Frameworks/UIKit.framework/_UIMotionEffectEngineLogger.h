@@ -4,7 +4,7 @@
 
 @interface _UIMotionEffectEngineLogger : NSObject {
     double _lastUpdateTimeStamp;
-    int _motionLevelSamples[8];
+    int _motionLevelSamples;
     int _sampleCount;
     int _updateFreqency;
 }

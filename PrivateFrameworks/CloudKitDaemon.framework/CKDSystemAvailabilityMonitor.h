@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface CKDSystemAvailabilityMonitor : NSObject {
     NSObject<OS_dispatch_queue> *_availabilityQueue;
     BOOL _systemIsAvailable;
     NSMutableSet *_watchers;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * availabilityQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *availabilityQueue;
 @property BOOL systemIsAvailable;
-@property(retain) NSMutableSet * watchers;
+@property (nonatomic, retain) NSMutableSet *watchers;
 
 + (id)sharedMonitor;
 

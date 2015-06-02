@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIPSDLayerGroupStart : CUIPSDLayer {
-}
+@interface CUIPSDLayerGroupStart : CUIPSDLayer
 
 - (void)setName:(id)arg1;
 

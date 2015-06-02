@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
-
 @interface PKPassNumberField : PKPassField {
     NSString *_currencyCode;
     int _numberStyle;
 }
 
-@property(copy) NSString * currencyCode;
-@property int numberStyle;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic) int numberStyle;
 
 + (BOOL)supportsSecureCoding;
 

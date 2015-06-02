@@ -2,38 +2,28 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableData, NSString, NSURLConnection, NSURLResponse;
-
 @interface _GEONSURLConnectionWaiter : NSObject <NSURLConnectionDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSURLConnection *_conn;
     NSMutableData *_data;
     NSURLResponse *_response;
 }
 
-@property(copy) id callback;
-@property(retain) NSURLConnection * conn;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, retain) NSURLConnection *conn;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-- (id)callback;
+- (id /* block */)callback;
 - (id)conn;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (void)setCallback:(id)arg1;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setConn:(id)arg1;
 
 @end

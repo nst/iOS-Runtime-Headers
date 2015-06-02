@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACUIAccountViewProvidersManager, NSArray, NSString, PSSpecifier;
-
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
     BOOL _dontShowSecondLevelOtherAccountTypes;
     PSSpecifier *_gmailSpecifier;
@@ -12,11 +10,11 @@
     NSArray *_preEnabledDataclasses;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) ACUIAccountViewProvidersManager * viewProvidersManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) ACUIAccountViewProvidersManager *viewProvidersManager;
 
 - (void).cxx_destruct;
 - (void)_createGmailAccountTapped:(id)arg1;

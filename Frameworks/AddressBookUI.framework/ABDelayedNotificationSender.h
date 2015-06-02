@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray;
-
 @interface ABDelayedNotificationSender : NSObject {
     struct __CFDictionary { } *_delayedNotificationInfos;
     NSMutableArray *_delayedNotifications;

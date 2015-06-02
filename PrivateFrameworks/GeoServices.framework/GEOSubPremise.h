@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOSubPremise : PBCodable <NSCopying> {
     NSString *_name;
     int _type;
 }
 
-@property(retain) NSString * name;
-@property int type;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

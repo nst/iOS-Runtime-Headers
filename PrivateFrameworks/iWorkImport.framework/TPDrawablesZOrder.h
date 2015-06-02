@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TPDrawablesZOrder : TSPObject {
     NSMutableArray *_drawables;
 }
 
-@property(readonly) unsigned int drawableCount;
+@property (nonatomic, readonly) unsigned int drawableCount;
 
 - (unsigned int)addDrawable:(id)arg1;
 - (void)dealloc;

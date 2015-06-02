@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class CallDBManager, NSManagedObjectContext, NSString;
-
 @interface CallHistoryDBHandle : CHLogger {
     id _dataStoreAddedRef;
     id _moveCallRecordsFromTempStoreRef;
@@ -15,8 +13,8 @@
     NSString *objectId;
 }
 
-@property(readonly) CallDBManager * callDBManager;
-@property(readonly) NSString * objectId;
+@property (nonatomic, readonly) CallDBManager *callDBManager;
+@property (nonatomic, readonly) NSString *objectId;
 
 + (id)createForClient;
 + (id)createForServer;

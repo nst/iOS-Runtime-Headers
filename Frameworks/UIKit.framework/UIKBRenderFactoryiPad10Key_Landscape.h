@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPad10Key_Landscape : UIKBRenderFactoryiPad10Key_Portrait {
-}
+@interface UIKBRenderFactoryiPad10Key_Landscape : UIKBRenderFactoryiPad10Key_Portrait
 
 - (float)controlColumnWidthFactor;
 - (float)keyCornerRadius;

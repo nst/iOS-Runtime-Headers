@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSUUID, TSPDocumentRevision;
-
 @interface TSPDocumentProperties : NSObject <NSCopying> {
     NSDictionary *_additionalProperties;
     NSUUID *_documentUUID;
@@ -13,12 +11,12 @@
     NSUUID *_versionUUID;
 }
 
-@property(copy) NSDictionary * additionalProperties;
-@property(copy) NSUUID * documentUUID;
-@property unsigned long long fileFormatVersion;
-@property(copy) TSPDocumentRevision * revision;
-@property(readonly) NSUUID * shareUUID;
-@property(readonly) NSUUID * versionUUID;
+@property (nonatomic, copy) NSDictionary *additionalProperties;
+@property (nonatomic, copy) NSUUID *documentUUID;
+@property (nonatomic) unsigned long long fileFormatVersion;
+@property (nonatomic, copy) TSPDocumentRevision *revision;
+@property (nonatomic, readonly) NSUUID *shareUUID;
+@property (nonatomic, readonly) NSUUID *versionUUID;
 
 + (BOOL)documentIsEncryptedAtURL:(id)arg1;
 + (id)documentPropertiesRelativePath;
@@ -53,7 +51,7 @@
 - (void)updateVersionUUID;
 - (id)versionUUID;
 - (BOOL)writeToDocumentBundleURL:(id)arg1 error:(id*)arg2;
-- (BOOL)writeToDocumentURL:(id)arg1 writerBlock:(id)arg2 error:(id*)arg3;
+- (BOOL)writeToDocumentURL:(id)arg1 writerBlock:(id /* block */)arg2 error:(id*)arg3;
 - (BOOL)writeToPackageWriter:(id)arg1 error:(id*)arg2;
 - (BOOL)writeToPropertiesURL:(id)arg1 error:(id*)arg2;
 

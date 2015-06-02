@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-@interface PUProtoGetPasscodeState : PBCodable <NSCopying> {
-}
+@interface PUProtoGetPasscodeState : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

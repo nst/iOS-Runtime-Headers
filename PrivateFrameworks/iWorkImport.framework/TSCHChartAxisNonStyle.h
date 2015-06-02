@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSPropertyMap;
+@interface TSCHChartAxisNonStyle : TSCHBaseStyle
 
-@interface TSCHChartAxisNonStyle : TSCHBaseStyle {
-}
-
-@property(copy) TSSPropertyMap * overrideMapForSameAsSource;
+@property (nonatomic, copy) TSSPropertyMap *overrideMapForSameAsSource;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface WDBookmark : WDRun {
     int mBookmarkType;
     NSString *mName;

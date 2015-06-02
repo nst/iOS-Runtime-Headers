@@ -7,8 +7,8 @@
     id _value;
 }
 
-@property(copy) Class targetClass;
-@property(retain) id value;
+@property (nonatomic, copy) Class targetClass;
+@property (nonatomic, retain) id value;
 
 + (id)coercionClassStringFromClass:(Class)arg1;
 + (SEL)selectorForCoercionFromValue:(id)arg1 toClass:(Class)arg2;

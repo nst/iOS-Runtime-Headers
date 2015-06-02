@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class UIColor;
+@interface SFCircleProgressView : UIView
 
-@interface SFCircleProgressView : UIView {
-}
-
-@property float progress;
-@property(readonly) UIColor * progressColor;
-@property float progressLineWidth;
-@property int progressStartPoint;
-@property BOOL showProgressTray;
+@property (nonatomic) float progress;
+@property (nonatomic, readonly) UIColor *progressColor;
+@property (nonatomic) float progressLineWidth;
+@property (nonatomic) int progressStartPoint;
+@property (nonatomic) BOOL showProgressTray;
 
 + (Class)layerClass;
 
-- (void)animateProgressCompletedWithCompletion:(id)arg1;
+- (void)animateProgressCompletedWithCompletion:(id /* block */)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)progress;
@@ -24,8 +21,8 @@
 - (float)progressPresentationValue;
 - (int)progressStartPoint;
 - (void)setProgress:(float)arg1;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)setProgress:(float)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3 completion:(id)arg4;
+- (void)setProgress:(float)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)setProgress:(float)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)setProgressColor:(id)arg1;
 - (void)setProgressLineWidth:(float)arg1;
 - (void)setProgressStartPoint:(int)arg1;

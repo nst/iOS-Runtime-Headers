@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SSMetricsConfiguration;
-
 @interface SKUISearchPage : NSObject <NSCopying> {
     BOOL _autoCorrected;
     NSArray *_facets;
@@ -16,16 +14,16 @@
     NSString *_spellCorrectedTerm;
 }
 
-@property BOOL autoCorrected;
-@property(copy) NSArray * facets;
-@property(retain) SSMetricsConfiguration * metricsConfiguration;
-@property(copy) NSString * metricsPageDescription;
-@property(readonly) int numberOfResults;
-@property int preAutoCorrectCount;
-@property(retain) NSArray * relatedQueries;
-@property(copy) NSArray * resultGroups;
-@property(copy) NSString * searchTerm;
-@property(copy) NSString * spellCorrectedTerm;
+@property (nonatomic) BOOL autoCorrected;
+@property (nonatomic, copy) NSArray *facets;
+@property (nonatomic, retain) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, copy) NSString *metricsPageDescription;
+@property (nonatomic, readonly) int numberOfResults;
+@property (nonatomic) int preAutoCorrectCount;
+@property (nonatomic, retain) NSArray *relatedQueries;
+@property (nonatomic, copy) NSArray *resultGroups;
+@property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic, copy) NSString *spellCorrectedTerm;
 
 - (void).cxx_destruct;
 - (BOOL)autoCorrected;

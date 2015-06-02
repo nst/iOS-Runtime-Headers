@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPColumn, TSWPShapeLayout;
-
 @interface TSWPInteriorCookie : NSObject {
     TSWPColumn *_column;
     TSWPShapeLayout *_shapeLayout;
 }
 
-@property TSWPColumn * column;
-@property TSWPShapeLayout * layout;
+@property (nonatomic) TSWPColumn *column;
+@property (nonatomic) TSWPShapeLayout *layout;
 
 - (id)column;
 - (id)layout;

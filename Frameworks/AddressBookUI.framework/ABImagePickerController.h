@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonImageDataDelegate>, CAKeyframeAnimation, NSArray, NSDictionary, NSString, UIImagePickerController, UIPopoverController;
-
 @interface ABImagePickerController : ABContentController <ABMultipleSourceImagePickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, UIModalViewDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
     BOOL _allowsEditingExistingPhoto;
     NSDictionary *_animationContextDictionary;
@@ -21,11 +19,11 @@
     NSArray *_writablePeople;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <ABPersonImageDataDelegate> * imageDataDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <ABPersonImageDataDelegate> *imageDataDelegate;
+@property (readonly) Class superclass;
 
 - (id)_createImagePicker;
 - (id)_createImagePickerForEditingImageData:(id)arg1 shouldSaveFullSize:(BOOL)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;

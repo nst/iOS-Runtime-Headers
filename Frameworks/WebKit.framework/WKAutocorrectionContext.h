@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKAutocorrectionContext : UIWKAutocorrectionContext {
-}
+@interface WKAutocorrectionContext : UIWKAutocorrectionContext
 
 + (id)autocorrectionContextWithData:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 afterText:(id)arg4 selectedRangeInMarkedText:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 

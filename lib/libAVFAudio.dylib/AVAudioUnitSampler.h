@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitSampler : AVAudioUnitMIDIInstrument {
-}
+@interface AVAudioUnitSampler : AVAudioUnitMIDIInstrument
 
-@property float globalTuning;
-@property float masterGain;
-@property float stereoPan;
+@property (nonatomic) float globalTuning;
+@property (nonatomic) float masterGain;
+@property (nonatomic) float stereoPan;
 
 - (float)globalTuning;
 - (id)init;

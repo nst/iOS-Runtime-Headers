@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class SSAppPurchaseHistoryCache;
-
 @interface ISDeleteDaemonModule : NSObject {
     SSAppPurchaseHistoryCache *_purchaseHistoryCache;
     struct __CFURLStorageSession { } *_storageSession;

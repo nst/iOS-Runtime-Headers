@@ -16,17 +16,17 @@
     int _originalUserVersion;
 }
 
-@property int currentUserVersion;
-@property BOOL forceUpdateOriginals;
-@property BOOL needsAnalyze;
-@property BOOL needsToAutogenerateArtworkVariants;
-@property BOOL needsToRecreateIndexes;
-@property BOOL needsToRecreateTriggers;
-@property BOOL needsToReloadContainerMediaTypes;
-@property BOOL needsToReloadStoreBookmarkMetadataIdentifiers;
-@property BOOL needsToRemoveLocationsForItemsMissingAssets;
-@property BOOL needsToUpdateSortMap;
-@property(readonly) int originalUserVersion;
+@property (nonatomic) int currentUserVersion;
+@property (nonatomic) BOOL forceUpdateOriginals;
+@property (nonatomic) BOOL needsAnalyze;
+@property (nonatomic) BOOL needsToAutogenerateArtworkVariants;
+@property (nonatomic) BOOL needsToRecreateIndexes;
+@property (nonatomic) BOOL needsToRecreateTriggers;
+@property (nonatomic) BOOL needsToReloadContainerMediaTypes;
+@property (nonatomic) BOOL needsToReloadStoreBookmarkMetadataIdentifiers;
+@property (nonatomic) BOOL needsToRemoveLocationsForItemsMissingAssets;
+@property (nonatomic) BOOL needsToUpdateSortMap;
+@property (nonatomic, readonly) int originalUserVersion;
 
 - (int)currentUserVersion;
 - (BOOL)forceUpdateOriginals;

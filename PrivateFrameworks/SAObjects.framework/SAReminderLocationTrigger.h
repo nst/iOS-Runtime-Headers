@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SALocation;
+@interface SAReminderLocationTrigger : SAReminderTrigger
 
-@interface SAReminderLocationTrigger : SAReminderTrigger {
-}
-
-@property(copy) NSURL * contactIdentifier;
-@property(copy) NSString * internalGUID;
-@property(retain) SALocation * location;
-@property(copy) NSString * timing;
+@property (nonatomic, copy) NSURL *contactIdentifier;
+@property (nonatomic, copy) NSString *internalGUID;
+@property (nonatomic, retain) SALocation *location;
+@property (nonatomic, copy) NSString *timing;
 
 + (id)locationTrigger;
 + (id)locationTriggerWithDictionary:(id)arg1 context:(id)arg2;

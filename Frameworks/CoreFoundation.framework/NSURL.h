@@ -2,74 +2,229 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class NSArray, NSNumber, NSString, NSURL;
-
-@interface NSURL : NSObject <NSCopying, NSSecureCoding, PQLValuable, PQLValuable, QLPreviewItem, TSUDownloadItem> {
+@interface NSURL : NSObject <NSCopying, NSSecureCoding, PQLValuable, QLPreviewItem, TSUDownloadItem> {
     NSURL *_baseURL;
     void *_clients;
     void *_reserved;
     NSString *_urlString;
 }
 
-@property(copy,readonly) NSURL * URLByDeletingLastPathComponent;
-@property(copy,readonly) NSURL * URLByDeletingPathExtension;
-@property(copy,readonly) NSURL * URLByResolvingSymlinksInPath;
-@property(copy,readonly) NSURL * URLByStandardizingPath;
-@property(copy,readonly) NSString * absoluteString;
-@property(copy,readonly) NSURL * absoluteURL;
-@property(readonly) int addressBookUID;
-@property(copy,readonly) NSURL * baseURL;
-@property(readonly) NSString * br_lastEditorDeviceName;
-@property(readonly) NSString * br_lastEditorName;
-@property(readonly) int callService;
-@property(readonly) BOOL ckShouldShowComposeUI;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * downloadTaskDescription;
-@property(readonly) NSURL * downloadURL;
-@property(copy,readonly) NSURL * filePathURL;
-@property(readonly) const char * fileSystemRepresentation;
-@property(getter=isFileURL,readonly) BOOL fileURL;
-@property(readonly) BOOL forceAssist;
-@property(copy,readonly) NSString * fragment;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSString * host;
-@property(readonly) BOOL isBasebandLogURL;
-@property(readonly) BOOL isEmergencyCallURL;
-@property(readonly) BOOL isEmergencyURL;
-@property(readonly) BOOL isPlayImmediatelyURL;
-@property(readonly) BOOL isShowNowPlayingURL;
-@property(readonly) BOOL isVoicemailURL;
-@property(copy,readonly) NSString * lastPathComponent;
-@property(readonly) BOOL needsDownload;
-@property(readonly) NSString * originatingUIIdentifier;
-@property(readonly) NSString * overrideName;
-@property(copy,readonly) NSString * parameterString;
-@property(copy,readonly) NSString * password;
-@property(copy,readonly) NSString * path;
-@property(copy,readonly) NSArray * pathComponents;
-@property(copy,readonly) NSString * pathExtension;
-@property(readonly) NSString * phoneNumber;
-@property(copy,readonly) NSNumber * port;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property(copy,readonly) NSString * query;
-@property(copy,readonly) NSString * relativePath;
-@property(copy,readonly) NSString * relativeString;
-@property(copy,readonly) NSString * resourceSpecifier;
-@property(copy,readonly) NSString * scheme;
-@property(readonly) NSString * shortcutIdentifier;
-@property(copy,readonly) NSURL * standardizedURL;
-@property(readonly) Class superclass;
-@property(readonly) BOOL suppressAssist;
-@property(readonly) long long totalBytesExpectedToBeDownloaded;
-@property(readonly) NSString * tsu_UTI;
-@property(copy,readonly) NSString * user;
-@property(readonly) BOOL wasAlreadyAssisted;
+@property (readonly, copy) NSURL *URLByDeletingLastPathComponent;
+@property (readonly, copy) NSURL *URLByDeletingPathExtension;
+@property (readonly, copy) NSURL *URLByResolvingSymlinksInPath;
+@property (readonly, copy) NSURL *URLByStandardizingPath;
+@property (readonly, copy) NSString *absoluteString;
+@property (readonly, copy) NSURL *absoluteURL;
+@property (readonly) int addressBookUID;
+@property (readonly, copy) NSURL *baseURL;
+@property (nonatomic, readonly) NSString *br_lastEditorDeviceName;
+@property (nonatomic, readonly) NSString *br_lastEditorName;
+@property (readonly) int callService;
+@property (nonatomic, readonly) BOOL ckShouldShowComposeUI;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *downloadTaskDescription;
+@property (nonatomic, readonly) NSURL *downloadURL;
+@property (readonly, copy) NSURL *filePathURL;
+@property (readonly) const char *fileSystemRepresentation;
+@property (getter=isFileURL, readonly) BOOL fileURL;
+@property (readonly) BOOL forceAssist;
+@property (readonly, copy) NSString *fragment;
+@property (readonly) unsigned int hash;
+@property (readonly, copy) NSString *host;
+@property (readonly) BOOL isBasebandLogURL;
+@property (readonly) BOOL isEmergencyCallURL;
+@property (readonly) BOOL isEmergencyURL;
+@property (nonatomic, readonly) BOOL isPlayImmediatelyURL;
+@property (nonatomic, readonly) BOOL isShowNowPlayingURL;
+@property (readonly) BOOL isVoicemailURL;
+@property (readonly, copy) NSString *lastPathComponent;
+@property (nonatomic, readonly) BOOL needsDownload;
+@property (readonly) NSString *originatingUIIdentifier;
+@property (readonly) NSString *overrideName;
+@property (readonly, copy) NSString *parameterString;
+@property (readonly, copy) NSString *password;
+@property (readonly, copy) NSString *path;
+@property (readonly, copy) NSArray *pathComponents;
+@property (readonly, copy) NSString *pathExtension;
+@property (readonly) NSString *phoneNumber;
+@property (readonly, copy) NSNumber *port;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (readonly, copy) NSString *query;
+@property (readonly, copy) NSString *relativePath;
+@property (readonly, copy) NSString *relativeString;
+@property (readonly, copy) NSString *resourceSpecifier;
+@property (readonly, copy) NSString *scheme;
+@property (nonatomic, readonly) NSString *shortcutIdentifier;
+@property (readonly, copy) NSURL *standardizedURL;
+@property (readonly) Class superclass;
+@property (readonly) BOOL suppressAssist;
+@property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
+@property (nonatomic, readonly) NSString *tsu_UTI;
+@property (readonly, copy) NSString *user;
+@property (readonly) BOOL wasAlreadyAssisted;
 
-+ (id)CDVDefaultPortForScheme:(id)arg1;
-+ (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 port:(id)arg3 path:(id)arg4;
-+ (id)CDVURLWithScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6;
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+
++ (id)__unurl;
++ (id)bookmarkDataWithContentsOfURL:(id)arg1 error:(id*)arg2;
++ (id)resourceValuesForKeys:(id)arg1 fromBookmarkData:(id)arg2;
++ (BOOL)supportsSecureCoding;
++ (BOOL)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
+
+- (id)bookmarkDataWithAliasRecord:(id)arg1;
+- (id)bookmarkDataWithOptions:(unsigned int)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
+- (BOOL)checkResourceIsReachableAndReturnError:(id*)arg1;
+- (id)filePathURL;
+- (id)fileReferenceURL;
+- (BOOL)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (BOOL)isFileReferenceURL;
+- (void)removeAllCachedResourceValues;
+- (void)removeCachedResourceValueForKey:(id)arg1;
+- (id)resourceValuesForKeys:(id)arg1 error:(id*)arg2;
+- (BOOL)setResourceValue:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (BOOL)setResourceValues:(id)arg1 error:(id*)arg2;
+- (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
+- (BOOL)startAccessingSecurityScopedResource;
+- (void)stopAccessingSecurityScopedResource;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
++ (id)ab_URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
++ (id)ab_faceTimeURLWithDestinationID:(id)arg1;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+
+- (BOOL)_isSafeDirectoryForDownloads:(int)arg1;
+- (BOOL)_isSafeFileForBackgroundUpload:(int)arg1;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)URLByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (id)URLByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
++ (id)URLWithString:(id)arg1;
++ (id)URLWithString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
++ (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_web_URLWithComponents:(struct { id x1; id x2; int x3; id x4; id x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; oneway void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; unsigned short x25; void*x26; void*x27; unsigned int x28; void*x29; void*x30; void*x31; void*x32; in double x33; oneway int x34; void*x35; void*x36; void*x37; long x38; void*x39; void*x40; void*x41; in void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; oneway void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; unsigned short x117; void*x118; void*x119; unsigned int x120; void*x121; void*x122; void*x123; void*x124; in double x125; oneway int x126; void*x127; void*x128; void*x129; long x130; void*x131; void*x132; void*x133; in void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; id x170; void*x171; void*x172; void*x173; void*x174; long long x175; void*x176; void*x177; unsigned short x178; void*x179; short x180; void*x181; void*x182; void*x183; void*x184; unsigned long x185; int x186; unsigned int x187/* : ? */; const void*x188; const void*x189; void*x190; void*x191; const int x192; void x193; void*x194; void*x195; void*x196; void*x197; const void*x198; void*x199; void*x200; void*x201; out const void*x202; short x203; void*x204; unsigned char x205; void*x206; void*x207; void*x208; void*x209; int x210; void*x211; void*x212; float x213; const void*x214; void*x215; void*x216; void*x217; out const void*x218; void*x219; unsigned char x220; void*x221; void*x222; void*x223; void*x224; int x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; oneway void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; bool x247; void*x248; unsigned char x249; void*x250; void*x251; in void*x252; const void*x253; void*x254; int x255; out in unsigned int x256; long doublex257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; id x267; void*x268; void*x269; void*x270; void*x271; long long x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; id x282; void*x283; void*x284; void*x285; void*x286; long long x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void* x312[ /* ? */ ]; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; oneway void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; Class x375; void*x376; void*x377; unsigned short x378; void*x379; out const void*x380; unsigned char x381; out void*x382; void*x383; long x384; void*x385; void*x386; int x387; out in bycopy float x388; float x389; void*x390; const int x391; in void*x392; unsigned long x393; out out void*x394; void*x395; void*x396; unsigned int x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; long long x412; void*x413; void*x414; unsigned short x415; long doublex416; void*x417; void*x418; void*x419; void*x420; unsigned int x421; in void*x422; void*x423; const short x424; void*x425; BOOL x426; void*x427; int x428; out in void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; void*x436; void*x437; void*x438; void*x439; long long x440; unsigned int x441; void*x442; void*x443; void*x444; void*x445; const void*x446; BOOL x447; void*x448; BOOL x449; void*x450; int x451; out in short x452; void*x453; out double x454; void*x455; long x456; unsigned int x457; void*x458; void*x459; void*x460; unsigned char x461; out in void*x462; void*x463; in void*x464; oneway int x465; void*x466; void*x467; void*x468; void*x469; void*x470; void*x471; void*x472; void*x473; void*x474; void*x475; void*x476; void*x477; void*x478; long long x479; void*x480; void*x481; void*x482; bycopy inout void*x483; void x484; int x485; void*x486; void*x487; void*x488; int x489; out in void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; long long x507; long doublex508; void*x509; void*x510; void*x511; void*x512; int x513; in double x514; void*x515; const long doublex516; void*x517; void*x518; void*x519; void*x520; int x521; void*x522; void*x523; void*x524; const int x525; void*x526; void*x527; void*x528; const void*x529; void*x530; void*x531; void*x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; long long x550; void*x551; unsigned char x552; unsigned short x553; void*x554; short x555; void*x556; const double x557; double x558; const void*x559; short x560; short x561; void*x562; void*x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; long long x578; void*x579; void*x580; bool x581; void*x582; void*x583; BOOL x584; void*x585; void*x586; int x587; void*x588; void*x589; unsigned char x590; void*x591; long x592; long x593; void*x594; void*x595; void*x596; void*x597; void*x598; void*x599; void*x600; void*x601; void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; long long x610; void*x611; void*x612; void*x613; unsigned short x614; void*x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; void*x622; void*x623; const void*x624; void*x625; unsigned char x626; out in void*x627; const out long x628; long x629; void*x630; const void*x631; void*x632; void*x633; void*x634; void*x635; void*x636; void*x637; void*x638; void*x639; void*x640; void*x641; void*x642; void*x643; void*x644; void*x645; void*x646; void*x647; void*x648; void*x649; void*x650; void*x651; long long x652; SEL x653; void*x654; long doublex655; unsigned int x656; void*x657; out int x658; in void*x659; unsigned int x660; void*x661; void*x662; const void*x663; void*x664; out const void*x665; void*x666; void*x667; void*x668; void*x669; void*x670; void*x671; void*x672; void*x673; void*x674; void*x675; void*x676; void*x677; void*x678; long long x679; void*x680; void*x681; void*x682; unsigned short x683; unsigned char x684; out in in void*x685; BOOL x686; void*x687; void*x688; out unsigned short x689; void*x690; const void x691; int x692; BOOL x693; void*x694; void*x695; void*x696; short x697; short x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; void*x720; void*x721; long long x722; void*x723; void*x724; unsigned int x725; void*x726; out in void*x727; long doublex728; void*x729; short x730; BOOL x731; const int x732; void*x733; void*x734; out const void*x735; void*x736; void*x737; void*x738; void*x739; void*x740; void*x741; void*x742; void*x743; void*x744; void*x745; void*x746; void*x747; void*x748; long long x749; void*x750; void*x751; long doublex752; void*x753; const void*x754; const out long x755; long x756; bool x757; void*x758; void*x759; void*x760; out in void*x761; void*x762; void*x763; void*x764; void*x765; void*x766; void*x767; void*x768; void*x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; long long x776; void*x777; void*x778; unsigned int x779; void*x780; void*x781; unsigned int x782/* : ? */; void*x783; out const void*x784; BOOL x785; BOOL x786; void*x787; short x788; short x789; out const void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; long long x803; void*x804; void*x805; void*x806; unsigned int x807; void*x808; unsigned char x809; out void*x810; void*x811; out short x812; void*x813; void*x814; void*x815; BOOL x816; int x817; void*x818; int x819; void*x820; in void*x821; void*x822; void*x823; void*x824; void*x825; void*x826; void*x827; void*x828; void*x829; void*x830; void*x831; long long x832; void*x833; void*x834; inout void*x835; void*x836; void*x837; void*x838; unsigned long x839; out BOOL x840; void*x841; long x842; void*x843; unsigned char x844; out in void*x845; const out long x846; long x847; void*x848; const void*x849; void*x850; void*x851; void*x852; void*x853; void*x854; void*x855; void*x856; long long x857; void*x858; void*x859; oneway void*x860; int x861; void*x862; bycopy unsigned int x863/* : ? */; void*x864; void*x865; BOOL x866; void*x867; unsigned int x868; in short x869; void*x870; void*x871; BOOL x872; void*x873; out const void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; long long x884; void*x885; void*x886; void*x887; void*x888; unsigned int x889; void*x890; const void*x891; BOOL x892; void*x893; unsigned short x894; void*x895; out out short x896; void*x897; void*x898; void*x899; void*x900; out const void*x901; unsigned long x902; out void*x903; double x904; void*x905; const void*x906; void*x907; void*x908; void*x909; void*x910; void*x911; void*x912; void*x913; void*x914; void*x915; void*x916; void*x917; void*x918; void*x919; void*x920; void*x921; void*x922; void*x923; long long x924; void*x925; void*x926; unsigned int x927; void*x928; const int x929; in void*x930; void*x931; const void*x932; int x933; BOOL x934; void*x935; void*x936; const unsigned char x937; out in void*x938; const out long x939; long x940; void*x941; const void*x942; void*x943; void*x944; void*x945; void*x946; void*x947; void*x948; void*x949; void*x950; void*x951; void*x952; void*x953; void*x954; void*x955; void*x956; void*x957; void*x958; void*x959; void*x960; void*x961; void*x962; long long x963; Class x964; void*x965; long doublex966; unsigned int x967; void*x968; void*x969; const void*x970; void*x971; int x972; double x973; void*x974; void*x975; void*x976; void*x977; void*x978; void*x979; void*x980; void*x981; void*x982; void*x983; void*x984; void*x985; void*x986; void*x987; void*x988; void*x989; void*x990; void*x991; void*x992; void*x993; long long x994; void*x995; unsigned short x996; void*x997; void*x998; in BOOL x999; out double x1000; void*x1001; const void*x1002; const int x1003; void*x1004; void*x1005; unsigned char x1006; out out const double x1007; int x1008; in void*x1009; void*x1010; out const void*x1011; void*x1012; void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; void*x1021; void*x1022; void*x1023; void*x1024; void*x1025; void*x1026; void*x1027; void*x1028; void*x1029; void*x1030; unsigned long long x1031; void*x1032; void*x1033; unsigned char x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; const in void*x1040; long x1041; void*x1042; double x1043; int x1044; out unsigned char x1045; out void*x1046; void*x1047; out short x1048; int x1049; void*x1050; int x1051; out in void*x1052; void*x1053; void*x1054; void*x1055; void*x1056; void*x1057; void*x1058; void*x1059; void*x1060; void*x1061; void*x1062; void*x1063; void*x1064; void*x1065; void*x1066; void*x1067; void*x1068; void*x1069; void*x1070; void*x1071; void*x1072; void*x1073; void*x1074; void*x1075; out out void*x1076; in out void*x1077; void*x1078; void*x1079; const out void*x1080; void*x1081; const void*x1082; void*x1083; unsigned short x1084; void*x1085; const int x1086; in void*x1087; short x1088; void*x1089; void*x1090; void*x1091; void*x1092; void*x1093; void*x1094; void*x1095; void*x1096; void*x1097; void*x1098; void*x1099; void*x1100; void*x1101; void*x1102; void*x1103; void*x1104; void*x1105; void*x1106; void*x1107; void*x1108; void*x1109; void*x1110; void*x1111; void*x1112; oneway unsigned int x1113; void*x1114; void*x1115; void*x1116; void*x1117; const const out const unsigned long x1118; out void*x1119; unsigned int x1120; in void*x1121; void*x1122; const in void*x1123; long x1124; void*x1125; void*x1126; void*x1127; void*x1128; void*x1129; void*x1130; void*x1131; void*x1132; void*x1133; void*x1134; void*x1135; bool x1136; long doublex1137; int x1138; void x1139; int x1140; double x1141; void*x1142; const oneway int x1143; void*x1144; void*x1145; void*x1146; void*x1147; void*x1148; void*x1149; void*x1150; void*x1151; void*x1152; void*x1153; void*x1154; void*x1155; void*x1156; void*x1157; void*x1158; void*x1159; void*x1160; void*x1161; void*x1162; void*x1163; void*x1164; void*x1165; out out void*x1166; unsigned int x1167/* : ? */; void*x1168; BOOL x1169; void*x1170; unsigned short x1171; out BOOL x1172; void*x1173; void*x1174; void*x1175; void*x1176; void*x1177; in in void*x1178; long x1179; void*x1180; void*x1181; void*x1182; void*x1183; void*x1184; void*x1185; void*x1186; bycopy void*x1187; void*x1188; void*x1189; void*x1190; void*x1191; void*x1192; void*x1193; void*x1194; void*x1195; void*x1196; void*x1197; void*x1198; in void*x1199; void*x1200; void*x1201; void*x1202; void*x1203; void*x1204; void*x1205; void*x1206; void*x1207; void*x1208; void*x1209; void*x1210; void*x1211; void*x1212; void*x1213; void*x1214; void*x1215; void*x1216; void*x1217; void*x1218; void*x1219; void*x1220; void*x1221; void*x1222; void*x1223; unsigned short x1224; void*x1225; void*x1226; int x1227; const void*x1228; long x1229; void*x1230; void*x1231; unsigned short x1232; void*x1233; short x1234; short x1235; int x1236; out in void*x1237; void*x1238; void*x1239; void*x1240; void*x1241; void*x1242; void*x1243; void*x1244; void*x1245; void*x1246; void*x1247; void*x1248; void*x1249; void*x1250; void*x1251; void*x1252; bycopy void*x1253; int x1254; long x1255; void*x1256; unsigned long x1257; out void*x1258; double x1259; void*x1260; const void*x1261; void*x1262; void*x1263; void*x1264; void*x1265; void*x1266; void*x1267; void*x1268; void*x1269; void*x1270; void*x1271; void*x1272; void*x1273; void*x1274; void*x1275; void*x1276; void*x1277; void*x1278; void*x1279; unsigned long x1280; unsigned char x1281; int x1282; void*x1283; void*x1284; void*x1285; void*x1286; void*x1287; void*x1288; void*x1289; void*x1290; void*x1291; void*x1292; void*x1293; void*x1294; void*x1295; void*x1296; void*x1297; void*x1298; void*x1299; void*x1300; void*x1301; void*x1302; void*x1303; void*x1304; void*x1305; void*x1306; void*x1307; void*x1308; void*x1309; void*x1310; void*x1311; void*x1312; void*x1313; void*x1314; void*x1315; void*x1316; void*x1317; void*x1318; void*x1319; void*x1320; void*x1321; void*x1322; inout void*x1323; void*x1324; void*x1325; void*x1326; void*x1327; unsigned int x1328; void*x1329; void*x1330; short x1331; short x1332; BOOL x1333; out double x1334; void*x1335; oneway int x1336; void*x1337; void*x1338; void*x1339; void*x1340; void*x1341; void*x1342; void*x1343; void*x1344; void*x1345; void*x1346; void*x1347; void*x1348; void*x1349; void*x1350; void*x1351; void*x1352; void*x1353; void*x1354; void*x1355; void*x1356; unsigned short x1357; void*x1358; short x1359; void*x1360; void*x1361; void*x1362; void*x1363; unsigned long x1364; int x1365; unsigned int x1366/* : ? */; const void*x1367; const void*x1368; void*x1369; void*x1370; const int x1371; void x1372; void*x1373; void*x1374; void*x1375; void*x1376; const void*x1377; void*x1378; void*x1379; void*x1380; out const void*x1381; short x1382; void*x1383; void*x1384; void*x1385; void*x1386; out void*x1387; void*x1388; void*x1389; unsigned int x1390; void*x1391; float x1392; const void*x1393; void*x1394; void*x1395; void*x1396; out const void*x1397; void*x1398; void*x1399; void*x1400; void*x1401; out void*x1402; void*x1403; void*x1404; unsigned int x1405; void*x1406; void*x1407; void*x1408; void*x1409; void*x1410; void*x1411; void*x1412; void*x1413; void*x1414; void*x1415; void*x1416; void*x1417; void*x1418; void*x1419; void*x1420; void*x1421; void*x1422; void*x1423; void*x1424; void*x1425; void*x1426; void*x1427; void*x1428; void*x1429; void*x1430; void*x1431; void*x1432; void*x1433; void*x1434; void*x1435; void*x1436; void*x1437; void*x1438; void*x1439; void*x1440; void*x1441; void*x1442; void*x1443; void*x1444; void*x1445; void*x1446; void*x1447; void*x1448; oneway void*x1449; void*x1450; void*x1451; void*x1452; void*x1453; void*x1454; void*x1455; void*x1456; void*x1457; void*x1458; void*x1459; void*x1460; void*x1461; void*x1462; in void*x1463; unsigned short x1464; void*x1465; int x1466; void*x1467; void*x1468; int x1469; in void*x1470; void*x1471; void*x1472; void*x1473; void*x1474; out double x1475; oneway int x1476; void*x1477; void*x1478; void*x1479; const void*x1480; short x1481; void*x1482; in void*x1483; void*x1484; const void*x1485; void*x1486; void*x1487; void*x1488; void*x1489; void*x1490; void*x1491; void*x1492; void*x1493; void*x1494; void*x1495; void*x1496; void*x1497; void*x1498; void*x1499; void*x1500; void*x1501; void*x1502; void*x1503; void*x1504; void*x1505; void*x1506; void*x1507; void*x1508; void*x1509; void*x1510; void*x1511; void*x1512; void*x1513; void*x1514; void*x1515; void*x1516; void*x1517; void*x1518; void*x1519; void*x1520; void*x1521; void*x1522; void*x1523; void*x1524; void*x1525; void*x1526; void*x1527; void*x1528; void*x1529; void*x1530; void*x1531; void*x1532; void*x1533; void*x1534; void*x1535; void*x1536; void*x1537; void*x1538; void*x1539; void*x1540; void*x1541; void*x1542; void*x1543; void*x1544; void*x1545; void*x1546; void*x1547; void*x1548; void*x1549; void*x1550; void*x1551; void*x1552; oneway void*x1553; void*x1554; void*x1555; void*x1556; void*x1557; void*x1558; void*x1559; unsigned char x1560; void*x1561; void*x1562; bool x1563; void*x1564; const void*x1565; long doublex1566; void*x1567; void*x1568; void*x1569; void*x1570; void*x1571; void*x1572; void*x1573; void*x1574; void*x1575; void*x1576; void*x1577; void*x1578; void*x1579; void*x1580; void*x1581; void*x1582; void*x1583; void*x1584; long long x1585; void*x1586; void*x1587; void*x1588; void*x1589; void*x1590; void*x1591; out void*x1592; const void*x1593; void*x1594; void*x1595; void*x1596; void*x1597; int x1598; void*x1599; in void*x1600; void*x1601; void*x1602; void*x1603; void*x1604; void*x1605; void*x1606; void*x1607; void*x1608; void*x1609; void*x1610; void*x1611; void*x1612; void*x1613; long long x1614; unsigned long long x1615; void*x1616; void*x1617; void*x1618; void*x1619; void*x1620; void*x1621; void*x1622; void*x1623; void*x1624; void*x1625; void*x1626; void*x1627; void*x1628; void*x1629; void*x1630; void*x1631; void*x1632; void*x1633; void*x1634; id x1635; void*x1636; void*x1637; void*x1638; void*x1639; void*x1640; void*x1641; void*x1642; void*x1643; void*x1644; void*x1645; void*x1646; void*x1647; void*x1648; void*x1649; void*x1650; void*x1651; void*x1652; void*x1653; void*x1654; void*x1655; void*x1656; void*x1657; void*x1658; oneway void*x1659; void*x1660; void*x1661; void*x1662; void*x1663; void*x1664; void*x1665; unsigned char x1666; void*x1667; void*x1668; bool x1669; void*x1670; const void*x1671; long doublex1672; void*x1673; void*x1674; void*x1675; void*x1676; void*x1677; void*x1678; void*x1679; void*x1680; void*x1681; void*x1682; void*x1683; void*x1684; void*x1685; void*x1686; void*x1687; void*x1688; void*x1689; void*x1690; void*x1691; void*x1692; void*x1693; void*x1694; void*x1695; void*x1696; void*x1697; unsigned int x1698; oneway int x1699; void*x1700; void*x1701; void*x1702; void*x1703; void*x1704; void*x1705; void*x1706; void*x1707; void*x1708; void*x1709; void*x1710; void*x1711; void*x1712; void*x1713; void*x1714; void*x1715; void*x1716; void*x1717; void*x1718; void*x1719; void*x1720; void*x1721; void*x1722; void*x1723; void*x1724; void*x1725; void*x1726; void*x1727; void*x1728; void*x1729; void*x1730; void*x1731; void*x1732; void*x1733; void*x1734; void*x1735; void*x1736; void*x1737; void*x1738; void*x1739; void*x1740; void*x1741; void*x1742; void*x1743; void*x1744; void*x1745; void*x1746; void*x1747; void*x1748; void*x1749; void*x1750; void*x1751; void*x1752; void*x1753; void*x1754; void*x1755; void*x1756; void*x1757; void*x1758; void*x1759; void*x1760; void*x1761; void*x1762; void*x1763; void*x1764; void*x1765; void*x1766; void*x1767; void*x1768; void*x1769; void*x1770; inout void*x1771; void*x1772; void*x1773; void*x1774; bool x1775; unsigned short x1776; void*x1777; BOOL x1778; void*x1779; int x1780; out in void*x1781; void*x1782; void*x1783; void*x1784; void*x1785; void*x1786; void*x1787; void*x1788; void*x1789; void*x1790; void*x1791; void*x1792; void*x1793; void*x1794; void*x1795; void*x1796; void*x1797; void*x1798; void*x1799; void*x1800; void*x1801; void*x1802; void*x1803; void*x1804; unsigned short x1805; void*x1806; short x1807; void*x1808; void*x1809; void*x1810; void*x1811; unsigned long x1812; int x1813; unsigned int x1814/* : ? */; const void*x1815; const void*x1816; void*x1817; void*x1818; const int x1819; void x1820; void*x1821; void*x1822; void*x1823; void*x1824; const void*x1825; void*x1826; void*x1827; void*x1828; out const void*x1829; short x1830; void*x1831; bycopy float x1832; float x1833; int x1834; BOOL x1835; void*x1836; unsigned int x1837; void*x1838; void*x1839; out const void*x1840; void*x1841; float x1842; const void*x1843; void*x1844; void*x1845; void*x1846; out const void*x1847; void*x1848; bycopy float x1849; float x1850; int x1851; BOOL x1852; void*x1853; unsigned int x1854; void*x1855; void*x1856; out const void*x1857; void*x1858; void*x1859; void*x1860; void*x1861; void*x1862; void*x1863; void*x1864; void*x1865; void*x1866; void*x1867; void*x1868; void*x1869; void*x1870; void*x1871; void*x1872; void*x1873; void*x1874; void*x1875; void*x1876; void*x1877; void*x1878; void*x1879; void*x1880; void*x1881; void*x1882; void*x1883; void*x1884; void*x1885; void*x1886; void*x1887; void*x1888; void*x1889; void*x1890; void*x1891; void*x1892; oneway void*x1893; void*x1894; void*x1895; void*x1896; void*x1897; void*x1898; void*x1899; void*x1900; void*x1901; oneway out int x1902; BOOL x1903; void*x1904; unsigned char x1905; void*x1906; void*x1907; void*x1908; unsigned short x1909; void*x1910; const void x1911; int x1912; BOOL x1913; void*x1914; void*x1915; const int x1916; void x1917; void*x1918; void*x1919; void*x1920; void*x1921; void*x1922; void*x1923; void*x1924; void*x1925; void*x1926; void*x1927; void*x1928; void*x1929; void*x1930; void*x1931; void*x1932; void*x1933; void*x1934; void*x1935; void*x1936; void*x1937; void*x1938; void*x1939; void*x1940; void*x1941; void*x1942; void*x1943; void*x1944; void*x1945; void*x1946; void*x1947; void*x1948; void*x1949; void*x1950; void*x1951; void*x1952; void*x1953; void*x1954; void*x1955; void*x1956; void*x1957; void*x1958; void*x1959; void*x1960; void*x1961; void*x1962; void*x1963; void*x1964; void*x1965; void*x1966; void*x1967; void*x1968; void*x1969; void*x1970; void*x1971; void*x1972; void*x1973; void*x1974; void*x1975; void*x1976; void*x1977; void*x1978; void*x1979; void*x1980; void*x1981; void*x1982; void*x1983; void*x1984; void*x1985; void*x1986; void*x1987; void*x1988; void*x1989; void*x1990; void*x1991; void*x1992; void*x1993; unsigned int x1994; void*x1995; unsigned short x1996; long doublex1997; unsigned long x1998; void*x1999; void*x2000; void*x2001; const void*x2002; const out void*x2003; void*x2004; void*x2005; void*x2006; float x2007; void*x2008; void*x2009; void*x2010; void*x2011; void*x2012; void*x2013; void*x2014; void*x2015; void*x2016; void*x2017; void*x2018; void*x2019; void*x2020; void*x2021; unsigned short x2022; void*x2023; short x2024; void*x2025; void*x2026; void*x2027; void*x2028; unsigned long x2029; int x2030; unsigned int x2031/* : ? */; const void*x2032; const void*x2033; void*x2034; void*x2035; const int x2036; void x2037; void*x2038; void*x2039; void*x2040; void*x2041; const void*x2042; void*x2043; void*x2044; void*x2045; out const void*x2046; short x2047; void*x2048; unsigned char x2049; out const void*x2050; void*x2051; unsigned int x2052; void*x2053; float x2054; const void*x2055; void*x2056; void*x2057; void*x2058; out const void*x2059; void*x2060; unsigned char x2061; out const void*x2062; void*x2063; unsigned int x2064; void*x2065; void*x2066; void*x2067; void*x2068; void*x2069; void*x2070; void*x2071; void*x2072; void*x2073; void*x2074; void*x2075; void*x2076; void*x2077; void*x2078; void*x2079; void*x2080; void*x2081; void*x2082; void*x2083; void*x2084; void*x2085; void*x2086; void*x2087; void*x2088; void*x2089; void*x2090; void*x2091; void*x2092; void*x2093; void*x2094; void*x2095; void*x2096; void*x2097; void*x2098; void*x2099; void*x2100; void*x2101; void*x2102; void*x2103; void*x2104; void*x2105; void*x2106; void*x2107; void*x2108; void*x2109; void*x2110; void*x2111; void*x2112; void*x2113; void*x2114; void*x2115; void*x2116; void*x2117; void*x2118; void*x2119; void*x2120; void*x2121; void*x2122; void*x2123; void*x2124; void*x2125; void*x2126; void*x2127; void*x2128; void*x2129; void*x2130; void*x2131; void*x2132; void*x2133; void*x2134; void*x2135; void*x2136; void*x2137; void*x2138; void*x2139; void*x2140; void*x2141; void*x2142; void*x2143; void*x2144; void*x2145; void*x2146; void*x2147; void*x2148; void*x2149; bycopy void*x2150; void*x2151; void*x2152; void*x2153; void*x2154; void*x2155; void*x2156; void*x2157; void*x2158; void*x2159; void*x2160; void*x2161; void*x2162; void*x2163; void*x2164; void*x2165; void*x2166; void*x2167; void*x2168; void*x2169; void*x2170; void*x2171; void*x2172; void*x2173; void*x2174; void*x2175; void*x2176; void*x2177; void*x2178; void*x2179; void*x2180; void*x2181; void*x2182; void*x2183; unsigned int x2184; void*x2185; unsigned short x2186; long doublex2187; unsigned long x2188; void*x2189; void*x2190; void*x2191; const bool x2192; void*x2193; short x2194; void*x2195; void*x2196; void*x2197; float x2198; void*x2199; void*x2200; void*x2201; void*x2202; void*x2203; void*x2204; void*x2205; void*x2206; void*x2207; void*x2208; void*x2209; void*x2210; void*x2211; void*x2212; void*x2213; void*x2214; void*x2215; void*x2216; void*x2217; void*x2218; void*x2219; void*x2220; void*x2221; void*x2222; void*x2223; void*x2224; inout void*x2225; void*x2226; void*x2227; void*x2228; void*x2229; void*x2230; void*x2231; void*x2232; void*x2233; void*x2234; void*x2235; void*x2236; void*x2237; void*x2238; void*x2239; void*x2240; void*x2241; void*x2242; void*x2243; void*x2244; unsigned short x2245; void*x2246; short x2247; void*x2248; void*x2249; void*x2250; void*x2251; unsigned long x2252; int x2253; unsigned int x2254/* : ? */; const void*x2255; const void*x2256; void*x2257; void*x2258; const int x2259; void x2260; void*x2261; void*x2262; void*x2263; void*x2264; const void*x2265; void*x2266; void*x2267; void*x2268; out const void*x2269; short x2270; void*x2271; void*x2272; void*x2273; void*x2274; void*x2275; unsigned char x2276; void*x2277; in void*x2278; void*x2279; const void*x2280; unsigned int x2281; void*x2282; float x2283; const void*x2284; void*x2285; void*x2286; void*x2287; out const void*x2288; void*x2289; void*x2290; void*x2291; void*x2292; void*x2293; unsigned char x2294; void*x2295; in void*x2296; void*x2297; const void*x2298; unsigned int x2299; void*x2300; void*x2301; void*x2302; oneway void*x2303; void*x2304; void*x2305; void*x2306; void*x2307; void*x2308; void*x2309; void*x2310; unsigned short x2311; void*x2312; short x2313; void*x2314; void*x2315; void*x2316; void*x2317; unsigned long x2318; int x2319; unsigned int x2320/* : ? */; const void*x2321; const void*x2322; void*x2323; void*x2324; const void*x2325; void*x2326; void*x2327; void*x2328; out const void*x2329; short x2330; void*x2331; unsigned char x2332; out const void*x2333; unsigned int x2334; void*x2335; void*x2336; void*x2337; void*x2338; void*x2339; float x2340; const void*x2341; void*x2342; void*x2343; void*x2344; out const void*x2345; void*x2346; unsigned char x2347; out const void*x2348; unsigned int x2349; void*x2350; void*x2351; void*x2352; void*x2353; void*x2354; void*x2355; void*x2356; void*x2357; void*x2358; void*x2359; void*x2360; void*x2361; void*x2362; void*x2363; void*x2364; void*x2365; void*x2366; void*x2367; void*x2368; void*x2369; void*x2370; void*x2371; void*x2372; void*x2373; void*x2374; void*x2375; void*x2376; void*x2377; void*x2378; void*x2379; void*x2380; void*x2381; void*x2382; void*x2383; void*x2384; void x2385; void*x2386; void*x2387; void*x2388; void*x2389; void*x2390; void*x2391; void*x2392; void*x2393; void*x2394; void*x2395; void*x2396; void*x2397; void*x2398; void*x2399; void*x2400; void*x2401; void*x2402; void*x2403; void*x2404; void*x2405; void*x2406; void*x2407; void*x2408; void*x2409; unsigned short x2410; void*x2411; short x2412; void*x2413; void*x2414; void*x2415; void*x2416; unsigned long x2417; int x2418; unsigned int x2419/* : ? */; const void*x2420; const void*x2421; void*x2422; void*x2423; const int x2424; void x2425; void*x2426; void*x2427; void*x2428; void*x2429; const void*x2430; void*x2431; void*x2432; void*x2433; out const void*x2434; short x2435; void*x2436; bycopy float x2437; float x2438; int x2439; BOOL x2440; void*x2441; unsigned int x2442; void*x2443; void*x2444; out const void*x2445; void*x2446; float x2447; const void*x2448; void*x2449; void*x2450; void*x2451; out const void*x2452; void*x2453; bycopy float x2454; float x2455; int x2456; BOOL x2457; void*x2458; unsigned int x2459; void*x2460; void*x2461; out const void*x2462; void*x2463; void*x2464; void*x2465; oneway void*x2466; void*x2467; void*x2468; void*x2469; void*x2470; void*x2471; void*x2472; void*x2473; unsigned short x2474; void*x2475; void*x2476; void*x2477; short x2478; void*x2479; void*x2480; void*x2481; in void*x2482; void*x2483; void*x2484; const void*x2485; void*x2486; void*x2487; void*x2488; void*x2489; void*x2490; void*x2491; void*x2492; void*x2493; void*x2494; void*x2495; void*x2496; void*x2497; void*x2498; long doublex2499; void*x2500; unsigned long long x2501; void*x2502; void*x2503; unsigned short x2504; void*x2505; unsigned int x2506; in void*x2507; void*x2508; void*x2509; void*x2510; const void*x2511; void*x2512; void*x2513; long doublex2514; int x2515; BOOL x2516; void*x2517; int x2518; out in void*x2519; const void*x2520; void*x2521; void*x2522; void*x2523; void*x2524; void*x2525; void*x2526; void*x2527; void*x2528; void*x2529; void*x2530; void*x2531; void*x2532; void*x2533; void*x2534; void*x2535; void*x2536; void*x2537; void*x2538; void*x2539; void*x2540; void*x2541; void*x2542; void*x2543; void*x2544; void*x2545; void*x2546; unsigned short x2547; void*x2548; void*x2549; void*x2550; void*x2551; in void*x2552; int x2553; BOOL x2554; void*x2555; void*x2556; int x2557; out in void*x2558; void*x2559; short x2560; void*x2561; out in short x2562; void*x2563; void*x2564; void*x2565; void*x2566; void*x2567; void*x2568; void*x2569; void*x2570; void*x2571; void*x2572; void*x2573; void*x2574; void*x2575; void*x2576; void*x2577; void*x2578; void*x2579; void*x2580; void*x2581; void*x2582; void*x2583; double x2584; void*x2585; void*x2586; void*x2587; void*x2588; void*x2589; unsigned char x2590; void*x2591; const double x2592; void*x2593; void*x2594; in void*x2595; void*x2596; void*x2597; const void*x2598; void*x2599; void*x2600; void*x2601; void*x2602; void*x2603; void*x2604; void*x2605; void*x2606; void*x2607; void*x2608; void*x2609; void*x2610; void*x2611; void*x2612; void*x2613; void*x2614; void*x2615; void*x2616; void*x2617; void*x2618; void*x2619; short x2620; short x2621; unsigned char x2622; out void*x2623; void*x2624; out in void*x2625; const out in void*x2626; void*x2627; void*x2628; BOOL x2629; void*x2630; oneway int x2631; void*x2632; void*x2633; void*x2634; void*x2635; void*x2636; void*x2637; void*x2638; void*x2639; void*x2640; void*x2641; void*x2642; void*x2643; void*x2644; void*x2645; void*x2646; void*x2647; void*x2648; void*x2649; void*x2650; void*x2651; void*x2652; void*x2653; void*x2654; void*x2655; void*x2656; void*x2657; void*x2658; void*x2659; unsigned int x2660; void*x2661; void*x2662; long x2663; int x2664; BOOL x2665; void*x2666; void*x2667; int x2668; out in unsigned long x2669; int x2670; BOOL x2671; void*x2672; in short x2673; void*x2674; oneway int x2675; void*x2676; void*x2677; unsigned char x2678; out in void*x2679; const out long x2680; long x2681; void*x2682; const void*x2683; void*x2684; void*x2685; void*x2686; void*x2687; void*x2688; void*x2689; void*x2690; void*x2691; void*x2692; void*x2693; void*x2694; void*x2695; unsigned short x2696; unsigned char x2697; out in void*x2698; const out long x2699; void*x2700; const out void*x2701; void*x2702; void*x2703; void*x2704; void*x2705; void*x2706; void*x2707; void*x2708; void*x2709; void*x2710; void*x2711; void*x2712; void*x2713; void*x2714; void*x2715; void*x2716; })arg1;
++ (id)_web_URLWithString:(id)arg1 relativeToURL:(id)arg2;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
++ (id)fileURLWithPath:(id)arg1;
++ (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
++ (id)fileURLWithPathComponents:(id)arg1;
+
+- (id)URLByAppendingPathComponent:(id)arg1;
+- (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
+- (id)URLByAppendingPathExtension:(id)arg1;
+- (id)URLByDeletingLastPathComponent;
+- (id)URLByDeletingPathExtension;
+- (id)URLByResolvingSymlinksInPath;
+- (id)URLByStandardizingPath;
+- (id)_URLByEscapingSpacesAndControlChars;
+- (unsigned long)_cfTypeID;
+- (struct __CFURL { }*)_cfurl;
+- (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(BOOL)arg1;
+- (id)_fixedUpSideFaultError:(id)arg1;
+- (void)_freeClients;
+- (id)_hostString;
+- (BOOL)_isAbsolute;
+- (BOOL)_isDeallocating;
+- (void)_performWithPhysicalURL:(id /* block */)arg1;
+- (long long)_promiseExtensionConsume;
+- (void)_promiseExtensionRelease:(long long)arg1;
+- (id)_relativeURLPath;
+- (BOOL)_tryRetain;
+- (id)_valueFromFaultDictionary:(id)arg1 forKey:(id)arg2;
+- (id)_web_URLByRemovingLastPathComponent_nowarn;
+- (id)_web_URLByRemovingUserAndPath_nowarn;
+- (id)_web_URLByRemovingUserAndQueryAndFragment_nowarn;
+- (struct { id x1; id x2; int x3; id x4; id x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; oneway void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; unsigned int x26; void*x27; out double x28; void*x29; long x30; oneway int x31; void*x32; void*x33; long doublex34; void*x35; long x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; unsigned long x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; oneway void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; union x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; int x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; oneway void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; out void*x328; in void*x329; void*x330; void*x331; void*x332; void*x333; short x334; void*x335; void*x336; void*x337; in unsigned char x338; out in void*x339; const out long x340; void*x341; void*x342; void*x343; oneway void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; int x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; void*x428; void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; void*x436; void*x437; void*x438; oneway void*x439; void*x440; void*x441; void*x442; void*x443; void*x444; void*x445; void*x446; void*x447; union { int x_448_1_1; double x_448_1_2; } x448; void*x449; void*x450; oneway void*x451; void*x452; void*x453; void*x454; void*x455; void*x456; void*x457; SEL x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; void*x468; void*x469; void*x470; void*x471; void*x472; void*x473; inout void*x474; char *x475; void*x476; void*x477; void*x478; void*x479; void*x480; void*x481; void*x482; void*x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; out void*x524; void*x525; unsigned short x526; void*x527; void*x528; const int x529; in void*x530; void*x531; void*x532; void*x533; out const void*x534; long doublex535; void*x536; void*x537; void*x538; unsigned short x539; out void*x540; const BOOL x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; long doublex563; bycopy void*x564; inout out double x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void*x587; void*x588; void*x589; void*x590; void*x591; unsigned short x592; out void*x593; const BOOL x594; void*x595; inout out double x596; void*x597; void*x598; void*x599; void*x600; void*x601; void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; void*x613; void*x614; unsigned long long x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; void*x622; void*x623; void*x624; void*x625; void*x626; void*x627; void*x628; void*x629; void*x630; void*x631; void*x632; void*x633; void*x634; void*x635; void*x636; void*x637; void*x638; void*x639; void*x640; oneway void*x641; void*x642; void*x643; void*x644; void*x645; void*x646; void*x647; void*x648; void*x649; unsigned long long x650; void*x651; out void*x652; void*x653; double x654; void*x655; const int x656; in void*x657; void*x658; unsigned int x659/* : ? */; long x660; void*x661; long doublex662; void*x663; BOOL x664; out double x665; void*x666; const void*x667; void*x668; void*x669; void*x670; void*x671; void*x672; void*x673; void*x674; void*x675; void*x676; void*x677; void*x678; void*x679; void*x680; void*x681; void*x682; void*x683; void*x684; void*x685; void*x686; void*x687; void*x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; out const void*x695; unsigned long long x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; void*x720; void*x721; void*x722; void*x723; void*x724; void*x725; void*x726; void*x727; void*x728; oneway void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; void*x740; void*x741; void*x742; void*x743; oneway void*x744; void*x745; void*x746; void*x747; void*x748; void*x749; void*x750; void*x751; void*x752; void*x753; void*x754; void*x755; void*x756; void*x757; void*x758; void*x759; void*x760; void*x761; void*x762; void*x763; void*x764; void*x765; void*x766; void*x767; void*x768; void*x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; void*x778; void*x779; void*x780; void*x781; void*x782; void*x783; void*x784; void*x785; void*x786; void*x787; void*x788; void*x789; unsigned short x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; void*x803; void*x804; void*x805; void*x806; void*x807; void*x808; void*x809; void*x810; void*x811; void*x812; void*x813; void*x814; void*x815; void*x816; void*x817; void*x818; void*x819; void*x820; void*x821; void*x822; void*x823; void*x824; void*x825; void*x826; void*x827; void*x828; void*x829; void*x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; void*x839; void*x840; void*x841; void*x842; void*x843; void*x844; void*x845; void*x846; void*x847; void*x848; void*x849; void*x850; void*x851; void*x852; void*x853; void*x854; void*x855; void*x856; void*x857; void*x858; void*x859; void*x860; void*x861; void*x862; void*x863; void*x864; void*x865; void*x866; void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; void*x873; void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; void*x884; oneway void*x885; void*x886; void*x887; void*x888; void*x889; void*x890; void*x891; void*x892; void*x893; void*x894; void*x895; void*x896; void*x897; void*x898; void*x899; void*x900; void*x901; void*x902; void*x903; void*x904; void*x905; void*x906; long doublex907; long doublex908; unsigned int x909/* : ? */; void*x910; void*x911; void*x912; void*x913; void*x914; void*x915; void*x916; void*x917; void*x918; void*x919; void*x920; void*x921; void*x922; void*x923; void*x924; void*x925; void*x926; void*x927; void*x928; void*x929; void*x930; void*x931; oneway void*x932; void*x933; void*x934; void*x935; void*x936; void*x937; void*x938; void*x939; unsigned short x940; void*x941; short x942; void*x943; void*x944; void*x945; void*x946; unsigned long x947; int x948; unsigned int x949/* : ? */; const void*x950; const void*x951; void*x952; void*x953; const int x954; void x955; void*x956; void*x957; void*x958; void*x959; const void*x960; void*x961; void*x962; void*x963; out const void*x964; short x965; void*x966; void*x967; void*x968; void*x969; void*x970; void*x971; void*x972; const void*x973; float x974; const void*x975; void*x976; void*x977; void*x978; out const void*x979; void*x980; void*x981; void*x982; void*x983; void*x984; void*x985; void*x986; const void*x987; void*x988; void*x989; void*x990; void*x991; void*x992; void*x993; void*x994; void*x995; void*x996; void*x997; void*x998; void*x999; void*x1000; void*x1001; void*x1002; void*x1003; void*x1004; void*x1005; void*x1006; void*x1007; void*x1008; void*x1009; void*x1010; void*x1011; void*x1012; void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; void*x1021; void*x1022; void*x1023; void*x1024; void*x1025; void*x1026; void*x1027; void*x1028; void*x1029; void*x1030; oneway void*x1031; void*x1032; void*x1033; void*x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; void*x1042; void*x1043; void*x1044; void*x1045; void*x1046; void*x1047; void*x1048; void*x1049; void*x1050; void*x1051; void*x1052; void*x1053; void*x1054; void*x1055; void*x1056; void*x1057; void*x1058; void*x1059; void*x1060; void*x1061; void*x1062; void*x1063; void*x1064; void*x1065; void*x1066; })_web_URLComponents;
+- (BOOL)_web_isJavaScriptURL;
+- (id)_web_scriptIfJavaScriptURL;
+- (id)_web_suggestedFilenameWithMIMEType:(id)arg1;
+- (id)absoluteString;
+- (id)absoluteURL;
+- (id)baseURL;
+- (BOOL)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (const char *)fileSystemRepresentation;
+- (void)finalize;
+- (id)fragment;
+- (BOOL)getFileSystemRepresentation:(char *)arg1 maxLength:(unsigned int)arg2;
+- (BOOL)getPromisedItemResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (unsigned int)hash;
+- (id)host;
+- (id)init;
+- (id)initByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
+- (id)initFileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
+- (id)initFileURLWithPath:(id)arg1;
+- (id)initFileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithScheme:(id)arg1 host:(id)arg2 path:(id)arg3;
+- (id)initWithString:(id)arg1;
+- (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isFileURL;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (BOOL)isMemberOfClass:(Class)arg1;
+- (id)lastPathComponent;
+- (id)parameterString;
+- (id)password;
+- (id)path;
+- (id)pathComponents;
+- (id)pathExtension;
+- (id)port;
+- (id)promisedItemResourceValuesForKeys:(id)arg1 error:(id*)arg2;
+- (id)query;
+- (id)relativePath;
+- (id)relativeString;
+- (oneway void)release;
+- (id)resourceSpecifier;
+- (id)retain;
+- (unsigned int)retainCount;
+- (id)scheme;
+- (id)standardizedURL;
+- (id)user;
+
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
+- (id)betaStoreURL;
+- (BOOL)conformsToOverridePatternWithKey:(id)arg1;
+- (id)facebookURL;
+- (id)fmfURL;
+- (id)fmipURL;
+- (id)gamecenterURL;
+- (id)iCloudFamilyURL;
+- (id)iCloudSharingURL;
+- (id)iCloudSharingURL_noFragment;
+- (id)iTunesStoreURL;
+- (id)iWorkApplicationName;
+- (id)iWorkDocumentName;
+- (BOOL)isiWorkURL;
+- (id)keynoteLiveURL;
+- (id)mapsURL;
+- (id)photosURL;
+- (id)twitterURL;
+- (id)youTubeURL;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
+
+- (id)CAMLType;
+- (void)encodeWithCAMLWriter:(id)arg1;
+
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (id)previewItemURL;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
 + (id)SLTwitterAccessTokenURL;
 + (id)SLTwitterAccountGenerateURL;
 + (id)SLTwitterAccountSettingsURL;
@@ -87,116 +242,191 @@
 + (id)SLTwitterUserInfoURL;
 + (id)SLTwitterUsersLookupURL;
 + (id)SLTwitterVerifyCredentialsURL;
-+ (id)URLByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-+ (id)URLByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
 + (id)URLForFacebookGraphAPIWithDomain:(id)arg1 path:(id)arg2;
 + (id)URLForFacebookGraphAPIWithPath:(id)arg1;
 + (id)URLForFacebookPageAtPath:(id)arg1;
 + (id)URLForFacebookRESTMethod:(id)arg1;
-+ (id)URLWithAddressBookUID:(id)arg1;
-+ (id)URLWithDirtyString:(id)arg1;
-+ (id)URLWithDirtyString:(id)arg1;
-+ (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(int)arg2 andIdentifier:(unsigned long long)arg3;
-+ (id)URLWithPackagePart:(id)arg1;
-+ (id)URLWithScheme:(id)arg1;
-+ (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
-+ (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
-+ (id)URLWithScheme:(id)arg1 host:(id)arg2 user:(id)arg3 port:(int)arg4 uri:(id)arg5;
-+ (id)URLWithString:(id)arg1;
-+ (id)URLWithString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)URLWithTelephoneNumber:(id)arg1;
-+ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
-+ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
-+ (id)URLWithTelephoneNumber:(id)arg1 promptUser:(BOOL)arg2;
-+ (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)__unurl;
-+ (id)_af_URLWithMessageIdentifier:(id)arg1;
-+ (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
-+ (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
 + (BOOL)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
-+ (id)_web_URLWithComponents:(struct { id x1; id x2; id x3; id x4; int x5; id x6; id x7; id x8; })arg1;
-+ (id)_web_URLWithData:(id)arg1;
-+ (id)_web_URLWithData:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_web_URLWithDataAsString:(id)arg1;
-+ (id)_web_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_web_URLWithString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_web_URLWithUserTypedString:(id)arg1;
-+ (id)_web_URLWithUserTypedString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-+ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 relativeToURL:(id)arg2;
-+ (id)_web_uniqueWebDataURL;
-+ (id)ab_URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
-+ (id)ab_faceTimeURLWithDestinationID:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)bookmarkDataWithContentsOfURL:(id)arg1 error:(id*)arg2;
-+ (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(id)arg2;
-+ (id)brc_fileReferenceURLWithVolumeID:(id)arg1 fileID:(id)arg2 andName:(id)arg3 isDirectory:(BOOL)arg4;
-+ (id)brc_fileURLWithFileDescriptor:(int)arg1;
-+ (BOOL)canHandleDownloadTask:(id)arg1;
-+ (id)ckURLForChatIdentifier:(id)arg1 entryBody:(id)arg2;
-+ (id)ckURLForResource:(id)arg1 withExtension:(id)arg2;
-+ (int)classicPortForScheme:(id)arg1;
-+ (int)classicPortForScheme:(id)arg1;
-+ (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
-+ (id)davCompatibleFilenameForFilename:(id)arg1;
-+ (id)davCompatibleFilenameForFilename:(id)arg1;
-+ (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-+ (BOOL)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3 error:(id*)arg4;
-+ (id)escapedStringForString:(id)arg1;
-+ (id)faceTimeAcceptURLWithURL:(id)arg1;
-+ (id)faceTimeAcceptURLWithURL:(id)arg1 conferenceID:(id)arg2;
-+ (id)faceTimeLaunchForIncomingCallURL;
-+ (id)faceTimePromptURLWithURL:(id)arg1;
-+ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1;
-+ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1 showPrompt:(BOOL)arg2;
-+ (id)faceTimeURLWithDestinationID:(id)arg1;
-+ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
-+ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
-+ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5 audioOnly:(BOOL)arg6;
-+ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3 forceAssist:(BOOL)arg4 suppressAssist:(BOOL)arg5 wasAssisted:(BOOL)arg6;
-+ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
-+ (id)faceTimeURLWithURL:(id)arg1;
-+ (id)filePathURLWithEscapes:(id)arg1;
-+ (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
-+ (id)fileURLWithPath:(id)arg1;
-+ (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
-+ (id)fileURLWithPathComponents:(id)arg1;
-+ (id)iDiskSmallNameCompatibleNameForFilename:(id)arg1;
-+ (id)improperlyEscapedString:(id)arg1;
+
+- (BOOL)isAppStoreURL;
+- (BOOL)isAssetURL;
+- (BOOL)isMusicStoreURL;
+- (BOOL)loadingInUIWebViewWillLaunchAnotherApp;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(int)arg2 andIdentifier:(unsigned long long)arg3;
 + (id)mapsURLWithAddress:(id)arg1;
 + (id)mapsURLWithQuery:(id)arg1;
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (id)properlyEscapedString:(id)arg1;
-+ (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
-+ (id)relativeURLWithEscapes:(id)arg1;
-+ (id)resourceValuesForKeys:(id)arg1 fromBookmarkData:(id)arg2;
-+ (id)safari_URLWithDataAsString:(id)arg1;
-+ (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)safari_URLWithUserTypedString:(id)arg1;
-+ (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
-+ (id)sfu_filePathURLWithEscapes:(id)arg1;
-+ (id)sfu_improperlyEscapedString:(id)arg1;
-+ (id)sfu_properlyEscapedString:(id)arg1;
-+ (id)sfu_relativeURLWithEscapes:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (id)telephonyURLForTelEmergency;
-+ (id)telephonyURLForTelEmergencyCall;
-+ (id)telephonyURLForVoicemail;
-+ (id)telephonyURLWithDestinationID:(id)arg1;
-+ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
-+ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
-+ (id)telephonyURLWithDestinationID:(id)arg1 promptUser:(BOOL)arg2;
-+ (id)termsAndConditionsURL;
-+ (id)unescapedStringForString:(id)arg1;
-+ (id)uniqueURLWithRelativePart:(id)arg1;
-+ (BOOL)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 
-- (id)CAMLType;
+- (void)_domain:(id*)arg1 subdomain:(id*)arg2;
+- (BOOL)_isGoogleMapsDomain:(id)arg1 subdomain:(id)arg2 path:(id)arg3 queryKeysAndValues:(id)arg4;
+- (id)appleStoreURL;
+- (BOOL)isAccountURL;
+- (BOOL)isGoogleMapsURL;
+- (BOOL)isHTTPOrHTTPSURL;
+- (BOOL)isInternalUIKitURL;
+- (BOOL)isJavaScriptURL;
+- (BOOL)isSpringboardHandledURL;
+- (BOOL)isWebcalURL;
+- (id)itmsURL;
+- (id)phobosURL;
+- (id)radarWebURL;
+- (id)searchResultDomain;
+- (id)searchResultIdentifier;
+- (BOOL)ui_hasReadSandboxExtended;
+- (BOOL)ui_hasSandboxExtendedForClass:(const char *)arg1;
+- (id)ui_issueReadSandboxExtensionWithError:(id*)arg1;
+- (id)ui_issueReadWriteSandboxExtensionWithError:(id*)arg1;
+- (id)ui_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
+
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
++ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
++ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 relativeToURL:(id)arg2;
+
+- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)_af_URLWithMessageIdentifier:(id)arg1;
+
+- (id)_af_messageIdentifierValue;
+- (BOOL)isAMOSCommittedIdentifier;
+- (BOOL)isAMOSIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)afui_hasMapItemScheme;
+
+// Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
+
++ (id)URLWithDirtyString:(id)arg1;
++ (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
++ (int)classicPortForScheme:(id)arg1;
++ (id)davCompatibleFilenameForFilename:(id)arg1;
++ (id)iDiskSmallNameCompatibleNameForFilename:(id)arg1;
+
+- (id)URLByRemovingLastPathComponent;
+- (id)URLWithUsername:(id)arg1;
+- (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
+- (id)URLWithoutPassword;
+- (id)URLWithoutUsername;
+- (BOOL)absoluteURLisEqual:(id)arg1;
+- (id)initWithDirtyString:(id)arg1;
+- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
+- (BOOL)isEqualToURL:(id)arg1;
+- (id)lastPathComponent;
+- (id)pathWithoutDecodingAndRemovingTrailingSlash;
+- (id)pathWithoutTrailingRemovingSlash;
+- (id)queryParameters;
+- (id)serverURL;
+- (id)unquotedPassword;
+- (id)uri;
+
+// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
+
++ (id)URLWithAddressBookUID:(id)arg1;
++ (id)davCompatibleFilenameForFilename:(id)arg1;
+
+- (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
+- (BOOL)compareToLocalString:(id)arg1;
+- (BOOL)compareToLocalURL:(id)arg1;
+- (id)hostWithoutWWW;
+- (id)initWithCalDirtyString:(id)arg1;
+- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
+- (BOOL)isEqualToURL:(id)arg1;
+- (BOOL)isEqualToURLIgnoringScheme:(id)arg1;
+- (BOOL)isOnRemoteFileSystem;
+- (id)lastPathComponent;
+- (id)pathDecodedAndWithoutTrailingSlashRemoved;
+- (id)pathWithoutTrailingRemovingSlash;
+- (id)queryParameters;
+- (id)serverURL;
+- (id)unquotedPassword;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)ckURLForChatIdentifier:(id)arg1 entryBody:(id)arg2;
++ (id)ckURLForResource:(id)arg1 withExtension:(id)arg2;
+
+- (BOOL)ckShouldShowComposeUI;
+- (id)ckWillNotLaunchComposeUIURL;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
++ (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(id /* block */)arg2;
++ (id)brc_fileReferenceURLWithVolumeID:(id)arg1 fileID:(id)arg2 andName:(id)arg3 isDirectory:(BOOL)arg4;
++ (id)brc_fileURLWithFileDescriptor:(int)arg1;
+
+- (id)br_URLByResolvingExternalDocumentReferenceWithError:(id*)arg1;
+- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id*)arg3;
+- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 lastEditorUserName:(id)arg3 error:(id*)arg4;
+- (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)br_cloudDocsContainer;
+- (id)br_containerID;
+- (id)br_containerIDForDocumentsContainerURL;
+- (void)br_containerIDsWithExternalReferencesWithHandler:(id /* block */)arg1;
+- (id)br_debugDescription;
+- (BOOL)br_getTagNames:(id*)arg1 error:(id*)arg2;
+- (void)br_isConflictedWithHandler:(id /* block */)arg1;
+- (BOOL)br_isDocumentsContainer;
+- (BOOL)br_isExternalDocumentReference;
+- (BOOL)br_isInCloudDocsPrivateStorages;
+- (BOOL)br_isInMobileDocuments;
+- (BOOL)br_isInSameVolumeAsURL:(id)arg1;
+- (BOOL)br_isParentOfURL:(id)arg1;
+- (BOOL)br_isParentOfURL:(id)arg1 strictly:(BOOL)arg2;
+- (BOOL)br_isStrictlyInMobileDocuments;
+- (id)br_lastEditorDeviceName;
+- (id)br_lastEditorName;
+- (id)br_pathRelativeToMobileDocuments;
+- (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
+- (BOOL)br_setTagNames:(id)arg1 error:(id*)arg2;
+- (id)brc_fileReferenceFileID;
+- (BOOL)brc_fileReferenceParseIntoVolumeID:(id*)arg1 fileID:(id*)arg2 andRelativePath:(id*)arg3;
+- (id)brc_fileReferenceRelativePath;
+- (id)brc_fileReferenceVolumeID;
+- (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (id)brc_applicationBundleID;
+- (id)brc_applicationContainerID;
+- (id)brc_attributesValues:(id)arg1 container:(id)arg2 lookup:(id)arg3;
+- (id)brc_localizedApplicationName;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
+
+- (id)initWithCPLArchiver:(id)arg1;
+- (id)plistArchiveWithCPLArchiver:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (id)CNFQueryDictionary;
+- (id)URLByAppendingCNFQueryDictionary:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
+
+- (BOOL)_isPhoneNumberID:(id)arg1;
+- (id)formattedFaceTimeDestinationAccount;
+
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
+
++ (id)CDVDefaultPortForScheme:(id)arg1;
++ (id)CDVURLWithScheme:(id)arg1 host:(id)arg2 port:(id)arg3 path:(id)arg4;
++ (id)CDVURLWithScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6;
+
 - (id)CDVFileSystemSafePath;
 - (BOOL)CDVIsEqualToURL:(id)arg1;
 - (BOOL)CDVIsSafeRedirectForRequestURL:(id)arg1;
@@ -212,87 +442,195 @@
 - (id)CDVURLWithScheme:(id)arg1 userandpass:(id)arg2 host:(id)arg3 port:(id)arg4 path:(id)arg5 parameters:(id)arg6 encodePercents:(BOOL)arg7;
 - (id)CDVURLWithUser:(id)arg1;
 - (id)CDVfixedURLByAppendingPathComponent:(id)arg1;
-- (id)CNFQueryDictionary;
-- (id)URLByAppendingCNFQueryDictionary:(id)arg1;
-- (id)URLByAppendingPathComponent:(id)arg1;
-- (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
-- (id)URLByAppendingPathExtension:(id)arg1;
-- (id)URLByAppendingQueryParameter:(id)arg1 value:(id)arg2;
-- (id)URLByDeletingLastPathComponent;
-- (id)URLByDeletingPathExtension;
-- (id)URLByDeletingQueryParameterWithKey:(id)arg1;
+- (id)initWithCDVScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6 parameterString:(id)arg7 query:(id)arg8 fragment:(id)arg9;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
++ (id)URLWithDirtyString:(id)arg1;
++ (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
++ (id)URLWithScheme:(id)arg1 host:(id)arg2 user:(id)arg3 port:(int)arg4 uri:(id)arg5;
++ (int)classicPortForScheme:(id)arg1;
+
 - (id)URLByRemovingLastPathComponent;
-- (id)URLByRemovingLastPathComponent;
-- (id)URLByResolvingSymlinksInPath;
-- (id)URLBySettingQueryParameterValue:(id)arg1 forKey:(id)arg2;
-- (id)URLByStandardizingPath;
-- (id)URLWithNewQueryParameterDictionary:(id)arg1;
-- (id)URLWithUsername:(id)arg1;
 - (id)URLWithUsername:(id)arg1;
 - (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
-- (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
-- (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
-- (id)URLWithoutPassword;
 - (id)URLWithoutUsername;
-- (id)URLWithoutUsername;
-- (id)WF_hostnameFromSecondLevelDomain;
-- (BOOL)WF_hostnameIsIPAddress;
-- (id)WF_normalizedRelativePath;
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (id)_URLByEscapingSpacesAndControlChars;
-- (id)_af_messageIdentifierValue;
-- (unsigned long)_cfTypeID;
-- (struct __CFURL { }*)_cfurl;
-- (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(BOOL)arg1;
-- (void)_domain:(id*)arg1 subdomain:(id*)arg2;
-- (id)_fixedUpSideFaultError:(id)arg1;
-- (void)_freeClients;
-- (id)_geo_portionAfterHostname;
+- (BOOL)isEqualToDAVURL:(id)arg1;
+- (id)leastInfoStringRepresentationRelativeToParentURL:(id)arg1;
+- (id)pathWithoutTrailingRemovingSlash;
+- (id)rawPath;
+- (id)uri;
+- (id)urlByRemovingUsername;
+- (id)urlBySettingHost:(id)arg1;
+- (id)urlBySettingHost:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)urlBySettingPath:(id)arg1;
+- (id)urlBySettingPath:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)urlBySettingPort:(id)arg1;
+- (id)urlBySettingPort:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)urlBySettingScheme:(id)arg1;
+- (id)urlBySettingScheme:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)urlBySettingUsername:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
 - (BOOL)_gkIsSecure;
 - (BOOL)_gkIsValidServerURL;
 - (id)_gkQueryDictionary;
 - (id)_gkURLByAddingQueryParameters:(id)arg1;
 - (id)_gkURLByReplacingSchemeWithScheme:(id)arg1;
-- (id)_hostString;
-- (BOOL)_isAbsolute;
-- (BOOL)_isDeallocating;
-- (BOOL)_isGoogleMapsDomain:(id)arg1 subdomain:(id)arg2 path:(id)arg3 queryKeysAndValues:(id)arg4;
+- (id)cacheKeyRepresentation;
+
+// Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
+
+- (void)chmod:(unsigned short)arg1;
+- (id)gs_URLByUpdatingPathExtensionWithPathOrURL:(id)arg1;
+- (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
+- (id)gs_issueReadExtensionIfNeededForPid:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (id)_geo_portionAfterHostname;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
+- (id)mf_firstPartNumber;
+- (BOOL)mf_isValidAttachmentURL;
+- (id)mf_lastPartNumber;
+- (id)mf_partNumbers;
+- (unsigned int)mf_rowID;
+
+// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+
+- (BOOL)isPlayImmediatelyURL;
+- (BOOL)isShowNowPlayingURL;
+- (id)shortcutIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (id)URLWithPackagePart:(id)arg1;
++ (id)filePathURLWithEscapes:(id)arg1;
++ (id)improperlyEscapedString:(id)arg1;
++ (id)properlyEscapedString:(id)arg1;
++ (id)relativeURLWithEscapes:(id)arg1;
+
+- (id)initWithPackagePart:(id)arg1;
+- (BOOL)isInternalToPackage;
+- (BOOL)isRelative;
+- (id)tsu_UTI;
+- (BOOL)tsu_conformsToUTI:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)isStoreServicesURL;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
++ (id)URLWithScheme:(id)arg1;
++ (id)URLWithTelephoneNumber:(id)arg1;
++ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
++ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
++ (id)URLWithTelephoneNumber:(id)arg1 promptUser:(BOOL)arg2;
++ (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
++ (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
++ (id)faceTimeAcceptURLWithURL:(id)arg1;
++ (id)faceTimeAcceptURLWithURL:(id)arg1 conferenceID:(id)arg2;
++ (id)faceTimeLaunchForIncomingCallURL;
++ (id)faceTimePromptURLWithURL:(id)arg1;
++ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1;
++ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1 showPrompt:(BOOL)arg2;
++ (id)faceTimeURLWithDestinationID:(id)arg1;
++ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
++ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
++ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5 audioOnly:(BOOL)arg6;
++ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3 forceAssist:(BOOL)arg4 suppressAssist:(BOOL)arg5 wasAssisted:(BOOL)arg6;
++ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
++ (id)faceTimeURLWithURL:(id)arg1;
++ (id)telephonyURLForTelEmergency;
++ (id)telephonyURLForTelEmergencyCall;
++ (id)telephonyURLForVoicemail;
++ (id)telephonyURLWithDestinationID:(id)arg1;
++ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
++ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
++ (id)telephonyURLWithDestinationID:(id)arg1 promptUser:(BOOL)arg2;
+
+- (id)URLByDeletingQueryParameterWithKey:(id)arg1;
+- (id)URLBySettingQueryParameterValue:(id)arg1 forKey:(id)arg2;
+- (id)URLWithNewQueryParameterDictionary:(id)arg1;
 - (BOOL)_isPhoneNumberID:(id)arg1;
-- (BOOL)_isPhoneNumberID:(id)arg1;
-- (BOOL)_isSafeDirectoryForDownloads:(int)arg1;
-- (BOOL)_isSafeFileForBackgroundUpload:(int)arg1;
 - (id)_mobilePhonePathParameters;
 - (id)_mobilePhoneQueryParameters;
-- (void)_performWithPhysicalURL:(id)arg1;
 - (id)_phoneNumberConvertNumbersToLatin:(BOOL)arg1;
-- (long long)_promiseExtensionConsume;
-- (void)_promiseExtensionRelease:(long long)arg1;
-- (id)_relativeURLPath;
-- (id)_safari_URLByReplacingComponent:(long)arg1 includingSeparators:(BOOL)arg2 withString:(id)arg3;
-- (id)_safari_URLByReplacingComponent:(long)arg1 withString:(id)arg2;
-- (BOOL)_tryRetain;
-- (id)_valueFromFaultDictionary:(id)arg1 forKey:(id)arg2;
+- (int)addressBookUID;
+- (int)callService;
+- (id)faceTimeDestinationAccount;
+- (BOOL)forceAssist;
+- (id)formattedPhoneNumber;
+- (BOOL)hasTelephonyScheme;
+- (BOOL)isBasebandLogURL;
+- (BOOL)isEmergencyCallURL;
+- (BOOL)isEmergencyURL;
+- (BOOL)isFaceTimeAcceptURL;
+- (BOOL)isFaceTimeAudioAcceptURL;
+- (BOOL)isFaceTimeAudioPromptURL;
+- (BOOL)isFaceTimeAudioURL;
+- (BOOL)isFaceTimePromptURL;
+- (BOOL)isFaceTimeURL;
+- (BOOL)isLaunchForIncomingCallURL;
+- (BOOL)isUpgradeURL;
+- (BOOL)isValidFaceTimeURL;
+- (BOOL)isVoicemailURL;
+- (BOOL)isWebSafeTelephoneURL;
+- (id)numberQualifiedForAddressBook;
+- (id)originatingUIIdentifier;
+- (id)overrideName;
+- (id)phoneNumber;
+- (id)queryParameters;
+- (BOOL)suppressAssist;
+- (id)telephonyParameterDictionary;
+- (BOOL)wasAlreadyAssisted;
+- (id)webSafeTelephoneURL;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (id)rc_URLByAppendingStringToLastComponentBasename:(id)arg1;
+- (id)rc_URLByFixingUpPersistentMediaRecordingsDirectory;
+- (id)rc_URLByReplacingPathExtensionWithExtension:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
+
 - (BOOL)_webBookmarks_isHTTPFamilyURL;
-- (id)_web_URLByRemovingLastPathComponent_nowarn;
-- (id)_web_URLByRemovingUserAndPath_nowarn;
-- (id)_web_URLByRemovingUserAndQueryAndFragment_nowarn;
+
+// Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
+
+- (id)WF_hostnameFromSecondLevelDomain;
+- (BOOL)WF_hostnameIsIPAddress;
+- (id)WF_normalizedRelativePath;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
++ (id)_web_URLWithData:(id)arg1;
++ (id)_web_URLWithData:(id)arg1 relativeToURL:(id)arg2;
++ (id)_web_URLWithDataAsString:(id)arg1;
++ (id)_web_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_web_URLWithUserTypedString:(id)arg1;
++ (id)_web_URLWithUserTypedString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_web_uniqueWebDataURL;
++ (id)uniqueURLWithRelativePart:(id)arg1;
+
 - (id)_web_URLByRemovingUserInfo;
 - (id)_web_URLByTruncatingOneCharacterBeforeComponent:(long)arg1;
 - (const char *)_web_URLCString;
-- (struct { id x1; id x2; id x3; id x4; int x5; id x6; id x7; id x8; })_web_URLComponents;
 - (id)_web_URLWithLowercasedScheme;
 - (id)_web_dataForURLComponentType:(long)arg1;
 - (id)_web_hostData;
 - (id)_web_hostString;
 - (BOOL)_web_isEmpty;
-- (BOOL)_web_isJavaScriptURL;
 - (id)_web_originalData;
 - (id)_web_originalDataAsString;
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
 - (id)_web_schemeData;
 - (id)_web_schemeSeparatorWithoutColon;
-- (id)_web_scriptIfJavaScriptURL;
-- (id)_web_suggestedFilenameWithMIMEType:(id)arg1;
 - (id)_web_userVisibleString;
 - (id)_webkit_URLByRemovingFragment;
 - (id)_webkit_URLByRemovingResourceSpecifier;
@@ -304,212 +642,19 @@
 - (id)_webkit_scriptIfJavaScriptURL;
 - (BOOL)_webkit_shouldLoadAsEmptyDocument;
 - (id)_webkit_suggestedFilenameWithMIMEType:(id)arg1;
-- (id)absoluteString;
-- (id)absoluteURL;
-- (BOOL)absoluteURLisEqual:(id)arg1;
-- (int)addressBookUID;
-- (BOOL)afui_hasMapItemScheme;
-- (id)appleStoreURL;
-- (id)baseURL;
-- (id)betaStoreURL;
-- (id)bookmarkDataWithAliasRecord:(id)arg1;
-- (id)bookmarkDataWithOptions:(unsigned int)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
-- (id)br_URLByResolvingExternalDocumentReferenceWithError:(id*)arg1;
-- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id*)arg3;
-- (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 lastEditorUserName:(id)arg3 error:(id*)arg4;
-- (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(id)arg2;
-- (id)br_cloudDocsContainer;
-- (id)br_containerID;
-- (id)br_containerIDForDocumentsContainerURL;
-- (void)br_containerIDsWithExternalReferencesWithHandler:(id)arg1;
-- (id)br_debugDescription;
-- (BOOL)br_getTagNames:(id*)arg1 error:(id*)arg2;
-- (void)br_isConflictedWithHandler:(id)arg1;
-- (BOOL)br_isDocumentsContainer;
-- (BOOL)br_isExternalDocumentReference;
-- (BOOL)br_isInCloudDocsPrivateStorages;
-- (BOOL)br_isInMobileDocuments;
-- (BOOL)br_isInSameVolumeAsURL:(id)arg1;
-- (BOOL)br_isParentOfURL:(id)arg1;
-- (BOOL)br_isParentOfURL:(id)arg1 strictly:(BOOL)arg2;
-- (BOOL)br_isStrictlyInMobileDocuments;
-- (id)br_lastEditorDeviceName;
-- (id)br_lastEditorName;
-- (id)br_pathRelativeToMobileDocuments;
-- (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
-- (BOOL)br_setTagNames:(id)arg1 error:(id*)arg2;
-- (id)brc_applicationBundleID;
-- (id)brc_applicationContainerID;
-- (id)brc_attributesValues:(id)arg1 container:(id)arg2 lookup:(id)arg3;
-- (id)brc_fileReferenceFileID;
-- (BOOL)brc_fileReferenceParseIntoVolumeID:(id*)arg1 fileID:(id*)arg2 andRelativePath:(id*)arg3;
-- (id)brc_fileReferenceRelativePath;
-- (id)brc_fileReferenceVolumeID;
-- (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
-- (id)brc_localizedApplicationName;
-- (id)cacheKeyRepresentation;
-- (int)callService;
-- (BOOL)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
-- (BOOL)checkResourceIsReachableAndReturnError:(id*)arg1;
-- (void)chmod:(unsigned short)arg1;
-- (BOOL)ckShouldShowComposeUI;
-- (id)ckWillNotLaunchComposeUIURL;
-- (BOOL)compareToLocalString:(id)arg1;
-- (BOOL)compareToLocalURL:(id)arg1;
-- (BOOL)conformsToOverridePatternWithKey:(id)arg1;
-- (id)copyQueryStringDictionaryWithUnescapedValues:(BOOL)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)copyXPCEncoding;
-- (void)dealloc;
-- (id)description;
-- (id)downloadTaskDescription;
-- (id)downloadURL;
-- (void)encodeWithCAMLWriter:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)enumerateQueryWithBlock:(id)arg1;
-- (id)faceTimeDestinationAccount;
-- (id)facebookURL;
-- (id)filePathURL;
-- (id)fileReferenceURL;
-- (const char *)fileSystemRepresentation;
-- (void)finalize;
-- (id)fmfURL;
-- (id)fmipURL;
-- (BOOL)forceAssist;
-- (id)formattedFaceTimeDestinationAccount;
-- (id)formattedPhoneNumber;
-- (id)fragment;
-- (id)gamecenterURL;
-- (BOOL)getFileSystemRepresentation:(char *)arg1 maxLength:(unsigned int)arg2;
-- (BOOL)getPromisedItemResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
-- (BOOL)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
-- (id)gs_URLByUpdatingPathExtensionWithPathOrURL:(id)arg1;
-- (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
-- (id)gs_issueReadExtensionIfNeededForPid:(int)arg1;
-- (BOOL)hasTelephonyScheme;
-- (unsigned int)hash;
-- (id)host;
-- (id)hostWithoutWWW;
-- (id)iCloudFamilyURL;
-- (id)iCloudSharingURL;
-- (id)iCloudSharingURL_noFragment;
-- (id)iTunesStoreURL;
-- (id)iWorkApplicationName;
-- (id)iWorkDocumentName;
-- (id)init;
-- (id)initByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
-- (id)initFileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
-- (id)initFileURLWithPath:(id)arg1;
-- (id)initFileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
-- (id)initWithCDVScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6 parameterString:(id)arg7 query:(id)arg8 fragment:(id)arg9;
-- (id)initWithCPLArchiver:(id)arg1;
-- (id)initWithCalDirtyString:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithDirtyString:(id)arg1;
-- (id)initWithPackagePart:(id)arg1;
-- (id)initWithScheme:(id)arg1 host:(id)arg2 path:(id)arg3;
-- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
-- (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
-- (id)initWithString:(id)arg1;
-- (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
-- (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isAMOSCommittedIdentifier;
-- (BOOL)isAMOSIdentifier;
-- (BOOL)isAccountURL;
-- (BOOL)isAppStoreURL;
-- (BOOL)isAssetURL;
-- (BOOL)isBasebandLogURL;
-- (BOOL)isEmergencyCallURL;
-- (BOOL)isEmergencyURL;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDAVURL:(id)arg1;
-- (BOOL)isEqualToURL:(id)arg1;
-- (BOOL)isEqualToURL:(id)arg1;
-- (BOOL)isEqualToURLIgnoringScheme:(id)arg1;
-- (BOOL)isFaceTimeAcceptURL;
-- (BOOL)isFaceTimeAudioAcceptURL;
-- (BOOL)isFaceTimeAudioPromptURL;
-- (BOOL)isFaceTimeAudioURL;
-- (BOOL)isFaceTimePromptURL;
-- (BOOL)isFaceTimeURL;
-- (BOOL)isFileReferenceURL;
-- (BOOL)isFileURL;
-- (BOOL)isGoogleMapsURL;
-- (BOOL)isHTTPOrHTTPSURL;
-- (BOOL)isInternalToPackage;
-- (BOOL)isInternalUIKitURL;
-- (BOOL)isJavaScriptURL;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isLaunchForIncomingCallURL;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
++ (id)safari_URLWithDataAsString:(id)arg1;
++ (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
++ (id)safari_URLWithUserTypedString:(id)arg1;
++ (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id /* block */)arg2;
++ (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
+
+- (id)_safari_URLByReplacingComponent:(long)arg1 includingSeparators:(BOOL)arg2 withString:(id)arg3;
+- (id)_safari_URLByReplacingComponent:(long)arg1 withString:(id)arg2;
 - (BOOL)isMailToURL;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)isMusicStoreURL;
-- (BOOL)isOnRemoteFileSystem;
-- (BOOL)isPlayImmediatelyURL;
-- (BOOL)isRelative;
-- (BOOL)isSafeExternalURL;
-- (BOOL)isShowNowPlayingURL;
-- (BOOL)isSpringboardHandledURL;
 - (BOOL)isStoreServicesURL;
-- (BOOL)isStoreServicesURL;
-- (BOOL)isUpgradeURL;
-- (BOOL)isValidFaceTimeURL;
-- (BOOL)isVoicemailURL;
-- (BOOL)isWebSafeTelephoneURL;
-- (BOOL)isWebcalURL;
-- (BOOL)isiWorkURL;
-- (id)itmsURL;
-- (id)keynoteLiveURL;
-- (id)lastPathComponent;
-- (id)lastPathComponent;
-- (id)lastPathComponent;
-- (id)leastInfoStringRepresentationRelativeToParentURL:(id)arg1;
-- (BOOL)loadingInUIWebViewWillLaunchAnotherApp;
-- (id)mapsURL;
-- (id)mf_firstPartNumber;
-- (BOOL)mf_isValidAttachmentURL;
-- (id)mf_lastPartNumber;
-- (id)mf_partNumbers;
-- (unsigned int)mf_rowID;
-- (id)numberQualifiedForAddressBook;
-- (id)originatingUIIdentifier;
-- (id)overrideName;
-- (id)parameterString;
-- (id)password;
-- (id)path;
-- (id)pathComponents;
-- (id)pathDecodedAndWithoutTrailingSlashRemoved;
-- (id)pathExtension;
-- (id)pathWithoutDecodingAndRemovingTrailingSlash;
-- (id)pathWithoutTrailingRemovingSlash;
-- (id)pathWithoutTrailingRemovingSlash;
-- (id)pathWithoutTrailingRemovingSlash;
-- (id)phobosURL;
-- (id)phoneNumber;
-- (id)photosURL;
-- (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (id)port;
-- (id)previewItemURL;
-- (id)promisedItemResourceValuesForKeys:(id)arg1 error:(id*)arg2;
-- (id)query;
-- (id)queryParameters;
-- (id)queryParameters;
-- (id)queryParameters;
-- (id)radarWebURL;
-- (id)rawPath;
-- (id)rc_URLByAppendingStringToLastComponentBasename:(id)arg1;
-- (id)rc_URLByFixingUpPersistentMediaRecordingsDirectory;
-- (id)rc_URLByReplacingPathExtensionWithExtension:(id)arg1;
-- (id)relativePath;
-- (id)relativeString;
-- (oneway void)release;
-- (void)removeAllCachedResourceValues;
-- (void)removeCachedResourceValueForKey:(id)arg1;
-- (id)resourceSpecifier;
-- (id)resourceValuesForKeys:(id)arg1 error:(id*)arg2;
-- (id)retain;
-- (unsigned int)retainCount;
 - (id)safari_URLByDeletingPort;
 - (id)safari_URLByReplacingHostWithString:(id)arg1;
 - (id)safari_URLByReplacingQueryWithString:(id)arg1;
@@ -523,26 +668,46 @@
 - (id)safari_userVisibleHost;
 - (id)safari_userVisibleHostWithoutWWWSubdomain;
 - (id)safari_userVisibleString;
+
+// Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
+
+- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
+
++ (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
++ (id)escapedStringForString:(id)arg1;
++ (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
++ (id)unescapedStringForString:(id)arg1;
+
+- (id)URLByAppendingQueryParameter:(id)arg1 value:(id)arg2;
+- (id)copyQueryStringDictionaryWithUnescapedValues:(BOOL)arg1;
+- (void)enumerateQueryWithBlock:(id /* block */)arg1;
+- (BOOL)isSafeExternalURL;
 - (id)sanitizedURL;
-- (id)scheme;
 - (id)schemeSwizzledURL;
-- (id)searchResultDomain;
-- (id)searchResultIdentifier;
-- (id)serverURL;
-- (id)serverURL;
-- (BOOL)setResourceValue:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (BOOL)setResourceValues:(id)arg1 error:(id*)arg2;
-- (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
-- (BOOL)sfu_isRelative;
-- (id)shortcutIdentifier;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (id)standardizedURL;
-- (BOOL)startAccessingSecurityScopedResource;
-- (void)stopAccessingSecurityScopedResource;
+- (id)urlByReplacingSchemeWithScheme:(id)arg1;
+- (id)urlBySettingQueryStringDictionary:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
++ (id)termsAndConditionsURL;
+
 - (int)storeURLType;
-- (BOOL)suppressAssist;
-- (id)telephonyParameterDictionary;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (BOOL)canHandleDownloadTask:(id)arg1;
++ (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
++ (BOOL)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3 error:(id*)arg4;
++ (id)sfu_filePathURLWithEscapes:(id)arg1;
++ (id)sfu_improperlyEscapedString:(id)arg1;
++ (id)sfu_properlyEscapedString:(id)arg1;
++ (id)sfu_relativeURLWithEscapes:(id)arg1;
+
+- (id)downloadTaskDescription;
+- (id)downloadURL;
+- (BOOL)sfu_isRelative;
 - (long long)totalBytesExpectedToBeDownloaded;
 - (id)tsp_URLExceptPrivate;
 - (id)tsp_embeddedUTI;
@@ -553,41 +718,13 @@
 - (BOOL)tsp_isUbiquitous;
 - (id)tsp_pathExceptPrivate;
 - (id)tsu_UTI;
-- (id)tsu_UTI;
-- (BOOL)tsu_conformsToUTI:(id)arg1;
 - (BOOL)tsu_conformsToUTI:(id)arg1;
 - (id)tsu_documentIdentifier;
 - (unsigned long long)tsu_fileSize;
 - (BOOL)tsu_isFileSizeTooLargeForSharing;
 - (BOOL)tsu_isShared;
 - (BOOL)tsu_isSharedWithMe;
-- (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id)arg1;
-- (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id)arg1;
-- (id)twitterURL;
-- (BOOL)ui_hasReadSandboxExtended;
-- (BOOL)ui_hasSandboxExtendedForClass:(const char *)arg1;
-- (id)ui_issueReadSandboxExtensionWithError:(id*)arg1;
-- (id)ui_issueReadWriteSandboxExtensionWithError:(id*)arg1;
-- (id)ui_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
-- (id)unquotedPassword;
-- (id)unquotedPassword;
-- (id)uri;
-- (id)uri;
-- (id)urlByRemovingUsername;
-- (id)urlByReplacingSchemeWithScheme:(id)arg1;
-- (id)urlBySettingHost:(id)arg1;
-- (id)urlBySettingHost:(id)arg1 keepUsername:(BOOL)arg2;
-- (id)urlBySettingPath:(id)arg1;
-- (id)urlBySettingPath:(id)arg1 keepUsername:(BOOL)arg2;
-- (id)urlBySettingPort:(id)arg1;
-- (id)urlBySettingPort:(id)arg1 keepUsername:(BOOL)arg2;
-- (id)urlBySettingQueryStringDictionary:(id)arg1;
-- (id)urlBySettingScheme:(id)arg1;
-- (id)urlBySettingScheme:(id)arg1 keepUsername:(BOOL)arg2;
-- (id)urlBySettingUsername:(id)arg1;
-- (id)user;
-- (BOOL)wasAlreadyAssisted;
-- (id)webSafeTelephoneURL;
-- (id)youTubeURL;
+- (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id /* block */)arg1;
+- (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id /* block */)arg1;
 
 @end

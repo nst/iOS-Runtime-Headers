@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHGeneratorLookup : NSObject {
-}
+@interface GQHGeneratorLookup : NSObject
 
 + (Class)generatorForApplication:(int)arg1;
 

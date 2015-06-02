@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@interface SPFeedbackSearch : SPFeedback {
-}
+@interface SPFeedbackSearch : SPFeedback
 
 - (id)parsecFeedbackFromSession:(id)arg1;
 

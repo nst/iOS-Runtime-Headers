@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
-
 @interface EKRecurrenceEnd : NSObject <NSCopying> {
     NSDate *_endDate;
     unsigned int _occurrenceCount;
 }
 
-@property(readonly) NSDate * endDate;
-@property(readonly) unsigned int occurrenceCount;
-@property(readonly) BOOL usesEndDate;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) unsigned int occurrenceCount;
+@property (nonatomic, readonly) BOOL usesEndDate;
 
 + (id)recurrenceEndWithEndDate:(id)arg1;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned int)arg1;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GEOVectorTile, NSString, UIView;
-
 @interface VKLabelMarker : NSObject <MKCalloutSource> {
     float _contentScale;
     unsigned long long _featureID;
@@ -30,15 +23,17 @@
     NSString *_subtitle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * detailCalloutAccessoryView;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * leftCalloutAccessoryView;
-@property(retain) UIView * rightCalloutAccessoryView;
-@property(copy,readonly) NSString * subtitle;
-@property(copy) NSString * subtitle;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *detailCalloutAccessoryView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *leftCalloutAccessoryView;
+@property (nonatomic, retain) UIView *rightCalloutAccessoryView;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -50,7 +45,6 @@
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)debugAnchorPointString;
-- (id)detailCalloutAccessoryView;
 - (id)featureHandles;
 - (unsigned long long)featureID;
 - (id)featureTile;
@@ -59,24 +53,28 @@
 - (id)iconName;
 - (id)incident;
 - (struct shared_ptr<vk::InfoLabel> { struct InfoLabel {} *x1; struct __shared_weak_count {} *x2; })infoLabel;
-- (id)initWithManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg1 infoLabel:(const struct shared_ptr<vk::InfoLabel> { struct InfoLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 contentScale:(float)arg3 featureInfo:(const struct LabelFeatureInfo { unsigned long long x1; unsigned char x2; struct _retain_ptr<GEOVectorTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; struct _retain_objc { } x_3_1_3; struct _release_objc { } x_3_1_4; } x3; }*)arg4;
+- (id)initWithManager:(const struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; }*)arg1 infoLabel:(const struct shared_ptr<vk::InfoLabel> { struct InfoLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 contentScale:(float)arg3 featureInfo:(const struct LabelFeatureInfo { unsigned long long x1; unsigned char x2; struct _retain_ptr<GEOVectorTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { int (**x_3_1_1)(); id x_3_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_3_1_3; const void*x_3_1_4; void*x_3_1_5; void*x_3_1_6; int x_3_1_7; in void*x_3_1_8; out unsigned int x_3_1_9/* : ? */; void*x_3_1_10; BOOL x_3_1_11; void*x_3_1_12; } x3; struct _release_objc { } x4; }*)arg4;
 - (BOOL)isFlyoverTour;
 - (BOOL)isOneWayArrow;
 - (BOOL)isSelectable;
 - (BOOL)isTrafficIncident;
-- (id)leftCalloutAccessoryView;
 - (id)mapRegion;
-- (id)rightCalloutAccessoryView;
 - (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2;
 - (int)selectionType;
-- (void)setDetailCalloutAccessoryView:(id)arg1;
 - (void)setLabelPressed:(BOOL)arg1;
 - (void)setLabelSelected:(BOOL)arg1;
-- (void)setLeftCalloutAccessoryView:(id)arg1;
-- (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (BOOL)shouldActivateFeatureSelectionMode;
 - (id)subtitle;
 - (id)title;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)detailCalloutAccessoryView;
+- (id)leftCalloutAccessoryView;
+- (id)rightCalloutAccessoryView;
+- (void)setDetailCalloutAccessoryView:(id)arg1;
+- (void)setLeftCalloutAccessoryView:(id)arg1;
+- (void)setRightCalloutAccessoryView:(id)arg1;
 
 @end

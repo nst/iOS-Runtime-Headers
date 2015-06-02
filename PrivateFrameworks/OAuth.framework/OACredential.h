@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OAuth.framework/OAuth
  */
 
-@class NSString;
-
 @interface OACredential : NSObject {
     NSString *_consumerKey;
     NSString *_consumerSecret;
@@ -11,10 +9,10 @@
     NSString *_oauthTokenSecret;
 }
 
-@property(copy) NSString * consumerKey;
-@property(copy) NSString * consumerSecret;
-@property(copy) NSString * oauthToken;
-@property(copy) NSString * oauthTokenSecret;
+@property (nonatomic, copy) NSString *consumerKey;
+@property (nonatomic, copy) NSString *consumerSecret;
+@property (nonatomic, copy) NSString *oauthToken;
+@property (nonatomic, copy) NSString *oauthTokenSecret;
 
 - (id)consumerKey;
 - (id)consumerSecret;

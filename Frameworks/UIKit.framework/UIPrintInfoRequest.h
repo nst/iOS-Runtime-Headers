@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class PKPrinter;
-
 @interface UIPrintInfoRequest : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     PKPrinter *_printer;
     int _requestState;
 }
 
-@property(copy) id completionHandler;
-@property int requestState;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) int requestState;
 
 + (id)requestInfoForPrinter:(id)arg1;
 
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)requestPrintInfo;
 - (int)requestState;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setRequestState:(int)arg1;
 
 @end

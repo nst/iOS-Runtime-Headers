@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString;
-
 @interface TSPPasteboard : NSObject <TSPDecoder> {
     id _pasteboard;
 }
 
-@property(readonly) NSArray * URLs;
-@property(readonly) int changeCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isSmartCopy;
-@property(readonly) NSString * name;
-@property(readonly) int numberOfItems;
-@property(readonly) NSArray * richTextStrings;
-@property(copy) NSString * string;
-@property(readonly) NSArray * strings;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *URLs;
+@property (nonatomic, readonly) int changeCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isSmartCopy;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic, readonly) NSArray *richTextStrings;
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, readonly) NSArray *strings;
+@property (readonly) Class superclass;
 
 + (id)activePasteboardForName:(id)arg1;
 + (id)activePasteboards;
@@ -64,7 +62,7 @@
 - (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
-- (void)performAsynchronousWriteUsingBlock:(id)arg1;
+- (void)performAsynchronousWriteUsingBlock:(id /* block */)arg1;
 - (id)richTextStrings;
 - (void)setString:(id)arg1;
 - (id)string;

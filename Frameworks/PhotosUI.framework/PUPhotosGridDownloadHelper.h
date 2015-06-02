@@ -2,24 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, PUPhotosGridViewController, PUResourceDownloadRequest;
-
 @interface PUPhotosGridDownloadHelper : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _currentDownloadSuccessHandler;
-
+    id /* block */ _currentDownloadSuccessHandler;
     NSString *_currentGridProgressIdentifier;
     PUResourceDownloadRequest *_currentResourceDownloadRequest;
     PUPhotosGridViewController *_gridViewController;
 }
 
-@property(readonly) PUPhotosGridViewController * gridViewController;
+@property (nonatomic, readonly) PUPhotosGridViewController *gridViewController;
 
 - (void).cxx_destruct;
 - (void)_downloadForRequest:(id)arg1 didCompleteWithSuccess:(BOOL)arg2 canceled:(BOOL)arg3 error:(id)arg4;
@@ -27,7 +17,7 @@
 - (void)_updateDownloadProgress;
 - (void)cancelCurrentAssetDownload;
 - (id)gridViewController;
-- (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(id)arg3;
+- (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(id /* block */)arg3;
 - (id)initWithGridViewController:(id)arg1;
 
 @end

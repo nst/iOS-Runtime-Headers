@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPrimaryValueDelegate>, ABUIPerson, NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface ABNamePropertyGroup : ABAbstractPropertyGroup {
     <ABPrimaryValueDelegate> *_delegate;
     ABUIPerson *_preferredPerson;
@@ -12,8 +10,8 @@
     NSMutableDictionary *_valuesByPersonByProperty;
 }
 
-@property <ABPrimaryValueDelegate> * delegate;
-@property(readonly) ABUIPerson * preferredPerson;
+@property (nonatomic) <ABPrimaryValueDelegate> *delegate;
+@property (nonatomic, readonly) ABUIPerson *preferredPerson;
 
 - (void)_addItemForProperty:(int)arg1 duringReload:(BOOL)arg2;
 - (id)_allPeople;

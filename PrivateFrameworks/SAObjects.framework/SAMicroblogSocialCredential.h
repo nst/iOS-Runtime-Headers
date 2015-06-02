@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMicroblogSocialCredential : AceObject <SABackgroundContextObject>
 
-@interface SAMicroblogSocialCredential : AceObject <SABackgroundContextObject> {
-}
-
-@property(copy) NSString * accessToken;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * personalizationPermission;
-@property(copy) NSString * socialNetwork;
-@property(readonly) Class superclass;
-@property(copy) NSString * tokenSecret;
+@property (nonatomic, copy) NSString *accessToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *personalizationPermission;
+@property (nonatomic, copy) NSString *socialNetwork;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *tokenSecret;
 
 + (id)socialCredential;
 + (id)socialCredentialWithDictionary:(id)arg1 context:(id)arg2;

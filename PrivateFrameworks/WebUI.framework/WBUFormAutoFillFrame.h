@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, WebFrame;
-
 @interface WBUFormAutoFillFrame : NSObject <WBSFormAutoFillFrame> {
     WebFrame *_webFrame;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) WebFrame * webFrame;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) WebFrame *webFrame;
 
 + (id)autoFillFrameWithWebFrame:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)committedURL;
 - (BOOL)containsAnyFormElements;
-- (void)enumerateChildFramesUsingBlock:(id)arg1;
+- (void)enumerateChildFramesUsingBlock:(id /* block */)arg1;
 - (struct OpaqueFormAutoFillFrame { }*)frameRef;
 - (id)initWithWebFrame:(id)arg1;
 - (struct OpaqueJSContext { }*)jsContextForMetadataControllerScriptWorld;

@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFFromAddressTableView : UITableView {
-}
+@interface MFFromAddressTableView : UITableView
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLikedId;
-
 @interface CKDPGetLikesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int limit : 1; 
@@ -12,10 +10,10 @@
     unsigned int _limit;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasLimit;
-@property(retain) CKDPLikedId * identifier;
-@property unsigned int limit;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasLimit;
+@property (nonatomic, retain) CKDPLikedId *identifier;
+@property (nonatomic) unsigned int limit;
 
 + (id)options;
 

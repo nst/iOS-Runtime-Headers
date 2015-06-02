@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIEvent, UITouch;
-
 @interface UIGestureDelayedTouch : NSObject <NSCopying> {
     BOOL _cloneForSecondDelivery;
     int _delayCount;
@@ -14,10 +12,10 @@
 }
 
 @property BOOL cloneForSecondDelivery;
-@property(retain) UIEvent * event;
-@property(retain) UITouch * stateWhenDelayed;
-@property(retain) UITouch * stateWhenDelivered;
-@property(retain) UITouch * touch;
+@property (retain) UIEvent *event;
+@property (retain) UITouch *stateWhenDelayed;
+@property (retain) UITouch *stateWhenDelivered;
+@property (retain) UITouch *touch;
 
 - (BOOL)cloneForSecondDelivery;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

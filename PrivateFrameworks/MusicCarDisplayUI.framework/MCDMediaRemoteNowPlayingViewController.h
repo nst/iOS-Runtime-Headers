@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDNowPlayingViewController, MPUNowPlayingController, NSDictionary, NSString, UIAlertController;
-
 @interface MCDMediaRemoteNowPlayingViewController : UIViewController <MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate, MPUNowPlayingDelegate> {
     struct { 
         unsigned int play : 1; 
@@ -35,12 +33,12 @@
     NSDictionary *_supportedCommands;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * expectedPlaybackBundleIdentifier;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * nowPlayingInfo;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *expectedPlaybackBundleIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *nowPlayingInfo;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (unsigned int)_bestCommandForFastForwardPosition;

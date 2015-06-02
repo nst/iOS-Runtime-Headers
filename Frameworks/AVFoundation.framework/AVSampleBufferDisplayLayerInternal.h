@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaDataRequester, AVWeakReference, CALayer, NSError, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVSampleBufferDisplayLayerInternal : NSObject {
     BOOL aboveHighWaterLevel;
     BOOL addedToSynchronizer;

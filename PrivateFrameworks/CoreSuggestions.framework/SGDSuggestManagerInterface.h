@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGDSuggestManagerInterface : NSObject {
-}
+@interface SGDSuggestManagerInterface : NSObject
 
 + (id)_buildXPCInterface;
 + (void)interface:(id)arg1 returns:(Class)arg2 forSelector:(SEL)arg3;

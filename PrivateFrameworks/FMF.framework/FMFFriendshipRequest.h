@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class FMFHandle, NSDate, NSSet, NSString;
-
 @interface FMFFriendshipRequest : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_endDate;
     FMFHandle *_fromHandle;
@@ -13,12 +11,12 @@
     NSSet *_toHandles;
 }
 
-@property(retain) NSDate * endDate;
-@property(retain) FMFHandle * fromHandle;
-@property(retain) NSString * groupId;
-@property(retain) NSString * requestId;
-@property int requestType;
-@property(retain) NSSet * toHandles;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) FMFHandle *fromHandle;
+@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic, retain) NSString *requestId;
+@property (nonatomic) int requestType;
+@property (nonatomic, retain) NSSet *toHandles;
 
 + (id)friendshipRequestToHandles:(id)arg1 fromHandle:(id)arg2 withType:(int)arg3 groupId:(id)arg4 withEndDate:(id)arg5;
 + (BOOL)supportsSecureCoding;

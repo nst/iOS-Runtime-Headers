@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSSet;
-
 @interface _UITraitStorageList : NSObject <NSCoding> {
     NSSet *_descendants;
     id _topLevelObject;
     NSArray *_traitStorages;
 }
 
-@property(readonly) NSSet * descendants;
-@property(readonly) id topLevelObject;
-@property(readonly) NSArray * traitStorages;
+@property (nonatomic, readonly) NSSet *descendants;
+@property (nonatomic, readonly) id topLevelObject;
+@property (nonatomic, readonly) NSArray *traitStorages;
 
 - (void)dealloc;
 - (id)descendants;

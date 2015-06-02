@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLMarqueeElement : DOMHTMLElement {
-}
+@interface DOMHTMLMarqueeElement : DOMHTMLElement
 
 - (id)behavior;
 - (id)bgColor;

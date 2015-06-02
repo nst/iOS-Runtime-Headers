@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUActivityViewControllerDelegate>, NSArray, NSString, PLProgressView, PUActivityItemSourceController, PUProgressIndicatorView;
-
 @interface PUActivityViewController : UIActivityViewController <PLDismissableViewController> {
     struct __CFString { } *_aggregateKey;
     float _currentAssetPreparationProgress;
@@ -16,12 +14,12 @@
     PLProgressView *_remakerProgressView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PUActivityViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * photosActivities;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUActivityViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *photosActivities;
+@property (readonly) Class superclass;
 
 + (id)_defaultActivityTypeOrder;
 + (BOOL)_isOutboundShareActivity:(id)arg1;
@@ -30,7 +28,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancel;
-- (void)_handleUserCancelWithCompletion:(id)arg1;
+- (void)_handleUserCancelWithCompletion:(id /* block */)arg1;
 - (void)_performActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1;
 - (void)_prepareAssetProgressForActivity:(id)arg1;
@@ -39,9 +37,9 @@
 - (void)_removeRemakerProgressView;
 - (void)_sharingManagerDidBeginPublishing:(id)arg1;
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
-- (void)_showPreparationProgressView:(id)arg1 withCancelationHandler:(id)arg2;
-- (void)_showRemakerProgressView:(id)arg1 forMail:(BOOL)arg2 withCancelationHandler:(id)arg3;
-- (void)_showSharingWasInterruptedWithCompletion:(id)arg1;
+- (void)_showPreparationProgressView:(id)arg1 withCancelationHandler:(id /* block */)arg2;
+- (void)_showRemakerProgressView:(id)arg1 forMail:(BOOL)arg2 withCancelationHandler:(id /* block */)arg3;
+- (void)_showSharingWasInterruptedWithCompletion:(id /* block */)arg1;
 - (void)addAsset:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -52,7 +50,7 @@
 - (void)removeAsset:(id)arg1;
 - (void)setAggregateKey:(struct __CFString { }*)arg1;
 - (void)setAssets:(id)arg1;
-- (void)setCompletionWithItemsHandler:(id)arg1;
+- (void)setCompletionWithItemsHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)updateVisibleShareActions;
 

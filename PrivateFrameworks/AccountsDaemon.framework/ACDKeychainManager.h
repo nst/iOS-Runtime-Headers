@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDKeychainManager : NSObject {
-}
+@interface ACDKeychainManager : NSObject
 
 + (id)_credentialForAccountWithID:(id)arg1 accountTypeID:(id)arg2 credentialType:(id)arg3 clientID:(id)arg4 error:(id*)arg5;
 + (id)_itemForServiceName:(id)arg1 username:(id)arg2 accessGroup:(id)arg3 error:(id*)arg4;

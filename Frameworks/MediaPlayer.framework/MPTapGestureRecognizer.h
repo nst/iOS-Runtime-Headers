@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSTimer, UITouch;
-
 @interface MPTapGestureRecognizer : UIGestureRecognizer {
     unsigned int _lastTapCount;
     NSTimer *_tapHandleTimer;

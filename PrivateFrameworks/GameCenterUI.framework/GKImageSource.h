@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKImageBrush, GKThreadsafeCache, NSString, UIImage;
-
 @interface GKImageSource : NSObject {
     GKThreadsafeCache *_cache;
     UIImage *_defaultImage;
@@ -13,12 +11,12 @@
     BOOL _shouldRenderDefaultImageWithBrush;
 }
 
-@property(retain) GKThreadsafeCache * cache;
-@property(retain) UIImage * defaultImage;
-@property(readonly) GKImageBrush * imageBrush;
-@property(readonly) NSString * name;
-@property(retain) UIImage * renderedDefaultImage;
-@property BOOL shouldRenderDefaultImageWithBrush;
+@property (nonatomic, retain) GKThreadsafeCache *cache;
+@property (nonatomic, retain) UIImage *defaultImage;
+@property (nonatomic, readonly) GKImageBrush *imageBrush;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) UIImage *renderedDefaultImage;
+@property (nonatomic) BOOL shouldRenderDefaultImageWithBrush;
 
 + (id)cacheDirectoryForImageID:(id)arg1;
 + (void)clearCache;

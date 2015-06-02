@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOMapEdgeRoadConnectionFinder : GEOMapEdgeConnectionFinder {
-}
+@interface GEOMapEdgeRoadConnectionFinder : GEOMapEdgeConnectionFinder
 
-- (void)_findConnectedEdges:(id)arg1 incoming:(BOOL)arg2;
-- (void)_findConnections:(id)arg1 incoming:(BOOL)arg2;
+- (void)_findConnectedEdges:(id /* block */)arg1 incoming:(BOOL)arg2;
+- (void)_findConnections:(id /* block */)arg1 incoming:(BOOL)arg2;
 
 @end

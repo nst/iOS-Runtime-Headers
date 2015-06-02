@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <UICollectionViewDelegate>, MPUExtrasMainMenuSectionMetrics, NSLayoutConstraint, NSString, UICollectionView, UICollectionViewFlowLayout, UIView;
-
 @interface MPUExtrasMainTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasMainMenuSectionMetricsDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     NSLayoutConstraint *_collectionViewHeightConstraint;
     UICollectionViewFlowLayout *_collectionViewLayout;
@@ -14,12 +12,12 @@
     UIView *_menuBarView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <UICollectionViewDelegate> * didSelectDelegate;
-@property(readonly) unsigned int hash;
-@property(readonly) UIView * menuBarView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <UICollectionViewDelegate> *didSelectDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIView *menuBarView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_collectionView:(id)arg1 indexPathShouldDisplayAsSelected:(id)arg2;

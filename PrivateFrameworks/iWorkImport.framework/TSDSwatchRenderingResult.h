@@ -7,8 +7,8 @@
     struct CGImage { } *foreground;
 }
 
-@property(readonly) struct CGImage { }* background;
-@property(readonly) struct CGImage { }* foreground;
+@property (nonatomic, readonly) struct CGImage { }*background;
+@property (nonatomic, readonly) struct CGImage { }*foreground;
 
 + (id)renderingResultWithForeground:(struct CGImage { }*)arg1 background:(struct CGImage { }*)arg2;
 

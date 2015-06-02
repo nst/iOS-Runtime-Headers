@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAsset, MPItemDownloadProperties, NSError, SSDownloadHandlerSession;
-
 @interface MPItemDownloadSession : NSObject {
     AVAsset *_AVAsset;
     MPItemDownloadProperties *_downloadProperties;
@@ -13,12 +11,12 @@
     int _sessionState;
 }
 
-@property AVAsset * AVAsset;
-@property(retain) MPItemDownloadProperties * downloadProperties;
-@property(retain) SSDownloadHandlerSession * downloadSession;
-@property float percentComplete;
-@property(retain) NSError * sessionError;
-@property int sessionState;
+@property (nonatomic) AVAsset *AVAsset;
+@property (nonatomic, retain) MPItemDownloadProperties *downloadProperties;
+@property (nonatomic, retain) SSDownloadHandlerSession *downloadSession;
+@property (nonatomic) float percentComplete;
+@property (nonatomic, retain) NSError *sessionError;
+@property (nonatomic) int sessionState;
 
 - (void).cxx_destruct;
 - (id)AVAsset;

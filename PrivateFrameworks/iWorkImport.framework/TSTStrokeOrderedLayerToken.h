@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSTStrokeLayerStrokeAndRange>, NSString, TSDStroke;
-
 @interface TSTStrokeOrderedLayerToken : NSObject <TSTStrokeLayerStrokeAndRange> {
     <TSTStrokeLayerStrokeAndRange> *_majorStrokeLayerToken;
     <TSTStrokeLayerStrokeAndRange> *_minorStrokeLayerToken;
@@ -15,15 +13,15 @@
     TSDStroke *_stroke;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <TSTStrokeLayerStrokeAndRange> * majorStrokeLayerToken;
-@property(retain) <TSTStrokeLayerStrokeAndRange> * minorStrokeLayerToken;
-@property int order;
-@property struct TSTSimpleRange { int x1; unsigned int x2; } range;
-@property(retain) TSDStroke * stroke;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <TSTStrokeLayerStrokeAndRange> *majorStrokeLayerToken;
+@property (nonatomic, retain) <TSTStrokeLayerStrokeAndRange> *minorStrokeLayerToken;
+@property (nonatomic) int order;
+@property (nonatomic) struct TSTSimpleRange { int x1; unsigned int x2; } range;
+@property (nonatomic, retain) TSDStroke *stroke;
+@property (readonly) Class superclass;
 
 + (id)tokenWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 majorStrokeLayerToken:(id)arg4 minorStrokeLayerToken:(id)arg5;
 

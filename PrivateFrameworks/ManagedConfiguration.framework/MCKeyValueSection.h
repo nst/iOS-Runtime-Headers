@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString;
-
 @interface MCKeyValueSection : NSObject {
     NSString *_sectionFooter;
     NSArray *_sectionKeyValues;
     NSString *_sectionTitle;
 }
 
-@property(retain) NSString * sectionFooter;
-@property(retain) NSArray * sectionKeyValues;
-@property(retain) NSString * sectionTitle;
+@property (nonatomic, retain) NSString *sectionFooter;
+@property (nonatomic, retain) NSArray *sectionKeyValues;
+@property (nonatomic, retain) NSString *sectionTitle;
 
 + (id)sectionWithKeyValues:(id)arg1;
 + (id)sectionWithLocalizedArray:(id)arg1 title:(id)arg2 footer:(id)arg3;

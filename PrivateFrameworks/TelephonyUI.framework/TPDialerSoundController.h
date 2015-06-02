@@ -5,7 +5,7 @@
 @interface TPDialerSoundController : NSObject {
     unsigned int _incompleteSoundCount;
     struct __CFSet { } *_inflightSounds;
-    unsigned int _soundsActivated : 1;
+    unsigned int _soundsActivated;
 }
 
 @property unsigned int incompleteSoundCount;

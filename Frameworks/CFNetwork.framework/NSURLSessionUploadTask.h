@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionUploadTask : NSURLSessionDataTask {
-}
+@interface NSURLSessionUploadTask : NSURLSessionDataTask
 
 @end

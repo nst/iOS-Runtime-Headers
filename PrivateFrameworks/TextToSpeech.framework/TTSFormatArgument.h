@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class NSDictionary, NSString;
-
 @interface TTSFormatArgument : NSObject {
     NSDictionary *attributes;
     NSString *formatSpecifier;

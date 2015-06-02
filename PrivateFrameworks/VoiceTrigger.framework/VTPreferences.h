@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@interface VTPreferences : NSObject {
-}
+@interface VTPreferences : NSObject
 
 + (void)initialize;
 + (id)sharedPreferences;

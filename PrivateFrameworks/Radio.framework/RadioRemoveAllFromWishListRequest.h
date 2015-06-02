@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, SSURLConnectionRequest;
-
 @interface RadioRemoveAllFromWishListRequest : RadioRequest {
     SSURLConnectionRequest *_request;
     NSArray *_trackStoreIDs;
@@ -13,6 +11,6 @@
 - (id)init;
 - (id)initWithTrackStoreIDs:(id)arg1;
 - (id)initWithTracks:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

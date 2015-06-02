@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVExternalDeviceHIDInternal, NSString;
-
 @interface AVExternalDeviceHID : NSObject {
     AVExternalDeviceHIDInternal *_externalDeviceHID;
 }
 
-@property(readonly) NSString * UUID;
-@property int inputMode;
-@property(readonly) NSString * screenID;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic) int inputMode;
+@property (nonatomic, readonly) NSString *screenID;
 
 - (id)UUID;
 - (id)_externalDevice;

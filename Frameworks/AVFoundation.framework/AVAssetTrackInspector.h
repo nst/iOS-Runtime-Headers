@@ -2,50 +2,48 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSArray, NSDictionary, NSLocale, NSString;
-
 @interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading> {
     NSArray *_cachedMediaCharacteristics;
     long _synthesizeMediaCharacteristicsOnce;
     AVWeakReference *_weakReference;
 }
 
-@property(readonly) int alternateGroupID;
-@property(readonly) NSArray * availableMetadataFormats;
-@property(readonly) NSArray * commonMetadata;
-@property(readonly) struct CGSize { float x1; float x2; } dimensions;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(readonly) float estimatedDataRate;
-@property(getter=isExcludedFromAutoselectionInTrackGroup,readonly) BOOL excludedFromAutoselectionInTrackGroup;
-@property(readonly) NSString * extendedLanguageTag;
-@property(getter=_figAssetTrack,readonly) struct OpaqueFigAssetTrack { }* figAssetTrack;
-@property(getter=_figMediaType,readonly) unsigned long figMediaType;
-@property(getter=_figTrackReader,readonly) struct OpaqueFigTrackReader { }* figTrackReader;
-@property(readonly) NSArray * formatDescriptions;
-@property(readonly) BOOL hasProtectedContent;
-@property(readonly) NSString * languageCode;
-@property(readonly) int layer;
-@property(readonly) NSLocale * locale;
-@property(readonly) NSDictionary * loudnessInfo;
-@property(readonly) NSArray * mediaCharacteristics;
-@property(readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaDecodeTimeRange;
-@property(readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaPresentationTimeRange;
-@property(readonly) NSString * mediaType;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minSampleDuration;
-@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
-@property(readonly) int naturalTimeScale;
-@property(readonly) float nominalFrameRate;
-@property(readonly) long playabilityValidationResult;
-@property(getter=isPlayable,readonly) BOOL playable;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property(readonly) float preferredVolume;
-@property(readonly) BOOL requiresFrameReordering;
-@property(copy,readonly) NSArray * segments;
-@property(getter=isSelfContained,readonly) BOOL selfContained;
-@property(readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
-@property(readonly) long long totalSampleDataLength;
-@property(readonly) int trackID;
-@property(getter=_trackReferences,readonly) NSDictionary * trackReferences;
+@property (nonatomic, readonly) int alternateGroupID;
+@property (nonatomic, readonly) NSArray *availableMetadataFormats;
+@property (nonatomic, readonly) NSArray *commonMetadata;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } dimensions;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) float estimatedDataRate;
+@property (getter=isExcludedFromAutoselectionInTrackGroup, nonatomic, readonly) BOOL excludedFromAutoselectionInTrackGroup;
+@property (nonatomic, readonly) NSString *extendedLanguageTag;
+@property (getter=_figAssetTrack, nonatomic, readonly) struct OpaqueFigAssetTrack { }*figAssetTrack;
+@property (getter=_figMediaType, nonatomic, readonly) unsigned long figMediaType;
+@property (getter=_figTrackReader, nonatomic, readonly) struct OpaqueFigTrackReader { }*figTrackReader;
+@property (nonatomic, readonly) NSArray *formatDescriptions;
+@property (nonatomic, readonly) BOOL hasProtectedContent;
+@property (nonatomic, readonly) NSString *languageCode;
+@property (nonatomic, readonly) int layer;
+@property (nonatomic, readonly) NSLocale *locale;
+@property (nonatomic, readonly) NSDictionary *loudnessInfo;
+@property (nonatomic, readonly) NSArray *mediaCharacteristics;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaDecodeTimeRange;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaPresentationTimeRange;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minSampleDuration;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) int naturalTimeScale;
+@property (nonatomic, readonly) float nominalFrameRate;
+@property (nonatomic, readonly) long playabilityValidationResult;
+@property (getter=isPlayable, nonatomic, readonly) BOOL playable;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic, readonly) float preferredVolume;
+@property (nonatomic, readonly) BOOL requiresFrameReordering;
+@property (nonatomic, readonly, copy) NSArray *segments;
+@property (getter=isSelfContained, nonatomic, readonly) BOOL selfContained;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (nonatomic, readonly) long long totalSampleDataLength;
+@property (nonatomic, readonly) int trackID;
+@property (getter=_trackReferences, nonatomic, readonly) NSDictionary *trackReferences;
 
 + (id)assetTrackInspectorWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 
@@ -74,7 +72,7 @@
 - (BOOL)isSelfContained;
 - (id)languageCode;
 - (int)layer;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)locale;
 - (id)loudnessInfo;
 - (id)mediaCharacteristics;

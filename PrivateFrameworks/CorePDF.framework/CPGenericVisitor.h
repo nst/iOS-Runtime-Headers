@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPGenericVisitor : NSObject <CPVisitor> {
-}
+@interface CPGenericVisitor : NSObject <CPVisitor>
 
 - (void)visitBody:(id)arg1;
 - (void)visitChunk:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSPointerArray, NSString;
-
 @interface TSTStrokeSidecar : TSPObject <TSTCustomStrokeProviding> {
     NSPointerArray *_bottomRowStrokes;
     NSPointerArray *_leftColumnStrokes;
@@ -12,15 +10,15 @@
     NSPointerArray *_topRowStrokes;
 }
 
-@property(retain) NSPointerArray * bottomRowStrokes;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSPointerArray * leftColumnStrokes;
-@property int maxOrder;
-@property(retain) NSPointerArray * rightColumnStrokes;
-@property(readonly) Class superclass;
-@property(retain) NSPointerArray * topRowStrokes;
+@property (nonatomic, retain) NSPointerArray *bottomRowStrokes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSPointerArray *leftColumnStrokes;
+@property (nonatomic) int maxOrder;
+@property (nonatomic, retain) NSPointerArray *rightColumnStrokes;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSPointerArray *topRowStrokes;
 
 - (id)bottomRowStrokes;
 - (id)cellBorderAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;

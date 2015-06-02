@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSearchViewControllerSpec : NSObject {
-}
+@interface PUSearchViewControllerSpec : NSObject
 
 @end

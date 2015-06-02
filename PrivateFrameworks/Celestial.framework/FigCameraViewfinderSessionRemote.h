@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <FigCameraViewfinderSessionRemoteObject>, FigStateMachine;
-
 @interface FigCameraViewfinderSessionRemote : FigCameraViewfinderSession {
     <FigCameraViewfinderSessionRemoteObject> *_remoteViewfinderSession;
     unsigned int _state;

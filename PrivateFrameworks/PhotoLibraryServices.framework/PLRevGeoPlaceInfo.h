@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet, NSSet, NSString;
-
 @interface PLRevGeoPlaceInfo : NSObject {
     NSMutableSet *_geoPlaceInfos;
     NSString *_placeName;
 }
 
-@property(retain,readonly) NSSet * geoPlaceInfos;
-@property(copy,readonly) NSString * placeName;
+@property (nonatomic, readonly, retain) NSSet *geoPlaceInfos;
+@property (nonatomic, readonly, copy) NSString *placeName;
 
 - (void)addPlaceInfo:(id)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, SSXPCConnection;
-
 @interface SSPreorderManager : NSObject {
     SSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -14,8 +12,8 @@
     NSArray *_preorders;
 }
 
-@property(readonly) NSArray * itemKinds;
-@property(readonly) NSArray * preorders;
+@property (readonly) NSArray *itemKinds;
+@property (readonly) NSArray *preorders;
 
 + (id)bookStoreItemKinds;
 + (id)musicStoreItemKinds;
@@ -25,7 +23,7 @@
 - (void)_registerAsObserver;
 - (void)_sendMessageToObservers:(SEL)arg1;
 - (void)addObserver:(id)arg1;
-- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithItemKinds:(id)arg1;

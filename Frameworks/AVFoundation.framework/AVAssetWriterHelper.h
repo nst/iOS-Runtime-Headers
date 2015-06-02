@@ -2,30 +2,28 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterConfigurationState, AVMediaFileType, AVWeakReference, NSArray, NSError, NSURL;
-
 @interface AVAssetWriterHelper : NSObject {
     AVAssetWriterConfigurationState *_configurationState;
     AVWeakReference *_weakReferenceToAssetWriter;
 }
 
-@property(readonly) NSArray * availableMediaTypes;
-@property(readonly) AVAssetWriterConfigurationState * configurationState;
-@property(copy) NSURL * directoryForTemporaryFiles;
-@property(readonly) NSError * error;
-@property(readonly) NSArray * inputGroups;
-@property(readonly) NSArray * inputs;
-@property(readonly) AVMediaFileType * mediaFileType;
-@property(copy) NSArray * metadata;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
-@property int movieTimeScale;
-@property(readonly) NSURL * outputURL;
-@property float preferredRate;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property float preferredVolume;
-@property BOOL shouldOptimizeForNetworkUse;
-@property(readonly) int status;
-@property(retain) AVWeakReference * weakReferenceToAssetWriter;
+@property (nonatomic, readonly) NSArray *availableMediaTypes;
+@property (nonatomic, readonly) AVAssetWriterConfigurationState *configurationState;
+@property (nonatomic, copy) NSURL *directoryForTemporaryFiles;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSArray *inputGroups;
+@property (nonatomic, readonly) NSArray *inputs;
+@property (nonatomic, readonly) AVMediaFileType *mediaFileType;
+@property (nonatomic, copy) NSArray *metadata;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property (nonatomic) int movieTimeScale;
+@property (nonatomic, readonly) NSURL *outputURL;
+@property (nonatomic) float preferredRate;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic) float preferredVolume;
+@property (nonatomic) BOOL shouldOptimizeForNetworkUse;
+@property (nonatomic, readonly) int status;
+@property (retain) AVWeakReference *weakReferenceToAssetWriter;
 
 - (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 sourceFormat:(struct opaqueCMFormatDescription { }*)arg3 exceptionReason:(id*)arg4;
 - (BOOL)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;
@@ -43,7 +41,7 @@
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)error;
 - (void)finishWriting;
-- (void)finishWritingWithCompletionHandler:(id)arg1;
+- (void)finishWritingWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithConfigurationState:(id)arg1;
 - (id)inputGroups;

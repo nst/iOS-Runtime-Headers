@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface FMFSynchronizer : NSObject {
     NSString *_info;
     NSObject<OS_dispatch_semaphore> *_sem;
@@ -11,10 +9,10 @@
     BOOL _timeoutOccurred;
 }
 
-@property(retain) NSString * info;
-@property(retain) NSObject<OS_dispatch_semaphore> * sem;
-@property double timeout;
-@property BOOL timeoutOccurred;
+@property (nonatomic, retain) NSString *info;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *sem;
+@property (nonatomic) double timeout;
+@property (nonatomic) BOOL timeoutOccurred;
 
 - (void).cxx_destruct;
 - (id)info;

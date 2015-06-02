@@ -6,7 +6,7 @@
     unsigned int _location;
 }
 
-@property unsigned int location;
+@property (nonatomic) unsigned int location;
 
 - (id)init;
 - (void)layoutSubviews;

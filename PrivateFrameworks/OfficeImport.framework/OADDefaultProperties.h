@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADShapeProperties, OADTextBodyProperties, OADTextListStyle;
-
 @interface OADDefaultProperties : NSObject {
     OADShapeProperties *mShapeProperties;
     OADTextBodyProperties *mTextBodyProperties;

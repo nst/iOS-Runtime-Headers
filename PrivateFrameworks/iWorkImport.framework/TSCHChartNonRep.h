@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString, TSCHChartInfo, TSCHChartLayout;
-
 @interface TSCHChartNonRep : NSObject <TSCHSupportsRendering> {
     TSCHChartInfo *mChartInfo;
     TSCHChartLayout *mChartLayout;
     NSArray *mRenderers;
 }
 
-@property(retain) TSCHChartInfo * chartInfo;
-@property(retain) TSCHChartLayout * chartLayout;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) TSCHChartInfo *chartInfo;
+@property (nonatomic, retain) TSCHChartLayout *chartLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)chartInfo;
 - (id)chartLayout;

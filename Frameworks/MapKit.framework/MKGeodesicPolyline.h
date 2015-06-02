@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKGeodesicPolyline : MKPolyline {
-}
+@interface MKGeodesicPolyline : MKPolyline
 
 + (id)polylineWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 + (id)polylineWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;

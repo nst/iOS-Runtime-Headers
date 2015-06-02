@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSNumber, NSRecursiveLock, NSString, PFUbiquityKnowledgeVector, PFUbiquityLocation, PFUbiquitySaveSnapshot;
-
 @interface PFUbiquityTransactionLog : NSObject {
     NSMutableDictionary *_contents;
     NSRecursiveLock *_contentsLock;
@@ -28,30 +26,30 @@
     BOOL _useTemporaryLogLocation;
 }
 
-@property(readonly) PFUbiquityLocation * currentLocation;
-@property(readonly) NSString * exportingPeerID;
-@property(readonly) NSString * fileProtectionOption;
-@property(readonly) BOOL inPermanentLocation;
-@property(readonly) BOOL inStagingLocation;
-@property(readonly) BOOL inTemporaryLocation;
-@property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
-@property BOOL loadUsingRetry;
-@property(readonly) BOOL loadedComparisonMetadata;
-@property(readonly) BOOL loadedDeletedObjectData;
-@property(readonly) BOOL loadedImportMetadata;
-@property(readonly) BOOL loadedInsertedObjectData;
-@property(readonly) BOOL loadedUpdatedObjectData;
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSString * modelVersionHash;
-@property(readonly) PFUbiquitySaveSnapshot * saveSnapshot;
-@property(readonly) PFUbiquityLocation * stagingTransactionLogLocation;
-@property(readonly) NSString * storeName;
-@property(readonly) PFUbiquityLocation * temporaryTransactionLogLocation;
-@property(readonly) NSString * transactionLogFilename;
-@property(readonly) PFUbiquityLocation * transactionLogLocation;
-@property(readonly) int transactionLogType;
-@property(readonly) NSNumber * transactionNumber;
-@property BOOL useTemporaryLogLocation;
+@property (nonatomic, readonly) PFUbiquityLocation *currentLocation;
+@property (nonatomic, readonly) NSString *exportingPeerID;
+@property (nonatomic, readonly) NSString *fileProtectionOption;
+@property (nonatomic, readonly) BOOL inPermanentLocation;
+@property (nonatomic, readonly) BOOL inStagingLocation;
+@property (nonatomic, readonly) BOOL inTemporaryLocation;
+@property (nonatomic, readonly) PFUbiquityKnowledgeVector *knowledgeVector;
+@property (nonatomic) BOOL loadUsingRetry;
+@property (nonatomic, readonly) BOOL loadedComparisonMetadata;
+@property (nonatomic, readonly) BOOL loadedDeletedObjectData;
+@property (nonatomic, readonly) BOOL loadedImportMetadata;
+@property (nonatomic, readonly) BOOL loadedInsertedObjectData;
+@property (nonatomic, readonly) BOOL loadedUpdatedObjectData;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) NSString *modelVersionHash;
+@property (nonatomic, readonly) PFUbiquitySaveSnapshot *saveSnapshot;
+@property (nonatomic, readonly) PFUbiquityLocation *stagingTransactionLogLocation;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) PFUbiquityLocation *temporaryTransactionLogLocation;
+@property (nonatomic, readonly) NSString *transactionLogFilename;
+@property (nonatomic, readonly) PFUbiquityLocation *transactionLogLocation;
+@property (nonatomic, readonly) int transactionLogType;
+@property (nonatomic, readonly) NSNumber *transactionNumber;
+@property (nonatomic) BOOL useTemporaryLogLocation;
 
 + (id)createDataFromExtendedAttrsForLog:(id)arg1 error:(id*)arg2;
 + (id)createTransactionLogFilenameForLogType:(int)arg1;

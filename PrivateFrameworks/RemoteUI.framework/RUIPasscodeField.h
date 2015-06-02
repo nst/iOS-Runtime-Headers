@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIPasscodeFieldDelegate>, NSMutableArray, NSMutableString, NSString, UIColor;
-
 @interface RUIPasscodeField : UIView <UIKeyInput> {
     NSMutableArray *_dashViews;
     <RUIPasscodeFieldDelegate> *_delegate;
@@ -16,22 +14,22 @@
     NSMutableString *_stringValue;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUIPasscodeFieldDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL enablesReturnKeyAutomatically;
-@property(retain) UIColor * foregroundColor;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(readonly) unsigned int numberOfEntryFields;
-@property int returnKeyType;
-@property BOOL securePasscodeEntry;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUIPasscodeFieldDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, readonly) unsigned int numberOfEntryFields;
+@property (nonatomic) int returnKeyType;
+@property (nonatomic) BOOL securePasscodeEntry;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)becomeFirstResponder;

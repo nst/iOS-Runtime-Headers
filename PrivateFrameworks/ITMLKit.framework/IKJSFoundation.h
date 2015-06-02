@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppDeviceConfig>, IKAppContext, NSMutableDictionary;
-
 @interface IKJSFoundation : NSObject {
     IKAppContext *_appContext;
     NSMutableDictionary *_dateFormatterCache;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_jsTimers;
 }
 
-@property IKAppContext * appContext;
-@property(retain) NSMutableDictionary * dateFormatterCache;
-@property <IKAppDeviceConfig> * deviceConfig;
-@property(retain) NSMutableDictionary * jsTimers;
+@property (nonatomic) IKAppContext *appContext;
+@property (nonatomic, retain) NSMutableDictionary *dateFormatterCache;
+@property (nonatomic) <IKAppDeviceConfig> *deviceConfig;
+@property (nonatomic, retain) NSMutableDictionary *jsTimers;
 
 - (void).cxx_destruct;
 - (void)_clearTimer:(id)arg1;

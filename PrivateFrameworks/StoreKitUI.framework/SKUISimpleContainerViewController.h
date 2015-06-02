@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIViewController;
-
 @interface SKUISimpleContainerViewController : UIViewController {
     UIViewController *_contentViewController;
 }
 
-@property(retain) UIViewController * contentViewController;
+@property (nonatomic, retain) UIViewController *contentViewController;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

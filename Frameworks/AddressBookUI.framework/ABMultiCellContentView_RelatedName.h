@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton;
-
 @interface ABMultiCellContentView_RelatedName : ABMultiCellContentView_Simple {
     UIButton *_accessoryButton;
 }
 
-@property(readonly) UIButton * accessoryButton;
+@property (nonatomic, readonly) UIButton *accessoryButton;
 
 + (void)setupRelatedNamesView:(id)arg1 withStyleProvider:(id)arg2;
 

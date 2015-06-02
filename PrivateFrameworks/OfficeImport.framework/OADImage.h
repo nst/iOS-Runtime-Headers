@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADMovie, OADOle, OADShapeGeometry;
-
 @interface OADImage : OADGraphic {
     OADShapeGeometry *mGeometry;
     OADMovie *mMovie;

@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUImageEditPluginSession : PUEditPluginSession {
-}
+@interface PUImageEditPluginSession : PUEditPluginSession
 
 - (id)imageDataSource;
-- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id)arg2;
+- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id /* block */)arg2;
 - (int)mediaType;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPPlaylist : SAMPCollection {
-}
+@interface SAMPPlaylist : SAMPCollection
 
 + (id)playlist;
 + (id)playlistWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSString;
-
 @interface PRPinyinModification : PRModification {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     } _additionalSyllableRange;
     BOOL _isTemporary;
-    unsigned char _letters[7];
+    unsigned char _letters;
     double _modificationScore;
     unsigned int _modificationType;
     BOOL _producesPartialSyllable;

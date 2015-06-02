@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBStringTable : NSObject {
-}
+@interface EBStringTable : NSObject
 
 + (void)readWithState:(id)arg1;
 

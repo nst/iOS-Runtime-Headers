@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSIndexSet, NSString, TIKeyboardCandidate;
-
 @interface TIKeyboardOutput : NSObject <NSSecureCoding> {
     TIKeyboardCandidate *_acceptedCandidate;
     unsigned int _deletionCount;
@@ -15,14 +13,14 @@
     NSString *_textToCommit;
 }
 
-@property(retain) TIKeyboardCandidate * acceptedCandidate;
-@property unsigned int deletionCount;
-@property unsigned int forwardDeletionCount;
-@property(copy) NSIndexSet * handwritingStrokesToDelete;
-@property(copy) NSString * insertionText;
-@property(copy) NSString * insertionTextAfterSelection;
-@property(retain) TIKeyboardCandidate * shortcutConversion;
-@property(copy) NSString * textToCommit;
+@property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
+@property (nonatomic) unsigned int deletionCount;
+@property (nonatomic) unsigned int forwardDeletionCount;
+@property (nonatomic, copy) NSIndexSet *handwritingStrokesToDelete;
+@property (nonatomic, copy) NSString *insertionText;
+@property (nonatomic, copy) NSString *insertionTextAfterSelection;
+@property (nonatomic, retain) TIKeyboardCandidate *shortcutConversion;
+@property (nonatomic, copy) NSString *textToCommit;
 
 + (BOOL)supportsSecureCoding;
 

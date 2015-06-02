@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMElement, IKDOMHTMLCollection, NSString;
+@interface IKDOMElement : IKDOMNode <IKJSDOMElement, IKJSDOMParentNode>
 
-@interface IKDOMElement : IKDOMNode <IKJSDOMElement, IKJSDOMParentNode> {
-}
-
-@property(readonly) unsigned long childElementCount;
-@property(readonly) IKDOMHTMLCollection * children;
-@property(readonly) IKDOMElement * firstElementChild;
-@property(readonly) IKDOMElement * lastElementChild;
-@property(retain,readonly) NSString * tagName;
+@property (nonatomic, readonly) unsigned long childElementCount;
+@property (nonatomic, readonly) IKDOMHTMLCollection *children;
+@property (nonatomic, readonly) IKDOMElement *firstElementChild;
+@property (nonatomic, readonly) IKDOMElement *lastElementChild;
+@property (nonatomic, readonly, retain) NSString *tagName;
 
 - (id)attributes;
 - (id)childElementByTagName:(id)arg1;

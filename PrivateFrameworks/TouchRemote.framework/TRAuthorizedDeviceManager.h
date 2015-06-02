@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface TRAuthorizedDeviceManager : NSObject {
     NSMutableDictionary *_authorizationList;
 }
 
-@property(readonly) NSArray * deviceIdentifiers;
+@property (nonatomic, readonly) NSArray *deviceIdentifiers;
 
 + (id)_dataForDeviceIdentifier:(id)arg1;
 + (id)_deviceIdentifierForData:(id)arg1;

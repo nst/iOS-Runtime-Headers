@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class ADAdSlot, NSArray, NSData, NSObject<OS_dispatch_queue>, NSString;
-
 @interface RURadioAdSlot : NSObject <ADAdSlotDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     ADAdSlot *_adSlot;
@@ -11,18 +9,18 @@
     BOOL _hasBegunPlayback;
 }
 
-@property(readonly) ADAdSlot * adSlot;
-@property(copy,readonly) NSArray * adTracks;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSData * followingSongData;
-@property(getter=isGatewayAdSlot) BOOL gatewayAdSlot;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(copy) NSData * previousSongData;
-@property(copy) NSData * stationData;
-@property(readonly) Class superclass;
-@property(readonly) BOOL wasPreparedAsStationEntryAdSlot;
+@property (nonatomic, readonly) ADAdSlot *adSlot;
+@property (nonatomic, readonly, copy) NSArray *adTracks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSData *followingSongData;
+@property (getter=isGatewayAdSlot, nonatomic) BOOL gatewayAdSlot;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSData *previousSongData;
+@property (nonatomic, copy) NSData *stationData;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL wasPreparedAsStationEntryAdSlot;
 
 - (void).cxx_destruct;
 - (id)adSlot;

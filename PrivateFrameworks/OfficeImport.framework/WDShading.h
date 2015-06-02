@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface WDShading : NSObject <NSCopying> {
     OITSUColor *mBackgroundColor;
     OITSUColor *mForegroundColor;

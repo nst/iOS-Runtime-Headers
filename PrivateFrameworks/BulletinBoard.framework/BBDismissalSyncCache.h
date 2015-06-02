@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSDate, NSMutableDictionary;
-
 @interface BBDismissalSyncCache : NSObject {
     NSMutableDictionary *_cache;
     NSDate *_timeToCheck;
 }
 
-@property(retain) NSMutableDictionary * cache;
-@property(retain) NSDate * timeToCheck;
+@property (nonatomic, retain) NSMutableDictionary *cache;
+@property (nonatomic, retain) NSDate *timeToCheck;
 
 - (void)_checkCache;
 - (BOOL)_isTimeToCheck;

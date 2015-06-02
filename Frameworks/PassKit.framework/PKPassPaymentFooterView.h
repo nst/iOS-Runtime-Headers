@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassPaymentFooterContentView, PKPassView;
-
 @interface PKPassPaymentFooterView : UIView {
     PKPassPaymentFooterContentView *_contentView;
     BOOL _isVisible;
@@ -12,8 +10,8 @@
     int _state;
 }
 
-@property(retain) PKPassView * passView;
-@property(readonly) int state;
+@property (nonatomic, retain) PKPassView *passView;
+@property (nonatomic, readonly) int state;
 
 - (void)_configureForState:(int)arg1 withPassView:(id)arg2;
 - (void)_deleteButtonTapped;

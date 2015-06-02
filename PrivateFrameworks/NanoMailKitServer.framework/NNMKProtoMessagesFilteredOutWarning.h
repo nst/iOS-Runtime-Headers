@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableArray;
-
 @interface NNMKProtoMessagesFilteredOutWarning : PBCodable <NSCopying> {
     unsigned int _fullSyncVersion;
     struct { 
@@ -12,9 +10,9 @@
     NSMutableArray *_removedMessageIds;
 }
 
-@property unsigned int fullSyncVersion;
-@property BOOL hasFullSyncVersion;
-@property(retain) NSMutableArray * removedMessageIds;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic, retain) NSMutableArray *removedMessageIds;
 
 - (void).cxx_destruct;
 - (void)addRemovedMessageId:(id)arg1;

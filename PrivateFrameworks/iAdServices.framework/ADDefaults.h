@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iAdServices.framework/iAdServices
  */
 
-@class NSMutableDictionary;
-
 @interface ADDefaults : NSObject {
     struct __CFString { } *_defaultsBundleID;
     NSMutableDictionary *_factoryDefaults;
 }
 
-@property struct __CFString { }* defaultsBundleID;
-@property(retain) NSMutableDictionary * factoryDefaults;
+@property (nonatomic) struct __CFString { }*defaultsBundleID;
+@property (nonatomic, retain) NSMutableDictionary *factoryDefaults;
 
 + (id)_defaultValueForKey:(id)arg1 valueClass:(Class)arg2;
 + (void)_setDefaultValue:(id)arg1 forKey:(id)arg2;

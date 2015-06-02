@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIAttributedStringView, SKUIButtonViewElement, SKUIImageView, SKUIImageViewElement, UIControl;
-
 @interface SKUIContentUnavailableView : SKUIViewReuseView <SKUIViewElementView> {
     UIControl *_button;
     SKUIButtonViewElement *_buttonElement;
@@ -19,10 +17,10 @@
     SKUIAttributedStringView *_titleView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_attributedStringWithButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringWithMessageLabel:(id)arg1 context:(id)arg2;

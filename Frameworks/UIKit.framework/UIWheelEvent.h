@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UIWheelEvent : UIInternalEvent {
     int _recentScrollDistance;
     NSMutableArray *_recentScrollEvents;

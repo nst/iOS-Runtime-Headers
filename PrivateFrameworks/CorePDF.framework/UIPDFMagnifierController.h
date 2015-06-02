@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, CAShapeLayer, UIPDFPageView, UIView, UIWindow;
-
 @interface UIPDFMagnifierController : NSObject {
     struct CGSize { 
         float width; 
@@ -42,7 +40,7 @@
     UIPDFPageView *pageView;
 }
 
-@property UIPDFPageView * pageView;
+@property (nonatomic) UIPDFPageView *pageView;
 
 - (void)_show;
 - (void)addBling;

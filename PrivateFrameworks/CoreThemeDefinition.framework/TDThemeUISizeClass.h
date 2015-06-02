@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDThemeUISizeClass : TDThemeConstant {
-}
+@interface TDThemeUISizeClass : TDThemeConstant
 
 @end

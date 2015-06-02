@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLAccountingGroup, PLXPCListenerOperatorComposition;
-
 @interface PLWatchKitAgent : PLAgent {
     PLAccountingGroup *_watchkitAccountingGroup;
     PLXPCListenerOperatorComposition *_xpcHandler;
 }
 
-@property(readonly) PLAccountingGroup * watchkitAccountingGroup;
-@property(retain) PLXPCListenerOperatorComposition * xpcHandler;
+@property (readonly) PLAccountingGroup *watchkitAccountingGroup;
+@property (retain) PLXPCListenerOperatorComposition *xpcHandler;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventPointDefinitions;

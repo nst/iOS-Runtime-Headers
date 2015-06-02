@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPAlternateArchiver : TSPArchiverBase {
-}
+@interface TSPAlternateArchiver : TSPArchiverBase
 
 - (id)initWithObject:(id)arg1;
 - (id)initWithObject:(id)arg1 messageVersion:(unsigned long long)arg2;

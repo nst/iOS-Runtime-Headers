@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary;
-
 @interface RadioSearchStationResult : NSObject <NSCopying> {
     NSDictionary *_highlightRanges;
     NSDictionary *_stationDictionary;
 }
 
-@property(copy,readonly) NSDictionary * highlightRanges;
-@property(copy,readonly) NSDictionary * stationDictionary;
+@property (nonatomic, readonly, copy) NSDictionary *highlightRanges;
+@property (nonatomic, readonly, copy) NSDictionary *stationDictionary;
 
 - (void).cxx_destruct;
 - (id)_initWithResponseDictionary:(id)arg1;

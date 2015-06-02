@@ -6,7 +6,7 @@
     float _offset;
 }
 
-@property float offset;
+@property (nonatomic) float offset;
 
 + (id)placementWithOffset:(float)arg1;
 

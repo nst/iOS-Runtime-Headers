@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SASportsMetadata : AceObject <SAAceSerializable>
 
-@interface SASportsMetadata : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSNumber * average;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(copy) NSString * name;
-@property(copy) NSNumber * selected;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
+@property (nonatomic, copy) NSNumber *average;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSNumber *selected;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
 
 + (id)metadata;
 + (id)metadataWithDictionary:(id)arg1 context:(id)arg2;

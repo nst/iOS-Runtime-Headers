@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebPaginationInfo;
-
 @interface UIWebDocumentViewPrintFormatter : UIViewPrintFormatter {
     UIWebPaginationInfo *_paginationInfo;
 }

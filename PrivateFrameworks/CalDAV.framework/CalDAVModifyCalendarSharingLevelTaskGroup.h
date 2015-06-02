@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSString, NSURL;
-
 @interface CalDAVModifyCalendarSharingLevelTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
     int _action;
     NSURL *_publishedURL;
@@ -11,14 +9,14 @@
     NSURL *_url;
 }
 
-@property int action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSURL * publishedURL;
-@property int state;
-@property(readonly) Class superclass;
-@property(retain) NSURL * url;
+@property (nonatomic) int action;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSURL *publishedURL;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSURL *url;
 
 - (int)action;
 - (void)dealloc;

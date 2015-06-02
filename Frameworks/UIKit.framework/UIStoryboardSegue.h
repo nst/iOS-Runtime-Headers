@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface UIStoryboardSegue : NSObject {
     id _destinationViewController;
     NSString *_identifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _performHandler;
-
+    id /* block */ _performHandler;
     id _sender;
     id _sourceViewController;
 }
 
-@property(readonly) id destinationViewController;
-@property(readonly) NSString * identifier;
-@property(copy) id performHandler;
-@property(retain) id sender;
-@property(readonly) id sourceViewController;
+@property (nonatomic, readonly) id destinationViewController;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, copy) id /* block */ performHandler;
+@property (nonatomic, retain) id sender;
+@property (nonatomic, readonly) id sourceViewController;
 
-+ (id)segueWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3 performHandler:(id)arg4;
++ (id)segueWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3 performHandler:(id /* block */)arg4;
 
 - (void)_prepare;
 - (void)dealloc;
@@ -34,9 +24,9 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3;
 - (void)perform;
-- (id)performHandler;
+- (id /* block */)performHandler;
 - (id)sender;
-- (void)setPerformHandler:(id)arg1;
+- (void)setPerformHandler:(id /* block */)arg1;
 - (void)setSender:(id)arg1;
 - (id)sourceViewController;
 

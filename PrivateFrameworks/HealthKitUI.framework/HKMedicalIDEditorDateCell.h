@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSDate, UIDatePicker;
-
 @interface HKMedicalIDEditorDateCell : HKMedicalIDEditorCell {
     NSDate *_dateValue;
     UIDatePicker *_picker;
 }
 
-@property(retain) NSDate * dateValue;
+@property (nonatomic, retain) NSDate *dateValue;
 
 - (void).cxx_destruct;
 - (void)_configureDatePicker;

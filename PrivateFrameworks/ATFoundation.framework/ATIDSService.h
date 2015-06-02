@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class ATIDSConnectionInfo, IDSService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATIDSService : ATMessageLinkListener <ATSocketDelegate, IDSServiceDelegate> {
     ATIDSConnectionInfo *_connectionInfo;
     NSMutableArray *_listeners;
@@ -11,10 +9,10 @@
     IDSService *_service;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (int)openSocketPriorityFromATPendingChangePriority:(int)arg1;
 

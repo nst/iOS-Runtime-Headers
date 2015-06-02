@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class NSString, UIAlertView;
-
 @interface DADiagnosticsPSController : PSListController <DADiagnosticSaveNotesDelegate, UIAlertViewDelegate> {
     UIAlertView *_savingDataAlert;
     UIAlertView *_simpleAlert;
     SEL _simpleConfirmSheetDismissedSEL;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)diagnosticsVisible;
 + (id)dumpRuntimeStateSpecifiers;

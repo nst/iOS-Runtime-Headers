@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLService : PLOperator {
-}
+@interface PLService : PLOperator
 
 + (id)initServices;
 + (void)load;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEODirectionsFeedback, GEODirectionsFeedbackCollection, NSMutableSet;
-
 @interface GEODirectionsFeedbackCollector : NSObject {
     GEODirectionsFeedback *_currentDirectionsFeedback;
     GEODirectionsFeedbackCollection *_currentFeedbackCollection;
     NSMutableSet *_routeIDs;
 }
 
-@property(retain) GEODirectionsFeedback * currentDirectionsFeedback;
-@property(retain) GEODirectionsFeedbackCollection * currentFeedbackCollection;
-@property(retain) NSMutableSet * routeIDs;
+@property (nonatomic, retain) GEODirectionsFeedback *currentDirectionsFeedback;
+@property (nonatomic, retain) GEODirectionsFeedbackCollection *currentFeedbackCollection;
+@property (nonatomic, retain) NSMutableSet *routeIDs;
 
 - (void)_updateFeedbackSessionWithResponseID:(id)arg1;
 - (void)addRouteID:(id)arg1 stepID:(unsigned int)arg2 completeStep:(BOOL)arg3;

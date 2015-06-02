@@ -8,9 +8,9 @@
     id _statisticsDelegate;
 }
 
-@property unsigned int blurHardEdges;
-@property float blurRadius;
-@property id statisticsDelegate;
+@property (nonatomic) unsigned int blurHardEdges;
+@property (nonatomic) float blurRadius;
+@property (nonatomic) id statisticsDelegate;
 
 + (Class)layerClass;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSString, NSUUID;
-
 @interface MSVXPCTransaction : NSObject {
     NSUUID *_identifier;
     NSString *_name;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) NSString * name;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) NSString *name;
 
 + (id)activeTransactions;
 

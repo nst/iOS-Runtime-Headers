@@ -2,8 +2,6 @@
    Image: /usr/lib/libauthinstall.dylib
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURLSession;
-
 @interface AMAuthInstallURLSession : NSObject <NSURLSessionDelegate> {
     NSMutableDictionary *_completions;
     NSMutableDictionary *_data;
@@ -13,18 +11,18 @@
     double _timeout;
 }
 
-@property(retain) NSMutableDictionary * completions;
-@property(retain) NSMutableDictionary * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableDictionary * responses;
-@property(retain) NSURLSession * session;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *completions;
+@property (nonatomic, retain) NSMutableDictionary *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableDictionary *responses;
+@property (nonatomic, retain) NSURLSession *session;
+@property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id)arg4;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_defaultSession;
@@ -36,7 +34,7 @@
 - (id)initWithTimeout:(double)arg1;
 - (id)queue;
 - (id)responses;
-- (void)sendRequest:(struct __CFHTTPMessage { }*)arg1 completion:(id)arg2;
+- (void)sendRequest:(struct __CFHTTPMessage { }*)arg1 completion:(id /* block */)arg2;
 - (id)session;
 - (void)setCompletions:(id)arg1;
 - (void)setData:(id)arg1;

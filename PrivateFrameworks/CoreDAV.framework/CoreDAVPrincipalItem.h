@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVHrefItem, CoreDAVItem, CoreDAVItemWithNoChildren;
-
 @interface CoreDAVPrincipalItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_all;
     CoreDAVItemWithNoChildren *_authenticated;
@@ -13,12 +11,12 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * all;
-@property(retain) CoreDAVItemWithNoChildren * authenticated;
-@property(retain) CoreDAVHrefItem * href;
-@property(retain) CoreDAVItem * property;
-@property(retain) CoreDAVItemWithNoChildren * selfItem;
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *all;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *authenticated;
+@property (nonatomic, retain) CoreDAVHrefItem *href;
+@property (nonatomic, retain) CoreDAVItem *property;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *selfItem;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *unauthenticated;
 
 + (id)copyParseRules;
 

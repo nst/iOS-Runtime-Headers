@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasRecords;
-@property BOOL hasSizeBytes;
-@property BOOL hasTimestamp;
-@property unsigned int records;
-@property unsigned int sizeBytes;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasRecords;
+@property (nonatomic) BOOL hasSizeBytes;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int records;
+@property (nonatomic) unsigned int sizeBytes;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

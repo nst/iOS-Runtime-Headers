@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class UIView;
+@interface MusicMiniPlayerPlaybackControlsView : RUMiniPlayerPlaybackControlsView
 
-@interface MusicMiniPlayerPlaybackControlsView : RUMiniPlayerPlaybackControlsView {
-}
-
-@property(readonly) UIView * viewForPresentingRepeat;
+@property (nonatomic, readonly) UIView *viewForPresentingRepeat;
 
 - (id)_albumTextForItem:(id)arg1;
 - (void)_applyRepeatSettingsToButton:(id)arg1;

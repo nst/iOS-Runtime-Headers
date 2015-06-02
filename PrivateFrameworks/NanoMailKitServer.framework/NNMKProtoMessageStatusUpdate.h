@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoMessageStatusUpdate : PBCodable <NSCopying> {
     struct { 
         unsigned int statusVersion : 1; 
@@ -14,12 +12,12 @@
     unsigned int _updatedStatus;
 }
 
-@property(readonly) BOOL hasMessageId;
-@property BOOL hasStatusVersion;
-@property BOOL hasUpdatedStatus;
-@property(retain) NSString * messageId;
-@property unsigned int statusVersion;
-@property unsigned int updatedStatus;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic) BOOL hasStatusVersion;
+@property (nonatomic) BOOL hasUpdatedStatus;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic) unsigned int statusVersion;
+@property (nonatomic) unsigned int updatedStatus;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

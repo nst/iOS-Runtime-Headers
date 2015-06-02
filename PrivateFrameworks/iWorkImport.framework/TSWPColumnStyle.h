@@ -2,22 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface TSWPColumnStyle : TSSStyle <TSWPColumnMetrics>
 
-@class TSWPPadding;
-
-@interface TSWPColumnStyle : TSSStyle <TSWPColumnMetrics> {
-}
-
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, readonly) float textScaleFactor;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;

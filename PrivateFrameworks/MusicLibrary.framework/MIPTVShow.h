@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPArtist, MIPSeries, NSString;
-
 @interface MIPTVShow : PBCodable <NSCopying> {
     MIPArtist *_artist;
     NSString *_episodeId;
@@ -18,20 +16,20 @@
     int _videoQuality;
 }
 
-@property(retain) MIPArtist * artist;
-@property(retain) NSString * episodeId;
-@property(retain) NSString * episodeSortId;
-@property(readonly) BOOL hasArtist;
-@property(readonly) BOOL hasEpisodeId;
-@property(readonly) BOOL hasEpisodeSortId;
-@property(readonly) BOOL hasNetworkName;
-@property BOOL hasSeasonNumber;
-@property(readonly) BOOL hasSeries;
-@property BOOL hasVideoQuality;
-@property(retain) NSString * networkName;
-@property int seasonNumber;
-@property(retain) MIPSeries * series;
-@property int videoQuality;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic, retain) NSString *episodeId;
+@property (nonatomic, retain) NSString *episodeSortId;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic, readonly) BOOL hasEpisodeId;
+@property (nonatomic, readonly) BOOL hasEpisodeSortId;
+@property (nonatomic, readonly) BOOL hasNetworkName;
+@property (nonatomic) BOOL hasSeasonNumber;
+@property (nonatomic, readonly) BOOL hasSeries;
+@property (nonatomic) BOOL hasVideoQuality;
+@property (nonatomic, retain) NSString *networkName;
+@property (nonatomic) int seasonNumber;
+@property (nonatomic, retain) MIPSeries *series;
+@property (nonatomic) int videoQuality;
 
 - (void).cxx_destruct;
 - (id)artist;

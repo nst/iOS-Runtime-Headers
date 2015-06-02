@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString, _MTLCommandBuffer<MTLCommandBuffer>;
-
 @interface _MTLCommandEncoder : NSObject {
     _MTLCommandBuffer<MTLCommandBuffer> *_commandBuffer;
     <MTLDevice> *_device;
     NSString *_label;
 }
 
-@property(readonly) <MTLDevice> * device;
-@property(copy) NSString * label;
+@property (nonatomic, readonly) <MTLDevice> *device;
+@property (copy) NSString *label;
 
 - (id)commandBuffer;
 - (void)dealloc;

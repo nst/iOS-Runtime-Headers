@@ -2,34 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIActionSheet;
-
 @interface CNFRegActionSheetManager : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
     BOOL _dismissingActionSheetForRotation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _presenter;
-
+    id /* block */ _handler;
+    id /* block */ _presenter;
 }
 
-@property(retain) UIActionSheet * actionSheet;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id handler;
-@property(readonly) unsigned int hash;
-@property(copy) id presenter;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIActionSheet *actionSheet;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ presenter;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -40,12 +26,12 @@
 - (void)dismissCurrentActionSheet;
 - (void)handleDidRotate:(id)arg1;
 - (void)handleWillRotate:(id)arg1;
-- (id)handler;
+- (id /* block */)handler;
 - (id)init;
-- (id)presenter;
+- (id /* block */)presenter;
 - (void)setActionSheet:(id)arg1;
-- (void)setHandler:(id)arg1;
-- (void)setPresenter:(id)arg1;
-- (void)showActionSheet:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
+- (void)setHandler:(id /* block */)arg1;
+- (void)setPresenter:(id /* block */)arg1;
+- (void)showActionSheet:(id)arg1 withPresenter:(id /* block */)arg2 withHandler:(id /* block */)arg3;
 
 @end

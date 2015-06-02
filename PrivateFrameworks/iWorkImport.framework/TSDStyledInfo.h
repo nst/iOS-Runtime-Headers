@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDReflection, TSDShadow, TSDStroke, TSSStyle;
+@interface TSDStyledInfo : TSDDrawableInfo <TSSStyleClient>
 
-@interface TSDStyledInfo : TSDDrawableInfo <TSSStyleClient> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float opacity;
-@property(readonly) BOOL pathIsOpen;
-@property(copy) TSDReflection * reflection;
-@property(copy) TSDShadow * shadow;
-@property(copy) TSDStroke * stroke;
-@property(retain) TSSStyle * style;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float opacity;
+@property (nonatomic, readonly) BOOL pathIsOpen;
+@property (nonatomic, copy) TSDReflection *reflection;
+@property (nonatomic, copy) TSDShadow *shadow;
+@property (nonatomic, copy) TSDStroke *stroke;
+@property (nonatomic, retain) TSSStyle *style;
+@property (readonly) Class superclass;
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)boxedValueForProperty:(int)arg1;
@@ -30,7 +27,7 @@
 - (id)propertyMapForNewPreset;
 - (id)referencedStyles;
 - (id)reflection;
-- (void)replaceReferencedStylesUsingBlock:(id)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setOpacity:(float)arg1;
 - (void)setReflection:(id)arg1;

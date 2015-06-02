@@ -7,8 +7,8 @@
     BOOL _stroked;
 }
 
-@property(getter=isFilled) BOOL filled;
-@property(getter=isStroked) BOOL stroked;
+@property (getter=isFilled, nonatomic) BOOL filled;
+@property (getter=isStroked, nonatomic) BOOL stroked;
 
 - (id)_drawColor;
 - (void)_updateBadge;

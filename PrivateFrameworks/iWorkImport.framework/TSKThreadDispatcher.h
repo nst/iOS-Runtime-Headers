@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKThreadDispatcher : NSObject {
-}
+@interface TSKThreadDispatcher : NSObject
 
 + (id)sharedInstance;
 
-- (void)dispatch:(id)arg1;
+- (void)dispatch:(id /* block */)arg1;
 - (void)dispatchSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3;
 - (id)p_dispatchQueue;
 

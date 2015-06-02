@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypeMixed : TSCH2DChartType {
-}
+@interface TSCHChartTypeMixed : TSCH2DChartType
 
 - (id)defaultSeriesType:(unsigned int)arg1;
 - (id)init;

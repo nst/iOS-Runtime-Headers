@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
  */
 
-@class NSCharacterSet, NSData;
-
 @interface _UIFontExtraData : NSObject {
     float _ascender;
     NSCharacterSet *_coveredCharacterSet;

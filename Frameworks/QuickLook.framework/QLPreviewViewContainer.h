@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLPreviewViewController;
-
 @interface QLPreviewViewContainer : UIView {
     QLPreviewViewController *_controller;
 }
 
-@property QLPreviewViewController * controller;
+@property QLPreviewViewController *controller;
 
 - (id)controller;
 - (void)layoutSubviews;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUMaskProvider;
-
 @interface SUMaskedView : UIView {
     SUMaskProvider *_maskProvider;
 }
 
-@property(retain) SUMaskProvider * maskProvider;
+@property (nonatomic, retain) SUMaskProvider *maskProvider;
 
 - (void)_reloadMask;
 - (struct CGPath { }*)copyMaskPath;

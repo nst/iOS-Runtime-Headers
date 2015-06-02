@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class BluetoothManager, NSArray, NSMutableDictionary, NSString, NSTimer, PKLinkedAppView, PKSettingTableCell, UIButton, UILabel, UIRefreshControl, UITableView, UIView;
-
 @interface PKPassBackFaceView : PKPassFaceView <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
     PKSettingTableCell *_automaticUpdates;
     UITableView *_bodyTable;
@@ -30,15 +28,15 @@
     UILabel *_updateDateLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property PKLinkedAppView * linkedApp;
-@property BOOL showsDelete;
-@property BOOL showsLinkedApp;
-@property BOOL showsLinks;
-@property BOOL showsSettings;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) PKLinkedAppView *linkedApp;
+@property (nonatomic) BOOL showsDelete;
+@property (nonatomic) BOOL showsLinkedApp;
+@property (nonatomic) BOOL showsLinks;
+@property (nonatomic) BOOL showsSettings;
+@property (readonly) Class superclass;
 
 + (id)_linkColor;
 + (id)_linkTextAttributes;

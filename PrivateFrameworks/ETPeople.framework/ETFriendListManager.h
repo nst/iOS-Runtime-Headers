@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
  */
 
-@class ETPerson, NPSDomainAccessor, NPSManager, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface ETFriendListManager : NSObject {
     NPSDomainAccessor *_domainAccessor;
     ETPerson *_ephemeralPerson;
@@ -18,8 +16,8 @@
     NSObject<OS_dispatch_queue> *_saveQueue;
 }
 
-@property(retain) ETPerson * ephemeralPerson;
-@property(retain) NSMutableArray * friendList;
+@property (nonatomic, retain) ETPerson *ephemeralPerson;
+@property (nonatomic, retain) NSMutableArray *friendList;
 
 + (id)_positionColors;
 

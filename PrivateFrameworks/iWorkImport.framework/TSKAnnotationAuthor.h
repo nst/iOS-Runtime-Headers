@@ -2,39 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSUColor;
-
 @interface TSKAnnotationAuthor : TSPObject {
     TSUColor *mColor;
     NSString *mName;
 }
 
-@property(readonly) NSString * appearanceColorForAuthor;
-@property(readonly) NSString * authorColorName;
-@property(readonly) TSUColor * cellViolatorColor;
-@property(readonly) TSUColor * changeAdornmentsColor;
-@property(readonly) TSUColor * flagFillColor;
-@property(readonly) TSUColor * flagPressedColor;
-@property(readonly) TSUColor * flagStrokeColor;
-@property(readonly) TSUColor * gradientEndColor;
-@property(readonly) TSUColor * gradientStartColor;
-@property(readonly) TSUColor * indicatorDarkColor;
-@property(readonly) TSUColor * indicatorLightColor;
-@property(readonly) NSString * menuSwatchColorForAuthor;
-@property(copy) NSString * name;
-@property(readonly) TSUColor * popoverAuthorLabelColor;
-@property(readonly) TSUColor * popoverButtonTintColor;
-@property(readonly) TSUColor * popoverColor;
-@property(readonly) BOOL showAuthorComments;
-@property(readonly) TSUColor * sidebarChangeBarColor;
-@property(readonly) TSUColor * sidebarDecoratorLineColor;
-@property(readonly) TSUColor * sidebarHoverColor;
-@property(readonly) TSUColor * sidebarSelectedBorderColor;
-@property(readonly) TSUColor * sidebarSelectedColor;
-@property(readonly) TSUColor * sidebarUsernameColor;
-@property(retain) TSUColor * storageColor;
-@property(readonly) TSUColor * textHighlightColor;
-@property(readonly) TSUColor * textMarkupColor;
+@property (nonatomic, readonly) NSString *appearanceColorForAuthor;
+@property (nonatomic, readonly) NSString *authorColorName;
+@property (nonatomic, readonly) TSUColor *cellViolatorColor;
+@property (nonatomic, readonly) TSUColor *changeAdornmentsColor;
+@property (nonatomic, readonly) TSUColor *flagFillColor;
+@property (nonatomic, readonly) TSUColor *flagPressedColor;
+@property (nonatomic, readonly) TSUColor *flagStrokeColor;
+@property (nonatomic, readonly) TSUColor *gradientEndColor;
+@property (nonatomic, readonly) TSUColor *gradientStartColor;
+@property (nonatomic, readonly) TSUColor *indicatorDarkColor;
+@property (nonatomic, readonly) TSUColor *indicatorLightColor;
+@property (nonatomic, readonly) NSString *menuSwatchColorForAuthor;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) TSUColor *popoverAuthorLabelColor;
+@property (nonatomic, readonly) TSUColor *popoverButtonTintColor;
+@property (nonatomic, readonly) TSUColor *popoverColor;
+@property (nonatomic, readonly) BOOL showAuthorComments;
+@property (nonatomic, readonly) TSUColor *sidebarChangeBarColor;
+@property (nonatomic, readonly) TSUColor *sidebarDecoratorLineColor;
+@property (nonatomic, readonly) TSUColor *sidebarHoverColor;
+@property (nonatomic, readonly) TSUColor *sidebarSelectedBorderColor;
+@property (nonatomic, readonly) TSUColor *sidebarSelectedColor;
+@property (nonatomic, readonly) TSUColor *sidebarUsernameColor;
+@property (nonatomic, retain) TSUColor *storageColor;
+@property (nonatomic, readonly) TSUColor *textHighlightColor;
+@property (nonatomic, readonly) TSUColor *textMarkupColor;
 
 + (id)authorColorAppearanceNameForIndex:(unsigned int)arg1;
 + (id)authorColorForIndex:(unsigned int)arg1 forKey:(id)arg2;

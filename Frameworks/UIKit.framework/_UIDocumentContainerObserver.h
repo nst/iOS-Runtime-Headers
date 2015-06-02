@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSPredicate;
-
 @interface _UIDocumentContainerObserver : NSObject {
     NSMutableSet *_added;
     NSArray *_descriptors;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSOrderedSet *_lastSnapshot;
     NSDate *_lastSnapshotDate;
     NSMutableDictionary *_moved;
@@ -23,21 +13,21 @@
     NSMutableSet *_removed;
 }
 
-@property(copy) NSArray * descriptors;
-@property(copy) id handler;
-@property(retain) NSOrderedSet * lastSnapshot;
-@property(retain) NSDate * lastSnapshotDate;
-@property(retain) NSPredicate * predicate;
+@property (nonatomic, copy) NSArray *descriptors;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, retain) NSOrderedSet *lastSnapshot;
+@property (nonatomic, retain) NSDate *lastSnapshotDate;
+@property (nonatomic, retain) NSPredicate *predicate;
 
-+ (id)_observerForDirectories:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
++ (id)_observerForDirectories:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id /* block */)arg3;
 
 - (id)_computeUpdatesFromOld:(id)arg1 toNew:(id)arg2;
 - (id)_predicateForItemsInDirectory:(id)arg1;
 - (void)addURL:(id)arg1;
 - (void)dealloc;
 - (id)descriptors;
-- (id)handler;
-- (id)initWithDirectories:(id)arg1 sortDescriptors:(id)arg2 handler:(id)arg3;
+- (id /* block */)handler;
+- (id)initWithDirectories:(id)arg1 sortDescriptors:(id)arg2 handler:(id /* block */)arg3;
 - (id)lastSnapshot;
 - (id)lastSnapshotDate;
 - (void)moveURL:(id)arg1 toURL:(id)arg2;
@@ -45,7 +35,7 @@
 - (void)processResults:(id)arg1;
 - (void)removeURL:(id)arg1;
 - (void)setDescriptors:(id)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setLastSnapshot:(id)arg1;
 - (void)setLastSnapshotDate:(id)arg1;
 - (void)setPredicate:(id)arg1;

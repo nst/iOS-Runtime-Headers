@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition, PLXPCResponderOperatorComposition;
-
 @interface PLBLDService : PLService {
     double _appBreakdownThresholdPercent;
     PLNSNotificationOperatorComposition *_dailyTaskNotification;
@@ -13,12 +11,12 @@
     PLXPCResponderOperatorComposition *_xpcResponderUIBatteryForModels;
 }
 
-@property(readonly) double appBreakdownThresholdPercent;
-@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
-@property(readonly) NSDictionary * nonAppBundleIDsWhitelist;
-@property(retain) PLNSTimerOperatorComposition * runLoggingTimer;
-@property(retain) PLXPCResponderOperatorComposition * xpcResponderUIBattery;
-@property(retain) PLXPCResponderOperatorComposition * xpcResponderUIBatteryForModels;
+@property (readonly) double appBreakdownThresholdPercent;
+@property (retain) PLNSNotificationOperatorComposition *dailyTaskNotification;
+@property (readonly) NSDictionary *nonAppBundleIDsWhitelist;
+@property (retain) PLNSTimerOperatorComposition *runLoggingTimer;
+@property (retain) PLXPCResponderOperatorComposition *xpcResponderUIBattery;
+@property (retain) PLXPCResponderOperatorComposition *xpcResponderUIBatteryForModels;
 
 + (id)defaults;
 + (id)entryEventPointBUILogging;

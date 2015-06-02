@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNHLController : NSObject {
-}
+@interface KNHLController : NSObject
 
 + (BOOL)URLContainsKeynoteSpecificHyperlink:(id)arg1;
 + (BOOL)allowEditingOfDisplayText:(id)arg1;

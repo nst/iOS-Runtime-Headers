@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, PLPhotoLibrary;
-
 @interface PLCloudLibraryLayoutConfiguration : NSObject {
     NSArray *layoutBuckets;
     PLPhotoLibrary *photoLibrary;
 }
 
-@property(retain) NSArray * layoutBuckets;
-@property(retain) PLPhotoLibrary * photoLibrary;
+@property (nonatomic, retain) NSArray *layoutBuckets;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
 
 - (id)layoutBuckets;
 - (id)photoLibrary;

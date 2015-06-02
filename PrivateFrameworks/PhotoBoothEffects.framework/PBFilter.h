@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoBoothEffects.framework/PhotoBoothEffects
  */
 
-@class CIFilter;
-
 @interface PBFilter : NSObject {
     CIFilter *_ciFilter;
     CIFilter *_wrapMirrorFilter;

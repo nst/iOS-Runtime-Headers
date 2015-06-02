@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface PBReaderHyperlinkInfo : NSObject {
     NSString *mHyperlink1;
     NSString *mHyperlink2;
     NSString *mScreenTip;
 }
 
-@property(retain) NSString * hyperlink1;
-@property(retain) NSString * hyperlink2;
-@property(retain) NSString * screenTip;
+@property (nonatomic, retain) NSString *hyperlink1;
+@property (nonatomic, retain) NSString *hyperlink2;
+@property (nonatomic, retain) NSString *screenTip;
 
 - (void)dealloc;
 - (id)hyperlink1;

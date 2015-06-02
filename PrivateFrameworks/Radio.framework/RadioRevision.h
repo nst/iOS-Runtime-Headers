@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioRevision : NSManagedObject {
-}
+@interface RadioRevision : NSManagedObject
 
-@property long long revisionID;
-@property int revisionType;
-@property long long stationID;
+@property (nonatomic) long long revisionID;
+@property (nonatomic) int revisionType;
+@property (nonatomic) long long stationID;
 
 - (long long)revisionID;
 - (int)revisionType;

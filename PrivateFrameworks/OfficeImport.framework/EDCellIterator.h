@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDRowBlock, EDRowBlocks;
-
 @interface EDCellIterator : NSObject {
     struct EDCellHeader { unsigned int x1; unsigned int x2; } *mCurrentCell;
     unsigned int mCurrentCellIndex;

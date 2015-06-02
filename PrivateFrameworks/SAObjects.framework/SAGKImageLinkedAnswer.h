@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, SAUIImageResource;
+@interface SAGKImageLinkedAnswer : SAGKLinkedAnswer
 
-@interface SAGKImageLinkedAnswer : SAGKLinkedAnswer {
-}
-
-@property(copy) NSNumber * fileSize;
-@property(retain) SAUIImageResource * imageResource;
-@property(copy) NSArray * thumbnails;
+@property (nonatomic, copy) NSNumber *fileSize;
+@property (nonatomic, retain) SAUIImageResource *imageResource;
+@property (nonatomic, copy) NSArray *thumbnails;
 
 + (id)imageLinkedAnswer;
 + (id)imageLinkedAnswerWithDictionary:(id)arg1 context:(id)arg2;

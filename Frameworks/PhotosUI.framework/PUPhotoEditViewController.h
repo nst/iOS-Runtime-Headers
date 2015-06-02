@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUPhotoEditViewControllerDelegate>, CIImage, GLKView, NSArray, NSString, NSURL, PHAsset, PLPhotoEditAggregateSession, PLPhotoEditModel, PLPhotoEditMutableModel, PLPhotoEditRenderer, PUAdjustmentsToolController, PUAutoAdjustmentController, PUCropToolController, PUEditPluginSession, PUFiltersToolController, PUPhotoEditOverlayBadge, PUPhotoEditToolController, PUPhotoEditToolbar, PUPhotoEditValuesCalculator, PUPhotoEditViewControllerSpec, PUProgressIndicatorView, PURedeyeToolController, PUResourceDownloadRequest, UIAlertController, UIButton, UIImage, UIImageView, UILongPressGestureRecognizer, UIScrollView, _PUPhotoEditSnapshot;
-
 @interface PUPhotoEditViewController : UIViewController <GLKViewDelegate, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
     PLPhotoEditAggregateSession *__aggregateSession;
     NSArray *__allTools;
@@ -21,11 +15,7 @@
         float height; 
     } __layoutReferenceSize;
     PLPhotoEditRenderer *__mainRenderer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __nextRenderCompletionBlock;
-
+    id /* block */ __nextRenderCompletionBlock;
     CIImage *__originalWorkCIImage;
     UIImage *__originalWorkUIImage;
     BOOL __penultimateAvailable;
@@ -110,44 +100,44 @@
     BOOL _toolbarButtonsValid;
 }
 
-@property(setter=_setAggregateSession:,retain) PLPhotoEditAggregateSession * _aggregateSession;
-@property(setter=_setBaseWorkCIImage:,retain) CIImage * _baseWorkCIImage;
-@property(setter=_setBaseWorkUIImage:,retain) UIImage * _baseWorkUIImage;
-@property(setter=_setCanAnimateNextAutoEnhance:) BOOL _canAnimateNextAutoEnhance;
-@property(setter=_setCancelConfirmationAlert:) UIAlertController * _cancelConfirmationAlert;
-@property(setter=_setCurrentResourceLoadRequest:,retain) PUResourceDownloadRequest * _currentResourceLoadRequest;
-@property(setter=_setLayoutReferenceSize:) struct CGSize { float x1; float x2; } _layoutReferenceSize;
-@property(setter=_setMainRenderer:,retain) PLPhotoEditRenderer * _mainRenderer;
-@property(setter=_setNextRenderCompletionBlock:,copy) id _nextRenderCompletionBlock;
-@property(setter=_setOriginalWorkCIImage:,retain) CIImage * _originalWorkCIImage;
-@property(setter=_setOriginalWorkUIImage:,retain) UIImage * _originalWorkUIImage;
-@property(getter=_isPenultimateAvailable,setter=_setPenultimateAvailable:) BOOL _penultimateAvailable;
-@property(setter=_setPhotoEditModel:,retain) PLPhotoEditMutableModel * _photoEditModel;
-@property(setter=_setPreviewRenderType:) int _previewRenderType;
-@property(setter=_setPreviewingOriginalRenderer:,retain) PLPhotoEditRenderer * _previewingOriginalRenderer;
-@property(setter=_setRedEyeController:,retain) PURedeyeToolController * _redEyeController;
-@property(setter=_setResourcesAvailability:) int _resourcesAvailability;
-@property(setter=_setRevertConfirmationAlert:) UIAlertController * _revertConfirmationAlert;
-@property(getter=_isRevertingToOriginal,setter=_setRevertingToOriginal:) BOOL _revertingToOriginal;
-@property(setter=_setShouldBePreviewingOriginal:) BOOL _shouldBePreviewingOriginal;
-@property(setter=_setUneditedPhotoEditModel:,copy) PLPhotoEditModel * _uneditedPhotoEditModel;
-@property(setter=_setValuesCalculator:,retain) PUPhotoEditValuesCalculator * _valuesCalculator;
-@property(getter=_isWaitingForAssetChange,setter=_setWaitingForAssetChange:) BOOL _waitingForAssetChange;
-@property(setter=_setWaitingForBaseImageRequest:) BOOL _waitingForBaseImageRequest;
-@property(setter=_setWaitingForOriginalImageRequest:) BOOL _waitingForOriginalImageRequest;
-@property(getter=_isWaitingForSaveCompletion,setter=_setWaitingForSaveCompletion:) BOOL _waitingForSaveCompletion;
-@property(setter=_setWorkImageVersion:) int _workImageVersion;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotoEditViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int layoutOrientation;
-@property(readonly) PHAsset * photo;
-@property(readonly) PUPhotoEditViewControllerSpec * photoEditSpec;
-@property(retain) UIImage * placeholderImage;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previewViewFrame;
-@property(getter=isPreviewViewHidden) BOOL previewViewHidden;
-@property(readonly) Class superclass;
+@property (setter=_setAggregateSession:, nonatomic, retain) PLPhotoEditAggregateSession *_aggregateSession;
+@property (setter=_setBaseWorkCIImage:, nonatomic, retain) CIImage *_baseWorkCIImage;
+@property (setter=_setBaseWorkUIImage:, nonatomic, retain) UIImage *_baseWorkUIImage;
+@property (setter=_setCanAnimateNextAutoEnhance:, nonatomic) BOOL _canAnimateNextAutoEnhance;
+@property (setter=_setCancelConfirmationAlert:, nonatomic) UIAlertController *_cancelConfirmationAlert;
+@property (setter=_setCurrentResourceLoadRequest:, nonatomic, retain) PUResourceDownloadRequest *_currentResourceLoadRequest;
+@property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
+@property (setter=_setMainRenderer:, nonatomic, retain) PLPhotoEditRenderer *_mainRenderer;
+@property (setter=_setNextRenderCompletionBlock:, nonatomic, copy) id /* block */ _nextRenderCompletionBlock;
+@property (setter=_setOriginalWorkCIImage:, nonatomic, retain) CIImage *_originalWorkCIImage;
+@property (setter=_setOriginalWorkUIImage:, nonatomic, retain) UIImage *_originalWorkUIImage;
+@property (getter=_isPenultimateAvailable, setter=_setPenultimateAvailable:, nonatomic) BOOL _penultimateAvailable;
+@property (setter=_setPhotoEditModel:, nonatomic, retain) PLPhotoEditMutableModel *_photoEditModel;
+@property (setter=_setPreviewRenderType:, nonatomic) int _previewRenderType;
+@property (setter=_setPreviewingOriginalRenderer:, nonatomic, retain) PLPhotoEditRenderer *_previewingOriginalRenderer;
+@property (setter=_setRedEyeController:, nonatomic, retain) PURedeyeToolController *_redEyeController;
+@property (setter=_setResourcesAvailability:, nonatomic) int _resourcesAvailability;
+@property (setter=_setRevertConfirmationAlert:, nonatomic) UIAlertController *_revertConfirmationAlert;
+@property (getter=_isRevertingToOriginal, setter=_setRevertingToOriginal:, nonatomic) BOOL _revertingToOriginal;
+@property (setter=_setShouldBePreviewingOriginal:, nonatomic) BOOL _shouldBePreviewingOriginal;
+@property (setter=_setUneditedPhotoEditModel:, nonatomic, copy) PLPhotoEditModel *_uneditedPhotoEditModel;
+@property (setter=_setValuesCalculator:, nonatomic, retain) PUPhotoEditValuesCalculator *_valuesCalculator;
+@property (getter=_isWaitingForAssetChange, setter=_setWaitingForAssetChange:, nonatomic) BOOL _waitingForAssetChange;
+@property (setter=_setWaitingForBaseImageRequest:, nonatomic) BOOL _waitingForBaseImageRequest;
+@property (setter=_setWaitingForOriginalImageRequest:, nonatomic) BOOL _waitingForOriginalImageRequest;
+@property (getter=_isWaitingForSaveCompletion, setter=_setWaitingForSaveCompletion:, nonatomic) BOOL _waitingForSaveCompletion;
+@property (setter=_setWorkImageVersion:, nonatomic) int _workImageVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoEditViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int layoutOrientation;
+@property (nonatomic, readonly) PHAsset *photo;
+@property (nonatomic, readonly) PUPhotoEditViewControllerSpec *photoEditSpec;
+@property (nonatomic, retain) UIImage *placeholderImage;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previewViewFrame;
+@property (getter=isPreviewViewHidden, nonatomic) BOOL previewViewHidden;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -158,7 +148,7 @@
 - (id)_baseWorkUIImage;
 - (BOOL)_canAnimateNextAutoEnhance;
 - (id)_cancelConfirmationAlert;
-- (void)_captureSnapshotOfBasePhotoWithCompletionHandler:(id)arg1;
+- (void)_captureSnapshotOfBasePhotoWithCompletionHandler:(id /* block */)arg1;
 - (void)_checkPhotoTakenWithoutFlash;
 - (void)_configureEnablenessOfControlButton:(id)arg1 animated:(BOOL)arg2;
 - (id)_currentResourceLoadRequest;
@@ -186,7 +176,7 @@
 - (void)_loadToolsIfNeeded;
 - (id)_mainRenderer;
 - (id)_newToolButtonForTool:(id)arg1;
-- (id)_nextRenderCompletionBlock;
+- (id /* block */)_nextRenderCompletionBlock;
 - (void)_notifyDelegateSaveFinishedIfReady;
 - (id)_orientedCIImageFromUIImage:(id)arg1;
 - (id)_originalWorkCIImage;
@@ -200,9 +190,9 @@
 - (void)_reloadMainAndSecondaryToolbarButtonsIfNeeded;
 - (void)_resetModelAndBaseImagesToWorkImageVersion:(int)arg1;
 - (int)_resourcesAvailability;
-- (void)_restoreSnapshot:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)_restoreSnapshot:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_revertConfirmationAlert;
-- (void)_revertToOriginalWithCompletionHandler:(id)arg1;
+- (void)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
 - (struct CGSize { float x1; float x2; })_scaleSize:(struct CGSize { float x1; float x2; })arg1 toFitSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_setAggregateSession:(id)arg1;
 - (void)_setBaseWorkCIImage:(id)arg1;
@@ -214,7 +204,7 @@
 - (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setMainRenderer:(id)arg1;
-- (void)_setNextRenderCompletionBlock:(id)arg1;
+- (void)_setNextRenderCompletionBlock:(id /* block */)arg1;
 - (void)_setOriginalWorkCIImage:(id)arg1;
 - (void)_setOriginalWorkUIImage:(id)arg1;
 - (void)_setPenultimateAvailable:(BOOL)arg1;
@@ -251,7 +241,7 @@
 - (void)_updateMainActionButtonAnimated:(BOOL)arg1;
 - (void)_updateMainRenderer;
 - (void)_updateModelDependentControlsAnimated:(BOOL)arg1;
-- (void)_updatePenultimateAvailableWithCompletionHandler:(id)arg1;
+- (void)_updatePenultimateAvailableWithCompletionHandler:(id /* block */)arg1;
 - (void)_updatePhoto;
 - (void)_updatePlaceholderImage;
 - (void)_updatePluginButtonAnimated:(BOOL)arg1;
@@ -278,11 +268,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
-- (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)editPluginSession:(id)arg1 loadAdjustmentDataWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 loadDisplaySizeImageWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 loadFullSizeImageWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 loadPlaceholderImageWithHandler:(id)arg2;
+- (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)editPluginSession:(id)arg1 loadAdjustmentDataWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 loadDisplaySizeImageWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 loadFullSizeImageWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 loadPlaceholderImageWithHandler:(id /* block */)arg2;
 - (void)editPluginSessionAvailabilityDidChange:(id)arg1;
 - (void)editPluginSessionDidEnd:(id)arg1;
 - (void)editPluginSessionWillBegin:(id)arg1;
@@ -304,7 +294,7 @@
 - (BOOL)pu_wantsNavigationBarVisible;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
-- (void)requestDismissTransitionViewContentsWithCompletion:(id)arg1;
+- (void)requestDismissTransitionViewContentsWithCompletion:(id /* block */)arg1;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)setDelegate:(id)arg1;

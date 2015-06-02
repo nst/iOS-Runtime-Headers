@@ -2,20 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSString;
+@interface UIHandleRemoteNotificationAction : BSAction
 
-@interface UIHandleRemoteNotificationAction : BSAction {
-}
-
-@property(copy,readonly) NSString * action;
-@property(copy,readonly) NSDictionary * payload;
+@property (nonatomic, readonly, copy) NSString *action;
+@property (nonatomic, readonly, copy) NSDictionary *payload;
 
 - (int)UIActionType;
-- (id)_initWithRemoteNotificationPayload:(id)arg1 action:(id)arg2 type:(int)arg3 withHandler:(id)arg4;
+- (id)_initWithRemoteNotificationPayload:(id)arg1 action:(id)arg2 type:(int)arg3 withHandler:(id /* block */)arg4;
 - (id)action;
-- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
-- (id)initWithRemoteNotificationPayload:(id)arg1 action:(id)arg2 withHandler:(id)arg3;
-- (id)initWithRemoteNotificationPayload:(id)arg1 withHandler:(id)arg2;
+- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
+- (id)initWithRemoteNotificationPayload:(id)arg1 action:(id)arg2 withHandler:(id /* block */)arg3;
+- (id)initWithRemoteNotificationPayload:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)payload;
 - (void)sendResponse:(id)arg1;

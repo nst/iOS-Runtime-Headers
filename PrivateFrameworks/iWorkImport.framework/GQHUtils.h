@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHUtils : NSObject {
-}
+@interface GQHUtils : NSObject
 
 + (struct __CFString { }*)createHtmlHrefForLinkUri:(struct __CFString { }*)arg1 state:(id)arg2;
 

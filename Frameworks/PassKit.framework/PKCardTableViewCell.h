@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentCredential;
-
 @interface PKCardTableViewCell : PKCardOnFileTableViewCell {
     PKPaymentCredential *_paymentCredential;
 }
 
-@property(retain) PKPaymentCredential * paymentCredential;
+@property (nonatomic, retain) PKPaymentCredential *paymentCredential;
 
 - (void)dealloc;
 - (id)paymentCredential;

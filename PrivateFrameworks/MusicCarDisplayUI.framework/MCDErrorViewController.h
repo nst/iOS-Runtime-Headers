@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSString, UIButton, UILabel;
-
 @interface MCDErrorViewController : UIViewController {
     NSString *_errorMessage;
     NSString *_errorTitle;
@@ -12,8 +10,8 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) NSString * errorMessage;
-@property(retain) NSString * errorTitle;
+@property (nonatomic, retain) NSString *errorMessage;
+@property (nonatomic, retain) NSString *errorTitle;
 
 - (void).cxx_destruct;
 - (void)dealloc;

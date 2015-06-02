@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLFormElement, NSString;
+@interface DOMHTMLLabelElement : DOMHTMLElement
 
-@interface DOMHTMLLabelElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * accessKey;
-@property(readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * htmlFor;
+@property (copy) NSString *accessKey;
+@property (readonly) DOMHTMLFormElement *form;
+@property (copy) NSString *htmlFor;
 
 - (id)accessKey;
 - (id)control;

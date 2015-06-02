@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKDataUnitGroupController, HKHealthStore, HKSource, NSMutableArray, NSUUID;
-
 @interface HKDeviceIngestSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
     NSMutableArray *_dataTypeNames;
     HKDataUnitGroupController *_dataUnitGroupController;

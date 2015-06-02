@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
+@interface HDDataEntity : HDHealthEntity <HDDataEntity>
 
-@interface HDDataEntity : HDHealthEntity <HDDataEntity> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-
-+ (BOOL)_addCodableObjectsToCollections:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3 queryHandler:(id)arg4;
++ (BOOL)_addCodableObjectsToCollections:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3 queryHandler:(id /* block */)arg4;
 + (id)_aggregatedPropertySettersForDataObjectWithOrderedProperties:(id*)arg1;
 + (Class)_ancestorWithProperty:(id)arg1;
 + (Class)_associatedDataObjectClass;
@@ -41,17 +38,17 @@
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)entitiesToDeleteBeforeInsertingObject:(id)arg1 sourceEntity:(id)arg2 database:(id)arg3;
-+ (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 limit:(unsigned int)arg6 anchor:(id*)arg7 handler:(id)arg8;
-+ (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned int)arg8 handler:(id)arg9;
-+ (void)enumerateObjectsWithHealthDaemon:(id)arg1 predicate:(id)arg2 sourceIdentifier:(id)arg3 authorizationFilter:(id)arg4 orderBy:(id)arg5 directions:(id)arg6 limit:(unsigned int)arg7 handler:(id)arg8;
++ (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 limit:(unsigned int)arg6 anchor:(id*)arg7 handler:(id /* block */)arg8;
++ (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned int)arg8 handler:(id /* block */)arg9;
++ (void)enumerateObjectsWithHealthDaemon:(id)arg1 predicate:(id)arg2 sourceIdentifier:(id)arg3 authorizationFilter:(id /* block */)arg4 orderBy:(id)arg5 directions:(id)arg6 limit:(unsigned int)arg7 handler:(id /* block */)arg8;
 + (id)insertDataObject:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 creationDate:(id)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
-+ (void)insertDataObjects:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 creationDate:(id)arg4 healthDaemon:(id)arg5 completionHandler:(id)arg6;
++ (void)insertDataObjects:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 creationDate:(id)arg4 healthDaemon:(id)arg5 completionHandler:(id /* block */)arg6;
 + (BOOL)isBackedByTable;
 + (id)joinClauseForProperty:(id)arg1;
 + (id)objectWithUUID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (int)preferredEntityType;
 + (Class)propertyApplierClass;
-+ (id)propertyApplierWithProperties:(id)arg1 propertySetters:(id)arg2 authorizationFilter:(id)arg3 database:(id)arg4;
++ (id)propertyApplierWithProperties:(id)arg1 propertySetters:(id)arg2 authorizationFilter:(id /* block */)arg3 database:(id)arg4;
 + (id)propertyForSyncProvenance;
 + (int)protectionClass;
 + (id)sourceIDsForObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;

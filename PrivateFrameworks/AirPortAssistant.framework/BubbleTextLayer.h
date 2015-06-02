@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class CALayer, NSMutableArray;
-
 @interface BubbleTextLayer : CALayer {
     NSMutableArray *_annotationPoints;
     float _ascent;
@@ -73,19 +71,19 @@
     struct CGColor { } *_whiteShadowColor;
 }
 
-@property struct CGSize { float x1; float x2; } boundsSizeConstraint;
-@property(retain) struct CGColor { }* fillColor;
-@property(retain) struct CGColor { }* fillColor2;
-@property float fontSize;
-@property(retain) struct CGColor { }* foregroundColor;
-@property(retain) struct CGColor { }* frameColor;
-@property float frameWidth;
-@property(retain) struct CGImage { }* image;
-@property id owningView;
-@property(retain) CALayer * rightAccessoryLayer;
-@property(retain) id string;
-@property(readonly) float textBaselineOffset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textFrame;
+@property (nonatomic) struct CGSize { float x1; float x2; } boundsSizeConstraint;
+@property (nonatomic, retain) struct CGColor { }*fillColor;
+@property (nonatomic, retain) struct CGColor { }*fillColor2;
+@property (nonatomic) float fontSize;
+@property (nonatomic, retain) struct CGColor { }*foregroundColor;
+@property (nonatomic, retain) struct CGColor { }*frameColor;
+@property (nonatomic) float frameWidth;
+@property (nonatomic, retain) struct CGImage { }*image;
+@property (nonatomic) id owningView;
+@property (nonatomic, retain) CALayer *rightAccessoryLayer;
+@property (nonatomic, retain) id string;
+@property (nonatomic, readonly) float textBaselineOffset;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } textFrame;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 

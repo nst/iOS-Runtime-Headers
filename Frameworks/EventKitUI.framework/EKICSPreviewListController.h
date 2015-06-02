@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKICSPreviewListDelegate>, EKICSPreviewModel, NSMutableArray;
-
 @interface EKICSPreviewListController : UITableViewController {
     BOOL _allowsImport;
     BOOL _allowsSubitems;
@@ -13,10 +11,10 @@
     BOOL _showWeekNumbers;
 }
 
-@property BOOL allowsImport;
-@property BOOL allowsSubitems;
-@property <EKICSPreviewListDelegate> * listDelegate;
-@property BOOL showWeekNumbers;
+@property (nonatomic) BOOL allowsImport;
+@property (nonatomic) BOOL allowsSubitems;
+@property (nonatomic) <EKICSPreviewListDelegate> *listDelegate;
+@property (nonatomic) BOOL showWeekNumbers;
 
 - (void).cxx_destruct;
 - (void)_showWeekNumbersPreferenceChanged:(id)arg1;

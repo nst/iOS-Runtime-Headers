@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPopoverRepresentDelegate>, NSString, UIActionSheet, UIBarButtonItem, UIPopoverController, UIResponder, UIView, UIWindow;
-
 @interface ABPopoverManager : NSObject <UIActionSheetDelegate, UIPopoverControllerDelegate> {
     UIActionSheet *_autorotateActionSheet;
     UIBarButtonItem *_autorotateBarButtonItem;
@@ -16,19 +14,19 @@
     BOOL _rotating;
 }
 
-@property(retain) UIActionSheet * autorotateActionSheet;
-@property(retain) UIBarButtonItem * autorotateBarButtonItem;
-@property unsigned int autorotateDirrections;
-@property(retain) UIPopoverController * autorotatePopoverController;
-@property(retain) UIResponder * autorotateResponder;
-@property(retain) UIView * autorotateView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIWindow * observedWindow;
-@property(retain) id realDelegate;
-@property(retain) <ABPopoverRepresentDelegate> * representDelegate;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIActionSheet *autorotateActionSheet;
+@property (nonatomic, retain) UIBarButtonItem *autorotateBarButtonItem;
+@property (nonatomic) unsigned int autorotateDirrections;
+@property (nonatomic, retain) UIPopoverController *autorotatePopoverController;
+@property (nonatomic, retain) UIResponder *autorotateResponder;
+@property (nonatomic, retain) UIView *autorotateView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIWindow *observedWindow;
+@property (nonatomic, retain) id realDelegate;
+@property (nonatomic, retain) <ABPopoverRepresentDelegate> *representDelegate;
+@property (readonly) Class superclass;
 
 + (void)actionSheet:(id)arg1 dismissWithClickedButtonIndex:(int)arg2 animated:(BOOL)arg3;
 + (void)actionSheet:(id)arg1 showFromBarButtonItem:(id)arg2 animated:(BOOL)arg3;

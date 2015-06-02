@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIWebBrowserView, _UIWebFormDelegateEditedFormsMap;
-
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
     _UIWebFormDelegateEditedFormsMap *_editedForms;
     UIWebBrowserView *_webBrowserView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_clearEditedFormsInFrame:(id)arg1;
 - (void)_didEditFormElement:(id)arg1 inFrame:(id)arg2;
@@ -25,7 +23,7 @@
 - (void)frame:(id)arg1 sourceFrame:(id)arg2 willSubmitForm:(id)arg3 withValues:(id)arg4 submissionListener:(id)arg5;
 - (BOOL)hasCurrentSuggestions;
 - (id)initWithWebBrowserView:(id)arg1;
-- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
+- (struct { id x1; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (void)textDidChangeInTextArea:(id)arg1 inFrame:(id)arg2;
 - (void)textDidChangeInTextField:(id)arg1 inFrame:(id)arg2;
 - (BOOL)textField:(id)arg1 doCommandBySelector:(SEL)arg2 inFrame:(id)arg3;

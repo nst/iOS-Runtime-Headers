@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MCProfileConnection, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MPRestrictionsMonitor : NSObject <MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _allowsAccountModification;
@@ -15,15 +13,15 @@
     MCProfileConnection *_connection;
 }
 
-@property(readonly) BOOL allowsAccountModification;
-@property(readonly) BOOL allowsDeletion;
-@property(readonly) BOOL allowsExplicitContent;
-@property(readonly) BOOL allowsRadioPurchases;
-@property(readonly) BOOL allowsStorePurchases;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL allowsAccountModification;
+@property (nonatomic, readonly) BOOL allowsDeletion;
+@property (nonatomic, readonly) BOOL allowsExplicitContent;
+@property (nonatomic, readonly) BOOL allowsRadioPurchases;
+@property (nonatomic, readonly) BOOL allowsStorePurchases;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedRestrictionsMonitor;
 

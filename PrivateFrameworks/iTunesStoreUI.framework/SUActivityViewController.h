@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface SUActivityViewController : UIActivityViewController {
     NSMutableDictionary *_customTitles;
     NSArray *_suActivityItems;

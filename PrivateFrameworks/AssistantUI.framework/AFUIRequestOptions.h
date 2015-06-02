@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class AFBulletin, NSDictionary, NSNumber, NSString, NSURL, SASPronunciationContext;
-
 @interface AFUIRequestOptions : NSObject <NSCopying, NSSecureCoding> {
     BOOL _acousticIdEnabled;
     NSString *_appBundleIdentifier;
@@ -26,27 +24,27 @@
     BOOL _useStreamingDictation;
 }
 
-@property BOOL acousticIdEnabled;
-@property(copy) NSString * appBundleIdentifier;
-@property(copy) NSString * bluetoothDeviceAddress;
-@property(retain) AFBulletin * bulletin;
-@property(copy) NSDictionary * continuityInfo;
-@property int directActionEvent;
-@property double expectedTimestamp;
-@property(getter=isForSpeechRequest,readonly) BOOL forSpeechRequest;
-@property(getter=isForStark,readonly) BOOL forStark;
-@property(retain) NSNumber * homeButtonUpFromBeep;
-@property(getter=isInitialBringUp) BOOL initialBringUp;
-@property(copy) NSDictionary * messagesDirectActionContext;
-@property(retain) SASPronunciationContext * pronunciationContext;
-@property(getter=isPronunciationRequest) BOOL pronunciationRequest;
-@property int requestSource;
-@property(copy) NSString * serverCommandId;
-@property(copy) NSURL * speechFileURL;
-@property(copy) NSString * text;
-@property double timestamp;
-@property BOOL useAutomaticEndpointing;
-@property BOOL useStreamingDictation;
+@property (nonatomic) BOOL acousticIdEnabled;
+@property (nonatomic, copy) NSString *appBundleIdentifier;
+@property (nonatomic, copy) NSString *bluetoothDeviceAddress;
+@property (nonatomic, retain) AFBulletin *bulletin;
+@property (nonatomic, copy) NSDictionary *continuityInfo;
+@property (nonatomic) int directActionEvent;
+@property (nonatomic) double expectedTimestamp;
+@property (getter=isForSpeechRequest, nonatomic, readonly) BOOL forSpeechRequest;
+@property (getter=isForStark, nonatomic, readonly) BOOL forStark;
+@property (nonatomic, retain) NSNumber *homeButtonUpFromBeep;
+@property (getter=isInitialBringUp, nonatomic) BOOL initialBringUp;
+@property (nonatomic, copy) NSDictionary *messagesDirectActionContext;
+@property (nonatomic, retain) SASPronunciationContext *pronunciationContext;
+@property (getter=isPronunciationRequest, nonatomic) BOOL pronunciationRequest;
+@property (nonatomic) int requestSource;
+@property (nonatomic, copy) NSString *serverCommandId;
+@property (nonatomic, copy) NSURL *speechFileURL;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) double timestamp;
+@property (nonatomic) BOOL useAutomaticEndpointing;
+@property (nonatomic) BOOL useStreamingDictation;
 
 + (BOOL)supportsSecureCoding;
 

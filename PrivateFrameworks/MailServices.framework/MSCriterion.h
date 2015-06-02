@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class <NSObject>, NSString;
-
 @interface MSCriterion : NSObject <NSSecureCoding> {
     <NSObject> *_criteria;
     NSString *_qualifier;

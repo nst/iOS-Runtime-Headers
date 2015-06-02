@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSArray, NSRegularExpression, NSString;
-
 @interface GKRoute : NSObject {
     NSArray *_parameterNames;
     NSRegularExpression *_regex;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEONavigationDelegate>, GEOComposedRoute, GEOLocation, GEONavigationDetails, GEORouteMatch, NSData, NSLock, NSObject<OS_xpc_object>, NSString, NSXPCConnection;
-
 @interface GEONavigation : NSObject {
     NSLock *_connectionLock;
     <GEONavigationDelegate> *_delegate;
@@ -16,23 +14,23 @@
     BOOL _shouldSendRouteWithStatus;
 }
 
-@property unsigned int announcementStage;
-@property <GEONavigationDelegate> * delegate;
-@property(readonly) NSString * destinationName;
-@property(readonly) double distanceRemainingOnRoute;
-@property(readonly) double distanceToManeuverEnd;
-@property(readonly) double distanceToManeuverStart;
-@property(readonly) double distanceToRoute;
-@property(readonly) BOOL isNavigating;
-@property(readonly) GEOLocation * location;
-@property(readonly) BOOL locationUnreliable;
-@property int navigationState;
-@property int navigationTransportType;
-@property(readonly) unsigned int nextAnnouncementStage;
-@property(readonly) double remainingTime;
-@property(readonly) GEOComposedRoute * route;
-@property(readonly) GEORouteMatch * routeMatch;
-@property(readonly) double timeUntilNextAnnouncement;
+@property (nonatomic) unsigned int announcementStage;
+@property (nonatomic) <GEONavigationDelegate> *delegate;
+@property (nonatomic, readonly) NSString *destinationName;
+@property (nonatomic, readonly) double distanceRemainingOnRoute;
+@property (nonatomic, readonly) double distanceToManeuverEnd;
+@property (nonatomic, readonly) double distanceToManeuverStart;
+@property (nonatomic, readonly) double distanceToRoute;
+@property (nonatomic, readonly) BOOL isNavigating;
+@property (nonatomic, readonly) GEOLocation *location;
+@property (nonatomic, readonly) BOOL locationUnreliable;
+@property (nonatomic) int navigationState;
+@property (nonatomic) int navigationTransportType;
+@property (nonatomic, readonly) unsigned int nextAnnouncementStage;
+@property (nonatomic, readonly) double remainingTime;
+@property (nonatomic, readonly) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEORouteMatch *routeMatch;
+@property (nonatomic, readonly) double timeUntilNextAnnouncement;
 
 + (id)sharedInstance;
 

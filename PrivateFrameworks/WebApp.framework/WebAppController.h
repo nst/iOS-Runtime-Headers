@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, NSTimer, UIView, UIViewController, UIWebClip, UIWebView, UIWindow, WBUSheetController, WebUIAuthenticationManager, WebUIDownloadManager;
-
 @interface WebAppController : WebUIDelegate <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate> {
     NSMutableArray *_alerts;
     WebUIAuthenticationManager *_authenticationManager;
@@ -47,13 +45,13 @@
     BOOL webViewHasFinishedLoading;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) UIWebClip * webClip;
-@property(readonly) UIWebView * webView;
-@property(retain) UIWindow * window;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (retain) UIWebClip *webClip;
+@property (readonly) UIWebView *webView;
+@property (nonatomic, retain) UIWindow *window;
 
 + (id)contentBackgroundColor;
 

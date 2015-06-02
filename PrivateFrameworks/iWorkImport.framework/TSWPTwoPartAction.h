@@ -2,36 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface TSWPTwoPartAction : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelAction;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finishAction;
-
+    id /* block */ _cancelAction;
+    id /* block */ _finishAction;
     BOOL _performImmediately;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _startAction;
-
+    id /* block */ _startAction;
 }
 
 @property BOOL performImmediately;
 
-+ (id)actionWithStartAction:(id)arg1 cancelAction:(id)arg2 finishAction:(id)arg3;
++ (id)actionWithStartAction:(id /* block */)arg1 cancelAction:(id /* block */)arg2 finishAction:(id /* block */)arg3;
 
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithStartAction:(id)arg1 cancelAction:(id)arg2 finishAction:(id)arg3;
+- (id)initWithStartAction:(id /* block */)arg1 cancelAction:(id /* block */)arg2 finishAction:(id /* block */)arg3;
 - (void)performFinishAction;
 - (BOOL)performImmediately;
 - (void)performStartAction;

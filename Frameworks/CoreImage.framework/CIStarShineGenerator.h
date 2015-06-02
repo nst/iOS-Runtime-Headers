@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIVector, NSNumber;
-
 @interface CIStarShineGenerator : CIFilter {
     CIVector *inputCenter;
     CIColor *inputColor;
@@ -15,14 +13,14 @@
     NSNumber *inputRadius;
 }
 
-@property(retain) CIVector * inputCenter;
-@property(retain) CIColor * inputColor;
-@property(retain) NSNumber * inputCrossAngle;
-@property(retain) NSNumber * inputCrossOpacity;
-@property(retain) NSNumber * inputCrossScale;
-@property(retain) NSNumber * inputCrossWidth;
-@property(retain) NSNumber * inputEpsilon;
-@property(retain) NSNumber * inputRadius;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) NSNumber *inputCrossAngle;
+@property (nonatomic, retain) NSNumber *inputCrossOpacity;
+@property (nonatomic, retain) NSNumber *inputCrossScale;
+@property (nonatomic, retain) NSNumber *inputCrossWidth;
+@property (nonatomic, retain) NSNumber *inputEpsilon;
+@property (nonatomic, retain) NSNumber *inputRadius;
 
 + (id)customAttributes;
 

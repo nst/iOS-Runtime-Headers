@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface ACUISpinnerTitle : UIView {
     UIActivityIndicatorView *_spinner;
     UILabel *_titleView;

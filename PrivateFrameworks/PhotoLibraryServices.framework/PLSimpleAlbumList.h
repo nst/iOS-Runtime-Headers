@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSOrderedSet, NSString;
-
 @interface PLSimpleAlbumList : NSObject <PLAssetContainerList> {
     NSOrderedSet *_containers;
 }
 
-@property(retain) NSOrderedSet * containers;
-@property(readonly) unsigned int containersCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSOrderedSet *containers;
+@property (nonatomic, readonly) unsigned int containersCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)canEditContainers;
 - (id)containers;

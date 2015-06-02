@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSCH3DShaderRawStatement : NSObject <TSCH3DShaderStatement> {
     struct TSCH3DShaderType { 
         unsigned int mValue; 
@@ -11,12 +9,12 @@
     NSString *mString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct TSCH3DShaderType { unsigned int x1; } linkageType;
-@property(readonly) NSString * string;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct TSCH3DShaderType { unsigned int x1; } linkageType;
+@property (nonatomic, readonly) NSString *string;
+@property (readonly) Class superclass;
 
 + (id)statementWithString:(id)arg1 linkageType:(struct TSCH3DShaderType { unsigned int x1; })arg2;
 

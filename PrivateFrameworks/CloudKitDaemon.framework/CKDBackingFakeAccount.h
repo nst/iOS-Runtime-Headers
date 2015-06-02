@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKDBackingFakeAccount : CKDBackingAccount {
     NSDictionary *_accountBag;
     NSString *_dsid;
@@ -13,12 +11,12 @@
     NSString *_primaryEmail;
 }
 
-@property(retain) NSDictionary * accountBag;
-@property(retain) NSString * dsid;
-@property(retain) NSObject<OS_dispatch_queue> * fakeAccountInfoQueue;
-@property(retain) NSString * identifier;
-@property(retain) NSString * password;
-@property(retain) NSString * primaryEmail;
+@property (nonatomic, retain) NSDictionary *accountBag;
+@property (nonatomic, retain) NSString *dsid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *fakeAccountInfoQueue;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *primaryEmail;
 
 + (Class)_platformBackingAccountClass;
 + (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2;
@@ -39,7 +37,7 @@
 - (BOOL)isFakeAccount;
 - (id)password;
 - (id)primaryEmail;
-- (void)renewAuthTokenInStore:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)renewAuthTokenInStore:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setAccountBag:(id)arg1;
 - (void)setDsid:(id)arg1;
 - (void)setFakeAccountInfoQueue:(id)arg1;

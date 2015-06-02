@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUITrackSwooshViewControllerDelegate>, NSArray, NSObject<OS_dispatch_source>, NSString, SKUIItemOfferButtonAppearance, SKUISwooshPageComponent, SKUISwooshView, SKUITrackSwooshCollectionViewLayout, UICollectionView;
-
 @interface SKUITrackSwooshViewController : SKUISwooshViewController <SKUIItemStateCenterObserver, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
     SKUITrackSwooshCollectionViewLayout *_collectionViewLayout;
@@ -14,14 +12,14 @@
     SKUISwooshPageComponent *_trackSwoosh;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUITrackSwooshViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIItemOfferButtonAppearance * itemOfferButtonAppearance;
-@property(readonly) NSArray * lockups;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUITrackSwooshViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIItemOfferButtonAppearance *itemOfferButtonAppearance;
+@property (nonatomic, readonly) NSArray *lockups;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelDoubleTapTimer;

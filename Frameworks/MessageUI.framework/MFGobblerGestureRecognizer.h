@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFGobblerGestureRecognizer : UIGestureRecognizer {
-}
+@interface MFGobblerGestureRecognizer : UIGestureRecognizer
 
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;

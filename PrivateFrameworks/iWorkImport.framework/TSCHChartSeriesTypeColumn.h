@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeColumn : TSCHChartSeriesTypeBar {
-}
+@interface TSCHChartSeriesTypeColumn : TSCHChartSeriesTypeBar
 
 - (unsigned int)adjustLabelPosition:(unsigned int)arg1 forAxisValue:(double)arg2 intercept:(double)arg3;
 - (id)axisTypesForValueLabels;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKPickerTableView, NSDate, NSString;
-
 @interface EKReminderDueDateEditViewController : EKEditItemViewController <EKPickerTableViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     EKPickerTableView *_container;
     NSDate *_dueDate;
@@ -12,10 +10,10 @@
     BOOL _shouldShowAllDay;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_datePickerChanged:(id)arg1;

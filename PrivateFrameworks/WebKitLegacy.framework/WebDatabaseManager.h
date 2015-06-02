@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDatabaseManager : NSObject {
-}
+@interface WebDatabaseManager : NSObject
 
 + (void)didFinishLastTransaction;
 + (void)endBackgroundTask;

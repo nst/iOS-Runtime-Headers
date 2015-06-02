@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSCountedSet;
-
 @interface IMScheduledUpdater : IMManualUpdater {
     NSCountedSet *_holdingUpdatesKeys;
 }
 
-@property(retain) NSCountedSet * holdingUpdatesKeys;
+@property (nonatomic, retain) NSCountedSet *holdingUpdatesKeys;
 
 - (void)beginHoldingUpdatesForKey:(id)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSArray, NSMutableArray, NSObject<SPSearchAgentDelegate>, NSString, SPDaemonQueryToken, SPSearchResultSection;
-
 @interface SPSearchAgent : NSObject <MCProfileConnectionObserver, SPDaemonQueryDelegate> {
     SPDaemonQueryToken *_currentToken;
     NSObject<SPSearchAgentDelegate> *_delegate;
@@ -19,15 +17,15 @@
     SPSearchResultSection *_topHitResultSection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<SPSearchAgentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int options;
-@property(readonly) BOOL queryComplete;
-@property(readonly) unsigned int resultCount;
-@property(retain) NSArray * searchDomains;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<SPSearchAgentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int options;
+@property (nonatomic, readonly) BOOL queryComplete;
+@property (nonatomic, readonly) unsigned int resultCount;
+@property (nonatomic, retain) NSArray *searchDomains;
+@property (readonly) Class superclass;
 
 - (id)_indexesOfCompatibleSection:(id)arg1;
 - (BOOL)_shouldIgnoreQuery:(id)arg1;
@@ -52,8 +50,8 @@
 - (id)queryString;
 - (void)removeSectionAtIndex:(unsigned int)arg1;
 - (unsigned int)resultCount;
-- (void)retrieveImageDataForIdentifier:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id)arg4;
-- (void)retrieveImageDataForResult:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id)arg4;
+- (void)retrieveImageDataForIdentifier:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
+- (void)retrieveImageDataForResult:(id)arg1 inSection:(id)arg2 preferredSize:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (void)searchDaemonQuery:(id)arg1 addedResults:(id)arg2;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
 - (void)searchDaemonQueryCompleted:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSString;
-
 @interface ATStatus : NSObject <NSSecureCoding> {
     BOOL _automaticSync;
     unsigned int _completedAssetCount;
@@ -18,17 +16,17 @@
     BOOL _wirelessSync;
 }
 
-@property(getter=isAutomaticSync) BOOL automaticSync;
-@property unsigned int completedAssetCount;
-@property(copy) NSString * dataClass;
-@property(copy) NSString * libraryID;
-@property(copy) NSString * localizedDescription;
-@property float progress;
-@property unsigned int syncStage;
-@property unsigned int syncType;
-@property unsigned int totalAssetCount;
-@property unsigned int totalItemCount;
-@property(getter=isWirelessSync) BOOL wirelessSync;
+@property (getter=isAutomaticSync, nonatomic) BOOL automaticSync;
+@property (nonatomic) unsigned int completedAssetCount;
+@property (nonatomic, copy) NSString *dataClass;
+@property (nonatomic, copy) NSString *libraryID;
+@property (nonatomic, copy) NSString *localizedDescription;
+@property (nonatomic) float progress;
+@property (nonatomic) unsigned int syncStage;
+@property (nonatomic) unsigned int syncType;
+@property (nonatomic) unsigned int totalAssetCount;
+@property (nonatomic) unsigned int totalItemCount;
+@property (getter=isWirelessSync, nonatomic) BOOL wirelessSync;
 
 + (BOOL)supportsSecureCoding;
 

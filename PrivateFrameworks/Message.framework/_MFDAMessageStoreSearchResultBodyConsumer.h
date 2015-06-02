@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFDAStreamingContentConsumer>, MFConditionLock, MFError;
-
 @interface _MFDAMessageStoreSearchResultBodyConsumer : NSObject <DAMailboxFetchSearchResultConsumer, DAMailboxStreamingContentConsumer> {
     MFConditionLock *_doneCondition;
     MFError *_error;
     <MFDAStreamingContentConsumer> *_streamConsumer;
 }
 
-@property(retain) MFError * error;
-@property(retain) <MFDAStreamingContentConsumer> * streamConsumer;
+@property (nonatomic, retain) MFError *error;
+@property (nonatomic, retain) <MFDAStreamingContentConsumer> *streamConsumer;
 
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)consumeData:(char *)arg1 length:(int)arg2 format:(int)arg3 mailMessage:(id)arg4;

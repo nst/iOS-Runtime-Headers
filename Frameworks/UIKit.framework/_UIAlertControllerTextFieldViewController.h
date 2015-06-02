@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIAlertControllerTextFieldViewControllerContaining>, NSArray, NSMutableArray;
-
 @interface _UIAlertControllerTextFieldViewController : UITableViewController {
     <_UIAlertControllerTextFieldViewControllerContaining> *_container;
     BOOL _textFieldsCanBecomeFirstResponder;
@@ -11,9 +9,9 @@
     NSMutableArray *textFields;
 }
 
-@property <_UIAlertControllerTextFieldViewControllerContaining> * container;
-@property(readonly) NSArray * textFields;
-@property BOOL textFieldsCanBecomeFirstResponder;
+@property (nonatomic) <_UIAlertControllerTextFieldViewControllerContaining> *container;
+@property (readonly) NSArray *textFields;
+@property (nonatomic) BOOL textFieldsCanBecomeFirstResponder;
 
 - (float)_bottomMarginForTextFields;
 - (void)_returnKeyPressedInTextField:(id)arg1;

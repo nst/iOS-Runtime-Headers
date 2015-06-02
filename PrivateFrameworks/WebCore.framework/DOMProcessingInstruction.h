@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMStyleSheet, NSString;
+@interface DOMProcessingInstruction : DOMCharacterData
 
-@interface DOMProcessingInstruction : DOMCharacterData {
-}
-
-@property(readonly) DOMStyleSheet * sheet;
-@property(copy,readonly) NSString * target;
+@property (readonly) DOMStyleSheet *sheet;
+@property (readonly, copy) NSString *target;
 
 - (id)sheet;
 - (id)target;

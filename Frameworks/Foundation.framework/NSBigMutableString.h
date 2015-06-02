@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData;
-
 @interface NSBigMutableString : NSMutableString {
     union { 
         struct { 

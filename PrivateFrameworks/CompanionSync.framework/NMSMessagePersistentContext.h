@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface NMSMessagePersistentContext : NSObject <NSSecureCoding> {
     NSDictionary *_customIDSFlags;
     NSDate *_date;
@@ -15,14 +13,14 @@
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSDictionary * customIDSFlags;
-@property(retain) NSDate * date;
-@property(getter=isFromRequest) BOOL fromRequest;
-@property(copy) NSString * idsIdentifier;
-@property unsigned short messageID;
-@property BOOL processAcked;
-@property BOOL sendAcked;
-@property(retain) NSDictionary * userInfo;
+@property (nonatomic, retain) NSDictionary *customIDSFlags;
+@property (nonatomic, retain) NSDate *date;
+@property (getter=isFromRequest, nonatomic) BOOL fromRequest;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic) BOOL processAcked;
+@property (nonatomic) BOOL sendAcked;
+@property (nonatomic, retain) NSDictionary *userInfo;
 
 + (BOOL)supportsSecureCoding;
 

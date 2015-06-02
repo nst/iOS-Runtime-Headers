@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMCharacteristic;
-
 @interface HMCharacteristicWriteRequestTuple : NSObject {
     HMCharacteristic *_characteristic;
     id _value;
 }
 
-@property(readonly) HMCharacteristic * characteristic;
-@property(readonly) id value;
+@property (nonatomic, readonly) HMCharacteristic *characteristic;
+@property (nonatomic, readonly) id value;
 
 + (id)tupleWithCharacteristic:(id)arg1 value:(id)arg2;
 

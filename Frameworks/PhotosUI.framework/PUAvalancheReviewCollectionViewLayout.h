@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUAvalancheReviewCollectionViewLayoutDelegate>, NSIndexPath;
-
 @interface PUAvalancheReviewCollectionViewLayout : PUHorizontalCollectionViewLayout {
     struct UIOffset { 
         float horizontal; 
@@ -12,9 +10,9 @@
     NSIndexPath *_zoomingCellIndexPath;
 }
 
-@property <PUAvalancheReviewCollectionViewLayoutDelegate> * delegate;
-@property struct UIOffset { float x1; float x2; } sharingBadgeOffset;
-@property(retain) NSIndexPath * zoomingCellIndexPath;
+@property (nonatomic) <PUAvalancheReviewCollectionViewLayoutDelegate> *delegate;
+@property (nonatomic) struct UIOffset { float x1; float x2; } sharingBadgeOffset;
+@property (nonatomic, retain) NSIndexPath *zoomingCellIndexPath;
 
 - (void).cxx_destruct;
 - (id)_badgeLayoutAttributesForItemLayoutAttributes:(id)arg1;

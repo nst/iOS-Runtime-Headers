@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMWebKitAnimationEvent : DOMEvent
 
-@interface DOMWebKitAnimationEvent : DOMEvent {
-}
-
-@property(copy,readonly) NSString * animationName;
-@property(readonly) double elapsedTime;
+@property (readonly, copy) NSString *animationName;
+@property (readonly) double elapsedTime;
 
 - (id)animationName;
 - (double)elapsedTime;

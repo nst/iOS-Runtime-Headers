@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSString;
-
 @interface YTSearchSuggestionsRequest : YTXMLHTTPRequest {
     id _delegate;
     NSString *_query;

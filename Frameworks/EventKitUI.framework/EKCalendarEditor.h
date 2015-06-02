@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarEditorDelegate>, <EKStyleProvider>, EKCalendar, EKCalendarShareesEditItem, EKEventStore, EKSource, NSArray, NSString, UITableView;
-
 @interface EKCalendarEditor : UIViewController <EKCalendarEditItemDelegate> {
     EKCalendar *_calendar;
     <EKCalendarEditorDelegate> *_delegate;
@@ -17,15 +15,15 @@
     UITableView *_tableView;
 }
 
-@property(retain) EKCalendar * calendar;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKCalendarEditorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) EKEventStore * eventStore;
-@property(readonly) unsigned int hash;
-@property BOOL isNewCalendar;
-@property(retain) <EKStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) EKCalendar *calendar;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKCalendarEditorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) EKEventStore *eventStore;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isNewCalendar;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_deleteCalendar;

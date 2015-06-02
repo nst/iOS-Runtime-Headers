@@ -3,7 +3,7 @@
  */
 
 @interface __NSConcreteUUID : NSUUID {
-    unsigned char _uuidBytes[16];
+    unsigned char _uuidBytes;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -13,9 +13,9 @@
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)getUUIDBytes:(unsigned char[16])arg1;
+- (void)getUUIDBytes:(unsigned char)arg1;
 - (id)init;
-- (id)initWithUUIDBytes:(unsigned char[16])arg1;
+- (id)initWithUUIDBytes:(unsigned char)arg1;
 - (id)initWithUUIDString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 

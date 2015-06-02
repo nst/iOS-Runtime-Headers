@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSUUID, TSDDrawableInfo;
-
 @interface TSDConnectionLineInfo : TSDShapeInfo {
     NSUUID *mConnectedFromID;
     NSUUID *mConnectedToID;
@@ -18,10 +11,10 @@
     } mInvalidFlags;
 }
 
-@property TSDDrawableInfo * connectedFrom;
-@property(retain) NSUUID * connectedFromID;
-@property TSDDrawableInfo * connectedTo;
-@property(retain) NSUUID * connectedToID;
+@property (nonatomic) TSDDrawableInfo *connectedFrom;
+@property (nonatomic, retain) NSUUID *connectedFromID;
+@property (nonatomic) TSDDrawableInfo *connectedTo;
+@property (nonatomic, retain) NSUUID *connectedToID;
 
 - (void)acceptVisitor:(id)arg1;
 - (BOOL)canAnchor;
@@ -40,7 +33,7 @@
 - (void)loadFromArchive:(const struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (void)performBlockWithTemporaryLayout:(id)arg1;
+- (void)performBlockWithTemporaryLayout:(id /* block */)arg1;
 - (id)presetKind;
 - (Class)repClass;
 - (void)saveGeometryToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1 archiver:(id)arg2;

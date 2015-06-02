@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/XPCKit.framework/XPCKit
  */
 
-@class <XPCServiceListenerDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface XPCServiceListener : NSObject {
     unsigned long _clientCount;
     <XPCServiceListenerDelegate> *_delegate;
@@ -13,15 +11,15 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property unsigned long clientCount;
-@property(readonly) <XPCServiceListenerDelegate> * delegate;
-@property(retain) NSObject<OS_xpc_object> * listener;
-@property(retain) NSMutableSet * serviceConnections;
-@property(retain,readonly) NSString * serviceName;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) unsigned long clientCount;
+@property (nonatomic, readonly) <XPCServiceListenerDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *listener;
+@property (nonatomic, retain) NSMutableSet *serviceConnections;
+@property (nonatomic, readonly, retain) NSString *serviceName;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
-- (void)_workQueueShutDownServiceConnections:(id)arg1 index:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)_workQueueShutDownServiceConnections:(id)arg1 index:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
 - (unsigned long)clientCount;
 - (id)debugDescription;
 - (id)delegate;
@@ -34,7 +32,7 @@
 - (void)setListener:(id)arg1;
 - (void)setServiceConnections:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownCompletionBlock:(id)arg1;
+- (void)shutDownCompletionBlock:(id /* block */)arg1;
 - (void)start;
 - (id)workQueue;
 - (void)workQueueHandleIncomingConnection:(id)arg1;

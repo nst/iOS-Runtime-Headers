@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface TSUASLLogCategoryController : NSObject {
     BOOL _allCategoriesEnabledOverride;
     NSMutableDictionary *_dictionary;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property BOOL allCategoriesEnabledOverride;
+@property (nonatomic) BOOL allCategoriesEnabledOverride;
 
 + (id)sharedController;
 

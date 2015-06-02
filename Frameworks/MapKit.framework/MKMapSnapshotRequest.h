@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapSnapshotCreator, NSString, UIImage, VKMapSnapshotCreator;
-
 @interface MKMapSnapshotRequest : NSObject {
     NSString *_attributionString;
     id _context;
@@ -22,14 +20,14 @@
     unsigned int _zoomLevel;
 }
 
-@property(retain) NSString * attributionString;
-@property(retain) id context;
-@property struct { double x1; double x2; } coordinate;
-@property MKMapSnapshotCreator * delegate;
-@property(readonly) UIImage * image;
-@property(retain) id requester;
-@property struct CGSize { float x1; float x2; } size;
-@property unsigned int zoomLevel;
+@property (nonatomic, retain) NSString *attributionString;
+@property (nonatomic, retain) id context;
+@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (nonatomic) MKMapSnapshotCreator *delegate;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, retain) id requester;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) unsigned int zoomLevel;
 
 - (void).cxx_destruct;
 - (id)attributionString;

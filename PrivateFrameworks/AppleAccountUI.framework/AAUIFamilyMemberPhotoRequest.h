@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSNumber, NSString, SSAccount;
-
 @interface AAUIFamilyMemberPhotoRequest : AAFamilyRequest {
     NSNumber *_familyMemberDSID;
     SSAccount *_iTunesAccount;
     NSString *_serverCacheTag;
 }
 
-@property(copy) NSNumber * familyMemberDSID;
-@property(setter=setiTunesAccount:,retain) SSAccount * iTunesAccount;
-@property(copy) NSString * serverCacheTag;
+@property (nonatomic, copy) NSNumber *familyMemberDSID;
+@property (setter=setiTunesAccount:, nonatomic, retain) SSAccount *iTunesAccount;
+@property (nonatomic, copy) NSString *serverCacheTag;
 
 + (Class)responseClass;
 

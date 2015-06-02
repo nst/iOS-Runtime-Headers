@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKCalloutBackgroundView, NSMutableArray, NSString, UILabel, UIView, UIView<_MKCalloutAccessoryView>, _MKSmallCalloutPassthroughButton;
-
 @interface MKSmallCalloutView : UIView <CalloutViewControllerProtocol> {
     MKCalloutBackgroundView *_calloutBackgroundView;
     UIView<_MKCalloutAccessoryView> *_detailView;
@@ -30,19 +28,19 @@
     UIView *_unmaskedContainerView;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } _preferredContentSize;
-@property(retain) MKCalloutBackgroundView * calloutBackgroundView;
-@property(copy) NSString * calloutSubtitle;
-@property(copy) NSString * calloutTitle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * detailView;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * leftView;
-@property unsigned int mapDisplayStyle;
-@property float maximumWidth;
-@property(retain) UIView * rightView;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _preferredContentSize;
+@property (nonatomic, retain) MKCalloutBackgroundView *calloutBackgroundView;
+@property (nonatomic, copy) NSString *calloutSubtitle;
+@property (nonatomic, copy) NSString *calloutTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *detailView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *leftView;
+@property (nonatomic) unsigned int mapDisplayStyle;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic, retain) UIView *rightView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;

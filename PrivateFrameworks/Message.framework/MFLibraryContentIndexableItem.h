@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString;
-
 @interface MFLibraryContentIndexableItem : NSObject {
     NSArray *_cc;
     NSString *_content;
@@ -14,13 +12,13 @@
     NSArray *_to;
 }
 
-@property(copy) NSArray * cc;
-@property(copy) NSString * content;
-@property unsigned int documentIdentifier;
-@property unsigned int mailboxID;
-@property(copy) NSArray * senders;
-@property(copy) NSString * subject;
-@property(copy) NSArray * to;
+@property (nonatomic, copy) NSArray *cc;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic) unsigned int documentIdentifier;
+@property (nonatomic) unsigned int mailboxID;
+@property (nonatomic, copy) NSArray *senders;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSArray *to;
 
 - (id)cc;
 - (int)compare:(id)arg1;

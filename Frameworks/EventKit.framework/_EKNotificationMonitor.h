@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKEventStore, NSArray, NSDate, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSTimer, PCPersistentTimer;
-
 @interface _EKNotificationMonitor : NSObject {
     NSMutableSet *_alertedNotificationsThatFailedToMarkAlerted;
     NSMutableArray *_culledRecentlyRepliedNotifications;
     NSArray *_eventNotificationReferences;
     EKEventStore *_eventStore;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _eventStoreGetter;
-
+    id /* block */ _eventStoreGetter;
     BOOL _handlesOnlyEvents;
     BOOL _initialCheck;
     unsigned int _lastEventCount;
@@ -36,11 +26,11 @@
     BOOL _useSyncIdleTimer;
 }
 
-@property(readonly) unsigned int eventNotificationCount;
-@property(readonly) NSArray * eventNotificationReferences;
-@property(readonly) unsigned int notificationCount;
-@property(readonly) NSArray * notificationReferences;
-@property(readonly) NSArray * reminderNotificationReferences;
+@property (nonatomic, readonly) unsigned int eventNotificationCount;
+@property (nonatomic, readonly) NSArray *eventNotificationReferences;
+@property (nonatomic, readonly) unsigned int notificationCount;
+@property (nonatomic, readonly) NSArray *notificationReferences;
+@property (nonatomic, readonly) NSArray *reminderNotificationReferences;
 
 - (void)_alertPrefChanged;
 - (unsigned int)_checkForEventNotifications:(id)arg1;
@@ -63,7 +53,7 @@
 - (unsigned int)eventNotificationCount;
 - (id)eventNotificationReferences;
 - (id)init;
-- (id)initByHandlingOnlyEvents:(BOOL)arg1 bulletinBoardWithEventStoreGetter:(id)arg2;
+- (id)initByHandlingOnlyEvents:(BOOL)arg1 bulletinBoardWithEventStoreGetter:(id /* block */)arg2;
 - (id)initByHandlingOnlyEvents:(BOOL)arg1 eventStore:(id)arg2;
 - (void)killTimer;
 - (unsigned int)notificationCount;

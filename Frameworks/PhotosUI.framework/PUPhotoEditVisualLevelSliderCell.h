@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImage, UIImageView;
-
 @interface PUPhotoEditVisualLevelSliderCell : UICollectionViewCell {
     UIImageView *_imageView;
     unsigned int _roundedCornersEdge;
     UIImage *_thumbnail;
 }
 
-@property unsigned int roundedCornersEdge;
-@property(retain) UIImage * thumbnail;
+@property (nonatomic) unsigned int roundedCornersEdge;
+@property (nonatomic, retain) UIImage *thumbnail;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;

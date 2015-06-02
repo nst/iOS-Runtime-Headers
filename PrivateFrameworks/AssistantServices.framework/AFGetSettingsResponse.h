@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFGetSettingsResponse : AFSiriResponse {
     NSArray *_settings;
 }
 
-@property(copy) NSArray * settings;
+@property (nonatomic, copy) NSArray *settings;
 
 + (BOOL)supportsSecureCoding;
 

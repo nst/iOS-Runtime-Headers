@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSAccount, NSMapTable, NSMutableDictionary, NSSet, NSString;
-
 @interface _IDSConnection : NSObject <IDSAccountDelegate, IDSDaemonListenerProtocol> {
     IDSAccount *_account;
     NSSet *_commands;
@@ -16,15 +14,15 @@
     NSString *_serviceToken;
 }
 
-@property(retain,readonly) IDSAccount * account;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isActive;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) IDSAccount *account;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isActive;
+@property (readonly) Class superclass;
 
-- (void)_callDelegatesWithBlock:(id)arg1;
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_connect;
 - (void)_handleLastCallForPendingIdentifier:(id)arg1 callbackID:(id)arg2;
 - (void)_resendPendingSends;

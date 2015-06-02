@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIColor;
-
 @interface UIStatusBarForegroundStyleAttributes : NSObject {
     NSMutableDictionary *_cachedFonts;
     BOOL _hasBusyBackground;
@@ -14,7 +12,7 @@
     UIColor *_tintColor;
 }
 
-@property(retain,readonly) UIColor * tintColor;
+@property (nonatomic, readonly, retain) UIColor *tintColor;
 
 - (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 charging:(BOOL)arg3;
 - (void)_cacheImage:(id)arg1 named:(id)arg2;
@@ -34,7 +32,7 @@
 - (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
 - (void)drawText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textAlignment:(int)arg5 style:(int)arg6 textSize:(struct CGSize { float x1; float x2; })arg7 textHeight:(float)arg8;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id)arg3;
+- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id /* block */)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
 - (float)edgePadding;

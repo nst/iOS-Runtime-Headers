@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSIndexPath, NSIndexSet;
-
 @interface PUTransitionSectionInfo : NSObject {
     NSIndexPath *_anchorRealPath;
     struct PUGridCoordinates { 
@@ -16,12 +14,12 @@
     NSIndexSet *_visualSections;
 }
 
-@property(retain) NSIndexPath * anchorRealPath;
-@property struct PUGridCoordinates { int x1; int x2; } anchorShiftOffset;
-@property int contiguousRows;
-@property int transitionSection;
-@property(retain) NSArray * visualRowStartMarkers;
-@property(retain) NSIndexSet * visualSections;
+@property (nonatomic, retain) NSIndexPath *anchorRealPath;
+@property (nonatomic) struct PUGridCoordinates { int x1; int x2; } anchorShiftOffset;
+@property (nonatomic) int contiguousRows;
+@property (nonatomic) int transitionSection;
+@property (nonatomic, retain) NSArray *visualRowStartMarkers;
+@property (nonatomic, retain) NSIndexSet *visualSections;
 
 - (void).cxx_destruct;
 - (id)anchorRealPath;

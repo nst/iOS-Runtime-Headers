@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABCountryPickerControllerDelegate>, CNContactStyle, NSArray, NSString, UILocalizedIndexedCollation, UITableViewController;
-
 @interface ABCountryPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate> {
     UILocalizedIndexedCollation *_collation;
     CNContactStyle *_contactStyle;
@@ -13,17 +11,17 @@
     UITableViewController *_tableViewController;
 }
 
-@property(retain) UILocalizedIndexedCollation * collation;
-@property(retain) CNContactStyle * contactStyle;
-@property(copy) NSArray * countries;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABCountryPickerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * sections;
-@property(copy) NSString * selectedCountryCode;
-@property(readonly) Class superclass;
-@property(retain) UITableViewController * tableViewController;
+@property (nonatomic, retain) UILocalizedIndexedCollation *collation;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic, copy) NSArray *countries;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABCountryPickerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *sections;
+@property (nonatomic, copy) NSString *selectedCountryCode;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableViewController *tableViewController;
 
 - (void)_configureSections;
 - (void)_loadCountryCodes;

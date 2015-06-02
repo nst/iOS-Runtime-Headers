@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSIndexPath, NSString, SUTableDataSource, SUTableView, UITableView;
-
 @interface SUTableViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
     SUTableDataSource *_dataSource;
     int _disappearOrientation;
@@ -14,14 +12,14 @@
     int _tableViewStyle;
 }
 
-@property(retain) SUTableDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int numberOfRows;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
-@property int tableViewStyle;
+@property (nonatomic, retain) SUTableDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int numberOfRows;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic) int tableViewStyle;
 
 - (void)_deliverTapCount:(int)arg1 forIndexPath:(id)arg2;
 - (void)_doubleTapTimeout;

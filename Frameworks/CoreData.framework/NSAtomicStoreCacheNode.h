@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectID, NSMutableDictionary;
-
 @interface NSAtomicStoreCacheNode : NSObject {
     unsigned long __versionNumber;
     NSManagedObjectID *_objectID;
@@ -11,8 +9,8 @@
     void *_reserved1;
 }
 
-@property(readonly) NSManagedObjectID * objectID;
-@property(retain) NSMutableDictionary * propertyCache;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, retain) NSMutableDictionary *propertyCache;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;

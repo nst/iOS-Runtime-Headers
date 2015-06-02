@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PLSQLiteConnection : NSObject {
     int _cacheSize;
     NSString *_cachedClassName;
@@ -18,16 +16,16 @@
 }
 
 @property int cacheSize;
-@property(retain) NSString * cachedClassName;
-@property struct sqlite3 { }* dbConnection;
-@property(retain) NSString * dbLock;
-@property(copy) NSString * filePath;
-@property(retain) NSMutableDictionary * preparedDynamicStatements;
-@property(retain) NSMutableDictionary * preparedStatements;
-@property(retain) NSMutableDictionary * preparedUpdateStatements;
+@property (retain) NSString *cachedClassName;
+@property struct sqlite3 { }*dbConnection;
+@property (nonatomic, retain) NSString *dbLock;
+@property (nonatomic, copy) NSString *filePath;
+@property (retain) NSMutableDictionary *preparedDynamicStatements;
+@property (retain) NSMutableDictionary *preparedStatements;
+@property (retain) NSMutableDictionary *preparedUpdateStatements;
 @property int transactionInProgress;
-@property(retain) NSString * transactionLock;
-@property(readonly) NSObject<OS_dispatch_queue> * workQueue;
+@property (retain) NSString *transactionLock;
+@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)masterTableForTable:(id)arg1 andType:(id)arg2;
 + (void)removeDBAtFilePath:(id)arg1;
@@ -61,7 +59,7 @@
 - (void)dropTables:(id)arg1;
 - (void)endTransaction;
 - (id)entriesForKey:(id)arg1 withProperties:(id)arg2;
-- (void)enumerateAllTablesWithBlock:(id)arg1;
+- (void)enumerateAllTablesWithBlock:(id /* block */)arg1;
 - (id)filePath;
 - (void)hashEntryKeyKeys:(id)arg1;
 - (id)init;
@@ -71,7 +69,7 @@
 - (void)loadArrayValuesIntoEntry:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)loadLookupTableValuesIntoEntry:(id)arg1;
-- (void)lockDatabaseWithBlock:(id)arg1;
+- (void)lockDatabaseWithBlock:(id /* block */)arg1;
 - (id)lookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3;
 - (id)mergeDataFromOtherDBFile:(id)arg1;
 - (BOOL)openCurrentFile;

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAlmanacRiseTransitSet, NSDate;
-
 @interface GEOAlmanac : NSObject {
     GEOAlmanacRiseTransitSet *_currentRiseTransitSet;
     GEOAlmanacRiseTransitSet *_nextRiseTransitSet;
     GEOAlmanacRiseTransitSet *_previousRiseTransitSet;
 }
 
-@property(readonly) BOOL isDayLight;
-@property(readonly) NSDate * nextSunrise;
-@property(readonly) NSDate * nextSunset;
-@property(readonly) NSDate * nextTransit;
-@property(readonly) NSDate * previousSunrise;
-@property(readonly) NSDate * previousSunset;
-@property(readonly) NSDate * previousTransit;
-@property(readonly) NSDate * sunrise;
-@property(readonly) NSDate * sunset;
-@property(readonly) NSDate * transit;
+@property (nonatomic, readonly) BOOL isDayLight;
+@property (nonatomic, readonly) NSDate *nextSunrise;
+@property (nonatomic, readonly) NSDate *nextSunset;
+@property (nonatomic, readonly) NSDate *nextTransit;
+@property (nonatomic, readonly) NSDate *previousSunrise;
+@property (nonatomic, readonly) NSDate *previousSunset;
+@property (nonatomic, readonly) NSDate *previousTransit;
+@property (nonatomic, readonly) NSDate *sunrise;
+@property (nonatomic, readonly) NSDate *sunset;
+@property (nonatomic, readonly) NSDate *transit;
 
 - (id)_newRiseTransitSetForLocation:(struct { double x1; double x2; })arg1 julianDay:(double)arg2 altitude:(double)arg3;
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1;

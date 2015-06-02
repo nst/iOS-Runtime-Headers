@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SULoadingView;
-
 @interface SUStructuredPageGroupedViewController : SUStructuredPageViewController {
     SULoadingView *_loadingView;
 }

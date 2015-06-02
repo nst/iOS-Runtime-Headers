@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKStarRatingAndLabelView, NSDate, NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel;
-
 @interface MKPlaceReviewsViewCell : UITableViewCell {
     UILabel *_authorLabel;
     NSLayoutConstraint *_authorLabelBaselineConstraint;
@@ -18,11 +16,11 @@
     MKStarRatingAndLabelView *_starView;
 }
 
-@property NSString * author;
-@property NSDate * date;
-@property UIImage * picture;
-@property unsigned int rating;
-@property NSString * reviewText;
+@property (nonatomic) NSString *author;
+@property (nonatomic) NSDate *date;
+@property (nonatomic) UIImage *picture;
+@property (nonatomic) unsigned int rating;
+@property (nonatomic) NSString *reviewText;
 
 + (float)intrinsicContentHeight;
 + (id)reuseIdentifier;

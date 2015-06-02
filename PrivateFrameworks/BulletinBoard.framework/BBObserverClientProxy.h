@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBServer, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface BBObserverClientProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
     NSMutableDictionary *_bulletinIDsToTransaction;
     NSString *_clientBundleIdentifier;
@@ -12,11 +10,11 @@
     BBServer *_serverWeak;
 }
 
-@property(retain) NSMutableDictionary * bulletinIDsToTransaction;
-@property(retain) NSString * clientBundleIdentifier;
-@property(retain) NSXPCConnection * connection;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property BBServer * serverWeak;
+@property (nonatomic, retain) NSMutableDictionary *bulletinIDsToTransaction;
+@property (nonatomic, retain) NSString *clientBundleIdentifier;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BBServer *serverWeak;
 
 + (id)xpcInterface;
 
@@ -29,19 +27,19 @@
 - (void)dealloc;
 - (id)description;
 - (void)finishedWithBulletinID:(id)arg1 transactionID:(unsigned int)arg2;
-- (void)getActiveAlertBehaviorOverridesWithHandler:(id)arg1;
-- (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id)arg2;
-- (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id)arg3;
-- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
-- (void)getObserverDebugInfo:(id)arg1;
-- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id)arg2;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
-- (void)getPrivilegedSenderTypesWithHandler:(id)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id)arg2;
-- (void)getSectionOrderRuleWithHandler:(id)arg1;
-- (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id)arg2;
-- (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id)arg2;
-- (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id)arg2;
+- (void)getActiveAlertBehaviorOverridesWithHandler:(id /* block */)arg1;
+- (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getObserverDebugInfo:(id /* block */)arg1;
+- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id /* block */)arg1;
+- (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
+- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionOrderRuleWithHandler:(id /* block */)arg1;
+- (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)handleResponse:(id)arg1;
 - (unsigned int)incrementedTransactionIDForBulletinID:(id)arg1;
 - (id)initWithServer:(id)arg1 connection:(id)arg2 queue:(id)arg3;
@@ -65,7 +63,7 @@
 - (void)setServerWeak:(id)arg1;
 - (id)transactionBulletinIDs;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
+- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
 - (void)updateSectionOrderRule:(id)arg1;

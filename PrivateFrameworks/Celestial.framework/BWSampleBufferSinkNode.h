@@ -2,19 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface BWSampleBufferSinkNode : BWSinkNode {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sampleBufferAvailableHandler;
-
+    id /* block */ _sampleBufferAvailableHandler;
 }
 
-@property(copy) id sampleBufferAvailableHandler;
+@property (nonatomic, copy) id /* block */ sampleBufferAvailableHandler;
 
 + (void)initialize;
 
@@ -24,7 +16,7 @@
 - (id)initWithInputMediaType:(unsigned long)arg1;
 - (id)nodeSubType;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (id)sampleBufferAvailableHandler;
-- (void)setSampleBufferAvailableHandler:(id)arg1;
+- (id /* block */)sampleBufferAvailableHandler;
+- (void)setSampleBufferAvailableHandler:(id /* block */)arg1;
 
 @end

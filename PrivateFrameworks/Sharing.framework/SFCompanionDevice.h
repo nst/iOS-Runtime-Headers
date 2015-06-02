@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSArray, NSDictionary, NSMutableSet, NSString;
-
 @interface SFCompanionDevice : NSObject {
     NSDictionary *_activities;
     NSMutableSet *_connections;
@@ -16,15 +14,15 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(retain) NSDictionary * activities;
-@property(retain) NSMutableSet * connections;
-@property(copy) NSString * identifier;
-@property(copy) NSString * name;
-@property(retain) id node;
-@property(retain) NSString * serviceName;
-@property(retain) NSArray * services;
-@property(copy) NSString * type;
-@property(retain) NSString * uniqueIdentifier;
+@property (nonatomic, retain) NSDictionary *activities;
+@property (nonatomic, retain) NSMutableSet *connections;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) id node;
+@property (nonatomic, retain) NSString *serviceName;
+@property (nonatomic, retain) NSArray *services;
+@property (nonatomic, copy) NSString *type;
+@property (retain) NSString *uniqueIdentifier;
 
 - (id)activities;
 - (id)connections;

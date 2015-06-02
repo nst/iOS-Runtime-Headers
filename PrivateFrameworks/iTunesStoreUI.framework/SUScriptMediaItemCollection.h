@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MPMediaItemCollection, NSArray, SUScriptMediaItem;
-
 @interface SUScriptMediaItemCollection : SUScriptObject {
     NSArray *_items;
     SUScriptMediaItem *_representativeItem;
     BOOL _watchingLibrary;
 }
 
-@property(readonly) int count;
-@property(readonly) NSArray * items;
-@property(readonly) NSArray * mediaTypes;
-@property(readonly) MPMediaItemCollection * nativeCollection;
-@property(readonly) SUScriptMediaItem * representativeItem;
+@property (readonly) int count;
+@property (readonly) NSArray *items;
+@property (readonly) NSArray *mediaTypes;
+@property (nonatomic, readonly) MPMediaItemCollection *nativeCollection;
+@property (readonly) SUScriptMediaItem *representativeItem;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUISimpleCollectionViewCell : UICollectionViewCell {
     UIView *_contentChildView;
     struct UIEdgeInsets { 
@@ -14,8 +12,8 @@
     } _contentInsets;
 }
 
-@property(retain) UIView * contentChildView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, retain) UIView *contentChildView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;

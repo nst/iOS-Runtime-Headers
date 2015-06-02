@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBStory : NSObject {
-}
+@interface WBStory : NSObject
 
 @end

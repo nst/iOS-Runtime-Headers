@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageInfo;
-
 @interface MFMailMessage : MFMessage {
     MFMessageInfo *_info;
     unsigned long long _messageFlags;
@@ -12,6 +10,8 @@
 }
 
 @property unsigned long long modSequenceNumber;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
 + (Class)dataMessageStoreToUse;
 + (unsigned int)displayablePriorityForPriority:(int)arg1;
@@ -52,10 +52,13 @@
 - (void)setSubject:(id)arg1;
 - (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSummary:(id)arg1;
-- (id)sg_bestAlternativePart;
 - (BOOL)shouldSetSummary;
 - (id)subject;
 - (id)subjectAndPrefixLength:(unsigned int*)arg1;
 - (id)subjectNotIncludingReAndFwdPrefix;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)sg_bestAlternativePart;
 
 @end

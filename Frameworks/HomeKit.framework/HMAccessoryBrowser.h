@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class <HMAccessoryBrowserDelegate>, HMMessageDispatcher, HMXpcClient, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMAccessoryBrowser : NSObject <HMMessageReceiver> {
     NSMutableArray *_accessories;
     BOOL _browsing;
@@ -15,21 +13,21 @@
     HMXpcClient *_xpcClient;
 }
 
-@property(retain) NSMutableArray * accessories;
-@property(getter=isBrowsing) BOOL browsing;
-@property(copy,readonly) NSString * debugDescription;
-@property <HMAccessoryBrowserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSArray * discoveredAccessories;
-@property unsigned int generationCounter;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property(retain) HMXpcClient * xpcClient;
+@property (nonatomic, retain) NSMutableArray *accessories;
+@property (getter=isBrowsing, nonatomic) BOOL browsing;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HMAccessoryBrowserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *discoveredAccessories;
+@property (nonatomic) unsigned int generationCounter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, retain) HMXpcClient *xpcClient;
 
 - (void).cxx_destruct;
 - (void)_fetchNewAccessories;

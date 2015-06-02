@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSConditionLock;
-
 @interface MFDAMailAccountConsumer : NSObject <DAActionConsumer> {
     BOOL _alwaysReportFailures;
     NSConditionLock *_doneCondition;

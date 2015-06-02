@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppDocument, IKViewElement, IKViewElementStyle, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface IKViewElement : NSObject {
     NSString *_accessibilityText;
     NSMutableSet *_activeSingularEvents;
@@ -24,23 +22,23 @@
     unsigned int _updateType;
 }
 
-@property(copy,readonly) NSString * accessibilityText;
-@property(retain) NSMutableSet * activeSingularEvents;
-@property IKAppDocument * appDocument;
-@property(retain,readonly) NSDictionary * attributes;
-@property(copy,readonly) NSString * autoHighlightIdentifier;
-@property(retain) NSArray * children;
-@property(getter=isDisabled) BOOL disabled;
-@property(copy,readonly) NSString * elementID;
-@property(copy,readonly) NSString * elementName;
-@property(readonly) unsigned int elementType;
-@property(copy,readonly) NSArray * features;
-@property(getter=isImpressionable) BOOL impressionable;
-@property(retain,readonly) NSString * itmlID;
-@property(retain) NSMutableDictionary * metadataDict;
-@property IKViewElement * parent;
-@property(retain,readonly) IKViewElementStyle * style;
-@property unsigned int updateType;
+@property (nonatomic, readonly, copy) NSString *accessibilityText;
+@property (nonatomic, retain) NSMutableSet *activeSingularEvents;
+@property (nonatomic) IKAppDocument *appDocument;
+@property (nonatomic, readonly, retain) NSDictionary *attributes;
+@property (nonatomic, readonly, copy) NSString *autoHighlightIdentifier;
+@property (nonatomic, retain) NSArray *children;
+@property (getter=isDisabled, nonatomic) BOOL disabled;
+@property (nonatomic, readonly, copy) NSString *elementID;
+@property (nonatomic, readonly, copy) NSString *elementName;
+@property (nonatomic, readonly) unsigned int elementType;
+@property (nonatomic, readonly, copy) NSArray *features;
+@property (getter=isImpressionable, nonatomic) BOOL impressionable;
+@property (nonatomic, readonly, retain) NSString *itmlID;
+@property (nonatomic, retain) NSMutableDictionary *metadataDict;
+@property (nonatomic) IKViewElement *parent;
+@property (nonatomic, readonly, retain) IKViewElementStyle *style;
+@property (nonatomic) unsigned int updateType;
 
 + (unsigned int)evaluateElementUpdateTypeAndReset:(id)arg1;
 + (BOOL)shouldParseChildDOMElements;
@@ -60,7 +58,7 @@
 - (id)childImageElementWithType:(unsigned int)arg1;
 - (id)childTextElementWithStyle:(unsigned int)arg1;
 - (id)children;
-- (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id)arg5;
+- (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)elementID;
 - (id)elementName;
 - (unsigned int)elementType;

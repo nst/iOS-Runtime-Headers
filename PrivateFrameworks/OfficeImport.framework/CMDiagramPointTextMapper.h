@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMDiagramPointTextMapper : CMDiagramPointMapper {
-}
+@interface CMDiagramPointTextMapper : CMDiagramPointMapper
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 

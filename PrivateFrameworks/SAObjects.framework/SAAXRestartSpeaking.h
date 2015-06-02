@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAXRestartSpeaking : SADomainCommand {
-}
+@interface SAAXRestartSpeaking : SADomainCommand
 
 + (id)restartSpeaking;
 + (id)restartSpeakingWithDictionary:(id)arg1 context:(id)arg2;

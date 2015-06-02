@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTCustomFormatList : TSTTableDataList {
-}
+@interface TSTCustomFormatList : TSTTableDataList
 
 + (id)upgradedCustomFormatList:(id)arg1;
 

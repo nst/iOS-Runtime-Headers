@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAObjectSupport : AceObject <SAAceSerializable>
 
-@interface SAObjectSupport : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * aceVersion;
-@property(copy) NSString * classId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * groupId;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSArray * supportedProperties;
+@property (nonatomic, copy) NSString *aceVersion;
+@property (nonatomic, copy) NSString *classId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *groupId;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedProperties;
 
 + (id)objectSupport;
 + (id)objectSupportWithDictionary:(id)arg1 context:(id)arg2;

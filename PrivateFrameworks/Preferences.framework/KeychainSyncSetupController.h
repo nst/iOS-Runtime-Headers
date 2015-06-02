@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSKeychainSyncManager;
-
 @interface KeychainSyncSetupController : PSSetupController {
     PSKeychainSyncManager *_manager;
 }

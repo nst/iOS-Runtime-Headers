@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UINibCoderValue : NSObject {
     NSString *key;
     unsigned long length;

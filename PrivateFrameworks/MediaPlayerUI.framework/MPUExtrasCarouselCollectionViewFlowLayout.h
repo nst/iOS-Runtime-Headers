@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUExtrasCarouselCollectionViewFlowLayout : UICollectionViewFlowLayout <MPUExtrasCarouselCollectionViewLayout> {
-}
+@interface MPUExtrasCarouselCollectionViewFlowLayout : UICollectionViewFlowLayout <MPUExtrasCarouselCollectionViewLayout>
 
 - (unsigned int)indexOfVisibleItem;
 - (float)itemWidth;

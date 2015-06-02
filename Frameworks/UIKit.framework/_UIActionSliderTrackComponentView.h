@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIActionSliderTrackComponentView : UIView {
-}
+@interface _UIActionSliderTrackComponentView : UIView
 
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 

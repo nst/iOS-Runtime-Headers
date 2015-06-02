@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSString;
-
 @interface CHPhoneNumber : CHLogger {
     NSString *_ISOCountryCode;
     BOOL _formatted;
@@ -11,10 +9,10 @@
     NSString *_originalPhoneNumber;
 }
 
-@property(copy) NSString * ISOCountryCode;
+@property (copy) NSString *ISOCountryCode;
 @property BOOL formatted;
-@property(copy) NSString * formattedPhoneNumber;
-@property(copy) NSString * originalPhoneNumber;
+@property (copy) NSString *formattedPhoneNumber;
+@property (copy) NSString *originalPhoneNumber;
 
 - (void).cxx_destruct;
 - (id)ISOCountryCode;

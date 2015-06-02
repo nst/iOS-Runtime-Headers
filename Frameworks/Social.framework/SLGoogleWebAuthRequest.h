@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleWebAuthRequest : NSObject {
-}
+@interface SLGoogleWebAuthRequest : NSObject
 
 + (id)authCodeFromWebPageTitle:(id)arg1;
 + (void)clearCookiesFromStorage:(id)arg1;

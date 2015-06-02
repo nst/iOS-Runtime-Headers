@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface WDAAnchor : NSObject {
     BOOL mAllowOverlap;
     struct CGRect { 
@@ -30,20 +28,20 @@
     long mZIndex;
 }
 
-@property BOOL allowOverlap;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property int horizontalPosition;
-@property int relativeHorizontalPosition;
-@property int relativeVerticalPosition;
-@property(retain) NSArray * textWrapPoints;
-@property int textWrappingMode;
-@property int textWrappingModeType;
-@property int verticalPosition;
-@property double wrapDistanceBottom;
-@property double wrapDistanceLeft;
-@property double wrapDistanceRight;
-@property double wrapDistanceTop;
-@property long zIndex;
+@property (nonatomic) BOOL allowOverlap;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) int horizontalPosition;
+@property (nonatomic) int relativeHorizontalPosition;
+@property (nonatomic) int relativeVerticalPosition;
+@property (nonatomic, retain) NSArray *textWrapPoints;
+@property (nonatomic) int textWrappingMode;
+@property (nonatomic) int textWrappingModeType;
+@property (nonatomic) int verticalPosition;
+@property (nonatomic) double wrapDistanceBottom;
+@property (nonatomic) double wrapDistanceLeft;
+@property (nonatomic) double wrapDistanceRight;
+@property (nonatomic) double wrapDistanceTop;
+@property (nonatomic) long zIndex;
 
 + (id)stringForTextWrappingModeType:(int)arg1;
 

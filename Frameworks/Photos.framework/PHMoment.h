@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, NSDate;
-
 @interface PHMoment : PHAssetCollection {
     NSData *_approximateLocationData;
     short _generationType;
@@ -12,8 +10,8 @@
     BOOL _reverseLocationDataIsValid;
 }
 
-@property(readonly) short generationType;
-@property(readonly) NSDate * representativeDate;
+@property (nonatomic, readonly) short generationType;
+@property (nonatomic, readonly) NSDate *representativeDate;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;

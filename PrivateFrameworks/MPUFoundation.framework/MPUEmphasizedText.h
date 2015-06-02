@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSMutableSet, NSString;
-
 @interface MPUEmphasizedText : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSMutableSet *_emphasisRangesSet;
     id _string;
 }
 
-@property(copy,readonly) NSArray * emphasisRanges;
-@property(copy,readonly) NSString * string;
+@property (nonatomic, readonly, copy) NSArray *emphasisRanges;
+@property (nonatomic, readonly, copy) NSString *string;
 
 + (id)emphasizedTextUsingString:(id)arg1 emphasisDelimiter:(id)arg2;
 + (id)emphasizedTextUsingString:(id)arg1 emphasisSubstring:(id)arg2 options:(unsigned int)arg3;
@@ -22,7 +20,7 @@
 - (id)description;
 - (id)emphasisRanges;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateEmphasisRangesUsingBlock:(id)arg1;
+- (void)enumerateEmphasisRangesUsingBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 emphasisRanges:(id)arg2;

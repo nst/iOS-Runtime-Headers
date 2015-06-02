@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary;
-
 @interface ML3LibraryManager : NSObject {
     ML3MusicLibrary *_currentLibrary;
 }
 
-@property(retain) ML3MusicLibrary * currentLibrary;
+@property (nonatomic, retain) ML3MusicLibrary *currentLibrary;
 
 + (id)sharedManager;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSString;
-
 @interface TRKeyboardPromptUpdatePacketEvent : TRPacketEvent {
     int _keyboardType;
     BOOL _secureText;
@@ -14,13 +12,13 @@
     int _updateType;
 }
 
-@property(readonly) int keyboardType;
-@property(getter=isSecureText,readonly) BOOL secureText;
-@property(readonly) unsigned long long sessionID;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * text;
-@property(readonly) NSString * title;
-@property(readonly) int updateType;
+@property (nonatomic, readonly) int keyboardType;
+@property (getter=isSecureText, nonatomic, readonly) BOOL secureText;
+@property (nonatomic, readonly) unsigned long long sessionID;
+@property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) int updateType;
 
 + (unsigned int)_packetEventType;
 

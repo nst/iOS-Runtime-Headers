@@ -12,13 +12,13 @@
     BOOL _useBlackWave;
 }
 
-@property float circleRPM;
-@property float colorTransitionInDuration;
-@property float colorTransitionOutDuration;
-@property float fadeInDuration;
-@property float fadeOutDuration;
-@property float shrinkDuration;
-@property BOOL useBlackWave;
+@property (nonatomic) float circleRPM;
+@property (nonatomic) float colorTransitionInDuration;
+@property (nonatomic) float colorTransitionOutDuration;
+@property (nonatomic) float fadeInDuration;
+@property (nonatomic) float fadeOutDuration;
+@property (nonatomic) float shrinkDuration;
+@property (nonatomic) BOOL useBlackWave;
 
 + (id)sharedInstance;
 

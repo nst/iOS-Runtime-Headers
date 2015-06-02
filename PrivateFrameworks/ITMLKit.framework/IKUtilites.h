@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKUtilites : NSObject {
-}
+@interface IKUtilites : NSObject
 
 + (id)_arrayByAddingValuesFromArrayOfDictionaries:(id)arg1;
 + (id)_entriesBySectionIndexForArrayOfStringEntries:(id)arg1 currentCollation:(id)arg2;

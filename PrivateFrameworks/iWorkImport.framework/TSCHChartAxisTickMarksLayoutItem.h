@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartAxisTickMarksLayoutItem : TSCHChartLayoutItem {
-}
+@interface TSCHChartAxisTickMarksLayoutItem : TSCHChartLayoutItem
 
-@property(readonly) float majorTickmarkLength;
-@property(readonly) float minorTickmarkLength;
+@property (nonatomic, readonly) float majorTickmarkLength;
+@property (nonatomic, readonly) float minorTickmarkLength;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
 - (struct CGSize { float x1; float x2; })calcMinSize;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFCircleAnnotation : UIPDFSquareOrCircleAnnotation {
-}
+@interface UIPDFCircleAnnotation : UIPDFSquareOrCircleAnnotation
 
 - (int)annotationType;
 - (void)drawInContext:(struct CGContext { }*)arg1;

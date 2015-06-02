@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString;
+@interface TUIDSUtilities : NSObject <IDSIDQueryControllerDelegate>
 
-@interface TUIDSUtilities : NSObject <IDSIDQueryControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_IDSFormattedDestinationsForPerson:(id)arg1;
 + (BOOL)_anyStatusInResultDictionary:(id)arg1 equalsIDStatus:(int)arg2;

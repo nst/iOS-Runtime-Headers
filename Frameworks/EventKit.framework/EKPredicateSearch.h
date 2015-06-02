@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKEventStore, NSPredicate, NSString;
-
 @interface EKPredicateSearch : NSObject <EKCancellableRemoteOperation> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     id _cancellationToken;
     Class _entityClass;
     BOOL _finished;
@@ -23,19 +13,19 @@
     EKEventStore *_store;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 
-- (void)_startActualWithCompletion:(id)arg1;
+- (void)_startActualWithCompletion:(id /* block */)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (void)disconnect;
 - (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
-- (id)startWithCompletion:(id)arg1;
+- (id)startWithCompletion:(id /* block */)arg1;
 - (void)terminate;
 
 @end

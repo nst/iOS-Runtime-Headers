@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSDictionary, NSMutableArray, WKInterfaceController;
-
 @interface WKInterfaceTable : WKInterfaceObject {
     WKInterfaceController *_controller;
     NSMutableArray *_rowControllerProperties;
@@ -11,11 +9,11 @@
     NSDictionary *_rowDescriptions;
 }
 
-@property WKInterfaceController * controller;
-@property(readonly) int numberOfRows;
-@property(retain) NSMutableArray * rowControllerProperties;
-@property(retain) NSMutableArray * rowControllers;
-@property(copy) NSDictionary * rowDescriptions;
+@property (nonatomic) WKInterfaceController *controller;
+@property (nonatomic, readonly) int numberOfRows;
+@property (nonatomic, retain) NSMutableArray *rowControllerProperties;
+@property (nonatomic, retain) NSMutableArray *rowControllers;
+@property (nonatomic, copy) NSDictionary *rowDescriptions;
 
 - (void).cxx_destruct;
 - (void)_getRowControllers:(id)arg1 rowControllerProperties:(id)arg2 forRowTypes:(id)arg3;

@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GEOVoltaireRasterTileTrafficData, NSArray, NSMutableArray, VKSharedResources;
-
 @interface VKRasterTrafficTile : VKTile {
     NSMutableArray *_incidents;
     GEOVoltaireRasterTileTrafficData *_modelTile;
@@ -24,8 +13,8 @@
     } _trafficLayer;
 }
 
-@property(readonly) NSArray * incidents;
-@property(readonly) /* Warning: unhandled struct encoding: '{TrafficLayer=^^?{vector<vk::TrafficBatch *' */ struct * trafficLayer; /* unknown property attribute:  std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> >=^^{BaseMesh}}}[1^{RenderState}]{shared_ptr<ggl::Tile::ViewUniformData>=^{ViewUniformData}^{__shared_weak_count}}[1{shared_ptr<ggl::RenderState>=^{RenderState}^{__shared_weak_count}}]I^{TrafficManager}@} */
+@property (nonatomic, readonly) NSArray *incidents;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{TrafficLayer=^^?{vector<vk::TrafficBatch *' */ struct *trafficLayer; /* unknown property attribute:  std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> >=^^{BaseMesh}}}[1^{RenderState}]{shared_ptr<ggl::Tile::ViewUniformData>=^{ViewUniformData}^{__shared_weak_count}}[1{shared_ptr<ggl::RenderState>=^{RenderState}^{__shared_weak_count}}]I^{TrafficManager}@} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -34,6 +23,6 @@
 - (void)dealloc;
 - (id)incidents;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sharedResources:(id)arg3 trafficData:(id)arg4;
-- (struct TrafficLayer { int (**x1)(); struct vector<vk::TrafficBatch *, std::__1::allocator<vk::TrafficBatch *> > { struct TrafficBatch {} **x_2_1_1; struct TrafficBatch {} **x_2_1_2; struct __compressed_pair<vk::TrafficBatch **, std::__1::allocator<vk::TrafficBatch *> > { struct TrafficBatch {} **x_3_2_1; } x_2_1_3; } x2; struct vector<ggl::OptimizedTraffic::BaseMesh *, std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> > { struct BaseMesh {} **x_3_1_1; struct BaseMesh {} **x_3_1_2; struct __compressed_pair<ggl::OptimizedTraffic::BaseMesh **, std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> > { struct BaseMesh {} **x_3_2_1; } x_3_1_3; } x3; struct RenderState {} *x4[1]; struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x_5_1_1; struct __shared_weak_count {} *x_5_1_2; } x5; struct shared_ptr<ggl::RenderState> { struct RenderState {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6[1]; unsigned int x7; struct TrafficManager {} *x8; id x9; }*)trafficLayer;
+- (struct TrafficLayer { int (**x1)(); struct vector<vk::TrafficBatch *, std::__1::allocator<vk::TrafficBatch *> > { struct TrafficBatch {} **x_2_1_1; struct TrafficBatch {} **x_2_1_2; struct __compressed_pair<vk::TrafficBatch **, std::__1::allocator<vk::TrafficBatch *> > { struct TrafficBatch {} **x_3_2_1; } x_2_1_3; } x2; struct vector<ggl::OptimizedTraffic::BaseMesh *, std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> > { struct BaseMesh {} **x_3_1_1; struct BaseMesh {} **x_3_1_2; struct __compressed_pair<ggl::OptimizedTraffic::BaseMesh **, std::__1::allocator<ggl::OptimizedTraffic::BaseMesh *> > { struct BaseMesh {} **x_3_2_1; } x_3_1_3; } x3; struct RenderState {} *x4[1]; struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x_5_1_1; struct __shared_weak_count {} *x_5_1_2; } x5; struct shared_ptr<ggl::RenderState> { struct RenderState {} *x_6_1_1; struct __shared_weak_count {} *x_6_1_2; } x6[1]; unsigned int x7; struct TrafficManager {} *x8; id x9; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x10; void*x11; void*x12; void*x13; inout void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; double x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; BOOL x41; void*x42; out void*x43; void*x44; void*x45; in void*x46; void*x47; void*x48; void*x49; void*x50; struct x51; void*x52; }*)trafficLayer;
 
 @end

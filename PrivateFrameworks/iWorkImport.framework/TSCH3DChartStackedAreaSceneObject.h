@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartStackedAreaSceneObject : TSCH3DChartAreaSceneObject {
-}
+@interface TSCH3DChartStackedAreaSceneObject : TSCH3DChartAreaSceneObject
 
 + (float)chartSeriesDepth;
 + (float)chartSeriesPolygonOffset;

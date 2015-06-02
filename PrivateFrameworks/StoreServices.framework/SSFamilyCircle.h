@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString;
-
 @interface SSFamilyCircle : NSObject <SSXPCCoding> {
     NSArray *_familyMembers;
     NSArray *_iTunesAccountNames;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * familyMembers;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * iTunesAccountNames;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *familyMembers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *iTunesAccountNames;
+@property (readonly) Class superclass;
 
 - (id)allITunesAccountNames;
 - (id)allITunesIdentifiers;

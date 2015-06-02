@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAKeychain : NSObject {
-}
+@interface DAKeychain : NSObject
 
 + (id)sharedKeychain;
 

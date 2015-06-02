@@ -2,25 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <FBSceneClientProvider>, <FBSynchronizedTransactionDelegate>, FBProcess, FBSDisplay, FBSSceneClientSettings, FBSSceneSettings, FBSSceneTransitionContext, FBScene, FBSceneManager, FBWaitForSceneDestructionTransaction, NSString;
-
 @interface FBUpdateSceneTransaction : FBTransaction <FBSceneManagerObserver, FBSynchronizedTransaction> {
     <FBSceneClientProvider> *_clientProvider;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _clientProviderProvider;
-
+    id /* block */ _clientProviderProvider;
     FBSSceneClientSettings *_clientSettings;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _clientSettingsProvider;
-
+    id /* block */ _clientSettingsProvider;
     id _context;
     BOOL _destroyed;
     FBWaitForSceneDestructionTransaction *_destuctionTransaction;
@@ -38,30 +24,30 @@
     BOOL _willCommitUpdateFinished;
 }
 
-@property(retain) id context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL destroyed;
-@property(retain,readonly) FBSDisplay * display;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) FBSSceneSettings * newSettings;
-@property(retain,readonly) FBScene * scene;
-@property(retain,readonly) NSString * sceneIdentifier;
-@property(readonly) Class superclass;
-@property <FBSynchronizedTransactionDelegate> * synchronizationDelegate;
-@property(retain,readonly) FBSSceneTransitionContext * transitionContext;
-@property BOOL waitsForSceneCommit;
+@property (nonatomic, retain) id context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL destroyed;
+@property (nonatomic, readonly, retain) FBSDisplay *display;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBSSceneSettings *newSettings;
+@property (nonatomic, readonly, retain) FBScene *scene;
+@property (nonatomic, readonly, retain) NSString *sceneIdentifier;
+@property (readonly) Class superclass;
+@property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
+@property (nonatomic, readonly, retain) FBSSceneTransitionContext *transitionContext;
+@property (nonatomic) BOOL waitsForSceneCommit;
 
 - (void)_begin;
 - (BOOL)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)_commitSceneOrWait;
-- (void)_commitSceneUpdate:(id)arg1;
+- (void)_commitSceneUpdate:(id /* block */)arg1;
 - (void)_createScene;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)_didInterruptWithReason:(id)arg1;
-- (void)_enumerateUpdateSceneObserversWithBlock:(id)arg1;
+- (void)_enumerateUpdateSceneObserversWithBlock:(id /* block */)arg1;
 - (id)_initWithSceneIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProvider:(id)arg5 initialClientSettings:(id)arg6;
 - (void)_performCommit;
 - (void)_updateScene;
@@ -70,7 +56,7 @@
 - (void)dealloc;
 - (BOOL)destroyed;
 - (id)display;
-- (id)initWithSceneIdentifier:(id)arg1 process:(id)arg2 display:(id)arg3 newSettings:(id)arg4 transitionContext:(id)arg5 clientProviderProvider:(id)arg6 initialClientSettingsProvider:(id)arg7;
+- (id)initWithSceneIdentifier:(id)arg1 process:(id)arg2 display:(id)arg3 newSettings:(id)arg4 transitionContext:(id)arg5 clientProviderProvider:(id /* block */)arg6 initialClientSettingsProvider:(id /* block */)arg7;
 - (id)initWithSceneToCreate:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProvider:(id)arg5 initialClientSettings:(id)arg6;
 - (id)initWithSceneToUpdate:(id)arg1 newSettings:(id)arg2 transitionContext:(id)arg3;
 - (BOOL)isReadyForSynchronizedCommit;

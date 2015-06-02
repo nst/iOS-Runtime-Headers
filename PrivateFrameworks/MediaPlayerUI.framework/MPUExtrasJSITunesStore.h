@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSString, UIViewController;
-
 @interface MPUExtrasJSITunesStore : IKJSITunesStore <IKJSITunesStore, MPUExtrasJSITunesStore, SKStoreProductViewControllerDelegatePrivate> {
     UIViewController *_formPresentationViewController;
 }
 
-@property(readonly) NSString * DSID;
-@property(readonly) NSDictionary * accountInfo;
-@property(retain) id cookie;
-@property(retain) NSString * cookieURL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property UIViewController * formPresentationViewController;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * networkConnectionType;
-@property(retain) NSString * storefront;
-@property(readonly) Class superclass;
-@property(readonly) NSString * userAgent;
+@property (nonatomic, readonly) NSString *DSID;
+@property (nonatomic, readonly) NSDictionary *accountInfo;
+@property (nonatomic, retain) id cookie;
+@property (nonatomic, retain) NSString *cookieURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIViewController *formPresentationViewController;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *networkConnectionType;
+@property (nonatomic, retain) NSString *storefront;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *userAgent;
 
 - (void).cxx_destruct;
 - (id)formPresentationViewController;

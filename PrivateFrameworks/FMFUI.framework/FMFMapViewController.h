@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class <FMFMapViewControllerDelegate>, FMF3HiddenMapTrackingHandler, FMFMapOptionsViewController, FMFMapViewDelegateInternal, FMFNoLocationView, FMFRefreshBarButtonItem, FMFSession, FMFTitleView, MKMapView, MKUserTrackingBarButtonItem, NSSet, NSString, UIBarButtonItem, UIColor, UIImageView, UIToolbar, UIView;
-
 @interface FMFMapViewController : UIViewController <FMF3HiddenMapTrackingHandlerDelegate, FMFMapOptionsViewControllerDelegate, FMFMapViewDelegateInternalDelegate, FMFNoLocationViewDelegate, FMFSessionDelegateInternal> {
     BOOL __blockDidReceiveAnimation;
     NSSet *__internalHandlesShowingLocations;
@@ -44,43 +42,43 @@
     BOOL _viewWillAppearCalled;
 }
 
-@property BOOL _blockDidReceiveAnimation;
-@property(retain) NSSet * _internalHandlesShowingLocations;
-@property BOOL _isRenderingInitialMap;
-@property(retain) NSSet * _preloadedHandles;
-@property BOOL _refreshingIsPaused;
-@property void* addressBook;
-@property(copy) UIColor * annotationTintColor;
-@property(retain) UIImageView * cachedMapView;
-@property BOOL canShowNoLocation;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned int defaultMapType;
-@property <FMFMapViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIBarButtonItem * directionsBarButtonItem;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) UIToolbar * floatingLocationToolbar;
-@property(retain) UIView * floatingToolbarView;
-@property(retain) FMFSession * fmfSession;
-@property(copy) NSSet * handlesShowingLocations;
-@property(readonly) unsigned int hash;
-@property(retain) FMF3HiddenMapTrackingHandler * hiddenMap;
-@property(retain) UIBarButtonItem * infoBarButtonItem;
-@property BOOL isSimpleMap;
-@property(retain) FMFMapOptionsViewController * mapOptionsVC;
-@property BOOL mapTypeLoaded;
-@property(retain) MKMapView * mapView;
-@property(retain) FMFMapViewDelegateInternal * mapViewDelegate;
-@property(retain) FMFNoLocationView * noLocationView;
-@property(retain) FMFRefreshBarButtonItem * refreshButton;
-@property BOOL shouldZoomToFitMeAndLocations;
-@property BOOL shouldZoomToFitNewLocations;
-@property BOOL showFloatingMapLocationButton;
-@property(readonly) Class superclass;
-@property(retain) FMFTitleView * titleView;
-@property(retain) UIToolbar * toolbar;
-@property(retain) MKUserTrackingBarButtonItem * userLocationButton;
-@property BOOL viewWillAppearCalled;
+@property (nonatomic) BOOL _blockDidReceiveAnimation;
+@property (nonatomic, retain) NSSet *_internalHandlesShowingLocations;
+@property (nonatomic) BOOL _isRenderingInitialMap;
+@property (nonatomic, retain) NSSet *_preloadedHandles;
+@property (nonatomic) BOOL _refreshingIsPaused;
+@property (nonatomic) void*addressBook;
+@property (nonatomic, copy) UIColor *annotationTintColor;
+@property (nonatomic, retain) UIImageView *cachedMapView;
+@property (nonatomic) BOOL canShowNoLocation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned int defaultMapType;
+@property (nonatomic) <FMFMapViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIBarButtonItem *directionsBarButtonItem;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) UIToolbar *floatingLocationToolbar;
+@property (nonatomic, retain) UIView *floatingToolbarView;
+@property (nonatomic, retain) FMFSession *fmfSession;
+@property (nonatomic, copy) NSSet *handlesShowingLocations;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) FMF3HiddenMapTrackingHandler *hiddenMap;
+@property (nonatomic, retain) UIBarButtonItem *infoBarButtonItem;
+@property (nonatomic) BOOL isSimpleMap;
+@property (nonatomic, retain) FMFMapOptionsViewController *mapOptionsVC;
+@property (nonatomic) BOOL mapTypeLoaded;
+@property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, retain) FMFMapViewDelegateInternal *mapViewDelegate;
+@property (nonatomic, retain) FMFNoLocationView *noLocationView;
+@property (nonatomic, retain) FMFRefreshBarButtonItem *refreshButton;
+@property (nonatomic) BOOL shouldZoomToFitMeAndLocations;
+@property (nonatomic) BOOL shouldZoomToFitNewLocations;
+@property (nonatomic) BOOL showFloatingMapLocationButton;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) FMFTitleView *titleView;
+@property (nonatomic, retain) UIToolbar *toolbar;
+@property (nonatomic, retain) MKUserTrackingBarButtonItem *userLocationButton;
+@property (nonatomic) BOOL viewWillAppearCalled;
 
 + (struct CGSize { float x1; float x2; })annotationImageSize;
 + (id)smallAnnotationViewImage;

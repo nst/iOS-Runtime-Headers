@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory_Candidates : UIKBRenderFactory {
-}
+@interface UIKBRenderFactory_Candidates : UIKBRenderFactory
 
 - (id)controlKeyBackgroundColorName;
 - (id)controlKeyDividerColorName;

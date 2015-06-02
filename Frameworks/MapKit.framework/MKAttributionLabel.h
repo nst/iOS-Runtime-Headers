@@ -7,7 +7,7 @@
     BOOL _useDarkText;
 }
 
-@property unsigned int mapType;
+@property (nonatomic) unsigned int mapType;
 
 - (id)_attributesWithStroke:(BOOL)arg1;
 - (void)_prepareLabel;

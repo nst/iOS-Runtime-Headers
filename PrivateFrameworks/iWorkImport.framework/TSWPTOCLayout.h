@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPTOCLayoutHint;
-
 @interface TSWPTOCLayout : TSWPShapeLayout {
     TSWPTOCLayoutHint *_hint;
     unsigned int _initialCharIndex;
@@ -13,10 +11,10 @@
     } _maxSize;
 }
 
-@property(readonly) TSWPTOCLayoutHint * hint;
-@property(readonly) unsigned int initialCharIndex;
-@property(getter=isLastLayoutInTOC,readonly) BOOL lastLayoutInTOC;
-@property struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic, readonly) TSWPTOCLayoutHint *hint;
+@property (nonatomic, readonly) unsigned int initialCharIndex;
+@property (getter=isLastLayoutInTOC, nonatomic, readonly) BOOL lastLayoutInTOC;
+@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
 
 - (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
@@ -38,7 +36,7 @@
 - (BOOL)isLastLayoutInTOC;
 - (BOOL)isSelectable;
 - (id)layoutMargins;
-- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
+- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })maxSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;

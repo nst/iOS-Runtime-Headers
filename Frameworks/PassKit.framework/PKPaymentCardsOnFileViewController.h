@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentSetupViewControllerDelegate>, NSArray, PKPaymentWebService;
-
 @interface PKPaymentCardsOnFileViewController : PKPaymentSetupTableViewController {
     NSArray *_cardsOnFile;
     PKPaymentWebService *_paymentWebService;

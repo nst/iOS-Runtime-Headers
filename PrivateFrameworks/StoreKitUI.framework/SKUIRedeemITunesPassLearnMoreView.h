@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIButton, UIControl, UIImage, UIImageView, UILabel;
-
 @interface SKUIRedeemITunesPassLearnMoreView : UIView {
     UIButton *_button;
     UILabel *_explanationLabel;
     UIImageView *_headerImageView;
 }
 
-@property(readonly) UIControl * button;
-@property(copy) NSString * buttonTitle;
-@property(copy) NSString * explanationString;
-@property(retain) UIImage * headerImage;
+@property (nonatomic, readonly) UIControl *button;
+@property (nonatomic, copy) NSString *buttonTitle;
+@property (nonatomic, copy) NSString *explanationString;
+@property (nonatomic, retain) UIImage *headerImage;
 
 - (void).cxx_destruct;
 - (id)button;

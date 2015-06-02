@@ -13,12 +13,12 @@
     int _rAT;
 }
 
-@property BOOL hasPowerConnSetupMicroWatt;
-@property BOOL hasPowerConnectedMicroWatt;
-@property BOOL hasRAT;
-@property unsigned int powerConnSetupMicroWatt;
-@property unsigned int powerConnectedMicroWatt;
-@property int rAT;
+@property (nonatomic) BOOL hasPowerConnSetupMicroWatt;
+@property (nonatomic) BOOL hasPowerConnectedMicroWatt;
+@property (nonatomic) BOOL hasRAT;
+@property (nonatomic) unsigned int powerConnSetupMicroWatt;
+@property (nonatomic) unsigned int powerConnectedMicroWatt;
+@property (nonatomic) int rAT;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

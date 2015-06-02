@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyGroupBirthdayItem : ABPropertyGroupDateItem {
-}
+@interface ABPropertyGroupBirthdayItem : ABPropertyGroupDateItem
 
 - (id)displayLabel;
 - (void)updateLabeledValueWithLabel:(id)arg1;

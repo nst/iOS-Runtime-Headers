@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDCaptiveSession : PBCodable <NSCopying> {
     NSString *_appTriggeredPassiveSymptom;
     NSString *_autoLoginCarrierID;
@@ -47,47 +45,47 @@
     BOOL _wisprDetected;
 }
 
-@property(retain) NSString * appTriggeredPassiveSymptom;
-@property(retain) NSString * autoLoginCarrierID;
-@property BOOL autoLoginFailed;
-@property unsigned int autoLoginType;
-@property BOOL detectedNotCaptiveHandledByCNP;
-@property unsigned int durationNetworkNotCaptive;
-@property unsigned int durationOnNetwork;
-@property(retain) NSString * handlerCNP;
-@property BOOL handlerCNPTriggeredLogOff;
-@property(readonly) BOOL hasAppTriggeredPassiveSymptom;
-@property(readonly) BOOL hasAutoLoginCarrierID;
-@property BOOL hasAutoLoginFailed;
-@property BOOL hasAutoLoginType;
-@property BOOL hasDetectedNotCaptiveHandledByCNP;
-@property BOOL hasDurationNetworkNotCaptive;
-@property BOOL hasDurationOnNetwork;
-@property(readonly) BOOL hasHandlerCNP;
-@property BOOL hasHandlerCNPTriggeredLogOff;
-@property BOOL hasIsDetectedCaptive;
-@property BOOL hasPassiveCaptivityCorrectDetection;
-@property BOOL hasPassiveCaptivityDetected;
-@property BOOL hasPassiveCaptivityIncorrectDetection;
-@property BOOL hasPassiveCaptivitySymptom;
-@property BOOL hasResult;
-@property BOOL hasTimestamp;
-@property BOOL hasWebsheetProbeCount;
-@property BOOL hasWebsheetScrapeResult;
-@property BOOL hasWebsheetScraped;
-@property BOOL hasWisprDetected;
-@property(retain) NSMutableArray * installedCNPDisplayIDs;
-@property BOOL isDetectedCaptive;
-@property unsigned int passiveCaptivityCorrectDetection;
-@property BOOL passiveCaptivityDetected;
-@property unsigned int passiveCaptivityIncorrectDetection;
-@property unsigned int passiveCaptivitySymptom;
-@property unsigned int result;
-@property unsigned long long timestamp;
-@property unsigned int websheetProbeCount;
-@property unsigned int websheetScrapeResult;
-@property BOOL websheetScraped;
-@property BOOL wisprDetected;
+@property (nonatomic, retain) NSString *appTriggeredPassiveSymptom;
+@property (nonatomic, retain) NSString *autoLoginCarrierID;
+@property (nonatomic) BOOL autoLoginFailed;
+@property (nonatomic) unsigned int autoLoginType;
+@property (nonatomic) BOOL detectedNotCaptiveHandledByCNP;
+@property (nonatomic) unsigned int durationNetworkNotCaptive;
+@property (nonatomic) unsigned int durationOnNetwork;
+@property (nonatomic, retain) NSString *handlerCNP;
+@property (nonatomic) BOOL handlerCNPTriggeredLogOff;
+@property (nonatomic, readonly) BOOL hasAppTriggeredPassiveSymptom;
+@property (nonatomic, readonly) BOOL hasAutoLoginCarrierID;
+@property (nonatomic) BOOL hasAutoLoginFailed;
+@property (nonatomic) BOOL hasAutoLoginType;
+@property (nonatomic) BOOL hasDetectedNotCaptiveHandledByCNP;
+@property (nonatomic) BOOL hasDurationNetworkNotCaptive;
+@property (nonatomic) BOOL hasDurationOnNetwork;
+@property (nonatomic, readonly) BOOL hasHandlerCNP;
+@property (nonatomic) BOOL hasHandlerCNPTriggeredLogOff;
+@property (nonatomic) BOOL hasIsDetectedCaptive;
+@property (nonatomic) BOOL hasPassiveCaptivityCorrectDetection;
+@property (nonatomic) BOOL hasPassiveCaptivityDetected;
+@property (nonatomic) BOOL hasPassiveCaptivityIncorrectDetection;
+@property (nonatomic) BOOL hasPassiveCaptivitySymptom;
+@property (nonatomic) BOOL hasResult;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasWebsheetProbeCount;
+@property (nonatomic) BOOL hasWebsheetScrapeResult;
+@property (nonatomic) BOOL hasWebsheetScraped;
+@property (nonatomic) BOOL hasWisprDetected;
+@property (nonatomic, retain) NSMutableArray *installedCNPDisplayIDs;
+@property (nonatomic) BOOL isDetectedCaptive;
+@property (nonatomic) unsigned int passiveCaptivityCorrectDetection;
+@property (nonatomic) BOOL passiveCaptivityDetected;
+@property (nonatomic) unsigned int passiveCaptivityIncorrectDetection;
+@property (nonatomic) unsigned int passiveCaptivitySymptom;
+@property (nonatomic) unsigned int result;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int websheetProbeCount;
+@property (nonatomic) unsigned int websheetScrapeResult;
+@property (nonatomic) BOOL websheetScraped;
+@property (nonatomic) BOOL wisprDetected;
 
 - (void)addInstalledCNPDisplayIDs:(id)arg1;
 - (id)appTriggeredPassiveSymptom;

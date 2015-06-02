@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSGetGeniusItemsRequest : HSRequest {
-}
+@interface HSGetGeniusItemsRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 seedID:(unsigned long long)arg2 numberOfItems:(unsigned int)arg3;
 

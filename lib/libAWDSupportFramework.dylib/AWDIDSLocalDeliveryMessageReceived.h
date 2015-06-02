@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSLocalDeliveryMessageReceived : PBCodable <NSCopying> {
     struct { 
         unsigned int isFromDefaultPairedDevice : 1; 
@@ -20,18 +18,18 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasIsFromDefaultPairedDevice;
-@property BOOL hasLinkType;
-@property BOOL hasMessageSize;
-@property BOOL hasPriority;
-@property(readonly) BOOL hasService;
-@property BOOL hasTimestamp;
-@property unsigned long long isFromDefaultPairedDevice;
-@property unsigned long long linkType;
-@property unsigned long long messageSize;
-@property unsigned long long priority;
-@property(retain) NSString * service;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasIsFromDefaultPairedDevice;
+@property (nonatomic) BOOL hasLinkType;
+@property (nonatomic) BOOL hasMessageSize;
+@property (nonatomic) BOOL hasPriority;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long isFromDefaultPairedDevice;
+@property (nonatomic) unsigned long long linkType;
+@property (nonatomic) unsigned long long messageSize;
+@property (nonatomic) unsigned long long priority;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

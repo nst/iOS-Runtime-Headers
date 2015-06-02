@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, NSString;
-
 @interface EDRun : NSObject <EDKeyedObject> {
     unsigned int mCharIndex;
     unsigned int mFontIndex;
     EDResources *mResources;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)runWithCharIndex:(unsigned int)arg1 font:(id)arg2 resources:(id)arg3;
 + (id)runWithCharIndex:(unsigned int)arg1 fontIndex:(unsigned int)arg2 resources:(id)arg3;

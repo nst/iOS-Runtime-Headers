@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIGiftValidationResponse : NSObject {
     NSString *_errorString;
     NSString *_giftKey;
@@ -11,10 +9,10 @@
     BOOL _valid;
 }
 
-@property(readonly) NSString * errorString;
-@property(readonly) NSString * giftKey;
-@property(readonly) NSString * totalGiftAmountString;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, readonly) NSString *errorString;
+@property (nonatomic, readonly) NSString *giftKey;
+@property (nonatomic, readonly) NSString *totalGiftAmountString;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (void).cxx_destruct;
 - (id)errorString;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABResponderDelegate>, UIColor;
-
 @interface ABHighlightingTextField : UITextField {
     UIColor *_highlightedTextColor;
     BOOL _isHighlighted;
@@ -13,11 +11,11 @@
     BOOL _showsClearButtonWhenEmpty;
 }
 
-@property(setter=abSetHighlightedTextColor:,retain) UIColor * abHighlightedTextColor;
-@property(setter=abSetHighlighted:) BOOL abIsHighlighted;
-@property(setter=abSetHighlightingEnabled:) BOOL abIsHighlightingEnabled;
-@property <ABResponderDelegate> * responderDelegate;
-@property BOOL showsClearButtonWhenEmpty;
+@property (setter=abSetHighlightedTextColor:, nonatomic, retain) UIColor *abHighlightedTextColor;
+@property (setter=abSetHighlighted:, nonatomic) BOOL abIsHighlighted;
+@property (setter=abSetHighlightingEnabled:, nonatomic) BOOL abIsHighlightingEnabled;
+@property (nonatomic) <ABResponderDelegate> *responderDelegate;
+@property (nonatomic) BOOL showsClearButtonWhenEmpty;
 
 - (id)_nextKeyResponder;
 - (id)_previousKeyResponder;

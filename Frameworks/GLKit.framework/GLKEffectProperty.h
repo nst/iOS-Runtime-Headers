@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKEffect;
-
 @interface GLKEffectProperty : NSObject {
     unsigned long long _dirtyUniforms;
     GLKEffect *_effect;
@@ -11,17 +9,17 @@
     int _location;
     unsigned char _masksInitialized;
     char *_nameString;
-    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; id x5; } *_prv;
+    struct GLKEffectPropertyPrv { struct GLKBigInt_s {} *x1; struct GLKBigInt_s {} *x2; struct GLKBigInt_s {} *x3; struct GLKBigInt_s {} *x4; id x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; unsigned long long x47; void*x48; void*x49; void*x50; long long x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; in void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; unsigned long long x78; void*x79; void*x80; } *_prv;
     char *_vshSource;
 }
 
-@property unsigned long long dirtyUniforms;
-@property GLKEffect * effect;
-@property char * fshSource;
-@property int location;
-@property unsigned char masksInitialized;
-@property char * nameString;
-@property char * vshSource;
+@property (nonatomic) unsigned long long dirtyUniforms;
+@property (nonatomic) GLKEffect *effect;
+@property (nonatomic) char *fshSource;
+@property (nonatomic) int location;
+@property (nonatomic) unsigned char masksInitialized;
+@property (nonatomic) char *nameString;
+@property (nonatomic) char *vshSource;
 
 + (void)logSetMasksWithLabel:(id)arg1 obj:(id)arg2 typeStr:(id)arg3;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;

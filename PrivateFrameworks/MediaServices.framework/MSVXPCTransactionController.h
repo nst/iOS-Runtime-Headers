@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSMapTable, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface MSVXPCTransactionController : NSObject {
     BOOL _inTransaction;
     NSMapTable *_openTransactions;
@@ -11,7 +9,7 @@
     NSObject<OS_dispatch_source> *_signalUSR2DispatchSource;
 }
 
-@property(getter=isInTransaction,readonly) BOOL inTransaction;
+@property (getter=isInTransaction, nonatomic, readonly) BOOL inTransaction;
 
 + (id)sharedInstance;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkContactsBrowserViewController : UINavigationController {
-}
+@interface ABStarkContactsBrowserViewController : UINavigationController
 
 - (id)init;
 

@@ -8,9 +8,9 @@
     id _target;
 }
 
-@property SEL action;
-@property BOOL needsUpdate;
-@property id target;
+@property (nonatomic) SEL action;
+@property (nonatomic) BOOL needsUpdate;
+@property (nonatomic) id target;
 
 - (SEL)action;
 - (id)description;

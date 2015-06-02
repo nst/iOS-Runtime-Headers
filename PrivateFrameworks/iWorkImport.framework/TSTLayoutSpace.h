@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCoordinateArray, TSTLayout, TSTLayoutSpaceBezierPathCache, TSTLayoutSpaceBundle, TSTMasterLayout;
-
 @interface TSTLayoutSpace : NSObject {
     TSTLayoutSpaceBezierPathCache *mBezierPathCache;
     TSTCoordinateArray *mBodyColumnCoordinates;
@@ -113,28 +111,28 @@
     float mViewScale;
 }
 
-@property(readonly) TSTLayoutSpaceBezierPathCache * bezierPathCache;
-@property(readonly) TSTLayoutSpaceBundle * bundle;
-@property BOOL drawBlackAndWhite;
-@property BOOL drawPreventAntialias;
-@property BOOL headerColumnsRepeat;
-@property BOOL headerRowsRepeat;
-@property(readonly) BOOL isColumns;
-@property(readonly) BOOL isCorner;
-@property(readonly) BOOL isFrozen;
-@property(readonly) BOOL isMain;
-@property(readonly) BOOL isRepeat;
-@property(readonly) BOOL isRows;
-@property(readonly) TSTLayout * layout;
-@property(readonly) BOOL layoutDirectionIsLeftToRight;
-@property(readonly) int layoutSpaceType;
-@property(readonly) TSTMasterLayout * masterLayout;
-@property struct CGPoint { float x1; float x2; } tableOffset;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromDevice;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToDevice;
-@property float viewScale;
+@property (nonatomic, readonly) TSTLayoutSpaceBezierPathCache *bezierPathCache;
+@property (nonatomic, readonly) TSTLayoutSpaceBundle *bundle;
+@property (nonatomic) BOOL drawBlackAndWhite;
+@property (nonatomic) BOOL drawPreventAntialias;
+@property (nonatomic) BOOL headerColumnsRepeat;
+@property (nonatomic) BOOL headerRowsRepeat;
+@property (nonatomic, readonly) BOOL isColumns;
+@property (nonatomic, readonly) BOOL isCorner;
+@property (nonatomic, readonly) BOOL isFrozen;
+@property (nonatomic, readonly) BOOL isMain;
+@property (nonatomic, readonly) BOOL isRepeat;
+@property (nonatomic, readonly) BOOL isRows;
+@property (nonatomic, readonly) TSTLayout *layout;
+@property (nonatomic, readonly) BOOL layoutDirectionIsLeftToRight;
+@property (nonatomic, readonly) int layoutSpaceType;
+@property (nonatomic, readonly) TSTMasterLayout *masterLayout;
+@property (nonatomic) struct CGPoint { float x1; float x2; } tableOffset;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromDevice;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToDevice;
+@property (nonatomic) float viewScale;
 
 - (id).cxx_construct;
 - (id)bezierPathCache;

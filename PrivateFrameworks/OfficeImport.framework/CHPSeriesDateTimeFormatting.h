@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHPSeriesDateTimeFormatting : EDProcessor {
-}
+@interface CHPSeriesDateTimeFormatting : EDProcessor
 
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;
 - (bool)isDateTimeFomrattingInData:(id)arg1;

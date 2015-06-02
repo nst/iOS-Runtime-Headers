@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPArtworkCatalog;
-
 @interface MPConcreteMediaItemArtwork : MPMediaItemArtwork {
     struct CGRect { 
         struct CGPoint { 
@@ -18,7 +16,7 @@
     MPArtworkCatalog *_catalog;
 }
 
-@property(readonly) MPArtworkCatalog * artworkCatalog;
+@property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;
 
 - (void).cxx_destruct;
 - (id)artworkCatalog;

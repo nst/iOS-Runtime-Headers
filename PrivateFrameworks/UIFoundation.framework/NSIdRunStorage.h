@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSIdRunStorage : NSRunStorage {
-}
+@interface NSIdRunStorage : NSRunStorage
 
 + (void)initialize;
 

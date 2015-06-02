@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLFacebookAudienceViewControllerDelegate>, NSArray, SLFacebookPostPrivacySetting, UINavigationItem;
-
 @interface SLFacebookAudienceTableViewController : UITableViewController <SLFacebookAudienceViewController> {
     UINavigationItem *_navigationItem;
     NSArray *_privacySettings;

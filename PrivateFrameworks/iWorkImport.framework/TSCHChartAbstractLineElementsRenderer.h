@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartAbstractLineElementsRenderer : TSCHRenderer {
-}
+@interface TSCHChartAbstractLineElementsRenderer : TSCHRenderer
 
 - (int)chunkPlane;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })p_adjustTransformForAADefeatInContext:(struct CGContext { }*)arg1 inTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 forSeriesShape:(struct CGPath { }*)arg3 inBodyBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;

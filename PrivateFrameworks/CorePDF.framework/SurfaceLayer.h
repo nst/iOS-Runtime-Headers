@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface SurfaceLayer : CALayer {
-}
+@interface SurfaceLayer : CALayer
 
 - (id)actionForKey:(id)arg1;
 

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOMapAccess;
-
 @interface GEOMapTileFinder : GEOMapRequest {
     struct { 
         double latitude; 
@@ -15,23 +9,19 @@
     } _center;
     BOOL _isCanceling;
     double _radius;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileHandler;
-
+    id /* block */ _tileHandler;
     int _tileScale;
     int _tileSize;
     int _tileStyle;
     unsigned int _zoomLevel;
 }
 
-@property(readonly) GEOMapAccess * map;
-@property(copy) id tileHandler;
-@property(readonly) int tileScale;
-@property(readonly) int tileSize;
-@property(readonly) int tileStyle;
-@property(readonly) unsigned int zoomLevel;
+@property (nonatomic, readonly) GEOMapAccess *map;
+@property (nonatomic, copy) id /* block */ tileHandler;
+@property (nonatomic, readonly) int tileScale;
+@property (nonatomic, readonly) int tileSize;
+@property (nonatomic, readonly) int tileStyle;
+@property (nonatomic, readonly) unsigned int zoomLevel;
 
 + (id)realisticTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 + (BOOL)supportsRealisticMap;
@@ -42,12 +32,12 @@
 - (id)_initWithMap:(id)arg1 zoomLevel:(unsigned int)arg2 tileSize:(int)arg3 tileScale:(int)arg4 tileStyle:(int)arg5 center:(struct { double x1; double x2; })arg6 radius:(double)arg7;
 - (void)cancel;
 - (void)dealloc;
-- (void)findTiles:(id)arg1;
-- (void)findTiles:(id)arg1 excludingKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2;
-- (void)findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 tileHandler:(id)arg3;
+- (void)findTiles:(id /* block */)arg1;
+- (void)findTiles:(id /* block */)arg1 excludingKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2;
+- (void)findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 tileHandler:(id /* block */)arg3;
 - (id)map;
-- (void)setTileHandler:(id)arg1;
-- (id)tileHandler;
+- (void)setTileHandler:(id /* block */)arg1;
+- (id /* block */)tileHandler;
 - (int)tileScale;
 - (int)tileSize;
 - (int)tileStyle;

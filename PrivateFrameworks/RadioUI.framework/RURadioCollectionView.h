@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RURadioCollectionViewDelegate>, RURadioStationsCollectionViewTemplate;
-
 @interface RURadioCollectionView : UICollectionView {
     RURadioStationsCollectionViewTemplate *_radioStationsCollectionViewTemplate;
 }
 
-@property <RURadioCollectionViewDelegate> * delegate;
-@property(readonly) RURadioStationsCollectionViewTemplate * radioStationsCollectionViewTemplate;
+@property (nonatomic) <RURadioCollectionViewDelegate> *delegate;
+@property (nonatomic, readonly) RURadioStationsCollectionViewTemplate *radioStationsCollectionViewTemplate;
 
 - (void).cxx_destruct;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;

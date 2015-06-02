@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface MFComposeAttachmentDataProvider : NSObject <MFAttachmentDataProvider> {
     NSMutableDictionary *_attachments;
     NSMutableDictionary *_attachmentsPasteboard;
     NSMutableDictionary *_attachmentsUndo;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_dataForAttachment:(id)arg1;
 - (void)addData:(id)arg1 forContentID:(id)arg2;

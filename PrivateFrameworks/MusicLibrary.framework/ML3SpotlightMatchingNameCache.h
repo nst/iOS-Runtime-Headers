@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSString;
-
 @interface ML3SpotlightMatchingNameCache : NSObject {
     BOOL _idle;
     ML3MusicLibrary *_library;
@@ -36,11 +34,11 @@
 }
 
 + (void)initialize;
-+ (void)loadFromLibrary:(id)arg1 namesMatchingString:(id)arg2 cancelHandler:(id)arg3;
++ (void)loadFromLibrary:(id)arg1 namesMatchingString:(id)arg2 cancelHandler:(id /* block */)arg3;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_initWithLibrary:(id)arg1 matchString:(id)arg2 cancelHandler:(id)arg3;
+- (id)_initWithLibrary:(id)arg1 matchString:(id)arg2 cancelHandler:(id /* block */)arg3;
 - (void)dealloc;
 
 @end

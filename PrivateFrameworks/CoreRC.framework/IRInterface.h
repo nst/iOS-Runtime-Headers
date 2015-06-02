@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <IRInterfaceDelegate>, NSArray;
-
 @interface IRInterface : CoreRCInterface {
     <IRInterfaceDelegate> *_delegate;
 }
 
-@property(readonly) NSArray * buttons;
-@property <IRInterfaceDelegate> * delegate;
-@property(readonly) unsigned int maxStoredCommands;
+@property (nonatomic, readonly) NSArray *buttons;
+@property (nonatomic) <IRInterfaceDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int maxStoredCommands;
 
 - (id)buttons;
 - (BOOL)clearAllStoredCommands:(id*)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSDate;
-
 @interface TimeWithLatency : NSObject {
     double _latency;
     NSDate *_time;
 }
 
 @property double latency;
-@property(retain) NSDate * time;
+@property (retain) NSDate *time;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

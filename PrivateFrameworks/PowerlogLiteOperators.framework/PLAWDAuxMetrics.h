@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableSet, PLOperator;
-
 @interface PLAWDAuxMetrics : NSObject {
     PLOperator *_operator;
     NSMutableSet *_runningMetrics;
 }
 
-@property PLOperator * operator;
-@property(retain) NSMutableSet * runningMetrics;
+@property PLOperator *operator;
+@property (nonatomic, retain) NSMutableSet *runningMetrics;
 
 + (id)entryAggregateDefinitions;
 + (id)entryEventPointDefinitions;

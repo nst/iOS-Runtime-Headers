@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSString, UIColor, UIView, _MKScaleUnitsView;
-
 @interface MKScaleView : UIView {
     UIColor *_borderColorRegular;
     UIColor *_borderColorSatellite;
@@ -19,7 +17,7 @@
     int _layoutCounter;
     UIColor *_lightSegmentColorRegular;
     UIColor *_lightSegmentColorSatellite;
-    double _magicNumbers[3];
+    double _magicNumbers;
     NSString *_metersAbbreviation;
     NSString *_milesAbbreviation;
     int _oldNumberOfSegments;
@@ -36,8 +34,8 @@
     NSString *_yardAbbreviation;
 }
 
-@property double distanceInMeters;
-@property BOOL useLightText;
+@property (nonatomic) double distanceInMeters;
+@property (nonatomic) BOOL useLightText;
 
 - (void).cxx_destruct;
 - (void)_calculateSegments;

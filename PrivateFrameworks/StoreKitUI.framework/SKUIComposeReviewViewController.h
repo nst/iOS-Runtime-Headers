@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIComposeReviewDelegate>, NSString, SKUIComposeReviewFormViewController, SKUIReviewMetadata, SUPlaceholderViewController;
-
 @interface SKUIComposeReviewViewController : SUNavigationController <SKUIComposeReviewFormDelegate, UIAlertViewDelegate> {
     SKUIComposeReviewFormViewController *_formViewController;
     SUPlaceholderViewController *_placeholderViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIComposeReviewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) SKUIReviewMetadata * editedReviewMetadata;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIComposeReviewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) SKUIReviewMetadata *editedReviewMetadata;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
 - (void)_finishLoadWithOutput:(id)arg1 error:(id)arg2;
-- (void)_loadReviewWithURL:(id)arg1 completionBlock:(id)arg2;
+- (void)_loadReviewWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_sendDidCancel;
 - (void)_sendDidSubmit;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -28,7 +26,7 @@
 - (void)dealloc;
 - (id)editedReviewMetadata;
 - (id)init;
-- (void)loadReviewWithURL:(id)arg1 completionBlock:(id)arg2;
+- (void)loadReviewWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setRating:(float)arg1;
 - (void)submitReview;
 

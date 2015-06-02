@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORPProblemProvider : NSObject {
-}
+@interface GEORPProblemProvider : NSObject
 
 - (void)cancelRequest;
-- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
-- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
-- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startNotificationAvailabilityRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startStatusRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 
 @end

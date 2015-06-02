@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <NSSecureCoding>, NSDate, NSString;
-
 @interface _HDKeyValueJournalEntry : HDJournalEntry {
     int _category;
     NSString *_domain;
@@ -13,12 +11,12 @@
     <NSSecureCoding> *_value;
 }
 
-@property(readonly) int category;
-@property(readonly) NSString * domain;
-@property(readonly) NSString * key;
-@property(readonly) NSDate * modificationDate;
-@property(readonly) int provenance;
-@property(readonly) <NSSecureCoding> * value;
+@property (nonatomic, readonly) int category;
+@property (nonatomic, readonly) NSString *domain;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly) int provenance;
+@property (nonatomic, readonly) <NSSecureCoding> *value;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

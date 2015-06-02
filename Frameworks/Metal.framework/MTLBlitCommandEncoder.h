@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLBlitCommandEncoder : NSObject {
-}
+@interface MTLBlitCommandEncoder : NSObject
 
 @end

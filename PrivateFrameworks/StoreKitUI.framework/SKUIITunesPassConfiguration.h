@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIITunesPassConfiguration : NSObject {
     NSString *_dialogLearnMoreButton;
     NSString *_dialogMessage;
@@ -19,14 +17,14 @@
     NSString *_lockupTitle;
 }
 
-@property(readonly) NSString * learnMoreAddPassButtonTitle;
-@property(readonly) NSString * learnMoreDoneButtonTitle;
-@property(readonly) NSString * learnMoreExplanation;
-@property(readonly) NSString * learnMoreTitle;
-@property(readonly) NSString * learnMoreViewPassButtonTitle;
-@property(readonly) NSString * lockupDescription;
-@property(readonly) NSString * lockupLearnMoreLinkTitle;
-@property(readonly) NSString * lockupTitle;
+@property (nonatomic, readonly) NSString *learnMoreAddPassButtonTitle;
+@property (nonatomic, readonly) NSString *learnMoreDoneButtonTitle;
+@property (nonatomic, readonly) NSString *learnMoreExplanation;
+@property (nonatomic, readonly) NSString *learnMoreTitle;
+@property (nonatomic, readonly) NSString *learnMoreViewPassButtonTitle;
+@property (nonatomic, readonly) NSString *lockupDescription;
+@property (nonatomic, readonly) NSString *lockupLearnMoreLinkTitle;
+@property (nonatomic, readonly) NSString *lockupTitle;
 
 - (void).cxx_destruct;
 - (id)initWithITunesPassDictionary:(id)arg1 clientContext:(id)arg2;

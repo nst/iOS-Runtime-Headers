@@ -11,10 +11,10 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned long long deltaTransitTime;
-@property BOOL hasDeltaTransitTime;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned long long deltaTransitTime;
+@property (nonatomic) BOOL hasDeltaTransitTime;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

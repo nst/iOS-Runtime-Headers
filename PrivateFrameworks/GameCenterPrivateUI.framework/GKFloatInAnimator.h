@@ -9,10 +9,10 @@
     BOOL _useWelcomeSpringValues;
 }
 
-@property float additionalDelay;
-@property float delayIncrement;
-@property int focusBubbleType;
-@property BOOL useWelcomeSpringValues;
+@property (nonatomic) float additionalDelay;
+@property (nonatomic) float delayIncrement;
+@property (nonatomic) int focusBubbleType;
+@property (nonatomic) BOOL useWelcomeSpringValues;
 
 - (float)additionalDelay;
 - (void)animateTransition:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKFetchShareInfoOperationInfo : CKOperationInfo {
     NSArray *_shareURLsToFetch;
 }
 
-@property(retain) NSArray * shareURLsToFetch;
+@property (nonatomic, retain) NSArray *shareURLsToFetch;
 
 + (BOOL)supportsSecureCoding;
 

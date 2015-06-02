@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface UIKBColorGradient : UIKBGradient {
     UIColor *_color;
 }

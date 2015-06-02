@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSNumber, NSString;
-
 @interface EKCalendarResourceChangeNotification : EKCalendarNotification {
     BOOL _allDay;
     NSString *_calendarName;
@@ -22,21 +20,21 @@
     NSNumber *_updateCount;
 }
 
-@property BOOL allDay;
-@property(retain) NSString * calendarName;
-@property unsigned int changeType;
-@property(retain) NSNumber * createCount;
-@property BOOL dateChanged;
-@property(retain) NSNumber * deleteCount;
-@property(retain) NSDate * endDate;
-@property(retain) NSString * eventID;
-@property(retain) NSString * location;
-@property BOOL locationChanged;
-@property(retain) NSDate * startDate;
-@property(retain) NSDate * startDateForNextOccurrence;
-@property BOOL timeChanged;
-@property BOOL titleChanged;
-@property(retain) NSNumber * updateCount;
+@property (nonatomic) BOOL allDay;
+@property (nonatomic, retain) NSString *calendarName;
+@property (nonatomic) unsigned int changeType;
+@property (nonatomic, retain) NSNumber *createCount;
+@property (nonatomic) BOOL dateChanged;
+@property (nonatomic, retain) NSNumber *deleteCount;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSString *eventID;
+@property (nonatomic, retain) NSString *location;
+@property (nonatomic) BOOL locationChanged;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, retain) NSDate *startDateForNextOccurrence;
+@property (nonatomic) BOOL timeChanged;
+@property (nonatomic) BOOL titleChanged;
+@property (nonatomic, retain) NSNumber *updateCount;
 
 - (BOOL)allDay;
 - (id)calendarName;

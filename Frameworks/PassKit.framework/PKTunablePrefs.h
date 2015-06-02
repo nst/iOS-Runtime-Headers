@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableDictionary, UIView, UIWindow;
-
 @interface PKTunablePrefs : NSObject {
     NSMutableDictionary *_prefs;
     UIView *_prefsContainerView;
     UIWindow *_window;
 }
 
-@property(retain) NSMutableDictionary * prefs;
-@property(retain) UIView * prefsContainerView;
-@property BOOL shouldShowUI;
-@property(retain) UIWindow * window;
+@property (retain) NSMutableDictionary *prefs;
+@property (retain) UIView *prefsContainerView;
+@property (nonatomic) BOOL shouldShowUI;
+@property (retain) UIWindow *window;
 
 + (id)sharedPrefs;
 
-- (void)addObserver:(id)arg1 forPref:(id)arg2 handler:(id)arg3;
+- (void)addObserver:(id)arg1 forPref:(id)arg2 handler:(id /* block */)arg3;
 - (BOOL)canShowUI;
 - (void)dealloc;
 - (void)didChangeOrientation:(id)arg1;

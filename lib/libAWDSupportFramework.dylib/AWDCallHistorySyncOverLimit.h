@@ -11,10 +11,10 @@
     unsigned int _transactionLogCount;
 }
 
-@property BOOL hasTimestamp;
-@property BOOL hasTransactionLogCount;
-@property unsigned long long timestamp;
-@property unsigned int transactionLogCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransactionLogCount;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transactionLogCount;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

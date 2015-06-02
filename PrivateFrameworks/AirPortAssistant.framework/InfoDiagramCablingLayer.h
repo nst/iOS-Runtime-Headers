@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <InfoDiagramCablingAnchorDelegate>, CAGradientLayer, CAShapeLayer;
-
 @interface InfoDiagramCablingLayer : CALayer {
     CAShapeLayer *broadbandToWANInnerLineLayer;
     CAShapeLayer *broadbandToWANOuterLineLayer;
@@ -17,16 +15,16 @@
     BOOL swapCabling;
 }
 
-@property(retain) CAShapeLayer * broadbandToWANInnerLineLayer;
-@property(retain) CAShapeLayer * broadbandToWANOuterLineLayer;
-@property <InfoDiagramCablingAnchorDelegate> * diagramAnchorPointDelegate;
-@property(retain) CAGradientLayer * internetGradientLayer;
-@property(retain) CAShapeLayer * internetInnerLineLayer;
-@property(retain) CAShapeLayer * internetOuterLineLayer;
-@property BOOL isCompactWidth;
-@property(retain) CAShapeLayer * swapArcArrowLayer;
-@property(retain) CAShapeLayer * swapArcLineLayer;
-@property BOOL swapCabling;
+@property (nonatomic, retain) CAShapeLayer *broadbandToWANInnerLineLayer;
+@property (nonatomic, retain) CAShapeLayer *broadbandToWANOuterLineLayer;
+@property (nonatomic) <InfoDiagramCablingAnchorDelegate> *diagramAnchorPointDelegate;
+@property (nonatomic, retain) CAGradientLayer *internetGradientLayer;
+@property (nonatomic, retain) CAShapeLayer *internetInnerLineLayer;
+@property (nonatomic, retain) CAShapeLayer *internetOuterLineLayer;
+@property (nonatomic) BOOL isCompactWidth;
+@property (nonatomic, retain) CAShapeLayer *swapArcArrowLayer;
+@property (nonatomic, retain) CAShapeLayer *swapArcLineLayer;
+@property (nonatomic) BOOL swapCabling;
 
 - (id)broadbandToWANInnerLineLayer;
 - (id)broadbandToWANOuterLineLayer;

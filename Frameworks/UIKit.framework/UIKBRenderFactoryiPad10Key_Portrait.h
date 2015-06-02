@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPad10Key_Portrait : UIKBRenderFactory10Key_Landscape {
-}
+@interface UIKBRenderFactoryiPad10Key_Portrait : UIKBRenderFactory10Key_Landscape
 
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;

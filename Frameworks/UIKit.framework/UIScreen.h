@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICoordinateSpace>, <UIFocusContainer>, FBSDisplay, NSArray, NSDictionary, NSMutableArray, NSString, UIScreen, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIView, UIWindow, UIWindow<UIFocusContainer>, _UIScreenFixedCoordinateSpace, _UIScreenTransparentHitTestWindow;
-
 @interface UIScreen : NSObject <UICoordinateSpace, UIFocusContainer, UITraitEnvironment, _UITraitEnvironmentInternal> {
     UIWindow<UIFocusContainer> *__focusedWindow;
     NSArray *_availableDisplayModes;
@@ -108,47 +106,49 @@
     BOOL _wantsSoftwareDimming;
 }
 
-@property(setter=_setFocusedWindow:) UIWindow<UIFocusContainer> * _focusedWindow;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _gkBounds;
-@property(readonly) float _gkScale;
-@property(setter=_setInterfaceOrientation:) int _interfaceOrientation;
-@property(setter=_setLastNotifiedBacklightLevel:) int _lastNotifiedBacklightLevel;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _referenceBounds;
-@property(setter=_setSoftwareDimmingWindow:,retain) UISoftwareDimmingWindow * _softwareDimmingWindow;
-@property(getter=_unjailedReferenceBounds,readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _unjailedReferenceBounds;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } applicationFrame;
-@property(copy,readonly) NSArray * availableModes;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property float brightness;
-@property(readonly) <UICoordinateSpace> * coordinateSpace;
-@property(retain) UIScreenMode * currentMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=_defaultTraitCollection,setter=_setDefaultTraitCollection:) UITraitCollection * defaultTraitCollection;
-@property(copy,readonly) NSString * description;
-@property(retain) FBSDisplay * fbsDisplay;
-@property(readonly) <UICoordinateSpace> * fixedCoordinateSpace;
-@property(readonly) <UIFocusContainer> * focusedItem;
-@property(readonly) UIView * focusedView;
-@property(readonly) unsigned int hash;
-@property(getter=_jailOffset,setter=_setJailOffset:) struct CGPoint { float x1; float x2; } jailOffset;
-@property(getter=_jailOrientation,setter=_setJailOrientation:) int jailOrientation;
-@property(getter=_jailScale,setter=_setJailScale:) float jailScale;
-@property(getter=_jailSize,setter=_setJailSize:) struct CGSize { float x1; float x2; } jailSize;
-@property(getter=_jailTouchInsets,setter=_setJailTouchInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } jailTouchInsets;
-@property(getter=_jailUsesHitTestWindow,setter=_setJailUsesHitTestWindow:) BOOL jailUsesHitTestWindow;
-@property(getter=_lastNotifiedTraitCollection,setter=_setLastNotifiedTraitCollection:,retain) UITraitCollection * lastNotifiedTraitCollection;
-@property(retain,readonly) UIScreen * mirroredScreen;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nativeBounds;
-@property(readonly) float nativeScale;
-@property(getter=_overrideTraitCollection,setter=_setOverrideTraitCollection:) UITraitCollection * overrideTraitCollection;
-@property int overscanCompensation;
-@property(readonly) <UIFocusContainer> * preferredFocusedItem;
-@property(retain,readonly) UIScreenMode * preferredMode;
-@property(readonly) float scale;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsFocus;
-@property(readonly) UITraitCollection * traitCollection;
-@property BOOL wantsSoftwareDimming;
+@property (setter=_setFocusedWindow:, nonatomic) UIWindow<UIFocusContainer> *_focusedWindow;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _gkBounds;
+@property (readonly) float _gkScale;
+@property (setter=_setInterfaceOrientation:, nonatomic) int _interfaceOrientation;
+@property (setter=_setLastNotifiedBacklightLevel:, nonatomic) int _lastNotifiedBacklightLevel;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _referenceBounds;
+@property (setter=_setSoftwareDimmingWindow:, nonatomic, retain) UISoftwareDimmingWindow *_softwareDimmingWindow;
+@property (getter=_unjailedReferenceBounds, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _unjailedReferenceBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } applicationFrame;
+@property (nonatomic, readonly, copy) NSArray *availableModes;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) float brightness;
+@property (readonly) <UICoordinateSpace> *coordinateSpace;
+@property (nonatomic, retain) UIScreenMode *currentMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=_defaultTraitCollection, setter=_setDefaultTraitCollection:, nonatomic) UITraitCollection *defaultTraitCollection;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FBSDisplay *fbsDisplay;
+@property (readonly) <UICoordinateSpace> *fixedCoordinateSpace;
+@property (nonatomic, readonly) <UIFocusContainer> *focusedItem;
+@property (nonatomic, readonly) UIView *focusedView;
+@property (readonly) unsigned int hash;
+@property (getter=_jailOffset, setter=_setJailOffset:, nonatomic) struct CGPoint { float x1; float x2; } jailOffset;
+@property (getter=_jailOrientation, setter=_setJailOrientation:, nonatomic) int jailOrientation;
+@property (getter=_jailScale, setter=_setJailScale:, nonatomic) float jailScale;
+@property (getter=_jailSize, setter=_setJailSize:, nonatomic) struct CGSize { float x1; float x2; } jailSize;
+@property (getter=_jailTouchInsets, setter=_setJailTouchInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } jailTouchInsets;
+@property (getter=_jailUsesHitTestWindow, setter=_setJailUsesHitTestWindow:, nonatomic) BOOL jailUsesHitTestWindow;
+@property (getter=_lastNotifiedTraitCollection, setter=_setLastNotifiedTraitCollection:, nonatomic, retain) UITraitCollection *lastNotifiedTraitCollection;
+@property (nonatomic, readonly, retain) UIScreen *mirroredScreen;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nativeBounds;
+@property (nonatomic, readonly) float nativeScale;
+@property (getter=_overrideTraitCollection, setter=_setOverrideTraitCollection:, nonatomic) UITraitCollection *overrideTraitCollection;
+@property (nonatomic) int overscanCompensation;
+@property (nonatomic, readonly) <UIFocusContainer> *preferredFocusedItem;
+@property (nonatomic, readonly, retain) UIScreenMode *preferredMode;
+@property (nonatomic, readonly) float scale;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsFocus;
+@property (nonatomic, readonly) UITraitCollection *traitCollection;
+@property (nonatomic) BOOL wantsSoftwareDimming;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1;
 + (void)_FBSDisplayDidPossiblyConnect:(id)arg1 withScene:(id)arg2;
@@ -163,7 +163,7 @@
 + (void)_beginDisableScreenUpdatesForSnapshotUsingSnapshotCover:(BOOL)arg1;
 + (id)_carScreen;
 + (void)_endDisableScreenUpdates;
-+ (void)_enumerateScreensWithBlock:(id)arg1;
++ (void)_enumerateScreensWithBlock:(id /* block */)arg1;
 + (void)_prepareScreensForAppResume;
 + (id)_screenWithDisplayID:(id)arg1;
 + (id)_screenWithDisplayName:(id)arg1;
@@ -178,9 +178,6 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toView:(id)arg2;
 + (void)initialize;
 + (id)mainScreen;
-+ (id)sbs_launchImageInfoPlistKeyModifier:(int)arg1;
-+ (id)sbs_screenTypes;
-+ (id)sbs_snapshotImagePathComponent:(int)arg1;
 + (id)screens;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForScreenOriginRotation:(float)arg1;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToRotateScreen:(float)arg1;
@@ -207,10 +204,8 @@
 - (void)_enableScreenUpdates;
 - (void)_endObservingBacklightLevelNotifications;
 - (void)_ensureConnectedIfPossible;
-- (void)_enumerateWindowsWithBlock:(id)arg1;
+- (void)_enumerateWindowsWithBlock:(id /* block */)arg1;
 - (id)_focusedWindow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkBounds;
-- (float)_gkScale;
 - (BOOL)_hasStatusBar;
 - (BOOL)_hasWindows;
 - (float)_horizontalPixelScale;
@@ -238,7 +233,6 @@
 - (id)_lastNotifiedTraitCollection;
 - (id)_lazySoftwareDimmingWindow;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mainSceneReferenceBounds;
-- (id)_mapkit_display;
 - (id)_name;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_nativeDisplayBounds;
 - (void)_notifyTraitsChangedAndPropagateToAllWindows;
@@ -322,10 +316,6 @@
 - (id)preferredFocusedItem;
 - (id)preferredMode;
 - (float)rawBrightnessForBacklightLevel:(float)arg1;
-- (BOOL)sbs_isCarScreen;
-- (BOOL)sbs_isMainScreen;
-- (id)sbs_launchImageInfoPlistKeyModifier;
-- (id)sbs_snapshotImagePathComponent;
 - (float)scale;
 - (int)screenType;
 - (void)setBitsPerComponent:(int)arg1;
@@ -343,5 +333,25 @@
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)wantsSoftwareDimming;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_display;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gkBounds;
+- (float)_gkScale;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+
++ (id)sbs_launchImageInfoPlistKeyModifier:(int)arg1;
++ (id)sbs_screenTypes;
++ (id)sbs_snapshotImagePathComponent:(int)arg1;
+
+- (BOOL)sbs_isCarScreen;
+- (BOOL)sbs_isMainScreen;
+- (id)sbs_launchImageInfoPlistKeyModifier;
+- (id)sbs_snapshotImagePathComponent;
 
 @end

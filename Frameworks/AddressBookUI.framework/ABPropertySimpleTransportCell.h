@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABTransportButton, UIColor, UIImageView;
-
 @interface ABPropertySimpleTransportCell : ABPropertySimpleCell {
     UIColor *_actionsColor;
     BOOL _allowsActions;
@@ -12,13 +10,13 @@
     ABTransportButton *_transportIcon2;
 }
 
-@property(retain) UIColor * actionsColor;
-@property BOOL allowsActions;
-@property(readonly) BOOL shouldShowStar;
-@property(readonly) UIImageView * standardStarView;
-@property(readonly) ABTransportButton * standardTransportIcon;
-@property(readonly) ABTransportButton * transportIcon1;
-@property(readonly) ABTransportButton * transportIcon2;
+@property (nonatomic, retain) UIColor *actionsColor;
+@property (nonatomic) BOOL allowsActions;
+@property (nonatomic, readonly) BOOL shouldShowStar;
+@property (nonatomic, readonly) UIImageView *standardStarView;
+@property (nonatomic, readonly) ABTransportButton *standardTransportIcon;
+@property (nonatomic, readonly) ABTransportButton *transportIcon1;
+@property (nonatomic, readonly) ABTransportButton *transportIcon2;
 
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateStarImageForView:(id)arg1;

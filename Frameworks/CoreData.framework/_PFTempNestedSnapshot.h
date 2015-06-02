@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSKnownKeysDictionary;
-
 @interface _PFTempNestedSnapshot : NSObject {
     NSKnownKeysDictionary *_snapshot;
     unsigned long _version;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WXCharacterProperties : NSObject {
-}
+@interface WXCharacterProperties : NSObject
 
 + (void)applyDeletionInsertionProperties:(id)arg1 state:(id)arg2;
 + (void)initialize;

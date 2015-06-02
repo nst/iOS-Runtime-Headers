@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWiProxLeStartTrackingPeerResult : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -18,18 +16,18 @@
     int _type;
 }
 
-@property(readonly) BOOL hasPeerId;
-@property BOOL hasResult;
-@property(readonly) BOOL hasResultString;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property(retain) NSString * peerId;
-@property unsigned int result;
-@property(retain) NSString * resultString;
-@property(retain) NSString * sessionId;
-@property unsigned long long timestamp;
-@property int type;
+@property (nonatomic, readonly) BOOL hasPeerId;
+@property (nonatomic) BOOL hasResult;
+@property (nonatomic, readonly) BOOL hasResultString;
+@property (nonatomic, readonly) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *peerId;
+@property (nonatomic) unsigned int result;
+@property (nonatomic, retain) NSString *resultString;
+@property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOFeatureStyleAttributes;
-
 @interface VKLabelMarkerFeatureHandle : NSObject {
     int _featureIndex;
     int _featureType;
@@ -18,7 +16,7 @@
 - (void)dealloc;
 - (int)featureIndex;
 - (int)featureType;
-- (id)initWithFeature:(struct { id x1; char *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned long long x8; BOOL x9; unsigned long long x10; float x11; unsigned long long x12; id x13; int x14; }*)arg1 featureType:(int)arg2;
+- (id)initWithFeature:(struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; }*)arg1 featureType:(int)arg2;
 - (id)styleAttributes;
 - (int)tileStyle;
 - (unsigned int)tileVersion;

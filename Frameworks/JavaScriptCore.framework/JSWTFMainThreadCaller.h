@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-@interface JSWTFMainThreadCaller : NSObject {
-}
+@interface JSWTFMainThreadCaller : NSObject
 
 - (void)call;
 

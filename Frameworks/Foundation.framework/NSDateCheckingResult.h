@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDate, NSTimeZone;
-
 @interface NSDateCheckingResult : NSTextCheckingResult {
     NSDate *_date;
     double _duration;
@@ -19,13 +17,13 @@
     id _underlyingResult;
 }
 
-@property(readonly) double duration;
-@property(readonly) NSDate * referenceDate;
-@property(readonly) BOOL timeIsApproximate;
-@property(readonly) BOOL timeIsPast;
-@property(readonly) BOOL timeIsSignificant;
-@property(readonly) NSTimeZone * timeZone;
-@property(readonly) void* underlyingResult;
+@property (readonly) double duration;
+@property (readonly) NSDate *referenceDate;
+@property (readonly) BOOL timeIsApproximate;
+@property (readonly) BOOL timeIsPast;
+@property (readonly) BOOL timeIsSignificant;
+@property (readonly) NSTimeZone *timeZone;
+@property (readonly) void*underlyingResult;
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)date;

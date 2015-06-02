@@ -2,15 +2,8 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSString;
-
 @interface CAEmitterCell : NSObject <CAMediaTiming, CAPropertyInfo, NSCoding, NSCopying> {
-    void *_attr[2];
+    void *_attr;
     unsigned int _flags;
     void *_state;
 }
@@ -22,10 +15,10 @@
 @property float birthRate;
 @property float blueRange;
 @property float blueSpeed;
-@property struct CGColor { }* color;
-@property(retain) id contents;
+@property struct CGColor { }*color;
+@property (retain) id contents;
 @property unsigned int contentsFrameCount;
-@property(copy) NSString * contentsFrameMode;
+@property (copy) NSString *contentsFrameMode;
 @property unsigned int contentsFramesPerRow;
 @property float contentsFramesPerSecond;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentsRect;
@@ -34,24 +27,24 @@
 @property float emissionLatitude;
 @property float emissionLongitude;
 @property float emissionRange;
-@property(copy) NSArray * emitterBehaviors;
-@property(copy) NSArray * emitterCells;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * fillMode;
+@property (copy) NSArray *emitterBehaviors;
+@property (copy) NSArray *emitterCells;
+@property (getter=isEnabled) BOOL enabled;
+@property (copy) NSString *fillMode;
 @property float greenRange;
 @property float greenSpeed;
 @property float lifetime;
 @property float lifetimeRange;
-@property(copy) NSString * magnificationFilter;
+@property (copy) NSString *magnificationFilter;
 @property float mass;
 @property float massRange;
-@property(copy) NSString * minificationFilter;
+@property (copy) NSString *minificationFilter;
 @property float minificationFilterBias;
-@property(copy) NSString * name;
+@property (copy) NSString *name;
 @property float orientationLatitude;
 @property float orientationLongitude;
 @property float orientationRange;
-@property(copy) NSString * particleType;
+@property (copy) NSString *particleType;
 @property float redRange;
 @property float redSpeed;
 @property float repeatCount;
@@ -64,7 +57,7 @@
 @property float speed;
 @property float spin;
 @property float spinRange;
-@property(copy) NSDictionary * style;
+@property (copy) NSDictionary *style;
 @property double timeOffset;
 @property float velocity;
 @property float velocityRange;

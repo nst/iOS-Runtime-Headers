@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSIndexSet, PHFetchResult;
-
 @interface PHFetchResultChangeDetails : NSObject {
     NSIndexSet *_changedIndexes;
     NSArray *_changedItems;
@@ -18,16 +16,16 @@
     BOOL _skipIncrementalChanges;
 }
 
-@property(readonly) NSIndexSet * changedIndexes;
-@property(readonly) NSArray * changedObjects;
-@property(readonly) PHFetchResult * fetchResultAfterChanges;
-@property(readonly) PHFetchResult * fetchResultBeforeChanges;
-@property(readonly) BOOL hasIncrementalChanges;
-@property(readonly) BOOL hasMoves;
-@property(readonly) NSIndexSet * insertedIndexes;
-@property(readonly) NSArray * insertedObjects;
-@property(readonly) NSIndexSet * removedIndexes;
-@property(readonly) NSArray * removedObjects;
+@property (readonly) NSIndexSet *changedIndexes;
+@property (readonly) NSArray *changedObjects;
+@property (readonly) PHFetchResult *fetchResultAfterChanges;
+@property (readonly) PHFetchResult *fetchResultBeforeChanges;
+@property (readonly) BOOL hasIncrementalChanges;
+@property (readonly) BOOL hasMoves;
+@property (readonly) NSIndexSet *insertedIndexes;
+@property (readonly) NSArray *insertedObjects;
+@property (readonly) NSIndexSet *removedIndexes;
+@property (readonly) NSArray *removedObjects;
 
 + (id)_oidsForPHObjects:(id)arg1;
 + (id)changeDetailsFromFetchResult:(id)arg1 toFetchResult:(id)arg2 changedObjects:(id)arg3;
@@ -38,7 +36,7 @@
 - (id)changedObjects;
 - (id)currentItems;
 - (id)description;
-- (void)enumerateMovesWithBlock:(id)arg1;
+- (void)enumerateMovesWithBlock:(id /* block */)arg1;
 - (id)fetchResultAfterChanges;
 - (id)fetchResultBeforeChanges;
 - (BOOL)hasDiffs;

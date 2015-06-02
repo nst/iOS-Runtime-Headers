@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSString;
+@interface MSASPlatformImplementation : NSObject <MSASPlatform>
 
-@interface MSASPlatformImplementation : NSObject <MSASPlatform> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)MMCSConcurrentConnectionsCount;
 - (id)MMCSDownloadSocketOptionsForPersonID:(id)arg1;

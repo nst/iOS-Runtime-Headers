@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSArray, NSDate, NSString;
-
 @interface MSASSharingRelationship : NSObject <NSCopying> {
     NSString *_GUID;
     NSString *_albumGUID;
@@ -19,18 +17,18 @@
     NSDate *_subscriptionDate;
 }
 
-@property(retain) NSString * GUID;
-@property(retain) NSString * albumGUID;
-@property(retain) NSString * email;
-@property(retain) NSArray * emails;
-@property(retain) NSString * firstName;
-@property(retain) NSString * fullName;
-@property BOOL isMine;
-@property(retain) NSString * lastName;
-@property(retain) NSString * personID;
-@property(retain) NSArray * phones;
-@property int state;
-@property(retain) NSDate * subscriptionDate;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSArray *emails;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *fullName;
+@property (nonatomic) BOOL isMine;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *personID;
+@property (nonatomic, retain) NSArray *phones;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSDate *subscriptionDate;
 
 + (id)MSASPSharingRelationshipFromProtocolDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;

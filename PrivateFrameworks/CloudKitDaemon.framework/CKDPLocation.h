@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLocationBound, CKDPLocationCoordinate;
-
 @interface CKDPLocation : PBCodable <NSCopying> {
     CKDPLocationBound *_bounds;
     CKDPLocationCoordinate *_coordinate;
 }
 
-@property(retain) CKDPLocationBound * bounds;
-@property(retain) CKDPLocationCoordinate * coordinate;
-@property(readonly) BOOL hasBounds;
-@property(readonly) BOOL hasCoordinate;
+@property (nonatomic, retain) CKDPLocationBound *bounds;
+@property (nonatomic, retain) CKDPLocationCoordinate *coordinate;
+@property (nonatomic, readonly) BOOL hasBounds;
+@property (nonatomic, readonly) BOOL hasCoordinate;
 
 - (void).cxx_destruct;
 - (id)bounds;

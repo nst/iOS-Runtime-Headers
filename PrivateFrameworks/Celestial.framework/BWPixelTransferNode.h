@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWPixelBufferPool;
-
 @interface BWPixelTransferNode : BWNode {
     int _cropMode;
     BOOL _flipHorizontal;

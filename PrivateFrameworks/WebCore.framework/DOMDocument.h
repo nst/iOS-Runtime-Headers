@@ -2,45 +2,42 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMAbstractView, DOMDocumentType, DOMElement, DOMHTMLCollection, DOMHTMLElement, DOMImplementation, DOMStyleSheetList, NSString, WebFrame;
+@interface DOMDocument : DOMNode
 
-@interface DOMDocument : DOMNode {
-}
-
-@property(copy,readonly) NSString * URL;
-@property(readonly) DOMElement * activeElement;
-@property(readonly) DOMHTMLCollection * anchors;
-@property(readonly) DOMHTMLCollection * applets;
-@property(retain) DOMHTMLElement * body;
-@property(copy,readonly) NSString * characterSet;
-@property(copy) NSString * charset;
-@property(copy) NSString * cookie;
-@property(copy,readonly) NSString * defaultCharset;
-@property(readonly) DOMAbstractView * defaultView;
-@property(readonly) DOMDocumentType * doctype;
-@property(readonly) DOMElement * documentElement;
-@property(copy) NSString * documentURI;
-@property(copy,readonly) NSString * domain;
-@property(readonly) DOMHTMLCollection * forms;
-@property(readonly) DOMHTMLCollection * images;
-@property(readonly) DOMImplementation * implementation;
-@property(copy,readonly) NSString * inputEncoding;
-@property(copy,readonly) NSString * lastModified;
-@property(readonly) DOMHTMLCollection * links;
-@property(copy,readonly) NSString * preferredStylesheetSet;
-@property(copy,readonly) NSString * readyState;
-@property(copy,readonly) NSString * referrer;
-@property(copy) NSString * selectedStylesheetSet;
-@property(readonly) DOMStyleSheetList * styleSheets;
-@property(copy) NSString * title;
-@property(readonly) WebFrame * webFrame;
-@property(copy,readonly) NSString * xmlEncoding;
+@property (readonly, copy) NSString *URL;
+@property (readonly) DOMElement *activeElement;
+@property (readonly) DOMHTMLCollection *anchors;
+@property (readonly) DOMHTMLCollection *applets;
+@property (retain) DOMHTMLElement *body;
+@property (readonly, copy) NSString *characterSet;
+@property (copy) NSString *charset;
+@property (copy) NSString *cookie;
+@property (readonly, copy) NSString *defaultCharset;
+@property (readonly) DOMAbstractView *defaultView;
+@property (readonly) DOMDocumentType *doctype;
+@property (readonly) DOMElement *documentElement;
+@property (copy) NSString *documentURI;
+@property (readonly, copy) NSString *domain;
+@property (readonly) DOMHTMLCollection *forms;
+@property (readonly) DOMHTMLCollection *images;
+@property (readonly) DOMImplementation *implementation;
+@property (readonly, copy) NSString *inputEncoding;
+@property (readonly, copy) NSString *lastModified;
+@property (readonly) DOMHTMLCollection *links;
+@property (readonly, copy) NSString *preferredStylesheetSet;
+@property (readonly, copy) NSString *readyState;
+@property (readonly, copy) NSString *referrer;
+@property (copy) NSString *selectedStylesheetSet;
+@property (readonly) DOMStyleSheetList *styleSheets;
+@property (copy) NSString *title;
+@property (nonatomic, readonly) WebFrame *webFrame;
+@property (readonly, copy) NSString *xmlEncoding;
 @property BOOL xmlStandalone;
-@property(copy) NSString * xmlVersion;
+@property (copy) NSString *xmlVersion;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)URL;
-- (id)URLWithAttributeString:(id)arg1;
-- (id)_documentRange;
 - (id)activeElement;
 - (id)adoptNode:(id)arg1;
 - (id)anchors;
@@ -54,7 +51,6 @@
 - (id)createAttribute:(id)arg1;
 - (id)createAttributeNS:(id)arg1 :(id)arg2;
 - (id)createAttributeNS:(id)arg1 qualifiedName:(id)arg2;
-- (id)createBlockPlaceholder;
 - (id)createCDATASection:(id)arg1;
 - (id)createCSSStyleDeclaration;
 - (id)createComment:(id)arg1;
@@ -78,7 +74,6 @@
 - (id)createTreeWalker:(id)arg1 :(unsigned int)arg2 :(id)arg3 :(BOOL)arg4;
 - (id)createTreeWalker:(id)arg1 whatToShow:(unsigned int)arg2 filter:(id)arg3 expandEntityReferences:(BOOL)arg4;
 - (id)currentScript;
-- (void)dd_resetResults;
 - (id)defaultCharset;
 - (id)defaultView;
 - (id)doctype;
@@ -137,10 +132,23 @@
 - (id)styleSheets;
 - (id)title;
 - (id)visibilityState;
-- (id)webFrame;
 - (id)webkitGetNamedFlows;
 - (id)xmlEncoding;
 - (BOOL)xmlStandalone;
 - (id)xmlVersion;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)createBlockPlaceholder;
+
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (void)dd_resetResults;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
+- (id)URLWithAttributeString:(id)arg1;
+- (id)_documentRange;
+- (id)webFrame;
 
 @end

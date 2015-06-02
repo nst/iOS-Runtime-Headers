@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage;
-
 @interface CIWhitePointAdjust : CIFilter {
     CIColor *inputColor;
     CIImage *inputImage;
 }
 
-@property(retain) CIColor * inputColor;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 

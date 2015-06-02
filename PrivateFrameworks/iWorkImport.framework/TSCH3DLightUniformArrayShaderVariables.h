@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DUniformArrayShaderVariables;
-
 @interface TSCH3DLightUniformArrayShaderVariables : NSObject {
     TSCH3DUniformArrayShaderVariables *mVariables;
 }

@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIView;
-
 @interface SBAwayViewPluginController : NSObject {
     BOOL _alwaysFullscreen;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _disableTransitionBlock;
-
+    id /* block */ _disableTransitionBlock;
     unsigned int _effectivePresentationStyle;
     NSString *_enablingApplicationBundleIdentifier;
     BOOL _fullscreen;
@@ -23,21 +13,21 @@
     BOOL _viewCanBeDisplayed;
 }
 
-@property(getter=isAlwaysFullscreen) BOOL alwaysFullscreen;
-@property(getter=_effectivePresentationStyle,setter=_setEffectivePresentationStyle:) unsigned int effectivePresentationStyle;
-@property(copy) NSString * enablingApplicationBundleIdentifier;
-@property int orientation;
-@property(retain) UIView * view;
-@property BOOL viewCanBeDisplayed;
+@property (getter=isAlwaysFullscreen, nonatomic) BOOL alwaysFullscreen;
+@property (getter=_effectivePresentationStyle, setter=_setEffectivePresentationStyle:, nonatomic) unsigned int effectivePresentationStyle;
+@property (nonatomic, copy) NSString *enablingApplicationBundleIdentifier;
+@property (nonatomic) int orientation;
+@property (nonatomic, retain) UIView *view;
+@property (nonatomic) BOOL viewCanBeDisplayed;
 
 + (void)disableBundleNamed:(id)arg1;
 + (void)disableBundleNamed:(id)arg1 deactivationContext:(id)arg2;
 + (void)enableBundleNamed:(id)arg1;
 + (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
 
-- (id)_disableTransitionBlock;
+- (id /* block */)_disableTransitionBlock;
 - (unsigned int)_effectivePresentationStyle;
-- (void)_setDisableTransitionBlock:(id)arg1;
+- (void)_setDisableTransitionBlock:(id /* block */)arg1;
 - (void)_setEffectivePresentationStyle:(unsigned int)arg1;
 - (BOOL)allowsControlCenter;
 - (BOOL)allowsLockScreenCamera;
@@ -61,9 +51,9 @@
 - (void)deviceLockViewWillShow;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)disable;
-- (void)disableWithTransitionBlock:(id)arg1;
+- (void)disableWithTransitionBlock:(id /* block */)arg1;
 - (BOOL)disablesAwayItemsCompletely;
-- (id)enableTransitionBlock;
+- (id /* block */)enableTransitionBlock;
 - (id)enablingApplicationBundleIdentifier;
 - (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAIRetrySearch : SABaseClientBoundCommand {
-}
+@interface SAAIRetrySearch : SABaseClientBoundCommand
 
-@property double minimumDurationForRetry;
+@property (nonatomic) double minimumDurationForRetry;
 
 + (id)retrySearch;
 + (id)retrySearchWithDictionary:(id)arg1 context:(id)arg2;

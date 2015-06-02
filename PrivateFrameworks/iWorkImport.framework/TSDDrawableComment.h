@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSDDrawableInfo, TSKAnnotationAuthor;
-
 @interface TSDDrawableComment : NSObject <TSDAnnotationHosting> {
     TSDDrawableInfo *mParent;
     TSDCommentStorage *mStorage;
 }
 
-@property(readonly) int annotationDisplayStringType;
-@property(readonly) int annotationType;
-@property(readonly) TSKAnnotationAuthor * author;
-@property(readonly) NSString * changeTrackingContentFormatString;
-@property(readonly) NSString * changeTrackingContentString;
-@property(readonly) NSString * changeTrackingTitleString;
-@property(readonly) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <TSKModel> * hostingModel;
-@property TSDDrawableInfo * parent;
-@property(copy) TSDCommentStorage * storage;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int annotationDisplayStringType;
+@property (nonatomic, readonly) int annotationType;
+@property (nonatomic, readonly) TSKAnnotationAuthor *author;
+@property (nonatomic, readonly) NSString *changeTrackingContentFormatString;
+@property (nonatomic, readonly) NSString *changeTrackingContentString;
+@property (nonatomic, readonly) NSString *changeTrackingTitleString;
+@property (nonatomic, readonly) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <TSKModel> *hostingModel;
+@property (nonatomic) TSDDrawableInfo *parent;
+@property (nonatomic, copy) TSDCommentStorage *storage;
+@property (readonly) Class superclass;
 
 - (int)annotationDisplayStringType;
 - (int)annotationType;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKABMutableMultiValue : GKABMultiValue {
-}
+@interface GKABMutableMultiValue : GKABMultiValue
 
 - (void*)ABMutableMultiValue;
 - (id)addValue:(id)arg1 withLabel:(id)arg2;

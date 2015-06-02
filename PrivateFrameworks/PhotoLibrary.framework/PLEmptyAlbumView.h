@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSObject<PLAlbumProtocol>, NSString, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer;
-
 @interface PLEmptyAlbumView : UIView {
     struct NSObject { Class x1; } *_album;
     int _currentOrientation;
@@ -28,9 +26,9 @@
     BOOL _useLargeImages;
 }
 
-@property(retain) NSObject<PLAlbumProtocol> * album;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property int filter;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *album;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) int filter;
 
 - (id)_emptyRollImageForAlbum:(struct NSObject { Class x1; }*)arg1 interfaceOrientation:(int)arg2;
 - (void)_longPressGesture:(id)arg1;

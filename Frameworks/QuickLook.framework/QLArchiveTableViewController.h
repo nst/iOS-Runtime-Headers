@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLArchiveViewer;
-
 @interface QLArchiveTableViewController : UITableViewController {
     QLArchiveViewer *_archiveViewer;
 }
 
-@property QLArchiveViewer * archiveViewer;
+@property QLArchiveViewer *archiveViewer;
 
 - (id)archiveViewer;
 - (void)setArchiveViewer:(id)arg1;

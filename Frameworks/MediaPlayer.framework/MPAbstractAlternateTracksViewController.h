@@ -3,8 +3,8 @@
  */
 
 @interface MPAbstractAlternateTracksViewController : MPViewController {
-    unsigned int _previousTracks[2];
-    unsigned int _selectedTracks[2];
+    unsigned int _previousTracks;
+    unsigned int _selectedTracks;
 }
 
 - (void)_alternateTypesChangedNotification:(id)arg1;

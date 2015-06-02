@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDHealthDaemon>, NSDate, NSString, NSUUID;
-
 @interface HDNanoPairingPersistentInfo : NSObject {
     BOOL _activationFinished;
     <HDHealthDaemon> *_healthDaemon;
@@ -14,13 +12,13 @@
     NSUUID *_registryPairingUUID;
 }
 
-@property(getter=isActivationFinished,readonly) BOOL activationFinished;
-@property <HDHealthDaemon> * healthDaemon;
-@property(readonly) NSUUID * healthPairingUUID;
-@property(readonly) NSDate * lastActivationAttempt;
-@property(copy,readonly) NSString * pairedStoragePath;
-@property(readonly) NSUUID * persistentPairingUUID;
-@property(readonly) NSUUID * registryPairingUUID;
+@property (getter=isActivationFinished, nonatomic, readonly) BOOL activationFinished;
+@property (nonatomic) <HDHealthDaemon> *healthDaemon;
+@property (nonatomic, readonly) NSUUID *healthPairingUUID;
+@property (nonatomic, readonly) NSDate *lastActivationAttempt;
+@property (nonatomic, readonly, copy) NSString *pairedStoragePath;
+@property (nonatomic, readonly) NSUUID *persistentPairingUUID;
+@property (nonatomic, readonly) NSUUID *registryPairingUUID;
 
 + (id)_activePairingValuesWithHealthDaemon:(id)arg1 error:(id*)arg2;
 + (id)nanoPairingPersistentInfoWithHealthDaemon:(id)arg1;

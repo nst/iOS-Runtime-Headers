@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVErrorResolverDelegate>;
-
 @interface MPAVErrorResolver : NSObject {
     <MPAVErrorResolverDelegate> *_delegate;
 }
 
-@property <MPAVErrorResolverDelegate> * delegate;
+@property (nonatomic) <MPAVErrorResolverDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

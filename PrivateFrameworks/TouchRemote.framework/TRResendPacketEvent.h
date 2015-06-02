@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSArray;
-
 @interface TRResendPacketEvent : TRPacketEvent {
     NSArray *_resendPacketEventClasses;
 }
 
-@property(readonly) NSArray * resendPacketEventClasses;
+@property (nonatomic, readonly) NSArray *resendPacketEventClasses;
 
 + (unsigned int)_packetEventType;
 

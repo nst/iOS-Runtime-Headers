@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, NSObject<UIAlertControllerVisualStyleProviding>, NSSet, NSString, UIAlertAction, UIPopoverController, UITapGestureRecognizer, UIView, UIViewController, _UIAlertControllerTextFieldViewController;
-
 @interface UIAlertController : UIViewController <UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, _UIAlertControllerTextFieldViewControllerContaining> {
     UIPopoverController *__compatibilityPopoverController;
     BOOL __shouldAllowNilParameters;
@@ -30,54 +28,52 @@
     BOOL _textFieldsHidden;
 }
 
-@property(readonly) NSArray * _actionDelimiterIndices;
-@property(readonly) NSMutableArray * _actions;
-@property(readonly) UIAlertAction * _cancelAction;
-@property(setter=_setCompatibilityPopoverController:) UIPopoverController * _compatibilityPopoverController;
-@property(setter=_setDefaultAlertAction:) UIAlertAction * _defaultAlertAction;
-@property(readonly) UIView * _dimmingView;
-@property(readonly) UIView * _foregroundView;
-@property(getter=_isHidden,setter=_setHidden:) BOOL _hidden;
-@property(readonly) int _resolvedStyle;
-@property(readonly) BOOL _shouldAlignToKeyboard;
-@property(setter=_setShouldAllowNilParameters:) BOOL _shouldAllowNilParameters;
-@property(setter=_setShouldEnsureContentControllerViewIsVisibleOnAppearance:) BOOL _shouldEnsureContentControllerViewIsVisibleOnAppearance;
+@property (readonly) NSArray *_actionDelimiterIndices;
+@property (readonly) NSMutableArray *_actions;
+@property (readonly) UIAlertAction *_cancelAction;
+@property (setter=_setCompatibilityPopoverController:, nonatomic) UIPopoverController *_compatibilityPopoverController;
+@property (setter=_setDefaultAlertAction:, nonatomic) UIAlertAction *_defaultAlertAction;
+@property (readonly) UIView *_dimmingView;
+@property (readonly) UIView *_foregroundView;
+@property (getter=_isHidden, setter=_setHidden:, nonatomic) BOOL _hidden;
+@property (readonly) int _resolvedStyle;
+@property (readonly) BOOL _shouldAlignToKeyboard;
+@property (setter=_setShouldAllowNilParameters:) BOOL _shouldAllowNilParameters;
+@property (setter=_setShouldEnsureContentControllerViewIsVisibleOnAppearance:, nonatomic) BOOL _shouldEnsureContentControllerViewIsVisibleOnAppearance;
 @property BOOL _shouldFlipFrameForShimDismissal;
-@property(readonly) BOOL _shouldProvideDimmingView;
-@property(setter=_setTextFieldsHidden:) BOOL _textFieldsHidden;
-@property NSArray * actions;
-@property(getter=_attributedDetailMessage,setter=_setAttributedDetailMessage:,copy) NSAttributedString * attributedDetailMessage;
-@property(getter=_attributedMessage,setter=_setAttributedMessage:,copy) NSAttributedString * attributedMessage;
-@property(getter=_attributedTitle,setter=_setAttributedTitle:,copy) NSAttributedString * attributedTitle;
-@property(retain) UIViewController * contentViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=_hasPreservedInputViews,setter=_setHasPreservedInputViews:) BOOL hasPreservedInputViews;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * message;
-@property int preferredStyle;
-@property(getter=_styleProvider,setter=_setStyleProvider:,retain) NSObject<UIAlertControllerVisualStyleProviding> * styleProvider;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * textFields;
-@property(copy) NSString * title;
+@property (readonly) BOOL _shouldProvideDimmingView;
+@property (setter=_setTextFieldsHidden:) BOOL _textFieldsHidden;
+@property (nonatomic) NSArray *actions;
+@property (getter=_attributedDetailMessage, setter=_setAttributedDetailMessage:, nonatomic, copy) NSAttributedString *attributedDetailMessage;
+@property (getter=_attributedMessage, setter=_setAttributedMessage:, nonatomic, copy) NSAttributedString *attributedMessage;
+@property (getter=_attributedTitle, setter=_setAttributedTitle:, nonatomic, copy) NSAttributedString *attributedTitle;
+@property (nonatomic, retain) UIViewController *contentViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=_hasPreservedInputViews, setter=_setHasPreservedInputViews:, nonatomic) BOOL hasPreservedInputViews;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic) int preferredStyle;
+@property (getter=_styleProvider, setter=_setStyleProvider:, nonatomic, retain) NSObject<UIAlertControllerVisualStyleProviding> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *textFields;
+@property (nonatomic, copy) NSString *title;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_alertControllerWithTitle:(id)arg1 message:(id)arg2;
 + (void)_setShouldUsePresentationController:(BOOL)arg1;
 + (BOOL)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (BOOL)_shouldUsePresentationController;
 + (id)alertControllerWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(int)arg3;
-+ (id)notifyMeConfirmationControllerWithHandler:(id)arg1;
-+ (id)pu_alertForCPLEnableError:(id)arg1 actionHandler:(id)arg2 cancelHandler:(id)arg3;
-+ (id)pu_alertForStorageUpgradeLoadFailure;
-+ (id)pu_deleteITunesContentAlertWithAssetCount:(int)arg1 includesPhotos:(BOOL)arg2 includesVideos:(BOOL)arg3 actionHandler:(id)arg4 cancelHandler:(id)arg5;
 
 - (id)_actionDelimiterIndices;
 - (void)_actionViewHighlightChanged:(id)arg1;
 - (void)_actionViewTapped:(id)arg1;
 - (id)_actions;
-- (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id)arg4;
-- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3;
-- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3 shouldDismissHandler:(id)arg4;
+- (void)_addActionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id /* block */)arg4;
+- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
+- (void)_addActionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3 shouldDismissHandler:(id /* block */)arg4;
 - (void)_addSectionDelimiter;
 - (id)_alertControllerContainer;
 - (id)_alertControllerView;
@@ -105,7 +101,6 @@
 - (void)_flipFrameForShimDismissalIfNecessary;
 - (id)_foregroundView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_gkAddCancelButtonWithNoAction;
 - (void)_handleReturn;
 - (BOOL)_hasContentToDisplay;
 - (BOOL)_hasPreservedInputViews;
@@ -163,7 +158,7 @@
 - (id)_visualStyle;
 - (id)actions;
 - (void)addAction:(id)arg1;
-- (void)addTextFieldWithConfigurationHandler:(id)arg1;
+- (void)addTextFieldWithConfigurationHandler:(id /* block */)arg1;
 - (BOOL)canBecomeFirstResponder;
 - (id)cancelAction;
 - (id)contentViewController;
@@ -198,5 +193,19 @@
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visualStyleForAlertControllerStyle:(int)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)notifyMeConfirmationControllerWithHandler:(id /* block */)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_alertForCPLEnableError:(id)arg1 actionHandler:(id /* block */)arg2 cancelHandler:(id /* block */)arg3;
++ (id)pu_alertForStorageUpgradeLoadFailure;
++ (id)pu_deleteITunesContentAlertWithAssetCount:(int)arg1 includesPhotos:(BOOL)arg2 includesVideos:(BOOL)arg3 actionHandler:(id /* block */)arg4 cancelHandler:(id /* block */)arg5;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkAddCancelButtonWithNoAction;
 
 @end

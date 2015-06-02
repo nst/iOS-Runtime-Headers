@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaPickerController;
-
 @interface MPRemoteMediaPickerController : _UIRemoteViewController {
     MPMediaPickerController *_mediaPickerController;
 }
 
-@property MPMediaPickerController * mediaPickerController;
+@property (nonatomic) MPMediaPickerController *mediaPickerController;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionInfo, NSString;
-
 @interface BBParentSectionDataProviderFactory : NSObject <BBSectionIdentity, NSSecureCoding> {
     BBSectionInfo *_sectionInfo;
     NSString *_universalSectionIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) BBSectionInfo * sectionInfo;
-@property(readonly) Class superclass;
-@property(copy) NSString * universalSectionIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) BBSectionInfo *sectionInfo;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *universalSectionIdentifier;
 
 + (id)factoryFromSectionInfo:(id)arg1;
 + (BOOL)supportsSecureCoding;

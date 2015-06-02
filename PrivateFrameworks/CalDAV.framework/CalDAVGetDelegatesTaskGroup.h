@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableArray;
-
 @interface CalDAVGetDelegatesTaskGroup : CalDAVGetDelegatesBaseTaskGroup {
     NSMutableArray *_nestedGroupPrincipalURLs;
     int _state;
 }
 
-@property(retain) NSMutableArray * nestedGroupPrincipalURLs;
-@property int state;
+@property (nonatomic, retain) NSMutableArray *nestedGroupPrincipalURLs;
+@property (nonatomic) int state;
 
 - (void)_expandProperties;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKJSNavigationDocument, IKJSObject, JSManagedValue, NSString, SKUITabBarItem;
-
 @interface SKUIJSTabBarItem : IKJSObject <SKUIJSTabBarItem> {
     JSManagedValue *_managedNavigationDocument;
     IKJSNavigationDocument *_navigationDocument;
@@ -11,10 +9,10 @@
     SKUITabBarItem *_tabBarItem;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) IKJSNavigationDocument * navigationDocument;
-@property(readonly) NSString * rootURL;
-@property(readonly) SKUITabBarItem * tabBarItem;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
+@property (nonatomic, readonly) NSString *rootURL;
+@property (nonatomic, readonly) SKUITabBarItem *tabBarItem;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -10,9 +10,9 @@
     BOOL _success;
 }
 
-@property BOOL hasIsLong;
-@property BOOL isLong;
-@property BOOL success;
+@property (nonatomic) BOOL hasIsLong;
+@property (nonatomic) BOOL isLong;
+@property (nonatomic) BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

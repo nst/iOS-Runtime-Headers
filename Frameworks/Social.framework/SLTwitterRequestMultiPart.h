@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSData, NSString;
-
 @interface SLTwitterRequestMultiPart : NSObject {
     NSString *_name;
     NSData *_payload;
     NSString *_type;
 }
 
-@property(copy) NSString * name;
-@property(retain) NSData * payload;
-@property(copy) NSString * type;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSData *payload;
+@property (nonatomic, copy) NSString *type;
 
 + (id)multiPartWithName:(id)arg1 payload:(id)arg2 type:(id)arg3;
 + (id)multipartBoundary;

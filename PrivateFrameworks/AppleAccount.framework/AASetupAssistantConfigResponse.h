@@ -2,30 +2,28 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
-
 @interface AASetupAssistantConfigResponse : AAResponse {
     NSDictionary *_urls;
 }
 
-@property(readonly) NSString * aboutURL;
-@property(readonly) NSString * activeEmailDomain;
-@property(readonly) NSString * authenticateURL;
-@property(readonly) NSString * checkValidityURL;
-@property(readonly) NSString * createAppleIDURL;
-@property(readonly) NSString * createDelegateAccountsURL;
-@property(readonly) NSString * existingAppleIDTermsUIURL;
-@property(readonly) NSString * genericTermsURL;
-@property(readonly) NSString * iForgotUIURL;
-@property(readonly) NSString * iForgotURL;
-@property(readonly) NSString * loginDelegatesURL;
-@property(readonly) BOOL setupAssistantServerEnabled;
-@property(readonly) NSString * signingSessionCertURL;
-@property(readonly) NSString * signingSessionURL;
-@property(readonly) NSString * updateAppleIDURL;
-@property(readonly) NSString * upgradeIOSTermsUI;
-@property(readonly) NSString * upgradeStatusURL;
-@property(readonly) NSString * xmlUI;
+@property (nonatomic, readonly) NSString *aboutURL;
+@property (nonatomic, readonly) NSString *activeEmailDomain;
+@property (nonatomic, readonly) NSString *authenticateURL;
+@property (nonatomic, readonly) NSString *checkValidityURL;
+@property (nonatomic, readonly) NSString *createAppleIDURL;
+@property (nonatomic, readonly) NSString *createDelegateAccountsURL;
+@property (nonatomic, readonly) NSString *existingAppleIDTermsUIURL;
+@property (nonatomic, readonly) NSString *genericTermsURL;
+@property (nonatomic, readonly) NSString *iForgotUIURL;
+@property (nonatomic, readonly) NSString *iForgotURL;
+@property (nonatomic, readonly) NSString *loginDelegatesURL;
+@property (nonatomic, readonly) BOOL setupAssistantServerEnabled;
+@property (nonatomic, readonly) NSString *signingSessionCertURL;
+@property (nonatomic, readonly) NSString *signingSessionURL;
+@property (nonatomic, readonly) NSString *updateAppleIDURL;
+@property (nonatomic, readonly) NSString *upgradeIOSTermsUI;
+@property (nonatomic, readonly) NSString *upgradeStatusURL;
+@property (nonatomic, readonly) NSString *xmlUI;
 
 - (void).cxx_destruct;
 - (id)aboutURL;

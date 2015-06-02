@@ -6,7 +6,7 @@
     unsigned int _numberOfRequestsAllowedInRateLimitWindow;
 }
 
-@property unsigned int numberOfRequestsAllowedInRateLimitWindow;
+@property (nonatomic) unsigned int numberOfRequestsAllowedInRateLimitWindow;
 
 + (id)sharedSource;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSOperationQueue;
-
 @interface TSDSwatchCache : NSObject {
     NSOperationQueue *mOperationQueue;
 }

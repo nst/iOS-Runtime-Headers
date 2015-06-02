@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStatusBarTimeItemView : UIStatusBarItemView {
     NSString *_timeString;
 }

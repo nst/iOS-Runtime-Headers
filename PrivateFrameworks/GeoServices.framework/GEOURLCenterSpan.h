@@ -15,14 +15,14 @@
     double _longitudeDelta;
 }
 
-@property BOOL hasLatitude;
-@property BOOL hasLatitudeDelta;
-@property BOOL hasLongitude;
-@property BOOL hasLongitudeDelta;
-@property double latitude;
-@property double latitudeDelta;
-@property double longitude;
-@property double longitudeDelta;
+@property (nonatomic) BOOL hasLatitude;
+@property (nonatomic) BOOL hasLatitudeDelta;
+@property (nonatomic) BOOL hasLongitude;
+@property (nonatomic) BOOL hasLongitudeDelta;
+@property (nonatomic) double latitude;
+@property (nonatomic) double latitudeDelta;
+@property (nonatomic) double longitude;
+@property (nonatomic) double longitudeDelta;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

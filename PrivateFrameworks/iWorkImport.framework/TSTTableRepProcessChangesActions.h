@@ -39,20 +39,20 @@
     BOOL _updateEditorRemainders;
 }
 
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyCellRange;
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyStrokeRange;
-@property BOOL hideChromeContextMenuButton;
-@property BOOL hideStepperHUD;
-@property BOOL invalidateAllChrome;
-@property BOOL invalidateAllChromeCaches;
-@property BOOL invalidateColumnChrome;
-@property BOOL invalidateKnobs;
-@property BOOL invalidateRowChrome;
-@property BOOL invalidateSelection;
-@property BOOL invalidateTableName;
-@property BOOL setNeedsDisplay;
-@property BOOL syncReferenceHighlightState;
-@property BOOL updateEditorRemainders;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyCellRange;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } dirtyStrokeRange;
+@property (nonatomic) BOOL hideChromeContextMenuButton;
+@property (nonatomic) BOOL hideStepperHUD;
+@property (nonatomic) BOOL invalidateAllChrome;
+@property (nonatomic) BOOL invalidateAllChromeCaches;
+@property (nonatomic) BOOL invalidateColumnChrome;
+@property (nonatomic) BOOL invalidateKnobs;
+@property (nonatomic) BOOL invalidateRowChrome;
+@property (nonatomic) BOOL invalidateSelection;
+@property (nonatomic) BOOL invalidateTableName;
+@property (nonatomic) BOOL setNeedsDisplay;
+@property (nonatomic) BOOL syncReferenceHighlightState;
+@property (nonatomic) BOOL updateEditorRemainders;
 
 - (id).cxx_construct;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyCellRange;

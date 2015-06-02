@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIAlertView, UIPrintingProgressViewController;
-
 @interface UIPrintingProgress : NSObject {
     UIAlertView *_alert;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelHandler;
-
+    id /* block */ _cancelHandler;
     double _displayTime;
     BOOL _donePrinting;
     BOOL _forceDisplayAsAlert;
@@ -29,7 +19,7 @@
 - (void)didPresentAlertView:(id)arg1;
 - (void)endProgress;
 - (void)hideProgressAnimated:(BOOL)arg1;
-- (id)initWithPrinterName:(id)arg1 forceDisplayAsAlert:(BOOL)arg2 cancelHandler:(id)arg3;
+- (id)initWithPrinterName:(id)arg1 forceDisplayAsAlert:(BOOL)arg2 cancelHandler:(id /* block */)arg3;
 - (double)nextPrintDelay;
 - (void)progressCancel;
 - (BOOL)progressVisible;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSGetAuthorizedAccountsTokenRequest : HSRequest {
-}
+@interface HSGetAuthorizedAccountsTokenRequest : HSRequest
 
 + (id)requestWithDSID:(unsigned long long)arg1 deviceGUID:(id)arg2;
 

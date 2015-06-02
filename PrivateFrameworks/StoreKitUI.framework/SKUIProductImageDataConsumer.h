@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, UIColor;
-
 @interface SKUIProductImageDataConsumer : SKUIImageDataConsumer <NSCopying> {
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
@@ -13,10 +11,10 @@
     } _iconSize;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(readonly) struct CGSize { float x1; float x2; } iconSize;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } iconSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
 
 + (id)cardConsumer;
 + (id)chartsConsumer;

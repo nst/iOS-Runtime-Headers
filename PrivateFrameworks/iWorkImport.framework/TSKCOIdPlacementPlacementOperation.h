@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface TSKCOIdPlacementPlacementOperation : TSKCOIdPlacementBaseOperation {
-}
+@interface TSKCOIdPlacementPlacementOperation : TSKCOIdPlacementBaseOperation
 
 - (id)description;
 - (id)initWithIdAddress:(id)arg1 fromIndex:(int)arg2 toIndex:(int)arg3 dominating:(BOOL)arg4;

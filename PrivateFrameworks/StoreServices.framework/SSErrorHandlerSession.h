@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, SSXPCConnection;
-
 @interface SSErrorHandlerSession : NSObject {
     SSXPCConnection *_controlConnection;
     NSObject<OS_dispatch_queue> *_dispatchQueue;

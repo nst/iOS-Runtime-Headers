@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString;
-
 @interface MSShareStateNotificationString : NSObject {
     NSString *_body;
     NSString *_sourcePersonID;
     NSString *_title;
 }
 
-@property(retain) NSString * body;
-@property(retain) NSString * sourcePersonID;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *body;
+@property (nonatomic, retain) NSString *sourcePersonID;
+@property (nonatomic, retain) NSString *title;
 
 + (id)notificationStringsWithTitle:(id)arg1 body:(id)arg2 sourcePersonID:(id)arg3;
 

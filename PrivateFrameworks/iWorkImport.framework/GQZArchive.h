@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQZArchiveInputStream>, NSMutableDictionary, NSString;
-
 @interface GQZArchive : NSObject {
     NSMutableDictionary *mEntries;
     NSString *mFilename;

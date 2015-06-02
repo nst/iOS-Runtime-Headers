@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWDeviceOrientationMonitorPortraitLandscapeUpdateDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface BWDeviceOrientationMonitor : NSObject {
     unsigned int _currentOrientation;
     unsigned int _mostRecentPortraitLandscapeOrientation;
@@ -13,8 +11,8 @@
     struct OpaqueFigSimpleMutex { } *_stateMutex;
 }
 
-@property(readonly) unsigned int mostRecentPortraitLandscapeOrientation;
-@property <BWDeviceOrientationMonitorPortraitLandscapeUpdateDelegate> * portraitLandscapeUpdateDelegate;
+@property (nonatomic, readonly) unsigned int mostRecentPortraitLandscapeOrientation;
+@property (nonatomic) <BWDeviceOrientationMonitorPortraitLandscapeUpdateDelegate> *portraitLandscapeUpdateDelegate;
 
 + (void)initialize;
 

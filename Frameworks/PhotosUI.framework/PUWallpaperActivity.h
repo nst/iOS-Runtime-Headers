@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIViewController;
-
 @interface PUWallpaperActivity : PUActivity {
     UIViewController *_wallpaperActivityViewController;
 }

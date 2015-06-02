@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMutableArray, VKTileSource;
-
 @interface VKOverlayTileSource : VKTileSource {
     NSMutableArray *_overlays;
     VKTileSource *_tileSourceToMatch;
 }
 
-@property(readonly) NSArray * overlays;
+@property (nonatomic, readonly) NSArray *overlays;
 
 - (void)_overlayBoundingMapRegionChanged:(id)arg1;
 - (void)addOverlay:(id)arg1;

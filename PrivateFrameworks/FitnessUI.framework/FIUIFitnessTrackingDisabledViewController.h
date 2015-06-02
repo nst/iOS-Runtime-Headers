@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UITextView;
-
 @interface FIUIFitnessTrackingDisabledViewController : UIViewController {
     UITextView *_textView;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class <MPUStackViewDataSource>, NSArray, NSMutableArray, NSString, UIView, UIWindow;
-
 @interface MPUStackView : UIView {
     struct { 
         struct CGSize { 
@@ -50,18 +48,18 @@
     UIWindow *_window;
 }
 
-@property struct CGSize { float x1; float x2; } baseSize;
-@property <MPUStackViewDataSource> * dataSource;
-@property BOOL forcesIntegralX;
-@property BOOL forcesIntegralY;
-@property(readonly) Class itemClass;
-@property(readonly) NSString * itemReuseIdentifier;
-@property(readonly) NSArray * items;
-@property struct UIOffset { float x1; float x2; } maximumRelativeOffsetStep;
-@property(readonly) int numberOfItems;
-@property UIView * perspectiveTargetView;
-@property struct CGSize { float x1; float x2; } sizeInsetStep;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property (nonatomic) struct CGSize { float x1; float x2; } baseSize;
+@property (nonatomic) <MPUStackViewDataSource> *dataSource;
+@property (nonatomic) BOOL forcesIntegralX;
+@property (nonatomic) BOOL forcesIntegralY;
+@property (nonatomic, readonly) Class itemClass;
+@property (nonatomic, readonly) NSString *itemReuseIdentifier;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic) struct UIOffset { float x1; float x2; } maximumRelativeOffsetStep;
+@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic) UIView *perspectiveTargetView;
+@property (nonatomic) struct CGSize { float x1; float x2; } sizeInsetStep;
+@property (nonatomic) struct CGPoint { float x1; float x2; } vanishingPoint;
 
 - (void).cxx_destruct;
 - (id)_dequeueReusableItem;

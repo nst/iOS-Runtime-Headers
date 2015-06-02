@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFObservable>, <SBFScheduler>;
-
 @interface _SBFScheduledObservable : SBFObservable {
     <SBFObservable> *_observable;
     <SBFScheduler> *_scheduler;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDate, NSNumber, NSString, PFUbiquityGlobalObjectID, PFUbiquityKnowledgeVector, PFUbiquityLocation;
-
 @interface PFUbiquityTransactionEntryLight : NSObject {
     NSString *_actingPeerID;
     PFUbiquityGlobalObjectID *_globalID;
@@ -15,14 +13,14 @@
     int _transactionType;
 }
 
-@property(retain) NSString * actingPeerID;
-@property(retain) PFUbiquityGlobalObjectID * globalID;
-@property(retain) PFUbiquityKnowledgeVector * knowledgeVector;
-@property(retain) NSString * storeName;
-@property(retain) NSDate * transactionDate;
-@property(retain) PFUbiquityLocation * transactionLogLocation;
-@property(retain) NSNumber * transactionNumber;
-@property int transactionType;
+@property (nonatomic, retain) NSString *actingPeerID;
+@property (nonatomic, retain) PFUbiquityGlobalObjectID *globalID;
+@property (nonatomic, retain) PFUbiquityKnowledgeVector *knowledgeVector;
+@property (nonatomic, retain) NSString *storeName;
+@property (nonatomic, retain) NSDate *transactionDate;
+@property (nonatomic, retain) PFUbiquityLocation *transactionLogLocation;
+@property (nonatomic, retain) NSNumber *transactionNumber;
+@property (nonatomic) int transactionType;
 
 - (id)actingPeerID;
 - (void)dealloc;

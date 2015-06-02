@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBlendingHighlightView;
-
 @interface _UIAlertControllerBlendingSeparatorView : UICollectionReusableView {
     _UIBlendingHighlightView *_blendingHighlightView;
 }

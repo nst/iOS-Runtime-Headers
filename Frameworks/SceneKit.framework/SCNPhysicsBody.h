@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class SCNNode, SCNPhysicsShape;
-
 @interface SCNPhysicsBody : NSObject <NSCopying, NSSecureCoding> {
     BOOL _allowsResting;
     float _angularDamping;
@@ -50,23 +43,23 @@
     } _velocityFactor;
 }
 
-@property BOOL allowsResting;
-@property float angularDamping;
-@property struct SCNVector4 { float x1; float x2; float x3; float x4; } angularVelocity;
-@property struct SCNVector3 { float x1; float x2; float x3; } angularVelocityFactor;
-@property unsigned int categoryBitMask;
-@property float charge;
-@property unsigned int collisionBitMask;
-@property float damping;
-@property float friction;
-@property(readonly) BOOL isResting;
-@property float mass;
-@property(retain) SCNPhysicsShape * physicsShape;
-@property float restitution;
-@property float rollingFriction;
-@property int type;
-@property struct SCNVector3 { float x1; float x2; float x3; } velocity;
-@property struct SCNVector3 { float x1; float x2; float x3; } velocityFactor;
+@property (nonatomic) BOOL allowsResting;
+@property (nonatomic) float angularDamping;
+@property (nonatomic) struct SCNVector4 { float x1; float x2; float x3; float x4; } angularVelocity;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } angularVelocityFactor;
+@property (nonatomic) unsigned int categoryBitMask;
+@property (nonatomic) float charge;
+@property (nonatomic) unsigned int collisionBitMask;
+@property (nonatomic) float damping;
+@property (nonatomic) float friction;
+@property (nonatomic, readonly) BOOL isResting;
+@property (nonatomic) float mass;
+@property (nonatomic, retain) SCNPhysicsShape *physicsShape;
+@property (nonatomic) float restitution;
+@property (nonatomic) float rollingFriction;
+@property (nonatomic) int type;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } velocity;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } velocityFactor;
 
 + (id)SCNJSExportProtocol;
 + (id)bodyWithType:(int)arg1 shape:(id)arg2;

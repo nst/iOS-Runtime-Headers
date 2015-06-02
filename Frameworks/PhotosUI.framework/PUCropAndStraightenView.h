@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUCropAndStraightenViewDelegate>, NSString, PLImageGeometry, UIImage, UIImageView, UIScrollView, UIView;
-
 @interface PUCropAndStraightenView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     struct CGRect { 
         struct CGPoint { 
@@ -51,31 +49,31 @@
     BOOL _tracking;
 }
 
-@property(setter=_setFittingRegion:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _fittingRegion;
-@property(setter=_setImageGeometry:,retain) PLImageGeometry * _imageGeometry;
-@property(setter=_setImageView:,retain) UIImageView * _imageView;
-@property(setter=_setPreferredZoomScale:) float _preferredZoomScale;
-@property(getter=_isRotationSideways,readonly) BOOL _rotationSideways;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _rotationTransform;
-@property(setter=_setScrollView:,retain) UIScrollView * _scrollView;
-@property(setter=_setScrollViewReference:,retain) UIView * _scrollViewReference;
-@property(getter=_isScrollViewTracking,setter=_setScrollViewTracking:) BOOL _scrollViewTracking;
-@property(getter=_isUpdatingForCrop,setter=_setUpdatingForCrop:) BOOL _updatingForCrop;
-@property(getter=_isUpdatingForFit,setter=_setUpdatingForFit:) BOOL _updatingForFit;
-@property(getter=_isUpdatingForStraighten,setter=_setUpdatingForStraighten:) BOOL _updatingForStraighten;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } canvasFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDecelerating,readonly) BOOL decelerating;
-@property <PUCropAndStraightenViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageCropRect;
-@property int orientation;
-@property float straightenAngle;
-@property(readonly) Class superclass;
-@property(getter=isTracking) BOOL tracking;
+@property (setter=_setFittingRegion:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _fittingRegion;
+@property (setter=_setImageGeometry:, nonatomic, retain) PLImageGeometry *_imageGeometry;
+@property (setter=_setImageView:, nonatomic, retain) UIImageView *_imageView;
+@property (setter=_setPreferredZoomScale:, nonatomic) float _preferredZoomScale;
+@property (getter=_isRotationSideways, nonatomic, readonly) BOOL _rotationSideways;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } _rotationTransform;
+@property (setter=_setScrollView:, nonatomic, retain) UIScrollView *_scrollView;
+@property (setter=_setScrollViewReference:, nonatomic, retain) UIView *_scrollViewReference;
+@property (getter=_isScrollViewTracking, setter=_setScrollViewTracking:, nonatomic) BOOL _scrollViewTracking;
+@property (getter=_isUpdatingForCrop, setter=_setUpdatingForCrop:, nonatomic) BOOL _updatingForCrop;
+@property (getter=_isUpdatingForFit, setter=_setUpdatingForFit:, nonatomic) BOOL _updatingForFit;
+@property (getter=_isUpdatingForStraighten, setter=_setUpdatingForStraighten:, nonatomic) BOOL _updatingForStraighten;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } canvasFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDecelerating, nonatomic, readonly) BOOL decelerating;
+@property (nonatomic) <PUCropAndStraightenViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageCropRect;
+@property (nonatomic) int orientation;
+@property (nonatomic) float straightenAngle;
+@property (readonly) Class superclass;
+@property (getter=isTracking, nonatomic) BOOL tracking;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_boundingSizeOfStraightenedRectWithSize:(struct CGSize { float x1; float x2; })arg1;

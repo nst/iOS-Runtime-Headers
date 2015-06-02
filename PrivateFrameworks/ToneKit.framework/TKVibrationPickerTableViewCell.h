@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationPickerTableViewCellDelegate>, NSString, UIColor, UIFont, UITextField;
-
 @interface TKVibrationPickerTableViewCell : TKPickerTableViewCell <UITextFieldDelegate> {
     <TKVibrationPickerTableViewCellDelegate> *_delegate;
     BOOL _editable;
@@ -11,20 +9,20 @@
     UITextField *_removableTextField;
 }
 
-@property(getter=_isDisplayingRemovableTextField,readonly) BOOL _displayingRemovableTextField;
-@property(setter=_setRemovableTextField:,retain) UITextField * _removableTextField;
-@property(getter=isChecked) BOOL checked;
-@property(copy,readonly) NSString * debugDescription;
-@property <TKVibrationPickerTableViewCellDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEditable) BOOL editable;
-@property(readonly) unsigned int hash;
-@property(retain) UIColor * highlightedTextColor;
-@property(retain) NSString * labelText;
-@property(retain) NSString * placeholderText;
-@property(retain) UIColor * regularTextColor;
-@property(retain) UIFont * regularTextFont;
-@property(readonly) Class superclass;
+@property (getter=_isDisplayingRemovableTextField, nonatomic, readonly) BOOL _displayingRemovableTextField;
+@property (setter=_setRemovableTextField:, nonatomic, retain) UITextField *_removableTextField;
+@property (getter=isChecked, nonatomic) BOOL checked;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TKVibrationPickerTableViewCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIColor *highlightedTextColor;
+@property (nonatomic, retain) NSString *labelText;
+@property (nonatomic, retain) NSString *placeholderText;
+@property (nonatomic, retain) UIColor *regularTextColor;
+@property (nonatomic, retain) UIFont *regularTextFont;
+@property (readonly) Class superclass;
 
 - (BOOL)_isDisplayingRemovableTextField;
 - (void)_layoutRemovableTextField;

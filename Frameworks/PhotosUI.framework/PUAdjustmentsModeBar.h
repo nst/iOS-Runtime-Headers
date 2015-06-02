@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUAdjustmentsModeBarDataSource>, <PUAdjustmentsModeBarDelegate>, NSArray, NSLayoutConstraint, NSNumberFormatter, NSString, PUAdjustmentsMode, UITableView, UIView, _PUSliderPlayheadBaseView, _UIDynamicValueAnimation;
-
 @interface PUAdjustmentsModeBar : UIView <PUPhotoEditLayoutStaticAdaptable, UITableViewDataSource, UITableViewDelegate> {
     UIView *_adjustmentViewsContainer;
     NSArray *_adjustmentViewsContainerConstraints;
@@ -38,24 +36,24 @@
     NSNumberFormatter *_zeroLevelValueFormatter;
 }
 
-@property <PUAdjustmentsModeBarDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUAdjustmentsModeBarDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float interactiveTransitionProgress;
-@property(readonly) int interactiveTransitionState;
-@property(readonly) BOOL isSlidersListReversed;
-@property(readonly) int layoutOrientation;
-@property(getter=isListViewExpanded,readonly) BOOL listViewExpanded;
-@property(getter=isListViewExpandedExplicitly,readonly) BOOL listViewExpandedExplicitly;
-@property float playheadSize;
-@property(retain) PUAdjustmentsMode * selectedMode;
-@property float shortSideSize;
-@property(readonly) BOOL shouldShowModePickerOnFirstDisplay;
-@property float slidersLongContentLength;
-@property float slidersShortSideLength;
-@property(readonly) Class superclass;
+@property (nonatomic) <PUAdjustmentsModeBarDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUAdjustmentsModeBarDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float interactiveTransitionProgress;
+@property (nonatomic, readonly) int interactiveTransitionState;
+@property (nonatomic, readonly) BOOL isSlidersListReversed;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (getter=isListViewExpanded, nonatomic, readonly) BOOL listViewExpanded;
+@property (getter=isListViewExpandedExplicitly, nonatomic, readonly) BOOL listViewExpandedExplicitly;
+@property (nonatomic) float playheadSize;
+@property (nonatomic, retain) PUAdjustmentsMode *selectedMode;
+@property (nonatomic) float shortSideSize;
+@property (nonatomic, readonly) BOOL shouldShowModePickerOnFirstDisplay;
+@property (nonatomic) float slidersLongContentLength;
+@property (nonatomic) float slidersShortSideLength;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_formattedLevelValue:(float)arg1;

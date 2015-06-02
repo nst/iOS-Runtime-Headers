@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface UIMotionEffectGroup : UIMotionEffect {
     NSArray *_motionEffects;
 }
 
-@property(copy) NSArray * motionEffects;
+@property (nonatomic, copy) NSArray *motionEffects;
 
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCH3DSceneDelegate>, NSMutableArray, NSMutableDictionary, NSObject<TSCH3DScenePropertyAccessorFactory>, TSCH3DCamera, TSCH3DScene, TSCH3DSceneObject, TSCH3DScenePropertyAccessor, TSUNoCopyDictionary;
-
 @interface TSCH3DScene : NSObject {
     TSCH3DScenePropertyAccessor *mAccessor;
     NSObject<TSCH3DScenePropertyAccessorFactory> *mAccessorFactory;
@@ -16,12 +14,12 @@
     NSMutableDictionary *mPropertiesMap;
 }
 
-@property(retain) TSCH3DScenePropertyAccessor * accessor;
-@property(retain) NSObject<TSCH3DScenePropertyAccessorFactory> * accessorFactory;
-@property(retain) TSCH3DCamera * camera;
-@property(readonly) <TSCH3DSceneDelegate> * delegate;
-@property(retain) TSCH3DSceneObject * main;
-@property(retain) TSCH3DScene * original;
+@property (nonatomic, retain) TSCH3DScenePropertyAccessor *accessor;
+@property (nonatomic, retain) NSObject<TSCH3DScenePropertyAccessorFactory> *accessorFactory;
+@property (nonatomic, retain) TSCH3DCamera *camera;
+@property (nonatomic, readonly) <TSCH3DSceneDelegate> *delegate;
+@property (nonatomic, retain) TSCH3DSceneObject *main;
+@property (nonatomic, retain) TSCH3DScene *original;
 
 + (id)scene;
 
@@ -29,7 +27,7 @@
 - (id)accessorFactory;
 - (void)addObject:(id)arg1;
 - (id)camera;
-- (struct ChartScenePropertyAccessor { id x1; id x2; })chartProperties;
+- (struct ChartScenePropertyAccessor { id x1; })chartProperties;
 - (id)clone;
 - (void)copyPropertiesFromScene:(id)arg1;
 - (unsigned int)count;
@@ -39,8 +37,8 @@
 - (id)delegateForSceneObject:(id)arg1;
 - (id)delegateMap;
 - (id)description;
-- (void)enumerateAllObjectsUsingBlock:(id)arg1;
-- (void)enumerateObjectsUsingBlock:(id)arg1;
+- (void)enumerateAllObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (id)enumeratorForType:(id)arg1;
 - (id)enumeratorMap;
 - (id)extractObjects:(BOOL)arg1 ofClasses:(id)arg2;
@@ -58,7 +56,7 @@
 - (id)objects;
 - (id)original;
 - (void)overrideObjects;
-- (struct TSCH3DScenePart { id x1; id x2; })partForType:(id)arg1;
+- (struct TSCH3DScenePart { id x1; })partForType:(id)arg1;
 - (id)propertiesForType:(id)arg1;
 - (id)propertiesMap;
 - (id)reallocateObjects;
@@ -71,7 +69,7 @@
 - (void)resetEnumerator;
 - (void)resetObjects;
 - (void)resetProperties;
-- (id)returnRemoved:(BOOL)arg1 removeObjectsPassingTest:(id)arg2;
+- (id)returnRemoved:(BOOL)arg1 removeObjectsPassingTest:(id /* block */)arg2;
 - (void)setAccessor:(id)arg1;
 - (void)setAccessorFactory:(id)arg1;
 - (void)setCamera:(id)arg1;
@@ -81,7 +79,7 @@
 - (void)setEnumerator:(id)arg1 properties:(id)arg2 forType:(id)arg3;
 - (void)setMain:(id)arg1;
 - (void)setOriginal:(id)arg1;
-- (void)setPart:(struct TSCH3DScenePart { id x1; id x2; })arg1 forType:(id)arg2;
+- (void)setPart:(struct TSCH3DScenePart { id x1; })arg1 forType:(id)arg2;
 - (void)setProperties:(id)arg1 forType:(id)arg2;
 - (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })transform;
 

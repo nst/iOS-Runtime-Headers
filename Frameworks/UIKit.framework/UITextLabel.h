@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextLabel : UILabel {
-}
+@interface UITextLabel : UILabel
 
 - (int)alignment;
 - (BOOL)centersHorizontally;

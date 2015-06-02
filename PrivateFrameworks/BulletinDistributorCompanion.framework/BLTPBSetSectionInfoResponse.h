@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTPBSetSectionInfoResponse : PBCodable <NSCopying> {
-}
+@interface BLTPBSetSectionInfoResponse : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPUserCredentials, NSData, NSString;
-
 @interface GEORPProblemOptInRequest : PBRequest <NSCopying> {
     NSData *_devicePushToken;
     BOOL _didOptIn;
@@ -15,16 +13,16 @@
     NSString *_userEmail;
 }
 
-@property(retain) NSData * devicePushToken;
-@property BOOL didOptIn;
-@property(readonly) BOOL hasDevicePushToken;
-@property BOOL hasDidOptIn;
-@property(readonly) BOOL hasProblemId;
-@property(readonly) BOOL hasUserCredentials;
-@property(readonly) BOOL hasUserEmail;
-@property(retain) NSString * problemId;
-@property(retain) GEORPUserCredentials * userCredentials;
-@property(retain) NSString * userEmail;
+@property (nonatomic, retain) NSData *devicePushToken;
+@property (nonatomic) BOOL didOptIn;
+@property (nonatomic, readonly) BOOL hasDevicePushToken;
+@property (nonatomic) BOOL hasDidOptIn;
+@property (nonatomic, readonly) BOOL hasProblemId;
+@property (nonatomic, readonly) BOOL hasUserCredentials;
+@property (nonatomic, readonly) BOOL hasUserEmail;
+@property (nonatomic, retain) NSString *problemId;
+@property (nonatomic, retain) GEORPUserCredentials *userCredentials;
+@property (nonatomic, retain) NSString *userEmail;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

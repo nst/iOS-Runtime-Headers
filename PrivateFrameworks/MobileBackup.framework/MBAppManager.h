@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class MBSettingsContext, NSMutableDictionary;
-
 @interface MBAppManager : NSObject {
     NSMutableDictionary *_containersByID;
     MBSettingsContext *_settingsContext;

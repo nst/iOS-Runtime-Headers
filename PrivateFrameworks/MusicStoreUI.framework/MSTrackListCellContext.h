@@ -7,8 +7,8 @@
     BOOL _showSubtitle;
 }
 
-@property BOOL shouldHideContentRating;
-@property BOOL showSubtitle;
+@property (nonatomic) BOOL shouldHideContentRating;
+@property (nonatomic) BOOL showSubtitle;
 
 - (void)setShouldHideContentRating:(BOOL)arg1;
 - (void)setShowSubtitle:(BOOL)arg1;

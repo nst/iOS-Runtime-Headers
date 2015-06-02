@@ -9,8 +9,8 @@
     int _maneuverType;
 }
 
-@property BOOL hasManeuverType;
-@property int maneuverType;
+@property (nonatomic) BOOL hasManeuverType;
+@property (nonatomic) int maneuverType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

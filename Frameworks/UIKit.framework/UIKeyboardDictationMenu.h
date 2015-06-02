@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardDictationMenu : UIKeyboardMenuView {
-}
+@interface UIKeyboardDictationMenu : UIKeyboardMenuView
 
 + (id)activeInstance;
 + (id)sharedInstance;

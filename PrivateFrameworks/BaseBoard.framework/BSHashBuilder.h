@@ -14,7 +14,7 @@
 - (id)appendCGFloat:(float)arg1;
 - (id)appendDouble:(double)arg1;
 - (id)appendFloat:(float)arg1;
-- (id)appendHashingBlocks:(id)arg1;
+- (id)appendHashingBlocks:(id /* block */)arg1;
 - (id)appendInteger:(int)arg1;
 - (id)appendObject:(id)arg1;
 - (id)appendPoint:(struct CGPoint { float x1; float x2; })arg1;

@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface SBBulletinEvent : NSObject {
     NSString *_bulletinID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
 }
 
-+ (id)eventForBulletin:(id)arg1 block:(id)arg2;
++ (id)eventForBulletin:(id)arg1 block:(id /* block */)arg2;
 
 - (id)bulletinID;
 - (void)dealloc;
 - (void)execute;
-- (id)initWithBulletin:(id)arg1 block:(id)arg2;
+- (id)initWithBulletin:(id)arg1 block:(id /* block */)arg2;
 
 @end

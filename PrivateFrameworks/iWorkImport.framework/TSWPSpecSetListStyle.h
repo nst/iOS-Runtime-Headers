@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPListStyle;
-
 @interface TSWPSpecSetListStyle : TSWPSpecListStyle {
     TSWPListStyle *_listStyle;
     BOOL _unset;

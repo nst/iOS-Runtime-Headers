@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@interface TRKeepAlivePacketEvent : TRPacketEvent {
-}
+@interface TRKeepAlivePacketEvent : TRPacketEvent
 
 + (unsigned int)_packetEventType;
 

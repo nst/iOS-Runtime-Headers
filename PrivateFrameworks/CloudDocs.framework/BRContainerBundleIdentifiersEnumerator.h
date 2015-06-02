@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSEnumerator;
-
 @interface BRContainerBundleIdentifiersEnumerator : NSEnumerator {
     NSEnumerator *_enumerator;
 }

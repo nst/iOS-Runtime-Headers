@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLFormElement, NSString;
+@interface DOMHTMLButtonElement : DOMHTMLElement
 
-@interface DOMHTMLButtonElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * accessKey;
+@property (copy) NSString *accessKey;
 @property BOOL autofocus;
 @property BOOL disabled;
-@property(readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * name;
-@property(copy) NSString * type;
-@property(copy) NSString * value;
-@property(readonly) BOOL willValidate;
+@property (readonly) DOMHTMLFormElement *form;
+@property (copy) NSString *name;
+@property (copy) NSString *type;
+@property (copy) NSString *value;
+@property (readonly) BOOL willValidate;
 
 - (id)accessKey;
 - (BOOL)autofocus;

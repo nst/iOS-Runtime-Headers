@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
 @interface BSColor : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
@@ -11,14 +9,14 @@
     float _red;
 }
 
-@property(readonly) float alpha;
-@property(readonly) float blue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) float green;
-@property(readonly) unsigned int hash;
-@property(readonly) float red;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) float alpha;
+@property (nonatomic, readonly) float blue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) float green;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float red;
+@property (readonly) Class superclass;
 
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (BOOL)supportsSecureCoding;

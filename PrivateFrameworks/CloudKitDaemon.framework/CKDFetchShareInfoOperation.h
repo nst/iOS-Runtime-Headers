@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSMutableDictionary;
-
 @interface CKDFetchShareInfoOperation : CKDOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareInfoFetchedBlock;
-
+    id /* block */ _shareInfoFetchedBlock;
     NSMutableDictionary *_shareTokenInfosToFetchByURL;
     NSMutableArray *_shareURLsToFetch;
 }
 
-@property(copy) id shareInfoFetchedBlock;
-@property(retain) NSMutableDictionary * shareTokenInfosToFetchByURL;
-@property(retain) NSMutableArray * shareURLsToFetch;
+@property (nonatomic, copy) id /* block */ shareInfoFetchedBlock;
+@property (nonatomic, retain) NSMutableDictionary *shareTokenInfosToFetchByURL;
+@property (nonatomic, retain) NSMutableArray *shareURLsToFetch;
 
 - (void).cxx_destruct;
 - (id)_decodeProtectedFullToken:(id)arg1 tokenInfo:(id)arg2;
@@ -32,10 +22,10 @@
 - (void)main;
 - (BOOL)makeStateTransition;
 - (id)nameForState:(unsigned int)arg1;
-- (void)setShareInfoFetchedBlock:(id)arg1;
+- (void)setShareInfoFetchedBlock:(id /* block */)arg1;
 - (void)setShareTokenInfosToFetchByURL:(id)arg1;
 - (void)setShareURLsToFetch:(id)arg1;
-- (id)shareInfoFetchedBlock;
+- (id /* block */)shareInfoFetchedBlock;
 - (id)shareTokenInfosToFetchByURL;
 - (id)shareURLsToFetch;
 

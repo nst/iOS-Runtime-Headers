@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSAttributedString;
-
 @interface CAMShutterIndicatorView : UIView {
     NSAttributedString *__indicatorText;
 }
 
-@property(readonly) NSAttributedString * _indicatorText;
+@property (nonatomic, readonly) NSAttributedString *_indicatorText;
 
 - (void).cxx_destruct;
 - (void)_commonCAMShutterIndicatorViewInitialization;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UILabel, UIToolbarButtonBadge, UIView, _UIPressedIndicatorView;
-
 @interface UIToolbarButton : UIControl {
     struct UIEdgeInsets { 
         float top; 
@@ -53,11 +51,11 @@
     UIColor *_toolbarTintColor;
 }
 
-@property(setter=_setAdditionalSelectionInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
-@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
-@property(setter=_setCreatedByBarButtonItem:) BOOL _createdByBarButtonItem;
-@property(setter=_setTintColor:,retain) UIColor * _tintColor;
-@property(getter=isAnimatedTrashButton) BOOL animatedTrashButton;
+@property (setter=_setAdditionalSelectionInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
+@property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;
+@property (setter=_setCreatedByBarButtonItem:, nonatomic) BOOL _createdByBarButtonItem;
+@property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
+@property (getter=isAnimatedTrashButton, nonatomic) BOOL animatedTrashButton;
 
 + (id)_defaultLabelColor;
 + (id)_defaultLabelFont;

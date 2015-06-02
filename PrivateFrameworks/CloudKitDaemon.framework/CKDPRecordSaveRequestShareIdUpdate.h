@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShareIdentifier;
-
 @interface CKDPRecordSaveRequestShareIdUpdate : PBCodable <NSCopying> {
     CKDPShareIdentifier *_shareId;
 }
 
-@property(readonly) BOOL hasShareId;
-@property(retain) CKDPShareIdentifier * shareId;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

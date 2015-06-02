@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UILexiconEntry : NSObject <NSCopying> {
     NSString *_documentText;
     NSString *_userInput;
 }
 
-@property(readonly) NSString * documentText;
-@property(readonly) NSString * userInput;
+@property (nonatomic, readonly) NSString *documentText;
+@property (nonatomic, readonly) NSString *userInput;
 
 + (id)_entryWithTILexiconEntry:(id)arg1;
 

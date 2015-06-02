@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
  */
 
-@class NSString;
-
 @interface CommunicationFilterItem : NSObject {
     NSString *_emailAddress;
     struct __CFPhoneNumber { } *_phoneNumber;
 }
 
-@property(readonly) NSString * emailAddress;
-@property(readonly) struct __CFPhoneNumber { }* phoneNumber;
-@property(readonly) NSString * unformattedID;
+@property (nonatomic, readonly) NSString *emailAddress;
+@property (nonatomic, readonly) struct __CFPhoneNumber { }*phoneNumber;
+@property (nonatomic, readonly) NSString *unformattedID;
 
 - (BOOL)_acceptItemType:(id)arg1;
 - (BOOL)_acceptVersion:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface MFPFont : NSObject {
     unsigned int mFlags;
     NSString *mName;

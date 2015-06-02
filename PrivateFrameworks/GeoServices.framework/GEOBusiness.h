@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSMutableArray, NSString;
-
 @interface GEOBusiness : PBCodable <NSCopying> {
     NSMutableArray *_attributeKeyValues;
     NSMutableArray *_attributions;
@@ -28,47 +26,47 @@
     NSString *_uRL;
 }
 
-@property(retain) NSMutableArray * attributeKeyValues;
-@property(retain) NSMutableArray * attributions;
-@property(retain) NSMutableArray * categorys;
-@property(retain) GEOLatLng * center;
-@property(getter=_goodForKids,readonly) BOOL goodForKids;
-@property(getter=_hasAnyAmenities,readonly) BOOL hasAnyAmenities;
-@property(readonly) BOOL hasCenter;
-@property(getter=_hasDelivery,readonly) BOOL hasDelivery;
-@property(getter=_hasDeliveryAmenity,readonly) BOOL hasDeliveryAmenity;
-@property(getter=_hasGoodForKidsAmenity,readonly) BOOL hasGoodForKidsAmenity;
-@property BOOL hasIsClosed;
-@property(getter=_hasMUID,readonly) BOOL hasMUID;
-@property(readonly) BOOL hasMapsURL;
-@property(readonly) BOOL hasName;
-@property(getter=_hasOperatingHours,readonly) BOOL hasOperatingHours;
-@property(readonly) BOOL hasPhoneticName;
-@property(getter=_hasPriceRange,readonly) BOOL hasPriceRange;
-@property(getter=_hasTakesReservationsAmenity,readonly) BOOL hasTakesReservationsAmenity;
-@property(readonly) BOOL hasTelephone;
-@property BOOL hasUID;
-@property(readonly) BOOL hasURL;
-@property(getter=_hasUserRatingScore,readonly) BOOL hasUserRatingScore;
-@property BOOL isClosed;
-@property(retain) NSMutableArray * localizedCategories;
-@property(retain) NSString * mapsURL;
-@property(getter=_muid,readonly) unsigned long long muid;
-@property(retain) NSString * name;
-@property(getter=_normalizedUserRatingScore,readonly) float normalizedUserRatingScore;
-@property(retain) NSMutableArray * openHours;
-@property(retain) NSString * phoneticName;
-@property(retain) NSMutableArray * photos;
-@property(getter=_priceRange,readonly) unsigned int priceRange;
-@property(retain) NSMutableArray * ratings;
-@property(getter=_sampleSizeForUserRatingScore,readonly) unsigned int sampleSizeForUserRatingScore;
-@property(retain) NSMutableArray * sources;
-@property(retain) NSMutableArray * starRatings;
-@property(getter=_takesReservations,readonly) BOOL takesReservations;
-@property(retain) NSString * telephone;
-@property unsigned long long uID;
-@property(retain) NSString * uRL;
-@property(getter=_isYelp,readonly) BOOL yelp;
+@property (nonatomic, retain) NSMutableArray *attributeKeyValues;
+@property (nonatomic, retain) NSMutableArray *attributions;
+@property (nonatomic, retain) NSMutableArray *categorys;
+@property (nonatomic, retain) GEOLatLng *center;
+@property (getter=_goodForKids, nonatomic, readonly) BOOL goodForKids;
+@property (getter=_hasAnyAmenities, nonatomic, readonly) BOOL hasAnyAmenities;
+@property (nonatomic, readonly) BOOL hasCenter;
+@property (getter=_hasDelivery, nonatomic, readonly) BOOL hasDelivery;
+@property (getter=_hasDeliveryAmenity, nonatomic, readonly) BOOL hasDeliveryAmenity;
+@property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) BOOL hasGoodForKidsAmenity;
+@property (nonatomic) BOOL hasIsClosed;
+@property (getter=_hasMUID, nonatomic, readonly) BOOL hasMUID;
+@property (nonatomic, readonly) BOOL hasMapsURL;
+@property (nonatomic, readonly) BOOL hasName;
+@property (getter=_hasOperatingHours, nonatomic, readonly) BOOL hasOperatingHours;
+@property (nonatomic, readonly) BOOL hasPhoneticName;
+@property (getter=_hasPriceRange, nonatomic, readonly) BOOL hasPriceRange;
+@property (getter=_hasTakesReservationsAmenity, nonatomic, readonly) BOOL hasTakesReservationsAmenity;
+@property (nonatomic, readonly) BOOL hasTelephone;
+@property (nonatomic) BOOL hasUID;
+@property (nonatomic, readonly) BOOL hasURL;
+@property (getter=_hasUserRatingScore, nonatomic, readonly) BOOL hasUserRatingScore;
+@property (nonatomic) BOOL isClosed;
+@property (nonatomic, retain) NSMutableArray *localizedCategories;
+@property (nonatomic, retain) NSString *mapsURL;
+@property (getter=_muid, nonatomic, readonly) unsigned long long muid;
+@property (nonatomic, retain) NSString *name;
+@property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
+@property (nonatomic, retain) NSMutableArray *openHours;
+@property (nonatomic, retain) NSString *phoneticName;
+@property (nonatomic, retain) NSMutableArray *photos;
+@property (getter=_priceRange, nonatomic, readonly) unsigned int priceRange;
+@property (nonatomic, retain) NSMutableArray *ratings;
+@property (getter=_sampleSizeForUserRatingScore, nonatomic, readonly) unsigned int sampleSizeForUserRatingScore;
+@property (nonatomic, retain) NSMutableArray *sources;
+@property (nonatomic, retain) NSMutableArray *starRatings;
+@property (getter=_takesReservations, nonatomic, readonly) BOOL takesReservations;
+@property (nonatomic, retain) NSString *telephone;
+@property (nonatomic) unsigned long long uID;
+@property (nonatomic, retain) NSString *uRL;
+@property (getter=_isYelp, nonatomic, readonly) BOOL yelp;
 
 - (id)_allCategoriesForType:(unsigned int)arg1;
 - (id)_attributionMapForResponse:(id)arg1;

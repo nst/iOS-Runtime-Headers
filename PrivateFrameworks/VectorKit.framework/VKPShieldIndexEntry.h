@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKPShieldIndexEntry : PBCodable <NSCopying> {
     NSString *_artworkIdentifier;
     struct { 
@@ -18,12 +16,12 @@
     } _shieldTypes;
 }
 
-@property(retain) NSString * artworkIdentifier;
-@property(readonly) int* defaultForFeatureTypes;
-@property(readonly) unsigned int defaultForFeatureTypesCount;
-@property(readonly) BOOL hasArtworkIdentifier;
-@property(readonly) int* shieldTypes;
-@property(readonly) unsigned int shieldTypesCount;
+@property (nonatomic, retain) NSString *artworkIdentifier;
+@property (nonatomic, readonly) int*defaultForFeatureTypes;
+@property (nonatomic, readonly) unsigned int defaultForFeatureTypesCount;
+@property (nonatomic, readonly) BOOL hasArtworkIdentifier;
+@property (nonatomic, readonly) int*shieldTypes;
+@property (nonatomic, readonly) unsigned int shieldTypesCount;
 
 - (void)addDefaultForFeatureType:(int)arg1;
 - (void)addShieldTypes:(int)arg1;

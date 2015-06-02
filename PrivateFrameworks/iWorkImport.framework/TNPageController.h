@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSObject<TNPageControllerDelegate>, TNDocumentRoot, TNPageCoordinateDictionary, TNPrintProperties, TNSheet, TSUPointerKeyDictionary;
-
 @interface TNPageController : NSObject {
     TNPrintProperties *_printProperties;
     NSMutableDictionary *mCachedAutoFitContentScaleDictionary;
@@ -32,20 +30,20 @@
     float mUserViewScale;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
-@property(readonly) float contentScale;
-@property NSObject<TNPageControllerDelegate> * delegate;
-@property TNDocumentRoot * documentRoot;
-@property float footerTextHeight;
-@property float headerTextHeight;
-@property(readonly) BOOL inDynamicContentScaleChange;
-@property(readonly) unsigned int numPages;
-@property(readonly) struct CGSize { float x1; float x2; } pageSize;
-@property(readonly) struct CGSize { float x1; float x2; } pageSizeWithGutter;
-@property(getter=isPortrait,readonly) BOOL portrait;
-@property(readonly) TNPrintProperties * printProperties;
-@property TNSheet * sheet;
-@property float userViewScale;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property (readonly) float contentScale;
+@property (nonatomic) NSObject<TNPageControllerDelegate> *delegate;
+@property (nonatomic) TNDocumentRoot *documentRoot;
+@property (nonatomic) float footerTextHeight;
+@property (nonatomic) float headerTextHeight;
+@property (nonatomic, readonly) BOOL inDynamicContentScaleChange;
+@property (readonly) unsigned int numPages;
+@property (readonly) struct CGSize { float x1; float x2; } pageSize;
+@property (readonly) struct CGSize { float x1; float x2; } pageSizeWithGutter;
+@property (getter=isPortrait, readonly) BOOL portrait;
+@property (readonly) TNPrintProperties *printProperties;
+@property (nonatomic) TNSheet *sheet;
+@property (nonatomic) float userViewScale;
 
 + (float)autoFitContentScaleForSheet:(id)arg1;
 + (id)p_cachedAutoFitContentScaleDictionary;
@@ -81,7 +79,7 @@
 - (void)p_computePriorPageCountForCurrentSheet;
 - (void)p_computeSubsequentPageCountForCurrentSheet;
 - (void)p_didEndDynamicContentScaleChange:(id)arg1;
-- (void)p_enumerateOverPageRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 usingBlock:(id)arg2;
+- (void)p_enumerateOverPageRange:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)p_headersOrFootersContainPageNumberRelatedAttachments;
 - (id)p_hintCacheForInfo:(id)arg1;
 - (void)p_invalidatePageCounts;

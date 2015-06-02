@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTextureAtlasPacker : NSObject {
-}
+@interface SKTextureAtlasPacker : NSObject
 
 + (struct CGImage { }*)copyProcessedImageSource:(id)arg1;
 

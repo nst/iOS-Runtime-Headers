@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSData, NSMutableArray, NSString, NSURL, UIImage;
-
 @interface PRSImage : NSObject <NSSecureCoding> {
     NSMutableArray *_completionBlocks;
     NSData *_data;
@@ -16,14 +14,14 @@
     NSURL *_url;
 }
 
-@property(retain) NSData * data;
-@property(retain) NSString * dataType;
-@property(retain) NSString * identifier;
-@property(retain) UIImage * image;
+@property (retain) NSData *data;
+@property (retain) NSString *dataType;
+@property (retain) NSString *identifier;
+@property (retain) UIImage *image;
 @property BOOL isTemplate;
-@property(retain) NSURL * url;
+@property (retain) NSURL *url;
 
-+ (id)converterBlock;
++ (id /* block */)converterBlock;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -34,8 +32,8 @@
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isTemplate;
-- (void)loadImageWithSource:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
-- (void)loadImageWithSprite:(id)arg1 map:(id)arg2 completion:(id)arg3;
+- (void)loadImageWithSource:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
+- (void)loadImageWithSprite:(id)arg1 map:(id)arg2 completion:(id /* block */)arg3;
 - (void)preloadImageWithSource:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDataType:(id)arg1;

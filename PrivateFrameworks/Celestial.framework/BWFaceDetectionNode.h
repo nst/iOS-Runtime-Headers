@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWNodeOutput;
-
 @interface BWFaceDetectionNode : BWFanOutNode {
     struct opaqueCMFormatDescription { } *_boxedFormatDescription;
     BWNodeOutput *_boxedMetadataOutput;
@@ -48,8 +46,8 @@
     } _rectOfInterest;
 }
 
-@property(readonly) BWNodeOutput * boxedMetadataOutput;
-@property(readonly) BWNodeOutput * metadataObjectOutput;
+@property (readonly) BWNodeOutput *boxedMetadataOutput;
+@property (readonly) BWNodeOutput *metadataObjectOutput;
 
 + (void)initialize;
 

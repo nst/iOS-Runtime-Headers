@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, GKTextStyle, NSAttributedString, NSString;
-
 @interface GKTextView : UITextView {
     GKTextStyle *__baseStyle;
     GKTextStyle *_appliedStyle;
     GKLabel *_placeholderLabel;
 }
 
-@property(retain) GKTextStyle * _baseStyle;
-@property(retain) GKTextStyle * appliedStyle;
-@property(retain) NSAttributedString * attributedPlaceholderText;
-@property GKLabel * placeholderLabel;
-@property(retain) NSString * placeholderText;
+@property (nonatomic, retain) GKTextStyle *_baseStyle;
+@property (nonatomic, retain) GKTextStyle *appliedStyle;
+@property (nonatomic, retain) NSAttributedString *attributedPlaceholderText;
+@property (nonatomic) GKLabel *placeholderLabel;
+@property (nonatomic, retain) NSString *placeholderText;
 
 + (void)initialize;
 

@@ -7,8 +7,8 @@
     unsigned long long _uniqueID;
 }
 
-@property(readonly) unsigned long long completionUniqueID;
-@property(readonly) unsigned long long uniqueID;
+@property (nonatomic, readonly) unsigned long long completionUniqueID;
+@property (nonatomic, readonly) unsigned long long uniqueID;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;

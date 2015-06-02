@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSLayoutConstraint, NSString, UILabel;
-
 @interface EKUIInviteesViewAddInviteeCell : UITableViewCell {
     float _leftInset;
     NSLayoutConstraint *_leftInsetConstraint;
@@ -12,11 +10,11 @@
     UILabel *_simpleTextLabel;
 }
 
-@property float leftInset;
-@property(retain) NSLayoutConstraint * leftInsetConstraint;
-@property(retain) NSArray * persistentConstraints;
-@property(retain) NSString * simpleText;
-@property(retain) UILabel * simpleTextLabel;
+@property (nonatomic) float leftInset;
+@property (nonatomic, retain) NSLayoutConstraint *leftInsetConstraint;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, retain) NSString *simpleText;
+@property (nonatomic, retain) UILabel *simpleTextLabel;
 
 + (id)_simpleTextLabelFont;
 

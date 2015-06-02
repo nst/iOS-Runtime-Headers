@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class NSObject<OS_dispatch_queue>, WBReadingListPrivate;
-
 @interface WBReadingList : NSObject {
     WBReadingListPrivate *_private;
     NSObject<OS_dispatch_queue> *_serialQueue;

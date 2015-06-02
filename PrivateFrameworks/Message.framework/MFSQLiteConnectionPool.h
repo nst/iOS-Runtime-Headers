@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFSQLiteConnectionPoolDelegate>, NSLock, NSMutableSet, NSObject<OS_dispatch_semaphore>;
-
 @interface MFSQLiteConnectionPool : NSObject {
     NSObject<OS_dispatch_semaphore> *_backgroundReaderSemaphore;
     int _backgroundReadersWaiting;
@@ -20,12 +18,12 @@
     int _writersWaiting;
 }
 
-@property(readonly) unsigned int backgroundReadersWaiting;
+@property (readonly) unsigned int backgroundReadersWaiting;
 @property unsigned int cacheSize;
-@property <MFSQLiteConnectionPoolDelegate> * delegate;
-@property(readonly) unsigned int maxConcurrentBackgroundReaders;
-@property(readonly) unsigned int maxConcurrentWriters;
-@property(readonly) unsigned int writersWaiting;
+@property <MFSQLiteConnectionPoolDelegate> *delegate;
+@property (readonly) unsigned int maxConcurrentBackgroundReaders;
+@property (readonly) unsigned int maxConcurrentWriters;
+@property (readonly) unsigned int writersWaiting;
 
 - (id)_connectionWithType:(unsigned int)arg1;
 - (id)_semaphoreForConnectionType:(unsigned int)arg1 waitCounter:(int**)arg2;

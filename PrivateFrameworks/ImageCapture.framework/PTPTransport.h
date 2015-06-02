@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class PTPOperationResponsePacket, PTPWrappedBytes;
-
 @interface PTPTransport : NSObject {
     BOOL _busy;
     struct __CFRunLoopSource { } *_callbackDummyMachPortRLSrc;
@@ -25,9 +23,9 @@
     BOOL _delegateNeedsResponse;
     unsigned long long _excessReceivedDataSize;
     BOOL _failedMD5;
-    unsigned char _headerBuffer[12];
+    unsigned char _headerBuffer;
     BOOL _headerBufferFound;
-    unsigned char _md5[16];
+    unsigned char _md5;
     PTPOperationResponsePacket *_response;
     BOOL _responseReceived;
     int _role;

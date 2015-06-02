@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UILocationResultsSubtitleTableViewCell : _UILocationResultsTableViewCell {
-}
+@interface _UILocationResultsSubtitleTableViewCell : _UILocationResultsTableViewCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

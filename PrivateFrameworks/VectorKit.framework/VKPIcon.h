@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKPIcon : PBCodable <NSCopying> {
     unsigned int _anchorPointX;
     unsigned int _anchorPointY;
@@ -32,30 +30,30 @@
     int _size;
 }
 
-@property unsigned int anchorPointX;
-@property unsigned int anchorPointY;
-@property unsigned int atlasIndex;
-@property BOOL hasAnchorPointX;
-@property BOOL hasAnchorPointY;
-@property BOOL hasIconRectHeight;
-@property BOOL hasIconRectWidth;
-@property BOOL hasIconRectX;
-@property BOOL hasIconRectY;
-@property BOOL hasMatchingStyleAttributeKey;
-@property BOOL hasMatchingStyleAttributeLongValue;
-@property BOOL hasMatchingStyleAttributeValue;
-@property(readonly) BOOL hasName;
-@property BOOL hasSize;
-@property unsigned int iconRectHeight;
-@property unsigned int iconRectWidth;
-@property unsigned int iconRectX;
-@property unsigned int iconRectY;
-@property unsigned int matchingStyleAttributeKey;
-@property unsigned long long matchingStyleAttributeLongValue;
-@property int matchingStyleAttributeValue;
-@property(retain) NSString * name;
-@property unsigned int quadIndex;
-@property int size;
+@property (nonatomic) unsigned int anchorPointX;
+@property (nonatomic) unsigned int anchorPointY;
+@property (nonatomic) unsigned int atlasIndex;
+@property (nonatomic) BOOL hasAnchorPointX;
+@property (nonatomic) BOOL hasAnchorPointY;
+@property (nonatomic) BOOL hasIconRectHeight;
+@property (nonatomic) BOOL hasIconRectWidth;
+@property (nonatomic) BOOL hasIconRectX;
+@property (nonatomic) BOOL hasIconRectY;
+@property (nonatomic) BOOL hasMatchingStyleAttributeKey;
+@property (nonatomic) BOOL hasMatchingStyleAttributeLongValue;
+@property (nonatomic) BOOL hasMatchingStyleAttributeValue;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasSize;
+@property (nonatomic) unsigned int iconRectHeight;
+@property (nonatomic) unsigned int iconRectWidth;
+@property (nonatomic) unsigned int iconRectX;
+@property (nonatomic) unsigned int iconRectY;
+@property (nonatomic) unsigned int matchingStyleAttributeKey;
+@property (nonatomic) unsigned long long matchingStyleAttributeLongValue;
+@property (nonatomic) int matchingStyleAttributeValue;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned int quadIndex;
+@property (nonatomic) int size;
 
 - (unsigned int)anchorPointX;
 - (unsigned int)anchorPointY;

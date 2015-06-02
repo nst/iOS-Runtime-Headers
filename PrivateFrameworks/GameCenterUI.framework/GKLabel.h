@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKTextStyle, NSString;
-
 @interface GKLabel : UILabel <GKTextStyleReplay> {
     float _actualFontShrinkageFactor;
     GKTextStyle *_appliedStyle;
@@ -12,16 +10,16 @@
     BOOL _usingAttributedText;
 }
 
-@property float actualFontShrinkageFactor;
-@property(retain) GKTextStyle * appliedStyle;
-@property(retain) GKTextStyle * baseStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float minimumScaleFactor;
-@property BOOL shouldInhibitReplay;
-@property(readonly) Class superclass;
-@property(readonly) BOOL usingAttributedText;
+@property (nonatomic) float actualFontShrinkageFactor;
+@property (nonatomic, retain) GKTextStyle *appliedStyle;
+@property (nonatomic, retain) GKTextStyle *baseStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) BOOL shouldInhibitReplay;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL usingAttributedText;
 
 + (void)initialize;
 

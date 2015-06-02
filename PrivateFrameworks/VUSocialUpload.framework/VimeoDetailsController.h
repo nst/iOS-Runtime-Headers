@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <VimeoComposeOptionViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSString, UITableViewCell, UITextView;
-
 @interface VimeoDetailsController : UITableViewController <UITextFieldDelegate> {
     <VimeoComposeOptionViewDelegate> *_delegate;
     UITableViewCell *_descriptionCell;
@@ -18,20 +16,20 @@
     NSMutableArray *_videoSizes;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <VimeoComposeOptionViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSIndexPath * indexPathForPendingFirstResponder;
-@property(retain) NSArray * privacyLevels;
-@property(readonly) int privacySetting;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * tags;
-@property(readonly) NSString * videoDescription;
-@property(readonly) int videoSize;
-@property(retain) NSArray * videoSizeFormatStrings;
-@property(retain) NSArray * videoSizeStrings;
-@property(readonly) NSMutableArray * videoSizes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VimeoComposeOptionViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSIndexPath *indexPathForPendingFirstResponder;
+@property (nonatomic, retain) NSArray *privacyLevels;
+@property (nonatomic, readonly) int privacySetting;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *tags;
+@property (nonatomic, readonly) NSString *videoDescription;
+@property (nonatomic, readonly) int videoSize;
+@property (nonatomic, retain) NSArray *videoSizeFormatStrings;
+@property (nonatomic, retain) NSArray *videoSizeStrings;
+@property (nonatomic, readonly) NSMutableArray *videoSizes;
 
 + (int)defaultVideoSize;
 

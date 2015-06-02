@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem;
-
 @interface MPSSLookupResponseTransformContext : NSObject {
     MPMediaItem *_collectionRepresentativeItem;
 }
 
-@property(retain) MPMediaItem * collectionRepresentativeItem;
+@property (nonatomic, retain) MPMediaItem *collectionRepresentativeItem;
 
 - (void).cxx_destruct;
 - (id)collectionRepresentativeItem;

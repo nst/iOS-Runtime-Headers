@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class NSMutableArray, NSString;
-
 @interface CSLUIPBUIPluginTriggerRequest : PBRequest <NSCopying> {
     NSMutableArray *_dictionarys;
     struct { 
@@ -13,11 +11,11 @@
     int _reason;
 }
 
-@property(retain) NSMutableArray * dictionarys;
-@property(readonly) BOOL hasName;
-@property BOOL hasReason;
-@property(retain) NSString * name;
-@property int reason;
+@property (nonatomic, retain) NSMutableArray *dictionarys;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int reason;
 
 - (void).cxx_destruct;
 - (void)addDictionary:(id)arg1;

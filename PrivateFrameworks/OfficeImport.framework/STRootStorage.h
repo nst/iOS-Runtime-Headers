@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableData;
-
 @interface STRootStorage : STStorage {
     NSMutableData *m_StorageData;
     struct _RootStorage { } *m_pCRoot;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADPlayerDelegate>, ADBannerView, AVPlayer, AVPlayerItem, NSString;
-
 @interface ADPlayer : NSObject <ADBannerViewInternalDelegate> {
     AVPlayer *_avPlayer;
     AVPlayerItem *_avPlayerItem;
@@ -14,18 +12,18 @@
     ADBannerView *_videoAd;
 }
 
-@property(retain) AVPlayer * avPlayer;
-@property(retain) AVPlayerItem * avPlayerItem;
-@property(copy,readonly) NSString * debugDescription;
-@property <ADPlayerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL playbackHasBegun;
-@property(readonly) float playbackRate;
-@property unsigned int playbackState;
-@property(readonly) Class superclass;
-@property(retain) id timeObserver;
-@property(retain) ADBannerView * videoAd;
+@property (nonatomic, retain) AVPlayer *avPlayer;
+@property (nonatomic, retain) AVPlayerItem *avPlayerItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ADPlayerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL playbackHasBegun;
+@property (nonatomic, readonly) float playbackRate;
+@property (nonatomic) unsigned int playbackState;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) id timeObserver;
+@property (nonatomic, retain) ADBannerView *videoAd;
 
 - (id)_networkOptimalVideoURLForAd:(id)arg1;
 - (void)applicationDidBecomeActive;

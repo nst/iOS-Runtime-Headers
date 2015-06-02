@@ -13,11 +13,11 @@
     BOOL shouldSetupAnimationInDidMoveToWindow;
 }
 
-@property id irisAnimationDelegate;
-@property SEL irisAnimationDidStopSelector;
-@property double irisAnimationDuration;
-@property struct CGPoint { float x1; float x2; } irisAnimationPosition;
-@property BOOL shouldSetupAnimationInDidMoveToWindow;
+@property (nonatomic) id irisAnimationDelegate;
+@property (nonatomic) SEL irisAnimationDidStopSelector;
+@property (nonatomic) double irisAnimationDuration;
+@property (nonatomic) struct CGPoint { float x1; float x2; } irisAnimationPosition;
+@property (nonatomic) BOOL shouldSetupAnimationInDidMoveToWindow;
 
 - (void)animateIrisOpen;
 - (void)dealloc;

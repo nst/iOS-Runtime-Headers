@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface TSCEFormulaRewriteInfo_RangeEntry : NSObject {
     unsigned short _offset;
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
@@ -22,8 +18,8 @@
 }
 
 @property unsigned short offset;
-@property(readonly) const /* Warning: unhandled struct encoding: '{vector<TSU::UUIDData<TSP::UUIDData>' */ struct * orderedUuids; /* unknown property attribute:  std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > >=^{UUIDData<TSP::UUIDData>}}} */
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (readonly) const /* Warning: unhandled struct encoding: '{vector<TSU::UUIDData<TSP::UUIDData>' */ struct *orderedUuids; /* unknown property attribute:  std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > >=^{UUIDData<TSP::UUIDData>}}} */
+@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSString, SSAccount;
-
 @interface AAUIFamilySetupBuddyMLRequest : AAFamilyRequest {
     SSAccount *_iTunesAccount;
     NSString *_inviteCode;
 }
 
-@property(setter=setiTunesAccount:,retain) SSAccount * iTunesAccount;
-@property(copy) NSString * inviteCode;
+@property (setter=setiTunesAccount:, nonatomic, retain) SSAccount *iTunesAccount;
+@property (nonatomic, copy) NSString *inviteCode;
 
 - (void).cxx_destruct;
 - (id)iTunesAccount;

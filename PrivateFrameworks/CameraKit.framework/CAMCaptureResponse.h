@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMCaptureRequest, CAMInflightAsset, NSDictionary, NSMutableDictionary;
-
 @interface CAMCaptureResponse : NSObject {
     NSDictionary *__parameterStorage;
     NSDictionary *_additionalInformation;
@@ -15,14 +13,14 @@
     int _type;
 }
 
-@property(copy,readonly) NSDictionary * _parameterStorage;
-@property(copy) NSDictionary * additionalInformation;
-@property(retain) CAMInflightAsset * asset;
-@property(getter=isCompleted) BOOL completed;
-@property(copy) NSDictionary * diagnostics;
-@property(retain) NSMutableDictionary * metadata;
-@property(copy) CAMCaptureRequest * request;
-@property(readonly) int type;
+@property (nonatomic, readonly, copy) NSDictionary *_parameterStorage;
+@property (nonatomic, copy) NSDictionary *additionalInformation;
+@property (nonatomic, retain) CAMInflightAsset *asset;
+@property (getter=isCompleted, nonatomic) BOOL completed;
+@property (nonatomic, copy) NSDictionary *diagnostics;
+@property (nonatomic, retain) NSMutableDictionary *metadata;
+@property (nonatomic, copy) CAMCaptureRequest *request;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (id)_parameterStorage;

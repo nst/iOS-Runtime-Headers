@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class NSArray, NSString;
-
 @interface CUTPowerAssertion : NSObject {
     unsigned int _assertion;
     NSString *_identifier;

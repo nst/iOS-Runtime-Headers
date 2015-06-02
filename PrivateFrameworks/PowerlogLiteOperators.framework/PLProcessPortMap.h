@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary;
-
 @interface PLProcessPortMap : NSObject {
     struct proc_fdinfo { int x1; unsigned int x2; } *Fds;
     int NbFds;

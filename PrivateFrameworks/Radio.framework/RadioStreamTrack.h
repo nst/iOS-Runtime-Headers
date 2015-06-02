@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSURL;
+@interface RadioStreamTrack : RadioTrack
 
-@interface RadioStreamTrack : RadioTrack {
-}
-
-@property(retain,readonly) NSURL * certificateURL;
-@property(retain,readonly) NSURL * contentURL;
-@property(retain,readonly) NSURL * keyServerURL;
-@property(getter=isSkipable,readonly) BOOL skipable;
+@property (nonatomic, readonly, retain) NSURL *certificateURL;
+@property (nonatomic, readonly, retain) NSURL *contentURL;
+@property (nonatomic, readonly, retain) NSURL *keyServerURL;
+@property (getter=isSkipable, nonatomic, readonly) BOOL skipable;
 
 - (id)certificateURL;
 - (id)contentURL;

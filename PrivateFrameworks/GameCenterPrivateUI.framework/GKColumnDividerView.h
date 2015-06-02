@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKHairlineView;
-
 @interface GKColumnDividerView : UICollectionReusableView {
     GKHairlineView *_hairlineView;
 }
 
-@property(retain) GKHairlineView * hairlineView;
+@property (nonatomic, retain) GKHairlineView *hairlineView;
 
 - (void)dealloc;
 - (id)hairlineView;

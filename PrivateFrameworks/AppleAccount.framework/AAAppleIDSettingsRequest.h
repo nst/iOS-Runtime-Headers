@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, ACAccountStore;
-
 @interface AAAppleIDSettingsRequest : AARequest {
     ACAccount *_appleAccount;
     ACAccount *_grandSlamAccount;

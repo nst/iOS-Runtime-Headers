@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSPredicate, NSString;
-
 @interface CKQuery : NSObject <NSCopying, NSSecureCoding> {
     NSPredicate *_predicate;
     NSString *_recordType;
     NSArray *_sortDescriptors;
 }
 
-@property(copy) NSPredicate * predicate;
-@property(copy) NSString * recordType;
-@property(copy) NSArray * sortDescriptors;
+@property (nonatomic, copy) NSPredicate *predicate;
+@property (nonatomic, copy) NSString *recordType;
+@property (nonatomic, copy) NSArray *sortDescriptors;
 
 + (BOOL)supportsSecureCoding;
 

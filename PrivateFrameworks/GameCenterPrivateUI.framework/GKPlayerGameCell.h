@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UILabel;
-
 @interface GKPlayerGameCell : GKBaseGameCell {
     UILabel *_dateLabel;
     UILabel *_statsLabel;
 }
 
-@property(retain) UILabel * dateLabel;
-@property(retain) UILabel * statsLabel;
+@property (nonatomic, retain) UILabel *dateLabel;
+@property (nonatomic, retain) UILabel *statsLabel;
 
 - (id)achievementsStringWithGameRecord:(id)arg1;
 - (id)dateLabel;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSMutableArray, OITSUProgressContext, TCProgressStage;
-
 @interface TCProgressContext : NSObject {
     TCProgressStage *m_currentStage;
     NSDate *m_lastReportTime;

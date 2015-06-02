@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSDate, NSString;
-
 @interface CUIKUserActivityCalendarEvent : CUIKUserActivityWithSource {
     NSDate *_date;
     NSString *_externalID;
@@ -11,8 +9,8 @@
     unsigned int _view;
 }
 
-@property(readonly) NSString * title;
-@property(readonly) unsigned int view;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) unsigned int view;
 
 - (void).cxx_destruct;
 - (id)dictionary;

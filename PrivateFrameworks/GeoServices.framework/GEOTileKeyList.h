@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOTileKeyMap;
-
 @interface GEOTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
     unsigned int _count;
     void *_head;
@@ -23,7 +21,7 @@
 - (id)copyWithMaxCapacity:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)firstKey;
@@ -33,8 +31,8 @@
 - (id)listWithout:(id)arg1;
 - (id)newXPCData;
 - (BOOL)removeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)removeKeysMatchingPredicate:(id)arg1;
-- (void)sort:(id)arg1;
+- (void)removeKeysMatchingPredicate:(id /* block */)arg1;
+- (void)sort:(id /* block */)arg1;
 - (id)sublistWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

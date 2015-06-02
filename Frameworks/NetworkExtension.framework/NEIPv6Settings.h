@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEIPv6Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_address;
     int _configMethod;
@@ -11,10 +9,10 @@
     NSString *_router;
 }
 
-@property(copy) NSString * address;
+@property (copy) NSString *address;
 @property int configMethod;
 @property int prefixLength;
-@property(copy) NSString * router;
+@property (copy) NSString *router;
 
 + (BOOL)supportsSecureCoding;
 

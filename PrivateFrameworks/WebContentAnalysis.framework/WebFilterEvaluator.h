@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSMutableData, NSString, NSURL;
-
 @interface WebFilterEvaluator : NSObject <NSSecureCoding> {
     NSMutableData *_buffer;
     unsigned int _filterState;
@@ -16,7 +14,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)addData:(id)arg1;
-- (void)attemptUnblockWithCompletion:(id)arg1;
+- (void)attemptUnblockWithCompletion:(id /* block */)arg1;
 - (id)blockPageForPageWithTitle:(id)arg1 origURL:(id)arg2;
 - (id)dataComplete;
 - (void)dealloc;
@@ -25,7 +23,7 @@
 - (long)filterState;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResponse:(id)arg1;
-- (void)unblockWithCompletion:(id)arg1;
+- (void)unblockWithCompletion:(id /* block */)arg1;
 - (BOOL)wasBlocked;
 
 @end

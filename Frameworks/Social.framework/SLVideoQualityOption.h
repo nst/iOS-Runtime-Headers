@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLVideoQualityOption : NSObject {
     NSString *_exportPreset;
     NSString *_identifier;
@@ -11,10 +9,10 @@
     long long _size;
 }
 
-@property(retain) NSString * exportPreset;
-@property(retain) NSString * identifier;
-@property(retain) NSString * name;
-@property long long size;
+@property (nonatomic, retain) NSString *exportPreset;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long size;
 
 + (id)videoQualityOptionForIdentifier:(id)arg1;
 

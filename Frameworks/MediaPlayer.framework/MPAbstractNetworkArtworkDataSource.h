@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache, NSMapTable, NSObject<OS_dispatch_queue>, NSString, NSURLSession, NSURLSessionConfiguration;
-
 @interface MPAbstractNetworkArtworkDataSource : NSObject <MPArtworkDataSource, NSURLSessionDataDelegate> {
     NSURLSession *_URLSession;
     NSObject<OS_dispatch_queue> *_accessQueue;
@@ -11,22 +9,22 @@
     NSMapTable *_catalogTaskMap;
 }
 
-@property(retain) NSURLSession * URLSession;
-@property(readonly) NSURLSessionConfiguration * URLSessionConfiguration;
-@property(retain) NSObject<OS_dispatch_queue> * accessQueue;
-@property(retain) NSCache * artworkRepresentationCache;
-@property(retain) NSMapTable * catalogTaskMap;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURLSession *URLSession;
+@property (nonatomic, readonly) NSURLSessionConfiguration *URLSessionConfiguration;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
+@property (nonatomic, retain) NSCache *artworkRepresentationCache;
+@property (nonatomic, retain) NSMapTable *catalogTaskMap;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)URLSession;
 - (id)URLSessionConfiguration;
 - (id)_artworkRepresentationWithImageFromData:(id)arg1 forURLResponse:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 immediateImageDecompressionAllowed:(BOOL)arg4;
 - (id)_existingRepresentationFromURLCacheForArtworkCatalog:(id)arg1 immediateImageDecompressionAllowed:(BOOL)arg2;
-- (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(id)arg2;
+- (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(id /* block */)arg2;
 - (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForCatalog:(id)arg2;
 - (void)_updateConfigurationForCellularDataRestriction:(id)arg1;
 - (id)accessQueue;
@@ -40,7 +38,7 @@
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
-- (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id)arg2;
+- (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)setAccessQueue:(id)arg1;
 - (void)setArtworkRepresentationCache:(id)arg1;

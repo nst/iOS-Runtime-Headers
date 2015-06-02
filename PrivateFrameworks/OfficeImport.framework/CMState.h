@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSString, OADColorMap, OADColorScheme;
-
 @interface CMState : NSObject {
     int _textLevel;
     NSMutableDictionary *components;

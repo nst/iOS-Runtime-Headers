@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, NSString, UIColor, UILabel;
-
 @interface UIPickerTableViewTitledCell : UIPickerTableViewCell {
     BOOL _isAttributed;
     UIColor *_textColor;
@@ -11,10 +9,10 @@
     BOOL _usesModernStyle;
 }
 
-@property(readonly) BOOL _isAttributed;
-@property(readonly) UILabel * _titleLabel;
-@property(retain) NSAttributedString * attributedTitle;
-@property(retain) NSString * title;
+@property (nonatomic, readonly) BOOL _isAttributed;
+@property (nonatomic, readonly) UILabel *_titleLabel;
+@property (nonatomic, retain) NSAttributedString *attributedTitle;
+@property (nonatomic, retain) NSString *title;
 
 - (BOOL)_canBeReusedInPickerView;
 - (BOOL)_isAttributed;

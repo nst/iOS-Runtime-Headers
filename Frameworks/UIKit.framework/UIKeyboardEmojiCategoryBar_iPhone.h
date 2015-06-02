@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardEmojiCategoryBar_iPhone : UIKeyboardEmojiCategoryBar {
-}
+@interface UIKeyboardEmojiCategoryBar_iPhone : UIKeyboardEmojiCategoryBar
 
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventEditViewDelegate>, EKEvent, EKEventEditViewController, EKEventEditor, EKEventStore, NSString, UIColor;
-
 @interface EKEventEditViewController : UINavigationController {
     <EKEventEditViewDelegate> *_editViewDelegate;
     EKEventEditor *_editor;
@@ -14,18 +12,18 @@
     int _transitionForModalViewPresentation;
 }
 
-@property BOOL canHideDoneAndCancelButtons;
-@property <EKEventEditViewDelegate> * editViewDelegate;
-@property(retain) EKEventEditor * editor;
-@property(retain) UIColor * editorBackgroundColor;
-@property float editorNavBarLeftContentInset;
-@property float editorNavBarRightContentInset;
-@property(retain) EKEvent * event;
-@property(retain) EKEventStore * eventStore;
-@property BOOL scrollToNotes;
-@property BOOL showAttachments;
-@property(retain) EKEventEditViewController * strongSelf;
-@property int transitionForModalViewPresentation;
+@property (nonatomic) BOOL canHideDoneAndCancelButtons;
+@property (nonatomic) <EKEventEditViewDelegate> *editViewDelegate;
+@property (nonatomic, retain) EKEventEditor *editor;
+@property (nonatomic, retain) UIColor *editorBackgroundColor;
+@property (nonatomic) float editorNavBarLeftContentInset;
+@property (nonatomic) float editorNavBarRightContentInset;
+@property (nonatomic, retain) EKEvent *event;
+@property (nonatomic, retain) EKEventStore *eventStore;
+@property (nonatomic) BOOL scrollToNotes;
+@property (nonatomic) BOOL showAttachments;
+@property (nonatomic, retain) EKEventEditViewController *strongSelf;
+@property (nonatomic) int transitionForModalViewPresentation;
 
 + (void)setDefaultDatesForEvent:(id)arg1;
 

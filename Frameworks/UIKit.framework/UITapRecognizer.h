@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITapRecognizerDelegate>, NSArray, NSMutableArray, NSMutableSet;
-
 @interface UITapRecognizer : NSObject <NSCoding> {
     NSMutableSet *_activeTouches;
     float _allowableMovement;
@@ -20,24 +18,24 @@
     } _location;
     double _maximumIntervalBetweenSuccessiveTaps;
     double _maximumSingleTapDuration;
-    unsigned int _noNewTouches : 1;
+    unsigned int _noNewTouches;
     unsigned int _numberOfTapsRequired;
     unsigned int _numberOfTouchesRequired;
     struct CGPoint { 
         float x; 
         float y; 
     } _startPoint;
-    unsigned int _timerOn : 1;
+    unsigned int _timerOn;
     NSMutableArray *_touches;
 }
 
-@property float allowableMovement;
-@property <UITapRecognizerDelegate> * delegate;
-@property double maximumIntervalBetweenSuccessiveTaps;
-@property double maximumSingleTapDuration;
-@property unsigned int numberOfTapsRequired;
-@property unsigned int numberOfTouchesRequired;
-@property(readonly) NSArray * touches;
+@property (nonatomic) float allowableMovement;
+@property (nonatomic) <UITapRecognizerDelegate> *delegate;
+@property (nonatomic) double maximumIntervalBetweenSuccessiveTaps;
+@property (nonatomic) double maximumSingleTapDuration;
+@property (nonatomic) unsigned int numberOfTapsRequired;
+@property (nonatomic) unsigned int numberOfTouchesRequired;
+@property (nonatomic, readonly) NSArray *touches;
 
 - (void)_beginInteraction;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface NNMKProtoMessageContentSync : PBCodable <NSCopying> {
     NSMutableArray *_attachments;
     NSData *_dateSynced;
@@ -20,21 +18,21 @@
     NSData *_text;
 }
 
-@property(retain) NSMutableArray * attachments;
-@property(retain) NSData * dateSynced;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasDateSynced;
-@property BOOL hasFullSyncVersion;
-@property BOOL hasMainAlternativeValid;
-@property(readonly) BOOL hasMessageId;
-@property BOOL hasPartiallyLoaded;
-@property(readonly) BOOL hasPreview;
-@property(readonly) BOOL hasText;
-@property BOOL mainAlternativeValid;
-@property(retain) NSString * messageId;
-@property BOOL partiallyLoaded;
-@property(retain) NSData * preview;
-@property(retain) NSData * text;
+@property (nonatomic, retain) NSMutableArray *attachments;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasDateSynced;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic) BOOL hasMainAlternativeValid;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic) BOOL hasPartiallyLoaded;
+@property (nonatomic, readonly) BOOL hasPreview;
+@property (nonatomic, readonly) BOOL hasText;
+@property (nonatomic) BOOL mainAlternativeValid;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic) BOOL partiallyLoaded;
+@property (nonatomic, retain) NSData *preview;
+@property (nonatomic, retain) NSData *text;
 
 - (void).cxx_destruct;
 - (void)addAttachment:(id)arg1;

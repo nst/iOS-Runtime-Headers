@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUConcernListDataProvider : ISDataProvider {
-}
+@interface SUConcernListDataProvider : ISDataProvider
 
 - (id)_concernsForArray:(id)arg1;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

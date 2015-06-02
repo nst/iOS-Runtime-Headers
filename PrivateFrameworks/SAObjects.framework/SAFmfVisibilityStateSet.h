@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAFmfVisibilityStateSet : SADomainCommand {
-}
+@interface SAFmfVisibilityStateSet : SADomainCommand
 
-@property BOOL visible;
+@property (nonatomic) BOOL visible;
 
 + (id)visibilityStateSet;
 + (id)visibilityStateSetWithDictionary:(id)arg1 context:(id)arg2;

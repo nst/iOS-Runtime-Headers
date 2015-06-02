@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UITableView;
-
 @interface EKReminderPriorityEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
     unsigned int _priority;
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int priority;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int priority;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;

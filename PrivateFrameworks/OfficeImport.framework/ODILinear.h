@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODIState;
-
 @interface ODILinear : NSObject {
     float mConnectorWidth;
     BOOL mIsHorizontal;

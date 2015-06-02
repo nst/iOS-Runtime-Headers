@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CADisplayLink, NSMutableSet;
-
 @interface CKImageAnimationTimer : NSObject {
     CADisplayLink *_displayLink;
     unsigned int _frame;
     NSMutableSet *_observers;
 }
 
-@property(retain) CADisplayLink * displayLink;
-@property(retain) NSMutableSet * observers;
+@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic, retain) NSMutableSet *observers;
 
 + (id)sharedTimer;
 

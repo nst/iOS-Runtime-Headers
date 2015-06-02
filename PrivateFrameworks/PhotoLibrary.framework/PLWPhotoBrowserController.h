@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString;
+@interface PLWPhotoBrowserController : PLPhotoBrowserController <UIGestureRecognizerDelegate>
 
-@interface PLWPhotoBrowserController : PLPhotoBrowserController <UIGestureRecognizerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)initWithAssetCollections:(id)arg1 atImageIndexPath:(id)arg2 dataSource:(id)arg3 modalDoneButtonItem:(id)arg4;
 - (void)loadView;

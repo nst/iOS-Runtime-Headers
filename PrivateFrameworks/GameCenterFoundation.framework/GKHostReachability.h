@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSError, NSString;
-
 @interface GKHostReachability : GKReachability {
     NSError *_error;
     NSString *_hostName;
 }
 
-@property(retain) NSError * error;
-@property(retain) NSString * hostName;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSString *hostName;
 
 + (id)_gkReachabilityWithHostName:(id)arg1;
 

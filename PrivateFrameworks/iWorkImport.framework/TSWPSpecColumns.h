@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecColumns : TSSSpec {
-}
+@interface TSWPSpecColumns : TSSSpec
 
 - (id)getUnsetSpec;
 

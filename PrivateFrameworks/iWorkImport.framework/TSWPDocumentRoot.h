@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
-}
+@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex>
 
-@property(getter=isChangeTrackingEnabled,readonly) BOOL changeTrackingEnabled;
-@property(readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
+@property (getter=isChangeTrackingEnabled, nonatomic, readonly) BOOL changeTrackingEnabled;
+@property (nonatomic, readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
 
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;

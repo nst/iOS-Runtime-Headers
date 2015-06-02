@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDAnimationTarget;
-
 @interface PDMediaNode : PDTimeNode {
     BOOL mIsMuted;
     BOOL mIsShowWhenStopped;

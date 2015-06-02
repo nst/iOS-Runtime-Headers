@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEORPProblemResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
@@ -14,12 +12,12 @@
     int _statusCode;
 }
 
-@property BOOL hasIsNotificationSupported;
-@property(readonly) BOOL hasProblemId;
-@property BOOL hasStatusCode;
-@property BOOL isNotificationSupported;
-@property(retain) NSString * problemId;
-@property int statusCode;
+@property (nonatomic) BOOL hasIsNotificationSupported;
+@property (nonatomic, readonly) BOOL hasProblemId;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) BOOL isNotificationSupported;
+@property (nonatomic, retain) NSString *problemId;
+@property (nonatomic) int statusCode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

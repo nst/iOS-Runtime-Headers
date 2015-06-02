@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPTable, CPZone;
-
 @interface CPTableMaker : NSObject {
     unsigned int cellIndex;
     struct { float x1; float x2; } *columnXIntervals;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKProtoDumpLogsRequest : PBRequest <NSCopying> {
-}
+@interface NPKProtoDumpLogsRequest : PBRequest <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

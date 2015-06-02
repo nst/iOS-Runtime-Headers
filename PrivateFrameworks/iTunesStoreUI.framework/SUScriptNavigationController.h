@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptNavigationBar, SUScriptViewController, UINavigationController;
-
 @interface SUScriptNavigationController : SUScriptViewController {
     UINavigationController *_navController;
 }
 
-@property(readonly) SUScriptNavigationBar * navigationBar;
+@property (readonly) SUScriptNavigationBar *navigationBar;
 @property BOOL navigationBarHidden;
-@property(copy) id toolbarHidden;
-@property(readonly) SUScriptViewController * topViewController;
-@property(retain) id viewControllers;
+@property (copy) id toolbarHidden;
+@property (readonly) SUScriptViewController *topViewController;
+@property (retain) id viewControllers;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

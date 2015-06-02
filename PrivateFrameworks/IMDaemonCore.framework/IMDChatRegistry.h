@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSArray, NSMutableDictionary, NSRecursiveLock;
-
 @interface IMDChatRegistry : NSObject {
     NSMutableDictionary *_chats;
     NSRecursiveLock *_chatsLock;
@@ -11,7 +9,7 @@
     BOOL _isLoading;
 }
 
-@property(readonly) NSArray * chats;
+@property (nonatomic, readonly) NSArray *chats;
 
 + (id)sharedInstance;
 
@@ -38,7 +36,7 @@
 - (id)existingChatWithIdentifier:(id)arg1 account:(id)arg2;
 - (id)existingChatsForIDs:(id)arg1 onService:(id)arg2 style:(unsigned char)arg3;
 - (id)init;
-- (BOOL)loadChatsWithCompletionBlock:(id)arg1;
+- (BOOL)loadChatsWithCompletionBlock:(id /* block */)arg1;
 - (void)removeChat:(id)arg1;
 - (void)removeItem:(id)arg1 fromChat:(id)arg2;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;

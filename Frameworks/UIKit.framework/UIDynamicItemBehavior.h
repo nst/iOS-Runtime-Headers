@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMapTable;
-
 @interface UIDynamicItemBehavior : UIDynamicBehavior {
     BOOL _allowsRotation;
     float _angularResistance;
@@ -26,13 +24,13 @@
     BOOL _useDefaultViewPropertiesApplier;
 }
 
-@property BOOL allowsRotation;
-@property float angularResistance;
-@property float density;
-@property float elasticity;
-@property float friction;
-@property(copy,readonly) NSArray * items;
-@property float resistance;
+@property (nonatomic) BOOL allowsRotation;
+@property (nonatomic) float angularResistance;
+@property (nonatomic) float density;
+@property (nonatomic) float elasticity;
+@property (nonatomic) float friction;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic) float resistance;
 
 - (float)_angleForItem:(id)arg1;
 - (float)_angularResistanceForItem:(id)arg1;

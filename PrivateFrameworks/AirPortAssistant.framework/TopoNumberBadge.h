@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class UIFont;
-
 @interface TopoNumberBadge : CALayer {
     int _count;
     UIFont *_font;
@@ -18,8 +16,8 @@
     } _textSize;
 }
 
-@property int count;
-@property id owningView;
+@property (nonatomic) int count;
+@property (nonatomic) id owningView;
 
 + (void)deallocImageCache;
 + (id)imageBadgeForCount:(int)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTEAudioDeviceList;
-
 @interface LTEAudioSessionController : NSObject {
     LTEAudioDeviceList *deviceList;
 }
 
-@property id changeListener;
-@property(retain) LTEAudioDeviceList * deviceList;
+@property (nonatomic) id /* block */ changeListener;
+@property (nonatomic, retain) LTEAudioDeviceList *deviceList;
 
 + (id)currentInputDevice;
 + (id)defaultInputDevice;
@@ -22,14 +20,14 @@
 + (void)startAudioSession;
 + (void)stopAudioSession;
 
-- (id)changeListener;
+- (id /* block */)changeListener;
 - (void)dealloc;
 - (id)deviceList;
 - (id)devices;
 - (id)init;
 - (id)inputDevices;
 - (id)outputDevices;
-- (void)setChangeListener:(id)arg1;
+- (void)setChangeListener:(id /* block */)arg1;
 - (void)setDeviceList:(id)arg1;
 
 @end

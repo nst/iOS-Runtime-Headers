@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSArray, NSData;
-
 @interface CPSearchMatcher : NSObject {
     NSArray *_asciiComponents;
     NSArray *_components;

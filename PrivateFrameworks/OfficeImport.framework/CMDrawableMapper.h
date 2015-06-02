@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMDrawableStyle, NSData, NSString, OADDrawable, OADOrientedBounds;
-
 @interface CMDrawableMapper : CMMapper {
     struct CGRect { 
         struct CGPoint { 

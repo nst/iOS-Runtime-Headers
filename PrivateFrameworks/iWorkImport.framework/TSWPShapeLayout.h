@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPShapeLayoutDelegate>, TSDWrapSegments, TSWPLayout, TSWPPadding;
-
 @interface TSWPShapeLayout : TSDShapeLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     TSDWrapSegments *_cachedInteriorWrapSegments;
     TSWPLayout *_containedLayout;
@@ -11,15 +9,15 @@
     BOOL _observingStorage;
 }
 
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) BOOL autosizes;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) TSWPLayout * containedLayout;
-@property <TSWPShapeLayoutDelegate> * delegate;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) BOOL autosizes;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (nonatomic, readonly) TSWPLayout *containedLayout;
+@property <TSWPShapeLayoutDelegate> *delegate;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (void)addChild:(id)arg1;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
@@ -38,7 +36,7 @@
 - (id)containedLayout;
 - (void)createContainedLayoutForEditing;
 - (void)createContainedLayoutForInstructionalText;
-- (unsigned int)cropLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }[128])arg2;
+- (unsigned int)cropLine:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)dependentLayouts;

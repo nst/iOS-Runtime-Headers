@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, NSTimer, UIShadowView, UITableViewCell;
-
 @interface _UITableViewReorderingSupport : NSObject {
     NSTimer *_autoscrollTimer;
     UIShadowView *_bottomShadowView;
     NSIndexPath *_initialIndexPath;
-    unsigned int _oldShowHorizontalScrollIndicator : 1;
-    unsigned int _oldShowVerticalScrollIndicator : 1;
-    unsigned int _reloadDataCalled : 1;
+    unsigned int _oldShowHorizontalScrollIndicator;
+    unsigned int _oldShowVerticalScrollIndicator;
+    unsigned int _reloadDataCalled;
     UITableViewCell *_reorderedCell;
-    unsigned int _reorderingCancelled : 1;
-    unsigned int _reserved : 28;
+    unsigned int _reorderingCancelled;
+    unsigned int _reserved;
     NSIndexPath *_targetIndexPath;
     UIShadowView *_topShadowView;
     BOOL _wasScrollingEnabled;

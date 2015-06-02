@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDLayoutGeometry, TSUBezierPath;
-
 @interface TSDGroupLayout : TSDContainerLayout <TSDWrappableParent> {
     struct CGRect { 
         struct CGPoint { 

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SASyncAnchor;
+@interface SASyncChunkDenied : SABaseClientBoundCommand <SAClientBoundCommand>
 
-@interface SASyncChunkDenied : SABaseClientBoundCommand <SAClientBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy) NSString * appId;
-@property(copy) NSArray * callbacks;
-@property(retain) SASyncAnchor * current;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int errorCode;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *appId;
+@property (nonatomic, copy) NSArray *callbacks;
+@property (nonatomic, retain) SASyncAnchor *current;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int errorCode;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)chunkDenied;
 + (id)chunkDeniedWithDictionary:(id)arg1 context:(id)arg2;

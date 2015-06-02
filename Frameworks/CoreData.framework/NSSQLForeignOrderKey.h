@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLForeignKey;
-
 @interface NSSQLForeignOrderKey : NSSQLColumn {
     NSSQLForeignKey *_foreignKey;
 }

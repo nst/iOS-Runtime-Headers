@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@interface NNMKProtectedSyncServiceClient : NNMKMessagesSyncServiceClient {
-}
+@interface NNMKProtectedSyncServiceClient : NNMKMessagesSyncServiceClient
 
 - (id)initWithQueue:(id)arg1;
 

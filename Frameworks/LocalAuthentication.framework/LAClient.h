@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication
  */
 
-@class <LAContextXPC>, <LAUIDelegate>, NSData, NSError, NSMutableArray, NSString, NSXPCConnection;
-
 @interface LAClient : NSObject <LAContextCallbackXPC, LAContextXPC> {
     NSMutableArray *_callInvalidationBlocks;
     NSData *_connectToContext;
@@ -16,13 +14,13 @@
     <LAUIDelegate> *_uiDelegate;
 }
 
-@property(retain) NSData * connectToContext;
-@property(readonly) NSString * creatorDisplayName;
-@property(readonly) NSData * externalizedContext;
-@property <LAUIDelegate> * uiDelegate;
+@property (nonatomic, retain) NSData *connectToContext;
+@property (readonly) NSString *creatorDisplayName;
+@property (readonly) NSData *externalizedContext;
+@property (nonatomic) <LAUIDelegate> *uiDelegate;
 
 + (id)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 error:(id*)arg3;
-+ (void)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 reply:(id)arg3;
++ (void)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 reply:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_recoverConnection;
@@ -30,13 +28,13 @@
 - (BOOL)_setPermanentError:(id)arg1;
 - (id)connectToContext;
 - (id)creatorDisplayName;
-- (void)creatorName:(id)arg1;
+- (void)creatorName:(id /* block */)arg1;
 - (void)dealloc;
-- (void)enterPassword:(id)arg1 reply:(id)arg2;
-- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id)arg4;
-- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id)arg3;
+- (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
 - (id)externalizedContext;
-- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id)arg3;
+- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
 - (void)invalidate;
 - (void)invalidatedWithError:(id)arg1;
 - (void)setConnectToContext:(id)arg1;

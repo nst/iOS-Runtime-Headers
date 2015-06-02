@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayerInternal, NSString;
-
 @interface GKLeaderboardScoreRequest : NSObject <NSSecureCoding> {
     BOOL _friendsOnly;
     NSString *_gameBundleID;
@@ -14,13 +12,13 @@
     int _timeScope;
 }
 
-@property BOOL friendsOnly;
-@property(copy) NSString * gameBundleID;
-@property(copy) NSString * groupIdentifier;
-@property(copy) NSString * identifier;
-@property(copy) GKPlayerInternal * playerInternal;
-@property(getter=isPrefetch) BOOL prefetch;
-@property int timeScope;
+@property (nonatomic) BOOL friendsOnly;
+@property (nonatomic, copy) NSString *gameBundleID;
+@property (nonatomic, copy) NSString *groupIdentifier;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) GKPlayerInternal *playerInternal;
+@property (getter=isPrefetch, nonatomic) BOOL prefetch;
+@property (nonatomic) int timeScope;
 
 + (id)requestForPlayerInternals:(id)arg1;
 + (id)requestForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

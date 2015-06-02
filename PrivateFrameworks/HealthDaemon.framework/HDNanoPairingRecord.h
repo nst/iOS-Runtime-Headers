@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSDate, NSUUID;
-
 @interface HDNanoPairingRecord : NSObject {
     NSDate *_creationDate;
     NSUUID *_healthPairingUUID;
     NSUUID *_persistentPairingUUID;
 }
 
-@property(retain) NSDate * creationDate;
-@property(retain) NSUUID * healthPairingUUID;
-@property(retain) NSUUID * persistentPairingUUID;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSUUID *healthPairingUUID;
+@property (nonatomic, retain) NSUUID *persistentPairingUUID;
 
 + (id)pairingRecordWithPersistentPairingUUID:(id)arg1 healthPairingUUID:(id)arg2 creationDate:(id)arg3;
 

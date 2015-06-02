@@ -6,7 +6,7 @@
     unsigned int _actionIndex;
 }
 
-@property unsigned int actionIndex;
+@property (nonatomic) unsigned int actionIndex;
 
 - (unsigned int)actionIndex;
 - (void)setActionIndex:(unsigned int)arg1;

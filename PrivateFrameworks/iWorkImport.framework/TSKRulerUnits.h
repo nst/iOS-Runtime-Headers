@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSFormatter;
-
 @interface TSKRulerUnits : NSObject {
     BOOL _centerRulerOrigin;
     NSFormatter *_formatter;
@@ -15,10 +13,10 @@
     BOOL _showRulerAsPercentage;
 }
 
-@property BOOL centerRulerOrigin;
-@property int preferredPixelUnit;
-@property int rulerUnits;
-@property BOOL showRulerAsPercentage;
+@property (nonatomic) BOOL centerRulerOrigin;
+@property (nonatomic) int preferredPixelUnit;
+@property (nonatomic) int rulerUnits;
+@property (nonatomic) BOOL showRulerAsPercentage;
 
 + (id)formatterForRulerUnits:(int)arg1 decimalPlaces:(int)arg2 trailingZeros:(BOOL)arg3 lenient:(BOOL)arg4;
 + (id)instance;

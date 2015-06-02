@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSNumber, NSString;
-
 @interface SSLookupItemOffer : NSObject {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSString * buyParameters;
-@property(readonly) NSString * formattedPrice;
-@property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) NSString * offerType;
-@property(readonly) NSNumber * price;
+@property (nonatomic, readonly) NSString *buyParameters;
+@property (nonatomic, readonly) NSString *formattedPrice;
+@property (nonatomic, readonly) NSDictionary *lookupDictionary;
+@property (nonatomic, readonly) NSString *offerType;
+@property (nonatomic, readonly) NSNumber *price;
 
 - (id)actionTextForType:(id)arg1;
 - (id)buyParameters;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKFriendsDataSource, GKGame, NSArray, NSMutableDictionary, NSSet, NSString;
-
 @interface GKFriendsSplittingDataSource : GKSplittingDataSource {
     NSString *_achievementID;
     GKGame *_game;
@@ -13,14 +11,14 @@
     NSMutableDictionary *_pickerInfos;
 }
 
-@property(retain) NSString * achievementID;
-@property(retain) GKFriendsDataSource * friendsDataSource;
-@property(retain) GKGame * game;
-@property(retain) NSSet * hiddenPlayers;
-@property(retain) NSString * leaderboardID;
-@property int maxSelectable;
-@property(retain) NSMutableDictionary * pickerInfos;
-@property(retain) NSArray * selectedPlayers;
+@property (nonatomic, retain) NSString *achievementID;
+@property (nonatomic, retain) GKFriendsDataSource *friendsDataSource;
+@property (nonatomic, retain) GKGame *game;
+@property (nonatomic, retain) NSSet *hiddenPlayers;
+@property (nonatomic, retain) NSString *leaderboardID;
+@property (nonatomic) int maxSelectable;
+@property (nonatomic, retain) NSMutableDictionary *pickerInfos;
+@property (nonatomic, retain) NSArray *selectedPlayers;
 
 - (BOOL)_changePickerInfo:(id)arg1 selected:(BOOL)arg2;
 - (id)achievementID;

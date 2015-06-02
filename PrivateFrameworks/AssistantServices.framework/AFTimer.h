@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSNumber;
-
 @interface AFTimer : AFSiriModelObject {
     int _state;
     NSNumber *_value;
 }
 
-@property int state;
-@property(copy) NSNumber * value;
+@property (nonatomic) int state;
+@property (nonatomic, copy) NSNumber *value;
 
 + (BOOL)supportsSecureCoding;
 

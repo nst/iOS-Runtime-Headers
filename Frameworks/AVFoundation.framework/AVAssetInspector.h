@@ -2,37 +2,34 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataItem, NSArray, NSData, NSDictionary, NSString;
+@interface AVAssetInspector : AVFigObjectInspector <NSCopying>
 
-@interface AVAssetInspector : AVFigObjectInspector <NSCopying> {
-}
-
-@property(readonly) NSData * SHA1Digest;
-@property(readonly) NSArray * alternateTrackGroups;
-@property(readonly) NSArray * availableMetadataFormats;
-@property(readonly) BOOL canContainMovieFragments;
-@property(readonly) NSArray * commonMetadata;
-@property(getter=isCompatibleWithSavedPhotosAlbum,readonly) BOOL compatibleWithSavedPhotosAlbum;
-@property(getter=isComposable,readonly) BOOL composable;
-@property(readonly) BOOL containsMovieFragments;
-@property(readonly) AVMetadataItem * creationDate;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property(getter=isExportable,readonly) BOOL exportable;
-@property(readonly) NSString * lyrics;
-@property(readonly) NSArray * mediaSelectionGroups;
-@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
-@property(readonly) int naturalTimeScale;
-@property(getter=isPlayable,readonly) BOOL playable;
-@property(readonly) float preferredRate;
-@property(readonly) float preferredSoundCheckVolumeNormalization;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property(readonly) float preferredVolume;
-@property(readonly) id propertyListForProxy;
-@property(readonly) BOOL providesPreciseDurationAndTiming;
-@property(getter=isReadable,readonly) BOOL readable;
-@property(readonly) long trackCount;
-@property(readonly) NSArray * trackIDs;
-@property(readonly) NSDictionary * trackReferences;
+@property (nonatomic, readonly) NSData *SHA1Digest;
+@property (nonatomic, readonly) NSArray *alternateTrackGroups;
+@property (nonatomic, readonly) NSArray *availableMetadataFormats;
+@property (nonatomic, readonly) BOOL canContainMovieFragments;
+@property (nonatomic, readonly) NSArray *commonMetadata;
+@property (getter=isCompatibleWithSavedPhotosAlbum, nonatomic, readonly) BOOL compatibleWithSavedPhotosAlbum;
+@property (getter=isComposable, nonatomic, readonly) BOOL composable;
+@property (nonatomic, readonly) BOOL containsMovieFragments;
+@property (nonatomic, readonly) AVMetadataItem *creationDate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (getter=isExportable, nonatomic, readonly) BOOL exportable;
+@property (nonatomic, readonly) NSString *lyrics;
+@property (nonatomic, readonly) NSArray *mediaSelectionGroups;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) int naturalTimeScale;
+@property (getter=isPlayable, nonatomic, readonly) BOOL playable;
+@property (nonatomic, readonly) float preferredRate;
+@property (nonatomic, readonly) float preferredSoundCheckVolumeNormalization;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic, readonly) float preferredVolume;
+@property (nonatomic, readonly) id propertyListForProxy;
+@property (nonatomic, readonly) BOOL providesPreciseDurationAndTiming;
+@property (getter=isReadable, nonatomic, readonly) BOOL readable;
+@property (nonatomic, readonly) long trackCount;
+@property (nonatomic, readonly) NSArray *trackIDs;
+@property (nonatomic, readonly) NSDictionary *trackReferences;
 
 - (id)SHA1Digest;
 - (id)alternateTrackGroups;

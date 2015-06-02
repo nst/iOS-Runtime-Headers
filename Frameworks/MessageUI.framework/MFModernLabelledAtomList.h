@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFModernLabelledAtomListDelegate>, NSDictionary, NSMutableArray, NSString, UIColor, UILabel, UIView;
-
 @interface MFModernLabelledAtomList : UIView <MFModernAddressAtomDelegate, MFPassthroughViewProvider> {
     NSMutableArray *_addressAtoms;
     void *_addressBook;
     UIView *_baselineView;
     <MFModernLabelledAtomListDelegate> *_delegate;
     float _firstLineWidth;
-    unsigned int _isChangingFrame : 1;
+    unsigned int _isChangingFrame;
     UILabel *_label;
     UIColor *_labelTextColor;
     BOOL _labelVisible;
     float _lineSpacing;
-    unsigned int _needsReflow : 1;
+    unsigned int _needsReflow;
     unsigned int _numberOfRows;
     BOOL _primary;
     NSDictionary *_recipients;
@@ -23,17 +21,17 @@
     BOOL _usePadDisplayStyle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UILabel * label;
-@property(retain) UIColor * labelTextColor;
-@property(getter=isLabelVisible) BOOL labelVisible;
-@property float lineSpacing;
-@property(readonly) unsigned int numberOfRows;
-@property BOOL primary;
-@property(readonly) Class superclass;
-@property BOOL usePadDisplayStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic, retain) UIColor *labelTextColor;
+@property (getter=isLabelVisible, nonatomic) BOOL labelVisible;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic, readonly) unsigned int numberOfRows;
+@property (nonatomic) BOOL primary;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usePadDisplayStyle;
 
 + (float)atomLineHeight;
 + (id)defaultLabelFont;
@@ -50,8 +48,8 @@
 - (struct CGPoint { float x1; float x2; })baselinePointForRow:(unsigned int)arg1;
 - (void)crossFadeLabelVisibility:(BOOL)arg1 atomSeparatorStyle:(int)arg2 animationDuration:(double)arg3;
 - (void)dealloc;
-- (void)enumerateAddressAtomsUsingBlock:(id)arg1;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 atomPresentationOptions:(unsigned int)arg7 addressBook:(void*)arg8 completionBlock:(id)arg9;
+- (void)enumerateAddressAtomsUsingBlock:(id /* block */)arg1;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 totalWidth:(float)arg3 firstLineWidth:(float)arg4 addresses:(id)arg5 arePhoneNumbers:(id)arg6 atomPresentationOptions:(unsigned int)arg7 addressBook:(void*)arg8 completionBlock:(id /* block */)arg9;
 - (BOOL)isLabelVisible;
 - (id)label;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })labelFrame;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFJavascriptStripper : NSObject {
-}
+@interface WFJavascriptStripper : NSObject
 
 + (id)getJavascriptLines:(id)arg1;
 + (id)getStringsFromLine:(id)arg1 withTokenCharacter:(id)arg2;

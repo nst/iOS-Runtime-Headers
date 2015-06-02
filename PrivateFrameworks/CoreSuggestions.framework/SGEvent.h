@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSArray, NSDate, NSObject<OS_dispatch_queue>, NSString, NSTimeZone, SGEvent;
-
 @interface SGEvent : NSObject <SGObject> {
     NSDate *_creationDate;
     NSDate *_end;
@@ -22,20 +20,20 @@
     NSString *_title;
 }
 
-@property(readonly) NSDate * creationDate;
-@property(readonly) NSDate * end;
-@property(readonly) NSTimeZone * endTimeZone;
-@property(getter=isGeocodeCandidate,readonly) BOOL geocodeCandidate;
-@property(readonly) BOOL isAllDay;
-@property(readonly) NSDate * lastModifiedDate;
-@property(readonly) NSArray * locations;
-@property(readonly) NSString * messageId;
-@property(readonly) NSString * notes;
-@property(readonly) NSString * opaqueKey;
-@property(readonly) NSDate * start;
-@property(readonly) NSTimeZone * startTimeZone;
-@property(readonly) NSArray * tags;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (nonatomic, readonly) NSDate *end;
+@property (nonatomic, readonly) NSTimeZone *endTimeZone;
+@property (getter=isGeocodeCandidate, nonatomic, readonly) BOOL geocodeCandidate;
+@property (nonatomic, readonly) BOOL isAllDay;
+@property (nonatomic, readonly) NSDate *lastModifiedDate;
+@property (nonatomic, readonly) NSArray *locations;
+@property (nonatomic, readonly) NSString *messageId;
+@property (nonatomic, readonly) NSString *notes;
+@property (nonatomic, readonly) NSString *opaqueKey;
+@property (nonatomic, readonly) NSDate *start;
+@property (nonatomic, readonly) NSTimeZone *startTimeZone;
+@property (nonatomic, readonly) NSArray *tags;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)eventWithOpaqueKey:(id)arg1 title:(id)arg2 notes:(id)arg3 start:(id)arg4 startTimeZone:(id)arg5 end:(id)arg6 endTimeZone:(id)arg7 isAllDay:(BOOL)arg8 creationDate:(id)arg9 lastModifiedDate:(id)arg10 locations:(id)arg11 tags:(id)arg12 messageId:(id)arg13;
 + (BOOL)supportsSecureCoding;
@@ -49,8 +47,8 @@
 - (id)end;
 - (id)endTimeZone;
 - (id)firstLocationForType:(unsigned int)arg1;
-- (void)geocodeLocation:(id)arg1 withCallback:(id)arg2;
-- (void)geocodeWithCallback:(id)arg1;
+- (void)geocodeLocation:(id)arg1 withCallback:(id /* block */)arg2;
+- (void)geocodeWithCallback:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOpaqueKey:(id)arg1 messageId:(id)arg2 title:(id)arg3 notes:(id)arg4 start:(id)arg5 startTimeZone:(id)arg6 end:(id)arg7 endTimeZone:(id)arg8 isAllDay:(BOOL)arg9 creationDate:(id)arg10 lastModifiedDate:(id)arg11 locations:(id)arg12 tags:(id)arg13;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSArray;
-
 @interface SymbolValidator : YQLRequest {
     id _delegate;
     NSArray *_symbols;
 }
 
-@property id delegate;
+@property (nonatomic) id delegate;
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;

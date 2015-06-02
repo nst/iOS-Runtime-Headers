@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSObject;
-
 @interface SKUIWeakReference : NSObject {
     NSObject *_object;
 }
 
-@property NSObject * object;
+@property (nonatomic) NSObject *object;
 
 - (void).cxx_destruct;
 - (id)object;

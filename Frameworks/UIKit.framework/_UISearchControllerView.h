@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UISearchControllerView : UIView {
-}
+@interface _UISearchControllerView : UIView
 
 - (void)_addSubview:(id)arg1 positioned:(int)arg2 relativeTo:(id)arg3;
 - (void)_ensureContainerIsOnTop;

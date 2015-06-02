@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, NSURL, NSUUID;
-
 @interface RCSSavedRecordingAccessToken : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     NSString *_accessName;
     unsigned int _accessType;
@@ -11,10 +9,10 @@
     NSUUID *_identifier;
 }
 
-@property(copy,readonly) NSString * accessName;
-@property(readonly) unsigned int accessType;
-@property(readonly) NSURL * compositionAVURL;
-@property(copy,readonly) NSUUID * identifier;
+@property (nonatomic, readonly, copy) NSString *accessName;
+@property (nonatomic, readonly) unsigned int accessType;
+@property (nonatomic, readonly) NSURL *compositionAVURL;
+@property (nonatomic, readonly, copy) NSUUID *identifier;
 
 + (BOOL)supportsSecureCoding;
 + (id)tokenWithName:(id)arg1 accessType:(unsigned int)arg2 compositionAVURL:(id)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBUHistory : WBSHistory {
-}
+@interface WBUHistory : WBSHistory
 
 - (void)_addVisitedLinksForItemsIfNeeded:(id)arg1;
 - (id)_createHistoryStore;

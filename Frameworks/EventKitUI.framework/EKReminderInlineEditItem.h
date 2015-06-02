@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKReminderInlineEditItemCell, NSString;
-
 @interface EKReminderInlineEditItem : EKReminderEditItem <EKExpandingTextViewDelegate> {
     EKReminderInlineEditItemCell *_cell;
     BOOL _isListeningToHeightChanges;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyStylesFromStyleProviderToTextView:(id)arg1;

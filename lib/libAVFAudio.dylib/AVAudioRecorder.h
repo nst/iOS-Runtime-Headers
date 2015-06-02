@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class <AVAudioRecorderDelegate>, NSArray, NSDictionary, NSURL;
-
 @interface AVAudioRecorder : NSObject {
     void *_impl;
 }
 
-@property(copy) NSArray * channelAssignments;
-@property(readonly) double currentTime;
-@property <AVAudioRecorderDelegate> * delegate;
-@property(readonly) double deviceCurrentTime;
-@property(getter=isMeteringEnabled) BOOL meteringEnabled;
-@property(getter=isRecording,readonly) BOOL recording;
-@property(readonly) NSDictionary * settings;
-@property(readonly) NSURL * url;
+@property (nonatomic, copy) NSArray *channelAssignments;
+@property (readonly) double currentTime;
+@property <AVAudioRecorderDelegate> *delegate;
+@property (readonly) double deviceCurrentTime;
+@property (getter=isMeteringEnabled) BOOL meteringEnabled;
+@property (getter=isRecording, readonly) BOOL recording;
+@property (readonly) NSDictionary *settings;
+@property (readonly) NSURL *url;
 
 - (float)averagePowerForChannel:(unsigned int)arg1;
 - (id)baseInit;
@@ -30,7 +28,7 @@
 - (void)endInterruptionWithFlags;
 - (void)finalize;
 - (void)finishedRecording;
-- (struct AudioRecorderImpl { id x1; id x2; id x3; id x4; id x5; unsigned int x6; struct AudioStreamBasicDescription { double x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; unsigned int x_7_1_4; unsigned int x_7_1_5; unsigned int x_7_1_6; unsigned int x_7_1_7; unsigned int x_7_1_8; unsigned int x_7_1_9; } x7; struct OpaqueAudioFileID {} *x8; struct OpaqueAudioQueue {} *x9; long long x10; long long x11; long long x12; double x13; double x14; double x15; unsigned int x16; char *x17; bool x18; bool x19; bool x20; bool x21; bool x22; bool x23; bool x24; struct AudioQueueLevelMeterState {} *x25; struct AudioQueueBuffer {} *x26[4]; struct AudioQueueBuffer {} *x27; bool x28; unsigned int x29; bool x30; }*)impl;
+- (struct AudioRecorderImpl { id x1; id x2; id x3; struct AudioStreamBasicDescription { double x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; unsigned int x_4_1_5; unsigned int x_4_1_6; unsigned int x_4_1_7; unsigned int x_4_1_8; unsigned int x_4_1_9; } x4; struct OpaqueAudioFileID {} *x5; struct OpaqueAudioQueue {} *x6; long long x7; long long x8; long long x9; double x10; double x11; double x12; unsigned int x13; char *x14; bool x15; bool x16; bool x17; bool x18; bool x19; bool x20; bool x21; struct AudioQueueLevelMeterState {} *x22; struct AudioQueueBuffer {} *x23[4]; struct AudioQueueBuffer {} *x24; bool x25; unsigned int x26; bool x27; }*)impl;
 - (id)initWithURL:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (BOOL)isMeteringEnabled;
 - (BOOL)isRecording;

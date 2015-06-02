@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSMutableArray, SKPaymentQueueClient, SKXPCConnection;
-
 @interface SKPaymentQueueInternal : NSObject {
     BOOL _checkedIn;
     SKPaymentQueueClient *_client;

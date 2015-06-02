@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKViewElementStyle, NSDictionary, NSString;
-
 @interface IKTemplateTreeNode : NSObject {
     NSDictionary *_childNodes;
     NSString *_inlineStyle;
@@ -11,10 +9,10 @@
     IKViewElementStyle *_style;
 }
 
-@property(copy,readonly) NSDictionary * childNodes;
-@property(copy,readonly) NSString * inlineStyle;
-@property(copy,readonly) NSString * selector;
-@property(retain) IKViewElementStyle * style;
+@property (nonatomic, readonly, copy) NSDictionary *childNodes;
+@property (nonatomic, readonly, copy) NSString *inlineStyle;
+@property (nonatomic, readonly, copy) NSString *selector;
+@property (nonatomic, retain) IKViewElementStyle *style;
 
 - (void).cxx_destruct;
 - (id)childNodes;

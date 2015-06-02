@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIModalSourceViewProviderDelegate>, UIBarButtonItem, UIView;
-
 @interface SKUIModalSourceViewProvider : NSObject {
     <SKUIModalSourceViewProviderDelegate> *_delegate;
     BOOL _hideOriginalSourceView;
@@ -12,10 +10,10 @@
     id _userInfo;
 }
 
-@property <SKUIModalSourceViewProviderDelegate> * delegate;
-@property(retain) UIView * originalSourceView;
-@property(retain) UIBarButtonItem * sourceButtonBarItem;
-@property(retain) id userInfo;
+@property (nonatomic) <SKUIModalSourceViewProviderDelegate> *delegate;
+@property (nonatomic, retain) UIView *originalSourceView;
+@property (nonatomic, retain) UIBarButtonItem *sourceButtonBarItem;
+@property (nonatomic, retain) id userInfo;
 
 - (void).cxx_destruct;
 - (id)animationView;

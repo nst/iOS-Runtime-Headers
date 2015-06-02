@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSArray, NSString;
-
 @interface ABNamePredicate : ABPredicate {
     void *_addressBook;
     NSArray *_groups;
@@ -16,16 +14,16 @@
     void *_tokenizations;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property void* addressBook;
-@property void* group;
-@property(retain) NSArray * groups;
-@property BOOL matchPersonOrCompanyNamesExclusively;
-@property BOOL matchPreferredName;
-@property BOOL matchWholeWords;
-@property(copy) NSString * name;
-@property void* source;
-@property(retain) NSArray * sources;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic) void*addressBook;
+@property (nonatomic) void*group;
+@property (nonatomic, retain) NSArray *groups;
+@property (nonatomic) BOOL matchPersonOrCompanyNamesExclusively;
+@property (nonatomic) BOOL matchPreferredName;
+@property (nonatomic) BOOL matchWholeWords;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) void*source;
+@property (nonatomic, retain) NSArray *sources;
 
 - (id)_personNameKeys;
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;

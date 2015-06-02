@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKReporter : NSObject {
-}
+@interface GKReporter : NSObject
 
 + (id)reporter;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIEmbeddedMediaViewDelegate>, MPMoviePlayerController, NSString, UIImage, UIImageView;
-
 @interface SKUIEmbeddedMediaView : UIControl {
     <SKUIEmbeddedMediaViewDelegate> *_delegate;
     int _mediaType;
@@ -15,13 +13,13 @@
     BOOL _usingInlinePlayback;
 }
 
-@property <SKUIEmbeddedMediaViewDelegate> * delegate;
-@property int mediaType;
-@property(copy) NSString * mediaURLString;
-@property(readonly) int playbackState;
-@property BOOL showsThumbnailReflection;
-@property int thumbnailContentMode;
-@property(retain) UIImage * thumbnailImage;
+@property (nonatomic) <SKUIEmbeddedMediaViewDelegate> *delegate;
+@property (nonatomic) int mediaType;
+@property (nonatomic, copy) NSString *mediaURLString;
+@property (nonatomic, readonly) int playbackState;
+@property (nonatomic) BOOL showsThumbnailReflection;
+@property (nonatomic) int thumbnailContentMode;
+@property (nonatomic, retain) UIImage *thumbnailImage;
 
 - (void).cxx_destruct;
 - (void)_didExitFullscreen:(id)arg1;

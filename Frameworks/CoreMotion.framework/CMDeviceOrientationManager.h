@@ -20,8 +20,8 @@
 - (void)onNotification:(id)arg1;
 - (void)setDeviceOrientationCallbackModePrivate:(int)arg1;
 - (void)signalAndReleaseSemaphoreIfNecessaryPrivate;
-- (void)startDeviceOrientationUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startDeviceOrientationUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startDeviceOrientationUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startDeviceOrientationUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)stopDeviceOrientationUpdates;
 - (void)stopDeviceOrientationUpdatesPrivate;
 - (void)updateAggregateDictionaryPrivate;

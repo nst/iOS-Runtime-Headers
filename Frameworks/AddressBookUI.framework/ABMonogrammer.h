@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, UIColor, UIFont, UIImage;
-
 @interface ABMonogrammer : NSObject {
     UIColor *_backgroundColor;
     float _diameter;
@@ -20,11 +18,11 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property float diameter;
-@property(retain) UIFont * font;
-@property(retain) UIColor * textColor;
-@property BOOL textKnockout;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) float diameter;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) BOOL textKnockout;
 
 - (void)_clearMonogramCache;
 - (id)_copyMonogramWithImageData:(struct __CFData { }*)arg1;

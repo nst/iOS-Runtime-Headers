@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUReviewScrubberDataSource>, <PUReviewScrubberDelegate>, NSString, PUHorizontalCollectionViewLayout, UICollectionView, UIImageView, UITapGestureRecognizer, _UIBackdropView;
-
 @interface PUReviewScrubber : UIToolbar <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     UIImageView *__arrowImageView;
     _UIBackdropView *__backdropView;
@@ -19,22 +17,22 @@
     int _selectedIndex;
 }
 
-@property(readonly) UIImageView * _arrowImageView;
-@property(readonly) _UIBackdropView * _backdropView;
-@property(readonly) UICollectionView * _collectionView;
-@property(readonly) PUHorizontalCollectionViewLayout * _collectionViewLayout;
-@property(readonly) BOOL _ignoreScrollViewDidScrollUpdate;
-@property(readonly) unsigned int _numberOfPhotos;
-@property(readonly) BOOL _performingInteractiveUpdate;
-@property(readonly) UIImageView * _shadowView;
-@property(readonly) UITapGestureRecognizer * _tapGestureRecognizer;
-@property <PUReviewScrubberDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <PUReviewScrubberDelegate> * scrubberDelegate;
-@property int selectedIndex;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UIImageView *_arrowImageView;
+@property (nonatomic, readonly) _UIBackdropView *_backdropView;
+@property (nonatomic, readonly) UICollectionView *_collectionView;
+@property (nonatomic, readonly) PUHorizontalCollectionViewLayout *_collectionViewLayout;
+@property (nonatomic, readonly) BOOL _ignoreScrollViewDidScrollUpdate;
+@property (nonatomic, readonly) unsigned int _numberOfPhotos;
+@property (nonatomic, readonly) BOOL _performingInteractiveUpdate;
+@property (nonatomic, readonly) UIImageView *_shadowView;
+@property (nonatomic, readonly) UITapGestureRecognizer *_tapGestureRecognizer;
+@property (nonatomic) <PUReviewScrubberDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <PUReviewScrubberDelegate> *scrubberDelegate;
+@property (nonatomic) int selectedIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_arrowImageView;

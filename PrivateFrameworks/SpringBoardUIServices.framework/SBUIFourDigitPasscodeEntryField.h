@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSMutableArray, UIView;
-
 @interface SBUIFourDigitPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
     float _backgroundAlpha;
     NSMutableArray *_characterIndicators;
@@ -15,7 +13,7 @@
 }
 
 - (void)_appendString:(id)arg1;
-- (void)_autofillForMesaWithCompletion:(id)arg1;
+- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_deleteLastCharacter;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_entryFieldBoundsWithXOffset:(float)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_entryFieldPaddingOutsideRing;

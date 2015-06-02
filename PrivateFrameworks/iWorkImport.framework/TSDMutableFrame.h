@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableFrame : TSDFrame {
-}
+@interface TSDMutableFrame : TSDFrame
 
-@property float assetScale;
+@property (nonatomic) float assetScale;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAssetScale:(float)arg1;

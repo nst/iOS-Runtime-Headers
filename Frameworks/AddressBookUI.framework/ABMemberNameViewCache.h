@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSCache;
-
 @interface ABMemberNameViewCache : NSObject {
     NSCache *_styleProvidersCache;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSData, NSError, NSMutableDictionary, NSString, PLManagedAsset, UIImage;
-
 @interface PLCameraImportItem : NSObject {
     NSString *_basePath;
     NSString *_identifier;
@@ -20,15 +18,15 @@
     PLManagedAsset *importedAsset;
 }
 
-@property(retain) NSString * basePath;
-@property(retain) NSString * eventName;
-@property(readonly) NSString * identifier;
-@property(retain) NSError * importError;
-@property(retain) PLManagedAsset * importedAsset;
-@property(readonly) NSString * parentFolder;
-@property BOOL shouldImport;
-@property(readonly) UIImage * thumbnail;
-@property(retain) NSData * thumbnailData;
+@property (nonatomic, retain) NSString *basePath;
+@property (nonatomic, retain) NSString *eventName;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) NSError *importError;
+@property (nonatomic, retain) PLManagedAsset *importedAsset;
+@property (nonatomic, readonly) NSString *parentFolder;
+@property (nonatomic) BOOL shouldImport;
+@property (nonatomic, readonly) UIImage *thumbnail;
+@property (nonatomic, retain) NSData *thumbnailData;
 
 - (void)_addRepresentation:(id)arg1;
 - (id)_fileExtensionForTypeWithSelector:(SEL)arg1;

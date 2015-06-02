@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL;
-
 @interface NSLinkCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
         unsigned int location; 

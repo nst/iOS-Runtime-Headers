@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString, NSURL;
-
 @interface ML3Artwork : NSObject {
     NSString *_artworkToken;
     int _artworkType;
@@ -12,11 +10,11 @@
     int _sourceType;
 }
 
-@property(readonly) NSString * artworkToken;
-@property(readonly) int artworkType;
-@property(readonly) NSURL * originalFileURL;
-@property(readonly) NSString * relativePath;
-@property(readonly) int sourceType;
+@property (nonatomic, readonly) NSString *artworkToken;
+@property (nonatomic, readonly) int artworkType;
+@property (nonatomic, readonly) NSURL *originalFileURL;
+@property (nonatomic, readonly) NSString *relativePath;
+@property (nonatomic, readonly) int sourceType;
 
 - (void).cxx_destruct;
 - (id)artworkToken;

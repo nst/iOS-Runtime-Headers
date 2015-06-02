@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDScatterType : CHDChartType {
-}
+@interface CHDScatterType : CHDChartType
 
 - (int)defaultLabelPosition;
 - (bool)isSmoothType;

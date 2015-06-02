@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADNullFill : OADFill {
-}
+@interface OADNullFill : OADFill
 
 + (id)defaultProperties;
 + (id)nullFill;

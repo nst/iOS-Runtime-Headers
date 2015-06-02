@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@interface ATDeviceState : NSObject {
-}
+@interface ATDeviceState : NSObject
 
 + (void)blockUntilFirstUnlock;
 + (BOOL)isClassCLocked;
 + (BOOL)isUnlocked;
-+ (void)registerBlockForFirstUnlock:(id)arg1;
++ (void)registerBlockForFirstUnlock:(id /* block */)arg1;
 
 @end

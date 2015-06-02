@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableSet;
-
 @interface PBAnimationCacheState : PDAnimationCacheState {
     NSMutableSet *mEntranceDrawables;
     NSMutableSet *mExitDrawables;

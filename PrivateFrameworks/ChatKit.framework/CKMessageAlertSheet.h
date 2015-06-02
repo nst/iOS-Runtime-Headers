@@ -6,7 +6,7 @@
     BOOL _showingTagline;
 }
 
-@property BOOL showingTagline;
+@property (nonatomic) BOOL showingTagline;
 
 - (void)layoutAnimated:(BOOL)arg1;
 - (void)setShowingTagline:(BOOL)arg1;

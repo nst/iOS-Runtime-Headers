@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSString;
-
 @interface PBBProtoSetLanguage : PBCodable <NSCopying> {
     NSString *_language;
 }
 
-@property(retain) NSString * language;
+@property (nonatomic, retain) NSString *language;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

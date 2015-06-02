@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDFill;
-
 @interface TSCH3DTSDFillTexture : TSCH3DTexture {
     TSDFill *mFill;
 }

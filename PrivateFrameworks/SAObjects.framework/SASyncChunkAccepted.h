@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SASyncAnchor;
+@interface SASyncChunkAccepted : SABaseClientBoundCommand
 
-@interface SASyncChunkAccepted : SABaseClientBoundCommand {
-}
-
-@property(retain) SASyncAnchor * current;
+@property (nonatomic, retain) SASyncAnchor *current;
 
 + (id)chunkAccepted;
 + (id)chunkAcceptedWithDictionary:(id)arg1 context:(id)arg2;

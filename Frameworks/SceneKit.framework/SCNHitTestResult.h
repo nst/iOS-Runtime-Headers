@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNNode;
-
 @interface SCNHitTestResult : NSObject {
     id _reserved;
     struct __C3DHitTestResult { } *_result;
 }
 
-@property(readonly) int faceIndex;
-@property(readonly) int geometryIndex;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } localCoordinates;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } localNormal;
-@property(readonly) struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } modelTransform;
-@property(readonly) SCNNode * node;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } worldCoordinates;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } worldNormal;
+@property (nonatomic, readonly) int faceIndex;
+@property (nonatomic, readonly) int geometryIndex;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } localCoordinates;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } localNormal;
+@property (nonatomic, readonly) struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } modelTransform;
+@property (nonatomic, readonly) SCNNode *node;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } worldCoordinates;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } worldNormal;
 
 + (id)SCNJSExportProtocol;
 + (id)hitTestResultsFromHitTestResultRef:(struct __CFArray { }*)arg1;

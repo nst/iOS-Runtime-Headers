@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface MBMappedData : NSData {
     NSNumber *_fileSize;
     NSData *_mappedData;
@@ -13,7 +11,7 @@
     BOOL _removeFileOnClose;
 }
 
-@property BOOL removeFileOnClose;
+@property (nonatomic) BOOL removeFileOnClose;
 
 - (id)base64EncodedDataWithOptions:(unsigned int)arg1;
 - (id)base64EncodedStringWithOptions:(unsigned int)arg1;
@@ -21,7 +19,7 @@
 - (const void*)bytes;
 - (void)close;
 - (void)dealloc;
-- (void)enumerateByteRangesUsingBlock:(id)arg1;
+- (void)enumerateByteRangesUsingBlock:(id /* block */)arg1;
 - (void)getBytes:(void*)arg1;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

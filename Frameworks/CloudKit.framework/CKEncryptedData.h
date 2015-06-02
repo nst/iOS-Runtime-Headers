@@ -2,25 +2,24 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSData, NSString;
-
 @interface CKEncryptedData : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
     NSData *_data;
     NSData *_encryptedData;
 }
 
-@property(copy) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSData * encryptedData;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSData *encryptedData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (id)_prettyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (id)description;
@@ -34,5 +33,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setEncryptedData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)_prettyDictionaryRepresentation;
 
 @end

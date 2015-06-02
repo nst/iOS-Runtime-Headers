@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DGLFramebuffer;
-
 @interface TSCH3DFramebufferGaussianBlurAndBlendPipeline : TSCH3DFramebufferGaussianBlurPipeline {
     float mBlendFactor;
     TSCH3DGLFramebuffer *mBlendTexture;
 }
 
-@property float blendFactor;
-@property(retain) TSCH3DGLFramebuffer * blendTexture;
+@property (nonatomic) float blendFactor;
+@property (nonatomic, retain) TSCH3DGLFramebuffer *blendTexture;
 
 + (id)effectsArray;
 

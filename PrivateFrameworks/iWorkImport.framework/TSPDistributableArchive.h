@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class SFUFileDataRepresentation, SFUMemoryDataRepresentation, SFUZipEntry;
-
 @interface TSPDistributableArchive : NSObject {
     SFUFileDataRepresentation *_archiveFileRep;
     SFUMemoryDataRepresentation *_archiveMemoryRep;

@@ -9,10 +9,10 @@
     BOOL _invalidateLayout;
 }
 
-@property(getter=isAnimated) BOOL animated;
-@property BOOL invalidateDownloadStatus;
-@property BOOL invalidateEverything;
-@property BOOL invalidateLayout;
+@property (getter=isAnimated, nonatomic) BOOL animated;
+@property (nonatomic) BOOL invalidateDownloadStatus;
+@property (nonatomic) BOOL invalidateEverything;
+@property (nonatomic) BOOL invalidateLayout;
 
 - (BOOL)invalidateDownloadStatus;
 - (BOOL)invalidateEverything;

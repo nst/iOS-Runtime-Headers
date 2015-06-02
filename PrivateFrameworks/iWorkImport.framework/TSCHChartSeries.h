@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleActAlike>, NSObject<TSCHUnretainedParent>, NSString, TSCHChartGridAdapter, TSCHChartModel, TSCHChartSeriesType, TSCHErrorBarData, TSCHTrendLineData, TSUPointerKeyDictionary;
-
 @interface TSCHChartSeries : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
     TSUPointerKeyDictionary *mAxisTable;
     unsigned int mBarGapIndex;
@@ -19,20 +17,20 @@
     TSCHTrendLineData *mTrendLineData;
 }
 
-@property unsigned int barGapIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) TSCHErrorBarData * errorBarData;
-@property(readonly) unsigned int hash;
-@property(readonly) TSCHChartModel * model;
-@property(retain) NSString * name;
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) NSObject<TSCHUnretainedParent> * seriesStorage;
-@property TSCHChartSeriesType * seriesType;
-@property(readonly) BOOL showTrendLineLegendText;
-@property(readonly) Class superclass;
-@property(readonly) TSCHTrendLineData * trendLineData;
-@property(readonly) NSString * trendLineLegendText;
+@property (nonatomic) unsigned int barGapIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TSCHErrorBarData *errorBarData;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) unsigned int seriesIndex;
+@property (nonatomic, readonly) NSObject<TSCHUnretainedParent> *seriesStorage;
+@property (nonatomic) TSCHChartSeriesType *seriesType;
+@property (nonatomic, readonly) BOOL showTrendLineLegendText;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TSCHTrendLineData *trendLineData;
+@property (nonatomic, readonly) NSString *trendLineLegendText;
 
 + (id)computableProperties;
 + (id)computedFillOrStroke:(id)arg1 forSeriesIndex:(unsigned int)arg2 numberOfThemeSeries:(unsigned int)arg3;

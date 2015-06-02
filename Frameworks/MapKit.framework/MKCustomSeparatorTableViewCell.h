@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKViewWithHairline, UIColor;
-
 @interface MKCustomSeparatorTableViewCell : UITableViewCell {
     MKViewWithHairline *_separatorView;
 }
 
-@property float leftSeparatorInset;
-@property(retain) UIColor * separatorColor;
-@property(getter=isSeparatorHidden) BOOL separatorHidden;
+@property (nonatomic) float leftSeparatorInset;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
 
 - (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

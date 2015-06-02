@@ -15,15 +15,15 @@
     double _sumRoundtripTimes;
 }
 
-@property(readonly) double averageRoundtripTime;
-@property double maxRoundtripTime;
-@property double medianRoundtripTime;
-@property double minRoundtripTime;
-@property(readonly) int numPingsReceived;
-@property(readonly) int numPingsTransmitted;
-@property(readonly) double packetLossRate;
-@property(readonly) int packetsSuccessfullySent;
-@property double standardDeviationRoundtripTime;
+@property (nonatomic, readonly) double averageRoundtripTime;
+@property (nonatomic) double maxRoundtripTime;
+@property (nonatomic) double medianRoundtripTime;
+@property (nonatomic) double minRoundtripTime;
+@property (nonatomic, readonly) int numPingsReceived;
+@property (nonatomic, readonly) int numPingsTransmitted;
+@property (nonatomic, readonly) double packetLossRate;
+@property (nonatomic, readonly) int packetsSuccessfullySent;
+@property (nonatomic) double standardDeviationRoundtripTime;
 
 - (void)_addReceivedPacket:(double)arg1;
 - (void)_addTransmittedPacket:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSString, SCNAction;
-
 @interface SCNActionRunAction : SCNAction {
     SCNAction *_action;
     NSString *_actionKey;

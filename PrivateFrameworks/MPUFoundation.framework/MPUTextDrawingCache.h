@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSCache, NSDictionary, NSHashTable, NSMutableDictionary, NSOperationQueue, NSStringDrawingContext;
-
 @interface MPUTextDrawingCache : NSObject {
     struct CGSize { 
         float width; 
@@ -31,24 +25,20 @@
     NSDictionary *_regularTextAttributes;
     NSStringDrawingContext *_stringDrawingContext;
     NSDictionary *_textAttributes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _textEmphasizer;
-
+    id /* block */ _textEmphasizer;
     BOOL _wasInvalidatedWithoutNotifyingObservers;
 }
 
-@property struct CGSize { float x1; float x2; } allowedSize;
-@property float displayScale;
-@property(copy) NSDictionary * emphasizedTextAttributes;
-@property unsigned int maximumNumberOfLines;
-@property(getter=isOpaque) BOOL opaque;
-@property(copy) NSDictionary * regularTextAttributes;
-@property(copy) NSDictionary * textAttributes;
-@property(copy) id textEmphasizer;
+@property (nonatomic) struct CGSize { float x1; float x2; } allowedSize;
+@property (nonatomic) float displayScale;
+@property (nonatomic, copy) NSDictionary *emphasizedTextAttributes;
+@property (nonatomic) unsigned int maximumNumberOfLines;
+@property (getter=isOpaque, nonatomic) BOOL opaque;
+@property (nonatomic, copy) NSDictionary *regularTextAttributes;
+@property (nonatomic, copy) NSDictionary *textAttributes;
+@property (nonatomic, copy) id /* block */ textEmphasizer;
 
-+ (id)_drawingForText:(id)arg1 fromCache:(id)arg2 usingStringDrawingContext:(id)arg3 allowedSize:(struct CGSize { float x1; float x2; })arg4 textAttributes:(id)arg5 opaque:(BOOL)arg6 displayScale:(float)arg7 textEmphasizer:(id)arg8 regularTextAttributes:(id)arg9 emphasizedTextAttributes:(id)arg10 cacheSize:(unsigned int)arg11 cacheCostScale:(unsigned int)arg12 referenceSizeForCostComputation:(struct CGSize { float x1; float x2; })arg13;
++ (id)_drawingForText:(id)arg1 fromCache:(id)arg2 usingStringDrawingContext:(id)arg3 allowedSize:(struct CGSize { float x1; float x2; })arg4 textAttributes:(id)arg5 opaque:(BOOL)arg6 displayScale:(float)arg7 textEmphasizer:(id /* block */)arg8 regularTextAttributes:(id)arg9 emphasizedTextAttributes:(id)arg10 cacheSize:(unsigned int)arg11 cacheCostScale:(unsigned int)arg12 referenceSizeForCostComputation:(struct CGSize { float x1; float x2; })arg13;
 
 - (void).cxx_destruct;
 - (void)_applicationDidReceiveMemoryWarning:(id)arg1;
@@ -81,8 +71,8 @@
 - (void)setOpaque:(BOOL)arg1;
 - (void)setRegularTextAttributes:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
-- (void)setTextEmphasizer:(id)arg1;
+- (void)setTextEmphasizer:(id /* block */)arg1;
 - (id)textAttributes;
-- (id)textEmphasizer;
+- (id /* block */)textEmphasizer;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABMapsTabletStyleProvider : ABTabletStyleProvider {
-}
+@interface ABMapsTabletStyleProvider : ABTabletStyleProvider
 
 - (id)cardActionConferenceIcon;
 - (id)cardLabelTextColor;

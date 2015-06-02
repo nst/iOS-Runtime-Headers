@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, PDNotesSlide, PDSlideLayout;
-
 @interface PDSlide : PDSlideChild {
     NSMutableArray *mComments;
     PDNotesSlide *mNotesSlide;

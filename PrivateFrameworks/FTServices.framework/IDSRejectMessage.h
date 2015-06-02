@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface IDSRejectMessage : IDSFaceTimeMessage <NSCopying> {
     NSString *_peerID;
     NSData *_peerPushToken;
@@ -11,10 +9,10 @@
     NSData *_selfPushToken;
 }
 
-@property(copy) NSString * peerID;
-@property(copy) NSData * peerPushToken;
-@property(copy) NSNumber * reason;
-@property(copy) NSData * selfPushToken;
+@property (copy) NSString *peerID;
+@property (copy) NSData *peerPushToken;
+@property (copy) NSNumber *reason;
+@property (copy) NSData *selfPushToken;
 
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

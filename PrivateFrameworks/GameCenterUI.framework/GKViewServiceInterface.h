@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKViewServiceInterface : NSXPCInterface {
-}
+@interface GKViewServiceInterface : NSXPCInterface
 
 + (void)_configureKVOTypes:(id)arg1;
 + (id)challengeIssueServiceViewControllerInterface;

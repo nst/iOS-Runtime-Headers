@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDSearchViewControllerDelegate>, APDSearchBar, APDSearchModel, NSString, NSTimer, UILabel, UIView;
-
 @interface APDSearchViewController : APDNavigationTableViewController <UISearchBarDelegate> {
     NSTimer *_axSearchTimer;
     UIView *_footerView;
@@ -18,18 +16,18 @@
     BOOL _viewDidAppeared;
 }
 
-@property(retain) NSTimer * axSearchTimer;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDSearchViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * footerView;
-@property UILabel * footerViewLabel;
-@property(readonly) unsigned int hash;
-@property APDSearchBar * searchBar;
-@property(getter=isSearching) BOOL searching;
-@property(readonly) Class superclass;
-@property UIView * toolbarTopOverlapView;
-@property UIView * topbarBottomStrokeView;
+@property (nonatomic, retain) NSTimer *axSearchTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDSearchViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *footerView;
+@property (nonatomic) UILabel *footerViewLabel;
+@property (readonly) unsigned int hash;
+@property (nonatomic) APDSearchBar *searchBar;
+@property (getter=isSearching, nonatomic) BOOL searching;
+@property (readonly) Class superclass;
+@property (nonatomic) UIView *toolbarTopOverlapView;
+@property (nonatomic) UIView *topbarBottomStrokeView;
 
 - (void).cxx_destruct;
 - (void)announceResults;

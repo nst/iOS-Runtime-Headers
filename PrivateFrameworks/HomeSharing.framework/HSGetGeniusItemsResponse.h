@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSArray;
-
 @interface HSGetGeniusItemsResponse : HSResponse {
     NSArray *itemIDs;
 }
 
-@property(copy) NSArray * itemIDs;
+@property (nonatomic, copy) NSArray *itemIDs;
 
 - (void).cxx_destruct;
 - (id)itemIDs;

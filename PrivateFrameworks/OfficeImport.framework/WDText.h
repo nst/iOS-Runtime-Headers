@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDDocument, WDTableCell;
-
 @interface WDText : NSObject {
     NSMutableArray *mBlocks;
     WDDocument *mDocument;

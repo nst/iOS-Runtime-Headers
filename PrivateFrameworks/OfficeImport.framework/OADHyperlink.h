@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSURL;
-
 @interface OADHyperlink : NSObject {
     NSString *mAction;
     BOOL mDoAddToHistory;
@@ -16,9 +14,9 @@
     NSString *mTooltip;
 }
 
-@property BOOL doAddToHistory;
-@property BOOL doEndSound;
-@property BOOL isVisited;
+@property (nonatomic) BOOL doAddToHistory;
+@property (nonatomic) BOOL doEndSound;
+@property (nonatomic) BOOL isVisited;
 
 - (id)action;
 - (void)dealloc;

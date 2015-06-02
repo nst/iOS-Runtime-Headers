@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString, PFUbiquityPeer, PFUbiquityStoreMetadata;
+@interface PFUbiquityPeerRange : NSManagedObject
 
-@interface PFUbiquityPeerRange : NSManagedObject {
-}
-
-@property(retain) NSNumber * end;
-@property(retain) PFUbiquityPeer * peer;
-@property(retain) NSNumber * peerEnd;
-@property(retain) NSString * peerEntityName;
-@property(retain) NSNumber * peerStart;
-@property(retain) NSNumber * start;
-@property(retain) PFUbiquityStoreMetadata * storeMetadata;
+@property (nonatomic, retain) NSNumber *end;
+@property (nonatomic, retain) PFUbiquityPeer *peer;
+@property (nonatomic, retain) NSNumber *peerEnd;
+@property (nonatomic, retain) NSString *peerEntityName;
+@property (nonatomic, retain) NSNumber *peerStart;
+@property (nonatomic, retain) NSNumber *start;
+@property (nonatomic, retain) PFUbiquityStoreMetadata *storeMetadata;
 
 - (void)loadFromBaselineDictionary:(id)arg1;
 

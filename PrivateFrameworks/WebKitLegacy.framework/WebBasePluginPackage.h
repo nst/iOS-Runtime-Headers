@@ -2,15 +2,8 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableSet;
-
 @interface WebBasePluginPackage : NSObject {
-    int (*BP_CreatePluginMIMETypesPreferences)();
+    int (*BP_CreatePluginMIMETypesPreferences;
     struct RetainPtr<__CFBundle *> { 
         void *m_ptr; 
     } cfBundle;

@@ -7,8 +7,8 @@
     int _taskType;
 }
 
-@property int retryCount;
-@property int taskType;
+@property (nonatomic) int retryCount;
+@property (nonatomic) int taskType;
 
 + (BOOL)supportsSecureCoding;
 + (id)taskWithType:(int)arg1;

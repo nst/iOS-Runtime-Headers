@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UIImageView, UILabel;
-
 @interface PUTextBannerView : UIView {
     UIImageView *_backgroundView;
     BOOL _destructiveText;
@@ -12,9 +10,9 @@
     UILabel *_textLabel;
 }
 
-@property(getter=isDestructiveText) BOOL destructiveText;
-@property(copy) NSString * text;
-@property int textAlignment;
+@property (getter=isDestructiveText, nonatomic) BOOL destructiveText;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
 
 - (void).cxx_destruct;
 - (void)_updateSubviews;

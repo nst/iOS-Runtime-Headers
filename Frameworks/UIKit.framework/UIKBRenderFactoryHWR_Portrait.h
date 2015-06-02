@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryHWR_Portrait : UIKBRenderFactory10Key {
-}
+@interface UIKBRenderFactoryHWR_Portrait : UIKBRenderFactory10Key
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (struct CGPoint { float x1; float x2; })deleteGlyphOffset;

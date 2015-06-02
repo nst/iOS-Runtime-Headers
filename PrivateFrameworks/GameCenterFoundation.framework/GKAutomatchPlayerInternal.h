@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKAutomatchPlayerInternal : GKSpecialPlayerInternal {
-}
+@interface GKAutomatchPlayerInternal : GKSpecialPlayerInternal
 
 - (id)alias;
 - (BOOL)isAutomatchPlayer;

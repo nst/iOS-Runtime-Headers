@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, TSPDocumentResourceManager, TSPObjectContext;
-
 @interface TSPDocumentResourceDataProvider : NSObject <TSPDocumentResourceDownloadNotificationProtocol, TSPDocumentResourceDownloader> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     TSPObjectContext *_context;
@@ -17,13 +15,13 @@
     NSHashTable *_storagesCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) long long estimatedDownloadSize;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEstimatedDownloadSizePrecise;
-@property(readonly) BOOL needsDownload;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long estimatedDownloadSize;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEstimatedDownloadSizePrecise;
+@property (nonatomic, readonly) BOOL needsDownload;
+@property (readonly) Class superclass;
 
 + (void)didCompleteDocumentResourceDownloadWithDigestString:(id)arg1;
 + (void)registerDownloadNotificationClass:(Class)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDFaceTimeCallConnected : PBCodable <NSCopying> {
     unsigned int _connectDuration;
     unsigned int _connectionType;
@@ -32,30 +30,30 @@
     unsigned int _usesRelay;
 }
 
-@property unsigned int connectDuration;
-@property unsigned int connectionType;
-@property unsigned int currentNatType;
-@property(retain) NSString * guid;
-@property BOOL hasConnectDuration;
-@property BOOL hasConnectionType;
-@property BOOL hasCurrentNatType;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsVideo;
-@property BOOL hasLocalNetworkConnection;
-@property BOOL hasOnLockScreen;
-@property BOOL hasRelayConnectDuration;
-@property BOOL hasRemoteNatType;
-@property BOOL hasRemoteNetworkConnection;
-@property BOOL hasTimestamp;
-@property BOOL hasUsesRelay;
-@property unsigned int isVideo;
-@property unsigned int localNetworkConnection;
-@property unsigned int onLockScreen;
-@property unsigned int relayConnectDuration;
-@property unsigned int remoteNatType;
-@property unsigned int remoteNetworkConnection;
-@property unsigned long long timestamp;
-@property unsigned int usesRelay;
+@property (nonatomic) unsigned int connectDuration;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int currentNatType;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectDuration;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasCurrentNatType;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsVideo;
+@property (nonatomic) BOOL hasLocalNetworkConnection;
+@property (nonatomic) BOOL hasOnLockScreen;
+@property (nonatomic) BOOL hasRelayConnectDuration;
+@property (nonatomic) BOOL hasRemoteNatType;
+@property (nonatomic) BOOL hasRemoteNetworkConnection;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasUsesRelay;
+@property (nonatomic) unsigned int isVideo;
+@property (nonatomic) unsigned int localNetworkConnection;
+@property (nonatomic) unsigned int onLockScreen;
+@property (nonatomic) unsigned int relayConnectDuration;
+@property (nonatomic) unsigned int remoteNatType;
+@property (nonatomic) unsigned int remoteNetworkConnection;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int usesRelay;
 
 - (unsigned int)connectDuration;
 - (unsigned int)connectionType;

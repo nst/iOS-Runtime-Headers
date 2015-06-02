@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray;
-
 @interface CKRecipientGenerator : NSObject {
     NSArray *_searchABPropertyTypes;
 }
 
-@property(retain) NSArray * searchABPropertyTypes;
+@property (nonatomic, retain) NSArray *searchABPropertyTypes;
 
 + (id)sharedRecipientGenerator;
 

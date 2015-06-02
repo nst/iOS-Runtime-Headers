@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel;
-
 @interface _UIActivityGroupActivityCell : UICollectionViewCell {
     UIImageView *_highlightedImageView;
     UIImageView *_imageView;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImageView * highlightedImageView;
-@property(retain) UIImageView * imageView;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIImageView *highlightedImageView;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void)dealloc;
 - (id)draggingView;

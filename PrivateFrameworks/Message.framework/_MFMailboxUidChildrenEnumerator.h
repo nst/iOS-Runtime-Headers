@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray;
-
 @interface _MFMailboxUidChildrenEnumerator : NSEnumerator {
     BOOL _includeHidden;
     unsigned int _index;

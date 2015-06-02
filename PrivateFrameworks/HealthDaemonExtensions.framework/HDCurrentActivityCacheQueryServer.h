@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemonExtensions.framework/HealthDaemonExtensions
  */
 
-@class HDActivityCacheManager, NSString;
-
 @interface HDCurrentActivityCacheQueryServer : HDQueryServer <HDActivityCacheManagerObserver> {
     HDActivityCacheManager *_activityCacheManager;
     double _createdTime;
     double _firstResultsTime;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_queue_start;

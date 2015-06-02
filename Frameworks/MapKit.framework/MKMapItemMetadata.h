@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapItemVendorDeal>, GEOBusiness, NSMutableDictionary;
-
 @interface MKMapItemMetadata : NSObject {
     GEOBusiness *_business;
     <MKMapItemVendorDeal> *_deal;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_imageCache;
 }
 
-@property(readonly) GEOBusiness * business;
-@property(retain) <MKMapItemVendorDeal> * deal;
-@property BOOL hasCheckedForVendorDeal;
-@property(retain) NSMutableDictionary * imageCache;
+@property (nonatomic, readonly) GEOBusiness *business;
+@property (nonatomic, retain) <MKMapItemVendorDeal> *deal;
+@property (nonatomic) BOOL hasCheckedForVendorDeal;
+@property (nonatomic, retain) NSMutableDictionary *imageCache;
 
 - (void).cxx_destruct;
 - (void)addImage:(id)arg1 forURL:(id)arg2;

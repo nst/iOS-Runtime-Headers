@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSObject>, BKSProcessAssertion, NSObject<OS_voucher>, NSString;
-
 @interface _NSActivityAssertion : NSObject {
     long long _ended;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _expirationHandler;
-
+    id /* block */ _expirationHandler;
     unsigned long long _options;
     NSObject<OS_voucher> *_previousVoucher;
     BKSProcessAssertion *_processAssertion;
@@ -30,12 +20,12 @@
 + (id)_expiringActivities;
 + (id)_expiringAssertionManagementQueue;
 + (id)_expiringTaskExecutionQueue;
-+ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
-+ (void)_performExpiringActivityWithReason:(id)arg1 usingBlock:(id)arg2;
++ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)_performExpiringActivityWithReason:(id)arg1 usingBlock:(id /* block */)arg2;
 
 - (void)_end;
 - (void)_fireExpirationHandler;
-- (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2 expirationHandler:(id)arg3;
+- (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2 expirationHandler:(id /* block */)arg3;
 - (void)_reactivate;
 - (void)dealloc;
 - (id)debugDescription;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSError, NSHashTable, NSURL;
-
 @interface NSFileWrapperMoreIVars : NSObject {
     BOOL attributesMustBeWrittenSoNoHardLinking;
     NSDictionary *cachedDirectoryChildrenAsDictionary;

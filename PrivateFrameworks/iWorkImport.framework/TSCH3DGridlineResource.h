@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DAxisGridEnumerator, TSDStroke;
-
 @interface TSCH3DGridlineResource : TSCH3DResource {
     TSCH3DAxisGridEnumerator *mAxis;
 }
 
-@property(readonly) BOOL enabled;
-@property(readonly) float opacity;
-@property(readonly) TSDStroke * stroke;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) TSDStroke *stroke;
 
 + (id)resourceWithAxisEnumerator:(id)arg1;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSData;
-
 @interface RURadioStreamPing : NSObject {
     double _timestamp;
     int _type;
     NSData *_value;
 }
 
-@property(readonly) double timestamp;
-@property(readonly) int type;
-@property(copy,readonly) NSData * value;
+@property (nonatomic, readonly) double timestamp;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, copy) NSData *value;
 
 - (void).cxx_destruct;
 - (id)description;

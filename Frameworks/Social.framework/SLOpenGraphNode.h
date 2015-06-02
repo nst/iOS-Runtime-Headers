@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSURL;
-
 @interface SLOpenGraphNode : NSObject {
     NSURL *_URL;
     int _fetchState;
@@ -13,12 +11,12 @@
     unsigned int _numberOfLikes;
 }
 
-@property(readonly) NSURL * URL;
-@property int fetchState;
-@property(readonly) unsigned int friendLikeCount;
-@property(readonly) unsigned int globalLikeCount;
-@property(readonly) NSArray * likedByFriends;
-@property(readonly) BOOL likedByMe;
+@property (readonly) NSURL *URL;
+@property (nonatomic) int fetchState;
+@property (readonly) unsigned int friendLikeCount;
+@property (readonly) unsigned int globalLikeCount;
+@property (readonly) NSArray *likedByFriends;
+@property (readonly) BOOL likedByMe;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -29,10 +27,10 @@
 - (unsigned int)globalLikeCount;
 - (id)initWithURL:(id)arg1;
 - (void)invalidate;
-- (void)likeWithCompletion:(id)arg1;
+- (void)likeWithCompletion:(id /* block */)arg1;
 - (id)likedByFriends;
 - (BOOL)likedByMe;
 - (void)setFetchState:(int)arg1;
-- (void)unlikeWithCompletion:(id)arg1;
+- (void)unlikeWithCompletion:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, NSMutableArray, OADBlipCollection, OADGraphicStyleCache, OADTextListStyle, OCDReader, OCDSummary, OCDWriter, OITSUPointerKeyDictionary;
-
 @interface OCDDocument : NSObject {
     OADBlipCollection *mBlips;
     NSMutableArray *mCharts;
@@ -16,14 +14,14 @@
     OCDWriter *mWriter;
 }
 
-@property(readonly) OADBlipCollection * blips;
-@property(readonly) NSMutableArray * charts;
-@property(readonly) OADTextListStyle * defaultTextStyle;
-@property(readonly) OITSUPointerKeyDictionary * dualDrawableMap;
-@property(retain) OADGraphicStyleCache * graphicStyleCache;
-@property(retain) OCDReader * reader;
-@property(readonly) OCDSummary * summary;
-@property(retain) OCDWriter * writer;
+@property (nonatomic, readonly) OADBlipCollection *blips;
+@property (nonatomic, readonly) NSMutableArray *charts;
+@property (nonatomic, readonly) OADTextListStyle *defaultTextStyle;
+@property (nonatomic, readonly) OITSUPointerKeyDictionary *dualDrawableMap;
+@property (nonatomic, retain) OADGraphicStyleCache *graphicStyleCache;
+@property (nonatomic, retain) OCDReader *reader;
+@property (nonatomic, readonly) OCDSummary *summary;
+@property (nonatomic, retain) OCDWriter *writer;
 
 - (id)blips;
 - (id)charts;

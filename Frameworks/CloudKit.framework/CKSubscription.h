@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKNotificationInfo, CKRecordZoneID, NSPredicate, NSString;
-
 @interface CKSubscription : NSObject <NSCopying, NSSecureCoding> {
     CKNotificationInfo *_notificationInfo;
     NSPredicate *_predicate;
@@ -14,13 +12,13 @@
     CKRecordZoneID *_zoneID;
 }
 
-@property(copy) CKNotificationInfo * notificationInfo;
-@property(copy) NSPredicate * predicate;
-@property(copy) NSString * recordType;
-@property(copy) NSString * subscriptionID;
-@property unsigned int subscriptionOptions;
-@property int subscriptionType;
-@property(copy) CKRecordZoneID * zoneID;
+@property (nonatomic, copy) CKNotificationInfo *notificationInfo;
+@property (nonatomic, copy) NSPredicate *predicate;
+@property (nonatomic, copy) NSString *recordType;
+@property (nonatomic, copy) NSString *subscriptionID;
+@property (nonatomic) unsigned int subscriptionOptions;
+@property (nonatomic) int subscriptionType;
+@property (nonatomic, copy) CKRecordZoneID *zoneID;
 
 + (BOOL)supportsSecureCoding;
 

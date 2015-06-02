@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AAUIAccountRepairRemoteUIDelegate>, ACAccount, ACAccountStore, NSDictionary, NSMutableArray, NSString, RUILoader, UIAlertView, UINavigationController, UIViewController;
-
 @interface AAUIAccountRepairRemoteUI : NSObject <RUIObjectModelDelegate> {
     ACAccount *_account;
     UINavigationController *_accountRepairUIViewController;
@@ -16,11 +10,7 @@
     NSDictionary *_cookieHeadersForRepairRequest;
     <AAUIAccountRepairRemoteUIDelegate> *_delegate;
     BOOL _isModal;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _linkLoadCompletion;
-
+    id /* block */ _linkLoadCompletion;
     RUILoader *_loader;
     NSMutableArray *_objectModels;
     UIViewController *_originatingViewController;
@@ -28,11 +18,11 @@
     UIAlertView *_tcConfirmationAlert;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIAccountRepairRemoteUIDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIAccountRepairRemoteUIDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
@@ -47,7 +37,7 @@
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
-- (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id)arg4;
+- (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id /* block */)arg4;
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)presentFromViewController:(id)arg1 modal:(BOOL)arg2;

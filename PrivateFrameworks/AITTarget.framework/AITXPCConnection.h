@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AITTarget.framework/AITTarget
  */
 
-@class <AITXPCConnectionDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface AITXPCConnection : NSObject {
     NSString *_bundleId;
     NSObject<OS_xpc_object> *_connection;
@@ -14,19 +12,19 @@
     int _pid;
 }
 
-@property(readonly) BOOL available;
-@property(copy) NSString * bundleId;
-@property NSObject<OS_xpc_object> * connection;
-@property NSObject<OS_xpc_object> * currentMessage;
-@property <AITXPCConnectionDelegate> * delegate;
-@property NSObject<OS_dispatch_queue> * dispatchQueue;
-@property NSObject<OS_dispatch_queue> * internalQueue;
-@property(readonly) int pid;
+@property (nonatomic, readonly) BOOL available;
+@property (nonatomic, copy) NSString *bundleId;
+@property (nonatomic) NSObject<OS_xpc_object> *connection;
+@property (nonatomic) NSObject<OS_xpc_object> *currentMessage;
+@property (nonatomic) <AITXPCConnectionDelegate> *delegate;
+@property (nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, readonly) int pid;
 
 - (id)_deserializeMessage:(id)arg1;
 - (void)_handleEvent:(id)arg1;
 - (BOOL)available;
-- (void)barrierWithCompletionHandler:(id)arg1;
+- (void)barrierWithCompletionHandler:(id /* block */)arg1;
 - (id)bundleId;
 - (void)closeConnection;
 - (id)connection;
@@ -39,7 +37,7 @@
 - (id)internalQueue;
 - (int)pid;
 - (void)sendMessage:(id)arg1 userInfo:(id)arg2;
-- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 userInfo:(id)arg2 replyHandler:(id /* block */)arg3;
 - (void)setBundleId:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setCurrentMessage:(id)arg1;

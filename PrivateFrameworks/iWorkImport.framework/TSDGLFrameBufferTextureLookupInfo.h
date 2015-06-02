@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSDGLFrameBufferTextureLookupInfo : NSObject {
     unsigned int _attachment;
     int _indexOnAttachment;
@@ -15,11 +13,11 @@
     } _textureSize;
 }
 
-@property unsigned int attachment;
-@property int indexOnAttachment;
-@property(readonly) NSString * name;
-@property(readonly) unsigned int textureName;
-@property(readonly) struct CGSize { float x1; float x2; } textureSize;
+@property (nonatomic) unsigned int attachment;
+@property (nonatomic) int indexOnAttachment;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned int textureName;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } textureSize;
 
 + (id)textureLookupInfoWithAttachment:(unsigned int)arg1 indexOnAttachment:(int)arg2 textureName:(unsigned int)arg3 textureSize:(struct CGSize { float x1; float x2; })arg4 name:(id)arg5;
 

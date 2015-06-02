@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSData, NSString;
-
 @interface MFData : NSData <NSCopying, NSMutableCopying> {
     NSData *_internal;
     NSData *_parent;

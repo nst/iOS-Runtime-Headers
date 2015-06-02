@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardInputModeControllerDelegate>, NSArray, NSString, UIKeyboardInputMode;
-
 @interface UIKeyboardInputModeController : NSObject {
     NSArray *_allExtensions;
     NSArray *_allowedExtensions;
@@ -28,34 +26,34 @@
     NSArray *normalizedInputModes;
 }
 
-@property(readonly) NSArray * activeInputModeIdentifiers;
-@property(readonly) NSArray * allowedExtensions;
-@property(readonly) BOOL containsDictationSupportedInputMode;
-@property(retain) UIKeyboardInputMode * currentInputMode;
-@property UIKeyboardInputMode * currentInputModeInPreference;
-@property(readonly) UIKeyboardInputMode * currentPublicInputMode;
-@property(readonly) UIKeyboardInputMode * currentSystemInputMode;
-@property(retain) UIKeyboardInputMode * currentUsedInputMode;
-@property(retain) NSArray * defaultInputModes;
-@property(retain) NSArray * defaultKeyboardInputModes;
-@property(retain) NSArray * defaultNormalizedInputModes;
-@property(copy) NSArray * defaultRawInputModes;
-@property <UIKeyboardInputModeControllerDelegate> * delegate;
-@property(readonly) NSArray * enabledInputModeIdentifiers;
-@property(readonly) NSArray * enabledInputModeLanguages;
-@property(retain) NSArray * enabledInputModes;
-@property(retain) id extensionMatchingContext;
-@property(readonly) UIKeyboardInputMode * hardwareInputMode;
-@property(copy) NSString * inputModeContextIdentifier;
-@property(readonly) NSArray * inputModesWithoutHardwareSupport;
-@property(retain) NSArray * keyboardInputModeIdentifiers;
-@property(retain) NSArray * keyboardInputModes;
-@property(retain) UIKeyboardInputMode * lastUsedInputMode;
-@property(retain) UIKeyboardInputMode * nextInputModeToUse;
-@property(readonly) NSArray * normalizedEnabledInputModeIdentifiers;
-@property(retain) NSArray * normalizedInputModes;
-@property BOOL shouldRunContinuousDiscovery;
-@property(readonly) NSArray * supportedInputModeIdentifiers;
+@property (readonly) NSArray *activeInputModeIdentifiers;
+@property (nonatomic, readonly) NSArray *allowedExtensions;
+@property (nonatomic, readonly) BOOL containsDictationSupportedInputMode;
+@property (retain) UIKeyboardInputMode *currentInputMode;
+@property (nonatomic) UIKeyboardInputMode *currentInputModeInPreference;
+@property (nonatomic, readonly) UIKeyboardInputMode *currentPublicInputMode;
+@property (nonatomic, readonly) UIKeyboardInputMode *currentSystemInputMode;
+@property (nonatomic, retain) UIKeyboardInputMode *currentUsedInputMode;
+@property (retain) NSArray *defaultInputModes;
+@property (retain) NSArray *defaultKeyboardInputModes;
+@property (retain) NSArray *defaultNormalizedInputModes;
+@property (nonatomic, copy) NSArray *defaultRawInputModes;
+@property (nonatomic) <UIKeyboardInputModeControllerDelegate> *delegate;
+@property (readonly) NSArray *enabledInputModeIdentifiers;
+@property (readonly) NSArray *enabledInputModeLanguages;
+@property (retain) NSArray *enabledInputModes;
+@property (nonatomic, retain) id extensionMatchingContext;
+@property (nonatomic, readonly) UIKeyboardInputMode *hardwareInputMode;
+@property (nonatomic, copy) NSString *inputModeContextIdentifier;
+@property (readonly) NSArray *inputModesWithoutHardwareSupport;
+@property (retain) NSArray *keyboardInputModeIdentifiers;
+@property (retain) NSArray *keyboardInputModes;
+@property (nonatomic, retain) UIKeyboardInputMode *lastUsedInputMode;
+@property (nonatomic, retain) UIKeyboardInputMode *nextInputModeToUse;
+@property (readonly) NSArray *normalizedEnabledInputModeIdentifiers;
+@property (retain) NSArray *normalizedInputModes;
+@property (nonatomic) BOOL shouldRunContinuousDiscovery;
+@property (readonly) NSArray *supportedInputModeIdentifiers;
 
 + (id)sharedInputModeController;
 
@@ -65,7 +63,7 @@
 - (void)_removeExtensions:(id)arg1;
 - (void)_setCurrentAndNextInputModePreference;
 - (void)_setCurrentInputMode:(id)arg1 force:(BOOL)arg2;
-- (id)_systemInputModePassingTest:(id)arg1;
+- (id)_systemInputModePassingTest:(id /* block */)arg1;
 - (id)activeInputModeIdentifiers;
 - (id)activeInputModes;
 - (id)allowedExtensions;
@@ -107,8 +105,8 @@
 - (id)nextInputModeToUseForTraits:(id)arg1;
 - (id)normalizedEnabledInputModeIdentifiers;
 - (id)normalizedInputModes;
-- (void)performWithForcedExtensionInputModes:(id)arg1;
-- (void)performWithoutExtensionInputModes:(id)arg1;
+- (void)performWithForcedExtensionInputModes:(id /* block */)arg1;
+- (void)performWithoutExtensionInputModes:(id /* block */)arg1;
 - (id)preferredLanguages;
 - (void)setCurrentInputMode:(id)arg1;
 - (void)setCurrentInputModeInPreference:(id)arg1;

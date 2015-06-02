@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface TSUASLClient : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     struct __asl_object_s { } *_client;
@@ -38,7 +36,7 @@
 - (void)_setObject:(id)arg1 forUserDefaultsKey:(id)arg2;
 - (void)_setOldLogFiles:(id)arg1;
 - (id)addLogFileWithURL:(id)arg1 truncate:(BOOL)arg2 filterMask:(int)arg3;
-- (void)addLogSink:(id)arg1;
+- (void)addLogSink:(id /* block */)arg1;
 - (void)dealloc;
 - (int)filter;
 - (id)init;

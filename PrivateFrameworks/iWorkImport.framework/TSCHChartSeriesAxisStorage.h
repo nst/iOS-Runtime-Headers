@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxisID, TSCHChartGridAdapter;
-
 @interface TSCHChartSeriesAxisStorage : NSObject {
     TSCHChartGridAdapter *adapter;
     TSCHChartAxisID *axisID;
 }
 
-@property(retain) TSCHChartGridAdapter * adapter;
-@property(retain) TSCHChartAxisID * axisID;
+@property (nonatomic, retain) TSCHChartGridAdapter *adapter;
+@property (nonatomic, retain) TSCHChartAxisID *axisID;
 
 - (id)adapter;
 - (id)axisID;

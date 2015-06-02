@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITextBoxView;
-
 @interface SKUITextBoxTableViewCell : SKUITableViewCell {
     struct UIEdgeInsets { 
         float top; 
@@ -14,8 +12,8 @@
     SKUITextBoxView *_textBoxView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textBoxInsets;
-@property(readonly) SKUITextBoxView * textBoxView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textBoxInsets;
+@property (nonatomic, readonly) SKUITextBoxView *textBoxView;
 
 - (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

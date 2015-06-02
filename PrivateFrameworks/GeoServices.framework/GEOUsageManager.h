@@ -2,23 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEORequester, GEOUsageCollectionRequest, NSLock, NSMapTable, NSMutableDictionary, NSString, NSTimer;
-
 @interface GEOUsageManager : NSObject <PBRequesterDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _backgroundTaskEnd;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _backgroundTaskStart;
-
+    id /* block */ _backgroundTaskEnd;
+    id /* block */ _backgroundTaskStart;
     GEOUsageCollectionRequest *_request;
     NSLock *_requestLock;
     GEORequester *_requester;
@@ -28,12 +14,12 @@
     NSTimer *_updateTimer;
 }
 
-@property(copy) id backgroundTaskEnd;
-@property(copy) id backgroundTaskStart;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ backgroundTaskEnd;
+@property (nonatomic, copy) id /* block */ backgroundTaskStart;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedManager;
 
@@ -47,8 +33,8 @@
 - (void)_startBackgroundTaskForRequester:(id)arg1;
 - (void)_updateTimerFired:(id)arg1;
 - (id)_usageURL;
-- (id)backgroundTaskEnd;
-- (id)backgroundTaskStart;
+- (id /* block */)backgroundTaskEnd;
+- (id /* block */)backgroundTaskStart;
 - (void)captureDirectionsFeedbackCollection:(id)arg1;
 - (void)captureLeaveNowFeedbackCollection:(id)arg1;
 - (void)captureMapsLaunchURLScheme:(id)arg1 sourceApplication:(id)arg2;
@@ -72,8 +58,8 @@
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)setBackgroundTaskEnd:(id)arg1;
-- (void)setBackgroundTaskStart:(id)arg1;
+- (void)setBackgroundTaskEnd:(id /* block */)arg1;
+- (void)setBackgroundTaskStart:(id /* block */)arg1;
 - (BOOL)shouldIgnoreCollectionForCountry;
 
 @end

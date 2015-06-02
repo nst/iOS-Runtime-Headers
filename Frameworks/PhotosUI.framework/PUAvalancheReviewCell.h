@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAvalancheReviewCell : PUPhotosSharingGridCell {
-}
+@interface PUAvalancheReviewCell : PUPhotosSharingGridCell
 
 - (void)setHighlighted:(BOOL)arg1;
 

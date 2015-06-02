@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADPrerollSlider, UILabel;
-
 @interface ADProgressView : UIView {
     UILabel *_elapsedTimeLabel;
     UILabel *_remainingTimeLabel;
     ADPrerollSlider *_slider;
 }
 
-@property(retain) UILabel * elapsedTimeLabel;
-@property(retain) UILabel * remainingTimeLabel;
-@property(retain) ADPrerollSlider * slider;
+@property (nonatomic, retain) UILabel *elapsedTimeLabel;
+@property (nonatomic, retain) UILabel *remainingTimeLabel;
+@property (nonatomic, retain) ADPrerollSlider *slider;
 
 - (void)dealloc;
 - (id)elapsedTimeLabel;

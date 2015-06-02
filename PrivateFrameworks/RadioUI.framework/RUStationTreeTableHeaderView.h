@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, UILabel;
-
 @interface RUStationTreeTableHeaderView : UITableViewHeaderFooterView {
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
 + (id)_titleLabelFont;
 + (float)defaultHeightForTraitCollection:(id)arg1;

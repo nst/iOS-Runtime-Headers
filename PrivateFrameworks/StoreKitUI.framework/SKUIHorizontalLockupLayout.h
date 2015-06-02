@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface SKUIHorizontalLockupLayout : NSObject {
     NSMutableArray *_columns;
     float _tallestNonMetadataColumnHeight;
 }
 
-@property(readonly) NSArray * columns;
+@property (nonatomic, readonly) NSArray *columns;
 
 + (id)fontForButtonViewElement:(id)arg1 context:(id)arg2;
 + (id)fontForLabelViewElement:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUChartDataSource>, FUChartBackgroundView, FUChartDataGroup, FUTimeAxisDescriptor, NSArray, NSDate, NSNumber, NSString, UIScrollView;
-
 @interface FUChart : UIView <FUChartDataGroupDataSource, FUChartSeriesDataSource> {
     double _animationDuration;
     FUChartBackgroundView *_backgroundView;
@@ -24,22 +22,22 @@
     float _yAxisEdgeInset;
 }
 
-@property double animationDuration;
-@property(retain) FUChartBackgroundView * backgroundView;
-@property <FUChartDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL labelsInsetChartBackground;
-@property(retain) NSDate * maxXValue;
-@property(retain) NSNumber * maxYValue;
-@property(retain) NSDate * minXValue;
-@property(retain) NSNumber * minYValue;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
-@property(retain) FUTimeAxisDescriptor * xAxisDescriptor;
-@property float xAxisToLabelPadding;
-@property float yAxisEdgeInset;
+@property (nonatomic) double animationDuration;
+@property (nonatomic, retain) FUChartBackgroundView *backgroundView;
+@property (nonatomic) <FUChartDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL labelsInsetChartBackground;
+@property (nonatomic, retain) NSDate *maxXValue;
+@property (nonatomic, retain) NSNumber *maxYValue;
+@property (nonatomic, retain) NSDate *minXValue;
+@property (nonatomic, retain) NSNumber *minYValue;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) FUTimeAxisDescriptor *xAxisDescriptor;
+@property (nonatomic) float xAxisToLabelPadding;
+@property (nonatomic) float yAxisEdgeInset;
 
 - (void).cxx_destruct;
 - (float)_absolutePositionForXPlaneValue:(id)arg1;

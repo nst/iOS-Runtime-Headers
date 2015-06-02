@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBScene, FBWindowContextHostWrapperView, FBWindowContextManager, NSDictionary, NSMutableSet, NSString;
-
 @interface FBWindowContextHostInfo : NSObject <FBWindowContextManagerObserver> {
     FBWindowContextManager *_contextManager;
     NSMutableSet *_hiddenContexts;
@@ -13,14 +11,14 @@
     FBWindowContextHostWrapperView *_wrapperView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSMutableSet * hiddenContexts;
-@property(retain) NSDictionary * realContextHostViewChangedProperties;
-@property(retain) NSDictionary * realContextHostViewOriginalProperties;
-@property(readonly) Class superclass;
-@property(retain,readonly) FBWindowContextHostWrapperView * wrapperView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSMutableSet *hiddenContexts;
+@property (nonatomic, retain) NSDictionary *realContextHostViewChangedProperties;
+@property (nonatomic, retain) NSDictionary *realContextHostViewOriginalProperties;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) FBWindowContextHostWrapperView *wrapperView;
 
 - (void)dealloc;
 - (id)hiddenContexts;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression;
-
 @interface NSSQLExpressionIntermediate : NSSQLIntermediate {
     BOOL _allowToMany;
     NSExpression *_expression;

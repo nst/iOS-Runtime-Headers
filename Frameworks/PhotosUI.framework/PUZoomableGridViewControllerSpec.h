@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotosGridViewControllerSpec;
-
 @interface PUZoomableGridViewControllerSpec : NSObject {
     BOOL _canDisplayMultipleRightBarButtonItems;
     struct UIEdgeInsets { 
@@ -61,30 +59,30 @@
     int _yearsSectionHeaderStyle;
 }
 
-@property(readonly) BOOL canDisplayMultipleRightBarButtonItems;
-@property(readonly) int collectionsLevelCellFillMode;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionsLevelSectionHeaderContentInset;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionsLevelSectionHeaderHighlightInset;
-@property(readonly) int collectionsLevelThumbnailFormat;
-@property(readonly) unsigned int collectionsSectionHeaderBackgroundStyle;
-@property(readonly) int collectionsSectionHeaderStyle;
-@property(readonly) int fullMomentsLevelCellFillMode;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderContentInset;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderHighlightInset;
-@property(readonly) int fullMomentsLevelThumbnailFormat;
-@property(readonly) unsigned int fullMomentsSectionHeaderBackgroundStyle;
-@property(readonly) int fullMomentsSectionHeaderStyle;
-@property(retain) PUPhotosGridViewControllerSpec * gridSpec;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } magnifiedDragEdgeInsets;
-@property(readonly) int magnifiedImageFormat;
-@property(readonly) struct CGSize { float x1; float x2; } magnifiedImageSize;
-@property float magnifiedYOffset;
-@property(readonly) int yearsLevelCellFillMode;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } yearsLevelSectionHeaderContentInset;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } yearsLevelSectionHeaderHighlightInset;
-@property(readonly) int yearsLevelThumbnailFormat;
-@property(readonly) unsigned int yearsSectionHeaderBackgroundStyle;
-@property(readonly) int yearsSectionHeaderStyle;
+@property (nonatomic, readonly) BOOL canDisplayMultipleRightBarButtonItems;
+@property (nonatomic, readonly) int collectionsLevelCellFillMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionsLevelSectionHeaderContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionsLevelSectionHeaderHighlightInset;
+@property (nonatomic, readonly) int collectionsLevelThumbnailFormat;
+@property (nonatomic, readonly) unsigned int collectionsSectionHeaderBackgroundStyle;
+@property (nonatomic, readonly) int collectionsSectionHeaderStyle;
+@property (nonatomic, readonly) int fullMomentsLevelCellFillMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fullMomentsLevelSectionHeaderHighlightInset;
+@property (nonatomic, readonly) int fullMomentsLevelThumbnailFormat;
+@property (nonatomic, readonly) unsigned int fullMomentsSectionHeaderBackgroundStyle;
+@property (nonatomic, readonly) int fullMomentsSectionHeaderStyle;
+@property (nonatomic, retain) PUPhotosGridViewControllerSpec *gridSpec;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } magnifiedDragEdgeInsets;
+@property (nonatomic, readonly) int magnifiedImageFormat;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } magnifiedImageSize;
+@property (nonatomic) float magnifiedYOffset;
+@property (nonatomic, readonly) int yearsLevelCellFillMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } yearsLevelSectionHeaderContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } yearsLevelSectionHeaderHighlightInset;
+@property (nonatomic, readonly) int yearsLevelThumbnailFormat;
+@property (nonatomic, readonly) unsigned int yearsSectionHeaderBackgroundStyle;
+@property (nonatomic, readonly) int yearsSectionHeaderStyle;
 
 - (void).cxx_destruct;
 - (void)_setGridSpec:(id)arg1;

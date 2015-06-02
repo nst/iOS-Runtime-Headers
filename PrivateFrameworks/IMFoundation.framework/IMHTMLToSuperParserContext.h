@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMHTMLToSuperParserContext : IMToSuperParserContext {
-}
+@interface IMHTMLToSuperParserContext : IMToSuperParserContext
 
 - (id)name;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class DOMNode, UIWebBrowserView;
-
 @interface QLHTMLThumbnailOperation : QLThumbnailOperation {
     UIWebBrowserView *_browserView;
     DOMNode *_node;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRiverMapModel : VKRoadMapModel {
-}
+@interface VKRiverMapModel : VKRoadMapModel
 
 - (unsigned char)commandBufferId;
 

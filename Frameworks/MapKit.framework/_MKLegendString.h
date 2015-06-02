@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSAttributedString;
-
 @interface _MKLegendString : CALayer {
     float halfWidth;
     NSAttributedString *string;
 }
 
-@property float halfWidth;
-@property(retain) NSAttributedString * string;
+@property (nonatomic) float halfWidth;
+@property (nonatomic, retain) NSAttributedString *string;
 
 - (void).cxx_destruct;
 - (id)actionForKey:(id)arg1;

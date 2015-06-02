@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <NSObject><NSCopying>, AVMetadataItemInternal, NSData, NSDate, NSDictionary, NSLocale, NSNumber, NSString;
-
 @interface AVMetadataItem : NSObject <AVAsynchronousKeyValueLoading, NSCopying, NSMutableCopying> {
     AVMetadataItemInternal *_priv;
 }
 
-@property(copy,readonly) NSString * dataType;
-@property(readonly) NSData * dataValue;
-@property(readonly) NSDate * dateValue;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property(copy,readonly) NSString * extendedLanguageTag;
-@property(copy,readonly) NSDictionary * extraAttributes;
-@property(copy,readonly) NSString * identifier;
-@property(copy,readonly) NSLocale * locale;
-@property(readonly) NSNumber * numberValue;
-@property(readonly) NSString * stringValue;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
-@property(copy,readonly) <NSObject><NSCopying> * value;
+@property (readonly, copy) NSString *dataType;
+@property (readonly) NSData *dataValue;
+@property (readonly) NSDate *dateValue;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (readonly, copy) NSString *extendedLanguageTag;
+@property (readonly, copy) NSDictionary *extraAttributes;
+@property (readonly, copy) NSString *identifier;
+@property (readonly, copy) NSLocale *locale;
+@property (readonly) NSNumber *numberValue;
+@property (readonly) NSString *stringValue;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
+@property (readonly, copy) <NSObject><NSCopying> *value;
 
 + (BOOL)_clientExpectsISOUserDataKeysInQuickTimeUserDataKeySpace;
 + (id)_figMetadataPropertyFromMetadataItems:(id)arg1;
@@ -75,7 +73,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (id)keySpace;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)locale;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)numberValue;

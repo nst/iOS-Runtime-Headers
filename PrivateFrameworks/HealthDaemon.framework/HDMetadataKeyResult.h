@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
-
 @interface HDMetadataKeyResult : NSObject {
     NSString *_key;
 }
 
-@property(retain) NSString * key;
+@property (nonatomic, retain) NSString *key;
 
 - (void).cxx_destruct;
 - (id)key;

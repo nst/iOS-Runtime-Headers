@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDContainerLayout : TSDLayout {
-}
+@interface TSDContainerLayout : TSDLayout
 
 - (id)containerInfo;
 - (id)initWithInfo:(id)arg1;

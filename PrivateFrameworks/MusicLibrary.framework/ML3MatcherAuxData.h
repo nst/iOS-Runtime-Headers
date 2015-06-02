@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class CPSearchMatcher;
-
 @interface ML3MatcherAuxData : NSObject {
     CPSearchMatcher *_searchMatcher;
     char *_searchUTF8String;

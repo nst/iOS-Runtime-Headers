@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSIsNilTransformer : _NSNegateBooleanTransformer {
-}
+@interface _NSIsNilTransformer : _NSNegateBooleanTransformer
 
 + (BOOL)supportsReverseTransformation;
 

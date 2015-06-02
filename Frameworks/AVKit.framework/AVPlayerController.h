@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayer, NSError;
-
 @interface AVPlayerController : UIResponder {
     NSError *_error;
     AVPlayer *_player;
     int _status;
 }
 
-@property BOOL CALayerDestinationIsTVOut;
-@property(readonly) NSError * error;
-@property(readonly) AVPlayer * player;
-@property(getter=isPlayingOnSecondScreen) BOOL playingOnSecondScreen;
-@property(readonly) int status;
+@property (nonatomic) BOOL CALayerDestinationIsTVOut;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) AVPlayer *player;
+@property (getter=isPlayingOnSecondScreen, nonatomic) BOOL playingOnSecondScreen;
+@property (nonatomic, readonly) int status;
 
 + (void)initialize;
 

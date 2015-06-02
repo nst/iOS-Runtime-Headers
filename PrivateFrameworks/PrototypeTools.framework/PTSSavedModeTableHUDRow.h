@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class PTSSavedModeTableViewController;
-
 @interface PTSSavedModeTableHUDRow : PTSHUDRow {
     PTSSavedModeTableViewController *_tableViewController;
 }
 
-@property(retain) PTSSavedModeTableViewController * tableViewController;
+@property (nonatomic, retain) PTSSavedModeTableViewController *tableViewController;
 
 + (id)row;
 

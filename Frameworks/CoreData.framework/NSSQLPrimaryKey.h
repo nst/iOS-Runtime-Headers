@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLPrimaryKey : NSSQLColumn {
-}
+@interface NSSQLPrimaryKey : NSSQLColumn
 
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)sqlTypeString;

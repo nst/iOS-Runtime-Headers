@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAUIDecoratedText, SAUINanoImageResource;
+@interface SASTTableRowItem : AceObject <SASTTemplateItem>
 
-@interface SASTTableRowItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy) NSArray * columnValues;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUINanoImageResource * imageResource;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
+@property (nonatomic, copy) NSArray *columnValues;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUINanoImageResource *imageResource;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
 
 + (id)tableRowItem;
 + (id)tableRowItemWithDictionary:(id)arg1 context:(id)arg2;

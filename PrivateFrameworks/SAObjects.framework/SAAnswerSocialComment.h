@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAAnswerSocialComment : AceObject <SAAceSerializable>
 
-@interface SAAnswerSocialComment : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * author;
-@property(copy) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *author;
+@property (nonatomic, copy) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
 
 + (id)socialComment;
 + (id)socialCommentWithDictionary:(id)arg1 context:(id)arg2;

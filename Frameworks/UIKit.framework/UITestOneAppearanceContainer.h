@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITestOneAppearanceContainer : UIDeviceAppearanceContainer {
-}
+@interface UITestOneAppearanceContainer : UIDeviceAppearanceContainer
 
 @end

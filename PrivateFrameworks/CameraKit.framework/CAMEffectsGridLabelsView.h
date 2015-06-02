@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMEffectsGridView, NSArray, _UIBackdropView, _UILegibilitySettingsProvider;
-
 @interface CAMEffectsGridLabelsView : UIView <_UIBackdropViewObserver> {
     _UIBackdropView *__backdropView;
     _UILegibilitySettingsProvider *__legibilitySettingsProvider;
@@ -14,13 +12,13 @@
     int _orientation;
 }
 
-@property(retain) _UIBackdropView * _backdropView;
-@property(retain) _UILegibilitySettingsProvider * _legibilitySettingsProvider;
-@property(getter=isDisabledLayoutForLabels) BOOL disableLayoutForLabels;
-@property(retain) NSArray * filterIndices;
-@property(retain) NSArray * filterLabelViews;
-@property(retain) CAMEffectsGridView * gridView;
-@property int orientation;
+@property (nonatomic, retain) _UIBackdropView *_backdropView;
+@property (nonatomic, retain) _UILegibilitySettingsProvider *_legibilitySettingsProvider;
+@property (getter=isDisabledLayoutForLabels, nonatomic) BOOL disableLayoutForLabels;
+@property (nonatomic, retain) NSArray *filterIndices;
+@property (nonatomic, retain) NSArray *filterLabelViews;
+@property (nonatomic, retain) CAMEffectsGridView *gridView;
+@property (nonatomic) int orientation;
 
 - (void).cxx_destruct;
 - (id)_backdropView;

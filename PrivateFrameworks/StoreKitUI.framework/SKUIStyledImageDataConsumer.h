@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIStyledImageDataConsumer : SKUIImageDataConsumer {
     UIColor *_backgroundColor;
     UIColor *_borderColor;
@@ -20,11 +18,11 @@
     int _imageTreatment;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) UIColor * borderColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property int imageTreatment;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) int imageTreatment;
 
 + (id)appIconConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)applePackIconConsumer;
@@ -64,13 +62,13 @@
 + (id)wishlistProductImageConsumer;
 
 - (void).cxx_destruct;
-- (id)_arcRoundedImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cornerRadius:(float)arg3 drawBlock:(id)arg4;
+- (id)_arcRoundedImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 cornerRadius:(float)arg3 drawBlock:(id /* block */)arg4;
 - (BOOL)_backgroundIsOpaque;
 - (id)_defaultPlaceholderColor;
 - (void)_drawBordersWithImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)_outputImageWithInputSize:(struct CGSize { float x1; float x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id)arg3;
-- (id)_scaledImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id)arg3;
-- (id)_uberImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id)arg3;
+- (id)_outputImageWithInputSize:(struct CGSize { float x1; float x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id /* block */)arg3;
+- (id)_scaledImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id /* block */)arg3;
+- (id)_uberImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)backgroundColor;
 - (id)borderColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;

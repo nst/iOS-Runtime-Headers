@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewContentDelegate>, EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UIView;
-
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, UIGestureRecognizerDelegate> {
     BOOL _allowsOccurrenceSelection;
     NSCalendar *_calendar;
@@ -61,32 +59,32 @@
     float *_visiblePinnedStackHeightBelow;
 }
 
-@property BOOL allowsOccurrenceSelection;
-@property(copy) NSCalendar * calendar;
-@property BOOL darkensWeekends;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKDayViewContentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) EKEvent * dimmedOccurrence;
-@property(readonly) EKCalendarDate * endDate;
-@property BOOL eventsFillGrid;
-@property(readonly) double firstEventSecond;
-@property float fixedDayWidth;
-@property(readonly) unsigned int hash;
-@property int occurrenceBackgroundStyle;
-@property(retain) UIColor * occurrenceLocationColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrenceMargin;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrencePadding;
-@property(retain) UIColor * occurrenceTextBackgroundColor;
-@property(retain) UIColor * occurrenceTimeColor;
-@property(retain) UIColor * occurrenceTitleColor;
-@property BOOL reduceLayoutProcessingForAnimation;
-@property(setter=selectEvent:,retain) EKEvent * selectedEvent;
-@property BOOL showsLeftBorder;
-@property(copy) EKCalendarDate * startDate;
-@property(readonly) Class superclass;
-@property(copy) NSTimeZone * timeZone;
-@property BOOL usesSmallText;
+@property (nonatomic) BOOL allowsOccurrenceSelection;
+@property (nonatomic, copy) NSCalendar *calendar;
+@property (nonatomic) BOOL darkensWeekends;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKDayViewContentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) EKEvent *dimmedOccurrence;
+@property (nonatomic, readonly) EKCalendarDate *endDate;
+@property (nonatomic) BOOL eventsFillGrid;
+@property (nonatomic, readonly) double firstEventSecond;
+@property (nonatomic) float fixedDayWidth;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int occurrenceBackgroundStyle;
+@property (nonatomic, retain) UIColor *occurrenceLocationColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrenceMargin;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } occurrencePadding;
+@property (nonatomic, retain) UIColor *occurrenceTextBackgroundColor;
+@property (nonatomic, retain) UIColor *occurrenceTimeColor;
+@property (nonatomic, retain) UIColor *occurrenceTitleColor;
+@property (nonatomic) BOOL reduceLayoutProcessingForAnimation;
+@property (setter=selectEvent:, nonatomic, retain) EKEvent *selectedEvent;
+@property (nonatomic) BOOL showsLeftBorder;
+@property (nonatomic, copy) EKCalendarDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSTimeZone *timeZone;
+@property (nonatomic) BOOL usesSmallText;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })RoundRectToScreenScaleForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

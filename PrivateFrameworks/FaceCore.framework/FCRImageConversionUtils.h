@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FaceCore.framework/FaceCore
  */
 
-@interface FCRImageConversionUtils : NSObject {
-}
+@interface FCRImageConversionUtils : NSObject
 
 + (char *)convertCGImageToBufferUsingDataProvider:(struct CGImage { }*)arg1 usingGCD:(BOOL)arg2 dispatchQueue:(id)arg3;
 + (char *)convertCGImageToBufferUsingGrayDevice:(struct CGImage { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSNumberFormatter, NSString, NSTimer, UIButton, UILabel, UISlider, _UISettings;
-
 @interface PTSSlider : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
     int _alignment;
     NSTimer *_buttonRepeatTimer;
@@ -26,29 +24,29 @@
     NSArray *_valueLabelStrings;
 }
 
-@property int alignment;
-@property(retain) NSTimer * buttonRepeatTimer;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIButton * downIncrementButton;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property float increment;
-@property float maximumValue;
-@property float minimumValue;
-@property _UISettings * settings;
-@property BOOL showsValueLabel;
-@property(retain) UISlider * sliderControl;
-@property(retain) NSArray * subviewConstraints;
-@property(readonly) Class superclass;
-@property(retain) UILabel * titleLabel;
-@property(retain) UIButton * upIncrementButton;
-@property float value;
-@property struct { double x1; double x2; } valueChangePublishTTL;
-@property(copy) NSString * valueKeyPath;
-@property(retain) UILabel * valueLabel;
-@property(retain) NSNumberFormatter * valueLabelFormatter;
-@property(copy) NSArray * valueLabelStrings;
+@property (nonatomic) int alignment;
+@property (nonatomic, retain) NSTimer *buttonRepeatTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIButton *downIncrementButton;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float increment;
+@property (nonatomic) float maximumValue;
+@property (nonatomic) float minimumValue;
+@property (nonatomic) _UISettings *settings;
+@property (nonatomic) BOOL showsValueLabel;
+@property (nonatomic, retain) UISlider *sliderControl;
+@property (nonatomic, retain) NSArray *subviewConstraints;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIButton *upIncrementButton;
+@property (nonatomic) float value;
+@property (nonatomic) struct { double x1; double x2; } valueChangePublishTTL;
+@property (nonatomic, copy) NSString *valueKeyPath;
+@property (nonatomic, retain) UILabel *valueLabel;
+@property (nonatomic, retain) NSNumberFormatter *valueLabelFormatter;
+@property (nonatomic, copy) NSArray *valueLabelStrings;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)slider;

@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapServiceTraits, GEOSearchRequest, NSString;
-
 @interface _GEOAutoCompleteTicket : NSObject <GEOMapServiceCompletionTicket> {
     GEOSearchRequest *_searchRequest;
     GEOMapServiceTraits *_traits;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)initWithAutoCompleteRequest:(id)arg1 traits:(id)arg2;
 - (BOOL)matchesFragment:(id)arg1;
-- (void)submitWithAutoCompletionHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithAutoCompletionHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (id)traits;
 
 @end

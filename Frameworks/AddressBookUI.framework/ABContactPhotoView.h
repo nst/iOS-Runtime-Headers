@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactPhotoViewDelegate>, <ABPresenterDelegate>, CNContact, NSDictionary, NSString, UIGestureRecognizer, UIImage, UIImageView, UILabel;
-
 @interface ABContactPhotoView : UIControl <QLPreviewControllerDataSource, QLPreviewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UILabel *_addPhotoLabel;
     UIImageView *_attributionImageView;
@@ -21,24 +19,24 @@
     UIGestureRecognizer *_tapGesture;
 }
 
-@property(retain) UILabel * addPhotoLabel;
-@property(retain) UIImageView * attributionImageView;
-@property(retain) CNContact * contact;
-@property(retain) UIImageView * contactImageView;
-@property(retain) UIImage * currentImage;
-@property(retain) UIImage * currentThumbnailImage;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABPresenterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UILabel * editPhotoLabel;
-@property(getter=isEditing) BOOL editing;
-@property(readonly) unsigned int hash;
-@property BOOL isAnimatingBounce;
-@property BOOL modified;
-@property(retain) NSDictionary * photoPickerInfo;
-@property <ABContactPhotoViewDelegate> * photoViewDelegate;
-@property(readonly) Class superclass;
-@property(retain) UIGestureRecognizer * tapGesture;
+@property (nonatomic, retain) UILabel *addPhotoLabel;
+@property (nonatomic, retain) UIImageView *attributionImageView;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, retain) UIImageView *contactImageView;
+@property (nonatomic, retain) UIImage *currentImage;
+@property (nonatomic, retain) UIImage *currentThumbnailImage;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABPresenterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *editPhotoLabel;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAnimatingBounce;
+@property (nonatomic) BOOL modified;
+@property (nonatomic, retain) NSDictionary *photoPickerInfo;
+@property (nonatomic) <ABContactPhotoViewDelegate> *photoViewDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIGestureRecognizer *tapGesture;
 
 + (id)supportedPasteboardTypes;
 

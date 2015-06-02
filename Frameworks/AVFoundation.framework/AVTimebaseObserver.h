@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface AVTimebaseObserver : NSObject {
     double _currentRate;
     BOOL _invalid;
@@ -14,9 +12,9 @@
     AVWeakReference *_weakReference;
 }
 
-@property(readonly) BOOL invalidated;
-@property(readonly) struct OpaqueCMTimebase { }* timebase;
-@property(getter=_weakReference,readonly) AVWeakReference * weakReference;
+@property (nonatomic, readonly) BOOL invalidated;
+@property (readonly) struct OpaqueCMTimebase { }*timebase;
+@property (getter=_weakReference, nonatomic, readonly) AVWeakReference *weakReference;
 
 - (void)_attachTimerSourceToTimebase;
 - (void)_effectiveRateChanged;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController;
-
 @interface _UIAlertViewShimAccessoryViewController : UIViewController {
     UIViewController *_accessoryViewController;
     float _preferredHeight;

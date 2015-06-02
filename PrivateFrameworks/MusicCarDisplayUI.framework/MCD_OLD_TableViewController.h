@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MPAVController, MPMediaQuery, UIView;
-
 @interface MCD_OLD_TableViewController : UITableViewController {
     BOOL _alwaysShowNavBar;
     UIView *_nowPlayingButton;
@@ -13,11 +11,11 @@
     BOOL _viewHasAppeared;
 }
 
-@property BOOL alwaysShowNavBar;
-@property(readonly) MPAVController * player;
-@property(readonly) MPMediaQuery * query;
-@property(readonly) <MCDCarDisplayServiceProvider> * serviceProvider;
-@property BOOL viewHasAppeared;
+@property (nonatomic) BOOL alwaysShowNavBar;
+@property (nonatomic, readonly) MPAVController *player;
+@property (nonatomic, readonly) MPMediaQuery *query;
+@property (nonatomic, readonly) <MCDCarDisplayServiceProvider> *serviceProvider;
+@property (nonatomic) BOOL viewHasAppeared;
 
 + (id)addAlbumArtViewFromItem:(id)arg1 toCell:(id)arg2 rowHeight:(float)arg3;
 + (id)addAlbumArtViewWithImage:(id)arg1 toCell:(id)arg2 rowHeight:(float)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFSniffer : NSObject {
-}
+@interface MFSniffer : NSObject
 
 + (int)fileType:(id)arg1;
 

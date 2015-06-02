@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIVignette : CIFilter {
     CIImage *inputImage;
     NSNumber *inputIntensity;
     NSNumber *inputRadius;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputIntensity;
-@property(retain) NSNumber * inputRadius;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputIntensity;
+@property (nonatomic, retain) NSNumber *inputRadius;
 
 + (id)customAttributes;
 

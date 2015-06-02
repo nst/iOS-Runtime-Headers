@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL;
+@interface SAClockAceClockWrap : SAClockObject <SASyncWrap>
 
-@interface SAClockAceClockWrap : SAClockObject <SASyncWrap> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSNumber * generation;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * identifier;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSNumber *generation;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *identifier;
+@property (readonly) Class superclass;
 
 + (id)aceClockWrap;
 + (id)aceClockWrapWithDictionary:(id)arg1 context:(id)arg2;

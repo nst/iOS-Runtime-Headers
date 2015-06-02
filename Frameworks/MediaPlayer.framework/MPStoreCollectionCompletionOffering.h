@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPStoreOfferMediaItemCollection, NSArray;
-
 @interface MPStoreCollectionCompletionOffering : NSObject {
     MPMediaQuery *_localItemsQuery;
     MPStoreOfferMediaItemCollection *_mergedCollection;
@@ -11,11 +9,11 @@
     int _preferredStoreOfferVariant;
 }
 
-@property(readonly) MPStoreOfferMediaItemCollection * itemsWithCompletionsCollection;
-@property(readonly) NSArray * localItems;
-@property(readonly) MPStoreOfferMediaItemCollection * mergedCollection;
-@property(readonly) MPStoreOfferMediaItemCollection * offeredCollection;
-@property(readonly) int preferredStoreOfferVariant;
+@property (nonatomic, readonly) MPStoreOfferMediaItemCollection *itemsWithCompletionsCollection;
+@property (nonatomic, readonly) NSArray *localItems;
+@property (nonatomic, readonly) MPStoreOfferMediaItemCollection *mergedCollection;
+@property (nonatomic, readonly) MPStoreOfferMediaItemCollection *offeredCollection;
+@property (nonatomic, readonly) int preferredStoreOfferVariant;
 
 - (void).cxx_destruct;
 - (id)initWithOfferedCollection:(id)arg1 localItemsQuery:(id)arg2 preferredStoreOfferVariant:(int)arg3;

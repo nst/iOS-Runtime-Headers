@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIOldSliderButton : UIButton {
-}
+@interface UIOldSliderButton : UIButton
 
 - (BOOL)cancelMouseTracking;
 - (BOOL)cancelTouchTracking;

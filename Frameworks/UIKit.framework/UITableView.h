@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIGobblerGestureRecognizer, UIImage, UILongPressGestureRecognizer, UIRefreshControl, UIScrollView, UISwipeGestureRecognizer, UITableViewCell, UITableViewCountView, UITableViewIndex, UITableViewIndexOverlayIndicatorView, UITableViewIndexOverlaySelectionView, UITableViewRowData, UITableViewWrapperView, UITouch, UIView, UIVisualEffect, UIWindow, _UITableViewDeleteAnimationSupport, _UITableViewReorderingSupport, _UITableViewUpdateSupport;
-
 @interface UITableView : UIScrollView <NSCoding, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
     UIView *_backgroundView;
     float _bottomPadding;
@@ -297,41 +295,43 @@
     UITableViewWrapperView *_wrapperView;
 }
 
-@property BOOL allowsMultipleSelection;
-@property BOOL allowsMultipleSelectionDuringEditing;
-@property BOOL allowsSelection;
-@property BOOL allowsSelectionDuringEditing;
-@property(retain) UIView * backgroundView;
-@property(retain) UITouch * currentTouch;
-@property <UITableViewDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=_defaultMarginWidth,readonly) float defaultMarginWidth;
-@property <UITableViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEditing) BOOL editing;
-@property float estimatedRowHeight;
-@property float estimatedSectionFooterHeight;
-@property float estimatedSectionHeaderHeight;
-@property(getter=_focusedCellIndexPath,setter=_setFocusedCellIndexPath:,copy) NSIndexPath * focusedCellIndexPath;
-@property(readonly) unsigned int hash;
-@property(getter=MPU_isInScrollTest,setter=MPU_setInScrollTest:) BOOL inScrollTest;
-@property(getter=_manuallyManagesSwipeUI,setter=_setManuallyManagesSwipeUI:) BOOL manuallyManagesSwipeUI;
-@property float rowHeight;
-@property float sectionFooterHeight;
-@property float sectionHeaderHeight;
-@property(retain) UIColor * sectionIndexBackgroundColor;
-@property(retain) UIColor * sectionIndexColor;
-@property int sectionIndexMinimumDisplayRowCount;
-@property(retain) UIColor * sectionIndexTrackingBackgroundColor;
-@property(retain) UIColor * separatorColor;
-@property(copy) UIVisualEffect * separatorEffect;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
-@property int separatorStyle;
-@property(readonly) int style;
-@property(readonly) Class superclass;
-@property(retain) UIView * tableFooterView;
-@property(retain) UIView * tableHeaderView;
-@property(getter=_wrapperView,readonly) UIScrollView * wrapperView;
+@property (nonatomic) BOOL allowsMultipleSelection;
+@property (nonatomic) BOOL allowsMultipleSelectionDuringEditing;
+@property (nonatomic) BOOL allowsSelection;
+@property (nonatomic) BOOL allowsSelectionDuringEditing;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, retain) UITouch *currentTouch;
+@property (nonatomic) <UITableViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=_defaultMarginWidth, nonatomic, readonly) float defaultMarginWidth;
+@property (nonatomic) <UITableViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) float estimatedRowHeight;
+@property (nonatomic) float estimatedSectionFooterHeight;
+@property (nonatomic) float estimatedSectionHeaderHeight;
+@property (getter=_focusedCellIndexPath, setter=_setFocusedCellIndexPath:, nonatomic, copy) NSIndexPath *focusedCellIndexPath;
+@property (readonly) unsigned int hash;
+@property (getter=MPU_isInScrollTest, setter=MPU_setInScrollTest:, nonatomic) BOOL inScrollTest;
+@property (getter=_manuallyManagesSwipeUI, setter=_setManuallyManagesSwipeUI:, nonatomic) BOOL manuallyManagesSwipeUI;
+@property (nonatomic) float rowHeight;
+@property (nonatomic) float sectionFooterHeight;
+@property (nonatomic) float sectionHeaderHeight;
+@property (nonatomic, retain) UIColor *sectionIndexBackgroundColor;
+@property (nonatomic, retain) UIColor *sectionIndexColor;
+@property (nonatomic) int sectionIndexMinimumDisplayRowCount;
+@property (nonatomic, retain) UIColor *sectionIndexTrackingBackgroundColor;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic, copy) UIVisualEffect *separatorEffect;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *tableFooterView;
+@property (nonatomic, retain) UIView *tableHeaderView;
+@property (getter=_wrapperView, nonatomic, readonly) UIScrollView *wrapperView;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_alternateExternalSeparatorColor;
 + (id)_alternateExternalTableBackgroundColor;
@@ -341,11 +341,6 @@
 + (void)_initializeForIdiom:(int)arg1;
 + (void)initialize;
 
-- (BOOL)MPU_isInScrollTest;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })MPU_rangeOfVisibleSections;
-- (void)MPU_setInScrollTest:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })__ck_contentSize;
-- (id)__ck_indexPathForLastRow;
 - (void)_accessoryButtonAction:(id)arg1;
 - (int)_accessoryTypeForCell:(id)arg1 forRowAtIndexPath:(id)arg2;
 - (void)_actionButton:(id)arg1 pushedInCell:(id)arg2;
@@ -531,7 +526,6 @@
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
 - (void)_languageChanged;
 - (BOOL)_manuallyManagesSwipeUI;
-- (id)_mapkit_dequeueReusableCellWithIdentifier:(id)arg1;
 - (float)_marginWidth;
 - (void)_moveSectionIndexTitleIndexToIndex:(int)arg1;
 - (void)_moveWithEvent:(id)arg1;
@@ -544,8 +538,8 @@
 - (float)_offsetForRubberBandOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4;
 - (BOOL)_pathIsHidden:(id)arg1;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
-- (void)_performBatchUpdates:(id)arg1 completion:(id)arg2;
-- (void)_performBatchUpdates:(id)arg1 withContext:(id)arg2 completion:(id)arg3;
+- (void)_performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)_performBatchUpdates:(id /* block */)arg1 withContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)_performCellContentStringCalloutCleanupHidingMenu:(BOOL)arg1;
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
@@ -587,7 +581,7 @@
 - (id)_scriptingInfo;
 - (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
 - (id)_scrollTestExtraResults;
-- (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
+- (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
@@ -768,9 +762,6 @@
 - (float)_widthForContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (id)_wrapperView;
-- (void)ab_delayedScrollRespectingCaretOfActiveTextViewToCell:(id)arg1 atIndexPath:(id)arg2 atScrollPosition:(int)arg3 animated:(BOOL)arg4;
-- (void)ab_internalScrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
-- (void)ab_scrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (void)adjustIndexPaths:(id)arg1 forMoveOfIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (BOOL)allowsFooterViewsToFloat;
 - (BOOL)allowsHeaderViewsToFloat;
@@ -844,12 +835,6 @@
 - (int)numberOfRowsInSection:(int)arg1;
 - (int)numberOfSections;
 - (BOOL)overlapsSectionHeaderViews;
-- (id)pl_indexPathForLastRow;
-- (BOOL)pl_lastRowIsVisible;
-- (void)pl_resetContentOffsetFromContentInsets;
-- (void)pl_scrollToBottom:(BOOL)arg1;
-- (void)pl_scrollToTop:(BOOL)arg1;
-- (void)pl_scrollToVisibleRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (id)preferredFocusedItem;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForFooterInSection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForHeaderInSection:(int)arg1;
@@ -949,5 +934,35 @@
 - (BOOL)usesVariableMargins;
 - (id)visibleCells;
 - (void)willMoveToSuperview:(id)arg1;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
+- (void)ab_delayedScrollRespectingCaretOfActiveTextViewToCell:(id)arg1 atIndexPath:(id)arg2 atScrollPosition:(int)arg3 animated:(BOOL)arg4;
+- (void)ab_internalScrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
+- (void)ab_scrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_dequeueReusableCellWithIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (struct CGSize { float x1; float x2; })__ck_contentSize;
+- (id)__ck_indexPathForLastRow;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (BOOL)MPU_isInScrollTest;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })MPU_rangeOfVisibleSections;
+- (void)MPU_setInScrollTest:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (id)pl_indexPathForLastRow;
+- (BOOL)pl_lastRowIsVisible;
+- (void)pl_resetContentOffsetFromContentInsets;
+- (void)pl_scrollToBottom:(BOOL)arg1;
+- (void)pl_scrollToTop:(BOOL)arg1;
+- (void)pl_scrollToVisibleRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 
 @end

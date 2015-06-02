@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@interface PLBBMsgItem : NSObject {
-}
+@interface PLBBMsgItem : NSObject
 
 @end

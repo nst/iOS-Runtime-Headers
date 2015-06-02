@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet;
-
 @interface CalDAVCalendarUserSearchTask : CoreDAVPropertyFindBaseTask {
     BOOL _findAttendees;
     BOOL _findGroups;
@@ -14,13 +12,13 @@
     NSSet *_searchStrings;
 }
 
-@property BOOL findAttendees;
+@property (nonatomic) BOOL findAttendees;
 @property BOOL findGroups;
-@property BOOL findLocations;
+@property (nonatomic) BOOL findLocations;
 @property BOOL findResources;
 @property BOOL findUsers;
-@property unsigned int resultLimit;
-@property(retain) NSSet * searchStrings;
+@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic, retain) NSSet *searchStrings;
 
 + (BOOL)tokensAreLegal:(id)arg1;
 

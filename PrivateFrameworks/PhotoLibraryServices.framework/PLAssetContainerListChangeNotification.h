@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLAssetContainerList>, NSDictionary, NSObject<PLAlbumContainer>;
-
 @interface PLAssetContainerListChangeNotification : PLContainerChangeNotification {
     NSDictionary *_userInfo;
 }
 
-@property(retain,readonly) NSObject<PLAlbumContainer> * albumList;
-@property(retain,readonly) <PLAssetContainerList> * assetContainerList;
+@property (nonatomic, readonly, retain) NSObject<PLAlbumContainer> *albumList;
+@property (nonatomic, readonly, retain) <PLAssetContainerList> *assetContainerList;
 
 + (id)notificationWithContainerList:(id)arg1 snapshot:(id)arg2 changedContainers:(id)arg3;
 + (id)notificationWithSimulatedReloadRequestForContainerList:(id)arg1;

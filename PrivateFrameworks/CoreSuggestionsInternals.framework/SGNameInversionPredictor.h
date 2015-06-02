@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSDictionary;
-
 @interface SGNameInversionPredictor : NSObject {
     double _confidenceThreshold;
     NSDictionary *_tradToInversionRate;

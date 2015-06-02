@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVQueuePlayerInternal;
-
 @interface AVQueuePlayer : AVPlayer {
     AVQueuePlayerInternal *_queuePlayer;
 }
@@ -14,7 +12,7 @@
 + (id)queuePlayerWithItems:(id)arg1;
 
 - (int)_defaultActionAtItemEnd;
-- (void)_enqueueModification:(id)arg1;
+- (void)_enqueueModification:(id /* block */)arg1;
 - (BOOL)_shouldEnqueueModifications;
 - (void)advanceToNextItem;
 - (void)beginModifications;

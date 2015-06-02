@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaQuery, MPMusicPlayerController;
-
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
-    unsigned int _allowsBackgroundVideo : 1;
-    unsigned int _cachedPlaybackStateIsValid : 1;
+    unsigned int _allowsBackgroundVideo;
+    unsigned int _cachedPlaybackStateIsValid;
     unsigned int _clientPort;
-    unsigned int _didCheckIn : 1;
+    unsigned int _didCheckIn;
     int _inBlockHandlingPlaybackStateChangedMessageFromServer;
     MPMediaItemCollection *_itemCollection;
     MPMusicPlayerController *_musicPlayerController;
@@ -18,8 +16,8 @@
     struct SBSProcessAssertion { } *_processAssertion;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
-    unsigned int _useApplicationSpecificQueue : 1;
-    unsigned int _useCachedPlaybackState : 1;
+    unsigned int _useApplicationSpecificQueue;
+    unsigned int _useCachedPlaybackState;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;

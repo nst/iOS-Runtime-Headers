@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSMutableArray;
-
 @interface CPMemoryPool : NSObject {
     NSMutableArray *_files;
     char *_label;
@@ -14,7 +12,7 @@
     unsigned long _slotLength;
 }
 
-@property(readonly) unsigned long slotLength;
+@property (nonatomic, readonly) unsigned long slotLength;
 
 - (void)dealloc;
 - (id)initWithLabel:(const char *)arg1 slotLength:(unsigned long)arg2;

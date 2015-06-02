@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationView;
-
 @interface MKMapAnnotationManager : MKAnnotationManager {
     BOOL _addedUserLocationAnnotation;
     MKAnnotationView *_userLocationView;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray;
-
 @interface PKPaymentCredentialsResponse : PKPaymentWebServiceResponse {
     NSArray *_credentials;
 }
 
-@property(retain) NSArray * credentials;
+@property (nonatomic, retain) NSArray *credentials;
 
 - (id)credentials;
 - (void)dealloc;

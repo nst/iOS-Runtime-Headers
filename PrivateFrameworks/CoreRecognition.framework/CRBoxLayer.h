@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class CAShapeLayer, CATextLayer, NSMutableArray;
-
 @interface CRBoxLayer : CAReplicatorLayer {
     CATextLayer *_codeLayer;
     NSMutableArray *_completionBlocks;
@@ -11,15 +9,15 @@
     CAShapeLayer *_reticleLayer;
 }
 
-@property(retain) CATextLayer * codeLayer;
-@property(retain) NSMutableArray * completionBlocks;
+@property (retain) CATextLayer *codeLayer;
+@property (retain) NSMutableArray *completionBlocks;
 @property float demoSpeed;
-@property(retain) CAShapeLayer * reticleLayer;
+@property (retain) CAShapeLayer *reticleLayer;
 
 + (id)layer;
 
 - (void).cxx_destruct;
-- (void)addCompletionBlock:(id)arg1;
+- (void)addCompletionBlock:(id /* block */)arg1;
 - (void)animateConceal;
 - (void)animatePulseColor:(id)arg1;
 - (void)animateReveal;

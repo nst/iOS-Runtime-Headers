@@ -20,11 +20,11 @@
 - (struct __CFAttributedString { }*)cfAttributedString;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)coalescedFontAttributes;
-- (void)convertAttachmentsWithBlock:(id)arg1;
+- (void)convertAttachmentsWithBlock:(id /* block */)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateAttributesUsingBlock:(id)arg1;
+- (void)enumerateAttributesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasAttribute:(id)arg1;
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)initWithString:(id)arg1;

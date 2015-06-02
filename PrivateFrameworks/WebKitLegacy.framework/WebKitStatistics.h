@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebKitStatistics : NSObject {
-}
+@interface WebKitStatistics : NSObject
 
 + (int)HTMLRepresentationCount;
 + (int)bridgeCount;

@@ -11,7 +11,7 @@
     } _tappableEdgeInsets;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (id)flipButton;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIComposeTextFieldListViewDelegate>, NSMutableArray, UIResponder;
-
 @interface SKUIComposeTextFieldListView : UIView {
     <SKUIComposeTextFieldListViewDelegate> *_delegate;
     NSMutableArray *_fields;
@@ -11,10 +9,10 @@
     int _style;
 }
 
-@property(readonly) int composeReviewStyle;
-@property <SKUIComposeTextFieldListViewDelegate> * delegate;
-@property(readonly) float height;
-@property(readonly) UIResponder * initialFirstResponder;
+@property (nonatomic, readonly) int composeReviewStyle;
+@property (nonatomic) <SKUIComposeTextFieldListViewDelegate> *delegate;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) UIResponder *initialFirstResponder;
 
 - (void).cxx_destruct;
 - (void)_updateValidity;

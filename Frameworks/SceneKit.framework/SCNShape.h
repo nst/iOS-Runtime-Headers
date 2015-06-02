@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class UIBezierPath;
-
 @interface SCNShape : SCNGeometry {
     int _chamferMode;
     struct UIBezierPath { Class x1; struct CGPath {} *x2; float *x3; unsigned int x4; float x5; float x6; float x7; float x8; int x9; int x10; BOOL x11; struct CGPath {} *x12; BOOL x13; } *_chamferProfile;
@@ -20,11 +13,11 @@
     id _reserved;
 }
 
-@property int chamferMode;
-@property(copy) UIBezierPath * chamferProfile;
-@property float chamferRadius;
-@property float extrusionDepth;
-@property(copy) UIBezierPath * path;
+@property (nonatomic) int chamferMode;
+@property (nonatomic, copy) UIBezierPath *chamferProfile;
+@property (nonatomic) float chamferRadius;
+@property (nonatomic) float extrusionDepth;
+@property (nonatomic, copy) UIBezierPath *path;
 
 + (id)SCNJSExportProtocol;
 + (id)shapeWithPath:(id)arg1 extrusionDepth:(float)arg2;

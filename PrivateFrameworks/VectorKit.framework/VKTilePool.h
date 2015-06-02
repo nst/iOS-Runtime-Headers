@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSLock;
-
 @interface VKTilePool : VKTileKeyMap {
     NSLock *_lock;
 }
 
 - (unsigned long)count;
 - (void)dealloc;
-- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithMapType:(int)arg1;
 - (id)objectForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

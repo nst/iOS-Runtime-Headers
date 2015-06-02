@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UIImage;
+@interface MusicActionTableViewCell : MusicTableViewCell
 
-@interface MusicActionTableViewCell : MusicTableViewCell {
-}
-
-@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
-@property(retain) UIImage * image;
-@property struct UIOffset { float x1; float x2; } imageOffset;
-@property(copy) NSString * title;
+@property (getter=isDisplayingAsDisabled, nonatomic) BOOL displayAsDisabled;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct UIOffset { float x1; float x2; } imageOffset;
+@property (nonatomic, copy) NSString *title;
 
 + (Class)contentViewClass;
 

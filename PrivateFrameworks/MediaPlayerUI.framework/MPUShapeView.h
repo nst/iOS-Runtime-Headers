@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class CAShapeLayer;
+@interface MPUShapeView : UIView
 
-@interface MPUShapeView : UIView {
-}
-
-@property(readonly) CAShapeLayer * shapeLayer;
+@property (nonatomic, readonly) CAShapeLayer *shapeLayer;
 
 + (Class)layerClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIStatusBarBatteryItemView : UIStatusBarItemView {
     UIView *_accessoryView;
     int _capacity;

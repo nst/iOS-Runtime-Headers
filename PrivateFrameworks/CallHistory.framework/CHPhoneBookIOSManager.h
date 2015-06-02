@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSString;
-
 @interface CHPhoneBookIOSManager : CHLogger <CHPhoneBookManagerProtocol> {
     BOOL _callerIdIsEmail;
     int _multiValueId;
@@ -13,14 +11,14 @@
 }
 
 @property BOOL callerIdIsEmail;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int multiValueId;
-@property void* record;
+@property (nonatomic) void*record;
 @property int recordId;
 @property unsigned int recordIsSuggested;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (BOOL)callerIdIsEmail;
 - (void)dealloc;

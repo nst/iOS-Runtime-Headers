@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLResourceIdentity, NSDate;
-
 @interface CPLFileStorageItem : NSObject <NSCopying> {
     CPLResourceIdentity *_identity;
     NSDate *_lastAccessDate;
@@ -11,10 +9,10 @@
     BOOL _original;
 }
 
-@property(readonly) CPLResourceIdentity * identity;
-@property(readonly) NSDate * lastAccessDate;
-@property(getter=isMarkedForDelete,readonly) BOOL markedForDelete;
-@property(getter=isOriginal,readonly) BOOL original;
+@property (nonatomic, readonly) CPLResourceIdentity *identity;
+@property (nonatomic, readonly) NSDate *lastAccessDate;
+@property (getter=isMarkedForDelete, nonatomic, readonly) BOOL markedForDelete;
+@property (getter=isOriginal, nonatomic, readonly) BOOL original;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKEmergencyCardRowHeightChangeDelegate>, HKMedicalIDEditorNameAndPhotoCell, NSString;
-
 @interface HKEmergencyCardNameAndPictureTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     HKMedicalIDEditorNameAndPhotoCell *_cell;
     <HKEmergencyCardRowHeightChangeDelegate> *_rowHeightChangeDelegate;
@@ -11,11 +9,11 @@
     BOOL _showingTakePhotoButton;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <HKEmergencyCardRowHeightChangeDelegate> * rowHeightChangeDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <HKEmergencyCardRowHeightChangeDelegate> *rowHeightChangeDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_cell;

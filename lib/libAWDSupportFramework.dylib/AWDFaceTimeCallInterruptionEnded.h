@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDFaceTimeCallInterruptionEnded : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -24,22 +22,22 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasInterruptionDuration;
-@property BOOL hasIsAudioResumed;
-@property BOOL hasIsVideo;
-@property BOOL hasIsVideoResumed;
-@property BOOL hasLinkQuality;
-@property BOOL hasOnLockScreen;
-@property BOOL hasTimestamp;
-@property unsigned int interruptionDuration;
-@property unsigned int isAudioResumed;
-@property unsigned int isVideo;
-@property unsigned int isVideoResumed;
-@property int linkQuality;
-@property unsigned int onLockScreen;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasInterruptionDuration;
+@property (nonatomic) BOOL hasIsAudioResumed;
+@property (nonatomic) BOOL hasIsVideo;
+@property (nonatomic) BOOL hasIsVideoResumed;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasOnLockScreen;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int interruptionDuration;
+@property (nonatomic) unsigned int isAudioResumed;
+@property (nonatomic) unsigned int isVideo;
+@property (nonatomic) unsigned int isVideoResumed;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned int onLockScreen;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

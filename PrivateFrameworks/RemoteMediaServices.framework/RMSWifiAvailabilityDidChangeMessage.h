@@ -11,10 +11,10 @@
     BOOL _wifiAvailable;
 }
 
-@property BOOL hasSessionIdentifier;
-@property BOOL hasWifiAvailable;
-@property int sessionIdentifier;
-@property BOOL wifiAvailable;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) BOOL hasWifiAvailable;
+@property (nonatomic) int sessionIdentifier;
+@property (nonatomic) BOOL wifiAvailable;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

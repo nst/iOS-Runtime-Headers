@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OISFUCryptoKey, OISFUDataRepresentation<SFUZipArchiveDataRepresentation>;
-
 @interface OISFUZipEntry : OISFUDataRepresentation {
     OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
     unsigned long long mCompressedSize;

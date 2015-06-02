@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _PFRoutines : NSObject {
-}
+@interface _PFRoutines : NSObject
 
 + (id)_coalescedPrefetchKeypaths:(id)arg1;
 + (id)_createNicksBase64EncodedStringFromData:(id)arg1;

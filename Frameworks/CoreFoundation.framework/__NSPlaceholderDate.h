@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSPlaceholderDate : NSDate {
-}
+@interface __NSPlaceholderDate : NSDate
 
 + (id)immutablePlaceholder;
 + (void)initialize;

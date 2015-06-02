@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureMixed : TSCHChartFeatureCategory {
-}
+@interface TSCHChartFeatureMixed : TSCHChartFeatureCategory
 
 - (id)defaultDataFileName;
 - (id)genericToSpecificPropertyMap;

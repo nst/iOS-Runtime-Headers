@@ -2,43 +2,33 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <GEOMapAccessRestrictions>, NSObject<OS_dispatch_queue>;
-
 @interface GEOMapAccess : GEOMapRequestManager {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <GEOMapAccessRestrictions> *_restrictions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileErrorHandler;
-
+    id /* block */ _tileErrorHandler;
 }
 
-@property(readonly) BOOL allowsNetworkTileLoad;
-@property <GEOMapAccessRestrictions> * restrictions;
-@property(copy) id tileErrorHandler;
+@property (nonatomic, readonly) BOOL allowsNetworkTileLoad;
+@property (nonatomic) <GEOMapAccessRestrictions> *restrictions;
+@property (nonatomic, copy) id /* block */ tileErrorHandler;
 
 + (id)realisticMap;
 + (BOOL)supportsRealisticMap;
 
 - (BOOL)allowsNetworkTileLoad;
-- (id)buildMapEdgeFrom:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 edgeHandler:(id)arg2;
+- (id)buildMapEdgeFrom:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 edgeHandler:(id /* block */)arg2;
 - (id)callbackQueue;
 - (void)dealloc;
-- (id)findClosestNamedFeaturesAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id)arg2 pointHandler:(id)arg3 polygonHandler:(id)arg4 completionHandler:(id)arg5;
-- (id)findClosestRoadAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id)arg2 completionHandler:(id)arg3;
-- (id)findRoadEdgesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 edgeHandler:(id)arg3 completionHandler:(id)arg4;
-- (id)findRoadTilesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 tileHander:(id)arg3 completionHandler:(id)arg4;
-- (id)findRoadsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 handler:(id)arg3 completionHandler:(id)arg4;
+- (id)findClosestNamedFeaturesAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id /* block */)arg2 pointHandler:(id /* block */)arg3 polygonHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)findClosestRoadAtCoordinate:(struct { double x1; double x2; })arg1 roadHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (id)findRoadEdgesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 edgeHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findRoadTilesWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 tileHander:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)findRoadsWithin:(double)arg1 of:(struct { double x1; double x2; })arg2 handler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)restrictions;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setRestrictions:(id)arg1;
-- (void)setTileErrorHandler:(id)arg1;
-- (id)tileErrorHandler;
+- (void)setTileErrorHandler:(id /* block */)arg1;
+- (id /* block */)tileErrorHandler;
 
 @end

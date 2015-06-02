@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, NSURL, SUClientInterface, SUGradient, SUPageSectionGroup, SUSearchFieldConfiguration, UIColor, UIImage;
-
 @interface SUSection : NSObject {
     SUClientInterface *_clientInterface;
     NSMutableDictionary *_dictionary;
@@ -15,30 +13,30 @@
     UIImage *_selectedMoreListImage;
 }
 
-@property(readonly) SUGradient * backgroundGradient;
-@property(readonly) int defaultPNGStyle;
-@property(getter=isDefaultSection,readonly) BOOL defaultSection;
-@property(readonly) NSString * identifier;
-@property(retain) UIImage * image;
-@property(readonly) NSArray * itemImages;
-@property(readonly) NSArray * leftSectionButtons;
-@property(readonly) UIColor * loadingIndicatorColor;
-@property(readonly) UIColor * loadingTextColor;
-@property(readonly) UIColor * loadingTextShadowColor;
-@property(readonly) int minimumNetworkType;
-@property(retain) UIImage * moreListImage;
-@property(readonly) SUPageSectionGroup * pageSectionGroup;
-@property(readonly) NSString * partnerHeader;
-@property(readonly) NSArray * rightSectionButtons;
-@property(retain) SUSearchFieldConfiguration * searchFieldConfiguration;
-@property(retain) UIImage * selectedImage;
-@property(retain) UIImage * selectedMoreListImage;
-@property(readonly) NSString * title;
-@property(getter=isTransient,readonly) BOOL transient;
-@property(readonly) int type;
-@property(readonly) NSURL * url;
-@property(readonly) NSString * urlBagKey;
-@property(getter=isUsingLocalArtwork,readonly) BOOL usingLocalArtwork;
+@property (nonatomic, readonly) SUGradient *backgroundGradient;
+@property (nonatomic, readonly) int defaultPNGStyle;
+@property (getter=isDefaultSection, nonatomic, readonly) BOOL defaultSection;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) NSArray *itemImages;
+@property (nonatomic, readonly) NSArray *leftSectionButtons;
+@property (nonatomic, readonly) UIColor *loadingIndicatorColor;
+@property (nonatomic, readonly) UIColor *loadingTextColor;
+@property (nonatomic, readonly) UIColor *loadingTextShadowColor;
+@property (nonatomic, readonly) int minimumNetworkType;
+@property (nonatomic, retain) UIImage *moreListImage;
+@property (nonatomic, readonly) SUPageSectionGroup *pageSectionGroup;
+@property (nonatomic, readonly) NSString *partnerHeader;
+@property (nonatomic, readonly) NSArray *rightSectionButtons;
+@property (nonatomic, retain) SUSearchFieldConfiguration *searchFieldConfiguration;
+@property (nonatomic, retain) UIImage *selectedImage;
+@property (nonatomic, retain) UIImage *selectedMoreListImage;
+@property (nonatomic, readonly) NSString *title;
+@property (getter=isTransient, nonatomic, readonly) BOOL transient;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSString *urlBagKey;
+@property (getter=isUsingLocalArtwork, nonatomic, readonly) BOOL usingLocalArtwork;
 
 - (id)_colorForKey:(id)arg1;
 - (id)_imageBaseName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordZoneIdentifier;
-
 @interface CKDPZoneRetrieveChangesResponseChangedZone : PBCodable <NSCopying> {
     int _changeType;
     struct { 
@@ -12,10 +10,10 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property int changeType;
-@property BOOL hasChangeType;
-@property(readonly) BOOL hasZoneIdentifier;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic) int changeType;
+@property (nonatomic) BOOL hasChangeType;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
 - (int)changeType;

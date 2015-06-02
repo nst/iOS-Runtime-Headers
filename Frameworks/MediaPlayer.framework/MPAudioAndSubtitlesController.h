@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAudioAndSubtitlesControllerDelegate>, MPAVItem, MPAlternateTrack, NSString, UITableView;
-
 @interface MPAudioAndSubtitlesController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     MPAVItem *_avItem;
     <MPAudioAndSubtitlesControllerDelegate> *_delegate;
@@ -16,11 +14,11 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MPAudioAndSubtitlesControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPAudioAndSubtitlesControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyChanges;

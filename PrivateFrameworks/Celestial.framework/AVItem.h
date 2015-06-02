@@ -3,7 +3,7 @@
  */
 
 @interface AVItem : NSObject {
-    struct AVItemPrivate { id x1; id x2; double x3; float x4; float x5; float x6; unsigned int x7; BOOL x8; BOOL x9; id x10; int x11; long long x12; long long x13; BOOL x14; id x15; id x16; BOOL x17; BOOL x18; id x19; id x20; struct OpaqueMD5CheckProgress {} *x21; struct OpaqueFigThread {} *x22; struct OpaqueCMByteStream {} *x23; int x24; id x25; id x26; } *_priv;
+    struct AVItemPrivate { id x1; double x2; float x3; float x4; float x5; unsigned int x6; BOOL x7; BOOL x8; id x9; long long x10; long long x11; BOOL x12; id x13; BOOL x14; BOOL x15; id x16; struct OpaqueMD5CheckProgress {} *x17; struct OpaqueFigThread {} *x18; struct OpaqueCMByteStream {} *x19; int x20; id x21; } *_priv;
 }
 
 + (id)avItem;

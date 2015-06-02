@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIIndexBarEntryListControllerDelegate>, NSString, SKUIViewElement;
-
 @interface SKUIIndexBarEntryListController : NSObject {
     <SKUIIndexBarEntryListControllerDelegate> *_delegate;
     BOOL _hidesIndexBar;
@@ -13,12 +11,12 @@
     SKUIViewElement *_rootTargetViewElement;
 }
 
-@property <SKUIIndexBarEntryListControllerDelegate> * delegate;
-@property(readonly) BOOL hidesIndexBar;
-@property(readonly) BOOL needsRootTargetViewElement;
-@property(readonly) int numberOfEntryDescriptors;
-@property(readonly) NSString * rootTargetIndexBarEntryID;
-@property(retain) SKUIViewElement * rootTargetViewElement;
+@property (nonatomic) <SKUIIndexBarEntryListControllerDelegate> *delegate;
+@property (nonatomic, readonly) BOOL hidesIndexBar;
+@property (nonatomic, readonly) BOOL needsRootTargetViewElement;
+@property (nonatomic, readonly) int numberOfEntryDescriptors;
+@property (nonatomic, readonly) NSString *rootTargetIndexBarEntryID;
+@property (nonatomic, retain) SKUIViewElement *rootTargetViewElement;
 
 + (id)entryListControllerForEntryListViewElement:(id)arg1;
 + (id)entryListControllerForEntryViewElement:(id)arg1;

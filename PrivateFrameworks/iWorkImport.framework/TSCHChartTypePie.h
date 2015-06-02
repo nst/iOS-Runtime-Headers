@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypePie : TSCH2DChartType {
-}
+@interface TSCHChartTypePie : TSCH2DChartType
 
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (Class)chartLayoutItemClass;

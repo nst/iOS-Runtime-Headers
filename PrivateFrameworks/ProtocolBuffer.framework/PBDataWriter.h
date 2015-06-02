@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class PBMutableData;
-
 @interface PBDataWriter : NSObject {
     PBMutableData *_data;
 }

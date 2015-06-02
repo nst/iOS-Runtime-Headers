@@ -13,12 +13,12 @@
     unsigned long long _referenceWindowNanos;
 }
 
-@property unsigned long long currentWindowNanos;
-@property BOOL hasCurrentWindowNanos;
-@property BOOL hasMaxExcessRadiansPerSecond;
-@property BOOL hasReferenceWindowNanos;
-@property float maxExcessRadiansPerSecond;
-@property unsigned long long referenceWindowNanos;
+@property (nonatomic) unsigned long long currentWindowNanos;
+@property (nonatomic) BOOL hasCurrentWindowNanos;
+@property (nonatomic) BOOL hasMaxExcessRadiansPerSecond;
+@property (nonatomic) BOOL hasReferenceWindowNanos;
+@property (nonatomic) float maxExcessRadiansPerSecond;
+@property (nonatomic) unsigned long long referenceWindowNanos;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

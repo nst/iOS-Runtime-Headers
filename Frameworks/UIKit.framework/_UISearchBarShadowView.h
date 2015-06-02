@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UISearchBarShadowView : UIImageView {
-}
+@interface _UISearchBarShadowView : UIImageView
 
 @end

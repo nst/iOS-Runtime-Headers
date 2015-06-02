@@ -2,39 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary, NSMutableSet;
-
 @interface CKDModifyWebSharingOperation : CKDDatabaseOperation {
     NSMutableSet *_fetchedRecordIDs;
     int _numSaveAttempts;
     NSArray *_recordIDsToShare;
     NSArray *_recordIDsToShareReadWrite;
     NSArray *_recordIDsToUnshare;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordWebSharedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordWebUnsharedBlock;
-
+    id /* block */ _recordWebSharedBlock;
+    id /* block */ _recordWebUnsharedBlock;
     NSMutableDictionary *_recordsToSaveByID;
 }
 
-@property(retain) NSMutableSet * fetchedRecordIDs;
-@property int numSaveAttempts;
-@property(retain) NSArray * recordIDsToShare;
-@property(retain) NSArray * recordIDsToShareReadWrite;
-@property(retain) NSArray * recordIDsToUnshare;
-@property(copy) id recordWebSharedBlock;
-@property(copy) id recordWebUnsharedBlock;
-@property(retain) NSMutableDictionary * recordsToSaveByID;
+@property (nonatomic, retain) NSMutableSet *fetchedRecordIDs;
+@property (nonatomic) int numSaveAttempts;
+@property (nonatomic, retain) NSArray *recordIDsToShare;
+@property (nonatomic, retain) NSArray *recordIDsToShareReadWrite;
+@property (nonatomic, retain) NSArray *recordIDsToUnshare;
+@property (nonatomic, copy) id /* block */ recordWebSharedBlock;
+@property (nonatomic, copy) id /* block */ recordWebUnsharedBlock;
+@property (nonatomic, retain) NSMutableDictionary *recordsToSaveByID;
 
 - (void).cxx_destruct;
 - (struct _PCSIdentityData { }*)_copyShareProtectionFromRecord:(id)arg1 error:(id*)arg2;
@@ -52,16 +38,16 @@
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;
 - (id)recordIDsToUnshare;
-- (id)recordWebSharedBlock;
-- (id)recordWebUnsharedBlock;
+- (id /* block */)recordWebSharedBlock;
+- (id /* block */)recordWebUnsharedBlock;
 - (id)recordsToSaveByID;
 - (void)setFetchedRecordIDs:(id)arg1;
 - (void)setNumSaveAttempts:(int)arg1;
 - (void)setRecordIDsToShare:(id)arg1;
 - (void)setRecordIDsToShareReadWrite:(id)arg1;
 - (void)setRecordIDsToUnshare:(id)arg1;
-- (void)setRecordWebSharedBlock:(id)arg1;
-- (void)setRecordWebUnsharedBlock:(id)arg1;
+- (void)setRecordWebSharedBlock:(id /* block */)arg1;
+- (void)setRecordWebUnsharedBlock:(id /* block */)arg1;
 - (void)setRecordsToSaveByID:(id)arg1;
 
 @end

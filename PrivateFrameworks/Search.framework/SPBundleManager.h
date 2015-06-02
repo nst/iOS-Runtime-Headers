@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSArray, NSDictionary;
-
 @interface SPBundleManager : NSObject {
     NSArray *_datastores;
     NSDictionary *_domainMap;
     NSArray *_searchBundles;
 }
 
-@property(readonly) NSArray * searchBundles;
+@property (nonatomic, readonly) NSArray *searchBundles;
 
 + (id)sharedManager;
 

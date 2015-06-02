@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSString, PTPTCPIPConnection;
-
 @interface PTPTCPIPTransport : PTPTransport {
     PTPTCPIPConnection *_cdConnection;
     NSMutableData *_cdData;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString, VMUCallTreeNode;
-
 @interface VMUCallTreeNode : NSObject {
     unsigned long long _address;
     unsigned int _count;

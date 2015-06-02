@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSMutableArray;
-
 @interface MPMediaCollectionDownloadObserver : MPUMediaDownloadObserver {
     BOOL _callingProgressHandler;
     NSMutableArray *_downloadObservers;

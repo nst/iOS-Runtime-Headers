@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, NSURL;
-
 @interface SSItemOfferDeviceError : NSObject {
     NSString *_localizedMessage;
     NSString *_localizedTitle;
@@ -11,10 +9,10 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * localizedMessage;
-@property(readonly) NSString * localizedTitle;
-@property(readonly) NSString * localizedURLTitle;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSString *localizedMessage;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic, readonly) NSString *localizedURLTitle;
 
 - (id)URL;
 - (id)_initWithMessage:(id)arg1 title:(id)arg2 URLTitle:(id)arg3 URL:(id)arg4;

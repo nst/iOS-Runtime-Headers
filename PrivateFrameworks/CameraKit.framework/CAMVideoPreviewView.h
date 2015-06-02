@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class AVCaptureVideoPreviewLayer, CAMEffectsFullsizeView, CAMEffectsGridLabelsView, CAMEffectsGridView, NSString, UIView;
-
 @interface CAMVideoPreviewView : UIView {
     BOOL _disableLayoutForEffectsFullsizeView;
     BOOL _disableLayoutForEffectsGridViews;
@@ -19,18 +17,18 @@
     NSString *_videoGravity;
 }
 
-@property(getter=isDisabledLayoutForEffectsFullsizeView) BOOL disableLayoutForEffectsFullsizeView;
-@property(getter=isDisabledLayoutForEffectsGridViews) BOOL disableLayoutForEffectsGridViews;
-@property(getter=isDisabledLayoutForPreviewView) BOOL disableLayoutForPreviewView;
-@property(retain,readonly) CAMEffectsFullsizeView * effectsFullsizeView;
-@property(retain,readonly) CAMEffectsGridLabelsView * effectsGridLabelsView;
-@property(retain,readonly) CAMEffectsGridView * effectsGridView;
-@property(retain,readonly) UIView * fadeOutView;
-@property int orientation;
-@property(retain) AVCaptureVideoPreviewLayer * previewLayer;
-@property(retain,readonly) UIView * previewLayerView;
-@property(getter=isSquare) BOOL square;
-@property(copy) NSString * videoGravity;
+@property (getter=isDisabledLayoutForEffectsFullsizeView, nonatomic) BOOL disableLayoutForEffectsFullsizeView;
+@property (getter=isDisabledLayoutForEffectsGridViews, nonatomic) BOOL disableLayoutForEffectsGridViews;
+@property (getter=isDisabledLayoutForPreviewView, nonatomic) BOOL disableLayoutForPreviewView;
+@property (nonatomic, readonly, retain) CAMEffectsFullsizeView *effectsFullsizeView;
+@property (nonatomic, readonly, retain) CAMEffectsGridLabelsView *effectsGridLabelsView;
+@property (nonatomic, readonly, retain) CAMEffectsGridView *effectsGridView;
+@property (nonatomic, readonly, retain) UIView *fadeOutView;
+@property (nonatomic) int orientation;
+@property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic, readonly, retain) UIView *previewLayerView;
+@property (getter=isSquare, nonatomic) BOOL square;
+@property (nonatomic, copy) NSString *videoGravity;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForSubviewsAccountForSquare:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, SSVPlayActivityController;
-
 @interface MPUJinglePlayActivityReportingController : MPUReportingController {
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     double _nonCatalogAggregatePlayDuration;
@@ -17,8 +15,8 @@
     BOOL _shouldReportPlayActivityEvents;
 }
 
-@property(readonly) SSVPlayActivityController * playActivityController;
-@property BOOL shouldReportPlayActivityEvents;
+@property (nonatomic, readonly) SSVPlayActivityController *playActivityController;
+@property (nonatomic) BOOL shouldReportPlayActivityEvents;
 
 - (void).cxx_destruct;
 - (void)_applicationWillTerminateNotification:(id)arg1;

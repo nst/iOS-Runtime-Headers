@@ -2,27 +2,17 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKMarkNotificationsReadOperation : CKOperation {
     NSMutableDictionary *_errorsByNotificationID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _markNotificationsReadCompletionBlock;
-
+    id /* block */ _markNotificationsReadCompletionBlock;
     NSArray *_notificationIDs;
     NSMutableArray *_notificationIDsMarkedRead;
 }
 
-@property(retain) NSMutableDictionary * errorsByNotificationID;
-@property(copy) id markNotificationsReadCompletionBlock;
-@property(copy) NSArray * notificationIDs;
-@property(retain) NSMutableArray * notificationIDsMarkedRead;
+@property (nonatomic, retain) NSMutableDictionary *errorsByNotificationID;
+@property (nonatomic, copy) id /* block */ markNotificationsReadCompletionBlock;
+@property (nonatomic, copy) NSArray *notificationIDs;
+@property (nonatomic, retain) NSMutableArray *notificationIDsMarkedRead;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -32,12 +22,12 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
-- (id)markNotificationsReadCompletionBlock;
+- (id /* block */)markNotificationsReadCompletionBlock;
 - (id)notificationIDs;
 - (id)notificationIDsMarkedRead;
 - (void)performCKOperation;
 - (void)setErrorsByNotificationID:(id)arg1;
-- (void)setMarkNotificationsReadCompletionBlock:(id)arg1;
+- (void)setMarkNotificationsReadCompletionBlock:(id /* block */)arg1;
 - (void)setNotificationIDs:(id)arg1;
 - (void)setNotificationIDsMarkedRead:(id)arg1;
 

@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PURedeyeToolControllerSpec : PUPhotoEditToolControllerSpec {
-}
+@interface PURedeyeToolControllerSpec : PUPhotoEditToolControllerSpec
 
-@property(readonly) BOOL displaysTooltipAtTopInPortrait;
-@property(readonly) float tooltipLandscapeMargin;
-@property(readonly) float tooltipPortraitMargin;
+@property (nonatomic, readonly) BOOL displaysTooltipAtTopInPortrait;
+@property (nonatomic, readonly) float tooltipLandscapeMargin;
+@property (nonatomic, readonly) float tooltipPortraitMargin;
 
 - (BOOL)displaysTooltipAtTopInPortrait;
 - (float)tooltipLandscapeMargin;

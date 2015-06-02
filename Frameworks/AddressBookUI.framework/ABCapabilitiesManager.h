@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface ABCapabilitiesManager : NSObject <IDSIDQueryControllerDelegate> {
     NSMutableDictionary *_destinationStatus;
     BOOL _isListeningToIDSQueryController;
     BOOL _isListeningToIDSServiceAvailability;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;

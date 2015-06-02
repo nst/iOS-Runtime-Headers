@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary;
-
 @interface RadioShareStationRequest : RadioSyncRequest {
     NSDictionary *_stationDictionary;
 }

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCETrackedReference;
-
 @interface TSTSortRuleReferenceTrackerReference : NSObject {
     unsigned char mColumnIndex;
     TSCETrackedReference *mTrackedReference;
 }
 
-@property unsigned char columnIndex;
-@property(retain) TSCETrackedReference * trackedReference;
+@property (nonatomic) unsigned char columnIndex;
+@property (nonatomic, retain) TSCETrackedReference *trackedReference;
 
 + (id)referenceWithColumnIndex:(unsigned char)arg1 trackedReference:(id)arg2;
 

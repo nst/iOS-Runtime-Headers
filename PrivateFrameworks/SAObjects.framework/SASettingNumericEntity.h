@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingNumericEntity : SASettingEntity {
-}
+@interface SASettingNumericEntity : SASettingEntity
 
 + (id)numericEntity;
 + (id)numericEntityWithDictionary:(id)arg1 context:(id)arg2;

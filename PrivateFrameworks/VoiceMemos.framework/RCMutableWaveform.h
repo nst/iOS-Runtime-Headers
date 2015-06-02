@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCMutableWaveform : RCWaveform {
-}
+@interface RCMutableWaveform : RCWaveform
 
 - (void)addSegment:(id)arg1;
 - (void)addSegments:(id)arg1;

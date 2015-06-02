@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKTravelEngineUtilities : NSObject {
-}
+@interface EKTravelEngineUtilities : NSObject
 
 + (id)authorizationStatusAsString:(int)arg1;
 + (id)calendarLocationBundle;

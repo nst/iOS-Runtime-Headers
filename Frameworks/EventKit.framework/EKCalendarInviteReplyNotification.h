@@ -7,8 +7,8 @@
     int _status;
 }
 
-@property unsigned int allowedEntityTypes;
-@property int status;
+@property (nonatomic) unsigned int allowedEntityTypes;
+@property (nonatomic) int status;
 
 - (unsigned int)allowedEntityTypes;
 - (id)initWithType:(int)arg1;

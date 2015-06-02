@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface WBParagraph : NSObject {
-}
+@interface WBParagraph : NSObject
 
 + (int)blockType;
 + (void)check:(id)arg1 forFieldMarkerFrom:(id)arg2 runEnd:(int*)arg3 readState:(struct WBParagraphReadState { int x1; int x2; int x3; struct WrdFieldPosition {} *x4; int x5; struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x_6_1_1; unsigned int *x_6_1_2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_2_1; } x_6_1_3; } x6; int x7; int x8; struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x_9_1_1; unsigned int *x_9_1_2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_2_1; } x_9_1_3; } x9; }*)arg4;

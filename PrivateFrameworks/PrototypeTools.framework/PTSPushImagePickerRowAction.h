@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString;
-
 @interface PTSPushImagePickerRowAction : PTSPushViewControllerRowAction {
     NSString *_imageDirectoryPath;
 }
 
-@property(copy) NSString * imageDirectoryPath;
+@property (nonatomic, copy) NSString *imageDirectoryPath;
 
 + (id)actionWithImageDirectoryPath:(id)arg1;
 

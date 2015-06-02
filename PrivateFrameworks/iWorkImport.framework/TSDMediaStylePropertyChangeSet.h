@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDSpecReflection, TSDSpecShadow, TSDSpecStroke, TSSSpecDouble;
-
 @interface TSDMediaStylePropertyChangeSet : TSSStylePropertyChangeSet {
     BOOL _definedOpacity;
     BOOL _definedReflection;
@@ -15,7 +13,7 @@
     TSDSpecStroke *_stroke;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

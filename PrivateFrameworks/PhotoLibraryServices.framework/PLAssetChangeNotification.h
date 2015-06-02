@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSSet;
-
 @interface PLAssetChangeNotification : PLChangeNotification {
     NSSet *_updatedAssets;
 }
 
-@property(copy) NSSet * updatedAssets;
+@property (nonatomic, copy) NSSet *updatedAssets;
 
 + (id)notificationWithChangedAssets:(id)arg1;
 

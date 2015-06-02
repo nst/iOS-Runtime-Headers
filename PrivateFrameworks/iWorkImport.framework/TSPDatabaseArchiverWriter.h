@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSPDatabase, TSPDistributableFileManager;
-
 @interface TSPDatabaseArchiverWriter : NSObject {
     long long _dataStateIdentifier;
     TSPDatabase *_database;
@@ -20,12 +13,12 @@
     BOOL _hasFileState;
 }
 
-@property long long dataStateIdentifier;
-@property(retain) NSString * fileStateIdentifier;
-@property(retain) NSString * filenameHint;
-@property BOOL forceFileStorage;
-@property(readonly) BOOL hasDataState;
-@property(readonly) BOOL hasFileState;
+@property (nonatomic) long long dataStateIdentifier;
+@property (nonatomic, retain) NSString *fileStateIdentifier;
+@property (nonatomic, retain) NSString *filenameHint;
+@property (nonatomic) BOOL forceFileStorage;
+@property (nonatomic, readonly) BOOL hasDataState;
+@property (nonatomic, readonly) BOOL hasFileState;
 
 - (void).cxx_destruct;
 - (struct sqlite3_blob { }*)_openDatabaseBlobWithSize:(int)arg1;

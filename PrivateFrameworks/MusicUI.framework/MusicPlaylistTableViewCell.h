@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPlaylistTableViewCell : MusicStandardMediaTableViewCell {
-}
+@interface MusicPlaylistTableViewCell : MusicStandardMediaTableViewCell
 
 + (Class)contentViewClass;
 

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, BRCStagePersistedState, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface BRCStageRegistry : NSObject <BRCLowDiskDelegate, BRCModule> {
     NSMutableSet *_activeDownloadStageIDs;
     NSMutableSet *_activeUploadStageIDs;
@@ -21,29 +15,25 @@
     BRCStagePersistedState *_persistedState;
     NSObject<OS_dispatch_queue> *_queue;
     BRCAccountSession *_session;
-    unsigned long long _stageDirectoryFileID[6];
-    NSString *_stageDirectoryPath[6];
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
-
+    unsigned long long _stageDirectoryFileID;
+    NSString *_stageDirectoryPath;
+    int _suspendCount;
     NSMutableSet *_unflushedStagedFileIDs;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int deviceID;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int deviceID;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (readonly) Class superclass;
 
 + (void)migrateStageToVersion2_0WithSession:(id)arg1;
 
 - (void).cxx_destruct;
 - (int)_openStageDirectory:(unsigned char)arg1;
 - (id)_pathInStage:(unsigned long long)arg1 index:(unsigned char*)arg2 generationID:(unsigned int*)arg3;
-- (int)_performInStageDirectory:(unsigned char)arg1 block:(id)arg2;
+- (int)_performInStageDirectory:(unsigned char)arg1 block:(id /* block */)arg2;
 - (void)_testLockedFiles;
 - (void)_watchLockedRelpath:(id)arg1;
 - (void)applyMetadataOnFileDescriptor:(int)arg1 liveFileDescriptor:(int)arg2 container:(id)arg3 statInfo:(id)arg4 version:(id)arg5;

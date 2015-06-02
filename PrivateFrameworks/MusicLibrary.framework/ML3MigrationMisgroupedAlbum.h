@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray, NSMutableArray;
-
 @interface ML3MigrationMisgroupedAlbum : NSObject {
     long long _albumArtistPID;
     long long _albumPID;
     NSMutableArray *_misgroupedTracks;
 }
 
-@property(readonly) long long albumArtistPID;
-@property(readonly) long long albumPID;
-@property(readonly) NSArray * misgroupedTracks;
+@property (nonatomic, readonly) long long albumArtistPID;
+@property (nonatomic, readonly) long long albumPID;
+@property (nonatomic, readonly) NSArray *misgroupedTracks;
 
 - (void).cxx_destruct;
 - (void)addMisgroupedTrack:(id)arg1;

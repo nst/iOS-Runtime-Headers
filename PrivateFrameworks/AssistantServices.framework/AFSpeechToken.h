@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFSpeechToken : NSObject <NSSecureCoding> {
     int _confidenceScore;
     double _endTime;
@@ -13,12 +11,12 @@
     NSString *_text;
 }
 
-@property int confidenceScore;
-@property double endTime;
-@property BOOL removeSpaceAfter;
-@property BOOL removeSpaceBefore;
-@property double startTime;
-@property(copy) NSString * text;
+@property (nonatomic) int confidenceScore;
+@property (nonatomic) double endTime;
+@property (nonatomic) BOOL removeSpaceAfter;
+@property (nonatomic) BOOL removeSpaceBefore;
+@property (nonatomic) double startTime;
+@property (nonatomic, copy) NSString *text;
 
 + (BOOL)supportsSecureCoding;
 

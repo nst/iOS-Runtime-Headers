@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAClockDelete : SADomainCommand
 
-@interface SAClockDelete : SADomainCommand {
-}
-
-@property(copy) NSArray * clockIds;
+@property (nonatomic, copy) NSArray *clockIds;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;

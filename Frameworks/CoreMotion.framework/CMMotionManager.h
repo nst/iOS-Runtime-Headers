@@ -2,37 +2,30 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CMAccelerometerData, CMAmbientPressureData, CMDeviceMotion, CMGyroData, CMMagnetometerData;
-
 @interface CMMotionManager : NSObject {
     id _internal;
 }
 
-@property(getter=isAccelerometerActive,readonly) BOOL accelerometerActive;
-@property(getter=isAccelerometerAvailable,readonly) BOOL accelerometerAvailable;
-@property(readonly) CMAccelerometerData * accelerometerData;
-@property double accelerometerUpdateInterval;
-@property(readonly) CMAmbientPressureData * ambientPressureData;
-@property(readonly) unsigned int attitudeReferenceFrame;
-@property(readonly) CMDeviceMotion * deviceMotion;
-@property(getter=isDeviceMotionActive,readonly) BOOL deviceMotionActive;
-@property(getter=isDeviceMotionAvailable,readonly) BOOL deviceMotionAvailable;
-@property double deviceMotionUpdateInterval;
-@property(getter=isGyroActive,readonly) BOOL gyroActive;
-@property(getter=isGyroAvailable,readonly) BOOL gyroAvailable;
-@property(readonly) CMGyroData * gyroData;
-@property double gyroUpdateInterval;
-@property(getter=isMagnetometerActive,readonly) BOOL magnetometerActive;
-@property(getter=isMagnetometerAvailable,readonly) BOOL magnetometerAvailable;
-@property(readonly) CMMagnetometerData * magnetometerData;
-@property double magnetometerUpdateInterval;
-@property BOOL showsDeviceMovementDisplay;
-@property(getter=isSidebandSensorFusionAvailable,readonly) BOOL sidebandSensorFusionAvailable;
+@property (getter=isAccelerometerActive, nonatomic, readonly) BOOL accelerometerActive;
+@property (getter=isAccelerometerAvailable, nonatomic, readonly) BOOL accelerometerAvailable;
+@property (readonly) CMAccelerometerData *accelerometerData;
+@property (nonatomic) double accelerometerUpdateInterval;
+@property (readonly) CMAmbientPressureData *ambientPressureData;
+@property (nonatomic, readonly) unsigned int attitudeReferenceFrame;
+@property (readonly) CMDeviceMotion *deviceMotion;
+@property (getter=isDeviceMotionActive, nonatomic, readonly) BOOL deviceMotionActive;
+@property (getter=isDeviceMotionAvailable, nonatomic, readonly) BOOL deviceMotionAvailable;
+@property (nonatomic) double deviceMotionUpdateInterval;
+@property (getter=isGyroActive, nonatomic, readonly) BOOL gyroActive;
+@property (getter=isGyroAvailable, nonatomic, readonly) BOOL gyroAvailable;
+@property (readonly) CMGyroData *gyroData;
+@property (nonatomic) double gyroUpdateInterval;
+@property (getter=isMagnetometerActive, nonatomic, readonly) BOOL magnetometerActive;
+@property (getter=isMagnetometerAvailable, nonatomic, readonly) BOOL magnetometerAvailable;
+@property (readonly) CMMagnetometerData *magnetometerData;
+@property (nonatomic) double magnetometerUpdateInterval;
+@property (nonatomic) BOOL showsDeviceMovementDisplay;
+@property (getter=isSidebandSensorFusionAvailable, nonatomic, readonly) BOOL sidebandSensorFusionAvailable;
 
 + (unsigned int)availableAttitudeReferenceFrames;
 + (BOOL)configureM7Activity:(BOOL)arg1 stepCounting:(BOOL)arg2 activityForceCodeTransition:(BOOL)arg3 stepCountingForceCodeTransition:(BOOL)arg4 threshold:(BOOL)arg5 impulse:(BOOL)arg6 onBodyDetection:(BOOL)arg7 ispMode:(unsigned char)arg8 predictionInterval:(float)arg9 logLevel:(BOOL)arg10 proactiveRevisitTime:(unsigned short)arg11;
@@ -88,54 +81,54 @@
 - (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; unsigned short x3; bool x4; }*)arg1;
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 - (void)rebuildGytt;
-- (void)setAccelerometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
+- (void)setAccelerometerDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;
 - (void)setAmbientPressureUpdateInterval:(double)arg1;
 - (void)setAmbientPressureUpdateIntervalPrivate:(double)arg1;
-- (void)setDeviceMotionCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4;
-- (void)setDeviceMotionCompassAlignmentCallback:(int (*)())arg1 info:(void*)arg2;
-- (void)setDeviceMotionCompassDataCallback:(int (*)())arg1 info:(void*)arg2;
+- (void)setDeviceMotionCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4;
+- (void)setDeviceMotionCompassAlignmentCallback:(int (*)arg1 info:(void*)arg2;
+- (void)setDeviceMotionCompassDataCallback:(int (*)arg1 info:(void*)arg2;
 - (void)setDeviceMotionUpdateInterval:(double)arg1;
 - (void)setDeviceMotionUpdateIntervalPrivate:(double)arg1;
-- (void)setGyroBiasAndVarianceCallback:(int (*)())arg1 info:(void*)arg2;
-- (void)setGyroDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
+- (void)setGyroBiasAndVarianceCallback:(int (*)arg1 info:(void*)arg2;
+- (void)setGyroDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setGyroUpdateInterval:(double)arg1;
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
-- (void)setMagnetometerDataCallback:(int (*)())arg1 info:(void*)arg2 interval:(double)arg3;
+- (void)setMagnetometerDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
 - (void)setMaxAccelerationVarianceForStability:(float)arg1;
-- (void)setNotificationCallback:(int (*)())arg1 info:(void*)arg2;
+- (void)setNotificationCallback:(int (*)arg1 info:(void*)arg2;
 - (void)setSensorThrottleTime:(double)arg1;
 - (void)setSensorTurnOffTime:(double)arg1;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
 - (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
 - (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1;
-- (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1 measureLatency:(BOOL)arg2 withSnoopHandler:(id)arg3;
-- (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1 withSnoopHandler:(id)arg2;
-- (void)setSidebandTimeSyncHandler:(id)arg1;
+- (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1 measureLatency:(BOOL)arg2 withSnoopHandler:(id /* block */)arg3;
+- (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1 withSnoopHandler:(id /* block */)arg2;
+- (void)setSidebandTimeSyncHandler:(id /* block */)arg1;
 - (void)setUseAccelerometer:(BOOL)arg1;
 - (void)setWantsPowerConservativeDeviceMotion:(BOOL)arg1;
 - (void)showDeviceMovementDisplay;
 - (BOOL)showsDeviceMovementDisplay;
 - (void)startAccelerometerUpdates;
-- (void)startAccelerometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startAccelerometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startAccelerometerUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startAmbientPressureUpdates;
-- (void)startAmbientPressureUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startAmbientPressureUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startAmbientPressureUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startAmbientPressureUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startDeviceMotionUpdates;
-- (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
-- (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startDeviceMotionUpdatesUsingReferenceFrame:(unsigned int)arg1;
-- (void)startDeviceMotionUpdatesUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id)arg3;
+- (void)startDeviceMotionUpdatesUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)startGyroUpdates;
-- (void)startGyroUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startGyroUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startGyroUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startGyroUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startMagnetometerUpdates;
-- (void)startMagnetometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id)arg2;
-- (void)startMagnetometerUpdatesToQueue:(id)arg1 withHandler:(id)arg2;
+- (void)startMagnetometerUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startMagnetometerUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startWatchdogCheckinsPrivate;
 - (void)stopAccelerometerUpdates;
 - (void)stopAccelerometerUpdatesPrivate;

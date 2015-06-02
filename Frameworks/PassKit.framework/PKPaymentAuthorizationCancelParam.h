@@ -6,7 +6,7 @@
     BOOL _sendCallback;
 }
 
-@property BOOL sendCallback;
+@property (nonatomic) BOOL sendCallback;
 
 - (BOOL)sendCallback;
 - (void)setSendCallback:(BOOL)arg1;

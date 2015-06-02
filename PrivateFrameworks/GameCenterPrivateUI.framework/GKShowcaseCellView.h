@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKHairlineView, UICollectionViewCell;
-
 @interface GKShowcaseCellView : UICollectionReusableView {
     UICollectionViewCell *_cell;
     SEL _touchedShowcaseCellAction;
     GKHairlineView *_underlineView;
 }
 
-@property(retain) UICollectionViewCell * cell;
-@property SEL touchedShowcaseCellAction;
-@property(retain) GKHairlineView * underlineView;
+@property (nonatomic, retain) UICollectionViewCell *cell;
+@property (nonatomic) SEL touchedShowcaseCellAction;
+@property (nonatomic, retain) GKHairlineView *underlineView;
 
 + (BOOL)requiresConstraintBasedLayout;
 

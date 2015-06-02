@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSData, NSDictionary;
-
 @interface CKModifyRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     BOOL _atomic;
     NSData *_clientChangeTokenData;
@@ -15,14 +13,14 @@
     BOOL _shouldOnlySaveAssetContent;
 }
 
-@property BOOL atomic;
-@property(retain) NSData * clientChangeTokenData;
-@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
-@property(retain) NSArray * recordIDsToDelete;
-@property(copy) NSDictionary * recordIDsToDeleteToEtags;
-@property(retain) NSArray * recordsToSave;
-@property int savePolicy;
-@property BOOL shouldOnlySaveAssetContent;
+@property (nonatomic) BOOL atomic;
+@property (nonatomic, retain) NSData *clientChangeTokenData;
+@property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic, retain) NSArray *recordIDsToDelete;
+@property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
+@property (nonatomic, retain) NSArray *recordsToSave;
+@property (nonatomic) int savePolicy;
+@property (nonatomic) BOOL shouldOnlySaveAssetContent;
 
 + (BOOL)supportsSecureCoding;
 

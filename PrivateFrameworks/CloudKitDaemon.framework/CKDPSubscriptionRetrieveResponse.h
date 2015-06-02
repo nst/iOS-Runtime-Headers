@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPSubscriptionRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_subscriptions;
 }
 
-@property(retain) NSMutableArray * subscriptions;
+@property (nonatomic, retain) NSMutableArray *subscriptions;
 
 - (void).cxx_destruct;
 - (void)addSubscriptions:(id)arg1;

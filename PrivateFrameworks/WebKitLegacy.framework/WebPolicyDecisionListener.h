@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSString, WebPolicyDecisionListenerPrivate;
-
 @interface WebPolicyDecisionListener : NSObject <WebPolicyDecisionListener> {
     WebPolicyDecisionListenerPrivate *_private;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)_invalidate;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSString;
-
 @interface WFWebPageToTrainingText : WFWebPageDecorator {
     NSString *categorySignature;
 }

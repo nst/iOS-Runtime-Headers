@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface _EARAudioClassifier : NSObject {
     int _leftContext;
     struct Nnet { 

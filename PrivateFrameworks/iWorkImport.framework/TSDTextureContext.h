@@ -2,46 +2,44 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDAnimationSession>;
-
 @interface TSDTextureContext : NSObject <NSCopying> {
-    unsigned int _isMagicMove : 1;
+    unsigned int _isMagicMove;
     <TSDAnimationSession> *_session;
-    unsigned int _shouldAddFinal : 1;
-    unsigned int _shouldAddMagicMoveObjectOnly : 1;
-    unsigned int _shouldAddMasks : 1;
+    unsigned int _shouldAddFinal;
+    unsigned int _shouldAddMagicMoveObjectOnly;
+    unsigned int _shouldAddMasks;
     BOOL _shouldAddNoShapeAttributes;
-    unsigned int _shouldAddReversedFinal : 1;
-    unsigned int _shouldDistortToFit : 1;
-    unsigned int _shouldForceTextureGeneration : 1;
-    unsigned int _shouldIgnoreScaleInSourceImage : 1;
-    unsigned int _shouldNotAddContainedReps : 1;
-    unsigned int _shouldNotAddShapeAttributes : 1;
-    unsigned int _shouldNotAddText : 1;
-    unsigned int _shouldNotCacheTexture : 1;
-    unsigned int _shouldSeparateReflection : 1;
-    unsigned int _shouldSeparateShadow : 1;
-    unsigned int _shouldSeparateStroke : 1;
-    unsigned int _shouldSeparateText : 1;
+    unsigned int _shouldAddReversedFinal;
+    unsigned int _shouldDistortToFit;
+    unsigned int _shouldForceTextureGeneration;
+    unsigned int _shouldIgnoreScaleInSourceImage;
+    unsigned int _shouldNotAddContainedReps;
+    unsigned int _shouldNotAddShapeAttributes;
+    unsigned int _shouldNotAddText;
+    unsigned int _shouldNotCacheTexture;
+    unsigned int _shouldSeparateReflection;
+    unsigned int _shouldSeparateShadow;
+    unsigned int _shouldSeparateStroke;
+    unsigned int _shouldSeparateText;
 }
 
-@property BOOL isMagicMove;
-@property <TSDAnimationSession> * session;
-@property BOOL shouldAddFinal;
-@property BOOL shouldAddMagicMoveObjectOnly;
-@property BOOL shouldAddMasks;
-@property BOOL shouldAddReversedFinal;
-@property BOOL shouldDistortToFit;
-@property BOOL shouldForceTextureGeneration;
-@property BOOL shouldIgnoreScaleInSourceImage;
-@property BOOL shouldNotAddContainedReps;
-@property BOOL shouldNotAddShapeAttributes;
-@property BOOL shouldNotAddText;
-@property BOOL shouldNotCacheTexture;
-@property BOOL shouldSeparateReflection;
-@property BOOL shouldSeparateShadow;
-@property BOOL shouldSeparateStroke;
-@property BOOL shouldSeparateText;
+@property (nonatomic) BOOL isMagicMove;
+@property (nonatomic) <TSDAnimationSession> *session;
+@property (nonatomic) BOOL shouldAddFinal;
+@property (nonatomic) BOOL shouldAddMagicMoveObjectOnly;
+@property (nonatomic) BOOL shouldAddMasks;
+@property (nonatomic) BOOL shouldAddReversedFinal;
+@property (nonatomic) BOOL shouldDistortToFit;
+@property (nonatomic) BOOL shouldForceTextureGeneration;
+@property (nonatomic) BOOL shouldIgnoreScaleInSourceImage;
+@property (nonatomic) BOOL shouldNotAddContainedReps;
+@property (nonatomic) BOOL shouldNotAddShapeAttributes;
+@property (nonatomic) BOOL shouldNotAddText;
+@property (nonatomic) BOOL shouldNotCacheTexture;
+@property (nonatomic) BOOL shouldSeparateReflection;
+@property (nonatomic) BOOL shouldSeparateShadow;
+@property (nonatomic) BOOL shouldSeparateStroke;
+@property (nonatomic) BOOL shouldSeparateText;
 
 + (id)context;
 + (id)contextWithSession:(id)arg1;

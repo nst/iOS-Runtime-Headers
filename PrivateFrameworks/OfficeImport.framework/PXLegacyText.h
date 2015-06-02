@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface PXLegacyText : NSObject {
-}
+@interface PXLegacyText : NSObject
 
 + (void)readLegacyTextFromData:(id)arg1 toShape:(id)arg2 state:(id)arg3;
 + (void)readLegacyTextGlobalsFromData:(id)arg1 state:(id)arg2;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDRootTimeNode : PDParallelTimeNode {
-}
+@interface PDRootTimeNode : PDParallelTimeNode
 
 @end

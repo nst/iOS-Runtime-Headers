@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMTimelapseMovieWriter, CAMTimelapseState, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CAMTimelapseBackendController : NSObject <CAMNebulaDaemonProtocol> {
     BOOL __capturing;
     CAMTimelapseState *__currentState;
@@ -13,16 +11,16 @@
     BOOL __writingMovie;
 }
 
-@property(getter=_isCapturing,setter=_setCapturing:) BOOL _capturing;
-@property(setter=_setCurrentState:,retain) CAMTimelapseState * _currentState;
-@property(readonly) CAMTimelapseMovieWriter * _movieWriter;
-@property(readonly) NSMutableArray * _sessionContexts;
-@property(readonly) NSObject<OS_dispatch_queue> * _workQueue;
-@property(readonly) BOOL _writingMovie;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=_isCapturing, setter=_setCapturing:, nonatomic) BOOL _capturing;
+@property (setter=_setCurrentState:, nonatomic, retain) CAMTimelapseState *_currentState;
+@property (nonatomic, readonly) CAMTimelapseMovieWriter *_movieWriter;
+@property (nonatomic, readonly) NSMutableArray *_sessionContexts;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_workQueue;
+@property (nonatomic, readonly) BOOL _writingMovie;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -30,9 +28,9 @@
 - (void)_createPlaceholderAssetForState:(id)arg1;
 - (id)_currentState;
 - (BOOL)_deleteItemAtPath:(id)arg1;
-- (void)_dispatchToMainQueueWithBlock:(id)arg1;
-- (void)_dispatchToWorkQueueAfterDelay:(double)arg1 withBlock:(id)arg2;
-- (void)_dispatchToWorkQueueWithBlock:(id)arg1;
+- (void)_dispatchToMainQueueWithBlock:(id /* block */)arg1;
+- (void)_dispatchToWorkQueueAfterDelay:(double)arg1 withBlock:(id /* block */)arg2;
+- (void)_dispatchToWorkQueueWithBlock:(id /* block */)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_frameTransformForState:(id)arg1;
 - (id)_getOrCreateSessionContextForTimelapseUUID:(id)arg1;
 - (BOOL)_isCameraRunning;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, NSURLDownload;
-
 @interface WebUIDownloadManager : NSObject {
     id _delegate;
     NSURLDownload *_download;

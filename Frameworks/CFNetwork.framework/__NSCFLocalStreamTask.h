@@ -2,27 +2,17 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_data>, NSString;
-
 @interface __NSCFLocalStreamTask : __NSCFLocalSessionTask <NSURLSessionStreamTaskSubclass> {
     NSObject<OS_dispatch_data> *_buffer;
     struct __CFWriteStream { } *_sinkForResponseBytes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _streamCompletion;
-
+    id /* block */ _streamCompletion;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id streamCompletion;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) id /* block */ streamCompletion;
+@property (readonly) Class superclass;
 
 + (id)rawRequestForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3;
 
@@ -35,9 +25,9 @@
 - (void)_onqueue_resume;
 - (void)_onqueue_suspend;
 - (void)_task_onqueue_didFinish;
-- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id)arg2;
+- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithTask:(id)arg1;
-- (void)setStreamCompletion:(id)arg1;
-- (id)streamCompletion;
+- (void)setStreamCompletion:(id /* block */)arg1;
+- (id /* block */)streamCompletion;
 
 @end

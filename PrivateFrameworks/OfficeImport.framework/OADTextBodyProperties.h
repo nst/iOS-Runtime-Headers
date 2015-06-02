@@ -2,37 +2,35 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTextBodyAutoFit, OADTextWarp;
-
 @interface OADTextBodyProperties : OADProperties {
     OADTextBodyAutoFit *mAutoFit;
     double mBottomInset;
     unsigned short mColumnCount;
     double mColumnSpacing;
     unsigned char mFlowType;
-    unsigned int mHasBottomInset : 1;
-    unsigned int mHasColumnCount : 1;
-    unsigned int mHasColumnSpacing : 1;
-    unsigned int mHasFlowType : 1;
-    unsigned int mHasHorizontalOverflowType : 1;
-    unsigned int mHasIsAnchorCenter : 1;
-    unsigned int mHasIsLeftToRightColumns : 1;
-    unsigned int mHasIsUpright : 1;
-    unsigned int mHasLeftInset : 1;
-    unsigned int mHasRepectFirstLastParagraphSpacing : 1;
-    unsigned int mHasRightInset : 1;
-    unsigned int mHasRotation : 1;
-    unsigned int mHasTextAnchorType : 1;
-    unsigned int mHasTextBodyId : 1;
-    unsigned int mHasTopInset : 1;
-    unsigned int mHasVerticalOverflowType : 1;
-    unsigned int mHasWrapType : 1;
+    unsigned int mHasBottomInset;
+    unsigned int mHasColumnCount;
+    unsigned int mHasColumnSpacing;
+    unsigned int mHasFlowType;
+    unsigned int mHasHorizontalOverflowType;
+    unsigned int mHasIsAnchorCenter;
+    unsigned int mHasIsLeftToRightColumns;
+    unsigned int mHasIsUpright;
+    unsigned int mHasLeftInset;
+    unsigned int mHasRepectFirstLastParagraphSpacing;
+    unsigned int mHasRightInset;
+    unsigned int mHasRotation;
+    unsigned int mHasTextAnchorType;
+    unsigned int mHasTextBodyId;
+    unsigned int mHasTopInset;
+    unsigned int mHasVerticalOverflowType;
+    unsigned int mHasWrapType;
     unsigned char mHorizontalOverflowType;
-    unsigned int mIsAnchorCenter : 1;
-    unsigned int mIsLeftToRightColumns : 1;
-    unsigned int mIsUpright : 1;
+    unsigned int mIsAnchorCenter;
+    unsigned int mIsLeftToRightColumns;
+    unsigned int mIsUpright;
     double mLeftInset;
-    unsigned int mRepectFirstLastParagraphSpacing : 1;
+    unsigned int mRepectFirstLastParagraphSpacing;
     double mRightInset;
     double mRotation;
     unsigned char mTextAnchorType;

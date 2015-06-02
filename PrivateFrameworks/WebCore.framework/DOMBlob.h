@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMBlob : DOMObject {
-}
+@interface DOMBlob : DOMObject
 
-@property(readonly) unsigned long long size;
+@property (readonly) unsigned long long size;
 
 - (void)dealloc;
 - (void)finalize;

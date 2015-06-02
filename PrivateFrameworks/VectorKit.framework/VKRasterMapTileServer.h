@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, VKRasterMapTileCache;
-
 @interface VKRasterMapTileServer : NSObject {
     NSMutableDictionary *_activeTileCreators;
     NSObject<OS_dispatch_queue> *_homeQueue;
@@ -14,14 +12,14 @@
     NSMutableSet *_tileCreators;
 }
 
-@property(readonly) unsigned int superTileSize;
+@property (nonatomic, readonly) unsigned int superTileSize;
 
-- (void)_renderRequest:(id)arg1 completion:(id)arg2;
+- (void)_renderRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)detailedDescription;
 - (id)init;
 - (id)initWithSuperTileSize:(unsigned int)arg1 cache:(id)arg2 softwareRendering:(BOOL)arg3 homeQueue:(id)arg4;
-- (void)renderRequest:(id)arg1 completion:(id)arg2;
+- (void)renderRequest:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)superTileSize;
 
 @end

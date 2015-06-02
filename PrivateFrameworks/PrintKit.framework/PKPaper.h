@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class NSDictionary, NSString;
-
 @interface PKPaper : NSObject {
     NSString *_baseName;
     BOOL _isTransverse;
@@ -17,30 +15,30 @@
     int width;
 }
 
-@property(readonly) NSString * baseName;
-@property int bottomMargin;
-@property(readonly) unsigned int bottomMarginInPoints;
-@property int height;
-@property(readonly) float imageableArea;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageableAreaRect;
-@property(readonly) BOOL isBorderless;
-@property(readonly) BOOL isRoll;
-@property(readonly) BOOL isTransverse;
-@property int leftMargin;
-@property(retain,readonly) NSString * localizedName;
-@property(readonly) unsigned int maxCutLength;
-@property(readonly) int maxHeight;
-@property(copy) NSDictionary * mediaInfo;
-@property(retain,readonly) NSString * mediaType;
-@property(retain,readonly) NSString * mediaTypeName;
-@property(readonly) unsigned int minCutLength;
-@property(readonly) int minHeight;
-@property(retain) NSString * name;
-@property(readonly) struct CGSize { float x1; float x2; } paperSize;
-@property int rightMargin;
-@property int topMargin;
-@property(readonly) unsigned int topMarginInPoints;
-@property int width;
+@property (nonatomic, readonly) NSString *baseName;
+@property (nonatomic) int bottomMargin;
+@property (nonatomic, readonly) unsigned int bottomMarginInPoints;
+@property (nonatomic) int height;
+@property (nonatomic, readonly) float imageableArea;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageableAreaRect;
+@property (nonatomic, readonly) BOOL isBorderless;
+@property (nonatomic, readonly) BOOL isRoll;
+@property (nonatomic, readonly) BOOL isTransverse;
+@property (nonatomic) int leftMargin;
+@property (nonatomic, readonly, retain) NSString *localizedName;
+@property (nonatomic, readonly) unsigned int maxCutLength;
+@property (nonatomic, readonly) int maxHeight;
+@property (nonatomic, copy) NSDictionary *mediaInfo;
+@property (nonatomic, readonly, retain) NSString *mediaType;
+@property (nonatomic, readonly, retain) NSString *mediaTypeName;
+@property (nonatomic, readonly) unsigned int minCutLength;
+@property (nonatomic, readonly) int minHeight;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } paperSize;
+@property (nonatomic) int rightMargin;
+@property (nonatomic) int topMargin;
+@property (nonatomic, readonly) unsigned int topMarginInPoints;
+@property (nonatomic) int width;
 
 + (id)documentPapers;
 + (id)generic3_5x5Paper;

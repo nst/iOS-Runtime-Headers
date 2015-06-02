@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVMediaSelectionOption, NSString;
-
 @interface MPAlternateTrack : NSObject {
     NSString *_canonicalLanguageIdentifier;
     NSString *_displayName;
@@ -12,11 +10,11 @@
     AVMediaSelectionOption *_option;
 }
 
-@property(readonly) NSString * canonicalLanguageIdentifier;
-@property(retain) NSString * displayName;
-@property(readonly) BOOL isDVS;
-@property(readonly) BOOL isMainProgram;
-@property(readonly) AVMediaSelectionOption * option;
+@property (nonatomic, readonly) NSString *canonicalLanguageIdentifier;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL isDVS;
+@property (nonatomic, readonly) BOOL isMainProgram;
+@property (nonatomic, readonly) AVMediaSelectionOption *option;
 
 + (id)threeCharCodesForEncodedISO639_2_T:(id)arg1;
 

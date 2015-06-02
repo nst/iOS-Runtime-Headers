@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OITSUNoCopyDictionary;
-
 @interface OITSULRUCache : NSObject {
     SEL mCallback;
     id mCallbackTarget;
@@ -12,7 +10,7 @@
     NSMutableArray *mOrderedKeys;
 }
 
-@property(readonly) unsigned int maxSize;
+@property (nonatomic, readonly) unsigned int maxSize;
 
 - (id)allKeys;
 - (id)allValues;

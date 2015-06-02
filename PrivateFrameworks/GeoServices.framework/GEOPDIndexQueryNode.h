@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDIndexQueryNode : PBCodable <NSCopying> {
     NSString *_field;
     NSMutableArray *_operands;
@@ -11,12 +9,12 @@
     NSString *_value;
 }
 
-@property(retain) NSString * field;
-@property(readonly) BOOL hasField;
-@property(readonly) BOOL hasValue;
-@property(retain) NSMutableArray * operands;
-@property int type;
-@property(retain) NSString * value;
+@property (nonatomic, retain) NSString *field;
+@property (nonatomic, readonly) BOOL hasField;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) NSMutableArray *operands;
+@property (nonatomic) int type;
+@property (nonatomic, retain) NSString *value;
 
 - (void)addOperand:(id)arg1;
 - (void)clearOperands;

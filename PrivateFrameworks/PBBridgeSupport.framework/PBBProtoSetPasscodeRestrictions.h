@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSData;
-
 @interface PBBProtoSetPasscodeRestrictions : PBCodable <NSCopying> {
     NSData *_restrictions;
 }
 
-@property(retain) NSData * restrictions;
+@property (nonatomic, retain) NSData *restrictions;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

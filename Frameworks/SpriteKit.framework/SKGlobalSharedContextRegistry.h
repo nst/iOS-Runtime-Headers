@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKGlobalSharedContextRegistry : NSObject {
-}
+@interface SKGlobalSharedContextRegistry : NSObject
 
 + (id)globalGLSharedContext;
 + (void)setGlobalGLSharedContext:(id)arg1;

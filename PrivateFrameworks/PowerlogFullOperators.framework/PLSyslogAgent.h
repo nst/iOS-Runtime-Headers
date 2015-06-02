@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
  */
 
-@class PLEntryNotificationOperatorComposition;
-
 @interface PLSyslogAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     struct __CFRunLoopSource { } *fileDescriptorSource;
@@ -12,7 +10,7 @@
     unsigned int syslogdPid;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;
@@ -27,7 +25,7 @@
 
 - (void).cxx_destruct;
 - (id)batteryLevelChanged;
-- (void)enumerateResultsOfASLQuery:(struct __asl_object_s { }*)arg1 usingBlock:(id)arg2;
+- (void)enumerateResultsOfASLQuery:(struct __asl_object_s { }*)arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)listenForSyslogDeath;

@@ -11,9 +11,9 @@
     } _sourceTimeRange;
 }
 
-@property double destinationBeginTime;
-@property BOOL isDecomposedFragment;
-@property struct { double x1; double x2; } sourceTimeRange;
+@property (nonatomic) double destinationBeginTime;
+@property (nonatomic) BOOL isDecomposedFragment;
+@property (nonatomic) struct { double x1; double x2; } sourceTimeRange;
 
 - (double)destinationBeginTime;
 - (BOOL)isDecomposedFragment;

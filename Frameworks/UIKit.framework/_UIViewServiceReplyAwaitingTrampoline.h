@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIViewServiceReplyAwaitingTrampoline : _UIViewServiceReplyControlTrampoline {
-}
+@interface _UIViewServiceReplyAwaitingTrampoline : _UIViewServiceReplyControlTrampoline
 
 - (void)forwardInvocation:(id)arg1;
 

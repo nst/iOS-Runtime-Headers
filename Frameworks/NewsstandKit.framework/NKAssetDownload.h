@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@class NKIssue, NSData, NSDictionary, NSString, NSURLConnection, NSURLRequest;
-
 @interface NKAssetDownload : NSObject {
     BOOL _attemptedConnection;
     NSURLConnection *_connection;
@@ -14,13 +12,13 @@
     NSData *_userInfoData;
 }
 
-@property(copy) NSURLRequest * URLRequest;
+@property (copy) NSURLRequest *URLRequest;
 @property BOOL attemptedConnection;
-@property(retain) NSURLConnection * connection;
-@property(copy) NSString * identifier;
-@property(readonly) NKIssue * issue;
-@property(copy) NSDictionary * userInfo;
-@property(retain) NSData * userInfoData;
+@property (retain) NSURLConnection *connection;
+@property (copy) NSString *identifier;
+@property (readonly) NKIssue *issue;
+@property (copy) NSDictionary *userInfo;
+@property (retain) NSData *userInfoData;
 
 - (id)URLRequest;
 - (BOOL)_attemptedConnection;

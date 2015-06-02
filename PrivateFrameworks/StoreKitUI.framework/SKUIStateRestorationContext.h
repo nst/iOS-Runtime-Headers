@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext;
-
 @interface SKUIStateRestorationContext : NSObject {
     SKUIClientContext *_clientContext;
 }
 
-@property(retain) SKUIClientContext * clientContext;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
 
 + (void)setSharedContext:(id)arg1;
 + (id)sharedContext;

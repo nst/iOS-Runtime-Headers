@@ -2,29 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSUStreamReadChannel>, NSString;
-
 @interface TSPSnappyReadChannel : NSObject <TSUStreamReadChannel> {
     <TSUStreamReadChannel> *_readChannel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;
 - (void)dealloc;
 - (id)initWithReadChannel:(id)arg1;
-- (BOOL)processData:(id*)arg1 isDone:(BOOL)arg2 handler:(id)arg3;
-- (void)readWithHandler:(id)arg1;
+- (BOOL)processData:(id*)arg1 isDone:(BOOL)arg2 handler:(id /* block */)arg3;
+- (void)readWithHandler:(id /* block */)arg1;
 - (id)uncompressData:(id)arg1;
-- (id)uncompressDataFromSource:(struct SnappySource { int (**x1)(); id x2; unsigned int x3; unsigned int x4; id x5; unsigned int x6; unsigned int x7; char *x8; }*)arg1;
+- (id)uncompressDataFromSource:(struct SnappySource { int (**x1)(); id x2; unsigned int x3; id x4; unsigned int x5; char *x6; }*)arg1;
 
 @end

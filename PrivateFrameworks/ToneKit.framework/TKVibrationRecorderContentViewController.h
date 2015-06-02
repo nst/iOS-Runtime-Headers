@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationRecorderViewControllerDelegate>, NSDictionary, NSString, TKVibrationRecorderView, TKVibrationRecorderViewController, TKVibratorController, TLVibrationPattern, UIAlertAction, UIAlertController, UIBarButtonItem, UITextField;
-
 @interface TKVibrationRecorderContentViewController : UIViewController <TKVibrationRecorderViewDelegate, UITextFieldDelegate> {
     UIBarButtonItem *_cancelButton;
     double _currentVibrationComponentDidStartTimeStamp;
@@ -22,25 +20,25 @@
     BOOL _waitingForEndOfCurrentVibrationComponent;
 }
 
-@property(setter=_setCancelButton:,retain) UIBarButtonItem * _cancelButton;
-@property(setter=_setCurrentVibrationComponentDidStartTimeStamp:) double _currentVibrationComponentDidStartTimeStamp;
-@property(setter=_setCurrentVibrationProgressDidStartTimestamp:) double _currentVibrationProgressDidStartTimestamp;
-@property(setter=_setIndefiniteVibrationPattern:,retain) NSDictionary * _indefiniteVibrationPattern;
-@property(setter=_setMode:) int _mode;
-@property(setter=_setRecordedVibrationPattern:,retain) TLVibrationPattern * _recordedVibrationPattern;
-@property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
-@property(setter=_setVibrationNameAlertController:,retain) UIAlertController * _vibrationNameAlertController;
-@property(setter=_setVibrationNameAlertSaveAction:,retain) UIAlertAction * _vibrationNameAlertSaveAction;
-@property(setter=_setVibrationNameAlertTextField:,retain) UITextField * _vibrationNameAlertTextField;
-@property(setter=_setVibrationRecorderView:,retain) TKVibrationRecorderView * _vibrationRecorderView;
-@property(setter=_setVibratorController:,retain) TKVibratorController * _vibratorController;
-@property(getter=_isWaitingForEndOfCurrentVibrationComponent,setter=_setWaitingForEndOfCurrentVibrationComponent:) BOOL _waitingForEndOfCurrentVibrationComponent;
-@property(copy,readonly) NSString * debugDescription;
-@property <TKVibrationRecorderViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property TKVibrationRecorderViewController * parentVibrationRecorderViewController;
-@property(readonly) Class superclass;
+@property (setter=_setCancelButton:, nonatomic, retain) UIBarButtonItem *_cancelButton;
+@property (setter=_setCurrentVibrationComponentDidStartTimeStamp:, nonatomic) double _currentVibrationComponentDidStartTimeStamp;
+@property (setter=_setCurrentVibrationProgressDidStartTimestamp:, nonatomic) double _currentVibrationProgressDidStartTimestamp;
+@property (setter=_setIndefiniteVibrationPattern:, nonatomic, retain) NSDictionary *_indefiniteVibrationPattern;
+@property (setter=_setMode:, nonatomic) int _mode;
+@property (setter=_setRecordedVibrationPattern:, nonatomic, retain) TLVibrationPattern *_recordedVibrationPattern;
+@property (setter=_setSaveButton:, nonatomic, retain) UIBarButtonItem *_saveButton;
+@property (setter=_setVibrationNameAlertController:, nonatomic, retain) UIAlertController *_vibrationNameAlertController;
+@property (setter=_setVibrationNameAlertSaveAction:, nonatomic, retain) UIAlertAction *_vibrationNameAlertSaveAction;
+@property (setter=_setVibrationNameAlertTextField:, nonatomic, retain) UITextField *_vibrationNameAlertTextField;
+@property (setter=_setVibrationRecorderView:, nonatomic, retain) TKVibrationRecorderView *_vibrationRecorderView;
+@property (setter=_setVibratorController:, nonatomic, retain) TKVibratorController *_vibratorController;
+@property (getter=_isWaitingForEndOfCurrentVibrationComponent, setter=_setWaitingForEndOfCurrentVibrationComponent:, nonatomic) BOOL _waitingForEndOfCurrentVibrationComponent;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TKVibrationRecorderViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) TKVibrationRecorderViewController *parentVibrationRecorderViewController;
+@property (readonly) Class superclass;
 
 - (void)_accessibilityDidEnterRecordingMode;
 - (void)_accessibilityDidEnterReplayMode;

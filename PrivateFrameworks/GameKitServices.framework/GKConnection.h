@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GKConnection : NSObject {
-}
+@interface GKConnection : NSObject
 
 @property id eventDelegate;
-@property struct opaqueRTCReporting { }* reportingAgent;
+@property (nonatomic) struct opaqueRTCReporting { }*reportingAgent;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)externalAddressForCDXSelfConnectionData:(id)arg1;
@@ -22,7 +21,7 @@
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (id)getLocalConnectionDataForLocalGaming;
-- (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (void)getLocalConnectionDataWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithParticipantID:(id)arg1;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (id)networkStatistics;

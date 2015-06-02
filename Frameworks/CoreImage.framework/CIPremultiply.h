@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage;
-
 @interface CIPremultiply : CIFilter {
     CIImage *inputImage;
 }
 
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 

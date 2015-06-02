@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSMutableSet;
-
 @interface HMDBackgroundAppMessageFilter : HMDMessageFilter {
     NSMutableSet *_pidOfAppsRunningInBackground;
 }
 
-@property(retain) NSMutableSet * pidOfAppsRunningInBackground;
+@property (nonatomic, retain) NSMutableSet *pidOfAppsRunningInBackground;
 
 + (BOOL)isWhitelistedMessage:(id)arg1;
 

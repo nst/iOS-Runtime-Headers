@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSNumber, NSString;
+@interface AALoginDelegatesResponse : AAResponse
 
-@interface AALoginDelegatesResponse : AAResponse {
-}
-
-@property(readonly) NSString * dsid;
-@property(readonly) NSDictionary * responseParameters;
-@property(readonly) NSNumber * status;
-@property(readonly) NSString * statusMessage;
+@property (nonatomic, readonly) NSString *dsid;
+@property (nonatomic, readonly) NSDictionary *responseParameters;
+@property (nonatomic, readonly) NSNumber *status;
+@property (nonatomic, readonly) NSString *statusMessage;
 
 - (id)dsid;
 - (id)responseParameters;

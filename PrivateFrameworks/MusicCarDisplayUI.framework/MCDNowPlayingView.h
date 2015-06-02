@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDProgressView, MPUGradientView, UIImageView, UILabel;
-
 @interface MCDNowPlayingView : UIView {
     UILabel *_albumLabel;
     UILabel *_artistLabel;
@@ -15,12 +13,12 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly) UILabel * albumLabel;
-@property(readonly) UILabel * artistLabel;
-@property(readonly) UIImageView * artworkView;
-@property(getter=isExplicitTrack) BOOL explicitTrack;
-@property(readonly) MCDProgressView * progressView;
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, readonly) UILabel *albumLabel;
+@property (nonatomic, readonly) UILabel *artistLabel;
+@property (nonatomic, readonly) UIImageView *artworkView;
+@property (getter=isExplicitTrack, nonatomic) BOOL explicitTrack;
+@property (nonatomic, readonly) MCDProgressView *progressView;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)_addLabelWithFont:(id)arg1;

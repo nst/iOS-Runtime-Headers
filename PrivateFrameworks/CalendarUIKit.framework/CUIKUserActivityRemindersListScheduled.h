@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKUserActivityRemindersListScheduled : CUIKUserActivity {
-}
+@interface CUIKUserActivityRemindersListScheduled : CUIKUserActivity
 
 - (id)init;
 

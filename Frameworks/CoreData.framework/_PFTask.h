@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface _PFTask : NSObject {
     int _cd_rc;
     void *_task;
@@ -30,7 +25,7 @@
 - (BOOL)_tryRetain;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithFunction:(int (*)())arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
+- (id)initWithFunction:(int (*)arg1 withArgument:(void*)arg2 andPriority:(int)arg3;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

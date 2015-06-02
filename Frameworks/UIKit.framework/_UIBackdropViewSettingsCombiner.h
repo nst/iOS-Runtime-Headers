@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBackdropViewSettings;
-
 @interface _UIBackdropViewSettingsCombiner : _UIBackdropViewSettings {
     _UIBackdropViewSettings *_inputSettingsA;
     _UIBackdropViewSettings *_inputSettingsB;
@@ -12,11 +10,11 @@
     float _weighting;
 }
 
-@property(retain) _UIBackdropViewSettings * inputSettingsA;
-@property(retain) _UIBackdropViewSettings * inputSettingsB;
-@property(retain) _UIBackdropViewSettings * outputSettingsA;
-@property(retain) _UIBackdropViewSettings * outputSettingsB;
-@property float weighting;
+@property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsA;
+@property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsB;
+@property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsA;
+@property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsB;
+@property (nonatomic) float weighting;
 
 - (void)computeOutputSettingsUsingModel:(id)arg1;
 - (void)dealloc;

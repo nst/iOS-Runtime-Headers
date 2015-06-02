@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, WDCharacterRun, WMStyle;
-
 @interface WMCharacterRunMapper : CMMapper {
     float mFontSizeBumpFactor;
     BOOL mIsDeleted;

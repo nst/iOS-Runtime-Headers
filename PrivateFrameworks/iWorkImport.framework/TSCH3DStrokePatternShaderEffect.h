@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DStrokePatternShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DStrokePatternShaderEffect : TSCH3DShaderEffect
 
 + (id)variableStrokeTexture;
 

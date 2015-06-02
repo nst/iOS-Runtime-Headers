@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHColumnElementBuilder : TSCHBarColumnElementBuilder {
-}
+@interface TSCHColumnElementBuilder : TSCHBarColumnElementBuilder
 
 - (id)init;
 

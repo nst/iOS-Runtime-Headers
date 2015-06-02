@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUWishlistDataSourceDelegate>, NSArray, RadioGetWishListRequest;
-
 @interface RUWishlistDataSource : NSObject {
     <RUWishlistDataSourceDelegate> *_delegate;
     RadioGetWishListRequest *_wishlistRequest;
     NSArray *_wishlistedTracks;
 }
 
-@property <RUWishlistDataSourceDelegate> * delegate;
-@property(getter=isRefreshing,readonly) BOOL refreshing;
-@property(readonly) NSArray * wishlistedTracks;
+@property (nonatomic) <RUWishlistDataSourceDelegate> *delegate;
+@property (getter=isRefreshing, nonatomic, readonly) BOOL refreshing;
+@property (nonatomic, readonly) NSArray *wishlistedTracks;
 
 - (void).cxx_destruct;
 - (void)_notifyDidInvalidate;

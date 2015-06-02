@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class NSBundle, NSString, NSURL, UIImageView;
-
 @interface SiriUIDownloadableImageView : UIView {
     NSURL *_imageURL;
     UIImageView *_imageView;

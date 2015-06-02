@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABPropertyPlaceholderItem : ABCardGroupItem {
     NSString *_property;
 }
 
-@property(retain) NSString * property;
-@property(readonly) NSString * title;
+@property (nonatomic, retain) NSString *property;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)initWithProperty:(id)arg1;
 - (id)property;

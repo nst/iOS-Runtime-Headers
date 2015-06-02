@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSManagedObjectModel, NSMappingModel, NSSet, NSString;
-
 @interface PFUbiquityTransactionLogMigrator : NSObject {
     NSManagedObjectModel *_dstModel;
     NSString *_localPeerID;
@@ -14,7 +12,7 @@
     BOOL _throttleLogs;
 }
 
-@property(readonly) BOOL throttleLogs;
+@property (readonly) BOOL throttleLogs;
 
 - (id)createDestinationGlobalObjectIDFromSourceGlobalObjectID:(id)arg1;
 - (id)createDestinationObjectContentFromSourceObjectContent:(id)arg1 withEntityMapping:(id)arg2 migrationContext:(id)arg3;

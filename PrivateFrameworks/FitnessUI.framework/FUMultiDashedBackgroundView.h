@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIColor, UIView;
-
 @interface FUMultiDashedBackgroundView : FUChartBackgroundView {
     BOOL _backgroundIsTransparent;
     UIView *_lastLineView;
@@ -15,10 +13,10 @@
     float _subLineHeight;
 }
 
-@property BOOL backgroundIsTransparent;
-@property float lineSpacing;
-@property float lineWidth;
-@property float subLineHeight;
+@property (nonatomic) BOOL backgroundIsTransparent;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) float subLineHeight;
 
 - (void).cxx_destruct;
 - (id)_linesPatternColor;

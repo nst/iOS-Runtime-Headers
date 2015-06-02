@@ -7,8 +7,8 @@
     unsigned int _interfaceID;
 }
 
-@property(readonly) int controlCommand;
-@property(readonly) unsigned int interfaceID;
+@property (nonatomic, readonly) int controlCommand;
+@property (nonatomic, readonly) unsigned int interfaceID;
 
 - (int)controlCommand;
 - (id)initWithInterfaceID:(unsigned int)arg1 controlCommand:(int)arg2;

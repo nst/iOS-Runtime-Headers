@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, _UIAppearanceCustomizableClassInfo;
-
 @interface _UIAppearance : NSObject {
     NSMutableArray *_appearanceInvocations;
     NSArray *_containerList;
@@ -12,8 +10,8 @@
     NSMutableDictionary *_resettableInvocations;
 }
 
-@property(readonly) _UIAppearanceCustomizableClassInfo * _customizableClassInfo;
-@property(setter=_setResettableInvocations:,retain) NSMutableDictionary * _resettableInvocations;
+@property (nonatomic, readonly) _UIAppearanceCustomizableClassInfo *_customizableClassInfo;
+@property (setter=_setResettableInvocations:, nonatomic, retain) NSMutableDictionary *_resettableInvocations;
 
 + (void)_addWindow:(id)arg1 forSource:(id)arg2;
 + (id)_appearanceForClass:(Class)arg1 withContainerList:(id)arg2;

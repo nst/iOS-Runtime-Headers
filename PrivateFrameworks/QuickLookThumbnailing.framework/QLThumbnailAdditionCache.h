@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
  */
 
-@class NSCache;
-
 @interface QLThumbnailAdditionCache : NSObject {
     NSCache *_additionsCache;
 }

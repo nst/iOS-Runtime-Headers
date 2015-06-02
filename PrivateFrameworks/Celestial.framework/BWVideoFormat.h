@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface BWVideoFormat : BWFormat {
     unsigned long _bytesPerRowAlignment;
     unsigned int _cacheMode;
@@ -17,16 +15,16 @@
     unsigned long _width;
 }
 
-@property unsigned long bytesPerRowAlignment;
-@property unsigned int cacheMode;
-@property unsigned long extendedHeight;
-@property unsigned long extendedWidth;
-@property unsigned long height;
-@property(readonly) NSDictionary * pixelBufferAttributes;
-@property unsigned long pixelFormat;
-@property unsigned long planeAlignment;
-@property BOOL prewireBuffers;
-@property unsigned long width;
+@property (nonatomic) unsigned long bytesPerRowAlignment;
+@property (nonatomic) unsigned int cacheMode;
+@property (nonatomic) unsigned long extendedHeight;
+@property (nonatomic) unsigned long extendedWidth;
+@property (nonatomic) unsigned long height;
+@property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
+@property (nonatomic) unsigned long pixelFormat;
+@property (nonatomic) unsigned long planeAlignment;
+@property (nonatomic) BOOL prewireBuffers;
+@property (nonatomic) unsigned long width;
 
 + (id)_formatRequirementsByResolvingFormatRequirements:(id)arg1 withFormatRequirements:(id)arg2;
 + (id)formatByResolvingRequirements:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIColor, UIFont;
-
 @interface UITableViewIndex : UIControl {
     float _bottomPadding;
     struct CGSize { 
@@ -28,15 +26,15 @@
     float _verticalTextHeightEstimate;
 }
 
-@property(retain) UIFont * font;
-@property(retain) UIColor * indexBackgroundColor;
-@property(retain) UIColor * indexColor;
-@property(retain) UIColor * indexTrackingBackgroundColor;
-@property(readonly) BOOL pastBottom;
-@property(readonly) BOOL pastTop;
-@property(readonly) int selectedSection;
-@property(readonly) NSString * selectedSectionTitle;
-@property(retain) NSArray * titles;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIColor *indexBackgroundColor;
+@property (nonatomic, retain) UIColor *indexColor;
+@property (nonatomic, retain) UIColor *indexTrackingBackgroundColor;
+@property (nonatomic, readonly) BOOL pastBottom;
+@property (nonatomic, readonly) BOOL pastTop;
+@property (nonatomic, readonly) int selectedSection;
+@property (nonatomic, readonly) NSString *selectedSectionTitle;
+@property (nonatomic, retain) NSArray *titles;
 
 - (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;

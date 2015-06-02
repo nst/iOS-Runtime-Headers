@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKShareID, NSData, NSString;
-
 @interface CKDSharePCSData : CKDPCSData {
     int _myParticipantPermission;
     int _myParticipantType;
@@ -15,14 +13,14 @@
     CKShareID *_shareID;
 }
 
-@property int myParticipantPermission;
-@property int myParticipantType;
-@property struct _OpaquePCSShareProtection { }* publicPCS;
-@property(copy) NSData * publicPCSData;
-@property(copy) NSString * publicPCSEtag;
-@property int publicPermission;
-@property(retain) NSString * shareEtag;
-@property(retain) CKShareID * shareID;
+@property (nonatomic) int myParticipantPermission;
+@property (nonatomic) int myParticipantType;
+@property (nonatomic) struct _OpaquePCSShareProtection { }*publicPCS;
+@property (nonatomic, copy) NSData *publicPCSData;
+@property (nonatomic, copy) NSString *publicPCSEtag;
+@property (nonatomic) int publicPermission;
+@property (nonatomic, retain) NSString *shareEtag;
+@property (nonatomic, retain) CKShareID *shareID;
 
 + (id)dataWithShareID:(id)arg1 pcsData:(id)arg2;
 + (BOOL)supportsSecureCoding;

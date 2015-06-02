@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUMarkupCellConfiguration : SUItemCellConfiguration {
-}
+@interface SUMarkupCellConfiguration : SUItemCellConfiguration
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary, NSString;
-
 @interface FigCaptureStillImageSettings : NSObject <NSCoding> {
     int _HDRMode;
     float *_ISOs;
@@ -37,38 +35,38 @@
     NSString *_yCbCrMatrix;
 }
 
-@property int HDRMode;
-@property(readonly) float* ISOs;
-@property int SISMode;
-@property(readonly) unsigned int bracketImageCount;
-@property(readonly) int bracketType;
-@property(copy) NSString * colorPrimaries;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; }* exposureDurations;
-@property(readonly) float* exposureTargetBiases;
-@property int flashMode;
-@property BOOL noiseReductionEnabled;
-@property unsigned int outputFormat;
-@property unsigned int outputHeight;
-@property BOOL outputMirroring;
-@property int outputOrientation;
-@property(readonly) NSDictionary * outputPixelBufferAttributes;
-@property unsigned int outputWidth;
-@property int payloadType;
-@property BOOL providesEV0Image;
-@property float scaleFactor;
-@property long long settingsID;
-@property unsigned int shutterSound;
-@property long long stillImageStartTime;
-@property BOOL thumbnailEnabled;
-@property unsigned int thumbnailFormat;
-@property unsigned int thumbnailHeight;
-@property BOOL thumbnailMirroring;
-@property int thumbnailOrientation;
-@property(readonly) NSDictionary * thumbnailPixelBufferAttributes;
-@property unsigned int thumbnailWidth;
-@property(copy) NSString * transferFunction;
-@property(copy) NSDictionary * vtCompressionProperties;
-@property(copy) NSString * yCbCrMatrix;
+@property (nonatomic) int HDRMode;
+@property (nonatomic, readonly) float*ISOs;
+@property (nonatomic) int SISMode;
+@property (nonatomic, readonly) unsigned int bracketImageCount;
+@property (nonatomic, readonly) int bracketType;
+@property (nonatomic, copy) NSString *colorPrimaries;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; }*exposureDurations;
+@property (nonatomic, readonly) float*exposureTargetBiases;
+@property (nonatomic) int flashMode;
+@property (nonatomic) BOOL noiseReductionEnabled;
+@property (nonatomic) unsigned int outputFormat;
+@property (nonatomic) unsigned int outputHeight;
+@property (nonatomic) BOOL outputMirroring;
+@property (nonatomic) int outputOrientation;
+@property (nonatomic, readonly) NSDictionary *outputPixelBufferAttributes;
+@property (nonatomic) unsigned int outputWidth;
+@property (nonatomic) int payloadType;
+@property (nonatomic) BOOL providesEV0Image;
+@property (nonatomic) float scaleFactor;
+@property (nonatomic) long long settingsID;
+@property (nonatomic) unsigned int shutterSound;
+@property (nonatomic) long long stillImageStartTime;
+@property (nonatomic) BOOL thumbnailEnabled;
+@property (nonatomic) unsigned int thumbnailFormat;
+@property (nonatomic) unsigned int thumbnailHeight;
+@property (nonatomic) BOOL thumbnailMirroring;
+@property (nonatomic) int thumbnailOrientation;
+@property (nonatomic, readonly) NSDictionary *thumbnailPixelBufferAttributes;
+@property (nonatomic) unsigned int thumbnailWidth;
+@property (nonatomic, copy) NSString *transferFunction;
+@property (nonatomic, copy) NSDictionary *vtCompressionProperties;
+@property (nonatomic, copy) NSString *yCbCrMatrix;
 
 - (int)HDRMode;
 - (float*)ISOs;

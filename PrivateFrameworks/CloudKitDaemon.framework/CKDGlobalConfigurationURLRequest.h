@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDServerConfiguration;
-
 @interface CKDGlobalConfigurationURLRequest : CKDURLRequest {
     CKDServerConfiguration *_configuration;
 }
 
-@property(retain) CKDServerConfiguration * configuration;
+@property (nonatomic, retain) CKDServerConfiguration *configuration;
 
 - (void).cxx_destruct;
 - (id)additionalHeaderValues;

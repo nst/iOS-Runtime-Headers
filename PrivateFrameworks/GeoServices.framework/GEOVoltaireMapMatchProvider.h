@@ -2,32 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEORequester, NSString;
-
 @interface GEOVoltaireMapMatchProvider : NSObject <PBRequesterDelegate> {
     BOOL _cancelled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _errorHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finishedHandler;
-
+    id /* block */ _errorHandler;
+    id /* block */ _finishedHandler;
     GEORequester *_requester;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GEORequester * requester;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GEORequester *requester;
+@property (readonly) Class superclass;
 
 + (id)providerURL;
 
@@ -38,6 +24,6 @@
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setRequester:(id)arg1;
-- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 
 @end

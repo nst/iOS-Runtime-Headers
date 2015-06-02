@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABFMFActionButtonsStyleProvider : ABStyleProvider {
-}
+@interface ABFMFActionButtonsStyleProvider : ABStyleProvider
 
 - (BOOL)presentModalViewInPopover;
 - (BOOL)refreshTinyActionCell;

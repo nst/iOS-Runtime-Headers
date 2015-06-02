@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSUUID, TSCHStyleOwnerReference, TSCHStyleSemanticTag, TSPObject<TSCHStyleSwapSupporting>, TSSPropertyMap, TSSPropertySet, TSSStyle;
-
 @interface TSCHStyleSwapUndoTuple : NSObject {
     unsigned int mIndex;
     TSSPropertySet *mMutatedProperties;
@@ -19,17 +12,17 @@
     int mSwapType;
 }
 
-@property(readonly) TSSStyle * afterValue;
-@property(readonly) TSSStyle * beforeValue;
-@property(readonly) TSSPropertyMap * forwardDelta;
-@property(readonly) unsigned int index;
-@property(readonly) TSSPropertySet * mutatedProperties;
-@property(readonly) NSUUID * refLineUUID;
-@property(readonly) TSSPropertyMap * reverseDelta;
-@property(readonly) TSCHStyleSemanticTag * semanticTag;
-@property(readonly) TSCHStyleOwnerReference * styleOwnerReference;
-@property(retain,readonly) TSPObject<TSCHStyleSwapSupporting> * styleSwapSupporting;
-@property(readonly) int swapType;
+@property (readonly) TSSStyle *afterValue;
+@property (readonly) TSSStyle *beforeValue;
+@property (readonly) TSSPropertyMap *forwardDelta;
+@property (readonly) unsigned int index;
+@property (readonly) TSSPropertySet *mutatedProperties;
+@property (readonly) NSUUID *refLineUUID;
+@property (readonly) TSSPropertyMap *reverseDelta;
+@property (readonly) TSCHStyleSemanticTag *semanticTag;
+@property (readonly) TSCHStyleOwnerReference *styleOwnerReference;
+@property (nonatomic, readonly, retain) TSPObject<TSCHStyleSwapSupporting> *styleSwapSupporting;
+@property (readonly) int swapType;
 
 - (id)afterValue;
 - (id)beforeValue;

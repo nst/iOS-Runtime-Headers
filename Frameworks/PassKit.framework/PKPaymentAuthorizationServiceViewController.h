@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentAuthorizationHostProtocol>, NSLayoutConstraint, NSMutableArray, NSString, PKAuthenticator, PKPaymentAuthorizationDataModel, PKPaymentAuthorizationFooterView, PKPaymentAuthorizationLayout, PKPaymentAuthorizationNavigationBar, PKPaymentAuthorizationSummaryItemsView, PKPaymentAuthorizationTotalView, PKPaymentOptionsViewController, PKPaymentService, PKPaymentWebService, UITableView, UIView;
-
 @interface PKPaymentAuthorizationServiceViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationPresentationObserver, PKPaymentAuthorizationServiceProtocol, PKPaymentOptionsViewControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     PKAuthenticator *_authenticator;
     BOOL _awaitingClientCallbackReply;
@@ -32,18 +30,18 @@
     BOOL _treatingHostAsBackgrounded;
 }
 
-@property(retain) PKAuthenticator * authenticator;
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPaymentAuthorizationHostProtocol> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PKPaymentAuthorizationDataModel * model;
-@property(retain) PKPaymentService * paymentService;
-@property(retain) PKPaymentWebService * paymentWebService;
-@property unsigned int state;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PKAuthenticator *authenticator;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PKPaymentAuthorizationDataModel *model;
+@property (nonatomic, retain) PKPaymentService *paymentService;
+@property (nonatomic, retain) PKPaymentWebService *paymentWebService;
+@property (nonatomic) unsigned int state;
+@property (readonly) Class superclass;
 
-- (void)_addPassphraseViewControllerToHierarchy:(id)arg1 withCompletion:(id)arg2;
+- (void)_addPassphraseViewControllerToHierarchy:(id)arg1 withCompletion:(id /* block */)arg2;
 - (int)_authenticatorPolicy;
 - (void)_authorizeTransactionWithCredential:(id)arg1;
 - (void)_createSubviews;
@@ -54,7 +52,7 @@
 - (void)_didSelectShippingAddress:(id)arg1;
 - (void)_didSelectShippingMethod:(id)arg1;
 - (void)_didSucceed;
-- (void)_enqueueClientCallbackBlock:(id)arg1;
+- (void)_enqueueClientCallbackBlock:(id /* block */)arg1;
 - (id)_evaluationRequest;
 - (void)_handleModelUpdate;
 - (void)_hostApplicationDidEnterBackground;
@@ -104,8 +102,8 @@
 - (void)paymentOptionsViewControllerDidFinish:(id)arg1;
 - (id)paymentService;
 - (id)paymentWebService;
-- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id)arg2;
-- (void)presentPassphraseViewController:(id)arg1 completionHandler:(id)arg2;
+- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)presentPassphraseViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setAuthenticator:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setModel:(id)arg1;

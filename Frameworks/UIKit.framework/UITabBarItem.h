@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage, UIView;
-
 @interface UITabBarItem : UIBarItem {
     SEL _action;
     id _appearanceStorage;
@@ -37,17 +35,19 @@
     UIView *_view;
 }
 
-@property(setter=_setBarMetrics:) int _barMetrics;
-@property(setter=_setImageStyle:) int _imageStyle;
-@property(setter=_setTintColor:,retain) UIColor * _tintColor;
-@property SEL action;
-@property BOOL animatedBadge;
-@property(copy) NSString * badgeValue;
-@property(retain) UIImage * selectedImage;
-@property id target;
-@property(retain) UIImage * unselectedImage;
-@property(retain) UIView * view;
-@property BOOL viewIsCustom;
+@property (setter=_setBarMetrics:, nonatomic) int _barMetrics;
+@property (setter=_setImageStyle:, nonatomic) int _imageStyle;
+@property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
+@property (nonatomic) SEL action;
+@property (nonatomic) BOOL animatedBadge;
+@property (nonatomic, copy) NSString *badgeValue;
+@property (nonatomic, retain) UIImage *selectedImage;
+@property (nonatomic) id target;
+@property (nonatomic, retain) UIImage *unselectedImage;
+@property (nonatomic, retain) UIView *view;
+@property (nonatomic) BOOL viewIsCustom;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_appearanceBlindViewClasses;
 
@@ -93,7 +93,6 @@
 - (void)setAction:(SEL)arg1;
 - (void)setAnimatedBadge:(BOOL)arg1;
 - (void)setBadgeValue:(id)arg1;
-- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
 - (void)setImage:(id)arg1;
@@ -116,5 +115,9 @@
 - (id)unselectedImage;
 - (id)view;
 - (BOOL)viewIsCustom;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)setBadgeValue:(id)arg1 animated:(BOOL)arg2 blink:(BOOL)arg3;
 
 @end

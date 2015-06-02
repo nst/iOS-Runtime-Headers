@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSArray, NSError, NSMutableDictionary, NSObject<NSCoding><NSCopying>, NSObject<OS_xpc_object>, NSString;
-
 @interface MBMessage : NSObject {
     NSMutableDictionary *_messageInfo;
     NSMutableDictionary *_replyInfo;
     NSObject<OS_xpc_object> *_xpcObject;
 }
 
-@property(readonly) NSArray * arguments;
-@property(copy) NSError * error;
-@property(readonly) NSString * name;
-@property(copy) NSObject<NSCoding><NSCopying> * reply;
-@property(copy) NSError * replyError;
+@property (nonatomic, readonly) NSArray *arguments;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy) NSObject<NSCoding><NSCopying> *reply;
+@property (nonatomic, copy) NSError *replyError;
 
 + (id)messageWithName:(id)arg1 arguments:(id)arg2;
 

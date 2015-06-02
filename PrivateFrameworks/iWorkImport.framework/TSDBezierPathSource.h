@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSUBezierPath;
-
 @interface TSDBezierPathSource : TSDPathSource <TSDMixing> {
     BOOL mIsRectangular;
     struct CGSize { 
@@ -18,7 +11,7 @@
     TSUBezierPath *mPath;
 }
 
-@property struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
 
 + (id)pathSourceWithBezierPath:(id)arg1;
 

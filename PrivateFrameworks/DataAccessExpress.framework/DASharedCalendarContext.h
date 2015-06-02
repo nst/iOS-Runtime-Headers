@@ -2,36 +2,26 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface DASharedCalendarContext : NSObject {
     NSString *_accountID;
     NSString *_calendarID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _shouldSyncCalendar;
 }
 
-@property(readonly) NSString * accountID;
-@property(readonly) NSString * calendarID;
-@property(copy,readonly) id completionBlock;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property BOOL shouldSyncCalendar;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) NSString *calendarID;
+@property (nonatomic, readonly, copy) id /* block */ completionBlock;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BOOL shouldSyncCalendar;
 
 - (void).cxx_destruct;
 - (id)accountID;
 - (id)calendarID;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)finishedWithError:(id)arg1;
-- (id)initWithCalendarID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 completionBlock:(id)arg4;
+- (id)initWithCalendarID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)queue;
 - (void)setShouldSyncCalendar:(BOOL)arg1;
 - (BOOL)shouldSyncCalendar;

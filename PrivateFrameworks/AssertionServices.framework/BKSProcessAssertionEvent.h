@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@class NSString;
-
 @interface BKSProcessAssertionEvent : NSObject <BSXPCCoding> {
     NSString *_identifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)description;

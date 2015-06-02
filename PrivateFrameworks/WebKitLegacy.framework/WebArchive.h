@@ -2,23 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSData, WebArchivePrivate, WebResource;
-
 @interface WebArchive : NSObject <NSCoding, NSCopying> {
     WebArchivePrivate *_private;
 }
 
-@property(copy,readonly) NSData * data;
-@property(readonly) WebResource * mainResource;
-@property(copy,readonly) NSArray * subframeArchives;
-@property(copy,readonly) NSArray * subresources;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (nonatomic, readonly) WebResource *mainResource;
+@property (nonatomic, readonly, copy) NSArray *subframeArchives;
+@property (nonatomic, readonly, copy) NSArray *subresources;
 
-+ (id)bundleForClass;
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (struct LegacyWebArchive { int (**x1)(); unsigned int x2; struct RefPtr<WebCore::ArchiveResource> { struct ArchiveResource {} *x_3_1_1; } x3; struct Vector<WTF::RefPtr<WebCore::ArchiveResource>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::ArchiveResource> {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<WTF::RefPtr<WebCore::Archive>, 0, WTF::CrashOnOverflow> { struct RefPtr<WebCore::Archive> {} *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; }*)_coreLegacyWebArchive;
 - (id)_initWithCoreLegacyWebArchive:(struct PassRefPtr<WebCore::LegacyWebArchive> { struct LegacyWebArchive {} *x1; })arg1;
@@ -33,5 +26,9 @@
 - (id)mainResource;
 - (id)subframeArchives;
 - (id)subresources;
+
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
++ (id)bundleForClass;
 
 @end

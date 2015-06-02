@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIViewElementSlideshowDelegate>, NSMutableArray, NSString, SKUIIPhoneSlideshowViewController, SKUISlideshowViewController, SKUIViewElementLayoutContext;
-
 @interface SKUIViewElementSlideshowController : NSObject <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate> {
     <SKUIViewElementSlideshowDelegate> *_delegate;
     SKUIViewElementLayoutContext *_layoutContext;
@@ -14,13 +12,13 @@
     NSString *_title;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIViewElementSlideshowDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIViewElementLayoutContext * layoutContext;
-@property(readonly) int numberOfSlideshowItems;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIViewElementSlideshowDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIViewElementLayoutContext *layoutContext;
+@property (nonatomic, readonly) int numberOfSlideshowItems;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;

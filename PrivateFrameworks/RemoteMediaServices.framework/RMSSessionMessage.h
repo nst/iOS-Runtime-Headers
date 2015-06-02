@@ -9,8 +9,8 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasSessionIdentifier;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

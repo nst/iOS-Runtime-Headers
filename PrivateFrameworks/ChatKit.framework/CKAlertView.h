@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAlertView : UIAlertView {
-}
+@interface CKAlertView : UIAlertView
 
 @end

@@ -2,36 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIKeyboardTaskExecutionContext, UIKeyboardTaskQueue;
-
 @interface UIKeyboardTaskExecutionContext : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _continuation;
-
+    id /* block */ _continuation;
     UIKeyboardTaskQueue *_executionQueue;
     id _info;
     UIKeyboardTaskExecutionContext *_parentExecutionContext;
 }
 
-@property(readonly) UIKeyboardTaskQueue * executionQueue;
-@property(retain) id info;
+@property (nonatomic, readonly) UIKeyboardTaskQueue *executionQueue;
+@property (nonatomic, retain) id info;
 
-- (id)childWithContinuation:(id)arg1;
+- (id)childWithContinuation:(id /* block */)arg1;
 - (void)dealloc;
 - (id)executionQueue;
 - (id)info;
 - (id)init;
 - (id)initWithExecutionQueue:(id)arg1;
-- (id)initWithParentContext:(id)arg1 continuation:(id)arg2;
+- (id)initWithParentContext:(id)arg1 continuation:(id /* block */)arg2;
 - (void)returnExecutionToParent;
 - (void)returnExecutionToParentWithInfo:(id)arg1;
 - (void)setInfo:(id)arg1;
-- (void)transferExecutionToMainThreadWithTask:(id)arg1;
+- (void)transferExecutionToMainThreadWithTask:(id /* block */)arg1;
 
 @end

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDatabaseNeedsReset : NSException {
-}
+@interface BRCDatabaseNeedsReset : NSException
 
 @end

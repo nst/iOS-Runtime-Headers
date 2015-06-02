@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SYStore;
-
 @interface MSPSyncManager : NSObject <SYStoreDelegate> {
     NSMutableArray *_bookmarks;
     NSMutableDictionary *_bookmarksMap;
@@ -16,10 +14,10 @@
     SYStore *_store;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addBookmark:(id)arg1;
@@ -63,7 +61,7 @@
 - (void)syncStoreEnqueuedAllFullSyncMessages:(id)arg1 context:(id)arg2;
 - (void)syncStoreWillUpdate:(id)arg1;
 - (void)syncStoreWillUpdate:(id)arg1 objectCount:(unsigned int)arg2;
-- (void)transaction:(id)arg1;
+- (void)transaction:(id /* block */)arg1;
 - (void)updateBookmark:(id)arg1 transaction:(id)arg2;
 - (void)updateHistoryItem:(id)arg1 transaction:(id)arg2;
 - (void)updatePin:(id)arg1 transaction:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISDialog, ISDialogButton, NSNumber, NSURL, SSAuthenticationContext;
-
 @interface ISServerAuthenticationOperation : ISOperation {
     NSNumber *_authenticatedAccountDSID;
     SSAuthenticationContext *_authenticationContext;
@@ -14,13 +12,13 @@
     ISDialogButton *_selectedButton;
 }
 
-@property(retain) NSNumber * authenticatedAccountDSID;
-@property(retain) SSAuthenticationContext * authenticationContext;
-@property(retain) ISDialog * dialog;
-@property(retain) ISDialogButton * performedButton;
+@property (retain) NSNumber *authenticatedAccountDSID;
+@property (retain) SSAuthenticationContext *authenticationContext;
+@property (retain) ISDialog *dialog;
+@property (retain) ISDialogButton *performedButton;
 @property BOOL performsButtonAction;
-@property(retain) NSURL * redirectURL;
-@property(retain) ISDialogButton * selectedButton;
+@property (retain) NSURL *redirectURL;
+@property (retain) ISDialogButton *selectedButton;
 
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;

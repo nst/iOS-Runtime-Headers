@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@interface IDSiMessageServerBag : IDSServerBag {
-}
+@interface IDSiMessageServerBag : IDSServerBag
 
 + (id)_bagCreationLock;
 + (id)_sharedInstanceForClass:(Class)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray;
-
 @interface GEOCacheInvalidationData : NSObject {
     double _timestamp;
     double _ttl;
@@ -11,10 +9,10 @@
     NSArray *_versionDomains;
 }
 
-@property(readonly) double timestamp;
-@property(readonly) double ttl;
-@property(readonly) unsigned int version;
-@property(readonly) NSArray * versionDomains;
+@property (nonatomic, readonly) double timestamp;
+@property (nonatomic, readonly) double ttl;
+@property (nonatomic, readonly) unsigned int version;
+@property (nonatomic, readonly) NSArray *versionDomains;
 
 - (void)dealloc;
 - (id)initWithTimestamp:(double)arg1 ttl:(double)arg2 version:(unsigned int)arg3 domains:(id)arg4;

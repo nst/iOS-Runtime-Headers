@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface _WKInterfaceTablePlaceholderRow : NSObject {
-}
+@interface _WKInterfaceTablePlaceholderRow : NSObject
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSWPSpecSetListStyleListLabelGeometryArray : TSWPSpecListStyleListLabelGeometryArray {
     NSArray *_listStyleListLabelGeometryArray;
     BOOL _unset;

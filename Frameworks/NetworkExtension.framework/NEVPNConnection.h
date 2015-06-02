@@ -7,13 +7,13 @@
     int _status;
 }
 
-@property void* session;
-@property(readonly) int status;
+@property void*session;
+@property (readonly) int status;
 
 - (void)dealloc;
 - (void)destroySession;
 - (id)init;
-- (void)newSessionWithConfigID:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)newSessionWithConfigID:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void*)session;
 - (void)setSession:(void*)arg1;
 - (BOOL)startVPNTunnelAndReturnError:(id*)arg1;

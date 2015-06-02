@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACPickAudioRouteMessage : PBCodable <NSCopying> {
     NSString *_category;
     NSString *_identifier;
 }
 
-@property(retain) NSString * category;
-@property(readonly) BOOL hasCategory;
-@property(readonly) BOOL hasIdentifier;
-@property(retain) NSString * identifier;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
 - (id)category;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDSpecStroke : TSSSpec {
-}
+@interface TSDSpecStroke : TSSSpec
 
 - (id)getUnsetSpec;
 

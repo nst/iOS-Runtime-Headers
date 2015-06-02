@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, RadioStation;
-
 @interface RadioStationSkipController : NSObject {
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     NSObject<OS_dispatch_source> *_availableSkipsInvalidationTimer;
@@ -11,13 +9,13 @@
     unsigned int _monitoringCount;
     int _numberOfAvailableSkips;
     NSDate *_skipInvalidationDate;
-    unsigned int _skipsEnabled : 2;
+    unsigned int _skipsEnabled;
     RadioStation *_station;
 }
 
-@property(readonly) int numberOfAvailableSkips;
-@property(getter=hasSkipsEnabled,readonly) BOOL skipsEnabled;
-@property(readonly) RadioStation * station;
+@property (nonatomic, readonly) int numberOfAvailableSkips;
+@property (getter=hasSkipsEnabled, nonatomic, readonly) BOOL skipsEnabled;
+@property (nonatomic, readonly) RadioStation *station;
 
 - (void).cxx_destruct;
 - (void)_cancelAvailableSkipsInvalidationTimer;

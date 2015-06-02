@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class PLPhotoTileViewController;
-
 @interface PLTileContainerView : UIView {
     PLPhotoTileViewController *_photoTileController;
 }

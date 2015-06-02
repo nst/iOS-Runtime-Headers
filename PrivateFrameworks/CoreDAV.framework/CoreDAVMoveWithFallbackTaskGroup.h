@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSData, NSDictionary, NSString, NSURL;
-
 @interface CoreDAVMoveWithFallbackTaskGroup : CoreDAVTaskGroup {
     NSString *_dataContentType;
     NSData *_dataPayload;
@@ -16,15 +14,15 @@
     BOOL _useFallback;
 }
 
-@property(retain) NSString * dataContentType;
-@property(retain) NSData * dataPayload;
-@property(readonly) NSURL * destinationURL;
-@property(readonly) NSString * nextETag;
-@property int overwrite;
-@property(retain) NSString * previousETag;
-@property(readonly) NSDictionary * responseHeaders;
-@property(readonly) NSURL * sourceURL;
-@property BOOL useFallback;
+@property (nonatomic, retain) NSString *dataContentType;
+@property (nonatomic, retain) NSData *dataPayload;
+@property (nonatomic, readonly) NSURL *destinationURL;
+@property (nonatomic, readonly) NSString *nextETag;
+@property (nonatomic) int overwrite;
+@property (nonatomic, retain) NSString *previousETag;
+@property (nonatomic, readonly) NSDictionary *responseHeaders;
+@property (nonatomic, readonly) NSURL *sourceURL;
+@property (nonatomic) BOOL useFallback;
 
 - (void)_completedMoveTask:(id)arg1;
 - (void)_completedPutTask:(id)arg1;

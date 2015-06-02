@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSButtonRowTableViewCell : PTSRowTableViewCell {
-}
+@interface PTSButtonRowTableViewCell : PTSRowTableViewCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 

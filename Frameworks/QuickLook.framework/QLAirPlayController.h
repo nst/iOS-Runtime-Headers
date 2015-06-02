@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSTimer, QLPreviewViewController, UIScreen, UISnapshotView, _UIHostedWindow;
-
 @interface QLAirPlayController : NSObject {
     _UIHostedWindow *_airPlayWindow;
     int _mode;
@@ -14,8 +12,8 @@
 }
 
 @property int mode;
-@property(retain) QLPreviewViewController * previewViewController;
-@property(retain) UIScreen * screen;
+@property (retain) QLPreviewViewController *previewViewController;
+@property (retain) UIScreen *screen;
 
 - (void)_createAirPlayWindowIfNeeded;
 - (void)_removeAirPlayWindow;

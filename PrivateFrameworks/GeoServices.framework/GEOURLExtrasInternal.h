@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOURLExtrasInternal : NSObject {
-}
+@interface GEOURLExtrasInternal : NSObject
 
 @end

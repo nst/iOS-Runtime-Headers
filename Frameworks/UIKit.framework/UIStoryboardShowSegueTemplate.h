@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStoryboardShowSegueTemplate : UIStoryboardSegueTemplate {
     NSString *_action;
 }
 
-@property(copy) NSString * action;
+@property (nonatomic, copy) NSString *action;
 
 - (id)action;
 - (void)dealloc;

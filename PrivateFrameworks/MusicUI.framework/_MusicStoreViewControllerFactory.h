@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface _MusicStoreViewControllerFactory : SUViewControllerFactory {
-}
+@interface _MusicStoreViewControllerFactory : SUViewControllerFactory
 
 - (id)newPlaceholderViewController;
 

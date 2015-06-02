@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class PUIProgressWindow, UIView;
-
 @interface SBUIAppleLogoView : UIView {
     UIView *_layerView;
     PUIProgressWindow *_progressWindow;

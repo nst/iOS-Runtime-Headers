@@ -8,9 +8,9 @@
     int _usesAPSPublicToken;
 }
 
-@property int darkWakeEnabled;
-@property int tokenRegistered;
-@property int usesAPSPublicToken;
+@property (nonatomic) int darkWakeEnabled;
+@property (nonatomic) int tokenRegistered;
+@property (nonatomic) int usesAPSPublicToken;
 
 - (int)darkWakeEnabled;
 - (id)init;

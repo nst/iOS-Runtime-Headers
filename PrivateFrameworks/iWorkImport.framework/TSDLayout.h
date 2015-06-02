@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSObject<TSDInfo>, NSSet, NSString, TSDLayoutGeometry;
-
 @interface TSDLayout : TSDAbstractLayout <TSKSearchTarget> {
     struct CGPoint { 
         float x; 
@@ -52,19 +50,19 @@
     int mLayoutState;
 }
 
-@property(readonly) BOOL canAspectRatioLockBeChangedByUser;
-@property(readonly) NSSet * connectedLayouts;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) TSDLayoutGeometry * dynamicGeometry;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<TSDInfo> * info;
-@property(readonly) BOOL invalidGeometry;
-@property(readonly) BOOL isStrokeBeingManipulated;
-@property(readonly) int layoutState;
-@property(readonly) TSDLayoutGeometry * originalGeometry;
-@property(readonly) BOOL resizeMayChangeAspectRatio;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL canAspectRatioLockBeChangedByUser;
+@property (nonatomic, readonly) NSSet *connectedLayouts;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) TSDLayoutGeometry *dynamicGeometry;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<TSDInfo> *info;
+@property (nonatomic, readonly) BOOL invalidGeometry;
+@property (nonatomic, readonly) BOOL isStrokeBeingManipulated;
+@property (nonatomic, readonly) int layoutState;
+@property (nonatomic, readonly) TSDLayoutGeometry *originalGeometry;
+@property (nonatomic, readonly) BOOL resizeMayChangeAspectRatio;
+@property (readonly) Class superclass;
 
 - (void)addConnectedLayout:(id)arg1;
 - (id)additionalDependenciesForChildLayout:(id)arg1;

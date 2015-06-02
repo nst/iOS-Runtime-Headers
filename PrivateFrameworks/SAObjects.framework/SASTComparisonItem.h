@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASTComparisonEntity, SAUIDecoratedText;
+@interface SASTComparisonItem : AceObject <SASTTemplateItem>
 
-@interface SASTComparisonItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SASTComparisonEntity * firstItem;
-@property(retain) SAUIDecoratedText * footnote;
-@property(readonly) unsigned int hash;
-@property(retain) SASTComparisonEntity * secondItem;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SASTComparisonEntity *firstItem;
+@property (nonatomic, retain) SAUIDecoratedText *footnote;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SASTComparisonEntity *secondItem;
+@property (readonly) Class superclass;
 
 + (id)comparisonItem;
 + (id)comparisonItemWithDictionary:(id)arg1 context:(id)arg2;

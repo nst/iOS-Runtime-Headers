@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIPassbookLoaderDelegate>, NSOperationQueue, NSString, SKUIClientContext;
-
 @interface SKUIPassbookLoader : NSObject <PKAddPassesViewControllerDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIPassbookLoaderDelegate> *_delegate;
@@ -11,12 +9,12 @@
     NSOperationQueue *_operationQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIPassbookLoaderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIPassbookLoaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_didLoadWithPass:(id)arg1 error:(id)arg2;

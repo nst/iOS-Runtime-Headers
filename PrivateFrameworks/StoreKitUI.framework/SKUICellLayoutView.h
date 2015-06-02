@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICellLayout;
-
 @interface SKUICellLayoutView : UIView {
     SKUICellLayout *_layout;
 }
 
-@property(retain) SKUICellLayout * layout;
+@property (nonatomic, retain) SKUICellLayout *layout;
 
 - (void).cxx_destruct;
 - (id)layout;

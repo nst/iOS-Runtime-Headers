@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKCompatibilityDelegate>, NSString;
-
 @interface TSKApplicationDelegate : NSObject <TSKApplicationDelegate> {
     <TSKCompatibilityDelegate> *_compatibilityDelegate;
 }
 
-@property(getter=isActivating,readonly) BOOL activating;
-@property(readonly) NSString * applicationName;
-@property(retain) <TSKCompatibilityDelegate> * compatibilityDelegate;
-@property(readonly) BOOL designModeEnabled;
-@property(readonly) NSString * documentTypeDisplayName;
-@property unsigned int iWorkAuthorColorIndex;
-@property(copy) NSString * iWorkAuthorName;
-@property(getter=isInBackground,readonly) BOOL inBackground;
-@property(readonly) BOOL isCanvasFullScreen;
-@property(readonly) BOOL performanceModeEnabled;
-@property(readonly) BOOL tableCellInspectorShowsNaturalAlignment;
-@property(readonly) BOOL tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
-@property(readonly) BOOL tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
-@property(readonly) BOOL tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
-@property(readonly) NSString * templateTypeDisplayName;
-@property(readonly) BOOL textInspectorShowsMoreSubpane;
+@property (getter=isActivating, readonly) BOOL activating;
+@property (nonatomic, readonly) NSString *applicationName;
+@property (nonatomic, retain) <TSKCompatibilityDelegate> *compatibilityDelegate;
+@property (nonatomic, readonly) BOOL designModeEnabled;
+@property (nonatomic, readonly) NSString *documentTypeDisplayName;
+@property (nonatomic) unsigned int iWorkAuthorColorIndex;
+@property (nonatomic, copy) NSString *iWorkAuthorName;
+@property (getter=isInBackground, readonly) BOOL inBackground;
+@property (nonatomic, readonly) BOOL isCanvasFullScreen;
+@property (nonatomic, readonly) BOOL performanceModeEnabled;
+@property (nonatomic, readonly) BOOL tableCellInspectorShowsNaturalAlignment;
+@property (nonatomic, readonly) BOOL tableHeaderInspectorShowsFreezeHeaderColumnsSwitch;
+@property (nonatomic, readonly) BOOL tableHeaderInspectorShowsFreezeHeaderRowsSwitch;
+@property (nonatomic, readonly) BOOL tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+@property (nonatomic, readonly) NSString *templateTypeDisplayName;
+@property (nonatomic, readonly) BOOL textInspectorShowsMoreSubpane;
 
 + (id)documentDirectoryPath;
 + (id)platform_sharedDelegate;

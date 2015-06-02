@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUPhotoStreamComposeServiceDelegate>, NSArray, NSString;
-
 @interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUCloudSharedCreateAlbumViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUPhotoStreamsAlbumsTableViewControllerDelegate, SLSheetViewHostProtocol> {
     NSArray *_actions;
     BOOL _addToExistingWorkflow;
     struct NSObject { Class x1; } *_albumList;
     NSString *_albumTitle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     <PUPhotoStreamComposeServiceDelegate> *_delegate;
     struct { 
         unsigned int hasDidPost : 1; 
@@ -31,15 +21,15 @@
     BOOL _shouldShowPost;
 }
 
-@property BOOL addToExistingWorkflow;
-@property(retain) NSString * albumTitle;
-@property(copy) id completion;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotoStreamComposeServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL shouldAllowAlbumPicking;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL addToExistingWorkflow;
+@property (nonatomic, retain) NSString *albumTitle;
+@property (nonatomic, copy) id /* block */ completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoStreamComposeServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL shouldAllowAlbumPicking;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_pushTitleController;
@@ -48,7 +38,7 @@
 - (void)albumStreamingCreateViewController:(id)arg1 didSucceed:(BOOL)arg2;
 - (id)albumTitle;
 - (void)cancel;
-- (id)completion;
+- (id /* block */)completion;
 - (void)controller:(id)arg1 didSelectAlbum:(struct NSObject { Class x1; }*)arg2;
 - (void)controllerWillCreateNewAlbum:(id)arg1;
 - (id)delegate;
@@ -59,7 +49,7 @@
 - (void)setAddToExistingWorkflow:(BOOL)arg1;
 - (void)setAlbumTitle:(id)arg1;
 - (void)setAssetsToShare:(id)arg1;
-- (void)setCompletion:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShouldAllowAlbumPicking:(BOOL)arg1;
 - (id)sheetActions;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GQSDocument, SFUCryptoKey, SFUZipArchive, SFUZipInflateInputStream;
-
 @interface GQPProcessor : NSObject {
     struct stack<std::__1::pair<const Action *, int>, std::__1::deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int> > > > { struct deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int> > > { struct __split_buffer<std::__1::pair<const Action *, int> *, std::__1::allocator<std::__1::pair<const Action *, int> *> > { struct pair<const Action *, int> {} **x_1_2_1; struct pair<const Action *, int> {} **x_1_2_2; struct pair<const Action *, int> {} **x_1_2_3; struct __compressed_pair<std::__1::pair<const Action *, int> **, std::__1::allocator<std::__1::pair<const Action *, int> *> > { struct pair<const Action *, int> {} **x_4_3_1; } x_1_2_4; } x_1_1_1; unsigned int x_1_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::pair<const Action *, int> > > { unsigned long x_3_2_1; } x_1_1_3; } x1; } *mActionStack;
     SFUZipArchive *mArchive;

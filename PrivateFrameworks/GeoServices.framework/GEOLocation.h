@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng;
-
 @interface GEOLocation : PBCodable <NSCopying> {
     int _altitude;
     double _course;
@@ -34,37 +32,36 @@
     double _verticalAccuracy;
 }
 
-@property int altitude;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property double course;
-@property double courseAccuracy;
-@property(readonly) BOOL hasAccurateCourse;
-@property BOOL hasAltitude;
-@property BOOL hasCourse;
-@property BOOL hasCourseAccuracy;
-@property BOOL hasHeading;
-@property BOOL hasHorizontalAccuracy;
-@property BOOL hasIsMatchedLocation;
-@property BOOL hasIsShifted;
-@property BOOL hasSpeed;
-@property BOOL hasSpeedAccuracy;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property BOOL hasVerticalAccuracy;
-@property double heading;
-@property double horizontalAccuracy;
-@property BOOL isMatchedLocation;
-@property BOOL isShifted;
-@property(retain) GEOLatLng * latLng;
-@property double speed;
-@property double speedAccuracy;
-@property double timestamp;
-@property int type;
-@property double verticalAccuracy;
+@property (nonatomic) int altitude;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic) double course;
+@property (nonatomic) double courseAccuracy;
+@property (nonatomic, readonly) BOOL hasAccurateCourse;
+@property (nonatomic) BOOL hasAltitude;
+@property (nonatomic) BOOL hasCourse;
+@property (nonatomic) BOOL hasCourseAccuracy;
+@property (nonatomic) BOOL hasHeading;
+@property (nonatomic) BOOL hasHorizontalAccuracy;
+@property (nonatomic) BOOL hasIsMatchedLocation;
+@property (nonatomic) BOOL hasIsShifted;
+@property (nonatomic) BOOL hasSpeed;
+@property (nonatomic) BOOL hasSpeedAccuracy;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasVerticalAccuracy;
+@property (nonatomic) double heading;
+@property (nonatomic) double horizontalAccuracy;
+@property (nonatomic) BOOL isMatchedLocation;
+@property (nonatomic) BOOL isShifted;
+@property (nonatomic, retain) GEOLatLng *latLng;
+@property (nonatomic) double speed;
+@property (nonatomic) double speedAccuracy;
+@property (nonatomic) double timestamp;
+@property (nonatomic) int type;
+@property (nonatomic) double verticalAccuracy;
 
-+ (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
-- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; }*)arg1;
 - (int)altitude;
 - (struct { double x1; double x2; })coordinate;
 - (void)copyTo:(id)arg1;
@@ -90,10 +87,6 @@
 - (unsigned int)hash;
 - (double)heading;
 - (double)horizontalAccuracy;
-- (id)initWithCLLocation:(id)arg1;
-- (id)initWithCLLocation:(id)arg1 course:(double)arg2;
-- (id)initWithCLLocation:(id)arg1 useMatchInfo:(BOOL)arg2;
-- (id)initWithCoreLocation:(id)arg1;
 - (id)initWithGEOCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithLocation:(id)arg1;
@@ -134,5 +127,21 @@
 - (int)type;
 - (double)verticalAccuracy;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; }*)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
+
+- (id)initWithCLLocation:(id)arg1;
+- (id)initWithCLLocation:(id)arg1 course:(double)arg2;
+- (id)initWithCLLocation:(id)arg1 useMatchInfo:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
+
+- (id)initWithCoreLocation:(id)arg1;
 
 @end

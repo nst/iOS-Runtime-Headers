@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@interface TPNumberPadDarkStyleButton : TPNumberPadButton {
-}
+@interface TPNumberPadDarkStyleButton : TPNumberPadButton
 
 + (float)highlightCrossfadeHighlightBeginTime;
 + (float)highlightCrossfadeHighlightFadeDuration;

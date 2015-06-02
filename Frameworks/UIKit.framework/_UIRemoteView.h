@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIColor, _UIHostedWindowHostingHandle;
-
 @interface _UIRemoteView : UIView <UIStatusBarTinting> {
     BOOL _actsAsTintView;
     _UIHostedWindowHostingHandle *_hostedWindowHostingHandle;
     UIColor *_statusBarTintColor;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tintColorDidChangeHandler;
-
+    id /* block */ _tintColorDidChangeHandler;
 }
 
-@property(setter=_setActsAsTintView:) BOOL _actsAsTintView;
-@property(setter=_setInheritsSecurity:) BOOL _inheritsSecurity;
-@property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) _UIHostedWindowHostingHandle * hostedWindowHostingHandle;
-@property(readonly) Class superclass;
-@property(copy) id tintColorDidChangeHandler;
+@property (setter=_setActsAsTintView:, nonatomic) BOOL _actsAsTintView;
+@property (setter=_setInheritsSecurity:, nonatomic) BOOL _inheritsSecurity;
+@property (setter=_setStatusBarTintColor:, nonatomic, retain) UIColor *_statusBarTintColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UIHostedWindowHostingHandle *hostedWindowHostingHandle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ tintColorDidChangeHandler;
 
 + (BOOL)_requiresWindowTouches;
 + (Class)layerClass;
@@ -49,8 +39,8 @@
 - (id)hostedWindowHostingHandle;
 - (void)setContextID:(unsigned int)arg1;
 - (void)setHostedWindowHostingHandle:(id)arg1;
-- (void)setTintColorDidChangeHandler:(id)arg1;
+- (void)setTintColorDidChangeHandler:(id /* block */)arg1;
 - (void)tintColorDidChange;
-- (id)tintColorDidChangeHandler;
+- (id /* block */)tintColorDidChangeHandler;
 
 @end

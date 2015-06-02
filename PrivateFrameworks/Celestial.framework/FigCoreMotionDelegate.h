@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class CMMotionManager;
-
 @interface FigCoreMotionDelegate : NSObject {
     int accelRingIndex;
-    double accelRingTime[256];
-    float accelRingX[256];
-    float accelRingY[256];
-    float accelRingZ[256];
+    double accelRingTime;
+    float accelRingX;
+    float accelRingY;
+    float accelRingZ;
     BOOL computingPosition;
     BOOL copyingAllData;
     struct { 
@@ -26,21 +24,21 @@
         float x; 
         float y; 
         float z; 
-    } fusedRingAccel[256];
-    BOOL fusedRingDoingBiasEstimation[256];
+    } fusedRingAccel;
+    BOOL fusedRingDoingBiasEstimation;
     int fusedRingIndex;
     struct { 
         float x; 
         float y; 
         float z; 
-    } fusedRingPosition[256];
+    } fusedRingPosition;
     struct { 
         double w; 
         double x; 
         double y; 
         double z; 
-    } fusedRingQuaternion[256];
-    double fusedRingTime[256];
+    } fusedRingQuaternion;
+    double fusedRingTime;
     BOOL gettingAttitudeChange;
     double latestGravityDataTime;
     double latestMotionDataTime;

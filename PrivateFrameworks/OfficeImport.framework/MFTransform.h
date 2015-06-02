@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject<MFDeviceDriver>;
-
 @interface MFTransform : NSObject <NSCopying> {
     struct CGAffineTransform { 
         float a; 

@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSSet, NSString;
+@interface ACDManagedDataclass : NSManagedObject
 
-@interface ACDManagedDataclass : NSManagedObject {
-}
-
-@property(retain) NSSet * enabledAccounts;
-@property(retain) NSString * name;
-@property(retain) NSSet * provisionedAccounts;
-@property(retain) NSSet * supportedTypes;
-@property(retain) NSSet * syncableTypes;
+@property (nonatomic, retain) NSSet *enabledAccounts;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSSet *provisionedAccounts;
+@property (nonatomic, retain) NSSet *supportedTypes;
+@property (nonatomic, retain) NSSet *syncableTypes;
 
 @end

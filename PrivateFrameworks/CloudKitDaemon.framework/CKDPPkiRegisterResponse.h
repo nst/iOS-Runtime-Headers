@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPPublicKey;
-
 @interface CKDPPkiRegisterResponse : PBCodable <NSCopying> {
     CKDPPublicKey *_publicKey;
 }
 
-@property(readonly) BOOL hasPublicKey;
-@property(retain) CKDPPublicKey * publicKey;
+@property (nonatomic, readonly) BOOL hasPublicKey;
+@property (nonatomic, retain) CKDPPublicKey *publicKey;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

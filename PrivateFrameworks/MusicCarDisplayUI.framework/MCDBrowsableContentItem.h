@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSData, NSIndexPath, NSString;
-
 @interface MCDBrowsableContentItem : NSObject {
     struct _MRContentItem { } *_contentItem;
     NSIndexPath *_indexPath;
 }
 
-@property(readonly) NSData * artworkData;
-@property struct _MRContentItem { }* contentItem;
-@property(readonly) NSString * identifier;
-@property(retain) NSIndexPath * indexPath;
-@property(readonly) BOOL isContainer;
-@property(readonly) BOOL isPlayable;
-@property(readonly) float playbackProgress;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSData *artworkData;
+@property (nonatomic) struct _MRContentItem { }*contentItem;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, readonly) BOOL isContainer;
+@property (nonatomic, readonly) BOOL isPlayable;
+@property (nonatomic, readonly) float playbackProgress;
+@property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (id)artworkData;

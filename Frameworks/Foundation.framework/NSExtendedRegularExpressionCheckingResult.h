@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSRegularExpression;
-
 @interface NSExtendedRegularExpressionCheckingResult : NSRegularExpressionCheckingResult {
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _ranges[7];
+    } _ranges;
     NSRegularExpression *_regularExpression;
 }
 

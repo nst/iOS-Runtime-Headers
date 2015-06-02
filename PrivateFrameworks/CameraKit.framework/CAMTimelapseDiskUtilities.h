@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMTimelapseDiskUtilities : NSObject {
-}
+@interface CAMTimelapseDiskUtilities : NSObject
 
 + (id)directoryPathForTimelapseUUID:(id)arg1;
 + (id)dummyFileName;

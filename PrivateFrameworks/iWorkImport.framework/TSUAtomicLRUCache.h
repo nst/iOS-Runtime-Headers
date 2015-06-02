@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUAtomicLRUCache : TSULRUCache {
-}
+@interface TSUAtomicLRUCache : TSULRUCache
 
 - (id)allKeys;
 - (id)allValues;

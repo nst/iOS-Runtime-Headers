@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIInputViewAnimationHost>, <UIViewControllerContextTransitioning>, NSString, UIView, _UIViewControllerTransitionContext;
-
 @interface UIInputViewAnimationControllerViewControllerContext : NSObject <UIViewControllerKeyboardContextTransitioning> {
     _UIViewControllerTransitionContext *_context;
     UIView *_from;
@@ -31,15 +29,15 @@
     } _toRect;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) UIView * fromKeyboard;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } fromKeyboardFrame;
-@property(readonly) unsigned int hash;
-@property(readonly) <UIViewControllerContextTransitioning> * mainContext;
-@property(readonly) Class superclass;
-@property(readonly) UIView * toKeyboard;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toKeyboardFrame;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIView *fromKeyboard;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } fromKeyboardFrame;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) <UIViewControllerContextTransitioning> *mainContext;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *toKeyboard;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toKeyboardFrame;
 
 + (id)contextWithHost:(id)arg1 startPlacement:(id)arg2 endPlacement:(id)arg3 transitionContext:(id)arg4;
 

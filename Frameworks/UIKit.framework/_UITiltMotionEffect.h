@@ -8,9 +8,9 @@
     float _rotatingSphereRadius;
 }
 
-@property float maximumHorizontalTiltAngle;
-@property float maximumVerticalTiltAngle;
-@property float rotatingSphereRadius;
+@property (nonatomic) float maximumHorizontalTiltAngle;
+@property (nonatomic) float maximumVerticalTiltAngle;
+@property (nonatomic) float rotatingSphereRadius;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

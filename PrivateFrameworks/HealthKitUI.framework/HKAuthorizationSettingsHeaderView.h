@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSString, UIImageView, UILabel;
-
 @interface HKAuthorizationSettingsHeaderView : UIView {
     UIImageView *_iconImageView;
     NSString *_sourceName;
@@ -11,10 +9,10 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImageView * iconImageView;
-@property(copy) NSString * sourceName;
-@property(retain) UILabel * subtitleLabel;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIImageView *iconImageView;
+@property (nonatomic, copy) NSString *sourceName;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)_healthIconImage;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray;
+@interface PLEventForwardPowerStateEntry : PLEntry
 
-@interface PLEventForwardPowerStateEntry : PLEntry {
-}
-
-@property(readonly) short event;
-@property(readonly) BOOL isBasebandWake;
-@property(readonly) NSArray * reason;
-@property(readonly) short state;
+@property (readonly) short event;
+@property (readonly) BOOL isBasebandWake;
+@property (readonly) NSArray *reason;
+@property (readonly) short state;
 
 + (id)entryKey;
 + (void)load;

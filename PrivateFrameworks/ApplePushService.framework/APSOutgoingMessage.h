@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@interface APSOutgoingMessage : APSMessage {
-}
+@interface APSOutgoingMessage : APSMessage
 
-@property(getter=isCritical) BOOL critical;
-@property unsigned int payloadFormat;
-@property unsigned int payloadLength;
-@property unsigned int timeout;
+@property (getter=isCritical, nonatomic) BOOL critical;
+@property (nonatomic) unsigned int payloadFormat;
+@property (nonatomic) unsigned int payloadLength;
+@property (nonatomic) unsigned int timeout;
 
 - (unsigned int)_effectiveSendTimeout;
 - (id)eagernessTimeoutTime;

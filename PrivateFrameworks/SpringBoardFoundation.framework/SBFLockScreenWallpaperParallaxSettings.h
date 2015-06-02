@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFLockScreenWallpaperParallaxSettings : SBFWallpaperParallaxSettings {
-}
+@interface SBFLockScreenWallpaperParallaxSettings : SBFWallpaperParallaxSettings
 
 - (void)setDefaultValues;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WebUIBrowserLoadingControllerDelegate>, NSArray, NSError, NSString, NSURL, UIWebBrowserView, WebDataSource;
-
 @interface WebUIBrowserLoadingController : NSObject {
     NSURL *_URL;
     NSString *_URLString;
@@ -30,18 +28,18 @@
     NSString *_userTypedAddress;
 }
 
-@property(retain) NSURL * URL;
-@property(readonly) NSString * URLString;
-@property(retain) UIWebBrowserView * browserView;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
-@property <WebUIBrowserLoadingControllerDelegate> * delegate;
-@property float estimatedProgress;
-@property(getter=isLoading,readonly) BOOL loading;
-@property int loadingState;
-@property(getter=isSecure,readonly) BOOL secure;
-@property(getter=isSimulatingClick,readonly) BOOL simulatingClick;
-@property(copy) NSString * title;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, readonly) NSString *URLString;
+@property (nonatomic, retain) UIWebBrowserView *browserView;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic) <WebUIBrowserLoadingControllerDelegate> *delegate;
+@property (nonatomic) float estimatedProgress;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic) int loadingState;
+@property (getter=isSecure, nonatomic, readonly) BOOL secure;
+@property (getter=isSimulatingClick, nonatomic, readonly) BOOL simulatingClick;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)URL;

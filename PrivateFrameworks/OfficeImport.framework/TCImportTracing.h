@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCImportTracing : TCTracing {
-}
+@interface TCImportTracing : TCTracing
 
 - (void)dealloc;
 - (id)initWithFilename:(id)arg1;

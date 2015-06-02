@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString;
-
 @interface IMAttachmentMessagePartChatItem : IMMessagePartChatItem {
     NSString *_transferGUID;
-    unsigned int _wantsAttachmentContiguous : 1;
+    unsigned int _wantsAttachmentContiguous;
 }
 
-@property(copy,readonly) NSString * transferGUID;
+@property (nonatomic, readonly, copy) NSString *transferGUID;
 
-- (Class)__ck_chatItemClass;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 transferGUID:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
 - (id)transferGUID;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

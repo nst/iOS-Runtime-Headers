@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController;
-
 @interface UIStoryboardScene : NSObject {
     UIViewController *sceneViewController;
 }
 
-@property(retain) UIViewController * sceneViewController;
+@property (nonatomic, retain) UIViewController *sceneViewController;
 
 - (void)dealloc;
 - (id)sceneViewController;

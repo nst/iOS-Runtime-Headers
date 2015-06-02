@@ -4,8 +4,8 @@
 
 @interface SCRCStackQueue : NSObject {
     unsigned int _count;
-    struct _SCRCStackNode { id x1; void *x2; void *x3; } *_firstNode;
-    struct _SCRCStackNode { id x1; void *x2; void *x3; } *_lastNode;
+    struct _SCRCStackNode { id x1; void x2; void *x3; } *_firstNode;
+    struct _SCRCStackNode { id x1; void x2; void *x3; } *_lastNode;
 }
 
 - (unsigned int)count;

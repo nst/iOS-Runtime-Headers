@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSBrowseRequest : HSRequest {
-}
+@interface HSBrowseRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 browseGroupType:(int)arg2;
 

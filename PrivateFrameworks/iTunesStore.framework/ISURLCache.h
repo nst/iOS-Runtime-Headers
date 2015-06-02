@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISURLCacheConfiguration, NSString, NSURLCache;
-
 @interface ISURLCache : NSObject {
     NSURLCache *_cache;
     ISURLCacheConfiguration *_configuration;
 }
 
-@property(readonly) unsigned int currentDiskUsage;
-@property(readonly) unsigned int currentMemoryUsage;
-@property(readonly) unsigned int diskCapacity;
-@property(readonly) unsigned int memoryCapacity;
-@property(readonly) NSString * persistentIdentifier;
+@property (nonatomic, readonly) unsigned int currentDiskUsage;
+@property (nonatomic, readonly) unsigned int currentMemoryUsage;
+@property (nonatomic, readonly) unsigned int diskCapacity;
+@property (nonatomic, readonly) unsigned int memoryCapacity;
+@property (readonly) NSString *persistentIdentifier;
 
 + (id)cacheDirectoryPath;
 

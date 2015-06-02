@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetFlashlight : SASettingGetBool {
-}
+@interface SASettingGetFlashlight : SASettingGetBool
 
 + (id)getFlashlight;
 + (id)getFlashlightWithDictionary:(id)arg1 context:(id)arg2;

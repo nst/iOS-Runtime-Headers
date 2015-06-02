@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMMessageContext, IMRemoteObjectBroadcaster, NSArray, Protocol;
-
 @interface Broadcaster : NSProxy {
     int _curXPCMessagePriority;
     IMMessageContext *_messageContext;
@@ -12,7 +10,7 @@
     NSArray *_targets;
 }
 
-@property int curXPCMessagePriority;
+@property (nonatomic) int curXPCMessagePriority;
 
 - (int)curXPCMessagePriority;
 - (void)dealloc;

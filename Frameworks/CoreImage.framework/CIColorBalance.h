@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage, NSNumber;
-
 @interface CIColorBalance : CIFilter {
     CIColor *inputColor;
     NSNumber *inputDamping;
@@ -12,11 +10,11 @@
     NSNumber *inputWarmth;
 }
 
-@property(retain) CIColor * inputColor;
-@property(retain) NSNumber * inputDamping;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputStrength;
-@property(retain) NSNumber * inputWarmth;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) NSNumber *inputDamping;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputStrength;
+@property (nonatomic, retain) NSNumber *inputWarmth;
 
 + (id)customAttributes;
 

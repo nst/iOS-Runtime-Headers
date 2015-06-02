@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents
  */
 
-@class NSConditionLock, NSMutableDictionary;
-
 @interface CRReplyCollector : NSMutableDictionary {
     NSMutableDictionary *_dictionary;
     NSConditionLock *_lock;
@@ -12,7 +10,7 @@
 - (void)addEntriesFromDictionary:(id)arg1;
 - (unsigned int)condition;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)init;

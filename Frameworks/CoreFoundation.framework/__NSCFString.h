@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFString : NSMutableString {
-}
+@interface __NSCFString : NSMutableString
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

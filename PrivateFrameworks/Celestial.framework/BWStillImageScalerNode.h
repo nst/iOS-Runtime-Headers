@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWPixelBufferPool, BWVideoFormat;
-
 @interface BWStillImageScalerNode : BWNode {
     BOOL _defersCropToJPEGEncoderWhenPossible;
     BWVideoFormat *_outputFormat;

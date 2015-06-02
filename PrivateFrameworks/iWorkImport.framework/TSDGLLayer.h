@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDGLLayerContext>, CADisplayLink, NSObject<TSDGLLayerDelegate>;
-
 @interface TSDGLLayer : CAEAGLLayer {
     <TSDGLLayerContext> *mContext;
     NSObject<TSDGLLayerDelegate> *mDelegate;
     CADisplayLink *mDisplayLink;
 }
 
-@property NSObject<TSDGLLayerDelegate> * delegate;
+@property NSObject<TSDGLLayerDelegate> *delegate;
 
 - (void)dealloc;
 - (id)delegate;

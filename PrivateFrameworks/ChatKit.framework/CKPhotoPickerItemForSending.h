@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKPhotoPickerItemForSendingDelegate>, NSObject<OS_dispatch_semaphore>, NSURL, UIImage;
-
 @interface CKPhotoPickerItemForSending : NSObject {
     NSURL *_assetURL;
     <CKPhotoPickerItemForSendingDelegate> *_delegate;
@@ -12,9 +10,9 @@
     UIImage *_thumbnail;
 }
 
-@property(retain,readonly) NSURL * assetURL;
-@property(retain,readonly) NSURL * localURL;
-@property(retain) UIImage * thumbnail;
+@property (nonatomic, readonly, retain) NSURL *assetURL;
+@property (nonatomic, readonly, retain) NSURL *localURL;
+@property (retain) UIImage *thumbnail;
 
 - (void)_fetchAndPersistImageDataForAsset:(id)arg1 withImageManager:(id)arg2;
 - (id)assetURL;

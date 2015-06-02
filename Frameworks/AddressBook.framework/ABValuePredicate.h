@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class <NSObject>, NSArray, NSObject;
-
 @interface ABValuePredicate : ABPredicate {
     long _comparison;
     BOOL _dictionaryValue;
@@ -12,9 +10,9 @@
     <NSObject> *_value;
 }
 
-@property long comparison;
-@property int property;
-@property(copy) NSObject * value;
+@property (nonatomic) long comparison;
+@property (nonatomic) int property;
+@property (nonatomic, copy) NSObject *value;
 
 + (id)stringForComparison:(id)arg1 withComparision:(long)arg2;
 

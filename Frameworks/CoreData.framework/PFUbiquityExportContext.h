@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSString, PFUbiquityLocation;
-
 @interface PFUbiquityExportContext : NSObject {
     NSString *_localPeerID;
     NSMutableDictionary *_storeNameToStoreExportContext;
@@ -12,8 +10,8 @@
     BOOL _useLocalStorage;
 }
 
-@property(readonly) NSString * localPeerID;
-@property BOOL useLocalStorage;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic) BOOL useLocalStorage;
 
 - (void)dealloc;
 - (id)description;

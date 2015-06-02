@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString, SGMicrodataItem;
-
 @interface SGMicrodataItemProp : NSObject {
     SGMicrodataItem *_itemValue;
     NSString *_propertyName;
     NSString *_stringValue;
 }
 
-@property(readonly) SGMicrodataItem * itemValue;
-@property(readonly) NSString * propertyName;
-@property(readonly) NSString * stringValue;
+@property (nonatomic, readonly) SGMicrodataItem *itemValue;
+@property (nonatomic, readonly) NSString *propertyName;
+@property (nonatomic, readonly) NSString *stringValue;
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 value:(id)arg2;

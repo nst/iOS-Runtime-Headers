@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, SSUpdatesDatabase, SSXPCConnection;
-
 @interface SSSoftwareUpdatesStore : NSObject {
     NSObject<OS_dispatch_queue> *_calloutQueue;
     SSXPCConnection *_connection;
@@ -20,13 +18,13 @@
 - (id)_copyUpdates;
 - (id)_copyUpdatesWithSession:(id)arg1 predicate:(id)arg2;
 - (BOOL)_migrateReadOnlyDatabase;
-- (void)_readUsingSessionBlock:(id)arg1;
-- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id)arg1;
+- (void)_readUsingSessionBlock:(id /* block */)arg1;
+- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id /* block */)arg1;
 - (void)dealloc;
-- (void)getUpdatesWithCompletionBlock:(id)arg1;
+- (void)getUpdatesWithCompletionBlock:(id /* block */)arg1;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
-- (void)reloadFromServerWithCompletionBlock:(id)arg1;
+- (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)removeUpdateBulletins;
 - (void)showApplicationBadgeForPendingUpdates;
 - (id)updateWithItemIdentifier:(long long)arg1;

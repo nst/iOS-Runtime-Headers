@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADAdRecipient>, <ADSAdSpace_RPC><NSObject>, ADAdImpressionPublicAttributes, ADAdSpaceConfiguration, ADAdSpaceRemoteViewController, NSDictionary, NSSet, NSString, NSURL, _ADRemoteViewController, _UIAsyncInvocation;
-
 @interface ADAdSpace : NSObject <ADAdSpaceRemoteViewControllerDelegate, ADAdSpace_RPC, UIViewControllerTransitioningDelegate> {
     BOOL _actionViewControllerReadyForPresentation;
     BOOL _actionViewControllerWantsDismissal;
@@ -26,32 +24,32 @@
     BOOL _visibilityCheckScheduled;
 }
 
-@property BOOL actionViewControllerReadyForPresentation;
-@property BOOL actionViewControllerWantsDismissal;
-@property(retain) NSDictionary * adToLoad;
-@property(copy) NSString * advertisingSection;
-@property(copy) NSString * authenticationUserName;
-@property(readonly) ADAdSpaceConfiguration * configuration;
-@property(readonly) NSString * connectionAssertionIdentifier;
-@property(copy) NSSet * context;
-@property(retain) ADAdSpaceRemoteViewController * creativeViewController;
-@property(retain) ADAdImpressionPublicAttributes * currentAdImpressionPublicAttributes;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property double lastSlowCheck;
-@property(retain) _ADRemoteViewController * portraitOnlyViewController;
-@property(readonly) <ADAdRecipient> * recipient;
-@property(retain) _ADRemoteViewController * remoteViewController;
-@property(retain) _UIAsyncInvocation * remoteViewControllerRequestCancelationInvocation;
-@property(copy) NSURL * serverURL;
-@property(readonly) <ADSAdSpace_RPC><NSObject> * serviceAdSpace;
-@property BOOL serviceAdSpaceRequestInProgress;
-@property BOOL shouldPresentActionViewControllerWhenReady;
-@property(readonly) Class superclass;
-@property int visibility;
-@property BOOL visibilityCheckScheduled;
+@property (nonatomic) BOOL actionViewControllerReadyForPresentation;
+@property (nonatomic) BOOL actionViewControllerWantsDismissal;
+@property (nonatomic, retain) NSDictionary *adToLoad;
+@property (nonatomic, copy) NSString *advertisingSection;
+@property (nonatomic, copy) NSString *authenticationUserName;
+@property (nonatomic, readonly) ADAdSpaceConfiguration *configuration;
+@property (nonatomic, readonly) NSString *connectionAssertionIdentifier;
+@property (nonatomic, copy) NSSet *context;
+@property (nonatomic, retain) ADAdSpaceRemoteViewController *creativeViewController;
+@property (nonatomic, retain) ADAdImpressionPublicAttributes *currentAdImpressionPublicAttributes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) double lastSlowCheck;
+@property (nonatomic, retain) _ADRemoteViewController *portraitOnlyViewController;
+@property (nonatomic, readonly) <ADAdRecipient> *recipient;
+@property (nonatomic, retain) _ADRemoteViewController *remoteViewController;
+@property (nonatomic, retain) _UIAsyncInvocation *remoteViewControllerRequestCancelationInvocation;
+@property (nonatomic, copy) NSURL *serverURL;
+@property (nonatomic, readonly) <ADSAdSpace_RPC><NSObject> *serviceAdSpace;
+@property (nonatomic) BOOL serviceAdSpaceRequestInProgress;
+@property (nonatomic) BOOL shouldPresentActionViewControllerWhenReady;
+@property (readonly) Class superclass;
+@property (nonatomic) int visibility;
+@property (nonatomic) BOOL visibilityCheckScheduled;
 
 - (void)_clientApplicationDidBecomeActive;
 - (void)_clientApplicationDidEnterBackground;

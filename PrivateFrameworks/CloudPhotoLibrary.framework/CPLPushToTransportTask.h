@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineTransportUploadBatchTask>, <CPLPushToTransportTaskDelegate>, CPLChangeBatch, CPLEngineChangePipe, NSArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CPLPushToTransportTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
     unsigned int _countOfPushedBatches;
@@ -18,7 +16,7 @@
     <CPLEngineTransportUploadBatchTask> *_uploadTask;
 }
 
-@property(retain) <CPLPushToTransportTaskDelegate> * delegate;
+@property (retain) <CPLPushToTransportTaskDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_detectUpdatesForFullRecordsWithNoChangeDataInBatch:(id)arg1;

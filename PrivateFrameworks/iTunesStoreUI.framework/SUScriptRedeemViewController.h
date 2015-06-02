@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUScriptRedeemViewController : SUScriptViewController {
     int _category;
     NSString *_initialCode;
 }
 
-@property(copy) NSString * initialCode;
-@property(readonly) int redeemCategoryApps;
-@property(readonly) int redeemCategoryBooks;
-@property(readonly) int redeemCategoryMedia;
+@property (nonatomic, copy) NSString *initialCode;
+@property (nonatomic, readonly) int redeemCategoryApps;
+@property (nonatomic, readonly) int redeemCategoryBooks;
+@property (nonatomic, readonly) int redeemCategoryMedia;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

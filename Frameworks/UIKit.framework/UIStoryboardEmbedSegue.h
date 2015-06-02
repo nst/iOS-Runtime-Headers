@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIStoryboardEmbedSegue : UIStoryboardSegue {
     UIView *_containerView;
 }
 
-@property(retain) UIView * containerView;
+@property (nonatomic, retain) UIView *containerView;
 
 - (id)containerView;
 - (void)dealloc;

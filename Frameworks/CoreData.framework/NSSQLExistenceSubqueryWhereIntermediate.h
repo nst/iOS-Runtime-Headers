@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSSQLEntity, NSSQLProperty, NSString;
-
 @interface NSSQLExistenceSubqueryWhereIntermediate : NSSQLWhereIntermediate {
     NSSQLProperty *_collectionProperty;
     NSSQLEntity *_governingEntityForVariable;

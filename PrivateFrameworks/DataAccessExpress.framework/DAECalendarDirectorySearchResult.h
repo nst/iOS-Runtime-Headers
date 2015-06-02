@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSString;
-
 @interface DAECalendarDirectorySearchResult : NSObject <NSSecureCoding> {
     NSString *_displayName;
     NSString *_preferredAddress;
 }
 
-@property(retain) NSString * displayName;
-@property(retain) NSString * preferredAddress;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *preferredAddress;
 
 + (BOOL)supportsSecureCoding;
 

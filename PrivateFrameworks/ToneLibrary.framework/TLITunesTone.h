@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSDictionary, NSNumber, NSString;
-
 @interface TLITunesTone : NSObject {
     NSString *_artworkFile;
     unsigned int _duration;
@@ -18,17 +16,17 @@
     BOOL _ringtone;
 }
 
-@property(copy) NSString * artworkFile;
-@property unsigned int duration;
-@property(copy) NSString * filePath;
-@property(copy) NSString * identifier;
-@property(copy) NSString * name;
-@property(copy) NSNumber * pid;
-@property(copy) NSDictionary * playbackProperties;
-@property(getter=isPrivate) BOOL private;
-@property(getter=isProtected) BOOL protected;
-@property(getter=isPurchased) BOOL purchased;
-@property(getter=isRingtone) BOOL ringtone;
+@property (nonatomic, copy) NSString *artworkFile;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSNumber *pid;
+@property (nonatomic, copy) NSDictionary *playbackProperties;
+@property (getter=isPrivate, nonatomic) BOOL private;
+@property (getter=isProtected, nonatomic) BOOL protected;
+@property (getter=isPurchased, nonatomic) BOOL purchased;
+@property (getter=isRingtone, nonatomic) BOOL ringtone;
 
 - (void)_setArtworkFile:(id)arg1;
 - (void)_setDuration:(unsigned int)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSError, NSString;
-
 @interface SUScriptError : SUScriptObject {
     NSError *_error;
 }
 
-@property(readonly) int code;
-@property(readonly) NSString * domain;
-@property(readonly) NSString * localizedDescription;
-@property(readonly) NSString * localizedFailureReason;
-@property(readonly) NSString * localizedRecoverySuggestion;
+@property (readonly) int code;
+@property (readonly) NSString *domain;
+@property (readonly) NSString *localizedDescription;
+@property (readonly) NSString *localizedFailureReason;
+@property (readonly) NSString *localizedRecoverySuggestion;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

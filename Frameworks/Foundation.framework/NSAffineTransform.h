@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface NSAffineTransform : NSObject <NSCoding, NSCopying> {
     struct { 
         float m11; 
@@ -20,17 +15,13 @@
 
 @property struct { float x1; float x2; float x3; float x4; float x5; float x6; } transformStruct;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)transform;
 
-- (id)CAMLType;
-- (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
-- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (void)appendTransform:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)gqu_transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { float x1; float x2; }*)arg2 lowerLeft:(struct CGPoint { float x1; float x2; }*)arg3 lowerRight:(struct CGPoint { float x1; float x2; }*)arg4 upperRight:(struct CGPoint { float x1; float x2; }*)arg5;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -47,5 +38,17 @@
 - (struct CGSize { float x1; float x2; })transformSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct { float x1; float x2; float x3; float x4; float x5; float x6; })transformStruct;
 - (void)translateXBy:(float)arg1 yBy:(float)arg2;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
+
+- (id)CAMLType;
+- (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
+- (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
+- (void)encodeWithCAMLWriter:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (void)gqu_transformRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { float x1; float x2; }*)arg2 lowerLeft:(struct CGPoint { float x1; float x2; }*)arg3 lowerRight:(struct CGPoint { float x1; float x2; }*)arg4 upperRight:(struct CGPoint { float x1; float x2; }*)arg5;
 
 @end

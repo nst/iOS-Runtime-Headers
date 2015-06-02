@@ -6,7 +6,7 @@
     int _filter;
 }
 
-@property int filter;
+@property (nonatomic) int filter;
 
 - (int)filter;
 - (void)setFilter:(int)arg1;

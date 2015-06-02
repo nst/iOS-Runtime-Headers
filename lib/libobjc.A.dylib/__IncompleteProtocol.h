@@ -2,8 +2,7 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface __IncompleteProtocol : NSObject {
-}
+@interface __IncompleteProtocol : NSObject
 
 + (void)load;
 

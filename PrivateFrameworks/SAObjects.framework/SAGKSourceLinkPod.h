@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIAppPunchOut;
+@interface SAGKSourceLinkPod : SAGKPodView
 
-@interface SAGKSourceLinkPod : SAGKPodView {
-}
-
-@property(copy) NSString * linkText;
-@property(retain) SAUIAppPunchOut * punchOut;
+@property (nonatomic, copy) NSString *linkText;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
 
 + (id)sourceLinkPod;
 + (id)sourceLinkPodWithDictionary:(id)arg1 context:(id)arg2;

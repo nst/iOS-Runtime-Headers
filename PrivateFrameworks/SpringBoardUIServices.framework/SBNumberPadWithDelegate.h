@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class <SBNumberPadDelegate>;
-
 @interface SBNumberPadWithDelegate : TPNumberPad {
     <SBNumberPadDelegate> *_delegate;
 }
 
-@property <SBNumberPadDelegate> * delegate;
+@property (nonatomic) <SBNumberPadDelegate> *delegate;
 
 - (void)buttonCancelled:(id)arg1;
 - (void)buttonDown:(id)arg1;

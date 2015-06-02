@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriRemoteViewControllerDataSource>, <AFUISiriRemoteViewControllerDelegate>, NSString;
-
 @interface AFUISiriRemoteViewController : _UIRemoteViewController <SVSSiriViewControllerHosting> {
     <AFUISiriRemoteViewControllerDataSource> *_dataSource;
     <AFUISiriRemoteViewControllerDelegate> *_delegate;
 }
 
-@property <AFUISiriRemoteViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <AFUISiriRemoteViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) <AFUISiriRemoteViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AFUISiriRemoteViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
@@ -26,17 +24,17 @@
 - (void)didReceiveBugButtonLongPress;
 - (void)didReceiveHelpAction;
 - (void)didReceiveReportBugAction;
-- (void)getScreenshotWithReplyHandler:(id)arg1;
-- (void)handlePasscodeUnlockWithCompletion:(id)arg1;
+- (void)getScreenshotWithReplyHandler:(id /* block */)arg1;
+- (void)handlePasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (void)notifyOnNextUserInteraction;
 - (void)pulseHelpButton;
-- (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(id)arg2;
+- (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
-- (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(id)arg3;
+- (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(id /* block */)arg3;
 - (void)serviceOpenURL:(id)arg1 appBundleID:(id)arg2 allowSiriDismissal:(BOOL)arg3;
-- (void)serviceOpenURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 replyHandler:(id)arg3;
+- (void)serviceOpenURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 replyHandler:(id /* block */)arg3;
 - (void)serviceRequestsDismissal;
 - (void)serviceStartGuidedAccess;
 - (void)serviceStartRequestWithOptions:(id)arg1;

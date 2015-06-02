@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSDictionary, NSString;
-
 @interface CABehavior : NSObject <NSCoding, NSCopying> {
     void *_attr;
     void *_priv;
@@ -17,14 +10,14 @@
 }
 
 @property id delegate;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * name;
-@property(copy) NSDictionary * style;
+@property (getter=isEnabled) BOOL enabled;
+@property (copy) NSString *name;
+@property (copy) NSDictionary *style;
 
 + (void)CAMLParserStartElement:(id)arg1;
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (int (*)())CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
-+ (int (*)())CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
++ (int (*)CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
++ (int (*)CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)behavior;
 + (id)defaultValueForKey:(id)arg1;

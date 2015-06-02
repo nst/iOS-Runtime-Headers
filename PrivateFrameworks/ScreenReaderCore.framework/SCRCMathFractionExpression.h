@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCMathExpression;
-
 @interface SCRCMathFractionExpression : SCRCMathExpression {
     SCRCMathExpression *_denominator;
     double _lineThickness;
@@ -11,10 +9,10 @@
     SCRCMathExpression *_operator;
 }
 
-@property(retain) SCRCMathExpression * denominator;
-@property double lineThickness;
-@property(retain) SCRCMathExpression * numerator;
-@property(retain) SCRCMathExpression * operator;
+@property (nonatomic, retain) SCRCMathExpression *denominator;
+@property (nonatomic) double lineThickness;
+@property (nonatomic, retain) SCRCMathExpression *numerator;
+@property (nonatomic, retain) SCRCMathExpression *operator;
 
 - (id)_dollarCodeDescriptionAsBinomialCoefficient:(BOOL)arg1 orMixedNumberFraction:(BOOL)arg2 withNumberOfOuterRadicals:(unsigned int)arg3 treePosition:(id)arg4;
 - (id)_speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2 asBinomialCoefficient:(BOOL)arg3;

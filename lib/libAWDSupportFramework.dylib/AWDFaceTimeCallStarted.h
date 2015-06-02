@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDFaceTimeCallStarted : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -22,20 +20,20 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsCallUpgrade;
-@property BOOL hasIsToEmail;
-@property BOOL hasIsToPhoneNumber;
-@property BOOL hasIsVideo;
-@property BOOL hasOnLockScreen;
-@property BOOL hasTimestamp;
-@property unsigned int isCallUpgrade;
-@property unsigned int isToEmail;
-@property unsigned int isToPhoneNumber;
-@property unsigned int isVideo;
-@property unsigned int onLockScreen;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsCallUpgrade;
+@property (nonatomic) BOOL hasIsToEmail;
+@property (nonatomic) BOOL hasIsToPhoneNumber;
+@property (nonatomic) BOOL hasIsVideo;
+@property (nonatomic) BOOL hasOnLockScreen;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isCallUpgrade;
+@property (nonatomic) unsigned int isToEmail;
+@property (nonatomic) unsigned int isToPhoneNumber;
+@property (nonatomic) unsigned int isVideo;
+@property (nonatomic) unsigned int onLockScreen;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

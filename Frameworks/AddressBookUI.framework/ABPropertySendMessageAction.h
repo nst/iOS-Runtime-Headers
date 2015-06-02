@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertySendMessageAction : ABPropertyAction {
-}
+@interface ABPropertySendMessageAction : ABPropertyAction
 
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
 

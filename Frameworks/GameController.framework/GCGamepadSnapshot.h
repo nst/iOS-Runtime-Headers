@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class NSData;
-
 @interface GCGamepadSnapshot : GCGamepad {
     NSData *snapshotData;
 }
 
-@property(copy) NSData * snapshotData;
+@property (copy) NSData *snapshotData;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADRelativeRect;
-
 @interface OADStretchTechnique : OADImageFillTechnique {
     OADRelativeRect *mFillRect;
     BOOL mIsFillRectOverridden;

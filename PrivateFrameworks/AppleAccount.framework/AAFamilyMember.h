@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDate, NSNumber, NSString;
-
 @interface AAFamilyMember : NSObject {
     NSString *_appleID;
     BOOL _areParentalControlsEnabled;
@@ -23,22 +21,22 @@
     NSString *_title;
 }
 
-@property(copy) NSString * appleID;
-@property BOOL areParentalControlsEnabled;
-@property(copy) NSString * firstName;
-@property(copy) NSString * iTunesNotLinkedMessage;
-@property BOOL isAskToBuyEnabled;
-@property BOOL isChild;
-@property BOOL isMe;
-@property BOOL isOrganizer;
-@property BOOL isSharingPurchases;
-@property(copy) NSDate * joinDate;
-@property(copy) NSString * lastName;
-@property(copy) NSString * linkediTunesAppleID;
-@property(copy) NSNumber * linkediTunesDSID;
-@property(copy) NSNumber * personID;
-@property(copy) NSString * personIDHash;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *appleID;
+@property (nonatomic) BOOL areParentalControlsEnabled;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *iTunesNotLinkedMessage;
+@property (nonatomic) BOOL isAskToBuyEnabled;
+@property (nonatomic) BOOL isChild;
+@property (nonatomic) BOOL isMe;
+@property (nonatomic) BOOL isOrganizer;
+@property (nonatomic) BOOL isSharingPurchases;
+@property (nonatomic, copy) NSDate *joinDate;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy) NSString *linkediTunesAppleID;
+@property (nonatomic, copy) NSNumber *linkediTunesDSID;
+@property (nonatomic, copy) NSNumber *personID;
+@property (nonatomic, copy) NSString *personIDHash;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)appleID;

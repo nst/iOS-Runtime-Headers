@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CAEAGLLayer, EAGLContext, PLGLLayerDelegate;
-
 @interface CAMGLView : UIView {
     EAGLContext *__atomicContext;
     struct CGSize { 
@@ -23,27 +17,23 @@
     unsigned int _framebuffer;
     CAEAGLLayer *_glLayer;
     PLGLLayerDelegate *_glLayerDelegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _renderNotifyBlock;
-
+    id /* block */ _renderNotifyBlock;
     unsigned int _renderbuffer;
 }
 
-@property(setter=_setAtomicContext:,retain) EAGLContext * _atomicContext;
-@property(setter=_setAtomicFixedSize:) struct CGSize { float x1; float x2; } _atomicFixedSize;
-@property(setter=_setAtomicRetainedBacking:) BOOL _atomicRetainedBacking;
-@property(getter=_isDisabledLayoutForGLLayerInternal,setter=_setDisableLayoutForGLLayerInternal:) BOOL _disableLayoutForGLLayerInternal;
-@property(setter=_setShouldDeleteFramebuffer:) BOOL _shouldDeleteFramebuffer;
-@property(retain) EAGLContext * context;
-@property(getter=isDisabledLayoutForGLLayer) BOOL disableLayoutForGLLayer;
+@property (setter=_setAtomicContext:, retain) EAGLContext *_atomicContext;
+@property (setter=_setAtomicFixedSize:) struct CGSize { float x1; float x2; } _atomicFixedSize;
+@property (setter=_setAtomicRetainedBacking:) BOOL _atomicRetainedBacking;
+@property (getter=_isDisabledLayoutForGLLayerInternal, setter=_setDisableLayoutForGLLayerInternal:, nonatomic) BOOL _disableLayoutForGLLayerInternal;
+@property (setter=_setShouldDeleteFramebuffer:) BOOL _shouldDeleteFramebuffer;
+@property (nonatomic, retain) EAGLContext *context;
+@property (getter=isDisabledLayoutForGLLayer, nonatomic) BOOL disableLayoutForGLLayer;
 @property int drawableHeight;
 @property int drawableWidth;
-@property struct CGSize { float x1; float x2; } fixedSize;
-@property(retain,readonly) CAEAGLLayer * glLayer;
-@property(copy) id renderNotifyBlock;
-@property BOOL retainedBacking;
+@property (nonatomic) struct CGSize { float x1; float x2; } fixedSize;
+@property (nonatomic, readonly, retain) CAEAGLLayer *glLayer;
+@property (nonatomic, copy) id /* block */ renderNotifyBlock;
+@property (nonatomic) BOOL retainedBacking;
 
 - (void).cxx_destruct;
 - (id)_atomicContext;
@@ -72,9 +62,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDisabledLayoutForGLLayer;
 - (void)layoutSubviews;
-- (id)renderNotifyBlock;
+- (id /* block */)renderNotifyBlock;
 - (void)renderPixelBuffer:(struct __CVBuffer { }*)arg1 ciContext:(id)arg2 mirrorRendering:(BOOL)arg3;
-- (void)renderWithBlock:(id)arg1;
+- (void)renderWithBlock:(id /* block */)arg1;
 - (BOOL)retainedBacking;
 - (void)setContentMode:(int)arg1;
 - (void)setContentScaleFactor:(float)arg1;
@@ -83,7 +73,7 @@
 - (void)setDrawableHeight:(int)arg1;
 - (void)setDrawableWidth:(int)arg1;
 - (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setRenderNotifyBlock:(id)arg1;
+- (void)setRenderNotifyBlock:(id /* block */)arg1;
 - (void)setRetainedBacking:(BOOL)arg1;
 
 @end

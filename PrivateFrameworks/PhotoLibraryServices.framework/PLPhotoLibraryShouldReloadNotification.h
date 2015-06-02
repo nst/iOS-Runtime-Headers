@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLPhotoLibraryShouldReloadNotification : PLChangeNotification {
-}
+@interface PLPhotoLibraryShouldReloadNotification : PLChangeNotification
 
 - (id)initNotification;
 - (id)name;

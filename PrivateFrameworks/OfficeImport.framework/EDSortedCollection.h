@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDSortedCollection : EDKeyedCollection {
-}
+@interface EDSortedCollection : EDKeyedCollection
 
 - (unsigned int)addObject:(id)arg1;
 - (unsigned int)addObject:(id)arg1 overrideDuplicate:(bool)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCInterface, Protocol;
-
 @interface SGDaemonConnection : NSObject {
     int _abortCounter;
     int _abortLock;
@@ -20,8 +18,8 @@
     NSXPCInterface *_xpcInterface;
 }
 
-@property id delegate;
-@property(retain,readonly) NSXPCConnection * xpcConnection;
+@property (nonatomic) id delegate;
+@property (nonatomic, readonly, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
 - (void)_connectToServer;
@@ -34,7 +32,7 @@
 - (void)removeCancellableRemoteOperation:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)sgClientReceivedResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
-- (id)waitUntilReturn:(id)arg1 error:(id*)arg2;
+- (id)waitUntilReturn:(id /* block */)arg1 error:(id*)arg2;
 - (id)xpcConnection;
 
 @end

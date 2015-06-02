@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContactStyle, UITextField;
-
 @interface ABPickerItemCell : UITableViewCell {
     CNContactStyle *_contactStyle;
     UITextField *_textField;
 }
 
-@property(retain) CNContactStyle * contactStyle;
-@property(retain) UITextField * textField;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic, retain) UITextField *textField;
 
 - (void)beginEditing;
 - (id)contactStyle;

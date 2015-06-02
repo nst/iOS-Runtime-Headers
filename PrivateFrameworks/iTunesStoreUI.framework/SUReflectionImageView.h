@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUReflectionView, UIImageView;
-
 @interface SUReflectionImageView : UIView {
     UIImageView *_imageView;
-    unsigned int _nonSquareImage : 1;
+    unsigned int _nonSquareImage;
     SUReflectionView *_reflection;
     float _reflectionAlpha;
     float _reflectionHeight;
@@ -14,8 +12,8 @@
     BOOL _useImageSize;
 }
 
-@property BOOL nonSquareImage;
-@property float reflectionSpacing;
+@property (nonatomic) BOOL nonSquareImage;
+@property (nonatomic) float reflectionSpacing;
 
 - (void)dealloc;
 - (id)init;

@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIConfirmationView : SAAceView
 
-@interface SAUIConfirmationView : SAAceView {
-}
-
-@property(copy) NSArray * allConfirmationOptions;
-@property(copy) NSString * cancelTrigger;
-@property(copy) NSArray * confirmCommands;
-@property(copy) NSString * confirmText;
-@property(copy) NSArray * denyCommands;
-@property(copy) NSString * denyText;
+@property (nonatomic, copy) NSArray *allConfirmationOptions;
+@property (nonatomic, copy) NSString *cancelTrigger;
+@property (nonatomic, copy) NSArray *confirmCommands;
+@property (nonatomic, copy) NSString *confirmText;
+@property (nonatomic, copy) NSArray *denyCommands;
+@property (nonatomic, copy) NSString *denyText;
 
 + (id)confirmationView;
 + (id)confirmationViewWithDictionary:(id)arg1 context:(id)arg2;

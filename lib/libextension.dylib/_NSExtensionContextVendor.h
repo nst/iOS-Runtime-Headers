@@ -2,21 +2,19 @@
    Image: /usr/lib/libextension.dylib
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface _NSExtensionContextVendor : NSObject <NSXPCListenerDelegate, _NSExtensionContextVending> {
     NSMutableDictionary *__extensionContexts;
     NSMutableDictionary *__extensionPrincipalObjects;
     NSMutableDictionary *__extensionServiceConnections;
 }
 
-@property(setter=_setExtensionContexts:,retain) NSMutableDictionary * _extensionContexts;
-@property(setter=_setExtensionPrincipalObjects:,retain) NSMutableDictionary * _extensionPrincipalObjects;
-@property(setter=_setExtensionServiceConnections:,retain) NSMutableDictionary * _extensionServiceConnections;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setExtensionContexts:, nonatomic, retain) NSMutableDictionary *_extensionContexts;
+@property (setter=_setExtensionPrincipalObjects:, nonatomic, retain) NSMutableDictionary *_extensionPrincipalObjects;
+@property (setter=_setExtensionServiceConnections:, nonatomic, retain) NSMutableDictionary *_extensionServiceConnections;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_completionConcurrentQueue;
 + (id)_expirationConcurrentQueue;
@@ -27,15 +25,15 @@
 + (id)_sharedExtensionContextVendor;
 + (void)_startListening;
 
-- (void)_beginRequestWithExtensionItems:(id)arg1 listenerEndpoint:(id)arg2 withContextUUID:(id)arg3 completion:(id)arg4;
+- (void)_beginRequestWithExtensionItems:(id)arg1 listenerEndpoint:(id)arg2 withContextUUID:(id)arg3 completion:(id /* block */)arg4;
 - (id)_extensionContextForUUID:(id)arg1;
 - (id)_extensionContexts;
 - (id)_extensionPrincipalObjects;
 - (id)_extensionServiceConnections;
-- (void)_hostDidBecomeActiveForContextUUID:(id)arg1 completion:(id)arg2;
-- (void)_hostDidEnterBackgroundForContextUUID:(id)arg1 completion:(id)arg2;
-- (void)_hostWillEnterForegroundForContextUUID:(id)arg1 completion:(id)arg2;
-- (void)_hostWillResignActiveForContextUUID:(id)arg1 completion:(id)arg2;
+- (void)_hostDidBecomeActiveForContextUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_hostDidEnterBackgroundForContextUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_hostWillEnterForegroundForContextUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_hostWillResignActiveForContextUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_setExtensionContexts:(id)arg1;
 - (void)_setExtensionPrincipalObjects:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;

@@ -2,32 +2,30 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class NSDate, NSDictionary, NSNumber, NSString;
-
 @interface FAFamilyMember : NSObject <NSSecureCoding> {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) unsigned int age;
-@property(copy,readonly) NSString * appleID;
-@property(copy,readonly) NSDictionary * dictionary;
-@property(copy,readonly) NSNumber * dsid;
-@property(copy,readonly) NSString * firstName;
-@property(readonly) BOOL hasAskToBuyEnabled;
-@property(readonly) BOOL hasLinkediTunesAccount;
-@property(readonly) BOOL hasParentalControlsEnabled;
-@property(copy,readonly) NSString * hashedDSID;
-@property(readonly) NSNumber * iTunesAccountDSID;
-@property(copy,readonly) NSString * iTunesAccountUsername;
-@property(copy,readonly) NSString * inviteEmail;
-@property(readonly) BOOL isChildAccount;
-@property(readonly) BOOL isMe;
-@property(readonly) BOOL isParent;
-@property(copy,readonly) NSDate * joinedDate;
-@property(copy,readonly) NSString * lastName;
-@property(copy,readonly) NSString * memberTypeDisplayString;
-@property(copy,readonly) NSString * memberTypeString;
-@property(copy,readonly) NSString * statusString;
+@property (nonatomic, readonly) unsigned int age;
+@property (nonatomic, readonly, copy) NSString *appleID;
+@property (nonatomic, readonly, copy) NSDictionary *dictionary;
+@property (nonatomic, readonly, copy) NSNumber *dsid;
+@property (nonatomic, readonly, copy) NSString *firstName;
+@property (nonatomic, readonly) BOOL hasAskToBuyEnabled;
+@property (nonatomic, readonly) BOOL hasLinkediTunesAccount;
+@property (nonatomic, readonly) BOOL hasParentalControlsEnabled;
+@property (nonatomic, readonly, copy) NSString *hashedDSID;
+@property (nonatomic, readonly) NSNumber *iTunesAccountDSID;
+@property (nonatomic, readonly, copy) NSString *iTunesAccountUsername;
+@property (nonatomic, readonly, copy) NSString *inviteEmail;
+@property (nonatomic, readonly) BOOL isChildAccount;
+@property (nonatomic, readonly) BOOL isMe;
+@property (nonatomic, readonly) BOOL isParent;
+@property (nonatomic, readonly, copy) NSDate *joinedDate;
+@property (nonatomic, readonly, copy) NSString *lastName;
+@property (nonatomic, readonly, copy) NSString *memberTypeDisplayString;
+@property (nonatomic, readonly, copy) NSString *memberTypeString;
+@property (nonatomic, readonly, copy) NSString *statusString;
 
 + (BOOL)supportsSecureCoding;
 
@@ -38,8 +36,8 @@
 - (id)dictionary;
 - (id)dsid;
 - (void)encodeWithCoder:(id)arg1;
-- (void)fetchFamilyPhotoWithRequestedSize:(unsigned int)arg1 completionHandler:(id)arg2;
-- (void)fetchFamilyPhotoWithRequestedSize:(unsigned int)arg1 fallbackToLocalAddressBook:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)fetchFamilyPhotoWithRequestedSize:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchFamilyPhotoWithRequestedSize:(unsigned int)arg1 fallbackToLocalAddressBook:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (id)firstName;
 - (BOOL)hasAskToBuyEnabled;
 - (BOOL)hasLinkediTunesAccount;

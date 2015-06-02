@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant, NSString;
-
 @interface EKParticipantForSorting : NSObject {
     NSString *_cachedDisplayName;
     NSString *_firstName;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSRemovePlaylistRequest : HSRequest {
-}
+@interface HSRemovePlaylistRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;
 

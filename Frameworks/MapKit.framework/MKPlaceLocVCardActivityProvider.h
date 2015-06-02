@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CNContact;
-
 @interface MKPlaceLocVCardActivityProvider : MKPlaceActivityProvider {
     CNContact *_contact;
 }
 
-@property(retain) CNContact * contact;
+@property (nonatomic, retain) CNContact *contact;
 
 - (void).cxx_destruct;
 - (void)_setRecord:(void*)arg1 property:(int)arg2 stringValue:(id)arg3 label:(id)arg4;

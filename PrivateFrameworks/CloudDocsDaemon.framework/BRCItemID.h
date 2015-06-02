@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRCItemID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
     unsigned char _kind;
-    unsigned char _uuid[16];
+    unsigned char _uuid;
 }
 
-@property(readonly) const char * UTF8String;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDocuments;
-@property(readonly) BOOL isRoot;
-@property(readonly) NSString * itemIDString;
-@property(readonly) NSString * shortItemIDString;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) const char *UTF8String;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isDocuments;
+@property (nonatomic, readonly) BOOL isRoot;
+@property (nonatomic, readonly) NSString *itemIDString;
+@property (nonatomic, readonly) NSString *shortItemIDString;
+@property (readonly) Class superclass;
 
 + (id)documentsItemID;
 + (void)initialize;

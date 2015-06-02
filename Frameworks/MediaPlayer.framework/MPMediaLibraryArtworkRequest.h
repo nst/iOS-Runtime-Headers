@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class ML3MusicLibrary, MPMediaLibraryArtwork, NSNumber, NSString;
-
 @interface MPMediaLibraryArtworkRequest : NSObject {
     int _artistType;
     int _artworkType;
@@ -16,15 +14,15 @@
     double _retrievalTime;
 }
 
-@property int artistType;
-@property(readonly) int artworkType;
-@property(copy) NSNumber * cachedArtworkSourceType;
-@property(copy) NSString * cachedArtworkToken;
-@property(readonly) ML3MusicLibrary * library;
-@property(retain) MPMediaLibraryArtwork * libraryArtwork;
-@property(readonly) unsigned long long libraryID;
-@property(readonly) unsigned int mediaType;
-@property double retrievalTime;
+@property (nonatomic) int artistType;
+@property (nonatomic, readonly) int artworkType;
+@property (nonatomic, copy) NSNumber *cachedArtworkSourceType;
+@property (nonatomic, copy) NSString *cachedArtworkToken;
+@property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (nonatomic, retain) MPMediaLibraryArtwork *libraryArtwork;
+@property (nonatomic, readonly) unsigned long long libraryID;
+@property (nonatomic, readonly) unsigned int mediaType;
+@property (nonatomic) double retrievalTime;
 
 - (void).cxx_destruct;
 - (int)artistType;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSNumber;
-
 @interface CBMutableDescriptor : CBDescriptor {
     NSNumber *_ID;
 }
 
-@property(retain) NSNumber * ID;
+@property (retain) NSNumber *ID;
 
 - (id)ID;
 - (void)dealloc;

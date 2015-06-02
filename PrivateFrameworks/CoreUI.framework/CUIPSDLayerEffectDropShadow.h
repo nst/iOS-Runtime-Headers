@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIColor;
-
 @interface CUIPSDLayerEffectDropShadow : CUIPSDLayerEffectComponent {
     short _angle;
     int _blendMode;
@@ -17,7 +15,7 @@
 @property short angle;
 @property int blendMode;
 @property unsigned int blurSize;
-@property(retain) CUIColor * color;
+@property (retain) CUIColor *color;
 @property unsigned int distance;
 @property float opacity;
 @property unsigned int spread;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSUUID;
-
 @interface BRDaemonConnection : NSXPCConnection {
     BOOL _isUsingTokenService;
     NSUUID *_uuid;
@@ -25,7 +23,7 @@
 - (void)dealloc;
 - (id)initUsingUserLocalDaemon;
 - (id)initUsingUserLocalDaemonTokenService;
-- (struct BRXPCSyncProxy { Class x1; id x2; id x3; id x4; id x5; int x6; }*)syncProxy;
-- (struct BRXPCSyncProxy { Class x1; id x2; id x3; id x4; id x5; int x6; }*)syncTokenProxy;
+- (struct BRXPCSyncProxy { Class x1; id x2; id x3; int x4; }*)syncProxy;
+- (struct BRXPCSyncProxy { Class x1; id x2; id x3; int x4; }*)syncTokenProxy;
 
 @end

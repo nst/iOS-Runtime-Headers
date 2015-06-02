@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSString;
-
 @interface CalDAVFreeBusyLookupTask : CalDAVScheduleTask {
     NSString *_maskedUID;
 }
 
-@property(retain) NSString * maskedUID;
+@property (nonatomic, retain) NSString *maskedUID;
 
 + (id)_freeBusyDocumentWithOrganizer:(id)arg1 attendees:(id)arg2 start:(id)arg3 end:(id)arg4 maskedUID:(id)arg5 extendedFreeBusy:(BOOL)arg6 prodID:(id)arg7;
 + (id)_icsDate:(id)arg1 calendar:(id)arg2;

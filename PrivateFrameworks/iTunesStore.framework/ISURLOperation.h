@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISURLOperationDelegate>, ISDataProvider, ISURLRequestPerformance, NSCountedSet, NSMutableData, NSURLConnection, NSURLRequest, NSURLResponse, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties;
-
 @interface ISURLOperation : ISOperation {
     NSURLRequest *_activeURLRequest;
     SSAuthenticationContext *_authenticationContext;
@@ -21,17 +19,17 @@
     BOOL _usesPrivateCookieStore;
 }
 
-@property(getter=_loadsHTTPFailures,setter=_setLoadsHTTPFailures:) BOOL _loadsHTTPFailures;
-@property(getter=_shouldSetCookies,setter=_setShouldSetCookies:) BOOL _shouldSetCookies;
-@property(getter=_usesPrivateCookieStore,setter=_setUsesPrivateCookieStore:) BOOL _usesPrivateCookieStore;
-@property(retain) SSAuthenticationContext * authenticationContext;
-@property(retain) ISDataProvider * dataProvider;
-@property <ISURLOperationDelegate> * delegate;
-@property(readonly) ISURLRequestPerformance * performanceMetrics;
-@property(copy) SSURLRequestProperties * requestProperties;
-@property(retain) NSURLResponse * response;
+@property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) BOOL _loadsHTTPFailures;
+@property (getter=_shouldSetCookies, setter=_setShouldSetCookies:) BOOL _shouldSetCookies;
+@property (getter=_usesPrivateCookieStore, setter=_setUsesPrivateCookieStore:) BOOL _usesPrivateCookieStore;
+@property (retain) SSAuthenticationContext *authenticationContext;
+@property (retain) ISDataProvider *dataProvider;
+@property <ISURLOperationDelegate> *delegate;
+@property (readonly) ISURLRequestPerformance *performanceMetrics;
+@property (copy) SSURLRequestProperties *requestProperties;
+@property (retain) NSURLResponse *response;
 @property BOOL tracksPerformanceMetrics;
-@property(getter=isUploadProgressRequested) BOOL uploadProgressRequested;
+@property (getter=isUploadProgressRequested, nonatomic) BOOL uploadProgressRequested;
 
 + (id)copyUserAgent;
 + (BOOL)isSharedCacheStorageSession:(struct __CFURLStorageSession { }*)arg1;

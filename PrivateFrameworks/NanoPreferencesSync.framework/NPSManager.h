@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface NPSManager : NSObject {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
 - (id)connection;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIStorePageSplit;
-
 @interface SKUIStorePageSplitsDescription : NSObject <NSCopying> {
     SKUIStorePageSplit *_bottomSplit;
     SKUIStorePageSplit *_leftSplit;
@@ -11,18 +9,18 @@
     SKUIStorePageSplit *_topSplit;
 }
 
-@property(copy) SKUIStorePageSplit * bottomSplit;
-@property(readonly) SKUIStorePageSplit * firstSplit;
-@property(copy) SKUIStorePageSplit * leftSplit;
-@property(readonly) int numberOfSplits;
-@property(copy) SKUIStorePageSplit * rightSplit;
-@property(copy) SKUIStorePageSplit * topSplit;
+@property (nonatomic, copy) SKUIStorePageSplit *bottomSplit;
+@property (nonatomic, readonly) SKUIStorePageSplit *firstSplit;
+@property (nonatomic, copy) SKUIStorePageSplit *leftSplit;
+@property (nonatomic, readonly) int numberOfSplits;
+@property (nonatomic, copy) SKUIStorePageSplit *rightSplit;
+@property (nonatomic, copy) SKUIStorePageSplit *topSplit;
 
 - (void).cxx_destruct;
 - (id)bottomSplit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)enumerateSplitsUsingBlock:(id)arg1;
+- (void)enumerateSplitsUsingBlock:(id /* block */)arg1;
 - (id)firstSplit;
 - (id)leftSplit;
 - (int)numberOfSplits;
@@ -31,7 +29,7 @@
 - (void)setLeftSplit:(id)arg1;
 - (void)setRightSplit:(id)arg1;
 - (void)setTopSplit:(id)arg1;
-- (void)sizeSplitsToFitWidth:(float)arg1 usingBlock:(id)arg2;
+- (void)sizeSplitsToFitWidth:(float)arg1 usingBlock:(id /* block */)arg2;
 - (id)topSplit;
 
 @end

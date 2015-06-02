@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKDProtocolTranslator, CKDRecordCache, NSArray, NSData, NSDictionary, NSMutableDictionary;
-
 @interface CKDModifyRecordsOperation : CKDDatabaseOperation {
     BOOL _atomic;
     CKDRecordCache *_cache;
     BOOL _canSetPreviousProtectionEtag;
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deleteCompletionBlock;
-
+    id /* block */ _deleteCompletionBlock;
     BOOL _haveOutstandingMetadatas;
     NSDictionary *_metadatasByRecordID;
     NSMutableDictionary *_modifyMetadatasByZoneID;
@@ -29,48 +19,36 @@
     NSArray *_recordsToSave;
     BOOL _retriedRecords;
     BOOL _retryPCSFailures;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveCompletionBlock;
-
+    id /* block */ _saveCompletionBlock;
     int _savePolicy;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveProgressBlock;
-
+    id /* block */ _saveProgressBlock;
     BOOL _shouldOnlySaveAssetContent;
     CKDProtocolTranslator *_translator;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _uploadCompletionBlock;
-
+    id /* block */ _uploadCompletionBlock;
 }
 
-@property BOOL atomic;
-@property(retain) CKDRecordCache * cache;
-@property BOOL canSetPreviousProtectionEtag;
-@property(copy) NSData * clientChangeTokenData;
-@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
-@property(copy) id deleteCompletionBlock;
-@property BOOL haveOutstandingMetadatas;
-@property(retain) NSDictionary * metadatasByRecordID;
-@property(retain) NSMutableDictionary * modifyMetadatasByZoneID;
-@property int numPCSRetries;
-@property(retain) NSArray * recordIDsToDelete;
-@property(retain) NSDictionary * recordIDsToDeleteToEtags;
-@property(retain) NSMutableDictionary * recordsByServerID;
-@property(retain) NSArray * recordsToSave;
-@property BOOL retriedRecords;
-@property BOOL retryPCSFailures;
-@property(copy) id saveCompletionBlock;
-@property int savePolicy;
-@property(copy) id saveProgressBlock;
-@property BOOL shouldOnlySaveAssetContent;
-@property(readonly) CKDProtocolTranslator * translator;
-@property(copy) id uploadCompletionBlock;
+@property (nonatomic) BOOL atomic;
+@property (nonatomic, retain) CKDRecordCache *cache;
+@property (nonatomic) BOOL canSetPreviousProtectionEtag;
+@property (nonatomic, copy) NSData *clientChangeTokenData;
+@property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic, copy) id /* block */ deleteCompletionBlock;
+@property (nonatomic) BOOL haveOutstandingMetadatas;
+@property (nonatomic, retain) NSDictionary *metadatasByRecordID;
+@property (nonatomic, retain) NSMutableDictionary *modifyMetadatasByZoneID;
+@property (nonatomic) int numPCSRetries;
+@property (nonatomic, retain) NSArray *recordIDsToDelete;
+@property (nonatomic, retain) NSDictionary *recordIDsToDeleteToEtags;
+@property (nonatomic, retain) NSMutableDictionary *recordsByServerID;
+@property (nonatomic, retain) NSArray *recordsToSave;
+@property (nonatomic) BOOL retriedRecords;
+@property (nonatomic) BOOL retryPCSFailures;
+@property (nonatomic, copy) id /* block */ saveCompletionBlock;
+@property (nonatomic) int savePolicy;
+@property (nonatomic, copy) id /* block */ saveProgressBlock;
+@property (nonatomic) BOOL shouldOnlySaveAssetContent;
+@property (nonatomic, readonly) CKDProtocolTranslator *translator;
+@property (nonatomic, copy) id /* block */ uploadCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_addShareToPCSData:(id)arg1 forMetadata:(id)arg2 withError:(id)arg3;
@@ -109,7 +87,7 @@
 - (BOOL)canSetPreviousProtectionEtag;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
-- (id)deleteCompletionBlock;
+- (id /* block */)deleteCompletionBlock;
 - (BOOL)haveOutstandingMetadatas;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
@@ -124,15 +102,15 @@
 - (id)recordsToSave;
 - (BOOL)retriedRecords;
 - (BOOL)retryPCSFailures;
-- (id)saveCompletionBlock;
+- (id /* block */)saveCompletionBlock;
 - (int)savePolicy;
-- (id)saveProgressBlock;
+- (id /* block */)saveProgressBlock;
 - (void)setAtomic:(BOOL)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCanSetPreviousProtectionEtag:(BOOL)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
-- (void)setDeleteCompletionBlock:(id)arg1;
+- (void)setDeleteCompletionBlock:(id /* block */)arg1;
 - (void)setHaveOutstandingMetadatas:(BOOL)arg1;
 - (void)setMetadatasByRecordID:(id)arg1;
 - (void)setModifyMetadatasByZoneID:(id)arg1;
@@ -143,13 +121,13 @@
 - (void)setRecordsToSave:(id)arg1;
 - (void)setRetriedRecords:(BOOL)arg1;
 - (void)setRetryPCSFailures:(BOOL)arg1;
-- (void)setSaveCompletionBlock:(id)arg1;
+- (void)setSaveCompletionBlock:(id /* block */)arg1;
 - (void)setSavePolicy:(int)arg1;
-- (void)setSaveProgressBlock:(id)arg1;
+- (void)setSaveProgressBlock:(id /* block */)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
-- (void)setUploadCompletionBlock:(id)arg1;
+- (void)setUploadCompletionBlock:(id /* block */)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
 - (id)translator;
-- (id)uploadCompletionBlock;
+- (id /* block */)uploadCompletionBlock;
 
 @end

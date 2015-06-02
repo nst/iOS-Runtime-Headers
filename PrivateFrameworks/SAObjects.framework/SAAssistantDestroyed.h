@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAAssistantDestroyed : SABaseClientBoundCommand
 
-@interface SAAssistantDestroyed : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * assistantId;
+@property (nonatomic, copy) NSString *assistantId;
 
 + (id)assistantDestroyed;
 + (id)assistantDestroyedWithDictionary:(id)arg1 context:(id)arg2;

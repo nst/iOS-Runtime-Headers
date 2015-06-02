@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
+@interface TNAppDelegateBase : TSABaseApplicationDelegate
 
-@interface TNAppDelegateBase : TSABaseApplicationDelegate {
-}
-
-@property(readonly) NSArray * excelDocumentTypes;
+@property (nonatomic, readonly) NSArray *excelDocumentTypes;
 
 - (id)appChartPropertyOverrides;
 - (void)applicationDidFinishLaunching:(id)arg1;

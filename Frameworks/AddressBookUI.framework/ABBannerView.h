@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABBannerView : UITableViewCell {
     NSString *_title;
     NSString *_value;
 }
 
-@property(copy) NSString * title;
-@property(copy) NSString * value;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *value;
 
 + (float)defaultHeight;
 

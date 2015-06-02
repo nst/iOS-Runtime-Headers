@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDRawAttributeFilter : PBCodable <NSCopying> {
     NSMutableArray *_keys;
 }
 
-@property(retain) NSMutableArray * keys;
+@property (nonatomic, retain) NSMutableArray *keys;
 
 - (void)addKey:(id)arg1;
 - (void)clearKeys;

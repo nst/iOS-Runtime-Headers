@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCContainerScheduler, CKServerChangeToken, NSString;
-
 @interface BRCPeriodicSyncOperation : _BRCOperation <BRCOperationSubclass> {
     CKServerChangeToken *_metadataChangeToken;
     BRCContainerScheduler *_scheduler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CKServerChangeToken * metadataChangeToken;
-@property(readonly) BRCContainerScheduler * scheduler;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CKServerChangeToken *metadataChangeToken;
+@property (nonatomic, readonly) BRCContainerScheduler *scheduler;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2;

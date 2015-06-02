@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSData, NSString, SPProtoCacheMessage;
-
 @interface SPProtoSockPuppetObject : PBCodable <NSCopying> {
     SPProtoCacheMessage *_cacheMessage;
     struct { 
@@ -30,31 +28,31 @@
     int _type;
 }
 
-@property(retain) SPProtoCacheMessage * cacheMessage;
-@property(readonly) BOOL hasCacheMessage;
-@property(readonly) BOOL hasKey;
-@property BOOL hasNbool;
-@property BOOL hasNdouble;
-@property BOOL hasNfloat;
-@property BOOL hasNint32;
-@property BOOL hasNint64;
-@property BOOL hasNuint32;
-@property BOOL hasNuint64;
-@property(readonly) BOOL hasObject;
-@property BOOL hasSubtype;
-@property(readonly) BOOL hasText;
-@property(retain) NSString * key;
-@property BOOL nbool;
-@property double ndouble;
-@property float nfloat;
-@property int nint32;
-@property long long nint64;
-@property unsigned int nuint32;
-@property unsigned long long nuint64;
-@property(retain) NSData * object;
-@property int subtype;
-@property(retain) NSString * text;
-@property int type;
+@property (nonatomic, retain) SPProtoCacheMessage *cacheMessage;
+@property (nonatomic, readonly) BOOL hasCacheMessage;
+@property (nonatomic, readonly) BOOL hasKey;
+@property (nonatomic) BOOL hasNbool;
+@property (nonatomic) BOOL hasNdouble;
+@property (nonatomic) BOOL hasNfloat;
+@property (nonatomic) BOOL hasNint32;
+@property (nonatomic) BOOL hasNint64;
+@property (nonatomic) BOOL hasNuint32;
+@property (nonatomic) BOOL hasNuint64;
+@property (nonatomic, readonly) BOOL hasObject;
+@property (nonatomic) BOOL hasSubtype;
+@property (nonatomic, readonly) BOOL hasText;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) BOOL nbool;
+@property (nonatomic) double ndouble;
+@property (nonatomic) float nfloat;
+@property (nonatomic) int nint32;
+@property (nonatomic) long long nint64;
+@property (nonatomic) unsigned int nuint32;
+@property (nonatomic) unsigned long long nuint64;
+@property (nonatomic, retain) NSData *object;
+@property (nonatomic) int subtype;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)cacheMessage;

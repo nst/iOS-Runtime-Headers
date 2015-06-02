@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSMutableDictionary;
-
 @interface ExchangeManager : NSObject {
     NSMutableDictionary *_exchangesByName;
 }

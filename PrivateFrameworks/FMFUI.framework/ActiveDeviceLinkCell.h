@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@interface ActiveDeviceLinkCell : PSTableCell {
-}
+@interface ActiveDeviceLinkCell : PSTableCell
 
 + (int)cellStyle;
 

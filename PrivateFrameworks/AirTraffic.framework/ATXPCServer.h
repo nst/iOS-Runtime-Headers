@@ -2,68 +2,46 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSSet;
-
 @interface ATXPCServer : NSObject {
     NSObject<OS_xpc_object> *_conn;
     NSMutableSet *_connections;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _defaultMessageHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _disconnectHandler;
-
+    id /* block */ _defaultMessageHandler;
+    id /* block */ _disconnectHandler;
     NSMutableDictionary *_handlerMap;
     NSObject<OS_dispatch_source> *_idleTimerSource;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _lockdownHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shutdownHandler;
-
+    id /* block */ _lockdownHandler;
+    id /* block */ _shutdownHandler;
     BOOL _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> *_timerQueue;
 }
 
-@property(readonly) NSSet * connections;
-@property(copy) id defaultMessageHandler;
-@property(copy) id disconnectHandler;
-@property(copy) id lockdownHandler;
-@property(copy) id shutdownHandler;
+@property (nonatomic, readonly) NSSet *connections;
+@property (nonatomic, copy) id /* block */ defaultMessageHandler;
+@property (nonatomic, copy) id /* block */ disconnectHandler;
+@property (nonatomic, copy) id /* block */ lockdownHandler;
+@property (nonatomic, copy) id /* block */ shutdownHandler;
 
 - (void).cxx_destruct;
 - (id)_connections;
 - (BOOL)_doingWork;
 - (void)_handleNewConnection:(id)arg1;
-- (id)_handlerForMessageName:(id)arg1;
+- (id /* block */)_handlerForMessageName:(id)arg1;
 - (id)_highAvailabilityQueue;
 - (void)_rescheduleIdleTimerSourceWithInterval:(double)arg1;
 - (void)_resetMessageFlag;
 - (void)_runShutdownHandler;
 - (id)connections;
 - (void)dealloc;
-- (id)defaultMessageHandler;
-- (id)disconnectHandler;
+- (id /* block */)defaultMessageHandler;
+- (id /* block */)disconnectHandler;
 - (id)initListenerWithServiceName:(id)arg1;
-- (id)lockdownHandler;
-- (void)setDefaultMessageHandler:(id)arg1;
-- (void)setDisconnectHandler:(id)arg1;
-- (void)setHandlerForMessageName:(id)arg1 handler:(id)arg2;
+- (id /* block */)lockdownHandler;
+- (void)setDefaultMessageHandler:(id /* block */)arg1;
+- (void)setDisconnectHandler:(id /* block */)arg1;
+- (void)setHandlerForMessageName:(id)arg1 handler:(id /* block */)arg2;
 - (void)setIdleTimerInterval:(double)arg1;
-- (void)setLockdownHandler:(id)arg1;
-- (void)setShutdownHandler:(id)arg1;
-- (id)shutdownHandler;
+- (void)setLockdownHandler:(id /* block */)arg1;
+- (void)setShutdownHandler:(id /* block */)arg1;
+- (id /* block */)shutdownHandler;
 
 @end

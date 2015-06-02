@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHSupportsRendering>, NSString, TSCHChartInfo, TSCHChartLayoutItem, TSCHChartModel;
-
 @interface TSCHRenderer : NSObject <TSCHSupportsTextEditing> {
     TSCHChartLayoutItem *mChartLayoutItem;
     <TSCHSupportsRendering> *mChartRep;
 }
 
-@property(readonly) TSCHChartInfo * chartInfo;
-@property(readonly) <TSCHSupportsRendering> * chartRep;
-@property(readonly) struct CGColor { }* debugColor;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) BOOL debugLayout;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) TSCHChartLayoutItem * layoutItem;
-@property(readonly) TSCHChartModel * model;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsSeparateLabelsRenderPass;
-@property(readonly) float viewScale;
+@property (nonatomic, readonly) TSCHChartInfo *chartInfo;
+@property (nonatomic, readonly) <TSCHSupportsRendering> *chartRep;
+@property (nonatomic, readonly) struct CGColor { }*debugColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BOOL debugLayout;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSCHChartLayoutItem *layoutItem;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsSeparateLabelsRenderPass;
+@property (nonatomic, readonly) float viewScale;
 
 - (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
 - (BOOL)canEditTextForSelectionPath:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSMutableArray, NSTimer;
-
 @interface MKPlaceHeaderBackgroundView_Slideshow : MKPlaceHeaderBackgroundView {
     NSMutableArray *_images;
     unsigned int _iteration;

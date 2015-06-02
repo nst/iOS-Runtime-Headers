@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKMarkNotificationsReadOperationInfo : CKOperationInfo {
     NSArray *_notificationIDs;
 }
 
-@property(retain) NSArray * notificationIDs;
+@property (nonatomic, retain) NSArray *notificationIDs;
 
 + (BOOL)supportsSecureCoding;
 

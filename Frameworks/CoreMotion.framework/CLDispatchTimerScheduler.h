@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CLTimer, NSObject<OS_dispatch_source>;
-
 @interface CLDispatchTimerScheduler : NSObject <CLTimerScheduler> {
     NSObject<OS_dispatch_source> *_source;
     CLTimer *timer;
 }
 
-@property(retain) NSObject<OS_dispatch_source> * source;
-@property CLTimer * timer;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *source;
+@property (nonatomic) CLTimer *timer;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -6,7 +6,7 @@
     BOOL _isInFrame;
 }
 
-@property BOOL isInFrame;
+@property (nonatomic) BOOL isInFrame;
 
 - (id)_createBoundsAnimation;
 - (id)_createContentsAnimation;

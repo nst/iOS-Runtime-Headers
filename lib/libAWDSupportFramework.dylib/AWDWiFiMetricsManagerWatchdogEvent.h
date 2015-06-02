@@ -21,20 +21,20 @@
     unsigned int _version;
 }
 
-@property int available;
-@property unsigned int deviceIdentifierMap;
-@property unsigned int flags;
-@property BOOL hasAvailable;
-@property BOOL hasDeviceIdentifierMap;
-@property BOOL hasFlags;
-@property BOOL hasReason;
-@property BOOL hasSubreason;
-@property BOOL hasTimestamp;
-@property BOOL hasVersion;
-@property int reason;
-@property unsigned int subreason;
-@property unsigned long long timestamp;
-@property unsigned int version;
+@property (nonatomic) int available;
+@property (nonatomic) unsigned int deviceIdentifierMap;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic) BOOL hasAvailable;
+@property (nonatomic) BOOL hasDeviceIdentifierMap;
+@property (nonatomic) BOOL hasFlags;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic) BOOL hasSubreason;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) int reason;
+@property (nonatomic) unsigned int subreason;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int version;
 
 - (int)available;
 - (void)copyTo:(id)arg1;

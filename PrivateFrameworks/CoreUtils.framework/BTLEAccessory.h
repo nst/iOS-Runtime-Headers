@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@class CBPeripheral, NSString;
-
 @interface BTLEAccessory : NSObject {
     int _lastRSSI;
     double _lastSeen;
@@ -11,10 +9,10 @@
     CBPeripheral *_peripheral;
 }
 
-@property int RSSI;
-@property double lastSeen;
-@property(copy) NSString * name;
-@property(retain) CBPeripheral * peripheral;
+@property (nonatomic) int RSSI;
+@property (nonatomic) double lastSeen;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) CBPeripheral *peripheral;
 
 - (int)RSSI;
 - (void)dealloc;

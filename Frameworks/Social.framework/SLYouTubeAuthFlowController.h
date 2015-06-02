@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLYouTubeAuthFlowController : SLGoogleAuthFlowController {
-}
+@interface SLYouTubeAuthFlowController : SLGoogleAuthFlowController
 
 - (id)authURLForUsername:(id)arg1;
 

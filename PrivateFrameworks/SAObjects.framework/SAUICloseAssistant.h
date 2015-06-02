@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUICloseAssistant : SABaseClientBoundCommand {
-}
+@interface SAUICloseAssistant : SABaseClientBoundCommand
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)closeAssistant;
 + (id)closeAssistantWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSData, NSProgress, NSString, NSURL, NSUUID, SFUCryptoKey, TSPDocumentProperties, TSPDocumentRevision, TSPObject, TSPPackageWriter;
-
 @interface TSPDocumentSaveOperationState : TSPSaveOperationState {
     NSURL *_URL;
     BOOL _didEndWriteOperation;
@@ -25,24 +23,24 @@
     TSPPackageWriter *_supportPackageWriter;
 }
 
-@property(readonly) NSURL * URL;
-@property BOOL didEndWriteOperation;
-@property(retain) TSPObject * documentObject;
-@property(retain) TSPPackageWriter * documentPackageWriter;
-@property(copy) NSString * documentPasswordHint;
-@property(retain) TSPDocumentProperties * documentProperties;
-@property(retain) TSPDocumentRevision * documentRevision;
-@property(copy) NSUUID * documentUUID;
-@property(retain) SFUCryptoKey * encryptionKey;
-@property(copy) NSURL * originalSupportURL;
-@property(readonly) int packageType;
-@property(retain) NSData * passwordVerifier;
-@property(retain) NSProgress * progress;
-@property(copy) NSURL * relativeURLForExternalData;
-@property unsigned long long saveToken;
-@property BOOL shouldLeavePendingEndSave;
-@property(retain) TSPObject * supportObject;
-@property(retain) TSPPackageWriter * supportPackageWriter;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic) BOOL didEndWriteOperation;
+@property (nonatomic, retain) TSPObject *documentObject;
+@property (nonatomic, retain) TSPPackageWriter *documentPackageWriter;
+@property (nonatomic, copy) NSString *documentPasswordHint;
+@property (nonatomic, retain) TSPDocumentProperties *documentProperties;
+@property (nonatomic, retain) TSPDocumentRevision *documentRevision;
+@property (nonatomic, copy) NSUUID *documentUUID;
+@property (nonatomic, retain) SFUCryptoKey *encryptionKey;
+@property (nonatomic, copy) NSURL *originalSupportURL;
+@property (nonatomic, readonly) int packageType;
+@property (nonatomic, retain) NSData *passwordVerifier;
+@property (nonatomic, retain) NSProgress *progress;
+@property (nonatomic, copy) NSURL *relativeURLForExternalData;
+@property (nonatomic) unsigned long long saveToken;
+@property (nonatomic) BOOL shouldLeavePendingEndSave;
+@property (nonatomic, retain) TSPObject *supportObject;
+@property (nonatomic, retain) TSPPackageWriter *supportPackageWriter;
 
 - (void).cxx_destruct;
 - (id)URL;

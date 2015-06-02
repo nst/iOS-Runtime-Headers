@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDShadow;
-
 @interface TSDSpecSetShadow : TSDSpecShadow {
     TSDShadow *_shadow;
     BOOL _unset;

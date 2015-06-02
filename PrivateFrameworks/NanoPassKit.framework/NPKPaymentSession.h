@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class <NPKPaymentSessionDelegate>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface NPKPaymentSession : NSObject <NPKPaymentSessionClientProtocol> {
     BOOL _acknowledged;
     NSXPCConnection *_connection;
@@ -12,22 +10,22 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
-@property BOOL acknowledged;
-@property(retain) NSXPCConnection * connection;
-@property(retain) NSString * currentPassUniqueID;
-@property(copy,readonly) NSString * debugDescription;
-@property <NPKPaymentSessionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL acknowledged;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic, retain) NSString *currentPassUniqueID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NPKPaymentSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_connectionWithEndpoint:(id)arg1 rootQueue:(id)arg2;
 - (id)_delegate;
-- (id)_errorHandlerWithCompletion:(id)arg1;
+- (id /* block */)_errorHandlerWithCompletion:(id /* block */)arg1;
 - (void)_paymentSessionIsFinishedForReason:(unsigned int)arg1;
-- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (void)acknowledgeSession;
 - (BOOL)acknowledged;
 - (id)connection;

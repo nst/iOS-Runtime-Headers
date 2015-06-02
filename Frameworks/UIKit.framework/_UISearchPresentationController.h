@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable, NSString, UIPresentationController<_UISearchControllerPresenting>, UIView, _UISearchPresentationAssistant;
-
 @interface _UISearchPresentationController : UIPresentationController <_UISearchControllerPresenting> {
     _UISearchPresentationAssistant *_assistant;
     struct { 
@@ -26,17 +24,17 @@
     UIView *_placeholderView;
 }
 
-@property(readonly) UIPresentationController<_UISearchControllerPresenting> * adaptivePresentationController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
-@property(readonly) unsigned int hash;
-@property(readonly) float resultsControllerContentOffset;
-@property(retain,readonly) UIView * searchBarContainerView;
-@property(readonly) BOOL searchBarToBecomeTopAttached;
-@property(readonly) BOOL shouldAccountForStatusBar;
-@property(readonly) float statusBarAdjustment;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float resultsControllerContentOffset;
+@property (nonatomic, readonly, retain) UIView *searchBarContainerView;
+@property (nonatomic, readonly) BOOL searchBarToBecomeTopAttached;
+@property (nonatomic, readonly) BOOL shouldAccountForStatusBar;
+@property (nonatomic, readonly) float statusBarAdjustment;
+@property (readonly) Class superclass;
 
 + (BOOL)shouldExciseSearchBar:(id)arg1 duringPresentationWithPresenter:(id)arg2;
 

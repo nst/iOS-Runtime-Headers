@@ -2,19 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CKDFetchWebAuthTokenURLRequest : CKDURLRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tokenFetchedBlock;
-
+    id /* block */ _tokenFetchedBlock;
 }
 
-@property(copy) id tokenFetchedBlock;
+@property (nonatomic, copy) id /* block */ tokenFetchedBlock;
 
 - (void).cxx_destruct;
 - (int)operationType;
@@ -22,7 +14,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setTokenFetchedBlock:(id)arg1;
-- (id)tokenFetchedBlock;
+- (void)setTokenFetchedBlock:(id /* block */)arg1;
+- (id /* block */)tokenFetchedBlock;
 
 @end

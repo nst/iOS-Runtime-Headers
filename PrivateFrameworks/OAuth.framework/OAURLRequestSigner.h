@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OAuth.framework/OAuth
  */
 
-@class OACredential;
-
 @interface OAURLRequestSigner : NSObject {
     OACredential *_credential;
     int _signatureMethod;
 }
 
-@property int signatureMethod;
+@property (nonatomic) int signatureMethod;
 
 - (id)applyApplicationID:(id)arg1 toRequest:(id)arg2 containsMultiPartData:(BOOL)arg3;
 - (void)dealloc;

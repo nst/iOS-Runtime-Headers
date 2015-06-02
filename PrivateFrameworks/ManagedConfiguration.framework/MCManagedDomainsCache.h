@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MCManagedDomainsCache : NSObject {
     NSObject<OS_dispatch_queue> *_memberQueue;
     NSMutableArray *_memberQueueCache;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property(retain) NSMutableArray * memberQueueCache;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic, retain) NSMutableArray *memberQueueCache;
 
 + (id)sharedCache;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSPairingSessionDelegate>, NSString, RMSIDSClient;
-
 @interface RMSPairingSessionProxy : RMSSessionProxy <RMSPairingSession> {
     NSString *_advertisedAppName;
     NSString *_advertisedDeviceModel;
@@ -14,15 +12,15 @@
     NSString *_passcode;
 }
 
-@property(retain) NSString * advertisedAppName;
-@property(retain) NSString * advertisedDeviceModel;
-@property(retain) NSString * advertisedDeviceName;
-@property(copy,readonly) NSString * debugDescription;
-@property <RMSPairingSessionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * passcode;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *advertisedAppName;
+@property (nonatomic, retain) NSString *advertisedDeviceModel;
+@property (nonatomic, retain) NSString *advertisedDeviceName;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RMSPairingSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *passcode;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleDidPairWithServiceNotification:(id)arg1;

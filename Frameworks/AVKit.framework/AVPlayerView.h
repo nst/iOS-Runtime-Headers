@@ -6,7 +6,7 @@
     int _viewWindowState;
 }
 
-@property(readonly) int viewWindowState;
+@property (nonatomic, readonly) int viewWindowState;
 
 - (void)_updateViewWindowState;
 - (void)didMoveToWindow;

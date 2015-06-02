@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPropertyDescription, NSSQLEntity, NSString;
-
 @interface NSSQLProperty : NSStoreMapping {
     NSSQLEntity *_entity;
     NSString *_name;

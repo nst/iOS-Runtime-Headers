@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPDataDetectors : NSObject {
-}
+@interface TSWPDataDetectors : NSObject
 
 + (id)calculateScanRanges:(id)arg1 changedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (void)registerDataDetectorClass:(Class)arg1;

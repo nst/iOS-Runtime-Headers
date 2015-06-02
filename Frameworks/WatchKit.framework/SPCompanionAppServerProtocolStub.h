@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
+@interface SPCompanionAppServerProtocolStub : NSObject <SPCompanionAppServerProtocol>
 
-@interface SPCompanionAppServerProtocolStub : NSObject <SPCompanionAppServerProtocol> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-
-- (void)fetchNotificationForNotificationID:(id)arg1 completion:(id)arg2;
-- (void)launchCompanionAppForGizmoAppWithIdentifier:(id)arg1 withUserInfoData:(id)arg2 reply:(id)arg3;
+- (void)fetchNotificationForNotificationID:(id)arg1 completion:(id /* block */)arg2;
+- (void)launchCompanionAppForGizmoAppWithIdentifier:(id)arg1 withUserInfoData:(id)arg2 reply:(id /* block */)arg3;
 - (void)remoteInterfaceDidDeactivate:(id)arg1;
 - (void)sendCacheRequest:(id)arg1 identifier:(id)arg2;
 - (void)sendData:(id)arg1 identifier:(id)arg2 clientIdentifiers:(id)arg3;

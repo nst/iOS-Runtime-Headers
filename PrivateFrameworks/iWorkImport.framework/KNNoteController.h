@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNNoteController : NSObject {
-}
+@interface KNNoteController : NSObject
 
 + (BOOL)isNoteAtRootSearchTargetIndex:(unsigned int)arg1;
 + (BOOL)isNoteSearchTarget:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData, NSDictionary, NSError, NSHTTPURLResponse, NSNumber, NSString;
-
 @interface AAResponse : NSObject {
     NSData *_data;
     NSError *_error;
@@ -13,12 +11,12 @@
     int _statusCode;
 }
 
-@property(readonly) NSData * data;
-@property(retain) NSError * error;
-@property(readonly) NSNumber * maxAge;
-@property(readonly) NSString * protocolVersion;
-@property(readonly) NSDictionary * responseDictionary;
-@property(readonly) int statusCode;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) NSNumber *maxAge;
+@property (nonatomic, readonly) NSString *protocolVersion;
+@property (nonatomic, readonly) NSDictionary *responseDictionary;
+@property (nonatomic, readonly) int statusCode;
 
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedString:(id)arg1;

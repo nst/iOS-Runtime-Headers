@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage;
-
 @interface SUScriptButtonNativeObject : SUScriptNativeObject {
     BOOL _loading;
     NSString *_styleString;
@@ -11,18 +9,18 @@
     NSString *_systemItemString;
 }
 
-@property(getter=isBackButton,readonly) BOOL backButton;
-@property(readonly) int buttonType;
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) UIImage * image;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
-@property(getter=isLoading) BOOL loading;
-@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
-@property(readonly) NSString * styleString;
-@property(retain) NSString * subtitle;
-@property(readonly) NSString * systemItemString;
-@property int tag;
-@property(retain) NSString * title;
+@property (getter=isBackButton, nonatomic, readonly) BOOL backButton;
+@property (nonatomic, readonly) int buttonType;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property (getter=isLoading, nonatomic) BOOL loading;
+@property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
+@property (nonatomic, readonly) NSString *styleString;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, readonly) NSString *systemItemString;
+@property (nonatomic) int tag;
+@property (nonatomic, retain) NSString *title;
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 

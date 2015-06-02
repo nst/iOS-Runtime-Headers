@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSBundle, NSString, NSURL;
-
 @interface TSAApplicationTemplateInfo : TSATemplateInfo <NSCopying> {
     NSString *_documentVariant;
     NSString *_name;
     NSString *_previewVariant;
 }
 
-@property(readonly) NSURL * bundledDocumentContainerURL;
-@property(readonly) NSURL * documentContainerURL;
-@property(readonly) NSString * documentVariant;
-@property(readonly) int downloadState;
-@property(readonly) NSURL * downloadedDocumentContainerURL;
-@property(readonly) NSString * name;
-@property(readonly) NSBundle * previewBundle;
-@property(readonly) NSString * previewVariant;
-@property(readonly) NSURL * templateZipURL;
+@property (nonatomic, readonly) NSURL *bundledDocumentContainerURL;
+@property (nonatomic, readonly) NSURL *documentContainerURL;
+@property (nonatomic, readonly) NSString *documentVariant;
+@property (nonatomic, readonly) int downloadState;
+@property (nonatomic, readonly) NSURL *downloadedDocumentContainerURL;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSBundle *previewBundle;
+@property (nonatomic, readonly) NSString *previewVariant;
+@property (nonatomic, readonly) NSURL *templateZipURL;
 
 + (id)bundledDocumentContainerDirectoryURL;
 + (id)documentURLWithDocumentContainerURL:(id)arg1 variant:(id)arg2;

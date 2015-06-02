@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDEntity : PBCodable <NSCopying> {
     NSMutableArray *_altFaxs;
     NSMutableArray *_altTelephones;
@@ -24,24 +22,24 @@
     NSString *_url;
 }
 
-@property(retain) NSMutableArray * altFaxs;
-@property(retain) NSMutableArray * altTelephones;
-@property(retain) NSMutableArray * altUrls;
-@property(retain) NSString * fax;
-@property(readonly) BOOL hasFax;
-@property BOOL hasIsDisputed;
-@property BOOL hasIsPermanentlyClosed;
-@property(readonly) BOOL hasTelephone;
-@property BOOL hasType;
-@property(readonly) BOOL hasUrl;
-@property BOOL isDisputed;
-@property BOOL isPermanentlyClosed;
-@property(retain) NSMutableArray * localizedCategorys;
-@property(retain) NSMutableArray * names;
-@property(retain) NSMutableArray * spokenNames;
-@property(retain) NSString * telephone;
-@property int type;
-@property(retain) NSString * url;
+@property (nonatomic, retain) NSMutableArray *altFaxs;
+@property (nonatomic, retain) NSMutableArray *altTelephones;
+@property (nonatomic, retain) NSMutableArray *altUrls;
+@property (nonatomic, retain) NSString *fax;
+@property (nonatomic, readonly) BOOL hasFax;
+@property (nonatomic) BOOL hasIsDisputed;
+@property (nonatomic) BOOL hasIsPermanentlyClosed;
+@property (nonatomic, readonly) BOOL hasTelephone;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic) BOOL isDisputed;
+@property (nonatomic) BOOL isPermanentlyClosed;
+@property (nonatomic, retain) NSMutableArray *localizedCategorys;
+@property (nonatomic, retain) NSMutableArray *names;
+@property (nonatomic, retain) NSMutableArray *spokenNames;
+@property (nonatomic, retain) NSString *telephone;
+@property (nonatomic) int type;
+@property (nonatomic, retain) NSString *url;
 
 + (id)entityForPlaceData:(id)arg1;
 

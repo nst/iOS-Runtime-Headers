@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIDocumentPickerServiceViewController>, NSString, UIViewController<_UIDocumentPickerContainedViewController>, _UIDocumentPickerContainerModel, _UIDocumentPickerViewServiceViewController, _UINavigationControllerPalette;
-
 @interface _UIDocumentPickerContainerViewController : UIViewController <_UIDocumentPickerServiceInvalidating> {
     UIViewController<_UIDocumentPickerContainedViewController> *_childViewController;
     _UIDocumentPickerContainerModel *_model;
@@ -12,15 +10,15 @@
     _UIDocumentPickerViewServiceViewController *_weak_serviceViewController;
 }
 
-@property(retain) UIViewController<_UIDocumentPickerContainedViewController> * childViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) _UIDocumentPickerContainerModel * model;
-@property(getter=isRootContainer) BOOL rootContainer;
-@property(retain) _UINavigationControllerPalette * searchPalette;
-@property <_UIDocumentPickerServiceViewController> * serviceViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIViewController<_UIDocumentPickerContainedViewController> *childViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UIDocumentPickerContainerModel *model;
+@property (getter=isRootContainer, nonatomic) BOOL rootContainer;
+@property (nonatomic, retain) _UINavigationControllerPalette *searchPalette;
+@property (nonatomic) <_UIDocumentPickerServiceViewController> *serviceViewController;
+@property (readonly) Class superclass;
 
 - (id)_mangledFilenameForURL:(id)arg1;
 - (void)_pickCurrentLocationForUpload:(id)arg1;

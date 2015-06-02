@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptInterfaceDelegate>, NSArray, NSMutableDictionary, NSNumber, NSString, SSAuthenticationContext, SUClientInterface, SUScriptAccount, SUScriptAccountManager, SUScriptAppleAccountStore, SUScriptApplication, SUScriptDevice, SUScriptFairPlayContext, SUScriptKeyValueStore, SUScriptMediaLibrary, SUScriptNavigationBar, SUScriptNotificationObserver, SUScriptOperationDelegate, SUScriptPassbookLibrary, SUScriptPreviewOverlay, SUScriptProtocol, SUScriptPurchaseManager, SUScriptSectionsController, SUScriptViewController, SUScriptWindow, SUScriptWindowContext, WebFrame;
-
 @interface SUScriptInterface : SUScriptObject {
     SUScriptAccountManager *_accountManager;
     SUScriptKeyValueStore *_applicationLocalStorage;
@@ -22,46 +20,46 @@
     id _threadSafeDelegate;
 }
 
-@property(readonly) SUScriptFairPlayContext * accountCreationSecureContext;
-@property(readonly) NSArray * accounts;
-@property(readonly) NSString * actionTypeDismissSheet;
-@property(readonly) NSString * actionTypeDismissWindows;
-@property(readonly) NSString * actionTypeReturnToLibrary;
-@property(readonly) SUScriptAppleAccountStore * appleAccountStore;
-@property(readonly) SUScriptApplication * application;
-@property(readonly) id applicationAccessibilityEnabled;
-@property(readonly) SUScriptKeyValueStore * applicationLocalStorage;
-@property(readonly) NSString * askToBuyPrompt;
-@property(copy) SSAuthenticationContext * authenticationContext;
-@property(readonly) NSString * clientIdentifier;
-@property(retain) SUClientInterface * clientInterface;
-@property(copy) NSString * cookie;
-@property <SUScriptInterfaceDelegate> * delegate;
-@property(readonly) SUScriptDevice * device;
-@property(readonly) SUScriptKeyValueStore * deviceLocalStorage;
-@property(readonly) id globalRootObject;
-@property(readonly) NSArray * installedSoftwareApplications;
-@property(readonly) id loggingEnabled;
-@property(readonly) SUScriptMediaLibrary * mediaLibrary;
-@property(readonly) SUScriptNavigationBar * navigationBar;
-@property(readonly) NSNumber * orientation;
-@property(readonly) SUScriptPassbookLibrary * passbookLibrary;
-@property(readonly) SUScriptPreviewOverlay * previewOverlay;
-@property(retain) SUScriptAccount * primaryAccount;
-@property(retain) SUScriptAccount * primaryLockerAccount;
-@property(readonly) SUScriptProtocol * protocol;
-@property(readonly) SUScriptPurchaseManager * purchaseManager;
-@property(readonly) NSString * referringUserAgent;
-@property(readonly) id screenReaderRunning;
-@property(retain) SUScriptWindowContext * scriptWindowContext;
-@property(readonly) SUScriptSectionsController * sectionsController;
-@property(readonly) int storeSheetType;
-@property(readonly) int storeSheetTypeAskToBuy;
-@property(readonly) int storeSheetTypeDefault;
-@property(readonly) <SUScriptInterfaceDelegate> * threadSafeDelegate;
-@property(readonly) SUScriptViewController * viewController;
-@property(retain) WebFrame * webFrame;
-@property(readonly) SUScriptWindow * window;
+@property (readonly) SUScriptFairPlayContext *accountCreationSecureContext;
+@property (readonly) NSArray *accounts;
+@property (readonly) NSString *actionTypeDismissSheet;
+@property (readonly) NSString *actionTypeDismissWindows;
+@property (readonly) NSString *actionTypeReturnToLibrary;
+@property (readonly) SUScriptAppleAccountStore *appleAccountStore;
+@property (readonly) SUScriptApplication *application;
+@property (readonly) id applicationAccessibilityEnabled;
+@property (readonly) SUScriptKeyValueStore *applicationLocalStorage;
+@property (readonly) NSString *askToBuyPrompt;
+@property (copy) SSAuthenticationContext *authenticationContext;
+@property (readonly) NSString *clientIdentifier;
+@property (retain) SUClientInterface *clientInterface;
+@property (copy) NSString *cookie;
+@property <SUScriptInterfaceDelegate> *delegate;
+@property (readonly) SUScriptDevice *device;
+@property (readonly) SUScriptKeyValueStore *deviceLocalStorage;
+@property (readonly) id globalRootObject;
+@property (readonly) NSArray *installedSoftwareApplications;
+@property (readonly) id loggingEnabled;
+@property (readonly) SUScriptMediaLibrary *mediaLibrary;
+@property (readonly) SUScriptNavigationBar *navigationBar;
+@property (readonly) NSNumber *orientation;
+@property (readonly) SUScriptPassbookLibrary *passbookLibrary;
+@property (readonly) SUScriptPreviewOverlay *previewOverlay;
+@property (retain) SUScriptAccount *primaryAccount;
+@property (retain) SUScriptAccount *primaryLockerAccount;
+@property (readonly) SUScriptProtocol *protocol;
+@property (readonly) SUScriptPurchaseManager *purchaseManager;
+@property (readonly) NSString *referringUserAgent;
+@property (readonly) id screenReaderRunning;
+@property (retain) SUScriptWindowContext *scriptWindowContext;
+@property (readonly) SUScriptSectionsController *sectionsController;
+@property (readonly) int storeSheetType;
+@property (readonly) int storeSheetTypeAskToBuy;
+@property (readonly) int storeSheetTypeDefault;
+@property (readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
+@property (readonly) SUScriptViewController *viewController;
+@property (retain) WebFrame *webFrame;
+@property (readonly) SUScriptWindow *window;
 
 + (void)initialize;
 + (int)purchaseAnimationStyleFromString:(id)arg1;
@@ -72,7 +70,7 @@
 - (void)_accessibilityPostLayoutChange;
 - (id)_className;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
-- (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id)arg2;
+- (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id /* block */)arg2;
 - (void)_globalEventNotification:(id)arg1;
 - (void)_scriptUserInfoDidChangeNotification:(id)arg1;
 - (void)accessibilityPostLayoutChange;

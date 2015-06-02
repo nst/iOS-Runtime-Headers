@@ -2,28 +2,20 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _HKHeartRateQuery : HKQuery {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateHandler;
-
+    id /* block */ _updateHandler;
 }
 
-@property(copy) id updateHandler;
+@property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
-- (id)_queue_errorHandler;
+- (id /* block */)_queue_errorHandler;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (void)deliverHeartRate:(id)arg1 forQuery:(id)arg2;
-- (id)initWithUpdateHandler:(id)arg1;
-- (void)setUpdateHandler:(id)arg1;
-- (id)updateHandler;
+- (id)initWithUpdateHandler:(id /* block */)arg1;
+- (void)setUpdateHandler:(id /* block */)arg1;
+- (id /* block */)updateHandler;
 
 @end

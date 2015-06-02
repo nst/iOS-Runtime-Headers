@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <CLLocationManagerDelegate>, NSString;
-
 @interface SLSafeLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
     <CLLocationManagerDelegate> *_delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CLLocationManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property <CLLocationManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;

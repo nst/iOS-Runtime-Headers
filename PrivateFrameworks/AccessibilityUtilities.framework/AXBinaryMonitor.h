@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSMutableDictionary;
-
 @interface AXBinaryMonitor : NSObject {
     NSMutableDictionary *_bundleHandlerMap;
     NSMutableDictionary *_dylibHandlerMap;
     NSMutableDictionary *_frameworkHandlerMap;
 }
 
-@property(retain) NSMutableDictionary * bundleHandlerMap;
-@property(retain) NSMutableDictionary * dylibHandlerMap;
-@property(retain) NSMutableDictionary * frameworkHandlerMap;
+@property (nonatomic, retain) NSMutableDictionary *bundleHandlerMap;
+@property (nonatomic, retain) NSMutableDictionary *dylibHandlerMap;
+@property (nonatomic, retain) NSMutableDictionary *frameworkHandlerMap;
 
 + (void)initialize;
 + (id)sharedInstance;
 
-- (void)_addHandler:(id)arg1 withName:(id)arg2 toMap:(id*)arg3;
+- (void)_addHandler:(id /* block */)arg1 withName:(id)arg2 toMap:(id*)arg3;
 - (id)_bundleNameForImage:(id)arg1;
 - (id)_dylibNameForImage:(id)arg1;
 - (id)_frameworkNameForImage:(id)arg1;
@@ -25,10 +23,10 @@
 - (BOOL)_loadImageIsBundle:(id)arg1;
 - (BOOL)_loadImageIsDylib:(id)arg1;
 - (BOOL)_loadImageIsFramework:(id)arg1;
-- (void)addHandler:(id)arg1 forBundleID:(id)arg2;
-- (void)addHandler:(id)arg1 forBundleName:(id)arg2;
-- (void)addHandler:(id)arg1 forDylib:(id)arg2;
-- (void)addHandler:(id)arg1 forFramework:(id)arg2;
+- (void)addHandler:(id /* block */)arg1 forBundleID:(id)arg2;
+- (void)addHandler:(id /* block */)arg1 forBundleName:(id)arg2;
+- (void)addHandler:(id /* block */)arg1 forDylib:(id)arg2;
+- (void)addHandler:(id /* block */)arg1 forFramework:(id)arg2;
 - (id)bundleHandlerMap;
 - (void)dealloc;
 - (id)dylibHandlerMap;

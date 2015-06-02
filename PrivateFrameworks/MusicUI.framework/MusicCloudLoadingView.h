@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSObject<OS_dispatch_source>, UILabel, UIProgressView;
-
 @interface MusicCloudLoadingView : UIView {
     UIProgressView *_progressView;
     UILabel *_titleLabel;

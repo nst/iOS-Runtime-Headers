@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIBarButtonItem, UIView;
-
 @interface UIStoryboardPopoverSegueTemplate : UIStoryboardSegueTemplate {
     UIBarButtonItem *_anchorBarButtonItem;
     UIView *_anchorView;
@@ -11,10 +9,10 @@
     unsigned int _permittedArrowDirections;
 }
 
-@property(retain) UIBarButtonItem * anchorBarButtonItem;
-@property(retain) UIView * anchorView;
-@property(copy) NSArray * passthroughViews;
-@property unsigned int permittedArrowDirections;
+@property (nonatomic, retain) UIBarButtonItem *anchorBarButtonItem;
+@property (nonatomic, retain) UIView *anchorView;
+@property (nonatomic, copy) NSArray *passthroughViews;
+@property (nonatomic) unsigned int permittedArrowDirections;
 
 - (id)anchorBarButtonItem;
 - (id)anchorView;

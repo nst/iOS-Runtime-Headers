@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSMutableSet;
-
 @interface UICollectionViewLayoutInvalidationContext : NSObject {
     struct CGPoint { 
         float x; 
@@ -23,14 +21,14 @@
     NSArray *_updateItems;
 }
 
-@property struct CGPoint { float x1; float x2; } contentOffsetAdjustment;
-@property struct CGSize { float x1; float x2; } contentSizeAdjustment;
-@property BOOL invalidateDataSourceCounts;
-@property BOOL invalidateEverything;
-@property(readonly) NSDictionary * invalidatedDecorationIndexPaths;
-@property(readonly) NSArray * invalidatedItemIndexPaths;
-@property(readonly) NSDictionary * invalidatedSupplementaryIndexPaths;
-@property(getter=_updateItems,setter=_setUpdateItems:) NSArray * updateItems;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffsetAdjustment;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSizeAdjustment;
+@property (nonatomic) BOOL invalidateDataSourceCounts;
+@property (nonatomic) BOOL invalidateEverything;
+@property (nonatomic, readonly) NSDictionary *invalidatedDecorationIndexPaths;
+@property (nonatomic, readonly) NSArray *invalidatedItemIndexPaths;
+@property (nonatomic, readonly) NSDictionary *invalidatedSupplementaryIndexPaths;
+@property (getter=_updateItems, setter=_setUpdateItems:, nonatomic) NSArray *updateItems;
 
 - (void)_invalidateSupplementaryElementsOfKind:(id)arg1 atIndexPaths:(id)arg2;
 - (id)_invalidatedSupplementaryViews;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet;
-
 @interface CardDAVFolderInfoTaskGroup : CoreDAVContainerInfoTaskGroup {
     NSSet *_directoryGatewayURLs;
 }

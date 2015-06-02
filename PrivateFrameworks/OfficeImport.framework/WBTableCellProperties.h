@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBTableCellProperties : NSObject {
-}
+@interface WBTableCellProperties : NSObject
 
 @end

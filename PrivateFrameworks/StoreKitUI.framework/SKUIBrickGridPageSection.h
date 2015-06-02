@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSString, SKUIGridComponent, SKUIMissingItemLoader, UIImage;
-
 @interface SKUIBrickGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
     NSMapTable *_artworkRequests;
     float _baseHeight;
@@ -16,16 +14,16 @@
     UIImage *_placeholderImage;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIGridComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIGridComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsForColumnIndex:(int)arg1 rowWidth:(float)arg2;
 - (id)_editorialLayoutForBrick:(id)arg1;
-- (void)_enumerateVisibleBricksUsingBlock:(id)arg1;
+- (void)_enumerateVisibleBricksUsingBlock:(id /* block */)arg1;
 - (void)_loadArtworkForBrick:(id)arg1 artworkLoader:(id)arg2 reason:(int)arg3;
 - (void)_loadMissingItemsFromIndex:(int)arg1 withReason:(int)arg2;
 - (id)_missingItemLoader;

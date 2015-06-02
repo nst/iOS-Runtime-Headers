@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController, CNContact, NSObject<ABContactAddLinkedCardActionDelegate>, NSString;
-
 @interface ABContactAddLinkedCardAction : ABContactAction <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate> {
     CNContact *_chosenContact;
     NSObject<ABContactAddLinkedCardActionDelegate> *_linkedCardActionDelegate;
@@ -11,14 +9,14 @@
     CNContact *_selectedContact;
 }
 
-@property(retain) CNContact * chosenContact;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSObject<ABContactAddLinkedCardActionDelegate> * linkedCardActionDelegate;
-@property(retain) ABPeoplePickerNavigationController * peoplePicker;
-@property(retain) CNContact * selectedContact;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CNContact *chosenContact;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) NSObject<ABContactAddLinkedCardActionDelegate> *linkedCardActionDelegate;
+@property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePicker;
+@property (nonatomic, retain) CNContact *selectedContact;
+@property (readonly) Class superclass;
 
 - (id)chosenContact;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSArray, NSSet;
-
 @interface GKBubbleLayout : NSObject {
     NSArray *_bubbleLocations;
     NSArray *_bubbleViews;
@@ -15,11 +13,11 @@
     NSSet *_visibleBubbleSet;
 }
 
-@property(retain) NSArray * bubbleLocations;
-@property(retain) NSArray * bubbleViews;
-@property struct CGPoint { float x1; float x2; } center;
-@property float radius;
-@property(retain) NSSet * visibleBubbleSet;
+@property (nonatomic, retain) NSArray *bubbleLocations;
+@property (nonatomic, retain) NSArray *bubbleViews;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic) float radius;
+@property (nonatomic, retain) NSSet *visibleBubbleSet;
 
 - (id)bubbleLocations;
 - (id)bubbleViews;

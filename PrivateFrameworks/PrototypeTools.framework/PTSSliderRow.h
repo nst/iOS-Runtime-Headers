@@ -7,8 +7,8 @@
     float _minValue;
 }
 
-@property float maxValue;
-@property float minValue;
+@property (nonatomic) float maxValue;
+@property (nonatomic) float minValue;
 
 - (id)init;
 - (float)maxValue;

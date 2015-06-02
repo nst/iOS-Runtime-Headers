@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKObjectType, NSDictionary, NSPredicate, NSString;
-
 @interface HKDataUnit : NSObject <NSCopying> {
     NSPredicate *_chartingPredicate;
     HKObjectType *_dataType;
@@ -14,11 +12,11 @@
     NSDictionary *_unitNameOverrides;
 }
 
-@property(readonly) NSPredicate * chartingPredicate;
-@property(readonly) HKObjectType * dataType;
-@property int keyboardType;
-@property(readonly) NSString * labelDisplayName;
-@property(readonly) float scalarValue;
+@property (nonatomic, readonly) NSPredicate *chartingPredicate;
+@property (nonatomic, readonly) HKObjectType *dataType;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, readonly) NSString *labelDisplayName;
+@property (nonatomic, readonly) float scalarValue;
 
 - (void).cxx_destruct;
 - (void)_applyChartingProperties:(id)arg1;

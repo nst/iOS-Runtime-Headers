@@ -5,11 +5,11 @@
 @interface NSConcreteMutableData : NSMutableData {
     void *_bytes;
     unsigned int _capacity;
-    unsigned int _hasVM : 1;
+    unsigned int _hasVM;
     unsigned int _length;
-    unsigned int _needToZero : 1;
-    unsigned int _reserved : 1;
-    unsigned int _retainCount : 29;
+    unsigned int _needToZero;
+    unsigned int _reserved;
+    unsigned int _retainCount;
 }
 
 - (void)_freeBytes;
@@ -20,7 +20,7 @@
 - (void)finalize;
 - (void)increaseLengthBy:(unsigned int)arg1;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id)arg4;
+- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id /* block */)arg4;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithLength:(unsigned int)arg1;
 - (unsigned int)length;

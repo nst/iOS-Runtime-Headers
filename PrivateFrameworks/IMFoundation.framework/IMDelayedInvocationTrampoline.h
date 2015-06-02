@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray;
-
 @interface IMDelayedInvocationTrampoline : IMInvocationTrampoline {
     double _delay;
     NSArray *_modes;

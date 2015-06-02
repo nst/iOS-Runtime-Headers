@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
-
 @interface EKEventDetailRecurrenceCell : EKEventDetailCell {
     float _lastLayoutWidth;
     UILabel *_recurrenceLabel;

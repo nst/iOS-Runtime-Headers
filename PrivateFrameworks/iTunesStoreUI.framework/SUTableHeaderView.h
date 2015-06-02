@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor, UIFont, UILabel;
-
 @interface SUTableHeaderView : UIView {
     UIColor *_bottomBorderColor;
     struct UIEdgeInsets { 
@@ -18,16 +16,16 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIColor * bottomBorderColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property int index;
-@property(retain) UIColor * shadowColor;
-@property int style;
-@property(retain) NSString * subtitle;
-@property(retain) UIFont * subtitleFont;
-@property(retain) UIColor * textColor;
-@property(retain) NSString * title;
-@property(retain) UIFont * titleFont;
+@property (nonatomic, retain) UIColor *bottomBorderColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) int index;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) int style;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) UIFont *subtitleFont;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) UIFont *titleFont;
 
 - (id)bottomBorderColor;
 - (void)dealloc;

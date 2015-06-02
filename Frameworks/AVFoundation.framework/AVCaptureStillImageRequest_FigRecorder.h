@@ -2,18 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AVCaptureStillImageRequest_FigRecorder : NSObject <NSCopying> {
     int _HDRMode;
     unsigned long _imageDataFormatType;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _iosurfaceCompletionBlock;
-
+    id /* block */ _iosurfaceCompletionBlock;
     float _jpegQuality;
     BOOL _jpegQualitySpecified;
     BOOL _noiseReductionEnabled;
@@ -21,11 +13,7 @@
         float width; 
         float height; 
     } _previewImageSize;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sbufCompletionBlock;
-
+    id /* block */ _sbufCompletionBlock;
     unsigned long _shutterSoundID;
     BOOL _stillImageMirrored;
     int _stillImageOrientation;
@@ -34,14 +22,14 @@
 
 @property int HDRMode;
 @property unsigned long imageDataFormatType;
-@property(copy) id iosurfaceCompletionBlock;
+@property (copy) id /* block */ iosurfaceCompletionBlock;
 @property float jpegQuality;
 @property BOOL jpegQualitySpecified;
 @property BOOL noiseReductionEnabled;
 @property struct CGSize { float x1; float x2; } previewImageSize;
-@property(copy) id sbufCompletionBlock;
+@property (copy) id /* block */ sbufCompletionBlock;
 @property unsigned long shutterSoundID;
-@property(getter=isStillImageMirrored) BOOL stillImageMirrored;
+@property (getter=isStillImageMirrored) BOOL stillImageMirrored;
 @property int stillImageOrientation;
 @property BOOL suspendsVideoProcessing;
 
@@ -51,21 +39,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned long)imageDataFormatType;
-- (id)iosurfaceCompletionBlock;
+- (id /* block */)iosurfaceCompletionBlock;
 - (BOOL)isStillImageMirrored;
 - (float)jpegQuality;
 - (BOOL)jpegQualitySpecified;
 - (BOOL)noiseReductionEnabled;
 - (struct CGSize { float x1; float x2; })previewImageSize;
-- (id)sbufCompletionBlock;
+- (id /* block */)sbufCompletionBlock;
 - (void)setHDRMode:(int)arg1;
 - (void)setImageDataFormatType:(unsigned long)arg1;
-- (void)setIosurfaceCompletionBlock:(id)arg1;
+- (void)setIosurfaceCompletionBlock:(id /* block */)arg1;
 - (void)setJpegQuality:(float)arg1;
 - (void)setJpegQualitySpecified:(BOOL)arg1;
 - (void)setNoiseReductionEnabled:(BOOL)arg1;
 - (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSbufCompletionBlock:(id)arg1;
+- (void)setSbufCompletionBlock:(id /* block */)arg1;
 - (void)setShutterSoundID:(unsigned long)arg1;
 - (void)setStillImageMirrored:(BOOL)arg1;
 - (void)setStillImageOrientation:(int)arg1;

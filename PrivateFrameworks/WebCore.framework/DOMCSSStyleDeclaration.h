@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRule, NSString;
+@interface DOMCSSStyleDeclaration : DOMObject
 
-@interface DOMCSSStyleDeclaration : DOMObject {
-}
+@property (copy) NSString *cssText;
+@property (readonly) unsigned int length;
+@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_margin;
+@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_padding;
+@property (readonly) DOMCSSRule *parentRule;
 
-@property(copy) NSString * cssText;
-@property(readonly) unsigned int length;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_margin;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_padding;
-@property(readonly) DOMCSSRule * parentRule;
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)_fontSizeDelta;
 - (void)_setFontSizeDelta:(id)arg1;
@@ -96,8 +95,6 @@
 - (id)marks;
 - (id)maxHeight;
 - (id)maxWidth;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_margin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_padding;
 - (id)minHeight;
 - (id)minWidth;
 - (id)orphans;
@@ -276,5 +273,10 @@
 - (id)width;
 - (id)wordSpacing;
 - (id)zIndex;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_margin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_padding;
 
 @end

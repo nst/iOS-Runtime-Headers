@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBSectionIcon, NSMutableArray, NSString;
-
 @interface BLTPBSectionInfo : PBCodable <NSCopying> {
     unsigned int _alertType;
     BOOL _allowsNotifications;
@@ -48,51 +46,51 @@
     unsigned int _version;
 }
 
-@property unsigned int alertType;
-@property BOOL allowsNotifications;
-@property(retain) NSString * displayName;
-@property BOOL displaysCriticalBulletins;
-@property(retain) NSString * factorySectionID;
-@property BOOL hasAlertType;
-@property BOOL hasAllowsNotifications;
-@property(readonly) BOOL hasDisplayName;
-@property BOOL hasDisplaysCriticalBulletins;
-@property(readonly) BOOL hasFactorySectionID;
-@property(readonly) BOOL hasIcon;
-@property BOOL hasIconsStripped;
-@property BOOL hasNotificationCenterLimit;
-@property BOOL hasPushSettings;
-@property BOOL hasSectionCategory;
-@property(readonly) BOOL hasSectionID;
-@property BOOL hasSectionType;
-@property BOOL hasShowsInLockScreen;
-@property BOOL hasShowsInNotificationCenter;
-@property BOOL hasShowsMessagePreview;
-@property BOOL hasShowsOnExternalDevices;
-@property(readonly) BOOL hasSubsectionID;
-@property BOOL hasSubsectionPriority;
-@property BOOL hasSuppressFromSettings;
-@property BOOL hasSuppressedSettings;
-@property(readonly) BOOL hasUniversalSectionID;
-@property BOOL hasVersion;
-@property(retain) BLTPBSectionIcon * icon;
-@property BOOL iconsStripped;
-@property unsigned int notificationCenterLimit;
-@property unsigned int pushSettings;
-@property int sectionCategory;
-@property(retain) NSString * sectionID;
-@property int sectionType;
-@property BOOL showsInLockScreen;
-@property BOOL showsInNotificationCenter;
-@property BOOL showsMessagePreview;
-@property BOOL showsOnExternalDevices;
-@property(retain) NSString * subsectionID;
-@property int subsectionPriority;
-@property(retain) NSMutableArray * subsections;
-@property BOOL suppressFromSettings;
-@property unsigned int suppressedSettings;
-@property(retain) NSString * universalSectionID;
-@property unsigned int version;
+@property (nonatomic) unsigned int alertType;
+@property (nonatomic) BOOL allowsNotifications;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) BOOL displaysCriticalBulletins;
+@property (nonatomic, retain) NSString *factorySectionID;
+@property (nonatomic) BOOL hasAlertType;
+@property (nonatomic) BOOL hasAllowsNotifications;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic) BOOL hasDisplaysCriticalBulletins;
+@property (nonatomic, readonly) BOOL hasFactorySectionID;
+@property (nonatomic, readonly) BOOL hasIcon;
+@property (nonatomic) BOOL hasIconsStripped;
+@property (nonatomic) BOOL hasNotificationCenterLimit;
+@property (nonatomic) BOOL hasPushSettings;
+@property (nonatomic) BOOL hasSectionCategory;
+@property (nonatomic, readonly) BOOL hasSectionID;
+@property (nonatomic) BOOL hasSectionType;
+@property (nonatomic) BOOL hasShowsInLockScreen;
+@property (nonatomic) BOOL hasShowsInNotificationCenter;
+@property (nonatomic) BOOL hasShowsMessagePreview;
+@property (nonatomic) BOOL hasShowsOnExternalDevices;
+@property (nonatomic, readonly) BOOL hasSubsectionID;
+@property (nonatomic) BOOL hasSubsectionPriority;
+@property (nonatomic) BOOL hasSuppressFromSettings;
+@property (nonatomic) BOOL hasSuppressedSettings;
+@property (nonatomic, readonly) BOOL hasUniversalSectionID;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic, retain) BLTPBSectionIcon *icon;
+@property (nonatomic) BOOL iconsStripped;
+@property (nonatomic) unsigned int notificationCenterLimit;
+@property (nonatomic) unsigned int pushSettings;
+@property (nonatomic) int sectionCategory;
+@property (nonatomic, retain) NSString *sectionID;
+@property (nonatomic) int sectionType;
+@property (nonatomic) BOOL showsInLockScreen;
+@property (nonatomic) BOOL showsInNotificationCenter;
+@property (nonatomic) BOOL showsMessagePreview;
+@property (nonatomic) BOOL showsOnExternalDevices;
+@property (nonatomic, retain) NSString *subsectionID;
+@property (nonatomic) int subsectionPriority;
+@property (nonatomic, retain) NSMutableArray *subsections;
+@property (nonatomic) BOOL suppressFromSettings;
+@property (nonatomic) unsigned int suppressedSettings;
+@property (nonatomic, retain) NSString *universalSectionID;
+@property (nonatomic) unsigned int version;
 
 - (void).cxx_destruct;
 - (void)addSubsections:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKGame, GKPlayer;
-
 @interface GKGameRecentPlayersDataSource : GKBasicCollectionViewDataSource {
     GKGame *_game;
     GKPlayer *_player;
 }
 
-@property(retain) GKGame * game;
-@property(retain) GKPlayer * player;
+@property (nonatomic, retain) GKGame *game;
+@property (nonatomic, retain) GKPlayer *player;
 
 - (void)_preloadImagesForItems:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

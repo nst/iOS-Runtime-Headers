@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@interface FAClearFamilyCircleCacheRequest : FAFamilyCircleRequest {
-}
+@interface FAClearFamilyCircleCacheRequest : FAFamilyCircleRequest
 
-- (void)startRequestWithCompletionHandler:(id)arg1;
+- (void)startRequestWithCompletionHandler:(id /* block */)arg1;
 
 @end

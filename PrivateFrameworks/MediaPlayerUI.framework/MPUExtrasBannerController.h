@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKDocumentBannerElement, NSArray, NSLayoutConstraint, UIImageView, UIScrollView, UIView;
-
 @interface MPUExtrasBannerController : NSObject {
     UIView *_anchorView;
     NSLayoutConstraint *_anchorViewConstraint;
@@ -18,17 +16,17 @@
     unsigned int _vignetteType;
 }
 
-@property(readonly) NSLayoutConstraint * anchorConstraint;
-@property(retain) UIView * anchorView;
-@property(readonly) IKDocumentBannerElement * bannerElement;
-@property(retain) UIImageView * bannerImageView;
-@property(retain) NSLayoutConstraint * bannerImageViewHeightConstraint;
-@property(retain) NSArray * installedConstraints;
-@property UIView * installedView;
-@property(retain) UIView * maskView;
-@property UIScrollView * trackingScrollView;
-@property(retain) UIImageView * vignetteImageView;
-@property unsigned int vignetteType;
+@property (nonatomic, readonly) NSLayoutConstraint *anchorConstraint;
+@property (nonatomic, retain) UIView *anchorView;
+@property (nonatomic, readonly) IKDocumentBannerElement *bannerElement;
+@property (nonatomic, retain) UIImageView *bannerImageView;
+@property (nonatomic, retain) NSLayoutConstraint *bannerImageViewHeightConstraint;
+@property (nonatomic, retain) NSArray *installedConstraints;
+@property (nonatomic) UIView *installedView;
+@property (nonatomic, retain) UIView *maskView;
+@property (nonatomic) UIScrollView *trackingScrollView;
+@property (nonatomic, retain) UIImageView *vignetteImageView;
+@property (nonatomic) unsigned int vignetteType;
 
 - (void).cxx_destruct;
 - (void)_configureBanner;

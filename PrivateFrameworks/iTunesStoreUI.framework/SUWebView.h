@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewDelegate>, NSString, UIColor, UIView;
-
 @interface SUWebView : UIWebView {
     BOOL _isPinned;
     UIColor *_originalBackgroundColor;
     BOOL _originalShowsBackgroundShadow;
     float _pinnedHeaderInsetAdjustment;
     UIView *_pinnedHeaderView;
-    unsigned int _scrollingDisabled : 1;
+    unsigned int _scrollingDisabled;
     BOOL _showsTopBackgroundShadow;
     int _synchronousLayoutCount;
     UIColor *_topBackgroundColor;
 }
 
-@property <SUWebViewDelegate> * delegate;
-@property(getter=isScrollingEnabled) BOOL scrollingEnabled;
-@property BOOL showsTopBackgroundShadow;
-@property(readonly) NSString * title;
-@property(retain) UIColor * topBackgroundColor;
-@property(readonly) id windowScriptObject;
+@property (nonatomic) <SUWebViewDelegate> *delegate;
+@property (getter=isScrollingEnabled, nonatomic) BOOL scrollingEnabled;
+@property (nonatomic) BOOL showsTopBackgroundShadow;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, retain) UIColor *topBackgroundColor;
+@property (nonatomic, readonly) id windowScriptObject;
 
 - (void)_setPinnedHeaderView:(id)arg1 withTopInsetAdjustment:(float)arg2;
 - (void)_setRichTextReaderViewportSettings;

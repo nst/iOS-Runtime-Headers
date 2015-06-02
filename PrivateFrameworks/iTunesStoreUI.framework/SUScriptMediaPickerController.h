@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString;
-
-@interface SUScriptMediaPickerController : SUScriptViewController {
-}
+@interface SUScriptMediaPickerController : SUScriptViewController
 
 @property BOOL allowsPickingMultipleItems;
-@property(readonly) NSArray * mediaTypes;
-@property(retain) NSString * prompt;
+@property (readonly) NSArray *mediaTypes;
+@property (retain) NSString *prompt;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

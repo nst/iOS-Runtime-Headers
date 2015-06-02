@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class <BSFileLoggerDelegate>, NSDateFormatter, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BSFileLogger : NSObject <BSLogging> {
     <BSFileLoggerDelegate> *_delegate;
     BOOL _enabledByPreference;
@@ -14,22 +12,22 @@
     NSMutableArray *_recentLogs;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BSFileLoggerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int logDestinations;
-@property(readonly) NSString * logPath;
-@property(readonly) NSString * logPreferenceDomain;
-@property(readonly) NSString * logPreferenceName;
-@property(readonly) int maxLogCount;
-@property(readonly) unsigned int maxLogLinesInMemory;
-@property(readonly) int maxLogSize;
-@property(readonly) NSString * name;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) BOOL shouldEnableOnInternalBuilds;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BSFileLoggerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int logDestinations;
+@property (nonatomic, readonly) NSString *logPath;
+@property (nonatomic, readonly) NSString *logPreferenceDomain;
+@property (nonatomic, readonly) NSString *logPreferenceName;
+@property (nonatomic, readonly) int maxLogCount;
+@property (nonatomic, readonly) unsigned int maxLogLinesInMemory;
+@property (nonatomic, readonly) int maxLogSize;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) BOOL shouldEnableOnInternalBuilds;
+@property (readonly) Class superclass;
 
 - (void)_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
 - (void)_disableLogCategory:(id)arg1;

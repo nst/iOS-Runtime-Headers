@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSString;
-
 @interface KNAnimationAttributes : NSObject <NSCopying> {
     NSDictionary *mAttributes;
     NSString *mEffect;
 }
 
-@property(readonly) NSDictionary * attributes;
-@property(readonly) NSString * effect;
+@property (nonatomic, readonly) NSDictionary *attributes;
+@property (nonatomic, readonly) NSString *effect;
 
 + (id)attributesWithEffect:(id)arg1 attributes:(id)arg2;
 + (BOOL)customAttributeKeyIsValid:(id)arg1;

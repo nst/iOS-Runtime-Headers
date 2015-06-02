@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSDictionary, NSSet;
-
 @interface CoreDAVPrincipalPropertySearchTask : CoreDAVPropertyFindBaseTask {
     BOOL _applyToPrincipalCollectionSet;
     NSDictionary *_extraAttributes;
     NSSet *_searchItems;
 }
 
-@property BOOL applyToPrincipalCollectionSet;
-@property(retain) NSDictionary * extraAttributes;
-@property(retain) NSSet * searchItems;
+@property (nonatomic) BOOL applyToPrincipalCollectionSet;
+@property (nonatomic, retain) NSDictionary *extraAttributes;
+@property (nonatomic, retain) NSSet *searchItems;
 
 - (BOOL)applyToPrincipalCollectionSet;
 - (void)dealloc;

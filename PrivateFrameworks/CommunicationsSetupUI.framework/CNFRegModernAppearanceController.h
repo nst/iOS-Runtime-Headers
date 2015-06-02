@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegModernAppearanceController : CNFRegAppearanceController {
-}
+@interface CNFRegModernAppearanceController : CNFRegAppearanceController
 
 - (BOOL)firstNavigationBarHidden;
 - (int)modalPresentationStyle;

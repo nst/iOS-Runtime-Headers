@@ -15,7 +15,7 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateWithBlock:(id)arg1;
+- (void)enumerateWithBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 

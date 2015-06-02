@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDateFormatter, NSMapTable, NSMutableDictionary, NSMutableSet;
-
 @interface PLMomentListClustering : NSObject {
     NSMutableDictionary *__cachedCollectionTagByMomentID;
     NSMapTable *__cachedLocationsByMoment;
@@ -28,27 +26,27 @@
     BOOL _allowsYearAccumulation;
 }
 
-@property(setter=_setCachedCollectionTagByMomentID:,retain) NSMutableDictionary * _cachedCollectionTagByMomentID;
-@property(setter=_setCachedLocationsByMoment:,retain) NSMapTable * _cachedLocationsByMoment;
-@property(readonly) NSMutableDictionary * _clustersByYearAndMonth;
-@property(readonly) NSDateFormatter * _debugDateFormatter;
-@property(readonly) unsigned int _defaultMaxFailuresForExpansion;
-@property(readonly) unsigned int _defaultNumberOfAssetsRequiredForSeeding;
-@property(readonly) double _maximumDistanceBetweenAccumulatedMoments;
-@property(readonly) double _maximumDistanceThresholdBetweenMoments;
-@property(readonly) double _maximumDistanceThresholdFromPeak;
-@property(readonly) double _maximumTimeThreshold;
-@property(readonly) double _maximumTimeThresholdBetweenMomentsWithLocation;
-@property(readonly) double _maximumTimeThresholdBetweenMomentsWithoutLocation;
-@property(readonly) double _maximumTimeThresholdFromPeakMatch;
-@property(readonly) double _maximumTimeThresholdFromPeakWithoutLocation;
-@property(readonly) double _megamomentAccumulationMaximumTimeThreshold;
-@property(readonly) unsigned int _minimumNumberOfAssetsToAvoidMegamomentAccumulation;
-@property(readonly) unsigned int _minimumNumberOfAssetsToAvoidYearAccumulation;
-@property(readonly) NSMutableSet * _visitedMoments;
-@property BOOL allowsCollectionAccumulation;
-@property BOOL allowsCollectionInfluencing;
-@property BOOL allowsYearAccumulation;
+@property (setter=_setCachedCollectionTagByMomentID:, nonatomic, retain) NSMutableDictionary *_cachedCollectionTagByMomentID;
+@property (setter=_setCachedLocationsByMoment:, nonatomic, retain) NSMapTable *_cachedLocationsByMoment;
+@property (nonatomic, readonly) NSMutableDictionary *_clustersByYearAndMonth;
+@property (nonatomic, readonly) NSDateFormatter *_debugDateFormatter;
+@property (nonatomic, readonly) unsigned int _defaultMaxFailuresForExpansion;
+@property (nonatomic, readonly) unsigned int _defaultNumberOfAssetsRequiredForSeeding;
+@property (nonatomic, readonly) double _maximumDistanceBetweenAccumulatedMoments;
+@property (nonatomic, readonly) double _maximumDistanceThresholdBetweenMoments;
+@property (nonatomic, readonly) double _maximumDistanceThresholdFromPeak;
+@property (nonatomic, readonly) double _maximumTimeThreshold;
+@property (nonatomic, readonly) double _maximumTimeThresholdBetweenMomentsWithLocation;
+@property (nonatomic, readonly) double _maximumTimeThresholdBetweenMomentsWithoutLocation;
+@property (nonatomic, readonly) double _maximumTimeThresholdFromPeakMatch;
+@property (nonatomic, readonly) double _maximumTimeThresholdFromPeakWithoutLocation;
+@property (nonatomic, readonly) double _megamomentAccumulationMaximumTimeThreshold;
+@property (nonatomic, readonly) unsigned int _minimumNumberOfAssetsToAvoidMegamomentAccumulation;
+@property (nonatomic, readonly) unsigned int _minimumNumberOfAssetsToAvoidYearAccumulation;
+@property (nonatomic, readonly) NSMutableSet *_visitedMoments;
+@property (nonatomic) BOOL allowsCollectionAccumulation;
+@property (nonatomic) BOOL allowsCollectionInfluencing;
+@property (nonatomic) BOOL allowsYearAccumulation;
 
 + (double)maximumTimeThresholdBetweenMoments;
 

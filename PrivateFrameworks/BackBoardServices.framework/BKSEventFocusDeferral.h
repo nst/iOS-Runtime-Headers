@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class BKSEventFocusDeferralProperties;
-
 @interface BKSEventFocusDeferral : NSObject <NSSecureCoding> {
     BKSEventFocusDeferralProperties *_deferredProperties;
     BKSEventFocusDeferralProperties *_properties;
 }
 
-@property(readonly) BKSEventFocusDeferralProperties * deferredProperties;
-@property(readonly) BKSEventFocusDeferralProperties * properties;
+@property (nonatomic, readonly) BKSEventFocusDeferralProperties *deferredProperties;
+@property (nonatomic, readonly) BKSEventFocusDeferralProperties *properties;
 
 + (BOOL)supportsSecureCoding;
 

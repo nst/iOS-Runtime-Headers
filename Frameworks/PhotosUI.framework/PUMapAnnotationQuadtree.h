@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <MKAnnotation><NSCopying>, <PUMapAnnotationQuadtreeDataSource>, NSMutableArray, PUMapAnnotationQuadtree, PUMapAnnotationQuadtreeAddress;
-
 @interface PUMapAnnotationQuadtree : NSObject {
     PUMapAnnotationQuadtree *_00;
     PUMapAnnotationQuadtree *_01;
@@ -19,7 +17,7 @@
     <MKAnnotation><NSCopying> *_primaryAnnotation;
 }
 
-@property <PUMapAnnotationQuadtreeDataSource> * dataSource;
+@property (nonatomic) <PUMapAnnotationQuadtreeDataSource> *dataSource;
 
 + (void)convertCoordinate:(struct { double x1; double x2; })arg1 quantizedX:(unsigned int*)arg2 quantizedY:(unsigned int*)arg3;
 + (void)getMinCoordinate:(struct { double x1; double x2; }*)arg1 maxCoordinate:(struct { double x1; double x2; }*)arg2 forAddress:(id)arg3;

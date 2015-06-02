@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKAlarm, EKObjectID, NSDate, NSDateComponents, NSURL;
-
 @interface EKReminder : EKCalendarItem {
     BOOL hadRecurrences;
 }
 
-@property(copy) NSURL * action;
-@property(readonly) EKAlarm * bestDisplayAlarm;
-@property(getter=isCompleted) BOOL completed;
-@property(copy) NSDate * completionDate;
-@property unsigned int displayOrder;
-@property(readonly) NSDate * dueDate;
-@property(copy) NSDateComponents * dueDateComponents;
-@property BOOL hadRecurrences;
-@property(readonly) EKObjectID * parentID;
-@property int priority;
-@property(copy) NSDateComponents * startDateComponents;
+@property (nonatomic, copy) NSURL *action;
+@property (nonatomic, readonly) EKAlarm *bestDisplayAlarm;
+@property (getter=isCompleted, nonatomic) BOOL completed;
+@property (nonatomic, copy) NSDate *completionDate;
+@property (nonatomic) unsigned int displayOrder;
+@property (nonatomic, readonly) NSDate *dueDate;
+@property (nonatomic, copy) NSDateComponents *dueDateComponents;
+@property (nonatomic) BOOL hadRecurrences;
+@property (nonatomic, readonly) EKObjectID *parentID;
+@property (nonatomic) int priority;
+@property (nonatomic, copy) NSDateComponents *startDateComponents;
 
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;

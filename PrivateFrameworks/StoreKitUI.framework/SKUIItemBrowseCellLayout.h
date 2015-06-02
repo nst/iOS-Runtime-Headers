@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, _SKUIItemBrowseCellContentView;
-
 @interface SKUIItemBrowseCellLayout : SKUIItemCellLayout {
     _SKUIItemBrowseCellContentView *_cellContentView;
     struct CGSize { 
@@ -17,14 +15,14 @@
     float _userRating;
 }
 
-@property(copy) NSString * category;
-@property struct CGSize { float x1; float x2; } imageBoundingSize;
-@property(copy) NSString * indexNumberString;
-@property(getter=isLargeSpacing) BOOL largeSpacing;
-@property int numberOfUserRatings;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
-@property float userRating;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageBoundingSize;
+@property (nonatomic, copy) NSString *indexNumberString;
+@property (getter=isLargeSpacing, nonatomic) BOOL largeSpacing;
+@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (id)_decimalNumberFormatter;

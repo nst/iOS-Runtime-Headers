@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDITesterApplicationUUID : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -12,10 +10,10 @@
     NSString *_uuid;
 }
 
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuid;
-@property unsigned long long timestamp;
-@property(retain) NSString * uuid;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSString *uuid;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

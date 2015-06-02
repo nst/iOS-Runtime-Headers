@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUKeychainUtils : NSObject {
-}
+@interface TSUKeychainUtils : NSObject
 
 + (BOOL)lookupGenericItem:(id)arg1 account:(id*)arg2 passphrase:(id*)arg3 error:(id*)arg4;
 + (BOOL)lookupGenericItem:(id)arg1 passphrase:(id*)arg2 error:(id*)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDAlignmentInfo, EDBorders, EDContentFormat, EDFill, EDFont, EDProtection;
-
 @interface EDDifferentialStyle : NSObject <NSCopying> {
     EDAlignmentInfo *mAlignmentInfo;
     EDBorders *mBorders;
@@ -13,12 +11,12 @@
     EDProtection *mProtection;
 }
 
-@property(retain) EDAlignmentInfo * alignmentInfo;
-@property(retain) EDBorders * borders;
-@property(retain) EDContentFormat * contentFormat;
-@property(retain) EDFill * fill;
-@property(retain) EDFont * font;
-@property(retain) EDProtection * protection;
+@property (nonatomic, retain) EDAlignmentInfo *alignmentInfo;
+@property (nonatomic, retain) EDBorders *borders;
+@property (nonatomic, retain) EDContentFormat *contentFormat;
+@property (nonatomic, retain) EDFill *fill;
+@property (nonatomic, retain) EDFont *font;
+@property (nonatomic, retain) EDProtection *protection;
 
 + (id)differentialStyle;
 

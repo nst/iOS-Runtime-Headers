@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class TKVibrationPickerViewController, UIBarButtonItem;
-
 @interface ABVibrationPickerViewController : ABPickerViewController {
     BOOL _canEnterEditingMode;
     UIBarButtonItem *_saveButton;
     TKVibrationPickerViewController *_vibrationPickerViewController;
 }
 
-@property(setter=_setSaveButton:,retain) UIBarButtonItem * _saveButton;
-@property(retain,readonly) TKVibrationPickerViewController * vibrationPickerViewController;
+@property (setter=_setSaveButton:, nonatomic, retain) UIBarButtonItem *_saveButton;
+@property (nonatomic, readonly, retain) TKVibrationPickerViewController *vibrationPickerViewController;
 
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (id)_saveButton;

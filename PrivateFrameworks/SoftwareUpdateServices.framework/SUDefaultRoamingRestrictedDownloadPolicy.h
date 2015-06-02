@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUDefaultRoamingRestrictedDownloadPolicy : SUDefaultDownloadPolicy {
-}
+@interface SUDefaultRoamingRestrictedDownloadPolicy : SUDefaultDownloadPolicy
 
 - (BOOL)isDownloadAllowableForCellularRoaming;
 

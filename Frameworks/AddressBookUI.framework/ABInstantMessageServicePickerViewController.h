@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABInstantMessageServicePickerViewController : ABServicePickerViewController {
-}
+@interface ABInstantMessageServicePickerViewController : ABServicePickerViewController
 
 + (id)defaultServices;
 

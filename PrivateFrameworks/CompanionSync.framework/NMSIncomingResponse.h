@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSData, NSDate, NSDictionary, NSString;
-
 @interface NMSIncomingResponse : NSObject <NMSObfuscatableDescriptionProviding> {
     NSData *_data;
     NSString *_idsIdentifier;
@@ -14,17 +12,17 @@
     NSDate *_requestSent;
 }
 
-@property(retain) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * idsIdentifier;
-@property unsigned short messageID;
-@property(retain) id pbResponse;
-@property(copy) NSString * requestIDSIdentifier;
-@property(retain) NSDictionary * requestPersistentUserInfo;
-@property(retain) NSDate * requestSent;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) id pbResponse;
+@property (nonatomic, copy) NSString *requestIDSIdentifier;
+@property (nonatomic, retain) NSDictionary *requestPersistentUserInfo;
+@property (nonatomic, retain) NSDate *requestSent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;

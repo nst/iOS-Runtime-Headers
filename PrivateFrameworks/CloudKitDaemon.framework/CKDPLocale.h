@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface CKDPLocale : PBCodable <NSCopying> {
     NSString *_activeKeyboard;
     NSMutableArray *_enabledKeyboards;
@@ -11,13 +9,13 @@
     NSString *_regionCode;
 }
 
-@property(retain) NSString * activeKeyboard;
-@property(retain) NSMutableArray * enabledKeyboards;
-@property(readonly) BOOL hasActiveKeyboard;
-@property(readonly) BOOL hasLanguageCode;
-@property(readonly) BOOL hasRegionCode;
-@property(retain) NSString * languageCode;
-@property(retain) NSString * regionCode;
+@property (nonatomic, retain) NSString *activeKeyboard;
+@property (nonatomic, retain) NSMutableArray *enabledKeyboards;
+@property (nonatomic, readonly) BOOL hasActiveKeyboard;
+@property (nonatomic, readonly) BOOL hasLanguageCode;
+@property (nonatomic, readonly) BOOL hasRegionCode;
+@property (nonatomic, retain) NSString *languageCode;
+@property (nonatomic, retain) NSString *regionCode;
 
 - (void).cxx_destruct;
 - (id)activeKeyboard;

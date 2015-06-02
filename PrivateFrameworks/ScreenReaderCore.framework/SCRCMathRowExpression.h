@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCMathRowExpression : SCRCMathArrayExpression {
-}
+@interface SCRCMathRowExpression : SCRCMathArrayExpression
 
 - (void)_addSpacingAndChild:(id)arg1 toResult:(id)arg2 nextChild:(id)arg3 previousChild:(id)arg4 numberOfOuterRadicals:(unsigned int)arg5 treePosition:(id)arg6;
 - (id)_indexesOfCharactersInWords;

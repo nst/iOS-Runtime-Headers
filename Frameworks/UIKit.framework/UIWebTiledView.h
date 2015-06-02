@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class WAKWindow;
-
 @interface UIWebTiledView : UIView {
     BOOL _allowsPaintingAndScriptsWhilePanning;
     BOOL _didFirstTileLayout;

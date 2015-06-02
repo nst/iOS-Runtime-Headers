@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DADataHandler : NSObject {
     NSString *_changeTrackingID;
     void *_container;
 }
 
-@property(copy) NSString * changeTrackingID;
-@property void* container;
+@property (nonatomic, copy) NSString *changeTrackingID;
+@property (nonatomic) void*container;
 
 + (id)newDataHandlerForDataclass:(int)arg1 container:(void*)arg2 changeTrackingID:(id)arg3;
 

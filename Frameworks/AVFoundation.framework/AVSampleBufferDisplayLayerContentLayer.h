@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVSampleBufferDisplayLayerContentLayer : CALayer {
-}
+@interface AVSampleBufferDisplayLayerContentLayer : CALayer
 
 + (id)defaultActionForKey:(id)arg1;
 

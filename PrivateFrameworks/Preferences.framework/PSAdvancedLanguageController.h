@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier;
-
 @interface PSAdvancedLanguageController : PSListItemsController {
     PSSpecifier *_checkedSpecifier;
 }

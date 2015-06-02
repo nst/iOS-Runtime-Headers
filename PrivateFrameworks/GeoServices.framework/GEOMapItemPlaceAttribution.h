@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray, NSURL;
+@interface GEOMapItemPlaceAttribution : GEOMapItemAttribution
 
-@interface GEOMapItemPlaceAttribution : GEOMapItemAttribution {
-}
-
-@property(readonly) NSArray * checkInURLs;
-@property(readonly) NSURL * webURL;
+@property (nonatomic, readonly) NSArray *checkInURLs;
+@property (nonatomic, readonly) NSURL *webURL;
 
 - (id)checkInURLs;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;

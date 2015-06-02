@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSCH3DShadowsRenderer>, TSCH3DCamera, TSCH3DDataBufferResource;
-
 @interface TSCH3DChartShadowsPropertiesInternal : NSObject {
     TSCH3DCamera *mCamera;
     BOOL mEnabled;
@@ -49,13 +47,13 @@
     TSCH3DDataBufferResource *mTexcoords;
 }
 
-@property(retain) TSCH3DCamera * camera;
-@property BOOL enabled;
-@property(retain) TSCH3DDataBufferResource * fadecoords;
-@property(retain) TSCH3DDataBufferResource * quad;
-@property(readonly) NSObject<TSCH3DShadowsRenderer> * renderer;
-@property(readonly) BOOL shadowPlaneValid;
-@property(retain) TSCH3DDataBufferResource * texcoords;
+@property (nonatomic, retain) TSCH3DCamera *camera;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, retain) TSCH3DDataBufferResource *fadecoords;
+@property (nonatomic, retain) TSCH3DDataBufferResource *quad;
+@property (nonatomic, readonly) NSObject<TSCH3DShadowsRenderer> *renderer;
+@property (nonatomic, readonly) BOOL shadowPlaneValid;
+@property (nonatomic, retain) TSCH3DDataBufferResource *texcoords;
 
 - (id).cxx_construct;
 - (id)camera;

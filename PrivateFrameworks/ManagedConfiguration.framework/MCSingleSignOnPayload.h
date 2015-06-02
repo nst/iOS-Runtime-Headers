@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCSingleSignOnPayloadKerberosInfo, NSString;
-
 @interface MCSingleSignOnPayload : MCPayload {
     NSString *_humanReadableName;
     MCSingleSignOnPayloadKerberosInfo *_kerberosInfo;
 }
 
-@property(retain) NSString * humanReadableName;
-@property(retain) MCSingleSignOnPayloadKerberosInfo * kerberosInfo;
+@property (nonatomic, retain) NSString *humanReadableName;
+@property (nonatomic, retain) MCSingleSignOnPayloadKerberosInfo *kerberosInfo;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

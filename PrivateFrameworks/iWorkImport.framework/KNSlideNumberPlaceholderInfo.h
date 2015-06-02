@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNSlideNumberPlaceholderInfo : KNPlaceholderInfo {
-}
+@interface KNSlideNumberPlaceholderInfo : KNPlaceholderInfo
 
 - (void)acceptVisitor:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;

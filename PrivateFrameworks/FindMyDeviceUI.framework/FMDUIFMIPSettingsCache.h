@@ -9,12 +9,12 @@
     BOOL _lowBatteryLocateStateAvailable;
 }
 
-@property(readonly) BOOL fmipEnabled;
-@property unsigned int fmipState;
-@property BOOL fmipStateAvailable;
-@property(readonly) BOOL fmipStateChangeInProgress;
-@property BOOL lowBatteryLocateEnabled;
-@property BOOL lowBatteryLocateStateAvailable;
+@property (nonatomic, readonly) BOOL fmipEnabled;
+@property (nonatomic) unsigned int fmipState;
+@property (nonatomic) BOOL fmipStateAvailable;
+@property (nonatomic, readonly) BOOL fmipStateChangeInProgress;
+@property (nonatomic) BOOL lowBatteryLocateEnabled;
+@property (nonatomic) BOOL lowBatteryLocateStateAvailable;
 
 + (id)sharedInstance;
 

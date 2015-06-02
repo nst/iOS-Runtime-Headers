@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKHairlineView, GKLabel, NSString;
-
 @interface GKBaseComposeHeaderField : UIImageView {
     SEL _actionWhenTouched;
     unsigned int _maxLineCount;
@@ -11,13 +9,13 @@
     GKHairlineView *_separatorView;
 }
 
-@property SEL actionWhenTouched;
-@property unsigned int maxLineCount;
-@property(retain) GKLabel * nameLabel;
-@property(retain) NSString * nameText;
-@property(retain) GKHairlineView * separatorView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } valueFrame;
-@property(retain) NSString * valueText;
+@property (nonatomic) SEL actionWhenTouched;
+@property (nonatomic) unsigned int maxLineCount;
+@property (nonatomic, retain) GKLabel *nameLabel;
+@property (nonatomic, retain) NSString *nameText;
+@property (nonatomic, retain) GKHairlineView *separatorView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } valueFrame;
+@property (nonatomic, retain) NSString *valueText;
 
 - (SEL)actionWhenTouched;
 - (void)addConstraintsForValueView:(id)arg1;

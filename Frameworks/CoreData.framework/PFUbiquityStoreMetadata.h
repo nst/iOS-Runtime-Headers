@@ -2,25 +2,22 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData, NSDictionary, NSSet, NSString, NSURL, PFUbiquityLocation;
+@interface PFUbiquityStoreMetadata : NSManagedObject
 
-@interface PFUbiquityStoreMetadata : NSManagedObject {
-}
-
-@property(retain) NSString * modelVersionHashString;
-@property(retain) NSSet * peerStates;
-@property(retain) NSSet * primaryKeyRanges;
-@property(retain) NSString * storeIdentifier;
-@property(retain) NSDictionary * storeOptions;
-@property(retain) NSData * storeOptionsBinaryPlistData;
-@property(retain) NSString * storeType;
-@property(retain) NSString * storeURLString;
-@property(retain) NSSet * transactionEntries;
-@property(retain) NSString * ubiquityName;
-@property(retain) NSString * ubiquityRelativePath;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
-@property(readonly) NSURL * ubiquityRootURL;
-@property(retain) NSString * ubiquityRootURLString;
+@property (nonatomic, retain) NSString *modelVersionHashString;
+@property (nonatomic, retain) NSSet *peerStates;
+@property (nonatomic, retain) NSSet *primaryKeyRanges;
+@property (nonatomic, retain) NSString *storeIdentifier;
+@property (nonatomic, retain) NSDictionary *storeOptions;
+@property (nonatomic, retain) NSData *storeOptionsBinaryPlistData;
+@property (nonatomic, retain) NSString *storeType;
+@property (nonatomic, retain) NSString *storeURLString;
+@property (nonatomic, retain) NSSet *transactionEntries;
+@property (nonatomic, retain) NSString *ubiquityName;
+@property (nonatomic, retain) NSString *ubiquityRelativePath;
+@property (readonly) PFUbiquityLocation *ubiquityRootLocation;
+@property (nonatomic, readonly) NSURL *ubiquityRootURL;
+@property (nonatomic, retain) NSString *ubiquityRootURLString;
 
 + (id)allStoreMetadataInManagedObjectContext:(id)arg1;
 + (id)baselineGCModelURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;

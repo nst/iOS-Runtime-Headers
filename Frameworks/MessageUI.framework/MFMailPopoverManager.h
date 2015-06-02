@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFPopoverController, NSArray, NSMutableArray, NSString, UIActionSheet, UIBarButtonItem, UIView;
-
 @interface MFMailPopoverManager : NSObject <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate> {
     UIActionSheet *_actionSheet;
     id _actionSheetDelegate;
@@ -31,21 +29,21 @@
     BOOL _popoverDismissalShouldBeAnimated;
 }
 
-@property(retain) UIActionSheet * actionSheet;
-@property unsigned int currentArrowDirections;
-@property(retain) UIBarButtonItem * currentBarButtonItem;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentRect;
-@property(retain) UIView * currentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL popoverBeingHiddenDuringRotation;
-@property(retain) MFPopoverController * popoverController;
-@property BOOL rasterizePopoverLayer;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIActionSheet *actionSheet;
+@property (nonatomic) unsigned int currentArrowDirections;
+@property (nonatomic, retain) UIBarButtonItem *currentBarButtonItem;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentRect;
+@property (nonatomic, retain) UIView *currentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL popoverBeingHiddenDuringRotation;
+@property (nonatomic, retain) MFPopoverController *popoverController;
+@property (nonatomic) BOOL rasterizePopoverLayer;
+@property (readonly) Class superclass;
 
 + (void)dismissPopover:(id)arg1 animated:(BOOL)arg2;
-+ (void)enumerateManagersUsingBlock:(id)arg1;
++ (void)enumerateManagersUsingBlock:(id /* block */)arg1;
 + (id)managerForWindow:(id)arg1 createIfNeeded:(BOOL)arg2;
 
 - (id)_allPassthroughViewsIncludingViews:(id)arg1 excludingViews:(id)arg2;

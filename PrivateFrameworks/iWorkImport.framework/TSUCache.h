@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface TSUCache : TSUFlushableObject {
     NSMutableDictionary *mCache;
     NSString *mCacheName;

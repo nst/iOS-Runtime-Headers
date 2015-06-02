@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class FAFamilyCircle, NSCache, NSNumber, NSOperationQueue, SKUIClientContext, SSFamilyCircle;
-
 @interface SKUIFamilyCircleController : NSObject {
     SKUIClientContext *_clientContext;
     BOOL _hasLoaded;
@@ -14,10 +12,10 @@
     NSOperationQueue *_opQueue;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(readonly) SSFamilyCircle * familyCircle;
-@property(readonly) BOOL hasLoaded;
-@property(readonly) FAFamilyCircle * iCloudFamily;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) SSFamilyCircle *familyCircle;
+@property (nonatomic, readonly) BOOL hasLoaded;
+@property (nonatomic, readonly) FAFamilyCircle *iCloudFamily;
 
 + (id)sharedController;
 

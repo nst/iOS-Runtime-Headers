@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLModElement : DOMHTMLElement
 
-@interface DOMHTMLModElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * cite;
-@property(copy) NSString * dateTime;
+@property (copy) NSString *cite;
+@property (copy) NSString *dateTime;
 
 - (id)cite;
 - (id)dateTime;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableArray, NSMutableDictionary, OITSUNoCopyDictionary, WBOfficeArtReaderState, WDDocument;
-
 @interface WBReader : OCBReader {
     struct WrdBookmarkTable { int (**x1)(); int x2; struct ChVector<WrdBookmark *> { struct WrdBookmark {} **x_3_1_1; struct WrdBookmark {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mAnnotationBookmarkTable;
     NSMutableArray *mAnnotationOwners;
@@ -18,7 +11,7 @@
     struct WrdBookmarkTable { int (**x1)(); int x2; struct ChVector<WrdBookmark *> { struct WrdBookmark {} **x_3_1_1; struct WrdBookmark {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mBookmarkTable;
     struct WrdNoteTable { int (**x1)(); int x2; struct ChVector<WrdNote *> { struct WrdNote {} **x_3_1_1; struct WrdNote {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mEndnoteTable;
     struct WrdEshObjectFactory { int (**x1)(); bool x2; } *mEshObjectFactory;
-    struct WrdFieldPositionTable {} *mFieldPositionTables[8];
+    struct WrdFieldPositionTable {} *mFieldPositionTables;
     struct WrdFileShapeAddressTable { int (**x1)(); int x2; struct ChVector<WrdFileShapeAddress *> { struct WrdFileShapeAddress {} **x_3_1_1; struct WrdFileShapeAddress {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mFileShapeAddressHeaderTable;
     struct WrdFileShapeAddressTable { int (**x1)(); int x2; struct ChVector<WrdFileShapeAddress *> { struct WrdFileShapeAddress {} **x_3_1_1; struct WrdFileShapeAddress {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mFileShapeAddressTable;
     struct WrdNoteTable { int (**x1)(); int x2; struct ChVector<WrdNote *> { struct WrdNote {} **x_3_1_1; struct WrdNote {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; } *mFootnoteTable;
@@ -34,7 +27,7 @@
     struct vector<WBTextBoxReaderInfo, std::__1::allocator<WBTextBoxReaderInfo> > { struct WBTextBoxReaderInfo {} *x1; struct WBTextBoxReaderInfo {} *x2; struct __compressed_pair<WBTextBoxReaderInfo *, std::__1::allocator<WBTextBoxReaderInfo> > { struct WBTextBoxReaderInfo {} *x_3_1_1; } x3; } *mTextBoxes;
 }
 
-@property WDDocument * targetDocument;
+@property (nonatomic) WDDocument *targetDocument;
 
 - (void)addFont:(id)arg1 index:(int)arg2;
 - (void)addStyle:(id)arg1 index:(int)arg2;
@@ -77,7 +70,7 @@
 - (struct WrdCPTableHeaders { int (**x1)(); struct ChVector<int> { int *x_2_1_1; int *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; } x2; }*)tableHeaders;
 - (id)targetDocument;
 - (unsigned int)textBoxCount;
-- (struct WBTextBoxReaderInfo { id x1; unsigned short x2; })textBoxInfoAtIndex:(unsigned int)arg1;
+- (struct WBTextBoxReaderInfo { id x1; })textBoxInfoAtIndex:(unsigned int)arg1;
 - (struct WrdBinaryReader { int (**x1)(); int (**x2)(); struct EshObjectFactory {} *x3; int (**x4)(); struct WrdParser {} *x5; struct WrdEshReader { int (**x_6_1_1)(); struct SsrwOOStream {} *x_6_1_2; struct EshParserVisitor {} *x_6_1_3; struct EshObjectFactory {} *x_6_1_4; unsigned int x_6_1_5; unsigned int x_6_1_6; struct ChStack<EshHeader> { struct EshHeader {} *x_7_2_1; struct EshHeader {} *x_7_2_2; unsigned int x_7_2_3; unsigned int x_7_2_4; unsigned int x_7_2_5; } x_6_1_7; unsigned int x_6_1_8; struct EshHeader { int x_9_2_1; unsigned int x_9_2_2; short x_9_2_3; unsigned short x_9_2_4; unsigned char x_9_2_5; } x_6_1_9; bool x_6_1_10; } x6; struct WrdRdrText {} *x7; struct WrdBinTable {} *x8; struct WrdPAPXFKP {} *x9; unsigned int x10; struct WrdBinTable {} *x11; struct WrdCHPXFKP {} *x12; unsigned int x13; int x14; struct WrdSectionDescriptorTable {} *x15; struct WrdStyleSheet {} *x16; struct WrdEmbeddedTTFRecordTable {} *x17; struct WrdDocumentFileRecord {} *x18; struct ChMap<unsigned int, unsigned int, CsLess<unsigned int> > { struct map<unsigned int, unsigned int, CsLess<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned int> > > { struct __tree<std::__1::__value_type<unsigned int, unsigned int>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, CsLess<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned int> > > { struct __tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, CsLess<unsigned int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_19_1_1; } x19[8]; struct ChMap<unsigned int, unsigned int, CsLess<unsigned int> > { struct map<unsigned int, unsigned int, CsLess<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned int> > > { struct __tree<std::__1::__value_type<unsigned int, unsigned int>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, CsLess<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned int> > > { struct __tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, CsLess<unsigned int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_20_1_1; } x20[8]; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; int x25; struct WrdText { int (**x_26_1_1)(); struct OcText { int (**x_2_2_1)(); int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; unsigned int x_2_2_5; char *x_2_2_6; char *x_2_2_7; bool x_2_2_8; } x_26_1_2; int x_26_1_3; } x26; struct WrdEmbeddedTrueTypeFont {} *x27; }*)wrdReader;
 
 @end

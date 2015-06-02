@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSAppIconDatabaseCache : NSObject {
-}
+@interface SSAppIconDatabaseCache : NSObject
 
 + (id)newDefaultDatabaseCache;
 

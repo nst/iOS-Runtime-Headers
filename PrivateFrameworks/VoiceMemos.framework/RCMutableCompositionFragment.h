@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSURL;
+@interface RCMutableCompositionFragment : RCCompositionFragment
 
-@interface RCMutableCompositionFragment : RCCompositionFragment {
-}
-
-@property(retain) NSURL * AVOutputURL;
-@property double contentDuration;
-@property struct { double x1; double x2; } timeRangeInComposition;
-@property struct { double x1; double x2; } timeRangeInContentToUse;
+@property (nonatomic, retain) NSURL *AVOutputURL;
+@property (nonatomic) double contentDuration;
+@property (nonatomic) struct { double x1; double x2; } timeRangeInComposition;
+@property (nonatomic) struct { double x1; double x2; } timeRangeInContentToUse;
 
 - (void)intersectWithTimeRange:(struct { double x1; double x2; })arg1;
 

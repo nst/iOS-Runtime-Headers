@@ -2,28 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSString;
-
 @interface IDSBaseMessage : NSObject <NSCopying> {
     NSDictionary *_cachedBody;
     NSDictionary *_clientInfo;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     id _context;
     NSDate *_creationDate;
     NSString *_dataUsageBundleIdentifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deliveryAcknowledgementBlock;
-
+    id /* block */ _deliveryAcknowledgementBlock;
     NSString *_dsAuthID;
     BOOL _forceCellular;
     BOOL _hasReceivedPushAck;
@@ -42,72 +28,72 @@
     BOOL _wantsResponse;
 }
 
-@property(copy,readonly) NSData * IDCertificate;
-@property(setter=_setCachedBody:,retain) NSDictionary * _cachedBody;
-@property(setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush;
-@property(retain,readonly) NSDictionary * additionalInternalHeaders;
-@property(retain,readonly) NSDictionary * additionalMessageHeaders;
-@property(retain,readonly) NSDictionary * additionalMessageHeadersForOutgoingPush;
-@property(retain,readonly) NSDictionary * additionalQueryStringParameters;
-@property(retain,readonly) NSString * bagKey;
-@property(copy) NSMutableArray * certDataArray;
-@property(copy) NSDictionary * clientInfo;
-@property(readonly) int command;
-@property(copy) id completionBlock;
-@property(retain) id context;
-@property(retain) NSDate * creationDate;
-@property(readonly) double customRetryInterval;
-@property(retain,readonly) NSString * dataUsageBundleIdentifier;
-@property(copy) id deliveryAcknowledgementBlock;
-@property(setter=setDSAuthID:,copy) NSString * dsAuthID;
+@property (nonatomic, readonly, copy) NSData *IDCertificate;
+@property (setter=_setCachedBody:, retain) NSDictionary *_cachedBody;
+@property (setter=_setUsingOutgoingPush:) BOOL _usingOutgoingPush;
+@property (readonly, retain) NSDictionary *additionalInternalHeaders;
+@property (readonly, retain) NSDictionary *additionalMessageHeaders;
+@property (readonly, retain) NSDictionary *additionalMessageHeadersForOutgoingPush;
+@property (readonly, retain) NSDictionary *additionalQueryStringParameters;
+@property (readonly, retain) NSString *bagKey;
+@property (nonatomic, copy) NSMutableArray *certDataArray;
+@property (copy) NSDictionary *clientInfo;
+@property (readonly) int command;
+@property (copy) id /* block */ completionBlock;
+@property (retain) id context;
+@property (retain) NSDate *creationDate;
+@property (readonly) double customRetryInterval;
+@property (readonly, retain) NSString *dataUsageBundleIdentifier;
+@property (copy) id /* block */ deliveryAcknowledgementBlock;
+@property (setter=setDSAuthID:, nonatomic, copy) NSString *dsAuthID;
 @property BOOL forceCellular;
 @property BOOL hasReceivedPushAck;
 @property BOOL highPriority;
-@property(readonly) struct __SecKey { }* identityPrivateKey;
-@property(readonly) struct __SecKey { }* identityPublicKey;
-@property(readonly) BOOL ignoresNetworkConnectivity;
-@property(readonly) BOOL isValidMessage;
-@property(readonly) int maxTimeoutRetries;
-@property(retain,readonly) NSDictionary * messageBody;
-@property(retain,readonly) NSDictionary * messageBodyUsingCache;
-@property(retain,readonly) NSDictionary * nonStandardMessageHeadersForOutgoingPush;
-@property(readonly) BOOL payloadCanBeLogged;
-@property(copy) NSMutableArray * privateKeyArray;
-@property(copy) NSMutableArray * publicKeyArray;
-@property(copy) NSData * pushCertificate;
-@property struct __SecKey { }* pushPrivateKey;
-@property struct __SecKey { }* pushPublicKey;
-@property(copy) NSData * pushToken;
-@property(retain,readonly) NSArray * requiredKeys;
-@property(copy) NSDictionary * responseAlertInfo;
-@property(readonly) int responseCommand;
-@property(copy) NSData * serviceData;
+@property (nonatomic, readonly) struct __SecKey { }*identityPrivateKey;
+@property (nonatomic, readonly) struct __SecKey { }*identityPublicKey;
+@property (readonly) BOOL ignoresNetworkConnectivity;
+@property (readonly) BOOL isValidMessage;
+@property (readonly) int maxTimeoutRetries;
+@property (readonly, retain) NSDictionary *messageBody;
+@property (readonly, retain) NSDictionary *messageBodyUsingCache;
+@property (readonly, retain) NSDictionary *nonStandardMessageHeadersForOutgoingPush;
+@property (readonly) BOOL payloadCanBeLogged;
+@property (nonatomic, copy) NSMutableArray *privateKeyArray;
+@property (nonatomic, copy) NSMutableArray *publicKeyArray;
+@property (nonatomic, copy) NSData *pushCertificate;
+@property (nonatomic) struct __SecKey { }*pushPrivateKey;
+@property (nonatomic) struct __SecKey { }*pushPublicKey;
+@property (nonatomic, copy) NSData *pushToken;
+@property (readonly, retain) NSArray *requiredKeys;
+@property (copy) NSDictionary *responseAlertInfo;
+@property (readonly) int responseCommand;
+@property (copy) NSData *serviceData;
 @property double timeSent;
 @property double timeout;
 @property int timeoutRetries;
-@property(retain) NSString * topic;
+@property (retain) NSString *topic;
 @property unsigned int uniqueID;
-@property(retain,readonly) NSString * uniqueIDString;
-@property(retain,readonly) NSString * userAgentHeaderString;
-@property(copy) NSMutableArray * userIDArray;
-@property(copy) NSDictionary * userInfo;
-@property(readonly) BOOL wantsAPSRetries;
-@property(readonly) BOOL wantsBagKey;
+@property (readonly, retain) NSString *uniqueIDString;
+@property (readonly, retain) NSString *userAgentHeaderString;
+@property (nonatomic, copy) NSMutableArray *userIDArray;
+@property (copy) NSDictionary *userInfo;
+@property (readonly) BOOL wantsAPSRetries;
+@property (readonly) BOOL wantsBagKey;
 @property BOOL wantsBinaryPush;
-@property(readonly) BOOL wantsBodySignature;
-@property(readonly) BOOL wantsCFNetworkTimeout;
-@property(readonly) BOOL wantsCompressedBody;
-@property(readonly) BOOL wantsCustomRetryInterval;
-@property(readonly) BOOL wantsExtraTimeoutRetry;
-@property(readonly) BOOL wantsHTTPGet;
-@property(readonly) BOOL wantsHTTPHeaders;
-@property(readonly) BOOL wantsIDSServer;
+@property (readonly) BOOL wantsBodySignature;
+@property (readonly) BOOL wantsCFNetworkTimeout;
+@property (readonly) BOOL wantsCompressedBody;
+@property (readonly) BOOL wantsCustomRetryInterval;
+@property (readonly) BOOL wantsExtraTimeoutRetry;
+@property (readonly) BOOL wantsHTTPGet;
+@property (readonly) BOOL wantsHTTPHeaders;
+@property (readonly) BOOL wantsIDSServer;
 @property BOOL wantsIntegerUniqueIDs;
-@property(readonly) BOOL wantsJSONBody;
-@property(readonly) BOOL wantsManagedRetries;
+@property (readonly) BOOL wantsJSONBody;
+@property (readonly) BOOL wantsManagedRetries;
 @property BOOL wantsResponse;
-@property(readonly) BOOL wantsSignature;
-@property(readonly) BOOL wantsUserAgentInHeaders;
+@property (readonly) BOOL wantsSignature;
+@property (readonly) BOOL wantsUserAgentInHeaders;
 
 - (id)IDCertificate;
 - (void)_cacheBody;
@@ -123,14 +109,14 @@
 - (id)certDataArray;
 - (id)clientInfo;
 - (int)command;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (double)customRetryInterval;
 - (id)dataUsageBundleIdentifier;
 - (void)dealloc;
-- (id)deliveryAcknowledgementBlock;
+- (id /* block */)deliveryAcknowledgementBlock;
 - (id)dsAuthID;
 - (BOOL)forceCellular;
 - (void)handleResponseDictionary:(id)arg1;
@@ -160,11 +146,11 @@
 - (id)serviceData;
 - (void)setCertDataArray:(id)arg1;
 - (void)setClientInfo:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDSAuthID:(id)arg1;
-- (void)setDeliveryAcknowledgementBlock:(id)arg1;
+- (void)setDeliveryAcknowledgementBlock:(id /* block */)arg1;
 - (void)setForceCellular:(BOOL)arg1;
 - (void)setHasReceivedPushAck:(BOOL)arg1;
 - (void)setHighPriority:(BOOL)arg1;

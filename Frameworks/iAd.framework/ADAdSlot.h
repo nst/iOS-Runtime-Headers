@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <ADAdSlotDelegate>, NSArray, NSData, NSMutableArray, NSString;
-
 @interface ADAdSlot : NSObject <ADBannerViewInternalDelegate, NSSecureCoding> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     <ADAdSlotDelegate> *_delegate;
     BOOL _didBeginPlayback;
     BOOL _didReportFinish;
@@ -28,24 +18,24 @@
     NSMutableArray *_visuallyEngagedBanners;
 }
 
-@property(retain,readonly) NSArray * ads;
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property <ADAdSlotDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didBeginPlayback;
-@property BOOL didReportFinish;
-@property BOOL didRequest;
-@property(copy) NSData * followingSongData;
-@property BOOL gatewayAdSlot;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(retain) NSMutableArray * pendingBannerLoads;
-@property(copy) NSData * previousSongData;
-@property(copy) NSData * stationData;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * visuallyDisengagedBanners;
-@property(retain) NSMutableArray * visuallyEngagedBanners;
+@property (nonatomic, readonly, retain) NSArray *ads;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ADAdSlotDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didBeginPlayback;
+@property (nonatomic) BOOL didReportFinish;
+@property (nonatomic) BOOL didRequest;
+@property (nonatomic, copy) NSData *followingSongData;
+@property (nonatomic) BOOL gatewayAdSlot;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) NSMutableArray *pendingBannerLoads;
+@property (nonatomic, copy) NSData *previousSongData;
+@property (nonatomic, copy) NSData *stationData;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *visuallyDisengagedBanners;
+@property (nonatomic, retain) NSMutableArray *visuallyEngagedBanners;
 
 + (BOOL)supportsSecureCoding;
 
@@ -55,7 +45,7 @@
 - (id)ads;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -69,10 +59,10 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)loadVisuallyEngagedAds:(id)arg1 visuallyDisengagedAds:(id)arg2 completionHandler:(id)arg3;
+- (void)loadVisuallyEngagedAds:(id)arg1 visuallyDisengagedAds:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)pendingBannerLoads;
 - (id)previousSongData;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidBeginPlayback:(BOOL)arg1;
 - (void)setDidReportFinish:(BOOL)arg1;

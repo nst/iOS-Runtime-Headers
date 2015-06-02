@@ -6,7 +6,7 @@
     float _rowHeight;
 }
 
-@property float rowHeight;
+@property (nonatomic) float rowHeight;
 
 - (void)prepareLayout;
 - (float)rowHeight;

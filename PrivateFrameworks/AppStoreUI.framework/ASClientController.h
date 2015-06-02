@@ -6,7 +6,7 @@
     BOOL _shouldExitAfterPurchases;
 }
 
-@property BOOL shouldExitAfterPurchases;
+@property (nonatomic) BOOL shouldExitAfterPurchases;
 
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)initWithClientInterface:(id)arg1;

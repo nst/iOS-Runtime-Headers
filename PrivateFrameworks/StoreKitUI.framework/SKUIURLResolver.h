@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIURLResolverDelegate>, <UINavigationControllerDelegate>, NSOperationQueue, NSString, SKUIClientContext, SKUIPassbookLoader;
-
 @interface SKUIURLResolver : NSObject <SKUIPassbookLoaderDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIURLResolverDelegate> *_delegate;
@@ -12,13 +10,13 @@
     SKUIPassbookLoader *_passbookLoader;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIURLResolverDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <UINavigationControllerDelegate> * navigationControllerDelegate;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIURLResolverDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <UINavigationControllerDelegate> *navigationControllerDelegate;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (readonly) Class superclass;
 
 + (id)tabIdentifierForURL:(id)arg1;
 

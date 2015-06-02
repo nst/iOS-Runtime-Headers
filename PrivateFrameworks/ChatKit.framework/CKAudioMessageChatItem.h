@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAudioMediaObject;
+@interface CKAudioMessageChatItem : CKExpirableMessageChatItem
 
-@interface CKAudioMessageChatItem : CKExpirableMessageChatItem {
-}
-
-@property(retain,readonly) CKAudioMediaObject * mediaObject;
+@property (nonatomic, readonly, retain) CKAudioMediaObject *mediaObject;
 
 - (unsigned int)balloonCorners;
 - (Class)balloonViewClass;

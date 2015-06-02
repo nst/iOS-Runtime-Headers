@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FUShapeView : UIView {
-}
+@interface FUShapeView : UIView
 
 + (Class)layerClass;
 

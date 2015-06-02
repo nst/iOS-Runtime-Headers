@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationRecorderStyleProvider>, CAAnimation, NSMutableArray, NSMutableDictionary;
-
 @interface TKVibrationRecorderRippleView : UIView {
     BOOL _animating;
     float _currentSpeedCoefficient;
@@ -29,27 +27,27 @@
     BOOL _trackingTouch;
 }
 
-@property(getter=_isAnimating,setter=_setAnimating:) BOOL _animating;
-@property(readonly) float _currentSpeed;
-@property(setter=_setCurrentSpeedCoefficient:) float _currentSpeedCoefficient;
-@property(setter=_setCurrentTouchLocation:) struct CGPoint { float x1; float x2; } _currentTouchLocation;
-@property(setter=_setCurrentTouchStartTime:) double _currentTouchStartTime;
-@property(setter=_setLastRingLayerIdentifier:) unsigned int _lastRingLayerIdentifier;
-@property(setter=_setNeedsCurrentSpeedRefresh:) BOOL _needsCurrentSpeedRefresh;
-@property(setter=_setNumberOfRipplesForCurrentTouch:) unsigned int _numberOfRipplesForCurrentTouch;
-@property(setter=_setRecentTouchesContextQueue:,retain) NSMutableArray * _recentTouchesContextQueue;
-@property(setter=_setReusableRingLayers:,retain) NSMutableArray * _reusableRingLayers;
-@property(setter=_setReusableTouchContexts:,retain) NSMutableArray * _reusableTouchContexts;
-@property(setter=_setRingEnlargementAnimation:,retain) CAAnimation * _ringEnlargementAnimation;
-@property(setter=_setRingLayersByIdentifiers:,retain) NSMutableDictionary * _ringLayersByIdentifiers;
-@property(setter=_setRingLayersQueue:,retain) NSMutableArray * _ringLayersQueue;
-@property(setter=_setStyleProvider:,retain) <TKVibrationRecorderStyleProvider> * _styleProvider;
-@property(getter=_isTouchDown,readonly) BOOL _touchDown;
-@property(getter=_isTrackingTouch,setter=_setTrackingTouch:) BOOL _trackingTouch;
-@property float fadeOutRadius;
-@property float fingerMovingSpeed;
-@property float fingerStillSpeed;
-@property float firstRippleInitialRadius;
+@property (getter=_isAnimating, setter=_setAnimating:, nonatomic) BOOL _animating;
+@property (nonatomic, readonly) float _currentSpeed;
+@property (setter=_setCurrentSpeedCoefficient:, nonatomic) float _currentSpeedCoefficient;
+@property (setter=_setCurrentTouchLocation:, nonatomic) struct CGPoint { float x1; float x2; } _currentTouchLocation;
+@property (setter=_setCurrentTouchStartTime:, nonatomic) double _currentTouchStartTime;
+@property (setter=_setLastRingLayerIdentifier:, nonatomic) unsigned int _lastRingLayerIdentifier;
+@property (setter=_setNeedsCurrentSpeedRefresh:, nonatomic) BOOL _needsCurrentSpeedRefresh;
+@property (setter=_setNumberOfRipplesForCurrentTouch:, nonatomic) unsigned int _numberOfRipplesForCurrentTouch;
+@property (setter=_setRecentTouchesContextQueue:, nonatomic, retain) NSMutableArray *_recentTouchesContextQueue;
+@property (setter=_setReusableRingLayers:, nonatomic, retain) NSMutableArray *_reusableRingLayers;
+@property (setter=_setReusableTouchContexts:, nonatomic, retain) NSMutableArray *_reusableTouchContexts;
+@property (setter=_setRingEnlargementAnimation:, nonatomic, retain) CAAnimation *_ringEnlargementAnimation;
+@property (setter=_setRingLayersByIdentifiers:, nonatomic, retain) NSMutableDictionary *_ringLayersByIdentifiers;
+@property (setter=_setRingLayersQueue:, nonatomic, retain) NSMutableArray *_ringLayersQueue;
+@property (setter=_setStyleProvider:, nonatomic, retain) <TKVibrationRecorderStyleProvider> *_styleProvider;
+@property (getter=_isTouchDown, nonatomic, readonly) BOOL _touchDown;
+@property (getter=_isTrackingTouch, setter=_setTrackingTouch:, nonatomic) BOOL _trackingTouch;
+@property (nonatomic) float fadeOutRadius;
+@property (nonatomic) float fingerMovingSpeed;
+@property (nonatomic) float fingerStillSpeed;
+@property (nonatomic) float firstRippleInitialRadius;
 
 - (float)_currentSpeed;
 - (float)_currentSpeedCoefficient;

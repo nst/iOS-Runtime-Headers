@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class CalPreferences;
-
 @interface EKDebugPreferences : NSObject {
     CalPreferences *_preferences;
 }
 
-@property double availabilityFreshnessWindow;
-@property double travelLookaheadInterval;
+@property (nonatomic) double availabilityFreshnessWindow;
+@property (nonatomic) double travelLookaheadInterval;
 
 + (id)shared;
 

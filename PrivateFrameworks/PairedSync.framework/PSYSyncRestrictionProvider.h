@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class <PSYSyncRestrictionProviderDelegate>, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface PSYSyncRestrictionProvider : NSObject <PSYDeviceSyncStateObserver> {
     <PSYSyncRestrictionProviderDelegate> *_delegate;
     BOOL _hasReceivedStartSync;
@@ -18,12 +16,12 @@
     unsigned int _syncRestriction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PSYSyncRestrictionProviderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * serviceName;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSYSyncRestrictionProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *serviceName;
+@property (readonly) Class superclass;
 @property unsigned int syncRestriction;
 
 - (void).cxx_destruct;

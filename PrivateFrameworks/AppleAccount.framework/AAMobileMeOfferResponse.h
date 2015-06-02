@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber, NSString;
+@interface AAMobileMeOfferResponse : AAResponse
 
-@interface AAMobileMeOfferResponse : AAResponse {
-}
-
-@property(readonly) NSString * classicMessage;
-@property(readonly) NSString * classicTitle;
-@property(readonly) NSNumber * identifier;
-@property(readonly) NSString * message;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *classicMessage;
+@property (nonatomic, readonly) NSString *classicTitle;
+@property (nonatomic, readonly) NSNumber *identifier;
+@property (nonatomic, readonly) NSString *message;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)classicMessage;
 - (id)classicTitle;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSMutableSettings : BSSettings {
-}
+@interface BSMutableSettings : BSSettings
 
 - (void)applySettings:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

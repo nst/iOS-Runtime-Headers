@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUIKeyline, UIButton;
-
 @interface SiriUIObjectPickerButtonView : UIView {
     SiriUIKeyline *_bottomKeyline;
     UIButton *_button;
@@ -11,8 +9,8 @@
     SiriUIKeyline *_topKeyline;
 }
 
-@property(readonly) UIButton * button;
-@property BOOL showsTopKeyline;
+@property (nonatomic, readonly) UIButton *button;
+@property (nonatomic) BOOL showsTopKeyline;
 
 + (float)defaultHeight;
 

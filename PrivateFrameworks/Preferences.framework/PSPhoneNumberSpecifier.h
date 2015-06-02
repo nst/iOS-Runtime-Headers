@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
-
 @interface PSPhoneNumberSpecifier : PSTextFieldSpecifier <UITextFieldDelegate> {
     NSString *_countryCode;
 }
 
-@property(retain) NSString * countryCode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *countryCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)countryCode;
 - (void)dealloc;

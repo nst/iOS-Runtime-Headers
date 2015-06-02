@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
  */
 
-@interface DCIMImageWriter : NSObject {
-}
+@interface DCIMImageWriter : NSObject
 
 + (id)avalanchePathExtension;
 + (id)defaultFileExtensionForAssetType:(short)arg1;

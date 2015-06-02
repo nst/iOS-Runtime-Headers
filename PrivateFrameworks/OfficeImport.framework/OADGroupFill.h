@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADGroupFill : OADFill {
-}
+@interface OADGroupFill : OADFill
 
 + (id)defaultProperties;
 

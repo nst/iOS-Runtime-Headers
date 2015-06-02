@@ -11,7 +11,7 @@
     struct CGColor { } *_rawColor;
 }
 
-@property(readonly) float offset;
+@property (nonatomic, readonly) float offset;
 
 - (int)compare:(id)arg1;
 - (struct CGColor { }*)copyCGColor;

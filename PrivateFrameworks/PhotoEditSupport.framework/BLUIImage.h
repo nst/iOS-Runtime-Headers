@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@interface BLUIImage : BLImage {
-}
+@interface BLUIImage : BLImage
 
 - (struct CGImage { }*)CGImage;
 - (id)CIImage;

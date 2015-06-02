@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class WebVisiblePosition;
-
 @interface UITextPositionImpl : UITextPosition {
     WebVisiblePosition *_webVisiblePosition;
 }
 
-@property(retain) WebVisiblePosition * webVisiblePosition;
+@property (nonatomic, retain) WebVisiblePosition *webVisiblePosition;
 
 + (id)wrapWebVisiblePosition:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreOfferMediaItemArtwork : MPConcreteMediaItemArtwork {
-}
+@interface MPStoreOfferMediaItemArtwork : MPConcreteMediaItemArtwork
 
 - (id)_artworkDescriptor;
 - (unsigned int)hash;

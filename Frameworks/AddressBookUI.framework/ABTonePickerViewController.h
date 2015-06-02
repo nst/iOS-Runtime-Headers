@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class TKTonePickerViewController;
-
 @interface ABTonePickerViewController : ABPickerViewController {
     TKTonePickerViewController *_tonePickerViewController;
 }
 
-@property(retain,readonly) TKTonePickerViewController * tonePickerViewController;
+@property (nonatomic, readonly, retain) TKTonePickerViewController *tonePickerViewController;
 
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;

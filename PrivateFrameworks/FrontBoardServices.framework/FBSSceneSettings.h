@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class BSSettings, NSArray, NSSet;
-
 @interface FBSSceneSettings : NSObject <NSCopying, NSMutableCopying> {
     BOOL _backgrounded;
     struct CGPoint { 
@@ -30,12 +28,14 @@
     BSSettings *_transientLocalSettings;
 }
 
-@property(getter=isBackgrounded,readonly) BOOL backgrounded;
-@property(readonly) struct CGPoint { float x1; float x2; } contentOffset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) int interfaceOrientation;
-@property(readonly) float level;
-@property(copy,readonly) NSArray * occlusions;
+@property (getter=isBackgrounded, nonatomic, readonly) BOOL backgrounded;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) int interfaceOrientation;
+@property (nonatomic, readonly) float level;
+@property (nonatomic, readonly, copy) NSArray *occlusions;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (BOOL)_isMutable;
 + (id)settings;
@@ -56,7 +56,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIgnoringOcclusions;
 - (BOOL)isOccluded;
-- (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (float)level;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -64,5 +63,9 @@
 - (id)otherSettings;
 - (id)transientLocalSettings;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)isUISubclass;
 
 @end

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTypingChatItem : CKChatItem {
-}
+@interface CKTypingChatItem : CKChatItem
 
-@property(getter=isFromMe,readonly) BOOL fromMe;
+@property (getter=isFromMe, nonatomic, readonly) BOOL fromMe;
 
 - (Class)cellClass;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;

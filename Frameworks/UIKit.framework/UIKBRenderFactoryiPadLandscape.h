@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPadLandscape : UIKBRenderFactoryiPad {
-}
+@interface UIKBRenderFactoryiPadLandscape : UIKBRenderFactoryiPad
 
 - (float)bottomRowDefaultFontSize;
 - (float)defaultVariantSizeThreshold;

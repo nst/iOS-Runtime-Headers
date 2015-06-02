@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSString, UIButton, UIView, _UIBackdropView;
-
 @interface PUPhotoEditToolbar : UIView <PUPhotoEditLayoutStaticAdaptable> {
     _UIBackdropView *_backdropBackgroundView;
     NSArray *_basicViewsConstraints;
@@ -20,16 +18,16 @@
     BOOL _useTranslucentBackground;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int layoutOrientation;
-@property float longSideMargin;
-@property(readonly) UIButton * mainActionButton;
-@property(readonly) UIButton * secondaryActionButton;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSArray * toolButtons;
-@property BOOL useTranslucentBackground;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (nonatomic) float longSideMargin;
+@property (nonatomic, readonly) UIButton *mainActionButton;
+@property (nonatomic, readonly) UIButton *secondaryActionButton;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSArray *toolButtons;
+@property (nonatomic) BOOL useTranslucentBackground;
 
 - (void).cxx_destruct;
 - (void)_updateBackgroundAnimated:(BOOL)arg1;

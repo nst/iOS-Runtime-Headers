@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, NSNumber, NSString, UIColor, UIImage, _UIGraphicsLetterpressStyle;
-
 @interface UIButtonContent : NSObject <NSCoding, NSCopying> {
     NSAttributedString *attributedTitle;
     UIImage *background;
@@ -15,16 +13,16 @@
     UIColor *titleColor;
 }
 
-@property(retain) NSAttributedString * attributedTitle;
-@property(retain) UIImage * background;
-@property(retain) NSNumber * drawingStroke;
-@property(retain) UIImage * image;
-@property(retain) UIColor * imageColor;
-@property(readonly) BOOL isEmpty;
-@property(retain) _UIGraphicsLetterpressStyle * letterpressStyle;
-@property(retain) UIColor * shadowColor;
-@property(retain) NSString * title;
-@property(retain) UIColor * titleColor;
+@property (nonatomic, retain) NSAttributedString *attributedTitle;
+@property (nonatomic, retain) UIImage *background;
+@property (nonatomic, retain) NSNumber *drawingStroke;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIColor *imageColor;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, retain) _UIGraphicsLetterpressStyle *letterpressStyle;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) UIColor *titleColor;
 
 - (id)attributedTitle;
 - (id)background;

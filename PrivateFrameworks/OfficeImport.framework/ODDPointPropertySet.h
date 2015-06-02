@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject, NSString;
-
 @interface ODDPointPropertySet : NSObject {
     double mCustomOffsetX;
     double mCustomOffsetY;

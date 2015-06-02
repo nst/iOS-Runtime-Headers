@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUICategoryTableViewCell : UITableViewCell {
     struct CGSize { 
         float width; 
@@ -13,7 +11,7 @@
     UIView *_separatorView;
 }
 
-@property struct CGSize { float x1; float x2; } expectedImageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } expectedImageSize;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })expectedImageSize;

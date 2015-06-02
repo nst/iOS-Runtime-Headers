@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class <AccountFullAccountProtocol>, <AccountRefreshProtocol>, BasicAccount, NSDictionary, NSMutableDictionary, NSString;
-
 @interface BasicAccount : NSObject <AccountFullAccountProtocol> {
     <AccountFullAccountProtocol> *_fullAccount;
     NSDictionary *_originalProperties;
@@ -12,11 +10,11 @@
     <AccountRefreshProtocol> *_syncAccount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * originalProperties;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *originalProperties;
+@property (readonly) Class superclass;
 
 + (id)_accountCreationMap;
 + (id)_creatorsInfo;
@@ -69,7 +67,7 @@
 - (BOOL)refreshContainersForDataclass:(id)arg1;
 - (BOOL)refreshContainersForDataclass:(id)arg1 isUserRequested:(BOOL)arg2;
 - (void)removeAccountPropertyForKey:(id)arg1;
-- (void)renewAccountCredentialsWithHandler:(id)arg1;
+- (void)renewAccountCredentialsWithHandler:(id /* block */)arg1;
 - (void)setAccountClass:(id)arg1;
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (void)setDisplayName:(id)arg1;

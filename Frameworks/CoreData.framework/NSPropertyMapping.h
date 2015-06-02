@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSExpression, NSString;
-
 @interface NSPropertyMapping : NSObject {
     NSString *_name;
     struct __propertyMappingFlags { 
@@ -17,9 +15,9 @@
     NSExpression *_valueExpression;
 }
 
-@property(copy) NSString * name;
-@property(retain) NSDictionary * userInfo;
-@property(retain) NSExpression * valueExpression;
+@property (copy) NSString *name;
+@property (retain) NSDictionary *userInfo;
+@property (retain) NSExpression *valueExpression;
 
 + (void)initialize;
 

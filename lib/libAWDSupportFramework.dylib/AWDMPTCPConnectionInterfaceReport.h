@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDMPTCPConnectionInterfaceReport : PBCodable <NSCopying> {
     long long _dataInKB;
     long long _dataOutKB;
@@ -27,22 +25,22 @@
     unsigned long long _timestamp;
 }
 
-@property long long dataInKB;
-@property long long dataOutKB;
-@property BOOL hasDataInKB;
-@property BOOL hasDataOutKB;
-@property(readonly) BOOL hasInterfaceName;
-@property BOOL hasPostConnectTcpFallbackCount;
-@property BOOL hasSecondaryFlowFailureCount;
-@property BOOL hasSecondaryFlowSuccessCount;
-@property BOOL hasTimestamp;
-@property(retain) NSString * interfaceName;
-@property(readonly) int* postConnectSubflowFailureErrors;
-@property(readonly) unsigned int postConnectSubflowFailureErrorsCount;
-@property BOOL postConnectTcpFallbackCount;
-@property int secondaryFlowFailureCount;
-@property int secondaryFlowSuccessCount;
-@property unsigned long long timestamp;
+@property (nonatomic) long long dataInKB;
+@property (nonatomic) long long dataOutKB;
+@property (nonatomic) BOOL hasDataInKB;
+@property (nonatomic) BOOL hasDataOutKB;
+@property (nonatomic, readonly) BOOL hasInterfaceName;
+@property (nonatomic) BOOL hasPostConnectTcpFallbackCount;
+@property (nonatomic) BOOL hasSecondaryFlowFailureCount;
+@property (nonatomic) BOOL hasSecondaryFlowSuccessCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *interfaceName;
+@property (nonatomic, readonly) int*postConnectSubflowFailureErrors;
+@property (nonatomic, readonly) unsigned int postConnectSubflowFailureErrorsCount;
+@property (nonatomic) BOOL postConnectTcpFallbackCount;
+@property (nonatomic) int secondaryFlowFailureCount;
+@property (nonatomic) int secondaryFlowSuccessCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addPostConnectSubflowFailureErrors:(int)arg1;
 - (void)clearPostConnectSubflowFailureErrors;

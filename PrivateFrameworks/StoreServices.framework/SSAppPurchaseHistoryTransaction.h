@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSQLiteDatabase;
-
 @interface SSAppPurchaseHistoryTransaction : NSObject {
     SSSQLiteDatabase *_database;
 }
 
-@property(readonly) SSSQLiteDatabase * database;
+@property (nonatomic, readonly) SSSQLiteDatabase *database;
 
 - (id)database;
 - (void)dealloc;

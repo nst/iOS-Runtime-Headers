@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class <NACRoutingControllerDelegate>, MPAVRoutingController, NACAudioRoute, NSArray, NSString;
-
 @interface NACRoutingControllerLocal : NSObject <MPAVRoutingControllerDelegate, NACRoutingController> {
     NSString *_audioCategory;
     <NACRoutingControllerDelegate> *_delegate;
     MPAVRoutingController *_routingController;
 }
 
-@property(readonly) NSArray * availableAudioRoutes;
-@property(copy,readonly) NSString * debugDescription;
-@property <NACRoutingControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NACAudioRoute * pickedRoute;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *availableAudioRoutes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NACRoutingControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NACAudioRoute *pickedRoute;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)availableAudioRoutes;

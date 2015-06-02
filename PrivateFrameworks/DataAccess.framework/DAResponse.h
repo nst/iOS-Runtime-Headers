@@ -6,7 +6,7 @@
     int _status;
 }
 
-@property int status;
+@property (nonatomic) int status;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -7,8 +7,8 @@
     unsigned int _requestCount;
 }
 
-@property double lastResetTime;
-@property unsigned int requestCount;
+@property (nonatomic) double lastResetTime;
+@property (nonatomic) unsigned int requestCount;
 
 - (double)lastResetTime;
 - (unsigned int)requestCount;

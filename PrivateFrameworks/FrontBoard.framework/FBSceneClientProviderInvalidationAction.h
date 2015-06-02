@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class BSAction;
-
 @interface FBSceneClientProviderInvalidationAction : NSObject {
     BSAction *_action;
 }
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithHandler:(id)arg1;
+- (id)initWithHandler:(id /* block */)arg1;
 - (void)invalidate;
 
 @end

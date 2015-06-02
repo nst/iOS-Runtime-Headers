@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@interface BookmarkDAVRecursiveContainerSyncTaskGroup : CoreDAVRecursiveContainerSyncTaskGroup {
-}
+@interface BookmarkDAVRecursiveContainerSyncTaskGroup : CoreDAVRecursiveContainerSyncTaskGroup
 
 - (id)copyFolderMultiGetTaskWithURLs:(id)arg1;
 - (id)copyMultiGetTaskWithURLs:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryNumberPadLandscape : UIKBRenderFactoryNumberPad {
-}
+@interface UIKBRenderFactoryNumberPadLandscape : UIKBRenderFactoryNumberPad
 
 - (struct CGPoint { float x1; float x2; })centerColumnLetterOffset;
 - (struct CGPoint { float x1; float x2; })centerColumnNumberOffset;

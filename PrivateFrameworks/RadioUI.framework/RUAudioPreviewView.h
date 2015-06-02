@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUAudioPreviewViewDelegate>, CADisplayLink, MPUDownloadProgressIndicator, NSString, RUPreviewSession, SKUIItemOfferButton, UIImage, UIImageView, _RUAudioPreviewTicker;
-
 @interface RUAudioPreviewView : UIView <RUPreviewSessionObserver> {
     struct UIEdgeInsets { 
         float top; 
@@ -33,18 +31,18 @@
     int _style;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkEdgeInsets;
-@property(retain) UIImage * artworkImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkOverlayEdgeInsets;
-@property(retain) UIImage * artworkOverlayImage;
-@property double customDuration;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUAudioPreviewViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) RUPreviewSession * previewSession;
-@property(readonly) int style;
-@property(readonly) Class superclass;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkEdgeInsets;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkOverlayEdgeInsets;
+@property (nonatomic, retain) UIImage *artworkOverlayImage;
+@property (nonatomic) double customDuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUAudioPreviewViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) RUPreviewSession *previewSession;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
@@ -60,8 +58,8 @@
 - (double)customDuration;
 - (void)dealloc;
 - (id)delegate;
-- (void)flipFromPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)flipToPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)flipFromPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)flipToPreviewProgressAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (void)layoutSubviews;

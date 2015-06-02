@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADFontReference : NSObject <NSCopying> {
     OADColor *mColor;
     int mIndex;

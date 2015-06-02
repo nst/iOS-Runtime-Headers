@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStylesheet;
-
 @interface GQDLSDocument : GQDRoot {
     GQDSStylesheet *mStylesheet;
 }

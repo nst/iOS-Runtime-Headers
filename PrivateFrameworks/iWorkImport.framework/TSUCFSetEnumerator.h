@@ -5,12 +5,12 @@
 @interface TSUCFSetEnumerator : NSObject <NSFastEnumeration> {
     long mCount;
     long mIndex;
-    void *mInlineObjects[16];
+    void *mInlineObjects;
     const void **mObjects;
 }
 
 - (id)allObjects;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)initWithCFSet:(struct __CFSet { }*)arg1;
 - (id)nextObject;

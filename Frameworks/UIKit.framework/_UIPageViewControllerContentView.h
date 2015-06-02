@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageControl, UIPageViewController, _UIQueuingScrollView;
-
 @interface _UIPageViewControllerContentView : UIView {
     UIPageControl *_pageControl;
     UIPageViewController *_pageViewController;
     _UIQueuingScrollView *_scrollView;
 }
 
-@property(readonly) UIPageControl * pageControl;
-@property(readonly) _UIQueuingScrollView * scrollView;
+@property (nonatomic, readonly) UIPageControl *pageControl;
+@property (nonatomic, readonly) _UIQueuingScrollView *scrollView;
 
 - (float)_pageSpacing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollViewFrame;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAStartDirectActionRequest : SAStartRequest
 
-@interface SAStartDirectActionRequest : SAStartRequest {
-}
-
-@property(copy) NSString * directAction;
+@property (nonatomic, copy) NSString *directAction;
 
 + (id)startDirectActionRequest;
 + (id)startDirectActionRequestWithDictionary:(id)arg1 context:(id)arg2;

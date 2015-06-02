@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class SSMetricsConfiguration, SSMetricsPageEvent, SSURLConnectionRequest;
-
 @interface RadioGetStationsRequest : RadioRequest {
     SSMetricsConfiguration *_metricsConfiguration;
     SSMetricsPageEvent *_metricsPageEvent;
@@ -14,11 +12,11 @@
     int _resultsOffset;
 }
 
-@property(readonly) SSMetricsConfiguration * metricsConfiguration;
-@property(copy,readonly) SSMetricsPageEvent * metricsPageEvent;
-@property int numberOfResults;
-@property(readonly) long long parentNodeID;
-@property int resultsOffset;
+@property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, readonly, copy) SSMetricsPageEvent *metricsPageEvent;
+@property (nonatomic) int numberOfResults;
+@property (nonatomic, readonly) long long parentNodeID;
+@property (nonatomic) int resultsOffset;
 
 - (void).cxx_destruct;
 - (id)_rootTreeNodeByApplyingResponse:(id)arg1 returningError:(id*)arg2;
@@ -32,6 +30,6 @@
 - (int)resultsOffset;
 - (void)setNumberOfResults:(int)arg1;
 - (void)setResultsOffset:(int)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

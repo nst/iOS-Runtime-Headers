@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIActivityIndicatorView;
-
 @interface PTSLoadingCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
 }

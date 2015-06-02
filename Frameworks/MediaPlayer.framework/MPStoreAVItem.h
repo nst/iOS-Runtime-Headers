@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPStoreItemContext, NSString;
-
 @interface MPStoreAVItem : MPAVItem {
     NSString *_aggregateDictionaryItemIdentifier;
     MPMediaItem *_mediaItem;
@@ -11,7 +9,7 @@
     MPStoreItemContext *_storeItemContext;
 }
 
-@property(readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned int options;
 
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 + (void)setShouldAlwaysAirplayFromCloud:(BOOL)arg1;

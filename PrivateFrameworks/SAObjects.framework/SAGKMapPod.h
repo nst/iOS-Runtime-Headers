@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, SALocation, SAUIAppPunchOut;
+@interface SAGKMapPod : SAGKPodView
 
-@interface SAGKMapPod : SAGKPodView {
-}
-
-@property(retain) SALocation * location;
-@property(retain) SAUIAppPunchOut * punchOut;
-@property(copy) NSNumber * showButton;
-@property(copy) NSNumber * zoomLevel;
+@property (nonatomic, retain) SALocation *location;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
+@property (nonatomic, copy) NSNumber *showButton;
+@property (nonatomic, copy) NSNumber *zoomLevel;
 
 + (id)mapPod;
 + (id)mapPodWithDictionary:(id)arg1 context:(id)arg2;

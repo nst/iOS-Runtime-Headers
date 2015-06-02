@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayVideoSessionStartedOnClient : PBCodable <NSCopying> {
     unsigned int _audioOnly;
     unsigned int _authMs;
@@ -40,40 +38,40 @@
     unsigned int _type;
 }
 
-@property unsigned int audioOnly;
-@property unsigned int authMs;
-@property unsigned int bitrate;
-@property unsigned int bonjourMs;
-@property unsigned int connectMs;
-@property unsigned int duration;
-@property unsigned long long fileBytes;
-@property BOOL hasAudioOnly;
-@property BOOL hasAuthMs;
-@property BOOL hasBitrate;
-@property BOOL hasBonjourMs;
-@property BOOL hasConnectMs;
-@property BOOL hasDuration;
-@property BOOL hasFileBytes;
-@property BOOL hasInfoMs;
-@property BOOL hasPostAuthMs;
-@property BOOL hasSecureConnectionMs;
-@property(readonly) BOOL hasServerModel;
-@property(readonly) BOOL hasServerVersion;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property BOOL hasType;
-@property unsigned int infoMs;
-@property unsigned int postAuthMs;
-@property unsigned int secureConnectionMs;
-@property(retain) NSString * serverModel;
-@property(retain) NSString * serverVersion;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
-@property unsigned int type;
+@property (nonatomic) unsigned int audioOnly;
+@property (nonatomic) unsigned int authMs;
+@property (nonatomic) unsigned int bitrate;
+@property (nonatomic) unsigned int bonjourMs;
+@property (nonatomic) unsigned int connectMs;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned long long fileBytes;
+@property (nonatomic) BOOL hasAudioOnly;
+@property (nonatomic) BOOL hasAuthMs;
+@property (nonatomic) BOOL hasBitrate;
+@property (nonatomic) BOOL hasBonjourMs;
+@property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasFileBytes;
+@property (nonatomic) BOOL hasInfoMs;
+@property (nonatomic) BOOL hasPostAuthMs;
+@property (nonatomic) BOOL hasSecureConnectionMs;
+@property (nonatomic, readonly) BOOL hasServerModel;
+@property (nonatomic, readonly) BOOL hasServerVersion;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned int infoMs;
+@property (nonatomic) unsigned int postAuthMs;
+@property (nonatomic) unsigned int secureConnectionMs;
+@property (nonatomic, retain) NSString *serverModel;
+@property (nonatomic, retain) NSString *serverVersion;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
+@property (nonatomic) unsigned int type;
 
 - (unsigned int)audioOnly;
 - (unsigned int)authMs;

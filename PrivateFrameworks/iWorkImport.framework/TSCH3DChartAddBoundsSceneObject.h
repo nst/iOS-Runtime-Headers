@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartAddBoundsSceneObject : TSCH3DSceneObject {
-}
+@interface TSCH3DChartAddBoundsSceneObject : TSCH3DSceneObject
 
 + (id)p_rotationBoundsModeForScene:(id)arg1;
 + (id)p_setBoundsModeClass:(Class)arg1 forScene:(id)arg2;

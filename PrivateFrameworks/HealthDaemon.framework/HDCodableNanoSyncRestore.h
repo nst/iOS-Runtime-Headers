@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface HDCodableNanoSyncRestore : PBCodable <HDNanoSyncDescription, HDSyncObjectCollection, NSCopying> {
     struct { 
         unsigned int objectType : 1; 
@@ -12,13 +10,13 @@
     int _objectType;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasObjectType;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * objectDatas;
-@property int objectType;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasObjectType;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *objectDatas;
+@property (nonatomic) int objectType;
+@property (readonly) Class superclass;
 
 + (id)restoreWithNanoSyncEntityClass:(Class)arg1;
 

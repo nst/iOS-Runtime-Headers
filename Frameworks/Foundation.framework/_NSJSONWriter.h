@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSOutputStream;
-
 @interface _NSJSONWriter : NSObject {
     char *dataBuffer;
     unsigned int dataBufferLen;

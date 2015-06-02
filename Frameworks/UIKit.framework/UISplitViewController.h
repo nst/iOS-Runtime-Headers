@@ -2,23 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UISplitViewControllerDelegate>, NSArray, NSString, UIBarButtonItem, UIGestureRecognizer, UIPopoverController, UIResponder, UISnapshotView, UIView, UIViewController;
-
 @interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling, UIGestureRecognizerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __clearPreventRotationHook;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __didChangeBoundsBlock;
-
+    id /* block */ __clearPreventRotationHook;
+    id /* block */ __didChangeBoundsBlock;
     UIViewController *__preservedDetailController;
     UIBarButtonItem *_barButtonItem;
     NSString *_buttonTitle;
@@ -111,31 +97,33 @@
     BOOL _useChangingBoundsLayout;
 }
 
-@property(setter=_setClearPreventRotationHook:,copy) id _clearPreventRotationHook;
-@property(getter=_didChangeBoundsBlock,setter=_setDidChangeBoundsBlock:,copy) id _didChangeBoundsBlock;
-@property(setter=_setDisplayModeButtonItemTitle:,copy) NSString * _displayModeButtonItemTitle;
-@property(setter=_setPresentsInFadingPopover:) BOOL _presentsInFadingPopover;
-@property(setter=_setPreservedDetailController:,retain) UIViewController * _preservedDetailController;
-@property(setter=_setResizesDetailOnSlide:) BOOL _resizesDetailOnSlide;
-@property(getter=isCollapsed,readonly) BOOL collapsed;
-@property(copy,readonly) NSString * debugDescription;
-@property <UISplitViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) int displayMode;
-@property float gutterWidth;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL hidesMasterViewInLandscape;
-@property BOOL hidesMasterViewInPortrait;
-@property float masterColumnWidth;
-@property float maximumPrimaryColumnWidth;
-@property float minimumPrimaryColumnWidth;
-@property int preferredDisplayMode;
-@property float preferredPrimaryColumnWidthFraction;
-@property BOOL presentsWithGesture;
-@property(readonly) float primaryColumnWidth;
-@property BOOL resizeForKeyboard;
-@property(readonly) Class superclass;
-@property(copy) NSArray * viewControllers;
+@property (setter=_setClearPreventRotationHook:, nonatomic, copy) id /* block */ _clearPreventRotationHook;
+@property (getter=_didChangeBoundsBlock, setter=_setDidChangeBoundsBlock:, nonatomic, copy) id /* block */ _didChangeBoundsBlock;
+@property (setter=_setDisplayModeButtonItemTitle:, nonatomic, copy) NSString *_displayModeButtonItemTitle;
+@property (setter=_setPresentsInFadingPopover:, nonatomic) BOOL _presentsInFadingPopover;
+@property (setter=_setPreservedDetailController:, nonatomic, retain) UIViewController *_preservedDetailController;
+@property (setter=_setResizesDetailOnSlide:, nonatomic) BOOL _resizesDetailOnSlide;
+@property (getter=isCollapsed, nonatomic, readonly) BOOL collapsed;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UISplitViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int displayMode;
+@property (nonatomic) float gutterWidth;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL hidesMasterViewInLandscape;
+@property (nonatomic) BOOL hidesMasterViewInPortrait;
+@property (nonatomic) float masterColumnWidth;
+@property (nonatomic) float maximumPrimaryColumnWidth;
+@property (nonatomic) float minimumPrimaryColumnWidth;
+@property (nonatomic) int preferredDisplayMode;
+@property (nonatomic) float preferredPrimaryColumnWidthFraction;
+@property (nonatomic) BOOL presentsWithGesture;
+@property (nonatomic, readonly) float primaryColumnWidth;
+@property (nonatomic) BOOL resizeForKeyboard;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *viewControllers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (float)_defaultGutterWidthInView:(id)arg1;
 + (BOOL)_forcePresentsInSlidingPopover;
@@ -156,7 +144,7 @@
 - (BOOL)_canSlideMaster;
 - (void)_changeToDisplayMode:(int)arg1 forCurrentOrientationOnly:(BOOL)arg2;
 - (id)_childContainingSender:(id)arg1;
-- (id)_clearPreventRotationHook;
+- (id /* block */)_clearPreventRotationHook;
 - (void)_collapseSecondaryViewController:(id)arg1 ontoPrimaryViewController:(id)arg2;
 - (void)_commonInit;
 - (float)_contentMarginForChildViewController:(id)arg1;
@@ -167,7 +155,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_detailViewFrameWithPopoverControllerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_didChangeBoundsBlock;
+- (id /* block */)_didChangeBoundsBlock;
 - (void)_didChangeToFirstResponder:(id)arg1;
 - (void)_didTransitionTraitCollection;
 - (BOOL)_disableAutomaticKeyboardBehavior;
@@ -181,11 +169,6 @@
 - (int)_effectiveTargetDisplayMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForChildContentContainer:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_gkForceNextContentUpdate;
-- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
-- (void)_gkResetContents;
-- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
-- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (BOOL)_hasMasterViewController;
 - (void)_invalidateHidesMasterViewInOrientation:(int)arg1;
 - (void)_invokeDidChangeBoundsBlock;
@@ -222,9 +205,9 @@
 - (BOOL)_resizesDetailOnSlide;
 - (id)_secondaryViewControllerForCollapsing;
 - (id)_separateSecondaryViewControllerFromPrimaryViewController:(id)arg1;
-- (void)_setClearPreventRotationHook:(id)arg1;
+- (void)_setClearPreventRotationHook:(id /* block */)arg1;
 - (void)_setCollapsedState:(int)arg1;
-- (void)_setDidChangeBoundsBlock:(id)arg1;
+- (void)_setDidChangeBoundsBlock:(id /* block */)arg1;
 - (void)_setDisplayModeButtonItemTitle:(id)arg1;
 - (void)_setMasterOverrideTraitCollectionActive:(BOOL)arg1;
 - (void)_setPresentsInFadingPopover:(BOOL)arg1;
@@ -240,7 +223,7 @@
 - (BOOL)_shouldPreventAutorotation;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
 - (void)_showMasterViewAnimated:(BOOL)arg1;
-- (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id)arg5;
+- (void)_slideIn:(BOOL)arg1 viewController:(id)arg2 animated:(BOOL)arg3 totalDuration:(double)arg4 completion:(id /* block */)arg5;
 - (void)_transitionFromTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_triggerDisplayModeAction:(id)arg1;
 - (void)_updateChildContentMargins;
@@ -313,5 +296,13 @@
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
 
 @end

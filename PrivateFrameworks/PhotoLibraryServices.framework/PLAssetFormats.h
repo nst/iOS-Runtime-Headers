@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLAssetFormats : NSObject {
-}
+@interface PLAssetFormats : NSObject
 
 + (int)bestFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 demoteFactor:(double)arg3 srcAspectRatio:(double)arg4 isTableFormat:(BOOL*)arg5 desiredImagePixelSize:(struct CGSize { float x1; float x2; }*)arg6;
 + (id)descriptionForImageFormat:(int)arg1;

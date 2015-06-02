@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData;
-
 @interface NPKProtoBitmap : PBCodable <NSCopying> {
     NSData *_bitmapData;
     unsigned int _bitmapInfo;
@@ -14,13 +12,13 @@
     unsigned long long _width;
 }
 
-@property(retain) NSData * bitmapData;
-@property unsigned int bitmapInfo;
-@property unsigned long long bitsPerComponent;
-@property unsigned long long bitsPerPixel;
-@property unsigned long long bytesPerRow;
-@property unsigned long long height;
-@property unsigned long long width;
+@property (nonatomic, retain) NSData *bitmapData;
+@property (nonatomic) unsigned int bitmapInfo;
+@property (nonatomic) unsigned long long bitsPerComponent;
+@property (nonatomic) unsigned long long bitsPerPixel;
+@property (nonatomic) unsigned long long bytesPerRow;
+@property (nonatomic) unsigned long long height;
+@property (nonatomic) unsigned long long width;
 
 - (void).cxx_destruct;
 - (id)bitmapData;

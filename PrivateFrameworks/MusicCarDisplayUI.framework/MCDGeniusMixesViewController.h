@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSMutableDictionary;
-
 @interface MCDGeniusMixesViewController : MCD_OLD_TableViewController {
     NSMutableDictionary *_geniusImages;
 }

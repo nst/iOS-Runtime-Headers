@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary;
-
 @interface SKUIAddToWishlistOperation : NSOperation {
     long long _itemIdentifier;
     int _reason;

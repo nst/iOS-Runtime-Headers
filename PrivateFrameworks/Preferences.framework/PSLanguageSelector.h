@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString;
-
 @interface PSLanguageSelector : NSObject {
     NSString *_language;
     NSArray *_languagesWithLocaleData;

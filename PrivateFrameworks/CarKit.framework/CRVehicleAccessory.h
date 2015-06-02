@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CarKit.framework/CarKit
  */
 
-@class NSArray, NSData, NSNumber, NSString;
-
 @interface CRVehicleAccessory : NSObject {
     NSArray *_accessoryProtocols;
     NSString *_bluetoothAddress;
@@ -12,11 +10,11 @@
     NSString *_vehicleName;
 }
 
-@property(retain) NSArray * accessoryProtocols;
-@property(retain) NSString * bluetoothAddress;
-@property(retain) NSData * certificateSerialNumber;
-@property(retain) NSNumber * connectionID;
-@property(retain) NSString * vehicleName;
+@property (nonatomic, retain) NSArray *accessoryProtocols;
+@property (nonatomic, retain) NSString *bluetoothAddress;
+@property (nonatomic, retain) NSData *certificateSerialNumber;
+@property (nonatomic, retain) NSNumber *connectionID;
+@property (nonatomic, retain) NSString *vehicleName;
 
 - (void).cxx_destruct;
 - (BOOL)_updateNameUsingAccessory:(id)arg1;

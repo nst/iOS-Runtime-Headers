@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class <NSCopying><NSSecureCoding>, GSPermanentStorage, NSDate, NSString, NSURL;
-
 @interface BRNonLocalVersion : NSObject {
     NSString *_displayName;
     NSString *_etag;
@@ -18,16 +16,16 @@
     GSPermanentStorage *_versionsStore;
 }
 
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * etag;
-@property BOOL hasThumbnail;
-@property(readonly) BOOL isLatestVersion;
-@property(readonly) NSString * lastEditorDeviceName;
-@property(readonly) NSString * lastEditorFormattedName;
-@property(readonly) NSDate * modificationDate;
-@property(readonly) <NSCopying><NSSecureCoding> * persistentIdentifier;
-@property(readonly) unsigned long long size;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *etag;
+@property (nonatomic) BOOL hasThumbnail;
+@property (nonatomic, readonly) BOOL isLatestVersion;
+@property (nonatomic, readonly) NSString *lastEditorDeviceName;
+@property (nonatomic, readonly) NSString *lastEditorFormattedName;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
+@property (nonatomic, readonly) unsigned long long size;
+@property (nonatomic, readonly) NSURL *url;
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
 

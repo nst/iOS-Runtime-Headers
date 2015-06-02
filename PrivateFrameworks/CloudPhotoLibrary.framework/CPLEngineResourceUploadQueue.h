@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSString;
-
 @interface CPLEngineResourceUploadQueue : CPLEngineStorage <CPLAbstractObject> {
-    BOOL _immediateUploads[18];
+    BOOL _immediateUploads;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 - (BOOL)_markResourcesAsStaleForItemWithIdentifier:(id)arg1 withResources:(id)arg2 includePending:(BOOL)arg3 error:(id*)arg4;
-- (id)_uploadTaskForResource:(id)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (id)_uploadTaskForResource:(id)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (unsigned int)availabilityOfResource:(id)arg1;
 - (unsigned int)countOfOriginalImages;
 - (unsigned int)countOfOriginalOthers;
 - (unsigned int)countOfOriginalVideos;
 - (unsigned int)countOfQueuedUploadTasks;
-- (id)dequeueBackgroundUploadTaskForResourceType:(unsigned int)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (id)dequeueBackgroundUploadTaskForResourceType:(unsigned int)arg1 foreground:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (BOOL)discardResourceForUpload:(id)arg1 error:(id*)arg2;
 - (BOOL)enqueueResourceForBackgroundUpload:(id)arg1 error:(id*)arg2;
 - (BOOL)enqueueResourcesForUploadForBatch:(id)arg1 error:(id*)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKPrettyError : NSError {
-}
+@interface CKPrettyError : NSError
 
 + (id)_errorDomain;
 + (id)descriptionForError:(id)arg1;

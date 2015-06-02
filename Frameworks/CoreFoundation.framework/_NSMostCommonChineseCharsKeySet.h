@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface _NSMostCommonChineseCharsKeySet : _NSSharedKeySetS {
-}
+@interface _NSMostCommonChineseCharsKeySet : _NSSharedKeySetS
 
 - (void)dealloc;
 - (void)finalize;

@@ -2,35 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <BRCLocalContainerDelegate>, BRCAccountSession, BRCDeadlineToken, BRCServerZone, BRCSyncBudgetThrottle, BRCSyncDownOperation, BRCSyncOperationThrottle, BRCSyncUpOperation, BRCThrottleBase, NSArray, NSDate, NSError, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, PQLConnection;
-
 @interface BRCLocalContainer : NSObject <BRCContainer> {
     NSMutableSet *_XPCClientsUsingUbiquity;
     BOOL _activated;
-
-  /* Unexpected information at end of encoded ivar type: I */
-  /* Error parsing encoded ivar type info: AI */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
-
-
-  /* Unexpected information at end of encoded ivar type: I */
-  /* Error parsing encoded ivar type info: AI */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeQueries;
-
-
-  /* Unexpected information at end of encoded ivar type: I */
-  /* Error parsing encoded ivar type info: AI */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeRecursiveQueries;
-
+    unsigned int _activeAliasQueries;
+    unsigned int _activeQueries;
+    unsigned int _activeRecursiveQueries;
     NSMutableIndexSet *_appliedTombstoneRanks;
     NSString *_containerID;
     NSDate *_dateWhenLastForegroundClientLeft;
@@ -68,11 +45,7 @@
     NSMutableDictionary *_syncDownBlockToPerformForItemID;
     BRCSyncDownOperation *_syncDownOperation;
     BRCSyncOperationThrottle *_syncDownThrottle;
-
-  /* Unexpected information at end of encoded ivar type: I */
-  /* Error parsing encoded ivar type info: AI */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_syncState;
-
+    unsigned int _syncState;
     NSArray *_syncThrottles;
     BRCSyncBudgetThrottle *_syncUpBudget;
     BRCSyncUpOperation *_syncUpOperation;
@@ -81,39 +54,39 @@
     NSObject<OS_dispatch_source> *_timerForGraceForegroundPeriod;
 }
 
-@property(readonly) NSString * absolutePath;
-@property(readonly) BOOL activated;
-@property(retain) NSString * containerID;
-@property(readonly) unsigned long long currentRequestID;
-@property(readonly) PQLConnection * db;
-@property(retain) NSNumber * dbRowID;
-@property(readonly) NSNumber * deepScanStamp;
-@property(retain) <BRCLocalContainerDelegate> * delegate;
-@property(readonly) NSNumber * fileID;
-@property(readonly) NSNumber * generationID;
-@property(readonly) BOOL hasActiveAliasQueries;
-@property(readonly) BOOL hasActiveQueries;
-@property(readonly) BOOL hasActiveRecursiveQueries;
-@property(readonly) BOOL hasHighPriorityWatchers;
-@property(readonly) BOOL isForeground;
-@property(readonly) BOOL isGreedy;
-@property(readonly) BOOL isPrivateContainer;
-@property(readonly) BOOL isSharedContainer;
-@property(readonly) long long lastInsertedRank;
-@property(readonly) unsigned long long lostHeapKey;
-@property(readonly) NSString * mangledID;
-@property BOOL needsSave;
-@property(readonly) NSString * ownerName;
-@property(readonly) NSString * pathRelativeToRoot;
-@property(readonly) NSMutableIndexSet * pendingCoordinatedIOs;
-@property(readonly) NSMutableDictionary * plist;
-@property(retain) BRCServerZone * serverZone;
-@property(retain) BRCAccountSession * session;
-@property(readonly) unsigned int state;
-@property(readonly) BRCDeadlineToken * syncDeadlineToken;
-@property(readonly) unsigned int syncState;
-@property(readonly) NSArray * syncThrottles;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSString *absolutePath;
+@property (nonatomic, readonly) BOOL activated;
+@property (nonatomic, retain) NSString *containerID;
+@property (nonatomic, readonly) unsigned long long currentRequestID;
+@property (nonatomic, readonly) PQLConnection *db;
+@property (nonatomic, retain) NSNumber *dbRowID;
+@property (nonatomic, readonly) NSNumber *deepScanStamp;
+@property (nonatomic, retain) <BRCLocalContainerDelegate> *delegate;
+@property (nonatomic, readonly) NSNumber *fileID;
+@property (nonatomic, readonly) NSNumber *generationID;
+@property (readonly) BOOL hasActiveAliasQueries;
+@property (readonly) BOOL hasActiveQueries;
+@property (readonly) BOOL hasActiveRecursiveQueries;
+@property (nonatomic, readonly) BOOL hasHighPriorityWatchers;
+@property (nonatomic, readonly) BOOL isForeground;
+@property (nonatomic, readonly) BOOL isGreedy;
+@property (nonatomic, readonly) BOOL isPrivateContainer;
+@property (nonatomic, readonly) BOOL isSharedContainer;
+@property (nonatomic, readonly) long long lastInsertedRank;
+@property (nonatomic, readonly) unsigned long long lostHeapKey;
+@property (nonatomic, readonly) NSString *mangledID;
+@property (nonatomic) BOOL needsSave;
+@property (nonatomic, readonly) NSString *ownerName;
+@property (nonatomic, readonly) NSString *pathRelativeToRoot;
+@property (nonatomic, readonly) NSMutableIndexSet *pendingCoordinatedIOs;
+@property (nonatomic, readonly) NSMutableDictionary *plist;
+@property (nonatomic, retain) BRCServerZone *serverZone;
+@property (nonatomic, retain) BRCAccountSession *session;
+@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) BRCDeadlineToken *syncDeadlineToken;
+@property (readonly) unsigned int syncState;
+@property (nonatomic, readonly) NSArray *syncThrottles;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (unsigned int)_activateState:(unsigned int)arg1 origState:(unsigned int)arg2;
@@ -127,14 +100,14 @@
 - (void)_markRequestIDAcked;
 - (void)_mkdirContainerIfNeeded;
 - (void)_notifyFrameworkContainersMonitorWithState:(BOOL)arg1;
-- (void)_performAfterResetServerAndClientTruthsAndUnlinkData:(id)arg1;
-- (void)_performAfterResetServerAndClientTruthsAndUnlinkDataAndPurgeTheZone:(id)arg1;
-- (void)_performWhileResettingClientTruths:(id)arg1 completionBlock:(id)arg2;
+- (void)_performAfterResetServerAndClientTruthsAndUnlinkData:(id /* block */)arg1;
+- (void)_performAfterResetServerAndClientTruthsAndUnlinkDataAndPurgeTheZone:(id /* block */)arg1;
+- (void)_performWhileResettingClientTruths:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
 - (void)_prepareForForegroundSyncDown;
 - (void)_removeAllShareAcceptanceBlocks;
 - (void)_removeDownloadedBlockToPerformForItemID:(id)arg1;
 - (void)_removeOnDiskBlockToPerformForItemID:(id)arg1;
-- (void)_removeTargetedAliasesWithCompletionBlock:(id)arg1;
+- (void)_removeTargetedAliasesWithCompletionBlock:(id /* block */)arg1;
 - (void)_reset:(unsigned int)arg1;
 - (BOOL)_resetItemsTable;
 - (void)_startSync;
@@ -224,12 +197,12 @@
 - (id)ownerName;
 - (id)pathRelativeToRoot;
 - (id)pendingCoordinatedIOs;
-- (void)performBlock:(id)arg1 whenItemWithIDIsDownloaded:(id)arg2;
-- (void)performBlock:(id)arg1 whenItemWithIDIsOnDisk:(id)arg2;
-- (void)performBlock:(id)arg1 whenSyncDownCompletesLookingForItemID:(id)arg2;
+- (void)performBlock:(id /* block */)arg1 whenItemWithIDIsDownloaded:(id)arg2;
+- (void)performBlock:(id /* block */)arg1 whenItemWithIDIsOnDisk:(id)arg2;
+- (void)performBlock:(id /* block */)arg1 whenSyncDownCompletesLookingForItemID:(id)arg2;
 - (id)plist;
-- (id)popDownloadedBlockForItemID:(id)arg1;
-- (id)popOnDiskBlockForItemID:(id)arg1;
+- (id /* block */)popDownloadedBlockForItemID:(id)arg1;
+- (id /* block */)popOnDiskBlockForItemID:(id)arg1;
 - (BOOL)printStatusLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
 - (void)registerQueryWithAliases:(BOOL)arg1 isRecursive:(BOOL)arg2;
 - (void)removeClientUsingUbiquity:(id)arg1;

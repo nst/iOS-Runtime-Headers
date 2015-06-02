@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSURL, PRSImage;
+@interface SPDescriptionSection : SPSection <PRSDescriptionSection>
 
-@interface SPDescriptionSection : SPSection <PRSDescriptionSection> {
-}
-
-@property(retain) NSURL * attribution_url;
-@property BOOL description_expand;
-@property(retain) NSString * description_expand_text;
-@property int description_maxlines;
-@property int description_size;
-@property int description_weight;
-@property(retain) PRSImage * image;
-@property(retain) NSString * image_align;
-@property(retain) NSString * resultDescription;
-@property(retain) NSString * title;
-@property BOOL title_nowrap;
-@property int title_weight;
-@property(retain) NSString * type;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSURL *attribution_url;
+@property (nonatomic) BOOL description_expand;
+@property (nonatomic, retain) NSString *description_expand_text;
+@property (nonatomic) int description_maxlines;
+@property (nonatomic) int description_size;
+@property (nonatomic) int description_weight;
+@property (nonatomic, retain) PRSImage *image;
+@property (nonatomic, retain) NSString *image_align;
+@property (nonatomic, retain) NSString *resultDescription;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) BOOL title_nowrap;
+@property (nonatomic) int title_weight;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSURL *url;
 
 @end

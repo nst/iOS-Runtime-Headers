@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoPerformanceMetricsInternal;
-
 @interface AVVideoPerformanceMetrics : NSObject {
     AVVideoPerformanceMetricsInternal *_performanceMetricsInternal;
 }
 
-@property(readonly) unsigned long numberOfCorruptedVideoFrames;
-@property(readonly) unsigned long numberOfDroppedVideoFrames;
-@property(readonly) double totalFrameDelay;
-@property(readonly) unsigned long totalNumberOfVideoFrames;
+@property (nonatomic, readonly) unsigned long numberOfCorruptedVideoFrames;
+@property (nonatomic, readonly) unsigned long numberOfDroppedVideoFrames;
+@property (nonatomic, readonly) double totalFrameDelay;
+@property (nonatomic, readonly) unsigned long totalNumberOfVideoFrames;
 
 - (void)dealloc;
 - (void)finalize;

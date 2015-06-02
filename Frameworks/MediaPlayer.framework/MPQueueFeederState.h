@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPQueueFeeder;
-
 @interface MPQueueFeederState : NSObject {
     unsigned int _currentItemIndex;
     double _currentTime;
@@ -11,10 +9,10 @@
     int _feederMode;
 }
 
-@property unsigned int currentItemIndex;
-@property double currentTime;
-@property(retain) MPQueueFeeder * feeder;
-@property int feederMode;
+@property (nonatomic) unsigned int currentItemIndex;
+@property (nonatomic) double currentTime;
+@property (nonatomic, retain) MPQueueFeeder *feeder;
+@property (nonatomic) int feederMode;
 
 - (void).cxx_destruct;
 - (unsigned int)currentItemIndex;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKBaseUnit, HKUnit, NSString;
-
 @interface _HKBaseDimension : _HKDimension <_HKFactor> {
     NSString *_name;
     HKUnit *_reducedUnit;
@@ -11,17 +9,17 @@
     double _reductionCoefficient;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * name;
-@property(retain) HKUnit * reducedUnit;
-@property(retain) HKBaseUnit * reducibleBaseUnit;
-@property double reductionCoefficient;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) HKUnit *reducedUnit;
+@property (nonatomic, retain) HKBaseUnit *reducibleBaseUnit;
+@property (nonatomic) double reductionCoefficient;
+@property (readonly) Class superclass;
 
 + (id)_uniquedDefinedDimensionWithName:(id)arg1;
-+ (id)_uniquedDimensionWithName:(id)arg1 configuration:(id)arg2;
++ (id)_uniquedDimensionWithName:(id)arg1 configuration:(id /* block */)arg2;
 + (id)conductance;
 + (id)energy;
 + (id)length;

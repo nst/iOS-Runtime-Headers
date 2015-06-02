@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class <VMULibraryLoadDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface _VMULibraryLoadObserver : NSObject {
     <VMULibraryLoadDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_serialNotificationsQueue;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class ICSDateValue, NSString, NSURL;
-
 @interface CalDAVUpdateOwnerItem : CoreDAVItem {
     NSURL *_address;
     NSString *_displayName;
@@ -13,12 +11,12 @@
     NSString *_lastName;
 }
 
-@property(retain) NSURL * address;
-@property(retain) NSString * displayName;
-@property(retain) ICSDateValue * dtstamp;
-@property(retain) NSString * emailAddress;
-@property(retain) NSString * firstName;
-@property(retain) NSString * lastName;
+@property (nonatomic, retain) NSURL *address;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) ICSDateValue *dtstamp;
+@property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
 
 - (id)address;
 - (id)copyParseRules;

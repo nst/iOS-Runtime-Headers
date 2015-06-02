@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDate, NSMutableDictionary, NSMutableSet, PHAssetCollection, PHFetchResult;
-
 @interface CAMCameraRoll : NSObject {
     NSMutableSet *__cachedChangeObservers;
     BOOL __hasLoadedCameraRollFrameworks;
@@ -18,17 +16,17 @@
     NSDate *_sessionIdentifier;
 }
 
-@property(readonly) NSMutableSet * _cachedChangeObservers;
-@property(readonly) BOOL _hasLoadedCameraRollFrameworks;
-@property(readonly) BOOL _hasPendingSessionAssets;
-@property(readonly) NSMutableDictionary * _inflightAssets;
-@property(readonly) NSMutableSet * _sessionAssetUUIDs;
-@property(readonly) PHFetchResult * _userLibraryAssetsFetchResult;
-@property(readonly) PHAssetCollection * _weakAssetCollection;
-@property(readonly) PHFetchResult * _weakAssetCollectionFetchResult;
-@property(getter=_isWeakAssetCollectionLoaded,readonly) BOOL _weakAssetCollectionLoaded;
-@property BOOL changeNotificationsEnabled;
-@property(readonly) NSDate * sessionIdentifier;
+@property (nonatomic, readonly) NSMutableSet *_cachedChangeObservers;
+@property (nonatomic, readonly) BOOL _hasLoadedCameraRollFrameworks;
+@property (nonatomic, readonly) BOOL _hasPendingSessionAssets;
+@property (nonatomic, readonly) NSMutableDictionary *_inflightAssets;
+@property (nonatomic, readonly) NSMutableSet *_sessionAssetUUIDs;
+@property (nonatomic, readonly) PHFetchResult *_userLibraryAssetsFetchResult;
+@property (nonatomic, readonly) PHAssetCollection *_weakAssetCollection;
+@property (nonatomic, readonly) PHFetchResult *_weakAssetCollectionFetchResult;
+@property (getter=_isWeakAssetCollectionLoaded, nonatomic, readonly) BOOL _weakAssetCollectionLoaded;
+@property (nonatomic) BOOL changeNotificationsEnabled;
+@property (nonatomic, readonly) NSDate *sessionIdentifier;
 
 + (id)sharedCameraRoll;
 

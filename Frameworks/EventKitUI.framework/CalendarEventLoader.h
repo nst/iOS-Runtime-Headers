@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <CalendarEventLoaderDelegate>, EKEventStore, NSArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSSet;
-
 @interface CalendarEventLoader : NSObject {
     int _cancelSeed;
     unsigned int _componentForExpandingPadding;
@@ -30,7 +28,7 @@
     EKEventStore *_store;
 }
 
-@property <CalendarEventLoaderDelegate> * delegate;
+@property (nonatomic) <CalendarEventLoaderDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_enqueueLoadForRangeStart:(double)arg1 end:(double)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class CNFRegLearnMoreButton, NSString, NSURL, PSSpecifier, UILabel, UITableView;
-
 @interface CNFRegTableLabel : UIView <PSHeaderFooterView> {
     NSURL *_URLTarget;
     NSString *_URLText;
@@ -14,10 +12,10 @@
     CNFRegLearnMoreButton *_urlButton;
 }
 
-@property(copy) NSURL * URLTarget;
-@property(copy) NSString * URLText;
-@property UITableView * cnfreg_tableView;
-@property BOOL isTopmostHeader;
+@property (nonatomic, copy) NSURL *URLTarget;
+@property (nonatomic, copy) NSString *URLText;
+@property (nonatomic) UITableView *cnfreg_tableView;
+@property (nonatomic) BOOL isTopmostHeader;
 
 - (id)URLTarget;
 - (id)URLText;

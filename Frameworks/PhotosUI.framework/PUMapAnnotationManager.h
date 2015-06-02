@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUMapAnnotationManagerDataSource>, MKMapView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, PUMapAnnotationQuadtree;
-
 @interface PUMapAnnotationManager : NSObject <PUMapAnnotationQuadtreeDataSource> {
     NSMutableDictionary *_activeAnnotationAddresses;
     NSMutableSet *_activeAnnotations;
@@ -39,15 +37,15 @@
     int _updateId;
 }
 
-@property BOOL alwaysFadeRemoves;
-@property struct CGSize { float x1; float x2; } annotationSize;
-@property(readonly) NSArray * annotations;
-@property <PUMapAnnotationManagerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapView * mapView;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL alwaysFadeRemoves;
+@property (nonatomic) struct CGSize { float x1; float x2; } annotationSize;
+@property (nonatomic, readonly) NSArray *annotations;
+@property (nonatomic) <PUMapAnnotationManagerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapView *mapView;
+@property (readonly) Class superclass;
 
 + (BOOL)coordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 overlapsWithCoordinateRegion2:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (void)mergeOverlappingAnnotations:(id)arg1 withQuadtree:(id)arg2 treeLevel:(unsigned int)arg3 coordRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg4 mapSize:(struct CGSize { float x1; float x2; })arg5 annotationSize:(struct CGSize { float x1; float x2; })arg6;
@@ -56,7 +54,7 @@
 - (void).cxx_destruct;
 - (BOOL)_addMappedAnimationInfoToInfoSet:(id)arg1 forRemoveAnnotation:(id)arg2 remainingRemoveAnnotationsToAnimate:(id)arg3 remainingAddedAnnotationsToAnimate:(id)arg4 addContainsRemoveMap:(id)arg5 removeContainsAddMap:(id)arg6 activeTreeLevel:(unsigned int)arg7 addAddressesToAnnotations:(id)arg8;
 - (id)_animatableMapViewAnnotations;
-- (void)_executeOnProcessingQueueWithBlock:(id)arg1;
+- (void)_executeOnProcessingQueueWithBlock:(id /* block */)arg1;
 - (int)_fadeTypeWithIsEqual:(BOOL)arg1 removeAnnotation:(id)arg2 addAnnotation:(id)arg3 isRemove:(BOOL)arg4;
 - (void)_internalUpdateAnnotationsTreeLevel:(unsigned int)arg1 coordRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 mapSize:(struct CGSize { float x1; float x2; })arg3 updateId:(int)arg4;
 - (id)_puAnnotationViewForAnnotation:(id)arg1;

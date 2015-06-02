@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface SULockoutView : UIView {
     UIImageView *_backgroundImageView;
     UILabel *_bodyLabel;
@@ -13,12 +11,12 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(copy) NSString * body;
-@property(retain) UIImage * glowImage;
-@property(retain) UIImage * image;
-@property int layoutPreset;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, retain) UIImage *glowImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) int layoutPreset;
+@property (nonatomic, copy) NSString *title;
 
 - (id)_bodyLabel;
 - (id)_imageView;

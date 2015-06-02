@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@interface PCPersistentIdentifiers : NSObject {
-}
+@interface PCPersistentIdentifiers : NSObject
 
 + (id)_processNamePrefix;
 + (unsigned long long)hostUniqueIdentifier;

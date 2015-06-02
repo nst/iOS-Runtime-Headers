@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOStructuredAddress, NSMutableArray, NSString;
-
 @interface GEOAddress : PBCodable <GEOURLSerializable, NSCopying> {
     NSMutableArray *_formattedAddressLines;
     int _formattedAddressType;
@@ -13,15 +11,17 @@
     GEOStructuredAddress *_structuredAddress;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableArray * formattedAddressLines;
-@property int formattedAddressType;
-@property BOOL hasFormattedAddressType;
-@property(readonly) BOOL hasStructuredAddress;
-@property(readonly) unsigned int hash;
-@property(retain) GEOStructuredAddress * structuredAddress;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *formattedAddressLines;
+@property (nonatomic) int formattedAddressType;
+@property (nonatomic) BOOL hasFormattedAddressType;
+@property (nonatomic, readonly) BOOL hasStructuredAddress;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GEOStructuredAddress *structuredAddress;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 + (id)geoAddressForPlaceData:(id)arg1;
 
@@ -52,9 +52,12 @@
 - (void)setFormattedAddressType:(int)arg1;
 - (void)setHasFormattedAddressType:(BOOL)arg1;
 - (void)setStructuredAddress:(id)arg1;
-- (id)singleLineAddress;
 - (id)structuredAddress;
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)singleLineAddress;
 
 @end

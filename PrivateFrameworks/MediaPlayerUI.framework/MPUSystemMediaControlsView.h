@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUSystemMediaControlsViewDelegate>, MPUChronologicalProgressView, MPUItemOfferButton, MPUMediaControlsTitlesView, MPUMediaControlsVolumeView, MPUSkipLimitView, MPUSystemBuyButtonConfiguration, MPUTransportControlsView, NSString;
-
 @interface MPUSystemMediaControlsView : UIView <SKUIItemOfferButtonDelegate> {
     MPUItemOfferButton *_buyAlbumButton;
     MPUSystemBuyButtonConfiguration *_buyAlbumConfiguration;
@@ -19,19 +17,19 @@
     MPUMediaControlsVolumeView *_volumeView;
 }
 
-@property(readonly) MPUSystemBuyButtonConfiguration * buyAlbumConfiguration;
-@property(readonly) MPUSystemBuyButtonConfiguration * buyTrackConfiguration;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUSystemMediaControlsViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPUSkipLimitView * skipLimitView;
-@property(readonly) int style;
-@property(readonly) Class superclass;
-@property(readonly) MPUChronologicalProgressView * timeInformationView;
-@property(readonly) MPUMediaControlsTitlesView * trackInformationView;
-@property(readonly) MPUTransportControlsView * transportControlsView;
-@property(readonly) MPUMediaControlsVolumeView * volumeView;
+@property (nonatomic, readonly) MPUSystemBuyButtonConfiguration *buyAlbumConfiguration;
+@property (nonatomic, readonly) MPUSystemBuyButtonConfiguration *buyTrackConfiguration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUSystemMediaControlsViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPUSkipLimitView *skipLimitView;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) MPUChronologicalProgressView *timeInformationView;
+@property (nonatomic, readonly) MPUMediaControlsTitlesView *trackInformationView;
+@property (nonatomic, readonly) MPUTransportControlsView *transportControlsView;
+@property (nonatomic, readonly) MPUMediaControlsVolumeView *volumeView;
 
 - (void).cxx_destruct;
 - (void)_buyButtonCancelConfirmationAction:(id)arg1;

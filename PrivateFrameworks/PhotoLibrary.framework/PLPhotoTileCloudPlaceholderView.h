@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoTileCloudPlaceholderViewDelegate>, NSString, PLRoundProgressView, UIButton, UIView;
-
 @interface PLPhotoTileCloudPlaceholderView : UIView <PLTilePlaceholderView> {
     <PLPhotoTileCloudPlaceholderViewDelegate> *_delegate;
     struct CGRect { 
@@ -26,10 +24,10 @@
     BOOL _toolbarVisible;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_retryDownload;
 - (void)dealloc;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBarButtonItem;
+@interface SUNavigationItem : UINavigationItem
 
-@interface SUNavigationItem : UINavigationItem {
-}
-
-@property(retain) UIBarButtonItem * secondaryLeftBarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *secondaryLeftBarButtonItem;
 
 - (id)secondaryLeftBarButtonItem;
 - (void)setSecondaryLeftBarButtonItem:(id)arg1;

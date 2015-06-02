@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary;
-
 @interface ML3ImportPersistentIDGenerator : ML3PersistentIDGenerator {
     NSMutableDictionary *_pregeneratedIdMappings;
 }

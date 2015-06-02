@@ -2,39 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSURL;
-
 @interface BRShareCopyAccessTokenOperation : BROperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareCopyAccessTokenCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareCopyAccessTokenCompletionBlockWithPermissions;
-
+    id /* block */ _shareCopyAccessTokenCompletionBlock;
+    id /* block */ _shareCopyAccessTokenCompletionBlockWithPermissions;
     NSURL *_url;
 }
 
-@property(copy) id shareCopyAccessTokenCompletionBlock;
-@property(copy) id shareCopyAccessTokenCompletionBlockWithPermissions;
-@property(retain) NSURL * url;
+@property (copy) id /* block */ shareCopyAccessTokenCompletionBlock;
+@property (copy) id /* block */ shareCopyAccessTokenCompletionBlockWithPermissions;
+@property (nonatomic, retain) NSURL *url;
 
 - (void)dealloc;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;
-- (void)setShareCopyAccessTokenCompletionBlock:(id)arg1;
-- (void)setShareCopyAccessTokenCompletionBlockWithPermissions:(id)arg1;
+- (void)setShareCopyAccessTokenCompletionBlock:(id /* block */)arg1;
+- (void)setShareCopyAccessTokenCompletionBlockWithPermissions:(id /* block */)arg1;
 - (void)setUrl:(id)arg1;
-- (id)shareCopyAccessTokenCompletionBlock;
-- (id)shareCopyAccessTokenCompletionBlockWithPermissions;
+- (id /* block */)shareCopyAccessTokenCompletionBlock;
+- (id /* block */)shareCopyAccessTokenCompletionBlockWithPermissions;
 - (id)url;
 
 @end

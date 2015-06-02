@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOSearchAttributionServerProxy>;
-
 @interface GEOSearchAttributionManifestManager : NSObject {
     <GEOSearchAttributionServerProxy> *_serverProxy;
 }
 
-@property(readonly) <GEOSearchAttributionServerProxy> * serverProxy;
+@property (nonatomic, readonly) <GEOSearchAttributionServerProxy> *serverProxy;
 
 + (id)sharedManager;
 + (void)useLocalProxy;
@@ -16,7 +14,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4;
+- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
 - (id)serverProxy;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPropertyDescription;
-
 @interface NSPropertyStoreMapping : NSStoreMapping {
     NSPropertyDescription *_property;
 }

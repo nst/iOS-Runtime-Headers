@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMapTable, NSMutableArray, NSString, SKUIClientContext, SKUINavigationBarButtonsController, SKUINavigationBarContext, SKUINavigationBarViewElement, SKUINavigationPaletteController, UIView, UIViewController;
-
 @interface SKUINavigationBarController : NSObject <SKUILayoutCacheDelegate> {
     SKUINavigationBarButtonsController *_buttonsController;
     SKUIClientContext *_clientContext;
@@ -16,15 +14,15 @@
     SKUINavigationBarViewElement *_viewElement;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * existingSearchBarControllers;
-@property(readonly) unsigned int hash;
-@property(retain) SKUINavigationBarViewElement * navigationBarViewElement;
-@property(readonly) UIView * navigationPaletteView;
-@property UIViewController * parentViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *existingSearchBarControllers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUINavigationBarViewElement *navigationBarViewElement;
+@property (nonatomic, readonly) UIView *navigationPaletteView;
+@property (nonatomic) UIViewController *parentViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_addSearchBarControllerWithViewElement:(id)arg1;

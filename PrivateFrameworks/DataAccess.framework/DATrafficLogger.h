@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DATrafficLogger : NSObject {
     NSString *_filename;
 }
 
-@property(retain) NSString * filename;
+@property (nonatomic, retain) NSString *filename;
 
 + (BOOL)enabled;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIFamilySetupPageDelegate>, NSString;
-
 @interface AAUIFamilySetupOrganizerViewController : AAUIConfirmIdentityViewController <AAUIFamilySetupPage> {
     <AAUIFamilySetupPageDelegate> *_delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIFamilySetupPageDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIFamilySetupPageDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonWasTapped:(id)arg1;

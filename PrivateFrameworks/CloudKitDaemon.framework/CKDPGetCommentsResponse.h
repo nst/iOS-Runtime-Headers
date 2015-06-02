@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPCommentSummary, NSData, NSMutableArray;
-
 @interface CKDPGetCommentsResponse : PBCodable <NSCopying> {
     NSMutableArray *_comments;
     NSData *_continuationMarker;
@@ -14,13 +12,13 @@
     int _totalCount;
 }
 
-@property(retain) NSMutableArray * comments;
-@property(retain) NSData * continuationMarker;
-@property(readonly) BOOL hasContinuationMarker;
-@property(readonly) BOOL hasSummary;
-@property BOOL hasTotalCount;
-@property(retain) CKDPCommentSummary * summary;
-@property int totalCount;
+@property (nonatomic, retain) NSMutableArray *comments;
+@property (nonatomic, retain) NSData *continuationMarker;
+@property (nonatomic, readonly) BOOL hasContinuationMarker;
+@property (nonatomic, readonly) BOOL hasSummary;
+@property (nonatomic) BOOL hasTotalCount;
+@property (nonatomic, retain) CKDPCommentSummary *summary;
+@property (nonatomic) int totalCount;
 
 - (void).cxx_destruct;
 - (void)addComments:(id)arg1;

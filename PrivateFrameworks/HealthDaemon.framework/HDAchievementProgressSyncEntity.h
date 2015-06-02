@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDAchievementProgressSyncEntity : HDKeyValueSyncEntity {
-}
+@interface HDAchievementProgressSyncEntity : HDKeyValueSyncEntity
 
 + (int)category;
 + (int)nanoSyncObjectType;

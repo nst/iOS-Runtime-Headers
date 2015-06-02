@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVAsset, NSDate, NSString, NSURL;
-
 @interface RCSavedRecording : NSManagedObject <UIActivityItemSource> {
     AVAsset *_avAsset;
     BOOL _hasPendingChangeAffectingEntityRevision;
@@ -12,26 +10,26 @@
     BOOL _pathWasInvalid;
 }
 
-@property(copy,readonly) NSURL * URIRepresentation;
-@property(readonly) AVAsset * avAsset;
-@property(getter=isBeingMade) BOOL beingMade;
-@property(copy) NSString * customLabel;
-@property(copy) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * detailLabel;
-@property double duration;
-@property(readonly) BOOL hasPendingChangeAffectingEntityRevision;
-@property(readonly) unsigned int hash;
-@property long long iTunesPersistentID;
-@property(readonly) NSString * label;
-@property int labelPreset;
-@property(copy) NSString * path;
-@property(getter=isPendingRestore) BOOL pendingRestore;
-@property long long recordingID;
-@property(readonly) Class superclass;
-@property(getter=isSynced) BOOL synced;
-@property(copy,readonly) NSURL * url;
+@property (nonatomic, readonly, copy) NSURL *URIRepresentation;
+@property (nonatomic, readonly) AVAsset *avAsset;
+@property (getter=isBeingMade, nonatomic) BOOL beingMade;
+@property (nonatomic, copy) NSString *customLabel;
+@property (nonatomic, copy) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *detailLabel;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) BOOL hasPendingChangeAffectingEntityRevision;
+@property (readonly) unsigned int hash;
+@property (nonatomic) long long iTunesPersistentID;
+@property (nonatomic, readonly) NSString *label;
+@property (nonatomic) int labelPreset;
+@property (nonatomic, copy) NSString *path;
+@property (getter=isPendingRestore, nonatomic) BOOL pendingRestore;
+@property (nonatomic) long long recordingID;
+@property (readonly) Class superclass;
+@property (getter=isSynced, nonatomic) BOOL synced;
+@property (nonatomic, readonly, copy) NSURL *url;
 
 + (id)localizedStringForRecordingLabel:(int)arg1;
 + (id)propertiesAffectingEntityRevision;

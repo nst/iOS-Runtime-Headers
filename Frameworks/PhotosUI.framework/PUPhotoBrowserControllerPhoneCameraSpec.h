@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoBrowserControllerPhoneCameraSpec : PUPhotoBrowserControllerPhoneSpec {
-}
+@interface PUPhotoBrowserControllerPhoneCameraSpec : PUPhotoBrowserControllerPhoneSpec
 
 - (BOOL)isInCamera;
 - (unsigned int)supportedInterfaceOrientations;

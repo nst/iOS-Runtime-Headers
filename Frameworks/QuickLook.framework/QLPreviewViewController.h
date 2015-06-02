@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSLayoutConstraint, NSString, NSTimer, QLDisplayBundle, QLGenericView, QLProgressView, UIDocumentPasswordView, UIView;
-
 @interface QLPreviewViewController : UIViewController <QLPreviewItemInteractionDelegate, QLSwippableItemProtocol, UIDocumentPasswordViewDelegate> {
     UIView *_accessoryContainerView;
     QLGenericView *_airPlayPasswordView;
@@ -57,21 +55,21 @@
     BOOL _visible;
 }
 
-@property(readonly) int airPlayMode;
-@property(readonly) UIView * airPlayView;
+@property (readonly) int airPlayMode;
+@property (readonly) UIView *airPlayView;
 @property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) QLDisplayBundle * displayBundle;
-@property <QLPreviewItemInteractionDelegate> * displayBundleDelegate;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) QLDisplayBundle *displayBundle;
+@property <QLPreviewItemInteractionDelegate> *displayBundleDelegate;
+@property (readonly) unsigned int hash;
 @property int index;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrame;
-@property(retain) <QLPreviewItem> * previewItem;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrame;
+@property (retain) <QLPreviewItem> *previewItem;
 @property int previewMode;
-@property(readonly) UIView * snapshotView;
-@property(readonly) Class superclass;
-@property BOOL visible;
+@property (readonly) UIView *snapshotView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL visible;
 
 - (void)_cancelScheduledShowProgressiveUI;
 - (void)_hidePasswordView;

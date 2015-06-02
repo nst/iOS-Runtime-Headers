@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSDictionary, WBSSQLiteDatabase;
-
 @interface WBSSQLiteStatement : NSObject {
     NSArray *_columnNames;
     NSDictionary *_columnNamesToIndexes;
@@ -11,10 +9,10 @@
     struct sqlite3_stmt { } *_handle;
 }
 
-@property(readonly) NSArray * columnNames;
-@property(readonly) NSDictionary * columnNamesToIndexes;
-@property(readonly) WBSSQLiteDatabase * database;
-@property(readonly) struct sqlite3_stmt { }* handle;
+@property (nonatomic, readonly) NSArray *columnNames;
+@property (nonatomic, readonly) NSDictionary *columnNamesToIndexes;
+@property (nonatomic, readonly) WBSSQLiteDatabase *database;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*handle;
 
 - (void).cxx_destruct;
 - (BOOL)_isValid;

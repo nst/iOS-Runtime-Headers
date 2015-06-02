@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableSet;
-
 @interface PKReusablePassViewQueue : NSObject {
     NSMutableSet *_passViews;
 }

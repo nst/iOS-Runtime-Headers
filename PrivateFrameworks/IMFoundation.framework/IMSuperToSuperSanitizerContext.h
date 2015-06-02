@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, NSMutableAttributedString, NSString;
-
 @interface IMSuperToSuperSanitizerContext : IMFromSuperParserContext {
     NSMutableArray *_attachments;
     NSString *_backgroundColor;
@@ -15,8 +13,8 @@
     unsigned int _offset;
 }
 
-@property(retain,readonly) NSArray * attachments;
-@property(retain,readonly) NSAttributedString * sanitizedContent;
+@property (readonly, retain) NSArray *attachments;
+@property (readonly, retain) NSAttributedString *sanitizedContent;
 
 - (id)attachments;
 - (void)dealloc;

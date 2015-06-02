@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <_MKUserInteractionGestureRecognizerTouchObserver>, NSMutableSet;
-
 @interface _MKUserInteractionGestureRecognizer : UIGestureRecognizer {
     NSMutableSet *_activeTouches;
     <_MKUserInteractionGestureRecognizerTouchObserver> *_touchObserver;
 }
 
-@property <_MKUserInteractionGestureRecognizerTouchObserver> * touchObserver;
+@property (nonatomic) <_MKUserInteractionGestureRecognizerTouchObserver> *touchObserver;
 
 - (void).cxx_destruct;
 - (void)setTouchObserver:(id)arg1;

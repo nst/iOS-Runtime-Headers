@@ -9,10 +9,10 @@
     int mWidth;
 }
 
-@property(readonly) char * data;
-@property(readonly) int height;
-@property(readonly) int rowBytes;
-@property(readonly) int width;
+@property (nonatomic, readonly) char *data;
+@property (nonatomic, readonly) int height;
+@property (nonatomic, readonly) int rowBytes;
+@property (nonatomic, readonly) int width;
 
 - (char *)data;
 - (void)dealloc;

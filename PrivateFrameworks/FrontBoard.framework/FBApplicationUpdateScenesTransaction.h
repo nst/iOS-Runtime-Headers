@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBApplicationProcess, FBApplicationProcessLaunchTransaction, FBProcessManager, FBSceneManager, NSMutableArray, NSString;
-
 @interface FBApplicationUpdateScenesTransaction : FBSynchronizedTransactionGroup <FBApplicationProcessLaunchTransactionObserver, FBUpdateSceneTransactionObserver> {
     NSString *_bundleID;
     NSMutableArray *_pendingUpdateSceneBlocks;
@@ -15,12 +13,12 @@
     NSMutableArray *_updateSceneTransactions;
 }
 
-@property(retain,readonly) NSString * bundleID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) FBApplicationProcess * process;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBApplicationProcess *process;
+@property (readonly) Class superclass;
 
 - (BOOL)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
@@ -33,7 +31,7 @@
 - (void)addObserver:(id)arg1;
 - (id)bundleID;
 - (void)dealloc;
-- (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id)arg2;
+- (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id /* block */)arg2;
 - (id)process;
 - (void)removeObserver:(id)arg1;
 - (void)transaction:(id)arg1 didLaunchProcess:(id)arg2;
@@ -42,7 +40,7 @@
 - (void)updateSceneTransactionDidCreateScene:(id)arg1;
 - (void)updateSceneTransactionWillCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillUpdateScene:(id)arg1;
-- (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProviderProvider:(id)arg5 initialClientSettingsProvider:(id)arg6;
-- (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(id)arg5;
+- (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProviderProvider:(id /* block */)arg5 initialClientSettingsProvider:(id /* block */)arg6;
+- (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(id /* block */)arg5;
 
 @end

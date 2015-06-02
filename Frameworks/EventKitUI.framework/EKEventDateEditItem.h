@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDateComponents, NSString, NSTimeZone, PreferencesTwoPartValueCell, UIDatePicker, UITableViewCell;
-
 @interface EKEventDateEditItem : EKEventEditItem <EKCellShortener, EKTimeZoneViewControllerDelegate> {
     BOOL _allDay;
     UITableViewCell *_allDayCell;
@@ -28,11 +26,11 @@
     UITableViewCell *_startTimeZoneCell;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL showsAllDay;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL showsAllDay;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_allDayCell;

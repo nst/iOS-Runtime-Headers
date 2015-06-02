@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCHChartInfo, TSCHChartLayoutItem, TSCHChartModel, TSCHChartRootLayoutItem;
-
 @interface TSCHChartLayoutItem : NSObject <TSCHUnretainedParent> {
     NSArray *mChildren;
     struct CGRect { 
@@ -46,24 +44,24 @@
     BOOL mTreeBuilt;
 }
 
-@property(readonly) TSCHChartInfo * chartInfo;
-@property(readonly) unsigned int dataSetIndex;
-@property(readonly) struct CGPoint { float x1; float x2; } drawingOffset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingRect;
-@property(readonly) struct CGSize { float x1; float x2; } drawingSize;
-@property(readonly) BOOL isInResize;
-@property struct CGPoint { float x1; float x2; } layoutOffset;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layoutRect;
-@property struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } layoutSettings;
-@property struct CGSize { float x1; float x2; } layoutSize;
-@property(readonly) struct CGSize { float x1; float x2; } minSize;
-@property(readonly) TSCHChartModel * model;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } overhangRect;
-@property(readonly) TSCHChartLayoutItem * parent;
-@property(readonly) TSCHChartRootLayoutItem * root;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedDrawingRect;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedLayoutRect;
-@property(readonly) struct CGSize { float x1; float x2; } startingSize;
+@property (nonatomic, readonly) TSCHChartInfo *chartInfo;
+@property (nonatomic, readonly) unsigned int dataSetIndex;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } drawingOffset;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingRect;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } drawingSize;
+@property (nonatomic, readonly) BOOL isInResize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } layoutOffset;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layoutRect;
+@property (nonatomic) struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } layoutSettings;
+@property (nonatomic) struct CGSize { float x1; float x2; } layoutSize;
+@property (readonly) struct CGSize { float x1; float x2; } minSize;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } overhangRect;
+@property (nonatomic, readonly) TSCHChartLayoutItem *parent;
+@property (nonatomic, readonly) TSCHChartRootLayoutItem *root;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedDrawingRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedLayoutRect;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } startingSize;
 
 + (id)chartLayoutWithChartInfo:(id)arg1;
 
@@ -84,7 +82,7 @@
 - (struct CGPoint { float x1; float x2; })drawingOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawingRect;
 - (struct CGSize { float x1; float x2; })drawingSize;
-- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (id)initWithParent:(id)arg1;
 - (BOOL)isInResize;
 - (struct CGPoint { float x1; float x2; })layoutOffset;
@@ -100,11 +98,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })overhangRect;
 - (struct CGSize { float x1; float x2; })overhangSize;
 - (id)p_description;
-- (void)p_iterateChildrenWithBlock:(id)arg1;
+- (void)p_iterateChildrenWithBlock:(id /* block */)arg1;
 - (void)p_layoutInward;
 - (void)p_layoutOutward;
 - (id)parent;
-- (void)protected_iterateHitChartElements:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id)arg2;
+- (void)protected_iterateHitChartElements:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
 - (id)renderersWithRep:(id)arg1;
 - (id)root;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rootedDrawingRect;
@@ -114,7 +112,7 @@
 - (void)setLayoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg1;
 - (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })startingSize;
-- (BOOL)stopIteratingItemsContainingPoint:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id)arg2;
+- (BOOL)stopIteratingItemsContainingPoint:(struct CGPoint { float x1; float x2; })arg1 withBlock:(id /* block */)arg2;
 - (id)subselectionHaloPositionsForSelections:(id)arg1;
 - (id)subselectionKnobPositionsForSelection:(id)arg1;
 

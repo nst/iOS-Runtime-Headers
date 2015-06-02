@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIPickInviteeDelegate>, AAUIContactsSearchController, ABMonogrammer, ACAccount, ACAccountStore, NSArray, NSString, UIBarButtonItem, UIButton, UILabel, UITableView, UITextField, UIView;
-
 @interface AAUIPickInviteeViewController : UIViewController <AAUIContactsSearchDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -30,16 +28,16 @@
     UILabel *_toLabel;
 }
 
-@property(copy) NSString * createChildAccountButtonTitle;
-@property(copy) NSString * createChildAccountInstructions;
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIPickInviteeDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * inviteeCompositeName;
-@property(readonly) NSString * inviteeEmail;
-@property(readonly) NSString * inviteeShortName;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *createChildAccountButtonTitle;
+@property (nonatomic, copy) NSString *createChildAccountInstructions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIPickInviteeDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *inviteeCompositeName;
+@property (nonatomic, readonly) NSString *inviteeEmail;
+@property (nonatomic, readonly) NSString *inviteeShortName;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_attributedStringWithQueryHighlightedForString:(id)arg1 size:(float)arg2;

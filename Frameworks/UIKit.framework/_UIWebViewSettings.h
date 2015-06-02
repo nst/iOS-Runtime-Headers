@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIWebViewSettings : NSObject <NSCopying> {
     BOOL _allowsInlineMediaPlayback;
     NSString *_customUserAgent;
@@ -13,12 +11,12 @@
     BOOL _suppressesIncrementalRendering;
 }
 
-@property BOOL allowsInlineMediaPlayback;
-@property(copy) NSString * customUserAgent;
-@property unsigned int dataDetectorTypes;
-@property BOOL mediaPlaybackAllowsAirPlay;
-@property BOOL mediaPlaybackRequiresUserAction;
-@property BOOL suppressesIncrementalRendering;
+@property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (nonatomic, copy) NSString *customUserAgent;
+@property (nonatomic) unsigned int dataDetectorTypes;
+@property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
+@property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
+@property (nonatomic) BOOL suppressesIncrementalRendering;
 
 + (id)defaultSettings;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFAirDropDiscoveryActionSheetDelegate>, <SFAirDropDiscoveryControllerDelegate>, NSString, UIActionSheet;
-
 @interface SFAirDropDiscoveryController : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
     id _actionSheetDelegate;
@@ -16,17 +14,17 @@
     BOOL _isVisible;
 }
 
-@property <SFAirDropDiscoveryActionSheetDelegate> * actionSheetDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property <SFAirDropDiscoveryControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
+@property <SFAirDropDiscoveryActionSheetDelegate> *actionSheetDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property <SFAirDropDiscoveryControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property int discoverableMode;
-@property(readonly) unsigned int hash;
-@property(getter=isLegacyDevice,readonly) BOOL legacyDevice;
-@property(getter=isLegacyModeEnabled) BOOL legacyModeEnabled;
-@property(getter=isLegacyModeSettable,readonly) BOOL legacyModeSettable;
-@property(readonly) Class superclass;
-@property(getter=isVisible,readonly) BOOL visible;
+@property (readonly) unsigned int hash;
+@property (getter=isLegacyDevice, readonly) BOOL legacyDevice;
+@property (getter=isLegacyModeEnabled) BOOL legacyModeEnabled;
+@property (getter=isLegacyModeSettable, readonly) BOOL legacyModeSettable;
+@property (readonly) Class superclass;
+@property (getter=isVisible, readonly) BOOL visible;
 
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <PKPlugIn>, NSExtension, NSUUID;
-
 @interface _UIRemoteViewService : NSObject {
     NSUUID *_contextToken;
     NSExtension *_extension;
 }
 
-@property(copy) NSUUID * contextToken;
-@property(retain) NSExtension * extension;
-@property(retain) <PKPlugIn> * plugin;
+@property (nonatomic, copy) NSUUID *contextToken;
+@property (nonatomic, retain) NSExtension *extension;
+@property (nonatomic, retain) <PKPlugIn> *plugin;
 
 - (id)contextToken;
 - (void)dealloc;

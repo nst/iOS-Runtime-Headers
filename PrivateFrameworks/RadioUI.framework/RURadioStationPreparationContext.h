@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSDate, NSMapTable, RadioGetTracksResponse, RadioStation;
-
 @interface RURadioStationPreparationContext : NSObject {
     RadioGetTracksResponse *_getTracksResponse;
     NSMapTable *_preparedAdSlotByRadioTrack;
     RadioStation *_station;
 }
 
-@property(copy,readonly) NSArray * allPreparedAdSlotRadioTracks;
-@property(readonly) BOOL shouldIncrementSkipCount;
-@property(readonly) NSDate * skipDate;
-@property(readonly) RadioStation * station;
-@property(copy,readonly) NSArray * tracks;
+@property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
+@property (nonatomic, readonly) BOOL shouldIncrementSkipCount;
+@property (nonatomic, readonly) NSDate *skipDate;
+@property (nonatomic, readonly) RadioStation *station;
+@property (nonatomic, readonly, copy) NSArray *tracks;
 
 - (void).cxx_destruct;
 - (void)addPreparedAdSlot:(id)arg1 forRadioTrack:(id)arg2;

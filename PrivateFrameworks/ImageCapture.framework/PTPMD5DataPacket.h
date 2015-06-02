@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSData, NSString;
-
 @interface PTPMD5DataPacket : NSObject {
     long long _bufferSize;
     long long _bytesTransferred;

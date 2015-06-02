@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSUEncodedBlockInfoInternal : NSObject <TSUEncodedBlockInfo> {
     unsigned long _encodedLength;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned long decodedLength;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long encodedLength;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) unsigned long decodedLength;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long encodedLength;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (unsigned long)decodedLength;
 - (id)description;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILabel, UITextView;
-
 @interface ABPropertyNoteCell : ABPropertyCell {
     UILabel *_labelLabel;
     UITextView *_textView;
 }
 
-@property(readonly) UILabel * labelLabel;
-@property(retain) UITextView * textView;
+@property (nonatomic, readonly) UILabel *labelLabel;
+@property (nonatomic, retain) UITextView *textView;
 
 - (float)bottomBaselineConstant;
 - (void)dealloc;

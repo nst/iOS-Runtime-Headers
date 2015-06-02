@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class <TUCallServicesDaemonDelegate>, NSArray, NSData, NSString, NSXPCConnection, TUCallCenterCallsCache, TUProxyCallModel;
-
 @interface TUCallServicesInterface : NSObject <TUCallServicesDaemonObserver, TUCallServicesProxyCallActions> {
     TUCallCenterCallsCache *_callsCache;
     NSArray *_currentProxyCalls;
@@ -15,18 +13,18 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain) TUCallCenterCallsCache * callsCache;
-@property(copy) NSArray * currentProxyCalls;
-@property <TUCallServicesDaemonDelegate> * daemonDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSData * localFrequency;
-@property(getter=isMuted) BOOL muted;
-@property(retain) TUProxyCallModel * proxyCallModel;
-@property(retain) NSData * remoteFrequency;
-@property(readonly) Class superclass;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, retain) TUCallCenterCallsCache *callsCache;
+@property (nonatomic, copy) NSArray *currentProxyCalls;
+@property (nonatomic) <TUCallServicesDaemonDelegate> *daemonDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *localFrequency;
+@property (getter=isMuted, nonatomic) BOOL muted;
+@property (nonatomic, retain) TUProxyCallModel *proxyCallModel;
+@property (nonatomic, retain) NSData *remoteFrequency;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (BOOL)launchesCallServicesDaemonOnDemand;
 + (id)sharedInstance;
@@ -39,7 +37,7 @@
 - (void)conferenceCall:(id)arg1;
 - (id)currentProxyCalls;
 - (id)daemonDelegate;
-- (id)daemonDelegateWithErrorHandler:(id)arg1;
+- (id)daemonDelegateWithErrorHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3 sourceIdentifier:(id)arg4;
 - (void)dialCall:(id)arg1;

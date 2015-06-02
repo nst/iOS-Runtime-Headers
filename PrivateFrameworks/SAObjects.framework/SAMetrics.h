@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary, NSString;
+@interface SAMetrics : SABaseCommand <SAServerBoundCommand>
 
-@interface SAMetrics : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy) NSString * category;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * originalCommandId;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
-@property(copy) NSDictionary * timings;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *category;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *originalCommandId;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *timings;
 
 + (id)metrics;
 + (id)metricsWithDictionary:(id)arg1 context:(id)arg2;

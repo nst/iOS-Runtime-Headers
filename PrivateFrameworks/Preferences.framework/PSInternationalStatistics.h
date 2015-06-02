@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSInternationalStatistics : NSObject {
-}
+@interface PSInternationalStatistics : NSObject
 
 + (void)addScalarValue:(int)arg1 forKey:(id)arg2;
 + (void)clearScalar:(id)arg1;

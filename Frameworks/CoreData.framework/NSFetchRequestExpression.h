@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression;
-
 @interface NSFetchRequestExpression : NSExpression {
     NSExpression *_fetchRequest;
     struct _fetchExpressionFlags { 
@@ -17,9 +15,9 @@
     void *_reserved4;
 }
 
-@property(readonly) NSExpression * contextExpression;
-@property(getter=isCountOnlyRequest,readonly) BOOL countOnlyRequest;
-@property(readonly) NSExpression * requestExpression;
+@property (readonly) NSExpression *contextExpression;
+@property (getter=isCountOnlyRequest, readonly) BOOL countOnlyRequest;
+@property (readonly) NSExpression *requestExpression;
 
 + (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
 

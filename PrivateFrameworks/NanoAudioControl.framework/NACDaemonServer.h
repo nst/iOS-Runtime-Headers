@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NACIDSServer;
-
 @interface NACDaemonServer : NSObject {
     NACIDSServer *_idsServer;
 }

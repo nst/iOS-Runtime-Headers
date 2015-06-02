@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UISearchControllerDelegate>, <UISearchResultsUpdating>, <UIViewControllerAnimatedTransitioning>, NSString, UISearchBar, UIView, UIViewController, _UISearchControllerDidScrollDelegate;
-
 @interface UISearchController : UIViewController <NSCoding, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollNotification> {
     int __previousSearchBarPosition;
     float __resultsContentScrollViewPresentationOffset;
@@ -24,22 +22,22 @@
     id _windowWillAnimateToken;
 }
 
-@property(readonly) int _barPresentationStyle;
-@property int _previousSearchBarPosition;
-@property float _resultsContentScrollViewPresentationOffset;
-@property(retain) UIView * _resultsControllerViewContainer;
-@property(setter=_setShowResultsForEmptySearch:) BOOL _showResultsForEmptySearch;
-@property(getter=isActive) BOOL active;
-@property(copy,readonly) NSString * debugDescription;
-@property <UISearchControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL dimsBackgroundDuringPresentation;
-@property(readonly) unsigned int hash;
-@property BOOL hidesNavigationBarDuringPresentation;
-@property(retain,readonly) UISearchBar * searchBar;
-@property(retain,readonly) UIViewController * searchResultsController;
-@property <UISearchResultsUpdating> * searchResultsUpdater;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int _barPresentationStyle;
+@property (nonatomic) int _previousSearchBarPosition;
+@property (nonatomic) float _resultsContentScrollViewPresentationOffset;
+@property (nonatomic, retain) UIView *_resultsControllerViewContainer;
+@property (setter=_setShowResultsForEmptySearch:, nonatomic) BOOL _showResultsForEmptySearch;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UISearchControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL dimsBackgroundDuringPresentation;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesNavigationBarDuringPresentation;
+@property (nonatomic, readonly, retain) UISearchBar *searchBar;
+@property (nonatomic, readonly, retain) UIViewController *searchResultsController;
+@property (nonatomic) <UISearchResultsUpdating> *searchResultsUpdater;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

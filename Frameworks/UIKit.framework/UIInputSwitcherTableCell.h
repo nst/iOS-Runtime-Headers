@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputSwitcherTableCell : UITableViewCell {
-}
+@interface UIInputSwitcherTableCell : UITableViewCell
 
 - (void)layoutSubviews;
 

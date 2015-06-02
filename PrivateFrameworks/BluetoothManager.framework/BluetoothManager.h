@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
  */
 
-@class NSMutableDictionary;
-
 @interface BluetoothManager : NSObject {
     struct BTAccessoryManagerImpl { } *_accessoryManager;
     BOOL _audioConnected;
@@ -18,6 +16,8 @@
     unsigned int _scanningServiceMask;
     struct BTSessionImpl { } *_session;
 }
+
+// Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
 
 + (int)lastInitError;
 + (void)setSharedInstanceQueue:(id)arg1;
@@ -63,7 +63,6 @@
 - (BOOL)isDiscoverable;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
 - (id)localAddress;
-- (int)localDeviceSupportsService:(unsigned int)arg1;
 - (id)pairedDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;
@@ -85,5 +84,9 @@
 - (void)startVoiceCommand:(id)arg1;
 - (void)unpairDevice:(id)arg1;
 - (BOOL)wasDeviceDiscovered:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
+
+- (int)localDeviceSupportsService:(unsigned int)arg1;
 
 @end

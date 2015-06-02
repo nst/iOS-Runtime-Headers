@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class IDSService, NSMutableArray, NSString, UIAlertView;
-
 @interface UITriggerTableViewController : UITableViewController <CSLUIUITriggerIDSProtocolResponse, IDSServiceDelegate, UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *_UIProviders;
     UIAlertView *_alertView;
     IDSService *_idsService;
 }
 
-@property(retain) NSMutableArray * UIProviders;
-@property(retain) UIAlertView * alertView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) IDSService * idsService;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *UIProviders;
+@property (nonatomic, retain) UIAlertView *alertView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IDSService *idsService;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)UIProviders;
@@ -29,7 +27,7 @@
 - (void)idsUIProvidersResponse:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)requestPluginList;
-- (id)sendProtobufRequest:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 expectsResponse:(BOOL)arg4 errorHandler:(id)arg5 withTimeout:(double)arg6;
+- (id)sendProtobufRequest:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 expectsResponse:(BOOL)arg4 errorHandler:(id /* block */)arg5 withTimeout:(double)arg6;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)setAlertView:(id)arg1;
 - (void)setIdsService:(id)arg1;

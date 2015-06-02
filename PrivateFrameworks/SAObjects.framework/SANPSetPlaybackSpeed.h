@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANPSetPlaybackSpeed : SADomainCommand {
-}
+@interface SANPSetPlaybackSpeed : SADomainCommand
 
-@property double scalingFactor;
+@property (nonatomic) double scalingFactor;
 
 + (id)setPlaybackSpeed;
 + (id)setPlaybackSpeedWithDictionary:(id)arg1 context:(id)arg2;

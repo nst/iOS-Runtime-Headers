@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDButton;
-
 @interface MCDPlayModeControlView : UIView {
     BOOL _creatingGenius;
     MCDButton *_geniusButton;
@@ -11,10 +9,10 @@
     MCDButton *_shuffleButton;
 }
 
-@property BOOL creatingGenius;
-@property(readonly) MCDButton * geniusButton;
-@property(readonly) MCDButton * repeatButton;
-@property(readonly) MCDButton * shuffleButton;
+@property (nonatomic) BOOL creatingGenius;
+@property (nonatomic, readonly) MCDButton *geniusButton;
+@property (nonatomic, readonly) MCDButton *repeatButton;
+@property (nonatomic, readonly) MCDButton *shuffleButton;
 
 - (void).cxx_destruct;
 - (BOOL)creatingGenius;

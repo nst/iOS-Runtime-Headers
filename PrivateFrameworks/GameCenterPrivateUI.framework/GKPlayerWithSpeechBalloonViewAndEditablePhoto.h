@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKPlayerWithSpeechBalloonViewAndEditablePhoto : GKPlayerWithSpeechBalloonView {
-}
+@interface GKPlayerWithSpeechBalloonViewAndEditablePhoto : GKPlayerWithSpeechBalloonView
 
 + (id)instantiatePhotoContainer;
 

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSMutableArray, NSString;
-
 @interface CPLEngineTransientRepository : CPLEngineStorage <CPLAbstractObject> {
     unsigned int _maximumCountOfRecordsInBatches;
     unsigned int _popState;
     NSMutableArray *_remainingClassesToBePopped;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int maximumCountOfRecordsInBatches;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maximumCountOfRecordsInBatches;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 + (id)orderedClassesForChanges;
 + (id)orderedClassesForChangesForLargeSync;

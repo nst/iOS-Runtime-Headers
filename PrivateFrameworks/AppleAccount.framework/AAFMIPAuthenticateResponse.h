@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
-
 @interface AAFMIPAuthenticateResponse : AAResponse {
     NSDictionary *_appleAccountInfo;
     NSDictionary *_tokens;
 }
 
-@property(readonly) NSString * fmipWipeToken;
+@property (nonatomic, readonly) NSString *fmipWipeToken;
 
 - (void).cxx_destruct;
 - (id)fmipWipeToken;

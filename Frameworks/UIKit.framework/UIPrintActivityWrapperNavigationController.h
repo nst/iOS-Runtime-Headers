@@ -2,23 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface UIPrintActivityWrapperNavigationController : UINavigationController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     BOOL _presentedPrintInteractionController;
 }
 
-@property BOOL presentedPrintInteractionController;
+@property (nonatomic) BOOL presentedPrintInteractionController;
 
 - (void)dealloc;
-- (id)initWithCompletion:(id)arg1;
+- (id)initWithCompletion:(id /* block */)arg1;
 - (BOOL)presentedPrintInteractionController;
 - (void)setPresentedPrintInteractionController:(BOOL)arg1;
 - (void)viewDidLoad;

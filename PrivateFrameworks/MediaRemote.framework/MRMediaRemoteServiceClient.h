@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@class MRAVRoutingClientController, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MRMediaRemoteServiceClient : NSObject {
     NSArray *_externalScreenTypeNotificationObservers;
     NSArray *_nowPlayingNotificationObservers;
@@ -21,25 +19,25 @@
     struct MRMediaRemoteService { } *_service;
 }
 
-@property(retain) NSArray * externalScreenTypeNotificationObservers;
-@property(retain) NSArray * nowPlayingNotificationObservers;
-@property(retain) NSArray * originNotificationObservers;
-@property BOOL receivesExternalScreenTypeChangedNotifications;
-@property BOOL receivesOriginChangedNotifications;
-@property BOOL receivesPlaybackErrorNotifications;
-@property BOOL receivesRoutesChangedNotifications;
-@property BOOL receivesSupportedCommandsNotifications;
-@property(getter=isRegisteredForNowPlayingNotifications,readonly) BOOL registeredForNowPlayingNotifications;
-@property(readonly) NSArray * registeredOrigins;
-@property(retain) NSArray * routingNotificationObservers;
-@property(readonly) struct MRMediaRemoteService { }* service;
-@property(readonly) NSObject<OS_dispatch_queue> * serviceQueue;
+@property (nonatomic, retain) NSArray *externalScreenTypeNotificationObservers;
+@property (nonatomic, retain) NSArray *nowPlayingNotificationObservers;
+@property (nonatomic, retain) NSArray *originNotificationObservers;
+@property (nonatomic) BOOL receivesExternalScreenTypeChangedNotifications;
+@property (nonatomic) BOOL receivesOriginChangedNotifications;
+@property (nonatomic) BOOL receivesPlaybackErrorNotifications;
+@property (nonatomic) BOOL receivesRoutesChangedNotifications;
+@property (nonatomic) BOOL receivesSupportedCommandsNotifications;
+@property (getter=isRegisteredForNowPlayingNotifications, nonatomic, readonly) BOOL registeredForNowPlayingNotifications;
+@property (nonatomic, readonly) NSArray *registeredOrigins;
+@property (nonatomic, retain) NSArray *routingNotificationObservers;
+@property (nonatomic, readonly) struct MRMediaRemoteService { }*service;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serviceQueue;
 
 + (id)sharedServiceClient;
 
 - (void)dealloc;
 - (id)externalScreenTypeNotificationObservers;
-- (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(id)arg2;
+- (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isRegisteredForNowPlayingNotifications;
 - (id)nowPlayingNotificationObservers;

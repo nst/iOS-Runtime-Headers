@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary;
-
 @interface TSWPPhonetics : NSObject {
     NSDictionary *_transcribers;
 }

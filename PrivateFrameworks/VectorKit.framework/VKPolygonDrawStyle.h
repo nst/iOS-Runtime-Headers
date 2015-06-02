@@ -2,18 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface VKPolygonDrawStyle : VKRenderStyle {
     NSString *_name;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  casingColor; /* unknown property attribute:  1>=[4f]} */
-@property(retain) NSString * name;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  casingColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, retain) NSString *name;
 
 + (int)renderStyleID;
 

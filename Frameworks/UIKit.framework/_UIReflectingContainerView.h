@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIReflectingContainerView : UIView {
-}
+@interface _UIReflectingContainerView : UIView
 
 + (Class)layerClass;
 

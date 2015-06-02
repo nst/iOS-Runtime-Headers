@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSFileManager, NSString;
-
 @interface ATAirlock : NSObject {
     NSString *_basePath;
     NSFileManager *_fm;

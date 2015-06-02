@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAssetWriterInputUnknownHelper : AVAssetWriterInputHelper {
-}
+@interface AVAssetWriterInputUnknownHelper : AVAssetWriterInputHelper
 
 + (id)keyPathsForValuesAffectingCanPerformMultiplePasses;
 

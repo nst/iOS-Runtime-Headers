@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSURetainedPointerKeyDictionary;
-
 @interface TSCHMultiDataChartRepAnimationDictionary : NSObject {
     TSURetainedPointerKeyDictionary *mEntries;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesStyle : TSCHBaseStyle {
-}
+@interface TSCHChartSeriesStyle : TSCHBaseStyle
 
 + (id)bootstrappedSeriesStyleWithContext:(id)arg1 seriesIndex:(unsigned int)arg2;
 + (float)defaultFloatValueForProperty:(int)arg1;

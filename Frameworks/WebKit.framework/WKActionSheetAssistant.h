@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKActionSheetAssistantDelegate>, NSString, UIView;
-
 @interface WKActionSheetAssistant : NSObject <DDDetectionControllerInteractionDelegate, WKActionSheetDelegate> {
-    struct WeakObjCPtr<id<WKActionSheetAssistantDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKActionSheetAssistantDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKActionSheetAssistantDelegate> > { 
         id m_weakReference; 
     } _delegate;
     struct RetainPtr<_WKActivatedElementInfo> { 
@@ -17,11 +15,11 @@
     UIView *_view;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <WKActionSheetAssistantDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WKActionSheetAssistantDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
-
 @interface ABCardLinkedCardsGroup : ABCardGroup {
     NSArray *_linkedContacts;
 }
 
-@property(retain) NSArray * linkedContacts;
+@property (nonatomic, retain) NSArray *linkedContacts;
 
 - (void)dealloc;
 - (id)displayItems;

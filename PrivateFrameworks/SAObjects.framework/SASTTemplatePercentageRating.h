@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAUIDecoratedText, SAUILocalImageResource;
+@interface SASTTemplatePercentageRating : SASTTemplateRating
 
-@interface SASTTemplatePercentageRating : SASTTemplateRating {
-}
-
-@property(retain) SAUILocalImageResource * localImageResource;
-@property(retain) SAUIDecoratedText * value;
+@property (nonatomic, retain) SAUILocalImageResource *localImageResource;
+@property (nonatomic, retain) SAUIDecoratedText *value;
 
 + (id)templatePercentageRating;
 + (id)templatePercentageRatingWithDictionary:(id)arg1 context:(id)arg2;

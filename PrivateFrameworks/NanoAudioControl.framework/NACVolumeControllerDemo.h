@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class <NACVolumeControllerDelegate>, NACEventThrottler, NSNumber, NSString;
-
 @interface NACVolumeControllerDemo : NSObject <NACVolumeController> {
     NSString *_audioCategory;
     NACEventThrottler *_defaultsThrottler;
@@ -13,18 +11,18 @@
     NSNumber *_volumeValue;
 }
 
-@property(readonly) float EUVolumeLimit;
-@property(copy,readonly) NSString * debugDescription;
-@property <NACVolumeControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property float hapticIntensity;
-@property(readonly) unsigned int hash;
-@property(getter=isMuted,readonly) BOOL muted;
-@property(readonly) Class superclass;
-@property(getter=isSystemMuted) BOOL systemMuted;
-@property(getter=isVolumeControlAvailable,readonly) BOOL volumeControlAvailable;
-@property(readonly) float volumeValue;
-@property(getter=isVolumeWarningEnabled,readonly) BOOL volumeWarningEnabled;
+@property (nonatomic, readonly) float EUVolumeLimit;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NACVolumeControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float hapticIntensity;
+@property (readonly) unsigned int hash;
+@property (getter=isMuted, nonatomic, readonly) BOOL muted;
+@property (readonly) Class superclass;
+@property (getter=isSystemMuted, nonatomic) BOOL systemMuted;
+@property (getter=isVolumeControlAvailable, nonatomic, readonly) BOOL volumeControlAvailable;
+@property (nonatomic, readonly) float volumeValue;
+@property (getter=isVolumeWarningEnabled, nonatomic, readonly) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;

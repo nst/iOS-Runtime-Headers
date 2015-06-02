@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class MSTimerGate, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface MSClientSidePauseContext : NSObject {
     NSString *_UUID;
     MSTimerGate *_gate;
@@ -11,9 +9,9 @@
     NSObject<OS_dispatch_queue> *_timerQueue;
 }
 
-@property(retain) MSTimerGate * gate;
-@property(retain) NSXPCConnection * server;
-@property(retain) NSObject<OS_dispatch_queue> * timerQueue;
+@property (nonatomic, retain) MSTimerGate *gate;
+@property (nonatomic, retain) NSXPCConnection *server;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *timerQueue;
 
 - (void).cxx_destruct;
 - (id)gate;

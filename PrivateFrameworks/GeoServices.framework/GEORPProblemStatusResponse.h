@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEORPProblemStatusResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
@@ -12,9 +10,9 @@
     int _statusCode;
 }
 
-@property BOOL hasStatusCode;
-@property(retain) NSMutableArray * problemStatus;
-@property int statusCode;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic, retain) NSMutableArray *problemStatus;
+@property (nonatomic) int statusCode;
 
 - (void)addProblemStatus:(id)arg1;
 - (void)clearProblemStatus;

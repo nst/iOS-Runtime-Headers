@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString, TSKSelectionPath, TSWPSelection;
-
 @interface TPArchivedViewState : TSPObject {
     TSWPSelection *_bodySelection;
     BOOL _changeTrackingPaused;

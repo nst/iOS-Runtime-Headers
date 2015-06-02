@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSRegularExpression;
-
 @interface TSCERegexMatcher : NSObject {
     NSRegularExpression *mRegex;
 }

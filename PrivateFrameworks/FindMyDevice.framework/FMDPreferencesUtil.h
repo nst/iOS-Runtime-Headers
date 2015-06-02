@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FindMyDevice.framework/FindMyDevice
  */
 
-@interface FMDPreferencesUtil : NSObject {
-}
+@interface FMDPreferencesUtil : NSObject
 
 + (id)arrayForKey:(id)arg1 inDomain:(id)arg2;
 + (id)arrayForKey:(id)arg1 inDomain:(id)arg2 user:(id)arg3;

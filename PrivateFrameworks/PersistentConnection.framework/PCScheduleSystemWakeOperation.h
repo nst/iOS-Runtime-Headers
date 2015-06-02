@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSString;
-
 @interface PCScheduleSystemWakeOperation : NSOperation {
     BOOL _scheduleOrCancel;
     NSString *_serviceIdentifier;

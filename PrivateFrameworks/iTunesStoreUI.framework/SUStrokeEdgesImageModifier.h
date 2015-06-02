@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor;
-
 @interface SUStrokeEdgesImageModifier : SUImageModifier {
     struct UIEdgeInsets { 
         float top; 
@@ -16,10 +14,10 @@
     BOOL _strokeCurrentPath;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property BOOL fitToImage;
-@property(retain) UIColor * strokeColor;
-@property BOOL strokeCurrentPath;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) BOOL fitToImage;
+@property (nonatomic, retain) UIColor *strokeColor;
+@property (nonatomic) BOOL strokeCurrentPath;
 
 - (void)dealloc;
 - (void)drawAfterImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;

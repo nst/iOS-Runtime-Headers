@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSDictionary, NSString;
-
 @interface HMHAPMetadataAssistantCharacteristic : NSObject <NSSecureCoding> {
     NSString *_format;
     NSString *_name;
@@ -15,14 +13,14 @@
     NSString *_writeHAPCharacteristicType;
 }
 
-@property(retain) NSString * format;
-@property(retain) NSString * name;
-@property(retain) NSString * readHAPCharacteristicName;
-@property(retain) NSString * readHAPCharacteristicType;
-@property BOOL supportsLocalization;
-@property(retain) NSDictionary * values;
-@property(retain) NSString * writeHAPCharacteristicName;
-@property(retain) NSString * writeHAPCharacteristicType;
+@property (nonatomic, retain) NSString *format;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *readHAPCharacteristicName;
+@property (nonatomic, retain) NSString *readHAPCharacteristicType;
+@property (nonatomic) BOOL supportsLocalization;
+@property (nonatomic, retain) NSDictionary *values;
+@property (nonatomic, retain) NSString *writeHAPCharacteristicName;
+@property (nonatomic, retain) NSString *writeHAPCharacteristicType;
 
 + (BOOL)supportsSecureCoding;
 

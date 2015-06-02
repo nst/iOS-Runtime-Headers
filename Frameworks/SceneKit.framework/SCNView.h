@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class <SCNSceneRendererDelegate>, EAGLContext, NSArray, NSRecursiveLock, NSString, SCNDisplayLink, SCNEventHandler, SCNJitterer, SCNNode, SCNRenderer, SCNScene, SCNSpriteKitEventHandler, SCNTechnique, SKScene, UIColor;
-
 @interface SCNView : UIView <SCNSceneRenderer, SCNTechniqueSupport> {
     SCNDisplayLink *__displayLink;
     NSString *__ibSceneName;
-    unsigned int _allowsBrowsing : 1;
-    unsigned int _appIsDeactivated : 1;
+    unsigned int _allowsBrowsing;
+    unsigned int _appIsDeactivated;
     UIColor *_backgroundColor;
     NSArray *_controllerGestureRecognizers;
     double _currentSystemTime;
     id _delegate;
     SCNEventHandler *_eventHandler;
-    unsigned int _firstDrawDone : 1;
-    unsigned int _ibNoMultisampling : 1;
-    unsigned int _isOpaque : 1;
+    unsigned int _firstDrawDone;
+    unsigned int _ibNoMultisampling;
+    unsigned int _isOpaque;
     SCNJitterer *_jitterer;
     NSRecursiveLock *_lock;
     SCNRenderer *_renderer;
@@ -24,29 +22,29 @@
     char *_snapshotImageData;
     unsigned long _snapshotImageDataLength;
     SCNSpriteKitEventHandler *_spriteKitEventHandler;
-    unsigned int _viewIsOffscreen : 1;
+    unsigned int _viewIsOffscreen;
 }
 
-@property BOOL allowsCameraControl;
-@property unsigned int antialiasingMode;
-@property BOOL autoenablesDefaultLighting;
-@property(readonly) void* context;
-@property(copy,readonly) NSString * debugDescription;
-@property <SCNSceneRendererDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) EAGLContext * eaglContext;
-@property(readonly) unsigned int hash;
-@property(getter=isJitteringEnabled) BOOL jitteringEnabled;
-@property BOOL loops;
-@property(retain) SKScene * overlaySKScene;
-@property(getter=isPlaying) BOOL playing;
-@property(retain) SCNNode * pointOfView;
-@property int preferredFramesPerSecond;
-@property(retain) SCNScene * scene;
-@property double sceneTime;
-@property BOOL showsStatistics;
-@property(readonly) Class superclass;
-@property(copy) SCNTechnique * technique;
+@property (nonatomic) BOOL allowsCameraControl;
+@property (nonatomic) unsigned int antialiasingMode;
+@property (nonatomic) BOOL autoenablesDefaultLighting;
+@property (nonatomic, readonly) void*context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SCNSceneRendererDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) EAGLContext *eaglContext;
+@property (readonly) unsigned int hash;
+@property (getter=isJitteringEnabled, nonatomic) BOOL jitteringEnabled;
+@property (nonatomic) BOOL loops;
+@property (nonatomic, retain) SKScene *overlaySKScene;
+@property (getter=isPlaying) BOOL playing;
+@property (nonatomic, retain) SCNNode *pointOfView;
+@property (nonatomic) int preferredFramesPerSecond;
+@property (nonatomic, retain) SCNScene *scene;
+@property (nonatomic) double sceneTime;
+@property (nonatomic) BOOL showsStatistics;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) SCNTechnique *technique;
 
 + (id)SCNJSExportProtocol;
 + (id)_kvoKeysForwardedToRenderer;
@@ -107,8 +105,8 @@
 - (void)play:(id)arg1;
 - (id)pointOfView;
 - (int)preferredFramesPerSecond;
-- (BOOL)prepareObject:(id)arg1 shouldAbortBlock:(id)arg2;
-- (void)prepareObjects:(id)arg1 withCompletionHandler:(id)arg2;
+- (BOOL)prepareObject:(id)arg1 shouldAbortBlock:(id /* block */)arg2;
+- (void)prepareObjects:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (struct SCNVector3 { float x1; float x2; float x3; })projectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (id)renderer;
 - (void)resumeDisplayLink;

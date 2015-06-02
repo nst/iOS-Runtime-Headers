@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimatedBuild, NSArray, NSDictionary, NSString, TSDGLState, TSDRep;
-
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext> {
     TSDGLState *_GLState;
     KNAnimatedBuild *_animatedBuild;
@@ -40,29 +38,29 @@
     NSDictionary *_transitionAttributes;
 }
 
-@property(retain) TSDGLState * GLState;
-@property KNAnimatedBuild * animatedBuild;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRectOnCanvas;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int direction;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isBuild;
-@property(readonly) BOOL isFrameRenderer;
-@property(readonly) BOOL isMagicMove;
-@property BOOL isMotionBlurred;
-@property BOOL isPreview;
-@property(readonly) BOOL isTransition;
-@property BOOL isWarmingUp;
-@property NSArray * magicMoveMatches;
-@property double percent;
-@property int rendererType;
-@property TSDRep * rep;
-@property(readonly) Class superclass;
-@property(retain) NSArray * textures;
-@property NSDictionary * transitionAttributes;
+@property (nonatomic, retain) TSDGLState *GLState;
+@property (nonatomic) KNAnimatedBuild *animatedBuild;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRectOnCanvas;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int direction;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isBuild;
+@property (nonatomic, readonly) BOOL isFrameRenderer;
+@property (nonatomic, readonly) BOOL isMagicMove;
+@property (nonatomic) BOOL isMotionBlurred;
+@property (nonatomic) BOOL isPreview;
+@property (nonatomic, readonly) BOOL isTransition;
+@property (nonatomic) BOOL isWarmingUp;
+@property (nonatomic) NSArray *magicMoveMatches;
+@property (nonatomic) double percent;
+@property (nonatomic) int rendererType;
+@property (nonatomic) TSDRep *rep;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *textures;
+@property (nonatomic) NSDictionary *transitionAttributes;
 
 - (id)GLState;
 - (id)animatedBuild;

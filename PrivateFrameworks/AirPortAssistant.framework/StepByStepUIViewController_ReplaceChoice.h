@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface StepByStepUIViewController_ReplaceChoice : StepByStepUIViewController <TableViewManagerDelegate> {
-}
+@interface StepByStepUIViewController_ReplaceChoice : StepByStepUIViewController <TableViewManagerDelegate>
 
 - (void)loadView;
 - (void)setupTable;

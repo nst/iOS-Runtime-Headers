@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKStructuredLocation, NSDictionary;
-
 @interface EKReminderLocationItem : NSObject {
     NSDictionary *_addressDictionary;
     BOOL _isLocationBeingDetermined;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(retain) NSDictionary * addressDictionary;
-@property BOOL isLocationBeingDetermined;
-@property(retain) EKStructuredLocation * location;
-@property int type;
+@property (nonatomic, retain) NSDictionary *addressDictionary;
+@property (nonatomic) BOOL isLocationBeingDetermined;
+@property (nonatomic, retain) EKStructuredLocation *location;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)addressDictionary;

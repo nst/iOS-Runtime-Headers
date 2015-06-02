@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboard, UIKeyboardInputMode, UIView, UIViewController;
-
 @interface UICompatibilityInputViewController : UIInputViewController {
     UIKeyboard *_deferredSystemView;
     UIKeyboardInputMode *_incomingExtensionInputMode;
@@ -14,8 +12,8 @@
     BOOL _shouldSuppressRemoteInputController;
 }
 
-@property(retain) UIViewController * inputController;
-@property(retain) UIView * inputControllerSnapshot;
+@property (nonatomic, retain) UIViewController *inputController;
+@property (nonatomic, retain) UIView *inputControllerSnapshot;
 
 + (BOOL)_requiresProxyInterface;
 + (BOOL)_shouldForwardViewWillTransitionToSize;

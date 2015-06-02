@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAHAIntegerValue : SAHAAttributeValue {
-}
+@interface SAHAIntegerValue : SAHAAttributeValue
 
-@property int value;
+@property (nonatomic) int value;
 
 + (id)integerValue;
 + (id)integerValueWithDictionary:(id)arg1 context:(id)arg2;

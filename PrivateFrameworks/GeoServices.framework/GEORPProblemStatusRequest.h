@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPUserCredentials, NSMutableArray, NSString;
-
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
     NSMutableArray *_problemIds;
     NSString *_statusNotificationId;
     GEORPUserCredentials *_userCredentials;
 }
 
-@property(readonly) BOOL hasStatusNotificationId;
-@property(readonly) BOOL hasUserCredentials;
-@property(retain) NSMutableArray * problemIds;
-@property(retain) NSString * statusNotificationId;
-@property(retain) GEORPUserCredentials * userCredentials;
+@property (nonatomic, readonly) BOOL hasStatusNotificationId;
+@property (nonatomic, readonly) BOOL hasUserCredentials;
+@property (nonatomic, retain) NSMutableArray *problemIds;
+@property (nonatomic, retain) NSString *statusNotificationId;
+@property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
 - (void)addProblemId:(id)arg1;
 - (void)clearProblemIds;

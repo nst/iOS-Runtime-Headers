@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCInstallerReader : NSObject {
-}
+@interface MCInstallerReader : NSObject
 
 + (void)_setProfileStorageDirectory:(id)arg1;
 + (id)sharedReader;

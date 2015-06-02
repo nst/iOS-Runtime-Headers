@@ -7,9 +7,9 @@
     unsigned int _requestID;
 }
 
-@property(retain) id cacheKey;
-@property(readonly) BOOL cachesInMemory;
-@property unsigned int requestIdentifier;
+@property (nonatomic, retain) id cacheKey;
+@property (nonatomic, readonly) BOOL cachesInMemory;
+@property (nonatomic) unsigned int requestIdentifier;
 
 - (void).cxx_destruct;
 - (id)_initSKUIResourceRequest;

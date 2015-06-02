@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLScrubViewDataSource>, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, QLPageNumberView, QLThumbnailView;
-
 @interface QLScrubView : UIView <UIGestureRecognizerDelegate> {
     <QLScrubViewDataSource> *_dataSource;
     id _delegate;
@@ -22,13 +20,13 @@
     NSMutableArray *_visibleThumbIndexes;
 }
 
-@property <QLScrubViewDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
+@property <QLScrubViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
 @property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL runOnMainThread;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (float)defaultWidth;
 

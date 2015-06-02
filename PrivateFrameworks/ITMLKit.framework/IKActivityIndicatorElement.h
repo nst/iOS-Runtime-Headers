@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKTextElement;
+@interface IKActivityIndicatorElement : IKViewElement
 
-@interface IKActivityIndicatorElement : IKViewElement {
-}
-
-@property(retain,readonly) IKTextElement * title;
+@property (nonatomic, readonly, retain) IKTextElement *title;
 
 - (id)title;
 

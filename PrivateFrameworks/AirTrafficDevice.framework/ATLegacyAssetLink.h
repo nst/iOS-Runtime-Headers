@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class <ATAssetLinkDelegate>, <ATLegacyAssetLinkProgressDelegate>, ATLegacyMessageLink, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATLegacyAssetLink : NSObject <ATAssetLink, ATMessageLinkObserver> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <ATAssetLinkDelegate> *_delegate;
@@ -17,15 +15,15 @@
     NSMutableSet *_unqueuedAssets;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <ATAssetLinkDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isOpen,readonly) BOOL open;
-@property <ATLegacyAssetLinkProgressDelegate> * progressDelegate;
-@property(copy) NSArray * readyDataClasses;
-@property(readonly) Class superclass;
-@property(copy) NSArray * supportedDataClasses;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ATAssetLinkDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (nonatomic) <ATLegacyAssetLinkProgressDelegate> *progressDelegate;
+@property (nonatomic, copy) NSArray *readyDataClasses;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedDataClasses;
 
 - (void).cxx_destruct;
 - (id)_assetManifestForDataclasses:(id)arg1;

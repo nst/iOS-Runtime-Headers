@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class <ML3MusicLibraryDelegate>, ML3AccountCacheDatabase, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3LibraryNotificationManager, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate> {
     ML3AccountCacheDatabase *_accountCacheDatabase;
     ML3DatabaseConnectionPool *_connectionPool;
@@ -22,30 +20,32 @@
     NSString *_syncLibraryUID;
 }
 
-@property(readonly) long long autoFilledTracksTotalSize;
-@property BOOL companionDeviceActiveStoreAccountIsDynamiteEligible;
-@property(readonly) ML3DatabaseConnectionPool * connectionPool;
-@property(readonly) long long currentContentRevision;
-@property(readonly) ML3Container * currentDevicePurchasesPlaylist;
-@property(readonly) long long currentRevision;
-@property(readonly) ML3DatabaseMetadata * databaseInfo;
-@property(readonly) NSString * databasePath;
-@property(copy,readonly) NSString * debugDescription;
-@property <ML3MusicLibraryDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isHomeSharingLibrary;
-@property(retain) NSArray * libraryContainerFilterPredicates;
-@property(retain) NSArray * libraryEntityFilterPredicates;
-@property(readonly) NSString * libraryUID;
-@property(readonly) NSArray * localizedSectionIndexTitles;
-@property(readonly) BOOL mediaRestrictionEnabled;
-@property(readonly) NSArray * preferredAudioTracks;
-@property(readonly) NSArray * preferredSubtitleTracks;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsUbiquitousPlaybackPositions;
-@property long long syncGenerationID;
-@property NSString * syncLibraryID;
+@property (nonatomic, readonly) long long autoFilledTracksTotalSize;
+@property (nonatomic) BOOL companionDeviceActiveStoreAccountIsDynamiteEligible;
+@property (nonatomic, readonly) ML3DatabaseConnectionPool *connectionPool;
+@property (nonatomic, readonly) long long currentContentRevision;
+@property (nonatomic, readonly) ML3Container *currentDevicePurchasesPlaylist;
+@property (nonatomic, readonly) long long currentRevision;
+@property (nonatomic, readonly) ML3DatabaseMetadata *databaseInfo;
+@property (nonatomic, readonly) NSString *databasePath;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ML3MusicLibraryDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isHomeSharingLibrary;
+@property (nonatomic, retain) NSArray *libraryContainerFilterPredicates;
+@property (nonatomic, retain) NSArray *libraryEntityFilterPredicates;
+@property (nonatomic, readonly) NSString *libraryUID;
+@property (nonatomic, readonly) NSArray *localizedSectionIndexTitles;
+@property (nonatomic, readonly) BOOL mediaRestrictionEnabled;
+@property (nonatomic, readonly) NSArray *preferredAudioTracks;
+@property (nonatomic, readonly) NSArray *preferredSubtitleTracks;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsUbiquitousPlaybackPositions;
+@property (nonatomic) long long syncGenerationID;
+@property (nonatomic) NSString *syncLibraryID;
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)_notInKeepLocalCollectionPredicate;
 + (id)_purgeableTrackPredicateWithUrgency:(unsigned int)arg1 includeCloudAssets:(BOOL)arg2;
@@ -53,8 +53,6 @@
 + (id)allSchemaSQL;
 + (id)allTables;
 + (id)allTriggersSQL;
-+ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3;
-+ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id)arg3 progressHandler:(id)arg4;
 + (id)controlDirectoryPathWithBasePath:(id)arg1;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
 + (BOOL)deviceSupportsMultipleLibraries;
@@ -62,7 +60,7 @@
 + (void)disableSharedLibrary;
 + (BOOL)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
 + (void)enableAutomaticDatabaseValidation;
-+ (void)enumerateSortMapTablesUsingBlock:(id)arg1;
++ (void)enumerateSortMapTablesUsingBlock:(id /* block */)arg1;
 + (id)indexSchemaSQL;
 + (id)itemIndexSchemaSQL;
 + (id)itemNewSchemaSQL;
@@ -91,7 +89,7 @@
 
 - (void).cxx_destruct;
 - (id)_allKeepLocalPlaylistTracks;
-- (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(int)arg2 mediaType:(unsigned long)arg3 completionHandler:(id)arg4;
+- (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(int)arg2 mediaType:(unsigned long)arg3 completionHandler:(id /* block */)arg4;
 - (unsigned int)_cacheDeleteUrgencyToMusicLibraryUrgency:(int)arg1;
 - (BOOL)_canConfigureMediaLibraryDatabaseConnection:(id)arg1;
 - (BOOL)_clearAllRowsFromTables:(id)arg1;
@@ -101,7 +99,7 @@
 - (void)_deleteAllArtworkVariantsAtRelativePaths:(id)arg1;
 - (BOOL)_deleteMismatchedCollectionWithPersistentID:(id)arg1 ofCollectionClass:(Class)arg2 usingConnection:(id)arg3;
 - (void)_effectiveSettingsDidChangeNotification:(id)arg1;
-- (void)_enumeratePurgeableTracksForUrgency:(unsigned int)arg1 includeCloudAssets:(BOOL)arg2 usingBlock:(id)arg3;
+- (void)_enumeratePurgeableTracksForUrgency:(unsigned int)arg1 includeCloudAssets:(BOOL)arg2 usingBlock:(id /* block */)arg3;
 - (void)_handleCacheDeleteNotification:(id)arg1;
 - (BOOL)_insertArtworkRowWithArtworkToken:(id)arg1 artworkType:(int)arg2 sourceType:(int)arg3 relativePath:(id)arg4;
 - (void)_loggingSettingsDidChangeNotification:(id)arg1;
@@ -112,7 +110,7 @@
 - (void)_updateDatabaseConnectionsProfilingLevel;
 - (BOOL)_updateEntityRevisionForItemWithPersistentID:(id)arg1 withDeletionType:(int)arg2 revisionTrackingCode:(long long)arg3 revisionType:(int)arg4 usingConnection:(id)arg5;
 - (BOOL)_validateDatabaseUsingConnection:(id)arg1 error:(id*)arg2;
-- (void)accessSortKeyBuilder:(id)arg1;
+- (void)accessSortKeyBuilder:(id /* block */)arg1;
 - (id)accountCacheDatabase;
 - (long long)addStringToSortMap:(id)arg1;
 - (id)albumArtistForEffectiveAlbumArtistName:(id)arg1;
@@ -124,7 +122,6 @@
 - (long long)autoFilledTracksTotalSizeWithUrgency:(unsigned int)arg1;
 - (void)autogenerateSupportedSizesForAllOriginalArtworkWithConnection:(id)arg1;
 - (BOOL)automaticDatabaseValidationDisabled;
-- (void)checkForChangesInHomeSharingLibrary:(id)arg1 completionHandler:(id)arg2;
 - (void)checkInDatabaseConnection:(id)arg1;
 - (id)checkoutReaderConnection;
 - (id)checkoutWriterConnection;
@@ -146,7 +143,7 @@
 - (int)currentDatabaseVersion;
 - (id)currentDevicePurchasesPlaylist;
 - (long long)currentRevision;
-- (void)databaseConnectionAllowingWrites:(BOOL)arg1 withBlock:(id)arg2;
+- (void)databaseConnectionAllowingWrites:(BOOL)arg1 withBlock:(id /* block */)arg2;
 - (id)databaseInfo;
 - (id)databasePath;
 - (void)dealloc;
@@ -162,19 +159,17 @@
 - (void)deletePresignedValidity;
 - (BOOL)dropItemIndexes;
 - (BOOL)emptyAllTables;
-- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 forMediaTypes:(id)arg4 usingBlock:(id)arg5;
-- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 usingBlock:(id)arg4;
-- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 usingBlock:(id)arg2;
-- (BOOL)executeUpdateSQL:(id)arg1;
+- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 forMediaTypes:(id)arg4 usingBlock:(id /* block */)arg5;
+- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumeratePersistentIDsAfterRevision:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)fetchArtistHeroArtworkForPersistentID:(long long)arg1 artistType:(int)arg2;
 - (id)fetchChapterArtworkForPersistentID:(long long)arg1 retrievalTime:(double)arg2;
 - (id)fetchItemArtworkForPersistentID:(long long)arg1;
 - (int)fetchItemArtworkSourceTypeForPersistentID:(long long)arg1;
 - (int)fetchItemScreenshotSourceTypeForPersistentID:(long long)arg1;
 - (id)fetchScreenshotArtworkForPersistentID:(long long)arg1;
-- (void)fillContainerForHomeSharingLibrary:(id)arg1 containerID:(long long)arg2 completionHandler:(id)arg3;
 - (id)genreForGenre:(id)arg1;
-- (void)getChangedPersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(int)arg2 usingBlock:(id)arg3;
+- (void)getChangedPersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(int)arg2 usingBlock:(id /* block */)arg3;
 - (long long)getDatabaseFileFreeSpace;
 - (id)groupingKeyForString:(id)arg1;
 - (id)groupingKeysForStrings:(id)arg1;
@@ -189,7 +184,7 @@
 - (BOOL)inTransactionUpdateSearchMapOnConnection:(id)arg1;
 - (BOOL)inTransactionUpdateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(BOOL)arg2;
 - (id)initWithPath:(id)arg1;
-- (id)initWithPath:(id)arg1 readOnly:(BOOL)arg2 populateUnitTestTablesBlock:(id)arg3;
+- (id)initWithPath:(id)arg1 readOnly:(BOOL)arg2 populateUnitTestTablesBlock:(id /* block */)arg3;
 - (long long)insertStringIntoSortMapNoTransaction:(id)arg1;
 - (id)insertStringsIntoSortMap:(id)arg1;
 - (id)insertStringsIntoSortMap:(id)arg1 didReSortMap:(BOOL*)arg2;
@@ -211,8 +206,8 @@
 - (void)notifyInvisiblePropertyDidChange;
 - (void)notifyNonContentsPropertyDidChange;
 - (void)notifySectionsDidChange;
-- (void)performDatabaseTransactionWithBlock:(id)arg1;
-- (void)performReadOnlyDatabaseTransactionWithBlock:(id)arg1;
+- (void)performDatabaseTransactionWithBlock:(id /* block */)arg1;
+- (void)performReadOnlyDatabaseTransactionWithBlock:(id /* block */)arg1;
 - (BOOL)persistentID:(long long)arg1 changedAfterRevision:(long long)arg2 revisionTrackingCode:(int)arg3;
 - (BOOL)populateArtworkCacheWithArtworkData:(id)arg1 trackValues:(id)arg2;
 - (BOOL)populateStaticItemsOfDynamicContainers;
@@ -222,15 +217,13 @@
 - (void)purgeCloudAssets;
 - (void)reconnectToDatabase;
 - (void)removeItemsWithFamilyAccountID:(unsigned long long)arg1 purchaserAccountID:(unsigned long long)arg2 downloaderAccountID:(unsigned long long)arg3;
-- (void)removeJaliscoTrackDataUsingDatabaseConnection:(id)arg1;
 - (void)removeOrphanedTracks;
 - (void)removeOrphanedTracksOnlyInCaches:(BOOL)arg1;
-- (void)removeSagaTrackDataUsingDatabaseConnection:(id)arg1;
-- (void)removeSource:(int)arg1 usingConnection:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)removeSource:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)removeSource:(int)arg1 usingConnection:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)removeSource:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)removeTombstonesForDeletedItems;
-- (void)removeTracksWithPersistentIDs:(id)arg1 fromSource:(int)arg2 usingConnection:(id)arg3 withCompletionHandler:(id)arg4;
-- (void)removeTracksWithPersistentIDs:(id)arg1 fromSource:(int)arg2 withCompletionHandler:(id)arg3;
+- (void)removeTracksWithPersistentIDs:(id)arg1 fromSource:(int)arg2 usingConnection:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)removeTracksWithPersistentIDs:(id)arg1 fromSource:(int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (BOOL)requiresNonSchemaUpdatesOnConnection:(id)arg1;
 - (BOOL)requiresSchemaOnlyUpdatesOnConnection:(id)arg1;
 - (void)savePlaylists;
@@ -264,5 +257,16 @@
 - (BOOL)validateSortMapUnicodeVersionOnConnection:(id)arg1;
 - (id)valueForDatabaseProperty:(id)arg1;
 - (BOOL)verifyPresignedValidity;
+
+// Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
+
++ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)buildDatabaseFromHomeSharingLibrary:(id)arg1 atPath:(id)arg2 completionHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4;
+
+- (void)checkForChangesInHomeSharingLibrary:(id)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)executeUpdateSQL:(id)arg1;
+- (void)fillContainerForHomeSharingLibrary:(id)arg1 containerID:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)removeJaliscoTrackDataUsingDatabaseConnection:(id)arg1;
+- (void)removeSagaTrackDataUsingDatabaseConnection:(id)arg1;
 
 @end

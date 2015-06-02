@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPredicate;
-
 @interface NSSQLWhereIntermediate : NSSQLIntermediate {
     NSPredicate *_predicate;
 }

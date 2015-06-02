@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXRemoteHearingAidDevice;
-
 @interface AXHearingDetailViewController : PSListController {
     AXRemoteHearingAidDevice *_device;
     BOOL _isLiveListening;
 }
 
-@property(retain) AXRemoteHearingAidDevice * device;
+@property (nonatomic, retain) AXRemoteHearingAidDevice *device;
 
 - (id)_modeSpecifiers;
 - (id)_volumeSpecifiers;

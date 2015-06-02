@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSMapTable, NSMutableArray, NSMutableDictionary;
-
 @interface GKCollectionViewAggregateDataSource : GKCollectionViewDataSource {
     NSMapTable *_dataSourceToMappings;
     NSMutableDictionary *_globalSectionToMappings;
@@ -11,10 +9,10 @@
     unsigned int _sectionCount;
 }
 
-@property(retain) NSMapTable * dataSourceToMappings;
-@property(retain) NSMutableDictionary * globalSectionToMappings;
-@property(retain) NSMutableArray * mappings;
-@property unsigned int sectionCount;
+@property (nonatomic, retain) NSMapTable *dataSourceToMappings;
+@property (nonatomic, retain) NSMutableDictionary *globalSectionToMappings;
+@property (nonatomic, retain) NSMutableArray *mappings;
+@property (nonatomic) unsigned int sectionCount;
 
 - (id)_gkDescription;
 - (id)_gkDescriptionWithChildren:(int)arg1;
@@ -37,7 +35,7 @@
 - (void)dataSource:(id)arg1 didRefreshSections:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;
-- (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2 complete:(id)arg3;
+- (void)dataSource:(id)arg1 performBatchUpdate:(id /* block */)arg2 complete:(id /* block */)arg3;
 - (void)dataSourceDidReloadData:(id)arg1;
 - (id)dataSourceForSection:(unsigned int)arg1;
 - (id)dataSourceToMappings;
@@ -55,7 +53,7 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)removeDataSource:(id)arg1;
-- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)sectionCount;
 - (unsigned int)sectionForDataSource:(id)arg1;
 - (void)setDataSource:(id)arg1 forTag:(id)arg2;

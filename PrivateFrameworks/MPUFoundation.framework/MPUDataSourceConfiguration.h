@@ -2,38 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface MPUDataSourceConfiguration : NSObject {
     NSString *_dataSourceCachingKey;
     Class _dataSourceClass;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _defaultQueryCreationBlock;
-
+    id /* block */ _defaultQueryCreationBlock;
     int _entityType;
 }
 
-@property(copy) NSString * dataSourceCachingKey;
-@property(readonly) Class dataSourceClass;
-@property(copy) id defaultQueryCreationBlock;
-@property int entityType;
+@property (nonatomic, copy) NSString *dataSourceCachingKey;
+@property (nonatomic, readonly) Class dataSourceClass;
+@property (nonatomic, copy) id /* block */ defaultQueryCreationBlock;
+@property (nonatomic) int entityType;
 
 + (id)configurationWithDataSourceClass:(Class)arg1;
 
 - (void).cxx_destruct;
 - (id)dataSourceCachingKey;
 - (Class)dataSourceClass;
-- (id)defaultQueryCreationBlock;
+- (id /* block */)defaultQueryCreationBlock;
 - (int)entityType;
 - (id)initWithDataSourceClass:(Class)arg1;
 - (void)setDataSourceCachingKey:(id)arg1;
-- (void)setDefaultQueryCreationBlock:(id)arg1;
+- (void)setDefaultQueryCreationBlock:(id /* block */)arg1;
 - (void)setEntityType:(int)arg1;
 
 @end

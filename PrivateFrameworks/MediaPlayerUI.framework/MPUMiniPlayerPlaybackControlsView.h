@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPPlaybackControlsDelegate><MPTransportControlsTarget><MPUMiniPlayerActionsViewControllerDelegate>, MPUMiniPlayerActionsViewController, MPUMiniPlayerTransportControls, MPUNowPlayingTitlesView, MPUProspectivePlaybackInformation, MPUSkipLimitView, MPVolumeSlider, NSString, SKUICircleProgressIndicator, UIButton, UIPopoverController, UIView;
-
 @interface MPUMiniPlayerPlaybackControlsView : MPPlaybackControlsView <MPUMiniPlayerActionsViewControllerDelegate, UIPopoverControllerDelegate> {
     SKUICircleProgressIndicator *_createActivityIndicatorView;
     UIButton *_createButton;
@@ -19,19 +17,19 @@
     MPVolumeSlider *_volumeSlider;
 }
 
-@property(readonly) UIView * _createButton;
-@property(getter=_isDetailScrubbing,readonly) BOOL _detailScrubbing;
-@property(readonly) float _titleBaselineY;
-@property(readonly) MPUMiniPlayerTransportControls * _transportControls;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPPlaybackControlsDelegate><MPTransportControlsTarget><MPUMiniPlayerActionsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPUProspectivePlaybackInformation * prospectivePlaybackInformation;
-@property(getter=isShowingCreateLoadingIndicator) BOOL showingCreateLoadingIndicator;
-@property(readonly) MPUSkipLimitView * skipLimitView;
-@property(readonly) Class superclass;
-@property(readonly) float titleMaxX;
+@property (nonatomic, readonly) UIView *_createButton;
+@property (getter=_isDetailScrubbing, nonatomic, readonly) BOOL _detailScrubbing;
+@property (nonatomic, readonly) float _titleBaselineY;
+@property (nonatomic, readonly) MPUMiniPlayerTransportControls *_transportControls;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPPlaybackControlsDelegate><MPTransportControlsTarget><MPUMiniPlayerActionsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUProspectivePlaybackInformation *prospectivePlaybackInformation;
+@property (getter=isShowingCreateLoadingIndicator, nonatomic) BOOL showingCreateLoadingIndicator;
+@property (nonatomic, readonly) MPUSkipLimitView *skipLimitView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float titleMaxX;
 
 + (unsigned long long)defaultVisibleParts;
 

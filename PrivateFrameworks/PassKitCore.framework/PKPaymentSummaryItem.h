@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDecimalNumber, NSString;
-
 @interface PKPaymentSummaryItem : NSObject <NSCopying, NSSecureCoding> {
     NSDecimalNumber *_amount;
     NSString *_label;
 }
 
-@property(copy) NSDecimalNumber * amount;
-@property(copy) NSString * label;
+@property (nonatomic, copy) NSDecimalNumber *amount;
+@property (nonatomic, copy) NSString *label;
 
 + (id)summaryItemWithLabel:(id)arg1 amount:(id)arg2;
 + (BOOL)supportsSecureCoding;

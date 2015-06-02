@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, SSSQLiteQuery;
-
 @interface SSSQLiteContainsPredicate : SSSQLitePropertyPredicate <NSCopying> {
     BOOL _negative;
     SSSQLiteQuery *_query;
@@ -11,10 +9,10 @@
     id _values;
 }
 
-@property(getter=isNegative,readonly) BOOL negative;
-@property(readonly) SSSQLiteQuery * query;
-@property(readonly) NSString * queryProperty;
-@property(readonly) NSArray * values;
+@property (getter=isNegative, nonatomic, readonly) BOOL negative;
+@property (nonatomic, readonly) SSSQLiteQuery *query;
+@property (nonatomic, readonly) NSString *queryProperty;
+@property (nonatomic, readonly) NSArray *values;
 
 + (id)containsPredicateWithProperty:(id)arg1 query:(id)arg2 queryProperty:(id)arg3;
 + (id)containsPredicateWithProperty:(id)arg1 values:(id)arg2;

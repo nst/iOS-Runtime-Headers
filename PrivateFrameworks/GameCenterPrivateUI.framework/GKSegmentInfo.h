@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <GKSegmentInfoDelegagte>, GKCollectionViewDataSource, GKPlaceholderContentStateMachine, NSString;
-
 @interface GKSegmentInfo : NSObject <GKStateMachineDelegate> {
     GKCollectionViewDataSource *_dataSource;
     <GKSegmentInfoDelegagte> *_delegateWeak;
@@ -11,15 +9,15 @@
     NSString *_title;
 }
 
-@property(retain) GKCollectionViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <GKSegmentInfoDelegagte> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GKPlaceholderContentStateMachine * loadingMatchine;
-@property(retain) NSString * loadingState;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
+@property (nonatomic, retain) GKCollectionViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GKSegmentInfoDelegagte> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GKPlaceholderContentStateMachine *loadingMatchine;
+@property (nonatomic, retain) NSString *loadingState;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
 
 - (id)dataSource;
 - (void)dealloc;

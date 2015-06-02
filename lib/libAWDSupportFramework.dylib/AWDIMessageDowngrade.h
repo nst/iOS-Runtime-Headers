@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIMessageDowngrade : PBCodable <NSCopying> {
     unsigned int _durationBeforeDowngrade;
     NSString *_guid;
@@ -16,14 +14,14 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int durationBeforeDowngrade;
-@property(retain) NSString * guid;
-@property BOOL hasDurationBeforeDowngrade;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsManualDowngrade;
-@property BOOL hasTimestamp;
-@property unsigned int isManualDowngrade;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int durationBeforeDowngrade;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasDurationBeforeDowngrade;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsManualDowngrade;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isManualDowngrade;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

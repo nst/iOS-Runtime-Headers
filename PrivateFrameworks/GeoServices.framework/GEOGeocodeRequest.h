@@ -6,7 +6,7 @@
     unsigned short _geocodeProvider;
 }
 
-@property unsigned short geocodeProvider;
+@property (nonatomic) unsigned short geocodeProvider;
 
 - (unsigned short)geocodeProvider;
 - (id)initForwardGeocodeWithAddress:(id)arg1;

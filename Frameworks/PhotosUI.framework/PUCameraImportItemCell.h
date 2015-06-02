@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotoView, UIActivityIndicatorView, UIImageView;
-
 @interface PUCameraImportItemCell : UICollectionViewCell {
     UIImageView *_badgeImageView;
     int _badgeType;
@@ -11,10 +9,10 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(retain) UIImageView * badgeImageView;
-@property int badgeType;
-@property(retain) PUPhotoView * photoView;
-@property(retain) UIActivityIndicatorView * spinner;
+@property (nonatomic, retain) UIImageView *badgeImageView;
+@property (nonatomic) int badgeType;
+@property (nonatomic, retain) PUPhotoView *photoView;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
 
 - (void).cxx_destruct;
 - (void)_createSpinnerIfNecessary;

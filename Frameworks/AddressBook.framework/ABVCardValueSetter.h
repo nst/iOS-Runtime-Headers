@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface ABVCardValueSetter : NSObject {
-}
+@interface ABVCardValueSetter : NSObject
 
 - (id)fullName;
 - (id)imageData;

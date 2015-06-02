@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUMarkupCellContext : SUItemCellContext {
     int _pendingWebViewLoads;
     NSString *_stylesheet;
@@ -11,8 +9,8 @@
     float _webViewWidth;
 }
 
-@property(retain) NSString * stylesheet;
-@property float webViewWidth;
+@property (nonatomic, retain) NSString *stylesheet;
+@property (nonatomic) float webViewWidth;
 
 - (void)dealloc;
 - (void)setStylesheet:(id)arg1;

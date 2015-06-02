@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableSet, PLEntryNotificationOperatorComposition, PLOperator;
-
 @interface PLAWDCpuAP : PLAWDAuxMetrics {
     long _apSubmitCnt;
     long _cpuLoadSubmitCnt;
@@ -16,13 +14,13 @@
 
 @property long apSubmitCnt;
 @property long cpuLoadSubmitCnt;
-@property(retain) PLEntryNotificationOperatorComposition * ioreportEnergyEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *ioreportEnergyEventCallback;
 @property BOOL isIoreportEnergy;
-@property(retain) PLEntryNotificationOperatorComposition * monitorEventCallback;
-@property PLOperator * operator;
-@property(retain) NSMutableSet * runningMetrics;
-@property(retain) NSDate * sleepStartTime;
-@property(retain) PLEntryNotificationOperatorComposition * wakeEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *monitorEventCallback;
+@property PLOperator *operator;
+@property (nonatomic, retain) NSMutableSet *runningMetrics;
+@property (retain) NSDate *sleepStartTime;
+@property (retain) PLEntryNotificationOperatorComposition *wakeEventCallback;
 
 + (id)entryAggregateDefinitionAwdAp;
 + (id)entryAggregateDefinitionAwdCpu;

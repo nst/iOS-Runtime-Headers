@@ -2,9 +2,8 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionDownloadTask : NSURLSessionTask {
-}
+@interface NSURLSessionDownloadTask : NSURLSessionTask
 
-- (void)cancelByProducingResumeData:(id)arg1;
+- (void)cancelByProducingResumeData:(id /* block */)arg1;
 
 @end

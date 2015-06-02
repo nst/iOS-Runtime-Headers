@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSURLRequest;
-
 @interface _GKURLRequestDictionaryKey : NSObject <NSCopying> {
     NSURLRequest *_request;
 }
 
-@property(readonly) NSURLRequest * request;
+@property (nonatomic, readonly) NSURLRequest *request;
 
 + (id)keyWithRequest:(id)arg1;
 

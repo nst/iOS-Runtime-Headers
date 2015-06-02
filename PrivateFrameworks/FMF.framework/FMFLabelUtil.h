@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMFLabelUtil : NSObject {
-}
+@interface FMFLabelUtil : NSObject
 
 + (id)defaultLabelKeys;
 + (BOOL)isDefaultLabel:(id)arg1;

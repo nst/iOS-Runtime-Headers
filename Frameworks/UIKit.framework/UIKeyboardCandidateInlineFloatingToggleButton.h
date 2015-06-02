@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateInlineFloatingToggleButton : UIKeyboardCandidateToggleButton {
-}
+@interface UIKeyboardCandidateInlineFloatingToggleButton : UIKeyboardCandidateToggleButton
 
 + (id)arrowImageName;
 

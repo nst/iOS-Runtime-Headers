@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class ACAccountStore, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface CalendarAccountsController : NSObject {
     ACAccountStore *_accountStore;
     NSMutableDictionary *_lastStoreListingRefreshDates;

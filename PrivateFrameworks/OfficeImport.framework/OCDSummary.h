@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OCDSummary : NSObject {
     NSString *mAuthor;
     NSString *mComments;

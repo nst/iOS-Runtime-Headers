@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSURL;
-
 @interface GEOThrottleKey : NSObject {
     unsigned int _requestType;
     NSURL *_serverURL;

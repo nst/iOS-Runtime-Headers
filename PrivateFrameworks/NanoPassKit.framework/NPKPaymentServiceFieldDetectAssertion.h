@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NPKPaymentService;
-
 @interface NPKPaymentServiceFieldDetectAssertion : NSObject {
     NPKPaymentService *_paymentService;
 }
 
-@property NPKPaymentService * paymentService;
+@property (nonatomic) NPKPaymentService *paymentService;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDate, NSString, NSURL, SKUIArtworkList, UIColor;
-
 @interface SKUICountdown : NSObject {
     NSURL *_URL;
     SKUIArtworkList *_artworkList;
@@ -23,21 +21,21 @@
     int _type;
 }
 
-@property(copy) NSURL * URL;
-@property(retain) SKUIArtworkList * artworkList;
-@property unsigned int dateFormat;
-@property(retain) SKUIArtworkList * endArtworkList;
-@property(copy) NSDate * endDate;
-@property long long finalValue;
-@property(copy) UIColor * flapBottomColor;
-@property(copy) UIColor * flapTopColor;
-@property(getter=isFlapped) BOOL flapped;
-@property(copy) UIColor * fontColor;
-@property long long initialValue;
-@property(copy) NSString * numberFormat;
-@property int rate;
-@property(copy) NSDate * startDate;
-@property int type;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, retain) SKUIArtworkList *artworkList;
+@property (nonatomic) unsigned int dateFormat;
+@property (nonatomic, retain) SKUIArtworkList *endArtworkList;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic) long long finalValue;
+@property (nonatomic, copy) UIColor *flapBottomColor;
+@property (nonatomic, copy) UIColor *flapTopColor;
+@property (getter=isFlapped, nonatomic) BOOL flapped;
+@property (nonatomic, copy) UIColor *fontColor;
+@property (nonatomic) long long initialValue;
+@property (nonatomic, copy) NSString *numberFormat;
+@property (nonatomic) int rate;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)URL;

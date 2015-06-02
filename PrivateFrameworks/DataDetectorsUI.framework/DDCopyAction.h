@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDCopyAction : DDAction {
-}
+@interface DDCopyAction : DDAction
 
 - (id)localizedName;
 - (void)perform;

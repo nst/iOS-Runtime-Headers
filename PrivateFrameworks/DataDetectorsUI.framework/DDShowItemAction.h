@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDShowItemAction : DDAction {
-}
+@interface DDShowItemAction : DDAction
 
 - (id)localizedName;
 

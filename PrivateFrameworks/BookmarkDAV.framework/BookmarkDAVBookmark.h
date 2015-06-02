@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class CoreDAVErrorItem, NSArray, NSData, NSDictionary, NSMutableString, NSString, NSURL;
-
 @interface BookmarkDAVBookmark : NSObject <CoreDAVLeafDataPayload, NSXMLParserDelegate> {
     NSMutableString *_appleAttributeString;
     NSDictionary *_appleAttributes;
@@ -16,18 +14,18 @@
     NSString *_syncKey;
 }
 
-@property(retain,readonly) NSDictionary * appleAttributes;
-@property(retain,readonly) NSURL * bookmarkURL;
-@property(retain) CoreDAVErrorItem * bulkUploadErrorItem;
-@property(readonly) NSArray * childrenOrder;
-@property(readonly) NSData * dataPayload;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSString * name;
-@property(retain) NSURL * serverID;
-@property(readonly) Class superclass;
-@property(readonly) NSString * syncKey;
+@property (nonatomic, readonly, retain) NSDictionary *appleAttributes;
+@property (nonatomic, readonly, retain) NSURL *bookmarkURL;
+@property (nonatomic, retain) CoreDAVErrorItem *bulkUploadErrorItem;
+@property (nonatomic, readonly) NSArray *childrenOrder;
+@property (nonatomic, readonly) NSData *dataPayload;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, retain) NSURL *serverID;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *syncKey;
 
 - (id)appleAttributes;
 - (id)bookmarkURL;

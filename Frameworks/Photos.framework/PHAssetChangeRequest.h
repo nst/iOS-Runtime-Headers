@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class CLLocation, NSData, NSDate, NSIndexSet, NSManagedObjectID, NSString, NSURL, PHChangeRequestHelper, PHContentEditingOutput, PHObjectPlaceholder, UIImage;
-
 @interface PHAssetChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
     NSString *_clientName;
     int _clientProcessID;
@@ -22,32 +20,32 @@
     NSURL *_videoURLForInsertion;
 }
 
-@property(readonly) NSString * clientName;
-@property(readonly) int clientProcessID;
-@property(retain) PHContentEditingOutput * contentEditingOutput;
-@property(retain) NSDate * creationDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEntitled,readonly) BOOL entitled;
-@property(getter=isFavorite) BOOL favorite;
-@property(readonly) unsigned int hash;
-@property(readonly) PHChangeRequestHelper * helper;
-@property(getter=isHidden) BOOL hidden;
-@property(retain) NSData * imageDataForInsertion;
-@property(retain) UIImage * imageForInsertion;
-@property(retain) NSString * imageTypeForInsertion;
-@property(retain) NSURL * imageURLForInsertion;
-@property(retain) CLLocation * location;
-@property(readonly) NSString * managedEntityName;
-@property(retain) NSDate * modificationDate;
-@property(getter=isMutated,readonly) BOOL mutated;
-@property(getter=isNew,readonly) BOOL new;
-@property(readonly) NSManagedObjectID * objectID;
-@property(readonly) PHObjectPlaceholder * placeholderForCreatedAsset;
-@property(readonly) Class superclass;
-@property(retain) NSIndexSet * supportedEditOperations;
-@property(readonly) NSString * uuid;
-@property(retain) NSURL * videoURLForInsertion;
+@property (nonatomic, readonly) NSString *clientName;
+@property (nonatomic, readonly) int clientProcessID;
+@property (nonatomic, retain) PHContentEditingOutput *contentEditingOutput;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEntitled, nonatomic, readonly) BOOL entitled;
+@property (getter=isFavorite, nonatomic) BOOL favorite;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PHChangeRequestHelper *helper;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSData *imageDataForInsertion;
+@property (nonatomic, retain) UIImage *imageForInsertion;
+@property (nonatomic, retain) NSString *imageTypeForInsertion;
+@property (nonatomic, retain) NSURL *imageURLForInsertion;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, readonly) NSString *managedEntityName;
+@property (nonatomic, retain) NSDate *modificationDate;
+@property (getter=isMutated, readonly) BOOL mutated;
+@property (getter=isNew, readonly) BOOL new;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedAsset;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSIndexSet *supportedEditOperations;
+@property (nonatomic, readonly) NSString *uuid;
+@property (nonatomic, retain) NSURL *videoURLForInsertion;
 
 + (id)_allAssetEditOperations;
 + (void)_createAssetFromImageData:(id)arg1 imageType:(id)arg2 uuid:(id)arg3 creationDate:(id)arg4;

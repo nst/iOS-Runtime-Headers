@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODXFillColorList : NSObject {
-}
+@interface ODXFillColorList : NSObject
 
 + (id)colorApplicationMethodMap;
 + (id)hueDirectionMap;

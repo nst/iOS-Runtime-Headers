@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPMediaQuery, MPMediaQuerySectionInfo, NSArray, NSMutableSet;
-
 @interface MPUQueryDataSource : MPUDataSource {
     NSMutableSet *_additionalUniqueItemPropertiesToFetch;
     NSArray *_entities;
@@ -13,8 +11,8 @@
     MPMediaQuerySectionInfo *_sectionInfo;
 }
 
-@property BOOL ignoringInvalidationDueToBackgroundApplicationState;
-@property(readonly) MPMediaQuery * query;
+@property (nonatomic) BOOL ignoringInvalidationDueToBackgroundApplicationState;
+@property (nonatomic, readonly) MPMediaQuery *query;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;

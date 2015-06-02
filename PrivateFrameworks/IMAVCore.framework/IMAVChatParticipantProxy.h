@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVChat, IMAVChatProxy, NSDictionary, NSString;
-
 @interface IMAVChatParticipantProxy : NSObject {
     IMAVChatProxy *_chat;
     NSDictionary *_info;
 }
 
-@property(readonly) BOOL _inviteDelivered;
-@property(retain,readonly) IMAVChat * avChat;
-@property(retain,readonly) NSString * name;
+@property (nonatomic, readonly) BOOL _inviteDelivered;
+@property (nonatomic, readonly, retain) IMAVChat *avChat;
+@property (nonatomic, readonly, retain) NSString *name;
 
 - (BOOL)_inviteDelivered;
 - (id)avChat;

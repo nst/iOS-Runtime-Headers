@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MSPMediaSyncError, MSPMediaSyncHeader, MSPMediaSyncOperation;
-
 @interface MSPMediaSyncPackage : PBCodable <NSCopying> {
     MSPMediaSyncError *_error;
     struct { 
@@ -16,16 +14,16 @@
     int _type;
 }
 
-@property(retain) MSPMediaSyncError * error;
-@property(readonly) BOOL hasError;
-@property(readonly) BOOL hasHeader;
-@property BOOL hasLastPackage;
-@property(readonly) BOOL hasSyncOperation;
-@property BOOL hasType;
-@property(retain) MSPMediaSyncHeader * header;
-@property BOOL lastPackage;
-@property(retain) MSPMediaSyncOperation * syncOperation;
-@property int type;
+@property (nonatomic, retain) MSPMediaSyncError *error;
+@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, readonly) BOOL hasHeader;
+@property (nonatomic) BOOL hasLastPackage;
+@property (nonatomic, readonly) BOOL hasSyncOperation;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) MSPMediaSyncHeader *header;
+@property (nonatomic) BOOL lastPackage;
+@property (nonatomic, retain) MSPMediaSyncOperation *syncOperation;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

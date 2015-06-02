@@ -6,7 +6,7 @@
     unsigned int _versionNumber;
 }
 
-@property(readonly) unsigned int versionNumber;
+@property (nonatomic, readonly) unsigned int versionNumber;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;

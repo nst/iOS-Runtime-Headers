@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DPrefilteredLineRenderer;
-
 @interface TSCH3DChartGridlinesSceneObject : TSCH3DSceneObject {
     TSCH3DPrefilteredLineRenderer *mRenderer;
 }
 
-+ (struct TSCH3DScenePart { id x1; id x2; })partWithAxes:(id)arg1;
++ (struct TSCH3DScenePart { id x1; })partWithAxes:(id)arg1;
 
 - (void)dealloc;
 - (id)effects;

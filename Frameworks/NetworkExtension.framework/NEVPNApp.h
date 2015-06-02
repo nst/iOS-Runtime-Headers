@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSArray;
-
 @interface NEVPNApp : NEVPN {
     NSArray *_appRules;
 }
 
-@property(copy) NSArray * appRules;
+@property (copy) NSArray *appRules;
 
 + (BOOL)supportsSecureCoding;
 

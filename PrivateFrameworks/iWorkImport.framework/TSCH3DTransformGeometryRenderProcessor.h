@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DDataBuffer;
-
 @interface TSCH3DTransformGeometryRenderProcessor : TSCH3DRetargetRenderProcessor {
     TSCH3DDataBuffer *mBuffer;
 }
 
-@property(readonly) TSCH3DDataBuffer * buffer;
+@property (nonatomic, readonly) TSCH3DDataBuffer *buffer;
 
 + (id)processorWithOriginal:(id)arg1;
 

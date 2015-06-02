@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSString, NSURL, YTVideo;
-
 @interface YTCaptionTrack : NSObject {
     NSURL *_captionTrackURL;
     NSString *_language;
@@ -12,11 +10,11 @@
     YTVideo *_video;
 }
 
-@property(retain) NSURL * captionTrackURL;
-@property(retain) NSString * language;
-@property BOOL speechRecognition;
-@property(retain) NSString * title;
-@property(retain) YTVideo * video;
+@property (nonatomic, retain) NSURL *captionTrackURL;
+@property (nonatomic, retain) NSString *language;
+@property (nonatomic) BOOL speechRecognition;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) YTVideo *video;
 
 - (id)captionTrackURL;
 - (void)dealloc;

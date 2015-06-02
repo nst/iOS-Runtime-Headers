@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface MPNetworkPlayabilityMonitor : NSObject {
     int _effectiveNetworkTypeForCloudPlayback;
     double _lastAverageBitrate;
@@ -11,9 +9,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) int effectiveNetworkTypeForPlayback;
-@property(readonly) double lastAverageBitrate;
-@property(readonly) int networkType;
+@property (nonatomic, readonly) int effectiveNetworkTypeForPlayback;
+@property (nonatomic, readonly) double lastAverageBitrate;
+@property (nonatomic, readonly) int networkType;
 
 + (id)sharedNetworkPlayabilityMonitor;
 

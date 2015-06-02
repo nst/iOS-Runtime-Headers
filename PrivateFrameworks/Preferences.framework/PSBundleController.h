@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSListController;
-
 @interface PSBundleController : NSObject {
     PSListController *_parent;
 }

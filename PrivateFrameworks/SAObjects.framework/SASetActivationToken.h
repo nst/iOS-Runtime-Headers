@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSString;
+@interface SASetActivationToken : SABaseClientBoundCommand
 
-@interface SASetActivationToken : SABaseClientBoundCommand {
-}
-
-@property(copy) NSData * activationToken;
-@property(copy) NSString * language;
+@property (nonatomic, copy) NSData *activationToken;
+@property (nonatomic, copy) NSString *language;
 
 + (id)setActivationToken;
 + (id)setActivationTokenWithDictionary:(id)arg1 context:(id)arg2;

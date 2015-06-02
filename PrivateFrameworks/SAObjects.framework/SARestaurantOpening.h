@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL, SACalendar, SAUIAppPunchOut;
+@interface SARestaurantOpening : AceObject <SAAceSerializable>
 
-@interface SARestaurantOpening : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSURL * bookingId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUIAppPunchOut * makeReservationPunchOut;
-@property(copy) NSNumber * partySize;
-@property(readonly) Class superclass;
-@property(retain) SACalendar * timeSlot;
+@property (nonatomic, copy) NSURL *bookingId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUIAppPunchOut *makeReservationPunchOut;
+@property (nonatomic, copy) NSNumber *partySize;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SACalendar *timeSlot;
 
 + (id)opening;
 + (id)openingWithDictionary:(id)arg1 context:(id)arg2;

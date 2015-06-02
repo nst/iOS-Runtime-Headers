@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreText.framework/CoreText
  */
 
-@interface NSRubyAnnotation : NSObject <NSCopying, NSSecureCoding> {
-}
+@interface NSRubyAnnotation : NSObject <NSCopying, NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

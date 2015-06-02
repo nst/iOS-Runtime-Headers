@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSuggestedSearchResultsDelegate>, NSArray, NSObject<OS_dispatch_queue>, NSString, PLPhotoLibrary, PSIDatabase;
-
 @interface PUSuggestedSearchResultsDataSource : NSObject <PUSuggestedSearchDelegate> {
     <PUSuggestedSearchResultsDelegate> *_delegate;
     PLPhotoLibrary *_photoLibrary;
@@ -14,12 +12,12 @@
     NSArray *_suggestedSearches;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSuggestedSearchResultsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PSIDatabase * searchIndex;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSuggestedSearchResultsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSIDatabase *searchIndex;
+@property (readonly) Class superclass;
 
 + (void)_clearRecentSearches;
 + (id)_recentSearchObjects;

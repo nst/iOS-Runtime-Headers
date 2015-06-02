@@ -9,10 +9,10 @@
     id _target;
 }
 
-@property(readonly) void* argument;
-@property(readonly) id argument2;
-@property(readonly) SEL selector;
-@property(readonly) id target;
+@property (nonatomic, readonly) void*argument;
+@property (nonatomic, readonly) id argument2;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly) id target;
 
 - (void*)argument;
 - (id)argument2;

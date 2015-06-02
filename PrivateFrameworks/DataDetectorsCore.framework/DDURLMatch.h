@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
  */
 
-@class NSString;
-
 @interface DDURLMatch : NSObject {
     struct _NSRange { 
         unsigned int location; 

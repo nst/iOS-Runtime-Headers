@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPUserSearchInput, NSData;
-
 @interface GEORPDirectionsProblem : PBCodable <NSCopying> {
     NSData *_directionsResponseId;
     GEORPUserSearchInput *_endWaypoint;
@@ -15,16 +13,16 @@
     GEORPUserSearchInput *_startWaypoint;
 }
 
-@property(retain) NSData * directionsResponseId;
-@property(retain) GEORPUserSearchInput * endWaypoint;
-@property(readonly) BOOL hasDirectionsResponseId;
-@property(readonly) BOOL hasEndWaypoint;
-@property(readonly) BOOL hasOverviewScreenshotImageData;
-@property BOOL hasProblematicStepIndex;
-@property(readonly) BOOL hasStartWaypoint;
-@property(retain) NSData * overviewScreenshotImageData;
-@property unsigned int problematicStepIndex;
-@property(retain) GEORPUserSearchInput * startWaypoint;
+@property (nonatomic, retain) NSData *directionsResponseId;
+@property (nonatomic, retain) GEORPUserSearchInput *endWaypoint;
+@property (nonatomic, readonly) BOOL hasDirectionsResponseId;
+@property (nonatomic, readonly) BOOL hasEndWaypoint;
+@property (nonatomic, readonly) BOOL hasOverviewScreenshotImageData;
+@property (nonatomic) BOOL hasProblematicStepIndex;
+@property (nonatomic, readonly) BOOL hasStartWaypoint;
+@property (nonatomic, retain) NSData *overviewScreenshotImageData;
+@property (nonatomic) unsigned int problematicStepIndex;
+@property (nonatomic, retain) GEORPUserSearchInput *startWaypoint;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

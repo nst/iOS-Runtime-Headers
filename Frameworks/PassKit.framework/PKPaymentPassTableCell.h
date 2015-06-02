@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentApplication, PKPaymentPass, UIActivityIndicatorView, UIColor, UIImageView, UILabel;
-
 @interface PKPaymentPassTableCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
     UIColor *_highlightColor;
@@ -18,9 +16,9 @@
     UIColor *_subTextLabelColor;
 }
 
-@property UIColor * highlightColor;
-@property UIColor * mainLabelColor;
-@property UIColor * subTextLabelColor;
+@property (nonatomic) UIColor *highlightColor;
+@property (nonatomic) UIColor *mainLabelColor;
+@property (nonatomic) UIColor *subTextLabelColor;
 
 - (id)_stringForPassState:(unsigned int)arg1;
 - (id)_textColorForPassState:(unsigned int)arg1;

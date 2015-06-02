@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIView;
-
 @interface _UIDynamicCaretAlternatives : UIView {
     NSArray *_alternativesButtons;
     UIView *_horizontalDivider;
     UIView *_verticalDivider;
 }
 
-@property(retain) NSArray * alternativesButtons;
-@property(retain) UIView * horizontalDivider;
-@property(retain) UIView * verticalDivider;
+@property (nonatomic, retain) NSArray *alternativesButtons;
+@property (nonatomic, retain) UIView *horizontalDivider;
+@property (nonatomic, retain) UIView *verticalDivider;
 
 - (id)alternativesButtons;
 - (void)dealloc;

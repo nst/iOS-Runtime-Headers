@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetNumberResponse : SASettingGetValueResponse {
-}
+@interface SASettingGetNumberResponse : SASettingGetValueResponse
 
 + (id)getNumberResponse;
 + (id)getNumberResponseWithDictionary:(id)arg1 context:(id)arg2;

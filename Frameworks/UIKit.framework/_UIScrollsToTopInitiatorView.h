@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIScrollsToTopInitiatorView : UIView {
-}
+@interface _UIScrollsToTopInitiatorView : UIView
 
 - (BOOL)_shouldSeekHigherPriorityTouchTarget;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

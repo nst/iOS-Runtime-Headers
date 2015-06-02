@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHBChart : NSObject {
-}
+@interface CHBChart : NSObject
 
 + (int)emptyCellsPlottedEnumsFrom:(int)arg1;
 + (int)readCHDDisplayBlanksAsEnumFrom:(int)arg1;

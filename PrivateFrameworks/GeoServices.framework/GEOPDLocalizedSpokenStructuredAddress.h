@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOStructuredAddress, NSString;
-
 @interface GEOPDLocalizedSpokenStructuredAddress : PBCodable <NSCopying> {
     NSString *_locale;
     GEOStructuredAddress *_spokenStructuredAddress;
 }
 
-@property(readonly) BOOL hasLocale;
-@property(readonly) BOOL hasSpokenStructuredAddress;
-@property(retain) NSString * locale;
-@property(retain) GEOStructuredAddress * spokenStructuredAddress;
+@property (nonatomic, readonly) BOOL hasLocale;
+@property (nonatomic, readonly) BOOL hasSpokenStructuredAddress;
+@property (nonatomic, retain) NSString *locale;
+@property (nonatomic, retain) GEOStructuredAddress *spokenStructuredAddress;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

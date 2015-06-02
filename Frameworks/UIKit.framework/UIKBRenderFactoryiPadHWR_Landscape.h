@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPadHWR_Landscape : UIKBRenderFactoryiPadHWR_Portrait {
-}
+@interface UIKBRenderFactoryiPadHWR_Landscape : UIKBRenderFactoryiPadHWR_Portrait
 
 - (float)controlColumnWidthFactor;
 - (float)deleteKeyFontSize;

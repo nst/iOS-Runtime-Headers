@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUClientInterface, SUSection;
-
 @interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
     BOOL _canBeWeakScriptReference;
     SUClientInterface *_clientInterface;
@@ -12,13 +10,13 @@
     int _storeBarStyle;
 }
 
-@property(retain) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isLoading) BOOL loading;
-@property(retain) SUSection * section;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isLoading, nonatomic) BOOL loading;
+@property (nonatomic, retain) SUSection *section;
+@property (readonly) Class superclass;
 
 - (int)ITunesStoreUIBarStyle;
 - (void)_loadingDidChangeNotification:(id)arg1;

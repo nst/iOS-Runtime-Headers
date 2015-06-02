@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUISnapshotService : NSObject {
-}
+@interface SBUISnapshotService : NSObject
 
-- (void)snapshotScreenWithContext:(id)arg1 withCompletion:(id)arg2;
+- (void)snapshotScreenWithContext:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

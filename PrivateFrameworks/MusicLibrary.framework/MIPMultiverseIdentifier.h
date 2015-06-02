@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSString;
-
 @interface MIPMultiverseIdentifier : PBCodable <NSCopying> {
     long long _accountId;
     struct { 
@@ -23,21 +21,21 @@
     long long _storeId;
 }
 
-@property long long accountId;
-@property BOOL hasAccountId;
-@property BOOL hasMediaObjectType;
-@property BOOL hasMediaType;
-@property(readonly) BOOL hasName;
-@property BOOL hasPurchaseHistoryId;
-@property BOOL hasSagaId;
-@property BOOL hasStoreId;
-@property(retain) NSMutableArray * libraryIdentifiers;
-@property int mediaObjectType;
-@property int mediaType;
-@property(retain) NSString * name;
-@property long long purchaseHistoryId;
-@property long long sagaId;
-@property long long storeId;
+@property (nonatomic) long long accountId;
+@property (nonatomic) BOOL hasAccountId;
+@property (nonatomic) BOOL hasMediaObjectType;
+@property (nonatomic) BOOL hasMediaType;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasPurchaseHistoryId;
+@property (nonatomic) BOOL hasSagaId;
+@property (nonatomic) BOOL hasStoreId;
+@property (nonatomic, retain) NSMutableArray *libraryIdentifiers;
+@property (nonatomic) int mediaObjectType;
+@property (nonatomic) int mediaType;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long purchaseHistoryId;
+@property (nonatomic) long long sagaId;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (long long)accountId;

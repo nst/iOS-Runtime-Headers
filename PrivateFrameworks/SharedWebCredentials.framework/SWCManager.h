@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SharedWebCredentials.framework/SharedWebCredentials
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_source>, NSString, NSXPCListener;
-
 @interface SWCManager : NSObject <NSXPCListenerDelegate, SWCXPCServer> {
     NSMutableArray *_database;
     NSMutableArray *_netRequests;
@@ -15,10 +13,10 @@
     NSMutableArray *_xpcRequests;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (long)_addService:(id)arg1 app:(id)arg2 domain:(id)arg3;
 - (id)_appEntitlementsByID:(id)arg1;
@@ -38,10 +36,10 @@
 - (long)_startAppsRequestForDomain:(id)arg1;
 - (long)_verifyTrust:(struct __SecTrust { }*)arg1;
 - (void)addAllApps;
-- (void)addAllAppsWithReply:(id)arg1;
+- (void)addAllAppsWithReply:(id /* block */)arg1;
 - (void)addBundleID:(id)arg1;
-- (void)addService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;
-- (void)checkService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;
+- (void)addService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
+- (void)checkService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -49,14 +47,14 @@
 - (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (void)getInfoForService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;
+- (void)getInfoForService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
 - (id)init;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)logControl:(id)arg1 reply:(id)arg2;
+- (void)logControl:(id)arg1 reply:(id /* block */)arg2;
 - (void)removeBundleID:(id)arg1;
-- (void)removeService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id)arg4;
-- (void)setService:(id)arg1 app:(id)arg2 domain:(id)arg3 mask:(unsigned int)arg4 flags:(unsigned int)arg5 reply:(id)arg6;
-- (void)show:(id)arg1 reply:(id)arg2;
+- (void)removeService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
+- (void)setService:(id)arg1 app:(id)arg2 domain:(id)arg3 mask:(unsigned int)arg4 flags:(unsigned int)arg5 reply:(id /* block */)arg6;
+- (void)show:(id)arg1 reply:(id /* block */)arg2;
 - (void)start;
 - (void)stop;
 

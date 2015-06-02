@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDFrameSpec;
-
 @interface TSDFrameImageCacheEntry : NSObject {
     float mAssetScale;
     TSDFrameSpec *mFrameSpec;
-    struct CGImage {} *mImages[4];
+    struct CGImage {} *mImages;
     struct CGSize { 
         float width; 
         float height; 
@@ -15,10 +13,10 @@
     float mViewScale;
 }
 
-@property float assetScale;
-@property TSDFrameSpec * frameSpec;
-@property struct CGSize { float x1; float x2; } size;
-@property float viewScale;
+@property (nonatomic) float assetScale;
+@property (nonatomic) TSDFrameSpec *frameSpec;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) float viewScale;
 
 - (float)assetScale;
 - (void)dealloc;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
-
 @interface MPFeedbackCommand : MPRemoteCommand {
     BOOL _active;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
 }
 
-@property(getter=isActive) BOOL active;
-@property(copy) NSString * localizedShortTitle;
-@property(copy) NSString * localizedTitle;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic, copy) NSString *localizedShortTitle;
+@property (nonatomic, copy) NSString *localizedTitle;
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;

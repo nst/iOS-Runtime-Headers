@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class BSSettings, NSSet;
-
 @interface FBSSceneClientSettings : NSObject <NSCopying, NSMutableCopying> {
     NSSet *_occlusions;
     BSSettings *_otherSettings;
@@ -11,9 +9,11 @@
     float _preferredLevel;
 }
 
-@property(copy,readonly) NSSet * occlusions;
-@property(readonly) int preferredInterfaceOrientation;
-@property(readonly) float preferredLevel;
+@property (nonatomic, readonly, copy) NSSet *occlusions;
+@property (nonatomic, readonly) int preferredInterfaceOrientation;
+@property (nonatomic, readonly) float preferredLevel;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (BOOL)_isMutable;
 + (id)settings;
@@ -26,7 +26,6 @@
 - (id)init;
 - (id)initWithSettings:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)occlusions;
@@ -34,5 +33,9 @@
 - (int)preferredInterfaceOrientation;
 - (float)preferredLevel;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)isUISubclass;
 
 @end

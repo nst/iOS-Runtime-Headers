@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypeArea3D : TSCH3DChartType {
-}
+@interface TSCHChartTypeArea3D : TSCH3DChartType
 
 - (id)defaultDataFileName;
 - (id)defaultSeriesType:(unsigned int)arg1;

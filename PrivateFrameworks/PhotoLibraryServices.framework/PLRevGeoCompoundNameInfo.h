@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
-
 @interface PLRevGeoCompoundNameInfo : NSObject {
     BOOL _isContinuation;
     NSString *_namePrefix;
@@ -12,13 +10,13 @@
     BOOL _suffixWhenPrefixOnly;
 }
 
-@property BOOL isContinuation;
-@property(copy,readonly) NSArray * localizedSortedNames;
-@property(copy,readonly) NSString * localizedTitleForNameInfo;
-@property(copy) NSString * namePrefix;
-@property(copy) NSString * nameSuffix;
-@property(copy) NSArray * sortedNames;
-@property BOOL suffixWhenPrefixOnly;
+@property (nonatomic) BOOL isContinuation;
+@property (nonatomic, readonly, copy) NSArray *localizedSortedNames;
+@property (nonatomic, readonly, copy) NSString *localizedTitleForNameInfo;
+@property (nonatomic, copy) NSString *namePrefix;
+@property (nonatomic, copy) NSString *nameSuffix;
+@property (nonatomic, copy) NSArray *sortedNames;
+@property (nonatomic) BOOL suffixWhenPrefixOnly;
 
 + (id)_localizedNameForName:(id)arg1;
 

@@ -9,10 +9,10 @@
     int _tileSize;
 }
 
-@property BOOL bootstrap;
-@property double lodBias;
-@property unsigned int maxZ;
-@property int tileSize;
+@property (nonatomic) BOOL bootstrap;
+@property (nonatomic) double lodBias;
+@property (nonatomic) unsigned int maxZ;
+@property (nonatomic) int tileSize;
 
 - (BOOL)bootstrap;
 - (id)init;

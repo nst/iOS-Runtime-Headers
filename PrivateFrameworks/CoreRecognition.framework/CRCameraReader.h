@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class <CRCameraReaderDelegate>, CRAlignmentLayer, CRBoxLayer, CRCaptureSessionManager, DiagnosticHUDLayer, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSPointerArray, NSString, NSTimer, UIActivityIndicatorView, UITapGestureRecognizer;
-
 @interface CRCameraReader : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     CRAlignmentLayer *_alignmentLayer;
@@ -65,38 +63,38 @@
     int _whiteBalanceMode;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property(retain) CRAlignmentLayer * alignmentLayer;
-@property(retain) CRBoxLayer * boxLayer;
-@property(retain) NSTimer * boxLayerHideTimer;
-@property <CRCameraReaderDelegate> * callbackDelegate;
-@property(copy) NSString * cameraMode;
+@property (retain) UIActivityIndicatorView *activityIndicator;
+@property (retain) CRAlignmentLayer *alignmentLayer;
+@property (retain) CRBoxLayer *boxLayer;
+@property (retain) NSTimer *boxLayerHideTimer;
+@property <CRCameraReaderDelegate> *callbackDelegate;
+@property (copy) NSString *cameraMode;
 @property int cameraPosition;
-@property(retain) NSPointerArray * captureBuffer;
+@property (retain) NSPointerArray *captureBuffer;
 @property unsigned int captureCount;
-@property(getter=isCaptureMode) BOOL captureMode;
-@property(retain) NSMutableDictionary * cardNumberCounts;
-@property(retain) NSMutableDictionary * cardholderCounts;
+@property (getter=isCaptureMode) BOOL captureMode;
+@property (retain) NSMutableDictionary *cardNumberCounts;
+@property (retain) NSMutableDictionary *cardholderCounts;
 @property BOOL codeInverted;
-@property(retain) NSDate * codePresented;
+@property (retain) NSDate *codePresented;
 @property float configDemoSpeed;
 @property BOOL configExperimentalMode;
 @property BOOL configPresentCentered;
 @property BOOL configUseFastScanning;
 @property BOOL configUseJPEGForColor;
 @property BOOL continousMode;
-@property(readonly) int currentCameraIdentifier;
-@property(retain) NSMutableArray * dateCutRects;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(retain) DiagnosticHUDLayer * diagnosticHUDLayer;
+@property (readonly) int currentCameraIdentifier;
+@property (retain) NSMutableArray *dateCutRects;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (retain) DiagnosticHUDLayer *diagnosticHUDLayer;
 @property BOOL didSendEndOrCancel;
 @property BOOL didSendFindBox;
-@property(retain) NSMutableDictionary * expirationDateCounts;
+@property (retain) NSMutableDictionary *expirationDateCounts;
 @property int exposureMode;
 @property int focusMode;
-@property(retain) NSString * foundCode;
+@property (retain) NSString *foundCode;
 @property BOOL foundNumberEmbossed;
 @property BOOL foundNumberFixedSapphire;
 @property BOOL foundNumberFixedSlate;
@@ -104,28 +102,28 @@
 @property BOOL foundNumberFreeform;
 @property BOOL foundNumberPortrait;
 @property BOOL foundNumberTextDetector;
-@property(retain) NSArray * foundPoints;
-@property(readonly) unsigned int hash;
+@property (retain) NSArray *foundPoints;
+@property (readonly) unsigned int hash;
 @property BOOL hidePlacementText;
 @property unsigned int imagesToCapture;
-@property struct opaqueCMSampleBuffer { }* lastBuffer;
-@property(retain) NSDate * lastFieldFoundDate;
-@property(retain) NSDate * lastFoundNumberDate;
-@property(retain) NSDate * lastSendFindBox;
-@property(retain) NSMutableArray * nameCutRects;
-@property(copy) NSArray * outputObjectTypes;
-@property(retain) NSMutableDictionary * pinnedFoundInfo;
-@property(retain) NSDate * pointsFound;
-@property struct OpaqueVTPixelTransferSession { }* previewScaleSession;
+@property struct opaqueCMSampleBuffer { }*lastBuffer;
+@property (retain) NSDate *lastFieldFoundDate;
+@property (retain) NSDate *lastFoundNumberDate;
+@property (retain) NSDate *lastSendFindBox;
+@property (retain) NSMutableArray *nameCutRects;
+@property (copy) NSArray *outputObjectTypes;
+@property (retain) NSMutableDictionary *pinnedFoundInfo;
+@property (retain) NSDate *pointsFound;
+@property struct OpaqueVTPixelTransferSession { }*previewScaleSession;
 @property BOOL previousIdleState;
-@property(retain) NSObject<OS_dispatch_semaphore> * processingImage;
-@property(retain) NSObject<OS_dispatch_queue> * processingQueue;
-@property(retain) CRCaptureSessionManager * sessionManager;
-@property(retain) NSDate * sessionStarted;
+@property (retain) NSObject<OS_dispatch_semaphore> *processingImage;
+@property (retain) NSObject<OS_dispatch_queue> *processingQueue;
+@property (retain) CRCaptureSessionManager *sessionManager;
+@property (retain) NSDate *sessionStarted;
 @property double sessionTimeout;
 @property BOOL showDiagnosticHUD;
-@property(readonly) Class superclass;
-@property(retain) UITapGestureRecognizer * tapGestureRecognizer;
+@property (readonly) Class superclass;
+@property (retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property int torchMode;
 @property int whiteBalanceMode;
 

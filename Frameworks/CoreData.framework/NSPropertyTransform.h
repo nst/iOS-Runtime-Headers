@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSPropertyTransform, NSString;
-
 @interface NSPropertyTransform : NSObject {
     NSPropertyTransform *_prerequisiteTransform;
     NSString *_propertyName;
@@ -11,10 +9,10 @@
     NSExpression *_valueExpression;
 }
 
-@property(retain) NSPropertyTransform * prerequisiteTransform;
-@property(retain) NSString * propertyName;
+@property (nonatomic, retain) NSPropertyTransform *prerequisiteTransform;
+@property (nonatomic, retain) NSString *propertyName;
 @property BOOL replaceMissingValueOnly;
-@property(retain) NSExpression * valueExpression;
+@property (nonatomic, retain) NSExpression *valueExpression;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

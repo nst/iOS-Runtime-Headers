@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertView;
-
 @interface UITwoSidedAlertController : NSObject {
     UIAlertView *_back;
     UIAlertView *_currentAlert;

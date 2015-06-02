@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMParticipantChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     long long _changeType;
     NSString *_otherCountryCode;
@@ -11,12 +9,13 @@
     NSString *_otherUnformattedID;
 }
 
-@property long long changeType;
-@property(retain) NSString * otherCountryCode;
-@property(retain) NSString * otherHandle;
-@property(retain) NSString * otherUnformattedID;
+@property (nonatomic) long long changeType;
+@property (nonatomic, retain) NSString *otherCountryCode;
+@property (nonatomic, retain) NSString *otherHandle;
+@property (nonatomic, retain) NSString *otherUnformattedID;
 
-- (id)_newChatItems;
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
 - (long long)changeType;
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -31,5 +30,9 @@
 - (void)setOtherCountryCode:(id)arg1;
 - (void)setOtherHandle:(id)arg1;
 - (void)setOtherUnformattedID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (id)_newChatItems;
 
 @end

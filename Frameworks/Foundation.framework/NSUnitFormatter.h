@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSNumberFormatter, NSString;
-
 @interface NSUnitFormatter : NSFormatter {
     struct UAMeasureFormat { } *_formatter;
     NSString *_localeID;
@@ -13,7 +11,7 @@
     int _unitStyle;
 }
 
-@property(copy) NSNumberFormatter * numberFormatter;
+@property (copy) NSNumberFormatter *numberFormatter;
 @property int unitStyle;
 
 - (void)dealloc;

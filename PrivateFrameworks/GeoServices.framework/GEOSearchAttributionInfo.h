@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray, NSString;
-
 @interface GEOSearchAttributionInfo : NSObject <NSSecureCoding> {
     NSArray *_attributionApps;
     unsigned int _attributionRequirementsMask;
@@ -15,12 +13,12 @@
     NSString *_webBaseActionURL;
 }
 
-@property(retain) NSArray * attributionApps;
-@property(retain) NSString * displayName;
-@property(retain) NSString * identifier;
-@property unsigned int requirementsMask;
-@property unsigned int version;
-@property(retain) NSString * webBaseActionURL;
+@property (nonatomic, retain) NSArray *attributionApps;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) unsigned int requirementsMask;
+@property (nonatomic) unsigned int version;
+@property (nonatomic, retain) NSString *webBaseActionURL;
 
 + (BOOL)supportsSecureCoding;
 

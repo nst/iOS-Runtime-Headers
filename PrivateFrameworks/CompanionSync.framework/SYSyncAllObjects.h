@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableArray, NSString, SYMessageHeader;
-
 @interface SYSyncAllObjects : PBCodable <NSCopying> {
     NSMutableArray *_allObjects;
     SYMessageHeader *_header;
@@ -11,10 +9,10 @@
     unsigned long long _version;
 }
 
-@property(retain) NSMutableArray * allObjects;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * syncID;
-@property unsigned long long version;
+@property (nonatomic, retain) NSMutableArray *allObjects;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *syncID;
+@property (nonatomic) unsigned long long version;
 
 - (void).cxx_destruct;
 - (void)addAllObjects:(id)arg1;

@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSString;
-
 @interface MPUDataSource : NSObject <NSCoding> {
     int _entityType;
     int _invalidationIgnoreCount;
     int _numberOfIgnoredInvalidations;
 }
 
-@property(readonly) unsigned int count;
-@property(readonly) NSString * entityCountFormat;
-@property(readonly) int entityType;
-@property(readonly) BOOL isEmpty;
-@property(readonly) NSArray * localizedSectionIndexTitles;
-@property(readonly) unsigned int numberOfSections;
-@property(readonly) BOOL showsEntityCountFooter;
-@property(readonly) BOOL showsIndexBar;
-@property(readonly) BOOL usesSections;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) NSString *entityCountFormat;
+@property (nonatomic, readonly) int entityType;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) NSArray *localizedSectionIndexTitles;
+@property (nonatomic, readonly) unsigned int numberOfSections;
+@property (nonatomic, readonly) BOOL showsEntityCountFooter;
+@property (nonatomic, readonly) BOOL showsIndexBar;
+@property (nonatomic, readonly) BOOL usesSections;
 
 - (void)_didInvalidate;
 - (unsigned int)_globalIndexForIndexPath:(id)arg1;

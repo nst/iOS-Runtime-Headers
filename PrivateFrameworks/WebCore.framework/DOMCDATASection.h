@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMCDATASection : DOMText {
-}
+@interface DOMCDATASection : DOMText
 
 @end

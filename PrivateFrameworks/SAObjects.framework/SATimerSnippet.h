@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SATimerSnippet : SAUISnippet
 
-@interface SATimerSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * timers;
+@property (nonatomic, copy) NSArray *timers;
 
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;

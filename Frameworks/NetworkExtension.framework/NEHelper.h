@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface NEHelper : NSObject {
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_xpc_object> *_initMessage;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * initMessage;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (readonly) NSObject<OS_xpc_object> *initMessage;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
 - (id)connection;
@@ -19,6 +17,6 @@
 - (id)initMessage;
 - (id)initWithDelegateClassName:(id)arg1 queue:(id)arg2;
 - (id)queue;
-- (void)sendRequest:(id)arg1 responseHandler:(id)arg2;
+- (void)sendRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 
 @end

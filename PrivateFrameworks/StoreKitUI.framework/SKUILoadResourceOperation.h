@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, SKUIClientContext, SKUIResourceRequest;
-
 @interface SKUILoadResourceOperation : NSOperation {
     SKUIClientContext *_clientContext;
     NSLock *_lock;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _outputBlock;
-
+    id /* block */ _outputBlock;
     SKUIResourceRequest *_request;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) id outputBlock;
-@property(copy,readonly) SKUIResourceRequest * resourceRequest;
+@property (retain) SKUIClientContext *clientContext;
+@property (copy) id /* block */ outputBlock;
+@property (readonly, copy) SKUIResourceRequest *resourceRequest;
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadResourceOperation;
@@ -29,9 +19,9 @@
 - (id)init;
 - (id)initWithResourceRequest:(id)arg1;
 - (void)main;
-- (id)outputBlock;
+- (id /* block */)outputBlock;
 - (id)resourceRequest;
 - (void)setClientContext:(id)arg1;
-- (void)setOutputBlock:(id)arg1;
+- (void)setOutputBlock:(id /* block */)arg1;
 
 @end

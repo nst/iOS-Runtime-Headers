@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDayViewContent, NSString;
-
 @interface EKDayViewContentGeometryDelegate : NSObject <CUIKSingleDayTimelineGeometryDelegate> {
     EKDayViewContent *_dayViewContent;
     struct CGRect { 
@@ -18,17 +16,17 @@
     } _frame;
 }
 
-@property EKDayViewContent * dayViewContent;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } displayedRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) unsigned int hash;
-@property(readonly) float hourHeight;
-@property(readonly) BOOL originIsUpperLeft;
-@property(readonly) Class superclass;
-@property(readonly) float timeWidth;
-@property(readonly) float topPadding;
+@property (nonatomic) EKDayViewContent *dayViewContent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } displayedRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float hourHeight;
+@property (nonatomic, readonly) BOOL originIsUpperLeft;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float timeWidth;
+@property (nonatomic, readonly) float topPadding;
 
 - (void).cxx_destruct;
 - (double)dateForPoint:(struct CGPoint { float x1; float x2; })arg1;

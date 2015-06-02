@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIBarButtonItem, UIImageView;
-
 @interface SKUIRedeemInputViewController : SKUIRedeemStepViewController <UITextFieldDelegate> {
     int _category;
     SKUIRedeemTextField *_field;
@@ -13,12 +11,12 @@
     UIBarButtonItem *_redeemButton;
 }
 
-@property(readonly) int category;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * initialCode;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int category;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *initialCode;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL;
-
 @interface TSUSafeSaveAssistant : NSObject {
     NSURL *_saveURL;
     NSURL *_temporaryDirectoryURL;
     NSURL *_writeURL;
 }
 
-@property(readonly) NSURL * writeURL;
+@property (nonatomic, readonly) NSURL *writeURL;
 
 + (BOOL)finishWritingToURL:(id)arg1 byMovingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;
 + (void)removeTemporaryDirectoryAtURL:(id)arg1;

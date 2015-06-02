@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIButton, UILabel, UIView;
-
 @interface SKUIStackedBarCell : UIButton {
     UIButton *_backButton;
     BOOL _expanded;
@@ -11,8 +9,8 @@
     UIView *_separator;
 }
 
-@property(readonly) UIButton * backButton;
-@property BOOL expanded;
+@property (nonatomic, readonly) UIButton *backButton;
+@property (nonatomic) BOOL expanded;
 
 - (void).cxx_destruct;
 - (id)backButton;

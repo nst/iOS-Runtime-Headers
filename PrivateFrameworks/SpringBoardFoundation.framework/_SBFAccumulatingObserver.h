@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSError, NSMutableArray, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface _SBFAccumulatingObserver : NSObject <SBFObserver> {
     BOOL _didComplete;
     NSError *_error;
@@ -11,10 +9,10 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)init;

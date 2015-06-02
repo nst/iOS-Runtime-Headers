@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@interface PTPProbeResponsePacket : NSObject {
-}
+@interface PTPProbeResponsePacket : NSObject
 
 - (id)contentForTCP;
 - (id)description;

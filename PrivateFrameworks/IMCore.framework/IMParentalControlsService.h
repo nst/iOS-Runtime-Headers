@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSSet, NSString;
-
 @interface IMParentalControlsService : NSObject {
     BOOL _disableService;
     BOOL _forceWhiteList;
@@ -13,8 +11,8 @@
 
 @property BOOL disableService;
 @property BOOL forceWhiteList;
-@property(retain) NSString * name;
-@property(retain) NSSet * whitelist;
+@property (retain) NSString *name;
+@property (retain) NSSet *whitelist;
 
 - (void)dealloc;
 - (BOOL)disableService;

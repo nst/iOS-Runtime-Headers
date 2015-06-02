@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class _NS128bitWrapper;
-
 @interface _NSTemporaryObjectID2 : NSTemporaryObjectID {
     id _store;
     _NS128bitWrapper *_uuid128;

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@interface SAUIAppPunchOutEvent : SABaseCommand <SAServerBoundCommand>
 
-@interface SAUIAppPunchOutEvent : SABaseCommand <SAServerBoundCommand> {
-}
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *appDisplayName;
+@property (nonatomic, copy) NSString *bundleId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *originalCommandId;
+@property (nonatomic, copy) NSString *punchOutName;
+@property (nonatomic, copy) NSURL *punchOutUri;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
-@property(copy) NSString * aceId;
-@property(copy) NSString * appDisplayName;
-@property(copy) NSString * bundleId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * originalCommandId;
-@property(copy) NSString * punchOutName;
-@property(copy) NSURL * punchOutUri;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
-+ (id)afui_appPunchOutEventWithRefId:(id)arg1 URL:(id)arg2 appDisplayName:(id)arg3 bundleId:(id)arg4;
 + (id)appPunchOutEvent;
 + (id)appPunchOutEventWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -35,5 +33,9 @@
 - (void)setOriginalCommandId:(id)arg1;
 - (void)setPunchOutName:(id)arg1;
 - (void)setPunchOutUri:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
++ (id)afui_appPunchOutEventWithRefId:(id)arg1 URL:(id)arg2 appDisplayName:(id)arg3 bundleId:(id)arg4;
 
 @end

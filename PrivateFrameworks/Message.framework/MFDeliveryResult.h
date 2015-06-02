@@ -9,10 +9,10 @@
     int _status;
 }
 
-@property unsigned int bytesSent;
-@property double duration;
-@property BOOL isWifi;
-@property int status;
+@property (nonatomic) unsigned int bytesSent;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL isWifi;
+@property (nonatomic) int status;
 
 - (unsigned int)bytesSent;
 - (id)description;

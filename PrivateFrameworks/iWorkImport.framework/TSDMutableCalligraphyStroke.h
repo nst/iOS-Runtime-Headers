@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDStrokePattern, TSUColor;
+@interface TSDMutableCalligraphyStroke : TSDCalligraphyStroke
 
-@interface TSDMutableCalligraphyStroke : TSDCalligraphyStroke {
-}
-
-@property float actualWidth;
-@property int cap;
-@property(copy) TSUColor * color;
-@property int join;
-@property float miterLimit;
-@property(copy) TSDStrokePattern * pattern;
-@property(copy) NSString * strokeName;
-@property float width;
+@property (nonatomic) float actualWidth;
+@property (nonatomic) int cap;
+@property (nonatomic, copy) TSUColor *color;
+@property (nonatomic) int join;
+@property (nonatomic) float miterLimit;
+@property (nonatomic, copy) TSDStrokePattern *pattern;
+@property (nonatomic, copy) NSString *strokeName;
+@property (nonatomic) float width;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setPatternPropertiesFromStroke:(id)arg1;

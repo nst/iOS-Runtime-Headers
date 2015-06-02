@@ -2,23 +2,13 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <_PLImageLoadingAsset>, NSObject<OS_dispatch_group>, NSString, PHImageManagerRequest, PLCPLDownloadContext, PLPreheatItem;
-
 @interface PHImageManagerRequest : NSObject {
     PLCPLDownloadContext *_CPLDownloadContext;
     BOOL _CPLDownloadDegraded;
     NSObject<OS_dispatch_group> *_CPLDownloadWaitGroup;
     <_PLImageLoadingAsset> *_asset;
     NSString *_assetUUID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancellationHandler;
-
+    id /* block */ _cancellationHandler;
     BOOL _cancelled;
     int _cloudSharedAssetPlaceholderKind;
     NSString *_debugFilename;
@@ -33,23 +23,23 @@
     PLPreheatItem *_transientPreheatlItem;
 }
 
-@property(retain) PLCPLDownloadContext * CPLDownloadContext;
+@property (retain) PLCPLDownloadContext *CPLDownloadContext;
 @property BOOL CPLDownloadDegraded;
-@property(retain) NSObject<OS_dispatch_group> * CPLDownloadWaitGroup;
-@property(readonly) <_PLImageLoadingAsset> * asset;
-@property(readonly) NSString * assetUUID;
-@property(copy) id cancellationHandler;
-@property(readonly) int cloudSharedAssetPlaceholderKind;
-@property(readonly) NSString * debugFilename;
-@property(readonly) id domain;
-@property(readonly) BOOL isCloudSharedAsset;
-@property(readonly) BOOL isPartOfBurst;
-@property(readonly) BOOL isVideo;
-@property(retain) PHImageManagerRequest * nextRequest;
-@property(readonly) NSString * pathForAdjustmentFile;
-@property(readonly) int registrationRefCount;
-@property(readonly) int requestID;
-@property(retain) PLPreheatItem * transientPreheatlItem;
+@property (retain) NSObject<OS_dispatch_group> *CPLDownloadWaitGroup;
+@property (nonatomic, readonly) <_PLImageLoadingAsset> *asset;
+@property (nonatomic, readonly) NSString *assetUUID;
+@property (copy) id /* block */ cancellationHandler;
+@property (nonatomic, readonly) int cloudSharedAssetPlaceholderKind;
+@property (nonatomic, readonly) NSString *debugFilename;
+@property (nonatomic, readonly) id domain;
+@property (nonatomic, readonly) BOOL isCloudSharedAsset;
+@property (nonatomic, readonly) BOOL isPartOfBurst;
+@property (nonatomic, readonly) BOOL isVideo;
+@property (retain) PHImageManagerRequest *nextRequest;
+@property (nonatomic, readonly) NSString *pathForAdjustmentFile;
+@property (nonatomic, readonly) int registrationRefCount;
+@property (nonatomic, readonly) int requestID;
+@property (retain) PLPreheatItem *transientPreheatlItem;
 
 - (void).cxx_destruct;
 - (id)CPLDownloadContext;
@@ -59,7 +49,7 @@
 - (id)assetUUID;
 - (bool)atomicDecrementRegistrationRefCountIfOne;
 - (bool)atomicIncrementRegistrationRefCountIfZero;
-- (id)cancellationHandler;
+- (id /* block */)cancellationHandler;
 - (void)clearResultHandler;
 - (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
 - (int)cloudSharedAssetPlaceholderKind;
@@ -81,7 +71,7 @@
 - (void)setCPLDownloadContext:(id)arg1;
 - (void)setCPLDownloadDegraded:(BOOL)arg1;
 - (void)setCPLDownloadWaitGroup:(id)arg1;
-- (void)setCancellationHandler:(id)arg1;
+- (void)setCancellationHandler:(id /* block */)arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setNextRequest:(id)arg1;
 - (void)setTransientPreheatlItem:(id)arg1;

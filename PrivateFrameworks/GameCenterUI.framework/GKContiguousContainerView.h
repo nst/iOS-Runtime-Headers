@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray, UIView;
-
 @interface GKContiguousContainerView : UIView {
     BOOL _applyOrthogonalConstraints;
     UIView *_baselineView;
@@ -18,12 +16,12 @@
     BOOL _vertical;
 }
 
-@property BOOL applyOrthogonalConstraints;
-@property UIView * baselineView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property float overlap;
-@property(retain) NSArray * replaceableConstraints;
-@property BOOL vertical;
+@property (nonatomic) BOOL applyOrthogonalConstraints;
+@property (nonatomic) UIView *baselineView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic) float overlap;
+@property (nonatomic, retain) NSArray *replaceableConstraints;
+@property (nonatomic) BOOL vertical;
 
 + (id)containerForViewsFontsLeadings:(id)arg1 options:(int)arg2;
 + (id)containerViewForViews:(id)arg1 overlap:(float)arg2 vertical:(BOOL)arg3;

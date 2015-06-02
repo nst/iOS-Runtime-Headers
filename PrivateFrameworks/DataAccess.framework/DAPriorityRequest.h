@@ -7,8 +7,8 @@
     int _refreshDataclasses;
 }
 
-@property int UIDataclasses;
-@property int refreshDataclasses;
+@property (nonatomic) int UIDataclasses;
+@property (nonatomic) int refreshDataclasses;
 
 - (int)UIDataclasses;
 - (int)refreshDataclasses;

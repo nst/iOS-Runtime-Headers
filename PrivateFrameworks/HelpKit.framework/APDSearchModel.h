@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface APDSearchModel : APDGenericModel {
     NSString *_copyrightTopicId;
     NSArray *_currentSearchResults;
@@ -12,11 +10,11 @@
     NSString *_searchText;
 }
 
-@property(retain) NSString * copyrightTopicId;
-@property(retain) NSArray * currentSearchResults;
-@property(retain) NSDictionary * searchIndex;
-@property(retain) NSArray * searchTerms;
-@property(retain) NSString * searchText;
+@property (nonatomic, retain) NSString *copyrightTopicId;
+@property (nonatomic, retain) NSArray *currentSearchResults;
+@property (nonatomic, retain) NSDictionary *searchIndex;
+@property (nonatomic, retain) NSArray *searchTerms;
+@property (nonatomic, retain) NSString *searchText;
 
 - (void).cxx_destruct;
 - (void)clearData;

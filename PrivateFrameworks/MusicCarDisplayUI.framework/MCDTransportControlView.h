@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UIButton, UIImage;
-
 @interface MCDTransportControlView : UIView {
     UIButton *_fastForwardButton;
     UIButton *_leftButton;
@@ -13,14 +11,14 @@
     BOOL _progressActive;
 }
 
-@property(readonly) UIImage * defaultFastForwardButtonImage;
-@property(readonly) UIImage * defaultLeftButtonImage;
-@property(readonly) UIButton * fastForwardButton;
-@property(readonly) UIButton * leftButton;
-@property int mode;
-@property(retain) UIImage * pauseImage;
-@property(readonly) UIButton * playPauseButton;
-@property BOOL progressActive;
+@property (nonatomic, readonly) UIImage *defaultFastForwardButtonImage;
+@property (nonatomic, readonly) UIImage *defaultLeftButtonImage;
+@property (nonatomic, readonly) UIButton *fastForwardButton;
+@property (nonatomic, readonly) UIButton *leftButton;
+@property (nonatomic) int mode;
+@property (nonatomic, retain) UIImage *pauseImage;
+@property (nonatomic, readonly) UIButton *playPauseButton;
+@property (nonatomic) BOOL progressActive;
 
 - (void).cxx_destruct;
 - (void)_createSubviews;

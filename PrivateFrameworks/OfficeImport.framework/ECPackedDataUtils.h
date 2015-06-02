@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ECPackedDataUtils : NSObject {
-}
+@interface ECPackedDataUtils : NSObject
 
 + (id)dumpDataToHexadecimalString:(char *)arg1 start:(unsigned int)arg2 stop:(unsigned int)arg3 nicelyFormatted:(bool)arg4;
 + (char *)prepareForDataOfLength:(unsigned int)arg1 atIndex:(unsigned int)arg2 withPreviousLength:(unsigned int)arg3 inPackedData:(struct __CFData { }*)arg4 packedDataSize:(unsigned int)arg5;

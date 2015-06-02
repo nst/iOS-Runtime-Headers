@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface PKPaymentConfigurationResponse : PKPaymentWebServiceResponse {
     NSDictionary *_configuration;
     NSData *_data;
@@ -11,10 +9,10 @@
     NSString *_version;
 }
 
-@property(readonly) NSDictionary * configuration;
-@property(readonly) NSData * data;
-@property(readonly) NSData * signature;
-@property(readonly) NSString * version;
+@property (nonatomic, readonly) NSDictionary *configuration;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) NSData *signature;
+@property (nonatomic, readonly) NSString *version;
 
 - (id)configuration;
 - (id)data;

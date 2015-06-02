@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier;
-
 @interface CKDPUniqueFieldFailure : PBCodable <NSCopying> {
     CKDPIdentifier *_identifierForConstraintFailure;
 }
 
-@property(readonly) BOOL hasIdentifierForConstraintFailure;
-@property(retain) CKDPIdentifier * identifierForConstraintFailure;
+@property (nonatomic, readonly) BOOL hasIdentifierForConstraintFailure;
+@property (nonatomic, retain) CKDPIdentifier *identifierForConstraintFailure;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

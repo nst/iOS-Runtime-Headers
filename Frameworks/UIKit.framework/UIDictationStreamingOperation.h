@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationStreamingOperation : NSInvocationOperation {
-}
+@interface UIDictationStreamingOperation : NSInvocationOperation
 
 - (void)start;
 

@@ -7,8 +7,8 @@
     BOOL _valid;
 }
 
-@property void* generator;
-@property(getter=isValid) BOOL valid;
+@property (nonatomic) void*generator;
+@property (getter=isValid, nonatomic) BOOL valid;
 
 - (char *)_finishGenerator;
 - (id)dataByFinishingSignature;

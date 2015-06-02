@@ -22,16 +22,16 @@
     float _transitionDuration;
 }
 
-@property(getter=isAnimated) BOOL animated;
-@property(getter=isCancelled) BOOL cancelled;
-@property int completionCurve;
-@property float completionVelocity;
-@property int fromOrientation;
-@property(getter=isInteractive) BOOL interactive;
-@property float percentComplete;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
-@property int toOrientation;
-@property float transitionDuration;
+@property (getter=isAnimated, nonatomic) BOOL animated;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic) int completionCurve;
+@property (nonatomic) float completionVelocity;
+@property (nonatomic) int fromOrientation;
+@property (getter=isInteractive, nonatomic) BOOL interactive;
+@property (nonatomic) float percentComplete;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
+@property (nonatomic) int toOrientation;
+@property (nonatomic) float transitionDuration;
 
 + (id)descriptionForTransitionCoordinatorContext:(id)arg1;
 + (BOOL)supportsSecureCoding;

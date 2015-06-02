@@ -6,7 +6,7 @@
     BOOL _ignoresRadioDiskCache;
 }
 
-@property BOOL ignoresRadioDiskCache;
+@property (nonatomic) BOOL ignoresRadioDiskCache;
 
 + (id)_accessQueue;
 + (id)_cachedBagFilenameForActiveAccount;
@@ -15,9 +15,9 @@
 + (void)_urlBagDidLoadNotification:(id)arg1;
 + (void)_writeStoreBagToDiskCache:(id)arg1;
 
-- (void)_handleFinishedLoadingBag:(id)arg1 withError:(id)arg2 didLoadFromNonDiskCache:(BOOL)arg3 completionHandler:(id)arg4;
+- (void)_handleFinishedLoadingBag:(id)arg1 withError:(id)arg2 didLoadFromNonDiskCache:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)ignoresRadioDiskCache;
-- (void)loadStoreBagWithOptions:(int)arg1 completionHandler:(id)arg2;
+- (void)loadStoreBagWithOptions:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)setIgnoresRadioDiskCache:(BOOL)arg1;
 
 @end

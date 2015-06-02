@@ -11,10 +11,10 @@
 
 - (id)allResourceNames;
 - (id)dataForResourceWithName:(id)arg1 fallbackBundle:(id)arg2;
-- (id)dataForResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id)arg3;
+- (id)dataForResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id /* block */)arg3;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1;
-- (BOOL)isDevResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id)arg3;
+- (BOOL)isDevResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id /* block */)arg3;
 - (id)pathForResourceWithName:(id)arg1 fallbackBundle:(id)arg2;
-- (id)pathForResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id)arg3;
+- (id)pathForResourceWithName:(id)arg1 fallbackBundle:(id)arg2 fallbackNameHandler:(id /* block */)arg3;
 
 @end

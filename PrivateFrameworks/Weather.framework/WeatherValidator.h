@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class <WeatherValidatorDelegate>;
-
 @interface WeatherValidator : WeatherXMLHTTPRequest {
     <WeatherValidatorDelegate> *_delegate;
 }

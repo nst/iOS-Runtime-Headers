@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface BBObjectCache : NSObject {
     NSMutableDictionary *_cache;
     struct _opaque_pthread_mutex_t { 
@@ -13,7 +11,7 @@
     NSString *_identifier;
 }
 
-@property(copy) NSString * identifier;
+@property (nonatomic, copy) NSString *identifier;
 
 + (id)description;
 + (id)objectCacheForIdentifier:(id)arg1;

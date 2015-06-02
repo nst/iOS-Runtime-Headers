@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImageView, UILabel;
-
 @interface PUFeedTextCellContentView : UIView {
     UILabel *detailLabel;
     UIImageView *iconImageView;
     UILabel *label;
 }
 
-@property(retain) UILabel * detailLabel;
-@property(retain) UIImageView * iconImageView;
-@property(retain) UILabel * label;
+@property (nonatomic, retain) UILabel *detailLabel;
+@property (nonatomic, retain) UIImageView *iconImageView;
+@property (nonatomic, retain) UILabel *label;
 
 - (void).cxx_destruct;
 - (id)detailLabel;

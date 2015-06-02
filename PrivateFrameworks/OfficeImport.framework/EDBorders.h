@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources;
-
 @interface EDBorders : NSObject <NSCopying> {
     unsigned int mBottomBorderIndex;
     unsigned int mDiagonalBorderIndex;

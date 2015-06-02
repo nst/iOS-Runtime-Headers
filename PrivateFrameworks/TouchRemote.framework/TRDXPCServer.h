@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
-
 @interface TRDXPCServer : NSObject <NSXPCConnectionDelegate, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableArray *_connections;
@@ -11,12 +9,12 @@
     unsigned int _serverStartCount;
 }
 
-@property(readonly) NSArray * connections;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * remoteClientProxies;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *connections;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *remoteClientProxies;
+@property (readonly) Class superclass;
 
 + (id)sharedServer;
 

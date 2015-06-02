@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableSet;
-
 @interface OITSUDateFormatCategoryEntry : NSObject {
     NSMutableSet *mFormatStrings;
     struct __CFArray { } *mFormatters;

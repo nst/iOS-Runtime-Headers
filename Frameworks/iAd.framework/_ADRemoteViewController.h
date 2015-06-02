@@ -7,8 +7,8 @@
     unsigned int _remoteSupportedInterfaceOrientations;
 }
 
-@property BOOL hasBeenDismissed;
-@property unsigned int remoteSupportedInterfaceOrientations;
+@property (nonatomic) BOOL hasBeenDismissed;
+@property (nonatomic) unsigned int remoteSupportedInterfaceOrientations;
 
 + (id)serviceViewControllerInterface;
 

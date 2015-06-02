@@ -2,27 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings>
 
-@interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings> {
-}
-
-@property(readonly) int compatibilityMode;
-@property(readonly) int controlCenterRevealMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) double defaultPNGExpirationTime;
-@property(copy,readonly) NSString * defaultPNGName;
-@property(readonly) BOOL defaultStatusBarHidden;
-@property(readonly) int defaultStatusBarStyle;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL idleTimerDisabled;
-@property(readonly) int notificationCenterRevealMode;
-@property(readonly) BOOL orientationEnabled;
-@property(readonly) unsigned int proximityDetectionModes;
-@property(readonly) BOOL statusBarHidden;
-@property(readonly) int statusBarStyle;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int compatibilityMode;
+@property (nonatomic, readonly) int controlCenterRevealMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double defaultPNGExpirationTime;
+@property (nonatomic, readonly, copy) NSString *defaultPNGName;
+@property (nonatomic, readonly) BOOL defaultStatusBarHidden;
+@property (nonatomic, readonly) int defaultStatusBarStyle;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL idleTimerDisabled;
+@property (nonatomic, readonly) int notificationCenterRevealMode;
+@property (nonatomic, readonly) BOOL orientationEnabled;
+@property (nonatomic, readonly) unsigned int proximityDetectionModes;
+@property (nonatomic, readonly) BOOL statusBarHidden;
+@property (nonatomic, readonly) int statusBarStyle;
+@property (readonly) Class superclass;
 
 - (int)compatibilityMode;
 - (int)controlCenterRevealMode;

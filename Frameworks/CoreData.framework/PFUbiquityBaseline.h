@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSManagedObjectModel, NSMutableDictionary, NSPersistentStore, NSString, PFUbiquityBaselineMetadata, PFUbiquityLocation, _PFZipFileArchive;
-
 @interface PFUbiquityBaseline : PFUbiquitySafeSaveFile {
     _PFZipFileArchive *_baselineArchive;
     PFUbiquityLocation *_baselineStagingLocation;
@@ -16,16 +14,16 @@
     NSString *_storeName;
 }
 
-@property(readonly) _PFZipFileArchive * baselineArchive;
-@property(readonly) PFUbiquityLocation * baselineArchiveLocation;
-@property(readonly) PFUbiquityLocation * baselinePeerArchiveLocation;
-@property(readonly) PFUbiquityLocation * baselineStagingLocation;
-@property(readonly) PFUbiquityBaselineMetadata * metadata;
-@property(readonly) NSString * modelVersionHash;
-@property(readonly) NSPersistentStore * store;
-@property(readonly) NSString * storeFilename;
-@property(readonly) NSDictionary * storeFilenameToData;
-@property(readonly) NSString * storeName;
+@property (readonly) _PFZipFileArchive *baselineArchive;
+@property (readonly) PFUbiquityLocation *baselineArchiveLocation;
+@property (readonly) PFUbiquityLocation *baselinePeerArchiveLocation;
+@property (readonly) PFUbiquityLocation *baselineStagingLocation;
+@property (readonly) PFUbiquityBaselineMetadata *metadata;
+@property (readonly) NSString *modelVersionHash;
+@property (readonly) NSPersistentStore *store;
+@property (readonly) NSString *storeFilename;
+@property (readonly) NSDictionary *storeFilenameToData;
+@property (readonly) NSString *storeName;
 
 + (BOOL)checkPeerReceiptsUnderRootLocation:(id)arg1 forAgreementWithLocalPeerID:(id)arg2 storeName:(id)arg3 modelVersionHash:(id)arg4 error:(id*)arg5;
 + (id)createArchiveWithModel:(id)arg1 metadata:(id)arg2 storeFilenameToData:(id)arg3 storeFilename:(id)arg4 error:(id*)arg5;

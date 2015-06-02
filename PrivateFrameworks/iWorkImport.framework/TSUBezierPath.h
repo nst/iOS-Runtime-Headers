@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSUBezierPath : NSObject <NSCoding, NSCopying> {
     struct { 
         unsigned int sfr_flags : 8; 
@@ -42,12 +37,12 @@
     float sfr_totalLength;
 }
 
-@property(readonly) BOOL containsClosePathElement;
-@property(readonly) BOOL isCompound;
-@property(readonly) BOOL isEffectivelyClosed;
-@property(readonly) BOOL isLineSegment;
-@property(readonly) BOOL isOpen;
-@property(readonly) BOOL isSelfIntersecting;
+@property (nonatomic, readonly) BOOL containsClosePathElement;
+@property (nonatomic, readonly) BOOL isCompound;
+@property (nonatomic, readonly) BOOL isEffectivelyClosed;
+@property (nonatomic, readonly) BOOL isLineSegment;
+@property (nonatomic, readonly) BOOL isOpen;
+@property (nonatomic, readonly) BOOL isSelfIntersecting;
 
 + (id)appendBezierPaths:(id)arg1;
 + (id)bezierPath;
@@ -116,7 +111,7 @@
 - (void)_doPath;
 - (BOOL)_isValid:(float)arg1;
 - (void)addClip;
-- (void)addIntersectionsWithLine:(struct CGPoint { float x1; float x2; }[2])arg1 to:(id)arg2;
+- (void)addIntersectionsWithLine:(struct CGPoint { float x1; float x2; })arg1 to:(id)arg2;
 - (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2;
 - (void)addIntersectionsWithPath:(id)arg1 to:(id)arg2 allIntersections:(BOOL)arg3 reversed:(BOOL)arg4;
 - (void)addPathToContext:(struct CGContext { }*)arg1;
@@ -205,8 +200,8 @@
 - (void)moveToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })myGradientAt:(float)arg1;
 - (struct CGPoint { float x1; float x2; })myGradientAt:(float)arg1 fromElement:(int)arg2;
-- (struct CGPoint { float x1; float x2; })nearestAngleOnPathToLine:(struct CGPoint { float x1; float x2; }[2])arg1;
-- (struct CGPoint { float x1; float x2; })nearestPointOnPathToLine:(struct CGPoint { float x1; float x2; }[2])arg1;
+- (struct CGPoint { float x1; float x2; })nearestAngleOnPathToLine:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })nearestPointOnPathToLine:(struct CGPoint { float x1; float x2; })arg1;
 - (id)outlineStroke;
 - (id)p_aliasedPathInContext:(struct CGContext { }*)arg1 viewScale:(float)arg2 effectiveStrokeWidth:(float)arg3;
 - (id)pathBySplittingAtPointOnPath:(struct CGPoint { float x1; float x2; })arg1 controlPointDistanceEqual:(BOOL)arg2;

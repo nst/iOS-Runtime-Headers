@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUClientInterface, SULinkControl, SUSubtitledButton, UIAlertView;
-
 @interface SUTermsAndConditionsView : UIView {
     UIAlertView *_accountButtonAlert;
     SUSubtitledButton *_button;
@@ -15,10 +13,10 @@
     SUClientInterface *clientInterface;
 }
 
-@property(retain) SUClientInterface * clientInterface;
-@property BOOL hideAccountButton;
-@property float rightMargin;
-@property int style;
+@property (nonatomic, retain) SUClientInterface *clientInterface;
+@property (nonatomic) BOOL hideAccountButton;
+@property (nonatomic) float rightMargin;
+@property (nonatomic) int style;
 
 - (void)_accountsChangedNotification:(id)arg1;
 - (id)_button;

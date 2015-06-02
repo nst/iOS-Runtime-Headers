@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SARadarGetAceRadarCredentials : SABaseClientBoundCommand {
-}
+@interface SARadarGetAceRadarCredentials : SABaseClientBoundCommand
 
 + (id)getAceRadarCredentials;
 + (id)getAceRadarCredentialsWithDictionary:(id)arg1 context:(id)arg2;

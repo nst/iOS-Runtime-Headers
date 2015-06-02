@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, SLRequest, SUScriptAppleAccount;
-
 @interface SUScriptFacebookRequest : SUScriptObject {
     SLRequest *_request;
     int _requestMethod;
@@ -11,12 +9,12 @@
     NSURL *_url;
 }
 
-@property(copy,readonly) NSURL * URL;
-@property(retain) SUScriptAppleAccount * account;
-@property(readonly) int requestMethod;
-@property(readonly) int requestMethodDelete;
-@property(readonly) int requestMethodGet;
-@property(readonly) int requestMethodPost;
+@property (readonly, copy) NSURL *URL;
+@property (retain) SUScriptAppleAccount *account;
+@property (readonly) int requestMethod;
+@property (readonly) int requestMethodDelete;
+@property (readonly) int requestMethodGet;
+@property (readonly) int requestMethodPost;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

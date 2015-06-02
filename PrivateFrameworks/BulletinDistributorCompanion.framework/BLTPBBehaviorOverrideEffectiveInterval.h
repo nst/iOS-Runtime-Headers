@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBDateComponents, NSString;
-
 @interface BLTPBBehaviorOverrideEffectiveInterval : PBCodable <NSCopying> {
     NSString *_calendarIdentifier;
     BLTPBDateComponents *_endComponents;
@@ -14,14 +12,14 @@
     BLTPBDateComponents *_startComponents;
 }
 
-@property(retain) NSString * calendarIdentifier;
-@property(retain) BLTPBDateComponents * endComponents;
-@property(readonly) BOOL hasCalendarIdentifier;
-@property(readonly) BOOL hasEndComponents;
-@property BOOL hasRepeatInterval;
-@property(readonly) BOOL hasStartComponents;
-@property int repeatInterval;
-@property(retain) BLTPBDateComponents * startComponents;
+@property (nonatomic, retain) NSString *calendarIdentifier;
+@property (nonatomic, retain) BLTPBDateComponents *endComponents;
+@property (nonatomic, readonly) BOOL hasCalendarIdentifier;
+@property (nonatomic, readonly) BOOL hasEndComponents;
+@property (nonatomic) BOOL hasRepeatInterval;
+@property (nonatomic, readonly) BOOL hasStartComponents;
+@property (nonatomic) int repeatInterval;
+@property (nonatomic, retain) BLTPBDateComponents *startComponents;
 
 - (void).cxx_destruct;
 - (id)calendarIdentifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBTree, UIView;
-
 @interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar {
     UIKBTree *_indirectKeyboard;
     int _savedSelectedKeyIndex;
@@ -13,7 +11,7 @@
     BOOL _useGridSelection;
 }
 
-@property(readonly) UIKBTree * currentKey;
+@property (nonatomic, readonly) UIKBTree *currentKey;
 
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
@@ -44,7 +42,7 @@
 - (int)keyIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)keyplaneKeyForCurrentKeyplane;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
-- (void)runWithSuppressedActions:(id)arg1;
+- (void)runWithSuppressedActions:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrameForKeyIndex:(int)arg1;
 - (void)setCursorLocation:(int)arg1;
 - (void)setHighlightedVariantIndex:(int)arg1 key:(id)arg2;

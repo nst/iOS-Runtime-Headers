@@ -2,47 +2,33 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKFetchShareInfoOperation : CKOperation {
     NSMutableDictionary *_errorsByURL;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchShareInfoCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _perShareInfoBlock;
-
+    id /* block */ _fetchShareInfoCompletionBlock;
+    id /* block */ _perShareInfoBlock;
     NSMutableDictionary *_shareInfoByURL;
     NSArray *_shareURLs;
 }
 
-@property(retain) NSMutableDictionary * errorsByURL;
-@property(copy) id fetchShareInfoCompletionBlock;
-@property(copy) id perShareInfoBlock;
-@property(retain) NSMutableDictionary * shareInfoByURL;
-@property(retain) NSArray * shareURLs;
+@property (nonatomic, retain) NSMutableDictionary *errorsByURL;
+@property (nonatomic, copy) id /* block */ fetchShareInfoCompletionBlock;
+@property (nonatomic, copy) id /* block */ perShareInfoBlock;
+@property (nonatomic, retain) NSMutableDictionary *shareInfoByURL;
+@property (nonatomic, retain) NSArray *shareURLs;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)errorsByURL;
-- (id)fetchShareInfoCompletionBlock;
+- (id /* block */)fetchShareInfoCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithShareURLs:(id)arg1;
-- (id)perShareInfoBlock;
+- (id /* block */)perShareInfoBlock;
 - (void)performCKOperation;
 - (void)setErrorsByURL:(id)arg1;
-- (void)setFetchShareInfoCompletionBlock:(id)arg1;
-- (void)setPerShareInfoBlock:(id)arg1;
+- (void)setFetchShareInfoCompletionBlock:(id /* block */)arg1;
+- (void)setPerShareInfoBlock:(id /* block */)arg1;
 - (void)setShareInfoByURL:(id)arg1;
 - (void)setShareURLs:(id)arg1;
 - (id)shareInfoByURL;

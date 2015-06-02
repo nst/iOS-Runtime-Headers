@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DOnePassBlurShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DOnePassBlurShaderEffect : TSCH3DShaderEffect
 
 + (id)variableBlurTexCoord;
 + (id)variablePixelSize;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface WMListLevelTextMapper : NSObject {
     int m_format;
     unsigned int m_initNumber;

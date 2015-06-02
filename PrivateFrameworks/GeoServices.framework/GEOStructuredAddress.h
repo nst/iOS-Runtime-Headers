@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOStructuredAddress : PBCodable <GEOURLSerializable, NSCopying> {
     NSString *_administrativeArea;
     NSString *_administrativeAreaCode;
@@ -32,49 +30,49 @@
     NSString *_thoroughfare;
 }
 
-@property(retain) NSString * administrativeArea;
-@property(retain) NSString * administrativeAreaCode;
-@property(retain) NSMutableArray * areaOfInterests;
-@property(retain) NSString * country;
-@property(retain) NSString * countryCode;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSMutableArray * dependentLocalitys;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * fullThoroughfare;
-@property(readonly) long long* geoIds;
-@property(readonly) unsigned int geoIdsCount;
-@property(readonly) BOOL hasAdministrativeArea;
-@property(readonly) BOOL hasAdministrativeAreaCode;
-@property(readonly) BOOL hasCountry;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasFullThoroughfare;
-@property(readonly) BOOL hasInlandWater;
-@property(readonly) BOOL hasLocality;
-@property(readonly) BOOL hasOcean;
-@property(readonly) BOOL hasPostCode;
-@property(readonly) BOOL hasPostCodeExtension;
-@property(readonly) BOOL hasPostCodeFull;
-@property(readonly) BOOL hasPremise;
-@property(readonly) BOOL hasPremises;
-@property(readonly) BOOL hasSubAdministrativeArea;
-@property(readonly) BOOL hasSubLocality;
-@property(readonly) BOOL hasSubThoroughfare;
-@property(readonly) BOOL hasThoroughfare;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * inlandWater;
-@property(retain) NSString * locality;
-@property(retain) NSString * ocean;
-@property(retain) NSString * postCode;
-@property(retain) NSString * postCodeExtension;
-@property(retain) NSString * postCodeFull;
-@property(retain) NSString * premise;
-@property(retain) NSString * premises;
-@property(retain) NSString * subAdministrativeArea;
-@property(retain) NSString * subLocality;
-@property(retain) NSMutableArray * subPremises;
-@property(retain) NSString * subThoroughfare;
-@property(readonly) Class superclass;
-@property(retain) NSString * thoroughfare;
+@property (nonatomic, retain) NSString *administrativeArea;
+@property (nonatomic, retain) NSString *administrativeAreaCode;
+@property (nonatomic, retain) NSMutableArray *areaOfInterests;
+@property (nonatomic, retain) NSString *country;
+@property (nonatomic, retain) NSString *countryCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSMutableArray *dependentLocalitys;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *fullThoroughfare;
+@property (nonatomic, readonly) long long*geoIds;
+@property (nonatomic, readonly) unsigned int geoIdsCount;
+@property (nonatomic, readonly) BOOL hasAdministrativeArea;
+@property (nonatomic, readonly) BOOL hasAdministrativeAreaCode;
+@property (nonatomic, readonly) BOOL hasCountry;
+@property (nonatomic, readonly) BOOL hasCountryCode;
+@property (nonatomic, readonly) BOOL hasFullThoroughfare;
+@property (nonatomic, readonly) BOOL hasInlandWater;
+@property (nonatomic, readonly) BOOL hasLocality;
+@property (nonatomic, readonly) BOOL hasOcean;
+@property (nonatomic, readonly) BOOL hasPostCode;
+@property (nonatomic, readonly) BOOL hasPostCodeExtension;
+@property (nonatomic, readonly) BOOL hasPostCodeFull;
+@property (nonatomic, readonly) BOOL hasPremise;
+@property (nonatomic, readonly) BOOL hasPremises;
+@property (nonatomic, readonly) BOOL hasSubAdministrativeArea;
+@property (nonatomic, readonly) BOOL hasSubLocality;
+@property (nonatomic, readonly) BOOL hasSubThoroughfare;
+@property (nonatomic, readonly) BOOL hasThoroughfare;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *inlandWater;
+@property (nonatomic, retain) NSString *locality;
+@property (nonatomic, retain) NSString *ocean;
+@property (nonatomic, retain) NSString *postCode;
+@property (nonatomic, retain) NSString *postCodeExtension;
+@property (nonatomic, retain) NSString *postCodeFull;
+@property (nonatomic, retain) NSString *premise;
+@property (nonatomic, retain) NSString *premises;
+@property (nonatomic, retain) NSString *subAdministrativeArea;
+@property (nonatomic, retain) NSString *subLocality;
+@property (nonatomic, retain) NSMutableArray *subPremises;
+@property (nonatomic, retain) NSString *subThoroughfare;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *thoroughfare;
 
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addAreaOfInterest:(id)arg1;

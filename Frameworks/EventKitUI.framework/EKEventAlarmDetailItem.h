@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray;
-
 @interface EKEventAlarmDetailItem : EKEventDetailItem {
     NSArray *_alarms;
     BOOL _canHaveLeaveNowAlarm;

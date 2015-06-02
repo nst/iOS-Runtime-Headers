@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDCalligraphyStroke : TSDSmartStroke {
-}
+@interface TSDCalligraphyStroke : TSDSmartStroke
 
 + (Class)mutableClass;
 

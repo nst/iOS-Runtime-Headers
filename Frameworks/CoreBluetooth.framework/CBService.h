@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBPeripheral, NSArray, NSNumber;
-
 @interface CBService : CBAttribute {
     NSArray *_characteristics;
     NSNumber *_endHandle;
@@ -13,12 +11,12 @@
     NSNumber *_startHandle;
 }
 
-@property(retain) NSArray * characteristics;
-@property(readonly) NSNumber * endHandle;
-@property(retain) NSArray * includedServices;
-@property BOOL isPrimary;
-@property(readonly) CBPeripheral * peripheral;
-@property(readonly) NSNumber * startHandle;
+@property (retain) NSArray *characteristics;
+@property (nonatomic, readonly) NSNumber *endHandle;
+@property (retain) NSArray *includedServices;
+@property (nonatomic) BOOL isPrimary;
+@property (nonatomic, readonly) CBPeripheral *peripheral;
+@property (nonatomic, readonly) NSNumber *startHandle;
 
 - (id)characteristics;
 - (void)dealloc;

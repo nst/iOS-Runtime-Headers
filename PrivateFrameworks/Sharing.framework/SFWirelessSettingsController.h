@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFWirelessSettingsControllerDelegate>, NSObject<OS_dispatch_semaphore>;
-
 @interface SFWirelessSettingsController : NSObject {
     BOOL _bluetoothEnabled;
     id _delegate;
@@ -15,11 +13,11 @@
     BOOL _wirelessAccessPointEnabled;
 }
 
-@property(getter=isBluetoothEnabled) BOOL bluetoothEnabled;
-@property <SFWirelessSettingsControllerDelegate> * delegate;
-@property(readonly) BOOL deviceSupportsWAPI;
-@property(getter=isWifiEnabled) BOOL wifiEnabled;
-@property(getter=isWirelessAccessPointEnabled,readonly) BOOL wirelessAccessPointEnabled;
+@property (getter=isBluetoothEnabled) BOOL bluetoothEnabled;
+@property <SFWirelessSettingsControllerDelegate> *delegate;
+@property (readonly) BOOL deviceSupportsWAPI;
+@property (getter=isWifiEnabled) BOOL wifiEnabled;
+@property (getter=isWirelessAccessPointEnabled, readonly) BOOL wirelessAccessPointEnabled;
 
 - (void)dealloc;
 - (id)delegate;

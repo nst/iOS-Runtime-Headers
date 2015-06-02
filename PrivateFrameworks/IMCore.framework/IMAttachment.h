@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString;
-
 @interface IMAttachment : NSObject {
     NSString *_guid;
     NSString *_path;

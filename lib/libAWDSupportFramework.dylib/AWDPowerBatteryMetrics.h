@@ -25,24 +25,24 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int cycleCountKey;
-@property unsigned int durationDispOn;
-@property unsigned int durationPartialDispOff;
-@property unsigned int durationPartialDispOn;
-@property unsigned int energyChargedMicroWatt;
-@property unsigned int energyConsumedDisplayOffMicroWatt;
-@property unsigned int energyConsumedDisplayOnMicroWatt;
-@property unsigned int energyConsumedPartailDispOnMicrowatt;
-@property BOOL hasCycleCountKey;
-@property BOOL hasDurationDispOn;
-@property BOOL hasDurationPartialDispOff;
-@property BOOL hasDurationPartialDispOn;
-@property BOOL hasEnergyChargedMicroWatt;
-@property BOOL hasEnergyConsumedDisplayOffMicroWatt;
-@property BOOL hasEnergyConsumedDisplayOnMicroWatt;
-@property BOOL hasEnergyConsumedPartailDispOnMicrowatt;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int cycleCountKey;
+@property (nonatomic) unsigned int durationDispOn;
+@property (nonatomic) unsigned int durationPartialDispOff;
+@property (nonatomic) unsigned int durationPartialDispOn;
+@property (nonatomic) unsigned int energyChargedMicroWatt;
+@property (nonatomic) unsigned int energyConsumedDisplayOffMicroWatt;
+@property (nonatomic) unsigned int energyConsumedDisplayOnMicroWatt;
+@property (nonatomic) unsigned int energyConsumedPartailDispOnMicrowatt;
+@property (nonatomic) BOOL hasCycleCountKey;
+@property (nonatomic) BOOL hasDurationDispOn;
+@property (nonatomic) BOOL hasDurationPartialDispOff;
+@property (nonatomic) BOOL hasDurationPartialDispOn;
+@property (nonatomic) BOOL hasEnergyChargedMicroWatt;
+@property (nonatomic) BOOL hasEnergyConsumedDisplayOffMicroWatt;
+@property (nonatomic) BOOL hasEnergyConsumedDisplayOnMicroWatt;
+@property (nonatomic) BOOL hasEnergyConsumedPartailDispOnMicrowatt;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

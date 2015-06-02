@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class SBKSyncResponseData;
-
 @interface SBKSyncResponse : SBKResponse {
     SBKSyncResponseData *_syncResponseData;
 }
 
-@property(readonly) SBKSyncResponseData * syncResponseData;
+@property (readonly) SBKSyncResponseData *syncResponseData;
 
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
 

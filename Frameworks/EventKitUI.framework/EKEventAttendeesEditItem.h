@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant, NSOperationQueue, NSString;
-
 @interface EKEventAttendeesEditItem : EKEventEditItem {
     NSOperationQueue *_availabilityQueue;
     int _numberOfConflicts;

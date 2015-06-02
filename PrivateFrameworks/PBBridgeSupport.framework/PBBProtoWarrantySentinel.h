@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSMutableArray, NSString;
-
 @interface PBBProtoWarrantySentinel : PBCodable <NSCopying> {
     NSMutableArray *_appleLanguages;
     NSString *_appleLocale;
@@ -16,15 +14,15 @@
     BOOL _sentinelExists;
 }
 
-@property(retain) NSMutableArray * appleLanguages;
-@property(retain) NSString * appleLocale;
-@property(retain) NSString * deviceName;
-@property(readonly) BOOL hasAppleLocale;
-@property(readonly) BOOL hasDeviceName;
-@property BOOL hasRemoveSentinel;
-@property BOOL hasSentinelExists;
-@property BOOL removeSentinel;
-@property BOOL sentinelExists;
+@property (nonatomic, retain) NSMutableArray *appleLanguages;
+@property (nonatomic, retain) NSString *appleLocale;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, readonly) BOOL hasAppleLocale;
+@property (nonatomic, readonly) BOOL hasDeviceName;
+@property (nonatomic) BOOL hasRemoveSentinel;
+@property (nonatomic) BOOL hasSentinelExists;
+@property (nonatomic) BOOL removeSentinel;
+@property (nonatomic) BOOL sentinelExists;
 
 - (void).cxx_destruct;
 - (void)addAppleLanguages:(id)arg1;

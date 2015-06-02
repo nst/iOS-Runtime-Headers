@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface CIFilterClassDescription : NSObject {
     NSMutableDictionary *attributes;
     NSArray *inputKeys;

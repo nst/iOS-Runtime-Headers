@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UILabel;
-
 @interface EKExpandingTextView : UITextView <UITextViewDelegate> {
     BOOL _allowEnclosingViewScroll;
     UILabel *_placeholderLabel;
@@ -13,11 +11,11 @@
     } _previousIntrinsicContentSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * placeholder;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *placeholder;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_shouldScrollEnclosingScrollView;

@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, SAMPMediaItem, SAMPNowPlayingQueuePosition, SANPCommandInfo;
+@interface SAMPQueueState : AceObject <SABackgroundContextObject>
 
-@interface SAMPQueueState : AceObject <SABackgroundContextObject> {
-}
-
-@property(copy) NSString * applicationIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAMPMediaItem * listeningToItem;
-@property(retain) SANPCommandInfo * nowPlayingCommandInfo;
-@property(retain) SAMPNowPlayingQueuePosition * playbackQueuePosition;
-@property(copy) NSNumber * playbackRate;
-@property(copy) NSString * source;
-@property int state;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAMPMediaItem *listeningToItem;
+@property (nonatomic, retain) SANPCommandInfo *nowPlayingCommandInfo;
+@property (nonatomic, retain) SAMPNowPlayingQueuePosition *playbackQueuePosition;
+@property (nonatomic, copy) NSNumber *playbackRate;
+@property (nonatomic, copy) NSString *source;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
 
 + (id)queueState;
 + (id)queueStateWithDictionary:(id)arg1 context:(id)arg2;

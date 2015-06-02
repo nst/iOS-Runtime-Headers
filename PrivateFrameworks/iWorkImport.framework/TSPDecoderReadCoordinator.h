@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPDecoder>, <TSPDecoderReadCoordinatorDelegate>, NSMapTable, NSObject<OS_dispatch_queue>, NSString, TSPComponent, TSPFinalizeHandlerQueue, TSPObjectContext;
-
 @interface TSPDecoderReadCoordinator : TSPReadCoordinatorBase <TSPReadCoordinator> {
     TSPObjectContext *_context;
     NSObject<OS_dispatch_queue> *_dataQueue;
@@ -14,11 +12,11 @@
     TSPComponent *_rootObjectComponent;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isReadingFromDocument;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isReadingFromDocument;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)baseObjectUUID;
@@ -38,11 +36,11 @@
 - (BOOL)isReadingFromDocument;
 - (id)objectForIdentifier:(long long)arg1;
 - (unsigned char)packageIdentifier;
-- (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
+- (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)readLazyReference:(id)arg1 object:(id*)arg2 error:(id*)arg3;
-- (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
 - (void)reader:(id)arg1 didReadLazyReference:(id)arg2;
 - (void)reader:(id)arg1 didUnarchiveObject:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKUniform;
-
 @interface SKUniformInfo : NSObject {
     unsigned int seed;
     unsigned int textureTarget;
@@ -12,7 +10,7 @@
 
 @property unsigned int seed;
 @property unsigned int textureTarget;
-@property(retain) SKUniform * uniform;
+@property (retain) SKUniform *uniform;
 
 - (void).cxx_destruct;
 - (id)init;

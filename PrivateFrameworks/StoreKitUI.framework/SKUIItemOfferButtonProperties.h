@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CAFilter, NSAttributedString, UIColor, UIImage;
-
 @interface SKUIItemOfferButtonProperties : NSObject {
     float _alpha;
     NSAttributedString *_attributedText;
@@ -25,24 +23,24 @@
     BOOL _universal;
 }
 
-@property float alpha;
-@property(copy) NSAttributedString * attributedText;
-@property(retain) UIColor * borderBackgroundColor;
-@property(retain) UIColor * borderColor;
-@property(retain) CAFilter * borderCompositingFilter;
-@property float borderCornerRadius;
-@property float borderWidth;
-@property BOOL cancelRecognizer;
-@property int confirmationTitleStyle;
-@property BOOL hasBorderView;
-@property BOOL hasTitleLabel;
-@property(retain) UIImage * image;
-@property float progress;
-@property BOOL progressIndeterminate;
-@property int progressType;
-@property(retain) UIColor * textColor;
-@property int titleStyle;
-@property BOOL universal;
+@property (nonatomic) float alpha;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic, retain) UIColor *borderBackgroundColor;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic, retain) CAFilter *borderCompositingFilter;
+@property (nonatomic) float borderCornerRadius;
+@property (nonatomic) float borderWidth;
+@property (nonatomic) BOOL cancelRecognizer;
+@property (nonatomic) int confirmationTitleStyle;
+@property (nonatomic) BOOL hasBorderView;
+@property (nonatomic) BOOL hasTitleLabel;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) float progress;
+@property (nonatomic) BOOL progressIndeterminate;
+@property (nonatomic) int progressType;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) int titleStyle;
+@property (nonatomic) BOOL universal;
 
 - (void).cxx_destruct;
 - (float)alpha;

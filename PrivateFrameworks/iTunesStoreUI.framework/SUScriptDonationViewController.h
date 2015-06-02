@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUScriptDonationViewController : SUScriptViewController {
     NSString *_charityIdentifier;
 }

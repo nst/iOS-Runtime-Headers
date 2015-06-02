@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIIPadSearchHeaderViewDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, SKUIClientContext, UIPopoverController;
-
 @interface SKUIIPadSearchHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     int _activeFacetIndex;
     SKUIClientContext *_clientContext;
@@ -14,13 +12,13 @@
     NSArray *_searchFacets;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIIPadSearchHeaderViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSDictionary * facetSelections;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * searchFacets;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIIPadSearchHeaderViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *facetSelections;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *searchFacets;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_destroyFacetPopover;

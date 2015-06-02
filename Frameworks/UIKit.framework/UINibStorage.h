@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSBundle, NSData, NSString, UINibDecoder;
-
 @interface UINibStorage : NSObject {
     NSData *archiveData;
     NSBundle *bundle;
@@ -15,14 +13,14 @@
     UINibDecoder *nibDecoder;
 }
 
-@property(copy) NSData * archiveData;
-@property(retain) NSBundle * bundle;
-@property(copy) NSString * bundleDirectoryName;
-@property(copy) NSString * bundleResourceName;
+@property (nonatomic, copy) NSData *archiveData;
+@property (nonatomic, retain) NSBundle *bundle;
+@property (nonatomic, copy) NSString *bundleDirectoryName;
+@property (nonatomic, copy) NSString *bundleResourceName;
 @property BOOL captureImplicitLoadingContextOnDecode;
-@property(copy) NSString * identifierForStringsFile;
-@property BOOL instantiatingForSimulator;
-@property(retain) UINibDecoder * nibDecoder;
+@property (nonatomic, copy) NSString *identifierForStringsFile;
+@property (nonatomic) BOOL instantiatingForSimulator;
+@property (nonatomic, retain) UINibDecoder *nibDecoder;
 
 - (id)archiveData;
 - (id)bundle;

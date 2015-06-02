@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOFeatureStyleAttributes, NSString;
-
 @interface VKStylesheetResultCacheKey : NSObject <NSCopying> {
     struct { 
         int vectorType; 
@@ -21,7 +19,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)hash;
-- (id)initWithFeatureAttributes:(id)arg1 clientAttributes:(const struct { int x1; int x2; int x3; BOOL x4; id x5; BOOL x6; unsigned int x7; }*)arg2;
+- (id)initWithFeatureAttributes:(id)arg1 clientAttributes:(const struct { int x1; int x2; int x3; BOOL x4; id x5; unsigned int x6; }*)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

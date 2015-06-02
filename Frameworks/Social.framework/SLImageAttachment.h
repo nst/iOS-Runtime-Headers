@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLImageAttachment : SLAttachment {
-}
+@interface SLImageAttachment : SLAttachment
 
 - (id)initWithAsset:(id)arg1 preview:(id)arg2;
 - (id)initWithImage:(id)arg1 preview:(id)arg2;

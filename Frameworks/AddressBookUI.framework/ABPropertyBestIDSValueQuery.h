@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyBestIDSValueQueryDelegate>, ABPropertyGroupItem, ABPropertyIDSRequest, NSArray, NSMutableArray;
-
 @interface ABPropertyBestIDSValueQuery : NSObject {
     <ABPropertyBestIDSValueQueryDelegate> *_delegate;
     ABPropertyIDSRequest *_idsRequest;
@@ -11,11 +9,11 @@
     NSMutableArray *_validIDSItems;
 }
 
-@property(readonly) ABPropertyGroupItem * bestIDSProperty;
-@property <ABPropertyBestIDSValueQueryDelegate> * delegate;
-@property(retain) ABPropertyIDSRequest * idsRequest;
-@property(retain) NSArray * propertyItems;
-@property(retain) NSMutableArray * validIDSItems;
+@property (readonly) ABPropertyGroupItem *bestIDSProperty;
+@property (nonatomic) <ABPropertyBestIDSValueQueryDelegate> *delegate;
+@property (nonatomic, retain) ABPropertyIDSRequest *idsRequest;
+@property (nonatomic, retain) NSArray *propertyItems;
+@property (retain) NSMutableArray *validIDSItems;
 
 - (id)bestIDSProperty;
 - (void)cancel;

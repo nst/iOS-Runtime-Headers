@@ -2,34 +2,32 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class CFPDDataBuffer, NSObject<OS_dispatch_queue>;
-
 @interface CFPDSource : NSObject {
     const char *_actualPath;
-    unsigned int _byHost : 1;
-    unsigned int _checkedForNonPrefsPlist : 1;
-    unsigned int _dirty : 1;
+    unsigned int _byHost;
+    unsigned int _checkedForNonPrefsPlist;
+    unsigned int _dirty;
     struct __CFString { } *_domain;
     short _generationShmemIndex;
-    unsigned int _hasDrainedPendingChangesSinceLastReplyToOwner : 1;
+    unsigned int _hasDrainedPendingChangesSinceLastReplyToOwner;
     unsigned int _lastEgid;
     unsigned int _lastEuid;
-    unsigned int _managed : 1;
-    unsigned int _neverCache : 1;
+    unsigned int _managed;
+    unsigned int _neverCache;
     int _owner;
     const char *_pathToTemporaryFileToWriteTo;
     struct __CFArray { } *_pendingChangesQueue;
     CFPDDataBuffer *_plist;
     BOOL _plistAccessingCount;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _restrictedReadability : 1;
+    unsigned int _restrictedReadability;
     struct __CFString { } *_userName;
-    unsigned int _waitingForDeviceUnlock : 1;
+    unsigned int _waitingForDeviceUnlock;
 }
 
-+ (void)synchronousWithSourceCache:(id)arg1;
-+ (void)withSourceCache:(id)arg1;
-+ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 synchronously:(BOOL)arg6 perform:(id)arg7;
++ (void)synchronousWithSourceCache:(id /* block */)arg1;
++ (void)withSourceCache:(id /* block */)arg1;
++ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 synchronously:(BOOL)arg6 perform:(id /* block */)arg7;
 
 - (unsigned char)_backingPlistChangedSinceLastSync:(unsigned long long*)arg1;
 - (BOOL)acceptLocalMessage:(id)arg1 withReply:(struct __CFDictionary { }*)arg2 inode:(unsigned long long*)arg3;
@@ -54,8 +52,8 @@
 - (BOOL)getUncanonicalizedPath:(char *)arg1;
 - (BOOL)hasEverHadMultipleOwners;
 - (id)initWithDomain:(struct __CFString { }*)arg1 userName:(struct __CFString { }*)arg2 byHost:(BOOL)arg3 managed:(BOOL)arg4 shmemIndex:(short)arg5;
-- (void)lockedAsync:(id)arg1;
-- (void)lockedSync:(id)arg1;
+- (void)lockedAsync:(id /* block */)arg1;
+- (void)lockedSync:(id /* block */)arg1;
 - (BOOL)managed;
 - (void)noteAccessed;
 - (id)propertyList;

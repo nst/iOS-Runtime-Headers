@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSNumber, NSString;
-
 @interface PKPaymentForbiddenResponse : PKPaymentWebServiceResponse {
     NSNumber *_errorCode;
     NSString *_localizedDescription;
     NSString *_localizedTitle;
 }
 
-@property(retain) NSNumber * errorCode;
-@property(retain) NSString * localizedDescription;
-@property(retain) NSString * localizedTitle;
+@property (nonatomic, retain) NSNumber *errorCode;
+@property (nonatomic, retain) NSString *localizedDescription;
+@property (nonatomic, retain) NSString *localizedTitle;
 
 - (void)dealloc;
 - (id)errorCode;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface UILexicon : NSObject <NSCopying> {
     NSArray *_entries;
 }
 
-@property(readonly) NSArray * entries;
+@property (nonatomic, readonly) NSArray *entries;
 
 + (id)_lexiconWithTILexicon:(id)arg1;
 

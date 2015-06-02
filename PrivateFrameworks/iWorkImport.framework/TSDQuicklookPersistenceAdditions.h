@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDQuicklookPersistenceAdditions : NSObject {
-}
+@interface TSDQuicklookPersistenceAdditions : NSObject
 
 + (struct CGSize { float x1; float x2; })imageColorSize;
 + (id)imageDataFromCGColor:(struct CGColor { }*)arg1 objContext:(id)arg2;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSNumberFormatter;
-
 @interface NSMassFormatter : NSFormatter {
     void *_formatter;
     BOOL _isForPersonMassUse;
-    void *_reserved[2];
+    void *_reserved;
 }
 
-@property(getter=isForPersonMassUse) BOOL forPersonMassUse;
-@property(copy) NSNumberFormatter * numberFormatter;
+@property (getter=isForPersonMassUse) BOOL forPersonMassUse;
+@property (copy) NSNumberFormatter *numberFormatter;
 @property int unitStyle;
 
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;

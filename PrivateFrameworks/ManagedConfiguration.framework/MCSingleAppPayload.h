@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCSingleAppPayload : MCAppWhitelistPayloadBase {
-}
+@interface MCSingleAppPayload : MCAppWhitelistPayloadBase
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

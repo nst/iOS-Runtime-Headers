@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSPlaceholderOrderedSet : NSMutableOrderedSet {
-}
+@interface __NSPlaceholderOrderedSet : NSMutableOrderedSet
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)immutablePlaceholder;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/BridgePreferences.framework/BridgePreferences
  */
 
-@class NGSSettingsManager, NSHashTable, NSString;
-
 @interface BPSInternalGlanceManager : NSObject <NGSSettingsManagerDelegate> {
     NGSSettingsManager *_glanceManager;
     NSHashTable *_observers;
     BOOL _settingsAreValid;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NGSSettingsManager * glanceManager;
-@property(readonly) unsigned int hash;
-@property(retain) NSHashTable * observers;
-@property BOOL settingsAreValid;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NGSSettingsManager *glanceManager;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic) BOOL settingsAreValid;
+@property (readonly) Class superclass;
 
 + (id)sharedGlanceManager;
 

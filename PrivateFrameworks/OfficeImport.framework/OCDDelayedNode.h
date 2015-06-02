@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OCDDelayedNodeContext>;
-
 @interface OCDDelayedNode : NSObject {
     <OCDDelayedNodeContext> *mDelayedContext;
     bool mLoaded;

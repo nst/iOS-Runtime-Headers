@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate, NSNumber, NSUUID;
-
 @interface CMPedometerData : NSObject <NSCopying, NSSecureCoding> {
     NSNumber *fDistance;
     NSDate *fEndDate;
@@ -16,15 +14,15 @@
     NSDate *fStartDate;
 }
 
-@property(readonly) NSNumber * distance;
-@property(readonly) NSDate * endDate;
-@property(readonly) NSNumber * floorsAscended;
-@property(readonly) NSNumber * floorsDescended;
-@property(readonly) NSNumber * numberOfSteps;
-@property(readonly) NSNumber * pace;
-@property(readonly) int recordId;
-@property(readonly) NSUUID * sourceId;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) NSNumber *distance;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSNumber *floorsAscended;
+@property (nonatomic, readonly) NSNumber *floorsDescended;
+@property (nonatomic, readonly) NSNumber *numberOfSteps;
+@property (nonatomic, readonly) NSNumber *pace;
+@property (nonatomic, readonly) int recordId;
+@property (nonatomic, readonly) NSUUID *sourceId;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HKAchievement;
-
 @interface _HDAchievementInsertionJournalEntry : HDJournalEntry {
     HKAchievement *_achievement;
 }
 
-@property(readonly) HKAchievement * achievement;
+@property (nonatomic, readonly) HKAchievement *achievement;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicRadioPlaybackCoordinator : RURadioPlaybackCoordinator {
-}
+@interface MusicRadioPlaybackCoordinator : RURadioPlaybackCoordinator
 
 + (id)sharedCoordinator;
 

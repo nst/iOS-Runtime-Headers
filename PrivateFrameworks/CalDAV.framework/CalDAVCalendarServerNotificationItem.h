@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVItem, CoreDAVLeafItem;
-
 @interface CalDAVCalendarServerNotificationItem : CoreDAVItem {
     CoreDAVItem *_content;
     CoreDAVLeafItem *_dtstamp;
 }
 
-@property(retain) CoreDAVItem * content;
-@property(retain) CoreDAVLeafItem * dtstamp;
+@property (nonatomic, retain) CoreDAVItem *content;
+@property (nonatomic, retain) CoreDAVLeafItem *dtstamp;
 
 - (id)content;
 - (id)copyParseRules;

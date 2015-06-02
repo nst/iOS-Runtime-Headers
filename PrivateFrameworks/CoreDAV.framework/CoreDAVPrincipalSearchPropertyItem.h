@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem, CoreDAVLeafItem;
-
 @interface CoreDAVPrincipalSearchPropertyItem : CoreDAVItem {
     CoreDAVLeafItem *_descriptionItem;
     CoreDAVItem *_prop;
 }
 
-@property(retain) CoreDAVLeafItem * descriptionItem;
-@property(retain) CoreDAVItem * prop;
+@property (nonatomic, retain) CoreDAVLeafItem *descriptionItem;
+@property (nonatomic, retain) CoreDAVItem *prop;
 
 + (id)copyParseRules;
 

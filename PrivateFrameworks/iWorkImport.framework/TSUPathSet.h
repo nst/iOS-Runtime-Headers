@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSMutableSet, TSUPathSet;
-
 @interface TSUPathSet : NSObject <NSCopying> {
     NSMutableDictionary *mBasePathToNumberMap;
     NSMutableSet *mPaths;

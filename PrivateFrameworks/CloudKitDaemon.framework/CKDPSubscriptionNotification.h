@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPSubscriptionNotificationAlert, NSMutableArray;
-
 @interface CKDPSubscriptionNotification : PBCodable <NSCopying> {
     NSMutableArray *_additionalFields;
     CKDPSubscriptionNotificationAlert *_alert;
@@ -15,13 +13,13 @@
     BOOL _shouldSendContentAvailable;
 }
 
-@property(retain) NSMutableArray * additionalFields;
-@property(retain) CKDPSubscriptionNotificationAlert * alert;
-@property(readonly) BOOL hasAlert;
-@property BOOL hasShouldBadge;
-@property BOOL hasShouldSendContentAvailable;
-@property BOOL shouldBadge;
-@property BOOL shouldSendContentAvailable;
+@property (nonatomic, retain) NSMutableArray *additionalFields;
+@property (nonatomic, retain) CKDPSubscriptionNotificationAlert *alert;
+@property (nonatomic, readonly) BOOL hasAlert;
+@property (nonatomic) BOOL hasShouldBadge;
+@property (nonatomic) BOOL hasShouldSendContentAvailable;
+@property (nonatomic) BOOL shouldBadge;
+@property (nonatomic) BOOL shouldSendContentAvailable;
 
 - (void).cxx_destruct;
 - (void)addAdditionalFields:(id)arg1;

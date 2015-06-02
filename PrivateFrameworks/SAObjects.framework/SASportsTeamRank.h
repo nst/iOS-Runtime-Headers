@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SASportsTeamRank : AceObject <SAAceSerializable>
 
-@interface SASportsTeamRank : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSNumber * position;
-@property(copy) NSNumber * primary;
-@property(copy) NSString * source;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSNumber *position;
+@property (nonatomic, copy) NSNumber *primary;
+@property (nonatomic, copy) NSString *source;
+@property (readonly) Class superclass;
 
 + (id)teamRank;
 + (id)teamRankWithDictionary:(id)arg1 context:(id)arg2;

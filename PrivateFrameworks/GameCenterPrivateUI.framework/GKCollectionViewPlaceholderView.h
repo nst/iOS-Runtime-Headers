@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKPlaceholderContentStateMachine, GKPlaceholderView, NSArray, NSString, UIActivityIndicatorView;
-
 @interface GKCollectionViewPlaceholderView : UICollectionReusableView <GKStateMachineDelegate> {
     int _alignment;
     NSArray *_cachedConstraints;
@@ -19,23 +17,23 @@
     GKPlaceholderView *_placeholderView;
 }
 
-@property int alignment;
-@property(retain) NSArray * cachedConstraints;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * errorMessage;
-@property(retain) NSString * errorTitle;
-@property(readonly) unsigned int hash;
-@property(retain) UIActivityIndicatorView * loadingIndicatorView;
-@property(retain) GKPlaceholderContentStateMachine * loadingMachine;
-@property(retain) NSString * loadingState;
-@property SEL noContentButtonAction;
-@property id noContentButtonTarget;
-@property(retain) NSString * noContentButtonTitle;
-@property(retain) NSString * noContentMessage;
-@property(retain) NSString * noContentTitle;
-@property(retain) GKPlaceholderView * placeholderView;
-@property(readonly) Class superclass;
+@property (nonatomic) int alignment;
+@property (nonatomic, retain) NSArray *cachedConstraints;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *errorMessage;
+@property (nonatomic, retain) NSString *errorTitle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIActivityIndicatorView *loadingIndicatorView;
+@property (nonatomic, retain) GKPlaceholderContentStateMachine *loadingMachine;
+@property (nonatomic, retain) NSString *loadingState;
+@property (nonatomic) SEL noContentButtonAction;
+@property (nonatomic) id noContentButtonTarget;
+@property (nonatomic, retain) NSString *noContentButtonTitle;
+@property (nonatomic, retain) NSString *noContentMessage;
+@property (nonatomic, retain) NSString *noContentTitle;
+@property (nonatomic, retain) GKPlaceholderView *placeholderView;
+@property (readonly) Class superclass;
 
 - (int)alignment;
 - (void)buttonPressed;

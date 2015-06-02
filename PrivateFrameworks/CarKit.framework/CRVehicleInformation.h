@@ -6,9 +6,9 @@
     unsigned int _vehicleAmbientBrightness;
 }
 
-@property(readonly) unsigned int driverPosition;
-@property(readonly) unsigned int interactionRestrictions;
-@property(readonly) unsigned int vehicleAmbientBrightness;
+@property (nonatomic, readonly) unsigned int driverPosition;
+@property (nonatomic, readonly) unsigned int interactionRestrictions;
+@property (nonatomic, readonly) unsigned int vehicleAmbientBrightness;
 
 - (unsigned int)ambientBrightness;
 - (void)dealloc;

@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, GEOMapServiceTraits, NSString;
-
 @interface _GEOReverseGeocodeRequestTicket : _GEOPlaceRequestTicket <GEOMapServiceSearchTicket> {
     BOOL _shiftLocationsIfNeeded;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) GEOMapRegion * resultBoundingRegion;
-@property(readonly) NSString * searchQuery;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
+@property (nonatomic, readonly) NSString *searchQuery;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (id)initWithRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (id)searchQuery;
-- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 
 @end

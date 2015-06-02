@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
+@interface BRCSharedDocumentItem : BRCDocumentItem
 
-@interface BRCSharedDocumentItem : BRCDocumentItem {
-}
-
-@property(readonly) NSString * enclosurePathRelativeToRoot;
+@property (nonatomic, readonly) NSString *enclosurePathRelativeToRoot;
 
 - (id)aliasItemID;
 - (id)enclosurePathRelativeToRoot;

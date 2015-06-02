@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLegacyLCDTextView;
-
 @interface TPLegacyLCDTextViewScrollingView : UIView {
     TPLegacyLCDTextView *_owner;
 }

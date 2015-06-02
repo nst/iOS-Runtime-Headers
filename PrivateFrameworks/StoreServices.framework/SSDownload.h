@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSMutableDictionary, NSNumber, NSString, SSDownloadMetadata, SSDownloadPolicy, SSDownloadStatus, SSXPCConnection;
-
 @interface SSDownload : SSEntity <SSXPCCoding> {
     NSMutableDictionary *_localAssets;
     SSDownloadMetadata *_metadata;
@@ -11,20 +9,20 @@
     SSDownloadStatus *_status;
 }
 
-@property(getter=_XPCConnection,readonly) SSXPCConnection * _XPCConnection;
-@property(retain) NSArray * assets;
-@property(getter=isCancelable,readonly) BOOL cancelable;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) id downloadIdentifier;
-@property(copy) SSDownloadPolicy * downloadPolicy;
-@property(readonly) long long downloadSizeLimit;
-@property(getter=isExternal,readonly) BOOL external;
-@property(readonly) unsigned int hash;
-@property(copy) SSDownloadMetadata * metadata;
-@property(readonly) long long persistentIdentifier;
-@property(retain) SSDownloadStatus * status;
-@property(readonly) Class superclass;
+@property (getter=_XPCConnection, readonly) SSXPCConnection *_XPCConnection;
+@property (nonatomic, retain) NSArray *assets;
+@property (getter=isCancelable, readonly) BOOL cancelable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) id downloadIdentifier;
+@property (copy) SSDownloadPolicy *downloadPolicy;
+@property (readonly) long long downloadSizeLimit;
+@property (getter=isExternal, nonatomic, readonly) BOOL external;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) SSDownloadMetadata *metadata;
+@property (readonly) long long persistentIdentifier;
+@property (nonatomic, retain) SSDownloadStatus *status;
+@property (readonly) Class superclass;
 
 + (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
@@ -56,7 +54,7 @@
 - (long long)downloadSizeLimit;
 - (double)estimatedSecondsRemaining;
 - (id)failureError;
-- (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id)arg2;
+- (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithDownloadMetadata:(id)arg1;
 - (id)initWithPersistentIdentifier:(long long)arg1;
 - (BOOL)isBackgroundNetworkingUserInitiated;
@@ -68,13 +66,13 @@
 - (void)pause;
 - (double)percentComplete;
 - (long long)persistentIdentifier;
-- (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id)arg2;
+- (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)removeAsset:(id)arg1;
 - (void)resume;
 - (void)setAssets:(id)arg1;
 - (void)setBackgroundNetworkingJobGroupName:(id)arg1;
 - (void)setBackgroundNetworkingUserInitiated:(BOOL)arg1;
-- (void)setDownloadHandler:(id)arg1 completionBlock:(id)arg2;
+- (void)setDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setNetworkConstraints:(id)arg1;

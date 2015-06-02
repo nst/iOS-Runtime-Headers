@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
-
 @interface HAPBlockOperation : NSBlockOperation {
     NSError *_error;
     NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSError * error;
-@property(retain) NSObject<OS_dispatch_semaphore> * finishedSemaphore;
-@property(readonly) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *finishedSemaphore;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_cancelWithError:(id)arg1;

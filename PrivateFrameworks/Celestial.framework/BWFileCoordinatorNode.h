@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWNodeInput, FigCaptureRecordingSettings, NSArray;
-
 @interface BWFileCoordinatorNode : BWNode {
     long long _currSettingsID;
     struct OpaqueCMBlockBuffer { } *_emptyMetadataSampleData;

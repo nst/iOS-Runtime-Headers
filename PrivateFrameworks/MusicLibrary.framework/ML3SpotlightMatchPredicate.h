@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3SpotlightNameCache, NSArray, NSString;
-
 @interface ML3SpotlightMatchPredicate : ML3Predicate {
     ML3SpotlightNameCache *_names;
     NSArray *_searchProperties;
     NSString *_searchString;
 }
 
-@property(readonly) NSString * searchString;
+@property (nonatomic, readonly) NSString *searchString;
 
 + (id)predicateWithProperties:(id)arg1 searchString:(id)arg2;
 

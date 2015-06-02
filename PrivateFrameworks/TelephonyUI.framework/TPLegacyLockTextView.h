@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSString, NSTimer, UIFont, UIImage;
-
 @interface TPLegacyLockTextView : UIView {
     float _deltaFromDefaultTrackWidth;
     float _fps;
@@ -16,7 +14,7 @@
     char *_textData;
 }
 
-@property(readonly) float deltaFromDefaultTrackWidth;
+@property (readonly) float deltaFromDefaultTrackWidth;
 
 - (void)_cacheLabel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;

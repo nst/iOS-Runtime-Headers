@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary;
-
 @interface TSCH3DShaderEffectsStates : NSObject {
     NSMutableDictionary *mObjects;
 }

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSSet, NSString;
-
 @interface KNPasteboardNativeStorage : TSPObject {
     struct CGSize { 
         float width; 
@@ -33,21 +26,21 @@
     NSDictionary *mThemeCurves;
 }
 
-@property(readonly) NSArray * buildChunks;
-@property(readonly) NSSet * builds;
-@property(readonly) NSSet * collapsedSlideNodes;
-@property(readonly) NSArray * displayedSlideNodes;
-@property(readonly) NSArray * drawables;
-@property(readonly) NSArray * geometriesInRoot;
-@property(readonly) NSArray * nonPlaceholderDrawables;
-@property struct CGSize { float x1; float x2; } originalShowSize;
-@property(readonly) NSSet * outlineCollapsedSlideNodes;
-@property(readonly) NSSet * outlineHasBodySlideNodes;
-@property(readonly) NSArray * placeholderDrawables;
-@property(readonly) NSString * slideNodeUUID;
-@property(readonly) NSArray * slideNodes;
-@property(readonly) NSArray * textStorageTitleRanges;
-@property(readonly) NSDictionary * themeCurves;
+@property (nonatomic, readonly) NSArray *buildChunks;
+@property (nonatomic, readonly) NSSet *builds;
+@property (nonatomic, readonly) NSSet *collapsedSlideNodes;
+@property (nonatomic, readonly) NSArray *displayedSlideNodes;
+@property (nonatomic, readonly) NSArray *drawables;
+@property (nonatomic, readonly) NSArray *geometriesInRoot;
+@property (nonatomic, readonly) NSArray *nonPlaceholderDrawables;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalShowSize;
+@property (nonatomic, readonly) NSSet *outlineCollapsedSlideNodes;
+@property (nonatomic, readonly) NSSet *outlineHasBodySlideNodes;
+@property (nonatomic, readonly) NSArray *placeholderDrawables;
+@property (nonatomic, readonly) NSString *slideNodeUUID;
+@property (nonatomic, readonly) NSArray *slideNodes;
+@property (nonatomic, readonly) NSArray *textStorageTitleRanges;
+@property (nonatomic, readonly) NSDictionary *themeCurves;
 
 - (id)buildChunks;
 - (id)builds;

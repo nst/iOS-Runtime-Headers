@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBBulletin;
-
 @interface BBObserverBulletinUpdate : NSObject <NSSecureCoding> {
     BBBulletin *_bulletin;
     unsigned int _transactionID;
     int _updateType;
 }
 
-@property(retain,readonly) BBBulletin * bulletin;
-@property(readonly) unsigned int transactionID;
-@property(readonly) int updateType;
+@property (nonatomic, readonly, retain) BBBulletin *bulletin;
+@property (nonatomic, readonly) unsigned int transactionID;
+@property (nonatomic, readonly) int updateType;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSFileManager, PLPhotoLibrary, PLXPCTransaction;
-
 @interface PLModelMigrator : NSObject {
     NSFileManager *_fileManager;
     PLPhotoLibrary *_photoLibrary;
@@ -13,14 +11,14 @@
     double startTime;
 }
 
-@property(retain) NSFileManager * fileManager;
-@property(readonly) PLPhotoLibrary * photoLibrary;
+@property (nonatomic, retain) NSFileManager *fileManager;
+@property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;
 
 + (BOOL)_addAlbumOrderKeys:(id)arg1;
 + (BOOL)_addLocationHashesToAssets:(id)arg1;
 + (BOOL)_addUUIDsToCollectionLists:(id)arg1 skipMomentLists:(BOOL)arg2;
 + (void)_applySyncedProperties:(id)arg1 toAsset:(id)arg2;
-+ (BOOL)_batchFetchedObjects:(id)arg1 inMOC:(id)arg2 batchSize:(unsigned int)arg3 objectHandler:(id)arg4 error:(id*)arg5;
++ (BOOL)_batchFetchedObjects:(id)arg1 inMOC:(id)arg2 batchSize:(unsigned int)arg3 objectHandler:(id /* block */)arg4 error:(id*)arg5;
 + (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id*)arg3;
 + (BOOL)_clearChangeStore;
 + (BOOL)_convertManagedAdjustmentsInStore:(id)arg1;
@@ -115,7 +113,7 @@
 + (void)fixupUnmanagedAdjustmentsFromFileSystemForAsset:(id)arg1;
 + (void)forceImportFileSystemDataIntoDatabase;
 + (id)generateAssetUUIDForPathPlist;
-+ (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
++ (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 + (BOOL)isPostProcessingLightweightMigration;
 + (void)loadFileSystemDataIntoDatabase;
 + (id)managedObjectModelForLightweightMigrationStageWithURL:(id)arg1;
@@ -127,7 +125,7 @@
 + (BOOL)processWelterweightMigrationStageOnStore:(id)arg1 fromVersion:(int)arg2 toVersion:(int)arg3 migrationContext:(id)arg4;
 + (void)recalculateCachedCountsForAlbums:(BOOL)arg1 andMoments:(BOOL)arg2;
 + (void)repairPotentialModelCorruption;
-+ (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id)arg1;
++ (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id /* block */)arg1;
 + (BOOL)restartingAfterOTAMigration;
 + (BOOL)restartingAfterRestoreFromBackup;
 + (long long)secondsNeededToCleanupModelAfteriTunesRestore;
@@ -147,7 +145,7 @@
 - (void)dealloc;
 - (void)dontImportFileSystemDataIntoDatabase;
 - (id)fileManager;
-- (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id)arg3;
+- (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)importFileSystemImportAssets:(id)arg1 forceUpdate:(BOOL)arg2;
 - (id)init;
 - (id)initWithImplicitTransaction:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <NSCopying><NSObject>, NSExtension, NSString, UIViewController<_UIDocumentPickerRemoteViewControllerContaining>;
-
 @interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerViewControllerHost> {
     NSExtension *_extension;
     <NSCopying><NSObject> *_extensionRequestIdentifier;
@@ -11,14 +9,14 @@
     UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSExtension * extension;
-@property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * identifier;
-@property UIViewController<_UIDocumentPickerRemoteViewControllerContaining> * publicController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSExtension *extension;
+@property (nonatomic, copy) <NSCopying><NSObject> *extensionRequestIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *publicController;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

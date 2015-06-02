@@ -2,26 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MKMapSnapshotOptions, NSObject<OS_dispatch_queue>, VKMapSnapshotCreator;
-
 @interface MKMapSnapshotter : NSObject {
     NSObject<OS_dispatch_queue> *_callbackQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     int _loadingFlag;
     BOOL _needsResume;
     MKMapSnapshotOptions *_options;
     VKMapSnapshotCreator *_snapshotCreator;
 }
 
-@property(getter=isLoading,readonly) BOOL loading;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -36,7 +26,7 @@
 - (id)init;
 - (id)initWithOptions:(id)arg1;
 - (BOOL)isLoading;
-- (void)startWithCompletionHandler:(id)arg1;
-- (void)startWithQueue:(id)arg1 completionHandler:(id)arg2;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

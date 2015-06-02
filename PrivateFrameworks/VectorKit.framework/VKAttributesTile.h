@@ -6,7 +6,7 @@
     int _metroArea;
 }
 
-@property(readonly) int metroArea;
+@property (nonatomic, readonly) int metroArea;
 
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2;
 - (int)metroArea;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRuleList, NSString;
+@interface DOMWebKitCSSKeyframesRule : DOMCSSRule
 
-@interface DOMWebKitCSSKeyframesRule : DOMCSSRule {
-}
-
-@property(readonly) DOMCSSRuleList * cssRules;
-@property(copy) NSString * name;
+@property (readonly) DOMCSSRuleList *cssRules;
+@property (copy) NSString *name;
 
 - (id)cssRules;
 - (void)deleteRule:(id)arg1;

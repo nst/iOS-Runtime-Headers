@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSString;
-
 @interface APDSearchResultItem : APDGenericData <NSCopying> {
     NSString *_identifier;
     int _matchCount;
     int _weight;
 }
 
-@property(retain) NSString * identifier;
-@property int matchCount;
-@property int weight;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) int matchCount;
+@property (nonatomic) int weight;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

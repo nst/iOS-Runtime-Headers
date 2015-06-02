@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPMusicPlayerControllerServerInternal;
-
 @interface MPMusicPlayerControllerServer : NSObject {
     MPMusicPlayerControllerServerInternal *_internal;
 }
 
-@property(readonly) MPAVController * player;
+@property (nonatomic, readonly) MPAVController *player;
 
 + (BOOL)isMusicPlayerControllerServerRunning;
 + (id)sharedInstance;

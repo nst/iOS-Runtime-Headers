@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface _AVBundle : NSObject {
-}
+@interface _AVBundle : NSObject
 
 + (id)bundle;
 

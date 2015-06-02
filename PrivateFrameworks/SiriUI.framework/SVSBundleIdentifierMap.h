@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class NSMutableDictionary;
-
 @interface SVSBundleIdentifierMap : NSObject {
     NSMutableDictionary *_disambiguationBundles;
     NSMutableDictionary *_providerBundles;

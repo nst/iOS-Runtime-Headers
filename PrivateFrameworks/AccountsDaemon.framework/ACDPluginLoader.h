@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDPluginLoader : NSObject {
-}
+@interface ACDPluginLoader : NSObject
 
 + (id)_accountsPluginDirectoryURL:(id)arg1;
 + (id)_buildPluginCache;

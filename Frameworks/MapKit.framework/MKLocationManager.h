@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MKLocationProvider>, <MKLocationRecorder>, CLHeading, CLLocation, GEOLocation, GEOLocationShifter, NSBundle, NSError, NSHashTable, NSMutableArray, NSString, NSTimer, _MKWiFiObserver;
-
 @interface MKLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MKLocationProviderDelegate, _MKWiFiObserverDelegate> {
     BOOL _airplaneModeEnabled;
     BOOL _airplaneModeEnabledIsValid;
@@ -34,11 +28,7 @@
     double _lastVehicleSpeed;
     double _lastVehicleSpeedUpdateTime;
     double _locationAccuracyUpdateTime;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _locationCorrector;
-
+    id /* block */ _locationCorrector;
     NSError *_locationError;
     NSHashTable *_locationListeners;
     NSHashTable *_locationObservers;
@@ -48,11 +38,7 @@
     BOOL _logStartStopLocationUpdates;
     double _minimumLocationUpdateInterval;
     double _navCourse;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _networkActivity;
-
+    id /* block */ _networkActivity;
     NSMutableArray *_recentLocationUpdateIntervals;
     BOOL _suspended;
     CLHeading *_throttledHeading;
@@ -62,57 +48,57 @@
     _MKWiFiObserver *_wifiObserver;
 }
 
-@property int activityType;
-@property BOOL allowUpdateCoalescing;
-@property(copy) id authorizationRequestBlock;
-@property BOOL continuesWhileInactive;
-@property(readonly) GEOLocation * courseCorrectedLocation;
-@property(readonly) GEOLocation * currentLocation;
-@property(readonly) double currentVehicleHeading;
-@property(readonly) double currentVehicleSpeed;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double desiredAccuracy;
-@property double distanceFilter;
-@property(retain) NSBundle * effectiveBundle;
-@property(copy) NSString * effectiveBundleIdentifier;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) double expectedGpsUpdateInterval;
-@property(readonly) GEOLocation * gridSnappedCurrentLocation;
-@property(readonly) BOOL hasLocation;
-@property(readonly) unsigned int hash;
-@property(readonly) CLHeading * heading;
-@property int headingOrientation;
-@property(readonly) double headingUpdateTimeInterval;
-@property(readonly) BOOL isAirplaneModeBlockingLocation;
-@property(readonly) BOOL isHeadingServicesAvailable;
-@property(readonly) BOOL isLastLocationStale;
-@property(readonly) BOOL isLocationServicesApproved;
-@property(readonly) BOOL isLocationServicesAvailable;
-@property(readonly) BOOL isLocationServicesDenied;
-@property(readonly) BOOL isLocationServicesEnabled;
-@property(readonly) BOOL isLocationServicesPossiblyAvailable;
-@property(readonly) BOOL isLocationServicesRestricted;
-@property(readonly) BOOL isWiFiEnabled;
-@property(readonly) CLLocation * lastLocation;
-@property(getter=wasLastLocationPushed,readonly) BOOL lastLocationPushed;
-@property(readonly) int lastLocationSource;
-@property(copy) id locationCorrector;
-@property(readonly) NSError * locationError;
-@property(retain) <MKLocationProvider> * locationProvider;
-@property(retain) <MKLocationRecorder> * locationRecorder;
-@property(getter=isLocationServicesAuthorizationNeeded,readonly) BOOL locationServicesAuthorizationNeeded;
-@property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
-@property(readonly) BOOL locationShiftEnabled;
-@property BOOL logStartStopLocationUpdates;
-@property BOOL matchInfoEnabled;
-@property double minimumLocationUpdateInterval;
-@property(readonly) double navigationCourse;
-@property(copy) id networkActivity;
-@property(readonly) Class superclass;
-@property(retain) CLHeading * throttledHeading;
-@property BOOL useCourseForHeading;
-@property(readonly) double vehicleHeadingOrCourse;
+@property (nonatomic) int activityType;
+@property (nonatomic) BOOL allowUpdateCoalescing;
+@property (nonatomic, copy) id /* block */ authorizationRequestBlock;
+@property (nonatomic) BOOL continuesWhileInactive;
+@property (nonatomic, readonly) GEOLocation *courseCorrectedLocation;
+@property (nonatomic, readonly) GEOLocation *currentLocation;
+@property (nonatomic, readonly) double currentVehicleHeading;
+@property (nonatomic, readonly) double currentVehicleSpeed;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double desiredAccuracy;
+@property (nonatomic) double distanceFilter;
+@property (nonatomic, retain) NSBundle *effectiveBundle;
+@property (nonatomic, copy) NSString *effectiveBundleIdentifier;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) double expectedGpsUpdateInterval;
+@property (nonatomic, readonly) GEOLocation *gridSnappedCurrentLocation;
+@property (nonatomic, readonly) BOOL hasLocation;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CLHeading *heading;
+@property (nonatomic) int headingOrientation;
+@property (nonatomic, readonly) double headingUpdateTimeInterval;
+@property (nonatomic, readonly) BOOL isAirplaneModeBlockingLocation;
+@property (nonatomic, readonly) BOOL isHeadingServicesAvailable;
+@property (nonatomic, readonly) BOOL isLastLocationStale;
+@property (nonatomic, readonly) BOOL isLocationServicesApproved;
+@property (nonatomic, readonly) BOOL isLocationServicesAvailable;
+@property (nonatomic, readonly) BOOL isLocationServicesDenied;
+@property (nonatomic, readonly) BOOL isLocationServicesEnabled;
+@property (nonatomic, readonly) BOOL isLocationServicesPossiblyAvailable;
+@property (nonatomic, readonly) BOOL isLocationServicesRestricted;
+@property (nonatomic, readonly) BOOL isWiFiEnabled;
+@property (nonatomic, readonly) CLLocation *lastLocation;
+@property (getter=wasLastLocationPushed, nonatomic, readonly) BOOL lastLocationPushed;
+@property (nonatomic, readonly) int lastLocationSource;
+@property (nonatomic, copy) id /* block */ locationCorrector;
+@property (nonatomic, readonly) NSError *locationError;
+@property (nonatomic, retain) <MKLocationProvider> *locationProvider;
+@property (nonatomic, retain) <MKLocationRecorder> *locationRecorder;
+@property (getter=isLocationServicesAuthorizationNeeded, nonatomic, readonly) BOOL locationServicesAuthorizationNeeded;
+@property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
+@property (nonatomic, readonly) BOOL locationShiftEnabled;
+@property (nonatomic) BOOL logStartStopLocationUpdates;
+@property (nonatomic) BOOL matchInfoEnabled;
+@property (nonatomic) double minimumLocationUpdateInterval;
+@property (nonatomic, readonly) double navigationCourse;
+@property (nonatomic, copy) id /* block */ networkActivity;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CLHeading *throttledHeading;
+@property (nonatomic) BOOL useCourseForHeading;
+@property (nonatomic, readonly) double vehicleHeadingOrCourse;
 
 + (void)setCanMonitorWiFiStatus:(BOOL)arg1;
 + (id)sharedLocationManager;
@@ -141,7 +127,7 @@
 - (BOOL)allowUpdateCoalescing;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
-- (id)authorizationRequestBlock;
+- (id /* block */)authorizationRequestBlock;
 - (BOOL)continuesWhileInactive;
 - (id)courseCorrectedLocation;
 - (id)currentLocation;
@@ -178,7 +164,7 @@
 - (id)lastLocation;
 - (int)lastLocationSource;
 - (void)listenForLocationUpdates:(id)arg1;
-- (id)locationCorrector;
+- (id /* block */)locationCorrector;
 - (id)locationError;
 - (id)locationProvider;
 - (void)locationProvider:(id)arg1 didReceiveError:(id)arg2;
@@ -197,7 +183,7 @@
 - (BOOL)matchInfoEnabled;
 - (double)minimumLocationUpdateInterval;
 - (double)navigationCourse;
-- (id)networkActivity;
+- (id /* block */)networkActivity;
 - (void)pushLocation:(id)arg1;
 - (void)reportCoalescedUpdated;
 - (void)requestWhenInUseAuthorization;
@@ -207,7 +193,7 @@
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)setActivityType:(int)arg1;
 - (void)setAllowUpdateCoalescing:(BOOL)arg1;
-- (void)setAuthorizationRequestBlock:(id)arg1;
+- (void)setAuthorizationRequestBlock:(id /* block */)arg1;
 - (void)setCoalesceTimer:(id)arg1;
 - (void)setContinuesWhileInactive:(BOOL)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
@@ -218,21 +204,21 @@
 - (void)setHeading:(id)arg1;
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setLastLocation:(id)arg1;
-- (void)setLocationCorrector:(id)arg1;
+- (void)setLocationCorrector:(id /* block */)arg1;
 - (void)setLocationProvider:(id)arg1;
 - (void)setLocationRecorder:(id)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setLogStartStopLocationUpdates:(BOOL)arg1;
 - (void)setMatchInfoEnabled:(BOOL)arg1;
 - (void)setMinimumLocationUpdateInterval:(double)arg1;
-- (void)setNetworkActivity:(id)arg1;
+- (void)setNetworkActivity:(id /* block */)arg1;
 - (void)setThrottledHeading:(id)arg1;
 - (void)setUseCourseForHeading:(BOOL)arg1;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1;
 - (BOOL)shouldStopCoalescingLocation:(id)arg1;
-- (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id)arg2;
-- (id)singleLocationUpdateWithHandler:(id)arg1;
+- (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id /* block */)arg2;
+- (id)singleLocationUpdateWithHandler:(id /* block */)arg1;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;
 - (void)startVehicleHeadingUpdate;

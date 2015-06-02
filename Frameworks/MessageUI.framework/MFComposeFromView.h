@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UILabel, UIView;
-
 @interface MFComposeFromView : MFComposeHeaderView {
     BOOL _accountHasUnsafeDomain;
     UILabel *_accountLabel;
     UIView *_background;
 }
 
-@property BOOL accountHasUnsafeDomain;
+@property (nonatomic) BOOL accountHasUnsafeDomain;
 
 - (id)_accountLabel;
 - (void)_setBackgroundVisible:(BOOL)arg1 animated:(BOOL)arg2;

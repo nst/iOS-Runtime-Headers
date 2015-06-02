@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedInvitationSectionInfo : PUFeedSectionInfo {
-}
+@interface PUFeedInvitationSectionInfo : PUFeedSectionInfo
 
 - (int)sectionType;
 - (int)typeForItemAtIndex:(int)arg1;

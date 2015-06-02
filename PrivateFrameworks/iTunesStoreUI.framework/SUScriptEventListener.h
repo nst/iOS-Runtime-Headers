@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock, NSString, WebScriptObject;
-
 @interface SUScriptEventListener : NSObject {
     WebScriptObject *_callback;
     NSLock *_lock;
@@ -11,8 +9,8 @@
     BOOL _useCapture;
 }
 
-@property(retain) WebScriptObject * callback;
-@property(copy) NSString * name;
+@property (retain) WebScriptObject *callback;
+@property (copy) NSString *name;
 @property BOOL shouldUseCapture;
 
 - (id)callback;

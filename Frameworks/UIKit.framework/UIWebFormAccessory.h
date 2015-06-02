@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebFormAccessoryDelegate>, UIBarButtonItem, UISegmentedControl, UIToolbar;
-
 @interface UIWebFormAccessory : UIInputView {
     UIBarButtonItem *_autofill;
     UIBarButtonItem *_clearButton;
@@ -17,12 +15,12 @@
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
-@property(retain) UIBarButtonItem * _autofill;
-@property(retain) UIBarButtonItem * _clearButton;
-@property(retain) UISegmentedControl * _tab;
-@property <UIWebFormAccessoryDelegate> * delegate;
-@property(getter=isNextEnabled) BOOL nextEnabled;
-@property(getter=isPreviousEnabled) BOOL previousEnabled;
+@property (nonatomic, retain) UIBarButtonItem *_autofill;
+@property (nonatomic, retain) UIBarButtonItem *_clearButton;
+@property (nonatomic, retain) UISegmentedControl *_tab;
+@property (nonatomic) <UIWebFormAccessoryDelegate> *delegate;
+@property (getter=isNextEnabled, nonatomic) BOOL nextEnabled;
+@property (getter=isPreviousEnabled, nonatomic) BOOL previousEnabled;
 
 + (id)toolbarWithItems:(id)arg1;
 

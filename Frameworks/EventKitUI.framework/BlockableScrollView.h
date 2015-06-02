@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSObject<BlockableScrollViewDelegate>;
-
 @interface BlockableScrollView : UIScrollView {
     NSObject<BlockableScrollViewDelegate> *_blockableDelegate;
 }
 
-@property NSObject<BlockableScrollViewDelegate> * blockableDelegate;
+@property (nonatomic) NSObject<BlockableScrollViewDelegate> *blockableDelegate;
 
 - (void).cxx_destruct;
 - (id)blockableDelegate;

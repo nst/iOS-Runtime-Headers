@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMWebKitCSSMatrix : DOMObject {
-}
+@interface DOMWebKitCSSMatrix : DOMObject
 
 @property double a;
 @property double b;

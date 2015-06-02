@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class NSBundle, NSMutableArray, NSMutableDictionary, NSUserDefaults;
-
 @interface DuetConfigurator : NSObject <DuetLoggerProtocol> {
     NSMutableDictionary *appBlackMap;
     NSMutableArray *appWhiteListArray;
@@ -13,8 +11,8 @@
     NSUserDefaults *sbDomain;
 }
 
-@property(retain,readonly) NSMutableDictionary * appBlackMap;
-@property(retain,readonly) NSMutableArray * appWhiteListArray;
+@property (nonatomic, readonly, retain) NSMutableDictionary *appBlackMap;
+@property (nonatomic, readonly, retain) NSMutableArray *appWhiteListArray;
 
 + (id)sharedInstance;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString, SSDownloadManager;
-
 @interface GKDownloadObserver : NSObject <SSDownloadManagerObserver> {
     SSDownloadManager *_downloadManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SSDownloadManager * downloadManager;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) SSDownloadManager *downloadManager;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedObserver;
 

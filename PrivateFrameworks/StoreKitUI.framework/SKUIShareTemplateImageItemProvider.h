@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIShareTemplateViewElement;
-
 @interface SKUIShareTemplateImageItemProvider : UIActivityItemProvider {
     SKUIShareTemplateViewElement *_templateElement;
 }

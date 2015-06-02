@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVVideoLayerDelegate : NSObject {
-}
+@interface AVVideoLayerDelegate : NSObject
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

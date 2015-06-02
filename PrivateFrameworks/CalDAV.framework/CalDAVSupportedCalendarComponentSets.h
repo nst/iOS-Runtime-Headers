@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableSet;
-
 @interface CalDAVSupportedCalendarComponentSets : CoreDAVItem {
     NSMutableSet *_componentSets;
 }

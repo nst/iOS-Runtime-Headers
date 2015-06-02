@@ -9,10 +9,10 @@
     BOOL _visitMaskViews;
 }
 
-@property BOOL _currentlyVisitingHierarchy;
-@property BOOL tracksHierarchy;
-@property(readonly) unsigned int traversalDirection;
-@property BOOL visitMaskViews;
+@property (nonatomic) BOOL _currentlyVisitingHierarchy;
+@property (nonatomic) BOOL tracksHierarchy;
+@property (nonatomic, readonly) unsigned int traversalDirection;
+@property (nonatomic) BOOL visitMaskViews;
 
 + (void)_addHierarchyTrackingVisitor:(id)arg1;
 + (void)_removeHierarchyTrackingVisitor:(id)arg1;

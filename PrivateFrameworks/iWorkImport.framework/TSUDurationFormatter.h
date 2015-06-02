@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSULocale;
-
 @interface TSUDurationFormatter : NSFormatter {
     int mCompactStyleStartUnit;
     NSString *mFormat;
     TSULocale *mLocale;
 }
 
-@property int compactStyleStartUnit;
-@property(copy) NSString * format;
-@property(readonly) TSULocale * locale;
+@property (nonatomic) int compactStyleStartUnit;
+@property (nonatomic, copy) NSString *format;
+@property (readonly) TSULocale *locale;
 
 - (int)compactStyleStartUnit;
 - (void)dealloc;

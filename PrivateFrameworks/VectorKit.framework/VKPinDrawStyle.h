@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPinDrawStyle : VKRenderStyle {
-}
+@interface VKPinDrawStyle : VKRenderStyle
 
-@property(readonly) float brightness;
+@property (nonatomic, readonly) float brightness;
 
 + (int)renderStyleID;
 

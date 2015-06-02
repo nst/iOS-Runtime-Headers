@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSCalendarUserParameter : ICSPredefinedValue {
-}
+@interface ICSCalendarUserParameter : ICSPredefinedValue
 
 + (id)calendarUserTypeParameterFromCode:(int)arg1;
 + (id)calendarUserTypeParameterFromICSString:(id)arg1;

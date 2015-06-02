@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, _VTBatteryPolicy, _VTFacedownGesturePolicy, _VTLockscreenPolicy, _VTSiriEnabledPolicy, _VTSiriUIPolicy, _VTSpringBoardStartedPolicy, _VTVoiceTriggerEnabledPolicy;
-
 @interface VTStateManagerSingleton : NSObject {
     _VTBatteryPolicy *_batteryPolicy;
     _VTFacedownGesturePolicy *_facedownPolicy;

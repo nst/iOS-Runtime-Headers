@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSMutableDictionary;
-
 @interface MBDebugContext : NSObject {
     NSMutableDictionary *_dictionary;
 }
 
-@property(retain) NSDate * simulatedDate;
-@property(readonly) long time;
+@property (nonatomic, retain) NSDate *simulatedDate;
+@property (nonatomic, readonly) long time;
 
 + (id)defaultDebugContext;
 

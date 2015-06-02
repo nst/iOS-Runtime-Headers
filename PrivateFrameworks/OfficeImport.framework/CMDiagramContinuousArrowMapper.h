@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMDiagramContinuousArrowMapper : CMDiagramShapeMapper {
-}
+@interface CMDiagramContinuousArrowMapper : CMDiagramShapeMapper
 
 - (id)_suggestedBoundsForNodeAtIndex:(int)arg1;
 - (id)fill;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDCancelTokenGroup : NSObject <CKDCancelling> {
     NSMutableArray *_cancelTokens;
 }
 
-@property(retain) NSMutableArray * cancelTokens;
+@property (nonatomic, retain) NSMutableArray *cancelTokens;
 
 - (void).cxx_destruct;
 - (void)addCancelToken:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSLock;
-
 @interface MKMapService : NSObject {
     NSArray *_activeInputModeLanguages;
     NSLock *_activeInputModesLock;
@@ -14,7 +12,7 @@
 - (void).cxx_destruct;
 - (id)_activeInputModeLanguages;
 - (void)_invalidateActiveInputModeLanguages;
-- (void)_mapItemsForResponseData:(id)arg1 handler:(id)arg2;
+- (void)_mapItemsForResponseData:(id)arg1 handler:(id /* block */)arg2;
 - (id)_mk_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3;
 - (id)_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (void)dealloc;

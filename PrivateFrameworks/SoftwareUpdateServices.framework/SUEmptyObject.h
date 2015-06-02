@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUEmptyObject : NSObject <NSSecureCoding> {
-}
+@interface SUEmptyObject : NSObject <NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

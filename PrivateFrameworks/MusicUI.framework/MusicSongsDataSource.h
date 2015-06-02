@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString;
-
 @interface MusicSongsDataSource : MusicQueryDataSource {
     unsigned long long _syncAssetTotal;
     int _syncAssetTotalToken;

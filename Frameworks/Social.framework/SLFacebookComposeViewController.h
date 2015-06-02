@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ACAccount, ACAccountStore, ALAssetsLibrary, CLInUseAssertion, NSString, SLComposeSheetConfigurationItem, SLFacebookAlbumChooserViewController, SLFacebookAlbumManager, SLFacebookPlaceManager, SLFacebookPost, SLFacebookPostPrivacyManager, SLFacebookSession, SLFacebookVideoOptionsViewController, SLSheetPlaceViewController, SLVideoQualityOption, UIViewController<SLFacebookAudienceViewController>;
-
 @interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAlbumChooserViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
     ACAccountStore *_accountStore;
     struct { 
@@ -21,11 +15,7 @@
     SLFacebookAlbumManager *_albumManager;
     ALAssetsLibrary *_assetsLibrary;
     UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     BOOL _didFetchPrivilegedAccount;
     BOOL _hasAccessToAccount;
     BOOL _hasCheckedAccess;
@@ -44,13 +34,13 @@
     SLFacebookVideoOptionsViewController *_videoOptionsViewController;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) ACAccount * privilegedAccount;
-@property(readonly) Class superclass;
+@property (retain) ACAccountStore *accountStore;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) ACAccount *privilegedAccount;
+@property (readonly) Class superclass;
 
 + (id)serviceBundle;
 
@@ -81,7 +71,7 @@
 - (id)albumManager;
 - (void)audienceViewController:(id)arg1 didSelectPostPrivacySetting:(id)arg2;
 - (void)callCompletionHandlerWithResult:(int)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (id)configurationItems;
 - (void)didReceiveMemoryWarning;
 - (void)didSelectPost;
@@ -96,7 +86,7 @@
 - (void)presentationAnimationDidFinish;
 - (id)privilegedAccount;
 - (void)setAccountStore:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setupCommonUI;
 - (void)videoOptionsViewController:(id)arg1 didSelectVideoQualityOption:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;

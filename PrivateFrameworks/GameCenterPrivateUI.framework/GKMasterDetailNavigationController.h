@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKMasterDetailViewController;
-
 @interface GKMasterDetailNavigationController : GKNavigationController <UISplitViewControllerDelegate> {
     GKMasterDetailViewController *_parentMasterDetailVC;
 }
 
-@property GKMasterDetailViewController * parentMasterDetailVC;
+@property (nonatomic) GKMasterDetailViewController *parentMasterDetailVC;
 
 - (void)collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2;
 - (id)parentMasterDetailVC;

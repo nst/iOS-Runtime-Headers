@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSString;
-
 @interface CertificateViewController : UITableViewController {
     int _certUIAction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _certificateButtonActionHandler;
-
+    id /* block */ _certificateButtonActionHandler;
     NSString *_certificateButtonDescription;
     BOOL _certificateButtonIsDestructiveAction;
     NSString *_certificateButtonTitle;
@@ -28,23 +18,23 @@
     BOOL _showCertificateButton;
 }
 
-@property int certUIAction;
-@property(copy) id certificateButtonActionHandler;
-@property(retain) NSString * certificateButtonDescription;
-@property BOOL certificateButtonIsDestructiveAction;
-@property(retain) NSString * certificateButtonTitle;
-@property(retain) NSDate * certificateExpiration;
-@property BOOL certificateIsRoot;
-@property(retain) NSString * certificateIssuer;
-@property(retain) NSArray * certificateProperties;
-@property(retain) NSString * certificatePurpose;
-@property(retain) NSString * certificateTitle;
-@property(retain) id certificateTrust;
-@property BOOL showCertificateButton;
+@property (nonatomic) int certUIAction;
+@property (nonatomic, copy) id /* block */ certificateButtonActionHandler;
+@property (nonatomic, retain) NSString *certificateButtonDescription;
+@property (nonatomic) BOOL certificateButtonIsDestructiveAction;
+@property (nonatomic, retain) NSString *certificateButtonTitle;
+@property (nonatomic, retain) NSDate *certificateExpiration;
+@property (nonatomic) BOOL certificateIsRoot;
+@property (nonatomic, retain) NSString *certificateIssuer;
+@property (nonatomic, retain) NSArray *certificateProperties;
+@property (nonatomic, retain) NSString *certificatePurpose;
+@property (nonatomic, retain) NSString *certificateTitle;
+@property (nonatomic, retain) id certificateTrust;
+@property (nonatomic) BOOL showCertificateButton;
 
 - (void).cxx_destruct;
 - (int)certUIAction;
-- (id)certificateButtonActionHandler;
+- (id /* block */)certificateButtonActionHandler;
 - (id)certificateButtonDescription;
 - (BOOL)certificateButtonIsDestructiveAction;
 - (id)certificateButtonTitle;
@@ -62,7 +52,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (void)setCertUIAction:(int)arg1;
-- (void)setCertificateButtonActionHandler:(id)arg1;
+- (void)setCertificateButtonActionHandler:(id /* block */)arg1;
 - (void)setCertificateButtonDescription:(id)arg1;
 - (void)setCertificateButtonIsDestructiveAction:(BOOL)arg1;
 - (void)setCertificateButtonTitle:(id)arg1;
@@ -75,7 +65,7 @@
 - (void)setCertificateTitle:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 properties:(id)arg5 isRoot:(BOOL)arg6 action:(int)arg7;
 - (void)setCertificateTrust:(id)arg1;
 - (void)setShowCertificateButton:(BOOL)arg1;
-- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id)arg5;
+- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id /* block */)arg5;
 - (BOOL)showCertificateButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

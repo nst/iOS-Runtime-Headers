@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMPowerAssertion, NSArray, NSDate, NSMutableArray, NSMutableDictionary;
-
 @interface IMAVCallManager : NSObject {
     unsigned int _acCallState;
     NSMutableArray *_acChatProxyArray;
@@ -20,11 +18,11 @@
     unsigned int _telephonyCallState;
 }
 
-@property(retain,readonly) NSArray * _FTCalls;
-@property(setter=_setTelephonyCallState:) unsigned int _telephonyCallState;
-@property(readonly) unsigned int callState;
-@property(retain,readonly) NSArray * calls;
-@property(readonly) BOOL hasActiveCall;
+@property (nonatomic, readonly, retain) NSArray *_FTCalls;
+@property (setter=_setTelephonyCallState:, nonatomic) unsigned int _telephonyCallState;
+@property (nonatomic, readonly) unsigned int callState;
+@property (nonatomic, readonly, retain) NSArray *calls;
+@property (nonatomic, readonly) BOOL hasActiveCall;
 
 + (id)sharedInstance;
 

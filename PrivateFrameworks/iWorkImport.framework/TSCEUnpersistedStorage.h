@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEUnpersistedStorage : TSWPStorage {
-}
+@interface TSCEUnpersistedStorage : TSWPStorage
 
 + (id)copyStorageUnpersisted:(id)arg1;
 

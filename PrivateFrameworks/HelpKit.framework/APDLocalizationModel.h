@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSArray;
-
 @interface APDLocalizationModel : APDGenericModel {
     NSArray *_localizations;
 }
 
-@property(copy) NSArray * localizations;
+@property (nonatomic, copy) NSArray *localizations;
 
 - (void).cxx_destruct;
 - (id)localeForLocaleString:(id)arg1;

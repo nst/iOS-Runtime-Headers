@@ -2,45 +2,27 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSMutableSet, NSRecursiveLock;
-
 @interface AXEventTapManager : NSObject {
     NSMutableArray *_addedEventTapPairs;
     NSRecursiveLock *_eventTapLock;
     NSMutableArray *_eventTaps;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _installationEventRepPost;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _installationGSCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _installationHIDCallback;
-
+    id /* block */ _installationEventRepPost;
+    id /* block */ _installationGSCallback;
+    id /* block */ _installationHIDCallback;
     struct __IOHIDEventSystemClient { } *_ioSystemPostBackClient;
     BOOL _isEnumeratingEventTaps;
     NSMutableSet *_removedEventTapIdentifiers;
     BOOL _shouldReorderEventTaps;
 }
 
-@property(copy) id installationEventRepPost;
-@property(copy) id installationGSCallback;
-@property(copy) id installationHIDCallback;
+@property (nonatomic, copy) id /* block */ installationEventRepPost;
+@property (nonatomic, copy) id /* block */ installationGSCallback;
+@property (nonatomic, copy) id /* block */ installationHIDCallback;
 
 + (id)sharedManager;
 
 - (id)_copyCurrentEventTapPairs;
-- (void)_enumerateEventTapPairsUsingBlock:(id)arg1;
+- (void)_enumerateEventTapPairsUsingBlock:(id /* block */)arg1;
 - (void)_installEventTap:(id)arg1;
 - (void)_installHIDFilter:(id)arg1;
 - (void)_installSystemEventTap:(id)arg1;
@@ -54,16 +36,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)installEventTap:(id)arg1 identifier:(id)arg2 type:(int)arg3;
-- (id)installationEventRepPost;
-- (id)installationGSCallback;
-- (id)installationHIDCallback;
+- (id)installEventTap:(id /* block */)arg1 identifier:(id)arg2 type:(int)arg3;
+- (id /* block */)installationEventRepPost;
+- (id /* block */)installationGSCallback;
+- (id /* block */)installationHIDCallback;
 - (void)removeEventTap:(id)arg1;
 - (void)sendEvent:(id)arg1 afterTap:(id)arg2 useGSEvent:(BOOL)arg3 namedTaps:(id)arg4;
 - (void)sendHIDSystemEvent:(id)arg1 senderID:(unsigned long long)arg2;
 - (void)setEventTapPriority:(id)arg1 priority:(int)arg2;
-- (void)setInstallationEventRepPost:(id)arg1;
-- (void)setInstallationGSCallback:(id)arg1;
-- (void)setInstallationHIDCallback:(id)arg1;
+- (void)setInstallationEventRepPost:(id /* block */)arg1;
+- (void)setInstallationGSCallback:(id /* block */)arg1;
+- (void)setInstallationHIDCallback:(id /* block */)arg1;
 
 @end

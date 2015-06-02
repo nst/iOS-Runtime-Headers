@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPFootnoteContainerRep : TSDContainerRep {
-}
+@interface TPFootnoteContainerRep : TSDContainerRep
 
 - (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
 - (void)didUpdateLayer:(id)arg1;

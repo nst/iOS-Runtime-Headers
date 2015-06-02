@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableArray;
-
 @interface AVFigAssetWriterAudioTrack : AVFigAssetWriterTrack {
     NSMutableArray *_pendingAudioSampleBuffers;
 }

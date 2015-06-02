@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVolumeControllerDelegate>, MPAVController, NSString, UIImage;
-
 @interface MPVolumeController : NSObject {
     float _EUVolumeLimit;
     BOOL _debugVolumeWarning;
@@ -17,14 +15,14 @@
     UIImage *_volumeWarningTrackImage;
 }
 
-@property(readonly) float EUVolumeLimit;
-@property <MPVolumeControllerDelegate> * delegate;
-@property BOOL muted;
-@property(retain) MPAVController * player;
-@property(copy) NSString * volumeAudioCategory;
-@property(readonly) float volumeValue;
-@property(readonly) BOOL volumeWarningEnabled;
-@property(readonly) int volumeWarningState;
+@property (nonatomic, readonly) float EUVolumeLimit;
+@property (nonatomic) <MPVolumeControllerDelegate> *delegate;
+@property (nonatomic) BOOL muted;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic, copy) NSString *volumeAudioCategory;
+@property (nonatomic, readonly) float volumeValue;
+@property (nonatomic, readonly) BOOL volumeWarningEnabled;
+@property (nonatomic, readonly) int volumeWarningState;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;

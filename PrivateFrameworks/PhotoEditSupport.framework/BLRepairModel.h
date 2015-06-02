@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLRepairLayerStack, NSDictionary, NSLock;
-
 @interface BLRepairModel : NSObject {
     BLRepairLayerStack *_layerStack;
     NSLock *_lock;

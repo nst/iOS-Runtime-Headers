@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSError, NSNumber, NSURL;
-
 @interface SKDownloadChangeset : NSObject <NSCopying> {
     NSNumber *_contentLength;
     NSURL *_contentURL;
@@ -14,13 +12,13 @@
     NSNumber *_timeRemaining;
 }
 
-@property(copy) NSNumber * contentLength;
-@property(copy) NSURL * contentURL;
-@property(copy) NSNumber * downloadID;
-@property(copy) NSNumber * downloadState;
-@property(copy) NSError * error;
-@property(copy) NSNumber * progress;
-@property(copy) NSNumber * timeRemaining;
+@property (nonatomic, copy) NSNumber *contentLength;
+@property (nonatomic, copy) NSURL *contentURL;
+@property (nonatomic, copy) NSNumber *downloadID;
+@property (nonatomic, copy) NSNumber *downloadState;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, copy) NSNumber *progress;
+@property (nonatomic, copy) NSNumber *timeRemaining;
 
 + (id)changesetWithDownloadID:(id)arg1 state:(int)arg2;
 

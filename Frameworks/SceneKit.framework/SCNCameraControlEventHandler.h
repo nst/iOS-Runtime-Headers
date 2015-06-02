@@ -2,63 +2,47 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class SCNNode, UIGestureRecognizer;
-
 @interface SCNCameraControlEventHandler : SCNEventHandler {
-    unsigned int _alternateMode : 1;
-    unsigned int _automaticCameraTarget : 1;
+    unsigned int _alternateMode;
+    unsigned int _automaticCameraTarget;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
     } _cameraTarget;
-
-  /* Unexpected information at end of encoded ivar type: @"UIGestureRecognizer" */
-  /* Error parsing encoded ivar type info:  */
-    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_clickOrigin;
-
+    void_clickOrigin;
     id _dReserved;
     SCNNode *_freeViewCameraNode;
     float _friction;
-    unsigned int _gimbalLockMode : 1;
+    unsigned int _gimbalLockMode;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
     } _gimbalLockVector;
-    unsigned int _hasCheckedIfViewingAnObject : 1;
-    unsigned int _inertia : 1;
-    unsigned int _inertiaRunning : 1;
+    unsigned int _hasCheckedIfViewingAnObject;
+    unsigned int _inertia;
+    unsigned int _inertiaRunning;
     struct CGPoint { 
         float x; 
         float y; 
     } _inertiaVelocity;
-
-  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
     union C3DMatrix4x4 { 
         float components[16]; 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _initialMatrix;
-
-
-  /* Error parsing encoded ivar type info: (C3DMatrix4x4="components"[16f]"m"[4]) */
     union C3DMatrix4x4 { 
         float components[16]; 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*m[4]; 
     } _initialMatrixForRoll;
-
     struct CGPoint { 
         float x; 
         float y; 
     } _initialPoint;
     float _initialZoom;
     BOOL _isDraggingWithOneFinger;
-    unsigned int _isViewedObjectSphereComputed : 1;
-    unsigned int _isViewingAnObject : 1;
+    unsigned int _isViewedObjectSphereComputed;
+    unsigned int _isViewingAnObject;
     int _lastGestureFingerCount;
     double _lastSimulationTime;
     int _mode;
@@ -78,18 +62,11 @@
         float x; 
         float y; 
     } _totalDragWithInertia;
-
-  /* Unexpected information at end of encoded ivar type: @"UIGestureRecognizer" */
-  /* Error parsing encoded ivar type info:  */
-    /* Warning: Unrecognized filer type: '' using 'void*' */ void*_upDir;
-
-    unsigned int _upDirIsSet : 1;
-
-  /* Error parsing encoded ivar type info: {C3DSphere="vector"} */
+    void_upDir;
+    unsigned int _upDirIsSet;
     struct C3DSphere { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*vector; 
     } _viewedObjectSphere;
-
     float _zoomFactor;
 }
 
@@ -128,9 +105,7 @@
 - (BOOL)enableInertia;
 - (void)endDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (float)friction;
-- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)frontVector;
-     /* Encoded args for previous method: 8@0:4 */
-
+- (void)frontVector;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizers;
@@ -142,9 +117,7 @@
 - (void)pinchWithGestureRecognizer:(id)arg1;
 - (void)rotateOf:(float)arg1;
 - (void)rotateWithGestureRecognizer:(id)arg1;
-- (void)rotateWithVector:(int)arg1 mode:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg2;
-     /* Encoded args for previous method: v28@0:48i24 */
-
+- (void)rotateWithVector:(void *)arg1 mode:(void *)arg2; // needs 2 arg types, found 1: int
 - (void)sceneDidChange;
 - (void)sceneWillChange;
 - (void)setAutomaticCameraTarget:(BOOL)arg1;

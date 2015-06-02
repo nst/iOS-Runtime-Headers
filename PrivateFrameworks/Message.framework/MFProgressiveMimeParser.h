@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMimePart, NSArray, NSData, NSMutableData;
-
 @interface MFProgressiveMimeParser : NSObject {
     id _context;
     NSData *_currentBoundary;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <KeychainSyncPasscodeFieldDelegate>, NSString, PSPasscodeField;
-
 @interface PasscodeFieldCell : PSTableCell <PSPasscodeFieldDelegate, UIKeyInput> {
     BOOL _convertsNumeralsToASCII;
     <KeychainSyncPasscodeFieldDelegate> *_delegate;
@@ -11,21 +9,21 @@
     PSPasscodeField *_passcodeField;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property BOOL convertsNumeralsToASCII;
-@property(copy,readonly) NSString * debugDescription;
-@property <KeychainSyncPasscodeFieldDelegate> * delegate;
-@property BOOL denyFirstResponder;
-@property(copy,readonly) NSString * description;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic) BOOL convertsNumeralsToASCII;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <KeychainSyncPasscodeFieldDelegate> *delegate;
+@property (nonatomic) BOOL denyFirstResponder;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
 
 - (void)_setSecureTextEntry:(BOOL)arg1;
 - (BOOL)becomeFirstResponder;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMNode;
-
 @interface IKDOMHTMLCollection : IKJSObject <IKJSDOMHTMLCollection> {
     IKDOMNode *_parentNode;
 }
 
-@property(readonly) unsigned long length;
-@property IKDOMNode * parentNode;
+@property (readonly) unsigned long length;
+@property (nonatomic) IKDOMNode *parentNode;
 
 - (void).cxx_destruct;
 - (id)initWithAppContext:(id)arg1 node:(id)arg2;

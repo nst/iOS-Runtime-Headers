@@ -2,33 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _UIFocusEngineTargetedDynamicAnimation : _UIDynamicAnimation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _applier;
-
+    id /* block */ _applier;
     double _convergenceRate;
     double _minimumDifference;
     double _targetValue;
     double _value;
 }
 
-@property double convergenceRate;
-@property double minimumDifference;
-@property double targetValue;
-@property double value;
+@property (nonatomic) double convergenceRate;
+@property (nonatomic) double minimumDifference;
+@property (nonatomic) double targetValue;
+@property (nonatomic) double value;
 
 - (BOOL)_animateForInterval:(double)arg1;
 - (double)convergenceRate;
 - (void)dealloc;
 - (id)initWithValue:(double)arg1 targetValue:(double)arg2 convergenceRate:(double)arg3 minimumDifference:(double)arg4;
 - (double)minimumDifference;
-- (void)runWithValueApplier:(id)arg1 completion:(id)arg2;
+- (void)runWithValueApplier:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)setConvergenceRate:(double)arg1;
 - (void)setMinimumDifference:(double)arg1;
 - (void)setTargetValue:(double)arg1;

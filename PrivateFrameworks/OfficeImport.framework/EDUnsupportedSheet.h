@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDUnsupportedSheet : EDSheet {
-}
+@interface EDUnsupportedSheet : EDSheet
 
 @end

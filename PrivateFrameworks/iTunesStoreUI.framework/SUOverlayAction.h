@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUOverlayTransition, UIViewController;
-
 @interface SUOverlayAction : NSObject {
     int _animationCount;
     UIViewController *_otherViewController;
@@ -12,11 +10,11 @@
     UIViewController *_viewController;
 }
 
-@property int actionType;
-@property int animationCount;
-@property(retain) UIViewController * otherViewController;
-@property(retain) SUOverlayTransition * transition;
-@property(retain) UIViewController * viewController;
+@property (nonatomic) int actionType;
+@property (nonatomic) int animationCount;
+@property (nonatomic, retain) UIViewController *otherViewController;
+@property (nonatomic, retain) SUOverlayTransition *transition;
+@property (nonatomic, retain) UIViewController *viewController;
 
 - (int)actionType;
 - (int)animationCount;

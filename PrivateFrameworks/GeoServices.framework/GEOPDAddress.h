@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDAddress : PBCodable <NSCopying> {
     struct { 
         unsigned int knownAccuracy : 1; 
@@ -14,11 +12,11 @@
     NSMutableArray *_spokenStructuredAddress;
 }
 
-@property BOOL hasKnownAccuracy;
-@property int knownAccuracy;
-@property(retain) NSMutableArray * localizedAddress;
-@property(retain) NSMutableArray * spokenNavigationAddress;
-@property(retain) NSMutableArray * spokenStructuredAddress;
+@property (nonatomic) BOOL hasKnownAccuracy;
+@property (nonatomic) int knownAccuracy;
+@property (nonatomic, retain) NSMutableArray *localizedAddress;
+@property (nonatomic, retain) NSMutableArray *spokenNavigationAddress;
+@property (nonatomic, retain) NSMutableArray *spokenStructuredAddress;
 
 + (id)addressForPlaceData:(id)arg1;
 

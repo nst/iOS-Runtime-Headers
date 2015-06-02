@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableIndexSet, NSString;
-
 @interface _SSVPlayActivityFlushSessionInformation : NSObject {
     NSString *_endpointIdentifier;
     NSString *_revisionVersionToken;
@@ -11,10 +9,10 @@
     unsigned long long _sessionToken;
 }
 
-@property(copy) NSString * endpointIdentifier;
-@property(copy) NSString * revisionVersionToken;
-@property(retain) NSMutableIndexSet * revisionsIndexSet;
-@property unsigned long long sessionToken;
+@property (nonatomic, copy) NSString *endpointIdentifier;
+@property (nonatomic, copy) NSString *revisionVersionToken;
+@property (nonatomic, retain) NSMutableIndexSet *revisionsIndexSet;
+@property (nonatomic) unsigned long long sessionToken;
 
 - (void).cxx_destruct;
 - (id)endpointIdentifier;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIViewElementText;
-
 @interface SKUIItemViewElement : SKUIViewElement {
     SKUIViewElementText *_itemText;
     BOOL _selected;
 }
 
-@property(readonly) SKUIViewElementText * itemText;
-@property(getter=isSelected,readonly) BOOL selected;
+@property (nonatomic, readonly) SKUIViewElementText *itemText;
+@property (getter=isSelected, nonatomic, readonly) BOOL selected;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

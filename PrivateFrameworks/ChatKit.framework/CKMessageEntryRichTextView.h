@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKComposition, NSMutableDictionary, NSString;
-
 @interface CKMessageEntryRichTextView : CKMessageEntryTextView <NSTextStorageDelegate> {
     BOOL _balloonColor;
     NSMutableDictionary *_composeImages;
@@ -12,15 +10,15 @@
     CKComposition *_pasteboardComposition;
 }
 
-@property BOOL balloonColor;
-@property(retain) NSMutableDictionary * composeImages;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * mediaObjects;
-@property int pasteboardChangeCount;
-@property(retain) CKComposition * pasteboardComposition;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL balloonColor;
+@property (nonatomic, retain) NSMutableDictionary *composeImages;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *mediaObjects;
+@property (nonatomic) int pasteboardChangeCount;
+@property (nonatomic, retain) CKComposition *pasteboardComposition;
+@property (readonly) Class superclass;
 
 - (id)attributedTextForCompositionText:(id)arg1;
 - (BOOL)balloonColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNBuildAttributes, NSDictionary;
-
 @interface KNAnimatedBuild : NSObject {
     BOOL _animateAtEndOfPreviousBuild;
     KNBuildAttributes *_attributes;
@@ -27,32 +25,32 @@
     double _startTime;
 }
 
-@property BOOL animateAtEndOfPreviousBuild;
-@property(readonly) KNBuildAttributes * attributes;
-@property(readonly) BOOL automatic;
-@property(readonly) int buildType;
-@property(readonly) unsigned int deliveryOption;
-@property(readonly) unsigned int deliveryStyle;
-@property(readonly) unsigned int direction;
-@property double duration;
-@property(readonly) double endTime;
-@property(readonly) double eventEndTime;
-@property int eventIndex;
-@property(readonly) double eventStartTime;
-@property(copy) NSDictionary * finalAttributes;
-@property(readonly) BOOL isActionBuild;
-@property(readonly) BOOL isBuildIn;
-@property(readonly) BOOL isBuildOut;
-@property(readonly) BOOL isDriftBuild;
-@property(readonly) BOOL isEmphasisBuild;
-@property(readonly) BOOL isMagicChartBuild;
-@property BOOL isMovieStartBuild;
-@property BOOL isVisibleAtBeginning;
-@property BOOL isVisibleAtEnd;
-@property(readonly) Class pluginClass;
-@property(copy) NSDictionary * previousAttributes;
-@property(readonly) int stageIndex;
-@property(readonly) double startTime;
+@property (nonatomic) BOOL animateAtEndOfPreviousBuild;
+@property (nonatomic, readonly) KNBuildAttributes *attributes;
+@property (nonatomic, readonly) BOOL automatic;
+@property (nonatomic, readonly) int buildType;
+@property (nonatomic, readonly) unsigned int deliveryOption;
+@property (nonatomic, readonly) unsigned int deliveryStyle;
+@property (nonatomic, readonly) unsigned int direction;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) double endTime;
+@property (nonatomic, readonly) double eventEndTime;
+@property (nonatomic) int eventIndex;
+@property (nonatomic, readonly) double eventStartTime;
+@property (nonatomic, copy) NSDictionary *finalAttributes;
+@property (nonatomic, readonly) BOOL isActionBuild;
+@property (nonatomic, readonly) BOOL isBuildIn;
+@property (nonatomic, readonly) BOOL isBuildOut;
+@property (nonatomic, readonly) BOOL isDriftBuild;
+@property (nonatomic, readonly) BOOL isEmphasisBuild;
+@property (nonatomic, readonly) BOOL isMagicChartBuild;
+@property (nonatomic) BOOL isMovieStartBuild;
+@property (nonatomic) BOOL isVisibleAtBeginning;
+@property (nonatomic) BOOL isVisibleAtEnd;
+@property (nonatomic, readonly) Class pluginClass;
+@property (nonatomic, copy) NSDictionary *previousAttributes;
+@property (nonatomic, readonly) int stageIndex;
+@property (nonatomic, readonly) double startTime;
 
 - (BOOL)animateAtEndOfPreviousBuild;
 - (id)attributes;

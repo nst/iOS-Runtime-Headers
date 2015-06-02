@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDCompanionSyncErrorEvent : PBCodable <NSCopying> {
     int _error;
     struct { 
@@ -16,14 +14,14 @@
     unsigned long long _timestamp;
 }
 
-@property int error;
-@property BOOL hasError;
-@property BOOL hasSequenceNumber;
-@property(readonly) BOOL hasService;
-@property BOOL hasTimestamp;
-@property unsigned long long sequenceNumber;
-@property(retain) NSString * service;
-@property unsigned long long timestamp;
+@property (nonatomic) int error;
+@property (nonatomic) BOOL hasError;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long sequenceNumber;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

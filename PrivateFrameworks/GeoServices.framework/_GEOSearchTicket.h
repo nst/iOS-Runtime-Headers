@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, GEOMapServiceTraits, GEOPlaceSearchResponse, GEOSearchRequest, NSString;
-
 @interface _GEOSearchTicket : NSObject <GEOMapServiceSearchTicket, _GEOLegacyMapServiceTicket> {
     GEOPlaceSearchResponse *_response;
     GEOMapRegion *_resultBoundingRegion;
@@ -11,14 +9,14 @@
     GEOMapServiceTraits *_traits;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GEOPlaceSearchResponse * response;
-@property(readonly) GEOMapRegion * resultBoundingRegion;
-@property(readonly) NSString * searchQuery;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GEOPlaceSearchResponse *response;
+@property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
+@property (nonatomic, readonly) NSString *searchQuery;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
@@ -30,10 +28,10 @@
 - (id)resultBoundingRegion;
 - (id)searchQuery;
 - (void)setResponse:(id)arg1;
-- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
-- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
 - (id)traits;
 
 @end

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACAccount, ACDataclassAction, NSArray, NSMutableArray;
-
 @interface ACUIDataclassActionPicker : NSObject {
     NSArray *_actions;
     ACAccount *_affectedAccount;
     NSMutableArray *_affectedDataclasses;
 }
 
-@property(readonly) NSArray * actions;
-@property(readonly) ACAccount * affectedAccount;
-@property(copy) NSArray * affectedDataclasses;
-@property(readonly) ACDataclassAction * firstDestructiveAction;
-@property(readonly) BOOL hasDestructiveActions;
-@property(readonly) int priorityIndex;
+@property (nonatomic, readonly) NSArray *actions;
+@property (nonatomic, readonly) ACAccount *affectedAccount;
+@property (nonatomic, copy) NSArray *affectedDataclasses;
+@property (nonatomic, readonly) ACDataclassAction *firstDestructiveAction;
+@property (nonatomic, readonly) BOOL hasDestructiveActions;
+@property (nonatomic, readonly) int priorityIndex;
 
 - (void).cxx_destruct;
 - (id)actions;

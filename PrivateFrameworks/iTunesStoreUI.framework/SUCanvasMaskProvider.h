@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptCanvasFunction;
-
 @interface SUCanvasMaskProvider : SUMaskProvider {
     SUScriptCanvasFunction *_function;
 }

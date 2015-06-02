@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSTimeZoneDaylightBlock : ICSTimeZoneBlock {
-}
+@interface ICSTimeZoneDaylightBlock : ICSTimeZoneBlock
 
 + (id)name;
 

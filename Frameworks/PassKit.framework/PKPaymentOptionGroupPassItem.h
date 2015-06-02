@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentOptionGroupPassItem : PKPaymentOptionGroupItem {
-}
+@interface PKPaymentOptionGroupPassItem : PKPaymentOptionGroupItem
 
 - (Class)tableViewCellClass;
 

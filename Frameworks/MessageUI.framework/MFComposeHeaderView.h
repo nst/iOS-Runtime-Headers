@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFHeaderLabelView, NSString, UIView;
-
 @interface MFComposeHeaderView : UIView {
     id _delegate;
     MFHeaderLabelView *_labelView;
@@ -11,9 +9,9 @@
     UIView *_separator;
 }
 
-@property(copy) NSString * label;
-@property(readonly) MFHeaderLabelView * labelView;
-@property(copy) NSString * navTitle;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly) MFHeaderLabelView *labelView;
+@property (nonatomic, copy) NSString *navTitle;
 
 + (float)_labelTopPaddingSpecification;
 + (id)defaultFont;

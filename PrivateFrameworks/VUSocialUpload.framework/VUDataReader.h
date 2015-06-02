@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class NSFileHandle, NSURL;
-
 @interface VUDataReader : NSObject {
     NSURL *_URL;
     NSFileHandle *_readHandle;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) NSFileHandle * readHandle;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) NSFileHandle *readHandle;
 
 + (id)dataReaderWithURL:(id)arg1 error:(id*)arg2;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSDictionary;
-
 @interface MTLCompileOptions : NSObject <NSCopying> {
     BOOL _debuggingEnabled;
     BOOL _fastMathEnabled;
     NSDictionary *_preprocessorMacros;
 }
 
-@property BOOL debuggingEnabled;
-@property BOOL fastMathEnabled;
-@property(copy) NSDictionary * preprocessorMacros;
+@property (nonatomic) BOOL debuggingEnabled;
+@property (nonatomic) BOOL fastMathEnabled;
+@property (nonatomic, copy) NSDictionary *preprocessorMacros;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

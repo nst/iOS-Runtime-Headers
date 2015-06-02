@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSUStreamReadChannel>, NSString;
-
 @interface TSUZipInflateReadChannel : NSObject <TSUStreamReadChannel> {
     unsigned int _CRC;
     char *_outBuffer;
@@ -34,18 +27,18 @@
     BOOL _validateCRC;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;
 - (void)dealloc;
-- (void)handleFailureWithHandler:(id)arg1 error:(id)arg2;
+- (void)handleFailureWithHandler:(id /* block */)arg1 error:(id)arg2;
 - (id)initWithReadChannel:(id)arg1 uncompressedSize:(unsigned long)arg2 CRC:(unsigned int)arg3 validateCRC:(BOOL)arg4;
 - (void)prepareBuffer;
-- (BOOL)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(BOOL)arg4 handler:(id)arg5;
-- (void)readWithHandler:(id)arg1;
+- (BOOL)processData:(id)arg1 inflateResult:(int*)arg2 CRC:(unsigned int*)arg3 isDone:(BOOL)arg4 handler:(id /* block */)arg5;
+- (void)readWithHandler:(id /* block */)arg1;
 
 @end

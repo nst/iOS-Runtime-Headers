@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFContentProtectionObserver>, MFWeakReferenceHolder, NSObject<OS_dispatch_queue>;
-
 @interface _MFContentProtectionObserverWrapper : NSObject {
     MFWeakReferenceHolder *_observerReference;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) <MFContentProtectionObserver> * observer;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly) <MFContentProtectionObserver> *observer;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void)dealloc;
 - (id)initWithObserver:(id)arg1 queue:(id)arg2;

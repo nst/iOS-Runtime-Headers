@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUCompletionFooterViewDelegate>, MPStoreCompletionOffering, MPUItemOfferButton, NSString, UILabel, UISegmentedControl, UITapGestureRecognizer, UIView;
-
 @interface MPUCompletionFooterView : UITableViewHeaderFooterView <SKUIItemOfferButtonDelegate> {
     UIView *_bottomSeparatorView;
     NSString *_completeMyCollectionTitle;
@@ -31,28 +29,28 @@
     UISegmentedControl *_variantSegmentedControl;
 }
 
-@property(retain) UIView * bottomSeparatorView;
-@property(copy) NSString * completeMyCollectionTitle;
-@property(copy) NSString * completeSubtitleFormat;
-@property(copy) NSString * completeTitleFormat;
-@property(retain) MPStoreCompletionOffering * completionOffering;
-@property(copy) NSString * completionTotalFormat;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUCompletionFooterViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPUItemOfferButton * itemOfferButton;
-@property int preferredVariant;
-@property(getter=isPurchasing) BOOL purchasing;
-@property BOOL showsVariants;
-@property int style;
-@property(retain) UILabel * subtitleLabel;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(retain) UILabel * titleLabel;
-@property(retain) UIView * topSeparatorView;
-@property(retain) UISegmentedControl * variantSegmentedControl;
+@property (nonatomic, retain) UIView *bottomSeparatorView;
+@property (nonatomic, copy) NSString *completeMyCollectionTitle;
+@property (nonatomic, copy) NSString *completeSubtitleFormat;
+@property (nonatomic, copy) NSString *completeTitleFormat;
+@property (nonatomic, retain) MPStoreCompletionOffering *completionOffering;
+@property (nonatomic, copy) NSString *completionTotalFormat;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUCompletionFooterViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUItemOfferButton *itemOfferButton;
+@property (nonatomic) int preferredVariant;
+@property (getter=isPurchasing, nonatomic) BOOL purchasing;
+@property (nonatomic) BOOL showsVariants;
+@property (nonatomic) int style;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIView *topSeparatorView;
+@property (nonatomic, retain) UISegmentedControl *variantSegmentedControl;
 
 + (float)defaultHeight;
 

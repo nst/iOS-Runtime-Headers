@@ -13,10 +13,10 @@
     unsigned int _timeRangesSpace;
 }
 
-@property(readonly) int* days;
-@property(readonly) unsigned int daysCount;
-@property(readonly) struct { unsigned int x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* timeRanges;
-@property(readonly) unsigned int timeRangesCount;
+@property (nonatomic, readonly) int*days;
+@property (nonatomic, readonly) unsigned int daysCount;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*timeRanges;
+@property (nonatomic, readonly) unsigned int timeRangesCount;
 
 + (BOOL)currentOperatingHoursAvailableForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (id)currentOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;

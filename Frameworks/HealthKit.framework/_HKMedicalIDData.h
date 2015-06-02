@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity, NSArray, NSData, NSDate, NSNumber, NSString;
-
 @interface _HKMedicalIDData : NSObject <NSCopying, NSSecureCoding> {
     NSString *_allergyInfo;
     NSDate *_birthdate;
@@ -22,21 +20,23 @@
     HKQuantity *_weight;
 }
 
-@property(retain) NSString * allergyInfo;
-@property(retain) NSDate * birthdate;
-@property int bloodType;
-@property(retain) NSDate * dateSaved;
-@property(retain) NSArray * emergencyContacts;
-@property(retain) HKQuantity * height;
-@property BOOL isDisabled;
-@property(retain) NSNumber * isOrganDonor;
-@property(retain) NSString * medicalConditions;
-@property(retain) NSString * medicalNotes;
-@property(retain) NSString * medicationInfo;
-@property(retain) NSString * name;
-@property(retain) NSData * pictureData;
-@property int schemaVersion;
-@property(retain) HKQuantity * weight;
+@property (nonatomic, retain) NSString *allergyInfo;
+@property (nonatomic, retain) NSDate *birthdate;
+@property (nonatomic) int bloodType;
+@property (nonatomic, retain) NSDate *dateSaved;
+@property (nonatomic, retain) NSArray *emergencyContacts;
+@property (nonatomic, retain) HKQuantity *height;
+@property (nonatomic) BOOL isDisabled;
+@property (nonatomic, retain) NSNumber *isOrganDonor;
+@property (nonatomic, retain) NSString *medicalConditions;
+@property (nonatomic, retain) NSString *medicalNotes;
+@property (nonatomic, retain) NSString *medicationInfo;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSData *pictureData;
+@property (nonatomic) int schemaVersion;
+@property (nonatomic, retain) HKQuantity *weight;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (BOOL)supportsSecureCoding;
 
@@ -54,7 +54,6 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isDisabled;
 - (id)isOrganDonor;
-- (void)loadDataFromABPerson:(void*)arg1;
 - (id)medicalConditions;
 - (id)medicalNotes;
 - (id)medicationInfo;
@@ -77,5 +76,9 @@
 - (void)setSchemaVersion:(int)arg1;
 - (void)setWeight:(id)arg1;
 - (id)weight;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (void)loadDataFromABPerson:(void*)arg1;
 
 @end

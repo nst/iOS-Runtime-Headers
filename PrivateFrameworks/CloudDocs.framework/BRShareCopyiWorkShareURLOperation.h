@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKShare, NSString;
-
 @interface BRShareCopyiWorkShareURLOperation : BROperation {
     NSString *_appName;
     CKShare *_share;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareCopyURLCompletionBlock;
-
+    id /* block */ _shareCopyURLCompletionBlock;
 }
 
-@property(retain) NSString * appName;
-@property(retain) CKShare * share;
-@property(copy) id shareCopyURLCompletionBlock;
+@property (nonatomic, retain) NSString *appName;
+@property (nonatomic, retain) CKShare *share;
+@property (copy) id /* block */ shareCopyURLCompletionBlock;
 
 - (id)appName;
 - (void)dealloc;
@@ -29,8 +19,8 @@
 - (void)main;
 - (void)setAppName:(id)arg1;
 - (void)setShare:(id)arg1;
-- (void)setShareCopyURLCompletionBlock:(id)arg1;
+- (void)setShareCopyURLCompletionBlock:(id /* block */)arg1;
 - (id)share;
-- (id)shareCopyURLCompletionBlock;
+- (id /* block */)shareCopyURLCompletionBlock;
 
 @end

@@ -2,32 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIDocument;
-
 @interface UIDocumentErrorRecoveryAttempter : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _appModalRecoveryAttempter;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _continuerOrNil;
-
+    id /* block */ _appModalRecoveryAttempter;
+    id /* block */ _continuerOrNil;
     UIDocument *_document;
     struct { 
         unsigned int attemptedRecovery : 1; 
     } _errorRecoveryAttempterFlags;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recoveryCancelerOrNil;
-
+    id /* block */ _recoveryCancelerOrNil;
     int _silentRecoveryOptionIndex;
     id _wrappedRecoveryAttempter;
 }
@@ -36,7 +18,7 @@
 - (BOOL)attemptSilentRecoveryFromError:(id)arg1 error:(id*)arg2;
 - (void)cancelRecovery;
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1 silentRecoveryOptionIndex:(unsigned int)arg2 appModalRecoveryAttempter:(id)arg3 recoveryCanceler:(id)arg4;
+- (id)initWithDocument:(id)arg1 silentRecoveryOptionIndex:(unsigned int)arg2 appModalRecoveryAttempter:(id /* block */)arg3 recoveryCanceler:(id /* block */)arg4;
 - (id)initWithDocument:(id)arg1 wrappedRecoveryAttempter:(id)arg2;
 
 @end

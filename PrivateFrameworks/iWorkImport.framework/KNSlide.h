@@ -2,28 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNMasterSlide, KNNoteInfo, NSMutableSet, NSSet, NSString;
-
 @interface KNSlide : KNAbstractSlide <TSKModel, TSKTransformableObject> {
     NSMutableSet *mInfosUsingObjectPlaceholderGeometry;
     KNMasterSlide *mMaster;
     KNNoteInfo *mNote;
 }
 
-@property(readonly) BOOL areInfosUsingObjectPlaceholderGeometry;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSSet * infosUsingObjectPlaceholderGeometry;
-@property(retain) KNMasterSlide * master;
-@property(retain) KNNoteInfo * note;
-@property(readonly) BOOL slideObjectsLayerWithMaster;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL areInfosUsingObjectPlaceholderGeometry;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSSet *infosUsingObjectPlaceholderGeometry;
+@property (nonatomic, retain) KNMasterSlide *master;
+@property (nonatomic, retain) KNNoteInfo *note;
+@property (nonatomic, readonly) BOOL slideObjectsLayerWithMaster;
+@property (readonly) Class superclass;
 
 + (id)blankSlideWithSlideNode:(id)arg1 master:(id)arg2 andShow:(id)arg3;
 

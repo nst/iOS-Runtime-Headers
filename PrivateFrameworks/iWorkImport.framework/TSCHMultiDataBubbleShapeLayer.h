@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, CAShapeLayer, TSDFill;
-
 @interface TSCHMultiDataBubbleShapeLayer : CATransformLayer <TSCHMultiDataElementShapeLayer> {
     float _viewScale;
     TSDFill *mFill;
@@ -13,8 +11,8 @@
     float mViewScale;
 }
 
-@property(retain) TSDFill * fill;
-@property float viewScale;
+@property (nonatomic, retain) TSDFill *fill;
+@property (nonatomic) float viewScale;
 
 - (BOOL)aboveIntercept;
 - (id)chartRep;

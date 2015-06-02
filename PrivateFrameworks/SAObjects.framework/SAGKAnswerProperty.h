@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAClientBoundCommand>, NSNumber, NSString, SAUIAppPunchOut, SAUIDecoratedText;
+@interface SAGKAnswerProperty : AceObject <SAAceSerializable>
 
-@interface SAGKAnswerProperty : AceObject <SAAceSerializable> {
-}
-
-@property(retain) <SAClientBoundCommand> * command;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) SAUIDecoratedText * decoratedValue;
-@property(retain) SAUIDecoratedText * decoratedValueAnnotation;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(retain) SAUIAppPunchOut * punchOut;
-@property(copy) NSNumber * selected;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
-@property(copy) NSString * valueAnnotation;
+@property (nonatomic, retain) <SAClientBoundCommand> *command;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedValue;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedValueAnnotation;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
+@property (nonatomic, copy) NSNumber *selected;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *valueAnnotation;
 
 + (id)answerProperty;
 + (id)answerPropertyWithDictionary:(id)arg1 context:(id)arg2;

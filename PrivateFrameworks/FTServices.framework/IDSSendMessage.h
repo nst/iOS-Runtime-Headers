@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSArray, NSData, NSNumber;
-
 @interface IDSSendMessage : IDSFaceTimeMessage <NSCopying> {
     NSArray *_peers;
     NSNumber *_reason;
     NSData *_selfPushToken;
 }
 
-@property(copy) NSArray * peers;
-@property(copy) NSNumber * reason;
-@property(copy) NSData * selfPushToken;
+@property (copy) NSArray *peers;
+@property (copy) NSNumber *reason;
+@property (copy) NSData *selfPushToken;
 
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

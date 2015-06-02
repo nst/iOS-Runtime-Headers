@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIApplicationExtensionViewControllerHost : _UIRemoteViewController {
-}
+@interface UIApplicationExtensionViewControllerHost : _UIRemoteViewController
 
 @end

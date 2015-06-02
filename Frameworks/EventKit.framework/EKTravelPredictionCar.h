@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface EKTravelPredictionCar : EKTravelPrediction <NSSecureCoding> {
     unsigned int _currentTrafficDensity;
     BOOL _hasTrafficIncidentOnRoute;
@@ -15,14 +13,14 @@
     double _travelStateScore;
 }
 
-@property(readonly) unsigned int currentTrafficDensity;
-@property(readonly) BOOL hasTrafficIncidentOnRoute;
-@property(readonly) unsigned int historicTrafficDensity;
-@property(readonly) int routeIncidentSignificance;
-@property(readonly) NSString * routeIncidentStreetName;
-@property(readonly) int routeIncidentType;
-@property(readonly) unsigned int travelState;
-@property(readonly) double travelStateScore;
+@property (nonatomic, readonly) unsigned int currentTrafficDensity;
+@property (nonatomic, readonly) BOOL hasTrafficIncidentOnRoute;
+@property (nonatomic, readonly) unsigned int historicTrafficDensity;
+@property (nonatomic, readonly) int routeIncidentSignificance;
+@property (nonatomic, readonly) NSString *routeIncidentStreetName;
+@property (nonatomic, readonly) int routeIncidentType;
+@property (nonatomic, readonly) unsigned int travelState;
+@property (nonatomic, readonly) double travelStateScore;
 
 - (void)addTrafficIncidentOfType:(int)arg1 withSignificance:(int)arg2 onStreet:(id)arg3;
 - (id)advice;

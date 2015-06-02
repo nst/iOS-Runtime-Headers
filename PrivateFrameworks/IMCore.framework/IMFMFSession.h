@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class FMFDevice, FMFSession, NSString;
-
 @interface IMFMFSession : NSObject <FMFSessionDelegate> {
     FMFDevice *_activeDevice;
     NSString *_establishingAccountID;
     FMFSession *_session;
 }
 
-@property(retain) FMFDevice * activeDevice;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL disableLocationSharing;
-@property(retain) NSString * establishingAccountID;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL restrictLocationSharing;
-@property(retain) FMFSession * session;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) FMFDevice *activeDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL disableLocationSharing;
+@property (nonatomic, retain) NSString *establishingAccountID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL restrictLocationSharing;
+@property (nonatomic, retain) FMFSession *session;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

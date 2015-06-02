@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface SSSoftwareLibraryItem : NSObject <SSXPCCoding> {
     BOOL _beta;
     NSMutableDictionary *_etags;
@@ -12,13 +10,13 @@
     NSMutableDictionary *_propertyValues;
 }
 
-@property(getter=isBeta) BOOL beta;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isPlaceholder) BOOL placeholder;
-@property(getter=isProfileValidated) BOOL profileValidated;
-@property(readonly) Class superclass;
+@property (getter=isBeta, nonatomic) BOOL beta;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isPlaceholder, nonatomic) BOOL placeholder;
+@property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
+@property (readonly) Class superclass;
 
 - (id)ETagForAssetType:(id)arg1;
 - (id)_initWithITunesMetadata:(id)arg1;

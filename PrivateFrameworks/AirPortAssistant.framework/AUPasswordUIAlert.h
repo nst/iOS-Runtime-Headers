@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface AUPasswordUIAlert : AUTextFieldUIAlert {
-}
+@interface AUPasswordUIAlert : AUTextFieldUIAlert
 
 - (void)prepareToShow;
 

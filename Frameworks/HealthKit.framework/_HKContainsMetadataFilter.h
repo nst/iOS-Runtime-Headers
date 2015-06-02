@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSSet;
-
 @interface _HKContainsMetadataFilter : _HKMetadataFilter {
     NSSet *_allowedValues;
 }
 
-@property(readonly) NSSet * allowedValues;
+@property (nonatomic, readonly) NSSet *allowedValues;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (BOOL)_acceptsOperatorType:(unsigned int)arg1;
 + (id)filterWithKey:(id)arg1 operatorType:(unsigned int)arg2 values:(id)arg3;
@@ -22,6 +22,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

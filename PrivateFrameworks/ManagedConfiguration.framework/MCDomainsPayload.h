@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSDictionary;
-
 @interface MCDomainsPayload : MCPayload {
     NSDictionary *_restrictions;
 }
 
-@property(retain) NSDictionary * restrictions;
+@property (nonatomic, retain) NSDictionary *restrictions;
 
 + (id)invalidDomainPatternErrorWithPattern:(id)arg1;
 + (BOOL)isPatternValid:(id)arg1 outError:(id*)arg2;

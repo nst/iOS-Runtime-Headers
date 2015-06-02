@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSEntityDescription, NSPredicate, NSString;
-
 @interface NSFetchRequest : NSPersistentStoreRequest <NSCoding> {
     id *_additionalPrivateIvars;
     unsigned int _batchSize;
@@ -31,25 +29,25 @@
     NSArray *_valuesToFetch;
 }
 
-@property(retain) NSArray * affectedStores;
-@property(retain) NSEntityDescription * entity;
-@property(readonly) NSString * entityName;
-@property unsigned int fetchBatchSize;
-@property unsigned int fetchLimit;
-@property unsigned int fetchOffset;
-@property(retain) NSPredicate * havingPredicate;
-@property BOOL includesPendingChanges;
-@property BOOL includesPropertyValues;
-@property BOOL includesSubentities;
-@property(retain) NSPredicate * predicate;
-@property(copy) NSArray * propertiesToFetch;
-@property(copy) NSArray * propertiesToGroupBy;
-@property(copy) NSArray * relationshipKeyPathsForPrefetching;
-@property unsigned int resultType;
-@property BOOL returnsDistinctResults;
-@property BOOL returnsObjectsAsFaults;
-@property BOOL shouldRefreshRefetchedObjects;
-@property(retain) NSArray * sortDescriptors;
+@property (nonatomic, retain) NSArray *affectedStores;
+@property (nonatomic, retain) NSEntityDescription *entity;
+@property (nonatomic, readonly) NSString *entityName;
+@property (nonatomic) unsigned int fetchBatchSize;
+@property (nonatomic) unsigned int fetchLimit;
+@property (nonatomic) unsigned int fetchOffset;
+@property (nonatomic, retain) NSPredicate *havingPredicate;
+@property (nonatomic) BOOL includesPendingChanges;
+@property (nonatomic) BOOL includesPropertyValues;
+@property (nonatomic) BOOL includesSubentities;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic, copy) NSArray *propertiesToFetch;
+@property (nonatomic, copy) NSArray *propertiesToGroupBy;
+@property (nonatomic, copy) NSArray *relationshipKeyPathsForPrefetching;
+@property (nonatomic) unsigned int resultType;
+@property (nonatomic) BOOL returnsDistinctResults;
+@property (nonatomic) BOOL returnsObjectsAsFaults;
+@property (nonatomic) BOOL shouldRefreshRefetchedObjects;
+@property (nonatomic, retain) NSArray *sortDescriptors;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)fetchRequestWithEntityName:(id)arg1;

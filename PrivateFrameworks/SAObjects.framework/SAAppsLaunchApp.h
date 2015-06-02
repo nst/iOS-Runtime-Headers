@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAAppsLaunchApp : SABaseClientBoundCommand
 
-@interface SAAppsLaunchApp : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * launchId;
+@property (nonatomic, copy) NSString *launchId;
 
 + (id)launchApp;
 + (id)launchAppWithDictionary:(id)arg1 context:(id)arg2;

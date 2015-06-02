@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSMutableArray;
-
 @interface PSIGroupAggregate : NSObject {
     NSMutableArray *_aggregatedGroupIds;
     NSMutableArray *_assetIdArrays;

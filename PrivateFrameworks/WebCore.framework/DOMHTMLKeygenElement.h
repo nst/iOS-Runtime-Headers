@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLFormElement, DOMNodeList, DOMValidityState, NSString;
-
-@interface DOMHTMLKeygenElement : DOMHTMLElement {
-}
+@interface DOMHTMLKeygenElement : DOMHTMLElement
 
 @property BOOL autofocus;
-@property(copy) NSString * challenge;
+@property (copy) NSString *challenge;
 @property BOOL disabled;
-@property(readonly) DOMHTMLFormElement * form;
-@property(copy) NSString * keytype;
-@property(readonly) DOMNodeList * labels;
-@property(copy) NSString * name;
-@property(copy,readonly) NSString * type;
-@property(copy,readonly) NSString * validationMessage;
-@property(readonly) DOMValidityState * validity;
-@property(readonly) BOOL willValidate;
+@property (readonly) DOMHTMLFormElement *form;
+@property (copy) NSString *keytype;
+@property (readonly) DOMNodeList *labels;
+@property (copy) NSString *name;
+@property (readonly, copy) NSString *type;
+@property (readonly, copy) NSString *validationMessage;
+@property (readonly) DOMValidityState *validity;
+@property (readonly) BOOL willValidate;
 
 - (BOOL)autofocus;
 - (id)challenge;

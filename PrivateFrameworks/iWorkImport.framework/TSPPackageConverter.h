@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPFileCoordinatorDelegate>, NSURL, TSPPackage;
-
 @interface TSPPackageConverter : NSObject {
     NSURL *_URL;
     <TSPFileCoordinatorDelegate> *_fileCoordinatorDelegate;
@@ -11,12 +9,12 @@
     TSPPackage *_package;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) BOOL isCancelled;
-@property(readonly) BOOL isPasswordProtected;
-@property(readonly) BOOL isValid;
-@property(readonly) TSPPackage * package;
-@property(readonly) int packageType;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) BOOL isPasswordProtected;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) TSPPackage *package;
+@property (nonatomic, readonly) int packageType;
 
 + (BOOL)convertDocumentAtURL:(id)arg1 toPackageType:(int)arg2 error:(id*)arg3;
 + (id)newPackageConverterWithURL:(id)arg1;
@@ -24,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (BOOL)checkPassword:(id)arg1;
-- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
+- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id /* block */)arg2;
 - (id)init;
 - (id)initWithURL:(id)arg1 package:(id)arg2 fileCoordinatorDelegate:(id)arg3;
 - (BOOL)isCancelled;

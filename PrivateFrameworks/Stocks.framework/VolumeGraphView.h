@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class StockGraphImageSet, TintedView, UIImage, UIView;
-
 @interface VolumeGraphView : UIView {
     StockGraphImageSet *_graphImageSet;
     BOOL _showingTintedRegion;
@@ -12,7 +10,7 @@
     UIImage *_volumeImage;
 }
 
-@property(retain) StockGraphImageSet * graphImageSet;
+@property (nonatomic, retain) StockGraphImageSet *graphImageSet;
 
 - (void).cxx_destruct;
 - (id)graphImageSet;

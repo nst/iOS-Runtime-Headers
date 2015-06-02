@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <UICollectionViewDataSource>, GKSectionMetrics, GKSupplementaryViewMetrics;
-
 @interface GKCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     BOOL _allSectionItemsVisible;
     unsigned int _currentTotalItemCount;
@@ -21,20 +19,20 @@
     float _unpinnedY;
 }
 
-@property BOOL allSectionItemsVisible;
-@property unsigned int currentTotalItemCount;
-@property unsigned int currentVisibleItemCount;
-@property(retain) <UICollectionViewDataSource> * dataSource;
-@property BOOL doesAbutLeftOfCollectionView;
-@property unsigned int gridLayoutLocation;
-@property BOOL isPartOfGlobalPinningGroup;
-@property BOOL isPinned;
-@property float leadingMargin;
-@property unsigned int maxTotalItemCount;
-@property(retain) GKSectionMetrics * sectionMetrics;
-@property(retain) GKSupplementaryViewMetrics * supplementaryMetrics;
-@property float trailingMargin;
-@property float unpinnedY;
+@property (nonatomic) BOOL allSectionItemsVisible;
+@property (nonatomic) unsigned int currentTotalItemCount;
+@property (nonatomic) unsigned int currentVisibleItemCount;
+@property (nonatomic, retain) <UICollectionViewDataSource> *dataSource;
+@property (nonatomic) BOOL doesAbutLeftOfCollectionView;
+@property (nonatomic) unsigned int gridLayoutLocation;
+@property (nonatomic) BOOL isPartOfGlobalPinningGroup;
+@property (nonatomic) BOOL isPinned;
+@property (nonatomic) float leadingMargin;
+@property (nonatomic) unsigned int maxTotalItemCount;
+@property (nonatomic, retain) GKSectionMetrics *sectionMetrics;
+@property (nonatomic, retain) GKSupplementaryViewMetrics *supplementaryMetrics;
+@property (nonatomic) float trailingMargin;
+@property (nonatomic) float unpinnedY;
 
 - (BOOL)allSectionItemsVisible;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

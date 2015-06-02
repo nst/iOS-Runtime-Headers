@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIView;
-
 @interface GKCenteringScrollView : UIScrollView {
     UIView *_contentView;
     UIView *_footerView;
 }
 
-@property(retain) UIView * contentView;
-@property(retain) UIView * footerView;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) UIView *footerView;
 
 - (void)centerContentViewIfDesirable;
 - (id)contentView;

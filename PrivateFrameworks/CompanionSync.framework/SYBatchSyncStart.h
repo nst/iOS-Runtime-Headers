@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString, SYMessageHeader;
-
 @interface SYBatchSyncStart : PBCodable <NSCopying> {
     unsigned int _estimatedChangeCount;
     struct { 
@@ -13,10 +11,10 @@
     NSString *_syncID;
 }
 
-@property unsigned int estimatedChangeCount;
-@property BOOL hasEstimatedChangeCount;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * syncID;
+@property (nonatomic) unsigned int estimatedChangeCount;
+@property (nonatomic) BOOL hasEstimatedChangeCount;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

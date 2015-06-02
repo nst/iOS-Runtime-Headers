@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSTimer;
-
 @interface WiFiUtils : NSObject {
     BOOL _joinInProgress;
     NSMutableDictionary *_missingBSSIDCounts;
@@ -18,9 +16,9 @@
     struct WiFiShimContext { } *_wifiShim;
 }
 
-@property(retain) NSTimer * _scanTimer;
-@property double periodicScanInterval;
-@property int periodicScanType;
+@property (nonatomic, retain) NSTimer *_scanTimer;
+@property (nonatomic) double periodicScanInterval;
+@property (nonatomic) int periodicScanType;
 
 + (int)barsForRSSI:(int)arg1;
 + (id)copyFilteredNetworks:(id)arg1 ignoreOptions:(int)arg2;

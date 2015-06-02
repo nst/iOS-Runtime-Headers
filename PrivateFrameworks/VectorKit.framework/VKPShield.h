@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString, VKPGenericShieldStyleInfo;
-
 @interface VKPShield : PBCodable <NSCopying> {
     VKPGenericShieldStyleInfo *_genericShieldStyleInfo;
     NSString *_identifier;
     NSMutableArray *_variants;
 }
 
-@property(retain) VKPGenericShieldStyleInfo * genericShieldStyleInfo;
-@property(readonly) BOOL hasGenericShieldStyleInfo;
-@property(retain) NSString * identifier;
-@property(retain) NSMutableArray * variants;
+@property (nonatomic, retain) VKPGenericShieldStyleInfo *genericShieldStyleInfo;
+@property (nonatomic, readonly) BOOL hasGenericShieldStyleInfo;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSMutableArray *variants;
 
 - (void)addVariants:(id)arg1;
 - (void)clearVariants;

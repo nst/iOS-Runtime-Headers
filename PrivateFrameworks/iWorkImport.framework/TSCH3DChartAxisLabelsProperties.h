@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DLabelResources, TSCHChartInfo, TSCHSelectionPath, TSULRUCache;
-
 @interface TSCH3DChartAxisLabelsProperties : NSObject {
     float mCachedTextFactor;
     TSULRUCache *mCategoryStridingCache;
@@ -14,13 +12,13 @@
     unsigned int mStyleIndex;
 }
 
-@property float cachedTextFactor;
-@property(readonly) TSULRUCache * categoryStridingCache;
-@property BOOL hidden;
-@property(readonly) TSCHChartInfo * info;
-@property(readonly) TSCH3DLabelResources * labels;
-@property(retain) TSCHSelectionPath * selectionPath;
-@property(readonly) unsigned int styleIndex;
+@property (nonatomic) float cachedTextFactor;
+@property (nonatomic, readonly) TSULRUCache *categoryStridingCache;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic, readonly) TSCHChartInfo *info;
+@property (nonatomic, readonly) TSCH3DLabelResources *labels;
+@property (nonatomic, retain) TSCHSelectionPath *selectionPath;
+@property (nonatomic, readonly) unsigned int styleIndex;
 
 + (id)propertiesWithInfo:(id)arg1 labels:(id)arg2 styleIndex:(unsigned int)arg3;
 

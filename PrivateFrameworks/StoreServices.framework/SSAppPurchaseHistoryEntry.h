@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSAppPurchaseHistoryEntry : SSSQLiteEntity {
-}
+@interface SSAppPurchaseHistoryEntry : SSSQLiteEntity
 
 + (id)databaseTable;
 + (id)disambiguatedSQLForProperty:(id)arg1;

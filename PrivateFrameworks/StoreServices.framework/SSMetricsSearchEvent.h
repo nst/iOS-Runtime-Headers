@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSMetricsSearchEvent : SSMetricsBaseEvent
 
-@interface SSMetricsSearchEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) id actionDetails;
-@property(retain) NSString * actionType;
-@property(retain) NSString * searchTerm;
-@property(retain) NSString * targetIdentifier;
-@property(retain) NSString * targetType;
-@property(retain) NSString * targetURL;
+@property (nonatomic, retain) id actionDetails;
+@property (nonatomic, retain) NSString *actionType;
+@property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic, retain) NSString *targetIdentifier;
+@property (nonatomic, retain) NSString *targetType;
+@property (nonatomic, retain) NSString *targetURL;
 
 - (id)actionDetails;
 - (id)actionType;

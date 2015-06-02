@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOComposedRoute, GEOMapRegion, NSString, VKTrafficSegmentsAlongRoute;
-
 @interface VKPolylineOverlay : NSObject <GEOComposedRouteObserver, VKOverlay> {
     GEOComposedRoute *_composedRoute;
     BOOL _isReadyForSnapping;
@@ -12,15 +10,15 @@
     double _trafficTimeStamp;
 }
 
-@property(readonly) GEOMapRegion * boundingMapRegion;
-@property(readonly) GEOComposedRoute * composedRoute;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) VKTrafficSegmentsAlongRoute * trafficSegments;
-@property(readonly) double trafficTimeStamp;
+@property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
+@property (nonatomic, readonly) GEOComposedRoute *composedRoute;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) VKTrafficSegmentsAlongRoute *trafficSegments;
+@property (nonatomic, readonly) double trafficTimeStamp;
 
 - (void)_setNeedsLayout;
 - (void)_updateTraffic;
@@ -32,7 +30,7 @@
 - (void)composedRouteUpdatedTraffic:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (id)getPathsForPainter:(id)arg1 renderRegion:(id)arg2 shouldSnapToRoads:(BOOL)arg3 snappingCompletionHandler:(id)arg4;
+- (id)getPathsForPainter:(id)arg1 renderRegion:(id)arg2 shouldSnapToRoads:(BOOL)arg3 snappingCompletionHandler:(id /* block */)arg4;
 - (id)initWithComposedRoute:(id)arg1;
 - (BOOL)isSnappingForSceneTiles;
 - (void)removeObserver:(id)arg1;

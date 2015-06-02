@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIDecorationImageViewElement : SKUIImageViewElement {
-}
+@interface SKUIDecorationImageViewElement : SKUIImageViewElement
 
 @end

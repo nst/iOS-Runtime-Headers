@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEDNSSettings, NEKeychainItem, NSArray, NSData, NSString;
-
 @interface NEVPNProtocolIPSec : NEVPNProtocol {
     NEDNSSettings *_DNSSettings;
     int _authenticationMethod;
@@ -16,14 +14,14 @@
     BOOL _useExtendedAuthentication;
 }
 
-@property(copy) NEDNSSettings * DNSSettings;
+@property (copy) NEDNSSettings *DNSSettings;
 @property int authenticationMethod;
-@property(copy) NSArray * legacyExchangeMode;
-@property(copy) NSArray * legacyProposals;
-@property(copy) NSString * localIdentifier;
-@property(copy) NSString * remoteIdentifier;
-@property(copy) NEKeychainItem * sharedSecretKeychainItem;
-@property(copy) NSData * sharedSecretReference;
+@property (copy) NSArray *legacyExchangeMode;
+@property (copy) NSArray *legacyProposals;
+@property (copy) NSString *localIdentifier;
+@property (copy) NSString *remoteIdentifier;
+@property (copy) NEKeychainItem *sharedSecretKeychainItem;
+@property (copy) NSData *sharedSecretReference;
 @property BOOL useExtendedAuthentication;
 
 + (BOOL)supportsSecureCoding;

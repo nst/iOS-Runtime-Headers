@@ -3,7 +3,7 @@
  */
 
 @interface NSPathStore2 : NSString {
-    unsigned short _characters[0];
+    unsigned short _characters;
     unsigned int _lengthAndRefCount;
 }
 

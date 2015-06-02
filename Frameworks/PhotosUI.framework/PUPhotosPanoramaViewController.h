@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PHAssetCollection, PUPhotosPanoramaViewControllerSpec, PUSectionedGridLayout;
-
 @interface PUPhotosPanoramaViewController : PUPhotosGridViewController {
     PUPhotosPanoramaViewControllerSpec *_panoramaSpec;
     PHAssetCollection *_userPanoAlbum;
 }
 
-@property(readonly) PUSectionedGridLayout * mainGridLayout;
-@property(retain) PUPhotosPanoramaViewControllerSpec * panoramaSpec;
-@property(retain) PHAssetCollection * userPanoAlbum;
+@property (nonatomic, readonly) PUSectionedGridLayout *mainGridLayout;
+@property (nonatomic, retain) PUPhotosPanoramaViewControllerSpec *panoramaSpec;
+@property (nonatomic, retain) PHAssetCollection *userPanoAlbum;
 
 - (void).cxx_destruct;
 - (BOOL)_hasScrollableContent;

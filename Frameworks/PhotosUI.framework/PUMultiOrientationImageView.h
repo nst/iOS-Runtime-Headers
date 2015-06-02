@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, UIImage, UIView;
-
 @interface PUMultiOrientationImageView : UIView {
     BOOL _allowsEdgeAntialiasing;
     UIView *_currentOrientedSubview;
@@ -11,8 +9,8 @@
     NSArray *_orientedSubviews;
 }
 
-@property BOOL allowsEdgeAntialiasing;
-@property(retain) UIImage * image;
+@property (nonatomic) BOOL allowsEdgeAntialiasing;
+@property (nonatomic, retain) UIImage *image;
 
 - (void).cxx_destruct;
 - (void)_updateLayout;

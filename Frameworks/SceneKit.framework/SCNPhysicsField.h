@@ -2,17 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class SCNNode, SCNPhysicsWorld;
-
 @interface SCNPhysicsField : NSObject <NSCopying, NSSecureCoding> {
     BOOL _active;
     unsigned int _categoryBitMask;
@@ -23,10 +12,7 @@
     } _direction;
     BOOL _exclusive;
     float _falloffExponent;
-
-  /* Error parsing encoded ivar type info: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf} */
     struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; } *_field;
-
     struct SCNVector3 { 
         float x; 
         float y; 
@@ -46,20 +32,20 @@
     SCNPhysicsWorld *_world;
 }
 
-@property(getter=isActive) BOOL active;
-@property unsigned int categoryBitMask;
-@property struct SCNVector3 { float x1; float x2; float x3; } direction;
-@property(getter=isExclusive) BOOL exclusive;
-@property float falloffExponent;
-@property struct SCNVector3 { float x1; float x2; float x3; } halfExtent;
-@property float minimumDistance;
-@property struct SCNVector3 { float x1; float x2; float x3; } offset;
-@property int scope;
-@property float strength;
-@property BOOL usesEllipsoidalExtent;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) unsigned int categoryBitMask;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } direction;
+@property (getter=isExclusive, nonatomic) BOOL exclusive;
+@property (nonatomic) float falloffExponent;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } halfExtent;
+@property (nonatomic) float minimumDistance;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } offset;
+@property (nonatomic) int scope;
+@property (nonatomic) float strength;
+@property (nonatomic) BOOL usesEllipsoidalExtent;
 
 + (id)SCNJSExportProtocol;
-+ (id)customFieldWithEvaluationBlock:(id)arg1;
++ (id)customFieldWithEvaluationBlock:(id /* block */)arg1;
 + (id)dragField;
 + (id)electricField;
 + (id)field;
@@ -75,11 +61,7 @@
 - (id).cxx_construct;
 - (void)_commonInit;
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_createField;
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
-
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_handle;
-     /* Encoded args for previous method: ^{c3dPhysicsField=^^?{?=[4]}{?=[4]}fffIBBBBf}8@0:4 */
-
 - (id)_owner;
 - (void)_removeOwner;
 - (void)_setOwner:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSCoding>, NSDate, NSString, NSURL;
-
 @interface NSFileVersion : NSObject {
     id _addition;
     NSString *_clientID;
@@ -21,24 +19,24 @@
     id _nonLocalVersion;
 }
 
-@property(copy,readonly) NSURL * URL;
-@property(getter=_isBackup,readonly) BOOL _isBackup;
-@property(getter=isConflict,readonly) BOOL conflict;
-@property(getter=isDiscardable) BOOL discardable;
-@property(copy,readonly) NSString * etag;
-@property(readonly) BOOL hasLocalContents;
-@property(readonly) BOOL hasThumbnail;
-@property(copy,readonly) NSString * localizedName;
-@property(copy,readonly) NSString * localizedNameOfSavingComputer;
-@property(copy,readonly) NSDate * modificationDate;
-@property(copy,readonly) NSString * originalPOSIXName;
-@property(copy,readonly) NSString * originatorName;
-@property(retain,readonly) <NSCoding> * persistentIdentifier;
-@property(getter=isResolved) BOOL resolved;
-@property(readonly) unsigned long long size;
-@property(getter=isUbiquitous,readonly) BOOL ubiquitous;
+@property (readonly, copy) NSURL *URL;
+@property (getter=_isBackup, readonly) BOOL _isBackup;
+@property (getter=isConflict, readonly) BOOL conflict;
+@property (getter=isDiscardable) BOOL discardable;
+@property (readonly, copy) NSString *etag;
+@property (readonly) BOOL hasLocalContents;
+@property (readonly) BOOL hasThumbnail;
+@property (readonly, copy) NSString *localizedName;
+@property (readonly, copy) NSString *localizedNameOfSavingComputer;
+@property (readonly, copy) NSDate *modificationDate;
+@property (readonly, copy) NSString *originalPOSIXName;
+@property (readonly, copy) NSString *originatorName;
+@property (readonly, retain) <NSCoding> *persistentIdentifier;
+@property (getter=isResolved) BOOL resolved;
+@property (readonly) unsigned long long size;
+@property (getter=isUbiquitous, readonly) BOOL ubiquitous;
 
-+ (void*)_addConflictObserverForItemAtURL:(id)arg1 statusChangedHandler:(id)arg2;
++ (void*)_addConflictObserverForItemAtURL:(id)arg1 statusChangedHandler:(id /* block */)arg2;
 + (id)_addVersionOfItemAtURL:(id)arg1 withContentsOfURL:(id)arg2 options:(unsigned int)arg3 temporaryStorageIdentifier:(id*)arg4 error:(id*)arg5;
 + (id)_addVersionOfItemAtURL:(id)arg1 withContentsOfURL:(id)arg2 options:(unsigned int)arg3 userInfo:(id)arg4 temporaryStorageIdentifier:(id*)arg5 error:(id*)arg6;
 + (id)_autosaveDirectoryURLCreateIfNecessary:(BOOL)arg1;
@@ -64,9 +62,9 @@
 + (id)_versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 temporaryStorageIdentifier:(id)arg3;
 + (id)addVersionOfItemAtURL:(id)arg1 withContentsOfURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
 + (id)currentVersionOfItemAtURL:(id)arg1;
-+ (void)discoverUbiquitousVersionsOfItemAtURL:(id)arg1 completionHandler:(id)arg2;
-+ (void)getNonlocalVersionsOfItemAtURL:(id)arg1 completionHandler:(id)arg2;
-+ (void)getNonlocalVersionsOfItemAtURL:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
++ (void)discoverUbiquitousVersionsOfItemAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)getNonlocalVersionsOfItemAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)getNonlocalVersionsOfItemAtURL:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)otherVersionsOfItemAtURL:(id)arg1;
 + (BOOL)removeOtherVersionsOfItemAtURL:(id)arg1 error:(id*)arg2;

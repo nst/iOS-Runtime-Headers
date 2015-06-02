@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/XPCService.framework/XPCService
  */
 
-@class NSDictionary;
-
 @interface XPCServiceRuntime : NSObject {
     NSDictionary *_entitlements;
 }

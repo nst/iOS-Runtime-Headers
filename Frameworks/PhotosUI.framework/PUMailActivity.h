@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class MFMailComposeViewController, NSString, PLManagedAsset, PLProgressView, PLUIEditVideoViewController, PUActivityItemSource, PUActivityItemSourceController, UIViewController;
-
 @interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity> {
     PLManagedAsset *_currentVideo;
     PUActivityItemSource *_currentVideoItemSource;
@@ -16,15 +14,15 @@
     id _strongSelf;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property PUActivityItemSourceController * itemSourceController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) PUActivityItemSourceController *itemSourceController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_pu_cleanup;
 - (void)_remakeAndSendVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2;
 - (void)_sendViaEmail;

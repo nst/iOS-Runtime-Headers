@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray, NSDictionary, NSLayoutManager;
-
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
     NSDictionary *_attributesForExtraLineFragment;
     float _cacheBoundsMaxY;
@@ -32,16 +30,18 @@
     id _textView;
 }
 
-@property(copy) NSArray * exclusionPaths;
-@property BOOL heightTracksTextView;
-@property(readonly) BOOL isSimpleRectangularTextContainer;
-@property NSLayoutManager * layoutManager;
-@property int layoutOrientation;
-@property int lineBreakMode;
-@property float lineFragmentPadding;
-@property unsigned int maximumNumberOfLines;
-@property struct CGSize { float x1; float x2; } size;
-@property BOOL widthTracksTextView;
+@property (nonatomic, copy) NSArray *exclusionPaths;
+@property (nonatomic) BOOL heightTracksTextView;
+@property (readonly) BOOL isSimpleRectangularTextContainer;
+@property (nonatomic) NSLayoutManager *layoutManager;
+@property (nonatomic) int layoutOrientation;
+@property (nonatomic) int lineBreakMode;
+@property (nonatomic) float lineFragmentPadding;
+@property (nonatomic) unsigned int maximumNumberOfLines;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) BOOL widthTracksTextView;
+
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 + (void)initialize;
 
@@ -49,7 +49,7 @@
 - (void)_resizeAccordingToTextView:(id)arg1;
 - (id)attributesForExtraLineFragment;
 - (struct CGSize { float x1; float x2; })containerSize;
-- (void)coordinateAccess:(id)arg1;
+- (void)coordinateAccess:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -83,9 +83,12 @@
 - (void)setTextView:(id)arg1;
 - (void)setWidthTracksTextView:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (id)textView;
 - (BOOL)widthTracksTextView;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;
 
 @end

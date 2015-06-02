@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UIView, UIViewController<PLModalDimmingContained>;
-
 @interface PLModalDimmingViewController : UIViewController {
     UIViewController<PLModalDimmingContained> *_contentViewController;
     UIImageView *_vignetteView;
     UIView *_wrapperView;
 }
 
-@property(retain) UIViewController<PLModalDimmingContained> * contentViewController;
+@property (nonatomic, retain) UIViewController<PLModalDimmingContained> *contentViewController;
 
 - (void)_updateVignetteToOrientation:(int)arg1;
 - (void)_updateWrapperView:(id)arg1 toOrientation:(int)arg2 forViewController:(id)arg3;
 - (id)contentViewController;
 - (void)dealloc;
-- (void)dismissWithCustomAnimation:(int)arg1 completionHandler:(id)arg2;
+- (void)dismissWithCustomAnimation:(int)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithContentViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)presentModalOnViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)presentModalOnViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)presentWithCustomAnimation;
 - (void)setContentViewController:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

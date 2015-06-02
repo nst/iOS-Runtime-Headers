@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString;
-
 @interface MFConnectionSettings : NSObject <NSCopying> {
     NSString *_accountIdentifier;
     BOOL _allowsTrustPrompt;
@@ -19,17 +17,17 @@
     BOOL _usesSSL;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property BOOL allowsTrustPrompt;
-@property(copy) NSString * certUIService;
-@property(copy) NSArray * clientCertificates;
-@property(copy) NSString * hostname;
-@property unsigned int portNumber;
-@property(copy) NSString * serviceName;
-@property(copy) NSString * sourceApplicationBundleIdentifier;
-@property BOOL tryDirectSSL;
-@property BOOL usesOpportunisticSockets;
-@property BOOL usesSSL;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic) BOOL allowsTrustPrompt;
+@property (nonatomic, copy) NSString *certUIService;
+@property (nonatomic, copy) NSArray *clientCertificates;
+@property (nonatomic, copy) NSString *hostname;
+@property (nonatomic) unsigned int portNumber;
+@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic) BOOL tryDirectSSL;
+@property (nonatomic) BOOL usesOpportunisticSockets;
+@property (nonatomic) BOOL usesSSL;
 
 - (id)accountIdentifier;
 - (BOOL)allowsTrustPrompt;

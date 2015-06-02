@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBProtobufSequenceNumberManager, IDSDevice, IDSService, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BLTRemoteObject : NSObject <IDSServiceDelegate> {
     NSObject<OS_dispatch_queue> *_clientQueue;
     IDSDevice *_defaultPairedDevice;
@@ -17,18 +15,18 @@
     IDSService *_service;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * clientQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) IDSDevice * defaultPairedDevice;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BLTPBProtobufSequenceNumberManager * sequenceNumberManager;
-@property(readonly) IDSService * service;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) IDSDevice *defaultPairedDevice;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BLTPBProtobufSequenceNumberManager *sequenceNumberManager;
+@property (nonatomic, readonly) IDSService *service;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7 andResponse:(id)arg8;
-- (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7 andResponse:(id)arg8;
+- (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
+- (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
 - (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;
 - (id)clientQueue;
 - (unsigned int)connectionStatus;
@@ -42,11 +40,11 @@
 - (void)registerProtobufHandlers;
 - (void)saveHasSentUDID;
 - (void)sendRequest:(id)arg1 type:(unsigned short)arg2;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 didSend:(id)arg3;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 didSend:(id)arg4;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 didSend:(id)arg5;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 onlyOneFor:(id)arg5 didSend:(id)arg6 andResponse:(id)arg7;
-- (void)sendResponse:(id)arg1 type:(unsigned short)arg2 withRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id)arg7;
+- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 didSend:(id /* block */)arg3;
+- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 didSend:(id /* block */)arg4;
+- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 didSend:(id /* block */)arg5;
+- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 onlyOneFor:(id)arg5 didSend:(id /* block */)arg6 andResponse:(id /* block */)arg7;
+- (void)sendResponse:(id)arg1 type:(unsigned short)arg2 withRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7;
 - (id)sequenceNumberManager;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;

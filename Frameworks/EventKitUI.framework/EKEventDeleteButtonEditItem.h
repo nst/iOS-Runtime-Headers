@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableViewCell;
-
 @interface EKEventDeleteButtonEditItem : EKEventEditItem {
     UITableViewCell *_cell;
     SEL _deleteButtonAction;

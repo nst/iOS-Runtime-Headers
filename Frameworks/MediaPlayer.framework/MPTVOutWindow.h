@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMovieTVHUDView, MPVideoView;
-
 @interface MPTVOutWindow : UIWindow {
     MPMovieTVHUDView *_hudView;
     MPVideoView *_videoView;

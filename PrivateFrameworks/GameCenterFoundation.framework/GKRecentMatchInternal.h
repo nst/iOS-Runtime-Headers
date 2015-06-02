@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGameRecordInternal, GKPlayerInternal, NSDate;
-
 @interface GKRecentMatchInternal : GKInternalRepresentation {
     NSDate *_date;
     GKGameRecordInternal *_game;
     GKPlayerInternal *_player;
 }
 
-@property(retain) NSDate * date;
-@property(retain) GKGameRecordInternal * game;
-@property(retain) GKPlayerInternal * player;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) GKGameRecordInternal *game;
+@property (nonatomic, retain) GKPlayerInternal *player;
 
 + (id)secureCodedPropertyKeys;
 

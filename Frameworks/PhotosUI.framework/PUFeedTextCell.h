@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSAttributedString, PUFeedTextCellContentView, UIButton, UIImage, UIImageView, UILabel;
-
 @interface PUFeedTextCell : PUFeedCell {
     UIButton *__button;
     UILabel *__detailLabel;
@@ -46,28 +44,28 @@
     float _textDetailTextSpacing;
 }
 
-@property(setter=_setButton:,retain) UIButton * _button;
-@property(setter=_setDetailLabel:,retain) UILabel * _detailLabel;
-@property(setter=_setIconImageView:,retain) UIImageView * _iconImageView;
-@property(setter=_setLabel:,retain) UILabel * _label;
-@property(retain) NSAttributedString * attributedDetailText;
-@property(retain) NSAttributedString * attributedText;
-@property int buttonHorizontalAlignment;
-@property struct UIOffset { float x1; float x2; } buttonOffset;
-@property float buttonPadding;
-@property int buttonSize;
-@property int buttonType;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(retain) UIImage * iconImage;
-@property int iconLocation;
-@property struct UIOffset { float x1; float x2; } iconOffset;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } iconPadding;
-@property int numberOfDetailTextLines;
-@property int numberOfTextLines;
-@property BOOL shouldUseOpaqueBackground;
-@property int tappableArea;
-@property int textAlignment;
-@property float textDetailTextSpacing;
+@property (setter=_setButton:, nonatomic, retain) UIButton *_button;
+@property (setter=_setDetailLabel:, nonatomic, retain) UILabel *_detailLabel;
+@property (setter=_setIconImageView:, nonatomic, retain) UIImageView *_iconImageView;
+@property (setter=_setLabel:, nonatomic, retain) UILabel *_label;
+@property (nonatomic, retain) NSAttributedString *attributedDetailText;
+@property (nonatomic, retain) NSAttributedString *attributedText;
+@property (nonatomic) int buttonHorizontalAlignment;
+@property (nonatomic) struct UIOffset { float x1; float x2; } buttonOffset;
+@property (nonatomic) float buttonPadding;
+@property (nonatomic) int buttonSize;
+@property (nonatomic) int buttonType;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic) int iconLocation;
+@property (nonatomic) struct UIOffset { float x1; float x2; } iconOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } iconPadding;
+@property (nonatomic) int numberOfDetailTextLines;
+@property (nonatomic) int numberOfTextLines;
+@property (nonatomic) BOOL shouldUseOpaqueBackground;
+@property (nonatomic) int tappableArea;
+@property (nonatomic) int textAlignment;
+@property (nonatomic) float textDetailTextSpacing;
 
 - (void).cxx_destruct;
 - (id)_button;

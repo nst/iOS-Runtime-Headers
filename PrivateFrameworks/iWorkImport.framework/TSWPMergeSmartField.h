@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPMergeSmartField : TSWPPlaceholderSmartField {
     int _category;
     NSString *_guid;
@@ -20,14 +13,14 @@
     NSString *_whitespace;
 }
 
-@property int category;
-@property(copy) NSString * guid;
-@property(copy) NSString * key;
-@property(copy) NSString * label;
-@property(copy) NSString * property;
-@property BOOL requiresFollowingWhitespace;
-@property(copy) NSString * tableField;
-@property(copy) NSString * whitespace;
+@property (nonatomic) int category;
+@property (nonatomic, copy) NSString *guid;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *property;
+@property (nonatomic) BOOL requiresFollowingWhitespace;
+@property (nonatomic, copy) NSString *tableField;
+@property (nonatomic, copy) NSString *whitespace;
 
 - (BOOL)allowsPasteAsSmartField;
 - (int)category;

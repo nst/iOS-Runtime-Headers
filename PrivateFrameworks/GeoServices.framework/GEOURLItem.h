@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapItemStorage, GEOPlace;
-
 @interface GEOURLItem : PBCodable <NSCopying> {
     BOOL _currentLocation;
     struct { 
@@ -13,12 +11,12 @@
     GEOPlace *_place;
 }
 
-@property BOOL currentLocation;
-@property BOOL hasCurrentLocation;
-@property(readonly) BOOL hasMapItemStorage;
-@property(readonly) BOOL hasPlace;
-@property(retain) GEOMapItemStorage * mapItemStorage;
-@property(retain) GEOPlace * place;
+@property (nonatomic) BOOL currentLocation;
+@property (nonatomic) BOOL hasCurrentLocation;
+@property (nonatomic, readonly) BOOL hasMapItemStorage;
+@property (nonatomic, readonly) BOOL hasPlace;
+@property (nonatomic, retain) GEOMapItemStorage *mapItemStorage;
+@property (nonatomic, retain) GEOPlace *place;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSSStyle;
-
 @interface TSSStylePromise : NSObject <TSSStyleObject> {
     NSMutableArray *_promisees;
     TSSStyle *_sourceStyle;

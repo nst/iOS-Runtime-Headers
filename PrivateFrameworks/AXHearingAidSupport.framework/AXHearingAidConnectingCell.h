@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class UIActivityIndicatorView;
-
 @interface AXHearingAidConnectingCell : PSTableCell {
     UIActivityIndicatorView *_loadingIndicator;
 }

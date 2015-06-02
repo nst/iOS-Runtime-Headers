@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoStreamsAlbumsTableViewControllerDelegate>, NSMutableSet, NSOrderedSet;
-
 @interface PUPhotoStreamAlbumsTableViewController : UITableViewController {
     NSOrderedSet *_albumsOrderedSet;
     BOOL _allowsMutlipleSelection;
@@ -11,10 +9,10 @@
     NSMutableSet *_selectedAlbumGuids;
 }
 
-@property BOOL allowsMutlipleSelection;
-@property <PUPhotoStreamsAlbumsTableViewControllerDelegate> * pickerDelegate;
+@property (nonatomic) BOOL allowsMutlipleSelection;
+@property (nonatomic) <PUPhotoStreamsAlbumsTableViewControllerDelegate> *pickerDelegate;
 
-+ (id)_albumsComparator;
++ (id /* block */)_albumsComparator;
 + (struct NSObject { Class x1; }*)albumListForContentMode:(int)arg1;
 
 - (void).cxx_destruct;

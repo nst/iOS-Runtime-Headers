@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetCache, AVAssetInspectorLoader, AVAssetResourceLoader, NSArray, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface AVURLAssetInternal : NSObject {
     NSURL *URL;
     AVAssetCache *assetCache;

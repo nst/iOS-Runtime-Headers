@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSKeychainSyncManager, UIAlertView, UIButton;
-
 @interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
     NSString *_countryCode;
     NSString *_dialingPrefix;
@@ -14,15 +12,15 @@
     unsigned int _verificationCodeLength;
 }
 
-@property(retain) NSString * countryCode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * dialingPrefix;
-@property(readonly) unsigned int hash;
-@property PSKeychainSyncManager * keychainSyncManager;
-@property(retain) NSString * phoneNumber;
-@property(readonly) Class superclass;
-@property unsigned int verificationCodeLength;
+@property (nonatomic, retain) NSString *countryCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *dialingPrefix;
+@property (readonly) unsigned int hash;
+@property (nonatomic) PSKeychainSyncManager *keychainSyncManager;
+@property (nonatomic, retain) NSString *phoneNumber;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int verificationCodeLength;
 
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)countryCode;

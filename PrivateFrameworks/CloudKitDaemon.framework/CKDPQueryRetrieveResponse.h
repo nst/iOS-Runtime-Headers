@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSMutableArray;
-
 @interface CKDPQueryRetrieveResponse : PBCodable <NSCopying> {
     NSData *_continuationMarker;
     NSMutableArray *_queryResults;
 }
 
-@property(retain) NSData * continuationMarker;
-@property(readonly) BOOL hasContinuationMarker;
-@property(retain) NSMutableArray * queryResults;
+@property (nonatomic, retain) NSData *continuationMarker;
+@property (nonatomic, readonly) BOOL hasContinuationMarker;
+@property (nonatomic, retain) NSMutableArray *queryResults;
 
 - (void).cxx_destruct;
 - (void)addQueryResults:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAudioAttachmentItem : CKAttachmentItem {
-}
+@interface CKAudioAttachmentItem : CKAttachmentItem
 
 + (id)UTITypes;
 

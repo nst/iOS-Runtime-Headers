@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWParallelSplitterNode : BWFanOutNode {
-}
+@interface BWParallelSplitterNode : BWFanOutNode
 
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 

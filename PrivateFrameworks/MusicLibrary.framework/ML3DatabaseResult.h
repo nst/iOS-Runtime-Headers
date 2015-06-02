@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseStatement, NSDictionary, NSString;
-
 @interface ML3DatabaseResult : NSObject {
     NSDictionary *_columnNameIndexMap;
     unsigned int _limitIndex;
@@ -12,13 +10,13 @@
     ML3DatabaseStatement *_statement;
 }
 
-@property(copy) NSString * limitProperty;
-@property long long limitValue;
+@property (nonatomic, copy) NSString *limitProperty;
+@property (nonatomic) long long limitValue;
 
 - (void).cxx_destruct;
 - (id)_statement;
 - (id)columnNameIndexMap;
-- (void)enumerateRowsWithBlock:(id)arg1;
+- (void)enumerateRowsWithBlock:(id /* block */)arg1;
 - (BOOL)hasAtLeastOneRow;
 - (unsigned int)indexForColumnName:(id)arg1;
 - (id)init;

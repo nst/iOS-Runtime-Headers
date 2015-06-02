@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIColor;
-
 @interface FUChartPointView : UIView {
     UIColor *_color;
     int _pointStyle;
     float _radius;
 }
 
-@property UIColor * color;
-@property int pointStyle;
-@property float radius;
+@property (nonatomic) UIColor *color;
+@property (nonatomic) int pointStyle;
+@property (nonatomic) float radius;
 
 + (id)pointWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
 

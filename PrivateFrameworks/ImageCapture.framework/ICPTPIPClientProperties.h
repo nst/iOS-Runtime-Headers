@@ -11,11 +11,11 @@
     int _serverFD;
 }
 
-@property struct __CFFileDescriptor { }* fdref;
+@property struct __CFFileDescriptor { }*fdref;
 @property int pid;
-@property(getter=didRegister) BOOL registered;
+@property (getter=didRegister) BOOL registered;
 @property int remoteAddress;
-@property struct __CFMessagePort { }* remotePort;
+@property struct __CFMessagePort { }*remotePort;
 @property int serverFD;
 
 - (void)dealloc;

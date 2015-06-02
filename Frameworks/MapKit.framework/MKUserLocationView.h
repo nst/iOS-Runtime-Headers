@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CALayer, CLLocation, NSString, VKAnnotationMarker;
-
 @interface MKUserLocationView : MKAnnotationView <VKPuckAnimatorTarget> {
     CALayer *_accuracyLayer;
     BOOL _allowsAccuracyRing;
@@ -23,21 +21,21 @@
     int _zoomDirection;
 }
 
-@property BOOL allowsAccuracyRing;
-@property BOOL allowsHeadingIndicator;
-@property BOOL allowsPulse;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEffectsEnabled) BOOL effectsEnabled;
-@property(readonly) unsigned int hash;
-@property double headingAccuracy;
-@property(readonly) double locationAccuracy;
-@property float opacity;
-@property double presentationCourse;
-@property BOOL shouldDisplayHeading;
-@property(getter=isStale,readonly) BOOL stale;
-@property(readonly) Class superclass;
-@property int zoomDirection;
+@property (nonatomic) BOOL allowsAccuracyRing;
+@property (nonatomic) BOOL allowsHeadingIndicator;
+@property (nonatomic) BOOL allowsPulse;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEffectsEnabled, nonatomic) BOOL effectsEnabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double headingAccuracy;
+@property (nonatomic, readonly) double locationAccuracy;
+@property (nonatomic) float opacity;
+@property (nonatomic) double presentationCourse;
+@property (nonatomic) BOOL shouldDisplayHeading;
+@property (getter=isStale, nonatomic, readonly) BOOL stale;
+@property (readonly) Class superclass;
+@property (nonatomic) int zoomDirection;
 
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFComposeRecipientTextViewDelegate>, <MFDraggableItem>, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIColor, UIFont, UITextView, UIView, _MFAtomTextAttachment, _MFAtomTextView;
-
 @interface MFComposeRecipientTextView : MFComposeHeaderView <MFComposeRecipientAtomDelegate, MFMultiDragDestination, MFMultiDragSource, NSLayoutManagerDelegate, UITextViewDelegate> {
     UIButton *_addButton;
     BOOL _allowsDragAndDrop;
@@ -41,32 +39,32 @@
     BOOL _textViewExclusionPathsAreValid;
 }
 
-@property(readonly) UIButton * addButton;
-@property(copy) NSArray * addresses;
-@property BOOL allowsDragAndDrop;
-@property(readonly) UIView * atomContainerView;
-@property(retain) UIFont * baseFont;
-@property(copy,readonly) NSString * debugDescription;
-@property <MFComposeRecipientTextViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL didIgnoreFirstResponderResign;
-@property BOOL editable;
-@property BOOL expanded;
-@property(readonly) unsigned int hash;
-@property int hideLastAtomComma;
-@property(retain) UIColor * inactiveTextColor;
-@property BOOL indicatesUnsafeRecipientsWhenCollapsed;
-@property double inputDelay;
-@property int maxRecipients;
-@property(readonly) unsigned int numberOfRowsOfTextInField;
-@property(readonly) float offsetForRowWithTextField;
-@property(retain) _MFAtomTextAttachment * placeholderAttachment;
-@property(copy) NSArray * recipients;
-@property(getter=isSeparatorHidden) BOOL separatorHidden;
-@property(readonly) Class superclass;
-@property(readonly) NSString * text;
-@property(readonly) UITextView * textView;
-@property(copy,readonly) NSArray * uncommentedAddresses;
+@property (nonatomic, readonly) UIButton *addButton;
+@property (nonatomic, copy) NSArray *addresses;
+@property (nonatomic) BOOL allowsDragAndDrop;
+@property (nonatomic, readonly) UIView *atomContainerView;
+@property (nonatomic, retain) UIFont *baseFont;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MFComposeRecipientTextViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL didIgnoreFirstResponderResign;
+@property (nonatomic) BOOL editable;
+@property (nonatomic) BOOL expanded;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int hideLastAtomComma;
+@property (nonatomic, retain) UIColor *inactiveTextColor;
+@property (nonatomic) BOOL indicatesUnsafeRecipientsWhenCollapsed;
+@property (nonatomic) double inputDelay;
+@property (nonatomic) int maxRecipients;
+@property (nonatomic, readonly) unsigned int numberOfRowsOfTextInField;
+@property (nonatomic, readonly) float offsetForRowWithTextField;
+@property (nonatomic, retain) _MFAtomTextAttachment *placeholderAttachment;
+@property (nonatomic, copy) NSArray *recipients;
+@property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) UITextView *textView;
+@property (nonatomic, readonly, copy) NSArray *uncommentedAddresses;
 
 + (id)defaultFont;
 

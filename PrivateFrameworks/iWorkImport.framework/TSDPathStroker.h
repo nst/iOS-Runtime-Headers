@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDPathStroker, TSUColor;
-
 @interface TSDPathStroker : NSObject {
     TSUColor *mColor;
     TSDPathStroker *mPrecedingStroker;
     float mWidth;
 }
 
-@property float width;
+@property (nonatomic) float width;
 
 - (void)dealloc;
 - (id)initWithProperties:(id)arg1 bundle:(id)arg2 dataManager:(void*)arg3 precedingStroker:(id)arg4;

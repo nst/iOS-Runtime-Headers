@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSString, SKAction;
-
 @interface SKRunAction : SKAction {
     SKAction *_action;
     NSString *_actionKey;

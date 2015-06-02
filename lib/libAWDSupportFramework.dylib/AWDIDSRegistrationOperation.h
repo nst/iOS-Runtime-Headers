@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSRegistrationOperation : PBCodable <NSCopying> {
     unsigned int _connectionType;
     int _genericError;
@@ -30,28 +28,28 @@
     int _uRLError;
 }
 
-@property unsigned int connectionType;
-@property int genericError;
-@property(retain) NSString * guid;
-@property BOOL hasConnectionType;
-@property BOOL hasGenericError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasHeartbeatDelay;
-@property BOOL hasHeartbeatRegister;
-@property BOOL hasPOSIXError;
-@property BOOL hasRegistrationError;
-@property BOOL hasResultCode;
-@property BOOL hasSuccess;
-@property BOOL hasTimestamp;
-@property BOOL hasURLError;
-@property unsigned int heartbeatDelay;
-@property unsigned int heartbeatRegister;
-@property int pOSIXError;
-@property unsigned int registrationError;
-@property unsigned int resultCode;
-@property unsigned int success;
-@property unsigned long long timestamp;
-@property int uRLError;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) int genericError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasGenericError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasHeartbeatDelay;
+@property (nonatomic) BOOL hasHeartbeatRegister;
+@property (nonatomic) BOOL hasPOSIXError;
+@property (nonatomic) BOOL hasRegistrationError;
+@property (nonatomic) BOOL hasResultCode;
+@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasURLError;
+@property (nonatomic) unsigned int heartbeatDelay;
+@property (nonatomic) unsigned int heartbeatRegister;
+@property (nonatomic) int pOSIXError;
+@property (nonatomic) unsigned int registrationError;
+@property (nonatomic) unsigned int resultCode;
+@property (nonatomic) unsigned int success;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int uRLError;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDHomeKitConfiguration : PBCodable <NSCopying> {
     unsigned int _databaseSize;
     NSString *_guid;
@@ -32,30 +30,30 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int databaseSize;
-@property(retain) NSString * guid;
-@property BOOL hasDatabaseSize;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasNumAccessories;
-@property BOOL hasNumAccessoryServiceGroups;
-@property BOOL hasNumHomes;
-@property BOOL hasNumLocationGroups;
-@property BOOL hasNumLocations;
-@property BOOL hasNumScenes;
-@property BOOL hasNumServices;
-@property BOOL hasNumTriggers;
-@property BOOL hasNumUsers;
-@property BOOL hasTimestamp;
-@property unsigned int numAccessories;
-@property unsigned int numAccessoryServiceGroups;
-@property unsigned int numHomes;
-@property unsigned int numLocationGroups;
-@property unsigned int numLocations;
-@property unsigned int numScenes;
-@property unsigned int numServices;
-@property unsigned int numTriggers;
-@property unsigned int numUsers;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int databaseSize;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasDatabaseSize;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasNumAccessories;
+@property (nonatomic) BOOL hasNumAccessoryServiceGroups;
+@property (nonatomic) BOOL hasNumHomes;
+@property (nonatomic) BOOL hasNumLocationGroups;
+@property (nonatomic) BOOL hasNumLocations;
+@property (nonatomic) BOOL hasNumScenes;
+@property (nonatomic) BOOL hasNumServices;
+@property (nonatomic) BOOL hasNumTriggers;
+@property (nonatomic) BOOL hasNumUsers;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int numAccessories;
+@property (nonatomic) unsigned int numAccessoryServiceGroups;
+@property (nonatomic) unsigned int numHomes;
+@property (nonatomic) unsigned int numLocationGroups;
+@property (nonatomic) unsigned int numLocations;
+@property (nonatomic) unsigned int numScenes;
+@property (nonatomic) unsigned int numServices;
+@property (nonatomic) unsigned int numTriggers;
+@property (nonatomic) unsigned int numUsers;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

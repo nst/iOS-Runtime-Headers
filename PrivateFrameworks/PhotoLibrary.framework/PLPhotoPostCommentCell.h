@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIButton, UILabel, UIView;
-
 @interface PLPhotoPostCommentCell : UITableViewCell {
     UIButton *_addCommentButton;
     UILabel *_contentLabel;
     UIView *_styledSeparatorView;
 }
 
-@property(retain,readonly) UIButton * addCommentButton;
-@property(retain,readonly) UILabel * contentLabel;
-@property(retain,readonly) UIView * styledSeparatorView;
+@property (nonatomic, readonly, retain) UIButton *addCommentButton;
+@property (nonatomic, readonly, retain) UILabel *contentLabel;
+@property (nonatomic, readonly, retain) UIView *styledSeparatorView;
 
 + (float)heightForWidth:(float)arg1;
 

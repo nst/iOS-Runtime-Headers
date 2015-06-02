@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString;
-
 @interface GKFriendRecommendationInternal : GKFamiliarPlayerInternal {
     NSString *_reason;
     NSString *_reason2;
@@ -11,10 +9,10 @@
     int _source;
 }
 
-@property(retain) NSString * reason;
-@property(retain) NSString * reason2;
-@property unsigned int rid;
-@property int source;
+@property (nonatomic, retain) NSString *reason;
+@property (nonatomic, retain) NSString *reason2;
+@property (nonatomic) unsigned int rid;
+@property (nonatomic) int source;
 
 + (id)secureCodedPropertyKeys;
 

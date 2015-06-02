@@ -2,27 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MFDataConsumer>, MFAttachmentManager, MFMimePart, NSMutableDictionary, NSString, NSURL;
-
 @interface MFAttachment : NSObject <QLPreviewItem> {
     MFAttachmentManager *_attachmentManager;
     <MFDataConsumer> *_customConsumer;
     NSString *_disposition;
     unsigned int _encodedFileSize;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchProgressBlock;
-
+    id /* block */ _fetchCompletionBlock;
+    id /* block */ _fetchProgressBlock;
     BOOL _isDataAvailableLocally;
     BOOL _isUserFacing;
     unsigned int _lastProgressBytes;
@@ -34,53 +20,47 @@
     NSURL *_url;
 }
 
-@property MFAttachmentManager * attachmentManager;
-@property(readonly) NSString * contentID;
-@property(retain) <MFDataConsumer> * customConsumer;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned int decodedFileSize;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * disposition;
-@property unsigned int encodedFileSize;
-@property(retain) NSString * eventID;
-@property(copy) id fetchCompletionBlock;
-@property(copy) id fetchProgressBlock;
-@property(retain) NSString * fileName;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * icsRepresentation;
-@property struct CGSize { float x1; float x2; } imageDimensions;
-@property(readonly) NSString * inferredMimeType;
-@property(readonly) BOOL isContainedInCompose;
-@property(readonly) BOOL isContainedInRFC822;
-@property(readonly) BOOL isDataAvailableLocally;
-@property BOOL isUserFacing;
-@property unsigned int lastProgressBytes;
-@property double lastProgressTime;
-@property(readonly) unsigned int maxSizeAllowedOverCurrentNetwork;
-@property(retain) NSString * meetingStorePersistentID;
-@property(copy) NSString * mimeType;
-@property(retain) MFMimePart * part;
-@property(copy) NSString * path;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property unsigned int progressInterval;
-@property double progressTimeInterval;
-@property unsigned int setupComplete;
-@property(readonly) BOOL shouldAutoDownload;
-@property(readonly) Class superclass;
-@property(copy) NSURL * url;
+@property (nonatomic) MFAttachmentManager *attachmentManager;
+@property (readonly) NSString *contentID;
+@property (nonatomic, retain) <MFDataConsumer> *customConsumer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned int decodedFileSize;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *disposition;
+@property (nonatomic) unsigned int encodedFileSize;
+@property (nonatomic, retain) NSString *eventID;
+@property (nonatomic, copy) id /* block */ fetchCompletionBlock;
+@property (copy) id /* block */ fetchProgressBlock;
+@property (nonatomic, retain) NSString *fileName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *icsRepresentation;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageDimensions;
+@property (readonly) NSString *inferredMimeType;
+@property (readonly) BOOL isContainedInCompose;
+@property (readonly) BOOL isContainedInRFC822;
+@property (readonly) BOOL isDataAvailableLocally;
+@property (nonatomic) BOOL isUserFacing;
+@property (nonatomic) unsigned int lastProgressBytes;
+@property (nonatomic) double lastProgressTime;
+@property (readonly) unsigned int maxSizeAllowedOverCurrentNetwork;
+@property (nonatomic, retain) NSString *meetingStorePersistentID;
+@property (nonatomic, copy) NSString *mimeType;
+@property (nonatomic, retain) MFMimePart *part;
+@property (nonatomic, copy) NSString *path;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (nonatomic) unsigned int progressInterval;
+@property (nonatomic) double progressTimeInterval;
+@property (nonatomic) unsigned int setupComplete;
+@property (readonly) BOOL shouldAutoDownload;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *url;
 
-+ (id)passPlaceholder;
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
-- (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
-- (id)_imageScalingKeyForImageScale:(unsigned int)arg1;
 - (id)attachmentManager;
 - (void)cancel;
-- (id)className;
-- (BOOL)conformsToType:(id)arg1;
-- (float)constrainedWidth;
 - (id)contentID;
-- (id)contentType;
 - (id)customConsumer;
 - (void)dealloc;
 - (id)decodeFilterWithDataConsumer:(id)arg1;
@@ -88,80 +68,46 @@
 - (id)description;
 - (id)disposition;
 - (unsigned int)encodedFileSize;
-- (void)enqueueScaleAttachmentWithCompletionBlock:(id)arg1;
-- (id)eventID;
-- (id)fetchCompletionBlock;
+- (id /* block */)fetchCompletionBlock;
 - (void)fetchData;
 - (id)fetchDataSynchronously:(id*)arg1;
 - (id)fetchDataSynchronously:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
 - (id)fetchLocalData;
 - (id)fetchLocalData:(id*)arg1 stripPrivateMetadata:(BOOL)arg2;
-- (id)fetchProgressBlock;
+- (id /* block */)fetchProgressBlock;
 - (id)fileAttributes;
 - (id)fileName;
-- (id)filenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
-- (BOOL)hasCalendarMetadata;
-- (id)icsRepresentation;
-- (struct CGSize { float x1; float x2; })imageDimensions;
-- (struct CGSize { float x1; float x2; })imageDimensionsWithData:(id)arg1;
-- (unsigned int)imageScalingFlags;
 - (id)inferredMimeType;
 - (id)initWithURL:(id)arg1 attachmentManager:(id)arg2;
-- (BOOL)isCalendarFile;
 - (BOOL)isContainedInCompose;
 - (BOOL)isContainedInRFC822;
-- (BOOL)isContentOpenable;
-- (BOOL)isContentTypeDisplayableByMobileMail;
 - (BOOL)isDataAvailableLocally;
-- (BOOL)isDisplayableByWebKit;
-- (BOOL)isDisplayableImage;
-- (BOOL)isDisplayableInline;
-- (BOOL)isDisplayableInlineWithData:(id)arg1;
-- (BOOL)isDisplayableInsidePlugin;
-- (BOOL)isDisplayableInsidePluginWithData:(id)arg1;
 - (BOOL)isImageFile;
-- (BOOL)isMedia;
-- (BOOL)isPDFFile;
-- (BOOL)isPass;
-- (BOOL)isRFC822;
-- (BOOL)isRestrictedMIMEType;
-- (BOOL)isSupportedImageType;
 - (BOOL)isUserFacing;
 - (unsigned int)lastProgressBytes;
 - (double)lastProgressTime;
-- (struct CGSize { float x1; float x2; })markupSizeForImageScale:(unsigned int)arg1;
-- (id)markupStringForCompositionWithPrependedBlankLine:(BOOL)arg1 imageScale:(unsigned int)arg2;
-- (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(float)arg3;
 - (unsigned int)maxSizeAllowedOverCurrentNetwork;
-- (id)meetingStorePersistentID;
 - (id)metadataValueForKey:(id)arg1;
 - (id)mimeType;
 - (id)part;
-- (id)pass;
-- (id)passWithError:(id*)arg1;
 - (id)path;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (unsigned int)progressInterval;
 - (double)progressTimeInterval;
 - (id)readFromDisk;
-- (unsigned int)scaleImageToFit:(unsigned int)arg1 saveScaledImage:(BOOL)arg2;
 - (void)setAttachmentManager:(id)arg1;
 - (void)setContentID:(id)arg1;
 - (void)setCustomConsumer:(id)arg1;
 - (void)setDecodedFileSize:(unsigned int)arg1;
 - (void)setDisposition:(id)arg1;
 - (void)setEncodedFileSize:(unsigned int)arg1;
-- (void)setEventID:(id)arg1;
-- (void)setFetchCompletionBlock:(id)arg1;
-- (void)setFetchProgressBlock:(id)arg1;
+- (void)setFetchCompletionBlock:(id /* block */)arg1;
+- (void)setFetchProgressBlock:(id /* block */)arg1;
 - (void)setFileName:(id)arg1;
-- (void)setIcsRepresentation:(id)arg1;
-- (void)setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
 - (void)setIsUserFacing:(BOOL)arg1;
 - (void)setLastProgressBytes:(unsigned int)arg1;
 - (void)setLastProgressTime:(double)arg1;
-- (void)setMeetingStorePersistentID:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setMimeType:(id)arg1;
 - (void)setPart:(id)arg1;
@@ -177,5 +123,50 @@
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
 - (id)url;
 - (void)writeToDiskWithData:(id)arg1;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)passPlaceholder;
+
+- (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
+- (id)_imageScalingKeyForImageScale:(unsigned int)arg1;
+- (id)className;
+- (BOOL)conformsToType:(id)arg1;
+- (float)constrainedWidth;
+- (id)contentType;
+- (void)enqueueScaleAttachmentWithCompletionBlock:(id /* block */)arg1;
+- (id)eventID;
+- (id)filenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
+- (BOOL)hasCalendarMetadata;
+- (id)icsRepresentation;
+- (struct CGSize { float x1; float x2; })imageDimensions;
+- (struct CGSize { float x1; float x2; })imageDimensionsWithData:(id)arg1;
+- (unsigned int)imageScalingFlags;
+- (BOOL)isCalendarFile;
+- (BOOL)isContentOpenable;
+- (BOOL)isContentTypeDisplayableByMobileMail;
+- (BOOL)isDisplayableByWebKit;
+- (BOOL)isDisplayableImage;
+- (BOOL)isDisplayableInline;
+- (BOOL)isDisplayableInlineWithData:(id)arg1;
+- (BOOL)isDisplayableInsidePlugin;
+- (BOOL)isDisplayableInsidePluginWithData:(id)arg1;
+- (BOOL)isMedia;
+- (BOOL)isPDFFile;
+- (BOOL)isPass;
+- (BOOL)isRFC822;
+- (BOOL)isRestrictedMIMEType;
+- (BOOL)isSupportedImageType;
+- (struct CGSize { float x1; float x2; })markupSizeForImageScale:(unsigned int)arg1;
+- (id)markupStringForCompositionWithPrependedBlankLine:(BOOL)arg1 imageScale:(unsigned int)arg2;
+- (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(float)arg3;
+- (id)meetingStorePersistentID;
+- (id)pass;
+- (id)passWithError:(id*)arg1;
+- (unsigned int)scaleImageToFit:(unsigned int)arg1 saveScaledImage:(BOOL)arg2;
+- (void)setEventID:(id)arg1;
+- (void)setIcsRepresentation:(id)arg1;
+- (void)setImageDimensions:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMeetingStorePersistentID:(id)arg1;
 
 @end

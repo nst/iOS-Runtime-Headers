@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, UIImage;
-
 @interface MFAttachmentImageGenerator : UIView {
     NSString *_displayString;
     UIImage *_image;

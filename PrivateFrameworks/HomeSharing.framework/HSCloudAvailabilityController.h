@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, RadiosPreferences;
-
 @interface HSCloudAvailabilityController : NSObject <HSCloudAvailability, RadiosPreferencesDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _canShowCloudDownloadButtons;
@@ -24,10 +22,10 @@
     struct __SCNetworkReachability { } *reachabilityRef;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedController;
 

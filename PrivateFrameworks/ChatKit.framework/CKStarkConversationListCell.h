@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDate, NSString, UIDateLabel, UIImage, UIImageView, UILabel;
-
 @interface CKStarkConversationListCell : UITableViewCell {
     UIDateLabel *_dateLabel;
     UIImage *_monogramImage;
@@ -11,13 +9,13 @@
     UIImageView *_unreadImageView;
 }
 
-@property(retain) NSDate * date;
-@property(retain) UIDateLabel * dateLabel;
-@property BOOL hasUnreadMessages;
-@property UIImage * monogramImage;
-@property(retain) NSString * recipientNames;
-@property(retain) UILabel * recipientsLabel;
-@property(retain) UIImageView * unreadImageView;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) UIDateLabel *dateLabel;
+@property (nonatomic) BOOL hasUnreadMessages;
+@property (nonatomic) UIImage *monogramImage;
+@property (nonatomic, retain) NSString *recipientNames;
+@property (nonatomic, retain) UILabel *recipientsLabel;
+@property (nonatomic, retain) UIImageView *unreadImageView;
 
 + (float)starkCellMarginWidth;
 

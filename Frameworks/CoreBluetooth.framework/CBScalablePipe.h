@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBCentral, CBScalablePipeManager, NSInputStream, NSOutputStream, NSString;
-
 @interface CBScalablePipe : NSObject {
     CBCentral *_central;
     NSInputStream *_input;
@@ -15,12 +13,12 @@
     int _type;
 }
 
-@property(readonly) CBCentral * central;
-@property(readonly) NSInputStream * input;
-@property(readonly) NSString * name;
-@property(readonly) NSOutputStream * output;
-@property(readonly) int priority;
-@property(readonly) int type;
+@property (nonatomic, readonly) CBCentral *central;
+@property (nonatomic, readonly) NSInputStream *input;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSOutputStream *output;
+@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) int type;
 
 - (id)central;
 - (void)dealloc;

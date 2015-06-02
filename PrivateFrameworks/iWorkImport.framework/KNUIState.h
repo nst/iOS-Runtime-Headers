@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNMacUILayout, KNSlideCollectionSelection, NSMutableDictionary, NSSet, TSKSelectionPath;
-
 @interface KNUIState : NSObject <NSCopying> {
     NSMutableDictionary *mChartUIState;
     NSSet *mCollapsedSlideNodes;
@@ -46,26 +39,26 @@
     BOOL mSlideViewFitsContentInWindow;
 }
 
-@property struct CGPoint { float x1; float x2; } canvasOffset;
-@property float canvasViewScale;
-@property(copy) NSSet * collapsedSlideNodes;
-@property struct CGSize { float x1; float x2; } desktopMainContentSize;
-@property struct CGPoint { float x1; float x2; } desktopMainWindowOrigin;
-@property float desktopNavigatorViewWidth;
-@property float desktopOutlineViewWidth;
-@property float desktopPresenterNotesHeight;
-@property(copy) KNMacUILayout * documentUILayout;
-@property BOOL lightTableHidesSkippedSlides;
-@property float lightTableZoomScale;
-@property(copy) NSSet * outlineCollapsedSlideNodes;
-@property(copy) NSSet * outlineHasBodySlideNodes;
-@property(retain) TSKSelectionPath * selectionPath;
-@property BOOL showMasterGuides;
-@property BOOL showSlideGuides;
-@property BOOL showsComments;
-@property BOOL showsRuler;
-@property(readonly) KNSlideCollectionSelection * slideTreeSelection;
-@property BOOL slideViewFitsContentInWindow;
+@property (nonatomic) struct CGPoint { float x1; float x2; } canvasOffset;
+@property (nonatomic) float canvasViewScale;
+@property (nonatomic, copy) NSSet *collapsedSlideNodes;
+@property (nonatomic) struct CGSize { float x1; float x2; } desktopMainContentSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } desktopMainWindowOrigin;
+@property (nonatomic) float desktopNavigatorViewWidth;
+@property (nonatomic) float desktopOutlineViewWidth;
+@property (nonatomic) float desktopPresenterNotesHeight;
+@property (nonatomic, copy) KNMacUILayout *documentUILayout;
+@property (nonatomic) BOOL lightTableHidesSkippedSlides;
+@property (nonatomic) float lightTableZoomScale;
+@property (nonatomic, copy) NSSet *outlineCollapsedSlideNodes;
+@property (nonatomic, copy) NSSet *outlineHasBodySlideNodes;
+@property (nonatomic, retain) TSKSelectionPath *selectionPath;
+@property (nonatomic) BOOL showMasterGuides;
+@property (nonatomic) BOOL showSlideGuides;
+@property (nonatomic) BOOL showsComments;
+@property (nonatomic) BOOL showsRuler;
+@property (nonatomic, readonly) KNSlideCollectionSelection *slideTreeSelection;
+@property (nonatomic) BOOL slideViewFitsContentInWindow;
 
 - (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;

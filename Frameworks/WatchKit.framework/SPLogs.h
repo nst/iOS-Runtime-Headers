@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPLogs : NSObject {
-}
+@interface SPLogs : NSObject
 
 + (BOOL)debugLogLevel;
 + (int)fileLoggingLevel;

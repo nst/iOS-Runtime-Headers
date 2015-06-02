@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NMSIncomingRequest, NSData, NSDictionary, NSString;
-
 @interface NMSOutgoingResponse : NSObject <NMSObfuscatableDescriptionProviding> {
     NSData *_data;
     NSDictionary *_extraIDSOptions;
@@ -16,19 +14,19 @@
     BOOL _sent;
 }
 
-@property(retain) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * extraIDSOptions;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * idsIdentifier;
-@property(retain) id pbResponse;
-@property(retain) NSDictionary * persistentUserInfo;
-@property unsigned int priority;
-@property NMSIncomingRequest * request;
-@property double sendTimeout;
-@property(getter=isSent) BOOL sent;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *extraIDSOptions;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic, retain) id pbResponse;
+@property (nonatomic, retain) NSDictionary *persistentUserInfo;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic) NMSIncomingRequest *request;
+@property (nonatomic) double sendTimeout;
+@property (getter=isSent) BOOL sent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;

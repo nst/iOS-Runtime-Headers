@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MPHCZAlbumTracksCellConfiguration : MusicAlbumTracksCellConfiguration {
-}
+@interface MPHCZAlbumTracksCellConfiguration : MusicAlbumTracksCellConfiguration
 
 + (id)tableViewBackgroundColor;
 + (id)tableViewCellBackgroundColor;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSPortNameServer : NSObject {
-}
+@interface NSPortNameServer : NSObject
 
 + (id)defaultPortNameServer;
 + (id)systemDefaultPortNameServer;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, EKUIEventInviteesViewController, NSDate;
-
 @interface EKUIEventInviteesEditViewController : EKEditItemViewController {
     EKUIEventInviteesViewController *_controller;
     EKEvent *_event;
 }
 
-@property(readonly) NSDate * selectedEndDate;
-@property(readonly) NSDate * selectedStartDate;
+@property (nonatomic, readonly) NSDate *selectedEndDate;
+@property (nonatomic, readonly) NSDate *selectedStartDate;
 
 - (void).cxx_destruct;
 - (id)initWithEvent:(id)arg1;

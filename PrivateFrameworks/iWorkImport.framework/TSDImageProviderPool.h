@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSUPointerKeyDictionary;
-
 @interface TSDImageProviderPool : NSObject <TSPDataCullingListener> {
     BOOL mHaveRaisedFileDescriptorLimit;
     TSUPointerKeyDictionary *mImageDataToImageProviderMap;
     unsigned int mOpenFileDescriptorLimit;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

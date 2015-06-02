@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIGallerySwooshViewControllerDelegate>, NSString, SKUISwooshPageComponent, SKUISwooshView, UICollectionView;
-
 @interface SKUIGallerySwooshViewController : SKUISwooshViewController <SKUIEmbeddedMediaViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     UICollectionView *_collectionView;
     BOOL _delegateWantsWillDisplay;
@@ -12,12 +10,12 @@
     SKUISwooshView *_swooshView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIGallerySwooshViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) SKUISwooshPageComponent * gallerySwoosh;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIGallerySwooshViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SKUISwooshPageComponent *gallerySwoosh;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_newViewWithMediaComponent:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString, TIKeyboardInputManagerState, TIKeyboardIntermediateText;
-
 @interface TIKeyboardConfiguration : NSObject <NSSecureCoding> {
     NSString *_accentKeyString;
     BOOL _assertDefaultKeyPlane;
@@ -12,11 +10,11 @@
     NSString *_layoutTag;
 }
 
-@property(copy) NSString * accentKeyString;
-@property BOOL assertDefaultKeyPlane;
-@property(copy) TIKeyboardInputManagerState * inputManagerState;
-@property(retain) TIKeyboardIntermediateText * intermediateText;
-@property(copy) NSString * layoutTag;
+@property (nonatomic, copy) NSString *accentKeyString;
+@property (nonatomic) BOOL assertDefaultKeyPlane;
+@property (nonatomic, copy) TIKeyboardInputManagerState *inputManagerState;
+@property (nonatomic, retain) TIKeyboardIntermediateText *intermediateText;
+@property (nonatomic, copy) NSString *layoutTag;
 
 + (BOOL)supportsSecureCoding;
 

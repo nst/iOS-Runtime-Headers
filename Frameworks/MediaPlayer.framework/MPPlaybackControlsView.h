@@ -2,26 +2,24 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlaybackControlsDelegate>, CABasicAnimation, MPAVController, MPAVItem, MPButton, MPDetailSlider, MPTimeMarker, NSString, UIActivityIndicatorView, UIImage, UILabel, UIView;
-
 @interface MPPlaybackControlsView : UIView <MPDetailSliderDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     <MPPlaybackControlsDelegate> *_delegate;
-    unsigned int _detailScrubbing : 1;
+    unsigned int _detailScrubbing;
     unsigned long long _disabledParts;
-    unsigned int _fastForwardAndRewindButtonDisabled : 1;
+    unsigned int _fastForwardAndRewindButtonDisabled;
     MPButton *_fastFowardButton;
     UIView *_fastFowardButtonBezel;
     MPButton *_geniusButton;
-    unsigned int _geniusButtonDisabled : 1;
+    unsigned int _geniusButtonDisabled;
     MPAVItem *_item;
     MPButton *_mailButton;
-    unsigned int _mailButtonDisabled : 1;
-    unsigned int _mailButtonHidden : 1;
+    unsigned int _mailButtonDisabled;
+    unsigned int _mailButtonHidden;
     MPTimeMarker *_markerForProgressControlDuration;
-    unsigned int _needsUpdateButtonVisibility : 1;
+    unsigned int _needsUpdateButtonVisibility;
     MPButton *_playbackSpeedButton;
-    unsigned int _playbackSpeedButtonDisabled : 1;
+    unsigned int _playbackSpeedButtonDisabled;
     MPAVController *_player;
     MPDetailSlider *_progressControl;
     double _progressOffset;
@@ -33,31 +31,31 @@
     MPButton *_shuffleButton;
     double _tickInterval;
     UILabel *_trackInfoLabel;
-    unsigned int _useMediaDetailSlider : 1;
+    unsigned int _useMediaDetailSlider;
     unsigned long long _visibleParts;
-    unsigned int _wantsTick : 1;
+    unsigned int _wantsTick;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MPPlaybackControlsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL detailScrubbingHidesControls;
-@property unsigned long long disabledParts;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL hideGeniusButton;
-@property(readonly) BOOL isScrubbing;
-@property(retain) MPAVItem * item;
-@property(readonly) NSString * localizedScrubSpeedText;
-@property(readonly) UIImage * mailButtonImage;
-@property(retain) MPAVController * player;
-@property(readonly) UIImage * repeatButtonImage;
-@property(readonly) unsigned int repeatType;
-@property(readonly) BOOL shouldOverrideProgressTimeLabelStyle;
-@property(readonly) UIImage * shuffleButtonImage;
-@property(readonly) BOOL shuffleIsOn;
-@property(readonly) unsigned int shuffleType;
-@property(readonly) Class superclass;
-@property unsigned long long visibleParts;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPPlaybackControlsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL detailScrubbingHidesControls;
+@property (nonatomic) unsigned long long disabledParts;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL hideGeniusButton;
+@property (nonatomic, readonly) BOOL isScrubbing;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic, readonly) NSString *localizedScrubSpeedText;
+@property (nonatomic, readonly) UIImage *mailButtonImage;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic, readonly) UIImage *repeatButtonImage;
+@property (nonatomic, readonly) unsigned int repeatType;
+@property (nonatomic, readonly) BOOL shouldOverrideProgressTimeLabelStyle;
+@property (nonatomic, readonly) UIImage *shuffleButtonImage;
+@property (nonatomic, readonly) BOOL shuffleIsOn;
+@property (nonatomic, readonly) unsigned int shuffleType;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long long visibleParts;
 
 + (unsigned long long)defaultVisibleParts;
 

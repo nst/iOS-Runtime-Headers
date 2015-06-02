@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEArgumentToken : NSObject {
-}
+@interface TSCEArgumentToken : NSObject
 
 + (BOOL)isStringValidArgumentToken:(id)arg1;
 

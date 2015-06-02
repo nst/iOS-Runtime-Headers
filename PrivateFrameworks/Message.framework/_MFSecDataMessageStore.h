@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString;
+@interface _MFSecDataMessageStore : MFDataMessageStore
 
-@interface _MFSecDataMessageStore : MFDataMessageStore {
-}
-
-@property(copy) NSString * storagePath;
+@property (nonatomic, copy) NSString *storagePath;
 
 + (Class)classForMimePart;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSString;
-
 @interface TRAuthorizePacketEvent : TRPacketEvent {
     NSString *_deviceIdentifier;
     NSString *_passcode;
 }
 
-@property(readonly) NSString * deviceIdentifier;
-@property(readonly) NSString * passcode;
+@property (nonatomic, readonly) NSString *deviceIdentifier;
+@property (nonatomic, readonly) NSString *passcode;
 
 + (unsigned int)_packetEventType;
 

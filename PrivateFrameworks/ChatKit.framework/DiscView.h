@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface DiscView : UIView {
-}
+@interface DiscView : UIView
 
 + (Class)layerClass;
 

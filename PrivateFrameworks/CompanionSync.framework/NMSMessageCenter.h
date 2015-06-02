@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class <NMSMessageCenterDelegate>, IDSService, NMSPersistentDictionary, NMSWindowData, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, _NMSDispatchQueue;
-
 @interface NMSMessageCenter : NSObject <IDSServiceDelegate> {
     unsigned int _currentBytesInFlight;
     <NMSMessageCenterDelegate> *_delegate;
@@ -30,22 +28,22 @@
     NSObject<OS_dispatch_source> *_windowTimeout;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * actionQ;
-@property(getter=_currentBytesInFlight,readonly) unsigned int currentBytesInFlight;
-@property(copy,readonly) NSString * debugDescription;
-@property <NMSMessageCenterDelegate> * delegate;
-@property BOOL delegateRequiresACKs;
-@property(copy,readonly) NSString * description;
-@property BOOL enableTransmissionWindow;
-@property(readonly) unsigned int hash;
-@property(readonly) IDSService * idsService;
-@property unsigned int maxBytesInFlight;
-@property unsigned int maxMessagesInFlight;
-@property unsigned int minMessagesInFlight;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) IDSService * service;
-@property(readonly) Class superclass;
-@property double windowResponseTimeout;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *actionQ;
+@property (getter=_currentBytesInFlight, nonatomic, readonly) unsigned int currentBytesInFlight;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NMSMessageCenterDelegate> *delegate;
+@property (nonatomic) BOOL delegateRequiresACKs;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enableTransmissionWindow;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) IDSService *idsService;
+@property (nonatomic) unsigned int maxBytesInFlight;
+@property (nonatomic) unsigned int maxMessagesInFlight;
+@property (nonatomic) unsigned int minMessagesInFlight;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) IDSService *service;
+@property (readonly) Class superclass;
+@property (nonatomic) double windowResponseTimeout;
 
 + (BOOL)messageWindowCountEnabled;
 + (void)setMessageWindowCountEnabled:(BOOL)arg1;
@@ -64,9 +62,9 @@
 - (void)_timeoutWindowedMessages;
 - (void)_updateExpireTimerWithDate:(id)arg1;
 - (id)actionQ;
-- (void)addErrorHandlerForMessageID:(unsigned short)arg1 usingBlock:(id)arg2;
-- (void)addRequestHandlerForMessageID:(unsigned short)arg1 usingBlock:(id)arg2;
-- (void)addResponseHandler:(unsigned short)arg1 usingBlock:(id)arg2;
+- (void)addErrorHandlerForMessageID:(unsigned short)arg1 usingBlock:(id /* block */)arg2;
+- (void)addRequestHandlerForMessageID:(unsigned short)arg1 usingBlock:(id /* block */)arg2;
+- (void)addResponseHandler:(unsigned short)arg1 usingBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)delegateRequiresACKs;

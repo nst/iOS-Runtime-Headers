@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, NSURL;
+@interface SAUIMenuItem : SAAceView
 
-@interface SAUIMenuItem : SAAceView {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSURL * icon;
-@property(copy) NSURL * ref;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSURL *icon;
+@property (nonatomic, copy) NSURL *ref;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 + (id)menuItem;
 + (id)menuItemWithDictionary:(id)arg1 context:(id)arg2;

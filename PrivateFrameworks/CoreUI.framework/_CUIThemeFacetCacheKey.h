@@ -7,7 +7,7 @@
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } keyList[16];
+    } keyList;
     int themeIndex;
 }
 

@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSString;
+@interface AVAudioMixerNode : AVAudioNode <AVAudioMixing>
 
-@interface AVAudioMixerNode : AVAudioNode <AVAudioMixing> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int nextAvailableInputBus;
-@property float outputVolume;
-@property(readonly) Class superclass;
-@property float volume;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int nextAvailableInputBus;
+@property (nonatomic) float outputVolume;
+@property (readonly) Class superclass;
+@property (nonatomic) float volume;
 
 - (void)didAttachToEngine:(id)arg1;
 - (id)init;

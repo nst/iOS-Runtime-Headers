@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIViewElementText;
-
 @interface SKUILabelViewElement : SKUIViewElement {
     int _labelViewStyle;
     NSString *_moreButtonTitle;
@@ -11,10 +9,10 @@
     SKUIViewElementText *_text;
 }
 
-@property(readonly) int labelViewStyle;
-@property(readonly) NSString * moreButtonTitle;
-@property(readonly) int numberOfLines;
-@property(readonly) SKUIViewElementText * text;
+@property (nonatomic, readonly) int labelViewStyle;
+@property (nonatomic, readonly) NSString *moreButtonTitle;
+@property (nonatomic, readonly) int numberOfLines;
+@property (nonatomic, readonly) SKUIViewElementText *text;
 
 + (BOOL)shouldParseChildDOMElements;
 

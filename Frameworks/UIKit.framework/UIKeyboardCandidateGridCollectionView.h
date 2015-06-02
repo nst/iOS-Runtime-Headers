@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIKeyboardCandidateGridCollectionViewController, UITableViewIndex, UIView;
-
 @interface UIKeyboardCandidateGridCollectionView : UIKBCandidateCollectionView {
     UIView *_headerView;
     UITableViewIndex *_index;
@@ -12,11 +10,11 @@
     float _previousGroupBarStartingY;
 }
 
-@property(retain) UIView * headerView;
-@property(readonly) UITableViewIndex * index;
-@property(retain) NSArray * indexTitles;
-@property UIKeyboardCandidateGridCollectionViewController * parentViewController;
-@property float previousGroupBarStartingY;
+@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, readonly) UITableViewIndex *index;
+@property (nonatomic, retain) NSArray *indexTitles;
+@property (nonatomic) UIKeyboardCandidateGridCollectionViewController *parentViewController;
+@property (nonatomic) float previousGroupBarStartingY;
 
 - (void)dealloc;
 - (void)delayUpdateIndex;

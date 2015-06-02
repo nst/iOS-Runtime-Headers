@@ -11,9 +11,9 @@
     float _radius;
 }
 
-@property float arcStart;
-@property struct CGPoint { float x1; float x2; } center;
-@property float radius;
+@property (nonatomic) float arcStart;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic) float radius;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 

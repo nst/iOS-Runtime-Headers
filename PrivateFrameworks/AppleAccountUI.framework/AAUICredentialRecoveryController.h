@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSMutableArray, NSObject<AAUICredentialRecoveryPresentationDelegate>, NSString, NSURL, RUILoader, RUIPage, UIActivityIndicatorView, UIBarButtonItem, UINavigationController, UINavigationItem, UIViewController;
-
 @interface AAUICredentialRecoveryController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
     BOOL _isModal;
@@ -20,11 +18,11 @@
     UIActivityIndicatorView *_spinnerView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<AAUICredentialRecoveryPresentationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<AAUICredentialRecoveryPresentationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;

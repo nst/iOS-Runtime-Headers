@@ -2,29 +2,27 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString;
-
 @interface ATStoreInfo : NSObject {
     NSMutableDictionary *_assetDictionary;
     NSMutableDictionary *_downloadDictionary;
 }
 
-@property(retain) NSNumber * DSID;
-@property(retain) NSString * XID;
-@property(retain) NSNumber * adamID;
-@property(retain) NSString * appleID;
-@property(readonly) NSDictionary * assetDictionary;
-@property(retain) NSNumber * collectionID;
-@property(retain) NSString * dimensions;
-@property(readonly) NSDictionary * downloadDictionary;
-@property(retain) NSNumber * drmFree;
-@property(retain) NSString * flavor;
-@property(retain) NSNumber * matchStatus;
-@property(retain) NSString * podcastEpisodeGUID;
-@property(retain) NSNumber * redownloadStatus;
-@property(retain) NSNumber * sagaID;
-@property(retain) NSString * storefrontID;
-@property(retain) NSNumber * versionID;
+@property (nonatomic, retain) NSNumber *DSID;
+@property (nonatomic, retain) NSString *XID;
+@property (nonatomic, retain) NSNumber *adamID;
+@property (nonatomic, retain) NSString *appleID;
+@property (readonly) NSDictionary *assetDictionary;
+@property (nonatomic, retain) NSNumber *collectionID;
+@property (nonatomic, retain) NSString *dimensions;
+@property (readonly) NSDictionary *downloadDictionary;
+@property (nonatomic, retain) NSNumber *drmFree;
+@property (nonatomic, retain) NSString *flavor;
+@property (nonatomic, retain) NSNumber *matchStatus;
+@property (nonatomic, retain) NSString *podcastEpisodeGUID;
+@property (nonatomic, retain) NSNumber *redownloadStatus;
+@property (nonatomic, retain) NSNumber *sagaID;
+@property (nonatomic, retain) NSString *storefrontID;
+@property (nonatomic, retain) NSNumber *versionID;
 
 - (void).cxx_destruct;
 - (id)DSID;

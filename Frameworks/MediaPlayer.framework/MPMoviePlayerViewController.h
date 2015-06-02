@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMoviePlayerController;
-
 @interface MPMoviePlayerViewController : UIViewController {
     id _internal;
     BOOL _statusBarWasHidden;
 }
 
-@property(readonly) MPMoviePlayerController * moviePlayer;
+@property (nonatomic, readonly) MPMoviePlayerController *moviePlayer;
 
 - (void).cxx_destruct;
 - (BOOL)_canReloadView;

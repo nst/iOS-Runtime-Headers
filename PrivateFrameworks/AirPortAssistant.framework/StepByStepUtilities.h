@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface StepByStepUtilities : NSObject {
-}
+@interface StepByStepUtilities : NSObject
 
 + (int)autoGuessRecommendationToMatrixTag:(id)arg1;
 + (id)findSourceBaseByName:(id)arg1 fromParamDict:(id)arg2;

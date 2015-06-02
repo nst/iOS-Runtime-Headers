@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPlaceholderColor : UIColor {
-}
+@interface UIPlaceholderColor : UIColor
 
 - (BOOL)allowsWeakReference;
 - (id)autorelease;

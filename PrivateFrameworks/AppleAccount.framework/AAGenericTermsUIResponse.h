@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface AAGenericTermsUIResponse : AAResponse {
     NSString *_responseAgreeURL;
     NSData *_responseData;
     NSDictionary *_responseTermsDictionary;
 }
 
-@property(readonly) NSString * agreeURL;
-@property(readonly) NSData * responseData;
-@property(readonly) NSDictionary * termsDictionary;
+@property (nonatomic, readonly) NSString *agreeURL;
+@property (nonatomic, readonly) NSData *responseData;
+@property (nonatomic, readonly) NSDictionary *termsDictionary;
 
 - (void).cxx_destruct;
 - (id)agreeURL;

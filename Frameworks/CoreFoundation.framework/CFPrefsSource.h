@@ -4,8 +4,8 @@
 
 @interface CFPrefsSource : NSObject {
     struct __CFDictionary { } *_dict;
-    unsigned int _generationCount : 63;
-    unsigned int _isSearchList : 1;
+    unsigned int _generationCount;
+    unsigned int _isSearchList;
     struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; } *_lock;
     union { 
         struct _CFPrefsShmemEntry { 
@@ -17,8 +17,8 @@
     union { struct _CFPrefsShmemEntry { unsigned int x_1_1_1 : 31; unsigned int x_1_1_2 : 1; } x1; int x2; } *shmemEntry;
 }
 
-+ (void)withNamedVolatileSourceForIdentifier:(struct __CFString { }*)arg1 perform:(id)arg2;
-+ (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3 container:(struct __CFString { }*)arg4 perform:(id)arg5;
++ (void)withNamedVolatileSourceForIdentifier:(struct __CFString { }*)arg1 perform:(id /* block */)arg2;
++ (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3 container:(struct __CFString { }*)arg4 perform:(id /* block */)arg5;
 
 - (struct __CFDictionary { }*)alreadylocked_copyDictionary;
 - (struct __CFArray { }*)alreadylocked_copyKeyList;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface _MFFontToFontDescriptorTransformer : _MFValueTransformer {
-}
+@interface _MFFontToFontDescriptorTransformer : _MFValueTransformer
 
 - (id)transformValue:(id)arg1 inverse:(BOOL)arg2;
 

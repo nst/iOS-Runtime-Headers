@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOCompanionDriveStep, GEOCompanionFerryStep, GEOCompanionWalkStep, NSString;
-
 @interface GEOCompanionStep : PBCodable <NSCopying> {
     unsigned int _distance;
     GEOCompanionDriveStep *_driveStep;
@@ -25,26 +23,26 @@
     GEOCompanionWalkStep *_walkStep;
 }
 
-@property unsigned int distance;
-@property(retain) GEOCompanionDriveStep * driveStep;
-@property unsigned int endCoordinateIndex;
-@property(retain) GEOCompanionFerryStep * ferryStep;
-@property BOOL hasDistance;
-@property(readonly) BOOL hasDriveStep;
-@property BOOL hasEndCoordinateIndex;
-@property(readonly) BOOL hasFerryStep;
-@property BOOL hasManeuverStartCoordinateIndex;
-@property(readonly) BOOL hasRoadName;
-@property BOOL hasStartCoordinateIndex;
-@property BOOL hasStepID;
-@property BOOL hasTime;
-@property(readonly) BOOL hasWalkStep;
-@property unsigned int maneuverStartCoordinateIndex;
-@property(retain) NSString * roadName;
-@property unsigned int startCoordinateIndex;
-@property unsigned int stepID;
-@property unsigned int time;
-@property(retain) GEOCompanionWalkStep * walkStep;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic, retain) GEOCompanionDriveStep *driveStep;
+@property (nonatomic) unsigned int endCoordinateIndex;
+@property (nonatomic, retain) GEOCompanionFerryStep *ferryStep;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic, readonly) BOOL hasDriveStep;
+@property (nonatomic) BOOL hasEndCoordinateIndex;
+@property (nonatomic, readonly) BOOL hasFerryStep;
+@property (nonatomic) BOOL hasManeuverStartCoordinateIndex;
+@property (nonatomic, readonly) BOOL hasRoadName;
+@property (nonatomic) BOOL hasStartCoordinateIndex;
+@property (nonatomic) BOOL hasStepID;
+@property (nonatomic) BOOL hasTime;
+@property (nonatomic, readonly) BOOL hasWalkStep;
+@property (nonatomic) unsigned int maneuverStartCoordinateIndex;
+@property (nonatomic, retain) NSString *roadName;
+@property (nonatomic) unsigned int startCoordinateIndex;
+@property (nonatomic) unsigned int stepID;
+@property (nonatomic) unsigned int time;
+@property (nonatomic, retain) GEOCompanionWalkStep *walkStep;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

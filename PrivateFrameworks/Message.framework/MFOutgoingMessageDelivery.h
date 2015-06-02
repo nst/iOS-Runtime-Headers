@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFDeliveryDelegate>, DeliveryAccount, MFMailDelivery, MFMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary, NSString;
-
 @interface MFOutgoingMessageDelivery : NSObject {
     MailAccount *_archiveAccount;
     NSArray *_charsets;
@@ -23,10 +21,10 @@
     BOOL _textPartsAreHTML;
 }
 
-@property(retain) NSDictionary * compositionSpecification;
-@property unsigned long long conversationFlags;
-@property BOOL isUserRequested;
-@property long long originalConversationId;
+@property (nonatomic, retain) NSDictionary *compositionSpecification;
+@property (nonatomic) unsigned long long conversationFlags;
+@property (nonatomic) BOOL isUserRequested;
+@property (nonatomic) long long originalConversationId;
 
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;

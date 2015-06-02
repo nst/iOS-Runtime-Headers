@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSLock, TSCECalculationEngine, TSCENamedReferenceTrie, TSCEReferenceTracker;
-
 @interface TSCENamedReferenceManager : TSPObject <TSCEReferenceTrackerDelegate> {
     TSCECalculationEngine *mCalculationEngine;
     NSLock *mNRMLock;

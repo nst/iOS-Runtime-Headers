@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString, VKMapView;
-
 @interface VKPerformanceTest : NSObject {
     int _loopCounter;
     VKMapView *_mapView;

@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString;
+@interface WKDOMText : WKDOMNode
 
-@interface WKDOMText : WKDOMNode {
-}
-
-@property(copy) NSString * data;
+@property (nonatomic, copy) NSString *data;
 
 - (id)data;
 - (void)setData:(id)arg1;

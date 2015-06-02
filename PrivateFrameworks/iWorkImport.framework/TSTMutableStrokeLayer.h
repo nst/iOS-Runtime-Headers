@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTMutableStrokeLayer : TSTStrokeLayer {
-}
+@interface TSTMutableStrokeLayer : TSTStrokeLayer
 
-@property unsigned short columnOrRowIndex;
+@property (nonatomic) unsigned short columnOrRowIndex;
 
 - (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
 - (void)flattenStrokeOrder;

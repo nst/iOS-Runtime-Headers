@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSSQLGroupByIntermediate, NSSQLHavingIntermediate, NSSQLOffsetIntermediate, NSSQLSelectIntermediate;
-
 @interface NSSQLFetchIntermediate : NSSQLStatementIntermediate {
     NSSQLGroupByIntermediate *_groupByClause;
     NSMutableArray *_groupByKeypaths;

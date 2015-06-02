@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIColor, UIView;
-
 @interface SiriUIKeyline : UIView {
     UIColor *_customBackgroundColor;
     float _customLeftPadding;
@@ -13,11 +11,11 @@
     BOOL _veritical;
 }
 
-@property(retain) UIColor * customBackgroundColor;
-@property float customLeftPadding;
-@property float customRightPadding;
-@property int keylineType;
-@property(getter=_isVeritical,setter=_setVertical:) BOOL veritical;
+@property (nonatomic, retain) UIColor *customBackgroundColor;
+@property (nonatomic) float customLeftPadding;
+@property (nonatomic) float customRightPadding;
+@property (nonatomic) int keylineType;
+@property (getter=_isVeritical, setter=_setVertical:, nonatomic) BOOL veritical;
 
 + (id)keyline;
 + (id)keylineForSelectableRow;

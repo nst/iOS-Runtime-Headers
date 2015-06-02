@@ -2,8 +2,6 @@
    Image: /usr/lib/libAXSpeechManager.dylib
  */
 
-@class NSMutableArray, NSNumber, NSObject<OS_dispatch_semaphore>, NSString, NSThread, TTSSpeechSynthesizer;
-
 @interface AXSpeechManager : NSObject <TTSSpeechSynthesizerDelegate> {
     BOOL _isSpeaking;
     NSNumber *_originalSpeechRateForJobOverride;
@@ -17,15 +15,15 @@
     BOOL isPaused;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isPaused;
-@property(readonly) BOOL isSpeaking;
-@property(retain) NSNumber * originalSpeechRateForJobOverride;
-@property(readonly) BOOL showControlCenterControls;
-@property BOOL speechEnabled;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isPaused;
+@property (nonatomic, readonly) BOOL isSpeaking;
+@property (nonatomic, retain) NSNumber *originalSpeechRateForJobOverride;
+@property (nonatomic, readonly) BOOL showControlCenterControls;
+@property (nonatomic) BOOL speechEnabled;
+@property (readonly) Class superclass;
 
 + (id)availableLanguageCodes;
 + (struct URegularExpression { }*)createRegularExpressionFromString:(id)arg1;

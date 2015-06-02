@@ -26,22 +26,22 @@
     double _timestamp;
 }
 
-@property long long businessID;
-@property int feedbackType;
-@property BOOL hasBusinessID;
-@property BOOL hasFeedbackType;
-@property BOOL hasLocalSearchProviderID;
-@property BOOL hasNumberOfResults;
-@property BOOL hasPositionInResults;
-@property BOOL hasSequenceNumber;
-@property BOOL hasSessionGUID;
-@property BOOL hasTimestamp;
-@property int localSearchProviderID;
-@property int numberOfResults;
-@property int positionInResults;
-@property int sequenceNumber;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
-@property double timestamp;
+@property (nonatomic) long long businessID;
+@property (nonatomic) int feedbackType;
+@property (nonatomic) BOOL hasBusinessID;
+@property (nonatomic) BOOL hasFeedbackType;
+@property (nonatomic) BOOL hasLocalSearchProviderID;
+@property (nonatomic) BOOL hasNumberOfResults;
+@property (nonatomic) BOOL hasPositionInResults;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL hasSessionGUID;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int localSearchProviderID;
+@property (nonatomic) int numberOfResults;
+@property (nonatomic) int positionInResults;
+@property (nonatomic) int sequenceNumber;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
+@property (nonatomic) double timestamp;
 
 - (long long)businessID;
 - (void)copyTo:(id)arg1;

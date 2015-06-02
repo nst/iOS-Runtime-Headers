@@ -2,31 +2,28 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, SAWeatherBarometricPressure, SAWeatherCondition, SAWeatherWindSpeed;
+@interface SAWeatherCurrentConditions : AceObject <SAAceSerializable>
 
-@interface SAWeatherCurrentConditions : AceObject <SAAceSerializable> {
-}
-
-@property(retain) SAWeatherBarometricPressure * barometricPressure;
-@property(retain) SAWeatherCondition * condition;
-@property(copy) NSNumber * dayOfWeek;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * dewPoint;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * heatIndex;
-@property(copy) NSString * moonPhase;
-@property(copy) NSString * percentHumidity;
-@property(copy) NSNumber * percentOfMoonFaceVisible;
-@property(copy) NSString * sunrise;
-@property(copy) NSString * sunset;
-@property(readonly) Class superclass;
-@property(copy) NSString * temperature;
-@property(copy) NSString * timeOfObservation;
-@property(copy) NSString * timeZone;
-@property(copy) NSString * visibility;
-@property(copy) NSString * windChill;
-@property(retain) SAWeatherWindSpeed * windSpeed;
+@property (nonatomic, retain) SAWeatherBarometricPressure *barometricPressure;
+@property (nonatomic, retain) SAWeatherCondition *condition;
+@property (nonatomic, copy) NSNumber *dayOfWeek;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *dewPoint;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *heatIndex;
+@property (nonatomic, copy) NSString *moonPhase;
+@property (nonatomic, copy) NSString *percentHumidity;
+@property (nonatomic, copy) NSNumber *percentOfMoonFaceVisible;
+@property (nonatomic, copy) NSString *sunrise;
+@property (nonatomic, copy) NSString *sunset;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *temperature;
+@property (nonatomic, copy) NSString *timeOfObservation;
+@property (nonatomic, copy) NSString *timeZone;
+@property (nonatomic, copy) NSString *visibility;
+@property (nonatomic, copy) NSString *windChill;
+@property (nonatomic, retain) SAWeatherWindSpeed *windSpeed;
 
 + (id)currentConditions;
 + (id)currentConditionsWithDictionary:(id)arg1 context:(id)arg2;

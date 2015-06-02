@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIViewElementText;
-
 @interface SKUIStarRatingViewElement : SKUIViewElement {
     bool _enabled;
     float _ratingValue;
@@ -11,9 +9,9 @@
     SKUIViewElementText *_text;
 }
 
-@property(readonly) float ratingValue;
-@property(readonly) int starType;
-@property(readonly) SKUIViewElementText * text;
+@property (nonatomic, readonly) float ratingValue;
+@property (nonatomic, readonly) int starType;
+@property (nonatomic, readonly) SKUIViewElementText *text;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

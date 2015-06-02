@@ -11,8 +11,8 @@
     unsigned long _matchedFrom;
 }
 
-@property BOOL forHeader;
-@property BOOL forTextPart;
+@property (nonatomic) BOOL forHeader;
+@property (nonatomic) BOOL forTextPart;
 
 + (unsigned int)requiredSizeToEncodeHeaderBytes:(const char *)arg1 length:(unsigned int)arg2;
 

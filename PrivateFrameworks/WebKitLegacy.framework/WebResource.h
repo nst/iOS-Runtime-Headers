@@ -2,24 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData, NSString, NSURL, WebResourcePrivate;
-
 @interface WebResource : NSObject <NSCoding, NSCopying> {
     WebResourcePrivate *_private;
 }
 
-@property(copy,readonly) NSString * MIMEType;
-@property(readonly) NSURL * URL;
-@property(copy,readonly) NSData * data;
-@property(copy,readonly) NSString * frameName;
-@property(copy,readonly) NSString * textEncodingName;
+@property (nonatomic, readonly, copy) NSString *MIMEType;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (nonatomic, readonly, copy) NSString *frameName;
+@property (nonatomic, readonly, copy) NSString *textEncodingName;
 
-+ (id)bundleForClass;
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (id)MIMEType;
 - (id)URL;
@@ -41,5 +34,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 URL:(id)arg2 MIMEType:(id)arg3 textEncodingName:(id)arg4 frameName:(id)arg5;
 - (id)textEncodingName;
+
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
++ (id)bundleForClass;
 
 @end

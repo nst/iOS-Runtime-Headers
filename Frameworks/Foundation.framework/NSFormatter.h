@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFormatter : NSObject <NSCoding, NSCopying> {
-}
+@interface NSFormatter : NSObject <NSCoding, NSCopying>
 
-- (void)_gkUpdateLocale;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)editingStringForObjectValue:(id)arg1;
@@ -16,5 +16,9 @@
 - (BOOL)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 - (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
 - (id)stringForObjectValue:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
+- (void)_gkUpdateLocale;
 
 @end

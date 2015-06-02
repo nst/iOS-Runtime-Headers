@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKRoutePolyline;
-
 @interface MKRouteStepPolyline : MKPolyline {
     MKRoutePolyline *_fullRoute;
 }

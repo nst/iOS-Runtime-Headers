@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICardCellLayout;
-
 @interface SKUISearchCollectionViewCell : SKUIItemCollectionViewCell {
     SKUICardCellLayout *_layout;
 }
 
-@property(readonly) SKUICardCellLayout * layout;
+@property (nonatomic, readonly) SKUICardCellLayout *layout;
 
 - (void).cxx_destruct;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2;

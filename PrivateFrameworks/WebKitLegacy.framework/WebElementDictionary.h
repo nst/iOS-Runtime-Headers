@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSMutableDictionary, NSMutableSet;
-
 @interface WebElementDictionary : NSDictionary {
     NSMutableDictionary *_cache;
     BOOL _cacheComplete;

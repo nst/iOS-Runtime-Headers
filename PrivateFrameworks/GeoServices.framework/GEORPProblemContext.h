@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDPlace, GEOPlace, GEORPMapLocation, NSMutableArray, NSString;
-
 @interface GEORPProblemContext : PBCodable <NSCopying> {
     NSMutableArray *_auxiliaryControls;
     NSMutableArray *_directionsRequests;
@@ -27,26 +25,26 @@
     NSMutableArray *_visibleTileSets;
 }
 
-@property(retain) NSMutableArray * auxiliaryControls;
-@property(retain) NSMutableArray * directionsRequests;
-@property(retain) NSMutableArray * directionsResponses;
-@property(readonly) BOOL hasLastSearchString;
-@property(readonly) BOOL hasMapLocation;
-@property(readonly) BOOL hasOriginalPlace;
-@property BOOL hasOriginatingAuxiliaryControlIndex;
-@property BOOL hasPinType;
-@property(readonly) BOOL hasPlace;
-@property BOOL hasSessionId;
-@property(readonly) BOOL hasTileStateLog;
-@property(retain) NSString * lastSearchString;
-@property(retain) GEORPMapLocation * mapLocation;
-@property(retain) GEOPlace * originalPlace;
-@property unsigned long long originatingAuxiliaryControlIndex;
-@property int pinType;
-@property(retain) GEOPDPlace * place;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionId;
-@property(retain) NSString * tileStateLog;
-@property(retain) NSMutableArray * visibleTileSets;
+@property (nonatomic, retain) NSMutableArray *auxiliaryControls;
+@property (nonatomic, retain) NSMutableArray *directionsRequests;
+@property (nonatomic, retain) NSMutableArray *directionsResponses;
+@property (nonatomic, readonly) BOOL hasLastSearchString;
+@property (nonatomic, readonly) BOOL hasMapLocation;
+@property (nonatomic, readonly) BOOL hasOriginalPlace;
+@property (nonatomic) BOOL hasOriginatingAuxiliaryControlIndex;
+@property (nonatomic) BOOL hasPinType;
+@property (nonatomic, readonly) BOOL hasPlace;
+@property (nonatomic) BOOL hasSessionId;
+@property (nonatomic, readonly) BOOL hasTileStateLog;
+@property (nonatomic, retain) NSString *lastSearchString;
+@property (nonatomic, retain) GEORPMapLocation *mapLocation;
+@property (nonatomic, retain) GEOPlace *originalPlace;
+@property (nonatomic) unsigned long long originatingAuxiliaryControlIndex;
+@property (nonatomic) int pinType;
+@property (nonatomic, retain) GEOPDPlace *place;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic, retain) NSString *tileStateLog;
+@property (nonatomic, retain) NSMutableArray *visibleTileSets;
 
 - (void)addAuxiliaryControl:(id)arg1;
 - (void)addDirectionsRequest:(id)arg1;

@@ -6,7 +6,7 @@
     BOOL _topSeparator;
 }
 
-@property BOOL topSeparator;
+@property (nonatomic) BOOL topSeparator;
 
 + (void)initialize;
 + (float)separatorHeight;

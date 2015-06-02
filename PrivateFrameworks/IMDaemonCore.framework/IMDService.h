@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSBundle, NSDictionary, NSString;
-
 @interface IMDService : NSObject <IMSystemMonitorListener> {
     NSDictionary *_accountDefaults;
     BOOL _blockPrefWriting;
@@ -16,32 +14,32 @@
     Class _sessionClass;
 }
 
-@property(readonly) Class accountClass;
-@property(retain,readonly) NSBundle * bundle;
-@property(retain,readonly) NSDictionary * defaultAccountSettings;
-@property(readonly) BOOL disallowDeactivation;
-@property(retain,readonly) NSString * internalName;
-@property(readonly) BOOL isIDSBased;
-@property(readonly) BOOL serviceChatsIgnoreLoginStatus;
-@property(retain,readonly) NSDictionary * serviceDefaults;
-@property(retain,readonly) NSDictionary * serviceDefaultsForSetup;
-@property(retain,readonly) NSString * serviceDomain;
-@property(readonly) BOOL serviceIgnoresNetworkConnectivity;
-@property(readonly) BOOL serviceNeedsLogin;
-@property(readonly) BOOL serviceNeedsPassword;
-@property(retain,readonly) NSDictionary * serviceProperties;
-@property(readonly) int serviceProtocolVersion;
-@property(readonly) BOOL serviceRequiresHost;
-@property(readonly) BOOL serviceRequiresSingleAccount;
-@property(readonly) BOOL serviceShouldBeAlwaysLoggedIn;
-@property(readonly) BOOL serviceSupportsPresence;
-@property(readonly) BOOL serviceSupportsRegistration;
-@property(readonly) BOOL serviceWantsNullHostReachability;
-@property(readonly) Class sessionClass;
-@property(readonly) BOOL shouldCreateActiveAccounts;
-@property(readonly) BOOL shouldForceAccountsActive;
-@property(readonly) BOOL shouldForceAccountsConnected;
-@property(readonly) BOOL supportsDatabase;
+@property (nonatomic, readonly) Class accountClass;
+@property (nonatomic, readonly, retain) NSBundle *bundle;
+@property (nonatomic, readonly, retain) NSDictionary *defaultAccountSettings;
+@property (nonatomic, readonly) BOOL disallowDeactivation;
+@property (nonatomic, readonly, retain) NSString *internalName;
+@property (nonatomic, readonly) BOOL isIDSBased;
+@property (nonatomic, readonly) BOOL serviceChatsIgnoreLoginStatus;
+@property (nonatomic, readonly, retain) NSDictionary *serviceDefaults;
+@property (nonatomic, readonly, retain) NSDictionary *serviceDefaultsForSetup;
+@property (nonatomic, readonly, retain) NSString *serviceDomain;
+@property (nonatomic, readonly) BOOL serviceIgnoresNetworkConnectivity;
+@property (nonatomic, readonly) BOOL serviceNeedsLogin;
+@property (nonatomic, readonly) BOOL serviceNeedsPassword;
+@property (nonatomic, readonly, retain) NSDictionary *serviceProperties;
+@property (nonatomic, readonly) int serviceProtocolVersion;
+@property (nonatomic, readonly) BOOL serviceRequiresHost;
+@property (nonatomic, readonly) BOOL serviceRequiresSingleAccount;
+@property (nonatomic, readonly) BOOL serviceShouldBeAlwaysLoggedIn;
+@property (nonatomic, readonly) BOOL serviceSupportsPresence;
+@property (nonatomic, readonly) BOOL serviceSupportsRegistration;
+@property (nonatomic, readonly) BOOL serviceWantsNullHostReachability;
+@property (nonatomic, readonly) Class sessionClass;
+@property (nonatomic, readonly) BOOL shouldCreateActiveAccounts;
+@property (nonatomic, readonly) BOOL shouldForceAccountsActive;
+@property (nonatomic, readonly) BOOL shouldForceAccountsConnected;
+@property (nonatomic, readonly) BOOL supportsDatabase;
 
 - (id)_copyServicePropertiesFromIMServiceBundle:(id)arg1;
 - (id)_defaultDefaults;

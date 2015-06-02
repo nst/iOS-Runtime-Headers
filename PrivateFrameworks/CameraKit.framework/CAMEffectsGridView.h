@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDictionary;
-
 @interface CAMEffectsGridView : CAMGLView {
     BOOL __atomicBlackAndWhite;
     BOOL __fetchingGridFilters;
@@ -17,11 +15,11 @@
     BOOL _square;
 }
 
-@property(getter=_isAtomicBlackAndWhite,setter=_setAtomicBlackAndWhite:) BOOL _atomicBlackAndWhite;
-@property(setter=_setFetchingGridFilters:) BOOL _fetchingGridFilters;
-@property(setter=_setGridFilters:,retain) NSDictionary * _gridFilters;
-@property(getter=isBlackAndWhite) BOOL blackAndWhite;
-@property(getter=isSquare) BOOL square;
+@property (getter=_isAtomicBlackAndWhite, setter=_setAtomicBlackAndWhite:) BOOL _atomicBlackAndWhite;
+@property (setter=_setFetchingGridFilters:) BOOL _fetchingGridFilters;
+@property (setter=_setGridFilters:, retain) NSDictionary *_gridFilters;
+@property (getter=isBlackAndWhite) BOOL blackAndWhite;
+@property (getter=isSquare) BOOL square;
 
 - (void).cxx_destruct;
 - (unsigned int)_cellCount;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface WLOMetrics : NSObject {
-}
+@interface WLOMetrics : NSObject
 
 + (void)LogConfigurationMetric:(id)arg1;
 + (void)LogEventMetric:(unsigned int)arg1;

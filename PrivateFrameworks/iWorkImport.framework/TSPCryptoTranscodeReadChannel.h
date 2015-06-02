@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPMutableCryptoInfo>, <TSUStreamReadChannel>, NSString;
-
 @interface TSPCryptoTranscodeReadChannel : NSObject <TSUStreamReadChannel> {
     <TSPMutableCryptoInfo> *_encryptionInfo;
     <TSUStreamReadChannel> *_readChannel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;
 - (id)initWithReadChannel:(id)arg1 decryptionInfo:(id)arg2 encryptionInfo:(id)arg3;
-- (void)readWithHandler:(id)arg1;
+- (void)readWithHandler:(id /* block */)arg1;
 
 @end

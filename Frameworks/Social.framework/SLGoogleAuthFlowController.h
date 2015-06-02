@@ -2,33 +2,23 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface SLGoogleAuthFlowController : NSObject <ACOOPAuthFlowDelegate, UIWebViewDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     BOOL _waitingForAuthorizationCode;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(id)arg2;
-- (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id)arg2;
-- (void)_fetchUsernameForToken:(id)arg1 completion:(id)arg2;
+- (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(id /* block */)arg2;
+- (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id /* block */)arg2;
+- (void)_fetchUsernameForToken:(id)arg1 completion:(id /* block */)arg2;
 - (id)authURLForUsername:(id)arg1;
 - (id)requestForAuthURL:(id)arg1;
-- (void)setAuthFlowCompletion:(id)arg1;
+- (void)setAuthFlowCompletion:(id /* block */)arg1;
 - (BOOL)shouldHideWebView:(id)arg1 forLoadWithRequest:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
 

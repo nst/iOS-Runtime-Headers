@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <GEOTileLoaderInternalDelegate>, GEOTileLoaderConfiguration, GEOTilePool, GEOTileServerProxy, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GEOTileLoaderInternal : GEOTileLoader <GEOExperimentConfigurationObserver, GEOResourceManifestTileGroupObserver, GEOTileServerProxyDelegate> {
     GEOTilePool *_cache;
     GEOTileLoaderConfiguration *_config;
     int _diskHits;
     GEOTilePool *_expiringCache;
-
-  /* Unexpected information at end of encoded ivar type: "__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
-  /* Error parsing encoded ivar type info: {list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}"__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
     struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _freeableSizeRequesters;
-
     <GEOTileLoaderInternalDelegate> *_internalDelegate;
     NSObject<OS_dispatch_queue> *_internalDelegateQ;
     BOOL _isUsageTimerScheduled;
@@ -57,11 +47,7 @@
         } __size_; 
     } _recentErrors;
     int _rollingBatchId;
-
-  /* Unexpected information at end of encoded ivar type: "__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
-  /* Error parsing encoded ivar type info: {list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}"__next_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *>}}"__size_alloc_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> > >="__first_"L}} */
     struct list<_CacheRequester<void (^)(unsigned long long)>, std::__1::allocator<_CacheRequester<void (^)(unsigned long long)> > >="__end_"{__list_node_base<_CacheRequester<void (^)(unsigned long long)>, void *>="__prev_"^{__list_node<_CacheRequester<void (^)(unsigned long long)>, void *> {} _shrinkCacheRequesters;
-
     struct { 
         double x; 
         double y; 
@@ -110,10 +96,10 @@
     } _usageTimer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -131,7 +117,7 @@
 - (void)_usageTimerFired;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2 exclusive:(BOOL)arg3;
 - (id)cachedTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)calculateFreeableSizeWithCallbackQ:(id)arg1 finished:(id)arg2;
+- (void)calculateFreeableSizeWithCallbackQ:(id)arg1 finished:(id /* block */)arg2;
 - (void)cancelAllForClient:(id)arg1;
 - (void)cancelKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 forClient:(id)arg2;
 - (void)clearAllCaches;
@@ -141,13 +127,13 @@
 - (int)diskHits;
 - (void)endPreloadSessionForClient:(id)arg1;
 - (void)experimentConfigurationDidChange:(id)arg1;
-- (void)expireTilesWithPredicate:(id)arg1;
+- (void)expireTilesWithPredicate:(id /* block */)arg1;
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;
 - (id)internalDelegate;
 - (id)internalDelegateQ;
-- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned int)arg4 callbackQ:(id)arg5 beginNetwork:(id)arg6 callback:(id)arg7;
-- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 proxyClient:(id)arg4 options:(unsigned int)arg5 callbackQ:(id)arg6 beginNetwork:(id)arg7 callback:(id)arg8;
+- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned int)arg4 callbackQ:(id)arg5 beginNetwork:(id /* block */)arg6 callback:(id /* block */)arg7;
+- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 proxyClient:(id)arg4 options:(unsigned int)arg5 callbackQ:(id)arg6 beginNetwork:(id /* block */)arg7 callback:(id /* block */)arg8;
 - (int)memoryHits;
 - (int)networkHits;
 - (void)openForClient:(id)arg1;
@@ -167,6 +153,6 @@
 - (void)setInternalDelegate:(id)arg1;
 - (void)setInternalDelegateQ:(id)arg1;
 - (void)setSortPoint:(const struct { double x1; double x2; }*)arg1;
-- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 callbackQ:(id)arg2 finished:(id)arg3;
+- (void)shrinkDiskCacheToSize:(unsigned long long)arg1 callbackQ:(id)arg2 finished:(id /* block */)arg3;
 
 @end

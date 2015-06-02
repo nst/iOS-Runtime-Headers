@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, PLRoundProgressView, UIActivityIndicatorView, UILabel, _UIBackdropView;
-
 @interface PUProgressIndicatorView : UIView {
     int __currentState;
     double __timestampBeganShowing;
     _UIBackdropView *_backgroundView;
     NSArray *_backgroundViewConstraints;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     float _currentProgress;
     BOOL _isDeterminate;
     NSArray *_labelAndPieProgressConstraints;
@@ -35,13 +25,13 @@
     BOOL _wantsImmediateHide;
 }
 
-@property(setter=_setCurrentState:) int _currentState;
-@property(setter=_setTimestampBeganShowing:) double _timestampBeganShowing;
-@property float currentProgress;
-@property(setter=setDeterminate:) BOOL isDeterminate;
-@property(copy) NSString * localizedMessage;
-@property BOOL showsBackground;
-@property(readonly) int style;
+@property (setter=_setCurrentState:, nonatomic) int _currentState;
+@property (setter=_setTimestampBeganShowing:, nonatomic) double _timestampBeganShowing;
+@property (nonatomic) float currentProgress;
+@property (setter=setDeterminate:, nonatomic) BOOL isDeterminate;
+@property (nonatomic, copy) NSString *localizedMessage;
+@property (nonatomic) BOOL showsBackground;
+@property (nonatomic, readonly) int style;
 
 - (void).cxx_destruct;
 - (int)_currentState;
@@ -51,11 +41,11 @@
 - (void)_setTimestampBeganShowing:(double)arg1;
 - (double)_timestampBeganShowing;
 - (void)_updatePieProgress;
-- (void)_updateProgressViewsAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)_updateProgressViewsAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_updateSubviewsOrdering;
 - (void)beginShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2;
 - (float)currentProgress;
-- (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSDictionary, NSString, NSURL;
-
 @interface CKDRequestHeader : NSObject <NSSecureCoding> {
     NSDictionary *_headerDict;
     NSString *_method;
@@ -12,11 +10,11 @@
     unsigned int _urlSessionTaskIdentifier;
 }
 
-@property(retain) NSDictionary * headerDict;
-@property(retain) NSString * method;
-@property(retain) NSString * sessionConfigurationIdentifier;
-@property(retain) NSURL * url;
-@property unsigned int urlSessionTaskIdentifier;
+@property (nonatomic, retain) NSDictionary *headerDict;
+@property (nonatomic, retain) NSString *method;
+@property (nonatomic, retain) NSString *sessionConfigurationIdentifier;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic) unsigned int urlSessionTaskIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

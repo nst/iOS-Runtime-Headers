@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface IMTimer : NSObject {
     NSString *_name;
     SEL _selector;
@@ -14,8 +12,8 @@
     BOOL _wakeDevice;
 }
 
-@property(retain,readonly) NSDate * fireDate;
-@property(retain,readonly) id userInfo;
+@property (nonatomic, readonly, retain) NSDate *fireDate;
+@property (nonatomic, readonly, retain) id userInfo;
 
 - (void)dealloc;
 - (id)fireDate;

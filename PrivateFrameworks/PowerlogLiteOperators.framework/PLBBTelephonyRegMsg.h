@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSDictionary, NSNumber, NSString;
-
 @interface PLBBTelephonyRegMsg : PLBasebandMessage {
     NSNumber *_cellID;
     unsigned char _changed;
@@ -18,17 +16,17 @@
     NSDate *_timeUpdate;
 }
 
-@property(retain) NSNumber * cellID;
+@property (retain) NSNumber *cellID;
 @property unsigned char changed;
-@property(retain) NSNumber * dataActive;
-@property(retain) NSNumber * dataAttached;
-@property(retain) NSString * dataIndicator;
-@property(retain) NSNumber * homeNetwork;
-@property(retain) NSNumber * lac;
-@property(retain) NSString * operatorName;
-@property(retain) NSString * registrationStatus;
-@property(retain) NSDictionary * telRegInfo;
-@property(retain) NSDate * timeUpdate;
+@property (retain) NSNumber *dataActive;
+@property (retain) NSNumber *dataAttached;
+@property (retain) NSString *dataIndicator;
+@property (retain) NSNumber *homeNetwork;
+@property (retain) NSNumber *lac;
+@property (retain) NSString *operatorName;
+@property (retain) NSString *registrationStatus;
+@property (retain) NSDictionary *telRegInfo;
+@property (retain) NSDate *timeUpdate;
 
 + (id)bbEuLogMsgNameTelephonyReg;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, _UIBackdropView, _UIBackdropViewSettings;
-
 @interface SKUIStorePagePinnedBackdropDecorationView : UICollectionReusableView {
     _UIBackdropViewSettings *_backdropStyleDefaultSettings;
     _UIBackdropView *_backdropView;

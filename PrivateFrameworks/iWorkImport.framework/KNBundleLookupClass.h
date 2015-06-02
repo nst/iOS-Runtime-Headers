@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBundleLookupClass : NSObject {
-}
+@interface KNBundleLookupClass : NSObject
 
 @end

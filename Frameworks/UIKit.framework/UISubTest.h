@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSNumber, NSString;
-
 @interface UISubTest : NSObject {
     NSMutableArray *_fps;
     BOOL _showFps;

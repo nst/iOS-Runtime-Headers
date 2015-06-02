@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, UIView;
-
 @interface UIDropShadowView : UIView {
     UIView *_backgroundImage;
     UIView *_contentView;
@@ -11,7 +9,7 @@
     NSDictionary *_preservedLayerValues;
 }
 
-@property UIView * contentView;
+@property (nonatomic) UIView *contentView;
 @property float cornerRadius;
 
 - (id)contentView;

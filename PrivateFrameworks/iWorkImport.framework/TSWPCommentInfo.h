@@ -2,31 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSKModel>, NSDate, NSString, TSDCommentStorage, TSKAnnotationAuthor;
-
 @interface TSWPCommentInfo : TSWPShapeInfo <TSDAnnotationHosting> {
     TSDCommentStorage *_commentStorage;
 }
 
-@property(readonly) int annotationDisplayStringType;
-@property(readonly) int annotationType;
-@property(readonly) TSKAnnotationAuthor * author;
-@property(readonly) NSString * changeTrackingContentFormatString;
-@property(readonly) NSString * changeTrackingContentString;
-@property(readonly) NSString * changeTrackingTitleString;
-@property(readonly) TSDCommentStorage * commentStorage;
-@property(readonly) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <TSKModel> * hostingModel;
-@property(copy) TSDCommentStorage * storage;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int annotationDisplayStringType;
+@property (nonatomic, readonly) int annotationType;
+@property (nonatomic, readonly) TSKAnnotationAuthor *author;
+@property (nonatomic, readonly) NSString *changeTrackingContentFormatString;
+@property (nonatomic, readonly) NSString *changeTrackingContentString;
+@property (nonatomic, readonly) NSString *changeTrackingTitleString;
+@property (nonatomic, readonly) TSDCommentStorage *commentStorage;
+@property (nonatomic, readonly) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <TSKModel> *hostingModel;
+@property (nonatomic, copy) TSDCommentStorage *storage;
+@property (readonly) Class superclass;
 
 + (id)bezierPathForExportCommentOutline;
 + (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 storage:(id)arg3;

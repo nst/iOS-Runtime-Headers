@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3OrderingTerm : NSObject <NSCoding, NSCopying> {
     NSString *_collation;
     int _direction;
     NSString *_property;
 }
 
-@property(readonly) NSString * collation;
-@property(readonly) int direction;
-@property(readonly) NSString * property;
+@property (nonatomic, readonly) NSString *collation;
+@property (nonatomic, readonly) int direction;
+@property (nonatomic, readonly) NSString *property;
 
 + (id)orderingTermWithProperty:(id)arg1;
 + (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;

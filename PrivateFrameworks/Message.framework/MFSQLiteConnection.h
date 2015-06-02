@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSQLiteConnectionPool, MFWeakReferenceHolder, NSString;
-
 @interface MFSQLiteConnection : NSObject {
     void *_CPSearchContext;
     void *_ICUSearchContext;
@@ -16,8 +14,8 @@
     int _transactionType;
 }
 
-@property(readonly) struct sqlite3 { }* db;
-@property MFSQLiteConnectionPool * pool;
+@property (nonatomic, readonly) struct sqlite3 { }*db;
+@property (nonatomic) MFSQLiteConnectionPool *pool;
 
 - (const char *)_vfsModuleName;
 - (int)beginTransaction;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSData, NSDate, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL, WBSHistoryItem, WBSHistoryVisit;
-
 @interface WBSHistoryItem : NSObject {
     NSMutableArray *_autocompleteTriggers;
     float _cachedTopSitesURLPenalty;
@@ -31,39 +29,39 @@
     } _weeklyVisitCounts;
 }
 
-@property(readonly) NSArray * autocompleteTriggers;
-@property(readonly) NSData * autocompleteTriggersDataOnSynchronizationQueue;
-@property float cachedTopSitesURLPenalty;
-@property float cachedTopSitesVisitScore;
-@property(readonly) unsigned int dailyVisitCountsCountOnSynchronizationQueue;
-@property(readonly) NSData * dailyVisitCountsDataOnSynchronizationQueue;
-@property(readonly) const int* dailyVisitCountsPtrOnSynchronizationQueue;
-@property int databaseID;
-@property(readonly) WBSHistoryItem * endOfLastVisitRedirectChain;
-@property double lastTimeTopSitesScoreWasComputed;
-@property(readonly) WBSHistoryVisit * lastVisit;
-@property(readonly) WBSHistoryVisit * lastVisitOnSynchronizationQueue;
-@property(readonly) WBSHistoryItem * lastVisitRedirectDestinationItem;
-@property BOOL lastVisitWasFailure;
-@property(readonly) BOOL lastVisitWasHTTPNonGet;
-@property(readonly) NSDate * lastVisitedDate;
-@property(readonly) double lastVisitedTimeInterval;
-@property(readonly) NSArray * redirectSourceItems;
-@property(readonly) BOOL shouldRecomputeDerivedVisitCounts;
-@property(readonly) NSString * simplifiedUserVisibleURLString;
-@property(readonly) NSString * stringForUserTypedDomainExpansion;
-@property(readonly) NSString * stringForUserTypedDomainExpansionOnSynchronizationQueue;
-@property(copy) NSString * title;
-@property(readonly) NSURL * url;
-@property(readonly) NSString * urlString;
-@property(readonly) NSString * urlStringOnSynchronizationQueue;
-@property(readonly) NSString * userVisibleURLString;
-@property(readonly) unsigned int visitCount;
-@property(readonly) NSArray * visits;
-@property(readonly) NSSet * visitsPendingWriteToDataStoreOnSynchronizationQueue;
-@property(readonly) unsigned int weeklyVisitCountsCountOnSynchronizationQueue;
-@property(readonly) NSData * weeklyVisitCountsDataOnSynchronizationQueue;
-@property(readonly) const int* weeklyVisitCountsPtrOnSynchronizationQueue;
+@property (nonatomic, readonly) NSArray *autocompleteTriggers;
+@property (nonatomic, readonly) NSData *autocompleteTriggersDataOnSynchronizationQueue;
+@property (nonatomic) float cachedTopSitesURLPenalty;
+@property (nonatomic) float cachedTopSitesVisitScore;
+@property (nonatomic, readonly) unsigned int dailyVisitCountsCountOnSynchronizationQueue;
+@property (nonatomic, readonly) NSData *dailyVisitCountsDataOnSynchronizationQueue;
+@property (nonatomic, readonly) const int*dailyVisitCountsPtrOnSynchronizationQueue;
+@property (nonatomic) int databaseID;
+@property (nonatomic, readonly) WBSHistoryItem *endOfLastVisitRedirectChain;
+@property (nonatomic) double lastTimeTopSitesScoreWasComputed;
+@property (nonatomic, readonly) WBSHistoryVisit *lastVisit;
+@property (nonatomic, readonly) WBSHistoryVisit *lastVisitOnSynchronizationQueue;
+@property (nonatomic, readonly) WBSHistoryItem *lastVisitRedirectDestinationItem;
+@property (nonatomic) BOOL lastVisitWasFailure;
+@property (nonatomic, readonly) BOOL lastVisitWasHTTPNonGet;
+@property (nonatomic, readonly) NSDate *lastVisitedDate;
+@property (nonatomic, readonly) double lastVisitedTimeInterval;
+@property (nonatomic, readonly) NSArray *redirectSourceItems;
+@property (nonatomic, readonly) BOOL shouldRecomputeDerivedVisitCounts;
+@property (nonatomic, readonly) NSString *simplifiedUserVisibleURLString;
+@property (nonatomic, readonly) NSString *stringForUserTypedDomainExpansion;
+@property (nonatomic, readonly) NSString *stringForUserTypedDomainExpansionOnSynchronizationQueue;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSString *urlString;
+@property (nonatomic, readonly) NSString *urlStringOnSynchronizationQueue;
+@property (nonatomic, readonly) NSString *userVisibleURLString;
+@property (nonatomic, readonly) unsigned int visitCount;
+@property (nonatomic, readonly) NSArray *visits;
+@property (nonatomic, readonly) NSSet *visitsPendingWriteToDataStoreOnSynchronizationQueue;
+@property (nonatomic, readonly) unsigned int weeklyVisitCountsCountOnSynchronizationQueue;
+@property (nonatomic, readonly) NSData *weeklyVisitCountsDataOnSynchronizationQueue;
+@property (nonatomic, readonly) const int*weeklyVisitCountsPtrOnSynchronizationQueue;
 
 + (void)initialize;
 + (id)synchronizationQueue;

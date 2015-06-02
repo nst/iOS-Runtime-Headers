@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class <ATClient>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATLegacySyncSessionTask : ATSessionTask {
     <ATClient> *_client;
     NSString *_dataClass;
@@ -11,8 +9,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * dataClass;
-@property unsigned long grappaSessionID;
+@property (nonatomic, readonly, copy) NSString *dataClass;
+@property (nonatomic) unsigned long grappaSessionID;
 
 - (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1 shouldAddAssetTask:(BOOL)arg2;

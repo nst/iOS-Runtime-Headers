@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPList;
-
 @interface CPListItem : NSObject <CPDisposable> {
     CPList *list;
     int number;
     struct __CFArray { } *paragraphs;
 }
 
-@property(retain) CPList * list;
-@property int number;
+@property (nonatomic, retain) CPList *list;
+@property (nonatomic) int number;
 
 - (void)addParagraph:(id)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAddressFilter, GEOPDAmenitiesFilter, GEOPDBoundsFilter, GEOPDBusinessClaimFilter, GEOPDETAFilter, GEOPDEntityFilter, GEOPDFlyoverFilter, GEOPDHoursFilter, GEOPDPhotoFilter, GEOPDPlaceInfoFilter, GEOPDRatingFilter, GEOPDRawAttributeFilter, GEOPDReviewFilter, GEOPDRoadAccessInfoFilter, GEOPDStyleAttributesFilter;
-
 @interface GEOPDComponentFilter : PBCodable <NSCopying> {
     GEOPDRoadAccessInfoFilter *_accessInfoFilter;
     GEOPDAddressFilter *_addressFilter;
@@ -22,36 +20,36 @@
     GEOPDStyleAttributesFilter *_styleAttributesFilter;
 }
 
-@property(retain) GEOPDRoadAccessInfoFilter * accessInfoFilter;
-@property(retain) GEOPDAddressFilter * addressFilter;
-@property(retain) GEOPDAmenitiesFilter * amenitiesFilter;
-@property(retain) GEOPDBoundsFilter * boundsFilter;
-@property(retain) GEOPDBusinessClaimFilter * businessClaimFilter;
-@property(retain) GEOPDEntityFilter * entityFilter;
-@property(retain) GEOPDETAFilter * etaFilter;
-@property(retain) GEOPDFlyoverFilter * flyoverFilter;
-@property(readonly) BOOL hasAccessInfoFilter;
-@property(readonly) BOOL hasAddressFilter;
-@property(readonly) BOOL hasAmenitiesFilter;
-@property(readonly) BOOL hasBoundsFilter;
-@property(readonly) BOOL hasBusinessClaimFilter;
-@property(readonly) BOOL hasEntityFilter;
-@property(readonly) BOOL hasEtaFilter;
-@property(readonly) BOOL hasFlyoverFilter;
-@property(readonly) BOOL hasHoursFilter;
-@property(readonly) BOOL hasPhotoFilter;
-@property(readonly) BOOL hasPlaceInfoFilter;
-@property(readonly) BOOL hasRatingFilter;
-@property(readonly) BOOL hasRawAttributeFilter;
-@property(readonly) BOOL hasReviewFilter;
-@property(readonly) BOOL hasStyleAttributesFilter;
-@property(retain) GEOPDHoursFilter * hoursFilter;
-@property(retain) GEOPDPhotoFilter * photoFilter;
-@property(retain) GEOPDPlaceInfoFilter * placeInfoFilter;
-@property(retain) GEOPDRatingFilter * ratingFilter;
-@property(retain) GEOPDRawAttributeFilter * rawAttributeFilter;
-@property(retain) GEOPDReviewFilter * reviewFilter;
-@property(retain) GEOPDStyleAttributesFilter * styleAttributesFilter;
+@property (nonatomic, retain) GEOPDRoadAccessInfoFilter *accessInfoFilter;
+@property (nonatomic, retain) GEOPDAddressFilter *addressFilter;
+@property (nonatomic, retain) GEOPDAmenitiesFilter *amenitiesFilter;
+@property (nonatomic, retain) GEOPDBoundsFilter *boundsFilter;
+@property (nonatomic, retain) GEOPDBusinessClaimFilter *businessClaimFilter;
+@property (nonatomic, retain) GEOPDEntityFilter *entityFilter;
+@property (nonatomic, retain) GEOPDETAFilter *etaFilter;
+@property (nonatomic, retain) GEOPDFlyoverFilter *flyoverFilter;
+@property (nonatomic, readonly) BOOL hasAccessInfoFilter;
+@property (nonatomic, readonly) BOOL hasAddressFilter;
+@property (nonatomic, readonly) BOOL hasAmenitiesFilter;
+@property (nonatomic, readonly) BOOL hasBoundsFilter;
+@property (nonatomic, readonly) BOOL hasBusinessClaimFilter;
+@property (nonatomic, readonly) BOOL hasEntityFilter;
+@property (nonatomic, readonly) BOOL hasEtaFilter;
+@property (nonatomic, readonly) BOOL hasFlyoverFilter;
+@property (nonatomic, readonly) BOOL hasHoursFilter;
+@property (nonatomic, readonly) BOOL hasPhotoFilter;
+@property (nonatomic, readonly) BOOL hasPlaceInfoFilter;
+@property (nonatomic, readonly) BOOL hasRatingFilter;
+@property (nonatomic, readonly) BOOL hasRawAttributeFilter;
+@property (nonatomic, readonly) BOOL hasReviewFilter;
+@property (nonatomic, readonly) BOOL hasStyleAttributesFilter;
+@property (nonatomic, retain) GEOPDHoursFilter *hoursFilter;
+@property (nonatomic, retain) GEOPDPhotoFilter *photoFilter;
+@property (nonatomic, retain) GEOPDPlaceInfoFilter *placeInfoFilter;
+@property (nonatomic, retain) GEOPDRatingFilter *ratingFilter;
+@property (nonatomic, retain) GEOPDRawAttributeFilter *rawAttributeFilter;
+@property (nonatomic, retain) GEOPDReviewFilter *reviewFilter;
+@property (nonatomic, retain) GEOPDStyleAttributesFilter *styleAttributesFilter;
 
 - (id)accessInfoFilter;
 - (id)addressFilter;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDCanvas, TSKDocumentRoot;
-
 @interface TSASearchCanvasDelegate : NSObject <TSDCanvasDelegate, TSKSearchCanvasDelegate> {
     TSDCanvas *mCanvas;
     TSKDocumentRoot *mDocumentRoot;
 }
 
-@property(readonly) TSDCanvas * canvas;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSDCanvas *canvas;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)canvas;
 - (id)canvasSelectionPathForInfo:(id)arg1;

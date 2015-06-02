@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSStackBlock : NSBlock {
-}
+@interface __NSStackBlock : NSBlock
 
 - (id)autorelease;
 - (oneway void)release;

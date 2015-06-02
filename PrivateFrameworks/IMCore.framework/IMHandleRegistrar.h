@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property int nameStyle;
+@property (nonatomic) int nameStyle;
 
 + (id)sharedInstance;
 

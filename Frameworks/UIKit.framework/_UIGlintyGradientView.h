@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAGradientLayer;
+@interface _UIGlintyGradientView : UIView
 
-@interface _UIGlintyGradientView : UIView {
-}
-
-@property(readonly) CAGradientLayer * gradientLayer;
+@property (nonatomic, readonly) CAGradientLayer *gradientLayer;
 
 + (Class)layerClass;
 

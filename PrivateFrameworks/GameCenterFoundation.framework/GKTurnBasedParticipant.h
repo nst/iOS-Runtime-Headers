@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayer, GKTurnBasedParticipantInternal, NSDate, NSString;
-
 @interface GKTurnBasedParticipant : NSObject {
     GKTurnBasedParticipantInternal *_internal;
 }
 
-@property(retain,readonly) GKTurnBasedParticipantInternal * internal;
-@property(readonly) NSString * inviteMessage;
-@property(readonly) GKPlayer * invitedBy;
-@property(readonly) BOOL isLocalPlayer;
-@property(readonly) BOOL isWinner;
-@property(copy) NSDate * lastTurnDate;
-@property int matchOutcome;
-@property(readonly) NSString * matchOutcomeString;
-@property(readonly) NSString * matchStatusString;
-@property(retain,readonly) GKPlayer * player;
-@property(copy,readonly) NSString * playerID;
-@property(readonly) int status;
-@property(copy) NSDate * timeoutDate;
+@property (readonly, retain) GKTurnBasedParticipantInternal *internal;
+@property (nonatomic, readonly) NSString *inviteMessage;
+@property (nonatomic, readonly) GKPlayer *invitedBy;
+@property (nonatomic, readonly) BOOL isLocalPlayer;
+@property (nonatomic, readonly) BOOL isWinner;
+@property (nonatomic, copy) NSDate *lastTurnDate;
+@property (nonatomic) int matchOutcome;
+@property (nonatomic, readonly) NSString *matchOutcomeString;
+@property (nonatomic, readonly) NSString *matchStatusString;
+@property (nonatomic, readonly, retain) GKPlayer *player;
+@property (nonatomic, readonly, copy) NSString *playerID;
+@property (nonatomic, readonly) int status;
+@property (nonatomic, copy) NSDate *timeoutDate;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;

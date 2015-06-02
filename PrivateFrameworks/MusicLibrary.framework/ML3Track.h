@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3Track : ML3Entity {
-}
+@interface ML3Track : ML3Entity
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)TVShowEpisodesDefaultOrderingTerms;
 + (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;
@@ -24,7 +25,7 @@
 + (id)defaultOrderingTerms;
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
-+ (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id)arg3;
++ (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id /* block */)arg3;
 + (id)extraTablesToDelete;
 + (id)extraTablesToInsert;
 + (id)flattenedChapterDataFromDAAPInfoDictionary:(id)arg1 trackPersistentID:(long long)arg2;
@@ -45,7 +46,6 @@
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (id)predicateByOptimizingComparisonPredicate:(id)arg1;
 + (id)predisambiguatedProperties;
-+ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (BOOL)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
@@ -61,7 +61,7 @@
 + (id)unsettableProperties;
 + (void)updateAllBookmarkableStoreBookmarkMetadataIdentifiersOnConnection:(id)arg1;
 
-- (void)_createVideoSnapshotAtTime:(double)arg1 withCompletionBlock:(id)arg2;
+- (void)_createVideoSnapshotAtTime:(double)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)_screenshotArtworkDataStoredAsItemArtwork;
 - (id)absoluteFilePath;
 - (id)artworkTokenAtPlaybackTime:(double)arg1;
@@ -81,5 +81,9 @@
 - (void)updateCollectionCloudStatus;
 - (BOOL)updateIntegrity;
 - (void)updateStoreBookmarkMetadataIdentifier;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <NSObject>;
-
 @interface ABWeakReference : NSObject {
     <NSObject> *_reference;
 }

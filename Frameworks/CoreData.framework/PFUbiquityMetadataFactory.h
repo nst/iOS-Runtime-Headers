@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSMutableDictionary, NSRecursiveLock;
-
 @interface PFUbiquityMetadataFactory : NSObject {
     NSManagedObjectModel *_cachedModel;
     NSMutableDictionary *_rootLocationToPeerIDToEntry;

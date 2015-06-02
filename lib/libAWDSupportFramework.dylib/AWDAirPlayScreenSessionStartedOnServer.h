@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayScreenSessionStartedOnServer : PBCodable <NSCopying> {
     unsigned int _audioCompressionType;
     unsigned int _clientBonjourMs;
@@ -32,32 +30,32 @@
     unsigned int _transportType;
 }
 
-@property unsigned int audioCompressionType;
-@property unsigned int clientBonjourMs;
-@property unsigned int clientConfigMs;
-@property unsigned int clientConnectMs;
-@property(retain) NSString * clientModel;
-@property unsigned int clientPrepareMs;
-@property(retain) NSString * clientVersion;
-@property BOOL hasAudioCompressionType;
-@property BOOL hasClientBonjourMs;
-@property BOOL hasClientConfigMs;
-@property BOOL hasClientConnectMs;
-@property(readonly) BOOL hasClientModel;
-@property BOOL hasClientPrepareMs;
-@property(readonly) BOOL hasClientVersion;
-@property BOOL hasServerAcceptTime;
-@property BOOL hasServerConfigTime;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property unsigned int serverAcceptTime;
-@property unsigned int serverConfigTime;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic) unsigned int audioCompressionType;
+@property (nonatomic) unsigned int clientBonjourMs;
+@property (nonatomic) unsigned int clientConfigMs;
+@property (nonatomic) unsigned int clientConnectMs;
+@property (nonatomic, retain) NSString *clientModel;
+@property (nonatomic) unsigned int clientPrepareMs;
+@property (nonatomic, retain) NSString *clientVersion;
+@property (nonatomic) BOOL hasAudioCompressionType;
+@property (nonatomic) BOOL hasClientBonjourMs;
+@property (nonatomic) BOOL hasClientConfigMs;
+@property (nonatomic) BOOL hasClientConnectMs;
+@property (nonatomic, readonly) BOOL hasClientModel;
+@property (nonatomic) BOOL hasClientPrepareMs;
+@property (nonatomic, readonly) BOOL hasClientVersion;
+@property (nonatomic) BOOL hasServerAcceptTime;
+@property (nonatomic) BOOL hasServerConfigTime;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int serverAcceptTime;
+@property (nonatomic) unsigned int serverConfigTime;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (unsigned int)audioCompressionType;
 - (unsigned int)clientBonjourMs;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLHtmlElement : DOMHTMLElement
 
-@interface DOMHTMLHtmlElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * version;
+@property (copy) NSString *version;
 
 - (id)manifest;
 - (void)setManifest:(id)arg1;

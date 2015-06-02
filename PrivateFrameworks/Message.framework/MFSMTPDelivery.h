@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSMTPConnection;
-
 @interface MFSMTPDelivery : MFMailDelivery {
     MFSMTPConnection *_connection;
 }

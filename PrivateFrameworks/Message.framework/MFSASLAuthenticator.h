@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFAccount, MFAuthScheme, MFConnection;
-
 @interface MFSASLAuthenticator : NSObject {
     MFAccount *_account;
     MFAuthScheme *_authScheme;

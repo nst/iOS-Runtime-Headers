@@ -6,7 +6,7 @@
     unsigned long _begin;
     BOOL _beginComplete;
     BOOL _dataComplete;
-    unsigned char _encoded[4];
+    unsigned char _encoded;
     unsigned long _end;
     unsigned long _length;
     BOOL _lineComplete;

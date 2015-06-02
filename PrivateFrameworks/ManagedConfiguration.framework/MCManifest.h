@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MCManifest : NSObject {
     NSMutableDictionary *_manifest;
     NSString *_path;

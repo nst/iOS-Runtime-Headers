@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface UIKeyboardEmojiCategory : NSObject {
     int _categoryType;
     NSString *_displaySymbol;
@@ -12,10 +10,10 @@
 }
 
 @property int categoryType;
-@property(getter=displaySymbol,readonly) NSString * displaySymbol;
-@property(retain) NSArray * emoji;
-@property int lastVisibleFirstEmojiIndex;
-@property(getter=name,readonly) NSString * name;
+@property (getter=displaySymbol, readonly) NSString *displaySymbol;
+@property (retain) NSArray *emoji;
+@property (nonatomic) int lastVisibleFirstEmojiIndex;
+@property (getter=name, nonatomic, readonly) NSString *name;
 
 + (id)categories;
 + (id)categoryForType:(int)arg1;

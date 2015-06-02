@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController, NSString;
-
 @interface CNContactPickerLegacyViewController : CNContactPickerContentViewController <ABPeoplePickerNavigationControllerDelegate> {
     void *_addressBook;
     BOOL _clientHasContactsAccess;
@@ -11,11 +9,11 @@
 }
 
 @property BOOL clientHasContactsAccess;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ABPeoplePickerNavigationController * legacyPicker;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) ABPeoplePickerNavigationController *legacyPicker;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)clientHasContactsAccess;
@@ -29,6 +27,6 @@
 - (void)setClientHasContactsAccess:(BOOL)arg1;
 - (void)setLegacyPicker:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;
+- (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
 
 @end

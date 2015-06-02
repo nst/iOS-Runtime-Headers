@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, _UIBackdropViewSettings;
-
 @interface _UIBackdropColorSettings : NSObject {
     float _averageBrightness;
     float _averageHue;
@@ -17,17 +15,17 @@
     float _previousContrast;
 }
 
-@property float averageBrightness;
-@property float averageHue;
-@property float averageSaturation;
-@property(readonly) UIColor * color;
-@property float contrast;
-@property BOOL hasObservedValues;
-@property _UIBackdropViewSettings * parentSettings;
-@property float previousAverageBrightness;
-@property float previousAverageHue;
-@property float previousAverageSaturation;
-@property float previousContrast;
+@property (nonatomic) float averageBrightness;
+@property (nonatomic) float averageHue;
+@property (nonatomic) float averageSaturation;
+@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic) float contrast;
+@property (nonatomic) BOOL hasObservedValues;
+@property (nonatomic) _UIBackdropViewSettings *parentSettings;
+@property (nonatomic) float previousAverageBrightness;
+@property (nonatomic) float previousAverageHue;
+@property (nonatomic) float previousAverageSaturation;
+@property (nonatomic) float previousContrast;
 
 - (BOOL)applyCABackdropLayerStatistics:(id)arg1;
 - (float)averageBrightness;

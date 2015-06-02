@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSData;
-
 @interface HDCodableObjectAssociations : PBCodable <NSCopying> {
     NSData *_associationUuid;
     NSData *_objectUuids;
 }
 
-@property(retain) NSData * associationUuid;
-@property(readonly) BOOL hasAssociationUuid;
-@property(readonly) BOOL hasObjectUuids;
-@property(retain) NSData * objectUuids;
+@property (nonatomic, retain) NSData *associationUuid;
+@property (nonatomic, readonly) BOOL hasAssociationUuid;
+@property (nonatomic, readonly) BOOL hasObjectUuids;
+@property (nonatomic, retain) NSData *objectUuids;
 
 - (void).cxx_destruct;
 - (id)associationUuid;

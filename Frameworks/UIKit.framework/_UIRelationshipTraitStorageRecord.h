@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSSet, UITraitCollection;
-
 @interface _UIRelationshipTraitStorageRecord : NSObject <NSCoding> {
     NSSet *_addedObjects;
     NSSet *_removedObjects;
     UITraitCollection *_traitCollection;
 }
 
-@property(readonly) NSSet * addedObjects;
-@property(readonly) NSSet * removedObjects;
-@property(readonly) UITraitCollection * traitCollection;
+@property (nonatomic, readonly) NSSet *addedObjects;
+@property (nonatomic, readonly) NSSet *removedObjects;
+@property (nonatomic, readonly) UITraitCollection *traitCollection;
 
 - (id)addedObjects;
 - (void)dealloc;

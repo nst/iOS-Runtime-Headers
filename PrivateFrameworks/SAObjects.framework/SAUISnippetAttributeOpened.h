@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUISnippetAttributeOpened : SAUISnippetInteraction
 
-@interface SAUISnippetAttributeOpened : SAUISnippetInteraction {
-}
-
-@property(copy) NSString * attributeName;
-@property(copy) NSString * attributeValue;
+@property (nonatomic, copy) NSString *attributeName;
+@property (nonatomic, copy) NSString *attributeValue;
 
 + (id)snippetAttributeOpened;
 + (id)snippetAttributeOpenedWithDictionary:(id)arg1 context:(id)arg2;

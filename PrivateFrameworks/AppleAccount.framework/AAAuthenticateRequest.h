@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, NSString;
-
 @interface AAAuthenticateRequest : AARequest {
     ACAccount *_account;
     NSString *_authToken;
@@ -11,10 +9,10 @@
     NSString *_username;
 }
 
-@property(retain) ACAccount * account;
-@property(copy) NSString * authToken;
-@property(copy) NSString * password;
-@property(copy) NSString * username;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, copy) NSString *authToken;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *username;
 
 + (Class)responseClass;
 

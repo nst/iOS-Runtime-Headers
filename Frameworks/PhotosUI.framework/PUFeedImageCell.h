@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUImageViewExtraction, UIButton, UIImage, UIImageView, UIView<PLVideoOverlayButton>;
-
 @interface PUFeedImageCell : PUFeedCell {
     UIImageView *__centerOverlayImageView;
     UIButton *__commentButton;
@@ -28,24 +26,24 @@
     int _overlayOptions;
 }
 
-@property(setter=_setCenterOverlayImageView:,retain) UIImageView * _centerOverlayImageView;
-@property(setter=_setCommentButton:,retain) UIButton * _commentButton;
-@property(setter=_setImageTag:) int _imageTag;
-@property(setter=_setImageView:,retain) UIImageView * _imageView;
-@property(setter=_setOverlayPlayButton:,retain) UIView<PLVideoOverlayButton> * _overlayPlayButton;
-@property(setter=_setOverlayPlayButtonBackgroundExtraction:,retain) PUImageViewExtraction * _overlayPlayButtonBackgroundExtraction;
-@property(setter=_setOverlayPlayButtonBackgroundImageView:,retain) UIImageView * _overlayPlayButtonBackgroundImageView;
-@property(setter=_setShouldHideCenterOverlayImageView:) BOOL _shouldHideCenterOverlayImageView;
-@property(setter=_setShouldHideCommentButton:) BOOL _shouldHideCommentButton;
-@property(setter=_setShouldHideOverlayPlayButton:) BOOL _shouldHideOverlayPlayButton;
-@property(setter=_setShouldUpdateOverlayPlayButtonBackground:) BOOL _shouldUpdateOverlayPlayButtonBackground;
-@property int commentCount;
-@property(retain) UIImage * image;
-@property int imageAlignment;
-@property int imageContentMode;
-@property(getter=isImageHidden) BOOL imageHidden;
-@property struct CGSize { float x1; float x2; } maximumImageSize;
-@property int overlayOptions;
+@property (setter=_setCenterOverlayImageView:, nonatomic, retain) UIImageView *_centerOverlayImageView;
+@property (setter=_setCommentButton:, nonatomic, retain) UIButton *_commentButton;
+@property (setter=_setImageTag:, nonatomic) int _imageTag;
+@property (setter=_setImageView:, nonatomic, retain) UIImageView *_imageView;
+@property (setter=_setOverlayPlayButton:, nonatomic, retain) UIView<PLVideoOverlayButton> *_overlayPlayButton;
+@property (setter=_setOverlayPlayButtonBackgroundExtraction:, nonatomic, retain) PUImageViewExtraction *_overlayPlayButtonBackgroundExtraction;
+@property (setter=_setOverlayPlayButtonBackgroundImageView:, nonatomic, retain) UIImageView *_overlayPlayButtonBackgroundImageView;
+@property (setter=_setShouldHideCenterOverlayImageView:, nonatomic) BOOL _shouldHideCenterOverlayImageView;
+@property (setter=_setShouldHideCommentButton:, nonatomic) BOOL _shouldHideCommentButton;
+@property (setter=_setShouldHideOverlayPlayButton:, nonatomic) BOOL _shouldHideOverlayPlayButton;
+@property (setter=_setShouldUpdateOverlayPlayButtonBackground:, nonatomic) BOOL _shouldUpdateOverlayPlayButtonBackground;
+@property (nonatomic) int commentCount;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) int imageAlignment;
+@property (nonatomic) int imageContentMode;
+@property (getter=isImageHidden, nonatomic) BOOL imageHidden;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumImageSize;
+@property (nonatomic) int overlayOptions;
 
 + (Class)_contentViewClass;
 

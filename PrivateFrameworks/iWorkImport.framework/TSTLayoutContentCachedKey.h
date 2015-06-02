@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSWPParagraphStyle;
-
 @interface TSTLayoutContentCachedKey : NSObject <NSCopying> {
     BOOL mCellWraps;
     float mHeight;
@@ -21,15 +19,15 @@
     int mWritingDirection;
 }
 
-@property(readonly) BOOL cellWraps;
-@property(readonly) float height;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingInsets;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) NSString * string;
-@property(readonly) int valueType;
-@property(readonly) int verticalAlignment;
-@property(readonly) float width;
-@property(readonly) int writingDirection;
+@property (nonatomic, readonly) BOOL cellWraps;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingInsets;
+@property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
+@property (nonatomic, readonly) NSString *string;
+@property (nonatomic, readonly) int valueType;
+@property (nonatomic, readonly) int verticalAlignment;
+@property (nonatomic, readonly) float width;
+@property (nonatomic, readonly) int writingDirection;
 
 - (BOOL)cellWraps;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

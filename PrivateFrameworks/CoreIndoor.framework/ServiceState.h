@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class IndoorProtocolProxy, NSSet, NSString;
-
 @interface ServiceState : NSObject {
     NSString *_apiKey;
     IndoorProtocolProxy *_delegateProxy;
@@ -15,14 +13,14 @@
     NSString *_username;
 }
 
-@property(retain) NSString * apiKey;
-@property(retain) IndoorProtocolProxy * delegateProxy;
-@property(retain) NSString * password;
-@property bool pausedLocalization;
-@property(retain) NSSet * selectedVenues;
-@property(retain) NSString * server;
-@property bool updateLocation;
-@property(retain) NSString * username;
+@property (nonatomic, retain) NSString *apiKey;
+@property (nonatomic, retain) IndoorProtocolProxy *delegateProxy;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic) bool pausedLocalization;
+@property (nonatomic, retain) NSSet *selectedVenues;
+@property (nonatomic, retain) NSString *server;
+@property (nonatomic) bool updateLocation;
+@property (nonatomic, retain) NSString *username;
 
 - (void).cxx_destruct;
 - (id)apiKey;

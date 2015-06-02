@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKRecipientSearchListControllerDelegate>, CKContactsSearchManager, IDSBatchIDQueryController, IMAccount, NSArray, NSDate, NSString;
-
 @interface CKRecipientSearchListController : UITableViewController <CKContactsSearchManagerDelegate, IDSBatchIDQueryControllerDelegate> {
     IMAccount *_defaultiMessageAccount;
     <CKRecipientSearchListControllerDelegate> *_delegate;
@@ -17,21 +15,21 @@
     IDSBatchIDQueryController *_statusQueryController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) IMAccount * defaultiMessageAccount;
-@property <CKRecipientSearchListControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * enteredRecipients;
-@property(readonly) unsigned int hash;
-@property(retain) NSDate * idsQueryStartTime;
-@property(retain) NSArray * prefilteredRecipients;
-@property(retain) CKContactsSearchManager * searchManager;
-@property(copy) NSArray * searchResults;
-@property BOOL shouldUsePopovers;
-@property BOOL smsEnabled;
-@property(retain) IDSBatchIDQueryController * statusQueryController;
-@property(readonly) Class superclass;
-@property BOOL suppressGroupSuggestions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) IMAccount *defaultiMessageAccount;
+@property (nonatomic) <CKRecipientSearchListControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *enteredRecipients;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDate *idsQueryStartTime;
+@property (nonatomic, retain) NSArray *prefilteredRecipients;
+@property (nonatomic, retain) CKContactsSearchManager *searchManager;
+@property (nonatomic, copy) NSArray *searchResults;
+@property (nonatomic) BOOL shouldUsePopovers;
+@property (nonatomic) BOOL smsEnabled;
+@property (nonatomic, retain) IDSBatchIDQueryController *statusQueryController;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressGroupSuggestions;
 
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;

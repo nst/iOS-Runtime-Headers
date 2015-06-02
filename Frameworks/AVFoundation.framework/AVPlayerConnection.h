@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVPlayerItem, AVWeakReference, NSError, NSObject<OS_dispatch_queue>;
-
 @interface AVPlayerConnection : NSObject {
     NSError *_error;
     AVWeakReference *_playerItemReference;
@@ -13,11 +11,11 @@
     int _status;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) AVPlayer * player;
-@property(readonly) AVPlayerItem * playerItem;
-@property(readonly) NSObject<OS_dispatch_queue> * serializationQueue;
-@property(readonly) int status;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) AVPlayer *player;
+@property (nonatomic, readonly) AVPlayerItem *playerItem;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serializationQueue;
+@property (nonatomic, readonly) int status;
 
 - (BOOL)addItemToPlayQueue;
 - (void)dealloc;

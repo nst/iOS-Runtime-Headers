@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray;
-
 @interface WBSRecentWebSearchesController : NSObject {
     NSMutableArray *_recentSearchEntries;
 }

@@ -2,15 +2,10 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@interface JSExport <JSExport>
 
-@interface JSExport <JSExport> {
-}
+// Image: /usr/lib/libobjc.A.dylib
 
-+ (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)initialize;
-     /* Encoded args for previous method:  */
-
++ (void)initialize;
 
 @end

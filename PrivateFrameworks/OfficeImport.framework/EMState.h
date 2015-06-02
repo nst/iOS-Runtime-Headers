@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDSheet, EDWorkbook;
-
 @interface EMState : CMState {
     EDSheet *_currentSheet;
     EDWorkbook *_workbook;
 }
 
-@property EDSheet * currentSheet;
-@property(retain) EDWorkbook * workbook;
+@property EDSheet *currentSheet;
+@property (retain) EDWorkbook *workbook;
 
 - (id)currentSheet;
 - (void)dealloc;

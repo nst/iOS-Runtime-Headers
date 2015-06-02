@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FIUIRingImageFactory : NSObject {
-}
+@interface FIUIRingImageFactory : NSObject
 
 + (id)_renderRingsInViewController:(id)arg1 withDiameter:(float)arg2 thickness:(float)arg3 interspacing:(float)arg4;
 + (id)renderRingsInViewController:(id)arg1 forMovePercentage:(double)arg2 exercisePercentage:(double)arg3 standPercentage:(double)arg4 withDiameter:(float)arg5 thickness:(float)arg6 interspacing:(float)arg7;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImage, UILabel, UIView;
-
 @interface PLPolaroidImageView : PLImageView {
     UILabel *_nameLabel;
     BOOL _polaroidBorderVisible;
@@ -21,7 +19,7 @@
     float _thinBorderWidth;
 }
 
-@property(retain) UIImage * posterImage;
+@property (nonatomic, retain) UIImage *posterImage;
 
 + (Class)layerClass;
 

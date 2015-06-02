@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEONamedFeature : PBCodable <NSCopying> {
     NSString *_name;
     double _value;
 }
 
-@property(retain) NSString * name;
-@property double value;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) double value;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

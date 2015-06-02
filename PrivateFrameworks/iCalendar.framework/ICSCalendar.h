@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSColor, ICSDuration, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface ICSCalendar : ICSComponent {
     NSMutableSet *_keys;
     NSMutableDictionary *_masters;
@@ -12,18 +10,18 @@
     NSMutableDictionary *_timezones;
 }
 
-@property(retain) NSString * calscale;
-@property int method;
-@property(retain) NSString * prodid;
-@property(retain) NSString * version;
-@property(retain) ICSDuration * x_apple_auto_refresh;
-@property(retain) ICSColor * x_apple_calendar_color;
+@property (nonatomic, retain) NSString *calscale;
+@property (nonatomic) int method;
+@property (nonatomic, retain) NSString *prodid;
+@property (nonatomic, retain) NSString *version;
+@property (nonatomic, retain) ICSDuration *x_apple_auto_refresh;
+@property (nonatomic, retain) ICSColor *x_apple_calendar_color;
 @property BOOL x_apple_ignore_on_restore;
 @property int x_calendarserver_access;
-@property(retain) NSString * x_wr_caldesc;
-@property(retain) NSString * x_wr_calname;
-@property(retain) NSString * x_wr_relcalid;
-@property(retain) NSString * x_wr_timezone;
+@property (nonatomic, retain) NSString *x_wr_caldesc;
+@property (nonatomic, retain) NSString *x_wr_calname;
+@property (nonatomic, retain) NSString *x_wr_relcalid;
+@property (nonatomic, retain) NSString *x_wr_timezone;
 
 + (id)ICSStringFromCalendarServerAccess:(int)arg1;
 + (id)ICSStringFromMethod:(int)arg1;

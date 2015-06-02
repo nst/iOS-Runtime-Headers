@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSOperation, NSOperationQueue;
-
 @interface __NSOperationInternal : NSObject {
     int __RC;
     id __activity;
     unsigned char __cached_isReady;
     id __children;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __completion;
-
+    id /* block */ __completion;
     id __dependencies;
     id __down_dependencies;
     void *__implicitObsInfo;
@@ -29,8 +19,8 @@
     void *__obsInfo;
     NSOperation *__outerOp;
     struct pthread_override_s { } *__ov;
-    unsigned char __pad1[8];
-    unsigned char __pad3[12];
+    unsigned char __pad1;
+    unsigned char __pad3;
     NSOperation *__prevOp;
     BOOL __prio;
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *__pthread;
@@ -56,7 +46,7 @@
 - (id)_activity;
 - (void)_addDependency:(id)arg1 outer:(id)arg2;
 - (void)_cancel:(id)arg1;
-- (id)_completionBlock;
+- (id /* block */)_completionBlock;
 - (id)_dependencies;
 - (void)_invalidate;
 - (BOOL)_isCancelled;
@@ -66,7 +56,7 @@
 - (id)_name;
 - (int)_queuePriority;
 - (void)_removeDependency:(id)arg1 outer:(id)arg2;
-- (void)_setCompletionBlock:(id)arg1 outer:(id)arg2;
+- (void)_setCompletionBlock:(id /* block */)arg1 outer:(id)arg2;
 - (void)_setName:(id)arg1 outer:(id)arg2;
 - (void)_setQueuePriority:(int)arg1 outer:(id)arg2;
 - (void)_setThreadPriority:(double)arg1 outer:(id)arg2;

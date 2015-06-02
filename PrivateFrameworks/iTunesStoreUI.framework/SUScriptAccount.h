@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SSAccount;
-
 @interface SUScriptAccount : SUScriptObject {
     SSAccount *_account;
 }
 
-@property(readonly) NSString * ITunesPassSerialNumber;
-@property(retain) SSAccount * account;
-@property(copy) NSString * credits;
-@property(retain) NSNumber * dsID;
-@property(copy) NSString * identifier;
-@property(copy) NSString * kind;
-@property(retain) id lockerEnabled;
-@property(getter=isPrimaryLockerAccount,readonly) id primaryLockerAccount;
-@property(retain) id purchaseHistoryEnabled;
-@property(retain) id socialEnabled;
+@property (readonly) NSString *ITunesPassSerialNumber;
+@property (retain) SSAccount *account;
+@property (copy) NSString *credits;
+@property (retain) NSNumber *dsID;
+@property (copy) NSString *identifier;
+@property (copy) NSString *kind;
+@property (retain) id lockerEnabled;
+@property (getter=isPrimaryLockerAccount, readonly) id primaryLockerAccount;
+@property (retain) id purchaseHistoryEnabled;
+@property (retain) id socialEnabled;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

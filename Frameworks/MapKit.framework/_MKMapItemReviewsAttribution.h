@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOMapItemReviewsAttribution, NSArray;
-
 @interface _MKMapItemReviewsAttribution : _MKMapItemAttribution {
     GEOMapItemReviewsAttribution *_geoReviewsAttribution;
 }
 
-@property(readonly) NSArray * addReviewURLs;
+@property (nonatomic, readonly) NSArray *addReviewURLs;
 
 - (void).cxx_destruct;
 - (id)addReviewURLs;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CIConvolution9Vertical : CIFilter {
     NSNumber *inputBias;
     CIImage *inputImage;
     CIVector *inputWeights;
 }
 
-@property(retain) NSNumber * inputBias;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputWeights;
+@property (nonatomic, retain) NSNumber *inputBias;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputWeights;
 
 + (id)customAttributes;
 

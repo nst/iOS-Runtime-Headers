@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDate;
+@interface CKDateChatItem : CKStampChatItem
 
-@interface CKDateChatItem : CKStampChatItem {
-}
-
-@property(retain,readonly) NSDate * date;
+@property (nonatomic, readonly, retain) NSDate *date;
 
 + (id)thePastDateFormatter;
 + (id)thisWeekRelativeDateFormatter;

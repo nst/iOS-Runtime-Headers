@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class SLFacebookLoginInfoCellContentView;
-
 @interface SLFacebookLoginInfoCell : UITableViewCell {
     SLFacebookLoginInfoCellContentView *_infoView;
 }

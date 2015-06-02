@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSControlInterfaceRequest : HSRequest {
-}
+@interface HSControlInterfaceRequest : HSRequest
 
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)init;

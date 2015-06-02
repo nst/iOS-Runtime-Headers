@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSTimer;
-
 @interface RMSSessionProxy : NSObject {
     NSTimer *_heartbeatTimer;
     BOOL _isPaused;
@@ -12,7 +10,7 @@
     double _sessionTimeout;
 }
 
-@property int sessionIdentifier;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActive:(id)arg1;

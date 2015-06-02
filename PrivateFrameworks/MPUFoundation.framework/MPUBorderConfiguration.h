@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class UIColor;
-
 @interface MPUBorderConfiguration : NSObject <NSCopying> {
     float _borderAlpha;
     UIColor *_borderColor;
@@ -16,16 +14,16 @@
     UIColor *_fillColor;
 }
 
-@property float borderAlpha;
-@property(retain) UIColor * borderColor;
-@property float borderWidth;
-@property float dropShadowAlpha;
-@property(retain) UIColor * dropShadowColor;
-@property unsigned int dropShadowEdges;
-@property float dropShadowWidth;
-@property float fillAlpha;
-@property(retain) UIColor * fillColor;
-@property(getter=isFullyTransparent,readonly) BOOL fullyTransparent;
+@property (nonatomic) float borderAlpha;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic) float borderWidth;
+@property (nonatomic) float dropShadowAlpha;
+@property (nonatomic, retain) UIColor *dropShadowColor;
+@property (nonatomic) unsigned int dropShadowEdges;
+@property (nonatomic) float dropShadowWidth;
+@property (nonatomic) float fillAlpha;
+@property (nonatomic, retain) UIColor *fillColor;
+@property (getter=isFullyTransparent, nonatomic, readonly) BOOL fullyTransparent;
 
 - (void).cxx_destruct;
 - (float)borderAlpha;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebNavigationDataPrivate;
-
 @interface WebNavigationData : NSObject {
     WebNavigationDataPrivate *_private;
 }

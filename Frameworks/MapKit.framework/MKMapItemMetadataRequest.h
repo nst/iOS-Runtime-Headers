@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItem, NSURL, NSURLRequest;
-
 @interface MKMapItemMetadataRequest : NSObject {
     MKMapItem *_mapItem;
 }
 
-@property(retain) MKMapItem * mapItem;
-@property(readonly) NSURL * url;
-@property(readonly) NSURLRequest * urlRequest;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSURLRequest *urlRequest;
 
 - (void).cxx_destruct;
 - (void)handleData:(id)arg1;

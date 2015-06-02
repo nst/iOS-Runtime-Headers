@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSNumber;
-
 @interface CIMotionBlur : CILinearBlur {
     NSNumber *inputAngle;
 }
 
-@property(retain) NSNumber * inputAngle;
+@property (nonatomic, retain) NSNumber *inputAngle;
 
 + (id)customAttributes;
 

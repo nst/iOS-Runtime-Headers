@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSHashTable, NSMutableArray;
-
 @interface _UISettingsGroup : _UISettings <NSFastEnumeration> {
     NSMutableArray *_internal_group;
     NSHashTable *_internal_groupObservers;
@@ -24,9 +22,9 @@
 - (id)archiveDictionary;
 - (BOOL)containsSettings:(id)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)enumerateSettingsUsingBlock:(id)arg1;
+- (void)enumerateSettingsUsingBlock:(id /* block */)arg1;
 - (unsigned int)indexOfSettings:(id)arg1;
 - (void)insertSettings:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)moveSettings:(id)arg1 toIndex:(unsigned int)arg2;

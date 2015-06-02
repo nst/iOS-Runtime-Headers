@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class <YTAuthenticatorDelegate>, NSMutableArray;
-
 @interface YTAuthenticator : NSObject {
     int _accountAuthState;
     NSMutableArray *_deferredRequests;

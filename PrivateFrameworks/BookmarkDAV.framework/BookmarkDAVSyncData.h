@@ -2,35 +2,33 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString, NSURL;
-
 @interface BookmarkDAVSyncData : NSObject {
     NSMutableDictionary *_backingDict;
     void *_db;
     BOOL _hasChanges;
 }
 
-@property(retain) NSString * accountPrsId;
-@property(retain) NSString * bookmarksBarId;
-@property unsigned int bookmarksBarOrder;
-@property(retain) NSString * bookmarksMenuId;
-@property unsigned int bookmarksMenuOrder;
-@property(retain) NSDictionary * bulkRequests;
-@property unsigned int clientVersion;
-@property(retain) NSString * ctag;
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasChanges;
-@property BOOL hasHitQuotaLimit;
-@property(retain) NSDictionary * heldAsideOrderings;
-@property(retain) NSURL * homeURL;
-@property BOOL initialSyncDone;
-@property(retain) NSNumber * knownQuotaRemaining;
-@property(retain) NSURL * principalURL;
-@property(retain) NSString * ptag;
-@property(retain) NSString * pushKey;
-@property(retain) NSDictionary * pushTransports;
-@property BOOL supportsSyncCollection;
-@property(retain) NSString * syncToken;
+@property (nonatomic, retain) NSString *accountPrsId;
+@property (nonatomic, retain) NSString *bookmarksBarId;
+@property (nonatomic) unsigned int bookmarksBarOrder;
+@property (nonatomic, retain) NSString *bookmarksMenuId;
+@property (nonatomic) unsigned int bookmarksMenuOrder;
+@property (nonatomic, retain) NSDictionary *bulkRequests;
+@property (nonatomic) unsigned int clientVersion;
+@property (nonatomic, retain) NSString *ctag;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic) BOOL hasHitQuotaLimit;
+@property (nonatomic, retain) NSDictionary *heldAsideOrderings;
+@property (nonatomic, retain) NSURL *homeURL;
+@property (nonatomic) BOOL initialSyncDone;
+@property (nonatomic, retain) NSNumber *knownQuotaRemaining;
+@property (nonatomic, retain) NSURL *principalURL;
+@property (nonatomic, retain) NSString *ptag;
+@property (nonatomic, retain) NSString *pushKey;
+@property (nonatomic, retain) NSDictionary *pushTransports;
+@property (nonatomic) BOOL supportsSyncCollection;
+@property (nonatomic, retain) NSString *syncToken;
 
 - (id)accountPrsId;
 - (id)bookmarksBarId;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNAnimatedBuild, KNAnimationInfo, KNBuildChunk, NSArray, NSDictionary, NSMutableArray, TSDDrawableInfo, TSDFPSCounter, TSDRep, TSDTextureContext, TSDTextureSet;
-
 @interface KNBuildRenderer : KNAnimationRenderer {
     KNAnimatedBuild *mAnimatedBuild;
     NSMutableArray *mAnimatedBuildsToStartAtEnd;
@@ -29,17 +27,17 @@
     BOOL mUsingFinalTexture;
 }
 
-@property(readonly) KNAnimatedBuild * animatedBuild;
-@property(readonly) NSArray * animatedBuildsToStartAtEnd;
-@property(readonly) KNBuildChunk * buildStage;
-@property(readonly) TSDDrawableInfo * info;
-@property(readonly) BOOL isTextDrawable;
-@property(readonly) TSDTextureSet * nonCachedTextureSet;
-@property(retain) CALayer * parentLayer;
-@property(readonly) TSDRep * rep;
-@property(retain) TSDTextureContext * textureContext;
-@property(readonly) unsigned int textureDeliveryStyle;
-@property(readonly) TSDTextureSet * textureSet;
+@property (nonatomic, readonly) KNAnimatedBuild *animatedBuild;
+@property (nonatomic, readonly) NSArray *animatedBuildsToStartAtEnd;
+@property (nonatomic, readonly) KNBuildChunk *buildStage;
+@property (nonatomic, readonly) TSDDrawableInfo *info;
+@property (nonatomic, readonly) BOOL isTextDrawable;
+@property (nonatomic, readonly) TSDTextureSet *nonCachedTextureSet;
+@property (nonatomic, retain) CALayer *parentLayer;
+@property (nonatomic, readonly) TSDRep *rep;
+@property (nonatomic, retain) TSDTextureContext *textureContext;
+@property (nonatomic, readonly) unsigned int textureDeliveryStyle;
+@property (nonatomic, readonly) TSDTextureSet *textureSet;
 
 - (BOOL)addAnimationsAtLayerTime:(double)arg1;
 - (void)addBuildToStartAtEnd:(id)arg1;

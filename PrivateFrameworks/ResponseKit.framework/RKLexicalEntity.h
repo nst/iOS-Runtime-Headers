@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSString;
-
 @interface RKLexicalEntity : NSObject {
     NSString *_language;
     NSString *_lemma;
@@ -16,13 +14,13 @@
     NSString *_tokenType;
 }
 
-@property(retain) NSString * language;
-@property(retain) NSString * lemma;
-@property(retain) NSString * partOfSpeech;
-@property(retain) NSString * string;
+@property (retain) NSString *language;
+@property (retain) NSString *lemma;
+@property (retain) NSString *partOfSpeech;
+@property (retain) NSString *string;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } tokenRange;
-@property(retain) NSString * tokenType;
-@property(readonly) NSString * word;
+@property (retain) NSString *tokenType;
+@property (readonly) NSString *word;
 
 - (void).cxx_destruct;
 - (id)description;

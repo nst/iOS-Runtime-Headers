@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAMobileMeOfferRequest : AARequest {
-}
+@interface AAMobileMeOfferRequest : AARequest
 
 + (Class)responseClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class RMSControlInterfaceMessage;
-
 @interface RMSConnectToServiceResponseMessage : PBCodable <NSCopying> {
     RMSControlInterfaceMessage *_controlInterface;
     struct { 
@@ -14,12 +12,12 @@
     int _sessionIdentifier;
 }
 
-@property(retain) RMSControlInterfaceMessage * controlInterface;
-@property(readonly) BOOL hasControlInterface;
-@property BOOL hasResponseCode;
-@property BOOL hasSessionIdentifier;
-@property int responseCode;
-@property int sessionIdentifier;
+@property (nonatomic, retain) RMSControlInterfaceMessage *controlInterface;
+@property (nonatomic, readonly) BOOL hasControlInterface;
+@property (nonatomic) BOOL hasResponseCode;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int responseCode;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (id)controlInterface;

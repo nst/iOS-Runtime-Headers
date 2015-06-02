@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSMutableDictionary;
-
 @interface SGScales : NSObject {
     NSMutableDictionary *_series;
 }
@@ -12,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (void)enumerateStats:(id)arg1;
+- (void)enumerateStats:(id /* block */)arg1;
 - (id)init;
 - (void)recordTime:(double)arg1 forKey:(id)arg2;
 - (void)reset;

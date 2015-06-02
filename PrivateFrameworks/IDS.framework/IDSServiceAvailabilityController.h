@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSMutableDictionary;
-
 @interface IDSServiceAvailabilityController : NSObject {
     NSMutableDictionary *_availabilityHandlers;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSData, NSString;
-
 @interface _PLLazyPreheatData : NSData {
     NSData *_data;
     NSString *_path;

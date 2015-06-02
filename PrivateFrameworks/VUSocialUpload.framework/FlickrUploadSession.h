@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <FlickrRemoteSessionProtocol>;
-
 @interface FlickrUploadSession : NSObject {
     <FlickrRemoteSessionProtocol> *_remoteSession;
 }

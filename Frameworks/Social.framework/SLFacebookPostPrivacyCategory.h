@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSString;
-
 @interface SLFacebookPostPrivacyCategory : NSObject {
     NSArray *_audiencePrivacySettings;
     NSString *_name;
 }
 
-@property(retain) NSArray * audiencePrivacySettings;
-@property(retain) NSString * name;
+@property (retain) NSArray *audiencePrivacySettings;
+@property (retain) NSString *name;
 
 - (void).cxx_destruct;
 - (id)audiencePrivacySettings;

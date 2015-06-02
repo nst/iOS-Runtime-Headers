@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSHashTable, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSPredicate, NSSet, NSString, PHFetchResult, PHPhotoLibrary, PUPhotosDataSourceSectionCache;
-
 @interface PUPhotosDataSource : NSObject <PUPhotoLibraryUIChangeObserver> {
     PUPhotosDataSourceSectionCache *__preparedSectionCache;
     unsigned int __previousCollectionsCount;
@@ -30,20 +28,20 @@
     BOOL _slowBackgroundFetch;
 }
 
-@property(setter=_setPreviousCollectionsCount:) unsigned int _previousCollectionsCount;
-@property(readonly) NSSet * allowedUUIDs;
-@property int backgroundFetchOriginSection;
-@property(retain) PHFetchResult * collectionListFetchResult;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int estimatedOtherCount;
-@property(readonly) int estimatedPhotosCount;
-@property(readonly) int estimatedVideosCount;
-@property(retain) NSPredicate * filterPredicate;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property(readonly) PHPhotoLibrary * photoLibrary;
-@property(readonly) Class superclass;
+@property (setter=_setPreviousCollectionsCount:, nonatomic) unsigned int _previousCollectionsCount;
+@property (nonatomic, readonly) NSSet *allowedUUIDs;
+@property (nonatomic) int backgroundFetchOriginSection;
+@property (nonatomic, retain) PHFetchResult *collectionListFetchResult;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int estimatedOtherCount;
+@property (nonatomic, readonly) int estimatedPhotosCount;
+@property (nonatomic, readonly) int estimatedVideosCount;
+@property (nonatomic, retain) NSPredicate *filterPredicate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) PHPhotoLibrary *photoLibrary;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_allSectionsAccurate;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, UITextView;
-
 @interface PKSettingsHeaderAlertView : UIView <PSHeaderFooterView> {
     NSString *_descriptionText;
     NSString *_headerText;
     UITextView *_textView;
 }
 
-@property(retain) NSString * descriptionText;
-@property(retain) NSString * headerText;
+@property (nonatomic, retain) NSString *descriptionText;
+@property (nonatomic, retain) NSString *headerText;
 
 - (void)dealloc;
 - (id)descriptionText;

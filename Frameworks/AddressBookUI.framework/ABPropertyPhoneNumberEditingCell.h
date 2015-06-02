@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABPropertyPhoneNumberEditingCell : ABPropertySimpleEditingCell {
     NSString *_previousValue;
 }
 
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
+- (struct { id x1; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 
 @end

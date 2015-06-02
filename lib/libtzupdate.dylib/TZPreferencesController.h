@@ -2,11 +2,10 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@interface TZPreferencesController : NSObject {
-}
+@interface TZPreferencesController : NSObject
 
-@property(readonly) int loggingLevel;
-@property(readonly) BOOL updatesEnabled;
+@property (nonatomic, readonly) int loggingLevel;
+@property (nonatomic, readonly) BOOL updatesEnabled;
 
 + (id)sharedPreferencesController;
 

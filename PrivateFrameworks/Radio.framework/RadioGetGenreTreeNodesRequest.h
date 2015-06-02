@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class SSMetricsConfiguration, SSMetricsPageEvent, SSURLConnectionRequest;
-
 @interface RadioGetGenreTreeNodesRequest : RadioRequest {
     SSMetricsConfiguration *_metricsConfiguration;
     SSMetricsPageEvent *_metricsPageEvent;
@@ -11,8 +9,8 @@
     SSURLConnectionRequest *_request;
 }
 
-@property(retain,readonly) SSMetricsConfiguration * metricsConfiguration;
-@property(copy,readonly) SSMetricsPageEvent * metricsPageEvent;
+@property (nonatomic, readonly, retain) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, readonly, copy) SSMetricsPageEvent *metricsPageEvent;
 
 + (id)cacheKeyForGenreWithNodeID:(unsigned long long)arg1;
 + (id)fallbackRequestPath;
@@ -25,7 +23,7 @@
 - (id)initWithParentNodeID:(unsigned long long)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
-- (void)startWithCachedCompletionHandler:(id)arg1 networkCompletionHandler:(id)arg2;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCachedCompletionHandler:(id /* block */)arg1 networkCompletionHandler:(id /* block */)arg2;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

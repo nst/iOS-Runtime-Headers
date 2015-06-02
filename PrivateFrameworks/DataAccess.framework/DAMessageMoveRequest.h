@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAMessageMoveRequest : NSObject {
     id _context;
     NSString *_fromFolder;
@@ -11,10 +9,10 @@
     NSString *_toFolder;
 }
 
-@property(retain) id context;
-@property(copy) NSString * fromFolder;
-@property(copy) NSString * message;
-@property(copy) NSString * toFolder;
+@property (nonatomic, retain) id context;
+@property (nonatomic, copy) NSString *fromFolder;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *toFolder;
 
 - (void).cxx_destruct;
 - (id)context;

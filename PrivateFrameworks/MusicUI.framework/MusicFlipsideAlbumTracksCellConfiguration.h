@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicFlipsideAlbumTracksCellConfiguration : MusicAlbumTracksCellConfiguration {
-}
+@interface MusicFlipsideAlbumTracksCellConfiguration : MusicAlbumTracksCellConfiguration
 
 + (Class)tableViewCellClass;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;

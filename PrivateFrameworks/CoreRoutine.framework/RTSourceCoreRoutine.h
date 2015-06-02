@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@interface RTSourceCoreRoutine : RTSource {
-}
+@interface RTSourceCoreRoutine : RTSource
 
 + (BOOL)supportsSecureCoding;
 

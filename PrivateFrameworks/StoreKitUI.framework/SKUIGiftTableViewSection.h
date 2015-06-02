@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIGiftConfiguration;
-
 @interface SKUIGiftTableViewSection : SKUITableViewSection {
     SKUIGiftConfiguration *_giftConfiguration;
 }
 
-@property(readonly) SKUIGiftConfiguration * giftConfiguration;
+@property (nonatomic, readonly) SKUIGiftConfiguration *giftConfiguration;
 
 + (id)aloneRowBackgroundImageWithSize:(struct CGSize { float x1; float x2; })arg1;
 

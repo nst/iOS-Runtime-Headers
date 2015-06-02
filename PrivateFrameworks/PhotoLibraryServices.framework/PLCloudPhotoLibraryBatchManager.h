@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSMutableSet, PLCloudPhotoLibraryBatchContainer;
-
 @interface PLCloudPhotoLibraryBatchManager : NSObject {
     NSMutableArray *_batches;
     PLCloudPhotoLibraryBatchContainer *_currentBatch;

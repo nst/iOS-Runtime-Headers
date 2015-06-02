@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKRecordZoneID, NSArray, NSMutableDictionary;
-
 @interface CKDModifySubscriptionsURLRequest : CKDURLRequest {
     NSMutableDictionary *_subscriptionIDByRequestID;
     NSArray *_subscriptionIDsToDelete;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _subscriptionModifiedBlock;
-
+    id /* block */ _subscriptionModifiedBlock;
     NSArray *_subscriptionsToSave;
     CKRecordZoneID *_zoneID;
 }
 
-@property(retain) NSMutableDictionary * subscriptionIDByRequestID;
-@property(retain) NSArray * subscriptionIDsToDelete;
-@property(copy) id subscriptionModifiedBlock;
-@property(retain) NSArray * subscriptionsToSave;
-@property(copy) CKRecordZoneID * zoneID;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;
+@property (nonatomic, retain) NSArray *subscriptionIDsToDelete;
+@property (nonatomic, copy) id /* block */ subscriptionModifiedBlock;
+@property (nonatomic, retain) NSArray *subscriptionsToSave;
+@property (nonatomic, copy) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
 - (id)initWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2;
@@ -35,12 +25,12 @@
 - (id)requestOperations;
 - (void)setSubscriptionIDByRequestID:(id)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;
-- (void)setSubscriptionModifiedBlock:(id)arg1;
+- (void)setSubscriptionModifiedBlock:(id /* block */)arg1;
 - (void)setSubscriptionsToSave:(id)arg1;
 - (void)setZoneID:(id)arg1;
 - (id)subscriptionIDByRequestID;
 - (id)subscriptionIDsToDelete;
-- (id)subscriptionModifiedBlock;
+- (id /* block */)subscriptionModifiedBlock;
 - (id)subscriptionsToSave;
 - (id)zoneID;
 

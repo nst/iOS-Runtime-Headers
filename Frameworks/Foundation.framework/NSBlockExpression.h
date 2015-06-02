@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray;
-
 @interface NSBlockExpression : NSExpression {
     NSArray *_arguments;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
 }
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
@@ -23,10 +13,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)expressionBlock;
+- (id /* block */)expressionBlock;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 block:(id)arg2 arguments:(id)arg3;
+- (id)initWithType:(unsigned int)arg1 block:(id /* block */)arg2 arguments:(id)arg3;
 - (id)predicateFormat;
 
 @end

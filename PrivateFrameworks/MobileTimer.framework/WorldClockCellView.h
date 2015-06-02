@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class <WorldClockCellViewDelegate>, AnalogClockView, DigitalClockLabel, NSTimeZone, UILabel;
-
 @interface WorldClockCellView : UIView <Clock> {
     AnalogClockView *_analogClock;
     UILabel *_combinedLabel;
@@ -17,14 +15,14 @@
     NSTimeZone *_timeZone;
 }
 
-@property(readonly) AnalogClockView * analogClock;
-@property(readonly) UILabel * combinedLabel;
-@property <WorldClockCellViewDelegate> * delegate;
-@property(readonly) DigitalClockLabel * digitalClock;
-@property(readonly) UILabel * nameLabel;
-@property(readonly) int runMode;
-@property(readonly) BOOL started;
-@property int style;
+@property (nonatomic, readonly) AnalogClockView *analogClock;
+@property (nonatomic, readonly) UILabel *combinedLabel;
+@property (nonatomic) <WorldClockCellViewDelegate> *delegate;
+@property (nonatomic, readonly) DigitalClockLabel *digitalClock;
+@property (nonatomic, readonly) UILabel *nameLabel;
+@property (nonatomic, readonly) int runMode;
+@property (nonatomic, readonly) BOOL started;
+@property (nonatomic) int style;
 
 + (id)combinedStringFromDate:(id)arg1 withTimezoneOffset:(int)arg2 dayText:(id*)arg3 hourText:(id*)arg4 usesSeparateLines:(BOOL)arg5;
 + (float)defaultCellHeight;

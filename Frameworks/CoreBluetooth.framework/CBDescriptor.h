@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBCharacteristic, CBPeripheral, NSNumber;
-
 @interface CBDescriptor : CBAttribute {
     CBCharacteristic *_characteristic;
     NSNumber *_handle;
@@ -11,10 +9,10 @@
     id _value;
 }
 
-@property CBCharacteristic * characteristic;
-@property(readonly) NSNumber * handle;
-@property(readonly) CBPeripheral * peripheral;
-@property(retain) id value;
+@property (nonatomic) CBCharacteristic *characteristic;
+@property (nonatomic, readonly) NSNumber *handle;
+@property (nonatomic, readonly) CBPeripheral *peripheral;
+@property (retain) id value;
 
 - (id)characteristic;
 - (void)dealloc;

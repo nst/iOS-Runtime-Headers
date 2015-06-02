@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSSceneDelegate>, CADisplay, FBSDisplay, FBSSceneClientSettings, FBSSceneSettings, NSArray, NSString;
+@interface FBSScene : NSObject
 
-@interface FBSScene : NSObject {
-}
+@property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
+@property (nonatomic, readonly, retain) NSArray *contexts;
+@property (nonatomic) <FBSSceneDelegate> *delegate;
+@property (nonatomic, readonly) CADisplay *display;
+@property (nonatomic, readonly, retain) FBSDisplay *fbsDisplay;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
 
-@property(retain,readonly) FBSSceneClientSettings * clientSettings;
-@property(retain,readonly) NSArray * contexts;
-@property <FBSSceneDelegate> * delegate;
-@property(readonly) CADisplay * display;
-@property(retain,readonly) FBSDisplay * fbsDisplay;
-@property(copy,readonly) NSString * identifier;
-@property(retain,readonly) FBSSceneSettings * settings;
+// Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (id)_init;
@@ -34,7 +33,10 @@
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
-- (void)updateClientSettingsWithBlock:(id)arg1;
-- (void)updateUIClientSettingsWithBlock:(id)arg1;
+- (void)updateClientSettingsWithBlock:(id /* block */)arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)updateUIClientSettingsWithBlock:(id /* block */)arg1;
 
 @end

@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAEmailSearch : SADomainCommand
 
-@interface SAEmailSearch : SADomainCommand {
-}
-
-@property(copy) NSDate * endDate;
-@property(copy) NSString * fromEmail;
-@property(copy) NSDate * startDate;
-@property int status;
-@property(copy) NSString * subject;
-@property(copy) NSString * timeZoneId;
-@property(copy) NSString * toEmail;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSString *fromEmail;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic) int status;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSString *timeZoneId;
+@property (nonatomic, copy) NSString *toEmail;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

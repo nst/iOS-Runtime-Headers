@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSMagnifyControllerDelegate>, NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSString, NSURL, PSMagnifyMode, UIPageControl, UIScrollView, UISegmentedControl, UIView;
-
 @interface PSMagnifyController : PSListController <UIScrollViewDelegate, UIWebViewDelegate> {
     NSURL *_HTMLResourceBaseURL;
     <PSMagnifyControllerDelegate> *_delegate;
@@ -20,12 +18,12 @@
     NSMutableDictionary *_webViewsForMagnifyMode;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PSMagnifyControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL doneButtonCommits;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSMagnifyControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL doneButtonCommits;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)commitMagnifyMode:(id)arg1;
 + (void)commitMagnifyMode:(id)arg1 withRelaunchURL:(id)arg2;

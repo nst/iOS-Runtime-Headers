@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSDictionary;
-
 @interface ISUserNotification : NSObject {
     int _allowedRetryCount;
     int _currentRetryCount;
@@ -14,9 +12,9 @@
 
 @property int allowedRetryCount;
 @property int currentRetryCount;
-@property(readonly) NSDictionary * dictionary;
-@property(readonly) unsigned long optionFlags;
-@property(retain) NSDictionary * userInfo;
+@property (readonly) NSDictionary *dictionary;
+@property (readonly) unsigned long optionFlags;
+@property (retain) NSDictionary *userInfo;
 
 - (int)allowedRetryCount;
 - (struct __CFUserNotification { }*)copyUserNotification;

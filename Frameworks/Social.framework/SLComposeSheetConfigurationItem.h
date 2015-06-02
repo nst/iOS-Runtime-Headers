@@ -2,38 +2,28 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SLComposeSheetConfigurationItemObserving>, NSString;
-
 @interface SLComposeSheetConfigurationItem : NSObject {
     <SLComposeSheetConfigurationItemObserving> *_changeObserver;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tapHandler;
-
+    id /* block */ _tapHandler;
     NSString *_title;
     NSString *_value;
     BOOL _valuePending;
 }
 
-@property(copy) id tapHandler;
-@property(copy) NSString * title;
-@property(copy) NSString * value;
-@property BOOL valuePending;
+@property (nonatomic, copy) id /* block */ tapHandler;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *value;
+@property (nonatomic) BOOL valuePending;
 
 - (void).cxx_destruct;
 - (id)changeObserver;
 - (id)init;
 - (void)setChangeObserver:(id)arg1;
-- (void)setTapHandler:(id)arg1;
+- (void)setTapHandler:(id /* block */)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setValuePending:(BOOL)arg1;
-- (id)tapHandler;
+- (id /* block */)tapHandler;
 - (id)title;
 - (id)value;
 - (BOOL)valuePending;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKProcessGroupDelegate>, WKGeolocationProviderIOS;
-
 @interface WKProcessGroup : NSObject {
     struct RefPtr<WebKit::WebContext> { 
         struct WebContext {} *m_ptr; 
     } _context;
-    struct WeakObjCPtr<id<WKProcessGroupDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKProcessGroupDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKProcessGroupDelegate> > { 
         id m_weakReference; 
     } _delegate;
     struct RetainPtr<WKGeolocationProviderIOS> { 
@@ -16,9 +14,9 @@
     } _geolocationProvider;
 }
 
-@property(readonly) struct OpaqueWKContext { }* _contextRef;
-@property(readonly) WKGeolocationProviderIOS * _geolocationProvider;
-@property <WKProcessGroupDelegate> * delegate;
+@property (readonly) struct OpaqueWKContext { }*_contextRef;
+@property (readonly) WKGeolocationProviderIOS *_geolocationProvider;
+@property <WKProcessGroupDelegate> *delegate;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

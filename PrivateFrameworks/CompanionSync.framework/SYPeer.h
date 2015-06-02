@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString;
-
 @interface SYPeer : PBCodable <NSCopying> {
     NSString *_peerID;
 }
 
-@property(retain) NSString * peerID;
+@property (nonatomic, retain) NSString *peerID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUIPerson, NSArray, NSData, NSString;
-
 @interface ABUIPerson : NSObject <NSCopying> {
     void *_addressBook;
     NSArray *_linkedPeople;
@@ -11,34 +9,34 @@
     void *_source;
 }
 
-@property(readonly) void* addressBook;
-@property(readonly) BOOL areAllLinkedPeopleReadonly;
-@property(readonly) BOOL hasLinkedPeople;
-@property(readonly) BOOL hasPhoto;
-@property(readonly) BOOL hasPreferredPhoto;
-@property(readonly) BOOL hasValidRecordID;
-@property(readonly) BOOL isFromFacebook;
-@property(readonly) BOOL isMeCard;
-@property(readonly) BOOL isReadonly;
-@property(readonly) BOOL isRemote;
-@property(readonly) int kind;
-@property(readonly) NSArray * linkedPeople;
-@property(readonly) unsigned int linkedPeopleCount;
-@property(readonly) NSString * name;
-@property(readonly) NSString * phoneticName;
-@property(readonly) NSData * photoThumbnail;
-@property(readonly) void* policy;
-@property(readonly) NSString * preferredName;
-@property(readonly) ABUIPerson * preferredPersonForName;
-@property(readonly) ABUIPerson * preferredPersonForPhoto;
-@property(readonly) NSData * preferredPhotoThumbnail;
-@property(readonly) NSString * primarySourceName;
-@property(readonly) void* record;
-@property(readonly) int recordID;
-@property(readonly) unsigned int recordType;
-@property(readonly) BOOL recordWasDeleted;
-@property(readonly) NSString * secondarySourceName;
-@property(readonly) void* source;
+@property (readonly) void*addressBook;
+@property (readonly) BOOL areAllLinkedPeopleReadonly;
+@property (readonly) BOOL hasLinkedPeople;
+@property (readonly) BOOL hasPhoto;
+@property (readonly) BOOL hasPreferredPhoto;
+@property (readonly) BOOL hasValidRecordID;
+@property (readonly) BOOL isFromFacebook;
+@property (readonly) BOOL isMeCard;
+@property (readonly) BOOL isReadonly;
+@property (readonly) BOOL isRemote;
+@property (readonly) int kind;
+@property (readonly) NSArray *linkedPeople;
+@property (readonly) unsigned int linkedPeopleCount;
+@property (readonly) NSString *name;
+@property (readonly) NSString *phoneticName;
+@property (readonly) NSData *photoThumbnail;
+@property (readonly) void*policy;
+@property (readonly) NSString *preferredName;
+@property (readonly) ABUIPerson *preferredPersonForName;
+@property (readonly) ABUIPerson *preferredPersonForPhoto;
+@property (readonly) NSData *preferredPhotoThumbnail;
+@property (readonly) NSString *primarySourceName;
+@property (readonly) void*record;
+@property (readonly) int recordID;
+@property (readonly) unsigned int recordType;
+@property (readonly) BOOL recordWasDeleted;
+@property (readonly) NSString *secondarySourceName;
+@property (readonly) void*source;
 
 + (id)person;
 + (id)personInAddressBook:(void*)arg1;

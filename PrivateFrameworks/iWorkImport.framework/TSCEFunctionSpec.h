@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString;
-
 @interface TSCEFunctionSpec : NSObject {
     NSArray *mArguments;
     int mFunctionIndex;
@@ -16,15 +14,15 @@
     int mShipVersion;
 }
 
-@property(readonly) NSArray * arguments;
-@property(readonly) int functionIndex;
-@property(readonly) NSString * functionName;
-@property(readonly) BOOL isOperator;
-@property(readonly) short maxArguments;
-@property(readonly) short minArguments;
-@property(readonly) unsigned int numArguments;
-@property(readonly) short repeatingGroupSize;
-@property(readonly) int versionShippedIn;
+@property (nonatomic, readonly) NSArray *arguments;
+@property (readonly) int functionIndex;
+@property (nonatomic, readonly) NSString *functionName;
+@property (nonatomic, readonly) BOOL isOperator;
+@property (nonatomic, readonly) short maxArguments;
+@property (nonatomic, readonly) short minArguments;
+@property (nonatomic, readonly) unsigned int numArguments;
+@property (nonatomic, readonly) short repeatingGroupSize;
+@property (nonatomic, readonly) int versionShippedIn;
 
 + (id)functionSpecForFunctionIndex:(int)arg1;
 + (id)specDictionary;

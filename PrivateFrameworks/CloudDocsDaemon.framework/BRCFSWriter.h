@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCFSWriter : NSObject <BRCFileCoordinationWriting, BRCModule> {
     BOOL _isCancelled;
     NSObject<OS_dispatch_queue> *_serialQueue;
     BRCAccountSession *_session;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
-
+    int _suspendCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyChangesForServerAlias:(id)arg1 localAlias:(id)arg2 throttleID:(long long)arg3 zone:(id)arg4 diffs:(unsigned long long)arg5;

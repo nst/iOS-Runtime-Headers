@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BLTBulletinDistributorSubscriberList : NSObject <BLTBulletinDistributorSubscriberDelegate> {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_subscribers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableArray * subscribers;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableArray *subscribers;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_removeSubscribersWithMachServiceName:(id)arg1 exceptFor:(id)arg2;

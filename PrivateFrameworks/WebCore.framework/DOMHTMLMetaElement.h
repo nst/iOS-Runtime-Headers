@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLMetaElement : DOMHTMLElement
 
-@interface DOMHTMLMetaElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * content;
-@property(copy) NSString * httpEquiv;
-@property(copy) NSString * name;
-@property(copy) NSString * scheme;
+@property (copy) NSString *content;
+@property (copy) NSString *httpEquiv;
+@property (copy) NSString *name;
+@property (copy) NSString *scheme;
 
 - (id)content;
 - (id)httpEquiv;

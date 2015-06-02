@@ -8,9 +8,9 @@
     int _torchMode;
 }
 
-@property(readonly) int captureDevice;
-@property(readonly) int deviceOrientation;
-@property(readonly) int torchMode;
+@property (nonatomic, readonly) int captureDevice;
+@property (nonatomic, readonly) int deviceOrientation;
+@property (nonatomic, readonly) int torchMode;
 
 - (int)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

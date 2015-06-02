@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber, NSString;
+@interface AASetupAssistantCreateResponse : AAResponse
 
-@interface AASetupAssistantCreateResponse : AAResponse {
-}
-
-@property(readonly) NSString * HSAAction;
-@property(readonly) NSString * HSAData;
-@property(readonly) NSString * appleID;
-@property(readonly) NSString * personID;
-@property(readonly) NSNumber * status;
-@property(readonly) NSString * statusMessage;
+@property (nonatomic, readonly) NSString *HSAAction;
+@property (nonatomic, readonly) NSString *HSAData;
+@property (nonatomic, readonly) NSString *appleID;
+@property (nonatomic, readonly) NSString *personID;
+@property (nonatomic, readonly) NSNumber *status;
+@property (nonatomic, readonly) NSString *statusMessage;
 
 - (id)HSAAction;
 - (id)HSAData;

@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libxpc.dylib
  */
 
-@interface OS_xpc_object : OS_object <OS_xpc_object> {
-}
+@interface OS_xpc_object : OS_object <OS_xpc_object>
 
 - (void)_dispose;
 - (void)_xref_dispose;

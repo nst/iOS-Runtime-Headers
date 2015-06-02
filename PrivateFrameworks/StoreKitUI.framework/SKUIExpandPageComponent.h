@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, SKUIExpandViewElement;
-
 @interface SKUIExpandPageComponent : SKUIPageComponent {
     NSMutableArray *_childComponents;
     SKUIExpandViewElement *_viewElement;
 }
 
-@property(readonly) SKUIExpandViewElement * viewElement;
+@property (nonatomic, readonly) SKUIExpandViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)childComponentForIndex:(int)arg1;

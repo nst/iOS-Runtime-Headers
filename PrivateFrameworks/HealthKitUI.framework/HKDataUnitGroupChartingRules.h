@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary;
-
 @interface HKDataUnitGroupChartingRules : NSObject {
     int _defaultChartStyle;
     int _defaultStyle;
@@ -17,14 +15,14 @@
     BOOL _shouldStartDayAtNoon;
 }
 
-@property(readonly) int defaultChartStyle;
-@property(retain) NSArray * defaultYAxisChartBoundsRules;
-@property(retain) NSDictionary * defaultYAxisChartBoundsRulesByUnit;
-@property BOOL shouldAllowDecimalPrecision;
-@property BOOL shouldHideAverageLine;
-@property BOOL shouldOverrideMinYValue;
-@property BOOL shouldPadMinMaxValues;
-@property BOOL shouldStartDayAtNoon;
+@property (nonatomic, readonly) int defaultChartStyle;
+@property (nonatomic, retain) NSArray *defaultYAxisChartBoundsRules;
+@property (nonatomic, retain) NSDictionary *defaultYAxisChartBoundsRulesByUnit;
+@property (nonatomic) BOOL shouldAllowDecimalPrecision;
+@property (nonatomic) BOOL shouldHideAverageLine;
+@property (nonatomic) BOOL shouldOverrideMinYValue;
+@property (nonatomic) BOOL shouldPadMinMaxValues;
+@property (nonatomic) BOOL shouldStartDayAtNoon;
 
 - (void).cxx_destruct;
 - (id)_ruleForKey:(id)arg1 timeScope:(int)arg2;

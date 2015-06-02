@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, NSURL;
-
 @interface SSAskPermissionActionRequest : SSRequest <SSXPCCoding> {
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *URL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)URL;
 - (id)copyXPCEncoding;
 - (id)initWithURL:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
 
 @end

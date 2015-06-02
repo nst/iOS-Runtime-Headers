@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface CKDispatchQueue : NSObject {
     BOOL _cancelled;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -14,20 +12,20 @@
     BOOL _suspended;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property(retain) NSMutableDictionary * dispatchQueueBlocks;
-@property(retain) struct __CFBinaryHeap { }* heap;
-@property(retain) NSObject<OS_dispatch_queue> * lockQueue;
-@property(getter=isSuspended) BOOL suspended;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, retain) NSMutableDictionary *dispatchQueueBlocks;
+@property (nonatomic, retain) struct __CFBinaryHeap { }*heap;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *lockQueue;
+@property (getter=isSuspended, nonatomic) BOOL suspended;
 
 + (id)concurrentQueueWithDispatchPriority:(long)arg1;
 + (id)serialQueueWithDispatchPriority:(long)arg1;
 
 - (id)_initWithDispatchAttr:(id)arg1 dispatchPriority:(long)arg2;
-- (void)addBlock:(id)arg1;
-- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2;
-- (void)addBlock:(id)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
+- (void)addBlock:(id /* block */)arg1;
+- (void)addBlock:(id /* block */)arg1 withQueuePriority:(int)arg2;
+- (void)addBlock:(id /* block */)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
 - (id)allKeysOfOutstandingBlocks;
 - (void)cancelOustandingBlocks;
 - (BOOL)containsOutstandingBlockForKey:(id)arg1;

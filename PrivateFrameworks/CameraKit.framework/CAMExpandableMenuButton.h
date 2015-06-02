@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMExpandableMenuButtonDelegate>, NSIndexSet, NSMutableArray, NSMutableIndexSet, UIView;
-
 @interface CAMExpandableMenuButton : UIControl {
     UIView *__headerView;
     NSIndexSet *__hiddenIndexesWhileCollapsed;
@@ -22,16 +20,16 @@
     } _tappableEdgeInsets;
 }
 
-@property(readonly) UIView * _headerView;
-@property(copy,readonly) NSIndexSet * _hiddenIndexesWhileCollapsed;
-@property(copy,readonly) NSMutableIndexSet * _highlightedIndexesWhileCollapsed;
-@property(readonly) NSMutableArray * _menuItems;
-@property <CAMExpandableMenuButtonDelegate> * expandableMenuDelegate;
-@property(getter=isExpanded,readonly) BOOL expanded;
-@property int expansionOrientation;
-@property int orientation;
-@property int selectedIndex;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
+@property (nonatomic, readonly) UIView *_headerView;
+@property (nonatomic, readonly, copy) NSIndexSet *_hiddenIndexesWhileCollapsed;
+@property (nonatomic, readonly, copy) NSMutableIndexSet *_highlightedIndexesWhileCollapsed;
+@property (nonatomic, readonly) NSMutableArray *_menuItems;
+@property (nonatomic) <CAMExpandableMenuButtonDelegate> *expandableMenuDelegate;
+@property (getter=isExpanded, nonatomic, readonly) BOOL expanded;
+@property (nonatomic) int expansionOrientation;
+@property (nonatomic) int orientation;
+@property (nonatomic) int selectedIndex;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (double)expansionDuration;
 

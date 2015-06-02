@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@interface CUICalibration : NSObject {
-}
+@interface CUICalibration : NSObject
 
 + (void)_insertRemoteViewController:(id)arg1;
 + (void)_removeRemoteViewController;

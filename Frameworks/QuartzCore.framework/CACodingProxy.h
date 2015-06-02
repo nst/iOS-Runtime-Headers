@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CACodingProxy : NSObject <NSCoding> {
-}
+@interface CACodingProxy : NSObject <NSCoding>
 
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

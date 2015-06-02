@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <NSObject>, MPAVController, NSDictionary, NSString, RadioStation;
-
 @interface MPQueueFeeder : NSObject <MPAVPlaylistFeeder> {
     unsigned int _activeShuffleType;
     MPAVController *_avController;
@@ -18,29 +16,31 @@
     BOOL _wantsAirPlayVideo;
 }
 
-@property MPAVController * AVController;
-@property unsigned int activeShuffleType;
-@property(readonly) BOOL allowsUserVisibleUpcomingItems;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL fullScreenPlaybackQueue;
-@property(readonly) unsigned int hash;
-@property BOOL isSourceChangeInProgress;
-@property(readonly) Class itemClass;
-@property(readonly) unsigned int itemCount;
-@property(readonly) int playbackMode;
-@property(readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
-@property(readonly) NSDictionary * preferredLanguages;
-@property(readonly) unsigned int realRepeatType;
-@property(readonly) unsigned int realShuffleType;
-@property unsigned int repeatType;
-@property(retain) <NSObject> * representedObject;
-@property unsigned int shuffleType;
-@property(readonly) RadioStation * station;
-@property(readonly) Class superclass;
-@property(readonly) BOOL trackChangesCanEndPlayback;
-@property(readonly) BOOL userCanChangeShuffleAndRepeatType;
-@property(readonly) BOOL wantsAirPlayVideo;
+@property (nonatomic) MPAVController *AVController;
+@property (nonatomic) unsigned int activeShuffleType;
+@property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL fullScreenPlaybackQueue;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isSourceChangeInProgress;
+@property (nonatomic, readonly) Class itemClass;
+@property (nonatomic, readonly) unsigned int itemCount;
+@property (nonatomic, readonly) int playbackMode;
+@property (nonatomic, readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
+@property (nonatomic, readonly) NSDictionary *preferredLanguages;
+@property (nonatomic, readonly) unsigned int realRepeatType;
+@property (nonatomic, readonly) unsigned int realShuffleType;
+@property (nonatomic) unsigned int repeatType;
+@property (nonatomic, retain) <NSObject> *representedObject;
+@property (nonatomic) unsigned int shuffleType;
+@property (nonatomic, readonly) RadioStation *station;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL trackChangesCanEndPlayback;
+@property (nonatomic, readonly) BOOL userCanChangeShuffleAndRepeatType;
+@property (nonatomic, readonly) BOOL wantsAirPlayVideo;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
 
@@ -73,7 +73,6 @@
 - (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
 - (void)invalidateQueueCaches;
-- (BOOL)isRadioQueueFeeder;
 - (BOOL)isSourceChangeInProgress;
 - (Class)itemClass;
 - (unsigned int)itemCount;
@@ -106,9 +105,13 @@
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (unsigned int)shuffleType;
 - (struct { int x1; int x2; double x3; })skipLimit;
-- (id)station;
 - (BOOL)trackChangesCanEndPlayback;
 - (BOOL)userCanChangeShuffleAndRepeatType;
 - (BOOL)wantsAirPlayVideo;
+
+// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+
+- (BOOL)isRadioQueueFeeder;
+- (id)station;
 
 @end

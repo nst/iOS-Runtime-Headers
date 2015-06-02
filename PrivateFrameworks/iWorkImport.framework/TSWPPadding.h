@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPPadding : NSObject <TSDMixing, TSSPropertyCommandSerializing> {
     float _bottomInset;
     float _leftInset;
@@ -16,14 +9,14 @@
     float _topInset;
 }
 
-@property float bottomInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float leftInset;
-@property float rightInset;
-@property(readonly) Class superclass;
-@property float topInset;
+@property (nonatomic) float bottomInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float leftInset;
+@property (nonatomic) float rightInset;
+@property (readonly) Class superclass;
+@property (nonatomic) float topInset;
 
 + (id)padding;
 + (id)paddingWithTopInset:(float)arg1 leftInset:(float)arg2 bottomInset:(float)arg3 rightInset:(float)arg4;

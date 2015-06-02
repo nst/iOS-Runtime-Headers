@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property unsigned long long distance;
-@property BOOL hasDistance;
+@property (nonatomic) unsigned long long distance;
+@property (nonatomic) BOOL hasDistance;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

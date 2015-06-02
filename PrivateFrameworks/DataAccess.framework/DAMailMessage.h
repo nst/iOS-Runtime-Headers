@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAMailMessage : NSObject <NSCoding> {
-}
+@interface DAMailMessage : NSObject <NSCoding>
 
 - (id)attachments;
 - (id)body;

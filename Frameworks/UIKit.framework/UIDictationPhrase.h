@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface UIDictationPhrase : NSObject {
     NSArray *_alternativeInterpretations;
     NSString *_text;
 }
 
-@property(readonly) NSArray * alternativeInterpretations;
-@property(readonly) NSString * text;
+@property (nonatomic, readonly) NSArray *alternativeInterpretations;
+@property (nonatomic, readonly) NSString *text;
 
 + (id)phraseWithText:(id)arg1 alternativeInterpretations:(id)arg2;
 

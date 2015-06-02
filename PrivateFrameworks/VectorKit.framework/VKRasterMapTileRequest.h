@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSLocale;
-
 @interface VKRasterMapTileRequest : NSObject <NSCopying> {
     NSLocale *_locale;
     int _mapType;
@@ -17,15 +15,15 @@
     } _tileKey;
 }
 
-@property(readonly) struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } cacheKey;
-@property(readonly) BOOL isInvalid;
-@property(retain) NSLocale * locale;
-@property int mapType;
-@property unsigned int scale;
-@property unsigned int tileGroupID;
-@property struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } tileKey;
-@property(readonly) const struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }* tileKeyPtr;
-@property(readonly) struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; } tk;
+@property (nonatomic, readonly) struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } cacheKey;
+@property (nonatomic, readonly) BOOL isInvalid;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic) int mapType;
+@property (nonatomic) unsigned int scale;
+@property (nonatomic) unsigned int tileGroupID;
+@property (nonatomic) struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } tileKey;
+@property (nonatomic, readonly) const struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*tileKeyPtr;
+@property (nonatomic, readonly) struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; } tk;
 
 - (struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })cacheKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -34,7 +32,7 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInvalid;
-- (void)isReallyInvalid:(id)arg1;
+- (void)isReallyInvalid:(id /* block */)arg1;
 - (id)locale;
 - (int)mapType;
 - (unsigned int)scale;

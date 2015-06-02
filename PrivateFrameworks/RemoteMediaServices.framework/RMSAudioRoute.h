@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSAudioRoute : NSObject {
     NSString *_displayName;
     unsigned long long _macAddress;
@@ -11,10 +9,10 @@
     BOOL _supportsVideo;
 }
 
-@property(retain) NSString * displayName;
-@property unsigned long long macAddress;
-@property(getter=isSelected) BOOL selected;
-@property BOOL supportsVideo;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) unsigned long long macAddress;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) BOOL supportsVideo;
 
 + (id)audioRoutesFromProtobufs:(id)arg1;
 + (id)protobufsFromAudioRoutes:(id)arg1;

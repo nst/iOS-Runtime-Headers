@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSString, NSURL;
+@interface SAAnswerAbstractSocialPost : AceObject <SAAceSerializable>
 
-@interface SAAnswerAbstractSocialPost : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * author;
-@property(copy) NSString * authorTitle;
-@property(copy) NSArray * comments;
-@property(copy) NSDate * dateCreated;
-@property(copy) NSDate * dateModified;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * icon;
-@property int rank;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *author;
+@property (nonatomic, copy) NSString *authorTitle;
+@property (nonatomic, copy) NSArray *comments;
+@property (nonatomic, copy) NSDate *dateCreated;
+@property (nonatomic, copy) NSDate *dateModified;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *icon;
+@property (nonatomic) int rank;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *title;
 
 + (id)abstractSocialPost;
 + (id)abstractSocialPostWithDictionary:(id)arg1 context:(id)arg2;

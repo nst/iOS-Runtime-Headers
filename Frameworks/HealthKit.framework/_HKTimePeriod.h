@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSDate;
-
 @interface _HKTimePeriod : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_endDate;
     NSDate *_startDate;
 }
 
-@property(readonly) NSDate * endDate;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 + (id)timePeriodWithStartDate:(id)arg1 endDate:(id)arg2;

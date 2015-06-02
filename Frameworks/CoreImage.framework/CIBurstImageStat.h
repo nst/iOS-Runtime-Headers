@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSMutableArray, NSString;
-
 @interface CIBurstImageStat : NSObject {
     int AEAverage;
     BOOL AEStable;
@@ -15,10 +13,10 @@
     int _version;
     float actionClusteringScore;
     float actionScore;
-    unsigned short aeMatrix[256];
+    unsigned short aeMatrix;
     float avgHorzDiffY;
     float blurExtent;
-    float colorHistogram[1024];
+    float colorHistogram;
     int dissimilarity;
     BOOL doLimitedSharpnessAndBlur;
     BOOL emotionallyRejected;
@@ -97,12 +95,12 @@
 @property BOOL doLimitedSharpnessAndBlur;
 @property BOOL emotionallyRejected;
 @property BOOL exclude;
-@property NSMutableArray * faceStatArray;
+@property NSMutableArray *faceStatArray;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } facesRoiRect;
-@property struct __IOSurface { }* fullsizeJpegData;
+@property struct __IOSurface { }*fullsizeJpegData;
 @property int fullsizeJpegSize;
 @property BOOL hasRegistrationData;
-@property NSString * imageId;
+@property NSString *imageId;
 @property float imageScore;
 @property BOOL isGarbage;
 @property float maxSkewness;

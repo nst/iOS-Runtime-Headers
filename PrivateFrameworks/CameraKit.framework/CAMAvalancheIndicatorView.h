@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UILabel, UIView;
-
 @interface CAMAvalancheIndicatorView : UIView {
     UIView *__backgroundView;
     UILabel *__countLabel;
@@ -11,10 +9,10 @@
     BOOL _showsWhenStarted;
 }
 
-@property(readonly) UIView * _backgroundView;
-@property(readonly) UILabel * _countLabel;
-@property(readonly) int _numberOfPhotos;
-@property BOOL showsWhenStarted;
+@property (nonatomic, readonly) UIView *_backgroundView;
+@property (nonatomic, readonly) UILabel *_countLabel;
+@property (nonatomic, readonly) int _numberOfPhotos;
+@property (nonatomic) BOOL showsWhenStarted;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
@@ -23,7 +21,7 @@
 - (int)_numberOfPhotos;
 - (void)_performCaptureAnimation;
 - (void)_updateCountLabelWithNumberOfPhotos;
-- (void)finishIncrementingWithCompletionHandler:(id)arg1;
+- (void)finishIncrementingWithCompletionHandler:(id /* block */)arg1;
 - (void)incrementWithCaptureAnimation:(BOOL)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

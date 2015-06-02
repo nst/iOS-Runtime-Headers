@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray, NSString;
-
 @interface UIMovieClosedCaptionData : NSObject {
     NSMutableArray *_data;
     NSString *_language;
 }
 
-@property(retain) NSString * language;
+@property (nonatomic, retain) NSString *language;
 
 - (void).cxx_destruct;
 - (void)addCaptionText:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;

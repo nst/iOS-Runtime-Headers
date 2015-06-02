@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCEFormulaMap;
-
 @interface TSCEFormulaMapEnumerator : NSObject {
     TSCEFormulaMap *mFormulaMap;
     struct __wrap_iter<std::__1::pair<TSUColumnRowCoordinate, TSCEFormula> *> { 

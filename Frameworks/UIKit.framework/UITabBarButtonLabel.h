@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, _UITabBarItemAppearanceStorage;
-
 @interface UITabBarButtonLabel : UILabel {
     Class _appearanceGuideClass;
     _UITabBarItemAppearanceStorage *_appearanceStorage;
@@ -13,8 +11,8 @@
     UIColor *_unselectedTintColor;
 }
 
-@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
-@property(getter=_unselectedTintColor,setter=_setUnselectedTintColor:,retain) UIColor * unselectedTintColor;
+@property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;
+@property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
 + (float)_fontPointSizeForIdiom:(int)arg1;
 

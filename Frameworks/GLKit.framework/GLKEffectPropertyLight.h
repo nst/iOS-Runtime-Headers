@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKEffectPropertyTransform;
-
 @interface GLKEffectPropertyLight : GLKEffectProperty {
     struct GLKBigInt_s { 
         unsigned long long n0; 
@@ -181,42 +179,42 @@
     GLKEffectPropertyTransform *_transform;
 }
 
-@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
-@property(readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allVshMasks;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } ambientColor;
-@property int ambientLoc;
-@property int ambientTermLoc;
-@property float constantAttenuation;
-@property int constantAttenuationLoc;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } diffuseColor;
-@property int diffuseLoc;
-@property unsigned long long* effectDirtyUniforms;
-@property unsigned char enabled;
-@property unsigned char firstLight;
-@property(readonly) unsigned char isAttenuated;
-@property(readonly) unsigned char isSpot;
-@property int lightIndex;
-@property int lightingType;
-@property float linearAttenuation;
-@property int linearAttenuationLoc;
-@property int normalizeLoc;
-@property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } normalizedSpotDirectionEye;
-@property int normalizedSpotDirectionEyeLoc;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } position;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } positionEye;
-@property int positionEyeLoc;
-@property unsigned char positionEyeStale;
-@property float quadraticAttenuation;
-@property int quadraticAttenuationLoc;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } specularColor;
-@property int specularLoc;
-@property float spotCutoff;
-@property float spotCutoffDegrees;
-@property int spotCutoffLoc;
-@property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } spotDirection;
-@property float spotExponent;
-@property int spotExponentLoc;
-@property(retain) GLKEffectPropertyTransform * transform;
+@property (nonatomic, readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
+@property (nonatomic, readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allVshMasks;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } ambientColor;
+@property (nonatomic) int ambientLoc;
+@property (nonatomic) int ambientTermLoc;
+@property (nonatomic) float constantAttenuation;
+@property (nonatomic) int constantAttenuationLoc;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } diffuseColor;
+@property (nonatomic) int diffuseLoc;
+@property (nonatomic) unsigned long long*effectDirtyUniforms;
+@property (nonatomic) unsigned char enabled;
+@property (nonatomic) unsigned char firstLight;
+@property (nonatomic, readonly) unsigned char isAttenuated;
+@property (nonatomic, readonly) unsigned char isSpot;
+@property (nonatomic) int lightIndex;
+@property (nonatomic) int lightingType;
+@property (nonatomic) float linearAttenuation;
+@property (nonatomic) int linearAttenuationLoc;
+@property (nonatomic) int normalizeLoc;
+@property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } normalizedSpotDirectionEye;
+@property (nonatomic) int normalizedSpotDirectionEyeLoc;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } position;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } positionEye;
+@property (nonatomic) int positionEyeLoc;
+@property (nonatomic) unsigned char positionEyeStale;
+@property (nonatomic) float quadraticAttenuation;
+@property (nonatomic) int quadraticAttenuationLoc;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } specularColor;
+@property (nonatomic) int specularLoc;
+@property (nonatomic) float spotCutoff;
+@property (nonatomic) float spotCutoffDegrees;
+@property (nonatomic) int spotCutoffLoc;
+@property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } spotDirection;
+@property (nonatomic) float spotExponent;
+@property (nonatomic) int spotExponentLoc;
+@property (nonatomic, retain) GLKEffectPropertyTransform *transform;
 
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 

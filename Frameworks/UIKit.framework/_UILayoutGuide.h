@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface _UILayoutGuide : UIView <UILayoutSupport> {
     BOOL _allowsArchivingAsSubview;
     NSString *_archivedIdentifier;
@@ -11,15 +9,15 @@
     BOOL _horizontal;
 }
 
-@property(setter=_setAllowsArchivingAsSubview:) BOOL _allowsArchivingAsSubview;
-@property(setter=_setArchivedIdentifier:,copy) NSString * _archivedIdentifier;
-@property(setter=_setConstraintsToRemoveAtRuntime:,copy) NSArray * _constraintsToRemoveAtRuntime;
-@property(getter=isHorizontal,setter=_setHorizontal:) BOOL _horizontal;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float length;
-@property(readonly) Class superclass;
+@property (setter=_setAllowsArchivingAsSubview:, nonatomic) BOOL _allowsArchivingAsSubview;
+@property (setter=_setArchivedIdentifier:, nonatomic, copy) NSString *_archivedIdentifier;
+@property (setter=_setConstraintsToRemoveAtRuntime:, nonatomic, copy) NSArray *_constraintsToRemoveAtRuntime;
+@property (getter=isHorizontal, setter=_setHorizontal:, nonatomic) BOOL _horizontal;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float length;
+@property (readonly) Class superclass;
 
 + (id)_horizontalLayoutGuide;
 + (id)_verticalLayoutGuide;

@@ -2,55 +2,54 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSMutableDictionary, NSNumber, NSString, NSURL, UIColor;
-
 @interface IKViewElementStyle : NSObject {
     NSString *_classSelector;
     NSMutableDictionary *_styleDict;
 }
 
-@property(readonly) UIColor * backgroundColor;
-@property(readonly) NSString * badgeTreatment;
-@property(readonly) UIColor * borderColor;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
-@property(readonly) NSString * cardType;
-@property(retain) NSString * classSelector;
-@property(readonly) UIColor * color;
-@property(readonly) int columnCount;
-@property(readonly) NSString * columnItemType;
-@property(readonly) NSString * columnType;
-@property(readonly) NSString * dividerType;
-@property(readonly) unsigned int elementAlignment;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementMargin;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementPadding;
-@property(readonly) unsigned int elementPosition;
-@property(readonly) int fillImage;
-@property(readonly) float fontSize;
-@property(readonly) NSString * fontWeight;
-@property(readonly) NSURL * imagePlaceholderURL;
-@property(readonly) unsigned int imagePosition;
-@property(readonly) NSString * imageTreatment;
-@property(readonly) NSString * itemHeight;
-@property(readonly) NSString * itemWidth;
-@property(readonly) NSString * labelsState;
-@property(readonly) NSString * lockupType;
-@property(readonly) int maxTextLines;
-@property(readonly) unsigned int ordinalMaxLength;
-@property(readonly) int reflectImage;
-@property(readonly) NSString * rowHeight;
-@property(retain) NSMutableDictionary * styleDict;
-@property(readonly) unsigned int textAlignment;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property(readonly) NSString * transition;
-@property(readonly) NSNumber * transitionInterval;
-@property(readonly) NSString * visibility;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) NSString *badgeTreatment;
+@property (nonatomic, readonly) UIColor *borderColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
+@property (nonatomic, readonly) NSString *cardType;
+@property (nonatomic, retain) NSString *classSelector;
+@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic, readonly) int columnCount;
+@property (nonatomic, readonly) NSString *columnItemType;
+@property (nonatomic, readonly) NSString *columnType;
+@property (nonatomic, readonly) NSString *dividerType;
+@property (nonatomic, readonly) unsigned int elementAlignment;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementMargin;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementPadding;
+@property (nonatomic, readonly) unsigned int elementPosition;
+@property (nonatomic, readonly) int fillImage;
+@property (nonatomic, readonly) float fontSize;
+@property (nonatomic, readonly) NSString *fontWeight;
+@property (nonatomic, readonly) NSURL *imagePlaceholderURL;
+@property (nonatomic, readonly) unsigned int imagePosition;
+@property (nonatomic, readonly) NSString *imageTreatment;
+@property (nonatomic, readonly) NSString *itemHeight;
+@property (nonatomic, readonly) NSString *itemWidth;
+@property (nonatomic, readonly) NSString *labelsState;
+@property (nonatomic, readonly) NSString *lockupType;
+@property (nonatomic, readonly) int maxTextLines;
+@property (nonatomic, readonly) unsigned int ordinalMaxLength;
+@property (nonatomic, readonly) int reflectImage;
+@property (nonatomic, readonly) NSString *rowHeight;
+@property (nonatomic, retain) NSMutableDictionary *styleDict;
+@property (nonatomic, readonly) unsigned int textAlignment;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic, readonly) NSString *transition;
+@property (nonatomic, readonly) NSNumber *transitionInterval;
+@property (nonatomic, readonly) NSString *visibility;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 + (unsigned int)alignmentFromString:(id)arg1;
 + (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 inlineStyle:(id)arg3;
 + (id)elementStyleWithSelector:(id)arg1 aggregatingStyles:(id)arg2;
 + (id)elementStylesFromString:(id)arg1;
 + (void)initialize;
-+ (id)positionConstraintsForView:(id)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 position:(unsigned int)arg3;
 + (unsigned int)positionFromString:(id)arg1;
 + (void)registerStyle:(id)arg1 withType:(unsigned int)arg2 inherited:(BOOL)arg3;
 + (unsigned int)transitionFromString:(id)arg1;
@@ -109,5 +108,9 @@
 - (id)transitionInterval;
 - (id)valueForStyle:(id)arg1;
 - (id)visibility;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
++ (id)positionConstraintsForView:(id)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 position:(unsigned int)arg3;
 
 @end

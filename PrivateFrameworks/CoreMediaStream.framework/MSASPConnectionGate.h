@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSError;
-
 @interface MSASPConnectionGate : NSObject {
     NSError *_error;
 }
 
-@property(retain) NSError * error;
+@property (nonatomic, retain) NSError *error;
 
 + (id)gate;
 

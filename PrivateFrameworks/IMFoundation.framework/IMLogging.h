@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMLogging : NSObject {
-}
+@interface IMLogging : NSObject
 
 + (id)dateFormatter;
 + (void)enableConsoleLoggingForLevel:(int)arg1;

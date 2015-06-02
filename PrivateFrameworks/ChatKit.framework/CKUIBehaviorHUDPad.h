@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKUIBehaviorHUDPad : CKUIBehaviorPad {
-}
+@interface CKUIBehaviorHUDPad : CKUIBehaviorPad
 
 - (id)blue_sendButtonColor;
 - (id)entryFieldAudioRecordingBaloonColor;

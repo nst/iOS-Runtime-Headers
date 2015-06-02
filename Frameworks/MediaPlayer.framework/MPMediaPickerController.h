@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMediaPickerControllerDelegate>, MPRemoteMediaPickerController, NSString, _UIAsyncInvocation;
-
 @interface MPMediaPickerController : UIViewController {
     BOOL _allowsPickingMultipleItems;
     _UIAsyncInvocation *_cancelRequest;
@@ -15,11 +13,11 @@
     BOOL _showsCloudItems;
 }
 
-@property BOOL allowsPickingMultipleItems;
-@property <MPMediaPickerControllerDelegate> * delegate;
-@property(readonly) unsigned int mediaTypes;
-@property(copy) NSString * prompt;
-@property BOOL showsCloudItems;
+@property (nonatomic) BOOL allowsPickingMultipleItems;
+@property (nonatomic) <MPMediaPickerControllerDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int mediaTypes;
+@property (nonatomic, copy) NSString *prompt;
+@property (nonatomic) BOOL showsCloudItems;
 
 + (void)preheatMediaPicker;
 

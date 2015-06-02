@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLManagedAsset;
-
 @interface PUMapAssetItem : PUMapItem {
     PLManagedAsset *_asset;
 }
 
-@property(retain) PLManagedAsset * asset;
+@property (nonatomic, retain) PLManagedAsset *asset;
 
 - (void).cxx_destruct;
 - (id)asset;

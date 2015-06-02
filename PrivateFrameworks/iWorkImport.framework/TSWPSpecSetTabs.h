@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPTabs;
-
 @interface TSWPSpecSetTabs : TSWPSpecTabs {
     TSWPTabs *_tabs;
     BOOL _unset;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIMovieScrubberDataSource>, <UIMovieScrubberDelegate>, NSString, UIImage, UIImageView, UILabel, UIMovieScrubberEditingView, UIMovieScrubberTrackView;
-
 @interface UIMovieScrubber : UIControl <UIMovieScrubberTrackViewDataSource, UIMovieScrubberTrackViewDelegate> {
     <UIMovieScrubberDataSource> *_dataSource;
     <UIMovieScrubberDelegate> *_delegate;
@@ -81,30 +79,30 @@
     double _zoomDelay;
 }
 
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
-@property(getter=isContinuous) BOOL continuous;
-@property <UIMovieScrubberDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIMovieScrubberDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property float edgeInset;
-@property(getter=isEditable) BOOL editable;
-@property(getter=isEditing) BOOL editing;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isInsideNavigationBar;
-@property double maximumTrimLength;
-@property double minimumTrimLength;
-@property BOOL showTimeViews;
-@property(readonly) Class superclass;
-@property BOOL thumbIsVisible;
-@property double trimEndValue;
-@property double trimStartValue;
-@property double value;
-@property(getter=isZoomAnimating,readonly) BOOL zoomAnimating;
-@property double zoomDelay;
-@property(readonly) double zoomMaximumValue;
-@property(readonly) double zoomMinimumValue;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentMargins;
+@property (getter=isContinuous, nonatomic) BOOL continuous;
+@property (nonatomic) <UIMovieScrubberDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIMovieScrubberDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (nonatomic) float edgeInset;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isInsideNavigationBar;
+@property (nonatomic) double maximumTrimLength;
+@property (nonatomic) double minimumTrimLength;
+@property (nonatomic) BOOL showTimeViews;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL thumbIsVisible;
+@property (nonatomic) double trimEndValue;
+@property (nonatomic) double trimStartValue;
+@property (nonatomic) double value;
+@property (getter=isZoomAnimating, nonatomic, readonly) BOOL zoomAnimating;
+@property (nonatomic) double zoomDelay;
+@property (nonatomic, readonly) double zoomMaximumValue;
+@property (nonatomic, readonly) double zoomMinimumValue;
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 

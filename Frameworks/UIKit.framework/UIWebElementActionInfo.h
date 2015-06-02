@@ -9,7 +9,7 @@
     } _interactionLocation;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } interactionLocation;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } interactionLocation;
 
 - (void)_setInteractionLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })interactionLocation;

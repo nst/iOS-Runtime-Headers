@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray;
-
 @interface NSParagraphStyle : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     float _defaultTabInterval;
     id _extraData;
@@ -26,21 +24,23 @@
     float _tailIndent;
 }
 
-@property(readonly) int alignment;
-@property(readonly) int baseWritingDirection;
-@property(readonly) float defaultTabInterval;
-@property(readonly) float firstLineHeadIndent;
-@property(readonly) float headIndent;
-@property(readonly) float hyphenationFactor;
-@property(readonly) int lineBreakMode;
-@property(readonly) float lineHeightMultiple;
-@property(readonly) float lineSpacing;
-@property(readonly) float maximumLineHeight;
-@property(readonly) float minimumLineHeight;
-@property(readonly) float paragraphSpacing;
-@property(readonly) float paragraphSpacingBefore;
-@property(copy,readonly) NSArray * tabStops;
-@property(readonly) float tailIndent;
+@property (readonly) int alignment;
+@property (readonly) int baseWritingDirection;
+@property (nonatomic, readonly) float defaultTabInterval;
+@property (readonly) float firstLineHeadIndent;
+@property (readonly) float headIndent;
+@property (readonly) float hyphenationFactor;
+@property (readonly) int lineBreakMode;
+@property (readonly) float lineHeightMultiple;
+@property (readonly) float lineSpacing;
+@property (readonly) float maximumLineHeight;
+@property (readonly) float minimumLineHeight;
+@property (readonly) float paragraphSpacing;
+@property (readonly) float paragraphSpacingBefore;
+@property (nonatomic, readonly, copy) NSArray *tabStops;
+@property (readonly) float tailIndent;
+
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 + (int)_defaultWritingDirection;
 + (id)defaultParagraphStyle;
@@ -53,7 +53,6 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_isSuitableForFastStringDrawingWithAlignment:(int*)arg1 lineBreakMode:(int*)arg2 tighteningFactorForTruncation:(float*)arg3;
 - (BOOL)_tryRetain;
-- (int)_ui_resolvedTextAlignment;
 - (int)alignment;
 - (int)baseWritingDirection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -85,5 +84,9 @@
 - (id)textBlocks;
 - (id)textLists;
 - (float)tighteningFactorForTruncation;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (int)_ui_resolvedTextAlignment;
 
 @end

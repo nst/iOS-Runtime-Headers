@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUCarrierDownloadPolicyProperties : NSObject <NSSecureCoding> {
-}
+@interface SUCarrierDownloadPolicyProperties : NSObject <NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

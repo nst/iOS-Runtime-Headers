@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLRelationship, NSString;
-
 @interface NSSQLJoinIntermediate : NSSQLIntermediate {
     NSString *_correlationAlias;
     NSString *_destinationAlias;

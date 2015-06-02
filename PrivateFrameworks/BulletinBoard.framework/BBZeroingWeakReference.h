@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString;
-
 @interface BBZeroingWeakReference : NSObject {
     NSString *_debug;
     id _object;

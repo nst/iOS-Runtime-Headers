@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
 @interface BSMachPort : NSObject <BSXPCCoding, NSCopying> {
     NSString *_debugDescription;
     BOOL _invalidated;
@@ -13,11 +11,11 @@
     unsigned int _sendRights;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int port;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int port;
+@property (readonly) Class superclass;
 
 + (id)bootstrapLookUpPortWithName:(id)arg1;
 + (id)createReceiveRight;
@@ -30,7 +28,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithPort:(unsigned int)arg1 withRights:(id)arg2;
+- (id)initWithPort:(unsigned int)arg1 withRights:(id /* block */)arg2;
 - (id)initWithRight:(int)arg1;
 - (id)initWithSendRight:(unsigned int)arg1;
 - (id)initWithSendRight:(unsigned int)arg1 assumeOwnership:(BOOL)arg2;

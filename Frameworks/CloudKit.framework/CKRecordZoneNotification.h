@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordZoneID;
-
 @interface CKRecordZoneNotification : CKNotification <NSSecureCoding> {
     CKRecordZoneID *_recordZoneID;
 }
 
-@property(copy) CKRecordZoneID * recordZoneID;
+@property (nonatomic, copy) CKRecordZoneID *recordZoneID;
 
 + (BOOL)supportsSecureCoding;
 

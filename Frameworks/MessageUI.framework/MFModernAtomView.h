@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFModernAtomBackgroundView, MFModernAtomIconView, NSString, UIActivityIndicatorView, UIColor, UIFont, UILabel, UIView;
-
 @interface MFModernAtomView : UIDefaultKeyboardInput <MFModernAtomViewResembling> {
     MFModernAtomIconView *_accessoryIconView;
     UIActivityIndicatorView *_activityIndicator;
@@ -24,30 +22,30 @@
     UIView *_titleLabelFillView;
 }
 
-@property(readonly) MFModernAtomIconView * accessoryIconView;
-@property(readonly) UIActivityIndicatorView * activityIndicator;
-@property(readonly) MFModernAtomBackgroundView * backgroundView;
-@property(readonly) MFModernAtomIconView * badgeIconView;
-@property(readonly) struct CGPoint { float x1; float x2; } baselinePoint;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(readonly) unsigned int effectivePresentationOptions;
-@property(readonly) UIColor * effectiveTintColor;
-@property(readonly) unsigned int hash;
-@property BOOL hidesVIPIndicator;
-@property BOOL isPrimaryAddressAtom;
-@property unsigned int presentationOptions;
-@property float scale;
-@property(getter=isSelected) BOOL selected;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
-@property BOOL separatorHidden;
-@property BOOL separatorIsLeftAligned;
-@property int separatorStyle;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(retain) UIFont * titleFont;
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, readonly) MFModernAtomIconView *accessoryIconView;
+@property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, readonly) MFModernAtomBackgroundView *backgroundView;
+@property (nonatomic, readonly) MFModernAtomIconView *badgeIconView;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, readonly) unsigned int effectivePresentationOptions;
+@property (nonatomic, readonly) UIColor *effectiveTintColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesVIPIndicator;
+@property (nonatomic) BOOL isPrimaryAddressAtom;
+@property (nonatomic) unsigned int presentationOptions;
+@property (nonatomic) float scale;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
+@property (nonatomic) BOOL separatorHidden;
+@property (nonatomic) BOOL separatorIsLeftAligned;
+@property (nonatomic) int separatorStyle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UIFont *titleFont;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 + (id)_SMSTintColor;
 + (id)_badgeImagesForPresentationOptions:(unsigned int)arg1 iconOrder:(const unsigned int*)arg2 orderingLength:(unsigned int)arg3 tintColor:(id)arg4 large:(BOOL)arg5 variant:(int)arg6;

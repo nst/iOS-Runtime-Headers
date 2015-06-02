@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3Predicate, NSArray, NSString;
+@interface ML3Container : ML3Entity
 
-@interface ML3Container : ML3Entity {
-}
+@property (readonly, copy) NSArray *cloudDisplayOrderingTerms;
+@property (readonly, copy) NSArray *displayOrderingTerms;
+@property (readonly) ML3Predicate *dynamicPredicate;
+@property (getter=isLimitOrderingDescending, readonly) BOOL limitOrderingDescending;
+@property (readonly, copy) NSArray *limitOrderingTerms;
+@property (readonly) long long limitValue;
+@property (getter=isLimitedByCount, readonly) BOOL limitedByCount;
+@property (readonly, copy) NSString *limitingProperty;
+@property (readonly) ML3Predicate *staticPredicate;
 
-@property(copy,readonly) NSArray * cloudDisplayOrderingTerms;
-@property(copy,readonly) NSArray * displayOrderingTerms;
-@property(readonly) ML3Predicate * dynamicPredicate;
-@property(getter=isLimitOrderingDescending,readonly) BOOL limitOrderingDescending;
-@property(copy,readonly) NSArray * limitOrderingTerms;
-@property(readonly) long long limitValue;
-@property(getter=isLimitedByCount,readonly) BOOL limitedByCount;
-@property(copy,readonly) NSString * limitingProperty;
-@property(readonly) ML3Predicate * staticPredicate;
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
-+ (id)__mediaTypesForTracksWithDatabaseConnection:(id)arg1 tracksPersistentIDsEnumerationBlock:(id)arg2;
++ (id)__mediaTypesForTracksWithDatabaseConnection:(id)arg1 tracksPersistentIDsEnumerationBlock:(id /* block */)arg2;
 + (void)_addMediaTypesToContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
 + (void)_clearContainerMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
 + (void)_insertNewSmartPlaylist:(id)arg1 criteriaBlob:(id)arg2 evaluationOrder:(unsigned long)arg3 limited:(BOOL)arg4 trackOrder:(unsigned long)arg5 distinguishedKind:(int)arg6 inLibrary:(id)arg7 cachedNameOrders:(id)arg8;
@@ -26,7 +25,7 @@
 + (id)_mediaTypesForTracksWithSwappedPersistentIDsInArray:(id)arg1 connection:(id)arg2;
 + (void)_reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 connection:(id)arg2;
 + (void)_removeMediaTypesFromContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
-+ (void)_updateContainedMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2 itemUpdateBlock:(id)arg3;
++ (void)_updateContainedMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2 itemUpdateBlock:(id /* block */)arg3;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;
 + (BOOL)createMissingBuiltInSmartPlaylists:(id)arg1;
 + (id)databaseTable;
@@ -51,7 +50,6 @@
 + (void)populateSortOrdersOfPropertyValues:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3;
 + (void)populateStaticItemsOfDynamicContainersInLibrary:(id)arg1;
 + (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 dynamicCriteria:(BOOL)arg2 parentMatchedAny:(BOOL)arg3;
-+ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (int)protocolSortTypeFromTrackOrder:(unsigned long)arg1;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
@@ -59,7 +57,7 @@
 + (unsigned long)trackOrderFromProtocolSortType:(int)arg1;
 + (BOOL)updateBuiltInSmartPlaylistNamesForCurrentLanguage:(id)arg1;
 
-- (void)_accessCurrentSwappedPersisentIDsUsingBlock:(id)arg1;
+- (void)_accessCurrentSwappedPersisentIDsUsingBlock:(id /* block */)arg1;
 - (id)_addUnitesForCriterionInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_booleanStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_convertNumericValueFromCriterionMatchKey:(unsigned long)arg1 criteriaValue:(long long)arg2;
@@ -105,14 +103,18 @@
 - (BOOL)removeAllTracks;
 - (BOOL)removeTracksAtIndexes:(id)arg1;
 - (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2;
-- (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2 indexesTransformBlock:(id)arg3;
+- (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2 indexesTransformBlock:(id /* block */)arg3;
 - (BOOL)removeTracksWithPersistentIDs:(const long long*)arg1 atFilteredIndexes:(id)arg2;
 - (BOOL)setContainsTrack:(BOOL)arg1 forPersistentID:(long long)arg2 notify:(BOOL)arg3;
 - (BOOL)setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 notify:(BOOL)arg3;
 - (BOOL)setTracksWithSwappedPersistentIDData:(id)arg1;
-- (void)setValues:(id)arg1 forProperties:(id)arg2 async:(BOOL)arg3 withCompletionBlock:(id)arg4;
+- (void)setValues:(id)arg1 forProperties:(id)arg2 async:(BOOL)arg3 withCompletionBlock:(id /* block */)arg4;
 - (id)staticPredicate;
 - (id)trackPersistentIds;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 @end

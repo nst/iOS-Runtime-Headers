@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLWeiboServerInterface : NSObject {
-}
+@interface SLWeiboServerInterface : NSObject
 
 + (id)consumerKey;
 + (id)consumerSecret;

@@ -2,28 +2,26 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class CLLocation, CLPlacemarkInternal, CLRegion, NSArray, NSDictionary, NSString;
-
 @interface CLPlacemark : NSObject <NSCopying, NSSecureCoding> {
     CLPlacemarkInternal *_internal;
 }
 
-@property(copy,readonly) NSString * ISOcountryCode;
-@property(copy,readonly) NSDictionary * addressDictionary;
-@property(copy,readonly) NSString * administrativeArea;
-@property(copy,readonly) NSArray * areasOfInterest;
-@property(copy,readonly) NSString * country;
-@property(copy,readonly) NSString * inlandWater;
-@property(copy,readonly) NSString * locality;
-@property(copy,readonly) CLLocation * location;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSString * ocean;
-@property(copy,readonly) NSString * postalCode;
-@property(copy,readonly) CLRegion * region;
-@property(copy,readonly) NSString * subAdministrativeArea;
-@property(copy,readonly) NSString * subLocality;
-@property(copy,readonly) NSString * subThoroughfare;
-@property(copy,readonly) NSString * thoroughfare;
+@property (nonatomic, readonly, copy) NSString *ISOcountryCode;
+@property (nonatomic, readonly, copy) NSDictionary *addressDictionary;
+@property (nonatomic, readonly, copy) NSString *administrativeArea;
+@property (nonatomic, readonly, copy) NSArray *areasOfInterest;
+@property (nonatomic, readonly, copy) NSString *country;
+@property (nonatomic, readonly, copy) NSString *inlandWater;
+@property (nonatomic, readonly, copy) NSString *locality;
+@property (nonatomic, readonly, copy) CLLocation *location;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *ocean;
+@property (nonatomic, readonly, copy) NSString *postalCode;
+@property (nonatomic, readonly, copy) CLRegion *region;
+@property (nonatomic, readonly, copy) NSString *subAdministrativeArea;
+@property (nonatomic, readonly, copy) NSString *subLocality;
+@property (nonatomic, readonly, copy) NSString *subThoroughfare;
+@property (nonatomic, readonly, copy) NSString *thoroughfare;
 
 + (id)placemarkWithGEOMapItem:(id)arg1;
 + (BOOL)supportsSecureCoding;

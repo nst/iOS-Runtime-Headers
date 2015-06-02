@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class NSString;
-
 @interface MSTrackListCopyrightFooterView : UIView {
     NSString *_text;
     struct CGSize { 
@@ -12,7 +10,7 @@
     } _textSize;
 }
 
-@property(retain) NSString * text;
+@property (nonatomic, retain) NSString *text;
 
 - (struct CGSize { float x1; float x2; })_textSize;
 - (void)dealloc;

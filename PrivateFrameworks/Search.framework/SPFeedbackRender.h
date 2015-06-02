@@ -6,7 +6,7 @@
     double _triggerTimestamp;
 }
 
-@property double triggerTimestamp;
+@property (nonatomic) double triggerTimestamp;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

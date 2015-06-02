@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary;
+@interface MLITDBGeniusDatabase : NSObject
 
-@interface MLITDBGeniusDatabase : NSObject {
-}
-
-@property(readonly) ML3MusicLibrary * musicLibrary;
+@property (nonatomic, readonly) ML3MusicLibrary *musicLibrary;
 
 + (id)sharedGeniusDatabase;
 
@@ -32,6 +29,6 @@
 - (BOOL)hasGeniusFeatureEnabled;
 - (id)init;
 - (id)musicLibrary;
-- (void)performGeniusDatabaseReadWithBlock:(id)arg1;
+- (void)performGeniusDatabaseReadWithBlock:(id /* block */)arg1;
 
 @end

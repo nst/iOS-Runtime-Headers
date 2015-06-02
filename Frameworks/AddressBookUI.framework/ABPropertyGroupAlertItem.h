@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyGroupAlertItem : ABPropertyGroupItem {
-}
+@interface ABPropertyGroupAlertItem : ABPropertyGroupItem
 
-@property(getter=isTone,readonly) BOOL tone;
-@property(getter=isVibration,readonly) BOOL vibration;
+@property (getter=isTone, nonatomic, readonly) BOOL tone;
+@property (getter=isVibration, nonatomic, readonly) BOOL vibration;
 
 - (id)_toneManager;
 - (id)_vibrationManager;

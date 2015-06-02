@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOResourceManifestConfiguration, NSLocale, NSString;
-
 @interface GEOTileLoaderConfiguration : NSObject <NSCopying> {
     NSString *_diskCacheLocation;
     NSLocale *_locale;
@@ -14,13 +12,13 @@
     BOOL _trackUsage;
 }
 
-@property(copy) NSString * diskCacheLocation;
-@property(retain) NSLocale * locale;
-@property(retain) GEOResourceManifestConfiguration * manifestConfiguration;
-@property unsigned int memoryCacheCostLimit;
-@property unsigned int memoryCacheCountLimit;
-@property Class serverProxyClass;
-@property BOOL trackUsage;
+@property (nonatomic, copy) NSString *diskCacheLocation;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic, retain) GEOResourceManifestConfiguration *manifestConfiguration;
+@property (nonatomic) unsigned int memoryCacheCostLimit;
+@property (nonatomic) unsigned int memoryCacheCountLimit;
+@property (nonatomic) Class serverProxyClass;
+@property (nonatomic) BOOL trackUsage;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

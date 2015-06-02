@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIImageView;
-
 @interface PSSoftwareUpdateAnimatedIcon : UIView {
     BOOL _animating;
     UIImageView *_innerGearView;
@@ -11,9 +9,9 @@
     UIImageView *_outerGearView;
 }
 
-@property(readonly) UIImageView * innerGearView;
-@property(readonly) UIImageView * outerGearShadowView;
-@property(readonly) UIImageView * outerGearView;
+@property (nonatomic, readonly) UIImageView *innerGearView;
+@property (nonatomic, readonly) UIImageView *outerGearShadowView;
+@property (nonatomic, readonly) UIImageView *outerGearView;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

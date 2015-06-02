@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NPSDomainAccessor;
-
 @interface StocksWatchPreferences : NSObject {
     NPSDomainAccessor *_watchDefaults;
 }

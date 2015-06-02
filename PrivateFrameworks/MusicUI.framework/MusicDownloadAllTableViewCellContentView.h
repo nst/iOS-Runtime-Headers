@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, SKUIItemOfferButton, UILabel;
-
 @interface MusicDownloadAllTableViewCellContentView : MusicTableViewCellContentView <SKUIItemOfferButtonDelegate> {
     BOOL _downloadAllCellForArtist;
     int _downloadableSongCount;
@@ -11,12 +9,12 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDownloadAllCellForArtist) BOOL downloadAllCellForArtist;
-@property int downloadableSongCount;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDownloadAllCellForArtist, nonatomic) BOOL downloadAllCellForArtist;
+@property (nonatomic) int downloadableSongCount;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

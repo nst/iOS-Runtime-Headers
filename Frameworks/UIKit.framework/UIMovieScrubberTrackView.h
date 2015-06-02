@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIMovieScrubberTrackViewDataSource>, <UIMovieScrubberTrackViewDelegate>, NSArray, NSDictionary, NSMutableDictionary, UIMovieScrubberTrackOverlayView, UIView;
-
 @interface UIMovieScrubberTrackView : UIView {
     NSDictionary *_childThumbnailViews;
     <UIMovieScrubberTrackViewDataSource> *_dataSource;
@@ -43,8 +41,8 @@
     float _zoomWidthDelta;
 }
 
-@property <UIMovieScrubberTrackViewDataSource> * dataSource;
-@property <UIMovieScrubberTrackViewDelegate> * delegate;
+@property (nonatomic) <UIMovieScrubberTrackViewDataSource> *dataSource;
+@property (nonatomic) <UIMovieScrubberTrackViewDelegate> *delegate;
 
 - (id)_createImageViewForTimestamp:(id)arg1 isSummaryThumbnail:(BOOL)arg2;
 - (void)_reallyReloadData;

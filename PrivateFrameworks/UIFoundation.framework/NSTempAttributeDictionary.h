@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTempAttributeDictionary : NSAttributeDictionary {
-}
+@interface NSTempAttributeDictionary : NSAttributeDictionary
 
 @end

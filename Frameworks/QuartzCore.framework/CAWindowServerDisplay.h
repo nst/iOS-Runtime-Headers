@@ -2,43 +2,36 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CAWindowServerDisplay, NSSet, NSString;
-
 @interface CAWindowServerDisplay : NSObject {
     void *_impl;
 }
 
-@property(copy) NSString * TVMode;
-@property(copy) NSString * TVSignalType;
+@property (copy) NSString *TVMode;
+@property (copy) NSString *TVSignalType;
 @property BOOL allowsVirtualModes;
-@property(getter=isBlanked) BOOL blanked;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(readonly) CAWindowServerDisplay * cloneMaster;
-@property(readonly) NSSet * clones;
-@property(copy) NSString * colorMode;
+@property (getter=isBlanked) BOOL blanked;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (readonly) CAWindowServerDisplay *cloneMaster;
+@property (readonly) NSSet *clones;
+@property (nonatomic, copy) NSString *colorMode;
 @property float contrast;
-@property(readonly) NSString * deviceName;
-@property(readonly) unsigned int displayId;
-@property(getter=isGrayscale) BOOL grayscale;
+@property (readonly) NSString *deviceName;
+@property (readonly) unsigned int displayId;
+@property (getter=isGrayscale) BOOL grayscale;
 @property float idealRefreshRate;
 @property BOOL invertsColors;
 @property float maximumBrightness;
 @property float maximumRefreshRate;
 @property float minimumRefreshRate;
-@property(getter=isMirroringEnabled) BOOL mirroringEnabled;
-@property(readonly) NSString * name;
-@property(copy) NSString * orientation;
+@property (getter=isMirroringEnabled) BOOL mirroringEnabled;
+@property (readonly) NSString *name;
+@property (copy) NSString *orientation;
 @property float overscanAmount;
-@property(readonly) unsigned int rendererFlags;
+@property (readonly) unsigned int rendererFlags;
 @property float scale;
-@property(getter=isSecure) BOOL secure;
+@property (getter=isSecure) BOOL secure;
 @property int tag;
-@property(readonly) NSString * uniqueId;
+@property (readonly) NSString *uniqueId;
 @property BOOL usesPreferredModeRefreshRate;
 
 - (id)TVMode;

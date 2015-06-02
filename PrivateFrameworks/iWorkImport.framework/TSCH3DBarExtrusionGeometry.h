@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DNormalDirectionMapper;
-
 @interface TSCH3DBarExtrusionGeometry : TSCH3DExtrusionGeometry {
     float mBottomCapScale;
     struct BarExtrusionSetting { 
@@ -39,14 +37,14 @@
     float mScaleMappingStartingHeight;
 }
 
-@property(readonly) float bottomCapScale;
-@property struct BarExtrusionSetting { float x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; struct BarExtrusionDetails { struct BarExtrusionCrossSectionDetails { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; int x_1_2_5; } x_6_1_1; struct BarExtrusionSpineDetails { float x_2_2_1; int x_2_2_2; int x_2_2_3; float x_2_2_4; } x_6_1_2; } x6; } extrusionSetting;
-@property(readonly) BOOL hasBottomBevel;
-@property(readonly) BOOL hasTopBevel;
-@property(readonly) BOOL isCylindrical;
-@property(readonly) TSCH3DNormalDirectionMapper * normalDirectionMapper;
-@property(readonly) float scaleMappingStartingHeight;
-@property(readonly) float size;
+@property (nonatomic, readonly) float bottomCapScale;
+@property (nonatomic) struct BarExtrusionSetting { float x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; struct BarExtrusionDetails { struct BarExtrusionCrossSectionDetails { float x_1_2_1; float x_1_2_2; float x_1_2_3; float x_1_2_4; int x_1_2_5; } x_6_1_1; struct BarExtrusionSpineDetails { float x_2_2_1; int x_2_2_2; int x_2_2_3; float x_2_2_4; } x_6_1_2; } x6; } extrusionSetting;
+@property (nonatomic, readonly) BOOL hasBottomBevel;
+@property (nonatomic, readonly) BOOL hasTopBevel;
+@property (nonatomic, readonly) BOOL isCylindrical;
+@property (nonatomic, readonly) TSCH3DNormalDirectionMapper *normalDirectionMapper;
+@property (nonatomic, readonly) float scaleMappingStartingHeight;
+@property (nonatomic, readonly) float size;
 
 + (id)namedBevelInterpolationShaderFunction;
 

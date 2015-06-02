@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class CABackdropLayer, SBFBackdropStatisticsProvider;
-
 @interface SBFBackdropWallpaperView : SBFWallpaperView {
     CABackdropLayer *_layer;
     SBFBackdropStatisticsProvider *_statisticsProvider;
 }
 
-@property BOOL colorSamplingEnabled;
+@property (nonatomic) BOOL colorSamplingEnabled;
 
 + (BOOL)_allowsParallax;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray, NSString, TSUColor;
-
 @interface TSDGradient : TSDFill <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
     BOOL mIsAdvancedGradient;
     float mOpacity;
@@ -17,16 +10,16 @@
     unsigned int mType;
 }
 
-@property(readonly) TSUColor * firstColor;
-@property(retain,readonly) NSArray * gradientStops;
-@property(readonly) unsigned int gradientType;
-@property(readonly) BOOL hasAlpha;
-@property BOOL isAdvancedGradient;
-@property(readonly) BOOL isOpaque;
-@property(readonly) TSUColor * lastColor;
-@property float opacity;
-@property(readonly) NSString * presetKind;
-@property(readonly) struct CGShading { }* shadingRef;
+@property (nonatomic, readonly) TSUColor *firstColor;
+@property (nonatomic, readonly, retain) NSArray *gradientStops;
+@property (nonatomic, readonly) unsigned int gradientType;
+@property (nonatomic, readonly) BOOL hasAlpha;
+@property (nonatomic) BOOL isAdvancedGradient;
+@property (nonatomic, readonly) BOOL isOpaque;
+@property (nonatomic, readonly) TSUColor *lastColor;
+@property (nonatomic) float opacity;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic, readonly) struct CGShading { }*shadingRef;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (void)disableInflections;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIScreenshotsDelegate>, NSArray, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUIScreenshotDataConsumer, SKUIVideoImageDataConsumer, UICollectionView;
-
 @interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
@@ -22,13 +20,13 @@
     NSArray *_trailers;
 }
 
-@property(readonly) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIScreenshotsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIScreenshotsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setImage:(id)arg1 forIndex:(int)arg2;

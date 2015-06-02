@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKContainerID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_containerIdentifier;
     int _environment;
 }
 
-@property(readonly) NSString * containerIdentifier;
-@property(readonly) int environment;
+@property (nonatomic, readonly) NSString *containerIdentifier;
+@property (nonatomic, readonly) int environment;
 
 + (BOOL)supportsSecureCoding;
 

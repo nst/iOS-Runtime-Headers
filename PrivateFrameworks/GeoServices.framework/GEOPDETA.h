@@ -13,12 +13,12 @@
     int _transportType;
 }
 
-@property unsigned int distance;
-@property BOOL hasDistance;
-@property BOOL hasTime;
-@property BOOL hasTransportType;
-@property unsigned int time;
-@property int transportType;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasTime;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int time;
+@property (nonatomic) int transportType;
 
 + (id)etaForPlaceData:(id)arg1 transportType:(int)arg2;
 + (int)recommendedTransportTypeForPlaceData:(id)arg1;

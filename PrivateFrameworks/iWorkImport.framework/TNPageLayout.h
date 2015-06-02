@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNPageContentLayout, TNPageController, TNSheet, TSWPPadding;
-
 @interface TNPageLayout : TSWPPageLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     TNPageContentLayout *mContentLayout;
     BOOL mIsChildLayoutsValid;
@@ -17,19 +15,19 @@
     TNSheet *mSheet;
 }
 
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
-@property(retain) TNPageContentLayout * contentLayout;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pageBounds;
-@property TNPageController * pageController;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property (retain) TNPageContentLayout *contentLayout;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pageBounds;
+@property TNPageController *pageController;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } pageCoordinate;
-@property(getter=isPlaceholder) BOOL placeholder;
-@property(retain) TNSheet * sheet;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property (getter=isPlaceholder) BOOL placeholder;
+@property (retain) TNSheet *sheet;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, readonly) float textScaleFactor;
 
 + (id)pageLayoutWithPageController:(id)arg1 pageCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
@@ -64,7 +62,7 @@
 - (unsigned int)pageCount;
 - (unsigned int)pageNumber;
 - (void)parentDidChange;
-- (void)performBlockForEachHeaderFooterLayout:(id)arg1;
+- (void)performBlockForEachHeaderFooterLayout:(id /* block */)arg1;
 - (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
 - (Class)repClassForTextLayout:(id)arg1;
 - (Class)repClassOverride;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptMediaPlayerViewController : SUScriptViewController {
-}
+@interface SUScriptMediaPlayerViewController : SUScriptViewController
 
 - (id)_className;
 - (id)initWithMediaPlayerItem:(id)arg1;

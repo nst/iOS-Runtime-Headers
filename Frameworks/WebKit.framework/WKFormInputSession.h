@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSObject<NSSecureCoding>, NSString, WKContentView;
-
 @interface WKFormInputSession : NSObject <_WKFormInputSession> {
     WKContentView *_contentView;
     struct RetainPtr<NSObject<NSSecureCoding> > { 
@@ -11,13 +9,13 @@
     } _userObject;
 }
 
-@property(copy) NSString * accessoryViewCustomButtonTitle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) NSObject<NSSecureCoding> * userObject;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, copy) NSString *accessoryViewCustomButtonTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<NSSecureCoding> *userObject;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

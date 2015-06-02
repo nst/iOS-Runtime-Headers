@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNSlideNode, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, TSUPointerKeyDictionary, TSUWeakReference, TSWPParagraphStyle;
-
 @interface KNTheme : TSATheme <KNSlideCollection, TSKDocumentObject, TSKTransformableObject, TSSPresetSource> {
     NSMutableArray *mClassicThemeRecords;
     NSMutableDictionary *mCustomEffectTimingCurves;
@@ -22,20 +15,20 @@
     NSString *mUUID;
 }
 
-@property(retain) NSString * UUID;
-@property(retain) NSArray * classicThemeRecords;
-@property(readonly) float cornerRadius;
-@property(copy) NSDictionary * customEffectTimingCurves;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) KNSlideNode * defaultMasterSlideNode;
-@property(readonly) BOOL defaultMasterSlideNodeIsOurBestGuess;
-@property(readonly) TSWPParagraphStyle * defaultPresenterNotesParagraphStyle;
-@property(readonly) KNSlideNode * defaultSlideNodeForNewSelection;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * masters;
-@property(readonly) Class superclass;
-@property(readonly) struct CGSize { float x1; float x2; } thumbnailSize;
+@property (nonatomic, retain) NSString *UUID;
+@property (nonatomic, retain) NSArray *classicThemeRecords;
+@property (nonatomic, readonly) float cornerRadius;
+@property (nonatomic, copy) NSDictionary *customEffectTimingCurves;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) KNSlideNode *defaultMasterSlideNode;
+@property (nonatomic, readonly) BOOL defaultMasterSlideNodeIsOurBestGuess;
+@property (nonatomic, readonly) TSWPParagraphStyle *defaultPresenterNotesParagraphStyle;
+@property (nonatomic, readonly) KNSlideNode *defaultSlideNodeForNewSelection;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *masters;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailSize;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)classicThemeNameFromTheme:(id)arg1;
@@ -85,9 +78,9 @@
 - (void)p_cacheSlideNodes;
 - (id)p_findDefaultMaster;
 - (id)p_findSecondMaster;
-- (id)p_mappedMasterForMaster:(id)arg1 scoringHeuristic:(id)arg2;
+- (id)p_mappedMasterForMaster:(id)arg1 scoringHeuristic:(id /* block */)arg2;
 - (int)p_matchScoreForMaster:(id)arg1 toMaster:(id)arg2;
-- (id)p_nameByIncrementingCounterAfterStringToAppend:(id)arg1 forOriginalName:(id)arg2 testForExistingName:(id)arg3;
+- (id)p_nameByIncrementingCounterAfterStringToAppend:(id)arg1 forOriginalName:(id)arg2 testForExistingName:(id /* block */)arg3;
 - (void)p_selectSecondMasterAsDefault;
 - (void)p_setDefaultMasterSlideNode:(id)arg1;
 - (void)removeAllClassicThemeRecords;

@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVLoadingIndicatorView, AVScrubber, MPVolumeController, MPVolumeSlider, NSArray, NSLayoutConstraint, NSMutableArray, NSString, NSTimer, UIButton, UILabel, UIView;
-
 @interface AVFullScreenPlaybackControlsViewController : AVPlaybackControlsViewController <MPVolumeControllerDelegate> {
     NSTimer *_beginScanningBackwardTimer;
     NSTimer *_beginScanningForwardTimer;
     NSLayoutConstraint *_bottomControlsContainerViewHeightLayoutConstraint;
-    unsigned int _bottomControlsSingleRowLayoutPossible : 1;
-    unsigned int _controlsVisibilityHasBeenManagedBefore : 1;
+    unsigned int _bottomControlsSingleRowLayoutPossible;
+    unsigned int _controlsVisibilityHasBeenManagedBefore;
     UIButton *_doneButton;
     UILabel *_elapsedTimeLabel;
     NSString *_elapsedTimeLabelText;
     UIButton *_fullScreenButton;
     UIButton *_gotoEndOfSeekableRangesButton;
-    unsigned int _gotoEndOfSeekableRangesButtonEnabled : 1;
-    unsigned int _isScanningBackward : 1;
-    unsigned int _isScanningForward : 1;
+    unsigned int _gotoEndOfSeekableRangesButtonEnabled;
+    unsigned int _isScanningBackward;
+    unsigned int _isScanningForward;
     NSMutableArray *_layoutConstraints;
     UILabel *_liveStreamingLabel;
     AVLoadingIndicatorView *_loadingIndicatorView;
@@ -26,46 +24,46 @@
     UIView *_lowerControlsRightSubContainerView;
     UIButton *_mediaSelectionButton;
     UIButton *_playPauseButton;
-    unsigned int _playPauseButtonEnabled : 1;
-    unsigned int _playing : 1;
+    unsigned int _playPauseButtonEnabled;
+    unsigned int _playing;
     UILabel *_remainingTimeLabel;
     NSString *_remainingTimeLabelText;
     UIButton *_scaleButton;
     int _scaleButtonType;
     UIButton *_scanBackwardButton;
-    unsigned int _scanBackwardButtonEnabled : 1;
+    unsigned int _scanBackwardButtonEnabled;
     UIButton *_scanForwardButton;
-    unsigned int _scanForwardButtonEnabled : 1;
+    unsigned int _scanForwardButtonEnabled;
     UILabel *_scrubInstructionsSubtitleLabel;
     UILabel *_scrubInstructionsTitleLabel;
     AVScrubber *_scrubber;
-    unsigned int _scrubberEnabled : 1;
+    unsigned int _scrubberEnabled;
     NSArray *_scrubberLoadedTimeRanges;
     float _scrubberMaximumValue;
     float _scrubberMinimumValue;
     float _scrubberValue;
-    unsigned int _showsDoneButton : 1;
-    unsigned int _showsExitFullScreenButton : 1;
-    unsigned int _showsLoadingIndicator : 1;
-    unsigned int _showsMediaSelectionButton : 1;
-    unsigned int _showsScaleButton : 1;
-    unsigned int _showsScrubInstructions : 1;
-    unsigned int _showsStreamingControls : 1;
-    unsigned int _showsVolumeSlider : 1;
+    unsigned int _showsDoneButton;
+    unsigned int _showsExitFullScreenButton;
+    unsigned int _showsLoadingIndicator;
+    unsigned int _showsMediaSelectionButton;
+    unsigned int _showsScaleButton;
+    unsigned int _showsScrubInstructions;
+    unsigned int _showsStreamingControls;
+    unsigned int _showsVolumeSlider;
     UIButton *_skipBackwardThirtySecondsButton;
-    unsigned int _skipBackwardThirtySecondsButtonEnabled : 1;
+    unsigned int _skipBackwardThirtySecondsButtonEnabled;
     NSLayoutConstraint *_topControlsContainerViewHeightLayoutConstraint;
     UIView *_upperControlsSubContainerView;
-    unsigned int _userDidTapScanButton : 1;
+    unsigned int _userDidTapScanButton;
     MPVolumeController *_volumeController;
     MPVolumeSlider *_volumeSlider;
     float _volumeSliderValue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_fireBeginScanningBackwardTimer:(id)arg1;

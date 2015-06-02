@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIView;
-
 @interface _UIViewControllerNullAnimationTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
     NSMutableArray *_alongsideAnimations;
     NSMutableArray *_alongsideCompletions;
@@ -11,19 +9,19 @@
     BOOL _transitionIsInFlight;
 }
 
-@property UIView * containerView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) UIView *containerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_alongsideAnimations:(BOOL)arg1;
 - (id)_alongsideCompletions:(BOOL)arg1;
-- (void)_applyBlocks:(id)arg1 releaseBlocks:(id)arg2;
+- (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
 - (void)_runAlongsideAnimations;
 - (void)_runAlongsideCompletionsAfterCommit;
-- (BOOL)animateAlongsideTransition:(id)arg1 completion:(id)arg2;
-- (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id)arg2 completion:(id)arg3;
+- (BOOL)animateAlongsideTransition:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (int)completionCurve;
 - (float)completionVelocity;
 - (id)containerView;
@@ -33,7 +31,7 @@
 - (BOOL)isCancelled;
 - (BOOL)isInteractive;
 - (BOOL)isRotating;
-- (void)notifyWhenInteractionEndsUsingBlock:(id)arg1;
+- (void)notifyWhenInteractionEndsUsingBlock:(id /* block */)arg1;
 - (float)percentComplete;
 - (int)presentationStyle;
 - (void)setContainerView:(id)arg1;

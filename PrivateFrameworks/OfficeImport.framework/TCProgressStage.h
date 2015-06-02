@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, TCProgressContext, TCProgressStage;
-
 @interface TCProgressStage : NSObject {
     TCProgressContext *m_context;
     double m_currentPosition;

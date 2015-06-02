@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, RadioLoadStoreBagRequest, RadioPlaybackTimeoutInfo, RadioStoreBag;
-
 @interface RadioPlaybackTimeoutInfoController : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     long long _activeAccountIdentifier;
@@ -25,7 +23,7 @@
 - (void)_setSyncOverrideTimeoutDictionary:(id)arg1;
 - (void)_storeBagDidLoadNotification:(id)arg1;
 - (void)dealloc;
-- (void)getCurrentTimeoutInfoWithCompletionHandler:(id)arg1;
+- (void)getCurrentTimeoutInfoWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 
 @end

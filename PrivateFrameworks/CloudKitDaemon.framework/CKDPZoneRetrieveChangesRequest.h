@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPZoneRetrieveChangesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int maxChangedZones : 1; 
@@ -12,10 +10,10 @@
     NSData *_syncContinuationToken;
 }
 
-@property BOOL hasMaxChangedZones;
-@property(readonly) BOOL hasSyncContinuationToken;
-@property unsigned int maxChangedZones;
-@property(retain) NSData * syncContinuationToken;
+@property (nonatomic) BOOL hasMaxChangedZones;
+@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
+@property (nonatomic) unsigned int maxChangedZones;
+@property (nonatomic, retain) NSData *syncContinuationToken;
 
 + (id)options;
 

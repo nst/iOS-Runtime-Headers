@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUProgressContext, OITSUProgressStage;
-
 @interface OITSUProgressStage : NSObject {
     OITSUProgressContext *m_context;
     double m_currentPosition;

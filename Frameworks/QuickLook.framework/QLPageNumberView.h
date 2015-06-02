@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSNumberFormatter, UILabel;
-
 @interface QLPageNumberView : UIView {
     UILabel *_backgroundLabel;
     NSNumberFormatter *_indexFormatter;

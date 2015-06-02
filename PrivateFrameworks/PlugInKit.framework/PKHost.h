@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, PKDaemonClient;
-
 @interface PKHost : NSObject {
     NSMutableDictionary *_activePlugIns;
     PKDaemonClient *_client;
@@ -11,27 +9,27 @@
     NSObject<OS_dispatch_queue> *_hostQueue;
 }
 
-@property(retain) NSMutableDictionary * activePlugIns;
-@property(retain) PKDaemonClient * client;
-@property(readonly) NSDictionary * hostInfoPlist;
-@property(retain) NSObject<OS_dispatch_queue> * hostQueue;
+@property (retain) NSMutableDictionary *activePlugIns;
+@property (retain) PKDaemonClient *client;
+@property (readonly) NSDictionary *hostInfoPlist;
+@property (retain) NSObject<OS_dispatch_queue> *hostQueue;
 
 + (id)defaultHost;
 
 - (void).cxx_destruct;
-- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(id)arg3;
+- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(id /* block */)arg3;
 - (void)activatePlugIn:(id)arg1;
 - (id)activePlugInForIdentifier:(id)arg1;
 - (id)activePlugIns;
 - (void)cancelPlugInDiscovery:(id)arg1;
 - (id)client;
-- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id)arg3;
+- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id /* block */)arg3;
 - (void)deactivatePlugIn:(id)arg1;
-- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id)arg3;
+- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id /* block */)arg3;
 - (id)hostInfoPlist;
 - (id)hostQueue;
 - (id)init;
-- (void)readyPlugIns:(id)arg1 ready:(id)arg2;
+- (void)readyPlugIns:(id)arg1 ready:(id /* block */)arg2;
 - (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned int)arg2;
 - (void)setActivePlugIns:(id)arg1;
 - (void)setClient:(id)arg1;

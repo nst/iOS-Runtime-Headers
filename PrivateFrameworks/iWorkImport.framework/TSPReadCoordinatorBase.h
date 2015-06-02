@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface TSPReadCoordinatorBase : NSObject <TSPLazyReferenceDelegate, TSPReaderDelegate> {
     NSObject<OS_dispatch_queue> *_externalReferenceQueue;
     struct hash_map<long long, TSP::ExternalReferenceInfo, TSP::ObjectIdentifierHash, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ExternalReferenceInfo> > > { 
@@ -45,19 +43,19 @@
     BOOL _success;
 }
 
-@property(readonly) NSUUID * baseObjectUUID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned long long fileFormatVersion;
-@property(readonly) BOOL hasDocumentVersionUUID;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromCopy;
-@property(readonly) BOOL isReadingFromDocument;
-@property(readonly) unsigned char packageIdentifier;
-@property(readonly) BOOL success;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSUUID *baseObjectUUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned long long fileFormatVersion;
+@property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isCrossAppPaste;
+@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
+@property (nonatomic, readonly) BOOL isFromCopy;
+@property (nonatomic, readonly) BOOL isReadingFromDocument;
+@property (nonatomic, readonly) unsigned char packageIdentifier;
+@property (nonatomic, readonly) BOOL success;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -80,8 +78,8 @@
 - (unsigned char)packageIdentifier;
 - (void)readDidFail;
 - (BOOL)readLazyReference:(id)arg1 object:(id*)arg2 error:(id*)arg3;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
 - (void)reader:(id)arg1 didReadLazyReference:(id)arg2;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
 - (long long)reader:(id)arg1 wantsObjectIdentifierForUUID:(id)arg2;

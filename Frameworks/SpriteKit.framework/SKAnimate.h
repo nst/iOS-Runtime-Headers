@@ -2,26 +2,12 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray;
-
 @interface SKAnimate : SKAction {
-
-  /* Error parsing encoded ivar type info: ^{SKCAnimate=^^?If@?@BddffdBB@?iffff{vector<SKTexture *, std::__1::allocator<SKTexture *> >=^@^@{__compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> >=^@}}d@{?=ff}cc} */
-    struct SKCAnimate { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; struct vector<SKTexture *, std::__1::allocator<SKTexture *> > { id *x_22_1_1; id *x_22_1_2; struct __compressed_pair<SKTexture *__strong *, std::__1::allocator<SKTexture *> > { id *x_3_2_1; } x_22_1_3; } x22; double x23; id x24; struct { float x_25_1_1; float x_25_1_2; } x25; BOOL x26; BOOL x27; } *_mycaction;
-
+    struct SKCAnimate { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; struct vector<SKTexture *, std::__1::allocator<SKTexture *> > { id *x_19_1_1; id x_19_1_2; /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_19_1_3; void*x_19_1_4; BOOL x_19_1_5; out void*x_19_1_6; void*x_19_1_7; const void*x_19_1_8; short x_19_1_9; short x_19_1_10; void*x_19_1_11; double x_19_1_12; void*x_19_1_13; void*x_19_1_14; void*x_19_1_15; int x_19_1_16; const void*x_19_1_17; unsigned short x_19_1_18; void*x_19_1_19; void*x_19_1_20; void*x_19_1_21; void*x_19_1_22; void*x_19_1_23; void*x_19_1_24; const void*x_19_1_25; void*x_19_1_26; char *x_19_1_27; void*x_19_1_28; void*x_19_1_29; short x_19_1_30; void*x_19_1_31; const out in void*x_19_1_32; void*x_19_1_33; char *x_19_1_34; void*x_19_1_35; void*x_19_1_36; short x_19_1_37; void*x_19_1_38; double x_19_1_39; SEL x_19_1_40; SEL x_19_1_41; void*x_19_1_42; void*x_19_1_43; void*x_19_1_44; SEL x_19_1_45; SEL x_19_1_46; void*x_19_1_47; long x_19_1_48; long x_19_1_49; out BOOL x_19_1_50; void*x_19_1_51; void*x_19_1_52; out const void*x_19_1_53; unsigned short x_19_1_54; void*x_19_1_55; void*x_19_1_56; void*x_19_1_57; void*x_19_1_58; void*x_19_1_59; void*x_19_1_60; const void*x_19_1_61; void*x_19_1_62; char *x_19_1_63; void*x_19_1_64; void*x_19_1_65; void*x_19_1_66; void*x_19_1_67; id *x_19_1_68; } x19; double x20; id x21; void*x22; void*x23; float x24; float x25; } *_mycaction;
     NSArray *_textures;
 }
 
-@property double timePerFrame;
+@property (nonatomic) double timePerFrame;
 
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
 

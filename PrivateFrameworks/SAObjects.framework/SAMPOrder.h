@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPOrder : AceObject <SAAceSerializable>
 
-@interface SAMPOrder : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property BOOL descending;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * mediaItemProperty;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL descending;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *mediaItemProperty;
+@property (readonly) Class superclass;
 
 + (id)order;
 + (id)orderWithDictionary:(id)arg1 context:(id)arg2;

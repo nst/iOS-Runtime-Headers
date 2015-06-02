@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray;
-
 @interface SUItemList : NSObject <NSCopying> {
     NSMutableArray *_groups;
     NSDictionary *_hintText;
     BOOL _ignoresEmptySections;
 }
 
-@property BOOL ignoresEmptySections;
-@property(readonly) int numberOfItems;
-@property(readonly) int numberOfSections;
-@property(readonly) NSArray * sectionIndexTitles;
+@property (nonatomic) BOOL ignoresEmptySections;
+@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic, readonly) int numberOfSections;
+@property (nonatomic, readonly) NSArray *sectionIndexTitles;
 
 - (id)_groupAtExternalIndex:(int)arg1;
 - (void)_removeHiddenItemsFromArray:(id)arg1;
 - (id)copyItems;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)enumerateItemsUsingBlock:(id)arg1;
+- (void)enumerateItemsUsingBlock:(id /* block */)arg1;
 - (id)hintTextForKey:(id)arg1;
 - (BOOL)ignoresEmptySections;
 - (id)indexPathOfItem:(id)arg1;

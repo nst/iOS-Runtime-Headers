@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
-
 @interface ABModelRecord : NSObject {
     long _highlightIndex;
     BOOL _isGroup;

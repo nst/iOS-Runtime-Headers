@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSPredicateUtilities : NSObject {
-}
+@interface _NSPredicateUtilities : NSObject
 
 + (id)_collapseAndTokenize:(id)arg1 flags:(unsigned int)arg2 locale:(id)arg3;
 + (id)_compoundPredicateClassesForSecureCoding;

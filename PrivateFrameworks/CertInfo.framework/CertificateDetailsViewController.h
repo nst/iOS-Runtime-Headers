@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertificateDetailsViewController : UITableViewController {
     id _certificateTrust;
     NSArray *_keyValueSectionTitles;
     NSArray *_keyValueSections;
 }
 
-@property(retain) id certificateTrust;
-@property(retain) NSArray * keyValueSectionTitles;
-@property(retain) NSArray * keyValueSections;
+@property (nonatomic, retain) id certificateTrust;
+@property (nonatomic, retain) NSArray *keyValueSectionTitles;
+@property (nonatomic, retain) NSArray *keyValueSections;
 
 - (void).cxx_destruct;
 - (void)_setup;

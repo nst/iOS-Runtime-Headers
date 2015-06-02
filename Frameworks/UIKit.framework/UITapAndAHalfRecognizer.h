@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableSet, UIDelayedAction, UITouch;
-
 @interface UITapAndAHalfRecognizer : UIGestureRecognizer {
     NSMutableSet *_activeTouches;
     float _allowableMovement;
@@ -18,10 +16,10 @@
     UITouch *_touch;
 }
 
-@property float allowableMovement;
-@property double minimumFinalPressDuration;
-@property int numberOfFullTaps;
-@property(retain) UITouch * touch;
+@property (nonatomic) float allowableMovement;
+@property (nonatomic) double minimumFinalPressDuration;
+@property (nonatomic) int numberOfFullTaps;
+@property (nonatomic, retain) UITouch *touch;
 
 - (void)_resetGestureRecognizer;
 - (void)_verifyMovementInAllowableRange;

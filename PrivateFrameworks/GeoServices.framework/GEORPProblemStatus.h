@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPResolution, NSString;
-
 @interface GEORPProblemStatus : PBCodable <NSCopying> {
     double _creationDate;
     struct { 
@@ -15,14 +13,14 @@
     int _problemState;
 }
 
-@property double creationDate;
-@property BOOL hasCreationDate;
-@property(readonly) BOOL hasProblemId;
-@property(readonly) BOOL hasProblemResolution;
-@property BOOL hasProblemState;
-@property(retain) NSString * problemId;
-@property(retain) GEORPResolution * problemResolution;
-@property int problemState;
+@property (nonatomic) double creationDate;
+@property (nonatomic) BOOL hasCreationDate;
+@property (nonatomic, readonly) BOOL hasProblemId;
+@property (nonatomic, readonly) BOOL hasProblemResolution;
+@property (nonatomic) BOOL hasProblemState;
+@property (nonatomic, retain) NSString *problemId;
+@property (nonatomic, retain) GEORPResolution *problemResolution;
+@property (nonatomic) int problemState;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSData, NSString;
-
 @interface PKPaymentRequest : NSObject <NSSecureCoding> {
     NSData *_applicationData;
     void *_billingAddress;
@@ -22,21 +20,21 @@
     NSArray *_supportedNetworks;
 }
 
-@property(copy) NSData * applicationData;
-@property void* billingAddress;
-@property(copy) NSString * countryCode;
-@property(copy) NSString * currencyCode;
-@property unsigned int merchantCapabilities;
-@property(copy) NSString * merchantIdentifier;
-@property(copy) NSArray * paymentSummaryItems;
-@property unsigned int requiredBillingAddressFields;
-@property unsigned int requiredShippingAddressFields;
-@property void* shippingAddress;
-@property(getter=isShippingEditable) BOOL shippingEditable;
-@property(copy) NSString * shippingEditableMessage;
-@property(copy) NSArray * shippingMethods;
-@property unsigned int shippingType;
-@property(copy) NSArray * supportedNetworks;
+@property (nonatomic, copy) NSData *applicationData;
+@property (nonatomic) void*billingAddress;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic) unsigned int merchantCapabilities;
+@property (nonatomic, copy) NSString *merchantIdentifier;
+@property (nonatomic, copy) NSArray *paymentSummaryItems;
+@property (nonatomic) unsigned int requiredBillingAddressFields;
+@property (nonatomic) unsigned int requiredShippingAddressFields;
+@property (nonatomic) void*shippingAddress;
+@property (getter=isShippingEditable, nonatomic) BOOL shippingEditable;
+@property (nonatomic, copy) NSString *shippingEditableMessage;
+@property (nonatomic, copy) NSArray *shippingMethods;
+@property (nonatomic) unsigned int shippingType;
+@property (nonatomic, copy) NSArray *supportedNetworks;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIProductPagePlaceholderScrollView : UIScrollView {
     BOOL _isPad;
     float _offset;
     UIView *_placeholderView;
 }
 
-@property BOOL isPad;
-@property float offset;
-@property(retain) UIView * placeholderView;
+@property (nonatomic) BOOL isPad;
+@property (nonatomic) float offset;
+@property (nonatomic, retain) UIView *placeholderView;
 
 - (void).cxx_destruct;
 - (BOOL)isPad;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface SSRentalCheckoutRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountIdentifier;
     long long _downloadIdentifier;
@@ -12,15 +10,15 @@
     NSArray *_sinfs;
 }
 
-@property(readonly) NSNumber * accountIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) long long downloadIdentifier;
-@property(readonly) unsigned int hash;
-@property(readonly) NSNumber * rentalKeyIdentifier;
-@property BOOL shouldValidateRentalInfo;
-@property(readonly) NSArray * sinfs;
-@property(readonly) Class superclass;
+@property (readonly) NSNumber *accountIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) long long downloadIdentifier;
+@property (readonly) unsigned int hash;
+@property (readonly) NSNumber *rentalKeyIdentifier;
+@property (nonatomic) BOOL shouldValidateRentalInfo;
+@property (readonly) NSArray *sinfs;
+@property (readonly) Class superclass;
 
 - (id)accountIdentifier;
 - (id)copyXPCEncoding;
@@ -35,7 +33,7 @@
 - (void)setShouldValidateRentalInfo:(BOOL)arg1;
 - (BOOL)shouldValidateRentalInfo;
 - (id)sinfs;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithConnectionResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSIndexSet, NSMutableIndexSet, NSString, TSTHiddenStateIndexSet;
-
 @interface TSTHiddenRowsColumnsCache : NSObject <TSTTableHiddenRowColumnProviding> {
     NSMutableIndexSet *_columnsInvalid;
     TSTHiddenStateIndexSet *_columnsVisible;
@@ -13,19 +11,19 @@
     TSTHiddenStateIndexSet *_rowsVisible;
 }
 
-@property(retain) NSMutableIndexSet * columnsInvalid;
-@property(retain) TSTHiddenStateIndexSet * columnsVisible;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int rowMarkIndex;
-@property(retain) NSMutableIndexSet * rowsInvalid;
-@property(retain) TSTHiddenStateIndexSet * rowsUserVisible;
-@property(retain) TSTHiddenStateIndexSet * rowsVisible;
-@property(readonly) Class superclass;
-@property(readonly) NSIndexSet * userVisibleRowIndices;
-@property(readonly) NSIndexSet * visibleColumnIndices;
-@property(readonly) NSIndexSet * visibleRowIndices;
+@property (nonatomic, retain) NSMutableIndexSet *columnsInvalid;
+@property (nonatomic, retain) TSTHiddenStateIndexSet *columnsVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int rowMarkIndex;
+@property (nonatomic, retain) NSMutableIndexSet *rowsInvalid;
+@property (nonatomic, retain) TSTHiddenStateIndexSet *rowsUserVisible;
+@property (nonatomic, retain) TSTHiddenStateIndexSet *rowsVisible;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSIndexSet *userVisibleRowIndices;
+@property (nonatomic, readonly) NSIndexSet *visibleColumnIndices;
+@property (nonatomic, readonly) NSIndexSet *visibleRowIndices;
 
 - (BOOL)anyColumnsHiddenInCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)anyRowsHiddenInCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;

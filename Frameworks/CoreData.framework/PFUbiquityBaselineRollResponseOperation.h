@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSObject<PFUbiquityBaselineRollResponseOperationDelegate>;
+@interface PFUbiquityBaselineRollResponseOperation : PFUbiquityBaselineRollOperation
 
-@interface PFUbiquityBaselineRollResponseOperation : PFUbiquityBaselineRollOperation {
-}
-
-@property NSObject<PFUbiquityBaselineRollResponseOperationDelegate> * delegate;
+@property NSObject<PFUbiquityBaselineRollResponseOperationDelegate> *delegate;
 
 - (BOOL)canAdoptBaseline:(id)arg1 byReplacingLocalStoreFile:(BOOL*)arg2 withStack:(id)arg3 withError:(id*)arg4;
 - (id)delegate;

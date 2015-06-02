@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, EDWorkbook, NSMutableArray;
-
 @interface EDProcessor : NSObject {
     NSMutableArray *mObjects;
     EDResources *mResources;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSAutomaticReadingListSinaWeiboSource : WBSAutomaticReadingListSocialSource {
-}
+@interface WBSAutomaticReadingListSinaWeiboSource : WBSAutomaticReadingListSocialSource
 
 + (id)sharedSource;
 

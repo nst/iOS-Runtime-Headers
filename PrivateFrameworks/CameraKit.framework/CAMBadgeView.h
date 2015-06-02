@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMBadgeView : UIView {
-}
+@interface CAMBadgeView : UIView
 
 - (void)_commonInit;
 - (id)_maskImage;

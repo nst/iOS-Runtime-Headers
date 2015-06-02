@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSData, NSNumber, NSString;
-
 @interface MCMDMPayload : MCPayload {
     int _accessRights;
     NSString *_checkInURLString;
@@ -19,19 +17,19 @@
     NSNumber *_useDevelopmentAPNSNum;
 }
 
-@property(readonly) int accessRights;
-@property(retain,readonly) NSString * checkInURLString;
-@property(readonly) BOOL checkOutWhenRemoved;
-@property(readonly) NSNumber * checkOutWhenRemovedNum;
-@property(retain) NSData * identityPersistentID;
-@property(retain,readonly) NSString * identityUUID;
-@property(retain,readonly) NSArray * localizedAccessRightDescriptions;
-@property(retain,readonly) NSString * serverURLString;
-@property(readonly) BOOL signMessage;
-@property(readonly) NSNumber * signMessageNum;
-@property(retain,readonly) NSString * topic;
-@property(readonly) BOOL useDevelopmentAPNS;
-@property(readonly) NSNumber * useDevelopmentAPNSNum;
+@property (nonatomic, readonly) int accessRights;
+@property (nonatomic, readonly, retain) NSString *checkInURLString;
+@property (nonatomic, readonly) BOOL checkOutWhenRemoved;
+@property (nonatomic, readonly) NSNumber *checkOutWhenRemovedNum;
+@property (nonatomic, retain) NSData *identityPersistentID;
+@property (nonatomic, readonly, retain) NSString *identityUUID;
+@property (nonatomic, readonly, retain) NSArray *localizedAccessRightDescriptions;
+@property (nonatomic, readonly, retain) NSString *serverURLString;
+@property (nonatomic, readonly) BOOL signMessage;
+@property (nonatomic, readonly) NSNumber *signMessageNum;
+@property (nonatomic, readonly, retain) NSString *topic;
+@property (nonatomic, readonly) BOOL useDevelopmentAPNS;
+@property (nonatomic, readonly) NSNumber *useDevelopmentAPNSNum;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

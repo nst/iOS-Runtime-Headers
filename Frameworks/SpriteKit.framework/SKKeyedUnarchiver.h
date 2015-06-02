@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSArray;
-
 @interface SKKeyedUnarchiver : NSKeyedUnarchiver {
     NSArray *searchPaths;
 }
 
-@property(retain) NSArray * searchPaths;
+@property (nonatomic, retain) NSArray *searchPaths;
 
 - (void).cxx_destruct;
 - (id)searchPaths;

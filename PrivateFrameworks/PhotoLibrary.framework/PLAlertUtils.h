@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLAlertUtils : NSObject {
-}
+@interface PLAlertUtils : NSObject
 
 + (id)_wifiMessageForKey:(id)arg1;
 + (void)presentAirplaneModePromptOnViewController:(id)arg1;

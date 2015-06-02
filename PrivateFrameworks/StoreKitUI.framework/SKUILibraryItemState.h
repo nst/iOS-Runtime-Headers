@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSNumber, NSString;
-
 @interface SKUILibraryItemState : NSObject <NSCopying> {
     unsigned int _avTypes;
     int _availability;
@@ -18,18 +16,18 @@
     NSNumber *_storeVersionIdentifier;
 }
 
-@property unsigned int AVTypes;
-@property int availability;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleVersion;
-@property(getter=isHighDefinition) BOOL highDefinition;
-@property(readonly) NSString * itemStateVariantIdentifier;
-@property(getter=isPreview) BOOL preview;
-@property(getter=isRental) BOOL rental;
-@property(copy) NSNumber * storeAccountIdentifier;
-@property(copy) NSString * storeFlavorIdentifier;
-@property(copy) NSString * storePlatformKind;
-@property(copy) NSNumber * storeVersionIdentifier;
+@property (nonatomic) unsigned int AVTypes;
+@property (nonatomic) int availability;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (getter=isHighDefinition, nonatomic) BOOL highDefinition;
+@property (nonatomic, readonly) NSString *itemStateVariantIdentifier;
+@property (getter=isPreview, nonatomic) BOOL preview;
+@property (getter=isRental, nonatomic) BOOL rental;
+@property (nonatomic, copy) NSNumber *storeAccountIdentifier;
+@property (nonatomic, copy) NSString *storeFlavorIdentifier;
+@property (nonatomic, copy) NSString *storePlatformKind;
+@property (nonatomic, copy) NSNumber *storeVersionIdentifier;
 
 - (void).cxx_destruct;
 - (unsigned int)AVTypes;

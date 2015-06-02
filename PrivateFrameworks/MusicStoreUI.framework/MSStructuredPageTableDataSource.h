@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSStructuredPageTableDataSource : SUStructuredPageGroupedTableDataSource {
-}
+@interface MSStructuredPageTableDataSource : SUStructuredPageGroupedTableDataSource
 
 - (BOOL)canDoubleTapIndexPath:(id)arg1;
 - (BOOL)canShowPreviewForItem:(id)arg1;

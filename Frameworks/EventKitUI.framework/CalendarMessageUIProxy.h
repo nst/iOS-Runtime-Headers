@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface CalendarMessageUIProxy : NSObject {
-}
+@interface CalendarMessageUIProxy : NSObject
 
 + (Class)CalendarComposeRecipientClass;
 + (Class)ComposeRecipientViewClass;

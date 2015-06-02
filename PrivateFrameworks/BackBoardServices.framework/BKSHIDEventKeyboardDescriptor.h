@@ -7,8 +7,8 @@
     unsigned int _usage;
 }
 
-@property(readonly) unsigned int page;
-@property(readonly) unsigned int usage;
+@property (readonly) unsigned int page;
+@property (readonly) unsigned int usage;
 
 + (id)descriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 + (BOOL)supportsSecureCoding;

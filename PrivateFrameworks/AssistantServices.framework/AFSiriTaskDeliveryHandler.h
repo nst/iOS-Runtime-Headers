@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFSiriTaskServiceDelegate>, AFSiriTaskService, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AFSiriTaskDeliveryHandler : NSObject <AFSiriTaskDelivering> {
     <AFSiriTaskServiceDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
     AFSiriTaskService *_service;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AFSiriTaskServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property AFSiriTaskService * service;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AFSiriTaskServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) AFSiriTaskService *service;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)deliverSiriTask:(id)arg1 completionHandler:(id)arg2;
+- (void)deliverSiriTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)queue;
 - (id)service;
 - (void)setDelegate:(id)arg1;

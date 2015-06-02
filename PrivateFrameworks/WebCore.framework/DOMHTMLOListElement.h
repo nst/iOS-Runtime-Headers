@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
-
-@interface DOMHTMLOListElement : DOMHTMLElement {
-}
+@interface DOMHTMLOListElement : DOMHTMLElement
 
 @property BOOL compact;
 @property int start;
-@property(copy) NSString * type;
+@property (copy) NSString *type;
 
 - (BOOL)compact;
 - (BOOL)reversed;

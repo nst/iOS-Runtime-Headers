@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CKAudioRecorderDelegate>, CKVoiceController, NSDate, NSString, NSURL;
-
 @interface CKAudioRecorder : NSObject <CKVoiceControllerDelegate> {
     BOOL _cancelled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     <CKAudioRecorderDelegate> *_delegate;
     struct OpaqueAudioFileID { } *_fileID;
     NSURL *_fileURL;
@@ -27,27 +17,27 @@
     CKVoiceController *_voiceController;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property(copy) id completion;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKAudioRecorderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property struct OpaqueAudioFileID { }* fileID;
-@property(retain) NSURL * fileURL;
-@property(readonly) unsigned int hash;
-@property(getter=isRecording) BOOL recording;
-@property(getter=isRecordingEmpty) BOOL recordingEmpty;
-@property BOOL shouldPlayStartSound;
-@property BOOL shouldPlayStopSound;
-@property(retain) NSDate * startDate;
-@property(readonly) Class superclass;
-@property long long totalPacketsCount;
-@property(retain) CKVoiceController * voiceController;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic, copy) id /* block */ completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKAudioRecorderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic) struct OpaqueAudioFileID { }*fileID;
+@property (nonatomic, retain) NSURL *fileURL;
+@property (readonly) unsigned int hash;
+@property (getter=isRecording, nonatomic) BOOL recording;
+@property (getter=isRecordingEmpty, nonatomic) BOOL recordingEmpty;
+@property (nonatomic) BOOL shouldPlayStartSound;
+@property (nonatomic) BOOL shouldPlayStopSound;
+@property (nonatomic, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic) long long totalPacketsCount;
+@property (nonatomic, retain) CKVoiceController *voiceController;
 
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)cancelRecording;
-- (id)completion;
+- (id /* block */)completion;
 - (void)dealloc;
 - (id)delegate;
 - (double)duration;
@@ -59,7 +49,7 @@
 - (BOOL)isRecordingEmpty;
 - (void)resetState;
 - (void)setCancelled:(BOOL)arg1;
-- (void)setCompletion:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFileID:(struct OpaqueAudioFileID { }*)arg1;
 - (void)setFileURL:(id)arg1;
@@ -76,8 +66,8 @@
 - (void)startRecordingAndPlaySound:(BOOL)arg1;
 - (void)startRecordingForRaiseGesture;
 - (void)startRecordingForRaiseGesture:(BOOL)arg1 shouldPlaySound:(BOOL)arg2;
-- (void)stopRecording:(id)arg1;
-- (void)stopRecordingAndPlaySound:(BOOL)arg1 completion:(id)arg2;
+- (void)stopRecording:(id /* block */)arg1;
+- (void)stopRecordingAndPlaySound:(BOOL)arg1 completion:(id /* block */)arg2;
 - (long long)totalPacketsCount;
 - (id)voiceController;
 - (void)voiceController:(id)arg1 didUpdateAveragePower:(float)arg2;

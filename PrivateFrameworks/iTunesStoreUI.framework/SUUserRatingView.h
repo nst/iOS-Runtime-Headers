@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImageView;
-
 @interface SUUserRatingView : UIView {
     UIImageView *_backgroundImageView;
     UIImageView *_foregroundImageView;

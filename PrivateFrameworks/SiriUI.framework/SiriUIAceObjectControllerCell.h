@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUIAceObjectViewController, UIView;
-
 @interface SiriUIAceObjectControllerCell : SiriUIClearBackgroundCell {
     SiriUIAceObjectViewController *_aceViewController;
     UIView *_animationView;
@@ -12,10 +10,10 @@
     int _replacementAnimationType;
 }
 
-@property(retain) SiriUIAceObjectViewController * aceViewController;
-@property int insertionAnimationType;
-@property(retain) UIView * replacedView;
-@property int replacementAnimationType;
+@property (nonatomic, retain) SiriUIAceObjectViewController *aceViewController;
+@property (nonatomic) int insertionAnimationType;
+@property (nonatomic, retain) UIView *replacedView;
+@property (nonatomic) int replacementAnimationType;
 
 + (id)reuseIdentifier;
 

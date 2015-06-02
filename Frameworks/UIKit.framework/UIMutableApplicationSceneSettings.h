@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@interface UIMutableApplicationSceneSettings : FBSMutableSceneSettings <UIApplicationSceneSettings>
 
-@interface UIMutableApplicationSceneSettings : FBSMutableSceneSettings <UIApplicationSceneSettings> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int statusBarStyleOverridesToSuppress;
-@property(readonly) Class superclass;
-@property BOOL underLock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int statusBarStyleOverridesToSuppress;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL underLock;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isUISubclass;

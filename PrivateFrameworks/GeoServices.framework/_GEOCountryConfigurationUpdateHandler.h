@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface _GEOCountryConfigurationUpdateHandler : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
-@property(copy) id callback;
-@property NSObject<OS_dispatch_queue> * callbackQueue;
+@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;
 
-- (id)callback;
+- (id /* block */)callback;
 - (id)callbackQueue;
 - (void)dealloc;
-- (void)setCallback:(id)arg1;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setCallbackQueue:(id)arg1;
 
 @end

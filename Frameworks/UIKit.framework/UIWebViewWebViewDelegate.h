@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebView;
-
 @interface UIWebViewWebViewDelegate : NSObject {
     UIWebView *uiWebView;
 }

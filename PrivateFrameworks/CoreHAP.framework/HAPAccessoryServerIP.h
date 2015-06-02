@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <HAPAccessoryServerIPDelegatePrivate>, HAPAccessory, HAPHTTPClient, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate> {
     NSString *_accessoryServerName;
     NSDictionary *_bonjourDeviceInfo;
@@ -22,16 +16,8 @@
     NSArray *_ipServices;
     struct MFiSAP { } *_mfiSAP;
     NSString *_model;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _netServiceResolveCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pairVerifyCompletionBlock;
-
+    id /* block */ _netServiceResolveCompletionBlock;
+    id /* block */ _pairVerifyCompletionBlock;
     struct PairingSessionPrivate { } *_pairingSession;
     HAPAccessory *_primaryAccessoryForServer;
     NSString *_protocolVersion;
@@ -42,30 +28,30 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(copy) NSString * accessoryServerName;
-@property(retain) NSDictionary * bonjourDeviceInfo;
-@property unsigned int configNumber;
-@property(retain) NSString * controllerUsername;
-@property(copy,readonly) NSString * debugDescription;
-@property <HAPAccessoryServerIPDelegatePrivate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * deviceID;
+@property (nonatomic, copy) NSString *accessoryServerName;
+@property (nonatomic, retain) NSDictionary *bonjourDeviceInfo;
+@property (nonatomic) unsigned int configNumber;
+@property (nonatomic, retain) NSString *controllerUsername;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HAPAccessoryServerIPDelegatePrivate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *deviceID;
 @property BOOL establishingSecureConnection;
-@property(readonly) unsigned int hash;
-@property(retain) HAPHTTPClient * httpClient;
-@property(retain) NSArray * ipServices;
-@property(copy) NSString * model;
-@property(copy) id netServiceResolveCompletionBlock;
-@property(copy) id pairVerifyCompletionBlock;
-@property(retain) HAPAccessory * primaryAccessoryForServer;
-@property(copy) NSString * protocolVersion;
-@property(retain) NSMutableArray * queuedOperations;
-@property(copy) NSString * sourceVersion;
-@property unsigned int stateNumber;
-@property unsigned int statusFlags;
-@property(readonly) Class superclass;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HAPHTTPClient *httpClient;
+@property (nonatomic, retain) NSArray *ipServices;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) id /* block */ netServiceResolveCompletionBlock;
+@property (nonatomic, copy) id /* block */ pairVerifyCompletionBlock;
+@property (nonatomic, retain) HAPAccessory *primaryAccessoryForServer;
+@property (nonatomic, copy) NSString *protocolVersion;
+@property (nonatomic, retain) NSMutableArray *queuedOperations;
+@property (nonatomic, copy) NSString *sourceVersion;
+@property (nonatomic) unsigned int stateNumber;
+@property (nonatomic) unsigned int statusFlags;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (BOOL)_checkPairedState;
@@ -73,21 +59,21 @@
 - (void)_copyPropertiesForPrimaryAccessoryFromAccessory:(id)arg1;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (id)_deviceID;
-- (void)_enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
+- (void)_enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (long)_ensureHTTPClientSetUp;
 - (long)_ensurePairingSessionIsInitializedWithType:(unsigned int)arg1;
-- (void)_error:(id)arg1 forReadCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)_error:(id)arg1 forWriteCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)_error:(id)arg1 forReadCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_error:(id)arg1 forWriteCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_establishSecureConnectionAndFetchAttributeDatabase;
 - (void)_establishSecureSession;
 - (void)_getAttributeDatabase;
-- (void)_handleEventResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(BOOL)arg6 completion:(id)arg7 queue:(id)arg8;
+- (void)_handleEventResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(BOOL)arg6 completion:(id /* block */)arg7 queue:(id)arg8;
 - (void)_handleHTTPClientErrors;
 - (long)_handlePairSetupCompletionWithData:(id)arg1;
 - (long)_handlePairVerifyCompletionWithData:(id)arg1;
-- (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(BOOL)arg5 completionQueue:(id)arg6 completionBlock:(id)arg7;
-- (void)_handleReadResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 queue:(id)arg6 completion:(id)arg7;
-- (void)_handleWriteResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 requestTuples:(id)arg5 queue:(id)arg6 completion:(id)arg7;
+- (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(BOOL)arg5 completionQueue:(id)arg6 completionBlock:(id /* block */)arg7;
+- (void)_handleReadResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
+- (void)_handleWriteResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 requestTuples:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 - (void)_isAccessoryPublicKeyPresent:(BOOL*)arg1 registeredWithHomeKit:(BOOL*)arg2;
 - (BOOL)_isSessionEstablished;
 - (BOOL)_mergeExistingAccessory:(id)arg1 withNewAccessory:(id)arg2;
@@ -101,22 +87,22 @@
 - (BOOL)_parseTXTRecordDictionary:(id)arg1;
 - (BOOL)_processEvent:(id)arg1 matchedCharacteristic:(id*)arg2;
 - (void)_processQueuedOperationsWithError:(id)arg1;
-- (void)_queueAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
-- (void)_queueEnableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
-- (void)_queueReadCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_queueWriteCharacteristicValues:(id)arg1 queue:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
+- (void)_queueAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
+- (void)_queueEnableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (void)_queueReadCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_queueWriteCharacteristicValues:(id)arg1 queue:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (id)_serverIdentifier;
 - (id)_serverName;
 - (void)_setDeviceIDWithString:(id)arg1;
-- (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)_tearDownSession;
 - (BOOL)_updateAccessories:(id)arg1;
 - (void)_updateWithBonjourDeviceInfo:(id)arg1;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)accessoryServerName;
-- (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)bonjourDeviceInfo;
 - (id)briefDescription;
 - (unsigned int)configNumber;
@@ -128,7 +114,7 @@
 - (id)description;
 - (id)deviceID;
 - (void)discoverAccessories;
-- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
+- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (BOOL)establishingSecureConnection;
 - (BOOL)hasPairings;
 - (id)httpClient;
@@ -137,7 +123,7 @@
 - (void)httpClient:(id)arg1 willSendHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (void)httpClientDidCloseConnectionDueToServer:(id)arg1;
 - (id)identifier;
-- (void)identifyWithCompletion:(id)arg1;
+- (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)initWithBonjourDeviceInfo:(id)arg1 keyStore:(id)arg2;
 - (void)invalidate;
 - (id)ipServices;
@@ -145,16 +131,16 @@
 - (int)linkType;
 - (id)model;
 - (id)name;
-- (id)netServiceResolveCompletionBlock;
-- (id)pairVerifyCompletionBlock;
+- (id /* block */)netServiceResolveCompletionBlock;
+- (id /* block */)pairVerifyCompletionBlock;
 - (id)primaryAccessory;
 - (id)primaryAccessoryForServer;
 - (id)protocolVersion;
 - (id)queuedOperations;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id)arg2;
-- (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (id)services;
 - (void)setAccessoryServerName:(id)arg1;
 - (void)setBonjourDeviceInfo:(id)arg1;
@@ -168,8 +154,8 @@
 - (void)setHttpClient:(id)arg1;
 - (void)setIpServices:(id)arg1;
 - (void)setModel:(id)arg1;
-- (void)setNetServiceResolveCompletionBlock:(id)arg1;
-- (void)setPairVerifyCompletionBlock:(id)arg1;
+- (void)setNetServiceResolveCompletionBlock:(id /* block */)arg1;
+- (void)setPairVerifyCompletionBlock:(id /* block */)arg1;
 - (void)setPrimaryAccessoryForServer:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setQueuedOperations:(id)arg1;
@@ -185,7 +171,7 @@
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)updateWithBonjourDeviceInfo:(id)arg1;
 - (id)workQueue;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

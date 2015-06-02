@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSQLiteConnection;
-
 @interface _MFSQLiteConnectionWrapper : NSObject {
     MFSQLiteConnection *_connection;
     unsigned int _generation;
     unsigned int _type;
 }
 
-@property(readonly) MFSQLiteConnection * connection;
-@property(readonly) unsigned int generation;
-@property unsigned int type;
+@property (nonatomic, readonly) MFSQLiteConnection *connection;
+@property (nonatomic, readonly) unsigned int generation;
+@property (nonatomic) unsigned int type;
 
 - (id)connection;
 - (void)dealloc;

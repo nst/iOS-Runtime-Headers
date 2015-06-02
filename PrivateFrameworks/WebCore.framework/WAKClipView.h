@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class WAKView;
-
 @interface WAKClipView : WAKView {
     BOOL _copiesOnScroll;
     WAKView *_documentView;
 }
 
-@property BOOL copiesOnScroll;
-@property(readonly) WAKView * documentView;
+@property (nonatomic) BOOL copiesOnScroll;
+@property (nonatomic, readonly) WAKView *documentView;
 
 - (void)_setDocumentView:(id)arg1;
 - (BOOL)copiesOnScroll;

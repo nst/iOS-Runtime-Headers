@@ -9,8 +9,8 @@
     BOOL _isAvailable;
 }
 
-@property BOOL hasIsAvailable;
-@property BOOL isAvailable;
+@property (nonatomic) BOOL hasIsAvailable;
+@property (nonatomic) BOOL isAvailable;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

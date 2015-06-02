@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSOperationQueue, NSString, NSTimer, NSURL, NSUndoManager, NSUserActivity;
-
 @interface UIDocument : NSObject <NSFilePresenter> {
     NSLock *_activityContinuationLock;
     id _alertPresenter;
@@ -42,23 +40,23 @@
     NSMutableArray *_versions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSDocumentDifferenceSize * differenceDueToRecentChanges;
-@property(readonly) NSDocumentDifferenceSize * differenceSincePreservingPreviousVersion;
-@property(readonly) NSDocumentDifferenceSize * differenceSinceSaving;
-@property(readonly) unsigned int documentState;
-@property(getter=_isEditingDisabled,setter=_setEditingDisabled:) BOOL editingDisabled;
-@property(copy) NSDate * fileModificationDate;
-@property(copy,readonly) NSString * fileType;
-@property(readonly) NSURL * fileURL;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSString * localizedName;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
-@property(retain) NSUndoManager * undoManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDocumentDifferenceSize *differenceDueToRecentChanges;
+@property (nonatomic, readonly) NSDocumentDifferenceSize *differenceSincePreservingPreviousVersion;
+@property (nonatomic, readonly) NSDocumentDifferenceSize *differenceSinceSaving;
+@property (readonly) unsigned int documentState;
+@property (getter=_isEditingDisabled, setter=_setEditingDisabled:) BOOL editingDisabled;
+@property (copy) NSDate *fileModificationDate;
+@property (readonly, copy) NSString *fileType;
+@property (readonly) NSURL *fileURL;
+@property (readonly) unsigned int hash;
+@property (readonly, copy) NSString *localizedName;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
+@property (retain) NSUndoManager *undoManager;
 
 + (void)_autosavingTimerDidFireSoContinue:(id)arg1;
 + (id)_customizationOfError:(id)arg1 withDescription:(id)arg2 recoverySuggestion:(id)arg3 recoveryAttempter:(id)arg4;
@@ -70,14 +68,14 @@
 - (id)_activityTypeIdentifierForCloudDocument:(BOOL*)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
-- (void)_autosaveWithCompletionHandler:(id)arg1;
+- (void)_autosaveWithCompletionHandler:(id /* block */)arg1;
 - (void)_autosavingCompletedSuccessfully:(BOOL)arg1;
 - (double)_autosavingDelay;
 - (void)_changeWasDone:(id)arg1;
 - (void)_changeWasRedone:(id)arg1;
 - (void)_changeWasUndone:(id)arg1;
 - (void)_clearUserActivity;
-- (BOOL)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
+- (BOOL)_coordinateWritingItemAtURL:(id)arg1 error:(id*)arg2 byAccessor:(id /* block */)arg3;
 - (BOOL)_documentIsUbiquitous;
 - (id)_fileOpeningQueue;
 - (void)_finishSavingToURL:(id)arg1 forSaveOperation:(int)arg2 changeCount:(id)arg3;
@@ -88,16 +86,16 @@
 - (BOOL)_isInConflict;
 - (BOOL)_isInOpen;
 - (BOOL)_isOpen;
-- (void)_lockFileAccessQueueAndPerformBlock:(id)arg1;
+- (void)_lockFileAccessQueueAndPerformBlock:(id /* block */)arg1;
 - (void)_manageUserActivity;
-- (void)_performBlock:(id)arg1 synchronouslyOnQueue:(id)arg2;
-- (void)_performBlockSynchronouslyOnMainThread:(id)arg1;
+- (void)_performBlock:(id /* block */)arg1 synchronouslyOnQueue:(id)arg2;
+- (void)_performBlockSynchronouslyOnMainThread:(id /* block */)arg1;
 - (id)_presentableFileNameForSaveOperation:(int)arg1 url:(id)arg2;
 - (void)_reallyManageUserActivity;
 - (void)_registerAsFilePresenterIfNecessary;
 - (void)_releaseUndoManager;
 - (void)_rescheduleAutosaving;
-- (void)_saveUnsavedChangesWithCompletionHandler:(id)arg1;
+- (void)_saveUnsavedChangesWithCompletionHandler:(id /* block */)arg1;
 - (void)_scheduleAutosaving;
 - (void)_scheduleAutosavingAfterDelay:(double)arg1 reset:(BOOL)arg2;
 - (void)_sendStateChangedNotification;
@@ -116,11 +114,11 @@
 - (void)_updateLocalizedName;
 - (id)_userActivityWithActivityType:(id)arg1;
 - (id)_userInfoForActivityContinuation;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
-- (void)accommodatePresentedSubitemDeletionAtURL:(id)arg1 completionHandler:(id)arg2;
-- (void)autosaveWithCompletionHandler:(id)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
+- (void)accommodatePresentedSubitemDeletionAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)autosaveWithCompletionHandler:(id /* block */)arg1;
 - (id)changeCountTokenForSaveOperation:(int)arg1;
-- (void)closeWithCompletionHandler:(id)arg1;
+- (void)closeWithCompletionHandler:(id /* block */)arg1;
 - (id)contentsForType:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)description;
@@ -142,8 +140,8 @@
 - (id)initWithFileURL:(id)arg1;
 - (BOOL)loadFromContents:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (id)localizedName;
-- (void)openWithCompletionHandler:(id)arg1;
-- (void)performAsynchronousFileAccessUsingBlock:(id)arg1;
+- (void)openWithCompletionHandler:(id /* block */)arg1;
+- (void)performAsynchronousFileAccessUsingBlock:(id /* block */)arg1;
 - (void)presentedItemDidChange;
 - (void)presentedItemDidGainVersion:(id)arg1;
 - (void)presentedItemDidLoseVersion:(id)arg1;
@@ -158,12 +156,12 @@
 - (void)presentedSubitemDidAppearAtURL:(id)arg1;
 - (void)presentedSubitemDidChangeAtURL:(id)arg1;
 - (BOOL)readFromURL:(id)arg1 error:(id*)arg2;
-- (void)relinquishPresentedItemToReader:(id)arg1;
-- (void)relinquishPresentedItemToWriter:(id)arg1;
+- (void)relinquishPresentedItemToReader:(id /* block */)arg1;
+- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
 - (void)restoreUserActivityState:(id)arg1;
-- (void)revertToContentsOfURL:(id)arg1 completionHandler:(id)arg2;
-- (void)savePresentedItemChangesWithCompletionHandler:(id)arg1;
-- (void)saveToURL:(id)arg1 forSaveOperation:(int)arg2 completionHandler:(id)arg3;
+- (void)revertToContentsOfURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)savePresentedItemChangesWithCompletionHandler:(id /* block */)arg1;
+- (void)saveToURL:(id)arg1 forSaveOperation:(int)arg2 completionHandler:(id /* block */)arg3;
 - (id)savingFileType;
 - (void)setFileModificationDate:(id)arg1;
 - (void)setFileType:(id)arg1;

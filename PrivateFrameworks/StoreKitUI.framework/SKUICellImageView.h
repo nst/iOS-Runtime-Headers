@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUICellImageView : UIImageView {
     UIColor *_cachedBackgroundColor;
 }

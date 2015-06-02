@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/UserFS.framework/UserFS
  */
 
-@interface UserFSFolder : UserFSItem {
-}
+@interface UserFSFolder : UserFSItem
 
 - (id)_pathForChildNamed:(id)arg1;
 - (id)childNamed:(id)arg1 error:(id*)arg2;
 - (BOOL)deleteChildNamed:(id)arg1 error:(id*)arg2;
-- (BOOL)enumerateChildrenAndReturnError:(id*)arg1 callback:(id)arg2;
+- (BOOL)enumerateChildrenAndReturnError:(id*)arg1 callback:(id /* block */)arg2;
 - (BOOL)isDirectory;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUTudouActivity : PUPublishingActivity {
-}
+@interface PUTudouActivity : PUPublishingActivity
 
 - (id)_activityImage;
 - (id)_activitySettingsImage;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSMutableData, NSMutableURLRequest, NSString, NSURLConnection;
-
 @interface WeatherHTTPRequest : NSObject <NSURLConnectionDataDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_rawData;
     NSMutableURLRequest *_request;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;

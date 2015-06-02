@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSKnownKeysDictionary, NSManagedObjectModel, NSMutableArray, NSString;
-
 @interface NSSQLModel : NSStoreMapping {
     unsigned int _brokenHashVersion;
     NSString *_configuration;

@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, UIBezierPath, UIFont;
-
 @interface SCNText : SCNGeometry {
     BOOL __wantsSeparateGeometryElements;
     long _alignmentMode;
@@ -36,16 +29,16 @@
     BOOL _wrapped;
 }
 
-@property(copy) NSString * alignmentMode;
-@property(copy) UIBezierPath * chamferProfile;
-@property float chamferRadius;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containerFrame;
-@property float extrusionDepth;
-@property float flatness;
-@property(retain) UIFont * font;
-@property(copy) id string;
-@property(copy) NSString * truncationMode;
-@property(getter=isWrapped) BOOL wrapped;
+@property (nonatomic, copy) NSString *alignmentMode;
+@property (nonatomic, copy) UIBezierPath *chamferProfile;
+@property (nonatomic) float chamferRadius;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containerFrame;
+@property (nonatomic) float extrusionDepth;
+@property (nonatomic) float flatness;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, copy) id string;
+@property (nonatomic, copy) NSString *truncationMode;
+@property (getter=isWrapped, nonatomic) BOOL wrapped;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;

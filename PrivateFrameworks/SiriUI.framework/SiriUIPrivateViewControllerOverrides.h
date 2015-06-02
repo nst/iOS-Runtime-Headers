@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIPrivateViewControllerOverrides : NSObject {
-}
+@interface SiriUIPrivateViewControllerOverrides : NSObject
 
 + (id)viewControllerForSnippet:(id)arg1;
 

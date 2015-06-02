@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class <CNFRegViewAccountControllerDelegate>;
-
 @interface CNFRegViewAccountController : CNFRegSecureAccountWebViewController {
     <CNFRegViewAccountControllerDelegate> *_delegate;
 }
 
-@property <CNFRegViewAccountControllerDelegate> * delegate;
+@property (nonatomic) <CNFRegViewAccountControllerDelegate> *delegate;
 
 - (id)bagKey;
 - (void)cancelTapped;

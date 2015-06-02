@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLDebugCommandBuffer : MTLToolsCommandBuffer {
-}
+@interface MTLDebugCommandBuffer : MTLToolsCommandBuffer
 
 - (id)blitCommandEncoder;
 - (id)computeCommandEncoder;

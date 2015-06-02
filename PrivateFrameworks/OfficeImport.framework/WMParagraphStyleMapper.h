@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDParagraph, WDParagraphProperties, WMParagraphStyle;
-
 @interface WMParagraphStyleMapper : CMMapper {
     WMParagraphStyle *mStyle;
     WDParagraphProperties *wdParaProperties;

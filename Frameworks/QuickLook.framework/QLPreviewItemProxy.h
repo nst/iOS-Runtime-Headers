@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, NSURL, NSUUID, UIColor;
-
 @interface QLPreviewItemProxy : NSObject <NSSecureCoding, QLPreviewItem> {
     double _autoPlaybackPosition;
     UIColor *_backgroundColorOverride;
@@ -20,21 +18,21 @@
 }
 
 @property double autoPlaybackPosition;
-@property(retain) UIColor * backgroundColorOverride;
-@property(retain) NSString * contentType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) UIColor *backgroundColorOverride;
+@property (retain) NSString *contentType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int index;
 @property BOOL isPromisedItem;
-@property(retain) NSString * password;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property(retain) NSURL * url;
-@property(retain) NSURL * urlForDisplay;
-@property(readonly) NSUUID * uuid;
+@property (retain) NSString *password;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (readonly) Class superclass;
+@property (retain) NSString *title;
+@property (retain) NSURL *url;
+@property (retain) NSURL *urlForDisplay;
+@property (readonly) NSUUID *uuid;
 
 + (id)encodedClasses;
 + (id)proxyWithPreviewItem:(id)arg1;

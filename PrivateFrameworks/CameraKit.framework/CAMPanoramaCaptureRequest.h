@@ -7,8 +7,8 @@
     int _deviceOrientation;
 }
 
-@property(readonly) int captureDevice;
-@property(readonly) int deviceOrientation;
+@property (nonatomic, readonly) int captureDevice;
+@property (nonatomic, readonly) int deviceOrientation;
 
 - (int)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

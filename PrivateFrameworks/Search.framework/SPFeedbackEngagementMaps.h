@@ -6,7 +6,7 @@
     int _feedbackType;
 }
 
-@property int feedbackType;
+@property (nonatomic) int feedbackType;
 
 - (void)encodeWithCoder:(id)arg1;
 - (int)feedbackType;

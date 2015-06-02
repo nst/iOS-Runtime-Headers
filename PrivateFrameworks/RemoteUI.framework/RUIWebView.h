@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSString, NSURL, UIWebView;
-
 @interface RUIWebView : RUIElement <UIWebViewDelegate> {
     NSURL *_baseURL;
     id _delegate;
@@ -11,13 +9,13 @@
     UIWebView *_webView;
 }
 
-@property(retain) NSURL * baseURL;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * html;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *html;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)baseURL;

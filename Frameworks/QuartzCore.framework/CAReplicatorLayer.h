@@ -2,17 +2,11 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface CAReplicatorLayer : CALayer {
-}
+@interface CAReplicatorLayer : CALayer
 
 @property float instanceAlphaOffset;
 @property float instanceBlueOffset;
-@property struct CGColor { }* instanceColor;
+@property struct CGColor { }*instanceColor;
 @property int instanceCount;
 @property double instanceDelay;
 @property float instanceGreenOffset;

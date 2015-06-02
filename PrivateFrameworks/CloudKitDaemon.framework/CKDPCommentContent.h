@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPCommentContent : PBCodable <NSCopying> {
     NSData *_comment;
     BOOL _encrypted;
@@ -12,10 +10,10 @@
     } _has;
 }
 
-@property(retain) NSData * comment;
-@property BOOL encrypted;
-@property(readonly) BOOL hasComment;
-@property BOOL hasEncrypted;
+@property (nonatomic, retain) NSData *comment;
+@property (nonatomic) BOOL encrypted;
+@property (nonatomic, readonly) BOOL hasComment;
+@property (nonatomic) BOOL hasEncrypted;
 
 - (void).cxx_destruct;
 - (id)comment;

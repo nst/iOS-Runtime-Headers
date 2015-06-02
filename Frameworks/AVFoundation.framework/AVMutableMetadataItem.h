@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <NSObject><NSCopying>, AVMutableMetadataItemInternal, NSDictionary, NSLocale, NSString;
-
 @interface AVMutableMetadataItem : AVMetadataItem {
     AVMutableMetadataItemInternal *_mutablePriv;
 }
 
-@property(copy) NSString * dataType;
+@property (copy) NSString *dataType;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property(copy) NSString * extendedLanguageTag;
-@property(copy) NSDictionary * extraAttributes;
-@property(copy) NSString * identifier;
-@property(copy) NSLocale * locale;
+@property (copy) NSString *extendedLanguageTag;
+@property (copy) NSDictionary *extraAttributes;
+@property (copy) NSString *identifier;
+@property (copy) NSLocale *locale;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
-@property(copy) <NSObject><NSCopying> * value;
+@property (copy) <NSObject><NSCopying> *value;
 
 + (id)keyPathsForValuesAffectingIdentifier;
 + (id)metadataItem;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSUPerformanceTest : NSObject {
     double mGoalTime;
     NSString *mName;
@@ -34,12 +32,12 @@
     } mTiming;
 }
 
-@property double goalTime;
-@property(readonly) NSString * name;
-@property(readonly) BOOL passed;
-@property double precision;
-@property BOOL quiet;
-@property struct TSUOpstat_s { BOOL x1; unsigned long long x2; struct timeval { int x_3_1_1; int x_3_1_2; } x3; struct timeval { int x_4_1_1; int x_4_1_2; } x4; struct timeval { int x_5_1_1; int x_5_1_2; } x5; struct timeval { int x_6_1_1; int x_6_1_2; } x6; } timing;
+@property (nonatomic) double goalTime;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL passed;
+@property (nonatomic) double precision;
+@property (nonatomic) BOOL quiet;
+@property (nonatomic) struct TSUOpstat_s { BOOL x1; unsigned long long x2; struct timeval { int x_3_1_1; int x_3_1_2; } x3; struct timeval { int x_4_1_1; int x_4_1_2; } x4; struct timeval { int x_5_1_1; int x_5_1_2; } x5; struct timeval { int x_6_1_1; int x_6_1_2; } x6; } timing;
 
 + (id)csvHeader;
 

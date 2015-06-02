@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SURemoteNotificationController : NSObject {
-}
+@interface SURemoteNotificationController : NSObject
 
-@property(readonly) unsigned int enabledNotificationTypes;
+@property (nonatomic, readonly) unsigned int enabledNotificationTypes;
 
 + (id)sharedInstance;
 

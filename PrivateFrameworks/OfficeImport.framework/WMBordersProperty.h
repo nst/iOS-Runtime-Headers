@@ -3,7 +3,7 @@
  */
 
 @interface WMBordersProperty : CMBordersProperty {
-    unsigned int mBorderCustomWidth[5];
+    unsigned int mBorderCustomWidth;
 }
 
 - (id)init;

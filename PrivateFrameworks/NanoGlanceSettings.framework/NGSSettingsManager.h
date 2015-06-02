@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoGlanceSettings.framework/NanoGlanceSettings
  */
 
-@class <NGSSettingsManagerDelegate>;
-
 @interface NGSSettingsManager : NGSInternalSettingsManager {
     <NGSSettingsManagerDelegate> *_delegate;
 }
 
-@property <NGSSettingsManagerDelegate> * delegate;
+@property (nonatomic) <NGSSettingsManagerDelegate> *delegate;
 
 + (id)sharedSettingsManager;
 

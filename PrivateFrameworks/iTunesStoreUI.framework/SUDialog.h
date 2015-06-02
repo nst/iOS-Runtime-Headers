@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ISDialog, NSString, UIAlertView;
-
 @interface SUDialog : NSObject <UIAlertViewDelegate> {
     UIAlertView *_alertView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     ISDialog *_dialog;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) ISDialog * dialog;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) ISDialog *dialog;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_alertView;
 - (void)_completeWithButtonIndex:(int)arg1;
@@ -32,6 +22,6 @@
 - (id)dialog;
 - (id)initWithDialog:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
-- (void)showWithCompletionBlock:(id)arg1;
+- (void)showWithCompletionBlock:(id /* block */)arg1;
 
 @end

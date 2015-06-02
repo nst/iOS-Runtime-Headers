@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentInteractionControllerDelegate>, NSArray, NSString, NSURL, UIActivityViewController, UIBarButtonItem, UIPopoverController, UIView, UIViewController, _UIPreviewItemProxy;
-
 @interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
     UIActivityViewController *_activityViewController;
     id _annotation;
@@ -62,26 +60,26 @@
     NSURL *_unzippedDocumentURL;
 }
 
-@property(retain) NSURL * URL;
-@property(copy) NSString * UTI;
-@property(retain) UIActivityViewController * activityViewController;
-@property(retain) id annotation;
-@property(getter=isArchive,readonly) BOOL archive;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIDocumentInteractionControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * gestureRecognizers;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * icons;
-@property(copy) NSString * name;
-@property(getter=_performingActivity,setter=_setPerformingActivity:) BOOL performingActivity;
-@property(retain) UIPopoverController * popoverController;
-@property(readonly) id previewController;
-@property(readonly) _UIPreviewItemProxy * previewItemProxy;
-@property BOOL shouldUnzipDocument;
-@property BOOL sourceIsManaged;
-@property(readonly) Class superclass;
-@property(retain) NSString * uniqueIdentifier;
+@property (retain) NSURL *URL;
+@property (nonatomic, copy) NSString *UTI;
+@property (nonatomic, retain) UIActivityViewController *activityViewController;
+@property (nonatomic, retain) id annotation;
+@property (getter=isArchive, nonatomic, readonly) BOOL archive;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIDocumentInteractionControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *gestureRecognizers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *icons;
+@property (copy) NSString *name;
+@property (getter=_performingActivity, setter=_setPerformingActivity:, nonatomic) BOOL performingActivity;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, readonly) id previewController;
+@property (nonatomic, readonly) _UIPreviewItemProxy *previewItemProxy;
+@property (nonatomic) BOOL shouldUnzipDocument;
+@property (nonatomic) BOOL sourceIsManaged;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *uniqueIdentifier;
 
 + (id)_UTIForFileURL:(id)arg1;
 + (id)_applicationsForDocumentProxy:(id)arg1;
@@ -121,7 +119,7 @@
 - (BOOL)_isVideo;
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)_openDocumentWithCurrentApplication;
-- (id)_pathsInArchive:(id)arg1;
+- (id)_pathsInArchive:(id /* block */)arg1;
 - (BOOL)_performingActivity;
 - (void)_presentOpenIn:(id)arg1;
 - (void)_presentOptionsMenu:(id)arg1;
@@ -132,8 +130,8 @@
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
-- (void)_unzipFileAndSetupPayload:(id)arg1;
-- (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id)arg2;
+- (void)_unzipFileAndSetupPayload:(id /* block */)arg1;
+- (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id /* block */)arg2;
 - (id)_unzippedDocumentURL;
 - (id)activityViewController;
 - (id)annotation;
@@ -142,7 +140,7 @@
 - (id)delegate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (void)dismissPreviewAnimated:(BOOL)arg1;
-- (id)extractSubitemFromArchive:(id)arg1 completion:(id)arg2;
+- (id)extractSubitemFromArchive:(id)arg1 completion:(id /* block */)arg2;
 - (id)gestureRecognizers;
 - (id)icons;
 - (id)initWithURL:(id)arg1;
@@ -179,7 +177,7 @@
 - (void)setUniqueIdentifier:(id)arg1;
 - (BOOL)shouldUnzipDocument;
 - (BOOL)sourceIsManaged;
-- (id)subitemsInArchive:(id)arg1;
+- (id)subitemsInArchive:(id /* block */)arg1;
 - (id)uniqueIdentifier;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSArray, NSMutableArray, NSString;
-
 @interface CAState : NSObject <NSCoding, NSCopying> {
     NSString *_basedOn;
     NSMutableArray *_elements;
@@ -15,12 +13,12 @@
     double _previousDelay;
 }
 
-@property(copy) NSString * basedOn;
-@property(copy) NSArray * elements;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isInitial) BOOL initial;
-@property(getter=isLocked) BOOL locked;
-@property(copy) NSString * name;
+@property (copy) NSString *basedOn;
+@property (nonatomic, copy) NSArray *elements;
+@property (getter=isEnabled) BOOL enabled;
+@property (getter=isInitial) BOOL initial;
+@property (getter=isLocked, nonatomic) BOOL locked;
+@property (nonatomic, copy) NSString *name;
 @property double nextDelay;
 @property double previousDelay;
 
@@ -36,7 +34,7 @@
 - (id)elements;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)foreachLayer:(id)arg1;
+- (void)foreachLayer:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;

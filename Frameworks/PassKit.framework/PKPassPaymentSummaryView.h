@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassPaymentSummaryViewDelegate>, NSNumberFormatter, NSString, PKPaymentMessage, PKPaymentPass, PKPaymentTransaction, UITableView;
-
 @interface PKPassPaymentSummaryView : UIView <PKPassPaymentSummaryCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _deepLinkingEnabled;
     <PKPassPaymentSummaryViewDelegate> *_delegate;
@@ -16,16 +14,16 @@
     NSString *_transactionAppLaunchToken;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassPaymentSummaryViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PKPaymentMessage * message;
-@property(readonly) NSString * messageAppLaunchToken;
-@property(readonly) PKPaymentPass * pass;
-@property(readonly) Class superclass;
-@property(readonly) PKPaymentTransaction * transaction;
-@property(readonly) NSString * transactionAppLaunchToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassPaymentSummaryViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PKPaymentMessage *message;
+@property (nonatomic, readonly) NSString *messageAppLaunchToken;
+@property (nonatomic, readonly) PKPaymentPass *pass;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PKPaymentTransaction *transaction;
+@property (nonatomic, readonly) NSString *transactionAppLaunchToken;
 
 - (id)_amountTextFromTransaction:(id)arg1;
 - (void)_configureCell:(id)arg1 forMessage:(id)arg2;

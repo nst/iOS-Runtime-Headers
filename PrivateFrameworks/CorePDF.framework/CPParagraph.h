@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPListItem;
-
 @interface CPParagraph : CPRegion {
     unsigned int alignment;
     BOOL below;
@@ -14,7 +12,7 @@
     float preformatWidth;
 }
 
-@property(retain) CPListItem * listItem;
+@property (nonatomic, retain) CPListItem *listItem;
 
 - (void)accept:(id)arg1;
 - (unsigned int)alignment;

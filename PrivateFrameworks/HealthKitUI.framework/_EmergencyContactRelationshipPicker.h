@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <_EmergencyContactRelationshipPickerDelegate>, NSArray;
-
 @interface _EmergencyContactRelationshipPicker : UITableViewController {
     <_EmergencyContactRelationshipPickerDelegate> *_delegate;
     NSArray *_labels;
     NSArray *_tokens;
 }
 
-@property <_EmergencyContactRelationshipPickerDelegate> * delegate;
+@property (nonatomic) <_EmergencyContactRelationshipPickerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_cancelTapped:(id)arg1;

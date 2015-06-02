@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsFilter, ALAssetsLibrary, NSMutableDictionary, NSObject<PLAlbumProtocol>, NSString, PLPhotoLibrary;
-
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
     struct NSObject { Class x1; } *_album;
     BOOL _applyHyperionFilter;
@@ -17,21 +15,21 @@
     NSMutableDictionary *_propertyValues;
 }
 
-@property(retain) PLPhotoLibrary * _photoLibrary;
-@property(retain) NSObject<PLAlbumProtocol> * album;
-@property BOOL applyHyperionFilter;
-@property(retain) ALAssetsFilter * assetsFilter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int groupType;
-@property(readonly) unsigned int hash;
-@property BOOL isCloudSharedGroup;
-@property BOOL isValid;
-@property ALAssetsLibrary * library;
-@property(retain) NSMutableDictionary * propertyValues;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *album;
+@property (nonatomic) BOOL applyHyperionFilter;
+@property (nonatomic, retain) ALAssetsFilter *assetsFilter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int groupType;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCloudSharedGroup;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic) ALAssetsLibrary *library;
+@property (nonatomic, retain) NSMutableDictionary *propertyValues;
+@property (readonly) Class superclass;
 
-- (void)_performBlockAndWait:(id)arg1;
+- (void)_performBlockAndWait:(id /* block */)arg1;
 - (id)_photoLibrary;
 - (struct NSObject { Class x1; }*)album;
 - (int)albumFilter;

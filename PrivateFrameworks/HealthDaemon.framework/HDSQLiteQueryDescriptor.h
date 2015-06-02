@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLitePredicate, NSArray, NSString;
-
 @interface HDSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class _entityClass;
     NSString *_groupBy;
@@ -14,13 +12,13 @@
     BOOL _returnsDistinctEntities;
 }
 
-@property Class entityClass;
-@property(copy) NSString * groupBy;
-@property int limitCount;
-@property(copy) NSArray * orderingDirections;
-@property(copy) NSArray * orderingProperties;
-@property(copy) HDSQLitePredicate * predicate;
-@property BOOL returnsDistinctEntities;
+@property (nonatomic) Class entityClass;
+@property (nonatomic, copy) NSString *groupBy;
+@property (nonatomic) int limitCount;
+@property (nonatomic, copy) NSArray *orderingDirections;
+@property (nonatomic, copy) NSArray *orderingProperties;
+@property (nonatomic, copy) HDSQLitePredicate *predicate;
+@property (nonatomic) BOOL returnsDistinctEntities;
 
 - (id)_newSelectSQLWithProperties:(id)arg1;
 - (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;

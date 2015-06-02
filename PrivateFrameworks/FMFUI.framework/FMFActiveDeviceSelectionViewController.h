@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class FMFDevice, FMFSession, NSMutableArray, NSString;
-
 @interface FMFActiveDeviceSelectionViewController : PSListController <FMFSessionDelegate, UITableViewDataSource, UITableViewDelegate> {
     FMFDevice *_currentActiveDevice;
     NSMutableArray *_deviceList;
@@ -12,15 +10,15 @@
     int _specifierStartIndex;
 }
 
-@property(retain) FMFDevice * currentActiveDevice;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableArray * deviceList;
-@property(retain) FMFSession * fmfSession;
-@property(readonly) unsigned int hash;
-@property(retain) FMFDevice * nowActiveDevice;
-@property int specifierStartIndex;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) FMFDevice *currentActiveDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *deviceList;
+@property (nonatomic, retain) FMFSession *fmfSession;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) FMFDevice *nowActiveDevice;
+@property (nonatomic) int specifierStartIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_hasActiveDeviceAtIndex:(unsigned int)arg1;

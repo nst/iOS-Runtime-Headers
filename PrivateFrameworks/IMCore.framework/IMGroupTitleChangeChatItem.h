@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, NSString;
-
 @interface IMGroupTitleChangeChatItem : IMTranscriptChatItem {
     IMHandle *_sender;
 }
 
-@property(retain,readonly) IMHandle * sender;
-@property(copy,readonly) NSString * title;
+@property (nonatomic, readonly, retain) IMHandle *sender;
+@property (nonatomic, readonly, copy) NSString *title;
 
-- (Class)__ck_chatItemClass;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (id)_initWithItem:(id)arg1 sender:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)sender;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

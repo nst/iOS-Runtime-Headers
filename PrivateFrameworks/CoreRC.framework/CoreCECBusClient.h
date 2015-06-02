@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreCECBusClient : CoreCECBus {
-}
+@interface CoreCECBusClient : CoreCECBus
 
 + (BOOL)supportsSecureCoding;
 

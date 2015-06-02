@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <SPChartViewDelegate>, ChartLabelInfoManager, NSMutableArray, Stock, StockChartData, StockChartDisplayMode, StockGraphView;
-
 @interface SPChartView : UIView <StockGraphViewContainer> {
     StockChartData *_chartData;
     BOOL _compactGraph;
@@ -19,13 +17,13 @@
     NSMutableArray *_yAxisLabels;
 }
 
-@property(retain) StockChartData * chartData;
-@property BOOL compactGraph;
-@property(readonly) StockChartDisplayMode * currentDisplayMode;
-@property <SPChartViewDelegate> * delegate;
-@property BOOL glanceGraph;
-@property BOOL showsHorizontalLines;
-@property(retain) Stock * stock;
+@property (nonatomic, retain) StockChartData *chartData;
+@property (nonatomic) BOOL compactGraph;
+@property (nonatomic, readonly) StockChartDisplayMode *currentDisplayMode;
+@property (nonatomic) <SPChartViewDelegate> *delegate;
+@property (nonatomic) BOOL glanceGraph;
+@property (nonatomic) BOOL showsHorizontalLines;
+@property (nonatomic, retain) Stock *stock;
 
 - (void).cxx_destruct;
 - (void)_prepareXAxisLabelsAndPositions;

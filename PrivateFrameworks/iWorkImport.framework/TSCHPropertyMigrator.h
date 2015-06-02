@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSPropertySet, TSUIntToIntDictionary, TSUIntegerKeyDictionary;
-
 @interface TSCHPropertyMigrator : NSObject {
     TSSPropertySet *mPropertiesToForce;
     TSUIntToIntDictionary *mShouldForceFlags;

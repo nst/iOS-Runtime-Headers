@@ -7,8 +7,8 @@
     id _target;
 }
 
-@property(readonly) SEL selector;
-@property(readonly) id target;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly) id target;
 
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (SEL)selector;

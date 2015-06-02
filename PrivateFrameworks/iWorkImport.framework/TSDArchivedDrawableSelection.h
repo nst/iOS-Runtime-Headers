@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSDDrawableSelection, TSKSelection;
-
 @interface TSDArchivedDrawableSelection : TSPObject <TSKArchivedSelection> {
     TSDDrawableSelection *mDrawableSelection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) TSKSelection * selection;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) TSKSelection *selection;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)description;

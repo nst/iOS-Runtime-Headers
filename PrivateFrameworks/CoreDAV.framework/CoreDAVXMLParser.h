@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVErrorItem, CoreDAVItem, CoreDAVXMLElementGenerator, NSError, NSSet, NSString, NSURL;
-
 @interface CoreDAVXMLParser : NSXMLParser <CoreDAVResponseBodyParser> {
     NSURL *_baseURL;
     NSSet *_parseHints;
@@ -11,17 +9,17 @@
     CoreDAVXMLElementGenerator *_rootErrorGenerator;
 }
 
-@property(retain) NSURL * baseURL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSSet * parseHints;
-@property(readonly) NSError * parserError;
-@property(readonly) CoreDAVItem * rootElement;
-@property(retain) CoreDAVXMLElementGenerator * rootElementGenerator;
-@property(readonly) CoreDAVErrorItem * rootError;
-@property(retain) CoreDAVXMLElementGenerator * rootErrorGenerator;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSSet *parseHints;
+@property (readonly) NSError *parserError;
+@property (nonatomic, readonly) CoreDAVItem *rootElement;
+@property (nonatomic, retain) CoreDAVXMLElementGenerator *rootElementGenerator;
+@property (nonatomic, readonly) CoreDAVErrorItem *rootError;
+@property (nonatomic, retain) CoreDAVXMLElementGenerator *rootErrorGenerator;
+@property (readonly) Class superclass;
 
 + (BOOL)canHandleContentType:(id)arg1;
 

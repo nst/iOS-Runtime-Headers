@@ -6,13 +6,13 @@
     int _type;
 }
 
-@property(readonly) int type;
+@property (nonatomic, readonly) int type;
 
 + (id)stringForType:(int)arg1;
 
 - (id)description;
-- (id)initWithTimeout:(double)arg1 queue:(id)arg2 completion:(id)arg3;
-- (id)initWithType:(int)arg1 timeout:(double)arg2 queue:(id)arg3 completion:(id)arg4;
+- (id)initWithTimeout:(double)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (id)initWithType:(int)arg1 timeout:(double)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (int)type;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPAccessory, HMDAccessory, HMDAccessoryManager, HMDHome, HMDRoom, HMMessageDispatcher, NSArray, NSData, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
-
 @interface HMDAccessory : NSObject <HAPAccessoryDelegate, HMMessageReceiver, NSSecureCoding> {
     HMDAccessoryManager *_accessoryManager;
     BOOL _blocked;
@@ -32,40 +30,40 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property HMDAccessoryManager * accessoryManager;
-@property(getter=isBlocked) BOOL blocked;
-@property HMDAccessory * bridge;
-@property(retain) NSString * configurationAppIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableArray * discoveredServices;
-@property(retain) HAPAccessory * hapAccessory;
-@property(readonly) unsigned int hash;
-@property HMDHome * home;
-@property(retain) NSString * identifier;
-@property(retain) NSMutableSet * identifiersForBridgedAccessories;
-@property(readonly) int linkType;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(getter=getName,copy) NSString * name;
-@property(getter=isPaired) BOOL paired;
-@property(retain) NSObject<OS_dispatch_source> * pairingRetryTimer;
-@property(retain) NSString * pairingUsername;
-@property(getter=isPrimary) BOOL primary;
-@property(retain) NSString * providedName;
-@property(retain) NSData * publicKey;
-@property(getter=isReachable) BOOL reachable;
-@property(getter=isRemoteAccessEnabled) BOOL remoteAccessEnabled;
-@property(retain) HMDRoom * room;
-@property(readonly) NSString * serverIdentifier;
-@property(copy,readonly) NSArray * services;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsGroupedRequests;
-@property BOOL unblockPending;
-@property(retain) NSString * uniqueIdentifier;
-@property(readonly) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) HMDAccessoryManager *accessoryManager;
+@property (getter=isBlocked, nonatomic) BOOL blocked;
+@property (nonatomic) HMDAccessory *bridge;
+@property (nonatomic, retain) NSString *configurationAppIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *discoveredServices;
+@property (nonatomic, retain) HAPAccessory *hapAccessory;
+@property (readonly) unsigned int hash;
+@property (nonatomic) HMDHome *home;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSMutableSet *identifiersForBridgedAccessories;
+@property (nonatomic, readonly) int linkType;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (getter=getName, nonatomic, copy) NSString *name;
+@property (getter=isPaired, nonatomic) BOOL paired;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *pairingRetryTimer;
+@property (nonatomic, retain) NSString *pairingUsername;
+@property (getter=isPrimary, nonatomic) BOOL primary;
+@property (nonatomic, retain) NSString *providedName;
+@property (nonatomic, retain) NSData *publicKey;
+@property (getter=isReachable, nonatomic) BOOL reachable;
+@property (getter=isRemoteAccessEnabled, nonatomic) BOOL remoteAccessEnabled;
+@property (nonatomic, retain) HMDRoom *room;
+@property (nonatomic, readonly) NSString *serverIdentifier;
+@property (nonatomic, readonly, copy) NSArray *services;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsGroupedRequests;
+@property (nonatomic) BOOL unblockPending;
+@property (nonatomic, retain) NSString *uniqueIdentifier;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)serviceFilterSet;
 + (BOOL)supportsSecureCoding;
@@ -88,17 +86,17 @@
 - (void)_notifyCharacteristicNotificationChanges:(id)arg1 message:(id)arg2;
 - (void)_notifyConnectivityChangedWithReachabilityState:(BOOL)arg1 remoteAccessChanged:(BOOL)arg2;
 - (id)_populateServices:(id*)arg1;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_readValueForCharacteristic:(id)arg1 messageIdentifier:(id)arg2 responseHandler:(id)arg3;
+- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_readValueForCharacteristic:(id)arg1 messageIdentifier:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)_registerForMessages;
 - (void)_remoteAccessEnabled:(BOOL)arg1;
 - (void)_resetCharacteristicNotifications;
-- (void)_sendBlockedNotification:(BOOL)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(id)arg4;
+- (void)_sendBlockedNotification:(BOOL)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)_setHAPAccessory:(id)arg1;
 - (void)_setPaired:(BOOL)arg1;
 - (void)_setReachable:(BOOL)arg1;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4 queue:(id)arg5 completionHandler:(id)arg6;
+- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4 queue:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)accessoryDidBecomeReachable:(id)arg1;
 - (void)accessoryDidBecomeUnreachable:(id)arg1;
 - (id)accessoryManager;
@@ -108,7 +106,7 @@
 - (id)configurationAppIdentifier;
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryManager:(id)arg3;
 - (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2;
-- (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2 queue:(id)arg3 completion:(id)arg4;
+- (void)configureWithAccessory:(id)arg1 forRemoval:(BOOL)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionNonBlocking;
@@ -140,12 +138,12 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
-- (void)notifyValue:(id)arg1 error:(id)arg2 identifier:(id)arg3 forCharacteristic:(id)arg4 completionHandler:(id)arg5;
+- (void)notifyValue:(id)arg1 error:(id)arg2 identifier:(id)arg3 forCharacteristic:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)pairingRetryTimer;
 - (id)pairingUsername;
 - (id)providedName;
 - (id)publicKey;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)registerForIdentifyWithMessageDispatcher:(id)arg1;
 - (void)registerForMessagesWithNewUUID:(id)arg1;
 - (void)remoteAccessEnabled:(BOOL)arg1;
@@ -180,12 +178,12 @@
 - (void)setWorkQueue:(id)arg1;
 - (BOOL)supportsGroupedRequests;
 - (BOOL)unblockPending;
-- (void)unblockWithIdentifier:(id)arg1 withCompletion:(id)arg2;
+- (void)unblockWithIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)uniqueIdentifier;
 - (void)updateReachability:(BOOL)arg1;
 - (void)updateRoom:(id)arg1;
 - (id)uuid;
 - (id)workQueue;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

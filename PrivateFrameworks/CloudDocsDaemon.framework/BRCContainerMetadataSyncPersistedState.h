@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, CKServerChangeToken, NSDate;
-
 @interface BRCContainerMetadataSyncPersistedState : NSObject <NSSecureCoding> {
     NSDate *_lastSyncDate;
     CKServerChangeToken *_serverChangeToken;
     BRCAccountSession *_session;
 }
 
-@property(retain) NSDate * lastSyncDate;
-@property(retain) CKServerChangeToken * serverChangeToken;
+@property (retain) NSDate *lastSyncDate;
+@property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
 
 + (id)loadFromClientStateInSession:(id)arg1;
 + (BOOL)supportsSecureCoding;

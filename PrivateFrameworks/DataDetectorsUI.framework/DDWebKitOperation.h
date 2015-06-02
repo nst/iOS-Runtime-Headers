@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class DOMNode, WebFrame;
-
 @interface DDWebKitOperation : DDOperation {
     DOMNode *_endNode;
     int _endOffset;
@@ -11,10 +9,10 @@
     int _startOffset;
 }
 
-@property(retain) WebFrame * container;
-@property(retain) DOMNode * endNode;
+@property (nonatomic, retain) WebFrame *container;
+@property (nonatomic, retain) DOMNode *endNode;
 @property int endOffset;
-@property(retain) DOMNode * startNode;
+@property (nonatomic, retain) DOMNode *startNode;
 @property int startOffset;
 
 - (void)_applyContainerRestrictionsToTypes;
@@ -24,7 +22,7 @@
 - (void)_updateGenerationNumber;
 - (void)cleanup;
 - (BOOL)containerIsReady;
-- (void)dispatchContainerModificationBlock:(id)arg1;
+- (void)dispatchContainerModificationBlock:(id /* block */)arg1;
 - (BOOL)doURLificationOnDocument;
 - (id)endNode;
 - (int)endOffset;

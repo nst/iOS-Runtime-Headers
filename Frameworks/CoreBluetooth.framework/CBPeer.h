@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSUUID;
-
 @interface CBPeer : NSObject <NSCopying> {
     struct __CFUUID { } *_UUID;
     int _hostState;
@@ -13,12 +11,12 @@
     int _pairingState;
 }
 
-@property(readonly) struct __CFUUID { }* UUID;
-@property int hostState;
-@property(readonly) NSUUID * identifier;
-@property BOOL isLinkEncrypted;
-@property unsigned int mtuLength;
-@property int pairingState;
+@property (nonatomic, readonly) struct __CFUUID { }*UUID;
+@property (nonatomic) int hostState;
+@property (nonatomic, readonly) NSUUID *identifier;
+@property (nonatomic) BOOL isLinkEncrypted;
+@property (nonatomic) unsigned int mtuLength;
+@property (nonatomic) int pairingState;
 
 - (struct __CFUUID { }*)UUID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

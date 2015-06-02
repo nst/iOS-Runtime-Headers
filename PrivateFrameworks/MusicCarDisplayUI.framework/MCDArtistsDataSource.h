@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDArtistsDataSource : MCDQueryDataSource {
-}
+@interface MCDArtistsDataSource : MCDQueryDataSource
 
 - (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
 

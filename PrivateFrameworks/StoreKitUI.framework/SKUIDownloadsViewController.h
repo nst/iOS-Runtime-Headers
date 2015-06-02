@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSCache, NSMutableDictionary, NSString, SKUIIPadDownloadsViewController, SKUIIPhoneDownloadsViewController, SKUIImageDataConsumer, SSDownloadManager, UIImage;
-
 @interface SKUIDownloadsViewController : SKUIViewController <SKUIDownloadsChildViewControllerDelegate, SSDownloadManagerObserver> {
     SKUIImageDataConsumer *_consumer;
     SSDownloadManager *_downloadManager;
@@ -15,10 +13,10 @@
     UIImage *_nullImage;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (int)_sizeClassForSize:(struct CGSize { float x1; float x2; })arg1;
 

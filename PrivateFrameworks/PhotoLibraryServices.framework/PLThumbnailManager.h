@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLThumbPersistenceManager>, NSArray, NSDictionary, NSIndexSet, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, PLLargeImageLoader, PLPhotoLibrary;
-
 @interface PLThumbnailManager : NSObject {
     NSMutableArray *_alreadyFailedAssetObjectIDsForRebuild;
     NSArray *_changedPhotos;
@@ -25,9 +23,9 @@
     struct _FigCascadeContext { } *_unicornContextPortrait;
 }
 
-@property(retain) id observerToken;
-@property PLPhotoLibrary * photoLibrary;
-@property(retain,readonly) NSMutableDictionary * thumbManagersByFormat;
+@property (nonatomic, retain) id observerToken;
+@property (nonatomic) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly, retain) NSMutableDictionary *thumbManagersByFormat;
 
 + (id)_allPossibleThumbnailFormats;
 + (void)addRebuildThumbnailsRequest;
@@ -67,7 +65,7 @@
 - (id)_tableDescriptions;
 - (id)_thumbManagerForFormat:(int*)arg1;
 - (void)_unicorn_setThumbnailsForPhoto:(id)arg1 withImage:(id)arg2;
-- (void)assetsdImageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg5 networkAccessAllowed:(BOOL)arg6 networkAccessForced:(BOOL)arg7 trackCPLDownload:(BOOL)arg8 completion:(id)arg9;
+- (void)assetsdImageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg5 networkAccessAllowed:(BOOL)arg6 networkAccessForced:(BOOL)arg7 trackCPLDownload:(BOOL)arg8 completion:(id /* block */)arg9;
 - (id)beginThumbnailSafePropertyUpdatesOnAsset:(id)arg1;
 - (void)clearPhotoLibrary;
 - (id)compactImageTables;
@@ -76,7 +74,7 @@
 - (void)dealloc;
 - (void)deleteThumbnailsWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
-- (void)imageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 networkAccessAllowed:(BOOL)arg5 networkAccessForced:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 completion:(id)arg8 sync:(BOOL)arg9;
+- (void)imageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 networkAccessAllowed:(BOOL)arg5 networkAccessForced:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 completion:(id /* block */)arg8 sync:(BOOL)arg9;
 - (id)initWithWeakPhotoLibrary:(id)arg1;
 - (id)newImageDataForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 networkAccessAllowed:(BOOL)arg5 networkAccessForced:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 outImageDataInfo:(id*)arg8 outCPLDownloadContext:(id*)arg9;
 - (id)newImageForPhoto:(id)arg1 withFormat:(int)arg2 allowPlaceholder:(BOOL)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 networkAccessAllowed:(BOOL)arg5 networkAccessForced:(BOOL)arg6 trackCPLDownload:(BOOL)arg7 outImageProperties:(const struct __CFDictionary {}**)arg8 outImageDataInfo:(id*)arg9 outCPLDownloadContext:(id*)arg10;

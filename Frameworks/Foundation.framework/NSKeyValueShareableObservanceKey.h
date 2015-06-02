@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSKeyValueShareableObservanceKey : NSKeyValueObservance {
-}
+@interface NSKeyValueShareableObservanceKey : NSKeyValueObservance
 
 @end

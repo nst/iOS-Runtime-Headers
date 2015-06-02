@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@interface MSASDaemonModel : MSASModelBase {
-}
+@interface MSASDaemonModel : MSASModelBase
 
 + (id)defaultModel;
 

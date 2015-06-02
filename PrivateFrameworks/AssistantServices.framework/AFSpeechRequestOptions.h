@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSNumber, NSString;
-
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding> {
     BOOL _acousticIdEnabled;
     int _activationEvent;
@@ -20,19 +18,19 @@
     BOOL _useStreamingDictation;
 }
 
-@property BOOL acousticIdEnabled;
-@property int activationEvent;
-@property double activationEventTime;
-@property int audioFileType;
-@property(copy) NSString * btDeviceAddress;
-@property double expectedActivationEventTime;
-@property(copy) NSNumber * homeButtonUpFromBeep;
-@property BOOL isEyesFree;
-@property BOOL isInitialBringUp;
-@property(copy) NSString * serverCommandId;
-@property BOOL useAutomaticEndpointing;
-@property BOOL useBorealisBuffer;
-@property BOOL useStreamingDictation;
+@property (nonatomic) BOOL acousticIdEnabled;
+@property (nonatomic) int activationEvent;
+@property (nonatomic) double activationEventTime;
+@property (nonatomic) int audioFileType;
+@property (nonatomic, copy) NSString *btDeviceAddress;
+@property (nonatomic) double expectedActivationEventTime;
+@property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
+@property (nonatomic) BOOL isEyesFree;
+@property (nonatomic) BOOL isInitialBringUp;
+@property (nonatomic, copy) NSString *serverCommandId;
+@property (nonatomic) BOOL useAutomaticEndpointing;
+@property (nonatomic) BOOL useBorealisBuffer;
+@property (nonatomic) BOOL useStreamingDictation;
 
 + (BOOL)supportsSecureCoding;
 

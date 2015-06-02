@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, TSDMutableReflection, TSDReflection, TSDShadow;
-
 @interface TSDStyledRep : TSDRep {
     TSDMutableReflection *mDynamicReflection;
     TSDShadow *mDynamicShadow;
@@ -20,11 +18,11 @@
     CALayer *mShadowLayer;
 }
 
-@property(readonly) float opacity;
-@property(readonly) TSDReflection * reflection;
-@property(readonly) CALayer * reflectionLayer;
-@property(readonly) TSDShadow * shadow;
-@property(readonly) CALayer * shadowLayer;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) TSDReflection *reflection;
+@property (nonatomic, readonly) CALayer *reflectionLayer;
+@property (nonatomic, readonly) TSDShadow *shadow;
+@property (nonatomic, readonly) CALayer *shadowLayer;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)calculateTextureClipBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 andOffset:(struct CGPoint { float x1; float x2; }*)arg2 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 andRectOnCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4 textureContext:(id)arg5 isUsingImageTexture:(BOOL)arg6;
@@ -41,7 +39,7 @@
 - (void)drawInContextWithoutEffectsOrChildren:(struct CGContext { }*)arg1;
 - (void)drawInContextWithoutEffectsOrChildrenForAlphaOnly:(struct CGContext { }*)arg1;
 - (void)drawReflectionInContext:(struct CGContext { }*)arg1 drawChildren:(BOOL)arg2;
-- (void)drawReflectionInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id)arg5;
+- (void)drawReflectionInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id /* block */)arg5;
 - (void)drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 drawChildren:(BOOL)arg4;
 - (void)drawShadowInContext:(struct CGContext { }*)arg1 withChildren:(BOOL)arg2 withDrawableOpacity:(BOOL)arg3;
 - (BOOL)isInvisible;
@@ -51,8 +49,8 @@
 - (float)opacity;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_clipRectInRootForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 includeShadow:(BOOL)arg2 includeReflection:(BOOL)arg3;
 - (void)p_drawReflectionInContext:(struct CGContext { }*)arg1;
-- (void)p_drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id)arg5;
-- (struct CGImage { }*)p_newReflectionImageWithSize:(struct CGSize { float x1; float x2; })arg1 applyOpacity:(BOOL)arg2 viewScale:(float)arg3 withBlock:(id)arg4;
+- (void)p_drawReflectionIntoReflectionFrameInContext:(struct CGContext { }*)arg1 withTransparencyLayer:(BOOL)arg2 applyingOpacity:(BOOL)arg3 shouldClipGradient:(BOOL)arg4 withBlock:(id /* block */)arg5;
+- (struct CGImage { }*)p_newReflectionImageWithSize:(struct CGSize { float x1; float x2; })arg1 applyOpacity:(BOOL)arg2 viewScale:(float)arg3 withBlock:(id /* block */)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_rectWithEffectsAppliedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 additionalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 includeShadow:(BOOL)arg3 includeReflection:(BOOL)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectWithEffectsAppliedToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)reflection;

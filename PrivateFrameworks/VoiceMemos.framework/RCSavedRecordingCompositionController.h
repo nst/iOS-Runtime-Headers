@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSURL;
-
 @interface RCSavedRecordingCompositionController : RCCompositionController {
     NSURL *_savedRecordingURI;
 }
 
-@property(readonly) NSURL * savedRecordingURI;
+@property (nonatomic, readonly) NSURL *savedRecordingURI;
 
 + (id)compositionControllerForCreatingSavedRecording;
 + (id)compositionControllerForExistingSavedRecordingURI:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)activeRecordingSessionWillFinish;
-- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(BOOL)arg3 isOverdub:(BOOL)arg4 sessionPreparedBlock:(id)arg5 sessionFinishedBlock:(id)arg6;
+- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(BOOL)arg3 isOverdub:(BOOL)arg4 sessionPreparedBlock:(id /* block */)arg5 sessionFinishedBlock:(id /* block */)arg6;
 - (void)deleteCompositionFromFileSystemAndDatabase;
 - (id)initWithComposition:(id)arg1;
 - (id)initWithExistingSavedRecordingURI:(id)arg1;
-- (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(id)arg2;
-- (void)performCompositionUndoWithCompletionBlock:(id)arg1;
+- (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)performCompositionUndoWithCompletionBlock:(id /* block */)arg1;
 - (id)savedRecordingURI;
 - (void)setComposition:(id)arg1;
 

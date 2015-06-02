@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLGoogleWebAuthIdentity : NSObject {
     NSString *_displayName;
     NSString *_refreshToken;
@@ -12,11 +10,11 @@
     NSString *_youTubeUsername;
 }
 
-@property(copy) NSString * displayName;
-@property(copy) NSString * refreshToken;
-@property(copy) NSString * token;
-@property(copy) NSString * username;
-@property(copy) NSString * youTubeUsername;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy) NSString *refreshToken;
+@property (nonatomic, copy) NSString *token;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic, copy) NSString *youTubeUsername;
 
 - (void).cxx_destruct;
 - (id)displayName;

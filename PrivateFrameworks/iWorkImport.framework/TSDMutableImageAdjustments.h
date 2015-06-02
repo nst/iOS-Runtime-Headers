@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableImageAdjustments : TSDImageAdjustments {
-}
+@interface TSDMutableImageAdjustments : TSDImageAdjustments
 
-@property float bottomLevel;
-@property float contrast;
-@property float denoise;
-@property BOOL enhance;
-@property float exposure;
-@property float gamma;
-@property float highlights;
-@property BOOL representsSageAdjustments;
-@property float saturation;
-@property float shadows;
-@property float sharpness;
-@property float temperature;
-@property float tint;
-@property float topLevel;
+@property (nonatomic) float bottomLevel;
+@property (nonatomic) float contrast;
+@property (nonatomic) float denoise;
+@property (nonatomic) BOOL enhance;
+@property (nonatomic) float exposure;
+@property (nonatomic) float gamma;
+@property (nonatomic) float highlights;
+@property (nonatomic) BOOL representsSageAdjustments;
+@property (nonatomic) float saturation;
+@property (nonatomic) float shadows;
+@property (nonatomic) float sharpness;
+@property (nonatomic) float temperature;
+@property (nonatomic) float tint;
+@property (nonatomic) float topLevel;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setBottomLevel:(float)arg1;

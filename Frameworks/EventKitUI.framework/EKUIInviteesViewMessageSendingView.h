@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIView;
-
 @interface EKUIInviteesViewMessageSendingView : UIView {
     UIView *_composeView;
 }
 
-@property(retain) UIView * composeView;
+@property (nonatomic, retain) UIView *composeView;
 
 - (void).cxx_destruct;
 - (id)composeView;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSEntityDescription;
-
 @interface NSTemporaryObjectID : NSManagedObjectID {
     int _cd_rc;
     int _counter;

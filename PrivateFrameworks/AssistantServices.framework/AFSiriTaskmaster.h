@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFSiriTaskDelivering>, <AFSiriTaskmasterDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
-
 @interface AFSiriTaskmaster : NSObject <AFSiriRequestHandling, AFSiriUsageResultHandling, NSXPCListenerDelegate> {
     <AFSiriTaskmasterDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -12,11 +10,11 @@
     NSXPCListener *_usageResultListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AFSiriTaskmasterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AFSiriTaskmasterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)taskmasterForMachServiceForAppWithBundleIdentifier:(id)arg1;
 + (id)taskmasterForMachServiceWithName:(id)arg1;
@@ -26,7 +24,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)handleSiriRequest:(id)arg1 deliveryHandler:(id)arg2 completionHandler:(id)arg3;
+- (void)handleSiriRequest:(id)arg1 deliveryHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)handleSiriTaskUsageResult:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithTaskDeliverer:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDConnectionLinePathSource : TSDBezierPathSource <TSDSmartPathSource> {
     float mOutsetFrom;
     float mOutsetTo;
     int mType;
 }
 
-@property float outsetFrom;
-@property float outsetTo;
-@property int type;
+@property (nonatomic) float outsetFrom;
+@property (nonatomic) float outsetTo;
+@property (nonatomic) int type;
 
 + (id)pathSourceAtAngleOfSize:(struct CGSize { float x1; float x2; })arg1 forType:(int)arg2;
 + (id)pathSourceOfLength:(float)arg1;

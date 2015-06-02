@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class ACAccount, NSString, SSAccount;
-
 @interface AAUIMyPhotoRequest : AARequest {
     ACAccount *_account;
     SSAccount *_iTunesAccount;
     NSString *_serverCacheTag;
 }
 
-@property(setter=setiTunesAccount:,retain) SSAccount * iTunesAccount;
-@property(copy) NSString * serverCacheTag;
+@property (setter=setiTunesAccount:, nonatomic, retain) SSAccount *iTunesAccount;
+@property (nonatomic, copy) NSString *serverCacheTag;
 
 + (Class)responseClass;
 

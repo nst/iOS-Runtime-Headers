@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface _UIToolbarAppearanceStorage : _UIBarAppearanceStorage {
     UIImage *_backgroundImage;
     UIImage *_miniBackgroundImage;
@@ -14,13 +12,13 @@
     UIImage *topShadowImage;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property BOOL hidesShadow;
-@property(retain) UIImage * miniBackgroundImage;
-@property(retain) UIImage * miniTopBackgroundImage;
-@property(retain) UIImage * shadowImage;
-@property(retain) UIImage * topBackgroundImage;
-@property(retain) UIImage * topShadowImage;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic) BOOL hidesShadow;
+@property (nonatomic, retain) UIImage *miniBackgroundImage;
+@property (nonatomic, retain) UIImage *miniTopBackgroundImage;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (nonatomic, retain) UIImage *topBackgroundImage;
+@property (nonatomic, retain) UIImage *topShadowImage;
 
 + (int)typicalBarPosition;
 

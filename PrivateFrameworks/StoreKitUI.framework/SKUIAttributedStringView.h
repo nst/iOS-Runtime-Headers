@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, SKUIAttributedStringLayout, UIColor;
-
 @interface SKUIAttributedStringView : UIView {
     float _calculatedTopInset;
     int _firstLineTopInset;
@@ -14,14 +12,14 @@
     UIColor *_treatmentColor;
 }
 
-@property(readonly) float baselineOffset;
-@property(readonly) float firstBaselineOffset;
-@property int firstLineTopInset;
-@property(retain) SKUIAttributedStringLayout * layout;
-@property(copy) NSArray * requiredBadges;
-@property int stringTreatment;
-@property(retain) UIColor * textColor;
-@property(retain) UIColor * treatmentColor;
+@property (nonatomic, readonly) float baselineOffset;
+@property (nonatomic, readonly) float firstBaselineOffset;
+@property (nonatomic) int firstLineTopInset;
+@property (nonatomic, retain) SKUIAttributedStringLayout *layout;
+@property (nonatomic, copy) NSArray *requiredBadges;
+@property (nonatomic) int stringTreatment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) UIColor *treatmentColor;
 
 + (struct CGSize { float x1; float x2; })sizeWithLayout:(id)arg1 treatment:(int)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray, NSDate, NSMutableArray, NSTimer;
-
 @interface WorldClockManager : NSObject {
     NSMutableArray *_cities;
     BOOL _dirty;
@@ -11,8 +9,8 @@
     NSDate *lastModified;
 }
 
-@property(retain,readonly) NSArray * cities;
-@property(retain) NSDate * lastModified;
+@property (nonatomic, readonly, retain) NSArray *cities;
+@property (nonatomic, retain) NSDate *lastModified;
 
 + (id)sharedManager;
 
@@ -34,8 +32,8 @@
 - (void)removeCityAtIndex:(unsigned int)arg1;
 - (void)saveCities;
 - (void)setLastModified:(id)arg1;
-- (void)updateWeatherDataForCities:(id)arg1 withCompletion:(id)arg2;
-- (void)updateWeatherDataWithCompletion:(id)arg1;
+- (void)updateWeatherDataForCities:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)updateWeatherDataWithCompletion:(id /* block */)arg1;
 - (id)weatherReachabilityURL;
 - (id)worldClockCityFromPersistenceArray:(id)arg1;
 - (id)worldClockCityFromPersistenceDictionary:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDFaceTimeCallRelayUpdateSent : PBCodable <NSCopying> {
     int _errorCode;
     NSString *_guid;
@@ -20,18 +18,18 @@
     unsigned long long _timestamp;
 }
 
-@property int errorCode;
-@property(retain) NSString * guid;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsVideo;
-@property BOOL hasOnLockScreen;
-@property BOOL hasSendDuration;
-@property BOOL hasTimestamp;
-@property unsigned int isVideo;
-@property unsigned int onLockScreen;
-@property unsigned int sendDuration;
-@property unsigned long long timestamp;
+@property (nonatomic) int errorCode;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsVideo;
+@property (nonatomic) BOOL hasOnLockScreen;
+@property (nonatomic) BOOL hasSendDuration;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isVideo;
+@property (nonatomic) unsigned int onLockScreen;
+@property (nonatomic) unsigned int sendDuration;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

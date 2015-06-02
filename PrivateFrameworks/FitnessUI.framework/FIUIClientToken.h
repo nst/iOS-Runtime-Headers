@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSUUID;
-
 @interface FIUIClientToken : NSObject <NSCopying> {
     NSUUID *_UUID;
 }

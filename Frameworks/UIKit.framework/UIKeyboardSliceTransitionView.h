@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, NSMutableDictionary, UIKBCacheToken;
-
 @interface UIKeyboardSliceTransitionView : UIKeyboardSplitTransitionView {
     NSMutableDictionary *_controlKeys;
     struct CGImage { } *_defaultKeyplaneImage;

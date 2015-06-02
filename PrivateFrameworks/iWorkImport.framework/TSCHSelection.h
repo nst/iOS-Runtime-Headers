@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSSet, TSCHChartDrawableInfo, TSCHSelectionPath, TSCHSelectionPathType;
-
 @interface TSCHSelection : TSKSelection {
     TSCHChartDrawableInfo *mInfo;
     NSArray *mPaths;
 }
 
-@property(retain,readonly) TSCHChartDrawableInfo * chartInfo;
-@property(copy,readonly) TSCHSelectionPath * firstPath;
-@property(readonly) unsigned int pathCount;
-@property(copy,readonly) TSCHSelectionPathType * pathType;
-@property(copy,readonly) NSSet * pathTypes;
-@property(copy,readonly) NSArray * paths;
-@property(readonly) BOOL returnChartFrameForAutoscroll;
+@property (nonatomic, readonly, retain) TSCHChartDrawableInfo *chartInfo;
+@property (nonatomic, readonly, copy) TSCHSelectionPath *firstPath;
+@property (nonatomic, readonly) unsigned int pathCount;
+@property (nonatomic, readonly, copy) TSCHSelectionPathType *pathType;
+@property (nonatomic, readonly, copy) NSSet *pathTypes;
+@property (nonatomic, readonly, copy) NSArray *paths;
+@property (nonatomic, readonly) BOOL returnChartFrameForAutoscroll;
 
 + (Class)archivedSelectionClass;
 + (id)emptySelectionWithChartInfo:(id)arg1;

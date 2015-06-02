@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPInterfaceMapView : SPInterfaceObject {
-}
+@interface SPInterfaceMapView : SPInterfaceObject
 
 - (void)setCurrentLocation;
 - (void)setEnabled:(BOOL)arg1;

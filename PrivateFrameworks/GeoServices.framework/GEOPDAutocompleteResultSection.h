@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDAutocompleteResultSection : PBCodable <NSCopying> {
     NSMutableArray *_entries;
     struct { 
@@ -13,11 +11,11 @@
     int _type;
 }
 
-@property(retain) NSMutableArray * entries;
-@property(readonly) BOOL hasName;
-@property BOOL hasType;
-@property(retain) NSString * name;
-@property int type;
+@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int type;
 
 - (void)addEntries:(id)arg1;
 - (void)clearEntries;

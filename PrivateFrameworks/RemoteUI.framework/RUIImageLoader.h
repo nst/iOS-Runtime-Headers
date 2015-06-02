@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNotificationCenter, NSTimer;
-
 @interface RUIImageLoader : NSObject {
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;

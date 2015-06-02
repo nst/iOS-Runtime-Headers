@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendarItem, EKStructuredLocation, EKUIConferenceRoom, EKUILocationSearchModel, NSString, UISearchBar, UITableView, _UINavigationControllerPalette;
-
 @interface EKLocationEditItemViewController : EKEditItemViewController <EKUILocationSearchModelDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     EKCalendarItem *_calendarItem;
     BOOL _needsSave;
@@ -22,15 +20,15 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL needsSave;
-@property BOOL onlyDisplayMapLocations;
-@property(retain) EKUIConferenceRoom * selectedConferenceRoom;
-@property(retain) EKStructuredLocation * selectedLocation;
-@property(retain) EKStructuredLocation * structuredLocation;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL needsSave;
+@property (nonatomic) BOOL onlyDisplayMapLocations;
+@property (nonatomic, retain) EKUIConferenceRoom *selectedConferenceRoom;
+@property (nonatomic, retain) EKStructuredLocation *selectedLocation;
+@property (nonatomic, retain) EKStructuredLocation *structuredLocation;
+@property (readonly) Class superclass;
 
 + (id)_sectionNameForSection:(unsigned int)arg1;
 

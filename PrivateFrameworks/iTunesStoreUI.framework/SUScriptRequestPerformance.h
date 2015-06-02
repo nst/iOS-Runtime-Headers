@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLRequestPerformance, NSString;
-
 @interface SUScriptRequestPerformance : SUScriptObject {
     ISURLRequestPerformance *_performance;
 }
 
-@property(readonly) NSString * JSONHeaders;
-@property(readonly) double finishInterval;
-@property(readonly) double receivedResponseInterval;
-@property(readonly) double renderBeginInterval;
-@property(readonly) double renderEndInterval;
+@property (readonly) NSString *JSONHeaders;
+@property (readonly) double finishInterval;
+@property (readonly) double receivedResponseInterval;
+@property (readonly) double renderBeginInterval;
+@property (readonly) double renderEndInterval;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

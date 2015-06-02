@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface TLAccessQueue : NSObject {
     NSString *_label;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSString *_threadLocalStorageKey;
 }
 
-@property(setter=_setSerialQueue:) NSObject<OS_dispatch_queue> * _serialQueue;
-@property(setter=_setThreadLocalStorageKey:,copy) NSString * _threadLocalStorageKey;
-@property(copy) NSString * label;
+@property (setter=_setSerialQueue:, nonatomic) NSObject<OS_dispatch_queue> *_serialQueue;
+@property (setter=_setThreadLocalStorageKey:, nonatomic, copy) NSString *_threadLocalStorageKey;
+@property (nonatomic, copy) NSString *label;
 
-- (void)_performSynchronousBlockInSerialQueue:(id)arg1;
+- (void)_performSynchronousBlockInSerialQueue:(id /* block */)arg1;
 - (id)_serialQueue;
 - (void)_setLabel:(id)arg1;
 - (void)_setSerialQueue:(id)arg1;
@@ -23,7 +21,7 @@
 - (void)dealloc;
 - (id)initWithLabel:(id)arg1 appendUUIDToLabel:(BOOL)arg2;
 - (id)label;
-- (void)performAsynchronousBlock:(id)arg1;
-- (void)performSynchronousBlock:(id)arg1;
+- (void)performAsynchronousBlock:(id /* block */)arg1;
+- (void)performSynchronousBlock:(id /* block */)arg1;
 
 @end

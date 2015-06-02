@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSMutableOrderedSet, NSString;
-
 @interface _NSNotifyingWrapperMutableOrderedSet : NSMutableOrderedSet {
     NSManagedObject *_container;
     NSString *_key;
@@ -20,26 +18,26 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateObjectsUsingBlock:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (id)firstObject;
 - (void)getObjects:(id*)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id)arg4;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (unsigned int)indexOfObjectPassingTest:(id)arg1;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)indexesOfObjectsPassingTest:(id)arg1;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (unsigned int)indexOfObject:(id)arg1 inSortedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingComparator:(id /* block */)arg4;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (unsigned int)indexOfObjectPassingTest:(id /* block */)arg1;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (id)indexesOfObjectsPassingTest:(id /* block */)arg1;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableOrderedSet:(id)arg3;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
@@ -73,11 +71,11 @@
 - (id)set;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
-- (void)sortUsingComparator:(id)arg1;
-- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
-- (id)sortedArrayUsingComparator:(id)arg1;
-- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id /* block */)arg3;
+- (void)sortUsingComparator:(id /* block */)arg1;
+- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
+- (id)sortedArrayUsingComparator:(id /* block */)arg1;
+- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
 - (void)unionOrderedSet:(id)arg1;
 - (void)unionSet:(id)arg1;
 - (id)valueForKey:(id)arg1;

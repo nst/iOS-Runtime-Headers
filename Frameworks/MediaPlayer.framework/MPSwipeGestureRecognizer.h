@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UITouch;
-
 @interface MPSwipeGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 
@@ -14,7 +12,7 @@
     UITouch *_trackingTouch;
 }
 
-@property(readonly) int swipeDirection;
+@property (nonatomic, readonly) int swipeDirection;
 
 - (void).cxx_destruct;
 - (void)dealloc;

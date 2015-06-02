@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSNumber, NSString, NSTimer;
-
 @interface IMDMessageStore : NSObject {
     NSNumber *_cachedLastFailedMessageID;
     NSNumber *_cachedUnreadMessageCount;
@@ -13,18 +11,18 @@
     NSTimer *_suppressedUpdatesTimer;
 }
 
-@property(retain) NSString * modificationStamp;
+@property (retain) NSString *modificationStamp;
 
 + (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3;
 + (id)sharedInstance;
 
 - (void)__postDBUpdate;
-- (void)_deleteMessagesWithGUIDs:(id)arg1 chatIdentifiers:(id)arg2 style:(unsigned char)arg3 onServices:(id)arg4 batchNumber:(unsigned int)arg5 completion:(id)arg6;
+- (void)_deleteMessagesWithGUIDs:(id)arg1 chatIdentifiers:(id)arg2 style:(unsigned char)arg3 onServices:(id)arg4 batchNumber:(unsigned int)arg5 completion:(id /* block */)arg6;
 - (BOOL)_hasMessagesWithGUIDs:(id)arg1;
 - (id)_itemsWithGUIDs:(id)arg1;
 - (id)_messagesWithHandles:(id)arg1 onServices:(id)arg2 messageGUID:(id)arg3 limit:(unsigned int)arg4 onlyMessages:(BOOL)arg5;
 - (id)_messagesWithRoomNames:(id)arg1 onServices:(id)arg2 messageGUID:(id)arg3 limit:(unsigned int)arg4 onlyMessages:(BOOL)arg5;
-- (void)_performBlock:(id)arg1 afterDelay:(double)arg2;
+- (void)_performBlock:(id /* block */)arg1 afterDelay:(double)arg2;
 - (void)_postDBUpdate;
 - (void)_storeAttachmentsForMessage:(id)arg1;
 - (void)_suppressDBUpdateTimerFired;
@@ -44,7 +42,7 @@
 - (id)deleteMessageGUIDs:(id)arg1;
 - (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;
 - (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3;
-- (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3 completion:(id)arg4;
+- (id)deleteMessagesWithChatIdentifiers:(id)arg1 style:(unsigned char)arg2 onServices:(id)arg3 completion:(id /* block */)arg4;
 - (id)deleteMessagesWithReplaceMessageID:(int)arg1 fromHandle:(id)arg2 onService:(id)arg3;
 - (id)existingMessageSimilarToMessage:(id)arg1 skipServices:(id)arg2 skipGUIDs:(id)arg3 withinTimeInterval:(double)arg4 participants:(id)arg5;
 - (id)frequentRepliesForForChatIdentifiers:(id)arg1 onServices:(id)arg2 limit:(unsigned int)arg3;
@@ -74,7 +72,7 @@
 - (void)rebuildLastFailedMessageID;
 - (void)rebuildUnreadMessageCount;
 - (void)registerTransfersWithGUIDs:(id)arg1 forMessageGUID:(id)arg2;
-- (void)resolveUnformattedRepresentationsForHandles:(id)arg1 onService:(id)arg2 message:(id)arg3 completionBlock:(id)arg4;
+- (void)resolveUnformattedRepresentationsForHandles:(id)arg1 onService:(id)arg2 message:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)setModificationStamp:(id)arg1;
 - (void)setSuppressDatabaseUpdates:(BOOL)arg1;
 - (id)storeItem:(id)arg1 forceReplace:(BOOL)arg2;

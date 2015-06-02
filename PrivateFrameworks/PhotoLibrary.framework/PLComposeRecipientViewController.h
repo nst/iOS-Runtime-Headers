@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLComposeRecipientViewControllerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSNumber, NSString, PLComposeRecipientView, UIPopoverController, UIScrollView, UITableView;
-
 @interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSNumber *_currentSearchTaskID;
     <PLComposeRecipientViewControllerDelegate> *_delegate;
@@ -36,13 +34,13 @@
     MFSearchShadowView *_shadowView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PLComposeRecipientViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int maxExpandRows;
-@property(readonly) PLComposeRecipientView * recipientView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLComposeRecipientViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maxExpandRows;
+@property (nonatomic, readonly) PLComposeRecipientView *recipientView;
+@property (readonly) Class superclass;
 
 + (void)recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;
 
@@ -58,7 +56,7 @@
 - (BOOL)_searchResultsShowInPopover;
 - (void)_setSearchResults:(id)arg1;
 - (void)_updateSearchResultsTableVisibility;
-- (void)_updateViewsLayoutAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)_updateViewsLayoutAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)beganNetworkActivity;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;

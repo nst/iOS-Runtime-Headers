@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray;
-
 @interface UIKeyboardCandidateBarLayout : UICollectionViewLayout {
     NSMutableArray *_allAttributes;
     struct CGSize { 
@@ -13,8 +11,8 @@
     NSArray *_edgeDummyCellAttributes;
 }
 
-@property(retain) NSMutableArray * allAttributes;
-@property(retain) NSArray * edgeDummyCellAttributes;
+@property (nonatomic, retain) NSMutableArray *allAttributes;
+@property (nonatomic, retain) NSArray *edgeDummyCellAttributes;
 
 + (id)dummyCellCollectionViewKind;
 + (id)layout;

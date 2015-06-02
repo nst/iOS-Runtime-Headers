@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPowerAssertion : NSObject {
     unsigned int _assertion;
     NSString *_identifier;

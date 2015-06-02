@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <MSServerSideConfigProtocolDelegate>, NSString, NSURL;
-
 @interface MSServerSideConfigProtocol : NSObject {
     NSURL *_configURL;
     struct __MSSSCPCContext { 
@@ -37,8 +30,8 @@
     NSString *_personID;
 }
 
-@property <MSServerSideConfigProtocolDelegate> * delegate;
-@property(readonly) NSString * personID;
+@property (nonatomic) <MSServerSideConfigProtocolDelegate> *delegate;
+@property (nonatomic, readonly) NSString *personID;
 
 - (void).cxx_destruct;
 - (void)_didFailAuthenticationWithError:(id)arg1;

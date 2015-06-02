@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@interface IMServiceAgentImpl : IMServiceAgent {
-}
+@interface IMServiceAgentImpl : IMServiceAgent
 
 + (void)_determineStatusImageAppearance;
 + (void)_statusImageAppearanceChanged:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDMescalSessionURLRequest : CKDURLRequest {
     NSData *_mescalData;
     NSData *_sessionData;
 }
 
-@property(retain) NSData * mescalData;
-@property(retain) NSData * sessionData;
+@property (nonatomic, retain) NSData *mescalData;
+@property (nonatomic, retain) NSData *sessionData;
 
 - (void).cxx_destruct;
 - (BOOL)allowsAnonymousAccount;

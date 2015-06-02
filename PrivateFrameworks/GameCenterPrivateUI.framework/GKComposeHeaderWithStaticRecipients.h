@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSArray;
-
 @interface GKComposeHeaderWithStaticRecipients : GKComposeHeaderField {
     NSArray *_recipientNameStrings;
 }
 
-@property(retain) NSArray * recipientNameStrings;
+@property (nonatomic, retain) NSArray *recipientNameStrings;
 
 - (void)dealloc;
 - (void)layoutSubviews;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CALayer;
-
 @interface PUAvalancheStackView : UIView {
     CALayer *_imageLayer;
     CALayer *_stackLayer0;
     CALayer *_stackLayer1;
 }
 
-@property(retain) CALayer * imageLayer;
-@property(retain) CALayer * stackLayer0;
-@property(retain) CALayer * stackLayer1;
+@property (nonatomic, retain) CALayer *imageLayer;
+@property (nonatomic, retain) CALayer *stackLayer0;
+@property (nonatomic, retain) CALayer *stackLayer1;
 
 - (void).cxx_destruct;
 - (id)imageLayer;

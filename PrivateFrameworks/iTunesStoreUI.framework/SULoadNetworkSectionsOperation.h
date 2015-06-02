@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISStoreURLOperation, NSString, SUClientInterface, SUSectionsResponse;
-
 @interface SULoadNetworkSectionsOperation : ISOperation {
     ISStoreURLOperation *_baseOperation;
     SUClientInterface *_clientInterface;
@@ -11,9 +9,9 @@
     SUSectionsResponse *_sectionsResponse;
 }
 
-@property(retain) ISStoreURLOperation * baseOperation;
-@property(retain) NSString * expectedVersionString;
-@property(readonly) SUSectionsResponse * sectionsResponse;
+@property (retain) ISStoreURLOperation *baseOperation;
+@property (retain) NSString *expectedVersionString;
+@property (readonly) SUSectionsResponse *sectionsResponse;
 
 - (id)_bestItemImageForImages:(id)arg1 withImageKind:(id)arg2;
 - (id)_copyImageWithURL:(id)arg1 scale:(float)arg2 error:(id*)arg3;

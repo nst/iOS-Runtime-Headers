@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCProfile, NSArray, NSDictionary, NSString;
-
 @interface MCPayload : NSObject {
     NSString *_UUID;
     NSString *_displayName;
@@ -17,19 +15,19 @@
     int _version;
 }
 
-@property(retain,readonly) NSString * UUID;
-@property(retain) NSString * displayName;
-@property(retain,readonly) NSString * friendlyName;
-@property(retain,readonly) NSString * identifier;
-@property(retain,readonly) NSArray * installationWarnings;
-@property BOOL mustInstallNonInteractively;
-@property(retain,readonly) NSString * organization;
-@property(retain,readonly) NSString * payloadDescription;
-@property(retain) NSString * persistentResourceID;
-@property(readonly) MCProfile * profile;
-@property(readonly) NSDictionary * restrictions;
-@property(retain,readonly) NSString * type;
-@property(readonly) int version;
+@property (nonatomic, readonly, retain) NSString *UUID;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly, retain) NSString *friendlyName;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, readonly, retain) NSArray *installationWarnings;
+@property (nonatomic) BOOL mustInstallNonInteractively;
+@property (nonatomic, readonly, retain) NSString *organization;
+@property (nonatomic, readonly, retain) NSString *payloadDescription;
+@property (nonatomic, retain) NSString *persistentResourceID;
+@property (nonatomic, readonly) MCProfile *profile;
+@property (nonatomic, readonly) NSDictionary *restrictions;
+@property (nonatomic, readonly, retain) NSString *type;
+@property (nonatomic, readonly) int version;
 
 + (id)badFieldTypeErrorWithField:(id)arg1;
 + (id)badFieldValueErrorWithField:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIButton, UIImage, UIImageView, UILabel;
-
 @interface SKUIRedeemCameraLandingView : UIView {
     UILabel *_bodyLabel;
     UIButton *_button;
@@ -12,9 +10,9 @@
     int _spacingStyle;
 }
 
-@property(readonly) UIButton * button;
-@property(retain) UIImage * image;
-@property int spacingStyle;
+@property (nonatomic, readonly) UIButton *button;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) int spacingStyle;
 
 - (void).cxx_destruct;
 - (id)button;

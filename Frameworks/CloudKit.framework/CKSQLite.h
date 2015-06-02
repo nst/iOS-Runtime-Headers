@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSDateFormatter, NSMutableDictionary, NSString;
-
 @interface CKSQLite : NSObject {
     BOOL _corrupt;
     NSDateFormatter *_dateFormatter;
@@ -18,18 +16,18 @@
     long _userVersion;
 }
 
-@property BOOL corrupt;
-@property(retain) NSDateFormatter * dateFormatter;
-@property struct sqlite3 { }* db;
-@property(readonly) BOOL hasMigrated;
-@property(readonly) BOOL isOpen;
-@property(retain) NSString * objectClassPrefix;
-@property unsigned int openCount;
-@property(readonly) NSString * path;
-@property(readonly) NSString * schema;
-@property(readonly) NSString * schemaVersion;
-@property(readonly) NSMutableDictionary * statementsBySQL;
-@property long userVersion;
+@property (nonatomic) BOOL corrupt;
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (nonatomic) struct sqlite3 { }*db;
+@property (nonatomic, readonly) BOOL hasMigrated;
+@property (nonatomic, readonly) BOOL isOpen;
+@property (nonatomic, retain) NSString *objectClassPrefix;
+@property (nonatomic) unsigned int openCount;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSString *schema;
+@property (nonatomic, readonly) NSString *schemaVersion;
+@property (nonatomic, readonly) NSMutableDictionary *statementsBySQL;
+@property (nonatomic) long userVersion;
 
 - (void).cxx_destruct;
 - (id)_boxedPropertyDictionary:(id)arg1 forObjCClass:(id)arg2;

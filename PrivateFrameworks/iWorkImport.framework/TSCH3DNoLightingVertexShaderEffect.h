@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DNoLightingVertexShaderEffect : TSCH3DBaseVertexShaderEffect {
-}
+@interface TSCH3DNoLightingVertexShaderEffect : TSCH3DBaseVertexShaderEffect
 
 - (void)inject:(id)arg1;
 

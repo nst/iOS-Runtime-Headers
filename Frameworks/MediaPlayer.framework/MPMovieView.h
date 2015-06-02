@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMovieViewDelegate>;
-
 @interface MPMovieView : UIView {
     <MPMovieViewDelegate> *_delegate;
 }
 
-@property <MPMovieViewDelegate> * delegate;
+@property (nonatomic) <MPMovieViewDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

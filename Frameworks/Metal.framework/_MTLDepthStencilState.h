@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString;
-
 @interface _MTLDepthStencilState : NSObject <MTLDepthStencilState> {
     <MTLDevice> *_device;
     NSString *_label;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * label;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) unsigned int hash;
+@property (readonly) NSString *label;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)description;

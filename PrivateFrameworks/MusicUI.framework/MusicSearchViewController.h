@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicSearchViewControllerDelegate>, NSArray, NSMapTable, NSMutableArray, NSOperationQueue, NSString, SKUICircleProgressIndicator, UIButton, UILabel, UITableView, UITapGestureRecognizer, UITraitCollection, UIView;
-
 @interface MusicSearchViewController : UIViewController <MusicSearchTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
     NSMapTable *_calculatedHeightByTableViewRelatedClass;
@@ -24,13 +22,13 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MusicSearchViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * searchTerm;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MusicSearchViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *searchTerm;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

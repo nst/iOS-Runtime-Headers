@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSNumber;
-
 @interface HDMetadataValueResult : NSObject {
     NSNumber *_keyID;
     NSNumber *_objectID;
     id _value;
 }
 
-@property(retain) NSNumber * keyID;
-@property(retain) NSNumber * objectID;
-@property(retain) id value;
+@property (nonatomic, retain) NSNumber *keyID;
+@property (nonatomic, retain) NSNumber *objectID;
+@property (nonatomic, retain) id value;
 
 - (void).cxx_destruct;
 - (id)keyID;

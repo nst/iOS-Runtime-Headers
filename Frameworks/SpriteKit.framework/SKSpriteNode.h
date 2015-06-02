@@ -2,27 +2,25 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKLightNode, SKShader, SKTexture, UIColor;
-
 @interface SKSpriteNode : SKNode {
     SKLightNode *_light;
     BOOL _shouldRepeatTexture;
 }
 
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property int blendMode;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } centerRect;
-@property(retain) UIColor * color;
-@property float colorBlendFactor;
-@property unsigned int lightingBitMask;
-@property(retain) SKTexture * normalTexture;
-@property struct CGSize { float x1; float x2; } repeatTextureSize;
-@property(retain) SKShader * shader;
-@property unsigned int shadowCastBitMask;
-@property unsigned int shadowedBitMask;
-@property BOOL shouldRepeatTexture;
-@property struct CGSize { float x1; float x2; } size;
-@property(retain) SKTexture * texture;
+@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic) int blendMode;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } centerRect;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) float colorBlendFactor;
+@property (nonatomic) unsigned int lightingBitMask;
+@property (nonatomic, retain) SKTexture *normalTexture;
+@property (nonatomic) struct CGSize { float x1; float x2; } repeatTextureSize;
+@property (nonatomic, retain) SKShader *shader;
+@property (nonatomic) unsigned int shadowCastBitMask;
+@property (nonatomic) unsigned int shadowedBitMask;
+@property (nonatomic) BOOL shouldRepeatTexture;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) SKTexture *texture;
 
 + (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;

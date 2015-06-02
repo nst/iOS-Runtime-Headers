@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriViewControllerDataSource>, <AFUISiriViewControllerDelegate>, AFUIRequestOptions, AFUISiriRemoteViewController, AFUISiriSession, AFUISiriView, NSNumber, NSObject<OS_dispatch_queue>, NSString, SiriUIAudioRoutePickerController, UIStatusBar;
-
 @interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
     BOOL _active;
     BOOL _attemptingRemoteViewControllerPresentation;
@@ -31,37 +29,37 @@
     int _vtEnabledCount;
 }
 
-@property(getter=_currentRequestOptions,setter=_setCurrentRequestOptions:,copy) AFUIRequestOptions * currentRequestOptions;
-@property <AFUISiriViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <AFUISiriViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEyesFree) BOOL eyesFree;
-@property(getter=_hasCalledBeginAppearanceTransition,setter=_setHasCalledBeginAppearanceTransition:) BOOL hasCalledBeginAppearanceTransition;
-@property(getter=_hasCalledEndAppearanceTransition,setter=_setHasCalledEndAppearanceTransition:) BOOL hasCalledEndAppearanceTransition;
-@property(readonly) BOOL hasScreenSnapshot;
-@property(readonly) unsigned int hash;
-@property(getter=_isInHoldToTalkMode,setter=_setInHoldToTalkMode:) BOOL inHoldToTalkMode;
-@property BOOL isStark;
-@property BOOL mapsGatekeeperEnabled;
-@property(getter=_recordingStartedTimeValue,setter=_setRecordingStartedTimeValue:,retain) NSNumber * recordingStartedTimeValue;
-@property(getter=_remoteViewController,readonly) AFUISiriRemoteViewController * remoteViewController;
-@property(getter=_remoteViewControllerDispatchQueue,readonly) NSObject<OS_dispatch_queue> * remoteViewControllerDispatchQueue;
-@property(retain) SiriUIAudioRoutePickerController * routePickerController;
-@property(getter=_session,readonly) AFUISiriSession * session;
-@property BOOL showsStatusBar;
-@property(getter=_statusBar,setter=_setStatusBar:,retain) UIStatusBar * statusBar;
-@property BOOL statusBarEnabled;
-@property(readonly) Class superclass;
-@property(retain) AFUISiriView * view;
-@property(getter=_viewDidAppearTime,setter=_setViewDidAppearTime:) double viewDidAppearTime;
-@property(getter=isVisible) BOOL visible;
+@property (getter=_currentRequestOptions, setter=_setCurrentRequestOptions:, nonatomic, copy) AFUIRequestOptions *currentRequestOptions;
+@property (nonatomic) <AFUISiriViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AFUISiriViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEyesFree, nonatomic) BOOL eyesFree;
+@property (getter=_hasCalledBeginAppearanceTransition, setter=_setHasCalledBeginAppearanceTransition:, nonatomic) BOOL hasCalledBeginAppearanceTransition;
+@property (getter=_hasCalledEndAppearanceTransition, setter=_setHasCalledEndAppearanceTransition:, nonatomic) BOOL hasCalledEndAppearanceTransition;
+@property (nonatomic, readonly) BOOL hasScreenSnapshot;
+@property (readonly) unsigned int hash;
+@property (getter=_isInHoldToTalkMode, setter=_setInHoldToTalkMode:, nonatomic) BOOL inHoldToTalkMode;
+@property (nonatomic) BOOL isStark;
+@property (nonatomic) BOOL mapsGatekeeperEnabled;
+@property (getter=_recordingStartedTimeValue, setter=_setRecordingStartedTimeValue:, nonatomic, retain) NSNumber *recordingStartedTimeValue;
+@property (getter=_remoteViewController, nonatomic, readonly) AFUISiriRemoteViewController *remoteViewController;
+@property (getter=_remoteViewControllerDispatchQueue, nonatomic, readonly) NSObject<OS_dispatch_queue> *remoteViewControllerDispatchQueue;
+@property (nonatomic, retain) SiriUIAudioRoutePickerController *routePickerController;
+@property (getter=_session, nonatomic, readonly) AFUISiriSession *session;
+@property (nonatomic) BOOL showsStatusBar;
+@property (getter=_statusBar, setter=_setStatusBar:, nonatomic, retain) UIStatusBar *statusBar;
+@property (nonatomic) BOOL statusBarEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) AFUISiriView *view;
+@property (getter=_viewDidAppearTime, setter=_setViewDidAppearTime:, nonatomic) double viewDidAppearTime;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 - (void).cxx_destruct;
 - (void)_activationTriggerDidRelease:(id)arg1;
 - (void)_addStatusBar;
 - (id)_currentRequestOptions;
-- (void)_enqueueRemoteViewControllerMessageBlock:(id)arg1;
+- (void)_enqueueRemoteViewControllerMessageBlock:(id /* block */)arg1;
 - (void)_enterHoldToTalkMode;
 - (void)_exitHoldToTalkMode;
 - (BOOL)_hasCalledBeginAppearanceTransition;
@@ -107,8 +105,8 @@
 - (id)delegate;
 - (void)dismissSiriRemoteViewController:(id)arg1;
 - (void)endSession;
-- (void)handlePasscodeUnlockAndCancelRequest:(BOOL)arg1 withCompletion:(id)arg2;
-- (void)handlePasscodeUnlockWithCompletion:(id)arg1;
+- (void)handlePasscodeUnlockAndCancelRequest:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)handlePasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (void)handleViewFullyRevealed;
 - (BOOL)hasQueuedTTS;
 - (BOOL)hasScreenSnapshot;
@@ -150,7 +148,7 @@
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
-- (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
 - (BOOL)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(BOOL)arg3;
@@ -169,8 +167,8 @@
 - (void)siriRemoteViewControllerPulseHelpButton:(id)arg1;
 - (void)siriSession:(id)arg1 didChangeDialogPhase:(id)arg2;
 - (void)siriSession:(id)arg1 didChangeToState:(int)arg2;
-- (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestAndCancelRequest:(BOOL)arg2 withCompletion:(id)arg3;
-- (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id)arg2;
+- (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestAndCancelRequest:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id /* block */)arg2;
 - (void)siriSessionRecordingPreparationHasFinished:(id)arg1;
 - (BOOL)siriView:(id)arg1 attemptUnlockWithPassword:(id)arg2;
 - (void)siriView:(id)arg1 didReceiveSiriActivationMessageWithSource:(int)arg2;

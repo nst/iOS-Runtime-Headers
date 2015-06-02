@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UIActivityViewControllerDelegate>, NSArray, NSOperationQueue, NSString, SFAirDropActivityViewController, UIActivity, UIAlertAction, UIAlertController, UIViewController, _UIActivityApplicationExtensionDiscovery, _UIActivityGroupListViewController, _UIAlertControllerShimPresenter;
-
 @interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDataSource, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIViewControllerRestoration> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __popoverDismissalAction;
-
+    id /* block */ __popoverDismissalAction;
     UIActivity *_activity;
     UIAlertAction *_activityAlertCancelAction;
     UIAlertController *_activityAlertController;
@@ -30,16 +20,8 @@
     _UIActivityApplicationExtensionDiscovery *_applicationExtensionDiscovery;
     unsigned int _backgroundTaskIdentifier;
     int _completedProviderCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionWithItemsHandler;
-
+    id /* block */ _completionHandler;
+    id /* block */ _completionWithItemsHandler;
     int _excludedActivityCategories;
     NSArray *_excludedActivityTypes;
     NSArray *_includedActivityTypes;
@@ -47,11 +29,7 @@
     int _originalPopoverBackgroundStyle;
     Class _originalPopoverBackgroundViewClass;
     BOOL _performActivityForStateRestoration;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _preCompletionHandler;
-
+    id /* block */ _preCompletionHandler;
     BOOL _shouldMatchOnlyUserElectedExtensions;
     BOOL _showKeyboardAutomatically;
     NSString *_subject;
@@ -60,44 +38,46 @@
     BOOL _willDismissActivityViewController;
 }
 
-@property(copy) id _popoverDismissalAction;
-@property(retain) UIActivity * activity;
-@property(retain) UIAlertAction * activityAlertCancelAction;
-@property(retain) UIAlertController * activityAlertController;
-@property(retain) _UIAlertControllerShimPresenter * activityAlertControllerShimPresenter;
-@property(retain) _UIActivityGroupListViewController * activityGroupListViewController;
-@property(retain) NSOperationQueue * activityItemProviderOperationQueue;
-@property(copy) NSArray * activityItems;
-@property(copy) NSArray * activityTypeOrder;
-@property(retain) UIViewController * activityViewController;
-@property <UIActivityViewControllerDelegate> * airDropDelegate;
-@property(retain) SFAirDropActivityViewController * airDropViewController;
-@property BOOL allowsEmbedding;
-@property(copy) NSArray * applicationActivities;
-@property(retain) _UIActivityApplicationExtensionDiscovery * applicationExtensionDiscovery;
-@property unsigned int backgroundTaskIdentifier;
-@property int completedProviderCount;
-@property(copy) id completionHandler;
-@property(copy) id completionWithItemsHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int excludedActivityCategories;
-@property(copy) NSArray * excludedActivityTypes;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * includedActivityTypes;
-@property(retain) NSString * mailAutosaveIdentifier;
-@property int originalPopoverBackgroundStyle;
-@property Class originalPopoverBackgroundViewClass;
-@property BOOL performActivityForStateRestoration;
-@property(copy) id preCompletionHandler;
-@property BOOL shouldMatchOnlyUserElectedExtensions;
-@property BOOL showKeyboardAutomatically;
-@property(readonly) BOOL sourceIsManaged;
-@property(copy) NSString * subject;
-@property(readonly) Class superclass;
-@property int totalProviderCount;
-@property BOOL useBlackPopoverStyle;
-@property BOOL willDismissActivityViewController;
+@property (nonatomic, copy) id /* block */ _popoverDismissalAction;
+@property (nonatomic, retain) UIActivity *activity;
+@property (nonatomic, retain) UIAlertAction *activityAlertCancelAction;
+@property (nonatomic, retain) UIAlertController *activityAlertController;
+@property (nonatomic, retain) _UIAlertControllerShimPresenter *activityAlertControllerShimPresenter;
+@property (nonatomic, retain) _UIActivityGroupListViewController *activityGroupListViewController;
+@property (nonatomic, retain) NSOperationQueue *activityItemProviderOperationQueue;
+@property (nonatomic, copy) NSArray *activityItems;
+@property (nonatomic, copy) NSArray *activityTypeOrder;
+@property (nonatomic, retain) UIViewController *activityViewController;
+@property (nonatomic) <UIActivityViewControllerDelegate> *airDropDelegate;
+@property (nonatomic, retain) SFAirDropActivityViewController *airDropViewController;
+@property (nonatomic) BOOL allowsEmbedding;
+@property (nonatomic, copy) NSArray *applicationActivities;
+@property (nonatomic, retain) _UIActivityApplicationExtensionDiscovery *applicationExtensionDiscovery;
+@property (nonatomic) unsigned int backgroundTaskIdentifier;
+@property (nonatomic) int completedProviderCount;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id /* block */ completionWithItemsHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int excludedActivityCategories;
+@property (nonatomic, copy) NSArray *excludedActivityTypes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *includedActivityTypes;
+@property (nonatomic, retain) NSString *mailAutosaveIdentifier;
+@property (nonatomic) int originalPopoverBackgroundStyle;
+@property (nonatomic) Class originalPopoverBackgroundViewClass;
+@property (nonatomic) BOOL performActivityForStateRestoration;
+@property (nonatomic, copy) id /* block */ preCompletionHandler;
+@property (nonatomic) BOOL shouldMatchOnlyUserElectedExtensions;
+@property (nonatomic) BOOL showKeyboardAutomatically;
+@property (nonatomic, readonly) BOOL sourceIsManaged;
+@property (nonatomic, copy) NSString *subject;
+@property (readonly) Class superclass;
+@property (nonatomic) int totalProviderCount;
+@property (nonatomic) BOOL useBlackPopoverStyle;
+@property (nonatomic) BOOL willDismissActivityViewController;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_activeActivityViewControllers;
 + (void)_addActivityItem:(id)arg1 activityViewController:(id)arg2 originalActivityItem:(id)arg3;
@@ -123,15 +103,14 @@
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (float)_displayHeight;
 - (void)_executeActivity;
-- (void)_gkCallOnSuperSkippingSelf_viewDidAppear:(BOOL)arg1;
-- (void)_mailAutosaveWithHandler:(id)arg1;
+- (void)_mailAutosaveWithHandler:(id /* block */)arg1;
 - (id)_newActivityGroupViewControllerForItems:(id)arg1 category:(int)arg2 userDefaults:(id)arg3;
 - (void)_notifyReloadImageForActivity:(id)arg1;
 - (void)_performActivity:(id)arg1;
 - (void)_performActivityOfType:(id)arg1;
-- (id)_popoverDismissalAction;
+- (id /* block */)_popoverDismissalAction;
 - (void)_prepareActivity:(id)arg1;
-- (void)_prepareActivity:(id)arg1 completion:(id)arg2;
+- (void)_prepareActivity:(id)arg1 completion:(id /* block */)arg2;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_reloadImageForActivity:(id)arg1;
 - (void)_removeFromActiveActivityViewControllers;
@@ -158,7 +137,7 @@
 - (id)activityViewController;
 - (void)airDropActivityDidSuccessfullyCompleteTransfer;
 - (void)airDropActivityDidSuccessfullyStartTransfer;
-- (void)airDropActivityRequestingSharedItemsWithCompletionHandler:(id)arg1;
+- (void)airDropActivityRequestingSharedItemsWithCompletionHandler:(id /* block */)arg1;
 - (id)airDropDelegate;
 - (id)airDropViewController;
 - (BOOL)allowsEmbedding;
@@ -166,11 +145,11 @@
 - (id)applicationExtensionDiscovery;
 - (unsigned int)backgroundTaskIdentifier;
 - (int)completedProviderCount;
-- (id)completionHandler;
-- (id)completionWithItemsHandler;
+- (id /* block */)completionHandler;
+- (id /* block */)completionWithItemsHandler;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (int)excludedActivityCategories;
 - (id)excludedActivityTypes;
@@ -181,9 +160,9 @@
 - (int)originalPopoverBackgroundStyle;
 - (Class)originalPopoverBackgroundViewClass;
 - (BOOL)performActivityForStateRestoration;
-- (id)preCompletionHandler;
+- (id /* block */)preCompletionHandler;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setActivity:(id)arg1;
 - (void)setActivityAlertCancelAction:(id)arg1;
 - (void)setActivityAlertController:(id)arg1;
@@ -200,8 +179,8 @@
 - (void)setApplicationExtensionDiscovery:(id)arg1;
 - (void)setBackgroundTaskIdentifier:(unsigned int)arg1;
 - (void)setCompletedProviderCount:(int)arg1;
-- (void)setCompletionHandler:(id)arg1;
-- (void)setCompletionWithItemsHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionWithItemsHandler:(id /* block */)arg1;
 - (void)setExcludedActivityCategories:(int)arg1;
 - (void)setExcludedActivityTypes:(id)arg1;
 - (void)setIncludedActivityTypes:(id)arg1;
@@ -210,14 +189,14 @@
 - (void)setOriginalPopoverBackgroundStyle:(int)arg1;
 - (void)setOriginalPopoverBackgroundViewClass:(Class)arg1;
 - (void)setPerformActivityForStateRestoration:(BOOL)arg1;
-- (void)setPreCompletionHandler:(id)arg1;
+- (void)setPreCompletionHandler:(id /* block */)arg1;
 - (void)setShouldMatchOnlyUserElectedExtensions:(BOOL)arg1;
 - (void)setShowKeyboardAutomatically:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTotalProviderCount:(int)arg1;
 - (void)setUseBlackPopoverStyle:(BOOL)arg1;
 - (void)setWillDismissActivityViewController:(BOOL)arg1;
-- (void)set_popoverDismissalAction:(id)arg1;
+- (void)set_popoverDismissalAction:(id /* block */)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (BOOL)shouldMatchOnlyUserElectedExtensions;
 - (BOOL)showKeyboardAutomatically;
@@ -235,5 +214,9 @@
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)willDismissActivityViewController;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkCallOnSuperSkippingSelf_viewDidAppear:(BOOL)arg1;
 
 @end

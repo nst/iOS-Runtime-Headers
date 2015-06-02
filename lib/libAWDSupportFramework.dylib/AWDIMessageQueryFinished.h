@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIMessageQueryFinished : PBCodable <NSCopying> {
     unsigned int _connectionType;
     int _genericError;
@@ -30,28 +28,28 @@
     int _uRLError;
 }
 
-@property unsigned int connectionType;
-@property int genericError;
-@property(retain) NSString * guid;
-@property BOOL hasConnectionType;
-@property BOOL hasGenericError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsEmail;
-@property BOOL hasIsPhoneNumber;
-@property BOOL hasPOSIXError;
-@property BOOL hasQueryDuration;
-@property BOOL hasResultCode;
-@property BOOL hasSuccess;
-@property BOOL hasTimestamp;
-@property BOOL hasURLError;
-@property unsigned int isEmail;
-@property unsigned int isPhoneNumber;
-@property int pOSIXError;
-@property unsigned int queryDuration;
-@property int resultCode;
-@property unsigned int success;
-@property unsigned long long timestamp;
-@property int uRLError;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) int genericError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasGenericError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsEmail;
+@property (nonatomic) BOOL hasIsPhoneNumber;
+@property (nonatomic) BOOL hasPOSIXError;
+@property (nonatomic) BOOL hasQueryDuration;
+@property (nonatomic) BOOL hasResultCode;
+@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasURLError;
+@property (nonatomic) unsigned int isEmail;
+@property (nonatomic) unsigned int isPhoneNumber;
+@property (nonatomic) int pOSIXError;
+@property (nonatomic) unsigned int queryDuration;
+@property (nonatomic) int resultCode;
+@property (nonatomic) unsigned int success;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int uRLError;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

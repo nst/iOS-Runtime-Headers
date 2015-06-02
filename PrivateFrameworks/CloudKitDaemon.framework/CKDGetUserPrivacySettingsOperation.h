@@ -6,7 +6,7 @@
     int _discoverable;
 }
 
-@property int discoverable;
+@property (nonatomic) int discoverable;
 
 - (void)_handleRetrievedPrivacySettings:(id)arg1;
 - (int)discoverable;

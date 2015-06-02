@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKReminderDueDateEditItem, EKReminderLocationPickerModel, EKReminderRecurrenceEditItem, EKStructuredLocation, NSDate, NSString, UIAlertView, UIImageView, UILabel, UITableViewCell, UIView;
-
 @interface EKReminderAlertEditItem : EKReminderEditItem <EKReminderLocationPickerDelegate, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate> {
     int _alarmProximity;
     unsigned int _alertType;
@@ -37,17 +35,17 @@
     UIAlertView *_wifiDisabledAlert;
 }
 
-@property int alarmProximity;
+@property (nonatomic) int alarmProximity;
 @property unsigned int alertType;
-@property(retain) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isAtALocation;
-@property BOOL isOnADay;
-@property BOOL showsLocation;
-@property(copy) EKStructuredLocation * structuredLocation;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAtALocation;
+@property (nonatomic) BOOL isOnADay;
+@property (nonatomic) BOOL showsLocation;
+@property (nonatomic, copy) EKStructuredLocation *structuredLocation;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_alarmDateFromReminder:(id)arg1 withAlarm:(id)arg2;

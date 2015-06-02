@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleClient : NSObject {
-}
+@interface SLGoogleClient : NSObject
 
 + (id)clientID;
 + (id)clientRedirect;

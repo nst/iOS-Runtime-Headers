@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMapTable, NSMutableSet, NSString, PUAdjustmentsMode, PUAdjustmentsModeBar, PUAdjustmentsToolControllerSpec, PUSnappingController, UIScrollView;
-
 @interface PUAdjustmentsToolController : PUPhotoEditToolController <PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     NSArray *__allAvailableModes;
     PUSnappingController *__snappingController;
@@ -25,12 +23,12 @@
     NSMapTable *_sliderThumbnailsByModeAndIntensity;
 }
 
-@property(setter=_setSnappingController:,retain) PUSnappingController * _snappingController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PUAdjustmentsToolControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (setter=_setSnappingController:, nonatomic, retain) PUSnappingController *_snappingController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PUAdjustmentsToolControllerSpec *spec;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (float)_adjustmentScrollViewOffsetForLevel:(float)arg1 inMode:(id)arg2;

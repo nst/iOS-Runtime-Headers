@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLPhotosMusicPlayer : NSObject {
-}
+@interface PLPhotosMusicPlayer : NSObject
 
 + (void)continueMusic;
 + (void)pauseMusic:(BOOL)arg1;

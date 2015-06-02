@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMAttributedStringParserContext;
-
 @interface IMAttributedStringParser : NSObject {
     IMAttributedStringParserContext *_context;
 }

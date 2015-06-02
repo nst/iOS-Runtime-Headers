@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeBubble : TSCHChartSeriesTypeScatter {
-}
+@interface TSCHChartSeriesTypeBubble : TSCHChartSeriesTypeScatter
 
 - (id)axisTypesForValueLabels;
 - (int)defaultSymbolType;

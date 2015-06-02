@@ -13,7 +13,7 @@
 + (id)systemUICatalog;
 
 - (id)_baseKeyForName:(id)arg1;
-- (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id)arg5;
+- (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id /* block */)arg5;
 - (id)_resolvedRenditionKeyForName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6 memoryClass:(unsigned int)arg7 graphicsClass:(unsigned int)arg8;
 - (unsigned int)_themeRef;
 - (id)_themeStore;

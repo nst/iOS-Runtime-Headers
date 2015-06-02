@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCManagedDefaultsManager : NSObject {
-}
+@interface MCManagedDefaultsManager : NSObject
 
 + (id)sharedManager;
 

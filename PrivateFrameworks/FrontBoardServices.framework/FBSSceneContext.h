@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSSceneContextDelegate>, CAContext;
-
 @interface FBSSceneContext : NSObject {
     CAContext *_context;
     <FBSSceneContextDelegate> *_delegate;
@@ -12,10 +10,10 @@
     BOOL _shouldObserveContext;
 }
 
-@property(retain,readonly) CAContext * CAContext;
-@property <FBSSceneContextDelegate> * delegate;
-@property(readonly) unsigned int identifier;
-@property float level;
+@property (nonatomic, readonly, retain) CAContext *CAContext;
+@property (nonatomic) <FBSSceneContextDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int identifier;
+@property (nonatomic) float level;
 
 + (id)contextWithCAContext:(id)arg1;
 

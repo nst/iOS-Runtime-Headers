@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary;
-
 @interface MPRemotePlaybackQueue : NSObject {
     struct _MRSystemAppPlaybackQueue { } *_mediaRemotePlaybackQueue;
     NSDictionary *_userInfo;
 }
 
-@property(getter=isRequestingImmediatePlayback,readonly) BOOL requestingImmediatePlayback;
-@property(readonly) NSDictionary * userInfo;
+@property (getter=isRequestingImmediatePlayback, nonatomic, readonly) BOOL requestingImmediatePlayback;
+@property (nonatomic, readonly) NSDictionary *userInfo;
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 

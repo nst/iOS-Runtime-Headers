@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASource;
+@interface SAABContactGroup : SADomainObject
 
-@interface SAABContactGroup : SADomainObject {
-}
-
-@property(copy) NSString * groupName;
-@property(retain) SASource * groupSource;
+@property (nonatomic, copy) NSString *groupName;
+@property (nonatomic, retain) SASource *groupSource;
 
 + (id)contactGroup;
 + (id)contactGroupWithDictionary:(id)arg1 context:(id)arg2;

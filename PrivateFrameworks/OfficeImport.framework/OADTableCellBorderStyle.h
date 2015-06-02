@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADStroke;
-
 @interface OADTableCellBorderStyle : NSObject {
     OADStroke *mBottomLeftToTopRightStroke;
     OADStroke *mBottomStroke;

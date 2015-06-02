@@ -9,8 +9,8 @@
     double _radius;
 }
 
-@property BOOL hasRadius;
-@property double radius;
+@property (nonatomic) BOOL hasRadius;
+@property (nonatomic) double radius;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

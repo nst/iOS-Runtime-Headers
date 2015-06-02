@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSObject<OS_dispatch_queue>;
-
 @interface AVCaptureAudioDataOutputInternal : NSObject {
     NSObject<OS_dispatch_queue> *bufferQueue;
     AVWeakReferencingDelegateStorage *delegateStorage;

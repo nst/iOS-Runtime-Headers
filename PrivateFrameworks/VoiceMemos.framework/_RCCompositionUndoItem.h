@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, RCComposition;
-
 @interface _RCCompositionUndoItem : NSObject {
     RCComposition *_composition;
     NSString *_reasonAccessTokenName;
 }
 
-@property(copy) RCComposition * composition;
-@property NSString * reasonAccessTokenName;
+@property (nonatomic, copy) RCComposition *composition;
+@property (nonatomic) NSString *reasonAccessTokenName;
 
 - (void).cxx_destruct;
 - (id)composition;

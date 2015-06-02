@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIImageView;
-
 @interface UIAlertMediaButton : UIAlertButton {
     UIImageView *_checkmarkView;
     UIImage *_highlightedTableIcon;
     UIImage *_tableIcon;
 }
 
-@property(readonly) UIImageView * checkmarkView;
-@property(retain) UIImage * highlightedTableIcon;
-@property(retain) UIImage * tableIcon;
+@property (nonatomic, readonly) UIImageView *checkmarkView;
+@property (nonatomic, retain) UIImage *highlightedTableIcon;
+@property (nonatomic, retain) UIImage *tableIcon;
 
 - (id)checkmarkView;
 - (void)dealloc;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDictionary;
-
 @interface CalItemMetadata : NSObject <NSCoding> {
     int _classification;
     NSDictionary *_x_props;
 }
 
 @property int classification;
-@property(retain) NSDictionary * x_props;
+@property (retain) NSDictionary *x_props;
 
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSComponent:(id)arg1;

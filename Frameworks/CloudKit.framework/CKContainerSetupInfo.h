@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKAccountInfo, CKContainerID, NSString;
-
 @interface CKContainerSetupInfo : NSObject <NSSecureCoding> {
     CKAccountInfo *_accountInfoOverride;
     CKContainerID *_containerID;
     NSString *_sourceApplicationBundleIdentifier;
 }
 
-@property(retain) CKAccountInfo * accountInfoOverride;
-@property(retain) CKContainerID * containerID;
-@property(retain) NSString * sourceApplicationBundleIdentifier;
+@property (nonatomic, retain) CKAccountInfo *accountInfoOverride;
+@property (nonatomic, retain) CKContainerID *containerID;
+@property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

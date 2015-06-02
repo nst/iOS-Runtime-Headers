@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIAlertControllerActionSheetCompactPresentationController;
-
 @interface _UIAlertControllerActionSheetRegularPresentationController : UIPopoverPresentationController {
     _UIAlertControllerActionSheetCompactPresentationController *_compactPresentationController;
 }

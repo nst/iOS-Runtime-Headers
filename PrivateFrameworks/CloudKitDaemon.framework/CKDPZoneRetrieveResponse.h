@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPZoneRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_zoneSummarys;
 }
 
-@property(retain) NSMutableArray * zoneSummarys;
+@property (nonatomic, retain) NSMutableArray *zoneSummarys;
 
 - (void).cxx_destruct;
 - (void)addZoneSummary:(id)arg1;

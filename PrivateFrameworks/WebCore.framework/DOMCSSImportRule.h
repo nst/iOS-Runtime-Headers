@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleSheet, DOMMediaList, NSString;
+@interface DOMCSSImportRule : DOMCSSRule
 
-@interface DOMCSSImportRule : DOMCSSRule {
-}
-
-@property(copy,readonly) NSString * href;
-@property(readonly) DOMMediaList * media;
-@property(readonly) DOMCSSStyleSheet * styleSheet;
+@property (readonly, copy) NSString *href;
+@property (readonly) DOMMediaList *media;
+@property (readonly) DOMCSSStyleSheet *styleSheet;
 
 - (id)href;
 - (id)media;

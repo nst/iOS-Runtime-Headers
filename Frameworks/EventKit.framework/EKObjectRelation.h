@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObject, NSString;
-
 @interface EKObjectRelation : NSObject {
     BOOL _dirty;
     NSString *_inverseName;
@@ -12,9 +10,9 @@
     NSString *_relationName;
 }
 
-@property(readonly) NSString * inverseName;
-@property(readonly) EKObject * owner;
-@property(readonly) NSString * relationName;
+@property (nonatomic, readonly) NSString *inverseName;
+@property (nonatomic, readonly) EKObject *owner;
+@property (nonatomic, readonly) NSString *relationName;
 
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;

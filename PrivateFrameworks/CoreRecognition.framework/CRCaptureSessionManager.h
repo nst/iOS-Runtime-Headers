@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSString;
-
 @interface CRCaptureSessionManager : NSObject {
     NSString *_cameraMode;
     int _cameraPosition;
@@ -24,20 +22,20 @@
     int _whiteBalanceMode;
 }
 
-@property(copy) NSString * cameraMode;
-@property int cameraPosition;
-@property struct CGSize { float x1; float x2; } cameraResolution;
-@property(retain) AVCaptureSession * captureSession;
-@property <AVCaptureVideoDataOutputSampleBufferDelegate> * captureSessionDelegate;
-@property(retain) AVCaptureVideoDataOutput * captureVideoDataOutput;
-@property struct __CVBuffer { }* correctedCreditCardBuffer;
-@property(retain) AVCaptureDeviceInput * deviceInput;
-@property int exposureMode;
-@property int focusMode;
-@property(retain) id inputPortFormatObserver;
-@property(retain) AVCaptureVideoPreviewLayer * previewLayer;
-@property int torchMode;
-@property int whiteBalanceMode;
+@property (nonatomic, copy) NSString *cameraMode;
+@property (nonatomic) int cameraPosition;
+@property (nonatomic) struct CGSize { float x1; float x2; } cameraResolution;
+@property (nonatomic, retain) AVCaptureSession *captureSession;
+@property (nonatomic) <AVCaptureVideoDataOutputSampleBufferDelegate> *captureSessionDelegate;
+@property (nonatomic, retain) AVCaptureVideoDataOutput *captureVideoDataOutput;
+@property struct __CVBuffer { }*correctedCreditCardBuffer;
+@property (nonatomic, retain) AVCaptureDeviceInput *deviceInput;
+@property (nonatomic) int exposureMode;
+@property (nonatomic) int focusMode;
+@property (retain) id inputPortFormatObserver;
+@property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic) int torchMode;
+@property (nonatomic) int whiteBalanceMode;
 
 - (void).cxx_destruct;
 - (void)_refocusOnPoint:(struct CGPoint { float x1; float x2; })arg1 focusMode:(int)arg2 exposure:(BOOL)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, NSArray;
-
 @interface AVPlaybackControlsViewController : UIViewController {
     id _AVSystemControllerCurrentRouteHasVolumeControlDidChangeObserver;
     BOOL _gotoEndOfSeekableRangesButtonEnabled;
@@ -29,25 +27,25 @@
     BOOL _skipBackwardThirtySecondsButtonEnabled;
 }
 
-@property(getter=isGotoEndOfSeekableRangesButtonEnabled) BOOL gotoEndOfSeekableRangesButtonEnabled;
-@property(getter=isPlayPauseButtonEnabled) BOOL playPauseButtonEnabled;
-@property(retain) AVPlayerController * playerController;
-@property AVPlayerViewController * playerViewController;
-@property(getter=isPlaying) BOOL playing;
-@property int scaleButtonType;
-@property(getter=isScanBackwardButtonEnabled) BOOL scanBackwardButtonEnabled;
-@property(getter=isScanForwardButtonEnabled) BOOL scanForwardButtonEnabled;
-@property(getter=isScrubberEnabled) BOOL scrubberEnabled;
-@property(retain) NSArray * scrubberLoadedTimeRanges;
-@property(readonly) float scrubberWidth;
-@property BOOL showsDoneButton;
-@property BOOL showsExitFullScreenButton;
-@property BOOL showsLoadingIndicator;
-@property BOOL showsMediaSelectionButton;
-@property BOOL showsScaleButton;
-@property BOOL showsStreamingControls;
-@property BOOL showsVolumeSlider;
-@property(getter=isSkipBackwardThirtySecondsButtonEnabled) BOOL skipBackwardThirtySecondsButtonEnabled;
+@property (getter=isGotoEndOfSeekableRangesButtonEnabled, nonatomic) BOOL gotoEndOfSeekableRangesButtonEnabled;
+@property (getter=isPlayPauseButtonEnabled, nonatomic) BOOL playPauseButtonEnabled;
+@property (nonatomic, retain) AVPlayerController *playerController;
+@property (nonatomic) AVPlayerViewController *playerViewController;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic) int scaleButtonType;
+@property (getter=isScanBackwardButtonEnabled, nonatomic) BOOL scanBackwardButtonEnabled;
+@property (getter=isScanForwardButtonEnabled, nonatomic) BOOL scanForwardButtonEnabled;
+@property (getter=isScrubberEnabled, nonatomic) BOOL scrubberEnabled;
+@property (nonatomic, retain) NSArray *scrubberLoadedTimeRanges;
+@property (nonatomic, readonly) float scrubberWidth;
+@property (nonatomic) BOOL showsDoneButton;
+@property (nonatomic) BOOL showsExitFullScreenButton;
+@property (nonatomic) BOOL showsLoadingIndicator;
+@property (nonatomic) BOOL showsMediaSelectionButton;
+@property (nonatomic) BOOL showsScaleButton;
+@property (nonatomic) BOOL showsStreamingControls;
+@property (nonatomic) BOOL showsVolumeSlider;
+@property (getter=isSkipBackwardThirtySecondsButtonEnabled, nonatomic) BOOL skipBackwardThirtySecondsButtonEnabled;
 
 - (void).cxx_destruct;
 - (void)_updateVolumeSliderVisibility;

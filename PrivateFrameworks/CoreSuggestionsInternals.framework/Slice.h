@@ -11,10 +11,10 @@
     } _type;
 }
 
-@property(readonly) unsigned int end;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) unsigned int start;
-@property(readonly) struct { unsigned short x1; unsigned short x2; } type;
+@property (nonatomic, readonly) unsigned int end;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) unsigned int start;
+@property (nonatomic, readonly) struct { unsigned short x1; unsigned short x2; } type;
 
 + (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)sliceWithType:(struct { unsigned short x1; unsigned short x2; })arg1 start:(unsigned int)arg2 end:(unsigned int)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSample;
-
 @interface HDCodableActivityCache : PBCodable <NSCopying> {
     long long _activeEnergyBurnedAnchor;
     double _activeHours;
@@ -42,40 +40,40 @@
     long long _workoutAnchor;
 }
 
-@property long long activeEnergyBurnedAnchor;
-@property double activeHours;
-@property long long activeHoursAnchor;
-@property double briskMinutes;
-@property long long briskMinutesAnchor;
-@property long long cacheIndex;
-@property long long calorieGoalAnchor;
-@property double energyBurned;
-@property double energyBurnedGoal;
-@property long long energyBurnedGoalAnchor;
-@property double energyBurnedGoalDate;
-@property BOOL hasActiveEnergyBurnedAnchor;
-@property BOOL hasActiveHours;
-@property BOOL hasActiveHoursAnchor;
-@property BOOL hasBriskMinutes;
-@property BOOL hasBriskMinutesAnchor;
-@property BOOL hasCacheIndex;
-@property BOOL hasCalorieGoalAnchor;
-@property BOOL hasEnergyBurned;
-@property BOOL hasEnergyBurnedGoal;
-@property BOOL hasEnergyBurnedGoalAnchor;
-@property BOOL hasEnergyBurnedGoalDate;
-@property(readonly) BOOL hasSample;
-@property BOOL hasStepCount;
-@property BOOL hasStepCountAnchor;
-@property BOOL hasWalkingAndRunningDistance;
-@property BOOL hasWalkingAndRunningDistanceAnchor;
-@property BOOL hasWorkoutAnchor;
-@property(retain) HDCodableSample * sample;
-@property long long stepCount;
-@property long long stepCountAnchor;
-@property double walkingAndRunningDistance;
-@property long long walkingAndRunningDistanceAnchor;
-@property long long workoutAnchor;
+@property (nonatomic) long long activeEnergyBurnedAnchor;
+@property (nonatomic) double activeHours;
+@property (nonatomic) long long activeHoursAnchor;
+@property (nonatomic) double briskMinutes;
+@property (nonatomic) long long briskMinutesAnchor;
+@property (nonatomic) long long cacheIndex;
+@property (nonatomic) long long calorieGoalAnchor;
+@property (nonatomic) double energyBurned;
+@property (nonatomic) double energyBurnedGoal;
+@property (nonatomic) long long energyBurnedGoalAnchor;
+@property (nonatomic) double energyBurnedGoalDate;
+@property (nonatomic) BOOL hasActiveEnergyBurnedAnchor;
+@property (nonatomic) BOOL hasActiveHours;
+@property (nonatomic) BOOL hasActiveHoursAnchor;
+@property (nonatomic) BOOL hasBriskMinutes;
+@property (nonatomic) BOOL hasBriskMinutesAnchor;
+@property (nonatomic) BOOL hasCacheIndex;
+@property (nonatomic) BOOL hasCalorieGoalAnchor;
+@property (nonatomic) BOOL hasEnergyBurned;
+@property (nonatomic) BOOL hasEnergyBurnedGoal;
+@property (nonatomic) BOOL hasEnergyBurnedGoalAnchor;
+@property (nonatomic) BOOL hasEnergyBurnedGoalDate;
+@property (nonatomic, readonly) BOOL hasSample;
+@property (nonatomic) BOOL hasStepCount;
+@property (nonatomic) BOOL hasStepCountAnchor;
+@property (nonatomic) BOOL hasWalkingAndRunningDistance;
+@property (nonatomic) BOOL hasWalkingAndRunningDistanceAnchor;
+@property (nonatomic) BOOL hasWorkoutAnchor;
+@property (nonatomic, retain) HDCodableSample *sample;
+@property (nonatomic) long long stepCount;
+@property (nonatomic) long long stepCountAnchor;
+@property (nonatomic) double walkingAndRunningDistance;
+@property (nonatomic) long long walkingAndRunningDistanceAnchor;
+@property (nonatomic) long long workoutAnchor;
 
 - (void).cxx_destruct;
 - (long long)activeEnergyBurnedAnchor;

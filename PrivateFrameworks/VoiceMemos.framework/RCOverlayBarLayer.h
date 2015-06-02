@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class CALayer, UIColor;
-
 @interface RCOverlayBarLayer : CALayer {
     CALayer *_bar;
     CALayer *_bottomKnob;
@@ -11,7 +9,7 @@
     CALayer *_topKnob;
 }
 
-@property(retain) UIColor * color;
+@property (nonatomic, retain) UIColor *color;
 
 - (void).cxx_destruct;
 - (void)_loadWithColor:(id)arg1 selectionExtentIncludingKnobs:(float)arg2 topKnob:(BOOL)arg3 bottomKnob:(BOOL)arg4;

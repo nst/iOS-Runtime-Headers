@@ -7,8 +7,8 @@
     int _tapCategory;
 }
 
-@property BOOL failWhenTappingInBars;
-@property(readonly) int tapCategory;
+@property (nonatomic) BOOL failWhenTappingInBars;
+@property (nonatomic, readonly) int tapCategory;
 
 - (int)_categoryForTapLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setDelegate:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineTransportRemoveLibraryTask>;
-
 @interface CPLRemoveCloudLibraryTask : CPLEngineSyncEmergencyTask {
     <CPLEngineTransportRemoveLibraryTask> *_removeLibraryTask;
 }

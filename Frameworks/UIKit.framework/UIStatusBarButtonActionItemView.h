@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton;
-
 @interface UIStatusBarButtonActionItemView : UIStatusBarItemView {
     UIButton *_button;
     UIButton *_externalButton;

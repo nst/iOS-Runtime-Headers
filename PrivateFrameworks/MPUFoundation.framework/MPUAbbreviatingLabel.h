@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface MPUAbbreviatingLabel : UILabel {
     NSMutableArray *_textRepresentationSizes;
     NSArray *_textRepresentations;
 }
 
-@property(copy) NSArray * textRepresentations;
+@property (nonatomic, copy) NSArray *textRepresentations;
 
 - (void).cxx_destruct;
 - (void)_calculateTextSizes;

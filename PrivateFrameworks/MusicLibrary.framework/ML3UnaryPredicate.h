@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3Predicate;
-
 @interface ML3UnaryPredicate : ML3Predicate {
     ML3Predicate *_predicate;
 }
 
-@property(retain) ML3Predicate * predicate;
+@property (nonatomic, retain) ML3Predicate *predicate;
 
 + (id)predicateWithPredicate:(id)arg1;
 

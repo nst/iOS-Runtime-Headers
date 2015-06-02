@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UIImageView, UILabel, UIView;
-
 @interface SKUICountdownFlapView : UIImageView {
     UIView *_backgroundViewBot;
     UIView *_backgroundViewTop;
@@ -21,11 +19,11 @@
     UIColor *_textColor;
 }
 
-@property(readonly) UIColor * flapBottomColor;
-@property(readonly) UIColor * flapTopColor;
-@property(readonly) int position;
-@property(retain) NSString * string;
-@property(retain) UIColor * textColor;
+@property (nonatomic, readonly) UIColor *flapBottomColor;
+@property (nonatomic, readonly) UIColor *flapTopColor;
+@property (nonatomic, readonly) int position;
+@property (nonatomic, retain) NSString *string;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)_newBackgroundImageForTop:(int)arg1;

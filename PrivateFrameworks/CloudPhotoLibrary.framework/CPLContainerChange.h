@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLContainerChange : CPLRecordChange {
-}
+@interface CPLContainerChange : CPLRecordChange
 
 @end

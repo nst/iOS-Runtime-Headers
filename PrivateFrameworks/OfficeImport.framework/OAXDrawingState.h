@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CXNamespace, NSMutableArray, NSMutableDictionary, OADBlipCollection, OADColorMap, OADColorScheme, OADFontScheme, OADStyleMatrix, OAVReadState, OAXClient, OAXTableStyleCache, OCPPackagePart;
-
 @interface OAXDrawingState : OCXReadState {
     OAXClient *mClient;
     OADColorMap *mColorMap;
@@ -31,16 +29,16 @@
     NSMutableArray *mTgtBulletBlips;
 }
 
-@property(retain) CXNamespace * OAXChartDrawingNamespace;
-@property(retain) CXNamespace * OAXChartNamespace;
-@property(retain) CXNamespace * OAXCompatNamespace;
-@property(retain) CXNamespace * OAXDrawing2010Namespace;
-@property(retain) CXNamespace * OAXLockedCanvasNamespace;
-@property(retain) CXNamespace * OAXMainNamespace;
-@property(retain) CXNamespace * OAXPictureNamespace;
-@property(retain) CXNamespace * OAXWordProcessingMLNamespace;
-@property(retain) NSMutableDictionary * sourceURLToTargetBlipIndexMap;
-@property(retain) NSMutableDictionary * sourceURLToTargetBulletBlipIndexMap;
+@property (nonatomic, retain) CXNamespace *OAXChartDrawingNamespace;
+@property (nonatomic, retain) CXNamespace *OAXChartNamespace;
+@property (nonatomic, retain) CXNamespace *OAXCompatNamespace;
+@property (nonatomic, retain) CXNamespace *OAXDrawing2010Namespace;
+@property (nonatomic, retain) CXNamespace *OAXLockedCanvasNamespace;
+@property (nonatomic, retain) CXNamespace *OAXMainNamespace;
+@property (nonatomic, retain) CXNamespace *OAXPictureNamespace;
+@property (nonatomic, retain) CXNamespace *OAXWordProcessingMLNamespace;
+@property (nonatomic, retain) NSMutableDictionary *sourceURLToTargetBlipIndexMap;
+@property (nonatomic, retain) NSMutableDictionary *sourceURLToTargetBulletBlipIndexMap;
 
 - (id)OAXChartDrawingNamespace;
 - (id)OAXChartNamespace;

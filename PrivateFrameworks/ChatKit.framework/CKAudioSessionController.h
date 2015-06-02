@@ -8,14 +8,14 @@
     BOOL _shouldUseSpeaker;
 }
 
-@property(getter=isActive) BOOL active;
-@property(getter=isDirty) BOOL dirty;
+@property (getter=isActive) BOOL active;
+@property (getter=isDirty) BOOL dirty;
 @property BOOL shouldUseSpeaker;
 
 + (id)queue;
 + (id)shareInstance;
 
-- (void)activateUsingSpeaker:(BOOL)arg1 completion:(id)arg2;
+- (void)activateUsingSpeaker:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)audioSessionInterruption:(id)arg1;
 - (void)audioSessionMediaServicesWereLost:(id)arg1;
 - (void)audioSessionMediaServicesWereReset:(id)arg1;
@@ -27,7 +27,7 @@
 - (BOOL)isActive;
 - (BOOL)isDirty;
 - (void)setActive:(BOOL)arg1;
-- (void)setActive:(BOOL)arg1 shouldUseSpeaker:(BOOL)arg2 completion:(id)arg3;
+- (void)setActive:(BOOL)arg1 shouldUseSpeaker:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setDirty:(BOOL)arg1;
 - (void)setShouldUseSpeaker:(BOOL)arg1;
 - (BOOL)shouldUseSpeaker;

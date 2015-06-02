@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MSASAssetDownloader, MSASAssetUploader, MSASPersonModel, MSASPhoneInvitations, MSASProtocol, MSAlbumSharingDaemon, MSBackoffManager, MSImageScalingSpecification, NSArray, NSDictionary, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSASStateMachine : NSObject <MSASAssetDownloaderDelegate, MSASAssetUploaderDelegate, MSBackoffManagerDelegate> {
     MSBackoffManager *_MMCSBackoffManager;
     NSDictionary *_MMCSBackoffManagerParameters;
@@ -34,52 +28,44 @@
     MSASPersonModel *_model;
     NSString *_personID;
     MSASPhoneInvitations *_phoneInvitations;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _postCommandCompletionBlock;
-
+    id /* block */ _postCommandCompletionBlock;
     MSASProtocol *_protocol;
     NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
     NSDictionary *_serverSideConfiguration;
     NSString *_serverSideConfigurationVersion;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stopHandlerBlock;
-
+    id /* block */ _stopHandlerBlock;
     MSImageScalingSpecification *_thumbnailImageScalingSpecification;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSDictionary * MMCSBackoffManagerParameters;
-@property(setter=_setAssetInfoToReauthForDownload:,retain) NSMutableArray * _assetInfoToReauthForDownload;
-@property(setter=_setStopHandlerBlock:,copy) id _stopHandlerBlock;
-@property MSAlbumSharingDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(retain,readonly) MSImageScalingSpecification * derivativeImageScalingSpecification;
-@property(retain,readonly) NSArray * derivativeSpecifications;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject<OS_dispatch_queue> * eventQueue;
-@property(retain) NSString * focusAlbumGUID;
-@property(retain) NSString * focusAssetCollectionGUID;
-@property BOOL hasShutDown;
-@property(readonly) unsigned int hash;
-@property BOOL isRetryingOutstandingActivities;
-@property int maxMetadataRetryCount;
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property(retain) NSDictionary * metadataBackoffManagerParameters;
-@property(retain) NSString * personID;
-@property(retain) MSASPhoneInvitations * phoneInvitations;
-@property(copy) id postCommandCompletionBlock;
-@property(retain) MSASProtocol * protocol;
-@property(retain) NSObject<OS_dispatch_queue> * serverSideConfigQueue;
-@property(retain) NSDictionary * serverSideConfiguration;
-@property(retain,readonly) NSString * serverSideConfigurationVersion;
-@property(readonly) Class superclass;
-@property(retain,readonly) MSImageScalingSpecification * thumbnailImageScalingSpecification;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSDictionary *MMCSBackoffManagerParameters;
+@property (setter=_setAssetInfoToReauthForDownload:, nonatomic, retain) NSMutableArray *_assetInfoToReauthForDownload;
+@property (setter=_setStopHandlerBlock:, nonatomic, copy) id /* block */ _stopHandlerBlock;
+@property (nonatomic) MSAlbumSharingDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (nonatomic, readonly, retain) MSImageScalingSpecification *derivativeImageScalingSpecification;
+@property (nonatomic, readonly, retain) NSArray *derivativeSpecifications;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *eventQueue;
+@property (nonatomic, retain) NSString *focusAlbumGUID;
+@property (nonatomic, retain) NSString *focusAssetCollectionGUID;
+@property (nonatomic) BOOL hasShutDown;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isRetryingOutstandingActivities;
+@property (nonatomic) int maxMetadataRetryCount;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic, retain) NSDictionary *metadataBackoffManagerParameters;
+@property (nonatomic, retain) NSString *personID;
+@property (nonatomic, retain) MSASPhoneInvitations *phoneInvitations;
+@property (nonatomic, copy) id /* block */ postCommandCompletionBlock;
+@property (nonatomic, retain) MSASProtocol *protocol;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serverSideConfigQueue;
+@property (nonatomic, retain) NSDictionary *serverSideConfiguration;
+@property (nonatomic, readonly, retain) NSString *serverSideConfigurationVersion;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) MSImageScalingSpecification *thumbnailImageScalingSpecification;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (id)MMCSBackoffManagerParameters;
@@ -128,19 +114,19 @@
 - (void)_setAlbumSyncedStateDisposition:(int)arg1 params:(id)arg2;
 - (void)_setAssetCollectionSyncedStateDisposition:(int)arg1 params:(id)arg2;
 - (void)_setAssetInfoToReauthForDownload:(id)arg1;
-- (void)_setStopHandlerBlock:(id)arg1;
-- (id)_stopHandlerBlock;
+- (void)_setStopHandlerBlock:(id /* block */)arg1;
+- (id /* block */)_stopHandlerBlock;
 - (id)_stoppedError;
 - (void)_subscribeToAlbumDisposition:(int)arg1 params:(id)arg2;
 - (void)_unsubscribeFromAlbumDisposition:(int)arg1 params:(id)arg2;
 - (void)_updateAlbumDisposition:(int)arg1 params:(id)arg2;
-- (void)_workQueueEmptyFileTransferQueuesCompletionBlock:(id)arg1;
-- (void)acceptInvitationWithToken:(id)arg1 info:(id)arg2 completionBlock:(id)arg3;
+- (void)_workQueueEmptyFileTransferQueuesCompletionBlock:(id /* block */)arg1;
+- (void)acceptInvitationWithToken:(id)arg1 info:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)addAssetCollections:(id)arg1 toAlbum:(id)arg2 info:(id)arg3;
 - (void)addComments:(id)arg1 toAssetCollection:(id)arg2 inAlbum:(id)arg3 info:(id)arg4;
 - (void)addSharingRelationships:(id)arg1 toOwnedAlbum:(id)arg2 info:(id)arg3;
 - (int)assetsInDownloadQueueCount;
-- (void)cancelCompletionBlock:(id)arg1;
+- (void)cancelCompletionBlock:(id /* block */)arg1;
 - (void)cancelOutstandingCommandsForAlbumWithGUID:(id)arg1;
 - (void)cancelOutstandingCommandsForAssetCollectionWithGUID:(id)arg1;
 - (void)checkForAlbumSyncedStateChangesInAlbums:(id)arg1 info:(id)arg2;
@@ -178,9 +164,9 @@
 - (id)persistentObjectForKey:(id)arg1;
 - (id)personID;
 - (id)phoneInvitations;
-- (id)postCommandCompletionBlock;
+- (id /* block */)postCommandCompletionBlock;
 - (id)protocol;
-- (void)purgeEverythingCompletionBlock:(id)arg1;
+- (void)purgeEverythingCompletionBlock:(id /* block */)arg1;
 - (void)refreshServerSideConfig;
 - (void)removeSharingRelationships:(id)arg1 fromOwnedAlbum:(id)arg2 info:(id)arg3;
 - (void)retrieveAssets:(id)arg1 inAlbumWithGUID:(id)arg2;
@@ -206,31 +192,31 @@
 - (void)setMaxMetadataRetryCount:(int)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMetadataBackoffManagerParameters:(id)arg1;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)setPendingRootCtag:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (void)setPersonID:(id)arg1;
 - (void)setPhoneInvitations:(id)arg1;
-- (void)setPostCommandCompletionBlock:(id)arg1;
+- (void)setPostCommandCompletionBlock:(id /* block */)arg1;
 - (void)setProtocol:(id)arg1;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbum:(id)arg2 info:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)setRootCtagFromPendingRootCtag;
 - (void)setServerSideConfigQueue:(id)arg1;
 - (void)setServerSideConfiguration:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownCompletionBlock:(id)arg1;
+- (void)shutDownCompletionBlock:(id /* block */)arg1;
 - (void)start;
-- (void)stopAssetDownloadsCompletionBlock:(id)arg1;
+- (void)stopAssetDownloadsCompletionBlock:(id /* block */)arg1;
 - (void)subscribeToAlbum:(id)arg1 info:(id)arg2;
 - (id)thumbnailImageScalingSpecification;
 - (void)unsubscribeFromAlbum:(id)arg1 info:(id)arg2;
 - (void)updateAlbum:(id)arg1 updateAlbumFlags:(int)arg2 info:(id)arg3;
-- (void)videoURLForAssetCollection:(id)arg1 inAlbum:(id)arg2 completionBlock:(id)arg3;
-- (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned int)arg2 inAlbum:(id)arg3 completionBlock:(id)arg4;
+- (void)videoURLForAssetCollection:(id)arg1 inAlbum:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)videoURLsForAssetCollection:(id)arg1 forMediaAssetType:(unsigned int)arg2 inAlbum:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)workQueue;
 - (void)workQueueApplyServerSideConfiguration;
 - (void)workQueueCancelAllCommandsFilteredByAlbumGUID:(id)arg1 assetCollectionGUID:(id)arg2;
-- (void)workQueueCancelCompletionBlock:(id)arg1;
+- (void)workQueueCancelCompletionBlock:(id /* block */)arg1;
 - (void)workQueueCheckForNextCommand;
 - (void)workQueueDidFailToFinishCommandDueToTemporaryError:(id)arg1;
 - (void)workQueueDidFinishCommand;

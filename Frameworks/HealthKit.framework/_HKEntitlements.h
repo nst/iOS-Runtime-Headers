@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKEntitlements : NSObject {
-}
+@interface _HKEntitlements : NSObject
 
 + (void)_setEntitlementsForCurrentTask:(id)arg1;
 + (id)entitlementsForCurrentTask;

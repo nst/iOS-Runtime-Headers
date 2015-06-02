@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class CALayer, UIColor;
-
 @interface RCRecorderStateButton : UIButton {
     int _AVCaptureState;
     UIColor *_innerColor;
@@ -13,8 +11,8 @@
     BOOL _realEnabledState;
 }
 
-@property int AVCaptureState;
-@property BOOL isForceDisabled;
+@property (nonatomic) int AVCaptureState;
+@property (nonatomic) BOOL isForceDisabled;
 
 - (void).cxx_destruct;
 - (int)AVCaptureState;

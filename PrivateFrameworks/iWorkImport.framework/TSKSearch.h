@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface TSKSearch : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _hitBlock;
-
+    id /* block */ _hitBlock;
     BOOL _isComplete;
     unsigned int _options;
     NSString *_string;
 }
 
-@property(copy) id hitBlock;
-@property BOOL isComplete;
-@property unsigned int options;
-@property(copy) NSString * string;
+@property (nonatomic, copy) id /* block */ hitBlock;
+@property (nonatomic) BOOL isComplete;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, copy) NSString *string;
 
 - (void)dealloc;
-- (id)hitBlock;
-- (id)initWithString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
+- (id /* block */)hitBlock;
+- (id)initWithString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
 - (BOOL)isComplete;
 - (unsigned int)options;
-- (void)setHitBlock:(id)arg1;
+- (void)setHitBlock:(id /* block */)arg1;
 - (void)setIsComplete:(BOOL)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (void)setString:(id)arg1;

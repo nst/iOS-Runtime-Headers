@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NSURLProtocolClient>, NSCachedURLResponse, NSLock, NSURLRequest;
-
 @interface NSURLProtocolInternal : NSObject {
     NSCachedURLResponse *cachedResponse;
     <NSURLProtocolClient> *client;

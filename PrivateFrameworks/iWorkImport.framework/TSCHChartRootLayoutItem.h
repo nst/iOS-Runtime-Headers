@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, TSCHChartAbstractAreaLayoutItem, TSCHChartInfo, TSCHChartModel, TSCHLegendAreaLayoutItem;
-
 @interface TSCHChartRootLayoutItem : TSCHChartLayoutItem <TSCHUnretainedParent> {
     TSCHChartAbstractAreaLayoutItem *mChartArea;
     TSCHChartInfo *mChartInfo;
@@ -46,10 +44,10 @@
     } mStartingSize;
 }
 
-@property(readonly) TSCHChartAbstractAreaLayoutItem * chartAreaLayoutItem;
-@property unsigned int dataSetIndex;
-@property(readonly) TSCHLegendAreaLayoutItem * legendAreaLayoutItem;
-@property(copy) NSDictionary * seriesIndexedPieWedgeExplosions;
+@property (nonatomic, readonly) TSCHChartAbstractAreaLayoutItem *chartAreaLayoutItem;
+@property (nonatomic) unsigned int dataSetIndex;
+@property (nonatomic, readonly) TSCHLegendAreaLayoutItem *legendAreaLayoutItem;
+@property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
 - (void)beginResizeWithStartingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)buildSubTree;

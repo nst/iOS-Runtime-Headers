@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBHandwritingPointFIFO;
-
 @interface UIKBHandwritingPointFIFO : NSObject {
     UIKBHandwritingPointFIFO *_nextFIFO;
 }
 
-@property(retain) UIKBHandwritingPointFIFO * nextFIFO;
+@property (nonatomic, retain) UIKBHandwritingPointFIFO *nextFIFO;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clear;

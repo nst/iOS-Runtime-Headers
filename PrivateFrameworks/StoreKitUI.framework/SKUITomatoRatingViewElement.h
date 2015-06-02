@@ -7,8 +7,8 @@
     float _tomatoRating;
 }
 
-@property(readonly) int freshness;
-@property(readonly) float tomatoRating;
+@property (nonatomic, readonly) int freshness;
+@property (nonatomic, readonly) float tomatoRating;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (int)freshness;

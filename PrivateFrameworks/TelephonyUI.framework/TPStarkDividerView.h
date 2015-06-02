@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSLayoutConstraint;
-
 @interface TPStarkDividerView : UIView {
     NSLayoutConstraint *_horizontalPositioningConstraint;
 }
 
-@property(retain) NSLayoutConstraint * horizontalPositioningConstraint;
+@property (retain) NSLayoutConstraint *horizontalPositioningConstraint;
 
 - (void)dealloc;
 - (id)horizontalPositioningConstraint;

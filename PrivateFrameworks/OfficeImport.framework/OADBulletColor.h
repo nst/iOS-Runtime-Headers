@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADBulletColor : NSObject {
-}
+@interface OADBulletColor : NSObject
 
 @end

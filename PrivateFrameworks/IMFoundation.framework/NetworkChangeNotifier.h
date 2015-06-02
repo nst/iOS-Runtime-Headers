@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMConnectionMonitor, NSArray, NSString;
-
 @interface NetworkChangeNotifier : NSObject <IMConnectionMonitorDelegate, IMSystemMonitorListener> {
     IMConnectionMonitor *_connectionMonitor;
     BOOL _lastPostedNetworkUp;
@@ -12,16 +10,16 @@
     struct __SCDynamicStore { } *_store;
 }
 
-@property(retain) IMConnectionMonitor * connectionMonitor;
-@property(readonly) struct __SCDynamicStore { }* getDynamicStore;
-@property(readonly) BOOL isNetworkUp;
-@property BOOL lastPostedNetworkUp;
-@property(readonly) NSString * myGatewayAddress;
-@property(retain) NSString * myIP;
-@property(readonly) NSString * myIPAddress;
-@property(readonly) NSArray * myIPAddresses;
-@property(retain) NSArray * myIPs;
-@property struct __SCDynamicStore { }* store;
+@property (nonatomic, retain) IMConnectionMonitor *connectionMonitor;
+@property (nonatomic, readonly) struct __SCDynamicStore { }*getDynamicStore;
+@property (nonatomic, readonly) BOOL isNetworkUp;
+@property (nonatomic) BOOL lastPostedNetworkUp;
+@property (nonatomic, readonly) NSString *myGatewayAddress;
+@property (nonatomic, retain) NSString *myIP;
+@property (nonatomic, readonly) NSString *myIPAddress;
+@property (nonatomic, readonly) NSArray *myIPAddresses;
+@property (nonatomic, retain) NSArray *myIPs;
+@property (nonatomic) struct __SCDynamicStore { }*store;
 
 + (void)disableNotifications;
 + (BOOL)enableNotifications;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskDelegate>;
+@interface CoreDAVPropFindTask : CoreDAVPropertyFindBaseTask
 
-@interface CoreDAVPropFindTask : CoreDAVPropertyFindBaseTask {
-}
-
-@property <CoreDAVTaskDelegate> * delegate;
+@property (nonatomic) <CoreDAVTaskDelegate> *delegate;
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

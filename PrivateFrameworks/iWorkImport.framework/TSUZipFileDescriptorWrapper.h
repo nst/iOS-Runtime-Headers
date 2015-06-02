@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUReadChannel>, NSObject<OS_dispatch_group>;
-
 @interface TSUZipFileDescriptorWrapper : NSObject {
     NSObject<OS_dispatch_group> *_accessGroup;
     int _fileDescriptor;
     <TSUReadChannel> *_readChannel;
 }
 
-@property(readonly) int fileDescriptor;
-@property(readonly) <TSUReadChannel> * readChannel;
+@property (nonatomic, readonly) int fileDescriptor;
+@property (nonatomic, readonly) <TSUReadChannel> *readChannel;
 
 - (void).cxx_destruct;
 - (void)beginAccess;

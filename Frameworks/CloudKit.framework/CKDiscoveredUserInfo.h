@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSString;
-
 @interface CKDiscoveredUserInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_firstName;
     NSString *_lastName;
@@ -11,10 +9,10 @@
     CKRecordID *_userRecordID;
 }
 
-@property(copy) NSString * firstName;
-@property(copy) NSString * lastName;
-@property(readonly) void* oldDisplayContact;
-@property(copy) CKRecordID * userRecordID;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, readonly) void*oldDisplayContact;
+@property (nonatomic, copy) CKRecordID *userRecordID;
 
 + (BOOL)supportsSecureCoding;
 

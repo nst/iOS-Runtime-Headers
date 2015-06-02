@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSArray;
-
 @interface HSBulkCloudLyricsInfoResponse : HSResponse {
     NSArray *lyricsInfoDictionaries;
 }
 
-@property(copy) NSArray * lyricsInfoDictionaries;
+@property (nonatomic, copy) NSArray *lyricsInfoDictionaries;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLPhotoDCFObject : NSObject {
     NSString *_name;
     int _number;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UILabel, UIView;
-
 @interface MPClosedCaptionDisplay : UIView {
     UIView *_backgroundView;
     BOOL _hidden;

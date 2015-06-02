@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIViewServiceFencingController;
-
 @interface _UIViewServiceFencingControlProxy : _UIQueueingProxy {
     _UIViewServiceFencingController *_fencingController;
 }

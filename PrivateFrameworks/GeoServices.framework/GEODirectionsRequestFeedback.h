@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEODirectionsRequestFeedback : PBCodable <NSCopying> {
     NSString *_appIdentifier;
     struct { 
@@ -14,12 +12,12 @@
     int _source;
 }
 
-@property(retain) NSString * appIdentifier;
-@property(readonly) BOOL hasAppIdentifier;
-@property BOOL hasPurpose;
-@property BOOL hasSource;
-@property int purpose;
-@property int source;
+@property (nonatomic, retain) NSString *appIdentifier;
+@property (nonatomic, readonly) BOOL hasAppIdentifier;
+@property (nonatomic) BOOL hasPurpose;
+@property (nonatomic) BOOL hasSource;
+@property (nonatomic) int purpose;
+@property (nonatomic) int source;
 
 - (id)appIdentifier;
 - (void)copyTo:(id)arg1;

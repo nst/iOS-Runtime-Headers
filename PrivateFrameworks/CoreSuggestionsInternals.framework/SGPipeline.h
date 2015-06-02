@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface SGPipeline : NSObject <SGPipelineDissector> {
     NSObject<OS_dispatch_queue> *_andThenQueue;
     NSArray *_dissectors;
@@ -11,10 +9,10 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)customPipeline:(id)arg1;
 + (id)fullPipeline;
@@ -23,8 +21,8 @@
 - (void).cxx_destruct;
 - (void)dissect:(id)arg1;
 - (void)dissect:(id)arg1 andStore:(id)arg2;
-- (void)dissect:(id)arg1 andThen:(id)arg2;
+- (void)dissect:(id)arg1 andThen:(id /* block */)arg2;
 - (void)dissectEntity:(id)arg1 andStore:(id)arg2;
-- (void)dissectEntity:(id)arg1 andStore:(id)arg2 andThen:(id)arg3;
+- (void)dissectEntity:(id)arg1 andStore:(id)arg2 andThen:(id /* block */)arg3;
 
 @end

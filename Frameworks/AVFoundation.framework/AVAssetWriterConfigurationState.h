@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaFileType, NSArray, NSURL;
-
 @interface AVAssetWriterConfigurationState : NSObject {
     NSURL *_URL;
     NSURL *_directoryForTemporaryFiles;
@@ -31,18 +29,18 @@
     BOOL _shouldOptimizeForNetworkUse;
 }
 
-@property(copy) NSURL * URL;
-@property(copy) NSURL * directoryForTemporaryFiles;
-@property(copy) NSArray * inputGroups;
-@property(copy) NSArray * inputs;
-@property(copy) AVMediaFileType * mediaFileType;
-@property(copy) NSArray * metadataItems;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
-@property int movieTimeScale;
-@property float preferredRate;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property float preferredVolume;
-@property BOOL shouldOptimizeForNetworkUse;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSURL *directoryForTemporaryFiles;
+@property (nonatomic, copy) NSArray *inputGroups;
+@property (nonatomic, copy) NSArray *inputs;
+@property (nonatomic, copy) AVMediaFileType *mediaFileType;
+@property (nonatomic, copy) NSArray *metadataItems;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property (nonatomic) int movieTimeScale;
+@property (nonatomic) float preferredRate;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic) float preferredVolume;
+@property (nonatomic) BOOL shouldOptimizeForNetworkUse;
 
 - (id)URL;
 - (void)dealloc;

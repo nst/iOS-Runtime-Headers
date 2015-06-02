@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class ISURLOperation, NSString, NSURL;
-
 @interface IKLoadRecord : NSObject {
     NSURL *_URL;
     ISURLOperation *_opertaion;
     NSString *_scriptStr;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) ISURLOperation * opertaion;
-@property(retain) NSString * scriptStr;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) ISURLOperation *opertaion;
+@property (nonatomic, retain) NSString *scriptStr;
 
 - (void).cxx_destruct;
 - (id)URL;

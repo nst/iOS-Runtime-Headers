@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class BKSAccelerometer, CMMotionManager;
-
 @interface CAMMotionController : NSObject {
     BKSAccelerometer *__accelerometer;
     int __numberOfDominantPhysicalButtonObservers;
@@ -13,12 +11,12 @@
     int _dominantPhysicalButton;
 }
 
-@property(setter=_setAccelerometer:,retain) BKSAccelerometer * _accelerometer;
-@property(setter=_setNumberOfDominantPhysicalButtonObservers:) int _numberOfDominantPhysicalButtonObservers;
-@property(readonly) CMMotionManager * _physicalButtonMotionManager;
-@property(setter=_setCaptureOrientation:) int captureOrientation;
-@property(setter=_setDeviceOrientation:) int deviceOrientation;
-@property(setter=_setDominantPhysicalButton:) int dominantPhysicalButton;
+@property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
+@property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) int _numberOfDominantPhysicalButtonObservers;
+@property (nonatomic, readonly) CMMotionManager *_physicalButtonMotionManager;
+@property (setter=_setCaptureOrientation:, nonatomic) int captureOrientation;
+@property (setter=_setDeviceOrientation:, nonatomic) int deviceOrientation;
+@property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
 
 + (id)sharedController;
 

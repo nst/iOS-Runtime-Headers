@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray, NSString, UITableView;
-
 @interface EKEventAvailabilityEditViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
     int _availability;
     NSMutableArray *_choices;
@@ -11,12 +9,12 @@
     UITableView *_table;
 }
 
-@property int availability;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property unsigned int supportedAvailabilities;
+@property (nonatomic) int availability;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int supportedAvailabilities;
 
 - (void).cxx_destruct;
 - (void)_selectRow:(unsigned int)arg1;

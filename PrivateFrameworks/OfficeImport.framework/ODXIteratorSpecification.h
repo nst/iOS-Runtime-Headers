@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODXIteratorSpecification : NSObject {
-}
+@interface ODXIteratorSpecification : NSObject
 
 + (id)axisTypeMap;
 + (id)elementTypeMap;

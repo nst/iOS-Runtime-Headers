@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKFetchUserIdentitiesOperationInfo : CKOperationInfo <NSSecureCoding> {
     NSArray *_identityInfos;
 }
 
-@property(retain) NSArray * identityInfos;
+@property (nonatomic, retain) NSArray *identityInfos;
 
 + (BOOL)supportsSecureCoding;
 

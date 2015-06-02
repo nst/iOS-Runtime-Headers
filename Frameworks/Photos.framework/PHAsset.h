@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class CLLocation, NSArray, NSData, NSDate, NSString, NSURL;
-
 @interface PHAsset : PHObject <_PLImageLoadingAsset> {
     int _assetSource;
     int _avalanchePickType;
@@ -33,48 +31,49 @@
     NSString *_uniformTypeIdentifier;
 }
 
-@property(readonly) NSURL * ALAssetURL;
-@property(readonly) int assetSource;
-@property(readonly) int avalanchePickType;
-@property(readonly) NSString * burstIdentifier;
-@property(readonly) unsigned int burstSelectionTypes;
-@property(copy,readonly) NSString * cloudIdentifier;
-@property(readonly) BOOL cloudIsDeletable;
-@property(readonly) int cloudPlaceholderKind;
-@property(readonly) BOOL complete;
-@property(readonly) NSDate * creationDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * directory;
-@property(readonly) double duration;
-@property(readonly) int exifOrientation;
-@property(readonly) NSArray * faceRegions;
-@property(getter=isFavorite,readonly) BOOL favorite;
-@property(readonly) NSString * filename;
-@property(readonly) BOOL hasAdjustments;
-@property(readonly) unsigned int hash;
-@property(getter=isHidden,readonly) BOOL hidden;
-@property(readonly) int imageOrientation;
-@property(readonly) BOOL isHDVideo;
-@property(readonly) BOOL isJPEG;
-@property(readonly) BOOL isPartOfBurst;
-@property(readonly) BOOL isRAW;
-@property(readonly) CLLocation * location;
-@property(readonly) NSData * locationData;
-@property(readonly) unsigned int mediaSubtypes;
-@property(readonly) int mediaType;
-@property(readonly) NSString * metadataDebugDescription;
-@property(readonly) NSDate * modificationDate;
-@property(readonly) unsigned int persistenceState;
-@property(readonly) unsigned int pixelHeight;
-@property(readonly) unsigned int pixelWidth;
-@property(readonly) BOOL representsBurst;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int thumbnailIndex;
-@property(readonly) NSDate * trashedDate;
-@property(readonly) NSString * uniformTypeIdentifier;
+@property (nonatomic, readonly) NSURL *ALAssetURL;
+@property (nonatomic, readonly) int assetSource;
+@property (nonatomic, readonly) int avalanchePickType;
+@property (nonatomic, readonly) NSString *burstIdentifier;
+@property (nonatomic, readonly) unsigned int burstSelectionTypes;
+@property (nonatomic, readonly, copy) NSString *cloudIdentifier;
+@property (nonatomic, readonly) BOOL cloudIsDeletable;
+@property (nonatomic, readonly) int cloudPlaceholderKind;
+@property (nonatomic, readonly) BOOL complete;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *directory;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) int exifOrientation;
+@property (nonatomic, readonly) NSArray *faceRegions;
+@property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
+@property (nonatomic, readonly) NSString *filename;
+@property (nonatomic, readonly) BOOL hasAdjustments;
+@property (readonly) unsigned int hash;
+@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
+@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) BOOL isHDVideo;
+@property (nonatomic, readonly) BOOL isJPEG;
+@property (nonatomic, readonly) BOOL isPartOfBurst;
+@property (nonatomic, readonly) BOOL isRAW;
+@property (nonatomic, readonly) CLLocation *location;
+@property (nonatomic, readonly) NSData *locationData;
+@property (nonatomic, readonly) unsigned int mediaSubtypes;
+@property (nonatomic, readonly) int mediaType;
+@property (nonatomic, readonly) NSString *metadataDebugDescription;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly) unsigned int persistenceState;
+@property (nonatomic, readonly) unsigned int pixelHeight;
+@property (nonatomic, readonly) unsigned int pixelWidth;
+@property (nonatomic, readonly) BOOL representsBurst;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int thumbnailIndex;
+@property (nonatomic, readonly) NSDate *trashedDate;
+@property (nonatomic, readonly) NSString *uniformTypeIdentifier;
 
-+ (int)_pu_mediaTypeForAssets:(id)arg1;
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
 + (id)_transformMediaSubtypeComparisonPredicate:(id)arg1;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
@@ -100,8 +99,6 @@
 + (id)pl_managedAssetsForAssets:(id)arg1;
 + (unsigned int)pl_phAssetMediaSubtypeForPLAssetSubtype:(short)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
-+ (id)pu_typeStringForAssets:(id)arg1;
-+ (id)pu_typeStringForAssetsWithIdentifiers:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)ALAssetURL;
@@ -109,8 +106,8 @@
 - (id)__dictionaryWithContentsOfData:(id)arg1;
 - (id)_createPropertyObjectOfClass:(Class)arg1 properties:(id)arg2 isExtraObject:(BOOL)arg3;
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
-- (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id)arg2;
-- (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id)arg4;
+- (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id /* block */)arg2;
+- (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id /* block */)arg4;
 - (id)adjustmentsDebugMetadata;
 - (double)aspectRatio;
 - (int)assetSource;
@@ -137,7 +134,7 @@
 - (id)embeddedThumbnailProperties;
 - (int)exifOrientation;
 - (id)faceRegions;
-- (void)fetchKeywordsWithCompletionHandler:(id)arg1;
+- (void)fetchKeywordsWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchPropertySetsIfNeeded;
 - (id)fileURLForAdjustedFullsizeImage;
 - (id)fileURLForAdjustmentsDirectory;
@@ -210,7 +207,7 @@
 - (id)pl_managedAsset;
 - (id)pl_photoLibrary;
 - (BOOL)representsBurst;
-- (unsigned int)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id)arg2;
+- (unsigned int)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)reservedFileURLForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (id)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (short)savedAssetType;
@@ -218,5 +215,11 @@
 - (unsigned int)thumbnailIndex;
 - (id)trashedDate;
 - (id)uniformTypeIdentifier;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (int)_pu_mediaTypeForAssets:(id)arg1;
++ (id)pu_typeStringForAssets:(id)arg1;
++ (id)pu_typeStringForAssetsWithIdentifiers:(id)arg1;
 
 @end

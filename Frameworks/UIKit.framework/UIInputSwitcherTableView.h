@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardMenuView;
-
 @interface UIInputSwitcherTableView : UITableView {
     UIKeyboardMenuView *_menu;
 }
 
-@property UIKeyboardMenuView * menu;
+@property (nonatomic) UIKeyboardMenuView *menu;
 
 - (void)deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (id)menu;

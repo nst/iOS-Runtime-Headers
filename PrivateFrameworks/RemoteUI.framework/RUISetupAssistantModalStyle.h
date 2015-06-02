@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUISetupAssistantModalStyle : RUISetupAssistantStyle {
-}
+@interface RUISetupAssistantModalStyle : RUISetupAssistantStyle
 
 - (void)applyToObjectModel:(id)arg1;
 

@@ -2,32 +2,25 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface CATextLayer : CALayer {
     struct CATextLayerPrivate { } *_state;
 }
 
-@property(copy) NSString * alignmentMode;
+@property (copy) NSString *alignmentMode;
 @property BOOL allowsFontSubpixelQuantization;
-@property void* font;
+@property void*font;
 @property float fontSize;
-@property struct CGColor { }* foregroundColor;
-@property(copy) id string;
-@property(copy) NSString * truncationMode;
-@property(copy) id truncationString;
-@property(getter=isWrapped) BOOL wrapped;
+@property struct CGColor { }*foregroundColor;
+@property (copy) id string;
+@property (copy) NSString *truncationMode;
+@property (copy) id truncationString;
+@property (getter=isWrapped) BOOL wrapped;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (BOOL)needsDisplayForKey:(id)arg1;
 
-- (void)_applyLinesToFunction:(int (*)())arg1 info:(void*)arg2;
+- (void)_applyLinesToFunction:(int (*)arg1 info:(void*)arg2;
 - (id)_createStringDict;
 - (struct __CTLine { }*)_createTruncationToken;
 - (void)_drawLine:(struct __CTLine { }*)arg1 inContext:(struct CGContext { }*)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;

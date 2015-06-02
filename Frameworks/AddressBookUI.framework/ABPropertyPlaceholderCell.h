@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILabel;
-
 @interface ABPropertyPlaceholderCell : ABLabeledCell {
     UILabel *_label;
 }
 
-@property(retain) UILabel * label;
+@property (nonatomic, retain) UILabel *label;
 
 - (void)dealloc;
 - (id)label;

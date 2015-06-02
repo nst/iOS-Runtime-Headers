@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SVSBundleIdentifierMap;
-
 @interface SiriUIPluginManager : NSObject {
     SVSBundleIdentifierMap *_identifierMap;
 }

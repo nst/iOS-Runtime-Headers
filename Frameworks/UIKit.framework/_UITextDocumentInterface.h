@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UITextDocumentInterfaceDelegate>, NSString, TIDocumentState, TIKeyboardOutput, TITextInputTraits, _UIInputViewControllerOutput, _UIInputViewControllerState;
-
 @interface _UITextDocumentInterface : UIInputViewControllerInterface <UITextDocumentProxy> {
     _UIInputViewControllerOutput *_controllerOutput;
     _UIInputViewControllerState *_controllerState;
@@ -11,26 +9,26 @@
     TIKeyboardOutput *_keyboardOutput;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(getter=_controllerOutput,retain) _UIInputViewControllerOutput * controllerOutput;
-@property(getter=_controllerState,retain) _UIInputViewControllerState * controllerState;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=_delegate) <_UITextDocumentInterfaceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * documentContextAfterInput;
-@property(readonly) NSString * documentContextBeforeInput;
-@property(getter=_documentState,readonly) TIDocumentState * documentState;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
-@property(getter=_keyboardOutput,readonly) TIKeyboardOutput * keyboardOutput;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(getter=_textInputTraits,readonly) TITextInputTraits * textInputTraits;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (getter=_controllerOutput, nonatomic, retain) _UIInputViewControllerOutput *controllerOutput;
+@property (getter=_controllerState, nonatomic, retain) _UIInputViewControllerState *controllerState;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=_delegate, nonatomic) <_UITextDocumentInterfaceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *documentContextAfterInput;
+@property (nonatomic, readonly) NSString *documentContextBeforeInput;
+@property (getter=_documentState, nonatomic, readonly) TIDocumentState *documentState;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int keyboardAppearance;
+@property (getter=_keyboardOutput, nonatomic, readonly) TIKeyboardOutput *keyboardOutput;
+@property (nonatomic) int keyboardType;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (getter=_textInputTraits, nonatomic, readonly) TITextInputTraits *textInputTraits;
 
 - (id)_controllerOutput;
 - (id)_controllerState;

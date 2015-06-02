@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WirelessCoexManager.framework/WirelessCoexManager
  */
 
-@interface WCMSetting : NSObject {
-}
+@interface WCMSetting : NSObject
 
 - (BOOL)WCMAvailable;
 - (void)registerServices:(id)arg1;

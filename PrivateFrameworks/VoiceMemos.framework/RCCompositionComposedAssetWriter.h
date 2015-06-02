@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVAssetExportSession, RCComposition, RCWaveformDataSource;
-
 @interface RCCompositionComposedAssetWriter : NSObject {
     BOOL _canGenerateWaveform;
     BOOL _canGenerateWaveformByProcessingAVURL;
@@ -13,16 +11,16 @@
     RCWaveformDataSource *_waveformDataSource;
 }
 
-@property BOOL canGenerateWaveform;
-@property BOOL canGenerateWaveformByProcessingAVURL;
-@property BOOL canSaveCompositionMetadata;
-@property(readonly) RCComposition * composition;
-@property(readonly) float progress;
+@property (nonatomic) BOOL canGenerateWaveform;
+@property (nonatomic) BOOL canGenerateWaveformByProcessingAVURL;
+@property (nonatomic) BOOL canSaveCompositionMetadata;
+@property (nonatomic, readonly) RCComposition *composition;
+@property (nonatomic, readonly) float progress;
 
 - (void).cxx_destruct;
-- (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(id)arg1;
-- (void)_writeCompositionWaveformForFinalizedAssetWithCompletionHandler:(id)arg1;
-- (void)_writeCompositionWithCompletionHandler:(id)arg1;
+- (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(id /* block */)arg1;
+- (void)_writeCompositionWaveformForFinalizedAssetWithCompletionHandler:(id /* block */)arg1;
+- (void)_writeCompositionWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)canGenerateWaveform;
 - (BOOL)canGenerateWaveformByProcessingAVURL;
 - (BOOL)canSaveCompositionMetadata;
@@ -33,6 +31,6 @@
 - (void)setCanGenerateWaveform:(BOOL)arg1;
 - (void)setCanGenerateWaveformByProcessingAVURL:(BOOL)arg1;
 - (void)setCanSaveCompositionMetadata:(BOOL)arg1;
-- (void)writeCompositionWithCompletionBlock:(id)arg1;
+- (void)writeCompositionWithCompletionBlock:(id /* block */)arg1;
 
 @end

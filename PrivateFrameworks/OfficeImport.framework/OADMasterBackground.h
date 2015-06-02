@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADMasterBackground : OADBackground {
-}
+@interface OADMasterBackground : OADBackground
 
 + (id)masterBackground;
 

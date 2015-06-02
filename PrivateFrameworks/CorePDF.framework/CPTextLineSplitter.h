@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPTextLineSplitter : NSObject {
-}
+@interface CPTextLineSplitter : NSObject
 
 + (void)splitLinesIn:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <WLOTcpServerDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface WLOTcpServer : NSObject {
     <WLOTcpServerDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_listenQueue;
@@ -11,10 +9,10 @@
     int _sockd;
 }
 
-@property <WLOTcpServerDelegate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * listenQueue;
-@property int port;
-@property int sockd;
+@property (nonatomic) <WLOTcpServerDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *listenQueue;
+@property (nonatomic) int port;
+@property (nonatomic) int sockd;
 
 - (void).cxx_destruct;
 - (void)_listen:(int)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@interface NNMKProtoFetchRequestCompletedNotification : PBCodable <NSCopying> {
-}
+@interface NNMKProtoFetchRequestCompletedNotification : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

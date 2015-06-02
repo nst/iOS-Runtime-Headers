@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKNoFullLengthBottomSeparatorAttributionCell : MKPlaceAttributionCell {
-}
+@interface _MKNoFullLengthBottomSeparatorAttributionCell : MKPlaceAttributionCell
 
 - (void)_setShouldHaveFullLengthBottomSeparator:(BOOL)arg1;
 

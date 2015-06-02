@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMicroblogTwitterPost : SAMicroblogObject {
-}
+@interface SAMicroblogTwitterPost : SAMicroblogObject
 
 + (id)twitterPost;
 + (id)twitterPostWithDictionary:(id)arg1 context:(id)arg2;

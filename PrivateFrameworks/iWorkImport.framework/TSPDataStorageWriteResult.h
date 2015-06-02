@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPCryptoInfo>, NSString;
-
 @interface TSPDataStorageWriteResult : NSObject {
     BOOL _didCopyDataToPackage;
     <TSPCryptoInfo> *_encryptionInfo;
@@ -11,10 +9,10 @@
     BOOL _isMissingData;
 }
 
-@property(readonly) BOOL didCopyDataToPackage;
-@property(readonly) <TSPCryptoInfo> * encryptionInfo;
-@property(readonly) NSString * filename;
-@property(readonly) BOOL isMissingData;
+@property (nonatomic, readonly) BOOL didCopyDataToPackage;
+@property (nonatomic, readonly) <TSPCryptoInfo> *encryptionInfo;
+@property (nonatomic, readonly) NSString *filename;
+@property (nonatomic, readonly) BOOL isMissingData;
 
 - (void).cxx_destruct;
 - (BOOL)didCopyDataToPackage;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLCameraImporterDelegate>, ICCameraDevice, NSMutableArray, NSMutableDictionary, NSString, PLCameraImportQueue, PLImportFileManager, PLMutableCameraImportQueue;
-
 @interface PLCameraImporter : NSObject <ICCameraDeviceDelegate, ICDeviceDelegate> {
     BOOL _autosplitEvents;
     ICCameraDevice *_camera;
@@ -26,16 +24,16 @@
     NSString *importSessionIdentifier;
 }
 
-@property(retain) ICCameraDevice * camera;
-@property(copy,readonly) NSString * debugDescription;
-@property <PLCameraImporterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * importSessionIdentifier;
-@property BOOL isAppleDevice;
-@property(retain) NSMutableArray * items;
-@property(retain) NSMutableDictionary * itemsMapping;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ICCameraDevice *camera;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLCameraImporterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *importSessionIdentifier;
+@property (nonatomic) BOOL isAppleDevice;
+@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, retain) NSMutableDictionary *itemsMapping;
+@property (readonly) Class superclass;
 
 - (void)_addImportItemFromCameraFile:(id)arg1;
 - (void)_clearImportItemsForDownload:(id)arg1;

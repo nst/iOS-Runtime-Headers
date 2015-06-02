@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKMagneticFieldNode : SKFieldNode {
-}
+@interface SKMagneticFieldNode : SKFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

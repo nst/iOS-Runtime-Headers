@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface AAUIDeviceLocatorService : NSObject {
     BOOL _hasAttemptedToFetchState;
     unsigned int _lastKnownState;

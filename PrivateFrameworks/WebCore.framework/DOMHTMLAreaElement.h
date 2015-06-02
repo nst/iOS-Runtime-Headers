@@ -2,30 +2,28 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString, NSURL;
+@interface DOMHTMLAreaElement : DOMHTMLElement
 
-@interface DOMHTMLAreaElement : DOMHTMLElement {
-}
-
-@property(copy,readonly) NSURL * absoluteLinkURL;
-@property(copy) NSString * accessKey;
-@property(copy) NSString * alt;
-@property(copy) NSString * coords;
-@property(copy,readonly) NSString * hashName;
-@property(copy,readonly) NSString * host;
-@property(copy,readonly) NSString * hostname;
-@property(copy) NSString * href;
+@property (readonly, copy) NSURL *absoluteLinkURL;
+@property (copy) NSString *accessKey;
+@property (copy) NSString *alt;
+@property (copy) NSString *coords;
+@property (readonly, copy) NSString *hashName;
+@property (readonly, copy) NSString *host;
+@property (readonly, copy) NSString *hostname;
+@property (copy) NSString *href;
 @property BOOL noHref;
-@property(copy,readonly) NSString * pathname;
-@property(copy,readonly) NSString * port;
-@property(copy,readonly) NSString * protocol;
-@property(copy,readonly) NSString * search;
-@property(copy) NSString * shape;
-@property(copy) NSString * target;
+@property (readonly, copy) NSString *pathname;
+@property (readonly, copy) NSString *port;
+@property (readonly, copy) NSString *protocol;
+@property (readonly, copy) NSString *search;
+@property (copy) NSString *shape;
+@property (copy) NSString *target;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)absoluteLinkURL;
 - (struct _WKQuad { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; })absoluteQuadWithOwner:(id)arg1;
-- (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)absoluteQuadsWithOwner:(id)arg1;
 - (id)accessKey;
 - (id)alt;
@@ -52,5 +50,9 @@
 - (void)setTarget:(id)arg1;
 - (id)shape;
 - (id)target;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)absoluteQuadsAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString;
+@interface MTLToolsCommandEncoder : MTLToolsObject <MTLCommandEncoder>
 
-@interface MTLToolsCommandEncoder : MTLToolsObject <MTLCommandEncoder> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (readonly) Class superclass;
 
 - (id)device;
 - (void)endEncoding;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSArray, NSString;
-
 @interface CUIThemeSchemaLayer : NSObject {
     unsigned int _index;
     NSString *_name;
     NSArray *_renditions;
 }
 
-@property unsigned int index;
-@property(retain) NSString * name;
-@property(retain) NSArray * renditions;
+@property (nonatomic) unsigned int index;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSArray *renditions;
 
 + (id)layerWithRenditions:(id)arg1 name:(id)arg2 index:(unsigned int)arg3;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class <PKGroupDelegate>, NSMutableDictionary, NSNumber, PKCatalogGroup;
-
 @interface PKGroup : NSObject {
     PKCatalogGroup *_catalogGroup;
     <PKGroupDelegate> *_delegate;
@@ -12,10 +10,10 @@
     NSMutableDictionary *_passesByUniqueID;
 }
 
-@property <PKGroupDelegate> * delegate;
-@property unsigned int frontmostPassIndex;
-@property(readonly) NSNumber * groupID;
-@property(getter=isLocal) BOOL local;
+@property (nonatomic) <PKGroupDelegate> *delegate;
+@property (nonatomic) unsigned int frontmostPassIndex;
+@property (nonatomic, readonly) NSNumber *groupID;
+@property (getter=isLocal, nonatomic) BOOL local;
 
 - (unsigned int)_indexOfUniqueID:(id)arg1;
 - (void)_insertPass:(id)arg1 atIndex:(unsigned int)arg2 notify:(BOOL)arg3;
@@ -28,7 +26,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)enumerateUniqueIDsWithHandler:(id)arg1;
+- (void)enumerateUniqueIDsWithHandler:(id /* block */)arg1;
 - (unsigned int)frontmostPassIndex;
 - (id)groupID;
 - (void)handleUserPassDelete:(id)arg1;

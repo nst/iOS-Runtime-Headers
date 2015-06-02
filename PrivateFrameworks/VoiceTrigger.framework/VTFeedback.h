@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class VTServiceClient;
-
 @interface VTFeedback : NSObject {
     VTServiceClient *_service;
 }

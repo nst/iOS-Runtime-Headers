@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBSDisplay;
-
 @interface FBUIApplicationResignActiveAssertion : NSObject {
     FBSDisplay *_display;
     int _reason;
     BOOL _relinquished;
 }
 
-@property(retain) FBSDisplay * display;
-@property int reason;
+@property (nonatomic, retain) FBSDisplay *display;
+@property (nonatomic) int reason;
 
 - (void)dealloc;
 - (id)description;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface HAPSystemKeychainStore : NSObject <HAPKeyStore> {
     NSString *_activeControllerIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSString * activeControllerIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *activeControllerIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)systemStore;

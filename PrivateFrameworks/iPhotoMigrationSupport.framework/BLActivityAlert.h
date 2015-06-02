@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-@class UIActivityIndicatorView, UIProgressView;
-
 @interface BLActivityAlert : BLAlert {
     UIActivityIndicatorView *_activityIndicatorView;
     BOOL _hasActivity;

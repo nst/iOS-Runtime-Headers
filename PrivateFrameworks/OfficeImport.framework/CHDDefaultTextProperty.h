@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, EDRunsCollection, NSString;
-
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject> {
     unsigned int mContentFormatId;
     int mDefaultTextType;
@@ -17,10 +15,10 @@
     bool mShowValueLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)defaultTextPropertyWithResources:(id)arg1;
 

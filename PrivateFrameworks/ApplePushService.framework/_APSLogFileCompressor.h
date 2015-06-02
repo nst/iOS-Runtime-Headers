@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@class NSMutableArray;
-
 @interface _APSLogFileCompressor : NSObject <CUTFileCopierDelegate> {
     NSMutableArray *_archivers;
 }

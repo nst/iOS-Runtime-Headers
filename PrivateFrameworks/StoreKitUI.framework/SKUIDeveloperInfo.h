@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString;
-
 @interface SKUIDeveloperInfo : NSObject <NSCopying> {
     NSArray *_addressLines;
     NSString *_administrativeArea;
@@ -19,18 +17,18 @@
     NSString *_tradeRepresentativeName;
 }
 
-@property(copy) NSString * ECommerceRegistrationIdentifier;
-@property(copy) NSString * ISOCountryCode;
-@property(copy) NSArray * addressLines;
-@property(copy) NSString * administrativeArea;
-@property(copy) NSString * businessRegistrationIdentifier;
-@property(copy) NSString * country;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * locality;
-@property(copy) NSString * phoneNumber;
-@property(copy) NSString * postalCode;
-@property(copy) NSString * tradeName;
-@property(copy) NSString * tradeRepresentativeName;
+@property (nonatomic, copy) NSString *ECommerceRegistrationIdentifier;
+@property (nonatomic, copy) NSString *ISOCountryCode;
+@property (nonatomic, copy) NSArray *addressLines;
+@property (nonatomic, copy) NSString *administrativeArea;
+@property (nonatomic, copy) NSString *businessRegistrationIdentifier;
+@property (nonatomic, copy) NSString *country;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *locality;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *postalCode;
+@property (nonatomic, copy) NSString *tradeName;
+@property (nonatomic, copy) NSString *tradeRepresentativeName;
 
 - (void).cxx_destruct;
 - (id)ECommerceRegistrationIdentifier;

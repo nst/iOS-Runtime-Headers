@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WirelessProximityDelegate>, NSString, XPCClient;
-
 @interface WirelessProximity : NSObject <XPCClientDelegate> {
     XPCClient *_connection;
     <WirelessProximityDelegate> *_delegate;
     int _state;
 }
 
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <WirelessProximityDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int state;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WirelessProximityDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connection;

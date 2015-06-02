@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface _PUEditPluginApplicationExtensionActivity : UIApplicationExtensionActivity {
-}
+@interface _PUEditPluginApplicationExtensionActivity : UIApplicationExtensionActivity
 
 + (int)activityCategory;
 

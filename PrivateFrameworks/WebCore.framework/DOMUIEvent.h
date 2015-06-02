@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMAbstractView;
+@interface DOMUIEvent : DOMEvent
 
-@interface DOMUIEvent : DOMEvent {
-}
-
-@property(readonly) int charCode;
-@property(readonly) int detail;
-@property(readonly) int keyCode;
-@property(readonly) int layerX;
-@property(readonly) int layerY;
-@property(readonly) int pageX;
-@property(readonly) int pageY;
-@property(readonly) DOMAbstractView * view;
-@property(readonly) int which;
+@property (readonly) int charCode;
+@property (readonly) int detail;
+@property (readonly) int keyCode;
+@property (readonly) int layerX;
+@property (readonly) int layerY;
+@property (readonly) int pageX;
+@property (readonly) int pageY;
+@property (readonly) DOMAbstractView *view;
+@property (readonly) int which;
 
 - (int)charCode;
 - (int)detail;

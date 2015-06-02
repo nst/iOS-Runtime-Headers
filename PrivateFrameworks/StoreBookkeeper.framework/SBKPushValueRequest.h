@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@interface SBKPushValueRequest : SBKRequest {
-}
+@interface SBKPushValueRequest : SBKRequest
 
 + (id)propertyListBodyWithTransaction:(id)arg1;
 + (id)requestForTransaction:(id)arg1;

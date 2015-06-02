@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGNames : NSObject {
-}
+@interface SGNames : NSObject
 
 + (id)bestName:(id)arg1;
 + (id)cjkSpacerCharacters;

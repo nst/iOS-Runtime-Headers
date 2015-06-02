@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEConfiguration, NEConfigurationManager, NEContentFilterPlugin, NSArray, NSString;
-
 @interface NEFilterManager : NSObject {
     NEConfiguration *_configuration;
     NEConfigurationManager *_configurationManager;
@@ -11,13 +9,13 @@
     BOOL _hasLoaded;
 }
 
-@property(retain) NEConfiguration * configuration;
-@property(readonly) NEConfigurationManager * configurationManager;
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) NSArray * entitlements;
+@property (retain) NEConfiguration *configuration;
+@property (readonly) NEConfigurationManager *configurationManager;
+@property (getter=isEnabled) BOOL enabled;
+@property (retain) NSArray *entitlements;
 @property BOOL hasLoaded;
-@property(copy) NSString * localizedDescription;
-@property(retain) NEContentFilterPlugin * pluginConfiguration;
+@property (copy) NSString *localizedDescription;
+@property (retain) NEContentFilterPlugin *pluginConfiguration;
 
 + (id)sharedManager;
 
@@ -30,11 +28,11 @@
 - (id)init;
 - (id)initFilterManager;
 - (BOOL)isEnabled;
-- (void)loadFromPreferencesWithCompletionHandler:(id)arg1;
+- (void)loadFromPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (id)localizedDescription;
 - (id)pluginConfiguration;
-- (void)removeFromPreferencesWithCompletionHandler:(id)arg1;
-- (void)saveToPreferencesWithCompletionHandler:(id)arg1;
+- (void)removeFromPreferencesWithCompletionHandler:(id /* block */)arg1;
+- (void)saveToPreferencesWithCompletionHandler:(id /* block */)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEntitlements:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoSystemSettings.framework/NanoSystemSettings
  */
 
-@class NSString;
-
 @interface NSSUsageApp : NSObject <NSSecureCoding> {
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
@@ -14,13 +12,13 @@
     unsigned long long _totalSize;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSString * bundleVersion;
-@property unsigned long long dataSize;
-@property unsigned long long dynamicSize;
-@property(retain) NSString * name;
-@property unsigned long long staticSize;
-@property unsigned long long totalSize;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) NSString *bundleVersion;
+@property (nonatomic) unsigned long long dataSize;
+@property (nonatomic) unsigned long long dynamicSize;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned long long staticSize;
+@property (nonatomic) unsigned long long totalSize;
 
 + (BOOL)supportsSecureCoding;
 

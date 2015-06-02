@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIPSDLayerGroupEnd : CUIPSDLayer {
-}
+@interface CUIPSDLayerGroupEnd : CUIPSDLayer
 
 @end

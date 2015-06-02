@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSDictionary, NSError, NSString, SBKResponseStatus;
-
 @interface SBKResponse : NSObject {
     NSString *_MIMEType;
     NSError *_error;
@@ -14,25 +12,25 @@
     double _retrySeconds;
 }
 
-@property(readonly) NSString * MIMEType;
-@property(copy,readonly) NSString * consoleDescription;
-@property(readonly) NSError * error;
-@property(readonly) BOOL isAuthenticationError;
-@property(readonly) BOOL isError;
-@property(readonly) BOOL isGenericError;
-@property(readonly) BOOL isPuntedError;
-@property(readonly) BOOL isRecoverable;
-@property(readonly) BOOL isSuccess;
-@property(readonly) BOOL isUnsupportedClient;
-@property(readonly) BOOL isValidationError;
-@property(readonly) NSError * requestError;
-@property(readonly) unsigned int responseCode;
-@property(readonly) NSDictionary * responseDictionary;
-@property(readonly) NSDictionary * responseHeaderFields;
-@property(readonly) SBKResponseStatus * responseStatus;
-@property(readonly) double retrySeconds;
-@property(readonly) BOOL shouldFileRadar;
-@property(readonly) int statusCode;
+@property (nonatomic, readonly) NSString *MIMEType;
+@property (readonly, copy) NSString *consoleDescription;
+@property (nonatomic, readonly) NSError *error;
+@property (readonly) BOOL isAuthenticationError;
+@property (readonly) BOOL isError;
+@property (readonly) BOOL isGenericError;
+@property (readonly) BOOL isPuntedError;
+@property (readonly) BOOL isRecoverable;
+@property (readonly) BOOL isSuccess;
+@property (readonly) BOOL isUnsupportedClient;
+@property (readonly) BOOL isValidationError;
+@property (readonly) NSError *requestError;
+@property (nonatomic, readonly) unsigned int responseCode;
+@property (nonatomic, readonly) NSDictionary *responseDictionary;
+@property (nonatomic, readonly) NSDictionary *responseHeaderFields;
+@property (nonatomic, readonly) SBKResponseStatus *responseStatus;
+@property (readonly) double retrySeconds;
+@property (readonly) BOOL shouldFileRadar;
+@property (readonly) int statusCode;
 
 + (id)responseWithCode:(unsigned int)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 + (id)responseWithResponse:(id)arg1;

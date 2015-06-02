@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUHorizontalCollectionViewLayoutDelegate>, NSArray;
-
 @interface PUHorizontalCollectionViewLayout : UICollectionViewLayout {
     NSArray *_cachedItemLayoutAttributes;
     NSArray *_cachedSectionFrames;
@@ -36,10 +34,10 @@
     } _lastRequestedRect;
 }
 
-@property <PUHorizontalCollectionViewLayoutDelegate> * delegate;
-@property float interitemSpacing;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemsContentInset;
+@property (nonatomic) <PUHorizontalCollectionViewLayoutDelegate> *delegate;
+@property (nonatomic) float interitemSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemsContentInset;
 
 + (Class)invalidationContextClass;
 

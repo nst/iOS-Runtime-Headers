@@ -8,9 +8,9 @@
     BOOL _isUnlockOnly;
 }
 
-@property BOOL hasPasscode;
-@property BOOL isLocked;
-@property BOOL isUnlockOnly;
+@property (nonatomic) BOOL hasPasscode;
+@property (nonatomic) BOOL isLocked;
+@property (nonatomic) BOOL isUnlockOnly;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

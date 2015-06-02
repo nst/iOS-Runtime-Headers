@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIWebView;
-
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     UIWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) UIWebView * webView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly) UIWebView *webView;
 
 - (void).cxx_destruct;
 - (void)_callCompletionWithPreview:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)loadURL:(id)arg1 completion:(id)arg2;
+- (void)loadURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;

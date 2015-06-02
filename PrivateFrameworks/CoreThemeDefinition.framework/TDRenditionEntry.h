@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSData, TDRenditionSpec;
-
 @interface TDRenditionEntry : NSObject {
     NSData *assetData;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *key;
@@ -12,11 +10,11 @@
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } stackKey[16];
+    } stackKey;
 }
 
-@property(retain,readonly) NSData * assetData;
-@property(retain,readonly) TDRenditionSpec * renditionSpec;
+@property (nonatomic, readonly, retain) NSData *assetData;
+@property (nonatomic, readonly, retain) TDRenditionSpec *renditionSpec;
 
 - (id)assetData;
 - (int)compare:(id)arg1;

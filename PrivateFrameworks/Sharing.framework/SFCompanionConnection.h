@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFCompanionConnectionDelegate>, <SFCompanionConnectionManagerProtocol>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, SFCompanionDevice, SFCompanionInterface, SFCompanionService;
-
 @interface SFCompanionConnection : NSObject <SFCompanionConnectionManagerClient, SFCompanionXPCManagerObserver> {
     SFCompanionDevice *_connectedDevice;
     NSString *_connectionID;
@@ -20,23 +18,23 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) SFCompanionDevice * connectedDevice;
-@property(copy,readonly) NSString * connectionID;
-@property(retain) <SFCompanionConnectionManagerProtocol> * connectionProxy;
-@property(copy,readonly) NSString * debugDescription;
-@property <SFCompanionConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) SFCompanionInterface * exportedInterface;
-@property(retain) id exportedObject;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) SFCompanionDevice *connectedDevice;
+@property (nonatomic, readonly, copy) NSString *connectionID;
+@property (retain) <SFCompanionConnectionManagerProtocol> *connectionProxy;
+@property (readonly, copy) NSString *debugDescription;
+@property <SFCompanionConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (retain) SFCompanionInterface *exportedInterface;
+@property (retain) id exportedObject;
+@property (readonly) unsigned int hash;
 @property BOOL invalid;
-@property(retain) SFCompanionInterface * remoteObjectInterface;
-@property(retain) SFCompanionService * service;
+@property (retain) SFCompanionInterface *remoteObjectInterface;
+@property (retain) SFCompanionService *service;
 @property unsigned int status;
-@property(readonly) Class superclass;
-@property(retain) NSXPCConnection * userConnection;
+@property (readonly) Class superclass;
+@property (retain) NSXPCConnection *userConnection;
 @property BOOL waitForAccept;
-@property NSObject<OS_dispatch_queue> * workQueue;
+@property NSObject<OS_dispatch_queue> *workQueue;
 
 - (void)connect;
 - (id)connectedDevice;
@@ -62,10 +60,10 @@
 - (void)onqueue_userInvalidated;
 - (id)remoteObjectInterface;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)resume;
-- (BOOL)sendData:(id)arg1 withErrorHandler:(id)arg2;
-- (void)sendData:(id)arg1 withReply:(id)arg2;
+- (BOOL)sendData:(id)arg1 withErrorHandler:(id /* block */)arg2;
+- (void)sendData:(id)arg1 withReply:(id /* block */)arg2;
 - (id)service;
 - (void)setConnectedDevice:(id)arg1;
 - (void)setConnectionProxy:(id)arg1;

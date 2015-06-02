@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalLogUserNotificationWriter : CalLogWriter {
-}
+@interface CalLogUserNotificationWriter : CalLogWriter
 
 - (void)write:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLPropertyListFromDataTransformer : NSValueTransformer {
-}
+@interface PLPropertyListFromDataTransformer : NSValueTransformer
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;

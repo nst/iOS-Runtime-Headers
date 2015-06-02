@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebNotificationPrivate : NSObject {
-}
+@interface WebNotificationPrivate : NSObject
 
 @end

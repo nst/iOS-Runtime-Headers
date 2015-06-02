@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/MobileAccessoryUpdater
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FudInternalConnection : NSObject <FudConnection> {
     NSString *clientIdentifier;
     BOOL didStop;
     NSObject<OS_dispatch_queue> *handlerQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id messageHandler;
-
+    id /* block */ messageHandler;
     NSMutableDictionary *pendingRequests;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (long long)getNextMessageID;
 - (void)handleInboundNotification:(id)arg1;
-- (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id)arg3;
+- (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id /* block */)arg3;
 - (void)sendMessageToFud:(id)arg1;
-- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
+- (void)sendMessageToFud:(id)arg1 reply:(id /* block */)arg2;
 - (void)stop;
 
 @end

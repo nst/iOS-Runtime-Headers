@@ -13,8 +13,8 @@
             float height; 
         } size; 
     } mBounds;
-    unsigned int mFlipX : 1;
-    unsigned int mFlipY : 1;
+    unsigned int mFlipX;
+    unsigned int mFlipY;
     int mModeX;
     int mModeY;
     float mRotation;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSArray, NSData, NSUUID;
-
 @interface RTRoute : NSObject <NSSecureCoding> {
     NSUUID *_uuid;
     NSArray *_waypoints;
     NSData *_zilchPoints;
 }
 
-@property(readonly) NSUUID * uuid;
-@property(readonly) NSArray * waypoints;
-@property(readonly) NSData * zilchPoints;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, readonly) NSArray *waypoints;
+@property (nonatomic, readonly) NSData *zilchPoints;
 
 + (BOOL)supportsSecureCoding;
 

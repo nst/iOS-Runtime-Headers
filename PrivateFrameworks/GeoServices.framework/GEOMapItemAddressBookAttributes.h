@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOMapItemAddressBookAttributes : PBCodable <NSCopying> {
     int _addressType;
     struct { 
@@ -15,14 +13,14 @@
     NSString *_spokenName;
 }
 
-@property int addressType;
-@property BOOL hasAddressType;
-@property BOOL hasIsMe;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasSpokenName;
-@property BOOL isMe;
-@property(retain) NSString * name;
-@property(retain) NSString * spokenName;
+@property (nonatomic) int addressType;
+@property (nonatomic) BOOL hasAddressType;
+@property (nonatomic) BOOL hasIsMe;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) BOOL hasSpokenName;
+@property (nonatomic) BOOL isMe;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *spokenName;
 
 - (int)addressType;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceCardPhotosControllerDelegate>, MKMapItem, NSString, _MKPlacePhotosCollectionView, _MKPlaceViewController;
-
 @interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
@@ -17,22 +15,22 @@
     BOOL _showMorePhotosButton;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasAttribution;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapItem * mapItem;
-@property _MKPlaceViewController * owner;
-@property(retain) _MKPlacePhotosCollectionView * photoGrid;
-@property float photoWidth;
-@property <MKPlaceCardPhotosControllerDelegate> * photosControllerDelegate;
-@property unsigned int photosCount;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property BOOL showAddPhotoButton;
-@property BOOL showAttribution;
-@property(readonly) BOOL showAttributionButtons;
-@property BOOL showMorePhotosButton;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasAttribution;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) _MKPlaceViewController *owner;
+@property (nonatomic, retain) _MKPlacePhotosCollectionView *photoGrid;
+@property (nonatomic) float photoWidth;
+@property (nonatomic) <MKPlaceCardPhotosControllerDelegate> *photosControllerDelegate;
+@property (nonatomic) unsigned int photosCount;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic) BOOL showAddPhotoButton;
+@property (nonatomic) BOOL showAttribution;
+@property (nonatomic, readonly) BOOL showAttributionButtons;
+@property (nonatomic) BOOL showMorePhotosButton;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addPhoto;

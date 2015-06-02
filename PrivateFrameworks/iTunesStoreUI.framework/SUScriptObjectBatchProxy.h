@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptObjectInvocationBatch;
-
 @interface SUScriptObjectBatchProxy : NSObject {
     SUScriptObjectInvocationBatch *_invocationBatch;
     id _target;
 }
 
-@property SUScriptObjectInvocationBatch * invocationBatch;
+@property SUScriptObjectInvocationBatch *invocationBatch;
 @property id target;
 
 - (void)forwardInvocation:(id)arg1;

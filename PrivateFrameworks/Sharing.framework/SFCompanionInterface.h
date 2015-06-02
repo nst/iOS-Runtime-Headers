@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSXPCInterface, Protocol;
-
 @interface SFCompanionInterface : NSObject {
     NSXPCInterface *_interface;
 }
 
-@property(retain) NSXPCInterface * interface;
-@property Protocol * protocol;
+@property (retain) NSXPCInterface *interface;
+@property Protocol *protocol;
 
 + (id)interfaceWithProtocol:(id)arg1;
 

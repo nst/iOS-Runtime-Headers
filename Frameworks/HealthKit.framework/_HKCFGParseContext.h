@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSScanner, _HKCFGNodeCache;
-
 @interface _HKCFGParseContext : NSObject {
     _HKCFGNodeCache *_cache;
     unsigned int _lengthAllowance;
@@ -11,10 +9,10 @@
     NSScanner *_scanner;
 }
 
-@property(readonly) _HKCFGNodeCache * cache;
-@property(readonly) unsigned int lengthAllowance;
-@property(readonly) unsigned int recursiveDepth;
-@property(readonly) NSScanner * scanner;
+@property (nonatomic, readonly) _HKCFGNodeCache *cache;
+@property (nonatomic, readonly) unsigned int lengthAllowance;
+@property (nonatomic, readonly) unsigned int recursiveDepth;
+@property (nonatomic, readonly) NSScanner *scanner;
 
 - (void).cxx_destruct;
 - (id)cache;

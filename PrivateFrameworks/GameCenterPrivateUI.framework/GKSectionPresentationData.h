@@ -20,21 +20,21 @@
     float _showMoreMaxY;
 }
 
-@property float footerMaxY;
-@property float footerMinY;
-@property float headerMaxY;
-@property float headerMinY;
-@property float itemsMaxY;
-@property float itemsMinY;
-@property float maxY;
-@property float minY;
-@property unsigned int numFooters;
-@property unsigned int numHeaders;
-@property unsigned int numItems;
-@property unsigned int numOverlays;
-@property unsigned int overlayOffset;
-@property int section;
-@property float showMoreMaxY;
+@property (nonatomic) float footerMaxY;
+@property (nonatomic) float footerMinY;
+@property (nonatomic) float headerMaxY;
+@property (nonatomic) float headerMinY;
+@property (nonatomic) float itemsMaxY;
+@property (nonatomic) float itemsMinY;
+@property (nonatomic) float maxY;
+@property (nonatomic) float minY;
+@property (nonatomic) unsigned int numFooters;
+@property (nonatomic) unsigned int numHeaders;
+@property (nonatomic) unsigned int numItems;
+@property (nonatomic) unsigned int numOverlays;
+@property (nonatomic) unsigned int overlayOffset;
+@property (nonatomic) int section;
+@property (nonatomic) float showMoreMaxY;
 
 - (id)description;
 - (float)footerMaxY;

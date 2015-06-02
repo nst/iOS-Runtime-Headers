@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableInfoGeometry : TSDInfoGeometry {
-}
+@interface TSDMutableInfoGeometry : TSDInfoGeometry
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAngle:(float)arg1;

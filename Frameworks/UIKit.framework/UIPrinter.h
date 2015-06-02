@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSURL;
-
 @interface UIPrinter : NSObject {
     NSURL *URL;
     id _printerInfo;
 }
 
-@property(copy,readonly) NSURL * URL;
-@property(copy,readonly) NSString * displayLocation;
-@property(copy,readonly) NSString * displayName;
-@property(copy,readonly) NSString * makeAndModel;
-@property(readonly) int supportedJobTypes;
-@property(readonly) BOOL supportsColor;
-@property(readonly) BOOL supportsDuplex;
+@property (readonly, copy) NSURL *URL;
+@property (readonly, copy) NSString *displayLocation;
+@property (readonly, copy) NSString *displayName;
+@property (readonly, copy) NSString *makeAndModel;
+@property (readonly) int supportedJobTypes;
+@property (readonly) BOOL supportsColor;
+@property (readonly) BOOL supportsDuplex;
 
 + (id)printerWithURL:(id)arg1;
 
@@ -23,7 +21,7 @@
 - (id)_initWithPrinter:(id)arg1;
 - (id)_initWithURL:(id)arg1;
 - (id)_internalPrinter;
-- (void)contactPrinter:(id)arg1;
+- (void)contactPrinter:(id /* block */)arg1;
 - (id)displayLocation;
 - (id)displayName;
 - (id)init;

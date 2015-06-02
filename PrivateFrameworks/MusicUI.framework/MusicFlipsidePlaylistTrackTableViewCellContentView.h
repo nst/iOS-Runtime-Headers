@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UILabel;
-
 @interface MusicFlipsidePlaylistTrackTableViewCellContentView : MusicSongListTableViewCellContentView {
     UILabel *_durationLabel;
     NSString *_durationText;
@@ -12,9 +10,9 @@
     NSString *_trackNumberText;
 }
 
-@property(copy) NSString * durationText;
-@property float maximumDurationWidth;
-@property(copy) NSString * trackNumberText;
+@property (nonatomic, copy) NSString *durationText;
+@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic, copy) NSString *trackNumberText;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 + (void)contentSizeCategoryDidChange;

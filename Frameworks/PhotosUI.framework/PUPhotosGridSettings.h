@@ -16,17 +16,17 @@
     BOOL _slowBackgroundFetch;
 }
 
-@property BOOL badgeAllItemsAsVideos;
-@property float defaultItemSideSize;
-@property BOOL displayAllItemsAsBursts;
-@property BOOL flashDegradedImages;
-@property BOOL forceJPEGThumbnailsInDefaultGrid;
-@property float maximumSpacing;
-@property float minimumSpacing;
-@property int numberColumnsInDefaultGrid;
-@property int numberOfColumnsInWideGrid;
-@property float sideMargins;
-@property BOOL slowBackgroundFetch;
+@property (nonatomic) BOOL badgeAllItemsAsVideos;
+@property (nonatomic) float defaultItemSideSize;
+@property (nonatomic) BOOL displayAllItemsAsBursts;
+@property (nonatomic) BOOL flashDegradedImages;
+@property (nonatomic) BOOL forceJPEGThumbnailsInDefaultGrid;
+@property (nonatomic) float maximumSpacing;
+@property (nonatomic) float minimumSpacing;
+@property (nonatomic) int numberColumnsInDefaultGrid;
+@property (nonatomic) int numberOfColumnsInWideGrid;
+@property (nonatomic) float sideMargins;
+@property (nonatomic) BOOL slowBackgroundFetch;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;

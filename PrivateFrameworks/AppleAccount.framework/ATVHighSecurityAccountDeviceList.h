@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface ATVHighSecurityAccountDeviceList : AAAppleTVRequest {
-}
+@interface ATVHighSecurityAccountDeviceList : AAAppleTVRequest
 
 + (Class)responseClass;
 

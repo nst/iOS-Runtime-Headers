@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class UIImage;
-
 @interface QLThumbnailOperation : NSOperation {
     UIImage *_image;
     int _index;
@@ -13,7 +11,7 @@
     } _size;
 }
 
-@property(retain) UIImage * image;
+@property (retain) UIImage *image;
 @property int index;
 @property struct CGSize { float x1; float x2; } size;
 

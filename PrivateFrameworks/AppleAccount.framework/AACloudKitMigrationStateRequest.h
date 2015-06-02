@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AACloudKitMigrationStateRequest : _AABasicGetRequest {
-}
+@interface AACloudKitMigrationStateRequest : _AABasicGetRequest
 
 + (Class)responseClass;
 

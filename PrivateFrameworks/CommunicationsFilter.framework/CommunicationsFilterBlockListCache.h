@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
  */
 
-@class NSMutableArray;
-
 @interface CommunicationsFilterBlockListCache : NSObject {
     BOOL _listIsEmpty;
     int _notifyEmptyListToken;

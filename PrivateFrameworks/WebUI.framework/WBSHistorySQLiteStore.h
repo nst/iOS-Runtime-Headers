@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSHistoryStoreDelegate>, NSArray, NSCountedSet, NSData, NSDate, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSURL, WBSBackgroundActivityScheduler, WBSSQLiteDatabase;
-
 @interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoader, WBSHistoryLoaderDelegate> {
     double _ageLimit;
     long long _cachedNumberOfDevicesInSyncCircle;
@@ -45,20 +43,20 @@
     NSTimer *_writeTimer;
 }
 
-@property(readonly) WBSSQLiteDatabase * database;
-@property(copy,readonly) NSString * debugDescription;
-@property <WBSHistoryStoreDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL pushNotificationsAreInitialized;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) WBSSQLiteDatabase *database;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WBSHistoryStoreDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL pushNotificationsAreInitialized;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)_cachedNumberOfDevicesInSyncCircleOnDatabaseQueue;
 - (BOOL)_checkDatabaseIntegrity;
-- (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(id)arg4;
-- (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(id)arg5;
+- (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_currentDate;
 - (long long)_currentGeneration;
 - (id)_deletionPlanForDeletionOfVisits:(id)arg1;
@@ -91,7 +89,7 @@
 - (void)_pruneTombstones;
 - (void)_pruneTombstonesOnDatabaseQueueWithEndDatePriorToTime:(double)arg1;
 - (void)_recomputeDerivedVisitCounts;
-- (void)_removeVisitsProvidedByBlockInvokedOnDatabaseQueue:(id)arg1 addingTombstone:(id)arg2 completionHandler:(id)arg3;
+- (void)_removeVisitsProvidedByBlockInvokedOnDatabaseQueue:(id /* block */)arg1 addingTombstone:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_rescheduleMaintenance;
 - (void)_scheduleMaintenance;
 - (void)_scheduleWrite;
@@ -109,15 +107,15 @@
 - (void)_updateVisitRedirectRelationships:(id)arg1;
 - (id)_visitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2;
 - (id)_visitsCreatedMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3;
-- (id)_visitsFromRows:(id)arg1 predicate:(id)arg2;
+- (id)_visitsFromRows:(id)arg1 predicate:(id /* block */)arg2;
 - (id)_visitsNeedingSync;
 - (id)_visitsOrderedForInsertion:(id)arg1;
 - (id)_visitsWithOrigins:(id)arg1;
 - (void)_writeTimerFired;
 - (void)addOrUpdateItemsOnDatabaseQueue:(id)arg1;
 - (unsigned int)cachedNumberOfDevicesInSyncCircle;
-- (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id)arg3;
-- (void)clearHistoryWithCompletionHandler:(id)arg1;
+- (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;
 - (void)close;
 - (id)database;
 - (void)dealloc;
@@ -125,9 +123,9 @@
 - (id)delegate;
 - (id)existingItemFromVisitRow:(id)arg1;
 - (id)fetchThrottlerData;
-- (void)getAllTombstonesWithCompletion:(id)arg1;
-- (void)getServerChangeTokenDataWithCompletion:(id)arg1;
-- (void)getVisitsAndTombstonesNeedingSyncWithCompletion:(id)arg1;
+- (void)getAllTombstonesWithCompletion:(id /* block */)arg1;
+- (void)getServerChangeTokenDataWithCompletion:(id /* block */)arg1;
+- (void)getVisitsAndTombstonesNeedingSyncWithCompletion:(id /* block */)arg1;
 - (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
 - (id)initWithURL:(id)arg1 itemCountLimit:(unsigned int)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
@@ -137,10 +135,10 @@
 - (BOOL)pushNotificationsAreInitialized;
 - (id)pushThrottlerData;
 - (void)removeItemsOnDatabaseQueue:(id)arg1;
-- (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(id)arg2;
+- (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)replayAndAddTombstone:(id)arg1;
-- (void)resetCloudHistoryDataWithCompletionHandler:(id)arg1;
-- (void)savePendingChangesWithCompletionHandler:(id)arg1;
+- (void)resetCloudHistoryDataWithCompletionHandler:(id /* block */)arg1;
+- (void)savePendingChangesWithCompletionHandler:(id /* block */)arg1;
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFetchThrottlerData:(id)arg1;
@@ -152,7 +150,7 @@
 - (id)syncCircleSizeRetrievalThrottlerData;
 - (id)visitForItem:(id)arg1 row:(id)arg2;
 - (id)visitForRow:(id)arg1;
-- (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id)arg3;
+- (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)visitsWereAdded:(id)arg1;
 - (void)visitsWereModified:(id)arg1;
 - (void)waitForLoadingToComplete;

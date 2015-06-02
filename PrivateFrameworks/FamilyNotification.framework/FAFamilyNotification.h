@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FamilyNotification.framework/FamilyNotification
  */
 
-@class NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL;
-
 @interface FAFamilyNotification : NSObject <NSSecureCoding> {
     NSString *_actionButtonLabel;
     NSURL *_activateActionURL;
@@ -29,28 +27,28 @@
     NSString *_uuid;
 }
 
-@property(copy) NSString * actionButtonLabel;
-@property(copy) NSURL * activateActionURL;
-@property(copy) NSURL * clearActionURL;
-@property(copy) NSString * clientIdentifier;
-@property(copy) NSString * delegateMachServiceName;
-@property(copy) NSURL * dismissActionlURL;
+@property (copy) NSString *actionButtonLabel;
+@property (copy) NSURL *activateActionURL;
+@property (copy) NSURL *clearActionURL;
+@property (copy) NSString *clientIdentifier;
+@property (copy) NSString *delegateMachServiceName;
+@property (copy) NSURL *dismissActionlURL;
 @property unsigned int displayStyle;
-@property(copy) NSDate * expiryDate;
-@property(copy) NSNumber * familyMemberDSID;
+@property (copy) NSDate *expiryDate;
+@property (copy) NSNumber *familyMemberDSID;
 @property BOOL hasActionButton;
-@property(copy) NSString * identifier;
-@property(copy) NSString * informativeText;
-@property(copy) NSData * launchActionArguments;
-@property(copy) NSURL * launchActionURL;
-@property(copy) NSString * otherButtonLabel;
-@property(copy) NSDate * relevanceDate;
+@property (copy) NSString *identifier;
+@property (copy) NSString *informativeText;
+@property (copy) NSData *launchActionArguments;
+@property (copy) NSURL *launchActionURL;
+@property (copy) NSString *otherButtonLabel;
+@property (copy) NSDate *relevanceDate;
 @property BOOL shouldPersistWhenActivated;
 @property BOOL shouldPersistWhenDismissed;
-@property(copy) NSString * title;
-@property(copy) NSString * unlockActionLabel;
-@property(copy) NSDictionary * userInfo;
-@property(copy) NSString * uuid;
+@property (copy) NSString *title;
+@property (copy) NSString *unlockActionLabel;
+@property (copy) NSDictionary *userInfo;
+@property (copy) NSString *uuid;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSPairingServerDelegate>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface RMSPairingServer : NSObject {
     struct _CFHTTPServer { } *_HTTPServer;
     struct __CFDictionary { } *_HTTPServerConnections;
@@ -17,8 +15,8 @@
     NSString *_successfulPairingServiceName;
 }
 
-@property <RMSPairingServerDelegate> * delegate;
-@property(readonly) unsigned short port;
+@property (nonatomic) <RMSPairingServerDelegate> *delegate;
+@property (nonatomic, readonly) unsigned short port;
 
 - (void).cxx_destruct;
 - (id)_parsedQueryParametersWithQueryString:(id)arg1;

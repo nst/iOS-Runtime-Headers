@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLCanvasElement : DOMHTMLElement {
-}
+@interface DOMHTMLCanvasElement : DOMHTMLElement
 
 @property int height;
 @property int width;

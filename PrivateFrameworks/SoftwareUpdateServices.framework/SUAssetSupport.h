@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUAssetSupport : NSObject {
-}
+@interface SUAssetSupport : NSObject
 
 + (void)_cleanupAllAssetsOfType:(id)arg1;
 + (id)assetDownloadOptionsForDocumentation;
@@ -14,7 +13,7 @@
 + (id)findAssetWithMatcher:(id)arg1 localSearch:(BOOL)arg2 error:(id*)arg3;
 + (id)getInstalledDocumentationAssetFromSoftwareUpdateAssetIfExists:(id)arg1;
 + (id)getLocalDefaultSoftwareUpdateAssetIfExists;
-+ (void)purgeMSUUpdate:(id)arg1;
++ (void)purgeMSUUpdate:(id /* block */)arg1;
 + (id)tryCreateDescriptorFromSoftwareUpdateAsset:(id)arg1;
 + (id)tryCreateDocumentationFromDocumentationAsset:(id)arg1;
 

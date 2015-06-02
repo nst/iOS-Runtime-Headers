@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVFigAssetWriterGenericTrack : AVFigAssetWriterTrack {
-}
+@interface AVFigAssetWriterGenericTrack : AVFigAssetWriterTrack
 
 @end

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, CKDPRecordZoneIdentifier;
-
 @interface CKDPShareIdentifier : PBCodable <NSCopying> {
     CKDPIdentifier *_value;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property(readonly) BOOL hasValue;
-@property(readonly) BOOL hasZoneIdentifier;
-@property(retain) CKDPIdentifier * value;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPIdentifier *value;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

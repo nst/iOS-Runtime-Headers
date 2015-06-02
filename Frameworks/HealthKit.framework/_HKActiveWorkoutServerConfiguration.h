@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSArray, NSDate, NSDictionary, NSUUID;
-
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
     NSUUID *_UUID;
     BOOL _indoor;
@@ -15,14 +13,14 @@
     int _workoutState;
 }
 
-@property(retain) NSUUID * UUID;
-@property(getter=isIndoor) BOOL indoor;
-@property(retain) NSDictionary * resumeDataByType;
-@property BOOL shouldUseDeviceData;
-@property(retain) NSDate * startDate;
-@property unsigned int workoutActivityType;
-@property(retain) NSArray * workoutEvents;
-@property int workoutState;
+@property (nonatomic, retain) NSUUID *UUID;
+@property (getter=isIndoor, nonatomic) BOOL indoor;
+@property (nonatomic, retain) NSDictionary *resumeDataByType;
+@property (nonatomic) BOOL shouldUseDeviceData;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) unsigned int workoutActivityType;
+@property (nonatomic, retain) NSArray *workoutEvents;
+@property (nonatomic) int workoutState;
 
 + (BOOL)supportsSecureCoding;
 

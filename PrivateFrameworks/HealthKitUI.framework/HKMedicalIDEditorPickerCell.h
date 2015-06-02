@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSArray, NSString, UIPickerView;
-
 @interface HKMedicalIDEditorPickerCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
     int _chosenValueIndex;
     UIPickerView *_picker;
     NSArray *_possibleValues;
 }
 
-@property int chosenValueIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * possibleValues;
-@property(readonly) Class superclass;
+@property (nonatomic) int chosenValueIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *possibleValues;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_hidePicker;

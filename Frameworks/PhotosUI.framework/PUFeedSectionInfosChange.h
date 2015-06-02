@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSIndexSet, NSSet;
-
 @interface PUFeedSectionInfosChange : NSObject {
     NSIndexSet *_deletedIndexes;
     NSIndexSet *_insertedIndexes;
@@ -13,12 +11,12 @@
     NSIndexSet *_updatedIndexes;
 }
 
-@property(retain) NSIndexSet * deletedIndexes;
-@property(retain) NSIndexSet * insertedIndexes;
-@property(retain) NSSet * sectionInfosWithCommentChanges;
-@property BOOL shouldReload;
-@property(retain) NSSet * updatedAssets;
-@property(retain) NSIndexSet * updatedIndexes;
+@property (nonatomic, retain) NSIndexSet *deletedIndexes;
+@property (nonatomic, retain) NSIndexSet *insertedIndexes;
+@property (nonatomic, retain) NSSet *sectionInfosWithCommentChanges;
+@property (nonatomic) BOOL shouldReload;
+@property (nonatomic, retain) NSSet *updatedAssets;
+@property (nonatomic, retain) NSIndexSet *updatedIndexes;
 
 - (void).cxx_destruct;
 - (id)deletedIndexes;

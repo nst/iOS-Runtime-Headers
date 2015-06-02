@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface TLFileLoggingController : NSObject {
     NSObject<OS_dispatch_queue> *_serialLoggingQueue;
 }
 
-@property(setter=_setSerialLoggingQueue:) NSObject<OS_dispatch_queue> * _serialLoggingQueue;
+@property (setter=_setSerialLoggingQueue:, nonatomic) NSObject<OS_dispatch_queue> *_serialLoggingQueue;
 
 + (id)sharedFileLoggingController;
 

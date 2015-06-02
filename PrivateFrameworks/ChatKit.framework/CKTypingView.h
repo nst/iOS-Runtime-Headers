@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKTypingIndicatorLayer;
+@interface CKTypingView : UIView
 
-@interface CKTypingView : UIView {
-}
-
-@property(retain,readonly) CKTypingIndicatorLayer * layer;
+@property (nonatomic, readonly, retain) CKTypingIndicatorLayer *layer;
 
 + (Class)layerClass;
 

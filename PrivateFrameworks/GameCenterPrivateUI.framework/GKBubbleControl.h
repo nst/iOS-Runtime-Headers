@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleView, NSLayoutConstraint, NSString, UIView;
-
 @interface GKBubbleControl : UIControl <NSCopying> {
     BOOL _animateOnTouch;
     BOOL _animatingIn;
@@ -17,23 +15,23 @@
     float _maximumDimension;
 }
 
-@property BOOL animateOnTouch;
-@property int bubbleType;
-@property(retain) GKBubbleView * bubbleView;
-@property(retain) UIView * contentView;
-@property(retain) NSLayoutConstraint * contentViewHeightConstraint;
-@property(retain) NSLayoutConstraint * contentViewWidthConstraint;
-@property(retain) NSString * debuggingTag;
-@property(retain) NSLayoutConstraint * maxHeightConstraint;
-@property(retain) NSLayoutConstraint * maxWidthConstraint;
-@property float maximumDimension;
-@property(readonly) struct CGSize { float x1; float x2; } projectedContentSize;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenFrame;
-@property(readonly) struct CGPoint { float x1; float x2; } screenPosition;
-@property(readonly) struct CGSize { float x1; float x2; } screenSize;
-@property(getter=isSharedBubble,readonly) BOOL sharedBubble;
-@property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } worldPosition;
-@property(readonly) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } worldSize;
+@property (nonatomic) BOOL animateOnTouch;
+@property (nonatomic) int bubbleType;
+@property (nonatomic, retain) GKBubbleView *bubbleView;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) NSLayoutConstraint *contentViewHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *contentViewWidthConstraint;
+@property (nonatomic, retain) NSString *debuggingTag;
+@property (nonatomic, retain) NSLayoutConstraint *maxHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *maxWidthConstraint;
+@property (nonatomic) float maximumDimension;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } projectedContentSize;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenFrame;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } screenPosition;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } screenSize;
+@property (getter=isSharedBubble, nonatomic, readonly) BOOL sharedBubble;
+@property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } worldPosition;
+@property (nonatomic, readonly) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } worldSize;
 
 + (void)initialize;
 + (float)maximumDimensionBasedOnDeviceAdjustForTallness:(BOOL)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXScene3D : NSObject {
-}
+@interface OAXScene3D : NSObject
 
 + (id)cameraTypeEnumMap;
 + (BOOL)isEmpty:(id)arg1;

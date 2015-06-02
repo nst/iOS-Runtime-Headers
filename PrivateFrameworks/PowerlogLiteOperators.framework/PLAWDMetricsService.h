@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class AWDServerConnection, NSMutableDictionary, NSMutableSet;
-
 @interface PLAWDMetricsService : PLService {
     AWDServerConnection *_awdServerConn;
     NSMutableDictionary *_classDictionary;
@@ -11,10 +9,10 @@
     NSMutableSet *_updateRunningMetrics;
 }
 
-@property(retain) AWDServerConnection * awdServerConn;
-@property(retain) NSMutableDictionary * classDictionary;
-@property(retain) NSMutableSet * currRunningMetrics;
-@property(retain) NSMutableSet * updateRunningMetrics;
+@property (retain) AWDServerConnection *awdServerConn;
+@property (retain) NSMutableDictionary *classDictionary;
+@property (retain) NSMutableSet *currRunningMetrics;
+@property (retain) NSMutableSet *updateRunningMetrics;
 
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitions;

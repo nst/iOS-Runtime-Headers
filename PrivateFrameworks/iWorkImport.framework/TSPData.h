@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSPDataStorage>, NSObject<OS_dispatch_queue>, NSString, TSPDataAttributes, TSPDataManager, TSPDigest, TSPObjectContext;
-
 @interface TSPData : NSObject <TSPSplitableData> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     TSPDataAttributes *_attributes;
@@ -21,35 +14,35 @@
     <TSPDataStorage> *_storage;
 }
 
-@property(getter=isAcknowledgedByServer) BOOL acknowledgedByServer;
-@property(copy) TSPDataAttributes * attributes;
-@property(readonly) TSPObjectContext * context;
-@property(readonly) TSPDigest * digest;
-@property(readonly) NSString * digestString;
-@property(readonly) NSString * documentResourceLocator;
-@property(readonly) unsigned long long encodedLength;
-@property(readonly) unsigned long long encodedLengthIfLocal;
-@property(readonly) NSString * filename;
-@property(readonly) BOOL gilligan_isRemote;
-@property(readonly) long long identifier;
-@property(readonly) BOOL isApplicationData;
-@property(readonly) BOOL isEncrypted;
-@property(readonly) BOOL isExternalData;
-@property(readonly) BOOL isReadable;
-@property(readonly) unsigned long long length;
-@property(readonly) unsigned long long lengthIfLocal;
-@property(readonly) TSPDataManager * manager;
-@property(readonly) BOOL needsDownload;
-@property(readonly) unsigned char packageIdentifier;
-@property(readonly) NSString * packageLocator;
-@property(retain) <TSPDataStorage> * storage;
-@property(readonly) NSString * type;
-@property(copy) TSPDataAttributes * unsafeAttributes;
+@property (getter=isAcknowledgedByServer, nonatomic) BOOL acknowledgedByServer;
+@property (copy) TSPDataAttributes *attributes;
+@property (nonatomic, readonly) TSPObjectContext *context;
+@property (nonatomic, readonly) TSPDigest *digest;
+@property (nonatomic, readonly) NSString *digestString;
+@property (nonatomic, readonly) NSString *documentResourceLocator;
+@property (nonatomic, readonly) unsigned long long encodedLength;
+@property (nonatomic, readonly) unsigned long long encodedLengthIfLocal;
+@property (nonatomic, readonly) NSString *filename;
+@property (nonatomic, readonly) BOOL gilligan_isRemote;
+@property (nonatomic, readonly) long long identifier;
+@property (nonatomic, readonly) BOOL isApplicationData;
+@property (nonatomic, readonly) BOOL isEncrypted;
+@property (nonatomic, readonly) BOOL isExternalData;
+@property (nonatomic, readonly) BOOL isReadable;
+@property (nonatomic, readonly) unsigned long long length;
+@property (nonatomic, readonly) unsigned long long lengthIfLocal;
+@property (nonatomic, readonly) TSPDataManager *manager;
+@property (nonatomic, readonly) BOOL needsDownload;
+@property (nonatomic, readonly) unsigned char packageIdentifier;
+@property (nonatomic, readonly) NSString *packageLocator;
+@property (nonatomic, retain) <TSPDataStorage> *storage;
+@property (nonatomic, readonly) NSString *type;
+@property (nonatomic, copy) TSPDataAttributes *unsafeAttributes;
 
 + (void)addCullingListener:(id)arg1;
 + (id)cullingListeners;
 + (id)cullingListenersQueue;
-+ (void)dataForAssetsLibraryURL:(id)arg1 context:(id)arg2 queue:(id)arg3 completion:(id)arg4;
++ (void)dataForAssetsLibraryURL:(id)arg1 context:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 + (id)dataFromDataRep:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromNSData:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 context:(id)arg3;
@@ -66,7 +59,7 @@
 + (id)readOnlyDataFromURL:(id)arg1;
 + (void)removeCullingListener:(id)arg1;
 + (id)requiredAVAssetOptions;
-+ (void)temporaryNSDataWithPattern4:(const char *)arg1 accessor:(id)arg2;
++ (void)temporaryNSDataWithPattern4:(const char *)arg1 accessor:(id /* block */)arg2;
 + (BOOL)writeStorage:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
@@ -74,7 +67,7 @@
 - (id)AVAssetWithOptions:(id)arg1;
 - (id)NSData;
 - (id)UIImage;
-- (void)addDownloadObserver:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)addDownloadObserver:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2;
 - (id)attributes;
 - (id)bookmarkData;
@@ -111,8 +104,8 @@
 - (unsigned char)packageIdentifier;
 - (id)packageLocator;
 - (id)pasteboardType;
-- (void)performIOChannelReadWithAccessor:(id)arg1;
-- (void)performInputStreamReadWithAccessor:(id)arg1;
+- (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
+- (void)performInputStreamReadWithAccessor:(id /* block */)arg1;
 - (id)preferredFilename;
 - (void)setAcknowledgedByServer:(BOOL)arg1;
 - (void)setAttributes:(id)arg1;
@@ -120,8 +113,8 @@
 - (void)setStorage:(id)arg1;
 - (void)setUnsafeAttributes:(id)arg1;
 - (id)storage;
-- (void)tsk_addDownloadObserver:(id)arg1 lockMode:(int)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
-- (void)tsp_splitDataWithMaxSize:(unsigned long)arg1 subdataHandlerBlock:(id)arg2;
+- (void)tsk_addDownloadObserver:(id)arg1 lockMode:(int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)tsp_splitDataWithMaxSize:(unsigned long)arg1 subdataHandlerBlock:(id /* block */)arg2;
 - (id)type;
 - (id)unsafeAttributes;
 - (void)willCull;

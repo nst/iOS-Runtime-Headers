@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAHAAttributeValue, SAHAEntity;
+@interface SAHAActionResult : SADomainObject
 
-@interface SAHAActionResult : SADomainObject {
-}
-
-@property(retain) SAHAEntity * entity;
-@property(copy) NSString * outcome;
-@property(copy) NSString * resultAttribute;
-@property(retain) SAHAAttributeValue * resultValue;
+@property (nonatomic, retain) SAHAEntity *entity;
+@property (nonatomic, copy) NSString *outcome;
+@property (nonatomic, copy) NSString *resultAttribute;
+@property (nonatomic, retain) SAHAAttributeValue *resultValue;
 
 + (id)actionResult;
 + (id)actionResultWithDictionary:(id)arg1 context:(id)arg2;

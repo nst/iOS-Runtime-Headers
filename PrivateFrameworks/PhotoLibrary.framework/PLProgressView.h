@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSNumberFormatter, UIButton, UILabel, UIProgressView, UIView, _UIBackdropView;
-
 @interface PLProgressView : UIView {
     _UIBackdropView *_backgroundBlurredView;
     UIView *_backgroundTintedView;
     int _backgroundType;
     UIView *_backgroundView;
     UIButton *_cancelButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelationHandler;
-
-    unsigned int _didLayout : 1;
-    unsigned int _didSetPermanantTextOnLabelView : 1;
+    id /* block */ _cancelationHandler;
+    unsigned int _didLayout;
+    unsigned int _didSetPermanantTextOnLabelView;
     UILabel *_labelView;
     NSNumberFormatter *_progressFormatter;
     UIProgressView *_progressView;
@@ -28,13 +18,13 @@
     UIView *_topDivider;
 }
 
-@property(retain) _UIBackdropView * backgroundBlurredView;
-@property(retain) UIView * backgroundTintedView;
-@property int backgroundType;
-@property(retain) UIView * backgroundView;
-@property(copy) id cancelationHandler;
-@property float percentComplete;
-@property BOOL showsCancelButton;
+@property (nonatomic, retain) _UIBackdropView *backgroundBlurredView;
+@property (nonatomic, retain) UIView *backgroundTintedView;
+@property (nonatomic) int backgroundType;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, copy) id /* block */ cancelationHandler;
+@property (nonatomic) float percentComplete;
+@property (nonatomic) BOOL showsCancelButton;
 
 - (void)_cancel:(id)arg1;
 - (void)_installBackgroundBlurredView;
@@ -47,7 +37,7 @@
 - (id)backgroundTintedView;
 - (int)backgroundType;
 - (id)backgroundView;
-- (id)cancelationHandler;
+- (id /* block */)cancelationHandler;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
@@ -56,7 +46,7 @@
 - (void)setBackgroundTintedView:(id)arg1;
 - (void)setBackgroundType:(int)arg1;
 - (void)setBackgroundView:(id)arg1;
-- (void)setCancelationHandler:(id)arg1;
+- (void)setCancelationHandler:(id /* block */)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setPercentComplete:(float)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;

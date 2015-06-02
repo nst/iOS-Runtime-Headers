@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSPLazyReferenceArray;
-
 @interface TSPUnknownFieldMessage : TSPUnknownField {
     NSArray *_datas;
     TSPLazyReferenceArray *_objects;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIGenericTermsRemoteUIDelegate>, ACAccount, ACAccountStore, NSMutableArray, NSString, RUILoader, UIAlertView, UINavigationController, UIViewController;
-
 @interface AAUIGenericTermsRemoteUI : NSObject <RUIObjectModelDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -18,11 +16,11 @@
     UIAlertView *_tcConfirmationAlert;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIGenericTermsRemoteUIDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIGenericTermsRemoteUIDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;

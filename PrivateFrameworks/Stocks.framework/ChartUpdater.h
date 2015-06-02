@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <ChartUpdaterDelegate>, Stock, StockChartData;
-
 @interface ChartUpdater : YQLRequest {
     StockChartData *_currentChartData;
     <ChartUpdaterDelegate> *_delegate;
@@ -11,7 +9,7 @@
     Stock *_stock;
 }
 
-@property <ChartUpdaterDelegate> * delegate;
+@property (nonatomic) <ChartUpdaterDelegate> *delegate;
 
 + (id)_rangeStringForInterval:(int)arg1;
 

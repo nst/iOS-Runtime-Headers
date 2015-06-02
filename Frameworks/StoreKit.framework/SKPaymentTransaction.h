@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSArray, NSData, NSDate, NSError, NSString, SKPayment, SKPaymentTransaction;
-
 @interface SKPaymentTransaction : NSObject {
     id _internal;
 }
 
-@property(readonly) NSString * _transactionIdentifier;
-@property(readonly) NSArray * downloads;
-@property(readonly) NSError * error;
-@property(readonly) NSString * matchingIdentifier;
-@property(readonly) SKPaymentTransaction * originalTransaction;
-@property(readonly) SKPayment * payment;
-@property(readonly) NSDate * transactionDate;
-@property(readonly) NSString * transactionIdentifier;
-@property(readonly) NSData * transactionReceipt;
-@property(readonly) int transactionState;
+@property (nonatomic, readonly) NSString *_transactionIdentifier;
+@property (nonatomic, readonly) NSArray *downloads;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSString *matchingIdentifier;
+@property (nonatomic, readonly) SKPaymentTransaction *originalTransaction;
+@property (nonatomic, readonly) SKPayment *payment;
+@property (nonatomic, readonly) NSDate *transactionDate;
+@property (nonatomic, readonly) NSString *transactionIdentifier;
+@property (nonatomic, readonly) NSData *transactionReceipt;
+@property (nonatomic, readonly) int transactionState;
 
 - (void)_setDownloads:(id)arg1;
 - (void)_setError:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, OITSUImage;
-
 @interface MFPBitmapImage : MFPImage {
     NSData *mBitmapData;
     OITSUImage *mPhoneBitmapImage;

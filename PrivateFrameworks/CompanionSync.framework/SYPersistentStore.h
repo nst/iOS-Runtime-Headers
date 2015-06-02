@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSDate, NSDictionary, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString;
-
 @interface SYPersistentStore : NSObject {
     NSSet *_cachedChangedSyncIDs;
     unsigned long long _cachedChangedSyncIDsVersion;
@@ -49,32 +47,32 @@
     double _unfinishedSyncTimeout;
 }
 
-@property(retain) NSSet * cachedChangedSyncIDs;
-@property unsigned long long cachedChangedSyncIDsVersion;
-@property BOOL cachedVersionStale;
-@property(readonly) BOOL canStartNewSyncSession;
-@property(readonly) unsigned int changeCount;
-@property BOOL completedSync;
-@property(readonly) NSString * currentFullSyncID;
-@property(readonly) unsigned long long currentLocalVersion;
-@property(readonly) BOOL currentSyncSendComplete;
-@property(readonly) double durationOfLastFullSync;
-@property(copy) NSDictionary * fullSyncIDSOptions;
-@property(copy) NSDictionary * fullSyncUserInfo;
-@property(readonly) BOOL inFullSync;
-@property(copy) NSDate * lastMessageReceived;
-@property(readonly) unsigned long long lastSeenRemoteVersion;
-@property(readonly) NSString * lastSyncEndID;
-@property(readonly) NSError * lastSyncError;
-@property(readonly) BOOL lastSyncFailed;
-@property(copy) NSDate * overflowResyncTime;
-@property(readonly) NSString * path;
-@property(readonly) NSString * peerID;
-@property(getter=isPerformingDeltaSync) BOOL performingDeltaSync;
-@property double timeToLive;
-@property double unfinishedSyncTimeout;
-@property(retain) NSString * vectorClockJSON;
-@property(copy) NSString * waitingForSyncEndID;
+@property (nonatomic, retain) NSSet *cachedChangedSyncIDs;
+@property (nonatomic) unsigned long long cachedChangedSyncIDsVersion;
+@property (nonatomic) BOOL cachedVersionStale;
+@property (nonatomic, readonly) BOOL canStartNewSyncSession;
+@property (nonatomic, readonly) unsigned int changeCount;
+@property (nonatomic) BOOL completedSync;
+@property (nonatomic, readonly) NSString *currentFullSyncID;
+@property (nonatomic, readonly) unsigned long long currentLocalVersion;
+@property (nonatomic, readonly) BOOL currentSyncSendComplete;
+@property (nonatomic, readonly) double durationOfLastFullSync;
+@property (nonatomic, copy) NSDictionary *fullSyncIDSOptions;
+@property (nonatomic, copy) NSDictionary *fullSyncUserInfo;
+@property (nonatomic, readonly) BOOL inFullSync;
+@property (nonatomic, copy) NSDate *lastMessageReceived;
+@property (nonatomic, readonly) unsigned long long lastSeenRemoteVersion;
+@property (nonatomic, readonly) NSString *lastSyncEndID;
+@property (nonatomic, readonly) NSError *lastSyncError;
+@property (nonatomic, readonly) BOOL lastSyncFailed;
+@property (nonatomic, copy) NSDate *overflowResyncTime;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSString *peerID;
+@property (getter=isPerformingDeltaSync, nonatomic) BOOL performingDeltaSync;
+@property (nonatomic) double timeToLive;
+@property (nonatomic) double unfinishedSyncTimeout;
+@property (nonatomic, retain) NSString *vectorClockJSON;
+@property (nonatomic, copy) NSString *waitingForSyncEndID;
 
 - (void).cxx_destruct;
 - (void)_cacheTTL;
@@ -84,7 +82,7 @@
 - (id)_encodeIndexSet:(id)arg1;
 - (void)_fixPeerInfo;
 - (int)_getSchemaVersion;
-- (BOOL)_inTransaction:(BOOL)arg1 do:(id)arg2;
+- (BOOL)_inTransaction:(BOOL)arg1 do:(id /* block */)arg2;
 - (unsigned long long)_lastSequenceNumberForPeerID_LOCKED:(id)arg1;
 - (unsigned long long)_oldestVersion;
 - (BOOL)_openDBAtPath:(id)arg1;

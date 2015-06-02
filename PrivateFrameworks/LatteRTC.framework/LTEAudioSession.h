@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class <LTEAudioSessionDelegate>, LTEAudioSessionConfig, LTEConference, LTEConferenceXPCClient, NSDictionary;
-
 @interface LTEAudioSession : NSObject {
     NSDictionary *_capabilities;
     LTEAudioSessionConfig *_configuration;
@@ -14,16 +12,16 @@
     id weakSelf;
 }
 
-@property(retain) NSDictionary * capabilities;
-@property(retain) LTEAudioSessionConfig * configuration;
-@property <LTEAudioSessionDelegate> * delegate;
-@property int direction;
-@property(getter=isRTCPEnabled) BOOL rtcpEnabled;
-@property double rtcpSendIntervalSec;
-@property(getter=isRTCPTimeOutEnabled) BOOL rtcpTimeOutEnabled;
-@property double rtcpTimeOutIntervalSec;
-@property(getter=isRTPTimeOutEnabled) BOOL rtpTimeOutEnabled;
-@property double rtpTimeOutIntervalSec;
+@property (nonatomic, retain) NSDictionary *capabilities;
+@property (nonatomic, retain) LTEAudioSessionConfig *configuration;
+@property (nonatomic) <LTEAudioSessionDelegate> *delegate;
+@property (nonatomic) int direction;
+@property (getter=isRTCPEnabled, nonatomic) BOOL rtcpEnabled;
+@property (nonatomic) double rtcpSendIntervalSec;
+@property (getter=isRTCPTimeOutEnabled, nonatomic) BOOL rtcpTimeOutEnabled;
+@property (nonatomic) double rtcpTimeOutIntervalSec;
+@property (getter=isRTPTimeOutEnabled, nonatomic) BOOL rtpTimeOutEnabled;
+@property (nonatomic) double rtpTimeOutIntervalSec;
 
 - (id)capabilities;
 - (id)configuration;

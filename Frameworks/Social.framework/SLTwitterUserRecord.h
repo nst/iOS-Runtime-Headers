@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString, NSURL;
-
 @interface SLTwitterUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
     NSString *_id_str;
     NSURL *_objectID;
 }
 
-@property(retain) NSString * id_str;
-@property(retain) NSURL * objectID;
+@property (nonatomic, retain) NSString *id_str;
+@property (nonatomic, retain) NSURL *objectID;
 
 + (BOOL)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;

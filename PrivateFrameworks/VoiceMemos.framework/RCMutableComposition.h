@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSArray;
+@interface RCMutableComposition : RCComposition
 
-@interface RCMutableComposition : RCComposition {
-}
-
-@property(retain) NSArray * decomposedFragments;
+@property (nonatomic, retain) NSArray *decomposedFragments;
 
 - (void)recacheComposedDuration;
 

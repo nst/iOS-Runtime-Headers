@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIKeyframe : NSObject {
     double _duration;
     NSString *_key;
@@ -11,7 +9,7 @@
     id _value;
 }
 
-@property(retain) id value;
+@property (nonatomic, retain) id value;
 
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 startTime:(double)arg2 duration:(double)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADPoint3D, OADVector3D;
-
 @interface OADBackdrop : NSObject <NSCopying> {
     OADPoint3D *mAnchor;
     OADVector3D *mNormal;

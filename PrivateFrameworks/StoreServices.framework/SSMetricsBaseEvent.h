@@ -2,34 +2,31 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
+@interface SSMetricsBaseEvent : SSMetricsMutableEvent
 
-@interface SSMetricsBaseEvent : SSMetricsMutableEvent {
-}
-
-@property(retain) NSNumber * accountIdentifier;
-@property(retain) NSString * applicationIdentifier;
-@property(retain) NSNumber * baseVersion;
-@property(retain) NSNumber * clientVersion;
-@property(retain) NSString * connection;
-@property(retain) NSString * eventType;
-@property(retain) NSNumber * eventVersion;
-@property(retain) NSString * hostApplicationIdentifier;
+@property (nonatomic, retain) NSNumber *accountIdentifier;
+@property (nonatomic, retain) NSString *applicationIdentifier;
+@property (nonatomic, retain) NSNumber *baseVersion;
+@property (nonatomic, retain) NSNumber *clientVersion;
+@property (nonatomic, retain) NSString *connection;
+@property (nonatomic, retain) NSString *eventType;
+@property (nonatomic, retain) NSNumber *eventVersion;
+@property (nonatomic, retain) NSString *hostApplicationIdentifier;
 @property double originalTime;
-@property(retain) NSString * pageContext;
-@property(retain) NSString * pageDescription;
-@property unsigned long long pageID;
-@property(retain) NSString * pageType;
-@property(retain) NSString * pageURL;
-@property(retain) NSNumber * pixelRatio;
-@property(retain) NSNumber * previousClientVersion;
-@property(retain) NSNumber * screenHeight;
-@property(retain) NSNumber * screenWidth;
-@property(retain) NSString * topic;
-@property(retain) NSString * userAgent;
-@property(retain) NSNumber * windowHeight;
-@property(retain) NSString * windowOrientation;
-@property(retain) NSNumber * windowWidth;
+@property (nonatomic, retain) NSString *pageContext;
+@property (nonatomic, retain) NSString *pageDescription;
+@property (nonatomic) unsigned long long pageID;
+@property (nonatomic, retain) NSString *pageType;
+@property (nonatomic, retain) NSString *pageURL;
+@property (nonatomic, retain) NSNumber *pixelRatio;
+@property (nonatomic, retain) NSNumber *previousClientVersion;
+@property (nonatomic, retain) NSNumber *screenHeight;
+@property (nonatomic, retain) NSNumber *screenWidth;
+@property (nonatomic, retain) NSString *topic;
+@property (nonatomic, retain) NSString *userAgent;
+@property (nonatomic, retain) NSNumber *windowHeight;
+@property (nonatomic, retain) NSString *windowOrientation;
+@property (nonatomic, retain) NSNumber *windowWidth;
 
 - (id)accountIdentifier;
 - (id)applicationIdentifier;

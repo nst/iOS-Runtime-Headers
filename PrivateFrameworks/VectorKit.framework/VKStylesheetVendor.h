@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VKResourceManager;
-
 @interface VKStylesheetVendor : NSObject <GEOResourceManifestTileGroupObserver> {
     NSDictionary *_localizationToAttributeValue;
     NSObject<OS_dispatch_queue> *_localizationToAttributeValueQueue;
@@ -13,10 +11,10 @@
     unsigned int _tileGroupIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;

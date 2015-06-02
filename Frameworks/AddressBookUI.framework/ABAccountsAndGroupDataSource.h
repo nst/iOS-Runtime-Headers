@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABModel, ACAccountStore, NSArray, NSDictionary, NSString;
-
 @interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
     NSArray *_accountDisplayNames;
     NSArray *_accountIdentifiers;
@@ -15,15 +13,15 @@
     ABModel *_model;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDirty) BOOL dirty;
-@property(readonly) unsigned int hash;
-@property BOOL hidesGlobalGroupWrapper;
-@property BOOL hidesSearchableSources;
-@property(retain) ABModel * model;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDirty, nonatomic) BOOL dirty;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesGlobalGroupWrapper;
+@property (nonatomic) BOOL hidesSearchableSources;
+@property (nonatomic, retain) ABModel *model;
+@property (readonly) Class superclass;
 
 - (id)accountDisplayNameAtIndex:(int)arg1;
 - (id)accountStore;

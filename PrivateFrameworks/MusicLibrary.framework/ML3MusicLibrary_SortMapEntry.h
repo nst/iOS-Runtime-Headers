@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSData, NSString;
-
 @interface ML3MusicLibrary_SortMapEntry : NSObject {
     BOOL _dirty;
     NSString *_name;

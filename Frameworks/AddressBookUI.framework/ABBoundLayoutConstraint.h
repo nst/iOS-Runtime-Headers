@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABBoundLayoutConstraint : NSLayoutConstraint {
     NSString *_keyPath;
     id _object;
 }
 
-@property(copy) NSString * keyPath;
-@property id object;
+@property (nonatomic, copy) NSString *keyPath;
+@property (nonatomic) id object;
 
 + (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constantObject:(id)arg7 keyPath:(id)arg8;
 

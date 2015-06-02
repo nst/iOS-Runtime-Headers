@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOClientCapabilities : PBCodable <NSCopying> {
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
@@ -16,16 +14,16 @@
     int _maxManeuverTypeSupported;
 }
 
-@property(retain) NSString * appMajorVersion;
-@property(retain) NSString * appMinorVersion;
-@property(retain) NSString * hardwareModel;
-@property(readonly) BOOL hasAppMajorVersion;
-@property(readonly) BOOL hasAppMinorVersion;
-@property(readonly) BOOL hasHardwareModel;
-@property BOOL hasInternalInstall;
-@property BOOL hasMaxManeuverTypeSupported;
-@property BOOL internalInstall;
-@property int maxManeuverTypeSupported;
+@property (nonatomic, retain) NSString *appMajorVersion;
+@property (nonatomic, retain) NSString *appMinorVersion;
+@property (nonatomic, retain) NSString *hardwareModel;
+@property (nonatomic, readonly) BOOL hasAppMajorVersion;
+@property (nonatomic, readonly) BOOL hasAppMinorVersion;
+@property (nonatomic, readonly) BOOL hasHardwareModel;
+@property (nonatomic) BOOL hasInternalInstall;
+@property (nonatomic) BOOL hasMaxManeuverTypeSupported;
+@property (nonatomic) BOOL internalInstall;
+@property (nonatomic) int maxManeuverTypeSupported;
 
 - (id)appMajorVersion;
 - (id)appMinorVersion;

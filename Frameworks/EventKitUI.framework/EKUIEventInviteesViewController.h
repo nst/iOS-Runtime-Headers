@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, EKEvent, EKUIEventInviteesEditViewController, EKUIEventInviteesView, EKUIInviteeAlternativeTimeSearcher, EKUIInviteesViewAllInviteesCanAttendSection, EKUIInviteesViewInvisibleInviteeStatusSection, EKUIInviteesViewNotRespondedInviteesSection, EKUIInviteesViewOriginalConflictSection, EKUIInviteesViewRespondedInviteesSection, EKUIInviteesViewSomeInviteesCanAttendSection, NSArray, NSDate, NSString;
-
 @interface EKUIEventInviteesViewController : UITableViewController <EKEditItemViewControllerDelegate, EKEditItemViewControllerProtocol, UITableViewDataSource, UITableViewDelegate> {
     EKUIInviteesViewAllInviteesCanAttendSection *_allInviteesCanAttendSection;
     EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
@@ -24,30 +22,30 @@
     BOOL _viewIsVisible;
 }
 
-@property(retain) EKUIInviteesViewAllInviteesCanAttendSection * allInviteesCanAttendSection;
-@property(retain) EKUIInviteeAlternativeTimeSearcher * availabilitySearcher;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <EKEditItemViewControllerDelegate> * editDelegate;
-@property BOOL editItemShouldBeAskedForInjectableViewController;
-@property BOOL editable;
-@property(retain) EKEvent * event;
-@property(readonly) unsigned int hash;
-@property(retain) EKUIInviteesViewInvisibleInviteeStatusSection * invisibleInviteeStatusSection;
-@property(retain) EKUIEventInviteesView * inviteesView;
-@property(retain) EKUIInviteesViewNotRespondedInviteesSection * notRespondedSection;
-@property(retain) EKUIInviteesViewOriginalConflictSection * originalConflictSection;
-@property EKUIEventInviteesEditViewController * parentController;
-@property BOOL presentModally;
-@property BOOL resetAttendeesSections;
-@property BOOL resetConflictResolutionSections;
-@property(retain) EKUIInviteesViewRespondedInviteesSection * respondedSection;
-@property(retain) NSArray * sections;
-@property(retain) NSDate * selectedEndDate;
-@property(retain) NSDate * selectedStartDate;
-@property(retain) EKUIInviteesViewSomeInviteesCanAttendSection * someInviteesCanAttendSection;
-@property(readonly) Class superclass;
-@property BOOL viewIsVisible;
+@property (nonatomic, retain) EKUIInviteesViewAllInviteesCanAttendSection *allInviteesCanAttendSection;
+@property (nonatomic, retain) EKUIInviteeAlternativeTimeSearcher *availabilitySearcher;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
+@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) BOOL editable;
+@property (nonatomic, retain) EKEvent *event;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) EKUIInviteesViewInvisibleInviteeStatusSection *invisibleInviteeStatusSection;
+@property (nonatomic, retain) EKUIEventInviteesView *inviteesView;
+@property (nonatomic, retain) EKUIInviteesViewNotRespondedInviteesSection *notRespondedSection;
+@property (nonatomic, retain) EKUIInviteesViewOriginalConflictSection *originalConflictSection;
+@property (nonatomic) EKUIEventInviteesEditViewController *parentController;
+@property (nonatomic) BOOL presentModally;
+@property (nonatomic) BOOL resetAttendeesSections;
+@property (nonatomic) BOOL resetConflictResolutionSections;
+@property (nonatomic, retain) EKUIInviteesViewRespondedInviteesSection *respondedSection;
+@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) NSDate *selectedEndDate;
+@property (nonatomic, retain) NSDate *selectedStartDate;
+@property (nonatomic, retain) EKUIInviteesViewSomeInviteesCanAttendSection *someInviteesCanAttendSection;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL viewIsVisible;
 
 + (id)_participantsInArray:(id)arg1 thatAreNotInArray:(id)arg2;
 

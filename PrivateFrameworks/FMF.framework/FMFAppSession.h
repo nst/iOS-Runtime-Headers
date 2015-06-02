@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMFAppSession : NSObject {
-}
+@interface FMFAppSession : NSObject
 
 + (id)sharedInstance;
 
 - (id)_fmfAppAccountFromAOSAccount:(id)arg1;
-- (void)locationAuthorizationForShareMyLocationWithCompletion:(id)arg1;
-- (void)renewFMFAccountCredentialsWithCompletion:(id)arg1;
-- (void)retrieveFMFAccountWithCompletion:(id)arg1;
-- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id)arg2 tokenHandler:(id)arg3;
+- (void)locationAuthorizationForShareMyLocationWithCompletion:(id /* block */)arg1;
+- (void)renewFMFAccountCredentialsWithCompletion:(id /* block */)arg1;
+- (void)retrieveFMFAccountWithCompletion:(id /* block */)arg1;
+- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id /* block */)arg2 tokenHandler:(id /* block */)arg3;
 - (void)stopListeningForFMFAppPush;
 - (id)thisDeviceId;
 

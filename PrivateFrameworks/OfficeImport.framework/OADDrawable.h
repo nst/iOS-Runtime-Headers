@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OADClient>, OADDrawable<OADDrawableContainer>, OADDrawableProperties;
-
 @interface OADDrawable : NSObject {
     <OADClient> *mClientData;
     OADDrawableProperties *mDrawableProperties;

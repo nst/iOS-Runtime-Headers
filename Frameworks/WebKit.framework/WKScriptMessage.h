@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKFrameInfo, WKWebView;
-
 @interface WKScriptMessage : NSObject {
     struct RetainPtr<id> { 
         void *m_ptr; 
@@ -14,15 +12,15 @@
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     } _name;
-    struct WeakObjCPtr<WKWebView> { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     } _webView;
 }
 
-@property(copy,readonly) id body;
-@property(copy,readonly) WKFrameInfo * frameInfo;
-@property(copy,readonly) NSString * name;
-@property(readonly) WKWebView * webView;
+@property (nonatomic, readonly, copy) id body;
+@property (nonatomic, readonly, copy) WKFrameInfo *frameInfo;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) WKWebView *webView;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

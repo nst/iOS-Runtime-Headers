@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMTouchList;
+@interface DOMTouchEvent : DOMUIEvent
 
-@interface DOMTouchEvent : DOMUIEvent {
-}
-
-@property(readonly) BOOL altKey;
-@property(readonly) DOMTouchList * changedTouches;
-@property(readonly) BOOL ctrlKey;
-@property(readonly) BOOL metaKey;
-@property(readonly) float rotation;
-@property(readonly) float scale;
-@property(readonly) BOOL shiftKey;
-@property(readonly) DOMTouchList * targetTouches;
-@property(readonly) DOMTouchList * touches;
+@property (readonly) BOOL altKey;
+@property (readonly) DOMTouchList *changedTouches;
+@property (readonly) BOOL ctrlKey;
+@property (readonly) BOOL metaKey;
+@property (readonly) float rotation;
+@property (readonly) float scale;
+@property (readonly) BOOL shiftKey;
+@property (readonly) DOMTouchList *targetTouches;
+@property (readonly) DOMTouchList *touches;
 
 - (BOOL)altKey;
 - (id)changedTouches;

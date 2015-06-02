@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableViewDataSource, ABPersonViewControllerHelper, NSArray, NSMutableArray;
-
 @interface ABPersonTableViewLinkingDelegate : NSObject <ABPersonLinkingUIDelegate> {
     BOOL _appearsInLinkingPeoplePicker;
     int _currentIndexInLinkedInfos;
@@ -18,14 +16,14 @@
     BOOL _updateShouldAllowLinkingAnotherContact;
 }
 
-@property BOOL appearsInLinkingPeoplePicker;
-@property ABPersonTableViewDataSource * dataSource;
-@property(readonly) BOOL hasLinkChanges;
-@property(readonly) ABPersonViewControllerHelper * helper;
-@property(readonly) NSArray * linkedInfos;
-@property BOOL shouldShowLinkedPeople;
-@property BOOL shouldShowLinkingUIOnCard;
-@property BOOL updateShouldAllowLinkingAnotherContact;
+@property (nonatomic) BOOL appearsInLinkingPeoplePicker;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
+@property (nonatomic, readonly) BOOL hasLinkChanges;
+@property (nonatomic, readonly) ABPersonViewControllerHelper *helper;
+@property (nonatomic, readonly) NSArray *linkedInfos;
+@property (nonatomic) BOOL shouldShowLinkedPeople;
+@property (nonatomic) BOOL shouldShowLinkingUIOnCard;
+@property (nonatomic) BOOL updateShouldAllowLinkingAnotherContact;
 
 - (void)_finalizeLinkChanges;
 - (id)allNonUnifiedPeople;

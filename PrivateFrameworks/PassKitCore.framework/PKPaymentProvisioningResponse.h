@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSURL;
-
 @interface PKPaymentProvisioningResponse : PKPaymentWebServiceResponse {
     NSURL *_passURL;
 }
 
-@property(retain) NSURL * passURL;
+@property (nonatomic, retain) NSURL *passURL;
 
 - (void)dealloc;
 - (id)initWithData:(id)arg1;

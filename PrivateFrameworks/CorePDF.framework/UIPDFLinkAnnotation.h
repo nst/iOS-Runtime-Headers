@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFLinkAnnotation : UIPDFMarkupAnnotation {
-}
+@interface UIPDFLinkAnnotation : UIPDFMarkupAnnotation
 
 - (unsigned int)getDestination:(struct CGPDFDictionary { }*)arg1;
 - (unsigned int)getNamedDestination:(struct CGPDFDictionary { }*)arg1;

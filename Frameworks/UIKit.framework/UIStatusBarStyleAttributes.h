@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBarForegroundStyleAttributes, UIStatusBarStyleRequest;
-
 @interface UIStatusBarStyleAttributes : NSObject {
     UIStatusBarForegroundStyleAttributes *_foregroundStyle;
     UIStatusBarStyleRequest *_request;

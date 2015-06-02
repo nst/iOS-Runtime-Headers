@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCloudNotification.framework/iCloudNotification
  */
 
-@class NSXPCConnection;
-
 @interface INDaemonConnection : NSObject {
     NSXPCConnection *_connection;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface WMSymbolMapper : CMMapper {
     unsigned short mCharacter;
     NSString *mFontName;

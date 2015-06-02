@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSMutableArray;
-
 @interface PRZhuyinContext : PRAutocorrectionContext {
     NSMutableArray *_addedModifications;
     NSMutableArray *_addedRemovedModifications;
     char *_buffer;
     void *_connection;
     unsigned int _endIndex;
-    unsigned int _lastIndexes[4];
+    unsigned int _lastIndexes;
     BOOL _lastSyllableIsPartial;
     unsigned int _length;
     unsigned int _lengthBeforeApostrophes;
     NSMutableArray *_modifications;
-    unsigned int _nextIndexes[2];
+    unsigned int _nextIndexes;
     NSMutableArray *_prefixes;
     NSMutableArray *_removedModifications;
     unsigned int _startIndex;

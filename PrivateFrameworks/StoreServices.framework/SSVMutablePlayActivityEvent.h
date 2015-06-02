@@ -2,33 +2,30 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSDate, NSString, NSTimeZone;
+@interface SSVMutablePlayActivityEvent : SSVPlayActivityEvent
 
-@interface SSVMutablePlayActivityEvent : SSVPlayActivityEvent {
-}
-
-@property(getter=isSBEnabled) BOOL SBEnabled;
-@property(copy) NSString * containerID;
-@property unsigned int containerType;
-@property(copy) NSString * deviceName;
-@property unsigned int endReasonType;
-@property(copy) NSDate * eventDate;
-@property(copy) NSTimeZone * eventTimeZone;
-@property(copy) NSString * externalID;
-@property(copy) NSString * featureName;
-@property double itemDuration;
-@property double itemEndTime;
-@property double itemStartTime;
-@property unsigned int itemType;
-@property unsigned int mediaType;
-@property(getter=isOffline) BOOL offline;
-@property long long persistentID;
-@property(copy) NSString * personalizedContainerID;
-@property unsigned int sourceType;
-@property unsigned long long storeAccountID;
-@property(copy) NSString * storeID;
-@property(copy) NSData * timedMetadata;
-@property(copy) NSData * trackInfo;
+@property (getter=isSBEnabled, nonatomic) BOOL SBEnabled;
+@property (nonatomic, copy) NSString *containerID;
+@property (nonatomic) unsigned int containerType;
+@property (nonatomic, copy) NSString *deviceName;
+@property (nonatomic) unsigned int endReasonType;
+@property (nonatomic, copy) NSDate *eventDate;
+@property (nonatomic, copy) NSTimeZone *eventTimeZone;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *featureName;
+@property (nonatomic) double itemDuration;
+@property (nonatomic) double itemEndTime;
+@property (nonatomic) double itemStartTime;
+@property (nonatomic) unsigned int itemType;
+@property (nonatomic) unsigned int mediaType;
+@property (getter=isOffline, nonatomic) BOOL offline;
+@property (nonatomic) long long persistentID;
+@property (nonatomic, copy) NSString *personalizedContainerID;
+@property (nonatomic) unsigned int sourceType;
+@property (nonatomic) unsigned long long storeAccountID;
+@property (nonatomic, copy) NSString *storeID;
+@property (nonatomic, copy) NSData *timedMetadata;
+@property (nonatomic, copy) NSData *trackInfo;
 
 - (Class)_mutableCopyClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

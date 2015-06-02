@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData;
-
 @interface BRCChecksummingOutputStream : NSOutputStream {
     struct CC_SHA1state_st { 
         unsigned int h0; 
@@ -17,10 +15,10 @@
         int num; 
     } _ctx;
     BOOL _isOpen;
-    unsigned char _sig[21];
+    unsigned char _sig;
 }
 
-@property(readonly) NSData * signature;
+@property (nonatomic, readonly) NSData *signature;
 
 + (id)checksummingOutputStreamWithTag:(unsigned char)arg1;
 

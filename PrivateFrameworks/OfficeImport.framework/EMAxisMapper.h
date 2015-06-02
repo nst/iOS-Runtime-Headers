@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EMAxisMapper : CMMapper {
-}
+@interface EMAxisMapper : CMMapper
 
 - (bool)centerLabels;
 - (bool)isLogarithmic;

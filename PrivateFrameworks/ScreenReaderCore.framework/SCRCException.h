@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCException : NSObject {
-}
+@interface SCRCException : NSObject
 
 + (void)initialize;
 

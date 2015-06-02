@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSNumber, TSCH3DTSPImageData, TSCH3DTSPMipmapData, TSPData;
-
 @interface TSCH3DTSPImageDataTexture : TSCH3DTexture {
     NSNumber *mCachedHash;
     TSCH3DTSPImageData *mData;
     TSCH3DTSPMipmapData *mOptimizedMipmapData;
 }
 
-@property(readonly) TSCH3DTSPImageData * data;
-@property(readonly) TSPData * imageData;
+@property (nonatomic, readonly) TSCH3DTSPImageData *data;
+@property (nonatomic, readonly) TSPData *imageData;
 
 + (id)instanceWithArchive:(const struct Chart3DTSPImageDataTextureArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Reference {} *x8; }*)arg1 unarchiver:(id)arg2;
 + (id)textureWithImageData:(id)arg1 optimizedMipmapData:(id)arg2;

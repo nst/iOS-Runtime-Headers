@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIBarButtonItem;
-
 @interface PTSettingsController : UINavigationController {
     UIBarButtonItem *_dismissButton;
 }
 
-@property(retain) UIBarButtonItem * dismissButton;
+@property (nonatomic, retain) UIBarButtonItem *dismissButton;
 
 - (void).cxx_destruct;
 - (id)_defaultDismissButton;

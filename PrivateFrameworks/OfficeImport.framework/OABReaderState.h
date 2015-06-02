@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OADColorPalette>, NSMutableDictionary;
-
 @interface OABReaderState : NSObject {
     NSMutableDictionary *mBlipIdMap;
     Class mClient;
@@ -13,7 +11,7 @@
     NSMutableDictionary *mShapeIdMap;
 }
 
-@property int groupDepth;
+@property (nonatomic) int groupDepth;
 
 - (Class)client;
 - (id)colorPalette;

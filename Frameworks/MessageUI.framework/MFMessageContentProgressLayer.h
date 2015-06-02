@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface MFMessageContentProgressLayer : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,7 +13,7 @@
     UIActivityIndicatorView *_progressIndicator;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 - (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class _UIBackdropView;
-
 @interface PKPaymentAuthorizationNavigationBarBackgroundView : UIView {
     _UIBackdropView *_backdropView;
 }

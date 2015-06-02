@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfOOSLogMsg : PLBasebandMessage {
     NSMutableDictionary *_commonInfo;
     NSString *_error;
@@ -24,23 +22,23 @@
     NSNumber *_pssiTicks;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSString * error;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
-@property(retain) NSArray * oosGsmPssiStatTicks;
-@property(retain) NSArray * oosGsmPssiTimes;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSString *error;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
+@property (retain) NSArray *oosGsmPssiStatTicks;
+@property (retain) NSArray *oosGsmPssiTimes;
 @property unsigned char oosInProgress;
-@property(retain) NSArray * oosLtePssiStatTicks;
-@property(retain) NSArray * oosLtePssiTimes;
-@property(retain) NSArray * oosTdsPssiStatTicks;
-@property(retain) NSArray * oosTdsPssiTimes;
-@property(retain) NSNumber * oosTicks;
-@property(retain) NSNumber * oosTimes;
-@property(retain) NSArray * oosWcdmaPssiStatTicks;
-@property(retain) NSArray * oosWcdmaPssiTimes;
-@property(retain) NSNumber * pssiTicks;
+@property (retain) NSArray *oosLtePssiStatTicks;
+@property (retain) NSArray *oosLtePssiTimes;
+@property (retain) NSArray *oosTdsPssiStatTicks;
+@property (retain) NSArray *oosTdsPssiTimes;
+@property (retain) NSNumber *oosTicks;
+@property (retain) NSNumber *oosTimes;
+@property (retain) NSArray *oosWcdmaPssiStatTicks;
+@property (retain) NSArray *oosWcdmaPssiTimes;
+@property (retain) NSNumber *pssiTicks;
 
 + (id)entryEventBackwardDefinitionOOSPerRat;
 

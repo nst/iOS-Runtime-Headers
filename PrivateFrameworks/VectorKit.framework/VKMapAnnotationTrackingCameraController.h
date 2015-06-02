@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKMapAnnotationTrackingCameraController : VKAnnotationTrackingCameraController {
-}
+@interface VKMapAnnotationTrackingCameraController : VKAnnotationTrackingCameraController
 
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
 - (double)_minTrackingCameraDistance;

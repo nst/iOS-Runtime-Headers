@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNQuicklookCompatibilityDelegate : KNBaseCompatibilityDelegate {
-}
+@interface KNQuicklookCompatibilityDelegate : KNBaseCompatibilityDelegate
 
 @end

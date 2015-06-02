@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPCommentLayout : TSWPShapeLayout {
-}
+@interface TSWPCommentLayout : TSWPShapeLayout
 
 - (BOOL)allowsConnections;
 - (BOOL)canBeIntersected;

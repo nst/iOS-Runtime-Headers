@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSError, NSObject, NSObject<OS_dispatch_group>;
-
 @interface BRXPCSyncProxy : NSProxy {
     NSError *_error;
     NSObject<OS_dispatch_group> *_group;
@@ -12,8 +10,8 @@
     NSObject *_target;
 }
 
-@property(retain) NSError * error;
-@property(retain) id result;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) id result;
 
 - (void)dealloc;
 - (id)error;

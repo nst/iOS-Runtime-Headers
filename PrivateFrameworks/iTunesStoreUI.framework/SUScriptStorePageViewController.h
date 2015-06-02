@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSNumber, NSString, SUScriptSegmentedControl;
-
 @interface SUScriptStorePageViewController : SUScriptViewController {
     NSArray *_initialURLStrings;
 }
 
-@property(readonly) NSArray * URLStrings;
-@property(retain) id URLs;
+@property (readonly) NSArray *URLStrings;
+@property (retain) id URLs;
 @property id alwaysDispatchesScrollEvents;
 @property BOOL doubleTapEnabled;
 @property BOOL flashesScrollIndicators;
-@property(readonly) int indicatorStyleGray;
-@property(readonly) int indicatorStyleWhite;
+@property (readonly) int indicatorStyleGray;
+@property (readonly) int indicatorStyleWhite;
 @property id inputViewObeysDOMFocus;
 @property int loadingIndicatorStyle;
-@property(retain) id loadingTextColor;
-@property(retain) id loadingTextShadowColor;
+@property (retain) id loadingTextColor;
+@property (retain) id loadingTextShadowColor;
 @property id loadsWhenHidden;
-@property(retain) id placeholderBackgroundStyle;
-@property(readonly) id rootObject;
+@property (retain) id placeholderBackgroundStyle;
+@property (readonly) id rootObject;
 @property BOOL scrollingEnabled;
-@property(retain) SUScriptSegmentedControl * segmentedControl;
+@property (retain) SUScriptSegmentedControl *segmentedControl;
 @property BOOL shouldInvalidateForLowMemory;
 @property BOOL shouldLoadProgressively;
 @property id shouldShowFormAccessory;
 @property BOOL showsBackgroundShadow;
 @property id showsHorizontalScrollIndicator;
 @property id showsVerticalScrollIndicator;
-@property(retain) NSNumber * timeoutInterval;
-@property(retain) NSString * userInfo;
+@property (retain) NSNumber *timeoutInterval;
+@property (retain) NSString *userInfo;
 
 + (BOOL)copyURLStrings:(id*)arg1 forValue:(id)arg2;
 + (void)initialize;

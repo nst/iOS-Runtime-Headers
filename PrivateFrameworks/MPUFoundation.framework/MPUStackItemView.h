@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@interface MPUStackItemView : UIView {
-}
+@interface MPUStackItemView : UIView
 
 - (void)didCompleteItemViewConfiguration;
 - (void)prepareForReuse;

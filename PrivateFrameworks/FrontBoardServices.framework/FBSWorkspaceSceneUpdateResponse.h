@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSWorkspaceSceneUpdateResponse : FBSWorkspaceResponse {
-}
+@interface FBSWorkspaceSceneUpdateResponse : FBSWorkspaceResponse
 
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

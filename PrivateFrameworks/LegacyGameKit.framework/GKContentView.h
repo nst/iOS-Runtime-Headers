@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
  */
 
-@class NSArray, NSString, UIActivityIndicatorView, UIButton, UIFont, UIImage, UIImageView, UILabel, UITableView;
-
 @interface GKContentView : UIView {
     UIActivityIndicatorView *_activityIndicator;
     UIButton *_cancelButton;
@@ -17,21 +15,21 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property(retain) UIButton * cancelButton;
-@property(retain,readonly) NSArray * connectionButtons;
-@property UIImage * icon;
-@property(retain) UIImageView * iconView;
-@property NSString * message;
-@property(readonly) UIFont * messageFont;
-@property(retain) UILabel * messageLabel;
-@property int numberOfMessageLines;
-@property int numberOfTitleLines;
-@property(retain) UIButton * otherButton;
-@property(retain,readonly) UITableView * table;
-@property NSString * title;
-@property(readonly) UIFont * titleFont;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) UIButton *cancelButton;
+@property (nonatomic, readonly, retain) NSArray *connectionButtons;
+@property (nonatomic) UIImage *icon;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic) NSString *message;
+@property (nonatomic, readonly) UIFont *messageFont;
+@property (nonatomic, retain) UILabel *messageLabel;
+@property (nonatomic) int numberOfMessageLines;
+@property (nonatomic) int numberOfTitleLines;
+@property (nonatomic, retain) UIButton *otherButton;
+@property (nonatomic, readonly, retain) UITableView *table;
+@property (nonatomic) NSString *title;
+@property (nonatomic, readonly) UIFont *titleFont;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (float)maxTextWidth;
 

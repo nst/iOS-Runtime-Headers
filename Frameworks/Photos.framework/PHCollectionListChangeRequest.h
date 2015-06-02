@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSManagedObjectID, NSString, PHChangeRequestHelper, PHCollectionChangeRequestHelper, PHCollectionList, PHObjectPlaceholder;
-
 @interface PHCollectionListChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
     NSString *_clientName;
     int _clientProcessID;
@@ -13,22 +11,22 @@
     PHCollectionList *_originalCollectionList;
 }
 
-@property(readonly) NSString * clientName;
-@property(readonly) int clientProcessID;
-@property(readonly) PHCollectionChangeRequestHelper * collectionsHelper;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEntitled,readonly) BOOL entitled;
-@property(readonly) unsigned int hash;
-@property(readonly) PHChangeRequestHelper * helper;
-@property(readonly) NSString * managedEntityName;
-@property(getter=isMutated,readonly) BOOL mutated;
-@property(getter=isNew,readonly) BOOL new;
-@property(readonly) NSManagedObjectID * objectID;
-@property(readonly) PHObjectPlaceholder * placeholderForCreatedCollectionList;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property(readonly) NSString * uuid;
+@property (nonatomic, readonly) NSString *clientName;
+@property (nonatomic, readonly) int clientProcessID;
+@property (nonatomic, readonly) PHCollectionChangeRequestHelper *collectionsHelper;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEntitled, nonatomic, readonly) BOOL entitled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PHChangeRequestHelper *helper;
+@property (nonatomic, readonly) NSString *managedEntityName;
+@property (getter=isMutated, readonly) BOOL mutated;
+@property (getter=isNew, readonly) BOOL new;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedCollectionList;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) NSString *uuid;
 
 + (id)changeRequestForCollectionList:(id)arg1;
 + (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;

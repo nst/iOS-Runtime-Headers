@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMCaptureController, CAMExposureBiasSlider, CAMFocusAttachmentView, CAMFocusLockAttachmentView, CAMFocusLockView, CAMFocusPointView, CAMFocusSplitAttachmentView, CAMFocusView, CAMVideoPreviewView, NSMutableDictionary, UIView;
-
 @interface CAMPreviewView : UIView {
     int __exposureBiasSide;
     CAMCaptureController *__sharedCameraController;
     BOOL __showExposureBiasSlider;
-    unsigned int _canShowFocus : 1;
+    unsigned int _canShowFocus;
     CAMFocusView *_continuousAutoFocusView;
-    unsigned int _controlsAreVisible : 1;
+    unsigned int _controlsAreVisible;
     float _dimmingStrength;
     UIView *_dimmingView;
     CAMFocusAttachmentView *_dismissFocusAttachment;
@@ -57,24 +55,24 @@
     CAMVideoPreviewView *_videoPreviewView;
 }
 
-@property(readonly) int _exposureBiasSide;
-@property CAMCaptureController * _sharedCameraController;
-@property(setter=_setShowExposureBiasSlider:) BOOL _showExposureBiasSlider;
-@property float dimmingStrength;
-@property float exposureBiasMax;
-@property float exposureBiasMin;
-@property float exposureBiasValue;
-@property BOOL hideExposureBiasSlider;
-@property(readonly) double lastExposureFadeOutTime;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastExposureFrame;
-@property(readonly) double lastFocusFadeOutTime;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastFocusFrame;
-@property BOOL showExposureBiasSliderOnChange;
-@property BOOL showLockFocusAttachment;
-@property BOOL showSplitFocusAndExposureAttachment;
-@property BOOL splitFocusAndExposure;
-@property(getter=isSquare) BOOL square;
-@property(retain,readonly) CAMVideoPreviewView * videoPreviewView;
+@property (nonatomic, readonly) int _exposureBiasSide;
+@property (nonatomic) CAMCaptureController *_sharedCameraController;
+@property (setter=_setShowExposureBiasSlider:, nonatomic) BOOL _showExposureBiasSlider;
+@property (nonatomic) float dimmingStrength;
+@property (nonatomic) float exposureBiasMax;
+@property (nonatomic) float exposureBiasMin;
+@property (nonatomic) float exposureBiasValue;
+@property (nonatomic) BOOL hideExposureBiasSlider;
+@property (nonatomic, readonly) double lastExposureFadeOutTime;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastExposureFrame;
+@property (nonatomic, readonly) double lastFocusFadeOutTime;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastFocusFrame;
+@property (nonatomic) BOOL showExposureBiasSliderOnChange;
+@property (nonatomic) BOOL showLockFocusAttachment;
+@property (nonatomic) BOOL showSplitFocusAndExposureAttachment;
+@property (nonatomic) BOOL splitFocusAndExposure;
+@property (getter=isSquare, nonatomic) BOOL square;
+@property (nonatomic, readonly, retain) CAMVideoPreviewView *videoPreviewView;
 
 - (void).cxx_destruct;
 - (BOOL)_allowDismissFocusAttachment;

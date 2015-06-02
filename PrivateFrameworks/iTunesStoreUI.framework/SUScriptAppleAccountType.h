@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ACAccountType, NSString;
-
 @interface SUScriptAppleAccountType : SUScriptObject {
     ACAccountType *_accountType;
 }
 
-@property(readonly) id accessGranted;
-@property(readonly) NSString * accountTypeDescription;
-@property(readonly) NSString * identifier;
-@property(readonly) ACAccountType * nativeAccountType;
+@property (readonly) id accessGranted;
+@property (readonly) NSString *accountTypeDescription;
+@property (readonly) NSString *identifier;
+@property (nonatomic, readonly) ACAccountType *nativeAccountType;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

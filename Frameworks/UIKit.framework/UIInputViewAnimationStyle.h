@@ -10,13 +10,13 @@
     BOOL interactivelyCancelled;
 }
 
-@property BOOL animated;
-@property(readonly) BOOL canDismissWithScrollView;
-@property double duration;
-@property unsigned int extraOptions;
-@property BOOL force;
-@property BOOL interactivelyCancelled;
-@property(readonly) BOOL isAnimationCompleted;
+@property (nonatomic) BOOL animated;
+@property (nonatomic, readonly) BOOL canDismissWithScrollView;
+@property (nonatomic) double duration;
+@property (nonatomic) unsigned int extraOptions;
+@property (nonatomic) BOOL force;
+@property (nonatomic) BOOL interactivelyCancelled;
+@property (nonatomic, readonly) BOOL isAnimationCompleted;
 
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2;
 + (id)animationStyleDefault;
@@ -34,7 +34,7 @@
 - (BOOL)interactivelyCancelled;
 - (BOOL)isAnimationCompleted;
 - (BOOL)isEqual:(id)arg1;
-- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
+- (void)launchAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 completion:(id /* block */)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (void)setAnimated:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setExtraOptions:(unsigned int)arg1;

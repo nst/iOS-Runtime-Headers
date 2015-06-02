@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class AVCaptureDevice, CADisplayLink, CAMTorchPattern;
-
 @interface CAMTorchPatternController : NSObject {
     CAMTorchPattern *__currentPattern;
     CADisplayLink *__displayLink;
@@ -13,12 +11,12 @@
     double _stepInterval;
 }
 
-@property(readonly) CAMTorchPattern * _currentPattern;
-@property(readonly) CADisplayLink * _displayLink;
-@property(setter=_setPerforming:) BOOL _performing;
-@property(readonly) double _startTime;
-@property(retain) AVCaptureDevice * captureDevice;
-@property double stepInterval;
+@property (nonatomic, readonly) CAMTorchPattern *_currentPattern;
+@property (nonatomic, readonly) CADisplayLink *_displayLink;
+@property (setter=_setPerforming:, nonatomic) BOOL _performing;
+@property (nonatomic, readonly) double _startTime;
+@property (nonatomic, retain) AVCaptureDevice *captureDevice;
+@property (nonatomic) double stepInterval;
 
 - (void).cxx_destruct;
 - (void)_applyTorchLevel:(float)arg1;

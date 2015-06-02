@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassColorProfile, UIColor;
-
 @interface PKPassColorProfile : NSObject {
     UIColor *_backgroundColor;
     float _backgroundLightness;
@@ -19,15 +17,15 @@
     PKPassColorProfile *_stripProfile;
 }
 
-@property(readonly) UIColor * backgroundColor;
-@property(readonly) UIColor * foregroundColor;
-@property(readonly) UIColor * highlightColor;
-@property(readonly) BOOL isLight;
-@property(readonly) UIColor * labelColor;
-@property(readonly) float overlayDarkeningAlpha;
-@property(readonly) float overlayLighteningAlpha;
-@property(readonly) float regularDarkeningAlpha;
-@property(readonly) float regularLighteningAlpha;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) UIColor *foregroundColor;
+@property (nonatomic, readonly) UIColor *highlightColor;
+@property (nonatomic, readonly) BOOL isLight;
+@property (nonatomic, readonly) UIColor *labelColor;
+@property (nonatomic, readonly) float overlayDarkeningAlpha;
+@property (nonatomic, readonly) float overlayLighteningAlpha;
+@property (nonatomic, readonly) float regularDarkeningAlpha;
+@property (nonatomic, readonly) float regularLighteningAlpha;
 
 + (id)profileForDisplayProfile:(id)arg1;
 

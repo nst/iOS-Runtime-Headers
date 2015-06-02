@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CALayer;
-
 @interface _MKGemUserLocationView : MKUserLocationView {
     CALayer *_gemLayer;
 }

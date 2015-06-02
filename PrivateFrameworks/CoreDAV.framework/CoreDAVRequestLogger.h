@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>, NSArray;
-
 @interface CoreDAVRequestLogger : NSObject {
     NSArray *_headerSortDescriptors;
     <CoreDAVAccountInfoProvider> *_provider;
     int _snippetsLogged;
 }
 
-@property(retain) NSArray * headerSortDescriptors;
+@property (nonatomic, retain) NSArray *headerSortDescriptors;
 
 - (id)_inflateRequestBody:(id)arg1;
 - (void)dealloc;

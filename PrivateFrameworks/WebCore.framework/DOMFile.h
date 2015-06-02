@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMFile : DOMBlob
 
-@interface DOMFile : DOMBlob {
-}
-
-@property(copy,readonly) NSString * name;
+@property (readonly, copy) NSString *name;
 
 - (double)lastModifiedDate;
 - (id)name;

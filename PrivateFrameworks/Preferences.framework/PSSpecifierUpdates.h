@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSMutableArray, PSSpecifierGroupIndex, PSSpecifierUpdateContext;
-
 @interface PSSpecifierUpdates : NSObject <NSCopying> {
     PSSpecifierUpdateContext *_context;
     NSMutableArray *_currentSpecifiers;
@@ -13,21 +11,21 @@
     BOOL _wantsDebugCallbacks;
 }
 
-@property(copy) PSSpecifierUpdateContext * context;
-@property(copy,readonly) NSArray * currentSpecifiers;
-@property(copy,readonly) PSSpecifierGroupIndex * groupIndex;
-@property(copy,readonly) NSArray * originalSpecifiers;
-@property(copy,readonly) NSArray * updates;
+@property (nonatomic, copy) PSSpecifierUpdateContext *context;
+@property (nonatomic, readonly, copy) NSArray *currentSpecifiers;
+@property (nonatomic, readonly, copy) PSSpecifierGroupIndex *groupIndex;
+@property (nonatomic, readonly, copy) NSArray *originalSpecifiers;
+@property (nonatomic, readonly, copy) NSArray *updates;
 
 + (void)_assertSpecifierIDsAreUnique:(id)arg1;
 + (Class)_groupIndexClass;
 + (BOOL)_wantsDebugCallbacks;
-+ (id)updatesByDiffingSpecifiers:(id)arg1 withSpecifiers:(id)arg2 changedBlock:(id)arg3;
++ (id)updatesByDiffingSpecifiers:(id)arg1 withSpecifiers:(id)arg2 changedBlock:(id /* block */)arg3;
 + (id)updatesWithSpecifiers:(id)arg1;
 
 - (BOOL)_addAndApplyOperation:(id)arg1;
 - (void)_didApplyOperation:(id)arg1;
-- (BOOL)_enumerateArrayWithConjuctionalResult:(id)arg1 usingBlock:(id)arg2;
+- (BOOL)_enumerateArrayWithConjuctionalResult:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)_groupIndexCreatingIfNecessary;
 - (id)_init;
 - (id)_initForCopyWithOriginalSpecifiers:(id)arg1 currentSpecifiers:(id)arg2 updates:(id)arg3;
@@ -45,7 +43,7 @@
 - (id)currentSpecifiers;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateUpdatesUsingBlock:(id)arg1;
+- (void)enumerateUpdatesUsingBlock:(id /* block */)arg1;
 - (id)groupIndex;
 - (unsigned int)indexOfSpecifier:(id)arg1;
 - (unsigned int)indexOfSpecifierWithID:(id)arg1;

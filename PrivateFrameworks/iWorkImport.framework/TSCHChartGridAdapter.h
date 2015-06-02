@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartGrid;
-
 @interface TSCHChartGridAdapter : NSObject <NSFastEnumeration> {
     TSCHChartGrid *mGrid;
     unsigned int mIndex;
 }
 
-@property(readonly) TSCHChartGrid * grid;
-@property(retain) NSString * name;
+@property (nonatomic, readonly) TSCHChartGrid *grid;
+@property (nonatomic, retain) NSString *name;
 
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)grid;
 - (id)initWithChartGrid:(id)arg1 index:(unsigned int)arg2;

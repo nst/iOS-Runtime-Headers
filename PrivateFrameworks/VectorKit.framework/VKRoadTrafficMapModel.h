@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class VKRoadMapModel;
-
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
     BOOL _enabled;
     VKRoadMapModel *_roadModel;
@@ -19,8 +12,8 @@
     } _trafficManager;
 }
 
-@property BOOL enabled;
-@property(retain) VKRoadMapModel * roadModel;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, retain) VKRoadMapModel *roadModel;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

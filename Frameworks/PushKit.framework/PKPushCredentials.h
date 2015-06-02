@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PushKit.framework/PushKit
  */
 
-@class NSData, NSString;
-
 @interface PKPushCredentials : NSObject {
     NSData *_token;
     NSString *_type;
 }
 
-@property(copy) NSData * token;
-@property(copy) NSString * type;
+@property (copy) NSData *token;
+@property (copy) NSString *type;
 
 - (void).cxx_destruct;
 - (void)setToken:(id)arg1;

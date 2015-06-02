@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>, ABTransportButton, UILabel;
-
 @interface ABFaceTimeCell : ABLabeledCell {
     <ABPropertyCellDelegate> *_delegate;
     UILabel *_faceTimeLabel;
@@ -12,11 +10,11 @@
     ABTransportButton *_transportIcon2;
 }
 
-@property <ABPropertyCellDelegate> * delegate;
-@property(readonly) UILabel * faceTimeLabel;
-@property BOOL isFaceTimeAudioAvailable;
-@property(readonly) ABTransportButton * transportIcon1;
-@property(readonly) ABTransportButton * transportIcon2;
+@property (nonatomic) <ABPropertyCellDelegate> *delegate;
+@property (nonatomic, readonly) UILabel *faceTimeLabel;
+@property (nonatomic) BOOL isFaceTimeAudioAvailable;
+@property (nonatomic, readonly) ABTransportButton *transportIcon1;
+@property (nonatomic, readonly) ABTransportButton *transportIcon2;
 
 - (id)constantConstraints;
 - (void)dealloc;

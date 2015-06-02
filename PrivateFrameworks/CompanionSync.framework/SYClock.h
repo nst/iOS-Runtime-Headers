@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class SYPeer;
-
 @interface SYClock : PBCodable <NSCopying> {
     SYPeer *_peer;
     unsigned long long _version;
 }
 
-@property(retain) SYPeer * peer;
-@property unsigned long long version;
+@property (nonatomic, retain) SYPeer *peer;
+@property (nonatomic) unsigned long long version;
 
 + (void)initialize;
 

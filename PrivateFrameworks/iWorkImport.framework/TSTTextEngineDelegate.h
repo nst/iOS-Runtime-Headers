@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPPadding;
-
 @interface TSTTextEngineDelegate : NSObject <TSWPTextDelegate> {
     float mMaxWidthForChildren;
     TSWPPadding *mPadding;
     int mVerticalAlignment;
 }
 
-@property float maxWidthForChildren;
+@property (nonatomic) float maxWidthForChildren;
 
 - (void)dealloc;
 - (BOOL)forceWesternLineBreaking;

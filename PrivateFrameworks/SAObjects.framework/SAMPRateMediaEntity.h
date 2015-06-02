@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPRateMediaEntity : SABaseClientBoundCommand {
-}
+@interface SAMPRateMediaEntity : SABaseClientBoundCommand
 
-@property int rating;
+@property (nonatomic) int rating;
 
 + (id)rateMediaEntity;
 + (id)rateMediaEntityWithDictionary:(id)arg1 context:(id)arg2;

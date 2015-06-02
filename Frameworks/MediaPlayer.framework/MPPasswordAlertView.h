@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UITextField;
-
 @interface MPPasswordAlertView : UIAlertView <UIAlertViewDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     UITextField *_passwordTextField;
     int _style;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int style;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)initWithStyle:(int)arg1 routeName:(id)arg2 completionHandler:(id)arg3;
+- (id)initWithStyle:(int)arg1 routeName:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (int)style;
 

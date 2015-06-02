@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PHAssetCollectionDataSource>, <PUPhotoSelectionManagerDelegate>, NSMapTable, NSMutableSet, NSOrderedSet, NSSet;
-
 @interface PUPhotoSelectionManager : NSObject {
     <PHAssetCollectionDataSource> *_dataSource;
     <PUPhotoSelectionManagerDelegate> *_delegate;
@@ -13,11 +11,11 @@
     NSMutableSet *_uniqueAssetSelection;
 }
 
-@property <PHAssetCollectionDataSource> * dataSource;
-@property <PUPhotoSelectionManagerDelegate> * delegate;
-@property(readonly) int options;
-@property(readonly) NSOrderedSet * orderedSelectedAssets;
-@property(readonly) NSSet * selectedAssets;
+@property (nonatomic) <PHAssetCollectionDataSource> *dataSource;
+@property (nonatomic) <PUPhotoSelectionManagerDelegate> *delegate;
+@property (nonatomic, readonly) int options;
+@property (nonatomic, readonly) NSOrderedSet *orderedSelectedAssets;
+@property (nonatomic, readonly) NSSet *selectedAssets;
 
 - (void).cxx_destruct;
 - (void)_beginSelectionChange;
@@ -32,7 +30,7 @@
 - (void)deselectAllAssetsInAssetCollections:(id)arg1;
 - (void)deselectAssetAtIndex:(unsigned int)arg1 inAssetCollection:(id)arg2;
 - (void)deselectAssetsAtIndexes:(id)arg1 inAssetCollection:(id)arg2;
-- (void)enumerateSelectedAssetsWithAssetCollectionOrdering:(id)arg1 block:(id)arg2;
+- (void)enumerateSelectedAssetsWithAssetCollectionOrdering:(id)arg1 block:(id /* block */)arg2;
 - (void)handlePhotoLibraryChange:(id)arg1;
 - (id)init;
 - (id)initWithOptions:(int)arg1;

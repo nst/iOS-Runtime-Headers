@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSearchResultsDelegate>, NSArray, NSObject<OS_dispatch_queue>, NSSet, NSString, PLPhotoLibrary, PLSearchIndexDateFormatter, PSIDatabase, PSIQuery;
-
 @interface PUSearchResultsDataSource : NSObject <PUSearchResultsValueDelegate> {
     NSSet *_albumUUIDs;
     PLSearchIndexDateFormatter *_dateFormatter;
@@ -21,12 +19,12 @@
     unsigned int _unprocessedSearchResultsCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSearchResultsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PSIDatabase * searchIndex;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSearchResultsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSIDatabase *searchIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_fetchAlbumsWithUUIDs:(id)arg1;

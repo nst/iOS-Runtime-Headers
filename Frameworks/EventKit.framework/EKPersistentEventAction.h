@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentCalendarItem, NSData, NSString;
+@interface EKPersistentEventAction : EKPersistentObject
 
-@interface EKPersistentEventAction : EKPersistentObject {
-}
-
-@property(copy) NSData * externalData;
-@property(copy) NSString * externalFolderID;
-@property(copy) NSString * externalID;
-@property(copy) NSString * externalModTag;
-@property(copy) NSString * externalScheduleID;
-@property(retain) EKPersistentCalendarItem * owner;
+@property (nonatomic, copy) NSData *externalData;
+@property (nonatomic, copy) NSString *externalFolderID;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *externalModTag;
+@property (nonatomic, copy) NSString *externalScheduleID;
+@property (nonatomic, retain) EKPersistentCalendarItem *owner;
 
 + (id)relations;
 

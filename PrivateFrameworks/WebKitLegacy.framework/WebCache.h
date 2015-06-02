@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebCache : NSObject {
-}
+@interface WebCache : NSObject
 
 + (bool)addImageToCache:(struct CGImage { }*)arg1 forURL:(id)arg2;
 + (bool)addImageToCache:(struct CGImage { }*)arg1 forURL:(id)arg2 forFrame:(id)arg3;

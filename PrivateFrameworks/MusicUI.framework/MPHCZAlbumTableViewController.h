@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPTransportControls, MPUCoverZoomViewController, NSString, UIPinchGestureRecognizer, UIView;
-
 @interface MPHCZAlbumTableViewController : MusicAlbumsDetailViewController <MPTransportControlsTarget, UIGestureRecognizerDelegate> {
     MPUCoverZoomViewController *_coverZoomViewController;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
@@ -11,11 +9,11 @@
     MPTransportControls *_transportControlsView;
 }
 
-@property MPUCoverZoomViewController * coverZoomViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) MPUCoverZoomViewController *coverZoomViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (Class)_albumsDetailTableHeaderViewClass;
 + (BOOL)_supportsSearch;

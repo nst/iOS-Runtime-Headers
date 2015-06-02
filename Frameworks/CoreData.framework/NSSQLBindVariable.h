@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSAttributeDescription;
-
 @interface NSSQLBindVariable : NSObject {
     NSAttributeDescription *_attributeDescription;
     int _cd_rc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSMutableDictionary;
-
 @interface ICSProperty : NSObject <ICSWriting, NSCoding> {
     NSMutableDictionary *_parameters;
     unsigned int _type;

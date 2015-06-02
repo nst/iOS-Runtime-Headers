@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAlertControllerVisualStyleAlertCar : UIAlertControllerVisualStyleAlert {
-}
+@interface UIAlertControllerVisualStyleAlertCar : UIAlertControllerVisualStyleAlert
 
 - (id)actionHighlightedBackgroundView;
 - (id)backgroundView;

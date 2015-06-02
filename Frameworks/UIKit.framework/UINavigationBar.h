@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UINavigationBarDelegate>, NSArray, NSDictionary, NSMutableArray, NSString, UIColor, UIImage, UIImageView, UINavigationItem, UISwipeGestureRecognizer, UIView, _UIViewControllerTransitionContext;
-
 @interface UINavigationBar : UIView <NSCoding, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal, _UIBasicAnimationFactory, _UIShadowedView> {
     NSMutableArray *__animationIds;
     BOOL __condensed;
@@ -60,36 +58,38 @@
     BOOL _wantsLetterpressContent;
 }
 
-@property(setter=_setAnimationIds:,retain) NSMutableArray * _animationIds;
-@property(setter=_setBackIndicatorImage:,retain) UIImage * _backIndicatorImage;
-@property(setter=_setBackIndicatorLeftMargin:) float _backIndicatorLeftMargin;
-@property(retain,readonly) NSString * _backdropViewLayerGroupName;
-@property(setter=_setBackdropViewLayerGroupName:,retain) NSString * _backdropViewLayerGroupName;
-@property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
-@property(readonly) int _barTranslucence;
-@property(getter=_isCondensed,setter=_setCondensed:) BOOL _condensed;
-@property(readonly) float _heightIncludingBackground;
-@property(setter=_setNeedsUpdateBackIndicatorImage:) BOOL _needsUpdateBackIndicatorImage;
-@property(setter=_setRequestedMaxBackButtonWidth:) float _requestedMaxBackButtonWidth;
-@property(setter=_setShadowAlpha:) float _shadowAlpha;
-@property(setter=_setWantsLetterpressContent:) BOOL _wantsLetterpressContent;
-@property(retain) UIImage * backIndicatorImage;
-@property(retain) UIImage * backIndicatorTransitionMaskImage;
-@property(retain,readonly) UINavigationItem * backItem;
-@property(readonly) int barPosition;
-@property int barStyle;
-@property(retain) UIColor * barTintColor;
-@property(copy,readonly) NSString * debugDescription;
-@property <UINavigationBarDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * items;
-@property(retain) UIImage * shadowImage;
-@property(readonly) Class superclass;
-@property(retain) UIColor * tintColor;
-@property(copy) NSDictionary * titleTextAttributes;
-@property(retain,readonly) UINavigationItem * topItem;
-@property(getter=isTranslucent) BOOL translucent;
+@property (setter=_setAnimationIds:, nonatomic, retain) NSMutableArray *_animationIds;
+@property (setter=_setBackIndicatorImage:, nonatomic, retain) UIImage *_backIndicatorImage;
+@property (setter=_setBackIndicatorLeftMargin:, nonatomic) float _backIndicatorLeftMargin;
+@property (nonatomic, readonly, retain) NSString *_backdropViewLayerGroupName;
+@property (setter=_setBackdropViewLayerGroupName:, nonatomic, retain) NSString *_backdropViewLayerGroupName;
+@property (setter=_setBackgroundView:, nonatomic, retain) UIView *_backgroundView;
+@property (nonatomic, readonly) int _barTranslucence;
+@property (getter=_isCondensed, setter=_setCondensed:, nonatomic) BOOL _condensed;
+@property (nonatomic, readonly) float _heightIncludingBackground;
+@property (setter=_setNeedsUpdateBackIndicatorImage:, nonatomic) BOOL _needsUpdateBackIndicatorImage;
+@property (setter=_setRequestedMaxBackButtonWidth:, nonatomic) float _requestedMaxBackButtonWidth;
+@property (setter=_setShadowAlpha:, nonatomic) float _shadowAlpha;
+@property (setter=_setWantsLetterpressContent:, nonatomic) BOOL _wantsLetterpressContent;
+@property (nonatomic, retain) UIImage *backIndicatorImage;
+@property (nonatomic, retain) UIImage *backIndicatorTransitionMaskImage;
+@property (nonatomic, readonly, retain) UINavigationItem *backItem;
+@property (nonatomic, readonly) int barPosition;
+@property (nonatomic) int barStyle;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UINavigationBarDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic, copy) NSDictionary *titleTextAttributes;
+@property (nonatomic, readonly, retain) UINavigationItem *topItem;
+@property (getter=isTranslucent, nonatomic) BOOL translucent;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_bottomColorForBackgroundImage:(id)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2;
 + (void)_initializeForIdiom:(int)arg1;
@@ -110,7 +110,7 @@
 - (void)_addItem:(id)arg1 withEffectiveDelegate:(id)arg2 transition:(int)arg3;
 - (void)_addItems:(id)arg1 withEffectiveDelegate:(id)arg2 transition:(int)arg3;
 - (id)_allViews;
-- (void)_animateOldBackButtonView:(id)arg1 toNewBackButtonView:(id)arg2 duration:(float)arg3 initialFrameForIncomingView:(id)arg4 destinationFrameForOutgoingView:(id)arg5 animationCleanup:(id)arg6;
+- (void)_animateOldBackButtonView:(id)arg1 toNewBackButtonView:(id)arg2 duration:(float)arg3 initialFrameForIncomingView:(id /* block */)arg4 destinationFrameForOutgoingView:(id /* block */)arg5 animationCleanup:(id /* block */)arg6;
 - (id)_animationIds;
 - (id)_appearanceStorage;
 - (void)_applySPIAppearanceToButtons;
@@ -178,8 +178,6 @@
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4;
 - (void)_getTitleViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 leftViewFrames:(id)arg2 rightViewFrames:(id)arg3 forItemAtIndex:(unsigned int)arg4 returnedIdealWidthOfTextContent:(float*)arg5 availableLayoutWidthForTextContent:(float*)arg6 idealBackButtonWidth:(float*)arg7;
-- (void)_gkApplyTheme:(id)arg1;
-- (void)_gkApplyTheme:(id)arg1 navbarStyle:(int)arg2;
 - (void)_handleMouseDownAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handleMouseUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_handlePopSwipe:(id)arg1;
@@ -402,5 +400,10 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)updatePrompt;
 - (void)willRemoveSubview:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkApplyTheme:(id)arg1;
+- (void)_gkApplyTheme:(id)arg1 navbarStyle:(int)arg2;
 
 @end

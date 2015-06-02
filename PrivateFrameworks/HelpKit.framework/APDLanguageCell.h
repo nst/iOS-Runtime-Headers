@@ -6,7 +6,7 @@
     BOOL _RTL;
 }
 
-@property BOOL RTL;
+@property (nonatomic) BOOL RTL;
 
 - (BOOL)RTL;
 - (void)layoutSubviews;

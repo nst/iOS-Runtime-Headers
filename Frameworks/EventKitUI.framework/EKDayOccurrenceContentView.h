@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSAttributedString, NSIndexSet, NSString, UIColor, UIFont;
-
 @interface EKDayOccurrenceContentView : UIView {
     BOOL _allDay;
     BOOL _allDayDrawingStyle;
@@ -64,27 +62,27 @@
     BOOL _usesSmallText;
 }
 
-@property(getter=isAllDay) BOOL allDay;
-@property(getter=isAllDayDrawingStyle) BOOL allDayDrawingStyle;
-@property(getter=isBirthday) BOOL birthday;
-@property(getter=isCancelled) BOOL cancelled;
-@property(retain) UIColor * color;
-@property(getter=isDeclined) BOOL declined;
-@property(getter=isFacebook) BOOL facebook;
-@property BOOL hideText;
-@property(copy) NSString * location;
-@property BOOL needsReply;
-@property int occurrenceBackgroundStyle;
-@property BOOL reduceProcessingForAnimation;
-@property(retain) UIColor * secondaryTextColor;
-@property BOOL selected;
-@property(getter=isTentative) BOOL tentative;
-@property(retain) UIColor * textBackgroundColor;
-@property(copy) NSString * time;
-@property(retain) UIColor * timeTextColor;
-@property(copy) NSString * title;
-@property(retain) UIColor * titleTextColor;
-@property BOOL usesSmallText;
+@property (getter=isAllDay, nonatomic) BOOL allDay;
+@property (getter=isAllDayDrawingStyle, nonatomic) BOOL allDayDrawingStyle;
+@property (getter=isBirthday, nonatomic) BOOL birthday;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic, retain) UIColor *color;
+@property (getter=isDeclined, nonatomic) BOOL declined;
+@property (getter=isFacebook, nonatomic) BOOL facebook;
+@property (nonatomic) BOOL hideText;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic) BOOL needsReply;
+@property (nonatomic) int occurrenceBackgroundStyle;
+@property (nonatomic) BOOL reduceProcessingForAnimation;
+@property (nonatomic, retain) UIColor *secondaryTextColor;
+@property (nonatomic) BOOL selected;
+@property (getter=isTentative, nonatomic) BOOL tentative;
+@property (nonatomic, retain) UIColor *textBackgroundColor;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, retain) UIColor *timeTextColor;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UIColor *titleTextColor;
+@property (nonatomic) BOOL usesSmallText;
 
 + (id)defaultPrimaryTextFont;
 + (id)defaultSecondaryTextFont;

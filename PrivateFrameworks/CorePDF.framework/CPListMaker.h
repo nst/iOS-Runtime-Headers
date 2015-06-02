@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPLayoutArea, CPList, NSArray;
-
 @interface CPListMaker : NSObject <CPDisposable> {
     CPLayoutArea *area;
     CPList *list;

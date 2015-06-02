@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface APDImageCacheController : APDDataCacheController {
-}
+@interface APDImageCacheController : APDDataCacheController
 
 + (id)sharedInstance;
 

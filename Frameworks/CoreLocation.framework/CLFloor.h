@@ -6,7 +6,7 @@
     int level;
 }
 
-@property(readonly) int level;
+@property (nonatomic, readonly) int level;
 
 + (BOOL)supportsSecureCoding;
 

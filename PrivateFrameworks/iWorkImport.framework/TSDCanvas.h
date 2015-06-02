@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDCanvasDelegate>, NSArray, NSSet, TSDInteractiveCanvasController, TSDLayoutController, TSKAccessController, TSKChangeNotifier, TSKDocumentRoot, TSPObjectContext;
-
 @interface TSDCanvas : NSObject {
     NSSet *mAllReps;
     BOOL mAllowsFontSubpixelQuantization;
@@ -40,23 +38,23 @@
     float mViewScale;
 }
 
-@property(readonly) TSKAccessController * accessController;
-@property BOOL allowsFontSubpixelQuantization;
-@property struct CGColor { }* backgroundColor;
-@property(readonly) TSDInteractiveCanvasController * canvasController;
-@property(readonly) TSKChangeNotifier * changeNotifier;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property <TSDCanvasDelegate> * delegate;
-@property(readonly) TSKDocumentRoot * documentRoot;
-@property(copy) NSArray * infosToDisplay;
-@property(readonly) BOOL isCanvasInteractive;
-@property(readonly) BOOL isTemporaryForLayout;
-@property(readonly) TSDLayoutController * layoutController;
-@property(readonly) TSPObjectContext * objectContext;
-@property(readonly) BOOL supportsAdaptiveLayout;
-@property BOOL suppressesShadowsAndReflections;
-@property struct CGSize { float x1; float x2; } unscaledSize;
-@property float viewScale;
+@property (nonatomic, readonly) TSKAccessController *accessController;
+@property (nonatomic) BOOL allowsFontSubpixelQuantization;
+@property (nonatomic) struct CGColor { }*backgroundColor;
+@property (nonatomic, readonly) TSDInteractiveCanvasController *canvasController;
+@property (nonatomic, readonly) TSKChangeNotifier *changeNotifier;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) <TSDCanvasDelegate> *delegate;
+@property (nonatomic, readonly) TSKDocumentRoot *documentRoot;
+@property (nonatomic, copy) NSArray *infosToDisplay;
+@property (nonatomic, readonly) BOOL isCanvasInteractive;
+@property (nonatomic, readonly) BOOL isTemporaryForLayout;
+@property (nonatomic, readonly) TSDLayoutController *layoutController;
+@property (nonatomic, readonly) TSPObjectContext *objectContext;
+@property (nonatomic, readonly) BOOL supportsAdaptiveLayout;
+@property (nonatomic) BOOL suppressesShadowsAndReflections;
+@property (nonatomic) struct CGSize { float x1; float x2; } unscaledSize;
+@property (nonatomic) float viewScale;
 
 - (id)accessController;
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -76,7 +74,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)documentRoot;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 inTopLevelReps:(id)arg2 smallRepOutset:(float)arg3 passingTest:(id)arg4;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 inTopLevelReps:(id)arg2 smallRepOutset:(float)arg3 passingTest:(id /* block */)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })i_approximateScaledFrameOfEditingMenuAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })i_clipRectForCreatingRepsFromLayouts;
 - (void)i_clipsImagesToBounds:(BOOL)arg1;
@@ -90,7 +88,7 @@
 - (struct CGImage { }*)i_imageInScaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTargetIntegralSize:(struct CGSize { float x1; float x2; })arg2 distortedToMatch:(BOOL)arg3 forceSRGB:(BOOL)arg4;
 - (BOOL)i_needsLayout;
 - (struct CGImage { }*)i_newImageInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 integralBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 distortedToMatch:(BOOL)arg4;
-- (void)i_performBlockWhileIgnoringClickThrough:(id)arg1;
+- (void)i_performBlockWhileIgnoringClickThrough:(id /* block */)arg1;
 - (void)i_registerRep:(id)arg1;
 - (void)i_setCanvasController:(id)arg1;
 - (void)i_setContentsScale:(float)arg1;

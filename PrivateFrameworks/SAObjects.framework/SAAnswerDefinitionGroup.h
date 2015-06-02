@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAAnswerDefinitionGroup : AceObject <SAAceSerializable>
 
-@interface SAAnswerDefinitionGroup : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSArray * definitionEntries;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * origin;
-@property(copy) NSString * partOfSpeech;
-@property(readonly) Class superclass;
-@property(copy) NSArray * synonyms;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSArray *definitionEntries;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *origin;
+@property (nonatomic, copy) NSString *partOfSpeech;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *synonyms;
 
 + (id)definitionGroup;
 + (id)definitionGroupWithDictionary:(id)arg1 context:(id)arg2;

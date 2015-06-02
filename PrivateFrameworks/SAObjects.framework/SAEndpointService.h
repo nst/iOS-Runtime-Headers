@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAEndpointService : SAEndpoint
 
-@interface SAEndpointService : SAEndpoint {
-}
-
-@property(copy) NSString * serverUrl;
+@property (nonatomic, copy) NSString *serverUrl;
 
 + (id)endpointService;
 + (id)endpointServiceWithDictionary:(id)arg1 context:(id)arg2;

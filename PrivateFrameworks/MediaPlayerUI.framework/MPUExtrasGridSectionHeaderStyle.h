@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSString, UIColor;
-
 @interface MPUExtrasGridSectionHeaderStyle : NSObject {
     NSDictionary *_defaultFontAttributes;
     struct UIEdgeInsets { 
@@ -18,12 +16,12 @@
     NSString *_textStyle;
 }
 
-@property(retain) NSDictionary * defaultFontAttributes;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property float textBaselineDescender;
-@property float textBaselineHeight;
-@property(retain) UIColor * textColor;
-@property(retain) NSString * textStyle;
+@property (nonatomic, retain) NSDictionary *defaultFontAttributes;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic) float textBaselineDescender;
+@property (nonatomic) float textBaselineHeight;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) NSString *textStyle;
 
 - (void).cxx_destruct;
 - (id)defaultFontAttributes;

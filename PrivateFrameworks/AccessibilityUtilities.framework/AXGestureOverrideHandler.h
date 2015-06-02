@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface AXGestureOverrideHandler : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSString *_identifier;
     unsigned int _type;
 }
 
-@property(copy) id handler;
-@property(retain) NSString * identifier;
-@property unsigned int type;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) unsigned int type;
 
 - (void)dealloc;
-- (id)handler;
+- (id /* block */)handler;
 - (id)identifier;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)type;

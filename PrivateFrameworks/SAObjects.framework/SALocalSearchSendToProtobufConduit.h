@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSData, NSURL;
+@interface SALocalSearchSendToProtobufConduit : SADomainCommand
 
-@interface SALocalSearchSendToProtobufConduit : SADomainCommand {
-}
-
-@property(copy) NSArray * attributes;
-@property(copy) NSURL * endpoint;
-@property(copy) NSData * rawRequest;
-@property int timeoutInSeconds;
+@property (nonatomic, copy) NSArray *attributes;
+@property (nonatomic, copy) NSURL *endpoint;
+@property (nonatomic, copy) NSData *rawRequest;
+@property (nonatomic) int timeoutInSeconds;
 
 + (id)sendToProtobufConduit;
 + (id)sendToProtobufConduitWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLResourceIdentityImplementation : CPLResourceIdentity {
-}
+@interface CPLResourceIdentityImplementation : CPLResourceIdentity
 
 + (id)_fingerPrintForFD:(int)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
 + (id)extensionForFileUTI:(id)arg1;

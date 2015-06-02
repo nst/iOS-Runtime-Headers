@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray;
+@interface SLFacebookBatchResponse : SLFacebookResponse
 
-@interface SLFacebookBatchResponse : SLFacebookResponse {
-}
-
-@property(readonly) NSArray * batchResponseParameters;
+@property (readonly) NSArray *batchResponseParameters;
 
 - (id)batchResponseParameters;
 - (int)batchedResponsesCount;

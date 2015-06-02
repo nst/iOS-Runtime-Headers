@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
+@interface PSDNDSettingsDetail : NSObject <PSSettingsBoolDetail>
 
-@interface PSDNDSettingsDetail : NSObject <PSSettingsBoolDetail> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)iconImage;
 + (BOOL)isEnabled;
-+ (void)loadStateWithCompletion:(id)arg1;
++ (void)loadStateWithCompletion:(id /* block */)arg1;
 + (id)preferencesURL;
 + (void)setEnabled:(BOOL)arg1;
 

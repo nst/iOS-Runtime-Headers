@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface TSUProgress : NSObject {
     NSString *mMessage;
     NSMutableSet *mProgressObservers;
     NSObject<OS_dispatch_queue> *mProgressObserversQueue;
 }
 
-@property(getter=isIndeterminate,readonly) BOOL indeterminate;
-@property(readonly) double maxValue;
-@property(copy) NSString * message;
-@property(readonly) double value;
+@property (getter=isIndeterminate, readonly) BOOL indeterminate;
+@property (readonly) double maxValue;
+@property (copy) NSString *message;
+@property (readonly) double value;
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isIndeterminate;

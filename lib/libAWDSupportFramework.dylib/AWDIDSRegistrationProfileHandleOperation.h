@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSRegistrationProfileHandleOperation : PBCodable <NSCopying> {
     unsigned int _connectionType;
     int _genericError;
@@ -28,26 +26,26 @@
     unsigned int _vettingStatus;
 }
 
-@property unsigned int connectionType;
-@property int genericError;
-@property(retain) NSString * guid;
-@property BOOL hasConnectionType;
-@property BOOL hasGenericError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasPOSIXError;
-@property BOOL hasRegistrationError;
-@property BOOL hasResultCode;
-@property BOOL hasSuccess;
-@property BOOL hasTimestamp;
-@property BOOL hasURLError;
-@property BOOL hasVettingStatus;
-@property int pOSIXError;
-@property unsigned int registrationError;
-@property unsigned int resultCode;
-@property unsigned int success;
-@property unsigned long long timestamp;
-@property int uRLError;
-@property unsigned int vettingStatus;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) int genericError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasGenericError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasPOSIXError;
+@property (nonatomic) BOOL hasRegistrationError;
+@property (nonatomic) BOOL hasResultCode;
+@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasURLError;
+@property (nonatomic) BOOL hasVettingStatus;
+@property (nonatomic) int pOSIXError;
+@property (nonatomic) unsigned int registrationError;
+@property (nonatomic) unsigned int resultCode;
+@property (nonatomic) unsigned int success;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int uRLError;
+@property (nonatomic) unsigned int vettingStatus;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

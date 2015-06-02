@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLTextureDescriptor;
-
 @interface MTLDebugTexture : MTLToolsTexture {
     unsigned int _bytesPerRow;
     MTLTextureDescriptor *_descriptor;
@@ -13,12 +11,12 @@
     BOOL _purgeableStateHasBeenSet;
 }
 
-@property(readonly) unsigned int bytesPerRow;
-@property(copy,readonly) MTLTextureDescriptor * descriptor;
-@property(readonly) unsigned int offset;
-@property(readonly) unsigned int plane;
-@property(readonly) unsigned int purgeableState;
-@property(readonly) BOOL purgeableStateHasBeenSet;
+@property (nonatomic, readonly) unsigned int bytesPerRow;
+@property (nonatomic, readonly, copy) MTLTextureDescriptor *descriptor;
+@property (nonatomic, readonly) unsigned int offset;
+@property (nonatomic, readonly) unsigned int plane;
+@property (nonatomic, readonly) unsigned int purgeableState;
+@property (nonatomic, readonly) BOOL purgeableStateHasBeenSet;
 
 - (void).cxx_destruct;
 - (unsigned int)bytesPerRow;

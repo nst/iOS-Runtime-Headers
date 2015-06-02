@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXShape3D : NSObject {
-}
+@interface OAXShape3D : NSObject
 
 + (id)bevelTypeEnumMap;
 + (BOOL)isEmpty:(id)arg1;

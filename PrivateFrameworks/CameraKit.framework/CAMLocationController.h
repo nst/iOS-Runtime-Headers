@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CLLocation, CLLocationManager, NSMutableArray, NSString;
-
 @interface CAMLocationController : NSObject <CLLocationManagerDelegate> {
     NSMutableArray *__assetsWaitingForLocation;
     CLLocationManager *__locationManager;
@@ -13,16 +11,16 @@
     BOOL _headingEnabled;
 }
 
-@property(readonly) NSMutableArray * _assetsWaitingForLocation;
-@property(readonly) CLLocationManager * _locationManager;
-@property(getter=_isMonitoringLocation,readonly) BOOL _monitoringLocation;
-@property(readonly) CLLocation * currentLocation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(getter=isHeadingEnabled) BOOL headingEnabled;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSMutableArray *_assetsWaitingForLocation;
+@property (nonatomic, readonly) CLLocationManager *_locationManager;
+@property (getter=_isMonitoringLocation, nonatomic, readonly) BOOL _monitoringLocation;
+@property (nonatomic, readonly) CLLocation *currentLocation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (getter=isHeadingEnabled, nonatomic) BOOL headingEnabled;
+@property (readonly) Class superclass;
 
 + (id)_sharedGPSDatestampFormatter;
 + (id)_sharedGPSTimestampFormatter;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSRoleParameter : ICSPredefinedValue {
-}
+@interface ICSRoleParameter : ICSPredefinedValue
 
 + (id)roleParameterFromCode:(int)arg1;
 + (id)roleParameterFromICSString:(id)arg1;

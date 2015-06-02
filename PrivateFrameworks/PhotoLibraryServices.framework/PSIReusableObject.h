@@ -8,7 +8,7 @@
     BOOL _isPreparingFromStatement;
 }
 
-@property(readonly) BOOL isPreparedFromStatement;
+@property (nonatomic, readonly) BOOL isPreparedFromStatement;
 
 - (void)didPrepareFromStatement:(struct sqlite3_stmt { }*)arg1;
 - (id)init;

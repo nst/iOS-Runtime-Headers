@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface AppLaunchStatsLaunchObject : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id aplsLaunchQueueBlock;
-
+    id /* block */ aplsLaunchQueueBlock;
     NSString *bundleID;
 }
 
-@property(copy) id aplsLaunchQueueBlock;
-@property(retain) NSString * bundleID;
+@property (copy) id /* block */ aplsLaunchQueueBlock;
+@property (nonatomic, retain) NSString *bundleID;
 
 - (void).cxx_destruct;
-- (id)aplsLaunchQueueBlock;
+- (id /* block */)aplsLaunchQueueBlock;
 - (id)bundleID;
-- (void)setAplsLaunchQueueBlock:(id)arg1;
+- (void)setAplsLaunchQueueBlock:(id /* block */)arg1;
 - (void)setBundleID:(id)arg1;
 
 @end

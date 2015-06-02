@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSplitViewControllerNavigationDelegate>, PSRootController;
-
 @interface PSSplitViewController : UISplitViewController {
     PSRootController *_containerNavigationController;
     <PSSplitViewControllerNavigationDelegate> *_navigationDelegate;
 }
 
-@property(retain) PSRootController * containerNavigationController;
-@property <PSSplitViewControllerNavigationDelegate> * navigationDelegate;
+@property (nonatomic, retain) PSRootController *containerNavigationController;
+@property (nonatomic) <PSSplitViewControllerNavigationDelegate> *navigationDelegate;
 
 - (id)childViewControllerForStatusBarStyle;
 - (id)containerNavigationController;

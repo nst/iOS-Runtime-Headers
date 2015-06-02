@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary;
+@interface SARestaurantRestaurantsSnippet : SAUISirilandSnippet
 
-@interface SARestaurantRestaurantsSnippet : SAUISirilandSnippet {
-}
-
-@property(copy) NSArray * attributionOrder;
-@property(copy) NSArray * contributingProviderIds;
-@property(copy) NSDictionary * providerPunchOutMap;
-@property(copy) NSArray * restaurants;
+@property (nonatomic, copy) NSArray *attributionOrder;
+@property (nonatomic, copy) NSArray *contributingProviderIds;
+@property (nonatomic, copy) NSDictionary *providerPunchOutMap;
+@property (nonatomic, copy) NSArray *restaurants;
 
 + (id)restaurantsSnippet;
 + (id)restaurantsSnippetWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, NSURL;
-
 @interface RCCompositionFragment : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     NSURL *_AVOutputURL;
     double _contentDuration;
@@ -17,15 +15,15 @@
     } _timeRangeInContentToUse;
 }
 
-@property(retain) NSURL * AVOutputURL;
-@property double contentDuration;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property struct { double x1; double x2; } timeRangeInComposition;
-@property struct { double x1; double x2; } timeRangeInContentToUse;
-@property(readonly) NSURL * waveformURL;
+@property (nonatomic, retain) NSURL *AVOutputURL;
+@property (nonatomic) double contentDuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) struct { double x1; double x2; } timeRangeInComposition;
+@property (nonatomic) struct { double x1; double x2; } timeRangeInContentToUse;
+@property (nonatomic, readonly) NSURL *waveformURL;
 
 - (void).cxx_destruct;
 - (id)AVOutputURL;

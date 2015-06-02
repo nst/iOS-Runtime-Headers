@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVVideoCompositionInstruction>, AVAsynchronousVideoCompositionRequestInternal, AVVideoCompositionRenderContext, NSArray;
-
 @interface AVAsynchronousVideoCompositionRequest : NSObject <NSCopying> {
     AVAsynchronousVideoCompositionRequestInternal *_internal;
 }
 
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
-@property(readonly) AVVideoCompositionRenderContext * renderContext;
-@property(readonly) NSArray * sourceTrackIDs;
-@property(readonly) <AVVideoCompositionInstruction> * videoCompositionInstruction;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
+@property (nonatomic, readonly) AVVideoCompositionRenderContext *renderContext;
+@property (nonatomic, readonly) NSArray *sourceTrackIDs;
+@property (nonatomic, readonly) <AVVideoCompositionInstruction> *videoCompositionInstruction;
 
 - (void)_willDeallocOrFinalize;
 - (struct OpaqueFigVideoCompositorFrame { }*)compositionFrame;

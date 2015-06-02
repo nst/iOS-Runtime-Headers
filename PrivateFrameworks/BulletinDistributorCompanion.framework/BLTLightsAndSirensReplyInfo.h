@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate;
-
 @interface BLTLightsAndSirensReplyInfo : NSObject {
     NSDate *_bulletinPublicationDate;
     bool _didLogAggd;
     unsigned int _didPlayLightsAndSirens;
     NSDate *_expiration;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reply;
-
+    id /* block */ _reply;
     BOOL _replySent;
 }
 
-@property(retain) NSDate * bulletinPublicationDate;
-@property bool didLogAggd;
-@property unsigned int didPlayLightsAndSirens;
-@property(retain) NSDate * expiration;
-@property(copy) id reply;
-@property(readonly) BOOL replySent;
+@property (nonatomic, retain) NSDate *bulletinPublicationDate;
+@property (nonatomic) bool didLogAggd;
+@property (nonatomic) unsigned int didPlayLightsAndSirens;
+@property (nonatomic, retain) NSDate *expiration;
+@property (nonatomic, copy) id /* block */ reply;
+@property (nonatomic, readonly) BOOL replySent;
 
 - (void).cxx_destruct;
 - (id)bulletinPublicationDate;
@@ -35,13 +25,13 @@
 - (id)expiration;
 - (BOOL)hasExpired;
 - (id)init;
-- (id)reply;
+- (id /* block */)reply;
 - (BOOL)replySent;
 - (BOOL)sendReply;
 - (void)setBulletinPublicationDate:(id)arg1;
 - (void)setDidLogAggd:(bool)arg1;
 - (void)setDidPlayLightsAndSirens:(unsigned int)arg1;
 - (void)setExpiration:(id)arg1;
-- (void)setReply:(id)arg1;
+- (void)setReply:(id /* block */)arg1;
 
 @end

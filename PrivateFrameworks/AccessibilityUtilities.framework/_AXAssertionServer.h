@@ -2,40 +2,26 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary;
-
 @interface _AXAssertionServer : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _assertionWasAcquiredHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _assertionWasReleasedHandler;
-
+    id /* block */ _assertionWasAcquiredHandler;
+    id /* block */ _assertionWasReleasedHandler;
     NSMutableDictionary *_healdAssertionMap;
 }
 
-@property(copy) id assertionWasAcquiredHandler;
-@property(copy) id assertionWasReleasedHandler;
-@property(retain) NSMutableDictionary * healdAssertionMap;
+@property (nonatomic, copy) id /* block */ assertionWasAcquiredHandler;
+@property (nonatomic, copy) id /* block */ assertionWasReleasedHandler;
+@property (nonatomic, retain) NSMutableDictionary *healdAssertionMap;
 
 - (void)addHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
-- (id)assertionWasAcquiredHandler;
-- (id)assertionWasReleasedHandler;
+- (id /* block */)assertionWasAcquiredHandler;
+- (id /* block */)assertionWasReleasedHandler;
 - (void)dealloc;
 - (id)description;
 - (id)healdAssertionMap;
 - (id)init;
 - (void)removeHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
-- (void)setAssertionWasAcquiredHandler:(id)arg1;
-- (void)setAssertionWasReleasedHandler:(id)arg1;
+- (void)setAssertionWasAcquiredHandler:(id /* block */)arg1;
+- (void)setAssertionWasReleasedHandler:(id /* block */)arg1;
 - (void)setHealdAssertionMap:(id)arg1;
 
 @end

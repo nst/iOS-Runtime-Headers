@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MLContentRating, MLMovieProperties, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
-
 @interface MLTrackImport : NSObject <NSCopying> {
     NSData *_artworkData;
     NSString *_assetFilePath;
@@ -13,15 +11,15 @@
     BOOL _shouldAddToPurchasedPlaylist;
 }
 
-@property(copy) NSData * artworkData;
-@property(copy) NSString * assetFilePath;
-@property BOOL assignArtworkCacheIDFromAlbum;
-@property(copy) NSArray * chapters;
-@property(copy) MLContentRating * contentRating;
-@property(copy,readonly) NSDictionary * entityProperties;
-@property unsigned long mediaType;
-@property(copy) MLMovieProperties * movieProperties;
-@property BOOL shouldAddToPurchasedPlaylist;
+@property (nonatomic, copy) NSData *artworkData;
+@property (nonatomic, copy) NSString *assetFilePath;
+@property (nonatomic) BOOL assignArtworkCacheIDFromAlbum;
+@property (nonatomic, copy) NSArray *chapters;
+@property (nonatomic, copy) MLContentRating *contentRating;
+@property (nonatomic, readonly, copy) NSDictionary *entityProperties;
+@property (nonatomic) unsigned long mediaType;
+@property (nonatomic, copy) MLMovieProperties *movieProperties;
+@property (nonatomic) BOOL shouldAddToPurchasedPlaylist;
 
 + (void)initialize;
 

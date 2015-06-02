@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString;
-
 @interface PRSPreviewFeedback : PRSFeedback {
     NSString *_fbr;
     NSString *_local_result;
 }
 
-@property(retain) NSString * fbr;
-@property(retain) NSString * local_result;
+@property (nonatomic, retain) NSString *fbr;
+@property (nonatomic, retain) NSString *local_result;
 
 + (BOOL)supportsSecureCoding;
 

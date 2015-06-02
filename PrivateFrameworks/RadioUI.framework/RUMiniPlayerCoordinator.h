@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUMiniPlayerCoordinatorDelegate>, NSString, RURadioPlaybackCoordinator, RUStationActionsViewController, RUTrackActionsModalItem, RUTrackActionsViewController, RadioStation, UIPopoverPresentationController;
-
 @interface RUMiniPlayerCoordinator : MPUMiniPlayerCoordinator <RUMiniPlayerRadioTransportControlsTarget, RUStationActionsViewControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverPresentationControllerDelegate> {
     <RUMiniPlayerCoordinatorDelegate> *_delegate;
     RURadioPlaybackCoordinator *_playbackCoordinator;
@@ -15,11 +13,11 @@
     RUTrackActionsViewController *_trackActionsViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUMiniPlayerCoordinatorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUMiniPlayerCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addStationFromItem:(id)arg1 usingArtist:(BOOL)arg2;

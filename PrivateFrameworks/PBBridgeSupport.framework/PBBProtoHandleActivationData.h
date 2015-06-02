@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSData;
-
 @interface PBBProtoHandleActivationData : PBCodable <NSCopying> {
     NSData *_activationData;
 }
 
-@property(retain) NSData * activationData;
+@property (nonatomic, retain) NSData *activationData;
 
 - (void).cxx_destruct;
 - (id)activationData;

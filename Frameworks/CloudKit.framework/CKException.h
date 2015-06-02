@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKException : NSException {
-}
+@interface CKException : NSException
 
 - (id)error;
 - (int)errorCode;

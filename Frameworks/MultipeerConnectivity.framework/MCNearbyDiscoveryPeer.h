@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class MCNearbyDiscoveryPeerConnection, MCPeerID, NSMutableArray, NSNetService;
-
 @interface MCNearbyDiscoveryPeer : NSObject {
     MCNearbyDiscoveryPeerConnection *_connection;
     NSNetService *_netService;
@@ -13,12 +11,12 @@
     MCNearbyDiscoveryPeerConnection *_trialConnection;
 }
 
-@property(retain) MCNearbyDiscoveryPeerConnection * connection;
-@property(retain) NSNetService * netService;
-@property(copy) MCPeerID * peerID;
-@property(retain) NSMutableArray * sendDataBuffer;
-@property int state;
-@property(retain) MCNearbyDiscoveryPeerConnection * trialConnection;
+@property (nonatomic, retain) MCNearbyDiscoveryPeerConnection *connection;
+@property (nonatomic, retain) NSNetService *netService;
+@property (nonatomic, copy) MCPeerID *peerID;
+@property (nonatomic, retain) NSMutableArray *sendDataBuffer;
+@property (nonatomic) int state;
+@property (nonatomic, retain) MCNearbyDiscoveryPeerConnection *trialConnection;
 
 - (void)attachConnection:(id)arg1;
 - (void)closeConnection;
@@ -31,7 +29,7 @@
 - (void)invalidate;
 - (id)netService;
 - (id)peerID;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)sendDataBuffer;
 - (void)setConnection:(id)arg1;
 - (void)setNetService:(id)arg1;

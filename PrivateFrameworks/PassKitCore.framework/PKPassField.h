@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
-
 @interface PKPassField : NSObject <NSSecureCoding> {
     NSString *_changeMessage;
     unsigned int _dataDetectorTypes;
@@ -15,14 +13,14 @@
     NSString *_value;
 }
 
-@property(copy) NSString * changeMessage;
-@property unsigned int dataDetectorTypes;
-@property(copy) NSString * key;
-@property(copy) NSString * label;
-@property int textAlignment;
-@property int type;
-@property(copy) id unformattedValue;
-@property(readonly) NSString * value;
+@property (nonatomic, copy) NSString *changeMessage;
+@property (nonatomic) unsigned int dataDetectorTypes;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) int textAlignment;
+@property (nonatomic) int type;
+@property (nonatomic, copy) id unformattedValue;
+@property (readonly) NSString *value;
 
 + (BOOL)supportsSecureCoding;
 

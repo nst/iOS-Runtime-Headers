@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary;
-
 @interface MFError : NSError {
     NSMutableDictionary *_moreUserInfo;
 }

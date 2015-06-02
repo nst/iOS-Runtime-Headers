@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface PUPingTimer : NSObject {
     SEL _action;
     BOOL _everPinged;
@@ -17,11 +15,11 @@
     double _timeout;
 }
 
-@property(readonly) SEL action;
-@property(readonly) unsigned int maxPingCount;
-@property(readonly) unsigned int pingCount;
-@property(readonly) id target;
-@property(readonly) double timeout;
+@property (nonatomic, readonly) SEL action;
+@property (nonatomic, readonly) unsigned int maxPingCount;
+@property (nonatomic, readonly) unsigned int pingCount;
+@property (nonatomic, readonly) id target;
+@property (nonatomic, readonly) double timeout;
 
 - (void).cxx_destruct;
 - (void)_inqFireWithScheduleId:(unsigned int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel, UITextView;
-
 @interface PLVideoEditingOverlayView : UIView {
     UITextView *_bodyLabel;
     UILabel *_titleLabel;

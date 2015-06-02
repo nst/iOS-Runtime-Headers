@@ -2,24 +2,21 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSNumber, NSSet, NSString;
+@interface ACDManagedAccountType : NSManagedObject
 
-@interface ACDManagedAccountType : NSManagedObject {
-}
-
-@property(retain) NSSet * accessKeys;
-@property(retain) NSString * accountTypeDescription;
-@property(retain) NSSet * accounts;
-@property(retain) NSString * credentialProtectionPolicy;
-@property(retain) NSString * credentialType;
-@property(retain) NSNumber * encryptAccountProperties;
-@property(retain) NSString * identifier;
-@property(retain) NSString * owningBundleID;
-@property(retain) NSSet * permission;
-@property(retain) NSSet * supportedDataclasses;
-@property(retain) NSNumber * supportsAuthentication;
-@property(retain) NSNumber * supportsMultipleAccounts;
-@property(retain) NSSet * syncableDataclasses;
-@property(retain) NSNumber * visibility;
+@property (nonatomic, retain) NSSet *accessKeys;
+@property (nonatomic, retain) NSString *accountTypeDescription;
+@property (nonatomic, retain) NSSet *accounts;
+@property (nonatomic, retain) NSString *credentialProtectionPolicy;
+@property (nonatomic, retain) NSString *credentialType;
+@property (nonatomic, retain) NSNumber *encryptAccountProperties;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *owningBundleID;
+@property (nonatomic, retain) NSSet *permission;
+@property (nonatomic, retain) NSSet *supportedDataclasses;
+@property (nonatomic, retain) NSNumber *supportsAuthentication;
+@property (nonatomic, retain) NSNumber *supportsMultipleAccounts;
+@property (nonatomic, retain) NSSet *syncableDataclasses;
+@property (nonatomic, retain) NSNumber *visibility;
 
 @end

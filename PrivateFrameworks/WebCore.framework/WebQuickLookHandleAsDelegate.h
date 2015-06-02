@@ -2,27 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface WebQuickLookHandleAsDelegate : NSObject <NSURLConnectionDelegate> {
     struct RefPtr<WebCore::SynchronousResourceHandleCFURLConnectionDelegate> { 
         struct SynchronousResourceHandleCFURLConnectionDelegate {} *m_ptr; 
     } m_connectionDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -31,8 +20,6 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 lengthReceived:(long long)arg3;
 - (void)connection:(id)arg1 didReceiveDataArray:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (id)initWithConnectionDelegate:(struct SynchronousResourceHandleCFURLConnectionDelegate { int (**x1)(); struct atomic<int> { /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*x_2_1_1; int x_2_1_2; } x2; struct ResourceHandle {} *x3; struct RetainPtr<const __CFString *> { void *x_4_1_1; } x4; }*)arg1;
-     /* Encoded args for previous method: @12@0:4^{SynchronousResourceHandleCFURLConnectionDelegate=^^?{atomic<int>=Ai}^{ResourceHandle}{RetainPtr<const __CFString *>=^v}}8 */
-
+- (id)initWithConnectionDelegate:(struct SynchronousResourceHandleCFURLConnectionDelegate { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; struct ResourceHandle {} *x3; struct RetainPtr<const __CFString *> { void *x_4_1_1; } x4; }*)arg1;
 
 @end

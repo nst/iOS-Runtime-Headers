@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary, NSString;
-
 @interface SSMetricsEventLocation : NSObject {
     int _position;
     NSString *_type;
     NSMutableDictionary *_values;
 }
 
-@property int locationPosition;
-@property(copy) NSString * locationType;
-@property(readonly) NSDictionary * reportingDictionary;
+@property (nonatomic) int locationPosition;
+@property (nonatomic, copy) NSString *locationType;
+@property (nonatomic, readonly) NSDictionary *reportingDictionary;
 
 - (void).cxx_destruct;
 - (int)locationPosition;

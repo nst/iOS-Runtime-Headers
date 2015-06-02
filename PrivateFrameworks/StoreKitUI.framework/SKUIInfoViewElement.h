@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUILabelViewElement;
+@interface SKUIInfoViewElement : SKUIViewElement
 
-@interface SKUIInfoViewElement : SKUIViewElement {
-}
-
-@property(readonly) SKUILabelViewElement * titleElement;
-@property(readonly) NSArray * valueElements;
+@property (nonatomic, readonly) SKUILabelViewElement *titleElement;
+@property (nonatomic, readonly) NSArray *valueElements;
 
 - (id)titleElement;
 - (id)valueElements;

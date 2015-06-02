@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOWaypointID, GEOWaypointLocation, GEOWaypointPlace;
-
 @interface GEOWaypointTyped : PBCodable <NSCopying> {
     struct { 
         unsigned int waypointType : 1; 
@@ -16,16 +14,16 @@
     int _waypointType;
 }
 
-@property BOOL hasIsCurrentLocation;
-@property(readonly) BOOL hasWaypointId;
-@property(readonly) BOOL hasWaypointLocation;
-@property(readonly) BOOL hasWaypointPlace;
-@property BOOL hasWaypointType;
-@property BOOL isCurrentLocation;
-@property(retain) GEOWaypointID * waypointId;
-@property(retain) GEOWaypointLocation * waypointLocation;
-@property(retain) GEOWaypointPlace * waypointPlace;
-@property int waypointType;
+@property (nonatomic) BOOL hasIsCurrentLocation;
+@property (nonatomic, readonly) BOOL hasWaypointId;
+@property (nonatomic, readonly) BOOL hasWaypointLocation;
+@property (nonatomic, readonly) BOOL hasWaypointPlace;
+@property (nonatomic) BOOL hasWaypointType;
+@property (nonatomic) BOOL isCurrentLocation;
+@property (nonatomic, retain) GEOWaypointID *waypointId;
+@property (nonatomic, retain) GEOWaypointLocation *waypointLocation;
+@property (nonatomic, retain) GEOWaypointPlace *waypointPlace;
+@property (nonatomic) int waypointType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

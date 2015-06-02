@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UILabel, WLEasyToHitCustomButton;
-
 @interface PKPassFrontFaceView : PKPassFaceView {
     WLEasyToHitCustomButton *_flipButton;
     UILabel *_logoLabel;
@@ -12,8 +10,8 @@
     BOOL _showsShare;
 }
 
-@property BOOL showsInfo;
-@property BOOL showsShare;
+@property (nonatomic) BOOL showsInfo;
+@property (nonatomic) BOOL showsShare;
 
 - (void)_flipButtonPressed;
 - (id)_relevantBuckets;

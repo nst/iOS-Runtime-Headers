@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray;
-
 @interface MPPCompoundPredicate : PBCodable <NSCopying> {
     NSMutableArray *_predicates;
 }
 
-@property(retain) NSMutableArray * predicates;
+@property (nonatomic, retain) NSMutableArray *predicates;
 
 - (void).cxx_destruct;
 - (void)addPredicates:(id)arg1;

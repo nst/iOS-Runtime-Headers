@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSError, NSString, NSThread;
-
 @interface CPLEngineStoreTransaction : NSObject {
     NSThread *_currentThread;
     NSError *_error;
@@ -11,8 +9,8 @@
     NSString *_name;
 }
 
-@property(copy) NSError * error;
-@property(copy) NSString * name;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (BOOL)_forWrite;
@@ -21,7 +19,7 @@
 - (BOOL)canRead;
 - (BOOL)canWrite;
 - (id)description;
-- (BOOL)do:(id)arg1;
+- (BOOL)do:(id /* block */)arg1;
 - (id)error;
 - (id)initForWrite:(BOOL)arg1;
 - (id)name;

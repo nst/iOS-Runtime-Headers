@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@interface MPUOperationLIFOQueue : NSOperationQueue {
-}
+@interface MPUOperationLIFOQueue : NSOperationQueue
 
 - (void)_addLIFODependencyToOperations:(id)arg1;
 - (void)addOperation:(id)arg1;
-- (void)addOperationWithBlock:(id)arg1;
+- (void)addOperationWithBlock:(id /* block */)arg1;
 - (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
 - (id)init;
 - (void)setMaxConcurrentOperationCount:(int)arg1;

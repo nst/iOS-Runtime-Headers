@@ -2,20 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface TSPDigest : NSObject <NSCopying> {
     struct array<unsigned char, 20> { 
         unsigned char __elems_[20]; 
     } _digestData;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{array<unsigned char' */ struct * digestData; /* unknown property attribute:  20>=[20C]} */
-@property(readonly) NSString * digestString;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{array<unsigned char' */ struct *digestData; /* unknown property attribute:  20>=[20C]} */
+@property (nonatomic, readonly) NSString *digestString;
 
 + (id)digestFromNSData:(id)arg1;
 + (id)digestWithDigestString:(id)arg1;

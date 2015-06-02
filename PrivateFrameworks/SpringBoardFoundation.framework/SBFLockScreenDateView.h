@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFLockScreenDateFormatter>, NSDate, NSString, UIColor, UILabel, _UILegibilityLabel, _UILegibilitySettings;
-
 @interface SBFLockScreenDateView : UIView {
     UIColor *_customSubtitleColor;
     NSString *_customSubtitleText;
@@ -23,14 +21,14 @@
     BOOL _useLegibilityLabels;
 }
 
-@property(retain) NSDate * date;
-@property float dateAlphaPercentage;
-@property(getter=isDateHidden) BOOL dateHidden;
-@property float dateStrength;
-@property(retain) <SBFLockScreenDateFormatter> * formatter;
-@property(retain) _UILegibilitySettings * legibilitySettings;
-@property(retain) UIColor * textColor;
-@property float timeStrength;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) float dateAlphaPercentage;
+@property (getter=isDateHidden, nonatomic) BOOL dateHidden;
+@property (nonatomic) float dateStrength;
+@property (nonatomic, retain) <SBFLockScreenDateFormatter> *formatter;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) float timeStrength;
 
 + (float)defaultHeight;
 

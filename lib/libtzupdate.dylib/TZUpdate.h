@@ -2,15 +2,13 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@class NSXPCConnection, TZFileSystemInterface;
-
 @interface TZUpdate : NSObject {
     NSXPCConnection *_connectionToService;
     TZFileSystemInterface *_fileSystemInterface;
 }
 
-@property(retain) NSXPCConnection * connectionToService;
-@property(retain) TZFileSystemInterface * fileSystemInterface;
+@property (retain) NSXPCConnection *connectionToService;
+@property (retain) TZFileSystemInterface *fileSystemInterface;
 
 + (id)sharedInstance;
 
@@ -23,8 +21,8 @@
 - (id)fileSystemInterface;
 - (id)init;
 - (BOOL)isUpdateWaiting;
-- (void)isUpdateWaitingWithCompletion:(id)arg1;
-- (void)purgeAllAssetsWithCompletion:(id)arg1;
+- (void)isUpdateWaitingWithCompletion:(id /* block */)arg1;
+- (void)purgeAllAssetsWithCompletion:(id /* block */)arg1;
 - (void)setConnectionToService:(id)arg1;
 - (void)setFileSystemInterface:(id)arg1;
 - (id)updateTZDataVersion;

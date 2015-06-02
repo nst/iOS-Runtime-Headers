@@ -2,32 +2,30 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLHeading, CLLocation, MKUserLocationInternal, NSString;
-
 @interface MKUserLocation : NSObject <MKAnnotation> {
     double _expectedCoordinateUpdateInterval;
     double _expectedHeadingUpdateInterval;
     MKUserLocationInternal *_internal;
 }
 
-@property(readonly) double accuracy;
-@property struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double expectedCoordinateUpdateInterval;
-@property double expectedHeadingUpdateInterval;
-@property(retain) CLLocation * fixedLocation;
-@property(readonly) unsigned int hash;
-@property(retain) CLHeading * heading;
-@property(readonly) double headingDegrees;
-@property(retain) CLLocation * location;
-@property(retain) CLLocation * predictedLocation;
-@property(readonly) NSString * shortDescription;
-@property(copy) NSString * subtitle;
-@property(readonly) Class superclass;
-@property double timestamp;
-@property(copy) NSString * title;
-@property(getter=isUpdating) BOOL updating;
+@property (nonatomic, readonly) double accuracy;
+@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double expectedCoordinateUpdateInterval;
+@property (nonatomic) double expectedHeadingUpdateInterval;
+@property (nonatomic, retain) CLLocation *fixedLocation;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CLHeading *heading;
+@property (nonatomic, readonly) double headingDegrees;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, retain) CLLocation *predictedLocation;
+@property (nonatomic, readonly) NSString *shortDescription;
+@property (nonatomic, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic) double timestamp;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isUpdating, nonatomic) BOOL updating;
 
 + (void)_setAnnotationClass:(Class)arg1;
 + (id)keyPathsForValuesAffectingSubtitle;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicNowPlayingIndicatorView : MPUNowPlayingIndicatorView {
-}
+@interface MusicNowPlayingIndicatorView : MPUNowPlayingIndicatorView
 
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)dealloc;

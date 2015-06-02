@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWindowContextHostViewContentLayerDelegate : NSObject {
-}
+@interface FBWindowContextHostViewContentLayerDelegate : NSObject
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

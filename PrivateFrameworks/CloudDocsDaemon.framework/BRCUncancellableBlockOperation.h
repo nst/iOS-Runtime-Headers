@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCUncancellableBlockOperation : NSBlockOperation {
-}
+@interface BRCUncancellableBlockOperation : NSBlockOperation
 
 - (void)cancel;
 - (BOOL)isCancelled;

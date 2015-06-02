@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTERTCPReceiverReport;
-
 @interface LTERTCPSenderReport : LTERTCPPacket {
     unsigned int _NTPLeastSignificantWord;
     unsigned int _NTPMostSignificantWord;
@@ -13,12 +11,12 @@
     LTERTCPReceiverReport *_receiverReport;
 }
 
-@property unsigned int NTPLeastSignificantWord;
-@property unsigned int NTPMostSignificantWord;
-@property unsigned int RTPTimestamp;
-@property unsigned int octetsSent;
-@property unsigned int packetsSent;
-@property(retain) LTERTCPReceiverReport * receiverReport;
+@property (nonatomic) unsigned int NTPLeastSignificantWord;
+@property (nonatomic) unsigned int NTPMostSignificantWord;
+@property (nonatomic) unsigned int RTPTimestamp;
+@property (nonatomic) unsigned int octetsSent;
+@property (nonatomic) unsigned int packetsSent;
+@property (nonatomic, retain) LTERTCPReceiverReport *receiverReport;
 
 - (unsigned int)NTPLeastSignificantWord;
 - (unsigned int)NTPMostSignificantWord;

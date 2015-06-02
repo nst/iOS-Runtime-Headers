@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACMutedMessage : PBCodable <NSCopying> {
     NSString *_category;
     struct { 
@@ -12,10 +10,10 @@
     BOOL _muted;
 }
 
-@property(retain) NSString * category;
-@property(readonly) BOOL hasCategory;
-@property BOOL hasMuted;
-@property BOOL muted;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic) BOOL hasMuted;
+@property (nonatomic) BOOL muted;
 
 - (void).cxx_destruct;
 - (id)category;

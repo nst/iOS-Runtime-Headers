@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDPersistentStore : NSObject {
-}
+@interface HMDPersistentStore : NSObject
 
 + (id)_decryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;
 + (id)_encryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;

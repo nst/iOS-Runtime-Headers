@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSWiFiSetupAttempt : PBCodable <NSCopying> {
     NSString *_client;
     unsigned long long _duration;
@@ -18,16 +16,16 @@
     unsigned long long _type;
 }
 
-@property(retain) NSString * client;
-@property unsigned long long duration;
-@property(readonly) BOOL hasClient;
-@property BOOL hasDuration;
-@property BOOL hasResult;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property unsigned long long result;
-@property unsigned long long timestamp;
-@property unsigned long long type;
+@property (nonatomic, retain) NSString *client;
+@property (nonatomic) unsigned long long duration;
+@property (nonatomic, readonly) BOOL hasClient;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasResult;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned long long result;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned long long type;
 
 - (id)client;
 - (void)copyTo:(id)arg1;

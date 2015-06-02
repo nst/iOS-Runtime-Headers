@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBApplicationDefaults, FBMutableApplicationDefaults, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL;
-
 @interface FBApplicationInfo : FBBundleInfo {
     NSSet *_backgroundModes;
     BOOL _beta;
@@ -40,37 +38,39 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(getter=isBeta,readonly) BOOL beta;
-@property(retain,readonly) NSURL * bundleContainerURL;
-@property(retain,readonly) NSArray * customMachServices;
-@property(retain,readonly) NSURL * dataContainerURL;
-@property(retain,readonly) FBApplicationDefaults * defaults;
-@property(retain,readonly) NSArray * deviceFamilies;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(retain,readonly) NSDictionary * entitlements;
-@property(retain,readonly) NSDictionary * environmentVariables;
-@property(retain,readonly) NSURL * executableURL;
-@property(getter=isExitsOnSuspend,readonly) BOOL exitsOnSuspend;
-@property(retain,readonly) NSArray * externalAccessoryProtocols;
-@property(retain,readonly) NSString * fallbackFolderName;
-@property(retain,readonly) NSArray * folderNames;
-@property(getter=_isInstalling,setter=_setInstalling:) BOOL installing;
-@property(readonly) double lastModifiedDate;
-@property(readonly) float minimumBrightnessLevel;
-@property(getter=isNewsstand,readonly) BOOL newsstand;
-@property(copy,readonly) NSString * preferenceDomain;
-@property(getter=isProvisioningProfileValidated,readonly) BOOL provisioningProfileValidated;
-@property(readonly) int ratingRank;
-@property(retain,readonly) NSArray * requiredCapabilities;
-@property(readonly) BOOL requiresPersistentWiFi;
-@property(getter=isRestricted,readonly) BOOL restricted;
-@property(retain,readonly) NSURL * sandboxURL;
-@property(copy,readonly) NSString * sdkVersion;
-@property(readonly) int signatureState;
-@property(copy,readonly) NSString * signerIdentity;
-@property(retain,readonly) NSArray * tags;
-@property(readonly) unsigned int type;
-@property(getter=_isUninstalling,setter=_setUninstalling:) BOOL uninstalling;
+@property (getter=isBeta, nonatomic, readonly) BOOL beta;
+@property (nonatomic, readonly, retain) NSURL *bundleContainerURL;
+@property (nonatomic, readonly, retain) NSArray *customMachServices;
+@property (nonatomic, readonly, retain) NSURL *dataContainerURL;
+@property (nonatomic, readonly, retain) FBApplicationDefaults *defaults;
+@property (nonatomic, readonly, retain) NSArray *deviceFamilies;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly, retain) NSDictionary *entitlements;
+@property (nonatomic, readonly, retain) NSDictionary *environmentVariables;
+@property (nonatomic, readonly, retain) NSURL *executableURL;
+@property (getter=isExitsOnSuspend, nonatomic, readonly) BOOL exitsOnSuspend;
+@property (nonatomic, readonly, retain) NSArray *externalAccessoryProtocols;
+@property (nonatomic, readonly, retain) NSString *fallbackFolderName;
+@property (nonatomic, readonly, retain) NSArray *folderNames;
+@property (getter=_isInstalling, setter=_setInstalling:, nonatomic) BOOL installing;
+@property (nonatomic, readonly) double lastModifiedDate;
+@property (nonatomic, readonly) float minimumBrightnessLevel;
+@property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
+@property (nonatomic, readonly, copy) NSString *preferenceDomain;
+@property (getter=isProvisioningProfileValidated, nonatomic, readonly) BOOL provisioningProfileValidated;
+@property (nonatomic, readonly) int ratingRank;
+@property (nonatomic, readonly, retain) NSArray *requiredCapabilities;
+@property (nonatomic, readonly) BOOL requiresPersistentWiFi;
+@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (nonatomic, readonly, retain) NSURL *sandboxURL;
+@property (nonatomic, readonly, copy) NSString *sdkVersion;
+@property (nonatomic, readonly) int signatureState;
+@property (nonatomic, readonly, copy) NSString *signerIdentity;
+@property (nonatomic, readonly, retain) NSArray *tags;
+@property (nonatomic, readonly) unsigned int type;
+@property (getter=_isUninstalling, setter=_setUninstalling:, nonatomic) BOOL uninstalling;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
 - (void)_acceptApplicationSignatureIdentity;
 - (unsigned int)_applicationType:(id)arg1;
@@ -98,7 +98,6 @@
 - (id)customMachServices;
 - (id)dataContainerURL;
 - (void)dealloc;
-- (BOOL)defaultStatusBarHiddenForOrientation:(int)arg1;
 - (id)defaults;
 - (id)description;
 - (id)deviceFamilies;
@@ -126,9 +125,13 @@
 - (int)signatureState;
 - (id)signerIdentity;
 - (BOOL)supportsBackgroundMode:(id)arg1;
-- (BOOL)supportsCompactStatusBarHiding;
 - (BOOL)supportsInterfaceOrientation:(int)arg1;
 - (id)tags;
 - (unsigned int)type;
+
+// Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
+
+- (BOOL)defaultStatusBarHiddenForOrientation:(int)arg1;
+- (BOOL)supportsCompactStatusBarHiding;
 
 @end

@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPPMediaPredicate;
-
 @interface MPPConditionalPredicate : PBCodable <NSCopying> {
     MPPMediaPredicate *_conditionalPredicate;
     MPPMediaPredicate *_elsePredicate;
     MPPMediaPredicate *_thenPredicate;
 }
 
-@property(retain) MPPMediaPredicate * conditionalPredicate;
-@property(retain) MPPMediaPredicate * elsePredicate;
-@property(readonly) BOOL hasConditionalPredicate;
-@property(readonly) BOOL hasElsePredicate;
-@property(readonly) BOOL hasThenPredicate;
-@property(retain) MPPMediaPredicate * thenPredicate;
+@property (nonatomic, retain) MPPMediaPredicate *conditionalPredicate;
+@property (nonatomic, retain) MPPMediaPredicate *elsePredicate;
+@property (nonatomic, readonly) BOOL hasConditionalPredicate;
+@property (nonatomic, readonly) BOOL hasElsePredicate;
+@property (nonatomic, readonly) BOOL hasThenPredicate;
+@property (nonatomic, retain) MPPMediaPredicate *thenPredicate;
 
 - (void).cxx_destruct;
 - (id)conditionalPredicate;

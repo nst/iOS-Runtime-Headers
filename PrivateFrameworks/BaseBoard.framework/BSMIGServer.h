@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface BSMIGServer : NSObject {
     struct __CFRunLoopObserver { } *_entryObserver;
     struct __CFRunLoopObserver { } *_exitObserver;
@@ -18,8 +11,8 @@
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *_thread;
 }
 
-@property(readonly) NSString * threadName;
-@property int threadPriority;
+@property (nonatomic, readonly) NSString *threadName;
+@property (nonatomic) int threadPriority;
 
 - (unsigned int)_createPortNamed:(id)arg1;
 - (void)_installAutoreleasePoolsIfNecessaryForMode:(struct __CFString { }*)arg1;

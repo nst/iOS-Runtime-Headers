@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKNoiseFieldNode : SKFieldNode {
-}
+@interface SKNoiseFieldNode : SKFieldNode
 
-@property float animationSpeed;
-@property float smoothness;
+@property (nonatomic) float animationSpeed;
+@property (nonatomic) float smoothness;
 
 - (id)_descriptionClassName;
 - (void)_initialize;

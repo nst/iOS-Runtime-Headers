@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSKnownKeysDictionary, PLManagedObject;
-
 @interface PLObjectSnapshot : NSObject {
     struct __CFDictionary { } *_indexMaps;
     PLManagedObject *_managedObject;
     NSKnownKeysDictionary *_snapshotValues;
 }
 
-@property(retain,readonly) PLManagedObject * managedObject;
+@property (nonatomic, readonly, retain) PLManagedObject *managedObject;
 
 + (struct __CFDictionary { }*)_createIndexMapsSnapshotForManagedObject:(id)arg1 changeNotificationCenter:(id)arg2;
 + (id)snapshotForManagedObject:(id)arg1 changeNotificationCenter:(id)arg2 useCommitedValues:(BOOL)arg3;

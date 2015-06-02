@@ -2,30 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSIndexSet, NSString;
+@interface TSUMutableCustomFormatData : TSUCustomFormatData
 
-@interface TSUMutableCustomFormatData : TSUCustomFormatData {
-}
-
-@property unsigned short currencyCodeIndex;
-@property unsigned char decimalWidth;
-@property BOOL formatContainsIntegerToken;
-@property(copy) NSString * formatString;
-@property int fractionAccuracy;
-@property unsigned char indexFromRightOfLastDigitPlaceholder;
-@property(copy) NSIndexSet * interstitialStringInsertionIndexes;
-@property(copy) NSArray * interstitialStrings;
-@property BOOL isComplexFormat;
-@property BOOL isConditional;
-@property unsigned char minimumIntegerWidth;
-@property unsigned char numberOfHashDecimalPlaceholders;
-@property unsigned char numberOfNonSpaceDecimalPlaceholderDigits;
-@property unsigned char numberOfNonSpaceIntegerPlaceholderDigits;
-@property BOOL requiresFractionReplacement;
-@property double scaleFactor;
-@property BOOL showThousandsSeparator;
-@property unsigned char totalNumberOfDecimalPlaceholdersInFormat;
-@property BOOL useAccountingStyle;
+@property (nonatomic) unsigned short currencyCodeIndex;
+@property (nonatomic) unsigned char decimalWidth;
+@property (nonatomic) BOOL formatContainsIntegerToken;
+@property (nonatomic, copy) NSString *formatString;
+@property (nonatomic) int fractionAccuracy;
+@property (nonatomic) unsigned char indexFromRightOfLastDigitPlaceholder;
+@property (nonatomic, copy) NSIndexSet *interstitialStringInsertionIndexes;
+@property (nonatomic, copy) NSArray *interstitialStrings;
+@property (nonatomic) BOOL isComplexFormat;
+@property (nonatomic) BOOL isConditional;
+@property (nonatomic) unsigned char minimumIntegerWidth;
+@property (nonatomic) unsigned char numberOfHashDecimalPlaceholders;
+@property (nonatomic) unsigned char numberOfNonSpaceDecimalPlaceholderDigits;
+@property (nonatomic) unsigned char numberOfNonSpaceIntegerPlaceholderDigits;
+@property (nonatomic) BOOL requiresFractionReplacement;
+@property (nonatomic) double scaleFactor;
+@property (nonatomic) BOOL showThousandsSeparator;
+@property (nonatomic) unsigned char totalNumberOfDecimalPlaceholdersInFormat;
+@property (nonatomic) BOOL useAccountingStyle;
 
 + (id)customFormatData;
 

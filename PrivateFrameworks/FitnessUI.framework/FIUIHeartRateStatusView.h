@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIImageView;
-
 @interface FIUIHeartRateStatusView : UIView {
     UIImageView *_animatingImageView;
     BOOL _delayedStartMeasuringAnimation;
@@ -14,10 +12,10 @@
     unsigned int _state;
 }
 
-@property(retain) UIImageView * animatingImageView;
-@property(retain) UIImageView * fullHeartImageView;
-@property(retain) UIImageView * reloadArrowView;
-@property(retain) UIImageView * reloadOutlineView;
+@property (nonatomic, retain) UIImageView *animatingImageView;
+@property (nonatomic, retain) UIImageView *fullHeartImageView;
+@property (nonatomic, retain) UIImageView *reloadArrowView;
+@property (nonatomic, retain) UIImageView *reloadOutlineView;
 
 - (void).cxx_destruct;
 - (void)_beatFullHeartOnce;

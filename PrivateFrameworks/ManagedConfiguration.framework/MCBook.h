@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCBook, NSNumber, NSString;
-
 @interface MCBook : NSObject <NSCopying> {
     NSString *_author;
     NSString *_buyParams;
@@ -18,17 +16,17 @@
     NSString *_version;
 }
 
-@property(copy) NSString * author;
-@property(copy) NSString * buyParams;
-@property(retain) NSNumber * downloadIdentifier;
-@property(copy) NSString * fullPath;
-@property(retain) NSNumber * iTunesStoreID;
-@property(copy) NSString * kind;
-@property(copy) NSString * persistentID;
-@property(retain) MCBook * previousVersion;
-@property(retain) NSString * state;
-@property(copy) NSString * title;
-@property(copy) NSString * version;
+@property (nonatomic, copy) NSString *author;
+@property (nonatomic, copy) NSString *buyParams;
+@property (nonatomic, retain) NSNumber *downloadIdentifier;
+@property (nonatomic, copy) NSString *fullPath;
+@property (nonatomic, retain) NSNumber *iTunesStoreID;
+@property (nonatomic, copy) NSString *kind;
+@property (nonatomic, copy) NSString *persistentID;
+@property (nonatomic, retain) MCBook *previousVersion;
+@property (nonatomic, retain) NSString *state;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *version;
 
 - (void).cxx_destruct;
 - (id)author;

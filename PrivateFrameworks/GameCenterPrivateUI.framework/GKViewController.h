@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKColorPalette, GKViewController;
-
 @interface GKViewController : UIViewController {
     GKColorPalette *_colorPalette;
     int _gkFocusBubbleType;
@@ -11,10 +9,10 @@
     BOOL _shouldUpdateContentOnlyWhenAuthenticated;
 }
 
-@property(retain) GKColorPalette * colorPalette;
-@property int gkFocusBubbleType;
-@property(retain) GKViewController * rootViewController;
-@property BOOL shouldUpdateContentOnlyWhenAuthenticated;
+@property (nonatomic, retain) GKColorPalette *colorPalette;
+@property (nonatomic) int gkFocusBubbleType;
+@property (nonatomic, retain) GKViewController *rootViewController;
+@property (nonatomic) BOOL shouldUpdateContentOnlyWhenAuthenticated;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

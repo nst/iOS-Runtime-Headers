@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigDelegateStorage;
-
 @interface FigCameraViewfinderSession : NSObject {
     FigDelegateStorage *_delegateStorage;
 }

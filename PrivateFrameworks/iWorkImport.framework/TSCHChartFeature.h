@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCHChartType;
-
 @interface TSCHChartFeature : NSObject <TSCHUnretainedParent> {
     NSArray *mCategoryAxisIDs;
     TSCHChartType *mChartType;
     NSArray *mValueAxisIDs;
 }
 
-@property(retain,readonly) NSArray * categoryAxisIDs;
-@property(retain,readonly) NSArray * valueAxisIDs;
+@property (nonatomic, readonly, retain) NSArray *categoryAxisIDs;
+@property (nonatomic, readonly, retain) NSArray *valueAxisIDs;
 
 - (id)categoryAxisIDs;
 - (id)categoryLabelPositioner;

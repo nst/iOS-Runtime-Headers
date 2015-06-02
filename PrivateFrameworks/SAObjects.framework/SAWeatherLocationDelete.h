@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAWeatherLocation;
+@interface SAWeatherLocationDelete : SADomainCommand
 
-@interface SAWeatherLocationDelete : SADomainCommand {
-}
-
-@property(retain) SAWeatherLocation * weatherLocation;
+@property (nonatomic, retain) SAWeatherLocation *weatherLocation;
 
 + (id)locationDelete;
 + (id)locationDeleteWithDictionary:(id)arg1 context:(id)arg2;

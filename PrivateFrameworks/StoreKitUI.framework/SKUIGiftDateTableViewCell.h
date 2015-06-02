@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIImageView, UILabel, UIView;
-
 @interface SKUIGiftDateTableViewCell : UITableViewCell {
     UIView *_bottomBorderView;
     BOOL _checked;
@@ -14,10 +12,10 @@
     UIView *_topBorderView;
 }
 
-@property(getter=isChecked) BOOL checked;
-@property(copy) NSString * dateString;
-@property(copy) NSString * label;
-@property(copy) NSString * placeholder;
+@property (getter=isChecked, nonatomic) BOOL checked;
+@property (nonatomic, copy) NSString *dateString;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *placeholder;
 
 - (void).cxx_destruct;
 - (id)_labelColor;

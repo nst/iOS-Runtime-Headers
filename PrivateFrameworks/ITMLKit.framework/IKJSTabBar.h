@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppTabBar, IKJSTabBarItem, NSArray;
-
 @interface IKJSTabBar : IKJSObject <IKJSTabBar> {
     IKAppTabBar *_appTabBar;
     NSArray *_tabItems;
 }
 
-@property(readonly) IKAppTabBar * appTabBar;
-@property(retain) IKJSTabBarItem * selectedTab;
-@property(retain) NSArray * tabItems;
-@property(readonly) NSArray * tabs;
-@property(readonly) IKJSTabBarItem * transientTab;
+@property (nonatomic, readonly) IKAppTabBar *appTabBar;
+@property (nonatomic, retain) IKJSTabBarItem *selectedTab;
+@property (retain) NSArray *tabItems;
+@property (nonatomic, readonly) NSArray *tabs;
+@property (nonatomic, readonly) IKJSTabBarItem *transientTab;
 
 - (void).cxx_destruct;
 - (void)_reload;

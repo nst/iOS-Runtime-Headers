@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary;
-
 @interface ML3ArtworkConfiguration : NSObject {
     NSMutableDictionary *_artworkConfigurationDictionary;
     float _mainScreenScale;
     NSMutableDictionary *_supportedSizesCache;
 }
 
-@property(retain) NSMutableDictionary * artworkConfigurationDictionary;
-@property float mainScreenScale;
-@property(retain) NSMutableDictionary * supportedSizesCache;
+@property (nonatomic, retain) NSMutableDictionary *artworkConfigurationDictionary;
+@property (nonatomic) float mainScreenScale;
+@property (nonatomic, retain) NSMutableDictionary *supportedSizesCache;
 
 + (id)systemConfiguration;
 

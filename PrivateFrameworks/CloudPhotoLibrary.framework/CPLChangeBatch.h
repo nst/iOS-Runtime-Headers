@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CPLChangeBatch : NSObject <NSFastEnumeration, NSSecureCoding> {
     NSMutableDictionary *_additionalRecords;
     NSMutableDictionary *_localResources;
     NSMutableArray *_records;
 }
 
-@property(readonly) NSArray * records;
+@property (nonatomic, readonly) NSArray *records;
 
 + (BOOL)supportsSecureCoding;
 
@@ -26,12 +24,12 @@
 - (id)additionalRecordWithIdentifier:(id)arg1;
 - (void)appendLocalResources:(id)arg1 forItemWithCloudIdentifier:(id)arg2;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)cplFullDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extractDeletesFromBatchDeletedRecordIdentifiers:(id*)arg1 trashedRecordIdentifiers:(id*)arg2;
-- (void)extractInitialDownloadBatch:(id*)arg1 shouldConsiderRecordFilter:(id)arg2;
+- (void)extractInitialDownloadBatch:(id*)arg1 shouldConsiderRecordFilter:(id /* block */)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecords:(id)arg1;

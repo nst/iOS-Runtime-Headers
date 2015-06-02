@@ -11,10 +11,10 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasNavigationCommand;
-@property BOOL hasSessionIdentifier;
-@property int navigationCommand;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasNavigationCommand;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int navigationCommand;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

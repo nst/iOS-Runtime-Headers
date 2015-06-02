@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@class DEExtensionHostContext, NSExtension, NSObject<OS_dispatch_group>, NSString;
-
 @interface DEExtension : NSObject {
     NSExtension *__extension;
     BOOL _allowUserAttachmentSelection;
@@ -20,37 +18,37 @@
     NSObject<OS_dispatch_group> *extendInfoGroup;
 }
 
-@property(retain) NSExtension * _extension;
-@property BOOL allowUserAttachmentSelection;
-@property(retain) NSString * attachmentsName;
-@property BOOL canEnableLogging;
-@property BOOL canGenerateNewAttachment;
-@property(retain) NSString * displayName;
-@property BOOL hasBeenLoaded;
-@property(retain) NSString * identifier;
-@property BOOL isLoggingEnabled;
-@property(retain) NSString * loggingConsent;
-@property(retain) NSString * ownerBundleID;
+@property (nonatomic, retain) NSExtension *_extension;
+@property (nonatomic) BOOL allowUserAttachmentSelection;
+@property (nonatomic, retain) NSString *attachmentsName;
+@property (nonatomic) BOOL canEnableLogging;
+@property (nonatomic) BOOL canGenerateNewAttachment;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) BOOL hasBeenLoaded;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) BOOL isLoggingEnabled;
+@property (nonatomic, retain) NSString *loggingConsent;
+@property (nonatomic, retain) NSString *ownerBundleID;
 
 - (void).cxx_destruct;
 - (id)_extension;
-- (void)_performWithHostContext:(id)arg1;
+- (void)_performWithHostContext:(id /* block */)arg1;
 - (BOOL)allowUserAttachmentSelection;
-- (void)attachmentListWithHandler:(id)arg1;
+- (void)attachmentListWithHandler:(id /* block */)arg1;
 - (id)attachmentsName;
 - (BOOL)canEnableLogging;
 - (BOOL)canGenerateNewAttachment;
 - (id)description;
-- (void)disableLoggingWithHandler:(id)arg1;
+- (void)disableLoggingWithHandler:(id /* block */)arg1;
 - (id)displayName;
-- (void)enableLoggingWithHandler:(id)arg1;
+- (void)enableLoggingWithHandler:(id /* block */)arg1;
 - (void)endUsingExtension;
-- (void)getAttachmentsWithParameters:(id)arg1 andHandler:(id)arg2;
+- (void)getAttachmentsWithParameters:(id)arg1 andHandler:(id /* block */)arg2;
 - (BOOL)hasBeenLoaded;
 - (id)identifier;
 - (id)initWithNSExtension:(id)arg1;
 - (BOOL)isLoggingEnabled;
-- (void)isLoggingEnabledHandler:(id)arg1;
+- (void)isLoggingEnabledHandler:(id /* block */)arg1;
 - (void)loadExtendedInfo;
 - (id)loggingConsent;
 - (id)ownerBundleID;

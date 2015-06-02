@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet, NSSQLCore, NSSet, NSString, PFUbiquityLocation, PFUbiquitySwitchboardCacheWrapper;
-
 @interface PFUbiquityStoreExportContext : NSObject {
     PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
     NSString *_localPeerID;
@@ -13,12 +11,12 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
-@property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
-@property(readonly) NSString * localPeerID;
-@property(retain) NSSQLCore * store;
-@property(readonly) NSString * storeName;
-@property(readonly) NSSet * transactionEntries;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property (nonatomic, retain) PFUbiquitySwitchboardCacheWrapper *cacheWrapper;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, retain) NSSQLCore *store;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) NSSet *transactionEntries;
+@property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
 
 - (id)addTransactionEntryForGlobalID:(id)arg1 andTransactionType:(int)arg2;
 - (id)cacheWrapper;

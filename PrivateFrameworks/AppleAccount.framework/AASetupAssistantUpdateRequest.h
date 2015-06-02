@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AASetupAssistantUpdateRequest : AASetupAssistantCreateRequest {
-}
+@interface AASetupAssistantUpdateRequest : AASetupAssistantCreateRequest
 
 - (id)urlString;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UITableView;
-
 @interface UIKeyboardEmojiSplit : UIKBKeyView <UITableViewDataSource, UITableViewDelegate> {
     UITableView *_picker;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UITableView * picker;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) UITableView *picker;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)defaultIndexPath;

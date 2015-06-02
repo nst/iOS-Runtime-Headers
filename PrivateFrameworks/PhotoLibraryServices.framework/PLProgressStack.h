@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface PLProgressStack : NSObject {
     float currentMultiplier;
     float currentTotal;
@@ -13,12 +11,12 @@
     BOOL notifyUsingAssetsdNotificationCenter;
 }
 
-@property float currentMultiplier;
-@property float currentTotal;
-@property id delegate;
-@property(retain) NSString * mediaPathString;
-@property(retain) NSMutableArray * multipliers;
-@property BOOL notifyUsingAssetsdNotificationCenter;
+@property (nonatomic) float currentMultiplier;
+@property (nonatomic) float currentTotal;
+@property (nonatomic) id delegate;
+@property (nonatomic, retain) NSString *mediaPathString;
+@property (nonatomic, retain) NSMutableArray *multipliers;
+@property (nonatomic) BOOL notifyUsingAssetsdNotificationCenter;
 
 + (id)unarchiveFromDictionary:(id)arg1;
 

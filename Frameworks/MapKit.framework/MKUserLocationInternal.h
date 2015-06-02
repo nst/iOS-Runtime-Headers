@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotation>, <MKUserLocationAnnotation>, CLHeading, CLLocation, NSString;
-
 @interface MKUserLocationInternal : NSObject {
     <MKUserLocationAnnotation> *_annotation;
     <MKAnnotation> *annotation;
@@ -18,16 +16,16 @@
     BOOL updating;
 }
 
-@property(readonly) <MKAnnotation> * annotation;
-@property double course;
-@property(retain) CLLocation * fixedLocation;
-@property(retain) CLHeading * heading;
-@property(retain) CLLocation * location;
-@property(retain) CLLocation * predictedLocation;
-@property(retain) NSString * subtitle;
-@property double timestamp;
-@property(retain) NSString * title;
-@property(getter=isUpdating) BOOL updating;
+@property (nonatomic, readonly) <MKAnnotation> *annotation;
+@property (nonatomic) double course;
+@property (nonatomic, retain) CLLocation *fixedLocation;
+@property (nonatomic, retain) CLHeading *heading;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, retain) CLLocation *predictedLocation;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic) double timestamp;
+@property (nonatomic, retain) NSString *title;
+@property (getter=isUpdating, nonatomic) BOOL updating;
 
 - (void).cxx_destruct;
 - (id)annotation;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@class NSString, NanoPhoneVoicemailBody;
-
 @interface NanoPhoneVoicemailMeta : PBCodable <NSCopying, SYObject> {
     NSString *_callbackNumber;
     NSString *_dataPath;
@@ -24,29 +22,29 @@
     long long _voicemailNumber;
 }
 
-@property(retain) NSString * callbackNumber;
-@property(retain) NSString * dataPath;
-@property double date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int duration;
-@property int flags;
-@property(readonly) BOOL hasCallbackNumber;
-@property(readonly) BOOL hasDataPath;
-@property BOOL hasDate;
-@property BOOL hasDuration;
-@property BOOL hasFlags;
-@property BOOL hasIdentifier;
-@property BOOL hasRemoteUID;
-@property(readonly) BOOL hasSender;
-@property(readonly) BOOL hasVoicemailBody;
-@property(readonly) unsigned int hash;
-@property long long identifier;
-@property long long remoteUID;
-@property(retain) NSString * sender;
-@property(readonly) Class superclass;
-@property(retain) NanoPhoneVoicemailBody * voicemailBody;
-@property long long voicemailNumber;
+@property (nonatomic, retain) NSString *callbackNumber;
+@property (nonatomic, retain) NSString *dataPath;
+@property (nonatomic) double date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int duration;
+@property (nonatomic) int flags;
+@property (nonatomic, readonly) BOOL hasCallbackNumber;
+@property (nonatomic, readonly) BOOL hasDataPath;
+@property (nonatomic) BOOL hasDate;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasFlags;
+@property (nonatomic) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasRemoteUID;
+@property (nonatomic, readonly) BOOL hasSender;
+@property (nonatomic, readonly) BOOL hasVoicemailBody;
+@property (readonly) unsigned int hash;
+@property (nonatomic) long long identifier;
+@property (nonatomic) long long remoteUID;
+@property (nonatomic, retain) NSString *sender;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NanoPhoneVoicemailBody *voicemailBody;
+@property (nonatomic) long long voicemailNumber;
 
 + (id)voicemailWithMessage:(id)arg1;
 + (id)voicemailWithSYContext:(id)arg1;

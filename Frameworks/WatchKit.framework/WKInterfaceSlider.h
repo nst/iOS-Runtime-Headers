@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceSlider : WKInterfaceObject {
-}
+@interface WKInterfaceSlider : WKInterfaceObject
 
 - (void)setColor:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;

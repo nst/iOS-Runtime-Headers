@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class UIImage, UIImageView;
-
 @interface MPUImageStackItemView : MPUStackItemView {
     UIImage *_image;
     float _imageAlpha;
@@ -28,10 +26,10 @@
     UIImageView *_imageView;
 }
 
-@property(retain) UIImage * image;
-@property float imageAlpha;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentsRect;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) float imageAlpha;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentsRect;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
 
 - (void).cxx_destruct;
 - (id)image;

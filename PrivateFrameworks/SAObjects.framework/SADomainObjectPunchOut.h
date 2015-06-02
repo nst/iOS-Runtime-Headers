@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADomainObject;
+@interface SADomainObjectPunchOut : SABaseClientBoundCommand
 
-@interface SADomainObjectPunchOut : SABaseClientBoundCommand {
-}
-
-@property(retain) SADomainObject * domainItem;
+@property (nonatomic, retain) SADomainObject *domainItem;
 
 + (id)domainObjectPunchOut;
 + (id)domainObjectPunchOutWithDictionary:(id)arg1 context:(id)arg2;

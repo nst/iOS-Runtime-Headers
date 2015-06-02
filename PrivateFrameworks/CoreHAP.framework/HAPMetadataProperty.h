@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSNumber, NSString;
-
 @interface HAPMetadataProperty : NSObject {
     NSNumber *_bitPosition;
     NSString *_localizationKey;
@@ -11,10 +9,10 @@
     NSString *_propertyType;
 }
 
-@property(retain) NSNumber * bitPosition;
-@property(retain) NSString * localizationKey;
-@property(retain) NSString * propertyDescription;
-@property(retain) NSString * propertyType;
+@property (nonatomic, retain) NSNumber *bitPosition;
+@property (nonatomic, retain) NSString *localizationKey;
+@property (nonatomic, retain) NSString *propertyDescription;
+@property (nonatomic, retain) NSString *propertyType;
 
 + (id)init:(id)arg1 withDictionary:(id)arg2;
 

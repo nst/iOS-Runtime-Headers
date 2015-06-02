@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CADisplayLink, UIColor, UIImage, UIImageView;
-
 @interface SKUICircleProgressIndicator : UIView {
     float _animatedValue;
     double _animationEndTime;
@@ -26,11 +24,11 @@
     UIColor *_unhighlightedBackgroundColor;
 }
 
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIImage * image;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
-@property(getter=isIndeterminate) BOOL indeterminate;
-@property float progress;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property (getter=isIndeterminate, nonatomic) BOOL indeterminate;
+@property (nonatomic) float progress;
 
 + (id)_borderImage;
 + (id)_fillImage;

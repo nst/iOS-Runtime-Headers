@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCalendar, NSDate, NSNumberFormatter, NSString;
-
 @interface NSDateComponentsFormatter : NSFormatter {
     unsigned int _allowedUnits;
     BOOL _allowsFractionalUnits;
@@ -29,13 +27,13 @@
 
 @property unsigned int allowedUnits;
 @property BOOL allowsFractionalUnits;
-@property(copy) NSCalendar * calendar;
+@property (copy) NSCalendar *calendar;
 @property BOOL collapsesLargestUnit;
 @property int formattingContext;
 @property BOOL includesApproximationPhrase;
 @property BOOL includesTimeRemainingPhrase;
 @property int maximumUnitCount;
-@property(copy) NSDate * referenceDate;
+@property (copy) NSDate *referenceDate;
 @property int unitsStyle;
 @property unsigned int zeroFormattingBehavior;
 

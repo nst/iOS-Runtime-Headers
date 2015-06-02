@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PHCachingImageManager, PUGridRenderedStrip, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUSectionedGridLayout, PUZoomableGridViewController;
-
 @interface PUGridZoomLevelInfo : NSObject <PUGridRenderedStripDataSource, PUPhotosSectionHeaderViewDelegate, PUSectionedGridLayoutDelegate> {
     PUGridZoomLevelInfo *_baseZoomLevelInfo;
     PHCachingImageManager *_cachingImageManager;
@@ -19,28 +17,28 @@
     PUZoomableGridViewController *_zoomableGridViewController;
 }
 
-@property(readonly) struct __CFString { }* aggregateLevelKey;
-@property(readonly) PUGridZoomLevelInfo * baseZoomLevelInfo;
-@property(readonly) PHCachingImageManager * cachingImageManager;
-@property(readonly) PUSectionedGridLayout * collectionViewLayout;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * displayTitle;
-@property(readonly) unsigned int hash;
-@property(readonly) int imageFormat;
-@property(readonly) int maxRowsPerSection;
-@property float pendingContentWidth;
-@property(readonly) NSString * renderedStripsElementKind;
-@property(readonly) NSString * sectionHeaderElementKind;
-@property BOOL summarizeSections;
-@property(readonly) Class superclass;
-@property BOOL useFloatingHeaderGroupName;
-@property(readonly) double zoomInDuration;
-@property(readonly) unsigned int zoomLevel;
-@property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;
-@property(readonly) double zoomOutDuration;
-@property PUZoomableGridViewController * zoomableGridViewController;
-@property(readonly) PUZoomableGridViewController * zoomableGridViewController;
+@property (nonatomic, readonly) struct __CFString { }*aggregateLevelKey;
+@property (nonatomic, readonly) PUGridZoomLevelInfo *baseZoomLevelInfo;
+@property (nonatomic, readonly) PHCachingImageManager *cachingImageManager;
+@property (nonatomic, readonly) PUSectionedGridLayout *collectionViewLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *displayTitle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int imageFormat;
+@property (nonatomic, readonly) int maxRowsPerSection;
+@property (nonatomic) float pendingContentWidth;
+@property (nonatomic, readonly) NSString *renderedStripsElementKind;
+@property (nonatomic, readonly) NSString *sectionHeaderElementKind;
+@property (nonatomic) BOOL summarizeSections;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useFloatingHeaderGroupName;
+@property (nonatomic, readonly) double zoomInDuration;
+@property (nonatomic, readonly) unsigned int zoomLevel;
+@property (nonatomic, readonly) PUMomentsZoomLevelManager *zoomLevelManager;
+@property (nonatomic, readonly) double zoomOutDuration;
+@property (nonatomic) PUZoomableGridViewController *zoomableGridViewController;
+@property (nonatomic, readonly) PUZoomableGridViewController *zoomableGridViewController;
 
 - (void).cxx_destruct;
 - (void)_updateBackdropGroupNameForHeaderView:(id)arg1;
@@ -70,7 +68,7 @@
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)registerReusableViewClassesForCollectionView:(id)arg1;
-- (void)renderedStrip:(id)arg1 enumerateAssetsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (void)renderedStrip:(id)arg1 enumerateAssetsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id /* block */)arg4;
 - (id)renderedStrip:(id)arg1 imageDataForAsset:(id)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)renderedStripsElementKind;
 - (id)sectionHeaderElementKind;

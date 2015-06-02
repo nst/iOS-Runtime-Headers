@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>;
-
 @interface ABTranslucentNavigationController : UINavigationController {
     BOOL _overridesNavigationBarInset;
     <ABStyleProvider> *_styleProvider;
 }
 
-@property BOOL overridesNavigationBarInset;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic) BOOL overridesNavigationBarInset;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_shouldNavigationBarInsetViewController:(id)arg1;
 - (BOOL)overridesNavigationBarInset;

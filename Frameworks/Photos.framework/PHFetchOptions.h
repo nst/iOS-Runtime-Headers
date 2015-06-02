@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSPredicate, NSString;
-
 @interface PHFetchOptions : NSObject <NSCopying> {
     int _cacheSizeForFetch;
     int _chunkSizeForFetch;
@@ -26,28 +24,29 @@
     BOOL _wantsIncrementalChangeDetails;
 }
 
-@property int cacheSizeForFetch;
-@property int chunkSizeForFetch;
-@property(retain) NSArray * customObjectIDSortOrder;
-@property unsigned int fetchLimit;
-@property unsigned int fetchPropertyHint;
-@property BOOL forceIncludeCloudSharedAssets;
-@property BOOL forceIncludeiTunesSyncAssets;
-@property(readonly) BOOL hasIncludeCloudSharedAssetsOverride;
-@property BOOL includeAllBurstAssets;
-@property BOOL includeDuplicateAssets;
-@property BOOL includeHiddenAssets;
-@property BOOL includeWallpaperAssets;
-@property(retain) NSPredicate * internalPredicate;
-@property(retain) NSArray * internalSortDescriptors;
-@property(retain) NSPredicate * predicate;
-@property BOOL reverseSortOrder;
-@property(retain) NSArray * sortDescriptors;
-@property(retain) NSString * transientIdentifier;
-@property BOOL wantsIncrementalChangeDetails;
+@property (nonatomic) int cacheSizeForFetch;
+@property (nonatomic) int chunkSizeForFetch;
+@property (nonatomic, retain) NSArray *customObjectIDSortOrder;
+@property (nonatomic) unsigned int fetchLimit;
+@property (nonatomic) unsigned int fetchPropertyHint;
+@property (nonatomic) BOOL forceIncludeCloudSharedAssets;
+@property (nonatomic) BOOL forceIncludeiTunesSyncAssets;
+@property (nonatomic, readonly) BOOL hasIncludeCloudSharedAssetsOverride;
+@property (nonatomic) BOOL includeAllBurstAssets;
+@property (nonatomic) BOOL includeDuplicateAssets;
+@property (nonatomic) BOOL includeHiddenAssets;
+@property (nonatomic) BOOL includeWallpaperAssets;
+@property (nonatomic, retain) NSPredicate *internalPredicate;
+@property (nonatomic, retain) NSArray *internalSortDescriptors;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic) BOOL reverseSortOrder;
+@property (nonatomic, retain) NSArray *sortDescriptors;
+@property (nonatomic, retain) NSString *transientIdentifier;
+@property (nonatomic) BOOL wantsIncrementalChangeDetails;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (id)fetchOptionsWithInclusiveDefaults;
-+ (id)pu_standardFetchOptions;
 
 - (void).cxx_destruct;
 - (int)cacheSizeForFetch;
@@ -90,5 +89,9 @@
 - (id)sortDescriptors;
 - (id)transientIdentifier;
 - (BOOL)wantsIncrementalChangeDetails;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_standardFetchOptions;
 
 @end

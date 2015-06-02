@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueMutatingOrderedSetMethodSet;
-
 @interface NSKeyValueFastMutableOrderedSet : NSKeyValueMutableOrderedSet {
     NSKeyValueMutatingOrderedSetMethodSet *_mutatingMethods;
 }

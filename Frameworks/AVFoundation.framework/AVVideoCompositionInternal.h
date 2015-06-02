@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionCoreAnimationTool, NSArray, NSString;
-
 @interface AVVideoCompositionInternal : NSObject {
     AVVideoCompositionCoreAnimationTool *animationTool;
     BOOL auxiliaryTrackLayerSetLast;

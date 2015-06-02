@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <TCCancelDelegate>, CXNamespace, NSMutableDictionary, OAVReadState, OAXDrawingState, OAXTableStyleCache, PDPresentation;
-
 @interface PXPresentationState : OCXReadState {
     CXNamespace *_PXPresentationMLNamespace;
     <TCCancelDelegate> *mCancel;
@@ -15,8 +13,8 @@
     PDPresentation *mTgtPresentation;
 }
 
-@property(retain) CXNamespace * PXPresentationMLNamespace;
-@property(retain) <TCCancelDelegate> * cancelDelegate;
+@property (nonatomic, retain) CXNamespace *PXPresentationMLNamespace;
+@property (nonatomic, retain) <TCCancelDelegate> *cancelDelegate;
 
 - (id)PXPresentationMLNamespace;
 - (id)cancelDelegate;

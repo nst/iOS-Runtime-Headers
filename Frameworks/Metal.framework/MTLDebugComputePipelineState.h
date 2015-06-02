@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLFunction>, MTLComputePipelineDescriptor, MTLComputePipelineReflection;
-
 @interface MTLDebugComputePipelineState : MTLToolsComputePipelineState {
     MTLComputePipelineDescriptor *_descriptor;
     <MTLFunction> *_function;
     MTLComputePipelineReflection *_reflection;
 }
 
-@property(readonly) MTLComputePipelineDescriptor * descriptor;
-@property(readonly) <MTLFunction> * function;
-@property(readonly) MTLComputePipelineReflection * reflection;
+@property (nonatomic, readonly) MTLComputePipelineDescriptor *descriptor;
+@property (nonatomic, readonly) <MTLFunction> *function;
+@property (nonatomic, readonly) MTLComputePipelineReflection *reflection;
 
 - (void).cxx_destruct;
 - (id)description;

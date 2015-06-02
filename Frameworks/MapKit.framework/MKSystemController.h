@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKSystemController : NSObject {
-}
+@interface MKSystemController : NSObject
 
 + (id)sharedInstance;
 

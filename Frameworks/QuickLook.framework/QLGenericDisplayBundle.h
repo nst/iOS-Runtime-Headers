@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSError, NSString, QLGenericView;
-
 @interface QLGenericDisplayBundle : QLDisplayBundle <QLGenericViewDelegate> {
     QLGenericView *_airplayView;
     NSError *_error;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_loadPreviewItemInfos;
 - (id)airplayView;

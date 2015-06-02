@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSStringROMKeySet_Embedded : NSSharedKeySet {
-}
+@interface NSStringROMKeySet_Embedded : NSSharedKeySet
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

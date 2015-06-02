@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOAvailableAnnouncements : PBCodable <NSCopying> {
     NSMutableArray *_announcements;
     NSString *_languageCode;
 }
 
-@property(retain) NSMutableArray * announcements;
-@property(readonly) BOOL hasLanguageCode;
-@property(retain) NSString * languageCode;
+@property (nonatomic, retain) NSMutableArray *announcements;
+@property (nonatomic, readonly) BOOL hasLanguageCode;
+@property (nonatomic, retain) NSString *languageCode;
 
 - (void)addAnnouncement:(id)arg1;
 - (id)announcementAtIndex:(unsigned int)arg1;

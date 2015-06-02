@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSDictionary, NSString;
-
 @interface BBActionResponse : NSObject <NSSecureCoding> {
     NSString *_actionID;
     int _actionType;
@@ -14,13 +12,13 @@
     NSDictionary *_context;
 }
 
-@property(copy) NSString * actionID;
-@property int actionType;
-@property(copy) NSString * bulletinButtonID;
-@property(copy) NSDictionary * bulletinContext;
-@property(copy) NSString * bulletinPublisherID;
-@property(copy) NSString * bulletinRecordID;
-@property(copy) NSDictionary * context;
+@property (nonatomic, copy) NSString *actionID;
+@property (nonatomic) int actionType;
+@property (nonatomic, copy) NSString *bulletinButtonID;
+@property (nonatomic, copy) NSDictionary *bulletinContext;
+@property (nonatomic, copy) NSString *bulletinPublisherID;
+@property (nonatomic, copy) NSString *bulletinRecordID;
+@property (nonatomic, copy) NSDictionary *context;
 
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
 + (BOOL)supportsSecureCoding;

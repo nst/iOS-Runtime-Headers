@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@class NSString;
+@interface SBCPlaybackPositionValueService : SBCPlaybackPositionService <SBCDomainValueServiceProtocol>
 
-@interface SBCPlaybackPositionValueService : SBCPlaybackPositionService <SBCDomainValueServiceProtocol> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 @end

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAMBottomBar, NSString, PLContactPhotoOverlay, PLCropOverlayBottomBar, PLCropOverlayCropView, PLCropOverlayWallpaperBottomBar, PLProgressHUD, UIButton, UIImageView, UILabel, UIToolbar, UIView;
-
 @interface PLCropOverlay : UIView {
     PLCropOverlayBottomBar *__bottomBar;
     UIButton *__cameraCancelButton;
     UIImageView *_bottomShineView;
     PLContactPhotoOverlay *_contactPhotoOverlay;
-    unsigned int _controlsAreVisible : 1;
+    unsigned int _controlsAreVisible;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -20,7 +18,7 @@
             float height; 
         } size; 
     } _cropRect;
-    unsigned int _cropRectIsVisible : 1;
+    unsigned int _cropRectIsVisible;
     PLCropOverlayCropView *_cropView;
     UIToolbar *_customToolbar;
     NSString *_defaultOKButtonTitle;
@@ -31,32 +29,32 @@
     BOOL _isEditingLockScreen;
     int _mode;
     BOOL _motionToggleIsOn;
-    unsigned int _offsetStatusBar : 1;
+    unsigned int _offsetStatusBar;
     UIButton *_okButton;
     UIView *_overlayContainerView;
-    unsigned int _previewMode : 1;
+    unsigned int _previewMode;
     UIImageView *_shadowView;
-    unsigned int _showsCropRegion : 1;
+    unsigned int _showsCropRegion;
     float _statusBarHeight;
     UILabel *_titleLabel;
-    unsigned int _tookPhoto : 1;
+    unsigned int _tookPhoto;
     UIImageView *_topShineView;
     UIView *_wildcatPickerBottomView;
     UIView *_wildcatPickerTopView;
 }
 
-@property(readonly) PLCropOverlayBottomBar * _bottomBar;
-@property(readonly) UIButton * _cameraCancelButton;
-@property(retain) CAMBottomBar * cameraBottomBar;
-@property(readonly) PLContactPhotoOverlay * contactPhotoOverlay;
-@property(copy) NSString * defaultOKButtonTitle;
-@property(getter=isDisplayedInPopover) BOOL displayedInPopover;
-@property BOOL isEditingHomeScreen;
-@property BOOL isEditingLockScreen;
-@property BOOL motionToggleHidden;
-@property BOOL motionToggleIsOn;
-@property BOOL previewMode;
-@property(readonly) PLCropOverlayWallpaperBottomBar * wallpaperBottomBar;
+@property (nonatomic, readonly) PLCropOverlayBottomBar *_bottomBar;
+@property (nonatomic, readonly) UIButton *_cameraCancelButton;
+@property (nonatomic, retain) CAMBottomBar *cameraBottomBar;
+@property (nonatomic, readonly) PLContactPhotoOverlay *contactPhotoOverlay;
+@property (nonatomic, copy) NSString *defaultOKButtonTitle;
+@property (getter=isDisplayedInPopover, nonatomic) BOOL displayedInPopover;
+@property (nonatomic) BOOL isEditingHomeScreen;
+@property (nonatomic) BOOL isEditingLockScreen;
+@property (nonatomic) BOOL motionToggleHidden;
+@property (nonatomic) BOOL motionToggleIsOn;
+@property (nonatomic) BOOL previewMode;
+@property (nonatomic, readonly) PLCropOverlayWallpaperBottomBar *wallpaperBottomBar;
 
 - (void)_backgroundSavePhoto:(id)arg1;
 - (id)_bottomBar;

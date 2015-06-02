@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString, PKPaymentSummaryItem;
-
 @interface PKPaymentSummaryItemValidator : NSObject <PKPaymentValidating> {
     PKPaymentSummaryItem *_item;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PKPaymentSummaryItem * item;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PKPaymentSummaryItem *item;
+@property (readonly) Class superclass;
 
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;

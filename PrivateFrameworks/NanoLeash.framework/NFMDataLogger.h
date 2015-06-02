@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@class NSOperationQueue;
-
 @interface NFMDataLogger : NSObject {
     NSOperationQueue *_accelerationQueue;
     NSOperationQueue *_activityQueue;
     BOOL _recordingTelemetry;
 }
 
-@property(retain) NSOperationQueue * accelerationQueue;
-@property(retain) NSOperationQueue * activityQueue;
-@property BOOL recordingTelemetry;
+@property (nonatomic, retain) NSOperationQueue *accelerationQueue;
+@property (nonatomic, retain) NSOperationQueue *activityQueue;
+@property (nonatomic) BOOL recordingTelemetry;
 
 + (id)sharedLogger;
 

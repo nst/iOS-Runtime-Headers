@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAPhoneCallEmergencySnippet : SAPhoneCallSnippet {
-}
+@interface SAPhoneCallEmergencySnippet : SAPhoneCallSnippet
 
-@property int countDownSeconds;
+@property (nonatomic) int countDownSeconds;
 
 + (id)callEmergencySnippet;
 + (id)callEmergencySnippetWithDictionary:(id)arg1 context:(id)arg2;

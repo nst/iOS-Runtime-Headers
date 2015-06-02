@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIKeyboardBackdropCornerView;
-
 @interface UIKBBackdropView : _UIBackdropView {
     UIKeyboardBackdropCornerView *_backdropCornerView;
     BOOL _hasUpdatedFrame;
@@ -11,7 +9,7 @@
     NSMutableArray *_secondaryBackdrops;
 }
 
-@property(readonly) BOOL _hasUpdatedFrame;
+@property (nonatomic, readonly) BOOL _hasUpdatedFrame;
 
 + (void)_registerSecondaryBackdropView:(id)arg1;
 + (void)_unregisterSecondaryBackdropView:(id)arg1;

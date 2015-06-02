@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface _TSUImageM : TSUImage {
-}
+@interface _TSUImageM : TSUImage
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)init;

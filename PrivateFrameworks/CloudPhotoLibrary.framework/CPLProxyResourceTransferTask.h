@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLProxyLibraryManager;
-
 @interface CPLProxyResourceTransferTask : CPLResourceTransferTask {
     CPLProxyLibraryManager *_proxyLibraryManager;
 }
 
-@property(retain) CPLProxyLibraryManager * proxyLibraryManager;
+@property (nonatomic, retain) CPLProxyLibraryManager *proxyLibraryManager;
 
 - (void).cxx_destruct;
 - (void)cancelTask;

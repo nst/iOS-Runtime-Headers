@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSData, NSMutableData, NSString, NSURL, NSURLConnection;
-
 @interface _GEOResourceLoadOperation : NSObject <NSURLConnectionDataDelegate> {
     NSData *_auditToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSURLConnection *_conn;
     NSMutableData *_data;
     BOOL _expectsPartialContent;
     NSURL *_url;
 }
 
-@property(readonly) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -35,6 +25,6 @@
 - (id)data;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

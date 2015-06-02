@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageCriterion, MFMessageLibrary, NSDate;
-
 @interface MFLibraryStore : MFMailMessageStore {
     MFMessageCriterion *_criterion;
     NSDate *_earliestReceivedDate;
@@ -12,7 +10,7 @@
     unsigned int _serverMessageCount;
 }
 
-@property(retain) NSDate * earliestReceivedDate;
+@property (nonatomic, retain) NSDate *earliestReceivedDate;
 
 + (BOOL)createEmptyStoreForPath:(id)arg1;
 + (unsigned int)defaultLoadOptions;

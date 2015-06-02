@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSURL;
-
 @interface CoreDAVMultiMoveWithFallbackTaskGroup : CoreDAVTaskGroup {
     NSMutableDictionary *_destinationEntityETags;
     NSURL *_destinationURL;
@@ -17,21 +15,21 @@
     BOOL _useFallback;
 }
 
-@property(readonly) NSMutableDictionary * destinationEntityETags;
-@property(readonly) NSURL * destinationURL;
-@property(readonly) NSMutableSet * destinationURLs;
-@property(retain) NSMutableArray * outstandingSourceURLsToMove;
-@property(readonly) int overwrite;
-@property(readonly) NSDictionary * sourceEntityDataContentTypes;
-@property(readonly) NSDictionary * sourceEntityDataPayloads;
-@property(readonly) NSDictionary * sourceEntityETags;
-@property(readonly) NSSet * sourceURLs;
-@property(readonly) BOOL useFallback;
+@property (nonatomic, readonly) NSMutableDictionary *destinationEntityETags;
+@property (nonatomic, readonly) NSURL *destinationURL;
+@property (nonatomic, readonly) NSMutableSet *destinationURLs;
+@property (nonatomic, retain) NSMutableArray *outstandingSourceURLsToMove;
+@property (nonatomic, readonly) int overwrite;
+@property (nonatomic, readonly) NSDictionary *sourceEntityDataContentTypes;
+@property (nonatomic, readonly) NSDictionary *sourceEntityDataPayloads;
+@property (nonatomic, readonly) NSDictionary *sourceEntityETags;
+@property (nonatomic, readonly) NSSet *sourceURLs;
+@property (nonatomic, readonly) BOOL useFallback;
 
 - (void)_completedMoveTask:(id)arg1 sourceURL:(id)arg2;
 - (void)_completedPutTask:(id)arg1 sourceURL:(id)arg2;
 - (id)_eTagFromTaskResponseHeaders:(id)arg1;
-- (void)_setTagsForDestinationEntityAtURL:(id)arg1 fromTaskResponseHeaders:(id)arg2 completionBlock:(id)arg3;
+- (void)_setTagsForDestinationEntityAtURL:(id)arg1 fromTaskResponseHeaders:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)destinationEntityETags;

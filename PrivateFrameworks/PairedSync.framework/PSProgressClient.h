@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, PSYProgressObserver;
-
 @interface PSProgressClient : NSObject <PSYProgressClient> {
     PSYProgressObserver *_progressObserver;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1 progressObserver:(id)arg2;

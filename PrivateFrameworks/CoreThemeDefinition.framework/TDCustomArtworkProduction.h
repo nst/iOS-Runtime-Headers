@@ -6,7 +6,7 @@
     BOOL _hasCustomDateOfLastChange;
 }
 
-@property BOOL hasCustomDateOfLastChange;
+@property (nonatomic) BOOL hasCustomDateOfLastChange;
 
 - (BOOL)hasCustomDateOfLastChange;
 - (void)setDateOfLastChange:(id)arg1;

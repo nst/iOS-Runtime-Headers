@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSTTableInfo;
-
 @interface TNFormBasedSheet : TNSheet {
     NSString *mImportedTargetName;
     struct __CFUUID { } *mTableID;
     TSTTableInfo *mTableInfo;
 }
 
-@property struct __CFUUID { }* tableID;
-@property(readonly) TSTTableInfo * tableInfo;
+@property struct __CFUUID { }*tableID;
+@property (readonly) TSTTableInfo *tableInfo;
 
 - (void)clearTableInfoCache;
 - (float)contentScale;

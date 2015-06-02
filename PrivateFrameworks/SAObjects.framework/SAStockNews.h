@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAStockNews : SADomainObject
 
-@interface SAStockNews : SADomainObject {
-}
-
-@property(copy) NSDate * timeStamp;
-@property(copy) NSString * title;
-@property(copy) NSString * url;
+@property (nonatomic, copy) NSDate *timeStamp;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *url;
 
 + (id)news;
 + (id)newsWithDictionary:(id)arg1 context:(id)arg2;

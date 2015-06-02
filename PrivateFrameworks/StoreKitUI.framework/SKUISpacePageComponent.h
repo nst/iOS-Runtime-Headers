@@ -6,7 +6,7 @@
     float _height;
 }
 
-@property(readonly) float height;
+@property (nonatomic, readonly) float height;
 
 - (int)componentType;
 - (float)height;

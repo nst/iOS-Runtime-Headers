@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@interface NNMKLog : NSObject {
-}
+@interface NNMKLog : NSObject
 
 + (void)_setupLoggingFacility:(id)arg1;
 + (void)setupLoggingFacilities;

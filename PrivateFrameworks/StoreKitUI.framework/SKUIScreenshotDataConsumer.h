@@ -11,9 +11,9 @@
     } _screenshotSize;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } constraintSize;
-@property BOOL drawsBorder;
-@property BOOL forcesPortrait;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } constraintSize;
+@property (nonatomic) BOOL drawsBorder;
+@property (nonatomic) BOOL forcesPortrait;
 
 + (id)consumer;
 + (id)consumerWithScreenshotSize:(struct CGSize { float x1; float x2; })arg1;

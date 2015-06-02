@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSAuthenticateRequestDelegate>, NSString, SSAuthenticationContext;
-
 @interface SSAuthenticateRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
 }
 
-@property(readonly) SSAuthenticationContext * authenticationContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SSAuthenticateRequestDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly) SSAuthenticationContext *authenticationContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SSAuthenticateRequestDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
@@ -22,7 +20,7 @@
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)start;
-- (void)startWithAuthenticateResponseBlock:(id)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithAuthenticateResponseBlock:(id /* block */)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
 
 @end

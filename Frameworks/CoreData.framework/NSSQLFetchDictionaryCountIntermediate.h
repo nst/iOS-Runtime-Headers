@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLFetchIntermediate;
-
 @interface NSSQLFetchDictionaryCountIntermediate : NSSQLStatementIntermediate {
     NSSQLFetchIntermediate *_realFetch;
 }

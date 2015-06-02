@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureMetadataOutputObjectsDelegate>, AVCaptureMetadataOutputInternal, NSArray, NSObject<OS_dispatch_queue>;
-
 @interface AVCaptureMetadataOutput : AVCaptureOutput {
     AVCaptureMetadataOutputInternal *_internal;
 }
 
-@property(readonly) NSArray * availableMetadataObjectTypes;
-@property(copy) NSArray * metadataObjectTypes;
-@property(readonly) NSObject<OS_dispatch_queue> * metadataObjectsCallbackQueue;
-@property(readonly) <AVCaptureMetadataOutputObjectsDelegate> * metadataObjectsDelegate;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectOfInterest;
+@property (nonatomic, readonly) NSArray *availableMetadataObjectTypes;
+@property (nonatomic, copy) NSArray *metadataObjectTypes;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *metadataObjectsCallbackQueue;
+@property (nonatomic, readonly) <AVCaptureMetadataOutputObjectsDelegate> *metadataObjectsDelegate;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectOfInterest;
 
 + (id)_metadataConstantValueToName:(id)arg1;
 + (id)alloc;

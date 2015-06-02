@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAHandoffPayload>;
+@interface SASetHandoffPayload : SABaseClientBoundCommand
 
-@interface SASetHandoffPayload : SABaseClientBoundCommand {
-}
-
-@property(retain) <SAHandoffPayload> * handoffPayload;
+@property (nonatomic, retain) <SAHandoffPayload> *handoffPayload;
 
 + (id)setHandoffPayload;
 + (id)setHandoffPayloadWithDictionary:(id)arg1 context:(id)arg2;

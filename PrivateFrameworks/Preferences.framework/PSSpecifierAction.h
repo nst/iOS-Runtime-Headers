@@ -2,33 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PSSpecifierAction : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _getter;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _setter;
-
+    id /* block */ _getter;
+    id /* block */ _setter;
 }
 
-@property(copy) id getter;
-@property(copy) id setter;
+@property (nonatomic, copy) id /* block */ getter;
+@property (nonatomic, copy) id /* block */ setter;
 
 + (id)actionWithBoolDetailClass:(Class)arg1;
-+ (id)actionWithGetter:(id)arg1 setter:(id)arg2;
++ (id)actionWithGetter:(id /* block */)arg1 setter:(id /* block */)arg2;
 
 - (void)dealloc;
-- (id)getter;
-- (void)setGetter:(id)arg1;
-- (void)setSetter:(id)arg1;
-- (id)setter;
+- (id /* block */)getter;
+- (void)setGetter:(id /* block */)arg1;
+- (void)setSetter:(id /* block */)arg1;
+- (id /* block */)setter;
 
 @end

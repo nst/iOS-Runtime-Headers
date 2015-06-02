@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKAnnotationViewInternal : NSObject {
-}
+@interface MKAnnotationViewInternal : NSObject
 
 @end

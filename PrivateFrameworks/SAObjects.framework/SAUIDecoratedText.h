@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIDecoratedText : AceObject <SAAceSerializable>
 
-@interface SAUIDecoratedText : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * ducId;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * regions;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *ducId;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *regions;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
 
 + (id)decoratedText;
 + (id)decoratedTextWithDictionary:(id)arg1 context:(id)arg2;

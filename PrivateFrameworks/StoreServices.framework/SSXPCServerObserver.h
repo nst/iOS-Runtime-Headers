@@ -7,8 +7,8 @@
     SEL _selector;
 }
 
-@property id observer;
-@property SEL selector;
+@property (nonatomic) id observer;
+@property (nonatomic) SEL selector;
 
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

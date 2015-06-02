@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, SALocalSearchBusiness2;
+@interface SAMovieV2MovieTheater : SADomainObject
 
-@interface SAMovieV2MovieTheater : SADomainObject {
-}
-
-@property(retain) SALocalSearchBusiness2 * business;
-@property(copy) NSArray * movies;
+@property (nonatomic, retain) SALocalSearchBusiness2 *business;
+@property (nonatomic, copy) NSArray *movies;
 
 + (id)movieTheater;
 + (id)movieTheaterWithDictionary:(id)arg1 context:(id)arg2;

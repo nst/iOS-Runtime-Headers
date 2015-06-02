@@ -6,7 +6,7 @@
     BOOL _drawsStrikethrough;
 }
 
-@property BOOL drawsStrikethrough;
+@property (nonatomic) BOOL drawsStrikethrough;
 
 - (BOOL)drawsStrikethrough;
 - (void)setDrawsStrikethrough:(BOOL)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
  */
 
-@class CHPointFIFO;
-
 @interface CHPointFIFO : NSObject {
     CHPointFIFO *_nextFIFO;
 }
 
-@property(retain) CHPointFIFO * nextFIFO;
+@property (nonatomic, retain) CHPointFIFO *nextFIFO;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clear;

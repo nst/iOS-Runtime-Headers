@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, NSDate, NSString;
-
 @interface GEORouteHypothesis : NSObject {
     unsigned int _currentTrafficDensity;
     NSDate *_estimatedArrivalDate;
@@ -18,17 +16,17 @@
     double _travelStateScore;
 }
 
-@property(readonly) unsigned int currentTrafficDensity;
-@property(readonly) NSDate * estimatedArrivalDate;
-@property(readonly) BOOL hasTrafficIncidentOnRoute;
-@property(readonly) unsigned int historicTrafficDensity;
-@property(retain) GEOLocation * lastLocation;
-@property(readonly) int routeIncidentSignificance;
-@property(readonly) NSString * routeIncidentStreetName;
-@property(readonly) int routeIncidentType;
-@property(readonly) NSDate * suggestedDepartureDate;
-@property(readonly) unsigned int travelState;
-@property(readonly) double travelStateScore;
+@property (nonatomic, readonly) unsigned int currentTrafficDensity;
+@property (nonatomic, readonly) NSDate *estimatedArrivalDate;
+@property (nonatomic, readonly) BOOL hasTrafficIncidentOnRoute;
+@property (nonatomic, readonly) unsigned int historicTrafficDensity;
+@property (nonatomic, retain) GEOLocation *lastLocation;
+@property (nonatomic, readonly) int routeIncidentSignificance;
+@property (nonatomic, readonly) NSString *routeIncidentStreetName;
+@property (nonatomic, readonly) int routeIncidentType;
+@property (nonatomic, readonly) NSDate *suggestedDepartureDate;
+@property (nonatomic, readonly) unsigned int travelState;
+@property (nonatomic, readonly) double travelStateScore;
 
 - (unsigned int)currentTrafficDensity;
 - (void)dealloc;

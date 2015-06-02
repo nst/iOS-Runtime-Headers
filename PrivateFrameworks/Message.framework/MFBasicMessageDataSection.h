@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSData, NSString;
-
 @interface MFBasicMessageDataSection : NSObject <MFMessageDataSection> {
     BOOL _complete;
     NSData *_data;
@@ -11,10 +9,10 @@
     BOOL _partial;
 }
 
-@property(getter=isComplete) BOOL complete;
-@property(retain) NSData * data;
-@property(retain) NSString * partName;
-@property(getter=isPartial) BOOL partial;
+@property (getter=isComplete, nonatomic) BOOL complete;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSString *partName;
+@property (getter=isPartial, nonatomic) BOOL partial;
 
 - (id)data;
 - (void)dealloc;

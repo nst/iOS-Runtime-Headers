@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class MKMapView, NSString, UITableViewCell, UIView;
-
 @interface EKEventMapDetailItem : EKEventDetailItem <MKMapViewDelegate> {
     UITableViewCell *_cell;
     UIView *_loadingView;
@@ -11,10 +9,10 @@
     UIView *_overlayView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (float)_mapHeight;

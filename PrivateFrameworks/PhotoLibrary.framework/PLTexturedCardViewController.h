@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UINavigationBar, UINavigationController, UIView;
-
 @interface PLTexturedCardViewController : UIViewController <PLModalDimmingContained> {
     UIImageView *_decorationView;
     UIImageView *_innerShadowView;

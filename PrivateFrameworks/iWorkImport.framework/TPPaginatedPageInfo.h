@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
+@interface TPPaginatedPageInfo : TPPageInfo
 
-@interface TPPaginatedPageInfo : TPPageInfo {
-}
-
-@property(readonly) NSArray * floatingDrawableInfos;
-@property(readonly) BOOL isDocumentSetupPage;
+@property (nonatomic, readonly) NSArray *floatingDrawableInfos;
+@property (nonatomic, readonly) BOOL isDocumentSetupPage;
 
 - (id)floatingDrawableInfos;
 - (BOOL)isDocumentSetupPage;

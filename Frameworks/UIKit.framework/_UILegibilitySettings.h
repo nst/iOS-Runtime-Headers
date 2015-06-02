@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor;
-
 @interface _UILegibilitySettings : NSObject {
     UIColor *_contentColor;
     float _imageOutset;
@@ -17,16 +15,18 @@
     int _style;
 }
 
-@property(retain) UIColor * contentColor;
-@property float imageOutset;
-@property float minFillHeight;
-@property(retain) UIColor * primaryColor;
-@property(retain) UIColor * secondaryColor;
-@property float shadowAlpha;
-@property(retain) UIColor * shadowColor;
-@property(copy) NSString * shadowCompositingFilterName;
-@property float shadowRadius;
-@property int style;
+@property (nonatomic, retain) UIColor *contentColor;
+@property (nonatomic) float imageOutset;
+@property (nonatomic) float minFillHeight;
+@property (nonatomic, retain) UIColor *primaryColor;
+@property (nonatomic, retain) UIColor *secondaryColor;
+@property (nonatomic) float shadowAlpha;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic, copy) NSString *shadowCompositingFilterName;
+@property (nonatomic) float shadowRadius;
+@property (nonatomic) int style;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)sharedInstanceForStyle:(int)arg1;
 
@@ -41,8 +41,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (float)minFillHeight;
 - (id)primaryColor;
-- (id)sb_description;
-- (id)sb_styleString;
 - (id)secondaryColor;
 - (void)setContentColor:(id)arg1;
 - (void)setImageOutset:(float)arg1;
@@ -60,5 +58,10 @@
 - (id)shadowCompositingFilterName;
 - (float)shadowRadius;
 - (int)style;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+
+- (id)sb_description;
+- (id)sb_styleString;
 
 @end

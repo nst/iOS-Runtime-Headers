@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBTransaction;
-
 @interface FBTransactionWatchdog : BSWatchdog {
     FBTransaction *_transaction;
 }
 
-@property(retain,readonly) FBTransaction * transaction;
+@property (nonatomic, readonly, retain) FBTransaction *transaction;
 
 - (void)_dumpDebugInfo;
 - (void)_watchdogTimerFired;

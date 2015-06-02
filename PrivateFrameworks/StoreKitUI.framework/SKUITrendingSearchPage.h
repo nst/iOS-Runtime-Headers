@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString;
-
 @interface SKUITrendingSearchPage : NSObject {
     NSArray *_searches;
     NSString *_title;
 }
 
-@property(retain) NSArray * searches;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSArray *searches;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (id)searches;

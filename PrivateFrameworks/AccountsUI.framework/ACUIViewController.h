@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <ACUIViewControllerAccountChangeObserver>, ACAccountStore, ACUIAccountOperationsHelper, NSString, NSTimer, UIBarButtonItem, UIProgressHUD;
-
 @interface ACUIViewController : PSListController <ACUIAccountOperationsDelegate> {
     <ACUIViewControllerAccountChangeObserver> *_accountChangeObserver;
     ACUIAccountOperationsHelper *_accountOperationsHelper;
@@ -15,11 +9,7 @@
     BOOL _activityInProgress;
     BOOL _addedToTaskList;
     UIBarButtonItem *_cancelButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _confirmationViewCompletion;
-
+    id /* block */ _confirmationViewCompletion;
     UIBarButtonItem *_doneButton;
     UIProgressHUD *_hud;
     NSTimer *_idleJiggleTimer;
@@ -27,16 +17,16 @@
     BOOL _validationInProgress;
 }
 
-@property <ACUIViewControllerAccountChangeObserver> * accountChangeObserver;
-@property(retain) ACUIAccountOperationsHelper * accountOperationsHelper;
-@property(retain) ACAccountStore * accountStore;
-@property(retain) UIBarButtonItem * cancelButton;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIBarButtonItem * doneButton;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property BOOL validationInProgress;
+@property (nonatomic) <ACUIViewControllerAccountChangeObserver> *accountChangeObserver;
+@property (nonatomic, retain) ACUIAccountOperationsHelper *accountOperationsHelper;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, retain) UIBarButtonItem *cancelButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL validationInProgress;
 
 + (id)acuiAccountStore;
 + (BOOL)shouldPresentAsModalSheet;
@@ -83,12 +73,12 @@
 - (void)setValidationInProgress:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (void)showActivityInProgressUIWithMessage:(id)arg1;
-- (id)showAlertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 completion:(id)arg7;
-- (id)showAlertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5 completion:(id)arg6;
-- (id)showConfirmationViewForDeletingAccount:(id)arg1 context:(id)arg2 completion:(id)arg3;
-- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 completion:(id)arg7;
-- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 forceAlert:(BOOL)arg7 completion:(id)arg8;
-- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5 completion:(id)arg6;
+- (id)showAlertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 completion:(id /* block */)arg7;
+- (id)showAlertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5 completion:(id /* block */)arg6;
+- (id)showConfirmationViewForDeletingAccount:(id)arg1 context:(id)arg2 completion:(id /* block */)arg3;
+- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 completion:(id /* block */)arg7;
+- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 cancelButtonIndex:(int)arg5 context:(id)arg6 forceAlert:(BOOL)arg7 completion:(id /* block */)arg8;
+- (id)showConfirmationViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 destructive:(BOOL)arg4 context:(id)arg5 completion:(id /* block */)arg6;
 - (id)specifiers;
 - (void)startValidationWithPrompt:(id)arg1;
 - (void)startValidationWithPrompt:(id)arg1 userInteraction:(BOOL)arg2;

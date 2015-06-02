@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceInputInternal_FigRecorder, AVCaptureDevice_FigRecorder;
-
 @interface AVCaptureDeviceInput_FigRecorder : AVCaptureInput_FigRecorder {
     AVCaptureDeviceInputInternal_FigRecorder *_internal;
 }
 
-@property(readonly) AVCaptureDevice_FigRecorder * device;
+@property (nonatomic, readonly) AVCaptureDevice_FigRecorder *device;
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id*)arg2;
 + (void)initialize;

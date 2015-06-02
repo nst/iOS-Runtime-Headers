@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <FigCaptureSessionPreviewTapDelegate>;
-
 @interface FigRecorderProxy : FigCaptureSessionProxy {
     long long _identifier;
     <FigCaptureSessionPreviewTapDelegate> *_previewTapDelegate;

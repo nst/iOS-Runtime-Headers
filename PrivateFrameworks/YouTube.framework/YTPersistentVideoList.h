@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSString;
-
 @interface YTPersistentVideoList : NSObject {
     NSString *_categoryName;
     NSMutableArray *_videos;

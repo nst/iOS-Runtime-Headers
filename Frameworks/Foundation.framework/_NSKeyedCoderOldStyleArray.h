@@ -6,7 +6,7 @@
     void *_addr;
     unsigned int _count;
     BOOL _decoded;
-    BOOL _padding[2];
+    BOOL _padding;
     unsigned int _size;
     BOOL _type;
 }

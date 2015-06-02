@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAlbumsViewController : MusicTableViewController {
-}
+@interface MusicAlbumsViewController : MusicTableViewController
 
 + (int)containerItemType;
 

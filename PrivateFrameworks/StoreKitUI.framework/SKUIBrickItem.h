@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtwork, SKUICountdown, SKUIEditorialComponent, SKUILink;
-
 @interface SKUIBrickItem : NSObject {
     NSString *_accessibilityLabel;
     SKUIArtwork *_artwork;
@@ -13,12 +11,12 @@
     SKUILink *_link;
 }
 
-@property(readonly) NSString * accessibilityLabel;
-@property(readonly) SKUIArtwork * artwork;
-@property(readonly) long long brickIdentifier;
-@property(readonly) SKUICountdown * countdown;
-@property(readonly) SKUIEditorialComponent * editorial;
-@property(readonly) SKUILink * link;
+@property (nonatomic, readonly) NSString *accessibilityLabel;
+@property (nonatomic, readonly) SKUIArtwork *artwork;
+@property (nonatomic, readonly) long long brickIdentifier;
+@property (nonatomic, readonly) SKUICountdown *countdown;
+@property (nonatomic, readonly) SKUIEditorialComponent *editorial;
+@property (nonatomic, readonly) SKUILink *link;
 
 - (void).cxx_destruct;
 - (void)_setLinkInfoWithLinkDictionary:(id)arg1 context:(id)arg2;

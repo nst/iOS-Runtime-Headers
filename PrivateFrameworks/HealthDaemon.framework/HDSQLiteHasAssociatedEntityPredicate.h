@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLitePredicate;
-
 @interface HDSQLiteHasAssociatedEntityPredicate : HDSQLitePredicate <NSCopying> {
     Class _associatedEntityClass;
     HDSQLitePredicate *_associatedPredicate;

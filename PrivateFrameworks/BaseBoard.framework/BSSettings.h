@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class <BSSettingDescriptionProvider>, NSMapTable, NSString;
-
 @interface BSSettings : NSObject <BSXPCCoding, NSCopying, NSMutableCopying> {
     <BSSettingDescriptionProvider> *_descriptionProvider;
     NSMapTable *_settingToFlagMap;
     NSMapTable *_settingToObjectMap;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <BSSettingDescriptionProvider> * descriptionProvider;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <BSSettingDescriptionProvider> *descriptionProvider;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_applyToSettings:(id)arg1;
-- (void)_enumerateSettingsForFlagsWithBlock:(id)arg1;
-- (void)_enumerateSettingsForObjectsWithBlock:(id)arg1;
-- (void)_enumerateSettingsInMap:(id)arg1 withBlock:(id)arg2;
+- (void)_enumerateSettingsForFlagsWithBlock:(id /* block */)arg1;
+- (void)_enumerateSettingsForObjectsWithBlock:(id /* block */)arg1;
+- (void)_enumerateSettingsInMap:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_keyDescriptionForSetting:(unsigned int)arg1;
 - (id)_newMapTable;
 - (void)_setFlag:(int)arg1 forSetting:(unsigned int)arg2;
@@ -33,8 +31,8 @@
 - (id)description;
 - (id)descriptionProvider;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (void)enumerateFlagsWithBlock:(id)arg1;
-- (void)enumerateObjectsWithBlock:(id)arg1;
+- (void)enumerateFlagsWithBlock:(id /* block */)arg1;
+- (void)enumerateObjectsWithBlock:(id /* block */)arg1;
 - (int)flagForSetting:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)initWithXPCDictionary:(id)arg1;

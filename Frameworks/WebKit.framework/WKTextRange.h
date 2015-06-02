@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSArray;
-
 @interface WKTextRange : UITextRange {
     struct CGRect { 
         struct CGPoint { 
@@ -32,13 +30,13 @@
     } _startRect;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
-@property BOOL isEditable;
-@property BOOL isNone;
-@property BOOL isRange;
-@property unsigned int selectedTextLength;
-@property(copy) NSArray * selectionRects;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
+@property (nonatomic) BOOL isEditable;
+@property (nonatomic) BOOL isNone;
+@property (nonatomic) BOOL isRange;
+@property (nonatomic) unsigned int selectedTextLength;
+@property (nonatomic, copy) NSArray *selectionRects;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startRect;
 
 + (id)textRangeWithState:(BOOL)arg1 isRange:(BOOL)arg2 isEditable:(BOOL)arg3 startRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 endRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 selectionRects:(id)arg6 selectedTextLength:(unsigned int)arg7;
 

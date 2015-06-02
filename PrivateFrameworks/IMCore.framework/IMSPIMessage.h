@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMSPIHandle, NSArray, NSAttributedString, NSDate, NSString, NSURL;
-
 @interface IMSPIMessage : NSObject {
     NSAttributedString *_attributedText;
     NSArray *_chatGUIDs;
@@ -21,20 +19,20 @@
     NSURL *_url;
 }
 
-@property(retain) NSAttributedString * attributedText;
-@property(retain) NSArray * chatGUIDs;
-@property(retain,readonly) NSArray * chatGuids;
-@property(retain) NSDate * date;
-@property(retain) NSString * guid;
+@property (retain) NSAttributedString *attributedText;
+@property (retain) NSArray *chatGUIDs;
+@property (readonly, retain) NSArray *chatGuids;
+@property (retain) NSDate *date;
+@property (retain) NSString *guid;
 @property BOOL isAudioMessage;
 @property BOOL isOutgoing;
 @property BOOL isRead;
 @property long long messageID;
-@property(retain) NSArray * recipients;
-@property(retain) IMSPIHandle * sender;
-@property(retain) NSString * subject;
-@property(retain) NSString * text;
-@property(retain) NSURL * url;
+@property (retain) NSArray *recipients;
+@property (retain) IMSPIHandle *sender;
+@property (retain) NSString *subject;
+@property (retain) NSString *text;
+@property (retain) NSURL *url;
 
 - (id)attributedText;
 - (id)chatGUIDs;

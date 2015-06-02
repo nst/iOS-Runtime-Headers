@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIResponder<UITextInput>, UISelectionGrabber, UITextSelectionView, UITouch;
-
 @interface UITextRangeView : UIView {
     UITouch *m_activeTouch;
     BOOL m_animateUpdate;
@@ -66,32 +64,32 @@
     } m_touchOffset;
 }
 
-@property(retain) UITouch * activeTouch;
-@property BOOL animateUpdate;
-@property(readonly) BOOL autoscrolled;
-@property BOOL baseIsStart;
-@property struct CGPoint { float x1; float x2; } basePoint;
-@property BOOL commandsWereShowing;
-@property(readonly) UIResponder<UITextInput> * container;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endEdge;
-@property(retain) UISelectionGrabber * endGrabber;
-@property struct CGPoint { float x1; float x2; } extentPoint;
-@property double firstMovedTime;
-@property BOOL inGesture;
-@property struct CGPoint { float x1; float x2; } initialBasePoint;
-@property float initialDistance;
-@property struct CGPoint { float x1; float x2; } initialExtentPoint;
-@property BOOL inputViewIsChanging;
-@property BOOL isScrolling;
-@property BOOL magnifying;
-@property int mode;
-@property(retain) NSArray * rects;
-@property BOOL rotating;
-@property BOOL scaling;
-@property(readonly) UITextSelectionView * selectionView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startEdge;
-@property(retain) UISelectionGrabber * startGrabber;
-@property struct CGPoint { float x1; float x2; } touchOffset;
+@property (nonatomic, retain) UITouch *activeTouch;
+@property (nonatomic) BOOL animateUpdate;
+@property (nonatomic, readonly) BOOL autoscrolled;
+@property (nonatomic) BOOL baseIsStart;
+@property (nonatomic) struct CGPoint { float x1; float x2; } basePoint;
+@property (nonatomic) BOOL commandsWereShowing;
+@property (nonatomic, readonly) UIResponder<UITextInput> *container;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endEdge;
+@property (nonatomic, retain) UISelectionGrabber *endGrabber;
+@property (nonatomic) struct CGPoint { float x1; float x2; } extentPoint;
+@property (nonatomic) double firstMovedTime;
+@property (nonatomic) BOOL inGesture;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialBasePoint;
+@property (nonatomic) float initialDistance;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialExtentPoint;
+@property (nonatomic) BOOL inputViewIsChanging;
+@property (nonatomic) BOOL isScrolling;
+@property (nonatomic) BOOL magnifying;
+@property (nonatomic) int mode;
+@property (nonatomic, retain) NSArray *rects;
+@property (nonatomic) BOOL rotating;
+@property (nonatomic) BOOL scaling;
+@property (nonatomic, readonly) UITextSelectionView *selectionView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startEdge;
+@property (nonatomic, retain) UISelectionGrabber *startGrabber;
+@property (nonatomic) struct CGPoint { float x1; float x2; } touchOffset;
 
 - (BOOL)_endIsHorizontal;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage, CIVector, NSNumber;
-
 @interface CUIOuterGlowOrShadowFilter : CIFilter {
     CIColor *inputColor;
     CIImage *inputImage;
@@ -14,13 +12,13 @@
     NSNumber *inputSpread;
 }
 
-@property(retain) CIColor * inputColor;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputOffset;
-@property(retain) NSNumber * inputRadius;
-@property(retain) NSNumber * inputRange;
-@property(retain) NSNumber * inputSize;
-@property(retain) NSNumber * inputSpread;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputOffset;
+@property (nonatomic, retain) NSNumber *inputRadius;
+@property (nonatomic, retain) NSNumber *inputRange;
+@property (nonatomic, retain) NSNumber *inputSize;
+@property (nonatomic, retain) NSNumber *inputSpread;
 
 + (id)customAttributes;
 

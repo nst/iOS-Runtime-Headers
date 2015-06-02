@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSMapTable, NSMutableArray;
-
 @interface VMUVMRegionIdentifier : NSObject {
     NSMapTable *_mallocZoneStatisticsMap;
     NSMutableArray *_regions;

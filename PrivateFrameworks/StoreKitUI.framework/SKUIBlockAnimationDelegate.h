@@ -2,20 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface SKUIBlockAnimationDelegate : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
 }
 
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)initWithCompletionHandler:(id)arg1;
+- (id)initWithCompletionHandler:(id /* block */)arg1;
 
 @end

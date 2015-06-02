@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLFacebookPlace : SLPlace {
-}
+@interface SLFacebookPlace : SLPlace
 
 + (id)placeWithResponseDictionary:(id)arg1;
 

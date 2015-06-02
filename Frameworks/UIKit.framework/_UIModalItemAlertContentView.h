@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScrollView, UITableView, UIView, _UIModalItemTextFiledBGView;
-
 @interface _UIModalItemAlertContentView : _UIModalItemContentView {
     UIView *_2ButtonsSeparators;
     BOOL _alertViewIsSetup;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class IDSService, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface NNMKSyncServiceEndpoint : NSObject <IDSServiceDelegate> {
     IDSService *_idsService;
     NSString *_idsServiceName;
@@ -13,16 +11,16 @@
     NSObject<OS_dispatch_queue> *_serviceQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) IDSService * idsService;
-@property(retain) NSString * idsServiceName;
-@property BOOL isConnected;
-@property(retain) NSObject<OS_dispatch_source> * repeatPreventionCleanupTimer;
-@property(retain) NSMutableDictionary * repeatPreventionRecords;
-@property(retain) NSObject<OS_dispatch_queue> * serviceQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IDSService *idsService;
+@property (nonatomic, retain) NSString *idsServiceName;
+@property (nonatomic) BOOL isConnected;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *repeatPreventionCleanupTimer;
+@property (nonatomic, retain) NSMutableDictionary *repeatPreventionRecords;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serviceQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleConnectivityChange;

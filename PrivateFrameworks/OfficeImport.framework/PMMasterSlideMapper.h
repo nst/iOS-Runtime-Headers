@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDSlideBase;
-
 @interface PMMasterSlideMapper : CMMapper {
     PDSlideBase *_slide;
 }

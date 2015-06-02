@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDAnnotation, WDAnnotationData, WDCharacterRun;
-
 @interface WDAnnotation : WDRun {
     WDAnnotationData *mData;
     WDAnnotation *mOtherEndOfRangedAnnotation;

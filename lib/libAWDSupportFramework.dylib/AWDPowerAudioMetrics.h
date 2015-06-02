@@ -27,20 +27,20 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int audioHeadsetDuration;
-@property unsigned int audioHeadsetPowerMicroWatt;
-@property unsigned int audioSpeakerDuration;
-@property unsigned int audioSpeakerPowerMicroWatt;
-@property(readonly) unsigned int* audioVolumeLevelDurationSpeakers;
-@property(readonly) unsigned int audioVolumeLevelDurationSpeakersCount;
-@property(readonly) unsigned int* audioVolumeLevelDurations;
-@property(readonly) unsigned int audioVolumeLevelDurationsCount;
-@property BOOL hasAudioHeadsetDuration;
-@property BOOL hasAudioHeadsetPowerMicroWatt;
-@property BOOL hasAudioSpeakerDuration;
-@property BOOL hasAudioSpeakerPowerMicroWatt;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int audioHeadsetDuration;
+@property (nonatomic) unsigned int audioHeadsetPowerMicroWatt;
+@property (nonatomic) unsigned int audioSpeakerDuration;
+@property (nonatomic) unsigned int audioSpeakerPowerMicroWatt;
+@property (nonatomic, readonly) unsigned int*audioVolumeLevelDurationSpeakers;
+@property (nonatomic, readonly) unsigned int audioVolumeLevelDurationSpeakersCount;
+@property (nonatomic, readonly) unsigned int*audioVolumeLevelDurations;
+@property (nonatomic, readonly) unsigned int audioVolumeLevelDurationsCount;
+@property (nonatomic) BOOL hasAudioHeadsetDuration;
+@property (nonatomic) BOOL hasAudioHeadsetPowerMicroWatt;
+@property (nonatomic) BOOL hasAudioSpeakerDuration;
+@property (nonatomic) BOOL hasAudioSpeakerPowerMicroWatt;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addAudioVolumeLevelDuration:(unsigned int)arg1;
 - (void)addAudioVolumeLevelDurationSpeaker:(unsigned int)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSString;
-
 @interface PFUbiquityBaselineOperation : PFUbiquityImportOperation {
     NSManagedObjectModel *_model;
     NSString *_modelVersionHash;
 }
 
-@property(readonly) NSManagedObjectModel * model;
-@property(readonly) NSString * modelVersionHash;
+@property (nonatomic, readonly) NSManagedObjectModel *model;
+@property (nonatomic, readonly) NSString *modelVersionHash;
 
 - (void)dealloc;
 - (id)description;

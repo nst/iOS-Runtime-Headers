@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUScriptMenuItem : SUScriptObject {
     BOOL _enabled;
     NSString *_title;
@@ -11,8 +9,8 @@
 }
 
 @property BOOL enabled;
-@property(retain) NSString * title;
-@property(retain) id userInfo;
+@property (retain) NSString *title;
+@property (retain) id userInfo;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

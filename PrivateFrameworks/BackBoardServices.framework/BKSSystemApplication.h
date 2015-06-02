@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class <BKSSystemApplicationDelegate>, BKSSystemApplicationClient, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BKSSystemApplication : NSObject <BKSSystemApplicationClientDelegate> {
     BKSSystemApplicationClient *_client;
     <BKSSystemApplicationDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BKSSystemApplicationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BKSSystemApplicationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;

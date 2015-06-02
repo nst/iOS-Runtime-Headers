@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioFormat;
-
 @interface AVAudioBuffer : NSObject <NSCopying, NSMutableCopying> {
     void *_impl;
 }
 
-@property(readonly) const struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }* audioBufferList;
-@property(readonly) AVAudioFormat * format;
-@property(readonly) struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }* mutableAudioBufferList;
+@property (nonatomic, readonly) const struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*audioBufferList;
+@property (nonatomic, readonly) AVAudioFormat *format;
+@property (nonatomic, readonly) struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*mutableAudioBufferList;
 
 - (const struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*)audioBufferList;
 - (unsigned int)byteCapacity;

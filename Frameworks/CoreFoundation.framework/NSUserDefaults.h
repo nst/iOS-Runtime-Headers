@@ -4,34 +4,17 @@
 
 @interface NSUserDefaults : NSObject {
     id _private;
-    void *_reserved[4];
+    void *_reserved;
 }
 
-+ (id)CNFObjectForKey:(id)arg1;
-+ (unsigned int)CNFRegEmailValidationTimeout;
-+ (id)CNFRegSavedAccountName;
-+ (id)CNFRegServerURLOverride;
-+ (id)_IMAgentObjectForKey:(id)arg1;
-+ (id)_IMAppObjectForKey:(id)arg1;
-+ (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
-+ (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (void)_ensureAndLockPreferredLanguageLock;
 + (void)_web_addDefaultsChangeObserver;
 + (void)_web_defaultsDidChange;
 + (id)_web_preferredLanguageCode;
-+ (id)_webkit_preferredLanguageCode;
-+ (id)mf_copyCompositionServicesPreferenceValueForKey:(id)arg1;
-+ (void)mf_setCompositionServicesPreferenceValue:(id)arg1 forKey:(id)arg2;
 + (void)resetStandardUserDefaults;
-+ (void)setCNFObject:(id)arg1 forKey:(id)arg2;
-+ (void)setCNFRegEmailValidationTimeout:(unsigned int)arg1;
-+ (void)setCNFRegSavedAccountName:(id)arg1;
-+ (void)setCNFRegServerURLOverride:(id)arg1;
-+ (void)setShouldShowCNFRegistrationServerLogs:(BOOL)arg1;
-+ (void)setShouldShowCNFRegistrationSettingsUI:(BOOL)arg1;
 + (void)setStandardUserDefaults:(id)arg1;
-+ (BOOL)shouldShowCNFRegistrationServerLogs;
-+ (BOOL)shouldShowCNFRegistrationSettingsUI;
 + (id)standardUserDefaults;
 
 - (id)URLForKey:(id)arg1;
@@ -39,22 +22,15 @@
 - (void)addSuiteNamed:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
-- (BOOL)boolValueSafeForKey:(id)arg1;
-- (BOOL)boolValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
-- (BOOL)delayedSynchronize;
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)doubleForKey:(id)arg1;
-- (double)doubleValueSafeForKey:(id)arg1;
-- (double)doubleValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (float)floatForKey:(id)arg1;
 - (id)init;
 - (id)initWithSuiteName:(id)arg1;
 - (id)initWithUser:(id)arg1;
-- (long long)int64ValueSafeForKey:(id)arg1;
-- (long long)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (int)integerForKey:(id)arg1;
 - (long long)longForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
@@ -85,9 +61,61 @@
 - (void)setVolatileDomain:(id)arg1 forName:(id)arg2;
 - (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
+- (BOOL)synchronize;
+- (id)valueForKey:(id)arg1;
+- (id)volatileDomainForName:(id)arg1;
+- (id)volatileDomainNames;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)mf_copyCompositionServicesPreferenceValueForKey:(id)arg1;
++ (void)mf_setCompositionServicesPreferenceValue:(id)arg1 forKey:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
++ (id)CNFObjectForKey:(id)arg1;
++ (unsigned int)CNFRegEmailValidationTimeout;
++ (id)CNFRegSavedAccountName;
++ (id)CNFRegServerURLOverride;
++ (void)setCNFObject:(id)arg1 forKey:(id)arg2;
++ (void)setCNFRegEmailValidationTimeout:(unsigned int)arg1;
++ (void)setCNFRegSavedAccountName:(id)arg1;
++ (void)setCNFRegServerURLOverride:(id)arg1;
++ (void)setShouldShowCNFRegistrationServerLogs:(BOOL)arg1;
++ (void)setShouldShowCNFRegistrationSettingsUI:(BOOL)arg1;
++ (BOOL)shouldShowCNFRegistrationServerLogs;
++ (BOOL)shouldShowCNFRegistrationSettingsUI;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
+- (BOOL)boolValueSafeForKey:(id)arg1;
+- (BOOL)boolValueSafeForKey:(id)arg1 status:(int*)arg2;
+- (double)doubleValueSafeForKey:(id)arg1;
+- (double)doubleValueSafeForKey:(id)arg1 status:(int*)arg2;
+- (long long)int64ValueSafeForKey:(id)arg1;
+- (long long)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (id)stringValueSafeForKey:(id)arg1;
 - (id)stringValueSafeForKey:(id)arg1 status:(int*)arg2;
-- (BOOL)synchronize;
+- (const char *)utf8ValueSafeForKey:(id)arg1;
+- (const char *)utf8ValueSafeForKey:(id)arg1 status:(int*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
+
+- (BOOL)delayedSynchronize;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
++ (id)_IMAgentObjectForKey:(id)arg1;
++ (id)_IMAppObjectForKey:(id)arg1;
++ (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
++ (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
++ (id)_webkit_preferredLanguageCode;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
 - (id)tsk_arrayForKey:(id)arg1 inRole:(id)arg2;
 - (id)tsk_arrayForKeyInCurrentRole:(id)arg1;
 - (BOOL)tsk_boolForKey:(id)arg1 inRole:(id)arg2;
@@ -120,10 +148,5 @@
 - (id)tsk_stringForKey:(id)arg1 inRole:(id)arg2;
 - (id)tsk_stringForKeyInCurrentRole:(id)arg1;
 - (id)tskp_currentRole;
-- (const char *)utf8ValueSafeForKey:(id)arg1;
-- (const char *)utf8ValueSafeForKey:(id)arg1 status:(int*)arg2;
-- (id)valueForKey:(id)arg1;
-- (id)volatileDomainForName:(id)arg1;
-- (id)volatileDomainNames;
 
 @end

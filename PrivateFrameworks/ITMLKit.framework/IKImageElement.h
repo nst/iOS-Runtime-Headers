@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSDictionary, NSURL, UIColor;
-
 @interface IKImageElement : IKViewElement {
     NSURL *_defaultURL;
     unsigned int _imageType;
@@ -12,27 +10,25 @@
     NSDictionary *_srcset;
 }
 
-@property(readonly) UIColor * borderColor;
-@property(retain) NSURL * defaultURL;
-@property(readonly) int fill;
-@property(readonly) float height;
-@property(readonly) unsigned int imageType;
-@property(retain,readonly) NSURL * placeholderURL;
-@property(readonly) unsigned int position;
-@property(readonly) int reflect;
-@property(retain,readonly) NSDictionary * srcset;
-@property(readonly) NSURL * url;
-@property(readonly) float width;
+@property (nonatomic, readonly) UIColor *borderColor;
+@property (nonatomic, retain) NSURL *defaultURL;
+@property (nonatomic, readonly) int fill;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) unsigned int imageType;
+@property (nonatomic, readonly, retain) NSURL *placeholderURL;
+@property (nonatomic, readonly) unsigned int position;
+@property (nonatomic, readonly) int reflect;
+@property (nonatomic, readonly, retain) NSDictionary *srcset;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) float width;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 + (BOOL)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (unsigned int)_imageTypeForTagName:(id)arg1;
-- (int)accessoryType;
-- (id)artworkCatalog;
-- (id)bestURL;
 - (id)borderColor;
-- (id)cachePath;
 - (id)defaultURL;
 - (int)fill;
 - (float)height;
@@ -41,10 +37,17 @@
 - (id)placeholderURL;
 - (unsigned int)position;
 - (int)reflect;
-- (id)resourceImage;
 - (void)setDefaultURL:(id)arg1;
 - (id)srcset;
 - (id)url;
 - (float)width;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (int)accessoryType;
+- (id)artworkCatalog;
+- (id)bestURL;
+- (id)cachePath;
+- (id)resourceImage;
 
 @end

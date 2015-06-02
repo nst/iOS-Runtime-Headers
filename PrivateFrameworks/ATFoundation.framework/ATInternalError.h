@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@interface ATInternalError : NSObject {
-}
+@interface ATInternalError : NSObject
 
 + (id)errorWithCode:(unsigned int)arg1 format:(id)arg2;
 + (id)errorWithCode:(unsigned int)arg1 underlyingError:(id)arg2;

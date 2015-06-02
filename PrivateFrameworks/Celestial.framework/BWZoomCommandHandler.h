@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWZoomCompletionDelegate>, BWZoomDelayBuffer;
-
 @interface BWZoomCommandHandler : NSObject {
     float _appliedZoomFactor;
     BOOL _clientCanCompensateForDelay;
@@ -34,9 +32,9 @@
     int _zoomLock;
 }
 
-@property(readonly) float appliedZoomFactor;
+@property (readonly) float appliedZoomFactor;
 @property float requestedZoomFactor;
-@property <BWZoomCompletionDelegate> * zoomCompletionDelegate;
+@property (nonatomic) <BWZoomCompletionDelegate> *zoomCompletionDelegate;
 
 + (void)initialize;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class APDNavigationItem, NSString;
-
 @interface APDNavigationItem : APDGenericData <NSCopying> {
     BOOL _hasRead;
     NSString *_icon;
@@ -13,12 +11,12 @@
     APDNavigationItem *_parent;
 }
 
-@property BOOL hasRead;
-@property(copy) NSString * icon;
-@property(copy) NSString * identifier;
-@property int level;
-@property(copy) NSString * name;
-@property APDNavigationItem * parent;
+@property (nonatomic) BOOL hasRead;
+@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) int level;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) APDNavigationItem *parent;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

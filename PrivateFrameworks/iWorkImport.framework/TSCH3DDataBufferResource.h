@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DDataBufferResource : TSCH3DResource {
-}
+@interface TSCH3DDataBufferResource : TSCH3DResource
 
 + (id)resource;
 + (id)resourceWithBuffer:(id)arg1;

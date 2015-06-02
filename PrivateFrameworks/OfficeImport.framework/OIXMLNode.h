@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OIXMLNode : NSObject <NSCopying> {
     unsigned int _kind;
     NSString *_name;

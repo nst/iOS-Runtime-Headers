@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderBrailleDriver.framework/ScreenReaderBrailleDriver
  */
 
-@class <SCRDFileReaderDelegate>, NSFileHandle, NSThread;
-
 @interface SCRDFileReader : NSObject {
     <SCRDFileReaderDelegate> *_delegate;
     NSFileHandle *_fileHandle;

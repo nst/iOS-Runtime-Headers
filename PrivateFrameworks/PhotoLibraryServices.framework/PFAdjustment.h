@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSString;
-
 @interface PFAdjustment : NSObject {
     NSString *_autoIdentifier;
     NSDictionary *_autoSettings;
@@ -14,13 +12,13 @@
     NSDictionary *_settings;
 }
 
-@property(readonly) NSString * autoIdentifier;
-@property(readonly) NSDictionary * autoSettings;
-@property(readonly) BOOL enabled;
-@property(readonly) unsigned int formatVersion;
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * maskUUID;
-@property(readonly) NSDictionary * settings;
+@property (nonatomic, readonly) NSString *autoIdentifier;
+@property (nonatomic, readonly) NSDictionary *autoSettings;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) unsigned int formatVersion;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSString *maskUUID;
+@property (nonatomic, readonly) NSDictionary *settings;
 
 + (BOOL)isValidArchiveDictionary:(id)arg1 errors:(id)arg2;
 

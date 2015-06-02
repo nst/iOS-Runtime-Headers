@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray;
-
 @interface RadioPlaybackContext : NSObject <NSCopying, NSMutableCopying> {
     int _numberOfSkipsUsed;
     NSArray *_trackPlaybackDescriptorQueue;
 }
 
-@property(readonly) int numberOfSkipsUsed;
-@property(copy,readonly) NSArray * trackPlaybackDescriptorQueue;
+@property (nonatomic, readonly) int numberOfSkipsUsed;
+@property (nonatomic, readonly, copy) NSArray *trackPlaybackDescriptorQueue;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WXShading : NSObject {
-}
+@interface WXShading : NSObject
 
 + (id)getColorFromCString:(const char *)arg1;
 + (id)getColorFromString:(id)arg1;

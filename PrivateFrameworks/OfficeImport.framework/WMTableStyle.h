@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDTableProperties;
-
 @interface WMTableStyle : WMStyle {
     WDTableProperties *mWdTableProperties;
 }

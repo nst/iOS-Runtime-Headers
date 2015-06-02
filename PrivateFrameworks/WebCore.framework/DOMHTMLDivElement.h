@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLDivElement : DOMHTMLElement
 
-@interface DOMHTMLDivElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * align;
+@property (copy) NSString *align;
 
 - (id)align;
 - (void)setAlign:(id)arg1;

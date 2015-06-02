@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertUI.framework/CertUI
  */
 
-@class CertUITrustManager, NSString;
-
 @interface CertUIConnectionDelegate : NSObject {
     NSString *_connectionDisplayName;
     struct { 
@@ -14,8 +12,8 @@
     CertUITrustManager *_trustManager;
 }
 
-@property(copy) NSString * connectionDisplayName;
-@property id forwardingDelegate;
+@property (nonatomic, copy) NSString *connectionDisplayName;
+@property (nonatomic) id forwardingDelegate;
 
 + (id)defaultServiceForProtocol:(id)arg1;
 

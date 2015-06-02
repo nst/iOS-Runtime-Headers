@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKDateStrings : NSObject {
-}
+@interface CUIKDateStrings : NSObject
 
-+ (id)_cachedDateFormatterForDomain:(id)arg1 calendar:(id)arg2 formatterKey:(id)arg3 creationBlock:(id)arg4;
++ (id)_cachedDateFormatterForDomain:(id)arg1 calendar:(id)arg2 formatterKey:(id)arg3 creationBlock:(id /* block */)arg4;
 + (id)_languageIDfromLocalID:(id)arg1;
 + (id)_newDateFormatterForDateStyle:(unsigned int)arg1 timeStyle:(unsigned int)arg2 calendar:(id)arg3;
 + (id)_newDateFormatterForFormat:(id)arg1 calendar:(id)arg2;

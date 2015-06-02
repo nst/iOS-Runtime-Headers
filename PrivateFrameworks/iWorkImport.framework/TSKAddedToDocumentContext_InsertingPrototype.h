@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSKAddedToDocumentContext_InsertingPrototype : TSKAddedToDocumentContext {
     NSMutableArray *mInsertedTableInfos;
 }

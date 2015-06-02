@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CUIScaleClampFilter : CIFilter {
     CIImage *inputImage;
     NSNumber *inputScale;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputScale;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputScale;
 
 + (id)customAttributes;
 

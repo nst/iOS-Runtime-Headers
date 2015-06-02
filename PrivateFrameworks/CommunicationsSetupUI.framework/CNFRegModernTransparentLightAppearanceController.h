@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegModernTransparentLightAppearanceController : CNFRegModernAppearanceController {
-}
+@interface CNFRegModernTransparentLightAppearanceController : CNFRegModernAppearanceController
 
 - (int)modalPresentationStyle;
 - (int)navigationBarActivityIndicatorStyle;

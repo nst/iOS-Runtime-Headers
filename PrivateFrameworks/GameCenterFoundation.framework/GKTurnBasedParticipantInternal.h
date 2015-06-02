@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayerInternal, NSDate, NSString;
-
 @interface GKTurnBasedParticipantInternal : GKInternalRepresentation {
     NSString *_inviteMessage;
     GKPlayerInternal *_invitedBy;
@@ -16,16 +14,16 @@
     NSDate *_timeoutDate;
 }
 
-@property(retain) NSString * inviteMessage;
-@property(retain) GKPlayerInternal * invitedBy;
-@property(retain) NSDate * lastTurnDate;
-@property unsigned int matchOutcome;
-@property(retain) GKPlayerInternal * player;
-@property(readonly) NSString * playerID;
-@property(retain) NSString * sessionID;
-@property unsigned char slot;
-@property(retain) NSString * status;
-@property(retain) NSDate * timeoutDate;
+@property (nonatomic, retain) NSString *inviteMessage;
+@property (nonatomic, retain) GKPlayerInternal *invitedBy;
+@property (nonatomic, retain) NSDate *lastTurnDate;
+@property (nonatomic) unsigned int matchOutcome;
+@property (nonatomic, retain) GKPlayerInternal *player;
+@property (nonatomic, readonly) NSString *playerID;
+@property (nonatomic, retain) NSString *sessionID;
+@property (nonatomic) unsigned char slot;
+@property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSDate *timeoutDate;
 
 + (id)secureCodedPropertyKeys;
 

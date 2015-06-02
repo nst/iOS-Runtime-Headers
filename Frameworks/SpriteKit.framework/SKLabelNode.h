@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSMutableArray, NSString, SKBitmapFont, SKSpriteNode, UIColor;
-
 @interface SKLabelNode : SKNode {
     SKBitmapFont *_bmf;
     struct { 
@@ -34,15 +32,15 @@
     int _verticalAlignmentMode;
 }
 
-@property int blendMode;
-@property(retain) UIColor * color;
-@property float colorBlendFactor;
-@property(retain) UIColor * fontColor;
-@property(copy) NSString * fontName;
-@property float fontSize;
-@property int horizontalAlignmentMode;
-@property(copy) NSString * text;
-@property int verticalAlignmentMode;
+@property (nonatomic) int blendMode;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) float colorBlendFactor;
+@property (nonatomic, retain) UIColor *fontColor;
+@property (nonatomic, copy) NSString *fontName;
+@property (nonatomic) float fontSize;
+@property (nonatomic) int horizontalAlignmentMode;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int verticalAlignmentMode;
 
 + (id)_labelNodeWithFontNamed:(id)arg1;
 + (id)_labelNodeWithFontTexture:(id)arg1 fontDataString:(id)arg2;

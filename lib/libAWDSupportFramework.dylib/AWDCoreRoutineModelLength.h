@@ -11,10 +11,10 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasLength;
-@property BOOL hasTimestamp;
-@property unsigned int length;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasLength;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int length;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

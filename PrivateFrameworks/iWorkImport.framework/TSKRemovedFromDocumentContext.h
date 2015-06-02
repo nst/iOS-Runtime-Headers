@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKRemovedFromDocumentContext : NSObject {
-}
+@interface TSKRemovedFromDocumentContext : NSObject
 
 + (id)hidingContext;
 + (id)movingContext;

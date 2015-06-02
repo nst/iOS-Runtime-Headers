@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class <GEOMapItem>, NSArray, NSUUID;
-
 @interface RTLocationOfInterest : NSObject <NSCopying, NSSecureCoding> {
     double _confidence;
     <GEOMapItem> *_geoMapItem;
@@ -15,14 +13,14 @@
     NSArray *_visits;
 }
 
-@property(readonly) double confidence;
-@property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) NSUUID * identifier;
-@property(readonly) double latitude;
-@property(readonly) double longitude;
-@property(readonly) int type;
-@property(readonly) double uncertainty;
-@property(readonly) NSArray * visits;
+@property (nonatomic, readonly) double confidence;
+@property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
+@property (nonatomic, readonly) NSUUID *identifier;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) double longitude;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) double uncertainty;
+@property (nonatomic, readonly) NSArray *visits;
 
 + (id)locationOfInterestTypeToString:(int)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableArray, VK3DObjectSubTile, VKAnimation;
-
 @interface VKBuildingTile : VKVectorTile {
     float _alpha;
     VKAnimation *_animation;
@@ -33,7 +26,7 @@
     float _maxLayeringHeight;
     float _minLayeringHeight;
     VK3DObjectSubTile *_objectSubTile;
-    NSMutableArray *_polygonGroups[3];
+    NSMutableArray *_polygonGroups;
     float _scale;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
@@ -49,18 +42,18 @@
     } _shadowViewUniformData;
 }
 
-@property float alpha;
-@property(retain) VKAnimation * animation;
-@property(retain) VKAnimation * animationForPitch;
-@property(readonly) struct CullingGridWithHeight { float x1[16]; } cullingGrid;
-@property(readonly) struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }* fogInfo;
-@property(readonly) double maxHeight;
-@property(readonly) float maxLayeringHeight;
-@property(readonly) float minLayeringHeight;
-@property(readonly) VK3DObjectSubTile * objectSubTile;
-@property float scale;
-@property(readonly) struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }* shadowTexture;
-@property(readonly) struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x1; struct __shared_weak_count {} *x2; } shadowViewUniformData;
+@property (nonatomic) float alpha;
+@property (nonatomic, retain) VKAnimation *animation;
+@property (nonatomic, retain) VKAnimation *animationForPitch;
+@property (nonatomic, readonly) struct CullingGridWithHeight { float x1[16]; } cullingGrid;
+@property (nonatomic, readonly) struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*fogInfo;
+@property (nonatomic, readonly) double maxHeight;
+@property (nonatomic, readonly) float maxLayeringHeight;
+@property (nonatomic, readonly) float minLayeringHeight;
+@property (nonatomic, readonly) VK3DObjectSubTile *objectSubTile;
+@property (nonatomic) float scale;
+@property (nonatomic, readonly) struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*shadowTexture;
+@property (nonatomic, readonly) struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x1; struct __shared_weak_count {} *x2; } shadowViewUniformData;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

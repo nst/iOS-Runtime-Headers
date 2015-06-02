@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSString;
-
 @interface TLSound : NSObject {
     NSString *_filePath;
     BOOL _shouldDisposeOfSoundID;
     unsigned long _soundID;
 }
 
-@property(setter=_setShouldDisposeOfSoundID:) BOOL _shouldDisposeOfSoundID;
-@property(copy) NSString * filePath;
-@property unsigned long soundID;
+@property (setter=_setShouldDisposeOfSoundID:, nonatomic) BOOL _shouldDisposeOfSoundID;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic) unsigned long soundID;
 
 - (void)_setFilePath:(id)arg1;
 - (void)_setShouldDisposeOfSoundID:(BOOL)arg1;

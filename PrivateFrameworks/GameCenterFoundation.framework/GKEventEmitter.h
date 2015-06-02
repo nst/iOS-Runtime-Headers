@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSHashTable, NSMutableArray;
-
 @interface GKEventEmitter : NSObject {
     NSHashTable *_listeners;
     NSMutableArray *_queuedEvents;
@@ -11,10 +9,10 @@
     NSMutableArray *_supportedProtocols;
 }
 
-@property(retain) NSHashTable * listeners;
-@property(retain) NSMutableArray * queuedEvents;
-@property BOOL shouldQueue;
-@property(retain) NSMutableArray * supportedProtocols;
+@property (nonatomic, retain) NSHashTable *listeners;
+@property (nonatomic, retain) NSMutableArray *queuedEvents;
+@property (nonatomic) BOOL shouldQueue;
+@property (nonatomic, retain) NSMutableArray *supportedProtocols;
 
 + (id)eventEmitterForProtocols:(id)arg1;
 + (id)eventEmitterForProtocols:(id)arg1 shouldQueue:(BOOL)arg2;

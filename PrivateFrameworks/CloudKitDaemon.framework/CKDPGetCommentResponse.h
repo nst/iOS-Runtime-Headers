@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPComment;
-
 @interface CKDPGetCommentResponse : PBCodable <NSCopying> {
     CKDPComment *_comment;
 }
 
-@property(retain) CKDPComment * comment;
-@property(readonly) BOOL hasComment;
+@property (nonatomic, retain) CKDPComment *comment;
+@property (nonatomic, readonly) BOOL hasComment;
 
 - (void).cxx_destruct;
 - (id)comment;

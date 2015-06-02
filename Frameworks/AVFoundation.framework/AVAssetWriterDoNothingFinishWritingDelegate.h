@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface AVAssetWriterDoNothingFinishWritingDelegate : NSObject <AVAssetWriterFinishWritingHelperDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     int _handlerCalled;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_callHandlerIfNotCalled;
 - (void)dealloc;
 - (void)finishWritingHelper:(id)arg1 didInitiateFinishWritingForFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2;
 - (void)finishWritingHelperDidCancelFinishWriting:(id)arg1;
 - (void)finishWritingHelperDidFail:(id)arg1;
-- (id)initWithHandler:(id)arg1;
+- (id)initWithHandler:(id /* block */)arg1;
 - (BOOL)shouldHelperPrepareInputs;
 
 @end

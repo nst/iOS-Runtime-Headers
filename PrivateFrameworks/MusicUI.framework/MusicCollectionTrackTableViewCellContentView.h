@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UILabel;
-
 @interface MusicCollectionTrackTableViewCellContentView : MusicStandardMediaTableViewCellContentView {
     float _maximumDurationWidth;
     UILabel *_trackNumberLabel;
     NSString *_trackNumberText;
 }
 
-@property float maximumDurationWidth;
-@property(copy) NSString * trackNumberText;
+@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic, copy) NSString *trackNumberText;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 + (void)contentSizeCategoryDidChange;

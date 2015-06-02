@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNClassicStylesheetRecord, NSArray, NSString;
-
 @interface KNMasterSlide : KNAbstractSlide <TSKTransformableObject> {
     NSArray *mBodyListStyles;
     NSArray *mBodyParagraphStyles;
@@ -26,18 +24,18 @@
     NSString *mThumbnailTextForTitlePlaceholder;
 }
 
-@property(copy) NSArray * bodyListStyles;
-@property(copy) NSArray * bodyParagraphStyles;
-@property(readonly) KNClassicStylesheetRecord * classicStylesheetRecord;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * name;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } objectRect;
-@property BOOL slideObjectsLayerWithMaster;
-@property(readonly) Class superclass;
-@property(retain) NSString * thumbnailTextForBodyPlaceholder;
-@property(retain) NSString * thumbnailTextForTitlePlaceholder;
+@property (nonatomic, copy) NSArray *bodyListStyles;
+@property (nonatomic, copy) NSArray *bodyParagraphStyles;
+@property (nonatomic, readonly) KNClassicStylesheetRecord *classicStylesheetRecord;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } objectRect;
+@property (nonatomic) BOOL slideObjectsLayerWithMaster;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *thumbnailTextForBodyPlaceholder;
+@property (nonatomic, retain) NSString *thumbnailTextForTitlePlaceholder;
 
 + (void)initialize;
 + (id)masterGuideColor;

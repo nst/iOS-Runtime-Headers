@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSDMagicMoveMatchingEngine : NSObject {
     NSMutableArray *_matches;
 }

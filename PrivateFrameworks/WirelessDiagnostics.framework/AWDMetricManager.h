@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/WirelessDiagnostics
  */
 
-@interface AWDMetricManager : NSObject {
-}
+@interface AWDMetricManager : NSObject
 
 + (void)postMetricWithId:(unsigned int)arg1;
 + (void)postMetricWithId:(unsigned int)arg1 boolValue:(BOOL)arg2;

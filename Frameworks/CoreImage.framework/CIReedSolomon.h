@@ -5,8 +5,8 @@
 @interface CIReedSolomon : NSObject {
     int _cachedGeneratorNum;
     struct { int *x1; int x2; } *_cachedGenerators;
-    int _expTable[256];
-    int _logTable[256];
+    int _expTable;
+    int _logTable;
     int _memoryCapacity;
 }
 

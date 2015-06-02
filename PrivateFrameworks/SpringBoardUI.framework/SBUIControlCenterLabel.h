@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSString;
+@interface SBUIControlCenterLabel : UILabel <SBUIControlCenterControl>
 
-@interface SBUIControlCenterLabel : UILabel <SBUIControlCenterControl> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)_currentState;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;

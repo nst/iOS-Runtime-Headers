@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDataDetector, NSNumberFormatter;
-
 @interface EKEventDescriptionGenerator : NSObject {
     NSDataDetector *_addressDetector;
     struct __CFDateFormatter { } *_dateFormatter;

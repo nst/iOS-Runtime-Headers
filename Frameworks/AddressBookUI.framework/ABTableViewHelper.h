@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABTableViewHelper : NSObject {
-}
+@interface ABTableViewHelper : NSObject
 
 + (id)newOverlayLabel;
 + (void)prepareCell:(id)arg1 asSelectedCell:(BOOL)arg2 styleProvider:(id)arg3;

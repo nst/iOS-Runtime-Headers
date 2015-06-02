@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISegmentedControlViewElementController;
-
 @interface SKUINavigationBarSegmentsController : SKUINavigationBarSectionController {
     SKUISegmentedControlViewElementController *_underlyingController;
 }

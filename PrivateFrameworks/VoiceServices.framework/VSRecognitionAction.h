@@ -2,24 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, VSRecognitionSession;
-
 @interface VSRecognitionAction : NSObject {
     NSString *_resultString;
     VSRecognitionSession *_session;
-
-  /* Error parsing encoded ivar type info: (?="stringValue"@"NSString""attributedStringValue"@"NSAttributedString") */
-    union { 
+    /* Warning: unhandled union encoding: '(?="stringValue"@"NSString""attributedStringValue"@"NSAttributedString")' */ union { 
         NSString *stringValue; 
         id attributedStringValue; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*NSAttributedString; 
     } _spokenString;
-
-    unsigned int _spokenStringIsAttributed : 1;
+    unsigned int _spokenStringIsAttributed;
     NSString *_statusString;
 }
 

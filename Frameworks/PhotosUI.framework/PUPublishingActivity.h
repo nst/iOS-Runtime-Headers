@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLPublishingAgent, UIViewController;
-
 @interface PUPublishingActivity : PUActivity {
     PLPublishingAgent *_currentAgent;
     double _endTime;
@@ -16,8 +14,8 @@
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_publishOverReferenceViewController;
 - (void)_publishingAgentDidCancel:(id)arg1;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;

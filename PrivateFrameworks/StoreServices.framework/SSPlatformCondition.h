@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPlatformCondition : SSProtocolCondition {
-}
+@interface SSPlatformCondition : SSProtocolCondition
 
 - (BOOL)evaluateWithContext:(id)arg1;
 

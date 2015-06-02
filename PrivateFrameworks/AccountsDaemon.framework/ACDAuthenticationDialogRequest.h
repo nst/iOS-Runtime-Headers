@@ -2,42 +2,32 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ACAccount, NSString, NSURL;
-
 @interface ACDAuthenticationDialogRequest : NSObject {
     ACAccount *_account;
     NSString *_authDelegateClassBundlePath;
     NSString *_authDelegateClassName;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     BOOL _confirmationRequired;
     NSURL *_url;
 }
 
-@property(retain) ACAccount * account;
-@property(copy) NSString * authDelegateClassBundlePath;
-@property(copy) NSString * authDelegateClassName;
-@property(copy) id completion;
-@property BOOL confirmationRequired;
-@property(copy) NSURL * url;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, copy) NSString *authDelegateClassBundlePath;
+@property (nonatomic, copy) NSString *authDelegateClassName;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic) BOOL confirmationRequired;
+@property (nonatomic, copy) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)account;
 - (id)authDelegateClassBundlePath;
 - (id)authDelegateClassName;
-- (id)completion;
+- (id /* block */)completion;
 - (BOOL)confirmationRequired;
 - (void)setAccount:(id)arg1;
 - (void)setAuthDelegateClassBundlePath:(id)arg1;
 - (void)setAuthDelegateClassName:(id)arg1;
-- (void)setCompletion:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setConfirmationRequired:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

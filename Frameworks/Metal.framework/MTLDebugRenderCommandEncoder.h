@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDepthStencilState>, <MTLDevice>, <MTLRenderPipelineState>, MTLDebugFunctionArgument, MTLDepthStencilDescriptor, MTLRenderPassDescriptor;
-
 @interface MTLDebugRenderCommandEncoder : MTLToolsRenderCommandEncoder {
     float _blendColorAlpha;
     float _blendColorBlue;
@@ -18,9 +16,9 @@
     <MTLDepthStencilState> *_depthStencilState;
     MTLRenderPassDescriptor *_descriptor;
     unsigned int _encoderState;
-    MTLDebugFunctionArgument *_fragmentBuffers[31];
-    MTLDebugFunctionArgument *_fragmentSamplers[16];
-    MTLDebugFunctionArgument *_fragmentTextures[31];
+    MTLDebugFunctionArgument *_fragmentBuffers;
+    MTLDebugFunctionArgument *_fragmentSamplers;
+    MTLDebugFunctionArgument *_fragmentTextures;
     unsigned int _frontFacingWinding;
     unsigned int _height;
     const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; } *_limits;
@@ -34,9 +32,9 @@
     } _scissorRect;
     unsigned int _stencilRef;
     unsigned int _triangleFillMode;
-    MTLDebugFunctionArgument *_vertexBuffers[31];
-    MTLDebugFunctionArgument *_vertexSamplers[16];
-    MTLDebugFunctionArgument *_vertexTextures[31];
+    MTLDebugFunctionArgument *_vertexBuffers;
+    MTLDebugFunctionArgument *_vertexSamplers;
+    MTLDebugFunctionArgument *_vertexTextures;
     struct { 
         double originX; 
         double originY; 
@@ -50,29 +48,29 @@
     unsigned int _width;
 }
 
-@property(readonly) float blendColorAlpha;
-@property(readonly) float blendColorBlue;
-@property(readonly) float blendColorGreen;
-@property(readonly) float blendColorRed;
-@property(readonly) <MTLDevice> * cachedDevice;
-@property(readonly) unsigned int cullMode;
-@property(readonly) MTLDepthStencilDescriptor * defaultDepthStencilDescriptor;
-@property(readonly) float depthBias;
-@property(readonly) float depthBiasClamp;
-@property(readonly) float depthBiasSlopeScale;
-@property(readonly) <MTLDepthStencilState> * depthStencilState;
-@property(copy,readonly) MTLRenderPassDescriptor * descriptor;
-@property(readonly) unsigned int frontFacingWinding;
-@property(readonly) unsigned int height;
-@property(readonly) float lineWidth;
-@property(readonly) <MTLRenderPipelineState> * renderPipelineState;
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } scissorRect;
-@property(readonly) unsigned int stencilRef;
-@property(readonly) unsigned int triangleFillMode;
-@property(readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; } viewport;
-@property(readonly) unsigned int visibilityResultMode;
-@property(readonly) unsigned int visibilityResultOffset;
-@property(readonly) unsigned int width;
+@property (nonatomic, readonly) float blendColorAlpha;
+@property (nonatomic, readonly) float blendColorBlue;
+@property (nonatomic, readonly) float blendColorGreen;
+@property (nonatomic, readonly) float blendColorRed;
+@property (nonatomic, readonly) <MTLDevice> *cachedDevice;
+@property (nonatomic, readonly) unsigned int cullMode;
+@property (nonatomic, readonly) MTLDepthStencilDescriptor *defaultDepthStencilDescriptor;
+@property (nonatomic, readonly) float depthBias;
+@property (nonatomic, readonly) float depthBiasClamp;
+@property (nonatomic, readonly) float depthBiasSlopeScale;
+@property (nonatomic, readonly) <MTLDepthStencilState> *depthStencilState;
+@property (nonatomic, readonly, copy) MTLRenderPassDescriptor *descriptor;
+@property (nonatomic, readonly) unsigned int frontFacingWinding;
+@property (readonly) unsigned int height;
+@property (nonatomic, readonly) float lineWidth;
+@property (nonatomic, readonly) <MTLRenderPipelineState> *renderPipelineState;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } scissorRect;
+@property (nonatomic, readonly) unsigned int stencilRef;
+@property (nonatomic, readonly) unsigned int triangleFillMode;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; } viewport;
+@property (nonatomic, readonly) unsigned int visibilityResultMode;
+@property (nonatomic, readonly) unsigned int visibilityResultOffset;
+@property (readonly) unsigned int width;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -97,12 +95,12 @@
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
 - (void)endEncoding;
-- (void)enumerateFragmentBuffersUsingBlock:(id)arg1;
-- (void)enumerateFragmentSamplersUsingBlock:(id)arg1;
-- (void)enumerateFragmentTexturesUsingBlock:(id)arg1;
-- (void)enumerateVertexBuffersUsingBlock:(id)arg1;
-- (void)enumerateVertexSamplersUsingBlock:(id)arg1;
-- (void)enumerateVertexTexturesUsingBlock:(id)arg1;
+- (void)enumerateFragmentBuffersUsingBlock:(id /* block */)arg1;
+- (void)enumerateFragmentSamplersUsingBlock:(id /* block */)arg1;
+- (void)enumerateFragmentTexturesUsingBlock:(id /* block */)arg1;
+- (void)enumerateVertexBuffersUsingBlock:(id /* block */)arg1;
+- (void)enumerateVertexSamplersUsingBlock:(id /* block */)arg1;
+- (void)enumerateVertexTexturesUsingBlock:(id /* block */)arg1;
 - (unsigned int)frontFacingWinding;
 - (unsigned int)height;
 - (id)initWithRenderCommandEncoder:(id)arg1 parent:(id)arg2 descriptor:(id)arg3;

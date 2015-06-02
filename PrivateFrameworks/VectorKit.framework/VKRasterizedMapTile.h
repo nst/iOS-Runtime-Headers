@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRasterizedMapTile : VKRasterTile {
-}
+@interface VKRasterizedMapTile : VKRasterTile
 
 - (void)buildTexture;
 - (void)gglBuildTexture;

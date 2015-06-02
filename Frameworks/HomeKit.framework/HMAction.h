@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMActionSet, NSUUID;
-
 @interface HMAction : NSObject {
     HMActionSet *_actionSet;
     unsigned int _actionType;
     NSUUID *_uuid;
 }
 
-@property HMActionSet * actionSet;
-@property unsigned int actionType;
-@property(retain) NSUUID * uuid;
+@property (nonatomic) HMActionSet *actionSet;
+@property (nonatomic) unsigned int actionType;
+@property (nonatomic, retain) NSUUID *uuid;
 
 + (id)actionWithInfo:(id)arg1 home:(id)arg2;
 + (id)lookupActionWithInfo:(id)arg1 inArray:(id)arg2;

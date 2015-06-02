@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMEffectSelectionViewControllerDelegate>, CIFilter, NSArray, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout;
-
 @interface CAMEffectSelectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     NSIndexPath *__selectedIndexPath;
     struct CGSize { 
@@ -20,12 +18,12 @@
     } _thumbnailSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CAMEffectSelectionViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CIFilter * selectedEffect;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CAMEffectSelectionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CIFilter *selectedEffect;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_generateFilters;

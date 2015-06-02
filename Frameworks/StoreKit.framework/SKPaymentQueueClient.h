@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSNumber, NSString;
-
 @interface SKPaymentQueueClient : NSObject <NSCopying> {
     BOOL _allowsBootstrapCellularData;
     NSString *_bundleIdentifier;
@@ -17,16 +15,16 @@
     NSString *_vendorIdentifier;
 }
 
-@property BOOL allowsBootstrapCellularData;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleVersion;
-@property BOOL hidesConfirmationDialogs;
-@property BOOL ignoresInAppPurchaseRestriction;
-@property(copy) NSString * receiptDirectoryPath;
-@property BOOL requiresAuthenticationForPayment;
-@property(copy) NSNumber * storeExternalVersion;
-@property(copy) NSNumber * storeItemIdentifier;
-@property(copy) NSString * vendorIdentifier;
+@property (nonatomic) BOOL allowsBootstrapCellularData;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic) BOOL hidesConfirmationDialogs;
+@property (nonatomic) BOOL ignoresInAppPurchaseRestriction;
+@property (nonatomic, copy) NSString *receiptDirectoryPath;
+@property (nonatomic) BOOL requiresAuthenticationForPayment;
+@property (nonatomic, copy) NSNumber *storeExternalVersion;
+@property (nonatomic, copy) NSNumber *storeItemIdentifier;
+@property (nonatomic, copy) NSString *vendorIdentifier;
 
 - (BOOL)allowsBootstrapCellularData;
 - (id)bundleIdentifier;

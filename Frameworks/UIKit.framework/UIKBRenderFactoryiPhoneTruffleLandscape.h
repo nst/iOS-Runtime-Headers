@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhoneTruffleLandscape : UIKBRenderFactoryiPhoneLandscape {
-}
+@interface UIKBRenderFactoryiPhoneTruffleLandscape : UIKBRenderFactoryiPhoneLandscape
 
 - (float)assistKeyFontSize;
 - (struct CGPoint { float x1; float x2; })boldKeyOffset;

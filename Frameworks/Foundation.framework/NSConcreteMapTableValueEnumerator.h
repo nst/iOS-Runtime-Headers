@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSConcreteMapTable;
-
 @interface NSConcreteMapTableValueEnumerator : NSEnumerator {
     unsigned int counter;
     NSConcreteMapTable *mapTable;

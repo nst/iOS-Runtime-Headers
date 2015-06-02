@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSObject<OS_dispatch_source>, NSString;
-
 @interface EKWatchdog : NSObject {
     NSString *_identifier;
     double _timeout;
     NSObject<OS_dispatch_source> *_timer;
 }
 
-+ (void)executeWithTimeout:(double)arg1 identifier:(id)arg2 block:(id)arg3;
++ (void)executeWithTimeout:(double)arg1 identifier:(id)arg2 block:(id /* block */)arg3;
 
 - (void)dealloc;
 - (id)initWithTimeout:(double)arg1 identifier:(id)arg2;
-- (id)initWithTimeout:(double)arg1 identifier:(id)arg2 block:(id)arg3;
+- (id)initWithTimeout:(double)arg1 identifier:(id)arg2 block:(id /* block */)arg3;
 - (void)invalidate;
 - (void)start;
 

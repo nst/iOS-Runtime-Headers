@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSAttributedString, NSString, UIImage;
-
 @interface MPUTextDrawing : NSObject {
     NSAttributedString *_attributedText;
     float _firstBaselineOffsetFromTop;
@@ -12,11 +10,11 @@
     NSString *_text;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property float firstBaselineOffsetFromTop;
-@property(retain) UIImage * image;
-@property float lastBaselineOffsetFromBottom;
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) float firstBaselineOffsetFromTop;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) float lastBaselineOffsetFromBottom;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (void)_setAttributedText:(id)arg1;

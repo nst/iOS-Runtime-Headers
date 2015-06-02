@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, _UISettings;
-
 @interface PTSToggleButton : PTSButton <PTSHUDControl, _UISettingsKeyPathObserver> {
     NSString *_titleForOffState;
     NSString *_titleForOnState;
@@ -11,18 +9,18 @@
     id _valueForOnState;
 }
 
-@property int alignment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property _UISettings * settings;
-@property(readonly) Class superclass;
-@property(copy) NSString * titleForOffState;
-@property(copy) NSString * titleForOnState;
-@property(copy) id valueForOffState;
-@property(copy) id valueForOnState;
-@property(copy) NSString * valueKeyPath;
+@property (nonatomic) int alignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) _UISettings *settings;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *titleForOffState;
+@property (nonatomic, copy) NSString *titleForOnState;
+@property (nonatomic, copy) id valueForOffState;
+@property (nonatomic, copy) id valueForOnState;
+@property (nonatomic, copy) NSString *valueKeyPath;
 
 + (id)toggleButtonForSettings:(id)arg1 valueKeyPath:(id)arg2 titleForOnState:(id)arg3 titleForOffState:(id)arg4;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSDate;
-
 @interface MSPBTimerContext : NSObject {
     NSDate *_date;
     BOOL _isValid;
 }
 
-@property(retain) NSDate * date;
-@property BOOL isValid;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) BOOL isValid;
 
 + (id)contextWithDate:(id)arg1;
 

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIRowComponent, SKUIViewElementLayoutContext;
-
 @interface SKUIRowViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIRowComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIRowComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)_cellClassForCardViewElement:(id)arg1;
 - (Class)_cellClassForLockupViewElement:(id)arg1;
 - (Class)_cellClassForViewElement:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForIndexPath:(id)arg1;
-- (void)_enumerateViewElementsUsingBlock:(id)arg1;
+- (void)_enumerateViewElementsUsingBlock:(id /* block */)arg1;
 - (id)_firstChildForColumn:(id)arg1;
 - (float)_interiorColumnSpacing;
 - (void)_requestLayoutForCells;

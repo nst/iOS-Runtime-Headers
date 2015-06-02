@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPopoverControllerDelegate>, NSString, UIAlertController, UIAlertView, UIPopoverController, UIViewController, _UIAlertControllerShimPresenterWindow;
-
 @interface _UIAlertControllerShimPresenter : NSObject <UIPopoverControllerDelegate> {
     UIAlertController *_alertController;
     UIViewController *_inPopoverViewController;
@@ -13,14 +11,14 @@
     _UIAlertControllerShimPresenterWindow *_window;
 }
 
-@property UIAlertController * alertController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UIAlertView * legacyAlert;
-@property <UIPopoverControllerDelegate> * popoverDelegate;
-@property(readonly) Class superclass;
-@property(readonly) _UIAlertControllerShimPresenterWindow * window;
+@property UIAlertController *alertController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property UIAlertView *legacyAlert;
+@property <UIPopoverControllerDelegate> *popoverDelegate;
+@property (readonly) Class superclass;
+@property (readonly) _UIAlertControllerShimPresenterWindow *window;
 
 + (void)_addPresenter:(id)arg1;
 + (void)_cancelPendingTouchesIfAppropriate;
@@ -31,11 +29,11 @@
 + (id)_topmostLegacyAlertIncludingPresentingAlerts:(BOOL)arg1;
 
 - (void)_createWindowIfNecessary;
-- (void)_dismissAlertControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)_dismissAlertControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)_popoverController;
-- (void)_presentAlertControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (void)_presentAlertControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_presentAlertControllerFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)_presentAlertControllerFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)_tearDownInPopoverViewController;
 - (id)alertController;
 - (void)dealloc;

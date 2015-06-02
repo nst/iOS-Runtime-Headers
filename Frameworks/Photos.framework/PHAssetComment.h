@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSDate, NSString;
-
 @interface PHAssetComment : PHObject {
     BOOL _canBeDeletedByUser;
     NSString *_cloudGUID;
@@ -19,24 +17,24 @@
     BOOL _isMyComment;
 }
 
-@property(readonly) BOOL canBeDeletedByUser;
-@property(readonly) NSString * cloudGUID;
-@property(readonly) NSDate * commentClientDate;
-@property(readonly) NSDate * commentDate;
-@property(readonly) NSString * commentText;
-@property(readonly) NSString * commenterDisplayName;
-@property(readonly) NSString * commenterEmail;
-@property(readonly) NSString * commenterFirstName;
-@property(readonly) NSString * commenterFullName;
-@property(readonly) NSString * commenterHashedPersonID;
-@property(readonly) NSString * commenterLastName;
-@property(readonly) BOOL isBatchComment;
-@property(readonly) BOOL isCaption;
-@property(readonly) BOOL isDeletable;
-@property(readonly) BOOL isInterestingForAlbumsSorting;
-@property(readonly) BOOL isInterestingToUser;
-@property(readonly) BOOL isLike;
-@property(readonly) BOOL isMyComment;
+@property (nonatomic, readonly) BOOL canBeDeletedByUser;
+@property (nonatomic, readonly) NSString *cloudGUID;
+@property (nonatomic, readonly) NSDate *commentClientDate;
+@property (nonatomic, readonly) NSDate *commentDate;
+@property (nonatomic, readonly) NSString *commentText;
+@property (nonatomic, readonly) NSString *commenterDisplayName;
+@property (nonatomic, readonly) NSString *commenterEmail;
+@property (nonatomic, readonly) NSString *commenterFirstName;
+@property (nonatomic, readonly) NSString *commenterFullName;
+@property (nonatomic, readonly) NSString *commenterHashedPersonID;
+@property (nonatomic, readonly) NSString *commenterLastName;
+@property (nonatomic, readonly) BOOL isBatchComment;
+@property (nonatomic, readonly) BOOL isCaption;
+@property (nonatomic, readonly) BOOL isDeletable;
+@property (nonatomic, readonly) BOOL isInterestingForAlbumsSorting;
+@property (nonatomic, readonly) BOOL isInterestingToUser;
+@property (nonatomic, readonly) BOOL isLike;
+@property (nonatomic, readonly) BOOL isMyComment;
 
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;

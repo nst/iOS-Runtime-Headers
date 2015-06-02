@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVExternalDeviceControllerDelegate>, AVExternalDeviceControllerInternal, NSArray;
-
 @interface AVExternalDeviceController : NSObject {
     AVExternalDeviceControllerInternal *_externalDeviceController;
 }
 
-@property(copy,readonly) NSArray * availableExternalDevices;
-@property <AVExternalDeviceControllerDelegate> * delegate;
-@property int discoveryMode;
+@property (nonatomic, readonly, copy) NSArray *availableExternalDevices;
+@property (nonatomic) <AVExternalDeviceControllerDelegate> *delegate;
+@property (nonatomic) int discoveryMode;
 
 - (id)availableExternalDevices;
 - (void)dealloc;

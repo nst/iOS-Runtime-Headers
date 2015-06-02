@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOMapItem>, GEOMapServiceTraits, GEOPDAutocompleteEntry, NSArray, NSData, NSString;
-
 @interface _GEOPlaceSearchCompletionItem : NSObject <GEOCompletionItemPrivate> {
     NSArray *_displayLines;
     GEOPDAutocompleteEntry *_entry;
@@ -13,16 +11,16 @@
     GEOMapServiceTraits *_traits;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * displayLines;
-@property(readonly) GEOPDAutocompleteEntry * entry;
-@property(readonly) NSData * entryMetadata;
-@property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * metadata;
-@property(getter=_placeDataAutocompleteEntry,readonly) GEOPDAutocompleteEntry * placeDataAutocompleteEntry;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *displayLines;
+@property (nonatomic, readonly) GEOPDAutocompleteEntry *entry;
+@property (nonatomic, readonly) NSData *entryMetadata;
+@property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *metadata;
+@property (getter=_placeDataAutocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *placeDataAutocompleteEntry;
+@property (readonly) Class superclass;
 
 - (id)_placeDataAutocompleteEntry;
 - (id)calloutTitle;

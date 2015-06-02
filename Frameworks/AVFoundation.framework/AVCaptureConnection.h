@@ -2,34 +2,32 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnectionInternal, AVCaptureOutput, AVCaptureVideoPreviewLayer, NSArray;
-
 @interface AVCaptureConnection : NSObject {
     AVCaptureConnectionInternal *_internal;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) int activeVideoStabilizationMode;
-@property(readonly) NSArray * audioChannels;
-@property BOOL automaticallyAdjustsVideoMirroring;
-@property(getter=isEnabled) BOOL enabled;
-@property BOOL enablesVideoStabilizationWhenAvailable;
-@property(readonly) NSArray * inputPorts;
-@property(readonly) AVCaptureOutput * output;
-@property int preferredVideoStabilizationMode;
-@property(getter=isVideoMaxFrameDurationSupported,readonly) BOOL supportsVideoMaxFrameDuration;
-@property(getter=isVideoMinFrameDurationSupported,readonly) BOOL supportsVideoMinFrameDuration;
-@property(getter=isVideoMirroringSupported,readonly) BOOL supportsVideoMirroring;
-@property(getter=isVideoOrientationSupported,readonly) BOOL supportsVideoOrientation;
-@property(getter=isVideoStabilizationSupported,readonly) BOOL supportsVideoStabilization;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
-@property(readonly) float videoMaxScaleAndCropFactor;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
-@property(getter=isVideoMirrored) BOOL videoMirrored;
-@property int videoOrientation;
-@property(readonly) AVCaptureVideoPreviewLayer * videoPreviewLayer;
-@property float videoScaleAndCropFactor;
-@property(getter=isVideoStabilizationEnabled,readonly) BOOL videoStabilizationEnabled;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) int activeVideoStabilizationMode;
+@property (nonatomic, readonly) NSArray *audioChannels;
+@property (nonatomic) BOOL automaticallyAdjustsVideoMirroring;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) BOOL enablesVideoStabilizationWhenAvailable;
+@property (nonatomic, readonly) NSArray *inputPorts;
+@property (nonatomic, readonly) AVCaptureOutput *output;
+@property (nonatomic) int preferredVideoStabilizationMode;
+@property (getter=isVideoMaxFrameDurationSupported, nonatomic, readonly) BOOL supportsVideoMaxFrameDuration;
+@property (getter=isVideoMinFrameDurationSupported, nonatomic, readonly) BOOL supportsVideoMinFrameDuration;
+@property (getter=isVideoMirroringSupported, nonatomic, readonly) BOOL supportsVideoMirroring;
+@property (getter=isVideoOrientationSupported, nonatomic, readonly) BOOL supportsVideoOrientation;
+@property (getter=isVideoStabilizationSupported, nonatomic, readonly) BOOL supportsVideoStabilization;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
+@property (nonatomic, readonly) float videoMaxScaleAndCropFactor;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
+@property (getter=isVideoMirrored, nonatomic) BOOL videoMirrored;
+@property (nonatomic) int videoOrientation;
+@property (nonatomic, readonly) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property (nonatomic) float videoScaleAndCropFactor;
+@property (getter=isVideoStabilizationEnabled, nonatomic, readonly) BOOL videoStabilizationEnabled;
 
 + (id)alloc;
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;

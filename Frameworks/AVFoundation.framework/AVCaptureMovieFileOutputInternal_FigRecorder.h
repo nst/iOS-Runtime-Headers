@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface AVCaptureMovieFileOutputInternal_FigRecorder : NSObject {
     NSArray *metadata;
     struct { 

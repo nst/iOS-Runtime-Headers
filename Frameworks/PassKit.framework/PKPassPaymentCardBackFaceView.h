@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassPaymentCardBackFaceView : PKPassBackFaceView {
-}
+@interface PKPassPaymentCardBackFaceView : PKPassBackFaceView
 
 @end

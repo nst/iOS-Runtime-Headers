@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUDOMElement, UIBarButtonItem;
-
 @interface SUScriptPopOverNativeObject : SUScriptNativeObject {
     BOOL _redisplayAfterRotation;
     UIBarButtonItem *_sourceButtonItem;
     SUDOMElement *_sourceDOMElement;
 }
 
-@property(retain) UIBarButtonItem * sourceButtonItem;
-@property(retain) SUDOMElement * sourceDOMElement;
+@property (nonatomic, retain) UIBarButtonItem *sourceButtonItem;
+@property (nonatomic, retain) SUDOMElement *sourceDOMElement;
 
 - (BOOL)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;

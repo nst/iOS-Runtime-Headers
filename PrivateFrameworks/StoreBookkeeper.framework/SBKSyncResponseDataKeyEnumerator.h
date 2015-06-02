@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSEnumerator, SBKSyncResponseData, SBKSyncTransaction;
-
 @interface SBKSyncResponseDataKeyEnumerator : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSEnumerator *_conflictedKeysEnumerator;
     NSEnumerator *_deletedKeysEnumerator;
     BOOL _resolvedConflictsNeedSyncToServer;
@@ -22,26 +12,26 @@
     NSEnumerator *_updatedKeysEnumerator;
 }
 
-@property(copy) id completionBlock;
-@property(retain) NSEnumerator * conflictedKeysEnumerator;
-@property(retain) NSEnumerator * deletedKeysEnumerator;
+@property (copy) id /* block */ completionBlock;
+@property (retain) NSEnumerator *conflictedKeysEnumerator;
+@property (retain) NSEnumerator *deletedKeysEnumerator;
 @property BOOL resolvedConflictsNeedSyncToServer;
-@property(retain) SBKSyncResponseData * responseData;
-@property(retain) SBKSyncTransaction * transaction;
-@property(retain) NSEnumerator * updatedKeysEnumerator;
+@property (retain) SBKSyncResponseData *responseData;
+@property (retain) SBKSyncTransaction *transaction;
+@property (retain) NSEnumerator *updatedKeysEnumerator;
 
 - (void).cxx_destruct;
 - (void)_processDeletedKey:(id)arg1 isDirty:(BOOL*)arg2;
 - (void)_processNextKey;
 - (void)_processUpdatedKey:(id)arg1 isConflict:(BOOL)arg2 isDirty:(BOOL*)arg3;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)conflictedKeysEnumerator;
 - (id)deletedKeysEnumerator;
-- (void)enumerateKeysInResponseForTransaction:(id)arg1 completionBlock:(id)arg2;
+- (void)enumerateKeysInResponseForTransaction:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithResponseData:(id)arg1;
 - (BOOL)resolvedConflictsNeedSyncToServer;
 - (id)responseData;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setConflictedKeysEnumerator:(id)arg1;
 - (void)setDeletedKeysEnumerator:(id)arg1;
 - (void)setResolvedConflictsNeedSyncToServer:(BOOL)arg1;

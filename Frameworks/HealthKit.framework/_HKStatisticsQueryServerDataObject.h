@@ -7,8 +7,8 @@
     unsigned int _options;
 }
 
-@property unsigned int mergeStrategy;
-@property unsigned int options;
+@property (nonatomic) unsigned int mergeStrategy;
+@property (nonatomic) unsigned int options;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKNSError : WKObject <NSCopying> {
-}
+@interface WKNSError : WKObject <NSCopying>
 
 - (id)_web_createTarget;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDReference;
-
 @interface EDPivotArea : NSObject {
     bool mGrandCol;
     bool mGrandRow;

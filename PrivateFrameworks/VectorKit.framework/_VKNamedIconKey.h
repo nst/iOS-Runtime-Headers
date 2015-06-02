@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface _VKNamedIconKey : NSObject {
     NSString *_name;
     int _size;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel;
-
 @interface PSUsageSizeHeader : UIView <PSHeaderFooterView> {
     float _height;
     UILabel *_sizeLabel;

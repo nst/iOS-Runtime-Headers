@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSEntityDescription, NSPredicate, NSString;
-
 @interface NSBatchUpdateRequest : NSPersistentStoreRequest <NSPredicatedStoreRequest> {
     NSDictionary *_columnsToUpdate;
     id _entity;
@@ -17,16 +15,16 @@
     NSPredicate *_predicate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSEntityDescription * entity;
-@property(copy,readonly) NSString * entityName;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSEntityDescription *entity;
+@property (readonly, copy) NSString *entityName;
+@property (readonly) unsigned int hash;
 @property BOOL includesSubentities;
-@property(retain) NSPredicate * predicate;
-@property(copy) NSDictionary * propertiesToUpdate;
+@property (retain) NSPredicate *predicate;
+@property (copy) NSDictionary *propertiesToUpdate;
 @property unsigned int resultType;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (id)batchUpdateRequestWithEntityName:(id)arg1;
 

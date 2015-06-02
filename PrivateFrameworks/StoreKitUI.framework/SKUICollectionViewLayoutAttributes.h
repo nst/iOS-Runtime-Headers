@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor *_backgroundColor;
     int _position;
 }
 
-@property(copy) UIColor * backgroundColor;
-@property int position;
+@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic) int position;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;

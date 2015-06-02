@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSArray, NSMutableArray;
-
 @interface RCWaveform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     unsigned int _decodedVersion;
     NSMutableArray *_segments;
 }
 
-@property(readonly) unsigned int averagePowerLevelsRate;
-@property(readonly) NSArray * segments;
+@property (nonatomic, readonly) unsigned int averagePowerLevelsRate;
+@property (nonatomic, readonly) NSArray *segments;
 
 + (void)initialize;
 + (id)waveformURLForAVURL:(id)arg1;

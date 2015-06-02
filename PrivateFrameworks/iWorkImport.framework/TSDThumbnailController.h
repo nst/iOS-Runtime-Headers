@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDThumbnailControllerDelegate>, <TSDThumbnailProducer>, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, TSDThumbnailGenerator, TSKDocumentRoot, TSULRUCache;
-
 @interface TSDThumbnailController : NSObject <TSDThumbnailConsumer> {
     BOOL _callbackScheduled;
     double _delayBeforeRedraw;
@@ -22,16 +20,16 @@
     BOOL _tornDown;
 }
 
-@property struct CGColor { }* backgroundColor;
-@property(copy,readonly) NSString * debugDescription;
-@property double delayBeforeRedraw;
-@property <TSDThumbnailControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSSet * dirtySet;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property <TSDThumbnailProducer> * producer;
-@property(readonly) Class superclass;
+@property (nonatomic) struct CGColor { }*backgroundColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double delayBeforeRedraw;
+@property (nonatomic) <TSDThumbnailControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSSet *dirtySet;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <TSDThumbnailProducer> *producer;
+@property (readonly) Class superclass;
 
 - (struct CGColor { }*)backgroundColor;
 - (id)cachedThumbnail:(id)arg1;

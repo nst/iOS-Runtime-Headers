@@ -27,10 +27,10 @@
     } _layoutAttributesFrame;
 }
 
-@property float afterPinningLocationYAdditions;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availablePinningFrame;
-@property float beforePinningLocationYAdditions;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layoutAttributesFrame;
+@property (nonatomic) float afterPinningLocationYAdditions;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availablePinningFrame;
+@property (nonatomic) float beforePinningLocationYAdditions;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } layoutAttributesFrame;
 
 - (float)afterPinningLocationYAdditions;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })availablePinningFrame;

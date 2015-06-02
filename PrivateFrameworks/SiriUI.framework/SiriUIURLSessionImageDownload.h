@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, UIColor;
-
 @interface SiriUIURLSessionImageDownload : NSObject {
     UIColor *_backgroundFillColor;
     id _client;
@@ -21,11 +15,7 @@
     struct CGImageSource { } *_imageSource;
     unsigned int _lastUpdatedLength;
     BOOL _newDataAvailableToRender;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_renderTimer;
 }
@@ -35,6 +25,6 @@
 - (void)appendDownloadedData:(id)arg1 fromURL:(id)arg2;
 - (void)dealloc;
 - (void)finishedFromURL:(id)arg1 error:(id)arg2;
-- (id)initWithFitToSize:(struct CGSize { float x1; float x2; })arg1 progressHandler:(id)arg2 incremental:(BOOL)arg3 client:(id)arg4 fillColor:(id)arg5;
+- (id)initWithFitToSize:(struct CGSize { float x1; float x2; })arg1 progressHandler:(id /* block */)arg2 incremental:(BOOL)arg3 client:(id)arg4 fillColor:(id)arg5;
 
 @end

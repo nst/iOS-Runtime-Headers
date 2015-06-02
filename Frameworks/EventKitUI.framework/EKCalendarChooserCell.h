@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIImage, UIImageView;
-
 @interface EKCalendarChooserCell : EKUIConstrainedFontsTableViewCell {
     BOOL _checked;
     UIImageView *_checkmarkView;
@@ -15,10 +13,10 @@
     BOOL _showsColorDot;
 }
 
-@property BOOL checked;
-@property BOOL shouldAnimate;
-@property BOOL showCheckmarksOnLeft;
-@property BOOL showsColorDot;
+@property (nonatomic) BOOL checked;
+@property (nonatomic) BOOL shouldAnimate;
+@property (nonatomic) BOOL showCheckmarksOnLeft;
+@property (nonatomic) BOOL showsColorDot;
 
 - (void).cxx_destruct;
 - (BOOL)checked;

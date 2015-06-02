@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface HDCodableNanoSyncStatus : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, HDSyncAnchorMap, NSCopying> {
     NSMutableArray *_anchors;
     struct { 
@@ -12,13 +10,13 @@
     int _statusCode;
 }
 
-@property(retain) NSMutableArray * anchors;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasStatusCode;
-@property(readonly) unsigned int hash;
-@property int statusCode;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *anchors;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasStatusCode;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int statusCode;
+@property (readonly) Class superclass;
 
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
@@ -38,7 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id)arg1;
+- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id /* block */)arg1;
 - (BOOL)hasStatusCode;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

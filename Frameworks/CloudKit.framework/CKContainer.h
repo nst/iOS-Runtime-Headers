@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class ACAccountStore, CKAccountInfo, CKContainerID, CKContainerSetupInfo, CKDatabase, CKOperationCallbackManager, CKOperationFlowControlManager, CKRecordID, NSMutableArray, NSOperationQueue, NSString, NSXPCConnection;
-
 @interface CKContainer : NSObject {
     CKAccountInfo *_accountInfoOverride;
     ACAccountStore *_accountStore;
@@ -28,31 +26,31 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy) CKAccountInfo * accountInfoOverride;
-@property(retain) ACAccountStore * accountStore;
-@property(retain) CKContainerSetupInfo * cachedSetupInfo;
-@property(retain) CKOperationCallbackManager * callbackManager;
-@property(retain) CKContainerID * containerID;
-@property(readonly) NSString * containerIdentifier;
-@property(retain) CKRecordID * containerScopedUserID;
-@property(retain) NSOperationQueue * convenienceOperationQueue;
-@property(retain) CKOperationFlowControlManager * flowControlManager;
-@property BOOL hasCachedSetupInfo;
-@property BOOL hasValidConnection;
-@property int killSwitchToken;
-@property BOOL needsSandboxExtensions;
-@property(retain) CKDatabase * privateCloudDatabase;
-@property(retain) CKDatabase * publicCloudDatabase;
-@property(retain) NSMutableArray * sandboxExtensionHandles;
-@property(retain) CKDatabase * sharedCloudDatabase;
-@property(readonly) CKDatabase * sharedCloudDatabase;
-@property int statusReportToken;
-@property(retain) NSOperationQueue * throttlingOperationQueue;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, copy) CKAccountInfo *accountInfoOverride;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, retain) CKContainerSetupInfo *cachedSetupInfo;
+@property (nonatomic, retain) CKOperationCallbackManager *callbackManager;
+@property (nonatomic, retain) CKContainerID *containerID;
+@property (nonatomic, readonly) NSString *containerIdentifier;
+@property (nonatomic, retain) CKRecordID *containerScopedUserID;
+@property (nonatomic, retain) NSOperationQueue *convenienceOperationQueue;
+@property (nonatomic, retain) CKOperationFlowControlManager *flowControlManager;
+@property (nonatomic) BOOL hasCachedSetupInfo;
+@property (nonatomic) BOOL hasValidConnection;
+@property (nonatomic) int killSwitchToken;
+@property (nonatomic) BOOL needsSandboxExtensions;
+@property (nonatomic, retain) CKDatabase *privateCloudDatabase;
+@property (nonatomic, retain) CKDatabase *publicCloudDatabase;
+@property (nonatomic, retain) NSMutableArray *sandboxExtensionHandles;
+@property (nonatomic, retain) CKDatabase *sharedCloudDatabase;
+@property (nonatomic, readonly) CKDatabase *sharedCloudDatabase;
+@property (nonatomic) int statusReportToken;
+@property (nonatomic, retain) NSOperationQueue *throttlingOperationQueue;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)containerWithIdentifier:(id)arg1;
 + (id)defaultContainer;
-+ (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id)arg3;
++ (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -60,7 +58,7 @@
 - (id)_checkSelfContainerIdentifier;
 - (void)_cleanupSandboxExtensionHandles:(id)arg1;
 - (void)_consumeSandboxExtensions:(id)arg1;
-- (void)_fetchUserIdentityWithInfo:(id)arg1 completionHandler:(id)arg2;
+- (void)_fetchUserIdentityWithInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
 - (void)_setupWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
@@ -68,11 +66,11 @@
 - (id)_untrustedEntitlementForKey:(id)arg1;
 - (void)accountChangedWithID:(id)arg1;
 - (id)accountInfoOverride;
-- (void)accountStatusWithCompletionHandler:(id)arg1;
+- (void)accountStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)accountStore;
 - (void)accountsDidGrantAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)accountsDidRevokeAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
-- (void)accountsWillDeleteAccount:(id)arg1 completionHandler:(id)arg2;
+- (void)accountsWillDeleteAccount:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addOperation:(id)arg1;
 - (id)cachedSetupInfo;
 - (id)callbackManager;
@@ -81,17 +79,17 @@
 - (id)containerIdentifier;
 - (id)containerScopedUserID;
 - (id)convenienceOperationQueue;
-- (id)daemonWithErrorHandler:(id)arg1;
+- (id)daemonWithErrorHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)discoverAllContactUserInfosWithCompletionHandler:(id)arg1;
-- (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(id)arg2;
-- (void)discoverUserInfoWithUserRecordID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchUserIdentityWithEmailAddress:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchUserIdentityWithUserRecordID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchUserRecordIDWithCompletionHandler:(id)arg1;
+- (void)discoverAllContactUserInfosWithCompletionHandler:(id /* block */)arg1;
+- (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)discoverUserInfoWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchUserIdentityWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchUserIdentityWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchUserRecordIDWithCompletionHandler:(id /* block */)arg1;
 - (id)flowControlManager;
-- (void)getNewWebSharingIdentity:(id)arg1;
+- (void)getNewWebSharingIdentity:(id /* block */)arg1;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
 - (BOOL)hasCachedSetupInfo;
@@ -102,13 +100,13 @@
 - (BOOL)needsSandboxExtensions;
 - (id)privateCloudDatabase;
 - (id)publicCloudDatabase;
-- (void)requestApplicationPermission:(unsigned int)arg1 completionHandler:(id)arg2;
-- (void)resetAllApplicationPermissionsWithCompletionHandler:(id)arg1;
+- (void)requestApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)resetAllApplicationPermissionsWithCompletionHandler:(id /* block */)arg1;
 - (id)sandboxExtensionHandles;
-- (void)serverPreferredPushEnvironmentWithCompletionHandler:(id)arg1;
+- (void)serverPreferredPushEnvironmentWithCompletionHandler:(id /* block */)arg1;
 - (void)setAccountInfoOverride:(id)arg1;
 - (void)setAccountStore:(id)arg1;
-- (void)setApplicationPermission:(unsigned int)arg1 enabled:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)setApplicationPermission:(unsigned int)arg1 enabled:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCachedSetupInfo:(id)arg1;
 - (void)setCallbackManager:(id)arg1;
 - (void)setContainerID:(id)arg1;
@@ -134,12 +132,12 @@
 - (id)sharedCloudDatabase;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
-- (void)statusForApplicationPermission:(unsigned int)arg1 completionHandler:(id)arg2;
-- (void)statusGroupsForApplicationPermission:(unsigned int)arg1 completionHandler:(id)arg2;
+- (void)statusForApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)statusGroupsForApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (id)statusReport;
 - (int)statusReportToken;
 - (id)throttlingOperationQueue;
-- (void)tossConfigWithCompletionHandler:(id)arg1;
+- (void)tossConfigWithCompletionHandler:(id /* block */)arg1;
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
 - (id)xpcConnection;

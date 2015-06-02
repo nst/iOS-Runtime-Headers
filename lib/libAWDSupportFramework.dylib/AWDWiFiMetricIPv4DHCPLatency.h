@@ -15,14 +15,14 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int dhcpLatencyMilliSecs;
-@property unsigned int dhcpLeaseMins;
-@property BOOL hasDhcpLatencyMilliSecs;
-@property BOOL hasDhcpLeaseMins;
-@property BOOL hasSecurityType;
-@property BOOL hasTimestamp;
-@property unsigned int securityType;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int dhcpLatencyMilliSecs;
+@property (nonatomic) unsigned int dhcpLeaseMins;
+@property (nonatomic) BOOL hasDhcpLatencyMilliSecs;
+@property (nonatomic) BOOL hasDhcpLeaseMins;
+@property (nonatomic) BOOL hasSecurityType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int securityType;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

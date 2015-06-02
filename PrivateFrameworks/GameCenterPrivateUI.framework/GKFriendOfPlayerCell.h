@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UILabel;
-
 @interface GKFriendOfPlayerCell : GKBasePlayerCell {
     UILabel *_commonalitiesLabel;
 }
 
-@property(retain) UILabel * commonalitiesLabel;
+@property (nonatomic, retain) UILabel *commonalitiesLabel;
 
 - (id)commonalitiesLabel;
 - (void)dealloc;

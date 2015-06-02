@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface HKEmergencyCardGroupTableItem : HKEmergencyCardTableItem {
     NSMutableArray *_cumulativeRowOffsets;
     BOOL _enabled;
     NSArray *_subitems;
 }
 
-@property BOOL enabled;
-@property(retain) NSArray * subitems;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, retain) NSArray *subitems;
 
 - (void).cxx_destruct;
 - (void)_getSubitem:(id*)arg1 andSubitemRow:(int*)arg2 forTableViewRow:(int)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable;
-
 @interface _UIAssociationTable : NSObject {
     NSMapTable *_leftToRightHashTables;
     NSMapTable *_rightToLeftHashTables;

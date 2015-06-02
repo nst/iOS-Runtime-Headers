@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CalDAVPutCalendarItemTaskDelegate>, NSString;
-
 @interface CalDAVPutCalendarItemTask : CoreDAVPutTask {
     NSString *_previousScheduleTag;
 }
 
-@property <CalDAVPutCalendarItemTaskDelegate> * delegate;
-@property(retain) NSString * previousScheduleTag;
+@property (nonatomic) <CalDAVPutCalendarItemTaskDelegate> *delegate;
+@property (nonatomic, retain) NSString *previousScheduleTag;
 
 - (id)additionalHeaderValues;
 - (void)dealloc;

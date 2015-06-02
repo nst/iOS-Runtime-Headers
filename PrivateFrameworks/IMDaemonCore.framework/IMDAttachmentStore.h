@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@interface IMDAttachmentStore : NSObject {
-}
+@interface IMDAttachmentStore : NSObject
 
 + (id)sharedInstance;
 

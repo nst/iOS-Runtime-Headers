@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray;
-
 @interface CalendarOccurrencesCollection : NSObject <NSCopying> {
     NSArray *_allDayOccurrences;
     NSArray *_occurrences;
     NSArray *_timedOccurrences;
 }
 
-@property(readonly) NSArray * allDayOccurrences;
-@property(readonly) NSArray * occurrences;
-@property(readonly) NSArray * timedOccurrences;
+@property (nonatomic, readonly) NSArray *allDayOccurrences;
+@property (nonatomic, readonly) NSArray *occurrences;
+@property (nonatomic, readonly) NSArray *timedOccurrences;
 
 - (void).cxx_destruct;
 - (id)allDayOccurrences;

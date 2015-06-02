@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKShieldArtwork;
-
 @interface _VKScaledFallbackShieldArtwork : VKShieldArtwork {
     VKShieldArtwork *_artwork;
 }

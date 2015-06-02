@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray, NSString;
-
 @interface NSTextAlternatives : NSObject {
     NSArray *_alternativeStrings;
     id _internal;
     NSString *_primaryString;
 }
 
-@property(readonly) NSArray * alternativeStrings;
-@property(readonly) NSString * primaryString;
+@property (readonly) NSArray *alternativeStrings;
+@property (readonly) NSString *primaryString;
 
 - (id)alternativeAtIndex:(unsigned int)arg1;
 - (id)alternativeStrings;

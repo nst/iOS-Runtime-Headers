@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSCompoundPredicateOperator : NSPredicateOperator {
-}
+@interface NSCompoundPredicateOperator : NSPredicateOperator
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)andPredicateOperator;
 + (id)notPredicateOperator;
@@ -12,8 +13,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2;
 - (BOOL)evaluatePredicates:(id)arg1 withObject:(id)arg2 substitutionVariables:(id)arg3;
-- (id)minimalFormInContext:(id)arg1 ofPredicates:(id)arg2;
 - (id)predicateFormat;
 - (id)symbol;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
+- (id)minimalFormInContext:(id)arg1 ofPredicates:(id)arg2;
 
 @end

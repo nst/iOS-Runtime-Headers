@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAMessageFetchAttachmentRequest : NSObject {
     NSString *_attachmentName;
     NSString *_messageID;
 }
 
-@property(copy) NSString * attachmentName;
-@property(copy) NSString * messageID;
+@property (nonatomic, copy) NSString *attachmentName;
+@property (nonatomic, copy) NSString *messageID;
 
 - (void).cxx_destruct;
 - (id)attachmentName;

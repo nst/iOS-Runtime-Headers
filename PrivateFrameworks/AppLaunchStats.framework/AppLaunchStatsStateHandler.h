@@ -2,79 +2,43 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AppLaunchStatsStateHandler : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id budgetHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id forecastHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id messageStatusHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id noprewarmHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id olderHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id queryHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id scoreHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id trendHandler;
-
+    id /* block */ budgetHandler;
+    id /* block */ forecastHandler;
+    id /* block */ messageStatusHandler;
+    id /* block */ noprewarmHandler;
+    id /* block */ olderHandler;
+    id /* block */ queryHandler;
+    id /* block */ scoreHandler;
+    id /* block */ trendHandler;
 }
 
-@property(copy) id budgetHandler;
-@property(copy) id forecastHandler;
-@property(copy) id messageStatusHandler;
-@property(copy) id noprewarmHandler;
-@property(copy) id olderHandler;
-@property(copy) id queryHandler;
-@property(copy) id scoreHandler;
-@property(copy) id trendHandler;
+@property (copy) id /* block */ budgetHandler;
+@property (copy) id /* block */ forecastHandler;
+@property (copy) id /* block */ messageStatusHandler;
+@property (copy) id /* block */ noprewarmHandler;
+@property (copy) id /* block */ olderHandler;
+@property (copy) id /* block */ queryHandler;
+@property (copy) id /* block */ scoreHandler;
+@property (copy) id /* block */ trendHandler;
 
 - (void).cxx_destruct;
-- (id)budgetHandler;
-- (id)forecastHandler;
+- (id /* block */)budgetHandler;
+- (id /* block */)forecastHandler;
 - (id)init;
-- (id)messageStatusHandler;
-- (id)noprewarmHandler;
-- (id)olderHandler;
-- (id)queryHandler;
-- (id)scoreHandler;
-- (void)setBudgetHandler:(id)arg1;
-- (void)setForecastHandler:(id)arg1;
-- (void)setMessageStatusHandler:(id)arg1;
-- (void)setNoprewarmHandler:(id)arg1;
-- (void)setOlderHandler:(id)arg1;
-- (void)setQueryHandler:(id)arg1;
-- (void)setScoreHandler:(id)arg1;
-- (void)setTrendHandler:(id)arg1;
-- (id)trendHandler;
+- (id /* block */)messageStatusHandler;
+- (id /* block */)noprewarmHandler;
+- (id /* block */)olderHandler;
+- (id /* block */)queryHandler;
+- (id /* block */)scoreHandler;
+- (void)setBudgetHandler:(id /* block */)arg1;
+- (void)setForecastHandler:(id /* block */)arg1;
+- (void)setMessageStatusHandler:(id /* block */)arg1;
+- (void)setNoprewarmHandler:(id /* block */)arg1;
+- (void)setOlderHandler:(id /* block */)arg1;
+- (void)setQueryHandler:(id /* block */)arg1;
+- (void)setScoreHandler:(id /* block */)arg1;
+- (void)setTrendHandler:(id /* block */)arg1;
+- (id /* block */)trendHandler;
 
 @end

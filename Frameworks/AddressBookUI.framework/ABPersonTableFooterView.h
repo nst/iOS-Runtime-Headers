@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABPersonTableAction, NSString, UIButton, UIView;
-
 @interface ABPersonTableFooterView : UIView <ABPersonTableActionDelegate> {
     UIView *_accessoryView;
     UIButton *_attributionButton;
@@ -13,15 +11,15 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) UIView * accessoryView;
-@property(readonly) NSString * attribution;
-@property(getter=isAttributionEnabled,readonly) BOOL attributionEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
-@property(getter=isEditing) BOOL tableEditing;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic, readonly) NSString *attribution;
+@property (getter=isAttributionEnabled, nonatomic, readonly) BOOL attributionEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (getter=isEditing, nonatomic) BOOL tableEditing;
 
 - (id)accessoryView;
 - (id)attribution;

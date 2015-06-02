@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface VTPhraseSpotter : NSObject {
     NSObject<OS_dispatch_queue> *_assetChangedQueue;
     NSString *_audioFileDir;
@@ -41,11 +35,7 @@
     int _nonceTriggerNotificationToken;
     int _numFramesFromPreTrigger;
     BOOL _phraseSpotterEnabled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _readyCompletion;
-
+    id /* block */ _readyCompletion;
     BOOL _registeredForPhraseSpotterNotification;
     NSString *_resourcePath;
     unsigned int _sampleCountAtFirstChance;
@@ -67,11 +57,11 @@
     double _triggerThreshold;
 }
 
-@property(readonly) double lastScore;
-@property(readonly) unsigned long long sampleCount;
-@property(readonly) unsigned long long sampleCountAtEndOfTrigger;
-@property(readonly) unsigned long long sampleCountAtStartOfTrigger;
-@property(readonly) unsigned long long samplerate;
+@property (readonly) double lastScore;
+@property (readonly) unsigned long long sampleCount;
+@property (readonly) unsigned long long sampleCountAtEndOfTrigger;
+@property (readonly) unsigned long long sampleCountAtStartOfTrigger;
+@property (readonly) unsigned long long samplerate;
 
 + (void)initialize;
 
@@ -108,7 +98,7 @@
 - (id)init;
 - (id)initWithConfig:(id)arg1 resourcePath:(id)arg2 triggerThreshold:(double)arg3;
 - (id)initWithHardwareSampleRate:(double)arg1;
-- (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id)arg2;
+- (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id /* block */)arg2;
 - (double)lastScore;
 - (unsigned long long)sampleCount;
 - (unsigned long long)sampleCountAtEndOfTrigger;

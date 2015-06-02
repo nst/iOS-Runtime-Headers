@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIViewElementText;
-
 @interface SKUIDividerViewElement : SKUIViewElement {
     SKUIViewElementText *_text;
 }
 
-@property(readonly) SKUIViewElementText * text;
+@property (nonatomic, readonly) SKUIViewElementText *text;
 
 - (void).cxx_destruct;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

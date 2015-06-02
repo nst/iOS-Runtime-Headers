@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADTextWarp : NSObject {
-}
+@interface OADTextWarp : NSObject
 
 + (id)nullWarp;
 

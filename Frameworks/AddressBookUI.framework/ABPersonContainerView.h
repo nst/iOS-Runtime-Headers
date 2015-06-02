@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonOverlayingContainerView, ABPersonTableView, ABPersonTableViewDataSource, NSString, UIImageView, UIScrollView<ABPersonTabsScrollView>, UISegmentedControl, UIView;
-
 @interface ABPersonContainerView : UIView <ABPersonTabsLayoutManager> {
     UISegmentedControl *_contentSwitchingTabs;
     UIImageView *_contentSwitchingTabsBorder;
@@ -15,19 +13,19 @@
     ABPersonTableView *_tableView;
 }
 
-@property(retain) UISegmentedControl * contentSwitchingTabs;
-@property(retain) UIImageView * contentSwitchingTabsBorder;
-@property(retain) UIImageView * contentSwitchingTabsPocketShadow;
-@property(readonly) UIScrollView<ABPersonTabsScrollView> * currentScrollView;
-@property ABPersonTableViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hidesContentSwitchingTabs;
-@property(retain) UIView * nonScrollableHeaderView;
-@property(retain) ABPersonOverlayingContainerView * overlayingContainerView;
-@property(readonly) Class superclass;
-@property(retain) ABPersonTableView * tableView;
+@property (nonatomic, retain) UISegmentedControl *contentSwitchingTabs;
+@property (nonatomic, retain) UIImageView *contentSwitchingTabsBorder;
+@property (nonatomic, retain) UIImageView *contentSwitchingTabsPocketShadow;
+@property (nonatomic, readonly) UIScrollView<ABPersonTabsScrollView> *currentScrollView;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesContentSwitchingTabs;
+@property (nonatomic, retain) UIView *nonScrollableHeaderView;
+@property (nonatomic, retain) ABPersonOverlayingContainerView *overlayingContainerView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) ABPersonTableView *tableView;
 
 - (id)contentSwitchingTabs;
 - (id)contentSwitchingTabsBorder;

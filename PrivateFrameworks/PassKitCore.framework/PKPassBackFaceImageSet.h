@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKImage;
-
 @interface PKPassBackFaceImageSet : PKPassImageSet {
     PKImage *_faceImage;
 }
 
-@property(retain) PKImage * faceImage;
+@property (nonatomic, retain) PKImage *faceImage;
 
 + (id)archiveName;
 + (int)currentVersion;

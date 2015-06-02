@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHStyleOwnerPath;
-
 @interface TSCHStyleOwnerPropertyKey : NSObject <NSCopying> {
     int mProperty;
     TSCHStyleOwnerPath *mStyleOwnerPath;
 }
 
-@property(readonly) int property;
-@property(readonly) TSCHStyleOwnerPath * styleOwnerPath;
+@property (nonatomic, readonly) int property;
+@property (nonatomic, readonly) TSCHStyleOwnerPath *styleOwnerPath;
 
 + (id)propertyKeyWithStyleOwnerPath:(id)arg1 property:(int)arg2;
 

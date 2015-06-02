@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class SSAccount;
-
 @interface AAFamilyEligibilityRequest : AAFamilyRequest {
     SSAccount *_iTunesAccount;
 }
 
-@property(retain) SSAccount * iTunesAccount;
+@property (nonatomic, retain) SSAccount *iTunesAccount;
 
 + (Class)responseClass;
 

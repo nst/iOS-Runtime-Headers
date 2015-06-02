@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDate, NSString, NSURL;
-
 @interface HSBook : NSObject <NSSecureCoding> {
     NSURL *_artworkURL;
     NSString *_author;
@@ -18,17 +16,17 @@
     NSString *_vppOrganizationID;
 }
 
-@property(copy) NSURL * artworkURL;
-@property(copy) NSString * author;
-@property(copy) NSDate * datePurchased;
-@property(copy) NSString * genre;
-@property unsigned long long purchaseHistoryID;
-@property(copy) NSString * redownloadParameters;
-@property unsigned long long storeID;
-@property(copy) NSString * title;
-@property(getter=isVPPLicensed) BOOL vppLicensed;
-@property(copy) NSString * vppOrganizationDisplayName;
-@property(copy) NSString * vppOrganizationID;
+@property (nonatomic, copy) NSURL *artworkURL;
+@property (nonatomic, copy) NSString *author;
+@property (nonatomic, copy) NSDate *datePurchased;
+@property (nonatomic, copy) NSString *genre;
+@property (nonatomic) unsigned long long purchaseHistoryID;
+@property (nonatomic, copy) NSString *redownloadParameters;
+@property (nonatomic) unsigned long long storeID;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isVPPLicensed, nonatomic) BOOL vppLicensed;
+@property (nonatomic, copy) NSString *vppOrganizationDisplayName;
+@property (nonatomic, copy) NSString *vppOrganizationID;
 
 + (BOOL)supportsSecureCoding;
 

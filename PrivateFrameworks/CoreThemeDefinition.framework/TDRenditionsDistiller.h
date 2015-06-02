@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CoreThemeDocument, NSConditionLock, NSMutableArray, TDLogger;
-
 @interface TDRenditionsDistiller : NSObject {
     TDLogger *_logger;
     CoreThemeDocument *document;
@@ -16,7 +14,7 @@
     BOOL shouldCompressCSIDataFlag;
 }
 
-@property(retain) TDLogger * logger;
+@property (retain) TDLogger *logger;
 
 - (void)_distill:(id)arg1;
 - (void)_enqueueCSIDataInfo:(id)arg1;

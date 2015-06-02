@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BSSettings, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSString;
-
 @interface BSAction : NSObject <BSSettingDescriptionProvider, BSXPCCoding> {
     BOOL _expectsResponse;
     BSSettings *_info;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _queue_handler;
-
+    id /* block */ _queue_handler;
     BOOL _queue_hasBeenNeutered;
     struct { 
         unsigned int port; 
@@ -26,13 +16,14 @@
     unsigned long long _timeout;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) BSSettings * info;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) BSSettings *info;
+@property (readonly) Class superclass;
 
-- (int)UIActionType;
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
 - (id)_handlerDescription;
 - (BOOL)canSendResponse;
 - (void)dealloc;
@@ -42,11 +33,15 @@
 - (unsigned int)hash;
 - (id)info;
 - (id)init;
-- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
+- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (void)sendResponse:(id)arg1;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (int)UIActionType;
 
 @end

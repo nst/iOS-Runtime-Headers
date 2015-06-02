@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSMutableData;
-
 @interface BLCGPixelImageBuffer : BLPixelImageBuffer {
     struct CGContext { } *_bitmapContext;
     NSMutableData *_bitmapData;
     unsigned long _rowBytes;
 }
 
-@property(retain) NSMutableData * bitmapData;
+@property (nonatomic, retain) NSMutableData *bitmapData;
 
-- (void)accessPixelsByAddressInBlock:(id)arg1;
-- (void)accessPixelsByContextInBlock:(id)arg1;
+- (void)accessPixelsByAddressInBlock:(id /* block */)arg1;
+- (void)accessPixelsByContextInBlock:(id /* block */)arg1;
 - (id)bitmapData;
 - (id)ciImage;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2;
-- (void)readPixelsByAddressInBlock:(id)arg1;
+- (void)readPixelsByAddressInBlock:(id /* block */)arg1;
 - (void)renderCIImage:(id)arg1;
 - (void)setBitmapData:(id)arg1;
 

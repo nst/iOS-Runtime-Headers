@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSPasswordGeneration : NSObject {
-}
+@interface WBSPasswordGeneration : NSObject
 
 + (id)defaultRequirementsForDomain:(id)arg1;
 + (id)defaultRequirementsForURL:(id)arg1;

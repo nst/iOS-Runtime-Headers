@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray;
-
 @interface PLRevGeoPlace : NSObject {
     BOOL _isHome;
-    NSMutableArray *_placeTypeInfoMap[15];
+    NSMutableArray *_placeTypeInfoMap;
 }
 
-@property BOOL isHome;
+@property (nonatomic) BOOL isHome;
 
-+ (id)sortedAdditionalPlaceInfoComparator;
++ (id /* block */)sortedAdditionalPlaceInfoComparator;
 
 - (void)_addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned int)arg3;
 - (unsigned int)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned int)arg2;

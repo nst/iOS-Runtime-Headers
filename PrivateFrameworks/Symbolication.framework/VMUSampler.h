@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSConditionLock, NSMapTable, NSMutableArray, NSString, VMUProcessDescription, VMUTaskMemoryCache;
-
 @interface VMUSampler : NSObject {
     id _delegate;
     unsigned int _dispatchThreadHardLimit;

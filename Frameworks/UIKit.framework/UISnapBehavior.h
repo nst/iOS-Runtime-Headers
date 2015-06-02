@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, PKPhysicsBody;
-
 @interface UISnapBehavior : UIDynamicBehavior {
     PKPhysicsBody *_anchorBody;
     struct CGPoint { 
@@ -22,7 +20,7 @@
     } _stateFlags;
 }
 
-@property float damping;
+@property (nonatomic) float damping;
 
 - (void)_associate;
 - (void)_dissociate;

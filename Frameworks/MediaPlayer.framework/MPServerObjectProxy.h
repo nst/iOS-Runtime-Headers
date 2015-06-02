@@ -3,9 +3,9 @@
  */
 
 @interface MPServerObjectProxy : NSObject {
-    unsigned int _didPrepareForRemoteSelectorInvocation : 1;
+    unsigned int _didPrepareForRemoteSelectorInvocation;
     double _lastPrepareAttemptTime;
-    unsigned int _lastPrepareForRemoteSelectorInvocationTimedOut : 1;
+    unsigned int _lastPrepareForRemoteSelectorInvocationTimedOut;
 }
 
 + (id)_center;

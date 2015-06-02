@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSString, SKAccountPageViewController;
-
 @interface SKRemoteAccountPageViewController : _UIRemoteViewController <SKUIClientAccountPageViewController> {
     SKAccountPageViewController *_accountPageViewController;
 }
 
-@property SKAccountPageViewController * accountPageViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) SKAccountPageViewController *accountPageViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

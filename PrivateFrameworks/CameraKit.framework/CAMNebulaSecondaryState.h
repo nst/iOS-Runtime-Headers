@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDate;
-
 @interface CAMNebulaSecondaryState : NSObject <NSCoding> {
     int _failedStateReadAttemptsCount;
     NSDate *_lastMovieWriteAttemptTime;
@@ -12,11 +10,11 @@
     NSDate *_stopTime;
 }
 
-@property int failedStateReadAttemptsCount;
-@property(readonly) NSDate * lastMovieWriteAttemptTime;
-@property(readonly) int movieWriteAttemptsCount;
-@property int stopReasons;
-@property(retain) NSDate * stopTime;
+@property (nonatomic) int failedStateReadAttemptsCount;
+@property (nonatomic, readonly) NSDate *lastMovieWriteAttemptTime;
+@property (nonatomic, readonly) int movieWriteAttemptsCount;
+@property (nonatomic) int stopReasons;
+@property (nonatomic, retain) NSDate *stopTime;
 
 + (id)secondaryStateWithContentsOfFile:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, SSURLConnectionRequest;
-
 @interface RadioSearchResultAccessedRequest : RadioRequest {
     SSURLConnectionRequest *_request;
     NSArray *_searchResults;
@@ -13,6 +11,6 @@
 - (void)cancel;
 - (id)init;
 - (id)initWithAccessedSearchResults:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

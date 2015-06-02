@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UIWebSelectionGraph : NSObject {
     NSMutableArray *_selectionNodes;
 }

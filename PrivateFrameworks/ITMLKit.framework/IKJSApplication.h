@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSApplication : IKJSObject <IKJSApplication> {
-}
+@interface IKJSApplication : IKJSObject <IKJSApplication>
 
 - (void)dispatchErrorWithMessage:(id)arg1 sourceURL:(id)arg2 line:(id)arg3;
 - (void)exitAppWithOptions:(id)arg1;

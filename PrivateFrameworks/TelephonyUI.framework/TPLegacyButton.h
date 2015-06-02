@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSString, UIImageView;
-
 @interface TPLegacyButton : UIButton {
     int _color;
     BOOL _currentlyLayingOut;

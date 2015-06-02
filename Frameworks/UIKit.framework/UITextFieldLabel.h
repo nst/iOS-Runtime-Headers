@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextFieldLabel : UILabel {
-}
+@interface UITextFieldLabel : UILabel
 
 + (id)_defaultAttributes;
 + (id)defaultFont;

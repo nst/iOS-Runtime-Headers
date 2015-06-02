@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCenteringScrollView, NSString, UIView;
-
 @interface GKCenteredContentViewController : GKViewController <UIScrollViewDelegate> {
     UIView *_containerView;
     GKCenteringScrollView *_scrollView;
 }
 
-@property(retain) UIView * containerView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GKCenteringScrollView * scrollView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIView *containerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GKCenteringScrollView *scrollView;
+@property (readonly) Class superclass;
 
 - (id)containerView;
 - (void)dealloc;

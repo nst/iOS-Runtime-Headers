@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableData;
-
 @interface MFBase64Decoder : MFBaseFilterDataConsumer {
     BOOL _bound;
     unsigned int _decodedBits;
@@ -13,9 +11,9 @@
     unsigned long _validBytes;
 }
 
-@property BOOL convertCommas;
-@property BOOL isBound;
-@property(readonly) unsigned long unconverted;
+@property (nonatomic) BOOL convertCommas;
+@property (nonatomic) BOOL isBound;
+@property (nonatomic, readonly) unsigned long unconverted;
 
 + (BOOL)isValidBase64:(id)arg1;
 

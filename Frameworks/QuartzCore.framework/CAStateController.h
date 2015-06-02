@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer, NSObject<CAStateControllerDelegate>;
-
 @interface CAStateController : NSObject {
-    struct _CAStateControllerData { id x1; struct __CFDictionary {} *x2; id x3; id x4; } *_data;
+    struct _CAStateControllerData { id x1; struct __CFDictionary {} x2; id x3; } *_data;
 }
 
-@property NSObject<CAStateControllerDelegate> * delegate;
-@property(readonly) CALayer * layer;
+@property NSObject<CAStateControllerDelegate> *delegate;
+@property (readonly) CALayer *layer;
 
 - (void)_addAnimation:(id)arg1 forKey:(id)arg2 target:(id)arg3 undo:(id)arg4;
 - (void)_applyTransition:(id)arg1 layer:(id)arg2 undo:(id)arg3 speed:(float)arg4;

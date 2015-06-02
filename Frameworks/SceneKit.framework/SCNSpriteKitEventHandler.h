@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSMutableDictionary, SKScene;
-
 @interface SCNSpriteKitEventHandler : NSObject {
     SKScene *_scene;
     NSMutableDictionary *_touchMap;
 }
 
-@property(retain) SKScene * scene;
+@property (nonatomic, retain) SKScene *scene;
 
 - (void)dealloc;
 - (id)init;

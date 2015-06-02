@@ -13,14 +13,14 @@
     float _width;
 }
 
-@property int columnIdentifier;
-@property int contentAlignment;
-@property int headerAlignment;
-@property float maximumWidthFraction;
-@property float preferredWidth;
-@property BOOL showsPreviewControl;
-@property BOOL sizesToFit;
-@property float width;
+@property (nonatomic) int columnIdentifier;
+@property (nonatomic) int contentAlignment;
+@property (nonatomic) int headerAlignment;
+@property (nonatomic) float maximumWidthFraction;
+@property (nonatomic) float preferredWidth;
+@property (nonatomic) BOOL showsPreviewControl;
+@property (nonatomic) BOOL sizesToFit;
+@property (nonatomic) float width;
 
 - (int)columnIdentifier;
 - (int)contentAlignment;

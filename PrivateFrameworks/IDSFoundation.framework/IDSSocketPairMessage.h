@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class <NSObject>, NSData, NSString;
-
 @interface IDSSocketPairMessage : NSObject {
     unsigned char _command;
     <NSObject> *_context;
@@ -11,11 +9,11 @@
     NSData *_underlyingData;
 }
 
-@property(readonly) unsigned char command;
-@property(retain) <NSObject> * context;
-@property(retain) NSString * topic;
-@property(retain,readonly) NSData * underlyingData;
-@property(readonly) unsigned int underlyingDataLength;
+@property (nonatomic, readonly) unsigned char command;
+@property (nonatomic, retain) <NSObject> *context;
+@property (nonatomic, retain) NSString *topic;
+@property (nonatomic, readonly, retain) NSData *underlyingData;
+@property (nonatomic, readonly) unsigned int underlyingDataLength;
 
 + (unsigned int)dataLengthFromHeaderData:(id)arg1;
 + (unsigned int)headerDataSize;

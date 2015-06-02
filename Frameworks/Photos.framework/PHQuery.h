@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSFetchRequest, NSManagedObjectID, NSMutableSet, NSPredicate, NSRelationshipDescription, NSString, PHCollection, PHFetchOptions, PHPhotoLibrary;
-
 @interface PHQuery : NSObject <NSCopying, NSPredicateVisitor> {
     BOOL __includesCameraRoll;
     BOOL __includesCloudSharedAssets;
@@ -35,20 +33,20 @@
     NSArray *_seedOIDs;
 }
 
-@property(setter=_setIncludesCameraRoll:) BOOL _includesCameraRoll;
-@property(setter=_setIncludesCloudSharedAssets:) BOOL _includesCloudSharedAssets;
-@property(setter=_setIncludesTrashedObjects:) BOOL _includesTrashedObjects;
-@property(setter=_setIncludesiTunesSyncAssets:) BOOL _includesiTunesSyncAssets;
-@property(readonly) NSPredicate * basePredicate;
-@property(readonly) id combinedQueryGroupKey;
-@property(readonly) NSString * combinedQueryKeyPath;
-@property(readonly) NSManagedObjectID * combinedQuerySeparatingIdentifier;
-@property(copy) PHFetchOptions * fetchOptions;
-@property(readonly) NSFetchRequest * fetchRequest;
-@property(readonly) NSString * fetchType;
-@property(readonly) NSPredicate * filterPredicate;
-@property(readonly) PHPhotoLibrary * photoLibrary;
-@property(readonly) NSArray * seedOIDs;
+@property (setter=_setIncludesCameraRoll:, nonatomic) BOOL _includesCameraRoll;
+@property (setter=_setIncludesCloudSharedAssets:, nonatomic) BOOL _includesCloudSharedAssets;
+@property (setter=_setIncludesTrashedObjects:, nonatomic) BOOL _includesTrashedObjects;
+@property (setter=_setIncludesiTunesSyncAssets:, nonatomic) BOOL _includesiTunesSyncAssets;
+@property (readonly) NSPredicate *basePredicate;
+@property (readonly) id combinedQueryGroupKey;
+@property (readonly) NSString *combinedQueryKeyPath;
+@property (readonly) NSManagedObjectID *combinedQuerySeparatingIdentifier;
+@property (nonatomic, copy) PHFetchOptions *fetchOptions;
+@property (readonly) NSFetchRequest *fetchRequest;
+@property (readonly) NSString *fetchType;
+@property (readonly) NSPredicate *filterPredicate;
+@property (readonly) PHPhotoLibrary *photoLibrary;
+@property (readonly) NSArray *seedOIDs;
 
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id*)arg3;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;

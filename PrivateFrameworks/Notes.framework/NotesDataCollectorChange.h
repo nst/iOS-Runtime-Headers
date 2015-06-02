@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSString;
-
 @interface NotesDataCollectorChange : NSObject {
     NSString *_accountIdentifier;
     int _accountType;
@@ -11,10 +9,10 @@
     int _operation;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property int accountType;
-@property int entity;
-@property int operation;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic) int accountType;
+@property (nonatomic) int entity;
+@property (nonatomic) int operation;
 
 + (id)changeForEntity:(int)arg1 operation:(int)arg2 account:(id)arg3;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNBuildRenderer, NSObject<NSCopying>, NSObject<TSKMediaPlayerController>, NSString;
-
 @interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
     KNBuildRenderer *mBuildInRenderer;
     struct CGRect { 
@@ -16,34 +14,34 @@
             float height; 
         } size; 
     } mFrameInContainerView;
-    unsigned int mHasMoviePlaybackStarted : 1;
-    unsigned int mHasPendingTogglePlayingControl : 1;
-    unsigned int mIsObservingVideoLayerReadyForDisplay : 1;
-    unsigned int mIsTeardownCompletionBlockPending : 1;
+    unsigned int mHasMoviePlaybackStarted;
+    unsigned int mHasPendingTogglePlayingControl;
+    unsigned int mIsObservingVideoLayerReadyForDisplay;
+    unsigned int mIsTeardownCompletionBlockPending;
     SEL mMovieStartCallbackSelector;
     id mMovieStartCallbackTarget;
-    unsigned int mNeedsPlaybackAtStartTime : 1;
-    unsigned int mNeedsToSendBuildEndCallback : 1;
-    unsigned int mNeedsToSendMovieStartCallback : 1;
-    unsigned int mPendingTogglePlayingControlStartsPlaying : 1;
+    unsigned int mNeedsPlaybackAtStartTime;
+    unsigned int mNeedsToSendBuildEndCallback;
+    unsigned int mNeedsToSendMovieStartCallback;
+    unsigned int mPendingTogglePlayingControlStartsPlaying;
     double mPlaybackAtStartTimePauseOffset;
     double mPlaybackAtStartTimePauseTime;
     NSObject<TSKMediaPlayerController> *mPlayerController;
-    unsigned int mShouldMoviePlaybackEndOnCompletion : 1;
+    unsigned int mShouldMoviePlaybackEndOnCompletion;
     double mStartTime;
     CALayer *mVideoLayer;
-    unsigned int mWasMoviePlayingBeforeAnimationPause : 1;
+    unsigned int mWasMoviePlayingBeforeAnimationPause;
 }
 
-@property KNBuildRenderer * buildInRenderer;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasMoviePlaybackStarted;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<NSCopying> * movieTimelineMovieIdentifier;
-@property(readonly) CALayer * offscreenVideoLayer;
-@property(readonly) NSObject<TSKMediaPlayerController> * playerController;
-@property(readonly) Class superclass;
+@property (nonatomic) KNBuildRenderer *buildInRenderer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasMoviePlaybackStarted;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<NSCopying> *movieTimelineMovieIdentifier;
+@property (nonatomic, readonly) CALayer *offscreenVideoLayer;
+@property (nonatomic, readonly) NSObject<TSKMediaPlayerController> *playerController;
+@property (readonly) Class superclass;
 
 + (id)movieInfoForMovieTimelineMovieIdentifier:(id)arg1;
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;

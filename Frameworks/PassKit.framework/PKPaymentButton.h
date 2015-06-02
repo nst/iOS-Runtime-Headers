@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentButtonPDFView, UILabel, UIView;
-
 @interface PKPaymentButton : UIButton {
     UILabel *_buyLabel;
     UIView *_container;
@@ -13,10 +11,10 @@
     int _type;
 }
 
-@property(retain) UILabel * buyLabel;
-@property(retain) UIView * container;
-@property(retain) UIView * highlightView;
-@property(retain) PKPaymentButtonPDFView * pdfView;
+@property (nonatomic, retain) UILabel *buyLabel;
+@property (nonatomic, retain) UIView *container;
+@property (nonatomic, retain) UIView *highlightView;
+@property (nonatomic, retain) PKPaymentButtonPDFView *pdfView;
 
 + (id)buttonWithType:(int)arg1 style:(int)arg2;
 

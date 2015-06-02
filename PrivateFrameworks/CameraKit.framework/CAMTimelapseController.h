@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMLowDiskSpaceAlertView, CAMTimelapseState, NSCountedSet, NSDate, NSMutableSet, NSObject<OS_dispatch_source>, NSString;
-
 @interface CAMTimelapseController : NSObject <CAMStillImageCaptureRequestDelegate, UIAlertViewDelegate> {
     BOOL __backendRecoveryNeeded;
     NSObject<OS_dispatch_source> *__captureTimer;
@@ -16,21 +14,21 @@
     CAMTimelapseState *__state;
 }
 
-@property(setter=_setBackendRecoveryNeeded:) BOOL _backendRecoveryNeeded;
-@property(readonly) NSObject<OS_dispatch_source> * _captureTimer;
-@property(readonly) CAMLowDiskSpaceAlertView * _diskSpaceAlert;
-@property(readonly) BOOL _ignoringTimerCallbacksForTearDown;
-@property(readonly) BOOL _ignoringTimerCallbacksWaitingForCaptureResponse;
-@property(readonly) NSCountedSet * _inFlightTimelapseUUIDs;
-@property(readonly) NSMutableSet * _pendingCompletedStates;
-@property(setter=_setPreviewStarted:) BOOL _previewStarted;
-@property(readonly) CAMTimelapseState * _state;
-@property(readonly) NSDate * captureStartTime;
-@property(getter=isCapturing,readonly) BOOL capturing;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setBackendRecoveryNeeded:, nonatomic) BOOL _backendRecoveryNeeded;
+@property (nonatomic, readonly) NSObject<OS_dispatch_source> *_captureTimer;
+@property (nonatomic, readonly) CAMLowDiskSpaceAlertView *_diskSpaceAlert;
+@property (nonatomic, readonly) BOOL _ignoringTimerCallbacksForTearDown;
+@property (nonatomic, readonly) BOOL _ignoringTimerCallbacksWaitingForCaptureResponse;
+@property (nonatomic, readonly) NSCountedSet *_inFlightTimelapseUUIDs;
+@property (nonatomic, readonly) NSMutableSet *_pendingCompletedStates;
+@property (setter=_setPreviewStarted:, nonatomic) BOOL _previewStarted;
+@property (nonatomic, readonly) CAMTimelapseState *_state;
+@property (nonatomic, readonly) NSDate *captureStartTime;
+@property (getter=isCapturing, nonatomic, readonly) BOOL capturing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_videoPreviewImageForTimelapseState:(id)arg1;
 + (id)createPlaceholderAssetResponseForTimelapseState:(id)arg1;

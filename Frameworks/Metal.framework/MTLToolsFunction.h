@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, MTLToolsPointerArray, NSArray, NSString;
-
 @interface MTLToolsFunction : MTLToolsObject <MTLFunctionSPI> {
     MTLToolsPointerArray *_functions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(copy,readonly) NSString * filePath;
-@property(readonly) unsigned int functionType;
-@property(readonly) unsigned int hash;
-@property(readonly) int lineNumber;
-@property(readonly) NSString * name;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * vertexAttributes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly, copy) NSString *filePath;
+@property (readonly) unsigned int functionType;
+@property (readonly) unsigned int hash;
+@property (readonly) int lineNumber;
+@property (readonly) NSString *name;
+@property (readonly) Class superclass;
+@property (readonly) NSArray *vertexAttributes;
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;

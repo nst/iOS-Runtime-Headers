@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextFieldDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, MPUTextContainerContentSizeUpdater, NSAttributedString, NSDictionary, NSLayoutConstraint, NSString, UIButton, UIColor, UIFont, UIImage, UIImageView, UILabel, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, _UIBaselineLayoutStrut, _UICascadingTextStorage;
-
 @interface UITextField : UIControl <ABText, MPUAutoupdatingTextContainer, NSCoding, UIKeyboardInput, UIPopoverControllerDelegate, UITextInput, UITextInputTraits_Private, _UILayoutBaselineUpdating> {
     UITextFieldAtomBackgroundView *_atomBackgroundView;
     BOOL _avoidBecomeFirstResponder;
@@ -87,93 +85,92 @@
     UITextInputTraits *_traits;
 }
 
-@property(setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:) BOOL MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
-@property(readonly) MPUTextContainerContentSizeUpdater * MPU_contentSizeUpdater;
-@property(setter=_setBaselineLayoutConstraint:,retain) NSLayoutConstraint * _baselineLayoutConstraint;
-@property(setter=_setBaselineLayoutLabel:,retain) _UIBaselineLayoutStrut * _baselineLayoutLabel;
-@property(copy) NSString * ab_text;
-@property(copy) NSDictionary * ab_textAttributes;
-@property BOOL acceptsEmoji;
-@property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsSplitKeyboard;
-@property BOOL adjustsFontSizeToFitWidth;
-@property BOOL allowsEditingTextAttributes;
-@property(copy) NSAttributedString * attributedPlaceholder;
-@property(copy) NSAttributedString * attributedText;
-@property int autocapitalizationType;
-@property(copy) NSString * autocorrectionContext;
-@property int autocorrectionType;
-@property(retain) UIImage * background;
-@property(readonly) UITextPosition * beginningOfDocument;
-@property int borderStyle;
-@property int clearButtonMode;
-@property BOOL clearsOnBeginEditing;
-@property BOOL clearsOnInsertion;
-@property BOOL contentsIsSingleValue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSDictionary * defaultTextAttributes;
-@property BOOL deferBecomingResponder;
-@property <UITextFieldDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL disablePrediction;
-@property(retain) UIImage * disabledBackground;
-@property BOOL displaySecureTextUsingPlainText;
-@property(getter=isEditing,readonly) BOOL editing;
-@property int emptyContentReturnKeyType;
-@property BOOL enablesReturnKeyAutomatically;
-@property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
-@property(readonly) UITextPosition * endOfDocument;
-@property(retain) UIFont * font;
-@property BOOL forceEnableDictation;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * inputAccessoryView;
-@property <UITextInputDelegate> * inputDelegate;
-@property(retain) UIView * inputView;
-@property(retain) UIColor * insertionPointColor;
-@property unsigned int insertionPointWidth;
-@property BOOL isSingleLineDocument;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property BOOL learnsCorrections;
-@property(retain) UIView * leftView;
-@property int leftViewMode;
-@property(readonly) UITextRange * markedTextRange;
-@property(copy) NSDictionary * markedTextStyle;
-@property float minimumFontSize;
-@property(copy) NSString * placeholder;
-@property(copy) NSString * responseContext;
-@property BOOL returnKeyGoesToNextResponder;
-@property int returnKeyType;
-@property(retain) UIView * rightView;
-@property int rightViewMode;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property(copy) UITextRange * selectedTextRange;
-@property int selectionAffinity;
-@property(retain) UIColor * selectionBarColor;
-@property(retain) UIImage * selectionDragDotImage;
-@property(retain) UIColor * selectionHighlightColor;
-@property int shortcutConversionType;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property BOOL suppressReturnKeyStyling;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
-@property(readonly) UIView * textInputView;
-@property int textLoupeVisibility;
-@property int textSelectionBehavior;
-@property id textSuggestionDelegate;
-@property struct __CFCharacterSet { }* textTrimmingSet;
-@property(readonly) <UITextInputTokenizer> * tokenizer;
-@property(copy) NSDictionary * typingAttributes;
-@property BOOL useInterfaceLanguageForLocalization;
+@property (setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:, nonatomic) BOOL MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
+@property (nonatomic, readonly) MPUTextContainerContentSizeUpdater *MPU_contentSizeUpdater;
+@property (setter=_setBaselineLayoutConstraint:, nonatomic, retain) NSLayoutConstraint *_baselineLayoutConstraint;
+@property (setter=_setBaselineLayoutLabel:, nonatomic, retain) _UIBaselineLayoutStrut *_baselineLayoutLabel;
+@property (nonatomic, copy) NSString *ab_text;
+@property (nonatomic, copy) NSDictionary *ab_textAttributes;
+@property (nonatomic) BOOL acceptsEmoji;
+@property (nonatomic) BOOL acceptsFloatingKeyboard;
+@property (nonatomic) BOOL acceptsSplitKeyboard;
+@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
+@property (nonatomic) BOOL allowsEditingTextAttributes;
+@property (nonatomic, copy) NSAttributedString *attributedPlaceholder;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic, copy) NSString *autocorrectionContext;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic, retain) UIImage *background;
+@property (nonatomic, readonly) UITextPosition *beginningOfDocument;
+@property (nonatomic) int borderStyle;
+@property (nonatomic) int clearButtonMode;
+@property (nonatomic) BOOL clearsOnBeginEditing;
+@property (nonatomic) BOOL clearsOnInsertion;
+@property (nonatomic) BOOL contentsIsSingleValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSDictionary *defaultTextAttributes;
+@property (nonatomic) BOOL deferBecomingResponder;
+@property (nonatomic) <UITextFieldDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disablePrediction;
+@property (nonatomic, retain) UIImage *disabledBackground;
+@property (nonatomic) BOOL displaySecureTextUsingPlainText;
+@property (getter=isEditing, nonatomic, readonly) BOOL editing;
+@property (nonatomic) int emptyContentReturnKeyType;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property (nonatomic, readonly) UITextPosition *endOfDocument;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic) BOOL forceEnableDictation;
+@property (readonly) unsigned int hash;
+@property (retain) UIView *inputAccessoryView;
+@property (nonatomic) <UITextInputDelegate> *inputDelegate;
+@property (retain) UIView *inputView;
+@property (nonatomic, retain) UIColor *insertionPointColor;
+@property (nonatomic) unsigned int insertionPointWidth;
+@property (nonatomic) BOOL isSingleLineDocument;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic) BOOL learnsCorrections;
+@property (nonatomic, retain) UIView *leftView;
+@property (nonatomic) int leftViewMode;
+@property (nonatomic, readonly) UITextRange *markedTextRange;
+@property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic) float minimumFontSize;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) NSString *responseContext;
+@property (nonatomic) BOOL returnKeyGoesToNextResponder;
+@property (nonatomic) int returnKeyType;
+@property (nonatomic, retain) UIView *rightView;
+@property (nonatomic) int rightViewMode;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (copy) UITextRange *selectedTextRange;
+@property (nonatomic) int selectionAffinity;
+@property (nonatomic, retain) UIColor *selectionBarColor;
+@property (nonatomic, retain) UIImage *selectionDragDotImage;
+@property (nonatomic, retain) UIColor *selectionHighlightColor;
+@property (nonatomic) int shortcutConversionType;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressReturnKeyStyling;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, readonly) UIView *textInputView;
+@property (nonatomic) int textLoupeVisibility;
+@property (nonatomic) int textSelectionBehavior;
+@property (nonatomic) id textSuggestionDelegate;
+@property (nonatomic) struct __CFCharacterSet { }*textTrimmingSet;
+@property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
+@property (nonatomic, copy) NSDictionary *typingAttributes;
+@property (nonatomic) BOOL useInterfaceLanguageForLocalization;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_isCompatibilityTextField;
 + (BOOL)_isDisplayingShortcutViewController;
 
-- (BOOL)MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
-- (id)MPU_contentSizeUpdater;
-- (void)MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:(BOOL)arg1;
 - (void)__resumeBecomeFirstResponder;
 - (void)_activateSelectionView;
 - (void)_addShortcut:(id)arg1;
@@ -306,8 +303,6 @@
 - (BOOL)_useGesturesForEditableContent;
 - (BOOL)_wantsBaselineUpdatingFollowingConstraintsPass;
 - (void)_windowBecameKey;
-- (id)ab_text;
-- (id)ab_textAttributes;
 - (id)actualFont;
 - (float)actualMinimumFontSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedCaretRectForCaretRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -348,7 +343,6 @@
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)closestPositionToPoint:(struct CGPoint { float x1; float x2; })arg1 withinRange:(id)arg2;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
-- (void)configureFromScriptTextField:(id)arg1;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)copy:(id)arg1;
 - (void)createPlaceholderIfNecessary;
@@ -407,7 +401,6 @@
 - (BOOL)isEditable;
 - (BOOL)isEditing;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
-- (BOOL)isReallyFirstResponder;
 - (BOOL)isUndoEnabled;
 - (BOOL)keyboardInput:(id)arg1 shouldInsertText:(id)arg2 isMarkedText:(BOOL)arg3;
 - (BOOL)keyboardInput:(id)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
@@ -439,8 +432,6 @@
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
-- (void)rc_copyKeyboardSettingsFromTextField:(id)arg1;
-- (void)rc_resignFirstResponderWithoutDismissingKeyboardForDuration:(double)arg1 completionBlock:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)replace:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
@@ -462,8 +453,6 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (id)selectionRectsForRange:(id)arg1;
 - (id)selectionView;
-- (void)setAb_text:(id)arg1;
-- (void)setAb_textAttributes:(id)arg1;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setAllowsEditingTextAttributes:(BOOL)arg1;
 - (void)setAnimating:(BOOL)arg1;
@@ -564,5 +553,31 @@
 - (void)willAttachFieldEditor:(id)arg1;
 - (void)willDetachFieldEditor:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
+- (id)ab_text;
+- (id)ab_textAttributes;
+- (void)setAb_text:(id)arg1;
+- (void)setAb_textAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (BOOL)isReallyFirstResponder;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (BOOL)MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
+- (id)MPU_contentSizeUpdater;
+- (void)MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (void)rc_copyKeyboardSettingsFromTextField:(id)arg1;
+- (void)rc_resignFirstResponderWithoutDismissingKeyboardForDuration:(double)arg1 completionBlock:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)configureFromScriptTextField:(id)arg1;
 
 @end

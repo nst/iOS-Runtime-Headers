@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DTextureAtlasTexture;
-
 @interface TSCH3DTextureAtlasTextureResource : TSCH3DResource <TSCHUnretainedParent> {
     TSCH3DTextureAtlasTexture *mParent;
 }

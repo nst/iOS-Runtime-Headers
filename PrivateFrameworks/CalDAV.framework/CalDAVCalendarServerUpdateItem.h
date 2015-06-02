@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVCalendarServerUpdateItem : CalDAVItemWithRecurrenceChildren {
-}
+@interface CalDAVCalendarServerUpdateItem : CalDAVItemWithRecurrenceChildren
 
 - (id)init;
 

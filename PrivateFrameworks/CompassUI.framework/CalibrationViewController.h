@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CAShapeLayer, CalibrationBallView, CompassBackgroundView, NSMutableArray, UIButton, UILabel;
-
 @interface CalibrationViewController : UIViewController {
     double _angleOfAwesome;
     double _angleToRim;

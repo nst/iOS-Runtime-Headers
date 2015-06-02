@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIWebDocumentView, UIWebPaginationInfo;
-
 @interface UIMarkupTextPrintFormatter : UIPrintFormatter {
     NSString *_markupText;
     UIWebPaginationInfo *_paginationInfo;
     UIWebDocumentView *_webDocumentView;
 }
 
-@property(copy) NSString * markupText;
+@property (nonatomic, copy) NSString *markupText;
 
 - (int)_recalcPageCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/CoreDuetDaemonProtocol
  */
 
-@class CDDebug, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface CDDXPCConnection : NSObject {
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
@@ -14,8 +12,8 @@
     NSString *_serviceName;
 }
 
-@property(readonly) CDDebug * debug;
-@property(readonly) NSString * serviceName;
+@property (readonly) CDDebug *debug;
+@property (readonly) NSString *serviceName;
 
 - (void).cxx_destruct;
 - (void)cancelConnection;
@@ -26,8 +24,8 @@
 - (id)initWithMachServiceName:(id)arg1 dispatchQueue:(id)arg2;
 - (void)invalidateConnection;
 - (id)makeStashWithId:(unsigned long long)arg1;
-- (void)sendBarrier:(id)arg1;
-- (BOOL)sendMessageAsync:(id)arg1 withReplyHandler:(id)arg2;
+- (void)sendBarrier:(id /* block */)arg1;
+- (BOOL)sendMessageAsync:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (unsigned long long)sequenceNumber;
 - (id)serviceName;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock;
-
 @interface ISDelegateProxy : NSObject {
     id _delegate;
     NSLock *_lock;

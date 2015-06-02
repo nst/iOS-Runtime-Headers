@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WMStyle : CMStyle {
-}
+@interface WMStyle : CMStyle
 
 - (void)ResoveInterPropertyDependencies;
 - (void)addCharacterProperties:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, MKMapCamera, MKMapView, NSString;
-
 @interface MKPlaceHeaderBackgroundView_Snapshot : MKPlaceHeaderBackgroundView <MKMapViewDelegate> {
     CLLocation *_location;
     MKMapView *_mapView;
@@ -15,18 +13,18 @@
     float _zoomLevel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CLLocation * location;
-@property(retain) MKMapCamera * orbitCamera;
-@property BOOL orbiting;
-@property unsigned int pinColor;
-@property BOOL settingUpOrbitAnimation;
-@property BOOL showsPin;
-@property(readonly) Class superclass;
-@property(readonly) BOOL useSatellite;
-@property float zoomLevel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, retain) MKMapCamera *orbitCamera;
+@property (nonatomic) BOOL orbiting;
+@property (nonatomic) unsigned int pinColor;
+@property (nonatomic) BOOL settingUpOrbitAnimation;
+@property (nonatomic) BOOL showsPin;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL useSatellite;
+@property (nonatomic) float zoomLevel;
 
 - (void).cxx_destruct;
 - (void)_orbitNextThird;

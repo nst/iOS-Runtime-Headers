@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUIKeyline, UIImageView, UILabel, UIView;
-
 @interface SiriUIContentCollectionViewCell : SiriUIClearBackgroundCell {
     struct UIOffset { 
         float horizontal; 
@@ -28,15 +26,15 @@
     int _verticalAlignment;
 }
 
-@property struct UIOffset { float x1; float x2; } accessoryOffset;
-@property(retain) UIView * accessoryView;
-@property BOOL hasChevron;
-@property(readonly) SiriUIKeyline * keyline;
-@property int keylineType;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAndAccessoryInsets;
-@property(retain) UILabel * textLabel;
-@property struct UIOffset { float x1; float x2; } textOffset;
-@property int verticalAlignment;
+@property (nonatomic) struct UIOffset { float x1; float x2; } accessoryOffset;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic) BOOL hasChevron;
+@property (nonatomic, readonly) SiriUIKeyline *keyline;
+@property (nonatomic) int keylineType;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAndAccessoryInsets;
+@property (nonatomic, retain) UILabel *textLabel;
+@property (nonatomic) struct UIOffset { float x1; float x2; } textOffset;
+@property (nonatomic) int verticalAlignment;
 
 + (id)reuseIdentifier;
 

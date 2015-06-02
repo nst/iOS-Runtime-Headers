@@ -2,26 +2,16 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SKAccountPageViewControllerDelegate>, NSURL, SKInvocationQueueProxy<SKUIServiceAccountPageViewController>, SKRemoteAccountPageViewController, _UIAsyncInvocation;
-
 @interface SKAccountPageViewController : UIViewController {
     NSURL *_accountURL;
     _UIAsyncInvocation *_cancelRequest;
     <SKAccountPageViewControllerDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _prepareBlock;
-
+    id /* block */ _prepareBlock;
     SKRemoteAccountPageViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceAccountPageViewController> *_serviceProxy;
 }
 
-@property <SKAccountPageViewControllerDelegate> * delegate;
+@property (nonatomic) <SKAccountPageViewControllerDelegate> *delegate;
 
 - (void)_addRemoteView;
 - (void)_didPrepareWithResult:(BOOL)arg1 error:(id)arg2;
@@ -31,7 +21,7 @@
 - (id)delegate;
 - (id)initWithAccountURL:(id)arg1;
 - (void)loadView;
-- (void)prepareWithCompletionBlock:(id)arg1;
+- (void)prepareWithCompletionBlock:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 

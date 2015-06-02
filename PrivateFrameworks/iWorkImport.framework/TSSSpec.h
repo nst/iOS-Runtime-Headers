@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
+@interface TSSSpec : TSKSosBase
 
-@interface TSSSpec : TSKSosBase {
-}
-
-@property(readonly) NSString * operationPropertyName;
+@property (readonly) NSString *operationPropertyName;
 
 - (id)apply:(id)arg1;
 - (BOOL)canApplyOnObject:(id)arg1;

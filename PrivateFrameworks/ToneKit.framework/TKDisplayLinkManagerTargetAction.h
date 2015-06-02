@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class NSString;
-
 @interface TKDisplayLinkManagerTargetAction : NSObject {
     SEL _actionSelector;
     NSString *_actionSelectorName;
@@ -12,11 +10,11 @@
     id _target;
 }
 
-@property(setter=_setActionSelector:) SEL _actionSelector;
-@property(setter=_setActionSelectorName:,copy) NSString * _actionSelectorName;
-@property(setter=_setDisplayDidRefreshCount:) unsigned int _displayDidRefreshCount;
-@property(setter=_setFrameInterval:) unsigned int _frameInterval;
-@property(setter=_setTarget:,retain) id _target;
+@property (setter=_setActionSelector:, nonatomic) SEL _actionSelector;
+@property (setter=_setActionSelectorName:, nonatomic, copy) NSString *_actionSelectorName;
+@property (setter=_setDisplayDidRefreshCount:, nonatomic) unsigned int _displayDidRefreshCount;
+@property (setter=_setFrameInterval:, nonatomic) unsigned int _frameInterval;
+@property (setter=_setTarget:, nonatomic, retain) id _target;
 
 - (SEL)_actionSelector;
 - (id)_actionSelectorName;

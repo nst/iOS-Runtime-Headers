@@ -7,8 +7,8 @@
     id _value;
 }
 
-@property(retain) id key;
-@property(retain) id value;
+@property (nonatomic, retain) id key;
+@property (nonatomic, retain) id value;
 
 - (void)dealloc;
 - (id)key;

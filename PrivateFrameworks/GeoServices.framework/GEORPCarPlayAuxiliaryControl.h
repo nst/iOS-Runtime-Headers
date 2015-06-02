@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOCarInfo;
-
 @interface GEORPCarPlayAuxiliaryControl : PBCodable <NSCopying> {
     GEOCarInfo *_carInfo;
 }
 
-@property(retain) GEOCarInfo * carInfo;
-@property(readonly) BOOL hasCarInfo;
+@property (nonatomic, retain) GEOCarInfo *carInfo;
+@property (nonatomic, readonly) BOOL hasCarInfo;
 
 - (id)carInfo;
 - (void)copyTo:(id)arg1;

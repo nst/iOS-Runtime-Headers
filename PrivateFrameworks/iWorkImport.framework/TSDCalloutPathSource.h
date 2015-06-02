@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDCalloutPathSource : TSDPathSource <TSDMixing, TSDSmartPathSource> {
     float mCornerRadius;
     BOOL mIsTailAtCenter;
@@ -21,14 +16,14 @@
     float mTailSize;
 }
 
-@property float cornerRadius;
-@property(readonly) BOOL isTailAtCenter;
-@property(readonly) float maxCornerRadius;
-@property(readonly) float maxTailSize;
-@property(readonly) struct CGPoint { float x1; float x2; } tailCenter;
-@property struct CGPoint { float x1; float x2; } tailKnobPosition;
-@property float tailSize;
-@property struct CGPoint { float x1; float x2; } tailSizeKnobPosition;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic, readonly) BOOL isTailAtCenter;
+@property (nonatomic, readonly) float maxCornerRadius;
+@property (nonatomic, readonly) float maxTailSize;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } tailCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } tailKnobPosition;
+@property (nonatomic) float tailSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } tailSizeKnobPosition;
 
 + (id)calloutWithCornerRadius:(float)arg1 tailPosition:(struct CGPoint { float x1; float x2; })arg2 tailSize:(float)arg3 naturalSize:(struct CGSize { float x1; float x2; })arg4;
 + (id)quoteBubbleWithTailPosition:(struct CGPoint { float x1; float x2; })arg1 tailSize:(float)arg2 naturalSize:(struct CGSize { float x1; float x2; })arg3;
@@ -58,7 +53,7 @@
 - (id)p_basePath;
 - (id)p_buildPath;
 - (struct CGPoint { float x1; float x2; })p_getControlKnobPointForRoundedRect;
-- (void)p_getTailPath:(id)arg1 center:(struct CGPoint { float x1; float x2; }*)arg2 tailSize:(float*)arg3 intersections:(struct CGPoint { float x1; float x2; }[2])arg4;
+- (void)p_getTailPath:(id)arg1 center:(struct CGPoint { float x1; float x2; }*)arg2 tailSize:(float*)arg3 intersections:(struct CGPoint { float x1; float x2; })arg4;
 - (void)p_setControlKnobPointForRoundedRect:(struct CGPoint { float x1; float x2; })arg1;
 - (void)p_setCornerRadius:(float)arg1;
 - (void)p_setNaturalSize:(struct CGSize { float x1; float x2; })arg1;

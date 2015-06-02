@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class NSMutableString, NSString;
-
 @interface FlickrResponse : NSObject <NSXMLParserDelegate> {
     int _errorCode;
     NSString *_errorDescription;
@@ -13,14 +11,14 @@
     BOOL _workaround;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int errorCode;
-@property(retain) NSString * errorDescription;
-@property(readonly) unsigned int hash;
-@property long long photoID;
-@property(getter=isSuccess) BOOL success;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int errorCode;
+@property (nonatomic, retain) NSString *errorDescription;
+@property (readonly) unsigned int hash;
+@property (nonatomic) long long photoID;
+@property (getter=isSuccess, nonatomic) BOOL success;
+@property (readonly) Class superclass;
 
 + (id)responseWithData:(id)arg1;
 

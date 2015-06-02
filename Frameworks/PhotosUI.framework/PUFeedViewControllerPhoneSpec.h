@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedViewControllerPhoneSpec : PUFeedViewControllerSpec {
-}
+@interface PUFeedViewControllerPhoneSpec : PUFeedViewControllerSpec
 
 - (BOOL)canUseSimplePreheatManager;
 - (void)configureCommentSeparatorMetrics:(inout struct PUFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; }*)arg1;

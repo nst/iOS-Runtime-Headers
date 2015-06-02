@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSInputStream : NSStream {
-}
+@interface NSInputStream : NSStream
 
-@property(readonly) BOOL hasBytesAvailable;
+@property (readonly) BOOL hasBytesAvailable;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)inputStreamWithData:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
-
 @interface BWJPEGEncoderNode : BWNode {
     BOOL _croppingEnabled;
     struct OpaqueVTPixelTransferSession { } *_pixelTransferSession;

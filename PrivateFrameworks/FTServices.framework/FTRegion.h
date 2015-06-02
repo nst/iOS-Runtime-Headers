@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class FTRegion, NSArray, NSDictionary, NSString;
-
 @interface FTRegion : NSObject {
     NSDictionary *_dictionary;
     FTRegion *_parentRegion;
     NSArray *_subRegions;
 }
 
-@property(retain) NSDictionary * _dictionary;
-@property(retain) FTRegion * _parentRegion;
-@property(readonly) NSString * basePhoneNumber;
-@property(readonly) NSString * isoCode;
-@property(readonly) NSString * label;
-@property(readonly) FTRegion * parentRegion;
-@property(readonly) NSString * regionID;
-@property(readonly) NSArray * subRegions;
+@property (retain) NSDictionary *_dictionary;
+@property (retain) FTRegion *_parentRegion;
+@property (readonly) NSString *basePhoneNumber;
+@property (readonly) NSString *isoCode;
+@property (readonly) NSString *label;
+@property (readonly) FTRegion *parentRegion;
+@property (readonly) NSString *regionID;
+@property (readonly) NSArray *subRegions;
+
+// Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
 - (id)_dictionary;
 - (id)_initWithDictionary:(id)arg1;
@@ -26,15 +26,18 @@
 - (id)basePhoneNumber;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isLeafNode;
 - (id)isoCode;
 - (id)label;
 - (id)parentRegion;
 - (id)regionID;
 - (id)regionWithID:(id)arg1;
-- (BOOL)search:(id)arg1 withResults:(id)arg2;
 - (void)set_dictionary:(id)arg1;
 - (void)set_parentRegion:(id)arg1;
 - (id)subRegions;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (BOOL)isLeafNode;
+- (BOOL)search:(id)arg1 withResults:(id)arg2;
 
 @end

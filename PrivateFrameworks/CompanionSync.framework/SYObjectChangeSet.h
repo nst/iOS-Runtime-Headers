@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableSet;
-
 @interface SYObjectChangeSet : NSObject {
     NSMutableSet *_added;
     NSMutableSet *_deleted;
     NSMutableSet *_updated;
 }
 
-@property(copy) NSMutableSet * added;
-@property(copy) NSMutableSet * deleted;
-@property(copy) NSMutableSet * updated;
+@property (nonatomic, copy) NSMutableSet *added;
+@property (nonatomic, copy) NSMutableSet *deleted;
+@property (nonatomic, copy) NSMutableSet *updated;
 
 - (void).cxx_destruct;
 - (id)added;

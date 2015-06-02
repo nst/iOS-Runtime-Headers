@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
-
 @interface PBBridgeResponsePerformanceMonitor : NSObject {
     NSMutableDictionary *_macroActivities;
     NSMutableArray *_measurements;
@@ -13,12 +11,12 @@
     NSDictionary *_remoteMilestones;
 }
 
-@property(readonly) NSMutableDictionary * macroActivities;
-@property(readonly) NSMutableArray * measurements;
-@property(readonly) NSMutableDictionary * milestones;
-@property(retain) NSDictionary * remoteMacroActivities;
-@property(retain) NSArray * remoteMeasurements;
-@property(retain) NSDictionary * remoteMilestones;
+@property (nonatomic, readonly) NSMutableDictionary *macroActivities;
+@property (nonatomic, readonly) NSMutableArray *measurements;
+@property (nonatomic, readonly) NSMutableDictionary *milestones;
+@property (nonatomic, retain) NSDictionary *remoteMacroActivities;
+@property (nonatomic, retain) NSArray *remoteMeasurements;
+@property (nonatomic, retain) NSDictionary *remoteMilestones;
 
 + (id)shareMonitor;
 

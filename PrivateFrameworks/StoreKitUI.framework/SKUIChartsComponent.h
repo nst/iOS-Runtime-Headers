@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUIChartsComponent : SKUIPageComponent {
     NSArray *_charts;
 }
 
-@property(readonly) NSArray * charts;
+@property (nonatomic, readonly) NSArray *charts;
 
 - (void).cxx_destruct;
 - (id)_ineligibleGratisIdentifiersForChartDictionary:(id)arg1;

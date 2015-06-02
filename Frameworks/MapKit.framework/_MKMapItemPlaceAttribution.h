@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOMapItemPlaceAttribution, NSArray;
-
 @interface _MKMapItemPlaceAttribution : _MKMapItemAttribution {
     GEOMapItemPlaceAttribution *_geoPlaceAttribution;
 }
 
-@property(readonly) NSArray * checkInURLs;
+@property (nonatomic, readonly) NSArray *checkInURLs;
 
 - (void).cxx_destruct;
 - (id)checkInURLs;

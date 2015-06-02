@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetDoNotDisturb : SASettingGetBool {
-}
+@interface SASettingGetDoNotDisturb : SASettingGetBool
 
 + (id)getDoNotDisturb;
 + (id)getDoNotDisturbWithDictionary:(id)arg1 context:(id)arg2;

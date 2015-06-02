@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIAttributedStringLayout;
-
 @interface SKUIBadgeImageRequest : NSObject {
     unsigned int _requestIdentifier;
     SKUIAttributedStringLayout *_stringLayout;

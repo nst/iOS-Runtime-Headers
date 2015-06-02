@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXEffect : NSObject {
-}
+@interface OAXEffect : NSObject
 
 + (BOOL)isEmpty:(id)arg1;
 + (id)presetShadowTypeEnumMap;

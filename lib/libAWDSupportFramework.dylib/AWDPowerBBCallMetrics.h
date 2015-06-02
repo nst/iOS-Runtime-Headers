@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerBBCallMetrics : PBCodable <NSCopying> {
     unsigned int _bBAndDataPowerMicroWatt;
     unsigned int _bBPowerMicroWatt;
@@ -24,21 +22,21 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int bBAndDataPowerMicroWatt;
-@property unsigned int bBPowerMicroWatt;
-@property unsigned int bBTotalAndDataDuration;
-@property unsigned int bBTotalCallDuration;
-@property unsigned int connectedSleepDuration;
-@property unsigned int connectedSleepDurationData;
-@property BOOL hasBBAndDataPowerMicroWatt;
-@property BOOL hasBBPowerMicroWatt;
-@property BOOL hasBBTotalAndDataDuration;
-@property BOOL hasBBTotalCallDuration;
-@property BOOL hasConnectedSleepDuration;
-@property BOOL hasConnectedSleepDurationData;
-@property BOOL hasTimestamp;
-@property(retain) NSMutableArray * metrics;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int bBAndDataPowerMicroWatt;
+@property (nonatomic) unsigned int bBPowerMicroWatt;
+@property (nonatomic) unsigned int bBTotalAndDataDuration;
+@property (nonatomic) unsigned int bBTotalCallDuration;
+@property (nonatomic) unsigned int connectedSleepDuration;
+@property (nonatomic) unsigned int connectedSleepDurationData;
+@property (nonatomic) BOOL hasBBAndDataPowerMicroWatt;
+@property (nonatomic) BOOL hasBBPowerMicroWatt;
+@property (nonatomic) BOOL hasBBTotalAndDataDuration;
+@property (nonatomic) BOOL hasBBTotalCallDuration;
+@property (nonatomic) BOOL hasConnectedSleepDuration;
+@property (nonatomic) BOOL hasConnectedSleepDurationData;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSMutableArray *metrics;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addMetrics:(id)arg1;
 - (unsigned int)bBAndDataPowerMicroWatt;

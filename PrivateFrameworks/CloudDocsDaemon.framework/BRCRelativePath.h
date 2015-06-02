@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, BRCBookmark, BRCGenerationID, BRCItemID, BRCLocalContainer, BRCRelativePath, BRCServerZone, NSData, NSDirectoryEnumerator, NSNumber, NSString, NSURL;
-
 @interface BRCRelativePath : NSObject <NSSecureCoding> {
     NSString *_absolutePath;
     BRCRelativePath *_basePath;
@@ -22,16 +16,16 @@
     unsigned int _documentID;
     int _fd;
     unsigned long long _fileID;
-    unsigned char _finderInfo[32];
+    unsigned char _finderInfo;
     unsigned int _flags;
     unsigned int _fsGenerationID;
     BRCGenerationID *_generationID;
-    unsigned int _hasFinderTags : 1;
-    unsigned int _isAlias : 1;
-    unsigned int _isBusy : 1;
-    unsigned int _isExcluded : 1;
-    unsigned int _isInPackage : 1;
-    unsigned int _isPackageRoot : 1;
+    unsigned int _hasFinderTags;
+    unsigned int _isAlias;
+    unsigned int _isBusy;
+    unsigned int _isExcluded;
+    unsigned int _isInPackage;
+    unsigned int _isPackageRoot;
     unsigned short _mode;
     struct timespec { 
         int tv_sec; 
@@ -42,15 +36,11 @@
         BOOL __opaque[124]; 
     } _mutex;
     unsigned int _nlink;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_openRefCount;
-
+    int _openRefCount;
     unsigned long long _parentFileID;
-    unsigned int _qtnResolved : 1;
+    unsigned int _qtnResolved;
     NSData *_quarantineInfo;
-    unsigned int _readFault : 1;
+    unsigned int _readFault;
     NSString *_relativePath;
     BRCServerZone *_serverZone;
     BRCAccountSession *_session;
@@ -62,54 +52,54 @@
     NSNumber *_volumeID;
 }
 
-@property(readonly) NSString * absolutePath;
-@property(readonly) long birthTime;
-@property(readonly) BRCBookmark * bookmark;
-@property(readonly) BRCLocalContainer * container;
-@property(readonly) int deviceID;
-@property(readonly) unsigned int documentID;
-@property(readonly) BOOL exists;
-@property(readonly) NSString * faultDisplayName;
-@property(readonly) unsigned long long fileID;
-@property(readonly) NSNumber * fileObjectID;
-@property(readonly) unsigned long fileType;
-@property(readonly) NSString * filename;
-@property(readonly) unsigned int fsGenerationID;
-@property(readonly) BRCGenerationID * generationID;
-@property(readonly) unsigned int hardlinkCount;
-@property(readonly) BOOL hasFinderTags;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isAlias;
-@property(readonly) BOOL isBusy;
-@property(readonly) BOOL isDocument;
-@property(readonly) BOOL isExcluded;
-@property(readonly) BOOL isExecutable;
-@property(readonly) BOOL isFault;
-@property(readonly) BOOL isFile;
-@property(readonly) BOOL isHiddenExtension;
-@property(readonly) BOOL isHiddenFile;
-@property(readonly) BOOL isInPackage;
-@property(readonly) BOOL isPackageRoot;
-@property(readonly) BOOL isRoot;
-@property(readonly) BOOL isSymLink;
-@property(readonly) BOOL isUnixDir;
-@property(readonly) BOOL isWritable;
-@property(readonly) long modificationTime;
-@property(readonly) unsigned long long parentFileID;
-@property(readonly) unsigned int parentHash;
-@property(readonly) NSString * pathRelativeToPackageRoot;
-@property(readonly) NSString * pathRelativeToRoot;
-@property(readonly) NSData * quarantineInfo;
-@property(readonly) BRCRelativePath * root;
-@property(readonly) BRCServerZone * serverZone;
-@property(readonly) BRCAccountSession * session;
-@property(readonly) BRCItemID * sharedItemID;
-@property(readonly) NSString * sharedOwnerName;
-@property(readonly) long long size;
-@property(readonly) NSString * symlinkContent;
-@property(readonly) unsigned short type;
-@property(readonly) NSURL * url;
-@property(readonly) NSNumber * volumeID;
+@property (nonatomic, readonly) NSString *absolutePath;
+@property (nonatomic, readonly) long birthTime;
+@property (nonatomic, readonly) BRCBookmark *bookmark;
+@property (nonatomic, readonly) BRCLocalContainer *container;
+@property (nonatomic, readonly) int deviceID;
+@property (nonatomic, readonly) unsigned int documentID;
+@property (nonatomic, readonly) BOOL exists;
+@property (nonatomic, readonly) NSString *faultDisplayName;
+@property (nonatomic, readonly) unsigned long long fileID;
+@property (nonatomic, readonly) NSNumber *fileObjectID;
+@property (nonatomic, readonly) unsigned long fileType;
+@property (nonatomic, readonly) NSString *filename;
+@property (nonatomic, readonly) unsigned int fsGenerationID;
+@property (nonatomic, readonly) BRCGenerationID *generationID;
+@property (nonatomic, readonly) unsigned int hardlinkCount;
+@property (nonatomic, readonly) BOOL hasFinderTags;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isAlias;
+@property (nonatomic, readonly) BOOL isBusy;
+@property (nonatomic, readonly) BOOL isDocument;
+@property (nonatomic, readonly) BOOL isExcluded;
+@property (nonatomic, readonly) BOOL isExecutable;
+@property (nonatomic, readonly) BOOL isFault;
+@property (nonatomic, readonly) BOOL isFile;
+@property (nonatomic, readonly) BOOL isHiddenExtension;
+@property (nonatomic, readonly) BOOL isHiddenFile;
+@property (nonatomic, readonly) BOOL isInPackage;
+@property (nonatomic, readonly) BOOL isPackageRoot;
+@property (nonatomic, readonly) BOOL isRoot;
+@property (nonatomic, readonly) BOOL isSymLink;
+@property (nonatomic, readonly) BOOL isUnixDir;
+@property (nonatomic, readonly) BOOL isWritable;
+@property (nonatomic, readonly) long modificationTime;
+@property (nonatomic, readonly) unsigned long long parentFileID;
+@property (readonly) unsigned int parentHash;
+@property (nonatomic, readonly) NSString *pathRelativeToPackageRoot;
+@property (nonatomic, readonly) NSString *pathRelativeToRoot;
+@property (nonatomic, readonly) NSData *quarantineInfo;
+@property (nonatomic, readonly) BRCRelativePath *root;
+@property (nonatomic, readonly) BRCServerZone *serverZone;
+@property (nonatomic, readonly) BRCAccountSession *session;
+@property (nonatomic, readonly) BRCItemID *sharedItemID;
+@property (nonatomic, readonly) NSString *sharedOwnerName;
+@property (nonatomic, readonly) long long size;
+@property (nonatomic, readonly) NSString *symlinkContent;
+@property (nonatomic, readonly) unsigned short type;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSNumber *volumeID;
 
 + (int)locateByFileID:(unsigned long long)arg1 zone:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -183,8 +173,8 @@
 - (id)pathRelativeToPackageRoot;
 - (id)pathRelativeToRoot;
 - (id)pathWithChildAtPath:(id)arg1;
-- (BOOL)performOnOpenFileDescriptor:(id)arg1 error:(int*)arg2;
-- (BOOL)performOnOpenParentFileDescriptor:(id)arg1 error:(int*)arg2;
+- (BOOL)performOnOpenFileDescriptor:(id /* block */)arg1 error:(int*)arg2;
+- (BOOL)performOnOpenParentFileDescriptor:(id /* block */)arg1 error:(int*)arg2;
 - (id)quarantineInfo;
 - (id)refreshFromPathMustExist:(BOOL)arg1;
 - (BOOL)resolveAndKeepOpenMustExist:(BOOL)arg1 error:(int*)arg2;

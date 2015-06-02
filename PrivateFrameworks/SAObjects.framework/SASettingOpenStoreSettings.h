@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenStoreSettings : SASettingOpenAppSettings {
-}
+@interface SASettingOpenStoreSettings : SASettingOpenAppSettings
 
 + (id)openStoreSettings;
 + (id)openStoreSettingsWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,20 +2,18 @@
    Image: /usr/lib/libextension.dylib
  */
 
-@class NSDictionary, NSString;
-
 @interface UIKit_PKSubsystem : NSObject <PKModularService> {
     NSDictionary *_infoDictionary;
     BOOL _initialized;
     BOOL _plugInKitProcess;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * infoDictionary;
-@property(getter=isPlugInKitProcess) BOOL plugInKitProcess;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *infoDictionary;
+@property (getter=isPlugInKitProcess, nonatomic) BOOL plugInKitProcess;
+@property (readonly) Class superclass;
 
 + (id)initForPlugInKit;
 + (id)sharedInstance;

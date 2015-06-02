@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
  */
 
-@class SUBDescriptor, SUBProgress;
-
 @interface SUBDownload : NSObject <NSSecureCoding> {
     SUBDescriptor *_descriptor;
     SUBProgress *_progress;
 }
 
-@property(retain) SUBDescriptor * descriptor;
-@property(retain) SUBProgress * progress;
+@property (nonatomic, retain) SUBDescriptor *descriptor;
+@property (nonatomic, retain) SUBProgress *progress;
 
 + (id)downloadWithDescriptor:(id)arg1 andProgress:(id)arg2;
 + (BOOL)supportsSecureCoding;

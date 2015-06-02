@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUIQueueDelegate>, NSMutableArray;
-
 @interface AFUIQueue : NSObject <NSFastEnumeration> {
     <AFUIQueueDelegate> *_delegate;
     NSMutableArray *_objects;
 }
 
-@property(readonly) int count;
-@property <AFUIQueueDelegate> * delegate;
-@property(readonly) id frontObject;
-@property(getter=_objects,readonly) NSMutableArray * objects;
+@property (nonatomic, readonly) int count;
+@property (nonatomic) <AFUIQueueDelegate> *delegate;
+@property (nonatomic, readonly) id frontObject;
+@property (getter=_objects, nonatomic, readonly) NSMutableArray *objects;
 
 - (void).cxx_destruct;
 - (id)_objects;
 - (int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)delegate;
 - (id)dequeueAllObjects;
 - (id)dequeueObject;

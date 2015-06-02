@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@interface fmpcDummyThreadInvoker : NSObject {
-}
+@interface fmpcDummyThreadInvoker : NSObject
 
 + (void)invokeThread:(id)arg1;
 

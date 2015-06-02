@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
  */
 
-@interface DCIMDirectoryUtilities : NSObject {
-}
+@interface DCIMDirectoryUtilities : NSObject
 
 + (id)photoDCIMDirectory;
 + (id)photoDCIMDirectoryURL;

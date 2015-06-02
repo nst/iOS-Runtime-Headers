@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class CertInfoGradientLabel, UIImage, UILabel;
-
 @interface CertInfoCertificateHeaderCell : UITableViewCell {
     UIImage *_certificateImage;
     UIImage *_notTrustedGradient;

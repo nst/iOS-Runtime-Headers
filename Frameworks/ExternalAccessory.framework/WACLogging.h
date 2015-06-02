@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@interface WACLogging : NSObject {
-}
+@interface WACLogging : NSObject
 
 + (bool)isEnabled;
 

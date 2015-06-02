@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSOperationQueue;
-
 @interface OperationQueueInvocationTrampoline : InvocationTrampoline {
     int _priority;
     NSOperationQueue *_queue;

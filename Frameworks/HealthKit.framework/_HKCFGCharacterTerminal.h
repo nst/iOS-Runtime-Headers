@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSCharacterSet;
-
 @interface _HKCFGCharacterTerminal : _HKCFGTerminal {
     NSCharacterSet *_characterSet;
 }
 
-@property(copy) NSCharacterSet * characterSet;
+@property (nonatomic, copy) NSCharacterSet *characterSet;
 
 - (void).cxx_destruct;
 - (id)_label;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableSet, NSRecursiveLock;
-
 @interface IMIDStatusController : NSObject {
     NSRecursiveLock *_servicesLock;
     NSMutableSet *_servicesRegistered;
 }
 
-@property(retain) NSRecursiveLock * _servicesLock;
-@property(retain) NSMutableSet * _servicesRegistered;
+@property (nonatomic, retain) NSRecursiveLock *_servicesLock;
+@property (nonatomic, retain) NSMutableSet *_servicesRegistered;
 
 + (id)sharedInstance;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DTexCoordGeneration, TSCH3Dvec3DataBuffer;
-
 @interface TSCH3DChartTexcoordSharedResource : TSCH3DChartMeshSharedResource {
     TSCH3DTexCoordGeneration *mGenerator;
     TSCH3Dvec3DataBuffer *mNormal;
     TSCH3Dvec3DataBuffer *mVertex;
 }
 
-@property(retain) TSCH3DTexCoordGeneration * generator;
-@property(retain) TSCH3Dvec3DataBuffer * normal;
-@property(retain) TSCH3Dvec3DataBuffer * vertex;
+@property (nonatomic, retain) TSCH3DTexCoordGeneration *generator;
+@property (nonatomic, retain) TSCH3Dvec3DataBuffer *normal;
+@property (nonatomic, retain) TSCH3Dvec3DataBuffer *vertex;
 
 - (void)dealloc;
 - (void)flushMemory;

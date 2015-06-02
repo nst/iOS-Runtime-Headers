@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface CLIndoorTileEvictionPolicy : NSObject <NSSecureCoding> {
     NSObject<OS_xpc_object> *_activity;
     BOOL _forceClean;
     double _maxModifiedAge;
 }
 
-@property(retain) NSObject<OS_xpc_object> * activity;
-@property BOOL forceClean;
-@property double maxModifiedAge;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *activity;
+@property (nonatomic) BOOL forceClean;
+@property (nonatomic) double maxModifiedAge;
 
 + (BOOL)supportsSecureCoding;
 

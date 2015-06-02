@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray;
-
 @interface MPShuffledItemGroup : NSObject <NSSecureCoding> {
     long long _groupPersistentID;
     NSMutableArray *_mutableItems;

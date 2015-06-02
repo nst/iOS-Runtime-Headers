@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, PLRevGeoCompoundNameInfo;
-
 @interface PLMomentNameInfo : NSObject {
     NSArray *__orderedNames;
     PLRevGeoCompoundNameInfo *__primaryNameInfo;
@@ -11,9 +9,9 @@
     BOOL _locationInfoIsValid;
 }
 
-@property(setter=_setOrderedNames:,retain) NSArray * _orderedNames;
-@property(retain) PLRevGeoCompoundNameInfo * _primaryNameInfo;
-@property(retain) PLRevGeoCompoundNameInfo * _secondaryNameInfo;
+@property (setter=_setOrderedNames:, nonatomic, retain) NSArray *_orderedNames;
+@property (nonatomic, retain) PLRevGeoCompoundNameInfo *_primaryNameInfo;
+@property (nonatomic, retain) PLRevGeoCompoundNameInfo *_secondaryNameInfo;
 
 + (id)_localizedNameForName:(id)arg1;
 

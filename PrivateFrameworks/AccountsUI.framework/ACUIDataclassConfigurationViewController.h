@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ACAccount, NSArray, NSMutableArray, NSMutableDictionary, NSString, PSSpecifier;
-
 @interface ACUIDataclassConfigurationViewController : ACUIViewController {
     ACAccount *_account;
     NSString *_accountIdentifier;
     PSSpecifier *_accountSummaryCellSpecifier;
     NSMutableDictionary *_allDesiredDataclassActions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _configurationCompletion;
-
+    id /* block */ _configurationCompletion;
     PSSpecifier *_dataclassGroupSpecifier;
     NSArray *_dataclassSpecifiers;
     PSSpecifier *_deleteButtonSpecifier;
@@ -34,16 +24,16 @@
     BOOL _shouldShowDeleteAccountButton;
 }
 
-@property(retain) ACAccount * account;
-@property(copy) id configurationCompletion;
-@property PSSpecifier * dataclassGroupSpecifier;
-@property(readonly) PSSpecifier * deleteButtonSpecifier;
-@property(getter=isFirstTimeSetup) BOOL firstTimeSetup;
-@property BOOL isMailSetupForced;
-@property(copy) NSArray * preEnabledDataclasses;
-@property BOOL shouldEnableAccountSummaryCell;
-@property BOOL shouldEnableDeleteAccountButton;
-@property BOOL shouldShowDeleteAccountButton;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, copy) id /* block */ configurationCompletion;
+@property (nonatomic) PSSpecifier *dataclassGroupSpecifier;
+@property (nonatomic, readonly) PSSpecifier *deleteButtonSpecifier;
+@property (getter=isFirstTimeSetup, nonatomic) BOOL firstTimeSetup;
+@property (nonatomic) BOOL isMailSetupForced;
+@property (nonatomic, copy) NSArray *preEnabledDataclasses;
+@property (nonatomic) BOOL shouldEnableAccountSummaryCell;
+@property (nonatomic) BOOL shouldEnableDeleteAccountButton;
+@property (nonatomic) BOOL shouldShowDeleteAccountButton;
 
 + (BOOL)shouldPresentAsModalSheet;
 
@@ -66,7 +56,7 @@
 - (Class)accountInfoControllerClass;
 - (void)appendDeleteAccountButton;
 - (void)cancelButtonTapped:(id)arg1;
-- (id)configurationCompletion;
+- (id /* block */)configurationCompletion;
 - (id)dataclassGroupSpecifier;
 - (void)dataclassSwitchStateDidChange:(id)arg1 withSpecifier:(id)arg2;
 - (id)dataclassSwitchStateForSpecifier:(id)arg1;
@@ -93,7 +83,7 @@
 - (void)reloadDynamicSpecifiersWithAnimation:(BOOL)arg1;
 - (void)resetDirtyDataclassSwitchCells;
 - (void)setAccount:(id)arg1;
-- (void)setConfigurationCompletion:(id)arg1;
+- (void)setConfigurationCompletion:(id /* block */)arg1;
 - (void)setDataclass:(id)arg1 enabled:(BOOL)arg2;
 - (void)setDataclassGroupSpecifier:(id)arg1;
 - (void)setFirstTimeSetup:(BOOL)arg1;

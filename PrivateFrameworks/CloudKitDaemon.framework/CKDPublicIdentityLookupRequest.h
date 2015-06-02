@@ -2,35 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSMutableSet;
-
 @interface CKDPublicIdentityLookupRequest : NSObject {
     NSMutableDictionary *_emailsToProtectionInfo;
     NSMutableDictionary *_emailsToUserInfo;
     BOOL _isCancelled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _lookupCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _perEmailProgressBlock;
-
+    id /* block */ _lookupCompletionBlock;
+    id /* block */ _perEmailProgressBlock;
     NSMutableSet *_remainingEmailsToFetch;
 }
 
-@property(retain) NSMutableDictionary * emailsToProtectionInfo;
-@property(retain) NSMutableDictionary * emailsToUserInfo;
-@property BOOL isCancelled;
-@property(copy) id lookupCompletionBlock;
-@property(copy) id perEmailProgressBlock;
-@property(retain) NSMutableSet * remainingEmailsToFetch;
+@property (nonatomic, retain) NSMutableDictionary *emailsToProtectionInfo;
+@property (nonatomic, retain) NSMutableDictionary *emailsToUserInfo;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, copy) id /* block */ lookupCompletionBlock;
+@property (nonatomic, copy) id /* block */ perEmailProgressBlock;
+@property (nonatomic, retain) NSMutableSet *remainingEmailsToFetch;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -39,15 +25,15 @@
 - (void)finishWithError:(id)arg1;
 - (id)initWithEmails:(id)arg1;
 - (BOOL)isCancelled;
-- (id)lookupCompletionBlock;
-- (id)perEmailProgressBlock;
+- (id /* block */)lookupCompletionBlock;
+- (id /* block */)perEmailProgressBlock;
 - (void)receivedProtectionInfo:(id)arg1 userInfo:(id)arg2 forEmail:(id)arg3;
 - (id)remainingEmailsToFetch;
 - (void)setEmailsToProtectionInfo:(id)arg1;
 - (void)setEmailsToUserInfo:(id)arg1;
 - (void)setIsCancelled:(BOOL)arg1;
-- (void)setLookupCompletionBlock:(id)arg1;
-- (void)setPerEmailProgressBlock:(id)arg1;
+- (void)setLookupCompletionBlock:(id /* block */)arg1;
+- (void)setPerEmailProgressBlock:(id /* block */)arg1;
 - (void)setRemainingEmailsToFetch:(id)arg1;
 
 @end

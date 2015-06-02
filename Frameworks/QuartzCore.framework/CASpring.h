@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CALayer, CAValueFunction, NSString;
-
 @interface CASpring : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     struct CGPoint { 
         float x; 
@@ -34,11 +27,11 @@
 @property struct CGPoint { float x1; float x2; } attachmentPointB;
 @property float damping;
 @property id delegate;
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) CAValueFunction * function;
-@property(retain) CALayer * layerA;
-@property(retain) CALayer * layerB;
-@property(copy) NSString * name;
+@property (getter=isEnabled) BOOL enabled;
+@property (retain) CAValueFunction *function;
+@property (retain) CALayer *layerA;
+@property (retain) CALayer *layerB;
+@property (copy) NSString *name;
 @property float restLength;
 @property float stiffness;
 

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCSEAIDSelectEvent : PBCodable <NSCopying> {
     NSData *_aid;
     struct { 
@@ -15,14 +13,14 @@
     NSData *_uuidReference;
 }
 
-@property(retain) NSData * aid;
-@property(readonly) BOOL hasAid;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
+@property (nonatomic, retain) NSData *aid;
+@property (nonatomic, readonly) BOOL hasAid;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (id)aid;
 - (void)copyTo:(id)arg1;

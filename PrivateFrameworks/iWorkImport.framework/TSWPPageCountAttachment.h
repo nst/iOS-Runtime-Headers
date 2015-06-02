@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPPageCountAttachment : TSWPNumberAttachment {
-}
+@interface TSWPPageCountAttachment : TSWPNumberAttachment
 
 - (BOOL)changesWithPageCount;
 - (int)elementKind;

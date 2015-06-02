@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface MCUserNotificationQueueEntry : NSObject {
     NSString *_alternateButtonText;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSString *_defaultButtonText;
     double _dismissAfterTimeInterval;
     BOOL _displayInAppWhitelistModes;
@@ -25,20 +15,20 @@
     NSString *_title;
 }
 
-@property(retain) NSString * alternateButtonText;
-@property(copy) id completionBlock;
-@property(retain) NSString * defaultButtonText;
-@property double dismissAfterTimeInterval;
-@property BOOL displayInAppWhitelistModes;
-@property BOOL displayOnLockScreen;
-@property(retain) NSString * message;
-@property(retain) id notification;
-@property(retain) NSString * otherButtonText;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *alternateButtonText;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) NSString *defaultButtonText;
+@property (nonatomic) double dismissAfterTimeInterval;
+@property (nonatomic) BOOL displayInAppWhitelistModes;
+@property (nonatomic) BOOL displayOnLockScreen;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) id notification;
+@property (nonatomic, retain) NSString *otherButtonText;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (id)alternateButtonText;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)defaultButtonText;
 - (double)dismissAfterTimeInterval;
 - (BOOL)displayInAppWhitelistModes;
@@ -47,7 +37,7 @@
 - (id)notification;
 - (id)otherButtonText;
 - (void)setAlternateButtonText:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDefaultButtonText:(id)arg1;
 - (void)setDismissAfterTimeInterval:(double)arg1;
 - (void)setDisplayInAppWhitelistModes:(BOOL)arg1;

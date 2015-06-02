@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSObject<OS_dispatch_semaphore>, NSTimer, PTPTCPIPTransport;
-
 @interface PTPTCPIPConnection : NSObject {
     unsigned int _bytesReceived;
     unsigned int _bytesSent;

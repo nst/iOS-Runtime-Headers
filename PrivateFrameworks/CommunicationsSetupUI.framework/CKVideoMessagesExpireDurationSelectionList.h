@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CKVideoMessagesExpireDurationSelectionList : CKExpireDurationSelectionList {
-}
+@interface CKVideoMessagesExpireDurationSelectionList : CKExpireDurationSelectionList
 
 - (id)expireDescription;
 

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTLegibleTextAssistantSettingsForLightText : PTLegibleTextAssistantSettings {
-}
+@interface PTLegibleTextAssistantSettingsForLightText : PTLegibleTextAssistantSettings
 
 @end

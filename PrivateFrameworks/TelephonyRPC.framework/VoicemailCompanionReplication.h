@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@class NPSDomainAccessor, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NanoTelephonyIDSProxy, PSYSyncCoordinator, SYStore;
-
 @interface VoicemailCompanionReplication : NSObject <PSYSyncCoordinatorDelegate, SYStoreDelegate> {
     NSObject<OS_dispatch_queue> *_companionSyncQueue;
     NSObject<OS_dispatch_queue> *_concurrentQueue;
@@ -21,11 +19,11 @@
     NSObject<OS_dispatch_semaphore> *waitForFirstSyncCompleteSemaphore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) SYStore * syncStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SYStore *syncStore;
 
 - (void).cxx_destruct;
 - (void)_deltaSync;
@@ -36,10 +34,10 @@
 - (void)_handleVoicemailStoreRemovedAllVoicemails:(id)arg1;
 - (void)_handleVoicemailStoreRemovedVoicemails:(id)arg1;
 - (void)_initializeDomainAccessor;
-- (void)_performAfterFirstDeviceUnlockAndSyncRestrictionNone:(id)arg1;
+- (void)_performAfterFirstDeviceUnlockAndSyncRestrictionNone:(id /* block */)arg1;
 - (void)_registerForNotifications;
 - (void)addToRemoteVoicemails:(id)arg1;
-- (id)beginSyncingAllObjectsForStore:(id)arg1;
+- (id /* block */)beginSyncingAllObjectsForStore:(id)arg1;
 - (id)changeSetForRemoteVoicemails:(id)arg1 fromVMVoicemails:(id)arg2;
 - (void)dealloc;
 - (int)indexOfVoicemail:(id)arg1 inArray:(id)arg2;

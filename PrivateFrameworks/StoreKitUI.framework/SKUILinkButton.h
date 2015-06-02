@@ -6,7 +6,7 @@
     int _arrowStyle;
 }
 
-@property(readonly) int arrowStyle;
+@property (nonatomic, readonly) int arrowStyle;
 
 + (id)buttonWithArrowStyle:(int)arg1;
 

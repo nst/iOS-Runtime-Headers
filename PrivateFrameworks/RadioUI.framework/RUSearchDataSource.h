@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUSearchDataSourceDelegate>, RadioSearchRequest;
-
 @interface RUSearchDataSource : NSObject {
     RadioSearchRequest *_activeRequest;
     double _activeRequestTimeInterval;
@@ -12,7 +10,7 @@
     RadioSearchRequest *_queuedRequest;
 }
 
-@property <RUSearchDataSourceDelegate> * delegate;
+@property (nonatomic) <RUSearchDataSourceDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_updateResultForQueuedSearchRequest;

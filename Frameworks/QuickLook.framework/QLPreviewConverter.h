@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSDictionary, NSString, NSURLRequest, NSURLResponse, QLPreviewParts;
-
 @interface QLPreviewConverter : NSObject {
     NSDictionary *_options;
     QLPreviewParts *_previewParts;
 }
 
-@property(readonly) NSString * previewFileName;
-@property(readonly) QLPreviewParts * previewParts;
-@property(readonly) NSURLRequest * previewRequest;
-@property(readonly) NSURLResponse * previewResponse;
-@property(readonly) NSString * previewUTI;
+@property (nonatomic, readonly) NSString *previewFileName;
+@property (nonatomic, readonly) QLPreviewParts *previewParts;
+@property (nonatomic, readonly) NSURLRequest *previewRequest;
+@property (nonatomic, readonly) NSURLResponse *previewResponse;
+@property (nonatomic, readonly) NSString *previewUTI;
 
 + (id)_csvUTIs;
 + (id)_iWorkUTIs;

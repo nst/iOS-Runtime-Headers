@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSString;
-
 @interface SLDatabase : NSObject {
     NSManagedObjectContext *_managedObjectContext;
     NSManagedObjectModel *_managedObjectModel;

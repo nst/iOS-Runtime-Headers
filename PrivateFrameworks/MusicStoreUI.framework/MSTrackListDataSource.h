@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSTrackListDataSource : MSStructuredPageTableDataSource {
-}
+@interface MSTrackListDataSource : MSStructuredPageTableDataSource
 
 - (id)_stylesheetString;
 - (BOOL)canDoubleTapIndexPath:(id)arg1;

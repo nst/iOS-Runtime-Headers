@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSMutableArray;
-
 @interface PSSpecifierGroupIndex : NSObject <NSCopying> {
     NSMutableArray *_groupSections;
     NSMutableArray *_groupSpecifiers;
@@ -12,8 +10,8 @@
     BOOL _wantsDebugCallbacks;
 }
 
-@property(copy,readonly) NSArray * groupSpecifiers;
-@property(copy,readonly) NSArray * specifiers;
+@property (nonatomic, readonly, copy) NSArray *groupSpecifiers;
+@property (nonatomic, readonly, copy) NSArray *specifiers;
 
 + (BOOL)_wantsDebuggingCallbacks;
 + (id)groupIndexWithSpecifiers:(id)arg1;
@@ -55,7 +53,7 @@
 - (unsigned int)numberOfGroups;
 - (unsigned int)numberOfRowsInGroupAtIndex:(unsigned int)arg1;
 - (void)performSpecifierUpdates:(id)arg1;
-- (void)performSpecifierUpdatesUsingBlock:(id)arg1;
+- (void)performSpecifierUpdatesUsingBlock:(id /* block */)arg1;
 - (void)performUpdateOperation:(id)arg1;
 - (void)performUpdateOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSpecifiersInGroup:(id)arg1;

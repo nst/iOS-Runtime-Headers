@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate;
-
 @interface CMMotionActivity : CMLogItem {
     struct CLMotionActivity { 
         int type; 
@@ -19,14 +17,14 @@
     } fState;
 }
 
-@property(readonly) BOOL automotive;
-@property(readonly) int confidence;
-@property(readonly) BOOL cycling;
-@property(readonly) BOOL running;
-@property(readonly) NSDate * startDate;
-@property(readonly) BOOL stationary;
-@property(readonly) BOOL unknown;
-@property(readonly) BOOL walking;
+@property (nonatomic, readonly) BOOL automotive;
+@property (nonatomic, readonly) int confidence;
+@property (nonatomic, readonly) BOOL cycling;
+@property (nonatomic, readonly) BOOL running;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) BOOL stationary;
+@property (nonatomic, readonly) BOOL unknown;
+@property (nonatomic, readonly) BOOL walking;
 
 + (BOOL)supportsSecureCoding;
 

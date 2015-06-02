@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImage, UIImageView;
-
 @interface CKImageAlertView : UIView {
     UIImage *_image;
     UIImageView *_imageView;
 }
 
-@property(retain) UIImage * image;
-@property(retain) UIImageView * imageView;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImageView *imageView;
 
 - (void)dealloc;
 - (id)image;

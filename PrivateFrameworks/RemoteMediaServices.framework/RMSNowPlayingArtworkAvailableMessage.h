@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSNowPlayingArtworkAvailableMessage : PBCodable <NSCopying> {
     NSString *_artworkIdentifier;
     struct { 
@@ -12,10 +10,10 @@
     int _sessionIdentifier;
 }
 
-@property(retain) NSString * artworkIdentifier;
-@property(readonly) BOOL hasArtworkIdentifier;
-@property BOOL hasSessionIdentifier;
-@property int sessionIdentifier;
+@property (nonatomic, retain) NSString *artworkIdentifier;
+@property (nonatomic, readonly) BOOL hasArtworkIdentifier;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (id)artworkIdentifier;

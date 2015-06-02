@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordZoneID, CKServerChangeToken, NSArray;
-
 @interface CKFetchRecordChangesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     int _changeTypes;
     NSArray *_desiredKeys;
@@ -13,12 +11,12 @@
     BOOL _shouldFetchAssetContents;
 }
 
-@property int changeTypes;
-@property(retain) NSArray * desiredKeys;
-@property(retain) CKServerChangeToken * previousServerChangeToken;
-@property(retain) CKRecordZoneID * recordZoneID;
-@property unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContents;
+@property (nonatomic) int changeTypes;
+@property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic, retain) CKRecordZoneID *recordZoneID;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) BOOL shouldFetchAssetContents;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPFootnoteMarkProvider>, NSString, TSWPPadding;
-
 @interface TPFootnoteContainerLayout : TSDLayout <TSWPColumnMetrics, TSWPFootnoteMarkProvider, TSWPLayoutParent> {
     <TSWPFootnoteMarkProvider> *_footnoteMarkProvider;
     float _footnoteSpacing;
@@ -12,20 +10,20 @@
     float _width;
 }
 
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footnoteSeparatorLineFrame;
-@property(readonly) unsigned int hash;
-@property(readonly) float height;
-@property BOOL includeFootnoteSeparatorLine;
-@property(readonly) BOOL isEmpty;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) Class superclass;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footnoteSeparatorLineFrame;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float height;
+@property (nonatomic) BOOL includeFootnoteSeparatorLine;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (void)addFootnoteLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;

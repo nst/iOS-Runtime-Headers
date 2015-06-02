@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKStructuredLocation;
-
 @interface EKReminderLocationMapViewController : UIViewController {
     EKStructuredLocation *_location;
     struct CGRect { 

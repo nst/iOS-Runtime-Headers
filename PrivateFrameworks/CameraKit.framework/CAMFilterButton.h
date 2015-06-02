@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UIImageView;
-
 @interface CAMFilterButton : UIButton {
     UIImageView *__circlesImageView;
     struct UIEdgeInsets { 
@@ -14,9 +12,9 @@
     } _tappableEdgeInsets;
 }
 
-@property(readonly) UIImageView * _circlesImageView;
-@property(getter=isOn) BOOL on;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
+@property (nonatomic, readonly) UIImageView *_circlesImageView;
+@property (getter=isOn, nonatomic) BOOL on;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (id)filterButton;
 

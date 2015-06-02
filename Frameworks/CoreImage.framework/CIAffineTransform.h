@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSValue;
-
 @interface CIAffineTransform : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     NSValue *inputTransform;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSValue * inputTransform;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSValue *inputTransform;
 
 + (id)customAttributes;
 

@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MFActivityMonitor, NSMutableArray;
-
 @interface _MFMessageCollector : NSObject <MessageConsumer, QueryProgressMonitor> {
     NSMutableArray *_messages;
     MFActivityMonitor *_monitor;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _transmogrifier;
-
+    id /* block */ _transmogrifier;
 }
 
-@property(copy) id transmogrifier;
+@property (nonatomic, copy) id /* block */ transmogrifier;
 
 - (id)copyMessages;
 - (void)dealloc;
 - (id)init;
 - (id)messages;
 - (void)newMessagesAvailable:(id)arg1;
-- (void)setTransmogrifier:(id)arg1;
+- (void)setTransmogrifier:(id /* block */)arg1;
 - (BOOL)shouldCancel;
-- (id)transmogrifier;
+- (id /* block */)transmogrifier;
 
 @end

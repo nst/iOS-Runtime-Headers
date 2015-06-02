@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSWPStorage;
-
 @interface TSWPFootnoteReferenceAttachment : TSWPTextualAttachment {
     TSWPStorage *_containedStorage;
     NSString *_customMarkString;
 }
 
-@property(retain) TSWPStorage * containedStorage;
-@property(retain) NSString * customMarkString;
+@property (nonatomic, retain) TSWPStorage *containedStorage;
+@property (nonatomic, retain) NSString *customMarkString;
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)applyMark;

@@ -7,8 +7,8 @@
     double _longitude;
 }
 
-@property(readonly) double latitude;
-@property(readonly) double longitude;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) double longitude;
 
 - (id)initWithDate:(id)arg1 body:(int)arg2;
 - (double)latitude;

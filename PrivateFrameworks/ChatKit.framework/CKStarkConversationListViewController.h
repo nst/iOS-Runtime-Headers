@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation;
-
 @interface CKStarkConversationListViewController : UITableViewController {
     CKConversation *_selectedConversation;
 }
 
-@property(retain) CKConversation * selectedConversation;
+@property (nonatomic, retain) CKConversation *selectedConversation;
 
 - (void)_handleNewComposePressed:(id)arg1;
 - (void)conversationListDidChange:(id)arg1;

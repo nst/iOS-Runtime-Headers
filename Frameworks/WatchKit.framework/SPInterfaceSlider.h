@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPInterfaceSlider : SPInterfaceObject {
-}
+@interface SPInterfaceSlider : SPInterfaceObject
 
 - (void)setEnabled:(BOOL)arg1;
 - (void)setValue:(float)arg1;

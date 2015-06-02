@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSError, NSMutableOrderedSet, NSOrderedSet, PUActivityViewController;
-
 @interface PUActivityItemSourceController : NSObject {
     NSArray *__activeItemSources;
     NSError *__error;
     PUActivityViewController *_activityViewController;
     NSMutableOrderedSet *_assetItemSources;
     NSMutableOrderedSet *_assets;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
     int _taskId;
 }
 
-@property(setter=_setActiveItemSources:,retain) NSArray * _activeItemSources;
-@property(setter=_setError:,retain) NSError * _error;
-@property PUActivityViewController * activityViewController;
-@property(copy,readonly) NSOrderedSet * assetItemSources;
-@property(copy) NSOrderedSet * assets;
-@property(copy) id progressHandler;
+@property (setter=_setActiveItemSources:, retain) NSArray *_activeItemSources;
+@property (setter=_setError:, retain) NSError *_error;
+@property (nonatomic) PUActivityViewController *activityViewController;
+@property (nonatomic, readonly, copy) NSOrderedSet *assetItemSources;
+@property (nonatomic, copy) NSOrderedSet *assets;
+@property (nonatomic, copy) id /* block */ progressHandler;
 
 - (void).cxx_destruct;
 - (id)_activeItemSources;
@@ -40,11 +30,11 @@
 - (id)assets;
 - (void)cancel;
 - (int)countOfAssetType:(int)arg1;
-- (id)progressHandler;
+- (id /* block */)progressHandler;
 - (void)removeAsset:(id)arg1;
-- (void)runExplicitly:(BOOL)arg1 withActivityType:(id)arg2 completionHandler:(id)arg3;
+- (void)runExplicitly:(BOOL)arg1 withActivityType:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setActivityViewController:(id)arg1;
 - (void)setAssets:(id)arg1;
-- (void)setProgressHandler:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 
 @end

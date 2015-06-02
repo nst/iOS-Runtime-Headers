@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAWeatherUnits : AceObject <SAAceSerializable>
 
-@interface SAWeatherUnits : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * distanceUnits;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * pressureUnits;
-@property(copy) NSString * speedUnits;
-@property(readonly) Class superclass;
-@property(copy) NSString * temperatureUnits;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *distanceUnits;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *pressureUnits;
+@property (nonatomic, copy) NSString *speedUnits;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *temperatureUnits;
 
 + (id)units;
 + (id)unitsWithDictionary:(id)arg1 context:(id)arg2;

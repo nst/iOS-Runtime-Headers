@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDAxesCollection : EDKeyedCollection {
-}
+@interface CHDAxesCollection : EDKeyedCollection
 
 - (void)adjustAxesPositionForHorizontalChart;
 - (id)axesAtPosition:(int)arg1;

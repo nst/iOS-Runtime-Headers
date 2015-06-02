@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASocialProfile : AceObject <SAAceSerializable>
 
-@interface SASocialProfile : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * serviceType;
-@property(readonly) Class superclass;
-@property(copy) NSString * url;
-@property(copy) NSString * userName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *serviceType;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *userName;
 
 + (id)socialProfile;
 + (id)socialProfileWithDictionary:(id)arg1 context:(id)arg2;

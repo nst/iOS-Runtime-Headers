@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEAOVPNException : NSObject <NSCopying, NSSecureCoding> {
     int _action;
     NSString *_bundleIdentifier;
@@ -11,8 +9,8 @@
 }
 
 @property int action;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * serviceName;
+@property (copy) NSString *bundleIdentifier;
+@property (copy) NSString *serviceName;
 
 + (BOOL)supportsSecureCoding;
 

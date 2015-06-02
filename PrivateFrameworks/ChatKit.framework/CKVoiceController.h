@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKVoiceControllerDelegate>, AVVoiceController, CKAudioAnalyzer, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface CKVoiceController : NSObject <AVVoiceControllerRecordDelegate> {
     int __activationMode;
     CKAudioAnalyzer *_audioAnalyzer;
@@ -14,17 +12,17 @@
     AVVoiceController *_voiceController;
 }
 
-@property(setter=_setActivationMode:) int _activationMode;
-@property(retain) CKAudioAnalyzer * audioAnalyzer;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKVoiceControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_source> * powerUpdateTimer;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(copy) NSDictionary * recordSettings;
-@property(readonly) Class superclass;
-@property(retain) AVVoiceController * voiceController;
+@property (setter=_setActivationMode:, nonatomic) int _activationMode;
+@property (nonatomic, retain) CKAudioAnalyzer *audioAnalyzer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKVoiceControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *powerUpdateTimer;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) NSDictionary *recordSettings;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) AVVoiceController *voiceController;
 
 - (int)_activationMode;
 - (void)_setActivationMode:(int)arg1;

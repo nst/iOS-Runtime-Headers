@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUContentSizeLayoutConstraint, MPUExtrasConstrainedArtworkContainerView, MPUExtrasZoomingImageInteractiveTransitionSourceContext, NSLayoutConstraint, NSString, UILabel, UIPinchGestureRecognizer, UIView;
-
 @interface MPUExtrasCarouselCollectionViewCell : UICollectionViewCell <MPUExtrasCarouselCollectionViewCell, UIGestureRecognizerDelegate> {
     BOOL _allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
     UILabel *_descriptionLabel;
@@ -24,25 +22,25 @@
     NSString *_zoomingImageTransitionIdentifier;
 }
 
-@property BOOL allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UILabel * descriptionLabel;
-@property(retain) MPUContentSizeLayoutConstraint * descriptionLabelBaselineConstraint;
-@property(readonly) unsigned int hash;
-@property(retain) MPUExtrasZoomingImageInteractiveTransitionSourceContext * interactiveTransitionSourceContext;
-@property unsigned int itemIndex;
-@property(retain) UIPinchGestureRecognizer * pinchGestureRecognizer;
-@property(retain) MPUContentSizeLayoutConstraint * subtitleBaselineConstraint;
-@property(retain) UILabel * subtitleLabel;
-@property(readonly) Class superclass;
-@property(retain) UIView * textContainer;
-@property(readonly) float thumbnailImageContainerHeight;
-@property(retain) MPUExtrasConstrainedArtworkContainerView * thumbnailImageContainerView;
-@property(retain) NSLayoutConstraint * thumbnailImageContainerViewHeightConstraint;
-@property(retain) UILabel * titleLabel;
-@property struct CGSize { float x1; float x2; } windowSize;
-@property(copy) NSString * zoomingImageTransitionIdentifier;
+@property (nonatomic) BOOL allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *descriptionLabel;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *descriptionLabelBaselineConstraint;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUExtrasZoomingImageInteractiveTransitionSourceContext *interactiveTransitionSourceContext;
+@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic, retain) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *subtitleBaselineConstraint;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *textContainer;
+@property (nonatomic, readonly) float thumbnailImageContainerHeight;
+@property (nonatomic, retain) MPUExtrasConstrainedArtworkContainerView *thumbnailImageContainerView;
+@property (nonatomic, retain) NSLayoutConstraint *thumbnailImageContainerViewHeightConstraint;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic) struct CGSize { float x1; float x2; } windowSize;
+@property (nonatomic, copy) NSString *zoomingImageTransitionIdentifier;
 
 - (void).cxx_destruct;
 - (float)_descriptionLabelTopInset;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface CKDPConfigurationFieldValue : PBCodable <NSCopying> {
     BOOL _boolValue;
     NSData *_bytesValue;
@@ -21,20 +19,20 @@
     int _type;
 }
 
-@property BOOL boolValue;
-@property(retain) NSData * bytesValue;
-@property double doubleValue;
-@property(retain) NSMutableArray * fieldValues;
-@property BOOL hasBoolValue;
-@property(readonly) BOOL hasBytesValue;
-@property BOOL hasDoubleValue;
-@property BOOL hasLongValue;
-@property(readonly) BOOL hasStringValue;
-@property BOOL hasType;
-@property(retain) NSMutableArray * listValues;
-@property long long longValue;
-@property(retain) NSString * stringValue;
-@property int type;
+@property (nonatomic) BOOL boolValue;
+@property (nonatomic, retain) NSData *bytesValue;
+@property (nonatomic) double doubleValue;
+@property (nonatomic, retain) NSMutableArray *fieldValues;
+@property (nonatomic) BOOL hasBoolValue;
+@property (nonatomic, readonly) BOOL hasBytesValue;
+@property (nonatomic) BOOL hasDoubleValue;
+@property (nonatomic) BOOL hasLongValue;
+@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSMutableArray *listValues;
+@property (nonatomic) long long longValue;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)addFieldValues:(id)arg1;

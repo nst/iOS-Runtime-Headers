@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableIndexSet, NSString, TSWPShapeRep;
-
 @interface TSWPShapeRepMagicMoveTextChunk : NSObject {
     BOOL _hasListLabel;
     BOOL _isVisible;
@@ -18,14 +16,14 @@
     NSMutableIndexSet *_unhandledIndexSet;
 }
 
-@property BOOL hasListLabel;
-@property BOOL isVisible;
-@property float opacityFromRenderer;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property TSWPShapeRep * rep;
-@property int stageIndex;
-@property(copy) NSString * stringValue;
-@property(retain) NSMutableIndexSet * unhandledIndexSet;
+@property (nonatomic) BOOL hasListLabel;
+@property (nonatomic) BOOL isVisible;
+@property (nonatomic) float opacityFromRenderer;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) TSWPShapeRep *rep;
+@property (nonatomic) int stageIndex;
+@property (nonatomic, copy) NSString *stringValue;
+@property (nonatomic, retain) NSMutableIndexSet *unhandledIndexSet;
 
 - (id).cxx_construct;
 - (void)dealloc;

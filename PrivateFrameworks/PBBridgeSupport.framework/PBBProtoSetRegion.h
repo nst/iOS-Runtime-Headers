@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSString;
-
 @interface PBBProtoSetRegion : PBCodable <NSCopying> {
     NSString *_region;
 }
 
-@property(retain) NSString * region;
+@property (nonatomic, retain) NSString *region;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

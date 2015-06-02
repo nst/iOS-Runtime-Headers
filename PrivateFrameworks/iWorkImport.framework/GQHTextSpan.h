@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHTextSpan : NSObject {
-}
+@interface GQHTextSpan : NSObject
 
 + (int)handleAttachment:(id)arg1 state:(id)arg2;
 + (int)handleAutoNumber:(id)arg1 state:(id)arg2;

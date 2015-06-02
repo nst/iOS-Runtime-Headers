@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSData, NSDictionary, NSMutableSet, NSSet, NSString;
-
 @interface CoreDAVBulkChangeTask : CoreDAVTask {
     NSString *_appSpecificDataProp;
     NSString *_appSpecificNamespace;
@@ -19,10 +17,10 @@
     BOOL _validCTag;
 }
 
-@property(readonly) NSSet * bulkChangeResponses;
-@property(readonly) NSDictionary * hrefsToModDeleteActions;
-@property(readonly) NSString * nextCTag;
-@property(readonly) NSDictionary * uuidsToAddActions;
+@property (nonatomic, readonly) NSSet *bulkChangeResponses;
+@property (nonatomic, readonly) NSDictionary *hrefsToModDeleteActions;
+@property (nonatomic, readonly) NSString *nextCTag;
+@property (nonatomic, readonly) NSDictionary *uuidsToAddActions;
 
 - (id)additionalHeaderValues;
 - (id)bulkChangeResponses;

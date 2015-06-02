@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSData, NSDictionary, NSError, NSString, NSURL;
-
 @interface HSResponse : NSObject {
     NSString *_MIMEType;
     NSError *_error;
@@ -13,12 +11,12 @@
     NSDictionary *_responseHeaderFields;
 }
 
-@property(readonly) NSString * MIMEType;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int responseCode;
-@property(readonly) NSData * responseData;
-@property(copy) NSURL * responseDataFileURL;
-@property(readonly) NSDictionary * responseHeaderFields;
+@property (nonatomic, readonly) NSString *MIMEType;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) unsigned int responseCode;
+@property (nonatomic, readonly) NSData *responseData;
+@property (nonatomic, copy) NSURL *responseDataFileURL;
+@property (nonatomic, readonly) NSDictionary *responseHeaderFields;
 
 + (id)responseWithCode:(unsigned int)arg1 headerFields:(id)arg2 data:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 + (id)responseWithResponse:(id)arg1;

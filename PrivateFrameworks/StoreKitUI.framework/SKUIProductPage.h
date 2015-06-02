@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSData, NSHTTPURLResponse, NSString, NSURL, SKUIProductPageItem, SKUIProductPageProductInfo, SKUIReviewConfiguration, SKUIUber, SSMetricsConfiguration;
-
 @interface SKUIProductPage : NSObject <NSCopying> {
     int _defaultPageFragment;
     SKUIProductPageItem *_item;
@@ -18,17 +16,17 @@
     SKUIUber *_uber;
 }
 
-@property(retain) NSData * ITMLData;
-@property(retain) NSHTTPURLResponse * ITMLResponse;
-@property int defaultPageFragment;
-@property(retain) SKUIProductPageItem * item;
-@property(retain) SSMetricsConfiguration * metricsConfiguration;
-@property(copy) NSString * metricsPageDescription;
-@property(copy) NSURL * pageURL;
-@property(retain) SKUIProductPageProductInfo * productInformation;
-@property(copy) NSArray * relatedContentSwooshes;
-@property(retain) SKUIReviewConfiguration * reviewConfiguration;
-@property(retain) SKUIUber * uber;
+@property (nonatomic, retain) NSData *ITMLData;
+@property (nonatomic, retain) NSHTTPURLResponse *ITMLResponse;
+@property (nonatomic) int defaultPageFragment;
+@property (nonatomic, retain) SKUIProductPageItem *item;
+@property (nonatomic, retain) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, copy) NSString *metricsPageDescription;
+@property (nonatomic, copy) NSURL *pageURL;
+@property (nonatomic, retain) SKUIProductPageProductInfo *productInformation;
+@property (nonatomic, copy) NSArray *relatedContentSwooshes;
+@property (nonatomic, retain) SKUIReviewConfiguration *reviewConfiguration;
+@property (nonatomic, retain) SKUIUber *uber;
 
 - (void).cxx_destruct;
 - (id)ITMLData;

@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSDSmartStroke : TSDStroke {
     NSString *mStrokeName;
 }
 
-@property(copy) NSString * strokeName;
+@property (nonatomic, copy) NSString *strokeName;
 
 + (Class)classForName:(id)arg1;
 + (id)strokeWithName:(id)arg1 color:(id)arg2 width:(float)arg3;

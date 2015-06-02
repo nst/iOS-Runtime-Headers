@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer;
-
 @interface _UISystemGestureGateGestureRecognizer : UIGestureRecognizer {
     NSTimer *_delayTimeoutTimer;
     double _lastTouchTime;
-    unsigned int _systemGesturesRecognitionPossible : 1;
-    unsigned int _waitingForSystemGestureStateNotification : 1;
+    unsigned int _systemGesturesRecognitionPossible;
+    unsigned int _waitingForSystemGestureStateNotification;
 }
 
 - (int)_gateGestureType;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface UIButtonBarBadgeBackground : UIView {
     UIImage *_image;
 }

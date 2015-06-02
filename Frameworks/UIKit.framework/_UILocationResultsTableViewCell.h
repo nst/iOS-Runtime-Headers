@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, UIImage, UIImageView, UILabel, UIView;
-
 @interface _UILocationResultsTableViewCell : UITableViewCell {
     float _additionalLeftSidePadding;
     NSLayoutConstraint *_bottomMarginConstraint;
@@ -17,16 +15,16 @@
     NSLayoutConstraint *_topMarginConstraint;
 }
 
-@property float additionalLeftSidePadding;
-@property(retain) NSLayoutConstraint * bottomMarginConstraint;
-@property(retain) UIView * cellHeightStrut;
-@property(copy) UIImage * customLocationImage;
-@property(retain) NSLayoutConstraint * interLabelSpaceConstraint;
-@property int locationImageType;
-@property(retain) UILabel * searchDetailTextLabel;
-@property(retain) UIImageView * searchImageView;
-@property(retain) UILabel * searchTextLabel;
-@property(retain) NSLayoutConstraint * topMarginConstraint;
+@property (nonatomic) float additionalLeftSidePadding;
+@property (nonatomic, retain) NSLayoutConstraint *bottomMarginConstraint;
+@property (nonatomic, retain) UIView *cellHeightStrut;
+@property (nonatomic, copy) UIImage *customLocationImage;
+@property (nonatomic, retain) NSLayoutConstraint *interLabelSpaceConstraint;
+@property (nonatomic) int locationImageType;
+@property (nonatomic, retain) UILabel *searchDetailTextLabel;
+@property (nonatomic, retain) UIImageView *searchImageView;
+@property (nonatomic, retain) UILabel *searchTextLabel;
+@property (nonatomic, retain) NSLayoutConstraint *topMarginConstraint;
 
 - (void)_applyLeftAndRightAlignmentConstraints:(id)arg1;
 - (float)_defaultCellBottomMargin;

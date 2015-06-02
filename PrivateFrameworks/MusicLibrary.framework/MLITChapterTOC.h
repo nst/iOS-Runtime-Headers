@@ -11,8 +11,8 @@
 }
 
 + (unsigned int**)_chapterDataCookieIndexMapForProperty:(int)arg1 ofChapterTOC:(id)arg2;
-+ (void)enumerateArtworkCacheIDsInFlattenedChapterData:(id)arg1 usingBlock:(id)arg2;
-+ (void)enumerateChapterTimesInFlattenedChapterData:(id)arg1 usingBlock:(id)arg2;
++ (void)enumerateArtworkCacheIDsInFlattenedChapterData:(id)arg1 usingBlock:(id /* block */)arg2;
++ (void)enumerateChapterTimesInFlattenedChapterData:(id)arg1 usingBlock:(id /* block */)arg2;
 
 - (unsigned int*)_cachedCookieIndexMapForProperty:(int)arg1 createIfNecessary:(BOOL)arg2;
 - (struct ChapterData { }*)chapterDataRef;

@@ -6,36 +6,36 @@
     BOOL _uiApplicationClient;
 }
 
-@property(getter=isUIApplicationClient,setter=setUIApplicationClient:) BOOL uiApplicationClient;
+@property (getter=isUIApplicationClient, setter=setUIApplicationClient:) BOOL uiApplicationClient;
 
 + (id)sharedInstance;
 
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
-- (void)applicationBundleID:(id)arg1 requestBrightness:(float)arg2 completion:(id)arg3;
-- (void)badgeValueForBundleID:(id)arg1 completion:(id)arg2;
-- (void)canActivateApplication:(id)arg1 withResult:(id)arg2;
+- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4;
+- (void)applicationBundleID:(id)arg1 requestBrightness:(float)arg2 completion:(id /* block */)arg3;
+- (void)badgeValueForBundleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)canActivateApplication:(id)arg1 withResult:(id /* block */)arg2;
 - (void)checkInUIApplication;
 - (id)clientCallbackQueue;
-- (void)fireCompletion:(id)arg1 bundleIDResult:(id)arg2 error:(id)arg3;
-- (void)fireCompletion:(id)arg1 error:(id)arg2;
-- (void)fireCompletion:(id)arg1 openAppErrorCode:(int)arg2;
-- (void)fireCompletion:(id)arg1 pidResult:(int)arg2 error:(id)arg3;
+- (void)fireCompletion:(id /* block */)arg1 bundleIDResult:(id)arg2 error:(id)arg3;
+- (void)fireCompletion:(id /* block */)arg1 error:(id)arg2;
+- (void)fireCompletion:(id /* block */)arg1 openAppErrorCode:(int)arg2;
+- (void)fireCompletion:(id /* block */)arg1 pidResult:(int)arg2 error:(id)arg3;
 - (id)init;
 - (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
 - (BOOL)isClientLoggingEnabled;
 - (BOOL)isUIApplicationClient;
-- (void)openApplication:(id)arg1 options:(id)arg2 clientPort:(unsigned int)arg3 withResult:(id)arg4;
-- (void)openURL:(id)arg1 application:(id)arg2 options:(id)arg3 clientPort:(unsigned int)arg4 withResult:(id)arg5;
-- (void)pidForApplication:(id)arg1 withResult:(id)arg2;
+- (void)openApplication:(id)arg1 options:(id)arg2 clientPort:(unsigned int)arg3 withResult:(id /* block */)arg4;
+- (void)openURL:(id)arg1 application:(id)arg2 options:(id)arg3 clientPort:(unsigned int)arg4 withResult:(id /* block */)arg5;
+- (void)pidForApplication:(id)arg1 withResult:(id /* block */)arg2;
 - (void)queue_connectionWasCreated;
-- (void)sendActions:(id)arg1 withResult:(id)arg2;
+- (void)sendActions:(id)arg1 withResult:(id /* block */)arg2;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
-- (void)setNextWakeInterval:(double)arg1 completion:(id)arg2;
+- (void)setNextWakeInterval:(double)arg1 completion:(id /* block */)arg2;
 - (void)setUIApplicationClient:(BOOL)arg1;
 - (void)shutdownAndReboot:(BOOL)arg1;
-- (void)systemApplicationBundleIdentifierWithResult:(id)arg1;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 withResult:(id)arg5;
-- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 withResult:(id)arg5;
+- (void)systemApplicationBundleIdentifierWithResult:(id /* block */)arg1;
+- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 withResult:(id /* block */)arg5;
+- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 withResult:(id /* block */)arg5;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUMoreNavigationController : UIMoreNavigationController {
-}
+@interface MPUMoreNavigationController : UIMoreNavigationController
 
 + (Class)_moreListControllerClass;
 

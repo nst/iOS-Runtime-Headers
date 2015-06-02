@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIAssistantSettings : NSObject {
-}
+@interface TIAssistantSettings : NSObject
 
 + (void)dismissEnableDictationPrompt;
-+ (void)promptToEnableDictationWithCompletionHandler:(id)arg1;
++ (void)promptToEnableDictationWithCompletionHandler:(id /* block */)arg1;
 
 @end

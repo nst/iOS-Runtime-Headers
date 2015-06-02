@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableArray, NSString;
-
 @interface PLSQLStatement : NSObject {
     NSMutableArray *_boundObjects;
     struct sqlite3 { } *_dbConnection;
@@ -14,13 +12,13 @@
     NSString *_syncObject;
 }
 
-@property(retain) NSMutableArray * boundObjects;
-@property struct sqlite3 { }* dbConnection;
-@property(readonly) BOOL isDelete;
-@property(readonly) BOOL isInsert;
-@property(retain) NSString * sqlQuery;
-@property struct sqlite3_stmt { }* statement;
-@property(retain) NSString * syncObject;
+@property (retain) NSMutableArray *boundObjects;
+@property struct sqlite3 { }*dbConnection;
+@property (readonly) BOOL isDelete;
+@property (readonly) BOOL isInsert;
+@property (retain) NSString *sqlQuery;
+@property struct sqlite3_stmt { }*statement;
+@property (retain) NSString *syncObject;
 
 - (void).cxx_destruct;
 - (int)bindValue:(id)arg1 withFormater:(short)arg2 atPosition:(int)arg3;

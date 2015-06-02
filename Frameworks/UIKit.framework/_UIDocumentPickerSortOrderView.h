@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIDocumentPickerViewServiceViewController>, NSArray, UIButton, UISegmentedControl;
-
 @interface _UIDocumentPickerSortOrderView : UIControl {
     NSArray *_compactConstraints;
     int _listMode;
@@ -13,13 +11,13 @@
     UISegmentedControl *_sortOrder;
 }
 
-@property(copy) NSArray * compactConstraints;
-@property int listMode;
-@property(retain) UIButton * listModeToggle;
-@property(copy) NSArray * regularConstraints;
-@property <_UIDocumentPickerViewServiceViewController> * serviceViewController;
-@property(retain) UISegmentedControl * sortOrder;
-@property int value;
+@property (nonatomic, copy) NSArray *compactConstraints;
+@property (nonatomic) int listMode;
+@property (nonatomic, retain) UIButton *listModeToggle;
+@property (nonatomic, copy) NSArray *regularConstraints;
+@property (nonatomic) <_UIDocumentPickerViewServiceViewController> *serviceViewController;
+@property (nonatomic, retain) UISegmentedControl *sortOrder;
+@property (nonatomic) int value;
 
 - (void)_toggleListMode:(id)arg1;
 - (id)compactConstraints;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class ACAccount, ACAccountStore, NSArray, NSString, SLComposeSheetConfigurationItem, UIImageView, VimeoDetailsController, VimeoUploadSession;
-
 @interface VimeoComposeViewController : SLComposeServiceViewController <VimeoComposeOptionViewDelegate> {
     ACAccountStore *_accountStore;
     SLComposeSheetConfigurationItem *_detailsConfigurationItem;
@@ -17,16 +15,16 @@
     ACAccount *_vimeoAccount;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * postDescription;
-@property int privacySettings;
-@property(readonly) Class superclass;
-@property(retain) NSArray * tags;
-@property int videoSize;
-@property(retain) ACAccount * vimeoAccount;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *postDescription;
+@property (nonatomic) int privacySettings;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *tags;
+@property (nonatomic) int videoSize;
+@property (nonatomic, retain) ACAccount *vimeoAccount;
 
 - (void).cxx_destruct;
 - (id)accountStore;

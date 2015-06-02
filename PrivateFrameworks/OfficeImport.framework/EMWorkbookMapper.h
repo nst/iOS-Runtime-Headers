@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, EDWorkbook, NSMutableArray, NSString, OIXMLDocument, OIXMLElement;
-
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
     EDWorkbook *edWorkbook;
     CMArchiveManager *mArchiver;

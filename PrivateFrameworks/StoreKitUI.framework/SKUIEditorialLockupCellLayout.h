@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICellLayoutView, SKUIEditorialCellLayout, SKUILockupItemCellLayout, SKUITextBoxView, UIColor, UIView;
-
 @interface SKUIEditorialLockupCellLayout : SKUIItemCellLayout {
     struct UIEdgeInsets { 
         float top; 
@@ -22,11 +20,11 @@
     unsigned int _visibleFields;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property int layoutStyle;
-@property(readonly) SKUILockupItemCellLayout * lockupCellLayout;
-@property(readonly) SKUITextBoxView * textBoxView;
-@property unsigned int visibleFields;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic, readonly) SKUILockupItemCellLayout *lockupCellLayout;
+@property (nonatomic, readonly) SKUITextBoxView *textBoxView;
+@property (nonatomic) unsigned int visibleFields;
 
 + (float)_imagePaddingForArtworkSize:(int)arg1;
 + (float)editorialWidthForCellWidth:(float)arg1 lockupStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;

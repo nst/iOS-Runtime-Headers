@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkInCallViewControllerDelegate>, NSArray, NSString, NSTimer, TPStarkInCallButtonsView, TPStarkInCallHardPauseButton, TPStarkPhoneCallGalleryView, TUCall, TUReplyWithMessageStore, UIView;
-
 @interface TPStarkInCallViewController : UIViewController <TPStarkHardPauseButtonDelegate, TPStarkInCallButtonsViewDelegate, TPStarkPhoneCallGalleryViewDelegate, UIActionSheetDelegate> {
     TPStarkInCallButtonsView *_buttonsView;
     TUCall *_callToDecline;
@@ -20,23 +18,23 @@
     NSTimer *_viewUpdateClockTickTimer;
 }
 
-@property(retain) TPStarkInCallButtonsView * buttonsView;
-@property(retain) TUCall * callToDecline;
-@property(copy) NSArray * conferenceParticipants;
+@property (retain) TPStarkInCallButtonsView *buttonsView;
+@property (retain) TUCall *callToDecline;
+@property (copy) NSArray *conferenceParticipants;
 @property unsigned short currentMode;
-@property(copy,readonly) NSString * debugDescription;
-@property <TPStarkInCallViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) TUCall * failedCall;
-@property(retain) UIView * flippyView;
-@property(retain) TPStarkPhoneCallGalleryView * galleryView;
-@property(retain) TPStarkInCallHardPauseButton * hardPauseButton;
-@property(readonly) unsigned int hash;
-@property(retain) TUCall * incomingPhoneCall;
-@property(readonly) BOOL isDismissable;
-@property(copy) NSArray * primaryPhoneCalls;
-@property(readonly) Class superclass;
-@property(retain) NSTimer * viewUpdateClockTickTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property <TPStarkInCallViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (retain) TUCall *failedCall;
+@property (retain) UIView *flippyView;
+@property (retain) TPStarkPhoneCallGalleryView *galleryView;
+@property (retain) TPStarkInCallHardPauseButton *hardPauseButton;
+@property (readonly) unsigned int hash;
+@property (retain) TUCall *incomingPhoneCall;
+@property (readonly) BOOL isDismissable;
+@property (copy) NSArray *primaryPhoneCalls;
+@property (readonly) Class superclass;
+@property (retain) NSTimer *viewUpdateClockTickTimer;
 
 - (id)__sanitizedPrimaryPhoneCallOrdering:(id)arg1;
 - (void)_invalidateIntrinsicContentSizeForLabelsInView:(id)arg1;

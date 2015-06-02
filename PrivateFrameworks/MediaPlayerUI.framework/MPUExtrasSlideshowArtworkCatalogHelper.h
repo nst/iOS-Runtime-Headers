@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPArtworkCatalog;
-
 @interface MPUExtrasSlideshowArtworkCatalogHelper : NSObject {
     MPArtworkCatalog *_artworkCatalog;
 }
 
-@property(retain) MPArtworkCatalog * artworkCatalog;
+@property (nonatomic, retain) MPArtworkCatalog *artworkCatalog;
 
 - (void).cxx_destruct;
 - (id)artworkCatalog;

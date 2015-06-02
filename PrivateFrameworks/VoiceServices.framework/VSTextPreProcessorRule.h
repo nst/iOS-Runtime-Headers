@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSString;
-
 @interface VSTextPreProcessorRule : NSObject {
     BOOL _caseSensitive;
     BOOL _eatPunctuation;

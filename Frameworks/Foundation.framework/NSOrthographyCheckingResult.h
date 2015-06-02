@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSOrthography;
-
 @interface NSOrthographyCheckingResult : NSTextCheckingResult {
     NSOrthography *_orthography;
     struct _NSRange { 

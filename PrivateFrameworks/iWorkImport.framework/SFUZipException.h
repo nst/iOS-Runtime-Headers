@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface SFUZipException : NSException {
-}
+@interface SFUZipException : NSException
 
 @end

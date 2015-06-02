@@ -3,10 +3,10 @@
  */
 
 @interface FigSubtitleCALayer : CALayer {
-    struct OpaqueFigSubtitleCALayerInternal { struct OpaqueFigPlayer {} *x1; id x2; unsigned char x3; unsigned char x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; unsigned char x6; struct CGSize { float x_7_1_1; float x_7_1_2; } x7; unsigned char x8; unsigned char x9; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; unsigned char x12; id x13; struct OpaqueFigSubtitleRenderer {} *x14; struct __CFDictionary {} *x15; unsigned char x16; unsigned char x17; struct __CFDictionary {} *x18; struct __CFArray {} *x19; struct __CFArray {} *x20; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_21_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_21_1_2; } x21; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_22_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_22_1_2; } x22; unsigned char x23; BOOL x24; unsigned char x25; } *layerInternal;
+    struct OpaqueFigSubtitleCALayerInternal { struct OpaqueFigPlayer {} *x1; id x2; unsigned char x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned char x5; struct CGSize { float x_6_1_1; float x_6_1_2; } x6; unsigned char x7; unsigned char x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct CGSize { float x_10_1_1; float x_10_1_2; } x10; unsigned char x11; id x12; struct OpaqueFigSubtitleRenderer {} x13; struct __CFDictionary {} *x14; unsigned char x15; unsigned char x16; struct __CFDictionary {} *x17; struct __CFArray {} *x18; struct __CFArray {} *x19; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_20_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_20_1_2; } x20; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_21_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_21_1_2; } x21; unsigned char x22; BOOL x23; unsigned char x24; } *layerInternal;
 }
 
-@property(getter=isOverscanSubtitleSupportEnabled) BOOL overscanSubtitleSupportEnabled;
+@property (getter=isOverscanSubtitleSupportEnabled, nonatomic) BOOL overscanSubtitleSupportEnabled;
 
 + (id)defaultActionForKey:(id)arg1;
 

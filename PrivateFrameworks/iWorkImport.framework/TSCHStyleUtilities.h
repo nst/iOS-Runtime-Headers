@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHStyleUtilities : NSObject {
-}
+@interface TSCHStyleUtilities : NSObject
 
 + (id)chartsNullShadowToDefaultDisabledShadow:(id)arg1;
 + (void)convertToSimpleTSDFillsInProperties:(id)arg1 inMap:(id)arg2 context:(id)arg3;
@@ -18,7 +17,7 @@
 + (id)shadowToChartsNullShadow:(id)arg1;
 + (void)updateStyleState:(id)arg1 forMutationsPerStyleOwner:(id)arg2;
 + (void)updateStyleState:(id)arg1 forPropertyMutationTuples:(id)arg2;
-+ (void)upgradeAlignmentInParagraphStyles:(id)arg1 willModifyBlock:(id)arg2;
++ (void)upgradeAlignmentInParagraphStyles:(id)arg1 willModifyBlock:(id /* block */)arg2;
 + (BOOL)upgradeShadowProperties:(id)arg1 inMap:(id)arg2;
 + (id)upgradedShadowPropertyForParagraphStyle:(id)arg1;
 + (BOOL)upgradedShadowPropertyFromShadow:(id)arg1 outUpgraded:(id*)arg2;

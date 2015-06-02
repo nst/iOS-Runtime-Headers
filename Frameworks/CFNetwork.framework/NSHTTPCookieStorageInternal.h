@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSRecursiveLock;
-
 @interface NSHTTPCookieStorageInternal : NSObject {
     NSRecursiveLock *dataLock;
     BOOL privateBrowsing;

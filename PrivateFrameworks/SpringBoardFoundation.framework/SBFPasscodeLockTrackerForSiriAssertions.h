@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFPasscodeLockTrackerForSiriAssertions : SBFPasscodeLockAssertionTracker {
-}
+@interface SBFPasscodeLockTrackerForSiriAssertions : SBFPasscodeLockAssertionTracker
 
 - (id)mkbAssertionOptions;
 

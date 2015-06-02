@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
  */
 
-@class <ADEmbeddedAdServerDelegate>, HTSHTTPServer, NSArray, NSDictionary, NSMutableDictionary, NSString;
-
 @interface ADEmbeddedAdServer : NSObject <HTSHTTPServerDelegate> {
     NSArray *_adManifests;
     NSString *_adPath;
@@ -17,27 +15,27 @@
     struct __FSEventStream { } *_stream;
 }
 
-@property(retain) NSArray * adManifests;
-@property(copy) NSString * adPath;
-@property BOOL alwaysRegenerateWebArchives;
-@property double bandwidthStddev;
-@property int cacheMaxAge;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSDictionary * defaultAdData;
-@property BOOL defaultsToNoQualifiedAds;
-@property <ADEmbeddedAdServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL digestAuthenticationEnabled;
-@property(readonly) unsigned int hash;
-@property double kbps;
-@property double latency;
-@property double latencyStddev;
-@property BOOL pipeliningEnabled;
-@property(readonly) unsigned short port;
-@property(copy) NSString * publicURLRoot;
-@property(readonly) Class superclass;
-@property(readonly) unsigned long long totalBytesWritten;
-@property(readonly) NSString * urlString;
+@property (nonatomic, retain) NSArray *adManifests;
+@property (nonatomic, copy) NSString *adPath;
+@property (nonatomic) BOOL alwaysRegenerateWebArchives;
+@property (nonatomic) double bandwidthStddev;
+@property (nonatomic) int cacheMaxAge;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSDictionary *defaultAdData;
+@property (nonatomic) BOOL defaultsToNoQualifiedAds;
+@property (nonatomic) <ADEmbeddedAdServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL digestAuthenticationEnabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double kbps;
+@property (nonatomic) double latency;
+@property (nonatomic) double latencyStddev;
+@property (nonatomic) BOOL pipeliningEnabled;
+@property (nonatomic, readonly) unsigned short port;
+@property (nonatomic, copy) NSString *publicURLRoot;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long totalBytesWritten;
+@property (nonatomic, readonly) NSString *urlString;
 
 + (BOOL)adBundleAtURL:(id)arg1 matchesRequest:(id)arg2;
 + (id)creativesForAdBundleAtURL:(id)arg1 matchingRequest:(id)arg2;
@@ -91,7 +89,7 @@
 - (void)httpServer:(id)arg1 connection:(id)arg2 enqueuedResponseToRequest:(id)arg3 statusCode:(int)arg4 length:(unsigned int)arg5;
 - (void)httpServer:(id)arg1 connection:(id)arg2 wroteBytes:(unsigned int)arg3 andCompletedResponseToRequest:(id)arg4;
 - (void)httpServer:(id)arg1 connection:(id)arg2 wroteBytes:(unsigned int)arg3 forResponseToRequest:(id)arg4 remaining:(unsigned int)arg5;
-- (void)httpServer:(id)arg1 dataForRequest:(id)arg2 resolvedPath:(id)arg3 handler:(id)arg4;
+- (void)httpServer:(id)arg1 dataForRequest:(id)arg2 resolvedPath:(id)arg3 handler:(id /* block */)arg4;
 - (void)httpServer:(id)arg1 logMessage:(id)arg2;
 - (id)httpServer:(id)arg1 proposedResponse:(id)arg2;
 - (void)httpServer:(id)arg1 receivedConnection:(id)arg2;

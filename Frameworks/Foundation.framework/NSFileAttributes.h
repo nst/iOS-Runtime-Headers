@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDate, NSDictionary, NSMutableDictionary;
-
 @interface NSFileAttributes : NSDictionary {
     struct { 
         BOOL extensionHidden; 

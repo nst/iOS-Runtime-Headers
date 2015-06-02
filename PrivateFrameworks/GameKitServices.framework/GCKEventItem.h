@@ -7,7 +7,7 @@
     unsigned int _pid;
 }
 
-@property struct { int x1; char *x2; int x3; unsigned int x4; }* event;
+@property struct { int x1; char *x2; int x3; unsigned int x4; }*event;
 @property unsigned int pid;
 
 - (void)dealloc;

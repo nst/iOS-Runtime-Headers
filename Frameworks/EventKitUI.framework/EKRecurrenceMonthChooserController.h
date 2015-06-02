@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSMutableSet;
-
 @interface EKRecurrenceMonthChooserController : EKRecurrenceGridChooserController {
     NSMutableSet *_monthsOfTheYearSet;
     BOOL _prohibitsMultipleMonthsInYearlyRecurrence;
 }
 
-@property(retain) NSArray * monthsOfTheYear;
-@property BOOL prohibitsMultipleMonthsInYearlyRecurrence;
+@property (nonatomic, retain) NSArray *monthsOfTheYear;
+@property (nonatomic) BOOL prohibitsMultipleMonthsInYearlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)cellLabels;

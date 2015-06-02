@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLAbstractObject>;
-
 @interface CPLPlatformObject : NSObject {
     <CPLAbstractObject> *_abstractObject;
 }
 
-@property(readonly) <CPLAbstractObject> * abstractObject;
+@property (nonatomic, readonly) <CPLAbstractObject> *abstractObject;
 
 - (void).cxx_destruct;
 - (id)abstractObject;

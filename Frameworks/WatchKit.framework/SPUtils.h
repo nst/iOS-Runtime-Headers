@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPUtils : NSObject {
-}
+@interface SPUtils : NSObject
 
 + (BOOL)appExtensionFirstUnlock;
 + (id)deserializeObject:(id)arg1;

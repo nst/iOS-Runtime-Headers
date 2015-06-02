@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface UICTFontDescriptor : UIFontDescriptor {
-}
+@interface UICTFontDescriptor : UIFontDescriptor
 
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
 + (id)fontDescriptorWithName:(id)arg1 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;

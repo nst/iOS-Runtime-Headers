@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRTCPConnectionStreamDelegate>, NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream;
-
 @interface TRTCPConnectionStream : NSObject {
     BOOL _closed;
     NSObject<OS_dispatch_queue> *_connectionAccessQueue;
@@ -14,8 +12,8 @@
     NSOutputStream *_writeStream;
 }
 
-@property(getter=isClosed) BOOL closed;
-@property <TRTCPConnectionStreamDelegate> * delegate;
+@property (getter=isClosed, nonatomic) BOOL closed;
+@property (nonatomic) <TRTCPConnectionStreamDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)_initWithNetService:(id)arg1;
@@ -25,9 +23,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)isClosed;
-- (void)readDataOfLength:(unsigned long)arg1 completionHandler:(id)arg2;
+- (void)readDataOfLength:(unsigned long)arg1 completionHandler:(id /* block */)arg2;
 - (void)setClosed:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)writeData:(id)arg1 completionHandler:(id)arg2;
+- (void)writeData:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSString;
-
 @interface CKNotificationInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_alertActionLocalizationKey;
     NSString *_alertBody;
@@ -16,15 +14,15 @@
     NSString *_soundName;
 }
 
-@property(copy) NSString * alertActionLocalizationKey;
-@property(copy) NSString * alertBody;
-@property(copy) NSString * alertLaunchImage;
-@property(copy) NSArray * alertLocalizationArgs;
-@property(copy) NSString * alertLocalizationKey;
-@property(copy) NSArray * desiredKeys;
-@property BOOL shouldBadge;
-@property BOOL shouldSendContentAvailable;
-@property(copy) NSString * soundName;
+@property (nonatomic, copy) NSString *alertActionLocalizationKey;
+@property (nonatomic, copy) NSString *alertBody;
+@property (nonatomic, copy) NSString *alertLaunchImage;
+@property (nonatomic, copy) NSArray *alertLocalizationArgs;
+@property (nonatomic, copy) NSString *alertLocalizationKey;
+@property (nonatomic, copy) NSArray *desiredKeys;
+@property (nonatomic) BOOL shouldBadge;
+@property (nonatomic) BOOL shouldSendContentAvailable;
+@property (nonatomic, copy) NSString *soundName;
 
 + (id)notificationInfo;
 + (BOOL)supportsSecureCoding;

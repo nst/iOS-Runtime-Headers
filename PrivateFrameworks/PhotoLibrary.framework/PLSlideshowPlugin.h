@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLSlideshowPluginDelegate>, NSArray, NSObject<PLAlbumProtocol>, PLManagedAsset;
-
 @interface PLSlideshowPlugin : NSObject {
     struct NSObject { Class x1; } *_album;
     NSArray *_albumAssets;
@@ -13,14 +11,14 @@
     BOOL _shuffleAlbum;
 }
 
-@property(retain) NSObject<PLAlbumProtocol> * album;
-@property(retain) NSArray * albumAssets;
-@property(readonly) PLManagedAsset * currentPhoto;
-@property <PLSlideshowPluginDelegate> * delegate;
-@property(readonly) NSArray * displayedPhotos;
-@property double secondsPerSlide;
-@property BOOL shouldRepeat;
-@property BOOL shuffleAlbum;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *album;
+@property (nonatomic, retain) NSArray *albumAssets;
+@property (nonatomic, readonly) PLManagedAsset *currentPhoto;
+@property (nonatomic) <PLSlideshowPluginDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *displayedPhotos;
+@property (nonatomic) double secondsPerSlide;
+@property (nonatomic) BOOL shouldRepeat;
+@property (nonatomic) BOOL shuffleAlbum;
 
 - (struct NSObject { Class x1; }*)album;
 - (id)albumAssets;

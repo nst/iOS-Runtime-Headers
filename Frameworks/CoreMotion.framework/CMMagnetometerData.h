@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property(readonly) struct { double x1; double x2; double x3; } magneticField;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } magneticField;
 
 + (BOOL)supportsSecureCoding;
 

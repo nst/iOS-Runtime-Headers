@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPStorage;
-
 @interface TSTTableDataFormulaError : TSTTableDataObject {
     TSWPStorage *mFormulaError;
 }

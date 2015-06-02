@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<SLTimestampSkewStorageDelegate>, NSString, NSURL, OACredential;
-
 @interface SLTwitterRequest : NSObject {
     ACAccount *_account;
     NSString *_applicationID;
@@ -16,10 +14,10 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(retain) ACAccount * account;
-@property(readonly) NSDictionary * parameters;
-@property(readonly) int requestMethod;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, readonly) NSDictionary *parameters;
+@property (nonatomic, readonly) int requestMethod;
 
 + (BOOL)responseIsTimestampOutOfBounds:(id)arg1 data:(id)arg2 JSONResponseObject:(id)arg3;
 + (float)retryDelayForRetryCount:(int)arg1;
@@ -28,7 +26,7 @@
 - (id)URL;
 - (id)_allParameters;
 - (id)_parameterString;
-- (void)_performRequestExtractingJSONResponse:(BOOL)arg1 retryCount:(int)arg2 maxRetries:(int)arg3 completion:(id)arg4;
+- (void)_performRequestExtractingJSONResponse:(BOOL)arg1 retryCount:(int)arg2 maxRetries:(int)arg3 completion:(id /* block */)arg4;
 - (void)_setTimestampSkew:(double)arg1;
 - (double)_timestampSkew;
 - (id)_urlEncodedString:(id)arg1;
@@ -43,8 +41,8 @@
 - (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 - (id)multiPartBodyData;
 - (id)parameters;
-- (void)performJSONRequestWithHandler:(id)arg1;
-- (void)performRequestWithHandler:(id)arg1;
+- (void)performJSONRequestWithHandler:(id /* block */)arg1;
+- (void)performRequestWithHandler:(id /* block */)arg1;
 - (int)requestMethod;
 - (BOOL)requiresAuthorization;
 - (void)setAccount:(id)arg1;

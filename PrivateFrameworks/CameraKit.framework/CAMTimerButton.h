@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMTimerButtonDelegate>, UIImageView;
-
 @interface CAMTimerButton : CAMExpandableMenuButton {
     UIImageView *__glyphView;
     <CAMTimerButtonDelegate> *_delegate;
     BOOL _hideOffWhenCollapsed;
 }
 
-@property(readonly) UIImageView * _glyphView;
-@property <CAMTimerButtonDelegate> * delegate;
-@property int duration;
-@property BOOL hideOffWhenCollapsed;
+@property (nonatomic, readonly) UIImageView *_glyphView;
+@property (nonatomic) <CAMTimerButtonDelegate> *delegate;
+@property (nonatomic) int duration;
+@property (nonatomic) BOOL hideOffWhenCollapsed;
 
 - (void).cxx_destruct;
 - (void)_commonCAMTimerButtonInitialization;

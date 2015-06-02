@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMMessageDispatcher, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID;
-
 @interface HMDCloudDataSyncStateFilter : HMDMessageFilter <HMMessageReceiver> {
     int _circleNotificationToken;
     BOOL _cloudDataSyncCompleted;
@@ -18,23 +16,23 @@
     NSUUID *_uuid;
 }
 
-@property int circleNotificationToken;
-@property BOOL cloudDataSyncCompleted;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL iCloudAccountActive;
-@property BOOL keychainSyncEnabled;
-@property BOOL keychainSyncRequiredPopShown;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(retain) NSObject<OS_dispatch_source> * popupTimer;
-@property BOOL serverTokenAvailable;
-@property(readonly) Class superclass;
-@property int totalHomes;
-@property int totalTransientPeerDevices;
-@property(retain) NSUUID * uuid;
+@property (nonatomic) int circleNotificationToken;
+@property (nonatomic) BOOL cloudDataSyncCompleted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL iCloudAccountActive;
+@property (nonatomic) BOOL keychainSyncEnabled;
+@property (nonatomic) BOOL keychainSyncRequiredPopShown;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *popupTimer;
+@property (nonatomic) BOOL serverTokenAvailable;
+@property (readonly) Class superclass;
+@property (nonatomic) int totalHomes;
+@property (nonatomic) int totalTransientPeerDevices;
+@property (nonatomic, retain) NSUUID *uuid;
 
 + (BOOL)isWhitelistedRemoteTransportMessage:(id)arg1;
 

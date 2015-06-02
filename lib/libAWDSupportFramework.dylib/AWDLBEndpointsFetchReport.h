@@ -19,18 +19,18 @@
     unsigned long long _timestamp;
 }
 
-@property int connectionCellularFallbackCount;
-@property int endpointsFetchTaskBadReplyCount;
-@property int endpointsFetchTaskCount;
-@property int endpointsFetchTaskFailureCount;
-@property int endpointsFetchTaskSuccessCount;
-@property BOOL hasConnectionCellularFallbackCount;
-@property BOOL hasEndpointsFetchTaskBadReplyCount;
-@property BOOL hasEndpointsFetchTaskCount;
-@property BOOL hasEndpointsFetchTaskFailureCount;
-@property BOOL hasEndpointsFetchTaskSuccessCount;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) int connectionCellularFallbackCount;
+@property (nonatomic) int endpointsFetchTaskBadReplyCount;
+@property (nonatomic) int endpointsFetchTaskCount;
+@property (nonatomic) int endpointsFetchTaskFailureCount;
+@property (nonatomic) int endpointsFetchTaskSuccessCount;
+@property (nonatomic) BOOL hasConnectionCellularFallbackCount;
+@property (nonatomic) BOOL hasEndpointsFetchTaskBadReplyCount;
+@property (nonatomic) BOOL hasEndpointsFetchTaskCount;
+@property (nonatomic) BOOL hasEndpointsFetchTaskFailureCount;
+@property (nonatomic) BOOL hasEndpointsFetchTaskSuccessCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)connectionCellularFallbackCount;
 - (void)copyTo:(id)arg1;

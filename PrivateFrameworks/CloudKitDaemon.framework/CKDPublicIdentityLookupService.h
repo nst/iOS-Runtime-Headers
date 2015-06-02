@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, CKDKeyValueDiskCache, CKDOperation, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface CKDPublicIdentityLookupService : NSObject {
     CKDKeyValueDiskCache *_cache;
     CKDClientContext *_context;
@@ -13,7 +11,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property CKDClientContext * context;
+@property (nonatomic) CKDClientContext *context;
 
 - (void).cxx_destruct;
 - (void)_fetchEmails;

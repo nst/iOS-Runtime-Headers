@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIMessageDeduplicated : PBCodable <NSCopying> {
     unsigned int _deduplicationInterval;
     NSString *_guid;
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int deduplicationInterval;
-@property(retain) NSString * guid;
-@property BOOL hasDeduplicationInterval;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int deduplicationInterval;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasDeduplicationInterval;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -7,8 +7,8 @@
     unsigned int mIndexFactor;
 }
 
-@property BOOL countFromOne;
-@property unsigned int indexFactor;
+@property (nonatomic) BOOL countFromOne;
+@property (nonatomic) unsigned int indexFactor;
 
 - (unsigned int)count;
 - (BOOL)countFromOne;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
  */
 
-@class NSString;
-
 @interface AXUIElement : NSObject <UIElementProtocol> {
     struct __AXUIElement { } *_axElement;
     struct __CFDictionary { } *_cachedAttributes;
@@ -11,12 +9,12 @@
     BOOL _isValid;
 }
 
-@property(readonly) struct __AXUIElement { }* axElement;
-@property struct __CFDictionary { }* cachedAttributes;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct __AXUIElement { }*axElement;
+@property (nonatomic) struct __CFDictionary { }*cachedAttributes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)applyElementAttributeCacheScheme:(int)arg1;
 + (void)initialize;

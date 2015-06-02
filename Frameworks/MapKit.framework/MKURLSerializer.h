@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKURLSerializer : NSObject {
-}
+@interface MKURLSerializer : NSObject
 
 - (id)_urlForDirectionsFromMapItem:(id)arg1 toMapItem:(id)arg2 transportType:(unsigned int)arg3 options:(id)arg4 precision:(BOOL)arg5;
 - (id)_urlForOpeningMapItems:(id)arg1 options:(id)arg2 precision:(BOOL)arg3;

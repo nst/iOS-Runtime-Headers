@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView;
-
 @interface SUFooterContainerView : UIView {
     UIView *_contentView;
     UIView *_footerView;
     BOOL _footerVisible;
 }
 
-@property(retain) UIView * contentView;
-@property(retain) UIView * footerView;
-@property(getter=isFooterVisible) BOOL footerVisible;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) UIView *footerView;
+@property (getter=isFooterVisible, nonatomic) BOOL footerVisible;
 
 - (id)contentView;
 - (void)dealloc;

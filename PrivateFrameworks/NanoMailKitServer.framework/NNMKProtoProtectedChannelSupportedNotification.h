@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@interface NNMKProtoProtectedChannelSupportedNotification : PBCodable <NSCopying> {
-}
+@interface NNMKProtoProtectedChannelSupportedNotification : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

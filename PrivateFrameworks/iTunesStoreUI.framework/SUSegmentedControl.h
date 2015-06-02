@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableArray, NSString, SUClientInterface, SUSimpleMenuViewController, UIColor, UIPopoverController, UISegmentedControl;
-
 @interface SUSegmentedControl : UIControl <SUMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     BOOL _autosizesText;
     NSString *_cancelButtonTitle;
@@ -21,23 +19,23 @@
     int _tintStyle;
 }
 
-@property(copy) NSString * cancelButtonTitle;
-@property(retain) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * items;
-@property int maximumNumberOfItems;
-@property float maximumWidth;
-@property(copy) NSString * moreListTitle;
-@property(readonly) int numberOfVisibleSegments;
-@property int segmentedControlStyle;
-@property int selectedItemIndex;
-@property(readonly) int selectedSegmentIndex;
-@property BOOL showsMoreListAutomatically;
-@property(readonly) Class superclass;
-@property(retain) UIColor * tintColor;
-@property int tintStyle;
+@property (nonatomic, copy) NSString *cancelButtonTitle;
+@property (nonatomic, retain) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic) int maximumNumberOfItems;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic, copy) NSString *moreListTitle;
+@property (nonatomic, readonly) int numberOfVisibleSegments;
+@property (nonatomic) int segmentedControlStyle;
+@property (nonatomic) int selectedItemIndex;
+@property (nonatomic, readonly) int selectedSegmentIndex;
+@property (nonatomic) BOOL showsMoreListAutomatically;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic) int tintStyle;
 
 - (void)_applyStyling;
 - (void)_destroyMenuViewController;

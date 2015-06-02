@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@class FTRegConnectionHandler, IMServiceImpl;
-
 @interface CNFInternalAccountListViewController : PSListController {
     FTRegConnectionHandler *_connectionHandler;
     IMServiceImpl *_service;
 }
 
-@property(retain) IMServiceImpl * service;
+@property (nonatomic, retain) IMServiceImpl *service;
 
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;

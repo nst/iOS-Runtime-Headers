@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FUNavigationController : UINavigationController {
-}
+@interface FUNavigationController : UINavigationController
 
 - (id)initWithRootViewController:(id)arg1;
 - (int)preferredInterfaceOrientationForPresentation;

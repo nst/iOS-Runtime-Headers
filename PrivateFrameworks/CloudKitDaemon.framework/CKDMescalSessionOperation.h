@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDMescalSession;
-
 @interface CKDMescalSessionOperation : CKDDatabaseOperation {
     CKDMescalSession *_mescalSession;
     int _serverVersion;
 }
 
-@property(retain) CKDMescalSession * mescalSession;
-@property int serverVersion;
+@property (nonatomic, retain) CKDMescalSession *mescalSession;
+@property (nonatomic) int serverVersion;
 
 - (void).cxx_destruct;
 - (void)_exchangeDataAndSendRequest:(id)arg1;

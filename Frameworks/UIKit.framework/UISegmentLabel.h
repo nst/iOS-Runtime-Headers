@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel;
-
 @interface UISegmentLabel : UILabel {
     UILabel *_associatedLabel;
 }
 
-@property UILabel * associatedLabel;
+@property (nonatomic) UILabel *associatedLabel;
 
 - (id)_associatedScalingLabel;
 - (id)_disabledFontColor;

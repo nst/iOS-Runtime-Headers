@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordIdentifier;
-
 @interface CKDPRecordReference : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
@@ -12,10 +10,10 @@
     int _type;
 }
 
-@property(readonly) BOOL hasRecordIdentifier;
-@property BOOL hasType;
-@property(retain) CKDPRecordIdentifier * recordIdentifier;
-@property int type;
+@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFLock, NSMutableDictionary;
-
 @interface MFWebAttachmentSource : NSObject {
     NSMutableDictionary *_attachmentsByURL;
     MFLock *_attachmentsLock;

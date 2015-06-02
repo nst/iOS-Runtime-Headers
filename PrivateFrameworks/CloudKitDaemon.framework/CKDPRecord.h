@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDateStatistics, CKDPIdentifier, CKDPProtectionInfo, CKDPRecordIdentifier, CKDPRecordType, CKDPShareIdentifier, NSMutableArray, NSString;
-
 @interface CKDPRecord : PBCodable <NSCopying> {
     NSMutableArray *_conflictLoserEtags;
     CKDPIdentifier *_createdBy;
@@ -23,29 +21,29 @@
     CKDPRecordType *_type;
 }
 
-@property(retain) NSMutableArray * conflictLoserEtags;
-@property(retain) CKDPIdentifier * createdBy;
-@property(retain) NSString * etag;
-@property(retain) NSMutableArray * fields;
-@property(readonly) BOOL hasCreatedBy;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasModifiedBy;
-@property(readonly) BOOL hasModifiedByDevice;
-@property BOOL hasPermission;
-@property(readonly) BOOL hasProtectionInfo;
-@property(readonly) BOOL hasRecordIdentifier;
-@property(readonly) BOOL hasShareId;
-@property(readonly) BOOL hasTimeStatistics;
-@property(readonly) BOOL hasType;
-@property(retain) CKDPIdentifier * modifiedBy;
-@property(retain) NSString * modifiedByDevice;
-@property int permission;
-@property(retain) NSMutableArray * pluginFields;
-@property(retain) CKDPProtectionInfo * protectionInfo;
-@property(retain) CKDPRecordIdentifier * recordIdentifier;
-@property(retain) CKDPShareIdentifier * shareId;
-@property(retain) CKDPDateStatistics * timeStatistics;
-@property(retain) CKDPRecordType * type;
+@property (nonatomic, retain) NSMutableArray *conflictLoserEtags;
+@property (nonatomic, retain) CKDPIdentifier *createdBy;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSMutableArray *fields;
+@property (nonatomic, readonly) BOOL hasCreatedBy;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasModifiedBy;
+@property (nonatomic, readonly) BOOL hasModifiedByDevice;
+@property (nonatomic) BOOL hasPermission;
+@property (nonatomic, readonly) BOOL hasProtectionInfo;
+@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) BOOL hasTimeStatistics;
+@property (nonatomic, readonly) BOOL hasType;
+@property (nonatomic, retain) CKDPIdentifier *modifiedBy;
+@property (nonatomic, retain) NSString *modifiedByDevice;
+@property (nonatomic) int permission;
+@property (nonatomic, retain) NSMutableArray *pluginFields;
+@property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
+@property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
+@property (nonatomic, retain) CKDPDateStatistics *timeStatistics;
+@property (nonatomic, retain) CKDPRecordType *type;
 
 + (id)recordFromData:(id)arg1;
 

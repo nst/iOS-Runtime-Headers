@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSDatabasesRequest : HSRequest {
-}
+@interface HSDatabasesRequest : HSRequest
 
 + (id)requestWithSessionID:(unsigned int)arg1;
 

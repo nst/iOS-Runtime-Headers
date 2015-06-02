@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLAirPlaySessionDataSource>, AirPlayRemoteSlideshow, MediaControlClient, NSDictionary, NSMutableArray;
-
 @interface PLAirPlaySession : NSObject {
     <PLAirPlaySessionDataSource> *_dataSource;
     MediaControlClient *_mediaControlClient;
@@ -17,8 +15,8 @@
     BOOL _supportsPhotoCaching;
 }
 
-@property <PLAirPlaySessionDataSource> * dataSource;
-@property BOOL streamingLocalSlideShow;
+@property (nonatomic) <PLAirPlaySessionDataSource> *dataSource;
+@property (nonatomic) BOOL streamingLocalSlideShow;
 
 + (void)beginNetworkAssertion;
 + (BOOL)canDisplayMedia:(id)arg1;

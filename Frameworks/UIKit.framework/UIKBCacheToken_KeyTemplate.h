@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBCacheToken_KeyTemplate : UIKBCacheToken_Key {
-}
+@interface UIKBCacheToken_KeyTemplate : UIKBCacheToken_Key
 
 + (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
 
-- (id)_stringWithAdditionalValues:(id)arg1;
+- (id)_stringWithAdditionalValues:(id /* block */)arg1;
 
 @end

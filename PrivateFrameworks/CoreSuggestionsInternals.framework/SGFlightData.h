@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class <SGSeekable>, NSDictionary, SGAsset, SGOffsetDictionary;
-
 @interface SGFlightData : NSObject {
     SGOffsetDictionary *_airportDataOffsets;
     SGOffsetDictionary *_airportUpdateDataOffsets;

@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPMediaItemCollection, NSDictionary, NSString, PUAirplayRoute, PUAirplayRouteTableViewDataSource;
-
 @interface PUSlideshowSettingsViewController : UITableViewController <MPMediaPickerControllerDelegate> {
     PUAirplayRouteTableViewDataSource *_airplayDataSource;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     PUAirplayRoute *_markedRoute;
     MPMediaItemCollection *_musicCollection;
     NSString *_selectedTransitionKey;
@@ -24,12 +14,12 @@
     NSDictionary *_transitions;
 }
 
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL shouldShowCancelButton;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL shouldShowCancelButton;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_airplaySectionCellForTableView:(id)arg1 atRow:(int)arg2;
@@ -40,7 +30,7 @@
 - (id)_localTransitions;
 - (id)_mainSectionCellForTableView:(id)arg1 atRow:(int)arg2;
 - (void)_presentAirplayController;
-- (void)_presentMusicControllerWithPresentationCompletion:(id)arg1;
+- (void)_presentMusicControllerWithPresentationCompletion:(id /* block */)arg1;
 - (void)_presentTransitionsController;
 - (void)_slideshowSetupCancelled:(id)arg1;
 - (void)_slideshowSetupComplete:(id)arg1;
@@ -56,14 +46,14 @@
 - (void)_updateTransitionCell:(id)arg1;
 - (void)_updateTransitions:(id)arg1 fromRoute:(id)arg2;
 - (void)_updateTransitionsForRoute:(id)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)init;
 - (id)initWithSettings:(id)arg1;
 - (void)mediaPicker:(id)arg1 didPickMediaItems:(id)arg2;
 - (void)mediaPickerDidCancel:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMarkedRoute:(id)arg1;
 - (void)setMarkedRoute:(id)arg1 updateToDefaultSettings:(BOOL)arg2;
 - (void)setShouldShowCancelButton:(BOOL)arg1;

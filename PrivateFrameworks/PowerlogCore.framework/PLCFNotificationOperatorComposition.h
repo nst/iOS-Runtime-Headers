@@ -2,49 +2,39 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, PLOperator;
-
 @interface PLCFNotificationOperatorComposition : NSObject {
     BOOL _isStateRequired;
     BOOL _listeningForNotifications;
     NSString *_notificationName;
     PLOperator *_operator;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _operatorBlock;
-
+    id /* block */ _operatorBlock;
     int _stateToken;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 @property BOOL isStateRequired;
 @property BOOL listeningForNotifications;
-@property(retain) NSString * notificationName;
-@property PLOperator * operator;
-@property(copy) id operatorBlock;
+@property (retain) NSString *notificationName;
+@property PLOperator *operator;
+@property (nonatomic, copy) id /* block */ operatorBlock;
 @property int stateToken;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithOperator:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id)arg4;
-- (id)initWithWorkQueue:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id)arg4;
+- (id)initWithOperator:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id /* block */)arg4;
+- (id)initWithWorkQueue:(id)arg1 forNotification:(id)arg2 requireState:(BOOL)arg3 withBlock:(id /* block */)arg4;
 - (BOOL)isStateRequired;
 - (BOOL)listenForNotifications:(BOOL)arg1;
 - (BOOL)listeningForNotifications;
 - (id)notificationName;
 - (id)operator;
-- (id)operatorBlock;
+- (id /* block */)operatorBlock;
 - (void)setIsStateRequired:(BOOL)arg1;
 - (void)setListeningForNotifications:(BOOL)arg1;
 - (void)setNotificationName:(id)arg1;
 - (void)setOperator:(id)arg1;
-- (void)setOperatorBlock:(id)arg1;
+- (void)setOperatorBlock:(id /* block */)arg1;
 - (void)setStateToken:(int)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (int)stateToken;

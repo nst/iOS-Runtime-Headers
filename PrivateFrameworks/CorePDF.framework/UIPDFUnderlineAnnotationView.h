@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFUnderlineAnnotationView : UIPDFAnnotationView {
-}
+@interface UIPDFUnderlineAnnotationView : UIPDFAnnotationView
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSData;
-
 @interface _WKSessionState : NSObject {
     struct SessionState { 
         struct BackForwardListState { 
@@ -41,7 +39,7 @@
     } _sessionState;
 }
 
-@property(copy,readonly) NSData * data;
+@property (nonatomic, readonly, copy) NSData *data;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

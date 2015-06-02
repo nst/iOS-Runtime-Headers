@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSTTableHeaderStorageBucket;
-
 @interface TSTTableHeaderStorage : TSPContainedObject <TSTTableHeaderStorage> {
-    TSTTableHeaderStorageBucket *mBuckets[1];
+    TSTTableHeaderStorageBucket *mBuckets;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)count;
 - (void)dealloc;
-- (void)enumerateHeadersWithBlock:(id)arg1;
+- (void)enumerateHeadersWithBlock:(id /* block */)arg1;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
 - (id)initWithArchive:(const struct HeaderStorage { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;

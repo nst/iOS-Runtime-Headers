@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SALocalSearchBusiness2;
+@interface SAMovieMovieTheaterShowtimes : AceObject <SAAceSerializable>
 
-@interface SAMovieMovieTheaterShowtimes : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * movieShowtimes;
-@property(copy) NSArray * showtimes;
-@property(readonly) Class superclass;
-@property(retain) SALocalSearchBusiness2 * theater;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *movieShowtimes;
+@property (nonatomic, copy) NSArray *showtimes;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SALocalSearchBusiness2 *theater;
 
 + (id)movieTheaterShowtimes;
 + (id)movieTheaterShowtimesWithDictionary:(id)arg1 context:(id)arg2;

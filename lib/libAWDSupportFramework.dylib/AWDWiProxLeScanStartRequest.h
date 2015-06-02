@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData, NSString;
-
 @interface AWDWiProxLeScanStartRequest : PBRequest <NSCopying> {
     unsigned int _dataLength;
     struct { 
@@ -19,18 +17,18 @@
     int _type;
 }
 
-@property unsigned int dataLength;
-@property BOOL hasDataLength;
-@property BOOL hasNumPeers;
-@property(readonly) BOOL hasPeers;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property unsigned int numPeers;
-@property(retain) NSData * peers;
-@property(retain) NSString * sessionId;
-@property unsigned long long timestamp;
-@property int type;
+@property (nonatomic) unsigned int dataLength;
+@property (nonatomic) BOOL hasDataLength;
+@property (nonatomic) BOOL hasNumPeers;
+@property (nonatomic, readonly) BOOL hasPeers;
+@property (nonatomic, readonly) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned int numPeers;
+@property (nonatomic, retain) NSData *peers;
+@property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

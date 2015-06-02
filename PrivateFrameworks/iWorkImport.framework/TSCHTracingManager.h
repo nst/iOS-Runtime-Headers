@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, NSURL, TSMTraceBuffer;
-
 @interface TSCHTracingManager : NSObject {
     TSMTraceBuffer *mBuffer;
     unsigned int mBufferSize;
@@ -15,8 +13,8 @@
 }
 
 @property unsigned int bufferSize;
-@property(readonly) NSURL * lastTraceFileURL;
-@property(copy) NSString * tag;
+@property (readonly) NSURL *lastTraceFileURL;
+@property (copy) NSString *tag;
 @property unsigned int traceLevel;
 
 + (id)_singletonAlloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicNowPlayingObserver : RUNowPlayingObserver {
-}
+@interface MusicNowPlayingObserver : RUNowPlayingObserver
 
 + (id)sharedObserver;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderTrackOutputInternal, AVAssetTrack, NSDictionary, NSString;
-
 @interface AVAssetReaderTrackOutput : AVAssetReaderOutput {
     AVAssetReaderTrackOutputInternal *_trackOutputInternal;
 }
 
-@property BOOL appliesPreferredTrackTransform;
-@property(getter=_isAttachedToMetadataAdaptor,readonly) BOOL attachedToMetadataAdaptor;
-@property(copy) NSString * audioTimePitchAlgorithm;
-@property(readonly) NSDictionary * outputSettings;
-@property(readonly) AVAssetTrack * track;
+@property (nonatomic) BOOL appliesPreferredTrackTransform;
+@property (getter=_isAttachedToMetadataAdaptor, nonatomic, readonly) BOOL attachedToMetadataAdaptor;
+@property (nonatomic, copy) NSString *audioTimePitchAlgorithm;
+@property (nonatomic, readonly) NSDictionary *outputSettings;
+@property (nonatomic, readonly) AVAssetTrack *track;
 
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 

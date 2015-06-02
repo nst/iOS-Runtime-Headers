@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
+@interface AAEmailLookupResponse : AAResponse
 
-@interface AAEmailLookupResponse : AAResponse {
-}
-
-@property(readonly) NSDictionary * lookupResults;
+@property (nonatomic, readonly) NSDictionary *lookupResults;
 
 - (id)lookupResults;
 

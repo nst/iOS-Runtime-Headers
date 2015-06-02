@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSUZipEntry : NSObject {
     unsigned int _CRC;
     BOOL _compressed;
@@ -16,15 +14,15 @@
     unsigned long long _size;
 }
 
-@property unsigned int CRC;
-@property(getter=isCompressed) BOOL compressed;
-@property unsigned long long compressedSize;
-@property unsigned short extraFieldsLength;
-@property unsigned long fileHeaderLength;
-@property(copy) NSString * name;
-@property unsigned short nameLength;
-@property unsigned long long offset;
-@property unsigned long long size;
+@property (nonatomic) unsigned int CRC;
+@property (getter=isCompressed, nonatomic) BOOL compressed;
+@property (nonatomic) unsigned long long compressedSize;
+@property (nonatomic) unsigned short extraFieldsLength;
+@property (nonatomic) unsigned long fileHeaderLength;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) unsigned short nameLength;
+@property (nonatomic) unsigned long long offset;
+@property (nonatomic) unsigned long long size;
 
 - (void).cxx_destruct;
 - (unsigned int)CRC;

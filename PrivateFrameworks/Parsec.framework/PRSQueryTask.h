@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSearchQueryHandler>, NSObject<OS_dispatch_queue>, NSString, PRSSearchFeedback, PRSSearchSession;
-
 @interface PRSQueryTask : NSObject {
     BOOL _canceled;
     NSString *_fbq;
@@ -17,15 +15,15 @@
     BOOL _webSearch;
 }
 
-@property BOOL canceled;
-@property(retain) NSString * fbq;
-@property(retain) PRSSearchFeedback * feedback;
-@property(retain) <PRSSearchQueryHandler> * handler;
+@property (nonatomic) BOOL canceled;
+@property (nonatomic, retain) NSString *fbq;
+@property (retain) PRSSearchFeedback *feedback;
+@property (nonatomic, retain) <PRSSearchQueryHandler> *handler;
 @property int queryId;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) id representedObject;
-@property PRSSearchSession * session;
-@property BOOL started;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) id representedObject;
+@property (nonatomic) PRSSearchSession *session;
+@property (nonatomic) BOOL started;
 @property BOOL webSearch;
 
 + (void)initialize;

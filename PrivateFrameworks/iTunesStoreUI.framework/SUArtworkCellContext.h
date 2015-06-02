@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLOperationPool, SUImageCache, SUImageDataProvider, UIImage;
-
 @interface SUArtworkCellContext : SUCellConfigurationContext {
     SUImageCache *_imageCache;
     ISURLOperationPool *_imagePool;
@@ -11,10 +9,10 @@
     UIImage *_placeholderImage;
 }
 
-@property(retain) SUImageCache * imageCache;
-@property(retain) ISURLOperationPool * imagePool;
-@property(retain) SUImageDataProvider * imageProvider;
-@property(retain) UIImage * placeholderImage;
+@property (nonatomic, retain) SUImageCache *imageCache;
+@property (nonatomic, retain) ISURLOperationPool *imagePool;
+@property (nonatomic, retain) SUImageDataProvider *imageProvider;
+@property (nonatomic, retain) UIImage *placeholderImage;
 
 - (void)dealloc;
 - (id)imageCache;

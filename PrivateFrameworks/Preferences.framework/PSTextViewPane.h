@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UITextView;
-
 @interface PSTextViewPane : PSEditingPane {
     UITextView *_textView;
 }

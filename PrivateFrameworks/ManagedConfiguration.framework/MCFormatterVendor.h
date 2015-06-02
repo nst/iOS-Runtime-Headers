@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumberFormatter, NSObject<OS_dispatch_queue>;
-
 @interface MCFormatterVendor : NSObject {
     NSNumberFormatter *_numberFormatter;
     NSObject<OS_dispatch_queue> *_syncQueue;

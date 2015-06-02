@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebBrowserView, _UIWebViewScrollViewDelegateForwarder;
-
 @interface _UIWebViewScrollView : UIWebScrollView {
     BOOL _bouncesSetExplicitly;
     UIWebBrowserView *_browserView;

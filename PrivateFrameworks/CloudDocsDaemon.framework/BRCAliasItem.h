@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAliasItem, BRCDirectoryItem, BRCDocumentItem, BRCItemID, BRCLocalContainer, NSString;
+@interface BRCAliasItem : BRCLocalItem
 
-@interface BRCAliasItem : BRCLocalItem {
-}
-
-@property(readonly) BRCAliasItem * asAlias;
-@property(readonly) BRCDirectoryItem * asDirectory;
-@property(readonly) BRCDocumentItem * asDocument;
-@property(readonly) NSString * targetContainerID;
-@property(readonly) BRCItemID * targetItemID;
-@property(readonly) BRCLocalContainer * targetLocalContainer;
+@property (nonatomic, readonly) BRCAliasItem *asAlias;
+@property (nonatomic, readonly) BRCDirectoryItem *asDirectory;
+@property (nonatomic, readonly) BRCDocumentItem *asDocument;
+@property (nonatomic, readonly) NSString *targetContainerID;
+@property (nonatomic, readonly) BRCItemID *targetItemID;
+@property (nonatomic, readonly) BRCLocalContainer *targetLocalContainer;
 
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;

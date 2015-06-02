@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHMultiDataChartRep;
-
 @interface TSCHMultiDataChartRepMultiDataBuildStages : NSObject <TSCHUnretainedParent> {
     unsigned int mCurrentStage;
     float mDuration;
@@ -15,8 +13,8 @@
     float mTotalDuration;
 }
 
-@property(readonly) unsigned int currentStage;
-@property(readonly) float duration;
+@property (nonatomic, readonly) unsigned int currentStage;
+@property (nonatomic, readonly) float duration;
 
 + (id)buildStagesWithRep:(id)arg1 stages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 totalDuration:(float)arg3;
 + (unsigned int)dataSetIndexForRep:(id)arg1 buildStage:(unsigned int)arg2;

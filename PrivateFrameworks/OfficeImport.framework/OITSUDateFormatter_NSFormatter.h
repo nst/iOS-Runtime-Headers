@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OITSUDateFormatter_NSFormatter : NSFormatter {
     BOOL isDateOnly;
     BOOL isTimeOnly;
     NSString *mPreferredFormat;
 }
 
-@property BOOL isDateOnly;
-@property BOOL isTimeOnly;
-@property(retain) NSString * preferredFormat;
+@property (nonatomic) BOOL isDateOnly;
+@property (nonatomic) BOOL isTimeOnly;
+@property (nonatomic, retain) NSString *preferredFormat;
 
 - (void)dealloc;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;

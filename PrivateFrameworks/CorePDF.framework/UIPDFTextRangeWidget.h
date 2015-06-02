@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, UIPDFPageView;
-
 @interface UIPDFTextRangeWidget : NSObject <UIPDFSelectionWidget> {
     CALayer *_endBar;
     CALayer *_endHandle;
@@ -32,9 +30,9 @@
     float _startX;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;
-@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPointOnPage;
-@property UIPDFPageView * pageView;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentSelectionPointOnPage;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } initialSelectionPointOnPage;
+@property (nonatomic) UIPDFPageView *pageView;
 
 - (struct CGPoint { float x1; float x2; })currentSelectionPointOnPage;
 - (void)dealloc;

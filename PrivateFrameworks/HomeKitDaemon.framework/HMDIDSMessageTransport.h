@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMMessageDispatcher, IDSService, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HMDIDSMessageTransport : NSObject <HMIDSMessageTransport, HMMessageTransport, IDSServiceDelegate> {
     IDSService *_idsService;
     HMMessageDispatcher *_messageDispatcher;
@@ -15,18 +13,18 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) IDSService * idsService;
-@property HMMessageDispatcher * messageDispatcher;
-@property(retain) NSMutableSet * peerResidentDeviceAddresses;
-@property(retain) NSMutableSet * peerTransientDeviceAddresses;
-@property(retain) NSMutableDictionary * pendingResponseTimers;
-@property(retain) NSMutableDictionary * pendingResponses;
-@property(retain) NSMutableDictionary * pendingSentMessages;
-@property(readonly) Class superclass;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IDSService *idsService;
+@property (nonatomic) HMMessageDispatcher *messageDispatcher;
+@property (nonatomic, retain) NSMutableSet *peerResidentDeviceAddresses;
+@property (nonatomic, retain) NSMutableSet *peerTransientDeviceAddresses;
+@property (nonatomic, retain) NSMutableDictionary *pendingResponseTimers;
+@property (nonatomic, retain) NSMutableDictionary *pendingResponses;
+@property (nonatomic, retain) NSMutableDictionary *pendingSentMessages;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)dictionaryForMessageName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 transactionID:(id)arg5 msgType:(unsigned int)arg6;
 + (id)idsMessageTypeDescription:(unsigned int)arg1;
@@ -38,8 +36,8 @@
 - (void)configure:(id)arg1;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5 responseHandler:(id)arg6;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 destination:(id)arg5 responseHandler:(id /* block */)arg6;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id /* block */)arg5;
 - (id)idsService;
 - (id)initWithIDSService:(id)arg1;
 - (id)messageDispatcher;

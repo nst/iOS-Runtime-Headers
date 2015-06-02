@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSData, NSString, _CSIRenditionBlockData, _CUIThemePixelRendition;
-
 @interface CSIHelper : NSObject {
     NSString *blockDataCacheKeyBGRX;
     NSString *blockDataCacheKeyRGBX;

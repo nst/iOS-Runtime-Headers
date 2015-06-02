@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDPushReceivedDropped : PBCodable <NSCopying> {
     unsigned int _connectionType;
     unsigned int _dualChannelState;
@@ -24,22 +22,22 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int connectionType;
-@property unsigned int dualChannelState;
-@property(retain) NSString * guid;
-@property BOOL hasConnectionType;
-@property BOOL hasDualChannelState;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsFromStorage;
-@property BOOL hasLinkQuality;
-@property BOOL hasPayloadSize;
-@property BOOL hasReceiveOffset;
-@property BOOL hasTimestamp;
-@property unsigned int isFromStorage;
-@property int linkQuality;
-@property unsigned int payloadSize;
-@property unsigned int receiveOffset;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int dualChannelState;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasDualChannelState;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsFromStorage;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasPayloadSize;
+@property (nonatomic) BOOL hasReceiveOffset;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isFromStorage;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned int payloadSize;
+@property (nonatomic) unsigned int receiveOffset;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

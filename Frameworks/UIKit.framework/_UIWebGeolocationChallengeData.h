@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <WebAllowDenyPolicyListener>, NSString, NSURL, UIWindow;
-
 @interface _UIWebGeolocationChallengeData : NSObject {
     <WebAllowDenyPolicyListener> *_listener;
     NSURL *_requestingURL;
@@ -11,10 +9,10 @@
     UIWindow *_window;
 }
 
-@property(retain) <WebAllowDenyPolicyListener> * listener;
-@property(retain) NSURL * requestingURL;
-@property(retain) NSString * token;
-@property(retain) UIWindow * window;
+@property (nonatomic, retain) <WebAllowDenyPolicyListener> *listener;
+@property (nonatomic, retain) NSURL *requestingURL;
+@property (nonatomic, retain) NSString *token;
+@property (nonatomic, retain) UIWindow *window;
 
 - (void)dealloc;
 - (id)listener;

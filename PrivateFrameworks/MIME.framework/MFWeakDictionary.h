@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSLock, NSMutableDictionary;
-
 @interface MFWeakDictionary : NSMutableDictionary {
     NSMutableDictionary *_dictionary;
     unsigned long _gen;
@@ -14,10 +12,10 @@
 - (id)allKeys;
 - (id)allValues;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;

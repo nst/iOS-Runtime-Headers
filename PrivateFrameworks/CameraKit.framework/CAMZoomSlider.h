@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMZoomSliderDelegate>, NSTimer, UIImageView, UIView;
-
 @interface CAMZoomSlider : UISlider {
     BOOL __autozooming;
     UIView *__maxTrackMaskView;
@@ -15,14 +13,14 @@
     BOOL _minimumAutozooming;
 }
 
-@property(getter=_isAutozooming,setter=_setAutozooming:) BOOL _autozooming;
-@property(readonly) UIView * _maxTrackMaskView;
-@property(readonly) UIView * _minTrackMaskView;
-@property(readonly) UIImageView * _thumbImageView;
-@property(readonly) NSTimer * _visibilityTimer;
-@property <CAMZoomSliderDelegate> * delegate;
-@property(getter=isMaximumAutozooming) BOOL maximumAutozooming;
-@property(getter=isMinimumAutozooming) BOOL minimumAutozooming;
+@property (getter=_isAutozooming, setter=_setAutozooming:, nonatomic) BOOL _autozooming;
+@property (nonatomic, readonly) UIView *_maxTrackMaskView;
+@property (nonatomic, readonly) UIView *_minTrackMaskView;
+@property (nonatomic, readonly) UIImageView *_thumbImageView;
+@property (nonatomic, readonly) NSTimer *_visibilityTimer;
+@property (nonatomic) <CAMZoomSliderDelegate> *delegate;
+@property (getter=isMaximumAutozooming, nonatomic) BOOL maximumAutozooming;
+@property (getter=isMinimumAutozooming, nonatomic) BOOL minimumAutozooming;
 
 - (void).cxx_destruct;
 - (void)_beginAutozooming;

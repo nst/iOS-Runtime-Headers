@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIBrickSwooshArtworkLoader, SKUIBrickSwooshViewController, SKUIMissingItemLoader, SKUISwooshPageComponent;
-
 @interface SKUIBrickSwooshPageSection : SKUIStorePageSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
     SKUIBrickSwooshArtworkLoader *_artworkLoader;
     SKUIMissingItemLoader *_missingItemLoader;
     SKUIBrickSwooshViewController *_swooshViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUISwooshPageComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUISwooshPageComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addImpressionForIndex:(int)arg1 toSession:(id)arg2;

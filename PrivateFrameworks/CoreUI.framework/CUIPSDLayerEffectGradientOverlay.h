@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDGradient;
-
 @interface CUIPSDLayerEffectGradientOverlay : CUIPSDLayerEffectComponent {
     CUIPSDGradient *_gradient;
 }
 
-@property(retain) CUIPSDGradient * gradient;
+@property (retain) CUIPSDGradient *gradient;
 
 - (void)dealloc;
 - (unsigned int)effectType;

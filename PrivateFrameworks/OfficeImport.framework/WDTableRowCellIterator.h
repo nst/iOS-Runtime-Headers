@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WDTableRowCellIterator : WDCombinedIterator {
-}
+@interface WDTableRowCellIterator : WDCombinedIterator
 
 - (id)childIteratorFrom:(id)arg1;
 - (id)newChildIteratorFrom:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasBackgroundViewController, NSMapTable;
-
 @interface MPUExtrasElementViewController : UIViewController {
     MPUExtrasBackgroundViewController *_backgroundViewController;
     NSMapTable *_bannerButtonMap;
     BOOL _wide;
 }
 
-@property(getter=isWide) BOOL wide;
+@property (getter=isWide, nonatomic) BOOL wide;
 
 + (id)_borderView;
 

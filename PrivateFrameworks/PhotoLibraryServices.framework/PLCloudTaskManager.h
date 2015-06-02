@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary;
-
 @interface PLCloudTaskManager : NSObject {
     NSMutableDictionary *_highPriorityResourceToTaskIdentifierMap;
     NSMutableDictionary *_lowPriorityResourceToTaskIdentifierMap;
@@ -12,9 +10,9 @@
 }
 
 - (id)_identifierForResource:(id)arg1;
-- (id)addProgressBlock:(id)arg1 completionHandler:(id)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4;
+- (id)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4;
 - (void)cancelTaskWithTaskIdentifier:(id)arg1;
-- (void)createPendingTaskWithProgressBlock:(id)arg1 completionHandler:(id)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
+- (void)createPendingTaskWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
 - (void)dealloc;
 - (id)firstTaskIdentifierForResource:(id)arg1 highPriority:(BOOL)arg2;
 - (id)getPendingTaskForTaskIdentifier:(id)arg1;

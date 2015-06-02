@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKRouteRoadInfo : NSObject {
     NSString *_name;
     struct PolylineCoordinate { 
@@ -13,9 +11,9 @@
     NSString *_shieldGroup;
 }
 
-@property(retain,readonly) NSString * name;
-@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
-@property(retain,readonly) NSString * shieldGroup;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property (nonatomic, readonly, retain) NSString *shieldGroup;
 
 - (id).cxx_construct;
 - (void)dealloc;

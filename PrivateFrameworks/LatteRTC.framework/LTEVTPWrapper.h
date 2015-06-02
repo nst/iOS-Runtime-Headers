@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@interface LTEVTPWrapper : NSObject {
-}
+@interface LTEVTPWrapper : NSObject
 
 - (void)dealloc;
 - (id)init;

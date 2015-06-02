@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UIColor, UIImage;
-
 @interface EKLegacyUIOccurrenceListItem : UIView {
-    unsigned int _cancelled : 1;
-    unsigned int _declined : 1;
-    unsigned int _designator : 2;
+    unsigned int _cancelled;
+    unsigned int _declined;
+    unsigned int _designator;
     UIImage *_dot;
     UIColor *_dotColor;
-    unsigned int _indentsWithoutDot : 1;
-    unsigned int _isAllDay : 1;
-    unsigned int _isBirthday : 1;
-    unsigned int _isEndDate : 1;
-    unsigned int _isFacebook : 1;
+    unsigned int _indentsWithoutDot;
+    unsigned int _isAllDay;
+    unsigned int _isBirthday;
+    unsigned int _isEndDate;
+    unsigned int _isFacebook;
     BOOL _isSelected;
     NSString *_location;
-    unsigned int _needsReply : 1;
-    unsigned int _showsColors : 1;
-    unsigned int _tentative : 1;
+    unsigned int _needsReply;
+    unsigned int _showsColors;
+    unsigned int _tentative;
     NSString *_timeString;
     NSString *_title;
 }

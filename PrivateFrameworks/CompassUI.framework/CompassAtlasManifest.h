@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CompassImageNode;
-
 @interface CompassAtlasManifest : NSObject {
     struct map<std::__1::basic_string<char>, CGRect, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, CGRect> > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, CGRect>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, CGRect>, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, CGRect> > > { 
@@ -25,7 +23,7 @@
     } _size;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

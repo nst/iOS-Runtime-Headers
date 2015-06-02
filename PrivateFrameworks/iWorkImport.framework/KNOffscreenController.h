@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNAnimatedSlideView, KNPlaybackSession, KNShow, KNSlide, KNSlideNode;
-
 @interface KNOffscreenController : NSObject {
     CALayer *_baseLayer;
     KNAnimatedSlideView *mAnimator;
@@ -18,18 +16,18 @@
     unsigned int mSlideIndex;
 }
 
-@property(readonly) KNAnimatedSlideView * animatedSlideView;
-@property(readonly) CALayer * baseLayer;
-@property(readonly) KNSlide * currentSlide;
-@property(readonly) KNSlideNode * currentSlideNode;
-@property(readonly) unsigned int eventCount;
-@property(readonly) unsigned int eventIndex;
-@property(readonly) struct CGSize { float x1; float x2; } outputSize;
-@property(readonly) int playMode;
-@property(readonly) KNPlaybackSession * playbackSession;
-@property(readonly) KNShow * show;
-@property(readonly) unsigned int slideCount;
-@property(readonly) unsigned int slideIndex;
+@property (nonatomic, readonly) KNAnimatedSlideView *animatedSlideView;
+@property (nonatomic, readonly) CALayer *baseLayer;
+@property (nonatomic, readonly) KNSlide *currentSlide;
+@property (nonatomic, readonly) KNSlideNode *currentSlideNode;
+@property (nonatomic, readonly) unsigned int eventCount;
+@property (nonatomic, readonly) unsigned int eventIndex;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outputSize;
+@property (nonatomic, readonly) int playMode;
+@property (nonatomic, readonly) KNPlaybackSession *playbackSession;
+@property (nonatomic, readonly) KNShow *show;
+@property (nonatomic, readonly) unsigned int slideCount;
+@property (nonatomic, readonly) unsigned int slideIndex;
 
 - (id)animatedSlideView;
 - (id)baseLayer;
@@ -41,7 +39,7 @@
 - (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(BOOL)arg3;
 - (unsigned int)eventCount;
 - (unsigned int)eventIndex;
-- (void)generateImageOfCurrentEventWithCompletonHandler:(id)arg1;
+- (void)generateImageOfCurrentEventWithCompletonHandler:(id /* block */)arg1;
 - (BOOL)gotoEventIndex:(unsigned int)arg1;
 - (BOOL)gotoFirstSlide;
 - (BOOL)gotoLastSlide;

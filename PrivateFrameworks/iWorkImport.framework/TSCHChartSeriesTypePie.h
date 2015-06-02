@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypePie : TSCHChartSeriesType {
-}
+@interface TSCHChartSeriesTypePie : TSCHChartSeriesType
 
 - (id)axisTypesForValueLabels;
 - (id)elementBuilder;

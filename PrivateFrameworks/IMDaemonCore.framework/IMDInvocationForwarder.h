@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSLock, NSMutableArray;
-
 @interface IMDInvocationForwarder : NSObject {
     NSLock *_lock;
     NSMutableArray *_targets;
 }
 
-@property(retain) NSLock * _lock;
-@property(retain) NSMutableArray * _targets;
+@property (nonatomic, retain) NSLock *_lock;
+@property (nonatomic, retain) NSMutableArray *_targets;
 
 - (id)_lock;
 - (id)_targets;

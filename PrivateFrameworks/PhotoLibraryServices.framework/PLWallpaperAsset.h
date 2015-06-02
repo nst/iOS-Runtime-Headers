@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSString, NSURL;
+@interface PLWallpaperAsset : PLManagedAsset
 
-@interface PLWallpaperAsset : PLManagedAsset {
-}
-
-@property(readonly) NSString * imageName;
-@property(retain) NSURL * imageURL;
-@property(retain) NSURL * thumbnailURL;
-@property(retain) NSDictionary * wallpaperOptions;
+@property (nonatomic, readonly) NSString *imageName;
+@property (nonatomic, retain) NSURL *imageURL;
+@property (nonatomic, retain) NSURL *thumbnailURL;
+@property (nonatomic, retain) NSDictionary *wallpaperOptions;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

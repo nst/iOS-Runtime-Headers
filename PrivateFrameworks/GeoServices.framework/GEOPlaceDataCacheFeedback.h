@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDPlaceRequest, NSString;
-
 @interface GEOPlaceDataCacheFeedback : PBCodable <NSCopying> {
     NSString *_bundleIdentifier;
     GEOPDPlaceRequest *_request;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(readonly) BOOL hasBundleIdentifier;
-@property(readonly) BOOL hasRequest;
-@property(retain) GEOPDPlaceRequest * request;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, readonly) BOOL hasBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasRequest;
+@property (nonatomic, retain) GEOPDPlaceRequest *request;
 
 - (id)bundleIdentifier;
 - (void)copyTo:(id)arg1;

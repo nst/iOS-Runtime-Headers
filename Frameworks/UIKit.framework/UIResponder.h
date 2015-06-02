@@ -2,28 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSUndoManager, NSUserActivity, UIInputViewController, UIResponder, UIResponder<UITextInput>, UITextInputMode, UIView, UIView<UITextInputPrivate>;
+@interface UIResponder : NSObject <UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation>
 
-@interface UIResponder : NSObject <UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation> {
-}
+@property (getter=_proxyTextInput, nonatomic, readonly) UIResponder<UITextInput> *__content;
+@property (nonatomic, readonly) UIResponder *_editingDelegate;
+@property (nonatomic, readonly) UIResponder *_responderForEditing;
+@property (nonatomic, readonly) UIView<UITextInputPrivate> *_textSelectingContainer;
+@property (getter=_caretRect, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRect;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (getter=isEditing, nonatomic, readonly) BOOL editing;
+@property (nonatomic, readonly, retain) UIView *inputAccessoryView;
+@property (nonatomic, readonly, retain) UIInputViewController *inputAccessoryViewController;
+@property (nonatomic, readonly, retain) UIView *inputView;
+@property (nonatomic, readonly, retain) UIInputViewController *inputViewController;
+@property (nonatomic, readonly) NSArray *keyCommands;
+@property (nonatomic, copy) NSString *restorationIdentifier;
+@property (nonatomic, readonly, retain) NSString *textInputContextIdentifier;
+@property (nonatomic, readonly, retain) UITextInputMode *textInputMode;
+@property (nonatomic, readonly) NSUndoManager *undoManager;
+@property (nonatomic, retain) NSUserActivity *userActivity;
 
-@property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
-@property(readonly) UIResponder * _editingDelegate;
-@property(readonly) UIResponder * _responderForEditing;
-@property(readonly) UIView<UITextInputPrivate> * _textSelectingContainer;
-@property(getter=_caretRect,readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRect;
-@property(getter=isEditable,readonly) BOOL editable;
-@property(getter=isEditing,readonly) BOOL editing;
-@property(retain,readonly) UIView * inputAccessoryView;
-@property(retain,readonly) UIInputViewController * inputAccessoryViewController;
-@property(retain,readonly) UIView * inputView;
-@property(retain,readonly) UIInputViewController * inputViewController;
-@property(readonly) NSArray * keyCommands;
-@property(copy) NSString * restorationIdentifier;
-@property(retain,readonly) NSString * textInputContextIdentifier;
-@property(retain,readonly) UITextInputMode * textInputMode;
-@property(readonly) NSUndoManager * undoManager;
-@property(retain) NSUserActivity * userActivity;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_cleanupAllStateRestorationTables;
 + (void)_cleanupStateRestorationObjectIdentifierTrackingTables;
@@ -35,7 +34,6 @@
 + (void)_updateStateRestorationIdentifierMap;
 + (void)clearTextInputContextIdentifier:(id)arg1;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
-+ (id)tswp_currentFirstResponder;
 
 - (id)_asTextSelection;
 - (void)_becomeFirstResponder;
@@ -167,7 +165,7 @@
 - (id)_showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (BOOL)_supportsBecomeFirstResponderWhenPossible;
 - (void)_tagAsRestorableResponder;
-- (id)_targetForAction:(SEL)arg1 withSender:(id)arg2 canPerformActionBlock:(id)arg3;
+- (id)_targetForAction:(SEL)arg1 withSender:(id)arg2 canPerformActionBlock:(id /* block */)arg3;
 - (id)_textColorForCaretSelection;
 - (id)_textSelectingContainer;
 - (void)_unmarkText;
@@ -221,14 +219,22 @@
 - (id)textInputContextIdentifier;
 - (id)textInputMode;
 - (id)textInputView;
-- (id)tk_firstViewControllerInResponderChain;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)tswp_findFirstResponder:(id)arg1;
 - (id)undoManager;
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
+
+// Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
+
+- (id)tk_firstViewControllerInResponderChain;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tswp_currentFirstResponder;
+
+- (void)tswp_findFirstResponder:(id)arg1;
 
 @end

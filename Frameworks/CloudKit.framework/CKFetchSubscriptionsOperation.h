@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchSubscriptionCompletionBlock;
-
+    id /* block */ _fetchSubscriptionCompletionBlock;
     BOOL _isFetchAllSubscriptionsOperation;
     NSMutableDictionary *_subscriptionErrors;
     NSArray *_subscriptionIDs;
@@ -21,12 +11,12 @@
     NSMutableDictionary *_subscriptionsBySubscriptionID;
 }
 
-@property(copy) id fetchSubscriptionCompletionBlock;
-@property BOOL isFetchAllSubscriptionsOperation;
-@property(retain) NSMutableDictionary * subscriptionErrors;
-@property(copy) NSArray * subscriptionIDs;
-@property(retain) NSArray * subscriptions;
-@property(retain) NSMutableDictionary * subscriptionsBySubscriptionID;
+@property (nonatomic, copy) id /* block */ fetchSubscriptionCompletionBlock;
+@property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionErrors;
+@property (nonatomic, copy) NSArray *subscriptionIDs;
+@property (nonatomic, retain) NSArray *subscriptions;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionsBySubscriptionID;
 
 + (id)fetchAllSubscriptionsOperation;
 
@@ -34,13 +24,13 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (id)fetchSubscriptionCompletionBlock;
+- (id /* block */)fetchSubscriptionCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithSubscriptionIDs:(id)arg1;
 - (BOOL)isFetchAllSubscriptionsOperation;
 - (void)performCKOperation;
-- (void)setFetchSubscriptionCompletionBlock:(id)arg1;
+- (void)setFetchSubscriptionCompletionBlock:(id /* block */)arg1;
 - (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
 - (void)setSubscriptionErrors:(id)arg1;
 - (void)setSubscriptionIDs:(id)arg1;

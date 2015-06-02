@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, SSSQLitePredicate;
-
 @interface SSSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class _entityClass;
     int _limitCount;
@@ -15,14 +13,14 @@
     BOOL _returnsDistinctEntities;
 }
 
-@property Class entityClass;
-@property int limitCount;
-@property Class memoryEntityClass;
-@property(copy) NSString * orderingClause;
-@property(copy) NSArray * orderingDirections;
-@property(copy) NSArray * orderingProperties;
-@property(copy) SSSQLitePredicate * predicate;
-@property BOOL returnsDistinctEntities;
+@property (nonatomic) Class entityClass;
+@property (nonatomic) int limitCount;
+@property (nonatomic) Class memoryEntityClass;
+@property (nonatomic, copy) NSString *orderingClause;
+@property (nonatomic, copy) NSArray *orderingDirections;
+@property (nonatomic, copy) NSArray *orderingProperties;
+@property (nonatomic, copy) SSSQLitePredicate *predicate;
+@property (nonatomic) BOOL returnsDistinctEntities;
 
 - (id)_newSelectSQLWithProperties:(const id*)arg1 count:(unsigned int)arg2 columns:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

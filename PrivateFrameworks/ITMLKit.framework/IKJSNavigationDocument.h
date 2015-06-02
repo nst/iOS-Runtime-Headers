@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppNavigationController>, NSArray;
-
 @interface IKJSNavigationDocument : IKJSObject <IKJSNavigationDocument> {
     <IKAppNavigationController> *_navigationControllerDelegate;
 }
 
-@property(retain,readonly) NSArray * documents;
-@property(readonly) <IKAppNavigationController> * navigationControllerDelegate;
+@property (nonatomic, readonly, retain) NSArray *documents;
+@property (nonatomic, readonly) <IKAppNavigationController> *navigationControllerDelegate;
 
 - (void).cxx_destruct;
 - (id)_makeAppDocumentWithDocument:(id)arg1;

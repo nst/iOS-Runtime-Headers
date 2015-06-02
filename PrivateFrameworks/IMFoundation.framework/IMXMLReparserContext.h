@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSDictionary, NSError, NSString;
-
 @interface IMXMLReparserContext : NSObject {
     NSDictionary *_attributesToMerge;
     NSArray *_attributesToPreserve;
@@ -12,11 +10,11 @@
     NSString *_outContent;
 }
 
-@property(retain,readonly) NSString * _inContent;
-@property(readonly) NSDictionary * attributesToMerge;
-@property(readonly) NSArray * attributesToPreserve;
-@property(readonly) NSError * error;
-@property(readonly) NSString * outContent;
+@property (readonly, retain) NSString *_inContent;
+@property (nonatomic, readonly) NSDictionary *attributesToMerge;
+@property (nonatomic, readonly) NSArray *attributesToPreserve;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSString *outContent;
 
 - (id)_inContent;
 - (void)_setOutContent:(id)arg1 error:(id)arg2;

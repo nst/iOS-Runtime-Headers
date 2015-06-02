@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface FigCaptureAudioFileRecordingSettings : FigCaptureRecordingSettings <NSCoding> {
     NSDictionary *_audioSettings;
     NSDictionary *_metadata;
 }
 
-@property(copy) NSDictionary * audioSettings;
-@property(copy) NSDictionary * metadata;
+@property (nonatomic, copy) NSDictionary *audioSettings;
+@property (nonatomic, copy) NSDictionary *metadata;
 
 - (id)audioSettings;
 - (void)dealloc;

@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WebScriptObjectPrivate : NSObject {
     struct JSObject { struct Structure {} *x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct CopyWriteBarrier<JSC::Butterfly> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; } *imp;
     BOOL isCreatedByDOMWrapper;

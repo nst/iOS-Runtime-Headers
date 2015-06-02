@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class <CertInfoTrustDescription>;
-
 @interface CertInfoCertificateListController : UITableViewController {
     <CertInfoTrustDescription> *_description;
 }

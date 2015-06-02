@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@interface PLSecurity : NSObject {
-}
+@interface PLSecurity : NSObject
 
 + (BOOL)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
 + (BOOL)connection:(id)arg1 hasEntitlement:(id)arg2;

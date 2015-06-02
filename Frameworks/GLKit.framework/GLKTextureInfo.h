@@ -12,13 +12,13 @@
     unsigned int width;
 }
 
-@property(readonly) int alphaState;
-@property(readonly) BOOL containsMipmaps;
-@property(readonly) unsigned int height;
-@property(readonly) unsigned int name;
-@property(readonly) unsigned int target;
-@property(readonly) int textureOrigin;
-@property(readonly) unsigned int width;
+@property (readonly) int alphaState;
+@property (readonly) BOOL containsMipmaps;
+@property (readonly) unsigned int height;
+@property (readonly) unsigned int name;
+@property (readonly) unsigned int target;
+@property (readonly) int textureOrigin;
+@property (readonly) unsigned int width;
 
 - (int)alphaState;
 - (BOOL)containsMipmaps;

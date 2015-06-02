@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDActionCellConfiguration : MPUActionCellConfiguration {
-}
+@interface MCDActionCellConfiguration : MPUActionCellConfiguration
 
 + (id)tableViewBackgroundColor;
 + (id)tableViewCellBackgroundColor;

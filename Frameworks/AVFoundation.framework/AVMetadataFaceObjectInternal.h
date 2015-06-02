@@ -38,21 +38,21 @@
     float _yawAngle;
 }
 
-@property int faceID;
-@property BOOL hasLeftEyeBounds;
-@property BOOL hasLeftEyeClosedConfidence;
-@property BOOL hasRightEyeBounds;
-@property BOOL hasRightEyeClosedConfidence;
-@property BOOL hasRollAngle;
-@property BOOL hasSmileConfidence;
-@property BOOL hasYawAngle;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } leftEyeBounds;
-@property int leftEyeClosedConfidence;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rightEyeBounds;
-@property int rightEyeClosedConfidence;
-@property float rollAngle;
-@property int smileConfidence;
-@property float yawAngle;
+@property (nonatomic) int faceID;
+@property (nonatomic) BOOL hasLeftEyeBounds;
+@property (nonatomic) BOOL hasLeftEyeClosedConfidence;
+@property (nonatomic) BOOL hasRightEyeBounds;
+@property (nonatomic) BOOL hasRightEyeClosedConfidence;
+@property (nonatomic) BOOL hasRollAngle;
+@property (nonatomic) BOOL hasSmileConfidence;
+@property (nonatomic) BOOL hasYawAngle;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } leftEyeBounds;
+@property (nonatomic) int leftEyeClosedConfidence;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rightEyeBounds;
+@property (nonatomic) int rightEyeClosedConfidence;
+@property (nonatomic) float rollAngle;
+@property (nonatomic) int smileConfidence;
+@property (nonatomic) float yawAngle;
 
 - (int)faceID;
 - (BOOL)hasLeftEyeBounds;

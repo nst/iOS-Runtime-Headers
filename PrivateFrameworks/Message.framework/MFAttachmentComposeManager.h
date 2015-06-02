@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray;
-
 @interface MFAttachmentComposeManager : MFAttachmentManager {
     NSMutableArray *_composeAttachments;
 }

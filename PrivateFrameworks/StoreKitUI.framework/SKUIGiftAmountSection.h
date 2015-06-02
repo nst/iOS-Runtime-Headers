@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIGiftAmountControl, UIControl;
-
 @interface SKUIGiftAmountSection : SKUIGiftTableViewSection {
     SKUIGiftAmountControl *_amountControl;
 }
 
-@property(readonly) UIControl * amountControl;
-@property(readonly) int selectedAmount;
-@property(readonly) NSString * selectedAmountString;
+@property (nonatomic, readonly) UIControl *amountControl;
+@property (nonatomic, readonly) int selectedAmount;
+@property (nonatomic, readonly) NSString *selectedAmountString;
 
 - (void).cxx_destruct;
 - (id)amountControl;

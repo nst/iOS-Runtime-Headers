@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIColor, UIView;
-
 @interface MPUExtrasNavigationBarButton : UIButton {
     UIView *_backdropView;
     UIColor *_dodgeColor;

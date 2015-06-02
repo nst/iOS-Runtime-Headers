@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCGenerationID, NSNumber, NSString;
-
 @interface BRCLocalStatInfo : BRCStatInfo {
     NSString *_bouncedName;
     NSNumber *_documentID;
@@ -20,17 +13,17 @@
     unsigned int _stagedGenerationID;
 }
 
-@property(readonly) NSString * bouncedName;
-@property(readonly) NSNumber * documentID;
-@property(readonly) NSNumber * fileID;
-@property(readonly) NSNumber * fileObjectID;
-@property(readonly) BRCGenerationID * generationID;
-@property(readonly) NSString * localName;
-@property(readonly) NSNumber * lostStamp;
-@property(readonly) NSNumber * processingStamp;
-@property(readonly) NSNumber * stagedFileID;
-@property(readonly) NSNumber * stagedFileIDForDB;
-@property(readonly) unsigned int stagedGenerationID;
+@property (nonatomic, readonly) NSString *bouncedName;
+@property (nonatomic, readonly) NSNumber *documentID;
+@property (nonatomic, readonly) NSNumber *fileID;
+@property (nonatomic, readonly) NSNumber *fileObjectID;
+@property (nonatomic, readonly) BRCGenerationID *generationID;
+@property (nonatomic, readonly) NSString *localName;
+@property (nonatomic, readonly) NSNumber *lostStamp;
+@property (nonatomic, readonly) NSNumber *processingStamp;
+@property (nonatomic, readonly) NSNumber *stagedFileID;
+@property (nonatomic, readonly) NSNumber *stagedFileIDForDB;
+@property (nonatomic, readonly) unsigned int stagedGenerationID;
 
 + (BOOL)supportsSecureCoding;
 

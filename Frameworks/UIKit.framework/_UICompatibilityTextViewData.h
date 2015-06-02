@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLElement, UIColor, UIDelayedAction, UIFont, UITextInteractionAssistant, UIView, UIWebDocumentView, WebFrame;
-
 @interface _UICompatibilityTextViewData : NSObject {
     BOOL m_allowsEditingTextAttributes;
     BOOL m_becomesEditableWithGestures;

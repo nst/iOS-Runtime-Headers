@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString;
-
 @interface MPAudioDeviceController : NSObject {
     NSString *_category;
     id _delegate;
@@ -17,8 +15,8 @@
     BOOL _scheduledSendAudioRoutesDidChange;
 }
 
-@property id delegate;
-@property BOOL routeDiscoveryEnabled;
+@property (nonatomic) id delegate;
+@property (nonatomic) BOOL routeDiscoveryEnabled;
 
 + (void)_internalPushRouteDiscoveryMode:(int)arg1;
 + (void)_internalSetSystemRouteDiscoveryMode:(int)arg1;
@@ -53,7 +51,7 @@
 - (void)clearCachedRoutes;
 - (void)dealloc;
 - (id)delegate;
-- (void)determinePickableRoutesWithCompletionHandler:(id)arg1;
+- (void)determinePickableRoutesWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)handsetRouteIsPicked;
 - (int)indexOfPickedRoute;
 - (int)indexOfRouteWithName:(id)arg1;

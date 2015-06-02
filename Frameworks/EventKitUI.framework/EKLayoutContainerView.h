@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKLayoutContainerViewDelegate>;
-
 @interface EKLayoutContainerView : UIView {
     <EKLayoutContainerViewDelegate> *_delegate;
 }
 
-@property <EKLayoutContainerViewDelegate> * delegate;
+@property (nonatomic) <EKLayoutContainerViewDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

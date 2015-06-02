@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDMMCSHttpInfo : PBCodable <NSCopying> {
     BOOL _cancelled;
     BOOL _connectionReused;
@@ -40,42 +38,42 @@
     BOOL _transactionComplete;
 }
 
-@property BOOL cancelled;
-@property BOOL connectionReused;
-@property long long duration;
-@property int errorCode;
-@property(retain) NSString * errorDomain;
-@property BOOL hasCancelled;
-@property BOOL hasConnectionReused;
-@property BOOL hasDuration;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasErrorDomain;
-@property BOOL hasHttpStatus;
-@property(readonly) BOOL hasInterfaceIdentifier;
-@property(readonly) BOOL hasLocatorHostname;
-@property(readonly) BOOL hasLocatorPeerAddress;
-@property BOOL hasLocatorPort;
-@property(readonly) BOOL hasLocatorScheme;
-@property BOOL hasRequestSize;
-@property BOOL hasResponseReceivedDuration;
-@property BOOL hasResponseSize;
-@property BOOL hasStartTime;
-@property BOOL hasTimedOut;
-@property BOOL hasTransactionComplete;
-@property(retain) NSMutableArray * httpErrors;
-@property int httpStatus;
-@property(retain) NSString * interfaceIdentifier;
-@property(retain) NSString * locatorHostname;
-@property(retain) NSString * locatorPeerAddress;
-@property unsigned int locatorPort;
-@property(retain) NSString * locatorScheme;
-@property int requestSize;
-@property long long responseReceivedDuration;
-@property int responseSize;
-@property long long startTime;
-@property(retain) NSMutableArray * tcpInfos;
-@property BOOL timedOut;
-@property BOOL transactionComplete;
+@property (nonatomic) BOOL cancelled;
+@property (nonatomic) BOOL connectionReused;
+@property (nonatomic) long long duration;
+@property (nonatomic) int errorCode;
+@property (nonatomic, retain) NSString *errorDomain;
+@property (nonatomic) BOOL hasCancelled;
+@property (nonatomic) BOOL hasConnectionReused;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasErrorDomain;
+@property (nonatomic) BOOL hasHttpStatus;
+@property (nonatomic, readonly) BOOL hasInterfaceIdentifier;
+@property (nonatomic, readonly) BOOL hasLocatorHostname;
+@property (nonatomic, readonly) BOOL hasLocatorPeerAddress;
+@property (nonatomic) BOOL hasLocatorPort;
+@property (nonatomic, readonly) BOOL hasLocatorScheme;
+@property (nonatomic) BOOL hasRequestSize;
+@property (nonatomic) BOOL hasResponseReceivedDuration;
+@property (nonatomic) BOOL hasResponseSize;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic) BOOL hasTimedOut;
+@property (nonatomic) BOOL hasTransactionComplete;
+@property (nonatomic, retain) NSMutableArray *httpErrors;
+@property (nonatomic) int httpStatus;
+@property (nonatomic, retain) NSString *interfaceIdentifier;
+@property (nonatomic, retain) NSString *locatorHostname;
+@property (nonatomic, retain) NSString *locatorPeerAddress;
+@property (nonatomic) unsigned int locatorPort;
+@property (nonatomic, retain) NSString *locatorScheme;
+@property (nonatomic) int requestSize;
+@property (nonatomic) long long responseReceivedDuration;
+@property (nonatomic) int responseSize;
+@property (nonatomic) long long startTime;
+@property (nonatomic, retain) NSMutableArray *tcpInfos;
+@property (nonatomic) BOOL timedOut;
+@property (nonatomic) BOOL transactionComplete;
 
 - (void)addHttpError:(id)arg1;
 - (void)addTcpInfo:(id)arg1;

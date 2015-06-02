@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSLock, NSMapTable;
-
 @interface VMUProcList : NSObject {
     NSMapTable *allProcs;
     BOOL appsOnly;

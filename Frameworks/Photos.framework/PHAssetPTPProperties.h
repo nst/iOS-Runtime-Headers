@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString, PHAsset;
-
 @interface PHAssetPTPProperties : NSObject {
     PHAsset *_asset;
     NSString *_exifTimestampString;
     NSString *_importSessionID;
 }
 
-@property(readonly) PHAsset * asset;
-@property(readonly) NSString * exifTimestampString;
-@property(readonly) NSString * importSessionID;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSString *exifTimestampString;
+@property (nonatomic, readonly) NSString *importSessionID;
 
 - (void).cxx_destruct;
 - (id)asset;

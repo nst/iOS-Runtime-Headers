@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDImageAdjustments;
-
 @interface TSDImageAdjuster : NSObject {
     TSDImageAdjustments *mImageAdjustments;
 }

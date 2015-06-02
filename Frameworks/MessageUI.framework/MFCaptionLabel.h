@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray, NSString, UIButton, UIFont, UILabel;
-
 @interface MFCaptionLabel : UIView {
     void *_addressBook;
     NSArray *_bccRecipients;
@@ -14,15 +12,15 @@
     NSArray *_toRecipients;
 }
 
-@property void* addressBook;
-@property(readonly) struct CGPoint { float x1; float x2; } baselinePoint;
-@property(retain) NSArray * bccRecipients;
-@property(retain) NSArray * ccRecipients;
-@property(retain) UIFont * font;
-@property(readonly) UIButton * moreButton;
-@property(readonly) UILabel * recipientLabel;
-@property(retain) NSString * text;
-@property(retain) NSArray * toRecipients;
+@property (nonatomic) void*addressBook;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;
+@property (nonatomic, retain) NSArray *bccRecipients;
+@property (nonatomic, retain) NSArray *ccRecipients;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, readonly) UIButton *moreButton;
+@property (nonatomic, readonly) UILabel *recipientLabel;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) NSArray *toRecipients;
 
 + (id)_propertiesThatNeedLabelUpdates;
 + (id)defaultFont;

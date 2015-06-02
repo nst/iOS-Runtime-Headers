@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSMutableCharacterSet;
-
 @interface SBUINumericPasscodeEntryFieldBase : SBUIPasscodeEntryField {
     BOOL _allowsNewlineAcceptance;
     BOOL _autoAcceptWhenMaxNumbersMet;
@@ -11,9 +9,9 @@
     NSMutableCharacterSet *_numericTrimmingSet;
 }
 
-@property BOOL allowsNewlineAcceptance;
-@property BOOL autoAcceptWhenMaxNumbersMet;
-@property unsigned int maxNumbersAllowed;
+@property (nonatomic) BOOL allowsNewlineAcceptance;
+@property (nonatomic) BOOL autoAcceptWhenMaxNumbersMet;
+@property (nonatomic) unsigned int maxNumbersAllowed;
 
 - (void)_appendString:(id)arg1;
 - (void)_deleteLastCharacter;

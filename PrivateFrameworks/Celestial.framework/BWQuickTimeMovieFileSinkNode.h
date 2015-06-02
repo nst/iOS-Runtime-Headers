@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCaptureRecordingSettings, NSArray, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface BWQuickTimeMovieFileSinkNode : BWFileSinkNode {
     struct { 
         long long value; 
@@ -90,9 +88,9 @@
     NSArray *_trackReferenceListForMetadataInputs;
 }
 
-@property float maxVideoFrameRate;
-@property(copy) NSDictionary * movieLevelMetadata;
-@property(copy) NSArray * trackReferenceListForMetadataInputs;
+@property (nonatomic) float maxVideoFrameRate;
+@property (nonatomic, copy) NSDictionary *movieLevelMetadata;
+@property (nonatomic, copy) NSArray *trackReferenceListForMetadataInputs;
 
 + (void)initialize;
 

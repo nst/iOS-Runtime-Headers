@@ -2,25 +2,23 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAssetResourceLoaderDelegate>, AVAssetResourceLoaderInternal, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVAssetResourceLoader : NSObject <NSURLAuthenticationChallengeSender> {
     AVAssetResourceLoaderInternal *_resourceLoader;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <AVAssetResourceLoaderDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <AVAssetResourceLoaderDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-- (void)_cancelRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id)arg3;
-- (void)_issueLoadingRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id)arg3;
+- (void)_cancelRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id /* block */)arg3;
+- (void)_issueLoadingRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id /* block */)arg3;
 - (void)_noteFinishingOfRequest:(id)arg1;
-- (void)_performDelegateCallbackSynchronouslyIfCurrentDelegateQueueIsQueue:(id)arg1 delegateCallbackBlock:(id)arg2;
-- (void)_performDelegateSelector:(SEL)arg1 withObject:(id)arg2 representingNewRequest:(BOOL)arg3 key:(id)arg4 fallbackHandler:(id)arg5;
-- (void)_poseAuthenticationChallengeWithKey:(id)arg1 data:(id)arg2 requestDictionary:(id)arg3 fallbackHandler:(id)arg4;
+- (void)_performDelegateCallbackSynchronouslyIfCurrentDelegateQueueIsQueue:(id)arg1 delegateCallbackBlock:(id /* block */)arg2;
+- (void)_performDelegateSelector:(SEL)arg1 withObject:(id)arg2 representingNewRequest:(BOOL)arg3 key:(id)arg4 fallbackHandler:(id /* block */)arg5;
+- (void)_poseAuthenticationChallengeWithKey:(id)arg1 data:(id)arg2 requestDictionary:(id)arg3 fallbackHandler:(id /* block */)arg4;
 - (void)_rejectChallenge:(id)arg1 withError:(id)arg2;
 - (id)_weakReference;
 - (id)asset;

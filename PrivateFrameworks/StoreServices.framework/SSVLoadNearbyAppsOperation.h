@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLLocation, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface SSVLoadNearbyAppsOperation : NSOperation {
     NSString *_baseURLString;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CLLocation *_location;
     NSMutableDictionary *_parameters;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _responseBlock;
-
+    id /* block */ _responseBlock;
     NSString *_storeFrontSuffix;
     NSString *_userAgent;
 }
 
-@property(readonly) CLLocation * location;
-@property(copy) NSString * pointOfInterestIdentifier;
-@property(copy) NSString * pointOfInterestProviderIdentifier;
-@property(copy) NSString * pointOfInterestProviderURL;
-@property(copy) id responseBlock;
-@property(copy) NSString * storeFrontSuffix;
-@property(copy) NSString * userAgent;
+@property (readonly) CLLocation *location;
+@property (copy) NSString *pointOfInterestIdentifier;
+@property (copy) NSString *pointOfInterestProviderIdentifier;
+@property (copy) NSString *pointOfInterestProviderURL;
+@property (copy) id /* block */ responseBlock;
+@property (copy) NSString *storeFrontSuffix;
+@property (copy) NSString *userAgent;
 
 - (void).cxx_destruct;
 - (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
@@ -39,11 +29,11 @@
 - (id)pointOfInterestIdentifier;
 - (id)pointOfInterestProviderIdentifier;
 - (id)pointOfInterestProviderURL;
-- (id)responseBlock;
+- (id /* block */)responseBlock;
 - (void)setPointOfInterestIdentifier:(id)arg1;
 - (void)setPointOfInterestProviderIdentifier:(id)arg1;
 - (void)setPointOfInterestProviderURL:(id)arg1;
-- (void)setResponseBlock:(id)arg1;
+- (void)setResponseBlock:(id /* block */)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)storeFrontSuffix;

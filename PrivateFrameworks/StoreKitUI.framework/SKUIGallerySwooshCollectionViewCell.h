@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UILabel, UIView;
-
 @interface SKUIGallerySwooshCollectionViewCell : UICollectionViewCell {
     UIView *_contentChildView;
     UIColor *_titleColor;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIView * contentChildView;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIView *contentChildView;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)contentChildView;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString;
-
 @interface ChartLabelInfo : NSObject {
     BOOL _immutable;
     float _position;
@@ -14,10 +12,10 @@
     NSString *_string;
 }
 
-@property(readonly) BOOL immutable;
-@property float position;
-@property struct CGSize { float x1; float x2; } size;
-@property(retain) NSString * string;
+@property (nonatomic, readonly) BOOL immutable;
+@property (nonatomic) float position;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) NSString *string;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

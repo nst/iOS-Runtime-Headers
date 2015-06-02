@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKRecordZoneID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_ownerName;
     NSString *_zoneName;
 }
 
-@property(retain) NSString * ownerName;
-@property(retain) NSString * zoneName;
+@property (nonatomic, retain) NSString *ownerName;
+@property (nonatomic, retain) NSString *zoneName;
 
 + (BOOL)supportsSecureCoding;
 

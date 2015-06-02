@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSURL, TSDMediaStyle, TSPData;
-
 @interface TSDMovieInfo : TSDMediaInfo <TSDMixing> {
     BOOL mAudioOnly;
     TSPData *mAudioOnlyImageData;
@@ -30,18 +23,18 @@
     float mVolume;
 }
 
-@property(getter=isAudioOnly) BOOL audioOnly;
-@property(retain) TSPData * audioOnlyImageData;
-@property double endTime;
-@property(retain) TSPData * importedAuxiliaryMovieData;
-@property unsigned int loopOption;
-@property(retain) TSPData * movieData;
-@property(retain) NSURL * movieRemoteURL;
-@property(retain) TSPData * posterImageData;
-@property double posterTime;
-@property double startTime;
-@property(getter=isStreaming) BOOL streaming;
-@property float volume;
+@property (getter=isAudioOnly, nonatomic) BOOL audioOnly;
+@property (nonatomic, retain) TSPData *audioOnlyImageData;
+@property (nonatomic) double endTime;
+@property (nonatomic, retain) TSPData *importedAuxiliaryMovieData;
+@property (nonatomic) unsigned int loopOption;
+@property (nonatomic, retain) TSPData *movieData;
+@property (nonatomic, retain) NSURL *movieRemoteURL;
+@property (nonatomic, retain) TSPData *posterImageData;
+@property (nonatomic) double posterTime;
+@property (nonatomic) double startTime;
+@property (getter=isStreaming, nonatomic) BOOL streaming;
+@property (nonatomic) float volume;
 
 + (double)defaultPosterTimeForDuration:(double)arg1;
 + (id)presetKinds;

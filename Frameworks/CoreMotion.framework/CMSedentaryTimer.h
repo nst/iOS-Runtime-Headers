@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CMSedentaryTimer_Internal;
-
 @interface CMSedentaryTimer : NSObject {
     CMSedentaryTimer_Internal *_internal;
 }
 
-@property(readonly) CMSedentaryTimer_Internal * _internal;
+@property (nonatomic, readonly) CMSedentaryTimer_Internal *_internal;
 
 + (BOOL)isAvailable;
 
@@ -16,9 +14,9 @@
 - (void)dealloc;
 - (id)init;
 - (BOOL)isActive;
-- (void)queryAlarmDataSince:(id)arg1 withHandler:(id)arg2;
-- (void)registerForAlarmsWithHandler:(id)arg1;
-- (void)startTimerWithStartTime:(id)arg1 periodInterval:(double)arg2 reminderInterval:(double)arg3 autoReschedule:(BOOL)arg4 handler:(id)arg5;
-- (void)stopTimerWithHandler:(id)arg1;
+- (void)queryAlarmDataSince:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)registerForAlarmsWithHandler:(id /* block */)arg1;
+- (void)startTimerWithStartTime:(id)arg1 periodInterval:(double)arg2 reminderInterval:(double)arg3 autoReschedule:(BOOL)arg4 handler:(id /* block */)arg5;
+- (void)stopTimerWithHandler:(id /* block */)arg1;
 
 @end

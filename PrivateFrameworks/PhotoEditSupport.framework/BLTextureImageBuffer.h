@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIImage, EAGLContext;
-
 @interface BLTextureImageBuffer : BLImageBuffer {
     unsigned int _accumlatorFramebuffer;
     unsigned int _accumlatorTexture;
@@ -14,7 +12,7 @@
 - (id)ciImage;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2;
-- (void)readPixelsByAddressInBlock:(id)arg1;
+- (void)readPixelsByAddressInBlock:(id /* block */)arg1;
 - (void)renderCIImage:(id)arg1;
 
 @end

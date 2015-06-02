@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSFamilyCircle;
-
 @interface SSFamilyCircleResponse : NSObject {
     SSFamilyCircle *_familyCircle;
 }
 
-@property(retain) SSFamilyCircle * familyCircle;
+@property (nonatomic, retain) SSFamilyCircle *familyCircle;
 
 - (id)familyCircle;
 - (void)setFamilyCircle:(id)arg1;

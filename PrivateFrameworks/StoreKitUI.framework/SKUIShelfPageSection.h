@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SKUIShelfLayoutData, SKUIShelfPageComponent, SKUIShelfViewElement, SKUIViewElementLayoutContext, SKUIViewElementSlideshowController, UICollectionView;
-
 @interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     int _lastNeedsMoreCount;
@@ -18,11 +16,11 @@
     NSArray *_viewElements;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIShelfPageComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIShelfPageComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)_cellClassForLockup:(id)arg1;
@@ -53,7 +51,7 @@
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (void)deselectItemsAnimated:(BOOL)arg1;
-- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
+- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (void)invalidateCachedLayoutInformation;
 - (int)numberOfCells;

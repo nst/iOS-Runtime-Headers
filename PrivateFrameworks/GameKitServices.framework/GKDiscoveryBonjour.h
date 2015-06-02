@@ -2,55 +2,37 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKDiscoveryBonjour : NSObject {
     struct _DNSServiceRef_t { } *_advertiseRef;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _browseCallback;
-
+    id /* block */ _browseCallback;
     struct _DNSServiceRef_t { } *_browseRef;
     BOOL _checkedInWithLaunchd;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _connectionCallback;
-
+    id /* block */ _connectionCallback;
     NSMutableArray *_launchdSources;
     int _listeningPort;
     NSMutableDictionary *_resolveContainers;
     NSObject<OS_dispatch_queue> *_resolveContainersSyncQueue;
     NSString *_serviceDomain;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _serviceNameCollisionCallback;
-
+    id /* block */ _serviceNameCollisionCallback;
     NSString *_serviceType;
 }
 
-@property struct _DNSServiceRef_t { }* advertiseRef;
-@property(copy) id browseCallback;
-@property struct _DNSServiceRef_t { }* browseRef;
-@property(copy) id connectionCallback;
-@property(retain) NSMutableArray * launchdSources;
-@property(retain) NSMutableDictionary * resolveContainers;
-@property NSObject<OS_dispatch_queue> * resolveContainersSyncQueue;
-@property(copy) NSString * serviceDomain;
-@property(copy) id serviceNameCollisionCallback;
-@property(copy) NSString * serviceType;
+@property (nonatomic) struct _DNSServiceRef_t { }*advertiseRef;
+@property (nonatomic, copy) id /* block */ browseCallback;
+@property (nonatomic) struct _DNSServiceRef_t { }*browseRef;
+@property (nonatomic, copy) id /* block */ connectionCallback;
+@property (nonatomic, retain) NSMutableArray *launchdSources;
+@property (nonatomic, retain) NSMutableDictionary *resolveContainers;
+@property (nonatomic) NSObject<OS_dispatch_queue> *resolveContainersSyncQueue;
+@property (nonatomic, copy) NSString *serviceDomain;
+@property (nonatomic, copy) id /* block */ serviceNameCollisionCallback;
+@property (nonatomic, copy) NSString *serviceType;
 
 - (struct _DNSServiceRef_t { }*)advertiseRef;
-- (id)browseCallback;
+- (id /* block */)browseCallback;
 - (struct _DNSServiceRef_t { }*)browseRef;
 - (void)closeListeningSockets;
-- (id)connectionCallback;
+- (id /* block */)connectionCallback;
 - (void)createDispatchEventWithSocket:(int)arg1;
 - (void)dealloc;
 - (id)init;
@@ -60,25 +42,25 @@
 - (id)launchdSources;
 - (id)resolveContainers;
 - (id)resolveContainersSyncQueue;
-- (int)resolveName:(id)arg1 onIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
+- (int)resolveName:(id)arg1 onIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)sendBonjourRegistrationEvent:(id)arg1 discoveryInfo:(id)arg2;
 - (id)serviceDomain;
-- (id)serviceNameCollisionCallback;
+- (id /* block */)serviceNameCollisionCallback;
 - (id)serviceType;
 - (void)setAdvertiseRef:(struct _DNSServiceRef_t { }*)arg1;
-- (void)setBrowseCallback:(id)arg1;
+- (void)setBrowseCallback:(id /* block */)arg1;
 - (void)setBrowseRef:(struct _DNSServiceRef_t { }*)arg1;
-- (void)setConnectionCallback:(id)arg1;
+- (void)setConnectionCallback:(id /* block */)arg1;
 - (void)setLaunchdSources:(id)arg1;
 - (void)setResolveContainers:(id)arg1;
 - (void)setResolveContainersSyncQueue:(id)arg1;
 - (void)setServiceDomain:(id)arg1;
-- (void)setServiceNameCollisionCallback:(id)arg1;
+- (void)setServiceNameCollisionCallback:(id /* block */)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setupBothListeningSockets;
 - (void)setupListeningSockets;
 - (void)startAdvertisingServiceName:(id)arg1 discoveryInfo:(id)arg2;
-- (int)startBrowsing:(id)arg1;
+- (int)startBrowsing:(id /* block */)arg1;
 - (void)stopAdvertising;
 - (void)stopBrowsing;
 - (void)stopResolve:(id)arg1;

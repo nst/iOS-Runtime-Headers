@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSXPCConnection;
-
 @interface CLIndoorXPCProvider : NSObject {
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_frameworkQueue;
@@ -23,8 +21,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_defaultErrHandler;
-- (id)_defaultErrHandler:(id)arg1;
+- (id /* block */)_defaultErrHandler;
+- (id /* block */)_defaultErrHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)impl;
 - (id)init;

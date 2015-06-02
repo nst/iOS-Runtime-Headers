@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, UIImageView, UILabel, UILongPressGestureRecognizer, UIProgressView, UIView;
-
 @interface _UIDocumentPickerCell : UICollectionViewCell {
     UILongPressGestureRecognizer *_pickableDiagnosticGestureRecognizer;
     UIProgressView *_progressView;
@@ -16,15 +14,15 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UILongPressGestureRecognizer * pickableDiagnosticGestureRecognizer;
-@property(retain) UIProgressView * progressView;
-@property(retain) UILabel * subtitle2Label;
-@property(retain) UILabel * subtitleLabel;
-@property(retain) NSLayoutConstraint * thumbnailCenterHeightConstraint;
-@property(retain) UIView * thumbnailCenterView;
-@property(retain) NSLayoutConstraint * thumbnailCenterWidthConstraint;
-@property(retain) UIImageView * thumbnailView;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UILongPressGestureRecognizer *pickableDiagnosticGestureRecognizer;
+@property (nonatomic, retain) UIProgressView *progressView;
+@property (nonatomic, retain) UILabel *subtitle2Label;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) NSLayoutConstraint *thumbnailCenterHeightConstraint;
+@property (nonatomic, retain) UIView *thumbnailCenterView;
+@property (nonatomic, retain) NSLayoutConstraint *thumbnailCenterWidthConstraint;
+@property (nonatomic, retain) UIImageView *thumbnailView;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (struct CGSize { float x1; float x2; })defaultSizeForTraits:(id)arg1;
 + (id)folderIconForTraits:(id)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKDirectoryPerson : EKDirectoryRecord {
-}
+@interface EKDirectoryPerson : EKDirectoryRecord
 
 @end

@@ -19,14 +19,14 @@
     } _map;
 }
 
-@property unsigned int count;
+@property (nonatomic) unsigned int count;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addMediaType:(unsigned long)arg1 count:(unsigned int)arg2;
 - (unsigned int)count;
 - (id)description;
-- (void)enumerateMediaTypesWithBlock:(id)arg1;
+- (void)enumerateMediaTypesWithBlock:(id /* block */)arg1;
 - (void)setCount:(unsigned int)arg1;
 
 @end

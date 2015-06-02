@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSDictionary;
-
 @interface CIPDF417BarcodeGenerator : CICodeGenerator {
     NSDictionary *inputOptions;
 }
 
-@property(copy) NSDictionary * inputOptions;
+@property (nonatomic, copy) NSDictionary *inputOptions;
 
 + (id)customAttributes;
 

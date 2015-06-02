@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface _CDUserActivity : NSObject <NSSecureCoding> {
     NSString *_bundleId;
     NSDate *_date;
@@ -12,11 +10,11 @@
     NSString *_type;
 }
 
-@property(copy) NSString * bundleId;
-@property(copy) NSDate * date;
-@property(copy) NSDictionary * payload;
-@property(copy) NSString * title;
-@property(copy) NSString * type;
+@property (copy) NSString *bundleId;
+@property (copy) NSDate *date;
+@property (copy) NSDictionary *payload;
+@property (copy) NSString *title;
+@property (copy) NSString *type;
 
 + (id)createFromUserActivity:(id)arg1;
 + (BOOL)supportsSecureCoding;

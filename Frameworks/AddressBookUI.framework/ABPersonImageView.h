@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonImageDataDelegate>, <ABStyleProvider>, ABClippingImageView, ABUIPerson, UIImage, UIImageView;
-
 @interface ABPersonImageView : ABPasteboardControl {
     BOOL _allowsEditing;
     ABUIPerson *_displayedPerson;
@@ -21,15 +19,15 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property BOOL allowsEditing;
-@property(readonly) UIImage * attributionImage;
-@property(readonly) UIImage * backgroundImage;
-@property(retain) ABUIPerson * displayedPerson;
-@property <ABPersonImageDataDelegate> * imageDataDelegate;
-@property(readonly) UIImage * maskImage;
-@property BOOL multiplePhotoBackdropEnabled;
-@property(readonly) UIImage * overlayImage;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic, readonly) UIImage *attributionImage;
+@property (nonatomic, readonly) UIImage *backgroundImage;
+@property (nonatomic, retain) ABUIPerson *displayedPerson;
+@property (nonatomic) <ABPersonImageDataDelegate> *imageDataDelegate;
+@property (nonatomic, readonly) UIImage *maskImage;
+@property (nonatomic) BOOL multiplePhotoBackdropEnabled;
+@property (nonatomic, readonly) UIImage *overlayImage;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 + (id)newImageWithName:(id)arg1;
 

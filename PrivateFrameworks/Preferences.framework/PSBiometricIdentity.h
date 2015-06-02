@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSBiometricIdentity : NSObject {
-}
+@interface PSBiometricIdentity : NSObject
 
 + (id)identities;
 + (int)maximumIdentityCount;

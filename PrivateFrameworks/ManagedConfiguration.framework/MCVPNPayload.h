@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCVPNPayload : MCVPNPayloadBase {
-}
+@interface MCVPNPayload : MCVPNPayloadBase
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

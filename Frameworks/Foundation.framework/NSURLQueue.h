@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURLQueueNode;
-
 @interface NSURLQueue : NSObject {
     BOOL _pad1;
     BOOL _pad2;

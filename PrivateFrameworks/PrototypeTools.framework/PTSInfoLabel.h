@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, _UISettings;
-
 @interface PTSInfoLabel : UILabel <PTSHUDControl, _UISettingsKeyPathObserver> {
     int _alignment;
     _UISettings *_settings;
     NSString *_valueKeyPath;
 }
 
-@property int alignment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property _UISettings * settings;
-@property(readonly) Class superclass;
-@property(copy) NSString * valueKeyPath;
+@property (nonatomic) int alignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) _UISettings *settings;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *valueKeyPath;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)infoLabel;

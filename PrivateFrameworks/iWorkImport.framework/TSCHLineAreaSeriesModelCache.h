@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxis, TSCHChartSeries, TSCHChartValueAxis, TSDShadow, TSDStroke, TSWPParagraphStyle;
-
 @interface TSCHLineAreaSeriesModelCache : NSObject {
     float mDataPointSize;
     TSCHChartAxis *mGroupAxis;
@@ -25,24 +23,24 @@
     TSCHChartValueAxis *mValueAxis;
 }
 
-@property(readonly) float dataPointSize;
-@property(readonly) TSCHChartAxis * groupAxis;
-@property(readonly) unsigned int labelPosition;
-@property(readonly) int lineType;
-@property(readonly) float opacity;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) TSCHChartSeries * series;
-@property(readonly) id seriesFill;
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) TSDShadow * seriesShadow;
-@property(readonly) TSDStroke * seriesStroke;
-@property(readonly) BOOL showLabelsInFront;
-@property(readonly) BOOL showValueLabels;
-@property(readonly) id symbolFill;
-@property(readonly) TSDStroke * symbolStroke;
-@property(readonly) int symbolType;
-@property(readonly) struct CGPath { }* unitSymbolPath;
-@property(readonly) TSCHChartValueAxis * valueAxis;
+@property (readonly) float dataPointSize;
+@property (readonly) TSCHChartAxis *groupAxis;
+@property (readonly) unsigned int labelPosition;
+@property (readonly) int lineType;
+@property (readonly) float opacity;
+@property (readonly) TSWPParagraphStyle *paragraphStyle;
+@property (readonly) TSCHChartSeries *series;
+@property (readonly) id seriesFill;
+@property (readonly) unsigned int seriesIndex;
+@property (readonly) TSDShadow *seriesShadow;
+@property (readonly) TSDStroke *seriesStroke;
+@property (readonly) BOOL showLabelsInFront;
+@property (readonly) BOOL showValueLabels;
+@property (readonly) id symbolFill;
+@property (readonly) TSDStroke *symbolStroke;
+@property (readonly) int symbolType;
+@property (readonly) struct CGPath { }*unitSymbolPath;
+@property (readonly) TSCHChartValueAxis *valueAxis;
 
 - (float)dataPointSize;
 - (void)dealloc;

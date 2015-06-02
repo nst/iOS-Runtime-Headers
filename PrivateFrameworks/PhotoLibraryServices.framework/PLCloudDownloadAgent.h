@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>, PLCloudPhotoLibraryManager, PLPhotoLibrary;
-
 @interface PLCloudDownloadAgent : PLCloudScenarioProducer {
     NSObject<OS_dispatch_queue> *_agentQueue;
     BOOL _initialDownloadDone;
@@ -13,22 +11,22 @@
     struct { 
         int retries; 
         int state; 
-    } _walkStatus[4];
+    } _walkStatus;
 }
 
-@property(retain) PLPhotoLibrary * localLibrary;
-@property(retain) PLCloudPhotoLibraryManager * remoteLibrary;
+@property (retain) PLPhotoLibrary *localLibrary;
+@property (retain) PLCloudPhotoLibraryManager *remoteLibrary;
 
-- (void)_beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id)arg4;
+- (void)_beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id /* block */)arg4;
 - (void)_checkWalkStatusIfNeeded;
 - (void)_waitForDownloadDoneIfNeeded;
 - (void)activate;
 - (void)appInForeground:(id)arg1;
 - (unsigned int)batchSize;
-- (void)beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id)arg3;
-- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned int)arg2 startingAtOffset:(unsigned int)arg3 completionHandler:(id)arg4;
+- (void)beginPopulatingResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id /* block */)arg3;
+- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned int)arg2 startingAtOffset:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
-- (void)downloadResources:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)downloadResources:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)localLibrary;
 - (void)metadataChanged:(id)arg1;

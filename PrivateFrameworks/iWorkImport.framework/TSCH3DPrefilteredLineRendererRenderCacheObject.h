@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DStrokePatternTexture;
-
 @interface TSCH3DPrefilteredLineRendererRenderCacheObject : TSCH3DSceneRenderCacheObject {
     BOOL mDidRenderOnce;
     TSCH3DStrokePatternTexture *mStrokeTexture;
 }
 
-@property BOOL didRenderOnce;
+@property (nonatomic) BOOL didRenderOnce;
 
 - (void)allocateDynamicResourcesIntoArray:(id)arg1;
 - (void)dealloc;

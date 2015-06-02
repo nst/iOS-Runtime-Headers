@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDHome, NSData, NSString, NSUUID;
-
 @interface HMDUser : NSObject <NSSecureCoding> {
     HMDHome *_home;
     NSString *_pairingUsername;
@@ -14,13 +12,13 @@
     NSUUID *_uuid;
 }
 
-@property(readonly) HMDHome * home;
-@property(copy,readonly) NSString * pairingUsername;
-@property(readonly) unsigned int privilege;
-@property(copy,readonly) NSData * publicKey;
-@property(getter=isRemoteGateway,readonly) BOOL remoteGateway;
-@property(copy,readonly) NSString * userID;
-@property(copy,readonly) NSUUID * uuid;
+@property (nonatomic, readonly) HMDHome *home;
+@property (nonatomic, readonly, copy) NSString *pairingUsername;
+@property (nonatomic, readonly) unsigned int privilege;
+@property (nonatomic, readonly, copy) NSData *publicKey;
+@property (getter=isRemoteGateway, nonatomic, readonly) BOOL remoteGateway;
+@property (nonatomic, readonly, copy) NSString *userID;
+@property (nonatomic, readonly, copy) NSUUID *uuid;
 
 + (BOOL)supportsSecureCoding;
 

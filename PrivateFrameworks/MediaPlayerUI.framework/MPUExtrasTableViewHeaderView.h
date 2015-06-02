@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUExtrasTableViewHeaderView : UITableViewHeaderFooterView {
-}
+@interface MPUExtrasTableViewHeaderView : UITableViewHeaderFooterView
 
 - (void)_dynamicTypeDidChange;
 - (void)configureForHeaderElement:(id)arg1;

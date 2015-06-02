@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSString;
+@interface CPLEngineClientCache : CPLEngineStorage <CPLAbstractObject>
 
-@interface CPLEngineClientCache : CPLEngineStorage <CPLAbstractObject> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 - (id)_relatedIdentifierForRecordWithIdentifier:(id)arg1;
 - (BOOL)addRecord:(id)arg1 error:(id*)arg2;

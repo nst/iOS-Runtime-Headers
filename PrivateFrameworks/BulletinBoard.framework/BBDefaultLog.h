@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableSet;
-
 @interface BBDefaultLog : BSFileLogger {
     NSMutableSet *_knownCategories;
 }

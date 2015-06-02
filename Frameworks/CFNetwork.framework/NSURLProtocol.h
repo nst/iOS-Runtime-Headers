@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NSURLProtocolClient>, NSCachedURLResponse, NSURLProtocolInternal, NSURLRequest;
-
 @interface NSURLProtocol : NSObject {
     NSURLProtocolInternal *_internal;
 }
 
-@property(copy,readonly) NSCachedURLResponse * cachedResponse;
-@property(retain,readonly) <NSURLProtocolClient> * client;
-@property(copy,readonly) NSURLRequest * request;
+@property (readonly, copy) NSCachedURLResponse *cachedResponse;
+@property (readonly, retain) <NSURLProtocolClient> *client;
+@property (readonly, copy) NSURLRequest *request;
 
 + (id)_makeRequestCanonicalByMakingRequestURLCanonical:(id)arg1;
 + (Class)_protocolClassForRequest:(id)arg1;

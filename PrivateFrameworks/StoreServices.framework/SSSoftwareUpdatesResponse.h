@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSError;
-
 @interface SSSoftwareUpdatesResponse : NSObject {
     NSError *_error;
     BOOL _failed;
     NSArray *_updateItems;
 }
 
-@property(readonly) NSError * error;
-@property(getter=isFailed,readonly) BOOL failed;
-@property(readonly) NSArray * updateItems;
+@property (readonly) NSError *error;
+@property (getter=isFailed, readonly) BOOL failed;
+@property (readonly) NSArray *updateItems;
 
 - (id)copyUpdateItemDictionaries;
 - (id)copyXPCEncoding;

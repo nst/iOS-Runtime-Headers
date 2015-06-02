@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
-
 @interface CoreDAVSyncReportItem : CoreDAVMultiStatusItem {
     NSString *_syncToken;
 }
 
-@property(readonly) NSString * syncToken;
+@property (nonatomic, readonly) NSString *syncToken;
 
 + (id)copyParseRules;
 

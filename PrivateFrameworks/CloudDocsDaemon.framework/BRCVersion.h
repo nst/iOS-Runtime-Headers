@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRFieldCKInfo, NSData, NSNumber, NSSet, NSString;
-
 @interface BRCVersion : NSObject <NSCopying, NSSecureCoding> {
     BRFieldCKInfo *_ckInfo;
     NSSet *_conflictLoserEtags;
@@ -25,21 +18,21 @@
     NSData *_xattrSignature;
 }
 
-@property(retain) BRFieldCKInfo * ckInfo;
-@property(retain) NSSet * conflictLoserEtags;
-@property(retain) NSData * contentSignature;
-@property(readonly) BOOL hasThumbnail;
-@property(readonly) BOOL isPackage;
-@property(retain) NSString * lastEditorDeviceName;
-@property(retain) NSNumber * lastEditorDeviceOrOwnerKey;
-@property(retain) NSData * lazyXattr;
-@property long long mtime;
-@property(retain) NSString * originalPOSIXName;
-@property(retain) NSData * quarantineInfo;
-@property long long size;
-@property(retain) NSData * thumbnailSignature;
-@property long long thumbnailSize;
-@property(retain) NSData * xattrSignature;
+@property (nonatomic, retain) BRFieldCKInfo *ckInfo;
+@property (nonatomic, retain) NSSet *conflictLoserEtags;
+@property (nonatomic, retain) NSData *contentSignature;
+@property (nonatomic, readonly) BOOL hasThumbnail;
+@property (nonatomic, readonly) BOOL isPackage;
+@property (nonatomic, retain) NSString *lastEditorDeviceName;
+@property (nonatomic, retain) NSNumber *lastEditorDeviceOrOwnerKey;
+@property (nonatomic, retain) NSData *lazyXattr;
+@property (nonatomic) long long mtime;
+@property (nonatomic, retain) NSString *originalPOSIXName;
+@property (nonatomic, retain) NSData *quarantineInfo;
+@property (nonatomic) long long size;
+@property (nonatomic, retain) NSData *thumbnailSignature;
+@property (nonatomic) long long thumbnailSize;
+@property (nonatomic, retain) NSData *xattrSignature;
 
 + (BOOL)supportsSecureCoding;
 

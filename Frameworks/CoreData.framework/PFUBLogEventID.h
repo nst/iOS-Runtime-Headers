@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface PFUBLogEventID : NSObject {
     int _eventType;
     int _hash;
     NSString *_idString;
 }
 
-@property(readonly) int eventType;
-@property(readonly) int hash;
-@property(readonly) NSString * idString;
+@property (nonatomic, readonly) int eventType;
+@property (nonatomic, readonly) int hash;
+@property (nonatomic, readonly) NSString *idString;
 
 + (void)initialize;
 

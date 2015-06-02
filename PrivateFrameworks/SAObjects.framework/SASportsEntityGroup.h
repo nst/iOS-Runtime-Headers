@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASportsEntityGroup : SASportsEntity
 
-@interface SASportsEntityGroup : SASportsEntity {
-}
-
-@property(copy) NSArray * entities;
-@property(copy) NSString * groupType;
+@property (nonatomic, copy) NSArray *entities;
+@property (nonatomic, copy) NSString *groupType;
 
 + (id)entityGroup;
 + (id)entityGroupWithDictionary:(id)arg1 context:(id)arg2;

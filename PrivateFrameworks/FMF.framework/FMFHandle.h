@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString;
-
 @interface FMFHandle : NSObject <NSCopying, NSSecureCoding> {
     NSString *__prettyNameInternal;
     NSArray *_aliasServerIds;
@@ -16,15 +14,15 @@
     NSNumber *_trackingTimestamp;
 }
 
-@property(copy) NSString * _prettyNameInternal;
-@property(copy) NSArray * aliasServerIds;
-@property(copy) NSDictionary * expiresByGroupId;
-@property(copy) NSString * hashedDSID;
-@property(copy) NSString * identifier;
-@property(copy) NSArray * invitationSentToIds;
-@property(getter=isPending) BOOL pending;
-@property(copy) NSString * serverId;
-@property(copy) NSNumber * trackingTimestamp;
+@property (nonatomic, copy) NSString *_prettyNameInternal;
+@property (nonatomic, copy) NSArray *aliasServerIds;
+@property (nonatomic, copy) NSDictionary *expiresByGroupId;
+@property (nonatomic, copy) NSString *hashedDSID;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSArray *invitationSentToIds;
+@property (getter=isPending, nonatomic) BOOL pending;
+@property (nonatomic, copy) NSString *serverId;
+@property (nonatomic, copy) NSNumber *trackingTimestamp;
 
 + (id)handleWithId:(id)arg1;
 + (id)handleWithId:(id)arg1 serverId:(id)arg2;

@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/AdSupport.framework/AdSupport
  */
 
-@class NSUUID;
+@interface ASIdentifierManager : NSObject
 
-@interface ASIdentifierManager : NSObject {
-}
-
-@property(readonly) NSUUID * advertisingIdentifier;
-@property(getter=isAdvertisingTrackingEnabled,readonly) BOOL advertisingTrackingEnabled;
+@property (nonatomic, readonly) NSUUID *advertisingIdentifier;
+@property (getter=isAdvertisingTrackingEnabled, nonatomic, readonly) BOOL advertisingTrackingEnabled;
 
 + (id)sharedManager;
 

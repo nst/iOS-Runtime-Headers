@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray;
-
 @interface NSDirectorySubpathsOperation : NSDirectoryTraversalOperation {
     NSMutableArray *_subpaths;
 }

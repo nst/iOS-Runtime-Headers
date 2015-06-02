@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/EAFirmwareUpdater
  */
 
-@class NSData, NSString;
-
 @interface FirmwareBundle : NSObject {
     NSString *_bundleDescription;
     NSData *_certificate;
@@ -15,13 +13,13 @@
     NSData *_signature;
 }
 
-@property(readonly) NSData * certificate;
-@property(readonly) NSData * firmwareImage;
-@property(readonly) unsigned int firmwareImageBaseAddress;
-@property(readonly) unsigned int firmwareImageSize;
-@property(readonly) NSData * hash;
-@property(readonly) unsigned int productIDCode;
-@property(readonly) NSData * signature;
+@property (readonly) NSData *certificate;
+@property (readonly) NSData *firmwareImage;
+@property (readonly) unsigned int firmwareImageBaseAddress;
+@property (readonly) unsigned int firmwareImageSize;
+@property (readonly) NSData *hash;
+@property (readonly) unsigned int productIDCode;
+@property (readonly) NSData *signature;
 
 + (id)defaultBundlePath;
 

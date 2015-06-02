@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableActionDelegate>, NSString, UIButton, UIView;
-
 @interface ABPersonTableAction : NSObject <ABStyleProviding> {
     UIButton *_FMFButton;
     BOOL _allowDifferentiationSheet;
@@ -25,24 +23,24 @@
     NSString *_title;
 }
 
-@property(retain) UIView * actionContentView;
-@property BOOL allowDifferentiationSheet;
-@property(readonly) UIButton * button;
-@property <ABPersonTableActionDelegate> * delegate;
-@property(readonly) NSString * detailText;
-@property(copy) NSString * differentiationSheetTitle;
-@property BOOL displaysShortTitle;
-@property(readonly) UIButton * existingButton;
-@property int grouping;
-@property BOOL indicatesFaceTimeHistory;
-@property int ordering;
-@property struct __CFArray { }* properties;
-@property(readonly) int property;
-@property(readonly) SEL selector;
-@property(readonly) NSString * shortTitle;
-@property(readonly) int style;
-@property(readonly) id target;
-@property(readonly) NSString * title;
+@property (nonatomic, retain) UIView *actionContentView;
+@property (nonatomic) BOOL allowDifferentiationSheet;
+@property (nonatomic, readonly) UIButton *button;
+@property (nonatomic) <ABPersonTableActionDelegate> *delegate;
+@property (nonatomic, readonly) NSString *detailText;
+@property (nonatomic, copy) NSString *differentiationSheetTitle;
+@property (nonatomic) BOOL displaysShortTitle;
+@property (nonatomic, readonly) UIButton *existingButton;
+@property (nonatomic) int grouping;
+@property (nonatomic) BOOL indicatesFaceTimeHistory;
+@property (nonatomic) int ordering;
+@property (nonatomic) struct __CFArray { }*properties;
+@property (nonatomic, readonly) int property;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly) NSString *shortTitle;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) id target;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)actionContentView;
 - (BOOL)allowDifferentiationSheet;

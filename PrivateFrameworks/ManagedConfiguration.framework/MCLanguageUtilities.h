@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCLanguageUtilities : NSObject {
-}
+@interface MCLanguageUtilities : NSObject
 
 + (id)knownLanguages;
 + (id)knownLocales;

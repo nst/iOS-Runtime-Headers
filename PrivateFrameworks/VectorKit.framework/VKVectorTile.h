@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOVectorTile, VKMapTileList, VKSharedResources, VKStyleManager;
-
 @interface VKVectorTile : VKTile {
     float _contentScale;
     VKMapTileList *_fragments;
@@ -14,14 +12,14 @@
     float _textureScale;
 }
 
-@property float contentScale;
-@property(readonly) VKMapTileList * fragments;
-@property float maximumStyleZ;
-@property(retain) GEOVectorTile * modelTile;
-@property(retain) VKSharedResources * sharedResources;
-@property(retain) VKStyleManager * styleManager;
-@property float textureScale;
-@property(readonly) int vectorType;
+@property (nonatomic) float contentScale;
+@property (nonatomic, readonly) VKMapTileList *fragments;
+@property (nonatomic) float maximumStyleZ;
+@property (nonatomic, retain) GEOVectorTile *modelTile;
+@property (nonatomic, retain) VKSharedResources *sharedResources;
+@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (nonatomic) float textureScale;
+@property (nonatomic, readonly) int vectorType;
 
 - (float)contentScale;
 - (void)dealloc;

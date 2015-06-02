@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, SKUIItemOfferButton, UIImageView, UILabel, UIView, _UIDocumentPickerContainerItem, _UIDocumentPickerDocumentTableViewController;
-
 @interface _UIDocumentPickerDocumentTableCell : UITableViewCell {
     SKUIItemOfferButton *_cloudButton;
     UIView *_iconCenteringView;
@@ -17,16 +15,16 @@
     _UIDocumentPickerDocumentTableViewController *_weak_tableView;
 }
 
-@property(retain) SKUIItemOfferButton * cloudButton;
-@property(retain) UIView * iconCenteringView;
-@property(retain) UIImageView * iconView;
-@property BOOL isContainer;
-@property(retain) _UIDocumentPickerContainerItem * item;
-@property(retain) id progressSubscriber;
-@property(retain) NSTimer * progressTimer;
-@property(retain) UILabel * subtitleLabel;
-@property _UIDocumentPickerDocumentTableViewController * tableView;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) SKUIItemOfferButton *cloudButton;
+@property (nonatomic, retain) UIView *iconCenteringView;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic) BOOL isContainer;
+@property (nonatomic, retain) _UIDocumentPickerContainerItem *item;
+@property (nonatomic, retain) id progressSubscriber;
+@property (nonatomic, retain) NSTimer *progressTimer;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic) _UIDocumentPickerDocumentTableViewController *tableView;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (float)estimatedHeight;
 + (struct CGSize { float x1; float x2; })thumbnailSize;

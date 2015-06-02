@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableDictionary;
-
 @interface SUControlAppearance : NSObject <NSCopying> {
     NSMutableDictionary *_images;
     NSMutableDictionary *_textAttributes;
     NSMutableDictionary *_titlePositions;
 }
 
-@property(readonly) int numberOfImages;
+@property (nonatomic, readonly) int numberOfImages;
 
 - (id)_copyKeyForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)enumerateImagesUsingBlock:(id)arg1;
-- (void)enumerateTextAttributesUsingBlock:(id)arg1;
-- (void)enumerateTitlePositionsUsingBlock:(id)arg1;
+- (void)enumerateImagesUsingBlock:(id /* block */)arg1;
+- (void)enumerateTextAttributesUsingBlock:(id /* block */)arg1;
+- (void)enumerateTitlePositionsUsingBlock:(id /* block */)arg1;
 - (id)imageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (int)numberOfImages;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;

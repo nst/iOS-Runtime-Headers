@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVItemWithNoChildren;
-
 @interface CalDAVCalendarServerNotificationTypeItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_inviteNotification;
     CoreDAVItemWithNoChildren *_inviteReply;
     CoreDAVItemWithNoChildren *_resourceChanged;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * inviteNotification;
-@property(retain) CoreDAVItemWithNoChildren * inviteReply;
-@property(readonly) BOOL isInviteNotification;
-@property(readonly) BOOL isInviteReply;
-@property(readonly) BOOL isResourceChanged;
-@property(retain) CoreDAVItemWithNoChildren * resourceChanged;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *inviteNotification;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *inviteReply;
+@property (nonatomic, readonly) BOOL isInviteNotification;
+@property (nonatomic, readonly) BOOL isInviteReply;
+@property (nonatomic, readonly) BOOL isResourceChanged;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *resourceChanged;
 
 - (id)copyParseRules;
 - (void)dealloc;

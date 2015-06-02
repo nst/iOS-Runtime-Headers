@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMEventDispatcher : NSObject {
-}
+@interface IKDOMEventDispatcher : NSObject
 
 + (id)sharedInstance;
 

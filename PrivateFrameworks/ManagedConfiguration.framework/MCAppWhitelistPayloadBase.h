@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray;
-
 @interface MCAppWhitelistPayloadBase : MCPayload {
     BOOL _allowAccessWithoutPasscode;
     BOOL _forceAllowSupervisorAccess;
     NSArray *_whitelistedAppsAndOptions;
 }
 
-@property BOOL allowAccessWithoutPasscode;
-@property BOOL forceAllowSupervisorAccess;
-@property(retain) NSArray * whitelistedAppsAndOptions;
+@property (nonatomic) BOOL allowAccessWithoutPasscode;
+@property (nonatomic) BOOL forceAllowSupervisorAccess;
+@property (nonatomic, retain) NSArray *whitelistedAppsAndOptions;
 
 + (id)knownOptionsKeys;
 + (id)knownUserEnabledOptionKeys;

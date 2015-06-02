@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSDFPSCounter : NSObject {
     NSMutableArray *_dateArray;
     double _endTimeInterval;

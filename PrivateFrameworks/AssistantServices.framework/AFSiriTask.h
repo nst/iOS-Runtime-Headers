@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFSiriRequest, NSString, NSXPCListenerEndpoint;
-
 @interface AFSiriTask : NSObject <BSXPCCoding, NSSecureCoding> {
     NSXPCListenerEndpoint *_remoteResponseListenerEndpoint;
     AFSiriRequest *_request;
     NSXPCListenerEndpoint *_usageResultListenerEndpoint;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 + (BOOL)supportsSecureCoding;

@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKModifySubscriptionsOperation : CKDatabaseOperation {
     NSMutableArray *_deletedSubscriptionIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _modifySubscriptionsCompletionBlock;
-
+    id /* block */ _modifySubscriptionsCompletionBlock;
     NSMutableArray *_savedSubscriptions;
     NSMutableDictionary *_subscriptionErrors;
     NSArray *_subscriptionIDsToDelete;
@@ -22,13 +12,13 @@
     NSArray *_subscriptionsToSave;
 }
 
-@property(retain) NSMutableArray * deletedSubscriptionIDs;
-@property(copy) id modifySubscriptionsCompletionBlock;
-@property(retain) NSMutableArray * savedSubscriptions;
-@property(retain) NSMutableDictionary * subscriptionErrors;
-@property(copy) NSArray * subscriptionIDsToDelete;
-@property(retain) NSMutableDictionary * subscriptionsBySubscriptionIDs;
-@property(copy) NSArray * subscriptionsToSave;
+@property (nonatomic, retain) NSMutableArray *deletedSubscriptionIDs;
+@property (nonatomic, copy) id /* block */ modifySubscriptionsCompletionBlock;
+@property (nonatomic, retain) NSMutableArray *savedSubscriptions;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionErrors;
+@property (nonatomic, copy) NSArray *subscriptionIDsToDelete;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionsBySubscriptionIDs;
+@property (nonatomic, copy) NSArray *subscriptionsToSave;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -38,11 +28,11 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2;
-- (id)modifySubscriptionsCompletionBlock;
+- (id /* block */)modifySubscriptionsCompletionBlock;
 - (void)performCKOperation;
 - (id)savedSubscriptions;
 - (void)setDeletedSubscriptionIDs:(id)arg1;
-- (void)setModifySubscriptionsCompletionBlock:(id)arg1;
+- (void)setModifySubscriptionsCompletionBlock:(id /* block */)arg1;
 - (void)setSavedSubscriptions:(id)arg1;
 - (void)setSubscriptionErrors:(id)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;

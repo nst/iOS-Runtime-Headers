@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUBorderConfiguration, MPUBorderDrawingCache, UIImageView;
-
 @interface MPUBorderedImageStackItemView : MPUImageStackItemView {
     MPUBorderConfiguration *_borderConfiguration;
     MPUBorderDrawingCache *_borderDrawingCache;
     UIImageView *_borderImageView;
 }
 
-@property(copy) MPUBorderConfiguration * borderConfiguration;
-@property(retain) MPUBorderDrawingCache * borderDrawingCache;
+@property (nonatomic, copy) MPUBorderConfiguration *borderConfiguration;
+@property (nonatomic, retain) MPUBorderDrawingCache *borderDrawingCache;
 
 - (void).cxx_destruct;
 - (void)_borderDrawingCacheWasInvalidated:(id)arg1;

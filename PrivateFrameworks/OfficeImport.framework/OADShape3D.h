@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBevel, OADColor;
-
 @interface OADShape3D : NSObject <NSCopying> {
     OADBevel *mBottomBevel;
     OADColor *mContourColor;

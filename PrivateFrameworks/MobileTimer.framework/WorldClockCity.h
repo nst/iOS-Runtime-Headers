@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class ALCity, City, NSDictionary, NSNumber, NSString, NSURL;
-
 @interface WorldClockCity : NSObject {
     ALCity *_alCity;
     NSString *_countryCode;
@@ -15,26 +13,25 @@
     City *_weatherCity;
 }
 
-@property(readonly) NSString * abbreviation;
-@property(readonly) ALCity * alCity;
-@property(readonly) NSNumber * alCityId;
-@property(readonly) NSString * countryCode;
-@property(readonly) NSString * countryName;
-@property(readonly) NSURL * idUrl;
-@property(readonly) NSString * name;
-@property(readonly) NSDictionary * properties;
-@property(readonly) NSString * timeZone;
-@property(readonly) NSString * unlocalizedCityName;
-@property(readonly) NSString * unlocalizedCountryName;
-@property(retain) City * weatherCity;
+@property (nonatomic, readonly) NSString *abbreviation;
+@property (nonatomic, readonly) ALCity *alCity;
+@property (nonatomic, readonly) NSNumber *alCityId;
+@property (nonatomic, readonly) NSString *countryCode;
+@property (nonatomic, readonly) NSString *countryName;
+@property (nonatomic, readonly) NSURL *idUrl;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSDictionary *properties;
+@property (nonatomic, readonly) NSString *timeZone;
+@property (nonatomic, readonly) NSString *unlocalizedCityName;
+@property (nonatomic, readonly) NSString *unlocalizedCountryName;
+@property (nonatomic, retain) City *weatherCity;
+
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1;
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
-- (id)_bundleWithAbbreviations;
-- (id)_filePathForAbbreviationsResource;
-- (id)abbreviation;
 - (id)alCity;
 - (id)alCityId;
 - (id)countryCode;
@@ -55,5 +52,11 @@
 - (id)unlocalizedCityName;
 - (id)unlocalizedCountryName;
 - (id)weatherCity;
+
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
+
+- (id)_bundleWithAbbreviations;
+- (id)_filePathForAbbreviationsResource;
+- (id)abbreviation;
 
 @end

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableArray, NSString;
-
 @interface NMSObfuscatableDescription : NSObject {
     NSMutableArray *_items;
     NSString *_prefixString;
 }
 
-@property(retain) NSMutableArray * items;
-@property(retain) NSString * prefixString;
+@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, retain) NSString *prefixString;
 
 - (void).cxx_destruct;
 - (id)CPSafeDescription;

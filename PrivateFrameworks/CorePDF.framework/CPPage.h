@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPChunk, NSMutableArray;
-
 @interface CPPage : CPChunk <CPDisposable> {
     void *_layout;
     CPChunk *background;

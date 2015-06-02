@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSuggestedSearchDelegate>, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, PSIQuery;
-
 @interface PUSuggestedSearch : NSObject <PUSearchResult> {
     unsigned int __approximateCount;
     id _albumUUID;
@@ -19,18 +17,18 @@
     NSArray *_uuids;
 }
 
-@property(setter=_setApproximateCount:) unsigned int _approximateCount;
-@property(retain) id albumUUID;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSuggestedSearchDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * displaySubtitle;
-@property(copy) NSString * displayTitle;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property(copy) NSString * searchString;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * uuids;
+@property (setter=_setApproximateCount:) unsigned int _approximateCount;
+@property (retain) id albumUUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSuggestedSearchDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *displaySubtitle;
+@property (copy) NSString *displayTitle;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isEmpty;
+@property (copy) NSString *searchString;
+@property (readonly) Class superclass;
+@property (readonly) NSArray *uuids;
 
 - (void).cxx_destruct;
 - (unsigned int)_approximateCount;
@@ -50,7 +48,7 @@
 - (id)delegate;
 - (id)displaySubtitle;
 - (id)displayTitle;
-- (void)fetchRemainingUUIDs:(id)arg1;
+- (void)fetchRemainingUUIDs:(id /* block */)arg1;
 - (BOOL)hasPendingChanges;
 - (id)init;
 - (id)initWithDisplayTitle:(id)arg1;

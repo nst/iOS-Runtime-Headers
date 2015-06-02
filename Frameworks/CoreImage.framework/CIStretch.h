@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CIStretch : CIFilter {
     CIImage *inputImage;
     CIVector *inputPoint;
     CIVector *inputSize;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputPoint;
-@property(retain) CIVector * inputSize;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputPoint;
+@property (nonatomic, retain) CIVector *inputSize;
 
 + (id)customAttributes;
 

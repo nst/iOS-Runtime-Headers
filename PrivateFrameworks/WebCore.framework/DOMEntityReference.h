@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMEntityReference : DOMNode {
-}
+@interface DOMEntityReference : DOMNode
 
 @end

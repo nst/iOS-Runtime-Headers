@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class WAKClipView, WAKView;
-
 @interface WAKScrollView : WAKView <WebCoreFrameScrollView> {
     WAKClipView *_contentView;
     id _delegate;

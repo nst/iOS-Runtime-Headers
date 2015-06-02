@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class CHLogger, CHSynchronizable;
-
 @interface CHSynchronizedLoggable : NSObject <CHLoggerProtocol, CHSynchronizableProtocol> {
     CHLogger *_logger;
     CHSynchronizable *_synchronizable;
 }
 
 - (void).cxx_destruct;
-- (void)execute:(id)arg1;
-- (void)executeSync:(id)arg1;
-- (BOOL)executeSyncWithBOOL:(id)arg1;
-- (id)executeSyncWithResult:(id)arg1;
+- (void)execute:(id /* block */)arg1;
+- (void)executeSync:(id /* block */)arg1;
+- (BOOL)executeSyncWithBOOL:(id /* block */)arg1;
+- (id)executeSyncWithResult:(id /* block */)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 queue:(id)arg2;
 - (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;

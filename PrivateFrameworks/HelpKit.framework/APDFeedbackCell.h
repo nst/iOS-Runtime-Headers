@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface APDFeedbackCell : UITableViewCell {
-}
+@interface APDFeedbackCell : UITableViewCell
 
 - (void)layoutSubviews;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCKeychain : NSObject {
-}
+@interface MCKeychain : NSObject
 
 + (struct __CFDictionary { }*)_newQueryWithService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 group:(id)arg5 outError:(id*)arg6;
 + (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;

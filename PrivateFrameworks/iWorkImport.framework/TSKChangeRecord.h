@@ -7,9 +7,9 @@
     int mKind;
 }
 
-@property(readonly) BOOL allowedInCommit;
-@property(readonly) id details;
-@property(readonly) int kind;
+@property (nonatomic, readonly) BOOL allowedInCommit;
+@property (nonatomic, readonly) id details;
+@property (nonatomic, readonly) int kind;
 
 + (id)changeRecordWithKind:(int)arg1 details:(id)arg2;
 

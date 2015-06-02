@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NNMKSQLiteConnection, NNMKSyncedMailbox, NSDate, NSString;
-
 @interface NNMKDeviceSyncRegistry : NSObject {
     NNMKSQLiteConnection *_database;
     NSDate *_dateReceivedCapForAdding;
@@ -18,27 +16,27 @@
     NNMKSyncedMailbox *_syncedMailbox;
 }
 
-@property(retain) NNMKSQLiteConnection * database;
-@property(retain) NSDate * dateReceivedCapForAdding;
-@property float deviceScreenScale;
-@property float deviceScreenWidth;
-@property unsigned int fullMessagesSyncVersion;
-@property BOOL isMessagesSyncActive;
-@property BOOL isMoreMessagesRequestPending;
-@property BOOL organizeByThread;
-@property(readonly) NSString * path;
-@property BOOL protectedChannelSupported;
-@property(retain) NNMKSyncedMailbox * syncedMailbox;
+@property (nonatomic, retain) NNMKSQLiteConnection *database;
+@property (nonatomic, retain) NSDate *dateReceivedCapForAdding;
+@property (nonatomic) float deviceScreenScale;
+@property (nonatomic) float deviceScreenWidth;
+@property (nonatomic) unsigned int fullMessagesSyncVersion;
+@property (nonatomic) BOOL isMessagesSyncActive;
+@property (nonatomic) BOOL isMoreMessagesRequestPending;
+@property (nonatomic) BOOL organizeByThread;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic) BOOL protectedChannelSupported;
+@property (nonatomic, retain) NNMKSyncedMailbox *syncedMailbox;
 
 - (void).cxx_destruct;
 - (void)_deleteAllObjectsFromTable:(id)arg1;
-- (void)_insureTransactionFor:(id)arg1;
+- (void)_insureTransactionFor:(id /* block */)arg1;
 - (void)_loadAllControlValues;
 - (void)_removeControlValueForKey:(id)arg1;
-- (id)_selectSyncedAccountsWhere:(id)arg1 blockForBinding:(id)arg2;
-- (id)_selectSyncedMessagesIdsWhere:(id)arg1 count:(unsigned int)arg2 blockForBinding:(id)arg3;
-- (id)_selectSyncedMessagesWhere:(id)arg1 blockForBinding:(id)arg2;
-- (void)_setControlValueForKey:(id)arg1 withBlockForBinding:(id)arg2;
+- (id)_selectSyncedAccountsWhere:(id)arg1 blockForBinding:(id /* block */)arg2;
+- (id)_selectSyncedMessagesIdsWhere:(id)arg1 count:(unsigned int)arg2 blockForBinding:(id /* block */)arg3;
+- (id)_selectSyncedMessagesWhere:(id)arg1 blockForBinding:(id /* block */)arg2;
+- (void)_setControlValueForKey:(id)arg1 withBlockForBinding:(id /* block */)arg2;
 - (id)_ungroupGroupedValue:(id)arg1;
 - (void)addObjectId:(id)arg1 objectType:(id)arg2 resendInterval:(unsigned int)arg3 forIDSIdentifierNotYetAckd:(id)arg4;
 - (void)addOrUpdateSyncedAccount:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PLImageTable : NSObject <PLThumbPersistenceManager> {
     NSMutableArray *_allSegments;
     BOOL _dying;
@@ -27,19 +25,19 @@
     } _thumbnailSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int imageFormat;
-@property(readonly) int imageHeight;
-@property(readonly) int imageLength;
-@property(readonly) int imageRowBytes;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(readonly) int imageWidth;
-@property(readonly) BOOL isReadOnly;
-@property(readonly) NSString * path;
-@property(readonly) NSDictionary * photoUUIDToIndexMap;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int imageFormat;
+@property (nonatomic, readonly) int imageHeight;
+@property (nonatomic, readonly) int imageLength;
+@property (nonatomic, readonly) int imageRowBytes;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly) int imageWidth;
+@property (nonatomic, readonly) BOOL isReadOnly;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSDictionary *photoUUIDToIndexMap;
+@property (readonly) Class superclass;
 
 + (void)releaseSegmentCache;
 + (void)writeImage:(id)arg1 toData:(id*)arg2 thumbnailFormat:(int)arg3 videoDuration:(id)arg4 width:(int*)arg5 height:(int*)arg6 bytesPerRow:(int*)arg7 dataWidth:(int*)arg8 dataHeight:(int*)arg9 dataOffset:(int*)arg10;
@@ -48,7 +46,7 @@
 - (void)_adviseWillNeedEntriesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_compactWithOccupiedIndexes:(id)arg1 outPhotoUUIDToIndexMap:(id*)arg2;
 - (id)_debugDescription;
-- (void)_doPreheatWithCompletionHandler:(id)arg1;
+- (void)_doPreheatWithCompletionHandler:(id /* block */)arg1;
 - (int)_fileDescriptor;
 - (void)_flushEntryAtAddress:(void*)arg1;
 - (void)_flushEntryAtAddress:(void*)arg1 count:(int)arg2;
@@ -85,8 +83,8 @@
 - (id)path;
 - (id)photoUUIDToIndexMap;
 - (id)preflightCompactionWithOccupiedIndexes:(id)arg1;
-- (void)preheatImageDataAtIndex:(unsigned int)arg1 completionHandler:(id)arg2;
-- (void)preheatImageDataAtIndexes:(id)arg1 completionHandler:(id)arg2;
+- (void)preheatImageDataAtIndex:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)preheatImageDataAtIndexes:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)preheatItemForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 options:(unsigned int)arg4;
 - (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 asset:(id)arg4;
 - (void)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned int)arg3 videoDuration:(id)arg4 photoUUID:(id)arg5;

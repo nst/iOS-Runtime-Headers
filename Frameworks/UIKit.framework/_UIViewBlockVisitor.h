@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _UIViewBlockVisitor : _UIViewVisitor {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _visitorBlock;
-
+    id /* block */ _visitorBlock;
 }
 
-@property(copy) id visitorBlock;
+@property (nonatomic, copy) id /* block */ visitorBlock;
 
 - (BOOL)_visitView:(id)arg1;
 - (void)dealloc;
-- (id)initWithTraversalDirection:(unsigned int)arg1 visitorBlock:(id)arg2;
-- (void)setVisitorBlock:(id)arg1;
-- (id)visitorBlock;
+- (id)initWithTraversalDirection:(unsigned int)arg1 visitorBlock:(id /* block */)arg2;
+- (void)setVisitorBlock:(id /* block */)arg1;
+- (id /* block */)visitorBlock;
 
 @end

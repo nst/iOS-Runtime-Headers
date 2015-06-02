@@ -9,8 +9,8 @@
     BOOL _includeHistoricTravelTime;
 }
 
-@property BOOL hasIncludeHistoricTravelTime;
-@property BOOL includeHistoricTravelTime;
+@property (nonatomic) BOOL hasIncludeHistoricTravelTime;
+@property (nonatomic) BOOL includeHistoricTravelTime;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

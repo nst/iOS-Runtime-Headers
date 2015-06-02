@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIGiftDashView : UIView {
     UIColor *_dashColor;
     struct CGSize { 
@@ -13,9 +11,9 @@
     float _dashSpacing;
 }
 
-@property(copy) UIColor * dashColor;
-@property struct CGSize { float x1; float x2; } dashSize;
-@property float dashSpacing;
+@property (nonatomic, copy) UIColor *dashColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } dashSize;
+@property (nonatomic) float dashSpacing;
 
 - (void).cxx_destruct;
 - (id)dashColor;

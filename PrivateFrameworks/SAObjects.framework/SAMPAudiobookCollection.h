@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPAudiobookCollection : SAMPCollection
 
-@interface SAMPAudiobookCollection : SAMPCollection {
-}
-
-@property(copy) NSString * artist;
-@property(copy) NSString * sortArtist;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, copy) NSString *sortArtist;
 
 + (id)audiobookCollection;
 + (id)audiobookCollectionWithDictionary:(id)arg1 context:(id)arg2;

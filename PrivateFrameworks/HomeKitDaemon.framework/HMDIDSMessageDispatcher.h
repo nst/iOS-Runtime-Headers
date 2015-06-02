@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDAdminEnforcementMessageFilter, HMDIdentityRegistry, HMDMessageFilterChain, HMDNotificationRelay, HMMessageDispatcher, NSArray, NSMutableDictionary;
-
 @interface HMDIDSMessageDispatcher : HMMessageDispatcher {
     NSMutableDictionary *_activeClientSecureSessions;
     NSMutableDictionary *_activeServerSecureSessions;
@@ -16,17 +14,17 @@
     NSMutableDictionary *_remoteGateways;
 }
 
-@property(retain) NSMutableDictionary * activeClientSecureSessions;
-@property(retain) NSMutableDictionary * activeServerSecureSessions;
-@property(retain) HMDAdminEnforcementMessageFilter * adminMsgFilter;
-@property(retain) HMDIdentityRegistry * identityRegistry;
-@property(retain) HMDMessageFilterChain * msgFilterChain;
-@property(retain) HMMessageDispatcher * notificationDispatcher;
-@property(retain) HMDNotificationRelay * notificationRelay;
-@property(retain) HMMessageDispatcher * recvDispatcher;
-@property(retain) NSMutableDictionary * remoteGateways;
-@property(readonly) NSArray * residentDevices;
-@property(readonly) NSArray * transientDevices;
+@property (nonatomic, retain) NSMutableDictionary *activeClientSecureSessions;
+@property (nonatomic, retain) NSMutableDictionary *activeServerSecureSessions;
+@property (nonatomic, retain) HMDAdminEnforcementMessageFilter *adminMsgFilter;
+@property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
+@property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
+@property (nonatomic, retain) HMMessageDispatcher *notificationDispatcher;
+@property (nonatomic, retain) HMDNotificationRelay *notificationRelay;
+@property (nonatomic, retain) HMMessageDispatcher *recvDispatcher;
+@property (nonatomic, retain) NSMutableDictionary *remoteGateways;
+@property (nonatomic, readonly) NSArray *residentDevices;
+@property (nonatomic, readonly) NSArray *transientDevices;
 
 + (BOOL)isWhitelistedLocalMessage:(id)arg1;
 + (id)remappedRemotePrepareWriteCommands;
@@ -35,12 +33,12 @@
 - (void).cxx_destruct;
 - (BOOL)_checkAuthorizationForMessage:(id)arg1 errorReason:(id*)arg2;
 - (void)_handleElectDeviceForIDSSession:(id)arg1;
-- (void)_handleElectDeviceForUserResponse:(id)arg1 error:(id)arg2 responseQueue:(id)arg3 completion:(id)arg4;
+- (void)_handleElectDeviceForUserResponse:(id)arg1 error:(id)arg2 responseQueue:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)_handleInternalIDSMessage:(id)arg1 fromID:(id)arg2;
 - (void)_handleSecureClientMessage:(id)arg1 fromID:(id)arg2;
 - (void)_handleSecureServerMessage:(id)arg1 fromID:(id)arg2;
-- (void)_sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
-- (void)_sendSecureMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
+- (void)_sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id /* block */)arg5;
+- (void)_sendSecureMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id /* block */)arg5;
 - (void)_setRemoteAccessPeer:(id)arg1 forHome:(id)arg2 sendNotification:(BOOL)arg3;
 - (id)activeClientSecureSessions;
 - (id)activeServerSecureSessions;
@@ -49,22 +47,22 @@
 - (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
 - (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
-- (void)electDeviceForUser:(id)arg1 destination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)electDeviceForUser:(id)arg1 destination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
 - (id)identityRegistry;
 - (id)initWithIDSTransport:(id)arg1 messageFilterChain:(id)arg2 identityRegistry:(id)arg3 notificationRelayDispatcher:(id)arg4;
 - (id)msgFilterChain;
 - (id)notificationDispatcher;
 - (id)notificationRelay;
 - (id)recvDispatcher;
-- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id)arg3;
+- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id /* block */)arg3;
 - (id)remoteGateways;
 - (id)residentDevices;
 - (void)sendMessage:(id)arg1 target:(id)arg2;
-- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id /* block */)arg3;
 - (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3;
-- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id)arg5;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
-- (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id)arg6;
+- (void)sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id /* block */)arg5;
+- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
+- (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)setActiveClientSecureSessions:(id)arg1;
 - (void)setActiveServerSecureSessions:(id)arg1;
 - (void)setAdminMsgFilter:(id)arg1;

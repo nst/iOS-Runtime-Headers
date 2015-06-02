@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface EBConditionalFormat : NSObject {
-}
+@interface EBConditionalFormat : NSObject
 
 + (int)convertEDConditionalFmtOperatorEnumToXl:(int)arg1;
 + (int)convertEDConditionalFmtTypeEnumToXl:(int)arg1;

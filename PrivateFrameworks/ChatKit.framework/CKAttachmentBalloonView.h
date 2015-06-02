@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIView<CKAttachmentView>;
-
 @interface CKAttachmentBalloonView : CKColoredBalloonView {
     UIView<CKAttachmentView> *_attachmentView;
 }
 
-@property(retain) UIView<CKAttachmentView> * attachmentView;
+@property (nonatomic, retain) UIView<CKAttachmentView> *attachmentView;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)attachmentView;

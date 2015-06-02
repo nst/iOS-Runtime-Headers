@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPTermsViewControllerDelegate>, SSTermsAndConditions, UIActivityIndicatorView, UITextView, UIView;
-
 @interface MPTermsViewController : UIViewController {
     UIActivityIndicatorView *_activityIndicatorView;
     UIView *_bottomSpacerView;
@@ -14,11 +12,11 @@
     UIView *_topSpacerView;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicatorView;
-@property(retain) UIView * bottomSpacerView;
-@property <MPTermsViewControllerDelegate> * delegate;
-@property(retain) UITextView * termsTextView;
-@property(retain) UIView * topSpacerView;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, retain) UIView *bottomSpacerView;
+@property (nonatomic) <MPTermsViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UITextView *termsTextView;
+@property (nonatomic, retain) UIView *topSpacerView;
 
 - (void).cxx_destruct;
 - (void)_acceptAction:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSItemAvailableCondition : SSProtocolCondition {
-}
+@interface SSItemAvailableCondition : SSProtocolCondition
 
 - (BOOL)evaluateWithContext:(id)arg1;
 

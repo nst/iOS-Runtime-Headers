@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSObject, Protocol;
-
 @interface NSConcreteProtocolChecker : NSProtocolChecker {
     Protocol *_protocol;
     NSObject *_target;

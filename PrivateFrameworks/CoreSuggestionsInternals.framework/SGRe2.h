@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray;
-
 @interface SGRe2 : NSObject {
     BOOL _isTrivial;
     long _isTrivialOnceToken;
@@ -15,11 +13,11 @@
 + (id)convertPerlStyleLiteralToRegexpString:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id)arg4;
+- (BOOL)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateMatchesInString:(id)arg1 ngroups:(unsigned int)arg2 block:(id)arg3;
-- (void)enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id)arg4;
+- (void)enumerateMatchesInString:(id)arg1 ngroups:(unsigned int)arg2 block:(id /* block */)arg3;
+- (void)enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
 - (BOOL)existsInString:(id)arg1;
 - (BOOL)existsInUtf8:(const char *)arg1;
 - (id)initWithRegexp:(id)arg1;

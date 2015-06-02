@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSString, UIImageView, _UIDocumentPickerContainerItem;
-
 @interface _UIDocumentPickerContainerCell : _UIDocumentPickerCell {
     NSString *_containerDisplayName;
     NSLayoutConstraint *_containerIconBottomConstraint;
@@ -14,13 +12,13 @@
     id _observerToken;
 }
 
-@property(retain) NSString * containerDisplayName;
-@property(retain) NSLayoutConstraint * containerIconBottomConstraint;
-@property(retain) NSLayoutConstraint * containerIconHeightConstraint;
-@property(retain) UIImageView * containerIconView;
-@property(retain) NSLayoutConstraint * containerIconWidthConstraint;
-@property(retain) _UIDocumentPickerContainerItem * item;
-@property(retain) id observerToken;
+@property (nonatomic, retain) NSString *containerDisplayName;
+@property (nonatomic, retain) NSLayoutConstraint *containerIconBottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *containerIconHeightConstraint;
+@property (nonatomic, retain) UIImageView *containerIconView;
+@property (nonatomic, retain) NSLayoutConstraint *containerIconWidthConstraint;
+@property (nonatomic, retain) _UIDocumentPickerContainerItem *item;
+@property (nonatomic, retain) id observerToken;
 
 - (void)_showPickableDiagnostic;
 - (id)containerDisplayName;

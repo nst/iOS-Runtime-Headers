@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface MFPSolidBrush : MFPBrush {
     OITSUColor *mColor;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKServiceInterface : NSObject {
-}
+@interface GKServiceInterface : NSObject
 
 + (void)configureInterface:(id)arg1;
 + (id)interface;

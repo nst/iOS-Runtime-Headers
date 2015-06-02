@@ -2,33 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary;
-
 @interface CKModifyRecordsOperation : CKDatabaseOperation {
     NSMutableDictionary *_assetsByRecordIDAndRecordKey;
     BOOL _atomic;
     NSData *_clientChangeTokenData;
     NSDictionary *_conflictLosersToResolveByRecordID;
     NSMutableArray *_deletedRecordIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _modifyRecordsCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _perRecordCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _perRecordProgressBlock;
-
+    id /* block */ _modifyRecordsCompletionBlock;
+    id /* block */ _perRecordCompletionBlock;
+    id /* block */ _perRecordProgressBlock;
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
@@ -39,22 +21,22 @@
     BOOL _shouldOnlySaveAssetContent;
 }
 
-@property(retain) NSMutableDictionary * assetsByRecordIDAndRecordKey;
-@property BOOL atomic;
-@property(copy) NSData * clientChangeTokenData;
-@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
-@property(retain) NSMutableArray * deletedRecordIDs;
-@property(copy) id modifyRecordsCompletionBlock;
-@property(copy) id perRecordCompletionBlock;
-@property(copy) id perRecordProgressBlock;
-@property(retain) NSMutableDictionary * recordErrors;
-@property(copy) NSArray * recordIDsToDelete;
-@property(copy) NSDictionary * recordIDsToDeleteToEtags;
-@property(retain) NSMutableDictionary * recordsByRecordIDs;
-@property(copy) NSArray * recordsToSave;
-@property int savePolicy;
-@property(retain) NSMutableArray * savedRecords;
-@property BOOL shouldOnlySaveAssetContent;
+@property (nonatomic, retain) NSMutableDictionary *assetsByRecordIDAndRecordKey;
+@property (nonatomic) BOOL atomic;
+@property (nonatomic, copy) NSData *clientChangeTokenData;
+@property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic, retain) NSMutableArray *deletedRecordIDs;
+@property (nonatomic, copy) id /* block */ modifyRecordsCompletionBlock;
+@property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
+@property (nonatomic, copy) id /* block */ perRecordProgressBlock;
+@property (nonatomic, retain) NSMutableDictionary *recordErrors;
+@property (nonatomic, copy) NSArray *recordIDsToDelete;
+@property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
+@property (nonatomic, retain) NSMutableDictionary *recordsByRecordIDs;
+@property (nonatomic, copy) NSArray *recordsToSave;
+@property (nonatomic) int savePolicy;
+@property (nonatomic, retain) NSMutableArray *savedRecords;
+@property (nonatomic) BOOL shouldOnlySaveAssetContent;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -68,9 +50,9 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2;
-- (id)modifyRecordsCompletionBlock;
-- (id)perRecordCompletionBlock;
-- (id)perRecordProgressBlock;
+- (id /* block */)modifyRecordsCompletionBlock;
+- (id /* block */)perRecordCompletionBlock;
+- (id /* block */)perRecordProgressBlock;
 - (void)performCKOperation;
 - (id)recordErrors;
 - (id)recordIDsToDelete;
@@ -84,9 +66,9 @@
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setDeletedRecordIDs:(id)arg1;
-- (void)setModifyRecordsCompletionBlock:(id)arg1;
-- (void)setPerRecordCompletionBlock:(id)arg1;
-- (void)setPerRecordProgressBlock:(id)arg1;
+- (void)setModifyRecordsCompletionBlock:(id /* block */)arg1;
+- (void)setPerRecordCompletionBlock:(id /* block */)arg1;
+- (void)setPerRecordProgressBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;

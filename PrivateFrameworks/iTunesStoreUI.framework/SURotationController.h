@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUViewController;
-
 @interface SURotationController : NSObject {
     SUViewController *_viewController;
 }
 
-@property SUViewController * viewController;
+@property (nonatomic) SUViewController *viewController;
 
 - (void)animateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkInCallButtonsViewDelegate>, NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface TPStarkInCallButtonsView : UIView {
     float _buttonDistributionScalingFactor;
     NSMutableArray *_buttonDividerViews;
@@ -15,13 +13,13 @@
 }
 
 @property float buttonDistributionScalingFactor;
-@property(retain) NSMutableArray * buttonDividerViews;
-@property(retain) NSArray * buttonsArray;
-@property(retain) NSMutableDictionary * buttonsDictionary;
+@property (retain) NSMutableArray *buttonDividerViews;
+@property (retain) NSArray *buttonsArray;
+@property (retain) NSMutableDictionary *buttonsDictionary;
 @property int buttonsMode;
-@property <TPStarkInCallButtonsViewDelegate> * delegate;
-@property int highlightedControlIndex;
-@property(readonly) int numberOfControls;
+@property <TPStarkInCallButtonsViewDelegate> *delegate;
+@property (nonatomic) int highlightedControlIndex;
+@property (readonly) int numberOfControls;
 
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forButton:(id)arg2;
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forDividerView:(id)arg2;

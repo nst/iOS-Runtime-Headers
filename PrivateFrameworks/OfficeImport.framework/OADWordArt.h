@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADWordArt : OADShape {
-}
+@interface OADWordArt : OADShape
 
 - (void)dealloc;
 - (id)description;

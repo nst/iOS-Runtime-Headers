@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKObjCClass, NSSet, NSString;
+@interface CKObject : NSObject <CKPropertyCoding>
 
-@interface CKObject : NSObject <CKPropertyCoding> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CKObjCClass * objcClass;
-@property(readonly) NSSet * propertyNamesNotToEncode;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CKObjCClass *objcClass;
+@property (nonatomic, readonly) NSSet *propertyNamesNotToEncode;
+@property (readonly) Class superclass;
 
 - (id)description;
 - (id)dictionaryPropertyEncoding;

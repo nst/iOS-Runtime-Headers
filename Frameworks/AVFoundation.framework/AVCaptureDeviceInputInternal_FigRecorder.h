@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDevice_FigRecorder, NSArray;
-
 @interface AVCaptureDeviceInputInternal_FigRecorder : NSObject {
     BOOL _authorizedForCamera;
     AVCaptureDevice_FigRecorder *_device;

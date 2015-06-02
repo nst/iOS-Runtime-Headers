@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebSelection, UIWebSelectionGraph, UIWebSelectionNode;
-
 @interface UIWebSelectionNode : NSObject {
     UIWebSelectionNode *_fromBottomByContracting;
     UIWebSelectionNode *_fromBottomByExpanding;
@@ -18,7 +16,7 @@
     UIWebSelectionGraph *_sharedGraph;
 }
 
-@property(retain) UIWebSelection * selection;
+@property (retain) UIWebSelection *selection;
 
 - (void)dealloc;
 - (id)initWithSelection:(id)arg1 inGraph:(id)arg2;

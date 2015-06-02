@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class <ICSLoggingDelegate>;
-
 @interface ICSLogger : NSObject {
     int _logCount;
     <ICSLoggingDelegate> *_loggingDelegate;

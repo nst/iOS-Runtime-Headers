@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioInputNode, AVAudioMixerNode, AVAudioOutputNode;
-
 @interface AVAudioEngine : NSObject {
     void *_impl;
 }
 
-@property(readonly) AVAudioInputNode * inputNode;
-@property(readonly) AVAudioMixerNode * mainMixerNode;
-@property struct OpaqueMusicSequence { }* musicSequence;
-@property(readonly) AVAudioOutputNode * outputNode;
-@property(getter=isRunning,readonly) BOOL running;
+@property (nonatomic, readonly) AVAudioInputNode *inputNode;
+@property (nonatomic, readonly) AVAudioMixerNode *mainMixerNode;
+@property (nonatomic) struct OpaqueMusicSequence { }*musicSequence;
+@property (nonatomic, readonly) AVAudioOutputNode *outputNode;
+@property (getter=isRunning, nonatomic, readonly) BOOL running;
 
 - (void)attachNode:(id)arg1;
 - (void)connect:(id)arg1 to:(id)arg2 format:(id)arg3;
@@ -24,7 +22,7 @@
 - (void)disconnectNodeInput:(id)arg1 bus:(unsigned int)arg2;
 - (void)disconnectNodeOutput:(id)arg1;
 - (void)disconnectNodeOutput:(id)arg1 bus:(unsigned int)arg2;
-- (struct AVAudioEngineImpl { id x1; struct AVAudioEngineGraph {} *x2; bool x3; bool x4; id x5; id x6; id x7; id x8; struct AVAudioIOUnit {} *x9; id x10; int x11; }*)implementation;
+- (struct AVAudioEngineImpl { id x1; struct AVAudioEngineGraph {} x2; bool x3; bool x4; id x5; id x6; struct AVAudioIOUnit {} *x7; id x8; }*)implementation;
 - (id)init;
 - (id)inputNode;
 - (BOOL)isRunning;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@class UIWindow;
-
 @interface UIAccessibilityPresentingViewController : UIViewController {
     UIWindow *_presentationWindow;
 }
@@ -11,9 +9,9 @@
 - (void)_cleanUpPresentationWindow;
 - (void)_voiceOverStatusChanged;
 - (void)dealloc;
-- (void)dismissViewControllerWithTransition:(int)arg1 completion:(id)arg2;
+- (void)dismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (void)loadView;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 
 @end

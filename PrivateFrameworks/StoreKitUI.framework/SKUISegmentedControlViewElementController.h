@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUIFlexibleSegmentedControl, SKUIMenuPopoverController, SKUIMenuViewController, SKUISegmentedControlViewElement, UIBarButtonItem, UIView, UIViewController;
-
 @interface SKUISegmentedControlViewElementController : NSObject <SKUIFlexibleSegmentedControlDelegate, SKUIMenuPopoverDelegate, SKUIMenuViewControllerDelegate> {
     SKUIClientContext *_clientContext;
     int _defaultMaximumNumberOfVisibleItems;
@@ -16,16 +14,16 @@
     SKUISegmentedControlViewElement *_viewElement;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property int defaultMaximumNumberOfVisibleItems;
-@property(copy,readonly) NSString * description;
-@property float desiredSegmentWidth;
-@property(readonly) unsigned int hash;
-@property UIViewController * parentViewController;
-@property(readonly) UIView * segmentedControlView;
-@property(readonly) Class superclass;
-@property(readonly) SKUISegmentedControlViewElement * viewElement;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) int defaultMaximumNumberOfVisibleItems;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float desiredSegmentWidth;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic, readonly) UIView *segmentedControlView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUISegmentedControlViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (void)_cancelMenuAction:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTabsLayoutManager>, NSString, UIView;
-
 @interface ABPersonOverlayingContainerView : UIScrollView <ABPersonTabsScrollView> {
     UIView *_abContentView;
     UIView *_backgroundView;
@@ -17,14 +15,14 @@
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }
 
-@property(retain) UIView * backgroundView;
-@property(retain) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float minimumBottomInset;
-@property(readonly) Class superclass;
-@property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float minimumBottomInset;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <ABPersonTabsLayoutManager> *tabsLayoutManager;
 
 - (void)_updateContentFrameAndSize;
 - (id)backgroundView;

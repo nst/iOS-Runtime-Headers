@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@class NSString;
-
 @interface BKSProcessAssertionUpdateEvent : BKSProcessAssertionEvent {
     unsigned int _flags;
     NSString *_name;
 }
 
-@property unsigned int flags;
-@property(copy) NSString * name;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic, copy) NSString *name;
 
 - (void)dealloc;
 - (id)description;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSMutableArray;
-
 @interface _NMRSupportedCommandsProtobuf : PBCodable <NSCopying> {
     NSMutableArray *_supportedCommands;
 }
 
-@property(retain) NSMutableArray * supportedCommands;
+@property (nonatomic, retain) NSMutableArray *supportedCommands;
 
 - (void).cxx_destruct;
 - (void)addSupportedCommand:(id)arg1;

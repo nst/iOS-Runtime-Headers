@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString;
-
 @interface EKReminderPredicate : EKPredicate {
     BOOL _completed;
     NSDate *_dueAfter;
@@ -18,17 +16,17 @@
     BOOL _useDueDateAsCompletionDate;
 }
 
-@property BOOL completed;
-@property(retain) NSDate * dueAfter;
-@property(retain) NSDate * dueBefore;
-@property BOOL limitToCompletedOrIncomplete;
-@property(retain) NSString * listTitle;
-@property unsigned int maxResults;
-@property(retain) NSString * searchTerm;
-@property int sortOrder;
-@property(retain) NSString * title;
-@property BOOL useCompletionDateAsAlternate;
-@property BOOL useDueDateAsCompletionDate;
+@property (nonatomic) BOOL completed;
+@property (nonatomic, retain) NSDate *dueAfter;
+@property (nonatomic, retain) NSDate *dueBefore;
+@property (nonatomic) BOOL limitToCompletedOrIncomplete;
+@property (nonatomic, retain) NSString *listTitle;
+@property (nonatomic) unsigned int maxResults;
+@property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic) int sortOrder;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) BOOL useCompletionDateAsAlternate;
+@property (nonatomic) BOOL useDueDateAsCompletionDate;
 
 + (id)predicateWithCalendars:(id)arg1;
 + (BOOL)supportsSecureCoding;

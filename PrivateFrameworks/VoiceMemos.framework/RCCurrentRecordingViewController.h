@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCCurrentRecordingViewControllerDelegate>, NSString, RCAVState, RCCurrentRecordingRemoteViewController, UIColor;
-
 @interface RCCurrentRecordingViewController : UIViewController <RCCurrentRecordingViewControllerDelegate, RCUIServiceCurrentRecordingViewController> {
     RCAVState *_AVState;
     <RCCurrentRecordingViewControllerDelegate> *_delegate;
@@ -14,12 +12,12 @@
     UIColor *_waveformForegroundColor;
 }
 
-@property(retain) RCAVState * AVState;
-@property(copy,readonly) NSString * debugDescription;
-@property <RCCurrentRecordingViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) RCAVState *AVState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RCCurrentRecordingViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (Class)remoteViewControllerClass;
 + (id)serviceViewControllerClassName;
@@ -35,7 +33,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertRemoteViewController:(id)arg1;
-- (void)loadCaptureStateWithCompletionBlock:(id)arg1;
+- (void)loadCaptureStateWithCompletionBlock:(id /* block */)arg1;
 - (void)presentLockscreenInterfaceWithBackgroundColor:(id)arg1 waveformForegroundColor:(id)arg2;
 - (void)setAVState:(id)arg1;
 - (void)setDelegate:(id)arg1;

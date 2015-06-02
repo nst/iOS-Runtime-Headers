@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface HMDUIDialogPresenter : NSObject {
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)sharedUIDialogPresenter;
 
 - (void).cxx_destruct;
-- (void)_requestPairingPasswordForAccessory:(id)arg1 home:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)_requestUserPermissionForUnauthenticatedAccessory:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)confirmAddUser:(id)arg1 toHome:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)confirmInviteFromUser:(id)arg1 forHome:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)confirmRemoveUser:(id)arg1 fromHome:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)displayKeychainSyncForHome:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)_requestPairingPasswordForAccessory:(id)arg1 home:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_requestUserPermissionForUnauthenticatedAccessory:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)confirmAddUser:(id)arg1 toHome:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)confirmInviteFromUser:(id)arg1 forHome:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)confirmRemoveUser:(id)arg1 fromHome:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)displayKeychainSyncForHome:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (BOOL)presentDialogWithInfo:(id)arg1 options:(unsigned long)arg2 textField:(id*)arg3;
 - (BOOL)presentDialogWithInfo:(id)arg1 options:(unsigned long)arg2 textField:(id*)arg3 timeout:(double)arg4;
-- (void)requestPairingPasswordForAccessory:(id)arg1 home:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)requestUserPermissionForUnauthenticatedAccessory:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)requestPairingPasswordForAccessory:(id)arg1 home:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)requestUserPermissionForUnauthenticatedAccessory:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;
 

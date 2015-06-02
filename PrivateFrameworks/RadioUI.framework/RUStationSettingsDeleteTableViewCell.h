@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UIButton;
-
 @interface RUStationSettingsDeleteTableViewCell : RUTableViewCell {
     UIButton *_fakeButton;
 }

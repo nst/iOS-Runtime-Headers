@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString, UIScreen;
-
 @interface SBUISnapshotContext : NSObject <BSXPCCoding> {
     BOOL _excludesNotificationCenter;
     UIScreen *_screen;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL excludesNotificationCenter;
-@property(readonly) unsigned int hash;
-@property(retain) UIScreen * screen;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL excludesNotificationCenter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIScreen *screen;
+@property (readonly) Class superclass;
 
 + (id)snapshotContextForScreen:(id)arg1;
 

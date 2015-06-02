@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDComponentFilter;
-
 @interface GEOPDComponentInfo : PBCodable <NSCopying> {
     unsigned int _count;
     GEOPDComponentFilter *_filter;
@@ -20,18 +18,18 @@
     int _urgency;
 }
 
-@property unsigned int count;
-@property(retain) GEOPDComponentFilter * filter;
-@property BOOL hasCount;
-@property(readonly) BOOL hasFilter;
-@property BOOL hasIncludeSource;
-@property BOOL hasStartIndex;
-@property BOOL hasType;
-@property BOOL hasUrgency;
-@property BOOL includeSource;
-@property unsigned int startIndex;
-@property int type;
-@property int urgency;
+@property (nonatomic) unsigned int count;
+@property (nonatomic, retain) GEOPDComponentFilter *filter;
+@property (nonatomic) BOOL hasCount;
+@property (nonatomic, readonly) BOOL hasFilter;
+@property (nonatomic) BOOL hasIncludeSource;
+@property (nonatomic) BOOL hasStartIndex;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasUrgency;
+@property (nonatomic) BOOL includeSource;
+@property (nonatomic) unsigned int startIndex;
+@property (nonatomic) int type;
+@property (nonatomic) int urgency;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

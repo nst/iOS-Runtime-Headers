@@ -9,7 +9,7 @@
     unsigned long _required;
 }
 
-@property BOOL forTextPart;
+@property (nonatomic) BOOL forTextPart;
 
 - (int)appendData:(id)arg1;
 - (void)done;

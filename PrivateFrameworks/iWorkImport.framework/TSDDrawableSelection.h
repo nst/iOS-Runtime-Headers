@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet;
-
 @interface TSDDrawableSelection : TSKSelection {
     NSSet *mInfos;
 }
 
-@property(readonly) unsigned int infoCount;
-@property(retain,readonly) NSSet * infos;
-@property(readonly) BOOL isEmpty;
-@property(readonly) unsigned int unlockedInfoCount;
-@property(readonly) NSSet * unlockedInfos;
+@property (nonatomic, readonly) unsigned int infoCount;
+@property (nonatomic, readonly, retain) NSSet *infos;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) unsigned int unlockedInfoCount;
+@property (nonatomic, readonly) NSSet *unlockedInfos;
 
 + (Class)archivedSelectionClass;
 

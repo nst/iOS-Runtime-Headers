@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBSectionIcon, NSString;
-
 @interface BLTPBSetSectionSubtypeParametersIconRequest : PBRequest <NSCopying> {
     BOOL _defaultSubtype;
     struct { 
@@ -15,14 +13,14 @@
     unsigned long long _subtypeID;
 }
 
-@property BOOL defaultSubtype;
-@property BOOL hasDefaultSubtype;
-@property(readonly) BOOL hasIcon;
-@property(readonly) BOOL hasSectionID;
-@property BOOL hasSubtypeID;
-@property(retain) BLTPBSectionIcon * icon;
-@property(retain) NSString * sectionID;
-@property unsigned long long subtypeID;
+@property (nonatomic) BOOL defaultSubtype;
+@property (nonatomic) BOOL hasDefaultSubtype;
+@property (nonatomic, readonly) BOOL hasIcon;
+@property (nonatomic, readonly) BOOL hasSectionID;
+@property (nonatomic) BOOL hasSubtypeID;
+@property (nonatomic, retain) BLTPBSectionIcon *icon;
+@property (nonatomic, retain) NSString *sectionID;
+@property (nonatomic) unsigned long long subtypeID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

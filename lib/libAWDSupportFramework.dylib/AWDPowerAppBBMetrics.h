@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerAppBBMetrics : PBCodable <NSCopying> {
     NSMutableArray *_appPowers;
     struct { 
@@ -12,9 +10,9 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSMutableArray * appPowers;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSMutableArray *appPowers;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addAppPower:(id)arg1;
 - (id)appPowerAtIndex:(unsigned int)arg1;

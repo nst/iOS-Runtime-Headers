@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPLoadPredefinedQueue : SADomainCommand {
-}
+@interface SAMPLoadPredefinedQueue : SADomainCommand
 
-@property int mediaItemType;
-@property BOOL shouldShuffle;
+@property (nonatomic) int mediaItemType;
+@property (nonatomic) BOOL shouldShuffle;
 
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;

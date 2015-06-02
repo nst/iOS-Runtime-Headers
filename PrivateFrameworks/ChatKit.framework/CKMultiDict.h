@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface CKMultiDict : NSObject {
     unsigned int _count;
     NSMutableDictionary *_dictionary;
     NSObject<OS_dispatch_queue> *_lockQueue;
 }
 
-@property(retain) NSMutableDictionary * dictionary;
-@property(retain) NSObject<OS_dispatch_queue> * lockQueue;
+@property (nonatomic, retain) NSMutableDictionary *dictionary;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *lockQueue;
 
 - (id)allKeys;
 - (unsigned int)count;

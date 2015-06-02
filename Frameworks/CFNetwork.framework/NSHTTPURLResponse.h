@@ -2,28 +2,23 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSDictionary, NSHTTPURLResponseInternal;
-
 @interface NSHTTPURLResponse : NSURLResponse {
     NSHTTPURLResponseInternal *_httpInternal;
 }
 
-@property(copy,readonly) NSDictionary * allHeaderFields;
-@property(readonly) int statusCode;
-@property(readonly) BOOL tsu_isSuccess;
+@property (readonly, copy) NSDictionary *allHeaderFields;
+@property (readonly) int statusCode;
+@property (readonly) BOOL tsu_isSuccess;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (BOOL)isErrorStatusCode:(int)arg1;
 + (id)localizedStringForStatusCode:(int)arg1;
-+ (id)sl_twitterResponseObjectErrorCode:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
-- (id)_dateFromExpires;
-- (BOOL)_getCacheControlMaxAge:(double*)arg1;
-- (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (id)_initWithCFURLResponse:(struct _CFURLResponse { }*)arg1;
-- (double)_maxAge;
 - (id)_peerCertificateChain;
 - (struct __SecTrust { }*)_peerTrust;
 - (void)_setPeerTrust:(struct __SecTrust { }*)arg1;
@@ -31,16 +26,37 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)expirationDate;
-- (double)expirationInterval;
-- (id)getSAPSignature;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (long long)maxExpectedContentLength;
-- (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id)arg2;
-- (int)sl_twitterResponseType:(id)arg1;
 - (int)statusCode;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (id)sl_twitterResponseObjectErrorCode:(id)arg1;
+
+- (int)sl_twitterResponseType:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
+- (double)_maxAge;
+- (id)getSAPSignature;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
+
+- (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
+
+- (id)_dateFromExpires;
+- (BOOL)_getCacheControlMaxAge:(double*)arg1;
+- (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
+- (id)expirationDate;
+- (double)expirationInterval;
+- (long long)maxExpectedContentLength;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
 - (BOOL)tsu_isSuccess;
 
 @end

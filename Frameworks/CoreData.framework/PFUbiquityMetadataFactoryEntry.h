@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPersistentStore, NSPersistentStoreCoordinator, PFUbiquityLocation, PFUbiquityMetadataFactoryFilePresenter;
-
 @interface PFUbiquityMetadataFactoryEntry : NSObject {
     PFUbiquityMetadataFactoryFilePresenter *_filePresenter;
     PFUbiquityLocation *_metadataStoreFileLocation;
@@ -11,10 +9,10 @@
     NSPersistentStore *_store;
 }
 
-@property(readonly) PFUbiquityMetadataFactoryFilePresenter * filePresenter;
-@property(readonly) PFUbiquityLocation * metadataStoreFileLocation;
-@property(readonly) NSPersistentStoreCoordinator * psc;
-@property(readonly) NSPersistentStore * store;
+@property (nonatomic, readonly) PFUbiquityMetadataFactoryFilePresenter *filePresenter;
+@property (nonatomic, readonly) PFUbiquityLocation *metadataStoreFileLocation;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *psc;
+@property (nonatomic, readonly) NSPersistentStore *store;
 
 - (void)dealloc;
 - (id)description;

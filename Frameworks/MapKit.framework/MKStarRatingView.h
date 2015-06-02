@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, UIImage;
-
 @interface MKStarRatingView : UIView {
     UIImage *_emptyStarHighlightedImage;
     UIImage *_emptyStarImage;
@@ -20,16 +18,16 @@
     int _starStyle;
 }
 
-@property(retain) UIImage * emptyStarHighlightedImage;
-@property(retain) UIImage * emptyStarImage;
-@property(retain) UIImage * fullStarHighlightedImage;
-@property(retain) UIImage * fullStarImage;
-@property(retain) UIImage * halfStarHighlightedImage;
-@property(retain) UIImage * halfStarImage;
-@property(getter=isHighlighted) BOOL highlighted;
-@property int numberOfRatingLevels;
-@property float rating;
-@property int starStyle;
+@property (nonatomic, retain) UIImage *emptyStarHighlightedImage;
+@property (nonatomic, retain) UIImage *emptyStarImage;
+@property (nonatomic, retain) UIImage *fullStarHighlightedImage;
+@property (nonatomic, retain) UIImage *fullStarImage;
+@property (nonatomic, retain) UIImage *halfStarHighlightedImage;
+@property (nonatomic, retain) UIImage *halfStarImage;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) int numberOfRatingLevels;
+@property (nonatomic) float rating;
+@property (nonatomic) int starStyle;
 
 - (void).cxx_destruct;
 - (void)_layoutStarViewsCreatingIfNeeded:(BOOL)arg1;

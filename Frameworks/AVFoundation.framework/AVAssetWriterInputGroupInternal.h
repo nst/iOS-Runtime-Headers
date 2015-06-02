@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInput, NSArray;
-
 @interface AVAssetWriterInputGroupInternal : NSObject {
     AVAssetWriterInput *defaultInput;
     NSArray *inputs;

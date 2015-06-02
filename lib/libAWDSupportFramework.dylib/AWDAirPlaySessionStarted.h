@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlaySessionStarted : PBCodable <NSCopying> {
     unsigned int _audioCompressionType;
     struct { 
@@ -20,18 +18,18 @@
     unsigned int _transportType;
 }
 
-@property unsigned int audioCompressionType;
-@property BOOL hasAudioCompressionType;
-@property BOOL hasInitiator;
-@property BOOL hasSessionType;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property unsigned int initiator;
-@property unsigned int sessionType;
-@property(retain) NSString * sessionUUID;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic) unsigned int audioCompressionType;
+@property (nonatomic) BOOL hasAudioCompressionType;
+@property (nonatomic) BOOL hasInitiator;
+@property (nonatomic) BOOL hasSessionType;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int initiator;
+@property (nonatomic) unsigned int sessionType;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (unsigned int)audioCompressionType;
 - (void)copyTo:(id)arg1;

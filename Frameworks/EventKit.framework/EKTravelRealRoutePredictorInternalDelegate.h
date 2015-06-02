@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString;
-
 @interface EKTravelRealRoutePredictorInternalDelegate : NSObject <GEORouteHypothesizerDelegate> {
     NSDate *_lastUpdateDate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSDate * lastUpdateDate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDate *lastUpdateDate;
+@property (readonly) Class superclass;
 
 - (id)lastUpdateDate;
 - (void)routeHypothesizer:(id)arg1 matchedToRoute:(id)arg2;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString, SPProtoCacheAssets;
-
 @interface SPProtoCacheSyncData : PBCodable <NSCopying> {
     NSString *_cacheIdentifier;
     SPProtoCacheAssets *_permanentCache;
     SPProtoCacheAssets *_transientCache;
 }
 
-@property(retain) NSString * cacheIdentifier;
-@property(retain) SPProtoCacheAssets * permanentCache;
-@property(retain) SPProtoCacheAssets * transientCache;
+@property (nonatomic, retain) NSString *cacheIdentifier;
+@property (nonatomic, retain) SPProtoCacheAssets *permanentCache;
+@property (nonatomic, retain) SPProtoCacheAssets *transientCache;
 
 - (void).cxx_destruct;
 - (id)cacheIdentifier;

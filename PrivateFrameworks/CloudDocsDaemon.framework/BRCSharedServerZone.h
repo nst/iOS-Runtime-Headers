@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCSharedLocalContainer, NSString;
-
 @interface BRCSharedServerZone : BRCServerZone {
     NSString *_mangledID;
     NSString *_ownerName;
 }
 
-@property(readonly) BRCSharedLocalContainer * container;
-@property(readonly) BOOL isPrivateContainer;
-@property(readonly) BOOL isSharedContainer;
-@property(readonly) NSString * mangledID;
+@property (nonatomic, readonly) BRCSharedLocalContainer *container;
+@property (nonatomic, readonly) BOOL isPrivateContainer;
+@property (nonatomic, readonly) BOOL isSharedContainer;
+@property (nonatomic, readonly) NSString *mangledID;
 
 - (void).cxx_destruct;
 - (id)asSharedZone;

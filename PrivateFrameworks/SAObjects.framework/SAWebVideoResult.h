@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SAWebVideoResult : SAWebImageResult
 
-@interface SAWebVideoResult : SAWebImageResult {
-}
-
-@property(copy) NSNumber * runTimeInMilliseconds;
+@property (nonatomic, copy) NSNumber *runTimeInMilliseconds;
 
 + (id)videoResult;
 + (id)videoResultWithDictionary:(id)arg1 context:(id)arg2;

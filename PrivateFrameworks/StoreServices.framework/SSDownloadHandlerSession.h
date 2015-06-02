@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
-
 @interface SSDownloadHandlerSession : SSDownloadSession {
     NSString *_downloadPhase;
     NSNumber *_duetTimeoutInterval;
@@ -11,8 +9,8 @@
 
 @property BOOL blocksOtherDownloads;
 @property BOOL canBePaused;
-@property(readonly) NSString * downloadPhase;
-@property(readonly) NSNumber * duetTimeoutInterval;
+@property (readonly) NSString *downloadPhase;
+@property (readonly) NSNumber *duetTimeoutInterval;
 @property BOOL needsPowerAssertion;
 
 - (void)_finishWithType:(int)arg1 error:(id)arg2;

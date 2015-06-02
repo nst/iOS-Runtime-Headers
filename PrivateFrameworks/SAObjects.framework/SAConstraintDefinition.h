@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAConstraintDefinition : AceObject <SAAceSerializable>
 
-@interface SAConstraintDefinition : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSArray * supportedValues;
-@property(copy) NSString * type;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedValues;
+@property (nonatomic, copy) NSString *type;
 
 + (id)constraintDefinition;
 + (id)constraintDefinitionWithDictionary:(id)arg1 context:(id)arg2;

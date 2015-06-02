@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABTabletStyleProvider : ABStyleProvider {
-}
+@interface ABTabletStyleProvider : ABStyleProvider
 
 - (int)abCellStyleForGroupsTablePlain;
 - (int)abCellStyleForMembersTable;

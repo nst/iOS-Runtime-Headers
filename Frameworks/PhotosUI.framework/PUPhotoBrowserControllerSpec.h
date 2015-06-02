@@ -2,25 +2,23 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAvalancheReviewControllerSpec;
-
 @interface PUPhotoBrowserControllerSpec : NSObject {
     PUAvalancheReviewControllerSpec *_avalancheReviewControllerSpec;
 }
 
-@property(readonly) PUAvalancheReviewControllerSpec * avalancheReviewControllerSpec;
-@property(readonly) BOOL isInCamera;
-@property(readonly) int photoThumbnailFormat;
-@property(readonly) BOOL shouldShowAirplayItem;
-@property(readonly) BOOL shouldShowBackButtonTitle;
-@property(readonly) BOOL shouldShowDeleteItem;
-@property(readonly) BOOL shouldShowEditItem;
-@property(readonly) BOOL shouldShowPhotoScrubber;
-@property(readonly) BOOL shouldShowShareItem;
-@property(readonly) BOOL shouldShowSlideshowItem;
-@property(readonly) unsigned int supportedInterfaceOrientations;
-@property(readonly) BOOL wantsCompactCommentsLayout;
-@property(readonly) BOOL wantsSubtitleForPhotobrowserTitleInLandscape;
+@property (nonatomic, readonly) PUAvalancheReviewControllerSpec *avalancheReviewControllerSpec;
+@property (nonatomic, readonly) BOOL isInCamera;
+@property (nonatomic, readonly) int photoThumbnailFormat;
+@property (nonatomic, readonly) BOOL shouldShowAirplayItem;
+@property (nonatomic, readonly) BOOL shouldShowBackButtonTitle;
+@property (nonatomic, readonly) BOOL shouldShowDeleteItem;
+@property (nonatomic, readonly) BOOL shouldShowEditItem;
+@property (nonatomic, readonly) BOOL shouldShowPhotoScrubber;
+@property (nonatomic, readonly) BOOL shouldShowShareItem;
+@property (nonatomic, readonly) BOOL shouldShowSlideshowItem;
+@property (nonatomic, readonly) unsigned int supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL wantsCompactCommentsLayout;
+@property (nonatomic, readonly) BOOL wantsSubtitleForPhotobrowserTitleInLandscape;
 
 - (void).cxx_destruct;
 - (id)avalancheReviewControllerSpec;

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, SAWebAcePicture;
+@interface SAWebImageResult : SAWebWebResult
 
-@interface SAWebImageResult : SAWebWebResult {
-}
-
-@property(copy) NSNumber * fileSize;
-@property(retain) SAWebAcePicture * picture;
-@property(copy) NSArray * thumbNails;
+@property (nonatomic, copy) NSNumber *fileSize;
+@property (nonatomic, retain) SAWebAcePicture *picture;
+@property (nonatomic, copy) NSArray *thumbNails;
 
 + (id)imageResult;
 + (id)imageResultWithDictionary:(id)arg1 context:(id)arg2;

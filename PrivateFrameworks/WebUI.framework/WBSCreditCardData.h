@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSString;
-
 @interface WBSCreditCardData : NSObject {
     NSString *_cardName;
     NSString *_cardNumber;
@@ -11,10 +9,10 @@
     NSDate *_expirationDate;
 }
 
-@property(copy) NSString * cardName;
-@property(copy) NSString * cardNumber;
-@property(copy) NSString * cardholderName;
-@property(copy,readonly) NSDate * expirationDate;
+@property (nonatomic, copy) NSString *cardName;
+@property (nonatomic, copy) NSString *cardNumber;
+@property (nonatomic, copy) NSString *cardholderName;
+@property (nonatomic, readonly, copy) NSDate *expirationDate;
 
 - (void).cxx_destruct;
 - (id)cardName;

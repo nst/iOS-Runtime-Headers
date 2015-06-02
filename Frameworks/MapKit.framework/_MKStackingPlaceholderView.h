@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSLayoutConstraint;
-
 @interface _MKStackingPlaceholderView : UIView {
     NSLayoutConstraint *_contentHeightConstraint;
 }
 
-@property float contentHeight;
+@property (nonatomic) float contentHeight;
 
 - (void).cxx_destruct;
 - (float)contentHeight;

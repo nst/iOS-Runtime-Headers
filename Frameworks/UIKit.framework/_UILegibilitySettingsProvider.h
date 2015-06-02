@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface _UILegibilitySettingsProvider : NSObject {
     float _accumulatedBrightness;
     float _accumulatedContrast;
@@ -20,19 +18,21 @@
     double _nextChangeBarrier;
 }
 
-@property float accumulatedBrightness;
-@property float accumulatedContrast;
-@property float accumulatedLuminance;
-@property float accumulatedSaturation;
-@property BOOL accumulatorIsPrimed;
-@property(retain) UIColor * contentColor;
-@property int currentStyle;
-@property BOOL hasContrast;
-@property float mostRecentBrightness;
-@property float mostRecentContrast;
-@property float mostRecentLuminance;
-@property float mostRecentSaturation;
-@property double nextChangeBarrier;
+@property (nonatomic) float accumulatedBrightness;
+@property (nonatomic) float accumulatedContrast;
+@property (nonatomic) float accumulatedLuminance;
+@property (nonatomic) float accumulatedSaturation;
+@property (nonatomic) BOOL accumulatorIsPrimed;
+@property (nonatomic, retain) UIColor *contentColor;
+@property (nonatomic) int currentStyle;
+@property (nonatomic) BOOL hasContrast;
+@property (nonatomic) float mostRecentBrightness;
+@property (nonatomic) float mostRecentContrast;
+@property (nonatomic) float mostRecentLuminance;
+@property (nonatomic) float mostRecentSaturation;
+@property (nonatomic) double nextChangeBarrier;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (int)styleForContentColor:(id)arg1;
 + (int)styleForContentColor:(id)arg1 contrast:(float)arg2;
@@ -54,8 +54,6 @@
 - (float)mostRecentLuminance;
 - (float)mostRecentSaturation;
 - (double)nextChangeBarrier;
-- (void)pl_primeForUseWithCameraOverlays;
-- (void)pl_primeForUseWithCameraOverlays;
 - (void)setAccumulatedBrightness:(float)arg1;
 - (void)setAccumulatedContrast:(float)arg1;
 - (void)setAccumulatedLuminance:(float)arg1;
@@ -70,5 +68,13 @@
 - (void)setMostRecentSaturation:(float)arg1;
 - (void)setNextChangeBarrier:(double)arg1;
 - (id)settings;
+
+// Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
+
+- (void)pl_primeForUseWithCameraOverlays;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (void)pl_primeForUseWithCameraOverlays;
 
 @end

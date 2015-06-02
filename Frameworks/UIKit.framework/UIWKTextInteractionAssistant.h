@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILongPressGestureRecognizer, UITapGestureRecognizer, UITextChecker, _UITextServiceSession;
-
 @interface UIWKTextInteractionAssistant : UITextInteractionAssistant {
     struct CGRect { 
         struct CGPoint { 
@@ -25,8 +23,8 @@
     NSString *_wordBeforeTap;
 }
 
-@property(retain,readonly) UILongPressGestureRecognizer * loupeGesture;
-@property(retain,readonly) UITapGestureRecognizer * singleTapGesture;
+@property (nonatomic, readonly, retain) UILongPressGestureRecognizer *loupeGesture;
+@property (nonatomic, readonly, retain) UITapGestureRecognizer *singleTapGesture;
 
 - (id)_asText;
 - (BOOL)containerAllowsSelection;

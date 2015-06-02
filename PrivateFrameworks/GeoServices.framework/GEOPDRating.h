@@ -15,14 +15,14 @@
     double _score;
 }
 
-@property BOOL hasMaxScore;
-@property BOOL hasNumRatingsUsedForScore;
-@property BOOL hasRatingType;
-@property BOOL hasScore;
-@property double maxScore;
-@property int numRatingsUsedForScore;
-@property int ratingType;
-@property double score;
+@property (nonatomic) BOOL hasMaxScore;
+@property (nonatomic) BOOL hasNumRatingsUsedForScore;
+@property (nonatomic) BOOL hasRatingType;
+@property (nonatomic) BOOL hasScore;
+@property (nonatomic) double maxScore;
+@property (nonatomic) int numRatingsUsedForScore;
+@property (nonatomic) int ratingType;
+@property (nonatomic) double score;
 
 + (id)ratingForPlaceData:(id)arg1 type:(int)arg2;
 

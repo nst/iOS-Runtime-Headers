@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAStockReference : SADomainObject
 
-@interface SAStockReference : SADomainObject {
-}
-
-@property(copy) NSString * companyName;
-@property(copy) NSString * symbol;
+@property (nonatomic, copy) NSString *companyName;
+@property (nonatomic, copy) NSString *symbol;
 
 + (id)reference;
 + (id)referenceWithDictionary:(id)arg1 context:(id)arg2;

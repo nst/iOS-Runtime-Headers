@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <GEOMapServiceTicket>, GEOMapRegion, GEOMapServiceTraits, NSArray, NSError, NSString;
-
 @interface _MKTicket : NSObject <MKMapServiceTicket> {
     NSError *_error;
     NSArray *_exactMapItems;
@@ -11,15 +9,15 @@
     <GEOMapServiceTicket> *_ticket;
 }
 
-@property(readonly) GEOMapRegion * boundingRegion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) NSArray * exactMapItems;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * refinedMapItems;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (nonatomic, readonly) GEOMapRegion *boundingRegion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSArray *exactMapItems;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *refinedMapItems;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
 - (void)applyToCorrectedSearch:(id)arg1;
@@ -30,12 +28,12 @@
 - (id)exactMapItems;
 - (id)initWithTicket:(id)arg1;
 - (id)refinedMapItems;
-- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 queue:(id)arg2 networkActivity:(id)arg3;
-- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
-- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 queue:(id)arg3 networkActivity:(id)arg4;
-- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id /* block */)arg1 queue:(id)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 queue:(id)arg3 networkActivity:(id /* block */)arg4;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
 - (id)traits;
 
 @end

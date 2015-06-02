@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPCompleteMyCollectionArtworkDataSource : MPAbstractNetworkArtworkDataSource {
-}
+@interface MPCompleteMyCollectionArtworkDataSource : MPAbstractNetworkArtworkDataSource
 
 - (int)_artworkTypeForCatalog:(id)arg1;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;

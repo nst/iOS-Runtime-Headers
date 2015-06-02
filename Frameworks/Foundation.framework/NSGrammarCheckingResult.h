@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
-
 @interface NSGrammarCheckingResult : NSTextCheckingResult {
     NSArray *_details;
     struct _NSRange { 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPDLocalizedString : PBCodable <NSCopying> {
     NSString *_locale;
     NSString *_stringValue;
 }
 
-@property(readonly) BOOL hasLocale;
-@property(readonly) BOOL hasStringValue;
-@property(retain) NSString * locale;
-@property(retain) NSString * stringValue;
+@property (nonatomic, readonly) BOOL hasLocale;
+@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic, retain) NSString *locale;
+@property (nonatomic, retain) NSString *stringValue;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

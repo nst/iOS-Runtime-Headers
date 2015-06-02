@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUClientInterface, SUOverlayBackgroundViewController, SUPreviewOverlayViewController, UITabBarController;
-
 @interface SULegacyClientBridge : NSObject <MFMailComposeViewControllerDelegate, SUOverlayBackgroundDelegate> {
     SUClientInterface *_clientInterface;
     SUOverlayBackgroundViewController *_overlayBackgroundViewController;
@@ -11,14 +9,14 @@
     UITabBarController *_rootViewController;
 }
 
-@property(readonly) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SUOverlayBackgroundViewController * overlayBackgroundViewController;
-@property(readonly) SUPreviewOverlayViewController * previewOverlayViewController;
-@property(retain) UITabBarController * rootViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SUOverlayBackgroundViewController *overlayBackgroundViewController;
+@property (nonatomic, readonly) SUPreviewOverlayViewController *previewOverlayViewController;
+@property (nonatomic, retain) UITabBarController *rootViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_previewOverlayViewController;

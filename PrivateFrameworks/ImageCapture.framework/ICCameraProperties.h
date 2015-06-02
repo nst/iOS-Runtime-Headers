@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface ICCameraProperties : NSObject {
     BOOL _accessRestrictedAppleDevice;
     BOOL _allowsSyncingClock;
@@ -39,24 +37,24 @@
 @property BOOL beingEjected;
 @property unsigned int contentCatalogPercentCompleted;
 @property BOOL contentReceived;
-@property(retain) NSMutableArray * contents;
+@property (retain) NSMutableArray *contents;
 @property int contentsLock;
-@property NSObject<OS_dispatch_semaphore> * deviceQSemaphore;
+@property NSObject<OS_dispatch_semaphore> *deviceQSemaphore;
 @property double downloadCancelTimestamp;
-@property NSObject<OS_dispatch_queue> * downloadQ;
+@property NSObject<OS_dispatch_queue> *downloadQ;
 @property BOOL ejectable;
 @property unsigned int estimatedNumberOfDownloadableItems;
-@property NSObject<OS_dispatch_queue> * generalQ;
+@property NSObject<OS_dispatch_queue> *generalQ;
 @property BOOL locked;
-@property(retain) NSMutableArray * mediaFiles;
+@property (retain) NSMutableArray *mediaFiles;
 @property int mediaFilesLock;
-@property NSObject<OS_dispatch_queue> * metadataFetchQ;
-@property(retain) NSMutableArray * notifyArray;
+@property NSObject<OS_dispatch_queue> *metadataFetchQ;
+@property (retain) NSMutableArray *notifyArray;
 @property unsigned int numberOfDownloadableItems;
-@property NSObject<OS_dispatch_queue> * thumbnailFetchQ;
+@property NSObject<OS_dispatch_queue> *thumbnailFetchQ;
 @property double timeOffset;
-@property(retain) NSMutableArray * toBeNotifiedAddedItems;
-@property(retain) NSString * volumePath;
+@property (retain) NSMutableArray *toBeNotifiedAddedItems;
+@property (retain) NSString *volumePath;
 
 - (BOOL)accessRestrictedAppleDevice;
 - (BOOL)allowsSyncingClock;

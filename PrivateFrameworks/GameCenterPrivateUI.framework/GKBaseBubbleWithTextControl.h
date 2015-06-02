@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSArray;
-
 @interface GKBaseBubbleWithTextControl : GKBubbleControl {
     NSArray *_labels;
     float _referenceZPosition;
     id _updateRasterizationScaleToken;
 }
 
-@property(retain) NSArray * labels;
-@property float referenceZPosition;
-@property(retain) id updateRasterizationScaleToken;
+@property (nonatomic, retain) NSArray *labels;
+@property (nonatomic) float referenceZPosition;
+@property (nonatomic, retain) id updateRasterizationScaleToken;
 
 - (id)_scaledTextStyle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSLock, NSObject, NSPersistentStore, NSString, PFUbiquityLocation;
-
 @interface PFUbiquityImportOperation : NSOperation {
     NSObject *_delegate;
     NSLock *_delegateLock;
@@ -14,11 +12,11 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
-@property NSObject * delegate;
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSPersistentStore * store;
-@property(readonly) NSString * storeName;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property NSObject *delegate;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) NSPersistentStore *store;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
 
 - (void)cancel;
 - (void)dealloc;

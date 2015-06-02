@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, NSString, NSURL, SKUIPassbookLoader, SKUIURL, SUMediaPlayerViewController, SUPlaceholderViewController, SUPreviewOverlayViewController, SUSectionsResponse, SUTabBarController, UINavigationController;
-
 @interface SUClientApplicationController : SUClientController <SKUIPassbookLoaderDelegate, SUTabBarControllerDelegate> {
     SUMediaPlayerViewController *_activeMediaPlayer;
     NSString *_exitStoreButtonTitle;
@@ -23,20 +21,20 @@
     SUTabBarController *_tabBarController;
 }
 
-@property(getter=_activeMediaPlayer,setter=_setActiveMediaPlayer:,retain) SUMediaPlayerViewController * _activeMediaPlayer;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSString * defaultPNGNameForSuspend;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * exitStoreButtonTitle;
-@property(readonly) unsigned int hash;
-@property(getter=isIgnoringDownloadQueueChanges,readonly) BOOL ignoringDownloadQueueChanges;
-@property(readonly) NSURL * launchURL;
-@property(getter=wasLaunchedFromLibrary,readonly) BOOL launchedFromLibrary;
-@property BOOL shouldPrepareUserInterfaceWhenActivated;
-@property(readonly) Class superclass;
-@property(readonly) SUTabBarController * tabBarController;
-@property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
-@property(readonly) UINavigationController * topNavigationController;
+@property (getter=_activeMediaPlayer, setter=_setActiveMediaPlayer:, nonatomic, retain) SUMediaPlayerViewController *_activeMediaPlayer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *defaultPNGNameForSuspend;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *exitStoreButtonTitle;
+@property (readonly) unsigned int hash;
+@property (getter=isIgnoringDownloadQueueChanges, nonatomic, readonly) BOOL ignoringDownloadQueueChanges;
+@property (nonatomic, readonly) NSURL *launchURL;
+@property (getter=wasLaunchedFromLibrary, nonatomic, readonly) BOOL launchedFromLibrary;
+@property (nonatomic) BOOL shouldPrepareUserInterfaceWhenActivated;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SUTabBarController *tabBarController;
+@property (getter=isTabBarControllerLoaded, nonatomic, readonly) BOOL tabBarControllerLoaded;
+@property (nonatomic, readonly) UINavigationController *topNavigationController;
 
 + (void)setSharedController:(id)arg1;
 + (id)sharedController;
@@ -57,7 +55,7 @@
 - (void)_handleFinishedLoadSectionsOperation:(id)arg1;
 - (void)_handleSearchURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)_handleSectionsLoadFailedWithError:(id)arg1;
-- (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)_newTabBarController;
 - (void)_openClientURL:(id)arg1;
 - (void)_presentSectionFetchUI;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@class NKIssue, NSArray, NSFileManager, NSMapTable, NSURL;
-
 @interface NKLibrary : NSObject {
     NSURL *_appSupportURL;
     NSArray *_assetsFromLaunch;
@@ -19,9 +17,9 @@
     int _savePending;
 }
 
-@property(retain) NKIssue * currentlyReadingIssue;
-@property(readonly) NSArray * downloadingAssets;
-@property(readonly) NSArray * issues;
+@property (retain) NKIssue *currentlyReadingIssue;
+@property (readonly) NSArray *downloadingAssets;
+@property (readonly) NSArray *issues;
 
 + (BOOL)_isNewsstandApp;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -41,7 +39,7 @@
 - (void)_load;
 - (void)_markAsDirtyAndSave;
 - (void)_markIssuesAndSave;
-- (void)_performBackgroundTask:(id)arg1 withDescription:(id)arg2;
+- (void)_performBackgroundTask:(id /* block */)arg1 withDescription:(id)arg2;
 - (void)_saveIfNeeded;
 - (void)_saveIfNeededAfterDelay:(double)arg1;
 - (void)_saveNowIfNeeded;

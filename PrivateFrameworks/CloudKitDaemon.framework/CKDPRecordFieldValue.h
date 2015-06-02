@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPAsset, CKDPDate, CKDPLocationCoordinate, CKDPPackage, CKDPRecordReference, NSData, NSMutableArray, NSString;
-
 @interface CKDPRecordFieldValue : PBCodable <NSCopying> {
     CKDPAsset *_assetValue;
     NSData *_bytesValue;
@@ -23,27 +21,27 @@
     int _type;
 }
 
-@property(retain) CKDPAsset * assetValue;
-@property(retain) NSData * bytesValue;
-@property(retain) CKDPDate * dateValue;
-@property double doubleValue;
-@property(readonly) BOOL hasAssetValue;
-@property(readonly) BOOL hasBytesValue;
-@property(readonly) BOOL hasDateValue;
-@property BOOL hasDoubleValue;
-@property(readonly) BOOL hasLocationValue;
-@property(readonly) BOOL hasPackageValue;
-@property(readonly) BOOL hasReferenceValue;
-@property BOOL hasSignedValue;
-@property(readonly) BOOL hasStringValue;
-@property BOOL hasType;
-@property(retain) NSMutableArray * listValues;
-@property(retain) CKDPLocationCoordinate * locationValue;
-@property(retain) CKDPPackage * packageValue;
-@property(retain) CKDPRecordReference * referenceValue;
-@property long long signedValue;
-@property(retain) NSString * stringValue;
-@property int type;
+@property (nonatomic, retain) CKDPAsset *assetValue;
+@property (nonatomic, retain) NSData *bytesValue;
+@property (nonatomic, retain) CKDPDate *dateValue;
+@property (nonatomic) double doubleValue;
+@property (nonatomic, readonly) BOOL hasAssetValue;
+@property (nonatomic, readonly) BOOL hasBytesValue;
+@property (nonatomic, readonly) BOOL hasDateValue;
+@property (nonatomic) BOOL hasDoubleValue;
+@property (nonatomic, readonly) BOOL hasLocationValue;
+@property (nonatomic, readonly) BOOL hasPackageValue;
+@property (nonatomic, readonly) BOOL hasReferenceValue;
+@property (nonatomic) BOOL hasSignedValue;
+@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSMutableArray *listValues;
+@property (nonatomic, retain) CKDPLocationCoordinate *locationValue;
+@property (nonatomic, retain) CKDPPackage *packageValue;
+@property (nonatomic, retain) CKDPRecordReference *referenceValue;
+@property (nonatomic) long long signedValue;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)_descriptionForType:(int)arg1;

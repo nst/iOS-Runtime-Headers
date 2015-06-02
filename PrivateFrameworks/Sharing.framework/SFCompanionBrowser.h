@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFCompanionBrowserDelegate>, <SFCompanionBrowserProtocol>, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface SFCompanionBrowser : NSObject <SFCompanionBrowserClient, SFCompanionXPCManagerObserver> {
     struct __SFBrowser { } *_browser;
     <SFCompanionBrowserProtocol> *_connectionProxy;
@@ -18,15 +16,15 @@
     NSMutableArray *_serviceTypes;
 }
 
-@property(retain) <SFCompanionBrowserProtocol> * connectionProxy;
-@property(copy,readonly) NSString * debugDescription;
-@property <SFCompanionBrowserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
+@property (retain) <SFCompanionBrowserProtocol> *connectionProxy;
+@property (readonly, copy) NSString *debugDescription;
+@property <SFCompanionBrowserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property BOOL foundDevices;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * identifier;
-@property(copy,readonly) NSString * serviceType;
-@property(readonly) Class superclass;
+@property (readonly) unsigned int hash;
+@property (retain) NSString *identifier;
+@property (readonly, copy) NSString *serviceType;
+@property (readonly) Class superclass;
 
 - (id)_initWithServiceTypes:(id)arg1;
 - (void)clearCache;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKVideoRecorderDelegate>, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMovieFileOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface CKVideoRecorder : UIViewController <AVCaptureFileOutputRecordingDelegate> {
     AVCaptureDeviceInput *_audioInput;
     NSObject<OS_dispatch_queue> *_avCaptureSessionDispatchQueue;
@@ -22,21 +20,21 @@
     AVCaptureMovieFileOutput *_videoOutput;
 }
 
-@property(retain) AVCaptureDeviceInput * audioInput;
-@property int cameraDevice;
-@property BOOL canceled;
-@property(retain) AVCaptureVideoPreviewLayer * captureVideoPreviewLayer;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKVideoRecorderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) AVCaptureDeviceInput * frontVideoInput;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * outputFileURL;
-@property(retain) AVCaptureDeviceInput * rearVideoInput;
-@property(retain) AVCaptureSession * session;
-@property(retain) AVCaptureStillImageOutput * stillImageOutput;
-@property(readonly) Class superclass;
-@property(retain) AVCaptureMovieFileOutput * videoOutput;
+@property (nonatomic, retain) AVCaptureDeviceInput *audioInput;
+@property (nonatomic) int cameraDevice;
+@property (nonatomic) BOOL canceled;
+@property (nonatomic, retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKVideoRecorderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) AVCaptureDeviceInput *frontVideoInput;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *outputFileURL;
+@property (nonatomic, retain) AVCaptureDeviceInput *rearVideoInput;
+@property (nonatomic, retain) AVCaptureSession *session;
+@property (nonatomic, retain) AVCaptureStillImageOutput *stillImageOutput;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) AVCaptureMovieFileOutput *videoOutput;
 
 - (id)_cameraWithPosition:(int)arg1;
 - (id)_configureFrontVideoInput;

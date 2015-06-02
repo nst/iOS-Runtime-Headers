@@ -2,11 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
     unsigned int _direction;
-    unsigned int _failed : 1;
+    unsigned int _failed;
     double _maximumDuration;
     float _maximumPrimaryMovement;
     float _maximumSecondaryMovement;
@@ -24,16 +22,16 @@
     NSMutableArray *_touches;
 }
 
-@property unsigned int direction;
-@property double maximumDuration;
-@property float maximumPrimaryMovement;
-@property float maximumSecondaryMovement;
-@property float minimumPrimaryMovement;
-@property float minimumSecondaryMovement;
-@property unsigned int numberOfTouchesRequired;
-@property float rateOfMaximumMovementDecay;
-@property float rateOfMinimumMovementDecay;
-@property(readonly) struct CGPoint { float x1; float x2; } startPoint;
+@property (nonatomic) unsigned int direction;
+@property (nonatomic) double maximumDuration;
+@property (nonatomic) float maximumPrimaryMovement;
+@property (nonatomic) float maximumSecondaryMovement;
+@property (nonatomic) float minimumPrimaryMovement;
+@property (nonatomic) float minimumSecondaryMovement;
+@property (nonatomic) unsigned int numberOfTouchesRequired;
+@property (nonatomic) float rateOfMaximumMovementDecay;
+@property (nonatomic) float rateOfMinimumMovementDecay;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
 
 - (void)_appendSubclassDescription:(id)arg1;
 - (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;

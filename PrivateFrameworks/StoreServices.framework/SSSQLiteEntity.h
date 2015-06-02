@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSSQLiteDatabase;
-
 @interface SSSQLiteEntity : NSObject <SSSQLiteEntity> {
     SSSQLiteDatabase *_database;
     long long _persistentID;
 }
 
-@property(readonly) SSSQLiteDatabase * database;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL existsInDatabase;
-@property(readonly) unsigned int hash;
-@property(readonly) long long persistentID;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SSSQLiteDatabase *database;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL existsInDatabase;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long persistentID;
+@property (readonly) Class superclass;
 
 + (id)_aggregateValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4;
 + (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPersistentID:(long long)arg3 database:(id)arg4;

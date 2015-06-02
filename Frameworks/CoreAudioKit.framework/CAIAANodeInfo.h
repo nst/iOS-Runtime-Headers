@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class NSMutableArray, UIColor;
-
 @interface CAIAANodeInfo : NSObject {
     UIColor *labelColor;
     NSMutableArray *nodeList;
 }
 
-@property(retain) UIColor * labelColor;
-@property(readonly) unsigned int numNodes;
+@property (retain) UIColor *labelColor;
+@property (readonly) unsigned int numNodes;
 
 - (void)createNodeList;
 - (id)init;

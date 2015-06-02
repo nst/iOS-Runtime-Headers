@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _MPRemoteCommandTarget : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
 }
 
-@property(copy) id block;
+@property (nonatomic, copy) id /* block */ block;
 
 - (void).cxx_destruct;
-- (id)block;
-- (id)initWithTargetBlock:(id)arg1;
+- (id /* block */)block;
+- (id)initWithTargetBlock:(id /* block */)arg1;
 - (int)invokeWithRemoteCommandEvent:(id)arg1;
-- (void)setBlock:(id)arg1;
+- (void)setBlock:(id /* block */)arg1;
 
 @end

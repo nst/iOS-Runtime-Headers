@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, UILabel;
-
 @interface MKPlaceAttributionCell : ABContactCell {
     UILabel *_label;
     NSArray *_marginConstraints;
     NSMutableArray *_scaledConstraints;
 }
 
-@property(retain) NSAttributedString * attributionString;
-@property(retain) UILabel * label;
-@property(retain) NSArray * marginConstraints;
-@property(retain) NSMutableArray * scaledConstraints;
+@property (nonatomic, retain) NSAttributedString *attributionString;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic, retain) NSMutableArray *scaledConstraints;
 
 + (id)fontForLabel;
 + (float)intrinsicContentHeight;

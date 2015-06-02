@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AVAudioSessionMediaPlayerOnly, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakKeyValueObserverProxy, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVPlayerInternal : NSObject {
     AVWeakKeyValueObserverProxy *KVOProxy;
     BOOL allowsOutOfBandTextTrackRendering;
@@ -43,11 +37,7 @@
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
     BOOL preparesItemsForPlaybackAsynchronously;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id prerollCompletionHandler;
-
+    id /* block */ prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
     struct OpaqueCMTimebase { } *proxyTimebase;

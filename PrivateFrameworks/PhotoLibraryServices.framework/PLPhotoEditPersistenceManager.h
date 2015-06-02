@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@interface PLPhotoEditPersistenceManager : NSObject
 
-@interface PLPhotoEditPersistenceManager : NSObject {
-}
-
-@property(readonly) NSString * latestFormatIdentifier;
-@property(readonly) NSString * latestFormatVersion;
+@property (nonatomic, readonly) NSString *latestFormatIdentifier;
+@property (nonatomic, readonly) NSString *latestFormatVersion;
 
 - (id)_allConverterClasses;
 - (id)_allImporterClasses;

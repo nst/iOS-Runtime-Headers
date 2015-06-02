@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView;
-
 @interface PLTVOutWindow : UIWindow {
     UIView *_backgroundView;
     UIView *_videoView;

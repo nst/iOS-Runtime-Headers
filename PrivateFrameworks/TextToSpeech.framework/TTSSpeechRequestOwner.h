@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class <TTSSpeechConnectionDelegate>, <TTSSpeechService>, NSString, TTSSpeechRequest;
-
 @interface TTSSpeechRequestOwner : NSObject <TTSSpeechRequestDelegate> {
     <TTSSpeechConnectionDelegate> *_delegate;
     TTSSpeechRequest *_request;
     <TTSSpeechService> *_speechService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <TTSSpeechConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) TTSSpeechRequest * request;
-@property <TTSSpeechService> * speechService;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TTSSpeechConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TTSSpeechRequest *request;
+@property (nonatomic) <TTSSpeechService> *speechService;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setRequest:(id)arg1;

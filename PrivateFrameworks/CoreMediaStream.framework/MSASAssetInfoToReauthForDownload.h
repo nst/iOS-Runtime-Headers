@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASAlbum, MSAsset;
-
 @interface MSASAssetInfoToReauthForDownload : NSObject {
     MSASAlbum *_album;
     MSAsset *_asset;
 }
 
-@property(retain) MSASAlbum * album;
-@property(retain) MSAsset * asset;
+@property (nonatomic, retain) MSASAlbum *album;
+@property (nonatomic, retain) MSAsset *asset;
 
 - (void).cxx_destruct;
 - (id)album;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UITextAttachmentPlaceholderView : UIView {
-}
+@interface _UITextAttachmentPlaceholderView : UIView
 
 - (void)dealloc;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;

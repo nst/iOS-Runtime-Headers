@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLFacebookAlbum : NSObject <NSSecureCoding> {
     BOOL _canUpload;
     int _count;
@@ -15,10 +13,10 @@
 
 @property BOOL canUpload;
 @property int count;
-@property(retain) NSString * coverPhotoIdentifier;
-@property(retain) NSString * identifier;
+@property (retain) NSString *coverPhotoIdentifier;
+@property (retain) NSString *identifier;
 @property BOOL isDefaultAlbum;
-@property(retain) NSString * name;
+@property (retain) NSString *name;
 
 + (id)albumWithDataDictionary:(id)arg1;
 + (id)albumsWithAlbumDataDictionaries:(id)arg1;

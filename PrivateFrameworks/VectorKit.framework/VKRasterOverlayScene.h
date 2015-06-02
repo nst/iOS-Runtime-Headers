@@ -6,7 +6,7 @@
     unsigned int _overlayLevel;
 }
 
-@property unsigned int overlayLevel;
+@property (nonatomic) unsigned int overlayLevel;
 
 - (unsigned int)overlayLevel;
 - (void)setOverlayLevel:(unsigned int)arg1;

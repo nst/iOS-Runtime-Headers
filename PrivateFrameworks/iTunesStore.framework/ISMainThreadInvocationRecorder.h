@@ -6,7 +6,7 @@
     BOOL _waitUntilDone;
 }
 
-@property BOOL waitUntilDone;
+@property (nonatomic) BOOL waitUntilDone;
 
 - (void)invokeInvocation:(id)arg1;
 - (void)setWaitUntilDone:(BOOL)arg1;

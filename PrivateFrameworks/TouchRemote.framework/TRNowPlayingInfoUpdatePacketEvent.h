@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSDictionary;
-
 @interface TRNowPlayingInfoUpdatePacketEvent : TRPacketEvent {
     NSDictionary *_nowPlayingInfo;
 }
 
-@property(copy,readonly) NSDictionary * nowPlayingInfo;
+@property (nonatomic, readonly, copy) NSDictionary *nowPlayingInfo;
 
 + (unsigned int)_packetEventType;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectModel, NSString, PFUbiquityLocation;
-
 @interface PFUbiquityMigrationManager : NSObject {
     NSManagedObjectModel *_destinationModel;
     NSString *_localPeerID;
@@ -11,9 +9,9 @@
     NSManagedObjectModel *_sourceModel;
 }
 
-@property(readonly) NSManagedObjectModel * destinationModel;
-@property(readonly) PFUbiquityLocation * rootLocation;
-@property(readonly) NSManagedObjectModel * sourceModel;
+@property (readonly) NSManagedObjectModel *destinationModel;
+@property (readonly) PFUbiquityLocation *rootLocation;
+@property (readonly) NSManagedObjectModel *sourceModel;
 
 - (void)dealloc;
 - (id)destinationModel;

@@ -2,8 +2,7 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@interface TZUtilities : NSObject {
-}
+@interface TZUtilities : NSObject
 
 + (BOOL)fileExistsAndIsSymbolicLinkAtURL:(id)arg1;
 + (id)hashForFileAtURL:(id)arg1 withError:(id*)arg2;

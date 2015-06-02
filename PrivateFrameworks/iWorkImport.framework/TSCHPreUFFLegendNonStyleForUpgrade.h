@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHPreUFFLegendNonStyleForUpgrade : TSCHPreUFFStyleStubForUpgrade {
-}
+@interface TSCHPreUFFLegendNonStyleForUpgrade : TSCHPreUFFStyleStubForUpgrade
 
 + (Class)realStyleClass;
 

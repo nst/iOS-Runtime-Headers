@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TNPlaceholderInfo : TSWPShapeInfo {
-}
+@interface TNPlaceholderInfo : TSWPShapeInfo
 
 - (id)initFromUnarchiver:(id)arg1;
 

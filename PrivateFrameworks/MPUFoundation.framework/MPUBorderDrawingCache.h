@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUBorderView, NSCache;
-
 @interface MPUBorderDrawingCache : NSObject {
     MPUBorderView *_borderView;
     float _displayScale;
     NSCache *_images;
 }
 
-@property float displayScale;
+@property (nonatomic) float displayScale;
 
 - (void).cxx_destruct;
 - (void)_applicationDidReceiveMemoryWarning:(id)arg1;

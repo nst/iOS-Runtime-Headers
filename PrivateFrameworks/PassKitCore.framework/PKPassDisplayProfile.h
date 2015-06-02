@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSData, PKColor;
-
 @interface PKPassDisplayProfile : PKDisplayProfile <NSCopying, NSSecureCoding> {
     PKColor *_backgroundColor;
     NSData *_backgroundHash;
@@ -19,21 +17,21 @@
     NSData *_thumbnailHash;
 }
 
-@property(retain) PKColor * backgroundColor;
-@property(retain) NSData * backgroundHash;
-@property(retain) PKColor * foregroundColor;
-@property(retain) NSData * iconHash;
-@property(retain) PKColor * labelColor;
-@property(readonly) int layoutMode;
-@property(retain) NSData * logoHash;
-@property int passStyle;
-@property(retain) NSData * paymentAssetsHash;
-@property(readonly) BOOL showsBackgroundImage;
-@property(readonly) BOOL showsStripImage;
-@property(retain) PKColor * stripColor;
-@property(retain) NSData * stripHash;
-@property BOOL tallCode;
-@property(retain) NSData * thumbnailHash;
+@property (nonatomic, retain) PKColor *backgroundColor;
+@property (nonatomic, retain) NSData *backgroundHash;
+@property (nonatomic, retain) PKColor *foregroundColor;
+@property (nonatomic, retain) NSData *iconHash;
+@property (nonatomic, retain) PKColor *labelColor;
+@property (nonatomic, readonly) int layoutMode;
+@property (nonatomic, retain) NSData *logoHash;
+@property (nonatomic) int passStyle;
+@property (nonatomic, retain) NSData *paymentAssetsHash;
+@property (nonatomic, readonly) BOOL showsBackgroundImage;
+@property (nonatomic, readonly) BOOL showsStripImage;
+@property (nonatomic, retain) PKColor *stripColor;
+@property (nonatomic, retain) NSData *stripHash;
+@property (nonatomic) BOOL tallCode;
+@property (nonatomic, retain) NSData *thumbnailHash;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@interface FollowerDetailsLinkCell : PSTableCell {
-}
+@interface FollowerDetailsLinkCell : PSTableCell
 
 + (int)cellStyle;
 

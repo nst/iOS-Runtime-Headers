@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDSaveUserPrivacySettingsOperation : CKDOperation {
     NSString *_applicationBundleID;
     int _discoverable;
 }
 
-@property(copy) NSString * applicationBundleID;
-@property int discoverable;
+@property (nonatomic, copy) NSString *applicationBundleID;
+@property (nonatomic) int discoverable;
 
 - (void).cxx_destruct;
 - (id)applicationBundleID;

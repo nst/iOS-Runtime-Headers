@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNPlaceholderRep : TSWPShapeRep {
-}
+@interface KNPlaceholderRep : TSWPShapeRep
 
 + (id)mixableObjectClasses;
 

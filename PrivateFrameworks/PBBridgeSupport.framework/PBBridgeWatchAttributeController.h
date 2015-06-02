@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NRDevice, NSCache;
-
 @interface PBBridgeWatchAttributeController : NSObject {
     NRDevice *_device;
     unsigned int _edition;
@@ -12,11 +10,11 @@
     NSCache *_stringCache;
 }
 
-@property(retain) NRDevice * device;
-@property(readonly) unsigned int edition;
-@property(readonly) int material;
-@property(readonly) unsigned int size;
-@property(retain) NSCache * stringCache;
+@property (nonatomic, retain) NRDevice *device;
+@property (nonatomic, readonly) unsigned int edition;
+@property (nonatomic, readonly) int material;
+@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, retain) NSCache *stringCache;
 
 + (id)editionDescription:(unsigned int)arg1;
 + (id)materialDescription:(int)arg1;

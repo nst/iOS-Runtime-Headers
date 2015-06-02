@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentVerificationEntryDelegate>, NSString, PKActivityTableCell, PKPaymentPass, PKPaymentWebService, UIImage;
-
 @interface PKPaymentVerificationEntryViewController : PKPaymentSetupTableViewController <UITextFieldDelegate> {
     NSString *_descriptionText;
     PKPaymentPass *_pass;
@@ -14,17 +12,17 @@
     PKActivityTableCell *_verificationCodeCell;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * descriptionText;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * passSnapshot;
-@property <PKPaymentVerificationEntryDelegate> * setupDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *descriptionText;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *passSnapshot;
+@property (nonatomic) <PKPaymentVerificationEntryDelegate> *setupDelegate;
+@property (readonly) Class superclass;
 
 - (void)_disableUI;
 - (void)_enableUI;
-- (void)_handleDownloadedPasses:(id)arg1 withCompletion:(id)arg2;
+- (void)_handleDownloadedPasses:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_secureElementID;
 - (void)_showActivationError:(id)arg1;
 - (void)_showCompletedUIForPass:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIStackedBarDelegate>, NSArray, UIView, _UIBackdropView;
-
 @interface SKUIStackedBar : UIView {
     BOOL _alwaysShowsBackButton;
     _UIBackdropView *_backdropView;
@@ -20,14 +18,14 @@
     BOOL _zeroHeightWhenFirstChildExpanded;
 }
 
-@property BOOL alwaysShowsBackButton;
-@property <SKUIStackedBarDelegate> * delegate;
-@property BOOL hidesStatusBar;
-@property(retain) NSArray * items;
-@property BOOL lastItemExpanded;
-@property float offset;
-@property BOOL splitViewStyle;
-@property BOOL zeroHeightWhenFirstChildExpanded;
+@property (nonatomic) BOOL alwaysShowsBackButton;
+@property <SKUIStackedBarDelegate> *delegate;
+@property (nonatomic) BOOL hidesStatusBar;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic) BOOL lastItemExpanded;
+@property (nonatomic) float offset;
+@property (nonatomic) BOOL splitViewStyle;
+@property (nonatomic) BOOL zeroHeightWhenFirstChildExpanded;
 
 - (void).cxx_destruct;
 - (void)_backAction:(id)arg1;

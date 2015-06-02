@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCancelSwipeToEditGestureRecognizer, GKCollectionViewCell, GKCollectionViewDataSource, NSIndexPath, NSString, UICollectionView, UIPanGestureRecognizer, _UIDynamicAnimation;
-
 @interface GKSwipeToEditStateMachine : GKStateMachine <GKSegmentedSectionDataSourceEventHandler, UIGestureRecognizerDelegate> {
     UICollectionView *_collectionView;
     int _debounce;
@@ -15,18 +13,18 @@
     float _startTrackingX;
 }
 
-@property(retain) UICollectionView * collectionView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) GKCancelSwipeToEditGestureRecognizer * editModeCancelRecognizer;
-@property(retain) GKCollectionViewCell * editingCell;
-@property(retain) GKCollectionViewDataSource * gkDataSource;
-@property(readonly) unsigned int hash;
-@property(retain) _UIDynamicAnimation * openAnimation;
-@property(retain) UIPanGestureRecognizer * panGestureRecognizer;
-@property float startTrackingX;
-@property(readonly) Class superclass;
-@property(readonly) NSIndexPath * trackedIndexPath;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) GKCancelSwipeToEditGestureRecognizer *editModeCancelRecognizer;
+@property (nonatomic, retain) GKCollectionViewCell *editingCell;
+@property (nonatomic, retain) GKCollectionViewDataSource *gkDataSource;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UIDynamicAnimation *openAnimation;
+@property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) float startTrackingX;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSIndexPath *trackedIndexPath;
 
 - (id)collectionView;
 - (void)dealloc;

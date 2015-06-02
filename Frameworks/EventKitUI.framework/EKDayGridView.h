@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCurrentTimeMarkerView, NSMutableArray, NSString, UIColor, UIImageView, UIView;
-
 @interface EKDayGridView : UIView <EKCurrentTimeMarkerViewUpdating> {
     BOOL _animatesTimeMarker;
     UIColor *_backgroundColor;
@@ -25,12 +23,12 @@
             float height; 
         } size; 
     } _lastBounds;
-    unsigned int _leftBorder : 1;
+    unsigned int _leftBorder;
     UIView *_leftBorderView;
     UIColor *_lineColor;
     NSMutableArray *_middleBorderViews;
     int _orientation;
-    unsigned int _rightBorder : 1;
+    unsigned int _rightBorder;
     BOOL _rightBorderInsetsOccurrences;
     UIView *_rightBorderView;
     int _selected;
@@ -44,31 +42,31 @@
     BOOL _usesVibrantGridDrawing;
 }
 
-@property BOOL animatesTimeMarker;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property float eventHorizontalInset;
-@property float fixedDayWidth;
-@property float gridHeightScale;
-@property(readonly) unsigned int hash;
-@property(readonly) float hourHeight;
-@property float hoursToPadBottom;
-@property float hoursToPadTop;
-@property(retain) UIColor * lineColor;
-@property BOOL rightBorderInsetsOccurrences;
-@property(getter=isSelected) BOOL selected;
-@property BOOL showsLeftBorder;
-@property BOOL showsRightBorder;
-@property BOOL showsTimeLine;
-@property BOOL showsTimeMarker;
-@property(readonly) Class superclass;
-@property(readonly) float timeInset;
-@property(readonly) EKCurrentTimeMarkerView * timeMarker;
-@property int timeMarkerDotDay;
-@property(readonly) float timeWidth;
-@property(readonly) float topPadding;
-@property BOOL usesVibrantGridDrawing;
-@property(readonly) float widthForOccurrences;
+@property (nonatomic) BOOL animatesTimeMarker;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float eventHorizontalInset;
+@property (nonatomic) float fixedDayWidth;
+@property (nonatomic) float gridHeightScale;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float hourHeight;
+@property (nonatomic) float hoursToPadBottom;
+@property (nonatomic) float hoursToPadTop;
+@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic) BOOL rightBorderInsetsOccurrences;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) BOOL showsLeftBorder;
+@property (nonatomic) BOOL showsRightBorder;
+@property (nonatomic) BOOL showsTimeLine;
+@property (nonatomic) BOOL showsTimeMarker;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float timeInset;
+@property (nonatomic, readonly) EKCurrentTimeMarkerView *timeMarker;
+@property (nonatomic) int timeMarkerDotDay;
+@property (nonatomic, readonly) float timeWidth;
+@property (nonatomic, readonly) float topPadding;
+@property (nonatomic) BOOL usesVibrantGridDrawing;
+@property (nonatomic, readonly) float widthForOccurrences;
 
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;

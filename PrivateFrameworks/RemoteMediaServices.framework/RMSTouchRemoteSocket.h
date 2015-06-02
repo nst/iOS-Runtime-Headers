@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSTouchRemoteSocketDelegate>, NSOutputStream, NSString;
-
 @interface RMSTouchRemoteSocket : NSObject <NSStreamDelegate> {
     <RMSTouchRemoteSocketDelegate> *_delegate;
     unsigned int _encryptionKey;
@@ -12,11 +10,11 @@
     unsigned int _port;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RMSTouchRemoteSocketDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RMSTouchRemoteSocketDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_encryptData:(id)arg1;

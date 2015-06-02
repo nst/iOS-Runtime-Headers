@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLTexture>, <MTLTextureImplementation>;
-
 @interface MTLRenderPassAttachmentDescriptor : NSObject <NSCopying> {
     struct MTLRenderPassAttachmentDescriptorPrivate { 
         <MTLTextureImplementation> *texture; 
@@ -29,20 +27,20 @@
     } _private;
 }
 
-@property unsigned int depthPlane;
-@property unsigned int level;
-@property unsigned int loadAction;
-@property unsigned int resolveDepthPlane;
-@property unsigned int resolveLevel;
-@property unsigned int resolveSlice;
-@property(retain) <MTLTexture> * resolveTexture;
-@property unsigned int slice;
-@property unsigned int storeAction;
-@property(retain) <MTLTexture> * texture;
+@property (nonatomic) unsigned int depthPlane;
+@property (nonatomic) unsigned int level;
+@property (nonatomic) unsigned int loadAction;
+@property (nonatomic) unsigned int resolveDepthPlane;
+@property (nonatomic) unsigned int resolveLevel;
+@property (nonatomic) unsigned int resolveSlice;
+@property (nonatomic, retain) <MTLTexture> *resolveTexture;
+@property (nonatomic) unsigned int slice;
+@property (nonatomic) unsigned int storeAction;
+@property (nonatomic, retain) <MTLTexture> *texture;
 
 + (id)attachmentDescriptor;
 
-- (const struct MTLRenderPassAttachmentDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; struct { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; } x7; double x8; unsigned int x9; id x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; }*)_descriptorPrivate;
+- (const struct MTLRenderPassAttachmentDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; double x7; unsigned int x8; id x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)_descriptorPrivate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)depthPlane;

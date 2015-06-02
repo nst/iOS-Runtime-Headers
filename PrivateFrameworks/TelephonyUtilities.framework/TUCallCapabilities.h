@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUCallCapabilities : NSObject {
-}
+@interface TUCallCapabilities : NSObject
 
 + (BOOL)_canEnableRelayCallingDefault;
 + (struct __CTServerConnection { }*)_createServerConnection;
@@ -11,7 +10,7 @@
 + (void)_initializeState;
 + (BOOL)_relayCallingEnabledDefault;
 + (BOOL)_relayCallingFeaturesEnabledDefault;
-+ (void)_sendNecessaryNotificationsAfterRunningBlock:(id)arg1;
++ (void)_sendNecessaryNotificationsAfterRunningBlock:(id /* block */)arg1;
 + (void)_setCTCapability:(struct __CFString { }*)arg1 value:(BOOL)arg2;
 + (void)_setCanEnableRelayCallingDefault:(BOOL)arg1;
 + (void)_setRelayCallingEnabledDefault:(BOOL)arg1;

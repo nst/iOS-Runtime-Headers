@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <MDRenderTarget>, VKAnchorContext, VKCamera, VKViewTransform;
-
 @interface VKLayoutContext : NSObject {
     VKAnchorContext *_anchorContext;
     VKCamera *_camera;
@@ -76,16 +74,16 @@
     float _z;
 }
 
-@property(retain) VKAnchorContext * anchorContext;
-@property(retain) VKCamera * defaultTrackingCamera;
-@property(readonly) BOOL hasOverlayInStencil;
-@property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
-@property(readonly) unsigned char stencilEnd;
-@property(readonly) unsigned char stencilStart;
-@property double timestamp;
-@property(retain) VKCamera * transitionCamera;
-@property int transitionMapMode;
-@property(retain) VKViewTransform * viewTransform;
+@property (nonatomic, retain) VKAnchorContext *anchorContext;
+@property (nonatomic, retain) VKCamera *defaultTrackingCamera;
+@property (nonatomic, readonly) BOOL hasOverlayInStencil;
+@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
+@property (nonatomic, readonly) unsigned char stencilEnd;
+@property (nonatomic, readonly) unsigned char stencilStart;
+@property (nonatomic) double timestamp;
+@property (nonatomic, retain) VKCamera *transitionCamera;
+@property (nonatomic) int transitionMapMode;
+@property (nonatomic, retain) VKViewTransform *viewTransform;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

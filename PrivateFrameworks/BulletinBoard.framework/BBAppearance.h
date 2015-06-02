@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBColor, BBImage, NSString;
-
 @interface BBAppearance : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     BBColor *_color;
     BBImage *_image;
@@ -13,16 +11,16 @@
     NSString *_viewClassName;
 }
 
-@property(copy) BBColor * color;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) BBImage * image;
-@property int style;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(copy) BBColor * titleColor;
-@property(copy) NSString * viewClassName;
+@property (nonatomic, copy) BBColor *color;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) BBImage *image;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) BBColor *titleColor;
+@property (nonatomic, copy) NSString *viewClassName;
 
 + (id)appearanceWithTitle:(id)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKReminderNotesInlineEditItem : EKReminderInlineEditItem {
-}
+@interface EKReminderNotesInlineEditItem : EKReminderInlineEditItem
 
 - (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (int)cellStyle;

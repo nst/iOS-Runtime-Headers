@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADStyleMatrixReference : NSObject <NSCopying> {
     OADColor *mColor;
     unsigned long mMatrixIndex;

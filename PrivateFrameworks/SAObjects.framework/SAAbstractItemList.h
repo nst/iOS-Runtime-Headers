@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber;
+@interface SAAbstractItemList : SADomainObject
 
-@interface SAAbstractItemList : SADomainObject {
-}
-
-@property(copy) NSArray * domainObjects;
-@property(copy) NSNumber * selectedIndex;
+@property (nonatomic, copy) NSArray *domainObjects;
+@property (nonatomic, copy) NSNumber *selectedIndex;
 
 + (id)abstractItemList;
 + (id)abstractItemListWithDictionary:(id)arg1 context:(id)arg2;

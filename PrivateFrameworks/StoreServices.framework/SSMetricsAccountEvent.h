@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSMetricsAccountEvent : SSMetricsBaseEvent
 
-@interface SSMetricsAccountEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) NSString * accountEventType;
+@property (nonatomic, retain) NSString *accountEventType;
 
 - (id)accountEventType;
 - (id)init;

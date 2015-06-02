@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MMCSServices.framework/MMCSServices
  */
 
-@class NSData, NSString, NSURL;
-
 @interface MMCSSimpleFile : NSObject {
     NSString *_authToken;
     int _encryptionBehavior;
@@ -19,18 +17,18 @@
     NSData *_signature;
 }
 
-@property(retain) NSString * authToken;
+@property (retain) NSString *authToken;
 @property int encryptionBehavior;
 @property int fd;
-@property(retain) NSData * fileHash;
-@property(retain) NSString * guid;
+@property (retain) NSData *fileHash;
+@property (retain) NSString *guid;
 @property unsigned long long itemID;
-@property(retain) NSString * localPath;
+@property (retain) NSString *localPath;
 @property double progress;
 @property unsigned long long protocolFileSize;
-@property(retain) NSURL * requestURL;
-@property(retain) NSString * requestorID;
-@property(retain) NSData * signature;
+@property (retain) NSURL *requestURL;
+@property (retain) NSString *requestorID;
+@property (retain) NSData *signature;
 
 - (id)authToken;
 - (void)dealloc;

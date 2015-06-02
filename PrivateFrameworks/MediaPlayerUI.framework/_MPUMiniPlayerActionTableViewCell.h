@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIImage, UIImageView;
-
 @interface _MPUMiniPlayerActionTableViewCell : UITableViewCell {
     UIImageView *_actionImageView;
     BOOL _showsSeparator;
 }
 
-@property(retain) UIImage * actionImage;
-@property BOOL showsSeparator;
+@property (nonatomic, retain) UIImage *actionImage;
+@property (nonatomic) BOOL showsSeparator;
 
 - (void).cxx_destruct;
 - (id)actionImage;

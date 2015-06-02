@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableData;
-
 @interface GEONetworkDataReader : NSObject {
     unsigned int _bookmarkOffset;
     const void *_bytes;

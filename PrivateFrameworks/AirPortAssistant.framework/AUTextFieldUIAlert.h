@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface AUTextFieldUIAlert : AUUIAlert {
-}
+@interface AUTextFieldUIAlert : AUUIAlert
 
 - (void)addTextField;
 - (void)prepareToShow;

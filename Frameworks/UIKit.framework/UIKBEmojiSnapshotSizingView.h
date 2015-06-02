@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIKBEmojiSnapshotSizingView : UIView {
     struct CGSize { 
         float width; 
@@ -12,7 +10,7 @@
     UIView *_snapshotView;
 }
 
-@property(readonly) UIView * snapshotView;
+@property (nonatomic, readonly) UIView *snapshotView;
 
 - (void)dealloc;
 - (id)initWithSnapshotView:(id)arg1;

@@ -7,13 +7,13 @@
     struct __CFDictionary { } *_map;
 }
 
-@property unsigned int count;
+@property (nonatomic) unsigned int count;
 
 - (void)addMediaType:(unsigned long)arg1 count:(unsigned int)arg2;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateMediaTypesWithBlock:(id)arg1;
+- (void)enumerateMediaTypesWithBlock:(id /* block */)arg1;
 - (id)init;
 - (void)setCount:(unsigned int)arg1;
 

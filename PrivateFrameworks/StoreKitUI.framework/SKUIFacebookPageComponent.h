@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIFacebookViewElement;
+@interface SKUIFacebookPageComponent : SKUIPageComponent
 
-@interface SKUIFacebookPageComponent : SKUIPageComponent {
-}
-
-@property(readonly) SKUIFacebookViewElement * viewElement;
+@property (nonatomic, readonly) SKUIFacebookViewElement *viewElement;
 
 - (int)componentType;
 - (id)initWithViewElement:(id)arg1;

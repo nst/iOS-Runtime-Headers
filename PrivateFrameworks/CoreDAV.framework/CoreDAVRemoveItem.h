@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem;
-
 @interface CoreDAVRemoveItem : CoreDAVItem {
     CoreDAVItem *_prop;
 }
 
-@property(retain) CoreDAVItem * prop;
+@property (nonatomic, retain) CoreDAVItem *prop;
 
 + (id)copyParseRules;
 

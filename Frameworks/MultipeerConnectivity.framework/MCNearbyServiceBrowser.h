@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class <MCNearbyServiceBrowserDelegate>, MCPeerID, NSMutableDictionary, NSNetServiceBrowser, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MCNearbyServiceBrowser : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     <MCNearbyServiceBrowserDelegate> *_delegate;
     NSString *_formattedServiceType;
@@ -19,22 +17,22 @@
     BOOL _wasBrowsing;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MCNearbyServiceBrowserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * formattedServiceType;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * invites;
-@property BOOL isBrowsing;
-@property(readonly) MCPeerID * myPeerID;
-@property(retain) NSMutableDictionary * netServices;
-@property(retain) NSNetServiceBrowser * networkBrowser;
-@property int outgoingInviteID;
-@property(retain) NSMutableDictionary * peers;
-@property(copy) NSString * serviceType;
-@property(readonly) Class superclass;
-@property(retain) NSObject<OS_dispatch_queue> * syncQueue;
-@property BOOL wasBrowsing;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MCNearbyServiceBrowserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *formattedServiceType;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *invites;
+@property (nonatomic) BOOL isBrowsing;
+@property (nonatomic, readonly) MCPeerID *myPeerID;
+@property (nonatomic, retain) NSMutableDictionary *netServices;
+@property (nonatomic, retain) NSNetServiceBrowser *networkBrowser;
+@property (nonatomic) int outgoingInviteID;
+@property (nonatomic, retain) NSMutableDictionary *peers;
+@property (nonatomic, copy) NSString *serviceType;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic) BOOL wasBrowsing;
 
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)applicationWillEnterForegroundNotification:(id)arg1;
@@ -86,8 +84,8 @@
 - (int)syncNextOutgoingInviteID;
 - (id)syncQueue;
 - (void)syncReceivedData:(id)arg1 fromPeer:(id)arg2;
-- (void)syncSendData:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)syncSendDictionary:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)syncSendData:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)syncSendDictionary:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)syncStartBrowsingForPeers;
 - (void)syncStopBrowsingForPeers;
 - (BOOL)wasBrowsing;

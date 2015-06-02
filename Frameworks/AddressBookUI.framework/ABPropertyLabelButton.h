@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyLabelButton : UIButton {
-}
+@interface ABPropertyLabelButton : UIButton
 
 + (id)propertyLabelButton;
 

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUINavigationBarViewElement;
+@interface SKUIChartsTemplateViewElement : SKUIViewElement
 
-@interface SKUIChartsTemplateViewElement : SKUIViewElement {
-}
-
-@property(readonly) NSArray * columns;
-@property(readonly) SKUINavigationBarViewElement * navigationBarElement;
+@property (nonatomic, readonly) NSArray *columns;
+@property (nonatomic, readonly) SKUINavigationBarViewElement *navigationBarElement;
 
 - (id)columns;
 - (id)navigationBarElement;

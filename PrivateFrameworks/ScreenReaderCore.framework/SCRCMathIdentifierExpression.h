@@ -6,7 +6,7 @@
     int _fontStyle;
 }
 
-@property(readonly) int fontStyle;
+@property (nonatomic, readonly) int fontStyle;
 
 - (BOOL)_isPrime;
 - (BOOL)canFormWordStartingWithExpression:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDGroupSelection : TSDDrawableSelection {
-}
+@interface TSDGroupSelection : TSDDrawableSelection
 
 + (Class)archivedSelectionClass;
 

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray;
-
 @interface TSWPImageBulletProvider : NSObject {
     NSMutableArray *_filenames;
     NSMutableArray *_images;
 }
 
-@property(readonly) NSArray * predefinedImages;
+@property (nonatomic, readonly) NSArray *predefinedImages;
 
 + (id)sharedInstance;
 

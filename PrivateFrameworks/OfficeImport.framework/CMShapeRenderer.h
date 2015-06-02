@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMShapeRenderer : NSObject {
-}
+@interface CMShapeRenderer : NSObject
 
 + (struct CGColor { }*)_copyCGColorFromOADColor:(id)arg1 andState:(id)arg2;
 + (struct CGColor { }*)_copyCGColorFromOADFill:(id)arg1 andState:(id)arg2;

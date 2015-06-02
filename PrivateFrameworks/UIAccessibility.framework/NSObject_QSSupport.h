@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface NSObject_QSSupport : __NSObject_QSSupport_super {
-}
+@interface NSObject_QSSupport : __NSObject_QSSupport_super
 
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;

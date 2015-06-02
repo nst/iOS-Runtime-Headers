@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSString, WBSParsecImageRepresentation;
-
 @interface WBSParsecSearchITunesResult : WBSParsecSearchResult {
     NSString *_descriptionFirstLine;
     NSString *_descriptionSecondLine;
@@ -17,12 +15,12 @@
     NSString *_rottenTomatoesText;
 }
 
-@property(readonly) NSString * descriptionFirstLine;
-@property(readonly) NSString * descriptionSecondLine;
-@property(readonly) double rating;
-@property(readonly) NSString * ratingText;
-@property(readonly) BOOL rottenTomatoesInformationOnSecondLine;
-@property(readonly) NSString * rottenTomatoesText;
+@property (nonatomic, readonly) NSString *descriptionFirstLine;
+@property (nonatomic, readonly) NSString *descriptionSecondLine;
+@property (nonatomic, readonly) double rating;
+@property (nonatomic, readonly) NSString *ratingText;
+@property (nonatomic, readonly) BOOL rottenTomatoesInformationOnSecondLine;
+@property (nonatomic, readonly) NSString *rottenTomatoesText;
 
 - (void).cxx_destruct;
 - (id)descriptionFirstLine;

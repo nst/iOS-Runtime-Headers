@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKPShieldVariant : PBCodable <NSCopying> {
     unsigned int _atlasIndex;
     unsigned int _backgroundColor;
@@ -82,50 +80,50 @@
     } _textStroke;
 }
 
-@property unsigned int atlasIndex;
-@property unsigned int backgroundColor;
-@property unsigned int borderColor;
-@property float capWidthLeft;
-@property float capWidthRight;
-@property float centerOffsetX;
-@property(readonly) float* centerPoints;
-@property(readonly) unsigned int centerPointsCount;
-@property struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; } fontColor;
-@property(retain) NSString * fontName;
-@property float fontSize;
-@property BOOL hasAtlasIndex;
-@property BOOL hasBackgroundColor;
-@property BOOL hasBorderColor;
-@property BOOL hasCapWidthLeft;
-@property BOOL hasCapWidthRight;
-@property BOOL hasCenterOffsetX;
-@property BOOL hasFontColor;
-@property(readonly) BOOL hasFontName;
-@property BOOL hasFontSize;
-@property BOOL hasMaxDigits;
-@property BOOL hasMinDigits;
-@property(readonly) BOOL hasNonDigitFontName;
-@property BOOL hasNonDigitFontSize;
-@property BOOL hasPaddingLeft;
-@property BOOL hasPaddingRight;
-@property BOOL hasQuadIndex;
-@property BOOL hasTextBaseline;
-@property BOOL hasTextMaskColor;
-@property BOOL hasTextShadow;
-@property BOOL hasTextStroke;
-@property(readonly) struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }* layers;
-@property(readonly) unsigned int layersCount;
-@property unsigned int maxDigits;
-@property unsigned int minDigits;
-@property(retain) NSString * nonDigitFontName;
-@property float nonDigitFontSize;
-@property float paddingLeft;
-@property float paddingRight;
-@property unsigned int quadIndex;
-@property float textBaseline;
-@property int textMaskColor;
-@property struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
-@property struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; } textStroke;
+@property (nonatomic) unsigned int atlasIndex;
+@property (nonatomic) unsigned int backgroundColor;
+@property (nonatomic) unsigned int borderColor;
+@property (nonatomic) float capWidthLeft;
+@property (nonatomic) float capWidthRight;
+@property (nonatomic) float centerOffsetX;
+@property (nonatomic, readonly) float*centerPoints;
+@property (nonatomic, readonly) unsigned int centerPointsCount;
+@property (nonatomic) struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; } fontColor;
+@property (nonatomic, retain) NSString *fontName;
+@property (nonatomic) float fontSize;
+@property (nonatomic) BOOL hasAtlasIndex;
+@property (nonatomic) BOOL hasBackgroundColor;
+@property (nonatomic) BOOL hasBorderColor;
+@property (nonatomic) BOOL hasCapWidthLeft;
+@property (nonatomic) BOOL hasCapWidthRight;
+@property (nonatomic) BOOL hasCenterOffsetX;
+@property (nonatomic) BOOL hasFontColor;
+@property (nonatomic, readonly) BOOL hasFontName;
+@property (nonatomic) BOOL hasFontSize;
+@property (nonatomic) BOOL hasMaxDigits;
+@property (nonatomic) BOOL hasMinDigits;
+@property (nonatomic, readonly) BOOL hasNonDigitFontName;
+@property (nonatomic) BOOL hasNonDigitFontSize;
+@property (nonatomic) BOOL hasPaddingLeft;
+@property (nonatomic) BOOL hasPaddingRight;
+@property (nonatomic) BOOL hasQuadIndex;
+@property (nonatomic) BOOL hasTextBaseline;
+@property (nonatomic) BOOL hasTextMaskColor;
+@property (nonatomic) BOOL hasTextShadow;
+@property (nonatomic) BOOL hasTextStroke;
+@property (nonatomic, readonly) struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
+@property (nonatomic, readonly) unsigned int layersCount;
+@property (nonatomic) unsigned int maxDigits;
+@property (nonatomic) unsigned int minDigits;
+@property (nonatomic, retain) NSString *nonDigitFontName;
+@property (nonatomic) float nonDigitFontSize;
+@property (nonatomic) float paddingLeft;
+@property (nonatomic) float paddingRight;
+@property (nonatomic) unsigned int quadIndex;
+@property (nonatomic) float textBaseline;
+@property (nonatomic) int textMaskColor;
+@property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
+@property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; } textStroke;
 
 - (struct Matrix<float, 4, 1> { float x1[4]; })_colorForMaskColor:(int)arg1 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg2;
 - (void)addCenterPoint:(float)arg1;

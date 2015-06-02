@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ACAccountStore, NSMutableDictionary, NSTimer;
-
 @interface ABRefreshController : NSObject {
     NSMutableDictionary *_accountGroupListsToRefreshByObserver;
     ACAccountStore *_accountStore;

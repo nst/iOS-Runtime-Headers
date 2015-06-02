@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class CDSession, NSString;
-
 @interface CDBudget : NSObject {
     unsigned long long _integerId;
     NSString *_name;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(readonly) unsigned long long integerId;
-@property(readonly) NSString * name;
-@property(readonly) CDSession * session;
-@property(readonly) int type;
+@property (readonly) unsigned long long integerId;
+@property (readonly) NSString *name;
+@property (readonly) CDSession *session;
+@property (readonly) int type;
 
 - (void).cxx_destruct;
 - (id)childBudgetWithName:(id)arg1 maxFraction:(double)arg2 type:(int)arg3 error:(id*)arg4;

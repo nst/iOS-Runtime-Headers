@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOURLConnectionSession;
-
 @interface GEOURLSessionConnection : NSObject {
     struct _CFURLConnection { } *_cfConnection;
     GEOURLConnectionSession *_connectionSession;

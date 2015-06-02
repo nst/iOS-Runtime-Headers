@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWGraph, NSMutableDictionary;
-
 @interface BWNodeEnumerator : NSEnumerator {
     unsigned int _depth;
     BWGraph *_graph;

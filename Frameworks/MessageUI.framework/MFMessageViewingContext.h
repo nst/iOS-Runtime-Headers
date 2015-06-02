@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMessageViewingContextDelegate>, MFActivityMonitor, MFAttachmentManager, MFError, MFLock, MFMailMessage, MFMessageBody, MFMimePart, NSArray, NSConditionLock, NSError, NSObject<MFMessageViewingContextDelegate>, NSObject<OS_dispatch_queue>, SGSuggestionsService;
-
 @interface MFMessageViewingContext : NSObject {
     MFAttachmentManager *_attachmentManager;
     MFMessageBody *_body;
@@ -11,21 +9,21 @@
     MFLock *_contentLock;
     unsigned int _contentOffset;
     NSObject<MFMessageViewingContextDelegate> *_delegate;
-    unsigned int _failedToLoad : 1;
-    unsigned int _hasNoContent : 1;
-    unsigned int _isDraftMessage : 1;
-    unsigned int _isEditableMessage : 1;
-    unsigned int _isOutgoingMessage : 1;
+    unsigned int _failedToLoad;
+    unsigned int _hasNoContent;
+    unsigned int _isDraftMessage;
+    unsigned int _isEditableMessage;
+    unsigned int _isOutgoingMessage;
     int _loadAlternative;
     unsigned int _loadIncrement;
     MFActivityMonitor *_loadTask;
-    unsigned int _loadedFullData : 1;
+    unsigned int _loadedFullData;
     MFMimePart *_loadedPart;
     MFMailMessage *_message;
     NSError *_messageAnalysisError;
     MFError *_secureMIMEError;
-    unsigned int _shouldAnalyzeMessage : 1;
-    unsigned int _showMailboxName : 1;
+    unsigned int _shouldAnalyzeMessage;
+    unsigned int _showMailboxName;
     NSArray *_signers;
     NSArray *_suggestions;
     NSConditionLock *_suggestionsLock;
@@ -33,30 +31,30 @@
     SGSuggestionsService *_suggestionsService;
 }
 
-@property(retain,readonly) MFAttachmentManager * attachmentManager;
-@property(retain) id content;
-@property unsigned int contentOffset;
-@property <MFMessageViewingContextDelegate> * delegate;
-@property(readonly) BOOL failedToLoad;
-@property(readonly) BOOL hasAnalyzedMessage;
-@property(readonly) BOOL hasLoaded;
-@property(readonly) BOOL hasNoContent;
-@property BOOL isDraftMessage;
-@property BOOL isEditableMessage;
-@property(readonly) BOOL isMessageEncrypted;
-@property(readonly) BOOL isMessageSigned;
-@property BOOL isOutgoingMessage;
-@property(readonly) BOOL isPartial;
-@property(retain,readonly) MFActivityMonitor * loadTask;
-@property(retain) MFMimePart * loadedPart;
-@property(retain,readonly) MFMailMessage * message;
-@property(retain) NSError * messageAnalysisError;
-@property(retain) MFMessageBody * messageBody;
-@property(retain) MFError * secureMimeError;
-@property BOOL shouldAnalyzeMessage;
-@property BOOL showMailboxName;
-@property(copy) NSArray * signers;
-@property(copy) NSArray * suggestions;
+@property (nonatomic, readonly, retain) MFAttachmentManager *attachmentManager;
+@property (nonatomic, retain) id content;
+@property (nonatomic) unsigned int contentOffset;
+@property (nonatomic) <MFMessageViewingContextDelegate> *delegate;
+@property (nonatomic, readonly) BOOL failedToLoad;
+@property (nonatomic, readonly) BOOL hasAnalyzedMessage;
+@property (nonatomic, readonly) BOOL hasLoaded;
+@property (nonatomic, readonly) BOOL hasNoContent;
+@property (nonatomic) BOOL isDraftMessage;
+@property (nonatomic) BOOL isEditableMessage;
+@property (nonatomic, readonly) BOOL isMessageEncrypted;
+@property (nonatomic, readonly) BOOL isMessageSigned;
+@property (nonatomic) BOOL isOutgoingMessage;
+@property (nonatomic, readonly) BOOL isPartial;
+@property (nonatomic, readonly, retain) MFActivityMonitor *loadTask;
+@property (nonatomic, retain) MFMimePart *loadedPart;
+@property (nonatomic, readonly, retain) MFMailMessage *message;
+@property (nonatomic, retain) NSError *messageAnalysisError;
+@property (nonatomic, retain) MFMessageBody *messageBody;
+@property (nonatomic, retain) MFError *secureMimeError;
+@property (nonatomic) BOOL shouldAnalyzeMessage;
+@property (nonatomic) BOOL showMailboxName;
+@property (nonatomic, copy) NSArray *signers;
+@property (nonatomic, copy) NSArray *suggestions;
 
 + (BOOL)isAttachmentTooLarge:(id)arg1;
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;

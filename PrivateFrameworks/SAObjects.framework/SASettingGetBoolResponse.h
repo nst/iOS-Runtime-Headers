@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetBoolResponse : SASettingGetValueResponse {
-}
+@interface SASettingGetBoolResponse : SASettingGetValueResponse
 
 + (id)getBoolResponse;
 + (id)getBoolResponseWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSMutableArray, NSMutableSet, NSString, OADBackground, OADTheme, WDCitationTable, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
-
 @interface WDDocument : OCDDocument {
-    unsigned int mAutoHyphenate : 1;
-    unsigned int mBookFold : 1;
-    unsigned int mBorderSurroundFooter : 1;
-    unsigned int mBorderSurroundHeader : 1;
+    unsigned int mAutoHyphenate;
+    unsigned int mBookFold;
+    unsigned int mBorderSurroundFooter;
+    unsigned int mBorderSurroundHeader;
     NSMutableArray *mChangeTrackingEditAuthors;
     NSMutableArray *mChangeTrackingEditDates;
     WDCitationTable *mCitationTable;
@@ -22,7 +20,7 @@
     int mEndnotePosition;
     int mEndnoteRestart;
     WDText *mEndnoteSeparator;
-    unsigned int mEvenAndOddHeaders : 1;
+    unsigned int mEvenAndOddHeaders;
     WDFontTable *mFontTable;
     WDText *mFootnoteContinuationNotice;
     WDText *mFootnoteContinuationSeparator;
@@ -36,25 +34,25 @@
     NSMutableArray *mImageBullets;
     NSString *mKinsokuAltBreakAfter;
     NSString *mKinsokuAltBreakBefore;
-    unsigned int mKinsokuStrict : 1;
+    unsigned int mKinsokuStrict;
     WDListDefinitionTable *mListDefinitionTable;
     WDListTable *mListTable;
-    unsigned int mMirrorMargins : 1;
+    unsigned int mMirrorMargins;
     NSDate *mModificationDate;
-    unsigned int mNoTabForHangingIndents : 1;
+    unsigned int mNoTabForHangingIndents;
     NSMutableSet *mObjPointers;
     NSString *mOleFilename;
     WDRevisionAuthorTable *mRevisionAuthorTable;
     NSMutableArray *mSections;
-    unsigned int mShowComments : 1;
-    unsigned int mShowFormatting : 1;
-    unsigned int mShowInsertionsAndDeletions : 1;
-    unsigned int mShowMarkup : 1;
-    unsigned int mShowOutline : 1;
-    unsigned int mShowRevisionMarksOnScreen : 1;
+    unsigned int mShowComments;
+    unsigned int mShowFormatting;
+    unsigned int mShowInsertionsAndDeletions;
+    unsigned int mShowMarkup;
+    unsigned int mShowOutline;
+    unsigned int mShowRevisionMarksOnScreen;
     WDStyleSheet *mStyleSheet;
     OADTheme *mTheme;
-    unsigned int mTrackChanges : 1;
+    unsigned int mTrackChanges;
     NSString *mVersion;
     short mZoomPercentage;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSISRestrictedToNonNegativeVariableToBeMinimized : NSISVariable {
-}
+@interface NSISRestrictedToNonNegativeVariableToBeMinimized : NSISVariable
 
 - (id)markedConstraint;
 - (BOOL)shouldBeMinimized;

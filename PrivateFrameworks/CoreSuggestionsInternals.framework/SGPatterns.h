@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray, NSCache, NSMutableSet, NSString;
-
 @interface SGPatterns : NSObject {
     NSString *_classKey;
     NSCache *_compiledRegexes2;

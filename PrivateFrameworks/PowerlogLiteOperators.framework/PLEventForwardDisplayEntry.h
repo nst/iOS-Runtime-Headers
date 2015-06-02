@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@interface PLEventForwardDisplayEntry : PLEntry {
-}
+@interface PLEventForwardDisplayEntry : PLEntry
 
 + (id)entryKey;
 + (void)load;

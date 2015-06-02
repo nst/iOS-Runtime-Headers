@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFLock;
-
 @interface MFWebKitMainThread : NSObject {
     struct __CFDictionary { } *_visibleDict;
     MFLock *_visibleDictLock;

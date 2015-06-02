@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKServerChangeToken;
-
 @interface CKFetchNotificationChangesOperationInfo : CKOperationInfo <NSSecureCoding> {
     CKServerChangeToken *_previousServerChangeToken;
     unsigned int _resultsLimit;
 }
 
-@property(retain) CKServerChangeToken * previousServerChangeToken;
-@property unsigned int resultsLimit;
+@property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic) unsigned int resultsLimit;
 
 + (BOOL)supportsSecureCoding;
 

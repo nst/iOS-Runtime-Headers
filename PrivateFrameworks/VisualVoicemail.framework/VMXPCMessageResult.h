@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSDictionary;
-
 @interface VMXPCMessageResult : NSObject {
     NSDictionary *_message;
     BOOL _wasSuccessful;
 }
 
-@property(retain) NSDictionary * message;
+@property (retain) NSDictionary *message;
 @property BOOL wasSuccessful;
 
 + (id)result;

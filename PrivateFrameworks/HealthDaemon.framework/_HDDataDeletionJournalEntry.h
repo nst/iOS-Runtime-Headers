@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HKObject;
-
 @interface _HDDataDeletionJournalEntry : HDJournalEntry {
     HKObject *_dataObject;
     BOOL _restrictSource;
 }
 
-@property(readonly) HKObject * dataObject;
-@property(readonly) BOOL restrictSource;
+@property (nonatomic, readonly) HKObject *dataObject;
+@property (nonatomic, readonly) BOOL restrictSource;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

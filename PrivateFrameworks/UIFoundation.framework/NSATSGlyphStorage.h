@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSATSGlyphStorage, NSATSTypesetter, NSString;
-
 @interface NSATSGlyphStorage : CTGlyphStorageInterface {
     long _bufferSize;
     struct _NSRange { 
@@ -26,7 +24,7 @@
         unsigned int length; 
     } _glyphRange;
     struct __CTGlyphStorage { } *_glyphStorage;
-    const struct { id x1; id x2; int x3; int x4; float x5; float x6; float x7; float x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 1; unsigned int x_10_1_5 : 1; unsigned int x_10_1_6 : 1; unsigned int x_10_1_7 : 1; unsigned int x_10_1_8 : 1; unsigned int x_10_1_9 : 24; } x10; } *_lastElasticRun;
+    const struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } *_lastElasticRun;
     long _lastElasticRunLocation;
     struct __CFArray { } *_masterRuns;
     long _numRuns;
@@ -34,7 +32,7 @@
     float _paraEndElasticCharWidth;
     NSATSGlyphStorage *_parent;
     long _runBufferSize;
-    struct { id x1; id x2; int x3; int x4; float x5; float x6; float x7; float x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 1; unsigned int x_10_1_5 : 1; unsigned int x_10_1_6 : 1; unsigned int x_10_1_7 : 1; unsigned int x_10_1_8 : 1; unsigned int x_10_1_9 : 24; } x10; } *_runs;
+    struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; } *_runs;
     struct { int x1; struct { unsigned short x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; int x_2_1_5; } x2[0]; } *_stack;
     NSString *_textString;
     long _totalAbsorbedCount;
@@ -43,7 +41,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (const struct { id x1; id x2; int x3; int x4; float x5; float x6; float x7; float x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct { unsigned int x_10_1_1 : 1; unsigned int x_10_1_2 : 1; unsigned int x_10_1_3 : 1; unsigned int x_10_1_4 : 1; unsigned int x_10_1_5 : 1; unsigned int x_10_1_6 : 1; unsigned int x_10_1_7 : 1; unsigned int x_10_1_8 : 1; unsigned int x_10_1_9 : 24; } x10; }*)_attributeRunForCharacterAtIndex:(long)arg1;
+- (const struct { id x1; int x2; int x3; float x4; float x5; float x6; float x7; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_8_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_8_1_2; } x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; unsigned int x_9_1_8 : 1; unsigned int x_9_1_9 : 24; } x9; }*)_attributeRunForCharacterAtIndex:(long)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_collectElasticRangeSurroundingCharacterAtIndex:(long)arg1 minimumCharacterIndex:(long)arg2;
 - (struct __CTRun { }*)_createEllipsisRunWithStringRange:(struct { int x1; int x2; })arg1 attributes:(struct __CFDictionary { }*)arg2;
 - (void)_flushCachedObjects;

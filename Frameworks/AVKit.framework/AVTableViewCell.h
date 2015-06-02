@@ -6,7 +6,7 @@
     id _representedObject;
 }
 
-@property(retain) id representedObject;
+@property (nonatomic, retain) id representedObject;
 
 - (void).cxx_destruct;
 - (id)representedObject;

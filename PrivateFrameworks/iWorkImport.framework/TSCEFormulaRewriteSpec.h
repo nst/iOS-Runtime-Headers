@@ -2,40 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSCEFormulaRewriteInfo_RowColumnInfo, TSCEFormulaRewriteTableResizedInfo, TSCEFormulaRewrite_RegionMergedInfo, TSCEFormulaRewrite_RegionMovedInfo, TSCETableTransposedInfo;
-
 @interface TSCEFormulaRewriteSpec : NSObject {
     struct __CFUUID { } *_conditionalStyleOwnerID;
-
-  /* Error parsing encoded ivar type info: (?="mTransposedInfo"@"TSCETableTransposedInfo""mTableResizedInfo"@"TSCEFormulaRewriteTableResizedInfo""mRowColumnInfo"@"TSCEFormulaRewriteInfo_RowColumnInfo""mRegionMovedInfo"@"TSCEFormulaRewrite_RegionMovedInfo""mMergeInfo"@"TSCEFormulaRewrite_RegionMergedInfo""mTableIDInfo"@"TSCERewriteTableIDInfo") */
-    union { 
+    /* Warning: unhandled union encoding: '(?="mTransposedInfo"@"TSCETableTransposedInfo""mTableResizedInfo"@"TSCEFormulaRewriteTableResizedInfo""mRowColumnInfo"@"TSCEFormulaRewriteInfo_RowColumnInfo""mRegionMovedInfo"@"TSCEFormulaRewrite_RegionMovedInfo""mMergeInfo"@"TSCEFormulaRewrite_RegionMergedInfo""mTableIDInfo"@"TSCERewriteTableIDInfo")' */ union { 
         TSCETableTransposedInfo *mTransposedInfo; 
         TSCEFormulaRewriteTableResizedInfo *mTableResizedInfo; 
         TSCEFormulaRewriteInfo_RowColumnInfo *mRowColumnInfo; 
         TSCEFormulaRewrite_RegionMovedInfo *mRegionMovedInfo; 
         TSCEFormulaRewrite_RegionMergedInfo *mMergeInfo; 
         id mTableIDInfo; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*TSCERewriteTableIDInfo; 
     } _info;
-
     struct __CFUUID { } *_tableID;
     int _type;
 }
 
-@property(readonly) struct __CFUUID { }* conditionalStyleOwnerID;
-@property(readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } conditionalStyleOwnerUID;
-@property(readonly) int rewriteType;
-@property(readonly) struct __CFUUID { }* tableID;
-@property(readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } tableUID;
+@property (nonatomic, readonly) struct __CFUUID { }*conditionalStyleOwnerID;
+@property (nonatomic, readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } conditionalStyleOwnerUID;
+@property (nonatomic, readonly) int rewriteType;
+@property (nonatomic, readonly) struct __CFUUID { }*tableID;
+@property (nonatomic, readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } tableUID;
 
 - (id).cxx_construct;
 - (struct __CFUUID { }*)affectedConditionalStyleOwnerID;
@@ -71,7 +56,7 @@
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })previousMergeAnchorForMergeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTableID:(struct __CFUUID { }*)arg2 isUndo:(BOOL)arg3;
 - (struct __CFUUID { }*)previousTableIDForUpdatedTableID:(struct __CFUUID { }*)arg1 updatedCellCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)reloadMergeIndexesForTable:(id)arg1;
-- (union { id x1; id x2; id x3; id x4; id x5; id x6; })rewriteInfo;
+- (union { id x1; id x2; id x3; })rewriteInfo;
 - (int)rewriteType;
 - (void)saveToArchive:(struct FormulaRewriteSpecArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct CFUUIDArchive {} *x5; struct CFUUIDArchive {} *x6; struct TableResizedInfoArchive {} *x7; struct TableTransposeInfoArchive {} *x8; struct ColumnOrRowUuidsInfoArchive {} *x9; struct RegionMovedInfoArchive {} *x10; struct RegionInfoArchive {} *x11; struct RewriteTableIDInfoArchive {} *x12; int x13; }*)arg1 archiver:(id)arg2;
 - (struct __CFUUID { }*)tableID;

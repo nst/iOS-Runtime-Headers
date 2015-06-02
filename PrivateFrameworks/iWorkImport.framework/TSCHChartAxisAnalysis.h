@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSCHChartAxisAnalysis : NSObject {
     double _dataSetModelMax;
     double _dataSetModelMin;
@@ -19,17 +17,17 @@
     NSArray *_totals;
 }
 
-@property double dataSetModelMax;
-@property double dataSetModelMin;
-@property(copy) NSArray * majorGridLocations;
-@property double max;
-@property double min;
-@property(copy) NSArray * minorGridLocations;
-@property double modelAverage;
-@property double modelMax;
-@property double modelMedian;
-@property double modelMin;
-@property(copy) NSArray * totals;
+@property (nonatomic) double dataSetModelMax;
+@property (nonatomic) double dataSetModelMin;
+@property (nonatomic, copy) NSArray *majorGridLocations;
+@property (nonatomic) double max;
+@property (nonatomic) double min;
+@property (nonatomic, copy) NSArray *minorGridLocations;
+@property (nonatomic) double modelAverage;
+@property (nonatomic) double modelMax;
+@property (nonatomic) double modelMedian;
+@property (nonatomic) double modelMin;
+@property (nonatomic, copy) NSArray *totals;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

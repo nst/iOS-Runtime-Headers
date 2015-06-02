@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class <YTCaptionsRequestDelegate>, NSMutableArray, YTVideo;
-
 @interface YTCaptionsRequest : YTXMLHTTPRequest {
     NSMutableArray *_captions;
     <YTCaptionsRequestDelegate> *_delegate;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPOIIconGenerator : NSObject {
-}
+@interface VKPOIIconGenerator : NSObject
 
 + (id)sharedGenerator;
 

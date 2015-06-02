@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface SFUJson : NSObject {
-}
+@interface SFUJson : NSObject
 
 + (id)arrayFromString:(id)arg1;
 + (id)dictionaryFromString:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MMCS.framework/MMCS
  */
 
-@class CDAttribute, NSNumber, NSObject;
-
 @interface MMCSDuetReporter : NSObject {
     CDAttribute *_attribute;
     NSObject *_value;

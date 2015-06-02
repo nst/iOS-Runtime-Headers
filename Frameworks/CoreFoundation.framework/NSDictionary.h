@@ -2,105 +2,347 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface NSDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
-@class NSArray, NSNumber, NSString;
+@property (nonatomic, readonly) float averageRating;
+@property (nonatomic, readonly) NSString *bundleId;
+@property (nonatomic, readonly) NSArray *categories;
+@property (readonly) unsigned int count;
+@property (nonatomic, readonly) NSString *creator;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned short fileHFSFlags;
+@property (nonatomic, readonly) unsigned long long fileHFSResourceForkSize;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) BOOL isOfficialApp;
+@property (nonatomic) unsigned long long lastClientRevision;
+@property (nonatomic) unsigned long long lastServerRevision;
+@property (nonatomic) unsigned long long newRevision;
+@property (readonly) NSString *npkRelevancyRelevantText;
+@property (readonly) NSString *npkRelevancyUniqueID;
+@property (nonatomic, readonly) NSString *priceFormatted;
+@property (nonatomic, readonly) unsigned int ratingCount;
+@property (nonatomic, readonly) NSNumber *storeID;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSArray *transitModeKeys;
+@property (nonatomic, readonly) NSString *url;
+@property (nonatomic, copy) NSString *versionToken;
 
-@interface NSDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, PQLBindable> {
-}
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
-@property(readonly) float averageRating;
-@property(readonly) NSString * bundleId;
-@property(readonly) NSArray * categories;
-@property(readonly) unsigned int count;
-@property(readonly) NSString * creator;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned short fileHFSFlags;
-@property(readonly) unsigned long long fileHFSResourceForkSize;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isInstalled;
-@property(readonly) BOOL isOfficialApp;
-@property unsigned long long lastClientRevision;
-@property unsigned long long lastServerRevision;
-@property unsigned long long newRevision;
-@property(readonly) NSString * npkRelevancyRelevantText;
-@property(readonly) NSString * npkRelevancyUniqueID;
-@property(readonly) NSString * priceFormatted;
-@property(readonly) unsigned int ratingCount;
-@property(readonly) NSNumber * storeID;
-@property(readonly) Class superclass;
-@property(readonly) NSString * title;
-@property(readonly) NSArray * transitModeKeys;
-@property(readonly) NSString * url;
-@property(copy) NSString * versionToken;
-
-+ (id)SLDictionaryWithOAuthAccessTokenResponseData:(id)arg1;
-+ (id)_dictionaryWithData:(id)arg1 isPlist:(BOOL)arg2 allowedClasses:(id)arg3;
-+ (id)_geo_dictionaryFromXPCObject:(id)arg1;
-+ (id)_geo_replyDictionaryForError:(id)arg1 key:(id)arg2;
-+ (id)_gkClientImageDictionaryForServerImageURLs:(id)arg1;
-+ (id)_gkDictionaryWithFormEncodedString:(id)arg1;
-+ (id)_gkImageCacheKeyPathsByKey;
-+ (Class)_hk_expectedClassForKey:(id)arg1;
-+ (BOOL)_hk_validateMetadataValueContent:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dictionary;
-+ (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryWithArchiveData:(id)arg1;
-+ (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
-+ (id)dictionaryWithContentsOfFile:(id)arg1;
-+ (id)dictionaryWithContentsOfFileForLocale:(struct __CFLocale { }*)arg1 inDirectory:(id)arg2 inBundle:(id)arg3;
-+ (id)dictionaryWithContentsOfURL:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1;
 + (id)dictionaryWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
-+ (id)dictionaryWithGlance:(id)arg1;
-+ (id)dictionaryWithKeyArray:(id)arg1 defaultValue:(id)arg2;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)dictionaryWithObjects:(id)arg1 forKeys:(id)arg2;
 + (id)dictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 + (id)dictionaryWithObjectsAndKeys:(id)arg1;
-+ (id)dictionaryWithParametersInURLString:(id)arg1;
-+ (id)dictionaryWithPlistData:(id)arg1;
++ (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
++ (id)sharedKeySetForKeys:(id)arg1;
++ (BOOL)supportsSecureCoding;
+
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
+- (BOOL)__getValue:(id*)arg1 forKey:(id)arg2;
+- (unsigned long)_cfTypeID;
+- (id)allKeys;
+- (id)allKeysForObject:(id)arg1;
+- (id)allObjects;
+- (id)allValues;
+- (BOOL)containsKey:(id)arg1;
+- (BOOL)containsObject:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)count;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countForKey:(id)arg1;
+- (unsigned int)countForObject:(id)arg1;
+- (id)description;
+- (id)descriptionWithLocale:(id)arg1;
+- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)getKeys:(id*)arg1;
+- (void)getObjects:(id*)arg1;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
+- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
+- (id)initWithObject:(id)arg1 forKey:(id)arg2;
+- (id)initWithObjects:(id)arg1 forKeys:(id)arg2;
+- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
+- (id)initWithObjectsAndKeys:(id)arg1;
+- (id)invertedDictionary;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToDictionary:(id)arg1;
+- (BOOL)isNSDictionary__;
+- (id)keyEnumerator;
+- (id)keyOfEntryPassingTest:(id /* block */)arg1;
+- (id)keyOfEntryWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)keysOfEntriesPassingTest:(id /* block */)arg1;
+- (id)keysOfEntriesWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)keysSortedByValueUsingComparator:(id /* block */)arg1;
+- (id)keysSortedByValueUsingSelector:(SEL)arg1;
+- (id)keysSortedByValueWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)objectEnumerator;
+- (id)objectForKey:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
+- (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
+- (id)mutableDeepAutoreleasedCopy;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
+- (int)abCompare:(id)arg1;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (void)CKAssignToContainerWithID:(id)arg1;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)dictionaryWithContentsOfFile:(id)arg1;
++ (id)dictionaryWithContentsOfURL:(id)arg1;
++ (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
++ (BOOL)supportsSecureCoding;
+
+- (id)_stringToWrite;
+- (int)_web_intForKey:(id)arg1;
+- (id)_web_numberForKey:(id)arg1;
+- (id)_web_objectForMIMEType:(id)arg1;
+- (id)_web_stringForKey:(id)arg1;
+- (Class)classForCoder;
+- (id)descriptionInStringsFileFormat;
+- (void)encodeWithCoder:(id)arg1;
+- (id)fileCreationDate;
+- (BOOL)fileExtensionHidden;
+- (id)fileGroupOwnerAccountID;
+- (id)fileGroupOwnerAccountName;
+- (unsigned int)fileGroupOwnerAccountNumber;
+- (unsigned long)fileHFSCreatorCode;
+- (unsigned long)fileHFSTypeCode;
+- (BOOL)fileIsAppendOnly;
+- (BOOL)fileIsImmutable;
+- (id)fileModificationDate;
+- (id)fileOwnerAccountID;
+- (id)fileOwnerAccountName;
+- (unsigned int)fileOwnerAccountNumber;
+- (unsigned int)filePosixPermissions;
+- (unsigned long long)fileSize;
+- (unsigned int)fileSystemFileNumber;
+- (int)fileSystemNumber;
+- (id)fileType;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithContentsOfFile:(id)arg1;
+- (id)initWithContentsOfURL:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (id)valueForKey:(id)arg1;
+- (id)valueForKeyPath:(id)arg1;
+- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
+- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (Class)_hk_expectedClassForKey:(id)arg1;
++ (BOOL)_hk_validateMetadataValueContent:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 + (id)hk_acceptedMetadataKeyClasses;
 + (id)hk_acceptedMetadataValueClasses;
 + (BOOL)hk_acceptsMetadataKey:(id)arg1;
 + (BOOL)hk_acceptsMetadataValue:(id)arg1;
-+ (id)hk_dictionaryWithCodableMetadata:(id)arg1;
 + (id)hk_secureCodingClasses;
-+ (id)newDictionaryWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
-+ (id)newWithContentsOf:(id)arg1 immutable:(BOOL)arg2;
-+ (id)npkRelevancyTupleWithUniqueID:(id)arg1 relevantText:(id)arg2;
-+ (id)sharedKeySetForKeys:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (BOOL)supportsSecureCoding;
-+ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
+
+- (BOOL)hk_validateMetadataKeysAndValuesWithError:(id*)arg1;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
+- (id)arrayForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
+- (id)calendarForKey:(id)arg1;
+- (id)calendarFromDataForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
+- (id)dateComponentsForKey:(id)arg1;
+- (id)dateComponentsFromDataForKey:(id)arg1;
+- (id)dateForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1;
+- (id)errorForKey:(id)arg1;
+- (id)errorFromDataForKey:(id)arg1;
+- (id)mutableArrayForKey:(id)arg1;
+- (id)mutableDictionaryForKey:(id)arg1;
+- (id)nsValueForKey:(id)arg1;
+- (id)nullForKey:(id)arg1;
+- (id)numberForKey:(id)arg1;
+- (id)shortDescription;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
+- (id)stringForKey:(id)arg1;
+- (id)timeZoneForKey:(id)arg1;
+- (id)timeZoneFromDataForKey:(id)arg1;
+- (id)uuidForKey:(id)arg1;
+- (id)uuidFromStringForKey:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_defaultOffer;
+- (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
+- (id)_ratingData;
+- (float)averageRating;
+- (id)bestImageURLForWidth:(float)arg1;
+- (id)bundleId;
+- (id)categories;
+- (id)creator;
+- (BOOL)isInstalled;
+- (BOOL)isOfficialApp;
+- (id)priceFormatted;
+- (unsigned int)ratingCount;
+- (id)storeID;
+- (id)title;
+- (id)transitModeKeys;
+- (id)url;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)mf_filterUsingMap:(id)arg1 inverse:(BOOL)arg2;
+
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
 - (struct KeyValueArray { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; unsigned int x3; struct Object {} *x4[1]; }*)CA_copyRenderKeyValueArray;
+- (void)encodeWithCAMLWriter:(id)arg1;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
+- (id)SCNMutableDeepCopy;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (id)SLDictionaryWithOAuthAccessTokenResponseData:(id)arg1;
++ (id)dictionaryWithParametersInURLString:(id)arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)_boolForKey:(id)arg1;
+- (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
+- (BOOL)_ui_dictionaryContainsUIStringDrawingKeys;
+- (int)_web_messageLineNumber;
+- (id)_web_messageSourceURL;
+- (id)_web_messageText;
+- (int)_web_messageType;
+
+// Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
+
+- (int)ssidAndBaseNameLocalizedCaseInsensitiveCompare:(id)arg1;
+- (int)ssidLocalizedCaseInsensitiveCompare:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
+
+- (id)displayName;
+- (id)enabledDataClasses;
+- (id)grappaInfo;
+- (unsigned long long)lastClientRevision;
+- (unsigned long long)lastServerRevision;
+- (id)model;
+- (unsigned long long)newRevision;
+- (id)osVersion;
+- (void)setDisplayName:(id)arg1;
+- (void)setEnabledDataClasses:(id)arg1;
+- (void)setGrappaInfo:(id)arg1;
+- (void)setLastClientRevision:(unsigned long long)arg1;
+- (void)setLastServerRevision:(unsigned long long)arg1;
+- (void)setModel:(id)arg1;
+- (void)setNewRevision:(unsigned long long)arg1;
+- (void)setOsVersion:(id)arg1;
+- (void)setVersionToken:(id)arg1;
+- (id)versionToken;
+
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
+- (void)bs_eachValue:(id /* block */)arg1;
+- (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
+
+- (id)mutableCopyWithElementsCopy;
+
+// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
+
+- (BOOL)CalHasKeyIn:(id)arg1;
+- (id)CalMutableRecursiveCopy;
+- (id)filteredDictionaryPassingTest:(id /* block */)arg1;
+- (id)mutableCopyWithElementsCopy;
+
+// Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
+
+- (BOOL)bw_containsBuiltInMicAsAnInput;
+- (id)bw_dataSourceDictionaryForDesiredMicOrientation:(unsigned long)arg1;
+- (unsigned long)bw_optimalMicPolarPattern;
+- (BOOL)matchesUID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)CKObjectForKeyCaseInsensitive:(id)arg1;
+- (id)CKPercentEscapedQueryString;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
+
+- (id)initWithCPLArchiver:(id)arg1;
+- (id)plistArchiveWithCPLArchiver:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (id)__ftreg_candidateAliases;
+- (BOOL)__ftreg_isValidSetupDictionary;
+- (id)__ftreg_responseAppleID;
+- (id)__ftreg_responseAuthToken;
+- (BOOL)__ftreg_responseIsUpgrade;
+- (id)__ftreg_responseProfileID;
+
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
+
 - (id)CDVMergeOverrideDictionary:(id)arg1;
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
-- (void)CKAssignToContainerWithID:(id)arg1;
-- (id)CKObjectForKeyCaseInsensitive:(id)arg1;
-- (id)CKPercentEscapedQueryString;
-- (BOOL)CalHasKeyIn:(id)arg1;
-- (id)CalMutableRecursiveCopy;
-- (id)DAMergeOverrideDictionary:(id)arg1;
-- (id)DAObjectForKeyCaseInsensitive:(id)arg1;
-- (id)MCDeepCopy;
-- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MCMutableDeepCopy;
-- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
-- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
-- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
-- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
-- (id)ML3StringForKey:(id)arg1;
-- (BOOL)MR_isEqualToNowPlayingInfo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+
+- (id)arrayForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1;
+- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
+- (id)calendarForKey:(id)arg1;
+- (id)calendarFromDataForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
+- (id)dateComponentsForKey:(id)arg1;
+- (id)dateComponentsFromDataForKey:(id)arg1;
+- (id)dateForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1;
+- (id)errorForKey:(id)arg1;
+- (id)errorFromDataForKey:(id)arg1;
+- (id)mutableArrayForKey:(id)arg1;
+- (id)mutableDictionaryForKey:(id)arg1;
+- (id)nsValueForKey:(id)arg1;
+- (id)nullForKey:(id)arg1;
+- (id)numberForKey:(id)arg1;
+- (id)shortDescription;
+- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
+- (id)stringForKey:(id)arg1;
+- (id)timeZoneForKey:(id)arg1;
+- (id)timeZoneFromDataForKey:(id)arg1;
+- (id)uuidForKey:(id)arg1;
+- (id)uuidFromStringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
+
 - (id)MSASAlbumResetSyncAlbumGUID;
 - (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
 - (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
@@ -112,6 +354,131 @@
 - (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
+- (id)DAMergeOverrideDictionary:(id)arg1;
+- (id)DAObjectForKeyCaseInsensitive:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
+
+- (id)_FTFilteredDictionaryForAPS;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
++ (id)_gkClientImageDictionaryForServerImageURLs:(id)arg1;
++ (id)_gkDictionaryWithFormEncodedString:(id)arg1;
++ (id)_gkImageCacheKeyPathsByKey;
+
+- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
+- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
+- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2;
+- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
+- (id)_gkSubDictionaryWithKeys:(id)arg1;
+- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
+- (id)_gkValuesForKeys:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
+
+- (id)deepCopy;
+- (id)gksDeepMutableCopy;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_dictionaryFromXPCObject:(id)arg1;
++ (id)_geo_replyDictionaryForError:(id)arg1 key:(id)arg2;
+
+- (id)_geo_errorForKey:(id)arg1;
+- (id)_geo_newXPCObject;
+- (id)_placeOrCurrentLocation:(BOOL*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)hk_dictionaryWithCodableMetadata:(id)arg1;
+
+- (id)hk_codableMetadata;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
++ (id)_dictionaryWithData:(id)arg1 isPlist:(BOOL)arg2 allowedClasses:(id)arg3;
++ (id)dictionaryWithArchiveData:(id)arg1;
++ (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
++ (id)dictionaryWithKeyArray:(id)arg1 defaultValue:(id)arg2;
++ (id)dictionaryWithPlistData:(id)arg1;
+
+- (id)__imDeepCopy;
+- (BOOL)__imIsMutable;
+- (id)_arrayForKey:(id)arg1;
+- (id)_dataForKey:(id)arg1;
+- (id)_dictionaryForKey:(id)arg1;
+- (id)_numberForKey:(id)arg1;
+- (id)_stringForKey:(id)arg1;
+- (id)archiveData;
+- (id)dictionaryFromChanges:(id)arg1;
+- (unsigned short)fileHFSFlags;
+- (unsigned long long)fileHFSResourceForkSize;
+- (id)keysOfChangedEntriesComparedTo:(id)arg1;
+- (id)plistData;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+
+- (id)MCDeepCopy;
+- (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)MCMutableDeepCopy;
+- (id)MCMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)MCRetainOptionalNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 invalidDataCode:(int)arg3 invalidDataErrorString:(id)arg4 outError:(id*)arg5;
+- (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
+- (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
+- (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
+
+// Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
+
+- (BOOL)MR_isEqualToNowPlayingInfo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
+- (BOOL)mf_boolForKey:(id)arg1;
+- (int)mf_integerForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
+
+- (id)ML3StringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoGlanceSettings.framework/NanoGlanceSettings
+
++ (id)dictionaryWithGlance:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
++ (id)npkRelevancyTupleWithUniqueID:(id)arg1 relevantText:(id)arg2;
+
+- (id)npkRelevancyRelevantText;
+- (id)npkRelevancyUniqueID;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (id)dictionaryByInvertingDictionary:(id)arg1;
+
+- (void)appendJsonStringToString:(id)arg1;
+- (BOOL)boolValueForKey:(id)arg1;
+- (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
+
+- (id)prs_URLForKey:(id)arg1;
+- (id)prs_arrayForKey:(id)arg1;
+- (BOOL)prs_boolForKey:(id)arg1;
+- (id)prs_dataForKey:(id)arg1;
+- (id)prs_dateForKey:(id)arg1;
+- (id)prs_dictionaryForKey:(id)arg1;
+- (float)prs_floatForKey:(id)arg1;
+- (int)prs_intForKey:(id)arg1;
+- (int)prs_integerForKey:(id)arg1;
+- (id)prs_numberForKey:(id)arg1;
+- (id)prs_stringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
 - (id)PKArrayContaining:(Class)arg1 forKey:(id)arg2;
 - (id)PKArrayForKey:(id)arg1;
 - (BOOL)PKBoolForKey:(id)arg1;
@@ -127,70 +494,9 @@
 - (id)PKStringForKey:(id)arg1;
 - (id)PKURLForKey:(id)arg1;
 - (id)PKUUIDForKey:(id)arg1;
-- (id)SCNMutableDeepCopy;
-- (id)_FTFilteredDictionaryForAPS;
-- (void)__apply:(int (*)())arg1 context:(void*)arg2;
-- (id)__ftreg_candidateAliases;
-- (BOOL)__ftreg_isValidSetupDictionary;
-- (id)__ftreg_responseAppleID;
-- (id)__ftreg_responseAuthToken;
-- (BOOL)__ftreg_responseIsUpgrade;
-- (id)__ftreg_responseProfileID;
-- (BOOL)__getValue:(id*)arg1 forKey:(id)arg2;
-- (id)__imDeepCopy;
-- (BOOL)__imIsMutable;
-- (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3;
-- (id)_arrayForKey:(id)arg1;
-- (BOOL)_boolForKey:(id)arg1;
-- (unsigned long)_cfTypeID;
-- (id)_dataForKey:(id)arg1;
-- (id)_defaultOffer;
-- (id)_dictionaryForKey:(id)arg1;
-- (id)_geo_errorForKey:(id)arg1;
-- (id)_geo_newXPCObject;
-- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
-- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
-- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2;
-- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
-- (id)_gkSubDictionaryWithKeys:(id)arg1;
-- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
-- (id)_gkValuesForKeys:(id)arg1;
-- (BOOL)_mapkit_writeBinaryPlist:(id)arg1 atomically:(BOOL)arg2;
-- (id)_numberForKey:(id)arg1;
-- (id)_objectOfKind:(Class)arg1 forKeyPath:(id)arg2;
-- (id)_placeOrCurrentLocation:(BOOL*)arg1;
-- (id)_ratingData;
-- (id)_sa_mappedDictionaryWithBlock:(id)arg1;
-- (id)_stringForKey:(id)arg1;
-- (id)_stringToWrite;
-- (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
-- (BOOL)_ui_dictionaryContainsUIStringDrawingKeys;
-- (int)_web_intForKey:(id)arg1;
-- (int)_web_messageLineNumber;
-- (id)_web_messageSourceURL;
-- (id)_web_messageText;
-- (int)_web_messageType;
-- (id)_web_numberForKey:(id)arg1;
-- (id)_web_objectForMIMEType:(id)arg1;
-- (id)_web_stringForKey:(id)arg1;
-- (id)_webkit_arrayForKey:(id)arg1;
-- (BOOL)_webkit_boolForKey:(id)arg1;
-- (int)_webkit_intForKey:(id)arg1;
-- (id)_webkit_numberForKey:(id)arg1;
-- (id)_webkit_objectForMIMEType:(id)arg1;
-- (id)_webkit_stringForKey:(id)arg1;
-- (int)abCompare:(id)arg1;
-- (id)allKeys;
-- (id)allKeysForObject:(id)arg1;
-- (id)allObjects;
-- (id)allValues;
-- (void)appendJsonStringToString:(id)arg1;
-- (id)archiveData;
-- (id)arrayForKey:(id)arg1;
-- (id)arrayForKey:(id)arg1;
-- (id)asQueryParameterString;
-- (float)averageRating;
-- (id)bestImageURLForWidth:(float)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
+
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })bl_affineTransformForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
@@ -214,179 +520,72 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)blj_dictionaryByRemovingValuesForKey:(id)arg1;
-- (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (BOOL)boolValueForKey:(id)arg1;
-- (void)bs_eachValue:(id)arg1;
-- (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
-- (id)bundleId;
-- (BOOL)bw_containsBuiltInMicAsAnInput;
-- (id)bw_dataSourceDictionaryForDesiredMicOrientation:(unsigned long)arg1;
-- (unsigned long)bw_optimalMicPolarPattern;
-- (id)calendarForKey:(id)arg1;
-- (id)calendarForKey:(id)arg1;
-- (id)calendarFromDataForKey:(id)arg1;
-- (id)calendarFromDataForKey:(id)arg1;
-- (id)categories;
-- (Class)classForCoder;
-- (BOOL)containsKey:(id)arg1;
-- (BOOL)containsObject:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (unsigned int)countForKey:(id)arg1;
-- (unsigned int)countForObject:(id)arg1;
-- (id)creator;
-- (id)dataForKey:(id)arg1;
-- (id)dataForKey:(id)arg1;
-- (id)dateComponentsForKey:(id)arg1;
-- (id)dateComponentsForKey:(id)arg1;
-- (id)dateComponentsFromDataForKey:(id)arg1;
-- (id)dateComponentsFromDataForKey:(id)arg1;
-- (id)dateForKey:(id)arg1;
-- (id)dateForKey:(id)arg1;
-- (id)deepCopy;
-- (id)description;
-- (id)descriptionInStringsFileFormat;
-- (id)descriptionSingleLine;
-- (id)descriptionWithLocale:(id)arg1;
-- (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
+
 - (id)dictionaryChanging:(id)arg1 to:(id)arg2;
-- (id)dictionaryForKey:(id)arg1;
-- (id)dictionaryForKey:(id)arg1;
-- (id)dictionaryFromChanges:(id)arg1;
-- (id)displayName;
-- (id)enabledDataClasses;
-- (void)encodeWithCAMLWriter:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
-- (id)errorForKey:(id)arg1;
-- (id)errorForKey:(id)arg1;
-- (id)errorFromDataForKey:(id)arg1;
-- (id)errorFromDataForKey:(id)arg1;
-- (id)fileCreationDate;
-- (BOOL)fileExtensionHidden;
-- (id)fileGroupOwnerAccountID;
-- (id)fileGroupOwnerAccountName;
-- (unsigned int)fileGroupOwnerAccountNumber;
-- (unsigned long)fileHFSCreatorCode;
-- (unsigned short)fileHFSFlags;
-- (unsigned long long)fileHFSResourceForkSize;
-- (unsigned long)fileHFSTypeCode;
-- (BOOL)fileIsAppendOnly;
-- (BOOL)fileIsImmutable;
-- (id)fileModificationDate;
-- (id)fileOwnerAccountID;
-- (id)fileOwnerAccountName;
-- (unsigned int)fileOwnerAccountNumber;
-- (unsigned int)filePosixPermissions;
-- (unsigned long long)fileSize;
-- (unsigned int)fileSystemFileNumber;
-- (int)fileSystemNumber;
-- (id)fileType;
-- (id)filteredDictionaryPassingTest:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
+
+- (id)descriptionSingleLine;
+- (id)objectForCFString:(struct __CFString { }*)arg1;
+- (id)objectForNullMarkerForKey:(id)arg1;
+- (id)objectOrNullMarkerForCFString:(struct __CFString { }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
+
+- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
+
 - (id)filteredDictionaryUsingKeyPredicate:(id)arg1;
 - (id)filteredKeysUsingPredicate:(id)arg1;
-- (float)floatForKeyPath:(id)arg1;
-- (void)getKeys:(id*)arg1;
-- (void)getObjects:(id*)arg1;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
-- (id)gksDeepMutableCopy;
-- (id)grappaInfo;
-- (unsigned int)hash;
-- (id)hk_codableMetadata;
-- (BOOL)hk_validateMetadataKeysAndValuesWithError:(id*)arg1;
-- (id)initWithCPLArchiver:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1;
-- (id)initWithDictionary:(id)arg1;
-- (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;
-- (id)initWithObject:(id)arg1 forKey:(id)arg2;
-- (id)initWithObjects:(id)arg1 forKeys:(id)arg2;
-- (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
-- (id)initWithObjectsAndKeys:(id)arg1;
-- (id)invertedDictionary;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDictionary:(id)arg1;
-- (BOOL)isInstalled;
-- (BOOL)isNSDictionary__;
-- (BOOL)isOfficialApp;
-- (int)iterations;
-- (id)keyEnumerator;
-- (id)keyOfEntryPassingTest:(id)arg1;
-- (id)keyOfEntryWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)keysOfChangedEntriesComparedTo:(id)arg1;
-- (id)keysOfEntriesPassingTest:(id)arg1;
-- (id)keysOfEntriesWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)keysSortedByValueUsingComparator:(id)arg1;
-- (id)keysSortedByValueUsingSelector:(SEL)arg1;
-- (id)keysSortedByValueWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
-- (unsigned long long)lastClientRevision;
-- (unsigned long long)lastServerRevision;
-- (BOOL)matchesUID:(id)arg1;
-- (BOOL)mf_boolForKey:(id)arg1;
-- (id)mf_filterUsingMap:(id)arg1 inverse:(BOOL)arg2;
-- (int)mf_integerForKey:(id)arg1;
-- (id)model;
-- (id)mutableArrayForKey:(id)arg1;
-- (id)mutableArrayForKey:(id)arg1;
-- (id)mutableCopyWithElementsCopy;
-- (id)mutableCopyWithElementsCopy;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)mutableDeepAutoreleasedCopy;
-- (id)mutableDictionaryForKey:(id)arg1;
-- (id)mutableDictionaryForKey:(id)arg1;
-- (unsigned long long)newRevision;
-- (id)npkRelevancyRelevantText;
-- (id)npkRelevancyUniqueID;
-- (id)nsValueForKey:(id)arg1;
-- (id)nsValueForKey:(id)arg1;
-- (id)nullForKey:(id)arg1;
-- (id)nullForKey:(id)arg1;
-- (id)numberForKey:(id)arg1;
-- (id)numberForKey:(id)arg1;
-- (id)numberForKeyPath:(id)arg1;
-- (id)objectEnumerator;
-- (id)objectForCFString:(struct __CFString { }*)arg1;
-- (id)objectForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 locale:(struct __CFLocale { }*)arg2;
-- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
-- (id)objectForKeyPath:(id)arg1;
 - (id)objectForKeyPredicate:(id)arg1;
-- (id)objectForKeyedSubscript:(id)arg1;
-- (id)objectForNullMarkerForKey:(id)arg1;
-- (id)objectOfClass:(Class)arg1 forKey:(id)arg2;
-- (id)objectOrNullMarkerForCFString:(struct __CFString { }*)arg1;
-- (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
-- (float)offset;
-- (id)osVersion;
-- (BOOL)p_extractLanguage:(id*)arg1 script:(id*)arg2 region:(id*)arg3 fromString:(id)arg4;
-- (id)p_makeLocaleIdentifierWithLanguage:(id)arg1 script:(id)arg2 region:(id)arg3;
-- (id)plistArchiveWithCPLArchiver:(id)arg1;
-- (id)plistData;
-- (id)priceFormatted;
-- (id)prs_URLForKey:(id)arg1;
-- (id)prs_arrayForKey:(id)arg1;
-- (BOOL)prs_boolForKey:(id)arg1;
-- (id)prs_dataForKey:(id)arg1;
-- (id)prs_dateForKey:(id)arg1;
-- (id)prs_dictionaryForKey:(id)arg1;
-- (float)prs_floatForKey:(id)arg1;
-- (int)prs_intForKey:(id)arg1;
-- (int)prs_integerForKey:(id)arg1;
-- (id)prs_numberForKey:(id)arg1;
-- (id)prs_stringForKey:(id)arg1;
-- (unsigned int)ratingCount;
-- (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
+- (id)_sa_mappedDictionaryWithBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
+
+- (id)safeObjectForKey:(id)arg1 ofClass:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
+
+- (id)sbs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
+
+- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
+- (id)asQueryParameterString;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
+
+- (id)_objectOfKind:(Class)arg1 forKeyPath:(id)arg2;
+- (float)floatForKeyPath:(id)arg1;
+- (id)numberForKeyPath:(id)arg1;
+- (id)objectForKeyPath:(id)arg1;
+- (id)stringForKeyPath:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
+- (id)_webkit_arrayForKey:(id)arg1;
+- (BOOL)_webkit_boolForKey:(id)arg1;
+- (int)_webkit_intForKey:(id)arg1;
+- (id)_webkit_numberForKey:(id)arg1;
+- (id)_webkit_objectForMIMEType:(id)arg1;
+- (id)_webkit_stringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
 - (id)safari_URLForKey:(id)arg1;
 - (id)safari_arrayForKey:(id)arg1;
 - (BOOL)safari_boolForKey:(id)arg1;
@@ -395,54 +594,35 @@
 - (id)safari_dictionaryForKey:(id)arg1;
 - (id)safari_numberForKey:(id)arg1;
 - (id)safari_stringForKey:(id)arg1;
-- (id)safeObjectForKey:(id)arg1 ofClass:(Class)arg2;
-- (id)sbs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
-- (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
+
+- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
+
+- (id)blj_dictionaryByRemovingValuesForKey:(id)arg1;
+- (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (int)iterations;
+- (float)offset;
 - (id)scriptEntry;
 - (id)scriptPath;
-- (void)setDisplayName:(id)arg1;
-- (void)setEnabledDataClasses:(id)arg1;
-- (void)setGrappaInfo:(id)arg1;
-- (void)setLastClientRevision:(unsigned long long)arg1;
-- (void)setLastServerRevision:(unsigned long long)arg1;
-- (void)setModel:(id)arg1;
-- (void)setNewRevision:(unsigned long long)arg1;
-- (void)setOsVersion:(id)arg1;
-- (void)setVersionToken:(id)arg1;
 - (SEL)setupSelector;
-- (void)sfu_appendJsonStringToString:(id)arg1;
-- (id)shortDescription;
-- (id)shortDescription;
-- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
-- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (int)ssidAndBaseNameLocalizedCaseInsensitiveCompare:(id)arg1;
-- (int)ssidLocalizedCaseInsensitiveCompare:(id)arg1;
-- (id)storeID;
-- (id)stringForKey:(id)arg1;
-- (id)stringForKey:(id)arg1;
-- (id)stringForKeyPath:(id)arg1;
 - (SEL)testSelector;
-- (id)timeZoneForKey:(id)arg1;
-- (id)timeZoneForKey:(id)arg1;
-- (id)timeZoneFromDataForKey:(id)arg1;
-- (id)timeZoneFromDataForKey:(id)arg1;
-- (id)title;
-- (id)transitModeKeys;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)dictionaryWithContentsOfFileForLocale:(struct __CFLocale { }*)arg1 inDirectory:(id)arg2 inBundle:(id)arg3;
++ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
+
+- (id)objectForKey:(id)arg1 locale:(struct __CFLocale { }*)arg2;
+- (BOOL)p_extractLanguage:(id*)arg1 script:(id*)arg2 region:(id*)arg3 fromString:(id)arg4;
+- (id)p_makeLocaleIdentifierWithLanguage:(id)arg1 script:(id)arg2 region:(id)arg3;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 - (BOOL)tsu_boolValueForKey:(id)arg1;
 - (id)tsu_objectOfClass:(Class)arg1 forKey:(id)arg2;
-- (id)url;
-- (id)uuidForKey:(id)arg1;
-- (id)uuidForKey:(id)arg1;
-- (id)uuidFromStringForKey:(id)arg1;
-- (id)uuidFromStringForKey:(id)arg1;
-- (id)valueForKey:(id)arg1;
-- (id)valueForKeyPath:(id)arg1;
-- (id)versionToken;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
 
 @end

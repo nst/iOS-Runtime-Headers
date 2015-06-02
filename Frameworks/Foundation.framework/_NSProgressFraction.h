@@ -9,7 +9,7 @@
 }
 
 @property long long completed;
-@property(readonly) BOOL overflowed;
+@property (readonly) BOOL overflowed;
 @property long long total;
 
 + (id)fractionWithCompleted:(long long)arg1 total:(long long)arg2;

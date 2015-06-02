@@ -2,24 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, NSURL, UIViewController, WFRemotePINEntryViewController, _UIFallbackPresentationViewController;
-
 @interface WFPINEntryViewController : UIViewController <WFPINEntryViewControllerProtocol> {
     NSURL *_URL;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _dismissCompletionHandler;
-
+    id /* block */ _completion;
+    id /* block */ _dismissCompletionHandler;
     _UIFallbackPresentationViewController *_fallbackPresentationVC;
     NSString *_pageTitle;
     WFRemotePINEntryViewController *_remoteViewController;
@@ -27,7 +13,7 @@
     NSArray *_windowsWithDisabledRotation;
 }
 
-@property(copy) id dismissCompletionHandler;
+@property (nonatomic, copy) id /* block */ dismissCompletionHandler;
 
 + (Class)remoteViewControllerClass;
 + (id)serviceViewControllerClassName;
@@ -35,12 +21,12 @@
 - (unsigned int)_supportedInterfaceOrientationsForRootViewController;
 - (void)dealloc;
 - (id)delegate;
-- (id)dismissCompletionHandler;
+- (id /* block */)dismissCompletionHandler;
 - (BOOL)hasUIWebViewSubView:(id)arg1;
-- (id)initWithURL:(id)arg1 pageTitle:(id)arg2 completion:(id)arg3;
+- (id)initWithURL:(id)arg1 pageTitle:(id)arg2 completion:(id /* block */)arg3;
 - (void)insertRemoteViewController:(id)arg1;
-- (void)presentViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)setDismissCompletionHandler:(id)arg1;
+- (void)presentViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)setDismissCompletionHandler:(id /* block */)arg1;
 - (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;

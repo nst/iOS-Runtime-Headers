@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSOperationQueue, NSPersistentStore, NSPersistentStoreCoordinator, NSRecursiveLock, NSSQLCore, NSString, PFUbiquityLocation, PFUbiquityRecordsImporterSchedulingContext, PFUbiquitySwitchboardCacheWrapper;
-
 @interface _PFUbiquityRecordsImporter : NSObject <NSManagedObjectContextFaultingDelegate, PFUbiquityBaselineRecoveryOperationDelegate, PFUbiquityBaselineRollOperationDelegate, PFUbiquityBaselineRollResponseOperationDelegate, _PFUbiquityRecordImportOperationDelegate> {
     BOOL _allowBaselineRoll;
     BOOL _importOnlyActiveStores;
@@ -27,30 +25,30 @@
 }
 
 @property BOOL allowBaselineRoll;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL importOnlyActiveStores;
-@property(readonly) NSOperationQueue * importQueue;
-@property(readonly) BOOL isMonitoring;
-@property(readonly) NSString * localPeerID;
-@property NSObject<OS_dispatch_source> * logRestartTimer;
-@property(readonly) NSPersistentStoreCoordinator * privatePSC;
-@property(readonly) NSPersistentStore * privateStore;
-@property(readonly) PFUbiquityRecordsImporterSchedulingContext * schedulingContext;
-@property(readonly) NSRecursiveLock * schedulingLock;
-@property(retain) PFUbiquitySwitchboardCacheWrapper * sideLoadCacheWrapper;
-@property(readonly) NSString * storeName;
-@property(readonly) Class superclass;
+@property (readonly) NSOperationQueue *importQueue;
+@property (readonly) BOOL isMonitoring;
+@property (readonly) NSString *localPeerID;
+@property NSObject<OS_dispatch_source> *logRestartTimer;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *privatePSC;
+@property (nonatomic, readonly) NSPersistentStore *privateStore;
+@property (nonatomic, readonly) PFUbiquityRecordsImporterSchedulingContext *schedulingContext;
+@property (nonatomic, readonly) NSRecursiveLock *schedulingLock;
+@property (nonatomic, retain) PFUbiquitySwitchboardCacheWrapper *sideLoadCacheWrapper;
+@property (readonly) NSString *storeName;
+@property (readonly) Class superclass;
 @property BOOL throttleNotifications;
-@property(retain) PFUbiquityLocation * ubiquityRootLocation;
+@property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
 
 + (id)addPrivateStore:(id)arg1 toCoordinator:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
-+ (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id)arg2;
++ (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id /* block */)arg2;
 + (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
 + (id)createPrivateCoordinatorAndStoreForStore:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 + (id)createPrivateCoordinatorForStore:(id)arg1 error:(id*)arg2;
-+ (void)executeBlockOnRootQueue:(id)arg1;
++ (void)executeBlockOnRootQueue:(id /* block */)arg1;
 + (void)initialize;
 
 - (BOOL)allowBaselineRoll;
@@ -66,7 +64,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)discoverAndImportAllAvailableLogs:(BOOL)arg1 error:(id*)arg2;
-- (void)executeBlockOnPrivateQueue:(id)arg1;
+- (void)executeBlockOnPrivateQueue:(id /* block */)arg1;
 - (BOOL)importOnlyActiveStores;
 - (id)importQueue;
 - (id)init;

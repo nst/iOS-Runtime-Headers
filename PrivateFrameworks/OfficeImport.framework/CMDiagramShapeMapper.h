@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, OADOrientedBounds;
-
 @interface CMDiagramShapeMapper : CMDiagramMapper {
     unsigned int mChildCount;
     float mDefaultFontSize;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface EDHeaderFooter : NSObject {
     NSString *mFooterString;
     NSString *mHeaderString;

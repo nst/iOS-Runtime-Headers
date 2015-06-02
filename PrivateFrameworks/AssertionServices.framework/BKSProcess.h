@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@class <BKSProcessDelegate>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BKSProcess : BSBaseXPCClient {
     NSString *_bundlePath;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -20,17 +18,17 @@
     BOOL _workspaceLocked;
 }
 
-@property(readonly) double backgroundTimeRemaining;
-@property BOOL connectedToExternalAccessories;
-@property <BKSProcessDelegate> * delegate;
-@property long long exitStatus;
-@property BOOL nowPlayingWithAudio;
-@property BOOL recordingAudio;
-@property BOOL supportsTaskSuspension;
-@property int taskState;
-@property int terminationReason;
-@property int visibility;
-@property BOOL workspaceLocked;
+@property (nonatomic, readonly) double backgroundTimeRemaining;
+@property (nonatomic) BOOL connectedToExternalAccessories;
+@property (nonatomic) <BKSProcessDelegate> *delegate;
+@property (nonatomic) long long exitStatus;
+@property (nonatomic) BOOL nowPlayingWithAudio;
+@property (nonatomic) BOOL recordingAudio;
+@property (nonatomic) BOOL supportsTaskSuspension;
+@property (nonatomic) int taskState;
+@property (nonatomic) int terminationReason;
+@property (nonatomic) int visibility;
+@property (nonatomic) BOOL workspaceLocked;
 
 + (double)backgroundTimeRemaining;
 + (id)busyExtensionInstances:(id)arg1;
@@ -39,8 +37,8 @@
 - (void)_handleDebuggingStateChanged:(id)arg1;
 - (void)_handleExpirationWarning:(id)arg1;
 - (void)_handleSuspendedStateChanged:(id)arg1;
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2;
-- (void)_sendMessageType:(int)arg1 withMessage:(id)arg2 withReplyHandler:(id)arg3 waitForReply:(BOOL)arg4;
+- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2;
+- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4;
 - (double)backgroundTimeRemaining;
 - (BOOL)connectedToExternalAccessories;
 - (void)dealloc;

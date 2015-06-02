@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPButton;
-
 @interface TPBottomSingleButtonBar : TPBottomBar {
     TPButton *_button;
     id _delegate;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFObliterationController : NSObject {
-}
+@interface SBFObliterationController : NSObject
 
 + (id)sharedInstance;
 

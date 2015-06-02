@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray, NSString, UILabel, UIView;
-
 @interface MFSecureMIMEPersonHeaderView : UIView {
     UIView *_backgroundView;
     NSArray *_buttons;
-    unsigned int _editing : 1;
+    unsigned int _editing;
     UILabel *_label;
     UIView *_secureLabel;
     UIView *_signedLabel;
     UIView *_warningLabel;
 }
 
-@property(copy) NSArray * buttons;
-@property BOOL editing;
-@property(copy) NSString * explanationText;
-@property(copy) NSString * secureLabelText;
-@property(copy) NSString * signedLabelText;
-@property(copy) NSString * warningLabelText;
+@property (nonatomic, copy) NSArray *buttons;
+@property (nonatomic) BOOL editing;
+@property (nonatomic, copy) NSString *explanationText;
+@property (nonatomic, copy) NSString *secureLabelText;
+@property (nonatomic, copy) NSString *signedLabelText;
+@property (nonatomic, copy) NSString *warningLabelText;
 
 + (id)_explanationLabelDefaultAttributes;
 

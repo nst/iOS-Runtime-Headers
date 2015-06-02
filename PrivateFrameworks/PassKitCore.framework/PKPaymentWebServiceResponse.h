@@ -6,7 +6,7 @@
     id _JSONObject;
 }
 
-@property(readonly) id JSONObject;
+@property (nonatomic, readonly) id JSONObject;
 
 + (id)responseWithData:(id)arg1;
 

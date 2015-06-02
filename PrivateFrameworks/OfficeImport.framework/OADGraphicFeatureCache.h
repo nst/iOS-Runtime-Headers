@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OITSUNoCopyDictionary;
-
 @interface OADGraphicFeatureCache : NSObject {
     OITSUNoCopyDictionary *mFeatureMap;
     NSMutableArray *mFeatureUsageArray;

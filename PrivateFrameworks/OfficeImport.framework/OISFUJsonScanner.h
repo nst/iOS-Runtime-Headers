@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSCharacterSet, NSString;
-
 @interface OISFUJsonScanner : NSObject {
     unsigned short *mCharacters;
     NSCharacterSet *mDecimalDigitCharacterSet;

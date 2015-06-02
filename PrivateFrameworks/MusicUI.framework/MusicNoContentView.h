@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class _UIContentUnavailableView;
-
 @interface MusicNoContentView : UIView {
     _UIContentUnavailableView *_contentUnavailableView;
 }

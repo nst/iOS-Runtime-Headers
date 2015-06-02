@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUCoverZoomViewControllerDelegate>, CADisplayLink, CAMediaTimingFunction, MPUCZCollectionViewController, MPUCoverMaskView, MPUDataSource, NSIndexPath, NSString, UIPinchGestureRecognizer, UIView, UIViewController;
-
 @interface MPUCoverZoomViewController : UIViewController <MPUCZCollectionViewControllerDelegate, UIGestureRecognizerDelegate> {
     double _animationDuration;
     float _animationEndProgress;
@@ -45,11 +43,11 @@
     BOOL _zoomed;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUCoverZoomViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUCoverZoomViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginTransitionForScale:(float)arg1;

@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libsystem_network.dylib
  */
 
-@interface OS_network_proxy : OS_object {
-}
+@interface OS_network_proxy : OS_object
 
 - (void)_dispose;
 

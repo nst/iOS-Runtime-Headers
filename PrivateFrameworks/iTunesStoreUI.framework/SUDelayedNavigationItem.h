@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, SUNavigationItem;
-
 @interface SUDelayedNavigationItem : SUNavigationItem {
     id _delayedBackButtonTitle;
     id _delayedLeftBarButtonItems;
@@ -15,8 +13,8 @@
     SUNavigationItem *_wrappedNavigationItem;
 }
 
-@property BOOL shouldDelayChanges;
-@property(retain) SUNavigationItem * wrappedNavigationItem;
+@property (nonatomic) BOOL shouldDelayChanges;
+@property (nonatomic, retain) SUNavigationItem *wrappedNavigationItem;
 
 - (void)_prepareButtonItemForDisplay:(id)arg1;
 - (void)_scheduleCommit;

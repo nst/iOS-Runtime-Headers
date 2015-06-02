@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASServerSideModel, MSTimerGate, NSObject<OS_dispatch_queue>;
-
 @interface MSASGroupedQueue : NSObject {
     MSTimerGate *_idleTimerGate;
     BOOL _isAssertingBusyAssertion;
@@ -17,22 +15,22 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) MSTimerGate * idleTimerGate;
-@property(readonly) BOOL isAssertingBusyAssertion;
-@property BOOL isShuttingDown;
-@property int maxGroupedCallbackEventBatchCount;
-@property double maxGroupedCallbackEventIdleInterval;
-@property double maxGroupedCallbackEventStaleness;
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property MSASServerSideModel * model;
-@property(retain) MSTimerGate * stalenessTimerGate;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) MSTimerGate *idleTimerGate;
+@property (nonatomic, readonly) BOOL isAssertingBusyAssertion;
+@property (nonatomic) BOOL isShuttingDown;
+@property (nonatomic) int maxGroupedCallbackEventBatchCount;
+@property (nonatomic) double maxGroupedCallbackEventIdleInterval;
+@property (nonatomic) double maxGroupedCallbackEventStaleness;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic) MSASServerSideModel *model;
+@property (nonatomic, retain) MSTimerGate *stalenessTimerGate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)assertBusyAssertion;
 - (void)dealloc;
 - (void)deassertBusyAssertion;
-- (void)flushQueueCompletionBlock:(id)arg1;
+- (void)flushQueueCompletionBlock:(id /* block */)arg1;
 - (BOOL)hasEnqueuedItems;
 - (id)idleTimerGate;
 - (id)init;
@@ -54,7 +52,7 @@
 - (void)setModel:(id)arg1;
 - (void)setStalenessTimerGate:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownFlush:(BOOL)arg1 completionBlock:(id)arg2;
+- (void)shutDownFlush:(BOOL)arg1 completionBlock:(id /* block */)arg2;
 - (id)stalenessTimerGate;
 - (id)workQueue;
 - (void)workQueueAssertBusyAssertion;

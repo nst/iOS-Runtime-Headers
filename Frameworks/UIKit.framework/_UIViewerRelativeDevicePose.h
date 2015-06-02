@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIMotionEffectAcceleratedOutputRange;
-
 @interface _UIViewerRelativeDevicePose : NSObject <NSCoding, NSCopying> {
     _UIMotionEffectAcceleratedOutputRange *_acceleratedOutputRange;
     float _planarRotationAngle;
@@ -13,8 +11,8 @@
     } _viewerOffset;
 }
 
-@property float planarRotationAngle;
-@property struct UIOffset { float x1; float x2; } viewerOffset;
+@property (nonatomic) float planarRotationAngle;
+@property (nonatomic) struct UIOffset { float x1; float x2; } viewerOffset;
 
 - (struct UIOffset { float x1; float x2; })_acceleratedOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg1 accelerationBoostFactor:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_acceleratedOutputRange;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKWBMPImageData : CKImageData {
-}
+@interface CKWBMPImageData : CKImageData
 
 - (id)initWithData:(id)arg1;
 

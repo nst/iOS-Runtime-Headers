@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIActivityIndicatorView, UILabel;
-
 @interface PSSoftwareUpdateTableView : UITableView {
     UIActivityIndicatorView *_checkingForUpdateSpinner;
     UILabel *_checkingStatusLabel;
@@ -12,11 +10,11 @@
     UILabel *_subtitleLabel;
 }
 
-@property(retain) UIActivityIndicatorView * checkingForUpdateSpinner;
-@property(retain) UILabel * checkingStatusLabel;
-@property(retain) NSString * currentVersion;
-@property int state;
-@property(retain) UILabel * subtitleLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *checkingForUpdateSpinner;
+@property (nonatomic, retain) UILabel *checkingStatusLabel;
+@property (nonatomic, retain) NSString *currentVersion;
+@property (nonatomic) int state;
+@property (nonatomic, retain) UILabel *subtitleLabel;
 
 - (id)checkingForUpdateSpinner;
 - (id)checkingStatusLabel;

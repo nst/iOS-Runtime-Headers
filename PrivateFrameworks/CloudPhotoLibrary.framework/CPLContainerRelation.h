@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString;
-
 @interface CPLContainerRelation : NSObject <NSCopying, NSSecureCoding> {
     NSString *_containerIdentifier;
     BOOL _keyAsset;
     int _position;
 }
 
-@property(copy) NSString * containerIdentifier;
-@property(getter=isKeyAsset) BOOL keyAsset;
-@property int position;
+@property (nonatomic, copy) NSString *containerIdentifier;
+@property (getter=isKeyAsset, nonatomic) BOOL keyAsset;
+@property (nonatomic) int position;
 
 + (BOOL)supportsSecureCoding;
 

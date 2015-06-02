@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSString;
-
 @interface SKUIAttributedStringLayoutRequest : NSObject <SKUILayoutRequest> {
     NSAttributedString *_attributedString;
     int _numberOfLines;
@@ -11,15 +9,15 @@
     float _width;
 }
 
-@property(readonly) NSAttributedString * attributedString;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class layoutClass;
-@property int numberOfLines;
-@property(readonly) Class superclass;
-@property BOOL wantsBaselineOffset;
-@property float width;
+@property (nonatomic, readonly) NSAttributedString *attributedString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) Class layoutClass;
+@property (nonatomic) int numberOfLines;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL wantsBaselineOffset;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)attributedString;

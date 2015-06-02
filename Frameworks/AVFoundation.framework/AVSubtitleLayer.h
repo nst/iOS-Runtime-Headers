@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVSubtitleLayerInternal, CADisplay;
-
 @interface AVSubtitleLayer : CALayer {
     AVSubtitleLayerInternal *_subtitleLayer;
 }
 
-@property(getter=isOverscanSubtitleSupportEnabled) BOOL overscanSubtitleSupportEnabled;
-@property(retain) AVPlayer * player;
-@property(readonly) CADisplay * subtitleLayerDisplay;
+@property (getter=isOverscanSubtitleSupportEnabled, nonatomic) BOOL overscanSubtitleSupportEnabled;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, readonly) CADisplay *subtitleLayerDisplay;
 
 + (id)subtitleLayerWithPlayer:(id)arg1;
 

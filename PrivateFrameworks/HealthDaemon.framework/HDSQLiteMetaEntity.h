@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSQLiteMetaEntity : HDSQLiteEntity {
-}
+@interface HDSQLiteMetaEntity : HDSQLiteEntity
 
 + (id)_namePredicate:(id)arg1;
 + (id)_tableNamePredicate:(id)arg1;

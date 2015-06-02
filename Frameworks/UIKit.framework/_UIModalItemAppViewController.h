@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow;
-
 @interface _UIModalItemAppViewController : UIViewController {
     UIWindow *_rotationDelegate;
 }
 
-@property(retain) UIWindow * rotationDelegate;
+@property (nonatomic, retain) UIWindow *rotationDelegate;
 
 - (void)dealloc;
 - (int)preferredInterfaceOrientationForPresentation;

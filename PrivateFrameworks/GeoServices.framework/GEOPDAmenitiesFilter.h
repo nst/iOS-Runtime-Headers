@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPDAmenitiesFilter : PBCodable <NSCopying> {
-}
+@interface GEOPDAmenitiesFilter : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

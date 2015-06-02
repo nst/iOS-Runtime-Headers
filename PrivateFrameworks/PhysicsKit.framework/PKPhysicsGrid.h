@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@class PKQuadTree;
-
 @interface PKPhysicsGrid : NSObject {
     struct shared_ptr<PKCGrid> { 
         struct PKCGrid {} *__ptr_; 
@@ -12,9 +10,9 @@
     PKQuadTree *quadTree;
 }
 
-@property struct shared_ptr<PKCGrid> { struct PKCGrid {} *x1; struct __shared_weak_count {} *x2; } gridPtr;
-@property(readonly) int height;
-@property(readonly) int width;
+@property (nonatomic) struct shared_ptr<PKCGrid> { struct PKCGrid {} *x1; struct __shared_weak_count {} *x2; } gridPtr;
+@property (nonatomic, readonly) int height;
+@property (nonatomic, readonly) int width;
 
 + (id)gridFromOccupancyArray:(const char *)arg1 bytePitch:(int)arg2 width:(int)arg3 height:(int)arg4;
 + (id)gridFromRGBAU8PixelData:(const char *)arg1 imageWidth:(int)arg2 imageHeight:(int)arg3 alphaThreshold:(float)arg4 accuracy:(float)arg5;

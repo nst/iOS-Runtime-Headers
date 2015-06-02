@@ -27,26 +27,26 @@
     unsigned int _totalTransientDeactiveTimeout;
 }
 
-@property BOOL hasStartTimestamp;
-@property BOOL hasTimestamp;
-@property BOOL hasTotalAPNReceived;
-@property BOOL hasTotalCEEnable;
-@property BOOL hasTotalCardProvisioned;
-@property BOOL hasTotalFailureWithMissingTransactionEndEvent;
-@property BOOL hasTotalFailureWithTransactionEndEventErrors;
-@property BOOL hasTotalRestrictModeEntered;
-@property BOOL hasTotalTransactionEndEvent;
-@property BOOL hasTotalTransientDeactiveTimeout;
-@property unsigned long long startTimestamp;
-@property unsigned long long timestamp;
-@property unsigned int totalAPNReceived;
-@property unsigned int totalCEEnable;
-@property unsigned int totalCardProvisioned;
-@property unsigned int totalFailureWithMissingTransactionEndEvent;
-@property unsigned int totalFailureWithTransactionEndEventErrors;
-@property unsigned int totalRestrictModeEntered;
-@property unsigned int totalTransactionEndEvent;
-@property unsigned int totalTransientDeactiveTimeout;
+@property (nonatomic) BOOL hasStartTimestamp;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTotalAPNReceived;
+@property (nonatomic) BOOL hasTotalCEEnable;
+@property (nonatomic) BOOL hasTotalCardProvisioned;
+@property (nonatomic) BOOL hasTotalFailureWithMissingTransactionEndEvent;
+@property (nonatomic) BOOL hasTotalFailureWithTransactionEndEventErrors;
+@property (nonatomic) BOOL hasTotalRestrictModeEntered;
+@property (nonatomic) BOOL hasTotalTransactionEndEvent;
+@property (nonatomic) BOOL hasTotalTransientDeactiveTimeout;
+@property (nonatomic) unsigned long long startTimestamp;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int totalAPNReceived;
+@property (nonatomic) unsigned int totalCEEnable;
+@property (nonatomic) unsigned int totalCardProvisioned;
+@property (nonatomic) unsigned int totalFailureWithMissingTransactionEndEvent;
+@property (nonatomic) unsigned int totalFailureWithTransactionEndEventErrors;
+@property (nonatomic) unsigned int totalRestrictModeEntered;
+@property (nonatomic) unsigned int totalTransactionEndEvent;
+@property (nonatomic) unsigned int totalTransientDeactiveTimeout;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

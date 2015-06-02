@@ -6,7 +6,7 @@
     BOOL _adjustZoomScaleAfterRotation;
 }
 
-@property BOOL adjustZoomScaleAfterRotation;
+@property (nonatomic) BOOL adjustZoomScaleAfterRotation;
 
 - (void)_centerContentIfNecessary;
 - (BOOL)adjustZoomScaleAfterRotation;

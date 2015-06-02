@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFType : NSObject {
-}
+@interface __NSCFType : NSObject
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TSDInfoGeometry, TSTLayout, TSTTableInfo, TSUPointerKeyDictionary;
-
 @interface TSTTablePartitioner : NSObject <TSDPartitioner> {
     float mFirstPartitionWidth;
     TSUPointerKeyDictionary *mHintMatricesByCanvas;
@@ -17,12 +15,12 @@
     TSTTableInfo *mTableInfo;
 }
 
-@property(copy) TSDInfoGeometry * infoGeometry;
-@property(readonly) float inlineTableWidth;
-@property(readonly) BOOL scaleIsValid;
-@property struct CGSize { float x1; float x2; } scaleToFit;
-@property(readonly) TSTLayout * scaledLayout;
-@property(readonly) TSTTableInfo * tableInfo;
+@property (nonatomic, copy) TSDInfoGeometry *infoGeometry;
+@property (nonatomic, readonly) float inlineTableWidth;
+@property (nonatomic, readonly) BOOL scaleIsValid;
+@property (nonatomic) struct CGSize { float x1; float x2; } scaleToFit;
+@property (nonatomic, readonly) TSTLayout *scaledLayout;
+@property (nonatomic, readonly) TSTTableInfo *tableInfo;
 
 - (void)dealloc;
 - (BOOL)didHint:(id)arg1 syncWithNextHint:(id)arg2 horizontally:(BOOL)arg3 delta:(int)arg4;

@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>, NSArray, NSString, UITableView;
-
 @interface ABContactHeaderEditView : ABContactHeaderView <ABContactPhotoViewDelegate, ABPropertyGroupItemDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_editingGroups;
     UITableView *_editingTable;
     <ABPropertyCellDelegate> *_namePropertyDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * editingGroups;
-@property(readonly) unsigned int hash;
-@property <ABPropertyCellDelegate> * namePropertyDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *editingGroups;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <ABPropertyCellDelegate> *namePropertyDelegate;
+@property (readonly) Class superclass;
 
 + (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2;
 

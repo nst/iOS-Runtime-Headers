@@ -28,24 +28,24 @@
     float _textStrokeSize;
 }
 
-@property unsigned int backgroundColor;
-@property unsigned int borderColor;
-@property BOOL hasBackgroundColor;
-@property BOOL hasBorderColor;
-@property BOOL hasStyle;
-@property BOOL hasTextColor;
-@property BOOL hasTextDropShadowColor;
-@property BOOL hasTextDropShadowSize;
-@property BOOL hasTextStrokeColor;
-@property BOOL hasTextStrokeSize;
-@property int style;
-@property unsigned int textColor;
-@property unsigned int textDropShadowColor;
-@property(readonly) float* textDropShadowOffsets;
-@property(readonly) unsigned int textDropShadowOffsetsCount;
-@property float textDropShadowSize;
-@property unsigned int textStrokeColor;
-@property float textStrokeSize;
+@property (nonatomic) unsigned int backgroundColor;
+@property (nonatomic) unsigned int borderColor;
+@property (nonatomic) BOOL hasBackgroundColor;
+@property (nonatomic) BOOL hasBorderColor;
+@property (nonatomic) BOOL hasStyle;
+@property (nonatomic) BOOL hasTextColor;
+@property (nonatomic) BOOL hasTextDropShadowColor;
+@property (nonatomic) BOOL hasTextDropShadowSize;
+@property (nonatomic) BOOL hasTextStrokeColor;
+@property (nonatomic) BOOL hasTextStrokeSize;
+@property (nonatomic) int style;
+@property (nonatomic) unsigned int textColor;
+@property (nonatomic) unsigned int textDropShadowColor;
+@property (nonatomic, readonly) float*textDropShadowOffsets;
+@property (nonatomic, readonly) unsigned int textDropShadowOffsetsCount;
+@property (nonatomic) float textDropShadowSize;
+@property (nonatomic) unsigned int textStrokeColor;
+@property (nonatomic) float textStrokeSize;
 
 - (void)addTextDropShadowOffset:(float)arg1;
 - (unsigned int)backgroundColor;

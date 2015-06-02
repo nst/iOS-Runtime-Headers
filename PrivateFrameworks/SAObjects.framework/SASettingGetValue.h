@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetValue : SASettingCommand {
-}
+@interface SASettingGetValue : SASettingCommand
 
 + (id)getValue;
 + (id)getValueWithDictionary:(id)arg1 context:(id)arg2;

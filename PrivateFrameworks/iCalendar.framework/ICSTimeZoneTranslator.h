@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSTimeZoneTranslator : NSObject {
-}
+@interface ICSTimeZoneTranslator : NSObject
 
 + (void)initializeTimeZoneIDTranslation;
 + (id)timeZoneNameForTimeZoneID:(id)arg1;

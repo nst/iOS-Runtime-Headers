@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUILockupSwooshCellLayout;
-
 @interface SKUILockupSwooshCollectionViewCell : SKUIItemCollectionViewCell {
     SKUILockupSwooshCellLayout *_layout;
 }
 
-@property(readonly) SKUILockupSwooshCellLayout * layout;
+@property (nonatomic, readonly) SKUILockupSwooshCellLayout *layout;
 
 - (void).cxx_destruct;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2;

@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPDialerKeypadDelegate>, NSString;
-
 @interface TPPhonePad : UIControl <TPDialerKeypadProtocol> {
     float _bottomHeight;
     <TPDialerKeypadDelegate> *_delegate;
-    unsigned int _delegateSoundCallbacks : 1;
+    unsigned int _delegateSoundCallbacks;
     int _downKey;
     int _highlightKey;
     unsigned int _incompleteSounds;
@@ -18,15 +16,15 @@
     float _midWidth;
     BOOL _playsSounds;
     float _rightWidth;
-    unsigned int _soundsActivated : 1;
+    unsigned int _soundsActivated;
     BOOL _supportsHardPause;
     float _topHeight;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property BOOL supportsHardPause;
 
 + (void)_delayedDeactivate;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray, NSIndexSet, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface SGPipelineEntity : SGEntity {
     struct __DDResult { } *_dataDetectorsSignature;
     NSMutableDictionary *_emailToCanonicalEmailCache;
@@ -38,23 +36,23 @@
     NSIndexSet *_plainTextTabularRegions;
 }
 
-@property(readonly) NSArray * addresses;
-@property(readonly) NSString * authorEmail;
-@property struct __DDResult { }* dataDetectorsSignature;
-@property(readonly) NSArray * emailAddresses;
-@property(readonly) NSMutableDictionary * emailToCanonicalEmailCache;
-@property(readonly) NSArray * enrichments;
-@property(getter=hasFullDownloadBeenRequested,readonly) BOOL fullDownloadRequested;
-@property(readonly) NSArray * headers;
-@property(readonly) unsigned int* htmlOffsets;
-@property(readonly) struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }* inhumanFeatures;
-@property(readonly) NSArray * phoneNumbers;
-@property(readonly) NSString * plainTextContent;
-@property(retain) NSArray * plainTextDetectedData;
-@property(readonly) NSArray * plainTextLines;
-@property(retain) NSIndexSet * plainTextQuotedRegions;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } plainTextSigRange;
-@property(retain) NSIndexSet * plainTextTabularRegions;
+@property (nonatomic, readonly) NSArray *addresses;
+@property (nonatomic, readonly) NSString *authorEmail;
+@property (nonatomic) struct __DDResult { }*dataDetectorsSignature;
+@property (nonatomic, readonly) NSArray *emailAddresses;
+@property (nonatomic, readonly) NSMutableDictionary *emailToCanonicalEmailCache;
+@property (nonatomic, readonly) NSArray *enrichments;
+@property (getter=hasFullDownloadBeenRequested, readonly) BOOL fullDownloadRequested;
+@property (nonatomic, readonly) NSArray *headers;
+@property (nonatomic, readonly) unsigned int*htmlOffsets;
+@property (nonatomic, readonly) struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }*inhumanFeatures;
+@property (nonatomic, readonly) NSArray *phoneNumbers;
+@property (nonatomic, readonly) NSString *plainTextContent;
+@property (nonatomic, retain) NSArray *plainTextDetectedData;
+@property (nonatomic, readonly) NSArray *plainTextLines;
+@property (nonatomic, retain) NSIndexSet *plainTextQuotedRegions;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } plainTextSigRange;
+@property (nonatomic, retain) NSIndexSet *plainTextTabularRegions;
 
 + (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
 + (id)emailAddress:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
@@ -83,8 +81,8 @@
 - (id)emailAddresses;
 - (id)emailToCanonicalEmailCache;
 - (id)enrichments;
-- (void)enumeratePeople:(id)arg1;
-- (void)enumeratePlainTextLines:(id)arg1;
+- (void)enumeratePeople:(id /* block */)arg1;
+- (void)enumeratePlainTextLines:(id /* block */)arg1;
 - (BOOL)hasFullDownloadBeenRequested;
 - (id)headers;
 - (unsigned int*)htmlOffsets;

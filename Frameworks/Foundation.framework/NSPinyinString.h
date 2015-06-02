@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSPinyinString : NSString {
     unsigned int _deletionCount;
     unsigned int _firstModificationIndex;
@@ -18,9 +16,8 @@
     unsigned int _transpositionCount;
 }
 
-+ (id)_alternativesForInputString:(id)arg1;
-+ (id)_correctionsForInputString:(id)arg1;
-+ (id)_prefixesForInputString:(id)arg1;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)alternativesForInputString:(id)arg1;
 + (id)prefixesForInputString:(id)arg1;
 
@@ -47,5 +44,11 @@
 - (unsigned int)score;
 - (id)string;
 - (unsigned int)syllableCount;
+
+// Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
+
++ (id)_alternativesForInputString:(id)arg1;
++ (id)_correctionsForInputString:(id)arg1;
++ (id)_prefixesForInputString:(id)arg1;
 
 @end

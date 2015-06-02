@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProgressUI.framework/ProgressUI
  */
 
-@class CAContext, CALayer, NSString;
-
 @interface PUIProgressWindow : NSObject {
     struct CGImage { } *_appleLogo;
     CAContext *_context;
@@ -29,7 +27,7 @@
     BOOL _white;
 }
 
-@property(readonly) CALayer * layer;
+@property (nonatomic, readonly) CALayer *layer;
 
 + (BOOL)_usesPreBoardAppearance;
 + (void)setUsesPreBoardAppearance;

@@ -2,25 +2,24 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CMAttitude;
-
 @interface CMDeviceMotion : CMLogItem {
     id _internal;
 }
 
-@property(readonly) CMAttitude * attitude;
-@property(readonly) bool doingBiasEstimation;
-@property(readonly) bool doingYawCorrection;
-@property(readonly) struct { double x1; double x2; double x3; } gravity;
-@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; int x2; } magneticField;
-@property(readonly) int magneticFieldCalibrationLevel;
-@property(readonly) struct { double x1; double x2; double x3; } rotationRate;
-@property(readonly) struct { double x1; double x2; double x3; } userAcceleration;
+@property (nonatomic, readonly) CMAttitude *attitude;
+@property (nonatomic, readonly) bool doingBiasEstimation;
+@property (nonatomic, readonly) bool doingYawCorrection;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } gravity;
+@property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; int x2; } magneticField;
+@property (nonatomic, readonly) int magneticFieldCalibrationLevel;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } rotationRate;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } userAcceleration;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
 
 + (BOOL)supportsSecureCoding;
 
 - (id)attitude;
-- (BOOL)calibrationRequired;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -34,5 +33,9 @@
 - (int)magneticFieldCalibrationLevel;
 - (struct { double x1; double x2; double x3; })rotationRate;
 - (struct { double x1; double x2; double x3; })userAcceleration;
+
+// Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
+
+- (BOOL)calibrationRequired;
 
 @end

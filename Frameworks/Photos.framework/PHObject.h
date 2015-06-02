@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSManagedObjectID, NSString, PHPhotoLibrary;
-
 @interface PHObject : NSObject <NSCopying> {
     BOOL _deleted;
     NSManagedObjectID *_objectID;
@@ -12,15 +10,15 @@
     NSString *_uuid;
 }
 
-@property(getter=isDeleted,readonly) BOOL deleted;
-@property(copy,readonly) NSString * localIdentifier;
-@property(readonly) NSManagedObjectID * objectID;
-@property(readonly) PHPhotoLibrary * photoLibrary;
+@property (getter=isDeleted, readonly) BOOL deleted;
+@property (nonatomic, readonly, copy) NSString *localIdentifier;
+@property (readonly) NSManagedObjectID *objectID;
+@property (readonly) PHPhotoLibrary *photoLibrary;
 @property unsigned int propertyHint;
-@property(getter=isTransient,readonly) BOOL transient;
-@property(readonly) NSString * uuid;
+@property (getter=isTransient, readonly) BOOL transient;
+@property (readonly) NSString *uuid;
 
-+ (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id)arg2;
++ (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1;
 + (id)identifierCode;

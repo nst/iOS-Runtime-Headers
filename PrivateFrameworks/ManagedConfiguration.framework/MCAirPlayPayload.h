@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray;
-
 @interface MCAirPlayPayload : MCPayload {
     NSArray *_destinationsWithPasswords;
     NSArray *_titlesAndDescriptions;
     NSArray *_whitelistDestinations;
 }
 
-@property(retain) NSArray * destinationsWithPasswords;
-@property(retain) NSArray * titlesAndDescriptions;
-@property(retain) NSArray * whitelistDestinations;
+@property (nonatomic, retain) NSArray *destinationsWithPasswords;
+@property (nonatomic, retain) NSArray *titlesAndDescriptions;
+@property (nonatomic, retain) NSArray *whitelistDestinations;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

@@ -11,7 +11,7 @@
     } _position;
 }
 
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

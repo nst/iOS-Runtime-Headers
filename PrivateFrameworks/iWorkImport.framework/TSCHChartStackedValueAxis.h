@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartStackedValueAxis : TSCHChartValueAxis {
-}
+@interface TSCHChartStackedValueAxis : TSCHChartValueAxis
 
 - (double)doubleAxisToModelValue:(double)arg1;
 - (double)doubleModelToAxisValue:(double)arg1 forSeries:(id)arg2;

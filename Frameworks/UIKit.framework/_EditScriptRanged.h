@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, _EditScriptRangedAtom;
-
 @interface _EditScriptRanged : _EditScript {
     _EditScriptRangedAtom *_currentScriptAtom;
     int _options;
 }
 
-@property(readonly) NSString * stringA;
-@property(readonly) NSString * stringB;
+@property (nonatomic, readonly) NSString *stringA;
+@property (nonatomic, readonly) NSString *stringB;
 
 + (id)editScriptForSmallestSingleEditFromString:(id)arg1 toString:(id)arg2;
 + (id)editScriptFromString:(id)arg1 toString:(id)arg2;

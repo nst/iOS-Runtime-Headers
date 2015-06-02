@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class PCPersistentTimer;
-
 @interface VSAssetUpdateListener : NSObject {
     PCPersistentTimer *_assetCleanupTimer;
     BOOL _isListening;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSLogoutRequest : HSRequest {
-}
+@interface HSLogoutRequest : HSRequest
 
 + (id)requestWithSessionID:(unsigned int)arg1;
 

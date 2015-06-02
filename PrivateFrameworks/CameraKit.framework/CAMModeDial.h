@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMModeDialDataSource>, CAGradientLayer, NSMutableArray, NSString, UIImageView, UIView;
-
 @interface CAMModeDial : UIControl {
     UIView *__centeringDebugView;
     NSString *__contentSizeCategory;
@@ -19,18 +17,18 @@
     unsigned int _selectedIndex;
 }
 
-@property(readonly) UIView * _centeringDebugView;
-@property(copy,readonly) NSString * _contentSizeCategory;
-@property(readonly) UIView * _dialContainerView;
-@property(readonly) CAGradientLayer * _dialGradientLayer;
-@property(readonly) UIImageView * _dotImageView;
-@property(readonly) UIView * _dotTopMarginLayoutSpacer;
-@property(readonly) NSMutableArray * _items;
-@property(readonly) UIView * _itemsContainerView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }* _tapZones;
-@property <CAMModeDialDataSource> * dataSource;
-@property(readonly) int orientation;
-@property unsigned int selectedIndex;
+@property (nonatomic, readonly) UIView *_centeringDebugView;
+@property (nonatomic, readonly, copy) NSString *_contentSizeCategory;
+@property (nonatomic, readonly) UIView *_dialContainerView;
+@property (nonatomic, readonly) CAGradientLayer *_dialGradientLayer;
+@property (nonatomic, readonly) UIImageView *_dotImageView;
+@property (nonatomic, readonly) UIView *_dotTopMarginLayoutSpacer;
+@property (nonatomic, readonly) NSMutableArray *_items;
+@property (nonatomic, readonly) UIView *_itemsContainerView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*_tapZones;
+@property (nonatomic) <CAMModeDialDataSource> *dataSource;
+@property (nonatomic, readonly) int orientation;
+@property (nonatomic) unsigned int selectedIndex;
 
 - (void).cxx_destruct;
 - (float)_approximateWidthOfLabelAtIndex:(int)arg1;

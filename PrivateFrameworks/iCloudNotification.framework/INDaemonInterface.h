@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCloudNotification.framework/iCloudNotification
  */
 
-@interface INDaemonInterface : NSObject {
-}
+@interface INDaemonInterface : NSObject
 
 + (id)XPCInterface;
 + (id)_buildXPCInterface;

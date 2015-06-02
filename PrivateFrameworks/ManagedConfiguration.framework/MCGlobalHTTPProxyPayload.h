@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber, NSString;
-
 @interface MCGlobalHTTPProxyPayload : MCPayload {
     NSString *_credentialUUID;
     BOOL _proxyCaptiveLoginAllowed;
@@ -18,17 +16,17 @@
     NSString *_proxyUsername;
 }
 
-@property(retain) NSString * credentialUUID;
-@property BOOL proxyCaptiveLoginAllowed;
-@property(retain) NSNumber * proxyCaptiveLoginAllowedNum;
-@property BOOL proxyPACFallbackAllowed;
-@property(retain) NSNumber * proxyPACFallbackAllowedNum;
-@property(retain) NSString * proxyPACURLString;
-@property(retain) NSString * proxyPassword;
-@property(retain) NSString * proxyServer;
-@property(retain) NSNumber * proxyServerPort;
-@property int proxyType;
-@property(retain) NSString * proxyUsername;
+@property (nonatomic, retain) NSString *credentialUUID;
+@property (nonatomic) BOOL proxyCaptiveLoginAllowed;
+@property (nonatomic, retain) NSNumber *proxyCaptiveLoginAllowedNum;
+@property (nonatomic) BOOL proxyPACFallbackAllowed;
+@property (nonatomic, retain) NSNumber *proxyPACFallbackAllowedNum;
+@property (nonatomic, retain) NSString *proxyPACURLString;
+@property (nonatomic, retain) NSString *proxyPassword;
+@property (nonatomic, retain) NSString *proxyServer;
+@property (nonatomic, retain) NSNumber *proxyServerPort;
+@property (nonatomic) int proxyType;
+@property (nonatomic, retain) NSString *proxyUsername;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

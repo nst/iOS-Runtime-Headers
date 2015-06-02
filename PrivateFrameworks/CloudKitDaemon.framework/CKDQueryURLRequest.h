@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKQuery, CKRecordZoneID, NSArray, NSData, NSMutableArray;
-
 @interface CKDQueryURLRequest : CKDURLRequest {
     NSData *_cursor;
     unsigned int _limit;
@@ -14,13 +12,13 @@
     CKRecordZoneID *_zoneID;
 }
 
-@property(retain) NSData * cursor;
-@property unsigned int limit;
-@property(retain) CKQuery * query;
-@property(retain) NSArray * queryResponses;
-@property(retain) NSArray * requestedFields;
-@property(retain) NSData * resultsCursor;
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic, retain) NSData *cursor;
+@property (nonatomic) unsigned int limit;
+@property (nonatomic, retain) CKQuery *query;
+@property (nonatomic, retain) NSArray *queryResponses;
+@property (nonatomic, retain) NSArray *requestedFields;
+@property (nonatomic, retain) NSData *resultsCursor;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
 - (BOOL)allowsAnonymousAccount;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMElement, IKDOMHTMLCollection;
+@interface IKDOMDocumentFragment : IKDOMNode <IKJSDOMParentNode>
 
-@interface IKDOMDocumentFragment : IKDOMNode <IKJSDOMParentNode> {
-}
-
-@property(readonly) unsigned long childElementCount;
-@property(readonly) IKDOMHTMLCollection * children;
-@property(readonly) IKDOMElement * firstElementChild;
-@property(readonly) IKDOMElement * lastElementChild;
+@property (nonatomic, readonly) unsigned long childElementCount;
+@property (nonatomic, readonly) IKDOMHTMLCollection *children;
+@property (nonatomic, readonly) IKDOMElement *firstElementChild;
+@property (nonatomic, readonly) IKDOMElement *lastElementChild;
 
 - (unsigned long)childElementCount;
 - (id)children;

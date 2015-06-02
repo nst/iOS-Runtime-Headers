@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSMutableArray, NSNumber;
-
 @interface WFLSMResult : NSObject {
     NSMutableArray *categoryJudgements;
     NSNumber *threshold;
 }
 
-@property(copy) NSNumber * threshold;
+@property (copy) NSNumber *threshold;
 
 + (id)LSMResultWithLSMResultRef:(struct __LSMResult { }*)arg1 threshold:(id)arg2;
 + (id)extractScoresFromLSMResults:(struct __LSMResult { }*)arg1;

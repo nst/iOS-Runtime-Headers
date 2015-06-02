@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXPivotTable : NSObject {
-}
+@interface EXPivotTable : NSObject
 
 + (int)edPivotAreaTypeFrom:(id)arg1;
 + (int)edPivotConditionalFormatScopeFrom:(id)arg1;

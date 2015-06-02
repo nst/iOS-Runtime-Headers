@@ -2,12 +2,9 @@
    Image: /usr/lib/libAXSafeCategoryBundle.dylib
  */
 
-@class NSString;
+@interface UIAccessibilitySafeCategory : NSObject
 
-@interface UIAccessibilitySafeCategory : NSObject {
-}
-
-@property(copy) NSString * accessibilityIdentifier;
+@property (nonatomic, copy) NSString *accessibilityIdentifier;
 
 + (void)_addCategoryMethod:(struct objc_method { }*)arg1 toClass:(Class)arg2 isClass:(BOOL)arg3;
 + (id)_initializeSafeCategoryFromValidationManager;

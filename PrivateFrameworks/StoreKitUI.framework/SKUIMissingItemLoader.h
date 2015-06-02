@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMissingItemDelegate>, NSMutableDictionary, NSString, SKUIResourceLoader;
-
 @interface SKUIMissingItemLoader : NSObject <SKUIItemRequestDelegate> {
     int _batchSize;
     <SKUIMissingItemDelegate> *_delegate;
@@ -13,14 +11,14 @@
     NSMutableDictionary *_requests;
 }
 
-@property int batchSize;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIMissingItemDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * imageProfile;
-@property(copy) NSString * keyProfile;
-@property(readonly) Class superclass;
+@property (nonatomic) int batchSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIMissingItemDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *imageProfile;
+@property (nonatomic, copy) NSString *keyProfile;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_existingRequestIDForItemID:(id)arg1;

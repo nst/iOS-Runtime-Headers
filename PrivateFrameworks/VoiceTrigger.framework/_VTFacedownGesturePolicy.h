@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class CMDeviceOrientationManager, NSOperationQueue, _VTLockscreenPolicy;
-
 @interface _VTFacedownGesturePolicy : _VTStatePolicy {
     BOOL _isOrienting;
     _VTLockscreenPolicy *_lockscreenPolicy;
@@ -20,7 +18,7 @@
 - (void)_unregisterForScreenEvents;
 - (void)dealloc;
 - (void)dependencyUpdated:(id)arg1;
-- (id)initWithCallback:(id)arg1 queue:(id)arg2;
+- (id)initWithCallback:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isEnabled;
 - (void)reload;
 - (void)screenEventObserved:(struct __CFString { }*)arg1;

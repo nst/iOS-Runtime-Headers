@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString;
-
 @interface CAMExposureBiasTextView : CAMBadgeTextView {
     NSString *__lastText;
     float _exposureBias;
 }
 
-@property(retain) NSString * _lastText;
-@property float exposureBias;
+@property (nonatomic, retain) NSString *_lastText;
+@property (nonatomic) float exposureBias;
 
 - (void).cxx_destruct;
 - (id)_lastText;

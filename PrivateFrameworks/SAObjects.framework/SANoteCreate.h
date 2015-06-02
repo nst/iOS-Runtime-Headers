@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SANoteCreate : SADomainCommand
 
-@interface SANoteCreate : SADomainCommand {
-}
-
-@property(copy) NSString * contents;
+@property (nonatomic, copy) NSString *contents;
 
 + (id)create;
 + (id)createWithDictionary:(id)arg1 context:(id)arg2;

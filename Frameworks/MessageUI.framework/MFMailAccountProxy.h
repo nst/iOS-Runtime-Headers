@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface MFMailAccountProxy : NSObject {
     NSDictionary *_properties;
 }
 
-@property(readonly) NSArray * emailAddresses;
-@property(readonly) NSString * firstEmailAddress;
-@property(readonly) NSArray * fromEmailAddresses;
-@property(readonly) NSArray * fromEmailAddressesIncludingDisabled;
-@property(readonly) NSString * fullUserName;
-@property(readonly) BOOL isDefaultDeliveryAccount;
-@property(readonly) id mailAccount;
-@property(readonly) BOOL restrictsRepliesAndForwards;
-@property(readonly) BOOL supportsSoftBankCodePoints;
-@property(readonly) BOOL supportsThreadNotifications;
-@property(readonly) NSString * uniqueID;
-@property(readonly) NSString * username;
+@property (nonatomic, readonly) NSArray *emailAddresses;
+@property (nonatomic, readonly) NSString *firstEmailAddress;
+@property (nonatomic, readonly) NSArray *fromEmailAddresses;
+@property (nonatomic, readonly) NSArray *fromEmailAddressesIncludingDisabled;
+@property (nonatomic, readonly) NSString *fullUserName;
+@property (nonatomic, readonly) BOOL isDefaultDeliveryAccount;
+@property (nonatomic, readonly) id mailAccount;
+@property (nonatomic, readonly) BOOL restrictsRepliesAndForwards;
+@property (nonatomic, readonly) BOOL supportsSoftBankCodePoints;
+@property (nonatomic, readonly) BOOL supportsThreadNotifications;
+@property (nonatomic, readonly) NSString *uniqueID;
+@property (nonatomic, readonly) NSString *username;
 
 - (id)_emailAddressesAndAliases;
 - (id)_initWithProperties:(id)arg1;

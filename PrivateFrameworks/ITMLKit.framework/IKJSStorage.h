@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppDataStoring>, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface IKJSStorage : IKJSObject <IKJSStorage> {
     <IKAppDataStoring> *_appStorage;
     NSMutableDictionary *_storageDict;
     NSObject<OS_dispatch_queue> *_storageQueue;
-    unsigned int _usesExternalDataStore : 1;
+    unsigned int _usesExternalDataStore;
 }
 
-@property <IKAppDataStoring> * appStorage;
-@property(readonly) unsigned int length;
-@property(retain) NSMutableDictionary * storageDict;
-@property(retain) NSObject<OS_dispatch_queue> * storageQueue;
+@property (nonatomic) <IKAppDataStoring> *appStorage;
+@property (nonatomic, readonly) unsigned int length;
+@property (nonatomic, retain) NSMutableDictionary *storageDict;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *storageQueue;
 
 - (void).cxx_destruct;
 - (void)_verifyExternalDataStoreForKey:(id)arg1;

@@ -2,38 +2,36 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, <MTLResource>, MTLResourceAllocationInfo, MTLToolsPointerArray, NSString;
-
 @interface MTLToolsTexture : MTLToolsResource <MTLTextureImplementation> {
     MTLToolsPointerArray *_views;
 }
 
-@property(readonly) unsigned int arrayLength;
-@property(readonly) MTLResourceAllocationInfo * cachedAllocationInfo;
-@property(readonly) unsigned int cpuCacheMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned int depth;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(getter=isFramebufferOnly,readonly) BOOL framebufferOnly;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int height;
-@property(readonly) struct __IOSurface { }* iosurface;
-@property(readonly) unsigned int iosurfacePlane;
-@property(readonly) BOOL isDrawable;
-@property(copy) NSString * label;
-@property(readonly) unsigned int mipmapLevelCount;
-@property(readonly) unsigned int numFaces;
-@property(readonly) unsigned int pixelFormat;
+@property (readonly) unsigned int arrayLength;
+@property (readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
+@property (readonly) unsigned int cpuCacheMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly) unsigned int depth;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (getter=isFramebufferOnly, readonly) BOOL framebufferOnly;
+@property (readonly) unsigned int hash;
+@property (readonly) unsigned int height;
+@property (readonly) struct __IOSurface { }*iosurface;
+@property (readonly) unsigned int iosurfacePlane;
+@property (readonly) BOOL isDrawable;
+@property (copy) NSString *label;
+@property (readonly) unsigned int mipmapLevelCount;
+@property (readonly) unsigned int numFaces;
+@property (readonly) unsigned int pixelFormat;
 @property int responsibleProcess;
-@property(readonly) <MTLResource> * rootResource;
-@property(readonly) unsigned int rotation;
-@property(readonly) unsigned int sampleCount;
-@property(readonly) MTLResourceAllocationInfo * sharedAllocationInfo;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int textureType;
-@property(readonly) MTLToolsPointerArray * views;
-@property(readonly) unsigned int width;
+@property (readonly) <MTLResource> *rootResource;
+@property (readonly) unsigned int rotation;
+@property (readonly) unsigned int sampleCount;
+@property (readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
+@property (readonly) Class superclass;
+@property (readonly) unsigned int textureType;
+@property (nonatomic, readonly) MTLToolsPointerArray *views;
+@property (readonly) unsigned int width;
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSData, NSMutableSet, NSSet, NSString, SGDuplicateKey, SGRecordId, SGSimpleTimeRange;
-
 @interface SGEntity : NSObject {
     NSString *_content;
     double _creationTimestamp;
@@ -22,21 +20,21 @@
     NSString *_title;
 }
 
-@property(retain) NSString * content;
-@property double creationTimestamp;
-@property(retain) SGDuplicateKey * duplicateKey;
-@property double lastModifiedTimestamp;
-@property(retain) NSMutableSet * locations;
-@property long long masterEntityId;
-@property(readonly) NSSet * participants;
-@property double quality;
-@property(retain) SGRecordId * recordId;
-@property(retain) NSString * sourceKey;
-@property unsigned int state;
-@property(retain) NSData * structuredData;
-@property(readonly) NSSet * tags;
-@property(retain) SGSimpleTimeRange * timeRange;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *content;
+@property (nonatomic) double creationTimestamp;
+@property (nonatomic, retain) SGDuplicateKey *duplicateKey;
+@property (nonatomic) double lastModifiedTimestamp;
+@property (nonatomic, retain) NSMutableSet *locations;
+@property (nonatomic) long long masterEntityId;
+@property (nonatomic, readonly) NSSet *participants;
+@property (nonatomic) double quality;
+@property (nonatomic, retain) SGRecordId *recordId;
+@property (nonatomic, retain) NSString *sourceKey;
+@property (nonatomic) unsigned int state;
+@property (nonatomic, retain) NSData *structuredData;
+@property (nonatomic, readonly) NSSet *tags;
+@property (nonatomic, retain) SGSimpleTimeRange *timeRange;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)addParticipant:(id)arg1 type:(unsigned int)arg2;

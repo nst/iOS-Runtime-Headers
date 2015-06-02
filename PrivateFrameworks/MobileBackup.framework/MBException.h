@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBException : NSException {
-}
+@interface MBException : NSException
 
 - (id)error;
 - (int)errorCode;

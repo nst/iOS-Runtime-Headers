@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicTableViewControllerDelegate>, MusicSearchViewController, NSMapTable, NSString, UISearchBar, UISearchDisplayController, UITraitCollection;
-
 @interface MusicTableViewController : MPUTableViewController <MPUMiniPlayerParticipant, MusicSearchViewControllerDelegate, MusicTableViewDelegate> {
     NSMapTable *_calculatedHeightByTableViewRelatedClass;
     <MusicTableViewControllerDelegate> *_delegate;
@@ -14,12 +12,12 @@
     MusicSearchViewController *_searchViewController;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(copy,readonly) NSString * debugDescription;
-@property <MusicTableViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MusicTableViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldPopWhenEmpty;
 + (BOOL)_supportsSearch;

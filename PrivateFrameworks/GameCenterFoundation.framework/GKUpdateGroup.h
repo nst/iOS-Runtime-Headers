@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSError, NSLock, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKUpdateGroup : NSObject {
     NSObject<OS_dispatch_group> *_dispatchGroup;
     NSError *_error;
@@ -13,13 +11,13 @@
     NSObject<OS_dispatch_queue> *_targetQueue;
 }
 
-@property NSObject<OS_dispatch_group> * dispatchGroup;
-@property(retain) NSError * error;
-@property(retain) NSLock * lock;
-@property(retain) NSString * name;
-@property(retain) NSMutableArray * notifiers;
-@property NSObject<OS_dispatch_queue> * targetQueue;
-@property(readonly) int updateCount;
+@property (nonatomic) NSObject<OS_dispatch_group> *dispatchGroup;
+@property (retain) NSError *error;
+@property (retain) NSLock *lock;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSMutableArray *notifiers;
+@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
+@property (nonatomic, readonly) int updateCount;
 
 + (id)updateGroup;
 + (id)updateGroupForTargetQueue:(id)arg1;
@@ -32,12 +30,12 @@
 - (id)dispatchGroup;
 - (id)error;
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
-- (void)join:(id)arg1;
+- (void)join:(id /* block */)arg1;
 - (id)lock;
 - (id)name;
 - (id)notifiers;
-- (void)perform:(id)arg1;
-- (void)performOnQueue:(id)arg1 block:(id)arg2;
+- (void)perform:(id /* block */)arg1;
+- (void)performOnQueue:(id)arg1 block:(id /* block */)arg2;
 - (void)setDispatchGroup:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setLock:(id)arg1;

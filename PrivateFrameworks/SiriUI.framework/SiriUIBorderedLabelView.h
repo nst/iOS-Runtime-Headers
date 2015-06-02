@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIFont, UIImageView, UILabel;
-
 @interface SiriUIBorderedLabelView : UIView {
     UIImageView *_borderImageView;
     struct UIEdgeInsets { 
@@ -16,7 +14,7 @@
     UILabel *_ratingLabel;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultEdgeInsets;
 

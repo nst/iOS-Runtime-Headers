@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class <NPKPaymentWebServiceHelperDelegate>, IDSService, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NPKPaymentWebServiceHelper : NSObject <IDSServiceDelegate, PKPaymentProvisioningServiceDelegate> {
     unsigned int _context;
     <NPKPaymentWebServiceHelperDelegate> *_delegate;
@@ -13,16 +11,16 @@
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
-@property unsigned int context;
-@property(copy,readonly) NSString * debugDescription;
-@property <NPKPaymentWebServiceHelperDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSMutableDictionary * outstandingRequests;
-@property(retain) IDSService * provisioningService;
-@property(retain) NSObject<OS_dispatch_queue> * responseQueue;
-@property(readonly) Class superclass;
+@property (nonatomic) unsigned int context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NPKPaymentWebServiceHelperDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSMutableDictionary *outstandingRequests;
+@property (nonatomic, retain) IDSService *provisioningService;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *responseQueue;
+@property (readonly) Class superclass;
 
 + (id)bridgedClientInfoHTTPHeader;
 
@@ -32,15 +30,15 @@
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
 - (id)_supportedRegionsForWebService:(id)arg1;
 - (void)configurationDataResponse:(id)arg1;
-- (void)configurationDataWithCompletionHandler:(id)arg1;
+- (void)configurationDataWithCompletionHandler:(id /* block */)arg1;
 - (unsigned int)context;
 - (id)delegate;
 - (void)deleteCardWithAID:(id)arg1;
 - (void)didRegisterResponse:(id)arg1;
 - (void)dumpLogsResponse:(id)arg1;
-- (void)dumpLogsWithCompletion:(id)arg1;
+- (void)dumpLogsWithCompletion:(id /* block */)arg1;
 - (id)filterVerificationChannels:(id)arg1;
-- (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id)arg2;
+- (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithContext:(unsigned int)arg1 responseQueue:(id)arg2;
 - (id)internalQueue;
@@ -51,15 +49,15 @@
 - (void)pendingRemovalResponse:(id)arg1;
 - (void)preconditionNotMet:(id)arg1;
 - (void)provisioningDataResponse:(id)arg1;
-- (void)provisioningDataWithCompletionHandler:(id)arg1;
+- (void)provisioningDataWithCompletionHandler:(id /* block */)arg1;
 - (id)provisioningService;
-- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id)arg2;
+- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)queueTSMConnectionResponse:(id)arg1;
 - (void)registrationDataResponse:(id)arg1;
-- (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id)arg2;
-- (void)removeAIDsFromSecureElement:(id)arg1 withCompletion:(id)arg2;
+- (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeAIDsFromSecureElement:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)responseQueue;
-- (void)secureElementCardsWithCompletion:(id)arg1;
+- (void)secureElementCardsWithCompletion:(id /* block */)arg1;
 - (void)secureElementGetCardsResponse:(id)arg1;
 - (void)secureElementRemoveCardsResponse:(id)arg1;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
@@ -69,8 +67,8 @@
 - (void)setContext:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
-- (void)setNewAuthRandomIfNecessary:(id)arg1;
-- (void)setNewAuthRandomIfNecessaryAtBeginningOfProvisioningFlow:(id)arg1;
+- (void)setNewAuthRandomIfNecessary:(id /* block */)arg1;
+- (void)setNewAuthRandomIfNecessaryAtBeginningOfProvisioningFlow:(id /* block */)arg1;
 - (void)setNewAuthRandomIfNecessaryResponse:(id)arg1;
 - (void)setOutstandingRequests:(id)arg1;
 - (void)setProvisioningService:(id)arg1;

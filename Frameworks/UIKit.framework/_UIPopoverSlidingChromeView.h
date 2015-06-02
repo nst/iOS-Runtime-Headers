@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIPopoverSlidingChromeView : UIPopoverBackgroundView {
-}
+@interface _UIPopoverSlidingChromeView : UIPopoverBackgroundView
 
 + (float)arrowBase;
 + (float)arrowHeight;

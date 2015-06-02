@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageBody, MFMutableMessageHeaders;
-
 @interface MFOutgoingMessage : MFMailMessage {
     MFMessageBody *_messageBody;
     MFMutableMessageHeaders *_messageHeaders;

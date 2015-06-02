@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableSet, NSNumber, UIView, _UIPageCurlState;
-
 @interface _UIPageCurl : NSObject {
     NSMutableArray *_activeStateQueue;
     NSMutableSet *_completedStates;
@@ -27,10 +25,10 @@
     int _spineLocation;
 }
 
-@property(getter=_isManualPageCurlInProgressAndUncommitted,readonly) BOOL _manualPageCurlInProgressAndUncommitted;
-@property(setter=_setManualPageCurlMaxDAngle:) float _manualPageCurlMaxDAngle;
-@property(readonly) int _spineLocation;
-@property(readonly) NSNumber * _wrappedManualPageCurlDirection;
+@property (getter=_isManualPageCurlInProgressAndUncommitted, nonatomic, readonly) BOOL _manualPageCurlInProgressAndUncommitted;
+@property (setter=_setManualPageCurlMaxDAngle:, nonatomic) float _manualPageCurlMaxDAngle;
+@property (nonatomic, readonly) int _spineLocation;
+@property (nonatomic, readonly) NSNumber *_wrappedManualPageCurlDirection;
 
 - (void)_abortManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
 - (id)_animationKeyPaths;
@@ -44,7 +42,7 @@
 - (float)_distanceToTravelWithCurrentSpineLocation;
 - (float)_durationForManualCurlEndAnimationWithSuggestedVelocity:(float)arg1 shouldComplete:(BOOL)arg2;
 - (void)_endManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2 shouldComplete:(BOOL)arg3;
-- (void)_enqueueCurlOfType:(int)arg1 fromLocation:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3 withView:(id)arg4 revealingView:(id)arg5 completion:(id)arg6 finally:(id)arg7;
+- (void)_enqueueCurlOfType:(int)arg1 fromLocation:(struct CGPoint { float x1; float x2; })arg2 inDirection:(int)arg3 withView:(id)arg4 revealingView:(id)arg5 completion:(id /* block */)arg6 finally:(id /* block */)arg7;
 - (void)_ensureCurlFilterOnLayer:(id)arg1;
 - (void)_forceCleanupState:(id)arg1 finished:(BOOL)arg2 completed:(BOOL)arg3;
 - (void)_fromValue:(float*)arg1 toValue:(float*)arg2 fromState:(id)arg3 forAnimationWithKeyPath:(id)arg4;

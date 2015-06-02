@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <MFSASLSecurityLayer>, NSArray, NSData, NSMutableString, NSString, _MFSocket;
-
 @interface MFConnection : NSObject {
-    unsigned int _allowFallbacks : 1;
+    unsigned int _allowFallbacks;
     char *_buffer;
     unsigned int _bufferLength;
     int _bufferRemainingBytes;
     unsigned int _bufferStart;
-    unsigned int _compressionEnabled : 1;
+    unsigned int _compressionEnabled;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_deflater;
     unsigned long _desiredBufferLength;
     unsigned int _dontLogReads;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_inflater;
-    unsigned int _isFetching : 1;
+    unsigned int _isFetching;
     double _lastUsedTime;
     NSData *_logData;
     unsigned int _readBytesNotLogged;
@@ -30,16 +23,16 @@
     char *_zbuffer;
 }
 
-@property(readonly) NSArray * authenticationMechanisms;
-@property(readonly) NSArray * capabilities;
-@property(readonly) BOOL hasBytesAvailable;
-@property(readonly) BOOL isCellularConnection;
-@property BOOL isFetching;
-@property(readonly) BOOL isValid;
-@property(readonly) double lastUsedTime;
-@property(readonly) BOOL loginDisabled;
-@property(readonly) NSString * securityProtocol;
-@property(readonly) BOOL usesOpportunisticSockets;
+@property (nonatomic, readonly) NSArray *authenticationMechanisms;
+@property (nonatomic, readonly) NSArray *capabilities;
+@property (nonatomic, readonly) BOOL hasBytesAvailable;
+@property (nonatomic, readonly) BOOL isCellularConnection;
+@property (nonatomic) BOOL isFetching;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) double lastUsedTime;
+@property (nonatomic, readonly) BOOL loginDisabled;
+@property (nonatomic, readonly) NSString *securityProtocol;
+@property (nonatomic, readonly) BOOL usesOpportunisticSockets;
 
 + (void)flushLog;
 + (void)initialize;

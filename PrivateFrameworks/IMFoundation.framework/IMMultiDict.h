@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface IMMultiDict : NSObject {
     unsigned int _count;
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly) NSArray * allKeys;
-@property(readonly) unsigned int count;
-@property(retain) NSMutableDictionary * dictionary;
+@property (nonatomic, readonly) NSArray *allKeys;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, retain) NSMutableDictionary *dictionary;
 
 - (id)allKeys;
 - (unsigned int)count;
@@ -21,7 +19,7 @@
 - (id)description;
 - (id)dictionary;
 - (void)enqueueObject:(id)arg1 forKey:(id)arg2;
-- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)headObjectForKey:(id)arg1;
 - (id)init;
 - (id)objectsForKey:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUTiltWheelDataSource>, NSDictionary;
-
 @interface PUTiltWheel : UIView {
     NSDictionary *__dotsByDegree;
     NSDictionary *__labelsByDegree;
@@ -12,11 +10,11 @@
     <PUTiltWheelDataSource> *_dataSource;
 }
 
-@property(setter=_setDotsByDegree:,copy) NSDictionary * _dotsByDegree;
-@property(setter=_setLabelsByDegree:,copy) NSDictionary * _labelsByDegree;
-@property(setter=_setNumericIndicatorDegreeStep:) unsigned int _numericIndicatorDegreeStep;
-@property(setter=_setTiltWheelOrientation:) int _tiltWheelOrientation;
-@property <PUTiltWheelDataSource> * dataSource;
+@property (setter=_setDotsByDegree:, nonatomic, copy) NSDictionary *_dotsByDegree;
+@property (setter=_setLabelsByDegree:, nonatomic, copy) NSDictionary *_labelsByDegree;
+@property (setter=_setNumericIndicatorDegreeStep:, nonatomic) unsigned int _numericIndicatorDegreeStep;
+@property (setter=_setTiltWheelOrientation:, nonatomic) int _tiltWheelOrientation;
+@property (nonatomic) <PUTiltWheelDataSource> *dataSource;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_baseViewCenterForRadius:(float)arg1 aroundCenter:(struct CGPoint { float x1; float x2; })arg2;

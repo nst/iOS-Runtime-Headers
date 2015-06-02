@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UILabel;
-
 @interface MPUExtrasDetailTextCell : UICollectionViewCell {
     UILabel *_label;
 }

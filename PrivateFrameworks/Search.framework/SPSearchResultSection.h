@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableOrderedSet, NSString;
-
 @interface SPSearchResultSection : PBCodable <NSCopying> {
     NSString *_category;
     NSString *_displayIdentifier;
@@ -18,18 +16,18 @@
     NSString *_scheme;
 }
 
-@property(retain) NSString * category;
-@property(retain) NSString * displayIdentifier;
-@property unsigned int domain;
-@property int flags;
-@property(readonly) BOOL hasCategory;
-@property(readonly) BOOL hasDisplayIdentifier;
-@property BOOL hasDomain;
-@property BOOL hasFlags;
-@property(readonly) BOOL hasIcon;
-@property(readonly) BOOL hasScheme;
-@property(retain) NSString * icon;
-@property(retain) NSString * scheme;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSString *displayIdentifier;
+@property (nonatomic) unsigned int domain;
+@property (nonatomic) int flags;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic, readonly) BOOL hasDisplayIdentifier;
+@property (nonatomic) BOOL hasDomain;
+@property (nonatomic) BOOL hasFlags;
+@property (nonatomic, readonly) BOOL hasIcon;
+@property (nonatomic, readonly) BOOL hasScheme;
+@property (nonatomic, retain) NSString *icon;
+@property (nonatomic, retain) NSString *scheme;
 
 - (void)addResults:(id)arg1;
 - (void)addResults:(id)arg1 atIndex:(unsigned int)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVMultiStatusItem, NSSet;
-
 @interface CoreDAVPropertyFindBaseTask : CoreDAVTask {
     CoreDAVMultiStatusItem *_multiStatus;
     NSSet *_propertiesToFind;
 }
 
-@property(retain) CoreDAVMultiStatusItem * multiStatus;
-@property(retain) NSSet * propertiesToFind;
+@property (nonatomic, retain) CoreDAVMultiStatusItem *multiStatus;
+@property (nonatomic, retain) NSSet *propertiesToFind;
 
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;

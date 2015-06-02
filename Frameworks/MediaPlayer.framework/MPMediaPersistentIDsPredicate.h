@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
-
 @interface MPMediaPersistentIDsPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     unsigned int _count;
     long long *_persistentIDs;
     BOOL _shouldContain;
 }
 
-@property(readonly) unsigned int count;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) const long long* persistentIDs;
-@property(readonly) BOOL shouldContain;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) const long long*persistentIDs;
+@property (nonatomic, readonly) BOOL shouldContain;
+@property (readonly) Class superclass;
 
 + (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 

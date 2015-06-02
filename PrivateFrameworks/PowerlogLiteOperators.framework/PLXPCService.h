@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_xpc_object>, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition;
-
 @interface PLXPCService : PLService {
     NSArray *_clientIDs;
     NSDictionary *_clientNames;
@@ -16,15 +14,15 @@
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
-@property(retain) NSArray * clientIDs;
-@property(retain) NSDictionary * clientNames;
-@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
-@property(retain) NSDictionary * permissionCache;
-@property(retain) NSMutableDictionary * registeredListeners;
-@property(retain) NSMutableDictionary * registeredResponders;
-@property(retain) PLNSNotificationOperatorComposition * registrationNotification;
-@property(retain) PLNSTimerOperatorComposition * resetPermissionsForClientsTimer;
-@property(retain) NSObject<OS_xpc_object> * xpcConnection;
+@property (retain) NSArray *clientIDs;
+@property (retain) NSDictionary *clientNames;
+@property (retain) PLNSNotificationOperatorComposition *dailyTaskNotification;
+@property (retain) NSDictionary *permissionCache;
+@property (retain) NSMutableDictionary *registeredListeners;
+@property (retain) NSMutableDictionary *registeredResponders;
+@property (retain) PLNSNotificationOperatorComposition *registrationNotification;
+@property (retain) PLNSTimerOperatorComposition *resetPermissionsForClientsTimer;
+@property (retain) NSObject<OS_xpc_object> *xpcConnection;
 
 + (id)defaults;
 + (id)entryAggregateDefinitionXPCEvent;

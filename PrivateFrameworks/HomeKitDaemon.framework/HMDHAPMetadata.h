@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPMetadata, NSArray, NSDictionary, NSNumber;
-
 @interface HMDHAPMetadata : NSObject <NSSecureCoding> {
     NSArray *_assistantCharacteristics;
     NSDictionary *_assistantServices;
@@ -19,18 +17,18 @@
     NSNumber *_version;
 }
 
-@property(retain) NSArray * assistantCharacteristics;
-@property(retain) NSDictionary * assistantServices;
-@property(retain) NSDictionary * assistantUnits;
-@property(retain) NSArray * hapCharacteristics;
-@property(retain) HAPMetadata * hapMetadata;
-@property(retain) NSArray * hapProperties;
-@property(retain) NSArray * hapServices;
-@property(retain) NSArray * hapSupportsAuthDataTuples;
-@property(retain) NSArray * hapValueUnits;
-@property(retain) NSArray * hmRequiresDeviceUnlockTuples;
-@property(retain) NSNumber * schemaVersion;
-@property(retain) NSNumber * version;
+@property (nonatomic, retain) NSArray *assistantCharacteristics;
+@property (nonatomic, retain) NSDictionary *assistantServices;
+@property (nonatomic, retain) NSDictionary *assistantUnits;
+@property (nonatomic, retain) NSArray *hapCharacteristics;
+@property (nonatomic, retain) HAPMetadata *hapMetadata;
+@property (nonatomic, retain) NSArray *hapProperties;
+@property (nonatomic, retain) NSArray *hapServices;
+@property (nonatomic, retain) NSArray *hapSupportsAuthDataTuples;
+@property (nonatomic, retain) NSArray *hapValueUnits;
+@property (nonatomic, retain) NSArray *hmRequiresDeviceUnlockTuples;
+@property (nonatomic, retain) NSNumber *schemaVersion;
+@property (nonatomic, retain) NSNumber *version;
 
 + (id)getBuiltinInstance;
 + (id)getSharedInstance;

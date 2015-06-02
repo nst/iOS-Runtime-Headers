@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPUserPrivacySettings;
-
 @interface CKDGetUserPrivacySettingsURLRequest : CKDURLRequest {
     CKDPUserPrivacySettings *_userPrivacySettings;
 }
 
-@property(retain) CKDPUserPrivacySettings * userPrivacySettings;
+@property (nonatomic, retain) CKDPUserPrivacySettings *userPrivacySettings;
 
 - (void).cxx_destruct;
 - (int)operationType;

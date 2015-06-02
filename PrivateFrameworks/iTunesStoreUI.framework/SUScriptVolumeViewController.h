@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptVolumeViewController : SUScriptViewController {
-}
+@interface SUScriptVolumeViewController : SUScriptViewController
 
 - (id)newNativeViewController;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class <SPDaemonQueryDelegate>, SPSearchQuery;
-
 @interface SPDaemonQueryToken : NSObject {
     struct __CFMachPort { } *_callbackPort;
     <SPDaemonQueryDelegate> *_delegate;
@@ -11,9 +9,9 @@
     unsigned int _queryID;
 }
 
-@property <SPDaemonQueryDelegate> * delegate;
-@property(readonly) SPSearchQuery * query;
-@property(readonly) unsigned int queryID;
+@property (nonatomic) <SPDaemonQueryDelegate> *delegate;
+@property (nonatomic, readonly) SPSearchQuery *query;
+@property (nonatomic, readonly) unsigned int queryID;
 
 - (void)dealloc;
 - (id)delegate;

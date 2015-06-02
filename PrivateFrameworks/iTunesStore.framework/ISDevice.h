@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface ISDevice : NSObject <ISSingleton> {
     unsigned int _daemonLaunchCount;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -11,15 +9,15 @@
     double _lastFreeSpaceRequest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * deviceName;
-@property(readonly) NSString * guid;
-@property(readonly) NSString * hardwareName;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * serialNumber;
-@property(readonly) Class superclass;
-@property(readonly) NSString * systemName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSString *deviceName;
+@property (readonly) NSString *guid;
+@property (readonly) NSString *hardwareName;
+@property (readonly) unsigned int hash;
+@property (readonly) NSString *serialNumber;
+@property (readonly) Class superclass;
+@property (readonly) NSString *systemName;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -33,7 +31,7 @@
 - (id)hardwareName;
 - (id)init;
 - (BOOL)releasePowerAssertion:(id)arg1;
-- (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id)arg4;
+- (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)resetLocationAndPrivacy;
 - (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;

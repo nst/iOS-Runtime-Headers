@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage;
-
 @interface CIBlendWithAlphaMask : CIFilter {
     CIImage *inputBackgroundImage;
     CIImage *inputImage;
     CIImage *inputMaskImage;
 }
 
-@property(retain) CIImage * inputBackgroundImage;
-@property(retain) CIImage * inputImage;
-@property(retain) CIImage * inputMaskImage;
+@property (nonatomic, retain) CIImage *inputBackgroundImage;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIImage *inputMaskImage;
 
 + (id)customAttributes;
 

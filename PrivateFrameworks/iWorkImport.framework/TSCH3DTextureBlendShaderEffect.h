@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DTextureBlendShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DTextureBlendShaderEffect : TSCH3DShaderEffect
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIWishlistDataConsumer : SSVURLDataConsumer {
-}
+@interface SKUIWishlistDataConsumer : SSVURLDataConsumer
 
 - (id)_errorWithData:(id)arg1 MIMEType:(id)arg2;
 - (id)_itemsWithJSONData:(id)arg1 error:(id*)arg2;

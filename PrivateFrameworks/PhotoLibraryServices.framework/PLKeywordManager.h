@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLGatekeeperClient, PLManagedObjectContext, PLPhotoLibrary;
-
 @interface PLKeywordManager : NSObject {
     PLGatekeeperClient *_assetsdClient;
     PLManagedObjectContext *_libraryContext;

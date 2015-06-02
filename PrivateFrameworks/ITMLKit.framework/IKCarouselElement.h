@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKCarouselElement : IKCollectionElement {
-}
+@interface IKCarouselElement : IKCollectionElement
 
 @end

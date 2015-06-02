@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCUIConfiguration, UIColor;
-
 @interface RCChronologicalAnnotationView : UIView {
     RCUIConfiguration *_UIConfiguration;
     UIColor *_backgroundDebugColor;
@@ -20,11 +18,11 @@
     } _visibleTimeRange;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property(retain) UIColor * backgroundDebugColor;
-@property struct { double x1; double x2; } markerClippingRange;
-@property unsigned int maximumMajorUnitsInVisibleDuration;
-@property struct { double x1; double x2; } visibleTimeRange;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (nonatomic, retain) UIColor *backgroundDebugColor;
+@property (nonatomic) struct { double x1; double x2; } markerClippingRange;
+@property (nonatomic) unsigned int maximumMajorUnitsInVisibleDuration;
+@property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;

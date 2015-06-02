@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSString;
-
 @interface FBSystemServiceServerClient : BSBasicServerClient {
     NSString *_bundleID;
     NSString *_bundlePath;
@@ -11,11 +9,11 @@
     BOOL _uiApp;
 }
 
-@property(getter=isUIApp) BOOL UIApp;
-@property(retain,readonly) NSString * bundleID;
-@property(retain) NSString * bundlePath;
-@property(getter=isExtension) BOOL extension;
-@property(readonly) int pid;
+@property (getter=isUIApp, nonatomic) BOOL UIApp;
+@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, retain) NSString *bundlePath;
+@property (getter=isExtension, nonatomic) BOOL extension;
+@property (nonatomic, readonly) int pid;
 
 - (id)bundleID;
 - (id)bundlePath;

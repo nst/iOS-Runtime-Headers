@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSError;
-
 @interface RCTrimTimeRangeOperation : NSOperation {
     BOOL _canSimulateTrimmingProgress;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressUpdateBlock;
-
+    id /* block */ _progressUpdateBlock;
     float _simulatedProgress;
     struct { 
         double beginTime; 
@@ -23,14 +13,14 @@
     BOOL _trimMode;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) double exportedDuration;
-@property(readonly) double progress;
-@property(readonly) BOOL progressShouldContinueUpdating;
-@property(copy) id progressUpdateBlock;
-@property(readonly) BOOL success;
-@property(readonly) struct { double x1; double x2; } timeRange;
-@property(readonly) BOOL trimMode;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) double exportedDuration;
+@property (nonatomic, readonly) double progress;
+@property (nonatomic, readonly) BOOL progressShouldContinueUpdating;
+@property (nonatomic, copy) id /* block */ progressUpdateBlock;
+@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly) struct { double x1; double x2; } timeRange;
+@property (nonatomic, readonly) BOOL trimMode;
 
 - (void).cxx_destruct;
 - (void)_postFinalProgressUpdateNotification;
@@ -39,9 +29,9 @@
 - (void)main;
 - (double)progress;
 - (BOOL)progressShouldContinueUpdating;
-- (id)progressUpdateBlock;
+- (id /* block */)progressUpdateBlock;
 - (void)setCanSimulateTrimmingProgress:(BOOL)arg1;
-- (void)setProgressUpdateBlock:(id)arg1;
+- (void)setProgressUpdateBlock:(id /* block */)arg1;
 - (void)simulateTrimmingProgress;
 - (void)start;
 - (struct { double x1; double x2; })timeRange;

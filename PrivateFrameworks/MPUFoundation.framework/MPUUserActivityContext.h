@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSData;
-
 @interface MPUUserActivityContext : NSObject <NSCopying, NSMutableCopying> {
     NSArray *_containerItems;
     int _originatorType;
     int _originatorVersion;
 }
 
-@property(copy,readonly) NSArray * containerItems;
-@property(copy,readonly) NSData * dataRepresentation;
-@property(readonly) int originatorType;
-@property(readonly) int originatorVersion;
+@property (nonatomic, readonly, copy) NSArray *containerItems;
+@property (nonatomic, readonly, copy) NSData *dataRepresentation;
+@property (nonatomic, readonly) int originatorType;
+@property (nonatomic, readonly) int originatorVersion;
 
 - (void).cxx_destruct;
 - (id)containerItemFollowingContainerItem:(id)arg1;

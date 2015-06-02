@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHLine : NSObject {
-}
+@interface GQHLine : NSObject
 
 + (int)handleFloatingLine:(id)arg1 state:(id)arg2;
 + (int)handleInlineLine:(id)arg1 state:(id)arg2;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDAnimationTarget : NSObject {
-}
+@interface PDAnimationTarget : NSObject
 
 @end

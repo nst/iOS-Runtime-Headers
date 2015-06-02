@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDocumentItem, BRCItemID, BRCLocalItem, BRCPackageItem, BRCRelativePath, BRCServerItem;
-
 @interface BRCPathToItemLookup : NSObject {
     struct { 
         unsigned int byFileID : 1; 
@@ -25,13 +23,13 @@
     BRCServerItem *_serverItem;
 }
 
-@property(retain) BRCDocumentItem * byDocumentID;
-@property(retain) BRCLocalItem * byFileID;
-@property(readonly) BRCLocalItem * byPath;
-@property(readonly) BRCItemID * parentID;
-@property(readonly) BRCRelativePath * relpathOfFSEvent;
-@property(readonly) BRCRelativePath * relpathOfItem;
-@property(readonly) BRCServerItem * serverByPath;
+@property (nonatomic, retain) BRCDocumentItem *byDocumentID;
+@property (nonatomic, retain) BRCLocalItem *byFileID;
+@property (nonatomic, readonly) BRCLocalItem *byPath;
+@property (nonatomic, readonly) BRCItemID *parentID;
+@property (nonatomic, readonly) BRCRelativePath *relpathOfFSEvent;
+@property (nonatomic, readonly) BRCRelativePath *relpathOfItem;
+@property (nonatomic, readonly) BRCServerItem *serverByPath;
 
 + (id)lookupForRelativePath:(id)arg1;
 

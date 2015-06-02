@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRDeviceSetupPeripheralDelegate>, NSData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, _TRUserNotfication;
-
 @interface TRDeviceSetupPeripheral : NSObject {
     _TRUserNotfication *_activeUserNotification;
     NSString *_authenticationAppleID;
@@ -18,7 +16,7 @@
     NSString *_userAgent;
 }
 
-@property <TRDeviceSetupPeripheralDelegate> * delegate;
+@property (nonatomic) <TRDeviceSetupPeripheralDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_authenticateWithParameters:(id)arg1;

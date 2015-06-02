@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary, PLCFNotificationOperatorComposition;
-
 @interface PLCameraAgent : PLAgent {
     PLCFNotificationOperatorComposition *_backCameraPowerNotification;
     PLCFNotificationOperatorComposition *_cameraTorchNotification;
@@ -11,10 +9,10 @@
     NSDictionary *_torchPowerModel;
 }
 
-@property(readonly) PLCFNotificationOperatorComposition * backCameraPowerNotification;
-@property(readonly) PLCFNotificationOperatorComposition * cameraTorchNotification;
-@property(readonly) PLCFNotificationOperatorComposition * frontCameraPowerNotification;
-@property(readonly) NSDictionary * torchPowerModel;
+@property (readonly) PLCFNotificationOperatorComposition *backCameraPowerNotification;
+@property (readonly) PLCFNotificationOperatorComposition *cameraTorchNotification;
+@property (readonly) PLCFNotificationOperatorComposition *frontCameraPowerNotification;
+@property (readonly) NSDictionary *torchPowerModel;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

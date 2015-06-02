@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableSet, NSString;
-
 @interface NSFilesystemItemCopyOperation : NSDirectoryTraversalOperation {
     NSString *_destinationPath;
     NSMutableSet *_skippedPaths;

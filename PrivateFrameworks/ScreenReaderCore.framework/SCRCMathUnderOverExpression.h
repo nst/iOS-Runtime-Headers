@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCMathExpression;
-
 @interface SCRCMathUnderOverExpression : SCRCMathExpression {
     SCRCMathExpression *_base;
     SCRCMathExpression *_over;
     SCRCMathExpression *_under;
 }
 
-@property(retain) SCRCMathExpression * base;
-@property(retain) SCRCMathExpression * over;
-@property(retain) SCRCMathExpression * under;
+@property (nonatomic, retain) SCRCMathExpression *base;
+@property (nonatomic, retain) SCRCMathExpression *over;
+@property (nonatomic, retain) SCRCMathExpression *under;
 
 - (id)base;
 - (void)dealloc;

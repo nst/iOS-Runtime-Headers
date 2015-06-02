@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SASettingSettingsAction>;
+@interface SASettingShowAndPerformSettingsAction : SABaseClientBoundCommand
 
-@interface SASettingShowAndPerformSettingsAction : SABaseClientBoundCommand {
-}
-
-@property(retain) <SASettingSettingsAction> * settingsAction;
+@property (nonatomic, retain) <SASettingSettingsAction> *settingsAction;
 
 + (id)showAndPerformSettingsAction;
 + (id)showAndPerformSettingsActionWithDictionary:(id)arg1 context:(id)arg2;

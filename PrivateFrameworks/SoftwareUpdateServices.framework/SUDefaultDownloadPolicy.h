@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSString, SUCarrierDownloadPolicyProperties, SUDescriptor, SUNetworkMonitor;
-
 @interface SUDefaultDownloadPolicy : NSObject <SUDownloadPolicy> {
     SUCarrierDownloadPolicyProperties *_carrierPolicy;
     BOOL _cellularCapable;
@@ -11,14 +9,14 @@
     SUNetworkMonitor *_networkMonitor;
 }
 
-@property(retain) SUCarrierDownloadPolicyProperties * carrierPolicy;
-@property(getter=isCellularCapable) BOOL cellularCapable;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SUDescriptor * descriptor;
-@property(readonly) unsigned int hash;
-@property(retain) SUNetworkMonitor * networkMonitor;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SUCarrierDownloadPolicyProperties *carrierPolicy;
+@property (getter=isCellularCapable, nonatomic) BOOL cellularCapable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SUDescriptor *descriptor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SUNetworkMonitor *networkMonitor;
+@property (readonly) Class superclass;
 
 - (BOOL)_isCellularCapable;
 - (BOOL)_isDownloadableForNetworkType:(int)arg1 error:(int*)arg2 cellularFeesApply:(BOOL*)arg3 powerRequired:(BOOL*)arg4;

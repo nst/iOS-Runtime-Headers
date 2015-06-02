@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUIKeyline, UIImageView, UIView;
-
 @interface SiriUIChevronButton : UIButton {
     UIImageView *_chevronImageView;
     float _chevronRightInset;
@@ -14,11 +12,11 @@
     UIView *_subview;
 }
 
-@property float chevronRightInset;
-@property BOOL hasChevron;
-@property int keylineType;
-@property float leftSubviewInset;
-@property(retain) UIView * subview;
+@property (nonatomic) float chevronRightInset;
+@property (nonatomic) BOOL hasChevron;
+@property (nonatomic) int keylineType;
+@property (nonatomic) float leftSubviewInset;
+@property (nonatomic, retain) UIView *subview;
 
 - (void).cxx_destruct;
 - (float)chevronRightInset;

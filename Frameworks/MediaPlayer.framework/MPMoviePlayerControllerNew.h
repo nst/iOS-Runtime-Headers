@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMoviePlayerControllerDelegate>, MPAVController, MPInlineVideoController, MPMovieAccessLog, MPMovieErrorLog, MPMoviePlayerController, MPMovieView, MPNowPlayingObserver, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIWindow;
-
 @interface MPMoviePlayerControllerNew : NSObject <MPMediaPlayback, MPMovieViewDelegate> {
     NSDictionary *_HTTPHeaderFields;
     int _additionalButtons;
@@ -53,13 +51,13 @@
     BOOL _willSoonEndUsingVideoLayer;
 }
 
-@property float currentPlaybackRate;
-@property double currentPlaybackTime;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isPreparedToPlay;
-@property(readonly) Class superclass;
+@property (nonatomic) float currentPlaybackRate;
+@property (nonatomic) double currentPlaybackTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isPreparedToPlay;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_HTTPHeaderFields;

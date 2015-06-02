@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSSet;
-
 @interface TSKAnnotationAuthorStorage : TSPObject {
     NSMutableSet *mAuthors;
 }
 
-@property(readonly) NSSet * authors;
+@property (nonatomic, readonly) NSSet *authors;
 
 - (void)addAuthor:(id)arg1;
 - (id)authorWithName:(id)arg1;

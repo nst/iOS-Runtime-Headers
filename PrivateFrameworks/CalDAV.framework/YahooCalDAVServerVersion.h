@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface YahooCalDAVServerVersion : CalDAVConcreteServerVersion {
-}
+@interface YahooCalDAVServerVersion : CalDAVConcreteServerVersion
 
 - (id)init;
 - (id)type;

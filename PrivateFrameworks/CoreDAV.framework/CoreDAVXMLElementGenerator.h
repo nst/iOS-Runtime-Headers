@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem, CoreDAVXMLElementGenerator, NSDictionary, NSMutableData, NSString, NSURL;
-
 @interface CoreDAVXMLElementGenerator : NSObject <NSXMLParserDelegate> {
     NSURL *_baseURL;
     NSMutableData *_cDATA;
@@ -19,21 +17,21 @@
     int _parsingState;
 }
 
-@property(retain) NSURL * baseURL;
-@property(retain) NSMutableData * cDATA;
-@property(retain) NSDictionary * cachedElementParseRules;
-@property(retain) NSMutableData * characters;
-@property BOOL checkedElementValidityIfRootElement;
-@property(retain) CoreDAVXMLElementGenerator * currentlyParsingSubItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CoreDAVItem * element;
-@property(readonly) unsigned int hash;
-@property BOOL isUnrecognized;
-@property SEL parentElementSetter;
-@property CoreDAVXMLElementGenerator * parentGenerator;
-@property int parsingState;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic, retain) NSMutableData *cDATA;
+@property (nonatomic, retain) NSDictionary *cachedElementParseRules;
+@property (nonatomic, retain) NSMutableData *characters;
+@property (nonatomic) BOOL checkedElementValidityIfRootElement;
+@property (nonatomic, retain) CoreDAVXMLElementGenerator *currentlyParsingSubItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CoreDAVItem *element;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isUnrecognized;
+@property (nonatomic) SEL parentElementSetter;
+@property (nonatomic) CoreDAVXMLElementGenerator *parentGenerator;
+@property (nonatomic) int parsingState;
+@property (readonly) Class superclass;
 
 - (id)baseURL;
 - (id)cDATA;

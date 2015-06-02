@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DeliveryAccount, MFDeliveryResult, MFMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary, NSString;
-
 @interface MFMailDelivery : NSObject {
     DeliveryAccount *_account;
     MailAccount *_archiveAccount;
@@ -20,13 +18,13 @@
     MFPlainTextDocument *_plainTextAlternative;
     MFDeliveryResult *_result;
     BOOL _textPartsAreHTML;
-    unsigned int _threaded : 1;
-    unsigned int _useCellDataOnly : 1;
+    unsigned int _threaded;
+    unsigned int _useCellDataOnly;
 }
 
-@property(retain) NSDictionary * compositionSpecification;
-@property unsigned long long conversationFlags;
-@property BOOL isUserRequested;
+@property (nonatomic, retain) NSDictionary *compositionSpecification;
+@property (nonatomic) unsigned long long conversationFlags;
+@property (nonatomic) BOOL isUserRequested;
 
 + (BOOL)deliverMessage:(id)arg1;
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;

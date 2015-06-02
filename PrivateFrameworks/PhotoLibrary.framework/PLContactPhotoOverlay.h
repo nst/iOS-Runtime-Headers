@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UILabel;
-
 @interface PLContactPhotoOverlay : UIView {
     UIImageView *__avatarPreview;
     UILabel *_titleLabel;
 }
 
-@property(readonly) UIImageView * _avatarPreview;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayEdgeInsets;
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, readonly) UIImageView *_avatarPreview;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } overlayEdgeInsets;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (id)_avatarPreview;
 - (void)_commonPLContactPhotoOverlayInitialization;

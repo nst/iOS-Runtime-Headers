@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIColor;
-
 @interface CUIPSDLayerEffectColorOverlay : CUIPSDLayerEffectComponent {
     int _blendMode;
     CUIColor *_color;
@@ -11,7 +9,7 @@
 }
 
 @property int blendMode;
-@property(retain) CUIColor * color;
+@property (retain) CUIColor *color;
 @property float opacity;
 
 - (int)blendMode;

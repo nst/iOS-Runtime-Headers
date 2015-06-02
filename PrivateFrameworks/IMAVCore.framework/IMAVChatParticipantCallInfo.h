@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSData, NSDictionary, NSNumber, NSString;
-
 @interface IMAVChatParticipantCallInfo : NSObject {
     unsigned int _callID;
     BOOL _inviteNeedsDelivery;
@@ -28,28 +26,28 @@
     int _state;
 }
 
-@property unsigned int callID;
-@property BOOL inviteNeedsDelivery;
-@property(readonly) BOOL isAudioPaused;
-@property BOOL isBeingHandedOff;
-@property(readonly) BOOL isFinished;
-@property BOOL isReinitiate;
-@property BOOL isVideoPaused;
-@property unsigned int localConnectionType;
-@property(retain) NSData * localICEData;
-@property(retain) NSData * localNATIP;
-@property(retain) NSNumber * localNATType;
-@property(retain) NSData * localSKEData;
-@property(retain) NSString * peerCN;
-@property(retain) NSDictionary * relayCancel;
-@property(retain) NSDictionary * relayInitiate;
-@property(retain) NSDictionary * relayUpdate;
-@property unsigned int remoteConnectionType;
-@property(retain) NSData * remoteICEData;
-@property(retain) NSData * remoteNATIP;
-@property(retain) NSNumber * remoteNATType;
-@property(retain) NSData * remoteSKEData;
-@property int state;
+@property (nonatomic) unsigned int callID;
+@property (nonatomic) BOOL inviteNeedsDelivery;
+@property (nonatomic, readonly) BOOL isAudioPaused;
+@property (nonatomic) BOOL isBeingHandedOff;
+@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic) BOOL isReinitiate;
+@property (nonatomic) BOOL isVideoPaused;
+@property (nonatomic) unsigned int localConnectionType;
+@property (nonatomic, retain) NSData *localICEData;
+@property (nonatomic, retain) NSData *localNATIP;
+@property (nonatomic, retain) NSNumber *localNATType;
+@property (nonatomic, retain) NSData *localSKEData;
+@property (nonatomic, retain) NSString *peerCN;
+@property (nonatomic, retain) NSDictionary *relayCancel;
+@property (nonatomic, retain) NSDictionary *relayInitiate;
+@property (nonatomic, retain) NSDictionary *relayUpdate;
+@property (nonatomic) unsigned int remoteConnectionType;
+@property (nonatomic, retain) NSData *remoteICEData;
+@property (nonatomic, retain) NSData *remoteNATIP;
+@property (nonatomic, retain) NSNumber *remoteNATType;
+@property (nonatomic, retain) NSData *remoteSKEData;
+@property (nonatomic) int state;
 
 - (unsigned int)callID;
 - (void)dealloc;

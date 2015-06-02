@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSMutableString;
+@interface MPUMutableEmphasizedText : MPUEmphasizedText
 
-@interface MPUMutableEmphasizedText : MPUEmphasizedText {
-}
-
-@property(copy) NSArray * emphasisRanges;
-@property(readonly) NSMutableString * mutableString;
+@property (nonatomic, copy) NSArray *emphasisRanges;
+@property (nonatomic, readonly) NSMutableString *mutableString;
 
 - (void)addEmphasisRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSPObjectContainer : TSPObject {
     NSArray *_childObjects;
     unsigned char _packageIdentifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSMutableArray;
-
 @interface CKDPRecordRetrieveChangesResponse : PBCodable <NSCopying> {
     NSMutableArray *_changedRecords;
     NSMutableArray *_changedShares;
@@ -15,14 +13,14 @@
     NSData *_syncContinuationToken;
 }
 
-@property(retain) NSMutableArray * changedRecords;
-@property(retain) NSMutableArray * changedShares;
-@property(retain) NSData * clientChangeToken;
-@property(readonly) BOOL hasClientChangeToken;
-@property BOOL hasStatus;
-@property(readonly) BOOL hasSyncContinuationToken;
-@property int status;
-@property(retain) NSData * syncContinuationToken;
+@property (nonatomic, retain) NSMutableArray *changedRecords;
+@property (nonatomic, retain) NSMutableArray *changedShares;
+@property (nonatomic, retain) NSData *clientChangeToken;
+@property (nonatomic, readonly) BOOL hasClientChangeToken;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
+@property (nonatomic) int status;
+@property (nonatomic, retain) NSData *syncContinuationToken;
 
 - (void).cxx_destruct;
 - (void)addChangedRecord:(id)arg1;

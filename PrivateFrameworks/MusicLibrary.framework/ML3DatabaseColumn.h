@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3DatabaseColumn : NSObject {
     unsigned int _columnConstraints;
     unsigned int _datatype;
@@ -11,10 +9,10 @@
     NSString *_name;
 }
 
-@property(readonly) unsigned int columnConstraints;
-@property(readonly) unsigned int datatype;
-@property(readonly) id defaultValue;
-@property(readonly) NSString * name;
+@property (nonatomic, readonly) unsigned int columnConstraints;
+@property (nonatomic, readonly) unsigned int datatype;
+@property (nonatomic, readonly) id defaultValue;
+@property (nonatomic, readonly) NSString *name;
 
 + (id)columnWithName:(id)arg1 datatype:(unsigned int)arg2 constraints:(unsigned int)arg3 defaultValue:(id)arg4;
 

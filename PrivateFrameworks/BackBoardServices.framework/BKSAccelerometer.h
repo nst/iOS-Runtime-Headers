@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class <BKSAccelerometerDelegate>, NSLock, NSThread;
-
 @interface BKSAccelerometer : NSObject {
     struct __CFRunLoop { } *_accelerometerEventsRunLoop;
     struct __CFRunLoopSource { } *_accelerometerEventsSource;
@@ -22,14 +20,14 @@
     float _zThreshold;
 }
 
-@property BOOL accelerometerEventsEnabled;
-@property <BKSAccelerometerDelegate> * delegate;
-@property BOOL orientationEventsEnabled;
-@property BOOL passiveOrientationEvents;
-@property double updateInterval;
-@property float xThreshold;
-@property float yThreshold;
-@property float zThreshold;
+@property (nonatomic) BOOL accelerometerEventsEnabled;
+@property (nonatomic) <BKSAccelerometerDelegate> *delegate;
+@property (nonatomic) BOOL orientationEventsEnabled;
+@property (nonatomic) BOOL passiveOrientationEvents;
+@property (nonatomic) double updateInterval;
+@property (nonatomic) float xThreshold;
+@property (nonatomic) float yThreshold;
+@property (nonatomic) float zThreshold;
 
 - (void)_checkIn;
 - (void)_checkOut;

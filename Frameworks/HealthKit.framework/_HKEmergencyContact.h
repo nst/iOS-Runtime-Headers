@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSNumber, NSString;
-
 @interface _HKEmergencyContact : NSObject <NSCopying, NSSecureCoding> {
     NSString *_name;
     NSNumber *_nameRecordID;
@@ -12,11 +10,11 @@
     NSString *_relationship;
 }
 
-@property(retain) NSString * name;
-@property(retain) NSNumber * nameRecordID;
-@property(retain) NSString * phoneNumber;
-@property(retain) NSNumber * phoneNumberPropertyID;
-@property(retain) NSString * relationship;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *nameRecordID;
+@property (nonatomic, retain) NSString *phoneNumber;
+@property (nonatomic, retain) NSNumber *phoneNumberPropertyID;
+@property (nonatomic, retain) NSString *relationship;
 
 + (BOOL)supportsSecureCoding;
 

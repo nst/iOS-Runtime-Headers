@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSArray;
+@interface AVAudioUnitEQ : AVAudioUnitEffect
 
-@interface AVAudioUnitEQ : AVAudioUnitEffect {
-}
-
-@property(readonly) NSArray * bands;
-@property float globalGain;
+@property (nonatomic, readonly) NSArray *bands;
+@property (nonatomic) float globalGain;
 
 - (id)bands;
 - (float)globalGain;

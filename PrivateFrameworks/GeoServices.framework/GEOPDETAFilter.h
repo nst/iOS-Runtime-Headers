@@ -10,8 +10,8 @@
     } _transportTypes;
 }
 
-@property(readonly) int* transportTypes;
-@property(readonly) unsigned int transportTypesCount;
+@property (nonatomic, readonly) int*transportTypes;
+@property (nonatomic, readonly) unsigned int transportTypesCount;
 
 - (void)addTransportType:(int)arg1;
 - (void)clearTransportTypes;

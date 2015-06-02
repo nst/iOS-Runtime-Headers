@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar, NSDate, NSString, UIFont;
-
 @interface UIDateLabel : UILabel {
     BOOL _boldForAllLocales;
     NSCalendar *_calendar;
@@ -19,18 +17,18 @@
     NSDate *_yesterday;
 }
 
-@property BOOL boldForAllLocales;
-@property(retain) NSDate * date;
-@property(getter=_dateString,readonly) NSString * dateString;
-@property BOOL forceTimeOnly;
-@property float paddingFromTimeToDesignator;
-@property BOOL shouldRecomputeText;
-@property(readonly) NSString * timeDesignator;
-@property(readonly) BOOL timeDesignatorAppearsBeforeTime;
-@property(readonly) UIFont * timeDesignatorFont;
-@property(readonly) struct CGSize { float x1; float x2; } timeDesignatorSize;
-@property double timeInterval;
-@property(readonly) BOOL use24HourTime;
+@property (nonatomic) BOOL boldForAllLocales;
+@property (nonatomic, retain) NSDate *date;
+@property (getter=_dateString, nonatomic, readonly) NSString *dateString;
+@property (nonatomic) BOOL forceTimeOnly;
+@property (nonatomic) float paddingFromTimeToDesignator;
+@property (nonatomic) BOOL shouldRecomputeText;
+@property (nonatomic, readonly) NSString *timeDesignator;
+@property (nonatomic, readonly) BOOL timeDesignatorAppearsBeforeTime;
+@property (nonatomic, readonly) UIFont *timeDesignatorFont;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } timeDesignatorSize;
+@property (nonatomic) double timeInterval;
+@property (nonatomic, readonly) BOOL use24HourTime;
 
 + (id)_dateFormatter;
 + (id)_relativeDateFormatter;

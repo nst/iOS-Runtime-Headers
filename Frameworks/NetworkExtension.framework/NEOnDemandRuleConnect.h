@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEOnDemandRuleConnect : NEOnDemandRule {
-}
+@interface NEOnDemandRuleConnect : NEOnDemandRule
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

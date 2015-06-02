@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfLTELogMsg : PLBBMsgRoot {
     NSArray *_actRxTxCnt;
     NSArray *_caFreqInfo;
@@ -23,22 +21,22 @@
     NSArray *_txPwrCnt;
 }
 
-@property(retain) NSArray * actRxTxCnt;
-@property(retain) NSArray * caFreqInfo;
-@property(retain) NSArray * caSCCCnt;
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSArray * dlC0TBSzCnt;
-@property(retain) NSArray * dlC1TBSzCnt;
-@property(retain) NSNumber * dupMode;
-@property(retain) NSString * error;
-@property(retain) NSMutableArray * groupArrEntries;
-@property(retain) NSString * groupEntryKey;
-@property(retain) NSString * groupID;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
-@property(retain) NSArray * sleepStateCnt;
-@property(retain) NSArray * txPwrCnt;
+@property (retain) NSArray *actRxTxCnt;
+@property (retain) NSArray *caFreqInfo;
+@property (retain) NSArray *caSCCCnt;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSArray *dlC0TBSzCnt;
+@property (retain) NSArray *dlC1TBSzCnt;
+@property (retain) NSNumber *dupMode;
+@property (retain) NSString *error;
+@property (retain) NSMutableArray *groupArrEntries;
+@property (retain) NSString *groupEntryKey;
+@property (retain) NSString *groupID;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
+@property (retain) NSArray *sleepStateCnt;
+@property (retain) NSArray *txPwrCnt;
 
 + (id)entryEventBackwardDefinitionBBMav10HwRfLTE;
 

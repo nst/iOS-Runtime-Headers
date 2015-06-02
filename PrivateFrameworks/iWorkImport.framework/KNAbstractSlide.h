@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNBodyPlaceholderInfo, KNObjectPlaceholderInfo, KNSlideBackgroundInfo, KNSlideNode, KNSlideNumberPlaceholderInfo, KNSlideStyle, KNTitlePlaceholderInfo, KNTransition, NSArray, NSDictionary, NSMutableDictionary, NSObject<TSDContainerInfo>, NSOrderedSet, NSSet, NSString, TSDFill, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSUMutablePointerSet, TSUPointerKeyDictionary;
-
 @interface KNAbstractSlide : TSPObject <TSDDrawableContainerInfo, TSKDocumentObject, TSKTransformableObject, TSSPropertySource, TSSStyleClient> {
     NSArray *_buildChunks;
     NSSet *_builds;
@@ -29,45 +22,45 @@
     KNTransition *mTransition;
 }
 
-@property(readonly) NSArray * activeBuildChunks;
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(retain) KNSlideBackgroundInfo * background;
-@property(readonly) TSDFill * backgroundFill;
-@property(retain) KNBodyPlaceholderInfo * bodyPlaceholder;
-@property(getter=isBodyVisible,readonly) BOOL bodyVisible;
-@property(readonly) unsigned int buildChunkCount;
-@property(readonly) NSArray * buildChunks;
-@property(readonly) unsigned int buildCount;
-@property(copy) NSSet * builds;
-@property(readonly) NSArray * buildsGroupedByDeliveryGroup;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned int deliveryGroupCount;
-@property(copy,readonly) NSString * description;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) BOOL hasFreeformTextPlaceholders;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL inDocument;
-@property(readonly) NSArray * infosToDisplay;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property(retain) KNObjectPlaceholderInfo * objectPlaceholder;
-@property(getter=isObjectVisible,readonly) BOOL objectVisible;
-@property(readonly) NSArray * ownedChildInfos;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property(copy) NSDictionary * placeholdersForTags;
-@property KNSlideNode * slideNode;
-@property(readonly) KNSlideNode * slideNode;
-@property(retain) KNSlideNumberPlaceholderInfo * slideNumberPlaceholder;
-@property(getter=isSlideNumberVisible,readonly) BOOL slideNumberVisible;
-@property(retain) KNSlideStyle * style;
-@property(readonly) Class superclass;
-@property(retain) KNTitlePlaceholderInfo * titlePlaceholder;
-@property(getter=isTitleVisible,readonly) BOOL titleVisible;
-@property(retain) KNTransition * transition;
+@property (nonatomic, readonly) NSArray *activeBuildChunks;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, retain) KNSlideBackgroundInfo *background;
+@property (nonatomic, readonly) TSDFill *backgroundFill;
+@property (nonatomic, retain) KNBodyPlaceholderInfo *bodyPlaceholder;
+@property (getter=isBodyVisible, nonatomic, readonly) BOOL bodyVisible;
+@property (nonatomic, readonly) unsigned int buildChunkCount;
+@property (nonatomic, readonly) NSArray *buildChunks;
+@property (nonatomic, readonly) unsigned int buildCount;
+@property (nonatomic, copy) NSSet *builds;
+@property (nonatomic, readonly) NSArray *buildsGroupedByDeliveryGroup;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) unsigned int deliveryGroupCount;
+@property (readonly, copy) NSString *description;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (nonatomic, readonly) BOOL hasFreeformTextPlaceholders;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL inDocument;
+@property (nonatomic, readonly) NSArray *infosToDisplay;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic, retain) KNObjectPlaceholderInfo *objectPlaceholder;
+@property (getter=isObjectVisible, nonatomic, readonly) BOOL objectVisible;
+@property (nonatomic, readonly) NSArray *ownedChildInfos;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, copy) NSDictionary *placeholdersForTags;
+@property (nonatomic) KNSlideNode *slideNode;
+@property (nonatomic, readonly) KNSlideNode *slideNode;
+@property (nonatomic, retain) KNSlideNumberPlaceholderInfo *slideNumberPlaceholder;
+@property (getter=isSlideNumberVisible, nonatomic, readonly) BOOL slideNumberVisible;
+@property (nonatomic, retain) KNSlideStyle *style;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) KNTitlePlaceholderInfo *titlePlaceholder;
+@property (getter=isTitleVisible, nonatomic, readonly) BOOL titleVisible;
+@property (nonatomic, retain) KNTransition *transition;
 
 + (id)buildChunksInDeliveryGroupAtIndex:(unsigned int)arg1 inBuildChunks:(id)arg2;
 + (BOOL)chunk:(id)arg1 isFirstInDeliveryGroupForChunks:(id)arg2;
@@ -190,7 +183,7 @@
 - (void)p_updatePreUFFBuildEffects;
 - (id)parentInfo;
 - (id)pdfDataUsingDocumentRoot:(id)arg1;
-- (void)performBlockOnInfos:(id)arg1;
+- (void)performBlockOnInfos:(id /* block */)arg1;
 - (id)placeholderOfClass:(Class)arg1 withGeometry:(id)arg2 stylesheet:(id)arg3 shapePresetIndex:(int)arg4 textPresetIndex:(int)arg5 layoutPropertyMap:(id)arg6 paragraphPropertyMap:(id)arg7 listPropertyMap:(id)arg8 context:(id)arg9;
 - (id)placeholderOfClass:(Class)arg1 withGeometry:(id)arg2 stylesheet:(id)arg3 shapePresetIndex:(int)arg4 textPresetStyle:(id)arg5 layoutPropertyMap:(id)arg6 paragraphPropertyMap:(id)arg7 listPropertyMap:(id)arg8 context:(id)arg9;
 - (id)placeholderOfClass:(Class)arg1 withGeometry:(id)arg2 stylesheet:(id)arg3 shapePresetIndex:(int)arg4 textPresetStyle:(id)arg5 listStyle:(id)arg6 layoutPropertyMap:(id)arg7 paragraphPropertyMap:(id)arg8 listPropertyMap:(id)arg9 context:(id)arg10;
@@ -206,7 +199,7 @@
 - (void)removeTagForDrawable:(id)arg1;
 - (Class)repClass;
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
-- (void)replaceReferencedStylesUsingBlock:(id)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (void)saveToArchive:(struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; struct GeometryArchive {} *x17; unsigned int x18; unsigned int x19; struct ShapeStylePropertiesArchive {} *x20; struct GeometryArchive {} *x21; unsigned int x22; unsigned int x23; struct ShapeStylePropertiesArchive {} *x24; struct GeometryArchive {} *x25; unsigned int x26; unsigned int x27; struct ShapeStylePropertiesArchive {} *x28; struct Reference {} *x29; struct RepeatedPtrField<TSP::Reference> { void **x_30_1_1; int x_30_1_2; int x_30_1_3; int x_30_1_4; } x30; struct RepeatedPtrField<TSP::Reference> { void **x_31_1_1; int x_31_1_2; int x_31_1_3; int x_31_1_4; } x31; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x32; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x33; struct Reference {} *x34; struct RepeatedPtrField<TSD::GuideArchive> { void **x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; } x35; struct Reference {} *x36; struct Reference {} *x37; struct RepeatedPtrField<TSP::Reference> { void **x_38_1_1; int x_38_1_2; int x_38_1_3; int x_38_1_4; } x38; struct Reference {} *x39; bool x40; bool x41; bool x42; bool x43; int x44; }*)arg1 archiver:(id)arg2;
 - (void)setBackground:(id)arg1;
 - (void)setBodyPlaceholder:(id)arg1;

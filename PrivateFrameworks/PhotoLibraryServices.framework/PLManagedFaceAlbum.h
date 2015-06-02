@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLManagedFaceAlbum : PLManagedAlbum {
-}
+@interface PLManagedFaceAlbum : PLManagedAlbum
 
-@property short keyAssetFaceIdentifier;
-@property int keyAssetFaceThumbnailIndex;
+@property (nonatomic) short keyAssetFaceIdentifier;
+@property (nonatomic) int keyAssetFaceThumbnailIndex;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

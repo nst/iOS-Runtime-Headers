@@ -22,18 +22,18 @@
     int _tileSetStateType;
 }
 
-@property double durationInOldState;
-@property BOOL hasDurationInOldState;
-@property BOOL hasNewCoverage;
-@property BOOL hasOldCoverage;
-@property BOOL hasSessionID;
-@property BOOL hasSessionRelativeTimestamp;
-@property BOOL hasTileSetStateType;
-@property double newCoverage;
-@property double oldCoverage;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property double sessionRelativeTimestamp;
-@property int tileSetStateType;
+@property (nonatomic) double durationInOldState;
+@property (nonatomic) BOOL hasDurationInOldState;
+@property (nonatomic) BOOL hasNewCoverage;
+@property (nonatomic) BOOL hasOldCoverage;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasSessionRelativeTimestamp;
+@property (nonatomic) BOOL hasTileSetStateType;
+@property (nonatomic) double newCoverage;
+@property (nonatomic) double oldCoverage;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) double sessionRelativeTimestamp;
+@property (nonatomic) int tileSetStateType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

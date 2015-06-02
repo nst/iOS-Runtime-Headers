@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_semaphore>;
-
 @interface TSDBitmapImageProvider : TSDImageProvider {
     long mCheckIfValidToken;
     unsigned int mDPI;

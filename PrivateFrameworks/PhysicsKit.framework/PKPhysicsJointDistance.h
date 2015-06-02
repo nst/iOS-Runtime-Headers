@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface PKPhysicsJointDistance : PKPhysicsJoint {
     struct CGPoint { 
         float x; 
@@ -37,10 +32,10 @@
     } _jointDef;
 }
 
-@property BOOL collideConnected;
-@property float damping;
-@property float frequency;
-@property float length;
+@property (nonatomic) BOOL collideConnected;
+@property (nonatomic) float damping;
+@property (nonatomic) float frequency;
+@property (nonatomic) float length;
 
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { float x1; float x2; })arg3 anchorB:(struct CGPoint { float x1; float x2; })arg4;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { float x1; float x2; })arg3 localAnchorB:(struct CGPoint { float x1; float x2; })arg4;

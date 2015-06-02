@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegModernTransparentDarkAppearanceController : CNFRegModernAppearanceController {
-}
+@interface CNFRegModernTransparentDarkAppearanceController : CNFRegModernAppearanceController
 
 - (id)customBackgroundColor;
 - (int)keyboardAppearance;

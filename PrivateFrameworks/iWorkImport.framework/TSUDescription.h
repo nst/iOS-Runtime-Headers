@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSString;
-
 @interface TSUDescription : NSObject {
     void *_cfType;
     Class _class;

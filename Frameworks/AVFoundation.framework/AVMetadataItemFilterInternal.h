@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVMetadataItemFilterInternal : NSObject {
-}
+@interface AVMetadataItemFilterInternal : NSObject
 
 @end

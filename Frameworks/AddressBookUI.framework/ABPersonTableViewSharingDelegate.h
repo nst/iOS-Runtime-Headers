@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ABActionSheetDelegate, ABPersonViewControllerHelper, ABStyleProvider, NSString, UIImage;
-
 @interface ABPersonTableViewSharingDelegate : NSObject {
     ABActionSheetDelegate *_actionSheetDelegate;
     ABPersonViewControllerHelper *_helper;
@@ -17,32 +11,24 @@
     BOOL _shareMessageBodyIsHTML;
     NSString *_shareMessageSubject;
     ABStyleProvider *_styleProvider;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willTweetLocationCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willWeiboLocationCallback;
-
+    id /* block */ _willTweetLocationCallback;
+    id /* block */ _willWeiboLocationCallback;
 }
 
-@property(readonly) BOOL canSendMMS;
-@property(readonly) BOOL canSendMail;
-@property(readonly) BOOL canShareContact;
-@property(readonly) BOOL canTweet;
-@property(readonly) BOOL canWeibo;
-@property ABPersonViewControllerHelper * helper;
-@property(retain) UIImage * shareLocationSnapshotImage;
-@property(copy) NSString * shareLocationURL;
-@property(copy) NSString * shareMessageBody;
-@property BOOL shareMessageBodyIsHTML;
-@property(copy) NSString * shareMessageSubject;
-@property(retain) ABStyleProvider * styleProvider;
-@property(copy) id willTweetLocationCallback;
-@property(copy) id willWeiboLocationCallback;
+@property (nonatomic, readonly) BOOL canSendMMS;
+@property (nonatomic, readonly) BOOL canSendMail;
+@property (nonatomic, readonly) BOOL canShareContact;
+@property (nonatomic, readonly) BOOL canTweet;
+@property (nonatomic, readonly) BOOL canWeibo;
+@property (nonatomic) ABPersonViewControllerHelper *helper;
+@property (nonatomic, retain) UIImage *shareLocationSnapshotImage;
+@property (nonatomic, copy) NSString *shareLocationURL;
+@property (nonatomic, copy) NSString *shareMessageBody;
+@property (nonatomic) BOOL shareMessageBodyIsHTML;
+@property (nonatomic, copy) NSString *shareMessageSubject;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
+@property (nonatomic, copy) id /* block */ willTweetLocationCallback;
+@property (nonatomic, copy) id /* block */ willWeiboLocationCallback;
 
 + (id)_fakePersonForMergedPeople:(id)arg1;
 
@@ -66,8 +52,8 @@
 - (void)setShareMessageBodyIsHTML:(BOOL)arg1;
 - (void)setShareMessageSubject:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (void)setWillTweetLocationCallback:(id)arg1;
-- (void)setWillWeiboLocationCallback:(id)arg1;
+- (void)setWillTweetLocationCallback:(id /* block */)arg1;
+- (void)setWillWeiboLocationCallback:(id /* block */)arg1;
 - (void)shareActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)shareContact:(id)arg1;
 - (void)shareContactByEmail:(id)arg1;
@@ -83,7 +69,7 @@
 - (id)shareMessageSubject;
 - (id)styleProvider;
 - (id)vCardFileName;
-- (id)willTweetLocationCallback;
-- (id)willWeiboLocationCallback;
+- (id /* block */)willTweetLocationCallback;
+- (id /* block */)willWeiboLocationCallback;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKTrackableAnnotation>, <VKTrackableAnnotationPresentation>, VKAnimation;
-
 @interface VKAnnotationTrackingCameraController : VKCameraController {
     <VKTrackableAnnotation> *_annotation;
     <VKTrackableAnnotationPresentation> *_annotationPresentation;
@@ -54,11 +52,11 @@
     int _zoomStyle;
 }
 
-@property(readonly) <VKTrackableAnnotation> * annotation;
-@property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property int headingAnimationDisplayRate;
-@property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
-@property int zoomStyle;
+@property (nonatomic, readonly) <VKTrackableAnnotation> *annotation;
+@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) int headingAnimationDisplayRate;
+@property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
+@property (nonatomic) int zoomStyle;
 
 - (id).cxx_construct;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;

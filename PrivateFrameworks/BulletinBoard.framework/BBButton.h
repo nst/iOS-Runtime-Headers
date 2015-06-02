@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBAction, BBImage, NSData, NSString;
-
 @interface BBButton : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     BBAction *_action;
     NSString *_identifier;
@@ -11,15 +9,15 @@
     NSString *_title;
 }
 
-@property(copy) BBAction * action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSData * glyphData;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(copy) BBImage * image;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
+@property (nonatomic, copy) BBAction *action;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSData *glyphData;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) BBImage *image;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
 
 + (id)_possiblyCachedButtonForInitializedButton:(id)arg1;
 + (void)_removeButtonFromCache:(id)arg1;

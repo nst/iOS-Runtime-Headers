@@ -19,18 +19,18 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
 - (BOOL)getGroup:(unsigned int*)arg1;
-- (BOOL)getGroupUUID:(unsigned char*[16])arg1;
+- (BOOL)getGroupUUID:(unsigned char*)arg1;
 - (BOOL)getMode:(unsigned short*)arg1;
 - (BOOL)getOwner:(unsigned int*)arg1;
-- (BOOL)getOwnerUUID:(unsigned char*[16])arg1;
+- (BOOL)getOwnerUUID:(unsigned char*)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)setAccessControlList:(struct _acl { }*)arg1;
 - (BOOL)setGroup:(unsigned int)arg1;
-- (BOOL)setGroupUUID:(unsigned char[16])arg1;
+- (BOOL)setGroupUUID:(unsigned char)arg1;
 - (BOOL)setMode:(unsigned short)arg1;
 - (BOOL)setOwner:(unsigned int)arg1;
-- (BOOL)setOwnerUUID:(unsigned char[16])arg1;
+- (BOOL)setOwnerUUID:(unsigned char)arg1;
 
 @end

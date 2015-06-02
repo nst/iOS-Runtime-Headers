@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIImage;
-
 @interface _UIDocumentPickerAuxiliaryOption : NSObject <NSSecureCoding> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSString *_identifier;
     UIImage *_image;
     BOOL _newlyAdded;
@@ -21,25 +11,25 @@
     NSString *_title;
 }
 
-@property(copy) id handler;
-@property(copy) NSString * identifier;
-@property(retain) UIImage * image;
-@property(getter=isNewlyAdded) BOOL newlyAdded;
-@property unsigned int order;
-@property(copy) NSString * title;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) UIImage *image;
+@property (getter=isNewlyAdded, nonatomic) BOOL newlyAdded;
+@property (nonatomic) unsigned int order;
+@property (nonatomic, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)handler;
+- (id /* block */)handler;
 - (id)identifier;
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isNewlyAdded;
 - (unsigned int)order;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setNewlyAdded:(BOOL)arg1;

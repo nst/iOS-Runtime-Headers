@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIIPhoneProductPageView : UIView {
     float _bannerOffset;
     UIView *_bannerView;
     UIView *_view;
 }
 
-@property float bannerOffset;
-@property(retain) UIView * bannerView;
-@property(retain) UIView * view;
+@property (nonatomic) float bannerOffset;
+@property (nonatomic, retain) UIView *bannerView;
+@property (nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (void)animateYPosition:(float)arg1;

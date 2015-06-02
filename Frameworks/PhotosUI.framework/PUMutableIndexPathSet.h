@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMutableSet;
-
 @interface PUMutableIndexPathSet : PUIndexPathSet {
     NSMutableSet *_indexPaths;
 }
@@ -13,7 +11,7 @@
 - (BOOL)containsIndexPath:(id)arg1;
 - (int)count;
 - (id)description;
-- (void)enumerateIndexPathsUsingBlock:(id)arg1;
+- (void)enumerateIndexPathsUsingBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCapacity:(unsigned int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableCharacterSet, NSNumberFormatter;
-
 @interface GEORisonParser : NSObject {
     NSNumberFormatter *_formatter;
     NSMutableCharacterSet *_risonEscapes;

@@ -10,10 +10,10 @@
     float _stiffness;
 }
 
-@property(readonly) float damping;
-@property(readonly) float epsilon;
-@property(readonly) float mass;
-@property(readonly) float stiffness;
+@property (nonatomic, readonly) float damping;
+@property (nonatomic, readonly) float epsilon;
+@property (nonatomic, readonly) float mass;
+@property (nonatomic, readonly) float stiffness;
 
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3;
 + (id)settingsWithMass:(float)arg1 stiffness:(float)arg2 damping:(float)arg3 epsilon:(float)arg4;

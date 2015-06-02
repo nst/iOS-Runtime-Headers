@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSMutableData, NSURL, NSUUID;
-
 @interface NEFilterSource : NSObject {
     int _direction;
     NSUUID *_flowUUID;
@@ -17,26 +15,26 @@
     NSURL *_url;
 }
 
-@property(readonly) int direction;
-@property(retain) NSUUID * flowUUID;
+@property (readonly) int direction;
+@property (retain) NSUUID *flowUUID;
 @property unsigned long long passLength;
 @property unsigned long long peekIndex;
-@property(retain) NSMutableData * pendingData;
+@property (retain) NSMutableData *pendingData;
 @property unsigned long long pendingDataStartIndex;
 @property BOOL registered;
-@property(readonly) unsigned long long socketIdentifier;
-@property(readonly) int status;
-@property(readonly) NSURL * url;
+@property (readonly) unsigned long long socketIdentifier;
+@property (readonly) int status;
+@property (readonly) NSURL *url;
 
 + (unsigned int)checkPolicyFilterUnit;
-+ (void)connectToAgentWithCompletionHandler:(id)arg1;
++ (void)connectToAgentWithCompletionHandler:(id /* block */)arg1;
 + (BOOL)filterRequired;
 + (unsigned int)filterUnit;
 + (void)initializeGlobals;
 
 - (void).cxx_destruct;
-- (void)addData:(id)arg1 withCompletionQueue:(id)arg2 completionHandler:(id)arg3;
-- (void)dataCompleteWithCompletionQueue:(id)arg1 completionHandler:(id)arg2;
+- (void)addData:(id)arg1 withCompletionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)dataCompleteWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)direction;
 - (id)flowUUID;
 - (id)initWithURL:(id)arg1 direction:(int)arg2 socketIdentifier:(unsigned long long)arg3;
@@ -44,9 +42,9 @@
 - (unsigned long long)peekIndex;
 - (id)pendingData;
 - (unsigned long long)pendingDataStartIndex;
-- (void)prepareAgentWithHandler:(id)arg1;
+- (void)prepareAgentWithHandler:(id /* block */)arg1;
 - (BOOL)registered;
-- (BOOL)sendDataToPluginWithConnection:(id)arg1 completionHandler:(id)arg2;
+- (BOOL)sendDataToPluginWithConnection:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setFlowUUID:(id)arg1;
 - (void)setPassLength:(unsigned long long)arg1;
 - (void)setPeekIndex:(unsigned long long)arg1;

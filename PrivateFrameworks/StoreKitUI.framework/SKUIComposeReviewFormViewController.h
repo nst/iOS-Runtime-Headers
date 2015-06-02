@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIComposeReviewFormDelegate>, NSString, SKUIComposeReviewView, SKUIReviewMetadata;
-
 @interface SKUIComposeReviewFormViewController : SUViewController <SKUIComposeReviewViewDelegate> {
     SKUIComposeReviewView *_composeView;
     <SKUIComposeReviewFormDelegate> *_delegate;
     SKUIReviewMetadata *_review;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIComposeReviewFormDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) SKUIReviewMetadata * editedReviewMetadata;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIComposeReviewFormDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) SKUIReviewMetadata *editedReviewMetadata;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancel;

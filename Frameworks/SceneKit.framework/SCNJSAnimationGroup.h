@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNJSAnimationGroup : CAAnimationGroup {
-}
+@interface SCNJSAnimationGroup : CAAnimationGroup
 
 + (id)SCNJSExportProtocol;
 + (id)animationGroup;

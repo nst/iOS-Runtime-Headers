@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
  */
 
-@class NSDate;
-
 @interface _NCWidgetControllerRequestLimiter : NSObject {
     BOOL _isThrottled;
     NSDate *_lastRequestDate;

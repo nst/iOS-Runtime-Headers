@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKEmergencyCardEnabledDelegate>, UISwitch, UITableViewCell;
-
 @interface HKEmergencyCardEnabledTableItem : HKEmergencyCardTableItem {
     UITableViewCell *_cell;
     <HKEmergencyCardEnabledDelegate> *_enabledDelegate;
     UISwitch *_switch;
 }
 
-@property <HKEmergencyCardEnabledDelegate> * enabledDelegate;
+@property (nonatomic) <HKEmergencyCardEnabledDelegate> *enabledDelegate;
 
 - (void).cxx_destruct;
 - (id)_cell;

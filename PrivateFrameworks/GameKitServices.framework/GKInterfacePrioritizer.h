@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GKInterfacePrioritizer : NSObject {
-}
+@interface GKInterfacePrioritizer : NSObject
 
 + (id)bsdNameToInterfaceTypeMap;
 + (void)initialize;

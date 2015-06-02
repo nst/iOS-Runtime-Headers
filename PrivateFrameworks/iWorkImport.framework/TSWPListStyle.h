@@ -2,17 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface TSWPListStyle : TSSStyle <TSSPreset>
 
-@class NSString;
-
-@interface TSWPListStyle : TSSStyle <TSSPreset> {
-}
-
-@property(readonly) NSString * presetKind;
+@property (nonatomic, readonly) NSString *presetKind;
 
 + (id)additionalBulletStrings;
 + (id)arrayValuedProperties;
@@ -43,7 +35,7 @@
 + (id)nameForLanguageSpecificListStyle:(int)arg1;
 + (id)numberedListStyleForPresets:(id)arg1;
 + (id)pDefaultLabelValuesForLabelTypeProperty:(int)arg1;
-+ (void)pGetDefaultTextIndentFloats:(float[9])arg1;
++ (void)pGetDefaultTextIndentFloats:(float)arg1;
 + (id)pLabelTypeArrayForType:(int)arg1;
 + (int)pLabelTypeForLevel:(unsigned int)arg1 forPropertyMapping:(id)arg2 includeDegenerateLevels:(BOOL)arg3;
 + (id)presetStyleDescriptor;

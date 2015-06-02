@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, UICollectionViewCell;
-
 @interface UICollectionViewReorderedItem : NSObject {
     UICollectionViewCell *_cell;
     NSIndexPath *_originalIndexPath;
     NSIndexPath *_targetIndexPath;
 }
 
-@property(readonly) UICollectionViewCell * cell;
-@property(retain) NSIndexPath * originalIndexPath;
-@property(retain) NSIndexPath * targetIndexPath;
+@property (nonatomic, readonly) UICollectionViewCell *cell;
+@property (nonatomic, retain) NSIndexPath *originalIndexPath;
+@property (nonatomic, retain) NSIndexPath *targetIndexPath;
 
 - (id)cell;
 - (void)dealloc;

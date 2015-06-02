@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSObject<OS_dispatch_source>;
-
 @interface ATCountSessionTask : ATSessionTask {
     unsigned int _count;
     unsigned int _maxCount;

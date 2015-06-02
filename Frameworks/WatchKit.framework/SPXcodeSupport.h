@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
+@interface SPXcodeSupport : NSObject <SPLocalApplicationProtocol>
 
-@interface SPXcodeSupport : NSObject <SPLocalApplicationProtocol> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-
-- (void)applicationIdentifierWithReply:(id)arg1;
+- (void)applicationIdentifierWithReply:(id /* block */)arg1;
 - (void)receiveData:(id)arg1;
 
 @end

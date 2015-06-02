@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString, PDIterate;
-
 @interface PDTimeNode : NSObject {
     double mAcceleration;
     int mAnimationPresetClass;

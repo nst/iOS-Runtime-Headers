@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSArray, WebHistoryPrivate;
-
 @interface WebHistory : NSObject {
     WebHistoryPrivate *_historyPrivate;
 }
 
-@property int historyAgeInDaysLimit;
-@property int historyItemLimit;
-@property(copy,readonly) NSArray * orderedLastVisitedDays;
+@property (nonatomic) int historyAgeInDaysLimit;
+@property (nonatomic) int historyItemLimit;
+@property (nonatomic, readonly, copy) NSArray *orderedLastVisitedDays;
 
 + (void)_removeAllVisitedLinks;
 + (void)_setVisitedLinkTrackingEnabled:(BOOL)arg1;

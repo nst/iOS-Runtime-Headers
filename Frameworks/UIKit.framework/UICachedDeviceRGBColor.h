@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICachedDeviceRGBColor : UIDeviceRGBColor {
-}
+@interface UICachedDeviceRGBColor : UIDeviceRGBColor
 
 - (void)_forceDealloc;
 - (BOOL)allowsWeakReference;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFPostprocessor : NSObject {
-}
+@interface WFPostprocessor : NSObject
 
 + (id)adultWebSiteTagging:(id)arg1;
 + (id)lightweightStripHTMLTags:(id)arg1;

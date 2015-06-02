@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SADuration : AceObject <SAAceSerializable>
 
-@interface SADuration : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * unit;
-@property(copy) NSString * units;
-@property(retain) NSNumber * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *unit;
+@property (nonatomic, copy) NSString *units;
+@property (nonatomic, retain) NSNumber *value;
 
 + (id)duration;
 + (id)durationWithDictionary:(id)arg1 context:(id)arg2;

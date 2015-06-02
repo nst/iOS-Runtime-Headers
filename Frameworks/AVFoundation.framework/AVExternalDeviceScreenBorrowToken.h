@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVExternalDevice, NSString;
-
 @interface AVExternalDeviceScreenBorrowToken : NSObject {
     NSString *_client;
     AVExternalDevice *_externalDevice;
     NSString *_reason;
 }
 
-@property(readonly) NSString * client;
-@property(readonly) NSString * reason;
+@property (nonatomic, readonly) NSString *client;
+@property (nonatomic, readonly) NSString *reason;
 
 - (id)client;
 - (void)dealloc;

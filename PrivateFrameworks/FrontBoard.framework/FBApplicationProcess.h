@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBApplicationProcessDelegate>, BKSApplicationDataStore, BKSProcess, BKSProcessAssertion, BSMachSendRight, FBApplicationInfo, FBApplicationProcessExitContext, FBApplicationWatchdog, FBProcessCPUStatistics, FBProcessExecutionContext, NSMutableArray, NSMutableSet, NSString;
-
 @interface FBApplicationProcess : FBProcess <BKSProcessDelegate, BSWatchdogDelegate> {
     NSMutableSet *_allowedLockedFilePaths;
     FBApplicationInfo *_applicationInfo;
@@ -35,27 +33,27 @@
     FBApplicationWatchdog *_watchdog;
 }
 
-@property(retain,readonly) FBApplicationInfo * applicationInfo;
-@property(getter=isBeingDebugged) BOOL beingDebugged;
-@property(getter=isConnectedToExternalAccessory) BOOL connectedToExternalAccessory;
-@property(getter=_queue_cpuStatistics,retain,readonly) FBProcessCPUStatistics * cpuStatistics;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=_queue_defaultSuspendType,readonly) int defaultSuspendType;
-@property <FBApplicationProcessDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=_queue_execTime,readonly) double execTime;
-@property(retain) FBProcessExecutionContext * executionContext;
-@property(retain,readonly) FBApplicationProcessExitContext * exitContext;
-@property(getter=_queue_hasFinishedLaunching,readonly) BOOL hasFinishedLaunching;
-@property(readonly) unsigned int hash;
-@property(getter=_queue_launchWatchdogTimeRemaining,readonly) double launchWatchdogTimeRemaining;
-@property(getter=isNowPlayingWithAudio) BOOL nowPlayingWithAudio;
-@property(getter=isRecordingAudio) BOOL recordingAudio;
-@property(readonly) Class superclass;
-@property(getter=_queue_supportsBackgroundTaskAssertions,readonly) BOOL supportsBackgroundTaskAssertions;
-@property(getter=_queue_supportsSuspendOnLock,readonly) BOOL supportsSuspendOnLock;
-@property(getter=_queue_taskPort,setter=_queue_setTaskPort:) BSMachSendRight * taskPort;
-@property(getter=_queue_terminationReason,readonly) int terminationReason;
+@property (nonatomic, readonly, retain) FBApplicationInfo *applicationInfo;
+@property (getter=isBeingDebugged, nonatomic) BOOL beingDebugged;
+@property (getter=isConnectedToExternalAccessory, nonatomic) BOOL connectedToExternalAccessory;
+@property (getter=_queue_cpuStatistics, nonatomic, readonly, retain) FBProcessCPUStatistics *cpuStatistics;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=_queue_defaultSuspendType, nonatomic, readonly) int defaultSuspendType;
+@property (nonatomic) <FBApplicationProcessDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=_queue_execTime, nonatomic, readonly) double execTime;
+@property (nonatomic, retain) FBProcessExecutionContext *executionContext;
+@property (nonatomic, readonly, retain) FBApplicationProcessExitContext *exitContext;
+@property (getter=_queue_hasFinishedLaunching, nonatomic, readonly) BOOL hasFinishedLaunching;
+@property (readonly) unsigned int hash;
+@property (getter=_queue_launchWatchdogTimeRemaining, nonatomic, readonly) double launchWatchdogTimeRemaining;
+@property (getter=isNowPlayingWithAudio, nonatomic) BOOL nowPlayingWithAudio;
+@property (getter=isRecordingAudio, nonatomic) BOOL recordingAudio;
+@property (readonly) Class superclass;
+@property (getter=_queue_supportsBackgroundTaskAssertions, nonatomic, readonly) BOOL supportsBackgroundTaskAssertions;
+@property (getter=_queue_supportsSuspendOnLock, nonatomic, readonly) BOOL supportsSuspendOnLock;
+@property (getter=_queue_taskPort, setter=_queue_setTaskPort:, nonatomic) BSMachSendRight *taskPort;
+@property (getter=_queue_terminationReason, nonatomic, readonly) int terminationReason;
 
 + (void)deleteAllJobs;
 
@@ -75,15 +73,15 @@
 - (id)_queue_cpuStatistics;
 - (id)_queue_crashReportThermalsInfo;
 - (int)_queue_defaultSuspendType;
-- (void)_queue_doGracefulKillWithCompletion:(id)arg1 withWatchdog:(BOOL)arg2;
+- (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(BOOL)arg2;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (int)_queue_effectiveVisibilityForSceneSettings:(id)arg1;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1 underLock:(BOOL)arg2;
-- (void)_queue_enumerateApplicationObserversWithBlock:(id)arg1;
+- (void)_queue_enumerateApplicationObserversWithBlock:(id /* block */)arg1;
 - (double)_queue_execTime;
-- (void)_queue_executeBlockAfterLaunchCompletes:(id)arg1;
+- (void)_queue_executeBlockAfterLaunchCompletes:(id /* block */)arg1;
 - (void)_queue_executeLaunchCompletionBlocks;
 - (id)_queue_executionContext;
 - (BOOL)_queue_finishLaunch;
@@ -92,7 +90,7 @@
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
 - (BOOL)_queue_isSystemApplication;
-- (void)_queue_killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id)arg4;
+- (void)_queue_killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_killWithSignal:(int)arg1;
 - (double)_queue_launchWatchdogTimeRemaining;
 - (id)_queue_lockedFilePathsIgnoringAllowed;
@@ -102,7 +100,7 @@
 - (void)_queue_processDidExit;
 - (void)_queue_processReallyDidExit;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
-- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id)arg2;
+- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id /* block */)arg2;
 - (void)_queue_setAllowedLockedFilePaths:(id)arg1;
 - (void)_queue_setSupportsBackgroundTaskAssertions:(BOOL)arg1;
 - (void)_queue_setSupportsSuspendOnLock:(BOOL)arg1;
@@ -126,7 +124,7 @@
 - (BOOL)bootstrapAndExec;
 - (void)dealloc;
 - (double)elapsedCPUTime;
-- (void)executeBlockAfterLaunchCompletes:(id)arg1;
+- (void)executeBlockAfterLaunchCompletes:(id /* block */)arg1;
 - (id)executionContext;
 - (id)exitContext;
 - (id)initWithApplicationInfo:(id)arg1 callOutQueue:(id)arg2;
@@ -140,7 +138,7 @@
 - (BOOL)isRecordingAudio;
 - (BOOL)isSystemApplicationProcess;
 - (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3;
-- (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id)arg4;
+- (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id /* block */)arg4;
 - (void)launchIfNecessary;
 - (void)noteWorkspaceLocked:(BOOL)arg1;
 - (void)process:(id)arg1 isBeingDebugged:(BOOL)arg2;

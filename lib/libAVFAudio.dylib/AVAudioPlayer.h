@@ -2,27 +2,25 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class <AVAudioPlayerDelegate>, NSArray, NSData, NSDictionary, NSURL;
-
 @interface AVAudioPlayer : NSObject {
     id _impl;
 }
 
-@property(copy) NSArray * channelAssignments;
+@property (nonatomic, copy) NSArray *channelAssignments;
 @property double currentTime;
-@property(readonly) NSData * data;
-@property <AVAudioPlayerDelegate> * delegate;
-@property(readonly) double deviceCurrentTime;
-@property(readonly) double duration;
+@property (readonly) NSData *data;
+@property <AVAudioPlayerDelegate> *delegate;
+@property (readonly) double deviceCurrentTime;
+@property (readonly) double duration;
 @property BOOL enableRate;
-@property(getter=isMeteringEnabled) BOOL meteringEnabled;
-@property(readonly) unsigned int numberOfChannels;
+@property (getter=isMeteringEnabled) BOOL meteringEnabled;
+@property (readonly) unsigned int numberOfChannels;
 @property int numberOfLoops;
 @property float pan;
-@property(getter=isPlaying,readonly) BOOL playing;
+@property (getter=isPlaying, readonly) BOOL playing;
 @property float rate;
-@property(readonly) NSDictionary * settings;
-@property(readonly) NSURL * url;
+@property (readonly) NSDictionary *settings;
+@property (readonly) NSURL *url;
 @property float volume;
 
 - (float)averagePowerForChannel:(unsigned int)arg1;

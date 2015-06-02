@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem;
-
 @interface CoreDAVSupportedReportItem : CoreDAVItem {
     CoreDAVItem *_report;
 }
 
-@property(retain) CoreDAVItem * report;
+@property (nonatomic, retain) CoreDAVItem *report;
 
 + (id)copyParseRules;
 

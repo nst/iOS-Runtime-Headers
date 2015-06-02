@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString;
-
 @interface NSLinguisticTagger : NSObject {
     unsigned int _options;
     id _orthographyArray;
@@ -13,8 +11,10 @@
     id _tokenArray;
 }
 
-@property(retain) NSString * string;
-@property(copy,readonly) NSArray * tagSchemes;
+@property (retain) NSString *string;
+@property (readonly, copy) NSArray *tagSchemes;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)availableTagSchemesForLanguage:(id)arg1;
 + (BOOL)supportsLanguage:(id)arg1;
@@ -35,9 +35,8 @@
 - (void)_tokenizeParagraphAtIndex:(unsigned int)arg1 requireLemmas:(BOOL)arg2 requirePartsOfSpeech:(BOOL)arg3 requireNamedEntities:(BOOL)arg4;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateTagsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scheme:(id)arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
+- (void)enumerateTagsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scheme:(id)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (id)initWithTagSchemes:(id)arg1 options:(unsigned int)arg2;
-- (id)languageOfRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)orthographyAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)possibleTagsAtIndex:(unsigned int)arg1 scheme:(id)arg2 tokenRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 sentenceRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 scores:(id*)arg5;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sentenceRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -48,5 +47,9 @@
 - (id)tagAtIndex:(unsigned int)arg1 scheme:(id)arg2 tokenRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 sentenceRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (id)tagSchemes;
 - (id)tagsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scheme:(id)arg2 options:(unsigned int)arg3 tokenRanges:(id*)arg4;
+
+// Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
+
+- (id)languageOfRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

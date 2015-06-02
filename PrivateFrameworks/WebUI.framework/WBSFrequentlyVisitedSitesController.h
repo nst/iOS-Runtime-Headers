@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, WBSFrequentlyVisitedSitesBannedURLStore, WBSHistory;
-
 @interface WBSFrequentlyVisitedSitesController : NSObject {
     WBSFrequentlyVisitedSitesBannedURLStore *_bannedURLStore;
     WBSHistory *_history;
     double _timeOfLastFrequentlyVisitedSitesComputation;
 }
 
-@property(readonly) NSArray * frequentlyVisitedSites;
+@property (nonatomic, readonly) NSArray *frequentlyVisitedSites;
 
 + (float)scoreForHistoryItem:(id)arg1 atTime:(double)arg2;
 + (float)scoreForHistoryItem:(id)arg1 atTime:(double)arg2 withMinimumVisitCount:(unsigned int)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface _ML3ValidatableDatabase : NSObject {
     NSString *_databasePath;
     unsigned long _queueID;
@@ -11,9 +9,9 @@
     unsigned int _validationState;
 }
 
-@property(copy) NSString * databasePath;
-@property(retain) NSObject<OS_dispatch_queue> * validationSerialQueue;
-@property unsigned int validationState;
+@property (nonatomic, copy) NSString *databasePath;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *validationSerialQueue;
+@property (nonatomic) unsigned int validationState;
 
 - (void).cxx_destruct;
 - (BOOL)currentQueueIsValidationQueue;

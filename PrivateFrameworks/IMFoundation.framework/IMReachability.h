@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class <IMReachabilityDelegate>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface IMReachability : NSObject {
     <IMReachabilityDelegate> *_delegate;
     NSString *_description;
@@ -13,13 +11,13 @@
     void *_reachabilityRef;
 }
 
-@property NSObject<OS_dispatch_queue> * _queue;
-@property(readonly) BOOL connectionRequired;
-@property <IMReachabilityDelegate> * delegate;
-@property unsigned int flags;
-@property BOOL gettingFlags;
-@property(retain) NSString * reachabilityDescription;
-@property void* reachabilityRef;
+@property (nonatomic) NSObject<OS_dispatch_queue> *_queue;
+@property (nonatomic, readonly) BOOL connectionRequired;
+@property (nonatomic) <IMReachabilityDelegate> *delegate;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic) BOOL gettingFlags;
+@property (nonatomic, retain) NSString *reachabilityDescription;
+@property (nonatomic) void*reachabilityRef;
 
 + (id)reachabilityWithHostName:(id)arg1;
 + (id)reachabilityWithLocalAddress:(id)arg1 remoteAddress:(id)arg2;

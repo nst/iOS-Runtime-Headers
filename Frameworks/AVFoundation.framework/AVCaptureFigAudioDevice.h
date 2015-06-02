@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVCaptureFigAudioDevice : AVCaptureDevice {
     NSDictionary *_attributes;
     struct OpaqueFigCaptureSource { } *_fcs;

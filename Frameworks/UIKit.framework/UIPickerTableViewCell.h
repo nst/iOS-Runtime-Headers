@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPickerTableView, UITapGestureRecognizer;
-
 @interface UIPickerTableViewCell : UITableViewCell {
     UITapGestureRecognizer *_tap;
     UIPickerTableView *pickerTable;
 }
 
-@property UIPickerTableView * pickerTable;
+@property (nonatomic) UIPickerTableView *pickerTable;
 
 - (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;
 - (void)_tapAction:(id)arg1;

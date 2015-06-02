@@ -23,6 +23,6 @@
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 ioSurfaceBacked:(BOOL)arg2 pixelFormat:(int)arg3;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 pixelFormat:(int)arg2;
 - (void)load;
-- (void)modifyPixelDataWithBlock:(id)arg1;
+- (void)modifyPixelDataWithBlock:(id /* block */)arg1;
 
 @end

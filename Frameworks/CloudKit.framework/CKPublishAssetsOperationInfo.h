@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSDictionary;
-
 @interface CKPublishAssetsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     unsigned int _URLOptions;
     NSDictionary *_fileNamesByAssetFieldNames;
@@ -11,10 +9,10 @@
     unsigned int _requestedTTL;
 }
 
-@property unsigned int URLOptions;
-@property(retain) NSDictionary * fileNamesByAssetFieldNames;
-@property(retain) NSArray * recordIDs;
-@property unsigned int requestedTTL;
+@property (nonatomic) unsigned int URLOptions;
+@property (nonatomic, retain) NSDictionary *fileNamesByAssetFieldNames;
+@property (nonatomic, retain) NSArray *recordIDs;
+@property (nonatomic) unsigned int requestedTTL;
 
 + (BOOL)supportsSecureCoding;
 

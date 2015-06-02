@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MCPeerID, MCResourceDownloader, MCResourceProgressObserver, NSMutableData, NSObject<OS_dispatch_source>, NSProgress, NSString, NSURL;
-
 @interface MCSessionStream : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     int _fd;
     NSMutableData *_incomingBuffer;
     NSString *_name;
@@ -29,22 +19,22 @@
     int state;
 }
 
-@property(copy) id completionHandler;
-@property int fd;
-@property(retain) NSMutableData * incomingBuffer;
-@property(copy) NSString * name;
-@property(retain) MCResourceProgressObserver * observer;
-@property MCPeerID * peerID;
-@property(retain) NSProgress * progress;
-@property BOOL progressUnbounded;
-@property NSObject<OS_dispatch_source> * source;
-@property BOOL sourceSuspended;
-@property int state;
-@property unsigned int streamID;
-@property(copy) NSURL * url;
-@property(retain) MCResourceDownloader * urlDownloader;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) int fd;
+@property (nonatomic, retain) NSMutableData *incomingBuffer;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) MCResourceProgressObserver *observer;
+@property (nonatomic) MCPeerID *peerID;
+@property (nonatomic, retain) NSProgress *progress;
+@property (nonatomic) BOOL progressUnbounded;
+@property (nonatomic) NSObject<OS_dispatch_source> *source;
+@property (nonatomic) BOOL sourceSuspended;
+@property (nonatomic) int state;
+@property (nonatomic) unsigned int streamID;
+@property (nonatomic, copy) NSURL *url;
+@property (nonatomic, retain) MCResourceDownloader *urlDownloader;
 
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (int)fd;
 - (id)incomingBuffer;
@@ -53,7 +43,7 @@
 - (id)peerID;
 - (id)progress;
 - (BOOL)progressUnbounded;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setFd:(int)arg1;
 - (void)setIncomingBuffer:(id)arg1;
 - (void)setName:(id)arg1;

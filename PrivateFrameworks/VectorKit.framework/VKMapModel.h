@@ -2,19 +2,8 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <GEORoutePreloadSession>, <VKMapModeObserver>, <VKMapModelDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, GEOFeatureStyleAttributes, GEOResourceManifestConfiguration, NSArray, NSLocale, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKAnimation, VKAnnotationMarker, VKAnnotationModel, VKBuildingFootprintMapModel, VKDebugModel, VKGridModel, VKHybridRasterMapModel, VKLabelMarker, VKLabelModel, VKMapRasterizer, VKMercatorTerrainHeightCache, VKOverlayContainerModel, VKPolygonMapModel, VKPolylineOverlay, VKPolylineOverlayPainter, VKRasterMapModel, VKRasterOverlayMapModel, VKRasterOverlayTileSource, VKRasterTrafficMapModel, VKRealisticMapModel, VKRiverMapModel, VKRoadMapModel, VKRoadTrafficMapModel, VKSharedResources, VKSkyModel, VKStyleManager, VKTileProvider, VKTrafficTileSource;
-
 @interface VKMapModel : VKModelObject <GEOExperimentConfigurationObserver, GEOResourceManifestTileGroupObserver, VKLabelModelDelegate, VKOverlayContainerDelegate, VKPolylineGroupOverlayObserver, VKTileProviderClient> {
-    BOOL _activeMapLayers[4][34];
+    BOOL _activeMapLayers;
     VKStyleManager *_activeStyleManager;
     GEOResourceManifestConfiguration *_additionalManifestConfiguration;
     int _annotationMarkerStyle;
@@ -55,7 +44,7 @@
     BOOL _disableLabels;
     BOOL _disablePolygons;
     BOOL _disableRasters;
-    BOOL _disableRoadClass[9];
+    BOOL _disableRoadClass;
     BOOL _disableRoads;
     NSMutableArray *_drawOrder;
     BOOL _dynamicMapModesEnabled;
@@ -69,7 +58,7 @@
     VKRoadMapModel *_hybridRoadModel;
     VKStyleManager *_hybridStyleManager;
     VKLabelModel *_labelModel;
-    NSMapTable *_layerToSourceMaps[4];
+    NSMapTable *_layerToSourceMaps;
     BOOL _limitingNavCameraHeight;
     int _loadingCount;
     NSLocale *_locale;
@@ -89,9 +78,9 @@
     VKPolygonMapModel *_polygonModel;
     NSMutableSet *_polylineOverlays;
     VKRasterMapModel *_rasterModel;
-    VKRasterOverlayMapModel *_rasterOverlayModel[2];
-    VKTileProvider *_rasterOverlayProvider[2];
-    VKRasterOverlayTileSource *_rasterOverlayTileSource[2];
+    VKRasterOverlayMapModel *_rasterOverlayModel;
+    VKTileProvider *_rasterOverlayProvider;
+    VKRasterOverlayTileSource *_rasterOverlayTileSource;
     VKRasterTrafficMapModel *_rasterTrafficModel;
     VKRasterMapModel *_rasterViewer;
     VKMapRasterizer *_rasterizer;
@@ -114,7 +103,7 @@
     } _styleQuery;
     float _styleTransitionProgress;
     int _targetDisplay;
-    VKTileProvider *_tileProviders[4];
+    VKTileProvider *_tileProviders;
     int _tileSize;
     NSMapTable *_tileSources;
     BOOL _trafficEnabled;
@@ -123,59 +112,59 @@
     double _zoomLevel;
 }
 
-@property(retain) GEOResourceManifestConfiguration * additionalManifestConfiguration;
-@property(readonly) VKBuildingFootprintMapModel * buildingFootprintModel;
-@property(readonly) BOOL buildingsAreVisible;
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  clearColor; /* unknown property attribute:  1>=[4f]} */
-@property float contentScale;
-@property(readonly) int currentMapMode;
-@property(copy,readonly) NSString * debugDescription;
-@property BOOL debugDynamicMapModesEnabled;
-@property <VKMapModelDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL disableBuildingFootprints;
-@property BOOL disableGrid;
-@property BOOL disableLabels;
-@property BOOL disablePolygons;
-@property BOOL disableRasters;
-@property BOOL disableRealisticLand;
-@property BOOL disableRealisticRoads;
-@property BOOL disableRoads;
-@property BOOL dynamicMapModesEnabled;
-@property(retain) NSArray * externalTrafficIncidents;
-@property(retain) VKPolylineOverlayPainter * focusedLabelsPolylinePainter;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isFullyDrawn;
-@property BOOL labelMarkerSelectionEnabled;
-@property int labelScaleFactor;
-@property BOOL limitingNavCameraHeight;
-@property BOOL localizeLabels;
-@property double lodBias;
-@property int mapType;
-@property float navigationPuckSize;
-@property int navigationShieldSize;
-@property unsigned int neighborMode;
-@property <VKOverlayContainerRouteDelegate> * overlayContainerRouteDelegate;
-@property(readonly) NSArray * overlays;
-@property(readonly) NSSet * persistentOverlays;
-@property <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
-@property(retain) <GEORoutePreloadSession> * routePreloadSession;
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
-@property(readonly) VKAnnotationMarker * selectedAnnotationMarker;
-@property(readonly) VKLabelMarker * selectedLabelMarker;
-@property(readonly) VKSharedResources * sharedResources;
-@property int shieldIdiom;
-@property int shieldSize;
-@property BOOL shouldLoadFallbackTiles;
-@property BOOL showsBuildings;
-@property BOOL showsPointsOfInterest;
-@property(retain) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
-@property int targetDisplay;
-@property(readonly) VKMercatorTerrainHeightCache * terrainHeightCache;
-@property(readonly) VKTileProvider * tileProvider;
-@property(getter=isTrafficEnabled) BOOL trafficEnabled;
-@property(readonly) NSArray * visibleTileSets;
+@property (nonatomic, retain) GEOResourceManifestConfiguration *additionalManifestConfiguration;
+@property (nonatomic, readonly) VKBuildingFootprintMapModel *buildingFootprintModel;
+@property (nonatomic, readonly) BOOL buildingsAreVisible;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  clearColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic) float contentScale;
+@property (nonatomic, readonly) int currentMapMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL debugDynamicMapModesEnabled;
+@property (nonatomic) <VKMapModelDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableBuildingFootprints;
+@property (nonatomic) BOOL disableGrid;
+@property (nonatomic) BOOL disableLabels;
+@property (nonatomic) BOOL disablePolygons;
+@property (nonatomic) BOOL disableRasters;
+@property (nonatomic) BOOL disableRealisticLand;
+@property (nonatomic) BOOL disableRealisticRoads;
+@property (nonatomic) BOOL disableRoads;
+@property (nonatomic) BOOL dynamicMapModesEnabled;
+@property (nonatomic, retain) NSArray *externalTrafficIncidents;
+@property (nonatomic, retain) VKPolylineOverlayPainter *focusedLabelsPolylinePainter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isFullyDrawn;
+@property (nonatomic) BOOL labelMarkerSelectionEnabled;
+@property (nonatomic) int labelScaleFactor;
+@property (nonatomic) BOOL limitingNavCameraHeight;
+@property (nonatomic) BOOL localizeLabels;
+@property (nonatomic) double lodBias;
+@property (nonatomic) int mapType;
+@property (nonatomic) float navigationPuckSize;
+@property (nonatomic) int navigationShieldSize;
+@property (nonatomic) unsigned int neighborMode;
+@property (nonatomic) <VKOverlayContainerRouteDelegate> *overlayContainerRouteDelegate;
+@property (nonatomic, readonly) NSArray *overlays;
+@property (nonatomic, readonly) NSSet *persistentOverlays;
+@property (nonatomic) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
+@property (nonatomic, retain) <GEORoutePreloadSession> *routePreloadSession;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
+@property (nonatomic, readonly) VKAnnotationMarker *selectedAnnotationMarker;
+@property (nonatomic, readonly) VKLabelMarker *selectedLabelMarker;
+@property (nonatomic, readonly) VKSharedResources *sharedResources;
+@property (nonatomic) int shieldIdiom;
+@property (nonatomic) int shieldSize;
+@property (nonatomic) BOOL shouldLoadFallbackTiles;
+@property (nonatomic) BOOL showsBuildings;
+@property (nonatomic) BOOL showsPointsOfInterest;
+@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
+@property (nonatomic) int targetDisplay;
+@property (nonatomic, readonly) VKMercatorTerrainHeightCache *terrainHeightCache;
+@property (nonatomic, readonly) VKTileProvider *tileProvider;
+@property (getter=isTrafficEnabled, nonatomic) BOOL trafficEnabled;
+@property (nonatomic, readonly) NSArray *visibleTileSets;
 
 + (const char *)nameForRoadClass:(int)arg1;
 + (unsigned long)numberOfRoadClasses;
@@ -207,11 +196,11 @@
 - (void)addRasterOverlay:(id)arg1;
 - (void)addSubmodel:(id)arg1;
 - (id)additionalManifestConfiguration;
-- (id)annotationCoordinateTest;
-- (id)annotationMarkerDeselectionCallback;
+- (id /* block */)annotationCoordinateTest;
+- (id /* block */)annotationMarkerDeselectionCallback;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(BOOL)arg2 canvasSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)annotationMarkers;
-- (id)annotationRectTest;
+- (id /* block */)annotationRectTest;
 - (id)attributionsForCurrentRegion;
 - (id)buildingFootprintModel;
 - (BOOL)buildingsAreVisible;
@@ -252,7 +241,7 @@
 - (void)flushCaches:(BOOL)arg1;
 - (id)focusedLabelsPolylinePainter;
 - (void)forceMapType:(int)arg1;
-- (void)foreachActiveLayer:(id)arg1;
+- (void)foreachActiveLayer:(id /* block */)arg1;
 - (void)gatherNavigationRenderingPreloadItems:(struct vector<ggl::ShaderLoadItem, std::__1::allocator<ggl::ShaderLoadItem> > { }*)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (double)heightAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1;
@@ -304,7 +293,7 @@
 - (void)removeOverlay:(id)arg1;
 - (void)removePersistentOverlay:(id)arg1;
 - (void)removeRasterOverlay:(id)arg1;
-- (void)requestStylesheetAnimation:(id)arg1 targetMapDisplayStyle:(unsigned int)arg2 setupHandler:(id)arg3;
+- (void)requestStylesheetAnimation:(id)arg1 targetMapDisplayStyle:(unsigned int)arg2 setupHandler:(id /* block */)arg3;
 - (void)resetTileContainers;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
@@ -316,7 +305,7 @@
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
 - (void)setAdditionalManifestConfiguration:(id)arg1;
-- (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
+- (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setApplicationState:(unsigned int)arg1;
 - (void)setClearColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setContentScale:(float)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoErrorDownloadingContentForMessageWarning : PBCodable <NSCopying> {
     NSString *_messageId;
 }
 
-@property(readonly) BOOL hasMessageId;
-@property(retain) NSString * messageId;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, retain) NSString *messageId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController {
-}
+@interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController
 
-@property BOOL colorSamplingEnabled;
+@property (nonatomic) BOOL colorSamplingEnabled;
 
 - (BOOL)colorSamplingEnabled;
 - (id)initWithPhoto:(id)arg1;

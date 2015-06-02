@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUIRepeatIt : SABaseClientBoundCommand
 
-@interface SAUIRepeatIt : SABaseClientBoundCommand {
-}
+@property (nonatomic, copy) NSString *contingency;
 
-@property(copy) NSString * contingency;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)repeatIt;
 + (id)repeatItWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)contingency;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setContingency:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKViewElementFactory, JSContext, JSValue, MPMediaQuery, NSMutableDictionary, NSString, SKUIMediaQueryViewElement, SKUIViewElementLayoutContext;
-
 @interface SKUIMediaQueryPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     JSValue *_cellFactoryMethod;
     SKUIViewElementLayoutContext *_cellLayoutContext;
@@ -16,14 +14,14 @@
     NSMutableDictionary *_viewElements;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)_cellClassForViewElement:(id)arg1;
-- (void)_enumerateVisibleViewElementsUsingBlock:(id)arg1;
+- (void)_enumerateVisibleViewElementsUsingBlock:(id /* block */)arg1;
 - (id)_viewElementWithIndexPath:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartPieAxis : TSCHChartStackedPercentValueAxis {
-}
+@interface TSCHChartPieAxis : TSCHChartStackedPercentValueAxis
 
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
 - (id)computeMinorGridlinesFromMajorGridlinesInAnalysis:(id)arg1;

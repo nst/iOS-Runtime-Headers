@@ -7,8 +7,8 @@
     int _maxFileLoggingLevel;
 }
 
-@property int maxConsoleLoggingLevel;
-@property int maxFileLoggingLevel;
+@property (nonatomic) int maxConsoleLoggingLevel;
+@property (nonatomic) int maxFileLoggingLevel;
 
 + (id)pairWithMaxConsoleLevel:(int)arg1 maxFileLevel:(int)arg2;
 

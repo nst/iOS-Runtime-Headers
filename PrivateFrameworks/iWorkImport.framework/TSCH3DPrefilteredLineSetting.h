@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDStroke;
-
 @interface TSCH3DPrefilteredLineSetting : NSObject {
     BOOL mCullBackfaces;
     BOOL mDisableColorOutput;
@@ -56,13 +54,13 @@
     BOOL mUseNormals;
 }
 
-@property BOOL cullBackfaces;
-@property BOOL disableColorOutput;
-@property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } filterRadius;
-@property float lineWidth;
-@property(copy) TSDStroke * stroke;
-@property struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } strokeColor;
-@property BOOL useNormals;
+@property (nonatomic) BOOL cullBackfaces;
+@property (nonatomic) BOOL disableColorOutput;
+@property (nonatomic) struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } filterRadius;
+@property (nonatomic) float lineWidth;
+@property (nonatomic, copy) TSDStroke *stroke;
+@property (nonatomic) struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } strokeColor;
+@property (nonatomic) BOOL useNormals;
 
 + (id)setting;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class SFUCryptoKey, SFUDataRepresentation<SFUZipArchiveDataRepresentation>;
-
 @interface SFUZipEntry : SFUDataRepresentation {
     SFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
     unsigned long long mCompressedSize;

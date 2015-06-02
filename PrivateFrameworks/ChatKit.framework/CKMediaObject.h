@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKFileTransfer>, NSData, NSDictionary, NSString, NSURL;
-
 @interface CKMediaObject : NSObject <QLPreviewItem> {
     <CKFileTransfer> *_transfer;
 }
 
-@property(copy,readonly) NSString * UTIType;
-@property(copy,readonly) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSURL * fileURL;
-@property(copy,readonly) NSString * filename;
-@property(readonly) unsigned int hash;
-@property(readonly) int mediaType;
-@property(copy,readonly) NSString * mimeType;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSDictionary * transcoderUserInfo;
-@property(retain) <CKFileTransfer> * transfer;
-@property(copy,readonly) NSString * transferGUID;
+@property (nonatomic, readonly, copy) NSString *UTIType;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSURL *fileURL;
+@property (nonatomic, readonly, copy) NSString *filename;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int mediaType;
+@property (nonatomic, readonly, copy) NSString *mimeType;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
+@property (nonatomic, retain) <CKFileTransfer> *transfer;
+@property (nonatomic, readonly, copy) NSString *transferGUID;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;

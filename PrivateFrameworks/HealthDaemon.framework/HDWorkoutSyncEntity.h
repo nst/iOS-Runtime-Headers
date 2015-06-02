@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDWorkoutSyncEntity : HDSampleSyncEntity {
-}
+@interface HDWorkoutSyncEntity : HDSampleSyncEntity
 
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;

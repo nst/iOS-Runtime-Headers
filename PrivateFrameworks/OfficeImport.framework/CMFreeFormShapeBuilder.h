@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADPath;
-
 @interface CMFreeFormShapeBuilder : CMLineShapeBuilder {
     OADPath *_path;
     struct CGSize { 

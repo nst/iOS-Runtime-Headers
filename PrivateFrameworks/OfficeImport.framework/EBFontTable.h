@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBFontTable : NSObject {
-}
+@interface EBFontTable : NSObject
 
 + (unsigned int)edFontIndexFromXlFontIndex:(unsigned int)arg1;
 + (void)readWithState:(id)arg1;

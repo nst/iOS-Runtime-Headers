@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class MDTextureCanvas, NSMutableSet, VKCamera, VKLayoutContext, VKMapModel, VKMapRasterizerRoot, VKScene, VKTileProvider;
-
 @interface VKMapRasterizer : VKModelObject {
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
@@ -64,11 +53,11 @@
     VKTileProvider *_tileProvider;
 }
 
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }* keyToRasterize;
-@property VKMapModel * mapModel;
-@property unsigned int rasterizingScaleFactor;
-@property VKTileProvider * tileProvider;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, readonly) const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*keyToRasterize;
+@property (nonatomic) VKMapModel *mapModel;
+@property (nonatomic) unsigned int rasterizingScaleFactor;
+@property (nonatomic) VKTileProvider *tileProvider;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

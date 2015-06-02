@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
  */
 
-@class ATSession, NSString, NSTimer;
-
 @interface NMSSyncManager : NSObject <ATSessionObserver> {
     id _activeSyncSessionIdentifier;
     unsigned int _aggregateAssetPlaylistItemBytes;
@@ -16,17 +14,17 @@
     BOOL _syncing;
 }
 
-@property(retain) id activeSyncSessionIdentifier;
-@property unsigned int aggregateAssetPlaylistItemBytes;
-@property(getter=hasAssetPlaylistItemsPendingDownload) BOOL assetPlaylistItemsPendingDownload;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property float estimatedSyncProgress;
-@property(readonly) unsigned int hash;
-@property unsigned int numberOfAssetPlaylistItems;
-@property(readonly) Class superclass;
-@property(getter=isSyncPending) BOOL syncPending;
-@property(getter=isSyncing) BOOL syncing;
+@property (nonatomic, retain) id activeSyncSessionIdentifier;
+@property (nonatomic) unsigned int aggregateAssetPlaylistItemBytes;
+@property (getter=hasAssetPlaylistItemsPendingDownload, nonatomic) BOOL assetPlaylistItemsPendingDownload;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float estimatedSyncProgress;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int numberOfAssetPlaylistItems;
+@property (readonly) Class superclass;
+@property (getter=isSyncPending, nonatomic) BOOL syncPending;
+@property (getter=isSyncing, nonatomic) BOOL syncing;
 
 + (id)sharedManager;
 
@@ -37,7 +35,7 @@
 - (unsigned int)_estimatedArtworkSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAggregateItemSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAverageItemSizeInBytes;
-- (void)_invokeOnMainThread:(id)arg1;
+- (void)_invokeOnMainThread:(id /* block */)arg1;
 - (BOOL)_isPendingAssetPlaylistSync;
 - (unsigned int)_numberOfAssetPlaylistItems;
 - (unsigned int)_numberOfAssetPlaylistItemsNeedingDownload;

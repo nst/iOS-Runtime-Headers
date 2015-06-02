@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface AceObjectHelper : NSObject {
-}
+@interface AceObjectHelper : NSObject
 
 + (struct __CFSet { }*)filteredPlistKeys;
 + (void)initialize;

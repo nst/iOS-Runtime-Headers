@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreAuthentication.framework/CoreAuthentication
  */
 
-@interface LALegacyHelper : NSObject {
-}
+@interface LALegacyHelper : NSObject
 
 + (id)_eventProcessingFromVREventFilter:(id)arg1 error:(id*)arg2;
 + (id)_eventProcessingFromVREventProcessing:(id)arg1 error:(id*)arg2;

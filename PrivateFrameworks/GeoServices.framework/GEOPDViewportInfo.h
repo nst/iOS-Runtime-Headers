@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion;
-
 @interface GEOPDViewportInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int mapMode : 1; 
@@ -14,12 +12,12 @@
     unsigned int _timeSinceMapViewportChanged;
 }
 
-@property BOOL hasMapMode;
-@property(readonly) BOOL hasMapRegion;
-@property BOOL hasTimeSinceMapViewportChanged;
-@property int mapMode;
-@property(retain) GEOMapRegion * mapRegion;
-@property unsigned int timeSinceMapViewportChanged;
+@property (nonatomic) BOOL hasMapMode;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic) BOOL hasTimeSinceMapViewportChanged;
+@property (nonatomic) int mapMode;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) unsigned int timeSinceMapViewportChanged;
 
 + (id)viewportInfoForTraits:(id)arg1;
 

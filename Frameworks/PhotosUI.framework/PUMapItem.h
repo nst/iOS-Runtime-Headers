@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CLLocation, NSDate, NSObject<NSCopying>;
-
 @interface PUMapItem : NSObject {
     NSDate *_dateCreated;
     NSObject<NSCopying> *_itemId;
     CLLocation *_location;
 }
 
-@property(copy) NSDate * dateCreated;
-@property(copy) NSObject<NSCopying> * itemId;
-@property(retain) CLLocation * location;
+@property (nonatomic, copy) NSDate *dateCreated;
+@property (nonatomic, copy) NSObject<NSCopying> *itemId;
+@property (nonatomic, retain) CLLocation *location;
 
-+ (id)mapItemSortingComparatorNewestToOldest;
-+ (id)mapItemSortingComparatorOldestToNewest;
++ (id /* block */)mapItemSortingComparatorNewestToOldest;
++ (id /* block */)mapItemSortingComparatorOldestToNewest;
 + (id)stringForItemId:(id)arg1;
 
 - (void).cxx_destruct;

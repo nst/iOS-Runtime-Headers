@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSString;
-
 @interface TRKeyboardUserEntryPacketEvent : TRPacketEvent {
     int _commandType;
     unsigned long long _sessionID;
     NSString *_text;
 }
 
-@property(readonly) int commandType;
-@property(readonly) unsigned long long sessionID;
-@property(readonly) NSString * text;
+@property (nonatomic, readonly) int commandType;
+@property (nonatomic, readonly) unsigned long long sessionID;
+@property (nonatomic, readonly) NSString *text;
 
 + (unsigned int)_packetEventType;
 

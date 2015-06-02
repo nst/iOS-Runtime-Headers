@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString;
-
 @interface NSOperation : NSObject {
     id _private;
     int _private1;
 }
 
-@property(getter=isAsynchronous,readonly) BOOL asynchronous;
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(copy) id completionBlock;
-@property(getter=isConcurrent,readonly) BOOL concurrent;
-@property(copy,readonly) NSArray * dependencies;
-@property(getter=isExecuting,readonly) BOOL executing;
-@property(getter=isFinished,readonly) BOOL finished;
-@property(copy) NSString * name;
+@property (getter=isAsynchronous, readonly) BOOL asynchronous;
+@property (getter=isCancelled, readonly) BOOL cancelled;
+@property (copy) id /* block */ completionBlock;
+@property (getter=isConcurrent, readonly) BOOL concurrent;
+@property (readonly, copy) NSArray *dependencies;
+@property (getter=isExecuting, readonly) BOOL executing;
+@property (getter=isFinished, readonly) BOOL finished;
+@property (copy) NSString *name;
 @property int qualityOfService;
 @property int queuePriority;
-@property(getter=isReady,readonly) BOOL ready;
-@property unsigned int tag;
+@property (getter=isReady, readonly) BOOL ready;
+@property (nonatomic) unsigned int tag;
 @property double threadPriority;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentOperation;
@@ -32,7 +32,7 @@
 - (id)_implicitObservationInfo;
 - (void)addDependency:(id)arg1;
 - (void)cancel;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)dealloc;
 - (id)dependencies;
 - (id)description;
@@ -50,17 +50,20 @@
 - (int)qualityOfService;
 - (int)queuePriority;
 - (void)removeDependency:(id)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setName:(id)arg1;
 - (void)setObservationInfo:(void*)arg1;
 - (void)setQualityOfService:(int)arg1;
 - (void)setQueuePriority:(int)arg1;
-- (void)setTag:(unsigned int)arg1;
 - (void)setThreadPriority:(double)arg1;
 - (void)start;
-- (unsigned int)tag;
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (void)setTag:(unsigned int)arg1;
+- (unsigned int)tag;
 
 @end

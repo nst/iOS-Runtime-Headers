@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPContactInformation : PBCodable <NSCopying> {
     NSString *_containerScopedUserId;
     NSString *_emailAddress;
@@ -11,14 +9,14 @@
     NSString *_lastName;
 }
 
-@property(retain) NSString * containerScopedUserId;
-@property(retain) NSString * emailAddress;
-@property(retain) NSString * firstName;
-@property(readonly) BOOL hasContainerScopedUserId;
-@property(readonly) BOOL hasEmailAddress;
-@property(readonly) BOOL hasFirstName;
-@property(readonly) BOOL hasLastName;
-@property(retain) NSString * lastName;
+@property (nonatomic, retain) NSString *containerScopedUserId;
+@property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, readonly) BOOL hasContainerScopedUserId;
+@property (nonatomic, readonly) BOOL hasEmailAddress;
+@property (nonatomic, readonly) BOOL hasFirstName;
+@property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, retain) NSString *lastName;
 
 - (void).cxx_destruct;
 - (id)containerScopedUserId;

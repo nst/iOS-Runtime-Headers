@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPUCoverZoomViewController, MusicTabBarController, NSString;
-
 @interface MPHRootViewController : UIViewController <MPUCoverZoomViewControllerDelegate> {
     BOOL _canShowCoverZoom;
     MPUCoverZoomViewController *_coverZoomViewController;
@@ -13,10 +11,10 @@
     MusicTabBarController *_tabBarController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationWillChangeStatusBarOrientationNotification:(id)arg1;

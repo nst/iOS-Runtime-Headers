@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayScreenSessionEndedOnServer : PBCodable <NSCopying> {
     unsigned int _audioLate;
     unsigned int _audioLost;
@@ -48,46 +46,46 @@
     unsigned int _unclearScreens;
 }
 
-@property unsigned int audioLate;
-@property unsigned int audioLost;
-@property unsigned int audioUnrecovered;
-@property int avgAhead;
-@property unsigned int avgRTT;
-@property int avgReceiveMs;
-@property unsigned int caDrops;
-@property unsigned int caFrames;
-@property unsigned int clearScreens;
-@property unsigned int configChanges;
-@property unsigned int duration;
-@property unsigned int forcedRefreshes;
-@property unsigned int framesReceived;
-@property BOOL hasAudioLate;
-@property BOOL hasAudioLost;
-@property BOOL hasAudioUnrecovered;
-@property BOOL hasAvgAhead;
-@property BOOL hasAvgRTT;
-@property BOOL hasAvgReceiveMs;
-@property BOOL hasCaDrops;
-@property BOOL hasCaFrames;
-@property BOOL hasClearScreens;
-@property BOOL hasConfigChanges;
-@property BOOL hasDuration;
-@property BOOL hasForcedRefreshes;
-@property BOOL hasFramesReceived;
-@property BOOL hasNegativeAheadFrames;
-@property BOOL hasReason;
-@property BOOL hasResumes;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasSuspends;
-@property BOOL hasTimestamp;
-@property BOOL hasUnclearScreens;
-@property unsigned int negativeAheadFrames;
-@property int reason;
-@property unsigned int resumes;
-@property(retain) NSString * sessionUUID;
-@property unsigned int suspends;
-@property unsigned long long timestamp;
-@property unsigned int unclearScreens;
+@property (nonatomic) unsigned int audioLate;
+@property (nonatomic) unsigned int audioLost;
+@property (nonatomic) unsigned int audioUnrecovered;
+@property (nonatomic) int avgAhead;
+@property (nonatomic) unsigned int avgRTT;
+@property (nonatomic) int avgReceiveMs;
+@property (nonatomic) unsigned int caDrops;
+@property (nonatomic) unsigned int caFrames;
+@property (nonatomic) unsigned int clearScreens;
+@property (nonatomic) unsigned int configChanges;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned int forcedRefreshes;
+@property (nonatomic) unsigned int framesReceived;
+@property (nonatomic) BOOL hasAudioLate;
+@property (nonatomic) BOOL hasAudioLost;
+@property (nonatomic) BOOL hasAudioUnrecovered;
+@property (nonatomic) BOOL hasAvgAhead;
+@property (nonatomic) BOOL hasAvgRTT;
+@property (nonatomic) BOOL hasAvgReceiveMs;
+@property (nonatomic) BOOL hasCaDrops;
+@property (nonatomic) BOOL hasCaFrames;
+@property (nonatomic) BOOL hasClearScreens;
+@property (nonatomic) BOOL hasConfigChanges;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasForcedRefreshes;
+@property (nonatomic) BOOL hasFramesReceived;
+@property (nonatomic) BOOL hasNegativeAheadFrames;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic) BOOL hasResumes;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasSuspends;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasUnclearScreens;
+@property (nonatomic) unsigned int negativeAheadFrames;
+@property (nonatomic) int reason;
+@property (nonatomic) unsigned int resumes;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int suspends;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int unclearScreens;
 
 - (unsigned int)audioLate;
 - (unsigned int)audioLost;

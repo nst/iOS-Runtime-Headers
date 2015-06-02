@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIExposureAdjust : CIFilter {
     NSNumber *inputEV;
     CIImage *inputImage;
 }
 
-@property(retain) NSNumber * inputEV;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) NSNumber *inputEV;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 

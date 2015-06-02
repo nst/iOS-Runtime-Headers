@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartSeries, TSUBezierPath, TSURegressionModel;
-
 @interface TSCHTrendLineData : NSObject <TSCHUnretainedParent> {
     struct CGRect { 
         struct CGPoint { 
@@ -31,14 +29,14 @@
     BOOL mTrendLineInvalid;
 }
 
-@property(readonly) float equationTextOpacity;
-@property(readonly) NSString * rSquaredText;
-@property(readonly) float rSquaredTextOpacity;
-@property(readonly) BOOL showEquation;
-@property(readonly) BOOL showRSquared;
-@property(readonly) BOOL showTrendLine;
-@property(readonly) BOOL showTrendLineLegendText;
-@property(readonly) NSString * trendLineLegendText;
+@property (nonatomic, readonly) float equationTextOpacity;
+@property (nonatomic, readonly) NSString *rSquaredText;
+@property (nonatomic, readonly) float rSquaredTextOpacity;
+@property (nonatomic, readonly) BOOL showEquation;
+@property (nonatomic, readonly) BOOL showRSquared;
+@property (nonatomic, readonly) BOOL showTrendLine;
+@property (nonatomic, readonly) BOOL showTrendLineLegendText;
+@property (nonatomic, readonly) NSString *trendLineLegendText;
 
 - (void)clearParent;
 - (void)dealloc;

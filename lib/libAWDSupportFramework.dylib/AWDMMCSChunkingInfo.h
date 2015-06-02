@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDMMCSChunkingInfo : PBCodable <NSCopying> {
     long long _byteCount;
     BOOL _cancelled;
@@ -23,21 +21,21 @@
     long long _startTime;
 }
 
-@property long long byteCount;
-@property BOOL cancelled;
-@property long long chunkCount;
-@property(retain) NSMutableArray * chunkingErrors;
-@property long long duration;
-@property int errorCode;
-@property(retain) NSString * errorDomain;
-@property BOOL hasByteCount;
-@property BOOL hasCancelled;
-@property BOOL hasChunkCount;
-@property BOOL hasDuration;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasErrorDomain;
-@property BOOL hasStartTime;
-@property long long startTime;
+@property (nonatomic) long long byteCount;
+@property (nonatomic) BOOL cancelled;
+@property (nonatomic) long long chunkCount;
+@property (nonatomic, retain) NSMutableArray *chunkingErrors;
+@property (nonatomic) long long duration;
+@property (nonatomic) int errorCode;
+@property (nonatomic, retain) NSString *errorDomain;
+@property (nonatomic) BOOL hasByteCount;
+@property (nonatomic) BOOL hasCancelled;
+@property (nonatomic) BOOL hasChunkCount;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasErrorDomain;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic) long long startTime;
 
 - (void)addChunkingError:(id)arg1;
 - (long long)byteCount;

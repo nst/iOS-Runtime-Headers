@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreCECDeviceClient : CoreCECDevice {
-}
+@interface CoreCECDeviceClient : CoreCECDevice
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIImageView;
-
 @interface TPLCDBar : UIView {
     UIImageView *_shadowView;
 }
 
-@property(readonly) UIImageView * shadowView;
+@property (readonly) UIImageView *shadowView;
 
 + (id)backgroundImage;
 + (float)defaultHeight;

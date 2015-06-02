@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString, NSUserDefaults;
-
 @interface ATDeviceSettings : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
     NSUserDefaults *_userDefaults;
 }
 
-@property(copy,readonly) NSArray * dataClassesNeedingSync;
-@property(readonly) BOOL fairPlayEnabled;
-@property(readonly) BOOL grappaEnabled;
-@property(copy,readonly) NSString * interfaceName;
-@property(readonly) BOOL isDeviceLinkClient;
-@property(copy,readonly) NSString * libraryIdentifier;
-@property(readonly) double pairingSyncCompletionTime;
-@property(copy,readonly) NSString * serviceDomain;
-@property(copy,readonly) NSString * serviceName;
-@property(copy,readonly) NSString * serviceType;
-@property(readonly) BOOL useNetServicesConnection;
+@property (nonatomic, readonly, copy) NSArray *dataClassesNeedingSync;
+@property (nonatomic, readonly) BOOL fairPlayEnabled;
+@property (nonatomic, readonly) BOOL grappaEnabled;
+@property (nonatomic, readonly, copy) NSString *interfaceName;
+@property (nonatomic, readonly) BOOL isDeviceLinkClient;
+@property (nonatomic, readonly, copy) NSString *libraryIdentifier;
+@property (nonatomic, readonly) double pairingSyncCompletionTime;
+@property (nonatomic, readonly, copy) NSString *serviceDomain;
+@property (nonatomic, readonly, copy) NSString *serviceName;
+@property (nonatomic, readonly, copy) NSString *serviceType;
+@property (nonatomic, readonly) BOOL useNetServicesConnection;
 
 + (id)sharedInstance;
 

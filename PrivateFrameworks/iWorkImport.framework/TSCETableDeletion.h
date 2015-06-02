@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCETableDeletion : TSCEDependencyChanges {
-}
+@interface TSCETableDeletion : TSCEDependencyChanges
 
 @end

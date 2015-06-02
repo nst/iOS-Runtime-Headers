@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSDictionary;
-
 @interface VVCarrierParameters : NSObject {
     NSDictionary *_parameterValues;
 }

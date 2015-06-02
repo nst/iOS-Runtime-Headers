@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUMescalSession;
-
 @interface SUAccountViewController : SUStorePageViewController {
     BOOL _failed;
     SUMescalSession *_mescalSession;
@@ -12,8 +10,8 @@
     int _style;
 }
 
-@property(getter=_mescalSession,readonly) SUMescalSession * _mescalSession;
-@property int style;
+@property (getter=_mescalSession, nonatomic, readonly) SUMescalSession *_mescalSession;
+@property (nonatomic) int style;
 
 + (id)_latestAccountViewController;
 

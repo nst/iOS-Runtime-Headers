@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText;
+@interface SASTGridCell : AceObject <SAAceSerializable>
 
-@interface SASTGridCell : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUIDecoratedText * subTitle;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUIDecoratedText *subTitle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
 
 + (id)gridCell;
 + (id)gridCellWithDictionary:(id)arg1 context:(id)arg2;

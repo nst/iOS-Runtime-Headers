@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface MCLDAPAccountPayload : MCPayload {
     NSString *_accountDescription;
     NSString *_accountPersistentUUID;
@@ -15,14 +13,14 @@
     NSString *_username;
 }
 
-@property(retain,readonly) NSString * accountDescription;
-@property(copy) NSString * accountPersistentUUID;
-@property(retain,readonly) NSString * hostname;
-@property(retain) NSString * password;
-@property(retain,readonly) NSArray * searchSettings;
-@property(readonly) BOOL useSSL;
-@property(readonly) NSNumber * useSSLNum;
-@property(retain) NSString * username;
+@property (nonatomic, readonly, retain) NSString *accountDescription;
+@property (nonatomic, copy) NSString *accountPersistentUUID;
+@property (nonatomic, readonly, retain) NSString *hostname;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, readonly, retain) NSArray *searchSettings;
+@property (nonatomic, readonly) BOOL useSSL;
+@property (nonatomic, readonly) NSNumber *useSSLNum;
+@property (nonatomic, retain) NSString *username;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

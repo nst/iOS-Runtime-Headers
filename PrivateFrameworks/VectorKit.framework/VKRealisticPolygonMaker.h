@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKRealisticPolygonMaker : NSObject {
     NSMutableArray *_polygons;
     struct unordered_map<geo::_retain_ptr<NSData *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::shared_ptr<md::StyleQuery>, std::__1::hash<geo::_retain_ptr<NSData *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::equal_to<geo::_retain_ptr<NSData *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> >, std::__1::allocator<std::__1::pair<const geo::_retain_ptr<NSData *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::shared_ptr<md::StyleQuery> > > > { 
@@ -37,6 +35,6 @@
 - (void).cxx_destruct;
 - (void)addPolygonForPoints:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 pointCount:(unsigned int)arg2 withStyleQuery:(struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; })arg3;
 - (void)dealloc;
-- (void)generateIndexedTrianglesWithHandler:(id)arg1;
+- (void)generateIndexedTrianglesWithHandler:(id /* block */)arg1;
 
 @end

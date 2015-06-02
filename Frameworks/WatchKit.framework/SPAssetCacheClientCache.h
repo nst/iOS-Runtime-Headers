@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface SPAssetCacheClientCache : NSObject {
     NSMutableDictionary *_assets;
     unsigned int _cacheType;
@@ -12,11 +10,11 @@
     int _size;
 }
 
-@property(retain) NSMutableDictionary * assets;
-@property unsigned int cacheType;
-@property(retain) NSString * gizmoCacheIdentifier;
-@property(retain) NSMutableArray * keys;
-@property int size;
+@property (nonatomic, retain) NSMutableDictionary *assets;
+@property (nonatomic) unsigned int cacheType;
+@property (nonatomic, retain) NSString *gizmoCacheIdentifier;
+@property (nonatomic, retain) NSMutableArray *keys;
+@property (nonatomic) int size;
 
 - (void).cxx_destruct;
 - (BOOL)addAsset:(id)arg1 withName:(id)arg2 sendImage:(BOOL)arg3;

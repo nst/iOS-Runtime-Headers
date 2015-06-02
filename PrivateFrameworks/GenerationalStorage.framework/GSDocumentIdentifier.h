@@ -5,7 +5,7 @@
 @interface GSDocumentIdentifier : NSObject <NSCopying, NSSecureCoding> {
     int deviceID;
     unsigned long long documentID;
-    unsigned char volumeUUID[16];
+    unsigned char volumeUUID;
 }
 
 + (BOOL)supportsSecureCoding;

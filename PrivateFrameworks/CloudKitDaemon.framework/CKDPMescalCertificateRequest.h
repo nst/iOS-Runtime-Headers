@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPMescalCertificateRequest : PBRequest <NSCopying> {
-}
+@interface CKDPMescalCertificateRequest : PBRequest <NSCopying>
 
 + (id)options;
 

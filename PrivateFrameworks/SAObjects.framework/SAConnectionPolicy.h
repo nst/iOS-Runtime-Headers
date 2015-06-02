@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString;
+@interface SAConnectionPolicy : AceObject <SAAceSerializable>
 
-@interface SAConnectionPolicy : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(copy) NSNumber * globalTimeout;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * policyId;
-@property(copy) NSArray * routes;
-@property(readonly) Class superclass;
-@property(copy) NSNumber * timeToLive;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, copy) NSNumber *globalTimeout;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *policyId;
+@property (nonatomic, copy) NSArray *routes;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *timeToLive;
 
 + (id)connectionPolicy;
 + (id)connectionPolicyWithDictionary:(id)arg1 context:(id)arg2;

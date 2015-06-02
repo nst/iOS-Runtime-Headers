@@ -3,7 +3,7 @@
  */
 
 @interface _CTGCommonCache : NSObject {
-    void *_cacheBytes[52];
+    void *_cacheBytes;
 }
 
 - (void)dealloc;

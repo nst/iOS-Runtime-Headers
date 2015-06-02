@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFComposeHeaderView, MFComposeSubjectView;
-
 @interface _MFMailComposePlaceholderView : UIScrollView {
     MFComposeHeaderView *_multiView;
     MFComposeSubjectView *_subjectView;

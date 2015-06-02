@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhoneChoco : UIKBRenderFactoryiPhone {
-}
+@interface UIKBRenderFactoryiPhoneChoco : UIKBRenderFactoryiPhone
 
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;

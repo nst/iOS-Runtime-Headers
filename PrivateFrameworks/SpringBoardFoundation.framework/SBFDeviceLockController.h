@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, PCPersistentTimer, SBFPasscodeLockAssertionManager, SBFPasscodeLockDisableAssertion;
-
 @interface SBFDeviceLockController : NSObject {
     SBFPasscodeLockAssertionManager *_assertionManager;
     BOOL _cachedPasscodeLockedOrBlocked;
@@ -78,6 +76,6 @@
 - (void)notePasscodeEntryCancelled;
 - (void)setBlockedForThermalCondition:(BOOL)arg1;
 - (void)synchronize;
-- (id)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(BOOL)arg2;
+- (id)updateLockControllerDefaultsWithBlock:(id /* block */)arg1 journaled:(BOOL)arg2;
 
 @end

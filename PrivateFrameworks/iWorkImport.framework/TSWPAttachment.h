@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSWPStorage;
-
 @interface TSWPAttachment : TSPObject <TSDOwningAttachment, TSKDocumentObject, TSPCopying> {
     TSWPStorage *_parentStorage;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isAnchored;
-@property(readonly) BOOL isAttachedToBodyText;
-@property(readonly) BOOL isDrawable;
-@property(readonly) BOOL isPartitioned;
-@property(readonly) BOOL isSearchable;
-@property TSWPStorage * parentStorage;
-@property(readonly) Class positionerClass;
-@property(readonly) BOOL specifiesEnabledKnobMask;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isAnchored;
+@property (nonatomic, readonly) BOOL isAttachedToBodyText;
+@property (nonatomic, readonly) BOOL isDrawable;
+@property (nonatomic, readonly) BOOL isPartitioned;
+@property (nonatomic, readonly) BOOL isSearchable;
+@property (nonatomic) TSWPStorage *parentStorage;
+@property (nonatomic, readonly) Class positionerClass;
+@property (nonatomic, readonly) BOOL specifiesEnabledKnobMask;
+@property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (int)attributeArrayKind;

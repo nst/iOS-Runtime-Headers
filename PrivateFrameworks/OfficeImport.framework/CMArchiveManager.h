@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSCache, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface CMArchiveManager : NSObject <TCCancelDelegate> {
     BOOL mAutoCommit;
     float mCommitInterval;
@@ -19,11 +17,11 @@
     int mWidth;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * passphrase;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *passphrase;
+@property (readonly) Class superclass;
 
 + (int)blipTypeToResourceType:(int)arg1;
 + (id)resourceTypeToExtension:(int)arg1;

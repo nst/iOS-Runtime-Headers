@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKMenuBarElement;
+@interface IKMenuBarTemplate : IKViewElement
 
-@interface IKMenuBarTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKMenuBarElement * menuBar;
+@property (nonatomic, readonly, retain) IKMenuBarElement *menuBar;
 
 - (id)menuBar;
 

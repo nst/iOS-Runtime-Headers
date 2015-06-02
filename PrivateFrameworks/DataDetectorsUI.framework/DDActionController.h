@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class <DDDetectionControllerInteractionDelegate>, DDAction, NSString, UIAlertController, UIPopoverController, UIView, UIViewController, UIWindow;
-
 @interface DDActionController : NSObject <DDActionDelegate, UIPopoverPresentationControllerDelegate> {
     UIAlertController *_alertController;
     UIView *_baseView;
@@ -16,15 +14,15 @@
     UIViewController *_presentedViewController;
 }
 
-@property(retain) UIAlertController * alertController;
-@property(retain) UIView * baseView;
-@property(retain) DDAction * currentAction;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <DDDetectionControllerInteractionDelegate> * interactionDelegate;
-@property(retain) UIPopoverController * popoverController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic, retain) UIView *baseView;
+@property (retain) DDAction *currentAction;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <DDDetectionControllerInteractionDelegate> *interactionDelegate;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (readonly) Class superclass;
 
 - (void)_cleanup;
 - (void)_dismissCurrentViewControllerOurselves;

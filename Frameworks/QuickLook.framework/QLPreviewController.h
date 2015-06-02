@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewControllerDataSource>, <QLPreviewControllerDelegate>, <QLPreviewItem>, QLPreviewControllerReserved;
-
 @interface QLPreviewController : UIViewController {
     QLPreviewControllerReserved *_reserved;
 }
 
-@property(readonly) <QLPreviewItem> * currentPreviewItem;
+@property (readonly) <QLPreviewItem> *currentPreviewItem;
 @property int currentPreviewItemIndex;
-@property <QLPreviewControllerDataSource> * dataSource;
-@property <QLPreviewControllerDelegate> * delegate;
+@property <QLPreviewControllerDataSource> *dataSource;
+@property <QLPreviewControllerDelegate> *delegate;
+
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
 
 + (id)_passThroughDocumentTypes;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
@@ -82,11 +82,10 @@
 - (id)activityItemForDocumentInteractionController:(id)arg1;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
-- (void)animateWhenReadyWithBlock:(id)arg1;
+- (void)animateWhenReadyWithBlock:(id /* block */)arg1;
 - (void)arrowsAction:(id)arg1;
 - (BOOL)blockRemoteImages;
 - (BOOL)canPrint;
-- (BOOL)ckCanDismissWhenSuspending;
 - (void)contentWasTappedInPreviewContentController:(id)arg1;
 - (id)currentPreviewItem;
 - (int)currentPreviewItemIndex;
@@ -120,7 +119,7 @@
 - (void)previewContentController:(id)arg1 didLoadItem:(id)arg2 atIndex:(int)arg3 withError:(id)arg4;
 - (void)previewContentController:(id)arg1 didMoveToItem:(id)arg2 atIndex:(int)arg3;
 - (id)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2;
-- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id)arg3;
+- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id /* block */)arg3;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (void)previewContentController:(id)arg1 willHideOverlayWithDuration:(double)arg2;
@@ -138,7 +137,7 @@
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setShowActionAsDefaultButton:(BOOL)arg1;
 - (void)setSourceIsManaged:(BOOL)arg1;
-- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id /* block */)arg2;
 - (void)setUseCustomActionButton:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)showActionAsDefaultButton;
@@ -156,5 +155,9 @@
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)wirelessRoutesDidChange:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (BOOL)ckCanDismissWhenSuspending;
 
 @end

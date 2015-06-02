@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSIndexSet, PUFeedViewControllerSpec, PUPhotoBrowserControllerSpec, PUPhotosGridViewControllerSpec, PUPhotosPickerViewControllerSpec;
-
 @interface PUFeedViewControllerSpec : NSObject {
     PUPhotosGridViewControllerSpec *_gridSpec;
     int _largeNumberOfSubjectsForLikes;
@@ -54,19 +52,19 @@
     int _veryLargeTileQualityImageFormat;
 }
 
-@property(readonly) PUPhotosGridViewControllerSpec * gridSpec;
-@property(readonly) int largeNumberOfSubjectsForLikes;
-@property(readonly) struct CGSize { float x1; float x2; } minimumVideoTileSize;
-@property(readonly) PUPhotoBrowserControllerSpec * photoBrowserSpec;
-@property(readonly) PUPhotosPickerViewControllerSpec * photosPickerSpec;
-@property(readonly) PUFeedViewControllerSpec * popoverFeedViewControllerSpec;
-@property(readonly) int promptStyle;
-@property(copy) NSIndexSet * qualityImageFormats;
-@property(readonly) BOOL shouldHideBarsInLandscape;
-@property(readonly) BOOL shouldShowInvitationsInPopover;
-@property(readonly) BOOL shouldUseAspectThumbnails;
-@property(readonly) BOOL shouldUseFullscreenLayout;
-@property(readonly) struct CGSize { float x1; float x2; } thumbnailSize;
+@property (nonatomic, readonly) PUPhotosGridViewControllerSpec *gridSpec;
+@property (nonatomic, readonly) int largeNumberOfSubjectsForLikes;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumVideoTileSize;
+@property (nonatomic, readonly) PUPhotoBrowserControllerSpec *photoBrowserSpec;
+@property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerSpec;
+@property (nonatomic, readonly) PUFeedViewControllerSpec *popoverFeedViewControllerSpec;
+@property (nonatomic, readonly) int promptStyle;
+@property (nonatomic, copy) NSIndexSet *qualityImageFormats;
+@property (nonatomic, readonly) BOOL shouldHideBarsInLandscape;
+@property (nonatomic, readonly) BOOL shouldShowInvitationsInPopover;
+@property (nonatomic, readonly) BOOL shouldUseAspectThumbnails;
+@property (nonatomic, readonly) BOOL shouldUseFullscreenLayout;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailSize;
 
 - (void).cxx_destruct;
 - (void)_setQualityImageFormats:(id)arg1;

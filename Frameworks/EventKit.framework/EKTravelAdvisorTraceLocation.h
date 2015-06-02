@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class CLLocation, NSDate;
-
 @interface EKTravelAdvisorTraceLocation : NSObject <NSSecureCoding> {
     NSDate *_date;
     CLLocation *_location;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) CLLocation * location;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) CLLocation *location;
 
 + (BOOL)supportsSecureCoding;
 

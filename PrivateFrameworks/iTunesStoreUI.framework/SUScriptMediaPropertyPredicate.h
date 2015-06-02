@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MPMediaPropertyPredicate, NSString;
-
 @interface SUScriptMediaPropertyPredicate : SUScriptObject {
     NSString *_comparisonType;
     NSString *_property;
     id _value;
 }
 
-@property(readonly) NSString * comparisonType;
-@property(readonly) MPMediaPropertyPredicate * nativePredicate;
-@property(readonly) NSString * property;
-@property(readonly) id value;
+@property (readonly) NSString *comparisonType;
+@property (nonatomic, readonly) MPMediaPropertyPredicate *nativePredicate;
+@property (readonly) NSString *property;
+@property (readonly) id value;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor;
-
 @interface SUScriptColor : SUScriptObject {
     UIColor *_color;
 }
 
-@property(readonly) float alpha;
-@property(readonly) float blue;
-@property(readonly) float green;
-@property(readonly) UIColor * nativeColor;
-@property(readonly) float red;
+@property (readonly) float alpha;
+@property (readonly) float blue;
+@property (readonly) float green;
+@property (readonly) UIColor *nativeColor;
+@property (readonly) float red;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

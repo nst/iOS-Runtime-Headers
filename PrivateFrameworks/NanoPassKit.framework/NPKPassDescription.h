@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData, NSDate, NSNumber, NSString, PKColor, PKImage, PKPaymentApplication;
-
 @interface NPKPassDescription : NSObject <NSCopying, NSSecureCoding> {
     PKColor *_backgroundColor;
     PKImage *_backgroundImage;
@@ -24,23 +22,23 @@
     NSString *_uniqueID;
 }
 
-@property(retain) PKColor * backgroundColor;
-@property(retain) PKImage * backgroundImage;
-@property(retain) NSData * backgroundImageEncoded;
-@property BOOL deletePending;
-@property(retain) PKColor * foregroundColor;
-@property(retain) NSNumber * groupID;
-@property(retain) NSDate * ingestionDate;
-@property(retain) PKColor * labelColor;
-@property(retain) PKImage * logoImage;
-@property(retain) NSData * logoImageEncoded;
-@property(retain) NSString * logoText;
-@property(retain) NSData * manifestHash;
-@property(retain) NSString * passTypeIdentifier;
-@property(retain) PKPaymentApplication * paymentApplication;
-@property(retain) NSDate * relevantDate;
-@property int style;
-@property(retain) NSString * uniqueID;
+@property (nonatomic, retain) PKColor *backgroundColor;
+@property (nonatomic, retain) PKImage *backgroundImage;
+@property (nonatomic, retain) NSData *backgroundImageEncoded;
+@property (nonatomic) BOOL deletePending;
+@property (nonatomic, retain) PKColor *foregroundColor;
+@property (nonatomic, retain) NSNumber *groupID;
+@property (nonatomic, retain) NSDate *ingestionDate;
+@property (nonatomic, retain) PKColor *labelColor;
+@property (nonatomic, retain) PKImage *logoImage;
+@property (nonatomic, retain) NSData *logoImageEncoded;
+@property (nonatomic, retain) NSString *logoText;
+@property (nonatomic, retain) NSData *manifestHash;
+@property (nonatomic, retain) NSString *passTypeIdentifier;
+@property (nonatomic, retain) PKPaymentApplication *paymentApplication;
+@property (nonatomic, retain) NSDate *relevantDate;
+@property (nonatomic) int style;
+@property (nonatomic, retain) NSString *uniqueID;
 
 + (BOOL)isCachingEnabled;
 + (void)setCachingEnabled:(BOOL)arg1;

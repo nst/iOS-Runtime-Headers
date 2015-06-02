@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSDMagicMoveTextureZOrderer : NSObject {
     NSArray *_incomingTexturesInZOrder;
     NSArray *_outgoingTexturesInZOrder;
@@ -13,8 +11,8 @@
     NSArray *_zOrderMatches;
 }
 
-@property(readonly) NSArray * flattenableAnimationMatches;
-@property(readonly) unsigned int zOrderIntersectionsCount;
+@property (nonatomic, readonly) NSArray *flattenableAnimationMatches;
+@property (nonatomic, readonly) unsigned int zOrderIntersectionsCount;
 
 - (void)dealloc;
 - (id)flattenableAnimationMatches;

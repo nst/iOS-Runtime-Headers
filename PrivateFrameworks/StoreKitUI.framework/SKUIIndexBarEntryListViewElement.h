@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString;
-
 @interface SKUIIndexBarEntryListViewElement : SKUIViewElement {
     int _entryListElementType;
     BOOL _indexBarHiddenWhenEmpty;
@@ -11,11 +9,11 @@
     NSString *_targetIndexBarEntryID;
 }
 
-@property(copy,readonly) NSArray * childIndexBarEntryElements;
-@property(readonly) int entryListElementType;
-@property(getter=isIndexBarHiddenWhenEmpty,readonly) BOOL indexBarHiddenWhenEmpty;
-@property(readonly) int minimumEntityCount;
-@property(copy,readonly) NSString * targetIndexBarEntryID;
+@property (nonatomic, readonly, copy) NSArray *childIndexBarEntryElements;
+@property (nonatomic, readonly) int entryListElementType;
+@property (getter=isIndexBarHiddenWhenEmpty, nonatomic, readonly) BOOL indexBarHiddenWhenEmpty;
+@property (nonatomic, readonly) int minimumEntityCount;
+@property (nonatomic, readonly, copy) NSString *targetIndexBarEntryID;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

@@ -6,7 +6,7 @@
     BOOL _archiveSecureItems;
 }
 
-@property BOOL archiveSecureItems;
+@property (nonatomic) BOOL archiveSecureItems;
 
 - (BOOL)archiveSecureItems;
 - (void)setArchiveSecureItems:(BOOL)arg1;

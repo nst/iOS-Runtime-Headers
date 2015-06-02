@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteEntry, GEOPDViewportInfo, NSData, NSString;
-
 @interface GEOPDSearchParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
@@ -18,20 +16,20 @@
     GEOPDViewportInfo *_viewportInfo;
 }
 
-@property BOOL hasMaxResults;
-@property(readonly) BOOL hasSearchString;
-@property BOOL hasSortOrder;
-@property(readonly) BOOL hasSuggestionEntry;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property(readonly) BOOL hasViewportInfo;
-@property unsigned int maxResults;
-@property(retain) NSString * searchString;
-@property int sortOrder;
-@property(retain) GEOPDAutocompleteEntry * suggestionEntry;
-@property(retain) NSData * suggestionEntryMetadata;
-@property(retain) NSData * suggestionMetadata;
-@property(retain) GEOPDViewportInfo * viewportInfo;
+@property (nonatomic) BOOL hasMaxResults;
+@property (nonatomic, readonly) BOOL hasSearchString;
+@property (nonatomic) BOOL hasSortOrder;
+@property (nonatomic, readonly) BOOL hasSuggestionEntry;
+@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) BOOL hasSuggestionMetadata;
+@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) unsigned int maxResults;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic) int sortOrder;
+@property (nonatomic, retain) GEOPDAutocompleteEntry *suggestionEntry;
+@property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, retain) NSData *suggestionMetadata;
+@property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

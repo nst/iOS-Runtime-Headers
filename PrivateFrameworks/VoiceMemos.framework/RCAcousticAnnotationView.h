@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCLayoutMetrics, RCUIConfiguration;
-
 @interface RCAcousticAnnotationView : UIView {
     RCUIConfiguration *_UIConfiguration;
     struct CGGradient { } *_decibelMarkerBackgroundGradient;
@@ -11,9 +9,9 @@
     RCLayoutMetrics *_layoutMetrics;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property float gradientAlpha;
-@property(retain) RCLayoutMetrics * layoutMetrics;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (nonatomic) float gradientAlpha;
+@property (nonatomic, retain) RCLayoutMetrics *layoutMetrics;
 
 + (float)requiredWidth;
 

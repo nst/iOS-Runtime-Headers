@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSString;
-
 @interface YTAccountAuthenticator : NSObject <NSURLConnectionDelegate> {
     NSString *_account;
     NSString *_accountRefreshToken;
@@ -11,14 +9,14 @@
     NSString *_accountYouTubeName;
 }
 
-@property(retain) NSString * account;
-@property(retain) NSString * accountRefreshToken;
-@property(retain) NSString * accountToken;
-@property(retain) NSString * accountYouTubeName;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *account;
+@property (nonatomic, retain) NSString *accountRefreshToken;
+@property (nonatomic, retain) NSString *accountToken;
+@property (nonatomic, retain) NSString *accountYouTubeName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_keychainServiceForCredentialComponent:(id)arg1;
 + (id)_keychainServiceForLegacyPassword;

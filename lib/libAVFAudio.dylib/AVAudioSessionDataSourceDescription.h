@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface AVAudioSessionDataSourceDescription : NSObject {
     void *_impl;
 }
 
-@property(readonly) NSNumber * dataSourceID;
-@property(readonly) NSString * dataSourceName;
-@property(readonly) NSString * location;
-@property(readonly) NSString * orientation;
-@property(readonly) NSString * preferredPolarPattern;
-@property(readonly) NSString * selectedPolarPattern;
-@property(readonly) NSArray * supportedPolarPatterns;
+@property (readonly) NSNumber *dataSourceID;
+@property (readonly) NSString *dataSourceName;
+@property (readonly) NSString *location;
+@property (readonly) NSString *orientation;
+@property (readonly) NSString *preferredPolarPattern;
+@property (readonly) NSString *selectedPolarPattern;
+@property (readonly) NSArray *supportedPolarPatterns;
 
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawSourceArray:(id)arg2 portID:(id)arg3;
 
@@ -31,7 +29,7 @@
 - (id)location;
 - (id)orientation;
 - (id)preferredPolarPattern;
-- (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; }*)privateGetImplementation;
+- (struct DataSourceDescriptionImpl { id x1; id x2; id x3; id x4; }*)privateGetImplementation;
 - (id)privateGetOwningPortID;
 - (BOOL)privateMatchesRawDescription:(id)arg1;
 - (id)selectedPolarPattern;

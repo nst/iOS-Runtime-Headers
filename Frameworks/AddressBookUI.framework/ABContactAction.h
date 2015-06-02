@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactActionDelegate>, CNContact, CNContactStyle, NSString, UIColor;
-
 @interface ABContactAction : NSObject {
     UIColor *_color;
     CNContact *_contact;
@@ -16,15 +14,15 @@
     int _transportType;
 }
 
-@property(retain) UIColor * color;
-@property(retain) CNContact * contact;
-@property(retain) CNContactStyle * contactStyle;
-@property <ABContactActionDelegate> * delegate;
-@property(getter=isDestructive) BOOL destructive;
-@property(readonly) SEL selector;
-@property(retain,readonly) id target;
-@property(copy,readonly) NSString * title;
-@property int transportType;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic) <ABContactActionDelegate> *delegate;
+@property (getter=isDestructive, nonatomic) BOOL destructive;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly, retain) id target;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic) int transportType;
 
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;

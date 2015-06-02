@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKNSURLProtectionSpace : WKObject <NSCopying> {
-}
+@interface WKNSURLProtectionSpace : WKObject <NSCopying>
 
 - (id)_web_createTarget;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

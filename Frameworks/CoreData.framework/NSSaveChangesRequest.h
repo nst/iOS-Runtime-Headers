@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSet;
-
 @interface NSSaveChangesRequest : NSPersistentStoreRequest {
     NSSet *_deletedObjects;
     unsigned long _flags;
@@ -13,10 +11,10 @@
     NSSet *_updatedObjects;
 }
 
-@property(readonly) NSSet * deletedObjects;
-@property(readonly) NSSet * insertedObjects;
-@property(readonly) NSSet * lockedObjects;
-@property(readonly) NSSet * updatedObjects;
+@property (readonly) NSSet *deletedObjects;
+@property (readonly) NSSet *insertedObjects;
+@property (readonly) NSSet *lockedObjects;
+@property (readonly) NSSet *updatedObjects;
 
 + (void)initialize;
 

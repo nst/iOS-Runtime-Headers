@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class <CLLocationManagerDelegate>, _CLLocationManagerRoutineProxy;
-
 @interface CLLocationManagerRoutine : NSObject {
     _CLLocationManagerRoutineProxy *_locationManagerRoutineProxy;
 }
 
-@property <CLLocationManagerDelegate> * delegate;
-@property(retain) _CLLocationManagerRoutineProxy * locationManagerRoutineProxy;
+@property (nonatomic) <CLLocationManagerDelegate> *delegate;
+@property (nonatomic, retain) _CLLocationManagerRoutineProxy *locationManagerRoutineProxy;
 
 - (void)dealloc;
 - (id)delegate;

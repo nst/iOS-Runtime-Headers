@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface UIStatusBarNewUIStyleAttributes : UIStatusBarStyleAttributes {
     UIColor *_backgroundColor;
     UIColor *_foregroundColor;

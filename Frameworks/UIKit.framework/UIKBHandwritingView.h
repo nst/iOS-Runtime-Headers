@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIBezierPath, UIKBHandwritingBoxcarFilterPointFIFO, UIKBHandwritingQuadCurvePointFIFO, UIKBHandwritingStrokePointFIFO, UIKBHandwritingStrokeView;
-
 @interface UIKBHandwritingView : UIKBKeyView <UIGestureRecognizerDelegate> {
     UIBezierPath *_currentPath;
     struct CGColor { } *_inkColor;
@@ -16,19 +14,19 @@
     UIKBHandwritingStrokeView *_strokeView;
 }
 
-@property(retain) UIBezierPath * currentPath;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGColor { }* inkColor;
-@property struct CGImage { }* inkMask;
-@property float inkWidth;
-@property(retain) NSMutableArray * interpolatedPaths;
-@property(retain) UIKBHandwritingQuadCurvePointFIFO * interpolatingFIFO;
-@property(retain) UIKBHandwritingBoxcarFilterPointFIFO * smoothingFIFO;
-@property(retain) UIKBHandwritingStrokePointFIFO * strokeFIFO;
-@property(retain) UIKBHandwritingStrokeView * strokeView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIBezierPath *currentPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGColor { }*inkColor;
+@property (nonatomic) struct CGImage { }*inkMask;
+@property (nonatomic) float inkWidth;
+@property (nonatomic, retain) NSMutableArray *interpolatedPaths;
+@property (nonatomic, retain) UIKBHandwritingQuadCurvePointFIFO *interpolatingFIFO;
+@property (nonatomic, retain) UIKBHandwritingBoxcarFilterPointFIFO *smoothingFIFO;
+@property (nonatomic, retain) UIKBHandwritingStrokePointFIFO *strokeFIFO;
+@property (nonatomic, retain) UIKBHandwritingStrokeView *strokeView;
+@property (readonly) Class superclass;
 
 - (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)cancelTouchTracking;

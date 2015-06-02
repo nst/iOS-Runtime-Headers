@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIButton, UIImage, UIImageView, UILabel;
-
 @interface SKUIEmptyContentPlaceholderView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -16,12 +14,12 @@
     UIButton *_signInButton;
 }
 
-@property(retain) UIImage * placeholderImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } placeholderImageInsets;
-@property(copy) NSString * placeholderMessage;
-@property(readonly) UILabel * placeholderMessageLabel;
-@property BOOL showsSignInButton;
-@property(readonly) UIButton * signInButton;
+@property (nonatomic, retain) UIImage *placeholderImage;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } placeholderImageInsets;
+@property (nonatomic, copy) NSString *placeholderMessage;
+@property (nonatomic, readonly) UILabel *placeholderMessageLabel;
+@property (nonatomic) BOOL showsSignInButton;
+@property (nonatomic, readonly) UIButton *signInButton;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;

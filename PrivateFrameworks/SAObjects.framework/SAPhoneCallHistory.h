@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SAPhoneCallHistory : SAPhoneCallSearchResult
 
-@interface SAPhoneCallHistory : SAPhoneCallSearchResult {
-}
-
-@property(copy) NSNumber * blocked;
-@property(copy) NSNumber * callCount;
-@property(copy) NSNumber * faceTime;
-@property(copy) NSNumber * faceTimeAudio;
-@property(copy) NSNumber * missed;
-@property(copy) NSNumber * outgoing;
+@property (nonatomic, copy) NSNumber *blocked;
+@property (nonatomic, copy) NSNumber *callCount;
+@property (nonatomic, copy) NSNumber *faceTime;
+@property (nonatomic, copy) NSNumber *faceTimeAudio;
+@property (nonatomic, copy) NSNumber *missed;
+@property (nonatomic, copy) NSNumber *outgoing;
 
 + (id)callHistory;
 + (id)callHistoryWithDictionary:(id)arg1 context:(id)arg2;

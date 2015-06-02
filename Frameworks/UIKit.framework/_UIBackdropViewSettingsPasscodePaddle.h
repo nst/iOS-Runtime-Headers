@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsPasscodePaddle : _UIBackdropViewSettingsDark {
-}
+@interface _UIBackdropViewSettingsPasscodePaddle : _UIBackdropViewSettingsDark
 
 - (void)setDefaultValues;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface PKPaymentWebServiceRegion : NSObject <NSSecureCoding> {
     NSURL *_brokerURL;
     NSArray *_certificates;
@@ -15,14 +13,14 @@
     NSURL *_trustedServiceManagerURL;
 }
 
-@property(retain) NSURL * brokerURL;
-@property(retain) NSArray * certificates;
-@property int consistencyCheckBackoffLevel;
-@property(retain) NSString * lastUpdatedTag;
-@property(retain) NSURL * paymentServicesURL;
-@property(retain) NSString * pushTopic;
-@property(retain) NSString * trustedServiceManagerPushTopic;
-@property(retain) NSURL * trustedServiceManagerURL;
+@property (nonatomic, retain) NSURL *brokerURL;
+@property (nonatomic, retain) NSArray *certificates;
+@property (nonatomic) int consistencyCheckBackoffLevel;
+@property (nonatomic, retain) NSString *lastUpdatedTag;
+@property (nonatomic, retain) NSURL *paymentServicesURL;
+@property (nonatomic, retain) NSString *pushTopic;
+@property (nonatomic, retain) NSString *trustedServiceManagerPushTopic;
+@property (nonatomic, retain) NSURL *trustedServiceManagerURL;
 
 + (BOOL)supportsSecureCoding;
 

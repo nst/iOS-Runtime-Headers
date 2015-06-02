@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AggregateDictionaryHistory.framework/AggregateDictionaryHistory
  */
 
-@class NSArray;
-
 @interface ADHistoryDistributionStatistics : NSObject {
     double _avg;
     int _count;
@@ -14,7 +12,7 @@
     double _rss;
 }
 
-@property(readonly) NSArray * intervals;
+@property (nonatomic, readonly) NSArray *intervals;
 
 - (unsigned int)_determineHistBucketForValue:(double)arg1;
 - (void)calculateSummaryStatisticsWithEnumerator:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABMultiCellContentView;
-
 @interface ABMultiCell : ABChameleonCell {
     ABMultiCellContentView *_abMultiCellContentView;
     BOOL _editingDisabled;
 }
 
-@property(getter=isEditingDisabled) BOOL editingDisabled;
-@property(retain) ABMultiCellContentView * multiCellContentView;
+@property (getter=isEditingDisabled, nonatomic) BOOL editingDisabled;
+@property (nonatomic, retain) ABMultiCellContentView *multiCellContentView;
 
 - (void)_addMultiCellContentViewIfNeeded;
 - (BOOL)_shouldSwallowTouches:(id)arg1 withEvent:(id)arg2;

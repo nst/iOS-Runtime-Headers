@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString;
-
 @interface MFLANContinuationContext : NSObject {
     NSString *_host;
     unsigned short _port;
 }
 
-@property(copy) NSString * host;
-@property unsigned short port;
+@property (nonatomic, copy) NSString *host;
+@property (nonatomic) unsigned short port;
 
 - (id)host;
 - (unsigned short)port;

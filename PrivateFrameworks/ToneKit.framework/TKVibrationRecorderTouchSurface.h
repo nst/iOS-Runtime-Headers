@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationRecorderTouchSurfaceDelegate>, TKVibrationRecorderTouchSurfaceRecordedDataWrapper, TLVibrationPattern;
-
 @interface TKVibrationRecorderTouchSurface : TKVibrationRecorderRippleView {
     <TKVibrationRecorderTouchSurfaceDelegate> *_delegate;
     TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;
@@ -15,14 +13,14 @@
     TLVibrationPattern *_vibrationPatternToReplay;
 }
 
-@property(setter=_setRecordedDataWrapper:,retain) TKVibrationRecorderTouchSurfaceRecordedDataWrapper * _recordedDataWrapper;
-@property(getter=_isRecordingModeEnabled,setter=_setRecordingModeEnabled:) BOOL _recordingModeEnabled;
-@property(getter=_isReplayModeEnabled,setter=_setReplayModeEnabled:) BOOL _replayModeEnabled;
-@property(setter=_setReplayModeWasEnteredStartTime:) double _replayModeWasEnteredStartTime;
-@property(setter=_setShouldIgnoreCurrentTouch:) BOOL _shouldIgnoreCurrentTouch;
-@property(setter=_setVibrationPatternMaximumDuration:) double _vibrationPatternMaximumDuration;
-@property(setter=_setVibrationPatternToReplay:,retain) TLVibrationPattern * _vibrationPatternToReplay;
-@property <TKVibrationRecorderTouchSurfaceDelegate> * delegate;
+@property (setter=_setRecordedDataWrapper:, nonatomic, retain) TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;
+@property (getter=_isRecordingModeEnabled, setter=_setRecordingModeEnabled:, nonatomic) BOOL _recordingModeEnabled;
+@property (getter=_isReplayModeEnabled, setter=_setReplayModeEnabled:, nonatomic) BOOL _replayModeEnabled;
+@property (setter=_setReplayModeWasEnteredStartTime:, nonatomic) double _replayModeWasEnteredStartTime;
+@property (setter=_setShouldIgnoreCurrentTouch:, nonatomic) BOOL _shouldIgnoreCurrentTouch;
+@property (setter=_setVibrationPatternMaximumDuration:, nonatomic) double _vibrationPatternMaximumDuration;
+@property (setter=_setVibrationPatternToReplay:, nonatomic, retain) TLVibrationPattern *_vibrationPatternToReplay;
+@property (nonatomic) <TKVibrationRecorderTouchSurfaceDelegate> *delegate;
 
 - (BOOL)_isRecordingModeEnabled;
 - (BOOL)_isReplayModeEnabled;

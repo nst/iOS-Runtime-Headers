@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCCountedSet, BRCMinHeap, BRCRelativePath, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface BRCFSReader : BRCFSSchedulerBase <BRCFSEventsDelegate, BRCFileCoordinationReading, BRCModule> {
     BRCCountedSet *_coordinatedReaders;
     BRCRelativePath *_currentScan;
@@ -16,13 +14,13 @@
     BOOL _resumed;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) NSObject<OS_dispatch_group> * lostScanGroup;
-@property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *lostScanGroup;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_canRetryThrottleID:(long long)arg1 zone:(id)arg2;

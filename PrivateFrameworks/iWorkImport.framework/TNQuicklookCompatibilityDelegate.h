@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TNQuicklookCompatibilityDelegate : TNBaseCompatibilityDelegate {
-}
+@interface TNQuicklookCompatibilityDelegate : TNBaseCompatibilityDelegate
 
 @end

@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSArray, NSString, NSURL;
+@interface SPMovieListSection : SPSection <PRSMovieListSection>
 
-@interface SPMovieListSection : SPSection <PRSMovieListSection> {
-}
-
-@property(retain) NSURL * attribution_url;
-@property(retain) NSArray * movies;
-@property(retain) NSString * subtitle;
-@property(retain) NSString * title;
-@property(retain) NSString * type;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSURL *attribution_url;
+@property (nonatomic, retain) NSArray *movies;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSURL *url;
 
 @end

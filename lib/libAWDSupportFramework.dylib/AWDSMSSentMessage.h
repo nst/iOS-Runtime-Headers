@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDSMSSentMessage : PBCodable <NSCopying> {
     int _ctError;
     int _fzError;
@@ -26,24 +24,24 @@
     unsigned long long _timestamp;
 }
 
-@property int ctError;
-@property int fzError;
-@property(retain) NSString * guid;
-@property unsigned int hasAttachments;
-@property BOOL hasCtError;
-@property BOOL hasFzError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasHasAttachments;
-@property BOOL hasIsGroupMessage;
-@property BOOL hasIsToEmail;
-@property BOOL hasIsToPhoneNumber;
-@property BOOL hasSendDuration;
-@property BOOL hasTimestamp;
-@property unsigned int isGroupMessage;
-@property unsigned int isToEmail;
-@property unsigned int isToPhoneNumber;
-@property unsigned int sendDuration;
-@property unsigned long long timestamp;
+@property (nonatomic) int ctError;
+@property (nonatomic) int fzError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) unsigned int hasAttachments;
+@property (nonatomic) BOOL hasCtError;
+@property (nonatomic) BOOL hasFzError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasHasAttachments;
+@property (nonatomic) BOOL hasIsGroupMessage;
+@property (nonatomic) BOOL hasIsToEmail;
+@property (nonatomic) BOOL hasIsToPhoneNumber;
+@property (nonatomic) BOOL hasSendDuration;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isGroupMessage;
+@property (nonatomic) unsigned int isToEmail;
+@property (nonatomic) unsigned int isToPhoneNumber;
+@property (nonatomic) unsigned int sendDuration;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

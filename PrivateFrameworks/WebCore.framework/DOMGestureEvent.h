@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMEventTarget>;
+@interface DOMGestureEvent : DOMUIEvent
 
-@interface DOMGestureEvent : DOMUIEvent {
-}
-
-@property(readonly) BOOL altKey;
-@property(readonly) BOOL ctrlKey;
-@property(readonly) BOOL metaKey;
-@property(readonly) float rotation;
-@property(readonly) float scale;
-@property(readonly) BOOL shiftKey;
-@property(readonly) <DOMEventTarget> * target;
+@property (readonly) BOOL altKey;
+@property (readonly) BOOL ctrlKey;
+@property (readonly) BOOL metaKey;
+@property (readonly) float rotation;
+@property (readonly) float scale;
+@property (readonly) BOOL shiftKey;
+@property (readonly) <DOMEventTarget> *target;
 
 - (BOOL)altKey;
 - (BOOL)ctrlKey;

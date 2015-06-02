@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <_EARAudioClassifierSessionDelegate>;
-
 @interface _EARAudioClassifierSession : NSObject {
     struct RecogAudioBuffer { 
         int (**_vptr$OnlineAudioSourceItf)(); 
@@ -49,7 +42,7 @@
     double _frameDuration;
 }
 
-@property(readonly) double frameDuration;
+@property (nonatomic, readonly) double frameDuration;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

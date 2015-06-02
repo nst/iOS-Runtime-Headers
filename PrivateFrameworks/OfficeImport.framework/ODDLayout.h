@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODDLayoutNode;
-
 @interface ODDLayout : NSObject {
     ODDLayoutNode *mRootNode;
 }

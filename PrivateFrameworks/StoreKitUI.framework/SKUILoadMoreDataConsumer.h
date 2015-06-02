@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSSet;
-
 @interface SKUILoadMoreDataConsumer : SSVURLDataConsumer {
     NSSet *_unavailableItemIdentifiers;
 }
 
-@property(copy) NSSet * unavailableItemIdentifiers;
+@property (nonatomic, copy) NSSet *unavailableItemIdentifiers;
 
 - (void).cxx_destruct;
 - (id)_itemsWithDictionary:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSString;
-
 @interface PBBProtoPerformanceResult : PBCodable <NSCopying> {
     NSString *_activityType;
     struct { 
@@ -17,16 +15,16 @@
     double _timeStarted;
 }
 
-@property(retain) NSString * activityType;
-@property(readonly) BOOL hasActivityType;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasTimeDelta;
-@property BOOL hasTimeEnded;
-@property BOOL hasTimeStarted;
-@property(retain) NSString * identifier;
-@property double timeDelta;
-@property double timeEnded;
-@property double timeStarted;
+@property (nonatomic, retain) NSString *activityType;
+@property (nonatomic, readonly) BOOL hasActivityType;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasTimeDelta;
+@property (nonatomic) BOOL hasTimeEnded;
+@property (nonatomic) BOOL hasTimeStarted;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) double timeDelta;
+@property (nonatomic) double timeEnded;
+@property (nonatomic) double timeStarted;
 
 - (void).cxx_destruct;
 - (id)activityType;

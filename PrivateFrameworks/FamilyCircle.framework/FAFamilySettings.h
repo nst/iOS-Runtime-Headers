@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class AAUIFamilySetupPrompter, FAFamilySettings, NSString, SSAccount, UIViewController;
-
 @interface FAFamilySettings : FAFamilyCircleRequest <AAUIFamilySetupPrompterDelegate> {
     SSAccount *_iTunesAccount;
     BOOL _isFirstRun;
@@ -12,13 +10,13 @@
     FAFamilySettings *_retainedSelf;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SSAccount * iTunesAccount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) SSAccount *iTunesAccount;
 @property BOOL isFirstRun;
-@property UIViewController * presentingViewController;
-@property(readonly) Class superclass;
+@property UIViewController *presentingViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_launchPrefsUsingDaemon;

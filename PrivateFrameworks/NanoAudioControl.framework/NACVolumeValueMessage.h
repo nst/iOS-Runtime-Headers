@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACVolumeValueMessage : PBCodable <NSCopying> {
     NSString *_category;
     struct { 
@@ -12,10 +10,10 @@
     float _volumeValue;
 }
 
-@property(retain) NSString * category;
-@property(readonly) BOOL hasCategory;
-@property BOOL hasVolumeValue;
-@property float volumeValue;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic) BOOL hasVolumeValue;
+@property (nonatomic) float volumeValue;
 
 - (void).cxx_destruct;
 - (id)category;

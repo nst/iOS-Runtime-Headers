@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTPingSubscribing>, NSString, NSXPCConnection, NSXPCListener;
-
 @interface BLTRemotePingSubscriberService : NSObject <BLTPingService, NSXPCListenerDelegate> {
     NSXPCConnection *_connectionFromServer;
     NSXPCConnection *_connectionToServer;
@@ -12,15 +10,15 @@
     NSString *_machServiceName;
 }
 
-@property(retain) NSXPCConnection * connectionFromServer;
-@property(retain) NSXPCConnection * connectionToServer;
-@property(copy,readonly) NSString * debugDescription;
-@property <BLTPingSubscribing> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSXPCListener * listener;
-@property(copy) NSString * machServiceName;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *connectionFromServer;
+@property (nonatomic, retain) NSXPCConnection *connectionToServer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BLTPingSubscribing> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSXPCListener *listener;
+@property (nonatomic, copy) NSString *machServiceName;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_connect;
@@ -29,8 +27,8 @@
 - (id)connectionToServer;
 - (void)dealloc;
 - (id)delegate;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id)arg2;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)listener;

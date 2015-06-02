@@ -6,11 +6,11 @@
     double _displayInterval;
 }
 
-@property(readonly) double displayInterval;
+@property (nonatomic, readonly) double displayInterval;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (double)displayInterval;
-- (void)enumerateChildrenUsingBlock:(id)arg1;
+- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (int)pageComponentType;
 

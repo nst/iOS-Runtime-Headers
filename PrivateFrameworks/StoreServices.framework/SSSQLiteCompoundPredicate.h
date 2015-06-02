@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString;
-
 @interface SSSQLiteCompoundPredicate : SSSQLitePredicate <NSCopying> {
     NSString *_combinationOperation;
     NSArray *_predicates;
 }
 
-@property(readonly) NSArray * predicates;
+@property (nonatomic, readonly) NSArray *predicates;
 
 + (id)predicateMatchingAllPredicates:(id)arg1;
 + (id)predicateMatchingAnyPredicates:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPResponseOperationResultErrorClient, CKDPResponseOperationResultErrorExtension, CKDPResponseOperationResultErrorServer, NSString;
-
 @interface CKDPResponseOperationResultError : PBCodable <NSCopying> {
     CKDPResponseOperationResultErrorClient *_clientError;
     NSString *_errorDescription;
@@ -17,20 +15,20 @@
     CKDPResponseOperationResultErrorServer *_serverError;
 }
 
-@property(retain) CKDPResponseOperationResultErrorClient * clientError;
-@property(retain) NSString * errorDescription;
-@property(retain) NSString * errorInternal;
-@property(retain) NSString * errorKey;
-@property(retain) CKDPResponseOperationResultErrorExtension * extensionError;
-@property(readonly) BOOL hasClientError;
-@property(readonly) BOOL hasErrorDescription;
-@property(readonly) BOOL hasErrorInternal;
-@property(readonly) BOOL hasErrorKey;
-@property(readonly) BOOL hasExtensionError;
-@property BOOL hasRetryAfterSeconds;
-@property(readonly) BOOL hasServerError;
-@property int retryAfterSeconds;
-@property(retain) CKDPResponseOperationResultErrorServer * serverError;
+@property (nonatomic, retain) CKDPResponseOperationResultErrorClient *clientError;
+@property (nonatomic, retain) NSString *errorDescription;
+@property (nonatomic, retain) NSString *errorInternal;
+@property (nonatomic, retain) NSString *errorKey;
+@property (nonatomic, retain) CKDPResponseOperationResultErrorExtension *extensionError;
+@property (nonatomic, readonly) BOOL hasClientError;
+@property (nonatomic, readonly) BOOL hasErrorDescription;
+@property (nonatomic, readonly) BOOL hasErrorInternal;
+@property (nonatomic, readonly) BOOL hasErrorKey;
+@property (nonatomic, readonly) BOOL hasExtensionError;
+@property (nonatomic) BOOL hasRetryAfterSeconds;
+@property (nonatomic, readonly) BOOL hasServerError;
+@property (nonatomic) int retryAfterSeconds;
+@property (nonatomic, retain) CKDPResponseOperationResultErrorServer *serverError;
 
 - (void).cxx_destruct;
 - (id)clientError;

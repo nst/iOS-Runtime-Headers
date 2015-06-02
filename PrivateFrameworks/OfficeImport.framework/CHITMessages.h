@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHITMessages : NSObject {
-}
+@interface CHITMessages : NSObject
 
 + (void)initialize;
 

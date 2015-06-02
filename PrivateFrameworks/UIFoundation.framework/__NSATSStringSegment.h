@@ -3,7 +3,7 @@
  */
 
 @interface __NSATSStringSegment : NSString {
-    unsigned short _buffer[128];
+    unsigned short _buffer;
     const unsigned short *_characters;
     struct __CFString { } *_originalString;
     long _originalStringLength;

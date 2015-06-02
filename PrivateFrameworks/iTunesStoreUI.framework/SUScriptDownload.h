@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISUDownload, NSNumber, NSString;
-
 @interface SUScriptDownload : SUScriptObject {
     ISUDownload *_download;
 }
 
-@property(readonly) NSNumber * adamID;
-@property(readonly) NSString * phase;
-@property(readonly) float progress;
+@property (readonly) NSNumber *adamID;
+@property (readonly) NSString *phase;
+@property (readonly) float progress;
 
 + (void)initialize;
 + (id)phaseStringForDownload:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIAlertController, UIViewController, _UIAlertControllerShimPresenter, _UIWeakRef;
-
 @interface UIAlertView : UIView {
     BOOL __currentlyRunningModal;
     NSMutableArray *_actions;
@@ -26,30 +24,31 @@
     UIViewController *externalViewControllerForPresentation;
 }
 
-@property(setter=_setCurrentlyRunningModal:) BOOL _currentlyRunningModal;
-@property int alertViewStyle;
-@property int cancelButtonIndex;
-@property id delegate;
-@property(getter=_externalViewControllerForPresentation,setter=_setExternalViewControllerForPresentation:,retain) UIViewController * externalViewControllerForPresentation;
-@property(readonly) int firstOtherButtonIndex;
-@property BOOL groupsTextFields;
-@property(copy) NSString * message;
-@property(readonly) int numberOfButtons;
-@property BOOL showsOverSpringBoardAlerts;
-@property(copy) NSString * title;
-@property(getter=isVisible,readonly) BOOL visible;
-@property(retain) _UIWeakRef * weakDelegate;
+@property (setter=_setCurrentlyRunningModal:, nonatomic) BOOL _currentlyRunningModal;
+@property (nonatomic) int alertViewStyle;
+@property (nonatomic) int cancelButtonIndex;
+@property (nonatomic) id delegate;
+@property (getter=_externalViewControllerForPresentation, setter=_setExternalViewControllerForPresentation:, nonatomic, retain) UIViewController *externalViewControllerForPresentation;
+@property (nonatomic, readonly) int firstOtherButtonIndex;
+@property (nonatomic) BOOL groupsTextFields;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, readonly) int numberOfButtons;
+@property (nonatomic) BOOL showsOverSpringBoardAlerts;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
+@property (nonatomic, retain) _UIWeakRef *weakDelegate;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_alertViewForSessionWithRemoteViewController:(id)arg1;
 + (id)_alertViewForWindow:(id)arg1;
 + (id)_alertWindow;
 + (BOOL)_isAlertControllerShimClass;
-+ (id)_remoteAlertViewWithBlock:(id)arg1;
++ (id)_remoteAlertViewWithBlock:(id /* block */)arg1;
 + (void)_setSpringBoardAlertDisplayingOverApplicationAlert:(BOOL)arg1;
 + (BOOL)_springBoardAlertDisplayingOverApplicationAlert;
 + (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
-+ (void)rtb_displayAlertWithTitle:(id)arg1 message:(id)arg2 leftButtonTitle:(id)arg3 leftButtonAction:(id)arg4 rightButtonTitle:(id)arg5 rightButtonAction:(id)arg6;
 
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
@@ -110,7 +109,6 @@
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (int)alertViewStyle;
 - (struct CGSize { float x1; float x2; })backgroundSize;
 - (int)bodyMaxLineCount;
@@ -136,7 +134,6 @@
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 leftButtonTitle:(id)arg3 leftButtonAction:(id)arg4 rightButtonTitle:(id)arg5 rightButtonAction:(id)arg6;
 - (BOOL)isBodyTextTruncated;
 - (BOOL)isVisible;
 - (id)keyboard;
@@ -184,7 +181,6 @@
 - (void)setWeakDelegate:(id)arg1;
 - (void)show;
 - (void)showWithAnimationType:(int)arg1;
-- (void)showWithCompletionHandler:(id)arg1;
 - (BOOL)showsOverSpringBoardAlerts;
 - (id)subtitle;
 - (int)suspendTag;
@@ -200,5 +196,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
 - (id)weakDelegate;
 - (id)window;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (void)showWithCompletionHandler:(id /* block */)arg1;
 
 @end

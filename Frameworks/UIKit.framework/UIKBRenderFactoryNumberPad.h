@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryNumberPad : UIKBRenderFactory {
-}
+@interface UIKBRenderFactoryNumberPad : UIKBRenderFactory
 
 - (void)_customizeSymbolStyle:(id)arg1 secondaryStyle:(id)arg2 forKey:(id)arg3 contents:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;

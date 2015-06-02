@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDAlbumsViewController : MCDTableViewController {
-}
+@interface MCDAlbumsViewController : MCDTableViewController
 
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

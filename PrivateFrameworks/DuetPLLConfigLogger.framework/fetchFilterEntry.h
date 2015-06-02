@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class NSDate, NSDictionary;
-
 @interface fetchFilterEntry : NSObject {
     NSDictionary *_what;
     NSDate *_when;
 }
 
-@property(retain) NSDictionary * what;
-@property(retain) NSDate * when;
+@property (retain) NSDictionary *what;
+@property (retain) NSDate *when;
 
 - (void).cxx_destruct;
 - (id)init;

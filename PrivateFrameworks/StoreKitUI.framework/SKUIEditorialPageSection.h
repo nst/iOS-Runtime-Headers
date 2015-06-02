@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, SKUIEditorialComponent, SKUIEditorialLayout;
-
 @interface SKUIEditorialPageSection : SKUIStorePageSection {
     SKUIColorScheme *_colorScheme;
     SKUIEditorialLayout *_editorialLayout;
     BOOL _isExpanded;
 }
 
-@property(readonly) SKUIEditorialComponent * pageComponent;
+@property (nonatomic, readonly) SKUIEditorialComponent *pageComponent;
 
 - (void).cxx_destruct;
 - (id)_editorialLayout;

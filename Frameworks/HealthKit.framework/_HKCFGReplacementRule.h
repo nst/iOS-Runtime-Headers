@@ -2,33 +2,23 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString;
-
 @interface _HKCFGReplacementRule : NSObject {
     NSString *_description;
     unsigned int _lengthIncrease;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _nodeEvaluator;
-
+    id /* block */ _nodeEvaluator;
     NSArray *_rightHandSide;
 }
 
-@property(readonly) unsigned int lengthIncrease;
-@property(copy,readonly) id nodeEvaluator;
-@property(copy,readonly) NSArray * rightHandSide;
+@property (nonatomic, readonly) unsigned int lengthIncrease;
+@property (nonatomic, readonly, copy) id /* block */ nodeEvaluator;
+@property (nonatomic, readonly, copy) NSArray *rightHandSide;
 
-+ (id)ruleWithLHS:(id)arg1 RHS:(id)arg2 nodeEvaluator:(id)arg3;
++ (id)ruleWithLHS:(id)arg1 RHS:(id)arg2 nodeEvaluator:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned int)lengthIncrease;
-- (id)nodeEvaluator;
+- (id /* block */)nodeEvaluator;
 - (id)rightHandSide;
 
 @end

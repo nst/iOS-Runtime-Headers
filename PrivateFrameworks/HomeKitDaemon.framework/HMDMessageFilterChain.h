@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface HMDMessageFilterChain : NSObject {
     NSMutableArray *_messageFilters;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(copy,readonly) NSArray * filters;
-@property(retain) NSMutableArray * messageFilters;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, readonly, copy) NSArray *filters;
+@property (nonatomic, retain) NSMutableArray *messageFilters;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
-- (void)_executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id)arg4;
+- (void)_executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)addMessageFilter:(id)arg1;
-- (void)executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id)arg4;
+- (void)executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)filters;
 - (id)init;
 - (id)messageFilters;

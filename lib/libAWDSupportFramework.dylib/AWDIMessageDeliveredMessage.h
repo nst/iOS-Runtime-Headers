@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIMessageDeliveredMessage : PBCodable <NSCopying> {
     unsigned int _deliveryDuration;
     NSString *_guid;
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int deliveryDuration;
-@property(retain) NSString * guid;
-@property BOOL hasDeliveryDuration;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int deliveryDuration;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasDeliveryDuration;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

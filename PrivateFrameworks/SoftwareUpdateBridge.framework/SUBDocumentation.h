@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
  */
 
-@class NSData, NSString, NSURL;
-
 @interface SUBDocumentation : NSObject <NSSecureCoding> {
     NSString *_currentLanguage;
     NSURL *_documentationBundleURL;
@@ -13,12 +11,12 @@
     NSData *_releaseNotesSummary;
 }
 
-@property(retain) NSString * currentLanguage;
-@property(retain) NSURL * documentationBundleURL;
-@property(retain) NSString * humanReadableUpdateName;
-@property(retain) NSData * licenseAgreement;
-@property(retain) NSData * releaseNotes;
-@property(retain) NSData * releaseNotesSummary;
+@property (nonatomic, retain) NSString *currentLanguage;
+@property (nonatomic, retain) NSURL *documentationBundleURL;
+@property (nonatomic, retain) NSString *humanReadableUpdateName;
+@property (nonatomic, retain) NSData *licenseAgreement;
+@property (nonatomic, retain) NSData *releaseNotes;
+@property (nonatomic, retain) NSData *releaseNotesSummary;
 
 + (BOOL)supportsSecureCoding;
 

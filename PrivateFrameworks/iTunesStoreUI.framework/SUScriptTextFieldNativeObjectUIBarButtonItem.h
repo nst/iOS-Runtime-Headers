@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptTextFieldNativeObjectUIBarButtonItem : SUScriptTextFieldNativeObject {
-}
+@interface SUScriptTextFieldNativeObjectUIBarButtonItem : SUScriptTextFieldNativeObject
 
 - (id)_nativeObjectDelegate;
 - (void)_setNativeObjectDelegate:(id)arg1;

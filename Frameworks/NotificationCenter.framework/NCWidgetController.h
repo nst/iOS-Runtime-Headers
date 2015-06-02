@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
  */
 
-@class NSXPCConnection;
-
 @interface NCWidgetController : NSObject <_NCWidgetController_Service_IPC> {
     NSXPCConnection *_connection;
 }

@@ -8,9 +8,9 @@
     BOOL mScaleWithText;
 }
 
-@property float baselineOffset;
-@property float scale;
-@property BOOL scaleWithText;
+@property (nonatomic) float baselineOffset;
+@property (nonatomic) float scale;
+@property (nonatomic) BOOL scaleWithText;
 
 + (id)listLabelGeometry;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-@class BLModalPresenterRootViewController, NSMutableArray, NSString;
-
 @interface BLModalPresenter : UIWindow <UIKeyInput> {
     NSMutableArray *_controllers;
     struct CGRect { 
@@ -21,18 +19,18 @@
     BLModalPresenterRootViewController *_rootViewController;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
 
 + (id)presenter;
 
@@ -45,7 +43,7 @@
 - (struct CGSize { float x1; float x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
 - (BOOL)hasText;
 - (id)hidden;
-- (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (id)init;
 - (void)insertText:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
@@ -58,7 +56,7 @@
 - (void)orientationDidChange:(id)arg1;
 - (void)orientationWillChange:(id)arg1;
 - (void)showController:(id)arg1;
-- (void)showController:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)showController:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)unlockKeyboard;
 
 @end

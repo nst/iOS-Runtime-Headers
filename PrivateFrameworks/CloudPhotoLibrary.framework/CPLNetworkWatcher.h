@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLNetworkWatcherDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface CPLNetworkWatcher : NSObject {
     <CPLNetworkWatcherDelegate> *_delegate;
     unsigned int _networkState;
@@ -12,8 +10,8 @@
     unsigned int _reachabilityFlags;
 }
 
-@property <CPLNetworkWatcherDelegate> * delegate;
-@property(readonly) unsigned int networkState;
+@property (nonatomic) <CPLNetworkWatcherDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int networkState;
 
 + (id)_descriptionForNetworkState:(unsigned int)arg1;
 

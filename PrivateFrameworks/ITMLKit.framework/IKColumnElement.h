@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKImageElement, NSString;
+@interface IKColumnElement : IKCollectionElement
 
-@interface IKColumnElement : IKCollectionElement {
-}
-
-@property(readonly) NSString * columnType;
-@property(readonly) IKImageElement * headerImage;
+@property (nonatomic, readonly) NSString *columnType;
+@property (nonatomic, readonly) IKImageElement *headerImage;
 
 - (id)columnType;
 - (id)headerImage;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATXPCConnection, NSDictionary, NSObject<OS_xpc_object>, NSString;
-
 @interface ATXPCMessage : NSObject {
     NSDictionary *_info;
     NSString *_name;
@@ -12,8 +10,8 @@
     NSObject<OS_xpc_object> *_x_reply_connection;
 }
 
-@property(copy) NSDictionary * info;
-@property(readonly) NSString * name;
+@property (nonatomic, copy) NSDictionary *info;
+@property (nonatomic, readonly) NSString *name;
 
 - (void).cxx_destruct;
 - (id)_createXPCMessage;

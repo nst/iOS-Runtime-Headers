@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSSet;
-
 @interface VKPolylineOverlayRenderRegion : NSObject {
     struct vector<VKRect, std::__1::allocator<VKRect> > { 
         struct { /* ? */ } *__begin_; 
@@ -28,8 +26,8 @@
     } _visibleRect;
 }
 
-@property(readonly) NSSet * tiles;
-@property(readonly) struct { double x1; double x2; double x3; double x4; } visibleRect;
+@property (nonatomic, readonly) NSSet *tiles;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } visibleRect;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

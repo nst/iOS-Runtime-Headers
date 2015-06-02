@@ -3,11 +3,10 @@
  */
 
 @interface NSSimpleAttributeDictionary : NSDictionary {
-    struct _NSSimpleAttributeDictionaryElement { 
+    /* Warning: unhandled struct encoding: '{_NSSimpleAttributeDictionaryElement="hash"I"key"@"value"@}]' */ struct _NSSimpleAttributeDictionaryElement { 
         unsigned int hash; 
         id key; 
-        id value; 
-    } elements[1];
+    } elements;
     unsigned int numElements;
     unsigned int refCount;
 }

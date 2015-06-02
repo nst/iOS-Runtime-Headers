@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface _UIBarItemAppearance : _UIAppearance {
     NSArray *_blindViewAppearances;
 }

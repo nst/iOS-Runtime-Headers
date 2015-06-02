@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMStyle, OADParagraphProperties;
-
 @interface PMBulletMapper : CMMapper {
     int mFontSize;
     OADParagraphProperties *mProperties;

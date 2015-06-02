@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSFileHandle;
-
 @interface CoreDAVOctetStreamToFileParser : CoreDAVOctetStreamParser {
     NSFileHandle *_fileHandle;
 }
 
-@property(retain) NSFileHandle * fileHandle;
+@property (nonatomic, retain) NSFileHandle *fileHandle;
 
 - (void)dealloc;
 - (id)fileHandle;

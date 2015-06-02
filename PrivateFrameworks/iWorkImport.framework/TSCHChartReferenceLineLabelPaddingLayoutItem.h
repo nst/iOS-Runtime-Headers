@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxisID;
-
 @interface TSCHChartReferenceLineLabelPaddingLayoutItem : TSCHChartLayoutItem {
     TSCHChartAxisID *mAxisID;
 }
 
-@property(retain) TSCHChartAxisID * axisID;
+@property (nonatomic, retain) TSCHChartAxisID *axisID;
 
 - (id)axisID;
 - (struct CGSize { float x1; float x2; })calcMinSize;

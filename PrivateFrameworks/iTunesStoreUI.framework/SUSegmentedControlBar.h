@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIControl, UIView, _UIBackdropView;
-
 @interface SUSegmentedControlBar : UIView {
     _UIBackdropView *_backdropView;
     UIControl *_control;

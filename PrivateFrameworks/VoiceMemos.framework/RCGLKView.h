@@ -6,8 +6,8 @@
     BOOL _isCreatingSnapshot;
 }
 
-@property(readonly) BOOL isCreatingSnapshot;
-@property(readonly) BOOL isRenderingContextValid;
+@property (nonatomic, readonly) BOOL isCreatingSnapshot;
+@property (nonatomic, readonly) BOOL isRenderingContextValid;
 
 + (Class)layerClass;
 

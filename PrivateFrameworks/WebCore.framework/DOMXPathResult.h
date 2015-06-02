@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMNode, NSString;
+@interface DOMXPathResult : DOMObject
 
-@interface DOMXPathResult : DOMObject {
-}
-
-@property(readonly) BOOL booleanValue;
-@property(readonly) BOOL invalidIteratorState;
-@property(readonly) double numberValue;
-@property(readonly) unsigned short resultType;
-@property(readonly) DOMNode * singleNodeValue;
-@property(readonly) unsigned int snapshotLength;
-@property(copy,readonly) NSString * stringValue;
+@property (readonly) BOOL booleanValue;
+@property (readonly) BOOL invalidIteratorState;
+@property (readonly) double numberValue;
+@property (readonly) unsigned short resultType;
+@property (readonly) DOMNode *singleNodeValue;
+@property (readonly) unsigned int snapshotLength;
+@property (readonly, copy) NSString *stringValue;
 
 - (BOOL)booleanValue;
 - (void)dealloc;

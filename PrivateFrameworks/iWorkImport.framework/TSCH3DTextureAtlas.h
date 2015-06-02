@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface TSCH3DTextureAtlas : NSObject {
     NSMutableDictionary *mCachedLabels;
     float mSamples;
     NSMutableArray *mTextures;
 }
 
-@property(readonly) float samples;
+@property (nonatomic, readonly) float samples;
 
 + (id)atlas;
 + (id)atlasWithSamples:(float)arg1;

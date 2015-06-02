@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBSceneContextContainerView : UIView {
-}
+@interface FBSceneContextContainerView : UIView
 
 @end

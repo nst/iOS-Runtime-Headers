@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface ETBlockListManager : NSObject {
     NSMutableArray *_blocklist;
     BOOL _needsReload;

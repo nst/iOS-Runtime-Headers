@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AskPermission.framework/AskPermission
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface PRLogging : NSObject {
     NSObject<OS_dispatch_queue> *_logQueue;
     BOOL _logToFile;

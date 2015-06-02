@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAStructuredDictationFailed : SABaseClientBoundCommand
 
-@interface SAStructuredDictationFailed : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * dialogIdentifier;
-@property int errorCode;
-@property(copy) NSString * recognition;
-@property(copy) NSString * userFacingReasonDescription;
-@property(copy) NSString * userFacingReasonTitle;
+@property (nonatomic, copy) NSString *dialogIdentifier;
+@property (nonatomic) int errorCode;
+@property (nonatomic, copy) NSString *recognition;
+@property (nonatomic, copy) NSString *userFacingReasonDescription;
+@property (nonatomic, copy) NSString *userFacingReasonTitle;
 
 + (id)structuredDictationFailed;
 + (id)structuredDictationFailedWithDictionary:(id)arg1 context:(id)arg2;

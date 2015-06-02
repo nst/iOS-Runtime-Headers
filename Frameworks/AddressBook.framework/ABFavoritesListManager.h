@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSMutableArray;
-
 @interface ABFavoritesListManager : NSObject {
     void *_addressBook;
     struct { 

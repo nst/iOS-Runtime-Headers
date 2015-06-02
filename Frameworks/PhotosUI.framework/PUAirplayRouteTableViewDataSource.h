@@ -2,28 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, PUAirplayRoute;
-
 @interface PUAirplayRouteTableViewDataSource : NSObject {
     NSArray *_routes;
     PUAirplayRoute *_selectedRoute;
     BOOL _shouldCondenseDisplay;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateHandler;
-
+    id /* block */ _updateHandler;
 }
 
-@property(copy,readonly) NSString * displayNameForRoutes;
-@property(copy,readonly) NSArray * routes;
-@property(retain) PUAirplayRoute * selectedRoute;
-@property(readonly) BOOL shouldCondenseDisplay;
-@property(copy) id updateHandler;
+@property (nonatomic, readonly, copy) NSString *displayNameForRoutes;
+@property (nonatomic, readonly, copy) NSArray *routes;
+@property (nonatomic, retain) PUAirplayRoute *selectedRoute;
+@property (nonatomic, readonly) BOOL shouldCondenseDisplay;
+@property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void).cxx_destruct;
 - (void)_updateRoutes:(id)arg1;
@@ -34,11 +24,11 @@
 - (id)routes;
 - (id)selectedRoute;
 - (void)setSelectedRoute:(id)arg1;
-- (void)setSelectedRoute:(id)arg1 updatingCellsFromHelper:(id)arg2;
-- (void)setUpdateHandler:(id)arg1;
+- (void)setSelectedRoute:(id)arg1 updatingCellsFromHelper:(id /* block */)arg2;
+- (void)setUpdateHandler:(id /* block */)arg1;
 - (BOOL)shouldCondenseDisplay;
 - (id)tableView:(id)arg1 cellForRouteIndex:(int)arg2;
-- (id)updateHandler;
+- (id /* block */)updateHandler;
 - (void)updateTableViewCell:(id)arg1 forRouteIndex:(int)arg2;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEKeychainItem, NSData, NSString;
-
 @interface NEKeychainItem : NSObject <NEPrettyDescription, NSCopying, NSSecureCoding> {
     int _domain;
     NSString *_identifier;
@@ -13,12 +11,12 @@
     NSData *_persistentReference;
 }
 
-@property(readonly) int domain;
-@property(copy) NSString * identifier;
-@property(readonly) BOOL legacy;
-@property(copy) NEKeychainItem * oldItem;
-@property(copy) NSString * password;
-@property(copy) NSData * persistentReference;
+@property (readonly) int domain;
+@property (copy) NSString *identifier;
+@property (readonly) BOOL legacy;
+@property (copy) NEKeychainItem *oldItem;
+@property (copy) NSString *password;
+@property (copy) NSData *persistentReference;
 
 + (BOOL)supportsSecureCoding;
 

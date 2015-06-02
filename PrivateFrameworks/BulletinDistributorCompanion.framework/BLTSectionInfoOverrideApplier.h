@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSectionInfoOverrideApplier : NSObject {
-}
+@interface BLTSectionInfoOverrideApplier : NSObject
 
 - (void)_enableAlerts:(BOOL)arg1 inSectionInfo:(id)arg2;
 - (id)applyOverrides:(id)arg1 toSectionInfo:(id)arg2;

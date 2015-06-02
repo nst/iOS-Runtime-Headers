@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLBaseElement : DOMHTMLElement
 
-@interface DOMHTMLBaseElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * href;
-@property(copy) NSString * target;
+@property (copy) NSString *href;
+@property (copy) NSString *target;
 
 - (id)href;
 - (void)setHref:(id)arg1;

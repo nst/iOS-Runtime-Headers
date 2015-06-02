@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAGKDisambiguationPod : SAGKPodView
 
-@interface SAGKDisambiguationPod : SAGKPodView {
-}
-
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *text;
 
 + (id)disambiguationPod;
 + (id)disambiguationPodWithDictionary:(id)arg1 context:(id)arg2;

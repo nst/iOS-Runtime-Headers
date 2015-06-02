@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNAbstractSlide, KNBuild, KNSlide, NSArray, NSObject<TSDContainerInfo>, NSSet, NSString, NSURL, TSDDefaultPartitioner, TSDDrawableComment, TSDExteriorTextWrap, TSDInfoGeometry, TSPLazyReference, TSPObject<TSDOwningAttachment>, TSSPropertySetChangeDetails;
-
 @interface TSDDrawableInfo : TSPObject <TSDChangeableInfo, TSKDocumentObject, TSKSearchable, TSKTransformableObject> {
     NSString *mAccessibilityDescription;
     BOOL mAspectRatioLocked;
@@ -24,45 +17,45 @@
     TSPLazyReference *mParentInfoReference;
 }
 
-@property(readonly) KNAbstractSlide * abstractSlide;
-@property(copy) NSString * accessibilityDescription;
-@property(readonly) NSSet * actionBuilds;
-@property(readonly) NSArray * activeBuildChunks;
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property BOOL aspectRatioLocked;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(readonly) NSArray * buildChunks;
-@property(readonly) unsigned int buildCount;
-@property(readonly) KNBuild * buildIn;
-@property(readonly) KNBuild * buildOut;
-@property(readonly) NSSet * builds;
-@property(readonly) BOOL canSizeBeChangedIncrementally;
-@property(retain) TSDDrawableComment * comment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) TSDExteriorTextWrap * exteriorTextWrap;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) NSArray * ghostInfos;
-@property(readonly) BOOL hasActionBuilds;
-@property(readonly) BOOL hasBuilds;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * hyperlinkURL;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(readonly) BOOL isRightToLeft;
-@property(readonly) BOOL isUserModifiable;
-@property(getter=isLockable,readonly) BOOL lockable;
-@property(getter=isLocked) BOOL locked;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property(readonly) BOOL mayHaveImplicitBuildEvents;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property(readonly) KNSlide * slide;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsAccessibilityDescription;
-@property(readonly) BOOL supportsAttachedComments;
-@property(readonly) BOOL supportsHyperlinks;
+@property (nonatomic, readonly) KNAbstractSlide *abstractSlide;
+@property (nonatomic, copy) NSString *accessibilityDescription;
+@property (nonatomic, readonly) NSSet *actionBuilds;
+@property (nonatomic, readonly) NSArray *activeBuildChunks;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (nonatomic) BOOL aspectRatioLocked;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, readonly) NSArray *buildChunks;
+@property (nonatomic, readonly) unsigned int buildCount;
+@property (nonatomic, readonly) KNBuild *buildIn;
+@property (nonatomic, readonly) KNBuild *buildOut;
+@property (nonatomic, readonly) NSSet *builds;
+@property (nonatomic, readonly) BOOL canSizeBeChangedIncrementally;
+@property (nonatomic, retain) TSDDrawableComment *comment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) TSDExteriorTextWrap *exteriorTextWrap;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (nonatomic, readonly) NSArray *ghostInfos;
+@property (nonatomic, readonly) BOOL hasActionBuilds;
+@property (nonatomic, readonly) BOOL hasBuilds;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *hyperlinkURL;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic, readonly) BOOL isRightToLeft;
+@property (nonatomic, readonly) BOOL isUserModifiable;
+@property (getter=isLockable, nonatomic, readonly) BOOL lockable;
+@property (getter=isLocked, nonatomic) BOOL locked;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic, readonly) BOOL mayHaveImplicitBuildEvents;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) KNSlide *slide;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsAccessibilityDescription;
+@property (nonatomic, readonly) BOOL supportsAttachedComments;
+@property (nonatomic, readonly) BOOL supportsHyperlinks;
 
 + (BOOL)canPartition;
 + (void)load;
@@ -130,7 +123,7 @@
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;
 - (id)partitioner;
-- (void)performBlockWithTemporaryLayout:(id)arg1;
+- (void)performBlockWithTemporaryLayout:(id /* block */)arg1;
 - (id)presetKind;
 - (Class)repClass;
 - (BOOL)reverseChunkingIsSupported;

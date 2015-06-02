@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CoreRCInterfaceControllerDelegate>, CECFakeInterfaceListener, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CoreRCInterfaceController : NSObject <CoreRCInterfaceListenerDelegate> {
     <CoreRCInterfaceControllerDelegate> *_delegate;
     NSMutableArray *_interfaceListeners;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreRCInterfaceControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) CECFakeInterfaceListener * fakeInterfaceListener;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * interfaceListeners;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreRCInterfaceControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CECFakeInterfaceListener *fakeInterfaceListener;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *interfaceListeners;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 - (BOOL)addBundlesFromPaths:(id)arg1 expectedClass:(Class)arg2;
 - (BOOL)addInterfaceListenerClass:(Class)arg1;

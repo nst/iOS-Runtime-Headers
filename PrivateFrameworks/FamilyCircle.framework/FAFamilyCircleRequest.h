@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class NSString;
-
 @interface FAFamilyCircleRequest : NSObject {
     NSString *_passwordOrToken;
     NSString *_usernameOrDSID;
 }
 
-@property(copy) NSString * passwordOrToken;
-@property(copy) NSString * usernameOrDSID;
+@property (copy) NSString *passwordOrToken;
+@property (copy) NSString *usernameOrDSID;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)passwordOrToken;
 - (id)requestOptions;
 - (id)serviceConnection;
-- (id)serviceRemoteObjectWithErrorHandler:(id)arg1;
+- (id)serviceRemoteObjectWithErrorHandler:(id /* block */)arg1;
 - (void)setPasswordOrToken:(id)arg1;
 - (void)setUsernameOrDSID:(id)arg1;
 - (id)usernameOrDSID;

@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, SSItemArtworkImage;
-
 @interface SSItemContentRating : NSObject <NSCopying, SSXPCCoding> {
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly) NSDictionary * contentRatingDictionary;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isExplicitContent,readonly) BOOL explicitContent;
-@property(readonly) unsigned int hash;
-@property int rank;
-@property(copy) NSString * ratingDescription;
-@property(copy) NSString * ratingLabel;
-@property int ratingSystem;
-@property(readonly) SSItemArtworkImage * ratingSystemLogo;
-@property(getter=isRestricted,readonly) BOOL restricted;
-@property BOOL shouldHideWhenRestricted;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *contentRatingDictionary;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int rank;
+@property (nonatomic, copy) NSString *ratingDescription;
+@property (nonatomic, copy) NSString *ratingLabel;
+@property (nonatomic) int ratingSystem;
+@property (nonatomic, readonly) SSItemArtworkImage *ratingSystemLogo;
+@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (nonatomic) BOOL shouldHideWhenRestricted;
+@property (readonly) Class superclass;
 
 + (int)ratingSystemFromString:(id)arg1;
 + (id)stringForRatingSystem:(int)arg1;

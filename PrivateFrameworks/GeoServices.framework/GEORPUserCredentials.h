@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEORPUserCredentials : PBCodable <NSCopying> {
     NSString *_icloudUserMapsAuthToken;
     NSString *_icloudUserPersonId;
 }
 
-@property(readonly) BOOL hasIcloudUserMapsAuthToken;
-@property(readonly) BOOL hasIcloudUserPersonId;
-@property(retain) NSString * icloudUserMapsAuthToken;
-@property(retain) NSString * icloudUserPersonId;
+@property (nonatomic, readonly) BOOL hasIcloudUserMapsAuthToken;
+@property (nonatomic, readonly) BOOL hasIcloudUserPersonId;
+@property (nonatomic, retain) NSString *icloudUserMapsAuthToken;
+@property (nonatomic, retain) NSString *icloudUserPersonId;
 
 + (id)_credentialsForPrimaryICloudAccount;
 

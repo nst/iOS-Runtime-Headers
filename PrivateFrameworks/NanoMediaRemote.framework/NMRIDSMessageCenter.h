@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class <NMRIDSMessageCenterDelegate>, IDSService, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NMRIDSMessageCenter : NSObject <IDSServiceDelegate> {
     <NMRIDSMessageCenterDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_idsQueue;
@@ -11,11 +9,11 @@
     NSMutableDictionary *_messageHandlers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <NMRIDSMessageCenterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NMRIDSMessageCenterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 bypassDuet:(BOOL)arg5 skipStorage:(BOOL)arg6 isResponse:(BOOL)arg7 additionalOptions:(id)arg8 resultingMessageIdentifier:(id*)arg9 error:(id*)arg10;

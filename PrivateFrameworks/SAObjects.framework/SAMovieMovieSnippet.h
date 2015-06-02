@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAMovieMovie;
+@interface SAMovieMovieSnippet : SAUISnippet
 
-@interface SAMovieMovieSnippet : SAUISnippet {
-}
-
-@property(retain) SAMovieMovie * movie;
-@property BOOL playTrailer;
+@property (nonatomic, retain) SAMovieMovie *movie;
+@property (nonatomic) BOOL playTrailer;
 
 + (id)movieSnippet;
 + (id)movieSnippetWithDictionary:(id)arg1 context:(id)arg2;

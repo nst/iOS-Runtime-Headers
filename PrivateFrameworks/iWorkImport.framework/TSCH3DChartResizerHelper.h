@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartBoundsLayout, TSCH3DVector, TSCHChartInfo;
-
 @interface TSCH3DChartResizerHelper : NSObject {
     TSCH3DChartBoundsLayout *mBoundsLayout;
     TSCHChartInfo *mChartInfo;
@@ -42,11 +40,11 @@
     } mOriginalContainingViewport;
 }
 
-@property(readonly) TSCHChartInfo * chartInfo;
-@property struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } containingViewport;
-@property(readonly) TSCH3DVector * containingViewportVector;
-@property struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } layoutSettings;
-@property(readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } originalContainingViewport;
+@property (nonatomic, readonly) TSCHChartInfo *chartInfo;
+@property (nonatomic) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } containingViewport;
+@property (nonatomic, readonly) TSCH3DVector *containingViewportVector;
+@property (nonatomic) struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } layoutSettings;
+@property (nonatomic, readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } originalContainingViewport;
 
 + (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })containingViewportForVector:(id)arg1;
 + (id)helperWithInfo:(id)arg1;

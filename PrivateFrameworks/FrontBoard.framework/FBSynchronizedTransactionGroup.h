@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBSynchronizedTransactionDelegate>, NSMutableSet, NSString;
-
 @interface FBSynchronizedTransactionGroup : FBTransaction <FBSynchronizedTransaction, FBSynchronizedTransactionDelegate> {
     BOOL _didCommit;
     BOOL _readyForCommit;
@@ -13,11 +11,11 @@
     NSMutableSet *_synchronizedTransactionsReadyToCommit;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property <FBSynchronizedTransactionDelegate> * synchronizationDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
 
 - (void)_performSynchronizedCommit:(id)arg1;
 - (void)addSynchronizedTransaction:(id)arg1;

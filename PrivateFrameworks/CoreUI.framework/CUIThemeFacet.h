@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSString;
-
 @interface CUIThemeFacet : NSObject <CUIThemeImageSource, NSCoding, NSCopying> {
     struct { 
         unsigned int hasCheckedButtonGlyph : 1; 
@@ -23,10 +21,10 @@
     } _thumbnailSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_facetWithKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 andRenditionKeyClass:(Class)arg2 orRenditionKey:(id)arg3 fromTheme:(unsigned int)arg4;
 + (void)_invalidateArtworkCaches;

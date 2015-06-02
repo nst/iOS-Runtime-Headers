@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUReportingController, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MPUReportingController : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableArray *_childReportingControllers;
     MPUReportingController *_parentReportingController;
 }
 
-@property(copy,readonly) NSArray * childReportingControllers;
-@property MPUReportingController * parentReportingController;
+@property (nonatomic, readonly, copy) NSArray *childReportingControllers;
+@property (nonatomic) MPUReportingController *parentReportingController;
 
 - (void).cxx_destruct;
 - (void)_recordReportingEvents:(id)arg1;

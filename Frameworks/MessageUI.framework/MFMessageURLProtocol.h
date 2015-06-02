@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFMessageTextAttachment, MFMonitoredInvocation, NSMutableArray, NSThread, NSURL;
-
 @interface MFMessageURLProtocol : NSURLProtocol {
     MFMessageTextAttachment *_attachment;
     NSMutableArray *_attachments;

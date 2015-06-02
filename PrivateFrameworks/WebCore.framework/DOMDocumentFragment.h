@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMDocumentFragment : DOMNode {
-}
+@interface DOMDocumentFragment : DOMNode
 
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;

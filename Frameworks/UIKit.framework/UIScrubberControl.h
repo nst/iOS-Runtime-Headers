@@ -2,54 +2,44 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIImage, UIView;
-
 @interface UIScrubberControl : UIOldSliderControl {
-    unsigned int _allowsAnyValue : 1;
-    unsigned int _alwaysShowAllComponentsForDuration : 1;
-    unsigned int _autoSizesToFitDuration : 1;
+    unsigned int _allowsAnyValue;
+    unsigned int _alwaysShowAllComponentsForDuration;
+    unsigned int _autoSizesToFitDuration;
     id _delegate;
-    unsigned int _delegateDidChangeScrubValue : 1;
-    unsigned int _delegateDidEnterScrubbingState : 1;
-    unsigned int _delegateShouldBeginScrubbing : 1;
-    unsigned int _didDrag : 1;
+    unsigned int _delegateDidChangeScrubValue;
+    unsigned int _delegateDidEnterScrubbingState;
+    unsigned int _delegateShouldBeginScrubbing;
+    unsigned int _didDrag;
     double _duration;
     UIView *_elapsedTimeView;
-    unsigned int _endingTracking : 1;
-    unsigned int _largeKnob : 1;
+    unsigned int _endingTracking;
+    unsigned int _largeKnob;
     float _lastDisplayedWidth;
     struct CGPoint { 
         float x; 
         float y; 
     } _lastUpdatedPoint;
-    unsigned int _layoutTimeParts : 2;
-    unsigned int _leftCapIsDownloadCap : 1;
+    unsigned int _layoutTimeParts;
+    unsigned int _leftCapIsDownloadCap;
     float _maxTrackWidth;
-    unsigned int _remainingIsDuration : 1;
+    unsigned int _remainingIsDuration;
     UIView *_remainingTimeView;
-    unsigned int _requireMomentaryDelay : 1;
-    unsigned int _rightCapIsDownloadCap : 1;
-    unsigned int _sentScrubbingStart : 1;
-    unsigned int _showFullWidthComponents : 1;
-    unsigned int _showKnob : 1;
-    unsigned int _showTimeCentered : 1;
-
-  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
-    union { 
+    unsigned int _requireMomentaryDelay;
+    unsigned int _rightCapIsDownloadCap;
+    unsigned int _sentScrubbingStart;
+    unsigned int _showFullWidthComponents;
+    unsigned int _showKnob;
+    unsigned int _showTimeCentered;
+    /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     } _sliderAvailableFill;
-
-    unsigned int _timeLayoutDisabledCount : 7;
-    unsigned int _timeLayoutSkippedForcedLayout : 1;
-    unsigned int _timeLayoutSkippedLayout : 1;
+    unsigned int _timeLayoutDisabledCount;
+    unsigned int _timeLayoutSkippedForcedLayout;
+    unsigned int _timeLayoutSkippedLayout;
     double _trackingStartTime;
-    unsigned int _unused : 3;
+    unsigned int _unused;
     float _valueAvailable;
 }
 

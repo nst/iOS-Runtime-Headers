@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXBlipContext : OCXDelayedMediaContext {
-}
+@interface OAXBlipContext : OCXDelayedMediaContext
 
 - (id)description;
 - (bool)loadDelayedNode:(id)arg1;

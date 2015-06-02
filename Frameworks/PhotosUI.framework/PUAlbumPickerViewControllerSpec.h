@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAlbumListViewController, PUAlbumListViewControllerSpec;
-
 @interface PUAlbumPickerViewControllerSpec : NSObject {
     PUAlbumListViewControllerSpec *_albumListViewControllerSpec;
     unsigned int _supportedInterfaceOrientations;
 }
 
-@property(readonly) PUAlbumListViewControllerSpec * albumListViewControllerSpec;
-@property(readonly) PUAlbumListViewController * newAlbumListViewController;
-@property(readonly) unsigned int supportedInterfaceOrientations;
+@property (nonatomic, readonly) PUAlbumListViewControllerSpec *albumListViewControllerSpec;
+@property (nonatomic, readonly) PUAlbumListViewController *newAlbumListViewController;
+@property (nonatomic, readonly) unsigned int supportedInterfaceOrientations;
 
 - (void).cxx_destruct;
 - (id)albumListViewControllerSpec;

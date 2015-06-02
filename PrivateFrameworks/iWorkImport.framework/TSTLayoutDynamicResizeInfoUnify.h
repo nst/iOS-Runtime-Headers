@@ -7,8 +7,8 @@
     float mTargetWidth;
 }
 
-@property(readonly) float targetHeight;
-@property(readonly) float targetWidth;
+@property (nonatomic, readonly) float targetHeight;
+@property (nonatomic, readonly) float targetWidth;
 
 - (void)applyFixedHeight:(float)arg1;
 - (void)applyFixedWidth:(float)arg1;

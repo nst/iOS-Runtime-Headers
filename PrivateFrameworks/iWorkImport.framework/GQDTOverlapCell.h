@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDTOverlapCell : GQDTCell {
-}
+@interface GQDTOverlapCell : GQDTCell
 
 @end

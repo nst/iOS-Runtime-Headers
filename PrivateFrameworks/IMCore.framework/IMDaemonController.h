@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMDaemonListener, IMLocalObject, IMRemoteObject<IMRemoteDaemonProtocol>, NSArray, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSRecursiveLock, NSString;
-
 @interface IMDaemonController : NSObject {
     BOOL _acquiringDaemonConnection;
     BOOL _autoReconnect;
@@ -34,18 +32,18 @@
     NSArray *_servicesToDeny;
 }
 
-@property(setter=_setAutoReconnect:) BOOL _autoReconnect;
-@property(setter=_setBlocksConnectionAtResume:) BOOL _blocksConnectionAtResume;
-@property(setter=__setCapabilities:) unsigned int _capabilities;
-@property(setter=_setListenerID:,retain) NSString * _listenerID;
-@property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
-@property(setter=_setServicesToAllow:,retain) NSArray * _servicesToAllow;
-@property(setter=_setServicesToDeny:,retain) NSArray * _servicesToDeny;
-@property(readonly) unsigned int capabilities;
-@property id delegate;
-@property(readonly) BOOL isConnected;
-@property(readonly) BOOL isConnecting;
-@property(readonly) IMDaemonListener * listener;
+@property (setter=_setAutoReconnect:) BOOL _autoReconnect;
+@property (setter=_setBlocksConnectionAtResume:, nonatomic) BOOL _blocksConnectionAtResume;
+@property (setter=__setCapabilities:) unsigned int _capabilities;
+@property (setter=_setListenerID:, nonatomic, retain) NSString *_listenerID;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_remoteMessageQueue;
+@property (setter=_setServicesToAllow:, retain) NSArray *_servicesToAllow;
+@property (setter=_setServicesToDeny:, retain) NSArray *_servicesToDeny;
+@property (nonatomic, readonly) unsigned int capabilities;
+@property (nonatomic) id delegate;
+@property (nonatomic, readonly) BOOL isConnected;
+@property (nonatomic, readonly) BOOL isConnecting;
+@property (nonatomic, readonly) IMDaemonListener *listener;
 
 + (BOOL)_applicationWillTerminate;
 + (void)_blockUntilSendQueueIsEmpty;
@@ -69,7 +67,7 @@
 - (id)_listenerID;
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
-- (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id)arg2;
+- (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id /* block */)arg2;
 - (void)_noteSetupComplete;
 - (id)_remoteMessageQueue;
 - (id)_remoteObject;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPLazyReferenceDelegate>, NSUUID, TSPComponent, TSPObject;
-
 @interface TSPLazyReference : NSObject <NSCopying> {
     TSPComponent *_component;
     <TSPLazyReferenceDelegate> *_delegate;
@@ -17,16 +15,16 @@
     TSPObject *_weakObject;
 }
 
-@property TSPComponent * component;
-@property <TSPLazyReferenceDelegate> * delegate;
-@property(readonly) long long identifier;
-@property BOOL isExternal;
-@property(readonly) BOOL isWeak;
-@property(readonly) id object;
-@property(readonly) id objectIfLoaded;
-@property(readonly) NSUUID * objectUUID;
-@property(retain) TSPObject * strongObject;
-@property(readonly) TSPObject * weakObject;
+@property (nonatomic) TSPComponent *component;
+@property (nonatomic) <TSPLazyReferenceDelegate> *delegate;
+@property (nonatomic, readonly) long long identifier;
+@property (nonatomic) BOOL isExternal;
+@property (nonatomic, readonly) BOOL isWeak;
+@property (nonatomic, readonly) id object;
+@property (nonatomic, readonly) id objectIfLoaded;
+@property (nonatomic, readonly) NSUUID *objectUUID;
+@property (nonatomic, retain) TSPObject *strongObject;
+@property (nonatomic, readonly) TSPObject *weakObject;
 
 + (id)referenceForObject:(id)arg1;
 + (id)weakReferenceForObject:(id)arg1;

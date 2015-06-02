@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSString;
-
 @interface PTPInitCommandACKPacket : NSObject {
     unsigned long _connectionNumber;
     NSString *_responderFriendlyName;
-    unsigned char _responderGUID[16];
+    unsigned char _responderGUID;
 }
 
 - (unsigned long)connectionNumber;

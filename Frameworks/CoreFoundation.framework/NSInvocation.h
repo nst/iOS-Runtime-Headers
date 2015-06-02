@@ -2,42 +2,62 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMethodSignature;
-
 @interface NSInvocation : NSObject {
     id _container;
     void *_frame;
-    unsigned char _reserved[15];
+    unsigned char _reserved;
     unsigned char _retainedArgs;
     void *_retdata;
     id _signature;
 }
 
-@property(readonly) BOOL argumentsRetained;
-@property(retain,readonly) NSMethodSignature * methodSignature;
+@property (readonly) BOOL argumentsRetained;
+@property (readonly, retain) NSMethodSignature *methodSignature;
 @property SEL selector;
 @property id target;
 
-+ (id)_gkInvocationWithBlock:(id)arg1;
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+
 + (id)_invocationWithMethodSignature:(id)arg1 frame:(void*)arg2;
++ (id)invocationWithMethodSignature:(id)arg1;
+
+- (void)_addAttachedObject:(id)arg1;
+- (BOOL)argumentsRetained;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
+- (void)getArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)getReturnValue:(void*)arg1;
+- (id)init;
+- (void)invoke;
+- (void)invokeSuper;
+- (void)invokeUsingIMP:(int (*)arg1;
+- (void)invokeWithTarget:(id)arg1;
+- (id)methodSignature;
+- (void)retainArguments;
+- (SEL)selector;
+- (void)setArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)setReturnValue:(void*)arg1;
+- (void)setSelector:(SEL)arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
+- (BOOL)_hasBlockArgument;
+- (id)debugDescription;
+- (void)setUserInfo:(id)arg1;
+- (id)userInfo;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
-+ (void)executeBlock:(id)arg1;
-+ (id)invocationWithBlock:(id)arg1;
-+ (id)invocationWithMethodSignature:(id)arg1;
-+ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
-+ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
-+ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
-+ (void)tsu_executeBlock:(id)arg1;
-+ (id)tsu_invocationWithBlock:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
++ (id)_gkInvocationWithBlock:(id)arg1;
 
 - (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
-- (void)_addAttachedObject:(id)arg1;
 - (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
 - (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
 - (void)_gkClearCopiedArguments;
@@ -49,30 +69,31 @@
 - (void)_gkPrepareForCallWithError:(id)arg1;
 - (void)_gkPrintBlockSignature;
 - (id)_gkReplyHandlerInvocation;
-- (BOOL)_hasBlockArgument;
-- (void)_webkit_invokeAndHandleException:(id)arg1;
-- (BOOL)argumentsRetained;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)debugDescription;
-- (void)getArgument:(void*)arg1 atIndex:(int)arg2;
-- (void)getReturnValue:(void*)arg1;
-- (id)init;
-- (void)invoke;
-- (void)invokeSuper;
-- (void)invokeUsingIMP:(int (*)())arg1;
-- (void)invokeWithTarget:(id)arg1;
-- (id)methodSignature;
-- (BOOL)mf_shouldLogInvocation;
-- (void)retainArguments;
-- (SEL)selector;
-- (void)setArgument:(void*)arg1 atIndex:(int)arg2;
-- (void)setReturnValue:(void*)arg1;
-- (void)setSelector:(SEL)arg1;
-- (void)setTarget:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (id)target;
-- (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
 - (BOOL)wantsReturnValue;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
++ (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
+
+- (BOOL)mf_shouldLogInvocation;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (void)executeBlock:(id /* block */)arg1;
++ (id)invocationWithBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
+
+- (void)_webkit_invokeAndHandleException:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (void)tsu_executeBlock:(id /* block */)arg1;
++ (id)tsu_invocationWithBlock:(id /* block */)arg1;
 
 @end

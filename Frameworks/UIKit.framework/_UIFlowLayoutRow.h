@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, _UIFlowLayoutSection;
-
 @interface _UIFlowLayoutRow : NSObject {
     float _availableSpace;
     BOOL _complete;
@@ -30,14 +28,14 @@
     int _verticalAlignement;
 }
 
-@property float availableSpace;
-@property BOOL complete;
-@property BOOL fixedItemSize;
-@property int index;
-@property(readonly) NSMutableArray * items;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rowFrame;
-@property struct CGSize { float x1; float x2; } rowSize;
-@property _UIFlowLayoutSection * section;
+@property (nonatomic) float availableSpace;
+@property (nonatomic) BOOL complete;
+@property (nonatomic) BOOL fixedItemSize;
+@property (nonatomic) int index;
+@property (nonatomic, readonly) NSMutableArray *items;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rowFrame;
+@property (nonatomic) struct CGSize { float x1; float x2; } rowSize;
+@property (nonatomic) _UIFlowLayoutSection *section;
 
 - (void)addItem:(id)arg1 atEnd:(BOOL)arg2;
 - (float)availableSpace;

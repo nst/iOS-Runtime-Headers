@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicSearchTableViewCellContentView : MusicSongListTableViewCellContentView {
-}
+@interface MusicSearchTableViewCellContentView : MusicSongListTableViewCellContentView
 
 + (void)contentSizeCategoryDidChange;
 + (id)detailRegularTextAttributes;

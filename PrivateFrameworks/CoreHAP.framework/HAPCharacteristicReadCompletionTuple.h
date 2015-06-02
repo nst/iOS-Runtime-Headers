@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface HAPCharacteristicReadCompletionTuple : NSObject {
     NSObject<OS_dispatch_queue> *_completionQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * completionQueue;
-@property(copy) id handler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionQueue;
+@property (nonatomic, copy) id /* block */ handler;
 
-+ (id)readCompletionTupleWithHandler:(id)arg1 queue:(id)arg2;
++ (id)readCompletionTupleWithHandler:(id /* block */)arg1 queue:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)completionQueue;
-- (id)handler;
+- (id /* block */)handler;
 - (void)setCompletionQueue:(id)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 
 @end

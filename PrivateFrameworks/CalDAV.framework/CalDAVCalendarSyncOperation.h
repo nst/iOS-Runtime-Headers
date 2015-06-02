@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CalDAVCalendar>, <CalDAVCalendarSyncDelegate>, NSError, NSString;
-
 @interface CalDAVCalendarSyncOperation : CalDAVOperation {
     <CalDAVCalendar> *_calendar;
     BOOL _getScheduleChanges;
@@ -13,9 +11,9 @@
     NSError *_savedError;
 }
 
-@property <CalDAVCalendarSyncDelegate> * delegate;
-@property BOOL getScheduleChanges;
-@property BOOL getScheduleTags;
+@property (nonatomic) <CalDAVCalendarSyncDelegate> *delegate;
+@property (nonatomic) BOOL getScheduleChanges;
+@property (nonatomic) BOOL getScheduleTags;
 
 - (id)_distantFutureEndDate;
 - (void)_finishWithError:(id)arg1;

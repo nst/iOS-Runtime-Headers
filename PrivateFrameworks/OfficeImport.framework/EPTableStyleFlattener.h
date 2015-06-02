@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDTable;
-
 @interface EPTableStyleFlattener : EPStyleFlattener {
     unsigned int mHeaderRowCount;
     EDTable *mTable;

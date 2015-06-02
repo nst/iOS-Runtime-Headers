@@ -6,7 +6,7 @@
     unsigned int __touchCount;
 }
 
-@property(setter=_setTouchCount:) unsigned int _touchCount;
+@property (setter=_setTouchCount:, nonatomic) unsigned int _touchCount;
 
 - (void)_decrementTouchesBy:(unsigned int)arg1;
 - (void)_incrementTouchesBy:(unsigned int)arg1;

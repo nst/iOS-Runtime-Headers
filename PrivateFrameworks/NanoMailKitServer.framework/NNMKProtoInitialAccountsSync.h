@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableArray;
-
 @interface NNMKProtoInitialAccountsSync : PBCodable <NSCopying> {
     NSMutableArray *_initialAccounts;
 }
 
-@property(retain) NSMutableArray * initialAccounts;
+@property (nonatomic, retain) NSMutableArray *initialAccounts;
 
 - (void).cxx_destruct;
 - (void)addInitialAccount:(id)arg1;

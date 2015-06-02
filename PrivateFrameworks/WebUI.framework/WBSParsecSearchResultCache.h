@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface WBSParsecSearchResultCache : NSObject {
     unsigned int _cachedQueriesLimit;
     unsigned int _cachedResultsLimit;
@@ -11,8 +9,8 @@
     NSMutableDictionary *_resultSetCache;
 }
 
-@property(readonly) NSArray * allCachedQueries;
-@property(readonly) NSArray * allCachedResultIdentifiers;
+@property (nonatomic, readonly) NSArray *allCachedQueries;
+@property (nonatomic, readonly) NSArray *allCachedResultIdentifiers;
 
 - (void).cxx_destruct;
 - (id)allCachedQueries;

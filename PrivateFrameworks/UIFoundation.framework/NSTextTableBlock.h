@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSTextTable;
-
 @interface NSTextTableBlock : NSTextBlock {
     int _colNum;
     int _colSpan;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SKScene;
-
 @interface SCNSpriteKitSource : SCNImageSource {
     SKScene *_scene;
 }
 
-@property(retain) SKScene * scene;
+@property (nonatomic, retain) SKScene *scene;
 
 - (void)dealloc;
 - (BOOL)isOpaque;

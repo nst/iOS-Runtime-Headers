@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUContentSizeLayoutConstraint, NSArray, NSLayoutConstraint, UILabel, UIView;
-
 @interface MPUExtrasCollectionReusableView : UICollectionReusableView {
     NSArray *_borderConstraints;
     UIView *_borderView;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GKBluetoothSupport : NSObject {
-}
+@interface GKBluetoothSupport : NSObject
 
 + (Class)_bluetoothManagerClass;
 + (void)_btPowerStateChanged:(id)arg1;

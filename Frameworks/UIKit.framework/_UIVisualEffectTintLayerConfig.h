@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface _UIVisualEffectTintLayerConfig : _UIVisualEffectLayerConfig {
     UIColor *_tintColor;
 }
 
-@property(readonly) UIColor * tintColor;
+@property (nonatomic, readonly) UIColor *tintColor;
 
 + (id)layerWithTintColor:(id)arg1;
 

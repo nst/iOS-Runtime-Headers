@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHBUnsupportedSeries : NSObject {
-}
+@interface CHBUnsupportedSeries : NSObject
 
 + (id)chdSeriesWithState:(id)arg1;
 

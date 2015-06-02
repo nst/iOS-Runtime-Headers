@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKAccount : NSObject <NSSecureCoding> {
     NSString *_accountId;
     NSString *_displayName;
     BOOL _shouldArchive;
 }
 
-@property(retain) NSString * accountId;
-@property(retain) NSString * displayName;
-@property BOOL shouldArchive;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) BOOL shouldArchive;
 
 + (BOOL)supportsSecureCoding;
 

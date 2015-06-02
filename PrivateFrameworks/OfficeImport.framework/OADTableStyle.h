@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, OADTableBackground, OADTablePartStyle;
-
 @interface OADTableStyle : NSObject {
     OADTableBackground *mBackground;
     OADTablePartStyle *mBand1HorzStyle;

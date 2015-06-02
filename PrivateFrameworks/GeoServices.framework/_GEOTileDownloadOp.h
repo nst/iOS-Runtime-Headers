@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSimpleTileRequester, NSData, NSMutableData, NSString, NSURL, NSURLConnection, _GEOTileDownloadOp;
-
 @interface _GEOTileDownloadOp : NSObject <NSURLConnectionDelegate> {
     int _attempts;
     NSData *_auditToken;
@@ -41,30 +39,30 @@
     NSString *_userAgent;
 }
 
-@property(retain) NSData * auditToken;
-@property(retain) _GEOTileDownloadOp * baseTile;
-@property(retain) NSData * cachedData;
-@property(retain) NSString * cachedEtag;
-@property(retain) NSURLConnection * conn;
-@property(readonly) unsigned int contentLength;
-@property(retain) NSMutableData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property GEOSimpleTileRequester * delegate;
-@property(copy,readonly) NSString * description;
-@property int eTagType;
-@property(retain) NSString * editionHeader;
-@property(readonly) BOOL finished;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *auditToken;
+@property (nonatomic, retain) _GEOTileDownloadOp *baseTile;
+@property (nonatomic, retain) NSData *cachedData;
+@property (nonatomic, retain) NSString *cachedEtag;
+@property (nonatomic, retain) NSURLConnection *conn;
+@property (nonatomic, readonly) unsigned int contentLength;
+@property (nonatomic, retain) NSMutableData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) GEOSimpleTileRequester *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int eTagType;
+@property (nonatomic, retain) NSString *editionHeader;
+@property (nonatomic, readonly) BOOL finished;
+@property (readonly) unsigned int hash;
 @property struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; } key;
-@property(retain) _GEOTileDownloadOp * localizationTile;
-@property BOOL requireWiFi;
-@property(retain) NSString * responseEtag;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) _GEOTileDownloadOp *localizationTile;
+@property (nonatomic) BOOL requireWiFi;
+@property (nonatomic, retain) NSString *responseEtag;
+@property (readonly) Class superclass;
 @property unsigned int tileEdition;
-@property double timeout;
-@property(retain) NSURL * url;
-@property BOOL useCookies;
-@property(retain) NSString * userAgent;
+@property (nonatomic) double timeout;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic) BOOL useCookies;
+@property (nonatomic, retain) NSString *userAgent;
 
 - (id)auditToken;
 - (id)baseTile;

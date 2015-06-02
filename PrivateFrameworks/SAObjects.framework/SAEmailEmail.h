@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL, SAPersonAttribute;
+@interface SAEmailEmail : SADomainObject
 
-@interface SAEmailEmail : SADomainObject {
-}
-
-@property(copy) NSDate * dateSent;
-@property(retain) SAPersonAttribute * fromEmail;
-@property(copy) NSString * message;
-@property(copy) NSString * messagePreview;
-@property(copy) NSNumber * outgoing;
-@property(copy) NSArray * receivingAddresses;
-@property(copy) NSArray * recipientsBcc;
-@property(copy) NSArray * recipientsCc;
-@property(copy) NSArray * recipientsTo;
-@property(copy) NSURL * referenceId;
-@property(copy) NSString * subject;
-@property(copy) NSString * timeZoneId;
-@property(copy) NSString * type;
+@property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, retain) SAPersonAttribute *fromEmail;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messagePreview;
+@property (nonatomic, copy) NSNumber *outgoing;
+@property (nonatomic, copy) NSArray *receivingAddresses;
+@property (nonatomic, copy) NSArray *recipientsBcc;
+@property (nonatomic, copy) NSArray *recipientsCc;
+@property (nonatomic, copy) NSArray *recipientsTo;
+@property (nonatomic, copy) NSURL *referenceId;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSString *timeZoneId;
+@property (nonatomic, copy) NSString *type;
 
 + (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;

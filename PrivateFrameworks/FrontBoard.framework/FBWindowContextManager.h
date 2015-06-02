@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBWindowContextManagerDelegate>, NSHashTable, NSMutableOrderedSet, NSString;
-
 @interface FBWindowContextManager : NSObject {
     <FBWindowContextManagerDelegate> *_delegate;
     NSString *_identifier;
@@ -11,10 +9,10 @@
     NSMutableOrderedSet *_orderedContexts;
 }
 
-@property <FBWindowContextManagerDelegate> * delegate;
-@property(copy) NSString * identifier;
+@property (nonatomic) <FBWindowContextManagerDelegate> *delegate;
+@property (nonatomic, copy) NSString *identifier;
 
-- (void)_enumerateObserversWithBlock:(id)arg1;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)addContext:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)contexts;

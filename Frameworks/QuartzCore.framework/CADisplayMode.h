@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CADisplay;
-
 @interface CADisplayMode : NSObject {
     CADisplay *_dpy;
     unsigned long _height;
@@ -11,9 +9,9 @@
     unsigned long _width;
 }
 
-@property(readonly) unsigned long height;
-@property(readonly) float pixelAspectRatio;
-@property(readonly) unsigned long width;
+@property (nonatomic, readonly) unsigned long height;
+@property (nonatomic, readonly) float pixelAspectRatio;
+@property (nonatomic, readonly) unsigned long width;
 
 + (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
 

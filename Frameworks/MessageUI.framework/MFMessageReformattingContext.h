@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class DOMDocument, DOMNode, DOMRange, NSArray, NSMutableArray;
-
 @interface MFMessageReformattingContext : NSObject {
     DOMNode *_body;
     NSMutableArray *_changes;
@@ -20,26 +18,26 @@
     float _widthDeviation;
 }
 
-@property(readonly) DOMNode * body;
-@property(readonly) BOOL didChangeDocument;
-@property(readonly) DOMDocument * document;
-@property(retain) DOMRange * firstTextRange;
-@property(readonly) BOOL hasAnyLeftFloat;
-@property(readonly) BOOL hasAnyRightFloat;
-@property(readonly) float maximumWidth;
-@property(readonly) float meanWidth;
-@property float minimumRescalingFactor;
-@property(copy,readonly) NSArray * rightFloats;
-@property(readonly) float widthDeviation;
+@property (nonatomic, readonly) DOMNode *body;
+@property (nonatomic, readonly) BOOL didChangeDocument;
+@property (nonatomic, readonly) DOMDocument *document;
+@property (nonatomic, retain) DOMRange *firstTextRange;
+@property (nonatomic, readonly) BOOL hasAnyLeftFloat;
+@property (nonatomic, readonly) BOOL hasAnyRightFloat;
+@property (nonatomic, readonly) float maximumWidth;
+@property (nonatomic, readonly) float meanWidth;
+@property (nonatomic) float minimumRescalingFactor;
+@property (nonatomic, readonly, copy) NSArray *rightFloats;
+@property (nonatomic, readonly) float widthDeviation;
 
 - (void)_rollBackChange:(id)arg1;
 - (void)_updateFloatsIfNecessary;
 - (void)_updateMetricsIfNecessary;
 - (id)body;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBoxOf:(id)arg1;
-- (BOOL)changeMarginOfElement:(id)arg1 priority:(id)arg2 usingBlock:(id)arg3;
+- (BOOL)changeMarginOfElement:(id)arg1 priority:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)changeProprety:(id)arg1 ofElement:(id)arg2 toValue:(id)arg3 priority:(id)arg4;
-- (BOOL)changeSizeOfElement:(id)arg1 priority:(id)arg2 usingBlock:(id)arg3;
+- (BOOL)changeSizeOfElement:(id)arg1 priority:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)dealloc;
 - (BOOL)didChangeDocument;
 - (id)document;
@@ -51,7 +49,7 @@
 - (float)meanWidth;
 - (float)minimumRescalingFactor;
 - (BOOL)rescaleElement:(id)arg1 withScale:(float)arg2;
-- (BOOL)resizeElement:(id)arg1 withScale:(float)arg2 verificationBlock:(id)arg3;
+- (BOOL)resizeElement:(id)arg1 withScale:(float)arg2 verificationBlock:(id /* block */)arg3;
 - (id)rightFloats;
 - (void)rollBackAllChanges;
 - (void)rollBackLastChangeForElement:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMapTable, NSMutableArray, NSMutableOrderedSet, NSMutableString, NSString;
-
 @interface SKUIMetricsImpressionSession : NSObject {
     NSMutableArray *_impressionIdentifiers;
     NSMutableOrderedSet *_impressionableViewElements;
@@ -11,9 +9,9 @@
     NSMutableString *_impressionsString;
 }
 
-@property(copy,readonly) NSArray * impressionIdentifiers;
-@property(copy,readonly) NSArray * impressionableViewElements;
-@property(copy,readonly) NSString * impressionsString;
+@property (nonatomic, readonly, copy) NSArray *impressionIdentifiers;
+@property (nonatomic, readonly, copy) NSArray *impressionableViewElements;
+@property (nonatomic, readonly, copy) NSString *impressionsString;
 
 - (void).cxx_destruct;
 - (void)_clearTimerForViewElement:(id)arg1;

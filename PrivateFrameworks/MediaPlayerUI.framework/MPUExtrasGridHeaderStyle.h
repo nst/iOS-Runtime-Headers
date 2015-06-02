@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSString, UIColor;
-
 @interface MPUExtrasGridHeaderStyle : NSObject {
     float _bottomLabelDescender;
     struct UIEdgeInsets { 
@@ -23,17 +21,17 @@
     NSString *_titleTextStyle;
 }
 
-@property float bottomLabelDescender;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property BOOL showsImage;
-@property(retain) UIColor * subtitleColor;
-@property(retain) NSDictionary * subtitleDefaultFontAttributes;
-@property float subtitleLineHeight;
-@property(retain) NSString * subtitleTextStyle;
-@property(retain) UIColor * titleColor;
-@property(retain) NSDictionary * titleDefaultFontAttributes;
-@property float titleLineHeight;
-@property(retain) NSString * titleTextStyle;
+@property (nonatomic) float bottomLabelDescender;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic) BOOL showsImage;
+@property (nonatomic, retain) UIColor *subtitleColor;
+@property (nonatomic, retain) NSDictionary *subtitleDefaultFontAttributes;
+@property (nonatomic) float subtitleLineHeight;
+@property (nonatomic, retain) NSString *subtitleTextStyle;
+@property (nonatomic, retain) UIColor *titleColor;
+@property (nonatomic, retain) NSDictionary *titleDefaultFontAttributes;
+@property (nonatomic) float titleLineHeight;
+@property (nonatomic, retain) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
 - (float)bottomLabelDescender;

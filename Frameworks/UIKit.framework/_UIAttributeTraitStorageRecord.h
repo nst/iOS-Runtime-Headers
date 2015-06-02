@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITraitCollection;
-
 @interface _UIAttributeTraitStorageRecord : NSObject <NSCoding> {
     UITraitCollection *_traitCollection;
     id _value;
 }
 
-@property(readonly) UITraitCollection * traitCollection;
-@property(readonly) id value;
+@property (nonatomic, readonly) UITraitCollection *traitCollection;
+@property (nonatomic, readonly) id value;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

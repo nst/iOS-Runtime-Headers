@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSString;
-
 @interface BLTPBHandleSupplementaryActionRequest : PBRequest <NSCopying> {
     NSString *_identifier;
     NSString *_publisherBulletinID;
@@ -11,14 +9,14 @@
     NSString *_sectionID;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasPublisherBulletinID;
-@property(readonly) BOOL hasRecordID;
-@property(readonly) BOOL hasSectionID;
-@property(retain) NSString * identifier;
-@property(retain) NSString * publisherBulletinID;
-@property(retain) NSString * recordID;
-@property(retain) NSString * sectionID;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasPublisherBulletinID;
+@property (nonatomic, readonly) BOOL hasRecordID;
+@property (nonatomic, readonly) BOOL hasSectionID;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *publisherBulletinID;
+@property (nonatomic, retain) NSString *recordID;
+@property (nonatomic, retain) NSString *sectionID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

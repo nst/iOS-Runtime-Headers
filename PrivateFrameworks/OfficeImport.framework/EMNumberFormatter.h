@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface EMNumberFormatter : NSObject {
     NSString *_baseICUFormatString;
     struct __CFNumberFormatter { } *_bigNumberFormatter;

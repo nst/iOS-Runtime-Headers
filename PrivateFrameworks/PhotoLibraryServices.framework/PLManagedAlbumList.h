@@ -2,33 +2,31 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSObject<PLIndexMappingCache>, NSString;
-
 @interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLDerivedAlbumListOrigin, PLIndexMappersDataOrigin> {
-    NSObject<PLIndexMappingCache> *_derivedAlbumLists[5];
+    NSObject<PLIndexMappingCache> *_derivedAlbumLists;
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
 }
 
-@property(retain,readonly) NSString * _prettyDescription;
-@property(retain,readonly) NSString * _typeDescription;
-@property short albumListType;
-@property(retain,readonly) NSMutableOrderedSet * albums;
-@property(readonly) unsigned int albumsCount;
-@property(copy,readonly) id albumsSortingComparator;
-@property(readonly) BOOL canEditAlbums;
-@property(readonly) unsigned int containersCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didRegisteredWithUserInterfaceContext;
-@property(readonly) int filter;
-@property(readonly) BOOL hasAtLeastOneAlbum;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isFolder;
-@property BOOL isRegisteredForChanges;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int unreadAlbumsCount;
-@property(retain) NSString * uuid;
+@property (nonatomic, readonly, retain) NSString *_prettyDescription;
+@property (nonatomic, readonly, retain) NSString *_typeDescription;
+@property (nonatomic) short albumListType;
+@property (nonatomic, readonly, retain) NSMutableOrderedSet *albums;
+@property (nonatomic, readonly) unsigned int albumsCount;
+@property (nonatomic, readonly, copy) id /* block */ albumsSortingComparator;
+@property (nonatomic, readonly) BOOL canEditAlbums;
+@property (nonatomic, readonly) unsigned int containersCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didRegisteredWithUserInterfaceContext;
+@property (nonatomic, readonly) int filter;
+@property (nonatomic, readonly) BOOL hasAtLeastOneAlbum;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isFolder;
+@property (nonatomic) BOOL isRegisteredForChanges;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int unreadAlbumsCount;
+@property (nonatomic, retain) NSString *uuid;
 
 + (id)_albumListWithType:(short)arg1 inManagedObjectContext:(id)arg2;
 + (BOOL)_albumOrderMatchesFrom:(id)arg1 inDestination:(id)arg2;
@@ -66,7 +64,7 @@
 - (short)albumListType;
 - (id)albums;
 - (unsigned int)albumsCount;
-- (id)albumsSortingComparator;
+- (id /* block */)albumsSortingComparator;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (BOOL)canEditAlbums;
@@ -77,8 +75,8 @@
 - (void)dealloc;
 - (BOOL)didRegisteredWithUserInterfaceContext;
 - (void)didSave;
-- (void)enumerateDerivedAlbumLists:(id)arg1;
-- (void)enumerateDerivedIndexMappers:(id)arg1;
+- (void)enumerateDerivedAlbumLists:(id /* block */)arg1;
+- (void)enumerateDerivedIndexMappers:(id /* block */)arg1;
 - (int)filter;
 - (BOOL)hasAtLeastOneAlbum;
 - (BOOL)hasDerivedIndexMappers;

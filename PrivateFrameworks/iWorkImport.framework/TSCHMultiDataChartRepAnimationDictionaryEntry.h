@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSCHMultiDataLayerAnimationInfo;
-
 @interface TSCHMultiDataChartRepAnimationDictionaryEntry : NSObject {
     TSCHMultiDataLayerAnimationInfo *mAnimationInfo;
     NSMutableArray *mAnimations;

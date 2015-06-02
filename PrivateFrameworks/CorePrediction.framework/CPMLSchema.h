@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-@class NSMutableArray, NSMutableString;
-
 @interface CPMLSchema : NSObject {
     NSMutableArray *attribute;
     NSMutableArray *availableOptions;
@@ -16,12 +14,12 @@
     int yColumnPosition;
 }
 
-@property(readonly) NSMutableArray * attribute;
-@property(readonly) NSMutableArray * availableOptions;
-@property(readonly) NSMutableArray * indexColumnList;
-@property(readonly) NSMutableArray * nsRemapTable;
-@property(readonly) NSMutableString * schemaHeader;
-@property(readonly) NSMutableString * schemaHeaderWithType;
+@property (nonatomic, readonly) NSMutableArray *attribute;
+@property (nonatomic, readonly) NSMutableArray *availableOptions;
+@property (nonatomic, readonly) NSMutableArray *indexColumnList;
+@property (nonatomic, readonly) NSMutableArray *nsRemapTable;
+@property (nonatomic, readonly) NSMutableString *schemaHeader;
+@property (nonatomic, readonly) NSMutableString *schemaHeaderWithType;
 
 - (void).cxx_destruct;
 - (id)attribute;

@@ -6,7 +6,7 @@
     int _wheelOrientation;
 }
 
-@property int wheelOrientation;
+@property (nonatomic) int wheelOrientation;
 
 + (Class)layerClass;
 

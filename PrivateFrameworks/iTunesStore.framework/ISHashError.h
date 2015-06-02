@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
-
 @interface ISHashError : NSObject <NSCopying> {
     NSString *_actualHashString;
     NSString *_expectedHashString;
@@ -11,11 +9,11 @@
     long long _rangeStart;
 }
 
-@property(copy) NSString * actualHashString;
-@property(copy) NSString * expectedHashString;
-@property(readonly) NSString * hashFailureHeaderString;
-@property long long rangeEnd;
-@property long long rangeStart;
+@property (nonatomic, copy) NSString *actualHashString;
+@property (nonatomic, copy) NSString *expectedHashString;
+@property (nonatomic, readonly) NSString *hashFailureHeaderString;
+@property (nonatomic) long long rangeEnd;
+@property (nonatomic) long long rangeStart;
 
 - (id)actualHashString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

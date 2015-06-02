@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@class NSString;
-
 @interface XBLaunchStateRequest : NSObject <BSXPCCoding> {
     int _currentOrientation;
     BOOL _isLaunchingLive;
@@ -34,19 +32,19 @@
     unsigned int _statusBarState;
 }
 
-@property int currentOrientation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isLaunchingLive;
-@property BOOL isMainScene;
-@property int launchingOrientation;
-@property float scale;
-@property(copy) NSString * sceneID;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarJailRect;
-@property unsigned int statusBarState;
-@property(readonly) Class superclass;
+@property (nonatomic) int currentOrientation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isLaunchingLive;
+@property (nonatomic) BOOL isMainScene;
+@property (nonatomic) int launchingOrientation;
+@property (nonatomic) float scale;
+@property (nonatomic, copy) NSString *sceneID;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarJailRect;
+@property (nonatomic) unsigned int statusBarState;
+@property (readonly) Class superclass;
 
 - (int)currentOrientation;
 - (void)dealloc;

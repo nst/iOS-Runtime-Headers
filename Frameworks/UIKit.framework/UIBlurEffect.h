@@ -6,7 +6,7 @@
     int _style;
 }
 
-@property(readonly) int _style;
+@property (nonatomic, readonly) int _style;
 
 + (id)effectWithStyle:(int)arg1;
 + (BOOL)supportsSecureCoding;

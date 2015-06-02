@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITracklistViewElement;
+@interface SKUITracklistPageComponent : SKUIPageComponent
 
-@interface SKUITracklistPageComponent : SKUIPageComponent {
-}
-
-@property(readonly) SKUITracklistViewElement * viewElement;
+@property (nonatomic, readonly) SKUITracklistViewElement *viewElement;
 
 - (int)componentType;
 - (id)initWithViewElement:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareBehaviorServices.framework/SoftwareBehaviorServices
  */
 
-@class <SBManagerClientDelegate>, NSXPCConnection;
-
 @interface SBManagerClient : NSObject <SBManagerClientInterface> {
     int _clientType;
     BOOL _connected;
@@ -13,32 +11,32 @@
     BOOL _serverIsExiting;
 }
 
-@property int clientType;
-@property <SBManagerClientDelegate> * delegate;
-@property struct dispatch_queue_s { }* queue;
+@property (nonatomic) int clientType;
+@property (nonatomic) <SBManagerClientDelegate> *delegate;
+@property struct dispatch_queue_s { }*queue;
 
 - (void)_invalidateConnection;
 - (id)_remoteInterface;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1;
-- (id)_remoteInterfaceWithErrorHandler:(id)arg1 connectIfNecessary:(BOOL)arg2;
+- (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1;
+- (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(BOOL)arg2;
 - (void)_setClientType;
-- (void)checkForSoftwareBehaviorBundleUpdate:(id)arg1;
+- (void)checkForSoftwareBehaviorBundleUpdate:(id /* block */)arg1;
 - (int)clientType;
 - (void)connectToServerIfNecessary;
-- (void)copySoftwareBehaviorValue:(id)arg1 replyHandler:(id)arg2;
+- (void)copySoftwareBehaviorValue:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
 - (void)invalidate;
-- (void)isSoftwareBehaviorBundleSupported:(id)arg1;
+- (void)isSoftwareBehaviorBundleSupported:(id /* block */)arg1;
 - (void)noteConnectionDropped;
 - (void)noteServerExiting;
 - (struct dispatch_queue_s { }*)queue;
 - (void)setClientType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(struct dispatch_queue_s { }*)arg1;
-- (void)setSoftwareBehaviorID:(id)arg1 withBundle:(id)arg2 replyHandler:(id)arg3;
+- (void)setSoftwareBehaviorID:(id)arg1 withBundle:(id)arg2 replyHandler:(id /* block */)arg3;
 
 @end

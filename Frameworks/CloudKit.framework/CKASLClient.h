@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface CKASLClient : NSObject {
     struct __asl_object_s { } *_aslClient;
     int _logLevel;
     NSObject<OS_dispatch_queue> *_logQueue;
 }
 
-@property struct __asl_object_s { }* aslClient;
-@property int logLevel;
-@property(retain) NSObject<OS_dispatch_queue> * logQueue;
+@property (nonatomic) struct __asl_object_s { }*aslClient;
+@property (nonatomic) int logLevel;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *logQueue;
 
 + (id)ASLClient;
 
@@ -28,7 +26,7 @@
 - (int)logLevel;
 - (unsigned int)logLevelForASL;
 - (id)logQueue;
-- (void)performLoggingBlock:(id)arg1;
+- (void)performLoggingBlock:(id /* block */)arg1;
 - (void)setAslClient:(struct __asl_object_s { }*)arg1;
 - (void)setLogLevel:(int)arg1;
 - (void)setLogQueue:(id)arg1;

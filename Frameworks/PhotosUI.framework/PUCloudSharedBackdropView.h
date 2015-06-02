@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIView;
-
 @interface PUCloudSharedBackdropView : UIView {
     UIView *_backdropView;
     BOOL _hasRoundedCorners;
     BOOL _isMask;
 }
 
-@property BOOL hasRoundedCorners;
+@property (nonatomic) BOOL hasRoundedCorners;
 
 - (void).cxx_destruct;
 - (BOOL)hasRoundedCorners;

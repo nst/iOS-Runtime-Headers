@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class <AVSpeechSynthesizerDelegate>;
-
 @interface AVSpeechSynthesizer : NSObject {
     <AVSpeechSynthesizerDelegate> *delegate;
     BOOL paused;
     BOOL speaking;
 }
 
-@property <AVSpeechSynthesizerDelegate> * delegate;
-@property(getter=isPaused,readonly) BOOL paused;
-@property(getter=isSpeaking,readonly) BOOL speaking;
+@property (nonatomic) <AVSpeechSynthesizerDelegate> *delegate;
+@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (getter=isSpeaking, nonatomic, readonly) BOOL speaking;
 
 + (void)initialize;
 

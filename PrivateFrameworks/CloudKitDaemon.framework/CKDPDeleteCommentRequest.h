@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier;
-
 @interface CKDPDeleteCommentRequest : PBRequest <NSCopying> {
     CKDPIdentifier *_commentId;
 }
 
-@property(retain) CKDPIdentifier * commentId;
-@property(readonly) BOOL hasCommentId;
+@property (nonatomic, retain) CKDPIdentifier *commentId;
+@property (nonatomic, readonly) BOOL hasCommentId;
 
 + (id)options;
 

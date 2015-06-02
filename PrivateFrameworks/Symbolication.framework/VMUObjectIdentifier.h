@@ -2,34 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSHashTable, NSMapTable, NSMutableSet, VMUClassInfoMap, VMUNonOverlappingRangeArray;
-
 @interface VMUObjectIdentifier : NSObject {
     VMUClassInfoMap *_cfTypeIDtoClassInfo;
     unsigned long _coreFoundationCFTypeIsa;
     unsigned long _foundationCFTypeIsa;
     VMUClassInfoMap *_isaToClassInfo;
     NSMapTable *_isaToObjectLabelHandlerMap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _isaTranslator;
-
+    id /* block */ _isaTranslator;
     NSMapTable *_itemCountToLabelStringUniquingMap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _memoryReader;
-
+    id /* block */ _memoryReader;
     unsigned int *_nonPointerIndexMapping;
     NSHashTable *_objcRuntimeMallocBlocksHash;
     void *_remoteObjectBuffer;
     unsigned long _remoteObjectBufferSize;
-    struct VMULabelUniquingDataForStringType { id x1; id x2; } *_stringToLabelStringUniquingData;
+    struct VMULabelUniquingDataForStringType { id x1; } *_stringToLabelStringUniquingData;
     NSMutableSet *_stringUniquingSet;
     unsigned int _swiftClassCount;
     struct _CSTypeRef { 
@@ -53,17 +39,17 @@
 - (id)classInfoForObject:(unsigned long long)arg1;
 - (id)classInfoForObjectWithRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)dealloc;
-- (void)enumerateAllClassInfosWithBlock:(id)arg1;
-- (void)enumerateRealizedClassInfosWithBlock:(id)arg1;
+- (void)enumerateAllClassInfosWithBlock:(id /* block */)arg1;
+- (void)enumerateRealizedClassInfosWithBlock:(id /* block */)arg1;
 - (void)findCFTypes;
 - (void)findObjCclasses;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)labelForItemCount:(long)arg1;
 - (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 usingHandlerBlock:(id)arg2;
+- (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 usingHandlerBlock:(id /* block */)arg2;
 - (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2;
-- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 usingHandlerBlock:(id)arg3;
+- (id)labelForMemory:(void*)arg1 length:(unsigned int)arg2 usingHandlerBlock:(id /* block */)arg3;
 - (id)labelForNSArray:(id)arg1;
 - (id)labelForNSCFDictionary:(id)arg1;
 - (id)labelForNSCFSet:(id)arg1;

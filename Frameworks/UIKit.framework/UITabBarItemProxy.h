@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITabBarItem, UIView;
-
 @interface UITabBarItemProxy : NSObject {
     UITabBarItem *_item;
     UIView *_view;

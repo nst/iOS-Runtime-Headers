@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUNowPlayingTransportControlsDelegate>, MPQueueFeeder;
-
 @interface MPUNowPlayingTransportControls : MPTransportControls {
     <MPUNowPlayingTransportControlsDelegate> *_delegate;
     MPQueueFeeder *_feeder;
 }
 
-@property(readonly) float _innerControlMargin;
-@property(readonly) float _nextButtonVInset;
-@property(readonly) float _outterControlMargin;
-@property(readonly) float _playPauseBottomVInset;
-@property <MPUNowPlayingTransportControlsDelegate> * delegate;
+@property (nonatomic, readonly) float _innerControlMargin;
+@property (nonatomic, readonly) float _nextButtonVInset;
+@property (nonatomic, readonly) float _outterControlMargin;
+@property (nonatomic, readonly) float _playPauseBottomVInset;
+@property (nonatomic) <MPUNowPlayingTransportControlsDelegate> *delegate;
 
 + (Class)buttonClass;
 + (BOOL)buttonImagesUseBackgroundImage;

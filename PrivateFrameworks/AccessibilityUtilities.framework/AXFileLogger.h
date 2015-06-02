@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSString;
-
 @interface AXFileLogger : NSObject {
     NSString *_filePath;
 }
 
-@property(copy) NSString * filePath;
+@property (nonatomic, copy) NSString *filePath;
 
 + (id)defaultFileLogger;
 

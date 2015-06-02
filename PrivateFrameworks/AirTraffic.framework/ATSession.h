@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class <ATMessageLink>, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListenerEndpoint;
-
 @interface ATSession : NSObject <ATSessionConnection, NSSecureCoding> {
     BOOL _cancelled;
     NSXPCConnection *_connection;
@@ -28,23 +26,23 @@
     BOOL _suspended;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property(retain) NSString * dataClass;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(retain) NSXPCListenerEndpoint * endpoint;
-@property(copy) NSError * error;
-@property(getter=isFinished) BOOL finished;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * localizedDescription;
-@property <ATMessageLink> * messageLink;
+@property (getter=isCancelled) BOOL cancelled;
+@property (nonatomic, retain) NSString *dataClass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) double duration;
+@property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
+@property (copy) NSError *error;
+@property (getter=isFinished) BOOL finished;
+@property (readonly) unsigned int hash;
+@property (retain) NSString *localizedDescription;
+@property (nonatomic) <ATMessageLink> *messageLink;
 @property double progress;
-@property(getter=isRunning) BOOL running;
-@property(retain) NSString * sessionIdentifier;
-@property(retain) NSString * sessionTypeIdentifier;
-@property(readonly) Class superclass;
-@property(getter=isSuspended) BOOL suspended;
+@property (getter=isRunning) BOOL running;
+@property (retain) NSString *sessionIdentifier;
+@property (retain) NSString *sessionTypeIdentifier;
+@property (readonly) Class superclass;
+@property (getter=isSuspended) BOOL suspended;
 
 + (void)_cancelSessionWithIdentifier:(id)arg1;
 + (id)_remoteSessionsWithTypeIdentifier:(id)arg1;

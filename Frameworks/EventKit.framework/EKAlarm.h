@@ -2,26 +2,26 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKAlarm, EKCalendarItem, EKObjectToOneRelation, EKStructuredLocation, NSArray, NSDate, NSString;
-
 @interface EKAlarm : EKObject <NSCopying> {
     EKObjectToOneRelation *_locationRelation;
 }
 
-@property(readonly) NSString * UUID;
-@property(copy) NSDate * absoluteDate;
-@property(copy) NSDate * acknowledgedDate;
-@property(getter=isDefaultAlarm) BOOL defaultAlarm;
-@property(readonly) NSString * externalID;
-@property(readonly) BOOL isAbsolute;
-@property(readonly) BOOL isSnoozedAlarm;
-@property(retain) EKObjectToOneRelation * locationRelation;
-@property(retain) EKAlarm * originalAlarm;
-@property(retain) EKCalendarItem * owner;
-@property int proximity;
-@property double relativeOffset;
-@property(copy) NSArray * snoozedAlarms;
-@property(copy) EKStructuredLocation * structuredLocation;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSDate *absoluteDate;
+@property (nonatomic, copy) NSDate *acknowledgedDate;
+@property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
+@property (nonatomic, readonly) NSString *externalID;
+@property (readonly) BOOL isAbsolute;
+@property (nonatomic, readonly) BOOL isSnoozedAlarm;
+@property (nonatomic, retain) EKObjectToOneRelation *locationRelation;
+@property (nonatomic, retain) EKAlarm *originalAlarm;
+@property (nonatomic, retain) EKCalendarItem *owner;
+@property (nonatomic) int proximity;
+@property (nonatomic) double relativeOffset;
+@property (nonatomic, copy) NSArray *snoozedAlarms;
+@property (nonatomic, copy) EKStructuredLocation *structuredLocation;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 + (int)_currentAuthorizationStatus;
 + (id)alarmWithAbsoluteDate:(id)arg1;
@@ -33,7 +33,6 @@
 + (double)defaultGeofencedReminderRadius;
 
 - (id)UUID;
-- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
 - (id)_locationRelation;
 - (id)_originalAlarmRelation;
 - (id)_snoozedAlarmsRelation;
@@ -51,12 +50,7 @@
 - (BOOL)isDefaultAlarm;
 - (BOOL)isSnoozedAlarm;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (id)localizedAllDayDescription;
-- (id)localizedDescription;
-- (id)localizedDescriptionForReminder;
 - (id)locationRelation;
-- (id)longLocalizedAllDayDescription;
-- (id)longLocalizedDescription;
 - (id)originalAlarm;
 - (id)owner;
 - (id)ownerUUID;
@@ -76,5 +70,14 @@
 - (id)snoozedAlarms;
 - (id)structuredLocation;
 - (BOOL)validate:(id*)arg1;
+
+// Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
+
+- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
+- (id)localizedAllDayDescription;
+- (id)localizedDescription;
+- (id)localizedDescriptionForReminder;
+- (id)longLocalizedAllDayDescription;
+- (id)longLocalizedDescription;
 
 @end

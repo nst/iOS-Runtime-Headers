@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDInfoGeometry;
-
 @interface TSDMovieLayout : TSDMediaLayout {
     TSDInfoGeometry *mDynamicInfoGeometry;
 }

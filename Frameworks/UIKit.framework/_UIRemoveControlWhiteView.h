@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIRemoveControlWhiteView : UIView {
-}
+@interface _UIRemoveControlWhiteView : UIView
 
 - (id)init;
 - (void)setBackgroundColor:(id)arg1;

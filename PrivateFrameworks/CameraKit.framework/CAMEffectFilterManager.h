@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSMutableArray;
-
 @interface CAMEffectFilterManager : NSObject {
     NSMutableArray *_aggdNames;
     NSMutableArray *_effects;

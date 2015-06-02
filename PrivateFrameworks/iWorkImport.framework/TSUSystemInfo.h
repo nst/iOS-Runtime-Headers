@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUSystemInfo : NSObject {
-}
+@interface TSUSystemInfo : NSObject
 
 + (id)macAddress;
 + (id)operatingSystemName;

@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSString;
+@interface CPLPullChangeSession : CPLChangeSession <CPLAbstractObject>
 
-@interface CPLPullChangeSession : CPLChangeSession <CPLAbstractObject> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 - (id)_sessionLogDomain;
-- (void)acknowledgeChangeBatch:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)getChangeBatchWithCompletionHandler:(id)arg1;
+- (void)acknowledgeChangeBatch:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)getChangeBatchWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 
 @end

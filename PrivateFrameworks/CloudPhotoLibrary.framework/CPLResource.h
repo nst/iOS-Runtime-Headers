@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLResourceIdentity, NSString;
-
 @interface CPLResource : NSObject <NSCopying, NSSecureCoding> {
     BOOL _canGenerateDerivative;
     BOOL _generateDerivative;
@@ -12,11 +10,13 @@
     unsigned int _resourceType;
 }
 
-@property BOOL canGenerateDerivative;
-@property BOOL generateDerivative;
-@property(retain) CPLResourceIdentity * identity;
-@property(copy) NSString * itemIdentifier;
-@property unsigned int resourceType;
+@property (nonatomic) BOOL canGenerateDerivative;
+@property (nonatomic) BOOL generateDerivative;
+@property (nonatomic, retain) CPLResourceIdentity *identity;
+@property (nonatomic, copy) NSString *itemIdentifier;
+@property (nonatomic) unsigned int resourceType;
+
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 + (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (float)derivativeGenerationThreshold;
@@ -31,7 +31,6 @@
 - (id)bestFileNameForResource;
 - (BOOL)canGenerateDerivative;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deleteAfterUpload;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)generateDerivative;
@@ -44,10 +43,14 @@
 - (id)itemIdentifier;
 - (unsigned int)resourceType;
 - (void)setCanGenerateDerivative:(BOOL)arg1;
-- (void)setDeleteAfterUpload:(BOOL)arg1;
 - (void)setGenerateDerivative:(BOOL)arg1;
 - (void)setIdentity:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setResourceType:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (BOOL)deleteAfterUpload;
+- (void)setDeleteAfterUpload:(BOOL)arg1;
 
 @end

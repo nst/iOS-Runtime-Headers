@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureTwoAxis : TSCHChartFeatureCategory {
-}
+@interface TSCHChartFeatureTwoAxis : TSCHChartFeatureCategory
 
 - (id)defaultDataFileName;
 - (id)genericToSpecificPropertyMap;

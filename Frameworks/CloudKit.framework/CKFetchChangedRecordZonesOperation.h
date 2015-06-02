@@ -2,61 +2,43 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKServerChangeToken;
-
 @interface CKFetchChangedRecordZonesOperation : CKDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchChangedRecordZonesCompletionBlock;
-
+    id /* block */ _fetchChangedRecordZonesCompletionBlock;
     CKServerChangeToken *_previousServerChangeToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordZoneWithIDChangedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordZoneWithIDWasDeletedBlock;
-
+    id /* block */ _recordZoneWithIDChangedBlock;
+    id /* block */ _recordZoneWithIDWasDeletedBlock;
     unsigned int _resultsLimit;
     CKServerChangeToken *_serverChangeToken;
     int _status;
 }
 
-@property(copy) id fetchChangedRecordZonesCompletionBlock;
-@property(readonly) BOOL moreComing;
-@property(copy) CKServerChangeToken * previousServerChangeToken;
-@property(copy) id recordZoneWithIDChangedBlock;
-@property(copy) id recordZoneWithIDWasDeletedBlock;
-@property unsigned int resultsLimit;
-@property(retain) CKServerChangeToken * serverChangeToken;
-@property int status;
+@property (nonatomic, copy) id /* block */ fetchChangedRecordZonesCompletionBlock;
+@property (nonatomic, readonly) BOOL moreComing;
+@property (nonatomic, copy) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic, copy) id /* block */ recordZoneWithIDChangedBlock;
+@property (nonatomic, copy) id /* block */ recordZoneWithIDWasDeletedBlock;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (id)fetchChangedRecordZonesCompletionBlock;
+- (id /* block */)fetchChangedRecordZonesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
 - (BOOL)moreComing;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
-- (id)recordZoneWithIDChangedBlock;
-- (id)recordZoneWithIDWasDeletedBlock;
+- (id /* block */)recordZoneWithIDChangedBlock;
+- (id /* block */)recordZoneWithIDWasDeletedBlock;
 - (unsigned int)resultsLimit;
 - (id)serverChangeToken;
-- (void)setFetchChangedRecordZonesCompletionBlock:(id)arg1;
+- (void)setFetchChangedRecordZonesCompletionBlock:(id /* block */)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setRecordZoneWithIDChangedBlock:(id)arg1;
-- (void)setRecordZoneWithIDWasDeletedBlock:(id)arg1;
+- (void)setRecordZoneWithIDChangedBlock:(id /* block */)arg1;
+- (void)setRecordZoneWithIDWasDeletedBlock:(id /* block */)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
 - (void)setServerChangeToken:(id)arg1;
 - (void)setStatus:(int)arg1;

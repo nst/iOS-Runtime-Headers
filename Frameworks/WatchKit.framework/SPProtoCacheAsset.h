@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
-
 @interface SPProtoCacheAsset : PBCodable <NSCopying> {
     double _accessDate;
     NSString *_key;
@@ -11,10 +9,10 @@
     unsigned int _state;
 }
 
-@property double accessDate;
-@property(retain) NSString * key;
-@property unsigned long long size;
-@property unsigned int state;
+@property (nonatomic) double accessDate;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) unsigned long long size;
+@property (nonatomic) unsigned int state;
 
 - (void).cxx_destruct;
 - (double)accessDate;

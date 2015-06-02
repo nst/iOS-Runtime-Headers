@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyGroupItemDelegate>, ABCardPropertyGroup, CNContact, CNLabeledValue, NSArray, NSString, NSURL;
-
 @interface ABPropertyGroupItem : ABCardGroupItem {
     BOOL _allowsEmail;
     BOOL _allowsIMessage;
@@ -17,35 +15,35 @@
     CNLabeledValue *_originalLabeledValue;
 }
 
-@property BOOL allowsEmail;
-@property BOOL allowsIMessage;
-@property BOOL allowsPhone;
-@property(readonly) BOOL canRemove;
-@property(retain) CNContact * contact;
-@property(copy) NSArray * contacts;
-@property(readonly) NSURL * defaultActionURL;
-@property <ABPropertyGroupItemDelegate> * delegate;
-@property(readonly) NSString * displayLabel;
-@property(readonly) NSString * displayValue;
-@property(readonly) NSString * editingStringValue;
-@property(getter=isEmpty,readonly) BOOL empty;
-@property(getter=isFavorite,readonly) BOOL favorite;
-@property ABCardPropertyGroup * group;
-@property(retain) CNLabeledValue * labeledValue;
-@property(retain) NSArray * labeledValues;
-@property(readonly) BOOL modified;
-@property(readonly) id normalizedValue;
-@property(retain) CNLabeledValue * originalLabeledValue;
-@property(readonly) NSString * placeholderString;
-@property(readonly) NSString * property;
-@property(getter=isReadonly,readonly) BOOL readonly;
-@property(readonly) NSArray * supportedLabels;
+@property (nonatomic) BOOL allowsEmail;
+@property (nonatomic) BOOL allowsIMessage;
+@property (nonatomic) BOOL allowsPhone;
+@property (nonatomic, readonly) BOOL canRemove;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, copy) NSArray *contacts;
+@property (nonatomic, readonly) NSURL *defaultActionURL;
+@property (nonatomic) <ABPropertyGroupItemDelegate> *delegate;
+@property (nonatomic, readonly) NSString *displayLabel;
+@property (nonatomic, readonly) NSString *displayValue;
+@property (nonatomic, readonly) NSString *editingStringValue;
+@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
+@property (nonatomic) ABCardPropertyGroup *group;
+@property (nonatomic, retain) CNLabeledValue *labeledValue;
+@property (nonatomic, retain) NSArray *labeledValues;
+@property (nonatomic, readonly) BOOL modified;
+@property (nonatomic, readonly) id normalizedValue;
+@property (nonatomic, retain) CNLabeledValue *originalLabeledValue;
+@property (nonatomic, readonly) NSString *placeholderString;
+@property (nonatomic, readonly) NSString *property;
+@property (getter=isReadonly, nonatomic, readonly) BOOL readonly;
+@property (nonatomic, readonly) NSArray *supportedLabels;
 
 + (id)newPropertyGroupItemForProperty:(id)arg1;
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contact:(id)arg3;
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contacts:(id)arg3;
 
-- (void)_enumerateContactsAndValuesWithBlock:(id)arg1;
+- (void)_enumerateContactsAndValuesWithBlock:(id /* block */)arg1;
 - (BOOL)allowsEmail;
 - (BOOL)allowsIMessage;
 - (BOOL)allowsPhone;

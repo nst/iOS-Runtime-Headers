@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDAccessoryManager, HMDHomeManager, HMDRoom, HMMessageDispatcher, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMDHome : NSObject <HMDAccessoryManagerDelegate, HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_accessories;
     HMDAccessoryManager *_accessoryManager;
@@ -28,33 +26,33 @@
     NSMutableArray *_zones;
 }
 
-@property(retain) NSMutableArray * accessories;
-@property(retain) HMDAccessoryManager * accessoryManager;
-@property(retain) NSMutableArray * actionSets;
-@property(getter=isAdminUser) BOOL adminUser;
-@property(retain) NSString * administratorName;
-@property long bootupRemoteAccessOnceToken;
-@property int configurationVersion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property HMDHomeManager * homeManager;
-@property int lastKnownReachableAccessoryCount;
-@property int lastKnownReachableIPAccessoryCount;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(retain) NSString * name;
-@property(retain) HMDRoom * roomForEntireHome;
-@property(retain) NSMutableArray * rooms;
-@property(retain) NSMutableArray * serviceGroups;
-@property(retain) NSMutableArray * services;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * triggers;
-@property(retain) NSMutableArray * users;
-@property(readonly) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property(retain) NSMutableArray * zones;
+@property (nonatomic, retain) NSMutableArray *accessories;
+@property (nonatomic, retain) HMDAccessoryManager *accessoryManager;
+@property (nonatomic, retain) NSMutableArray *actionSets;
+@property (getter=isAdminUser, nonatomic) BOOL adminUser;
+@property (nonatomic, retain) NSString *administratorName;
+@property (nonatomic) long bootupRemoteAccessOnceToken;
+@property (nonatomic) int configurationVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) HMDHomeManager *homeManager;
+@property (nonatomic) int lastKnownReachableAccessoryCount;
+@property (nonatomic) int lastKnownReachableIPAccessoryCount;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) HMDRoom *roomForEntireHome;
+@property (nonatomic, retain) NSMutableArray *rooms;
+@property (nonatomic, retain) NSMutableArray *serviceGroups;
+@property (nonatomic, retain) NSMutableArray *services;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *triggers;
+@property (nonatomic, retain) NSMutableArray *users;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, retain) NSMutableArray *zones;
 
 + (BOOL)isObjectContainedInHome:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -93,26 +91,26 @@
 - (void)_handleRetrievalForBlockedAccessory:(id)arg1 blockedBridgedAccessories:(id)arg2 unblockMessage:(id)arg3 error:(id)arg4;
 - (void)_handleUnblock:(id)arg1;
 - (void)_notifyChangedCharacteristics:(id)arg1;
-- (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)_performAddPairingForUser:(id)arg1 destination:(id)arg2 remotePeer:(BOOL)arg3 userPrivilege:(unsigned int)arg4 controllerInfo:(id)arg5 identifier:(id)arg6 responseHandler:(id)arg7;
+- (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_performAddPairingForUser:(id)arg1 destination:(id)arg2 remotePeer:(BOOL)arg3 userPrivilege:(unsigned int)arg4 controllerInfo:(id)arg5 identifier:(id)arg6 responseHandler:(id /* block */)arg7;
 - (id)_preferredAccessoryForAccessory:(id)arg1;
 - (id)_preferredCharacteristicForCharacteristic:(id)arg1;
 - (id)_prepareMultipleCharacteristicRead:(id)arg1;
 - (void)_reachabilityChangedForAccessory:(id)arg1 reachable:(BOOL)arg2;
-- (void)_readCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)_readCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_registerForMessages;
 - (void)_remoteAccessEnabled:(BOOL)arg1;
 - (void)_removeAccessories:(id)arg1 message:(id)arg2;
 - (void)_removeAccessoryWithUUID:(id)arg1 message:(id)arg2;
-- (void)_removeAdditionalUser:(id)arg1 fromAccessory:(id)arg2 completionHandler:(id)arg3;
-- (void)_removeAllAccessoriesWithCompletionHandler:(id)arg1 queue:(id)arg2;
-- (void)_removeAllUsersFromAccessory:(id)arg1 completionHandler:(id)arg2;
+- (void)_removeAdditionalUser:(id)arg1 fromAccessory:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_removeAllAccessoriesWithCompletionHandler:(id /* block */)arg1 queue:(id)arg2;
+- (void)_removeAllUsersFromAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeCharacteristic:(id)arg1;
 - (void)_removePairingsForAccessories:(id)arg1 controllerName:(id)arg2 controllerPublicKey:(id)arg3;
 - (void)_removeService:(id)arg1;
 - (void)_removeUser:(id)arg1 message:(id)arg2;
 - (void)_sendInviteRequestForUser:(id)arg1 userPrivilege:(unsigned int)arg2 confirm:(BOOL)arg3 message:(id)arg4;
-- (void)_writeCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)_writeCharacteristicValues:(id)arg1 identifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)accessories;
 - (id)accessoryManager;
 - (void)accessoryManager:(id)arg1 didAddPairedAccessories:(id)arg2 toBridgeAccessory:(id)arg3;
@@ -151,13 +149,13 @@
 - (void)notifyChangedCharacteristics:(id)arg1;
 - (void)notifyNewRemotePeersFound:(BOOL)arg1 remoteUsersRemoved:(id)arg2;
 - (void)notifySyncDataChanged;
-- (void)performAddPairingForRemoteAccessPoint:(id)arg1 destination:(id)arg2 controllerInfo:(id)arg3 responseHandler:(id)arg4;
+- (void)performAddPairingForRemoteAccessPoint:(id)arg1 destination:(id)arg2 controllerInfo:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)reEvaluateTriggers;
 - (void)reachabilityChangedForAccessory:(id)arg1 reachable:(BOOL)arg2;
 - (int)reachableAccessories;
 - (int)reachableIPAccessories;
 - (void)remoteAccessEnabled:(BOOL)arg1;
-- (void)removeAllAccessoriesWithCompletionHandler:(id)arg1 queue:(id)arg2;
+- (void)removeAllAccessoriesWithCompletionHandler:(id /* block */)arg1 queue:(id)arg2;
 - (void)removeCharacteristic:(id)arg1;
 - (id)removeName:(id)arg1;
 - (void)removeService:(id)arg1;
@@ -201,7 +199,7 @@
 - (id)users;
 - (id)uuid;
 - (id)workQueue;
-- (void)writeCharacteristicValues:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)writeCharacteristicValues:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)writeRequestTuplesFromMessage:(id)arg1;
 - (id)zoneWithName:(id)arg1;
 - (id)zoneWithUUID:(id)arg1;

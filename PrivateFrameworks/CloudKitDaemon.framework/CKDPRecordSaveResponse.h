@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDateStatistics, CKDPRecord, NSString;
-
 @interface CKDPRecordSaveResponse : PBCodable <NSCopying> {
     NSString *_etag;
     CKDPRecord *_serverFields;
     CKDPDateStatistics *_timeStatistics;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasServerFields;
-@property(readonly) BOOL hasTimeStatistics;
-@property(retain) CKDPRecord * serverFields;
-@property(retain) CKDPDateStatistics * timeStatistics;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasServerFields;
+@property (nonatomic, readonly) BOOL hasTimeStatistics;
+@property (nonatomic, retain) CKDPRecord *serverFields;
+@property (nonatomic, retain) CKDPDateStatistics *timeStatistics;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

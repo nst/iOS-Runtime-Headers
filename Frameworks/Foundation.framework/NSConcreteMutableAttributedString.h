@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableRLEArray, NSMutableString;
-
 @interface NSConcreteMutableAttributedString : NSMutableAttributedString {
     struct { 
         unsigned int attributeFixingDisabled : 8; 

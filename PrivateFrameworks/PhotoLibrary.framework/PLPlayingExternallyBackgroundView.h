@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UILabel;
-
 @interface PLPlayingExternallyBackgroundView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -16,7 +14,7 @@
     UILabel *_titleLabel;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 
 - (id)_newLabelWithText:(id)arg1 withFont:(id)arg2;
 - (void)_updateSizeForLabel:(id)arg1;

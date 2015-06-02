@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class KeychainSyncCountryInfo, NSString;
-
 @interface PSKeychainSyncPhoneNumber : NSObject {
     KeychainSyncCountryInfo *_countryInfo;
     NSString *_digits;
 }
 
-@property(retain) KeychainSyncCountryInfo * countryInfo;
-@property(retain) NSString * digits;
+@property (nonatomic, retain) KeychainSyncCountryInfo *countryInfo;
+@property (nonatomic, retain) NSString *digits;
 
 + (id)phoneNumberWithDigits:(id)arg1 countryInfo:(id)arg2;
 

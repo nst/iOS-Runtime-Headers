@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface FBOcclusionsStack : NSObject {
     NSMutableSet *_dirtyKeys;
     NSMutableDictionary *_keyToEntry;
@@ -15,7 +13,7 @@
 - (void)_adjustEntry:(id)arg1 forLevel:(float)arg2 occlusions:(id)arg3;
 - (void)dealloc;
 - (id)dirtyKeys;
-- (void)enumerateKeysByLevelWithBlock:(id)arg1;
+- (void)enumerateKeysByLevelWithBlock:(id /* block */)arg1;
 - (id)init;
 - (BOOL)isDirty;
 - (BOOL)isEmpty;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyboardBehaviors_Autocorrect : TIKeyboardBehaviors {
-}
+@interface TIKeyboardBehaviors_Autocorrect : TIKeyboardBehaviors
 
 - (id)keyBehaviorsForState:(id)arg1;
 

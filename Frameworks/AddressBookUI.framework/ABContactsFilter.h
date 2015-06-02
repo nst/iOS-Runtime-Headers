@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSString;
-
 @interface ABContactsFilter : NSObject {
     void *_addressBook;
     void *_directorySource;
@@ -12,17 +10,17 @@
     NSArray *_sources;
 }
 
-@property(readonly) void* addressBook;
-@property(readonly) void* directorySource;
-@property(getter=isEditable,readonly) BOOL editable;
-@property(readonly) void* groupForNewRecords;
-@property(readonly) NSArray * groups;
-@property(readonly) BOOL isDirectory;
-@property(readonly) NSString * name;
-@property(readonly) BOOL shouldChangeModelSelectionWhenDisplayed;
-@property(readonly) BOOL showsAllContacts;
-@property(readonly) void* sourceForNewRecords;
-@property(readonly) NSArray * sources;
+@property (nonatomic, readonly) void*addressBook;
+@property (nonatomic, readonly) void*directorySource;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (nonatomic, readonly) void*groupForNewRecords;
+@property (nonatomic, readonly) NSArray *groups;
+@property (nonatomic, readonly) BOOL isDirectory;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL shouldChangeModelSelectionWhenDisplayed;
+@property (nonatomic, readonly) BOOL showsAllContacts;
+@property (nonatomic, readonly) void*sourceForNewRecords;
+@property (nonatomic, readonly) NSArray *sources;
 
 + (id)_newContactsFilterFromGroupWrapperRepresentation:(id)arg1 withAddressBook:(void*)arg2;
 + (id)newContactsFilterFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;

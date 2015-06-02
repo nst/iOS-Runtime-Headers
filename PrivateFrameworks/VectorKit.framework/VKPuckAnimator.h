@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKPuckAnimatorDelegate>, <VKPuckAnimatorTarget>, GEORouteMatch, VKAnimation, VKPuckAnimatorLocationProjector, VKRunningCurve;
-
 @interface VKPuckAnimator : NSObject {
     VKAnimation *_animation;
     unsigned int _behavior;
@@ -23,11 +21,11 @@
     double _vehicleHeading;
 }
 
-@property unsigned int behavior;
-@property <VKPuckAnimatorDelegate> * delegate;
-@property(retain) GEORouteMatch * lastProjectedLocation;
-@property(retain) <VKPuckAnimatorTarget> * target;
-@property double tracePlaybackSpeedMultiplier;
+@property (nonatomic) unsigned int behavior;
+@property (nonatomic) <VKPuckAnimatorDelegate> *delegate;
+@property (nonatomic, retain) GEORouteMatch *lastProjectedLocation;
+@property (nonatomic, retain) <VKPuckAnimatorTarget> *target;
+@property (nonatomic) double tracePlaybackSpeedMultiplier;
 
 - (id).cxx_construct;
 - (void)_step;

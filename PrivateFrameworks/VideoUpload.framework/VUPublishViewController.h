@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class <VUPublishViewControllerDelegate>, NSArray, NSMutableArray, NSString, PLTableViewEditableCell, UIAlertView, UIImageView, UIPickerView, UITableView, UITableViewCell, UIView, VUCategory, VUCategoryCell, VUFooterContainerView;
-
 @interface VUPublishViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     long long _HDSize;
     long long _SDSize;
@@ -20,7 +18,7 @@
     BOOL _enableHDSection;
     VUFooterContainerView *_footerContainer;
     UIImageView *_headerImageView;
-    PLTableViewEditableCell *_optionCells[2];
+    PLTableViewEditableCell *_optionCells;
     UIPickerView *_picker;
     UIView *_pickerContainer;
     struct { 
@@ -40,20 +38,20 @@
     BOOL _viewShrunk;
 }
 
-@property long long HDSize;
-@property long long SDSize;
-@property(copy,readonly) NSString * debugDescription;
-@property <VUPublishViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL enableHDSection;
-@property(readonly) unsigned int hash;
-@property(readonly) int selectedOption;
-@property BOOL showHDSection;
-@property(readonly) Class superclass;
-@property(readonly) VUCategory * videoCategory;
-@property(readonly) NSString * videoDescription;
-@property(readonly) NSArray * videoTags;
-@property(readonly) NSString * videoTitle;
+@property (nonatomic) long long HDSize;
+@property (nonatomic) long long SDSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VUPublishViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enableHDSection;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int selectedOption;
+@property (nonatomic) BOOL showHDSection;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) VUCategory *videoCategory;
+@property (nonatomic, readonly) NSString *videoDescription;
+@property (nonatomic, readonly) NSArray *videoTags;
+@property (nonatomic, readonly) NSString *videoTitle;
 
 - (void).cxx_destruct;
 - (long long)HDSize;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
  */
 
-@interface NPSDomainAccessorUtils : NSObject {
-}
+@interface NPSDomainAccessorUtils : NSObject
 
 + (id)URLForObject:(id)arg1;
 + (id)arrayForObject:(id)arg1;

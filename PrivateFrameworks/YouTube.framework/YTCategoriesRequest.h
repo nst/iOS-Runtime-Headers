@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray;
-
 @interface YTCategoriesRequest : YTXMLHTTPRequest {
     NSMutableArray *_categories;
     id _delegate;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSMutableDictionary, NSMutableIndexSet, SGIntervalTreeNode;
-
 @interface SGIntervalTree : NSObject <SGIntervalTreeProtocol> {
     NSMutableDictionary *_keyToInterval;
     SGIntervalTreeNode *_root;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueProperty, NSObject, NSPointerArray;
-
 @interface NSKeyValueObservance : NSWeakCallback {
     BOOL _cachedIsShareable;
     unsigned int _cachedUnrotatedHashComponent;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoMessageDeletion : PBCodable <NSCopying> {
     unsigned int _deletionState;
     struct { 
@@ -12,10 +10,10 @@
     NSString *_messageId;
 }
 
-@property unsigned int deletionState;
-@property BOOL hasDeletionState;
-@property(readonly) BOOL hasMessageId;
-@property(retain) NSString * messageId;
+@property (nonatomic) unsigned int deletionState;
+@property (nonatomic) BOOL hasDeletionState;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, retain) NSString *messageId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

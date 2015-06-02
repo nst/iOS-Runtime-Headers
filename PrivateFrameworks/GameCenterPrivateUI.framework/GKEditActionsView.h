@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class CALayer, GKCollectionViewCell, NSArray, NSString;
-
 @interface GKEditActionsView : UIView <UIActionSheetDelegate> {
     NSArray *_actionButtons;
     GKCollectionViewCell *_cell;
@@ -12,15 +10,15 @@
     float _visibleWidth;
 }
 
-@property(retain) NSArray * actionButtons;
-@property GKCollectionViewCell * cell;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * editActionConstraints;
-@property(readonly) unsigned int hash;
-@property(retain) CALayer * maskLayer;
-@property(readonly) Class superclass;
-@property float visibleWidth;
+@property (nonatomic, retain) NSArray *actionButtons;
+@property (nonatomic) GKCollectionViewCell *cell;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *editActionConstraints;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CALayer *maskLayer;
+@property (readonly) Class superclass;
+@property (nonatomic) float visibleWidth;
 
 - (id)actionButtons;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UINavigationItem, UIView;
-
 @interface UINavigationItemView : UIView {
     UIView *_bottomCrossView;
     BOOL _customFontSet;
@@ -18,7 +16,7 @@
     UIView *_topCrossView;
 }
 
-@property(setter=_setFadingInFromCustomAlpha:) BOOL _isFadingInFromCustomAlpha;
+@property (setter=_setFadingInFromCustomAlpha:, nonatomic) BOOL _isFadingInFromCustomAlpha;
 
 - (void)_adjustLabelTrackingIfNecessary;
 - (void)_cleanUpCrossView;

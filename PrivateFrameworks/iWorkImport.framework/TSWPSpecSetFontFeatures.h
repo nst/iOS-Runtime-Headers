@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSWPSpecSetFontFeatures : TSWPSpecFontFeatures {
     NSArray *_fontFeatures;
     BOOL _unset;

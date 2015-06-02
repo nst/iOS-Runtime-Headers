@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISStoreURLOperation, NSArray, NSString, SUClientInterface, SUScriptTextFieldDelegate, SUSearchDisplayController, SUSearchFieldConfiguration, UIControl, UISearchBar;
-
 @interface SUSearchFieldController : NSObject <ISStoreURLOperationDelegate, SUScriptTextFieldDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SUClientInterface *_clientInterface;
     NSArray *_completions;
@@ -16,14 +14,14 @@
     SUScriptTextFieldDelegate *_textFieldDelegate;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UISearchBar * searchBar;
-@property(copy) SUSearchFieldConfiguration * searchFieldConfiguration;
-@property int searchFieldStyle;
-@property(readonly) Class superclass;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, copy) SUSearchFieldConfiguration *searchFieldConfiguration;
+@property (nonatomic) int searchFieldStyle;
+@property (readonly) Class superclass;
 
 - (id)_cancelButtonView;
 - (void)_cancelCompletionsOperation;
@@ -43,7 +41,7 @@
 - (void)_saveSearchTermToDefaults:(id)arg1;
 - (void)_savedSearchTermChangedNotification:(id)arg1;
 - (id)_searchGroupForSearchKind:(id)arg1;
-- (void)_sendOnXEventWithTerm:(id)arg1 URL:(id)arg2 completionBlock:(id)arg3;
+- (void)_sendOnXEventWithTerm:(id)arg1 URL:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_showDimmerView;
 - (id)_targetViewController;
 - (void)_tearDownDimmerView;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasGridCellStyle, MPUExtrasGridHeaderStyle, MPUExtrasGridSectionHeaderStyle, NSDictionary, NSString, UIColor;
-
 @interface MPUExtrasGridViewControllerStyle : NSObject {
     BOOL _adjustsContentInsetByBottomNavBar;
     UIColor *_backgroundColor;
@@ -60,29 +58,29 @@
     float _videoSpacing;
 }
 
-@property BOOL adjustsContentInsetByBottomNavBar;
-@property(retain) UIColor * backgroundColor;
-@property float cellLineSpacing;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionViewInsets;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } defaultCellSectionInsets;
-@property(retain) MPUExtrasGridCellStyle * defaultCellStyle;
-@property float defaultSpacing;
-@property(retain) NSDictionary * detailDefaultFontAttributes;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } detailInsets;
-@property(retain) UIColor * detailTextColor;
-@property(retain) NSString * detailTextStyle;
-@property(retain) MPUExtrasGridHeaderStyle * headerStyle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageCellSectionInsets;
-@property(retain) MPUExtrasGridCellStyle * imageCellStyle;
-@property float imageSpacing;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } productCellSectionInsets;
-@property(retain) MPUExtrasGridCellStyle * productCellStyle;
-@property float productSpacing;
-@property(retain) MPUExtrasGridSectionHeaderStyle * sectionHeaderStyle;
-@property BOOL showsScrollFade;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } videoCellSectionInsets;
-@property(retain) MPUExtrasGridCellStyle * videoCellStyle;
-@property float videoSpacing;
+@property (nonatomic) BOOL adjustsContentInsetByBottomNavBar;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) float cellLineSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionViewInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } defaultCellSectionInsets;
+@property (nonatomic, retain) MPUExtrasGridCellStyle *defaultCellStyle;
+@property (nonatomic) float defaultSpacing;
+@property (nonatomic, retain) NSDictionary *detailDefaultFontAttributes;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } detailInsets;
+@property (nonatomic, retain) UIColor *detailTextColor;
+@property (nonatomic, retain) NSString *detailTextStyle;
+@property (nonatomic, retain) MPUExtrasGridHeaderStyle *headerStyle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageCellSectionInsets;
+@property (nonatomic, retain) MPUExtrasGridCellStyle *imageCellStyle;
+@property (nonatomic) float imageSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } productCellSectionInsets;
+@property (nonatomic, retain) MPUExtrasGridCellStyle *productCellStyle;
+@property (nonatomic) float productSpacing;
+@property (nonatomic, retain) MPUExtrasGridSectionHeaderStyle *sectionHeaderStyle;
+@property (nonatomic) BOOL showsScrollFade;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } videoCellSectionInsets;
+@property (nonatomic, retain) MPUExtrasGridCellStyle *videoCellStyle;
+@property (nonatomic) float videoSpacing;
 
 - (void).cxx_destruct;
 - (BOOL)adjustsContentInsetByBottomNavBar;

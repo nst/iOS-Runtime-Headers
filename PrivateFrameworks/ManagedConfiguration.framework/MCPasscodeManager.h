@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCPasscodeManager : NSObject {
-}
+@interface MCPasscodeManager : NSObject
 
 + (BOOL)_passcodeCharacteristics:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 outError:(id*)arg3;
 + (id)characteristicsDictionaryFromPasscode:(id)arg1;
@@ -32,7 +31,7 @@
 - (void)lockDeviceImmediately:(BOOL)arg1;
 - (int)newPasscodeEntryScreenType;
 - (BOOL)passcode:(id)arg1 compliesWithPolicyCheckHistory:(BOOL)arg2 outError:(id*)arg3;
-- (void)passcodeExpiryDateCompletionBlock:(id)arg1;
+- (void)passcodeExpiryDateCompletionBlock:(id /* block */)arg1;
 - (id)passcodeExpiryDateOutError:(id*)arg1;
 - (BOOL)unlockDeviceWithPasscode:(id)arg1 outError:(id*)arg2;
 

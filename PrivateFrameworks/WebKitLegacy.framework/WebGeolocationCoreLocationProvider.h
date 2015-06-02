@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class <WebGeolocationCoreLocationUpdateListener>, NSString;
-
 @interface WebGeolocationCoreLocationProvider : NSObject <CLLocationManagerDelegate> {
     BOOL _isWaitingForAuthorization;
     int _lastAuthorizationStatus;
@@ -13,10 +11,10 @@
     <WebGeolocationCoreLocationUpdateListener> *_positionListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

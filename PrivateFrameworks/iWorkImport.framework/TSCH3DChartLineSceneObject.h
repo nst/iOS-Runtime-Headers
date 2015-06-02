@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartLineSceneObject : TSCH3DChartSeriesSceneObject {
-}
+@interface TSCH3DChartLineSceneObject : TSCH3DChartSeriesSceneObject
 
 + (float)chartSeriesDepth;
 + (id)chartSeriesType;
-+ (struct MeshData { id x1; id x2; })createMeshForSeries:(id)arg1;
++ (struct MeshData { id x1; })createMeshForSeries:(id)arg1;
 + (BOOL)supportsChartSeriesDepthOffset;
 
 - (struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; })edgeDetectionParameters;

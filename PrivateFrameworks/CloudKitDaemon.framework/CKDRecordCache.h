@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, NSObject<OS_dispatch_queue>;
-
 @interface CKDRecordCache : CKSQLite {
     CKDClientContext *_context;
     NSObject<OS_dispatch_queue> *_queue;
     int _scope;
 }
 
-@property(retain) CKDClientContext * context;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property int scope;
+@property (nonatomic, retain) CKDClientContext *context;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) int scope;
 
 - (void).cxx_destruct;
 - (BOOL)_cachedRecordHasValidAssets:(id)arg1 forRequiredKeys:(id)arg2;

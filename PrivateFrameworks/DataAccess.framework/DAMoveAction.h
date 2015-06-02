@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAMoveAction : DAAction {
     NSString *_destinationContainerId;
     NSString *_sourceContainerId;
     NSString *_sourceServerId;
 }
 
-@property(retain) NSString * destinationContainerId;
-@property(retain) NSString * sourceContainerId;
-@property(retain) NSString * sourceServerId;
+@property (nonatomic, retain) NSString *destinationContainerId;
+@property (nonatomic, retain) NSString *sourceContainerId;
+@property (nonatomic, retain) NSString *sourceServerId;
 
 - (void).cxx_destruct;
 - (id)destinationContainerId;

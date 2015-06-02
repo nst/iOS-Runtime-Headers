@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableData;
-
 @interface VKTriangulator : NSObject {
     unsigned int *_mesh;
     unsigned int _mesh_capacity;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKAddPassesViewControllerDelegate>, NSArray, NSDate, NSURL, PKRemoteAddPassesViewController, _UIAsyncInvocation;
-
 @interface PKAddPassesViewController : UIViewController {
     NSURL *_URL;
     BOOL _allowsPassIngestion;
@@ -17,12 +15,12 @@
     BOOL _viewHasAppeared;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) _UIAsyncInvocation * cancelViewServiceRequest;
-@property <PKAddPassesViewControllerDelegate> * delegate;
-@property(retain) NSArray * passes;
-@property int previousStatusBarStyle;
-@property(retain) PKRemoteAddPassesViewController * remoteViewController;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) _UIAsyncInvocation *cancelViewServiceRequest;
+@property (nonatomic) <PKAddPassesViewControllerDelegate> *delegate;
+@property (nonatomic, retain) NSArray *passes;
+@property (nonatomic) int previousStatusBarStyle;
+@property (nonatomic, retain) PKRemoteAddPassesViewController *remoteViewController;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (BOOL)canAddPasses;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTranscriptJunkHeaderDelegate>, NSString;
-
 @interface CKTranscriptJunkHeaderViewController : CKTranscriptHeaderViewController <UIPopoverPresentationControllerDelegate> {
     <CKTranscriptJunkHeaderDelegate> *_delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CKTranscriptJunkHeaderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKTranscriptJunkHeaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_ignoreButtonPressed:(id)arg1;
 - (void)_reportJunkButtonPressed:(id)arg1;

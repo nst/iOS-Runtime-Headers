@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSError, NSString;
-
 @interface BRCDesiredVersion : BRCVersion <PQLBindable> {
     NSError *_downloadError;
     union { 
@@ -17,16 +15,16 @@
     NSString *_serverName;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * downloadError;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isFault;
-@property unsigned int options;
-@property(readonly) NSString * serverName;
-@property(readonly) Class superclass;
-@property(readonly) BOOL userInitiated;
-@property(readonly) BOOL wantsContent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *downloadError;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isFault;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, readonly) NSString *serverName;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL userInitiated;
+@property (nonatomic, readonly) BOOL wantsContent;
 
 + (BOOL)supportsSecureCoding;
 

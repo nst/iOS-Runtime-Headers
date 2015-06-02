@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLFacebookLoginInfoViewControllerDelegate>, SLFacebookLoginInfoFooter;
-
 @interface SLFacebookLoginInfoViewController : UITableViewController {
     <SLFacebookLoginInfoViewControllerDelegate> *_delegate;
     SLFacebookLoginInfoFooter *_footerView;
 }
 
-@property <SLFacebookLoginInfoViewControllerDelegate> * delegate;
+@property (nonatomic) <SLFacebookLoginInfoViewControllerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_cancelTapped:(id)arg1;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIScrollViewDelegate>, NSString, UIWebView;
-
 @interface _UIWebViewScrollViewDelegateForwarder : NSObject <UIScrollViewDelegate> {
     <UIScrollViewDelegate> *_delegate;
     UIWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <UIScrollViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property UIWebView * webView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIScrollViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) UIWebView *webView;
 
 - (id)delegate;
 - (void)forwardInvocation:(id)arg1;

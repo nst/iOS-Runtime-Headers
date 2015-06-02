@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class <HMAccessoryDelegate>, HMHome, HMMessageDispatcher, HMRoom, NSArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMAccessory : NSObject <HMMessageReceiver, NSSecureCoding> {
     BOOL _blocked;
     BOOL _bridgedAccessory;
@@ -20,28 +18,28 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(getter=isBlocked) BOOL blocked;
-@property(getter=isBridged,readonly) BOOL bridged;
-@property BOOL bridgedAccessory;
-@property(getter=isConfigured,readonly) BOOL configured;
-@property(copy,readonly) NSString * debugDescription;
-@property <HMAccessoryDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property HMHome * home;
-@property(copy,readonly) NSUUID * identifier;
-@property(copy) NSArray * identifiersForBridgedAccessories;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(copy) NSString * name;
-@property BOOL paired;
-@property(getter=isReachable) BOOL reachable;
-@property HMRoom * room;
-@property(copy) NSArray * services;
-@property(readonly) Class superclass;
-@property(copy) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (getter=isBlocked, nonatomic) BOOL blocked;
+@property (getter=isBridged, nonatomic, readonly) BOOL bridged;
+@property (nonatomic) BOOL bridgedAccessory;
+@property (getter=isConfigured, nonatomic, readonly) BOOL configured;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HMAccessoryDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) HMHome *home;
+@property (nonatomic, readonly, copy) NSUUID *identifier;
+@property (nonatomic, copy) NSArray *identifiersForBridgedAccessories;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) BOOL paired;
+@property (getter=isReachable, nonatomic) BOOL reachable;
+@property (nonatomic) HMRoom *room;
+@property (nonatomic, copy) NSArray *services;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)supportsSecureCoding;
 
@@ -63,7 +61,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)enableNotification:(BOOL)arg1 forCharacteristic:(id)arg2 completionHandler:(id)arg3;
+- (void)enableNotification:(BOOL)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)findService:(id)arg1;
@@ -71,7 +69,7 @@
 - (id)home;
 - (id)identifier;
 - (id)identifiersForBridgedAccessories;
-- (void)identifyWithCompletionHandler:(id)arg1;
+- (void)identifyWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isBlocked;
@@ -80,11 +78,11 @@
 - (BOOL)isReachable;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
-- (void)migrateDelegateToAccessory:(id)arg1 withCompletion:(id)arg2;
+- (void)migrateDelegateToAccessory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)msgDispatcher;
 - (id)name;
 - (BOOL)paired;
-- (void)readValueForCharacteristic:(id)arg1 completionHandler:(id)arg2;
+- (void)readValueForCharacteristic:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)room;
 - (id)services;
 - (void)setBlocked:(BOOL)arg1;
@@ -102,13 +100,13 @@
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)unconfigure;
-- (void)updateAssociatedServiceType:(id)arg1 forService:(id)arg2 completionHandler:(id)arg3;
-- (void)updateAuthorizationData:(id)arg1 forService:(id)arg2 characteristic:(id)arg3 completionHandler:(id)arg4;
-- (void)updateName:(id)arg1 completionHandler:(id)arg2;
-- (void)updateName:(id)arg1 forService:(id)arg2 completionHandler:(id)arg3;
-- (void)updateRoom:(id)arg1 completionHandler:(id)arg2;
+- (void)updateAssociatedServiceType:(id)arg1 forService:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)updateAuthorizationData:(id)arg1 forService:(id)arg2 characteristic:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateName:(id)arg1 forService:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)updateRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)workQueue;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id)arg3;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

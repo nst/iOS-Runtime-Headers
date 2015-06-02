@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebDeviceOrientationInternal;
-
 @interface WebDeviceOrientation : NSObject {
     WebDeviceOrientationInternal *m_internal;
 }

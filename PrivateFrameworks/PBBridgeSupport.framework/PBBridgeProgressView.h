@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class UIImageView;
-
 @interface PBBridgeProgressView : UIView {
     UIImageView *_appleLogo;
     float _currentProgress;
     unsigned int _style;
 }
 
-@property(retain) UIImageView * appleLogo;
-@property float currentProgress;
-@property unsigned int style;
+@property (nonatomic, retain) UIImageView *appleLogo;
+@property (nonatomic) float currentProgress;
+@property (nonatomic) unsigned int style;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_size;

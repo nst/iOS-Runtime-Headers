@@ -6,7 +6,7 @@
     int _orientationAnimation;
 }
 
-@property int orientationAnimation;
+@property (nonatomic) int orientationAnimation;
 
 - (id)initWithDefaultParameters;
 - (int)orientationAnimation;

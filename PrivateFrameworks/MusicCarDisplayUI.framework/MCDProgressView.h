@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UILabel, UIView;
-
 @interface MCDProgressView : UIView {
     UIView *_indicatorView;
     BOOL _isLive;

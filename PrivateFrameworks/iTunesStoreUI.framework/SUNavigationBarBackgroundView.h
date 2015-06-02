@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
-
 @interface SUNavigationBarBackgroundView : UIView {
     _UIBackdropView *_backdropView;
     UIView *_borderView;
@@ -16,15 +14,15 @@
     BOOL translucent;
 }
 
-@property(setter=_setShadowView:,retain) UIView * _shadowView;
-@property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
-@property int backdropStyle;
-@property(readonly) _UIBackdropView * backdropView;
-@property int barStyle;
-@property(retain) UIColor * barTintColor;
-@property BOOL barWantsAdaptiveBackdrop;
-@property BOOL separatorOnTop;
-@property(getter=isTranslucent) BOOL translucent;
+@property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;
+@property (nonatomic, retain) _UINavigationBarAppearanceStorage *appearanceStorage;
+@property (nonatomic) int backdropStyle;
+@property (readonly) _UIBackdropView *backdropView;
+@property (nonatomic) int barStyle;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (nonatomic) BOOL barWantsAdaptiveBackdrop;
+@property (nonatomic) BOOL separatorOnTop;
+@property (getter=isTranslucent, nonatomic) BOOL translucent;
 
 - (id)_currentCustomBackground;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;

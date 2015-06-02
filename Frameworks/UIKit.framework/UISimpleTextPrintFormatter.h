@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString, NSString, UIColor, UIFont;
+@interface UISimpleTextPrintFormatter : UIPrintFormatter
 
-@interface UISimpleTextPrintFormatter : UIPrintFormatter {
-}
-
-@property(copy) NSAttributedString * attributedText;
-@property(retain) UIColor * color;
-@property(retain) UIFont * font;
-@property(copy) NSString * text;
-@property int textAlignment;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
 
 - (id)initWithAttributedText:(id)arg1;
 - (id)initWithText:(id)arg1;

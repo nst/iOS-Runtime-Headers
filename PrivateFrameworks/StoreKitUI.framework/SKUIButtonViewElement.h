@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIImageViewElement, SKUIViewElementText;
-
 @interface SKUIButtonViewElement : SKUIViewElement {
     NSString *_badgeResourceName;
     SKUIViewElementText *_buttonText;
@@ -14,13 +12,13 @@
     NSString *_variantIdentifier;
 }
 
-@property(readonly) NSString * badgeResourceName;
-@property(readonly) SKUIImageViewElement * buttonImage;
-@property(readonly) SKUIViewElementText * buttonText;
-@property(readonly) int buttonViewType;
-@property(readonly) NSString * confirmationText;
-@property(readonly) long long itemIdentifier;
-@property(readonly) NSString * variantIdentifier;
+@property (nonatomic, readonly) NSString *badgeResourceName;
+@property (nonatomic, readonly) SKUIImageViewElement *buttonImage;
+@property (nonatomic, readonly) SKUIViewElementText *buttonText;
+@property (nonatomic, readonly) int buttonViewType;
+@property (nonatomic, readonly) NSString *confirmationText;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

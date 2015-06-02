@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MIPGenre : PBCodable <NSCopying> {
     struct { 
         unsigned int persistentId : 1; 
@@ -14,12 +12,12 @@
     long long _storeId;
 }
 
-@property(readonly) BOOL hasName;
-@property BOOL hasPersistentId;
-@property BOOL hasStoreId;
-@property(retain) NSString * name;
-@property long long persistentId;
-@property long long storeId;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasPersistentId;
+@property (nonatomic) BOOL hasStoreId;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long persistentId;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

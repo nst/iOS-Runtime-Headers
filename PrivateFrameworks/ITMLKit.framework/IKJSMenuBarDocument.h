@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKJSMenuBarDocumentAppBridge>;
-
 @interface IKJSMenuBarDocument : IKJSObject <IKJSMenuBarDocument> {
     <IKJSMenuBarDocumentAppBridge> *_appBridge;
 }
 
-@property <IKJSMenuBarDocumentAppBridge> * appBridge;
+@property (nonatomic) <IKJSMenuBarDocumentAppBridge> *appBridge;
 
 - (void).cxx_destruct;
 - (id)appBridge;

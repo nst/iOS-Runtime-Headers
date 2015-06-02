@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMCSSCharsetRule : DOMCSSRule
 
-@interface DOMCSSCharsetRule : DOMCSSRule {
-}
-
-@property(copy,readonly) NSString * encoding;
+@property (readonly, copy) NSString *encoding;
 
 - (id)encoding;
 

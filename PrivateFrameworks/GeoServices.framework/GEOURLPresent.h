@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOURLOptions, NSMutableArray;
-
 @interface GEOURLPresent : PBCodable <NSCopying> {
     NSMutableArray *_items;
     GEOURLOptions *_options;
 }
 
-@property(readonly) BOOL hasOptions;
-@property(retain) NSMutableArray * items;
-@property(retain) GEOURLOptions * options;
+@property (nonatomic, readonly) BOOL hasOptions;
+@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, retain) GEOURLOptions *options;
 
 - (void)addItem:(id)arg1;
 - (void)clearItems;

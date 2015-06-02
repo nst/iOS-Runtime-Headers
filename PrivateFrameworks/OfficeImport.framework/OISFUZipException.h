@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OISFUZipException : NSException {
-}
+@interface OISFUZipException : NSException
 
 @end

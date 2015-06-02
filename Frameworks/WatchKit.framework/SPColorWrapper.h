@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class UIColor;
-
 @interface SPColorWrapper : NSObject <NSSecureCoding> {
     UIColor *_color;
 }
 
-@property(readonly) UIColor * color;
+@property (nonatomic, readonly) UIColor *color;
 
 + (BOOL)supportsSecureCoding;
 + (id)wrapperForColor:(id)arg1;

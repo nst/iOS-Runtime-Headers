@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UILayoutSupportConstraint : NSLayoutConstraint {
-}
+@interface _UILayoutSupportConstraint : NSLayoutConstraint
 
 + (id)classFallbacksForKeyedArchiver;
 

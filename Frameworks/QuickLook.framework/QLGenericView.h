@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLGenericViewDelegate>, NSAttributedString, NSError, NSString, UIButton, UIImageView, UILabel, UIView;
-
 @interface QLGenericView : UIView {
     UIView *_containerView;
     NSError *_error;
@@ -14,11 +12,11 @@
     <QLGenericViewDelegate> *delegate;
 }
 
-@property(copy) NSAttributedString * attributedSubtitle;
-@property <QLGenericViewDelegate> * delegate;
+@property (copy) NSAttributedString *attributedSubtitle;
+@property <QLGenericViewDelegate> *delegate;
 @property BOOL showArchiveButton;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (copy) NSString *subtitle;
+@property (copy) NSString *title;
 
 - (void)_updateContainerFrameForTraitCollection:(id)arg1;
 - (id)attributedSubtitle;

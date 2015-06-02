@@ -6,7 +6,7 @@
     BOOL _disabled;
 }
 
-@property BOOL disabled;
+@property (nonatomic) BOOL disabled;
 
 - (BOOL)_isSelectable;
 - (BOOL)disabled;

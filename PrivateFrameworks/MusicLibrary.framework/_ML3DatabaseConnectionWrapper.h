@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, NSThread;
-
 @interface _ML3DatabaseConnectionWrapper : NSObject {
     NSThread *_borrowingThread;
     ML3DatabaseConnection *_connection;
@@ -11,10 +9,10 @@
     unsigned int _useCount;
 }
 
-@property(retain) NSThread * borrowingThread;
-@property(retain) ML3DatabaseConnection * connection;
-@property(retain) NSThread * owningThread;
-@property unsigned int useCount;
+@property (nonatomic, retain) NSThread *borrowingThread;
+@property (nonatomic, retain) ML3DatabaseConnection *connection;
+@property (nonatomic, retain) NSThread *owningThread;
+@property (nonatomic) unsigned int useCount;
 
 - (void).cxx_destruct;
 - (id)borrowingThread;

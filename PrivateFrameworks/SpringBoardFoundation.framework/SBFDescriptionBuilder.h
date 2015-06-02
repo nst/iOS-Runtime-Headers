@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSMutableString, NSObject;
-
 @interface SBFDescriptionBuilder : NSObject {
     NSMutableString *_description;
     NSObject *_object;

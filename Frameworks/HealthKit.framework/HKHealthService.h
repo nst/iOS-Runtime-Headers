@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString, NSUUID;
-
 @interface HKHealthService : NSObject <NSCopying, NSSecureCoding> {
     NSUUID *_identifier;
     double _lastConnection;
@@ -12,11 +10,11 @@
     int _type;
 }
 
-@property(readonly) NSUUID * identifier;
-@property double lastConnection;
-@property(readonly) NSString * name;
-@property(copy) NSString * serviceId;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSUUID *identifier;
+@property (nonatomic) double lastConnection;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy) NSString *serviceId;
+@property (nonatomic, readonly) int type;
 
 + (BOOL)supportsSecureCoding;
 

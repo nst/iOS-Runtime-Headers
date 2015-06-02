@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString, UIImage;
-
 @interface SLMicroBlogUserRecord : NSObject <NSSecureCoding> {
     NSString *_name;
     UIImage *_profileImageCache;
@@ -11,10 +9,10 @@
     NSString *_screen_name;
 }
 
-@property(retain) NSString * name;
-@property(retain) UIImage * profileImageCache;
-@property(retain) NSString * profile_image_url;
-@property(retain) NSString * screen_name;
+@property (nonatomic, retain) NSString *name;
+@property (retain) UIImage *profileImageCache;
+@property (nonatomic, retain) NSString *profile_image_url;
+@property (nonatomic, retain) NSString *screen_name;
 
 + (BOOL)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;

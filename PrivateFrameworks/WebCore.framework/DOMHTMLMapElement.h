@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLCollection, NSString;
+@interface DOMHTMLMapElement : DOMHTMLElement
 
-@interface DOMHTMLMapElement : DOMHTMLElement {
-}
-
-@property(readonly) DOMHTMLCollection * areas;
-@property(copy) NSString * name;
+@property (readonly) DOMHTMLCollection *areas;
+@property (copy) NSString *name;
 
 - (id)areas;
 - (id)name;

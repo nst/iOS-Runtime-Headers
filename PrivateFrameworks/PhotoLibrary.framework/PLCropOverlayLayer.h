@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIView;
-
 @interface PLCropOverlayLayer : UIView {
     UIView *_bottomEdgeLayer;
     UIView *_bottomLeftCornerLayer;
@@ -20,19 +18,19 @@
             float height; 
         } size; 
     } _cropRect;
-    unsigned int _highlighted : 1;
+    unsigned int _highlighted;
     UIView *_leftEdgeLayer;
     UIView *_leftOpaqueLayer;
     UIView *_leftThirdLayer;
     UIView *_rightEdgeLayer;
     UIView *_rightOpaqueLayer;
     UIView *_rightThirdLayer;
-    unsigned int _showThirdsGrid : 1;
-    unsigned int _showsCropRect : 1;
-    unsigned int _showsStraightenGrid : 1;
-    UIView *_straightenHorizontalLayers[6];
-    UIView *_straightenVerticalLayers[6];
-    unsigned int _thirdsVisible : 1;
+    unsigned int _showThirdsGrid;
+    unsigned int _showsCropRect;
+    unsigned int _showsStraightenGrid;
+    UIView *_straightenHorizontalLayers;
+    UIView *_straightenVerticalLayers;
+    unsigned int _thirdsVisible;
     UIView *_topEdgeLayer;
     UIView *_topLeftCornerLayer;
     UIView *_topOpaqueLayer;

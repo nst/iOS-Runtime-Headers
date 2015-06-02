@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray;
-
 @interface FigMetadataObjectCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
     NSArray *_metadataIdentifiers;
     struct CGRect { 
@@ -18,8 +16,8 @@
     } _metadataRectOfInterest;
 }
 
-@property(copy) NSArray * metadataIdentifiers;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } metadataRectOfInterest;
+@property (nonatomic, copy) NSArray *metadataIdentifiers;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } metadataRectOfInterest;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;

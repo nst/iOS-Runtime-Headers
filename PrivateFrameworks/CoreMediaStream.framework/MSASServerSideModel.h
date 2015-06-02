@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASPendingChanges, MSASServerSideModelGroupedCommandQueue, MSASStateMachine, MSAlbumSharingDaemon, NSCountedSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSASServerSideModel : MSASModelBase <MSASModel, MSASStateMachineDelegate> {
     MSASServerSideModelGroupedCommandQueue *_commandQueue;
     MSASStateMachine *_counterpartInstance;
@@ -14,22 +12,22 @@
     MSASPendingChanges *_pendingChanges;
 }
 
-@property MSASStateMachine * MSASCounterpartInstance;
-@property(retain) MSASServerSideModelGroupedCommandQueue * commandQueue;
-@property MSAlbumSharingDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject<OS_dispatch_queue> * eventQueue;
-@property(readonly) unsigned int hash;
-@property int maxGroupedCallbackEventBatchCount;
-@property double maxGroupedCallbackEventIdleInterval;
-@property double maxGroupedCallbackEventStaleness;
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property(retain) NSCountedSet * observers;
-@property(retain) MSASPendingChanges * pendingChanges;
-@property(retain,readonly) NSString * personID;
-@property(readonly) MSASStateMachine * stateMachine;
-@property(readonly) Class superclass;
+@property (nonatomic) MSASStateMachine *MSASCounterpartInstance;
+@property (nonatomic, retain) MSASServerSideModelGroupedCommandQueue *commandQueue;
+@property (nonatomic) MSAlbumSharingDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *eventQueue;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int maxGroupedCallbackEventBatchCount;
+@property (nonatomic) double maxGroupedCallbackEventIdleInterval;
+@property (nonatomic) double maxGroupedCallbackEventStaleness;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic, retain) NSCountedSet *observers;
+@property (nonatomic, retain) MSASPendingChanges *pendingChanges;
+@property (nonatomic, readonly, retain) NSString *personID;
+@property (nonatomic, readonly) MSASStateMachine *stateMachine;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)MSASCounterpartInstance;
@@ -86,8 +84,8 @@
 - (void)_reconstruct;
 - (void)acceptInvitationWithGUID:(id)arg1;
 - (void)acceptInvitationWithGUID:(id)arg1 info:(id)arg2;
-- (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id)arg2;
-- (void)acceptInvitationWithToken:(id)arg1 info:(id)arg2 completionBlock:(id)arg3;
+- (void)acceptInvitationWithToken:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)acceptInvitationWithToken:(id)arg1 info:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)accessControlGUIDsForAlbumWithGUID:(id)arg1;
 - (id)accessControlWithGUID:(id)arg1;
 - (id)accessControlsForAlbumWithGUID:(id)arg1;
@@ -178,12 +176,12 @@
 - (BOOL)errorIsCancellation:(id)arg1;
 - (id)eventQueue;
 - (void)eventQueueNotifyObserversOfUpdatedUnviewedCountInAlbum:(id)arg1 unviewedCount:(int)arg2 info:(id)arg3;
-- (void)eventQueuePerformBlockOnObservers:(id)arg1;
+- (void)eventQueuePerformBlockOnObservers:(id /* block */)arg1;
 - (void)flushAllPendingCommentCheckOperations;
 - (id)focusAssetCollectionGUID;
 - (void)forgetEverything;
 - (void)forgetEverythingInfo:(id)arg1;
-- (void)forgetEverythingInfo:(id)arg1 completionBlock:(id)arg2;
+- (void)forgetEverythingInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)hasCommandsInGroupedCommandQueue;
 - (BOOL)hasEnqueuedActivities;
 - (id)initWithPersonID:(id)arg1;
@@ -211,7 +209,7 @@
 - (id)nextCommandGroupMaxCount:(int)arg1 outCommand:(id*)arg2 outLastCommandIndex:(long long*)arg3;
 - (id)observers;
 - (id)pendingChanges;
-- (void)performBlockOnObservers:(id)arg1;
+- (void)performBlockOnObservers:(id /* block */)arg1;
 - (void)reconstruct;
 - (void)refreshAccessControlListForAlbumWithGUID:(id)arg1;
 - (void)refreshAccessControlListForAlbumWithGUID:(id)arg1 info:(id)arg2;
@@ -243,19 +241,19 @@
 - (void)setMaxGroupedCallbackEventIdleInterval:(double)arg1;
 - (void)setMaxGroupedCallbackEventStaleness:(double)arg1;
 - (void)setMemberQueue:(id)arg1;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id)arg3;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)setObservers:(id)arg1;
 - (void)setPendingChanges:(id)arg1;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id)arg3;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 info:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)setUserInfo:(id)arg1 forAccessControlWithGUID:(id)arg2;
 - (void)setUserInfo:(id)arg1 forAlbumWithGUID:(id)arg2;
 - (void)setUserInfo:(id)arg1 forAssetCollectionWithGUID:(id)arg2;
 - (void)setUserInfo:(id)arg1 forCommentWithGUID:(id)arg2;
 - (void)setUserInfo:(id)arg1 forInvitationWithGUID:(id)arg2;
 - (void)shutDown;
-- (void)shutDownForDestruction:(BOOL)arg1 completionBlock:(id)arg2;
+- (void)shutDownForDestruction:(BOOL)arg1 completionBlock:(id /* block */)arg2;
 - (void)start;
 - (id)stateMachine;
 - (void)subscribeToAlbumWithGUID:(id)arg1;
@@ -269,7 +267,7 @@
 - (id)userInfoForAssetCollectionWithGUID:(id)arg1;
 - (id)userInfoForCommentWithGUID:(id)arg1;
 - (id)userInfoForInvitationWithGUID:(id)arg1;
-- (void)videoURLForAssetCollectionWithGUID:(id)arg1 completionBlock:(id)arg2;
-- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)videoURLForAssetCollectionWithGUID:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
 
 @end

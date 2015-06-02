@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, WDTableCellProperties, WDTableRow, WDText;
-
 @interface WDTableCell : NSObject {
     NSString *mIdentifier;
     unsigned int mIndex;

@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SALocation;
+@interface SAAnswerSearch : SADomainCommand
 
-@interface SAAnswerSearch : SADomainCommand {
-}
-
-@property(retain) SALocation * address;
-@property(copy) NSString * attribute;
-@property(copy) NSString * miscQuestion;
-@property(copy) NSString * placeAttribute;
-@property(copy) NSArray * product;
-@property(copy) NSString * timeQuestion;
-@property(copy) NSString * verbType;
+@property (nonatomic, retain) SALocation *address;
+@property (nonatomic, copy) NSString *attribute;
+@property (nonatomic, copy) NSString *miscQuestion;
+@property (nonatomic, copy) NSString *placeAttribute;
+@property (nonatomic, copy) NSArray *product;
+@property (nonatomic, copy) NSString *timeQuestion;
+@property (nonatomic, copy) NSString *verbType;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIImage;
-
 @interface GKFixedSizeImageView : UIImageView {
     UIImage *_actualImage;
 }
 
-@property(retain) UIImage * actualImage;
+@property (nonatomic, retain) UIImage *actualImage;
 
 - (id)actualImage;
 - (void)dealloc;

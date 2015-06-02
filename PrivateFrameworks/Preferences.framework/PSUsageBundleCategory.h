@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSUsageBundleApp;
-
 @interface PSUsageBundleCategory : NSObject {
     NSString *_identifier;
     NSString *_name;
     PSUsageBundleApp *_usageBundleApp;
 }
 
-@property(retain) NSString * identifier;
-@property(retain) NSString * name;
-@property PSUsageBundleApp * usageBundleApp;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) PSUsageBundleApp *usageBundleApp;
 
 + (id)categoryNamed:(id)arg1 withIdentifier:(id)arg2 forUsageBundleApp:(id)arg3;
 

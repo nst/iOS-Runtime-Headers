@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSString;
-
 @interface FBSWorkspaceSceneEvent : FBSWorkspaceEvent {
     NSString *_sceneID;
 }
 
-@property(copy) NSString * sceneID;
+@property (nonatomic, copy) NSString *sceneID;
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

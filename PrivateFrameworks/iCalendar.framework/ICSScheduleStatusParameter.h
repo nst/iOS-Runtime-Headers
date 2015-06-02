@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSScheduleStatusParameter : ICSPredefinedValue {
-}
+@interface ICSScheduleStatusParameter : ICSPredefinedValue
 
 + (id)scheduleStatusParameterFromCode:(int)arg1;
 + (id)scheduleStatusParameterFromICSString:(id)arg1;

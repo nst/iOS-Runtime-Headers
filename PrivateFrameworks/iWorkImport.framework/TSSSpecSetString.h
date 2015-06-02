@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSSSpecSetString : TSSSpecString {
     BOOL _unset;
     NSString *_value;

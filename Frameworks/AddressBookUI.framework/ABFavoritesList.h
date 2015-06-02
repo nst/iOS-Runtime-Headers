@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABFavoritesListManager;
-
 @interface ABFavoritesList : NSObject {
     ABFavoritesListManager *_favoritesListManager;
 }

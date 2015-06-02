@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class UIColor;
-
 @interface SFCircleProgressLayer : CALayer {
     float _oneFullRotation;
     UIColor *_progressBackgroundColor;
@@ -13,12 +11,12 @@
     BOOL _showProgressTray;
 }
 
-@property float progress;
-@property(retain) UIColor * progressBackgroundColor;
-@property(retain) UIColor * progressColor;
-@property float progressLineWidth;
-@property int progressStartPoint;
-@property BOOL showProgressTray;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) UIColor *progressBackgroundColor;
+@property (nonatomic, retain) UIColor *progressColor;
+@property (nonatomic) float progressLineWidth;
+@property (nonatomic) int progressStartPoint;
+@property (nonatomic) BOOL showProgressTray;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 

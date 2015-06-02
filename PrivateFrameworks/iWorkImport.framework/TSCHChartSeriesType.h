@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSCHChartSeriesType : NSObject {
     NSArray *mSeriesRendererClasses;
 }

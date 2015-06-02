@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSData, NSObject<OS_dispatch_queue>;
-
 @interface PKImage : NSObject <NSSecureCoding> {
     struct PKEdgeInsets { 
         float top; 
@@ -20,14 +18,16 @@
     BOOL _shouldTile;
 }
 
-@property(readonly) struct PKEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
-@property(readonly) NSData * imageData;
-@property(readonly) struct CGImage { }* imageRef;
-@property(readonly) int orientation;
-@property(readonly) float scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) BOOL stretches;
-@property(readonly) BOOL tiles;
+@property (nonatomic, readonly) struct PKEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
+@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic, readonly) struct CGImage { }*imageRef;
+@property (nonatomic, readonly) int orientation;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) BOOL stretches;
+@property (nonatomic, readonly) BOOL tiles;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3;
 + (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3 preferredScreenScale:(float)arg4 suffix:(id)arg5;
@@ -58,11 +58,14 @@
 - (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)resizableImageByTilingCenterPixel;
 - (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (id)resizedImageToCover:(struct CGSize { float x1; float x2; })arg1;
 - (id)resizedImageWithConstraints:(id)arg1;
 - (float)scale;
 - (struct CGSize { float x1; float x2; })size;
 - (BOOL)stretches;
 - (BOOL)tiles;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)resizedImageToCover:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUIRedeemResultLinksTableViewSection : SKUITableViewSection {
     struct UIEdgeInsets { 
         float top; 
@@ -14,7 +12,7 @@
     NSArray *_links;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;

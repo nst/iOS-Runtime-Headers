@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioGenresRequest : RadioGetGenreTreeNodesRequest {
-}
+@interface RadioGenresRequest : RadioGetGenreTreeNodesRequest
 
 + (id)cacheKeyForGenreWithNodeID:(unsigned long long)arg1;
 + (id)fallbackRequestPath;

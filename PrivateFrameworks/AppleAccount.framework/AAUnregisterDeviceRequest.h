@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, NSDictionary;
-
 @interface AAUnregisterDeviceRequest : AARequest {
     ACAccount *_account;
     NSDictionary *_deviceProperties;

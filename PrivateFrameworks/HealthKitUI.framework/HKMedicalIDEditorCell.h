@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKMedicalIDEditorCellEditDelegate>, HKCaretOptionalTextField, NSString, UILabel, UIView;
-
 @interface HKMedicalIDEditorCell : UITableViewCell <UITextFieldDelegate> {
     <HKMedicalIDEditorCellEditDelegate> *_editDelegate;
     UIView *_horizontalSeparatorView;
@@ -13,15 +11,15 @@
     UIView *_verticalSeparatorView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <HKMedicalIDEditorCellEditDelegate> * editDelegate;
-@property(readonly) unsigned int hash;
-@property(readonly) HKCaretOptionalTextField * inputTextField;
-@property(retain) NSString * label;
-@property(readonly) UILabel * labelLabel;
-@property float minimumLabelWidth;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <HKMedicalIDEditorCellEditDelegate> *editDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) HKCaretOptionalTextField *inputTextField;
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic, readonly) UILabel *labelLabel;
+@property (nonatomic) float minimumLabelWidth;
+@property (readonly) Class superclass;
 
 + (BOOL)showsLabelAndValue;
 

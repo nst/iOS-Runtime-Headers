@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSData, NSHTTPURLResponse;
-
 @interface SKUIURLResolverResponse : NSObject {
     NSData *_data;
     NSHTTPURLResponse *_response;
 }
 
-@property(readonly) NSHTTPURLResponse * URLResponse;
-@property(readonly) NSData * data;
+@property (nonatomic, readonly) NSHTTPURLResponse *URLResponse;
+@property (nonatomic, readonly) NSData *data;
 
 - (void).cxx_destruct;
 - (id)URLResponse;

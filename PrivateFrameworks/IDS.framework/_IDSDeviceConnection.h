@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
-
 @interface _IDSDeviceConnection : NSObject <IDSDaemonListenerProtocol> {
     BOOL _hasTimedOut;
     NSInputStream *_inputStreamForSocket;
     BOOL _isDefaultPairedDevice;
     NSString *_nsuuid;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _openSocketCompletionHandler;
-
+    id /* block */ _openSocketCompletionHandler;
     NSString *_openSocketCompletionHandlerID;
     NSObject<OS_dispatch_queue> *_openSocketCompletionHandlerQueue;
     NSOutputStream *_outputStreamForSocket;
@@ -27,13 +17,13 @@
     NSString *_streamName;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSInputStream * inputStream;
-@property(retain,readonly) NSOutputStream * outputStream;
-@property(readonly) int socket;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSInputStream *inputStream;
+@property (nonatomic, readonly, retain) NSOutputStream *outputStream;
+@property (nonatomic, readonly) int socket;
+@property (readonly) Class superclass;
 
 - (void)_cleanupCompletionBlock;
 - (void)_close;
@@ -41,7 +31,7 @@
 - (void)_daemonDied:(id)arg1;
 - (void)close;
 - (void)dealloc;
-- (id)initWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
+- (id)initWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (id)inputStream;
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;

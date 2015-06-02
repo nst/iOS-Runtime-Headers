@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertControllerGradientView : UIView {
-}
+@interface _UIAlertControllerGradientView : UIView
 
 + (Class)layerClass;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSNumber;
-
 @interface HKDataUnitValueRange : NSObject {
     NSNumber *_maximum;
     NSNumber *_minimum;
 }
 
-@property(readonly) NSNumber * maximum;
-@property(readonly) NSNumber * minimum;
+@property (nonatomic, readonly) NSNumber *maximum;
+@property (nonatomic, readonly) NSNumber *minimum;
 
 - (void).cxx_destruct;
 - (BOOL)containsValue:(double)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class MSAlertManager;
-
 @interface MSAuthenticationManager : NSObject {
     MSAlertManager *_alertManager;
     int _bagRefetchCount;
@@ -12,9 +10,9 @@
     int _state;
 }
 
-@property BOOL isListeningToKeybagChanges;
-@property int keybagChangeNotifyToken;
-@property(getter=isWaitingForAuth,readonly) BOOL waitingForAuth;
+@property (nonatomic) BOOL isListeningToKeybagChanges;
+@property (nonatomic) int keybagChangeNotifyToken;
+@property (getter=isWaitingForAuth, nonatomic, readonly) BOOL waitingForAuth;
 
 + (id)sharedManager;
 

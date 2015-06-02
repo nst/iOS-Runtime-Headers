@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UserFS.framework/UserFS
  */
 
-@class NSString, UserFSVolume;
-
 @interface UserFSItem : NSObject {
     struct timespec { 
         int tv_sec; 
@@ -21,14 +19,14 @@
     UserFSVolume *_volume;
 }
 
-@property struct timespec { int x1; long x2; } createdDate;
-@property BOOL isDirectory;
-@property unsigned long long length;
-@property(getter=isLocked) BOOL locked;
-@property struct timespec { int x1; long x2; } modifiedDate;
-@property(copy) NSString * name;
-@property(copy) NSString * path;
-@property(retain) UserFSVolume * volume;
+@property (nonatomic) struct timespec { int x1; long x2; } createdDate;
+@property (nonatomic) BOOL isDirectory;
+@property (nonatomic) unsigned long long length;
+@property (getter=isLocked, nonatomic) BOOL locked;
+@property (nonatomic) struct timespec { int x1; long x2; } modifiedDate;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, retain) UserFSVolume *volume;
 
 + (id)_itemWithVolume:(id)arg1 path:(id)arg2 properties:(id)arg3;
 

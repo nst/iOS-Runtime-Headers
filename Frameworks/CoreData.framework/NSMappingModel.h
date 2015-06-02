@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
-
 @interface NSMappingModel : NSObject {
     NSMutableArray *_entityMappings;
     NSMutableDictionary *_entityMappingsByName;
@@ -16,8 +14,8 @@
     void *_reserved2;
 }
 
-@property(retain) NSArray * entityMappings;
-@property(copy,readonly) NSDictionary * entityMappingsByName;
+@property (retain) NSArray *entityMappings;
+@property (readonly, copy) NSDictionary *entityMappingsByName;
 
 + (id)_modelPathsFromBundles:(id)arg1;
 + (id)_newMappingModelFromPaths:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;

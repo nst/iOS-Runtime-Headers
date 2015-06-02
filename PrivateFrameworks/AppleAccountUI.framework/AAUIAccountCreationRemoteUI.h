@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIAccountCreationDelegate>, AAAutoAccountVerifier, AASetupAssistantService, NSMutableArray, NSString, RUILoader, UIAlertView, UINavigationController;
-
 @interface AAUIAccountCreationRemoteUI : NSObject <RUIObjectModelDelegate> {
     AASetupAssistantService *_aaService;
     UINavigationController *_createAccountNavController;
@@ -18,11 +16,11 @@
     AAAutoAccountVerifier *_verifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIAccountCreationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIAccountCreationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;

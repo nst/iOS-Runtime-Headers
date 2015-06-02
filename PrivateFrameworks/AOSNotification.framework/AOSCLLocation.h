@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@interface AOSCLLocation : CLLocation <NSSecureCoding> {
-}
+@interface AOSCLLocation : CLLocation <NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

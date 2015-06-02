@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CNContact, NSDictionary, NSString;
-
 @interface PKPaymentOptionsDefaults : NSObject <PKPassbookSettingsOptionsDelegate> {
     NSDictionary *_defaultBillingAddresses;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSDictionary * defaultBillingAddresses;
-@property(retain) CNContact * defaultContactEmail;
-@property(retain) CNContact * defaultContactName;
-@property(retain) CNContact * defaultContactPhone;
-@property(retain) NSString * defaultPaymentPassIdentifier;
-@property(retain) CNContact * defaultShippingAddress;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSDictionary *defaultBillingAddresses;
+@property (nonatomic, retain) CNContact *defaultContactEmail;
+@property (nonatomic, retain) CNContact *defaultContactName;
+@property (nonatomic, retain) CNContact *defaultContactPhone;
+@property (nonatomic, retain) NSString *defaultPaymentPassIdentifier;
+@property (nonatomic, retain) CNContact *defaultShippingAddress;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)defaults;
 

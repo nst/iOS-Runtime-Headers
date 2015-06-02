@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UITextField;
-
 @interface PKPaymentOptionGroupItemInputCell : PKPaymentOptionGroupItemCell {
     UITextField *_textField;
 }
 
-@property(retain) UITextField * textField;
+@property (nonatomic, retain) UITextField *textField;
 
 - (void)_updateCellContent;
 - (void)dealloc;

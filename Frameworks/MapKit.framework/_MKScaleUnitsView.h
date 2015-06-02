@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumberFormatter, NSString;
-
 @interface _MKScaleUnitsView : UIView {
     NSNumberFormatter *_floatNumberFormatter;
     float _justUnitsWidth;
@@ -19,13 +17,13 @@
     BOOL _useLightText;
 }
 
-@property(retain) NSNumberFormatter * floatNumberFormatter;
-@property(retain) NSString * legendBaseString;
-@property double segmentLengthInPixels;
-@property(retain) NSString * unitsString;
-@property(readonly) float unitsWidth;
-@property(copy) NSString * unpaddedUnitsString;
-@property BOOL useLightText;
+@property (nonatomic, retain) NSNumberFormatter *floatNumberFormatter;
+@property (nonatomic, retain) NSString *legendBaseString;
+@property (nonatomic) double segmentLengthInPixels;
+@property (nonatomic, retain) NSString *unitsString;
+@property (nonatomic, readonly) float unitsWidth;
+@property (nonatomic, copy) NSString *unpaddedUnitsString;
+@property (nonatomic) BOOL useLightText;
 
 - (void).cxx_destruct;
 - (void)_calculateLegend:(BOOL)arg1;

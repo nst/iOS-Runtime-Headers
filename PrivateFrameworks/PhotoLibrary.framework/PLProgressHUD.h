@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIActivityIndicatorView, UIImageView, UILabel, _UIBackdropView;
-
 @interface PLProgressHUD : UIView {
     UIActivityIndicatorView *_activityIndicatorView;
     _UIBackdropView *_backdropView;

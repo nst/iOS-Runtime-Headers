@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUPositiveZeroNumberFormatter : NSNumberFormatter {
-}
+@interface TSUPositiveZeroNumberFormatter : NSNumberFormatter
 
 - (id)stringForObjectValue:(id)arg1;
 

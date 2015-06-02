@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADDimmerViewDelegate>, ADTapGestureRecognizer;
-
 @interface ADDimmerView : UIView {
     <ADDimmerViewDelegate> *_delegate;
     BOOL _dimmed;
     ADTapGestureRecognizer *_gestureRecognizer;
 }
 
-@property <ADDimmerViewDelegate> * delegate;
-@property BOOL dimmed;
-@property(readonly) BOOL enabled;
-@property(retain) ADTapGestureRecognizer * gestureRecognizer;
+@property (nonatomic) <ADDimmerViewDelegate> *delegate;
+@property (nonatomic) BOOL dimmed;
+@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, retain) ADTapGestureRecognizer *gestureRecognizer;
 
 - (void)_tapRecognized:(id)arg1;
 - (void)dealloc;

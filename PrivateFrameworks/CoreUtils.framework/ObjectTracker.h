@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface ObjectTracker : NSObject {
     void *_context;
     unsigned int _flags;
     id _obj;
-    int (*_release_f)();
+    int (*_release_f;
 }
 
 - (void)dealloc;

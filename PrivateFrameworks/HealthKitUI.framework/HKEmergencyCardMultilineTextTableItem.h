@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKEmergencyCardRowHeightChangeDelegate>, HKMedicalIDEditorMultilineStringCell, _HKMedicalIDMultilineStringCell;
-
 @interface HKEmergencyCardMultilineTextTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate> {
     HKMedicalIDEditorMultilineStringCell *_editableCell;
     _HKMedicalIDMultilineStringCell *_labelCell;
     <HKEmergencyCardRowHeightChangeDelegate> *_rowHeightChangeDelegate;
 }
 
-@property <HKEmergencyCardRowHeightChangeDelegate> * rowHeightChangeDelegate;
+@property (nonatomic) <HKEmergencyCardRowHeightChangeDelegate> *rowHeightChangeDelegate;
 
 - (void).cxx_destruct;
 - (id)_cell;

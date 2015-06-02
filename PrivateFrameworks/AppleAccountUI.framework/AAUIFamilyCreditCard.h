@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSDate, NSString, NSURL, UIImage;
-
 @interface AAUIFamilyCreditCard : NSObject {
     NSDate *_expirationDate;
     UIImage *_image;
@@ -14,13 +12,13 @@
     NSString *_usageNotice;
 }
 
-@property(copy) NSDate * expirationDate;
-@property(retain) UIImage * image;
-@property(copy) NSURL * imageURL;
-@property(copy) NSString * lastFourDigits;
-@property(copy) NSString * providerDescription;
-@property(copy) NSString * type;
-@property(copy) NSString * usageNotice;
+@property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, copy) NSURL *imageURL;
+@property (nonatomic, copy) NSString *lastFourDigits;
+@property (nonatomic, copy) NSString *providerDescription;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *usageNotice;
 
 - (void).cxx_destruct;
 - (id)expirationDate;

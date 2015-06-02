@@ -2,16 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKTiledLayoutGeneratorScanState;
-
 @interface CKTiledLayoutGenerator : NSObject {
     int _cacheHeadLocation;
     int _cacheTailLocation;
-    id _cachedBatchID[20];
+    /* Warning: unhandled array encoding: '[20@]' */ id _cachedBatchID;
     struct { 
         int index; 
         struct CGSize { 
@@ -24,7 +18,7 @@
         } minimumSize; 
         BOOL hasCaption; 
         BOOL isBatchStart; 
-    } _cachedTileInfo[20];
+    } _cachedTileInfo;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -40,70 +34,46 @@
         float height; 
     } _noCaptionSpacing;
     int _numberOfMagneticGuidelines;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _parsedFrameBlock;
-
+    id /* block */ _parsedFrameBlock;
     float _roundingScale;
     int _scanLocation;
     int _scanSpecialSequenceCount;
     BOOL _scannedBatchHasCaption;
     id _scannedBatchID;
     BOOL _shouldStop;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileBatchIDBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileCaptionSizeBlock;
-
+    id /* block */ _tileBatchIDBlock;
+    id /* block */ _tileCaptionSizeBlock;
     int _tileCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileHasCaptionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileImageSizeBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tileMinimumSizeBlock;
-
+    id /* block */ _tileHasCaptionBlock;
+    id /* block */ _tileImageSizeBlock;
+    id /* block */ _tileMinimumSizeBlock;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;
-@property struct CGSize { float x1; float x2; } interTileSpacing;
-@property(readonly) BOOL isAtEnd;
-@property struct CGSize { float x1; float x2; } noCaptionSpacing;
-@property int numberOfMagneticGuidelines;
-@property id parsedFrameBlock;
-@property float roundingScale;
-@property int scanLocation;
-@property int scanSpecialSequenceCount;
-@property CKTiledLayoutGeneratorScanState * scanState;
-@property BOOL scannedBatchHasCaption;
-@property(retain) id scannedBatchID;
-@property BOOL shouldStop;
-@property(copy) id tileBatchIDBlock;
-@property(copy) id tileCaptionSizeBlock;
-@property int tileCount;
-@property(copy) id tileHasCaptionBlock;
-@property(copy) id tileImageSizeBlock;
-@property(copy) id tileMinimumSizeBlock;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;
+@property (nonatomic) struct CGSize { float x1; float x2; } interTileSpacing;
+@property (nonatomic, readonly) BOOL isAtEnd;
+@property (nonatomic) struct CGSize { float x1; float x2; } noCaptionSpacing;
+@property (nonatomic) int numberOfMagneticGuidelines;
+@property (nonatomic) id /* block */ parsedFrameBlock;
+@property (nonatomic) float roundingScale;
+@property (nonatomic) int scanLocation;
+@property (nonatomic) int scanSpecialSequenceCount;
+@property (nonatomic) CKTiledLayoutGeneratorScanState *scanState;
+@property (nonatomic) BOOL scannedBatchHasCaption;
+@property (nonatomic, retain) id scannedBatchID;
+@property (nonatomic) BOOL shouldStop;
+@property (nonatomic, copy) id /* block */ tileBatchIDBlock;
+@property (nonatomic, copy) id /* block */ tileCaptionSizeBlock;
+@property (nonatomic) int tileCount;
+@property (nonatomic, copy) id /* block */ tileHasCaptionBlock;
+@property (nonatomic, copy) id /* block */ tileImageSizeBlock;
+@property (nonatomic, copy) id /* block */ tileMinimumSizeBlock;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })captionPadding;
 - (struct CGSize { float x1; float x2; })captionSizeForTileAtIndex:(int)arg1 proposedSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)didParseTiles;
-- (void)enumerateFramesWithBlock:(id)arg1;
+- (void)enumerateFramesWithBlock:(id /* block */)arg1;
 - (id)init;
 - (struct CGSize { float x1; float x2; })interTileSpacing;
 - (BOOL)isAtEnd;
@@ -112,14 +82,14 @@
 - (BOOL)parseNextTiles;
 - (void)parseTiles;
 - (void)parsedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2 forTileAtIndex:(int)arg3;
-- (id)parsedFrameBlock;
+- (id /* block */)parsedFrameBlock;
 - (float)roundingScale;
 - (BOOL)scanAnyTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (int)scanLocation;
 - (int)scanSpecialSequenceCount;
 - (id)scanState;
 - (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 ofType:(int)arg2;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id)arg2;
+- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id /* block */)arg2;
 - (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 type:(int*)arg2;
 - (BOOL)scanTileWithHorizontalPanorama:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (BOOL)scanTileWithLandscapeImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
@@ -131,7 +101,7 @@
 - (void)setInterTileSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNoCaptionSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNumberOfMagneticGuidelines:(int)arg1;
-- (void)setParsedFrameBlock:(id)arg1;
+- (void)setParsedFrameBlock:(id /* block */)arg1;
 - (void)setRoundingScale:(float)arg1;
 - (void)setScanLocation:(int)arg1;
 - (void)setScanSpecialSequenceCount:(int)arg1;
@@ -139,19 +109,19 @@
 - (void)setScannedBatchHasCaption:(BOOL)arg1;
 - (void)setScannedBatchID:(id)arg1;
 - (void)setShouldStop:(BOOL)arg1;
-- (void)setTileBatchIDBlock:(id)arg1;
-- (void)setTileCaptionSizeBlock:(id)arg1;
+- (void)setTileBatchIDBlock:(id /* block */)arg1;
+- (void)setTileCaptionSizeBlock:(id /* block */)arg1;
 - (void)setTileCount:(int)arg1;
-- (void)setTileHasCaptionBlock:(id)arg1;
-- (void)setTileImageSizeBlock:(id)arg1;
-- (void)setTileMinimumSizeBlock:(id)arg1;
+- (void)setTileHasCaptionBlock:(id /* block */)arg1;
+- (void)setTileImageSizeBlock:(id /* block */)arg1;
+- (void)setTileMinimumSizeBlock:(id /* block */)arg1;
 - (BOOL)shouldStop;
-- (id)tileBatchIDBlock;
-- (id)tileCaptionSizeBlock;
+- (id /* block */)tileBatchIDBlock;
+- (id /* block */)tileCaptionSizeBlock;
 - (int)tileCount;
-- (id)tileHasCaptionBlock;
-- (id)tileImageSizeBlock;
-- (id)tileMinimumSizeBlock;
+- (id /* block */)tileHasCaptionBlock;
+- (id /* block */)tileImageSizeBlock;
+- (id /* block */)tileMinimumSizeBlock;
 - (float)valueByRounding:(float)arg1 usingMagneticGuidelines:(BOOL)arg2;
 - (void)willParseTiles;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPCommentRep : TSWPShapeRep {
-}
+@interface TSWPCommentRep : TSWPShapeRep
 
 - (void)dealloc;
 - (id)documentRoot;

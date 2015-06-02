@@ -2,42 +2,28 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPStoreDownload, NSString;
-
 @interface _MPStoreDownloadBlockObserver : NSObject <MPStoreDownloadManagerObserver> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didFinishDownloadHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didFinishPurchaseHandler;
-
+    id /* block */ _didFinishDownloadHandler;
+    id /* block */ _didFinishPurchaseHandler;
     MPStoreDownload *_download;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id didFinishDownloadHandler;
-@property(copy) id didFinishPurchaseHandler;
-@property(readonly) MPStoreDownload * download;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ didFinishDownloadHandler;
+@property (nonatomic, copy) id /* block */ didFinishPurchaseHandler;
+@property (nonatomic, readonly) MPStoreDownload *download;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)didFinishDownloadHandler;
-- (id)didFinishPurchaseHandler;
+- (id /* block */)didFinishDownloadHandler;
+- (id /* block */)didFinishPurchaseHandler;
 - (id)download;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
 - (id)initWithDownload:(id)arg1;
-- (void)setDidFinishDownloadHandler:(id)arg1;
-- (void)setDidFinishPurchaseHandler:(id)arg1;
+- (void)setDidFinishDownloadHandler:(id /* block */)arg1;
+- (void)setDidFinishPurchaseHandler:(id /* block */)arg1;
 
 @end

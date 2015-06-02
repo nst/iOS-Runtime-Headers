@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNNode, SCNPhysicsVehicle;
-
 @interface SCNPhysicsVehicleWheel : NSObject <NSCopying, NSSecureCoding> {
     struct SCNVector3 { 
         float x; 
@@ -40,7 +38,7 @@
 @property float frictionSlip;
 @property float maximumSuspensionForce;
 @property float maximumSuspensionTravel;
-@property(readonly) SCNNode * node;
+@property (readonly) SCNNode *node;
 @property float radius;
 @property struct SCNVector3 { float x1; float x2; float x3; } steeringAxis;
 @property float suspensionCompression;

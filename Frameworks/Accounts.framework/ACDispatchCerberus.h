@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACDispatchCerberus : NSObject {
-}
+@interface ACDispatchCerberus : NSObject
 
 + (void)waitOnSemaphore:(id)arg1 withTimeout:(unsigned int)arg2;
 

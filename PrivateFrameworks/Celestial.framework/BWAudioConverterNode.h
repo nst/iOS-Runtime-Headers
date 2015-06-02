@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface BWAudioConverterNode : BWNode {
     struct OpaqueFigSampleBufferProcessor { } *_audioCompressionSBP;
     NSDictionary *_settings;
 }
 
-@property(readonly) NSDictionary * gaplessPlaybackInfo;
+@property (nonatomic, readonly) NSDictionary *gaplessPlaybackInfo;
 
 + (void)initialize;
 

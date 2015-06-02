@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString;
-
 @interface DeferredFrameworkLoader : NSObject {
     void *_frameworkHandle;
     long _frameworkLoadedToken;
     NSString *_path;
 }
 
-@property void* frameworkHandle;
-@property long frameworkLoadedToken;
-@property(retain) NSString * path;
+@property (nonatomic) void*frameworkHandle;
+@property (nonatomic) long frameworkLoadedToken;
+@property (nonatomic, retain) NSString *path;
 
 + (id)PhotosUIFrameworkPath;
 

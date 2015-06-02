@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class FUDateAnchorRule, NSArray, NSDateComponents, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIFont;
-
 @interface FUTimeAxisDescriptor : NSObject <FUAxisDescriptor> {
     FUDateAnchorRule *_anchorRule;
     float _axisDescriptorPadding;
@@ -39,34 +37,34 @@
     NSMutableDictionary *_yearFormatters;
 }
 
-@property(retain) FUDateAnchorRule * anchorRule;
-@property float axisDescriptorPadding;
-@property(retain) NSDateComponents * axisSpacing;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL generateSubAxisDescriptorOnlyForNoonMidnight;
-@property(readonly) unsigned int hash;
-@property BOOL hideClippedLabels;
-@property(retain) UIColor * highlightedLabelColor;
-@property(retain) UIColor * highlightedSubLabelColor;
-@property unsigned int labelAlignment;
-@property(retain) UIFont * labelFont;
-@property(retain) id maxValue;
-@property(retain) id minValue;
-@property(retain) UIColor * selectedLabelColor;
-@property(retain) FUDateAnchorRule * subAnchorRule;
-@property BOOL subAxisCapitalize;
-@property float subAxisDescriptorPadding;
-@property(retain) NSDateComponents * subAxisSpacing;
-@property float subAxisVerticalPadding;
-@property(retain) UIFont * subLabelFont;
-@property unsigned int subTextStyle;
-@property unsigned int subTimeInterval;
-@property(readonly) Class superclass;
-@property unsigned int textStyle;
-@property unsigned int timeInterval;
-@property(retain) UIColor * unhighlightedLabelColor;
-@property(retain) UIColor * unhighlightedSubLabelColor;
+@property (nonatomic, retain) FUDateAnchorRule *anchorRule;
+@property (nonatomic) float axisDescriptorPadding;
+@property (nonatomic, retain) NSDateComponents *axisSpacing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL generateSubAxisDescriptorOnlyForNoonMidnight;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideClippedLabels;
+@property (nonatomic, retain) UIColor *highlightedLabelColor;
+@property (nonatomic, retain) UIColor *highlightedSubLabelColor;
+@property (nonatomic) unsigned int labelAlignment;
+@property (nonatomic, retain) UIFont *labelFont;
+@property (nonatomic, retain) id maxValue;
+@property (nonatomic, retain) id minValue;
+@property (nonatomic, retain) UIColor *selectedLabelColor;
+@property (nonatomic, retain) FUDateAnchorRule *subAnchorRule;
+@property (nonatomic) BOOL subAxisCapitalize;
+@property (nonatomic) float subAxisDescriptorPadding;
+@property (nonatomic, retain) NSDateComponents *subAxisSpacing;
+@property (nonatomic) float subAxisVerticalPadding;
+@property (nonatomic, retain) UIFont *subLabelFont;
+@property (nonatomic) unsigned int subTextStyle;
+@property (nonatomic) unsigned int subTimeInterval;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int textStyle;
+@property (nonatomic) unsigned int timeInterval;
+@property (nonatomic, retain) UIColor *unhighlightedLabelColor;
+@property (nonatomic, retain) UIColor *unhighlightedSubLabelColor;
 
 + (unsigned int)_getSpacingInterval:(id)arg1;
 

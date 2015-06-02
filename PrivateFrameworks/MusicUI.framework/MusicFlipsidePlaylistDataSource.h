@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicFlipsidePlaylistDataSource : MusicPlaylistSongsDataSource {
-}
+@interface MusicFlipsidePlaylistDataSource : MusicPlaylistSongsDataSource
 
 - (BOOL)showsEntityCountFooter;
 

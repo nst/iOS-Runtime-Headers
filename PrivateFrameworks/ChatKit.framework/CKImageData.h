@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSData, NSString, UIImage;
-
 @interface CKImageData : NSObject {
     unsigned int _count;
     NSData *_data;
@@ -16,14 +14,14 @@
     } _pxSize;
 }
 
-@property(copy,readonly) NSString * MIMEType;
-@property(copy,readonly) NSString * UTIType;
-@property(readonly) unsigned int count;
-@property(retain) NSData * data;
-@property(retain,readonly) UIImage * image;
-@property(readonly) int orientation;
-@property(readonly) struct CGSize { float x1; float x2; } ptSize;
-@property(readonly) struct CGSize { float x1; float x2; } pxSize;
+@property (nonatomic, readonly, copy) NSString *MIMEType;
+@property (nonatomic, readonly, copy) NSString *UTIType;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, readonly, retain) UIImage *image;
+@property (nonatomic, readonly) int orientation;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } ptSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pxSize;
 
 + (id)UTITypeForData:(id)arg1;
 

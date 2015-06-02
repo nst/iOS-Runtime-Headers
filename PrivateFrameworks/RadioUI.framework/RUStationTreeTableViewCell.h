@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, RUAudioPreviewView, SKUICircleProgressIndicator, UIButton, UILabel, UIView;
-
 @interface RUStationTreeTableViewCell : RUTableViewCell {
     SKUICircleProgressIndicator *_activityIndicator;
     UIButton *_addButton;
@@ -16,13 +14,13 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly) UIButton * addButton;
-@property(readonly) RUAudioPreviewView * audioPreviewView;
-@property int cellDisplayStyle;
-@property(copy) NSString * nowPlayingText;
-@property(getter=isPlaying) BOOL playing;
-@property BOOL showsActivityIndicator;
-@property(copy) NSString * title;
+@property (nonatomic, readonly) UIButton *addButton;
+@property (nonatomic, readonly) RUAudioPreviewView *audioPreviewView;
+@property (nonatomic) int cellDisplayStyle;
+@property (nonatomic, copy) NSString *nowPlayingText;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic) BOOL showsActivityIndicator;
+@property (nonatomic, copy) NSString *title;
 
 + (BOOL)_audioPreviewViewShowsFaceWhenNotPlaying;
 + (struct CGSize { float x1; float x2; })_audioPreviewViewSize;

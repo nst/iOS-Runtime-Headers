@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFConditionLock, MFDAFolderChangeResult;
-
 @interface MFDAFolderChangeConsumer : NSObject <DAFolderChangeConsumer> {
     MFConditionLock *_conditionLock;
     MFDAFolderChangeResult *_result;

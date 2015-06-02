@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DScene, TSCHChartInfo;
-
 @interface TSCH3DChartTitlePositioner : NSObject {
     struct tvec2<float> { 
         union { 
@@ -45,8 +43,8 @@
     TSCH3DScene *mScene;
 }
 
-@property(readonly) TSCHChartInfo * info;
-@property(readonly) TSCH3DScene * scene;
+@property (nonatomic, readonly) TSCHChartInfo *info;
+@property (nonatomic, readonly) TSCH3DScene *scene;
 
 + (id)positionerWithInfo:(id)arg1 scene:(id)arg2;
 

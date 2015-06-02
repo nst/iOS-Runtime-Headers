@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UIImage;
-
 @interface GKImageContext : NSObject {
     struct CGContext { } *_CGContext;
     float _scale;
@@ -13,12 +11,12 @@
     } _size;
 }
 
-@property(readonly) struct CGContext { }* CGContext;
-@property(readonly) UIImage * image;
-@property(readonly) float scale;
-@property struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGContext { }*CGContext;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
-+ (id)drawWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
++ (id)drawWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 + (id)imageFromRawPixelsAtURL:(id)arg1;
 
 - (struct CGContext { }*)CGContext;

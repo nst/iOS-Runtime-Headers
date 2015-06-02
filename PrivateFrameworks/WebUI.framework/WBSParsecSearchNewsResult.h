@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString;
-
 @interface WBSParsecSearchNewsResult : WBSParsecSearchResult {
     NSString *_subscript;
 }
 
-@property(readonly) NSString * subscript;
+@property (nonatomic, readonly) NSString *subscript;
 
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;

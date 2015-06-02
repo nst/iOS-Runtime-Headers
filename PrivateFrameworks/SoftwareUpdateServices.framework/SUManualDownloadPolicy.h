@@ -15,15 +15,15 @@
     BOOL _powerRequired;
 }
 
-@property(getter=isDownloadAllowableForCellular) BOOL downloadAllowableForCellular;
-@property(getter=isDownloadAllowableForCellular2G) BOOL downloadAllowableForCellular2G;
-@property(getter=isDownloadAllowableForCellularRoaming) BOOL downloadAllowableForCellularRoaming;
-@property(getter=isDownloadAllowableForWiFi) BOOL downloadAllowableForWiFi;
-@property(getter=isDownloadFreeForCellular) BOOL downloadFreeForCellular;
-@property(getter=isDownloadable) BOOL downloadable;
-@property(retain) Class fakeClass;
-@property(getter=hasEnoughDiskSpace) BOOL hasEnoughDiskSpace;
-@property(getter=isPowerRequired) BOOL powerRequired;
+@property (getter=isDownloadAllowableForCellular, nonatomic) BOOL downloadAllowableForCellular;
+@property (getter=isDownloadAllowableForCellular2G, nonatomic) BOOL downloadAllowableForCellular2G;
+@property (getter=isDownloadAllowableForCellularRoaming, nonatomic) BOOL downloadAllowableForCellularRoaming;
+@property (getter=isDownloadAllowableForWiFi, nonatomic) BOOL downloadAllowableForWiFi;
+@property (getter=isDownloadFreeForCellular, nonatomic) BOOL downloadFreeForCellular;
+@property (getter=isDownloadable, nonatomic) BOOL downloadable;
+@property (nonatomic, retain) Class fakeClass;
+@property (getter=hasEnoughDiskSpace, nonatomic) BOOL hasEnoughDiskSpace;
+@property (getter=isPowerRequired, nonatomic) BOOL powerRequired;
 
 - (Class)class;
 - (Class)fakeClass;

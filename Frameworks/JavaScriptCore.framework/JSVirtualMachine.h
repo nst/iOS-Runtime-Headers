@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-@class NSMapTable;
-
 @interface JSVirtualMachine : NSObject {
     NSMapTable *m_contextCache;
     NSMapTable *m_externalObjectGraph;

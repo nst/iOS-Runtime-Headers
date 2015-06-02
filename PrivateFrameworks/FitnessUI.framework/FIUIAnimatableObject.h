@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSMutableDictionary;
-
 @interface FIUIAnimatableObject : NSObject {
     NSMutableDictionary *_animatableProperties;
 }

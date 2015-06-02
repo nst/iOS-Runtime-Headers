@@ -7,19 +7,19 @@
     id _info;
     id _perft;
     id _ports;
-    void *_reserved[6];
+    void *_reserved;
     id _rl;
 }
 
-+ (id)_mapkit_networkIORunLoop;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)_new:(id)arg1;
 + (id)currentRunLoop;
 + (id)mainRunLoop;
-+ (void)set_mapkit_networkIORunLoop:(id)arg1;
 
 - (void)_addPort:(id)arg1 forMode:(id)arg2;
 - (BOOL)_containsPort:(id)arg1 forMode:(id)arg2;
-- (void)_enumerateInfoPairsWithBlock:(id)arg1;
+- (void)_enumerateInfoPairsWithBlock:(id /* block */)arg1;
 - (void)_invalidateTimers;
 - (void)_portInvalidated:(id)arg1;
 - (void)_removePort:(id)arg1 forMode:(id)arg2;
@@ -49,5 +49,10 @@
 - (BOOL)runMode:(id)arg1 untilDate:(id)arg2;
 - (void)runUntilDate:(id)arg1;
 - (id)timersForMode:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_networkIORunLoop;
++ (void)set_mapkit_networkIORunLoop:(id)arg1;
 
 @end

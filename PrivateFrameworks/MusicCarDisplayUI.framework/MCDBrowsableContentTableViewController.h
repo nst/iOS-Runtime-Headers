@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDBrowsableContentModel, NSArray, NSIndexPath, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, UIActivityIndicatorView, UITableView, UIView, _MCDBrowsableContentTableViewPreloader, _UIFilteredDataSource;
-
 @interface MCDBrowsableContentTableViewController : UIViewController <MCDBrowsableContentModelListener, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     NSIndexPath *_containerIndexPath;
@@ -23,10 +21,10 @@
     BOOL _wasPreloaded;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_actuallyUpdate;
@@ -41,7 +39,7 @@
 - (void)_updateForIndexPaths:(id)arg1;
 - (void)_updateNowPlayingButtonVisibility;
 - (void)dealloc;
-- (void)getContentItemsWithCompletionBlock:(id)arg1;
+- (void)getContentItemsWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithModel:(id)arg1 indexPath:(id)arg2;
 - (id)initWithModel:(id)arg1 indexPath:(id)arg2 preloaded:(BOOL)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

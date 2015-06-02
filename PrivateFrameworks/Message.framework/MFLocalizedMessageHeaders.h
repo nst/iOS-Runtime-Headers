@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFLocalizedMessageHeaders : MFMessageHeaders {
-}
+@interface MFLocalizedMessageHeaders : MFMessageHeaders
 
 + (id)englishHeadersFromLocalizedHeaders:(id)arg1;
 + (id)localizedHeaders;

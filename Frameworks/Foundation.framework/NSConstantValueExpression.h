@@ -6,9 +6,10 @@
     id constantValue;
 }
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (BOOL)supportsSecureCoding;
 
-- (id)CKExpressionValue;
 - (id)constantValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -20,5 +21,9 @@
 - (id)initWithObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicateFormat;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (id)CKExpressionValue;
 
 @end

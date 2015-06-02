@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray;
-
 @interface ICDeviceBrowserPrivateData : NSObject {
     BOOL _browsing;
     id _delegate;
     NSMutableArray *_internalDevices;
 }
 
-@property(getter=isBrowsing) BOOL browsing;
+@property (getter=isBrowsing) BOOL browsing;
 @property id delegate;
-@property(retain) NSMutableArray * internalDevices;
+@property (retain) NSMutableArray *internalDevices;
 
 - (void)dealloc;
 - (id)delegate;

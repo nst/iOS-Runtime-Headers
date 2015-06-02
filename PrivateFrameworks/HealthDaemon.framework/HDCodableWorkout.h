@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSample, NSMutableArray;
-
 @interface HDCodableWorkout : PBCodable <NSCopying> {
     double _duration;
     NSMutableArray *_events;
@@ -23,21 +21,21 @@
     long long _type;
 }
 
-@property double duration;
-@property(retain) NSMutableArray * events;
-@property double goal;
-@property long long goalType;
-@property BOOL hasDuration;
-@property BOOL hasGoal;
-@property BOOL hasGoalType;
-@property(readonly) BOOL hasSample;
-@property BOOL hasTotalDistanceInCanonicalUnit;
-@property BOOL hasTotalEnergyBurnedInCanonicalUnit;
-@property BOOL hasType;
-@property(retain) HDCodableSample * sample;
-@property double totalDistanceInCanonicalUnit;
-@property double totalEnergyBurnedInCanonicalUnit;
-@property long long type;
+@property (nonatomic) double duration;
+@property (nonatomic, retain) NSMutableArray *events;
+@property (nonatomic) double goal;
+@property (nonatomic) long long goalType;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasGoal;
+@property (nonatomic) BOOL hasGoalType;
+@property (nonatomic, readonly) BOOL hasSample;
+@property (nonatomic) BOOL hasTotalDistanceInCanonicalUnit;
+@property (nonatomic) BOOL hasTotalEnergyBurnedInCanonicalUnit;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) HDCodableSample *sample;
+@property (nonatomic) double totalDistanceInCanonicalUnit;
+@property (nonatomic) double totalEnergyBurnedInCanonicalUnit;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (void)addEvents:(id)arg1;

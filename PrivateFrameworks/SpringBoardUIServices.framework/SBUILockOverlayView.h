@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class <SBUILockOverlayViewDelegate>, SBLockOverlayStylePropertiesFactory, UIButton, UILabel, UIResizableView, _UILegibilitySettings;
-
 @interface SBUILockOverlayView : SBInteractionPassThroughView {
     UIButton *_actionButton;
     <SBUILockOverlayViewDelegate> *_delegate;
@@ -15,13 +13,13 @@
     SBLockOverlayStylePropertiesFactory *_underlayPropertiesFactory;
 }
 
-@property(readonly) UIButton * actionButton;
-@property <SBUILockOverlayViewDelegate> * delegate;
-@property(readonly) _UILegibilitySettings * legibilitySettings;
-@property(readonly) unsigned int style;
-@property(readonly) UILabel * subtitleLabel;
-@property(readonly) UILabel * titleLabel;
-@property(readonly) SBLockOverlayStylePropertiesFactory * underlayPropertiesFactory;
+@property (nonatomic, readonly) UIButton *actionButton;
+@property (nonatomic) <SBUILockOverlayViewDelegate> *delegate;
+@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) unsigned int style;
+@property (nonatomic, readonly) UILabel *subtitleLabel;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) SBLockOverlayStylePropertiesFactory *underlayPropertiesFactory;
 
 - (id)_actionFont;
 - (void)_buttonPressed;

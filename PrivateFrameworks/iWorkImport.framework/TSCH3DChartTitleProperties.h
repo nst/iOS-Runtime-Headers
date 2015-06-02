@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartTitlePositioner, TSCH3DLabelResources, TSCHChartInfo;
-
 @interface TSCH3DChartTitleProperties : NSObject {
     TSCH3DChartTitlePositioner *mCachedPositioner;
     BOOL mHidden;
@@ -11,10 +9,10 @@
     TSCH3DLabelResources *mLabels;
 }
 
-@property(retain) TSCH3DChartTitlePositioner * cachedPositioner;
-@property(readonly) TSCHChartInfo * chartInfo;
-@property BOOL hidden;
-@property(readonly) TSCH3DLabelResources * labels;
+@property (nonatomic, retain) TSCH3DChartTitlePositioner *cachedPositioner;
+@property (nonatomic, readonly) TSCHChartInfo *chartInfo;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic, readonly) TSCH3DLabelResources *labels;
 
 + (id)propertiesWithInfo:(id)arg1 styleIndex:(unsigned int)arg2;
 

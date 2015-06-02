@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSString;
-
 @interface NPKFakeNFCard : NSObject <PKSecureElementCardProtocol> {
     unsigned char _activationState;
     NSString *_aid;
     unsigned char _lifecycleState;
 }
 
-@property unsigned char activationState;
-@property(retain) NSString * aid;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned char lifecycleState;
-@property(readonly) Class superclass;
+@property (nonatomic) unsigned char activationState;
+@property (nonatomic, retain) NSString *aid;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned char lifecycleState;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (unsigned char)activationState;

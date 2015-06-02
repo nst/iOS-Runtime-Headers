@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDThemePart : TDThemeConstant {
-}
+@interface TDThemePart : TDThemeConstant
 
 - (id)debugDescription;
 

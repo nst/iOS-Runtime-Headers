@@ -2,30 +2,28 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputHelper, AVAssetWriterInputInternal, AVOutputSettings, AVWeakReference, NSArray, NSDictionary, NSString;
-
 @interface AVAssetWriterInput : NSObject {
     AVAssetWriterInputInternal *_internal;
 }
 
-@property(getter=_alternateGroupID,setter=_setAlternateGroupID:) short alternateGroupID;
-@property(getter=_isAttachedToMetadataAdaptor,readonly) BOOL attachedToMetadataAdaptor;
-@property(getter=_isAttachedToPixelBufferAdaptor,setter=_setAttachedToPixelBufferAdaptor:) BOOL attachedToPixelBufferAdaptor;
-@property BOOL expectsMediaDataInRealTime;
-@property(getter=_helper,setter=_setHelper:,retain) AVAssetWriterInputHelper * helper;
-@property(readonly) NSString * mediaType;
-@property(copy) NSArray * metadata;
-@property(readonly) int numberOfAppendFailures;
-@property(readonly) NSDictionary * outputSettings;
-@property(getter=_outputSettingsObject,readonly) AVOutputSettings * outputSettingsObject;
-@property(getter=_pixelBufferPool,readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
-@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
-@property(readonly) struct opaqueCMFormatDescription { }* sourceFormatHint;
-@property(getter=_sourcePixelBufferAttributes,setter=_setSourcePixelBufferAttributes:,copy) NSDictionary * sourcePixelBufferAttributes;
-@property(getter=_status,readonly) int status;
-@property(getter=_trackID,readonly) int trackID;
-@property(getter=_trackReferences,readonly) NSDictionary * trackReferences;
-@property(getter=_weakReferenceToAssetWriter,setter=_setWeakReferenceToAssetWriter:,retain) AVWeakReference * weakReferenceToAssetWriter;
+@property (getter=_alternateGroupID, setter=_setAlternateGroupID:, nonatomic) short alternateGroupID;
+@property (getter=_isAttachedToMetadataAdaptor, nonatomic, readonly) BOOL attachedToMetadataAdaptor;
+@property (getter=_isAttachedToPixelBufferAdaptor, setter=_setAttachedToPixelBufferAdaptor:, nonatomic) BOOL attachedToPixelBufferAdaptor;
+@property (nonatomic) BOOL expectsMediaDataInRealTime;
+@property (getter=_helper, setter=_setHelper:, nonatomic, retain) AVAssetWriterInputHelper *helper;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (nonatomic, copy) NSArray *metadata;
+@property (readonly) int numberOfAppendFailures;
+@property (nonatomic, readonly) NSDictionary *outputSettings;
+@property (getter=_outputSettingsObject, nonatomic, readonly) AVOutputSettings *outputSettingsObject;
+@property (getter=_pixelBufferPool, nonatomic, readonly) struct __CVPixelBufferPool { }*pixelBufferPool;
+@property (getter=isReadyForMoreMediaData, nonatomic, readonly) BOOL readyForMoreMediaData;
+@property (nonatomic, readonly) struct opaqueCMFormatDescription { }*sourceFormatHint;
+@property (getter=_sourcePixelBufferAttributes, setter=_setSourcePixelBufferAttributes:, nonatomic, copy) NSDictionary *sourcePixelBufferAttributes;
+@property (getter=_status, nonatomic, readonly) int status;
+@property (getter=_trackID, nonatomic, readonly) int trackID;
+@property (getter=_trackReferences, nonatomic, readonly) NSDictionary *trackReferences;
+@property (getter=_weakReferenceToAssetWriter, setter=_setWeakReferenceToAssetWriter:, nonatomic, retain) AVWeakReference *weakReferenceToAssetWriter;
 
 + (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2;
 + (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
@@ -92,8 +90,8 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })preferredMediaChunkDuration;
 - (int)preferredMediaChunkSize;
 - (float)preferredVolume;
-- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
-- (void)respondToEachPassDescriptionOnQueue:(id)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)respondToEachPassDescriptionOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)sampleReferenceBaseURL;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;
 - (void)setExtendedLanguageTag:(id)arg1;

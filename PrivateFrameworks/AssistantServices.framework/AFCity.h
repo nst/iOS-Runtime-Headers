@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSNumber, NSString;
-
 @interface AFCity : NSObject <NSSecureCoding> {
     NSNumber *_alCityID;
     NSString *_countryName;

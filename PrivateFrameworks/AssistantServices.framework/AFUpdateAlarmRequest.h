@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFUpdateAlarmRequest : AFSiriRequest {
     NSArray *_alarms;
 }
 
-@property(copy) NSArray * alarms;
+@property (nonatomic, copy) NSArray *alarms;
 
 + (BOOL)supportsSecureCoding;
 

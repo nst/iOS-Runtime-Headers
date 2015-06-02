@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPointUtility : NSObject {
-}
+@interface GEOPointUtility : NSObject
 
 + (void*)controlPoints:(id)arg1 usesZilch:(BOOL)arg2;
 + (struct { double x1; double x2; })pointAt:(unsigned int)arg1 pointData:(id)arg2 usesZilch:(BOOL)arg3;

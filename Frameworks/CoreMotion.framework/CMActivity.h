@@ -17,13 +17,13 @@
     } fActivity;
 }
 
-@property(readonly) int confidence;
-@property(readonly) BOOL hasExitedVehicle;
-@property(readonly) BOOL isDriving;
-@property(readonly) BOOL isMoving;
-@property(readonly) BOOL isRunning;
-@property(readonly) BOOL isWalking;
-@property(readonly) BOOL maybeExitingVehicle;
+@property (nonatomic, readonly) int confidence;
+@property (nonatomic, readonly) BOOL hasExitedVehicle;
+@property (nonatomic, readonly) BOOL isDriving;
+@property (nonatomic, readonly) BOOL isMoving;
+@property (nonatomic, readonly) BOOL isRunning;
+@property (nonatomic, readonly) BOOL isWalking;
+@property (nonatomic, readonly) BOOL maybeExitingVehicle;
 
 + (BOOL)supportsSecureCoding;
 

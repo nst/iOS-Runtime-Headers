@@ -2,26 +2,23 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSArray;
+@interface MusicDefaults : MPUApplicationDefaults
 
-@interface MusicDefaults : MPUApplicationDefaults {
-}
-
-@property(getter=isActivityContinuationEnabled,readonly) BOOL activityContinuationEnabled;
-@property(readonly) int eqPreset;
-@property(getter=isGeniusUserEnabled) BOOL geniusUserEnabled;
-@property(getter=isGroupByAlbumArtistEnabled,readonly) BOOL groupByAlbumArtistEnabled;
-@property BOOL lastEffectiveRadioExplicitTracksEnabled;
-@property(getter=areLyricsAndPodcastInfoEnabled,readonly) BOOL lyricsAndPodcastInfoEnabled;
-@property(getter=isPinningEnabled,readonly) BOOL pinningEnabled;
-@property unsigned int playbackSpeed;
-@property unsigned int repeatType;
-@property(getter=isShakeToShuffleEnabled,readonly) BOOL shakeToShuffleEnabled;
-@property(getter=isShowCloudMediaEnabled,readonly) BOOL showCloudMediaEnabled;
-@property unsigned int shuffleType;
-@property(getter=isSortByArtistEnabled,readonly) BOOL sortByArtistEnabled;
-@property(getter=isSoundCheckEnabled,readonly) BOOL soundCheckEnabled;
-@property(copy) NSArray * tabBarOrdering;
+@property (getter=isActivityContinuationEnabled, nonatomic, readonly) BOOL activityContinuationEnabled;
+@property (nonatomic, readonly) int eqPreset;
+@property (getter=isGeniusUserEnabled, nonatomic) BOOL geniusUserEnabled;
+@property (getter=isGroupByAlbumArtistEnabled, nonatomic, readonly) BOOL groupByAlbumArtistEnabled;
+@property (nonatomic) BOOL lastEffectiveRadioExplicitTracksEnabled;
+@property (getter=areLyricsAndPodcastInfoEnabled, nonatomic, readonly) BOOL lyricsAndPodcastInfoEnabled;
+@property (getter=isPinningEnabled, nonatomic, readonly) BOOL pinningEnabled;
+@property (nonatomic) unsigned int playbackSpeed;
+@property (nonatomic) unsigned int repeatType;
+@property (getter=isShakeToShuffleEnabled, nonatomic, readonly) BOOL shakeToShuffleEnabled;
+@property (getter=isShowCloudMediaEnabled, nonatomic, readonly) BOOL showCloudMediaEnabled;
+@property (nonatomic) unsigned int shuffleType;
+@property (getter=isSortByArtistEnabled, nonatomic, readonly) BOOL sortByArtistEnabled;
+@property (getter=isSoundCheckEnabled, nonatomic, readonly) BOOL soundCheckEnabled;
+@property (nonatomic, copy) NSArray *tabBarOrdering;
 
 + (id)sharedDefaults;
 

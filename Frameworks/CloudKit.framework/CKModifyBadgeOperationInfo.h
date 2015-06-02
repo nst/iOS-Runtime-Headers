@@ -6,7 +6,7 @@
     unsigned int _badgeValue;
 }
 
-@property unsigned int badgeValue;
+@property (nonatomic) unsigned int badgeValue;
 
 + (BOOL)supportsSecureCoding;
 

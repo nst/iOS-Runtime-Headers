@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_abExperimentAssignments;
     NSMutableArray *_directionsFeedbackCollections;
@@ -18,17 +16,17 @@
     NSMutableArray *_usageCollections;
 }
 
-@property(retain) NSMutableArray * abExperimentAssignments;
-@property(retain) NSMutableArray * directionsFeedbackCollections;
-@property(retain) NSMutableArray * leaveNowFeedbackCollections;
-@property(retain) NSMutableArray * mapsLaunchFeedbackCollections;
-@property(retain) NSMutableArray * mapsUsageFeedbackCollections;
-@property(retain) NSMutableArray * placeDataCacheFeedbackCollections;
-@property(retain) NSMutableArray * stateTimingFeedbackCollections;
-@property(retain) NSMutableArray * suggestionsFeedbackCollections;
-@property(retain) NSMutableArray * tileSetStateFeedbackCollections;
-@property(retain) NSMutableArray * transitAppLaunchFeedbackCollections;
-@property(retain) NSMutableArray * usageCollections;
+@property (nonatomic, retain) NSMutableArray *abExperimentAssignments;
+@property (nonatomic, retain) NSMutableArray *directionsFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *leaveNowFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *mapsLaunchFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *mapsUsageFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *placeDataCacheFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *stateTimingFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *suggestionsFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *tileSetStateFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *transitAppLaunchFeedbackCollections;
+@property (nonatomic, retain) NSMutableArray *usageCollections;
 
 - (id)abExperimentAssignmentAtIndex:(unsigned int)arg1;
 - (id)abExperimentAssignments;

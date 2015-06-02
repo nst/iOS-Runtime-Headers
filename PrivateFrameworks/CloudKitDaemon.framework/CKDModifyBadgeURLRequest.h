@@ -6,7 +6,7 @@
     unsigned int _badgeValue;
 }
 
-@property(readonly) unsigned int badgeValue;
+@property (nonatomic, readonly) unsigned int badgeValue;
 
 - (unsigned int)badgeValue;
 - (id)initWithBadgeValue:(unsigned int)arg1;

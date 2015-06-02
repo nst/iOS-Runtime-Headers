@@ -2,23 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _IDSCompletionHandler : IDSDelegateInfo {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
 }
 
-@property(copy) id handler;
+@property (nonatomic, copy) id /* block */ handler;
 
 - (void)dealloc;
-- (id)handler;
-- (id)initWithHandler:(id)arg1 queue:(id)arg2;
-- (void)setHandler:(id)arg1;
+- (id /* block */)handler;
+- (id)initWithHandler:(id /* block */)arg1 queue:(id)arg2;
+- (void)setHandler:(id /* block */)arg1;
 
 @end

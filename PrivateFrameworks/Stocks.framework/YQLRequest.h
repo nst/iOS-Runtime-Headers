@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSMutableData, NSString, NSURLConnection, NSURLRequest;
-
 @interface YQLRequest : NSObject <NSURLConnectionDelegate> {
     NSURLConnection *_connection;
     NSMutableData *_rawData;
     NSURLRequest *_request;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;

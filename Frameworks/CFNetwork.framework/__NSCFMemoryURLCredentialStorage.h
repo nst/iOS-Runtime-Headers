@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFMemoryURLCredentialStorage : NSObject {
-}
+@interface __NSCFMemoryURLCredentialStorage : NSObject
 
 + (void)initialize;
 

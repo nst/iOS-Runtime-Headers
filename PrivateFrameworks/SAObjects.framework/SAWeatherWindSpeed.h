@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SAWeatherWindSpeed : AceObject <SAAceSerializable>
 
-@interface SAWeatherWindSpeed : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
-@property(copy) NSString * windDirection;
-@property(copy) NSNumber * windDirectionDegree;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
+@property (nonatomic, copy) NSString *windDirection;
+@property (nonatomic, copy) NSNumber *windDirectionDegree;
 
 + (id)windSpeed;
 + (id)windSpeedWithDictionary:(id)arg1 context:(id)arg2;

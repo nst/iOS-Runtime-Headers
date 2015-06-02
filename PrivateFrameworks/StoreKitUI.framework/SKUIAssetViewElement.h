@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL;
-
 @interface SKUIAssetViewElement : SKUIViewElement {
     double _initialPlaybackTime;
     long long _itemIdentifier;
@@ -11,10 +9,10 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property double initialPlaybackTime;
-@property(readonly) long long itemIdentifier;
-@property(readonly) double playbackDuration;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic) double initialPlaybackTime;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) double playbackDuration;
 
 - (void).cxx_destruct;
 - (id)URL;

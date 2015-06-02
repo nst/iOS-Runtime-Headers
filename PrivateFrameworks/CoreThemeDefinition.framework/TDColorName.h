@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSNumber, NSSet, NSString;
+@interface TDColorName : NSManagedObject
 
-@interface TDColorName : NSManagedObject {
-}
-
-@property(retain) NSSet * colorDefinitions;
-@property(retain) NSString * colorDescription;
-@property(retain) NSString * displayName;
-@property(retain) NSString * illustrationURL;
-@property(retain) NSNumber * isExcludedFromFilter;
-@property(retain) NSString * selector;
+@property (nonatomic, retain) NSSet *colorDefinitions;
+@property (nonatomic, retain) NSString *colorDescription;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *illustrationURL;
+@property (nonatomic, retain) NSNumber *isExcludedFromFilter;
+@property (nonatomic, retain) NSString *selector;
 
 @end

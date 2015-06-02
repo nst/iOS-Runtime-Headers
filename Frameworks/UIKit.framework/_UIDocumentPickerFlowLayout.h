@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDocumentPickerFlowLayout : UICollectionViewFlowLayout {
-}
+@interface _UIDocumentPickerFlowLayout : UICollectionViewFlowLayout
 
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 

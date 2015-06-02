@@ -2,26 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <MSStreamsProtocolDelegate>, NSString, NSURL;
-
 @interface MSStreamsProtocol : NSObject {
     <MSStreamsProtocolDelegate> *_delegate;
     NSString *_personID;
 }
 
-@property <MSStreamsProtocolDelegate> * delegate;
-@property(readonly) NSURL * deleteURL;
-@property(readonly) NSURL * getURL;
-@property(readonly) NSString * personID;
-@property(readonly) NSURL * putURL;
-@property(readonly) NSURL * reauthorizeURL;
-@property(readonly) NSURL * resetURL;
-@property(readonly) NSURL * uploadCompleteURL;
+@property (nonatomic) <MSStreamsProtocolDelegate> *delegate;
+@property (nonatomic, readonly) NSURL *deleteURL;
+@property (nonatomic, readonly) NSURL *getURL;
+@property (nonatomic, readonly) NSString *personID;
+@property (nonatomic, readonly) NSURL *putURL;
+@property (nonatomic, readonly) NSURL *reauthorizeURL;
+@property (nonatomic, readonly) NSURL *resetURL;
+@property (nonatomic, readonly) NSURL *uploadCompleteURL;
 
 - (void).cxx_destruct;
 - (void)_didFindServerSideConfigurationVersion:(id)arg1;

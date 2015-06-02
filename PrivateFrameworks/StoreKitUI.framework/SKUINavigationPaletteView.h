@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSMutableArray, NSString;
-
 @interface SKUINavigationPaletteView : SKUIViewReuseView <SKUIViewElementView> {
     struct UIEdgeInsets { 
         float top; 
@@ -18,11 +16,11 @@
     NSMapTable *_viewSpacings;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property int verticalAlignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) int verticalAlignment;
 
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;

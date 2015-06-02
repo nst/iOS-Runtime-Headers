@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPlaceSearchFeedbackCollection : PBCodable <NSCopying> {
     NSMutableArray *_actionCaptures;
     unsigned long long _businessID;
@@ -21,15 +19,15 @@
     } _sessionID;
 }
 
-@property(retain) NSMutableArray * actionCaptures;
-@property unsigned long long businessID;
-@property BOOL hasBusinessID;
-@property BOOL hasLocalSearchProviderID;
-@property BOOL hasPlaceID;
-@property BOOL hasSessionID;
-@property int localSearchProviderID;
-@property long long placeID;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic, retain) NSMutableArray *actionCaptures;
+@property (nonatomic) unsigned long long businessID;
+@property (nonatomic) BOOL hasBusinessID;
+@property (nonatomic) BOOL hasLocalSearchProviderID;
+@property (nonatomic) BOOL hasPlaceID;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) int localSearchProviderID;
+@property (nonatomic) long long placeID;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
 
 - (id)actionCaptureAtIndex:(unsigned int)arg1;
 - (id)actionCaptures;

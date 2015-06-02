@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WeatherIconsUtility : NSObject {
-}
+@interface WeatherIconsUtility : NSObject
 
 + (id)lookupCenteredSmallWeatherIcons:(int)arg1;
 + (id)lookupSmallWeatherIcons:(int)arg1;

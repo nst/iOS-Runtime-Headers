@@ -6,7 +6,7 @@
     int _state;
 }
 
-@property int state;
+@property (nonatomic) int state;
 
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)setState:(int)arg1;

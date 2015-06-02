@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface TCXmlPrefixStreamWriterState : NSObject {
     NSString *_attributePrefix;
     NSString *_elementPrefix;
 }
 
-@property(copy) NSString * attributePrefix;
-@property(copy) NSString * elementPrefix;
+@property (nonatomic, copy) NSString *attributePrefix;
+@property (nonatomic, copy) NSString *elementPrefix;
 
 - (id)attributePrefix;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray;
-
 @interface ABCardFaceTimeGroup : ABCardGroup {
     NSArray *_displayItems;
 }

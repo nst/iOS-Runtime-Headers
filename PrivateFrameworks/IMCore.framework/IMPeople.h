@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSMutableArray;
-
 @interface IMPeople : NSObject {
     int _coalesceCount;
     BOOL _hidePeople;
     NSMutableArray *_people;
 }
 
-@property(readonly) BOOL coalescingChanges;
-@property(readonly) unsigned int count;
-@property(readonly) NSArray * groups;
-@property(setter=setShouldHidePeople:) BOOL hidePeople;
-@property(readonly) NSArray * people;
+@property (nonatomic, readonly) BOOL coalescingChanges;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) NSArray *groups;
+@property (setter=setShouldHidePeople:, nonatomic) BOOL hidePeople;
+@property (nonatomic, readonly) NSArray *people;
 
 - (void)_addedPeople:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSMutableData;
-
 @interface AXHAPacket : NSObject {
     NSMutableData *_data;
     unsigned int _totalLength;
 }
 
-@property(retain) NSMutableData * data;
+@property (nonatomic, retain) NSMutableData *data;
 
 + (struct { short x1; int x2; })headerFromData:(id)arg1;
 + (id)packetDataWithPayload:(id)arg1;

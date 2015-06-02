@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, NSNumber, NSString;
-
 @interface MLContentRating : NSObject <NSCopying> {
     NSMutableDictionary *_dictionary;
 }
 
-@property(copy) NSString * ratingDescription;
-@property(copy) NSString * ratingLabel;
-@property(retain) NSNumber * ratingRank;
-@property(copy) NSString * ratingSystem;
+@property (nonatomic, copy) NSString *ratingDescription;
+@property (nonatomic, copy) NSString *ratingLabel;
+@property (nonatomic, retain) NSNumber *ratingRank;
+@property (nonatomic, copy) NSString *ratingSystem;
 
 - (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;

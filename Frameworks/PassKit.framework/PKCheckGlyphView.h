@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CAGradientLayer, CAShapeLayer, UIColor;
-
 @interface PKCheckGlyphView : PKMicaView {
     BOOL _covered;
     struct CATransform3D { 
@@ -48,8 +46,8 @@
     } _uncoveredTransform;
 }
 
-@property(copy) UIColor * primaryColor;
-@property BOOL revealed;
+@property (nonatomic, copy) UIColor *primaryColor;
+@property (nonatomic) BOOL revealed;
 
 + (id)defaultActions;
 

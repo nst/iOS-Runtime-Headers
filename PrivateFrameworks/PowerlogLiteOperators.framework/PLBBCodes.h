@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray;
-
 @interface PLBBCodes : NSObject {
     NSArray *_Mav5_7_Lite_LogCodes;
     NSArray *_Mav5_7_LogCodes;
@@ -11,10 +9,10 @@
     NSArray *_allMav_LogCodes;
 }
 
-@property(retain) NSArray * Mav5_7_Lite_LogCodes;
-@property(retain) NSArray * Mav5_7_LogCodes;
-@property(retain) NSArray * Mav7_LogCodes;
-@property(retain) NSArray * allMav_LogCodes;
+@property (retain) NSArray *Mav5_7_Lite_LogCodes;
+@property (retain) NSArray *Mav5_7_LogCodes;
+@property (retain) NSArray *Mav7_LogCodes;
+@property (retain) NSArray *allMav_LogCodes;
 
 - (void).cxx_destruct;
 - (id)Mav5_7_Lite_LogCodes;

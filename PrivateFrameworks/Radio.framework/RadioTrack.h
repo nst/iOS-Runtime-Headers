@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL, RadioArtworkCollection, RadioAudioClip, RadioTrackAdInfo;
-
 @interface RadioTrack : NSObject <NSSecureCoding> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDictionary *_bestOfferDictionary;
@@ -12,46 +10,46 @@
     NSMutableDictionary *_trackDictionary;
 }
 
-@property(copy,readonly) NSData * adData;
-@property(readonly) RadioTrackAdInfo * adInfo;
-@property(readonly) RadioAudioClip * afterPromoAudioClip;
-@property(copy,readonly) NSString * album;
-@property(copy,readonly) NSString * albumBuyButtonText;
-@property(readonly) int albumBuyButtonType;
-@property(readonly) long long albumID;
-@property(copy,readonly) NSURL * albumURL;
-@property(copy,readonly) NSString * artist;
-@property(readonly) RadioArtworkCollection * artworkCollection;
-@property(copy,readonly) NSArray * assets;
-@property(readonly) RadioAudioClip * beforePromoAudioClip;
-@property(copy,readonly) NSString * copyrightText;
-@property(readonly) long long dateFetched;
-@property(copy,readonly) NSString * debugMessage;
-@property(readonly) double duration;
-@property(retain) NSDate * expirationDate;
-@property(copy,readonly) NSDictionary * feedbackDictionaryRepresentation;
-@property BOOL inWishList;
-@property(readonly) BOOL isExplicit;
-@property(readonly) BOOL isPreorderAlbum;
-@property(readonly) int likeStatus;
-@property(copy) NSDictionary * metadataDictionary;
-@property(copy,readonly) NSArray * offers;
-@property(copy,readonly) NSURL * previewURL;
-@property(readonly) long long shuffleSeed;
-@property(readonly) double startTime;
-@property(readonly) long long storeID;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSDictionary * trackDictionary;
-@property(copy,readonly) NSDictionary * trackInfo;
+@property (nonatomic, readonly, copy) NSData *adData;
+@property (nonatomic, readonly) RadioTrackAdInfo *adInfo;
+@property (nonatomic, readonly) RadioAudioClip *afterPromoAudioClip;
+@property (nonatomic, readonly, copy) NSString *album;
+@property (nonatomic, readonly, copy) NSString *albumBuyButtonText;
+@property (nonatomic, readonly) int albumBuyButtonType;
+@property (nonatomic, readonly) long long albumID;
+@property (nonatomic, readonly, copy) NSURL *albumURL;
+@property (nonatomic, readonly, copy) NSString *artist;
+@property (nonatomic, readonly) RadioArtworkCollection *artworkCollection;
+@property (nonatomic, readonly, copy) NSArray *assets;
+@property (nonatomic, readonly) RadioAudioClip *beforePromoAudioClip;
+@property (nonatomic, readonly, copy) NSString *copyrightText;
+@property (nonatomic, readonly) long long dateFetched;
+@property (nonatomic, readonly, copy) NSString *debugMessage;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, retain) NSDate *expirationDate;
+@property (nonatomic, readonly, copy) NSDictionary *feedbackDictionaryRepresentation;
+@property (nonatomic) BOOL inWishList;
+@property (nonatomic, readonly) BOOL isExplicit;
+@property (nonatomic, readonly) BOOL isPreorderAlbum;
+@property (nonatomic, readonly) int likeStatus;
+@property (nonatomic, copy) NSDictionary *metadataDictionary;
+@property (nonatomic, readonly, copy) NSArray *offers;
+@property (nonatomic, readonly, copy) NSURL *previewURL;
+@property (nonatomic, readonly) long long shuffleSeed;
+@property (nonatomic, readonly) double startTime;
+@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSDictionary *trackDictionary;
+@property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_offers;
-- (void)_performTransaction:(id)arg1;
-- (void)_performTransactionAndWait:(id)arg1;
-- (void)_performWriteTransaction:(id)arg1;
-- (void)_performWriteTransactionAndWait:(id)arg1;
+- (void)_performTransaction:(id /* block */)arg1;
+- (void)_performTransactionAndWait:(id /* block */)arg1;
+- (void)_performWriteTransaction:(id /* block */)arg1;
+- (void)_performWriteTransactionAndWait:(id /* block */)arg1;
 - (id)_valueOfClass:(Class)arg1 forAssetInfoKey:(id)arg2;
 - (id)_valueOfClass:(Class)arg1 forMetadataKey:(id)arg2 fallbackTrackDictionaryKey:(id)arg3;
 - (id)_valueRespondingToSelector:(SEL)arg1 forMetadataKey:(id)arg2 fallbackTrackDictionaryKey:(id)arg3;

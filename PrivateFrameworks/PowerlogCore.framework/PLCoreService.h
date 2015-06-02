@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary;
-
 @interface PLCoreService : PLCoreOperator {
     NSMutableDictionary *_services;
 }
 
-@property(retain) NSMutableDictionary * services;
+@property (retain) NSMutableDictionary *services;
 
 - (void).cxx_destruct;
 - (id)init;

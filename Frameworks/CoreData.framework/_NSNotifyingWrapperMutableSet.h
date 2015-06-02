@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSMutableSet, NSString;
-
 @interface _NSNotifyingWrapperMutableSet : NSMutableSet {
     NSManagedObject *_container;
     NSString *_key;
@@ -17,11 +15,11 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithContainer:(id)arg1 key:(id)arg2 mutableSet:(id)arg3;
 - (void)intersectSet:(id)arg1;
@@ -33,7 +31,7 @@
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (void)setSet:(id)arg1;

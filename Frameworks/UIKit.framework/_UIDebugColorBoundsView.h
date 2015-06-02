@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDebugColorBoundsView : UIView {
-}
+@interface _UIDebugColorBoundsView : UIView
 
 + (id)_nextColor;
 

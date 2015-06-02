@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, NSString;
-
 @interface GEOPDMerchantLookupParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int transactionLocationAge : 1; 
@@ -17,18 +15,18 @@
     double _transactionTimestamp;
 }
 
-@property(readonly) BOOL hasMerchantCode;
-@property(readonly) BOOL hasPaymentNetwork;
-@property(readonly) BOOL hasRawMerchantCode;
-@property(readonly) BOOL hasTransactionLocation;
-@property BOOL hasTransactionLocationAge;
-@property BOOL hasTransactionTimestamp;
-@property(retain) NSString * merchantCode;
-@property(retain) NSString * paymentNetwork;
-@property(retain) NSString * rawMerchantCode;
-@property(retain) GEOLocation * transactionLocation;
-@property double transactionLocationAge;
-@property double transactionTimestamp;
+@property (nonatomic, readonly) BOOL hasMerchantCode;
+@property (nonatomic, readonly) BOOL hasPaymentNetwork;
+@property (nonatomic, readonly) BOOL hasRawMerchantCode;
+@property (nonatomic, readonly) BOOL hasTransactionLocation;
+@property (nonatomic) BOOL hasTransactionLocationAge;
+@property (nonatomic) BOOL hasTransactionTimestamp;
+@property (nonatomic, retain) NSString *merchantCode;
+@property (nonatomic, retain) NSString *paymentNetwork;
+@property (nonatomic, retain) NSString *rawMerchantCode;
+@property (nonatomic, retain) GEOLocation *transactionLocation;
+@property (nonatomic) double transactionLocationAge;
+@property (nonatomic) double transactionTimestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

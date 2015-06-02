@@ -7,8 +7,8 @@
     double _minimum;
 }
 
-@property(readonly) double maximum;
-@property(readonly) double minimum;
+@property (nonatomic, readonly) double maximum;
+@property (nonatomic, readonly) double minimum;
 
 + (id)float64RangeWithAudioValueRange:(struct AudioValueRange { double x1; double x2; })arg1;
 + (id)float64RangeWithMinimum:(double)arg1 maximum:(double)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WPContinuityDelegate>, NSString, XPCClient;
-
 @interface WPContinuity : NSObject <XPCClientDelegate> {
     int _btBandwidthState;
     XPCClient *_connection;
@@ -12,13 +10,13 @@
 }
 
 @property int btBandwidthState;
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <WPContinuityDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WPContinuityDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int state;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)btBandwidthState;

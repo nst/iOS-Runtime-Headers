@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDTableProperties;
-
 @interface WDTableRowProperties : NSObject <NSCopying> {
     WDCharacterProperties *mCharacterProperties;
-    unsigned int mOriginal : 1;
+    unsigned int mOriginal;
     struct { 
         short widthBefore; 
         int widthBeforeType; 
@@ -23,9 +21,9 @@
         unsigned int header : 1; 
         unsigned int headerOverridden : 1; 
     } mOriginalProperties;
-    unsigned int mResolved : 1;
+    unsigned int mResolved;
     WDTableProperties *mTableProperties;
-    unsigned int mTracked : 1;
+    unsigned int mTracked;
     struct { 
         short widthBefore; 
         int widthBeforeType; 

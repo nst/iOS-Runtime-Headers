@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, NSUUID, TSCHChartAxis, TSCHChartAxisID, TSCHChartModel, TSCHReferenceLineNonStyle, TSCHReferenceLineStyle;
-
 @interface TSCHReferenceLine : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
     TSCHChartAxisID *mAxisID;
     TSCHChartModel *mModel;
@@ -13,17 +11,17 @@
     NSUUID *mUUID;
 }
 
-@property(readonly) TSCHChartAxis * axis;
-@property(copy,readonly) TSCHChartAxisID * axisID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL labelShowing;
-@property(readonly) BOOL lineShowing;
-@property(readonly) unsigned int styleSwapIndex;
-@property(readonly) Class superclass;
-@property(readonly) NSUUID * uuid;
-@property(readonly) BOOL valueLabelShowing;
+@property (nonatomic, readonly) TSCHChartAxis *axis;
+@property (nonatomic, readonly, copy) TSCHChartAxisID *axisID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL labelShowing;
+@property (nonatomic, readonly) BOOL lineShowing;
+@property (nonatomic, readonly) unsigned int styleSwapIndex;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, readonly) BOOL valueLabelShowing;
 
 + (id)axisIDFromStyleSwapOrStyleOwnerIndex:(unsigned int)arg1;
 + (id)defaultNonStyleWithContext:(id)arg1 referenceLineType:(unsigned int)arg2 axis:(id)arg3;

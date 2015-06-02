@@ -7,8 +7,8 @@
     int _status;
 }
 
-@property(readonly) BOOL selected;
-@property(readonly) int status;
+@property (nonatomic, readonly) BOOL selected;
+@property (nonatomic, readonly) int status;
 
 + (id)statusAsString:(int)arg1;
 + (BOOL)supportsSecureCoding;

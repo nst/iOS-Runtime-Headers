@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKRange;
-
 @interface SKRotationConstraint : SKConstraint {
     SKRange *_zRotationRange;
 }
 
-@property(copy) SKRange * zRotationRange;
+@property (copy) SKRange *zRotationRange;
 
 + (id)constraintWithZRotationRange:(id)arg1;
 

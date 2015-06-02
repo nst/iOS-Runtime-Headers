@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface PUPhotoEditToolControllerSpec : PUViewControllerSpec <PUPhotoEditLayoutDynamicAdaptable> {
     int _layoutOrientation;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int layoutOrientation;
-@property(readonly) float standardBottomBarHeight;
-@property(readonly) float standardSideBarWidth;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (nonatomic, readonly) float standardBottomBarHeight;
+@property (nonatomic, readonly) float standardSideBarWidth;
+@property (readonly) Class superclass;
 
 - (int)layoutOrientation;
 - (void)setLayoutOrientation:(int)arg1;

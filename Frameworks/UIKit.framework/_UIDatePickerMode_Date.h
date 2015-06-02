@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIDatePickerMode_Date : _UIDatePickerMode {
     float _dateDayWidth;
     float _dateMonthWidth;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSServiceMessage : PBCodable <NSCopying> {
     NSString *_displayName;
     struct { 
@@ -21,22 +19,22 @@
     int _serviceType;
 }
 
-@property(retain) NSString * displayName;
-@property(readonly) BOOL hasDisplayName;
-@property(readonly) BOOL hasHomeSharingGroupKey;
-@property(readonly) BOOL hasHostName;
-@property(readonly) BOOL hasNetworkName;
-@property BOOL hasPort;
-@property BOOL hasServiceDiscoverySource;
-@property BOOL hasServiceLegacyFlags;
-@property BOOL hasServiceType;
-@property(retain) NSString * homeSharingGroupKey;
-@property(retain) NSString * hostName;
-@property(retain) NSString * networkName;
-@property int port;
-@property int serviceDiscoverySource;
-@property int serviceLegacyFlags;
-@property int serviceType;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic, readonly) BOOL hasHomeSharingGroupKey;
+@property (nonatomic, readonly) BOOL hasHostName;
+@property (nonatomic, readonly) BOOL hasNetworkName;
+@property (nonatomic) BOOL hasPort;
+@property (nonatomic) BOOL hasServiceDiscoverySource;
+@property (nonatomic) BOOL hasServiceLegacyFlags;
+@property (nonatomic) BOOL hasServiceType;
+@property (nonatomic, retain) NSString *homeSharingGroupKey;
+@property (nonatomic, retain) NSString *hostName;
+@property (nonatomic, retain) NSString *networkName;
+@property (nonatomic) int port;
+@property (nonatomic) int serviceDiscoverySource;
+@property (nonatomic) int serviceLegacyFlags;
+@property (nonatomic) int serviceType;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

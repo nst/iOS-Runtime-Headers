@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSSet, NSString;
-
 @interface SKUIViewElement : IKViewElement {
     NSMutableArray *_flattenedChildren;
     int _pinStyle;
 }
 
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(readonly) NSArray * flattenedChildren;
-@property(copy,readonly) NSString * indexBarEntryID;
-@property(retain,readonly) NSString * itmlID;
-@property(readonly) int pageComponentType;
-@property(readonly) NSSet * personalizationLibraryItems;
-@property(readonly) int pinStyle;
-@property(readonly) BOOL rendersWithPerspective;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) NSArray *flattenedChildren;
+@property (nonatomic, readonly, copy) NSString *indexBarEntryID;
+@property (nonatomic, readonly, retain) NSString *itmlID;
+@property (nonatomic, readonly) int pageComponentType;
+@property (nonatomic, readonly) NSSet *personalizationLibraryItems;
+@property (nonatomic, readonly) int pinStyle;
+@property (nonatomic, readonly) BOOL rendersWithPerspective;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (BOOL)descendsFromElementWithType:(unsigned int)arg1;
 - (id)elementWithIdentifier:(id)arg1;
-- (void)enumerateChildrenUsingBlock:(id)arg1;
-- (void)enumerateViewElementsWithDictionary:(id)arg1 factory:(id)arg2 usingBlock:(id)arg3;
+- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
+- (void)enumerateViewElementsWithDictionary:(id)arg1 factory:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)featureWithName:(id)arg1;
 - (id)firstChildForElementType:(unsigned int)arg1;
 - (id)firstDescendentWithIndexBarEntryID:(id)arg1;

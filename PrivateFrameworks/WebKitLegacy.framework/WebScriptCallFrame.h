@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebScriptCallFramePrivate;
-
 @interface WebScriptCallFrame : NSObject {
     WebScriptCallFramePrivate *_private;
     id _userInfo;

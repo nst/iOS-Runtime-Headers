@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUExtrasArtworkLayoutTriggeringView : MPUArtworkView {
-}
+@interface MPUExtrasArtworkLayoutTriggeringView : MPUArtworkView
 
 - (void)_imageDidChange;
 

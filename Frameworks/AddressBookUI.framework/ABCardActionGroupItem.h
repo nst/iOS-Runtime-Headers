@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface ABCardActionGroupItem : ABCardGroupItem {
     NSMutableArray *_actions;
 }
 
-@property(readonly) NSArray * actions;
+@property (nonatomic, readonly) NSArray *actions;
 
 + (id)actionGroupItemWithAction:(id)arg1;
 + (id)actionGroupItemWithActions:(id)arg1;

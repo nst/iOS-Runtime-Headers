@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class PLCloudScenario, PLCloudScenarioExecutionResult;
-
 @interface PLCloudExecutingScenario : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionCallback;
-
+    id /* block */ _completionCallback;
     PLCloudScenarioExecutionResult *_executionState;
     PLCloudScenario *_scenario;
 }
 
-@property(copy) id completionCallback;
-@property(retain) PLCloudScenarioExecutionResult * executionState;
-@property(retain) PLCloudScenario * scenario;
+@property (nonatomic, copy) id /* block */ completionCallback;
+@property (nonatomic, retain) PLCloudScenarioExecutionResult *executionState;
+@property (nonatomic, retain) PLCloudScenario *scenario;
 
-- (id)completionCallback;
+- (id /* block */)completionCallback;
 - (void)dealloc;
 - (id)executionState;
 - (id)scenario;
-- (void)setCompletionCallback:(id)arg1;
+- (void)setCompletionCallback:(id /* block */)arg1;
 - (void)setExecutionState:(id)arg1;
 - (void)setScenario:(id)arg1;
 

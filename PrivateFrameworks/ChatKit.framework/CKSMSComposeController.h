@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKSMSComposeQueuingRemoteViewControllerProxy, CKSMSComposeRemoteViewController, NSString, UINavigationController, _UIAsyncInvocation;
-
 @interface CKSMSComposeController : UIViewController <CKSMSCompose, CKSMSComposeRemoteViewControllerDelegate> {
     _UIAsyncInvocation *_cancellationInvocation;
     UINavigationController *_clientNavigationController;
@@ -16,13 +14,13 @@
     int _savedStatusBarStyle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CKSMSComposeRemoteViewController * remoteViewController;
-@property(retain) CKSMSComposeQueuingRemoteViewControllerProxy * remoteViewControllerProxy;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKSMSComposeRemoteViewController *remoteViewController;
+@property (nonatomic, retain) CKSMSComposeQueuingRemoteViewControllerProxy *remoteViewControllerProxy;
+@property (readonly) Class superclass;
 
 + (BOOL)acceptsMIMEType:(id)arg1;
 + (BOOL)canSendPhotos:(int)arg1 videos:(int)arg2 audioClips:(int)arg3;

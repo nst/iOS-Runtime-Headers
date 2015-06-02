@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>, NSSet;
-
 @interface CUTNetworkInterfaceListener : NSObject {
     NSSet *_IPv4Addresses;
     NSSet *_IPv6Addresses;
@@ -14,10 +12,10 @@
     int _wifiState;
 }
 
-@property(retain,readonly) NSSet * IPv4Addresses;
-@property(retain,readonly) NSSet * IPv6Addresses;
-@property(readonly) int cellState;
-@property(readonly) int wifiState;
+@property (nonatomic, readonly, retain) NSSet *IPv4Addresses;
+@property (nonatomic, readonly, retain) NSSet *IPv6Addresses;
+@property (nonatomic, readonly) int cellState;
+@property (nonatomic, readonly) int wifiState;
 
 + (id)sharedInstance;
 

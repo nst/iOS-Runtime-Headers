@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarNotification, EKEventStore, NSDate;
-
 @interface EKCalendarNotificationReference : NSObject {
     NSDate *_date;
     EKEventStore *_eventStore;
@@ -15,8 +13,8 @@
     int _type;
 }
 
-@property(readonly) EKCalendarNotification * notification;
-@property(readonly) int type;
+@property (nonatomic, readonly) EKCalendarNotification *notification;
+@property (nonatomic, readonly) int type;
 
 - (int)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 - (void)dealloc;

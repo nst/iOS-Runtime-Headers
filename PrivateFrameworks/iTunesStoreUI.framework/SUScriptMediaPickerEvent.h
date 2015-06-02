@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptMediaItemCollection;
-
 @interface SUScriptMediaPickerEvent : SUScriptObject {
     SUScriptMediaItemCollection *_collection;
 }
 
-@property(readonly) SUScriptMediaItemCollection * collection;
+@property (readonly) SUScriptMediaItemCollection *collection;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

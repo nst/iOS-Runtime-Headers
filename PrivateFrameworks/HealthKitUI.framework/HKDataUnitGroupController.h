@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSArray, NSDictionary;
-
 @interface HKDataUnitGroupController : NSObject {
     NSArray *_dataUnitGroups;
     NSDictionary *_dataUnitGroupsByCategoryID;

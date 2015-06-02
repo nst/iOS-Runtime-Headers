@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableString, YTVideo;
-
 @interface YTCommentsRequest : YTXMLHTTPRequest {
     NSMutableArray *_comments;
     id _delegate;

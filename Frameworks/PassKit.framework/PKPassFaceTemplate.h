@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKPassFieldTemplate;
-
 @interface PKPassFaceTemplate : NSObject {
     struct CGSize { 
         float width; 
@@ -14,10 +12,10 @@
     PKPassFieldTemplate *_defaultFieldTemplate;
 }
 
-@property float barcodeBottomInset;
-@property struct CGSize { float x1; float x2; } barcodeMaxSize;
-@property(retain) NSMutableArray * bucketTemplates;
-@property(retain) PKPassFieldTemplate * defaultFieldTemplate;
+@property (nonatomic) float barcodeBottomInset;
+@property (nonatomic) struct CGSize { float x1; float x2; } barcodeMaxSize;
+@property (nonatomic, retain) NSMutableArray *bucketTemplates;
+@property (nonatomic, retain) PKPassFieldTemplate *defaultFieldTemplate;
 
 - (void)addBucketTemplate:(id)arg1;
 - (float)barcodeBottomInset;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSMutableArray, NSObject<ATConnectionDelegate>, NSString, NSXPCConnection;
-
 @interface ATConnection : NSObject <ATConnectionDelegate> {
     BOOL _atcRunning;
     int _atcRunningToken;
@@ -13,11 +11,11 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<ATConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<ATConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleDisconnect;

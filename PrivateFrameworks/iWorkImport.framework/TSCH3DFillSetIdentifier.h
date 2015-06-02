@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSCH3DFillSetIdentifier : NSObject {
     int _fillPropertyType;
     int _seriesIndex;
     NSString *_textureSetID;
 }
 
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) NSString * textureSetFilename;
-@property(readonly) NSString * textureSetID;
+@property (nonatomic, readonly) unsigned int seriesIndex;
+@property (nonatomic, readonly) NSString *textureSetFilename;
+@property (nonatomic, readonly) NSString *textureSetID;
 
 + (id)identifierWithContentsOfDictionary:(id)arg1;
 + (id)identifierWithFillName:(id)arg1 seriesName:(id)arg2 textureSetID:(id)arg3;

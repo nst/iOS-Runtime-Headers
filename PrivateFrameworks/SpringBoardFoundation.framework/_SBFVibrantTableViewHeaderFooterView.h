@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString, UIView, _UIBackdropView;
-
 @interface _SBFVibrantTableViewHeaderFooterView : UITableViewHeaderFooterView {
     _UIBackdropView *_backdrop;
     NSString *_backdropGroupName;
@@ -12,9 +10,9 @@
     BOOL _wantsPlusDLayer;
 }
 
-@property(copy) NSString * backdropGroupName;
-@property int graphicsQuality;
-@property BOOL wantsPlusDLayer;
+@property (nonatomic, copy) NSString *backdropGroupName;
+@property (nonatomic) int graphicsQuality;
+@property (nonatomic) BOOL wantsPlusDLayer;
 
 + (id)defaultBackgroundColorForGraphicsQuality:(int)arg1;
 

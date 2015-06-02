@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSString;
-
 @interface CUIPSDLayer : NSObject {
     int _blendMode;
     NSString *_name;
     float _opacity;
 }
 
-@property int blendMode;
-@property(retain) NSString * name;
-@property float opacity;
+@property (nonatomic) int blendMode;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) float opacity;
 
 - (int)blendMode;
 - (void)dealloc;

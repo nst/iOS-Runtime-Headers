@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData;
-
 @interface IDSFaceTimeMessage : FTIDSMessage <NSCopying> {
     NSData *_sessionToken;
 }
 
-@property(copy) NSData * sessionToken;
+@property (copy) NSData *sessionToken;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

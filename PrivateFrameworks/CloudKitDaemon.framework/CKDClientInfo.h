@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKDClientInfo : NSObject {
     Class _CKDUITextInputModeClass;
     NSString *_cachedHostname;
@@ -12,9 +10,9 @@
     struct MGNotificationTokenStruct { } *_hostNotificationToken;
 }
 
-@property Class CKDUITextInputModeClass;
-@property(readonly) NSArray * enabledKeyboards;
-@property(readonly) NSString * hostname;
+@property (nonatomic) Class CKDUITextInputModeClass;
+@property (nonatomic, readonly) NSArray *enabledKeyboards;
+@property (nonatomic, readonly) NSString *hostname;
 
 + (id)sharedClientInfo;
 

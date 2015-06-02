@@ -6,7 +6,7 @@
     BOOL _needsFlush;
 }
 
-@property BOOL needsFlush;
+@property (nonatomic) BOOL needsFlush;
 
 + (id)sharedInstance;
 

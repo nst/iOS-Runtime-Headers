@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class PSSpecifier;
-
 @interface CNFRegDisabledController : CNFRegFirstRunController {
     PSSpecifier *_spinner;
     PSSpecifier *_turnOnButton;

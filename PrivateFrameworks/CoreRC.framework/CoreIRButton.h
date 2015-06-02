@@ -7,8 +7,8 @@
     unsigned long _usagePage;
 }
 
-@property(readonly) unsigned long usageID;
-@property(readonly) unsigned long usagePage;
+@property (nonatomic, readonly) unsigned long usageID;
+@property (nonatomic, readonly) unsigned long usagePage;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;

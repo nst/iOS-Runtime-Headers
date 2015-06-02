@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSMutableArray, NSString;
-
 @interface GEORPResolution : PBCodable <NSCopying> {
     GEOMapRegion *_displayRegion;
     struct { 
@@ -16,16 +14,16 @@
     NSMutableArray *_updatedPlaces;
 }
 
-@property(retain) GEOMapRegion * displayRegion;
-@property(readonly) BOOL hasDisplayRegion;
-@property(readonly) BOOL hasLocalizedAlertText;
-@property(readonly) BOOL hasLocalizedDescription;
-@property BOOL hasResolutionDate;
-@property(retain) NSString * localizedAlertText;
-@property(retain) NSMutableArray * localizedChangeLists;
-@property(retain) NSString * localizedDescription;
-@property double resolutionDate;
-@property(retain) NSMutableArray * updatedPlaces;
+@property (nonatomic, retain) GEOMapRegion *displayRegion;
+@property (nonatomic, readonly) BOOL hasDisplayRegion;
+@property (nonatomic, readonly) BOOL hasLocalizedAlertText;
+@property (nonatomic, readonly) BOOL hasLocalizedDescription;
+@property (nonatomic) BOOL hasResolutionDate;
+@property (nonatomic, retain) NSString *localizedAlertText;
+@property (nonatomic, retain) NSMutableArray *localizedChangeLists;
+@property (nonatomic, retain) NSString *localizedDescription;
+@property (nonatomic) double resolutionDate;
+@property (nonatomic, retain) NSMutableArray *updatedPlaces;
 
 - (void)addLocalizedChangeList:(id)arg1;
 - (void)addUpdatedPlace:(id)arg1;

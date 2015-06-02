@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXReplayer : NSObject {
-}
+@interface AXReplayer : NSObject
 
 + (id)replayer;
 
-- (void)replayWithName:(id)arg1 attempts:(int)arg2 interval:(double)arg3 async:(BOOL)arg4 queue:(id)arg5 replayBlock:(id)arg6 completion:(id)arg7;
+- (void)replayWithName:(id)arg1 attempts:(int)arg2 interval:(double)arg3 async:(BOOL)arg4 queue:(id)arg5 replayBlock:(id /* block */)arg6 completion:(id /* block */)arg7;
 
 @end

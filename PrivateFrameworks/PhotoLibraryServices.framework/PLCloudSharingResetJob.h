@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudSharingResetJob : PLCloudSharingJob {
-}
+@interface PLCloudSharingResetJob : PLCloudSharingJob
 
 + (void)resetAllLocalState;
 

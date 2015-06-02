@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSDictionary, NSString;
-
 @interface ML3LanguageResources : NSObject <NSSecureCoding> {
     NSString *_canonicalLanguageIdentifier;
     NSDictionary *_sectionsInfo;
     NSDictionary *_sortingDetails;
 }
 
-@property(readonly) NSString * canonicalLanguageIdentifier;
-@property(readonly) NSDictionary * sectionsInfo;
-@property(readonly) NSDictionary * sortingDetails;
+@property (nonatomic, readonly) NSString *canonicalLanguageIdentifier;
+@property (nonatomic, readonly) NSDictionary *sectionsInfo;
+@property (nonatomic, readonly) NSDictionary *sortingDetails;
 
 + (BOOL)supportsSecureCoding;
 

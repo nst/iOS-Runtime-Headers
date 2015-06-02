@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSSetRentalPlaybackStartDateRequest : HSRequest {
-}
+@interface HSSetRentalPlaybackStartDateRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2;
 

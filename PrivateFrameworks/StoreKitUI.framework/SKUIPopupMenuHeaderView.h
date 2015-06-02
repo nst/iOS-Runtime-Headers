@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIPopupMenuDelegate>, NSArray, NSString, SKUIMenuViewController, UIButton, UILabel, UIPopoverController;
-
 @interface SKUIPopupMenuHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     <SKUIPopupMenuDelegate> *_delegate;
     UIButton *_menuButton;
@@ -16,15 +14,15 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIPopupMenuDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * menuItemTitles;
-@property(copy) NSString * menuLabelTitle;
-@property int selectedMenuItemIndex;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIPopupMenuDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *menuItemTitles;
+@property (nonatomic, copy) NSString *menuLabelTitle;
+@property (nonatomic) int selectedMenuItemIndex;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_menuButtonAction:(id)arg1;

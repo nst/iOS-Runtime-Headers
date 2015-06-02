@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLIOAccelResource;
-
 @interface MTLIOAccelTexture : MTLIOAccelResource {
     unsigned int _arrayLength;
     unsigned int _depth;
@@ -22,21 +20,21 @@
     unsigned int _width;
 }
 
-@property(readonly) unsigned int arrayLength;
-@property(readonly) unsigned int depth;
-@property(getter=isFramebufferOnly,readonly) BOOL framebufferOnly;
-@property(readonly) unsigned int height;
-@property(readonly) struct __IOSurface { }* iosurface;
-@property(readonly) unsigned int iosurfacePlane;
-@property(readonly) BOOL isDrawable;
-@property(readonly) unsigned int mipmapLevelCount;
-@property(readonly) unsigned int numFaces;
-@property(readonly) unsigned int pixelFormat;
-@property(readonly) MTLIOAccelResource * rootResource;
-@property(readonly) unsigned int rotation;
-@property(readonly) unsigned int sampleCount;
-@property(readonly) unsigned int textureType;
-@property(readonly) unsigned int width;
+@property (readonly) unsigned int arrayLength;
+@property (readonly) unsigned int depth;
+@property (getter=isFramebufferOnly, readonly) BOOL framebufferOnly;
+@property (readonly) unsigned int height;
+@property (readonly) struct __IOSurface { }*iosurface;
+@property (readonly) unsigned int iosurfacePlane;
+@property (readonly) BOOL isDrawable;
+@property (readonly) unsigned int mipmapLevelCount;
+@property (readonly) unsigned int numFaces;
+@property (readonly) unsigned int pixelFormat;
+@property (readonly) MTLIOAccelResource *rootResource;
+@property (readonly) unsigned int rotation;
+@property (readonly) unsigned int sampleCount;
+@property (readonly) unsigned int textureType;
+@property (readonly) unsigned int width;
 
 - (unsigned int)arrayLength;
 - (struct __CFArray { }*)copyAnnotations;

@@ -9,8 +9,8 @@
     int _responseCode;
 }
 
-@property BOOL hasResponseCode;
-@property int responseCode;
+@property (nonatomic) BOOL hasResponseCode;
+@property (nonatomic) int responseCode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

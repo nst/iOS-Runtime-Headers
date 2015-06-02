@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class AVItemAccessLogInternal, NSArray;
-
 @interface AVItemAccessLog : NSObject <NSCopying> {
     AVItemAccessLogInternal *_playerItemAccessLog;
 }
 
-@property(readonly) NSArray * events;
+@property (nonatomic, readonly) NSArray *events;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class LSBundleProxy, NSDate, NSDictionary, NSString, NSUUID;
-
 @interface LSPlugInKitProxy : LSBundleProxy <NSSecureCoding> {
     NSDictionary *_infoPlist;
     BOOL _isOnSystemPartition;
@@ -16,14 +14,14 @@
     NSDate *_registrationDate;
 }
 
-@property(readonly) LSBundleProxy * containingBundle;
-@property(readonly) NSDictionary * infoPlist;
-@property(readonly) BOOL isOnSystemPartition;
-@property(readonly) NSString * pluginIdentifier;
-@property(readonly) NSDictionary * pluginKitDictionary;
-@property(readonly) NSUUID * pluginUUID;
-@property(readonly) NSString * protocol;
-@property(readonly) NSDate * registrationDate;
+@property (nonatomic, readonly) LSBundleProxy *containingBundle;
+@property (nonatomic, readonly) NSDictionary *infoPlist;
+@property (nonatomic, readonly) BOOL isOnSystemPartition;
+@property (nonatomic, readonly) NSString *pluginIdentifier;
+@property (nonatomic, readonly) NSDictionary *pluginKitDictionary;
+@property (nonatomic, readonly) NSUUID *pluginUUID;
+@property (nonatomic, readonly) NSString *protocol;
+@property (nonatomic, readonly) NSDate *registrationDate;
 
 + (id)plugInKitProxyForPlugin:(unsigned long)arg1;
 + (id)plugInKitProxyForUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 version:(id)arg4 bundleURL:(id)arg5;

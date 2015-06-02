@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PBPresentationReaderState;
-
 @interface PBOfficeArtReaderState : OABReaderState {
     PBPresentationReaderState *mPresentationState;
 }

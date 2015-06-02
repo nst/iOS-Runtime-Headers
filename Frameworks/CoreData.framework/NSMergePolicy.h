@@ -8,7 +8,7 @@
     unsigned int _type;
 }
 
-@property(readonly) unsigned int mergeType;
+@property (readonly) unsigned int mergeType;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)load;

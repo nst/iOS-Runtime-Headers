@@ -14,10 +14,10 @@
     int _resultProviderId;
 }
 
-@property BOOL hasResultProviderId;
-@property(readonly) unsigned long long* muids;
-@property(readonly) unsigned int muidsCount;
-@property int resultProviderId;
+@property (nonatomic) BOOL hasResultProviderId;
+@property (nonatomic, readonly) unsigned long long*muids;
+@property (nonatomic, readonly) unsigned int muidsCount;
+@property (nonatomic) int resultProviderId;
 
 - (void)addMuid:(unsigned long long)arg1;
 - (void)clearMuids;

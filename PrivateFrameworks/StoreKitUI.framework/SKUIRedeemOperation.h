@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, SKUIClientContext;
-
 @interface SKUIRedeemOperation : NSOperation {
     BOOL _cameraRecognized;
     SKUIClientContext *_clientContext;
     NSString *_code;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resultBlock;
-
+    id /* block */ _resultBlock;
 }
 
-@property BOOL cameraRecognized;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) id resultBlock;
+@property (nonatomic) BOOL cameraRecognized;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (copy) id /* block */ resultBlock;
 
 - (void).cxx_destruct;
 - (void)_applyThankYouDictionary:(id)arg1 toRedeem:(id)arg2;
@@ -33,9 +23,9 @@
 - (id)clientContext;
 - (id)initWithCode:(id)arg1;
 - (void)main;
-- (id)resultBlock;
+- (id /* block */)resultBlock;
 - (void)setCameraRecognized:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setResultBlock:(id)arg1;
+- (void)setResultBlock:(id /* block */)arg1;
 
 @end

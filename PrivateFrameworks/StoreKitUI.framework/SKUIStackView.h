@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, UIImage, UIWindow;
-
 @interface SKUIStackView : UIView {
     UIImage *_image;
     int _stackViewStyle;
@@ -11,8 +9,8 @@
     UIWindow *_window;
 }
 
-@property(retain) UIImage * image;
-@property(readonly) int stackViewStyle;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) int stackViewStyle;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_centerInPerspectiveTargetViewCoordinates;
@@ -27,7 +25,7 @@
 - (id)image;
 - (id)initWithStackViewStyle:(int)arg1;
 - (void)layoutSubviews;
-- (void)performCompressionAnimationWithCompletionHandler:(id)arg1;
+- (void)performCompressionAnimationWithCompletionHandler:(id /* block */)arg1;
 - (void)setImage:(id)arg1;
 - (int)stackViewStyle;
 

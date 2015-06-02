@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioFairPlaySAPContext;
-
 @interface RadioFairPlaySAPExchanger : NSObject {
     RadioFairPlaySAPContext *_SAPContext;
     struct FairPlayHWInfo_ { 
@@ -13,7 +11,7 @@
     struct FPSAPContextOpaque_ { } *_session;
 }
 
-@property(readonly) RadioFairPlaySAPContext * SAPContext;
+@property (nonatomic, readonly) RadioFairPlaySAPContext *SAPContext;
 
 - (void).cxx_destruct;
 - (id)SAPContext;

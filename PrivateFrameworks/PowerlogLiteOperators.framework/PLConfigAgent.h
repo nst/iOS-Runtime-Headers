@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLNSTimerOperatorComposition;
-
 @interface PLConfigAgent : PLAgent {
     PLNSTimerOperatorComposition *_timedTrigger;
 }
 
-@property(retain) PLNSTimerOperatorComposition * timedTrigger;
+@property (retain) PLNSTimerOperatorComposition *timedTrigger;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitions;

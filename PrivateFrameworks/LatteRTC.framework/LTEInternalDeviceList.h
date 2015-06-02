@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray;
-
 @interface LTEInternalDeviceList : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id changeListener;
-
+    id /* block */ changeListener;
     NSMutableArray *deviceList;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
@@ -21,16 +11,16 @@
     } listLock;
 }
 
-@property(copy) id changeListener;
+@property (nonatomic, copy) id /* block */ changeListener;
 
 + (id)defaultDeviceOfType:(unsigned long)arg1;
 + (id)newDeviceList;
 
-- (id)changeListener;
+- (id /* block */)changeListener;
 - (void)cleanup;
 - (void)dealloc;
 - (id)deviceList;
 - (id)init;
-- (void)setChangeListener:(id)arg1;
+- (void)setChangeListener:(id /* block */)arg1;
 
 @end

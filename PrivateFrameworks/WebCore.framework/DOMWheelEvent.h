@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMWheelEvent : DOMMouseEvent {
-}
+@interface DOMWheelEvent : DOMMouseEvent
 
-@property(readonly) BOOL isHorizontal;
-@property(readonly) int wheelDelta;
-@property(readonly) int wheelDeltaX;
-@property(readonly) int wheelDeltaY;
+@property (readonly) BOOL isHorizontal;
+@property (readonly) int wheelDelta;
+@property (readonly) int wheelDeltaX;
+@property (readonly) int wheelDeltaY;
 
 - (unsigned int)deltaMode;
 - (double)deltaX;

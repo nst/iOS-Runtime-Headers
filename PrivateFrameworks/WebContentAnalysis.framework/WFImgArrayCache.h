@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSMutableString;
-
 @interface WFImgArrayCache : NSObject {
     NSMutableString *imageAlternativeDescriptions;
     int numberOfKnownImagePixels;

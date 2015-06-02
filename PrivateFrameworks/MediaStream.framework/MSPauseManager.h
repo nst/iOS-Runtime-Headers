@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class <MSPauseManagerDelegate>, NSMutableDictionary;
-
 @interface MSPauseManager : NSObject {
     NSMutableDictionary *_UUIDToTimerMap;
     <MSPauseManagerDelegate> *_delegate;
 }
 
-@property <MSPauseManagerDelegate> * delegate;
+@property (nonatomic) <MSPauseManagerDelegate> *delegate;
 
 + (id)sharedManager;
 

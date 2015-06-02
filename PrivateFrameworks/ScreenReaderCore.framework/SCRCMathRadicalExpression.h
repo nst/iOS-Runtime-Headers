@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCMathExpression;
-
 @interface SCRCMathRadicalExpression : SCRCMathExpression {
     SCRCMathExpression *_radicand;
     SCRCMathExpression *_rootIndex;
 }
 
-@property(retain) SCRCMathExpression * radicand;
-@property(retain) SCRCMathExpression * rootIndex;
+@property (nonatomic, retain) SCRCMathExpression *radicand;
+@property (nonatomic, retain) SCRCMathExpression *rootIndex;
 
 - (BOOL)_isCubeRoot;
 - (BOOL)_isSquareRoot;

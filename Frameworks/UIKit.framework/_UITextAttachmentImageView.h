@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UITextAttachmentImageView : UIImageView {
-}
+@interface _UITextAttachmentImageView : UIImageView
 
 @end

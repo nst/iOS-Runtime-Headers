@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSDictionary, NSString;
-
 @interface AXIPCMessage : NSObject <NSSecureCoding> {
     struct { 
         unsigned int val[8]; 
@@ -13,11 +11,11 @@
     NSDictionary *_payload;
 }
 
-@property struct { unsigned int x1[8]; } auditToken;
-@property unsigned int clientPort;
-@property int key;
-@property(retain) NSDictionary * payload;
-@property(readonly) NSString * senderBundleId;
+@property (nonatomic) struct { unsigned int x1[8]; } auditToken;
+@property (nonatomic) unsigned int clientPort;
+@property (nonatomic) int key;
+@property (nonatomic, retain) NSDictionary *payload;
+@property (nonatomic, readonly) NSString *senderBundleId;
 
 + (id)archivedMessageFromData:(id)arg1;
 + (BOOL)supportsSecureCoding;

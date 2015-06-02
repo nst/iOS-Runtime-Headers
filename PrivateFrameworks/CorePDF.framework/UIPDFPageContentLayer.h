@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer;
-
 @interface UIPDFPageContentLayer : CALayer <UIPDFSelectionLayer> {
     CALayer *_selectionLayer;
 }

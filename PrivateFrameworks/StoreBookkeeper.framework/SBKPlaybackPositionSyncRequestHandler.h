@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class <SBKUniversalPlaybackPositionDataSource>, <SBKUniversalPlaybackPositionTransactionContext>, NSDictionary, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SBKSyncTransaction, SBKTransactionController;
-
 @interface SBKPlaybackPositionSyncRequestHandler : SBKSyncRequestHandler <SBKSyncTransactionProcessing, SBKTransactionControllerDelegate> {
     BOOL _canceled;
     SBKSyncTransaction *_currentKVSTransaction;
@@ -23,21 +21,21 @@
 }
 
 @property BOOL canceled;
-@property(retain) SBKSyncTransaction * currentKVSTransaction;
-@property(retain) <SBKUniversalPlaybackPositionDataSource> * dataSource;
-@property(retain) <SBKUniversalPlaybackPositionTransactionContext> * dataSourceTransactionContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * fatalSyncError;
-@property(readonly) unsigned int hash;
-@property(retain) SBKTransactionController * kvsController;
-@property(retain) NSMutableDictionary * metadataItemsFromDataSource;
-@property(retain) NSDictionary * metadataItemsToCommitToDataSource;
-@property(retain) NSDictionary * metadataItemsToCommitToKVSStorage;
-@property(retain) NSString * overrideSyncAnchor;
-@property(retain) NSMutableDictionary * responseMetadataItemsMergedToCommitBackToKVSStorage;
-@property(retain) NSMutableDictionary * responseMetadataItemsToCommitToDataSource;
-@property(readonly) Class superclass;
+@property (retain) SBKSyncTransaction *currentKVSTransaction;
+@property (retain) <SBKUniversalPlaybackPositionDataSource> *dataSource;
+@property (retain) <SBKUniversalPlaybackPositionTransactionContext> *dataSourceTransactionContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSError *fatalSyncError;
+@property (readonly) unsigned int hash;
+@property (retain) SBKTransactionController *kvsController;
+@property (retain) NSMutableDictionary *metadataItemsFromDataSource;
+@property (retain) NSDictionary *metadataItemsToCommitToDataSource;
+@property (retain) NSDictionary *metadataItemsToCommitToKVSStorage;
+@property (retain) NSString *overrideSyncAnchor;
+@property (retain) NSMutableDictionary *responseMetadataItemsMergedToCommitBackToKVSStorage;
+@property (retain) NSMutableDictionary *responseMetadataItemsToCommitToDataSource;
+@property (readonly) Class superclass;
 @property BOOL syncInProgress;
 
 - (void).cxx_destruct;
@@ -80,7 +78,7 @@
 - (void)setResponseMetadataItemsToCommitToDataSource:(id)arg1;
 - (void)setSyncInProgress:(BOOL)arg1;
 - (BOOL)syncInProgress;
-- (void)synchronizeWithCompletionHandler:(id)arg1;
+- (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
 - (void)timeout;
 - (id)transaction:(id)arg1 conflictDetectionOrdinalForKey:(id)arg2;
 - (void)transaction:(id)arg1 didProcessResponseData:(id)arg2;

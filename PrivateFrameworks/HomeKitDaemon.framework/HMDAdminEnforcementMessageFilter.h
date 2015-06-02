@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface HMDAdminEnforcementMessageFilter : HMDMessageFilter {
     NSMutableDictionary *_adminsOfHomes;
     NSString *_localAdminName;
     NSMutableDictionary *_objectsContainedInHomes;
 }
 
-@property(retain) NSMutableDictionary * adminsOfHomes;
-@property(retain) NSString * localAdminName;
-@property(retain) NSMutableDictionary * objectsContainedInHomes;
+@property (nonatomic, retain) NSMutableDictionary *adminsOfHomes;
+@property (nonatomic, retain) NSString *localAdminName;
+@property (nonatomic, retain) NSMutableDictionary *objectsContainedInHomes;
 
 + (BOOL)isWhitelistedMessage:(id)arg1;
 

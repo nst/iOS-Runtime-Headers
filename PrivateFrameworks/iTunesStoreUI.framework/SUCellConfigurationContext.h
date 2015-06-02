@@ -6,7 +6,7 @@
     int _tableViewStyle;
 }
 
-@property int tableViewStyle;
+@property (nonatomic) int tableViewStyle;
 
 - (void)resetLayoutCaches;
 - (void)setTableViewStyle:(int)arg1;

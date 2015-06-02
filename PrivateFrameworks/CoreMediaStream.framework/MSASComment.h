@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSDate, NSString;
-
 @interface MSASComment : NSObject {
     NSString *_GUID;
     int _ID;
@@ -22,21 +20,21 @@
     NSDate *_timestamp;
 }
 
-@property(retain) NSString * GUID;
-@property int ID;
-@property(retain) NSDate * clientTimestamp;
-@property(retain) NSString * content;
-@property(retain) NSString * email;
-@property(retain) NSString * firstName;
-@property(retain) NSString * fullName;
-@property BOOL isBatchComment;
-@property BOOL isCaption;
-@property BOOL isDeletable;
-@property BOOL isLike;
-@property BOOL isMine;
-@property(retain) NSString * lastName;
-@property(retain) NSString * personID;
-@property(retain) NSDate * timestamp;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic) int ID;
+@property (nonatomic, retain) NSDate *clientTimestamp;
+@property (nonatomic, retain) NSString *content;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *fullName;
+@property (nonatomic) BOOL isBatchComment;
+@property (nonatomic) BOOL isCaption;
+@property (nonatomic) BOOL isDeletable;
+@property (nonatomic) BOOL isLike;
+@property (nonatomic) BOOL isMine;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *personID;
+@property (nonatomic, retain) NSDate *timestamp;
 
 + (id)MSASPCommentFromProtocolDictionary:(id)arg1;
 + (id)comment;

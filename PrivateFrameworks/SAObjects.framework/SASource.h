@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SASource : SADomainObject
 
-@interface SASource : SADomainObject {
-}
-
-@property(copy) NSString * accountIdentifier;
-@property(copy) NSString * accountName;
-@property(copy) NSString * domainIdentifier;
-@property(copy) NSNumber * remote;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic, copy) NSString *accountName;
+@property (nonatomic, copy) NSString *domainIdentifier;
+@property (nonatomic, copy) NSNumber *remote;
 
 + (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;

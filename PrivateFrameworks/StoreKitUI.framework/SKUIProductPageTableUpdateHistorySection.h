@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDateFormatter, NSMutableIndexSet, SKUIClientContext, SKUIColorScheme, SKUILayoutCache, SKUIProductPageTableExpandableHeaderView;
-
 @interface SKUIProductPageTableUpdateHistorySection : SKUIProductPageTableSection {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
@@ -15,10 +13,10 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property int firstStringIndex;
-@property(copy) NSArray * releaseNotes;
-@property(retain) SKUILayoutCache * textLayoutCache;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) int firstStringIndex;
+@property (nonatomic, copy) NSArray *releaseNotes;
+@property (nonatomic, retain) SKUILayoutCache *textLayoutCache;
 
 - (void).cxx_destruct;
 - (void)_reloadHeaderView;

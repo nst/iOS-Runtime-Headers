@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUScriptAction : SUScriptObject <NSCopying> {
     NSString *_actionType;
 }
 
-@property(copy) NSString * actionType;
+@property (copy) NSString *actionType;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

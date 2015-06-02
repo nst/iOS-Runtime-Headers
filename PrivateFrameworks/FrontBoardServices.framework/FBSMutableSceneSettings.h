@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSArray;
+@interface FBSMutableSceneSettings : FBSSceneSettings
 
-@interface FBSMutableSceneSettings : FBSSceneSettings {
-}
-
-@property(getter=isBackgrounded) BOOL backgrounded;
-@property struct CGPoint { float x1; float x2; } contentOffset;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property int interfaceOrientation;
-@property float level;
-@property(copy) NSArray * occlusions;
+@property (getter=isBackgrounded, nonatomic) BOOL backgrounded;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic) int interfaceOrientation;
+@property (nonatomic) float level;
+@property (nonatomic, copy) NSArray *occlusions;
 
 + (BOOL)_isMutable;
 

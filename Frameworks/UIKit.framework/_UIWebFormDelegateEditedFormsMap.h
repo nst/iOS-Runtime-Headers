@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface _UIWebFormDelegateEditedFormsMap : NSObject {
     NSMutableArray *_lifetimeHelper;
     NSMutableDictionary *_map;

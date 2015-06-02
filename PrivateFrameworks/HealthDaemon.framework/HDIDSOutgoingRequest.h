@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDIDSMessageCenter, NSData, NSDictionary, NSString;
-
 @interface HDIDSOutgoingRequest : NSObject <HDNanoSyncDescription> {
     NSData *_data;
     BOOL _doNotCompress;
@@ -19,22 +17,22 @@
     double _sendTimeout;
 }
 
-@property(retain) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL doNotCompress;
-@property BOOL forceLocalDelivery;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * idsIdentifier;
-@property HDIDSMessageCenter * messageCenter;
-@property unsigned short messageID;
-@property(retain) id pbRequest;
-@property(retain) NSDictionary * persistentUserInfo;
-@property unsigned int priority;
-@property BOOL queueOnly1;
-@property double responseTimeout;
-@property double sendTimeout;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL doNotCompress;
+@property (nonatomic) BOOL forceLocalDelivery;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) HDIDSMessageCenter *messageCenter;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) id pbRequest;
+@property (nonatomic, retain) NSDictionary *persistentUserInfo;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic) BOOL queueOnly1;
+@property (nonatomic) double responseTimeout;
+@property (nonatomic) double sendTimeout;
+@property (readonly) Class superclass;
 
 + (id)activationRequestWithRestore:(id)arg1 pairingInfo:(id)arg2;
 + (id)changeRequestWithChanges:(id)arg1 status:(id)arg2 pairingInfo:(id)arg3;

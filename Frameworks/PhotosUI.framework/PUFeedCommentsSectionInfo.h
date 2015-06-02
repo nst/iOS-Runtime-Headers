@@ -6,7 +6,7 @@
     BOOL __hasLikes;
 }
 
-@property(setter=_setHasLikes:) BOOL _hasLikes;
+@property (setter=_setHasLikes:, nonatomic) BOOL _hasLikes;
 
 - (BOOL)_hasLikes;
 - (void)_setHasLikes:(BOOL)arg1;

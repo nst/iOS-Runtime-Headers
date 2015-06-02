@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSString;
-
 @interface AXIPCServerClientRegistration : NSObject {
     NSString *_identifier;
     unsigned int _port;
 }
 
-@property(retain) NSString * identifier;
-@property unsigned int port;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) unsigned int port;
 
 - (void)dealloc;
 - (id)identifier;

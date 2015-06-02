@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UILabel;
-
 @interface SKUIProductPageInAppPurchaseTableCell : SKUITableViewCell {
     SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
@@ -17,11 +15,11 @@
     UILabel *_priceLabel;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(copy) NSString * indexString;
-@property(copy) NSString * priceString;
-@property(copy) NSString * productName;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, copy) NSString *indexString;
+@property (nonatomic, copy) NSString *priceString;
+@property (nonatomic, copy) NSString *productName;
 
 - (void).cxx_destruct;
 - (id)colorScheme;

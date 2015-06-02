@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLAssetTransactionReason : NSObject {
     NSString *_reason;
 }
 
-@property(retain) NSString * reason;
+@property (nonatomic, retain) NSString *reason;
 
 + (id)transactionReason:(id)arg1;
 

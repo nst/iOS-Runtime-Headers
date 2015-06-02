@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, fetchDenyEntry, fetchFilterEntry;
-
 @interface AppLaunchStatsAggD : NSObject {
     int BGReportToken;
     NSObject<OS_dispatch_queue> *aggDQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id appisFetchable;
-
+    id /* block */ appisFetchable;
     long long avgDownloadsize;
     long long avgPWConsumed;
-    unsigned long blameReasons[29];
+    unsigned long blameReasons;
     bool buildLaunchStats;
     NSDate *cycleStart;
-    int fetchAppFiltered[7];
+    int fetchAppFiltered;
     int fetchAttempt;
     int fetchDataCount;
     long long fetchDataTotal;
     int fetchDenied;
-    int fetchDeniedWithReasons[10];
+    int fetchDeniedWithReasons;
     int fetchFailedCount;
     int fetchGiven;
     int fetchPWTotal;
@@ -43,22 +33,22 @@
     NSMutableDictionary *previousPrewarmDict;
     NSMutableDictionary *prewarmCountDict;
     NSMutableDictionary *prewarmDict;
-    int prewarmEligibleZone[9];
+    int prewarmEligibleZone;
     int prewarmHits;
     int prewarmMiss;
-    int prewarmZoneCounts[9];
+    int prewarmZoneCounts;
     int pushAttempt;
     int pushDenied;
-    int pushDeniedReasons[11];
-    int topNZoneCounts[9];
+    int pushDeniedReasons;
+    int topNZoneCounts;
     int totalBGDownloads;
     long long totalNonDiscDownload;
     long long totalNonDiscEnergy;
-    int zoneCounts[9];
+    int zoneCounts;
 }
 
-@property(readonly) NSDate * cycleStart;
-@property(retain) NSMutableArray * pastCycle;
+@property (nonatomic, readonly) NSDate *cycleStart;
+@property (nonatomic, retain) NSMutableArray *pastCycle;
 
 + (id)sharedInstance;
 
@@ -88,15 +78,15 @@
 - (void)newCycleWithApps:(id)arg1;
 - (void)nonDiscretionaryAdd:(unsigned long long)arg1 withPW:(unsigned long long)arg2;
 - (id)pastCycle;
-- (void)populatePredictZones:(int)arg1 filter:(bool)arg2 callback:(id)arg3;
-- (void)populatePrewarmZones:(int)arg1 callback:(id)arg2;
+- (void)populatePredictZones:(int)arg1 filter:(bool)arg2 callback:(id /* block */)arg3;
+- (void)populatePrewarmZones:(int)arg1 callback:(id /* block */)arg2;
 - (void)pushAttemptIncrement:(int)arg1;
 - (void)pushDenied:(int)arg1;
 - (void)pushDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 inwifi:(bool)arg3 incell:(bool)arg4 ignorePoorCell:(bool)arg5;
 - (void)replacePredictionAtZone:(id)arg1 zoneid:(int)arg2;
 - (void)searchBlame:(id)arg1 inzone:(int)arg2 inminute:(int)arg3;
 - (void)setCollectLaunchStats;
-- (void)setFetchCapableCheck:(id)arg1;
+- (void)setFetchCapableCheck:(id /* block */)arg1;
 - (void)setPastCycle:(id)arg1;
 - (void)uploadData;
 

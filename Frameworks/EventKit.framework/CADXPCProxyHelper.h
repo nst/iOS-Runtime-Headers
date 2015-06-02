@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSXPCConnection, Protocol;
-
 @interface CADXPCProxyHelper : NSObject {
     NSXPCConnection *_connection;
     Protocol *_protocol;

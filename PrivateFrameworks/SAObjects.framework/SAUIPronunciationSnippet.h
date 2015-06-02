@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIPronunciationSnippet : SAUISnippet
 
-@interface SAUIPronunciationSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * cancelCommands;
-@property(copy) NSString * interactionId;
-@property(copy) NSString * orthography;
-@property(copy) NSArray * pronunciations;
-@property(copy) NSArray * selectNoneCommands;
-@property(copy) NSString * selectNoneText;
+@property (nonatomic, copy) NSArray *cancelCommands;
+@property (nonatomic, copy) NSString *interactionId;
+@property (nonatomic, copy) NSString *orthography;
+@property (nonatomic, copy) NSArray *pronunciations;
+@property (nonatomic, copy) NSArray *selectNoneCommands;
+@property (nonatomic, copy) NSString *selectNoneText;
 
 + (id)pronunciationSnippet;
 + (id)pronunciationSnippetWithDictionary:(id)arg1 context:(id)arg2;

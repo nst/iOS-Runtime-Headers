@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
  */
 
-@interface MCMFrameworkContainer : MCMContainer {
-}
+@interface MCMFrameworkContainer : MCMContainer
 
 @end

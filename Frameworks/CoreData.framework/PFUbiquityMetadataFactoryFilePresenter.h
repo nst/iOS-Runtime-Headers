@@ -2,33 +2,31 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSOperationQueue, NSString, NSURL, PFUbiquityLocation;
-
 @interface PFUbiquityMetadataFactoryFilePresenter : NSObject <NSFilePresenter> {
     PFUbiquityLocation *_presentedItemLocation;
     NSURL *_presentedItemURL;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PFUbiquityLocation * presentedItemLocation;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PFUbiquityLocation *presentedItemLocation;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMetadataStoreFileLocation:(id)arg1;
 - (id)presentedItemLocation;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
-- (void)relinquishPresentedItemToReader:(id)arg1;
-- (void)relinquishPresentedItemToWriter:(id)arg1;
-- (void)savePresentedItemChangesWithCompletionHandler:(id)arg1;
+- (void)relinquishPresentedItemToReader:(id /* block */)arg1;
+- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
+- (void)savePresentedItemChangesWithCompletionHandler:(id /* block */)arg1;
 
 @end

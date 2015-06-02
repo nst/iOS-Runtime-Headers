@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <TableViewManagerDelegate>, ManagedTableViewCell, NSIndexPath, NSMutableDictionary, NSString, UIColor, UITableView, UIView;
-
 @interface TableViewManager : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     float _cellContentWidth;
     float _cellLeftEdgeOrigin;
@@ -21,12 +19,12 @@
     NSMutableDictionary *_tableDescriptorDict;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <TableViewManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UITableView * managedTableView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TableViewManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UITableView *managedTableView;
+@property (readonly) Class superclass;
 
 + (id)boldSystemLabelFont;
 + (id)smallSystemLabelFont;

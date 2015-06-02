@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSVClaimApplicationsRequest : SSRequest <SSXPCCoding> {
     int _claimStyle;
 }
 
-@property(readonly) int claimStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) int claimStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)claimStyle;
 - (id)copyXPCEncoding;
 - (id)initWithClaimStyle:(int)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)startWithResponseBlock:(id)arg1;
+- (void)startWithResponseBlock:(id /* block */)arg1;
 
 @end

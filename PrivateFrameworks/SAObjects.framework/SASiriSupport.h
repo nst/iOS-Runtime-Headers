@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASiriSupport : AceObject <SAAceSerializable>
 
-@interface SASiriSupport : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * authToken;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * endpoints;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *authToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *endpoints;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)siriSupport;
 + (id)siriSupportWithDictionary:(id)arg1 context:(id)arg2;

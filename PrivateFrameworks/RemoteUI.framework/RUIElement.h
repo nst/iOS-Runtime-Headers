@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSDictionary, NSString;
-
 @interface RUIElement : NSObject {
     NSDictionary *_attributes;
     BOOL _enabled;
 }
 
-@property(retain) NSDictionary * attributes;
-@property BOOL enabled;
-@property(readonly) NSString * name;
+@property (nonatomic, retain) NSDictionary *attributes;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, readonly) NSString *name;
 
 - (void).cxx_destruct;
 - (id)URLAttributeForImageName:(id)arg1 getScale:(float*)arg2;

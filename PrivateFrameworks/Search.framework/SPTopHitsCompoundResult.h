@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, SPContentResult;
-
 @interface SPTopHitsCompoundResult : NSObject {
     SPContentResult *_content;
     NSString *_displayIdentifier;

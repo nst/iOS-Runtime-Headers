@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCameraViewfinderSessionLocal, NSDictionary, NSString;
-
 @interface FigCameraViewfinderLocal : FigCameraViewfinder <FigCaptureSessionObserver> {
     FigCameraViewfinderSessionLocal *_activeViewfinderSession;
     BOOL _observing;
     NSDictionary *_options;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int photoThumbnailMaxDimension;
-@property(readonly) float photoThumbnailQuality;
-@property(readonly) BOOL photoThumbnailQualitySpecified;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) int photoThumbnailMaxDimension;
+@property (readonly) float photoThumbnailQuality;
+@property (readonly) BOOL photoThumbnailQualitySpecified;
+@property (readonly) Class superclass;
 
 + (id)cameraViewfinder;
 + (void)initialize;

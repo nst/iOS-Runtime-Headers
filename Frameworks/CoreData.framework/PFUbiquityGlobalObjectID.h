@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectID, NSString;
-
 @interface PFUbiquityGlobalObjectID : NSObject <NSCopying> {
     NSString *_entityName;
     unsigned int _hash;
@@ -14,13 +12,13 @@
     NSString *_storeName;
 }
 
-@property(readonly) NSString * entityName;
-@property(readonly) unsigned int hash;
-@property(retain) NSManagedObjectID * managedObjectID;
-@property(readonly) NSString * owningPeerID;
-@property(readonly) NSString * primaryKey;
-@property(readonly) unsigned int primaryKeyInteger;
-@property(readonly) NSString * storeName;
+@property (nonatomic, readonly) NSString *entityName;
+@property (nonatomic, readonly) unsigned int hash;
+@property (nonatomic, retain) NSManagedObjectID *managedObjectID;
+@property (nonatomic, readonly) NSString *owningPeerID;
+@property (nonatomic, readonly) NSString *primaryKey;
+@property (nonatomic, readonly) unsigned int primaryKeyInteger;
+@property (nonatomic, readonly) NSString *storeName;
 
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSManagedObject, NSString, RadioModel;
-
 @interface RadioSkipHistory : NSObject <RadioManagedObjectWrapperProtocol> {
     BOOL _databaseBacked;
     NSManagedObject *_managedObject;
@@ -14,17 +12,17 @@
     long long _stationID;
 }
 
-@property(getter=isDatabaseBacked,readonly) BOOL databaseBacked;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSManagedObject * managedObject;
-@property(readonly) RadioModel * model;
-@property(copy) NSString * skipIdentifier;
-@property(copy) NSArray * skipTimestamps;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property(readonly) Class superclass;
+@property (getter=isDatabaseBacked, nonatomic, readonly) BOOL databaseBacked;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSManagedObject *managedObject;
+@property (nonatomic, readonly) RadioModel *model;
+@property (nonatomic, copy) NSString *skipIdentifier;
+@property (nonatomic, copy) NSArray *skipTimestamps;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_radioModelWasDeletedNotification:(id)arg1;

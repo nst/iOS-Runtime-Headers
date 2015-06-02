@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-@interface PUProtoRemoveLockout : PBCodable <NSCopying> {
-}
+@interface PUProtoRemoveLockout : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

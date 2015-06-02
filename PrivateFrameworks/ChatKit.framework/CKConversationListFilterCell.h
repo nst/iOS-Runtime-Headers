@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UISegmentedControl;
-
 @interface CKConversationListFilterCell : UITableViewCell {
     UISegmentedControl *_filterControl;
 }
 
-@property(retain) UISegmentedControl * filterControl;
+@property (nonatomic, retain) UISegmentedControl *filterControl;
 
 + (float)defaultHeight;
 + (id)identifier;

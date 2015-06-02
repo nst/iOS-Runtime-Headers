@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPDocument, CPObject, CPPage, NSMutableArray;
-
 @interface CPObject : NSObject <CPCopying, NSCopying> {
     NSMutableArray *children;
     CPDocument *document;

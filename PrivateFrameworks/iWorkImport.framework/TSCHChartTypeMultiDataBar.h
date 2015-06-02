@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypeMultiDataBar : TSCHMultiDataChartType {
-}
+@interface TSCHChartTypeMultiDataBar : TSCHMultiDataChartType
 
 - (id)defaultSeriesType:(unsigned int)arg1;
 - (id)genericToSpecificPropertyMap;

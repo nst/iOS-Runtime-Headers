@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSTConditionalStyleSet : TSPObject <TSPCopying> {
     NSMutableArray *mConditionalStyleSetRules;
 }

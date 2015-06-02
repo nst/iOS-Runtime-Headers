@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPPage, NSMutableArray;
-
 @interface CPZoneBorder : NSObject <CPCopying, NSCopying> {
     struct CGRect { 
         struct CGPoint { 

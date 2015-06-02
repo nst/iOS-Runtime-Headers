@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSArray;
-
 @interface CIRedEyeRepair : NSObject {
-    unsigned char CbCrDistanceTable[65536];
+    unsigned char CbCrDistanceTable;
     BOOL autoPupilTonality;
     struct CGImageBlockSet { } *blockSet;
     struct __CFData { } *dataRef;
@@ -41,13 +39,13 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickCbCrBitmaps[3];
+    } lastClickCbCrBitmaps;
     struct { 
         int minrow; 
         int maxrow; 
         int mincol; 
         int maxcol; 
-    } lastClickIRects[3];
+    } lastClickIRects;
     struct { 
         char *baseAddress; 
         int width; 
@@ -69,7 +67,7 @@
         int samplesPerPixel; 
         int bytesPerSample; 
         float resolution; 
-    } lastClickYBitmaps[3];
+    } lastClickYBitmaps;
     float lastRepairIOD;
     int lastRepairTag;
     int lastSearchBitmapMaxX;
@@ -99,7 +97,7 @@
         float resolution; 
     } lastSearchYBitmap;
     struct { BOOL x1[256]; BOOL x2[32]; struct { char *x_3_1_1; int x_3_1_2; int x_3_1_3; int x_3_1_4; int x_3_1_5; int x_3_1_6; int x_3_1_7; int x_3_1_8; float x_3_1_9; } x3; int x4; int x5; struct { int x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct CGColorSpace {} *x7; unsigned int x8; int x9; int x10; BOOL x11; float x12; } *lf;
-    int linearCoefficients[8][3];
+    int linearCoefficients;
     int loValue;
     BOOL logRepairs;
     int nLinears;
@@ -112,12 +110,12 @@
         float a; 
         float b; 
         float c; 
-    } polyLines[20];
-    BOOL polyPointConcave[20];
+    } polyLines;
+    BOOL polyPointConcave;
     struct CGPoint { 
         float x; 
         float y; 
-    } polyPoints[20];
+    } polyPoints;
     BOOL pupilShadeAlignment;
     int redEyeThresholdKind;
     void *releaseMe;
@@ -237,7 +235,7 @@
             float ymean; 
             float ystd; 
         } BI; 
-    } repairs[32];
+    } repairs;
     float specularSize;
     float specularSoftness;
     struct { 

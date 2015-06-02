@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRuleList, DOMMediaList;
+@interface DOMCSSMediaRule : DOMCSSRule
 
-@interface DOMCSSMediaRule : DOMCSSRule {
-}
-
-@property(readonly) DOMCSSRuleList * cssRules;
-@property(readonly) DOMMediaList * media;
+@property (readonly) DOMCSSRuleList *cssRules;
+@property (readonly) DOMMediaList *media;
 
 - (id)cssRules;
 - (void)deleteRule:(unsigned int)arg1;

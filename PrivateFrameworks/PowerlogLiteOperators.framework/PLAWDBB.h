@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, PLEntryNotificationOperatorComposition;
-
 @interface PLAWDBB : PLAWDAuxMetrics {
     PLEntryNotificationOperatorComposition *_accountingGroupEventCallback;
     PLEntryNotificationOperatorComposition *_bbEventCallback;
@@ -20,18 +18,18 @@
     unsigned int _upBytes;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * accountingGroupEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * bbEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * bbLqmCellularActiveCallback;
-@property(retain) PLEntryNotificationOperatorComposition * bbLqmCumulativeNetworkCallback;
-@property(retain) PLEntryNotificationOperatorComposition * bbProtocolRailCallback;
-@property(retain) PLEntryNotificationOperatorComposition * connectedPowerRailCallback;
+@property (retain) PLEntryNotificationOperatorComposition *accountingGroupEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *bbEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *bbLqmCellularActiveCallback;
+@property (retain) PLEntryNotificationOperatorComposition *bbLqmCumulativeNetworkCallback;
+@property (retain) PLEntryNotificationOperatorComposition *bbProtocolRailCallback;
+@property (retain) PLEntryNotificationOperatorComposition *connectedPowerRailCallback;
 @property int currQuality;
 @property unsigned int downBytes;
-@property(retain) PLEntryNotificationOperatorComposition * iceStatsEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *iceStatsEventCallback;
 @property int newQuality;
-@property(retain) NSDate * startTimeAppBB;
-@property(retain) NSDate * startTimeBBLqm;
+@property (retain) NSDate *startTimeAppBB;
+@property (retain) NSDate *startTimeBBLqm;
 @property unsigned int upBytes;
 
 + (id)entryAggregateDefinitionAwdBBQlm;

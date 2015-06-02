@@ -6,7 +6,7 @@
     BOOL _value;
 }
 
-@property BOOL value;
+@property (nonatomic) BOOL value;
 
 - (void)setValue:(BOOL)arg1;
 - (BOOL)value;

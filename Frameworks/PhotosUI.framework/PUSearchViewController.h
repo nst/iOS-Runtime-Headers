@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSearchViewControllerDelegate>, <UITableViewDataSource><UITableViewDelegate>, NSMutableDictionary, NSString, PHImageManager, PSIDatabase, PUPingTimer, PUSearchResultsDataSource, PUSuggestedSearchResultsDataSource, UIBarButtonItem, UIPanGestureRecognizer, UISearchBar, UITableView, UIView, _UIBackdropView, _UIDynamicValueAnimation;
-
 @interface PUSearchViewController : UIViewController <PUSearchResultsDelegate, PUSuggestedSearchResultsDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     _UIBackdropView *_backdropView;
     UIView *_backgroundView;
@@ -31,24 +29,24 @@
     PUPingTimer *_suggestedSearchResultsPingTimer;
 }
 
-@property(retain) UIView * backgroundView;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSearchViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isInCustomTransition) BOOL inCustomTransition;
-@property(readonly) UISearchBar * searchBar;
-@property(copy) NSString * searchText;
-@property(retain) NSString * selectedDisplayTitle;
-@property BOOL showsSearchBarInNavigationBar;
-@property BOOL showsSectionHeaderForSearchResults;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSearchViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isInCustomTransition, nonatomic) BOOL inCustomTransition;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, copy) NSString *searchText;
+@property (nonatomic, retain) NSString *selectedDisplayTitle;
+@property (nonatomic) BOOL showsSearchBarInNavigationBar;
+@property (nonatomic) BOOL showsSectionHeaderForSearchResults;
+@property (readonly) Class superclass;
 
 + (id)_screenSnapshot;
 + (BOOL)mustAdaptFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
 + (id)newSearchBar;
 + (BOOL)usePopoverAppearanceForTraitCollection:(id)arg1;
-+ (void)viewController:(id)arg1 swapSearchViewController:(id)arg2 withResultsViewController:(id)arg3 animated:(BOOL)arg4 completion:(id)arg5;
++ (void)viewController:(id)arg1 swapSearchViewController:(id)arg2 withResultsViewController:(id)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 
 - (void).cxx_destruct;
 - (void)_DEBUG_rebuildSearchIndex:(id)arg1;
@@ -65,10 +63,10 @@
 - (void)_mergeSuggestedSearchResultsAnimated:(BOOL)arg1;
 - (unsigned int)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned int*)arg1 outRecentsSection:(unsigned int*)arg2;
 - (void)_pingTimerFire:(id)arg1;
-- (void)_pushGridForAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id)arg2;
-- (void)_pushGridForAlbumWithUUID:(id)arg1 completion:(id)arg2;
-- (void)_pushMomentsGridForPhotoCollections:(id)arg1 title:(id)arg2 completion:(id)arg3;
-- (void)_pushMomentsGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 completion:(id)arg3;
+- (void)_pushGridForAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id /* block */)arg2;
+- (void)_pushGridForAlbumWithUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_pushMomentsGridForPhotoCollections:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
+- (void)_pushMomentsGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
 - (void)_scheduleUpdateTableFooterView;
 - (void)_searchFieldTextDidChange:(id)arg1;
 - (id)_searchResultsTableView;

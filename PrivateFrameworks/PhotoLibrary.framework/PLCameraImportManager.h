@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class ICDeviceBrowser, NSMutableArray, NSString;
-
 @interface PLCameraImportManager : NSObject <ICDeviceBrowserDelegate> {
     ICDeviceBrowser *_deviceBrowser;
     NSMutableArray *_importers;
@@ -13,11 +11,11 @@
     BOOL _wantsToStopListening;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * importers;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *importers;
+@property (readonly) Class superclass;
 
 + (id)sharedCameraImportManager;
 

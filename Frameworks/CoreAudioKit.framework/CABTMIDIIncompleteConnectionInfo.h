@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class AMSBTLEPeripheral;
-
 @interface CABTMIDIIncompleteConnectionInfo : NSObject {
     BOOL _connecting;
     AMSBTLEPeripheral *_peripheral;
     unsigned int _timeOutInterval;
 }
 
-@property(getter=isConnecting) BOOL connecting;
-@property(retain) AMSBTLEPeripheral * peripheral;
+@property (getter=isConnecting) BOOL connecting;
+@property (nonatomic, retain) AMSBTLEPeripheral *peripheral;
 @property unsigned int timeOutInterval;
 
 - (id)initWithPeripheral:(id)arg1 isConnecting:(BOOL)arg2;

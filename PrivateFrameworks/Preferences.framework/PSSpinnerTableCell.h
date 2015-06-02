@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIActivityIndicatorView;
-
 @interface PSSpinnerTableCell : PSTableCell {
     UIActivityIndicatorView *_spinner;
 }

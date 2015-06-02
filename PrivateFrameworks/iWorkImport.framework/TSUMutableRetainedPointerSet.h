@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUMutableRetainedPointerSet : TSUMutablePointerSet {
-}
+@interface TSUMutableRetainedPointerSet : TSUMutablePointerSet
 
 + (Class)privateMutableClass;
 + (Class)privateNonMutableClass;

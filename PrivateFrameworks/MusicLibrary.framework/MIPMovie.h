@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPArtist, NSData, NSString;
-
 @interface MIPMovie : PBCodable <NSCopying> {
     MIPArtist *_artist;
     int _audioLanguage;
@@ -41,42 +39,42 @@
     int _videoQuality;
 }
 
-@property(retain) MIPArtist * artist;
-@property int audioLanguage;
-@property int audioTrackId;
-@property int audioTrackIndex;
-@property(retain) NSString * extendedContentName;
-@property(retain) NSData * flattenedChapterData;
-@property BOOL hasAlternateAudio;
-@property(readonly) BOOL hasArtist;
-@property BOOL hasAudioLanguage;
-@property BOOL hasAudioTrackId;
-@property BOOL hasAudioTrackIndex;
-@property BOOL hasChapterData;
-@property(readonly) BOOL hasExtendedContentName;
-@property(readonly) BOOL hasFlattenedChapterData;
-@property BOOL hasHasAlternateAudio;
-@property BOOL hasHasChapterData;
-@property BOOL hasHasSubtitles;
-@property(readonly) BOOL hasMovieInfo;
-@property BOOL hasRental;
-@property BOOL hasRentalDuration;
-@property BOOL hasRentalPlaybackDuration;
-@property BOOL hasRentalPlaybackStartedDateTime;
-@property BOOL hasRentalStartedDateTime;
-@property BOOL hasSubtitleLanguage;
-@property BOOL hasSubtitleTrackIndex;
-@property BOOL hasSubtitles;
-@property BOOL hasVideoQuality;
-@property(retain) NSString * movieInfo;
-@property BOOL rental;
-@property long long rentalDuration;
-@property long long rentalPlaybackDuration;
-@property long long rentalPlaybackStartedDateTime;
-@property long long rentalStartedDateTime;
-@property int subtitleLanguage;
-@property int subtitleTrackIndex;
-@property int videoQuality;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic) int audioLanguage;
+@property (nonatomic) int audioTrackId;
+@property (nonatomic) int audioTrackIndex;
+@property (nonatomic, retain) NSString *extendedContentName;
+@property (nonatomic, retain) NSData *flattenedChapterData;
+@property (nonatomic) BOOL hasAlternateAudio;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic) BOOL hasAudioLanguage;
+@property (nonatomic) BOOL hasAudioTrackId;
+@property (nonatomic) BOOL hasAudioTrackIndex;
+@property (nonatomic) BOOL hasChapterData;
+@property (nonatomic, readonly) BOOL hasExtendedContentName;
+@property (nonatomic, readonly) BOOL hasFlattenedChapterData;
+@property (nonatomic) BOOL hasHasAlternateAudio;
+@property (nonatomic) BOOL hasHasChapterData;
+@property (nonatomic) BOOL hasHasSubtitles;
+@property (nonatomic, readonly) BOOL hasMovieInfo;
+@property (nonatomic) BOOL hasRental;
+@property (nonatomic) BOOL hasRentalDuration;
+@property (nonatomic) BOOL hasRentalPlaybackDuration;
+@property (nonatomic) BOOL hasRentalPlaybackStartedDateTime;
+@property (nonatomic) BOOL hasRentalStartedDateTime;
+@property (nonatomic) BOOL hasSubtitleLanguage;
+@property (nonatomic) BOOL hasSubtitleTrackIndex;
+@property (nonatomic) BOOL hasSubtitles;
+@property (nonatomic) BOOL hasVideoQuality;
+@property (nonatomic, retain) NSString *movieInfo;
+@property (nonatomic) BOOL rental;
+@property (nonatomic) long long rentalDuration;
+@property (nonatomic) long long rentalPlaybackDuration;
+@property (nonatomic) long long rentalPlaybackStartedDateTime;
+@property (nonatomic) long long rentalStartedDateTime;
+@property (nonatomic) int subtitleLanguage;
+@property (nonatomic) int subtitleTrackIndex;
+@property (nonatomic) int videoQuality;
 
 - (void).cxx_destruct;
 - (id)artist;

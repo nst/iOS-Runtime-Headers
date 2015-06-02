@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCCaptureOutputWriterDelegate>, AVAssetWriter, AVCaptureAudioDataOutput, AVCaptureSession, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID;
-
 @interface RCCaptureOutputWriter : NSObject <AVCaptureAudioDataOutputSampleBufferDelegate> {
     AVCaptureSession *_AVCaptureSession;
     int _AVCaptureSessionStartupState;
@@ -35,26 +33,26 @@
     int _writerState;
 }
 
-@property(readonly) AVCaptureSession * AVCaptureSession;
-@property(retain) NSURL * activeOutputFileURL;
-@property(retain) AVAssetWriter * assetWriter;
-@property(readonly) double assetWritingCheckpointInterval;
-@property <RCCaptureOutputWriterDelegate> * captureOutputDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double finalizedAssetDuration;
-@property(readonly) BOOL finalizedAssetEncounteredError;
-@property(readonly) NSURL * finalizedAssetURL;
-@property(readonly) unsigned int hash;
-@property double maxRecordedDuration;
-@property unsigned long long maxRecordedFileSize;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSDate * recordingCreationDate;
-@property(copy) NSUUID * recordingSessionID;
-@property(retain) AVCaptureAudioDataOutput * sampleBufferDataOutput;
-@property(retain) NSObject<OS_dispatch_queue> * sampleBufferQueue;
-@property(readonly) Class superclass;
-@property int writerState;
+@property (nonatomic, readonly) AVCaptureSession *AVCaptureSession;
+@property (nonatomic, retain) NSURL *activeOutputFileURL;
+@property (nonatomic, retain) AVAssetWriter *assetWriter;
+@property (nonatomic, readonly) double assetWritingCheckpointInterval;
+@property (nonatomic) <RCCaptureOutputWriterDelegate> *captureOutputDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double finalizedAssetDuration;
+@property (nonatomic, readonly) BOOL finalizedAssetEncounteredError;
+@property (nonatomic, readonly) NSURL *finalizedAssetURL;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double maxRecordedDuration;
+@property (nonatomic) unsigned long long maxRecordedFileSize;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSDate *recordingCreationDate;
+@property (nonatomic, copy) NSUUID *recordingSessionID;
+@property (nonatomic, retain) AVCaptureAudioDataOutput *sampleBufferDataOutput;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *sampleBufferQueue;
+@property (readonly) Class superclass;
+@property (nonatomic) int writerState;
 
 - (void).cxx_destruct;
 - (id)AVCaptureSession;
@@ -66,7 +64,7 @@
 - (void)_interruptionDidBegin:(id)arg1;
 - (void)_prepareCaptureSessionOutputsIfNecessary;
 - (void)_registerForCatpureSessionNotifications;
-- (void)_scheduleMainThreadDelegateBlock:(id)arg1;
+- (void)_scheduleMainThreadDelegateBlock:(id /* block */)arg1;
 - (void)_sessionDidStartRunning:(id)arg1;
 - (void)_sessionDidStopRunning:(id)arg1;
 - (void)_sessionErrored:(id)arg1;

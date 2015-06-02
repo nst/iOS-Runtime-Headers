@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUITracklistColumnData : NSObject {
     NSArray *_columns;
     float _interColumnSpacing;
@@ -11,18 +9,18 @@
     float _rightEdgeInset;
 }
 
-@property(copy) NSArray * columns;
-@property float interColumnSpacing;
-@property float leftEdgeInset;
-@property float rightEdgeInset;
+@property (nonatomic, copy) NSArray *columns;
+@property (nonatomic) float interColumnSpacing;
+@property (nonatomic) float leftEdgeInset;
+@property (nonatomic) float rightEdgeInset;
 
 - (void).cxx_destruct;
 - (id)_initSKUITracklistColumnData;
 - (void)adjustColumnsToFitWidth:(float)arg1;
 - (id)columnForIdentifier:(int)arg1;
 - (id)columns;
-- (void)enumerateColumnsForHeader:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateColumnsForTrack:(id)arg1 usingBlock:(id)arg2;
+- (void)enumerateColumnsForHeader:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateColumnsForTrack:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithRepresentativeTrack:(id)arg1;
 - (float)interColumnSpacing;
 - (float)leftEdgeInset;

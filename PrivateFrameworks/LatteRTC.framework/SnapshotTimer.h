@@ -6,7 +6,7 @@
     BOOL taskIsComplete;
 }
 
-@property BOOL taskIsComplete;
+@property (nonatomic) BOOL taskIsComplete;
 
 + (void)takeSnapshotForTask:(id)arg1;
 

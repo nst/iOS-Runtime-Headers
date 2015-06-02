@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIReviewConfiguration : NSObject {
     NSString *_allVersionsURLString;
     NSString *_currentVersionURLString;
@@ -11,10 +9,10 @@
     NSString *_ratingURLString;
 }
 
-@property(readonly) NSString * allVersionsURLString;
-@property(readonly) NSString * currentVersionURLString;
-@property(readonly) NSString * pageNumberQueryParameter;
-@property(readonly) NSString * ratingURLString;
+@property (nonatomic, readonly) NSString *allVersionsURLString;
+@property (nonatomic, readonly) NSString *currentVersionURLString;
+@property (nonatomic, readonly) NSString *pageNumberQueryParameter;
+@property (nonatomic, readonly) NSString *ratingURLString;
 
 - (void).cxx_destruct;
 - (id)allVersionsURLString;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class CALayer, CAShapeLayer;
-
 @interface FMFAnnotationView : MKAnnotationView {
     int _annotationSize;
     CALayer *_centerImageLayer;
@@ -17,16 +15,16 @@
     BOOL _wantsRotation;
 }
 
-@property int annotationSize;
-@property(retain) CALayer * centerImageLayer;
-@property(retain) CAShapeLayer * circleLayer;
-@property float futureRotationAmount;
-@property BOOL isRotating;
-@property(retain) CAShapeLayer * markerCenter;
-@property(retain) CAShapeLayer * markerOval;
-@property(retain) CAShapeLayer * shapeLayer;
-@property(retain) CAShapeLayer * tailLayer;
-@property BOOL wantsRotation;
+@property (nonatomic) int annotationSize;
+@property (nonatomic, retain) CALayer *centerImageLayer;
+@property (nonatomic, retain) CAShapeLayer *circleLayer;
+@property (nonatomic) float futureRotationAmount;
+@property (nonatomic) BOOL isRotating;
+@property (nonatomic, retain) CAShapeLayer *markerCenter;
+@property (nonatomic, retain) CAShapeLayer *markerOval;
+@property (nonatomic, retain) CAShapeLayer *shapeLayer;
+@property (nonatomic, retain) CAShapeLayer *tailLayer;
+@property (nonatomic) BOOL wantsRotation;
 
 + (id)circlePath;
 

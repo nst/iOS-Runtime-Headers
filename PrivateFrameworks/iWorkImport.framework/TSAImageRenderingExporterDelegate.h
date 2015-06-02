@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, NSURL, TSARenderingExporter<TSKImageExporter>;
-
 @interface TSAImageRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
     float mCompressionFactor;
     unsigned int mHeight;
@@ -14,11 +12,11 @@
     unsigned int mWidth;
 }
 
-@property float compressionFactor;
-@property unsigned int height;
-@property(retain) NSString * imageType;
-@property BOOL scaleToFit;
-@property unsigned int width;
+@property (nonatomic) float compressionFactor;
+@property (nonatomic) unsigned int height;
+@property (nonatomic, retain) NSString *imageType;
+@property (nonatomic) BOOL scaleToFit;
+@property (nonatomic) unsigned int width;
 
 - (float)compressionFactor;
 - (unsigned int)height;

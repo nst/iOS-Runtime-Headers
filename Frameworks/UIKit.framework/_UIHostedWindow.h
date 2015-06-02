@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITraitCollection, _UIHostedWindowHostingHandle;
-
 @interface _UIHostedWindow : UIWindow {
     int _fromWindowOrientation;
     int _hostTintAdjustmentMode;
@@ -12,12 +10,12 @@
     BOOL _wantsTraitPropigation;
 }
 
-@property(setter=_setHostTintAdjustmentMode:) int _hostTintAdjustmentMode;
-@property(setter=_setHostTraitCollection:) UITraitCollection * _hostTraitCollection;
-@property(setter=_setWantsTraitPropigation:) BOOL _wantsTraitPropigation;
-@property(getter=_fromWindowOrientation,setter=_setFromWindowOrientation:) int fromWindowOrientation;
-@property(readonly) _UIHostedWindowHostingHandle * hostingHandle;
-@property(getter=_toWindowOrientation,setter=_setToWindowOrientation:) int toWindowOrientation;
+@property (setter=_setHostTintAdjustmentMode:, nonatomic) int _hostTintAdjustmentMode;
+@property (setter=_setHostTraitCollection:, nonatomic) UITraitCollection *_hostTraitCollection;
+@property (setter=_setWantsTraitPropigation:, nonatomic) BOOL _wantsTraitPropigation;
+@property (getter=_fromWindowOrientation, setter=_setFromWindowOrientation:, nonatomic) int fromWindowOrientation;
+@property (nonatomic, readonly) _UIHostedWindowHostingHandle *hostingHandle;
+@property (getter=_toWindowOrientation, setter=_setToWindowOrientation:, nonatomic) int toWindowOrientation;
 
 - (BOOL)_canPromoteFromKeyWindowStack;
 - (void)_configureContextOptions:(id)arg1;

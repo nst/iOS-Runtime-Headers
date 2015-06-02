@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAttachmentViewController, CKConversation, CKTranscriptManagementNameField, CKTranscriptManagementView, FMFMapViewController, NSString;
-
 @interface CKTranscriptManagementController : CKViewController <CKAttachmentViewControllerDelegate, CKTranscriptManagementNameFieldDelegate, FMFMapViewControllerDelegate, UIGestureRecognizerDelegate> {
     CKAttachmentViewController *_attachmentsController;
     CKConversation *_conversation;
@@ -15,18 +13,18 @@
     BOOL _removeMapViewAfterScrollAnimation;
 }
 
-@property(retain) CKAttachmentViewController * attachmentsController;
-@property(retain) CKConversation * conversation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isInitialLoad) BOOL initialLoad;
-@property(retain) CKTranscriptManagementView * managementView;
-@property(retain) FMFMapViewController * mapController;
-@property BOOL mapHidden;
-@property(retain) CKTranscriptManagementNameField * nameField;
-@property BOOL removeMapViewAfterScrollAnimation;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CKAttachmentViewController *attachmentsController;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
+@property (nonatomic, retain) CKTranscriptManagementView *managementView;
+@property (nonatomic, retain) FMFMapViewController *mapController;
+@property (nonatomic) BOOL mapHidden;
+@property (nonatomic, retain) CKTranscriptManagementNameField *nameField;
+@property (nonatomic) BOOL removeMapViewAfterScrollAnimation;
+@property (readonly) Class superclass;
 
 - (BOOL)_conversationHasLeft;
 - (void)_conversationJoinStateDidChange:(id)arg1;

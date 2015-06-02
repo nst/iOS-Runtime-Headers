@@ -2,32 +2,29 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSData, NSDictionary, NSInputStream, NSString, NSURL;
+@interface SSMutableURLRequestProperties : SSURLRequestProperties
 
-@interface SSMutableURLRequestProperties : SSURLRequestProperties {
-}
-
-@property(copy) NSData * HTTPBody;
-@property(retain) NSInputStream * HTTPBodyStream;
-@property(copy) NSDictionary * HTTPHeaders;
-@property(copy) NSString * HTTPMethod;
-@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property (copy) NSData *HTTPBody;
+@property (retain) NSInputStream *HTTPBodyStream;
+@property (copy) NSDictionary *HTTPHeaders;
+@property (copy) NSString *HTTPMethod;
+@property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
 @property int KBSyncType;
-@property(retain) NSURL * URL;
-@property(copy) NSString * URLBagKey;
+@property (retain) NSURL *URL;
+@property (copy) NSString *URLBagKey;
 @property int URLBagType;
-@property(copy) id URLBagURLBlock;
-@property(copy) NSArray * URLs;
+@property (copy) id /* block */ URLBagURLBlock;
+@property (copy) NSArray *URLs;
 @property int allowedRetryCount;
 @property BOOL allowsBootstrapCellularData;
 @property unsigned int cachePolicy;
-@property(copy) NSString * clientAuditBundleIdentifier;
-@property(copy) NSData * clientAuditTokenData;
-@property(copy) NSString * clientIdentifier;
+@property (copy) NSString *clientAuditBundleIdentifier;
+@property (copy) NSData *clientAuditTokenData;
+@property (copy) NSString *clientIdentifier;
 @property long long expectedContentLength;
-@property(getter=isLargeDownload) BOOL largeDownload;
+@property (getter=isLargeDownload) BOOL largeDownload;
 @property unsigned int networkServiceType;
-@property(copy) NSDictionary * requestParameters;
+@property (copy) NSDictionary *requestParameters;
 @property BOOL requiresExtendedValidationCertificates;
 @property BOOL requiresHTTPS;
 @property BOOL shouldAddKBSyncData;
@@ -38,12 +35,11 @@
 @property BOOL shouldSendSecureToken;
 @property BOOL shouldSetCookies;
 @property double timeoutInterval;
-@property(copy) NSArray * userAgentComponents;
+@property (copy) NSArray *userAgentComponents;
 
-+ (id)newForRadioRequestURL:(id)arg1;
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)radio_mescalSignWithCompletionHandler:(id)arg1;
 - (void)setAllowedRetryCount:(int)arg1;
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
@@ -74,10 +70,16 @@
 - (void)setURL:(id)arg1;
 - (void)setURLBagKey:(id)arg1;
 - (void)setURLBagType:(int)arg1;
-- (void)setURLBagURLBlock:(id)arg1;
+- (void)setURLBagURLBlock:(id /* block */)arg1;
 - (void)setURLs:(id)arg1;
 - (void)setUserAgentComponents:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
+
++ (id)newForRadioRequestURL:(id)arg1;
+
+- (void)radio_mescalSignWithCompletionHandler:(id /* block */)arg1;
 
 @end

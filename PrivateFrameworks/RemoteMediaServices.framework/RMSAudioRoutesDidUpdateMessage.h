@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSMutableArray;
-
 @interface RMSAudioRoutesDidUpdateMessage : PBCodable <NSCopying> {
     NSMutableArray *_audioRoutes;
     struct { 
@@ -12,9 +10,9 @@
     int _sessionIdentifier;
 }
 
-@property(retain) NSMutableArray * audioRoutes;
-@property BOOL hasSessionIdentifier;
-@property int sessionIdentifier;
+@property (nonatomic, retain) NSMutableArray *audioRoutes;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (void)addAudioRoutes:(id)arg1;

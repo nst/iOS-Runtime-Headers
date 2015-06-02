@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDBGBodyPlaceholder, GQDBGObjectPlaceholder, GQDBGSlideNumberPlaceholder, GQDBGTitlePlaceholder, GQDSStyle, GQDSStylesheet;
-
 @interface GQDBGAbstractSlide : NSObject {
     GQDBGBodyPlaceholder *mBodyPlaceholder;
     BOOL mCallGenerator;

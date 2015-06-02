@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSDate, NSDateComponents;
-
 @interface _HKStatisticsCollectionQueryServerDataObject : _HKQueryServerDataObject {
     NSDate *_anchorDate;
     NSDateComponents *_intervalComponents;
@@ -11,10 +9,10 @@
     unsigned int _options;
 }
 
-@property(retain) NSDate * anchorDate;
-@property(retain) NSDateComponents * intervalComponents;
-@property unsigned int mergeStrategy;
-@property unsigned int options;
+@property (nonatomic, retain) NSDate *anchorDate;
+@property (nonatomic, retain) NSDateComponents *intervalComponents;
+@property (nonatomic) unsigned int mergeStrategy;
+@property (nonatomic) unsigned int options;
 
 + (BOOL)supportsSecureCoding;
 

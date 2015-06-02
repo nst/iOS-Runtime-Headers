@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSString;
-
 @interface CUIThemeSchemaPSDLayer : NSObject {
     NSString *name;
 }
 
-@property(retain) NSString * name;
+@property (nonatomic, retain) NSString *name;
 
 - (void)dealloc;
 - (id)name;

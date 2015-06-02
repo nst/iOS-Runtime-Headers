@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIFocusRegionMapEntry : NSObject <NSSecureCoding> {
     UIView *_associatedView;
     struct CGRect { 
@@ -18,8 +16,8 @@
     } _frame;
 }
 
-@property(retain) UIView * associatedView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, retain) UIView *associatedView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 
 + (BOOL)supportsSecureCoding;
 

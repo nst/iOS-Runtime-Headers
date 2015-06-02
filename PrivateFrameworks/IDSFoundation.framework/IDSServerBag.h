@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class IDSRemoteURLConnection, IMConnectionMonitor, NSData, NSDate, NSDictionary, NSMutableURLRequest, NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface IDSServerBag : NSObject {
     BOOL _allowSelfSignedCertificates;
     BOOL _allowUnsignedBags;
@@ -25,27 +23,27 @@
     NSMutableURLRequest *_urlRequest;
 }
 
-@property(setter=_setBag:,retain) NSDictionary * _bag;
-@property NSObject<OS_dispatch_queue> * _bagQueue;
-@property(retain) NSNumber * _cacheTime;
-@property(setter=_setCachedBag:,retain) NSDictionary * _cachedBag;
-@property(setter=_setCachedHash:,retain) NSString * _cachedHash;
-@property(setter=_setCachedURLString:,retain) NSString * _cachedURLString;
-@property(retain) NSData * _certData;
-@property(retain) IMConnectionMonitor * _connectionMonitor;
-@property(retain) NSDate * _loadDate;
-@property IDSRemoteURLConnection * _remoteURLConnection;
-@property(setter=_setTrustStatus:) int _trustStatus;
-@property(retain) NSMutableURLRequest * _urlRequest;
+@property (setter=_setBag:, retain) NSDictionary *_bag;
+@property NSObject<OS_dispatch_queue> *_bagQueue;
+@property (retain) NSNumber *_cacheTime;
+@property (setter=_setCachedBag:, retain) NSDictionary *_cachedBag;
+@property (setter=_setCachedHash:, retain) NSString *_cachedHash;
+@property (setter=_setCachedURLString:, retain) NSString *_cachedURLString;
+@property (retain) NSData *_certData;
+@property (retain) IMConnectionMonitor *_connectionMonitor;
+@property (retain) NSDate *_loadDate;
+@property IDSRemoteURLConnection *_remoteURLConnection;
+@property (setter=_setTrustStatus:) int _trustStatus;
+@property (retain) NSMutableURLRequest *_urlRequest;
 @property BOOL allowSelfSignedCertificates;
 @property BOOL allowUnsignedBags;
-@property(retain) NSString * apsEnvironmentName;
-@property(retain) NSURL * bagURL;
+@property (retain) NSString *apsEnvironmentName;
+@property (retain) NSURL *bagURL;
 @property unsigned long long hasPairedDeviceState;
-@property(readonly) BOOL isInDebilitatedMode;
-@property(readonly) BOOL isLoaded;
-@property(readonly) BOOL isLoading;
-@property(readonly) BOOL isServerAvailable;
+@property (readonly) BOOL isInDebilitatedMode;
+@property (readonly) BOOL isLoaded;
+@property (readonly) BOOL isLoading;
+@property (readonly) BOOL isServerAvailable;
 @property int token;
 
 + (id)_bagCreationLock;

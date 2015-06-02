@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableDictionary, PUAlbumListTransitionContext, UICollectionViewLayoutAttributes;
-
 @interface PUStackedAlbumLayout : UICollectionViewLayout {
     PUAlbumListTransitionContext *_albumListTransitionContext;
     struct CGSize { 
@@ -24,17 +22,17 @@
     NSMutableDictionary *_zIndexByIndexPath;
 }
 
-@property(retain) PUAlbumListTransitionContext * albumListTransitionContext;
-@property struct CGSize { float x1; float x2; } contentSizeAdjust;
-@property(retain) UICollectionViewLayoutAttributes * globalHeaderAttributes;
-@property(setter=setInteractive:) BOOL isInteractive;
-@property struct CGPoint { float x1; float x2; } referenceCenter;
-@property(copy) UICollectionViewLayoutAttributes * referenceItemLayoutAttributes;
-@property(copy) NSArray * visibleStackedItemLayoutAttributes;
-@property float yAdjust;
+@property (nonatomic, retain) PUAlbumListTransitionContext *albumListTransitionContext;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSizeAdjust;
+@property (nonatomic, retain) UICollectionViewLayoutAttributes *globalHeaderAttributes;
+@property (setter=setInteractive:, nonatomic) BOOL isInteractive;
+@property (nonatomic) struct CGPoint { float x1; float x2; } referenceCenter;
+@property (nonatomic, copy) UICollectionViewLayoutAttributes *referenceItemLayoutAttributes;
+@property (nonatomic, copy) NSArray *visibleStackedItemLayoutAttributes;
+@property (nonatomic) float yAdjust;
 
 - (void).cxx_destruct;
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (id)_newAdjustedLayoutAttributes:(id)arg1 indexPath:(id)arg2;
 - (id)albumListTransitionContext;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;

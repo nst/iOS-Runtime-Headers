@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CADisplayLink, NSObject<OS_dispatch_queue>, NSTimer;
-
 @interface SKDisplayLink : NSObject {
     BOOL _asynchronous;
     float _averageFrameTime;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     CADisplayLink *_caDisplayLink;
     int _frameCount;
     double _frameCountBeginTime;
@@ -29,13 +19,13 @@
     NSTimer *_timer;
 }
 
-@property BOOL asynchronous;
-@property int frameInterval;
+@property (nonatomic) BOOL asynchronous;
+@property (nonatomic) int frameInterval;
 @property unsigned int maxQueuedFrameCount;
-@property unsigned int mode;
-@property(getter=isPaused) BOOL paused;
+@property (nonatomic) unsigned int mode;
+@property (getter=isPaused, nonatomic) BOOL paused;
 
-+ (id)displayLinkWithBlock:(id)arg1 queue:(id)arg2;
++ (id)displayLinkWithBlock:(id /* block */)arg1 queue:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_caDisplayLinkCallback;
@@ -49,7 +39,7 @@
 - (void)dealloc;
 - (int)frameInterval;
 - (id)init;
-- (id)initWithBlock:(id)arg1 queue:(id)arg2;
+- (id)initWithBlock:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isPaused;
 - (unsigned int)maxQueuedFrameCount;
 - (unsigned int)mode;

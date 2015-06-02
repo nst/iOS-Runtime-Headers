@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPArtist, MIPSeries, NSString;
-
 @interface MIPPodcast : PBCodable <NSCopying> {
     MIPArtist *_artist;
     NSString *_externalGuid;
@@ -11,14 +9,14 @@
     MIPSeries *_series;
 }
 
-@property(retain) MIPArtist * artist;
-@property(retain) NSString * externalGuid;
-@property(retain) NSString * feedUrl;
-@property(readonly) BOOL hasArtist;
-@property(readonly) BOOL hasExternalGuid;
-@property(readonly) BOOL hasFeedUrl;
-@property(readonly) BOOL hasSeries;
-@property(retain) MIPSeries * series;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic, retain) NSString *externalGuid;
+@property (nonatomic, retain) NSString *feedUrl;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic, readonly) BOOL hasExternalGuid;
+@property (nonatomic, readonly) BOOL hasFeedUrl;
+@property (nonatomic, readonly) BOOL hasSeries;
+@property (nonatomic, retain) MIPSeries *series;
 
 - (void).cxx_destruct;
 - (id)artist;

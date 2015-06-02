@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSData, SLRequestMultiPart;
-
 @interface SLRequestMultiPartInputStream : NSInputStream {
     unsigned int _bytesReadInState;
     int _currentState;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSIndexSet;
-
 @interface SGPlainTextContentCursor : NSObject {
     struct { 
         unsigned short buffer[64]; 
@@ -27,16 +25,16 @@
     struct __CFString { } *_str;
 }
 
-@property unsigned int pos;
+@property (nonatomic) unsigned int pos;
 
 - (void).cxx_destruct;
 - (BOOL)backward;
 - (BOOL)backwardToString:(id)arg1 consume:(BOOL)arg2;
-- (void)backwardWhile:(id)arg1;
+- (void)backwardWhile:(id /* block */)arg1;
 - (void)dealloc;
 - (BOOL)forward;
 - (BOOL)forwardToString:(id)arg1 consume:(BOOL)arg2;
-- (void)forwardWhile:(id)arg1;
+- (void)forwardWhile:(id /* block */)arg1;
 - (id)initWithEntity:(id)arg1;
 - (unsigned int)pos;
 - (void)seekToEnd;

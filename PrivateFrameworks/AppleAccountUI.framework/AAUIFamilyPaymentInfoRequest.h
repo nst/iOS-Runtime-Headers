@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIFamilyPaymentInfoRequest : AAFamilyRequest {
-}
+@interface AAUIFamilyPaymentInfoRequest : AAFamilyRequest
 
 + (Class)responseClass;
 

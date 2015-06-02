@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingNumericSnippet : SASettingSnippet {
-}
+@interface SASettingNumericSnippet : SASettingSnippet
 
-@property BOOL increment;
+@property (nonatomic) BOOL increment;
 
 + (id)numericSnippet;
 + (id)numericSnippetWithDictionary:(id)arg1 context:(id)arg2;

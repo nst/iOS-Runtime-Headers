@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLFileStats : NSObject {
-}
+@interface PLFileStats : NSObject
 
 + (id)cpuTimeForProcess:(id)arg1;
 + (id)energyUsageForProcess:(id)arg1;

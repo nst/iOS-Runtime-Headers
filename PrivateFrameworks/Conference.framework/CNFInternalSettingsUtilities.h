@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@interface CNFInternalSettingsUtilities : NSObject {
-}
+@interface CNFInternalSettingsUtilities : NSObject
 
 + (id)IDSEnvironment;
 + (id)currentInternalSettingsBundle;

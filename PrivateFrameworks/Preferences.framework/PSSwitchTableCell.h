@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIActivityIndicatorView;
-
 @interface PSSwitchTableCell : PSControlTableCell {
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property BOOL loading;
+@property (nonatomic) BOOL loading;
 
 - (BOOL)canReload;
 - (id)controlValue;

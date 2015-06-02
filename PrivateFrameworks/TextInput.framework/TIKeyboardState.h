@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString, TIDocumentState, TIKeyboardCandidate, TIKeyboardLayout, TIKeyboardLayoutState, TITextInputTraits;
-
 @interface TIKeyboardState : NSObject <NSCopying, NSSecureCoding> {
     union { 
         int integerValue; 
@@ -43,35 +41,35 @@
     TITextInputTraits *_textInputTraits;
 }
 
-@property BOOL autocapitalizationEnabled;
-@property unsigned int autocapitalizationType;
-@property BOOL autocorrectionEnabled;
-@property BOOL autocorrectionListUIAutoDisplayMode;
-@property BOOL autocorrectionListUIDisplayed;
-@property BOOL candidateSelectionPredictionEnabled;
-@property(copy) NSString * clientIdentifier;
-@property(retain) TIKeyboardCandidate * currentCandidate;
-@property(retain) TIDocumentState * documentState;
-@property BOOL hardwareKeyboardMode;
-@property(copy) NSString * inputForMarkedText;
-@property(copy) NSString * inputMode;
-@property(retain) TIKeyboardLayout * keyLayout;
-@property BOOL keyboardEventsLagging;
-@property unsigned int keyboardType;
-@property(copy) TIKeyboardLayoutState * layoutState;
-@property BOOL needsCandidateMetadata;
-@property(copy) NSString * recipientIdentifier;
-@property(copy) NSString * responseContext;
-@property(copy) NSString * searchStringForMarkedText;
-@property BOOL secureTextEntry;
-@property int shiftState;
-@property BOOL shortcutConversionEnabled;
-@property BOOL shouldSkipCandidateSelection;
-@property BOOL splitKeyboardMode;
-@property BOOL suppressingCandidateSelection;
-@property(retain) TITextInputTraits * textInputTraits;
-@property BOOL userSelectedCurrentCandidate;
-@property BOOL wordLearningEnabled;
+@property (nonatomic) BOOL autocapitalizationEnabled;
+@property (nonatomic) unsigned int autocapitalizationType;
+@property (nonatomic) BOOL autocorrectionEnabled;
+@property (nonatomic) BOOL autocorrectionListUIAutoDisplayMode;
+@property (nonatomic) BOOL autocorrectionListUIDisplayed;
+@property (nonatomic) BOOL candidateSelectionPredictionEnabled;
+@property (nonatomic, copy) NSString *clientIdentifier;
+@property (nonatomic, retain) TIKeyboardCandidate *currentCandidate;
+@property (nonatomic, retain) TIDocumentState *documentState;
+@property (nonatomic) BOOL hardwareKeyboardMode;
+@property (nonatomic, copy) NSString *inputForMarkedText;
+@property (nonatomic, copy) NSString *inputMode;
+@property (nonatomic, retain) TIKeyboardLayout *keyLayout;
+@property (nonatomic) BOOL keyboardEventsLagging;
+@property (nonatomic) unsigned int keyboardType;
+@property (nonatomic, copy) TIKeyboardLayoutState *layoutState;
+@property (nonatomic) BOOL needsCandidateMetadata;
+@property (nonatomic, copy) NSString *recipientIdentifier;
+@property (nonatomic, copy) NSString *responseContext;
+@property (nonatomic, copy) NSString *searchStringForMarkedText;
+@property (nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int shiftState;
+@property (nonatomic) BOOL shortcutConversionEnabled;
+@property (nonatomic) BOOL shouldSkipCandidateSelection;
+@property (nonatomic) BOOL splitKeyboardMode;
+@property (nonatomic) BOOL suppressingCandidateSelection;
+@property (nonatomic, retain) TITextInputTraits *textInputTraits;
+@property (nonatomic) BOOL userSelectedCurrentCandidate;
+@property (nonatomic) BOOL wordLearningEnabled;
 
 + (BOOL)supportsSecureCoding;
 

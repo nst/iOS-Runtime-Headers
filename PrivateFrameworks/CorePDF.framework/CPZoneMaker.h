@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPCharSequence;
-
 @interface CPZoneMaker : NSObject {
     CPCharSequence *charactersOnPage;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UIControl : UIView {
     struct { 
         unsigned int disabled : 1; 
@@ -30,14 +28,14 @@
     NSMutableArray *_targetActions;
 }
 
-@property int contentHorizontalAlignment;
-@property int contentVerticalAlignment;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(getter=isSelected) BOOL selected;
-@property(readonly) unsigned int state;
-@property(getter=isTouchInside,readonly) BOOL touchInside;
-@property(getter=isTracking,readonly) BOOL tracking;
+@property (nonatomic) int contentHorizontalAlignment;
+@property (nonatomic) int contentVerticalAlignment;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, readonly) unsigned int state;
+@property (getter=isTouchInside, nonatomic, readonly) BOOL touchInside;
+@property (getter=isTracking, nonatomic, readonly) BOOL tracking;
 
 - (void)_cancelDelayedActions;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;

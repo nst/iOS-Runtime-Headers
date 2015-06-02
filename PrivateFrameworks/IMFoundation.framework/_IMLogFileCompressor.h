@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableArray;
-
 @interface _IMLogFileCompressor : NSObject <IMFileCopierDelegate> {
     NSMutableArray *_archivers;
 }

@@ -6,7 +6,7 @@
     id _requestingObject;
 }
 
-@property id requestingObject;
+@property (nonatomic) id requestingObject;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDBltUIBuildSuccess : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -12,10 +10,10 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL hasSectionid;
-@property BOOL hasTimestamp;
-@property(retain) NSString * sectionid;
-@property unsigned long long timestamp;
+@property (nonatomic, readonly) BOOL hasSectionid;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *sectionid;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

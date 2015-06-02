@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class CUICatalog, CUIStyleEffectConfiguration;
-
 @interface NSLineFragmentRenderingContext : NSObject {
     struct CGSize { float x1; float x2; } *_advancements;
     CUICatalog *_catalog;
@@ -35,9 +33,9 @@
     CUIStyleEffectConfiguration *_styleEffects;
 }
 
-@property(retain) CUICatalog * cuiCatalog;
-@property(retain) CUIStyleEffectConfiguration * cuiStyleEffects;
-@property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) BOOL usesSimpleTextEffects;
+@property (nonatomic, retain) CUICatalog *cuiCatalog;
+@property (nonatomic, retain) CUIStyleEffectConfiguration *cuiStyleEffects;
+@property (getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:, nonatomic) BOOL usesSimpleTextEffects;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;

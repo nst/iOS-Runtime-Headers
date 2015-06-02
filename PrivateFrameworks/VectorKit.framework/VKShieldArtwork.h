@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSCache, NSDictionary, NSMutableDictionary;
-
 @interface VKShieldArtwork : NSObject {
     struct CGImage { } *_backgroundImage;
     struct CGPoint { 
@@ -17,11 +11,7 @@
     NSCache *_imageCache;
     float _lineHeight;
     float _lineSpacing;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _newContext;
-
+    id /* block */ _newContext;
     struct __CTFont { } *_nonDigitFont;
     BOOL _resizable;
     struct { 
@@ -44,7 +34,7 @@
     NSMutableDictionary *_textSpecificArtworks;
 }
 
-@property(readonly) float scale;
+@property (nonatomic, readonly) float scale;
 
 - (id).cxx_construct;
 - (id)_initWithBackgroundImage:(struct CGImage { }*)arg1 contentScale:(float)arg2 resizableInfo:(struct { float x1; float x2; float x3; float x4; }*)arg3 font:(struct __CTFont { }*)arg4 nonDigitFont:(struct __CTFont { }*)arg5 textColor:(struct CGColor { }*)arg6 textCenterOffsetX:(float)arg7 textBaseline:(float)arg8 textStrokeWidth:(float)arg9 textStrokeColor:(struct CGColor { }*)arg10 textShadowOffset:(struct CGSize { float x1; float x2; })arg11 textShadowRadius:(float)arg12 textShadowColor:(struct CGColor { }*)arg13 lineSpacing:(float)arg14;

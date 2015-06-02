@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, UIColor, UIFont, UILabel;
-
 @interface ABUILabelWithPlaceholder : UIView {
     NSString *_actualText;
     UIColor *_actualTextColor;
@@ -12,13 +10,13 @@
     NSString *_placeholder;
 }
 
-@property UIFont * font;
-@property UIColor * highlightedTextColor;
-@property(copy) NSString * placeholder;
-@property UIColor * shadowColor;
-@property struct CGSize { float x1; float x2; } shadowOffset;
-@property(copy) NSString * text;
-@property(retain) UIColor * textColor;
+@property (nonatomic) UIFont *font;
+@property (nonatomic) UIColor *highlightedTextColor;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic) UIColor *shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setActualText:(id)arg1;

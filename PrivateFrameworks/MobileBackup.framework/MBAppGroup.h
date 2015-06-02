@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBAppGroup : MBContainer {
-}
+@interface MBAppGroup : MBContainer
 
 + (id)appGroupWithPropertyList:(id)arg1;
 

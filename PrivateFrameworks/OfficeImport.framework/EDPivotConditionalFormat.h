@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection;
-
 @interface EDPivotConditionalFormat : NSObject {
     EDCollection *mPivotAreas;
     unsigned long mPriority;

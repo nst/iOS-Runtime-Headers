@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSPrimitiveValue;
+@interface DOMRect : DOMObject
 
-@interface DOMRect : DOMObject {
-}
-
-@property(readonly) DOMCSSPrimitiveValue * bottom;
-@property(readonly) DOMCSSPrimitiveValue * left;
-@property(readonly) DOMCSSPrimitiveValue * right;
-@property(readonly) DOMCSSPrimitiveValue * top;
+@property (readonly) DOMCSSPrimitiveValue *bottom;
+@property (readonly) DOMCSSPrimitiveValue *left;
+@property (readonly) DOMCSSPrimitiveValue *right;
+@property (readonly) DOMCSSPrimitiveValue *top;
 
 - (id)bottom;
 - (void)dealloc;

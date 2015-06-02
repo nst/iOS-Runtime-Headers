@@ -2,40 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, PLPhotoLibrary, UIAlertController, UIBarButtonItem, UIViewController;
-
 @interface PLDeletePhotosActionController : NSObject {
     UIBarButtonItem *__referenceBarButtonItem;
     int _action;
     UIAlertController *_actionSheetController;
     NSArray *_additionalAssetsToDelete;
     NSArray *_assets;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     BOOL _handlesDuplicates;
     UIAlertController *_oneTimeConfirmation;
     UIAlertController *_overQuotaConfirmation;
     PLPhotoLibrary *_photoLibrary;
     UIViewController *_referenceViewController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willDeleteHandler;
-
+    id /* block */ _willDeleteHandler;
 }
 
-@property(setter=_setReferenceBarButtonItem:,retain) UIBarButtonItem * _referenceBarButtonItem;
-@property(readonly) int action;
-@property(readonly) NSArray * assets;
-@property(readonly) BOOL handlesDuplicates;
-@property(readonly) PLPhotoLibrary * photoLibrary;
+@property (setter=_setReferenceBarButtonItem:, nonatomic, retain) UIBarButtonItem *_referenceBarButtonItem;
+@property (nonatomic, readonly) int action;
+@property (nonatomic, readonly) NSArray *assets;
+@property (nonatomic, readonly) BOOL handlesDuplicates;
+@property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;
 
 - (void)_actionSheetDeletePressed:(BOOL)arg1;
 - (void)_didCompleteWithDestructiveAction:(BOOL)arg1;
@@ -56,8 +42,8 @@
 - (BOOL)handlesDuplicates;
 - (id)initWithPhotoLibrary:(id)arg1 assets:(id)arg2 action:(int)arg3 handleDuplicates:(BOOL)arg4;
 - (id)photoLibrary;
-- (id)presentInViewController:(id)arg1 fromBarButtonItem:(id)arg2 willDeleteHAndler:(id)arg3 completionHandler:(id)arg4;
+- (id)presentInViewController:(id)arg1 fromBarButtonItem:(id)arg2 willDeleteHAndler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (void)redisplayInViewController:(id)arg1 fromBarButtonItem:(id)arg2;
-- (void)runDestructiveActionWithCompletion:(id)arg1;
+- (void)runDestructiveActionWithCompletion:(id /* block */)arg1;
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData;
-
 @interface MCWAPIIdentityCertificatePayload : MCCertificatePayload {
     NSData *_pemData;
 }
 
-@property(retain,readonly) NSData * pemData;
+@property (nonatomic, readonly, retain) NSData *pemData;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

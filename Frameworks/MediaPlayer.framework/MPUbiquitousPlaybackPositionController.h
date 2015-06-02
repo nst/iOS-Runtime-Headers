@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSObject<OS_dispatch_queue>, SBCPlaybackPositionDomain, SBCPlaybackPositionSyncService;
-
 @interface MPUbiquitousPlaybackPositionController : NSObject {
     BOOL _applicationBecomingActive;
     BOOL _beganUsingPlaybackPositionMetadata;
@@ -16,15 +14,15 @@
     SBCPlaybackPositionSyncService *_uppServiceProxy;
 }
 
-@property(readonly) BOOL applicationBecomingActive;
-@property(getter=isServiceActive) BOOL beganUsingPlaybackPositionMetadata;
-@property BOOL databaseHasBookmarkableContents;
-@property BOOL externallyActive;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * queue;
-@property(getter=isServiceActive) BOOL serviceActive;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * serviceQueue;
-@property(retain) SBCPlaybackPositionDomain * uppDomain;
-@property(retain) SBCPlaybackPositionSyncService * uppServiceProxy;
+@property (nonatomic, readonly) BOOL applicationBecomingActive;
+@property (getter=isServiceActive, nonatomic) BOOL beganUsingPlaybackPositionMetadata;
+@property (nonatomic) BOOL databaseHasBookmarkableContents;
+@property (nonatomic) BOOL externallyActive;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
+@property (getter=isServiceActive, nonatomic) BOOL serviceActive;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *serviceQueue;
+@property (nonatomic, retain) SBCPlaybackPositionDomain *uppDomain;
+@property (nonatomic, retain) SBCPlaybackPositionSyncService *uppServiceProxy;
 
 + (id)sharedUbiquitousPlaybackPositionController;
 

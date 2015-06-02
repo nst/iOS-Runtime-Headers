@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class <WebPluginContainerCheckController>, NSString, NSURLRequest, WebPolicyDecisionListener;
-
 @interface WebPluginContainerCheck : NSObject {
     id _contextInfo;
     <WebPluginContainerCheckController> *_controller;

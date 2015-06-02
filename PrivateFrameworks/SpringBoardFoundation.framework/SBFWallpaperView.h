@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFWallpaperViewInternalObserver>, <SBFWallpaperViewLegibilityObserver>, NSString, NSTimer, SBFWallpaperParallaxSettings, SBFWallpaperSettings, UIColor, UIImage, UIView, _UILegibilitySettings, _UILegibilitySettingsProvider;
-
 @interface SBFWallpaperView : UIView <_UISettingsKeyObserver> {
     NSTimer *_colorSampleTimer;
     float _contentScaleFactor;
@@ -31,24 +29,24 @@
     float _zoomFactor;
 }
 
-@property(retain) UIView * contentView;
-@property BOOL continuousColorSamplingEnabled;
-@property float contrast;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL filtersAverageColor;
-@property(readonly) unsigned int hash;
-@property <SBFWallpaperViewInternalObserver> * internalObserver;
-@property <SBFWallpaperViewLegibilityObserver> * legibilityObserver;
-@property(retain) _UILegibilitySettings * legibilitySettings;
-@property float parallaxAxisAdjustmentAngle;
-@property BOOL parallaxEnabled;
-@property float parallaxFactor;
-@property(readonly) Class superclass;
-@property int variant;
-@property BOOL wallpaperAnimationEnabled;
-@property(readonly) UIImage * wallpaperImage;
-@property float zoomFactor;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic) BOOL continuousColorSamplingEnabled;
+@property (nonatomic) float contrast;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL filtersAverageColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <SBFWallpaperViewInternalObserver> *internalObserver;
+@property (nonatomic) <SBFWallpaperViewLegibilityObserver> *legibilityObserver;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic) float parallaxAxisAdjustmentAngle;
+@property (nonatomic) BOOL parallaxEnabled;
+@property (nonatomic) float parallaxFactor;
+@property (readonly) Class superclass;
+@property (nonatomic) int variant;
+@property (nonatomic) BOOL wallpaperAnimationEnabled;
+@property (nonatomic, readonly) UIImage *wallpaperImage;
+@property (nonatomic) float zoomFactor;
 
 + (BOOL)_allowsParallax;
 + (BOOL)_allowsRasterization;

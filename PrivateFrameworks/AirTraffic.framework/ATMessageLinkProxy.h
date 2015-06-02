@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSHashTable, NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint;
-
 @interface ATMessageLinkProxy : NSObject <ATMessageLink, ATMessageLinkObserver, ATMessageLinkRequestHandler, NSSecureCoding> {
     NSXPCConnection *_connection;
     NSXPCListenerEndpoint *_endpoint;
@@ -15,14 +13,14 @@
     NSMutableDictionary *_requestHandlers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int endpointType;
-@property(readonly) unsigned int hash;
-@property(getter=isInitialized) BOOL initialized;
-@property(copy) NSString * libraryIdentifier;
-@property(getter=isOpen) BOOL open;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int endpointType;
+@property (readonly) unsigned int hash;
+@property (getter=isInitialized, nonatomic) BOOL initialized;
+@property (nonatomic, copy) NSString *libraryIdentifier;
+@property (getter=isOpen, nonatomic) BOOL open;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 
@@ -38,14 +36,14 @@
 - (BOOL)isInitialized;
 - (BOOL)isOpen;
 - (id)libraryIdentifier;
-- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2 completion:(id)arg3;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)removeRequestHandlerForDataClass:(id)arg1;
-- (void)sendRequest:(id)arg1 withCompletion:(id)arg2;
-- (void)sendResponse:(id)arg1 withCompletion:(id)arg2;
+- (void)sendRequest:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setEndpointType:(int)arg1;
 - (void)setInitialized:(BOOL)arg1;
 - (void)setLibraryIdentifier:(id)arg1;

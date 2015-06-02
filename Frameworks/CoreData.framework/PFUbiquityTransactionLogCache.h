@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSRecursiveLock, NSString, PFUbiquityGlobalObjectIDCache;
-
 @interface PFUbiquityTransactionLogCache : NSObject {
     PFUbiquityGlobalObjectIDCache *_gidCache;
     NSString *_localPeerID;

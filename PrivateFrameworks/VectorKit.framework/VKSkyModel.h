@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, VKMapModel, VKStyleManager;
-
 @interface VKSkyModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
@@ -42,12 +35,12 @@
     } _uniformData;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property VKMapModel * mapModel;
-@property(readonly) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) VKMapModel *mapModel;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 

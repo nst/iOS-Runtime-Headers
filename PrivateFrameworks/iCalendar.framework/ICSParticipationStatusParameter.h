@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSParticipationStatusParameter : ICSPredefinedValue {
-}
+@interface ICSParticipationStatusParameter : ICSPredefinedValue
 
 + (id)participationStatusParameterFromCode:(int)arg1;
 + (id)participationStatusParameterFromICSString:(id)arg1;

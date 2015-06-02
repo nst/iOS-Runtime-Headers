@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSArray, NSMutableArray, UIView;
-
 @interface HourlyWeatherView : UIView {
     UIView *_centerView;
     NSMutableArray *_colorsAndFonts;
@@ -17,12 +15,12 @@
     int _viewSize;
 }
 
-@property(copy,readonly) UIView * centerView;
-@property BOOL disableCenterViewOffset;
-@property BOOL drawCurrentTime;
-@property(readonly) unsigned int hour;
-@property(readonly) unsigned int minutes;
-@property(copy,readonly) NSArray * outerViews;
+@property (nonatomic, readonly, copy) UIView *centerView;
+@property (nonatomic) BOOL disableCenterViewOffset;
+@property (nonatomic) BOOL drawCurrentTime;
+@property (nonatomic, readonly) unsigned int hour;
+@property (nonatomic, readonly) unsigned int minutes;
+@property (nonatomic, readonly, copy) NSArray *outerViews;
 
 + (id)lookupHourlyConditionGlyph:(int)arg1;
 

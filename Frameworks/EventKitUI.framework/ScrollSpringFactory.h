@@ -6,7 +6,7 @@
     float _initialVelocity;
 }
 
-@property float initialVelocity;
+@property (nonatomic) float initialVelocity;
 
 + (id)sharedFactory;
 

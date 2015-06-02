@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CKTranscriptComposeDelegate>, CKAudioTrimViewController, CKComposeRecipientSelectionController, CKComposition, CKConversation, CKGradientReferenceView, CKMessageEncodingInfo, CKMessageEntryView, CKPhotoPickerController, CKQLPreviewController, CKRaiseGesture, CKScheduledUpdater, CKSendAnimationWindow, CKTranscriptCollectionViewController, CKTranscriptHeaderViewController, CKTranscriptTypingIndicatorCell, CKVideoMessageRecordingViewController, CKVideoTrimController, NSArray, NSMutableArray, NSNotification, NSNumber, NSString, UIBarButtonItem, UIImagePickerController, UINavigationItem, UIProgressView, UITapGestureRecognizer, UIToolbar, UIView, UIWindow;
-
 @interface CKTranscriptController : CKScrollViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, AFContextProvider, CKComposeRecipientSelectionControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryViewDelegate, CKTranscriptCollectionViewControllerDelegate, CKTrimControllerDelegate, CKVideoMessageRecordingViewControllerDelegate, IMChatSendProgressDelegate, PHPhotoLibraryChangeObserver, QLPreviewControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIKeyInput, UIModalViewDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
     UIToolbar *_actionsToolbar;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertViewHandler;
-
+    id /* block */ _alertViewHandler;
     CKAudioTrimViewController *_audioTrimController;
-    unsigned int _automaticKeyboardWasDisabled : 1;
+    unsigned int _automaticKeyboardWasDisabled;
     UIWindow *_autorotateDisabledWindow;
     CKGradientReferenceView *_backPlacard;
     BOOL _canSafelyDismissImagePicker;
@@ -31,119 +21,115 @@
     BOOL _didCancel;
     UIBarButtonItem *_editCancelItem;
     CKMessageEntryView *_entryView;
-    unsigned int _entryViewCanAcceptFocus : 1;
-    unsigned int _entryViewWasActiveBeforeEdit : 1;
-    unsigned int _entryViewWasActiveBeforeNewComposeThrow : 1;
-    unsigned int _entryViewWasActiveBeforePushingViewController : 1;
-    unsigned int _entryViewWasActiveBeforeSwitchingConversations : 1;
+    unsigned int _entryViewCanAcceptFocus;
+    unsigned int _entryViewWasActiveBeforeEdit;
+    unsigned int _entryViewWasActiveBeforeNewComposeThrow;
+    unsigned int _entryViewWasActiveBeforePushingViewController;
+    unsigned int _entryViewWasActiveBeforeSwitchingConversations;
     BOOL _hasPrepopulatedRecipients;
     BOOL _hideEntryViewForModalDismissal;
     NSString *_initialSystemKeyboardID;
-    unsigned int _isAnimatingMessageSend : 1;
+    unsigned int _isAnimatingMessageSend;
     NSNotification *_keyboardNotification;
-    unsigned int _keyboardUndocked : 1;
-    unsigned int _locked : 1;
+    unsigned int _keyboardUndocked;
+    unsigned int _locked;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
     UIImagePickerController *_mediaController;
     UINavigationItem *_navItem;
-    unsigned int _needsTransitionToFullTranscript : 1;
+    unsigned int _needsTransitionToFullTranscript;
     CKComposition *_newComposition;
     NSArray *_newCompositionAddresses;
     NSArray *_newCompositionRecipients;
-    unsigned int _newRecipient : 1;
+    unsigned int _newRecipient;
     CKPhotoPickerController *_photoPickerController;
-    unsigned int _preparingForResume : 1;
+    unsigned int _preparingForResume;
     CKComposition *_presetComposition;
     CKQLPreviewController *_previewController;
     BOOL _programaticallyMadeEntryViewActive;
     UIProgressView *_progressBar;
     BOOL _progressColor;
     CKRaiseGesture *_raiseGesture;
-    unsigned int _recipientSelectionViewWasActiveBeforeFirstResponderChange : 1;
+    unsigned int _recipientSelectionViewWasActiveBeforeFirstResponderChange;
     CKScheduledUpdater *_refreshServiceForSendingUpdater;
     BOOL _safeToMarkAsRead;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _scrollBlock;
-
+    id /* block */ _scrollBlock;
     CKSendAnimationWindow *_sendAnimationWindow;
     float _sendProgress;
     unsigned int _sendProgressSendCount;
     unsigned int _sendProgressTotalCount;
-    unsigned int _sending : 1;
+    unsigned int _sending;
     NSString *_serviceAvailabilityKey;
-    unsigned int _settingConversation : 1;
+    unsigned int _settingConversation;
     int _setupState;
     BOOL _showingKeyboard;
     BOOL _showingPhotoPicker;
     BOOL _showingVideoMessageRecordingView;
-    unsigned int _suspendScrollDueToMediaViewing : 1;
+    unsigned int _suspendScrollDueToMediaViewing;
     CKMessageEncodingInfo *_textMessageEncodingInfo;
     UIView *_throwAnimationEnforcementView;
     UIView *_throwAnimationSnapshotView;
     NSMutableArray *_throwBalloonViews;
     NSMutableArray *_throwEndFrames;
     NSMutableArray *_throwIntermediateFrames;
-    unsigned int _togglingEditing : 1;
+    unsigned int _togglingEditing;
     CKTranscriptHeaderViewController *_transcriptHeader;
     unsigned int _transcriptNeedsUpdate;
-    unsigned int _transitioningToTranscript : 1;
-    unsigned int _triedToResetEntryViewSizeWhileNotInAWindow : 1;
-    unsigned int _triedToResetOverlayViewSizeWhileNotInAWindow : 1;
+    unsigned int _transitioningToTranscript;
+    unsigned int _triedToResetEntryViewSizeWhileNotInAWindow;
+    unsigned int _triedToResetOverlayViewSizeWhileNotInAWindow;
     CKTranscriptTypingIndicatorCell *_typingIndicatorForSendAnimation;
     CKScheduledUpdater *_typingUpdater;
     CKVideoMessageRecordingViewController *_videoMessageRecordingViewController;
     CKVideoTrimController *_videoTrimController;
-    unsigned int _viewNeedsSetup : 1;
+    unsigned int _viewNeedsSetup;
     BOOL _visible;
 }
 
-@property(copy) id alertHandler;
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property NSNumber * canSafelyDismissImagePicker;
-@property(retain) UIBarButtonItem * clearAllItem;
-@property(retain) CKTranscriptCollectionViewController * collectionViewController;
-@property(retain) UIBarButtonItem * composeCancelItem;
-@property <CKTranscriptComposeDelegate> * composeDelegate;
-@property(retain,readonly) CKComposeRecipientSelectionController * composeRecipientSelectionController;
-@property(retain) CKComposition * compositionBeingTrimmed;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIBarButtonItem * detailsButton;
-@property(retain) UIBarButtonItem * editCancelItem;
-@property BOOL enablesReturnKeyAutomatically;
-@property(retain) CKMessageEntryView * entryView;
-@property BOOL hasPrepopulatedRecipients;
-@property(readonly) unsigned int hash;
-@property BOOL hideEntryViewForModalDismissal;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(copy) NSArray * newCompositionAddresses;
-@property(copy) NSArray * newCompositionRecipients;
-@property(retain) CKPhotoPickerController * photoPickerController;
-@property(retain) CKComposition * presetComposition;
-@property BOOL programaticallyMadeEntryViewActive;
-@property(retain) UIProgressView * progressBar;
-@property(retain) CKRaiseGesture * raiseGesture;
-@property(retain) CKScheduledUpdater * refreshServiceForSendingUpdater;
-@property int returnKeyType;
-@property BOOL safeToMarkAsRead;
-@property(copy) id scrollBlock;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property(retain) CKSendAnimationWindow * sendAnimationWindow;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(retain) UIView * throwAnimationEnforcementView;
-@property(retain) UIView * throwAnimationSnapshotView;
-@property(retain) NSMutableArray * throwBalloonViews;
-@property(retain) NSMutableArray * throwEndFrames;
-@property(retain) NSMutableArray * throwIntermediateFrames;
-@property(retain) CKTranscriptHeaderViewController * transcriptHeader;
-@property(retain) CKScheduledUpdater * typingUpdater;
-@property(retain) CKVideoMessageRecordingViewController * videoMessageRecordingViewController;
-@property BOOL visible;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic) NSNumber *canSafelyDismissImagePicker;
+@property (nonatomic, retain) UIBarButtonItem *clearAllItem;
+@property (nonatomic, retain) CKTranscriptCollectionViewController *collectionViewController;
+@property (nonatomic, retain) UIBarButtonItem *composeCancelItem;
+@property (nonatomic) <CKTranscriptComposeDelegate> *composeDelegate;
+@property (nonatomic, readonly, retain) CKComposeRecipientSelectionController *composeRecipientSelectionController;
+@property (nonatomic, retain) CKComposition *compositionBeingTrimmed;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIBarButtonItem *detailsButton;
+@property (nonatomic, retain) UIBarButtonItem *editCancelItem;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, retain) CKMessageEntryView *entryView;
+@property (nonatomic) BOOL hasPrepopulatedRecipients;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideEntryViewForModalDismissal;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSArray *newCompositionAddresses;
+@property (nonatomic, copy) NSArray *newCompositionRecipients;
+@property (nonatomic, retain) CKPhotoPickerController *photoPickerController;
+@property (nonatomic, retain) CKComposition *presetComposition;
+@property (nonatomic) BOOL programaticallyMadeEntryViewActive;
+@property (nonatomic, retain) UIProgressView *progressBar;
+@property (nonatomic, retain) CKRaiseGesture *raiseGesture;
+@property (nonatomic, retain) CKScheduledUpdater *refreshServiceForSendingUpdater;
+@property (nonatomic) int returnKeyType;
+@property (nonatomic) BOOL safeToMarkAsRead;
+@property (nonatomic, copy) id /* block */ scrollBlock;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic, retain) CKSendAnimationWindow *sendAnimationWindow;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *throwAnimationEnforcementView;
+@property (nonatomic, retain) UIView *throwAnimationSnapshotView;
+@property (nonatomic, retain) NSMutableArray *throwBalloonViews;
+@property (nonatomic, retain) NSMutableArray *throwEndFrames;
+@property (nonatomic, retain) NSMutableArray *throwIntermediateFrames;
+@property (nonatomic, retain) CKTranscriptHeaderViewController *transcriptHeader;
+@property (nonatomic, retain) CKScheduledUpdater *typingUpdater;
+@property (nonatomic, retain) CKVideoMessageRecordingViewController *videoMessageRecordingViewController;
+@property (nonatomic) BOOL visible;
 
 + (id)readerScrollPositionCache;
 
@@ -238,7 +224,7 @@
 - (void)_userDidCaptureImage;
 - (void)addMedia:(id)arg1;
 - (void)addPassesViewControllerDidFinish:(id)arg1;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (BOOL)allowContextProvider:(id)arg1;
 - (BOOL)becomeFirstResponder;
@@ -274,7 +260,7 @@
 - (void)dismissPeoplePicker:(id)arg1;
 - (void)dismissPresentedViewController:(id)arg1;
 - (void)dismissVideoMessageRecordingViewController;
-- (void)dismissViewControllerWithTransition:(int)arg1 completion:(id)arg2;
+- (void)dismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
 - (id)editCancelItem;
 - (void)entryDebugClear;
 - (void)entryDebugSliderChange:(id)arg1;
@@ -381,14 +367,14 @@
 - (void)reloadEntryViewIfNeeded;
 - (id)rotatingFooterView;
 - (BOOL)safeToMarkAsRead;
-- (id)scrollBlock;
+- (id /* block */)scrollBlock;
 - (void)scrollBubbleIndexToVisible:(int)arg1;
 - (void)scrollToMessage:(id)arg1 highlight:(BOOL)arg2;
 - (id)scrollView;
 - (id)sendAnimationWindow;
 - (void)sendComposition:(id)arg1;
 - (void)sendMessage:(id)arg1;
-- (void)setAlertHandler:(id)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setCanSafelyDismissImagePicker:(id)arg1;
 - (void)setClearAllItem:(id)arg1;
 - (void)setCollectionViewController:(id)arg1;
@@ -415,7 +401,7 @@
 - (void)setRaiseGesture:(id)arg1;
 - (void)setRefreshServiceForSendingUpdater:(id)arg1;
 - (void)setSafeToMarkAsRead:(BOOL)arg1;
-- (void)setScrollBlock:(id)arg1;
+- (void)setScrollBlock:(id /* block */)arg1;
 - (void)setSendAnimationWindow:(id)arg1;
 - (void)setSendingMessage:(BOOL)arg1;
 - (void)setThrowAnimationEnforcementView:(id)arg1;
@@ -436,7 +422,7 @@
 - (void)showAlternateViewerForMediaObject:(id)arg1;
 - (void)showKeyboardForReply;
 - (void)showMediaPicker:(id)arg1 animated:(BOOL)arg2;
-- (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
+- (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id /* block */)arg2 withHandler:(id /* block */)arg3;
 - (void)showReaderForPart:(id)arg1;
 - (void)showViewerForMediaObject:(id)arg1;
 - (void)significantTimeChange;

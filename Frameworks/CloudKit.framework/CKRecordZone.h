@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainerID, CKRecordZoneID, NSData, NSString;
-
 @interface CKRecordZone : NSObject <NSCopying, NSSecureCoding> {
     long long _assetQuotaUsage;
     unsigned int _capabilities;
@@ -18,17 +16,17 @@
     CKRecordZoneID *_zoneID;
 }
 
-@property long long assetQuotaUsage;
-@property unsigned int capabilities;
-@property(retain) NSData * clientChangeToken;
-@property(copy) CKContainerID * containerID;
-@property(retain) NSData * currentServerContinuationToken;
-@property int deviceCount;
-@property long long metadataQuotaUsage;
-@property(retain) NSString * previousProtectionEtag;
-@property(retain) NSData * protectionData;
-@property(retain) NSString * protectionEtag;
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic) long long assetQuotaUsage;
+@property (nonatomic) unsigned int capabilities;
+@property (nonatomic, retain) NSData *clientChangeToken;
+@property (nonatomic, copy) CKContainerID *containerID;
+@property (nonatomic, retain) NSData *currentServerContinuationToken;
+@property (nonatomic) int deviceCount;
+@property (nonatomic) long long metadataQuotaUsage;
+@property (nonatomic, retain) NSString *previousProtectionEtag;
+@property (nonatomic, retain) NSData *protectionData;
+@property (nonatomic, retain) NSString *protectionEtag;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (id)defaultRecordZone;
 + (BOOL)supportsSecureCoding;

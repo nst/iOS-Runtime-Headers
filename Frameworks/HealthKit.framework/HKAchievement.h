@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSData, NSDate, NSNumber, NSString, NSUUID;
-
 @interface HKAchievement : NSObject <HDCoding, NSSecureCoding> {
     NSUUID *_UUID;
     unsigned int _achievementType;
@@ -12,16 +10,18 @@
     BOOL _viewed;
 }
 
-@property(retain) NSUUID * UUID;
-@property unsigned int achievementType;
-@property(retain) NSDate * completedDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSData * extraData;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSNumber * value;
-@property(getter=isViewed) BOOL viewed;
+@property (nonatomic, retain) NSUUID *UUID;
+@property (nonatomic) unsigned int achievementType;
+@property (nonatomic, retain) NSDate *completedDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSData *extraData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *value;
+@property (getter=isViewed, nonatomic) BOOL viewed;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (unsigned int)_achievementTypeFromString:(id)arg1;
 + (id)_achievementTypeNameMappings;
@@ -32,7 +32,6 @@
 + (BOOL)_requiresValueForAchievementType:(unsigned int)arg1;
 + (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 + (id)achievementWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4;
-+ (id)createWithCodable:(id)arg1;
 + (void)setOverridenUUID:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -41,29 +40,18 @@
 - (id)_achievementTypeString;
 - (void)_decodeExtraDataWithCoder:(id)arg1;
 - (void)_encodeExtraDataWithCoder:(id)arg1;
-- (id)_fiui_URLForFullMovieName:(id)arg1 withScale:(float)arg2;
-- (id)_fiui_assetNameForSizeClass:(int)arg1;
 - (BOOL)_hasExtraData;
-- (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
-- (id)_localizedDescriptionForIncomplete;
 - (BOOL)_validateConfiguration;
 - (unsigned int)achievementType;
-- (id)codableRepresentationForSync;
 - (id)completedDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extraData;
-- (id)fiui_badgeMovieURL;
-- (id)fiui_imageForSizeClass:(int)arg1;
 - (unsigned int)hash;
 - (id)initWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isViewed;
-- (id)localizedDescription;
-- (id)localizedDescriptionForAlertWithUserName:(id)arg1;
-- (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
-- (id)localizedTitle;
 - (void)setAchievementType:(unsigned int)arg1;
 - (void)setCompletedDate:(id)arg1;
 - (void)setExtraData:(id)arg1;
@@ -71,5 +59,27 @@
 - (void)setValue:(id)arg1;
 - (void)setViewed:(BOOL)arg1;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (id)_fiui_URLForFullMovieName:(id)arg1 withScale:(float)arg2;
+- (id)_fiui_assetNameForSizeClass:(int)arg1;
+- (id)fiui_badgeMovieURL;
+- (id)fiui_imageForSizeClass:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)createWithCodable:(id)arg1;
+
+- (id)codableRepresentationForSync;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
+
+- (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
+- (id)_localizedDescriptionForIncomplete;
+- (id)localizedDescription;
+- (id)localizedDescriptionForAlertWithUserName:(id)arg1;
+- (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
+- (id)localizedTitle;
 
 @end

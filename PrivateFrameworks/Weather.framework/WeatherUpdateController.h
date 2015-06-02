@@ -2,47 +2,29 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLLocationManager, NSString;
-
 @interface WeatherUpdateController : NSObject <CLLocationManagerDelegate, WeatherValidatorDelegate> {
     CLLocationManager *_locationManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id currentLocationCompletion;
-
+    id /* block */ currentLocationCompletion;
     CLLocationManager *locationManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id searchCompletion;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id weatherInfoCompletion;
-
+    id /* block */ searchCompletion;
+    id /* block */ weatherInfoCompletion;
 }
 
-@property(copy) id currentLocationCompletion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CLLocationManager * locationManager;
-@property(copy) id searchCompletion;
-@property(readonly) Class superclass;
-@property(copy) id weatherInfoCompletion;
+@property (nonatomic, copy) id /* block */ currentLocationCompletion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, copy) id /* block */ searchCompletion;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ weatherInfoCompletion;
 
 + (id)sharedWeatherUpdateController;
 
 - (int)activeCity;
 - (id)addCityToWeatherAppList:(id)arg1;
 - (id)citiesInWeatherAppList;
-- (id)currentLocationCompletion;
+- (id /* block */)currentLocationCompletion;
 - (void)dealloc;
 - (void)didFailWithError:(id)arg1;
 - (void)didValidateLocation:(id)arg1;
@@ -50,16 +32,16 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)removeAllCities;
-- (id)searchCompletion;
-- (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setCurrentLocationCompletion:(id)arg1;
+- (id /* block */)searchCompletion;
+- (void)searchForCitiesWithName:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setCurrentLocationCompletion:(id /* block */)arg1;
 - (void)setLocationManager:(id)arg1;
-- (void)setSearchCompletion:(id)arg1;
-- (void)setWeatherInfoCompletion:(id)arg1;
-- (id)weatherInfoCompletion;
-- (void)weatherInformationForCities:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setSearchCompletion:(id /* block */)arg1;
+- (void)setWeatherInfoCompletion:(id /* block */)arg1;
+- (id /* block */)weatherInfoCompletion;
+- (void)weatherInformationForCities:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)weatherInformationForIDs:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)weatherInformationForLocation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)weatherListContainsCity:(id)arg1;
 
 @end

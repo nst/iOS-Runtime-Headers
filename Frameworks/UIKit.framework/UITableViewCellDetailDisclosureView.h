@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton, UIImageView;
-
 @interface UITableViewCellDetailDisclosureView : UIControl {
     UIImageView *_disclosureView;
     UIButton *_infoButton;

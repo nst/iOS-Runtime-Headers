@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSLocale;
-
 @interface TSCENamedReferenceTrie : NSObject {
     NSLocale *mLocale;
     struct TSCENamedReferenceTrieNode { 

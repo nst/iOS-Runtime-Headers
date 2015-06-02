@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasBorderedImageView;
-
 @interface MPUExtrasZoomingImageTransitionContext : NSObject {
     unsigned int _appearState;
     BOOL _interactive;
@@ -11,10 +9,10 @@
     MPUExtrasBorderedImageView *_zoomingImageView;
 }
 
-@property unsigned int appearState;
-@property(getter=isInteractive) BOOL interactive;
-@property unsigned int itemIndex;
-@property(retain) MPUExtrasBorderedImageView * zoomingImageView;
+@property (nonatomic) unsigned int appearState;
+@property (getter=isInteractive, nonatomic) BOOL interactive;
+@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic, retain) MPUExtrasBorderedImageView *zoomingImageView;
 
 - (void).cxx_destruct;
 - (unsigned int)appearState;

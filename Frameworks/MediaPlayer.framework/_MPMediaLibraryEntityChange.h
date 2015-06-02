@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaEntity, NSString;
-
 @interface _MPMediaLibraryEntityChange : NSObject {
     NSString *_anchor;
     int _deletionType;
     MPMediaEntity *_entity;
 }
 
-@property(copy,readonly) NSString * anchor;
-@property(readonly) int deletionType;
-@property(readonly) MPMediaEntity * entity;
+@property (nonatomic, readonly, copy) NSString *anchor;
+@property (nonatomic, readonly) int deletionType;
+@property (nonatomic, readonly) MPMediaEntity *entity;
 
 - (void).cxx_destruct;
 - (id)anchor;

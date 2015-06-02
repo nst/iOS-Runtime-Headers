@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@interface VSRecognitionResult : NSObject {
-}
+@interface VSRecognitionResult : NSObject
 
 + (void)initialize;
 + (id)recognitionResultWithModelIdentifier:(id)arg1 classIdentifiers:(id)arg2 values:(id)arg3;

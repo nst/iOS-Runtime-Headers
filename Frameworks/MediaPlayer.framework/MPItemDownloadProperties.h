@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableSet, NSString, NSURL, SSDownload;
-
 @interface MPItemDownloadProperties : NSObject <MPStoreDownloadManagerObserver, NSCopying> {
     long long _assetFileSize;
     NSURL *_destinationURL;
@@ -17,22 +15,22 @@
     NSURL *_sourceURL;
 }
 
-@property(readonly) long long assetFileSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSURL * destinationURL;
-@property(readonly) BOOL downloadExists;
-@property(readonly) NSString * downloadIdentifier;
-@property(readonly) long long downloadSizeLimit;
-@property unsigned long long downloadToken;
-@property(readonly) unsigned int hash;
-@property(readonly) NSURL * sourceURL;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) long long assetFileSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *destinationURL;
+@property (nonatomic, readonly) BOOL downloadExists;
+@property (nonatomic, readonly) NSString *downloadIdentifier;
+@property (nonatomic, readonly) long long downloadSizeLimit;
+@property (nonatomic) unsigned long long downloadToken;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSURL *sourceURL;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_attemptToFindDownloadTokenForPossibleDownloads:(id)arg1;
 - (void)_reloadNetworkConstraints;
-- (void)acquireDownloadTokenWithCompletionHandler:(id)arg1;
+- (void)acquireDownloadTokenWithCompletionHandler:(id /* block */)arg1;
 - (long long)assetFileSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

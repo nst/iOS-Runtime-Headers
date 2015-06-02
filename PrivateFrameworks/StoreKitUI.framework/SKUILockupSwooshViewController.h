@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableIndexSet, NSString, NSURL, SKUIItemArtworkContext, SKUISwooshView, SKUIVideoImageDataConsumer, UICollectionView;
-
 @interface SKUILockupSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIItemArtworkContext *_artworkContext;
     UICollectionView *_collectionView;
@@ -63,18 +61,18 @@
     SKUIVideoImageDataConsumer *_videoImageConsumer;
 }
 
-@property(readonly) SKUIItemArtworkContext * artworkContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * items;
-@property(copy) NSArray * lockups;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
-@property(getter=isSeeAllHidden) BOOL seeAllHidden;
-@property(readonly) NSURL * seeAllURL;
-@property(readonly) Class superclass;
-@property int swooshType;
-@property(readonly) SKUIVideoImageDataConsumer * videoImageConsumer;
+@property (nonatomic, readonly) SKUIItemArtworkContext *artworkContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, copy) NSArray *lockups;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } seeAllButtonFrame;
+@property (getter=isSeeAllHidden, nonatomic) BOOL seeAllHidden;
+@property (nonatomic, readonly) NSURL *seeAllURL;
+@property (readonly) Class superclass;
+@property (nonatomic) int swooshType;
+@property (nonatomic, readonly) SKUIVideoImageDataConsumer *videoImageConsumer;
 
 + (int)_swooshTypeForLockups:(id)arg1;
 

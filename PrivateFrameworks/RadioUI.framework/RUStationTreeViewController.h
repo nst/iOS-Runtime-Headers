@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUStationTreeViewControllerDelegate>, NSMutableArray, NSString, RUMetricsController, RUParallelScrollView, RUPreviewSession, RUProxyTableView, RUStationTreeDataSource, RadioStationTreeNode, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UIScrollView, UITableView;
-
 @interface RUStationTreeViewController : UIViewController <RUAudioPreviewViewDelegate, RUPreviewSessionObserver, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicator;
     RadioStationTreeNode *_addingTreeNode;
@@ -31,19 +29,19 @@
     BOOL _wasLastNavigationOperationAnimated;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUStationTreeViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUStationTreeViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 + (float)contentWidthForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addButtonAction:(id)arg1;
-- (void)_addMetricsControllerOperationBlock:(id)arg1;
+- (void)_addMetricsControllerOperationBlock:(id /* block */)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applyPreviewingAttributesToCell:(id)arg1 forTreeNode:(id)arg2 animated:(BOOL)arg3;
 - (id)_childTreeNodeAtIndexPath:(id)arg1;

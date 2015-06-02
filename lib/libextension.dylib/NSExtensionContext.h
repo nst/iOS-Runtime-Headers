@@ -2,12 +2,6 @@
    Image: /usr/lib/libextension.dylib
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <_NSExtensionContextHosting>, <_NSExtensionContextVending>, NSArray, NSString, NSUUID, NSXPCConnection, NSXPCListener;
-
 @interface NSExtensionContext : NSObject <NSCopying, NSSecureCoding, NSXPCListenerDelegate, _NSExtensionAuxHostingBase> {
     NSUUID *__UUID;
     NSXPCConnection *__auxiliaryConnection;
@@ -16,27 +10,23 @@
     <_NSExtensionContextHosting> *__extensionHostProxy;
     <_NSExtensionContextVending> *__extensionVendorProxy;
     id __principalObject;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __requestCleanUpBlock;
-
+    id /* block */ __requestCleanUpBlock;
     NSArray *_inputItems;
 }
 
-@property(copy) NSUUID * _UUID;
-@property(setter=_setAuxiliaryConnection:,retain) NSXPCConnection * _auxiliaryConnection;
-@property(setter=_setAuxiliaryListener:,retain) NSXPCListener * _auxiliaryListener;
-@property(getter=_isDummyExtension,setter=_setDummyExtension:) BOOL _dummyExtension;
-@property(setter=_setExtensionHostProxy:,retain) <_NSExtensionContextHosting> * _extensionHostProxy;
-@property(setter=_setExtensionVendorProxy:,retain) <_NSExtensionContextVending> * _extensionVendorProxy;
-@property(setter=_setPrincipalObject:) id _principalObject;
-@property(setter=_setRequestCleanUpBlock:,copy) id _requestCleanUpBlock;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * inputItems;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSUUID *_UUID;
+@property (setter=_setAuxiliaryConnection:, nonatomic, retain) NSXPCConnection *_auxiliaryConnection;
+@property (setter=_setAuxiliaryListener:, nonatomic, retain) NSXPCListener *_auxiliaryListener;
+@property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) BOOL _dummyExtension;
+@property (setter=_setExtensionHostProxy:, nonatomic, retain) <_NSExtensionContextHosting> *_extensionHostProxy;
+@property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
+@property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
+@property (setter=_setRequestCleanUpBlock:, nonatomic, copy) id /* block */ _requestCleanUpBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *inputItems;
+@property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
@@ -48,20 +38,20 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)_UUID;
-- (void)___nsx_pingHost:(id)arg1;
+- (void)___nsx_pingHost:(id /* block */)arg1;
 - (id)_auxiliaryConnection;
 - (id)_auxiliaryListener;
-- (void)_completeRequestReturningItemsSecondHalf:(id)arg1;
+- (void)_completeRequestReturningItemsSecondHalf:(id /* block */)arg1;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
 - (BOOL)_isDummyExtension;
 - (BOOL)_isHost;
-- (void)_loadItemForPayload:(id)arg1 completionHandler:(id)arg2;
-- (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id)arg2;
-- (void)_openURL:(id)arg1 completion:(id)arg2;
+- (void)_loadItemForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)_principalObject;
-- (id)_requestCleanUpBlock;
+- (id /* block */)_requestCleanUpBlock;
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
 - (void)_setDummyExtension:(BOOL)arg1;
@@ -69,10 +59,10 @@
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;
 - (void)_setPrincipalObject:(id)arg1;
-- (void)_setRequestCleanUpBlock:(id)arg1;
-- (void)_willPerformHostCallback:(id)arg1;
+- (void)_setRequestCleanUpBlock:(id /* block */)arg1;
+- (void)_willPerformHostCallback:(id /* block */)arg1;
 - (void)cancelRequestWithError:(id)arg1;
-- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id)arg2;
+- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -86,7 +76,7 @@
 - (id)inputItems;
 - (void)invalidate;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)openURL:(id)arg1 completionHandler:(id)arg2;
+- (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)set_UUID:(id)arg1;
 
 @end

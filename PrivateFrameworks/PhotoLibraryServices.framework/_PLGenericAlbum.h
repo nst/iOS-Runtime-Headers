@@ -2,29 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMutableSet, NSNumber, NSString, PLManagedAsset, PLManagedFolder;
+@interface _PLGenericAlbum : PLManagedObject
 
-@interface _PLGenericAlbum : PLManagedObject {
-}
-
-@property(retain) NSMutableSet * albumLists;
-@property long long albumToFolderOrderKey;
-@property int cachedCount;
-@property int cachedPhotosCount;
-@property int cachedVideosCount;
-@property(retain) PLManagedAsset * customKeyAsset;
-@property BOOL customSortAscending;
-@property int customSortKey;
-@property(retain) PLManagedAsset * keyAsset;
-@property(retain) NSNumber * kind;
-@property(retain) PLManagedFolder * parentFolder;
-@property int pendingItemsCount;
-@property int pendingItemsType;
-@property(retain) PLManagedAsset * secondaryKeyAsset;
-@property(retain) NSDictionary * slideshowSettings;
-@property(retain) PLManagedAsset * tertiaryKeyAsset;
-@property(retain) NSString * title;
-@property(retain) NSString * uuid;
+@property (nonatomic, retain) NSMutableSet *albumLists;
+@property (nonatomic) long long albumToFolderOrderKey;
+@property (nonatomic) int cachedCount;
+@property (nonatomic) int cachedPhotosCount;
+@property (nonatomic) int cachedVideosCount;
+@property (nonatomic, retain) PLManagedAsset *customKeyAsset;
+@property (nonatomic) BOOL customSortAscending;
+@property (nonatomic) int customSortKey;
+@property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, retain) NSNumber *kind;
+@property (nonatomic, retain) PLManagedFolder *parentFolder;
+@property (nonatomic) int pendingItemsCount;
+@property (nonatomic) int pendingItemsType;
+@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
+@property (nonatomic, retain) NSDictionary *slideshowSettings;
+@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *uuid;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

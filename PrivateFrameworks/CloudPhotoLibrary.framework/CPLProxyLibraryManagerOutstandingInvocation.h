@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLResource, NSError;
-
 @interface CPLProxyLibraryManagerOutstandingInvocation : NSObject {
     BOOL _didFinish;
     BOOL _didStart;
@@ -12,11 +10,11 @@
     float _progress;
 }
 
-@property BOOL didFinish;
-@property BOOL didStart;
-@property(retain) NSError * finalError;
-@property(retain) CPLResource * finalResource;
-@property float progress;
+@property (nonatomic) BOOL didFinish;
+@property (nonatomic) BOOL didStart;
+@property (nonatomic, retain) NSError *finalError;
+@property (nonatomic, retain) CPLResource *finalResource;
+@property (nonatomic) float progress;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAShapeLayer, UIImageView, UIView;
-
 @interface CAMPanoramaArrowView : UIView {
     UIImageView *_arrowHead;
     UIView *_arrowTail;

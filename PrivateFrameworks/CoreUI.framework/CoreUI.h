@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CoreUI : NSObject {
-}
+@interface CoreUI : NSObject
 
 + (void)_changeToLookGradation:(int)arg1 forceRedraw:(BOOL)arg2;
 + (id)_customLookDelegate;

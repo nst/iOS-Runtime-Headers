@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ATStoreInfo, NSDictionary, NSError, NSString, NSURL;
-
 @interface ATAsset : NSObject <NSSecureCoding> {
     NSString *_assetType;
     BOOL _bypassStore;
     unsigned long long _bytesRemaining;
     unsigned int _completedAssetParts;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSString *_dataclass;
     float _downloadProgress;
     NSError *_error;
@@ -34,11 +24,7 @@
     NSString *_localPath;
     NSString *_prettyName;
     unsigned int _priority;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
+    id /* block */ _progressBlock;
     BOOL _readyForStore;
     ATStoreInfo *_storeInfo;
     long long _storePID;
@@ -47,34 +33,34 @@
     NSDictionary *_variantOptions;
 }
 
-@property(retain) NSString * assetType;
-@property BOOL bypassStore;
-@property unsigned long long bytesRemaining;
-@property unsigned int completedAssetParts;
-@property(copy) id completionBlock;
-@property(retain) NSString * dataclass;
-@property float downloadProgress;
-@property(retain) NSError * error;
-@property(retain) NSURL * icon;
-@property(retain) NSString * identifier;
-@property(retain) NSString * infoPlist;
-@property BOOL installOnly;
-@property float installProgress;
-@property BOOL installStarted;
-@property(getter=isInstalled) BOOL installed;
-@property BOOL isDownload;
-@property BOOL isRestore;
-@property(getter=isLegacy) BOOL legacy;
-@property(retain) NSString * path;
-@property(retain) NSString * prettyName;
-@property unsigned int priority;
-@property(copy) id progressBlock;
-@property BOOL readyForStore;
-@property(retain) ATStoreInfo * storeInfo;
-@property long long storePID;
-@property(retain) NSString * storePlist;
-@property unsigned long long totalBytes;
-@property(retain) NSDictionary * variantOptions;
+@property (nonatomic, retain) NSString *assetType;
+@property (nonatomic) BOOL bypassStore;
+@property (nonatomic) unsigned long long bytesRemaining;
+@property (nonatomic) unsigned int completedAssetParts;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) NSString *dataclass;
+@property (nonatomic) float downloadProgress;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSURL *icon;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *infoPlist;
+@property (nonatomic) BOOL installOnly;
+@property (nonatomic) float installProgress;
+@property (nonatomic) BOOL installStarted;
+@property (getter=isInstalled, nonatomic) BOOL installed;
+@property (nonatomic) BOOL isDownload;
+@property (nonatomic) BOOL isRestore;
+@property (getter=isLegacy, nonatomic) BOOL legacy;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSString *prettyName;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic) BOOL readyForStore;
+@property (nonatomic, retain) ATStoreInfo *storeInfo;
+@property (nonatomic) long long storePID;
+@property (nonatomic, retain) NSString *storePlist;
+@property (nonatomic) unsigned long long totalBytes;
+@property (nonatomic, retain) NSDictionary *variantOptions;
 
 + (id)assetWithSerializedAsset:(id)arg1;
 + (id)downloadAssetWithIdentifier:(id)arg1 dataclass:(id)arg2 prettyName:(id)arg3;
@@ -89,7 +75,7 @@
 - (BOOL)bypassStore;
 - (unsigned long long)bytesRemaining;
 - (unsigned int)completedAssetParts;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)dataclass;
 - (id)description;
 - (float)downloadProgress;
@@ -113,14 +99,14 @@
 - (id)path;
 - (id)prettyName;
 - (unsigned int)priority;
-- (id)progressBlock;
+- (id /* block */)progressBlock;
 - (BOOL)readyForStore;
 - (id)serializedAsset;
 - (void)setAssetType:(id)arg1;
 - (void)setBypassStore:(BOOL)arg1;
 - (void)setBytesRemaining:(unsigned long long)arg1;
 - (void)setCompletedAssetParts:(unsigned int)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDataclass:(id)arg1;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setError:(id)arg1;
@@ -137,7 +123,7 @@
 - (void)setPath:(id)arg1;
 - (void)setPrettyName:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
-- (void)setProgressBlock:(id)arg1;
+- (void)setProgressBlock:(id /* block */)arg1;
 - (void)setReadyForStore:(BOOL)arg1;
 - (void)setStoreInfo:(id)arg1;
 - (void)setStorePID:(long long)arg1;

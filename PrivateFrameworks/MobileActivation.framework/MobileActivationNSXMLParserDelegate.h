@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
  */
 
-@class NSMutableDictionary, NSMutableString, NSString;
-
 @interface MobileActivationNSXMLParserDelegate : NSObject <NSXMLParserDelegate> {
     NSMutableDictionary *_activationTicket;
     NSMutableString *_currentPlist;
@@ -12,10 +10,10 @@
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)activationTicket:(id*)arg1;
 - (id)activationTicket:(id*)arg1 andRenderHTML:(bool*)arg2;

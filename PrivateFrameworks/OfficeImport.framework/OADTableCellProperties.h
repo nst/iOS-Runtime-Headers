@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill, OADStroke, OADTableCell3DProperties;
-
 @interface OADTableCellProperties : NSObject {
     OADStroke *mBottomLeftToTopRightStroke;
     float mBottomMargin;

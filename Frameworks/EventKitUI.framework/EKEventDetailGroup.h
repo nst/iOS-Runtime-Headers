@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSString;
-
 @interface EKEventDetailGroup : NSObject {
     NSString *_headerTitle;
     NSArray *_items;
     int _tag;
 }
 
-@property(retain) NSString * headerTitle;
-@property(retain) NSArray * items;
-@property int tag;
+@property (nonatomic, retain) NSString *headerTitle;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic) int tag;
 
 - (void).cxx_destruct;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;

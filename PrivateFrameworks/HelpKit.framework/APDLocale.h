@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSArray, NSString;
-
 @interface APDLocale : APDGenericData {
     BOOL _RTL;
     BOOL _cache;
@@ -14,14 +12,14 @@
     NSString *_name;
 }
 
-@property(getter=isRTL) BOOL RTL;
-@property BOOL cache;
-@property(copy) NSString * cacheHTML;
-@property(copy) NSString * folder;
-@property(readonly) BOOL isSimplifiedChinese;
-@property(copy) NSArray * isoCodes;
-@property(copy) NSString * isoName;
-@property(copy) NSString * name;
+@property (getter=isRTL, nonatomic) BOOL RTL;
+@property (nonatomic) BOOL cache;
+@property (nonatomic, copy) NSString *cacheHTML;
+@property (nonatomic, copy) NSString *folder;
+@property (nonatomic, readonly) BOOL isSimplifiedChinese;
+@property (nonatomic, copy) NSArray *isoCodes;
+@property (nonatomic, copy) NSString *isoName;
+@property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (BOOL)cache;

@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SAEmail : AceObject <SAAceSerializable>
 
-@interface SAEmail : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * emailAddress;
-@property(copy) NSNumber * favoriteFacetime;
-@property(copy) NSNumber * favoriteFacetimeAudio;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(copy) NSNumber * pseudo;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSNumber *favoriteFacetime;
+@property (nonatomic, copy) NSNumber *favoriteFacetimeAudio;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSNumber *pseudo;
+@property (readonly) Class superclass;
 
 + (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;

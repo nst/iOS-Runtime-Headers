@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSNumber, NSString, NSURL;
+@interface PLCloudFeedEntry : PLManagedObject
 
-@interface PLCloudFeedEntry : PLManagedObject {
-}
-
-@property(readonly) NSURL * URIRepresentation;
-@property(retain) NSString * entryAlbumGUID;
-@property(retain) NSDate * entryDate;
-@property(retain) NSString * entryInvitationRecordGUID;
-@property(readonly) int entryPriority;
-@property(retain) NSNumber * entryPriorityNumber;
-@property(readonly) int entryType;
-@property(retain) NSNumber * entryTypeNumber;
+@property (nonatomic, readonly) NSURL *URIRepresentation;
+@property (nonatomic, retain) NSString *entryAlbumGUID;
+@property (nonatomic, retain) NSDate *entryDate;
+@property (nonatomic, retain) NSString *entryInvitationRecordGUID;
+@property (nonatomic, readonly) int entryPriority;
+@property (nonatomic, retain) NSNumber *entryPriorityNumber;
+@property (nonatomic, readonly) int entryType;
+@property (nonatomic, retain) NSNumber *entryTypeNumber;
 
 + (id)allEntriesInLibrary:(id)arg1;
 + (id)allEntriesInManagedObjectContext:(id)arg1;

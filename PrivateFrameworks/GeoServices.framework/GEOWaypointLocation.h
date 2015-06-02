@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation;
-
 @interface GEOWaypointLocation : PBCodable <NSCopying> {
     GEOLocation *_location;
 }
 
-@property(readonly) BOOL hasLocation;
-@property(retain) GEOLocation * location;
+@property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic, retain) GEOLocation *location;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

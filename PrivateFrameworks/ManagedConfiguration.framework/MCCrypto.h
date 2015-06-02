@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCCrypto : NSObject {
-}
+@interface MCCrypto : NSObject
 
 + (id)_decryptionFailedError;
 + (void)clearStoredActivationLockBypassCode;

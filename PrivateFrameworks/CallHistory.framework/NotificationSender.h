@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSString;
-
 @interface NotificationSender : NSObject {
     NSString *_name;
 }
 
-@property(readonly) NSString * name;
+@property (readonly) NSString *name;
 
 - (void).cxx_destruct;
 - (void)dealloc;

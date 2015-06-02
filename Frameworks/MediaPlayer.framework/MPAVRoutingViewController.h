@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVRoutingViewControllerDelegate>, MPAVRoutingController, MPWeakTimer, NSArray, NSString, UIColor, UITableView;
-
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
     int _airPlayPasswordAlertDidAppearToken;
     BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
@@ -23,14 +21,14 @@
     MPWeakTimer *_updateTimer;
 }
 
-@property BOOL allowMirroring;
-@property(setter=setAVItemType:) unsigned int avItemType;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPAVRoutingViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int style;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowMirroring;
+@property (setter=setAVItemType:, nonatomic) unsigned int avItemType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPAVRoutingViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int style;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (unsigned int)_debugButtonTableViewIndex;

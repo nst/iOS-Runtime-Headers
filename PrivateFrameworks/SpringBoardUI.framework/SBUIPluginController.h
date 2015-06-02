@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class <SBUIPluginControllerHost>;
-
 @interface SBUIPluginController : NSObject <SBPluginBundleController> {
     <SBUIPluginControllerHost> *_host;
     BOOL _isVisible;
 }
 
-@property <SBUIPluginControllerHost> * host;
-@property(getter=isVisible) BOOL visible;
+@property (nonatomic) <SBUIPluginControllerHost> *host;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 - (void)cancelPendingActivationEvent:(int)arg1;
 - (BOOL)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
@@ -23,7 +21,7 @@
 - (BOOL)handledMenuButtonDownEvent;
 - (BOOL)handledMenuButtonTap;
 - (BOOL)handledMenuButtonUpEvent;
-- (BOOL)handledPasscodeUnlockWithCompletion:(id)arg1;
+- (BOOL)handledPasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (BOOL)handledWiredMicButtonTap;
 - (id)host;
 - (BOOL)isVisible;

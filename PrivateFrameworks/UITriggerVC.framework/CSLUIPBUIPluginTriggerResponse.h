@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class NSString;
-
 @interface CSLUIPBUIPluginTriggerResponse : PBCodable <NSCopying> {
     NSString *_errorString;
     BOOL _success;
 }
 
-@property(retain) NSString * errorString;
-@property(readonly) BOOL hasErrorString;
-@property BOOL success;
+@property (nonatomic, retain) NSString *errorString;
+@property (nonatomic, readonly) BOOL hasErrorString;
+@property (nonatomic) BOOL success;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

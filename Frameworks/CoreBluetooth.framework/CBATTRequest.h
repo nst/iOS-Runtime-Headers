@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBCentral, CBCharacteristic, NSData, NSMutableData, NSNumber;
-
 @interface CBATTRequest : NSObject {
     CBCentral *_central;
     CBCharacteristic *_characteristic;
@@ -13,12 +11,12 @@
     NSMutableData *_value;
 }
 
-@property(retain,readonly) CBCentral * central;
-@property(retain) CBCharacteristic * characteristic;
-@property BOOL ignoreResponse;
-@property(readonly) unsigned int offset;
-@property(readonly) NSNumber * transactionID;
-@property(copy) NSData * value;
+@property (nonatomic, readonly, retain) CBCentral *central;
+@property (nonatomic, retain) CBCharacteristic *characteristic;
+@property (nonatomic) BOOL ignoreResponse;
+@property (nonatomic, readonly) unsigned int offset;
+@property (nonatomic, readonly) NSNumber *transactionID;
+@property (copy) NSData *value;
 
 - (void)appendValueData:(id)arg1;
 - (id)central;

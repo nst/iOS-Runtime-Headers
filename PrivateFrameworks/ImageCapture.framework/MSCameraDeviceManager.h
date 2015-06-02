@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@interface MSCameraDeviceManager : DeviceManager {
-}
+@interface MSCameraDeviceManager : DeviceManager
 
 - (void)closeDeviceImp:(id)arg1;
 - (void)closeSessionImp:(id)arg1;

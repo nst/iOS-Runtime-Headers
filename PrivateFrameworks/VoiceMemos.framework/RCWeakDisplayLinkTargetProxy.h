@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCWeakRef;
-
 @interface RCWeakDisplayLinkTargetProxy : NSObject {
     RCWeakRef *_weakTarget;
     SEL _weakTargetSelector;

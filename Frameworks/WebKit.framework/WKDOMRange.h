@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSArray, NSString, WKDOMNode;
-
 @interface WKDOMRange : NSObject {
     struct RefPtr<WebCore::Range> { 
         struct Range {} *m_ptr; 
     } _impl;
 }
 
-@property(retain,readonly) WKDOMNode * endContainer;
-@property(readonly) int endOffset;
-@property(readonly) BOOL isCollapsed;
-@property(retain,readonly) WKDOMNode * startContainer;
-@property(readonly) int startOffset;
-@property(copy,readonly) NSString * text;
-@property(readonly) NSArray * textRects;
+@property (readonly, retain) WKDOMNode *endContainer;
+@property (readonly) int endOffset;
+@property (readonly) BOOL isCollapsed;
+@property (readonly, retain) WKDOMNode *startContainer;
+@property (readonly) int startOffset;
+@property (readonly, copy) NSString *text;
+@property (readonly) NSArray *textRects;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

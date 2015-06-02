@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCell, TSTCellRegion, TSTTableDataStore, TSTTableModel, TSTTableTile, TSTTableTileRowInfo;
-
 @interface TSTCellIterator : NSObject {
     TSTCell *mCell;
     TSTTableTileRowInfo *mCurRow;
@@ -34,14 +32,14 @@
     TSTTableModel *mTableModel;
 }
 
-@property(readonly) BOOL dontExpandCellRefs;
-@property(readonly) int rowWalkDirection;
-@property(readonly) TSTTableModel * tableModel;
+@property (readonly) BOOL dontExpandCellRefs;
+@property (readonly) int rowWalkDirection;
+@property (nonatomic, readonly) TSTTableModel *tableModel;
 
 - (id).cxx_construct;
 - (void)dealloc;
 - (BOOL)dontExpandCellRefs;
-- (BOOL)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
+- (BOOL)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
 - (id)initWithTableModel:(id)arg1;
 - (id)initWithTableModel:(id)arg1 flags:(unsigned long)arg2;
 - (id)initWithTableModel:(id)arg1 range:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
@@ -49,8 +47,8 @@
 - (id)initWithTableModel:(id)arg1 region:(id)arg2;
 - (id)initWithTableModel:(id)arg1 region:(id)arg2 flags:(unsigned long)arg3;
 - (id)initWithTableModel:(id)arg1 region:(id)arg2 flags:(unsigned long)arg3 clampingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg4;
-- (BOOL)p_getData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (void)p_resetIterData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} *x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
+- (BOOL)p_getData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)p_resetIterData:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;
 - (int)rowWalkDirection;
 - (id)tableModel;
 - (void)terminate;

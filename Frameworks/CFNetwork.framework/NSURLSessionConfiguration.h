@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSArray, NSDictionary, NSHTTPCookieStorage, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
-
 @interface NSURLSessionConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary *_HTTPAdditionalHeaders;
     unsigned int _HTTPCookieAcceptPolicy;
@@ -73,16 +71,16 @@
     double _timeoutIntervalForResource;
 }
 
-@property(copy) NSDictionary * HTTPAdditionalHeaders;
+@property (copy) NSDictionary *HTTPAdditionalHeaders;
 @property unsigned int HTTPCookieAcceptPolicy;
-@property(retain) NSHTTPCookieStorage * HTTPCookieStorage;
+@property (retain) NSHTTPCookieStorage *HTTPCookieStorage;
 @property int HTTPMaximumConnectionsPerHost;
 @property BOOL HTTPShouldSetCookies;
 @property BOOL HTTPShouldUsePipelining;
 @property int TLSMaximumSupportedProtocol;
 @property int TLSMinimumSupportedProtocol;
-@property(retain) NSURLCache * URLCache;
-@property(retain) NSURLCredentialStorage * URLCredentialStorage;
+@property (retain) NSURLCache *URLCache;
+@property (retain) NSURLCredentialStorage *URLCredentialStorage;
 @property unsigned int _TCPAdaptiveReadTimeout;
 @property unsigned int _TCPAdaptiveWriteTimeout;
 @property BOOL _allowsExpensiveAccess;
@@ -91,54 +89,54 @@
 @property BOOL _collectsTimingData;
 @property double _connectionCacheCellPurgeTimeout;
 @property double _connectionCachePurgeTimeout;
-@property(copy) NSString * _connectionPoolName;
-@property(copy) NSArray * _contentDispHeadEncFallback;
-@property(copy) NSURL * _directoryForDownloadedFiles;
+@property (copy) NSString *_connectionPoolName;
+@property (copy) NSArray *_contentDispHeadEncFallback;
+@property (copy) NSURL *_directoryForDownloadedFiles;
 @property BOOL _disallowsSPDY;
 @property BOOL _forcesNewConnections;
 @property BOOL _infersDiscretionaryFromOriginatingClient;
-@property(copy) NSString * _ledBellyServiceIdentifier;
+@property (copy) NSString *_ledBellyServiceIdentifier;
 @property BOOL _overridesBackgroundSessionAutoRedirect;
 @property BOOL _performsEVCertCheck;
-@property(retain) NSHTTPCookieStorage * _phskip_cookieStorage;
+@property (retain) NSHTTPCookieStorage *_phskip_cookieStorage;
 @property BOOL _phskip_cookieStorageSet;
-@property(retain) NSURLCredentialStorage * _phskip_credStorage;
+@property (retain) NSURLCredentialStorage *_phskip_credStorage;
 @property BOOL _phskip_credStorageSet;
-@property(retain) struct _CFHSTSPolicy { }* _phskip_hstsStorage;
+@property (retain) struct _CFHSTSPolicy { }*_phskip_hstsStorage;
 @property BOOL _phskip_hstsStorageSet;
-@property(retain) NSURLCache * _phskip_urlCache;
+@property (retain) NSURLCache *_phskip_urlCache;
 @property BOOL _phskip_urlCacheSet;
 @property BOOL _prefersInfraWiFi;
 @property BOOL _preventsIdleSleep;
 @property BOOL _preventsIdleSleepOnceConnected;
-@property(getter=_isProxySession) BOOL _proxySession;
+@property (getter=_isProxySession) BOOL _proxySession;
 @property BOOL _requiresClientToOpenFiles;
 @property BOOL _requiresPowerPluggedIn;
 @property BOOL _respectsAllowsCellularAccessForDiscretionaryTasks;
 @property BOOL _sessionSendsLaunchOnDemandEvents;
 @property BOOL _shouldSkipPreferredClientCertificateLookup;
-@property(copy) NSDictionary * _socketStreamProperties;
-@property(copy) NSString * _sourceApplicationBundleIdentifier;
-@property(copy) NSString * _sourceApplicationSecondaryIdentifier;
+@property (copy) NSDictionary *_socketStreamProperties;
+@property (copy) NSString *_sourceApplicationBundleIdentifier;
+@property (copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property BOOL _supportsAVAssetDownloads;
-@property(copy) NSString * _tcpConnectionPoolName;
+@property (copy) NSString *_tcpConnectionPoolName;
 @property BOOL _usePipeliningHeuristics;
 @property BOOL allowsCellularAccess;
-@property(getter=isBackgroundSession) BOOL backgroundSession;
-@property(copy) NSDictionary * connectionProxyDictionary;
-@property(getter=isDiscretionary) BOOL discretionary;
-@property NSString * disposition;
-@property(copy) NSString * identifier;
+@property (getter=isBackgroundSession) BOOL backgroundSession;
+@property (copy) NSDictionary *connectionProxyDictionary;
+@property (getter=isDiscretionary) BOOL discretionary;
+@property NSString *disposition;
+@property (copy) NSString *identifier;
 @property int minimumFastLanePriority;
 @property unsigned int networkServiceType;
 @property int numFastLanes;
 @property int numPriorityLevels;
 @property int pipeliningHighWatermark;
 @property int pipeliningLowWatermark;
-@property(copy) NSArray * protocolClasses;
+@property (copy) NSArray *protocolClasses;
 @property unsigned int requestCachePolicy;
 @property BOOL sessionSendsLaunchEvents;
-@property(copy) NSString * sharedContainerIdentifier;
+@property (copy) NSString *sharedContainerIdentifier;
 @property BOOL skip_download_unlink;
 @property double timeoutIntervalForRequest;
 @property double timeoutIntervalForResource;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <FigCameraViewfinderRemoteObject>, FigNSXPCConnection, FigStateMachine, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FigCameraViewfinderRemote : FigCameraViewfinder <FigCameraViewfinderRemoteObjectCallbacks> {
     FigNSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_connectionManagementQueue;
@@ -12,10 +10,10 @@
     NSMapTable *_weakSessionTable;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)cameraViewfinder;
 + (void)initialize;

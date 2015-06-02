@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, NSURLRequest, QLPreviewConverter, UIWebBrowserView;
-
 @interface QLWebViewPrintPageHelper : NSObject <QLRemotePrintPageHelper> {
     UIWebBrowserView *_browserView;
     NSString *_documentType;
@@ -15,12 +13,12 @@
     NSURLRequest *_request;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) QLPreviewConverter * previewConverter;
-@property struct CGSize { float x1; float x2; } printableSize;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) QLPreviewConverter *previewConverter;
+@property (nonatomic) struct CGSize { float x1; float x2; } printableSize;
+@property (readonly) Class superclass;
 
 + (BOOL)_isXPathType:(id)arg1;
 + (id)printPageRendererWithBrowserView:(id)arg1 request:(id)arg2 documentType:(id)arg3;

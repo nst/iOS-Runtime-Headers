@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIKeyboardArbitration>, NSHashTable, NSString, NSXPCConnection, UIWindow, _UIKeyboardChangedInformation;
-
 @interface _UIRemoteKeyboards : NSObject <_UIKeyboardArbitrationClient, _UIRemoteKeyboardControllerDelegate> {
     NSXPCConnection *_connection;
     BOOL _currentKeyboard;
@@ -11,18 +9,18 @@
     NSHashTable *_windowControllers;
 }
 
-@property(retain) NSXPCConnection * connection;
+@property (retain) NSXPCConnection *connection;
 @property BOOL currentKeyboard;
-@property(retain) _UIKeyboardChangedInformation * currentState;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float intersectionHeight;
-@property(readonly) BOOL keyboardActive;
-@property(readonly) BOOL keyboardVisible;
-@property(readonly) UIWindow * keyboardWindow;
-@property(readonly) <_UIKeyboardArbitration> * proxy;
-@property(readonly) Class superclass;
+@property (retain) _UIKeyboardChangedInformation *currentState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) float intersectionHeight;
+@property (readonly) BOOL keyboardActive;
+@property (readonly) BOOL keyboardVisible;
+@property (readonly) UIWindow *keyboardWindow;
+@property (readonly) <_UIKeyboardArbitration> *proxy;
+@property (readonly) Class superclass;
 
 + (BOOL)enabled;
 + (id)sharedRemoteKeyboards;
@@ -41,7 +39,7 @@
 - (void)keyboardChanged:(id)arg1;
 - (BOOL)keyboardVisible;
 - (id)keyboardWindow;
-- (void)performOnControllers:(id)arg1;
+- (void)performOnControllers:(id /* block */)arg1;
 - (id)prepareForHostedWindow;
 - (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showing:(BOOL)arg2 forScreen:(id)arg3;
 - (id)proxy;

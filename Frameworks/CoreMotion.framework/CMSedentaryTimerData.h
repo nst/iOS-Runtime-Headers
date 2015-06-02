@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate;
-
 @interface CMSedentaryTimerData : NSObject <NSCopying, NSSecureCoding> {
     int fAlarmType;
     BOOL fDidWake;
@@ -11,10 +9,10 @@
     double fStartDate;
 }
 
-@property(readonly) int alarmType;
-@property(readonly) BOOL didWake;
-@property(readonly) NSDate * firedDate;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) int alarmType;
+@property (nonatomic, readonly) BOOL didWake;
+@property (nonatomic, readonly) NSDate *firedDate;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 

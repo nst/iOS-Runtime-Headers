@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKComposeRecipientView : MFComposeRecipientTextView {
-}
+@interface CKComposeRecipientView : MFComposeRecipientTextView
 
 - (void)dealloc;
 - (void)reset;

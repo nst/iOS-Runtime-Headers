@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSDictionary, NSLock;
-
 @interface GEOLocalizationRegionsInfo : NSObject {
     NSDictionary *_regions;
     NSLock *_regionsLock;

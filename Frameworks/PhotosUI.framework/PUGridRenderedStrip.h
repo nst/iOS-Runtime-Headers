@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUGridRenderedStripDataSource>, NSArray, PUSectionedGridLayout, UIView;
-
 @interface PUGridRenderedStrip : UICollectionReusableView {
     BOOL __needsRendering;
     UIView *__sideExtendedContentView;
@@ -31,22 +29,22 @@
     int _visualSectionIndex;
 }
 
-@property(setter=_setNeedsRendering:) BOOL _needsRendering;
-@property(readonly) UIView * _sideExtendedContentView;
-@property int backgroundColorValue;
-@property unsigned int contentExtenderType;
-@property <PUGridRenderedStripDataSource> * dataSource;
-@property BOOL extendsToTop;
-@property struct CGSize { float x1; float x2; } interItemSpacing;
-@property float itemContentScale;
-@property(retain) NSArray * itemIndexPaths;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property PUSectionedGridLayout * layout;
-@property float leftContentInset;
-@property(readonly) int numberOfColumns;
-@property(readonly) UIView * topContentView;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } visualItemRange;
-@property(readonly) int visualSectionIndex;
+@property (setter=_setNeedsRendering:, nonatomic) BOOL _needsRendering;
+@property (nonatomic, readonly) UIView *_sideExtendedContentView;
+@property (nonatomic) int backgroundColorValue;
+@property (nonatomic) unsigned int contentExtenderType;
+@property (nonatomic) <PUGridRenderedStripDataSource> *dataSource;
+@property (nonatomic) BOOL extendsToTop;
+@property (nonatomic) struct CGSize { float x1; float x2; } interItemSpacing;
+@property (nonatomic) float itemContentScale;
+@property (nonatomic, retain) NSArray *itemIndexPaths;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic) PUSectionedGridLayout *layout;
+@property (nonatomic) float leftContentInset;
+@property (nonatomic, readonly) int numberOfColumns;
+@property (nonatomic, readonly) UIView *topContentView;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } visualItemRange;
+@property (nonatomic, readonly) int visualSectionIndex;
 
 - (void).cxx_destruct;
 - (BOOL)_disableRasterizeInAnimations;

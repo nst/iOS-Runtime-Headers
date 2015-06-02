@@ -2,28 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSObject>, NSObject<OS_dispatch_queue>, NSString, NSXPCInterface, NSXPCListenerEndpoint;
-
 @interface NSXPCConnection : NSObject <NSXPCProxyCreating> {
     id _dCache;
     id _eCache;
     NSXPCListenerEndpoint *_endpoint;
     id _exportInfo;
     id _importInfo;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _interruptionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _invalidationHandler;
-
+    id /* block */ _interruptionHandler;
+    id /* block */ _invalidationHandler;
     id _lock;
     <NSObject> *_otherInfo;
     NSXPCInterface *_remoteObjectInterface;
@@ -37,33 +23,30 @@
     void *_xconnection;
 }
 
-@property(readonly) int auditSessionIdentifier;
-@property(readonly) unsigned int effectiveGroupIdentifier;
-@property(readonly) unsigned int effectiveUserIdentifier;
-@property(retain,readonly) NSXPCListenerEndpoint * endpoint;
-@property(retain) NSXPCInterface * exportedInterface;
-@property(retain) id exportedObject;
-@property(copy) id interruptionHandler;
-@property(copy) id invalidationHandler;
-@property(readonly) int processIdentifier;
-@property(retain) NSXPCInterface * remoteObjectInterface;
-@property(retain,readonly) id remoteObjectProxy;
-@property(copy,readonly) NSString * serviceName;
+@property (readonly) int auditSessionIdentifier;
+@property (readonly) unsigned int effectiveGroupIdentifier;
+@property (readonly) unsigned int effectiveUserIdentifier;
+@property (readonly, retain) NSXPCListenerEndpoint *endpoint;
+@property (retain) NSXPCInterface *exportedInterface;
+@property (retain) id exportedObject;
+@property (copy) id /* block */ interruptionHandler;
+@property (copy) id /* block */ invalidationHandler;
+@property (readonly) int processIdentifier;
+@property (retain) NSXPCInterface *remoteObjectInterface;
+@property (readonly, retain) id remoteObjectProxy;
+@property (readonly, copy) NSString *serviceName;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)_currentBoost;
 + (void)beginTransaction;
-+ (id)callServicesAccountsControllerDelegateXPCInterface;
-+ (id)callServicesDaemonDelegateXPCInterface;
-+ (id)callServicesDaemonObserverXPCInterface;
 + (id)currentConnection;
-+ (void)dispatchMainIfCurrentXPCConnection:(id)arg1;
 + (void)endTransaction;
 
 - (void)_addClassToDecodeCache:(Class)arg1;
 - (void)_addClassToEncodeCache:(Class)arg1;
 - (void)_addImportedProxy:(id)arg1;
 - (void)_cancelProgress:(unsigned long long)arg1;
-- (id)_clientBundleID;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
 - (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
 - (BOOL)_decodeCacheContainsClass:(Class)arg1;
@@ -79,15 +62,15 @@
 - (void)_removeImportedProxy:(id)arg1;
 - (void)_sendDesistForProxy:(id)arg1;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5 userInfo:(id)arg6;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
 - (void)_updateProgress:(unsigned long long)arg1 completed:(long long)arg2 total:(long long)arg3;
 - (id)_xpcConnection;
-- (void)addBarrierBlock:(id)arg1;
+- (void)addBarrierBlock:(id /* block */)arg1;
 - (int)auditSessionIdentifier;
 - (struct { unsigned int x1[8]; })auditToken;
 - (void)dealloc;
@@ -100,40 +83,54 @@
 - (id)exportedObject;
 - (void)finalize;
 - (id)init;
-- (id)initCellularPlanDatabaseClient;
-- (id)initVinylTestClient;
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
-- (id)interruptionHandler;
+- (id /* block */)interruptionHandler;
 - (void)invalidate;
-- (id)invalidationHandler;
+- (id /* block */)invalidationHandler;
 - (int)processIdentifier;
 - (id)remoteObjectInterface;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
-- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
-- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id /* block */)arg2;
+- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id /* block */)arg2;
 - (id)replacementObjectForEncoder:(id)arg1 object:(id)arg2;
 - (void)resume;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
 - (void)setExportedInterface:(id)arg1;
 - (void)setExportedObject:(id)arg1;
-- (void)setInterruptionHandler:(id)arg1;
-- (void)setInvalidationHandler:(id)arg1;
+- (void)setInterruptionHandler:(id /* block */)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (BOOL)sl_clientHasEntitlement:(id)arg1;
-- (id)sl_localizedClientName;
 - (void)start;
 - (void)stop;
 - (void)suspend;
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
+- (id)_clientBundleID;
+- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (id)sl_localizedClientName;
+
+// Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
+
+- (id)initCellularPlanDatabaseClient;
+- (id)initVinylTestClient;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
++ (id)callServicesAccountsControllerDelegateXPCInterface;
++ (id)callServicesDaemonDelegateXPCInterface;
++ (id)callServicesDaemonObserverXPCInterface;
++ (void)dispatchMainIfCurrentXPCConnection:(id /* block */)arg1;
 
 @end

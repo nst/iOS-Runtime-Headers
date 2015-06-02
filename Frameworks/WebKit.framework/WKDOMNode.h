@@ -2,26 +2,19 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, WKDOMDocument, WKDOMNode;
-
 @interface WKDOMNode : NSObject {
     struct RefPtr<WebCore::Node> { 
         struct Node {} *m_ptr; 
     } _impl;
 }
 
-@property(readonly) WKDOMDocument * document;
-@property(readonly) WKDOMNode * firstChild;
-@property(readonly) WKDOMNode * lastChild;
-@property(readonly) WKDOMNode * nextSibling;
-@property(readonly) WKDOMNode * parentNode;
-@property(readonly) WKDOMNode * previousSibling;
-@property(readonly) NSArray * textRects;
+@property (readonly) WKDOMDocument *document;
+@property (readonly) WKDOMNode *firstChild;
+@property (readonly) WKDOMNode *lastChild;
+@property (readonly) WKDOMNode *nextSibling;
+@property (readonly) WKDOMNode *parentNode;
+@property (readonly) WKDOMNode *previousSibling;
+@property (readonly) NSArray *textRects;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

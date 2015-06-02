@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectID, NSArray, NSMutableDictionary;
-
 @interface CADEntityWrapper : NSObject <NSSecureCoding> {
     int _entityType;
     NSArray *_loadedKeys;

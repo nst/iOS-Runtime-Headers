@@ -2,44 +2,28 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface ADTapGestureRecognizer : UIGestureRecognizer {
     int _finalTrackingID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _touchDownHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _touchMovedHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _touchUpHandler;
-
+    id /* block */ _touchDownHandler;
+    id /* block */ _touchMovedHandler;
+    id /* block */ _touchUpHandler;
 }
 
-@property int finalTrackingID;
-@property(copy) id touchDownHandler;
-@property(copy) id touchMovedHandler;
-@property(copy) id touchUpHandler;
+@property (nonatomic) int finalTrackingID;
+@property (nonatomic, copy) id /* block */ touchDownHandler;
+@property (nonatomic, copy) id /* block */ touchMovedHandler;
+@property (nonatomic, copy) id /* block */ touchUpHandler;
 
 - (void)dealloc;
 - (int)finalTrackingID;
 - (void)reset;
 - (void)setFinalTrackingID:(int)arg1;
-- (void)setTouchDownHandler:(id)arg1;
-- (void)setTouchMovedHandler:(id)arg1;
-- (void)setTouchUpHandler:(id)arg1;
-- (id)touchDownHandler;
-- (id)touchMovedHandler;
-- (id)touchUpHandler;
+- (void)setTouchDownHandler:(id /* block */)arg1;
+- (void)setTouchMovedHandler:(id /* block */)arg1;
+- (void)setTouchUpHandler:(id /* block */)arg1;
+- (id /* block */)touchDownHandler;
+- (id /* block */)touchMovedHandler;
+- (id /* block */)touchUpHandler;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSURL;
-
 @interface AFObjectCreatedSiriResponse : AFSiriResponse {
     NSURL *_objectIdentifier;
 }

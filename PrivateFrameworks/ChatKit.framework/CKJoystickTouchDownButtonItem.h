@@ -7,8 +7,8 @@
     BOOL _touchDownSticky;
 }
 
-@property SEL touchDownAction;
-@property(getter=isTouchDownSticky) BOOL touchDownSticky;
+@property (nonatomic) SEL touchDownAction;
+@property (getter=isTouchDownSticky, nonatomic) BOOL touchDownSticky;
 
 - (id)initWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 touchDownAction:(SEL)arg5 tapAction:(SEL)arg6 touchDownSticky:(BOOL)arg7;
 - (BOOL)isTouchDownSticky;

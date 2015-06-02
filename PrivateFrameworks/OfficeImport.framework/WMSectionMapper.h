@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDSection;
-
 @interface WMSectionMapper : CMMapper {
     BOOL mBreakAtEnd;
     BOOL mBreakAtStart;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAppBBPower : PBCodable <NSCopying> {
     NSString *_bundleName;
     struct { 
@@ -14,12 +12,12 @@
     int _rAT;
 }
 
-@property(retain) NSString * bundleName;
-@property(readonly) BOOL hasBundleName;
-@property BOOL hasPowerMicroWatt;
-@property BOOL hasRAT;
-@property unsigned int powerMicroWatt;
-@property int rAT;
+@property (nonatomic, retain) NSString *bundleName;
+@property (nonatomic, readonly) BOOL hasBundleName;
+@property (nonatomic) BOOL hasPowerMicroWatt;
+@property (nonatomic) BOOL hasRAT;
+@property (nonatomic) unsigned int powerMicroWatt;
+@property (nonatomic) int rAT;
 
 - (id)bundleName;
 - (void)copyTo:(id)arg1;

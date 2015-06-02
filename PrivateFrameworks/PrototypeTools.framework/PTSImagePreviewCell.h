@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, UIImage, UIImageView, UILabel, UIView;
-
 @interface PTSImagePreviewCell : UITableViewCell {
     UIView *_darkBackground;
     UILabel *_imageNameLabel;
@@ -13,8 +11,8 @@
     UIImage *_previewImage;
 }
 
-@property(retain) NSString * imageName;
-@property(retain) UIImage * previewImage;
+@property (nonatomic, retain) NSString *imageName;
+@property (nonatomic, retain) UIImage *previewImage;
 
 + (void)_getLeftFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 rightFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forImage:(id)arg3 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 + (float)heightForImage:(id)arg1;

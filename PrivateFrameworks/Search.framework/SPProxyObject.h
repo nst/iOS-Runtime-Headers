@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSDictionary;
-
 @interface SPProxyObject : NSObject {
     NSDictionary *_dictionary;
 }
 
-@property(retain) NSDictionary * dictionary;
+@property (nonatomic, retain) NSDictionary *dictionary;
 
 + (id)proxyObjectWithDictionary:(id)arg1;
 

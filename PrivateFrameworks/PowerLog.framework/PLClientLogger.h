@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerLog.framework/PowerLog
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface PLClientLogger : NSObject {
     BOOL _clientDebug;
     NSMutableDictionary *_pendingTaskCache;
@@ -16,13 +14,13 @@
 }
 
 @property BOOL clientDebug;
-@property(retain) NSMutableDictionary * pendingTaskCache;
-@property(retain) NSMutableDictionary * permissionCache;
-@property(retain) NSObject<OS_dispatch_queue> * permissionQueue;
-@property(retain) NSString * processName;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property(retain) NSObject<OS_xpc_object> * xpcConnection;
-@property(retain) NSObject<OS_dispatch_queue> * xpcConnectionQueue;
+@property (retain) NSMutableDictionary *pendingTaskCache;
+@property (retain) NSMutableDictionary *permissionCache;
+@property (retain) NSObject<OS_dispatch_queue> *permissionQueue;
+@property (retain) NSString *processName;
+@property (retain) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *xpcConnection;
+@property (retain) NSObject<OS_dispatch_queue> *xpcConnectionQueue;
 
 + (id)sharedInstance;
 

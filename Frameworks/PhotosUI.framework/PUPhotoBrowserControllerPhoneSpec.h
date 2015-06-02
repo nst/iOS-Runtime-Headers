@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoBrowserControllerPhoneSpec : PUPhotoBrowserControllerSpec {
-}
+@interface PUPhotoBrowserControllerPhoneSpec : PUPhotoBrowserControllerSpec
 
 - (id)avalancheReviewControllerSpec;
 - (float)commentsButtonLandscapeVerticalOffset;

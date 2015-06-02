@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableDictionary, NSSet, NSString, TSSStylesheet, TSUMutableRetainedPointerSet, TSURetainedPointerKeyDictionary, TSWPParagraphStyle;
-
 @interface TSSStylesheet : TSPObject <TSKTransformableObject> {
     BOOL mCanCullStyles;
     TSSStylesheet *mChild;
@@ -20,17 +13,17 @@
     TSUMutableRetainedPointerSet *mStyles;
 }
 
-@property(readonly) NSSet * baseStyles;
-@property BOOL canCullStyles;
-@property(readonly) TSSStylesheet * child;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) TSWPParagraphStyle * defaultPresenterNotesParagraphStyle;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isLocked;
-@property(readonly) TSSStylesheet * parent;
-@property(readonly) NSSet * styles;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSSet *baseStyles;
+@property (nonatomic) BOOL canCullStyles;
+@property (nonatomic, readonly) TSSStylesheet *child;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) TSWPParagraphStyle *defaultPresenterNotesParagraphStyle;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isLocked;
+@property (nonatomic, readonly) TSSStylesheet *parent;
+@property (nonatomic, readonly) NSSet *styles;
+@property (readonly) Class superclass;
 
 + (id)p_presenterNotesListStyleIdentifierForListLabelType:(int)arg1;
 + (id)presenterNotesParagraphStyleIdentifier;
@@ -40,7 +33,7 @@
 - (id)_defaultColumnStyleWasCreated:(BOOL*)arg1;
 - (id)_defaultListStyleWasCreated:(BOOL*)arg1;
 - (id)_defaultParagraphStyleWasCreated:(BOOL*)arg1;
-- (id)_defaultStyleOfClass:(Class)arg1 withIdentifier:(id)arg2 wasCreated:(BOOL*)arg3 usingBlock:(id)arg4;
+- (id)_defaultStyleOfClass:(Class)arg1 withIdentifier:(id)arg2 wasCreated:(BOOL*)arg3 usingBlock:(id /* block */)arg4;
 - (id)_hyperlinkStyleWasCreated:(BOOL*)arg1;
 - (void)addDefaultPresenterNotesStylesIfAbsent;
 - (id)addDuplicateOfStyle:(id)arg1 withIdentifier:(id)arg2;
@@ -53,7 +46,7 @@
 - (BOOL)cascadedContainsStyle:(id)arg1;
 - (id)cascadedStyleWithIdentifier:(id)arg1;
 - (id)cascadedStyleWithIdentifier:(id)arg1 componentMask:(int)arg2;
-- (id)cascadedStylesPassingTest:(id)arg1;
+- (id)cascadedStylesPassingTest:(id /* block */)arg1;
 - (id)child;
 - (id)childrenOfStyle:(id)arg1;
 - (BOOL)containsStyle:(id)arg1;
@@ -66,9 +59,9 @@
 - (unsigned int)delayedArchivingPriority;
 - (unsigned int)descendantCount;
 - (void)didLoadChildObjectFromDocumentSupport:(id)arg1;
-- (void)enumerateCascadedStylesUsingBlock:(id)arg1;
-- (void)enumerateStylesUsingBlock:(id)arg1;
-- (id)firstCascadedStylePassingTest:(id)arg1;
+- (void)enumerateCascadedStylesUsingBlock:(id /* block */)arg1;
+- (void)enumerateStylesUsingBlock:(id /* block */)arg1;
+- (id)firstCascadedStylePassingTest:(id /* block */)arg1;
 - (id)firstRootlessStyleOfClass:(Class)arg1 withOverridePropertyMap:(id)arg2;
 - (id)headerAndFooterStyle;
 - (id)hyperlinkStyle;
@@ -100,7 +93,7 @@
 - (void)p_setIdentifier:(id)arg1 ofStyle:(id)arg2;
 - (void)p_setParent:(id)arg1 ofStyle:(id)arg2;
 - (BOOL)p_shouldDoDOLCForStyle:(id)arg1;
-- (id)p_stylesPassingTest:(id)arg1 cascade:(BOOL)arg2;
+- (id)p_stylesPassingTest:(id /* block */)arg1 cascade:(BOOL)arg2;
 - (void)p_upgradeDefaultPresenterNotesStylesResetExisting:(BOOL)arg1;
 - (id)packageLocator;
 - (id)parent;
@@ -119,11 +112,11 @@
 - (id)styleWithIdentifier:(id)arg1 componentMask:(int)arg2;
 - (id)styles;
 - (id)stylesOfClass:(Class)arg1;
-- (id)stylesPassingTest:(id)arg1;
+- (id)stylesPassingTest:(id /* block */)arg1;
 - (id)stylesToNotTransform;
 - (id)stylesToNotTransform;
 - (id)stylesWithName:(id)arg1;
-- (void)unlockStylesheetForDurationOfBlock:(id)arg1;
+- (void)unlockStylesheetForDurationOfBlock:(id /* block */)arg1;
 - (id)unusedStyleIdentifierWithPackageString:(id)arg1 styleDescriptor:(id)arg2 contentTag:(id)arg3;
 - (void)upgradeDefaultPresenterNotesStyles;
 - (id)variationOfCharacterStyle:(id)arg1 paragraphStyle:(id)arg2 propertyMap:(id)arg3;

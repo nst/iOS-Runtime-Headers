@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDTDCell : GQDTDateCell {
-}
+@interface GQDTDCell : GQDTDateCell
 
 - (struct __CFString { }*)getDateFormat;
 

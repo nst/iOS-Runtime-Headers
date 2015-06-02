@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSError, NSMutableArray, YTSearchRequest;
-
 @interface YTVideoDataSource : NSObject {
     BOOL _hasLoaded;
     NSError *_lastError;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSLocalDeliverySocketOpened : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -22,22 +20,22 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsToDefaultPairedDevice;
-@property BOOL hasOpenError;
-@property BOOL hasPriority;
-@property(readonly) BOOL hasService;
-@property BOOL hasSocketError;
-@property(readonly) BOOL hasStreamName;
-@property BOOL hasTimestamp;
-@property unsigned long long isToDefaultPairedDevice;
-@property unsigned long long openError;
-@property unsigned long long priority;
-@property(retain) NSString * service;
-@property unsigned long long socketError;
-@property(retain) NSString * streamName;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsToDefaultPairedDevice;
+@property (nonatomic) BOOL hasOpenError;
+@property (nonatomic) BOOL hasPriority;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasSocketError;
+@property (nonatomic, readonly) BOOL hasStreamName;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long isToDefaultPairedDevice;
+@property (nonatomic) unsigned long long openError;
+@property (nonatomic) unsigned long long priority;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long socketError;
+@property (nonatomic, retain) NSString *streamName;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

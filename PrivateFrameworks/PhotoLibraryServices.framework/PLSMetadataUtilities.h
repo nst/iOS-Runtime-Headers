@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLSMetadataUtilities : NSObject {
-}
+@interface PLSMetadataUtilities : NSObject
 
 + (id)_allAlbumsInPhotoLibrary:(id)arg1;
 + (id)_detailsForAlbum:(id)arg1;

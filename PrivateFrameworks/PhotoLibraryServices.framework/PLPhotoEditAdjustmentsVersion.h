@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLPhotoEditAdjustmentsVersion : NSObject {
     unsigned int _majorVersion;
     unsigned int _minorVersion;
     NSString *_platform;
 }
 
-@property(readonly) unsigned int majorVersion;
-@property(readonly) unsigned int minorVersion;
-@property(copy,readonly) NSString * platform;
-@property(readonly) NSString * string;
+@property (nonatomic, readonly) unsigned int majorVersion;
+@property (nonatomic, readonly) unsigned int minorVersion;
+@property (nonatomic, readonly, copy) NSString *platform;
+@property (nonatomic, readonly) NSString *string;
 
 + (id)versionFromString:(id)arg1;
 + (id)versionWithMajor:(unsigned int)arg1 minor:(unsigned int)arg2 platform:(id)arg3;

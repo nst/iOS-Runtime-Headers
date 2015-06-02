@@ -8,9 +8,9 @@
     float _radiusStrength;
 }
 
-@property float alphaStrength;
-@property BOOL on;
-@property float radiusStrength;
+@property (nonatomic) float alphaStrength;
+@property (nonatomic) BOOL on;
+@property (nonatomic) float radiusStrength;
 
 + (id)archivedSettingsGroup;
 

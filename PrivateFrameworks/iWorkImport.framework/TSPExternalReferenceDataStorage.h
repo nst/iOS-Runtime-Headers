@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData, NSURL, TSPObjectContext;
-
 @interface TSPExternalReferenceDataStorage : TSPFileDataStorage {
     NSURL *_URL;
     NSData *_bookmarkData;
@@ -21,7 +14,7 @@
 - (id)initWithBookmarkData:(id)arg1 context:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isReadable;
-- (void)performReadWithAccessor:(id)arg1;
+- (void)performReadWithAccessor:(id /* block */)arg1;
 - (id)storageForDataCopyFromOtherContext;
 
 @end

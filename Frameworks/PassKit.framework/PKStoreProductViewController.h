@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString;
+@interface PKStoreProductViewController : SKStoreProductViewController <SKStoreProductViewControllerDelegate>
 
-@interface PKStoreProductViewController : SKStoreProductViewController <SKStoreProductViewControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)initWithItemIdentifier:(id)arg1;
 - (void)productViewControllerDidFinish:(id)arg1;

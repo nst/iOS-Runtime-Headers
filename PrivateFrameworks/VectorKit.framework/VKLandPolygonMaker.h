@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLandPolygonMaker : VKRealisticPolygonMaker {
-}
+@interface VKLandPolygonMaker : VKRealisticPolygonMaker
 
-- (void)generateIndexedTrianglesWithHandler:(id)arg1;
+- (void)generateIndexedTrianglesWithHandler:(id /* block */)arg1;
 
 @end

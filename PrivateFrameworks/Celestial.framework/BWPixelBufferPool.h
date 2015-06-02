@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWVideoFormat, NSDictionary, NSString;
-
 @interface BWPixelBufferPool : NSObject {
     NSDictionary *_additionalPixelBufferAttributes;
     unsigned long _capacity;
@@ -16,9 +14,9 @@
     BWVideoFormat *_videoFormat;
 }
 
-@property(readonly) unsigned long capacity;
-@property(readonly) struct __CVPixelBufferPool { }* cvPixelBufferPool;
-@property(readonly) struct __CFDictionary { }* cvPixelBufferPoolAuxAttributes;
+@property (nonatomic, readonly) unsigned long capacity;
+@property (nonatomic, readonly) struct __CVPixelBufferPool { }*cvPixelBufferPool;
+@property (nonatomic, readonly) struct __CFDictionary { }*cvPixelBufferPoolAuxAttributes;
 
 + (void)initialize;
 
@@ -32,8 +30,8 @@
 - (id)initWithVideoFormat:(id)arg1 capacity:(unsigned long)arg2 name:(id)arg3 clientProvidesPool:(BOOL)arg4;
 - (struct __CVBuffer { }*)newPixelBuffer;
 - (long)preallocate;
-- (void)preallocateWithCompletionHandler:(id)arg1;
-- (void)prefetchWithCompletionHandler:(id)arg1;
+- (void)preallocateWithCompletionHandler:(id /* block */)arg1;
+- (void)prefetchWithCompletionHandler:(id /* block */)arg1;
 - (void)setCVPixelBufferPool:(struct __CVPixelBufferPool { }*)arg1 attributes:(struct __CFDictionary { }*)arg2;
 
 @end

@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSObject<OS_dispatch_queue>, NSTimer, PLOperator;
-
 @interface PLNSTimerOperatorComposition : NSObject {
     NSDate *_fireDate;
     double _interval;
     PLOperator *_operator;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _operatorBlock;
-
+    id /* block */ _operatorBlock;
     BOOL _repeats;
     NSTimer *_timer;
     double _tolerance;
@@ -24,32 +14,32 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSDate * fireDate;
+@property (nonatomic, retain) NSDate *fireDate;
 @property double interval;
-@property PLOperator * operator;
-@property(copy) id operatorBlock;
+@property PLOperator *operator;
+@property (nonatomic, copy) id /* block */ operatorBlock;
 @property BOOL repeats;
-@property(retain) NSTimer * timer;
-@property BOOL timerActive;
+@property (retain) NSTimer *timer;
+@property (nonatomic) BOOL timerActive;
 @property double tolerance;
-@property(retain) id userInfo;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (retain) id userInfo;
+@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)fireDate;
 - (void)fireTimerEarly;
 - (void)handleTimerFire;
-- (id)initWithOperator:(id)arg1 withFireDate:(id)arg2 withInterval:(double)arg3 withTolerance:(double)arg4 repeats:(BOOL)arg5 withUserInfo:(id)arg6 withBlock:(id)arg7;
-- (id)initWithWorkQueue:(id)arg1 withFireDate:(id)arg2 withInterval:(double)arg3 withTolerance:(double)arg4 repeats:(BOOL)arg5 withUserInfo:(id)arg6 withBlock:(id)arg7;
+- (id)initWithOperator:(id)arg1 withFireDate:(id)arg2 withInterval:(double)arg3 withTolerance:(double)arg4 repeats:(BOOL)arg5 withUserInfo:(id)arg6 withBlock:(id /* block */)arg7;
+- (id)initWithWorkQueue:(id)arg1 withFireDate:(id)arg2 withInterval:(double)arg3 withTolerance:(double)arg4 repeats:(BOOL)arg5 withUserInfo:(id)arg6 withBlock:(id /* block */)arg7;
 - (double)interval;
 - (id)operator;
-- (id)operatorBlock;
+- (id /* block */)operatorBlock;
 - (BOOL)repeats;
 - (void)setFireDate:(id)arg1;
 - (void)setInterval:(double)arg1;
 - (void)setOperator:(id)arg1;
-- (void)setOperatorBlock:(id)arg1;
+- (void)setOperatorBlock:(id /* block */)arg1;
 - (void)setRepeats:(BOOL)arg1;
 - (void)setTimer:(id)arg1;
 - (void)setTimerActive:(BOOL)arg1;

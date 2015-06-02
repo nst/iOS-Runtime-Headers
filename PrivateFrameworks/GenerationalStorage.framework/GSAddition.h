@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class <NSCopying><NSSecureCoding>, NSData, NSDictionary, NSNumber, NSObject<GSAdditionStoring>, NSObject<GSAdditionStoring><GSAdditionStoringPrivate>, NSString, NSURL;
-
 @interface GSAddition : NSObject {
     NSString *_displayName;
     NSString *_namespace;
@@ -15,32 +13,27 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) NSString * br_lastEditorDeviceName;
-@property(readonly) NSString * br_lastEditorName;
-@property(readonly) NSString * displayName;
-@property(readonly) BOOL isSavedConflict;
-@property(readonly) NSString * name;
-@property(readonly) NSString * nameSpace;
-@property(readonly) unsigned long long options;
-@property(readonly) NSString * originalPOSIXName;
-@property(readonly) <NSCopying><NSSecureCoding> * persistentIdentifier;
-@property(readonly) NSData * sandboxExtension;
-@property(readonly) NSNumber * size;
-@property(readonly) NSObject<GSAdditionStoring> * storage;
-@property(readonly) NSURL * url;
-@property(readonly) NSDictionary * userInfo;
+@property (nonatomic, readonly) NSString *br_lastEditorDeviceName;
+@property (nonatomic, readonly) NSString *br_lastEditorName;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) BOOL isSavedConflict;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *nameSpace;
+@property (nonatomic, readonly) unsigned long long options;
+@property (nonatomic, readonly) NSString *originalPOSIXName;
+@property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
+@property (nonatomic, readonly) NSData *sandboxExtension;
+@property (nonatomic, readonly) NSNumber *size;
+@property (nonatomic, readonly) NSObject<GSAdditionStoring> *storage;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSDictionary *userInfo;
 
-+ (id)additionURLForName:(id)arg1 storagePrefix:(id)arg2 inConflictNamespace:(BOOL)arg3;
-+ (BOOL)brc_parseAdditionFilename:(id)arg1 mangledContainerID:(id*)arg2 itemID:(id*)arg3 etag:(id*)arg4;
+// Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
+
 + (id)makeNameForUser:(unsigned int)arg1 name:(id)arg2;
 
-- (BOOL)_br_markResolvedWithError:(id*)arg1;
 - (id)_initWithStorage:(id)arg1 andDictionary:(id)arg2;
 - (void)_refreshWithDictionary:(id)arg1;
-- (id)br_lastEditorDeviceName;
-- (id)br_lastEditorName;
-- (BOOL)br_markResolvedWithError:(id*)arg1;
-- (BOOL)brc_parseMangledContainerID:(id*)arg1 itemID:(id*)arg2 etag:(id*)arg3;
 - (BOOL)copyAdditionContentToURL:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)description;
@@ -69,5 +62,19 @@
 - (id)url;
 - (id)userInfo;
 - (id)userInfoWithError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (BOOL)_br_markResolvedWithError:(id*)arg1;
+- (id)br_lastEditorDeviceName;
+- (id)br_lastEditorName;
+- (BOOL)br_markResolvedWithError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
++ (id)additionURLForName:(id)arg1 storagePrefix:(id)arg2 inConflictNamespace:(BOOL)arg3;
++ (BOOL)brc_parseAdditionFilename:(id)arg1 mangledContainerID:(id*)arg2 itemID:(id*)arg3 etag:(id*)arg4;
+
+- (BOOL)brc_parseMangledContainerID:(id*)arg1 itemID:(id*)arg2 etag:(id*)arg3;
 
 @end

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iOSDiagnosticsSupport.framework/iOSDiagnosticsSupport
  */
 
-@class NSData, NSMutableDictionary, NSString;
-
 @interface MBSDevice : NSObject {
     NSMutableDictionary *_deviceInfoDictionary;
     NSData *_logData;
     NSString *_logFileName;
 }
 
-@property(retain) NSMutableDictionary * deviceInfoDictionary;
-@property(retain) NSData * logData;
-@property(retain) NSString * logFileName;
+@property (retain) NSMutableDictionary *deviceInfoDictionary;
+@property (retain) NSData *logData;
+@property (retain) NSString *logFileName;
 
 - (BOOL)archiveLogFile:(id)arg1 toFile:(id)arg2 atDir:(id)arg3;
 - (id)collectAggdData;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class UITouch;
-
 @interface RCSelectionTouchTrackingInfo : NSObject {
     float _lastLocation;
     int _selectionAffinity;
@@ -12,10 +10,10 @@
     float _trackingOffset;
 }
 
-@property int selectionAffinity;
-@property int selectionBarType;
-@property UITouch * touch;
-@property float trackingOffset;
+@property (nonatomic) int selectionAffinity;
+@property (nonatomic) int selectionBarType;
+@property (nonatomic) UITouch *touch;
+@property (nonatomic) float trackingOffset;
 
 - (void).cxx_destruct;
 - (id)description;

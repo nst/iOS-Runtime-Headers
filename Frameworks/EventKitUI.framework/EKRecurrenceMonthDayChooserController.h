@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableSet;
-
 @interface EKRecurrenceMonthDayChooserController : EKRecurrenceGridChooserController {
     NSMutableSet *_daysOfTheMonthSet;
     BOOL _prohibitsMultipleDaysInMonthlyRecurrence;
 }
 
-@property BOOL prohibitsMultipleDaysInMonthlyRecurrence;
+@property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)cellLabels;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <CKDProtobufMessageSigningDelegate>, NSData, NSFileHandle, NSInputStream, NSMutableArray, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
-
 @interface CKDProtobufStreamWriter : NSObject <NSStreamDelegate> {
     NSMutableArray *_allObjects;
     NSFileHandle *_binaryLogFileHandle;
@@ -43,18 +36,18 @@
     } _zlibStream;
 }
 
-@property(retain) NSFileHandle * binaryLogFileHandle;
-@property unsigned int bufferSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasInitedCompression;
-@property(readonly) unsigned int hash;
-@property BOOL haveFinishedCompression;
+@property (nonatomic, retain) NSFileHandle *binaryLogFileHandle;
+@property (nonatomic) unsigned int bufferSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasInitedCompression;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL haveFinishedCompression;
 @property BOOL haveFinishedStreaming;
-@property(retain) NSFileHandle * humanLogFileHandle;
-@property BOOL shouldCompress;
-@property <CKDProtobufMessageSigningDelegate> * signingDelegate;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSFileHandle *humanLogFileHandle;
+@property (nonatomic) BOOL shouldCompress;
+@property (nonatomic) <CKDProtobufMessageSigningDelegate> *signingDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_compressBodyData:(id)arg1 shouldFlush:(BOOL)arg2;

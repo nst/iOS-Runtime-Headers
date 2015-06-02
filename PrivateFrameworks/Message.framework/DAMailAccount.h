@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAAccount, MFDAMailbox, MFDAOfflineCache, MFRecursiveLock, NSArray, NSCountedSet, NSLock, NSMutableDictionary, NSObject<ASAccountActorMessages>, NSSet, NSString;
-
 @interface DAMailAccount : MailAccount {
     NSObject<ASAccountActorMessages> *_accountConduit;
     NSString *_cachedAccountID;
@@ -69,7 +67,7 @@
 - (void)_loadChildrenForParent:(id)arg1 fromMap:(id)arg2 intoArray:(id)arg3 replacingInbox:(id)arg4 withID:(id)arg5;
 - (id)_newMailboxWithParent:(id)arg1 name:(id)arg2 attributes:(unsigned int)arg3 dictionary:(id)arg4 withCreationOption:(int)arg5;
 - (id)_offlineCache;
-- (void)_performFolderChange:(id)arg1 completion:(id)arg2;
+- (void)_performFolderChange:(id)arg1 completion:(id /* block */)arg2;
 - (void)_reachabilityChanged:(id)arg1;
 - (id)_relativePathForType:(int)arg1;
 - (id)_relativePathSpecialMailboxUidWithType:(int)arg1 create:(BOOL)arg2;

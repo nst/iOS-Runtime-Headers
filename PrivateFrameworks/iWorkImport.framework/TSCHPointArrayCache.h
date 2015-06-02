@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSData, TSCHChartSeries;
-
 @interface TSCHPointArrayCache : NSObject {
     struct CGRect { 
         struct CGPoint { 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDStroke;
-
 @interface TSDSpecSetStroke : TSDSpecStroke {
     TSDStroke *_stroke;
     BOOL _unset;

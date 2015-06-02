@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OI_TSUImageM : OITSUImage {
-}
+@interface OI_TSUImageM : OITSUImage
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)init;

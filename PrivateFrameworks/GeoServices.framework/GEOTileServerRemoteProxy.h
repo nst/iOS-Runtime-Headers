@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSHashTable, NSLock, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface GEOTileServerRemoteProxy : GEOTileServerProxy {
     NSHashTable *_cancellingConnections;
     NSLock *_cancellingConnectionsLock;

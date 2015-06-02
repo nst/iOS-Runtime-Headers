@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLOptionElement;
-
 @interface UIDOMHTMLOptionSelectedItem : NSObject <UIWebSelectedItemPrivate> {
     DOMHTMLOptionElement *_node;
     BOOL _selected;
 }
 
-@property(retain) DOMHTMLOptionElement * _node;
+@property (nonatomic, retain) DOMHTMLOptionElement *_node;
 
 - (id)_node;
 - (void)dealloc;

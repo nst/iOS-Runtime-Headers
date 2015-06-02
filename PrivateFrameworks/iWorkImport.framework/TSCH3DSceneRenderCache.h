@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, TSCH3DDictionaryOfDictionary;
-
 @interface TSCH3DSceneRenderCache : NSObject {
     TSCH3DDictionaryOfDictionary *mCache;
     NSMutableSet *mEnabledKeys;
@@ -13,7 +11,7 @@
 + (id)cacheFromScene:(id)arg1;
 
 - (BOOL)cacheEnabledForKey:(id)arg1;
-- (id)cacheObjectForKey:(id)arg1 cacheID:(id)arg2 created:(BOOL*)arg3 ifAbsent:(id)arg4;
+- (id)cacheObjectForKey:(id)arg1 cacheID:(id)arg2 created:(BOOL*)arg3 ifAbsent:(id /* block */)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

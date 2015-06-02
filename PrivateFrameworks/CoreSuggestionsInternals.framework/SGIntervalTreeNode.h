@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSMutableSet, SGIntervalTreeNode;
-
 @interface SGIntervalTreeNode : NSObject {
     BOOL _hasIndex;
     BOOL _hasLeftIndex;

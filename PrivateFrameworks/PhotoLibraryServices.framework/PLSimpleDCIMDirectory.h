@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSFileManager, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface PLSimpleDCIMDirectory : NSObject {
     NSMutableIndexSet *_availableFileNameNumbers;
     NSURL *_baseURL;
@@ -18,8 +16,8 @@
     NSString *_userInfoPath;
 }
 
-@property(retain,readonly) NSURL * currentSubDirectory;
-@property(retain,readonly) NSURL * directoryURL;
+@property (nonatomic, readonly, retain) NSURL *currentSubDirectory;
+@property (readonly, retain) NSURL *directoryURL;
 @property BOOL representsCameraRoll;
 
 + (id)cameraRollPlistName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSObject<OS_dispatch_queue>, NSTimer;
-
 @interface MSDaemon : NSObject {
     int _UIBusyCount;
     int _busyCount;
@@ -12,11 +10,11 @@
     BOOL _stabilizedIsBusy;
 }
 
-@property int UIBusyCount;
-@property int busyCount;
-@property(retain) NSTimer * hysteresisTimer;
-@property(retain) NSObject<OS_dispatch_queue> * idleCountQueue;
-@property BOOL stabilizedIsBusy;
+@property (nonatomic) int UIBusyCount;
+@property (nonatomic) int busyCount;
+@property (nonatomic, retain) NSTimer *hysteresisTimer;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *idleCountQueue;
+@property (nonatomic) BOOL stabilizedIsBusy;
 
 - (void).cxx_destruct;
 - (int)UIBusyCount;

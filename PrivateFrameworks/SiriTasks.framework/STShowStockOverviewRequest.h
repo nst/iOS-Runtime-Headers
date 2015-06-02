@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class NSNumber, NSString;
-
 @interface STShowStockOverviewRequest : AFSiriRequest {
     NSNumber *_change;
     NSNumber *_changePercent;

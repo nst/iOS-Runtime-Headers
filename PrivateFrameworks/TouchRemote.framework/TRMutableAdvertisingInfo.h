@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSData;
+@interface TRMutableAdvertisingInfo : TRAdvertisingInfo
 
-@interface TRMutableAdvertisingInfo : TRAdvertisingInfo {
-}
-
-@property(copy) NSData * pairingPublicKey;
-@property(copy) NSData * wirelessProximityIdentifier;
+@property (nonatomic, copy) NSData *pairingPublicKey;
+@property (nonatomic, copy) NSData *wirelessProximityIdentifier;
 
 - (void)setPairingPublicKey:(id)arg1;
 - (void)setWirelessProximityIdentifier:(id)arg1;

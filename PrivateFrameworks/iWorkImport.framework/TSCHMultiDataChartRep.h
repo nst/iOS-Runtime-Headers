@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSMutableDictionary, NSSet, TSCHMultiDataChartRepElementIndex;
-
 @interface TSCHMultiDataChartRep : TSCHChartRep {
     BOOL _shouldDisableMultiDataControls;
     BOOL mAnimatedLayersNeedUpdate;
@@ -28,7 +26,7 @@
     BOOL mShouldAnimateLabelsQuickly;
 }
 
-@property(readonly) BOOL shouldDisableMultiDataControls;
+@property (nonatomic, readonly) BOOL shouldDisableMultiDataControls;
 
 - (void)dealloc;
 - (void)didEndZooming;

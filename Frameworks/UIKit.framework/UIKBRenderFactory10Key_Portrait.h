@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key {
-}
+@interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key
 
 - (float)controlColumnWidthFactor;
 - (struct CGPoint { float x1; float x2; })dictationKeyTextOffset;

@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class CLLocation, NSString;
-
 @interface PKPaymentDeviceProvisioningData : NSObject <NSSecureCoding> {
     NSString *_deviceName;
     CLLocation *_location;
     NSString *_phoneNumber;
 }
 
-@property(copy) NSString * deviceName;
-@property(readonly) NSString * extensiveLatitude;
-@property(readonly) NSString * extensiveLongitude;
-@property(copy) CLLocation * location;
-@property(copy) NSString * phoneNumber;
-@property(readonly) NSString * phoneNumberSuffix;
-@property(readonly) NSString * sanitizedLatitude;
-@property(readonly) NSString * sanitizedLongitude;
+@property (nonatomic, copy) NSString *deviceName;
+@property (nonatomic, readonly) NSString *extensiveLatitude;
+@property (nonatomic, readonly) NSString *extensiveLongitude;
+@property (nonatomic, copy) CLLocation *location;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, readonly) NSString *phoneNumberSuffix;
+@property (nonatomic, readonly) NSString *sanitizedLatitude;
+@property (nonatomic, readonly) NSString *sanitizedLongitude;
 
 + (BOOL)supportsSecureCoding;
 

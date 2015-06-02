@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSSet, NSString;
-
 @interface _MPMediaSearchStringPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     NSSet *_properties;
     NSString *_searchString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSSet * properties;
-@property(copy) NSString * searchString;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSSet *properties;
+@property (nonatomic, copy) NSString *searchString;
+@property (readonly) Class superclass;
 
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
 

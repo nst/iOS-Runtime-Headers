@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSURL;
-
 @interface __NSCFBackgroundAVAssetDownloadTask : __NSCFBackgroundSessionTask {
     unsigned long long _AVAssetDownloadToken;
     NSURL *_URL;
@@ -12,8 +10,8 @@
 }
 
 @property unsigned long long AVAssetDownloadToken;
-@property(copy) NSURL * URL;
-@property(copy) NSURL * destinationURL;
+@property (copy) NSURL *URL;
+@property (copy) NSURL *destinationURL;
 
 - (unsigned long long)AVAssetDownloadToken;
 - (id)URL;

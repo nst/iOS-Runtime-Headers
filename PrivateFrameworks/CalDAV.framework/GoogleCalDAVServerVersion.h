@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface GoogleCalDAVServerVersion : CalDAVConcreteServerVersion {
-}
+@interface GoogleCalDAVServerVersion : CalDAVConcreteServerVersion
 
 - (id)init;
 - (id)supportedCalendarComponentSets;

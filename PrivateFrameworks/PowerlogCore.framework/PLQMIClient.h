@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLQMIClient : NSObject {
-}
+@interface PLQMIClient : NSObject
 
 + (id)fullNameFromServiceCode:(id)arg1;
 + (id)sharedQMIClient;

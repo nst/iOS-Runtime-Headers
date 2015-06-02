@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MCDButton, MCDNowPlayingViewController, MPAVController, MPMediaQuery, NSArray, NSString, NSTimer, UIAlertController, UIImage, UILabel;
-
 @interface MCDMusicNowPlayingViewController : UIViewController <AFContextProvider, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate> {
     UIAlertController *_actionSheetAlertController;
     MPMediaQuery *_albumQuery;
@@ -24,13 +22,13 @@
     MCDButton *_wishlistButton;
 }
 
-@property(retain) NSArray * controlPages;
-@property unsigned int currentPageIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property int viewMode;
+@property (nonatomic, retain) NSArray *controlPages;
+@property (nonatomic) unsigned int currentPageIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) int viewMode;
 
 - (void).cxx_destruct;
 - (void)_itemChanged:(id)arg1;

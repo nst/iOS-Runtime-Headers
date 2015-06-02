@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface SFUZipOutputEntry : NSObject {
     unsigned long long compressedDataOffset;
     unsigned long long compressedSize;

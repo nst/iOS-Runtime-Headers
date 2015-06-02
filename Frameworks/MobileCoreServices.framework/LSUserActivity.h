@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class <LSUserActivityDelegate>, LSUserActivityManager, NSData, NSDate, NSDictionary, NSError, NSMutableDictionary, NSString, NSURL, NSUUID, SFCompanionAdvertiser;
-
 @interface LSUserActivity : NSObject <SFCompanionAdvertiserDelegate> {
     SFCompanionAdvertiser *_advertiser;
     BOOL _canCreateStreams;
@@ -35,44 +33,44 @@
     NSURL *_webpageURL;
 }
 
-@property(getter=isActive) BOOL active;
-@property(copy) NSDictionary * activityPayload;
-@property(getter=activityPayload,setter=setActivityPayload:,copy) NSDictionary * activityPayloadDictionary;
+@property (getter=isActive) BOOL active;
+@property (copy) NSDictionary *activityPayload;
+@property (getter=activityPayload, setter=setActivityPayload:, copy) NSDictionary *activityPayloadDictionary;
 @property BOOL canCreateStreams;
 @property BOOL createsNewUUIDIfSaved;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSError * decodeUserInfoError;
-@property <LSUserActivityDelegate> * delegate;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain) NSError *decodeUserInfoError;
+@property <LSUserActivityDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property BOOL dirty;
 @property BOOL encodedContainsUnsynchronizedCloudDocument;
 @property double encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
 @property BOOL encodedFileProviderURL;
 @property BOOL forceImmediateSendToServer;
-@property(copy) NSDictionary * frameworkPayload;
-@property(getter=frameworkPayload,setter=setFrameworkPayload:,copy) NSDictionary * frameworkPayloadDictionary;
-@property(readonly) unsigned int hash;
-@property(copy) NSDate * lastActivityDate;
-@property(readonly) LSUserActivityManager * manager;
+@property (copy) NSDictionary *frameworkPayload;
+@property (getter=frameworkPayload, setter=setFrameworkPayload:, copy) NSDictionary *frameworkPayloadDictionary;
+@property (readonly) unsigned int hash;
+@property (copy) NSDate *lastActivityDate;
+@property (readonly) LSUserActivityManager *manager;
 @property BOOL needsSave;
-@property(copy) NSDictionary * options;
-@property(copy) NSString * owningBundleIdentifier;
+@property (copy) NSDictionary *options;
+@property (copy) NSString *owningBundleIdentifier;
 @property BOOL sendToServerPending;
-@property(copy) NSData * streamsData;
-@property(readonly) unsigned int suggestedActionType;
-@property(readonly) Class superclass;
+@property (copy) NSData *streamsData;
+@property (readonly) unsigned int suggestedActionType;
+@property (readonly) Class superclass;
 @property BOOL supportsContinuationStreams;
-@property(copy) NSString * title;
-@property(copy) NSString * typeIdentifier;
-@property(copy) NSUUID * uniqueIdentifier;
-@property(copy) NSDictionary * userInfo;
-@property(copy) NSURL * webPageURL;
-@property(copy) NSURL * webpageURL;
+@property (copy) NSString *title;
+@property (copy) NSString *typeIdentifier;
+@property (copy) NSUUID *uniqueIdentifier;
+@property (copy) NSDictionary *userInfo;
+@property (copy) NSURL *webPageURL;
+@property (copy) NSURL *webpageURL;
 
 + (id)allowedWebpageURLSchemes;
 + (BOOL)checkWebpageURL:(id)arg1 actionType:(unsigned int)arg2 throwIfFailed:(BOOL)arg3;
-+ (void)fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
-+ (id)registerForSuggestedActionNudgeOfType:(unsigned int)arg1 withOptions:(id)arg2 block:(id)arg3;
++ (void)fetchUserActivityWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)registerForSuggestedActionNudgeOfType:(unsigned int)arg1 withOptions:(id)arg2 block:(id /* block */)arg3;
 + (id)suggestedActionOfType:(unsigned int)arg1;
 + (void)unregisterForSuggestedActionNudgeOfType:(id)arg1;
 + (id)userActivity;
@@ -104,7 +102,7 @@
 - (BOOL)encodedFileProviderURL;
 - (BOOL)forceImmediateSendToServer;
 - (id)frameworkPayload;
-- (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
+- (void)getContinuationStreamsWithCompletionHandler:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithManager:(id)arg1 userActivityInfo:(id)arg2;
@@ -175,6 +173,6 @@
 - (id)userInfo;
 - (id)webPageURL;
 - (id)webpageURL;
-- (void)willSynchronizeUserActivityWithHandler:(id)arg1;
+- (void)willSynchronizeUserActivityWithHandler:(id /* block */)arg1;
 
 @end

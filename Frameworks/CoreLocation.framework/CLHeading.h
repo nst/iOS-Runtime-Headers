@@ -2,37 +2,33 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSDate, NSString;
-
 @interface CLHeading : NSObject <NSCopying, NSSecureCoding> {
     id _internal;
 }
 
-@property(retain,readonly) NSString * compactDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasGeomagneticVector;
-@property(readonly) double heading;
-@property(readonly) double headingAccuracy;
-@property(readonly) double magneticHeading;
-@property(copy,readonly) NSDate * timestamp;
-@property(readonly) double trueHeading;
-@property(readonly) double x;
-@property(readonly) double y;
-@property(readonly) double z;
+@property (nonatomic, readonly, retain) NSString *compactDescription;
+@property (nonatomic, readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasGeomagneticVector;
+@property (nonatomic, readonly) double heading;
+@property (nonatomic, readonly) double headingAccuracy;
+@property (nonatomic, readonly) double magneticHeading;
+@property (nonatomic, readonly, copy) NSDate *timestamp;
+@property (nonatomic, readonly) double trueHeading;
+@property (nonatomic, readonly) double x;
+@property (nonatomic, readonly) double y;
+@property (nonatomic, readonly) double z;
+
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (BOOL)supportsSecureCoding;
 
-- (id)compactDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasGeomagneticVector;
-- (double)heading;
 - (double)headingAccuracy;
 - (id)initWithClientHeading:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; })arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
 - (double)magneticHeading;
 - (id)shortDescription;
 - (id)timestamp;
@@ -40,5 +36,12 @@
 - (double)x;
 - (double)y;
 - (double)z;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)compactDescription;
+- (BOOL)hasGeomagneticVector;
+- (double)heading;
+- (id)initWithHeading:(double)arg1 accuracy:(double)arg2;
 
 @end

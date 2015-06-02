@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CPLResourceTransferTask, NSDate, NSMutableDictionary;
-
 @interface PLCloudPendingResourceTask : NSObject {
     BOOL _completed;
     NSDate *_lastUpdated;
@@ -11,11 +9,11 @@
     CPLResourceTransferTask *_transferTask;
 }
 
-- (id)addProgressBlock:(id)arg1 completionHandler:(id)arg2;
+- (id)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelAllTask;
 - (void)cancelTaskWithIdentifier:(id)arg1;
 - (void)dealloc;
-- (id)initWithProgressBlock:(id)arg1 completionHandler:(id)arg2 forTaskIdentifier:(id)arg3;
+- (id)initWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forTaskIdentifier:(id)arg3;
 - (void)keepAlive;
 - (id)lastUpdated;
 - (void)reportCompletionWithError:(id)arg1;

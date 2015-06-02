@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLLocation, NSArray, NSDate, NSString, NSURL, PHQuery;
-
 @interface PHAssetCollection : PHCollection {
     unsigned int _approximateCount;
     CLLocation *_approximateLocation;
@@ -40,56 +34,52 @@
     int _plAlbumKind;
     PHQuery *_query;
     BOOL _shouldDeleteWhenEmpty;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sortingComparator;
-
+    id /* block */ _sortingComparator;
     NSDate *_startDate;
     NSString *_title;
     NSString *_transientIdentifier;
 }
 
-@property(getter=_canShowCloudComments,setter=_setCanShowCloudComments:) BOOL _canShowCloudComments;
-@property(readonly) unsigned int approximateCount;
-@property(readonly) CLLocation * approximateLocation;
-@property(readonly) unsigned int approximatePhotosCount;
-@property(readonly) unsigned int approximateVideosCount;
-@property(readonly) int assetCollectionSubtype;
-@property(readonly) int assetCollectionType;
-@property(readonly) NSArray * assets;
-@property(readonly) BOOL canContainCustomKeyAssets;
-@property(readonly) BOOL canContributeToCloudSharedAlbum;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
-@property(readonly) NSDate * endDate;
-@property(readonly) unsigned int estimatedAssetCount;
-@property(readonly) NSURL * groupURL;
-@property(readonly) BOOL hasUnseenContentBoolValue;
-@property(readonly) NSString * importSessionID;
-@property(readonly) BOOL isCameraRoll;
-@property(readonly) BOOL isCloudSharedAlbum;
-@property(readonly) BOOL isLastImportedAlbum;
-@property(readonly) BOOL isLibrary;
-@property(readonly) BOOL isMultipleContributorCloudSharedAlbum;
-@property(readonly) BOOL isOwnedCloudSharedAlbum;
-@property(readonly) BOOL isPanoramasCollection;
-@property(readonly) BOOL isPendingPhotoStreamAlbum;
-@property(readonly) BOOL isPhotoStreamCollection;
-@property(readonly) BOOL isSmartCollection;
-@property(readonly) BOOL isStandInCollection;
-@property(readonly) BOOL isWallpaperCollection;
-@property(readonly) BOOL keyAssetsAtEnd;
-@property(readonly) NSArray * localizedLocationNames;
-@property(readonly) int pendingItemsCount;
-@property(readonly) int pendingItemsType;
-@property(readonly) int plAlbumKind;
-@property(readonly) PHQuery * query;
-@property(readonly) BOOL shouldDeleteWhenEmpty;
-@property(copy,readonly) id sortingComparator;
-@property(readonly) NSDate * startDate;
-@property(readonly) NSString * title;
-@property(readonly) NSString * transientIdentifier;
+@property (getter=_canShowCloudComments, setter=_setCanShowCloudComments:, nonatomic) BOOL _canShowCloudComments;
+@property (nonatomic, readonly) unsigned int approximateCount;
+@property (nonatomic, readonly) CLLocation *approximateLocation;
+@property (nonatomic, readonly) unsigned int approximatePhotosCount;
+@property (nonatomic, readonly) unsigned int approximateVideosCount;
+@property (nonatomic, readonly) int assetCollectionSubtype;
+@property (nonatomic, readonly) int assetCollectionType;
+@property (nonatomic, readonly) NSArray *assets;
+@property (nonatomic, readonly) BOOL canContainCustomKeyAssets;
+@property (nonatomic, readonly) BOOL canContributeToCloudSharedAlbum;
+@property (nonatomic, readonly) BOOL canShowAvalancheStacks;
+@property (nonatomic, readonly) BOOL canShowComments;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) unsigned int estimatedAssetCount;
+@property (nonatomic, readonly) NSURL *groupURL;
+@property (nonatomic, readonly) BOOL hasUnseenContentBoolValue;
+@property (nonatomic, readonly) NSString *importSessionID;
+@property (nonatomic, readonly) BOOL isCameraRoll;
+@property (nonatomic, readonly) BOOL isCloudSharedAlbum;
+@property (nonatomic, readonly) BOOL isLastImportedAlbum;
+@property (nonatomic, readonly) BOOL isLibrary;
+@property (nonatomic, readonly) BOOL isMultipleContributorCloudSharedAlbum;
+@property (nonatomic, readonly) BOOL isOwnedCloudSharedAlbum;
+@property (nonatomic, readonly) BOOL isPanoramasCollection;
+@property (nonatomic, readonly) BOOL isPendingPhotoStreamAlbum;
+@property (nonatomic, readonly) BOOL isPhotoStreamCollection;
+@property (nonatomic, readonly) BOOL isSmartCollection;
+@property (nonatomic, readonly) BOOL isStandInCollection;
+@property (nonatomic, readonly) BOOL isWallpaperCollection;
+@property (nonatomic, readonly) BOOL keyAssetsAtEnd;
+@property (nonatomic, readonly) NSArray *localizedLocationNames;
+@property (nonatomic, readonly) int pendingItemsCount;
+@property (nonatomic, readonly) int pendingItemsType;
+@property (nonatomic, readonly) int plAlbumKind;
+@property (nonatomic, readonly) PHQuery *query;
+@property (nonatomic, readonly) BOOL shouldDeleteWhenEmpty;
+@property (nonatomic, readonly, copy) id /* block */ sortingComparator;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *transientIdentifier;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
@@ -170,7 +160,7 @@
 - (BOOL)pl_isWallpaperAlbum;
 - (id)query;
 - (BOOL)shouldDeleteWhenEmpty;
-- (id)sortingComparator;
+- (id /* block */)sortingComparator;
 - (id)startDate;
 - (id)title;
 - (id)transientIdentifier;

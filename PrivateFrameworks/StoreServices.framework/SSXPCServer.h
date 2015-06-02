@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface SSXPCServer : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_entitlementName;

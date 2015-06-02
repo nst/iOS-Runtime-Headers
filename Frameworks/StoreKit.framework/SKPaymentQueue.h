@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSArray, SKPaymentQueueClient;
-
 @interface SKPaymentQueue : NSObject {
     id _internal;
 }
 
-@property(readonly) SKPaymentQueueClient * paymentQueueClient;
-@property(readonly) NSArray * transactions;
+@property (nonatomic, readonly) SKPaymentQueueClient *paymentQueueClient;
+@property (nonatomic, readonly) NSArray *transactions;
 
 + (BOOL)canMakePayments;
 + (id)defaultQueue;

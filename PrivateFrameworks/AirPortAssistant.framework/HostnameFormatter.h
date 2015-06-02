@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface HostnameFormatter : APFormatter {
-}
+@interface HostnameFormatter : APFormatter
 
 + (id)hostnameFormatter:(unsigned int)arg1;
 + (id)hostnameSet;

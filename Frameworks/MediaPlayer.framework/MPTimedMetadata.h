@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVMetadataItem, NSDictionary, NSString;
-
 @interface MPTimedMetadata : NSObject {
     AVMetadataItem *_metadataItem;
 }
 
-@property(readonly) NSDictionary * allMetadata;
-@property(readonly) NSString * key;
-@property(readonly) NSString * keyspace;
-@property(readonly) double timestamp;
-@property(readonly) id value;
+@property (nonatomic, readonly) NSDictionary *allMetadata;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic, readonly) NSString *keyspace;
+@property (nonatomic, readonly) double timestamp;
+@property (nonatomic, readonly) id value;
 
 - (void).cxx_destruct;
 - (id)_initWithMetadataItem:(id)arg1;

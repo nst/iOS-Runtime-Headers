@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDate, SKUIClientContext, UIColor, UIFont, _SKUICounterTimeFieldView;
-
 @interface SKUICounterTimeView : UIView {
     SKUIClientContext *_clientContext;
     _SKUICounterTimeFieldView *_daysFieldView;
@@ -17,10 +15,10 @@
     unsigned int _visibleFields;
 }
 
-@property(copy) NSDate * endDate;
-@property(copy) UIColor * textColor;
-@property(retain) UIFont * valueFont;
-@property unsigned int visibleFields;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) UIColor *textColor;
+@property (nonatomic, retain) UIFont *valueFont;
+@property (nonatomic) unsigned int visibleFields;
 
 - (void).cxx_destruct;
 - (id)_allFieldViews;

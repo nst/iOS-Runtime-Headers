@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3DAAPExportItem : ML3ExportItem {
-}
+@interface ML3DAAPExportItem : ML3ExportItem
 
 - (unsigned int)_daapCodeForPropertyKey:(unsigned int)arg1;
 - (int)_daapMediaKindForMLMediaType:(int)arg1;

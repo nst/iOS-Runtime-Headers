@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord, CKDPRecordSaveRequestConflictLoserUpdate, CKDPRecordSaveRequestShareIdUpdate, NSMutableArray, NSString;
-
 @interface CKDPRecordSaveRequest : PBRequest <NSCopying> {
     CKDPRecordSaveRequestConflictLoserUpdate *_conflictLoserUpdate;
     NSMutableArray *_conflictLosersToResolves;
@@ -22,26 +20,26 @@
     NSString *_zoneProtectionInfoTag;
 }
 
-@property(retain) CKDPRecordSaveRequestConflictLoserUpdate * conflictLoserUpdate;
-@property(retain) NSMutableArray * conflictLosersToResolves;
-@property(retain) NSString * etag;
-@property(retain) NSMutableArray * fieldsToDeleteIfExistOnMerges;
-@property(readonly) BOOL hasConflictLoserUpdate;
-@property(readonly) BOOL hasEtag;
-@property BOOL hasMerge;
-@property(readonly) BOOL hasRecord;
-@property(readonly) BOOL hasRecordProtectionInfoTag;
-@property BOOL hasSaveSemantics;
-@property(readonly) BOOL hasShareEtag;
-@property(readonly) BOOL hasShareIDUpdate;
-@property(readonly) BOOL hasZoneProtectionInfoTag;
-@property BOOL merge;
-@property(retain) CKDPRecord * record;
-@property(retain) NSString * recordProtectionInfoTag;
-@property int saveSemantics;
-@property(retain) NSString * shareEtag;
-@property(retain) CKDPRecordSaveRequestShareIdUpdate * shareIDUpdate;
-@property(retain) NSString * zoneProtectionInfoTag;
+@property (nonatomic, retain) CKDPRecordSaveRequestConflictLoserUpdate *conflictLoserUpdate;
+@property (nonatomic, retain) NSMutableArray *conflictLosersToResolves;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSMutableArray *fieldsToDeleteIfExistOnMerges;
+@property (nonatomic, readonly) BOOL hasConflictLoserUpdate;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic) BOOL hasMerge;
+@property (nonatomic, readonly) BOOL hasRecord;
+@property (nonatomic, readonly) BOOL hasRecordProtectionInfoTag;
+@property (nonatomic) BOOL hasSaveSemantics;
+@property (nonatomic, readonly) BOOL hasShareEtag;
+@property (nonatomic, readonly) BOOL hasShareIDUpdate;
+@property (nonatomic, readonly) BOOL hasZoneProtectionInfoTag;
+@property (nonatomic) BOOL merge;
+@property (nonatomic, retain) CKDPRecord *record;
+@property (nonatomic, retain) NSString *recordProtectionInfoTag;
+@property (nonatomic) int saveSemantics;
+@property (nonatomic, retain) NSString *shareEtag;
+@property (nonatomic, retain) CKDPRecordSaveRequestShareIdUpdate *shareIDUpdate;
+@property (nonatomic, retain) NSString *zoneProtectionInfoTag;
 
 + (id)options;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXTextParaPropertyBag : NSObject {
-}
+@interface OAXTextParaPropertyBag : NSObject
 
 + (void)readAlign:(id)arg1 paragraphProperties:(id)arg2;
 + (int)readBulletScheme:(id)arg1;

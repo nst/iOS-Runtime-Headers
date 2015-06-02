@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKGameCenterLauncher : NSObject {
-}
+@interface GKGameCenterLauncher : NSObject
 
 + (id)gameCenterURLStringWithPath:(id)arg1;
 

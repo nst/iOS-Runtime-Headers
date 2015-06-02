@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLImageCacheList, PLImageLoadingThread;
-
 @interface PLImageCache : NSObject {
     PLImageCacheList *_cacheList;
     PLImageLoadingThread *_loader;
@@ -13,7 +11,7 @@
 - (id)_cachedImageFromSource:(id)arg1 asset:(id)arg2;
 - (id)_imageLoader;
 - (void)_uncacheImage:(id)arg1;
-- (id)cachedImageFromSource:(id)arg1 asset:(id)arg2 loadIfNeeded:(BOOL)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 forImageLoadingQueue:(id)arg6 completion:(id)arg7;
+- (id)cachedImageFromSource:(id)arg1 asset:(id)arg2 loadIfNeeded:(BOOL)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 forImageLoadingQueue:(id)arg6 completion:(id /* block */)arg7;
 - (id)cachedImageFromSource:(id)arg1 forAsset:(id)arg2 loadIfNeeded:(BOOL)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 forImageLoadingQueue:(id)arg6;
 - (void)cancelLoadFromSource:(id)arg1 asset:(id)arg2 imageLoadingQueue:(id)arg3;
 - (void)dealloc;

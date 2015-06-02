@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, NSString, UILabel;
-
 @interface CKMessageEntryTextView : UITextView {
     NSString *_autocorrectionContext;
     UILabel *_placeholderLabel;
@@ -11,13 +9,13 @@
     BOOL _showingDictationPlaceholder;
 }
 
-@property(copy) NSString * autocorrectionContext;
-@property(copy) NSAttributedString * compositionText;
-@property(retain) UILabel * placeholderLabel;
-@property(copy) NSString * placeholderText;
-@property(copy) NSString * responseContext;
-@property(getter=isShowingDictationPlaceholder) BOOL showingDictationPlaceholder;
-@property(getter=isSingleLine,readonly) BOOL singleLine;
+@property (nonatomic, copy) NSString *autocorrectionContext;
+@property (nonatomic, copy) NSAttributedString *compositionText;
+@property (nonatomic, retain) UILabel *placeholderLabel;
+@property (nonatomic, copy) NSString *placeholderText;
+@property (nonatomic, copy) NSString *responseContext;
+@property (getter=isShowingDictationPlaceholder, nonatomic) BOOL showingDictationPlaceholder;
+@property (getter=isSingleLine, nonatomic, readonly) BOOL singleLine;
 
 - (id)autocorrectionContext;
 - (id)compositionText;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface PLPersonInfoManager : NSObject {
     NSMutableDictionary *_personDictsForPersonID;
     NSString *_plistPath;

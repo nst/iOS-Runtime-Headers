@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDeleteShareInfo, CKShare, CKShareID, NSError;
-
 @interface CKDModifyShareMetadata : NSObject {
     CKDeleteShareInfo *_deleteInfo;
     NSError *_error;
@@ -13,12 +11,12 @@
     unsigned int _state;
 }
 
-@property(retain) CKDeleteShareInfo * deleteInfo;
-@property(retain) NSError * error;
-@property(readonly) BOOL isDelete;
-@property(readonly) CKShare * share;
-@property(readonly) CKShareID * shareID;
-@property unsigned int state;
+@property (nonatomic, retain) CKDeleteShareInfo *deleteInfo;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) BOOL isDelete;
+@property (nonatomic, readonly) CKShare *share;
+@property (nonatomic, readonly) CKShareID *shareID;
+@property (nonatomic) unsigned int state;
 
 + (id)_stringForUploadState:(unsigned int)arg1;
 + (id)modifyMetadataForDeleteWithShareID:(id)arg1;

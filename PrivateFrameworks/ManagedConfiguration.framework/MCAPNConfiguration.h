@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber, NSString;
-
 @interface MCAPNConfiguration : NSObject {
     NSString *_authenticationType;
     NSString *_name;
@@ -13,12 +11,12 @@
     NSString *_username;
 }
 
-@property(retain) NSString * authenticationType;
-@property(retain) NSString * name;
-@property(retain) NSString * password;
-@property(retain) NSNumber * proxyPort;
-@property(retain) NSString * proxyServer;
-@property(retain) NSString * username;
+@property (nonatomic, retain) NSString *authenticationType;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSNumber *proxyPort;
+@property (nonatomic, retain) NSString *proxyServer;
+@property (nonatomic, retain) NSString *username;
 
 - (void).cxx_destruct;
 - (id)authenticationType;

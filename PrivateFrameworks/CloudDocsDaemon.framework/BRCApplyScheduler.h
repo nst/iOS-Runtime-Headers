@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCCountedSet, NSMutableSet, NSObject<OS_dispatch_group>, NSString;
-
 @interface BRCApplyScheduler : BRCFSSchedulerBase <BRCModule> {
     BOOL _applyCountReachedMax;
     BRCCountedSet *_coordinatedWriters;
@@ -11,12 +9,12 @@
     NSObject<OS_dispatch_group> *_writerGroup;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) Class superclass;
-@property(readonly) NSObject<OS_dispatch_group> * writerGroup;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *writerGroup;
 
 - (void).cxx_destruct;
 - (void)_close;

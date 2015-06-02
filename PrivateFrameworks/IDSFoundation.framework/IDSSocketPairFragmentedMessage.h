@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSData;
-
 @interface IDSSocketPairFragmentedMessage : IDSSocketPairMessage {
     NSData *_data;
     unsigned int _fragmentIndex;
@@ -12,10 +10,10 @@
     unsigned int _totalFragmentCount;
 }
 
-@property(readonly) NSData * data;
-@property(readonly) unsigned int fragmentIndex;
-@property(readonly) unsigned int fragmentedMessageID;
-@property(readonly) unsigned int totalFragmentCount;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) unsigned int fragmentIndex;
+@property (nonatomic, readonly) unsigned int fragmentedMessageID;
+@property (nonatomic, readonly) unsigned int totalFragmentCount;
 
 + (id)createMessageFragmentsFromOriginalMessage:(id)arg1 withFragmentedMessageID:(unsigned int)arg2 fragmentSize:(unsigned int)arg3;
 + (id)createOriginalMessageFromFragmentedMessages:(id)arg1;

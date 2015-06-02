@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnection_FigRecorder, AVCaptureSession_FigRecorder, AVCaptureVideoPreviewLayerInternal_FigRecorder, NSString;
-
 @interface AVCaptureVideoPreviewLayer_FigRecorder : CALayer {
     AVCaptureVideoPreviewLayerInternal_FigRecorder *_internal;
 }
 
-@property BOOL automaticallyAdjustsMirroring;
-@property(readonly) AVCaptureConnection_FigRecorder * connection;
-@property(getter=isMirrored) BOOL mirrored;
-@property(getter=isMirroringSupported,readonly) BOOL mirroringSupported;
-@property int orientation;
-@property(getter=isOrientationSupported,readonly) BOOL orientationSupported;
-@property(retain) AVCaptureSession_FigRecorder * session;
-@property(copy) NSString * videoGravity;
+@property (nonatomic) BOOL automaticallyAdjustsMirroring;
+@property (nonatomic, readonly) AVCaptureConnection_FigRecorder *connection;
+@property (getter=isMirrored, nonatomic) BOOL mirrored;
+@property (getter=isMirroringSupported, nonatomic, readonly) BOOL mirroringSupported;
+@property (nonatomic) int orientation;
+@property (getter=isOrientationSupported, nonatomic, readonly) BOOL orientationSupported;
+@property (nonatomic, retain) AVCaptureSession_FigRecorder *session;
+@property (copy) NSString *videoGravity;
 
 + (void)initialize;
 + (id)layerWithSession:(id)arg1;

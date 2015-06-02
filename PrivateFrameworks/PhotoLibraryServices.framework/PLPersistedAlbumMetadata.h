@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSNumber, NSString, NSURL, PLGenericAlbum;
-
 @interface PLPersistedAlbumMetadata : NSObject {
     BOOL _allowsOverwite;
     NSMutableOrderedSet *_assetUUIDs;
@@ -21,20 +19,20 @@
     NSString *_uuid;
 }
 
-@property BOOL allowsOverwite;
-@property(retain) NSMutableOrderedSet * assetUUIDs;
-@property(retain) NSString * cloudGUID;
-@property(retain) NSString * customKeyAssetUUID;
-@property BOOL customSortAscending;
-@property int customSortKey;
-@property(retain) PLGenericAlbum * genericAlbum;
-@property(getter=isInTrash) BOOL inTrash;
-@property(readonly) BOOL isFolder;
-@property(retain) NSNumber * kind;
-@property(retain) NSURL * metadataURL;
-@property(getter=isPinned) BOOL pinned;
-@property(retain) NSString * title;
-@property(retain) NSString * uuid;
+@property (nonatomic) BOOL allowsOverwite;
+@property (nonatomic, retain) NSMutableOrderedSet *assetUUIDs;
+@property (nonatomic, retain) NSString *cloudGUID;
+@property (nonatomic, retain) NSString *customKeyAssetUUID;
+@property (nonatomic) BOOL customSortAscending;
+@property (nonatomic) int customSortKey;
+@property (nonatomic, retain) PLGenericAlbum *genericAlbum;
+@property (getter=isInTrash, nonatomic) BOOL inTrash;
+@property (nonatomic, readonly) BOOL isFolder;
+@property (nonatomic, retain) NSNumber *kind;
+@property (nonatomic, retain) NSURL *metadataURL;
+@property (getter=isPinned, nonatomic) BOOL pinned;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *uuid;
 
 + (BOOL)_isAlbumMetadataExtension:(id)arg1;
 + (BOOL)_isFolderMetadataExtension:(id)arg1;

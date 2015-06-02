@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSMTPResponse, NSMutableArray, NSMutableData, NSString;
-
 @interface MFSMTPConnection : MFConnection {
     id _delegate;
     BOOL _dislikesSaveSentMbox;
@@ -24,10 +22,10 @@
 - (int)_getReply;
 - (BOOL)_hasParameter:(id)arg1 forKeyword:(id)arg2;
 - (int)_readResponseRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 isContinuation:(BOOL*)arg2;
-- (int)_sendBytes:(const char *)arg1 length:(unsigned int)arg2 progressHandler:(id)arg3;
+- (int)_sendBytes:(const char *)arg1 length:(unsigned int)arg2 progressHandler:(id /* block */)arg3;
 - (int)_sendCommand:(const char *)arg1 length:(unsigned int)arg2 argument:(id)arg3 trailer:(const char *)arg4;
 - (int)_sendData:(id)arg1;
-- (int)_sendData:(id)arg1 progressHandler:(id)arg2;
+- (int)_sendData:(id)arg1 progressHandler:(id /* block */)arg2;
 - (void)_setLastResponse:(id)arg1;
 - (BOOL)_supportsExtension:(id)arg1;
 - (BOOL)_supportsSaveSentExtension;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMMessagePort : DOMObject {
-}
+@interface DOMMessagePort : DOMObject
 
 - (void)dealloc;
 - (void)finalize;

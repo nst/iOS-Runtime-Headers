@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSDictionary, NSSet, NSString, SSNetworkConstraints, SSURLBagContext;
-
 @interface ISURLBag : NSObject {
     SSURLBagContext *_context;
     SSNetworkConstraints *_defaultConstraints;
@@ -16,14 +14,14 @@
     NSString *_storeFrontIdentifier;
 }
 
-@property(copy) SSURLBagContext * URLBagContext;
-@property(readonly) NSDictionary * URLBagDictionary;
-@property(readonly) NSSet * availableStorefrontItemKinds;
-@property double invalidationTime;
-@property BOOL loadedFromDiskCache;
-@property(copy) NSString * storeFrontIdentifier;
-@property(getter=isValid,readonly) BOOL valid;
-@property(readonly) long long versionIdentifier;
+@property (nonatomic, copy) SSURLBagContext *URLBagContext;
+@property (nonatomic, readonly) NSDictionary *URLBagDictionary;
+@property (readonly) NSSet *availableStorefrontItemKinds;
+@property (nonatomic) double invalidationTime;
+@property (nonatomic) BOOL loadedFromDiskCache;
+@property (nonatomic, copy) NSString *storeFrontIdentifier;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (nonatomic, readonly) long long versionIdentifier;
 
 + (BOOL)_allowUnsignedBags;
 + (void)_loadItemKindURLBagKeyMap;

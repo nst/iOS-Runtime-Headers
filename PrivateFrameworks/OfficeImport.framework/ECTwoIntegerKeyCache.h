@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUIntegerKeyDictionary;
-
 @interface ECTwoIntegerKeyCache : NSObject {
     BOOL _assertForCollisions;
     OITSUIntegerKeyDictionary *mCache;
 }
 
-@property BOOL assertForCollisions;
+@property (nonatomic) BOOL assertForCollisions;
 
 - (BOOL)assertForCollisions;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchChildViewControllerDelegate>, NSMutableDictionary, NSString, SKUIClientContext, SKUIGiftThemeCollectionView, SKUIItemCollectionController, SKUIMetricsController, SKUISearchPage, SKUISearchRelatedView, SKUISearchResultGroupController;
-
 @interface SKUIIPhoneSearchViewController : UIViewController <SKUIItemCollectionDelegate, SKUIMetricsViewController, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
     SKUIGiftThemeCollectionView *_collectionView;
@@ -18,15 +16,15 @@
     SKUISearchResultGroupController *_searchResultGroupController;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUISearchChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIMetricsController * metricsController;
-@property(readonly) NSString * previousRelatedSearchTerm;
-@property(readonly) SKUISearchPage * searchPage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUISearchChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIMetricsController *metricsController;
+@property (nonatomic, readonly) NSString *previousRelatedSearchTerm;
+@property (nonatomic, readonly) SKUISearchPage *searchPage;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addImpressionWithItemID:(long long)arg1 type:(id)arg2 index:(int)arg3;

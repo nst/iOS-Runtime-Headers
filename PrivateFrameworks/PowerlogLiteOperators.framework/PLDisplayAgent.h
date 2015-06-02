@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class BrightnessSystemClient, NSDate, NSDictionary, NSString, PLIOKitOperatorComposition, PLNSTimerOperatorComposition;
-
 @interface PLDisplayAgent : PLAgent {
     BOOL _alsOn;
     PLNSTimerOperatorComposition *_backlightFilterTimer;
@@ -18,15 +16,15 @@
 }
 
 @property BOOL alsOn;
-@property(retain) PLNSTimerOperatorComposition * backlightFilterTimer;
-@property(retain) BrightnessSystemClient * brightnessSystemClient;
-@property(readonly) NSString * displayHardware;
-@property(readonly) NSDictionary * displayPowerModel;
-@property(readonly) PLIOKitOperatorComposition * iokitBacklight;
-@property(readonly) PLIOKitOperatorComposition * iokitDisplay;
-@property(readonly) PLIOKitOperatorComposition * iokitTouch;
-@property(retain) NSDictionary * pendingBacklightEntry;
-@property(retain) NSDate * pendingBacklightEntryDate;
+@property (retain) PLNSTimerOperatorComposition *backlightFilterTimer;
+@property (retain) BrightnessSystemClient *brightnessSystemClient;
+@property (readonly) NSString *displayHardware;
+@property (readonly) NSDictionary *displayPowerModel;
+@property (readonly) PLIOKitOperatorComposition *iokitBacklight;
+@property (readonly) PLIOKitOperatorComposition *iokitDisplay;
+@property (readonly) PLIOKitOperatorComposition *iokitTouch;
+@property (retain) NSDictionary *pendingBacklightEntry;
+@property (retain) NSDate *pendingBacklightEntryDate;
 
 + (id)entryEventBackwardDefinitionTouch;
 + (id)entryEventBackwardDefinitions;

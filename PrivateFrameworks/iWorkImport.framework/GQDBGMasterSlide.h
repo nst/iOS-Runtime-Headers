@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDBGMasterSlide : GQDBGAbstractSlide {
-}
+@interface GQDBGMasterSlide : GQDBGAbstractSlide
 
 @end

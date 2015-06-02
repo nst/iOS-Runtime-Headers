@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class PBUnknownFields;
-
 @interface GEOPDAutocompleteEntryHighlightSpan : PBCodable <NSCopying> {
     struct { 
         unsigned int length : 1; 
@@ -14,11 +12,11 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property BOOL hasLength;
-@property BOOL hasStartIndex;
-@property unsigned int length;
-@property unsigned int startIndex;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic) BOOL hasLength;
+@property (nonatomic) BOOL hasStartIndex;
+@property (nonatomic) unsigned int length;
+@property (nonatomic) unsigned int startIndex;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

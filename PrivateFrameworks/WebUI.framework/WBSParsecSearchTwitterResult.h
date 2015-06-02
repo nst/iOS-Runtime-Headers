@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, WBSParsecImageRepresentation;
-
 @interface WBSParsecSearchTwitterResult : WBSParsecSearchResult {
     WBSParsecImageRepresentation *_sectionHeaderGlyph;
     NSString *_sectionHeaderSubscript;
 }
 
-@property(readonly) NSString * sectionHeaderSubscript;
+@property (nonatomic, readonly) NSString *sectionHeaderSubscript;
 
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;

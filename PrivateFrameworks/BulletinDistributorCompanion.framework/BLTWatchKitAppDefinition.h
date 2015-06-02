@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSString;
-
 @interface BLTWatchKitAppDefinition : NSObject {
     NSString *_containerBundleID;
     BOOL _isInstalled;
     NSString *_watchKitAppBundleID;
 }
 
-@property(readonly) NSString * containerBundleID;
-@property(readonly) BOOL isInstalled;
-@property(readonly) NSString * watchKitAppBundleID;
+@property (nonatomic, readonly) NSString *containerBundleID;
+@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) NSString *watchKitAppBundleID;
 
 - (void).cxx_destruct;
 - (id)containerBundleID;

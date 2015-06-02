@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSManagedObjectContext, NSManagedObjectModel, NSString, NSURL;
-
 @interface TDPersistentDocument : NSObject {
     NSString *_fileType;
     NSURL *_fileURL;
@@ -13,9 +11,9 @@
     NSURL *_temporaryFileURL;
 }
 
-@property(copy) NSString * fileType;
-@property(copy) NSURL * fileURL;
-@property(copy) NSURL * temporaryFileURL;
+@property (nonatomic, copy) NSString *fileType;
+@property (nonatomic, copy) NSURL *fileURL;
+@property (nonatomic, copy) NSURL *temporaryFileURL;
 
 + (id)_fileModificationDateForURL:(id)arg1;
 

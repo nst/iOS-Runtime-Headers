@@ -13,12 +13,12 @@
     unsigned int _type;
 }
 
-@property unsigned int efficacy;
-@property BOOL hasEfficacy;
-@property BOOL hasSource;
-@property BOOL hasType;
-@property unsigned int source;
-@property unsigned int type;
+@property (nonatomic) unsigned int efficacy;
+@property (nonatomic) BOOL hasEfficacy;
+@property (nonatomic) BOOL hasSource;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned int source;
+@property (nonatomic) unsigned int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

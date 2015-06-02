@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CPMLDB, CPMLSchema, NSDictionary;
-
 @interface CPMLTrainer : NSObject {
     struct CPMLCDB { struct CPMLStatistics {} *x1; struct sqlite3 {} *x2; struct sqlite3 {} *x3; struct CPMLIterator {} *x4; struct CPMLRemapper {} *x5; struct CPMLTunableData {} *x6; } *cpCDB;
     struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; struct CPMLCDB {} *x3; struct CPMLTunableData {} *x4; struct CPMLIterator {} *x5; struct CPMLSerialization {} *x6; } *cpMLAlgo;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIPinyinDisambiguationCandidate : TIKeyboardCandidateSingle {
     NSString *_label;
 }

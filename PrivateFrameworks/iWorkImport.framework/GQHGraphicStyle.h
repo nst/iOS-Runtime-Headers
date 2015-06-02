@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHGraphicStyle : GQHTextBox {
-}
+@interface GQHGraphicStyle : GQHTextBox
 
 + (void)mapExternalWrap:(id)arg1 style:(id)arg2 state:(id)arg3;
 + (void)mapFill:(id)arg1 style:(id)arg2 state:(id)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSArray, NSMutableArray;
-
 @interface AVCaptureMovieFileOutputInternal : NSObject {
     NSArray *metadata;
     struct { 

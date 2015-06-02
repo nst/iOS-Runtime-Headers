@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface NNMKSQLiteConnection : NSObject {
     NSMutableDictionary *_cachedPreparedStatementsKeyedBySQLPattern;
     struct sqlite3 { } *_db;
@@ -11,10 +9,10 @@
     BOOL _isInTransaction;
 }
 
-@property(retain) NSMutableDictionary * cachedPreparedStatementsKeyedBySQLPattern;
-@property struct sqlite3 { }* db;
-@property(retain) NSObject<OS_dispatch_queue> * dbQueue;
-@property BOOL isInTransaction;
+@property (nonatomic, retain) NSMutableDictionary *cachedPreparedStatementsKeyedBySQLPattern;
+@property (nonatomic) struct sqlite3 { }*db;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dbQueue;
+@property (nonatomic) BOOL isInTransaction;
 
 + (BOOL)errorCodeMeansCorruptedDatabase:(int)arg1;
 
@@ -25,7 +23,7 @@
 - (id)_lastErrorMessage;
 - (BOOL)_openDatabaseWithPath:(id)arg1 protectData:(BOOL)arg2 errorCode:(int*)arg3;
 - (struct sqlite3_stmt { }*)_preparedStatementForPattern:(id)arg1 cacheStatement:(BOOL)arg2;
-- (int)_runRetryingIfNeeded:(id)arg1;
+- (int)_runRetryingIfNeeded:(id /* block */)arg1;
 - (int)_stepPreparedStatement:(struct sqlite3_stmt { }*)arg1;
 - (BOOL)beginTransaction;
 - (id)cachedPreparedStatementsKeyedBySQLPattern;

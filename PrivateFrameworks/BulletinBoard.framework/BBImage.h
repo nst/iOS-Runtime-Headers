@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSData, NSString;
-
 @interface BBImage : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     NSString *_bundlePath;
     NSData *_data;
@@ -11,14 +9,14 @@
     NSString *_path;
 }
 
-@property(copy) NSString * bundlePath;
-@property(copy) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(copy) NSString * path;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *bundlePath;
+@property (nonatomic, copy) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *path;
+@property (readonly) Class superclass;
 
 + (id)imageWithData:(id)arg1;
 + (id)imageWithName:(id)arg1 inBundle:(id)arg2;

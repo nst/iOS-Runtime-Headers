@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteEntry, NSData;
-
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionID : 1; 
@@ -21,18 +19,18 @@
     int _suggestionsEntryListIndex;
 }
 
-@property BOOL hasSessionID;
-@property(readonly) BOOL hasSuggestionEntry;
-@property BOOL hasSuggestionEntryIndex;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property BOOL hasSuggestionsEntryListIndex;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property(retain) GEOPDAutocompleteEntry * suggestionEntry;
-@property int suggestionEntryIndex;
-@property(retain) NSData * suggestionEntryMetadata;
-@property(retain) NSData * suggestionMetadata;
-@property int suggestionsEntryListIndex;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic, readonly) BOOL hasSuggestionEntry;
+@property (nonatomic) BOOL hasSuggestionEntryIndex;
+@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) BOOL hasSuggestionMetadata;
+@property (nonatomic) BOOL hasSuggestionsEntryListIndex;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic, retain) GEOPDAutocompleteEntry *suggestionEntry;
+@property (nonatomic) int suggestionEntryIndex;
+@property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, retain) NSData *suggestionMetadata;
+@property (nonatomic) int suggestionsEntryListIndex;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
  */
 
-@interface ETPeopleUtility : NSObject {
-}
+@interface ETPeopleUtility : NSObject
 
 + (id)compressPhoneNumberString:(id)arg1;
 + (id)initialsForPerson:(void*)arg1;

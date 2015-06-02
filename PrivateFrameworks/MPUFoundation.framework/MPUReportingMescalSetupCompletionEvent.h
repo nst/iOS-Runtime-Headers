@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSError, NSString;
-
 @interface MPUReportingMescalSetupCompletionEvent : NSObject <MPUReportingEvent> {
     NSError *_error;
     double _setupDuration;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property double setupDuration;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double setupDuration;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;

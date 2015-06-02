@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
  */
 
-@class NSString;
-
 @interface DDLocation : NSObject <NSCoding> {
     NSString *_fileName;
     int _firstColumn;
@@ -12,11 +10,11 @@
     int _lastLine;
 }
 
-@property(copy,readonly) NSString * fileName;
-@property(readonly) int firstColumn;
-@property(readonly) int firstLine;
-@property(readonly) int lastColumn;
-@property(readonly) int lastLine;
+@property (readonly, copy) NSString *fileName;
+@property (readonly) int firstColumn;
+@property (readonly) int firstLine;
+@property (readonly) int lastColumn;
+@property (readonly) int lastLine;
 
 - (void)dealloc;
 - (id)description;

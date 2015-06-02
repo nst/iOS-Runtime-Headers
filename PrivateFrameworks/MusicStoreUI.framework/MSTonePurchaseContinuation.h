@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class ABPeoplePickerNavigationController, NSString, UIActionSheet, UIAlertView;
-
 @interface MSTonePurchaseContinuation : SUPurchaseContinuation <ABPeoplePickerNavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     UIActionSheet *_actionSheet;
     UIAlertView *_alertView;
     ABPeoplePickerNavigationController *_peoplePicker;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_copyAllowedToneStyles;
 - (void)_destroyActionSheet;

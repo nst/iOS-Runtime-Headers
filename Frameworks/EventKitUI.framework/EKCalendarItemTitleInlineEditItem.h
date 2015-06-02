@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKParticipant, EKRequestAvailabilityOperation, EKUILocationEditItemCell, NSArray, NSString, UITableViewCell, UIView;
-
 @interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <EKCalendarItemInlineEditItem, EKEditItemViewControllerDelegate, UITextFieldDelegate> {
     EKRequestAvailabilityOperation *_availabilityRequest;
     NSArray *_availabilitySpansForLocation;
@@ -19,10 +17,10 @@
     UITableViewCell *_titleCell;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_clearButtonTapped;

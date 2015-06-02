@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCCommonMessages : NSObject {
-}
+@interface TCCommonMessages : NSObject
 
 + (void)initialize;
 

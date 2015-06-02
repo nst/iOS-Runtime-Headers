@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDIDSMessageCenter, HDIDSOutgoingResponse, NSData, NSString;
-
 @interface HDIDSIncomingRequest : NSObject {
     NSData *_data;
     BOOL _expectsResponse;
@@ -15,14 +13,14 @@
     HDIDSOutgoingResponse *_response;
 }
 
-@property(retain) NSData * data;
-@property BOOL expectsResponse;
-@property(copy) NSString * idsIdentifier;
-@property HDIDSMessageCenter * messageCenter;
-@property unsigned short messageID;
-@property(retain) id pbRequest;
-@property unsigned int priority;
-@property(retain) HDIDSOutgoingResponse * response;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic) BOOL expectsResponse;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) HDIDSMessageCenter *messageCenter;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) id pbRequest;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic, retain) HDIDSOutgoingResponse *response;
 
 - (void).cxx_destruct;
 - (void)configureResponse;

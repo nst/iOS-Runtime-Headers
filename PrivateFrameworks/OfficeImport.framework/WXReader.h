@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WXReader : OCXReader {
-}
+@interface WXReader : OCXReader
 
 - (id)defaultPassphrase;
 - (id)read;

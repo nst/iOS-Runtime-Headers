@@ -3,8 +3,8 @@
  */
 
 @interface PLUUIDString : NSString {
-    unsigned char _uuid[16];
-    BOOL _uuidString[37];
+    unsigned char _uuid;
+    BOOL _uuidString;
 }
 
 + (id)UUIDString;
@@ -18,7 +18,7 @@
 - (id)init;
 - (id)initWithCFUUID:(struct __CFUUID { }*)arg1;
 - (id)initWithCFUUIDBytes:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned char x16; })arg1;
-- (id)initWithUUID:(unsigned char[16])arg1;
+- (id)initWithUUID:(unsigned char)arg1;
 - (id)initWithUUIDData:(id)arg1;
 - (BOOL)isEqualToString:(id)arg1;
 - (unsigned int)length;

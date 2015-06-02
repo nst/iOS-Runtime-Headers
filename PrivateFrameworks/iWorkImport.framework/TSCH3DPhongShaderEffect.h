@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DPhongShaderEffect : TSCH3DPhongLikeShaderEffect {
-}
+@interface TSCH3DPhongShaderEffect : TSCH3DPhongLikeShaderEffect
 
 - (void)injectFinalColorToProgram:(id)arg1;
 

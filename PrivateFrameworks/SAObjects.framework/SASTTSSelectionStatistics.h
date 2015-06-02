@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASTTSSelectionStatistics : SABaseCommand <SAServerBoundCommand>
 
-@interface SASTTSSelectionStatistics : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy) NSString * completionType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * interactionId;
-@property(copy) NSArray * listenedItems;
-@property(copy) NSString * refId;
-@property int selectedItemIndex;
-@property(copy) NSString * sessionId;
-@property(readonly) Class superclass;
-@property(copy) NSArray * timesListened;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *completionType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *interactionId;
+@property (nonatomic, copy) NSArray *listenedItems;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic) int selectedItemIndex;
+@property (nonatomic, copy) NSString *sessionId;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *timesListened;
 
 + (id)tTSSelectionStatistics;
 + (id)tTSSelectionStatisticsWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
-
 @interface SKUIReviewList : NSObject <SKUICacheCoding> {
     NSDictionary *_dictionary;
     NSMutableArray *_reviews;
 }
 
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int fiveStarRatingCount;
-@property(readonly) int fourStarRatingCount;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfPages;
-@property(readonly) int oneStarRatingCount;
-@property(readonly) int ratingCount;
-@property(readonly) NSArray * reviews;
-@property(readonly) Class superclass;
-@property(readonly) int threeStarRatingCount;
-@property(readonly) int twoStarRatingCount;
-@property(readonly) float userRating;
-@property(readonly) NSURL * writeReviewURL;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int fiveStarRatingCount;
+@property (nonatomic, readonly) int fourStarRatingCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int numberOfPages;
+@property (nonatomic, readonly) int oneStarRatingCount;
+@property (nonatomic, readonly) int ratingCount;
+@property (nonatomic, readonly) NSArray *reviews;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int threeStarRatingCount;
+@property (nonatomic, readonly) int twoStarRatingCount;
+@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) NSURL *writeReviewURL;
 
 - (void).cxx_destruct;
 - (void)addReviews:(id)arg1;

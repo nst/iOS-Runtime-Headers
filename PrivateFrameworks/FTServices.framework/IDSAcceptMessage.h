@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface IDSAcceptMessage : IDSFaceTimeMessage <NSCopying> {
     NSData *_peerBlob;
     NSString *_peerID;
@@ -24,23 +22,23 @@
     NSNumber *_selfRelayPort;
 }
 
-@property(copy) NSData * peerBlob;
-@property(copy) NSString * peerID;
-@property(copy) NSData * peerNATIP;
-@property(copy) NSNumber * peerNATType;
-@property(copy) NSData * peerPushToken;
-@property(copy) NSData * peerRelayIP;
-@property(copy) NSNumber * peerRelayPort;
-@property(copy) NSData * relayConnectionId;
-@property(copy) NSData * relayTokenAllocReq;
-@property(copy) NSData * relayTransactionIdAlloc;
-@property(copy) NSNumber * relayType;
-@property(copy) NSData * selfBlob;
-@property(copy) NSData * selfNATIP;
-@property(copy) NSNumber * selfNATType;
-@property(copy) NSData * selfPushToken;
-@property(copy) NSData * selfRelayIP;
-@property(copy) NSNumber * selfRelayPort;
+@property (copy) NSData *peerBlob;
+@property (copy) NSString *peerID;
+@property (copy) NSData *peerNATIP;
+@property (copy) NSNumber *peerNATType;
+@property (copy) NSData *peerPushToken;
+@property (copy) NSData *peerRelayIP;
+@property (copy) NSNumber *peerRelayPort;
+@property (copy) NSData *relayConnectionId;
+@property (copy) NSData *relayTokenAllocReq;
+@property (copy) NSData *relayTransactionIdAlloc;
+@property (copy) NSNumber *relayType;
+@property (copy) NSData *selfBlob;
+@property (copy) NSData *selfNATIP;
+@property (copy) NSNumber *selfNATType;
+@property (copy) NSData *selfPushToken;
+@property (copy) NSData *selfRelayIP;
+@property (copy) NSNumber *selfRelayPort;
 
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

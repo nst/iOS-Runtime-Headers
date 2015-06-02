@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLAbsintheSigningSession : NSObject {
     NSString *_certURL;
     struct NACContextOpaque_ { } *_context;

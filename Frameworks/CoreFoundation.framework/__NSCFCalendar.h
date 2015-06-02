@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFCalendar : NSCalendar {
-}
+@interface __NSCFCalendar : NSCalendar
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)calendarWithIdentifier:(id)arg1;
@@ -16,7 +15,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
-- (void)enumerateDatesStartingAfterDate:(id)arg1 matchingComponents:(id)arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
+- (void)enumerateDatesStartingAfterDate:(id)arg1 matchingComponents:(id)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)finalize;
 - (unsigned int)firstWeekday;
 - (id)gregorianStartDate;

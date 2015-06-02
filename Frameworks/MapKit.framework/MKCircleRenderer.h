@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKCircle;
+@interface MKCircleRenderer : MKOverlayPathRenderer
 
-@interface MKCircleRenderer : MKOverlayPathRenderer {
-}
-
-@property(readonly) MKCircle * circle;
+@property (nonatomic, readonly) MKCircle *circle;
 
 - (id)circle;
 - (void)createPath;

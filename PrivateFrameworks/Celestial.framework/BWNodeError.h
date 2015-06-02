@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCaptureRecordingSettings, FigCaptureStillImageSettings, NSString;
-
 @interface BWNodeError : NSObject {
     long _errorCode;
     FigCaptureRecordingSettings *_recordingSettings;
@@ -12,10 +10,10 @@
     int _uniqueID;
 }
 
-@property(readonly) long errorCode;
-@property(readonly) FigCaptureRecordingSettings * recordingSettings;
-@property(readonly) NSString * sourceNodeDescription;
-@property(readonly) FigCaptureStillImageSettings * stillImageSettings;
+@property (readonly) long errorCode;
+@property (readonly) FigCaptureRecordingSettings *recordingSettings;
+@property (readonly) NSString *sourceNodeDescription;
+@property (readonly) FigCaptureStillImageSettings *stillImageSettings;
 
 + (id)newError:(long)arg1 sourceNode:(id)arg2;
 + (id)newError:(long)arg1 sourceNode:(id)arg2 recordingSettings:(id)arg3;

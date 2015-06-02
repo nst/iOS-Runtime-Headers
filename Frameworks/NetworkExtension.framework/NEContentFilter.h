@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEContentFilterPlugin;
-
 @interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
     NEContentFilterPlugin *_plugin;
 }
 
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NEContentFilterPlugin * plugin;
+@property (getter=isEnabled) BOOL enabled;
+@property (copy) NEContentFilterPlugin *plugin;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class NSArray, NSDictionary;
-
 @interface DDOperation : NSOperation <NSCopying> {
     id _container;
     int _containerNotReadyTryCount;
@@ -18,18 +16,18 @@
     unsigned int _types;
 }
 
-@property(retain) id container;
-@property(retain) NSDictionary * context;
-@property unsigned int detectionTypes;
+@property (nonatomic, retain) id container;
+@property (nonatomic, retain) NSDictionary *context;
+@property (nonatomic) unsigned int detectionTypes;
 @property int generationNumber;
 @property BOOL isDiscarded;
 @property BOOL needContinuation;
-@property(retain) NSArray * results;
+@property (nonatomic, retain) NSArray *results;
 @property int tryCount;
 
 + (BOOL)_needsFullScannerForDetectionTypes:(unsigned int)arg1;
 + (struct __DDScanner { }*)_sharedScannerForTypes:(unsigned int)arg1;
-+ (id)urlificationBlockForTypes:(unsigned int)arg1;
++ (id /* block */)urlificationBlockForTypes:(unsigned int)arg1;
 
 - (void)_applyContainerRestrictionsToTypes;
 - (BOOL)_containerReadyForDetection;
@@ -46,8 +44,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)detectionTypes;
-- (void)dispatchContainerModificationBlock:(id)arg1;
-- (void)dispatchScanQueryCreationWithCompletionBlock:(id)arg1;
+- (void)dispatchContainerModificationBlock:(id /* block */)arg1;
+- (void)dispatchScanQueryCreationWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)doURLificationOnDocument;
 - (int)generationNumber;
 - (id)initWithContainer:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKParticipantChangeChatItem : CKMultilineStampChatItem {
-}
+@interface CKParticipantChangeChatItem : CKMultilineStampChatItem
 
 - (long long)changeType;
 - (id)handle;

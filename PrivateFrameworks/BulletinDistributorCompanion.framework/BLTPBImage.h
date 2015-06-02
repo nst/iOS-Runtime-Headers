@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSData;
-
 @interface BLTPBImage : PBCodable <NSCopying> {
     NSData *_data;
 }
 
-@property(retain) NSData * data;
+@property (nonatomic, retain) NSData *data;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

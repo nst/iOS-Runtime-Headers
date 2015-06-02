@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassDeleteDelegate>, NSString, PKPassGroupView, PKPassView, UIActionSheet;
-
 @interface PKPassDeleteSheet : NSObject <UIActionSheetDelegate> {
     UIActionSheet *_actionSheet;
     <PKPassDeleteDelegate> *_delegate;
@@ -11,15 +9,15 @@
     PKPassView *_passView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassDeleteDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) PKPassGroupView * groupView;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) PKPassView * passView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassDeleteDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) PKPassGroupView *groupView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) PKPassView *passView;
+@property (readonly) Class superclass;
 
-+ (void)performPassbookDeleteWithView:(id)arg1 completion:(id)arg2;
++ (void)performPassbookDeleteWithView:(id)arg1 completion:(id /* block */)arg2;
 
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_registerForEnterBackgroundNotification;

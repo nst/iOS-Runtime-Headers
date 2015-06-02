@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAReminderListSearch : SADomainCommand
 
-@interface SAReminderListSearch : SADomainCommand {
-}
-
-@property(copy) NSString * name;
+@property (nonatomic, copy) NSString *name;
 
 + (id)listSearch;
 + (id)listSearchWithDictionary:(id)arg1 context:(id)arg2;

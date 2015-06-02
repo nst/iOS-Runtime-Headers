@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOLocalizedAttribution : PBCodable <NSCopying> {
     NSString *_displayName;
     NSString *_language;
@@ -11,12 +9,12 @@
     NSMutableArray *_snippetLogoURLs;
 }
 
-@property(retain) NSString * displayName;
-@property(readonly) BOOL hasDisplayName;
-@property(readonly) BOOL hasLanguage;
-@property(retain) NSString * language;
-@property(retain) NSMutableArray * logoURLs;
-@property(retain) NSMutableArray * snippetLogoURLs;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic, readonly) BOOL hasLanguage;
+@property (nonatomic, retain) NSString *language;
+@property (nonatomic, retain) NSMutableArray *logoURLs;
+@property (nonatomic, retain) NSMutableArray *snippetLogoURLs;
 
 - (void)addLogoURLs:(id)arg1;
 - (void)addSnippetLogoURLs:(id)arg1;

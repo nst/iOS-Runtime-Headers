@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimatedSlideModel, KNAnimatedSlideView, KNPlaybackSession, KNSlide, KNSlideNode, NSIndexSet, NSMutableArray, NSMutableSet, NSSet, NSString, TSDCanvas, TSDTexturedRectangle, TSUNoCopyDictionary;
-
 @interface KNAnimatedSlideView : NSObject <TSDCanvasDelegate, TSDConnectedInfoReplacing> {
     NSMutableSet *mActiveAnimatedBuilds;
     KNSlideNode *mAlternateDestinationSlideNode;
@@ -49,31 +47,31 @@
     double mTransitionStartTime;
 }
 
-@property(readonly) NSSet * activeAnimatedBuilds;
-@property(readonly) TSDCanvas * canvas;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int eventCount;
-@property BOOL eventHasTriggered;
-@property unsigned int eventIndex;
-@property(copy) NSIndexSet * eventIndexesToAnimate;
-@property(readonly) BOOL hasBuilds;
-@property(readonly) unsigned int hash;
-@property(retain) TSDTexturedRectangle * incomingTexture;
-@property(readonly) BOOL isAnimating;
-@property(readonly) BOOL isDoneAnimating;
-@property(readonly) BOOL isMovieAnimating;
-@property(readonly) BOOL isNonMovieAnimationActive;
-@property(readonly) BOOL isNonMovieAnimationAnimating;
-@property(readonly) KNAnimatedSlideModel * model;
-@property(readonly) NSSet * movieRenderers;
-@property(readonly) KNAnimatedSlideView * nextASV;
-@property(retain) TSDTexturedRectangle * outgoingTexture;
-@property BOOL playsAutomaticTransitions;
-@property(readonly) KNPlaybackSession * session;
-@property BOOL skipDelayOnTransition;
-@property(readonly) Class superclass;
-@property BOOL triggerQueued;
+@property (nonatomic, readonly) NSSet *activeAnimatedBuilds;
+@property (nonatomic, readonly) TSDCanvas *canvas;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int eventCount;
+@property (nonatomic) BOOL eventHasTriggered;
+@property (nonatomic) unsigned int eventIndex;
+@property (nonatomic, copy) NSIndexSet *eventIndexesToAnimate;
+@property (nonatomic, readonly) BOOL hasBuilds;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) TSDTexturedRectangle *incomingTexture;
+@property (nonatomic, readonly) BOOL isAnimating;
+@property (nonatomic, readonly) BOOL isDoneAnimating;
+@property (nonatomic, readonly) BOOL isMovieAnimating;
+@property (nonatomic, readonly) BOOL isNonMovieAnimationActive;
+@property (nonatomic, readonly) BOOL isNonMovieAnimationAnimating;
+@property (nonatomic, readonly) KNAnimatedSlideModel *model;
+@property (nonatomic, readonly) NSSet *movieRenderers;
+@property (nonatomic, readonly) KNAnimatedSlideView *nextASV;
+@property (nonatomic, retain) TSDTexturedRectangle *outgoingTexture;
+@property (nonatomic) BOOL playsAutomaticTransitions;
+@property (nonatomic, readonly) KNPlaybackSession *session;
+@property (nonatomic) BOOL skipDelayOnTransition;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL triggerQueued;
 
 + (void)initialize;
 + (void)registerUserDefaults;
@@ -121,7 +119,7 @@
 - (void)p_clearMovieRenderers;
 - (id)p_getRenderersAtEventIndex:(int)arg1;
 - (id)p_infosForSlide;
-- (void)p_initializeTextureSetForRep:(id)arg1 info:(id)arg2 eventIndex:(unsigned int)arg3 shouldPrepareBuildAnimation:(BOOL)arg4 ignoreBuildVisibility:(BOOL)arg5 isRenderingToContext:(BOOL)arg6 buildInfos:(id)arg7 postInitBlock:(id)arg8;
+- (void)p_initializeTextureSetForRep:(id)arg1 info:(id)arg2 eventIndex:(unsigned int)arg3 shouldPrepareBuildAnimation:(BOOL)arg4 ignoreBuildVisibility:(BOOL)arg5 isRenderingToContext:(BOOL)arg6 buildInfos:(id)arg7 postInitBlock:(id /* block */)arg8;
 - (double)p_minimumDelay;
 - (void)p_movieStarted:(id)arg1;
 - (void)p_performAnimationWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3 delay:(double)arg4;
@@ -138,7 +136,7 @@
 - (void)pauseAnimations;
 - (BOOL)playAutomaticEvents;
 - (BOOL)playsAutomaticTransitions;
-- (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2 priority:(long)arg3 completionHandler:(id)arg4;
+- (void)preloadTexturesForEvent:(unsigned int)arg1 ignoreBuildVisibility:(BOOL)arg2 priority:(long)arg3 completionHandler:(id /* block */)arg4;
 - (void)registerForEventAnimationActiveCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventImmediateEndCallback:(SEL)arg1 target:(id)arg2;

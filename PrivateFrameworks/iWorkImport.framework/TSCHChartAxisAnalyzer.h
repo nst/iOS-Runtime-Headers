@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSCHChartAxis;
-
 @interface TSCHChartAxisAnalyzer : NSObject {
     TSCHChartAxis *mAxis;
     BOOL mDidCalculateMedian;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL, SKUIArtworkList;
-
 @interface SKUIVideo : NSObject {
     SKUIArtworkList *_artworks;
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) SKUIArtworkList * artworks;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) SKUIArtworkList *artworks;
 
 - (void).cxx_destruct;
 - (id)URL;

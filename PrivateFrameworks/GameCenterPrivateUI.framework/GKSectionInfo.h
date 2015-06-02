@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSArray, NSPredicate, NSString;
-
 @interface GKSectionInfo : NSObject {
     NSArray *_items;
     NSPredicate *_predicate;
@@ -12,11 +10,11 @@
     NSString *_title;
 }
 
-@property(retain) NSArray * items;
-@property(retain) NSPredicate * predicate;
-@property int section;
-@property(retain) NSArray * sortDescriptors;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic) int section;
+@property (nonatomic, retain) NSArray *sortDescriptors;
+@property (nonatomic, retain) NSString *title;
 
 - (void)dealloc;
 - (id)description;

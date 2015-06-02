@@ -6,7 +6,7 @@
     id _observer;
 }
 
-@property(readonly) id observer;
+@property (nonatomic, readonly) id observer;
 
 - (void)dealloc;
 - (id)description;

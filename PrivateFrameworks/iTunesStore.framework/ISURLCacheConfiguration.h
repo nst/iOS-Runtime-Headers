@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
-
 @interface ISURLCacheConfiguration : NSObject <NSCopying> {
     unsigned int _diskCapacity;
     unsigned int _memoryCapacity;
     NSString *_persistentIdentifier;
 }
 
-@property unsigned int diskCapacity;
-@property unsigned int memoryCapacity;
-@property(copy) NSString * persistentIdentifier;
+@property (nonatomic) unsigned int diskCapacity;
+@property (nonatomic) unsigned int memoryCapacity;
+@property (nonatomic, copy) NSString *persistentIdentifier;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

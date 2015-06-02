@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhoneChocoLandscape : UIKBRenderFactoryiPhoneLandscape {
-}
+@interface UIKBRenderFactoryiPhoneChocoLandscape : UIKBRenderFactoryiPhoneLandscape
 
 - (float)assistKeyFontSize;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Twitter.framework/Twitter
  */
 
-@class ACAccount, NSDictionary, NSURL, SLTwitterRequest;
-
 @interface TWRequest : NSObject {
     SLTwitterRequest *_request;
 }
 
-@property(readonly) NSURL * URL;
-@property(retain) ACAccount * account;
-@property(readonly) NSDictionary * parameters;
-@property(readonly) int requestMethod;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, readonly) NSDictionary *parameters;
+@property (nonatomic, readonly) int requestMethod;
 
 - (id)URL;
 - (id)account;
@@ -19,7 +17,7 @@
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
 - (id)parameters;
-- (void)performRequestWithHandler:(id)arg1;
+- (void)performRequestWithHandler:(id /* block */)arg1;
 - (int)requestMethod;
 - (void)setAccount:(id)arg1;
 - (id)signedURLRequest;

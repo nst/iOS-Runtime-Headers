@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString;
-
 @interface GKImageKey : NSObject {
     NSString *_basename;
     NSString *_cacheKey;
@@ -15,11 +13,11 @@
     } _size;
 }
 
-@property(retain) NSString * basename;
-@property(readonly) NSString * cacheKey;
-@property(readonly) NSString * filePath;
-@property(retain) NSString * imageID;
-@property struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) NSString *basename;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, readonly) NSString *filePath;
+@property (nonatomic, retain) NSString *imageID;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 + (id)fileNameWithIdentifierInImageSource:(id)arg1;
 + (id)keyForImageIdentifier:(id)arg1 withImageSource:(id)arg2;

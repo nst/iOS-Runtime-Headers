@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemResourceRequest;
+@interface SKUILoadItemResourceOperation : SKUILoadResourceOperation
 
-@interface SKUILoadItemResourceOperation : SKUILoadResourceOperation {
-}
-
-@property(copy,readonly) SKUIItemResourceRequest * resourceRequest;
+@property (readonly, copy) SKUIItemResourceRequest *resourceRequest;
 
 - (id)initWithResourceRequest:(id)arg1;
 - (void)main;

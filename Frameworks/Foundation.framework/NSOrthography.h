@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSString;
+@interface NSOrthography : NSObject <NSCoding, NSCopying>
 
-@interface NSOrthography : NSObject <NSCoding, NSCopying> {
-}
-
-@property(copy,readonly) NSString * dominantScript;
-@property(copy,readonly) NSDictionary * languageMap;
+@property (readonly, copy) NSString *dominantScript;
+@property (readonly, copy) NSDictionary *languageMap;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;

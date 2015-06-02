@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableViewCell;
-
 @interface EKEventPreviewDetailItem : EKEventDetailItem {
     UITableViewCell *_cell;
 }

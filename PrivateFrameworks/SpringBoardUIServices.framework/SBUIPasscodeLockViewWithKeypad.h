@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString, SBUIPasscodeLockNumberPad, UILabel, UIView;
-
 @interface SBUIPasscodeLockViewWithKeypad : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate, SBUIPasscodeLockNumberPadDelegate> {
     UIView *_bottomToNumberPadFiller;
     UIView *_entryFieldToNumberPadFiller;
@@ -19,14 +17,14 @@
     BOOL _useLightStyle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * lastCharacterBeforeBackspace;
-@property(retain) UILabel * statusSubtitleView;
-@property(retain) UILabel * statusTitleView;
-@property(readonly) Class superclass;
-@property(getter=_undoInputOnTouchCancellation,setter=_setUndoInputOnTouchCancellation:) BOOL undoInputOnTouchCancellation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *lastCharacterBeforeBackspace;
+@property (nonatomic, retain) UILabel *statusSubtitleView;
+@property (nonatomic, retain) UILabel *statusTitleView;
+@property (readonly) Class superclass;
+@property (getter=_undoInputOnTouchCancellation, setter=_setUndoInputOnTouchCancellation:, nonatomic) BOOL undoInputOnTouchCancellation;
 
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (BOOL)_includesStatusView;

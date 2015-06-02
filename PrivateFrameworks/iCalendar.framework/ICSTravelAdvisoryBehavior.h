@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSTravelAdvisoryBehavior : ICSProperty {
-}
+@interface ICSTravelAdvisoryBehavior : ICSProperty
 
 - (id)initWithString:(id)arg1;
 

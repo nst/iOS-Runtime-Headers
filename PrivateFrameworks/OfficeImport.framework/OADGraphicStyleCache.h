@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, OADGraphicFeatureCache;
-
 @interface OADGraphicStyleCache : NSObject {
     OADGraphicFeatureCache *mChartIdCache;
     OADGraphicFeatureCache *mColorCache;
-    OADGraphicFeatureCache *mDrawableStyleCacheArray[4];
-    OADGraphicFeatureCache *mFillCacheArray[4];
+    OADGraphicFeatureCache *mDrawableStyleCacheArray;
+    OADGraphicFeatureCache *mFillCacheArray;
     OADGraphicFeatureCache *mFontFaceCache;
     OADGraphicFeatureCache *mShadowCache;
     OADGraphicFeatureCache *mStrokeCache;

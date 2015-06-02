@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSDMediaInfo : TSDStyledInfo {
     struct { 
         unsigned int isPlaceholder : 1; 
@@ -15,14 +13,14 @@
     } mOriginalSize;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } defaultOriginalSize;
-@property unsigned int flags;
-@property BOOL isPlaceholder;
-@property(readonly) NSString * mediaDisplayName;
-@property(readonly) NSString * mediaFileType;
-@property struct CGSize { float x1; float x2; } originalSize;
-@property(readonly) struct CGSize { float x1; float x2; } rawDataSize;
-@property BOOL wasMediaReplaced;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } defaultOriginalSize;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic) BOOL isPlaceholder;
+@property (nonatomic, readonly) NSString *mediaDisplayName;
+@property (nonatomic, readonly) NSString *mediaFileType;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } rawDataSize;
+@property (nonatomic) BOOL wasMediaReplaced;
 
 - (struct CGPoint { float x1; float x2; })centerForReplacingWithNewMedia;
 - (id)copyWithContext:(id)arg1;

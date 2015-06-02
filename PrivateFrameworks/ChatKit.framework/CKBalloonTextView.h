@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, NSString;
-
 @interface CKBalloonTextView : UITextView <NSLayoutManagerDelegate> {
     NSAttributedString *_attributedText;
     float _capOffsetFromBoundsTop;
@@ -11,14 +9,14 @@
     BOOL _singleLine;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property float capOffsetFromBoundsTop;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float lastLineBaselineOffsetFromBoundsTop;
-@property(getter=isSingleLine) BOOL singleLine;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) float capOffsetFromBoundsTop;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float lastLineBaselineOffsetFromBoundsTop;
+@property (getter=isSingleLine, nonatomic) BOOL singleLine;
+@property (readonly) Class superclass;
 
 - (id)attributedText;
 - (float)capOffsetFromBoundsTop;

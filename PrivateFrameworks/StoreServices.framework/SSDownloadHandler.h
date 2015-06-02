@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSDownloadHandlerDelegate>, NSArray, NSObject<OS_dispatch_queue>, SSXPCConnection;
-
 @interface SSDownloadHandler : NSObject {
     SSXPCConnection *_controlConnection;
     <SSDownloadHandlerDelegate> *_delegate;
@@ -16,9 +14,9 @@
     BOOL _sessionsShouldBlockOtherDownloads;
 }
 
-@property <SSDownloadHandlerDelegate> * delegate;
-@property(copy) NSArray * downloadPhasesToIgnore;
-@property(readonly) long long handlerIdentifier;
+@property <SSDownloadHandlerDelegate> *delegate;
+@property (copy) NSArray *downloadPhasesToIgnore;
+@property (readonly) long long handlerIdentifier;
 @property BOOL sessionsNeedPowerAssertion;
 @property BOOL sessionsShouldBlockOtherDownloads;
 

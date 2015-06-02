@@ -11,10 +11,10 @@
     unsigned int _weight;
 }
 
-@property BOOL hasResidency;
-@property BOOL hasWeight;
-@property unsigned int residency;
-@property unsigned int weight;
+@property (nonatomic) BOOL hasResidency;
+@property (nonatomic) BOOL hasWeight;
+@property (nonatomic) unsigned int residency;
+@property (nonatomic) unsigned int weight;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

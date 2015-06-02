@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableTinyActionDelegate>, <ABStyleProvider>, ABPersonTableActionDataSource, UIView;
-
 @interface ABPersonTableTinyActionCell : UITableViewCell {
     ABPersonTableActionDataSource *_actionDataSource;
     <ABPersonTableTinyActionDelegate> *_delegate;
@@ -11,10 +9,10 @@
     UIView *_tinyActionContentView;
 }
 
-@property(retain) ABPersonTableActionDataSource * actionDataSource;
-@property(readonly) unsigned int actionsCount;
-@property <ABPersonTableTinyActionDelegate> * delegate;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic, retain) ABPersonTableActionDataSource *actionDataSource;
+@property (readonly) unsigned int actionsCount;
+@property (nonatomic) <ABPersonTableTinyActionDelegate> *delegate;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (void)_resizeInnerContentView;
 - (id)_tinyActionContentView;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUNowPlayingVideoViewController : MPVideoViewController {
-}
+@interface MPUNowPlayingVideoViewController : MPVideoViewController
 
 + (int)_activityIndicatorViewStyle;
 

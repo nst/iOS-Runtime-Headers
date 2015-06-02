@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSLocale;
-
 @interface VKMapSnapshotRequest : NSObject {
     NSLocale *_locale;
     int _mapType;
@@ -25,12 +23,12 @@
     unsigned int _tileGroupID;
 }
 
-@property(retain) NSLocale * locale;
-@property int mapType;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
-@property unsigned int scale;
-@property struct CGSize { float x1; float x2; } size;
-@property unsigned int tileGroupID;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic) int mapType;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property (nonatomic) unsigned int scale;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) unsigned int tileGroupID;
 
 - (id).cxx_construct;
 - (struct VKRequestKey { struct { struct { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; unsigned int x4; unsigned short x5; })_requestKey;

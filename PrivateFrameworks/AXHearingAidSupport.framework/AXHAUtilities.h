@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class MPAVRoutingController, NSString;
-
 @interface AXHAUtilities : NSObject <MPAVRoutingControllerDelegate> {
     BOOL _hearingAidRouteAvailable;
     MPAVRoutingController *_routingController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hearingAidRouteAvailable;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hearingAidRouteAvailable;
+@property (readonly) Class superclass;
 
 + (id)XDCObjectFromObject:(id)arg1;
 + (id)copyXPCMessageFromDictionary:(id)arg1 inReplyToXPCMessage:(id)arg2 error:(id*)arg3;

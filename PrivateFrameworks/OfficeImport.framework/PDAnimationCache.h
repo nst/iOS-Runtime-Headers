@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, PDAnimateMotionBehavior, PDAnimationTarget, PDBuild;
-
 @interface PDAnimationCache : NSObject {
     PDBuild *mBuild;
     double mDelay;
@@ -28,27 +26,27 @@
     double mValue;
 }
 
-@property(retain) PDBuild * build;
-@property double delay;
-@property double direction;
-@property double duration;
-@property(retain) NSString * groupId;
-@property BOOL hasDelay;
-@property BOOL hasDirection;
-@property BOOL hasDuration;
-@property BOOL hasPartCount;
-@property BOOL hasValue;
-@property BOOL isHead;
-@property int iterateType;
-@property int level;
-@property(retain) PDAnimateMotionBehavior * motionPath;
-@property int nodeType;
-@property int partCount;
-@property int presetClass;
-@property int presetId;
-@property int presetSubType;
-@property(retain) PDAnimationTarget * target;
-@property double value;
+@property (nonatomic, retain) PDBuild *build;
+@property (nonatomic) double delay;
+@property (nonatomic) double direction;
+@property (nonatomic) double duration;
+@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic) BOOL hasDelay;
+@property (nonatomic) BOOL hasDirection;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasPartCount;
+@property (nonatomic) BOOL hasValue;
+@property (nonatomic) BOOL isHead;
+@property (nonatomic) int iterateType;
+@property (nonatomic) int level;
+@property (nonatomic, retain) PDAnimateMotionBehavior *motionPath;
+@property (nonatomic) int nodeType;
+@property (nonatomic) int partCount;
+@property (nonatomic) int presetClass;
+@property (nonatomic) int presetId;
+@property (nonatomic) int presetSubType;
+@property (nonatomic, retain) PDAnimationTarget *target;
+@property (nonatomic) double value;
 
 + (id)createAnimationInfoDataForCacheItem:(id)arg1 order:(unsigned int)arg2;
 + (void)loadAnimationCache:(id)arg1 pdAnimation:(id)arg2 state:(id)arg3;

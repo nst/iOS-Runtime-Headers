@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSXPCConnection;
-
 @interface MCMDMClient : NSObject {
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)sharedClient;
 

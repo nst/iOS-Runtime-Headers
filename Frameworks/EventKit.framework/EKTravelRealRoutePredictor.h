@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKTravelAgendaItem, EKTravelRealRoutePredictorInternalDelegate, GEOComposedWaypoint, GEOQuickETARequester, GEORouteHypothesizer, NSDate, NSString;
-
 @interface EKTravelRealRoutePredictor : NSObject <EKTravelRoutePredictor> {
     EKTravelAgendaItem *_agendaItem;
     NSDate *_arrivalDate;
@@ -16,15 +14,15 @@
     int _travelMethod;
 }
 
-@property EKTravelAgendaItem * agendaItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) int travelMethod;
+@property (nonatomic) EKTravelAgendaItem *agendaItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int travelMethod;
 
-- (void)_getAutomobilePredictionFrom:(id)arg1 handler:(id)arg2;
-- (void)_getOneshotPredictionFrom:(id)arg1 transportType:(int)arg2 handler:(id)arg3;
+- (void)_getAutomobilePredictionFrom:(id)arg1 handler:(id /* block */)arg2;
+- (void)_getOneshotPredictionFrom:(id)arg1 transportType:(int)arg2 handler:(id /* block */)arg3;
 - (void)_newHypothesizer;
 - (void)_newQuickHypothesizerWithRequest:(id)arg1;
 - (id)agendaItem;
@@ -32,6 +30,6 @@
 - (id)initWithSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3 travelMethod:(int)arg4;
 - (void)setAgendaItem:(id)arg1;
 - (int)travelMethod;
-- (void)updateLocation:(id)arg1 handler:(id)arg2;
+- (void)updateLocation:(id)arg1 handler:(id /* block */)arg2;
 
 @end

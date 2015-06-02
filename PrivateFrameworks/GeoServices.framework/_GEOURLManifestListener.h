@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSMutableArray, NSObject<OS_dispatch_source>;
-
 @interface _GEOURLManifestListener : NSObject {
     NSMutableArray *_handlers;
     NSLock *_lock;
@@ -15,6 +13,6 @@
 - (void)_finish:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)waitForManifestWithHandler:(id)arg1;
+- (void)waitForManifestWithHandler:(id /* block */)arg1;
 
 @end

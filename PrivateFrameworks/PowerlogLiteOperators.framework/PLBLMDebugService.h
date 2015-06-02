@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary, PLEntryNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
-
 @interface PLBLMDebugService : PLService {
     PLEntryNotificationOperatorComposition *_bbCallback;
     PLEntryNotificationOperatorComposition *_ioreportCallback;
@@ -15,14 +13,14 @@
     PLXPCResponderOperatorComposition *_xpcResponderBLMDebugQuery;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * bbCallback;
-@property(retain) PLEntryNotificationOperatorComposition * ioreportCallback;
-@property(retain) PLEntryNotificationOperatorComposition * processmonitorCallback;
-@property(retain) PLEntryNotificationOperatorComposition * processnetworkCallback;
-@property(retain) NSMutableDictionary * triggers;
-@property(retain) PLEntryNotificationOperatorComposition * wifiCallback;
-@property(retain) PLXPCListenerOperatorComposition * xpcListenerBLMDebugTrigger;
-@property(retain) PLXPCResponderOperatorComposition * xpcResponderBLMDebugQuery;
+@property (retain) PLEntryNotificationOperatorComposition *bbCallback;
+@property (retain) PLEntryNotificationOperatorComposition *ioreportCallback;
+@property (retain) PLEntryNotificationOperatorComposition *processmonitorCallback;
+@property (retain) PLEntryNotificationOperatorComposition *processnetworkCallback;
+@property (retain) NSMutableDictionary *triggers;
+@property (retain) PLEntryNotificationOperatorComposition *wifiCallback;
+@property (retain) PLXPCListenerOperatorComposition *xpcListenerBLMDebugTrigger;
+@property (retain) PLXPCResponderOperatorComposition *xpcResponderBLMDebugQuery;
 
 + (id)entryEventNoneDefinitionBLMDebug;
 + (id)entryEventNoneDefinitions;

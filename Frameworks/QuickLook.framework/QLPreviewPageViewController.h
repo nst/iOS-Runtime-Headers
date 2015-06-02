@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewPageViewController : UIPageViewController {
-}
+@interface QLPreviewPageViewController : UIPageViewController
 
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 

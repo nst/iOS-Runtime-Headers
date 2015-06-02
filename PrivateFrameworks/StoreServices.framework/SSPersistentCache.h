@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSFileManager, NSObject<OS_dispatch_queue>, NSString;
-
 @interface SSPersistentCache : NSObject {
     NSString *_cacheName;
     NSFileManager *_fm;

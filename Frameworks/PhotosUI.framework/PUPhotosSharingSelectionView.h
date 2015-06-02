@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImageView;
-
 @interface PUPhotosSharingSelectionView : UICollectionReusableView {
     UIImageView *_imageView;
     BOOL _selected;
 }
 
-@property(getter=isSelected) BOOL selected;
+@property (getter=isSelected, nonatomic) BOOL selected;
 
 - (void).cxx_destruct;
 - (void)_updateSelected;

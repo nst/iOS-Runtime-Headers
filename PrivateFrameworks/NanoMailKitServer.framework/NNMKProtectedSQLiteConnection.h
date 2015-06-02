@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtectedSQLiteConnection : NNMKSQLiteConnection {
     BOOL _protectedDatabaseAttached;
     NSString *_protectedDatabaseName;
     NSString *_protectedDatabasePath;
 }
 
-@property(readonly) BOOL protectedDatabaseAttached;
-@property(retain) NSString * protectedDatabaseName;
-@property(retain) NSString * protectedDatabasePath;
+@property (nonatomic, readonly) BOOL protectedDatabaseAttached;
+@property (nonatomic, retain) NSString *protectedDatabaseName;
+@property (nonatomic, retain) NSString *protectedDatabasePath;
 
 - (void).cxx_destruct;
 - (id)_vfsModuleName;

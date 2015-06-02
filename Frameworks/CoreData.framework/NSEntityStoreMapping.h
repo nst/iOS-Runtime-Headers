@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSEntityDescription, NSString;
-
 @interface NSEntityStoreMapping : NSStoreMapping {
     NSEntityDescription *_entity;
     BOOL _isSingleTableEntity;

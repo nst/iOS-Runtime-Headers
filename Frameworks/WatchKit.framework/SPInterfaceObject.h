@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
-
 @interface SPInterfaceObject : NSObject {
     NSString *_interfaceProperty;
     NSString *_propertyIndex;
@@ -12,11 +10,11 @@
     NSString *_viewControllerID;
 }
 
-@property(copy) NSString * interfaceProperty;
-@property(copy) NSString * propertyIndex;
-@property int rowIndex;
-@property int tableIndex;
-@property(copy) NSString * viewControllerID;
+@property (nonatomic, copy) NSString *interfaceProperty;
+@property (nonatomic, copy) NSString *propertyIndex;
+@property (nonatomic) int rowIndex;
+@property (nonatomic) int tableIndex;
+@property (nonatomic, copy) NSString *viewControllerID;
 
 - (void).cxx_destruct;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPConfiguration : PBCodable <NSCopying> {
     unsigned long long _created;
     unsigned long long _expires;
@@ -14,11 +12,11 @@
     } _has;
 }
 
-@property unsigned long long created;
-@property unsigned long long expires;
-@property(retain) NSMutableArray * fields;
-@property BOOL hasCreated;
-@property BOOL hasExpires;
+@property (nonatomic) unsigned long long created;
+@property (nonatomic) unsigned long long expires;
+@property (nonatomic, retain) NSMutableArray *fields;
+@property (nonatomic) BOOL hasCreated;
+@property (nonatomic) BOOL hasExpires;
 
 - (void).cxx_destruct;
 - (void)addFields:(id)arg1;

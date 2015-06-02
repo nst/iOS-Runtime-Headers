@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSWPColumns : NSObject {
     unsigned int _columnCount;
     BOOL _equalWidth;
-    float _gapArray[9];
-    float _widthArray[10];
+    float _gapArray;
+    float _widthArray;
 }
 
-@property unsigned int columnCount;
-@property BOOL equalWidth;
+@property (nonatomic) unsigned int columnCount;
+@property (nonatomic) BOOL equalWidth;
 
 + (id)columns;
 

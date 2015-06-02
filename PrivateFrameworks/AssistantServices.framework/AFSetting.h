@@ -7,8 +7,8 @@
     id _value;
 }
 
-@property int type;
-@property(retain) id value;
+@property (nonatomic) int type;
+@property (nonatomic, retain) id value;
 
 + (BOOL)supportsSecureCoding;
 

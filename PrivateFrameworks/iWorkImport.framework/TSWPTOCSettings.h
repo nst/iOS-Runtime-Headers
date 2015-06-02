@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet, NSString, TSURetainedPointerKeyDictionary;
-
 @interface TSWPTOCSettings : TSPObject <TSPCopying, TSSPreset> {
     NSString *_displayName;
     TSURetainedPointerKeyDictionary *_map;
     int _scope;
 }
 
-@property(copy) NSString * displayName;
-@property(readonly) NSSet * indexedStyles;
-@property(retain) TSURetainedPointerKeyDictionary * map;
-@property(readonly) NSSet * paragraphStylesShownInTOC;
-@property(readonly) NSString * presetKind;
-@property int scope;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, readonly) NSSet *indexedStyles;
+@property (nonatomic, retain) TSURetainedPointerKeyDictionary *map;
+@property (nonatomic, readonly) NSSet *paragraphStylesShownInTOC;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic) int scope;
 
 - (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2;
 - (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2 showInTOC:(BOOL)arg3;

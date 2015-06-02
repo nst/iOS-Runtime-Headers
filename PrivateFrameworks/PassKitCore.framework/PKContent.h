@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSString, NSURL, PKBarcode;
-
 @interface PKContent : NSObject <NSSecureCoding> {
     NSURL *_appLaunchURL;
     PKBarcode *_barcode;
@@ -11,10 +9,10 @@
     NSArray *_storeIdentifiers;
 }
 
-@property(copy) NSURL * appLaunchURL;
-@property(retain) PKBarcode * barcode;
-@property(copy) NSString * localizedDescription;
-@property(copy) NSArray * storeIdentifiers;
+@property (nonatomic, copy) NSURL *appLaunchURL;
+@property (nonatomic, retain) PKBarcode *barcode;
+@property (nonatomic, copy) NSString *localizedDescription;
+@property (nonatomic, copy) NSArray *storeIdentifiers;
 
 + (id)contentWithFileURL:(id)arg1;
 + (BOOL)supportsSecureCoding;

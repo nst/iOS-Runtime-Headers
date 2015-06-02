@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface PKXPCObject : NSObject <NSSecureCoding> {
     NSObject<OS_xpc_object> *_object;
 }
 
-@property(retain) NSObject<OS_xpc_object> * object;
+@property (retain) NSObject<OS_xpc_object> *object;
 
 + (id)object:(id)arg1;
 + (BOOL)supportsSecureCoding;

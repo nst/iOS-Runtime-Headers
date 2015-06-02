@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSError, NSString;
-
 @interface MFDAFolderChangeResult : NSObject {
     NSError *_error;
     NSString *_folderID;
@@ -11,10 +9,10 @@
     int _statusCode;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) NSString * folderID;
-@property(readonly) NSString * folderName;
-@property(readonly) int statusCode;
+@property (readonly) NSError *error;
+@property (readonly) NSString *folderID;
+@property (readonly) NSString *folderName;
+@property (readonly) int statusCode;
 
 - (void)dealloc;
 - (id)description;

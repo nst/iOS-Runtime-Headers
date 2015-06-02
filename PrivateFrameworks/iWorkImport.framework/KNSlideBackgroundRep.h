@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNSlideBackgroundInfo;
-
 @interface KNSlideBackgroundRep : TSDRep <TSDMagicMoveMatching> {
     CALayer *mBlackBackgroundLayer;
     BOOL mFillCanApplyToCALayer;
     BOOL mLayerNeedsUpdate;
 }
 
-@property(readonly) KNSlideBackgroundInfo * slideBackgroundInfo;
+@property (readonly) KNSlideBackgroundInfo *slideBackgroundInfo;
 
 + (id)magicMoveMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureContext:(id)arg3;
 

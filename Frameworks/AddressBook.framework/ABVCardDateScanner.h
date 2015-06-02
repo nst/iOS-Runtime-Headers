@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSString;
-
 @interface ABVCardDateScanner : NSObject {
     unsigned int _position;
     NSString *_string;
 }
 
-@property(readonly) unsigned int position;
+@property (readonly) unsigned int position;
 
 + (id)scannerWithString:(id)arg1;
 

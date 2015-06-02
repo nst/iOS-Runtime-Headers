@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFZipEndOfCentralDirectoryRecord;
-
 @interface _PFZipFileArchive : NSObject {
     NSMutableDictionary *_cachedContents;
     NSMutableArray *_centralDirectoryEntries;
@@ -20,7 +18,7 @@
     NSDictionary *_properties;
     id _provider;
     void *_reserved;
-    void *_reserved2[5];
+    void *_reserved2;
     struct __zFlags { 
         unsigned int providerSuppliesContents : 1; 
         unsigned int providerSuppliesStreams : 1; 
@@ -31,7 +29,7 @@
     } _zFlags;
 }
 
-@property(readonly) NSArray * entryNames;
+@property (nonatomic, readonly) NSArray *entryNames;
 
 + (id)createStringFromBytes:(const char *)arg1 offset:(unsigned int*)arg2 length:(unsigned int)arg3;
 + (unsigned short)readInt16FromBytes:(const char *)arg1 offset:(unsigned int*)arg2;

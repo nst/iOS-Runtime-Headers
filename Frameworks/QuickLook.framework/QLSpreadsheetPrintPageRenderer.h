@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableArray, UIWebBrowserView, UIWebPaginationInfo;
-
 @interface QLSpreadsheetPrintPageRenderer : QLWebViewPrintPageHelper {
     unsigned int _currentPageIndex;
     unsigned int _currentURLIndex;

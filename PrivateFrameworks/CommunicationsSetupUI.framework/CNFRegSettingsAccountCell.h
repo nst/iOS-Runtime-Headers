@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegSettingsAccountCell : PSTableCell {
-}
+@interface CNFRegSettingsAccountCell : PSTableCell
 
 - (void)_updateLabelColors;
 - (BOOL)canReload;

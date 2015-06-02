@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>, NSString, NSURL, RCMutableWaveform, RCWaveform, RCWaveformGenerator;
-
 @interface RCWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
     RCMutableWaveform *_accumulatorWaveform;
     NSURL *_generatedWaveformOutputURL;
@@ -15,28 +13,28 @@
     NSHashTable *_weakObservers;
 }
 
-@property(readonly) RCWaveform * accumulatorWaveform;
-@property(readonly) double averagePowerLevelsRate;
-@property(readonly) BOOL canceled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) BOOL finished;
-@property(readonly) NSURL * generatedWaveformOutputURL;
-@property(readonly) BOOL hasSavedGeneratedWaveform;
-@property(readonly) BOOL hasStartedLoading;
-@property(readonly) unsigned int hash;
-@property(readonly) float loadingProgress;
-@property(readonly) NSObject<OS_dispatch_queue> * observerQueue;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
-@property(readonly) struct { double x1; double x2; } timeRangeToHighlight;
-@property(readonly) RCWaveformGenerator * waveformGenerator;
-@property(readonly) NSHashTable * weakObservers;
+@property (nonatomic, readonly) RCWaveform *accumulatorWaveform;
+@property (nonatomic, readonly) double averagePowerLevelsRate;
+@property (nonatomic, readonly) BOOL canceled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) BOOL finished;
+@property (nonatomic, readonly) NSURL *generatedWaveformOutputURL;
+@property (nonatomic, readonly) BOOL hasSavedGeneratedWaveform;
+@property (nonatomic, readonly) BOOL hasStartedLoading;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float loadingProgress;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct { double x1; double x2; } timeRangeToHighlight;
+@property (nonatomic, readonly) RCWaveformGenerator *waveformGenerator;
+@property (nonatomic, readonly) NSHashTable *weakObservers;
 
 - (void).cxx_destruct;
-- (void)_performObserversBlock:(id)arg1;
-- (void)_performOnObserversBlock:(id)arg1;
+- (void)_performObserversBlock:(id /* block */)arg1;
+- (void)_performOnObserversBlock:(id /* block */)arg1;
 - (id)accumulatorWaveform;
 - (void)addObserver:(id)arg1;
 - (double)averagePowerLevelsRate;
@@ -44,7 +42,7 @@
 - (BOOL)canceled;
 - (void)dealloc;
 - (double)duration;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id)arg2;
+- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)finished;
 - (id)generatedWaveformOutputURL;
 - (BOOL)hasSavedGeneratedWaveform;
@@ -60,7 +58,7 @@
 - (BOOL)setPaused:(BOOL)arg1;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })timeRangeToHighlight;
-- (void)updateAccumulatorWaveformSegmentsWithBlock:(id)arg1;
+- (void)updateAccumulatorWaveformSegmentsWithBlock:(id /* block */)arg1;
 - (BOOL)waitUntilFinished;
 - (id)waveformGenerator;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;

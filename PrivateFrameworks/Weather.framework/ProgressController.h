@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSTimer;
-
 @interface ProgressController : NSObject {
     NSTimer *_hideSpinnerTimer;
     int _loadingCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class RMSNowPlayingInfoMessage;
-
 @interface RMSNowPlayingInfoDidUpdateMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
@@ -12,10 +10,10 @@
     int _sessionIdentifier;
 }
 
-@property(readonly) BOOL hasNowPlayingInfo;
-@property BOOL hasSessionIdentifier;
-@property(retain) RMSNowPlayingInfoMessage * nowPlayingInfo;
-@property int sessionIdentifier;
+@property (nonatomic, readonly) BOOL hasNowPlayingInfo;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic, retain) RMSNowPlayingInfoMessage *nowPlayingInfo;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

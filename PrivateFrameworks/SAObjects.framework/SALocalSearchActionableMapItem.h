@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SALocalSearchActionableMapItem : SALocalSearchMapItem
 
-@interface SALocalSearchActionableMapItem : SALocalSearchMapItem {
-}
-
-@property(copy) NSArray * commands;
+@property (nonatomic, copy) NSArray *commands;
 
 + (id)actionableMapItem;
 + (id)actionableMapItemWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCGenerationID, BRCLocalContainer, NSData, NSString;
-
 @interface BRCPackageItem : NSObject {
     long long _assetRank;
     BRCLocalContainer *_container;
@@ -21,21 +19,21 @@
     int _type;
 }
 
-@property(readonly) long long assetRank;
-@property(readonly) NSData * contentSignature;
-@property(readonly) unsigned long long fileID;
-@property(readonly) BRCGenerationID * generationID;
-@property(readonly) BOOL isDirectory;
-@property(readonly) BOOL isFile;
-@property(readonly) BOOL isSymlink;
-@property(readonly) BOOL mode;
-@property(readonly) long long mtime;
-@property(readonly) unsigned long long packageDocumentID;
-@property(readonly) NSString * pathInPackage;
-@property(readonly) NSData * quarantineInfo;
-@property(readonly) long long size;
-@property(readonly) NSString * symlinkContent;
-@property(readonly) int type;
+@property (nonatomic, readonly) long long assetRank;
+@property (nonatomic, readonly) NSData *contentSignature;
+@property (nonatomic, readonly) unsigned long long fileID;
+@property (nonatomic, readonly) BRCGenerationID *generationID;
+@property (nonatomic, readonly) BOOL isDirectory;
+@property (nonatomic, readonly) BOOL isFile;
+@property (nonatomic, readonly) BOOL isSymlink;
+@property (nonatomic, readonly) BOOL mode;
+@property (nonatomic, readonly) long long mtime;
+@property (nonatomic, readonly) unsigned long long packageDocumentID;
+@property (nonatomic, readonly) NSString *pathInPackage;
+@property (nonatomic, readonly) NSData *quarantineInfo;
+@property (nonatomic, readonly) long long size;
+@property (nonatomic, readonly) NSString *symlinkContent;
+@property (nonatomic, readonly) int type;
 
 + (BOOL)_deleteSnapshotAtPath:(id)arg1 error:(id*)arg2;
 + (BOOL)_rescanDirectoryInPackage:(id)arg1 error:(id*)arg2;

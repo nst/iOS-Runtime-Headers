@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSString;
-
 @interface MBRestoreInfo : NSObject <NSCoding, NSCopying> {
     NSString *_backupBuildVersion;
     NSDate *_date;
@@ -11,10 +9,10 @@
     BOOL _wasCloudRestore;
 }
 
-@property(readonly) NSString * backupBuildVersion;
-@property(readonly) NSDate * date;
-@property(readonly) NSString * deviceBuildVersion;
-@property(readonly) BOOL wasCloudRestore;
+@property (readonly) NSString *backupBuildVersion;
+@property (readonly) NSDate *date;
+@property (readonly) NSString *deviceBuildVersion;
+@property (readonly) BOOL wasCloudRestore;
 
 - (id)backupBuildVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class BSActionListener, NSObject<OS_dispatch_queue>;
-
 @interface BSActionListenerController : NSObject {
     BSActionListener *_listener;
     unsigned int _listenerCount;

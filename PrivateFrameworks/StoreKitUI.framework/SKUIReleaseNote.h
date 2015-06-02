@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDate, NSString;
-
 @interface SKUIReleaseNote : NSObject {
     NSString *_changeNotes;
     NSDate *_date;
     NSString *_versionString;
 }
 
-@property(readonly) NSString * changeNotes;
-@property(readonly) NSDate * date;
-@property(readonly) NSString * versionString;
+@property (nonatomic, readonly) NSString *changeNotes;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSString *versionString;
 
 + (id)dateFormatter;
 

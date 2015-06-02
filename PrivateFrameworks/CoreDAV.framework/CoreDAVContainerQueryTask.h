@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVContainerQueryTaskDelegate>, NSSet, NSString;
-
 @interface CoreDAVContainerQueryTask : CoreDAVTask {
     Class _appSpecificDataItemClass;
     NSString *_appSpecificDataProp;
@@ -13,7 +11,7 @@
     NSSet *_searchTerms;
 }
 
-@property <CoreDAVContainerQueryTaskDelegate> * delegate;
+@property (nonatomic) <CoreDAVContainerQueryTaskDelegate> *delegate;
 
 + (id)_copySearchTermsFromSearchString:(id)arg1;
 

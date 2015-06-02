@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPrinterBrowserOwner>, NSArray, NSMutableArray, NSString, PKPrinter, PKPrinterBrowser, UIPrinterSearchingView;
-
 @interface UIPrinterBrowserViewController : UITableViewController <PKPrinterBrowserDelegate> {
     BOOL _clearCurrentPrinter;
     NSMutableArray *_filteredOutPrinters;
@@ -19,11 +17,11 @@
     BOOL _shouldFilterPrinters;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property float maximumPopoverHeight;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)adjustPopoverSize;

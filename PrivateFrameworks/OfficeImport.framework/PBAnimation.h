@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PBAnimation : NSObject {
-}
+@interface PBAnimation : NSObject
 
 + (void)generatePpt10AnimationFromState:(id)arg1 timings:(id)arg2;
 + (BOOL)hasPpt10Animations:(id)arg1;

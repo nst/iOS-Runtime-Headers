@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSData, SSURLConnectionRequest;
-
 @interface RadioFetchMetadataRequest : RadioRequest {
     NSArray *_itemIDs;
     SSURLConnectionRequest *_request;
@@ -11,9 +9,9 @@
     NSArray *_tracks;
 }
 
-@property(copy) NSArray * itemIDs;
-@property(copy) NSData * timedMetadata;
-@property(retain) NSArray * tracks;
+@property (nonatomic, copy) NSArray *itemIDs;
+@property (nonatomic, copy) NSData *timedMetadata;
+@property (nonatomic, retain) NSArray *tracks;
 
 - (void).cxx_destruct;
 - (id)_itemIDsToRadioTracks;
@@ -22,7 +20,7 @@
 - (void)setItemIDs:(id)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTracks:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 - (id)timedMetadata;
 - (id)tracks;
 

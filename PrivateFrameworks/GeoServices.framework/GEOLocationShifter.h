@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocationShiftFunctionRequest, GEOLocationShiftFunctionResponse, NSLock, NSMutableArray;
-
 @interface GEOLocationShifter : NSObject {
     BOOL _isRequestingShiftFunction;
     NSMutableArray *_locationsToShift;
@@ -12,9 +10,9 @@
     GEOLocationShiftFunctionRequest *_shiftRequest;
 }
 
-@property(readonly) BOOL locationShiftEnabled;
-@property(retain) GEOLocationShiftFunctionResponse * shiftFunction;
-@property(retain) GEOLocationShiftFunctionRequest * shiftRequest;
+@property (nonatomic, readonly) BOOL locationShiftEnabled;
+@property (nonatomic, retain) GEOLocationShiftFunctionResponse *shiftFunction;
+@property (nonatomic, retain) GEOLocationShiftFunctionRequest *shiftRequest;
 
 - (void)_countryProvidersDidChange:(id)arg1;
 - (void)_requestShiftFunctionForLocation:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
@@ -27,8 +25,8 @@
 - (void)setShiftFunction:(id)arg1;
 - (void)setShiftRequest:(id)arg1;
 - (BOOL)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 shiftedCoordinate:(struct { double x1; double x2; }*)arg3 shiftedAccuracy:(double*)arg4;
-- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3;
-- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id)arg3 mustGoToNetworkCallback:(id)arg4 errorHandler:(id)arg5 callbackQueue:(id)arg6;
+- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)shiftCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 withCompletionHandler:(id /* block */)arg3 mustGoToNetworkCallback:(id /* block */)arg4 errorHandler:(id /* block */)arg5 callbackQueue:(id)arg6;
 - (id)shiftFunction;
 - (id)shiftRequest;
 

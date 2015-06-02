@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIWebContainerViewDelegate>, NSString, UIWebView;
-
 @interface RUIWebContainerView : UIView <UIWebViewDelegate> {
     <RUIWebContainerViewDelegate> *_delegate;
     BOOL _highlighted;
@@ -11,13 +9,13 @@
     UIWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUIWebContainerViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(readonly) Class superclass;
-@property(readonly) UIWebView * webView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUIWebContainerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIWebView *webView;
 
 - (void).cxx_destruct;
 - (void)_setHighlightedNow;

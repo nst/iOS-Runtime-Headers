@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenCompassSettings : SASettingOpenAppSettings {
-}
+@interface SASettingOpenCompassSettings : SASettingOpenAppSettings
 
 + (id)openCompassSettings;
 + (id)openCompassSettingsWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyGroupDateItem : ABPropertyGroupItem {
-}
+@interface ABPropertyGroupDateItem : ABPropertyGroupItem
 
 + (void)initialize;
 

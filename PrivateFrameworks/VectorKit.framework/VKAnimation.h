@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <VKAnimationRunner>, NSString;
-
 @interface VKAnimation : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     double _duration;
     struct { 
         unsigned int resuming : 1; 
@@ -26,31 +16,23 @@
     int _priority;
     <VKAnimationRunner> *_runner;
     double _startTimestamp;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stepHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _timingFunction;
-
+    id /* block */ _stepHandler;
+    id /* block */ _timingFunction;
 }
 
-@property(copy) id completionHandler;
-@property double duration;
-@property(readonly) int priority;
-@property(readonly) BOOL running;
-@property BOOL runsForever;
-@property(copy) id stepHandler;
-@property(copy) id timingFunction;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) BOOL running;
+@property (nonatomic) BOOL runsForever;
+@property (nonatomic, copy) id /* block */ stepHandler;
+@property (nonatomic, copy) id /* block */ timingFunction;
 
-+ (void)setDragCoefficientGetter:(id)arg1;
++ (void)setDragCoefficientGetter:(id /* block */)arg1;
 
 - (id).cxx_construct;
 - (void)_stopAnimation:(BOOL)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
@@ -67,15 +49,15 @@
 - (void)resume;
 - (BOOL)running;
 - (BOOL)runsForever;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setRunsForever:(BOOL)arg1;
-- (void)setStepHandler:(id)arg1;
-- (void)setTimingFunction:(id)arg1;
+- (void)setStepHandler:(id /* block */)arg1;
+- (void)setTimingFunction:(id /* block */)arg1;
 - (void)startWithRunner:(id)arg1;
-- (id)stepHandler;
+- (id /* block */)stepHandler;
 - (void)stop;
-- (id)timingFunction;
+- (id /* block */)timingFunction;
 - (void)transferToRunner:(id)arg1;
 
 @end

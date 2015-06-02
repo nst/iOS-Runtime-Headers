@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface ML3SuicidePact : NSObject {
     int _notifyToken;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableSet *_signatures;
 }
 
-@property(readonly) BOOL isSigned;
+@property (nonatomic, readonly) BOOL isSigned;
 
 + (id)sharedPact;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class NSError, NSObject<GSProtocol>, NSObject<OS_dispatch_group>;
-
 @interface GSDaemonProxySync : NSProxy <GSProtocol> {
     NSError *_error;
     NSObject<OS_dispatch_group> *_group;
@@ -12,8 +10,8 @@
     id _result;
 }
 
-@property(retain) NSError * error;
-@property(retain) id result;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) id result;
 
 + (id)proxy;
 

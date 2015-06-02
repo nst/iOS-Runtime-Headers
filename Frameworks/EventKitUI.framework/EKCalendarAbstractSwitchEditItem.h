@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray, UILabel, UISwitch, UIView;
-
 @interface EKCalendarAbstractSwitchEditItem : EKCalendarEditItem {
     BOOL _allowEventAlerts;
     NSMutableArray *_cells;
@@ -14,11 +12,11 @@
     BOOL _underlyingCalendarState;
 }
 
-@property BOOL allowEventAlerts;
-@property(retain) NSMutableArray * cells;
-@property BOOL switchState;
-@property(retain) UISwitch * toggleSwitch;
-@property BOOL underlyingCalendarState;
+@property (nonatomic) BOOL allowEventAlerts;
+@property (nonatomic, retain) NSMutableArray *cells;
+@property (nonatomic) BOOL switchState;
+@property (nonatomic, retain) UISwitch *toggleSwitch;
+@property (nonatomic) BOOL underlyingCalendarState;
 
 - (void).cxx_destruct;
 - (void)_applyStyleToUILabel:(id)arg1;

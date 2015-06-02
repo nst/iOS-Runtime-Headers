@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class <UIStateRestoring>, MPUDataSource, MPUQueryDataSource, NSString;
-
 @interface MPUDataSourceViewController : UIViewController <UIStateRestoring, UIViewControllerRestoration> {
     MPUDataSource *_dataSource;
     BOOL _hasEverReloadedData;
@@ -11,16 +9,16 @@
     BOOL _visible;
 }
 
-@property(retain) MPUDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class objectRestorationClass;
-@property(readonly) MPUQueryDataSource * queryDataSource;
-@property(readonly) <UIStateRestoring> * restorationParent;
-@property BOOL shouldReloadWhenVisible;
-@property(readonly) Class superclass;
-@property(getter=isVisible) BOOL visible;
+@property (nonatomic, retain) MPUDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) Class objectRestorationClass;
+@property (nonatomic, readonly) MPUQueryDataSource *queryDataSource;
+@property (nonatomic, readonly) <UIStateRestoring> *restorationParent;
+@property (nonatomic) BOOL shouldReloadWhenVisible;
+@property (readonly) Class superclass;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

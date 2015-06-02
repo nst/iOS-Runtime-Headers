@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICardViewElement, SKUIViewElementLayoutContext;
-
 @interface SKUICardLayout : NSObject {
     SKUICardViewElement *_cardViewElement;
     SKUIViewElementLayoutContext *_layoutContext;
 }
 
-@property(readonly) SKUICardViewElement * cardViewElement;
-@property(readonly) float horizontalContentInset;
-@property(readonly) SKUIViewElementLayoutContext * layoutContext;
-@property(readonly) int layoutStyle;
+@property (nonatomic, readonly) SKUICardViewElement *cardViewElement;
+@property (nonatomic, readonly) float horizontalContentInset;
+@property (nonatomic, readonly) SKUIViewElementLayoutContext *layoutContext;
+@property (nonatomic, readonly) int layoutStyle;
 
 + (BOOL)allowsViewElement:(id)arg1;
 + (id)layoutWithCardViewElement:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, AVAssetInspectorLoader, NSMutableArray;
-
 @interface AVCompositionInternal : NSObject {
     AVAssetInspector *assetInspector;
     long assetInspectorInitializationOnce;

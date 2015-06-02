@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, NSMutableArray, NSString, UIPDFAnnotationController, UIPDFAnnotationView, UIPDFPage, UIPDFPopupAnnotation, UIPDFSelection;
-
 @interface UIPDFAnnotation : NSObject {
     UIPDFAnnotationController *_annotationController;
     NSString *_annotationID;
@@ -26,19 +24,19 @@
     BOOL editable;
 }
 
-@property UIPDFAnnotationController * annotationController;
-@property(retain) UIPDFAnnotationView * annotationView;
-@property(retain) NSString * associatedAnnotationID;
-@property(retain) NSString * contents;
-@property(retain) id data;
-@property(retain) CALayer * drawingLayer;
-@property BOOL editable;
-@property int index;
-@property UIPDFPage * page;
-@property UIPDFPopupAnnotation * popup;
-@property(readonly) BOOL recognizeGestures;
-@property UIPDFSelection * selection;
-@property unsigned int tag;
+@property (nonatomic) UIPDFAnnotationController *annotationController;
+@property (nonatomic, retain) UIPDFAnnotationView *annotationView;
+@property (nonatomic, retain) NSString *associatedAnnotationID;
+@property (nonatomic, retain) NSString *contents;
+@property (nonatomic, retain) id data;
+@property (nonatomic, retain) CALayer *drawingLayer;
+@property (nonatomic) BOOL editable;
+@property (nonatomic) int index;
+@property (nonatomic) UIPDFPage *page;
+@property (nonatomic) UIPDFPopupAnnotation *popup;
+@property (nonatomic, readonly) BOOL recognizeGestures;
+@property (nonatomic) UIPDFSelection *selection;
+@property (nonatomic) unsigned int tag;
 
 + (id)newAnnotationWithPage:(id)arg1 fromArchive:(id)arg2;
 

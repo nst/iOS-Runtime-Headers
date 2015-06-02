@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOTileServerProxyDelegate>, GEOResourceManifestConfiguration, NSLocale, NSObject<OS_dispatch_queue>;
-
 @interface GEOTileServerProxy : NSObject {
     <GEOTileServerProxyDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQ;
@@ -11,8 +9,8 @@
     GEOResourceManifestConfiguration *_manifestConfiguration;
 }
 
-@property <GEOTileServerProxyDelegate> * delegate;
-@property NSObject<OS_dispatch_queue> * delegateQ;
+@property (nonatomic) <GEOTileServerProxyDelegate> *delegate;
+@property (nonatomic) NSObject<OS_dispatch_queue> *delegateQ;
 
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(BOOL)arg2;
 - (void)calculateFreeableSize;

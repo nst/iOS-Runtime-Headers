@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSString;
+@interface CAMutableMeshTransform : CAMeshTransform
 
-@interface CAMutableMeshTransform : CAMeshTransform {
-}
-
-@property(copy) NSString * depthNormalization;
+@property (copy) NSString *depthNormalization;
 @property int subdivisionSteps;
 
 + (id)meshTransform;

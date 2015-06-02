@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableDictionary, NSMutableSet, NSString, PUAdjustmentsModeBadge, PUSlidersCollectionView, UIButton, UILabel;
-
 @interface PUCompactAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource> {
     NSArray *__visibleModes;
     NSMutableSet *_expandedSupermodes;
@@ -18,13 +16,13 @@
     NSMutableDictionary *_titleViewsByKey;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_addOrRemoveViewByKey:(id)arg1 wantsView:(BOOL)arg2 animated:(BOOL)arg3 factory:(id)arg4;
+- (id)_addOrRemoveViewByKey:(id)arg1 wantsView:(BOOL)arg2 animated:(BOOL)arg3 factory:(id /* block */)arg4;
 - (BOOL)_isExpandedSupermode:(id)arg1;
 - (void)_modeToggleTapped:(id)arg1;
 - (void)_setExpanded:(BOOL)arg1 forSupermode:(id)arg2 exclusive:(BOOL)arg3 animated:(BOOL)arg4;

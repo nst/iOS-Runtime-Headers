@@ -6,7 +6,7 @@
     id _values;
 }
 
-@property(copy) id values;
+@property (nonatomic, copy) id values;
 
 + (id)predicateWithProperty:(id)arg1 valueSet:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;

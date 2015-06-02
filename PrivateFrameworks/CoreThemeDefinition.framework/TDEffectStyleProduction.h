@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDEffectStyleProduction : TDElementProduction {
-}
+@interface TDEffectStyleProduction : TDElementProduction
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;

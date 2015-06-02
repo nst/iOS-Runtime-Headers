@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString;
-
 @interface TUHardPauseController : NSObject {
     unsigned short _cachedAppropriateState;
     NSString *_cachedDisplayString;
@@ -12,10 +10,10 @@
 }
 
 @property unsigned short cachedAppropriateState;
-@property(retain) NSString * cachedDisplayString;
+@property (retain) NSString *cachedDisplayString;
 @property BOOL cachedValuesAreValid;
-@property(readonly) NSString * displayString;
-@property unsigned short state;
+@property (nonatomic, readonly) NSString *displayString;
+@property (nonatomic) unsigned short state;
 
 + (id)sharedHardPauseController;
 

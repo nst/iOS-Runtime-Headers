@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class UIImageView, UILabel;
-
 @interface CertUIKeyValueView : UIView {
     UILabel *_keyLabel;
     float _preferredValueLabelOriginX;
@@ -12,11 +10,11 @@
     UILabel *_verifiedLabel;
 }
 
-@property(retain) UILabel * keyLabel;
-@property float preferredValueLabelOriginX;
-@property(retain) UILabel * valueLabel;
-@property(retain) UIImageView * verifiedImageView;
-@property(retain) UILabel * verifiedLabel;
+@property (nonatomic, retain) UILabel *keyLabel;
+@property (nonatomic) float preferredValueLabelOriginX;
+@property (nonatomic, retain) UILabel *valueLabel;
+@property (nonatomic, retain) UIImageView *verifiedImageView;
+@property (nonatomic, retain) UILabel *verifiedLabel;
 
 + (float)defaultPreferredValueLabelOriginX;
 

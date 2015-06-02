@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMReachability;
-
 @interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMReachabilityDelegate, IMSystemMonitorListener> {
     unsigned int _hostFlags;
     IMReachability *_hostReachability;
@@ -13,12 +11,12 @@
     BOOL _isSleeping;
 }
 
-@property unsigned int _hostFlags;
-@property(retain) IMReachability * _hostReachability;
-@property unsigned int _ipFlags;
-@property(retain) IMReachability * _ipReachability;
-@property BOOL _isConnected;
-@property BOOL _isSleeping;
+@property (nonatomic) unsigned int _hostFlags;
+@property (nonatomic, retain) IMReachability *_hostReachability;
+@property (nonatomic) unsigned int _ipFlags;
+@property (nonatomic, retain) IMReachability *_ipReachability;
+@property (nonatomic) BOOL _isConnected;
+@property (nonatomic) BOOL _isSleeping;
 
 - (void)_clearReachability:(id*)arg1 flags:(unsigned int*)arg2;
 - (void)_doCallbackLater;

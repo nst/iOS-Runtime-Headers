@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableArray, NSString, SUClientInterface, SUNavigationItem, SURotationController, SUViewControllerContext, SUViewControllerScriptProperties, UIBarButtonItem, UIViewController;
-
 @interface SUViewController : UIViewController <ISOperationDelegate, SUScriptNativeObject> {
     SUViewControllerScriptProperties *_cachedScriptProperties;
     BOOL _canBeWeakScriptReference;
@@ -27,27 +25,27 @@
     int _transitionSafetyCount;
 }
 
-@property(getter=_cachedScriptProperties,readonly) SUViewControllerScriptProperties * _cachedScriptProperties;
-@property(getter=_isEnteringForeground,readonly) BOOL _enteringForeground;
-@property(getter=_pendingDialogs,readonly) NSArray * _pendingDialogs;
-@property(getter=_restoredContext,readonly) SUViewControllerContext * _restoredContext;
-@property(retain) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) double defaultPNGExpirationTime;
-@property(readonly) NSString * defaultPNGName;
-@property(copy,readonly) NSString * description;
-@property(readonly) UIViewController * footerViewController;
-@property(readonly) unsigned int hash;
-@property(retain) UIViewController * inputAccessoryViewController;
-@property(getter=isLoading) BOOL loading;
-@property(retain,readonly) SUNavigationItem * navigationItem;
-@property BOOL shouldAdjustContentOffsets;
-@property BOOL shouldExcludeFromNavigationHistory;
-@property BOOL shouldInvalidateForMemoryPurge;
-@property BOOL showsLibraryButton;
-@property(readonly) Class superclass;
-@property(getter=isVisible,readonly) BOOL visible;
-@property(getter=isVisibleAndFrontmost,readonly) BOOL visibleAndFrontmost;
+@property (getter=_cachedScriptProperties, nonatomic, readonly) SUViewControllerScriptProperties *_cachedScriptProperties;
+@property (getter=_isEnteringForeground, nonatomic, readonly) BOOL _enteringForeground;
+@property (getter=_pendingDialogs, nonatomic, readonly) NSArray *_pendingDialogs;
+@property (getter=_restoredContext, nonatomic, readonly) SUViewControllerContext *_restoredContext;
+@property (nonatomic, retain) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double defaultPNGExpirationTime;
+@property (nonatomic, readonly) NSString *defaultPNGName;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIViewController *footerViewController;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIViewController *inputAccessoryViewController;
+@property (getter=isLoading, nonatomic) BOOL loading;
+@property (nonatomic, readonly, retain) SUNavigationItem *navigationItem;
+@property (nonatomic) BOOL shouldAdjustContentOffsets;
+@property (nonatomic) BOOL shouldExcludeFromNavigationHistory;
+@property (nonatomic) BOOL shouldInvalidateForMemoryPurge;
+@property (nonatomic) BOOL showsLibraryButton;
+@property (readonly) Class superclass;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
+@property (getter=isVisibleAndFrontmost, nonatomic, readonly) BOOL visibleAndFrontmost;
 
 - (int)ITunesStoreUIBarStyle;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;

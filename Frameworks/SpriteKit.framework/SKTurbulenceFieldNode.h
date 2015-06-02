@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTurbulenceFieldNode : SKNoiseFieldNode {
-}
+@interface SKTurbulenceFieldNode : SKNoiseFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

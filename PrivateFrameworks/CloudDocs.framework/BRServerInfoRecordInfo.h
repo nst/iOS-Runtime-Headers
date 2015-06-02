@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSData, NSString;
-
 @interface BRServerInfoRecordInfo : PBCodable <NSCopying> {
     unsigned long long _bounceNo;
     NSData *_encryptedBasename;
@@ -18,22 +16,22 @@
     NSData *_zoneProtectionInfo;
 }
 
-@property unsigned long long bounceNo;
-@property(retain) NSData * encryptedBasename;
-@property(retain) NSString * etag;
-@property(retain) NSString * extension;
-@property BOOL hasBounceNo;
-@property(readonly) BOOL hasEncryptedBasename;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasExtension;
-@property(readonly) BOOL hasRecordID;
-@property(readonly) BOOL hasRecordProtectionInfo;
-@property(readonly) BOOL hasZoneName;
-@property(readonly) BOOL hasZoneProtectionInfo;
-@property(retain) NSString * recordID;
-@property(retain) NSData * recordProtectionInfo;
-@property(retain) NSString * zoneName;
-@property(retain) NSData * zoneProtectionInfo;
+@property (nonatomic) unsigned long long bounceNo;
+@property (nonatomic, retain) NSData *encryptedBasename;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSString *extension;
+@property (nonatomic) BOOL hasBounceNo;
+@property (nonatomic, readonly) BOOL hasEncryptedBasename;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasExtension;
+@property (nonatomic, readonly) BOOL hasRecordID;
+@property (nonatomic, readonly) BOOL hasRecordProtectionInfo;
+@property (nonatomic, readonly) BOOL hasZoneName;
+@property (nonatomic, readonly) BOOL hasZoneProtectionInfo;
+@property (nonatomic, retain) NSString *recordID;
+@property (nonatomic, retain) NSData *recordProtectionInfo;
+@property (nonatomic, retain) NSString *zoneName;
+@property (nonatomic, retain) NSData *zoneProtectionInfo;
 
 - (unsigned long long)bounceNo;
 - (void)copyTo:(id)arg1;

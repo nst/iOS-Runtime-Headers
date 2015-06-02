@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSCHChartAxisID : NSObject <NSCopying> {
     unsigned int mOrdinal;
     int mType;
 }
 
-@property(readonly) unsigned int ordinal;
-@property(readonly) int type;
+@property (readonly) unsigned int ordinal;
+@property (readonly) int type;
 
 + (id)axisIDWithType:(int)arg1 ordinal:(unsigned int)arg2;
 

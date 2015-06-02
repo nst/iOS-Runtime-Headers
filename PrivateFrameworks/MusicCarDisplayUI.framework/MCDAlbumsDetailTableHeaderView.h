@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MCDButton, NSString, UIImage, UIImageView, UILabel, UIView;
-
 @interface MCDAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
     UIImageView *_artworkImageView;
     UIView *_separatorView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shuffleActionBlock;
-
+    id /* block */ _shuffleActionBlock;
     MCDButton *_shuffleButton;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * artworkImage;
-@property(copy) id shuffleActionBlock;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic, copy) id /* block */ shuffleActionBlock;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_shuffleButtonAction:(id)arg1;
@@ -32,9 +22,9 @@
 - (void)layoutSubviews;
 - (void)setArtworkImage:(id)arg1;
 - (void)setDuration:(double)arg1 count:(unsigned int)arg2;
-- (void)setShuffleActionBlock:(id)arg1;
+- (void)setShuffleActionBlock:(id /* block */)arg1;
 - (void)setTitle:(id)arg1;
-- (id)shuffleActionBlock;
+- (id /* block */)shuffleActionBlock;
 - (id)title;
 
 @end

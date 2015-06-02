@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactViewDataSource>, <ABContactViewDelegate>, ABContactHeaderView, CNContact, NSDictionary, UIColor, UIView;
-
 @interface ABContactView : UITableView {
     NSDictionary *_actionTextAttributes;
     BOOL _cellsLayoutCachingEnabled;
@@ -21,20 +19,20 @@
     NSDictionary *_valueTextAttributes;
 }
 
-@property(copy) NSDictionary * actionTextAttributes;
-@property(retain) UIColor * backgroundColor;
-@property(getter=isCellsLayoutCachingEnabled) BOOL cellsLayoutCachingEnabled;
-@property(retain) CNContact * contact;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
-@property(retain) UIView * customHeaderView;
-@property <ABContactViewDataSource> * dataSource;
-@property(readonly) ABContactHeaderView * defaultHeaderView;
-@property <ABContactViewDelegate> * delegate;
-@property(copy) NSDictionary * labelTextAttributes;
-@property(retain) UIColor * sectionBackgroundColor;
-@property(retain) UIColor * selectedCellBackgroundColor;
-@property(retain) UIColor * separatorColor;
-@property(copy) NSDictionary * valueTextAttributes;
+@property (nonatomic, copy) NSDictionary *actionTextAttributes;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (getter=isCellsLayoutCachingEnabled, nonatomic) BOOL cellsLayoutCachingEnabled;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
+@property (nonatomic, retain) UIView *customHeaderView;
+@property (nonatomic) <ABContactViewDataSource> *dataSource;
+@property (nonatomic, readonly) ABContactHeaderView *defaultHeaderView;
+@property (nonatomic) <ABContactViewDelegate> *delegate;
+@property (nonatomic, copy) NSDictionary *labelTextAttributes;
+@property (nonatomic, retain) UIColor *sectionBackgroundColor;
+@property (nonatomic, retain) UIColor *selectedCellBackgroundColor;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic, copy) NSDictionary *valueTextAttributes;
 
 + (id)allCardProperties;
 + (id)cellIdentifierForActions;

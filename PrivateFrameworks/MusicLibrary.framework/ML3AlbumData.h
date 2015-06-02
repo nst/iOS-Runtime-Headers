@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3AlbumData : NSObject {
     long long _albumPID;
     int _albumYear;
@@ -13,12 +11,12 @@
     int _userRating;
 }
 
-@property long long albumPID;
-@property int albumYear;
-@property long long order;
-@property unsigned char section;
-@property(retain) NSString * sortAlbum;
-@property int userRating;
+@property (nonatomic) long long albumPID;
+@property (nonatomic) int albumYear;
+@property (nonatomic) long long order;
+@property (nonatomic) unsigned char section;
+@property (nonatomic, retain) NSString *sortAlbum;
+@property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
 - (long long)albumPID;

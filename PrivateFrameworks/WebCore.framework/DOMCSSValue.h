@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMCSSValue : DOMObject
 
-@interface DOMCSSValue : DOMObject {
-}
-
-@property(copy) NSString * cssText;
-@property(readonly) unsigned short cssValueType;
+@property (copy) NSString *cssText;
+@property (readonly) unsigned short cssValueType;
 
 - (id)cssText;
 - (unsigned short)cssValueType;

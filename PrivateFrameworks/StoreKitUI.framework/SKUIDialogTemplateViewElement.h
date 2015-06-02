@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUILabelViewElement;
-
 @interface SKUIDialogTemplateViewElement : SKUIViewElement {
     int _dialogType;
 }
 
-@property(readonly) NSArray * buttons;
-@property(readonly) int dialogType;
-@property(readonly) SKUILabelViewElement * message;
-@property(readonly) SKUILabelViewElement * title;
+@property (nonatomic, readonly) NSArray *buttons;
+@property (nonatomic, readonly) int dialogType;
+@property (nonatomic, readonly) SKUILabelViewElement *message;
+@property (nonatomic, readonly) SKUILabelViewElement *title;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)buttons;

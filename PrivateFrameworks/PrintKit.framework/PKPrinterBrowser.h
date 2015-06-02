@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class <PKPrinterBrowserDelegate>, NSFileHandle, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface PKPrinterBrowser : NSObject {
     <PKPrinterBrowserDelegate> *delegate;
     NSFileHandle *handle;
@@ -20,16 +18,16 @@
     NSObject<OS_dispatch_queue> *printersQueue;
 }
 
-@property <PKPrinterBrowserDelegate> * delegate;
-@property(retain) NSFileHandle * handle;
-@property(retain) NSMutableArray * pendingList;
-@property(retain) NSMutableDictionary * printers;
-@property(retain) NSMutableDictionary * printersByUUID;
-@property(readonly) NSObject<OS_dispatch_queue> * printersQueue;
+@property (nonatomic) <PKPrinterBrowserDelegate> *delegate;
+@property (nonatomic, retain) NSFileHandle *handle;
+@property (nonatomic, retain) NSMutableArray *pendingList;
+@property (nonatomic, retain) NSMutableDictionary *printers;
+@property (nonatomic, retain) NSMutableDictionary *printersByUUID;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *printersQueue;
 
 + (id)browserWithDelegate:(id)arg1;
 
-- (void)addBlockToPendingList:(id)arg1;
+- (void)addBlockToPendingList:(id /* block */)arg1;
 - (void)addLimboPrinter:(id)arg1 local:(BOOL)arg2;
 - (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
 - (void)addWithPrinterURI:(id)arg1 andBonjourURI:(id)arg2 andDisplayName:(id)arg3 isMCProfile:(BOOL)arg4;

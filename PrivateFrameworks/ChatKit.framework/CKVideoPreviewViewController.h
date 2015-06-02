@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKVideoPreviewViewControllerDelegate>, AVPlayer, AVPlayerItem, AVPlayerLayer;
-
 @interface CKVideoPreviewViewController : UIViewController {
     AVPlayer *_avPlayer;
     AVPlayerItem *_avPlayerItem;
@@ -13,13 +11,13 @@
     <CKVideoPreviewViewControllerDelegate> *_videoPreviewDelegate;
 }
 
-@property(retain) AVPlayer * avPlayer;
-@property(retain) AVPlayerItem * avPlayerItem;
-@property(retain) AVPlayerLayer * avPlayerLayer;
-@property(getter=isPlaying,readonly) BOOL playing;
-@property BOOL reachedEnd;
-@property BOOL redisplayStatusBar;
-@property <CKVideoPreviewViewControllerDelegate> * videoPreviewDelegate;
+@property (nonatomic, retain) AVPlayer *avPlayer;
+@property (nonatomic, retain) AVPlayerItem *avPlayerItem;
+@property (nonatomic, retain) AVPlayerLayer *avPlayerLayer;
+@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (nonatomic) BOOL reachedEnd;
+@property (nonatomic) BOOL redisplayStatusBar;
+@property (nonatomic) <CKVideoPreviewViewControllerDelegate> *videoPreviewDelegate;
 
 - (id)avPlayer;
 - (id)avPlayerItem;

@@ -6,7 +6,7 @@
     float _scale;
 }
 
-@property float scale;
+@property (nonatomic) float scale;
 
 + (id)operatorWithScale:(float)arg1;
 

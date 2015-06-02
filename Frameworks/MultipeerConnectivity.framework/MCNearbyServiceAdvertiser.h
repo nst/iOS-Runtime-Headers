@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class <MCNearbyServiceAdvertiserDelegate>, MCPeerID, NSData, NSDictionary, NSMutableDictionary, NSNetService, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MCNearbyServiceAdvertiser : NSObject <NSNetServiceDelegate> {
     NSData *_TXTRecordData;
     <MCNearbyServiceAdvertiserDelegate> *_delegate;
@@ -20,23 +18,23 @@
     BOOL _wasAdvertising;
 }
 
-@property(retain) NSData * TXTRecordData;
-@property(copy,readonly) NSString * debugDescription;
-@property <MCNearbyServiceAdvertiserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSDictionary * discoveryInfo;
-@property(copy) NSString * formattedServiceType;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * invites;
-@property BOOL isAdvertising;
-@property(readonly) MCPeerID * myPeerID;
-@property(retain) NSNetService * networkServer;
-@property int outgoingInviteID;
-@property(retain) NSMutableDictionary * peers;
-@property(copy) NSString * serviceType;
-@property(readonly) Class superclass;
-@property(retain) NSObject<OS_dispatch_queue> * syncQueue;
-@property BOOL wasAdvertising;
+@property (nonatomic, retain) NSData *TXTRecordData;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MCNearbyServiceAdvertiserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDictionary *discoveryInfo;
+@property (nonatomic, copy) NSString *formattedServiceType;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *invites;
+@property (nonatomic) BOOL isAdvertising;
+@property (nonatomic, readonly) MCPeerID *myPeerID;
+@property (nonatomic, retain) NSNetService *networkServer;
+@property (nonatomic) int outgoingInviteID;
+@property (nonatomic, retain) NSMutableDictionary *peers;
+@property (nonatomic, copy) NSString *serviceType;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic) BOOL wasAdvertising;
 
 - (id)TXTRecordData;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
@@ -83,8 +81,8 @@
 - (void)syncHandleInviteConnect:(id)arg1 fromPeer:(id)arg2;
 - (id)syncQueue;
 - (void)syncReceivedData:(id)arg1 fromPeer:(id)arg2;
-- (void)syncSendData:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)syncSendDictionary:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)syncSendData:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)syncSendDictionary:(id)arg1 toPeer:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)syncStartAdvertisingPeer;
 - (void)syncStopAdvertisingPeer;
 - (id)txtRecordDataWithDiscoveryInfo:(id)arg1;

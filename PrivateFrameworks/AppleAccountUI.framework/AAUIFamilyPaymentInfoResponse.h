@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class AAUIFamilyCreditCard;
-
 @interface AAUIFamilyPaymentInfoResponse : AAResponse {
     AAUIFamilyCreditCard *_creditCard;
 }
 
-@property(retain) AAUIFamilyCreditCard * creditCard;
+@property (nonatomic, retain) AAUIFamilyCreditCard *creditCard;
 
 - (void).cxx_destruct;
 - (id)_parsedDateForServerMonth:(int)arg1 year:(int)arg2;

@@ -6,7 +6,7 @@
     int _databaseScope;
 }
 
-@property int databaseScope;
+@property (nonatomic) int databaseScope;
 
 - (void)configureRequest:(id)arg1;
 - (int)databaseScope;

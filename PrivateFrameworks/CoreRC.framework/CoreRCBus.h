@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CoreRCBusDelegate>, CoreRCManager, NSMutableSet, NSSet, NSUUID;
-
 @interface CoreRCBus : NSObject <NSCopying, NSSecureCoding> {
     <CoreRCBusDelegate> *_delegate;
     NSMutableSet *_devicesInternal;
@@ -11,9 +9,9 @@
     NSUUID *_uniqueID;
 }
 
-@property(readonly) NSSet * devices;
-@property(readonly) NSMutableSet * devicesInternal;
-@property(readonly) NSUUID * uniqueID;
+@property (nonatomic, readonly) NSSet *devices;
+@property (nonatomic, readonly) NSMutableSet *devicesInternal;
+@property (nonatomic, readonly) NSUUID *uniqueID;
 
 + (BOOL)supportsSecureCoding;
 

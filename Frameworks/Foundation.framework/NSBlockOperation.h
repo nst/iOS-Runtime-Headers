@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray;
-
 @interface NSBlockOperation : NSOperation {
     id _private2;
     void *_reserved2;
 }
 
-@property(copy,readonly) NSArray * executionBlocks;
+@property (readonly, copy) NSArray *executionBlocks;
 
-+ (id)blockOperationWithBlock:(id)arg1;
++ (id)blockOperationWithBlock:(id /* block */)arg1;
 
-- (void)addExecutionBlock:(id)arg1;
+- (void)addExecutionBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)executionBlocks;
 - (void)finalize;
 - (id)init;
-- (id)initWithBlock:(id)arg1;
+- (id)initWithBlock:(id /* block */)arg1;
 - (void)main;
 
 @end

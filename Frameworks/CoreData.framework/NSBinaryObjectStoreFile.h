@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface NSBinaryObjectStoreFile : NSObject {
     int _databaseVersion;
     NSDictionary *_fullMetadata;

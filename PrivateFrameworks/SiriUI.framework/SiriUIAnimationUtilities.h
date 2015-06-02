@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIAnimationUtilities : NSObject {
-}
+@interface SiriUIAnimationUtilities : NSObject
 
 + (float)defaultAnimationDuration;
 + (id)defaultTimingFunction;

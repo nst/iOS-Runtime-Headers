@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton;
-
 @interface UIButtonLabel : UILabel {
     UIButton *_button;
     BOOL _reverseShadow;

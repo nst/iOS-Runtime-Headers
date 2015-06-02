@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText;
+@interface SASTStockComparisonItem : AceObject <SASTTemplateItem>
 
-@interface SASTStockComparisonItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * stockValueFacet;
-@property(retain) SAUIDecoratedText * subtitle;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
-@property(retain) SAUIDecoratedText * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *stockValueFacet;
+@property (nonatomic, retain) SAUIDecoratedText *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
+@property (nonatomic, retain) SAUIDecoratedText *value;
 
 + (id)stockComparisonItem;
 + (id)stockComparisonItemWithDictionary:(id)arg1 context:(id)arg2;

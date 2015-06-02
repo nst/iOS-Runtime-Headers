@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSString, NSUUID;
-
 @interface TSUUUIDPath : NSObject <NSCopying, NSFastEnumeration> {
     NSArray *_uuids;
 }
 
-@property(readonly) NSString * UUIDPathString;
-@property(readonly) NSUUID * lastUUID;
-@property(readonly) NSArray * uuids;
+@property (nonatomic, readonly) NSString *UUIDPathString;
+@property (nonatomic, readonly) NSUUID *lastUUID;
+@property (nonatomic, readonly) NSArray *uuids;
 
 + (id)lastUUIDFromUUIDPathString:(id)arg1;
 
@@ -23,7 +16,7 @@
 - (id)UUIDPathByAppendingUUID:(id)arg1;
 - (id)UUIDPathString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithArray:(id)arg1;

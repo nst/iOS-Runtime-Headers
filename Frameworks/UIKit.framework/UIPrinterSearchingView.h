@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIActivityIndicatorView, UILabel;
-
 @interface UIPrinterSearchingView : UIView {
     UIActivityIndicatorView *_searchingIndicator;
     UILabel *_searchingLabel;

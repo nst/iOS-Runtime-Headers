@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SASTTemplateAction>, NSNumber, NSString, SALocation;
+@interface SASTMapViewItem : AceObject <SASTActionableTemplateItem>
 
-@interface SASTMapViewItem : AceObject <SASTActionableTemplateItem> {
-}
-
-@property(retain) <SASTTemplateAction> * action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SALocation * location;
-@property(readonly) Class superclass;
-@property(copy) NSNumber * zoomLevel;
+@property (nonatomic, retain) <SASTTemplateAction> *action;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SALocation *location;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *zoomLevel;
 
 + (id)mapViewItem;
 + (id)mapViewItemWithDictionary:(id)arg1 context:(id)arg2;

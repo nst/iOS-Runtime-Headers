@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxisID, TSCHChartAxisLineLayoutItem, TSCHChartAxisPaddingLayoutItem, TSCHChartAxisTickMarksLayoutItem, TSCHChartAxisTitleLayoutItem, TSCHChartReferenceLineLabelPaddingLayoutItem, TSCHChartReferenceLineLabelsLayoutItem;
-
 @interface TSCHChartAxisLayoutItem : TSCHChartLayoutItem {
     TSCHChartAxisID *mAxisID;
     TSCHChartAxisLineLayoutItem *mAxisLine;
@@ -20,16 +18,16 @@
     TSCHChartAxisTickMarksLayoutItem *mTickMarks;
 }
 
-@property(retain) TSCHChartAxisID * axisID;
-@property(readonly) TSCHChartAxisLineLayoutItem * axisLineLayoutItem;
-@property(readonly) TSCHChartAxisPaddingLayoutItem * axisPaddingLayoutItem;
-@property(readonly) int axisPosition;
-@property(readonly) TSCHChartAxisTickMarksLayoutItem * axisTickMarksLayoutItem;
-@property(readonly) TSCHChartAxisTitleLayoutItem * axisTitleLayoutItem;
-@property struct CGSize { float x1; float x2; } chartBodySize;
-@property(readonly) TSCHChartReferenceLineLabelPaddingLayoutItem * refLineLabelPadding;
-@property(readonly) TSCHChartReferenceLineLabelsLayoutItem * refLineLabels;
-@property(retain) TSCHChartAxisID * referenceLineLabelAxisID;
+@property (nonatomic, retain) TSCHChartAxisID *axisID;
+@property (nonatomic, readonly) TSCHChartAxisLineLayoutItem *axisLineLayoutItem;
+@property (nonatomic, readonly) TSCHChartAxisPaddingLayoutItem *axisPaddingLayoutItem;
+@property (nonatomic, readonly) int axisPosition;
+@property (nonatomic, readonly) TSCHChartAxisTickMarksLayoutItem *axisTickMarksLayoutItem;
+@property (nonatomic, readonly) TSCHChartAxisTitleLayoutItem *axisTitleLayoutItem;
+@property (nonatomic) struct CGSize { float x1; float x2; } chartBodySize;
+@property (nonatomic, readonly) TSCHChartReferenceLineLabelPaddingLayoutItem *refLineLabelPadding;
+@property (nonatomic, readonly) TSCHChartReferenceLineLabelsLayoutItem *refLineLabels;
+@property (nonatomic, retain) TSCHChartAxisID *referenceLineLabelAxisID;
 
 - (id)axisID;
 - (id)axisLineLayoutItem;

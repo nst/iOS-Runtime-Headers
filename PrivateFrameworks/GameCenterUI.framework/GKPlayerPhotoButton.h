@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKPlayer, NSString;
-
 @interface GKPlayerPhotoButton : GKRoundButton <GKPlayerPhotoContainer> {
     GKPlayer *_player;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GKPlayer * player;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GKPlayer *player;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)player;
 - (void)refreshPhoto;
-- (void)refreshPhotoWithCompletionHandler:(id)arg1;
+- (void)refreshPhotoWithCompletionHandler:(id /* block */)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setPlayer:(id)arg1;
 

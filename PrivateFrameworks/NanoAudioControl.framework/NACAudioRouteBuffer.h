@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACAudioRouteBuffer : PBCodable <NSCopying> {
     struct { 
         unsigned int routeSubtype : 1; 
@@ -19,18 +17,18 @@
     NSString *_uniqueIdentifier;
 }
 
-@property BOOL hasPicked;
-@property(readonly) BOOL hasRouteName;
-@property BOOL hasRouteSubtype;
-@property BOOL hasRouteType;
-@property BOOL hasSupportsVolumeControl;
-@property(readonly) BOOL hasUniqueIdentifier;
-@property BOOL picked;
-@property(retain) NSString * routeName;
-@property int routeSubtype;
-@property int routeType;
-@property BOOL supportsVolumeControl;
-@property(retain) NSString * uniqueIdentifier;
+@property (nonatomic) BOOL hasPicked;
+@property (nonatomic, readonly) BOOL hasRouteName;
+@property (nonatomic) BOOL hasRouteSubtype;
+@property (nonatomic) BOOL hasRouteType;
+@property (nonatomic) BOOL hasSupportsVolumeControl;
+@property (nonatomic, readonly) BOOL hasUniqueIdentifier;
+@property (nonatomic) BOOL picked;
+@property (nonatomic, retain) NSString *routeName;
+@property (nonatomic) int routeSubtype;
+@property (nonatomic) int routeType;
+@property (nonatomic) BOOL supportsVolumeControl;
+@property (nonatomic, retain) NSString *uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

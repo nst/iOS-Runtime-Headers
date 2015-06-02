@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSXPCConnection;
-
 @interface PKUsageNotificationServer : NSObject {
     NSXPCConnection *_connection;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CAMediaTimingFunction, NSArray, NSMutableArray;
-
 @interface TSCHMultiDataLayerAnimationInfo : NSObject <NSCopying> {
     BOOL mAboveIntercept;
     BOOL mAtIntercept;
@@ -39,20 +37,20 @@
     CAMediaTimingFunction *mTimingFunction;
 }
 
-@property BOOL aboveIntercept;
-@property BOOL atIntercept;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrameInRepElementSpace;
-@property BOOL crossesIntercept;
-@property BOOL currentAboveIntercept;
-@property BOOL currentAtIntercept;
-@property float duration;
-@property BOOL elementUndefined;
-@property BOOL horizontalChart;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } interceptRect;
-@property(copy) NSArray * keyTimes;
-@property(readonly) NSArray * layerAnimationValues;
-@property BOOL shouldAnimate;
-@property(retain) CAMediaTimingFunction * timingFunction;
+@property (nonatomic) BOOL aboveIntercept;
+@property (nonatomic) BOOL atIntercept;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrameInRepElementSpace;
+@property (nonatomic) BOOL crossesIntercept;
+@property (nonatomic) BOOL currentAboveIntercept;
+@property (nonatomic) BOOL currentAtIntercept;
+@property (nonatomic) float duration;
+@property (nonatomic) BOOL elementUndefined;
+@property (nonatomic) BOOL horizontalChart;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } interceptRect;
+@property (nonatomic, copy) NSArray *keyTimes;
+@property (nonatomic, readonly) NSArray *layerAnimationValues;
+@property (nonatomic) BOOL shouldAnimate;
+@property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)animationInfo;
 

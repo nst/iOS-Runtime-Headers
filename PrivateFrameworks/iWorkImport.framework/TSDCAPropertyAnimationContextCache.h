@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSDCAPropertyAnimationContextCache : TSDCAAnimationContextCache {
     BOOL _isAnimationKeyDoubleSided;
     BOOL _isAnimationKeyHidden;
@@ -11,10 +9,10 @@
     NSString *_keyPath;
 }
 
-@property(readonly) BOOL isAnimationKeyDoubleSided;
-@property(readonly) BOOL isAnimationKeyHidden;
-@property(readonly) BOOL isAnimationKeyTypeOfRotation;
-@property(readonly) NSString * keyPath;
+@property (nonatomic, readonly) BOOL isAnimationKeyDoubleSided;
+@property (nonatomic, readonly) BOOL isAnimationKeyHidden;
+@property (nonatomic, readonly) BOOL isAnimationKeyTypeOfRotation;
+@property (nonatomic, readonly) NSString *keyPath;
 
 - (id)initWithAnimation:(id)arg1;
 - (BOOL)isAnimationKeyDoubleSided;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CLLocationManager, NSArray, NSString, SKUIContentInsetScrollView, SKUIExploreTemplateElement, SKUIStorePageSectionsViewController, UINavigationController, UISplitViewController;
-
 @interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
     NSArray *_contentOffsets;
     SKUIContentInsetScrollView *_contentScrollView;
@@ -16,10 +14,10 @@
     UISplitViewController *_splitVC;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

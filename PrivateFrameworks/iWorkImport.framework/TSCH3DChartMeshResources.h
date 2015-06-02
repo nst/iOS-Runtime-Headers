@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSCH3DChartMeshCreator>, TSCH3DChartMeshSharedResource, TSCH3DChartTexcoordSharedResource, TSCH3DGeometry, TSCH3DResource, TSCHChartSeries;
-
 @interface TSCH3DChartMeshResources : NSObject <TSCHUnretainedParent> {
     struct GeometryArrays { 
         unsigned int offset; 
@@ -21,10 +19,10 @@
     TSCH3DChartMeshSharedResource *mVertex;
 }
 
-@property(readonly) TSCH3DResource * bounds;
-@property(readonly) TSCH3DResource * normal;
-@property(readonly) TSCH3DResource * texcoord;
-@property(readonly) TSCH3DResource * vertex;
+@property (nonatomic, readonly) TSCH3DResource *bounds;
+@property (nonatomic, readonly) TSCH3DResource *normal;
+@property (nonatomic, readonly) TSCH3DResource *texcoord;
+@property (nonatomic, readonly) TSCH3DResource *vertex;
 
 + (id)nullBuffer;
 + (id)resourcesWithSeries:(id)arg1 creator:(id)arg2;
@@ -33,7 +31,7 @@
 - (id)bounds;
 - (void)clearParent;
 - (void)dealloc;
-- (struct GeometryResource { int x1; struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; } x2; struct GeometryArrays { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct ObjcSharedPtr<TSCH3DGeometry> { id x_4_1_1; } x4; })geometryResourceWithPrimitiveType:(int)arg1;
+- (struct GeometryResource { int x1; struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; struct GeometryArrays { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; } x_2_1_2; struct ObjcSharedPtr<TSCH3DGeometry> { id x_3_2_1; } x_2_1_3; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x_2_1_4; void*x_2_1_5; void*x_2_1_6; void*x_2_1_7; void*x_2_1_8; void*x_2_1_9; void*x_2_1_10; void*x_2_1_11; void*x_2_1_12; void*x_2_1_13; void*x_2_1_14; void*x_2_1_15; void*x_2_1_16; oneway void*x_2_1_17; void*x_2_1_18; void*x_2_1_19; void*x_2_1_20; void*x_2_1_21; void*x_2_1_22; void*x_2_1_23; inout unsigned short x_2_1_24; long doublex_2_1_25; out BOOL x_2_1_26; void*x_2_1_27; void*x_2_1_28; void*x_2_1_29; in void*x_2_1_30; long doublex_2_1_31; void*x_2_1_32; short x_2_1_33; void*x_2_1_34; const int x_2_1_35; void*x_2_1_36; long x_2_1_37; int x_2_1_38; void*x_2_1_39; void*x_2_1_40; const void*x_2_1_41; void*x_2_1_42; oneway void*x_2_1_43; void*x_2_1_44; void*x_2_1_45; void*x_2_1_46; void*x_2_1_47; void*x_2_1_48; void*x_2_1_49; unsigned short x_2_1_50; void*x_2_1_51; void*x_2_1_52; unsigned int x_2_1_53; void*x_2_1_54; void*x_2_1_55; in void*x_2_1_56; void*x_2_1_57; out void*x_2_1_58; out void x_2_1_59; void*x_2_1_60; const long doublex_2_1_61; void*x_2_1_62; long x_2_1_63; void*x_2_1_64; void*x_2_1_65; void*x_2_1_66; void*x_2_1_67; void*x_2_1_68; void*x_2_1_69; void*x_2_1_70; void*x_2_1_71; void*x_2_1_72; void*x_2_1_73; void*x_2_1_74; void*x_2_1_75; void*x_2_1_76; void*x_2_1_77; void*x_2_1_78; void*x_2_1_79; void*x_2_1_80; void*x_2_1_81; void*x_2_1_82; void*x_2_1_83; void*x_2_1_84; void*x_2_1_85; void*x_2_1_86; struct x_2_1_87; void*x_2_1_88; void*x_2_1_89; void*x_2_1_90; in void*x_2_1_91; void*x_2_1_92; void*x_2_1_93; double x_2_1_94; void*x_2_1_95; void*x_2_1_96; void*x_2_1_97; int x_2_1_98; void*x_2_1_99; in void*x_2_1_100; void*x_2_1_101; void*x_2_1_102; void*x_2_1_103; void*x_2_1_104; void*x_2_1_105; void*x_2_1_106; void*x_2_1_107; void*x_2_1_108; void*x_2_1_109; void*x_2_1_110; void*x_2_1_111; oneway void*x_2_1_112; void*x_2_1_113; void*x_2_1_114; void*x_2_1_115; void*x_2_1_116; void*x_2_1_117; void*x_2_1_118; void*x_2_1_119; short x_2_1_120; void*x_2_1_121; void*x_2_1_122; void*x_2_1_123; void*x_2_1_124; void*x_2_1_125; void*x_2_1_126; void*x_2_1_127; int x_2_1_128; void*x_2_1_129; void*x_2_1_130; void*x_2_1_131; void*x_2_1_132; void*x_2_1_133; void*x_2_1_134; void*x_2_1_135; void*x_2_1_136; void*x_2_1_137; void*x_2_1_138; void*x_2_1_139; void*x_2_1_140; void*x_2_1_141; void*x_2_1_142; oneway void*x_2_1_143; void*x_2_1_144; void*x_2_1_145; void*x_2_1_146; void*x_2_1_147; void*x_2_1_148; void*x_2_1_149; void*x_2_1_150; void*x_2_1_151; void*x_2_1_152; void*x_2_1_153; void*x_2_1_154; void*x_2_1_155; void*x_2_1_156; void*x_2_1_157; oneway void*x_2_1_158; void*x_2_1_159; void*x_2_1_160; void*x_2_1_161; void*x_2_1_162; void*x_2_1_163; void*x_2_1_164; void*x_2_1_165; unsigned long x_2_1_166; unsigned char x_2_1_167; long x_2_1_168; out void*x_2_1_169; double x_2_1_170; long doublex_2_1_171; out void*x_2_1_172; in long x_2_1_173; out void*x_2_1_174; double x_2_1_175; bycopy void*x_2_1_176; void*x_2_1_177; const void*x_2_1_178; void*x_2_1_179; int x_2_1_180; out in void*x_2_1_181; void*x_2_1_182; void*x_2_1_183; void*x_2_1_184; void*x_2_1_185; void*x_2_1_186; void*x_2_1_187; void*x_2_1_188; void*x_2_1_189; void*x_2_1_190; void*x_2_1_191; void*x_2_1_192; void*x_2_1_193; void*x_2_1_194; void*x_2_1_195; void*x_2_1_196; void*x_2_1_197; void*x_2_1_198; void*x_2_1_199; void*x_2_1_200; void*x_2_1_201; void*x_2_1_202; void*x_2_1_203; void*x_2_1_204; void*x_2_1_205; void*x_2_1_206; void*x_2_1_207; void*x_2_1_208; void*x_2_1_209; void*x_2_1_210; void*x_2_1_211; void x_2_1_212; void*x_2_1_213; } x2; id x3; SEL x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void x15; void*x16; })geometryResourceWithPrimitiveType:(int)arg1;
 - (id)initWithSeries:(id)arg1 creator:(id)arg2;
 - (id)normal;
 - (void)regenerate;

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class GLKTextureInfo, NSArray, UIImage;
-
 @interface FIUIRingsViewController : GLKViewController <FIUIRingGroupAnimationStatusDelegate> {
     BOOL _buffersCreated;
     struct CGPoint { 
         float x; 
         float y; 
     } _cachedGroupCenter;
-    float _cachedPointSize[3];
+    float _cachedPointSize;
     struct CGPoint { 
         float x; 
         float y; 
-    } _cachedPosition[3];
-    float _cachedThickness[3];
+    } _cachedPosition;
+    float _cachedThickness;
     unsigned int _color1Attribute;
     unsigned int _color2Attribute;
     unsigned int _coordPercentAttribute;
@@ -86,12 +84,12 @@
     BOOL _viewIsVisible;
 }
 
-@property(retain) UIImage * iconSpriteImage;
-@property unsigned int iconTextureColumns;
-@property unsigned int iconTextureRows;
-@property(readonly) NSArray * ringGroups;
-@property int ringGroupsPerRow;
-@property float ringSpacing;
+@property (nonatomic, retain) UIImage *iconSpriteImage;
+@property (nonatomic) unsigned int iconTextureColumns;
+@property (nonatomic) unsigned int iconTextureRows;
+@property (nonatomic, readonly) NSArray *ringGroups;
+@property (nonatomic) int ringGroupsPerRow;
+@property (nonatomic) float ringSpacing;
 
 + (id)_iconSpriteImage;
 + (id)_ringsViewControllerConfiguredForCompanionWithNumberOfRings:(int)arg1 ringType:(int)arg2;

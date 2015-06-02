@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DNormalDirectionMapper : NSObject {
-}
+@interface TSCH3DNormalDirectionMapper : NSObject
 
 @end

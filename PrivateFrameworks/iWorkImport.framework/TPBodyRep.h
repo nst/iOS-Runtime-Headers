@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSSet;
-
 @interface TPBodyRep : TSWPRep {
     NSSet *_lastSelectedInfos;
 }

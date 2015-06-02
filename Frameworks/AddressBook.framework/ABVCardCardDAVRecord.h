@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface ABVCardCardDAVRecord : ABVCardRecord {
-}
+@interface ABVCardCardDAVRecord : ABVCardRecord
 
 + (BOOL)includeABClipRectInVCardPhotos;
 + (BOOL)includeImageURIInVCards;

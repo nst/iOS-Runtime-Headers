@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableSet, OITSUPathSet;
-
 @interface OITSUPathSet : NSObject <NSCopying> {
     NSMutableDictionary *mBasePathToNumberMap;
     NSMutableSet *mPaths;

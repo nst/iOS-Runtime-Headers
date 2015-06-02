@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UIColor, UILabel, UIView;
-
 @interface SKUIProductPageTableExpandableHeaderView : UIControl {
     UILabel *_actionLabel;
     UIView *_bottomBorderView;
@@ -12,11 +10,11 @@
     UIView *_topBorderView;
 }
 
-@property(copy) NSString * actionString;
-@property(copy) UIColor * bottomBorderColor;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(copy) NSString * title;
-@property(copy) UIColor * topBorderColor;
+@property (nonatomic, copy) NSString *actionString;
+@property (nonatomic, copy) UIColor *bottomBorderColor;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) UIColor *topBorderColor;
 
 - (void).cxx_destruct;
 - (id)actionString;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@interface ACUIAccountCollectionViewController : PSListController {
-}
+@interface ACUIAccountCollectionViewController : PSListController
 
 - (void)removeContiguousSpecifiers:(id)arg1 animated:(BOOL)arg2;
 - (id)specifiers;

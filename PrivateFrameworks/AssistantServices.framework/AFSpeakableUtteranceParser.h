@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSLocale, NSMutableDictionary;
-
 @interface AFSpeakableUtteranceParser : NSObject {
     id _functionHandler;
     NSLocale *_locale;
     NSMutableDictionary *_providers;
 }
 
-@property BOOL handleTTSCodes;
-@property BOOL handlesFunctions;
+@property (nonatomic) BOOL handleTTSCodes;
+@property (nonatomic) BOOL handlesFunctions;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 + (BOOL)_shouldAutomaticallyProvideFunctions;
-+ (id)afui_speakableUtteranceParserForCurrentLanguage;
 + (id)parseUserGeneratedMessage:(id)arg1;
 
 - (void).cxx_destruct;
@@ -31,5 +30,9 @@
 - (void)registerProvider:(id)arg1 forNamespace:(id)arg2;
 - (void)setHandleTTSCodes:(BOOL)arg1;
 - (void)setHandlesFunctions:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
++ (id)afui_speakableUtteranceParserForCurrentLanguage;
 
 @end

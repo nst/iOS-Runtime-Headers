@@ -7,14 +7,14 @@
     struct __CVBuffer { } *_pixelBuffer;
 }
 
-- (void)accessPixelsByAddressInBlock:(id)arg1;
-- (void)accessPixelsByContextInBlock:(id)arg1;
+- (void)accessPixelsByAddressInBlock:(id /* block */)arg1;
+- (void)accessPixelsByContextInBlock:(id /* block */)arg1;
 - (struct CGContext { }*)cgcontext;
 - (id)ciImage;
 - (void)dealloc;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2;
 - (struct __CVBuffer { }*)pixelBuffer;
-- (void)readPixelsByAddressInBlock:(id)arg1;
+- (void)readPixelsByAddressInBlock:(id /* block */)arg1;
 - (void)renderCIImage:(id)arg1;
 
 @end

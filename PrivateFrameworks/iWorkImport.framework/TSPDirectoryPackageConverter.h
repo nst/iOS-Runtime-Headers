@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPDirectoryPackageConverter : TSPPackageConverter {
-}
+@interface TSPDirectoryPackageConverter : TSPPackageConverter
 
-- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id)arg2;
+- (BOOL)enumeratePackageEntriesWithZipArchive:(id)arg1 accessor:(id /* block */)arg2;
 - (BOOL)isValid;
 - (unsigned long long)progressTotalUnitCountWithZipArchive:(id)arg1;
 

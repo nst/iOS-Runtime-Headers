@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class MKMapItem, NSArray, NSData, NSString, NSURL, WBSParsecSearchMapsResultExtraCompletionItem, WBSParsecSearchResult, WBSParsecSearchSession;
-
 @interface WBSParsecSearchMapsResult : WBSParsecSearchResult <WBSParsecMapsResultFeedbackDelegate, WBSParsecSearchResultPresentedInCard> {
     NSArray *_additionalMapItems;
     WBSParsecSearchMapsResultExtraCompletionItem *_extraCompletionItem;
@@ -16,18 +14,18 @@
     WBSParsecSearchSession *_parsecSearchSession;
 }
 
-@property(readonly) NSArray * additionalMapItems;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) WBSParsecSearchMapsResultExtraCompletionItem * extraCompletionItem;
-@property(readonly) unsigned int hash;
-@property(retain) WBSParsecSearchResult * hiddenParsecResult;
-@property(readonly) MKMapItem * mapItem;
-@property(readonly) NSData * mapsData;
-@property(readonly) NSString * mapsResultType;
-@property(readonly) NSURL * moreURL;
-@property(retain) WBSParsecSearchSession * parsecSearchSession;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *additionalMapItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) WBSParsecSearchMapsResultExtraCompletionItem *extraCompletionItem;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) WBSParsecSearchResult *hiddenParsecResult;
+@property (nonatomic, readonly) MKMapItem *mapItem;
+@property (nonatomic, readonly) NSData *mapsData;
+@property (nonatomic, readonly) NSString *mapsResultType;
+@property (nonatomic, readonly) NSURL *moreURL;
+@property (nonatomic, retain) WBSParsecSearchSession *parsecSearchSession;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)additionalMapItems;

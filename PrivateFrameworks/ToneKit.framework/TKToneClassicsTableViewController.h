@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKTonePickerTableViewControllerHelper>, NSString, TKTonePickerItem;
-
 @interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver> {
     TKTonePickerItem *_classicTonesHeaderItem;
     <TKTonePickerTableViewControllerHelper> *_tonePickerTableViewControllerHelper;
 }
 
-@property(setter=_setClassicTonesHeaderItem:,retain) TKTonePickerItem * _classicTonesHeaderItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property <TKTonePickerTableViewControllerHelper> * tonePickerTableViewControllerHelper;
+@property (setter=_setClassicTonesHeaderItem:, nonatomic, retain) TKTonePickerItem *_classicTonesHeaderItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) <TKTonePickerTableViewControllerHelper> *tonePickerTableViewControllerHelper;
 
 - (id)_classicTonesHeaderItem;
 - (void)_setClassicTonesHeaderItem:(id)arg1;

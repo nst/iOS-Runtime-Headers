@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDate;
-
 @interface RTLocationOfInterestVisit : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_entryTime;
     NSDate *_exitTime;
 }
 
-@property(readonly) NSDate * entryTime;
-@property(readonly) NSDate * exitTime;
+@property (nonatomic, readonly) NSDate *entryTime;
+@property (nonatomic, readonly) NSDate *exitTime;
 
 + (BOOL)supportsSecureCoding;
 

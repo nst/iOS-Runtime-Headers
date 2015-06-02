@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class ACAccount, NSObject<OS_dispatch_queue>;
-
 @interface PLAccountStore : ACAccountStore {
     ACAccount *_cachedPrimaryAppleAccount;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) ACAccount * cachedPrimaryAppleAccount;
+@property (readonly) ACAccount *cachedPrimaryAppleAccount;
 
 + (id)pl_sharedAccountStore;
 

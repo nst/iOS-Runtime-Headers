@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKViewElementStyle, NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet;
-
 @interface IKStyleFactory : NSObject {
     IKViewElementStyle *_globalStyle;
     NSArray *_orderedStyles;
@@ -13,12 +11,12 @@
     NSMutableDictionary *_stylesOrderMap;
 }
 
-@property(retain) IKViewElementStyle * globalStyle;
-@property(retain) NSArray * orderedStyles;
-@property(retain) NSMutableArray * reusableArray;
-@property(retain) NSMutableIndexSet * reusableIndexSet;
-@property(retain) NSMutableDictionary * stylesMap;
-@property(retain) NSMutableDictionary * stylesOrderMap;
+@property (nonatomic, retain) IKViewElementStyle *globalStyle;
+@property (nonatomic, retain) NSArray *orderedStyles;
+@property (nonatomic, retain) NSMutableArray *reusableArray;
+@property (nonatomic, retain) NSMutableIndexSet *reusableIndexSet;
+@property (nonatomic, retain) NSMutableDictionary *stylesMap;
+@property (nonatomic, retain) NSMutableDictionary *stylesOrderMap;
 
 - (void).cxx_destruct;
 - (id)globalStyle;

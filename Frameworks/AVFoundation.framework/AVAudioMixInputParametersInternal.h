@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableScheduledAudioParameters, NSString;
-
 @interface AVAudioMixInputParametersInternal : NSObject {
     NSString *audioTimePitchAlgorithm;
     AVMutableScheduledAudioParameters *scheduledAudioParameters;

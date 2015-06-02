@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class <VSSpeechConnectionDelegate>, NSString, VSSpeechConnection, VSSpeechRequest;
-
 @interface VSSpeechConnectionDelegateWrapper : NSObject <VSSpeechServiceDelegate> {
     VSSpeechConnection *_connection;
     <VSSpeechConnectionDelegate> *_delegate;
     VSSpeechRequest *_request;
 }
 
-@property VSSpeechConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <VSSpeechConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) VSSpeechRequest * request;
-@property(readonly) Class superclass;
+@property (nonatomic) VSSpeechConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VSSpeechConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) VSSpeechRequest *request;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connection;

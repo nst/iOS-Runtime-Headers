@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSSet, NSString;
-
 @interface MFCorecipientSearchOperation : MFContactsSearchOperation {
     NSString *_bundleIdentifier;
     unsigned int _implicitGroupThreshold;

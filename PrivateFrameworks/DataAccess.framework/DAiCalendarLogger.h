@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAiCalendarLogger : NSObject <ICSLoggingDelegate> {
-}
+@interface DAiCalendarLogger : NSObject <ICSLoggingDelegate>
 
 + (id)sharedLogger;
 

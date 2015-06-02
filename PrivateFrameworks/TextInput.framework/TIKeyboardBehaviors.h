@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyboardBehaviors : NSObject <NSCopying, NSSecureCoding> {
-}
+@interface TIKeyboardBehaviors : NSObject <NSCopying, NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

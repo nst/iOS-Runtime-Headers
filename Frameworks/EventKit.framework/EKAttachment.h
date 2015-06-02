@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSNumber, NSString, NSURL;
+@interface EKAttachment : EKObject
 
-@interface EKAttachment : EKObject {
-}
-
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * UUID;
-@property(readonly) NSString * fileFormat;
-@property(readonly) NSString * fileName;
-@property(readonly) NSNumber * fileSize;
-@property(readonly) BOOL isBinary;
-@property(readonly) NSURL * localURL;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, readonly) NSString *fileFormat;
+@property (nonatomic, readonly) NSString *fileName;
+@property (nonatomic, readonly) NSNumber *fileSize;
+@property (nonatomic, readonly) BOOL isBinary;
+@property (nonatomic, readonly) NSURL *localURL;
 
 - (id)URL;
 - (id)UUID;

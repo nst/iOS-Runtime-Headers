@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInput_FigRecorder, NSString;
-
 @interface AVCaptureInputPortInternal_FigRecorder : NSObject {
     struct OpaqueCMClock { } *clock;
     BOOL enabled;

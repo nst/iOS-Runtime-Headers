@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKTextViewWithLabelTextMetrics, NSMutableArray, NSObject<EKEventDetailTitleCellDelegate>, UIButton, UIImage, UIImageView, UILabel;
-
 @interface EKEventDetailTitleCell : EKEventDetailCell {
     NSMutableArray *_dateTimeViews;
     NSObject<EKEventDetailTitleCellDelegate> *_delegate;
@@ -21,7 +19,7 @@
     unsigned int _visibleItems;
 }
 
-@property NSObject<EKEventDetailTitleCellDelegate> * delegate;
+@property (nonatomic) NSObject<EKEventDetailTitleCellDelegate> *delegate;
 
 + (void)_invalidateCachedFonts;
 + (id)_locationFont;

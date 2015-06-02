@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetStatistics.framework/CoreDuetStatistics
  */
 
-@class NSDate, NSString;
-
 @interface CDSBasisObject : NSObject {
     unsigned long long _attributeId;
     double _basisDoubleValue;
@@ -17,16 +15,16 @@
     int _type;
 }
 
-@property unsigned long long attributeId;
-@property double basisDoubleValue;
-@property unsigned long long basisUint64Value;
-@property(retain) NSString * basisValueString;
-@property(retain) NSDate * creationDate;
-@property double duration;
-@property BOOL fallingEdge;
-@property unsigned long long localTime;
-@property BOOL risingEdge;
-@property int type;
+@property (nonatomic) unsigned long long attributeId;
+@property (nonatomic) double basisDoubleValue;
+@property (nonatomic) unsigned long long basisUint64Value;
+@property (nonatomic, retain) NSString *basisValueString;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL fallingEdge;
+@property (nonatomic) unsigned long long localTime;
+@property (nonatomic) BOOL risingEdge;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (unsigned long long)attributeId;

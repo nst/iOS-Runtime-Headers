@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIXRay : CILumaMap {
-}
+@interface CIXRay : CILumaMap
 
 + (id)customAttributes;
 

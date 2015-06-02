@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDWorkoutEventEntity : HDHealthEntity {
-}
+@interface HDWorkoutEventEntity : HDHealthEntity
 
 + (id)createTableSQL;
 + (id)databaseTable;

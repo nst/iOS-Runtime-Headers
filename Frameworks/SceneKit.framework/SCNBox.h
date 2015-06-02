@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface SCNBox : SCNGeometry {
     float _boxchamferRadius;
     int _boxchamferSegmentCount;
@@ -20,14 +15,14 @@
     id _reserved;
 }
 
-@property float chamferRadius;
-@property int chamferSegmentCount;
-@property float height;
-@property int heightSegmentCount;
-@property float length;
-@property int lengthSegmentCount;
-@property float width;
-@property int widthSegmentCount;
+@property (nonatomic) float chamferRadius;
+@property (nonatomic) int chamferSegmentCount;
+@property (nonatomic) float height;
+@property (nonatomic) int heightSegmentCount;
+@property (nonatomic) float length;
+@property (nonatomic) int lengthSegmentCount;
+@property (nonatomic) float width;
+@property (nonatomic) int widthSegmentCount;
 
 + (id)SCNJSExportProtocol;
 + (id)box;

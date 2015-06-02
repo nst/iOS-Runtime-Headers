@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString, WDDocument;
-
 @interface WDCitation : NSObject {
     NSMutableArray *mAuthors;
     WDDocument *mDocument;
@@ -19,17 +17,17 @@
     NSString *mYear;
 }
 
-@property(retain) NSMutableArray * authors;
-@property(retain) NSString * number;
-@property(retain) NSString * pages;
-@property(retain) NSString * periodicalTitle;
-@property(retain) NSString * pubDate;
-@property(retain) NSString * section;
-@property(retain) NSString * sourceType;
-@property(retain) NSMutableArray * titles;
-@property(retain) NSMutableArray * urls;
-@property(retain) NSString * volume;
-@property(retain) NSString * year;
+@property (nonatomic, retain) NSMutableArray *authors;
+@property (nonatomic, retain) NSString *number;
+@property (nonatomic, retain) NSString *pages;
+@property (nonatomic, retain) NSString *periodicalTitle;
+@property (nonatomic, retain) NSString *pubDate;
+@property (nonatomic, retain) NSString *section;
+@property (nonatomic, retain) NSString *sourceType;
+@property (nonatomic, retain) NSMutableArray *titles;
+@property (nonatomic, retain) NSMutableArray *urls;
+@property (nonatomic, retain) NSString *volume;
+@property (nonatomic, retain) NSString *year;
 
 + (id)endNoteStringForRefType:(int)arg1;
 + (void)initialize;

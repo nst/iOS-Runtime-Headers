@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIColor;
-
 @interface PT2DGraphDatum : NSObject <PT2DGraphDatum> {
     UIColor *_color;
     struct CGPoint { 
@@ -12,8 +10,8 @@
     } _graphPoint;
 }
 
-@property(retain) UIColor * color;
-@property struct CGPoint { float x1; float x2; } graphPoint;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) struct CGPoint { float x1; float x2; } graphPoint;
 
 + (id)datumWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 

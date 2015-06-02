@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIBarButtonItem;
-
 @interface PUPhotosSinglePickerViewController : PUPhotosGridViewController {
     UIBarButtonItem *_cancelButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     UIBarButtonItem *_doneButton;
 }
 
-@property(copy) id completionHandler;
+@property (nonatomic, copy) id /* block */ completionHandler;
 
 - (void).cxx_destruct;
 - (void)_done:(id)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (id)initWithSpec:(id)arg1;
 - (id)newGridLayout;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)updateNavigationBarAnimated:(BOOL)arg1;
 
 @end

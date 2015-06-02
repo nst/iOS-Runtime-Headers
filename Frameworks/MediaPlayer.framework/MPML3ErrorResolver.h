@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSError, NSString, SSKeybagRequest;
-
 @interface MPML3ErrorResolver : MPAVErrorResolver <SSRequestDelegate> {
     NSError *_error;
     MPMediaItem *_mediaItem;
     SSKeybagRequest *_request;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property(retain) MPMediaItem * mediaItem;
-@property(retain) SSKeybagRequest * request;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPMediaItem *mediaItem;
+@property (nonatomic, retain) SSKeybagRequest *request;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary, UIBarButtonItem, UIButton, UIToolbar;
-
 @interface PUCloudPhotoSettingsViewController : UITableViewController {
     bool _isAutorefreshingStatistics;
     NSDictionary *_latestStatisticsSnapshot;

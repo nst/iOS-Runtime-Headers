@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class MPMediaQuery, NSMutableDictionary, NSString;
-
 @interface SKUIMediaQueryViewElement : SKUIViewElement {
     NSString *_cellFactoryFunctionName;
     MPMediaQuery *_mediaQuery;
@@ -11,9 +9,9 @@
     NSMutableDictionary *_propertyAggregrateFunctions;
 }
 
-@property(readonly) NSString * cellFactoryFunctionName;
-@property(readonly) MPMediaQuery * mediaQuery;
-@property(readonly) int mediaQueryStyle;
+@property (nonatomic, readonly) NSString *cellFactoryFunctionName;
+@property (nonatomic, readonly) MPMediaQuery *mediaQuery;
+@property (nonatomic, readonly) int mediaQueryStyle;
 
 - (void).cxx_destruct;
 - (id)cellFactoryFunctionName;

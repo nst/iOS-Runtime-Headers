@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSPlaceholderFileSecurity : NSFileSecurity <NSCoding, NSCopying> {
-}
+@interface __NSPlaceholderFileSecurity : NSFileSecurity <NSCoding, NSCopying>
 
 + (id)immutablePlaceholder;
 + (void)initialize;

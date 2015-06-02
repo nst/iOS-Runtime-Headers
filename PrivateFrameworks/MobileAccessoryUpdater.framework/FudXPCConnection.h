@@ -2,39 +2,29 @@
    Image: /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/MobileAccessoryUpdater
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface FudXPCConnection : NSObject <FudConnection> {
     NSString *clientIdentifier;
     NSObject<OS_xpc_object> *connection;
     NSObject<OS_dispatch_queue> *connectionQueue;
     BOOL didStop;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id messageHandler;
-
+    id /* block */ messageHandler;
     int notifyToken;
     NSObject<OS_dispatch_queue> *replyQueue;
     NSObject<OS_dispatch_queue> *sessionQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)createConnection;
 - (BOOL)createSession;
 - (void)dealloc;
-- (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id)arg3;
+- (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id /* block */)arg3;
 - (BOOL)registerForBSDNotifications;
 - (void)sendMessageToFud:(id)arg1;
-- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
+- (void)sendMessageToFud:(id)arg1 reply:(id /* block */)arg2;
 - (void)stop;
 
 @end

@@ -2,26 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImage;
-
 @interface UIBarItem : NSObject <UIAppearance> {
     BOOL _hasCustomizableInstanceAppearanceModifications;
     BOOL _shouldArchiveUIAppearanceTags;
 }
 
-@property(setter=_setHasCustomizableInstanceAppearanceModifications:) BOOL _hasCustomizableInstanceAppearanceModifications;
-@property(setter=_setShouldArchiveUIAppearanceTags:) BOOL _shouldArchiveUIAppearanceTags;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
-@property(retain) UIImage * landscapeImagePhone;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
-@property(readonly) Class superclass;
-@property int tag;
-@property(copy) NSString * title;
+@property (setter=_setHasCustomizableInstanceAppearanceModifications:, nonatomic) BOOL _hasCustomizableInstanceAppearanceModifications;
+@property (setter=_setShouldArchiveUIAppearanceTags:, nonatomic) BOOL _shouldArchiveUIAppearanceTags;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property (nonatomic, retain) UIImage *landscapeImagePhone;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
+@property (readonly) Class superclass;
+@property (nonatomic) int tag;
+@property (nonatomic, copy) NSString *title;
 
 + (id)_appearanceBlindViewClasses;
 + (id)_appearanceRecorder;

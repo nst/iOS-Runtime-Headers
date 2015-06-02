@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUILabelViewElement;
+@interface SKUIActivityIndicatorViewElement : SKUIViewElement
 
-@interface SKUIActivityIndicatorViewElement : SKUIViewElement {
-}
-
-@property(readonly) SKUILabelViewElement * text;
+@property (nonatomic, readonly) SKUILabelViewElement *text;
 
 - (BOOL)isDisabled;
 - (int)pageComponentType;

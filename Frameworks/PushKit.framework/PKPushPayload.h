@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PushKit.framework/PushKit
  */
 
-@class NSDictionary, NSString;
-
 @interface PKPushPayload : NSObject {
     NSDictionary *_dictionaryPayload;
     NSString *_type;
 }
 
-@property(copy) NSDictionary * dictionaryPayload;
-@property(copy) NSString * type;
+@property (copy) NSDictionary *dictionaryPayload;
+@property (copy) NSString *type;
 
 - (void).cxx_destruct;
 - (id)dictionaryPayload;

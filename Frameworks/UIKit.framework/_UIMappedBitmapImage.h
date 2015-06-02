@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData;
-
 @interface _UIMappedBitmapImage : UIImage {
     NSData *_data;
 }
 
-@property(retain) NSData * data;
+@property (nonatomic, retain) NSData *data;
 
 + (void)initialize;
 + (BOOL)supportsSecureCoding;

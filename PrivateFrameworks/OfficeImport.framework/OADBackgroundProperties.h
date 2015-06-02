@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OADFill;
-
 @interface OADBackgroundProperties : OADBackground {
     NSArray *mEffects;
     OADFill *mFill;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCellStyle, TSWPPadding, TSWPParagraphStyle;
-
 @interface TSTWPLayout : TSWPLayout {
     BOOL _cacheIsValid;
     unsigned int _cachedAutoSizeFlags;
@@ -62,19 +60,19 @@
     int _cachedVerticalAlignment;
 }
 
-@property BOOL cacheIsValid;
-@property unsigned int cachedAutoSizeFlags;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedAutosizedFrame;
-@property struct { unsigned short x1; unsigned char x2; unsigned char x3; } cachedCellID;
-@property(retain) TSTCellStyle * cachedCellStyle;
-@property BOOL cachedCellWraps;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedMaskRect;
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMaskSpillRange;
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMergeRange;
-@property(retain) TSWPPadding * cachedPadding;
-@property int cachedParagraphAlignment;
-@property(retain) TSWPParagraphStyle * cachedTextStyle;
-@property int cachedVerticalAlignment;
+@property (nonatomic) BOOL cacheIsValid;
+@property (nonatomic) unsigned int cachedAutoSizeFlags;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedAutosizedFrame;
+@property (nonatomic) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cachedCellID;
+@property (nonatomic, retain) TSTCellStyle *cachedCellStyle;
+@property (nonatomic) BOOL cachedCellWraps;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedMaskRect;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMaskSpillRange;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cachedMergeRange;
+@property (nonatomic, retain) TSWPPadding *cachedPadding;
+@property (nonatomic) int cachedParagraphAlignment;
+@property (nonatomic, retain) TSWPParagraphStyle *cachedTextStyle;
+@property (nonatomic) int cachedVerticalAlignment;
 
 - (id).cxx_construct;
 - (BOOL)cacheIsValid;

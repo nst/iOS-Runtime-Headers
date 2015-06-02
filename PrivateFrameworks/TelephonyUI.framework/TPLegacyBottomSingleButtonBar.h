@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLegacyButton, UIImageView, UIView;
-
 @interface TPLegacyBottomSingleButtonBar : TPLegacyBottomBar {
     BOOL _allowsDroppingIcons;
     UIImageView *_backgroundView;

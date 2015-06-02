@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CompassAtlasManifest;
-
 @interface CompassAtlas : NSObject {
     CompassAtlasManifest *_manifest;
     struct CGSize { 

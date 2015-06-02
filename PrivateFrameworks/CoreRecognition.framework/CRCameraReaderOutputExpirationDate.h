@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class NSNumber;
+@interface CRCameraReaderOutputExpirationDate : CRCameraReaderOutput
 
-@interface CRCameraReaderOutputExpirationDate : CRCameraReaderOutput {
-}
-
-@property(readonly) NSNumber * dayValue;
-@property(readonly) NSNumber * monthValue;
-@property(readonly) NSNumber * yearValue;
+@property (readonly) NSNumber *dayValue;
+@property (readonly) NSNumber *monthValue;
+@property (readonly) NSNumber *yearValue;
 
 - (id)dayValue;
 - (id)monthValue;

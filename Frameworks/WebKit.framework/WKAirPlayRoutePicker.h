@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKContentView;
-
 @interface WKAirPlayRoutePicker : UIView <UIPopoverControllerDelegate> {
     struct RetainPtr<MPAudioVideoRoutingActionSheet> { 
         void *m_ptr; 
@@ -17,10 +15,10 @@
     WKContentView *_view;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

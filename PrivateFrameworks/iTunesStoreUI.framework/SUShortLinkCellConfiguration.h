@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUShortLinkCellConfiguration : SUMediaItemCellConfiguration {
-}
+@interface SUShortLinkCellConfiguration : SUMediaItemCellConfiguration
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

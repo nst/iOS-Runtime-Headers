@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class RMSPowerAssertion, RMSRunAssertion;
-
 @interface _RMSSessionRecord : NSObject {
     RMSPowerAssertion *_powerAssertion;
     int _refreshCount;
@@ -12,11 +10,11 @@
     int _timeout;
 }
 
-@property(retain) RMSPowerAssertion * powerAssertion;
-@property int refreshCount;
-@property(retain) RMSRunAssertion * runAssertion;
-@property(retain) id session;
-@property int timeout;
+@property (nonatomic, retain) RMSPowerAssertion *powerAssertion;
+@property (nonatomic) int refreshCount;
+@property (nonatomic, retain) RMSRunAssertion *runAssertion;
+@property (nonatomic, retain) id session;
+@property (nonatomic) int timeout;
 
 - (void).cxx_destruct;
 - (id)powerAssertion;

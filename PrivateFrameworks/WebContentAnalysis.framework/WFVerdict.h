@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSString, WFLSMResult;
-
 @interface WFVerdict : NSObject {
     WFLSMResult *LSMEvaluationResult;
     NSString *URL;

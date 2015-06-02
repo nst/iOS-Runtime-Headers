@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
  */
 
-@class MPMediaPlaylist, NSDate, NSNumber, NSString;
-
 @interface NMSyncDefaults : NSObject {
     BOOL _assetSyncEnabled;
     NSNumber *_assetSyncLimit;
@@ -18,15 +16,15 @@
     NSString *_pairingID;
 }
 
-@property(getter=isAssetSyncEnabled) BOOL assetSyncEnabled;
-@property(copy) NSNumber * assetSyncLimit;
-@property unsigned int assetSyncLimitType;
-@property(retain) MPMediaPlaylist * assetSyncPlaylist;
-@property(copy) NSNumber * assetSyncPlaylistPersistentID;
-@property(copy) NSNumber * lastFullySentAssetSyncPlaylistPersistentID;
-@property(copy) NSNumber * lastFullySentAssetSyncPlaylistVersion;
-@property(readonly) NSDate * modificationDate;
-@property(copy) NSNumber * numberOfSyncedAssetSyncPlaylistSongs;
+@property (getter=isAssetSyncEnabled, nonatomic) BOOL assetSyncEnabled;
+@property (nonatomic, copy) NSNumber *assetSyncLimit;
+@property (nonatomic) unsigned int assetSyncLimitType;
+@property (nonatomic, retain) MPMediaPlaylist *assetSyncPlaylist;
+@property (nonatomic, copy) NSNumber *assetSyncPlaylistPersistentID;
+@property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistPersistentID;
+@property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistVersion;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, copy) NSNumber *numberOfSyncedAssetSyncPlaylistSongs;
 
 + (id)sharedDefaults;
 

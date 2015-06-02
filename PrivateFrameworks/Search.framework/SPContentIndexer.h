@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSString, SPIndex;
-
 @interface SPContentIndexer : NSObject {
     NSString *_category;
     NSMutableArray *_dirtyContent;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIAccelerometerDelegate>, CMMotionManager;
-
 @interface UIAccelerometer : NSObject {
     struct { 
         unsigned int delegateDidAccelerate : 1; 
@@ -14,8 +12,8 @@
     double _updateInterval;
 }
 
-@property <UIAccelerometerDelegate> * delegate;
-@property double updateInterval;
+@property (nonatomic) <UIAccelerometerDelegate> *delegate;
+@property (nonatomic) double updateInterval;
 
 + (id)sharedAccelerometer;
 

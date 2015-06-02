@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, UIButton, UIControl, UIImageView, UILabel;
-
 @interface SKUISearchSpellCorrectedCell : UICollectionViewCell {
     BOOL _autoCorrected;
     SKUIClientContext *_clientContext;
@@ -15,12 +13,12 @@
     UIButton *_spellCorrectionButton;
 }
 
-@property BOOL autoCorrected;
-@property(retain) SKUIClientContext * clientContext;
-@property int preAutoCorrectCount;
-@property(copy) NSString * searchTerm;
-@property(copy) NSString * spellCorrectedTerm;
-@property(readonly) UIControl * spellCorrectionButton;
+@property (nonatomic) BOOL autoCorrected;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) int preAutoCorrectCount;
+@property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic, copy) NSString *spellCorrectedTerm;
+@property (nonatomic, readonly) UIControl *spellCorrectionButton;
 
 - (void).cxx_destruct;
 - (void)_reloadLabel;

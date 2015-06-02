@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSServiceNames : NSObject {
-}
+@interface FBSServiceNames : NSObject
 
 + (void)_computeNames;
 + (id)systemAppProxyServiceName;

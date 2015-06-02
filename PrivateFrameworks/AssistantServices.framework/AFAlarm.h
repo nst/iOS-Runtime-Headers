@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFAlarm : AFSiriModelObject <NSCopying> {
     int _daysOfWeek;
     BOOL _enabled;
@@ -12,11 +10,11 @@
     int _minuteOfHour;
 }
 
-@property int daysOfWeek;
-@property(getter=isEnabled) BOOL enabled;
-@property int hourOfDay;
-@property(copy) NSString * label;
-@property int minuteOfHour;
+@property (nonatomic) int daysOfWeek;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) int hourOfDay;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) int minuteOfHour;
 
 + (BOOL)supportsSecureCoding;
 

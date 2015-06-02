@@ -13,14 +13,14 @@
     BOOL mLayoutUpdateChildren;
 }
 
-@property BOOL layoutInvalidate;
-@property BOOL layoutInvalidateChildren;
-@property BOOL layoutInvalidateProvider;
-@property BOOL layoutInvalidateSize;
-@property BOOL layoutInvalidateTableNameVisibility;
-@property BOOL layoutSpacesInvalidateCoordinates;
-@property BOOL layoutSpacesInvalidateTableOffsets;
-@property BOOL layoutUpdateChildren;
+@property (nonatomic) BOOL layoutInvalidate;
+@property (nonatomic) BOOL layoutInvalidateChildren;
+@property (nonatomic) BOOL layoutInvalidateProvider;
+@property (nonatomic) BOOL layoutInvalidateSize;
+@property (nonatomic) BOOL layoutInvalidateTableNameVisibility;
+@property (nonatomic) BOOL layoutSpacesInvalidateCoordinates;
+@property (nonatomic) BOOL layoutSpacesInvalidateTableOffsets;
+@property (nonatomic) BOOL layoutUpdateChildren;
 
 - (BOOL)layoutInvalidate;
 - (BOOL)layoutInvalidateChildren;

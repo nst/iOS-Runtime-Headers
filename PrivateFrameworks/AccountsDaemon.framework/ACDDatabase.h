@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSManagedObjectContext, NSManagedObjectModel, NSPersistentStore, NSString;
-
 @interface ACDDatabase : NSObject {
     NSManagedObjectContext *_context;
     id _contextDidSaveNotificationObserver;
@@ -12,9 +10,9 @@
     NSPersistentStore *_store;
 }
 
-@property(readonly) NSManagedObjectContext * managedObjectContext;
-@property(readonly) NSString * path;
-@property int version;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic) int version;
 
 + (BOOL)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id*)arg4;
 + (struct __CFString { }*)_copyRootPath;

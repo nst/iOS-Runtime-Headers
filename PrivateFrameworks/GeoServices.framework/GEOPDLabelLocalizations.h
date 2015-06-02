@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDLabelLocalizations : PBCodable <NSCopying> {
     NSMutableArray *_localizedStrings;
 }
 
-@property(retain) NSMutableArray * localizedStrings;
+@property (nonatomic, retain) NSMutableArray *localizedStrings;
 
 - (void)addLocalizedString:(id)arg1;
 - (void)clearLocalizedStrings;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboard, UIWebSelectTableViewController;
-
 @interface UIWebSelectPopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
     UIKeyboard *_keyboard;
     UIWebSelectTableViewController *_tableViewController;
 }
 
-@property(retain) UIWebSelectTableViewController * _tableViewController;
+@property (nonatomic, retain) UIWebSelectTableViewController *_tableViewController;
 
 - (id)_tableViewController;
 - (void)_userActionDismissedPopover:(id)arg1;

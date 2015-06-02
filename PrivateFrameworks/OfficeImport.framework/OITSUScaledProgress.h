@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSObject<OS_dispatch_queue>, OITSUProgress, OITSUScaledProgressStorage;
-
 @interface OITSUScaledProgress : OITSUProgress {
     OITSUProgress *mProgress;
     id mProgressObserver;
@@ -12,9 +10,9 @@
 }
 
 @property double maxValue;
-@property(retain) OITSUProgress * progress;
+@property (retain) OITSUProgress *progress;
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isIndeterminate;

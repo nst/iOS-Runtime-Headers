@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TSDLayout<TSWPLayoutTarget>, TSDWrapSegments, TSUPointerKeyDictionary, TSWPColumn;
-
 @interface TPTextWrapCookie : NSObject {
     TSWPColumn *_column;
     NSMutableArray *_floatingWrappables;
@@ -20,11 +18,11 @@
     TSUPointerKeyDictionary *_wrapSegmentsInverseTransformInRootDictionary;
 }
 
-@property(retain) TSWPColumn * column;
-@property(retain,readonly) NSArray * floatingWrappables;
-@property(retain) TSDWrapSegments * interiorWrapSegments;
-@property TSDLayout<TSWPLayoutTarget> * target;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetInverseTransformInRoot;
+@property (nonatomic, retain) TSWPColumn *column;
+@property (nonatomic, readonly, retain) NSArray *floatingWrappables;
+@property (nonatomic, retain) TSDWrapSegments *interiorWrapSegments;
+@property (nonatomic) TSDLayout<TSWPLayoutTarget> *target;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetInverseTransformInRoot;
 
 + (id)textWrapCookieForColumn:(id)arg1 targetLayout:(id)arg2;
 

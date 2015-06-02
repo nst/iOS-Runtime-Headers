@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface SBSStatusBarStyleOverridesAssertionManager : NSObject <SBSStatusBarStyleOverridesAssertionClient> {
     NSHashTable *_assertions;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSXPCConnection *_sbXPCConnection;
 }
 
-@property(retain) NSHashTable * assertions;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSXPCConnection * sbXPCConnection;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSHashTable *assertions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSXPCConnection *sbXPCConnection;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -24,7 +22,7 @@
 - (void)_invalidateStatusBarStyleOverridesAssertionsWithData:(id)arg1;
 - (void)_reactivateAssertions;
 - (void)_tearDownXPCConnection;
-- (void)addStatusBarStyleOverridesAssertion:(id)arg1 withHandler:(id)arg2 onQueue:(id)arg3;
+- (void)addStatusBarStyleOverridesAssertion:(id)arg1 withHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (id)assertions;
 - (void)dealloc;
 - (id)init;

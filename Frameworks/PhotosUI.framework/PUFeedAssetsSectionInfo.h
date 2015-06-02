@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedAssetsSectionInfo : PUFeedSectionInfo {
-}
+@interface PUFeedAssetsSectionInfo : PUFeedSectionInfo
 
 - (BOOL)areAllAssetsLiked;
 - (id)assetForItemAtIndex:(int)arg1;

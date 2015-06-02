@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class JSContext, JSVirtualMachine, NSMutableArray, NSURL, SGAsset, SGReverseTemplatesJSDataDetectors;
-
 @interface SGReverseTemplateJS : NSObject <SGReverseTemplateJS> {
     SGAsset *_asset;
     NSURL *_assetPath;
@@ -14,7 +12,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)emailToOutput:(id)arg1 reply:(id)arg2;
+- (void)emailToOutput:(id)arg1 reply:(id /* block */)arg2;
 - (id)emailToOutput:(id)arg1 setForExceptionTemplates:(id)arg2;
 - (id)init;
 - (void)killVM;
@@ -22,6 +20,6 @@
 - (void)resetVM;
 - (void)setAssetPath:(id)arg1 locale:(id)arg2;
 - (BOOL)shouldDownloadFull:(id)arg1;
-- (void)shouldDownloadFull:(id)arg1 reply:(id)arg2;
+- (void)shouldDownloadFull:(id)arg1 reply:(id /* block */)arg2;
 
 @end

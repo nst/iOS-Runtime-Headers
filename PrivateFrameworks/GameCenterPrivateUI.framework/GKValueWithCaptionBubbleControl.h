@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, GKTextStyle, NSString;
-
 @interface GKValueWithCaptionBubbleControl : GKBaseBubbleWithTextControl {
     GKLabel *_captionLabel;
     NSString *_captionText;
@@ -15,15 +13,15 @@
     NSString *_valueText;
 }
 
-@property(retain) GKLabel * captionLabel;
-@property(retain) NSString * captionText;
-@property(retain) GKTextStyle * normalValueStyle;
-@property BOOL oneLineOnly;
-@property(retain) GKTextStyle * overrideCaptionStyle;
-@property(retain) GKTextStyle * overrideValueStyle;
-@property(retain) GKTextStyle * smallValueStyle;
-@property(retain) GKLabel * valueLabel;
-@property(retain) NSString * valueText;
+@property (nonatomic, retain) GKLabel *captionLabel;
+@property (nonatomic, retain) NSString *captionText;
+@property (nonatomic, retain) GKTextStyle *normalValueStyle;
+@property (nonatomic) BOOL oneLineOnly;
+@property (nonatomic, retain) GKTextStyle *overrideCaptionStyle;
+@property (nonatomic, retain) GKTextStyle *overrideValueStyle;
+@property (nonatomic, retain) GKTextStyle *smallValueStyle;
+@property (nonatomic, retain) GKLabel *valueLabel;
+@property (nonatomic, retain) NSString *valueText;
 
 - (void)_updateCaptionTextLabel;
 - (void)_updateValueTextLabel;

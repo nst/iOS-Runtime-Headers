@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFLockScreenMetrics : NSObject {
-}
+@interface SBFLockScreenMetrics : NSObject
 
 + (float)_notificationListBottomOffset;
 + (float)_notificationListSideOffset;

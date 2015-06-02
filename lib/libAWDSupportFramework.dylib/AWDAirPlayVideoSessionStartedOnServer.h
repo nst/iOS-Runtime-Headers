@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayVideoSessionStartedOnServer : PBCodable <NSCopying> {
     unsigned int _audioOnly;
     unsigned int _clientAuthMs;
@@ -34,34 +32,34 @@
     unsigned int _type;
 }
 
-@property unsigned int audioOnly;
-@property unsigned int clientAuthMs;
-@property unsigned int clientBonjourMs;
-@property unsigned int clientConnectMs;
-@property unsigned int clientInfoMs;
-@property(retain) NSString * clientModel;
-@property unsigned int clientPostAuthMs;
-@property unsigned int clientSecureConnectionMs;
-@property(retain) NSString * clientVersion;
-@property BOOL hasAudioOnly;
-@property BOOL hasClientAuthMs;
-@property BOOL hasClientBonjourMs;
-@property BOOL hasClientConnectMs;
-@property BOOL hasClientInfoMs;
-@property(readonly) BOOL hasClientModel;
-@property BOOL hasClientPostAuthMs;
-@property BOOL hasClientSecureConnectionMs;
-@property(readonly) BOOL hasClientVersion;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property BOOL hasType;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
-@property unsigned int type;
+@property (nonatomic) unsigned int audioOnly;
+@property (nonatomic) unsigned int clientAuthMs;
+@property (nonatomic) unsigned int clientBonjourMs;
+@property (nonatomic) unsigned int clientConnectMs;
+@property (nonatomic) unsigned int clientInfoMs;
+@property (nonatomic, retain) NSString *clientModel;
+@property (nonatomic) unsigned int clientPostAuthMs;
+@property (nonatomic) unsigned int clientSecureConnectionMs;
+@property (nonatomic, retain) NSString *clientVersion;
+@property (nonatomic) BOOL hasAudioOnly;
+@property (nonatomic) BOOL hasClientAuthMs;
+@property (nonatomic) BOOL hasClientBonjourMs;
+@property (nonatomic) BOOL hasClientConnectMs;
+@property (nonatomic) BOOL hasClientInfoMs;
+@property (nonatomic, readonly) BOOL hasClientModel;
+@property (nonatomic) BOOL hasClientPostAuthMs;
+@property (nonatomic) BOOL hasClientSecureConnectionMs;
+@property (nonatomic, readonly) BOOL hasClientVersion;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
+@property (nonatomic) unsigned int type;
 
 - (unsigned int)audioOnly;
 - (unsigned int)clientAuthMs;

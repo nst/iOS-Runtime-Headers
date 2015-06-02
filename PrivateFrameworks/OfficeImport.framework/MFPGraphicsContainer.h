@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFPGraphicsState;
-
 @interface MFPGraphicsContainer : NSObject {
     struct CGAffineTransform { 
         float a; 

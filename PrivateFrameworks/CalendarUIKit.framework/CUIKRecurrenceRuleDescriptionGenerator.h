@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKRecurrenceRuleDescriptionGenerator : NSObject {
-}
+@interface CUIKRecurrenceRuleDescriptionGenerator : NSObject
 
 + (id)_andDaysOfWeekString:(id)arg1;
 + (id)_customDayCombinationDescription:(id)arg1;

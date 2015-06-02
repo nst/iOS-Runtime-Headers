@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableSet, PLEntryNotificationOperatorComposition, PLOperator;
-
 @interface PLAWDWifiBT : PLAWDAuxMetrics {
     PLEntryNotificationOperatorComposition *_btEventCallback;
     PLEntryNotificationOperatorComposition *_btPowerCallback;
@@ -18,18 +16,18 @@
     long _wifiSubmitCnt;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * btEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * btPowerCallback;
-@property(retain) PLEntryNotificationOperatorComposition * btRailCallback;
+@property (retain) PLEntryNotificationOperatorComposition *btEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *btPowerCallback;
+@property (retain) PLEntryNotificationOperatorComposition *btRailCallback;
 @property long btSubmitCnt;
 @property BOOL isBTRailStart;
 @property BOOL isBTStart;
 @property BOOL isWiFiRailStart;
 @property BOOL isWiFiStart;
-@property PLOperator * operator;
-@property(retain) NSMutableSet * runningMetrics;
-@property(retain) PLEntryNotificationOperatorComposition * wifiEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * wifiRailCallback;
+@property PLOperator *operator;
+@property (nonatomic, retain) NSMutableSet *runningMetrics;
+@property (retain) PLEntryNotificationOperatorComposition *wifiEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *wifiRailCallback;
 @property long wifiSubmitCnt;
 
 + (id)entryAggregateDefinitionAwdBT;

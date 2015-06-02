@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount;
-
 @interface _AABasicGetRequest : AARequest {
     ACAccount *_account;
 }

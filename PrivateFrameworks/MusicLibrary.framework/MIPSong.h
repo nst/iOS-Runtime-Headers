@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPAlbum, MIPArtist, MIPGenre, MIPPlaybackInfo, NSString;
-
 @interface MIPSong : PBCodable <NSCopying> {
     MIPAlbum *_album;
     MIPArtist *_artist;
@@ -31,34 +29,34 @@
     int _userRating;
 }
 
-@property(retain) MIPAlbum * album;
-@property(retain) MIPArtist * artist;
-@property int audioFormat;
-@property(retain) MIPArtist * composer;
-@property int discNumber;
-@property BOOL excludeFromShuffle;
-@property long long geniusId;
-@property(retain) MIPGenre * genre;
-@property(readonly) BOOL hasAlbum;
-@property(readonly) BOOL hasArtist;
-@property BOOL hasAudioFormat;
-@property(readonly) BOOL hasComposer;
-@property BOOL hasDiscNumber;
-@property BOOL hasExcludeFromShuffle;
-@property BOOL hasGeniusId;
-@property(readonly) BOOL hasGenre;
-@property BOOL hasHasVideo;
-@property(readonly) BOOL hasLyrics;
-@property BOOL hasLyricsChecksum;
-@property(readonly) BOOL hasPlaybackInfo;
-@property BOOL hasTrackNumber;
-@property BOOL hasUserRating;
-@property BOOL hasVideo;
-@property(retain) NSString * lyrics;
-@property int lyricsChecksum;
-@property(retain) MIPPlaybackInfo * playbackInfo;
-@property int trackNumber;
-@property int userRating;
+@property (nonatomic, retain) MIPAlbum *album;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic) int audioFormat;
+@property (nonatomic, retain) MIPArtist *composer;
+@property (nonatomic) int discNumber;
+@property (nonatomic) BOOL excludeFromShuffle;
+@property (nonatomic) long long geniusId;
+@property (nonatomic, retain) MIPGenre *genre;
+@property (nonatomic, readonly) BOOL hasAlbum;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic) BOOL hasAudioFormat;
+@property (nonatomic, readonly) BOOL hasComposer;
+@property (nonatomic) BOOL hasDiscNumber;
+@property (nonatomic) BOOL hasExcludeFromShuffle;
+@property (nonatomic) BOOL hasGeniusId;
+@property (nonatomic, readonly) BOOL hasGenre;
+@property (nonatomic) BOOL hasHasVideo;
+@property (nonatomic, readonly) BOOL hasLyrics;
+@property (nonatomic) BOOL hasLyricsChecksum;
+@property (nonatomic, readonly) BOOL hasPlaybackInfo;
+@property (nonatomic) BOOL hasTrackNumber;
+@property (nonatomic) BOOL hasUserRating;
+@property (nonatomic) BOOL hasVideo;
+@property (nonatomic, retain) NSString *lyrics;
+@property (nonatomic) int lyricsChecksum;
+@property (nonatomic, retain) MIPPlaybackInfo *playbackInfo;
+@property (nonatomic) int trackNumber;
+@property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
 - (id)album;

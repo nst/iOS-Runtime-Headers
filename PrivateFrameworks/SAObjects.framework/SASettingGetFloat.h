@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetFloat : SASettingGetNumber {
-}
+@interface SASettingGetFloat : SASettingGetNumber
 
 + (id)getFloat;
 + (id)getFloatWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBodyPlaceholderInfo : KNPlaceholderInfo {
-}
+@interface KNBodyPlaceholderInfo : KNPlaceholderInfo
 
 - (void)acceptVisitor:(id)arg1;
 - (id)defaultBuildChunkTitle;

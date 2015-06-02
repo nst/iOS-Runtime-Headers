@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class APSConnection, NSData, NSObject<OS_dispatch_semaphore>;
-
 @interface AADeviceInfo : NSObject {
     APSConnection *_apsConnection;
     NSData *_token;

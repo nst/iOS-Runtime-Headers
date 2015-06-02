@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class <FigNeroLayerDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface FigNeroLayer : CALayer {
     <FigNeroLayerDelegate> *_neroDelegate;
     NSObject<OS_dispatch_queue> *_neroQueue;
     struct OpaqueFigNeroid { } *_neroid;
 }
 
-@property <FigNeroLayerDelegate> * neroDelegate;
+@property (nonatomic) <FigNeroLayerDelegate> *neroDelegate;
 
 - (void)_dispatchNotification:(id)arg1 value:(id)arg2;
 - (void)_start;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class MPAVRoutingController, MPVolumeController, NACEventThrottler;
-
 @interface _NACVolumeObserverRecord : NSObject {
     float _EUVolumeLimit;
     BOOL _muted;
@@ -14,13 +12,13 @@
     BOOL _volumeWarningEnabled;
 }
 
-@property float EUVolumeLimit;
-@property(getter=isMuted) BOOL muted;
-@property(retain) MPAVRoutingController * routingController;
-@property(retain) NACEventThrottler * throttler;
-@property(getter=isVolumeControlAvailable) BOOL volumeControlAvailable;
-@property(retain) MPVolumeController * volumeController;
-@property(getter=isVolumeWarningEnabled) BOOL volumeWarningEnabled;
+@property (nonatomic) float EUVolumeLimit;
+@property (getter=isMuted, nonatomic) BOOL muted;
+@property (nonatomic, retain) MPAVRoutingController *routingController;
+@property (nonatomic, retain) NACEventThrottler *throttler;
+@property (getter=isVolumeControlAvailable, nonatomic) BOOL volumeControlAvailable;
+@property (nonatomic, retain) MPVolumeController *volumeController;
+@property (getter=isVolumeWarningEnabled, nonatomic) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;

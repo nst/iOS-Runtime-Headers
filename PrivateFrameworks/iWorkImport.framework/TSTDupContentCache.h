@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTDupContentCache : TSUConcurrentCache {
-}
+@interface TSTDupContentCache : TSUConcurrentCache
 
 - (id)description;
 

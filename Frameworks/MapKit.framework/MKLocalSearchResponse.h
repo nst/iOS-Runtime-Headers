@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray;
-
 @interface MKLocalSearchResponse : NSObject {
     struct { 
         struct { 
@@ -18,8 +16,8 @@
     NSArray *_mapItems;
 }
 
-@property(readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
-@property(readonly) NSArray * mapItems;
+@property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
+@property (nonatomic, readonly) NSArray *mapItems;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;

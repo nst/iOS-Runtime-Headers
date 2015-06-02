@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAudioMixInternal, NSArray;
-
 @interface AVAudioMix : NSObject <NSCopying, NSMutableCopying> {
     AVAudioMixInternal *_audioMix;
 }
 
-@property(copy,readonly) NSArray * inputParameters;
+@property (nonatomic, readonly, copy) NSArray *inputParameters;
 
 - (id)_audioMixInputParametersForTrackID:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

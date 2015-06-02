@@ -2,33 +2,21 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface SKAction : NSObject <NSCoding, NSCopying> {
-
-  /* Error parsing encoded ivar type info: ^{SKCAction=^^?If@?@BddffdBB@?iffff} */
-    struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; } *_caction;
-
+    struct SKCAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
 }
 
-@property double duration;
-@property BOOL finished;
-@property float speed;
-@property id timingFunction;
-@property int timingMode;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL finished;
+@property (nonatomic) float speed;
+@property (nonatomic) id /* block */ timingFunction;
+@property (nonatomic) int timingMode;
 
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2;
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
 + (id)colorizeWithColor:(id)arg1 colorBlendFactor:(float)arg2 duration:(double)arg3;
 + (id)colorizeWithColorBlendFactor:(float)arg1 duration:(double)arg2;
-+ (id)customActionWithDuration:(double)arg1 actionBlock:(id)arg2;
++ (id)customActionWithDuration:(double)arg1 actionBlock:(id /* block */)arg2;
 + (id)fadeAlphaBy:(float)arg1 duration:(double)arg2;
 + (id)fadeAlphaTo:(float)arg1 duration:(double)arg2;
 + (id)fadeInWithDuration:(double)arg1;
@@ -67,8 +55,8 @@
 + (id)rotateToAngle:(float)arg1 duration:(double)arg2;
 + (id)rotateToAngle:(float)arg1 duration:(double)arg2 shortestUnitArc:(BOOL)arg3;
 + (id)runAction:(id)arg1 onChildWithName:(id)arg2;
-+ (id)runBlock:(id)arg1;
-+ (id)runBlock:(id)arg1 queue:(id)arg2;
++ (id)runBlock:(id /* block */)arg1;
++ (id)runBlock:(id /* block */)arg1 queue:(id)arg2;
 + (id)scaleBy:(float)arg1 duration:(double)arg2;
 + (id)scaleTo:(float)arg1 duration:(double)arg2;
 + (id)scaleXBy:(float)arg1 y:(float)arg2 duration:(double)arg3;
@@ -86,9 +74,7 @@
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 
-- (struct SKCAction { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; }*)caction;
-     /* Encoded args for previous method: ^{SKCAction=^^?If@?@BddffdBB@?iffff}8@0:4 */
-
+- (struct SKCAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; }*)caction;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -103,10 +89,10 @@
 - (void)setDuration:(double)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setSpeed:(float)arg1;
-- (void)setTimingFunction:(id)arg1;
+- (void)setTimingFunction:(id /* block */)arg1;
 - (void)setTimingMode:(int)arg1;
 - (float)speed;
-- (id)timingFunction;
+- (id /* block */)timingFunction;
 - (int)timingMode;
 - (void)updateWithTarget:(id)arg1 forTime:(double)arg2;
 - (void)wasAddedToTarget:(id)arg1 atTime:(double)arg2;

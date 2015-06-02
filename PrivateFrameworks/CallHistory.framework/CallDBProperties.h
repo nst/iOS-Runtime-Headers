@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSNumber;
+@interface CallDBProperties : NSManagedObject
 
-@interface CallDBProperties : NSManagedObject {
-}
-
-@property(retain) NSNumber * timer_all;
-@property(retain) NSNumber * timer_incoming;
-@property(retain) NSNumber * timer_last;
-@property(retain) NSNumber * timer_lifetime;
-@property(retain) NSNumber * timer_outgoing;
+@property (nonatomic, retain) NSNumber *timer_all;
+@property (nonatomic, retain) NSNumber *timer_incoming;
+@property (nonatomic, retain) NSNumber *timer_last;
+@property (nonatomic, retain) NSNumber *timer_lifetime;
+@property (nonatomic, retain) NSNumber *timer_outgoing;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class MCPeerID, NSData, NSMutableDictionary;
-
 @interface MCSessionPeerState : NSObject {
     int _certificateDecision;
     BOOL _connectPeerCalled;
@@ -17,16 +15,16 @@
     int _state;
 }
 
-@property int certificateDecision;
-@property BOOL connectPeerCalled;
-@property(retain) NSMutableDictionary * incomingStreams;
-@property(copy) NSData * nearbyConnectionData;
-@property(readonly) unsigned int newStreamID;
-@property(readonly) unsigned int newStreamOpenRequestID;
-@property(retain) NSMutableDictionary * outgoingStreamRequests;
-@property(retain) NSMutableDictionary * outgoingStreams;
-@property(copy,readonly) MCPeerID * peerID;
-@property int state;
+@property (nonatomic) int certificateDecision;
+@property (nonatomic) BOOL connectPeerCalled;
+@property (nonatomic, retain) NSMutableDictionary *incomingStreams;
+@property (nonatomic, copy) NSData *nearbyConnectionData;
+@property (nonatomic, readonly) unsigned int newStreamID;
+@property (nonatomic, readonly) unsigned int newStreamOpenRequestID;
+@property (nonatomic, retain) NSMutableDictionary *outgoingStreamRequests;
+@property (nonatomic, retain) NSMutableDictionary *outgoingStreams;
+@property (nonatomic, readonly, copy) MCPeerID *peerID;
+@property (nonatomic) int state;
 
 - (int)certificateDecision;
 - (BOOL)connectPeerCalled;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class ACAccountStore, SKUIFacebookLikeStatus, SKUIFacebookPageComponent, SKUIReviewsFacebookView;
-
 @interface SKUIFacebookPageSection : SKUIStorePageSection {
     ACAccountStore *_accountStore;
     BOOL _facebookAccountsExist;
@@ -12,7 +10,7 @@
     SKUIFacebookLikeStatus *_likeStatus;
 }
 
-@property(readonly) SKUIFacebookPageComponent * pageComponent;
+@property (nonatomic, readonly) SKUIFacebookPageComponent *pageComponent;
 
 - (void).cxx_destruct;
 - (id)_accountStore;

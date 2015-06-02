@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemEventTap : AXSubsystem {
-}
+@interface AXSubsystemEventTap : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

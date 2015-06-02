@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, UIControl, UISegmentedControl, UIView, _UIBackdropView;
-
 @interface SKUIProductPageHeaderFloatingView : UIView {
     UIView *_backdropAlphaView;
     _UIBackdropView *_backdropView;
@@ -13,10 +11,10 @@
     UIView *_separatorView;
 }
 
-@property float backdropAlpha;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(readonly) UIControl * sectionControl;
-@property int selectedSectionIndex;
+@property (nonatomic) float backdropAlpha;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, readonly) UIControl *sectionControl;
+@property (nonatomic) int selectedSectionIndex;
 
 - (void).cxx_destruct;
 - (void)_reloadBackdropView;

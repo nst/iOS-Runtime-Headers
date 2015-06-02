@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSUpdatesDatabaseSchema : NSObject {
-}
+@interface SSUpdatesDatabaseSchema : NSObject
 
 + (void)_migrate7000to7001InDatabase:(id)arg1;
 + (void)createSchemaInDatabase:(id)arg1 withName:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLFacebookUpload : NSObject <NSSecureCoding> {
     unsigned long long _totalBytes;
     unsigned long long _transferredBytes;
@@ -11,10 +9,10 @@
     int _uploadType;
 }
 
-@property unsigned long long totalBytes;
-@property unsigned long long transferredBytes;
-@property(retain) NSString * uploadID;
-@property int uploadType;
+@property (nonatomic) unsigned long long totalBytes;
+@property (nonatomic) unsigned long long transferredBytes;
+@property (nonatomic, retain) NSString *uploadID;
+@property (nonatomic) int uploadType;
 
 + (BOOL)supportsSecureCoding;
 

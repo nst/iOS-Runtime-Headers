@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <HAPKeyStore>, HAPCharacteristic, HAPService, NSData, NSMutableData, NSNumber, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSOperationQueue, NSString;
-
 @interface HAPTunneledAccessoryBLTE : HAPAccessory <HAPAccessoryServerInternalDelegate> {
     <HAPKeyStore> *_keyStore;
     NSOperationQueue *_operationQueue;
@@ -24,26 +22,26 @@
     NSMutableData *_writeNonce;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <HAPKeyStore> * keyStore;
-@property(readonly) NSOperationQueue * operationQueue;
-@property HAPCharacteristic * pairVerifyCharacteristic;
-@property(getter=isPairVerifyComplete) BOOL pairVerifyComplete;
-@property HAPService * pairingService;
-@property HAPCharacteristic * pairingsCharacteristic;
-@property(getter=isPerformingPairVerify) BOOL performingPairVerify;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableData * readNonce;
-@property(retain) NSNumber * sessionLifetimeTimeout;
-@property(retain) NSObject<OS_dispatch_source> * sessionLifetimeTimer;
-@property(retain) NSData * sessionReadKey;
-@property(retain) NSData * sessionWriteKey;
-@property(copy) NSNumber * stateNumber;
-@property(readonly) Class superclass;
-@property HAPService * tunneledBTLEAccessoryService;
-@property(retain) NSMutableData * writeNonce;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <HAPKeyStore> *keyStore;
+@property (nonatomic, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic) HAPCharacteristic *pairVerifyCharacteristic;
+@property (getter=isPairVerifyComplete, nonatomic) BOOL pairVerifyComplete;
+@property (nonatomic) HAPService *pairingService;
+@property (nonatomic) HAPCharacteristic *pairingsCharacteristic;
+@property (getter=isPerformingPairVerify, nonatomic) BOOL performingPairVerify;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableData *readNonce;
+@property (nonatomic, retain) NSNumber *sessionLifetimeTimeout;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *sessionLifetimeTimer;
+@property (nonatomic, retain) NSData *sessionReadKey;
+@property (nonatomic, retain) NSData *sessionWriteKey;
+@property (nonatomic, copy) NSNumber *stateNumber;
+@property (readonly) Class superclass;
+@property (nonatomic) HAPService *tunneledBTLEAccessoryService;
+@property (nonatomic, retain) NSMutableData *writeNonce;
 
 - (void).cxx_destruct;
 - (void)_cancelAllQueuedOperationsWithError:(id)arg1;
@@ -62,16 +60,16 @@
 - (BOOL)_parsePairingService:(id)arg1;
 - (BOOL)_parseServices;
 - (BOOL)_parseTunneledBTLEAccessoryService:(id)arg1;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_registerForTunnelCharacteristicNotifications;
 - (void)_resumeAllOperations;
 - (void)_sanitizeAllTunneledCharacteristics;
 - (void)_suspendAllOperations;
 - (void)_tearDownSessionWithError:(id)arg1;
 - (void)_updateSessionLifetimeTimer;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
 - (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3 keyStore:(id)arg4;
 - (void)invalidate;
@@ -84,9 +82,9 @@
 - (id)pairingService;
 - (id)pairingsCharacteristic;
 - (id)queue;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)readNonce;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)sessionLifetimeTimeout;
 - (id)sessionLifetimeTimer;
 - (id)sessionReadKey;
@@ -110,8 +108,8 @@
 - (BOOL)supportsGroupedRequests;
 - (id)tunneledBTLEAccessoryService;
 - (id)uniqueIdentifier;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)writeNonce;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TPTextWrapController;
-
 @interface TPPaginatedPageController : TPPageController {
     TPTextWrapController *_wrapController;
 }
@@ -17,7 +15,7 @@
 - (unsigned int)p_backupPageIndexForCharIndex:(unsigned int)arg1;
 - (Class)p_pageInfoClass;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_pageRangeAffectedByInfo:(id)arg1;
-- (void)p_performWithCachedPageLayouts:(id)arg1;
+- (void)p_performWithCachedPageLayouts:(id /* block */)arg1;
 - (void)p_rebuildCachedLayoutChildrenFromStartPage:(unsigned int)arg1 toEndPage:(unsigned int)arg2 setNeedsLayout:(BOOL)arg3;
 - (unsigned int)pageIndexFromCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pageOriginForPageIndex:(unsigned int)arg1;

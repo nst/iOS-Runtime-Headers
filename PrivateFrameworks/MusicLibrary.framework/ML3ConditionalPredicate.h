@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3Predicate;
-
 @interface ML3ConditionalPredicate : ML3Predicate {
     ML3Predicate *_conditionPredicate;
     ML3Predicate *_elsePredicate;
     ML3Predicate *_thenPredicate;
 }
 
-@property(copy,readonly) ML3Predicate * conditionPredicate;
-@property(copy,readonly) ML3Predicate * elsePredicate;
-@property(copy,readonly) ML3Predicate * thenPredicate;
+@property (nonatomic, readonly, copy) ML3Predicate *conditionPredicate;
+@property (nonatomic, readonly, copy) ML3Predicate *elsePredicate;
+@property (nonatomic, readonly, copy) ML3Predicate *thenPredicate;
 
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 

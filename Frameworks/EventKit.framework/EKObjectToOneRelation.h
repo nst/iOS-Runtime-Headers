@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObject;
-
 @interface EKObjectToOneRelation : EKObjectRelation {
     EKObject *_relatedObject;
     BOOL _weak;

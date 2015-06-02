@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCell;
-
 @interface UITableViewRow : NSObject <NSCoding> {
     UITableViewCell *_cell;
     float _height;
     int _indentationLevel;
 }
 
-@property(retain) UITableViewCell * cell;
-@property float height;
+@property (nonatomic, retain) UITableViewCell *cell;
+@property (nonatomic) float height;
 
 + (id)row;
 

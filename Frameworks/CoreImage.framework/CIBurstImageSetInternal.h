@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CIBurstActionClassifier, CIBurstImageFaceAnalysisContext, CIBurstYUVImage, NSArray, NSCountedSet, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface CIBurstImageSetInternal : NSObject {
     int _version;
     NSString *_versionString;
@@ -40,30 +33,30 @@
     int temporalOrder;
 }
 
-@property CIBurstActionClassifier * actionClassifier;
-@property NSMutableArray * allImageIdentifiers;
-@property NSArray * bestImageIdentifiersArray;
-@property NSString * burstCoverSelection;
-@property(retain) NSString * burstId;
-@property NSString * burstLogFileName;
-@property NSMutableArray * clusterArray;
-@property NSMutableDictionary * clusterByImageIdentifier;
+@property CIBurstActionClassifier *actionClassifier;
+@property NSMutableArray *allImageIdentifiers;
+@property NSArray *bestImageIdentifiersArray;
+@property NSString *burstCoverSelection;
+@property (nonatomic, retain) NSString *burstId;
+@property NSString *burstLogFileName;
+@property NSMutableArray *clusterArray;
+@property NSMutableDictionary *clusterByImageIdentifier;
 @property int dummyAnalysisCount;
 @property BOOL enableAnalysis;
 @property BOOL enableDumpYUV;
 @property BOOL enableFaceCore;
-@property NSCountedSet * faceIDCounts;
+@property NSCountedSet *faceIDCounts;
 @property int maxNumPendingFrames;
-@property NSMutableDictionary * statsByImageIdentifier;
+@property NSMutableDictionary *statsByImageIdentifier;
 @property int temporalOrder;
 @property int version;
-@property NSString * versionString;
+@property NSString *versionString;
 
 + (id)defaultVersionString;
 
 - (id)actionClassifier;
-- (void)addImageFromIOSurface:(struct __IOSurface { }*)arg1 properties:(id)arg2 identifier:(id)arg3 completionBlock:(id)arg4;
-- (void)addYUVImage:(id)arg1 properties:(id)arg2 identifier:(id)arg3 imageProps:(id)arg4 completionBlock:(id)arg5;
+- (void)addImageFromIOSurface:(struct __IOSurface { }*)arg1 properties:(id)arg2 identifier:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)addYUVImage:(id)arg1 properties:(id)arg2 identifier:(id)arg3 imageProps:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)allImageIdentifiers;
 - (id)bestImageIdentifiers;
 - (id)bestImageIdentifiersArray;

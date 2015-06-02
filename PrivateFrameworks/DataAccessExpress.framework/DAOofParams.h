@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSDate, NSString;
-
 @interface DAOofParams : NSObject {
     NSDate *_endTime;
     NSString *_externalMessage;
@@ -13,12 +11,12 @@
     NSDate *_startTime;
 }
 
-@property(retain) NSDate * endTime;
-@property(retain) NSString * externalMessage;
-@property int externalState;
-@property(retain) NSString * message;
-@property int oofState;
-@property(retain) NSDate * startTime;
+@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic, retain) NSString *externalMessage;
+@property (nonatomic) int externalState;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic) int oofState;
+@property (nonatomic, retain) NSDate *startTime;
 
 - (void).cxx_destruct;
 - (id)description;

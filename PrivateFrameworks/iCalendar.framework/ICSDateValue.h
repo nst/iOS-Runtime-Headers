@@ -8,9 +8,9 @@
     int _year;
 }
 
-@property(readonly) int day;
-@property(readonly) int month;
-@property(readonly) int year;
+@property (readonly) int day;
+@property (readonly) int month;
+@property (readonly) int year;
 
 + (id)dateFromICSString:(id)arg1;
 + (id)dateFromICSUTF8String:(const char *)arg1;

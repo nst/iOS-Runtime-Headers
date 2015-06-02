@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDArchivedGroupSelection : TSDArchivedDrawableSelection {
-}
+@interface TSDArchivedGroupSelection : TSDArchivedDrawableSelection
 
 - (id)initFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class <VSRecognitionSessionDelegate>, NSArray, NSString, VSKeepAlive, VSRecognitionAction, VSSpeechSynthesizer;
-
 @interface VSRecognitionSession : NSObject {
     NSString *_audioInputPath;
     VSRecognitionAction *_currentAction;

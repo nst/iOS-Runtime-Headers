@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTEAudioDevice, NSDictionary, NSMutableArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
-
 @interface LTEAudioManager : NSObject {
     BOOL _microphoneMuted;
     struct _opaque_pthread_mutex_t { 
@@ -54,23 +52,23 @@
     } vpioFormat;
 }
 
-@property int clientPID;
-@property(getter=isSpeakerPhoneEnabled) BOOL enableSpeakerPhone;
-@property BOOL isGKVoiceChat;
-@property BOOL isUsingSuppression;
-@property(getter=isMicrophoneMuted) BOOL microphoneMuted;
+@property (nonatomic) int clientPID;
+@property (getter=isSpeakerPhoneEnabled) BOOL enableSpeakerPhone;
+@property (nonatomic) BOOL isGKVoiceChat;
+@property (nonatomic) BOOL isUsingSuppression;
+@property (getter=isMicrophoneMuted, nonatomic) BOOL microphoneMuted;
 @property BOOL shouldSetupAudioSession;
-@property(retain) LTEAudioDevice * targetInputDevice;
-@property(readonly) BOOL usingFloat;
+@property (retain) LTEAudioDevice *targetInputDevice;
+@property (nonatomic, readonly) BOOL usingFloat;
 
 + (id)defaultLTEAudioManager;
 
-- (void)AUIOSetup:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg1 minSamplesPerFrame:(int)arg2 allowAudioRecording:(BOOL)arg3 ignoreRefCount:(BOOL)arg4 remoteCodecType:(unsigned long)arg5 remoteCodecSampleRate:(double)arg6 completionHandler:(id)arg7;
+- (void)AUIOSetup:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg1 minSamplesPerFrame:(int)arg2 allowAudioRecording:(BOOL)arg3 ignoreRefCount:(BOOL)arg4 remoteCodecType:(unsigned long)arg5 remoteCodecSampleRate:(double)arg6 completionHandler:(id /* block */)arg7;
 - (void)AUIOTeardown:(BOOL)arg1;
 - (void)addConference:(id)arg1;
 - (void)audioSessionClientDied:(int)arg1;
 - (unsigned long)blockSizeForSampleRate:(double)arg1;
-- (void)cleanupAUIOSetupWithResult:(long)arg1 completionHandler:(id)arg2;
+- (void)cleanupAUIOSetupWithResult:(long)arg1 completionHandler:(id /* block */)arg2;
 - (int)clientPID;
 - (struct opaqueCMSession { }*)cmSessionRef;
 - (id)currentInputDevice;
@@ -110,12 +108,12 @@
 - (unsigned long)setupAudioSession;
 - (void)setupVPBlockFormat;
 - (BOOL)shouldSetupAudioSession;
-- (void)startAudioIOWithFarEndVersionInfo:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg1 minSamplesPerFrame:(int)arg2 internalFormat:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg3 allowAudioRecording:(BOOL)arg4 remoteCodecType:(unsigned long)arg5 remoteCodecSampleRate:(double)arg6 completionHandler:(id)arg7;
-- (unsigned long)startAudioSessionWithCompletionHandler:(id)arg1 dispatchQueue:(id)arg2;
-- (void)stopAudioIOWithCompletionHandler:(id)arg1;
+- (void)startAudioIOWithFarEndVersionInfo:(struct VoiceIOFarEndVersionInfo { unsigned char x1[64]; unsigned char x2[64]; unsigned int x3; }*)arg1 minSamplesPerFrame:(int)arg2 internalFormat:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg3 allowAudioRecording:(BOOL)arg4 remoteCodecType:(unsigned long)arg5 remoteCodecSampleRate:(double)arg6 completionHandler:(id /* block */)arg7;
+- (unsigned long)startAudioSessionWithCompletionHandler:(id /* block */)arg1 dispatchQueue:(id)arg2;
+- (void)stopAudioIOWithCompletionHandler:(id /* block */)arg1;
 - (void)stopAudioSession:(unsigned long)arg1;
 - (id)targetInputDevice;
-- (void)tearDownAudioIO:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)tearDownAudioIO:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)tearDownAudioSession:(unsigned long)arg1 forceTearDown:(BOOL)arg2;
 - (BOOL)usingFloat;
 

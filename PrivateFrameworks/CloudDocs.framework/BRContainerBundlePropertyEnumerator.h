@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSDictionary, NSEnumerator, NSString;
-
 @interface BRContainerBundlePropertyEnumerator : NSEnumerator {
     NSEnumerator *_enumerator;
     NSDictionary *_plist;

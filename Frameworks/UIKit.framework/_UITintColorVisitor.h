@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UITintColorVisitor : _UIViewVisitor {
     UIView *_changedSubview;
     UIView *_originalVisitedView;

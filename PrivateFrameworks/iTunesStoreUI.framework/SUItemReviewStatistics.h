@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUItemReviewStatistics : NSObject <NSCopying> {
     float _averageUserRating;
     int _numberOfUserRatings;
@@ -12,11 +10,11 @@
     NSString *_numberOfUserReviewsString;
 }
 
-@property float averageUserRating;
-@property int numberOfUserRatings;
-@property(copy) NSString * numberOfUserRatingsString;
-@property int numberOfUserReviews;
-@property(copy) NSString * numberOfUserReviewsString;
+@property (nonatomic) float averageUserRating;
+@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic, copy) NSString *numberOfUserRatingsString;
+@property (nonatomic) int numberOfUserReviews;
+@property (nonatomic, copy) NSString *numberOfUserReviewsString;
 
 - (float)averageUserRating;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

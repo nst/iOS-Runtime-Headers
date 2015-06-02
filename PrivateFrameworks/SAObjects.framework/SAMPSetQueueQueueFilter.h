@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPSetQueueQueueFilter : AceObject <SAAceSerializable>
 
-@interface SAMPSetQueueQueueFilter : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * mediaItemProperty;
-@property(copy) NSString * operation;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *mediaItemProperty;
+@property (nonatomic, copy) NSString *operation;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
 
 + (id)setQueueQueueFilter;
 + (id)setQueueQueueFilterWithDictionary:(id)arg1 context:(id)arg2;

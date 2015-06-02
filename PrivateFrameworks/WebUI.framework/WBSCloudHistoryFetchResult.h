@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSData, NSMutableArray;
-
 @interface WBSCloudHistoryFetchResult : NSObject {
     NSMutableArray *_mutableCloudHistoryVisits;
     NSMutableArray *_mutableHistoryTombstones;
     NSData *_serverChangeTokenData;
 }
 
-@property(readonly) NSArray * cloudHistoryVisits;
-@property(readonly) NSArray * historyTombstones;
-@property(readonly) NSData * serverChangeTokenData;
+@property (nonatomic, readonly) NSArray *cloudHistoryVisits;
+@property (nonatomic, readonly) NSArray *historyTombstones;
+@property (nonatomic, readonly) NSData *serverChangeTokenData;
 
 - (void).cxx_destruct;
 - (void)_addCloudHistoryVisit:(id)arg1;

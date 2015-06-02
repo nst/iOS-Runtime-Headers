@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class <SCNProgramDelegate>, NSMutableDictionary, NSString;
-
 @interface SCNProgram : NSObject <NSCopying, NSSecureCoding> {
     id _delegate;
     NSString *_fragmentShader;
@@ -14,10 +12,10 @@
     NSString *_vertexShader;
 }
 
-@property <SCNProgramDelegate> * delegate;
-@property(copy) NSString * fragmentShader;
-@property(getter=isOpaque) BOOL opaque;
-@property(copy) NSString * vertexShader;
+@property (nonatomic) <SCNProgramDelegate> *delegate;
+@property (nonatomic, copy) NSString *fragmentShader;
+@property (getter=isOpaque, nonatomic) BOOL opaque;
+@property (nonatomic, copy) NSString *vertexShader;
 
 + (id)SCNJSExportProtocol;
 + (id)program;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, NSString, NSURL, NSUUID, TSADocumentRoot, TSKCollaborationState, TSPObjectContext, TSUTemporaryDirectory;
-
 @interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
     NSURL *_URL;
     TSPObjectContext *_context;
@@ -12,27 +10,27 @@
     TSUTemporaryDirectory *_tempDirForSupport;
 }
 
-@property(copy) NSURL * URL;
-@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
-@property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) TSKCollaborationState * collaborationState;
-@property(retain) TSPObjectContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSString * defaultDraftName;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * documentCachePath;
-@property(readonly) NSString * documentPasswordHint;
-@property(readonly) TSADocumentRoot * documentRoot;
-@property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL ignoreDocumentSupport;
-@property(readonly) BOOL isDocumentSupportTemporary;
-@property(readonly) BOOL isInCollaborationMode;
-@property(readonly) BOOL isInReadOnlyMode;
-@property(readonly) NSString * name;
-@property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
-@property(readonly) BOOL skipDocumentUpgrade;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
+@property (nonatomic, readonly) TSKCollaborationState *collaborationState;
+@property (nonatomic, retain) TSPObjectContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *defaultDraftName;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *documentCachePath;
+@property (nonatomic, readonly) NSString *documentPasswordHint;
+@property (nonatomic, readonly) TSADocumentRoot *documentRoot;
+@property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL ignoreDocumentSupport;
+@property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
+@property (nonatomic, readonly) BOOL isInCollaborationMode;
+@property (nonatomic, readonly) BOOL isInReadOnlyMode;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
+@property (nonatomic, readonly) BOOL skipDocumentUpgrade;
+@property (readonly) Class superclass;
 
 - (id)URL;
 - (void)close;

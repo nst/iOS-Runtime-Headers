@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIItemCellLayout;
-
 @interface SKUIItemTableViewCell : SKUITableViewCell <SKUICellLayoutParentView> {
     BOOL _layoutNeedsLayout;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIItemCellLayout * layout;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIItemCellLayout *layout;
+@property (readonly) Class superclass;
 
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;
 - (void)configureForItem:(id)arg1 rowIndex:(int)arg2;

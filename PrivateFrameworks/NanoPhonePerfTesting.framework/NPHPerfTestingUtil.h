@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoPhonePerfTesting.framework/NanoPhonePerfTesting
  */
 
-@interface NPHPerfTestingUtil : NSObject {
-}
+@interface NPHPerfTestingUtil : NSObject
 
 + (void)LogDictionary:(id)arg1 forKey:(id)arg2;
 

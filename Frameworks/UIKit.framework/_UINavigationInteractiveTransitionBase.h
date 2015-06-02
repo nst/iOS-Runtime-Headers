@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UINavigationInteractiveTransitionBaseDelegate>, CADisplayLink, NSString, UIGestureRecognizer, UIPanGestureRecognizer, UIView, UIViewController, _UINavigationParallaxTransition;
-
 @interface _UINavigationInteractiveTransitionBase : UIPercentDrivenInteractiveTransition <UIGestureRecognizerDelegate> {
     BOOL __completesTransitionOnEnd;
     int __interactionState;
@@ -11,7 +9,7 @@
     BOOL __stoppedTransitionWasCancelled;
     BOOL __transitionWasStopped;
     BOOL __useAugmentedShouldPopDecisionProcedure;
-    float _accelerations[3];
+    float _accelerations;
     _UINavigationParallaxTransition *_animationController;
     float _averageAcceleration;
     float _averageVelocity;
@@ -28,37 +26,37 @@
     BOOL _shouldReverseTranslation;
     double _skipTimeStamp;
     BOOL _springAnimationIsPending;
-    float _timestamps[3];
+    float _timestamps;
     float _totalDistance;
-    float _velocities[3];
+    float _velocities;
 }
 
-@property(setter=_setCompletesTransitionOnEnd:) BOOL _completesTransitionOnEnd;
-@property(setter=_setInteractionState:) int _interactionState;
-@property(setter=_setParent:) UIViewController * _parent;
-@property(setter=_setStoppedTransitionWasCancelled:) BOOL _stoppedTransitionWasCancelled;
-@property(setter=_setTransitionWasStopped:) BOOL _transitionWasStopped;
-@property(setter=_setUseAugmentedShouldPopDecisionProcedure:) BOOL _useAugmentedShouldPopDecisionProcedure;
-@property(retain) _UINavigationParallaxTransition * animationController;
-@property float averageAcceleration;
-@property float averageVelocity;
-@property(copy,readonly) NSString * debugDescription;
-@property <_UINavigationInteractiveTransitionBaseDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property UIPanGestureRecognizer * gestureRecognizer;
-@property(readonly) unsigned int hash;
-@property BOOL inSpringAnimation;
-@property(getter=_navigationGesture,readonly) UIGestureRecognizer * navigationGesture;
-@property float previousAcceleration;
-@property float previousDisplacement;
-@property double previousTimeStamp;
-@property float previousVelocity;
-@property unsigned int sampleCount;
-@property BOOL shouldReverseTranslation;
-@property double skipTimeStamp;
-@property BOOL springAnimationIsPending;
-@property(readonly) Class superclass;
-@property float totalDistance;
+@property (setter=_setCompletesTransitionOnEnd:, nonatomic) BOOL _completesTransitionOnEnd;
+@property (setter=_setInteractionState:, nonatomic) int _interactionState;
+@property (setter=_setParent:, nonatomic) UIViewController *_parent;
+@property (setter=_setStoppedTransitionWasCancelled:, nonatomic) BOOL _stoppedTransitionWasCancelled;
+@property (setter=_setTransitionWasStopped:, nonatomic) BOOL _transitionWasStopped;
+@property (setter=_setUseAugmentedShouldPopDecisionProcedure:, nonatomic) BOOL _useAugmentedShouldPopDecisionProcedure;
+@property (nonatomic, retain) _UINavigationParallaxTransition *animationController;
+@property (nonatomic) float averageAcceleration;
+@property (nonatomic) float averageVelocity;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_UINavigationInteractiveTransitionBaseDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIPanGestureRecognizer *gestureRecognizer;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inSpringAnimation;
+@property (getter=_navigationGesture, nonatomic, readonly) UIGestureRecognizer *navigationGesture;
+@property (nonatomic) float previousAcceleration;
+@property (nonatomic) float previousDisplacement;
+@property (nonatomic) double previousTimeStamp;
+@property (nonatomic) float previousVelocity;
+@property (nonatomic) unsigned int sampleCount;
+@property (nonatomic) BOOL shouldReverseTranslation;
+@property (nonatomic) double skipTimeStamp;
+@property (nonatomic) BOOL springAnimationIsPending;
+@property (readonly) Class superclass;
+@property (nonatomic) float totalDistance;
 
 - (void)_completeStoppedInteractiveTransition;
 - (BOOL)_completesTransitionOnEnd;

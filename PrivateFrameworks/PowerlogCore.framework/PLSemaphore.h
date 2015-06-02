@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface PLSemaphore : NSObject {
     NSMutableSet *_interestedObjects;
     NSString *_key;
@@ -12,10 +10,10 @@
     double _timeout;
 }
 
-@property(retain) NSMutableSet * interestedObjects;
-@property(retain) NSString * key;
-@property(retain) NSMutableSet * pendingDoneObjects;
-@property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
+@property (retain) NSMutableSet *interestedObjects;
+@property (retain) NSString *key;
+@property (retain) NSMutableSet *pendingDoneObjects;
+@property (retain) NSObject<OS_dispatch_semaphore> *semaphore;
 @property double timeout;
 
 + (id)sharedSemaphoreForKey:(id)arg1;
@@ -36,6 +34,6 @@
 - (void)signalNonInterestByObject:(id)arg1;
 - (void)signalStartListening;
 - (double)timeout;
-- (void)waitWithBlock:(id)arg1;
+- (void)waitWithBlock:(id /* block */)arg1;
 
 @end

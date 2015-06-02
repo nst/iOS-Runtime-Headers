@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDStyleAttributes : PBCodable <NSCopying> {
     NSMutableArray *_attributes;
     unsigned long long _customIconId;
@@ -12,9 +10,9 @@
     } _has;
 }
 
-@property(retain) NSMutableArray * attributes;
-@property unsigned long long customIconId;
-@property BOOL hasCustomIconId;
+@property (nonatomic, retain) NSMutableArray *attributes;
+@property (nonatomic) unsigned long long customIconId;
+@property (nonatomic) BOOL hasCustomIconId;
 
 - (void)addAttribute:(id)arg1;
 - (id)attributeAtIndex:(unsigned int)arg1;

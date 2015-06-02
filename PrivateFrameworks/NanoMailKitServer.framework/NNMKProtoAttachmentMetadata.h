@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoAttachmentMetadata : PBCodable <NSCopying> {
     NSString *_contentId;
     NSString *_fileName;
@@ -21,20 +19,20 @@
     unsigned int _type;
 }
 
-@property(retain) NSString * contentId;
-@property(retain) NSString * fileName;
-@property unsigned int fileSize;
-@property(readonly) BOOL hasContentId;
-@property(readonly) BOOL hasFileName;
-@property BOOL hasFileSize;
-@property BOOL hasImageHeight;
-@property BOOL hasImageWidth;
-@property BOOL hasRenderOnClient;
-@property BOOL hasType;
-@property float imageHeight;
-@property float imageWidth;
-@property BOOL renderOnClient;
-@property unsigned int type;
+@property (nonatomic, retain) NSString *contentId;
+@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic) unsigned int fileSize;
+@property (nonatomic, readonly) BOOL hasContentId;
+@property (nonatomic, readonly) BOOL hasFileName;
+@property (nonatomic) BOOL hasFileSize;
+@property (nonatomic) BOOL hasImageHeight;
+@property (nonatomic) BOOL hasImageWidth;
+@property (nonatomic) BOOL hasRenderOnClient;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) float imageHeight;
+@property (nonatomic) float imageWidth;
+@property (nonatomic) BOOL renderOnClient;
+@property (nonatomic) unsigned int type;
 
 - (void).cxx_destruct;
 - (id)contentId;

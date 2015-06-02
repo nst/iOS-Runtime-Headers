@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RDSupport.framework/RDSupport
  */
 
-@class <RDBridgeDelegate>, IDSService, NSObject<OS_dispatch_source>, NSString, RDMulticastService;
-
 @interface RDBridge : NSObject <IDSServiceDelegate> {
     NSObject<OS_dispatch_source> *_connectionHealthCheckTimer;
     int _connectionState;
@@ -13,14 +11,14 @@
     NSObject<OS_dispatch_source> *_sleepFailSafeTimer;
 }
 
-@property int connectionState;
-@property(copy,readonly) NSString * debugDescription;
-@property <RDBridgeDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) RDMulticastService * multicastService;
-@property(retain) IDSService * remoteService;
-@property(readonly) Class superclass;
+@property (nonatomic) int connectionState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RDBridgeDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) RDMulticastService *multicastService;
+@property (retain) IDSService *remoteService;
+@property (readonly) Class superclass;
 
 + (id)descriptionForConnectionState:(int)arg1;
 + (id)statusStringForConnectionState:(int)arg1;

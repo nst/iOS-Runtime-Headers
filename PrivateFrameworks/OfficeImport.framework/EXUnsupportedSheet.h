@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXUnsupportedSheet : NSObject {
-}
+@interface EXUnsupportedSheet : NSObject
 
 + (id)edSheetWithState:(id)arg1;
 + (bool)readDistinctSheetElementsFrom:(struct _xmlTextReader { }*)arg1 state:(id)arg2;

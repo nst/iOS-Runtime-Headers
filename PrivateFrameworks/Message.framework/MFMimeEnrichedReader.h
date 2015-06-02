@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableString;
-
 @interface MFMimeEnrichedReader : NSObject {
     struct __CFArray { } *_commandStack;
     long _currentIndex;
-    unsigned int _eatOneNewline : 1;
+    unsigned int _eatOneNewline;
     float _indentWidth;
     struct { 
         unsigned short buffer[64]; 
@@ -22,14 +20,14 @@
         int bufferedRangeEnd; 
     } _inputBuffer;
     long _inputLength;
-    unsigned int _insideComment : 1;
+    unsigned int _insideComment;
     int _lastQuoteLevel;
-    unsigned int _noFillLevel : 30;
+    unsigned int _noFillLevel;
     NSMutableString *_outputBuffer;
     id _outputString;
     struct __CFString { } *_postpendHTML;
     struct __CFString { } *_prependHTML;
-    unsigned int _wantsPlainText : 1;
+    unsigned int _wantsPlainText;
 }
 
 + (struct __CFCharacterSet { }*)parenSet;
@@ -45,13 +43,13 @@
 - (void)dealloc;
 - (id)description;
 - (void)endCommand:(id)arg1;
-- (void)handleNoParameterCommand:(const struct { id x1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 2; }*)arg1;
+- (void)handleNoParameterCommand:(const struct { id x1; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 2; }*)arg1;
 - (void)mismatchError:(id)arg1;
 - (void)nowWouldBeAGoodTimeToAppendToTheAttributedString;
 - (void)parseParameterString:(id)arg1;
 - (int)readTokenInto:(id*)arg1;
 - (void)resetStateWithString:(id)arg1 outputString:(id)arg2;
 - (void)setWantsHTML:(BOOL)arg1;
-- (void)setupFontStackEntry:(struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; }*)arg1;
+- (void)setupFontStackEntry:(struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; oneway void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; unsigned short x23; void*x24; void*x25; unsigned int x26; void*x27; double x28; int x29; void*x30; out const int x31; void*x32; long x33; unsigned char x34; void*x35; const double x36; unsigned long x37; void*x38; void*x39; out void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; char *x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; char *x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; char *x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; char *x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; char *x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void**x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; in void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; unsigned long long x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; oneway void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; oneway void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; bool x238; unsigned long x239; void*x240; unsigned long x241; out BOOL x242; void*x243; long x244; void*x245; int x246; in void*x247; unsigned short x248; void*x249; unsigned int x250/* : ? */; short x251; BOOL x252; const int x253; unsigned int x254/* : ? */; void*x255; const unsigned short x256; void*x257; const void x258; int x259; BOOL x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; oneway void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; bool x280; unsigned long x281; void*x282; unsigned long x283; out BOOL x284; void*x285; long x286; void*x287; int x288; in void*x289; unsigned short x290; void*x291; unsigned int x292/* : ? */; short x293; BOOL x294; const int x295; unsigned int x296/* : ? */; void*x297; const unsigned short x298; void*x299; const void x300; int x301; BOOL x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; oneway void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; unsigned short x323; void*x324; short x325; void*x326; void*x327; void*x328; void*x329; unsigned long x330; int x331; unsigned int x332/* : ? */; const void*x333; const void*x334; void*x335; void*x336; const int x337; void x338; void*x339; void*x340; void*x341; void*x342; const void*x343; void*x344; void*x345; void*x346; out const void*x347; short x348; void*x349; bool x350; void*x351; long x352; long x353; void*x354; void*x355; int x356; in long doublex357; int x358; short x359; void*x360; const int x361; unsigned int x362/* : ? */; void*x363; void*x364; out const unsigned char x365; out void*x366; void*x367; void*x368; in int x369; out in void*x370; float x371; const void*x372; void*x373; void*x374; void*x375; out const void*x376; void*x377; bool x378; void*x379; long x380; long x381; void*x382; void*x383; int x384; in long doublex385; int x386; short x387; void*x388; const int x389; unsigned int x390/* : ? */; void*x391; void*x392; out const unsigned char x393; out void*x394; void*x395; void*x396; in int x397; out in void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; void*x428; void*x429; void*x430; void*x431; void*x432; void*x433; void*x434; void*x435; void*x436; void*x437; }*)arg1;
 
 @end

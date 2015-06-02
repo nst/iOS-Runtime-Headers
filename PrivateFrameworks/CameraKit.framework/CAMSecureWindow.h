@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMSecureWindow : UIWindow {
-}
+@interface CAMSecureWindow : UIWindow
 
 + (BOOL)_isSecure;
 

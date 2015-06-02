@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIGlideReflectedTile : CITileFilter {
-}
+@interface CIGlideReflectedTile : CITileFilter
 
 + (id)customAttributes;
 

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMOverflowEvent : DOMEvent {
-}
+@interface DOMOverflowEvent : DOMEvent
 
-@property(readonly) BOOL horizontalOverflow;
-@property(readonly) unsigned short orient;
-@property(readonly) BOOL verticalOverflow;
+@property (readonly) BOOL horizontalOverflow;
+@property (readonly) unsigned short orient;
+@property (readonly) BOOL verticalOverflow;
 
 - (BOOL)horizontalOverflow;
 - (void)initOverflowEvent:(unsigned short)arg1 horizontalOverflow:(BOOL)arg2 verticalOverflow:(BOOL)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKEventHeuristics : NSObject {
-}
+@interface CUIKEventHeuristics : NSObject
 
 + (BOOL)_shouldFilterEvent:(id)arg1 filterOptions:(unsigned int)arg2;
 + (id)_sortedAndFilteredEventsForPredicate:(id)arg1 filterOptions:(unsigned int)arg2 sortMethod:(unsigned int)arg3 eventStore:(id)arg4;

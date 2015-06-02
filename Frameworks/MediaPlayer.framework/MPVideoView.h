@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, NSDictionary, NSString;
-
 @interface MPVideoView : UIView {
     NSDictionary *_AVURLAssetOptions;
     NSString *_moviePath;
@@ -16,18 +14,18 @@
     NSString *_videoID;
 }
 
-@property(retain) NSDictionary * AVURLAssetOptions;
-@property(readonly) BOOL canChangeScaleMode;
-@property(readonly) unsigned int effectiveScaleMode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieContentFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieFrame;
-@property(retain) NSString * movieSubtitle;
-@property(retain) NSString * movieTitle;
-@property MPAVController * player;
-@property unsigned int scaleMode;
-@property double startTime;
-@property double stopTime;
-@property(copy) NSString * videoID;
+@property (nonatomic, retain) NSDictionary *AVURLAssetOptions;
+@property (nonatomic, readonly) BOOL canChangeScaleMode;
+@property (nonatomic, readonly) unsigned int effectiveScaleMode;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieContentFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } movieFrame;
+@property (nonatomic, retain) NSString *movieSubtitle;
+@property (nonatomic, retain) NSString *movieTitle;
+@property (nonatomic) MPAVController *player;
+@property (nonatomic) unsigned int scaleMode;
+@property (nonatomic) double startTime;
+@property (nonatomic) double stopTime;
+@property (nonatomic, copy) NSString *videoID;
 
 + (Class)layerClass;
 

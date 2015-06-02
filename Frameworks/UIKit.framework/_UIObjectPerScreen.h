@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIObjectPerScreen : NSObject {
-}
+@interface _UIObjectPerScreen : NSObject
 
 + (id)objectOfClass:(Class)arg1 forScreen:(id)arg2 withOptions:(id)arg3 createIfNecessary:(BOOL)arg4;
 + (void)removeObject:(id)arg1;

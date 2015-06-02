@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPDataDownloadManagerDelegate>, TSPDocumentResourceDataProvider, TSPObjectContext;
-
 @interface TSPDataDownloadManager : NSObject {
     TSPObjectContext *_context;
     <TSPDataDownloadManagerDelegate> *_delegate;
     TSPDocumentResourceDataProvider *_docServerDataProvider;
 }
 
-@property <TSPDataDownloadManagerDelegate> * delegate;
+@property (nonatomic) <TSPDataDownloadManagerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

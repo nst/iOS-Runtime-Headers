@@ -6,7 +6,7 @@
     BOOL isAudioOnly;
 }
 
-@property BOOL isAudioOnly;
+@property (nonatomic) BOOL isAudioOnly;
 
 - (id)description;
 - (BOOL)isAudioOnly;

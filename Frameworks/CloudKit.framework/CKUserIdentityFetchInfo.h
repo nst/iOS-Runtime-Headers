@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSString;
-
 @interface CKUserIdentityFetchInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_emailAddress;
     CKRecordID *_recordID;
 }
 
-@property(copy) NSString * emailAddress;
-@property(copy) CKRecordID * recordID;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) CKRecordID *recordID;
 
 + (BOOL)supportsSecureCoding;
 

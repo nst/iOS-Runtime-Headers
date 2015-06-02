@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMCSSPrimitiveValue : DOMCSSValue {
-}
+@interface DOMCSSPrimitiveValue : DOMCSSValue
 
-@property(readonly) unsigned short primitiveType;
+@property (readonly) unsigned short primitiveType;
 
 - (id)getCounterValue;
 - (float)getFloatValue:(unsigned short)arg1;

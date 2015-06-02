@@ -11,16 +11,16 @@
     BOOL _useDefaultSize;
 }
 
-@property BOOL backgroundEnqueued;
+@property (nonatomic) BOOL backgroundEnqueued;
 @property struct CGSize { float x1; float x2; } imageSize;
-@property BOOL useDefaultSize;
+@property (nonatomic) BOOL useDefaultSize;
 
 + (id)UTITypes;
 
 - (struct CGSize { float x1; float x2; })_calculateImageSize;
 - (id)_newImageData;
 - (BOOL)backgroundEnqueued;
-- (void)generatePreviewWithCompletion:(id)arg1;
+- (void)generatePreviewWithCompletion:(id /* block */)arg1;
 - (id)imageData;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (void)setBackgroundEnqueued:(BOOL)arg1;

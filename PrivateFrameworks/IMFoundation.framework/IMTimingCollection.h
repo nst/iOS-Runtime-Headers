@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface IMTimingCollection : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_timings;

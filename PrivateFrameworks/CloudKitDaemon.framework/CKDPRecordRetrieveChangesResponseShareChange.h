@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShare, CKDPShareIdentifier;
-
 @interface CKDPRecordRetrieveChangesResponseShareChange : PBCodable <NSCopying> {
     int _changeType;
     struct { 
@@ -13,12 +11,12 @@
     CKDPShareIdentifier *_shareIdentifier;
 }
 
-@property int changeType;
-@property BOOL hasChangeType;
-@property(readonly) BOOL hasShare;
-@property(readonly) BOOL hasShareIdentifier;
-@property(retain) CKDPShare * share;
-@property(retain) CKDPShareIdentifier * shareIdentifier;
+@property (nonatomic) int changeType;
+@property (nonatomic) BOOL hasChangeType;
+@property (nonatomic, readonly) BOOL hasShare;
+@property (nonatomic, readonly) BOOL hasShareIdentifier;
+@property (nonatomic, retain) CKDPShare *share;
+@property (nonatomic, retain) CKDPShareIdentifier *shareIdentifier;
 
 - (void).cxx_destruct;
 - (int)changeType;

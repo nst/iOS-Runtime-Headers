@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPQuery : PBCodable <NSCopying> {
     BOOL _distinct;
     NSMutableArray *_filters;
@@ -16,13 +14,13 @@
     NSMutableArray *_types;
 }
 
-@property BOOL distinct;
-@property(retain) NSMutableArray * filters;
-@property BOOL hasDistinct;
-@property BOOL hasQueryOperator;
-@property int queryOperator;
-@property(retain) NSMutableArray * sorts;
-@property(retain) NSMutableArray * types;
+@property (nonatomic) BOOL distinct;
+@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic) BOOL hasDistinct;
+@property (nonatomic) BOOL hasQueryOperator;
+@property (nonatomic) int queryOperator;
+@property (nonatomic, retain) NSMutableArray *sorts;
+@property (nonatomic, retain) NSMutableArray *types;
 
 - (void).cxx_destruct;
 - (void)addFilters:(id)arg1;

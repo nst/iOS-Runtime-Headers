@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACNotificationRebroadcaster : NSObject {
-}
+@interface ACNotificationRebroadcaster : NSObject
 
 + (id)sharedRebroadcaster;
 

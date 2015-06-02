@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVLeafItem : CoreDAVItem {
-}
+@interface CoreDAVLeafItem : CoreDAVItem
 
 - (void)write:(id)arg1;
 

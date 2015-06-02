@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, PKPaymentSetupAboutView;
-
 @interface PKPaymentSetupAboutViewController : UIViewController {
     NSString *_aboutText;
     NSString *_privacyText;

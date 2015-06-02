@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkStyleProvider : ABStyleProvider {
-}
+@interface ABStarkStyleProvider : ABStyleProvider
 
 + (float)memberRowHeight;
 

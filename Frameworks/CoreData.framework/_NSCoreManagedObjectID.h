@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _NSCoreManagedObjectID : NSManagedObjectID {
-}
+@interface _NSCoreManagedObjectID : NSManagedObjectID
 
 + (void)_release_1;
 + (id)_retain_1;

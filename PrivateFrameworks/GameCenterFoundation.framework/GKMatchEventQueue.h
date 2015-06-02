@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayer, NSMutableArray, NSMutableDictionary;
-
 @interface GKMatchEventQueue : NSObject {
     NSMutableDictionary *_connectionInfo;
     BOOL _counted;
@@ -18,17 +16,17 @@
     unsigned int _sequenceNumber;
 }
 
-@property(retain) NSMutableDictionary * connectionInfo;
-@property BOOL counted;
-@property int deferedPlayerState;
-@property(retain) NSMutableArray * events;
-@property BOOL hasInitRelayInfo;
-@property BOOL hasUpdateRelayInfo;
-@property BOOL okToSend;
-@property(retain) GKPlayer * player;
-@property int playerState;
-@property BOOL relayInitiated;
-@property unsigned int sequenceNumber;
+@property (nonatomic, retain) NSMutableDictionary *connectionInfo;
+@property (nonatomic) BOOL counted;
+@property (nonatomic) int deferedPlayerState;
+@property (nonatomic, retain) NSMutableArray *events;
+@property (nonatomic) BOOL hasInitRelayInfo;
+@property (nonatomic) BOOL hasUpdateRelayInfo;
+@property (nonatomic) BOOL okToSend;
+@property (nonatomic, retain) GKPlayer *player;
+@property (nonatomic) int playerState;
+@property (nonatomic) BOOL relayInitiated;
+@property (nonatomic) unsigned int sequenceNumber;
 
 - (id)connectionInfo;
 - (BOOL)counted;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface CalDAVCalendarSearchTask : CoreDAVTask {
     NSString *_calendarType;
     NSArray *_languages;
@@ -11,7 +9,7 @@
     NSDictionary *_urlsToResults;
 }
 
-@property(retain,readonly) NSDictionary * urlsToResults;
+@property (nonatomic, readonly, retain) NSDictionary *urlsToResults;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;

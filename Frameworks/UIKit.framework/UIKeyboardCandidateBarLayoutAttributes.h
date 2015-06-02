@@ -7,8 +7,8 @@
     BOOL _endsLastPage;
 }
 
-@property BOOL beginsFirstPage;
-@property BOOL endsLastPage;
+@property (nonatomic) BOOL beginsFirstPage;
+@property (nonatomic) BOOL endsLastPage;
 
 - (BOOL)beginsFirstPage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSCondition : NSObject <NSLocking> {
     void *_priv;
 }
 
-@property(copy) NSString * name;
+@property (copy) NSString *name;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

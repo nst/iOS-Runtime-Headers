@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CPBitmapStore;
-
 @interface _UIStatusBarCache : NSObject {
     CPBitmapStore *_store;
 }

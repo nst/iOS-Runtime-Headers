@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardEmojiSplitCharacterPicker : UIKeyboardEmojiCollectionInputView {
-}
+@interface UIKeyboardEmojiSplitCharacterPicker : UIKeyboardEmojiCollectionInputView
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;

@@ -7,8 +7,8 @@
     id target;
 }
 
-@property SEL selector;
-@property(retain) id target;
+@property (nonatomic) SEL selector;
+@property (nonatomic, retain) id target;
 
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;

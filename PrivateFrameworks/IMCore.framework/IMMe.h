@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, IMPerson, NSArray, NSMutableArray, NSString;
-
 @interface IMMe : NSObject {
     NSArray *_abEmails;
     NSString *_abFirstName;
@@ -15,16 +13,16 @@
     IMPerson *_person;
 }
 
-@property(readonly) IMHandle * bestIMHandle;
-@property(readonly) NSString * email;
-@property(readonly) NSArray * emails;
-@property(readonly) NSString * firstName;
-@property(readonly) NSString * fullName;
-@property(readonly) NSString * guid;
-@property(readonly) NSArray * imHandles;
-@property(readonly) NSString * lastName;
-@property(readonly) NSString * nickname;
-@property(readonly) IMPerson * person;
+@property (nonatomic, readonly) IMHandle *bestIMHandle;
+@property (nonatomic, readonly) NSString *email;
+@property (nonatomic, readonly) NSArray *emails;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSString *guid;
+@property (nonatomic, readonly) NSArray *imHandles;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *nickname;
+@property (nonatomic, readonly) IMPerson *person;
 
 + (id)fallbackUserName;
 + (id)imHandleForService:(id)arg1;

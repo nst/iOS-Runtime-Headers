@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSData;
-
 @interface MFMessageHeaders : NSObject <NSCopying> {
     NSData *_data;
     unsigned long _preferredEncoding;

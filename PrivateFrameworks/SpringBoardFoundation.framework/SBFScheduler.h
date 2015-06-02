@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFScheduler : NSObject {
-}
+@interface SBFScheduler : NSObject
 
 + (id)globalAsyncScheduler;
 + (id)immediateScheduler;

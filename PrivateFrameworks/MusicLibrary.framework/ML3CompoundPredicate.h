@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray, NSString;
-
 @interface ML3CompoundPredicate : ML3Predicate {
     NSArray *_predicates;
 }
 
-@property(copy,readonly) NSString * compoundOperatorJoiner;
-@property(retain) NSArray * predicates;
+@property (nonatomic, readonly, copy) NSString *compoundOperatorJoiner;
+@property (nonatomic, retain) NSArray *predicates;
 
 + (id)predicateMatchingPredicates:(id)arg1;
 

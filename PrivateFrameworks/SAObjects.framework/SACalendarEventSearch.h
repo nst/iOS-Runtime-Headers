@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL;
+@interface SACalendarEventSearch : SABaseClientBoundCommand
 
-@interface SACalendarEventSearch : SABaseClientBoundCommand {
-}
-
-@property(copy) NSDate * endDate;
-@property(copy) NSURL * eventId;
-@property(retain) NSNumber * limit;
-@property(copy) NSString * location;
-@property(copy) NSString * notes;
-@property(copy) NSArray * participants;
-@property(copy) NSDate * startDate;
-@property(copy) NSURL * targetAppId;
-@property(copy) NSString * timeZoneId;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSURL *eventId;
+@property (nonatomic, retain) NSNumber *limit;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, copy) NSString *notes;
+@property (nonatomic, copy) NSArray *participants;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic, copy) NSURL *targetAppId;
+@property (nonatomic, copy) NSString *timeZoneId;
+@property (nonatomic, copy) NSString *title;
 
 + (id)eventSearch;
 + (id)eventSearchWithDictionary:(id)arg1 context:(id)arg2;

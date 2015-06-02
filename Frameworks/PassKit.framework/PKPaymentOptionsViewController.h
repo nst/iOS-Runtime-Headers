@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PKPaymentOptionsViewControllerDelegate>, ABPostalAddressEditorNavigationController, NSString, PKPassSnapshotter, PKPaymentOptionsModel;
-
 @interface PKPaymentOptionsViewController : UITableViewController <ABPeoplePickerNavigationControllerDelegate, ABPostalAddressEditorDelegate, UITextFieldDelegate> {
     ABPostalAddressEditorNavigationController *_addressEditorViewController;
     <PKPaymentOptionsViewControllerDelegate> *_delegate;
@@ -15,28 +9,20 @@
     PKPaymentOptionsModel *_optionsModel;
     int _optionsStyle;
     PKPassSnapshotter *_passSnapshotter;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pickedABPersonHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pickedABPropertyHandler;
-
+    id /* block */ _pickedABPersonHandler;
+    id /* block */ _pickedABPropertyHandler;
     BOOL _showDisclosureIndicators;
     NSString *_title;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPaymentOptionsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id pickedABPersonHandler;
-@property(copy) id pickedABPropertyHandler;
-@property BOOL showDisclosureIndicators;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentOptionsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ pickedABPersonHandler;
+@property (nonatomic, copy) id /* block */ pickedABPropertyHandler;
+@property (nonatomic) BOOL showDisclosureIndicators;
+@property (readonly) Class superclass;
 
 - (id)_passSnapshotter;
 - (BOOL)_presentedModally;
@@ -54,21 +40,21 @@
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2;
 - (void)peoplePickerNavigationController:(id)arg1 didSelectPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (id)pickedABPersonHandler;
-- (id)pickedABPropertyHandler;
+- (id /* block */)pickedABPersonHandler;
+- (id /* block */)pickedABPropertyHandler;
 - (void)postalAddressEditor:(id)arg1 finishedEditingContact:(id)arg2;
 - (void)postalAddressEditor:(id)arg1 finishedEditingProperty:(int)arg2 contact:(id)arg3;
 - (void)postalAddressEditorDidCancel:(id)arg1;
-- (void)setBillingAddressOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
+- (void)setBillingAddressOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setEmailOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
-- (void)setNameOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
-- (void)setPaymentPassOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
-- (void)setPhoneOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id)arg3;
-- (void)setPickedABPersonHandler:(id)arg1;
-- (void)setPickedABPropertyHandler:(id)arg1;
-- (void)setShippingAddressOptions:(id)arg1 selectedIndex:(int)arg2 displayMode:(id)arg3 displayName:(id)arg4 optionsChangedHandler:(id)arg5;
-- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 optionsChangedHandler:(id)arg5;
+- (void)setEmailOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id /* block */)arg3;
+- (void)setNameOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id /* block */)arg3;
+- (void)setPaymentPassOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id /* block */)arg3;
+- (void)setPhoneOptions:(id)arg1 selectedIndex:(int)arg2 optionsChangedHandler:(id /* block */)arg3;
+- (void)setPickedABPersonHandler:(id /* block */)arg1;
+- (void)setPickedABPropertyHandler:(id /* block */)arg1;
+- (void)setShippingAddressOptions:(id)arg1 selectedIndex:(int)arg2 displayMode:(id)arg3 displayName:(id)arg4 optionsChangedHandler:(id /* block */)arg5;
+- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 optionsChangedHandler:(id /* block */)arg5;
 - (void)setShowDisclosureIndicators:(BOOL)arg1;
 - (BOOL)showDisclosureIndicators;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;

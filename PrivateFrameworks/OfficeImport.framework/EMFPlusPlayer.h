@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EMFPlayer, MFPEffect, MFPGraphics, NSMutableData;
-
 @interface EMFPlusPlayer : NSObject {
     MFPEffect *mEffect;
     MFPGraphics *mGraphics;

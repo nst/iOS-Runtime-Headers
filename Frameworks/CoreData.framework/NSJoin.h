@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSJoin : NSObject <NSCoding, NSCopying> {
     NSString *_destinationAttributeName;
     NSString *_sourceAttributeName;

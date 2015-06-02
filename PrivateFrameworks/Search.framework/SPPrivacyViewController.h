@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@interface SPPrivacyViewController : UIViewController {
-}
+@interface SPPrivacyViewController : UIViewController
 
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;

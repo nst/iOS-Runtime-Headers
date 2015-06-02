@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFError;
-
 @interface MFDADeliveryConsumer : MFDAMailAccountConsumer <DAMessageSendConsumer> {
     unsigned int _bytesRead;
     unsigned int _bytesWritten;
@@ -11,10 +9,10 @@
     int _status;
 }
 
-@property(readonly) unsigned int bytesRead;
-@property(readonly) unsigned int bytesWritten;
-@property(retain) MFError * error;
-@property(readonly) int status;
+@property (nonatomic, readonly) unsigned int bytesRead;
+@property (nonatomic, readonly) unsigned int bytesWritten;
+@property (nonatomic, retain) MFError *error;
+@property (nonatomic, readonly) int status;
 
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (unsigned int)bytesRead;

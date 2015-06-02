@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSNumber, NSString;
-
 @interface PLBBTelephonyActivityMsg : PLBBMsgRoot {
     NSString *_activeBand;
     NSString *_airplaneMode;
@@ -17,16 +15,16 @@
     NSString *_simStatus;
 }
 
-@property(retain) NSString * activeBand;
-@property(retain) NSString * airplaneMode;
-@property(retain) NSString * callStatus;
-@property(retain) NSString * campedRat;
-@property(retain) NSString * currentRat;
-@property(retain) NSString * dataStatus;
-@property(retain) NSString * preferredRat;
-@property(retain) NSNumber * signalBars;
-@property(retain) NSNumber * signalStrength;
-@property(retain) NSString * simStatus;
+@property (retain) NSString *activeBand;
+@property (retain) NSString *airplaneMode;
+@property (retain) NSString *callStatus;
+@property (retain) NSString *campedRat;
+@property (retain) NSString *currentRat;
+@property (retain) NSString *dataStatus;
+@property (retain) NSString *preferredRat;
+@property (retain) NSNumber *signalBars;
+@property (retain) NSNumber *signalStrength;
+@property (retain) NSString *simStatus;
 
 + (id)entryEventPointDefinitionTelephonyActivity;
 

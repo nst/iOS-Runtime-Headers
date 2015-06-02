@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSAuthorizationRequestDelegate>, NSNumber, NSString;
-
 @interface SSAuthorizationRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSString *_keybagPath;
@@ -11,15 +9,15 @@
     id _token;
 }
 
-@property(readonly) NSNumber * accountIdentifier;
-@property(readonly) id authorizationToken;
-@property(copy,readonly) NSString * debugDescription;
-@property <SSAuthorizationRequestDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * keybagPath;
-@property(copy) NSString * reason;
-@property(readonly) Class superclass;
+@property (readonly) NSNumber *accountIdentifier;
+@property (readonly) id authorizationToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SSAuthorizationRequestDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *keybagPath;
+@property (copy) NSString *reason;
+@property (readonly) Class superclass;
 
 - (id)accountIdentifier;
 - (id)authorizationToken;
@@ -33,7 +31,7 @@
 - (void)setKeybagPath:(id)arg1;
 - (void)setReason:(id)arg1;
 - (BOOL)start;
-- (void)startWithAuthorizationResponseBlock:(id)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithAuthorizationResponseBlock:(id /* block */)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
 
 @end

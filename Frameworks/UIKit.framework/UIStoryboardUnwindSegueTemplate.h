@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStoryboardUnwindSegueTemplate : UIStoryboardSegueTemplate {
     NSString *_action;
 }
 
-@property(copy) NSString * action;
+@property (nonatomic, copy) NSString *action;
 
 - (void)_perform:(id)arg1;
 - (id)_unwindExecutorForTarget:(id)arg1;

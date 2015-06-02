@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UIView, _UIBackdropView, _UINavigationBarAppearanceStorage;
-
 @interface SKUITabBarBackgroundView : UIView {
     int _backdropStyle;
     _UIBackdropView *_backdropView;
@@ -16,14 +14,14 @@
     BOOL translucent;
 }
 
-@property(setter=_setShadowView:,retain) UIView * _shadowView;
-@property(retain) _UINavigationBarAppearanceStorage * appearanceStorage;
-@property(copy) NSString * backdropGroupName;
-@property int backdropStyle;
-@property int barStyle;
-@property(retain) UIColor * barTintColor;
-@property BOOL barWantsAdaptiveBackdrop;
-@property(getter=isTranslucent) BOOL translucent;
+@property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;
+@property (nonatomic, retain) _UINavigationBarAppearanceStorage *appearanceStorage;
+@property (nonatomic, copy) NSString *backdropGroupName;
+@property (nonatomic) int backdropStyle;
+@property (nonatomic) int barStyle;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (nonatomic) BOOL barWantsAdaptiveBackdrop;
+@property (getter=isTranslucent, nonatomic) BOOL translucent;
 
 - (void).cxx_destruct;
 - (id)_currentCustomBackground;

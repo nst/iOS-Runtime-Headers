@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetBool : SASettingGetValue {
-}
+@interface SASettingGetBool : SASettingGetValue
 
 + (id)getBool;
 + (id)getBoolWithDictionary:(id)arg1 context:(id)arg2;

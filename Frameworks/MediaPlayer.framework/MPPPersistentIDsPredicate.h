@@ -14,10 +14,10 @@
     BOOL _shouldContain;
 }
 
-@property BOOL hasShouldContain;
-@property(readonly) long long* persistentIDs;
-@property(readonly) unsigned int persistentIDsCount;
-@property BOOL shouldContain;
+@property (nonatomic) BOOL hasShouldContain;
+@property (nonatomic, readonly) long long*persistentIDs;
+@property (nonatomic, readonly) unsigned int persistentIDsCount;
+@property (nonatomic) BOOL shouldContain;
 
 - (void)addPersistentIDs:(long long)arg1;
 - (void)clearPersistentIDs;

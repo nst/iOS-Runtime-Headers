@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UICollectionView, UICollectionViewLayoutAttributes;
-
 @interface UICollectionReusableView : UIView {
     UICollectionView *_collectionView;
     UICollectionViewLayoutAttributes *_layoutAttributes;
@@ -17,30 +15,19 @@
     int _updateAnimationCount;
 }
 
-@property(getter=_collectionView,setter=_setCollectionView:) UICollectionView * collectionView;
-@property(getter=_isInUpdateAnimation,readonly) BOOL inUpdateAnimation;
-@property(getter=_layoutAttributes,setter=_setLayoutAttributes:,copy) UICollectionViewLayoutAttributes * layoutAttributes;
-@property(getter=_arePreferredAttributesValid) BOOL preferredAttributesValid;
-@property(copy) NSString * reuseIdentifier;
+@property (getter=_collectionView, setter=_setCollectionView:, nonatomic) UICollectionView *collectionView;
+@property (getter=_isInUpdateAnimation, nonatomic, readonly) BOOL inUpdateAnimation;
+@property (getter=_layoutAttributes, setter=_setLayoutAttributes:, nonatomic, copy) UICollectionViewLayoutAttributes *layoutAttributes;
+@property (getter=_arePreferredAttributesValid, nonatomic) BOOL preferredAttributesValid;
+@property (nonatomic, copy) NSString *reuseIdentifier;
 
-+ (void)_gkAdjustConstraintMargins:(id)arg1 leading:(float)arg2 trailing:(float)arg3;
-+ (void)_gkSetupSelectableThreeLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
-+ (void)_gkSetupSelectableTwoLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
-+ (id)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
-+ (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLabel:(id)arg3 lowerLabel:(id)arg4 leadingBetween:(float)arg5 fontTextStyle:(id)arg6 metricOverrides:(id)arg7;
-+ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1;
-+ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
-+ (void)registerSupplementaryViewClassesForKind:(id)arg1 withCollectionView:(id)arg2;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void)_addUpdateAnimation;
 - (BOOL)_arePreferredAttributesValid;
 - (void)_clearUpdateAnimation;
 - (id)_collectionView;
 - (BOOL)_disableRasterizeInAnimations;
-- (id)_gkNewStandardImageView;
-- (id)_gkNewStandardInfoLabel;
-- (id)_gkNewStandardTitleLabel;
-- (void)_gkSetLeadingGuideConstraint:(id)arg1 trailingGuideConstraint:(id)arg2;
 - (void)_invalidatePreferredAttributes;
 - (BOOL)_isInUpdateAnimation;
 - (id)_layoutAttributes;
@@ -61,5 +48,21 @@
 - (id)reuseIdentifier;
 - (void)setPreferredAttributesValid:(BOOL)arg1;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
++ (void)_gkAdjustConstraintMargins:(id)arg1 leading:(float)arg2 trailing:(float)arg3;
++ (void)_gkSetupSelectableThreeLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 middleLine:(id)arg5 lowerLine:(id)arg6 metricOverrides:(id)arg7;
++ (void)_gkSetupSelectableTwoLineLayoutWithCell:(id)arg1 icon:(id)arg2 selectionView:(id)arg3 upperLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (id)_gkSetupThreeLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLine:(id)arg3 middleLine:(id)arg4 lowerLine:(id)arg5 metricOverrides:(id)arg6;
++ (id)_gkSetupTwoLineLayoutWithSuperview:(id)arg1 icon:(id)arg2 upperLabel:(id)arg3 lowerLabel:(id)arg4 leadingBetween:(float)arg5 fontTextStyle:(id)arg6 metricOverrides:(id)arg7;
++ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1;
++ (id)_gkStandardConstraintMetricsForIdiom:(int)arg1 withOverrides:(id)arg2;
++ (void)registerSupplementaryViewClassesForKind:(id)arg1 withCollectionView:(id)arg2;
+
+- (id)_gkNewStandardImageView;
+- (id)_gkNewStandardInfoLabel;
+- (id)_gkNewStandardTitleLabel;
+- (void)_gkSetLeadingGuideConstraint:(id)arg1 trailingGuideConstraint:(id)arg2;
 
 @end

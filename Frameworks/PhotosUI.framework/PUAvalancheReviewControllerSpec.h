@@ -6,10 +6,10 @@
     float _interItemSpacing;
 }
 
-@property(readonly) float interItemSpacing;
-@property(readonly) unsigned int selectionBadgeCorner;
-@property(readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
-@property(readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
+@property (nonatomic, readonly) float interItemSpacing;
+@property (nonatomic, readonly) unsigned int selectionBadgeCorner;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
 
 - (BOOL)allowsInterfaceRotation;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;

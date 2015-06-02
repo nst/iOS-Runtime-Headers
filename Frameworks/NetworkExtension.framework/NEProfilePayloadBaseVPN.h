@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEProfilePayloadBaseVPN : NEProfilePayloadBase {
     NSString *_password;
     BOOL _passwordRequired;
@@ -19,18 +17,18 @@
     BOOL _userNameRequired;
 }
 
-@property(copy) NSString * password;
-@property BOOL passwordRequired;
-@property(copy) NSString * pin;
-@property BOOL pinRequired;
-@property(copy) NSString * proxyPassword;
-@property BOOL proxyPasswordRequired;
-@property(copy) NSString * proxyUserName;
-@property BOOL proxyUserNameRequired;
-@property(copy) NSString * sharedSecret;
-@property BOOL sharedSecretRequired;
-@property(copy) NSString * userName;
-@property BOOL userNameRequired;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic) BOOL passwordRequired;
+@property (nonatomic, copy) NSString *pin;
+@property (nonatomic) BOOL pinRequired;
+@property (nonatomic, copy) NSString *proxyPassword;
+@property (nonatomic) BOOL proxyPasswordRequired;
+@property (nonatomic, copy) NSString *proxyUserName;
+@property (nonatomic) BOOL proxyUserNameRequired;
+@property (nonatomic, copy) NSString *sharedSecret;
+@property (nonatomic) BOOL sharedSecretRequired;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic) BOOL userNameRequired;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

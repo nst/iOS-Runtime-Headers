@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUWebDocumentView : UIWebDocumentView {
-    unsigned int _adjustHeightToFit : 1;
+    unsigned int _adjustHeightToFit;
     id _loadDelegate;
     NSString *_stylesheet;
 }
 
-@property id loadDelegate;
-@property(retain) NSString * stylesheet;
+@property (nonatomic) id loadDelegate;
+@property (nonatomic, retain) NSString *stylesheet;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

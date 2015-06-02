@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSURL;
+@interface PLSidecarFile : _PLSidecarFile
 
-@interface PLSidecarFile : _PLSidecarFile {
-}
-
-@property(retain,readonly) NSURL * fileURL;
+@property (nonatomic, readonly, retain) NSURL *fileURL;
 
 - (id)fileURL;
 - (void)setCaptureDateFromExifDictionary:(id)arg1;

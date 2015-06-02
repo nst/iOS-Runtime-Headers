@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor;
-
 @interface SUSubtitledButtonContent : NSObject {
     NSString *_subtitle;
     UIColor *_subtitleColor;
     UIColor *_subtitleShadowColor;
 }
 
-@property(retain) NSString * subtitle;
-@property(retain) UIColor * subtitleColor;
-@property(retain) UIColor * subtitleShadowColor;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) UIColor *subtitleColor;
+@property (nonatomic, retain) UIColor *subtitleShadowColor;
 
 - (void)dealloc;
 - (void)setSubtitle:(id)arg1;

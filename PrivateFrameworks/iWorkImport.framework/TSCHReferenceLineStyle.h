@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHReferenceLineStyle : TSCHBaseStyle {
-}
+@interface TSCHReferenceLineStyle : TSCHBaseStyle
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;

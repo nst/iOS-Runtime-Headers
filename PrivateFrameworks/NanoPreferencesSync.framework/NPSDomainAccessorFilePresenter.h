@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
  */
 
-@class <NPSDomainAccessorFilePresenterDelegate>, NSOperationQueue, NSString, NSURL;
-
 @interface NPSDomainAccessorFilePresenter : NSObject <NSFilePresenter> {
     <NPSDomainAccessorFilePresenterDelegate> *_delegate;
     NSURL *_domainURL;
     NSOperationQueue *_presenterOperationQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <NPSDomainAccessorFilePresenterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSURL * domainURL;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(retain) NSOperationQueue * presenterOperationQueue;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <NPSDomainAccessorFilePresenterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSURL *domainURL;
+@property (readonly) unsigned int hash;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (nonatomic, retain) NSOperationQueue *presenterOperationQueue;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -30,9 +28,9 @@
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (id)presenterOperationQueue;
-- (void)relinquishPresentedItemToWriter:(id)arg1;
+- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
 - (void)setDomainURL:(id)arg1;
 - (void)setPresenterOperationQueue:(id)arg1;
-- (id)synchronizeForReadingOnly:(BOOL)arg1 handler:(id)arg2;
+- (id)synchronizeForReadingOnly:(BOOL)arg1 handler:(id /* block */)arg2;
 
 @end

@@ -6,7 +6,7 @@
     BOOL _wasRotated;
 }
 
-@property BOOL wasRotated;
+@property (nonatomic) BOOL wasRotated;
 
 - (void)setWasRotated:(BOOL)arg1;
 - (BOOL)wasRotated;

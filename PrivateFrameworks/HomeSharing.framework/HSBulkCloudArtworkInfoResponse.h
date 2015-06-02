@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSArray;
-
 @interface HSBulkCloudArtworkInfoResponse : HSResponse {
     NSArray *artworkInfoDictionaries;
 }
 
-@property(copy) NSArray * artworkInfoDictionaries;
+@property (nonatomic, copy) NSArray *artworkInfoDictionaries;
 
 - (void).cxx_destruct;
 - (id)artworkInfoDictionaries;

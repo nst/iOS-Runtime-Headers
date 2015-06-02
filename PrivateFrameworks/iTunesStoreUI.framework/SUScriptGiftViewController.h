@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SKUIItem;
-
 @interface SUScriptGiftViewController : SUScriptViewController {
     int _giftCategory;
     SKUIItem *_item;
 }
 
-@property(readonly) int giftCategoryApps;
-@property(readonly) int giftCategoryBooks;
-@property(readonly) int giftCategoryMedia;
+@property (nonatomic, readonly) int giftCategoryApps;
+@property (nonatomic, readonly) int giftCategoryBooks;
+@property (nonatomic, readonly) int giftCategoryMedia;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

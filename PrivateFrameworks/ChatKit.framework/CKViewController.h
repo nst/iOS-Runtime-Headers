@@ -8,9 +8,9 @@
     BOOL _dissapearing;
 }
 
-@property BOOL appeared;
-@property BOOL appearing;
-@property BOOL dissapearing;
+@property (nonatomic) BOOL appeared;
+@property (nonatomic) BOOL appearing;
+@property (nonatomic) BOOL dissapearing;
 
 - (BOOL)appeared;
 - (BOOL)appearing;

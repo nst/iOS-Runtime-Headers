@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADDrawingTheme, OADGroup, OADOrientedBounds, OADShapeStyle, ODDDiagram;
-
 @interface ODIState : NSObject {
     NSMutableArray *mDefaultStyleLabelNames;
     ODDDiagram *mDiagram;

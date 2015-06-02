@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKAttachment : NSTextAttachment <NSSecureCoding> {
     NSString *_contentId;
     NSString *_fileName;
@@ -11,10 +9,10 @@
     unsigned int _type;
 }
 
-@property(retain) NSString * contentId;
-@property(retain) NSString * fileName;
-@property unsigned int fileSize;
-@property unsigned int type;
+@property (nonatomic, retain) NSString *contentId;
+@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic) unsigned int fileSize;
+@property (nonatomic) unsigned int type;
 
 + (BOOL)supportsSecureCoding;
 

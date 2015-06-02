@@ -11,7 +11,7 @@
     } _textRange;
 }
 
-@property(readonly) struct CGPDFPage { }* page;
+@property (readonly) struct CGPDFPage { }*page;
 @property struct { int x1; int x2; } textRange;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;

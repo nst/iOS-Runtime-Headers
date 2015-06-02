@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class UILabel, UIView;
-
 @interface StepByStepUIViewController_Restore_Config : StepByStepUIViewController {
     BOOL dontRestore;
     UIView *dontRestoreRecommendationContainerView;
@@ -12,8 +10,8 @@
     UILabel *restoreRecommendationLabel;
 }
 
-@property(retain) UIView * dontRestoreRecommendationContainerView;
-@property(retain) UIView * restoreRecommendationContainerView;
+@property (nonatomic, retain) UIView *dontRestoreRecommendationContainerView;
+@property (nonatomic, retain) UIView *restoreRecommendationContainerView;
 
 - (void)dealloc;
 - (id)dontRestoreRecommendationContainerView;

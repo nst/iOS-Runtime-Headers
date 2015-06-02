@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSArray, NSHashTable, NSMapTable;
-
 @interface SBUIBannerTargetManager : NSObject {
     NSMapTable *_implementationToProxyMap;
     NSHashTable *_observers;
     NSHashTable *_proxies;
 }
 
-@property(retain,readonly) NSArray * targets;
+@property (nonatomic, readonly, retain) NSArray *targets;
 
 + (id)sharedInstance;
 
-- (void)_notifyObservers:(id)arg1;
+- (void)_notifyObservers:(id /* block */)arg1;
 - (id)_proxyForTargetImplementation:(id)arg1;
 - (void)_registerTargetImplementation:(id)arg1;
 - (void)_unregisterTargetImplementation:(id)arg1;

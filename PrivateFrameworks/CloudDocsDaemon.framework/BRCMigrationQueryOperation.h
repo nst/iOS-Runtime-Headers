@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class CKQueryCursor, NSMutableArray, NSString;
-
 @interface BRCMigrationQueryOperation : BRCSyncDownOperation {
     CKQueryCursor *_continuationCursor;
     NSString *_migrationKey;
@@ -14,7 +12,7 @@
 + (id)shareIDsMigrationKey;
 
 - (void).cxx_destruct;
-- (void)_performAfterQueryingForShareIDs:(id)arg1;
+- (void)_performAfterQueryingForShareIDs:(id /* block */)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)hasCaughtUp;
 - (id)initWithServerZone:(id)arg1 migrationKey:(id)arg2 continuationCursor:(id)arg3;

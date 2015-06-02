@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDWifiMostUsedNetworks : PBCodable <NSCopying> {
     unsigned int _apOUI;
     NSData *_apOui;
@@ -18,16 +16,16 @@
     unsigned int _timeUsedMinutes;
 }
 
-@property unsigned int apOUI;
-@property(retain) NSData * apOui;
-@property BOOL hasApOUI;
-@property(readonly) BOOL hasApOui;
-@property BOOL hasSecurityType;
-@property BOOL hasTimeUsed;
-@property BOOL hasTimeUsedMinutes;
-@property unsigned int securityType;
-@property double timeUsed;
-@property unsigned int timeUsedMinutes;
+@property (nonatomic) unsigned int apOUI;
+@property (nonatomic, retain) NSData *apOui;
+@property (nonatomic) BOOL hasApOUI;
+@property (nonatomic, readonly) BOOL hasApOui;
+@property (nonatomic) BOOL hasSecurityType;
+@property (nonatomic) BOOL hasTimeUsed;
+@property (nonatomic) BOOL hasTimeUsedMinutes;
+@property (nonatomic) unsigned int securityType;
+@property (nonatomic) double timeUsed;
+@property (nonatomic) unsigned int timeUsedMinutes;
 
 - (unsigned int)apOUI;
 - (id)apOui;

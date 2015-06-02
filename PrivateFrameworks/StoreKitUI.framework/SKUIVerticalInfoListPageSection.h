@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, SKUIInfoListViewElement, SKUIViewElementLayoutContext;
-
 @interface SKUIVerticalInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     float _columnHeight;
@@ -13,14 +11,14 @@
     int _numberOfColumns;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForIndexPath:(id)arg1;
-- (void)_enumerateVisibleIndexPathsUsingBlock:(id)arg1;
+- (void)_enumerateVisibleIndexPathsUsingBlock:(id /* block */)arg1;
 - (int)_numberOfColumnsForWidth:(float)arg1;
 - (id)_reloadColumnDataIfNecessary;
 - (void)_requestCellLayout;

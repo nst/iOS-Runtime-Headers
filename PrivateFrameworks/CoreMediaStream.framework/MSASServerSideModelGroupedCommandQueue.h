@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSASEnqueuedCommand;
-
 @interface MSASServerSideModelGroupedCommandQueue : MSASGroupedQueue {
     MSASEnqueuedCommand *_lastEnqueuedCommand;
 }
 
-@property(retain) MSASEnqueuedCommand * lastEnqueuedCommand;
+@property (nonatomic, retain) MSASEnqueuedCommand *lastEnqueuedCommand;
 
-+ (id)calloutBlockForCommand:(id)arg1;
++ (id /* block */)calloutBlockForCommand:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)MSASModel:(id)arg1 didDeleteComment:(id)arg2 forAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;

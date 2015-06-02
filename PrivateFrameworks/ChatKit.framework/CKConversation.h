@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSString;
-
 @interface CKConversation : NSObject {
     IMChat *_chat;
     struct { 
@@ -18,44 +16,44 @@
     NSArray *_thumbnailOrderABRecordIDs;
 }
 
-@property(readonly) BOOL buttonColor;
-@property(readonly) BOOL canLeave;
-@property(retain) IMChat * chat;
-@property(retain,readonly) NSString * deviceIndependentID;
-@property(readonly) unsigned int disclosureAtomStyle;
-@property NSString * displayName;
-@property BOOL forceMMS;
-@property(retain,readonly) NSArray * frequentReplies;
-@property(getter=isGroupConversation,readonly) BOOL groupConversation;
-@property(retain,readonly) NSString * groupID;
-@property(retain,readonly) NSAttributedString * groupName;
-@property(retain,readonly) NSArray * handles;
-@property(readonly) BOOL hasDisplayName;
-@property(readonly) BOOL hasUnreadMessages;
-@property(getter=isIgnoringTypingUpdates) BOOL ignoringTypingUpdates;
-@property(readonly) BOOL isToEmailAddress;
-@property(getter=hasLeft,readonly) BOOL left;
-@property unsigned int limitToLoad;
-@property BOOL localUserIsRecording;
-@property BOOL localUserIsTyping;
-@property(getter=isMuted,readonly) BOOL muted;
-@property(retain,readonly) NSString * name;
-@property(readonly) BOOL needsReload;
-@property(getter=isPending,readonly) BOOL pending;
-@property(copy,readonly) NSArray * pendingEntities;
-@property(copy) NSArray * pendingHandles;
-@property(retain,readonly) NSString * previewText;
-@property(retain,readonly) CKEntity * recipient;
-@property(readonly) unsigned int recipientCount;
-@property(copy,readonly) NSArray * recipientStrings;
-@property(retain) NSArray * recipients;
-@property(retain,readonly) IMService * sendingService;
-@property(retain,readonly) NSString * serviceDisplayName;
-@property(readonly) BOOL shouldShowCharacterCount;
-@property(readonly) BOOL supportsMutatingGroupMembers;
-@property(retain) NSArray * thumbnailOrderABRecordIDs;
-@property(readonly) unsigned int unreadCount;
-@property(retain) CKComposition * unsentComposition;
+@property (nonatomic, readonly) BOOL buttonColor;
+@property (nonatomic, readonly) BOOL canLeave;
+@property (nonatomic, retain) IMChat *chat;
+@property (nonatomic, readonly, retain) NSString *deviceIndependentID;
+@property (nonatomic, readonly) unsigned int disclosureAtomStyle;
+@property (nonatomic) NSString *displayName;
+@property (nonatomic) BOOL forceMMS;
+@property (nonatomic, readonly, retain) NSArray *frequentReplies;
+@property (getter=isGroupConversation, nonatomic, readonly) BOOL groupConversation;
+@property (nonatomic, readonly, retain) NSString *groupID;
+@property (nonatomic, readonly, retain) NSAttributedString *groupName;
+@property (nonatomic, readonly, retain) NSArray *handles;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic, readonly) BOOL hasUnreadMessages;
+@property (getter=isIgnoringTypingUpdates, nonatomic) BOOL ignoringTypingUpdates;
+@property (nonatomic, readonly) BOOL isToEmailAddress;
+@property (getter=hasLeft, nonatomic, readonly) BOOL left;
+@property (nonatomic) unsigned int limitToLoad;
+@property (nonatomic) BOOL localUserIsRecording;
+@property (nonatomic) BOOL localUserIsTyping;
+@property (getter=isMuted, nonatomic, readonly) BOOL muted;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly) BOOL needsReload;
+@property (getter=isPending, nonatomic, readonly) BOOL pending;
+@property (nonatomic, readonly, copy) NSArray *pendingEntities;
+@property (nonatomic, copy) NSArray *pendingHandles;
+@property (nonatomic, readonly, retain) NSString *previewText;
+@property (nonatomic, readonly, retain) CKEntity *recipient;
+@property (nonatomic, readonly) unsigned int recipientCount;
+@property (nonatomic, readonly, copy) NSArray *recipientStrings;
+@property (nonatomic, retain) NSArray *recipients;
+@property (nonatomic, readonly, retain) IMService *sendingService;
+@property (nonatomic, readonly, retain) NSString *serviceDisplayName;
+@property (nonatomic, readonly) BOOL shouldShowCharacterCount;
+@property (nonatomic, readonly) BOOL supportsMutatingGroupMembers;
+@property (nonatomic, retain) NSArray *thumbnailOrderABRecordIDs;
+@property (nonatomic, readonly) unsigned int unreadCount;
+@property (nonatomic, retain) CKComposition *unsentComposition;
 
 + (BOOL)_iMessage_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 + (BOOL)_iMessage_canSendComposition:(id)arg1 error:(id*)arg2;
@@ -119,7 +117,7 @@
 - (unsigned int)disclosureAtomStyle;
 - (id)displayName;
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
-- (void)enumerateMessagesWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMessagesWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)forceMMS;
 - (id)frequentReplies;
 - (id)groupID;

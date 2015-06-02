@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PLAssetContainer>, <PLAssetContainerList>, <PUAvalancheReviewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUPhotoBrowserController, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
-
 @interface PUAvalancheReviewController : UIViewController <PHAssetCollectionDataSource, PUAvalancheReviewCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUReviewScrubberDataSource, PUReviewScrubberDelegate, PUTransitionViewAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     PLAvalanche *__avalancheBeingReviewed;
     PHCachingImageManager *__cachingImageManager;
@@ -32,35 +30,35 @@
     NSMutableDictionary *_resultsForAssetCollection;
 }
 
-@property(readonly) PLAvalanche * _avalancheBeingReviewed;
-@property(readonly) PHCachingImageManager * _cachingImageManager;
-@property(readonly) UIBarButtonItem * _cancelBarButtonItem;
-@property(readonly) UICollectionView * _collectionView;
-@property(readonly) PUAvalancheReviewCollectionViewLayout * _collectionViewLayout;
-@property BOOL _completingReviewMode;
-@property(readonly) <PLAssetContainer> * _currentAssetContainer;
-@property(readonly) UIBarButtonItem * _doneBarButtonItem;
-@property(readonly) NSIndexPath * _inFlightReferenceIndexPath;
-@property(readonly) PLManagedAsset * _initialAsset;
-@property(readonly) NSOrderedSet * _initialFavorites;
-@property(readonly) PUReviewInstructionalView * _instructionalView;
-@property(setter=_setPhotoZoomAnimator:,retain) PUTransitionViewAnimator * _photoZoomAnimator;
-@property(setter=_setPhotoZoomCell:,retain) PUPhotosZoomingSharingGridCell * _photoZoomCell;
-@property(setter=_setPhotoZoomPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoZoomPinchGestureRecognizer;
-@property(readonly) PUPhotoBrowserController * _presentingPhotoBrowserController;
-@property(readonly) PUReviewScrubber * _reviewScrubber;
-@property(readonly) PUAvalancheReviewControllerSpec * _spec;
-@property(readonly) UITapGestureRecognizer * _tapGestureRecognizer;
-@property(setter=_setTransitionLayout:,retain) UICollectionViewLayout * _transitionLayout;
-@property(readonly) BOOL _updatingContentOffsetFromScrubbing;
-@property(readonly) PHFetchResult * assetCollectionsFetchResult;
-@property(readonly) <PLAssetContainerList> * avalancheContainerList;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUAvalancheReviewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PUPhotosSharingTransitionContext * photosSharingTransitionContext;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) PLAvalanche *_avalancheBeingReviewed;
+@property (nonatomic, readonly) PHCachingImageManager *_cachingImageManager;
+@property (nonatomic, readonly) UIBarButtonItem *_cancelBarButtonItem;
+@property (nonatomic, readonly) UICollectionView *_collectionView;
+@property (nonatomic, readonly) PUAvalancheReviewCollectionViewLayout *_collectionViewLayout;
+@property (nonatomic) BOOL _completingReviewMode;
+@property (nonatomic, readonly) <PLAssetContainer> *_currentAssetContainer;
+@property (nonatomic, readonly) UIBarButtonItem *_doneBarButtonItem;
+@property (nonatomic, readonly) NSIndexPath *_inFlightReferenceIndexPath;
+@property (nonatomic, readonly) PLManagedAsset *_initialAsset;
+@property (nonatomic, readonly) NSOrderedSet *_initialFavorites;
+@property (nonatomic, readonly) PUReviewInstructionalView *_instructionalView;
+@property (setter=_setPhotoZoomAnimator:, nonatomic, retain) PUTransitionViewAnimator *_photoZoomAnimator;
+@property (setter=_setPhotoZoomCell:, nonatomic, retain) PUPhotosZoomingSharingGridCell *_photoZoomCell;
+@property (setter=_setPhotoZoomPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoZoomPinchGestureRecognizer;
+@property (nonatomic, readonly) PUPhotoBrowserController *_presentingPhotoBrowserController;
+@property (nonatomic, readonly) PUReviewScrubber *_reviewScrubber;
+@property (nonatomic, readonly) PUAvalancheReviewControllerSpec *_spec;
+@property (nonatomic, readonly) UITapGestureRecognizer *_tapGestureRecognizer;
+@property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_transitionLayout;
+@property (nonatomic, readonly) BOOL _updatingContentOffsetFromScrubbing;
+@property (nonatomic, readonly) PHFetchResult *assetCollectionsFetchResult;
+@property (nonatomic, readonly) <PLAssetContainerList> *avalancheContainerList;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUAvalancheReviewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PUPhotosSharingTransitionContext *photosSharingTransitionContext;
+@property (readonly) Class superclass;
 
 + (id)filteringContext;
 
@@ -102,7 +100,7 @@
 - (id)_photoZoomCell;
 - (id)_photoZoomPinchGestureRecognizer;
 - (id)_presentingPhotoBrowserController;
-- (void)_promoteFavoriteAssetsAndDeleteNonPicks:(BOOL)arg1 withReviewCompletionHandler:(id)arg2;
+- (void)_promoteFavoriteAssetsAndDeleteNonPicks:(BOOL)arg1 withReviewCompletionHandler:(id /* block */)arg2;
 - (void)_reallyToggleCurrentPickStatusAtIndexPath:(id)arg1;
 - (void)_reloadAvalancheDataWithAsset:(id)arg1;
 - (id)_reviewScrubber;

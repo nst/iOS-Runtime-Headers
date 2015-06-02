@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString;
+@interface SAAlarmObject : SADomainObject
 
-@interface SAAlarmObject : SADomainObject {
-}
-
-@property(copy) NSNumber * enabled;
-@property(copy) NSArray * frequency;
-@property(copy) NSNumber * hour;
-@property(copy) NSString * label;
-@property(copy) NSNumber * minute;
-@property(copy) NSNumber * relativeOffsetMinutes;
+@property (nonatomic, copy) NSNumber *enabled;
+@property (nonatomic, copy) NSArray *frequency;
+@property (nonatomic, copy) NSNumber *hour;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSNumber *minute;
+@property (nonatomic, copy) NSNumber *relativeOffsetMinutes;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;

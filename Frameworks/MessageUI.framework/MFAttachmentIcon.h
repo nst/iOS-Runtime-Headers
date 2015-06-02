@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFAttachmentIcon : NSObject {
-}
+@interface MFAttachmentIcon : NSObject
 
 + (id)attachment:(id)arg1 iconForSize:(struct CGSize { float x1; float x2; })arg2 sourceIsManaged:(BOOL)arg3;
 

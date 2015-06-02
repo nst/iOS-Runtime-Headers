@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionStreamTask : NSURLSessionTask {
-}
+@interface NSURLSessionStreamTask : NSURLSessionTask
 
 @end

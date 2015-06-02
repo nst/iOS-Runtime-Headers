@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainerSetupInfo, NSString;
-
 @interface CKOperationInfo : NSObject <NSSecureCoding> {
     BOOL _allowsCellularAccess;
     NSString *_deviceIdentifier;
@@ -17,16 +15,16 @@
     int _usesBackgroundSessionOverride;
 }
 
-@property BOOL allowsCellularAccess;
-@property(retain) NSString * deviceIdentifier;
-@property(retain) NSString * operationID;
-@property id parentOperation;
-@property(retain) NSString * parentSectionID;
-@property int qualityOfService;
-@property(retain) CKContainerSetupInfo * setupInfo;
-@property(retain) NSString * sourceApplicationBundleIdentifier;
-@property(retain) NSString * sourceApplicationSecondaryIdentifier;
-@property int usesBackgroundSessionOverride;
+@property (nonatomic) BOOL allowsCellularAccess;
+@property (nonatomic, retain) NSString *deviceIdentifier;
+@property (nonatomic, retain) NSString *operationID;
+@property (nonatomic) id parentOperation;
+@property (nonatomic, retain) NSString *parentSectionID;
+@property (nonatomic) int qualityOfService;
+@property (nonatomic, retain) CKContainerSetupInfo *setupInfo;
+@property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
+@property (nonatomic) int usesBackgroundSessionOverride;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <MKAnnotation>, MKMapItem, MKMapView, NSString;
-
 @interface CKMapViewController : UIViewController <MKMapViewDelegate> {
     <MKAnnotation> *_annotation;
     MKMapItem *_mapItem;
     MKMapView *_mapView;
 }
 
-@property(retain) <MKAnnotation> * annotation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapItem * mapItem;
-@property(retain) MKMapView * mapView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) <MKAnnotation> *annotation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, retain) MKMapView *mapView;
+@property (readonly) Class superclass;
 
 - (void)_toolbarItemPressed:(id)arg1;
 - (id)annotation;

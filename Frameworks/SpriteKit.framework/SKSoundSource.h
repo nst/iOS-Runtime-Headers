@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSMutableArray;
-
 @interface SKSoundSource : NSObject {
     NSMutableArray *_buffers;
     unsigned int _sourceId;
 }
 
-@property(readonly) int completedBufferCount;
-@property double gain;
-@property(readonly) BOOL isPlaying;
-@property struct CGPoint { float x1; float x2; } position;
-@property(readonly) int queuedBufferCount;
-@property BOOL shouldLoop;
+@property (nonatomic, readonly) int completedBufferCount;
+@property (nonatomic) double gain;
+@property (nonatomic, readonly) BOOL isPlaying;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, readonly) int queuedBufferCount;
+@property (nonatomic) BOOL shouldLoop;
 
 + (id)source;
 + (id)sourceWithBuffer:(id)arg1;

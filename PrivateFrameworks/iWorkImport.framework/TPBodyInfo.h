@@ -2,38 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <TSDHint>, <TSWPOffscreenColumn>, NSObject<TSDContainerInfo>, NSString, TPPageHint, TPPageInfo, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
-
 @interface TPBodyInfo : NSObject <TSDContainerInfo> {
     TPPageInfo *_pageInfo;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(readonly) TSWPStorage * bodyStorage;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(readonly) BOOL layoutVertically;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property(readonly) <TSDHint> * nextTargetFirstChildHint;
-@property(readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property(readonly) TPPageHint * pageHint;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property(readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) TSWPStorage * storage;
-@property(readonly) Class superclass;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, readonly) TSWPStorage *bodyStorage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (readonly) unsigned int hash;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic, readonly) BOOL layoutVertically;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic, readonly) <TSDHint> *nextTargetFirstChildHint;
+@property (nonatomic, readonly) <TSWPOffscreenColumn> *nextTargetFirstColumn;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic, readonly) TPPageHint *pageHint;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) <TSWPOffscreenColumn> *previousTargetLastColumn;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, readonly) TSWPStorage *storage;
+@property (readonly) Class superclass;
 
 - (id)bodyStorage;
 - (id)childInfos;

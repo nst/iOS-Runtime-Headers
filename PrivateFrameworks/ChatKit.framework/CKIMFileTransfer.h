@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMMessage, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface CKIMFileTransfer : NSObject <CKFileTransfer> {
     unsigned long long _currentBytes;
     NSError *_error;
@@ -22,25 +20,25 @@
     int _transferState;
 }
 
-@property(retain) IMMessage * IMMessage;
-@property(readonly) unsigned long long currentBytes;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDownloadable,readonly) BOOL downloadable;
-@property(getter=isDownloading,readonly) BOOL downloading;
-@property(copy,readonly) NSError * error;
-@property(getter=isFileDataReady,readonly) BOOL fileDataReady;
-@property(copy,readonly) NSURL * fileURL;
-@property(getter=isFileURLFinalized,readonly) BOOL fileURLFinalized;
-@property(copy,readonly) NSString * filename;
-@property(copy,readonly) NSString * guid;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * linkFileURL;
-@property(getter=isRestoring,readonly) BOOL restoring;
-@property(readonly) Class superclass;
-@property(readonly) unsigned long long totalBytes;
-@property(copy,readonly) NSDictionary * transcoderUserInfo;
-@property int transferState;
+@property (nonatomic, retain) IMMessage *IMMessage;
+@property (nonatomic, readonly) unsigned long long currentBytes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
+@property (getter=isDownloading, nonatomic, readonly) BOOL downloading;
+@property (nonatomic, readonly, copy) NSError *error;
+@property (getter=isFileDataReady, nonatomic, readonly) BOOL fileDataReady;
+@property (nonatomic, readonly, copy) NSURL *fileURL;
+@property (getter=isFileURLFinalized, nonatomic, readonly) BOOL fileURLFinalized;
+@property (nonatomic, readonly, copy) NSString *filename;
+@property (nonatomic, readonly, copy) NSString *guid;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *linkFileURL;
+@property (getter=isRestoring, nonatomic, readonly) BOOL restoring;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long totalBytes;
+@property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
+@property (nonatomic) int transferState;
 
 - (id)IMMessage;
 - (void)attachmentRestored:(id)arg1;

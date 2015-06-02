@@ -2,30 +2,28 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSUserActivityDelegate>, LSUserActivity, NSDate, NSDictionary, NSString, NSURL, NSUUID;
-
 @interface NSUserActivity : NSObject {
     id _delegate;
     id _frameworkDelegate;
     id _internal;
 }
 
-@property(setter=_setFrameworkDelegate:) <NSUserActivityDelegate> * _frameworkDelegate;
-@property(setter=_setFrameworkPayload:,copy) NSDictionary * _frameworkPayload;
-@property(retain,readonly) LSUserActivity * _internalUserActivity;
-@property(copy,readonly) NSDate * _lastActivityDate;
-@property(setter=_setOptions:,copy) NSDictionary * _options;
-@property(readonly) unsigned int _suggestedActionType;
-@property(retain,readonly) NSUUID * _uniqueIdentifier;
-@property(copy,readonly) NSString * activityType;
-@property <NSUserActivityDelegate> * delegate;
+@property (setter=_setFrameworkDelegate:) <NSUserActivityDelegate> *_frameworkDelegate;
+@property (setter=_setFrameworkPayload:, copy) NSDictionary *_frameworkPayload;
+@property (readonly, retain) LSUserActivity *_internalUserActivity;
+@property (readonly, copy) NSDate *_lastActivityDate;
+@property (setter=_setOptions:, copy) NSDictionary *_options;
+@property (readonly) unsigned int _suggestedActionType;
+@property (readonly, retain) NSUUID *_uniqueIdentifier;
+@property (readonly, copy) NSString *activityType;
+@property <NSUserActivityDelegate> *delegate;
 @property BOOL needsSave;
 @property BOOL supportsContinuationStreams;
-@property(copy) NSString * title;
-@property(copy) NSDictionary * userInfo;
-@property(copy) NSURL * webpageURL;
+@property (copy) NSString *title;
+@property (copy) NSDictionary *userInfo;
+@property (copy) NSURL *webpageURL;
 
-+ (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
++ (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)_reportToCoreDuet:(id)arg1;
 + (id)_userFacingErrorForLaunchServicesError:(id)arg1 userInfo:(id)arg2;
 
@@ -53,7 +51,7 @@
 - (id)delegate;
 - (void)didReceiveInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)didSynchronizeActivity;
-- (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
+- (void)getContinuationStreamsWithCompletionHandler:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithActivityType:(id)arg1;

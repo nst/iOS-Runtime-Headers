@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CoreAuthentication.framework/CoreAuthentication
  */
 
-@class <VRUIDelegate>;
-
 @interface DelegateProxy : NSObject <LAUIDelegate> {
     <VRUIDelegate> *_vruiDelegate;
 }
 
 - (void).cxx_destruct;
-- (void)event:(int)arg1 params:(id)arg2 reply:(id)arg3;
+- (void)event:(int)arg1 params:(id)arg2 reply:(id /* block */)arg3;
 - (id)initWithVRUIDelegate:(id)arg1;
 
 @end

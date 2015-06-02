@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
  */
 
-@interface DCIMImageWellUtilities : NSObject {
-}
+@interface DCIMImageWellUtilities : NSObject
 
 + (id)cameraPreviewWellImage;
 + (id)cameraPreviewWellImageFileURL;

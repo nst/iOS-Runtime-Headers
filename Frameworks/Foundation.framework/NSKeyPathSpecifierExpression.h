@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSKeyPathSpecifierExpression : NSExpression {
     NSString *_value;
 }

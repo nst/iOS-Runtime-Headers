@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
-
 @interface PLWarningHelper : NSObject {
     NSArray *__additionalPhotoStreamAssets;
     NSArray *__assets;
@@ -11,10 +9,10 @@
     int __style;
 }
 
-@property(setter=_setAdditionalPhotoStreamAssets:,retain) NSArray * _additionalPhotoStreamAssets;
-@property(setter=_setAssets:,retain) NSArray * _assets;
-@property(setter=_setClientName:,retain) NSString * _clientName;
-@property(setter=_setStyle:) int _style;
+@property (setter=_setAdditionalPhotoStreamAssets:, nonatomic, retain) NSArray *_additionalPhotoStreamAssets;
+@property (setter=_setAssets:, nonatomic, retain) NSArray *_assets;
+@property (setter=_setClientName:, nonatomic, retain) NSString *_clientName;
+@property (setter=_setStyle:, nonatomic) int _style;
 
 + (void)_getWarningTitle:(id*)arg1 message:(id*)arg2 buttonTitle:(id*)arg3 forItemSuffix:(id)arg4 count:(unsigned int)arg5 operation:(int)arg6 clientName:(id)arg7;
 + (id)_usedElsewhereWarningTextForAssetCount:(int)arg1 inPhotoStreamCount:(int)arg2 iniPhotoCount:(int)arg3 inSomeAlbumCount:(int)arg4 affectedLocalAlbumsCount:(int)arg5 itemKindSuffix:(id)arg6 actualDeletionCount:(int)arg7;

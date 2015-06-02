@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, NSURL, SALocalSearchRating;
+@interface SALocalSearchReviewList : AceObject <SAAceSerializable>
 
-@interface SALocalSearchReviewList : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * providerId;
-@property(copy) NSString * providerId2;
-@property(retain) SALocalSearchRating * rating;
-@property(copy) NSArray * selectReviews;
-@property(readonly) Class superclass;
-@property(copy) NSNumber * totalReviewCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *providerId;
+@property (nonatomic, copy) NSString *providerId2;
+@property (nonatomic, retain) SALocalSearchRating *rating;
+@property (nonatomic, copy) NSArray *selectReviews;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *totalReviewCount;
 
 + (id)reviewList;
 + (id)reviewListWithDictionary:(id)arg1 context:(id)arg2;

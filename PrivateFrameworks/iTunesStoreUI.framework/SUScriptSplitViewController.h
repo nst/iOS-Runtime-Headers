@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SUScriptViewController;
+@interface SUScriptSplitViewController : SUScriptViewController
 
-@interface SUScriptSplitViewController : SUScriptViewController {
-}
-
-@property(retain) SUScriptViewController * firstViewController;
-@property(retain) id minimumPaneSize;
-@property(retain) SUScriptViewController * secondViewController;
-@property(retain) id splitPosition;
-@property(retain) id splitShadowColor;
-@property(retain) NSNumber * splitShadowOpacity;
-@property(retain) NSNumber * splitShadowRadius;
-@property(retain) NSString * splitType;
-@property(retain) NSString * title;
+@property (retain) SUScriptViewController *firstViewController;
+@property (retain) id minimumPaneSize;
+@property (retain) SUScriptViewController *secondViewController;
+@property (retain) id splitPosition;
+@property (retain) id splitShadowColor;
+@property (retain) NSNumber *splitShadowOpacity;
+@property (retain) NSNumber *splitShadowRadius;
+@property (retain) NSString *splitType;
+@property (retain) NSString *title;
 @property BOOL usesSharedPlaceholder;
 
 + (void)initialize;

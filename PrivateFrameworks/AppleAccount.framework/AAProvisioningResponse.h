@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString;
-
 @interface AAProvisioningResponse : AAAuthenticationResponse {
     NSDictionary *_icloud;
 }
 
-@property(readonly) NSString * appleID;
-@property(readonly) NSArray * appleIDAliases;
-@property(readonly) NSDictionary * dataclassProperties;
-@property(readonly) NSString * firstName;
-@property(readonly) NSString * fmipAuthToken;
-@property(readonly) NSString * iCloudAuthToken;
-@property(readonly) NSString * lastName;
-@property(readonly) NSString * primaryEmail;
-@property(readonly) NSNumber * primaryEmailVerified;
-@property(readonly) NSArray * provisionedDataclasses;
+@property (nonatomic, readonly) NSString *appleID;
+@property (nonatomic, readonly) NSArray *appleIDAliases;
+@property (nonatomic, readonly) NSDictionary *dataclassProperties;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *fmipAuthToken;
+@property (nonatomic, readonly) NSString *iCloudAuthToken;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *primaryEmail;
+@property (nonatomic, readonly) NSNumber *primaryEmailVerified;
+@property (nonatomic, readonly) NSArray *provisionedDataclasses;
 
 - (void).cxx_destruct;
 - (id)appleID;

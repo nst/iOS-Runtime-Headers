@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPUCompletionQueryDataSource, NSOperationQueue, NSString;
-
 @interface MusicAlbumsDetailViewController : MusicTableViewController <MPUCompletionFooterViewDelegate, MPUCompletionQueryDataSourceDelegate, MusicViewControllerKeepLocalContainer> {
     NSOperationQueue *_downloadabilityOperationQueue;
     int _downloadableSongCount;
@@ -14,14 +12,14 @@
     BOOL _useDownloadAllArtistCellConfig;
 }
 
-@property(readonly) MPUCompletionQueryDataSource * completionDataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int downloadableSongCount;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDownloading;
-@property(readonly) float maximumDurationWidth;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) MPUCompletionQueryDataSource *completionDataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int downloadableSongCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isDownloading;
+@property (nonatomic, readonly) float maximumDurationWidth;
+@property (readonly) Class superclass;
 
 + (Class)_albumsDetailTableHeaderViewClass;
 + (id)actionCellConfigurationClasses;

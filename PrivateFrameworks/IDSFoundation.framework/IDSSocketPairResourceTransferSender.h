@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface IDSSocketPairResourceTransferSender : IDSSocketPairMessage {
     BOOL _compressed;
     BOOL _done;
@@ -23,11 +21,11 @@
     BOOL _wantsAppAck;
 }
 
-@property(readonly) BOOL isDone;
-@property unsigned int maxChunkSize;
-@property(retain,readonly) NSString * messageUUID;
-@property(readonly) BOOL sentFirstMessage;
-@property unsigned int sequenceNumber;
+@property (nonatomic, readonly) BOOL isDone;
+@property (nonatomic) unsigned int maxChunkSize;
+@property (nonatomic, readonly, retain) NSString *messageUUID;
+@property (nonatomic, readonly) BOOL sentFirstMessage;
+@property (nonatomic) unsigned int sequenceNumber;
 
 - (unsigned char)command;
 - (void)dealloc;

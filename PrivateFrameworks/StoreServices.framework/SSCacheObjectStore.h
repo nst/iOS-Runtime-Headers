@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString, SSDatabaseCache;
-
 @interface SSCacheObjectStore : NSObject {
     SSDatabaseCache *_databaseCache;
     NSMutableSet *_factories;

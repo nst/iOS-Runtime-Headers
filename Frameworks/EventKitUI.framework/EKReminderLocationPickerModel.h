@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CLGeocoder, CLLocationManager, EKReminderLocationItem, NSArray, NSMutableArray, NSString;
-
 @interface EKReminderLocationPickerModel : NSObject <CLLocationManagerDelegate> {
     void *_addressBook;
     EKReminderLocationItem *_currentLocationItem;
@@ -23,15 +21,15 @@
     int _selectedMeCardItem;
 }
 
-@property(readonly) void* addressBook;
-@property(readonly) EKReminderLocationItem * currentLocationItem;
-@property(retain) EKReminderLocationItem * customLocationItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) EKReminderLocationItem * itemBeingGeocoded;
-@property(readonly) BOOL meCardIsSet;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) void*addressBook;
+@property (nonatomic, readonly) EKReminderLocationItem *currentLocationItem;
+@property (nonatomic, retain) EKReminderLocationItem *customLocationItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) EKReminderLocationItem *itemBeingGeocoded;
+@property (nonatomic, readonly) BOOL meCardIsSet;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginOperation;

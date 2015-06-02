@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill, OADTableCellBorderStyle;
-
 @interface OADTableCellStyle : NSObject {
     OADTableCellBorderStyle *mBorderStyle;
     OADFill *mFill;

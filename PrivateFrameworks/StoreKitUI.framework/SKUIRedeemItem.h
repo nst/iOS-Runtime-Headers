@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtworkList;
-
 @interface SKUIRedeemItem : SKUIItem {
     SKUIArtworkList *artworks;
     long long itemIdentifier;
@@ -11,10 +9,10 @@
     NSString *title;
 }
 
-@property(retain) SKUIArtworkList * artworks;
-@property long long itemIdentifier;
-@property int itemKind;
-@property(retain) NSString * title;
+@property (nonatomic, retain) SKUIArtworkList *artworks;
+@property (nonatomic) long long itemIdentifier;
+@property (nonatomic) int itemKind;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ageBandRange;

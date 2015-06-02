@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKPaymentToken, PKShippingMethod;
-
 @interface PKPayment : NSObject <NSSecureCoding> {
     void *_billingAddress;
     void *_shippingAddress;
@@ -11,10 +9,10 @@
     PKPaymentToken *_token;
 }
 
-@property void* billingAddress;
-@property void* shippingAddress;
-@property(retain) PKShippingMethod * shippingMethod;
-@property(retain) PKPaymentToken * token;
+@property (nonatomic) void*billingAddress;
+@property (nonatomic) void*shippingAddress;
+@property (nonatomic, retain) PKShippingMethod *shippingMethod;
+@property (nonatomic, retain) PKPaymentToken *token;
 
 + (BOOL)supportsSecureCoding;
 

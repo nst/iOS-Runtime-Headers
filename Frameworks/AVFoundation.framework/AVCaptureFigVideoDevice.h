@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceControlRequestQueue, AVCaptureDeviceFormat, AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVCaptureFigVideoDevice : AVCaptureDevice <MCProfileConnectionObserver> {
     float _ISOKVO;
     AVCaptureDeviceFormat *_activeFormat;
@@ -136,10 +134,10 @@
     AVWeakReference *_weakReference;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_cameraAccessIsEnabled;
 + (id)_devices;
@@ -165,7 +163,7 @@
 - (BOOL)_hasKeyValueObserversForHighFrequencyProperty:(id)arg1;
 - (void)_incrementObserverCountForHighFrequencyProperty:(id)arg1;
 - (id)_initWithFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
-- (void)_performBlockOnMainThread:(id)arg1;
+- (void)_performBlockOnMainThread:(id /* block */)arg1;
 - (double)_predictedMixForGains:(struct { float x1; float x2; float x3; })arg1;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (long)_setActiveVideoMaxFrameDurationInternal:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -302,15 +300,15 @@
 - (void)setCachesFigCaptureSourceConfigurationChanges:(BOOL)arg1;
 - (void)setContrast:(float)arg1;
 - (void)setExposureMode:(int)arg1;
-- (void)setExposureModeCustomWithDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2 completionHandler:(id)arg3;
+- (void)setExposureModeCustomWithDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2 completionHandler:(id /* block */)arg3;
 - (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setExposureTargetBias:(float)arg1 completionHandler:(id)arg2;
+- (void)setExposureTargetBias:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)setEyeClosedDetectionEnabled:(BOOL)arg1;
 - (void)setEyeDetectionEnabled:(BOOL)arg1;
 - (void)setFaceDetectionDrivenImageProcessingEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusMode:(int)arg1;
-- (void)setFocusModeLockedWithLensPosition:(float)arg1 completionHandler:(id)arg2;
+- (void)setFocusModeLockedWithLensPosition:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHighDynamicRangeSceneDetectionEnabled:(BOOL)arg1;
 - (void)setImageControlMode:(int)arg1;
@@ -328,7 +326,7 @@
 - (void)setVideoZoomRampAcceleration:(float)arg1;
 - (void)setVideoZoomUpscaleStageHint:(int)arg1;
 - (void)setWhiteBalanceMode:(int)arg1;
-- (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id)arg2;
+- (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)smileDetectionEnabled;
 - (id)supportedMetadataObjectIdentifiers;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;

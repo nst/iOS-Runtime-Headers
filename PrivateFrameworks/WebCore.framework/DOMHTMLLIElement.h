@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLLIElement : DOMHTMLElement
 
-@interface DOMHTMLLIElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * type;
+@property (copy) NSString *type;
 @property int value;
 
 - (void)setType:(id)arg1;

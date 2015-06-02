@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSURL;
-
 @interface PKPaymentRegistrationResponse : PKPaymentWebServiceResponse {
     NSURL *_brokerURL;
     NSNumber *_cardsOnFile;
@@ -16,15 +14,15 @@
     NSURL *_trustedServiceManagerURL;
 }
 
-@property(retain) NSURL * brokerURL;
-@property(retain) NSNumber * cardsOnFile;
-@property(retain) NSArray * certificates;
-@property(retain) NSString * deviceIdentifier;
-@property(retain) NSNumber * maxCards;
-@property(retain) NSURL * paymentServicesURL;
-@property(readonly) NSString * primaryRegion;
-@property(retain) NSDictionary * regions;
-@property(retain) NSURL * trustedServiceManagerURL;
+@property (nonatomic, retain) NSURL *brokerURL;
+@property (nonatomic, retain) NSNumber *cardsOnFile;
+@property (nonatomic, retain) NSArray *certificates;
+@property (nonatomic, retain) NSString *deviceIdentifier;
+@property (nonatomic, retain) NSNumber *maxCards;
+@property (nonatomic, retain) NSURL *paymentServicesURL;
+@property (nonatomic, readonly) NSString *primaryRegion;
+@property (nonatomic, retain) NSDictionary *regions;
+@property (nonatomic, retain) NSURL *trustedServiceManagerURL;
 
 - (id)brokerURL;
 - (id)cardsOnFile;

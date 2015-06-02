@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFWebPageToFilterText : WFWebPageDecorator {
-}
+@interface WFWebPageToFilterText : WFWebPageDecorator
 
 - (id)URLFuzzyForFilter;
 - (id)URLFuzzyWithWordLength:(int)arg1;

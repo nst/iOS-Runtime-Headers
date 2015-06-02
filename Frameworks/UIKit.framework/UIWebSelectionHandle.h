@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UITouch, UIWebSelectionView;
-
 @interface UIWebSelectionHandle : UIView {
     struct CGSize { 
         float width; 
@@ -20,12 +18,12 @@
     } _touchToCenterOffset;
 }
 
-@property struct CGSize { float x1; float x2; } centerToSelectionPointOffset;
-@property(readonly) BOOL hasTextPosition;
-@property int position;
-@property int textPosition;
-@property(retain) UITouch * touch;
-@property(readonly) struct CGSize { float x1; float x2; } touchToCenterOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } centerToSelectionPointOffset;
+@property (nonatomic, readonly) BOOL hasTextPosition;
+@property (nonatomic) int position;
+@property (nonatomic) int textPosition;
+@property (nonatomic, retain) UITouch *touch;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } touchToCenterOffset;
 
 - (struct CGPoint { float x1; float x2; })applyCenterToSelectionPointOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })applyOffsetInDirectionOfHandle:(float)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;

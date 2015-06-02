@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMCameraView;
-
 @interface CAMCameraViewController : UIViewController {
     CAMCameraView *_cameraView;
 }

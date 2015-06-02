@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILabel;
-
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell {
     NSString *_alternativeText;
     UILabel *_alternativeTextLabel;
@@ -50,29 +48,29 @@
     } _visualStyling;
 }
 
-@property(copy) NSString * alternativeText;
-@property(retain) UILabel * alternativeTextLabel;
-@property(readonly) BOOL canShowCandidateNumber;
-@property unsigned int candidateNumber;
-@property(retain) UILabel * candidateNumberLabel;
-@property struct CGSize { float x1; float x2; } candidateNumberSize;
-@property int candidatesVisualStyle;
-@property float cellPadding;
-@property BOOL dummy;
-@property unsigned int edges;
-@property BOOL emphasizedAppearance;
-@property float minimumWidth;
-@property float rightPadding;
-@property float rowHeight;
-@property BOOL secondaryCandidateAppearance;
-@property BOOL shouldShowCandidateNumber;
-@property struct CGSize { float x1; float x2; } size;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UILabel * textLabel;
-@property BOOL usesGroupHeaderAppearance;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, copy) NSString *alternativeText;
+@property (nonatomic, retain) UILabel *alternativeTextLabel;
+@property (nonatomic, readonly) BOOL canShowCandidateNumber;
+@property (nonatomic) unsigned int candidateNumber;
+@property (nonatomic, retain) UILabel *candidateNumberLabel;
+@property (nonatomic) struct CGSize { float x1; float x2; } candidateNumberSize;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic) float cellPadding;
+@property (nonatomic) BOOL dummy;
+@property (nonatomic) unsigned int edges;
+@property (nonatomic) BOOL emphasizedAppearance;
+@property (nonatomic) float minimumWidth;
+@property (nonatomic) float rightPadding;
+@property (nonatomic) float rowHeight;
+@property (nonatomic) BOOL secondaryCandidateAppearance;
+@property (nonatomic) BOOL shouldShowCandidateNumber;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UILabel *textLabel;
+@property (nonatomic) BOOL usesGroupHeaderAppearance;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 + (BOOL)drawsSideBorders;
 + (struct CGColor { }*)legacy_outlineColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;

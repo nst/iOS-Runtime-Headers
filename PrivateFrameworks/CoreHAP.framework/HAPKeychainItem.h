@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface HAPKeychainItem : NSObject {
     NSString *_accessGroup;
     NSString *_account;
@@ -16,15 +14,15 @@
     NSData *_valueData;
 }
 
-@property(retain) NSString * accessGroup;
-@property(retain) NSString * account;
-@property(retain) NSData * genericData;
-@property(retain) NSString * itemDescription;
-@property(retain) NSString * label;
-@property void* platformReference;
-@property(getter=isSyncable) BOOL syncable;
-@property(retain) NSNumber * type;
-@property(retain) NSData * valueData;
+@property (nonatomic, retain) NSString *accessGroup;
+@property (nonatomic, retain) NSString *account;
+@property (nonatomic, retain) NSData *genericData;
+@property (nonatomic, retain) NSString *itemDescription;
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic) void*platformReference;
+@property (getter=isSyncable, nonatomic) BOOL syncable;
+@property (nonatomic, retain) NSNumber *type;
+@property (nonatomic, retain) NSData *valueData;
 
 - (void).cxx_destruct;
 - (id)accessGroup;

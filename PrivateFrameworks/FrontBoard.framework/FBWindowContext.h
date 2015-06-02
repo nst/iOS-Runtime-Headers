@@ -8,8 +8,8 @@
     float _level;
 }
 
-@property(readonly) unsigned int identifier;
-@property(readonly) float level;
+@property (nonatomic, readonly) unsigned int identifier;
+@property (nonatomic, readonly) float level;
 
 + (id)contextWithFBSContext:(id)arg1;
 + (id)contextWithID:(unsigned int)arg1 level:(float)arg2;

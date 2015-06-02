@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSSet, NSString;
-
 @interface GKCompatibilityEntryInternal : GKInternalRepresentation {
     NSString *_bundleID;
     NSSet *_versions;
 }
 
-@property(retain) NSString * bundleID;
-@property(retain) NSSet * versions;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSSet *versions;
 
 + (id)secureCodedPropertyKeys;
 

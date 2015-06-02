@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIActivityIndicatorViewElement;
+@interface SKUILoadingTemplateViewElement : SKUIViewElement
 
-@interface SKUILoadingTemplateViewElement : SKUIViewElement {
-}
-
-@property(readonly) SKUIActivityIndicatorViewElement * activityIndicator;
+@property (nonatomic, readonly) SKUIActivityIndicatorViewElement *activityIndicator;
 
 - (id)activityIndicator;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassPaymentPayStateViewDelegate>, NSString, PKGlyphView, UILabel;
-
 @interface PKPassPaymentPayStateView : UIView <PKGlyphViewDelegate> {
     <PKPassPaymentPayStateViewDelegate> *_delegate;
     PKGlyphView *_glyph;
@@ -13,18 +11,18 @@
     BOOL _touchRecognizingHint;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassPaymentPayStateViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) PKGlyphView * glyph;
-@property(readonly) unsigned int hash;
-@property(readonly) UILabel * label;
-@property float labelAlpha;
-@property int state;
-@property(readonly) Class superclass;
-@property BOOL touchRecognizingHint;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassPaymentPayStateViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) PKGlyphView *glyph;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic) float labelAlpha;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL touchRecognizingHint;
 
-- (void)_applyStateWithTextOverride:(id)arg1 completionHandler:(id)arg2;
+- (void)_applyStateWithTextOverride:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)_canEmphasizeState:(int)arg1;
 - (id)_labelForState:(int)arg1 textOverride:(id)arg2;
 - (void)dealloc;
@@ -39,7 +37,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLabelAlpha:(float)arg1;
 - (void)setState:(int)arg1;
-- (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id)arg3;
+- (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setTouchRecognizingHint:(BOOL)arg1;
 - (int)state;
 - (BOOL)touchRecognizingHint;

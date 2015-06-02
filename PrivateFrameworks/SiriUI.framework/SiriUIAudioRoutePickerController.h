@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIAudioRoutePickerControllerDelegate>, NSString, SiriRoutePickerAlertController, UIActionSheet, UIWindow;
-
 @interface SiriUIAudioRoutePickerController : NSObject <UIActionSheetDelegate> {
     NSString *_audioCategory;
     BOOL _bluetoothIsPicked;
@@ -16,19 +14,19 @@
     UIWindow *_window;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SiriUIAudioRoutePickerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIActionSheet * pickerActionSheet;
-@property(retain) SiriRoutePickerAlertController * pickerAlertController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SiriUIAudioRoutePickerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIActionSheet *pickerActionSheet;
+@property (nonatomic, retain) SiriRoutePickerAlertController *pickerAlertController;
+@property (readonly) Class superclass;
 
 + (id)_nameForRouteInfo:(id)arg1 overridePicked:(BOOL)arg2 isSelected:(BOOL*)arg3 isBluetooth:(BOOL*)arg4 isOverride:(BOOL*)arg5 audioRouteName:(id*)arg6;
 
 - (void).cxx_destruct;
 - (void)_dismissAlertController:(BOOL)arg1;
-- (void)_fetchPickableRoutesForCategory:(id)arg1 withCompletion:(id)arg2;
+- (void)_fetchPickableRoutesForCategory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)_overrideIsPicked;
 - (void)_pickableRoutesChanged:(id)arg1;
 - (void)_removeWindow;

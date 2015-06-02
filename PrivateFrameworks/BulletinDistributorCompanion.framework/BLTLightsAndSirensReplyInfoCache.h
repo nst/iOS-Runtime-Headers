@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface BLTLightsAndSirensReplyInfoCache : NSObject {
     NSMutableDictionary *_localReplyInfo;
     NSObject<OS_dispatch_queue> *_queue;
     NSDate *_timeToCheck;
 }
 
-@property(retain) NSMutableDictionary * localReplyInfo;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSDate * timeToCheck;
+@property (nonatomic, retain) NSMutableDictionary *localReplyInfo;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSDate *timeToCheck;
 
 + (id)sharedReplyCache;
 
@@ -25,7 +23,7 @@
 - (id)_keyForSectionID:(id)arg1 bulletinID:(id)arg2;
 - (void)_setNextTimeToCheck;
 - (void)cacheDidPlayLightsAndSirens:(unsigned int)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3;
-- (void)cacheReply:(id)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3 publicationDate:(id)arg4;
+- (void)cacheReply:(id /* block */)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3 publicationDate:(id)arg4;
 - (id)init;
 - (id)localReplyInfo;
 - (void)purgeReplyInfo:(id)arg1 withSectionID:(id)arg2 bulletinID:(id)arg3;

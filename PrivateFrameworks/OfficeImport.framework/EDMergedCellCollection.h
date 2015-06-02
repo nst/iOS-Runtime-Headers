@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDMergedCellCollection : EDCollection {
-}
+@interface EDMergedCellCollection : EDCollection
 
 - (unsigned int)addObject:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;

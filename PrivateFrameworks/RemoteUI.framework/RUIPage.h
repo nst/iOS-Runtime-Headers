@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, RUIBarButtonItem, RUIElement<RUITopLevelPageElement>, RUIObjectModel, RUIPage, RUIPasscodeView, RUISpinnerView, RUITableView, RUIWebView, UIBarButtonItem, UILabel, UIToolbar, UIView;
-
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
     NSString *_backButtonTitle;
     NSMutableArray *_childPages;
@@ -43,48 +41,48 @@
     RUIWebView *_webViewOM;
 }
 
-@property(readonly) NSArray * accessoryViews;
-@property(copy) NSString * backButtonTitle;
-@property(readonly) NSArray * buttonItems;
-@property(readonly) NSArray * buttons;
-@property(readonly) NSArray * childPages;
-@property(readonly) UIView * containerView;
-@property float customMargin;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hidesBackButton;
-@property(retain) NSDictionary * leftNavigationBarButton;
-@property(retain) RUIBarButtonItem * leftNavigationBarButtonItem;
-@property(retain) NSDictionary * leftToolbarButton;
-@property(retain) RUIBarButtonItem * leftToolbarButtonItem;
-@property(retain) UIBarButtonItem * leftToolbarItem;
-@property(getter=isLoading) BOOL loading;
-@property int loadingIndicatorStyle;
-@property(copy) NSString * loadingTitle;
-@property(retain) NSDictionary * middleToolbarButton;
-@property(retain) RUIBarButtonItem * middleToolbarButtonItem;
-@property(retain) UIBarButtonItem * middleToolbarItem;
-@property(copy) NSString * navTitle;
-@property RUIObjectModel * objectModel;
-@property(copy) NSString * pageID;
-@property(readonly) RUIPage * parentPage;
-@property(readonly) RUIPasscodeView * passcodeViewOM;
-@property(retain) RUIElement<RUITopLevelPageElement> * primaryElement;
-@property(retain) NSDictionary * rightNavigationBarButton;
-@property(retain) RUIBarButtonItem * rightNavigationBarButtonItem;
-@property(retain) NSDictionary * rightToolbarButton;
-@property(retain) RUIBarButtonItem * rightToolbarButtonItem;
-@property(retain) UIBarButtonItem * rightToolbarItem;
-@property BOOL showsTitlesAsHeaderViews;
-@property(readonly) RUISpinnerView * spinnerViewOM;
-@property(readonly) Class superclass;
-@property(readonly) RUITableView * tableViewOM;
-@property(readonly) UILabel * titleLabel;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleLabelPadding;
-@property(readonly) UIToolbar * toolbar;
-@property(copy) NSString * validationFunction;
-@property(readonly) RUIWebView * webViewOM;
+@property (nonatomic, readonly) NSArray *accessoryViews;
+@property (nonatomic, copy) NSString *backButtonTitle;
+@property (nonatomic, readonly) NSArray *buttonItems;
+@property (nonatomic, readonly) NSArray *buttons;
+@property (nonatomic, readonly) NSArray *childPages;
+@property (nonatomic, readonly) UIView *containerView;
+@property (nonatomic) float customMargin;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesBackButton;
+@property (nonatomic, retain) NSDictionary *leftNavigationBarButton;
+@property (nonatomic, retain) RUIBarButtonItem *leftNavigationBarButtonItem;
+@property (nonatomic, retain) NSDictionary *leftToolbarButton;
+@property (nonatomic, retain) RUIBarButtonItem *leftToolbarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *leftToolbarItem;
+@property (getter=isLoading, nonatomic) BOOL loading;
+@property (nonatomic) int loadingIndicatorStyle;
+@property (nonatomic, copy) NSString *loadingTitle;
+@property (nonatomic, retain) NSDictionary *middleToolbarButton;
+@property (nonatomic, retain) RUIBarButtonItem *middleToolbarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *middleToolbarItem;
+@property (nonatomic, copy) NSString *navTitle;
+@property (nonatomic) RUIObjectModel *objectModel;
+@property (nonatomic, copy) NSString *pageID;
+@property (nonatomic, readonly) RUIPage *parentPage;
+@property (nonatomic, readonly) RUIPasscodeView *passcodeViewOM;
+@property (nonatomic, retain) RUIElement<RUITopLevelPageElement> *primaryElement;
+@property (nonatomic, retain) NSDictionary *rightNavigationBarButton;
+@property (nonatomic, retain) RUIBarButtonItem *rightNavigationBarButtonItem;
+@property (nonatomic, retain) NSDictionary *rightToolbarButton;
+@property (nonatomic, retain) RUIBarButtonItem *rightToolbarButtonItem;
+@property (nonatomic, retain) UIBarButtonItem *rightToolbarItem;
+@property (nonatomic) BOOL showsTitlesAsHeaderViews;
+@property (nonatomic, readonly) RUISpinnerView *spinnerViewOM;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) RUITableView *tableViewOM;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleLabelPadding;
+@property (nonatomic, readonly) UIToolbar *toolbar;
+@property (nonatomic, copy) NSString *validationFunction;
+@property (nonatomic, readonly) RUIWebView *webViewOM;
 
 - (void).cxx_destruct;
 - (void)_addChildPage:(id)arg1;

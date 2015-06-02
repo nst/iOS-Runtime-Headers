@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface _VTStatePolicy : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSMutableSet *_dependentOnMe;
     NSMutableSet *_dependentUpon;
     NSObject<OS_dispatch_queue> *_queue;
@@ -24,7 +14,7 @@
 - (BOOL)dependenciesSatisfied;
 - (void)dependencyUpdated:(id)arg1;
 - (void)dependsOn:(id)arg1;
-- (id)initWithCallback:(id)arg1 queue:(id)arg2;
+- (id)initWithCallback:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isEnabled;
 - (void)notify;
 - (void)reload;

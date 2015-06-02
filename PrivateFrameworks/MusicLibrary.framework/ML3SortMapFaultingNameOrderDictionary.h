@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, NSMutableDictionary;
-
 @interface ML3SortMapFaultingNameOrderDictionary : NSMutableDictionary {
     ML3DatabaseConnection *_connection;
     NSMutableDictionary *_dirtyInserts;

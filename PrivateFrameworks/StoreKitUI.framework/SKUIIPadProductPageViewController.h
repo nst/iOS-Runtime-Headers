@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIIPadProductPageDelegate>, NSOperationQueue, NSString, NSURL, NSURLRequest, SKUIClientContext, SKUIIncompatibleAppViewController, SKUIItem, SKUILoadProductPageOperation, SKUIMessageBanner, SKUIMetricsController, SKUINetworkErrorViewController, SKUIProductPage, SKUIProductPageDetailsViewController, SKUIProductPageHeaderViewController, SKUIProductPagePlaceholderViewController, SKUIProductPageReviewsViewController, SKUISwooshArrayViewController, SSMetricsPageEvent, UIView;
-
 @interface SKUIIPadProductPageViewController : UIViewController <SKUIMessageBannerDelegate, SKUIMetricsViewController, SKUINetworkErrorDelegate, SKUIProductPageChildViewControllerDelegate, SKUIProductPageHeaderViewDelegate> {
     BOOL _askPermission;
     SKUIMessageBanner *_banner;
@@ -31,17 +29,17 @@
     NSURLRequest *_urlRequest;
 }
 
-@property(readonly) NSURL * URL;
-@property BOOL askPermission;
-@property(copy) NSString * bannerText;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIIPadProductPageDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIItem * item;
-@property(readonly) SKUIProductPage * productPage;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic) BOOL askPermission;
+@property (nonatomic, copy) NSString *bannerText;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIIPadProductPageDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIItem *item;
+@property (nonatomic, readonly) SKUIProductPage *productPage;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -83,7 +81,7 @@
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)productPage;
 - (void)productPageChildOpenItem:(id)arg1;
-- (void)productPageChildOpenURL:(id)arg1 viewControllerBlock:(id)arg2;
+- (void)productPageChildOpenURL:(id)arg1 viewControllerBlock:(id /* block */)arg2;
 - (void)productPageChildViewControllerDidLoad:(id)arg1;
 - (void)productPageChildViewControllerDidLoadScrollView:(id)arg1;
 - (void)productPageChildViewControllerDidScroll:(id)arg1;

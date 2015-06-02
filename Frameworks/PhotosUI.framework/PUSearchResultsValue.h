@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSearchResultsValueDelegate>, NSArray, NSAttributedString, NSObject<OS_dispatch_queue>, NSString, PSIGroupResult;
-
 @interface PUSearchResultsValue : NSObject <PUSearchResult> {
     id _albumUUID;
     unsigned int _approximateCount;
@@ -16,19 +14,19 @@
     NSArray *_uuids;
 }
 
-@property(retain) id albumUUID;
+@property (retain) id albumUUID;
 @property unsigned int approximateCount;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSearchResultsValueDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSString * displaySubtitle;
-@property(copy,readonly) NSString * displayTitle;
-@property(setter=_setGroupResult:,retain) PSIGroupResult * groupResult;
-@property(readonly) unsigned int hash;
-@property(readonly) double score;
-@property(copy,readonly) NSString * searchString;
-@property(readonly) Class superclass;
-@property(retain) NSArray * uuids;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSearchResultsValueDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly, copy) NSString *displaySubtitle;
+@property (readonly, copy) NSString *displayTitle;
+@property (setter=_setGroupResult:, retain) PSIGroupResult *groupResult;
+@property (readonly) unsigned int hash;
+@property (readonly) double score;
+@property (readonly, copy) NSString *searchString;
+@property (readonly) Class superclass;
+@property (retain) NSArray *uuids;
 
 - (void).cxx_destruct;
 - (void)_computeScoreWithMaxGroupedResultsCount:(unsigned int)arg1;
@@ -43,7 +41,7 @@
 - (id)displaySubtitle;
 - (id)displayTitle;
 - (id)displayTitleWithDefaultAttributes:(id)arg1 highlightedAttributes:(id)arg2;
-- (void)fetchRemainingUUIDs:(id)arg1;
+- (void)fetchRemainingUUIDs:(id /* block */)arg1;
 - (id)groupResult;
 - (id)init;
 - (BOOL)isFinished;

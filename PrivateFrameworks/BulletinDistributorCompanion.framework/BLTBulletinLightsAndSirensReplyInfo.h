@@ -2,30 +2,22 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface BLTBulletinLightsAndSirensReplyInfo : NSObject {
     BOOL _didPlayLightsAndSirens;
     BOOL _handledLightsAndSirens;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reply;
-
+    id /* block */ _reply;
 }
 
-@property BOOL didPlayLightsAndSirens;
-@property BOOL handledLightsAndSirens;
-@property(copy) id reply;
+@property (nonatomic) BOOL didPlayLightsAndSirens;
+@property (nonatomic) BOOL handledLightsAndSirens;
+@property (nonatomic, copy) id /* block */ reply;
 
 - (void).cxx_destruct;
 - (BOOL)didPlayLightsAndSirens;
 - (BOOL)handledLightsAndSirens;
-- (id)reply;
+- (id /* block */)reply;
 - (void)setDidPlayLightsAndSirens:(BOOL)arg1;
 - (void)setHandledLightsAndSirens:(BOOL)arg1;
-- (void)setReply:(id)arg1;
+- (void)setReply:(id /* block */)arg1;
 
 @end

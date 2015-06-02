@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPConcreteMediaEntityPropertiesCache, MPMediaLibrary, NSString;
-
 @interface MPConcreteMediaItem : MPMediaItem <MPCacheableConcreteMediaEntity, MPMediaItemArrayPIDEncodableItem, NSCoding, NSCopying> {
     MPMediaLibrary *_library;
     unsigned long long _persistentID;
     MPConcreteMediaEntityPropertiesCache *_propertiesCache;
 }
 
-@property(retain,readonly) MPConcreteMediaEntityPropertiesCache * cachedPropertyValues;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) MPConcreteMediaEntityPropertiesCache *cachedPropertyValues;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1;
 + (id)concreteMediaItemWithPersistentID:(unsigned long long)arg1 library:(id)arg2;
@@ -31,7 +29,7 @@
 - (id)description;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)existsInLibrary;
 - (void)incrementPlayCountForPlayingToEnd;
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
@@ -49,8 +47,8 @@
 - (unsigned long long)persistentID;
 - (void)reallyIncrementPlayCount;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id)arg3;
-- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id /* block */)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

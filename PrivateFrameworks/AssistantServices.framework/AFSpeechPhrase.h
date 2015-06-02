@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFSpeechPhrase : NSObject <NSSecureCoding> {
     NSArray *_interpretations;
     BOOL _isLowConfidence;
 }
 
-@property(copy) NSArray * interpretations;
-@property BOOL isLowConfidence;
+@property (nonatomic, copy) NSArray *interpretations;
+@property (nonatomic) BOOL isLowConfidence;
 
 + (BOOL)supportsSecureCoding;
 

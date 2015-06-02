@@ -2,56 +2,22 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface BBSettingsGateway : NSObject <BBSettingsGatewayClientInterface> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _activeOverrideTypesChangedHandler;
-
+    id /* block */ _activeOverrideTypesChangedHandler;
     NSXPCConnection *_connection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _overrideStateChangeHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _overrideStatusChangeHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _overridesChangedHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _overridesEffectiveWhileUnlockedChangedHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _privilegedSenderGroupChangedHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _privilegedSenderTypesChangedHandler;
-
+    id /* block */ _overrideStateChangeHandler;
+    id /* block */ _overrideStatusChangeHandler;
+    id /* block */ _overridesChangedHandler;
+    id /* block */ _overridesEffectiveWhileUnlockedChangedHandler;
+    id /* block */ _privilegedSenderGroupChangedHandler;
+    id /* block */ _privilegedSenderTypesChangedHandler;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)clientInterface;
 + (void)initialize;
@@ -62,42 +28,42 @@
 - (void)behaviorOverridesChanged:(id)arg1 source:(unsigned int)arg2;
 - (void)behaviorOverridesEffectiveWhileUnlockedChanged:(BOOL)arg1 source:(unsigned int)arg2;
 - (void)dealloc;
-- (void)getBehaviorOverridesEffectiveWhileUnlockedWithCompletion:(id)arg1;
-- (void)getBehaviorOverridesEnabledWithCompletion:(id)arg1;
-- (void)getBehaviorOverridesWithCompletion:(id)arg1;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithCompletion:(id)arg1;
-- (void)getPrivilegedSenderTypesWithCompletion:(id)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withCompletion:(id)arg2;
-- (void)getSectionInfoWithCompletion:(id)arg1;
-- (void)getSectionOrderRuleWithCompletion:(id)arg1;
+- (void)getBehaviorOverridesEffectiveWhileUnlockedWithCompletion:(id /* block */)arg1;
+- (void)getBehaviorOverridesEnabledWithCompletion:(id /* block */)arg1;
+- (void)getBehaviorOverridesWithCompletion:(id /* block */)arg1;
+- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithCompletion:(id /* block */)arg1;
+- (void)getPrivilegedSenderTypesWithCompletion:(id /* block */)arg1;
+- (void)getSectionInfoForCategory:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)getSectionInfoWithCompletion:(id /* block */)arg1;
+- (void)getSectionOrderRuleWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (void)invalidate;
 - (void)privilegedSenderAddressBookGroupRecordIDChanged:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
 - (void)privilegedSenderTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)setActiveBehaviorOverrideTypesChangeHandler:(id)arg1;
-- (void)setActiveBehaviorOverrideTypesWithSourceChangeHandler:(id)arg1;
-- (void)setBehaviorOverrideStateChangeHandler:(id)arg1;
+- (void)setActiveBehaviorOverrideTypesChangeHandler:(id /* block */)arg1;
+- (void)setActiveBehaviorOverrideTypesWithSourceChangeHandler:(id /* block */)arg1;
+- (void)setBehaviorOverrideStateChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverrideStatus:(int)arg1;
 - (void)setBehaviorOverrideStatus:(int)arg1 source:(unsigned int)arg2;
-- (void)setBehaviorOverrideStatusChangeHandler:(id)arg1;
-- (void)setBehaviorOverrideStatusWithSourceChangeHandler:(id)arg1;
+- (void)setBehaviorOverrideStatusChangeHandler:(id /* block */)arg1;
+- (void)setBehaviorOverrideStatusWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverrides:(id)arg1;
 - (void)setBehaviorOverrides:(id)arg1 source:(unsigned int)arg2;
-- (void)setBehaviorOverridesChangeHandler:(id)arg1;
+- (void)setBehaviorOverridesChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1;
 - (void)setBehaviorOverridesEffectiveWhileUnlocked:(BOOL)arg1 source:(unsigned int)arg2;
-- (void)setBehaviorOverridesEffectiveWhileUnlockedChangeHandler:(id)arg1;
+- (void)setBehaviorOverridesEffectiveWhileUnlockedChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverridesEnabled:(BOOL)arg1;
-- (void)setBehaviorOverridesWithSourceChangeHandler:(id)arg1;
+- (void)setBehaviorOverridesWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setOrderedSectionIDs:(id)arg1;
 - (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
-- (void)setPrivilegedSenderAddressBookGroupRecordIDWithSourceChangeHandler:(id)arg1;
+- (void)setPrivilegedSenderAddressBookGroupRecordIDWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1;
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)setPrivilegedSenderTypesWithSourceChangeHandler:(id)arg1;
+- (void)setPrivilegedSenderTypesWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
 - (void)setSectionOrderRule:(int)arg1;

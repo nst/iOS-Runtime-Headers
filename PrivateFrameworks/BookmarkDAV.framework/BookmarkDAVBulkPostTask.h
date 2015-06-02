@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
-
 @interface BookmarkDAVBulkPostTask : CoreDAVPostTask {
     NSString *_checkCTag;
     NSURL *_checkCTagURL;
@@ -16,11 +14,11 @@
     NSMutableDictionary *_parsedFoldersByURL;
 }
 
-@property(readonly) NSDictionary * folderURLToChildrenURLOrder;
-@property(retain) NSString * nextRootCTag;
-@property(retain) NSString * nextRootSyncToken;
-@property(readonly) NSArray * parsedBookmarks;
-@property(readonly) NSArray * parsedFolders;
+@property (nonatomic, readonly) NSDictionary *folderURLToChildrenURLOrder;
+@property (nonatomic, retain) NSString *nextRootCTag;
+@property (nonatomic, retain) NSString *nextRootSyncToken;
+@property (nonatomic, readonly) NSArray *parsedBookmarks;
+@property (nonatomic, readonly) NSArray *parsedFolders;
 
 - (void)_foundChildrenOrder:(id)arg1 inFolderWithURL:(id)arg2;
 - (id)additionalHeaderValues;

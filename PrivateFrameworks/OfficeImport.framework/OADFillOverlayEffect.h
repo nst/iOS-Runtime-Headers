@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill;
-
 @interface OADFillOverlayEffect : OADEffect {
     int mBlendMode;
     OADFill *mFill;

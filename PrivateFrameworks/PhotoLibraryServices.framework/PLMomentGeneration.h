@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLMomentGenerationDataManagement>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PLMomentAnalyzer;
-
 @interface PLMomentGeneration : NSObject {
     PLMomentAnalyzer *_analyzer;
     <PLMomentGenerationDataManagement> *_momentGenerationDataManager;
@@ -13,8 +11,8 @@
     NSObject<OS_dispatch_queue> *_pendingIsolation;
 }
 
-@property PLMomentAnalyzer * analyzer;
-@property <PLMomentGenerationDataManagement> * momentGenerationDataManager;
+@property (nonatomic) PLMomentAnalyzer *analyzer;
+@property (nonatomic) <PLMomentGenerationDataManagement> *momentGenerationDataManager;
 
 + (id)_insertMegaMomentListsForMoments:(id)arg1 inMomentDataManager:(id)arg2;
 + (id)_insertMomentsForAssets:(id)arg1 inManager:(id)arg2 withAffectedMoments:(id)arg3;
@@ -45,13 +43,13 @@
 - (id)analyzer;
 - (void)clearUserInfluencedMoments;
 - (void)dealloc;
-- (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id)arg3;
-- (void)generateWithIncrementalDataCompletionHandler:(id)arg1;
+- (void)generateWithAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)generateWithIncrementalDataCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)momentGenerationDataManager;
-- (void)rebuildAllMomentLists:(id)arg1;
+- (void)rebuildAllMomentLists:(id /* block */)arg1;
 - (BOOL)rebuildAllMomentsWithManager:(id)arg1 error:(id*)arg2;
-- (void)rebuildAllMomentsWithOptions:(id)arg1 completionHandler:(id)arg2;
+- (void)rebuildAllMomentsWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveChangesForAssetInsertsAndUpdates:(id)arg1 andDeletes:(id)arg2;
 - (void)setAnalyzer:(id)arg1;
 - (void)setMomentGenerationDataManager:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DGLFramebufferMultisample;
-
 @interface TSCH3DGLMultisampleFramebuffer : TSCH3DGLMixinFramebuffer <TSCH3DGLResolveFramebuffer> {
     BOOL mDisableDestroyAssertion;
     TSCH3DGLFramebufferMultisample *mMultisample;
 }
 
-@property BOOL disableDestroyAssertion;
-@property(readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } resolveAttributes;
+@property (nonatomic) BOOL disableDestroyAssertion;
+@property (nonatomic, readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } resolveAttributes;
 
 + (id)multisampleFramebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1;
 + (struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; })resolveAttributesFromFramebufferAttribute:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1;

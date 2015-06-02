@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class <GKChallengeEventHandlerDelegate>, <GKChallengeEventHandlerUIDelegate>, GKChallengeInternal;
-
 @interface GKChallengeEventHandler : NSObject {
     <GKChallengeEventHandlerDelegate> *_delegateWeak;
     GKChallengeInternal *_pendingCompletedChallenge;
@@ -11,13 +9,14 @@
     <GKChallengeEventHandlerUIDelegate> *_uiDelegate;
 }
 
-@property <GKChallengeEventHandlerDelegate> * delegate;
-@property(retain) GKChallengeInternal * pendingCompletedChallenge;
-@property(retain) GKChallengeInternal * pendingReceivedChallenge;
-@property(retain) <GKChallengeEventHandlerUIDelegate> * uiDelegate;
+@property (nonatomic) <GKChallengeEventHandlerDelegate> *delegate;
+@property (nonatomic, retain) GKChallengeInternal *pendingCompletedChallenge;
+@property (nonatomic, retain) GKChallengeInternal *pendingReceivedChallenge;
+@property (nonatomic, retain) <GKChallengeEventHandlerUIDelegate> *uiDelegate;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)challengeEventHandler;
-+ (Class)uiDelegateClass;
 
 - (void)challengeCompleted:(id)arg1;
 - (void)challengeReceived:(id)arg1;
@@ -31,7 +30,11 @@
 - (void)setPendingCompletedChallenge:(id)arg1;
 - (void)setPendingReceivedChallenge:(id)arg1;
 - (void)setUiDelegate:(id)arg1;
-- (void)showBannerForChallenge:(id)arg1 complete:(id)arg2;
+- (void)showBannerForChallenge:(id)arg1 complete:(id /* block */)arg2;
 - (id)uiDelegate;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
++ (Class)uiDelegateClass;
 
 @end

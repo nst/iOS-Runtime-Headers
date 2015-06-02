@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <WeatherUpdaterDelegate>, NSMutableArray;
-
 @interface TWCUpdater : WeatherJSONHTTPRequest {
     <WeatherUpdaterDelegate> *_delegate;
     NSMutableArray *_pendingCities;
     NSMutableArray *_updatingCities;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _weatherCompletionUpdaterHandler;
-
+    id /* block */ _weatherCompletionUpdaterHandler;
 }
 
-@property <WeatherUpdaterDelegate> * delegate;
-@property(copy) id weatherCompletionUpdaterHandler;
+@property (nonatomic) <WeatherUpdaterDelegate> *delegate;
+@property (nonatomic, copy) id /* block */ weatherCompletionUpdaterHandler;
 
 - (id)_GMTOffsetRegularExpression;
 - (id)_ISO8601Calendar;
@@ -48,7 +38,7 @@
 - (void)processJSONObject:(id)arg1;
 - (void)runAndClearWeatherCompletionWithDetail:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setWeatherCompletionUpdaterHandler:(id)arg1;
-- (id)weatherCompletionUpdaterHandler;
+- (void)setWeatherCompletionUpdaterHandler:(id /* block */)arg1;
+- (id /* block */)weatherCompletionUpdaterHandler;
 
 @end

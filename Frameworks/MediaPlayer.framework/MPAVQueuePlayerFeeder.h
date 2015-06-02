@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVQueuePlayerFeederSource>, MPAVItem, MPDownloadManager, MPQueuePlayer, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MPAVQueuePlayerFeeder : NSObject <SSDownloadManagerObserver> {
     unsigned int _desiredQueueDepth;
     MPDownloadManager *_downloadManager;
@@ -22,16 +20,16 @@
     NSMutableSet *_reusableItems;
 }
 
-@property(readonly) MPAVItem * currentItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL forceSynchronousQueueFilling;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * items;
-@property BOOL managesSystemDownloads;
-@property unsigned int maxQueueDepth;
-@property unsigned int minQueueDepth;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) MPAVItem *currentItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL forceSynchronousQueueFilling;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic) BOOL managesSystemDownloads;
+@property (nonatomic) unsigned int maxQueueDepth;
+@property (nonatomic) unsigned int minQueueDepth;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_fillInQueue;
@@ -45,9 +43,9 @@
 - (void)_removeInvalidItems:(id)arg1;
 - (void)_updatePlayerQueueWithRemovedItems:(id)arg1 addedItems:(id)arg2 removeCurrentItem:(BOOL)arg3;
 - (void)_updateQueueDepthForRateChange;
-- (id)acquireReusableItemsUsingBlock:(id)arg1;
+- (id)acquireReusableItemsUsingBlock:(id /* block */)arg1;
 - (void)advanceToNextItem;
-- (void)cancelReusableItemsPassingTest:(id)arg1;
+- (void)cancelReusableItemsPassingTest:(id /* block */)arg1;
 - (id)currentItem;
 - (void)dealloc;
 - (id)description;

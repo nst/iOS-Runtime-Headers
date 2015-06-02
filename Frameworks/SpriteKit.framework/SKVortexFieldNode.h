@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKVortexFieldNode : SKFieldNode {
-}
+@interface SKVortexFieldNode : SKFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

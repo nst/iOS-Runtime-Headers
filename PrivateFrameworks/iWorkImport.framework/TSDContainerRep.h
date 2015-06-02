@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSObject<TSDContainerInfo>, NSObject<TSDMutableContainerInfo>, NSString;
-
 @interface TSDContainerRep : TSDRep <TSDMutableContainerRep> {
     NSMutableArray *mChildReps;
 }
 
-@property(readonly) NSObject<TSDContainerInfo> * containerInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<TSDMutableContainerInfo> * mutableContainerInfo;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<TSDMutableContainerInfo> *mutableContainerInfo;
+@property (readonly) Class superclass;
 
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (void)addChildRep:(id)arg1;
@@ -24,10 +22,10 @@
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
-- (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlopBlock:(id)arg2;
+- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
+- (id)hitReps:(struct CGPoint { float x1; float x2; })arg1 withSlopBlock:(id /* block */)arg2;
 - (id)initWithLayout:(id)arg1 canvasView:(id)arg2;
 - (void)insertChildRep:(id)arg1 above:(id)arg2;
 - (void)insertChildRep:(id)arg1 atIndex:(unsigned int)arg2;

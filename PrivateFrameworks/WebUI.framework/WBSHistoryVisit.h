@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, WBSHistoryItem, WBSHistoryVisit;
-
 @interface WBSHistoryVisit : NSObject {
     int _databaseID;
     long long _generation;
@@ -20,21 +18,21 @@
     double _visitTime;
 }
 
-@property int databaseID;
-@property(readonly) WBSHistoryVisit * endOfRedirectChain;
-@property long long generation;
-@property(getter=wasHTTPNonGet,readonly) BOOL httpNonGet;
-@property WBSHistoryItem * item;
-@property(getter=loadWasSuccessful) BOOL loadSuccessful;
-@property int origin;
-@property(retain) WBSHistoryVisit * redirectDestination;
-@property int redirectDestinationDatabaseID;
-@property(retain) WBSHistoryVisit * redirectSource;
-@property(readonly) unsigned int redirectSourceChainLength;
-@property int redirectSourceDatabaseID;
-@property(getter=isSynthesized,readonly) BOOL synthesized;
-@property(copy) NSString * title;
-@property(readonly) double visitTime;
+@property (nonatomic) int databaseID;
+@property (nonatomic, readonly) WBSHistoryVisit *endOfRedirectChain;
+@property (nonatomic) long long generation;
+@property (getter=wasHTTPNonGet, nonatomic, readonly) BOOL httpNonGet;
+@property (nonatomic) WBSHistoryItem *item;
+@property (getter=loadWasSuccessful, nonatomic) BOOL loadSuccessful;
+@property (nonatomic) int origin;
+@property (nonatomic, retain) WBSHistoryVisit *redirectDestination;
+@property (nonatomic) int redirectDestinationDatabaseID;
+@property (nonatomic, retain) WBSHistoryVisit *redirectSource;
+@property (nonatomic, readonly) unsigned int redirectSourceChainLength;
+@property (nonatomic) int redirectSourceDatabaseID;
+@property (getter=isSynthesized, nonatomic, readonly) BOOL synthesized;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) double visitTime;
 
 + (id)synthesizedVisitWithHistoryItem:(id)arg1 visitTime:(double)arg2;
 

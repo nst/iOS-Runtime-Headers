@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABCardContentPluginManager : NSObject {
     NSString *_pluginsDirectory;
 }
 
-@property(readonly) NSString * pluginsDirectory;
+@property (nonatomic, readonly) NSString *pluginsDirectory;
 
 - (id)bundleNameForLabel:(id)arg1;
 - (Class)contentProviderClassForPerson:(void*)arg1;

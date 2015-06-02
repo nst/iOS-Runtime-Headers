@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADBannerView, ADInterstitialAd, NSData, NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface ADPolicyEngine : NSObject <ADBannerViewInternalDelegate, ADInterstitialAdDelegate> {
     BOOL _canAutoEnable;
     NSData *_currentSongData;
@@ -27,38 +25,38 @@
     BOOL _visuallyEngaged;
 }
 
-@property BOOL canAutoEnable;
-@property(retain) NSData * currentSongData;
-@property(retain) NSData * currentStationData;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) NSData * heartbeatToken;
-@property(retain) NSError * heartbeatTokenError;
-@property double heartbeatTokenExpiration;
-@property(retain) NSError * lastSharedMediaPlayerVideoAdError;
-@property double nextInterstitialPresentationTime;
-@property double nextPrerollPlaybackTime;
-@property(retain) NSObject<OS_dispatch_queue> * policyEngineQueue;
-@property(readonly) NSMutableArray * queuedCommands;
-@property(retain) ADInterstitialAd * sharedInterstitialAd;
-@property BOOL sharedInterstitialAdIsInUse;
-@property(copy) NSString * sharedInterstitialAuthenticationUserName;
-@property(copy) NSString * sharedInterstitialSection;
-@property(copy) NSURL * sharedInterstitialServerURL;
-@property(retain) ADBannerView * sharedMediaPlayerVideoAd;
-@property BOOL sharedMediaPlayerVideoAdClaimed;
-@property(readonly) Class superclass;
-@property BOOL visuallyEngaged;
+@property (nonatomic) BOOL canAutoEnable;
+@property (nonatomic, retain) NSData *currentSongData;
+@property (nonatomic, retain) NSData *currentStationData;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *heartbeatToken;
+@property (nonatomic, retain) NSError *heartbeatTokenError;
+@property (nonatomic) double heartbeatTokenExpiration;
+@property (nonatomic, retain) NSError *lastSharedMediaPlayerVideoAdError;
+@property (nonatomic) double nextInterstitialPresentationTime;
+@property (nonatomic) double nextPrerollPlaybackTime;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *policyEngineQueue;
+@property (nonatomic, readonly) NSMutableArray *queuedCommands;
+@property (nonatomic, retain) ADInterstitialAd *sharedInterstitialAd;
+@property (nonatomic) BOOL sharedInterstitialAdIsInUse;
+@property (nonatomic, copy) NSString *sharedInterstitialAuthenticationUserName;
+@property (nonatomic, copy) NSString *sharedInterstitialSection;
+@property (nonatomic, copy) NSURL *sharedInterstitialServerURL;
+@property (nonatomic, retain) ADBannerView *sharedMediaPlayerVideoAd;
+@property (nonatomic) BOOL sharedMediaPlayerVideoAdClaimed;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL visuallyEngaged;
 
 + (id)sharedEngine;
 
 - (void)_adSheetConnectionBootstrapped;
 - (void)_enablePolicyEngineWithReason:(id)arg1;
-- (void)_performWhenAdSheetConnectionEstablished:(id)arg1;
-- (void)acquireMatchSlotWithBodyParameters:(id)arg1 completionHandler:(id)arg2;
-- (void)acquireMatchSlotWithUserConfirmation:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)_performWhenAdSheetConnectionEstablished:(id /* block */)arg1;
+- (void)acquireMatchSlotWithBodyParameters:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)acquireMatchSlotWithUserConfirmation:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)adSheetDidIdleDisablePolicyEngine;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
@@ -96,7 +94,7 @@
 - (void)reportClientEvent:(id)arg1;
 - (void)reportListeningPresenceEvent:(int)arg1;
 - (void)reportStationTileImpression:(id)arg1;
-- (void)requestAdsForSlot:(id)arg1 completionHandler:(id)arg2;
+- (void)requestAdsForSlot:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCanAutoEnable:(BOOL)arg1;
 - (void)setCurrentSongData:(id)arg1;
 - (void)setCurrentStationData:(id)arg1;
@@ -130,10 +128,10 @@
 - (void)sharedMediaPlayerVideoAdDidLoad;
 - (void)sharedMediaPlayerVideoAdWillLoad;
 - (void)songBeganWithTags:(id)arg1;
-- (void)songBeganWithTags:(id)arg1 completionHandler:(id)arg2;
+- (void)songBeganWithTags:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)songSkipped;
 - (void)songStopped;
-- (void)stationChanged:(id)arg1 completionHandler:(id)arg2;
+- (void)stationChanged:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)visuallyEngaged;
 
 @end

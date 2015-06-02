@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDynamicAnimator;
-
 @interface UIDynamicAnimatorTicker : NSObject {
     UIDynamicAnimator *_animator;
 }
 
-@property UIDynamicAnimator * animator;
+@property UIDynamicAnimator *animator;
 
 - (void)_displayLinkTick:(id)arg1;
 - (id)animator;

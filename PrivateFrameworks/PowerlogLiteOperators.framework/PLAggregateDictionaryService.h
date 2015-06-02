@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableArray, PLNSTimerOperatorComposition;
-
 @interface PLAggregateDictionaryService : PLService {
     PLNSTimerOperatorComposition *_dailyTaskTimer;
     struct AggState { 
@@ -14,9 +12,9 @@
     NSMutableArray *_registeredNotifications;
 }
 
-@property(retain) PLNSTimerOperatorComposition * dailyTaskTimer;
+@property (retain) PLNSTimerOperatorComposition *dailyTaskTimer;
 @property struct AggState { int x1; double x2; double x3; } last_state;
-@property(retain) NSMutableArray * registeredNotifications;
+@property (retain) NSMutableArray *registeredNotifications;
 
 + (void)load;
 

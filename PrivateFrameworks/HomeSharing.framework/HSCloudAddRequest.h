@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSArray, NSMutableArray;
-
 @interface HSCloudAddRequest : HSRequest {
     NSMutableArray *_adamIDs;
     NSMutableArray *_playlistGlobalIDs;
     NSMutableArray *_querySpecifierPredicates;
 }
 
-@property(readonly) NSArray * adamIDs;
-@property(readonly) NSArray * playlistGlobalIDs;
+@property (nonatomic, readonly) NSArray *adamIDs;
+@property (nonatomic, readonly) NSArray *playlistGlobalIDs;
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 databaseRevision:(unsigned int)arg2 adamIDs:(id)arg3;
 + (id)requestWithDatabaseID:(unsigned int)arg1 databaseRevision:(unsigned int)arg2 playlistGlobalIDs:(id)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSError;
-
 @interface PKPaymentAuthorizationInvalidDataParam : PKPaymentAuthorizationParam {
     BOOL _animated;
     int _dataType;
@@ -11,10 +9,10 @@
     int _status;
 }
 
-@property BOOL animated;
-@property int dataType;
-@property(retain) NSError * error;
-@property int status;
+@property (nonatomic) BOOL animated;
+@property (nonatomic) int dataType;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic) int status;
 
 - (BOOL)animated;
 - (int)dataType;

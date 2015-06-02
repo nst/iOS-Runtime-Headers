@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIGiftConfiguration, SKUIGiftConfirmLabeledValue, UIButton, UILabel, UIView;
-
 @interface SKUIGiftConfirmView : UIView {
     SKUIGiftConfirmLabeledValue *_amountView;
     UILabel *_chargeDisclaimerLabel;
@@ -26,7 +24,7 @@
     UILabel *_totalLabel;
 }
 
-@property(readonly) UIButton * termsButton;
+@property (nonatomic, readonly) UIButton *termsButton;
 
 - (void).cxx_destruct;
 - (id)_newBoldLabelWithSize:(float)arg1 white:(float)arg2;

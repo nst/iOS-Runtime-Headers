@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NSURLRequest;
-
 @interface WBSCompletionQuery : NSObject {
     unsigned int _indexInFeedbackArray;
     NSString *_parsecFeedbackQueryIdentifier;
@@ -27,14 +21,14 @@
     } _timestamp;
 }
 
-@property unsigned int indexInFeedbackArray;
-@property(copy) NSString * parsecFeedbackQueryIdentifier;
-@property struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
-@property(copy) NSURLRequest * parsecSearchRequest;
-@property(readonly) NSString * queryString;
-@property(copy) NSString * searchSuggestionProviderIdentifier;
-@property struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
-@property(readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
+@property (nonatomic) unsigned int indexInFeedbackArray;
+@property (nonatomic, copy) NSString *parsecFeedbackQueryIdentifier;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
+@property (nonatomic, copy) NSURLRequest *parsecSearchRequest;
+@property (nonatomic, readonly) NSString *queryString;
+@property (nonatomic, copy) NSString *searchSuggestionProviderIdentifier;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

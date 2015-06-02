@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSString;
-
 @interface CalDAVDeleteCalendarItemTask : CoreDAVDeleteTask {
     NSString *_previousScheduleTag;
 }
 
-@property(retain) NSString * previousScheduleTag;
+@property (nonatomic, retain) NSString *previousScheduleTag;
 
 - (id)additionalHeaderValues;
 - (void)dealloc;

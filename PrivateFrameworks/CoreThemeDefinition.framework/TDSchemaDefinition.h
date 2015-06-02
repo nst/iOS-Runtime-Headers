@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSSet, NSString, TDSchemaCategory;
+@interface TDSchemaDefinition : NSManagedObject
 
-@interface TDSchemaDefinition : NSManagedObject {
-}
-
-@property(retain) TDSchemaCategory * category;
-@property(retain) NSString * name;
-@property(retain) NSSet * parts;
+@property (nonatomic, retain) TDSchemaCategory *category;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSSet *parts;
 @property BOOL published;
 
 + (unsigned int)elementDefinitionCountWithSchema:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMapTable;
-
 @interface GEORequestThrottler : NSObject {
     NSMapTable *_throttleMap;
 }

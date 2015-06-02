@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputSetHostView : UIView {
-}
+@interface UIInputSetHostView : UIView
 
 + (BOOL)_notifyOnExplicitLayout;
 + (BOOL)_retroactivelyRequiresConstraintBasedLayout;

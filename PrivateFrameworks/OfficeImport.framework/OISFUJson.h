@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OISFUJson : NSObject {
-}
+@interface OISFUJson : NSObject
 
 + (id)arrayFromString:(id)arg1;
 + (id)dictionaryFromString:(id)arg1;

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKJSDOMDocumentAppBridge>, IKDOMElement, IKDOMImplementation, IKJSNavigationDocument, NSString;
-
 @interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator> {
     <IKJSDOMDocumentAppBridge> *_appBridge;
     unsigned int _itmlIDSequence;
 }
 
-@property <IKJSDOMDocumentAppBridge> * appBridge;
-@property(retain,readonly) IKDOMElement * documentElement;
-@property(retain) NSString * documentURI;
-@property(readonly) IKDOMImplementation * implementation;
-@property(retain,readonly) NSString * inputEncoding;
-@property unsigned int itmlIDSequence;
-@property IKJSNavigationDocument * navigationDocument;
-@property BOOL strictErrorChecking;
-@property(retain,readonly) NSString * xmlEncoding;
-@property BOOL xmlStandalone;
-@property(retain) NSString * xmlVersion;
+@property (nonatomic) <IKJSDOMDocumentAppBridge> *appBridge;
+@property (nonatomic, readonly, retain) IKDOMElement *documentElement;
+@property (nonatomic, retain) NSString *documentURI;
+@property (nonatomic, readonly) IKDOMImplementation *implementation;
+@property (nonatomic, readonly, retain) NSString *inputEncoding;
+@property (nonatomic) unsigned int itmlIDSequence;
+@property (nonatomic) IKJSNavigationDocument *navigationDocument;
+@property (nonatomic) BOOL strictErrorChecking;
+@property (nonatomic, readonly, retain) NSString *xmlEncoding;
+@property (nonatomic) BOOL xmlStandalone;
+@property (nonatomic, retain) NSString *xmlVersion;
 
 + (struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)_documentWithXMLStr:(id)arg1 lsInput:(id)arg2 error:(id*)arg3;
 

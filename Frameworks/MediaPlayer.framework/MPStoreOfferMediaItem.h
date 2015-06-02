@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPStoreOfferContentRating, MPStoreOfferMediaItemArtworkDescriptor, NSDictionary, NSNumber;
-
 @interface MPStoreOfferMediaItem : MPNondurableMediaItem <NSCopying, NSSecureCoding> {
     MPStoreOfferContentRating *_contentRating;
     id _discNumber;

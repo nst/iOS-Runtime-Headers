@@ -16,12 +16,12 @@
     } _has;
 }
 
-@property(readonly) int* actions;
-@property(readonly) unsigned int actionsCount;
-@property int component;
-@property BOOL handleLocally;
-@property BOOL hasComponent;
-@property BOOL hasHandleLocally;
+@property (nonatomic, readonly) int*actions;
+@property (nonatomic, readonly) unsigned int actionsCount;
+@property (nonatomic) int component;
+@property (nonatomic) BOOL handleLocally;
+@property (nonatomic) BOOL hasComponent;
+@property (nonatomic) BOOL hasHandleLocally;
 
 - (int*)actions;
 - (int)actionsAtIndex:(unsigned int)arg1;

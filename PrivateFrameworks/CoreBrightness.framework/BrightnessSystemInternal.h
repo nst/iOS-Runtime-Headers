@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreBrightness.framework/CoreBrightness
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BLControl, NSMutableDictionary, NSString, NSTimer;
-
 @interface BrightnessSystemInternal : NSThread <NSXPCListenerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
     bool _initializationComplete;
@@ -22,10 +12,10 @@
     BLControl *bl;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)clientConnectedWithExpObj:(id)arg1;
 - (void)clientDisconnectedWithExpObj:(id)arg1;
@@ -37,7 +27,7 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)main;
 - (void)notifyClientsForProperty:(id)arg1 key:(id)arg2;
-- (void)registerNotificationBlock:(id)arg1;
+- (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)runXPCServer;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)timerFire:(id)arg1;

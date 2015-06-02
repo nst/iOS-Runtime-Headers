@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSDateFormatter, NSMutableDictionary, NSSet;
-
 @interface SGReverseTemplatesJSDataDetectors : NSObject {
     NSSet *_availLocales;
     NSDateFormatter *_dateFormatter;

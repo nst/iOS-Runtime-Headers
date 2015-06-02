@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SiriUIContentButton, SiriUIKeyline;
-
 @interface SiriUITwoButtonFooterView : SiriUIReusableFooterView {
     SiriUIKeyline *_horizontalKeyline;
     SiriUIContentButton *_leftButton;
@@ -11,8 +9,8 @@
     SiriUIKeyline *_verticalKeyline;
 }
 
-@property(readonly) SiriUIContentButton * leftButton;
-@property(readonly) SiriUIContentButton * rightButton;
+@property (nonatomic, readonly) SiriUIContentButton *leftButton;
+@property (nonatomic, readonly) SiriUIContentButton *rightButton;
 
 + (float)defaultHeight;
 

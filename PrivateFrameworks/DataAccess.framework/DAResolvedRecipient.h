@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSDictionary, NSMutableDictionary, NSString;
-
 @interface DAResolvedRecipient : NSObject {
     int _availabilityStatus;
     int _certificatesStatus;
@@ -12,12 +10,12 @@
     int _status;
 }
 
-@property int availabilityStatus;
-@property int certificatesStatus;
-@property(retain) NSMutableDictionary * mResolvedEmailToX509Certs;
-@property(retain) NSString * mergedFreeBusy;
-@property(readonly) NSDictionary * resolvedEmailToX509Certs;
-@property int status;
+@property (nonatomic) int availabilityStatus;
+@property (nonatomic) int certificatesStatus;
+@property (nonatomic, retain) NSMutableDictionary *mResolvedEmailToX509Certs;
+@property (nonatomic, retain) NSString *mergedFreeBusy;
+@property (nonatomic, readonly) NSDictionary *resolvedEmailToX509Certs;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (void)addCert:(id)arg1 forEmailAddress:(id)arg2;

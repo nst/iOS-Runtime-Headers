@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSURL, PKBarcode, PKImage, PKPassDisplayProfile, PKPaymentPass, UIImage;
-
 @interface PKPass : PKObject <NSCopying, NSSecureCoding> {
     NSSet *_embeddedBeacons;
     NSSet *_embeddedLocations;
@@ -31,60 +29,62 @@
     NSURL *_webLocationsURL;
 }
 
-@property(readonly) NSURL * appLaunchURL;
-@property(copy) NSString * authenticationToken;
-@property(readonly) PKImage * backFaceImage;
-@property(readonly) NSArray * backFieldBuckets;
-@property(readonly) PKBarcode * barcode;
-@property(copy) PKPassDisplayProfile * displayProfile;
-@property(copy) NSSet * embeddedBeacons;
-@property(copy) NSSet * embeddedLocations;
-@property(copy) NSDate * expirationDate;
-@property(readonly) PKImage * footerImage;
-@property(readonly) PKImage * frontFaceImage;
-@property(readonly) NSArray * frontFieldBuckets;
-@property(copy) NSString * groupingID;
-@property(readonly) BOOL hasLogoImageSet;
-@property(setter=setiAdReportingIdentifier:,copy) NSString * iAdReportingIdentifier;
-@property(copy,readonly) UIImage * icon;
-@property(readonly) PKImage * iconImage;
-@property(retain) NSDate * ingestedDate;
-@property(copy) NSURL * localLocationsURL;
-@property(copy,readonly) NSString * localizedDescription;
-@property(copy,readonly) NSString * localizedName;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } logoRect;
-@property(readonly) NSString * logoText;
-@property(readonly) NSString * lowercaseLocalizedName;
-@property(retain) NSDate * modifiedDate;
-@property(readonly) NSData * npkCompleteHash;
-@property(readonly) BOOL npkExpired;
-@property(readonly) BOOL npkHasBarcode;
-@property(copy) NSString * organizationName;
-@property(readonly) PKImage * partialFrontFaceImage;
-@property(readonly) PKImage * partialFrontFaceImagePlaceholder;
-@property unsigned int passType;
-@property(copy) NSString * passTypeIdentifier;
-@property(copy) NSURL * passURL;
-@property(readonly) PKPaymentPass * paymentPass;
-@property(readonly) NSString * pluralLocalizedName;
-@property(copy) NSDate * relevantDate;
-@property(getter=isRevoked) BOOL revoked;
-@property(copy) NSNumber * sequenceCounter;
-@property(copy) NSString * serialNumber;
-@property int sharingMethod;
-@property(copy) NSString * sharingText;
-@property(copy) NSURL * sharingURL;
-@property(readonly) NSArray * storeIdentifiers;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
-@property(readonly) int style;
-@property(copy) NSString * teamID;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;
-@property(readonly) int transitType;
-@property(readonly) NSString * uniqueID;
-@property(copy) NSDictionary * userInfo;
-@property(getter=isVoided) BOOL voided;
-@property(copy) NSURL * webLocationsURL;
-@property(copy) NSURL * webServiceURL;
+@property (nonatomic, readonly) NSURL *appLaunchURL;
+@property (nonatomic, copy) NSString *authenticationToken;
+@property (nonatomic, readonly) PKImage *backFaceImage;
+@property (nonatomic, readonly) NSArray *backFieldBuckets;
+@property (nonatomic, readonly) PKBarcode *barcode;
+@property (nonatomic, copy) PKPassDisplayProfile *displayProfile;
+@property (nonatomic, copy) NSSet *embeddedBeacons;
+@property (nonatomic, copy) NSSet *embeddedLocations;
+@property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic, readonly) PKImage *footerImage;
+@property (nonatomic, readonly) PKImage *frontFaceImage;
+@property (nonatomic, readonly) NSArray *frontFieldBuckets;
+@property (nonatomic, copy) NSString *groupingID;
+@property (readonly) BOOL hasLogoImageSet;
+@property (setter=setiAdReportingIdentifier:, nonatomic, copy) NSString *iAdReportingIdentifier;
+@property (nonatomic, readonly, copy) UIImage *icon;
+@property (nonatomic, readonly) PKImage *iconImage;
+@property (nonatomic, retain) NSDate *ingestedDate;
+@property (nonatomic, copy) NSURL *localLocationsURL;
+@property (nonatomic, readonly, copy) NSString *localizedDescription;
+@property (nonatomic, readonly, copy) NSString *localizedName;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } logoRect;
+@property (nonatomic, readonly) NSString *logoText;
+@property (nonatomic, readonly) NSString *lowercaseLocalizedName;
+@property (nonatomic, retain) NSDate *modifiedDate;
+@property (readonly) NSData *npkCompleteHash;
+@property (readonly) BOOL npkExpired;
+@property (readonly) BOOL npkHasBarcode;
+@property (nonatomic, copy) NSString *organizationName;
+@property (nonatomic, readonly) PKImage *partialFrontFaceImage;
+@property (nonatomic, readonly) PKImage *partialFrontFaceImagePlaceholder;
+@property (nonatomic) unsigned int passType;
+@property (nonatomic, copy) NSString *passTypeIdentifier;
+@property (nonatomic, copy) NSURL *passURL;
+@property (nonatomic, readonly) PKPaymentPass *paymentPass;
+@property (nonatomic, readonly) NSString *pluralLocalizedName;
+@property (nonatomic, copy) NSDate *relevantDate;
+@property (getter=isRevoked, nonatomic) BOOL revoked;
+@property (nonatomic, copy) NSNumber *sequenceCounter;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) int sharingMethod;
+@property (nonatomic, copy) NSString *sharingText;
+@property (nonatomic, copy) NSURL *sharingURL;
+@property (nonatomic, readonly) NSArray *storeIdentifiers;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } stripRect;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, copy) NSString *teamID;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } thumbnailRect;
+@property (nonatomic, readonly) int transitType;
+@property (nonatomic, readonly) NSString *uniqueID;
+@property (nonatomic, copy) NSDictionary *userInfo;
+@property (getter=isVoided, nonatomic) BOOL voided;
+@property (nonatomic, copy) NSURL *webLocationsURL;
+@property (nonatomic, copy) NSURL *webServiceURL;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (BOOL)isValidObjectWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 + (BOOL)supportsSecureCoding;
@@ -100,7 +100,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)diff:(id)arg1;
-- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
+- (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
 - (id)embeddedBeacons;
 - (id)embeddedLocations;
 - (void)encodeWithCoder:(id)arg1;
@@ -110,10 +110,8 @@
 - (id)frontFieldBuckets;
 - (id)groupingID;
 - (BOOL)hasLocationRelevancyInfo;
-- (BOOL)hasLogoImageSet;
 - (BOOL)hasTimeOrLocationRelevancyInfo;
 - (id)iAdReportingIdentifier;
-- (id)icon;
 - (id)iconImage;
 - (id)ingestedDate;
 - (id)initWithCoder:(id)arg1;
@@ -133,11 +131,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logoRect;
 - (id)logoText;
 - (id)lowercaseLocalizedName;
-- (id)mailAttachmentIcon;
 - (id)modifiedDate;
-- (id)npkCompleteHash;
-- (BOOL)npkExpired;
-- (BOOL)npkHasBarcode;
 - (id)organizationName;
 - (id)partialFrontFaceImage;
 - (id)partialFrontFaceImagePlaceholder;
@@ -185,5 +179,17 @@
 - (int)transitType;
 - (id)userInfo;
 - (id)webLocationsURL;
+
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+
+- (id)icon;
+- (id)mailAttachmentIcon;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (BOOL)hasLogoImageSet;
+- (id)npkCompleteHash;
+- (BOOL)npkExpired;
+- (BOOL)npkHasBarcode;
 
 @end

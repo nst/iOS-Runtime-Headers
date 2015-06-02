@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class UIImage;
-
 @interface BBObserverBulletinAttachmentImageSizePair : NSObject {
     UIImage *_image;
     struct CGSize { 
@@ -12,8 +10,8 @@
     } _size;
 }
 
-@property(retain) UIImage * image;
-@property struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 - (void)dealloc;
 - (id)image;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor;
-
 @interface CIConstantColorGenerator : CIFilter {
     CIColor *inputColor;
 }
 
-@property(retain) CIColor * inputColor;
+@property (nonatomic, retain) CIColor *inputColor;
 
 + (id)customAttributes;
 

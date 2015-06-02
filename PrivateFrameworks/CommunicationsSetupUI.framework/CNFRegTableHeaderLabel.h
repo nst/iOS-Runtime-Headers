@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegTableHeaderLabel : CNFRegTableLabel {
-}
+@interface CNFRegTableHeaderLabel : CNFRegTableLabel
 
 - (id)_labelText;
 - (int)_labelTextAlignment;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSArray, NSURL;
-
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying> {
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
@@ -14,9 +12,9 @@
     unsigned int _maximumProcessCount;
 }
 
-@property(copy) NSArray * cachePartitionedURLSchemes;
-@property(copy) NSURL * injectedBundleURL;
-@property unsigned int maximumProcessCount;
+@property (nonatomic, copy) NSArray *cachePartitionedURLSchemes;
+@property (nonatomic, copy) NSURL *injectedBundleURL;
+@property (nonatomic) unsigned int maximumProcessCount;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteResult, GEOPDCanonicalLocationSearchResult, GEOPDGeocodingResult, GEOPDLocationDirectedSearchResult, GEOPDMerchantLookupResult, GEOPDPlaceLookupResult, GEOPDPlaceRefinementResult, GEOPDReverseGeocodingResult, GEOPDSearchResult, GEOPDSiriSearchResult;
-
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying> {
     GEOPDAutocompleteResult *_autocompleteResult;
     GEOPDCanonicalLocationSearchResult *_canonicalSearchResult;
@@ -17,26 +15,26 @@
     GEOPDSiriSearchResult *_siriSearchResult;
 }
 
-@property(retain) GEOPDAutocompleteResult * autocompleteResult;
-@property(retain) GEOPDCanonicalLocationSearchResult * canonicalSearchResult;
-@property(retain) GEOPDGeocodingResult * geocodingResult;
-@property(readonly) BOOL hasAutocompleteResult;
-@property(readonly) BOOL hasCanonicalSearchResult;
-@property(readonly) BOOL hasGeocodingResult;
-@property(readonly) BOOL hasLocationDirectedSearchResult;
-@property(readonly) BOOL hasMerchantLookupResult;
-@property(readonly) BOOL hasPlaceLookupResult;
-@property(readonly) BOOL hasPlaceRefinementResult;
-@property(readonly) BOOL hasReverseGeocodingResult;
-@property(readonly) BOOL hasSearchResult;
-@property(readonly) BOOL hasSiriSearchResult;
-@property(retain) GEOPDLocationDirectedSearchResult * locationDirectedSearchResult;
-@property(retain) GEOPDMerchantLookupResult * merchantLookupResult;
-@property(retain) GEOPDPlaceLookupResult * placeLookupResult;
-@property(retain) GEOPDPlaceRefinementResult * placeRefinementResult;
-@property(retain) GEOPDReverseGeocodingResult * reverseGeocodingResult;
-@property(retain) GEOPDSearchResult * searchResult;
-@property(retain) GEOPDSiriSearchResult * siriSearchResult;
+@property (nonatomic, retain) GEOPDAutocompleteResult *autocompleteResult;
+@property (nonatomic, retain) GEOPDCanonicalLocationSearchResult *canonicalSearchResult;
+@property (nonatomic, retain) GEOPDGeocodingResult *geocodingResult;
+@property (nonatomic, readonly) BOOL hasAutocompleteResult;
+@property (nonatomic, readonly) BOOL hasCanonicalSearchResult;
+@property (nonatomic, readonly) BOOL hasGeocodingResult;
+@property (nonatomic, readonly) BOOL hasLocationDirectedSearchResult;
+@property (nonatomic, readonly) BOOL hasMerchantLookupResult;
+@property (nonatomic, readonly) BOOL hasPlaceLookupResult;
+@property (nonatomic, readonly) BOOL hasPlaceRefinementResult;
+@property (nonatomic, readonly) BOOL hasReverseGeocodingResult;
+@property (nonatomic, readonly) BOOL hasSearchResult;
+@property (nonatomic, readonly) BOOL hasSiriSearchResult;
+@property (nonatomic, retain) GEOPDLocationDirectedSearchResult *locationDirectedSearchResult;
+@property (nonatomic, retain) GEOPDMerchantLookupResult *merchantLookupResult;
+@property (nonatomic, retain) GEOPDPlaceLookupResult *placeLookupResult;
+@property (nonatomic, retain) GEOPDPlaceRefinementResult *placeRefinementResult;
+@property (nonatomic, retain) GEOPDReverseGeocodingResult *reverseGeocodingResult;
+@property (nonatomic, retain) GEOPDSearchResult *searchResult;
+@property (nonatomic, retain) GEOPDSiriSearchResult *siriSearchResult;
 
 - (id)autocompleteResult;
 - (id)canonicalSearchResult;

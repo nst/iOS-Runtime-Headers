@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWMotionSampleRingBuffer;
-
 @interface BWDeviceMotionActivityDetector : NSObject {
     BWMotionSampleRingBuffer *_motionDataRingBuffer;
     BOOL _newMotionDataAvailable;
@@ -11,7 +9,7 @@
     BOOL _stationary;
 }
 
-@property(getter=isStationary,readonly) BOOL stationary;
+@property (getter=isStationary, nonatomic, readonly) BOOL stationary;
 
 + (void)initialize;
 

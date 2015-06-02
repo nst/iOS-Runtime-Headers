@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CAGradientLayer, CAShapeLayer, NSArray, NSString;
-
 @interface TSKGradientShapeLayer : CAShapeLayer {
     CAGradientLayer *_gradient;
     CAShapeLayer *_shapeMask;
 }
 
-@property(copy) NSArray * colors;
+@property (copy) NSArray *colors;
 @property struct CGPoint { float x1; float x2; } endPoint;
-@property(retain) CAGradientLayer * gradient;
-@property(copy) NSArray * locations;
-@property(retain) CAShapeLayer * shapeMask;
+@property (nonatomic, retain) CAGradientLayer *gradient;
+@property (copy) NSArray *locations;
+@property (nonatomic, retain) CAShapeLayer *shapeMask;
 @property struct CGPoint { float x1; float x2; } startPoint;
-@property(copy) NSString * type;
+@property (copy) NSString *type;
 
 - (id)colors;
 - (void)dealloc;

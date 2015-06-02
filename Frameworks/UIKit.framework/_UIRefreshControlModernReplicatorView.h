@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIRefreshControlModernReplicatorView : UIView {
-}
+@interface _UIRefreshControlModernReplicatorView : UIView
 
 + (Class)layerClass;
 

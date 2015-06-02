@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet, NSString;
-
 @interface CalDAVServerVersion : NSObject <NSCopying> {
     NSSet *_complianceClasses;
     NSString *_serverHeader;
@@ -31,31 +29,31 @@
     double _version;
 }
 
-@property(retain) NSSet * complianceClasses;
-@property(copy) NSString * serverHeader;
-@property(copy) NSString * supportedCalendarComponentSets;
-@property BOOL supportsAutoSchedule;
-@property BOOL supportsCalendarHomeSync;
-@property BOOL supportsCalendarNoTimezone;
-@property BOOL supportsCalendarProxy;
-@property BOOL supportsCheckForValidEmail;
-@property BOOL supportsChecksumming;
-@property BOOL supportsExtendedCalendarQuery;
-@property BOOL supportsInboxAvailability;
-@property BOOL supportsManagedAttachments;
-@property BOOL supportsPrincipalPropertySearch;
-@property BOOL supportsPrivateComments;
-@property BOOL supportsPrivateEvents;
-@property BOOL supportsRequestCompression;
-@property BOOL supportsSharing;
-@property BOOL supportsSharingNoScheduling;
-@property BOOL supportsSubscriptionCalendars;
-@property BOOL supportsTimeRangeFilter;
-@property BOOL supportsTimeRangeFilterOnInbox;
-@property BOOL supportsTimeRangeFilterWithoutEndDate;
-@property BOOL supportsTodoTimeRangeFilter;
-@property(readonly) NSString * type;
-@property double version;
+@property (nonatomic, retain) NSSet *complianceClasses;
+@property (nonatomic, copy) NSString *serverHeader;
+@property (nonatomic, copy) NSString *supportedCalendarComponentSets;
+@property (nonatomic) BOOL supportsAutoSchedule;
+@property (nonatomic) BOOL supportsCalendarHomeSync;
+@property (nonatomic) BOOL supportsCalendarNoTimezone;
+@property (nonatomic) BOOL supportsCalendarProxy;
+@property (nonatomic) BOOL supportsCheckForValidEmail;
+@property (nonatomic) BOOL supportsChecksumming;
+@property (nonatomic) BOOL supportsExtendedCalendarQuery;
+@property (nonatomic) BOOL supportsInboxAvailability;
+@property (nonatomic) BOOL supportsManagedAttachments;
+@property (nonatomic) BOOL supportsPrincipalPropertySearch;
+@property (nonatomic) BOOL supportsPrivateComments;
+@property (nonatomic) BOOL supportsPrivateEvents;
+@property (nonatomic) BOOL supportsRequestCompression;
+@property (nonatomic) BOOL supportsSharing;
+@property (nonatomic) BOOL supportsSharingNoScheduling;
+@property (nonatomic) BOOL supportsSubscriptionCalendars;
+@property (nonatomic) BOOL supportsTimeRangeFilter;
+@property (nonatomic) BOOL supportsTimeRangeFilterOnInbox;
+@property (nonatomic) BOOL supportsTimeRangeFilterWithoutEndDate;
+@property (nonatomic) BOOL supportsTodoTimeRangeFilter;
+@property (nonatomic, readonly) NSString *type;
+@property (nonatomic) double version;
 
 + (id)_prototypeMatchingServerHeaders:(id)arg1;
 + (id)versionWithHTTPHeaders:(id)arg1;

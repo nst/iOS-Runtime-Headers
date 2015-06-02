@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface WBSFrequentlyVisitedSitesBannedURLStore : NSObject {
     NSMutableDictionary *_bannedURLStringsToEntriesMap;
     NSObject<OS_dispatch_queue> *_storeQueue;

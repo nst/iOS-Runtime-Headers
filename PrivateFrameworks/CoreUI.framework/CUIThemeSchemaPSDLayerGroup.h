@@ -6,7 +6,7 @@
     BOOL isStart;
 }
 
-@property BOOL isStart;
+@property (nonatomic) BOOL isStart;
 
 - (BOOL)isStart;
 - (void)setIsStart:(BOOL)arg1;

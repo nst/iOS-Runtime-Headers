@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAAssistantCreated : SABaseClientBoundCommand
 
-@interface SAAssistantCreated : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * assistantId;
-@property(copy) NSString * speechId;
+@property (nonatomic, copy) NSString *assistantId;
+@property (nonatomic, copy) NSString *speechId;
 
 + (id)assistantCreated;
 + (id)assistantCreatedWithDictionary:(id)arg1 context:(id)arg2;

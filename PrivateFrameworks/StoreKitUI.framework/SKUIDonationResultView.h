@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface SKUIDonationResultView : UIView {
     UIImageView *_imageView;
     UILabel *_messageLabel;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * image;
-@property(copy) NSString * message;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)image;

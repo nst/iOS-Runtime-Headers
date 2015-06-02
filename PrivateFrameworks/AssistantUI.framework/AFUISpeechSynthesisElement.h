@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AFUISpeechSynthesisElementDelegate>, NSString, VSSpeechRequest;
-
 @interface AFUISpeechSynthesisElement : NSObject {
     NSString *_animationIdentifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     <AFUISpeechSynthesisElementDelegate> *_delegate;
     BOOL _durationHasElapsed;
     BOOL _eligibleForSynthesis;
@@ -26,20 +16,20 @@
     NSString *_text;
 }
 
-@property(readonly) NSString * animationIdentifier;
-@property(getter=_completion,readonly) id completion;
-@property <AFUISpeechSynthesisElementDelegate> * delegate;
-@property(setter=_setDurationHasElapsed:) BOOL durationHasElapsed;
-@property(getter=isEligibleForSynthesis) BOOL eligibleForSynthesis;
-@property BOOL isPhonetic;
-@property(setter=_setPreparationBlockCompleted:) BOOL preprationBlockCompleted;
-@property(getter=isProvisional,readonly) BOOL provisional;
-@property(retain) VSSpeechRequest * speechRequest;
-@property int synthesisResult;
-@property(copy) NSString * text;
+@property (nonatomic, readonly) NSString *animationIdentifier;
+@property (getter=_completion, nonatomic, readonly) id /* block */ completion;
+@property (nonatomic) <AFUISpeechSynthesisElementDelegate> *delegate;
+@property (setter=_setDurationHasElapsed:) BOOL durationHasElapsed;
+@property (getter=isEligibleForSynthesis, nonatomic) BOOL eligibleForSynthesis;
+@property (nonatomic) BOOL isPhonetic;
+@property (setter=_setPreparationBlockCompleted:) BOOL preprationBlockCompleted;
+@property (getter=isProvisional, nonatomic, readonly) BOOL provisional;
+@property (nonatomic, retain) VSSpeechRequest *speechRequest;
+@property (nonatomic) int synthesisResult;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
-- (id)_completion;
+- (id /* block */)_completion;
 - (void)_setDurationHasElapsed:(BOOL)arg1;
 - (void)_setEligibleForSynthesis:(BOOL)arg1;
 - (void)_setPreparationBlockCompleted:(BOOL)arg1;
@@ -51,7 +41,7 @@
 - (BOOL)durationHasElapsed;
 - (void)executeCompletion;
 - (id)init;
-- (id)initWithText:(id)arg1 provisional:(BOOL)arg2 eligibleAfterDuration:(double)arg3 preparation:(id)arg4 completion:(id)arg5 animationIdentifier:(id)arg6;
+- (id)initWithText:(id)arg1 provisional:(BOOL)arg2 eligibleAfterDuration:(double)arg3 preparation:(id /* block */)arg4 completion:(id /* block */)arg5 animationIdentifier:(id)arg6;
 - (BOOL)isEligibleForSynthesis;
 - (BOOL)isPhonetic;
 - (BOOL)isProvisional;

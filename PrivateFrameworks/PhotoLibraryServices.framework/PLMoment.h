@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSArray, NSData, NSDate, NSObject<NSCopying>, NSOrderedSet, NSString, PLManagedAsset, PLMomentLibrary, PLMomentList, PLMomentNameInfo;
-
 @interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData_Private> {
     PLMomentNameInfo *_cachedNameInfo;
     BOOL _loadedNameInfo;
@@ -11,45 +9,45 @@
     BOOL isRegisteredForChanges;
 }
 
-@property(readonly) unsigned int approximateCount;
-@property(retain) CLLocation * approximateLocation;
-@property(retain) NSData * approximateLocationData;
-@property(retain) NSOrderedSet * assets;
-@property(readonly) unsigned int assetsCount;
-@property int cachedCount;
-@property int cachedPhotosCount;
-@property int cachedVideosCount;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didRegisteredWithUserInterfaceContext;
-@property(retain) NSDate * endDate;
-@property short generationType;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property BOOL isRegisteredForChanges;
-@property(retain) PLManagedAsset * keyAsset;
-@property(copy,readonly) NSArray * localizedLocationNames;
-@property(copy,readonly) NSString * localizedTitle;
-@property(retain) PLMomentList * megaMomentList;
-@property(retain) PLMomentLibrary * momentLibrary;
-@property(readonly) unsigned int photosCount;
-@property(retain) NSDate * representativeDate;
-@property(retain) NSData * reverseLocationData;
-@property BOOL reverseLocationDataIsValid;
-@property(retain) PLManagedAsset * secondaryKeyAsset;
-@property(retain) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) PLManagedAsset * tertiaryKeyAsset;
-@property(retain) NSString * title;
-@property(retain) NSString * title2;
-@property(retain) NSString * title3;
-@property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
-@property(retain) NSArray * userTitles;
-@property(retain) NSString * uuid;
-@property(readonly) unsigned int videosCount;
-@property(retain) PLMomentList * yearMomentList;
+@property (nonatomic, readonly) unsigned int approximateCount;
+@property (nonatomic, retain) CLLocation *approximateLocation;
+@property (nonatomic, retain) NSData *approximateLocationData;
+@property (nonatomic, retain) NSOrderedSet *assets;
+@property (nonatomic, readonly) unsigned int assetsCount;
+@property (nonatomic) int cachedCount;
+@property (nonatomic) int cachedPhotosCount;
+@property (nonatomic) int cachedVideosCount;
+@property (nonatomic, readonly) BOOL canShowAvalancheStacks;
+@property (nonatomic, readonly) BOOL canShowComments;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didRegisteredWithUserInterfaceContext;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic) short generationType;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic) BOOL isRegisteredForChanges;
+@property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
+@property (nonatomic, readonly, copy) NSString *localizedTitle;
+@property (nonatomic, retain) PLMomentList *megaMomentList;
+@property (nonatomic, retain) PLMomentLibrary *momentLibrary;
+@property (nonatomic, readonly) unsigned int photosCount;
+@property (nonatomic, retain) NSDate *representativeDate;
+@property (nonatomic, retain) NSData *reverseLocationData;
+@property (nonatomic) BOOL reverseLocationDataIsValid;
+@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
+@property (nonatomic, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *title2;
+@property (nonatomic, retain) NSString *title3;
+@property (nonatomic, readonly, retain) NSObject<NSCopying> *uniqueObjectID;
+@property (nonatomic, retain) NSArray *userTitles;
+@property (nonatomic, retain) NSString *uuid;
+@property (nonatomic, readonly) unsigned int videosCount;
+@property (nonatomic, retain) PLMomentList *yearMomentList;
 
 + (id)allAssetsIncludedInMomentsInLibrary:(id)arg1;
 + (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 IDsOnly:(BOOL)arg2 error:(id*)arg3;

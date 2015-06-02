@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray;
-
 @interface WBSAddressBookMatchMarker : WBSFormAutoFillItem {
     NSArray *_array;
 }
 
-@property(readonly) NSArray * array;
+@property (nonatomic, readonly) NSArray *array;
 
 - (void).cxx_destruct;
 - (id)array;

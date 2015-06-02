@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSArray, NSNumber;
-
 @interface IDSCancelMessage : IDSFaceTimeMessage <NSCopying> {
     NSArray *_peers;
     NSNumber *_reason;
 }
 
-@property(copy) NSArray * peers;
-@property(copy) NSNumber * reason;
+@property (copy) NSArray *peers;
+@property (copy) NSNumber *reason;
 
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

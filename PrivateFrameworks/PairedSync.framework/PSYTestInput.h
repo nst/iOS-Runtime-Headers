@@ -6,7 +6,7 @@
     int _action;
 }
 
-@property int action;
+@property (nonatomic) int action;
 
 + (BOOL)supportsSecureCoding;
 + (id)testInputWithAction:(int)arg1;

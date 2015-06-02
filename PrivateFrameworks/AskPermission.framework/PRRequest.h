@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AskPermission.framework/AskPermission
  */
 
-@class NSDate, NSDictionary, NSNumber, NSString;
-
 @interface PRRequest : NSObject <NSSecureCoding> {
     NSString *_ask;
     NSString *_clientIdentifier;
@@ -16,16 +14,16 @@
     NSNumber *_responderDSID;
 }
 
-@property(copy) NSString * ask;
-@property(copy) NSString * clientIdentifier;
-@property(copy) NSDate * dateAddedToLocalCache;
-@property(copy) NSString * requestID;
-@property(copy) NSDictionary * requestInfo;
+@property (copy) NSString *ask;
+@property (copy) NSString *clientIdentifier;
+@property (copy) NSDate *dateAddedToLocalCache;
+@property (copy) NSString *requestID;
+@property (copy) NSDictionary *requestInfo;
 @property unsigned int requestStatus;
 @property BOOL requestedOnThisDevice;
-@property(copy) NSNumber * requesterDSID;
-@property(copy) NSNumber * responderDSID;
-@property(readonly) NSString * statusDescription;
+@property (copy) NSNumber *requesterDSID;
+@property (copy) NSNumber *responderDSID;
+@property (readonly) NSString *statusDescription;
 
 + (BOOL)supportsSecureCoding;
 

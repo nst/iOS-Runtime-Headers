@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class IMAVChatParticipant, NSData, NSDictionary, NSString;
-
 @interface TUCall : NSObject <NSSecureCoding> {
     NSString *_abLabel;
     int _abUid;
@@ -45,68 +43,70 @@
     BOOL _wantsHoldMusic;
 }
 
-@property BOOL allowsTTYSettingChanges;
-@property(copy,readonly) NSString * audioCategory;
-@property(copy,readonly) NSString * audioMode;
-@property(getter=isBlocked,readonly) BOOL blocked;
-@property(copy,readonly) NSString * callHistoryIdentifier;
-@property(readonly) int callIdentifier;
-@property(copy,readonly) NSString * callUUID;
-@property(copy,readonly) NSString * callerNameFromNetwork;
-@property double clientMessageReceiveTime;
-@property(retain,readonly) NSString * conferenceIdentifier;
-@property(getter=isConnected) BOOL connected;
-@property(getter=isConnecting) BOOL connecting;
-@property(getter=isConnectingToRelay) BOOL connectingToRelay;
-@property(copy,readonly) NSString * destinationID;
-@property int disconnectedReason;
-@property(copy) NSString * displayName;
-@property(readonly) int endedError;
-@property(readonly) unsigned int endedReason;
-@property(getter=isEndpointOnCurrentDevice) BOOL endpointOnCurrentDevice;
-@property(copy,readonly) NSString * errorAlertMessage;
-@property(copy,readonly) NSString * errorAlertTitle;
-@property int faceTimeIDStatus;
-@property(readonly) BOOL hasReceivedFirstFrame;
-@property BOOL hasUpdatedAudio;
-@property double hostCreationTime;
-@property double hostMessageSendTime;
-@property(getter=isHostedOnCurrentDevice,readonly) BOOL hostedOnCurrentDevice;
-@property(readonly) BOOL isActive;
-@property BOOL isOnHold;
-@property BOOL isSendingAudio;
-@property BOOL isSendingVideo;
-@property(readonly) BOOL isVideo;
-@property(copy) NSString * isoCountryCode;
-@property(retain,readonly) NSData * localFrequency;
-@property(readonly) float localVolume;
-@property(readonly) BOOL managesAudioInterruptions;
-@property(readonly) BOOL needsManualInCallSounds;
-@property(getter=isOutgoing,readonly) BOOL outgoing;
-@property(readonly) BOOL playsConnectedSound;
-@property int provisionalHoldStatus;
-@property(retain,readonly) NSData * remoteFrequency;
-@property(retain,readonly) IMAVChatParticipant * remoteParticipant;
-@property(copy,readonly) NSDictionary * remoteUnavailableUserInfo;
-@property(getter=isRequestingHandoff) BOOL requestingHandoff;
-@property BOOL requiresAudioReinterruption;
-@property BOOL ringtoneSuppressedRemotely;
-@property(readonly) int service;
-@property(readonly) BOOL shouldIgnoreStatusChange;
-@property(readonly) BOOL shouldPlayHoldMusic;
-@property BOOL shouldSuppressRingtone;
-@property(copy) NSString * sourceIdentifier;
-@property(readonly) double startTime;
-@property(readonly) int status;
-@property(getter=isStatusFinal,readonly) BOOL statusFinal;
-@property(readonly) BOOL statusIsProvisional;
-@property(copy) NSString * suggestedDisplayName;
-@property(readonly) int supportedModelType;
-@property int transitionStatus;
-@property(copy) NSString * uniqueProxyIdentifier;
-@property(getter=isVoicemail,readonly) BOOL voicemail;
-@property BOOL wantsHoldMusic;
-@property(readonly) BOOL wasDeclined;
+@property (nonatomic) BOOL allowsTTYSettingChanges;
+@property (nonatomic, readonly, copy) NSString *audioCategory;
+@property (nonatomic, readonly, copy) NSString *audioMode;
+@property (getter=isBlocked, nonatomic, readonly) BOOL blocked;
+@property (nonatomic, readonly, copy) NSString *callHistoryIdentifier;
+@property (nonatomic, readonly) int callIdentifier;
+@property (nonatomic, readonly, copy) NSString *callUUID;
+@property (nonatomic, readonly, copy) NSString *callerNameFromNetwork;
+@property (nonatomic) double clientMessageReceiveTime;
+@property (nonatomic, readonly, retain) NSString *conferenceIdentifier;
+@property (getter=isConnected, nonatomic) BOOL connected;
+@property (getter=isConnecting, nonatomic) BOOL connecting;
+@property (getter=isConnectingToRelay, nonatomic) BOOL connectingToRelay;
+@property (nonatomic, readonly, copy) NSString *destinationID;
+@property (nonatomic) int disconnectedReason;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, readonly) int endedError;
+@property (nonatomic, readonly) unsigned int endedReason;
+@property (getter=isEndpointOnCurrentDevice, nonatomic) BOOL endpointOnCurrentDevice;
+@property (nonatomic, readonly, copy) NSString *errorAlertMessage;
+@property (nonatomic, readonly, copy) NSString *errorAlertTitle;
+@property (nonatomic) int faceTimeIDStatus;
+@property (nonatomic, readonly) BOOL hasReceivedFirstFrame;
+@property (nonatomic) BOOL hasUpdatedAudio;
+@property (nonatomic) double hostCreationTime;
+@property (nonatomic) double hostMessageSendTime;
+@property (getter=isHostedOnCurrentDevice, nonatomic, readonly) BOOL hostedOnCurrentDevice;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic) BOOL isOnHold;
+@property (nonatomic) BOOL isSendingAudio;
+@property (nonatomic) BOOL isSendingVideo;
+@property (nonatomic, readonly) BOOL isVideo;
+@property (nonatomic, copy) NSString *isoCountryCode;
+@property (nonatomic, readonly, retain) NSData *localFrequency;
+@property (nonatomic, readonly) float localVolume;
+@property (nonatomic, readonly) BOOL managesAudioInterruptions;
+@property (nonatomic, readonly) BOOL needsManualInCallSounds;
+@property (getter=isOutgoing, nonatomic, readonly) BOOL outgoing;
+@property (nonatomic, readonly) BOOL playsConnectedSound;
+@property (nonatomic) int provisionalHoldStatus;
+@property (nonatomic, readonly, retain) NSData *remoteFrequency;
+@property (nonatomic, readonly, retain) IMAVChatParticipant *remoteParticipant;
+@property (nonatomic, readonly, copy) NSDictionary *remoteUnavailableUserInfo;
+@property (getter=isRequestingHandoff, nonatomic) BOOL requestingHandoff;
+@property (nonatomic) BOOL requiresAudioReinterruption;
+@property (nonatomic) BOOL ringtoneSuppressedRemotely;
+@property (nonatomic, readonly) int service;
+@property (nonatomic, readonly) BOOL shouldIgnoreStatusChange;
+@property (nonatomic, readonly) BOOL shouldPlayHoldMusic;
+@property (nonatomic) BOOL shouldSuppressRingtone;
+@property (nonatomic, copy) NSString *sourceIdentifier;
+@property (nonatomic, readonly) double startTime;
+@property (nonatomic, readonly) int status;
+@property (getter=isStatusFinal, nonatomic, readonly) BOOL statusFinal;
+@property (nonatomic, readonly) BOOL statusIsProvisional;
+@property (copy) NSString *suggestedDisplayName;
+@property (nonatomic, readonly) int supportedModelType;
+@property (nonatomic) int transitionStatus;
+@property (nonatomic, copy) NSString *uniqueProxyIdentifier;
+@property (getter=isVoicemail, nonatomic, readonly) BOOL voicemail;
+@property (nonatomic) BOOL wantsHoldMusic;
+@property (nonatomic, readonly) BOOL wasDeclined;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
 + (BOOL)supportsSecureCoding;
 
@@ -115,7 +115,6 @@
 - (void)_handleIdentityChange;
 - (void)_handleManagesAudioInterruptionsChange;
 - (void)_handleStatusChange;
-- (id)_image;
 - (void)_loadCallDetails;
 - (void)_setPrimitiveDisconnectedReason:(int)arg1;
 - (void)_setPrimitiveEndpointOnCurrentDevice:(BOOL)arg1;
@@ -141,7 +140,6 @@
 - (id)contactImageDataWithFormat:(int)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)desktopImage;
 - (id)destinationID;
 - (void)disconnect;
 - (void)disconnectWithReason:(int)arg1;
@@ -161,7 +159,6 @@
 - (void)hold;
 - (double)hostCreationTime;
 - (double)hostMessageSendTime;
-- (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)inviteWithCallIdentifier:(int)arg1;
@@ -245,7 +242,6 @@
 - (BOOL)shouldPlayDTMFTone;
 - (BOOL)shouldPlayHoldMusic;
 - (BOOL)shouldSuppressRingtone;
-- (id)smallImage;
 - (id)sourceIdentifier;
 - (double)startTime;
 - (int)status;
@@ -263,5 +259,12 @@
 - (BOOL)wasDeclined;
 - (BOOL)wasDialAssisted;
 - (BOOL)wasDialedFromEmergencyUI;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
+- (id)_image;
+- (id)desktopImage;
+- (id)image;
+- (id)smallImage;
 
 @end

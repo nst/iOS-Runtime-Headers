@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKBCacheToken_Keyplane : UIKBCacheToken {
     NSString *_geometrySetName;
     NSString *_keySetName;

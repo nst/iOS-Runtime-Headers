@@ -7,8 +7,8 @@
     BOOL _shouldIndentSeparator;
 }
 
-@property BOOL shouldIndentContent;
-@property BOOL shouldIndentSeparator;
+@property (nonatomic) BOOL shouldIndentContent;
+@property (nonatomic) BOOL shouldIndentSeparator;
 
 + (id)reuseIdentifier;
 

@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SAUIAppPunchOut;
+@interface SAGKLinkedAnswer : AceObject <SAAceSerializable>
 
-@interface SAGKLinkedAnswer : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * descriptionText;
-@property(copy) NSString * displayLink;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * link;
-@property(copy) NSString * name;
-@property(retain) SAUIAppPunchOut * punchOut;
-@property(copy) NSString * query;
-@property(copy) NSURL * searchUri;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *displayLink;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *link;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
+@property (nonatomic, copy) NSString *query;
+@property (nonatomic, copy) NSURL *searchUri;
+@property (readonly) Class superclass;
 
 + (id)linkedAnswer;
 + (id)linkedAnswerWithDictionary:(id)arg1 context:(id)arg2;

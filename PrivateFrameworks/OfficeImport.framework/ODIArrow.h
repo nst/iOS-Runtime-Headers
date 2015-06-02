@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODIArrow : NSObject {
-}
+@interface ODIArrow : NSObject
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
 + (void)mapWithState:(id)arg1 outward:(BOOL)arg2;

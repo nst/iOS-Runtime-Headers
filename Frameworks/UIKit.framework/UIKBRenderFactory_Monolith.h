@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory_Monolith : UIKBRenderFactory {
-}
+@interface UIKBRenderFactory_Monolith : UIKBRenderFactory
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeTextColor;

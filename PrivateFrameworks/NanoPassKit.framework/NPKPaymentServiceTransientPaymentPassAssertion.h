@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NPKPaymentService, NPKPaymentServiceCard, NSString;
-
 @interface NPKPaymentServiceTransientPaymentPassAssertion : NSObject {
     NPKPaymentServiceCard *_paymentCard;
     NPKPaymentService *_paymentService;
 }
 
-@property(retain) NPKPaymentServiceCard * paymentCard;
-@property NPKPaymentService * paymentService;
-@property(readonly) NSString * uniqueID;
+@property (nonatomic, retain) NPKPaymentServiceCard *paymentCard;
+@property (nonatomic) NPKPaymentService *paymentService;
+@property (nonatomic, readonly) NSString *uniqueID;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -2,31 +2,29 @@
    Image: /System/Library/PrivateFrameworks/NanoBackup.framework/NanoBackup
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface NBManager : NSObject {
     NSObject<OS_dispatch_queue> *_externalQueue;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * externalQueue;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *externalQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
 - (id)connection;
-- (void)createBackupForPairingID:(id)arg1 completionHandler:(id)arg2;
+- (void)createBackupForPairingID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
-- (void)deleteBackup:(id)arg1 completionHandler:(id)arg2;
+- (void)deleteBackup:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)externalQueue;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)internalQueue;
-- (void)listBackupsWithCompletionHandler:(id)arg1;
-- (void)restoreFromBackup:(id)arg1 completionHandler:(id)arg2;
-- (void)restoreFromBackup:(id)arg1 forPairingID:(id)arg2 pairingDataStore:(id)arg3 completionHandler:(id)arg4;
-- (void)restoreFromPairingID:(id)arg1 completionHandler:(id)arg2;
+- (void)listBackupsWithCompletionHandler:(id /* block */)arg1;
+- (void)restoreFromBackup:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)restoreFromBackup:(id)arg1 forPairingID:(id)arg2 pairingDataStore:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)restoreFromPairingID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setExternalQueue:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;

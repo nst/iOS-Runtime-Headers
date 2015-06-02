@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary;
-
 @interface NSUbiquitousKeyValueStore : NSObject {
     int _daemonWakeToken;
     id _private1;
     id _private2;
     id _private3;
     void *_private4;
-    void *_reserved[3];
+    void *_reserved;
 }
 
-@property(copy,readonly) NSDictionary * dictionaryRepresentation;
+@property (readonly, copy) NSDictionary *dictionaryRepresentation;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (void)_appWillActivate;
 + (void)_appWillDeactivate;
@@ -27,7 +27,6 @@
 - (BOOL)_hasPendingSynchronize;
 - (void)_pleaseSynchronize:(id)arg1;
 - (BOOL)_postDidChangeNotificationExternalChanges:(id)arg1 sourceChangeCount:(int)arg2;
-- (void)_printDebugDescription;
 - (void)_registerToDaemon;
 - (void)_rethrowException:(id)arg1;
 - (void)_scheduleRemoteSynchronization;
@@ -41,8 +40,8 @@
 - (BOOL)_synchronizeForced:(BOOL)arg1;
 - (BOOL)_synchronizeForced:(BOOL)arg1 notificationQueue:(id)arg2;
 - (void)_unregisterFromDaemon;
-- (void)_useSourceAsyncWithBlock:(id)arg1;
-- (void)_useSourceSyncWithBlock:(id)arg1;
+- (void)_useSourceAsyncWithBlock:(id /* block */)arg1;
+- (void)_useSourceSyncWithBlock:(id /* block */)arg1;
 - (id)arrayForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (id)dataForKey:(id)arg1;
@@ -73,7 +72,11 @@
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
 - (BOOL)synchronize;
-- (void)synchronizeWithCompletionHandler:(id)arg1;
+- (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)synchronizeWithSourceForced:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
+
+- (void)_printDebugDescription;
 
 @end

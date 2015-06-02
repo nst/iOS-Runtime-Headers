@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSHashTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PLPhotoLibrary;
-
 @interface PHPhotoLibrary : NSObject {
     PLPhotoLibrary *_changeHandlingPhotoLibrary;
     NSMutableDictionary *_changeNotificationInfo;
@@ -22,21 +20,23 @@
     NSMutableSet *_updates;
 }
 
-@property(retain) PLPhotoLibrary * changeHandlingPhotoLibrary;
-@property(retain) NSMutableDictionary * changeNotificationInfo;
-@property(retain) NSMutableDictionary * changeRequests;
-@property(retain) NSMutableSet * deletes;
-@property(retain) NSHashTable * fetchResults;
-@property(retain) NSMutableSet * inserts;
-@property BOOL isChangeProcessingPending;
-@property double lastChangeProcessingStarted;
-@property(retain) NSHashTable * observers;
-@property(retain) PLPhotoLibrary * photoLibrary;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableDictionary * saveTokensToKnownUUIDs;
-@property(retain) NSObject<OS_dispatch_queue> * transactionQueue;
-@property BOOL unknownMergeEvent;
-@property(retain) NSMutableSet * updates;
+@property (nonatomic, retain) PLPhotoLibrary *changeHandlingPhotoLibrary;
+@property (nonatomic, retain) NSMutableDictionary *changeNotificationInfo;
+@property (nonatomic, retain) NSMutableDictionary *changeRequests;
+@property (nonatomic, retain) NSMutableSet *deletes;
+@property (nonatomic, retain) NSHashTable *fetchResults;
+@property (nonatomic, retain) NSMutableSet *inserts;
+@property (nonatomic) BOOL isChangeProcessingPending;
+@property (nonatomic) double lastChangeProcessingStarted;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableDictionary *saveTokensToKnownUUIDs;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *transactionQueue;
+@property (nonatomic) BOOL unknownMergeEvent;
+@property (nonatomic, retain) NSMutableSet *updates;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (Class)PHObjectClassForEntityName:(id)arg1;
 + (Class)PHObjectClassForOID:(id)arg1;
@@ -44,7 +44,7 @@
 + (void)_forceUserInterfaceReload;
 + (int)authorizationStatus;
 + (Class)classForFetchType:(id)arg1;
-+ (void)requestAuthorization:(id)arg1;
++ (void)requestAuthorization:(id /* block */)arg1;
 + (id)sharedPhotoLibrary;
 + (id)uniquedOID:(id)arg1;
 + (id)uniquedOIDs:(id)arg1;
@@ -52,7 +52,7 @@
 
 - (void).cxx_destruct;
 - (void)_beginTransaction;
-- (void)_commitTransaction:(id)arg1;
+- (void)_commitTransaction:(id /* block */)arg1;
 - (void)_processPendingChanges;
 - (void)assertTransaction;
 - (id)changeHandlingPhotoLibrary;
@@ -74,15 +74,10 @@
 - (double)lastChangeProcessingStarted;
 - (id)managedObjectContext;
 - (id)observers;
-- (void)performChanges:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)performChangesAndWait:(id)arg1 error:(id*)arg2;
+- (void)performChanges:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)performChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (id)photoLibrary;
 - (id)pl_syncProgressAlbums;
-- (id)pu_beginPausingChangesWithTimeout:(double)arg1;
-- (id)pu_changeDistributer;
-- (void)pu_endPausingChanges:(id)arg1;
-- (void)pu_registerChangeObserver:(id)arg1;
-- (void)pu_unregisterChangeObserver:(id)arg1;
 - (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(BOOL)arg3;
 - (id)queue;
 - (void)recordDeleteRequest:(id)arg1;
@@ -116,5 +111,13 @@
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)unregisterFetchResult:(id)arg1;
 - (id)updates;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_beginPausingChangesWithTimeout:(double)arg1;
+- (id)pu_changeDistributer;
+- (void)pu_endPausingChanges:(id)arg1;
+- (void)pu_registerChangeObserver:(id)arg1;
+- (void)pu_unregisterChangeObserver:(id)arg1;
 
 @end

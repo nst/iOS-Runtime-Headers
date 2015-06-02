@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSNumber, NSString, TDFontSizeDefinition, TDThemeSize;
+@interface TDMetafontSizeSelector : NSManagedObject
 
-@interface TDMetafontSizeSelector : NSManagedObject {
-}
-
-@property(retain) TDThemeSize * controlSize;
-@property(retain) TDFontSizeDefinition * definition;
-@property(retain) NSString * displayName;
-@property(retain) NSNumber * identifier;
-@property(retain) NSString * selectorName;
+@property (nonatomic, retain) TDThemeSize *controlSize;
+@property (nonatomic, retain) TDFontSizeDefinition *definition;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSNumber *identifier;
+@property (nonatomic, retain) NSString *selectorName;
 
 @end

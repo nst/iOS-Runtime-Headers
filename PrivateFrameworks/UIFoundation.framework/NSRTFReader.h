@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSCalendar, NSColor, NSData, NSFileWrapper, NSFont, NSMapTable, NSMutableArray, NSMutableAttributedString, NSMutableData, NSMutableDictionary, NSMutableParagraphStyle, NSTextTable;
-
 @interface NSRTFReader : NSObject {
     struct _NSAttributeInfo { 
         unsigned int toUniCharEncoding; 

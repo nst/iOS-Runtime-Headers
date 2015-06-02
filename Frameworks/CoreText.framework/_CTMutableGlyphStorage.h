@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreText.framework/CoreText
  */
 
-@class CTGlyphStorageInterface;
-
 @interface _CTMutableGlyphStorage : _CTGlyphStorage <_CTGlyphStorageAdvanceLookup> {
     CTGlyphStorageInterface *_interface;
 }

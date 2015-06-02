@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSString, ServiceState;
-
 @interface CLIndoorPositionProvider : CLIndoorXPCProvider <CLIndoorXPCProviderImplementation> {
     ServiceState *_state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ServiceState * state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ServiceState *state;
+@property (readonly) Class superclass;
 
 + (int)locationType:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)defaultErrHandler;
+- (id /* block */)defaultErrHandler;
 - (id)endpointName;
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;

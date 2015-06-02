@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasMainMenuSectionMetricsDataSource>, UIFontDescriptor;
-
 @interface MPUExtrasMainMenuSectionMetrics : NSObject {
     struct CGSize { float x1; float x2; } *_calculatedSizes;
     <MPUExtrasMainMenuSectionMetricsDataSource> *_dataSource;
@@ -23,15 +21,15 @@
     } _totalFittingSize;
 }
 
-@property <MPUExtrasMainMenuSectionMetricsDataSource> * dataSource;
-@property float desiredCellSpacing;
-@property(retain) UIFontDescriptor * desiredFontDescriptor;
-@property float desiredWidth;
-@property(readonly) float fittingCellSpacing;
-@property(readonly) UIFontDescriptor * fittingFontDescriptor;
-@property float minimumCellSpacing;
-@property(retain) UIFontDescriptor * minimumFontDescriptor;
-@property(readonly) struct CGSize { float x1; float x2; } totalFittingSize;
+@property (nonatomic) <MPUExtrasMainMenuSectionMetricsDataSource> *dataSource;
+@property (nonatomic) float desiredCellSpacing;
+@property (nonatomic, retain) UIFontDescriptor *desiredFontDescriptor;
+@property (nonatomic) float desiredWidth;
+@property (nonatomic, readonly) float fittingCellSpacing;
+@property (nonatomic, readonly) UIFontDescriptor *fittingFontDescriptor;
+@property (nonatomic) float minimumCellSpacing;
+@property (nonatomic, retain) UIFontDescriptor *minimumFontDescriptor;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } totalFittingSize;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(float)arg2 itemCount:(int)arg3 itemSizes:(out struct CGSize { float x1; float x2; }*)arg4;

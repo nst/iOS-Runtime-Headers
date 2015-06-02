@@ -2,30 +2,18 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _GCControllerButtonInput : GCControllerButtonInput {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pressedChangedHandler;
-
+    id /* block */ _pressedChangedHandler;
     float _value;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _valueChangedHandler;
-
+    id /* block */ _valueChangedHandler;
 }
 
 - (void).cxx_destruct;
 - (BOOL)_setValue:(float)arg1;
-- (id)pressedChangedHandler;
-- (void)setPressedChangedHandler:(id)arg1;
-- (void)setValueChangedHandler:(id)arg1;
+- (id /* block */)pressedChangedHandler;
+- (void)setPressedChangedHandler:(id /* block */)arg1;
+- (void)setValueChangedHandler:(id /* block */)arg1;
 - (float)value;
-- (id)valueChangedHandler;
+- (id /* block */)valueChangedHandler;
 
 @end

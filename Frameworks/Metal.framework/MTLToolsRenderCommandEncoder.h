@@ -2,20 +2,17 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString;
+@interface MTLToolsRenderCommandEncoder : MTLToolsCommandEncoder <MTLRenderCommandEncoderSPI>
 
-@interface MTLToolsRenderCommandEncoder : MTLToolsCommandEncoder <MTLRenderCommandEncoderSPI> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (readonly) Class superclass;
 
 - (void)acceptVisitor:(id)arg1;
-- (void)addSplitHandler:(id)arg1;
+- (void)addSplitHandler:(id /* block */)arg1;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 argumentBuffer:(id)arg2 argumentBufferOffset:(unsigned int)arg3 indexType:(unsigned int)arg4 indexBuffer:(id)arg5 indexBufferOffset:(unsigned int)arg6;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;

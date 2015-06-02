@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@class NSString;
-
 @interface SBCPlaybackPositionDomain : NSObject <NSCopying, NSSecureCoding> {
     NSString *_domainIdentifier;
     NSString *_foreignDatabasePath;
@@ -11,10 +9,10 @@
     NSString *_ubiquitousDatabasePath;
 }
 
-@property(readonly) NSString * domainIdentifier;
-@property(readonly) NSString * foreignDatabasePath;
-@property BOOL supportsSyncProtocol;
-@property(retain) NSString * ubiquitousDatabasePath;
+@property (nonatomic, readonly) NSString *domainIdentifier;
+@property (nonatomic, readonly) NSString *foreignDatabasePath;
+@property (nonatomic) BOOL supportsSyncProtocol;
+@property (nonatomic, retain) NSString *ubiquitousDatabasePath;
 
 + (id)allSyncingDomains;
 + (id)domainForExtrasValues;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarItemEditItemDelegate>, <EKStyleProvider>, EKCalendarItem, EKEventStore, NSString, UIResponder, UIViewController<EKEditItemViewControllerProtocol>;
-
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
     EKCalendarItem *_calendarItem;
     <EKCalendarItemEditItemDelegate> *_delegate;
@@ -13,13 +11,13 @@
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <EKCalendarItemEditItemDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIResponder * selectedResponder;
-@property(retain) <EKStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKCalendarItemEditItemDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIResponder *selectedResponder;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_showViewController:(id)arg1 editor:(id)arg2 animated:(BOOL)arg3;

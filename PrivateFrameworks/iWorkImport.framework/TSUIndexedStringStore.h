@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface TSUIndexedStringStore : NSObject {
     NSMutableDictionary *_indexByString;
     int _lock;

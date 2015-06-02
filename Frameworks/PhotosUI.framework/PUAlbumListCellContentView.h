@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUAlbumListCellDelegate>, NSString, PUStackView, UIButton, UIImageView, UILabel, UITextField, UIView;
-
 @interface PUAlbumListCellContentView : UIView <UITextFieldDelegate> {
     UIImageView *__badgeImageView;
     UIButton *__deleteButton;
@@ -27,30 +25,30 @@
     float _xInset;
 }
 
-@property(setter=_setBadgeImageView:,retain) UIImageView * _badgeImageView;
-@property(setter=_setDeleteButton:,retain) UIButton * _deleteButton;
-@property(setter=_setPinButton:,retain) UIButton * _pinButton;
-@property(setter=_setShowsTitleAndSubtitle:) BOOL _showsTitleAndSubtitle;
-@property(setter=_setSubtitleLabel:,retain) UILabel * _subtitleLabel;
-@property(setter=_setTitleTextField:,retain) UITextField * _titleTextField;
-@property int badgeType;
-@property BOOL combinesPhotoDecorations;
-@property(retain) UIView * customImageView;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUAlbumListCellDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned int editCapabilities;
-@property(getter=isEditing) BOOL editing;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property int layout;
-@property(getter=isPinned) BOOL pinned;
-@property BOOL showsDeleteButtonWhenEditing;
-@property(retain) PUStackView * stackView;
-@property(copy) NSString * subtitle;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property float xInset;
+@property (setter=_setBadgeImageView:, nonatomic, retain) UIImageView *_badgeImageView;
+@property (setter=_setDeleteButton:, nonatomic, retain) UIButton *_deleteButton;
+@property (setter=_setPinButton:, nonatomic, retain) UIButton *_pinButton;
+@property (setter=_setShowsTitleAndSubtitle:, nonatomic) BOOL _showsTitleAndSubtitle;
+@property (setter=_setSubtitleLabel:, nonatomic, retain) UILabel *_subtitleLabel;
+@property (setter=_setTitleTextField:, nonatomic, retain) UITextField *_titleTextField;
+@property (nonatomic) int badgeType;
+@property (nonatomic) BOOL combinesPhotoDecorations;
+@property (nonatomic, retain) UIView *customImageView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUAlbumListCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int editCapabilities;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int layout;
+@property (getter=isPinned, nonatomic) BOOL pinned;
+@property (nonatomic) BOOL showsDeleteButtonWhenEditing;
+@property (nonatomic, retain) PUStackView *stackView;
+@property (nonatomic, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float xInset;
 
 + (void)_updateLabelGlobalCachedSizes;
 + (void)initialize;

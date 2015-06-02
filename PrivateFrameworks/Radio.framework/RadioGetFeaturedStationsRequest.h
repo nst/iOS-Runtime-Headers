@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSObject<OS_dispatch_queue>, SSURLConnectionRequest;
-
 @interface RadioGetFeaturedStationsRequest : RadioRequest {
     NSObject<OS_dispatch_queue> *_artworkQueue;
     BOOL _disableArtworkLoading;
@@ -12,8 +10,8 @@
     unsigned int _stationCount;
 }
 
-@property BOOL disableArtworkLoading;
-@property BOOL disableCachedResponses;
+@property (nonatomic) BOOL disableArtworkLoading;
+@property (nonatomic) BOOL disableCachedResponses;
 
 - (void).cxx_destruct;
 - (id)_importFeaturedStationWithDictionary:(id)arg1 inModel:(id)arg2 loadArtworkSynchronously:(BOOL)arg3;
@@ -25,7 +23,7 @@
 - (id)initWithStationCount:(unsigned int)arg1;
 - (void)setDisableArtworkLoading:(BOOL)arg1;
 - (void)setDisableCachedResponses:(BOOL)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
-- (void)startWithFeaturedStationsCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithFeaturedStationsCompletionHandler:(id /* block */)arg1;
 
 @end

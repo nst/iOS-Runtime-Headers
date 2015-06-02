@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSCTGlyphInfo : NSGlyphInfo {
-}
+@interface NSCTGlyphInfo : NSGlyphInfo
 
 - (id)_baseString;
 - (unsigned long)_cfTypeID;

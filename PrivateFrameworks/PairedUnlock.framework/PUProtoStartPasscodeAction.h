@@ -10,9 +10,9 @@
     unsigned int _passcodeType;
 }
 
-@property unsigned int actionID;
-@property BOOL hasPasscodeType;
-@property unsigned int passcodeType;
+@property (nonatomic) unsigned int actionID;
+@property (nonatomic) BOOL hasPasscodeType;
+@property (nonatomic) unsigned int passcodeType;
 
 - (unsigned int)actionID;
 - (void)copyTo:(id)arg1;

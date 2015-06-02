@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDShareTokenRetrieveURLRequest : CKDURLRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tokenInfoBlock;
-
+    id /* block */ _tokenInfoBlock;
     NSArray *_tokenInfos;
     NSMutableDictionary *_tokenInfosByRequestID;
 }
 
-@property(copy) id tokenInfoBlock;
-@property(retain) NSArray * tokenInfos;
-@property(retain) NSMutableDictionary * tokenInfosByRequestID;
+@property (nonatomic, copy) id /* block */ tokenInfoBlock;
+@property (nonatomic, retain) NSArray *tokenInfos;
+@property (nonatomic, retain) NSMutableDictionary *tokenInfosByRequestID;
 
 - (void).cxx_destruct;
 - (id)initWithShortTokenInfos:(id)arg1;
@@ -29,10 +19,10 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setTokenInfoBlock:(id)arg1;
+- (void)setTokenInfoBlock:(id /* block */)arg1;
 - (void)setTokenInfos:(id)arg1;
 - (void)setTokenInfosByRequestID:(id)arg1;
-- (id)tokenInfoBlock;
+- (id /* block */)tokenInfoBlock;
 - (id)tokenInfos;
 - (id)tokenInfosByRequestID;
 

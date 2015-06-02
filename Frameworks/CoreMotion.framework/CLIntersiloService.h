@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CLIntersiloInterface, CLSilo;
-
 @interface CLIntersiloService : NSObject <CLIntersiloServiceProtocol> {
     CLIntersiloInterface *_inboundInterface;
     CLIntersiloInterface *_outboundInterface;
@@ -11,10 +9,10 @@
     BOOL _valid;
 }
 
-@property(readonly) CLIntersiloInterface * inboundInterface;
-@property(readonly) CLIntersiloInterface * outboundInterface;
-@property(readonly) CLSilo * silo;
-@property BOOL valid;
+@property (nonatomic, readonly) CLIntersiloInterface *inboundInterface;
+@property (nonatomic, readonly) CLIntersiloInterface *outboundInterface;
+@property (nonatomic, readonly) CLSilo *silo;
+@property (nonatomic) BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

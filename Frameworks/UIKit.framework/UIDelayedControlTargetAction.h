@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIEvent;
-
 @interface UIDelayedControlTargetAction : UIControlTargetAction {
     UIEvent *_event;
 }

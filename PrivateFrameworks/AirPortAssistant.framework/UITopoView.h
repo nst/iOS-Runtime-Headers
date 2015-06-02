@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NetTopoMiniStaticLayout;
-
 @interface UITopoView : UIView {
     NetTopoMiniStaticLayout *netTopoMiniStaticLayout;
 }
 
-@property(retain) NetTopoMiniStaticLayout * netTopoMiniStaticLayout;
+@property (nonatomic, retain) NetTopoMiniStaticLayout *netTopoMiniStaticLayout;
 
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

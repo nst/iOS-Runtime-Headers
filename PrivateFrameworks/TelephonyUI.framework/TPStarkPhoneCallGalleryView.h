@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkPhoneCallGalleryViewDelegate>, NSString, TPStarkPhoneCallContainer;
-
 @interface TPStarkPhoneCallGalleryView : UIView <TPStarkPhoneCallContainerDataSource, TPStarkPhoneCallContainerDelegate> {
     TPStarkPhoneCallContainer *_container;
     <TPStarkPhoneCallGalleryViewDelegate> *_delegate;
 }
 
-@property(retain) TPStarkPhoneCallContainer * container;
-@property(copy,readonly) NSString * debugDescription;
-@property <TPStarkPhoneCallGalleryViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (retain) TPStarkPhoneCallContainer *container;
+@property (readonly, copy) NSString *debugDescription;
+@property <TPStarkPhoneCallGalleryViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)statusStringForDisplayForCall:(id)arg1;
 

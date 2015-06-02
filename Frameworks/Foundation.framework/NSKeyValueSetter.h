@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSKeyValueSetter : NSKeyValueAccessor {
-}
+@interface NSKeyValueSetter : NSKeyValueAccessor
 
 @end

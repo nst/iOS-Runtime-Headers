@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFModernAtomView, UIView;
-
 @interface MFModernAtomBackgroundView : UIView {
     MFModernAtomView *_hostAtomView;
     float _scalingFactor;
@@ -14,11 +12,11 @@
     UIView *_separatorView;
 }
 
-@property MFModernAtomView * hostAtomView;
-@property float scalingFactor;
-@property(readonly) UIView * selectedView;
-@property int separatorStyle;
-@property(readonly) UIView * separatorView;
+@property (nonatomic) MFModernAtomView *hostAtomView;
+@property (nonatomic) float scalingFactor;
+@property (nonatomic, readonly) UIView *selectedView;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic, readonly) UIView *separatorView;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundBleedArea;
 - (id)_chevronImage;

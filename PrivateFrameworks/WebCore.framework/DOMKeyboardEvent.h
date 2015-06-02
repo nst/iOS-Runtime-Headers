@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMKeyboardEvent : DOMUIEvent
 
-@interface DOMKeyboardEvent : DOMUIEvent {
-}
-
-@property(readonly) BOOL altGraphKey;
-@property(readonly) BOOL altKey;
-@property(readonly) int charCode;
-@property(readonly) BOOL ctrlKey;
-@property(readonly) int keyCode;
-@property(copy,readonly) NSString * keyIdentifier;
-@property(readonly) unsigned int keyLocation;
-@property(readonly) unsigned int location;
-@property(readonly) BOOL metaKey;
-@property(readonly) BOOL shiftKey;
+@property (readonly) BOOL altGraphKey;
+@property (readonly) BOOL altKey;
+@property (readonly) int charCode;
+@property (readonly) BOOL ctrlKey;
+@property (readonly) int keyCode;
+@property (readonly, copy) NSString *keyIdentifier;
+@property (readonly) unsigned int keyLocation;
+@property (readonly) unsigned int location;
+@property (readonly) BOOL metaKey;
+@property (readonly) BOOL shiftKey;
 
 - (BOOL)altGraphKey;
 - (BOOL)altKey;

@@ -12,10 +12,10 @@
     int _status;
 }
 
-@property(readonly) double* parameters;
-@property(readonly) unsigned int parametersCount;
-@property double radius;
-@property int status;
+@property (nonatomic, readonly) double*parameters;
+@property (nonatomic, readonly) unsigned int parametersCount;
+@property (nonatomic) double radius;
+@property (nonatomic) int status;
 
 - (void)addParameters:(double)arg1;
 - (void)clearParameters;

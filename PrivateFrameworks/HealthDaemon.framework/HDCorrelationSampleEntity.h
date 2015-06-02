@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCorrelationSampleEntity : HDSampleEntity {
-}
+@interface HDCorrelationSampleEntity : HDSampleEntity
 
 + (Class)_associatedDataObjectClass;
 + (id)_objectsWithIDs:(id)arg1 healthDaemon:(id)arg2;

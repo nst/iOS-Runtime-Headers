@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableString, NSNumber, NSString;
-
 @interface SPPhoneticEncoder : NSObject {
     NSMutableString *_alternate;
     int _idx;

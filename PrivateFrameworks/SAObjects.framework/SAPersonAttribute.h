@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSString, SAPerson;
+@interface SAPersonAttribute : AceObject <SAAceSerializable>
 
-@interface SAPersonAttribute : AceObject <SAAceSerializable> {
-}
+@property (nonatomic, copy) NSString *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *displayText;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAPerson *object;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <SAAceSerializable> *typedData;
 
-@property(copy) NSString * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * displayText;
-@property(readonly) unsigned int hash;
-@property(retain) SAPerson * object;
-@property(readonly) Class superclass;
-@property(retain) <SAAceSerializable> * typedData;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)personAttribute;
 + (id)personAttributeWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)af_contactAddressValue;
 - (id)data;
 - (id)displayText;
 - (id)encodedClassName;
@@ -30,5 +28,9 @@
 - (void)setObject:(id)arg1;
 - (void)setTypedData:(id)arg1;
 - (id)typedData;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_contactAddressValue;
 
 @end

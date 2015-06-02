@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateList>, <UIKeyboardCandidateListDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView, UIKeyboardCandidateLogButton, UIKeyboardCandidatePocketShadow;
-
 @interface UIKBHandwritingCandidateView : UIKBKeyView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIKeyboardCandidateList> {
     TIKeyboardCandidateResultSet *_candidateResultSet;
     UIKBCandidateCollectionView *_candidatesCollectionView;
@@ -22,21 +20,21 @@
     } _visualStyling;
 }
 
-@property(readonly) <UIKeyboardCandidateList> * candidateList;
-@property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
-@property(readonly) NSArray * candidates;
-@property(retain) UIKBCandidateCollectionView * candidatesCollectionView;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIKeyboardCandidateListDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned int dummyCellCount;
-@property float dummyCellWidth;
-@property(readonly) unsigned int hash;
-@property(retain) UIKeyboardCandidateLogButton * logButton;
-@property(retain) UIKeyboardCandidatePocketShadow * pocketShadow;
-@property(readonly) Class superclass;
-@property BOOL usesCandidateSelection;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, readonly) <UIKeyboardCandidateList> *candidateList;
+@property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateResultSet;
+@property (nonatomic, readonly) NSArray *candidates;
+@property (nonatomic, retain) UIKBCandidateCollectionView *candidatesCollectionView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIKeyboardCandidateListDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int dummyCellCount;
+@property (nonatomic) float dummyCellWidth;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIKeyboardCandidateLogButton *logButton;
+@property (nonatomic, retain) UIKeyboardCandidatePocketShadow *pocketShadow;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesCandidateSelection;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 - (id)_inheritedRenderConfig;
 - (void)_setRenderConfig:(id)arg1;

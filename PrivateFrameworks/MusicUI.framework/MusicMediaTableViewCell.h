@@ -2,30 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPUEmphasizedText, MusicMediaOfferButtonState, NSString, UIImage;
-
 @interface MusicMediaTableViewCell : MusicTableViewCell {
     MusicMediaOfferButtonState *_offerButtonState;
 }
 
-@property(retain) UIImage * artworkImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentBoundsEdgeInsets;
-@property(copy) MPUEmphasizedText * detailEmphasizedText;
-@property(copy) NSString * detailText;
-@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
-@property(getter=isExplicitTrack) BOOL explicitTrack;
-@property(copy) id offerButtonActionHandler;
-@property(retain) MusicMediaOfferButtonState * offerButtonState;
-@property(copy) NSString * placeholderSubtitleText;
-@property(copy) NSString * placeholderTitleText;
-@property int playbackState;
-@property(retain) UIImage * rightAccessoryHighlightedImage;
-@property(retain) UIImage * rightAccessoryImage;
-@property BOOL showsArtworkImage;
-@property(copy) MPUEmphasizedText * subtitleEmphasizedText;
-@property(copy) NSString * subtitleText;
-@property(copy) MPUEmphasizedText * titleEmphasizedText;
-@property(copy) NSString * titleText;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentBoundsEdgeInsets;
+@property (nonatomic, copy) MPUEmphasizedText *detailEmphasizedText;
+@property (nonatomic, copy) NSString *detailText;
+@property (getter=isDisplayingAsDisabled, nonatomic) BOOL displayAsDisabled;
+@property (getter=isExplicitTrack, nonatomic) BOOL explicitTrack;
+@property (nonatomic, copy) id /* block */ offerButtonActionHandler;
+@property (nonatomic, retain) MusicMediaOfferButtonState *offerButtonState;
+@property (nonatomic, copy) NSString *placeholderSubtitleText;
+@property (nonatomic, copy) NSString *placeholderTitleText;
+@property (nonatomic) int playbackState;
+@property (nonatomic, retain) UIImage *rightAccessoryHighlightedImage;
+@property (nonatomic, retain) UIImage *rightAccessoryImage;
+@property (nonatomic) BOOL showsArtworkImage;
+@property (nonatomic, copy) MPUEmphasizedText *subtitleEmphasizedText;
+@property (nonatomic, copy) NSString *subtitleText;
+@property (nonatomic, copy) MPUEmphasizedText *titleEmphasizedText;
+@property (nonatomic, copy) NSString *titleText;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 + (Class)contentViewClass;
@@ -40,7 +38,7 @@
 - (BOOL)isDisplayingAsDisabled;
 - (BOOL)isEditing;
 - (BOOL)isExplicitTrack;
-- (id)offerButtonActionHandler;
+- (id /* block */)offerButtonActionHandler;
 - (id)offerButtonState;
 - (id)placeholderSubtitleText;
 - (id)placeholderTitleText;
@@ -56,7 +54,7 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setExplicitTrack:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setOfferButtonActionHandler:(id)arg1;
+- (void)setOfferButtonActionHandler:(id /* block */)arg1;
 - (void)setOfferButtonState:(id)arg1;
 - (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setPlaceholderSubtitleText:(id)arg1;

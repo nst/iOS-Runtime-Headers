@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class UILabel;
-
 @interface CertInfoCertificateListCellContentView : UIView {
     UILabel *_expirationLabel;
     UILabel *_subtitleLabel;

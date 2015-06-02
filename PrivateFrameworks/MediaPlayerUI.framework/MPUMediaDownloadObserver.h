@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface MPUMediaDownloadObserver : NSObject {
     BOOL _hasPendingProgressHandlerExecution;
     BOOL _invalidated;
     BOOL _paused;
     long long _pid;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) BOOL canCancel;
-@property(getter=isCurrentlyPlayable,readonly) BOOL currentlyPlayable;
-@property(readonly) double downloadProgress;
-@property(getter=isPaused,readonly) BOOL paused;
-@property(readonly) long long persistentID;
-@property(copy) id progressHandler;
-@property(getter=isPurchasing,readonly) BOOL purchasing;
-@property(readonly) double rawDownloadProgress;
-@property(readonly) double rawDownloadTotal;
-@property(getter=isRestoreDownload,readonly) BOOL restoreDownload;
+@property (readonly) BOOL canCancel;
+@property (getter=isCurrentlyPlayable, readonly) BOOL currentlyPlayable;
+@property (readonly) double downloadProgress;
+@property (getter=isPaused, readonly) BOOL paused;
+@property (nonatomic, readonly) long long persistentID;
+@property (copy) id /* block */ progressHandler;
+@property (getter=isPurchasing, nonatomic, readonly) BOOL purchasing;
+@property (nonatomic, readonly) double rawDownloadProgress;
+@property (nonatomic, readonly) double rawDownloadTotal;
+@property (getter=isRestoreDownload, readonly) BOOL restoreDownload;
 
 + (id)newObserverForMediaCollection:(id)arg1;
 + (id)newObserverForMediaItem:(id)arg1;
@@ -53,10 +43,10 @@
 - (BOOL)isRestoreDownload;
 - (void)pauseDownload;
 - (long long)persistentID;
-- (id)progressHandler;
+- (id /* block */)progressHandler;
 - (double)rawDownloadProgress;
 - (double)rawDownloadTotal;
 - (void)resumeDownload;
-- (void)setProgressHandler:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 
 @end

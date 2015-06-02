@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
-
 @interface UITextFieldRoundedRectBackgroundView : UITextFieldBackgroundView {
     UIImageView *_center;
     UIImageView *_leftCap;

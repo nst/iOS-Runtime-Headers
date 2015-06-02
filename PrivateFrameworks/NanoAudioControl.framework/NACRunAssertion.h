@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@interface NACRunAssertion : NSObject {
-}
+@interface NACRunAssertion : NSObject
 
 - (void)dealloc;
 - (id)init;

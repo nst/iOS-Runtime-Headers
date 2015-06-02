@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSpecifierDataSource>, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, UIActionSheet, UIAlertView, UIColor, UIKeyboard, UIPopoverController, UITableView, UIView;
-
 @interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIActionSheetDelegate, UIAlertViewDelegate, UIAppearance, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIActionSheet *_actionSheet;
     UIAlertView *_alertView;
@@ -62,33 +60,33 @@
     float _verticalContentOffset;
 }
 
-@property(retain) UIColor * altTextColor;
-@property(retain) UIColor * backgroundColor;
-@property(retain) UIColor * buttonTextColor;
-@property(retain) UIColor * cellAccessoryColor;
-@property(retain) UIColor * cellAccessoryHighlightColor;
-@property(retain) UIColor * cellHighlightColor;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL edgeToEdgeCells;
-@property(retain) UIColor * editableInsertionPointColor;
-@property(retain) UIColor * editablePlaceholderTextColor;
-@property(retain) UIColor * editableSelectionBarColor;
-@property(retain) UIColor * editableSelectionHighlightColor;
-@property(retain) UIColor * editableTextColor;
-@property BOOL extendedLayoutIncludesOpaqueBars;
-@property(retain) UIColor * footerHyperlinkColor;
-@property BOOL forceSynchronousIconLoadForCreatedCells;
-@property(retain) UIColor * foregroundColor;
-@property(readonly) unsigned int hash;
-@property(readonly) int observerType;
-@property(retain) NSDictionary * pendingURLResourceDictionary;
-@property(retain) UIColor * segmentedSliderTrackColor;
-@property(retain) UIColor * separatorColor;
-@property(copy) NSString * specifierIDPendingPush;
-@property(readonly) Class superclass;
-@property(retain) UIColor * textColor;
-@property BOOL usesDarkTheme;
+@property (nonatomic, retain) UIColor *altTextColor;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIColor *buttonTextColor;
+@property (nonatomic, retain) UIColor *cellAccessoryColor;
+@property (nonatomic, retain) UIColor *cellAccessoryHighlightColor;
+@property (nonatomic, retain) UIColor *cellHighlightColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL edgeToEdgeCells;
+@property (nonatomic, retain) UIColor *editableInsertionPointColor;
+@property (nonatomic, retain) UIColor *editablePlaceholderTextColor;
+@property (nonatomic, retain) UIColor *editableSelectionBarColor;
+@property (nonatomic, retain) UIColor *editableSelectionHighlightColor;
+@property (nonatomic, retain) UIColor *editableTextColor;
+@property (nonatomic) BOOL extendedLayoutIncludesOpaqueBars;
+@property (nonatomic, retain) UIColor *footerHyperlinkColor;
+@property (nonatomic) BOOL forceSynchronousIconLoadForCreatedCells;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int observerType;
+@property (nonatomic, retain) NSDictionary *pendingURLResourceDictionary;
+@property (nonatomic, retain) UIColor *segmentedSliderTrackColor;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic, copy) NSString *specifierIDPendingPush;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) BOOL usesDarkTheme;
 
 + (id)appearance;
 + (id)appearanceWhenContainedIn:(Class)arg1;

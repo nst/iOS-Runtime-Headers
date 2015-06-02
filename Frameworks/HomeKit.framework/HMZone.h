@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMHome, HMMessageDispatcher, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMZone : NSObject <HMMessageReceiver, NSSecureCoding> {
     NSMutableArray *_currentRooms;
     HMHome *_home;
@@ -13,25 +11,25 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSMutableArray * currentRooms;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property HMHome * home;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSArray * rooms;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSMutableArray *currentRooms;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) HMHome *home;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *rooms;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_registerNotificationHandlers;
-- (void)addRoom:(id)arg1 completionHandler:(id)arg2;
+- (void)addRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
 - (id)currentRooms;
 - (void)dealloc;
@@ -49,7 +47,7 @@
 - (id)msgDispatcher;
 - (id)name;
 - (void)removeRoom:(id)arg1;
-- (void)removeRoom:(id)arg1 completionHandler:(id)arg2;
+- (void)removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)roomWithUUID:(id)arg1;
 - (id)rooms;
 - (void)setCurrentRooms:(id)arg1;
@@ -58,7 +56,7 @@
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)unconfigure;
-- (void)updateName:(id)arg1 completionHandler:(id)arg2;
+- (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)workQueue;
 

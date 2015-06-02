@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBSDisplay, NSHashTable, NSMapTable, NSMutableSet;
-
 @interface FBDisplayManager : NSObject {
     NSMapTable *_displayIDToFBSDisplayMap;
     NSMutableSet *_displaysDebouncing;
@@ -11,7 +9,7 @@
     NSHashTable *_observers;
 }
 
-@property(retain) FBSDisplay * mainDisplay;
+@property (nonatomic, retain) FBSDisplay *mainDisplay;
 
 + (id)mainDisplay;
 + (id)sharedInstance;

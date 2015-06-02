@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoEditPrecisionLevelContentViewDataSource>, NSString;
-
 @interface PUPhotoEditPrecisionLevelContentView : UIView <PUPhotoEditLayoutStaticAdaptable> {
     <PUPhotoEditPrecisionLevelContentViewDataSource> *_dataSource;
     int _layoutOrientation;
 }
 
-@property <PUPhotoEditPrecisionLevelContentViewDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int layoutOrientation;
-@property(readonly) Class superclass;
+@property (nonatomic) <PUPhotoEditPrecisionLevelContentViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)dataSource;

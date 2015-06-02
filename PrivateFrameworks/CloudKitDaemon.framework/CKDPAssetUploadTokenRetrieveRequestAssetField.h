@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordFieldIdentifier, NSMutableArray;
-
 @interface CKDPAssetUploadTokenRetrieveRequestAssetField : PBCodable <NSCopying> {
     NSMutableArray *_assets;
     CKDPRecordFieldIdentifier *_field;
 }
 
-@property(retain) NSMutableArray * assets;
-@property(retain) CKDPRecordFieldIdentifier * field;
-@property(readonly) BOOL hasField;
+@property (nonatomic, retain) NSMutableArray *assets;
+@property (nonatomic, retain) CKDPRecordFieldIdentifier *field;
+@property (nonatomic, readonly) BOOL hasField;
 
 - (void).cxx_destruct;
 - (void)addAssets:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface YTMostViewedVideoDataSource : YTTimeQualifiedVideoDataSource {
-}
+@interface YTMostViewedVideoDataSource : YTTimeQualifiedVideoDataSource
 
 - (void)reloadData;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSAccount, IDSAccountController, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_xpc_object>, NSSet, NSString;
-
 @interface _IDSService : NSObject <IDSAccountControllerDelegate, IDSConnectionDelegatePrivate, IDSDaemonListenerProtocol> {
     IDSAccountController *_accountController;
     NSSet *_commands;
@@ -19,18 +17,18 @@
     NSMutableDictionary *_uniqueIDToConnection;
 }
 
-@property(copy,readonly) NSSet * accounts;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSArray * devices;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) IDSAccount * iCloudAccount;
-@property(getter=isPretendingToBeFull) BOOL pretendingToBeFull;
-@property(copy,readonly) NSString * serviceDomain;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSSet *accounts;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *devices;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) IDSAccount *iCloudAccount;
+@property (getter=isPretendingToBeFull, nonatomic) BOOL pretendingToBeFull;
+@property (nonatomic, readonly, copy) NSString *serviceDomain;
+@property (readonly) Class superclass;
 
-- (void)_callDelegatesWithBlock:(id)arg1;
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_callIsActiveChanged;
 - (void)_handlePretendingToBeFullWithIdentifier:(id*)arg1;
 - (void)_logConnectionMap;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDSensorDatum>, NSDictionary, _HKDelayedOperation;
-
 @interface HDAggregateDataCollector : HDDataCollector {
     BOOL _didReceiveSensorDatum;
     BOOL _fetchingHistoricalData;
@@ -20,23 +18,23 @@
 - (double)_queue_aggregationInterval;
 - (void)_queue_beginStreaming;
 - (void)_queue_beginUpdates;
-- (void)_queue_fetchHistoricalDataWithCompletion:(id)arg1;
+- (void)_queue_fetchHistoricalDataWithCompletion:(id /* block */)arg1;
 - (void)_queue_handleCMDatabaseReset;
-- (void)_queue_handleUpdatingHistoricalDataWithCompletion:(id)arg1;
+- (void)_queue_handleUpdatingHistoricalDataWithCompletion:(id /* block */)arg1;
 - (id)_queue_lastReceivedSecondaryContext;
 - (id)_queue_lastReceivedSensorDatum;
 - (double)_queue_maxDatumDuration;
-- (void)_queue_processSensorData:(id)arg1 lastSensorDatum:(id)arg2 completion:(id)arg3;
+- (void)_queue_processSensorData:(id)arg1 lastSensorDatum:(id)arg2 completion:(id /* block */)arg3;
 - (id)_queue_processSensorDataBatched:(id)arg1 firstDatum:(id)arg2 lastSensorDatum:(id*)arg3;
 - (void)_queue_updateLastReceivedSecondaryContext:(id)arg1;
 - (void)_queue_updateLastReceivedSensorDatum:(id)arg1;
-- (void)beginUpdatesFromDatum:(id)arg1 withHandler:(id)arg2;
-- (void)fetchHistoricalSensorDataSinceDatum:(id)arg1 databaseIdentifier:(id)arg2 completion:(id)arg3;
+- (void)beginUpdatesFromDatum:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchHistoricalSensorDataSinceDatum:(id)arg1 databaseIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)hkObjectsFromSensorData:(id)arg1 baseSensorDatum:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 - (id)initWithHealthDaemon:(id)arg1;
 - (double)maxDatumDuration;
 - (void)setMaxDatumDuration:(double)arg1;
 - (void)updateHistoricalData;
-- (void)updateHistoricalDataWithCompletion:(id)arg1;
+- (void)updateHistoricalDataWithCompletion:(id /* block */)arg1;
 
 @end

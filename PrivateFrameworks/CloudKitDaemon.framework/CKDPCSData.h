@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class <NSSecureCoding>, NSData, NSString;
-
 @interface CKDPCSData : NSObject <NSSecureCoding> {
     NSString *_etag;
     struct _OpaquePCSShareProtection { } *_pcs;
     NSData *_pcsData;
 }
 
-@property(copy) NSString * etag;
-@property(readonly) <NSSecureCoding> * itemID;
-@property struct _OpaquePCSShareProtection { }* pcs;
-@property(copy) NSData * pcsData;
+@property (nonatomic, copy) NSString *etag;
+@property (nonatomic, readonly) <NSSecureCoding> *itemID;
+@property (nonatomic) struct _OpaquePCSShareProtection { }*pcs;
+@property (nonatomic, copy) NSData *pcsData;
 
 + (BOOL)supportsSecureCoding;
 

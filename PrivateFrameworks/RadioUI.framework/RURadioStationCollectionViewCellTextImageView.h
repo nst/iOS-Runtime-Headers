@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUTextDrawing, NSString, RURadioStationsCollectionViewTemplateTextElement;
-
 @interface RURadioStationCollectionViewCellTextImageView : UIImageView {
     RURadioStationsCollectionViewTemplateTextElement *_templateTextElement;
     NSString *_text;
     MPUTextDrawing *_textDrawing;
 }
 
-@property(retain) RURadioStationsCollectionViewTemplateTextElement * templateTextElement;
-@property(copy) NSString * text;
-@property(retain) MPUTextDrawing * textDrawing;
+@property (nonatomic, retain) RURadioStationsCollectionViewTemplateTextElement *templateTextElement;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, retain) MPUTextDrawing *textDrawing;
 
 - (void).cxx_destruct;
 - (void)setTemplateTextElement:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKVariableDelayTapRecognizerDelegate>;
-
 @interface MKVariableDelayTapRecognizer : UITapGestureRecognizer {
     double originalMaximumIntervalBetweenSuccessiveTaps;
     <MKVariableDelayTapRecognizerDelegate> *tapDelayDelegate;
 }
 
-@property <MKVariableDelayTapRecognizerDelegate> * tapDelayDelegate;
+@property (nonatomic) <MKVariableDelayTapRecognizerDelegate> *tapDelayDelegate;
 
 - (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

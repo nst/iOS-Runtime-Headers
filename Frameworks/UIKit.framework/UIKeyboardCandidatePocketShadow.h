@@ -8,9 +8,9 @@
     float _shadowHeightGrowthFactor;
 }
 
-@property BOOL drawsShadow;
-@property BOOL shadowFadesToBottom;
-@property float shadowHeightGrowthFactor;
+@property (nonatomic) BOOL drawsShadow;
+@property (nonatomic) BOOL shadowFadesToBottom;
+@property (nonatomic) float shadowHeightGrowthFactor;
 
 + (float)width;
 

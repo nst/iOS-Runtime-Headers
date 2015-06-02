@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordZoneIdentifier;
-
 @interface CKDPZoneDeleteRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int userPurge : 1; 
@@ -12,10 +10,10 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property BOOL hasUserPurge;
-@property(readonly) BOOL hasZoneIdentifier;
-@property BOOL userPurge;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic) BOOL hasUserPurge;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic) BOOL userPurge;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 + (id)options;
 

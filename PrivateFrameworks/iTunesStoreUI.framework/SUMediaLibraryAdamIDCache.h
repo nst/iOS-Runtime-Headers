@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface SUMediaLibraryAdamIDCache : NSObject {
     NSMutableSet *_adamIDs;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -16,9 +14,9 @@
 - (void)_libraryChangedNotification:(id)arg1;
 - (void)_populateCache;
 - (void)dealloc;
-- (void)getContainsAdamID:(id)arg1 completionBlock:(id)arg2;
-- (void)getIntersectionWithSet:(id)arg1 completionBlock:(id)arg2;
-- (void)getProperties:(id)arg1 ofAdamIDs:(id)arg2 withCompletionBlock:(id)arg3;
+- (void)getContainsAdamID:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)getIntersectionWithSet:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)getProperties:(id)arg1 ofAdamIDs:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)init;
 - (void)populateCache;
 

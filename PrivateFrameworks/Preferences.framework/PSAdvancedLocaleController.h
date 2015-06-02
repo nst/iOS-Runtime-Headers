@@ -6,7 +6,7 @@
     BOOL _automaticLocaleDisabled;
 }
 
-@property BOOL automaticLocaleDisabled;
+@property (nonatomic) BOOL automaticLocaleDisabled;
 
 + (BOOL)automaticLanguageUpdateEnabled;
 

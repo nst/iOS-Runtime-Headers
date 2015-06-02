@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPBasicPodcastAppSearch : SADomainCommand
 
-@interface SAMPBasicPodcastAppSearch : SADomainCommand {
-}
-
-@property BOOL acceptPodcastCollections;
-@property BOOL acceptPodcastStations;
-@property int maxResults;
-@property(copy) NSString * query;
+@property (nonatomic) BOOL acceptPodcastCollections;
+@property (nonatomic) BOOL acceptPodcastStations;
+@property (nonatomic) int maxResults;
+@property (nonatomic, copy) NSString *query;
 
 + (id)basicPodcastAppSearch;
 + (id)basicPodcastAppSearchWithDictionary:(id)arg1 context:(id)arg2;

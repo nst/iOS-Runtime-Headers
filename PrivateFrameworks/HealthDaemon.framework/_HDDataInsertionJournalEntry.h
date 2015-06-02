@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HKObject;
-
 @interface _HDDataInsertionJournalEntry : HDJournalEntry {
     HKObject *_dataObject;
     int _provenance;
 }
 
-@property(readonly) HKObject * dataObject;
-@property(readonly) int provenance;
+@property (nonatomic, readonly) HKObject *dataObject;
+@property (nonatomic, readonly) int provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

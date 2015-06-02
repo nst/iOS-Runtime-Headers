@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UILabel;
-
 @interface PLTextView : UITextView {
     UILabel *_placeholder;
     BOOL _showingPlaceholder;

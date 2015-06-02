@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSString, UILabel, UITextView;
-
 @interface _HKMedicalIDMultilineStringCell : UITableViewCell {
     NSString *_stringValue;
     UITextView *_textLabel;
     UILabel *_titleLabel;
 }
 
-@property(retain) NSString * stringValue;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;

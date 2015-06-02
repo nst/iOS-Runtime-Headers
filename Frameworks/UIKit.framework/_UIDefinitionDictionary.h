@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class ASAsset, NSString;
-
 @interface _UIDefinitionDictionary : NSObject {
     BOOL _activated;
     NSString *_definitionLanguage;
@@ -12,10 +10,10 @@
 }
 
 @property BOOL activated;
-@property(readonly) NSString * definitionLanguage;
-@property(readonly) NSString * localizedDictionaryName;
-@property(readonly) NSString * localizedLanguageName;
-@property(readonly) ASAsset * rawAsset;
+@property (readonly) NSString *definitionLanguage;
+@property (readonly) NSString *localizedDictionaryName;
+@property (readonly) NSString *localizedLanguageName;
+@property (readonly) ASAsset *rawAsset;
 
 + (id)_normalizedLanguageStringForLanguageCode:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSNumber, NSString, WBSParsecImageRepresentation;
-
 @interface WBSParsecSearchSimpleResult : WBSParsecSearchResult {
     NSString *_descriptionLeadInText;
     NSNumber *_descriptionMaximumNumberOfLines;
@@ -15,13 +13,13 @@
     NSNumber *_titleMaximumNumberOfLines;
 }
 
-@property(readonly) NSString * descriptionLeadInText;
-@property(readonly) NSNumber * descriptionMaximumNumberOfLines;
-@property(readonly) BOOL descriptionTextCanWrap;
-@property(readonly) NSString * footnote;
-@property(readonly) BOOL hasMoreIcons;
-@property(readonly) BOOL hasSingleLineDescriptionAndTitle;
-@property(readonly) NSNumber * titleMaximumNumberOfLines;
+@property (nonatomic, readonly) NSString *descriptionLeadInText;
+@property (nonatomic, readonly) NSNumber *descriptionMaximumNumberOfLines;
+@property (nonatomic, readonly) BOOL descriptionTextCanWrap;
+@property (nonatomic, readonly) NSString *footnote;
+@property (nonatomic, readonly) BOOL hasMoreIcons;
+@property (nonatomic, readonly) BOOL hasSingleLineDescriptionAndTitle;
+@property (nonatomic, readonly) NSNumber *titleMaximumNumberOfLines;
 
 - (void).cxx_destruct;
 - (id)descriptionLeadInText;

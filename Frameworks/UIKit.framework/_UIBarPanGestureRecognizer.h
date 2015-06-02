@@ -7,8 +7,8 @@
     float _bias;
 }
 
-@property(readonly) int barAction;
-@property(readonly) float bias;
+@property (nonatomic, readonly) int barAction;
+@property (nonatomic, readonly) float bias;
 
 - (void)_setDelegate:(id)arg1;
 - (int)barAction;

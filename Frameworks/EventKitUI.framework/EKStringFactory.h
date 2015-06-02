@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableDictionary;
-
 @interface EKStringFactory : NSObject {
     struct __CFDateFormatter { } *_abbrevDayFormatter;
     struct __CFDateFormatter { } *_customFormatter;

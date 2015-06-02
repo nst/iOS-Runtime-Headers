@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSDate, NSNumber, NSString, TDElementProduction;
+@interface TDNamedElement : NSManagedObject
 
-@interface TDNamedElement : NSManagedObject {
-}
-
-@property(retain) NSDate * dateOfLastChange;
-@property(retain) NSNumber * identifier;
-@property(retain) NSString * name;
-@property(retain) TDElementProduction * production;
+@property (nonatomic, retain) NSDate *dateOfLastChange;
+@property (nonatomic, retain) NSNumber *identifier;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) TDElementProduction *production;
 
 @end

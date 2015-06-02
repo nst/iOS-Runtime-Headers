@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSArray, NSString;
-
 @interface PRSSearchResponse : NSObject {
     double _backOff;
     NSArray *_completionResultSets;
@@ -13,12 +11,12 @@
     NSString *_statusString;
 }
 
-@property(readonly) double backOff;
-@property(readonly) NSArray * completionResultSets;
-@property(readonly) NSString * errorCodeString;
-@property(readonly) double maxAge;
-@property(readonly) int status;
-@property(readonly) NSString * statusString;
+@property (nonatomic, readonly) double backOff;
+@property (nonatomic, readonly) NSArray *completionResultSets;
+@property (nonatomic, readonly) NSString *errorCodeString;
+@property (nonatomic, readonly) double maxAge;
+@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) NSString *statusString;
 
 - (void).cxx_destruct;
 - (double)backOff;

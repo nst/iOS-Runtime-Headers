@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCloudNotification.framework/iCloudNotification
  */
 
-@interface INManagedDefaults : NSObject {
-}
+@interface INManagedDefaults : NSObject
 
 + (id)sharedInstance;
 

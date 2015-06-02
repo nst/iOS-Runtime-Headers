@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, WebHTMLViewPrivate;
-
 @interface WebHTMLView : WAKView <WebDocumentElement, WebDocumentIncrementalSearching, WebDocumentOptionsSearching, WebDocumentSearching, WebDocumentSelection, WebDocumentView, WebMultipleTextMatches> {
     WebHTMLViewPrivate *_private;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 + (id)supportedImageMIMETypes;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCMinHeap, NSMutableDictionary;
-
 @interface BRCThrottle : BRCThrottleBase {
     NSMutableDictionary *_retryCounters;
     BRCMinHeap *_retryHeap;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputControllerDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, NSArray, NSDictionary, NSHashTable, NSLayoutManager, NSSet, NSString, UIResponder<UITextInput>, UITextChecker, UITextInputTraits, UITextPosition, UITextRange, UIView, UIView<UITextInput>, UIView<UITextInputPrivate>, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
-
 @interface UITextInputController : NSObject <UITextInput, UITextInputAdditions, UITextInput_Internal> {
     BOOL _allowsEditingTextAttributes;
     BOOL _continuousSpellCheckingEnabled;
@@ -55,41 +53,41 @@
     NSSet *_whitelistedTypingAttributes;
 }
 
-@property(getter=_proxyTextInput,readonly) UIResponder<UITextInput> * __content;
-@property(readonly) UIView<UITextInputPrivate> * _textSelectingContainer;
-@property(getter=_whitelistedTypingAttributes,setter=_setWhitelistedTypingAttributes:,copy) NSSet * _whitelistedTypingAttributes;
-@property BOOL allowsEditingTextAttributes;
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(readonly) UITextPosition * beginningOfDocument;
-@property(getter=_caretRect,readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRect;
-@property BOOL continuousSpellCheckingEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property <UITextInputControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEditable,readonly) BOOL editable;
-@property(getter=isEditing,readonly) BOOL editing;
-@property(getter=_emptyStringAttributes,setter=_setEmptyStringAttributes:,copy) NSDictionary * emptyStringAttributes;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) UITextPosition * endOfDocument;
-@property(readonly) unsigned int hash;
-@property <UITextInputDelegate> * inputDelegate;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(retain) NSLayoutManager * layoutManager;
-@property(readonly) UITextRange * markedTextRange;
-@property(copy) NSDictionary * markedTextStyle;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } previousSelectedRange;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
-@property(copy) UITextRange * selectedTextRange;
-@property int selectionAffinity;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(readonly) UIView * textInputView;
-@property(readonly) <UITextInputTokenizer> * tokenizer;
-@property(copy) NSDictionary * typingAttributes;
+@property (getter=_proxyTextInput, nonatomic, readonly) UIResponder<UITextInput> *__content;
+@property (nonatomic, readonly) UIView<UITextInputPrivate> *_textSelectingContainer;
+@property (getter=_whitelistedTypingAttributes, setter=_setWhitelistedTypingAttributes:, nonatomic, copy) NSSet *_whitelistedTypingAttributes;
+@property (nonatomic) BOOL allowsEditingTextAttributes;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic, readonly) UITextPosition *beginningOfDocument;
+@property (getter=_caretRect, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } caretRect;
+@property (nonatomic) BOOL continuousSpellCheckingEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UITextInputControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (getter=isEditing, nonatomic, readonly) BOOL editing;
+@property (getter=_emptyStringAttributes, setter=_setEmptyStringAttributes:, nonatomic, copy) NSDictionary *emptyStringAttributes;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) UITextPosition *endOfDocument;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <UITextInputDelegate> *inputDelegate;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, retain) NSLayoutManager *layoutManager;
+@property (nonatomic, readonly) UITextRange *markedTextRange;
+@property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } previousSelectedRange;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
+@property (copy) UITextRange *selectedTextRange;
+@property (nonatomic) int selectionAffinity;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *textInputView;
+@property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
+@property (nonatomic, copy) NSDictionary *typingAttributes;
 
 - (void)_addShortcut:(id)arg1;
 - (void)_addToTypingAttributes:(id)arg1 value:(id)arg2;
@@ -106,7 +104,7 @@
 - (id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2;
 - (void)_clearSelectionUI;
 - (void)_commonInitWithLayoutManager:(id)arg1;
-- (void)_coordinateSelectionChange:(id)arg1;
+- (void)_coordinateSelectionChange:(id /* block */)arg1;
 - (void)_copySelectionToClipboard;
 - (void)_define:(id)arg1;
 - (BOOL)_delegateShouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
@@ -164,7 +162,7 @@
 - (id)_newPhraseBoundaryGestureRecognizer;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_nsrangeForTextRange:(id)arg1;
 - (id)_parentScrollView;
-- (void)_performWhileSuppressingDelegateNotifications:(id)arg1;
+- (void)_performWhileSuppressingDelegateNotifications:(id /* block */)arg1;
 - (void)_phraseBoundaryGesture:(id)arg1;
 - (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;

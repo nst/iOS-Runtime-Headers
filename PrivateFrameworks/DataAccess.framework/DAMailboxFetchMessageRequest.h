@@ -6,7 +6,7 @@
     int _maxSize;
 }
 
-@property int maxSize;
+@property (nonatomic) int maxSize;
 
 - (id)description;
 - (unsigned int)hash;

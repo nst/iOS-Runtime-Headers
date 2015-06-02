@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMLocationCaptureService : CAMCaptureService {
-}
+@interface CAMLocationCaptureService : CAMCaptureService
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSDate, NSString;
-
 @interface APDDataCache : NSObject <NSCoding, NSCopying> {
     unsigned int _cacheType;
     unsigned int _fileSize;
@@ -14,14 +12,14 @@
     NSDate *_updatedDate;
 }
 
-@property unsigned int cacheType;
-@property(readonly) BOOL expired;
-@property unsigned int fileSize;
-@property(retain) NSString * identifier;
-@property(retain) NSString * lastModified;
-@property(retain) NSString * locale;
-@property int maxAge;
-@property(retain) NSDate * updatedDate;
+@property (nonatomic) unsigned int cacheType;
+@property (nonatomic, readonly) BOOL expired;
+@property (nonatomic) unsigned int fileSize;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *lastModified;
+@property (nonatomic, retain) NSString *locale;
+@property (nonatomic) int maxAge;
+@property (nonatomic, retain) NSDate *updatedDate;
 
 - (void).cxx_destruct;
 - (unsigned int)cacheType;

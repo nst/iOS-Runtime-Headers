@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMicroblogTwitterCredential : SAMicroblogSocialCredential {
-}
+@interface SAMicroblogTwitterCredential : SAMicroblogSocialCredential
 
 + (id)twitterCredential;
 + (id)twitterCredentialWithDictionary:(id)arg1 context:(id)arg2;

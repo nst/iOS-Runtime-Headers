@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OISFUCryptoUtils : NSObject {
-}
+@interface OISFUCryptoUtils : NSObject
 
 + (BOOL)checkKey:(id)arg1 againstPassphraseVerifier:(id)arg2;
 + (id)decodePassphraseHint:(id)arg1;

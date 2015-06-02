@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <OISFUBufferedInputStream>;
-
 @interface OISFUZipRecordInputStream : NSObject {
     const char *mBuffer;
     long long mBufferEnd;

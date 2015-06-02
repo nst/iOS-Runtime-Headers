@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
+@interface AAiCloudTermsStringResponse : AAGenericTermsUIResponse
 
-@interface AAiCloudTermsStringResponse : AAGenericTermsUIResponse {
-}
-
-@property(readonly) NSString * termsString;
+@property (nonatomic, readonly) NSString *termsString;
 
 - (id)termsString;
 

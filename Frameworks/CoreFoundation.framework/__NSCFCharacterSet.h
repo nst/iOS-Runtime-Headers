@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFCharacterSet : NSMutableCharacterSet {
-}
+@interface __NSCFCharacterSet : NSMutableCharacterSet
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

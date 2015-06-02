@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchFieldDelegate>, NSOperationQueue, NSString, SKUIClientContext, SKUICompletionList, SKUISearchBar, SKUISearchDisplayController, SSVLoadURLOperation, UISearchBar, UIViewController;
-
 @interface SKUISearchFieldController : NSObject <SKUITrendingSearchPageViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSString *_baseHintsURLString;
     SKUIClientContext *_clientContext;
@@ -18,20 +16,20 @@
     NSString *_trendingSearchURLString;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(readonly) UIViewController * contentsController;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUISearchFieldDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL displaysSearchBarInNavigationBar;
-@property(readonly) unsigned int hash;
-@property int numberOfSearchResults;
-@property(readonly) UISearchBar * searchBar;
-@property(copy) NSString * searchBarAccessoryText;
-@property(copy) NSString * searchHintsURLString;
-@property BOOL showsResultsForEmptyField;
-@property(readonly) Class superclass;
-@property(copy) NSString * trendingSearchURLString;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) UIViewController *contentsController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUISearchFieldDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displaysSearchBarInNavigationBar;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int numberOfSearchResults;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, copy) NSString *searchBarAccessoryText;
+@property (nonatomic, copy) NSString *searchHintsURLString;
+@property (nonatomic) BOOL showsResultsForEmptyField;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *trendingSearchURLString;
 
 - (void).cxx_destruct;
 - (id)URLForTrendingSearchPageView:(id)arg1;

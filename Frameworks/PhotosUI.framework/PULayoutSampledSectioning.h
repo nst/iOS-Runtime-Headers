@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray;
-
 @interface PULayoutSampledSectioning : PULayoutSectioning {
     BOOL _hasSomeSampling;
     int _lastHitRangeIndex;
@@ -23,7 +21,7 @@
     int *_visualSectionForRealSection;
 }
 
-@property BOOL supportsSamplingAndSectionGrouping;
+@property (nonatomic) BOOL supportsSamplingAndSectionGrouping;
 
 - (void).cxx_destruct;
 - (int)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
@@ -35,8 +33,8 @@
 - (int)_unsampledItemIndexForVisualItemIndex:(int)arg1 visualSection:(int)arg2;
 - (int)_visualItemIndexForUnsampledItemIndex:(int)arg1 visualSection:(int)arg2 isMainItem:(BOOL*)arg3;
 - (void)dealloc;
-- (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)hasSomeSampling;
 - (id)init;
 - (void)invalidateSampling;

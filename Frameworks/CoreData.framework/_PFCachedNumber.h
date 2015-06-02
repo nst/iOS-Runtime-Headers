@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _PFCachedNumber : NSNumber {
-}
+@interface _PFCachedNumber : NSNumber
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

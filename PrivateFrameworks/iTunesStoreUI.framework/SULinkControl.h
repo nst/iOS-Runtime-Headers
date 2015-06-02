@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UILabel;
-
 @interface SULinkControl : UIControl {
     UILabel *_label;
     BOOL _shouldDrawUnderline;
-    unsigned int _sizeIsDirty : 1;
+    unsigned int _sizeIsDirty;
     int _style;
 }
 
-@property BOOL shouldDrawUnderline;
+@property (nonatomic) BOOL shouldDrawUnderline;
 
 - (id)_label;
 - (void)_updateLabel;

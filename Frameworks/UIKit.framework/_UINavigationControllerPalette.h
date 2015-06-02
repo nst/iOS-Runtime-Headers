@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UINavigationController, UIView, UIViewController;
-
 @interface _UINavigationControllerPalette : UIView {
     NSArray *__backgroundConstraints;
     UIView *__backgroundView;
@@ -36,26 +34,27 @@
     BOOL _visibleWhenPinningBarIsHidden;
 }
 
-@property(getter=_attachmentIsChanging,readonly) BOOL _attachmentIsChanging;
-@property(setter=_setBackgroundConstraints:,retain) NSArray * _backgroundConstraints;
-@property(setter=_setBackgroundView:,retain) UIView * _backgroundView;
-@property(setter=_setConstraints:,retain) NSArray * _constraints;
-@property(setter=_setPaletteOverridesPinningBar:) BOOL _paletteOverridesPinningBar;
-@property(getter=_isPalettePinningBarHidden,setter=_setPalettePinningBarHidden:) BOOL _palettePinningBarHidden;
-@property(setter=_setPinningBar:) id _pinningBar;
-@property(setter=_setRestartPaletteTransitionIfNecessary:) BOOL _restartPaletteTransitionIfNecessary;
-@property(setter=_setSize:) struct CGSize { float x1; float x2; } _size;
-@property UIViewController * _unpinnedController;
-@property(readonly) unsigned int boundaryEdge;
-@property(readonly) UINavigationController * navController;
-@property BOOL paletteIsAboveBar;
-@property BOOL paletteShadowIsHidden;
-@property(getter=isPinned) BOOL pinned;
-@property BOOL pinningBarShadowIsHidden;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredContentInsets;
-@property(getter=isVisibleWhenPinningBarIsHidden) BOOL visibleWhenPinningBarIsHidden;
+@property (getter=_attachmentIsChanging, nonatomic, readonly) BOOL _attachmentIsChanging;
+@property (setter=_setBackgroundConstraints:, nonatomic, retain) NSArray *_backgroundConstraints;
+@property (setter=_setBackgroundView:, nonatomic, retain) UIView *_backgroundView;
+@property (setter=_setConstraints:, nonatomic, retain) NSArray *_constraints;
+@property (setter=_setPaletteOverridesPinningBar:, nonatomic) BOOL _paletteOverridesPinningBar;
+@property (getter=_isPalettePinningBarHidden, setter=_setPalettePinningBarHidden:, nonatomic) BOOL _palettePinningBarHidden;
+@property (setter=_setPinningBar:, nonatomic) id _pinningBar;
+@property (setter=_setRestartPaletteTransitionIfNecessary:, nonatomic) BOOL _restartPaletteTransitionIfNecessary;
+@property (setter=_setSize:, nonatomic) struct CGSize { float x1; float x2; } _size;
+@property (nonatomic) UIViewController *_unpinnedController;
+@property (nonatomic, readonly) unsigned int boundaryEdge;
+@property (nonatomic, readonly) UINavigationController *navController;
+@property (nonatomic) BOOL paletteIsAboveBar;
+@property (nonatomic) BOOL paletteShadowIsHidden;
+@property (getter=isPinned, nonatomic) BOOL pinned;
+@property (nonatomic) BOOL pinningBarShadowIsHidden;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredContentInsets;
+@property (getter=isVisibleWhenPinningBarIsHidden, nonatomic) BOOL visibleWhenPinningBarIsHidden;
 
-- (void)__ck_setPaletteFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (BOOL)_attachmentIsChanging;
 - (id)_backgroundConstraints;
 - (id)_backgroundView;
@@ -110,5 +109,9 @@
 - (void)setPreferredContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setVisibleWhenPinningBarIsHidden:(BOOL)arg1;
 - (void)set_unpinnedController:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (void)__ck_setPaletteFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

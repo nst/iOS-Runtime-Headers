@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class FMFLocation, UILabel;
-
 @interface FMFTitleView : UIView {
     FMFLocation *_location;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
 }
 
-@property(retain) FMFLocation * location;
-@property(retain) UILabel * subtitleLabel;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) FMFLocation *location;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (void)_updateLabels:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOLocalizedName : PBCodable <NSCopying> {
     struct { 
         unsigned int nameRank : 1; 
@@ -17,18 +15,18 @@
     NSString *_phoneticName;
 }
 
-@property BOOL hasIsDefault;
-@property(readonly) BOOL hasLanguageCode;
-@property(readonly) BOOL hasName;
-@property BOOL hasNameRank;
-@property(readonly) BOOL hasNameType;
-@property(readonly) BOOL hasPhoneticName;
-@property BOOL isDefault;
-@property(retain) NSString * languageCode;
-@property(retain) NSString * name;
-@property unsigned int nameRank;
-@property(retain) NSString * nameType;
-@property(retain) NSString * phoneticName;
+@property (nonatomic) BOOL hasIsDefault;
+@property (nonatomic, readonly) BOOL hasLanguageCode;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasNameRank;
+@property (nonatomic, readonly) BOOL hasNameType;
+@property (nonatomic, readonly) BOOL hasPhoneticName;
+@property (nonatomic) BOOL isDefault;
+@property (nonatomic, retain) NSString *languageCode;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned int nameRank;
+@property (nonatomic, retain) NSString *nameType;
+@property (nonatomic, retain) NSString *phoneticName;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface WEPKeyFormatter : UTF8Formatter {
-}
+@interface WEPKeyFormatter : UTF8Formatter
 
 + (id)sharedWEPKeyFormatter;
 + (id)wepKeyFormatter:(unsigned int)arg1;

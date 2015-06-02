@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface RTRoutineManager : NSObject <RTFrameworkProtocol> {
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _visitHandler;
-
+    id /* block */ _visitHandler;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
-@property(copy) id visitHandler;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ visitHandler;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)defaultManager;
 + (id)modeOfTransportationToString:(int)arg1;
@@ -34,30 +24,30 @@
 - (void)clearRoutine;
 - (void)createConnection;
 - (void)dealloc;
-- (void)fetchAllLocationsOfInterestWithHandler:(id)arg1;
-- (void)fetchBBPluginSupportedWithHandler:(id)arg1;
-- (void)fetchLocationsOfInterestAssociatedToIdentifier:(id)arg1 withHandler:(id)arg2;
-- (void)fetchLocationsOfInterestOfType:(int)arg1 withHandler:(id)arg2;
-- (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 withHandler:(id)arg3;
-- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(id)arg4;
-- (void)fetchNextPredictedLocationsOfInterestWithHandler:(id)arg1;
-- (void)fetchPathToDiagnosticFilesWithHandler:(id)arg1;
-- (void)fetchPredictedConditionsForAction:(id)arg1 withHandler:(id)arg2;
-- (void)fetchPredictedLocationsOfInterestFromStartingLocationOfInterest:(id)arg1 withHandler:(id)arg2;
-- (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(id)arg2;
-- (void)fetchRoutineEnabledWithHandler:(id)arg1;
-- (void)fetchRoutineModeFromLocation:(id)arg1 withHandler:(id)arg2;
+- (void)fetchAllLocationsOfInterestWithHandler:(id /* block */)arg1;
+- (void)fetchBBPluginSupportedWithHandler:(id /* block */)arg1;
+- (void)fetchLocationsOfInterestAssociatedToIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchLocationsOfInterestOfType:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(id /* block */)arg4;
+- (void)fetchNextPredictedLocationsOfInterestWithHandler:(id /* block */)arg1;
+- (void)fetchPathToDiagnosticFilesWithHandler:(id /* block */)arg1;
+- (void)fetchPredictedConditionsForAction:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchPredictedLocationsOfInterestFromStartingLocationOfInterest:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchRoutineEnabledWithHandler:(id /* block */)arg1;
+- (void)fetchRoutineModeFromLocation:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)handleDaemonStart;
 - (id)init;
 - (void)onVisit:(id)arg1 withError:(id)arg2;
 - (id)queue;
 - (void)setQueue:(id)arg1;
 - (void)setRoutineEnabled:(BOOL)arg1;
-- (void)setVisitHandler:(id)arg1;
+- (void)setVisitHandler:(id /* block */)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (void)startMonitoringVisitsWithHandler:(id)arg1;
+- (void)startMonitoringVisitsWithHandler:(id /* block */)arg1;
 - (void)stopMonitoringVisits;
-- (id)visitHandler;
+- (id /* block */)visitHandler;
 - (id)xpcConnection;
 
 @end

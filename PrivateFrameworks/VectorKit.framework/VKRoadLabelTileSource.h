@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRoadLabelTileSource : VKLabelTileSource {
-}
+@interface VKRoadLabelTileSource : VKLabelTileSource
 
 - (unsigned char)_labelTileType;
 

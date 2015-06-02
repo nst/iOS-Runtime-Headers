@@ -2,23 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray;
-
 @interface _UIDynamicAnimationGroup : _UIDynamicAnimation {
     NSMutableArray *_animations;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _applier;
-
+    id /* block */ _applier;
     NSMutableArray *_runningAnimations;
 }
 
-@property(copy) NSArray * animations;
+@property (nonatomic, copy) NSArray *animations;
 
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
@@ -27,9 +17,9 @@
 - (id)animations;
 - (void)dealloc;
 - (void)removeAnimation:(id)arg1;
-- (void)runWithCompletion:(id)arg1;
-- (void)runWithGroupApplier:(id)arg1 completion:(id)arg2;
-- (void)runWithGroupApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
+- (void)runWithCompletion:(id /* block */)arg1;
+- (void)runWithGroupApplier:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)runWithGroupApplier:(id /* block */)arg1 completion:(id /* block */)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)setAnimations:(id)arg1;
 
 @end

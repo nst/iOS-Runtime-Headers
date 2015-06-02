@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAShapeLayer, UIBezierPath, UIColor;
-
 @interface _UIGlintyShapeView : UIView {
     UIColor *_fillColor;
     UIBezierPath *_path;
     UIColor *_strokeColor;
 }
 
-@property(readonly) UIColor * fillColor;
-@property(readonly) UIBezierPath * path;
-@property(readonly) CAShapeLayer * shapeLayer;
-@property(readonly) UIColor * strokeColor;
+@property (nonatomic, readonly) UIColor *fillColor;
+@property (nonatomic, readonly) UIBezierPath *path;
+@property (nonatomic, readonly) CAShapeLayer *shapeLayer;
+@property (nonatomic, readonly) UIColor *strokeColor;
 
 + (Class)layerClass;
 

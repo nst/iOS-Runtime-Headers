@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSString;
+@interface SARadarAceRadarAttachment : AceObject <SAAceSerializable>
 
-@interface SARadarAceRadarAttachment : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSData * contents;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * fileName;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSData *contents;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *fileName;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)aceRadarAttachment;
 + (id)aceRadarAttachmentWithDictionary:(id)arg1 context:(id)arg2;

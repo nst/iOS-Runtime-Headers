@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUISiriStatusImages : NSObject {
-}
+@interface SiriUISiriStatusImages : NSObject
 
 + (id)CGImagesForImageSet:(int)arg1 animation:(int)arg2;
-+ (void)_enumerateCGImagesForCollection:(const struct { unsigned int x1; id x2; unsigned int x3; struct { /* ? */ } *x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; }*)arg1 data:(id)arg2 usingBlock:(id)arg3;
++ (void)_enumerateCGImagesForCollection:(const struct { unsigned int x1; id x2; struct { /* ? */ } *x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; }*)arg1 data:(id)arg2 usingBlock:(id /* block */)arg3;
 + (struct CGSize { float x1; float x2; })contentSizeForImageSet:(int)arg1;
 + (float)contentsScaleForImageSet:(int)arg1;
 + (id)defaultMicImageForImageSet:(int)arg1;

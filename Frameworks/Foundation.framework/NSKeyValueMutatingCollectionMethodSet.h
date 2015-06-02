@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSKeyValueMutatingCollectionMethodSet : NSObject {
-}
+@interface NSKeyValueMutatingCollectionMethodSet : NSObject
 
 @end

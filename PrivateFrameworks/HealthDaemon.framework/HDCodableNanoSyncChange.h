@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface HDCodableNanoSyncChange : PBCodable <HDNanoSyncDescription, HDSyncChange, NSCopying> {
     long long _endAnchor;
     struct { 
@@ -16,17 +14,17 @@
     long long _startAnchor;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property long long endAnchor;
-@property BOOL hasEndAnchor;
-@property BOOL hasObjectType;
-@property BOOL hasStartAnchor;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * objectDatas;
-@property int objectType;
-@property long long startAnchor;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) long long endAnchor;
+@property (nonatomic) BOOL hasEndAnchor;
+@property (nonatomic) BOOL hasObjectType;
+@property (nonatomic) BOOL hasStartAnchor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *objectDatas;
+@property (nonatomic) int objectType;
+@property (nonatomic) long long startAnchor;
+@property (readonly) Class superclass;
 
 + (id)changeWithNanoSyncEntityClass:(Class)arg1;
 

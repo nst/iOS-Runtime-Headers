@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSDictionary;
-
 @interface KNClassicStylesheetRecord : TSPObject {
     NSDictionary *mIdentifierToStyleMap;
 }
 
-@property(retain) NSDictionary * identifierToStyleMap;
+@property (nonatomic, retain) NSDictionary *identifierToStyleMap;
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLLowDiskSpaceAlertView : UIAlertView {
-}
+@interface PLLowDiskSpaceAlertView : UIAlertView
 
 + (void)showUsageSettings;
 

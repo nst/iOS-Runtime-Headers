@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSWPDeletionRangeMap, TSWPStorage;
-
 @interface TSWPFilteredStorage : NSObject <TSWPTextSource> {
     unsigned int _length;
     TSWPDeletionRangeMap *_rangeMap;
@@ -11,15 +9,15 @@
     unsigned int _storageLength;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)adjustRangesByDelta:(int)arg1;
 - (id)attachmentAtCharIndex:(unsigned int)arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
-- (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
+- (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL)arg2 attributesTable:(/* Warning: unhandled array encoding: '[19@]' */ id)arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
 - (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
 - (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;
@@ -28,8 +26,8 @@
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (void)dealloc;
-- (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
+- (void)enumerateSmartFieldsWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateWithAttributeKind:(int)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
 - (id)footnoteReferenceAtCharIndex:(unsigned int)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)hasColumnBreakAtCharIndex:(unsigned int)arg1;

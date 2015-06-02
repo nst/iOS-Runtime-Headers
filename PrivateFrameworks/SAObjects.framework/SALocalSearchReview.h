@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SACalendar, SALocalSearchRating, SAUIAppPunchOut;
+@interface SALocalSearchReview : AceObject <SAAceSerializable>
 
-@interface SALocalSearchReview : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * author;
-@property(copy) NSString * comment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(retain) SACalendar * lastUpdated;
-@property(copy) NSString * publication;
-@property(retain) SAUIAppPunchOut * reviewPunchOut;
-@property(retain) SALocalSearchRating * reviewRating;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *author;
+@property (nonatomic, copy) NSString *comment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) SACalendar *lastUpdated;
+@property (nonatomic, copy) NSString *publication;
+@property (nonatomic, retain) SAUIAppPunchOut *reviewPunchOut;
+@property (nonatomic, retain) SALocalSearchRating *reviewRating;
+@property (readonly) Class superclass;
 
 + (id)review;
 + (id)reviewWithDictionary:(id)arg1 context:(id)arg2;

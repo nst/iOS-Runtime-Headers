@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBAppearance, NSString;
-
 @interface BLTPBAction : PBCodable <NSCopying> {
     int _activationMode;
     BLTPBAppearance *_appearance;
@@ -11,12 +9,12 @@
     NSString *_launchURL;
 }
 
-@property int activationMode;
-@property(retain) BLTPBAppearance * appearance;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasLaunchURL;
-@property(retain) NSString * identifier;
-@property(retain) NSString * launchURL;
+@property (nonatomic) int activationMode;
+@property (nonatomic, retain) BLTPBAppearance *appearance;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasLaunchURL;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *launchURL;
 
 - (void).cxx_destruct;
 - (int)activationMode;

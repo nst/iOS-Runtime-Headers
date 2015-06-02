@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPDBusinessClaim : PBCodable <NSCopying> {
     BOOL _buttonEnabled;
     NSString *_buttonLabel;
@@ -14,14 +12,14 @@
     NSString *_titleText;
 }
 
-@property BOOL buttonEnabled;
-@property(retain) NSString * buttonLabel;
-@property(retain) NSString * descriptionText;
-@property BOOL hasButtonEnabled;
-@property(readonly) BOOL hasButtonLabel;
-@property(readonly) BOOL hasDescriptionText;
-@property(readonly) BOOL hasTitleText;
-@property(retain) NSString * titleText;
+@property (nonatomic) BOOL buttonEnabled;
+@property (nonatomic, retain) NSString *buttonLabel;
+@property (nonatomic, retain) NSString *descriptionText;
+@property (nonatomic) BOOL hasButtonEnabled;
+@property (nonatomic, readonly) BOOL hasButtonLabel;
+@property (nonatomic, readonly) BOOL hasDescriptionText;
+@property (nonatomic, readonly) BOOL hasTitleText;
+@property (nonatomic, retain) NSString *titleText;
 
 + (id)businessClaimForPlaceData:(id)arg1;
 

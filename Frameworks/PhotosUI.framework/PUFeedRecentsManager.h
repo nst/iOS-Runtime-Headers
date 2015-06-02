@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUFeedRecentsManagerDelegate>, NSMutableArray, NSOrderedSet, PLPhotoLibrary;
-
 @interface PUFeedRecentsManager : NSObject <PLAssetChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
     NSOrderedSet *__cachedRecentAssets;
     int _count;
@@ -13,11 +11,11 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(setter=_setCachedRecentAssets:,copy) NSOrderedSet * _cachedRecentAssets;
-@property int count;
-@property <PUFeedRecentsManagerDelegate> * delegate;
-@property(retain) PLPhotoLibrary * photoLibrary;
-@property(copy,readonly) NSOrderedSet * recentAssets;
+@property (setter=_setCachedRecentAssets:, nonatomic, copy) NSOrderedSet *_cachedRecentAssets;
+@property (nonatomic) int count;
+@property (nonatomic) <PUFeedRecentsManagerDelegate> *delegate;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly, copy) NSOrderedSet *recentAssets;
 
 - (void).cxx_destruct;
 - (id)_cachedRecentAssets;

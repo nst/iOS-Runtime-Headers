@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class MSPDroppedPin, NSString, PBUnknownFields;
-
 @interface MSPPinStorage : PBCodable <NSCopying> {
     MSPDroppedPin *_droppedPin;
     struct { 
@@ -18,17 +16,17 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) MSPDroppedPin * droppedPin;
-@property(readonly) BOOL hasDroppedPin;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasPosition;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property(retain) NSString * identifier;
-@property double position;
-@property double timestamp;
-@property int type;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) MSPDroppedPin *droppedPin;
+@property (nonatomic, readonly) BOOL hasDroppedPin;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasPosition;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) double position;
+@property (nonatomic) double timestamp;
+@property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

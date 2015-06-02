@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECIntToTwoIntKeyCache, EDColumnInfoCollection, EDRowBlock, EDRowBlocks, EDWorksheet, NSArray, NSMutableArray;
-
 @interface EPStyleFlattener : EDProcessor {
     EDColumnInfoCollection *mColumnInfos;
     EDRowBlock *mCurrentRowBlock;

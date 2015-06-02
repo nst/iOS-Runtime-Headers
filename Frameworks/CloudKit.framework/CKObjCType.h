@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKObjCType : NSObject {
     NSString *_className;
     int _code;
@@ -13,16 +11,16 @@
     unsigned int _size;
 }
 
-@property(readonly) NSString * className;
-@property(readonly) int code;
-@property(readonly) NSString * encoding;
-@property(readonly) unsigned int flags;
-@property(getter=isFloatingPointNumber,readonly) BOOL floatingPointNumber;
-@property(getter=isIntegerNumber,readonly) BOOL integerNumber;
-@property(readonly) NSString * name;
-@property(getter=isNumber,readonly) BOOL number;
-@property(getter=isObject,readonly) BOOL object;
-@property(readonly) unsigned int size;
+@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) NSString *encoding;
+@property (nonatomic, readonly) unsigned int flags;
+@property (getter=isFloatingPointNumber, nonatomic, readonly) BOOL floatingPointNumber;
+@property (getter=isIntegerNumber, nonatomic, readonly) BOOL integerNumber;
+@property (nonatomic, readonly) NSString *name;
+@property (getter=isNumber, nonatomic, readonly) BOOL number;
+@property (getter=isObject, nonatomic, readonly) BOOL object;
+@property (nonatomic, readonly) unsigned int size;
 
 + (id)typeForEncoding:(const char *)arg1;
 + (id)typeForValue:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSString, OADBackground, OADShape, OADTableStyle, PDAnimation, PDTransition;
-
 @interface PDSlideBase : NSObject {
     PDAnimation *mAnimation;
     OADBackground *mBackground;
@@ -11,17 +9,17 @@
     BOOL mCachedSlideNumberShape;
     OADTableStyle *mDefaultTableStyle;
     NSArray *mDrawables;
-    unsigned int mIsDoneWithContent : 1;
-    unsigned int mIsHidden : 1;
+    unsigned int mIsDoneWithContent;
+    unsigned int mIsHidden;
     NSString *mName;
     OADShape *mSlideNumberPlaceholder;
     OADShape *mSlideNumberShape;
     PDTransition *mTransition;
 }
 
-@property(readonly) BOOL hasMappableSlideNumberShape;
-@property(readonly) OADShape * slideNumberPlaceholder;
-@property(readonly) OADShape * slideNumberShape;
+@property (nonatomic, readonly) BOOL hasMappableSlideNumberShape;
+@property (nonatomic, readonly) OADShape *slideNumberPlaceholder;
+@property (nonatomic, readonly) OADShape *slideNumberShape;
 
 + (int)inheritedPlaceholderType:(int)arg1;
 

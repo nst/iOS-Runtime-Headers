@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIFourfoldTranslatedTile : CITile2Filter {
-}
+@interface CIFourfoldTranslatedTile : CITile2Filter
 
 + (id)customAttributes;
 

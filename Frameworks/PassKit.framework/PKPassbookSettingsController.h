@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassLibraryDataProvider>, <PKPassbookSettingsDataSource>, <PKPassbookSettingsDelegate>, <PKPassbookSettingsOptionsDelegate>, NSArray, NSString, PKPaymentSetupAboutViewController, PSSpecifier;
-
 @interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate> {
     PSSpecifier *_addCardButtonSpecifier;
     PSSpecifier *_cardsGroupSpecifier;
@@ -21,11 +19,11 @@
     PKPaymentSetupAboutViewController *_privacyController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassbookSettingsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassbookSettingsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_addCardButtonSpecifier;
 - (void)_addPaymentCard;

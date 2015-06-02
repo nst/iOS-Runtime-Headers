@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSData, NSString;
-
 @interface SYChange : PBCodable <NSCopying> {
     NSData *_data;
     NSString *_objectId;
@@ -11,11 +9,11 @@
     unsigned long long _version;
 }
 
-@property(retain) NSData * data;
-@property(readonly) BOOL hasData;
-@property(retain) NSString * objectId;
-@property int type;
-@property unsigned long long version;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, readonly) BOOL hasData;
+@property (nonatomic, retain) NSString *objectId;
+@property (nonatomic) int type;
+@property (nonatomic) unsigned long long version;
 
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOVConnectivity : PBCodable <NSCopying> {
     NSMutableArray *_junctions;
 }
 
-@property(retain) NSMutableArray * junctions;
+@property (nonatomic, retain) NSMutableArray *junctions;
 
 - (void)addJunction:(id)arg1;
 - (void)clearJunctions;

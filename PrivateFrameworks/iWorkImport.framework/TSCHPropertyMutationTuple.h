@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleOwning>, NSDictionary;
-
 @interface TSCHPropertyMutationTuple : NSObject {
     NSDictionary *mMutations;
     <TSCHStyleOwning> *mStyleOwner;
 }
 
-@property(readonly) NSDictionary * mutations;
-@property(readonly) <TSCHStyleOwning> * styleOwner;
+@property (readonly) NSDictionary *mutations;
+@property (readonly) <TSCHStyleOwning> *styleOwner;
 
 - (void)dealloc;
 - (id)description;

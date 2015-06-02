@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSMutableArray;
-
 @interface BLImagePatchList : NSObject {
     struct CGImage { } *_baseImage;
     NSMutableArray *_patchArray;

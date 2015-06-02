@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUClientInterfaceDelegate>, <SUClientInterfaceDelegatePrivate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SUPreviewOverlayViewController, SUPurchaseManager, SUQueueSessionManager, SUTabBarController, SUUIAppearance, SUViewControllerFactory, UIColor;
-
 @interface SUClientInterface : NSObject {
     SUUIAppearance *_appearance;
     NSString *_askToBuyApprovalPrompt;
@@ -24,28 +22,28 @@
     BOOL inAskToBuyApprovalFlow;
 }
 
-@property(getter=_ignoresExpectedClientsProtocol,setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
-@property(copy) SUUIAppearance * appearance;
-@property(copy) NSString * askToBuyApprovalPrompt;
-@property(copy) NSString * clientIdentifier;
-@property(copy) UIColor * darkKeyColor;
-@property <SUClientInterfaceDelegate> * delegate;
+@property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
+@property (copy) SUUIAppearance *appearance;
+@property (nonatomic, copy) NSString *askToBuyApprovalPrompt;
+@property (copy) NSString *clientIdentifier;
+@property (nonatomic, copy) UIColor *darkKeyColor;
+@property (nonatomic) <SUClientInterfaceDelegate> *delegate;
 @property BOOL inAskToBuyApprovalFlow;
-@property(copy) UIColor * lightKeyColor;
-@property(copy) NSString * localStoragePath;
-@property(readonly) SUPreviewOverlayViewController * previewOverlay;
-@property(retain) SUPurchaseManager * purchaseManager;
-@property(retain) SUQueueSessionManager * queueSessionManager;
-@property(readonly) SUTabBarController * tabBarController;
-@property(copy) NSString * userAgent;
-@property(retain) SUViewControllerFactory * viewControllerFactory;
+@property (nonatomic, copy) UIColor *lightKeyColor;
+@property (copy) NSString *localStoragePath;
+@property (nonatomic, readonly) SUPreviewOverlayViewController *previewOverlay;
+@property (retain) SUPurchaseManager *purchaseManager;
+@property (retain) SUQueueSessionManager *queueSessionManager;
+@property (nonatomic, readonly) SUTabBarController *tabBarController;
+@property (copy) NSString *userAgent;
+@property (retain) SUViewControllerFactory *viewControllerFactory;
 @property BOOL wasLaunchedFromLibrary;
 
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)_dismissModalViewControllerFromViewController:(id)arg1 withTransition:(int)arg2;
-- (void)_dismissViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)_dismissViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_dispatchOnPageResponseWithData:(id)arg1 response:(id)arg2;
-- (void)_dispatchXEvent:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)_dispatchXEvent:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_exitStoreWithReason:(int)arg1;
 - (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
 - (BOOL)_ignoresExpectedClientsProtocol;

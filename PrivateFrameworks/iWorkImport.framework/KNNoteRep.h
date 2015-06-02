@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSDContainerInfo>, NSString, TSWPRep;
-
 @interface KNNoteRep : TSDRep <TSDContainerRep, TSWPStorageObserver> {
     TSWPRep *mContainedRep;
 }
 
-@property(readonly) TSWPRep * containedRep;
-@property(readonly) NSObject<TSDContainerInfo> * containerInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSWPRep *containedRep;
+@property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;

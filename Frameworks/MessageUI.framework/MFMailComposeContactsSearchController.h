@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeContactsSearchControllerDelegate>, MFContactsSearchManager, MFContactsSearchResultsModel, NSNumber, NSString;
-
 @interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer> {
     NSNumber *_corecipientSearchTaskID;
     <MFMailComposeContactsSearchControllerDelegate> *_delegate;
@@ -14,12 +12,12 @@
     unsigned int _waitingOnSearchResultsCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MFMailComposeContactsSearchControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSNumber * taskID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MFMailComposeContactsSearchControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *taskID;
 
 - (void)_cancelSearchAndNotify:(BOOL)arg1;
 - (void)_finishSearch;

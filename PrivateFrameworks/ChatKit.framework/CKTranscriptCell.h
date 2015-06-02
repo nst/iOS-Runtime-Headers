@@ -8,9 +8,9 @@
     BOOL _wantsDrawerLayout;
 }
 
-@property float drawerPercentRevealed;
-@property BOOL orientation;
-@property BOOL wantsDrawerLayout;
+@property (nonatomic) float drawerPercentRevealed;
+@property (nonatomic) BOOL orientation;
+@property (nonatomic) BOOL wantsDrawerLayout;
 
 - (void)configureForChatItem:(id)arg1;
 - (float)drawerPercentRevealed;
@@ -20,9 +20,9 @@
 - (void)layoutSubviewsForContents;
 - (void)layoutSubviewsForDrawer;
 - (BOOL)orientation;
-- (void)performInsertion:(id)arg1;
-- (void)performReload:(id)arg1 completion:(id)arg2;
-- (void)performRemoval:(id)arg1;
+- (void)performInsertion:(id /* block */)arg1;
+- (void)performReload:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)performRemoval:(id /* block */)arg1;
 - (void)setDrawerPercentRevealed:(float)arg1;
 - (void)setOrientation:(BOOL)arg1;
 - (void)setWantsDrawerLayout:(BOOL)arg1;

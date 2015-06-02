@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioArtworkCollection, RadioSeedMetadata;
-
 @interface RadioLikeBanItem : NSObject <NSCopying, NSMutableCopying> {
     long long _albumID;
     RadioArtworkCollection *_artworkCollection;
@@ -13,12 +11,12 @@
     int _type;
 }
 
-@property(readonly) long long albumID;
-@property(readonly) RadioArtworkCollection * artworkCollection;
-@property(readonly) BOOL isSeed;
-@property(copy,readonly) RadioSeedMetadata * seedMetadata;
-@property(readonly) long long storeID;
-@property(readonly) int type;
+@property (nonatomic, readonly) long long albumID;
+@property (nonatomic, readonly) RadioArtworkCollection *artworkCollection;
+@property (nonatomic, readonly) BOOL isSeed;
+@property (nonatomic, readonly, copy) RadioSeedMetadata *seedMetadata;
+@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (long long)albumID;

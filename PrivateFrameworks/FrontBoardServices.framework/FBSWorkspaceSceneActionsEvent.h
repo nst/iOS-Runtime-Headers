@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSSet;
-
 @interface FBSWorkspaceSceneActionsEvent : FBSWorkspaceSceneEvent {
     NSSet *_actions;
 }
 
-@property(copy) NSSet * actions;
+@property (nonatomic, copy) NSSet *actions;
 
 - (id)actions;
 - (void)dealloc;

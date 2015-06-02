@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface TSTCellStyle : TSSStyle <TSDMixing> {
-}
+@interface TSTCellStyle : TSSStyle <TSDMixing>
 
 + (void)initDefaultPropertyMap:(id)arg1 forTableArea:(unsigned int)arg2 presetID:(unsigned int)arg3 colors:(id)arg4 alternate:(int)arg5;
 + (id)nonEmphasisCellProperties;

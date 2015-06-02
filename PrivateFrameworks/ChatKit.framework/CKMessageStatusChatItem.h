@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString;
-
 @interface CKMessageStatusChatItem : CKChatItem {
     struct CGSize { 
         float width; 
@@ -19,11 +17,11 @@
     NSAttributedString *_transcriptButtonText;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } buttonSize;
-@property(getter=isButtonSizeLoaded) BOOL buttonSizeLoaded;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonTextAlignmentInsets;
-@property(readonly) int buttonType;
-@property(copy) NSAttributedString * transcriptButtonText;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } buttonSize;
+@property (getter=isButtonSizeLoaded, nonatomic) BOOL buttonSizeLoaded;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonTextAlignmentInsets;
+@property (nonatomic, readonly) int buttonType;
+@property (nonatomic, copy) NSAttributedString *transcriptButtonText;
 
 + (id)thePastDateFormatter;
 + (id)thisWeekRelativeDateFormatter;

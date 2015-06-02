@@ -2,22 +2,14 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _PUAirplayRoutesAvailableCallbackBlock : _PUWeakReferenceHolder {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callbackBlock;
-
+    id /* block */ _callbackBlock;
 }
 
-@property(copy) id callbackBlock;
+@property (nonatomic, copy) id /* block */ callbackBlock;
 
 - (void).cxx_destruct;
-- (id)callbackBlock;
-- (void)setCallbackBlock:(id)arg1;
+- (id /* block */)callbackBlock;
+- (void)setCallbackBlock:(id /* block */)arg1;
 
 @end

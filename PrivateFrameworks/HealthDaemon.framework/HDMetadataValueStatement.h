@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSDictionary;
-
 @interface HDMetadataValueStatement : HDSQLiteQueryStatement {
     NSDictionary *_propertySetters;
 }

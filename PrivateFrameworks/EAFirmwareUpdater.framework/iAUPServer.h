@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/EAFirmwareUpdater
  */
 
-@class <iAUPServerDelegate>, FirmwareBundle, NSMutableData;
-
 @interface iAUPServer : NSObject {
     <iAUPServerDelegate> *_delegate;
     BOOL _escapeInProgress;
@@ -13,11 +11,11 @@
     NSMutableData *_telegramDataIn;
     unsigned int _telegramLength;
     FirmwareBundle *firmwareBundle;
-    unsigned short objectBlockTransferSizes[4];
+    unsigned short objectBlockTransferSizes;
 }
 
-@property <iAUPServerDelegate> * delegate;
-@property(retain) FirmwareBundle * firmwareBundle;
+@property <iAUPServerDelegate> *delegate;
+@property (retain) FirmwareBundle *firmwareBundle;
 
 + (id)sharedServer;
 

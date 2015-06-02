@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RURadioTheme : MPUTheme {
-}
+@interface RURadioTheme : MPUTheme
 
 + (id)miniPlayerEmptyStationPlaceholderImage;
 

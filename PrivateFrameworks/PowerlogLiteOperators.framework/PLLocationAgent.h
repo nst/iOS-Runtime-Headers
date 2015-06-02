@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLCFNotificationOperatorComposition;
-
 @interface PLLocationAgent : PLAgent {
     PLCFNotificationOperatorComposition *_appStatusChangedNotification;
     PLCFNotificationOperatorComposition *_techStatusChangedNotification;
 }
 
-@property(retain) PLCFNotificationOperatorComposition * appStatusChangedNotification;
-@property(retain) PLCFNotificationOperatorComposition * techStatusChangedNotification;
+@property (retain) PLCFNotificationOperatorComposition *appStatusChangedNotification;
+@property (retain) PLCFNotificationOperatorComposition *techStatusChangedNotification;
 
 + (id)accountingGroupDefinitions;
 + (id)bundleIdFromBundlePath:(id)arg1;

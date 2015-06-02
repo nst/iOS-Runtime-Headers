@@ -2,29 +2,27 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentCalendarItem, EKRecurrenceEnd, NSArray, NSDate, NSString;
-
 @interface EKPersistentRecurrenceRule : EKPersistentObject <NSCopying> {
     id _helper;
     EKRecurrenceEnd *_recurrenceEnd;
 }
 
-@property(readonly) NSString * UUID;
-@property(readonly) NSDate * cachedEndDate;
-@property(readonly) NSString * calendarIdentifier;
-@property unsigned int count;
-@property(copy) NSArray * daysOfTheMonth;
-@property(copy) NSArray * daysOfTheWeek;
-@property(copy) NSArray * daysOfTheYear;
-@property(copy) NSDate * endDate;
-@property int firstDayOfTheWeek;
-@property int frequency;
-@property int interval;
-@property(copy) NSArray * monthsOfTheYear;
-@property(retain) EKPersistentCalendarItem * owner;
-@property(copy) NSArray * setPositions;
-@property(readonly) BOOL shouldPinMonthDays;
-@property(copy) NSArray * weeksOfTheYear;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, readonly) NSDate *cachedEndDate;
+@property (nonatomic, readonly) NSString *calendarIdentifier;
+@property (nonatomic) unsigned int count;
+@property (nonatomic, copy) NSArray *daysOfTheMonth;
+@property (nonatomic, copy) NSArray *daysOfTheWeek;
+@property (nonatomic, copy) NSArray *daysOfTheYear;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic) int firstDayOfTheWeek;
+@property (nonatomic) int frequency;
+@property (nonatomic) int interval;
+@property (nonatomic, copy) NSArray *monthsOfTheYear;
+@property (nonatomic, retain) EKPersistentCalendarItem *owner;
+@property (nonatomic, copy) NSArray *setPositions;
+@property (nonatomic, readonly) BOOL shouldPinMonthDays;
+@property (nonatomic, copy) NSArray *weeksOfTheYear;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;

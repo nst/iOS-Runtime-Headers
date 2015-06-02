@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUComposeTextFieldConfiguration : NSObject {
     struct UIEdgeInsets { 
         float top; 
@@ -18,12 +16,12 @@
     NSString *_value;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
-@property(retain) NSString * label;
-@property unsigned int maxLength;
-@property(retain) NSString * placeholder;
-@property(getter=isRequired) BOOL required;
-@property(retain) NSString * value;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic) unsigned int maxLength;
+@property (nonatomic, retain) NSString *placeholder;
+@property (getter=isRequired, nonatomic) BOOL required;
+@property (nonatomic, retain) NSString *value;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
 - (void)dealloc;

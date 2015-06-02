@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVPlayerItemErrorLogEvent, NSDate, NSString;
-
 @interface MPMovieErrorLogEvent : NSObject <NSCopying> {
     AVPlayerItemErrorLogEvent *_event;
 }
 
-@property(readonly) NSString * URI;
-@property(readonly) NSDate * date;
-@property(readonly) NSString * errorComment;
-@property(readonly) NSString * errorDomain;
-@property(readonly) int errorStatusCode;
-@property(readonly) NSString * playbackSessionID;
-@property(readonly) NSString * serverAddress;
+@property (nonatomic, readonly) NSString *URI;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSString *errorComment;
+@property (nonatomic, readonly) NSString *errorDomain;
+@property (nonatomic, readonly) int errorStatusCode;
+@property (nonatomic, readonly) NSString *playbackSessionID;
+@property (nonatomic, readonly) NSString *serverAddress;
 
 - (void).cxx_destruct;
 - (id)URI;

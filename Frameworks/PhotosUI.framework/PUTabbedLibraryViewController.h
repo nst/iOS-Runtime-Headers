@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMutableDictionary, NSMutableIndexSet, NSString, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, UINavigationController;
-
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
     NSMutableIndexSet *_everDisplayedContentModes;
     NSMutableDictionary *_filteredAlbumListsByContentMode;
@@ -14,13 +12,13 @@
     PUMomentsZoomLevelManager *_zoomLevelManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int selectedContentMode;
-@property(readonly) UINavigationController * selectedNavigationController;
-@property(retain) PUSessionInfo * sessionInfo;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int selectedContentMode;
+@property (nonatomic, readonly) UINavigationController *selectedNavigationController;
+@property (nonatomic, retain) PUSessionInfo *sessionInfo;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (void)initialize;
@@ -32,11 +30,11 @@
 - (int)_contentModeForAlbum:(struct NSObject { Class x1; }*)arg1;
 - (int)_contentModeForNavigationController:(id)arg1;
 - (void)_didFinishPostingNotifications:(id)arg1;
-- (void)_enumerateViewControllersWithBlock:(id)arg1;
+- (void)_enumerateViewControllersWithBlock:(id /* block */)arg1;
 - (id)_existingNavigationControllerForContentMode:(int)arg1;
 - (BOOL)_isNavigationControllerBadged:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
-- (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 initiallyHidden:(BOOL)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 initiallyHidden:(BOOL)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)_navigateToAsset:(id)arg1 andPerformAction:(int)arg2 inAlbum:(struct NSObject { Class x1; }*)arg3 animated:(BOOL)arg4;
 - (BOOL)_navigateToDefaultLocationInNavigationController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_navigateToRootOfCurrentTabAnimated:(BOOL)arg1;
@@ -61,21 +59,21 @@
 - (void)dealloc;
 - (id)initWithSpec:(id)arg1;
 - (void)invitationRecordsDidChange:(id)arg1;
-- (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)navigateToAsset:(id)arg1 animated:(BOOL)arg2;
 - (void)navigateToAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
-- (void)navigateToCloudFeedAsset:(id)arg1 completion:(id)arg2;
-- (void)navigateToCloudFeedComment:(id)arg1 completion:(id)arg2;
-- (void)navigateToCloudFeedWithCompletion:(id)arg1;
+- (void)navigateToCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToCloudFeedWithCompletion:(id /* block */)arg1;
 - (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(BOOL)arg3;
-- (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
 - (void)navigateToPhotosContentBottomAnimated:(BOOL)arg1;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)navigateToRevealAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
-- (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id)arg2;
-- (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id)arg2;
-- (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id)arg2;
+- (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;

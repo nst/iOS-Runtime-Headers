@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class UIImageView;
-
 @interface AVUnsupportedContentIndicatorView : UIView {
     UIImageView *_imageView;
 }

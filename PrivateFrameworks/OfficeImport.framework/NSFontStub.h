@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface NSFontStub : NSObject {
-}
+@interface NSFontStub : NSObject
 
 @end

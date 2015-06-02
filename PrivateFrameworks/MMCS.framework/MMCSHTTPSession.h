@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MMCS.framework/MMCS
  */
 
-@class NSMutableDictionary, NSOperationQueue, NSString, NSURLSession, NSURLSessionConfiguration;
-
 @interface MMCSHTTPSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     NSMutableDictionary *_contextsForTasks;
     BOOL _isBackground;
@@ -14,26 +12,26 @@
     NSURLSessionConfiguration *_urlSessionConfiguration;
 }
 
-@property(retain) NSMutableDictionary * contextsForTasks;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *contextsForTasks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL isBackground;
-@property(retain) NSOperationQueue * operationQueue;
-@property(retain) NSString * sessionConfigurationId;
-@property(retain) NSString * sessionName;
-@property(readonly) Class superclass;
-@property(retain) NSURLSession * urlSession;
-@property(retain) NSURLSessionConfiguration * urlSessionConfiguration;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) NSString *sessionConfigurationId;
+@property (nonatomic, retain) NSString *sessionName;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSURLSession *urlSession;
+@property (nonatomic, retain) NSURLSessionConfiguration *urlSessionConfiguration;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id)arg4;
-- (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id)arg4;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
-- (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (id)contextsForTasks;
 - (id)dataTaskWithRequest:(id)arg1 uuid:(id)arg2 forHTTPContext:(id)arg3;
 - (id)description;

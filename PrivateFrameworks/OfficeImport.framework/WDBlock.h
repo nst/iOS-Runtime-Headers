@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDText;
-
 @interface WDBlock : NSObject {
     WDText *mText;
 }

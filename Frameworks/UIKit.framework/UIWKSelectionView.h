@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView<UIWKInteractionViewProtocol>, UIWebSelectionHandle;
-
 @interface UIWKSelectionView : UIWebSelectionView {
     UIWebSelectionHandle *_handle;
     UIView<UIWKInteractionViewProtocol> *_interactionView;

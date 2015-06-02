@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AADeviceProvisioningSession : NSObject {
     struct OpaqueCFHTTPCookieStorage { } *_cookieStorageRef;
     NSString *_dsid;

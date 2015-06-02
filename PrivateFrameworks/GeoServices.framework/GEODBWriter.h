@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GEODBWriter : NSObject {
     BOOL _closed;
     unsigned long long _databaseSize;
@@ -41,9 +39,9 @@
 }
 
 @property BOOL closed;
-@property(readonly) unsigned long long databaseSize;
-@property unsigned long long maxDatabaseSize;
-@property(readonly) NSString * path;
+@property (nonatomic, readonly) unsigned long long databaseSize;
+@property (nonatomic) unsigned long long maxDatabaseSize;
+@property (nonatomic, readonly) NSString *path;
 
 - (void)_assertDatabaseSize;
 - (void)_closeDB;
@@ -70,7 +68,7 @@
 - (void)_writeVersion;
 - (void)addData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 edition:(unsigned int)arg3 set:(unsigned int)arg4 provider:(unsigned int)arg5 etag:(id)arg6;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
-- (void)calculateFreeableSizeWithHandler:(id)arg1 onQueue:(id)arg2;
+- (void)calculateFreeableSizeWithHandler:(id /* block */)arg1 onQueue:(id)arg2;
 - (BOOL)closed;
 - (unsigned long long)databaseSize;
 - (void)dealloc;
@@ -81,12 +79,12 @@
 - (unsigned long long)maxDatabaseSize;
 - (id)path;
 - (id)pendingWriteForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)pendingWritesForKeys:(id)arg1 handler:(id)arg2;
+- (void)pendingWritesForKeys:(id)arg1 handler:(id /* block */)arg2;
 - (BOOL)prepareSingleStatement:(struct sqlite3_stmt {}**)arg1 forSql:(id)arg2;
 - (void)setClosed:(BOOL)arg1;
 - (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2 onQueue:(id)arg3;
+- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2 onQueue:(id)arg3;
 
 @end

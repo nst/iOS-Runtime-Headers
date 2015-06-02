@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSMutableDictionary;
-
 @interface ACDQueueDictionary : NSObject {
     NSMutableDictionary *_allQueuesByID;
 }

@@ -2,39 +2,27 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PFZlibDataDecompressionOptions : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _createBuffer;
-
+    id /* block */ _createBuffer;
     BOOL _decompressAllAtOnce;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _growData;
-
+    id /* block */ _growData;
     int _windowBits;
 }
 
-@property(copy) id createBuffer;
-@property BOOL decompressAllAtOnce;
-@property(copy) id growData;
-@property int windowBits;
+@property (nonatomic, copy) id /* block */ createBuffer;
+@property (nonatomic) BOOL decompressAllAtOnce;
+@property (nonatomic, copy) id /* block */ growData;
+@property (nonatomic) int windowBits;
 
 + (id)defaultOptions;
 
 - (void).cxx_destruct;
-- (id)createBuffer;
+- (id /* block */)createBuffer;
 - (BOOL)decompressAllAtOnce;
-- (id)growData;
-- (void)setCreateBuffer:(id)arg1;
+- (id /* block */)growData;
+- (void)setCreateBuffer:(id /* block */)arg1;
 - (void)setDecompressAllAtOnce:(BOOL)arg1;
-- (void)setGrowData:(id)arg1;
+- (void)setGrowData:(id /* block */)arg1;
 - (void)setWindowBits:(int)arg1;
 - (int)windowBits;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface EKPersistentChangeStoreRowInfo : NSObject {
     NSString *_clientIdentifier;
     int _consumedSequenceNumber;
 }
 
-@property(retain) NSString * clientIdentifier;
-@property int consumedSequenceNumber;
+@property (nonatomic, retain) NSString *clientIdentifier;
+@property (nonatomic) int consumedSequenceNumber;
 
 - (id)clientIdentifier;
 - (int)consumedSequenceNumber;

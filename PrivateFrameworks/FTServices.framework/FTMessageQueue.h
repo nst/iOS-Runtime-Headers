@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class <FTMessageQueueDelegate>, IDSBaseMessage, NSArray, NSMutableArray;
-
 @interface FTMessageQueue : NSObject {
     NSMutableArray *_addDates;
     <FTMessageQueueDelegate> *_delegate;
     NSMutableArray *_queue;
 }
 
-@property(retain) NSMutableArray * _addDates;
-@property(retain) NSMutableArray * _queue;
-@property(readonly) int count;
-@property <FTMessageQueueDelegate> * delegate;
-@property(readonly) NSArray * messages;
-@property(readonly) IDSBaseMessage * topMessage;
+@property (retain) NSMutableArray *_addDates;
+@property (retain) NSMutableArray *_queue;
+@property (readonly) int count;
+@property <FTMessageQueueDelegate> *delegate;
+@property (readonly) NSArray *messages;
+@property (readonly) IDSBaseMessage *topMessage;
 
 - (id)_addDates;
 - (void)_clearTimeout;

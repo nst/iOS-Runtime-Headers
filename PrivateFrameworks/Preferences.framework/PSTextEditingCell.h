@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSTextEditingCell : UITableViewCell {
-}
+@interface PSTextEditingCell : UITableViewCell
 
 - (void)layoutSubviews;
 

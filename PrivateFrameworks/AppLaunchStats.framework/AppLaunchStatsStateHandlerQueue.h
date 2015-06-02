@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSMutableArray;
-
 @interface AppLaunchStatsStateHandlerQueue : NSObject <DuetLoggerProtocol> {
     NSMutableArray *appForecastHandlerQueue;
     NSMutableArray *bgDataReadHandlerQueue;
@@ -22,21 +20,21 @@
     NSMutableArray *trendHandlerQueue;
 }
 
-@property(readonly) NSMutableArray * appForecastHandlerQueue;
-@property(readonly) NSMutableArray * bgDataReadHandlerQueue;
-@property(readonly) NSMutableArray * bgNDISCDataReadHandlerQueue;
-@property(readonly) NSMutableArray * dataBudgetHandlerQueue;
-@property(readonly) NSMutableArray * dataForecastHandlerQueue;
-@property(readonly) NSMutableArray * dataReadHandlerQueue;
-@property(readonly) NSMutableArray * databaseAgeHandlerQueue;
-@property(readonly) NSMutableArray * noprewarmListHandlerQueue;
-@property(readonly) NSMutableArray * ok2LaunchHandlerQueue;
-@property(readonly) NSMutableArray * powerFetchBudgetHandlerQueue;
-@property(readonly) NSMutableArray * powerForecastHandlerQueue;
-@property(readonly) NSMutableArray * powerPushBudgetHandlerQueue;
-@property(readonly) NSMutableArray * queryHandlerQueue;
-@property(readonly) NSMutableArray * scoreHandlerQueue;
-@property(readonly) NSMutableArray * trendHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *appForecastHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *bgDataReadHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *bgNDISCDataReadHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *dataBudgetHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *dataForecastHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *dataReadHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *databaseAgeHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *noprewarmListHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *ok2LaunchHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *powerFetchBudgetHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *powerForecastHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *powerPushBudgetHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *queryHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *scoreHandlerQueue;
+@property (nonatomic, readonly) NSMutableArray *trendHandlerQueue;
 
 - (void).cxx_destruct;
 - (id)appForecastHandlerQueue;

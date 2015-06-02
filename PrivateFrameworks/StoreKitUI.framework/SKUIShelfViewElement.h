@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIShelfViewElement : SKUIViewElement {
     int _numberOfRows;
     NSString *_slideshowTitle;
 }
 
-@property(readonly) int numberOfRows;
-@property(readonly) NSString * slideshowTitle;
+@property (nonatomic, readonly) int numberOfRows;
+@property (nonatomic, readonly) NSString *slideshowTitle;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
-- (void)enumerateChildrenUsingBlock:(id)arg1;
+- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (int)numberOfRows;
 - (int)pageComponentType;

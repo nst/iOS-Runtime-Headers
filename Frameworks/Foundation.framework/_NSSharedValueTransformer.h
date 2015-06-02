@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSSharedValueTransformer : NSValueTransformer {
-}
+@interface _NSSharedValueTransformer : NSValueTransformer
 
 - (BOOL)_isBooleanTransformer;
 - (BOOL)_isDeallocating;

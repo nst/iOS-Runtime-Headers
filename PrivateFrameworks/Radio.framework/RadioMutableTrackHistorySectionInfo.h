@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSString;
+@interface RadioMutableTrackHistorySectionInfo : RadioTrackHistorySectionInfo
 
-@interface RadioMutableTrackHistorySectionInfo : RadioTrackHistorySectionInfo {
-}
-
-@property(retain) NSString * indexTitle;
-@property(retain) NSString * name;
-@property unsigned int numberOfObjects;
-@property(retain) NSArray * objects;
+@property (nonatomic, retain) NSString *indexTitle;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned int numberOfObjects;
+@property (nonatomic, retain) NSArray *objects;
 
 - (void)setIndexTitle:(id)arg1;
 - (void)setName:(id)arg1;

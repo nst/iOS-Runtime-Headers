@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCEReferenceTrackerDelegate>, NSLock, NSMutableArray, NSString, TSCECalculationEngine;
-
 @interface TSCEReferenceTracker : TSPObject <TSCEFormulaOwning> {
     TSCECalculationEngine *mCalculationEngine;
     <TSCEReferenceTrackerDelegate> *mDelegate;
@@ -22,11 +20,11 @@
     struct __CFUUID { } *mUUID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <TSCEReferenceTrackerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <TSCEReferenceTrackerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

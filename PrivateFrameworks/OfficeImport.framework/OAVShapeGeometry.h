@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVShapeGeometry : NSObject {
-}
+@interface OAVShapeGeometry : NSObject
 
 + (struct OADAdjustCoord { BOOL x1; int x2; })readAdjustCoord:(id)arg1;
 + (void)readAdjustValuesFromManager:(id)arg1 toGeometry:(id)arg2;

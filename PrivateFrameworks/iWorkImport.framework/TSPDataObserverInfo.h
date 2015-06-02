@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class TSPData;
-
 @interface TSPDataObserverInfo : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     TSPData *_data;
     BOOL _isInternalObserver;
     id _observer;
     unsigned int _options;
 }
 
-@property(readonly) BOOL isInternalObserver;
-@property(readonly) unsigned int options;
+@property (nonatomic, readonly) BOOL isInternalObserver;
+@property (nonatomic, readonly) unsigned int options;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithObserver:(id)arg1 data:(id)arg2 options:(unsigned int)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id)arg5;
+- (id)initWithObserver:(id)arg1 data:(id)arg2 options:(unsigned int)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)isInternalObserver;
 - (void)notifyWithStatus:(int)arg1 info:(id)arg2;
 - (unsigned int)options;

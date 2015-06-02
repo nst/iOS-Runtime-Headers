@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedSubscriptionSectionInfo : PUFeedAssetsSectionInfo {
-}
+@interface PUFeedSubscriptionSectionInfo : PUFeedAssetsSectionInfo
 
 - (int)sectionType;
 - (void)updateFromCloudFeedEntry;

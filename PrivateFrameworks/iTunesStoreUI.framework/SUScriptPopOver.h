@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptViewController, UIPopoverController, UIViewController;
-
 @interface SUScriptPopOver : SUScriptObject {
     UIViewController *_contentViewController;
     BOOL _ignoreDismiss;
 }
 
-@property(readonly) UIViewController * activeViewController;
+@property (readonly) UIViewController *activeViewController;
 @property int backgroundStyle;
-@property(readonly) int backgroundStyleBlack;
-@property(readonly) int backgroundStyleClear;
-@property(readonly) int backgroundStyleCream;
-@property(readonly) int backgroundStyleDefault;
-@property(readonly) int backgroundStyleShare;
+@property (readonly) int backgroundStyleBlack;
+@property (readonly) int backgroundStyleClear;
+@property (readonly) int backgroundStyleCream;
+@property (readonly) int backgroundStyleDefault;
+@property (readonly) int backgroundStyleShare;
 @property float contentHeight;
 @property float contentWidth;
-@property(retain) UIPopoverController * nativePopoverController;
-@property(readonly) UIPopoverController * presentablePopoverController;
-@property(readonly) SUScriptViewController * presentingViewController;
-@property(retain) SUScriptViewController * viewController;
+@property (nonatomic, retain) UIPopoverController *nativePopoverController;
+@property (nonatomic, readonly) UIPopoverController *presentablePopoverController;
+@property (readonly) SUScriptViewController *presentingViewController;
+@property (retain) SUScriptViewController *viewController;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

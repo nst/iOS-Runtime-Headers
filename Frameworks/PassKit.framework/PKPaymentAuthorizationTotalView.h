@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSLayoutConstraint, PKPaymentAuthorizationLayout, UILabel, UIView;
-
 @interface PKPaymentAuthorizationTotalView : UIView {
     NSLayoutConstraint *_labelBaselineConstraint;
     UILabel *_labelView;
@@ -15,8 +13,8 @@
     UILabel *_valueView;
 }
 
-@property PKPaymentAuthorizationLayout * layout;
-@property int style;
+@property (nonatomic) PKPaymentAuthorizationLayout *layout;
+@property (nonatomic) int style;
 
 - (void)_createSubviews;
 - (float)_initialLeading;

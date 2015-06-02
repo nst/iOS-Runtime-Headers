@@ -2,24 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLGeocoder, City, _MKLocationShifter;
-
 @interface TWCLocationUpdater : TWCUpdater {
     City *_currentCity;
     CLGeocoder *_geocoder;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _localWeatherHandler;
-
+    id /* block */ _localWeatherHandler;
     _MKLocationShifter *_locationShifter;
 }
 
-@property(retain) City * currentCity;
+@property (nonatomic, retain) City *currentCity;
 
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
@@ -39,6 +29,6 @@
 - (void)parsedResultCity:(id)arg1;
 - (void)setCurrentCity:(id)arg1;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
-- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 
 @end

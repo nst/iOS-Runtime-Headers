@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMMessage, NSArray;
+@interface CKMessagePartChatItem : CKBalloonChatItem
 
-@interface CKMessagePartChatItem : CKBalloonChatItem {
-}
-
-@property(readonly) BOOL color;
-@property(retain,readonly) IMMessage * message;
-@property(copy,readonly) NSArray * pasteboardItems;
+@property (nonatomic, readonly) BOOL color;
+@property (nonatomic, readonly, retain) IMMessage *message;
+@property (nonatomic, readonly, copy) NSArray *pasteboardItems;
 
 - (BOOL)canCopy;
 - (BOOL)canForward;

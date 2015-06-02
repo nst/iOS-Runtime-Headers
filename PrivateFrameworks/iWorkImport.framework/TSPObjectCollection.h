@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSPObjectCollection : TSPObject {
     NSArray *_objects;
 }
 
-@property(readonly) NSArray * objects;
+@property (nonatomic, readonly) NSArray *objects;
 
 - (void).cxx_destruct;
 - (id)initFromUnarchiver:(id)arg1;

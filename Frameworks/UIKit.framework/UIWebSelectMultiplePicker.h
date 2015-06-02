@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray, NSString;
-
 @interface UIWebSelectMultiplePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
     NSArray *_cachedItems;
     float _fontSize;
@@ -15,13 +13,13 @@
     int _textAlignment;
 }
 
-@property(retain) NSArray * _cachedItems;
-@property(retain) DOMHTMLSelectElement * _selectionNode;
-@property(retain) <UIWebSelectedItemPrivate> * _singleSelectionItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSArray *_cachedItems;
+@property (nonatomic, retain) DOMHTMLSelectElement *_selectionNode;
+@property (nonatomic, retain) <UIWebSelectedItemPrivate> *_singleSelectionItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_cachedItems;
 - (int)_itemIndexForRowIndex:(int)arg1;

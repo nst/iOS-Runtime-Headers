@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, NSString, UIButton, UIImage, UIImageView, UILabel;
-
 @interface CKTranscriptRecipientCell : UITableViewCell {
     UIImage *_contactImage;
     UIImageView *_contactImageView;
@@ -24,23 +22,23 @@
     NSMutableArray *_visibleButtons;
 }
 
-@property(retain) UIImage * contactImage;
-@property(retain) UIImageView * contactImageView;
-@property(copy) NSString * entityName;
-@property(retain) UIButton * facetimeVideoButton;
-@property(retain) UIButton * infoButton;
-@property(retain) UILabel * locationLabel;
-@property(copy) NSString * locationString;
-@property(retain) UIButton * mailButton;
-@property float margin;
-@property(retain) UILabel * nameLabel;
-@property(retain) UIButton * phoneButton;
-@property BOOL showFaceTimeVideoButton;
-@property BOOL showInfoButton;
-@property BOOL showMailButton;
-@property BOOL showPhoneButton;
-@property BOOL showsLocation;
-@property(retain) NSMutableArray * visibleButtons;
+@property (nonatomic, retain) UIImage *contactImage;
+@property (nonatomic, retain) UIImageView *contactImageView;
+@property (nonatomic, copy) NSString *entityName;
+@property (nonatomic, retain) UIButton *facetimeVideoButton;
+@property (nonatomic, retain) UIButton *infoButton;
+@property (nonatomic, retain) UILabel *locationLabel;
+@property (nonatomic, copy) NSString *locationString;
+@property (nonatomic, retain) UIButton *mailButton;
+@property (nonatomic) float margin;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UIButton *phoneButton;
+@property (nonatomic) BOOL showFaceTimeVideoButton;
+@property (nonatomic) BOOL showInfoButton;
+@property (nonatomic) BOOL showMailButton;
+@property (nonatomic) BOOL showPhoneButton;
+@property (nonatomic) BOOL showsLocation;
+@property (nonatomic, retain) NSMutableArray *visibleButtons;
 
 + (id)identifier;
 + (float)marginWidth;

@@ -2,24 +2,21 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSDictionary, NSString;
+@interface NSTask : NSObject
 
-@interface NSTask : NSObject {
-}
-
-@property(copy) NSArray * arguments;
-@property(copy) NSString * currentDirectoryPath;
-@property(copy) NSDictionary * environment;
-@property(copy) NSString * launchPath;
-@property(readonly) int processIdentifier;
+@property (copy) NSArray *arguments;
+@property (copy) NSString *currentDirectoryPath;
+@property (copy) NSDictionary *environment;
+@property (copy) NSString *launchPath;
+@property (readonly) int processIdentifier;
 @property int qualityOfService;
-@property(getter=isRunning,readonly) BOOL running;
-@property(retain) id standardError;
-@property(retain) id standardInput;
-@property(retain) id standardOutput;
-@property(copy) id terminationHandler;
-@property(readonly) int terminationReason;
-@property(readonly) int terminationStatus;
+@property (getter=isRunning, readonly) BOOL running;
+@property (retain) id standardError;
+@property (retain) id standardInput;
+@property (retain) id standardOutput;
+@property (copy) id /* block */ terminationHandler;
+@property (readonly) int terminationReason;
+@property (readonly) int terminationStatus;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)currentTaskDictionary;
@@ -45,14 +42,14 @@
 - (void)setStandardError:(id)arg1;
 - (void)setStandardInput:(id)arg1;
 - (void)setStandardOutput:(id)arg1;
-- (void)setTerminationHandler:(id)arg1;
+- (void)setTerminationHandler:(id /* block */)arg1;
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
 - (BOOL)suspend;
 - (int)suspendCount;
 - (void)terminate;
-- (id)terminationHandler;
+- (id /* block */)terminationHandler;
 - (int)terminationReason;
 - (int)terminationStatus;
 

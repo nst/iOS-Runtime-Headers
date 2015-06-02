@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDevice, AVCaptureSessionConfiguration, AVRunLoopCondition, AVWeakReference, FigCaptureSessionConfiguration, NSError, NSHashTable, NSMutableArray, NSString;
-
 @interface AVCaptureSessionInternal : NSObject {
     AVCaptureDevice *adjustingDeviceActiveFormat;
     BOOL adjustingVideoDeviceHDREnabled;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIStatusBarCorners, UIStatusBarStyleAttributes;
-
 @interface UIStatusBarBackgroundView : UIView {
     BOOL _glowEnabled;
     UIImageView *_glowView;

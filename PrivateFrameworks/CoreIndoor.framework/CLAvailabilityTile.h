@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class LocalizerParameters, NSMutableArray;
-
 @interface CLAvailabilityTile : PBCodable <NSCopying> {
     double _availabilityZScoreConfidenceInterval;
     struct { 
@@ -21,19 +19,19 @@
     NSMutableArray *_venues;
 }
 
-@property double availabilityZScoreConfidenceInterval;
-@property BOOL hasAvailabilityZScoreConfidenceInterval;
-@property BOOL hasLocationOfInterestMergeRadiusKM;
-@property(readonly) BOOL hasParameterOverrides;
-@property BOOL hasPreferPredictionWithinNActivityCycles;
-@property BOOL hasPrefetchMaxFloorCount;
-@property BOOL hasPrefetchRadiusKM;
-@property unsigned int locationOfInterestMergeRadiusKM;
-@property(retain) LocalizerParameters * parameterOverrides;
-@property unsigned int preferPredictionWithinNActivityCycles;
-@property unsigned int prefetchMaxFloorCount;
-@property unsigned int prefetchRadiusKM;
-@property(retain) NSMutableArray * venues;
+@property (nonatomic) double availabilityZScoreConfidenceInterval;
+@property (nonatomic) BOOL hasAvailabilityZScoreConfidenceInterval;
+@property (nonatomic) BOOL hasLocationOfInterestMergeRadiusKM;
+@property (nonatomic, readonly) BOOL hasParameterOverrides;
+@property (nonatomic) BOOL hasPreferPredictionWithinNActivityCycles;
+@property (nonatomic) BOOL hasPrefetchMaxFloorCount;
+@property (nonatomic) BOOL hasPrefetchRadiusKM;
+@property (nonatomic) unsigned int locationOfInterestMergeRadiusKM;
+@property (nonatomic, retain) LocalizerParameters *parameterOverrides;
+@property (nonatomic) unsigned int preferPredictionWithinNActivityCycles;
+@property (nonatomic) unsigned int prefetchMaxFloorCount;
+@property (nonatomic) unsigned int prefetchRadiusKM;
+@property (nonatomic, retain) NSMutableArray *venues;
 
 - (void).cxx_destruct;
 - (void)addVenues:(id)arg1;

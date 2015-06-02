@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFBoolean : NSNumber {
-}
+@interface __NSCFBoolean : NSNumber
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

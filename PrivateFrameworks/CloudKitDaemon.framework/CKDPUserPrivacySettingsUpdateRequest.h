@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPUserPrivacySettings, NSString;
-
 @interface CKDPUserPrivacySettingsUpdateRequest : PBRequest <NSCopying> {
     NSString *_bundleIdentifier;
     CKDPUserPrivacySettings *_userPrivacySettings;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(readonly) BOOL hasBundleIdentifier;
-@property(readonly) BOOL hasUserPrivacySettings;
-@property(retain) CKDPUserPrivacySettings * userPrivacySettings;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, readonly) BOOL hasBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasUserPrivacySettings;
+@property (nonatomic, retain) CKDPUserPrivacySettings *userPrivacySettings;
 
 + (id)options;
 

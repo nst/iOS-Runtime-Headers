@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSClass : NSObject {
-}
+@interface WBSClass : NSObject
 
 @end

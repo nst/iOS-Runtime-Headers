@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDatabase, NSArray;
-
 @interface ACDDatabaseInitializer : NSObject {
     NSArray *_accessKeys;
     NSArray *_accountTypes;

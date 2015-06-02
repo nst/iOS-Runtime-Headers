@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyAlertEditingCell : ABPropertyAlertCell {
-}
+@interface ABPropertyAlertEditingCell : ABPropertyAlertCell
 
 + (BOOL)wantsHorizontalLayout;
 

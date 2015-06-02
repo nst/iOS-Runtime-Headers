@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMOutlineState, OADTablePartStyle;
-
 @interface PMState : CMState {
     OADTablePartStyle *mCurrentRowStyle;
     CMOutlineState *mListState;

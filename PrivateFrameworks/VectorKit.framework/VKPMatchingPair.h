@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKPMatchingTree;
-
 @interface VKPMatchingPair : PBCodable <NSCopying> {
     unsigned long long _attributeValue;
     VKPMatchingTree *_subTree;
 }
 
-@property unsigned long long attributeValue;
-@property(retain) VKPMatchingTree * subTree;
+@property (nonatomic) unsigned long long attributeValue;
+@property (nonatomic, retain) VKPMatchingTree *subTree;
 
 - (unsigned long long)attributeValue;
 - (void)copyTo:(id)arg1;

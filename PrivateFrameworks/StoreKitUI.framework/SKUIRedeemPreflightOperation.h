@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, SKUIClientContext, SKUIRedeemConfiguration;
-
 @interface SKUIRedeemPreflightOperation : NSOperation {
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _loadsRedeemCodeMetadata;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _outputBlock;
-
+    id /* block */ _outputBlock;
     NSString *_redeemCode;
     SKUIRedeemConfiguration *_redeemConfiguration;
 }
 
 @property BOOL loadsRedeemCodeMetadata;
-@property(copy) id outputBlock;
-@property(retain) SKUIRedeemConfiguration * redeemConfiguration;
+@property (copy) id /* block */ outputBlock;
+@property (retain) SKUIRedeemConfiguration *redeemConfiguration;
 
 - (void).cxx_destruct;
 - (id)_authenticationContext;
@@ -33,10 +23,10 @@
 - (id)initWithClientContext:(id)arg1 redeemCode:(id)arg2;
 - (BOOL)loadsRedeemCodeMetadata;
 - (void)main;
-- (id)outputBlock;
+- (id /* block */)outputBlock;
 - (id)redeemConfiguration;
 - (void)setLoadsRedeemCodeMetadata:(BOOL)arg1;
-- (void)setOutputBlock:(id)arg1;
+- (void)setOutputBlock:(id /* block */)arg1;
 - (void)setRedeemConfiguration:(id)arg1;
 
 @end

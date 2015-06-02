@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, SCNMaterialProperty, SCNOrderedDictionary, SCNProgram, SCNShadableHelper;
-
 @interface SCNMaterial : NSObject <NSCopying, NSSecureCoding, SCNAnimatable, SCNShadable> {
     SCNMaterialProperty *_ambient;
     SCNOrderedDictionary *_animations;
@@ -36,32 +34,32 @@
     BOOL _writesToDepthBuffer;
 }
 
-@property(readonly) SCNMaterialProperty * ambient;
-@property int cullMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) SCNMaterialProperty * diffuse;
-@property(getter=isDoubleSided) BOOL doubleSided;
-@property(readonly) SCNMaterialProperty * emission;
-@property float fresnelExponent;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * lightingModelName;
-@property(getter=isLitPerPixel) BOOL litPerPixel;
-@property BOOL locksAmbientWithDiffuse;
-@property(readonly) SCNMaterialProperty * multiply;
-@property(copy) NSString * name;
-@property(readonly) SCNMaterialProperty * normal;
-@property(retain) SCNProgram * program;
-@property BOOL readsFromDepthBuffer;
-@property(readonly) SCNMaterialProperty * reflective;
-@property(copy) NSDictionary * shaderModifiers;
-@property float shininess;
-@property(readonly) SCNMaterialProperty * specular;
-@property(readonly) Class superclass;
-@property float transparency;
-@property int transparencyMode;
-@property(readonly) SCNMaterialProperty * transparent;
-@property BOOL writesToDepthBuffer;
+@property (nonatomic, readonly) SCNMaterialProperty *ambient;
+@property (nonatomic) int cullMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SCNMaterialProperty *diffuse;
+@property (getter=isDoubleSided, nonatomic) BOOL doubleSided;
+@property (nonatomic, readonly) SCNMaterialProperty *emission;
+@property (nonatomic) float fresnelExponent;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *lightingModelName;
+@property (getter=isLitPerPixel, nonatomic) BOOL litPerPixel;
+@property (nonatomic) BOOL locksAmbientWithDiffuse;
+@property (nonatomic, readonly) SCNMaterialProperty *multiply;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) SCNMaterialProperty *normal;
+@property (nonatomic, retain) SCNProgram *program;
+@property (nonatomic) BOOL readsFromDepthBuffer;
+@property (nonatomic, readonly) SCNMaterialProperty *reflective;
+@property (nonatomic, copy) NSDictionary *shaderModifiers;
+@property (nonatomic) float shininess;
+@property (nonatomic, readonly) SCNMaterialProperty *specular;
+@property (readonly) Class superclass;
+@property (nonatomic) float transparency;
+@property (nonatomic) int transparencyMode;
+@property (nonatomic, readonly) SCNMaterialProperty *transparent;
+@property (nonatomic) BOOL writesToDepthBuffer;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)accessInstanceVariablesDirectly;
@@ -107,8 +105,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (int)fillMode;
 - (float)fresnelExponent;
-- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
-- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
+- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)identifier;
 - (float)indexOfRefraction;
 - (id)init;

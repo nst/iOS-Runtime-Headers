@@ -24,20 +24,20 @@
     int _travelState;
 }
 
-@property int actionType;
-@property int alertType;
-@property double currentTimestamp;
-@property double eventTimestamp;
-@property BOOL hasActionType;
-@property BOOL hasAlertType;
-@property BOOL hasCurrentTimestamp;
-@property BOOL hasEventTimestamp;
-@property BOOL hasSessionID;
-@property BOOL hasTravelDuration;
-@property BOOL hasTravelState;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property double travelDuration;
-@property int travelState;
+@property (nonatomic) int actionType;
+@property (nonatomic) int alertType;
+@property (nonatomic) double currentTimestamp;
+@property (nonatomic) double eventTimestamp;
+@property (nonatomic) BOOL hasActionType;
+@property (nonatomic) BOOL hasAlertType;
+@property (nonatomic) BOOL hasCurrentTimestamp;
+@property (nonatomic) BOOL hasEventTimestamp;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasTravelDuration;
+@property (nonatomic) BOOL hasTravelState;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) double travelDuration;
+@property (nonatomic) int travelState;
 
 - (int)actionType;
 - (int)alertType;

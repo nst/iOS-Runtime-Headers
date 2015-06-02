@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSOrderedSet;
+@interface PLCloudFeedAssetsEntry : PLCloudFeedEntry
 
-@interface PLCloudFeedAssetsEntry : PLCloudFeedEntry {
-}
-
-@property(retain) NSOrderedSet * entryAssets;
-@property(readonly) NSMutableOrderedSet * mutableEntryAssets;
+@property (nonatomic, retain) NSOrderedSet *entryAssets;
+@property (nonatomic, readonly) NSMutableOrderedSet *mutableEntryAssets;
 
 + (id)entityName;
 

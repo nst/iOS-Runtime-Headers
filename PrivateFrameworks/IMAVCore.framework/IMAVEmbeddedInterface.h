@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@interface IMAVEmbeddedInterface : IMAVConferenceInterface {
-}
+@interface IMAVEmbeddedInterface : IMAVConferenceInterface
 
 + (void)updateCriticalState;
 

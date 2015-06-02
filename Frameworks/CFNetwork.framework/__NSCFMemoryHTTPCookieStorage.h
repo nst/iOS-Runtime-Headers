@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFMemoryHTTPCookieStorage : NSHTTPCookieStorage {
-}
+@interface __NSCFMemoryHTTPCookieStorage : NSHTTPCookieStorage
 
 + (void)initialize;
 

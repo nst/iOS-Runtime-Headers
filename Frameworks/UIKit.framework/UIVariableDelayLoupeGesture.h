@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder<UITextInput>;
-
 @interface UIVariableDelayLoupeGesture : UILongPressGestureRecognizer {
     UIResponder<UITextInput> *_textView;
 }
 
-@property UIResponder<UITextInput> * textView;
+@property UIResponder<UITextInput> *textView;
 
 - (void)invalidate;
 - (BOOL)isCloseToCaret;

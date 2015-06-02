@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, NSObject<OS_dispatch_source>, NSURL;
-
 @interface BRCFileCoordinator : NSFileCoordinator {
     BOOL _cancelled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _doneHandler;
-
+    id /* block */ _doneHandler;
     BOOL _isUpdateForReconnecting;
     BRCAccountSession *_session;
     unsigned long long _startStamp;
@@ -23,7 +13,7 @@
     NSURL *_url2;
 }
 
-@property BOOL isUpdateForReconnecting;
+@property (nonatomic) BOOL isUpdateForReconnecting;
 
 + (void)itemAtPath:(id)arg1 didBounceToName:(id)arg2;
 + (void)itemAtPath:(id)arg1 logicalFilename:(id)arg2 didMoveToPath:(id)arg3 logicalFilename:(id)arg4 hasContentUpdate:(BOOL)arg5;
@@ -31,10 +21,10 @@
 + (void)itemDidDisappearAtPath:(id)arg1 logicalFilename:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_obtainedCoordination:(id)arg1 url1:(id)arg2 url2:(id)arg3 handler:(id)arg4 fcHandler:(id)arg5 error:(id)arg6;
+- (void)_obtainedCoordination:(id)arg1 url1:(id)arg2 url2:(id)arg3 handler:(id /* block */)arg4 fcHandler:(id /* block */)arg5 error:(id)arg6;
 - (void)cancel;
 - (void)cancelAfter:(double)arg1;
-- (id)initWithSession:(id)arg1 cancelAfter:(double)arg2 doneHandler:(id)arg3;
+- (id)initWithSession:(id)arg1 cancelAfter:(double)arg2 doneHandler:(id /* block */)arg3;
 - (BOOL)isUpdateForReconnecting;
 - (void)scheduleDeleteOfItemAtURL:(id)arg1 target:(id)arg2;
 - (void)scheduleReadOfItemAtURL:(id)arg1 target:(id)arg2;

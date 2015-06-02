@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIThemeSchemaRendition;
-
 @interface CUIThemeSchemaPSDRenditionLayer : CUIThemeSchemaPSDLayer {
     CUIThemeSchemaRendition *rendition;
 }
 
-@property(retain) CUIThemeSchemaRendition * rendition;
+@property (nonatomic, retain) CUIThemeSchemaRendition *rendition;
 
 - (void)dealloc;
 - (id)rendition;

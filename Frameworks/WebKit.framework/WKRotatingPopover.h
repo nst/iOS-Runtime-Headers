@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKRotatingPopoverDelegate>, NSString, UIPopoverController, WKContentView;
-
 @interface WKRotatingPopover : NSObject <UIPopoverControllerDelegate> {
     <WKRotatingPopoverDelegate> *_dismissionDelegate;
     BOOL _isRotating;
@@ -17,13 +15,13 @@
     WKContentView *_view;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <WKRotatingPopoverDelegate> * dismissionDelegate;
-@property(readonly) unsigned int hash;
-@property(retain) UIPopoverController * popoverController;
-@property struct CGPoint { float x1; float x2; } presentationPoint;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <WKRotatingPopoverDelegate> *dismissionDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic) struct CGPoint { float x1; float x2; } presentationPoint;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSString, TSUPathSet, TSUTemporaryDirectory;
-
 @interface TSPDistributableFileManager : NSObject {
     TSUPathSet *_claimedPaths;
     NSMutableSet *_deletedIdentifiers;

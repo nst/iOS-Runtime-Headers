@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectID, NSString, NSURL;
-
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol> {
     NSURL *_URI;
     BOOL _alerted;
@@ -18,22 +16,22 @@
     int _type;
 }
 
-@property(retain) NSURL * URI;
-@property BOOL alerted;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct CGColor { }* dotColor;
-@property(retain) NSString * emailAddress;
-@property(retain) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property BOOL hiddenFromNotificationCenter;
-@property(retain) NSString * lastName;
-@property(retain) NSString * name;
-@property(readonly) BOOL needsAlert;
-@property(retain) EKObjectID * objectID;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property int type;
+@property (nonatomic, retain) NSURL *URI;
+@property (nonatomic) BOOL alerted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct CGColor { }*dotColor;
+@property (nonatomic, retain) NSString *emailAddress;
+@property (nonatomic, retain) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hiddenFromNotificationCenter;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) BOOL needsAlert;
+@property (nonatomic, retain) EKObjectID *objectID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) int type;
 
 - (id)URI;
 - (BOOL)alerted;

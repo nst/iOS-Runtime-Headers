@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUStreamWriteChannel>, NSError, NSObject<OS_dispatch_queue>;
-
 @interface TSPCGDataConsumer : NSObject {
     NSError *_error;
     <TSUStreamWriteChannel> *_writeChannel;

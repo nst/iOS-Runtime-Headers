@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSCalendar;
-
 @interface ICSDocument : NSObject {
     ICSCalendar *_calendar;
 }

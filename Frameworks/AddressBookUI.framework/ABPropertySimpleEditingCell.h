@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, UITextField;
-
 @interface ABPropertySimpleEditingCell : ABPropertyEditingCell <UITextFieldDelegate> {
     UITextField *_textField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) UITextField * textField;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITextField *textField;
 
 - (id)constantConstraints;
 - (void)dealloc;

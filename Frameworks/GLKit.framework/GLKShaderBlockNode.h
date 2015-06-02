@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKShaderBlockNode, NSMutableString, NSString;
-
 @interface GLKShaderBlockNode : NSObject <NSCopying, NSXMLParserDelegate> {
     NSMutableString *_blockText;
     GLKShaderBlockNode *_children;
@@ -22,22 +20,22 @@
     int _unrollCt;
 }
 
-@property(retain) NSMutableString * blockText;
-@property GLKShaderBlockNode * children;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int index;
-@property BOOL indexedMask;
-@property(copy) NSString * label;
-@property(copy) NSString * loopVar;
-@property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
-@property GLKShaderBlockNode * next;
-@property GLKShaderBlockNode * parent;
-@property int propertyClass;
-@property(readonly) Class superclass;
-@property int type;
-@property int unrollCt;
+@property (nonatomic, retain) NSMutableString *blockText;
+@property (nonatomic) GLKShaderBlockNode *children;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int index;
+@property (nonatomic) BOOL indexedMask;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *loopVar;
+@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
+@property (nonatomic) GLKShaderBlockNode *next;
+@property (nonatomic) GLKShaderBlockNode *parent;
+@property (nonatomic) int propertyClass;
+@property (readonly) Class superclass;
+@property (nonatomic) int type;
+@property (nonatomic) int unrollCt;
 
 + (void)buildUnrollNodeArray:(id)arg1 array:(id)arg2;
 + (id)copyTreeWithRoot:(id)arg1 parent:(id)arg2;

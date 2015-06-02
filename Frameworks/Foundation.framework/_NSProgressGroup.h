@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableSet, NSProgress, _NSProgressFraction;
-
 @interface _NSProgressGroup : NSObject {
     NSMutableSet *_children;
     _NSProgressFraction *_childrenFraction;

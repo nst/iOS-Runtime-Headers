@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray;
-
 @interface ML3DatabaseCachedRow : ML3DatabaseRow {
     NSArray *_arrayRepresentation;
 }

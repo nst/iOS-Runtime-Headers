@@ -2,40 +2,30 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <RemoteUIWebViewControllerDelegate>, NSString, UIToolbar, UIWebView, _UIBackdropView;
-
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
     <RemoteUIWebViewControllerDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _loadCompletion;
-
+    id /* block */ _loadCompletion;
     BOOL _scalesPageToFit;
     _UIBackdropView *_statusBarBackdrop;
     UIToolbar *_toolbar;
     UIWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RemoteUIWebViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL scalesPageToFit;
-@property(readonly) Class superclass;
-@property(readonly) UIToolbar * toolbar;
-@property(readonly) UIWebView * webView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RemoteUIWebViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL scalesPageToFit;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIToolbar *toolbar;
+@property (nonatomic, readonly) UIWebView *webView;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
 - (void)donePressed:(id)arg1;
 - (void)loadURL:(id)arg1;
-- (void)loadURL:(id)arg1 completion:(id)arg2;
+- (void)loadURL:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)scalesPageToFit;
 - (void)setDelegate:(id)arg1;
 - (void)setScalesPageToFit:(BOOL)arg1;

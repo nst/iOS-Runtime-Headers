@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAssetDownloadSession;
-
 @interface MPCloudAVURLAsset : AVURLAsset {
     AVAssetDownloadSession *_downloadSession;
     BOOL _isStreamingQuality;
 }
 
-@property AVAssetDownloadSession * downloadSession;
-@property BOOL isStreamingQuality;
+@property (nonatomic) AVAssetDownloadSession *downloadSession;
+@property (nonatomic) BOOL isStreamingQuality;
 
 - (void).cxx_destruct;
 - (void)dealloc;

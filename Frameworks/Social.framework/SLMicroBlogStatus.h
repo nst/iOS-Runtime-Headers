@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSString;
-
 @interface SLMicroBlogStatus : NSObject <NSSecureCoding> {
     NSArray *_imageAssetURLs;
     NSArray *_imageData;
@@ -12,11 +10,11 @@
     NSString *_statusText;
 }
 
-@property(retain) NSArray * imageAssetURLs;
-@property(retain) NSArray * imageData;
-@property(retain) NSString * inReplyToStatusID;
-@property(retain) NSString * maskedApplicationID;
-@property(retain) NSString * statusText;
+@property (nonatomic, retain) NSArray *imageAssetURLs;
+@property (nonatomic, retain) NSArray *imageData;
+@property (nonatomic, retain) NSString *inReplyToStatusID;
+@property (nonatomic, retain) NSString *maskedApplicationID;
+@property (nonatomic, retain) NSString *statusText;
 
 + (BOOL)supportsSecureCoding;
 
@@ -26,7 +24,7 @@
 - (id)imageData;
 - (id)inReplyToStatusID;
 - (id)initWithCoder:(id)arg1;
-- (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned int)arg1 completion:(id)arg2;
+- (void)loadAssetDataIfNecessaryWithMaxByteSize:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)maskedApplicationID;
 - (void)setImageAssetURLs:(id)arg1;
 - (void)setImageData:(id)arg1;

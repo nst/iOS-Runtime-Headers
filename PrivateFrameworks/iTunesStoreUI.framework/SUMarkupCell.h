@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUWebDocumentView;
-
 @interface SUMarkupCell : SUTableCell {
     SUWebDocumentView *_webView;
 }

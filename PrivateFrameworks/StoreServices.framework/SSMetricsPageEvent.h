@@ -2,25 +2,22 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSMetricsPageEvent : SSMetricsBaseEvent
 
-@interface SSMetricsPageEvent : SSMetricsBaseEvent {
-}
-
-@property(getter=isCachedResponse) BOOL cachedResponse;
-@property(retain) NSString * navigationType;
-@property(retain) NSString * pageHistoryDescription;
-@property double pageRenderTime;
-@property(retain) NSString * referringAppName;
-@property(retain) NSString * referringURL;
-@property double requestEndTime;
-@property double requestStartTime;
-@property double responseEndTime;
-@property double responseStartTime;
-@property(retain) NSString * searchTerm;
-@property(retain) NSString * serverApplicationInstance;
-@property(retain) NSString * serverTiming;
-@property(getter=isUbered) BOOL ubered;
+@property (getter=isCachedResponse, nonatomic) BOOL cachedResponse;
+@property (nonatomic, retain) NSString *navigationType;
+@property (nonatomic, retain) NSString *pageHistoryDescription;
+@property (nonatomic) double pageRenderTime;
+@property (nonatomic, retain) NSString *referringAppName;
+@property (nonatomic, retain) NSString *referringURL;
+@property (nonatomic) double requestEndTime;
+@property (nonatomic) double requestStartTime;
+@property (nonatomic) double responseEndTime;
+@property (nonatomic) double responseStartTime;
+@property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic, retain) NSString *serverApplicationInstance;
+@property (nonatomic, retain) NSString *serverTiming;
+@property (getter=isUbered, nonatomic) BOOL ubered;
 
 - (id)description;
 - (id)init;

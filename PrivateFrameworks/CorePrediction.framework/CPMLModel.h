@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-@class CPMLModelEvaluate, NSString;
-
 @interface CPMLModel : NSObject {
     NSString *_modelPath;
     NSString *_savedPlistPath;
     CPMLModelEvaluate *cpModelEvaluate;
 }
 
-@property(retain) CPMLModelEvaluate * cpModelEvaluate;
+@property (nonatomic, retain) CPMLModelEvaluate *cpModelEvaluate;
 
 - (void).cxx_destruct;
 - (void)boundResult:(id)arg1;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class NSString;
-
 @interface CTPhoneNumber : NSObject <CTMessageAddress, NSCopying> {
     NSString *_countryCode;
     NSString *_digits;
     BOOL _isShortCode;
 }
 
-@property(readonly) NSString * countryCode;
-@property(readonly) NSString * digits;
+@property (readonly) NSString *countryCode;
+@property (readonly) NSString *digits;
 @property BOOL isShortCode;
 
 + (bool)isValidPhoneNumber:(id)arg1;

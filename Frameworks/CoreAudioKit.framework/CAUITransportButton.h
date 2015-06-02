@@ -18,7 +18,7 @@
 }
 
 @property int drawingStyle;
-@property struct CGColor { }* fillColor;
+@property struct CGColor { }*fillColor;
 
 + (Class)layerClass;
 

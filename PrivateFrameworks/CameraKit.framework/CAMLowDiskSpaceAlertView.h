@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMLowDiskSpaceAlertView : UIAlertView {
-}
+@interface CAMLowDiskSpaceAlertView : UIAlertView
 
 + (void)showUsageSettings;
 

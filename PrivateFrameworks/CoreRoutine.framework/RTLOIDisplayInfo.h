@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class <GEOMapItem>, NSDate, NSString;
-
 @interface RTLOIDisplayInfo : NSObject {
     NSDate *_arrival;
     NSDate *_deparature;
@@ -15,14 +13,14 @@
     NSString *_unknownTypeName;
 }
 
-@property(readonly) NSDate * arrival;
-@property(readonly) NSDate * deparature;
-@property(readonly) double eta;
-@property(readonly) <GEOMapItem> * geoMapItem;
-@property(readonly) int modeOfTransportation;
-@property(readonly) int style;
-@property(readonly) int type;
-@property(readonly) NSString * unknownTypeName;
+@property (nonatomic, readonly) NSDate *arrival;
+@property (nonatomic, readonly) NSDate *deparature;
+@property (nonatomic, readonly) double eta;
+@property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
+@property (nonatomic, readonly) int modeOfTransportation;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) NSString *unknownTypeName;
 
 - (void).cxx_destruct;
 - (id)arrival;

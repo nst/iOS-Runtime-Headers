@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKBubbleFlowBubbleControl : GKValueWithCaptionBubbleControl {
-}
+@interface GKBubbleFlowBubbleControl : GKValueWithCaptionBubbleControl
 
-@property(readonly) BOOL hasAnyContent;
+@property (nonatomic, readonly) BOOL hasAnyContent;
 
 - (BOOL)hasAnyContent;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

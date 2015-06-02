@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView;
-
 @interface ABCustomContentCell : UITableViewCell {
     UIView *_customContentView;
 }
 
-@property(retain) UIView * customContentView;
+@property (nonatomic, retain) UIView *customContentView;
 
 - (id)customContentView;
 - (void)dealloc;

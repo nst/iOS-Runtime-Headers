@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSMapTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CPLPlatform : NSObject {
     NSMapTable *_abstractClassToImplementation;
     NSObject<OS_dispatch_queue> *_lock;
     NSString *_suffix;
 }
 
-@property(copy) NSString * suffix;
+@property (nonatomic, copy) NSString *suffix;
 
 + (id)currentPlatform;
 + (id)defaultPlatform;

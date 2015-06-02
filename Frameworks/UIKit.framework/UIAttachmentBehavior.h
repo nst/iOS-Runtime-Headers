@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, PKExtendedPhysicsBody, PKPhysicsJoint;
-
 @interface UIAttachmentBehavior : UIDynamicBehavior {
     PKExtendedPhysicsBody *_anchorBody;
     struct CGPoint { 
@@ -32,12 +30,12 @@
     int _type;
 }
 
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property(readonly) int attachedBehaviorType;
-@property float damping;
-@property float frequency;
-@property(copy,readonly) NSArray * items;
-@property float length;
+@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, readonly) int attachedBehaviorType;
+@property (nonatomic) float damping;
+@property (nonatomic) float frequency;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic) float length;
 
 - (void)_associate;
 - (void)_changedParameter;

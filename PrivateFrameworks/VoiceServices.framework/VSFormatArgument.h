@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSDictionary, NSString;
-
 @interface VSFormatArgument : NSObject {
     NSDictionary *attributes;
     NSString *formatSpecifier;

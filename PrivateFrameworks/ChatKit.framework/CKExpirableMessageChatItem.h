@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKExpirableMessageChatItem : CKAttachmentMessagePartChatItem {
-}
+@interface CKExpirableMessageChatItem : CKAttachmentMessagePartChatItem
 
-@property(readonly) BOOL isPlayed;
-@property(readonly) BOOL isSaved;
+@property (nonatomic, readonly) BOOL isPlayed;
+@property (nonatomic, readonly) BOOL isSaved;
 
 - (BOOL)canCopy;
 - (BOOL)canExport;

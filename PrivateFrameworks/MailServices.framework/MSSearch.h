@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class <MSSearchDelegate>, NSString;
-
 @interface MSSearch : MSXPCService <MSDSearchResultsProtocol> {
     <MSSearchDelegate> *_delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MSSearchDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MSSearchDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 options:(unsigned int)arg3 delegate:(id)arg4;
 + (id)findMessageData:(id)arg1 matchingCriterion:(id)arg2 shouldFetch:(BOOL)arg3 onServer:(BOOL)arg4 delegate:(id)arg5;

@@ -6,7 +6,7 @@
     BOOL _isShowingDictationPlaceholder;
 }
 
-@property(readonly) BOOL isShowingDictationPlaceholder;
+@property (nonatomic, readonly) BOOL isShowingDictationPlaceholder;
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (id)_previousKeyResponder;

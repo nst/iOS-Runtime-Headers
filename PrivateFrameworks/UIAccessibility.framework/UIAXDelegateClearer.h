@@ -8,9 +8,9 @@
     id delegatee;
 }
 
-@property SEL clearMethod;
-@property id delegate;
-@property id delegatee;
+@property (nonatomic) SEL clearMethod;
+@property (nonatomic) id delegate;
+@property (nonatomic) id delegatee;
 
 - (SEL)clearMethod;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSRunAssertion : NSObject {
-}
+@interface RMSRunAssertion : NSObject
 
 - (void)dealloc;
 - (id)init;

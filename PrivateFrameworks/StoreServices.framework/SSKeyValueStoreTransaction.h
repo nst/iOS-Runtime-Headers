@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSKeyValueStoreTransaction : SSKeyValueStoreSession {
-}
+@interface SSKeyValueStoreTransaction : SSKeyValueStoreSession
 
 - (void)removeAccountFromDomain:(id)arg1;
 - (BOOL)setData:(id)arg1 forDomain:(id)arg2 key:(id)arg3;

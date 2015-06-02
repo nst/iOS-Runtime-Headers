@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewURLProtocol : NSURLProtocol {
-}
+@interface QLPreviewURLProtocol : NSURLProtocol
 
 + (id)_errorForAbort;
 + (id)_errorForCancel;

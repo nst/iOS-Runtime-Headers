@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface CoreDAVLogging : NSObject {
     NSObject<OS_dispatch_queue> *_delegateMuckingQueue;
     struct __CFDictionary { } *_logDelegates;

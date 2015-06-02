@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSData;
-
 @interface TRAdvertisingInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSData *_pairingPublicKey;
     NSData *_wirelessProximityIdentifier;
 }
 
-@property(copy,readonly) NSData * pairingPublicKey;
-@property(copy,readonly) NSData * wirelessProximityIdentifier;
+@property (nonatomic, readonly, copy) NSData *pairingPublicKey;
+@property (nonatomic, readonly, copy) NSData *wirelessProximityIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

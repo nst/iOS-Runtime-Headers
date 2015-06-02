@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSKCOIdAddress;
-
 @interface TSKCOIdPlacementBaseOperation : TSKCOAbstractOperation <TSKCOIdOperation, TSKCOTransforming> {
     TSKCOIdAddress *mAddress;
     BOOL mDominating;
@@ -17,11 +10,11 @@
     int mToIndex;
 }
 
-@property(readonly) TSKCOIdAddress * address;
-@property(readonly) int fromIndex;
-@property(readonly) BOOL isDominating;
-@property(readonly) int placementType;
-@property(readonly) int toIndex;
+@property (nonatomic, readonly) TSKCOIdAddress *address;
+@property (nonatomic, readonly) int fromIndex;
+@property (nonatomic, readonly) BOOL isDominating;
+@property (nonatomic, readonly) int placementType;
+@property (nonatomic, readonly) int toIndex;
 
 - (id)address;
 - (void)dealloc;

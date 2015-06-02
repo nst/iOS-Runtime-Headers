@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, UIImage;
-
 @interface SKUIRatingStarsCache : NSObject {
     NSMutableDictionary *_cachedImages;
     UIImage *_emptyStarImage;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSCoding>, NSData, NSDate, NSDictionary, NSError, NSString, NSURL;
-
 @interface MSAsset : NSObject <MMCSAsset, NSCopying, NSSecureCoding> {
     NSString *_GUID;
     NSString *_MMCSAccessHeader;
@@ -26,35 +24,35 @@
     <NSCoding> *_userInfo;
 }
 
-@property(retain) NSString * GUID;
-@property(retain) NSString * MMCSAccessHeader;
-@property(retain) NSDate * MMCSAccessHeaderTimeStamp;
-@property(retain) NSError * MMCSError;
-@property(retain) NSData * MMCSHash;
-@property unsigned long MMCSItemFlags;
-@property unsigned long long MMCSItemID;
-@property unsigned long long MMCSItemSize;
-@property(retain) NSString * MMCSReceipt;
-@property(retain) NSURL * MMCSURL;
-@property(retain) NSString * MMCSUTI;
-@property(retain) NSString * assetCollectionGUID;
-@property BOOL assetDataAvailableOnServer;
-@property(retain) NSDate * batchCreationDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(retain) NSData * fileData;
-@property(retain) NSData * fileHash;
-@property(readonly) unsigned int hash;
-@property(retain) NSData * masterAssetHash;
-@property unsigned int mediaAssetType;
-@property(retain) NSDictionary * metadata;
-@property(retain) NSString * path;
-@property(retain) NSDate * photoCreationDate;
-@property unsigned long long protocolFileSize;
-@property(readonly) Class superclass;
-@property(retain) NSString * type;
-@property(retain) <NSCoding> * userInfo;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic, retain) NSString *MMCSAccessHeader;
+@property (nonatomic, retain) NSDate *MMCSAccessHeaderTimeStamp;
+@property (nonatomic, retain) NSError *MMCSError;
+@property (nonatomic, retain) NSData *MMCSHash;
+@property (nonatomic) unsigned long MMCSItemFlags;
+@property (nonatomic) unsigned long long MMCSItemID;
+@property (nonatomic) unsigned long long MMCSItemSize;
+@property (nonatomic, retain) NSString *MMCSReceipt;
+@property (nonatomic, retain) NSURL *MMCSURL;
+@property (nonatomic, retain) NSString *MMCSUTI;
+@property (nonatomic, retain) NSString *assetCollectionGUID;
+@property (nonatomic) BOOL assetDataAvailableOnServer;
+@property (nonatomic, retain) NSDate *batchCreationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSData *fileData;
+@property (nonatomic, retain) NSData *fileHash;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *masterAssetHash;
+@property (nonatomic) unsigned int mediaAssetType;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSDate *photoCreationDate;
+@property (nonatomic) unsigned long long protocolFileSize;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) <NSCoding> *userInfo;
 
 + (id)MSASPAssetFromProtocolDictionary:(id)arg1;
 + (id)asset;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>, NSData, NSDictionary, NSError, NSSet, NSString, NSURL;
-
 @interface CoreDAVDiscoveryAccountInfo : NSObject <CoreDAVAccountInfoProvider> {
     NSString *_accountID;
     <CoreDAVAccountInfoProvider> *_backingAccountInfoProvider;
@@ -24,27 +22,27 @@
     NSString *_userAgentHeader;
 }
 
-@property(retain) NSString * accountID;
-@property(retain) <CoreDAVAccountInfoProvider> * backingAccountInfoProvider;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * host;
-@property(retain) NSData * identityPersist;
-@property(retain) NSString * password;
-@property int port;
-@property(retain) NSURL * principalURL;
-@property(retain) NSString * scheme;
-@property(retain) NSSet * serverComplianceClasses;
-@property(retain) NSDictionary * serverHeaders;
-@property(retain) NSString * serverRoot;
-@property BOOL shouldFailAllTasks;
-@property BOOL started;
-@property BOOL success;
-@property(readonly) Class superclass;
-@property(retain) NSString * user;
-@property(retain) NSString * userAgentHeader;
+@property (nonatomic, retain) NSString *accountID;
+@property (nonatomic, retain) <CoreDAVAccountInfoProvider> *backingAccountInfoProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *host;
+@property (nonatomic, retain) NSData *identityPersist;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic) int port;
+@property (nonatomic, retain) NSURL *principalURL;
+@property (nonatomic, retain) NSString *scheme;
+@property (nonatomic, retain) NSSet *serverComplianceClasses;
+@property (nonatomic, retain) NSDictionary *serverHeaders;
+@property (nonatomic, retain) NSString *serverRoot;
+@property (nonatomic) BOOL shouldFailAllTasks;
+@property (nonatomic) BOOL started;
+@property (nonatomic) BOOL success;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *user;
+@property (nonatomic, retain) NSString *userAgentHeader;
 
 - (id)accountID;
 - (id)additionalHeaderValues;
@@ -68,7 +66,7 @@
 - (id)password;
 - (int)port;
 - (id)principalURL;
-- (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id)arg1;
+- (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id /* block */)arg1;
 - (id)scheme;
 - (id)serverComplianceClasses;
 - (id)serverHeaders;

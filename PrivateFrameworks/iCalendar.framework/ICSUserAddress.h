@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDateValue, NSString;
+@interface ICSUserAddress : ICSProperty
 
-@interface ICSUserAddress : ICSProperty {
-}
-
-@property(retain) NSString * cn;
-@property int cutype;
-@property(retain) NSString * dir;
-@property(retain) NSString * email;
-@property int partstat;
-@property(retain) ICSDateValue * partstatModified;
-@property int role;
-@property BOOL rsvp;
-@property int scheduleagent;
-@property int scheduleforcesend;
-@property int schedulestatus;
-@property BOOL x_apple_self_invited;
+@property (nonatomic, retain) NSString *cn;
+@property (nonatomic) int cutype;
+@property (nonatomic, retain) NSString *dir;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic) int partstat;
+@property (nonatomic, retain) ICSDateValue *partstatModified;
+@property (nonatomic) int role;
+@property (nonatomic) BOOL rsvp;
+@property (nonatomic) int scheduleagent;
+@property (nonatomic) int scheduleforcesend;
+@property (nonatomic) int schedulestatus;
+@property (nonatomic) BOOL x_apple_self_invited;
 
 + (id)ICSStringFromCalendarUser:(int)arg1;
 + (id)ICSStringFromParticipationStatus:(int)arg1;

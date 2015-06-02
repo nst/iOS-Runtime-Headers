@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLShader, TSDGLTextureInfo;
-
 @interface TSDGLEdgeDistanceFieldMorphEffect : NSObject {
     BOOL _didSetupTextureAdjustment;
     BOOL _didTeardown;
@@ -54,10 +52,10 @@
     } _textureAdjustment;
 }
 
-@property(readonly) TSDGLTextureInfo * incomingTextureInfo;
-@property BOOL isTextStyleIdenticalExceptSize;
-@property(readonly) TSDGLTextureInfo * outgoingTextureInfo;
-@property(readonly) TSDGLShader * shader;
+@property (nonatomic, readonly) TSDGLTextureInfo *incomingTextureInfo;
+@property (nonatomic) BOOL isTextStyleIdenticalExceptSize;
+@property (nonatomic, readonly) TSDGLTextureInfo *outgoingTextureInfo;
+@property (nonatomic, readonly) TSDGLShader *shader;
 
 + (void)didEndUsingShaders;
 + (void)willBeginUsingShaders;

@@ -2,23 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASSpeechPartialResult : SABaseClientBoundCommand
 
-@interface SASSpeechPartialResult : SABaseClientBoundCommand {
-}
+@property (nonatomic, copy) NSArray *tokens;
 
-@property(copy) NSArray * tokens;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)speechPartialResult;
 + (id)speechPartialResultWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)af_bestTextInterpretation;
-- (id)af_correctionContext;
-- (id)af_userUtteranceValue;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_bestTextInterpretation;
+- (id)af_correctionContext;
+- (id)af_userUtteranceValue;
 
 @end

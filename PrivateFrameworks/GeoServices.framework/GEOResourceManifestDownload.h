@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEODownloadMetadata, GEOResources;
-
 @interface GEOResourceManifestDownload : PBCodable <NSCopying> {
     GEODownloadMetadata *_metadata;
     GEOResources *_resources;
 }
 
-@property(readonly) BOOL hasResources;
-@property(retain) GEODownloadMetadata * metadata;
-@property(retain) GEOResources * resources;
+@property (nonatomic, readonly) BOOL hasResources;
+@property (nonatomic, retain) GEODownloadMetadata *metadata;
+@property (nonatomic, retain) GEOResources *resources;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

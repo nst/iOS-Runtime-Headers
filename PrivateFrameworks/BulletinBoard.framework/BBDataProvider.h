@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBDataProviderIdentity, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BBDataProvider : NSObject <BBSectionIdentity> {
     BBDataProviderIdentity *__identity;
     NSObject<OS_dispatch_queue> *_identityQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) BBDataProviderIdentity * identity;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) BBDataProviderIdentity *identity;
+@property (readonly) Class superclass;
 
-- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id)arg2;
-- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
-- (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id)arg3;
+- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id /* block */)arg2;
+- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
+- (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)canClearAllBulletins;
 - (BOOL)canPerformMigration;
-- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
-- (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
+- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
+- (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (id)debugDescription;
@@ -40,8 +38,8 @@
 - (BOOL)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (id)parentSectionIdentifier;
-- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
-- (void)reloadIdentityWithCompletion:(id)arg1;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id /* block */)arg2;
+- (void)reloadIdentityWithCompletion:(id /* block */)arg1;
 - (id)sectionDisplayName;
 - (id)sectionIcon;
 - (id)sectionIdentifier;
@@ -52,7 +50,7 @@
 - (void)startWatchdog;
 - (BOOL)syncsBulletinDismissal;
 - (id)universalSectionIdentifier;
-- (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
-- (void)updateSectionInfoWithSectionInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
+- (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)updateSectionInfoWithSectionInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;
 
 @end

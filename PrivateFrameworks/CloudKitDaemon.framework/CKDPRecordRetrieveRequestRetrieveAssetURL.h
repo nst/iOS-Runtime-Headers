@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRequestedFields;
-
 @interface CKDPRecordRetrieveRequestRetrieveAssetURL : PBCodable <NSCopying> {
     CKDPRequestedFields *_assetFields;
     struct { 
@@ -14,12 +12,12 @@
     int _type;
 }
 
-@property(retain) CKDPRequestedFields * assetFields;
-@property(readonly) BOOL hasAssetFields;
-@property BOOL hasRequestedTTL;
-@property BOOL hasType;
-@property long long requestedTTL;
-@property int type;
+@property (nonatomic, retain) CKDPRequestedFields *assetFields;
+@property (nonatomic, readonly) BOOL hasAssetFields;
+@property (nonatomic) BOOL hasRequestedTTL;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) long long requestedTTL;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)assetFields;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class APDAsyncURLConnection, APDDataManager, APDKVOManager, NSOperationQueue, NSURL;
-
 @interface APDGenericModel : NSObject {
     APDKVOManager *_KVOManager;
     APDAsyncURLConnection *_URLConnection;
@@ -15,13 +13,13 @@
     NSURL *_requestURL;
 }
 
-@property(retain) APDKVOManager * KVOManager;
-@property APDDataManager * dataManager;
-@property BOOL hasLoaded;
-@property BOOL loading;
-@property(retain) NSOperationQueue * localResourceOperationQueue;
-@property(copy) NSURL * localResourceURL;
-@property(copy) NSURL * requestURL;
+@property (nonatomic, retain) APDKVOManager *KVOManager;
+@property (nonatomic) APDDataManager *dataManager;
+@property (nonatomic) BOOL hasLoaded;
+@property (nonatomic) BOOL loading;
+@property (nonatomic, retain) NSOperationQueue *localResourceOperationQueue;
+@property (nonatomic, copy) NSURL *localResourceURL;
+@property (nonatomic, copy) NSURL *requestURL;
 
 - (void).cxx_destruct;
 - (id)KVOManager;

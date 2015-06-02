@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSMutableAttributedString, NSString;
-
 @interface SCROBrailleChunk : NSObject <NSCopying> {
     struct _NSRange { 
         unsigned int location; 
@@ -26,7 +24,7 @@
     int _token;
 }
 
-@property(readonly) NSString * language;
+@property (nonatomic, readonly) NSString *language;
 
 + (void)initialize;
 

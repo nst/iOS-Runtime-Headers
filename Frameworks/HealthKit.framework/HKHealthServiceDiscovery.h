@@ -2,31 +2,23 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface HKHealthServiceDiscovery : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _discoveryHandler;
-
+    id /* block */ _discoveryHandler;
     unsigned int _discoveryIdentifier;
     int _serviceType;
 }
 
-@property(copy) id discoveryHandler;
-@property unsigned int discoveryIdentifier;
-@property(readonly) int serviceType;
+@property (nonatomic, copy) id /* block */ discoveryHandler;
+@property (nonatomic) unsigned int discoveryIdentifier;
+@property (nonatomic, readonly) int serviceType;
 
 - (void).cxx_destruct;
-- (id)discoveryHandler;
+- (id /* block */)discoveryHandler;
 - (unsigned int)discoveryIdentifier;
 - (id)initForAllTypes;
 - (id)initWithType:(int)arg1;
 - (int)serviceType;
-- (void)setDiscoveryHandler:(id)arg1;
+- (void)setDiscoveryHandler:(id /* block */)arg1;
 - (void)setDiscoveryIdentifier:(unsigned int)arg1;
 
 @end

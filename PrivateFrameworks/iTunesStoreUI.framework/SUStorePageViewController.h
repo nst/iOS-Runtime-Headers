@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SUStorePageViewControllerDelegate>, ISURLRequestPerformance, NSString, SSAuthenticationContext, SSMutableURLRequestProperties, SSURLRequestProperties, SUNavigationMenuViewController, SUPageSectionGroup, SUSearchFieldController, SUSegmentedControl, SUStorePageProtocol, SUViewController, UIPopoverController, _UIBackdropView;
-
 @interface SUStorePageViewController : SUViewController <ISURLOperationDelegate, SKUITabBarItemRootViewController, SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate> {
     SUViewController *_activeChildViewController;
     int _activeSectionIndex;
@@ -20,11 +14,7 @@
     BOOL _externalRequest;
     BOOL _lastLoadDidFail;
     SUStorePageProtocol *_lastValidProtocol;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _loadBlock;
-
+    id /* block */ _loadBlock;
     BOOL _loadingForSectionChange;
     BOOL _loadsWhenHidden;
     UIPopoverController *_navigationMenuPopover;
@@ -44,26 +34,26 @@
     BOOL _useWebViewFastPath;
 }
 
-@property(copy) SSURLRequestProperties * URLRequestProperties;
-@property(getter=_isCacheExpired,readonly) BOOL _cacheExpired;
-@property(getter=_reloadsWhenCacheExpired,setter=_setReloadsWhenCacheExpired:) BOOL _reloadsWhenCacheExpired;
-@property(readonly) SUViewController * activeChildViewController;
-@property(retain) SSAuthenticationContext * authenticationContext;
-@property(readonly) BOOL canBeResolved;
-@property BOOL canMoveToOverlay;
-@property(copy,readonly) NSString * debugDescription;
-@property <SUStorePageViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
-@property(getter=isExternalRequest) BOOL externalRequest;
-@property(readonly) unsigned int hash;
-@property BOOL loadsWhenHidden;
-@property BOOL needsAuthentication;
-@property(copy) NSString * scriptUserInfo;
-@property(readonly) SUSearchFieldController * searchFieldController;
-@property(readonly) SUPageSectionGroup * sectionGroup;
-@property(readonly) SUSegmentedControl * sectionSegmentedControl;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) SSURLRequestProperties *URLRequestProperties;
+@property (getter=_isCacheExpired, nonatomic, readonly) BOOL _cacheExpired;
+@property (getter=_reloadsWhenCacheExpired, setter=_setReloadsWhenCacheExpired:, nonatomic) BOOL _reloadsWhenCacheExpired;
+@property (nonatomic, readonly) SUViewController *activeChildViewController;
+@property (nonatomic, retain) SSAuthenticationContext *authenticationContext;
+@property (nonatomic, readonly) BOOL canBeResolved;
+@property (nonatomic) BOOL canMoveToOverlay;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUStorePageViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property (getter=isExternalRequest, nonatomic) BOOL externalRequest;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL loadsWhenHidden;
+@property (nonatomic) BOOL needsAuthentication;
+@property (nonatomic, copy) NSString *scriptUserInfo;
+@property (nonatomic, readonly) SUSearchFieldController *searchFieldController;
+@property (nonatomic, readonly) SUPageSectionGroup *sectionGroup;
+@property (nonatomic, readonly) SUSegmentedControl *sectionSegmentedControl;
+@property (readonly) Class superclass;
 
 - (id)URLRequest;
 - (id)URLRequestProperties;
@@ -101,10 +91,10 @@
 - (void)_reloadSearchFieldWithSection:(id)arg1;
 - (void)_reloadSectionButtons;
 - (void)_reloadSectionsControlWithGroup:(id)arg1;
-- (BOOL)_reloadWithURLRequestProperties:(id)arg1 completionBlock:(id)arg2;
+- (BOOL)_reloadWithURLRequestProperties:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)_reloadWithURLRequestProperties:(id)arg1 preserveSectionControl:(BOOL)arg2;
 - (BOOL)_reloadsWhenCacheExpired;
-- (void)_renderStorePage:(id)arg1 withType:(int)arg2 viewController:(id)arg3 block:(id)arg4;
+- (void)_renderStorePage:(id)arg1 withType:(int)arg2 viewController:(id)arg3 block:(id /* block */)arg4;
 - (void)_repositionForChildViewController:(id)arg1;
 - (void)_scriptEventNotification:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;
@@ -149,7 +139,7 @@
 - (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)handleFailureWithError:(id)arg1;
 - (void)handleStoreFailureWithError:(id)arg1;
-- (void)hidePreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)hidePreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)iTunesStoreUI_searchFieldController;
 - (void)iTunesStoreUI_searchFieldControllerDidChange:(id)arg1;
 - (id)init;
@@ -207,7 +197,7 @@
 - (BOOL)shouldExcludeFromNavigationHistory;
 - (void)showExternalURL:(id)arg1;
 - (void)showPlaceholderViewController;
-- (BOOL)showPreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (BOOL)showPreviewOverlay:(id)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)storePageProtocol;
 - (void)storePageProtocolDidChange;
 - (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;

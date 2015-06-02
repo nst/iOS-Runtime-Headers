@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKAvailabilityCache, NSArray, NSDate, NSError, NSObject<OS_dispatch_queue>, NSString;
-
 @interface EKRequestAvailabilityOperation : NSOperation {
     NSArray *_addresses;
     EKAvailabilityCache *_availabilityCache;
@@ -18,15 +12,11 @@
     BOOL _isFinished;
     NSObject<OS_dispatch_queue> *_queue;
     id _requestID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resultsBlock;
-
+    id /* block */ _resultsBlock;
     NSDate *_startDate;
 }
 
-@property(retain) NSError * error;
+@property (nonatomic, retain) NSError *error;
 
 - (void)_finishWithError:(id)arg1;
 - (void)cancel;
@@ -34,7 +24,7 @@
 - (id)description;
 - (id)error;
 - (id)init;
-- (id)initWithSource:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id)arg6;
+- (id)initWithSource:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id /* block */)arg6;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

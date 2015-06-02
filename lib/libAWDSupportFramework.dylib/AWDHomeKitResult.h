@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDHomeKitResult : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
@@ -32,24 +30,24 @@
     unsigned int _transportType;
 }
 
-@property(readonly) unsigned int* characteristicTypes;
-@property(readonly) unsigned int characteristicTypesCount;
-@property unsigned int duration;
-@property(retain) NSString * guid;
-@property BOOL hasDuration;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsClient;
-@property BOOL hasResultCode;
-@property BOOL hasResultType;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property unsigned int isClient;
-@property int resultCode;
-@property unsigned int resultType;
-@property(readonly) unsigned int* serviceTypes;
-@property(readonly) unsigned int serviceTypesCount;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic, readonly) unsigned int*characteristicTypes;
+@property (nonatomic, readonly) unsigned int characteristicTypesCount;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsClient;
+@property (nonatomic) BOOL hasResultCode;
+@property (nonatomic) BOOL hasResultType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int isClient;
+@property (nonatomic) int resultCode;
+@property (nonatomic) unsigned int resultType;
+@property (nonatomic, readonly) unsigned int*serviceTypes;
+@property (nonatomic, readonly) unsigned int serviceTypesCount;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (void)addCharacteristicType:(unsigned int)arg1;
 - (void)addServiceType:(unsigned int)arg1;

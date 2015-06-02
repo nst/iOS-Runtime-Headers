@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSString;
-
 @interface WBSFeedEntry : NSObject <NSSecureCoding> {
     NSString *_content;
     NSDate *_datePublished;
@@ -14,13 +12,13 @@
     NSString *_urlString;
 }
 
-@property(copy) NSString * content;
-@property(copy) NSDate * datePublished;
-@property(copy) NSDate * dateUpdated;
-@property(copy) NSString * entryDescription;
-@property(copy,readonly) NSString * identifier;
-@property(copy) NSString * title;
-@property(copy,readonly) NSString * urlString;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSDate *datePublished;
+@property (nonatomic, copy) NSDate *dateUpdated;
+@property (nonatomic, copy) NSString *entryDescription;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *urlString;
 
 + (id)dateFromAtomDateString:(id)arg1;
 + (id)dateFromRSSDateString:(id)arg1;

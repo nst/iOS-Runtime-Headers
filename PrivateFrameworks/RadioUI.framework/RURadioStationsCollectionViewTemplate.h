@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUBorderDrawingCache, NSMutableArray, NSMutableDictionary, RURadioStationsCollectionViewTemplateTextElement, UIColor, UITraitCollection;
-
 @interface RURadioStationsCollectionViewTemplate : NSObject {
     struct CGSize { 
         float width; 
@@ -43,16 +41,16 @@
     UITraitCollection *_traitCollection;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } artworkSize;
-@property(readonly) float horizontalEdgePadding;
-@property(readonly) float horizontalSpacingBetweenItems;
-@property(readonly) struct CGSize { float x1; float x2; } itemSize;
-@property(readonly) RURadioStationsCollectionViewTemplateTextElement * lastTextElement;
-@property struct CGSize { float x1; float x2; } rootViewSize;
-@property(readonly) struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; BOOL x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; } stackAttributes;
-@property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
-@property(copy) UIColor * tintColor;
-@property(copy) UITraitCollection * traitCollection;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } artworkSize;
+@property (nonatomic, readonly) float horizontalEdgePadding;
+@property (nonatomic, readonly) float horizontalSpacingBetweenItems;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic, readonly) RURadioStationsCollectionViewTemplateTextElement *lastTextElement;
+@property (nonatomic) struct CGSize { float x1; float x2; } rootViewSize;
+@property (nonatomic, readonly) struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; BOOL x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; } stackAttributes;
+@property (nonatomic, retain) MPUBorderDrawingCache *stackItemBorderDrawingCache;
+@property (nonatomic, copy) UIColor *tintColor;
+@property (nonatomic, copy) UITraitCollection *traitCollection;
 
 + (struct { unsigned int x1; float x2; float x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; float x_5_1_5; float x_5_1_6; } x5; float x6; float x7; float x8; })_attributesForStackItemAtIndex:(int)arg1 displayScale:(float)arg2;
 + (float)_horizontalEdgePaddingForHorizontalSizeClass:(int)arg1 displayScale:(float)arg2 rootViewWidth:(float)arg3;
@@ -70,7 +68,7 @@
 - (struct { unsigned int x1; float x2; float x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGAffineTransform { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; float x_5_1_5; float x_5_1_6; } x5; float x6; float x7; float x8; })attributesForStackItemAtIndex:(int)arg1;
 - (void)beginCoalescingTextDrawingCacheInvalidationNotifications;
 - (void)endCoalescingTextDrawingCacheInvalidationNotifications;
-- (void)enumerateTextElementsUsingBlock:(id)arg1;
+- (void)enumerateTextElementsUsingBlock:(id /* block */)arg1;
 - (float)horizontalEdgePadding;
 - (float)horizontalSpacingBetweenItems;
 - (struct CGSize { float x1; float x2; })itemSize;

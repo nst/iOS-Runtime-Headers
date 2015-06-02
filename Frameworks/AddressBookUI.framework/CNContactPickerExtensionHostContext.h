@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContactPickerHostViewController, NSString;
-
 @interface CNContactPickerExtensionHostContext : NSExtensionContext <CNContactPickerHostProtocol, CNContactPickerServiceProtocol> {
     CNContactPickerHostViewController *_viewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property CNContactPickerHostViewController * viewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) CNContactPickerHostViewController *viewController;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
@@ -21,7 +19,7 @@
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContactWithRecordID:(int)arg1 vCardData:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(int)arg4;
 - (void)setViewController:(id)arg1;
-- (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;
+- (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
 - (id)viewController;
 
 @end

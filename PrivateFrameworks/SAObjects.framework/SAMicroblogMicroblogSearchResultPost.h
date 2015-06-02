@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSString, NSURL, SADecoratedString, SAMicroblogTwitterPostAuthor, SAUIAppPunchOut;
+@interface SAMicroblogMicroblogSearchResultPost : SAMicroblogMicroblogSearchResultBase
 
-@interface SAMicroblogMicroblogSearchResultPost : SAMicroblogMicroblogSearchResultBase {
-}
-
-@property(copy) NSDate * creationTime;
-@property(retain) SADecoratedString * decoratedContent;
-@property(copy) NSArray * embeddedHashtags;
-@property(copy) NSArray * embeddedImages;
-@property(copy) NSArray * embeddedLinks;
-@property(copy) NSArray * embeddedMentions;
-@property int favoritesCount;
-@property(copy) NSString * location;
-@property(retain) SAUIAppPunchOut * punchOut;
-@property(retain) SAMicroblogTwitterPostAuthor * retweetAuthor;
-@property int retweetCount;
-@property(copy) NSURL * webAddress;
+@property (nonatomic, copy) NSDate *creationTime;
+@property (nonatomic, retain) SADecoratedString *decoratedContent;
+@property (nonatomic, copy) NSArray *embeddedHashtags;
+@property (nonatomic, copy) NSArray *embeddedImages;
+@property (nonatomic, copy) NSArray *embeddedLinks;
+@property (nonatomic, copy) NSArray *embeddedMentions;
+@property (nonatomic) int favoritesCount;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
+@property (nonatomic, retain) SAMicroblogTwitterPostAuthor *retweetAuthor;
+@property (nonatomic) int retweetCount;
+@property (nonatomic, copy) NSURL *webAddress;
 
 + (id)microblogSearchResultPost;
 + (id)microblogSearchResultPostWithDictionary:(id)arg1 context:(id)arg2;

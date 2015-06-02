@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSNumber;
-
 @interface CMAltitudeData : CMLogItem {
     id _internal;
 }
 
-@property(readonly) NSNumber * pressure;
-@property(readonly) NSNumber * relativeAltitude;
+@property (nonatomic, readonly) NSNumber *pressure;
+@property (nonatomic, readonly) NSNumber *relativeAltitude;
 
 + (BOOL)supportsSecureCoding;
 

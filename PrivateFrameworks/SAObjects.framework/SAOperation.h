@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary, NSString;
+@interface SAOperation : AceObject <SAAceSerializable>
 
-@interface SAOperation : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSDictionary * constraints;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * domainId;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * operationId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *constraints;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *domainId;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *operationId;
+@property (readonly) Class superclass;
 
 + (id)operation;
 + (id)operationWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, TSTCellRegion;
-
 @interface TSTChangeDescriptor : NSObject {
     struct { 
         unsigned short row; 
@@ -16,13 +14,13 @@
     TSTCellRegion *mStrokeRegion;
 }
 
-@property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;
-@property(readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cellRange;
-@property(readonly) TSTCellRegion * cellRegion;
-@property(readonly) int changeDescriptor;
-@property(readonly) NSHashTable * referenceIdentifiers;
-@property(readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } strokeRange;
-@property(readonly) TSTCellRegion * strokeRegion;
+@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;
+@property (nonatomic, readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cellRange;
+@property (nonatomic, readonly) TSTCellRegion *cellRegion;
+@property (nonatomic, readonly) int changeDescriptor;
+@property (nonatomic, readonly) NSHashTable *referenceIdentifiers;
+@property (nonatomic, readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } strokeRange;
+@property (nonatomic, readonly) TSTCellRegion *strokeRegion;
 
 + (id)changeDescriptorWithType:(int)arg1;
 + (id)changeDescriptorWithType:(int)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;

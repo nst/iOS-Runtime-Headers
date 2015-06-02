@@ -17,18 +17,18 @@
     BOOL _supportStyling;
 }
 
-@property(readonly) BOOL canCopy;
-@property BOOL canCut;
-@property(readonly) BOOL canMoveCursorLeft;
-@property(readonly) BOOL canMoveCursorRight;
-@property(readonly) BOOL canPaste;
-@property(readonly) BOOL canToggleBoldface;
-@property(readonly) BOOL canToggleItalics;
-@property(readonly) BOOL canToggleUnderline;
-@property(readonly) BOOL isBold;
-@property(readonly) BOOL isItalicized;
-@property(readonly) BOOL isUnderlined;
-@property(readonly) BOOL supportStyling;
+@property (nonatomic, readonly) BOOL canCopy;
+@property (nonatomic) BOOL canCut;
+@property (nonatomic, readonly) BOOL canMoveCursorLeft;
+@property (nonatomic, readonly) BOOL canMoveCursorRight;
+@property (nonatomic, readonly) BOOL canPaste;
+@property (nonatomic, readonly) BOOL canToggleBoldface;
+@property (nonatomic, readonly) BOOL canToggleItalics;
+@property (nonatomic, readonly) BOOL canToggleUnderline;
+@property (nonatomic, readonly) BOOL isBold;
+@property (nonatomic, readonly) BOOL isItalicized;
+@property (nonatomic, readonly) BOOL isUnderlined;
+@property (nonatomic, readonly) BOOL supportStyling;
 
 + (id)traitsWithResponder:(id)arg1 keyMaskFlags:(unsigned int)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class <PSYProgressObserverDelegate>, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, PSProgressClient;
-
 @interface PSYProgressObserver : NSObject {
     NSDictionary *_activityErrors;
     NSString *_activityLabel;
@@ -17,15 +15,15 @@
     double _totalProgress;
 }
 
-@property(copy,readonly) NSDictionary * activityErrors;
-@property(retain) NSString * activityLabel;
-@property double activityProgress;
-@property(retain) NSXPCConnection * connection;
-@property <PSYProgressObserverDelegate> * delegate;
-@property(retain) PSProgressClient * progressClient;
-@property(readonly) int progressObserverState;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property double totalProgress;
+@property (nonatomic, readonly, copy) NSDictionary *activityErrors;
+@property (nonatomic, retain) NSString *activityLabel;
+@property (nonatomic) double activityProgress;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic) <PSYProgressObserverDelegate> *delegate;
+@property (nonatomic, retain) PSProgressClient *progressClient;
+@property (nonatomic, readonly) int progressObserverState;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) double totalProgress;
 
 - (void).cxx_destruct;
 - (void)_connectionInterrupted;

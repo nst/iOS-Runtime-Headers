@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartStagedAxisSceneOrthographicShadows : TSCH3DChartStagedAxisScene {
-}
+@interface TSCH3DChartStagedAxisSceneOrthographicShadows : TSCH3DChartStagedAxisScene
 
 - (id)shadowSceneObject;
 

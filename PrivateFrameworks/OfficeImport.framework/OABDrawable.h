@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OABDrawable : NSObject {
-}
+@interface OABDrawable : NSObject
 
 + (id)readDrawableFromObject:(id)arg1 state:(id)arg2;
 + (id)readDrawablesFromContainer:(id)arg1 state:(id)arg2;

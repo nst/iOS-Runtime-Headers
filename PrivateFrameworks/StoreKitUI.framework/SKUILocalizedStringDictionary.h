@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSString;
-
 @interface SKUILocalizedStringDictionary : NSObject {
     NSArray *_bundles;
     NSString *_localeName;

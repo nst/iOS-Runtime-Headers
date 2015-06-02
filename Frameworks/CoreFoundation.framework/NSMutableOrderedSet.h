@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSMutableOrderedSet : NSOrderedSet {
-}
+@interface NSMutableOrderedSet : NSOrderedSet
+
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 + (id)orderedSetWithCapacity:(unsigned int)arg1;
 
@@ -17,7 +18,6 @@
 - (void)addObjectsFromSet:(id)arg1;
 - (Class)classForCoder;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
-- (void)filterUsingPredicate:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
@@ -32,11 +32,7 @@
 - (void)intersectSet:(id)arg1;
 - (void)minusOrderedSet:(id)arg1;
 - (void)minusSet:(id)arg1;
-- (void)ml_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)moveObjectsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
-- (void)pl_addObjectsFromArray:(id)arg1;
-- (void)pl_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)pl_removeObjectsInArray:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeFirstObject;
 - (void)removeLastObject;
@@ -44,7 +40,7 @@
 - (void)removeObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)removeObjectsAtIndexes:(id)arg1;
-- (void)removeObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (void)removeObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)removeObjectsInOrderedSet:(id)arg1;
@@ -56,8 +52,8 @@
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inOrderedSet:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inSet:(id)arg2;
 - (void)removeObjectsInSet:(id)arg1;
-- (void)removeObjectsPassingTest:(id)arg1;
-- (void)removeObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (void)removeObjectsPassingTest:(id /* block */)arg1;
+- (void)removeObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (void)replaceObject:(id)arg1;
 - (void)replaceObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
@@ -75,11 +71,22 @@
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (void)setOrderedSet:(id)arg1;
 - (void)setSet:(id)arg1;
-- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
-- (void)sortUsingComparator:(id)arg1;
-- (void)sortUsingDescriptors:(id)arg1;
-- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id /* block */)arg3;
+- (void)sortUsingComparator:(id /* block */)arg1;
+- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
 - (void)unionOrderedSet:(id)arg1;
 - (void)unionSet:(id)arg1;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
+- (void)filterUsingPredicate:(id)arg1;
+- (void)sortUsingDescriptors:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (void)ml_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)pl_addObjectsFromArray:(id)arg1;
+- (void)pl_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)pl_removeObjectsInArray:(id)arg1;
 
 @end

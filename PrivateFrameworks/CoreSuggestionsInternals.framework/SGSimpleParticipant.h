@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class SGIdentityKey;
-
 @interface SGSimpleParticipant : NSObject <NSCopying> {
     SGIdentityKey *_identityKey;
     unsigned int _role;
 }
 
-@property(retain) SGIdentityKey * identityKey;
-@property unsigned int role;
+@property (nonatomic, retain) SGIdentityKey *identityKey;
+@property (nonatomic) unsigned int role;
 
 + (id)participantWithKey:(id)arg1 roleType:(unsigned int)arg2;
 

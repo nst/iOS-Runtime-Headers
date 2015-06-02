@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class BSMachSendRight;
-
 @interface FBSUIApplicationLaunchResponse : FBSWorkspaceResponse {
     BOOL _supportsTaskSuspension;
     BOOL _supportsTaskSuspensionOnLock;
     BSMachSendRight *_taskPort;
 }
 
-@property BOOL supportsTaskSuspension;
-@property BOOL supportsTaskSuspensionOnLock;
-@property(retain) BSMachSendRight * taskPort;
+@property (nonatomic) BOOL supportsTaskSuspension;
+@property (nonatomic) BOOL supportsTaskSuspensionOnLock;
+@property (nonatomic, retain) BSMachSendRight *taskPort;
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

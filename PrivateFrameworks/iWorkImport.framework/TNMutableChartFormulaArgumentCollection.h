@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TNMutableChartFormulaArgumentCollection : TNChartFormulaArgumentCollection {
-}
+@interface TNMutableChartFormulaArgumentCollection : TNChartFormulaArgumentCollection
 
 - (void)addElement:(id)arg1;
 - (id)initWithArray:(id)arg1;

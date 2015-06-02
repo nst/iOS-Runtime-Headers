@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPHeaderLayout : TSWPLayout {
-}
+@interface TSWPHeaderLayout : TSWPLayout
 
 - (void)addAttachmentLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })maximumFrameSizeForChild:(id)arg1;

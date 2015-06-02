@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSArray, NSSet, _IDSService;
-
 @interface IDSService : NSObject {
     _IDSService *_internal;
 }
 
-@property(retain,readonly) _IDSService * _internal;
-@property(copy,readonly) NSSet * accounts;
-@property(copy,readonly) NSArray * devices;
+@property (nonatomic, readonly, retain) _IDSService *_internal;
+@property (nonatomic, readonly, copy) NSSet *accounts;
+@property (nonatomic, readonly, copy) NSArray *devices;
 
 + (BOOL)checkMessageSize:(unsigned int)arg1 priority:(int)arg2;
 

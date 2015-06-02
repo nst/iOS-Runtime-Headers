@@ -2,19 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, NSURL;
-
 @interface TSWPHyperlinkField : TSWPSmartField {
     NSURL *_url;
 }
 
-@property(readonly) NSString * displayText;
-@property(setter=setURL:,retain) NSURL * url;
+@property (nonatomic, readonly) NSString *displayText;
+@property (setter=setURL:, nonatomic, retain) NSURL *url;
 
 + (id)defaultFieldStyleIdentifier;
 + (id)defaultFileURL;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableArray, NSString, _MFParsedHTMLNode;
-
 @interface _MFParsedHTMLNode : NSObject <MFMessageBodyConsumableInnerTextNode, MFMessageBodyTreeNode> {
     NSMutableArray *_childNodes;
     unsigned int _endLocation;
@@ -13,19 +11,19 @@
     unsigned int _startLocation;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int endLocation;
-@property(readonly) _MFParsedHTMLNode * firstChild;
-@property(readonly) BOOL hasChildNodes;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * htmlString;
-@property(readonly) _MFParsedHTMLNode * lastChild;
-@property _MFParsedHTMLNode * nextSibling;
-@property _MFParsedHTMLNode * parentNode;
-@property unsigned int startLocation;
-@property(readonly) Class superclass;
-@property(readonly) NSString * tagName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int endLocation;
+@property (nonatomic, readonly) _MFParsedHTMLNode *firstChild;
+@property (nonatomic, readonly) BOOL hasChildNodes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *htmlString;
+@property (nonatomic, readonly) _MFParsedHTMLNode *lastChild;
+@property (nonatomic) _MFParsedHTMLNode *nextSibling;
+@property (nonatomic) _MFParsedHTMLNode *parentNode;
+@property (nonatomic) unsigned int startLocation;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *tagName;
 
 - (void)addRecursiveDescriptionWithLevel:(unsigned int)arg1 toString:(id)arg2;
 - (void)appendChild:(id)arg1;

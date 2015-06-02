@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewRotateTransition : UIInputViewTransition {
-}
+@interface UIInputViewRotateTransition : UIInputViewTransition
 
 - (BOOL)fadeAccessoryView;
 - (void)postNotificationsForTransitionEnd;

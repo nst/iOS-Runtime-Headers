@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIButton, UIImage, UIImageView, UILabel;
-
 @interface SKUIEditorialCardCellLayout : SKUICellLayout {
     UIImageView *_artworkImageView;
     UIButton *_button;
@@ -11,10 +9,10 @@
     UILabel *_messageTitleLabel;
 }
 
-@property(retain) UIImage * artwork;
-@property(copy) NSString * buttonTitle;
-@property(copy) NSString * message;
-@property(copy) NSString * messageTitle;
+@property (nonatomic, retain) UIImage *artwork;
+@property (nonatomic, copy) NSString *buttonTitle;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messageTitle;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;

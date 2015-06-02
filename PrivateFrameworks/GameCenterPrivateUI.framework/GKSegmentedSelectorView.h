@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSLayoutConstraint, UISegmentedControl;
-
 @interface GKSegmentedSelectorView : GKHeaderWithUnderlineView {
     UISegmentedControl *_segmentedControl;
     id _target;
     NSLayoutConstraint *_widthConstraint;
 }
 
-@property(retain) UISegmentedControl * segmentedControl;
-@property id target;
-@property(retain) NSLayoutConstraint * widthConstraint;
+@property (nonatomic, retain) UISegmentedControl *segmentedControl;
+@property (nonatomic) id target;
+@property (nonatomic, retain) NSLayoutConstraint *widthConstraint;
 
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCMathTableExpression : SCRCMathArrayExpression {
-}
+@interface SCRCMathTableExpression : SCRCMathArrayExpression
 
 - (unsigned int)_numberOfColumns;
 - (BOOL)canBeWrappedInLatexMathIndicators;

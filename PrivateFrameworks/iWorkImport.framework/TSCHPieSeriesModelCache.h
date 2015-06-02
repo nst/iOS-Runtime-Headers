@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartAxis, TSCHChartInfo, TSCHChartModel, TSCHChartSeries, TSDFill, TSDShadow, TSDStroke, TSWPParagraphStyle;
-
 @interface TSCHPieSeriesModelCache : NSObject {
     TSCHChartAxis *mAxis;
     TSCHChartInfo *mChartInfo;
@@ -34,28 +32,28 @@
     float mWedgeExplosion;
 }
 
-@property(readonly) TSCHChartAxis * axis;
-@property(readonly) float effectiveLabelExplosion;
-@property(readonly) float effectiveWedgeExplosion;
-@property(readonly) double endAngle;
-@property(readonly) BOOL groupedShadow;
-@property(readonly) float labelExplosion;
-@property(readonly) NSString * labelString;
-@property(readonly) double midAngle;
-@property(readonly) BOOL nullData;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) double percentage;
-@property(readonly) TSCHChartSeries * series;
-@property(readonly) double seriesAxisValue;
-@property(readonly) TSDFill * seriesFill;
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) float seriesOpacity;
-@property(readonly) TSDShadow * seriesShadow;
-@property(readonly) TSDStroke * seriesStroke;
-@property(readonly) BOOL shouldRenderLabel;
-@property(readonly) double startAngle;
-@property(readonly) double totalValue;
-@property(readonly) float wedgeExplosion;
+@property (readonly) TSCHChartAxis *axis;
+@property (readonly) float effectiveLabelExplosion;
+@property (readonly) float effectiveWedgeExplosion;
+@property (readonly) double endAngle;
+@property (readonly) BOOL groupedShadow;
+@property (readonly) float labelExplosion;
+@property (readonly) NSString *labelString;
+@property (readonly) double midAngle;
+@property (readonly) BOOL nullData;
+@property (readonly) TSWPParagraphStyle *paragraphStyle;
+@property (readonly) double percentage;
+@property (readonly) TSCHChartSeries *series;
+@property (readonly) double seriesAxisValue;
+@property (readonly) TSDFill *seriesFill;
+@property (readonly) unsigned int seriesIndex;
+@property (readonly) float seriesOpacity;
+@property (readonly) TSDShadow *seriesShadow;
+@property (readonly) TSDStroke *seriesStroke;
+@property (readonly) BOOL shouldRenderLabel;
+@property (readonly) double startAngle;
+@property (readonly) double totalValue;
+@property (readonly) float wedgeExplosion;
 
 - (id)axis;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFAuthScheme : NSObject {
-}
+@interface MFAuthScheme : NSObject
 
 + (id)authSchemesForAccount:(id)arg1 connection:(id)arg2;
 + (void)initialize;

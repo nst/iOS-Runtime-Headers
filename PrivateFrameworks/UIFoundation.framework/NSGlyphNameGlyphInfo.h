@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSString;
-
 @interface NSGlyphNameGlyphInfo : NSIdentityGlyphInfo {
     NSString *_name;
 }

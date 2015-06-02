@@ -16,17 +16,17 @@
     BOOL _takingCallsPrivateAllowed;
 }
 
-@property(getter=isAddCallAllowed) BOOL addCallAllowed;
-@property int ambiguityState;
-@property(getter=isAmbiguous,readonly) BOOL ambiguous;
-@property(getter=isEndAndAnswerAllowed) BOOL endAndAnswerAllowed;
-@property(getter=isHardPauseAvailable) BOOL hardPauseAvailable;
-@property(getter=isHoldAllowed) BOOL holdAllowed;
-@property(getter=isHoldAndAnswerAllowed) BOOL holdAndAnswerAllowed;
-@property(getter=isMergeable) BOOL mergeable;
-@property(getter=isSendToVoicemailAllowed) BOOL sendToVoicemailAllowed;
-@property(getter=isSwappable) BOOL swappable;
-@property(getter=isTakingCallsPrivateAllowed) BOOL takingCallsPrivateAllowed;
+@property (getter=isAddCallAllowed, nonatomic) BOOL addCallAllowed;
+@property (nonatomic) int ambiguityState;
+@property (getter=isAmbiguous, nonatomic, readonly) BOOL ambiguous;
+@property (getter=isEndAndAnswerAllowed, nonatomic) BOOL endAndAnswerAllowed;
+@property (getter=isHardPauseAvailable, nonatomic) BOOL hardPauseAvailable;
+@property (getter=isHoldAllowed, nonatomic) BOOL holdAllowed;
+@property (getter=isHoldAndAnswerAllowed, nonatomic) BOOL holdAndAnswerAllowed;
+@property (getter=isMergeable, nonatomic) BOOL mergeable;
+@property (getter=isSendToVoicemailAllowed, nonatomic) BOOL sendToVoicemailAllowed;
+@property (getter=isSwappable, nonatomic) BOOL swappable;
+@property (getter=isTakingCallsPrivateAllowed, nonatomic) BOOL takingCallsPrivateAllowed;
 
 + (BOOL)supportsSecureCoding;
 

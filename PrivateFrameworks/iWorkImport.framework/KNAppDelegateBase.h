@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface KNAppDelegateBase : TSABaseApplicationDelegate {
     BOOL _cachedBidiIsSupported;
 }
 
-@property(readonly) NSArray * powerPointDocumentTypes;
+@property (nonatomic, readonly) NSArray *powerPointDocumentTypes;
 
 - (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)appChartPropertyOverrides;

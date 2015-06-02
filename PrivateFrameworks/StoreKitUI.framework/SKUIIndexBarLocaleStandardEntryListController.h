@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKViewElementStyle, NSSet, SKUIIndexBarEntryListViewElement;
-
 @interface SKUIIndexBarLocaleStandardEntryListController : SKUIIndexBarEntryListController {
     SKUIIndexBarEntryListViewElement *_entryListViewElement;
     NSSet *_requiredVisibilitySet;

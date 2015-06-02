@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLVideoTranscoder : NSObject {
-}
+@interface PLVideoTranscoder : NSObject
 
 + (id)exportPresetsCompatibleWithVideoAtURL:(id)arg1;
 + (id)generatePosterFrameForAVAsset:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 error:(id*)arg3;
 + (id)generatePosterFrameForVideoAtURL:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 error:(id*)arg3;
-+ (void)transcodeVideo:(id)arg1 outputURL:(id)arg2 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 presetName:(id)arg5 outputFileType:(id)arg6 completionHandler:(id)arg7;
-+ (void)transcodeVideoWithObjectBuilder:(id)arg1 outputURL:(id)arg2 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 presetName:(id)arg5 outputFileType:(id)arg6 completionHandler:(id)arg7;
++ (void)transcodeVideo:(id)arg1 outputURL:(id)arg2 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 presetName:(id)arg5 outputFileType:(id)arg6 completionHandler:(id /* block */)arg7;
++ (void)transcodeVideoWithObjectBuilder:(id)arg1 outputURL:(id)arg2 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 presetName:(id)arg5 outputFileType:(id)arg6 completionHandler:(id /* block */)arg7;
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIIVCInterface>;
-
 @interface UIInputViewControllerInterfaceClient : NSExtensionContext {
     <_UIIVCInterface> *_forwardingInterface;
 }
 
-@property(retain) <_UIIVCInterface> * forwardingInterface;
+@property (nonatomic, retain) <_UIIVCInterface> *forwardingInterface;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;

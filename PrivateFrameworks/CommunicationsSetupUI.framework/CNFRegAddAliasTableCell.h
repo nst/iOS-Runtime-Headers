@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegAddAliasTableCell : PSTableCell {
-}
+@interface CNFRegAddAliasTableCell : PSTableCell
 
 - (void)layoutSubviews;
 

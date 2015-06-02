@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface IMHandleRegistrarInternal : NSObject {
     NSMutableDictionary *_accountSiblingsMap;
     NSMutableArray *_allIMHandles;

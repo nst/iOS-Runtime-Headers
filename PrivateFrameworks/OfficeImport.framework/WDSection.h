@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSMutableArray, WDBorder, WDDocument, WDText;
-
 @interface WDSection : NSObject {
     WDDocument *mDocument;
     WDText *mEvenPageFooter;
@@ -12,7 +10,7 @@
     WDText *mFirstPageHeader;
     WDText *mOddPageFooter;
     WDText *mOddPageHeader;
-    unsigned int mOriginal : 1;
+    unsigned int mOriginal;
     struct { 
         WDBorder *topBorder; 
         WDBorder *leftBorder; 
@@ -93,9 +91,9 @@
         unsigned int formattingChangeDateOverridden : 1; 
         unsigned int bidiOverridden : 1; 
     } mOriginalProperties;
-    unsigned int mResolved : 1;
+    unsigned int mResolved;
     WDText *mText;
-    unsigned int mTracked : 1;
+    unsigned int mTracked;
     struct { 
         WDBorder *topBorder; 
         WDBorder *leftBorder; 

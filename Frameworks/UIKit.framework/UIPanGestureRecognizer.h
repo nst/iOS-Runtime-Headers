@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIPanGestureVelocitySample;
-
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
-    unsigned int _canPanHorizontally : 1;
-    unsigned int _canPanVertically : 1;
+    unsigned int _canPanHorizontally;
+    unsigned int _canPanVertically;
     struct CGPoint { 
         float x; 
         float y; 
     } _digitizerLocation;
-    unsigned int _failsPastMaxTouches : 1;
+    unsigned int _failsPastMaxTouches;
     struct CGPoint { 
         float x; 
         float y; 
     } _firstSceneReferenceLocation;
     float _hysteresis;
-    unsigned int _ignoresStationaryTouches : 1;
+    unsigned int _ignoresStationaryTouches;
     struct CGPoint { 
         float x; 
         float y; 
@@ -36,10 +34,10 @@
     id _velocitySample;
 }
 
-@property(getter=_previousVelocitySample,readonly) UIPanGestureVelocitySample * _previousVelocitySample;
-@property(getter=_velocitySample,readonly) UIPanGestureVelocitySample * _velocitySample;
-@property unsigned int maximumNumberOfTouches;
-@property unsigned int minimumNumberOfTouches;
+@property (getter=_previousVelocitySample, readonly) UIPanGestureVelocitySample *_previousVelocitySample;
+@property (getter=_velocitySample, readonly) UIPanGestureVelocitySample *_velocitySample;
+@property (nonatomic) unsigned int maximumNumberOfTouches;
+@property (nonatomic) unsigned int minimumNumberOfTouches;
 
 + (void)_setPanGestureRecognizersEnabled:(BOOL)arg1;
 
@@ -51,7 +49,7 @@
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;
-- (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id)arg2;
+- (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id /* block */)arg2;
 - (float)_hysteresis;
 - (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;

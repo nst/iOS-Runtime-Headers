@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebSimpleLayer : CALayer {
-}
+@interface WebSimpleLayer : CALayer
 
 - (id)actionForKey:(id)arg1;
 - (void)display;

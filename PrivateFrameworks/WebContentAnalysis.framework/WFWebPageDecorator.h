@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSObject<WFWebPageProtocol>, NSString, WFImgArrayCache;
-
 @interface WFWebPageDecorator : NSObject <WFWebPageProtocol> {
     NSString *URLString;
     WFImgArrayCache *pageImagesPropertyCache;
     NSObject<WFWebPageProtocol> *webPageStripper;
 }
 
-@property(retain) NSString * URLString;
+@property (retain) NSString *URLString;
 
 + (id)_plainTextWithSelector:(SEL)arg1 object:(id)arg2;
 + (id)plainTextWithWebPageData:(id)arg1;

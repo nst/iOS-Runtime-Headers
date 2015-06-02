@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCAPNConfiguration, NSArray;
-
 @interface MCCellularPayload : MCPayload {
     NSArray *_APNs;
     MCAPNConfiguration *_attachAPN;
 }
 
-@property(retain) NSArray * APNs;
-@property(retain) MCAPNConfiguration * attachAPN;
+@property (nonatomic, retain) NSArray *APNs;
+@property (nonatomic, retain) MCAPNConfiguration *attachAPN;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

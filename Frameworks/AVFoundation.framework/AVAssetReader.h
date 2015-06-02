@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVAssetReaderInternal, NSArray, NSError;
-
 @interface AVAssetReader : NSObject {
     AVAssetReaderInternal *_priv;
 }
 
-@property(retain,readonly) AVAsset * asset;
-@property(readonly) NSError * error;
-@property(getter=_figAssetReader,readonly) struct OpaqueFigAssetReader { }* figAssetReader;
-@property(readonly) NSArray * outputs;
-@property(readonly) int status;
-@property struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (nonatomic, readonly, retain) AVAsset *asset;
+@property (readonly) NSError *error;
+@property (getter=_figAssetReader, nonatomic, readonly) struct OpaqueFigAssetReader { }*figAssetReader;
+@property (nonatomic, readonly) NSArray *outputs;
+@property (readonly) int status;
+@property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 
 + (id)_errorForOSStatus:(long)arg1;
 + (id)assetReaderWithAsset:(id)arg1 error:(id*)arg2;

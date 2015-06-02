@@ -14,7 +14,7 @@
 
 - (id)_simulateQueue;
 - (int)accessPreflight;
-- (void)accessRequestWithCompletion:(id)arg1;
+- (void)accessRequestWithCompletion:(id /* block */)arg1;
 - (void)callExternalChangeCallbacks:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebMIMETypeRegistry : NSObject {
-}
+@interface WebMIMETypeRegistry : NSObject
 
 + (BOOL)isSupportedImageMIMEType:(id)arg1;
 + (BOOL)isSupportedMediaMIMEType:(id)arg1;

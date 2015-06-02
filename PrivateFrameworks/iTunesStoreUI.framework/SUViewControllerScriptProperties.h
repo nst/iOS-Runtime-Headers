@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, SUGradient, UIColor;
-
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
     BOOL _alwaysDispatchesScrollEvents;
     UIColor *_backgroundColor;
@@ -32,26 +30,26 @@
     BOOL _usesBlurredBackground;
 }
 
-@property BOOL alwaysDispatchesScrollEvents;
-@property(retain) UIColor * backgroundColor;
-@property(copy) NSDictionary * contextDictionary;
-@property(getter=isDoubleTapEnabled) BOOL doubleTapEnabled;
-@property(getter=isEmbedded) BOOL embedded;
-@property BOOL flashesScrollIndicators;
-@property BOOL inputViewObeysDOMFocus;
-@property int loadingIndicatorStyle;
-@property(retain) UIColor * loadingTextColor;
-@property(retain) UIColor * loadingTextShadowColor;
-@property(retain) SUGradient * placeholderBackgroundGradient;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollContentInsets;
-@property(getter=isScrollingDisabled) BOOL scrollingDisabled;
-@property BOOL shouldLoadProgressively;
-@property BOOL shouldShowFormAccessory;
-@property BOOL showsBackgroundShadow;
-@property BOOL showsHorizontalScrollIndicator;
-@property BOOL showsVerticalScrollIndicator;
-@property(retain) UIColor * topExtensionColor;
-@property BOOL usesBlurredBackground;
+@property (nonatomic) BOOL alwaysDispatchesScrollEvents;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, copy) NSDictionary *contextDictionary;
+@property (getter=isDoubleTapEnabled, nonatomic) BOOL doubleTapEnabled;
+@property (getter=isEmbedded, nonatomic) BOOL embedded;
+@property (nonatomic) BOOL flashesScrollIndicators;
+@property (nonatomic) BOOL inputViewObeysDOMFocus;
+@property (nonatomic) int loadingIndicatorStyle;
+@property (nonatomic, retain) UIColor *loadingTextColor;
+@property (nonatomic, retain) UIColor *loadingTextShadowColor;
+@property (nonatomic, retain) SUGradient *placeholderBackgroundGradient;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollContentInsets;
+@property (getter=isScrollingDisabled, nonatomic) BOOL scrollingDisabled;
+@property (nonatomic) BOOL shouldLoadProgressively;
+@property (nonatomic) BOOL shouldShowFormAccessory;
+@property (nonatomic) BOOL showsBackgroundShadow;
+@property (nonatomic) BOOL showsHorizontalScrollIndicator;
+@property (nonatomic) BOOL showsVerticalScrollIndicator;
+@property (nonatomic, retain) UIColor *topExtensionColor;
+@property (nonatomic) BOOL usesBlurredBackground;
 
 - (BOOL)alwaysDispatchesScrollEvents;
 - (id)backgroundColor;

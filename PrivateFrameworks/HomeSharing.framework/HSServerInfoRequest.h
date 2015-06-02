@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSServerInfoRequest : HSRequest {
-}
+@interface HSServerInfoRequest : HSRequest
 
 - (id)init;
 

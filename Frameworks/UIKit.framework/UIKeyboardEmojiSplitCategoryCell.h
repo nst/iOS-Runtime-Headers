@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIView;
-
 @interface UIKeyboardEmojiSplitCategoryCell : UITableViewCell {
     UIView *_selectedCircle;
     UIImageView *_symbol;
     UILabel *_title;
 }
 
-@property(retain) UIView * selectedCircle;
-@property(retain) UIImageView * symbol;
-@property(retain) UILabel * title;
+@property (nonatomic, retain) UIView *selectedCircle;
+@property (nonatomic, retain) UIImageView *symbol;
+@property (nonatomic, retain) UILabel *title;
 
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

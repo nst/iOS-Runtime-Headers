@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLMicroBlogAccountsTableViewControllerDelegate>, NSArray, SLMicroBlogUserRecord, UIImage;
-
 @interface SLMicroBlogAccountsTableViewController : UITableViewController {
     NSArray *_accountUserRecords;
     UIImage *_blankImage;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class <MCBrowserViewControllerDelegate>, MCNearbyServiceBrowser, MCPeerID, MCSession, NSBundle, NSMutableArray, NSMutableDictionary, NSString, UIBarButtonItem, UINavigationBar, UITableView;
-
 @interface MCBrowserViewController : UIViewController <MCNearbyServiceBrowserDelegate, MCSessionPrivateDelegate, UIAlertViewDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     MCNearbyServiceBrowser *_browser;
     UIBarButtonItem *_cancelButton;
@@ -23,28 +21,28 @@
     UITableView *_tableView;
 }
 
-@property(retain) MCNearbyServiceBrowser * browser;
-@property(retain) UIBarButtonItem * cancelButton;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned int declinedPeersCount;
-@property <MCBrowserViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIBarButtonItem * doneButton;
-@property(retain) NSMutableArray * foundPeers;
-@property(retain) NSBundle * frameworkBundle;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * invitedPeersSection;
-@property(retain) NSMutableDictionary * invitedPeersState;
-@property unsigned int maximumNumberOfPeers;
-@property(readonly) BOOL maximumNumberOfPeersReached;
-@property unsigned int minimumNumberOfPeers;
-@property(readonly) BOOL minimumNumberOfPeersReached;
-@property(copy) MCPeerID * myPeerID;
-@property(retain) UINavigationBar * navigationBar;
-@property(retain) NSMutableArray * nearbyPeersSection;
-@property(retain) MCSession * session;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
+@property (nonatomic, retain) MCNearbyServiceBrowser *browser;
+@property (nonatomic, retain) UIBarButtonItem *cancelButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned int declinedPeersCount;
+@property (nonatomic) <MCBrowserViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIBarButtonItem *doneButton;
+@property (nonatomic, retain) NSMutableArray *foundPeers;
+@property (nonatomic, retain) NSBundle *frameworkBundle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *invitedPeersSection;
+@property (nonatomic, retain) NSMutableDictionary *invitedPeersState;
+@property (nonatomic) unsigned int maximumNumberOfPeers;
+@property (nonatomic, readonly) BOOL maximumNumberOfPeersReached;
+@property (nonatomic) unsigned int minimumNumberOfPeers;
+@property (nonatomic, readonly) BOOL minimumNumberOfPeersReached;
+@property (nonatomic, copy) MCPeerID *myPeerID;
+@property (nonatomic, retain) UINavigationBar *navigationBar;
+@property (nonatomic, retain) NSMutableArray *nearbyPeersSection;
+@property (nonatomic, retain) MCSession *session;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableView *tableView;
 
 - (id)browser;
 - (void)browser:(id)arg1 foundPeer:(id)arg2 withDiscoveryInfo:(id)arg3;

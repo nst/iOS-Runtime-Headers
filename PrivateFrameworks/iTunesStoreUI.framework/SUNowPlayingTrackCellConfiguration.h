@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUNowPlayingTrackCellConfiguration : SUMediaItemCellConfiguration {
-}
+@interface SUNowPlayingTrackCellConfiguration : SUMediaItemCellConfiguration
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

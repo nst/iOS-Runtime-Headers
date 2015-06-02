@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLManagedAlbum, PLManagedAsset;
+@interface PLAssetToAlbumOrder : PLManagedObject <PLOrderKeyObject>
 
-@interface PLAssetToAlbumOrder : PLManagedObject <PLOrderKeyObject> {
-}
-
-@property(retain) PLManagedAlbum * album;
-@property(retain) PLManagedAsset * asset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property long long orderValue;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAlbum *album;
+@property (nonatomic, retain) PLManagedAsset *asset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) long long orderValue;
+@property (readonly) Class superclass;
 
 + (id)newAssetOrderForAsset:(id)arg1 album:(id)arg2;
 

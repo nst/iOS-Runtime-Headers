@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class MDDisplayLayer, NSString, VKAnchor, VKLayoutContext;
-
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
     VKAnchor *_anchor;
     MDDisplayLayer *_displayLayer;
@@ -21,13 +19,13 @@
     } _screenPointInCanvas;
 }
 
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property MDDisplayLayer * displayLayer;
-@property BOOL followsTerrain;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) MDDisplayLayer *displayLayer;
+@property (nonatomic) BOOL followsTerrain;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (id)_anchorWithContext:(id)arg1;

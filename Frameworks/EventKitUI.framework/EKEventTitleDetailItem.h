@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSObject<EKEventTitleDetailItemDelegate>, UIColor, UITableViewCell;
-
 @interface EKEventTitleDetailItem : EKEventDetailItem <EKEventDetailTitleCellDelegate> {
     UITableViewCell *_cell;
     BOOL _cellNeedsUpdate;
@@ -12,7 +10,7 @@
     BOOL _showDot;
 }
 
-@property NSObject<EKEventTitleDetailItemDelegate> * editDelegate;
+@property (nonatomic) NSObject<EKEventTitleDetailItemDelegate> *editDelegate;
 
 - (void).cxx_destruct;
 - (void)_updateCellIfNeededForWidth:(float)arg1;

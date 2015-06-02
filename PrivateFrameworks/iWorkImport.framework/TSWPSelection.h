@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPSelection : TSKSelection <TSDTextSelection> {
     int _caretAffinity;
     unsigned int _headChar;
@@ -35,27 +28,27 @@
     } _visualRanges;
 }
 
-@property(readonly) int caretAffinity;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int headChar;
-@property(readonly) BOOL isAtEndOfLine;
-@property(readonly) BOOL isEmpty;
-@property(readonly) BOOL isInsertionPoint;
-@property(readonly) BOOL isRange;
-@property(readonly) BOOL isValid;
-@property(readonly) BOOL isVisual;
-@property(readonly) unsigned int leadingCharIndex;
-@property(readonly) BOOL leadingEdge;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rawRange;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } smartFieldRange;
-@property(readonly) int styleInsertionBehavior;
-@property(readonly) Class superclass;
-@property unsigned int tailChar;
-@property(readonly) int type;
-@property(readonly) BOOL validVisualRanges;
+@property (nonatomic, readonly) int caretAffinity;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int headChar;
+@property (nonatomic, readonly) BOOL isAtEndOfLine;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) BOOL isInsertionPoint;
+@property (nonatomic, readonly) BOOL isRange;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) BOOL isVisual;
+@property (nonatomic, readonly) unsigned int leadingCharIndex;
+@property (nonatomic, readonly) BOOL leadingEdge;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rawRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } smartFieldRange;
+@property (nonatomic, readonly) int styleInsertionBehavior;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int tailChar;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) BOOL validVisualRanges;
 
 + (Class)archivedSelectionClass;
 + (BOOL)p_checkEndOfLineFlagForRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 leadingEdge:(BOOL*)arg2 type:(int*)arg3 endOfLine:(BOOL)arg4 storage:(id)arg5;

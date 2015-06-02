@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class MKMapView, NSArray, NSMutableArray, NSObject<PLDiagnosticsProvider>, NSString, PHFetchResult, PUMapAnnotationManager, PUMapViewControllerSpec;
-
 @interface PUMapViewController : UIViewController <MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUPhotoLibraryUIChangeObserver, PUStackedAlbumTransitionDelegate> {
     PUMapAnnotationManager *_annotationManager;
     struct CGSize { 
@@ -25,14 +23,14 @@
     BOOL _useCurrentUserLocation;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject<PLDiagnosticsProvider> * diagnosticsProvider;
-@property(readonly) unsigned int hash;
-@property unsigned int maxItemsInitialZoom;
-@property BOOL shouldShowTabBar;
-@property BOOL shouldShowToolbar;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<PLDiagnosticsProvider> *diagnosticsProvider;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maxItemsInitialZoom;
+@property (nonatomic) BOOL shouldShowTabBar;
+@property (nonatomic) BOOL shouldShowToolbar;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addLocationsToArray:(id)arg1 forInitialZoomWithMapItems:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSDictionary, NSString, UILabel, UIView;
-
 @interface ABContactHeaderDisplayView : ABContactHeaderView {
     NSString *_alternateName;
     UILabel *_fakeTaglineAlignmentLabel;
@@ -15,10 +13,10 @@
     NSDictionary *_taglineTextAttributes;
 }
 
-@property(retain) NSString * alternateName;
-@property(retain) NSString * message;
-@property(retain) UIView * personHeaderView;
-@property(copy) NSDictionary * taglineTextAttributes;
+@property (nonatomic, retain) NSString *alternateName;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) UIView *personHeaderView;
+@property (nonatomic, copy) NSDictionary *taglineTextAttributes;
 
 + (id)contactHeaderViewWithContact:(id)arg1 personHeaderView:(id)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class MKMapView;
-
 @interface SiriUIMapCollectionViewCell : SiriUIContentCollectionViewCell {
     MKMapView *_mapView;
 }

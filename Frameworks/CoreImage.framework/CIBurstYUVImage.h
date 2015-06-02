@@ -13,8 +13,8 @@
     int width;
 }
 
-@property char * Cbuffer;
-@property char * Ybuffer;
+@property char *Cbuffer;
+@property char *Ybuffer;
 @property int bytesPerRow;
 @property int height;
 @property int width;

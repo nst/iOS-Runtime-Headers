@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSString, NSURL;
+@interface SAUIURLData : AceObject <SAAceSerializable>
 
-@interface SAUIURLData : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSURL * uri;
+@property (nonatomic, copy) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *uri;
 
 + (id)uRLData;
 + (id)uRLDataWithDictionary:(id)arg1 context:(id)arg2;

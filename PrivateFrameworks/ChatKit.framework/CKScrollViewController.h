@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMScheduledUpdater, UIScrollView;
-
 @interface CKScrollViewController : CKViewController {
     float _bottomInsetPadding;
     BOOL _keyboardInteractionCancelled;
@@ -24,17 +22,17 @@
     IMScheduledUpdater *_updater;
 }
 
-@property(readonly) float bottomInsetPadding;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardFrame;
-@property BOOL keyboardInteractionCancelled;
-@property(getter=isKeyboardOnscreenWithoutAccessoryView,readonly) BOOL keyboardOnscreenWithoutAccessoryView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardScreenFrame;
-@property(getter=isKeyboardUndocked,readonly) BOOL keyboardUndocked;
-@property(getter=isKeyboardVisible) BOOL keyboardVisible;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) BOOL topInsetIncludesPalette;
-@property(readonly) float topInsetPadding;
-@property(retain) IMScheduledUpdater * updater;
+@property (nonatomic, readonly) float bottomInsetPadding;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardFrame;
+@property (nonatomic) BOOL keyboardInteractionCancelled;
+@property (getter=isKeyboardOnscreenWithoutAccessoryView, nonatomic, readonly) BOOL keyboardOnscreenWithoutAccessoryView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardScreenFrame;
+@property (getter=isKeyboardUndocked, nonatomic, readonly) BOOL keyboardUndocked;
+@property (getter=isKeyboardVisible, nonatomic) BOOL keyboardVisible;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, readonly) BOOL topInsetIncludesPalette;
+@property (nonatomic, readonly) float topInsetPadding;
+@property (nonatomic, retain) IMScheduledUpdater *updater;
 
 - (float)_bottomRotatingFooterHeight;
 - (void)_changedStatusBarFrame:(id)arg1;

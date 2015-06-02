@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DSceneRenderSetup : NSObject {
-}
+@interface TSCH3DSceneRenderSetup : NSObject
 
 + (id)camera;
 + (id)cameraAndSceneTransform;

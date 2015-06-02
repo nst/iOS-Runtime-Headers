@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPageController;
-
 @interface UIPageControllerScrollView : UIScrollView {
     UIPageController *_pageController;
 }
 
-@property UIPageController * pageController;
+@property (nonatomic) UIPageController *pageController;
 
 - (unsigned int)_abuttedPagingEdges;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;

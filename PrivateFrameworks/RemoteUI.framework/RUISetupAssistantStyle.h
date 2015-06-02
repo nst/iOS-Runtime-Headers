@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUISetupAssistantStyle : RUIStyle {
-}
+@interface RUISetupAssistantStyle : RUIStyle
 
 - (void)_applyToLabel:(id)arg1;
 - (void)_applyToTitleLabel:(id)arg1;

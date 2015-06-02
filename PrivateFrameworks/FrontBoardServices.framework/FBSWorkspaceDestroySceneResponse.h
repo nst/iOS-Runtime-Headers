@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSWorkspaceDestroySceneResponse : FBSWorkspaceResponse {
-}
+@interface FBSWorkspaceDestroySceneResponse : FBSWorkspaceResponse
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

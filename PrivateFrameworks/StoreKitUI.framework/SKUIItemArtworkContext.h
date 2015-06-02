@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, SKUIColorScheme, SKUIProductImageDataConsumer, SKUIStyledImageDataConsumer, UIColor;
-
 @interface SKUIItemArtworkContext : NSObject {
     UIColor *_backgroundColor;
     SKUIColorScheme *_colorScheme;
@@ -15,13 +13,13 @@
     SKUIProductImageDataConsumer *_posterConsumer;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(retain) SKUIProductImageDataConsumer * generalConsumer;
-@property(retain) SKUIStyledImageDataConsumer * iconConsumer;
-@property(retain) SKUIProductImageDataConsumer * letterboxConsumer;
-@property(retain) SKUIStyledImageDataConsumer * newsstandConsumer;
-@property(retain) SKUIProductImageDataConsumer * posterConsumer;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, retain) SKUIProductImageDataConsumer *generalConsumer;
+@property (nonatomic, retain) SKUIStyledImageDataConsumer *iconConsumer;
+@property (nonatomic, retain) SKUIProductImageDataConsumer *letterboxConsumer;
+@property (nonatomic, retain) SKUIStyledImageDataConsumer *newsstandConsumer;
+@property (nonatomic, retain) SKUIProductImageDataConsumer *posterConsumer;
 
 + (id)lockupContextWithSize:(int)arg1;
 + (id)roomContext;

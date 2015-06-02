@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class FBSDisplay, FBSSceneClientSettingsDiff;
-
 @interface FBSWorkspaceCreateSceneEvent : FBSWorkspaceSceneUpdateEvent {
     FBSSceneClientSettingsDiff *_clientSettings;
     FBSDisplay *_display;
 }
 
-@property(retain) FBSSceneClientSettingsDiff * clientSettingsDiff;
-@property(retain) FBSDisplay * display;
+@property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;
+@property (nonatomic, retain) FBSDisplay *display;
 
 - (id)clientSettingsDiff;
 - (void)dealloc;

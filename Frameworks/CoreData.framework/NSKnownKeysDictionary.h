@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSKnownKeysMappingStrategy;
+@interface NSKnownKeysDictionary : NSMutableDictionary
 
-@interface NSKnownKeysDictionary : NSMutableDictionary {
-}
-
-@property(readonly) NSKnownKeysMappingStrategy * mapping;
+@property (nonatomic, readonly) NSKnownKeysMappingStrategy *mapping;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

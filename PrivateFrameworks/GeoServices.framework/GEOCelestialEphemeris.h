@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOEquatorialCelestialBodyData, GEOHorizontalCelestialBodyData, GEOSolarEclipticCelestialBodyData, NSDate;
-
 @interface GEOCelestialEphemeris : NSObject {
     int _body;
     struct { 
@@ -23,16 +21,16 @@
     NSDate *_transit;
 }
 
-@property(readonly) GEOSolarEclipticCelestialBodyData * eclipticCoord;
-@property(readonly) double elongation;
-@property(readonly) GEOEquatorialCelestialBodyData * equatorialCoord;
-@property(readonly) GEOHorizontalCelestialBodyData * horizontalCoord;
-@property(readonly) double illuminatedFraction;
-@property(readonly) double parallacticAngle;
-@property(readonly) double phaseAngle;
-@property(readonly) NSDate * rise;
-@property(readonly) NSDate * set;
-@property(readonly) NSDate * transit;
+@property (nonatomic, readonly) GEOSolarEclipticCelestialBodyData *eclipticCoord;
+@property (nonatomic, readonly) double elongation;
+@property (nonatomic, readonly) GEOEquatorialCelestialBodyData *equatorialCoord;
+@property (nonatomic, readonly) GEOHorizontalCelestialBodyData *horizontalCoord;
+@property (nonatomic, readonly) double illuminatedFraction;
+@property (nonatomic, readonly) double parallacticAngle;
+@property (nonatomic, readonly) double phaseAngle;
+@property (nonatomic, readonly) NSDate *rise;
+@property (nonatomic, readonly) NSDate *set;
+@property (nonatomic, readonly) NSDate *transit;
 
 - (id).cxx_construct;
 - (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(int)arg4;

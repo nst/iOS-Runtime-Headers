@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLCoreAccountingGroup : PLCoreOperator {
-}
+@interface PLCoreAccountingGroup : PLCoreOperator
 
 - (id)accountingGroupForAccountingGroupName:(id)arg1;
 - (id)getAllAccountingGroupNames;

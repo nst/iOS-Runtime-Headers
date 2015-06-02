@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDNotesMaster;
-
 @interface PDNotesSlide : PDSlideChild {
     PDNotesMaster *mNotesMaster;
 }

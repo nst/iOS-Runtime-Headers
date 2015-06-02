@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSArray, NSData, NSDate, NSError, NSString, SKPayment, SKPaymentTransaction;
-
 @interface SKPaymentTransactionInternal : NSObject {
     NSArray *_downloads;
     NSError *_error;

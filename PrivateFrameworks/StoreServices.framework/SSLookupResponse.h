@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableArray, NSString, SSMetricsConfiguration, SSMetricsPageEvent;
-
 @interface SSLookupResponse : NSObject <SSXPCCoding> {
     NSDate *_expirationDate;
     NSMutableArray *_itemOrder;
@@ -11,23 +9,20 @@
     NSDictionary *_response;
 }
 
-@property(readonly) NSArray * allItems;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSDate * expirationDate;
-@property(readonly) unsigned int hash;
-@property(readonly) SSMetricsConfiguration * metricsConfiguration;
-@property(retain) SSMetricsPageEvent * metricsPageEvent;
-@property(readonly) BOOL mpIsPersonalizedOffer;
-@property(readonly) NSDictionary * responseDictionary;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *allItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDate *expirationDate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
+@property (nonatomic, readonly) BOOL mpIsPersonalizedOffer;
+@property (nonatomic, readonly) NSDictionary *responseDictionary;
+@property (readonly) Class superclass;
 
-+ (BOOL)mpFakeCompletionDataForBuys;
-+ (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
-+ (BOOL)mpShowBuysWithNoCompletionOffer;
-+ (BOOL)mpVerboseCMCLogging;
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
-- (void)_enumerateItemsWithBlock:(id)arg1;
+- (void)_enumerateItemsWithBlock:(id /* block */)arg1;
 - (void)_setMetricsPageEvent:(id)arg1;
 - (id)allItems;
 - (id)appStoreURLWithReason:(int)arg1 initialIndex:(int)arg2;
@@ -40,11 +35,19 @@
 - (id)itemForKey:(id)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
-- (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
-- (BOOL)mpIsPersonalizedOffer;
-- (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 - (id)responseDictionary;
 - (void)setExpirationDate:(id)arg1;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (BOOL)mpFakeCompletionDataForBuys;
++ (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
++ (BOOL)mpShowBuysWithNoCompletionOffer;
++ (BOOL)mpVerboseCMCLogging;
+
+- (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
+- (BOOL)mpIsPersonalizedOffer;
+- (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 
 @end

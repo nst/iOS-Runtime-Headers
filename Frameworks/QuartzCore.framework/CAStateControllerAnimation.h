@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer, NSString;
-
 @interface CAStateControllerAnimation : NSObject {
     NSString *_key;
     CALayer *_layer;
 }
 
-@property(readonly) NSString * key;
-@property(readonly) CALayer * layer;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic, readonly) CALayer *layer;
 
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1 key:(id)arg2;

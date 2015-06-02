@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UINoDefinitionViewController : UIViewController {
-}
+@interface _UINoDefinitionViewController : UIViewController
 
 - (void)viewDidLoad;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFAttachmentLibraryDataProvider, NSString;
-
 @interface MFMessageLibrary : NSObject {
     MFAttachmentLibraryDataProvider *_attachmentDataProvider;
     NSString *_path;
@@ -24,7 +22,7 @@
 - (void)compactMailbox:(id)arg1;
 - (void)compactMessages:(id)arg1;
 - (void)compactMessages:(id)arg1 permanently:(BOOL)arg2;
-- (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id)arg2;
+- (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)copyMessagesWithRemoteIDs:(id)arg1 options:(unsigned int)arg2 inRemoteMailbox:(id)arg3;
 - (int)createLibraryIDForAccount:(id)arg1;
 - (id)dataConsumerForMessage:(id)arg1;
@@ -121,7 +119,7 @@
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
 - (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;
 - (void)updateFlagsForMessagesInPlace:(id)arg1 success:(BOOL*)arg2;
-- (oneway void)updateMessage:(id)arg1 withMetadata:(id)arg2;
+- (oneway void)updateMessage:(id)arg1 withMetadata:(id /* block */)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (id)urlForMailboxID:(unsigned int)arg1;

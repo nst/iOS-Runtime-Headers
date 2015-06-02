@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSMapTable;
-
 @interface _HKIdentifierLookupTable : NSObject {
     NSMapTable *_identifierMapTable;
     int _lookupTableSpinLock;

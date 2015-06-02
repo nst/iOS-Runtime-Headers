@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PLSyncProgressView, UILabel;
-
 @interface PUPhotosGlobalFooterView : UICollectionReusableView {
     unsigned int _imageCount;
     int _importOperation;
@@ -17,8 +15,8 @@
     unsigned int _videoCount;
 }
 
-@property int style;
-@property(retain) NSString * subtitle;
+@property (nonatomic) int style;
+@property (nonatomic, retain) NSString *subtitle;
 
 - (void).cxx_destruct;
 - (void)_updateSubviews;

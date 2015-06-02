@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKBalloonViewDelegate>, CKBalloonImageView, CKManualUpdater, NSString, UIColor, UILongPressGestureRecognizer, UITapGestureRecognizer;
-
 @interface CKBalloonView : CKBalloonImageView <UIGestureRecognizerDelegate> {
     unsigned int _balloonCorners;
     BOOL _canUseOpaqueMask;
@@ -26,26 +24,26 @@
     BOOL _wantsSkinnyMask;
 }
 
-@property unsigned int balloonCorners;
-@property BOOL canUseOpaqueMask;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKBalloonViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) CKManualUpdater * displayUpdater;
-@property(retain) UITapGestureRecognizer * doubleTapGestureRecognizer;
-@property(getter=isFilled) BOOL filled;
-@property BOOL hasOverlay;
-@property BOOL hasTail;
-@property(readonly) unsigned int hash;
-@property(retain) UILongPressGestureRecognizer * longPressGestureRecognizer;
-@property(readonly) BOOL needsGroupOpacity;
-@property BOOL orientation;
-@property(retain) CKBalloonImageView * overlay;
-@property(readonly) UIColor * overlayColor;
-@property(getter=isShowingMenu) BOOL showingMenu;
-@property(readonly) Class superclass;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
-@property BOOL wantsSkinnyMask;
+@property (nonatomic) unsigned int balloonCorners;
+@property (nonatomic) BOOL canUseOpaqueMask;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKBalloonViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CKManualUpdater *displayUpdater;
+@property (nonatomic, retain) UITapGestureRecognizer *doubleTapGestureRecognizer;
+@property (getter=isFilled, nonatomic) BOOL filled;
+@property (nonatomic) BOOL hasOverlay;
+@property (nonatomic) BOOL hasTail;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
+@property (nonatomic, readonly) BOOL needsGroupOpacity;
+@property (nonatomic) BOOL orientation;
+@property (nonatomic, retain) CKBalloonImageView *overlay;
+@property (nonatomic, readonly) UIColor *overlayColor;
+@property (getter=isShowingMenu, nonatomic) BOOL showingMenu;
+@property (readonly) Class superclass;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
+@property (nonatomic) BOOL wantsSkinnyMask;
 
 - (void)_dismissOverlay;
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;

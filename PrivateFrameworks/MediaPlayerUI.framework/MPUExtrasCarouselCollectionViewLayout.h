@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary;
-
 @interface MPUExtrasCarouselCollectionViewLayout : UICollectionViewLayout <MPUExtrasCarouselCollectionViewLayout> {
     struct CGSize { 
         float width; 
@@ -13,9 +11,9 @@
     int _indexOfVisibleItemForBoundsChange;
 }
 
-@property struct CGSize { float x1; float x2; } cachedCollectionViewContentSize;
-@property(retain) NSDictionary * cachedLayoutAttributes;
-@property int indexOfVisibleItemForBoundsChange;
+@property (nonatomic) struct CGSize { float x1; float x2; } cachedCollectionViewContentSize;
+@property (nonatomic, retain) NSDictionary *cachedLayoutAttributes;
+@property (nonatomic) int indexOfVisibleItemForBoundsChange;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForItemAtIndex:(int)arg1 collectionViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;

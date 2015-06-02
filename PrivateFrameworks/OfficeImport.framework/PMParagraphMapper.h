@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADParagraph;
-
 @interface PMParagraphMapper : CMMapper {
     OADParagraph *mParagraph;
 }

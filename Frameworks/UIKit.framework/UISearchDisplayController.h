@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UISearchDisplayDelegate>, <UITableViewDataSource>, <UITableViewDelegate>, NSArray, NSString, UIButton, UIColor, UILabel, UINavigationItem, UIPopoverController, UIScrollView, UISearchBar, UISearchDisplayControllerContainerView, UITableView, UIView, UIViewController, _UINavigationControllerPalette, _UISearchControllerDidScrollDelegate;
-
 @interface UISearchDisplayController : NSObject <_UIScrollNotification> {
     float __activationGapHeight;
     float __additionalNonCollapsingHeightAboveSearchBar;
@@ -71,29 +69,29 @@
     UIViewController *_viewController;
 }
 
-@property float _activationGapHeight;
-@property float _additionalNonCollapsingHeightAboveSearchBar;
-@property(getter=isActive) BOOL active;
-@property BOOL automaticallyShowsNoResultsMessage;
-@property(getter=_isCancelButtonManagementDisabled,setter=_setCancelButtonManagementDisabled:) BOOL cancelButtonManagementDisabled;
-@property(copy,readonly) NSString * debugDescription;
-@property <UISearchDisplayDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL dimTableViewOnEmptySearchString;
-@property BOOL displaysSearchBarInNavigationBar;
-@property(readonly) unsigned int hash;
-@property(getter=isNavigationBarHidingEnabled) BOOL navigationBarHidingEnabled;
-@property unsigned int navigationBarSearchFieldSizing;
-@property(readonly) UINavigationItem * navigationItem;
-@property(copy) NSString * noResultsMessage;
-@property BOOL noResultsMessageVisible;
-@property(readonly) UISearchBar * searchBar;
-@property(readonly) UIViewController * searchContentsController;
-@property <UITableViewDataSource> * searchResultsDataSource;
-@property <UITableViewDelegate> * searchResultsDelegate;
-@property(readonly) UITableView * searchResultsTableView;
-@property(copy) NSString * searchResultsTitle;
-@property(readonly) Class superclass;
+@property (nonatomic) float _activationGapHeight;
+@property (nonatomic) float _additionalNonCollapsingHeightAboveSearchBar;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) BOOL automaticallyShowsNoResultsMessage;
+@property (getter=_isCancelButtonManagementDisabled, setter=_setCancelButtonManagementDisabled:, nonatomic) BOOL cancelButtonManagementDisabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UISearchDisplayDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL dimTableViewOnEmptySearchString;
+@property (nonatomic) BOOL displaysSearchBarInNavigationBar;
+@property (readonly) unsigned int hash;
+@property (getter=isNavigationBarHidingEnabled, nonatomic) BOOL navigationBarHidingEnabled;
+@property (nonatomic) unsigned int navigationBarSearchFieldSizing;
+@property (nonatomic, readonly) UINavigationItem *navigationItem;
+@property (nonatomic, copy) NSString *noResultsMessage;
+@property (nonatomic) BOOL noResultsMessageVisible;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, readonly) UIViewController *searchContentsController;
+@property (nonatomic) <UITableViewDataSource> *searchResultsDataSource;
+@property (nonatomic) <UITableViewDelegate> *searchResultsDelegate;
+@property (nonatomic, readonly) UITableView *searchResultsTableView;
+@property (nonatomic, copy) NSString *searchResultsTitle;
+@property (readonly) Class superclass;
 
 - (float)_activationGapHeight;
 - (float)_additionalNonCollapsingHeightAboveSearchBar;

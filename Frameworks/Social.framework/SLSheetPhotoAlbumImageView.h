@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class CALayer, NSMutableArray, UILabel;
-
 @interface SLSheetPhotoAlbumImageView : SLSheetImagePreviewView {
     BOOL _allAttachmentsAreImages;
     CALayer *_frameLayer;

@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKActivityViewControllerDelegate>, NSString;
-
 @interface MKActivityViewController : UIActivityViewController <UIActivityViewControllerDelegate> {
     <MKActivityViewControllerDelegate> *_activityControllerDelegate;
 }
 
-@property <MKActivityViewControllerDelegate> * activityControllerDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) <MKActivityViewControllerDelegate> *activityControllerDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_activityHandler;
-- (id)_completionHandler;
+- (id /* block */)_activityHandler;
+- (id /* block */)_completionHandler;
 - (id)activityControllerDelegate;
 - (void)activityViewControllerDidFinishAirdropTransfer:(id)arg1;
 - (id)initWithMapItem:(id)arg1 contact:(id)arg2 applicationActivities:(id)arg3;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SKUIDividerViewElement;
-
 @interface SKUISegmentedControlViewElement : SKUIViewElement {
     int _maximumNumberOfVisibleItems;
     NSString *_moreListTitle;
 }
 
-@property(readonly) SKUIDividerViewElement * bottomDivider;
-@property(readonly) int initialSelectedItemIndex;
-@property(readonly) int maximumNumberOfVisibleItems;
-@property(readonly) NSString * moreListTitle;
-@property(readonly) NSArray * segmentItemTitles;
+@property (nonatomic, readonly) SKUIDividerViewElement *bottomDivider;
+@property (nonatomic, readonly) int initialSelectedItemIndex;
+@property (nonatomic, readonly) int maximumNumberOfVisibleItems;
+@property (nonatomic, readonly) NSString *moreListTitle;
+@property (nonatomic, readonly) NSArray *segmentItemTitles;
 
 - (void).cxx_destruct;
-- (void)_enumerateItemElementsUsingBlock:(id)arg1;
+- (void)_enumerateItemElementsUsingBlock:(id /* block */)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)bottomDivider;
 - (void)dispatchEventOfType:(unsigned int)arg1 forItemAtIndex:(int)arg2;

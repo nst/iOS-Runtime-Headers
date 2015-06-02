@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface KNRecordingEvent : NSObject <NSCopying> {
     double mStartTime;
 }
 
-@property(readonly) BOOL canPrecedeDiscontinuity;
-@property(getter=isIgnoredWhenSeeking,readonly) BOOL ignoredWhenSeeking;
-@property(readonly) double startTime;
+@property (nonatomic, readonly) BOOL canPrecedeDiscontinuity;
+@property (getter=isIgnoredWhenSeeking, nonatomic, readonly) BOOL ignoredWhenSeeking;
+@property (nonatomic, readonly) double startTime;
 
 - (BOOL)canPrecedeDiscontinuity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

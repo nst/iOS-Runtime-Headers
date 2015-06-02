@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UILabel;
-
 @interface SKUIGiftFooterLabelTableViewCell : UITableViewCell {
     UILabel *_footerLabel;
 }
 
-@property(copy) NSString * footerLabel;
+@property (nonatomic, copy) NSString *footerLabel;
 
 - (void).cxx_destruct;
 - (id)footerLabel;

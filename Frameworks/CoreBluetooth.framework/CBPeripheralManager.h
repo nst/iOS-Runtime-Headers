@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBPeripheralManagerDelegate>, CBPairingAgent, CBXpcConnection, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
     NSMapTable *_centrals;
     NSMutableDictionary *_characteristicIDs;
@@ -30,14 +28,14 @@
     BOOL _waitingForReady;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CBPeripheralManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CBPeripheralManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL isAdvertising;
-@property(readonly) CBPairingAgent * sharedPairingAgent;
+@property (nonatomic, readonly) CBPairingAgent *sharedPairingAgent;
 @property int state;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (int)authorizationStatus;
 
@@ -45,7 +43,7 @@
 - (id)centralWithInfo:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)forEachCentral:(id)arg1;
+- (void)forEachCentral:(id /* block */)arg1;
 - (void)handleAdvertisingStarted:(id)arg1;
 - (void)handleAdvertisingStopped:(id)arg1;
 - (void)handleCentralMsg:(int)arg1 args:(id)arg2;

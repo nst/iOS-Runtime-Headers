@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKNSURLRequest : WKObject <NSCopying> {
-}
+@interface WKNSURLRequest : WKObject <NSCopying>
 
 - (id)URL;
 - (id)_web_createTarget;

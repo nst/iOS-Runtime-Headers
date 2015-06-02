@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableDictionary, UIColor, UIImage, _UITabBarItemAppearanceStorage;
-
 @interface _UITabBarAppearanceStorage : NSObject {
     NSMutableDictionary *_dividerImages;
     UIImage *backgroundImage;
@@ -14,13 +12,13 @@
     _UITabBarItemAppearanceStorage *tabItemAppearanceStorage;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(retain) UIColor * barTintColor;
-@property(copy,readonly) NSDictionary * dividerImagesForCoding;
-@property(retain) UIColor * selectedImageTintColor;
-@property(retain) UIImage * selectionIndicatorImage;
-@property(retain) UIImage * shadowImage;
-@property(retain) _UITabBarItemAppearanceStorage * tabItemAppearanceStorage;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (nonatomic, readonly, copy) NSDictionary *dividerImagesForCoding;
+@property (nonatomic, retain) UIColor *selectedImageTintColor;
+@property (nonatomic, retain) UIImage *selectionIndicatorImage;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (nonatomic, retain) _UITabBarItemAppearanceStorage *tabItemAppearanceStorage;
 
 - (id)_dividerImageForLeftButtonState:(unsigned int)arg1 rightButtonState:(unsigned int)arg2;
 - (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;

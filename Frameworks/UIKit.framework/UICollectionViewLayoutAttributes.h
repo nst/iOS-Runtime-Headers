@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, NSString;
-
 @interface UICollectionViewLayoutAttributes : NSObject <NSCopying, UIDynamicItem> {
     float _alpha;
     struct CGPoint { 
@@ -55,22 +53,22 @@
     int _zIndex;
 }
 
-@property float alpha;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property struct CGPoint { float x1; float x2; } center;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) unsigned int hash;
-@property(getter=isHidden) BOOL hidden;
-@property(retain) NSIndexPath * indexPath;
-@property(readonly) unsigned int representedElementCategory;
-@property(readonly) NSString * representedElementKind;
-@property struct CGSize { float x1; float x2; } size;
-@property(readonly) Class superclass;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transform3D;
-@property int zIndex;
+@property (nonatomic) float alpha;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (readonly) unsigned int hash;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, readonly) unsigned int representedElementCategory;
+@property (nonatomic, readonly) NSString *representedElementKind;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transform3D;
+@property (nonatomic) int zIndex;
 
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;

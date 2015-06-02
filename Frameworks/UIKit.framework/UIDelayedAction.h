@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSTimer;
-
 @interface UIDelayedAction : NSObject {
     SEL m_action;
     BOOL m_canceled;

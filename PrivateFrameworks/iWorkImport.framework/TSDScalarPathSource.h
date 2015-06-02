@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDScalarPathSource : TSDPathSource <TSDMixing, TSDSmartPathSource> {
     struct CGSize { 
         float width; 
@@ -16,10 +11,10 @@
     int mType;
 }
 
-@property(readonly) float maxScalar;
-@property struct CGSize { float x1; float x2; } naturalSize;
-@property float scalar;
-@property int type;
+@property (nonatomic, readonly) float maxScalar;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic) float scalar;
+@property (nonatomic) int type;
 
 + (id)chevronWithScalar:(float)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)pathSourceWithType:(int)arg1 scalar:(float)arg2 naturalSize:(struct CGSize { float x1; float x2; })arg3;

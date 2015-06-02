@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
  */
 
-@class NSDictionary;
-
 @interface DataClassMigrator : NSObject {
     NSDictionary *_context;
     BOOL _didUpgrade;
 }
 
-@property(retain) NSDictionary * context;
-@property(readonly) BOOL didMigrateBackupFromDifferentDevice;
-@property(readonly) BOOL didRestoreFromBackup;
-@property(readonly) BOOL didRestoreFromCloudBackup;
-@property BOOL didUpgrade;
-@property(readonly) BOOL shouldPreserveSettingsAfterRestore;
-@property(readonly) BOOL wasPasscodeSetInBackup;
+@property (nonatomic, retain) NSDictionary *context;
+@property (nonatomic, readonly) BOOL didMigrateBackupFromDifferentDevice;
+@property (nonatomic, readonly) BOOL didRestoreFromBackup;
+@property (nonatomic, readonly) BOOL didRestoreFromCloudBackup;
+@property (nonatomic) BOOL didUpgrade;
+@property (nonatomic, readonly) BOOL shouldPreserveSettingsAfterRestore;
+@property (nonatomic, readonly) BOOL wasPasscodeSetInBackup;
 
 - (void).cxx_destruct;
 - (id)context;

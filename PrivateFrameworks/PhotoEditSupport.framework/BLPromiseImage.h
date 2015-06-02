@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLAdjustmentModel, BLCropModel, BLImagePatchList, BLPhotoEffectsModel, BLPixelImageBuffer, BLRepairModel, BLRetouchModel, NSDictionary, NSLock;
-
 @interface BLPromiseImage : BLImage {
     int _actualOrientation;
     BLAdjustmentModel *_adjustmentModel;
@@ -27,7 +25,7 @@
     BLCropModel *_userCropModel;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } sourceSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sourceSize;
 
 + (void)convertXMP:(id)arg1 toAdjustments:(id)arg2 andAnalysis:(id)arg3 size:(struct CGSize { float x1; float x2; })arg4 image:(id)arg5 needsHistogram:(BOOL*)arg6;
 + (id)imageWithImage:(id)arg1;
@@ -37,14 +35,14 @@
 - (id)CIImage;
 - (id)UIImage;
 - (void)_drawImagePatchListInContext:(struct CGContext { }*)arg1 imagePatchList:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 drawScaleX:(float)arg4 drawScaleY:(float)arg5 totalPadding:(float)arg6;
-- (BOOL)_flattenInContext:(struct CGContext { }*)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 progressBlock:(id)arg3;
+- (BOOL)_flattenInContext:(struct CGContext { }*)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 progressBlock:(id /* block */)arg3;
 - (struct CGSize { float x1; float x2; })_targetSizeForBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1 forRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 andSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)flattenedImageFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
-- (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2 progressBlock:(id)arg3;
+- (id)flattenedImageInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2 progressBlock:(id /* block */)arg3;
 - (id)flattenedPixelImageBufferInBoundingSize:(struct CGSize { float x1; float x2; })arg1 shouldScaleForScreen:(BOOL)arg2;
 - (BOOL)hasColor;
 - (BOOL)hasCrop;

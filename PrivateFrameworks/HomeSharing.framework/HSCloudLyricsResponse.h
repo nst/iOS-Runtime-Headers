@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSString;
-
 @interface HSCloudLyricsResponse : HSResponse {
     NSString *lyrics;
 }
 
-@property(copy) NSString * lyrics;
+@property (nonatomic, copy) NSString *lyrics;
 
 - (void).cxx_destruct;
 - (id)lyrics;

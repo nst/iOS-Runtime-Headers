@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface QueryCriteriaResultsCache : NSCache {
-}
+@interface QueryCriteriaResultsCache : NSCache
 
 - (id)init;
 

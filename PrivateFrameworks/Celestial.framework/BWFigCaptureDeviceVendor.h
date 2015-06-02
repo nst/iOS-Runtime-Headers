@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFigCaptureDeviceVendor : NSObject {
-}
+@interface BWFigCaptureDeviceVendor : NSObject
 
 + (void)_setupDeviceCloseTimer;
 + (BOOL)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;

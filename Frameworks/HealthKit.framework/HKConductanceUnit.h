@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKConductanceUnit : HKBaseUnit {
-}
+@interface HKConductanceUnit : HKBaseUnit
 
 - (id)dimension;
 

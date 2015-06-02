@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreCECPhysicalDevice, NSArray, NSMutableArray, NSMutableSet, NSSet;
-
 @interface CoreCECPhysicalDevice : NSObject {
     NSMutableArray *_children;
     NSMutableSet *_logicalDevices;
@@ -11,11 +9,11 @@
     unsigned int _physicalAddress;
 }
 
-@property(readonly) NSArray * children;
-@property(readonly) NSSet * logicalDevices;
-@property CoreCECPhysicalDevice * parent;
-@property(readonly) unsigned int physicalAddress;
-@property(readonly) id propertyList;
+@property (nonatomic, readonly) NSArray *children;
+@property (nonatomic, readonly) NSSet *logicalDevices;
+@property (nonatomic) CoreCECPhysicalDevice *parent;
+@property (nonatomic, readonly) unsigned int physicalAddress;
+@property (nonatomic, readonly) id propertyList;
 
 + (id)physicalDeviceTreeWithLogicalDevices:(id)arg1;
 

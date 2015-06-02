@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVFigObjectInspector : NSObject {
-}
+@interface AVFigObjectInspector : NSObject
 
 + (void)initialize;
 

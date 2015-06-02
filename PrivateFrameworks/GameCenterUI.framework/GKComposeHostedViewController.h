@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKComposeRemoteViewController, GKUITheme, NSMutableArray, NSString;
-
 @interface GKComposeHostedViewController : GKHostedViewController {
     NSMutableArray *_emailsToAddAsRecipients;
     NSMutableArray *_playerInternalsToAddAsRecipients;
@@ -11,12 +9,12 @@
     GKUITheme *_theme;
 }
 
-@property(readonly) GKComposeRemoteViewController * _remote;
-@property(copy) NSString * defaultMessage;
-@property(retain) NSMutableArray * emailsToAddAsRecipients;
-@property(retain) NSMutableArray * playerInternalsToAddAsRecipients;
-@property unsigned int rid;
-@property(retain) GKUITheme * theme;
+@property (nonatomic, readonly) GKComposeRemoteViewController *_remote;
+@property (nonatomic, copy) NSString *defaultMessage;
+@property (nonatomic, retain) NSMutableArray *emailsToAddAsRecipients;
+@property (nonatomic, retain) NSMutableArray *playerInternalsToAddAsRecipients;
+@property (nonatomic) unsigned int rid;
+@property (nonatomic, retain) GKUITheme *theme;
 
 - (void)_addRecipientInternals:(id)arg1;
 - (id)_presentingViewController;

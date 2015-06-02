@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIUnhandledMenuButtonAction : BSAction {
-}
+@interface UIUnhandledMenuButtonAction : BSAction
 
 - (int)UIActionType;
 - (id)init;

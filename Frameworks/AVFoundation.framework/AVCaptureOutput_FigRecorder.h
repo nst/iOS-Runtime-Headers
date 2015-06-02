@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureOutputInternal_FigRecorder, NSArray;
-
 @interface AVCaptureOutput_FigRecorder : NSObject {
     AVCaptureOutputInternal_FigRecorder *_outputInternal;
 }
 
-@property(readonly) NSArray * connections;
+@property (nonatomic, readonly) NSArray *connections;
 
 + (void)initialize;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIRedeemCameraViewDelegate>, NSString, SKUIClientContext, SKUIITunesPassConfiguration, SKUIRedeemCameraLandingView, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIButton, UIImage, UIView;
-
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIRedeemCameraViewDelegate> *_delegate;
@@ -17,15 +15,15 @@
     SKUIRedeemTextField *_textField;
 }
 
-@property(retain) SKUIITunesPassConfiguration * ITunesPassConfiguration;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIRedeemCameraViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
+@property (nonatomic, retain) SKUIITunesPassConfiguration *ITunesPassConfiguration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIRedeemCameraViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (id)ITunesPassConfiguration;

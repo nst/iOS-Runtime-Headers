@@ -13,12 +13,12 @@
     int _sessionIdentifier;
 }
 
-@property int direction;
-@property BOOL hasDirection;
-@property BOOL hasRepeatCount;
-@property BOOL hasSessionIdentifier;
-@property unsigned int repeatCount;
-@property int sessionIdentifier;
+@property (nonatomic) int direction;
+@property (nonatomic) BOOL hasDirection;
+@property (nonatomic) BOOL hasRepeatCount;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) unsigned int repeatCount;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

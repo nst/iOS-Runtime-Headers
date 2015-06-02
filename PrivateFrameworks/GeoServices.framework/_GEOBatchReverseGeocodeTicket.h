@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOBatchRevGeocodeRequest, GEOMapRegion, GEOMapServiceTraits, NSString;
-
 @interface _GEOBatchReverseGeocodeTicket : NSObject <GEOMapServiceTicket> {
     GEOBatchRevGeocodeRequest *_batchReverseGeocodeRequest;
     GEOMapRegion *_resultBoundingRegion;
@@ -11,14 +9,14 @@
     GEOMapServiceTraits *_traits;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) GEOMapRegion * resultBoundingRegion;
-@property(readonly) Class superclass;
-@property(readonly) GEOMapServiceTraits * traits;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (void)_batchReverseGeocodeWithRequest:(id)arg1 handler:(id)arg2 networkActivity:(id)arg3;
+- (void)_batchReverseGeocodeWithRequest:(id)arg1 handler:(id /* block */)arg2 networkActivity:(id /* block */)arg3;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
@@ -26,10 +24,10 @@
 - (id)initWithBatchReverseGeocodeRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (BOOL)isEqualForHistoryToTicket:(id)arg1;
 - (id)resultBoundingRegion;
-- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
-- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
-- (void)submitWithRefinedHandler:(id)arg1 timeout:(int)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
 - (id)traits;
 
 @end

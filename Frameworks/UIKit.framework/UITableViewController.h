@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIRefreshControl, UITableView, UITableViewDataSource, _UIFilteredDataSource;
-
 @interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     _UIFilteredDataSource *_filteredDataSource;
     int _filteredDataType;
@@ -17,14 +15,14 @@
     int _tableViewStyle;
 }
 
-@property BOOL clearsSelectionOnViewWillAppear;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIRefreshControl * refreshControl;
-@property(getter=_staticDataSource,setter=_setStaticDataSource:,retain) UITableViewDataSource * staticDataSource;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
+@property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (getter=_staticDataSource, setter=_setStaticDataSource:, nonatomic, retain) UITableViewDataSource *staticDataSource;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableView *tableView;
 
 - (void)_adjustTableForKeyboardInfo:(id)arg1;
 - (void)_applyDefaultDataSourceToTable:(id)arg1;

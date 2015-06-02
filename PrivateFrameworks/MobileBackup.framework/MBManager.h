@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSObject<MBManagerDelegate>;
-
 @interface MBManager : NSObject {
     id _delegate;
 }
 
-@property NSObject<MBManagerDelegate> * delegate;
+@property (nonatomic) NSObject<MBManagerDelegate> *delegate;
 
 - (id)_init;
 - (BOOL)addFileToBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 domainName:(id)arg3 relativePath:(id)arg4 fromPath:(id)arg5 error:(id*)arg6;

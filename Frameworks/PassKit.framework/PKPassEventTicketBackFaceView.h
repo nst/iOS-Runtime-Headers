@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassEventTicketBackFaceView : PKPassBackFaceView {
-}
+@interface PKPassEventTicketBackFaceView : PKPassBackFaceView
 
 - (id)passFaceTemplate;
 

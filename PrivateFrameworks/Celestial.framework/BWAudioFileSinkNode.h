@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCaptureAudioFileRecordingSettings, FigStateMachine, NSObject<OS_dispatch_queue>;
-
 @interface BWAudioFileSinkNode : BWFileSinkNode {
     unsigned long long _adjustedMinFreeDiskSpace;
     struct OpaqueCMByteStream { } *_byteStream;

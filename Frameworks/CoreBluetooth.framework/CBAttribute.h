@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBUUID;
-
 @interface CBAttribute : NSObject {
     CBUUID *_UUID;
 }
 
-@property(retain) CBUUID * UUID;
+@property (nonatomic, retain) CBUUID *UUID;
 
 - (id)UUID;
 - (void)dealloc;

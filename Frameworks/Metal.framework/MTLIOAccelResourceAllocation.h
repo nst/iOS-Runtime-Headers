@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSString;
-
 @interface MTLIOAccelResourceAllocation : MTLResourceAllocationInfo {
     unsigned int _dirtySize;
     NSString *_memoryPool;

@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMessageKeychainManager : NSObject {
-}
+@interface MFMessageKeychainManager : NSObject
 
 + (int)_actionForCertificate:(struct __SecCertificate { }*)arg1 policy:(struct __SecPolicy { }*)arg2 uncommentedAddress:(id)arg3;
 + (id)_addCertificate:(struct __SecCertificate { }*)arg1 persistent:(id*)arg2;
 + (id)_addPersistentMapping:(id)arg1 forAddress:(id)arg2;
-+ (id)_copyAllIdentitiesWithError:(id*)arg1 usingBlock:(id)arg2;
++ (id)_copyAllIdentitiesWithError:(id*)arg1 usingBlock:(id /* block */)arg2;
 + (struct __SecCertificate { }*)_copyCertificateForPersistent:(id)arg1 error:(id*)arg2;
 + (BOOL)_matchSSLClientIdentity:(struct __SecIdentity { }*)arg1 withHostname:(id)arg2;
 + (id)_passwordForGenericAccount:(id)arg1 service:(id)arg2 error:(id*)arg3;

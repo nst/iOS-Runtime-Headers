@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayAudioSessionStartedOnClient : PBCodable <NSCopying> {
     unsigned int _announceMs;
     unsigned int _authMs;
@@ -34,32 +32,32 @@
     unsigned int _transportType;
 }
 
-@property unsigned int announceMs;
-@property unsigned int authMs;
-@property unsigned int bonjourMs;
-@property unsigned int compressionType;
-@property unsigned int connectMs;
-@property unsigned int encryptionType;
-@property BOOL hasAnnounceMs;
-@property BOOL hasAuthMs;
-@property BOOL hasBonjourMs;
-@property BOOL hasCompressionType;
-@property BOOL hasConnectMs;
-@property BOOL hasEncryptionType;
-@property BOOL hasRecordMs;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasSetupAudioMs;
-@property BOOL hasSetupScreenMs;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property unsigned int recordMs;
-@property(retain) NSString * sessionUUID;
-@property unsigned int setupAudioMs;
-@property unsigned int setupScreenMs;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic) unsigned int announceMs;
+@property (nonatomic) unsigned int authMs;
+@property (nonatomic) unsigned int bonjourMs;
+@property (nonatomic) unsigned int compressionType;
+@property (nonatomic) unsigned int connectMs;
+@property (nonatomic) unsigned int encryptionType;
+@property (nonatomic) BOOL hasAnnounceMs;
+@property (nonatomic) BOOL hasAuthMs;
+@property (nonatomic) BOOL hasBonjourMs;
+@property (nonatomic) BOOL hasCompressionType;
+@property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasEncryptionType;
+@property (nonatomic) BOOL hasRecordMs;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasSetupAudioMs;
+@property (nonatomic) BOOL hasSetupScreenMs;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int recordMs;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int setupAudioMs;
+@property (nonatomic) unsigned int setupScreenMs;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (unsigned int)announceMs;
 - (unsigned int)authMs;

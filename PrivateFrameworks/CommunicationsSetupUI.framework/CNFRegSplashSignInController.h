@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class CNFRegSigninLearnMoreView;
-
 @interface CNFRegSplashSignInController : CNFRegSignInController {
     CNFRegSigninLearnMoreView *_signInView;
 }

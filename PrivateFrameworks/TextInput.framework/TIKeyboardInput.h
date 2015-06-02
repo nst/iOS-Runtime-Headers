@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class <NSCopying><NSObject><NSSecureCoding>, NSString, TIKeyboardCandidate, TIKeyboardTouchEvent;
-
 @interface TIKeyboardInput : NSObject <NSSecureCoding> {
     TIKeyboardCandidate *_acceptedCandidate;
     BOOL _backspace;
@@ -23,17 +21,17 @@
     TIKeyboardTouchEvent *_touchEvent;
 }
 
-@property(retain) TIKeyboardCandidate * acceptedCandidate;
-@property(getter=isAutoshifted) BOOL autoshifted;
-@property(getter=isBackspace) BOOL backspace;
-@property(getter=isFlick) BOOL flick;
-@property(getter=isMultitap) BOOL multitap;
-@property(copy) <NSCopying><NSObject><NSSecureCoding> * object;
-@property(getter=isPopupVariant) BOOL popupVariant;
-@property(copy) NSString * string;
-@property(getter=isSynthesizedByAcceptingCandidate) BOOL synthesizedByAcceptingCandidate;
-@property(retain) TIKeyboardTouchEvent * touchEvent;
-@property(getter=isUppercase) BOOL uppercase;
+@property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
+@property (getter=isAutoshifted, nonatomic) BOOL autoshifted;
+@property (getter=isBackspace, nonatomic) BOOL backspace;
+@property (getter=isFlick, nonatomic) BOOL flick;
+@property (getter=isMultitap, nonatomic) BOOL multitap;
+@property (nonatomic, copy) <NSCopying><NSObject><NSSecureCoding> *object;
+@property (getter=isPopupVariant, nonatomic) BOOL popupVariant;
+@property (nonatomic, copy) NSString *string;
+@property (getter=isSynthesizedByAcceptingCandidate, nonatomic) BOOL synthesizedByAcceptingCandidate;
+@property (nonatomic, retain) TIKeyboardTouchEvent *touchEvent;
+@property (getter=isUppercase, nonatomic) BOOL uppercase;
 
 + (BOOL)supportsSecureCoding;
 

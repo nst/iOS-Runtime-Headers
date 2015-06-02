@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _NSLayoutConstraintConstant : NSObject <NSCoding, NSCopying> {
     float _numericValue;
     NSString *_symbolicValue;
 }
 
-@property(readonly) float numericValue;
-@property(copy,readonly) NSString * symbolicValue;
+@property (nonatomic, readonly) float numericValue;
+@property (nonatomic, readonly, copy) NSString *symbolicValue;
 
 + (id)constantWithSymbolicValue:(id)arg1 numericValue:(float)arg2;
 

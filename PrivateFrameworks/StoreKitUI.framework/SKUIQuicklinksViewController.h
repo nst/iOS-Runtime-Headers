@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIQuicklinksViewControllerDelegate>, NSArray, NSString, SKUIColorScheme, SKUIQuicklinksView, UICollectionView;
-
 @interface SKUIQuicklinksViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
     SKUIColorScheme *_colorScheme;
@@ -12,13 +10,13 @@
     SKUIQuicklinksView *_quicklinksView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIQuicklinksViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * indexPathsForVisibleItems;
-@property(copy) NSArray * links;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIQuicklinksViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *indexPathsForVisibleItems;
+@property (nonatomic, copy) NSArray *links;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_numberOfRows;

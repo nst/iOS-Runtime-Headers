@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference;
-
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
     struct OpaqueFigFormatReader { } *_formatReader;
     unsigned long _mediaType;

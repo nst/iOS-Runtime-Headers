@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CertUI.framework/CertUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface CertUIPrompt : NSObject {
     NSString *_connectionDisplayName;
     NSString *_host;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _responseBlock;
-
+    id /* block */ _responseBlock;
     NSString *_service;
     struct __SecTrust { } *_trust;
 }
 
-@property(copy) NSString * connectionDisplayName;
-@property(retain) NSString * host;
-@property(retain) NSString * service;
+@property (nonatomic, copy) NSString *connectionDisplayName;
+@property (nonatomic, retain) NSString *host;
+@property (nonatomic, retain) NSString *service;
 
 + (id)promptQueue;
 + (id)stringForResponse:(int)arg1;
@@ -55,7 +45,7 @@
 - (void)setService:(id)arg1;
 - (void)setTrust:(struct __SecTrust { }*)arg1;
 - (int)showAndWaitForResponse;
-- (void)showPromptWithResponseBlock:(id)arg1;
+- (void)showPromptWithResponseBlock:(id /* block */)arg1;
 - (struct __SecTrust { }*)trust;
 
 @end

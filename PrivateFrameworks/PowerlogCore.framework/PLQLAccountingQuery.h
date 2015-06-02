@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class <PLQLAccountingGroupProtocol>, NSArray, NSString;
-
 @interface PLQLAccountingQuery : NSObject {
     <PLQLAccountingGroupProtocol> *_QLAccountingGroup;
     NSString *_aggKey;
@@ -15,14 +13,14 @@
     short _queryType;
 }
 
-@property(retain,readonly) <PLQLAccountingGroupProtocol> * QLAccountingGroup;
-@property(retain,readonly) NSString * aggKey;
-@property(readonly) NSArray * allRails;
-@property(readonly) NSArray * allRailsToBeAdded;
-@property(readonly) NSArray * allRailsToBeSubtracted;
+@property (readonly, retain) <PLQLAccountingGroupProtocol> *QLAccountingGroup;
+@property (readonly, retain) NSString *aggKey;
+@property (readonly) NSArray *allRails;
+@property (readonly) NSArray *allRailsToBeAdded;
+@property (readonly) NSArray *allRailsToBeSubtracted;
 @property double queryHasRunTillTime;
-@property(retain,readonly) NSString * queryName;
-@property(readonly) short queryType;
+@property (readonly, retain) NSString *queryName;
+@property (readonly) short queryType;
 
 - (void).cxx_destruct;
 - (id)QLAccountingGroup;

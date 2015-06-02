@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKMapLayer>, <VKTileProviderClient>, GEOResourceManifestConfiguration, GEOTileKeyList, NSArray, NSLocale, NSMutableSet, NSSet, NSString, VKMapRasterizer, VKStyleManager, VKTileCache, VKTileKeyList, VKTileSelection, VKTileSource, VKTimer, _VKTileProviderTimerTarget;
-
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
     <VKTileProviderClient> *_client;
     float _contentScale;
@@ -51,7 +49,7 @@
     VKTileKeyList *_neighborKeys;
     unsigned int _neighborMode;
     NSMutableSet *_neighborTiles;
-    VKTileSource *_optionalTileSources[34];
+    VKTileSource *_optionalTileSources;
     BOOL _prefetchEnabled;
     VKTileKeyList *_prefetchKeys;
     unsigned int _prefetchNumberOfScreens;
@@ -68,34 +66,34 @@
     unsigned int _tileReserveLimit;
     VKTileSelection *_tileSelection;
     BOOL _tilesChanged;
-    VKTileSource *_tilesSources[34];
+    VKTileSource *_tilesSources;
     NSMutableSet *_tilesToRender;
     BOOL _useSmallTileCache;
 }
 
-@property <VKTileProviderClient> * client;
-@property float contentScale;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) <VKMapLayer> * debugLayer;
-@property(readonly) GEOTileKeyList * debugLayerKeys;
-@property(copy,readonly) NSString * description;
-@property(getter=isFallbackEnabled) BOOL fallbackEnabled;
-@property(getter=isFinishedLoading,readonly) BOOL finishedLoading;
-@property(readonly) BOOL hasFailedTile;
-@property(readonly) unsigned int hash;
-@property(readonly) VKTileKeyList * keysInView;
-@property(readonly) float loadingProgress;
-@property double lodBias;
-@property int mode;
-@property(readonly) VKTileKeyList * neighborKeys;
-@property unsigned int neighborMode;
-@property(readonly) NSSet * neighborTiles;
-@property(getter=isPrefetchEnabled) BOOL prefetchEnabled;
-@property(retain) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
-@property(readonly) NSSet * tilesToRender;
-@property BOOL useSmallTileCache;
-@property(readonly) NSArray * visibleTileSets;
+@property (nonatomic) <VKTileProviderClient> *client;
+@property (nonatomic) float contentScale;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <VKMapLayer> *debugLayer;
+@property (nonatomic, readonly) GEOTileKeyList *debugLayerKeys;
+@property (readonly, copy) NSString *description;
+@property (getter=isFallbackEnabled, nonatomic) BOOL fallbackEnabled;
+@property (getter=isFinishedLoading, nonatomic, readonly) BOOL finishedLoading;
+@property (nonatomic, readonly) BOOL hasFailedTile;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) VKTileKeyList *keysInView;
+@property (nonatomic, readonly) float loadingProgress;
+@property (nonatomic) double lodBias;
+@property (nonatomic) int mode;
+@property (nonatomic, readonly) VKTileKeyList *neighborKeys;
+@property (nonatomic) unsigned int neighborMode;
+@property (nonatomic, readonly) NSSet *neighborTiles;
+@property (getter=isPrefetchEnabled, nonatomic) BOOL prefetchEnabled;
+@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSSet *tilesToRender;
+@property (nonatomic) BOOL useSmallTileCache;
+@property (nonatomic, readonly) NSArray *visibleTileSets;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -125,8 +123,8 @@
 - (BOOL)evaluateNeighborTileForRendering:(id)arg1;
 - (BOOL)evaluateSelectedTileForRendering:(id)arg1;
 - (void)flushCaches:(BOOL)arg1;
-- (void)foreachActiveLayer:(id)arg1;
-- (void)foreachOptionalLayer:(id)arg1;
+- (void)foreachActiveLayer:(id /* block */)arg1;
+- (void)foreachOptionalLayer:(id /* block */)arg1;
 - (BOOL)hasFailedTile;
 - (BOOL)hasRequiredTileData:(id)arg1;
 - (BOOL)inFailedState:(id)arg1;

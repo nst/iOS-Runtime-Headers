@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTSectionInfoList, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, PSYSyncCoordinator;
-
 @interface BLTSettingSync : BLTSettingSyncInternal <BBObserverDelegate, BLTSectionInfoListDelegate, PSYSyncCoordinatorDelegate> {
     PSYSyncCoordinator *_pairedSyncCoordinator;
     NSMutableDictionary *_sectionIDsToInfosToSync;
@@ -18,19 +16,19 @@
     int _token;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_enqueueAndSendEffectiveSectionInfo:(id)arg1;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
 - (void)_sendEffectiveSectionInfo:(id)arg1;
-- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id)arg4;
-- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 waitForAcknowledgement:(BOOL)arg4 withQueue:(id)arg5 andCompletion:(id)arg6;
-- (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(BOOL)arg3 withQueue:(id)arg4 andCompletion:(id)arg5;
-- (void)_updateAllBBSectionsWithCompletion:(id)arg1 withProgress:(id)arg2;
+- (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(BOOL)arg2 withQueue:(id)arg3 andCompletion:(id /* block */)arg4;
+- (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 waitForAcknowledgement:(BOOL)arg4 withQueue:(id)arg5 andCompletion:(id /* block */)arg6;
+- (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(BOOL)arg3 withQueue:(id)arg4 andCompletion:(id /* block */)arg5;
+- (void)_updateAllBBSectionsWithCompletion:(id /* block */)arg1 withProgress:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)observer:(id)arg1 noteSectionParametersChanged:(id)arg2 forSectionID:(id)arg3;

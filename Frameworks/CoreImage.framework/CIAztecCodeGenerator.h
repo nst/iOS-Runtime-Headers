@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSNumber;
-
 @interface CIAztecCodeGenerator : CICodeGenerator {
     NSNumber *inputCompactStyle;
     NSNumber *inputCorrectionLevel;
     NSNumber *inputLayers;
 }
 
-@property(copy) NSNumber * inputCompactStyle;
-@property(copy) NSNumber * inputCorrectionLevel;
-@property(copy) NSNumber * inputLayers;
+@property (nonatomic, copy) NSNumber *inputCompactStyle;
+@property (nonatomic, copy) NSNumber *inputCorrectionLevel;
+@property (nonatomic, copy) NSNumber *inputLayers;
 
 + (id)customAttributes;
 

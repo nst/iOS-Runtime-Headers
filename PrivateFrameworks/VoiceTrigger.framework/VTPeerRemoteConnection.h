@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class <VTPeerRemoteConnectionDelegate>, IDSService, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface VTPeerRemoteConnection : NSObject <IDSServiceDelegate> {
     NSMutableDictionary *_completions;
     <VTPeerRemoteConnectionDelegate> *_delegate;
@@ -14,10 +12,10 @@
     NSMutableDictionary *_responseClasses;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_account;

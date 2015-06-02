@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskDelegate>;
-
 @interface CoreDAVGetTask : CoreDAVTask {
     id _appSpecificDataItemResult;
     BOOL _forceNoCache;
 }
 
-@property(retain) id appSpecificDataItemResult;
-@property <CoreDAVTaskDelegate> * delegate;
-@property BOOL forceNoCache;
+@property (nonatomic, retain) id appSpecificDataItemResult;
+@property (nonatomic) <CoreDAVTaskDelegate> *delegate;
+@property (nonatomic) BOOL forceNoCache;
 
 - (id)appSpecificDataItemResult;
 - (unsigned int)cachePolicy;

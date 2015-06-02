@@ -37,7 +37,7 @@
 - (BOOL)assetExistsForKey:(id)arg1;
 - (BOOL)assetExistsForKeyData:(const void*)arg1 length:(unsigned long)arg2;
 - (id)assetForKey:(id)arg1;
-- (id)assetKeysMatchingBlock:(id)arg1;
+- (id)assetKeysMatchingBlock:(id /* block */)arg1;
 - (unsigned int)associatedChecksum;
 - (unsigned int)colorSpaceID;
 - (id)constantNameForElementID:(int)arg1;
@@ -47,7 +47,7 @@
 - (id)description;
 - (id)displayNameForElementID:(int)arg1;
 - (id)displayNameForPartID:(int)arg1;
-- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (void)finalize;
 - (float)fontSizeForFontSizeType:(id)arg1;
 - (BOOL)getBaselineOffset:(float*)arg1 forFontType:(id)arg2;

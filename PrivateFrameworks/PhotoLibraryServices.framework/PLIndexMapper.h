@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLIndexMapperDataSource>;
-
 @interface PLIndexMapper : NSObject {
     <PLIndexMapperDataSource> *_dataSource;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSString;
-
 @interface NSComplexOrthography : NSOrthography {
     NSString *_dominantScript;
     NSDictionary *_languageMap;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class ACAccountStore, NSDictionary, NSObject<OS_dispatch_group>, NotesDataCollectorLogger;
-
 @interface NotesDataCollector : NSObject {
     ACAccountStore *_accountStore;
     NSDictionary *_accountTypesPerIdentifierCache;
@@ -12,11 +10,11 @@
     NotesDataCollectorLogger *_logger;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(copy) NSDictionary * accountTypesPerIdentifierCache;
-@property(getter=isAutomaticCollectionOn) BOOL automaticCollectionOn;
-@property(retain) NSObject<OS_dispatch_group> * logDispatchGroup;
-@property(retain) NotesDataCollectorLogger * logger;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (copy) NSDictionary *accountTypesPerIdentifierCache;
+@property (getter=isAutomaticCollectionOn, nonatomic) BOOL automaticCollectionOn;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *logDispatchGroup;
+@property (nonatomic, retain) NotesDataCollectorLogger *logger;
 
 + (void)clearSharedCollector;
 + (id)sharedCollector;
@@ -24,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)accountStore;
 - (id)accountTypesPerIdentifierCache;
-- (void)browseAddedAndDeletedObjectsWithEntity:(id)arg1 inManagedObjectContext:(id)arg2 objectHandler:(id)arg3;
+- (void)browseAddedAndDeletedObjectsWithEntity:(id)arg1 inManagedObjectContext:(id)arg2 objectHandler:(id /* block */)arg3;
 - (id)classifyStoresByType:(id)arg1;
 - (void)dealloc;
 - (id)existingAccountForStore:(id)arg1;

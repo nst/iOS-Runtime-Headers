@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDContactUtils : NSObject {
-}
+@interface DDContactUtils : NSObject
 
 + (id)normalizedPhoneNumberFromString:(id)arg1;
 

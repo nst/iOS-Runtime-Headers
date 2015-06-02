@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSLock, NSString, PFUbiquityGlobalObjectIDCache, PFUbiquityKnowledgeVector, PFUbiquityLocation, PFUbiquityPeerRangeCache, PFUbiquityPeerReceipt, PFUbiquityTransactionHistoryCache, PFUbiquityTransactionLogCache;
-
 @interface PFUbiquitySwitchboardCacheWrapper : NSObject {
     BOOL _allowSchedulingOfReceiptFileWrites;
     PFUbiquityKnowledgeVector *_baselineKV;
@@ -20,16 +18,16 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
-@property(retain) PFUbiquityKnowledgeVector * baselineKV;
-@property(readonly) PFUbiquityGlobalObjectIDCache * globalIDCache;
-@property(retain) PFUbiquityKnowledgeVector * kv;
-@property(readonly) NSString * localPeerID;
-@property(readonly) PFUbiquityPeerRangeCache * peerRangeCache;
-@property(readonly) PFUbiquityPeerReceipt * peerReceipt;
-@property(readonly) NSString * storeName;
-@property(readonly) PFUbiquityTransactionHistoryCache * transactionHistoryCache;
-@property(readonly) PFUbiquityTransactionLogCache * transactionLogCache;
-@property(retain) PFUbiquityLocation * ubiquityRootLocation;
+@property (retain) PFUbiquityKnowledgeVector *baselineKV;
+@property (nonatomic, readonly) PFUbiquityGlobalObjectIDCache *globalIDCache;
+@property (retain) PFUbiquityKnowledgeVector *kv;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) PFUbiquityPeerRangeCache *peerRangeCache;
+@property (nonatomic, readonly) PFUbiquityPeerReceipt *peerReceipt;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) PFUbiquityTransactionHistoryCache *transactionHistoryCache;
+@property (nonatomic, readonly) PFUbiquityTransactionLogCache *transactionLogCache;
+@property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
 
 - (void)_appWillResignActive:(id)arg1;
 - (id)baselineKV;

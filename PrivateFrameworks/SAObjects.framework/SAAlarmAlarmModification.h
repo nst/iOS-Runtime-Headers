@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, NSURL;
+@interface SAAlarmAlarmModification : AceObject <SAAceSerializable>
 
-@interface SAAlarmAlarmModification : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSArray * addedFrequency;
-@property(copy) NSURL * alarmId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSNumber * enabled;
-@property(readonly) unsigned int hash;
-@property(copy) NSNumber * hour;
-@property(copy) NSString * label;
-@property(copy) NSNumber * minute;
-@property(copy) NSArray * removedFrequency;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *addedFrequency;
+@property (nonatomic, copy) NSURL *alarmId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSNumber *enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSNumber *hour;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSNumber *minute;
+@property (nonatomic, copy) NSArray *removedFrequency;
+@property (readonly) Class superclass;
 
 + (id)alarmModification;
 + (id)alarmModificationWithDictionary:(id)arg1 context:(id)arg2;

@@ -8,8 +8,8 @@
     double _thresholdValue;
 }
 
-@property int maximumCrossingCount;
-@property double thresholdValue;
+@property (nonatomic) int maximumCrossingCount;
+@property (nonatomic) double thresholdValue;
 
 - (int)maximumCrossingCount;
 - (void)setMaximumCrossingCount:(int)arg1;

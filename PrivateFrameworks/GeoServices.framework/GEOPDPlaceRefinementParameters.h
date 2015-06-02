@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOStructuredAddress, NSMutableArray, NSString;
-
 @interface GEOPDPlaceRefinementParameters : PBCodable <NSCopying> {
     GEOStructuredAddress *_addressHint;
     NSMutableArray *_formattedAddressLineHints;
@@ -19,19 +17,19 @@
     int _resultProviderId;
 }
 
-@property(retain) GEOStructuredAddress * addressHint;
-@property(retain) NSMutableArray * formattedAddressLineHints;
-@property(readonly) BOOL hasAddressHint;
-@property(readonly) BOOL hasLocationHint;
-@property BOOL hasMuid;
-@property(readonly) BOOL hasPlaceNameHint;
-@property BOOL hasPlaceTypeHint;
-@property BOOL hasResultProviderId;
-@property(retain) GEOLatLng * locationHint;
-@property unsigned long long muid;
-@property(retain) NSString * placeNameHint;
-@property int placeTypeHint;
-@property int resultProviderId;
+@property (nonatomic, retain) GEOStructuredAddress *addressHint;
+@property (nonatomic, retain) NSMutableArray *formattedAddressLineHints;
+@property (nonatomic, readonly) BOOL hasAddressHint;
+@property (nonatomic, readonly) BOOL hasLocationHint;
+@property (nonatomic) BOOL hasMuid;
+@property (nonatomic, readonly) BOOL hasPlaceNameHint;
+@property (nonatomic) BOOL hasPlaceTypeHint;
+@property (nonatomic) BOOL hasResultProviderId;
+@property (nonatomic, retain) GEOLatLng *locationHint;
+@property (nonatomic) unsigned long long muid;
+@property (nonatomic, retain) NSString *placeNameHint;
+@property (nonatomic) int placeTypeHint;
+@property (nonatomic) int resultProviderId;
 
 - (void)addFormattedAddressLineHint:(id)arg1;
 - (id)addressHint;

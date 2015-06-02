@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface YTTopRatedVideoDataSource : YTTimeQualifiedVideoDataSource {
-}
+@interface YTTopRatedVideoDataSource : YTTimeQualifiedVideoDataSource
 
 - (void)reloadData;
 

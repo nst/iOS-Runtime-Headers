@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, NSObject<TSCH3DSageFillImageDataSource>, TSCH3DFillSetIdentifier;
-
 @interface TSCH3DSageFillData : NSObject <TSCH3DSageFillData> {
     TSCH3DFillSetIdentifier *mIdentifier;
     NSObject<TSCH3DSageFillImageDataSource> *mImageSource;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSDictionary;
-
 @interface ML3ExportItem : NSObject {
     Class _entityClass;
     ML3MusicLibrary *_library;
@@ -11,9 +9,9 @@
     NSDictionary *_properties;
 }
 
-@property(readonly) Class entityClass;
-@property(readonly) ML3MusicLibrary * library;
-@property(readonly) long long persistentId;
+@property (nonatomic, readonly) Class entityClass;
+@property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (nonatomic, readonly) long long persistentId;
 
 + (unsigned int*)allExportPropertyKeysForEntityClass:(Class)arg1 returnedCount:(unsigned int*)arg2;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalDefaults : NSObject {
-}
+@interface CalDefaults : NSObject
 
 + (void)initialize;
 + (id)shared;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary;
-
 @interface PLProcessNetworkSource : NSObject {
     NSDictionary *_countsDictionary;
     NSDictionary *_descriptionDictionary;
     struct __NStatSource { } *_source;
 }
 
-@property(copy) NSDictionary * countsDictionary;
-@property(copy) NSDictionary * descriptionDictionary;
-@property struct __NStatSource { }* source;
+@property (nonatomic, copy) NSDictionary *countsDictionary;
+@property (nonatomic, copy) NSDictionary *descriptionDictionary;
+@property (nonatomic) struct __NStatSource { }*source;
 
 - (void).cxx_destruct;
 - (id)countsDictionary;

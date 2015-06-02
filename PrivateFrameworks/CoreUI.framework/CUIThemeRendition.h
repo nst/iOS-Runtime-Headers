@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSData, NSString;
-
 @interface CUIThemeRendition : NSObject {
     int _artworkStatus;
     int _blendMode;
@@ -24,7 +22,7 @@
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackKey[16];
+    } _stackKey;
     unsigned int _subtype;
     int _templateRenderingMode;
     int _type;
@@ -32,9 +30,9 @@
     int _validLookGradation;
 }
 
-@property int blendMode;
-@property int exifOrientation;
-@property float opacity;
+@property (nonatomic) int blendMode;
+@property (nonatomic) int exifOrientation;
+@property (nonatomic) float opacity;
 
 + (id)displayNameForRenditionType:(int)arg1;
 + (id)filteredCSIDataFromBaseCSIData:(id)arg1;

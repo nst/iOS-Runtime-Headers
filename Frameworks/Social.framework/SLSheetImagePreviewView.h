@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSMutableDictionary, UIImage, UIImageView;
-
 @interface SLSheetImagePreviewView : UIView {
     UIImage *_image;
     UIImageView *_imageView;
@@ -12,10 +10,10 @@
     int _verticalSizeClass;
 }
 
-@property(retain) UIImage * image;
-@property(retain) UIImageView * imageView;
-@property(retain) NSArray * principalAttachments;
-@property int verticalSizeClass;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) NSArray *principalAttachments;
+@property (nonatomic) int verticalSizeClass;
 
 + (id)fallbackPreviewImage;
 

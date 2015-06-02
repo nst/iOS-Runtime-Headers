@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSNumber, NSString;
-
 @interface TIMecabraCandidate : TIKeyboardCandidate {
     NSString *_candidate;
     BOOL _emojiCandidate;
@@ -13,7 +11,7 @@
     NSNumber *_mecabraCandidatePointerValue;
 }
 
-@property(retain) NSNumber * mecabraCandidatePointerValue;
+@property (nonatomic, retain) NSNumber *mecabraCandidatePointerValue;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;

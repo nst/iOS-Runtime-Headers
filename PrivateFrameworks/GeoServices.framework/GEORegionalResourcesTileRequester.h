@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEORegionalResourcesTileRequester : GEOTileRequester {
     NSMutableArray *_loaders;
 }

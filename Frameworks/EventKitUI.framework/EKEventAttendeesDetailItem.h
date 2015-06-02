@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventDetailAttendeesCell, NSArray, NSMutableDictionary;
-
 @interface EKEventAttendeesDetailItem : EKEventDetailItem {
     NSArray *_attendees;
     NSMutableDictionary *_attendeesCells;
@@ -11,8 +9,8 @@
     int _status;
 }
 
-@property(retain) NSArray * attendees;
-@property int status;
+@property (nonatomic, retain) NSArray *attendees;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (id)attendees;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData, NSString;
-
 @interface _NMRNowPlayingInfoProtobuf : PBCodable <NSCopying> {
     NSString *_album;
     NSString *_artist;
@@ -37,40 +35,40 @@
     unsigned long long _uniqueIdentifier;
 }
 
-@property(retain) NSString * album;
-@property(retain) NSString * artist;
-@property(retain) NSData * artworkDataDigest;
-@property double duration;
-@property double elapsedTime;
-@property(readonly) BOOL hasAlbum;
-@property(readonly) BOOL hasArtist;
-@property(readonly) BOOL hasArtworkDataDigest;
-@property BOOL hasDuration;
-@property BOOL hasElapsedTime;
-@property BOOL hasIsAlwaysLive;
-@property BOOL hasIsExplicitTrack;
-@property BOOL hasIsMusicApp;
-@property BOOL hasPlaybackRate;
-@property(readonly) BOOL hasRadioStationHash;
-@property BOOL hasRadioStationIdentifier;
-@property(readonly) BOOL hasRadioStationName;
-@property BOOL hasRepeatMode;
-@property BOOL hasShuffleMode;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasTitle;
-@property BOOL hasUniqueIdentifier;
-@property BOOL isAlwaysLive;
-@property BOOL isExplicitTrack;
-@property BOOL isMusicApp;
-@property float playbackRate;
-@property(retain) NSString * radioStationHash;
-@property long long radioStationIdentifier;
-@property(retain) NSString * radioStationName;
-@property int repeatMode;
-@property int shuffleMode;
-@property double timestamp;
-@property(retain) NSString * title;
-@property unsigned long long uniqueIdentifier;
+@property (nonatomic, retain) NSString *album;
+@property (nonatomic, retain) NSString *artist;
+@property (nonatomic, retain) NSData *artworkDataDigest;
+@property (nonatomic) double duration;
+@property (nonatomic) double elapsedTime;
+@property (nonatomic, readonly) BOOL hasAlbum;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic, readonly) BOOL hasArtworkDataDigest;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasElapsedTime;
+@property (nonatomic) BOOL hasIsAlwaysLive;
+@property (nonatomic) BOOL hasIsExplicitTrack;
+@property (nonatomic) BOOL hasIsMusicApp;
+@property (nonatomic) BOOL hasPlaybackRate;
+@property (nonatomic, readonly) BOOL hasRadioStationHash;
+@property (nonatomic) BOOL hasRadioStationIdentifier;
+@property (nonatomic, readonly) BOOL hasRadioStationName;
+@property (nonatomic) BOOL hasRepeatMode;
+@property (nonatomic) BOOL hasShuffleMode;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic) BOOL hasUniqueIdentifier;
+@property (nonatomic) BOOL isAlwaysLive;
+@property (nonatomic) BOOL isExplicitTrack;
+@property (nonatomic) BOOL isMusicApp;
+@property (nonatomic) float playbackRate;
+@property (nonatomic, retain) NSString *radioStationHash;
+@property (nonatomic) long long radioStationIdentifier;
+@property (nonatomic, retain) NSString *radioStationName;
+@property (nonatomic) int repeatMode;
+@property (nonatomic) int shuffleMode;
+@property (nonatomic) double timestamp;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) unsigned long long uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)album;

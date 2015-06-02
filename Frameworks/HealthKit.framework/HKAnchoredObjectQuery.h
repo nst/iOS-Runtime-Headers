@@ -2,37 +2,27 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSNumber;
-
 @interface HKAnchoredObjectQuery : HKQuery {
     NSNumber *_anchor;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     unsigned int _limit;
 }
 
-@property(retain) NSNumber * anchor;
-@property(readonly) id completionHandler;
-@property unsigned int limit;
+@property (nonatomic, retain) NSNumber *anchor;
+@property (nonatomic, readonly) id /* block */ completionHandler;
+@property (nonatomic) unsigned int limit;
 
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id)_queue_errorHandler;
+- (id /* block */)_queue_errorHandler;
 - (void)_queue_validate;
 - (id)anchor;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)deliverDataObjects:(id)arg1 withAnchor:(id)arg2 queryUUID:(id)arg3;
-- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned int)arg3 limit:(unsigned int)arg4 completionHandler:(id)arg5;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 anchor:(unsigned int)arg3 limit:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
 - (unsigned int)limit;
 - (void)setAnchor:(id)arg1;
 - (void)setLimit:(unsigned int)arg1;

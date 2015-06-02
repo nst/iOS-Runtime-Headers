@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUReadWriteQueue;
-
 @interface TSUConcurrentCache : TSUCache {
     TSUReadWriteQueue *mReadWriteQueue;
 }
 
-@property(readonly) TSUReadWriteQueue * readWriteQueue;
+@property (nonatomic, readonly) TSUReadWriteQueue *readWriteQueue;
 
 - (void)addEntriesFromDictionary:(id)arg1;
 - (unsigned int)count;

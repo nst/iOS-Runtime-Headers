@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKChallenge, GKChallengesPickerDataSource;
-
 @interface GKChallengesPickerViewController : GKPlayerPickerViewController {
     GKChallenge *_challenge;
     GKChallengesPickerDataSource *_challengesPickerDataSource;
 }
 
-@property(retain) GKChallenge * challenge;
-@property(retain) GKChallengesPickerDataSource * challengesPickerDataSource;
+@property (nonatomic, retain) GKChallenge *challenge;
+@property (nonatomic, retain) GKChallengesPickerDataSource *challengesPickerDataSource;
 
 - (id)challenge;
 - (id)challengesPickerDataSource;

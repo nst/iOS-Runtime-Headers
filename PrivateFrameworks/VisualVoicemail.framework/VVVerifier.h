@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface VVVerifier : NSObject {
     NSMutableDictionary *_checkpointDictionary;
     NSArray *_keyDescriptions;

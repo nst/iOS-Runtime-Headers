@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class CADisplay, CADisplayLink;
-
 @interface GGLDisplayLink : NSObject {
     CADisplay *_display;
     CADisplayLink *_displayLink;
@@ -14,10 +12,10 @@
     id _target;
 }
 
-@property(retain) CADisplay * display;
-@property int frameInterval;
-@property(getter=isPaused) BOOL paused;
-@property(readonly) double timestamp;
+@property (nonatomic, retain) CADisplay *display;
+@property (nonatomic) int frameInterval;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic, readonly) double timestamp;
 
 - (void)_displayLinkFired:(id)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSDCAAnimationGroupContextCache : TSDCAAnimationContextCache {
     NSArray *_animationContextCaches;
     NSArray *_animations;
 }
 
-@property(readonly) NSArray * animationContextCaches;
-@property(readonly) NSArray * animations;
+@property (nonatomic, readonly) NSArray *animationContextCaches;
+@property (nonatomic, readonly) NSArray *animations;
 
 - (id)animationContextCaches;
 - (id)animations;

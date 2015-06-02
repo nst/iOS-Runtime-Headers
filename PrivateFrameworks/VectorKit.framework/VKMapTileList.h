@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class __end_;
-
 @interface VKMapTileList : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: } */
-  /* Error parsing encoded ivar type info: {vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}} */
     /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
     } _list;
-
     float _maximumStyleZ;
 }
 
-@property(readonly) float maximumStyleZ;
-@property(readonly) unsigned int numTiles;
-@property(readonly) id* tileList;
+@property (nonatomic, readonly) float maximumStyleZ;
+@property (nonatomic, readonly) unsigned int numTiles;
+@property (nonatomic, readonly) id*tileList;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

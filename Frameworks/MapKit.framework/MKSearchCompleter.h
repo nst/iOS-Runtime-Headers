@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKSearchCompleterDelegate>, CLLocation, NSArray, NSString;
-
 @interface MKSearchCompleter : NSObject {
     struct { 
         struct { 
@@ -25,16 +23,16 @@
     double _timeSinceLastInBoundingRegion;
 }
 
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
-@property id context;
-@property <MKSearchCompleterDelegate> * delegate;
-@property(retain) CLLocation * deviceLocation;
-@property int entriesType;
-@property(copy) NSString * fragment;
-@property(copy) NSString * identifier;
-@property int listType;
-@property(readonly) NSArray * results;
-@property double timeSinceLastInBoundingRegion;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
+@property (nonatomic) id context;
+@property (nonatomic) <MKSearchCompleterDelegate> *delegate;
+@property (nonatomic, retain) CLLocation *deviceLocation;
+@property (nonatomic) int entriesType;
+@property (nonatomic, copy) NSString *fragment;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) int listType;
+@property (nonatomic, readonly) NSArray *results;
+@property (nonatomic) double timeSinceLastInBoundingRegion;
 
 + (id)alloc;
 

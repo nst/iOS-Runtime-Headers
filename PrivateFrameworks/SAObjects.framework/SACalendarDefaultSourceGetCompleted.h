@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SACalendarSource;
+@interface SACalendarDefaultSourceGetCompleted : SABaseCommand <SAServerBoundCommand>
 
-@interface SACalendarDefaultSourceGetCompleted : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(retain) SACalendarSource * aceCalendarSource;
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SACalendarSource *aceCalendarSource;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)defaultSourceGetCompleted;
 + (id)defaultSourceGetCompletedWithAceCalendarSource:(id)arg1;

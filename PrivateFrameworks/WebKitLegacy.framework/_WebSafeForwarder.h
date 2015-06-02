@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class _WebSafeAsyncForwarder;
-
 @interface _WebSafeForwarder : NSObject {
     _WebSafeAsyncForwarder *asyncForwarder;
     long asyncForwarderPred;

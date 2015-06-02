@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicNavigationControllerDelegate>;
+@interface MusicMoreNavigationController : UIMoreNavigationController
 
-@interface MusicMoreNavigationController : UIMoreNavigationController {
-}
-
-@property <MusicNavigationControllerDelegate> * delegate;
+@property (nonatomic) <MusicNavigationControllerDelegate> *delegate;
 
 + (Class)_moreListControllerClass;
 

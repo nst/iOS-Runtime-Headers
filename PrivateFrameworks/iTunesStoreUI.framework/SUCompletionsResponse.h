@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString;
-
 @interface SUCompletionsResponse : NSObject {
     NSArray *_completionItems;
     NSString *_title;
 }
 
-@property(readonly) NSArray * completionItems;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSArray *completionItems;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)completionItems;
 - (void)dealloc;

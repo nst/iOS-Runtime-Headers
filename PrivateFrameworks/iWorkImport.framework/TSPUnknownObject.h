@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSObject<OS_dispatch_data>, NSString, TSPLazyReferenceArray;
-
 @interface TSPUnknownObject : TSPObject {
     struct shared_ptr<TSP::ArchiveInfo> { 
         struct ArchiveInfo {} *__ptr_; 
@@ -15,7 +13,7 @@
     NSString *_packageLocator;
 }
 
-@property(readonly) NSObject<OS_dispatch_data> * serializedData;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *serializedData;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIKeyboardCandidatePocketShadow;
-
 @interface UIKeyboardCandidateUnsplitKeyboardToggleButton : UIKeyboardCandidateToggleButton {
     UIImage *_backgroundHighlighted;
     UIImage *_backgroundNormal;
@@ -12,8 +10,8 @@
     UIKeyboardCandidatePocketShadow *_pocketShadow;
 }
 
-@property BOOL drawsBackground;
-@property BOOL drawsPocketShadow;
+@property (nonatomic) BOOL drawsBackground;
+@property (nonatomic) BOOL drawsPocketShadow;
 
 - (void)dealloc;
 - (BOOL)drawsBackground;

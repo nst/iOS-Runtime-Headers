@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFContinuityScannerProtocol><NSXPCProxyCreating>, NSHashTable, NSMutableSet, NSString;
-
 @interface SFContinuityScanManager : NSObject <SFCompanionXPCManagerObserver, SFContinuityScannerClient> {
     <SFContinuityScannerProtocol><NSXPCProxyCreating> *_connectionProxy;
     NSMutableSet *_foundDevices;
     NSHashTable *_observers;
 }
 
-@property(retain) <SFContinuityScannerProtocol><NSXPCProxyCreating> * connectionProxy;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableSet * foundDevices;
-@property(readonly) unsigned int hash;
-@property(retain) NSHashTable * observers;
-@property(readonly) Class superclass;
+@property (retain) <SFContinuityScannerProtocol><NSXPCProxyCreating> *connectionProxy;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSMutableSet *foundDevices;
+@property (readonly) unsigned int hash;
+@property (retain) NSHashTable *observers;
+@property (readonly) Class superclass;
 
 + (id)sharedManager;
 
-- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)addObserver:(id)arg1;
 - (id)connectionProxy;
 - (void)dealloc;

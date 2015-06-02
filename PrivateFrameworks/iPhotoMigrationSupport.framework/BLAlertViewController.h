@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-@class <BLAlertViewControllerDelegate>, NSString, UIActivityIndicatorView, UIButton, UILabel, UIProgressView;
-
 @interface BLAlertViewController : UIViewController {
     UIActivityIndicatorView *_activityIndicator;
     UIButton *_cancelButton;
@@ -27,24 +25,24 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property(retain) UIButton * cancelButton;
-@property(readonly) int cancelButtonIndex;
-@property(retain) NSString * cancelButtonTitle;
-@property <BLAlertViewControllerDelegate> * delegate;
-@property(retain) UIButton * firstOtherButton;
-@property(retain) NSString * firstOtherButtonTitle;
-@property struct CGSize { float x1; float x2; } formSize;
-@property BOOL hasActivity;
-@property(retain) NSString * message;
-@property(retain) UILabel * messageLabel;
-@property float progress;
-@property(retain) UIProgressView * progressView;
-@property(retain) UIButton * secondOtherButton;
-@property(retain) NSString * secondOtherButtonTitle;
-@property BOOL showsActivityIndicator;
-@property BOOL showsProgressIndicator;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) UIButton *cancelButton;
+@property (nonatomic, readonly) int cancelButtonIndex;
+@property (nonatomic, retain) NSString *cancelButtonTitle;
+@property (nonatomic) <BLAlertViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UIButton *firstOtherButton;
+@property (nonatomic, retain) NSString *firstOtherButtonTitle;
+@property (nonatomic) struct CGSize { float x1; float x2; } formSize;
+@property (nonatomic) BOOL hasActivity;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) UILabel *messageLabel;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) UIProgressView *progressView;
+@property (nonatomic, retain) UIButton *secondOtherButton;
+@property (nonatomic, retain) NSString *secondOtherButtonTitle;
+@property (nonatomic) BOOL showsActivityIndicator;
+@property (nonatomic) BOOL showsProgressIndicator;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (void)_recalculateFormSize;

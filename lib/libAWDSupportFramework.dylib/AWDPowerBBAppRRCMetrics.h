@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerBBAppRRCMetrics : PBCodable <NSCopying> {
     NSMutableArray *_appConnStats;
     struct { 
@@ -14,11 +12,11 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSMutableArray * appConnStats;
-@property BOOL hasNumRRCConnections;
-@property BOOL hasTimestamp;
-@property unsigned int numRRCConnections;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSMutableArray *appConnStats;
+@property (nonatomic) BOOL hasNumRRCConnections;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int numRRCConnections;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addAppConnStats:(id)arg1;
 - (id)appConnStats;

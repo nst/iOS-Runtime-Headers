@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUItemDataSource : NSObject {
-}
+@interface SUItemDataSource : NSObject
 
 + (void)setSharedDataSource:(id)arg1;
 + (id)sharedDataSource;

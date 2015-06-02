@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, WBSHistorySessionIntervalCache;
-
 @interface WBSHistorySessionController : NSObject {
     WBSHistorySessionIntervalCache *_intervalCache;
     NSMutableDictionary *_itemsBySession;
@@ -26,7 +24,7 @@
 - (void)_removeItemFromSessionCache:(id)arg1;
 - (void)_timeZoneDidChange:(id)arg1;
 - (void)dealloc;
-- (void)enumerateOrderedItemsLastVisitedInSession:(id)arg1 usingBlock:(id)arg2;
+- (void)enumerateOrderedItemsLastVisitedInSession:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
 - (id)itemLastVisitedInSession:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)itemsLastVisitedInSession:(id)arg1;

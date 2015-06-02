@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFCreateAlarmResponse : AFSiriResponse {
     NSString *_alarmIdentifier;
 }
 
-@property(copy) NSString * alarmIdentifier;
+@property (nonatomic, copy) NSString *alarmIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, VKMapModel, VKStyleManager;
-
 @interface VKGridModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     struct shared_ptr<ggl::GridBase::GridBaseUniformData> { 
         struct GridBaseUniformData {} *__ptr_; 
@@ -69,15 +58,15 @@
     } _viewUniformData;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) unsigned int hash;
-@property VKMapModel * mapModel;
-@property unsigned char renderPass;
-@property BOOL simpleGridEnabled;
-@property(readonly) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
+@property (readonly) unsigned int hash;
+@property (nonatomic) VKMapModel *mapModel;
+@property (nonatomic) unsigned char renderPass;
+@property (nonatomic) BOOL simpleGridEnabled;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 

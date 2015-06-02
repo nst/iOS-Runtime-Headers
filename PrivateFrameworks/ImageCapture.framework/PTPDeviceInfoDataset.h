@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray, NSMutableData, NSString;
-
 @interface PTPDeviceInfoDataset : NSObject {
     NSMutableArray *_captureFormats;
     NSMutableData *_content;

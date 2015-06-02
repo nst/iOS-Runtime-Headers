@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSDictionary, NSObject<OS_dispatch_semaphore>;
-
 @interface TUTelephonyCallModel : TUCallModel {
     NSDictionary *_callManagementState;
     NSObject<OS_dispatch_semaphore> *_callManagementStateSemaphore;
 }
 
-@property(retain) NSDictionary * callManagementState;
-@property(retain) NSObject<OS_dispatch_semaphore> * callManagementStateSemaphore;
-@property(getter=isWiFiCallingCurrentlyAvailable,readonly) BOOL wiFiCallingCurrentlyAvailable;
+@property (nonatomic, retain) NSDictionary *callManagementState;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *callManagementStateSemaphore;
+@property (getter=isWiFiCallingCurrentlyAvailable, nonatomic, readonly) BOOL wiFiCallingCurrentlyAvailable;
 
 + (id)sharedInstance;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CoreRCManagerDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet;
-
 @interface CoreRCManager : NSObject {
     NSMutableSet *_busesInternal;
     <CoreRCManagerDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property(readonly) NSSet * buses;
-@property(readonly) NSMutableSet * busesInternal;
-@property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
+@property (nonatomic, readonly) NSSet *buses;
+@property (nonatomic, readonly) NSMutableSet *busesInternal;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

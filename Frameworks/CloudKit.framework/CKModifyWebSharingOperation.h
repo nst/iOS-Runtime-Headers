@@ -2,45 +2,27 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKModifyWebSharingOperation : CKDatabaseOperation {
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDsToShare;
     NSArray *_recordIDsToShareReadWrite;
     NSArray *_recordIDsToUnshare;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordSharedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordUnsharedBlock;
-
+    id /* block */ _recordSharedBlock;
+    id /* block */ _recordUnsharedBlock;
     NSMutableArray *_sharedRecordIDs;
     NSMutableArray *_unsharedRecordIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _webShareRecordsCompletionBlock;
-
+    id /* block */ _webShareRecordsCompletionBlock;
 }
 
-@property(retain) NSMutableDictionary * recordErrors;
-@property(retain) NSArray * recordIDsToShare;
-@property(retain) NSArray * recordIDsToShareReadWrite;
-@property(retain) NSArray * recordIDsToUnshare;
-@property(copy) id recordSharedBlock;
-@property(copy) id recordUnsharedBlock;
-@property(retain) NSMutableArray * sharedRecordIDs;
-@property(retain) NSMutableArray * unsharedRecordIDs;
-@property(copy) id webShareRecordsCompletionBlock;
+@property (nonatomic, retain) NSMutableDictionary *recordErrors;
+@property (nonatomic, retain) NSArray *recordIDsToShare;
+@property (nonatomic, retain) NSArray *recordIDsToShareReadWrite;
+@property (nonatomic, retain) NSArray *recordIDsToUnshare;
+@property (nonatomic, copy) id /* block */ recordSharedBlock;
+@property (nonatomic, copy) id /* block */ recordUnsharedBlock;
+@property (nonatomic, retain) NSMutableArray *sharedRecordIDs;
+@property (nonatomic, retain) NSMutableArray *unsharedRecordIDs;
+@property (nonatomic, copy) id /* block */ webShareRecordsCompletionBlock;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -53,19 +35,19 @@
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;
 - (id)recordIDsToUnshare;
-- (id)recordSharedBlock;
-- (id)recordUnsharedBlock;
+- (id /* block */)recordSharedBlock;
+- (id /* block */)recordUnsharedBlock;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDsToShare:(id)arg1;
 - (void)setRecordIDsToShareReadWrite:(id)arg1;
 - (void)setRecordIDsToUnshare:(id)arg1;
-- (void)setRecordSharedBlock:(id)arg1;
-- (void)setRecordUnsharedBlock:(id)arg1;
+- (void)setRecordSharedBlock:(id /* block */)arg1;
+- (void)setRecordUnsharedBlock:(id /* block */)arg1;
 - (void)setSharedRecordIDs:(id)arg1;
 - (void)setUnsharedRecordIDs:(id)arg1;
-- (void)setWebShareRecordsCompletionBlock:(id)arg1;
+- (void)setWebShareRecordsCompletionBlock:(id /* block */)arg1;
 - (id)sharedRecordIDs;
 - (id)unsharedRecordIDs;
-- (id)webShareRecordsCompletionBlock;
+- (id /* block */)webShareRecordsCompletionBlock;
 
 @end

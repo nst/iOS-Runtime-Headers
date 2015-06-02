@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface BSXPCConnectionListenerManager : NSObject {
     NSObject<OS_dispatch_queue> *_defaultHandlerQueue;
     NSObject<OS_dispatch_queue> *_listeningQueue;

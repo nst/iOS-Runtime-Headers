@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUEditPluginSessionDataSource>, <PUEditPluginSessionDelegate>, NSString, PHAsset, PUEditPlugin, PUEditPluginManager, UINavigationController, UIViewController;
-
 @interface PUEditPluginSession : NSObject <PUEditPluginHostViewControllerDataSource, PUEditPluginHostViewControllerDelegate, UIActivityGroupViewControllerDelegate, UINavigationControllerDelegate> {
     UIViewController *__hostViewController;
     int _adjustmentType;
@@ -16,17 +14,17 @@
     UINavigationController *_pluginNavigationController;
 }
 
-@property(setter=_setHostViewController:) UIViewController * _hostViewController;
-@property int adjustmentType;
-@property(retain) PHAsset * asset;
-@property <PUEditPluginSessionDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUEditPluginSessionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isAvailable;
-@property(readonly) int mediaType;
-@property(readonly) Class superclass;
+@property (setter=_setHostViewController:, nonatomic) UIViewController *_hostViewController;
+@property (nonatomic) int adjustmentType;
+@property (nonatomic, retain) PHAsset *asset;
+@property (nonatomic) <PUEditPluginSessionDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUEditPluginSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAvailable;
+@property (nonatomic, readonly) int mediaType;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginSessionWithAsset:(id)arg1 fromViewController:(id)arg2 sourceElement:(id)arg3;
@@ -45,12 +43,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissSession;
-- (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)editPluginHostViewController:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
-- (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(id)arg2;
+- (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isAvailable;
-- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id)arg2;
+- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id /* block */)arg2;
 - (int)mediaType;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)setDataSource:(id)arg1;

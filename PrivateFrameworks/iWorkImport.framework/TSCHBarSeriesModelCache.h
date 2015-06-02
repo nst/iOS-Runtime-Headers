@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxis, TSCHChartSeries, TSCHChartValueAxis, TSDShadow, TSDStroke, TSWPParagraphStyle;
-
 @interface TSCHBarSeriesModelCache : NSObject {
     float mBarGapRatio;
     float mBarGroupGapRatio;
@@ -22,21 +20,21 @@
     BOOL mValueLabelsOn;
 }
 
-@property(readonly) float barGapRatio;
-@property(readonly) float barGroupGapRatio;
-@property(readonly) float barWidthRatio;
-@property(readonly) id fill;
-@property(readonly) TSCHChartAxis * groupAxis;
-@property(readonly) unsigned int labelPosition;
-@property(readonly) float opacity;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) TSCHChartSeries * series;
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) TSDShadow * shadow;
-@property(readonly) TSDStroke * stroke;
-@property(readonly) double unitSpaceIntercept;
-@property(readonly) TSCHChartValueAxis * valueAxis;
-@property(readonly) BOOL valueLabelsOn;
+@property (readonly) float barGapRatio;
+@property (readonly) float barGroupGapRatio;
+@property (readonly) float barWidthRatio;
+@property (readonly) id fill;
+@property (readonly) TSCHChartAxis *groupAxis;
+@property (readonly) unsigned int labelPosition;
+@property (readonly) float opacity;
+@property (readonly) TSWPParagraphStyle *paragraphStyle;
+@property (readonly) TSCHChartSeries *series;
+@property (readonly) unsigned int seriesIndex;
+@property (readonly) TSDShadow *shadow;
+@property (readonly) TSDStroke *stroke;
+@property (readonly) double unitSpaceIntercept;
+@property (readonly) TSCHChartValueAxis *valueAxis;
+@property (readonly) BOOL valueLabelsOn;
 
 - (float)barGapRatio;
 - (float)barGroupGapRatio;

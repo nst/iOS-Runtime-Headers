@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString;
-
 @interface WDFont : NSObject <NSCopying> {
     NSMutableArray *mAlternateNames;
     int mCharacterSet;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDContainerInfo, NSObject<OS_dispatch_group>;
-
 @interface CKDContainerSpecificInfoOperation : CKDOperation {
     CKDContainerInfo *_containerInfo;
     NSObject<OS_dispatch_group> *_infoFetchedGroup;
     BOOL _needUserID;
 }
 
-@property(copy) CKDContainerInfo * containerInfo;
-@property(readonly) NSObject<OS_dispatch_group> * infoFetchedGroup;
-@property BOOL needUserID;
+@property (nonatomic, copy) CKDContainerInfo *containerInfo;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *infoFetchedGroup;
+@property (nonatomic) BOOL needUserID;
 
 - (void).cxx_destruct;
 - (id)containerInfo;
@@ -20,7 +18,7 @@
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)needUserID;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContainerInfo:(id)arg1;
 - (void)setNeedUserID:(BOOL)arg1;
 - (BOOL)shouldCheckAppVersion;

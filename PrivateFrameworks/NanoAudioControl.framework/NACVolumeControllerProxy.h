@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class <NACVolumeControllerDelegate>, NACEventThrottler, NACXPCClient, NSObject<OS_dispatch_source>, NSString;
-
 @interface NACVolumeControllerProxy : NSObject <NACVolumeController> {
     float _EUVolumeLimit;
     NSString *_category;
@@ -24,18 +22,18 @@
     NACXPCClient *_xpcClient;
 }
 
-@property(readonly) float EUVolumeLimit;
-@property(copy,readonly) NSString * debugDescription;
-@property <NACVolumeControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property float hapticIntensity;
-@property(readonly) unsigned int hash;
-@property(getter=isMuted,readonly) BOOL muted;
-@property(readonly) Class superclass;
-@property(getter=isSystemMuted) BOOL systemMuted;
-@property(getter=isVolumeControlAvailable,readonly) BOOL volumeControlAvailable;
-@property(readonly) float volumeValue;
-@property(getter=isVolumeWarningEnabled,readonly) BOOL volumeWarningEnabled;
+@property (nonatomic, readonly) float EUVolumeLimit;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NACVolumeControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float hapticIntensity;
+@property (readonly) unsigned int hash;
+@property (getter=isMuted, nonatomic, readonly) BOOL muted;
+@property (readonly) Class superclass;
+@property (getter=isSystemMuted, nonatomic) BOOL systemMuted;
+@property (getter=isVolumeControlAvailable, nonatomic, readonly) BOOL volumeControlAvailable;
+@property (nonatomic, readonly) float volumeValue;
+@property (getter=isVolumeWarningEnabled, nonatomic, readonly) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
@@ -50,7 +48,7 @@
 - (void)_notifyDelegateHapticChanged;
 - (void)_notifyDelegateSystemMutedStateChanged;
 - (void)_notifyDelegateVolumeChanged;
-- (id)_scheduleTimeoutWithBlock:(id)arg1;
+- (id)_scheduleTimeoutWithBlock:(id /* block */)arg1;
 - (void)_setHapticIntensity:(id)arg1;
 - (void)_setVolumeValue:(id)arg1;
 - (void)_systemMutedStateDidChange;

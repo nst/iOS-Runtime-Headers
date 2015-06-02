@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UISwitch;
-
 @interface PKSettingTableCell : UITableViewCell {
     SEL _action;
     UISwitch *_settingSwitch;
     id _target;
 }
 
-@property(readonly) SEL action;
-@property(getter=isOn) BOOL on;
-@property UISwitch * settingSwitch;
-@property(readonly) id target;
+@property (nonatomic, readonly) SEL action;
+@property (getter=isOn, nonatomic) BOOL on;
+@property (nonatomic) UISwitch *settingSwitch;
+@property (nonatomic, readonly) id target;
 
 - (SEL)action;
 - (void)dealloc;

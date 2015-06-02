@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class <ATSyncClient>, ATDeviceSettings, NSMutableArray;
-
 @interface ATDeviceSyncSessionSyncTask : ATDeviceSyncSessionTask {
     BOOL _addedTransportUpgradeException;
     unsigned long long _clientCurrentItemCount;
@@ -19,16 +17,16 @@
     unsigned long long _totalItemsSyncedCount;
 }
 
-@property BOOL startAssetTaskWhenFinished;
+@property (nonatomic) BOOL startAssetTaskWhenFinished;
 
 - (void).cxx_destruct;
 - (void)_applyChangesForSyncResponse:(id)arg1 toCurrentRevision:(unsigned long long)arg2 versionToken:(id)arg3 onMessageLink:(id)arg4;
-- (void)_drainInputStream:(id)arg1 withCompletion:(id)arg2;
+- (void)_drainInputStream:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_finishSyncWithError:(id)arg1;
 - (void)_finishTaskWithError:(id)arg1;
 - (void)_processSyncRequest:(id)arg1 onMessageLink:(id)arg2;
 - (void)_processSyncResponse:(id)arg1 onMessageLink:(id)arg2;
-- (void)_resetSyncDataForLibrary:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)_resetSyncDataForLibrary:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_sendSyncRequestOnMessageLink:(id)arg1;
 - (void)_sendSyncRequestWithChangesAfterRevision:(unsigned long long)arg1 toRevision:(unsigned long long)arg2 withNewRevision:(unsigned long long)arg3 withSyncType:(unsigned int)arg4 onMessageLink:(id)arg5;
 - (void)_sendSyncRequestWithParams:(id)arg1 withSyncType:(unsigned int)arg2 syncState:(id)arg3 newRevision:(unsigned long long)arg4 versionToken:(id)arg5 inputStream:(id)arg6 onMessageLink:(id)arg7;

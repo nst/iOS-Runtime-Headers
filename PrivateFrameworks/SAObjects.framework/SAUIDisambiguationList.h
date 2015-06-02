@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAUIDomainObjectPicker;
+@interface SAUIDisambiguationList : SAAceView
 
-@interface SAUIDisambiguationList : SAAceView {
-}
-
-@property(copy) NSString * disambiguationKey;
-@property(retain) SAUIDomainObjectPicker * domainObjectPicker;
-@property(copy) NSArray * items;
-@property(copy) NSString * selectionResponse;
-@property(copy) NSString * speakableDelimiter;
-@property(copy) NSString * speakableFinalDelimiter;
-@property(copy) NSString * speakableSelectionResponse;
-@property(copy) NSString * speakableSuffix;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *disambiguationKey;
+@property (nonatomic, retain) SAUIDomainObjectPicker *domainObjectPicker;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSString *selectionResponse;
+@property (nonatomic, copy) NSString *speakableDelimiter;
+@property (nonatomic, copy) NSString *speakableFinalDelimiter;
+@property (nonatomic, copy) NSString *speakableSelectionResponse;
+@property (nonatomic, copy) NSString *speakableSuffix;
+@property (nonatomic, copy) NSString *title;
 
 + (id)disambiguationList;
 + (id)disambiguationListWithDictionary:(id)arg1 context:(id)arg2;

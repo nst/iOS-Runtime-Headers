@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUMutablePair : TSUPair {
-}
+@interface TSUMutablePair : TSUPair
 
 - (void)setFirst:(id)arg1;
 - (void)setSecond:(id)arg1;

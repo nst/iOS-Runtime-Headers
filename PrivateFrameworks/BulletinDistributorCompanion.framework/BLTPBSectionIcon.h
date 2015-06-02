@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableArray;
-
 @interface BLTPBSectionIcon : PBCodable <NSCopying> {
     NSMutableArray *_variants;
 }
 
-@property(retain) NSMutableArray * variants;
+@property (nonatomic, retain) NSMutableArray *variants;
 
 - (void).cxx_destruct;
 - (void)addVariant:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UILabel;
-
 @interface CAMFocusAttachmentView : UIView {
     UILabel *__label;
     struct UIEdgeInsets { 
@@ -14,8 +12,8 @@
     } _textInsets;
 }
 
-@property(retain) UILabel * _label;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textInsets;
+@property (nonatomic, retain) UILabel *_label;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textInsets;
 
 - (void).cxx_destruct;
 - (id)_label;

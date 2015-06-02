@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKUIEventInviteesView : UITableView {
-}
+@interface EKUIEventInviteesView : UITableView
 
 @end

@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
+@interface TSCHMutableNumberFormat : TSCHNumberFormat <TSCHCustomFormatUpdateSupport>
 
-@interface TSCHMutableNumberFormat : TSCHNumberFormat <TSCHCustomFormatUpdateSupport> {
-}
-
-@property unsigned int base;
-@property unsigned int basePlaces;
-@property BOOL baseUseMinusSign;
-@property(copy) NSString * currencyCode;
-@property unsigned int decimalPlaces;
-@property int formatType;
-@property int fractionAccuracy;
-@property int negativeStyle;
-@property(copy) NSString * prefixString;
-@property BOOL showThousandsSeparator;
-@property(copy) NSString * suffixString;
-@property BOOL useAccountingStyle;
+@property (nonatomic) unsigned int base;
+@property (nonatomic) unsigned int basePlaces;
+@property (nonatomic) BOOL baseUseMinusSign;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic) unsigned int decimalPlaces;
+@property (nonatomic) int formatType;
+@property (nonatomic) int fractionAccuracy;
+@property (nonatomic) int negativeStyle;
+@property (nonatomic, copy) NSString *prefixString;
+@property (nonatomic) BOOL showThousandsSeparator;
+@property (nonatomic, copy) NSString *suffixString;
+@property (nonatomic) BOOL useAccountingStyle;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)p_formatTypeAffectedPropertyKeys;

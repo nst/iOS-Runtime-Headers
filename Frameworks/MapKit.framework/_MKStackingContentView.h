@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSLayoutConstraint, UIView;
-
 @interface _MKStackingContentView : _MKUIViewControllerRootView {
     NSLayoutConstraint *_heightConstraint;
     UIView *_referenceView;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIUserNotificationAction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     unsigned int _activationMode;
     NSString *_activationModeString;
@@ -13,12 +11,12 @@
     NSString *_title;
 }
 
-@property unsigned int activationMode;
-@property(readonly) NSString * activationModeString;
-@property(getter=isAuthenticationRequired) BOOL authenticationRequired;
-@property(getter=isDestructive) BOOL destructive;
-@property(copy) NSString * identifier;
-@property(copy) NSString * title;
+@property (nonatomic) unsigned int activationMode;
+@property (nonatomic, readonly) NSString *activationModeString;
+@property (getter=isAuthenticationRequired, nonatomic) BOOL authenticationRequired;
+@property (getter=isDestructive, nonatomic) BOOL destructive;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *title;
 
 + (id)actionWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned int)arg3 isAuthenticationRequired:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;

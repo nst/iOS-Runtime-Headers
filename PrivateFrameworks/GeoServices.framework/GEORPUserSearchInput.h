@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOPDAutocompleteEntry, GEOPDPlace, NSString;
-
 @interface GEORPUserSearchInput : PBCodable <NSCopying> {
     GEOPDAutocompleteEntry *_autocompleteEntry;
     GEOLatLng *_coordinate;
@@ -16,18 +14,18 @@
     NSString *_singleLineAddressString;
 }
 
-@property(retain) GEOPDAutocompleteEntry * autocompleteEntry;
-@property(retain) GEOLatLng * coordinate;
-@property(readonly) BOOL hasAutocompleteEntry;
-@property(readonly) BOOL hasCoordinate;
-@property BOOL hasOrigin;
-@property(readonly) BOOL hasPlace;
-@property(readonly) BOOL hasSearchString;
-@property(readonly) BOOL hasSingleLineAddressString;
-@property int origin;
-@property(retain) GEOPDPlace * place;
-@property(retain) NSString * searchString;
-@property(retain) NSString * singleLineAddressString;
+@property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;
+@property (nonatomic, retain) GEOLatLng *coordinate;
+@property (nonatomic, readonly) BOOL hasAutocompleteEntry;
+@property (nonatomic, readonly) BOOL hasCoordinate;
+@property (nonatomic) BOOL hasOrigin;
+@property (nonatomic, readonly) BOOL hasPlace;
+@property (nonatomic, readonly) BOOL hasSearchString;
+@property (nonatomic, readonly) BOOL hasSingleLineAddressString;
+@property (nonatomic) int origin;
+@property (nonatomic, retain) GEOPDPlace *place;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic, retain) NSString *singleLineAddressString;
 
 - (id)autocompleteEntry;
 - (id)coordinate;

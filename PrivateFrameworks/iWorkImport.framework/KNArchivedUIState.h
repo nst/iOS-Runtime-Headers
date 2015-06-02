@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNUIState;
-
 @interface KNArchivedUIState : TSPObject {
     KNUIState *mUIState;
 }
 
-@property(readonly) KNUIState * uiState;
+@property (nonatomic, readonly) KNUIState *uiState;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

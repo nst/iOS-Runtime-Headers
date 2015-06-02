@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreText.framework/CoreText
  */
 
-@interface NSCTRubyAnnotation : NSRubyAnnotation {
-}
+@interface NSCTRubyAnnotation : NSRubyAnnotation
 
 + (Class)classForKeyedArchiver;
 + (Class)classForKeyedUnarchiver;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TNPageController, TNPdfHyperlinkController;
-
 @interface TNRenderingExporter : TSARenderingExporter {
     BOOL _renderingAllSheets;
     NSMutableArray *mCanvasBasedSheets;
@@ -28,7 +26,7 @@
     unsigned int mTotalPagesCount;
 }
 
-@property(getter=isRenderingAllSheets) BOOL renderingAllSheets;
+@property (getter=isRenderingAllSheets, nonatomic) BOOL renderingAllSheets;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

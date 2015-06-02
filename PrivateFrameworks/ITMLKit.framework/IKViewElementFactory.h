@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppContext, IKTemplateStyleSheet, IKViewElementStyleFactory;
-
 @interface IKViewElementFactory : NSObject {
     IKAppContext *_appContext;
     struct { 
@@ -15,10 +13,10 @@
     IKTemplateStyleSheet *_styleSheet;
 }
 
-@property IKAppContext * appContext;
-@property(getter=isSparse) BOOL sparse;
-@property(retain) IKViewElementStyleFactory * styleFactory;
-@property(retain) IKTemplateStyleSheet * styleSheet;
+@property (nonatomic) IKAppContext *appContext;
+@property (getter=isSparse, nonatomic) BOOL sparse;
+@property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
+@property (nonatomic, retain) IKTemplateStyleSheet *styleSheet;
 
 + (id)_elementStylesFromDOMElement:(id)arg1;
 + (Class)elementClassByTagName:(id)arg1;

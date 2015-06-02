@@ -2,33 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
+@interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification>
 
-@interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification> {
-}
+@property (nonatomic) id accessibilityContainer;
+@property (nonatomic, retain) NSArray *accessibilityContainerElements;
+@property (nonatomic) id accessibilityDelegate;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accessibilityFrame;
+@property (nonatomic, retain) NSString *accessibilityHint;
+@property (nonatomic, copy) NSString *accessibilityIdentifier;
+@property (nonatomic, retain) NSString *accessibilityLabel;
+@property (nonatomic) unsigned long long accessibilityTraits;
+@property (nonatomic, retain) NSString *accessibilityValue;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAccessibilityElement;
+@property (readonly) Class superclass;
 
-@property id accessibilityContainer;
-@property(retain) NSArray * accessibilityContainerElements;
-@property id accessibilityDelegate;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } accessibilityFrame;
-@property(retain) NSString * accessibilityHint;
-@property(copy) NSString * accessibilityIdentifier;
-@property(retain) NSString * accessibilityLabel;
-@property unsigned long long accessibilityTraits;
-@property(retain) NSString * accessibilityValue;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isAccessibilityElement;
-@property(readonly) Class superclass;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)initWithAccessibilityContainer:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 - (id)accessibilityContainerElements;
 - (id)accessibilityDelegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)dataForKey:(id)arg1;
 - (void)delegateSpecificsForAttribute:(int)arg1 delegate:(id*)arg2 selector:(SEL*)arg3;
-- (id)initWithAccessibilityContainer:(id)arg1;
 - (void)setAccessibilityContainerElements:(id)arg1;
 - (void)setAccessibilityDelegate:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

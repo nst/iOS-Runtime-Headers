@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class <AASetupAssistantDelegateService>, NSArray, NSObject<OS_dispatch_queue>;
-
 @interface AALoginPluginManager : NSObject {
     BOOL _hasStashedLoginResponse;
     <AASetupAssistantDelegateService> *_idsPlugin;
@@ -13,8 +11,8 @@
     BOOL _shouldStashLoginResponse;
 }
 
-@property BOOL shouldSkipiTunesPlugin;
-@property BOOL shouldStashLoginResponse;
+@property (nonatomic) BOOL shouldSkipiTunesPlugin;
+@property (nonatomic) BOOL shouldStashLoginResponse;
 
 + (id)sharedInstance;
 
@@ -25,7 +23,7 @@
 - (id)collectParametersForIdentityEstablishmentRequest;
 - (id)collectParametersForLoginRequest;
 - (id)init;
-- (void)notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3 completion:(id)arg4;
+- (void)notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3 completion:(id /* block */)arg4;
 - (void)setShouldSkipiTunesPlugin:(BOOL)arg1;
 - (void)setShouldStashLoginResponse:(BOOL)arg1;
 - (BOOL)shouldSkipiTunesPlugin;

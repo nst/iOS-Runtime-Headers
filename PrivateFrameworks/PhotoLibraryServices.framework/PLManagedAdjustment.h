@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSString, PLManagedAsset;
+@interface PLManagedAdjustment : _PLManagedAdjustment
 
-@interface PLManagedAdjustment : _PLManagedAdjustment {
-}
-
-@property int adjustmentType;
-@property(copy) PLManagedAsset * asset;
-@property(copy) NSString * filterName;
-@property(copy) NSDictionary * filterSettings;
+@property (nonatomic) int adjustmentType;
+@property (nonatomic, copy) PLManagedAsset *asset;
+@property (nonatomic, copy) NSString *filterName;
+@property (nonatomic, copy) NSDictionary *filterSettings;
 
 + (id)ciFiltersForAdjustmentsOnManagedAsset:(id)arg1 forDestinationImageSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)ciFiltersForAdjustmentsOnManagedAsset:(id)arg1 forDestinationImageSize:(struct CGSize { float x1; float x2; })arg2 effectFilterCount:(unsigned int*)arg3;

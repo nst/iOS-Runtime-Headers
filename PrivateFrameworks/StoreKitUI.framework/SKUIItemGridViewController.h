@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemGridDelegate>, NSArray, NSMutableArray, NSMutableIndexSet, NSOperationQueue, NSString, SKUIClientContext, SKUIItemArtworkContext, SKUIItemCollectionController, SKUIStyledImageDataConsumer, SKUIUber, UICollectionView, UIImage;
-
 @interface SKUIItemGridViewController : UIViewController <SKUIItemCollectionDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIItemArtworkContext *_artworkContext;
     SKUIClientContext *_clientContext;
@@ -23,20 +21,20 @@
     SKUIUber *_uber;
 }
 
-@property(retain) SKUIItemArtworkContext * artworkContext;
-@property(retain) SKUIClientContext * clientContext;
-@property struct CGPoint { float x1; float x2; } contentOffset;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIItemGridDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
-@property struct CGSize { float x1; float x2; } imageBoundingSize;
-@property(copy) NSArray * items;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) float rowHeight;
-@property(readonly) Class superclass;
-@property(retain) SKUIUber * uber;
+@property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIItemGridDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIStyledImageDataConsumer *iconDataConsumer;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageBoundingSize;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly) float rowHeight;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SKUIUber *uber;
 
 - (void).cxx_destruct;
 - (id)_collectionView;

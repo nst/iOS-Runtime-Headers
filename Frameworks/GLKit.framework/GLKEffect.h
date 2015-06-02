@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKShaderBlockNode, NSArray, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface GLKEffect : NSObject {
     int _aColorLoc;
     union _GLKVector4 { 
@@ -89,42 +87,42 @@
     char **_vshStrings;
 }
 
-@property int aColorLoc;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } baseLightingColor;
-@property int baseLightingColorLoc;
-@property unsigned char colorMaterialEnabled;
-@property unsigned long long dirtyUniforms;
-@property id* effectShaderArray;
-@property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }* fshMask;
-@property unsigned int fshName;
-@property(readonly) GLKShaderBlockNode * fshRootNode;
-@property char ** fshStrings;
-@property(copy) NSString * label;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } lightModelAmbientColor;
-@property int lightModelAmbientColorLoc;
-@property unsigned char lightModelTwoSided;
-@property(retain) NSMutableArray * lightProperties;
-@property unsigned char masksInitialized;
-@property(readonly) float* materialAmbientColor;
-@property(readonly) float* materialDiffuseColor;
-@property unsigned int numFshStrings;
-@property unsigned int numLights;
-@property unsigned int numTextures;
-@property unsigned int numVshStrings;
-@property unsigned char perPixelLightingEnabled;
-@property unsigned char perVertexLightingEnabled;
-@property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } prevFshMask;
-@property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } prevVshMask;
-@property(readonly) NSMutableDictionary * programHash;
-@property unsigned int programName;
-@property(retain) NSMutableArray * properties;
-@property(copy) NSArray * textureOrder;
-@property bool textureOrderStale;
-@property unsigned char texturingEnabled;
-@property struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }* vshMask;
-@property unsigned int vshName;
-@property(readonly) GLKShaderBlockNode * vshRootNode;
-@property char ** vshStrings;
+@property (nonatomic) int aColorLoc;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } baseLightingColor;
+@property (nonatomic) int baseLightingColorLoc;
+@property (nonatomic) unsigned char colorMaterialEnabled;
+@property (nonatomic) unsigned long long dirtyUniforms;
+@property (nonatomic) id*effectShaderArray;
+@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*fshMask;
+@property (nonatomic) unsigned int fshName;
+@property (nonatomic, readonly) GLKShaderBlockNode *fshRootNode;
+@property (nonatomic) char **fshStrings;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } lightModelAmbientColor;
+@property (nonatomic) int lightModelAmbientColorLoc;
+@property (nonatomic) unsigned char lightModelTwoSided;
+@property (nonatomic, retain) NSMutableArray *lightProperties;
+@property (nonatomic) unsigned char masksInitialized;
+@property (nonatomic, readonly) float*materialAmbientColor;
+@property (nonatomic, readonly) float*materialDiffuseColor;
+@property (nonatomic) unsigned int numFshStrings;
+@property (nonatomic) unsigned int numLights;
+@property (nonatomic) unsigned int numTextures;
+@property (nonatomic) unsigned int numVshStrings;
+@property (nonatomic) unsigned char perPixelLightingEnabled;
+@property (nonatomic) unsigned char perVertexLightingEnabled;
+@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } prevFshMask;
+@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } prevVshMask;
+@property (nonatomic, readonly) NSMutableDictionary *programHash;
+@property (nonatomic) unsigned int programName;
+@property (nonatomic, retain) NSMutableArray *properties;
+@property (nonatomic, copy) NSArray *textureOrder;
+@property (nonatomic) bool textureOrderStale;
+@property (nonatomic) unsigned char texturingEnabled;
+@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*vshMask;
+@property (nonatomic) unsigned int vshName;
+@property (nonatomic, readonly) GLKShaderBlockNode *vshRootNode;
+@property (nonatomic) char **vshStrings;
 
 + (void)initialize;
 + (void)initializeStaticMasks;

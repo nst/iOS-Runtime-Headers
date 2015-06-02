@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableArray, NSString, _VMULibraryLoadObserver;
-
 @interface VMUProcessDescription : NSObject <VMULibraryLoadDelegate> {
     NSDictionary *_binaryImageHints;
     BOOL _binaryImagePostProcessingComplete;
@@ -30,10 +28,10 @@
     NSArray *_unreadableBinaryImagePaths;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)parseBinaryImagesDescription:(id)arg1;
 

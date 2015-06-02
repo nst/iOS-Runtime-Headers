@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSNumber, PUPhotoView, PUProgressIndicatorView, UIImageView, UIView;
-
 @interface PUPhotosGridCell : UICollectionViewCell {
     UIImageView *_cloudIconImageView;
     BOOL _cloudIconVisible;
@@ -28,17 +26,17 @@
     BOOL _transitionIsAppearing;
 }
 
-@property(getter=isCloudIconVisible) BOOL cloudIconVisible;
-@property int currentImageRequestID;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fillerEdgeInsets;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) PUPhotoView * photoContentView;
-@property(retain) NSNumber * progress;
-@property(getter=isSelectionBadgeVisible) BOOL selectionBadgeVisible;
-@property(retain) PUPhotoView * temporaryPhotoContentView;
-@property(readonly) UIView * transitionFillerView;
-@property BOOL transitionFillerViewEnabled;
-@property BOOL transitionIsAppearing;
+@property (getter=isCloudIconVisible, nonatomic) BOOL cloudIconVisible;
+@property (nonatomic) int currentImageRequestID;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fillerEdgeInsets;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) PUPhotoView *photoContentView;
+@property (nonatomic, retain) NSNumber *progress;
+@property (getter=isSelectionBadgeVisible, nonatomic) BOOL selectionBadgeVisible;
+@property (nonatomic, retain) PUPhotoView *temporaryPhotoContentView;
+@property (nonatomic, readonly) UIView *transitionFillerView;
+@property (nonatomic) BOOL transitionFillerViewEnabled;
+@property (nonatomic) BOOL transitionIsAppearing;
 
 + (Class)_contentViewClass;
 

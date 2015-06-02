@@ -17,16 +17,16 @@
     BOOL _usesEvenOddFillRule;
 }
 
-@property struct CGPath { }* CGPath;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(readonly) struct CGPoint { float x1; float x2; } currentPoint;
-@property(getter=isEmpty,readonly) BOOL empty;
-@property float flatness;
-@property int lineCapStyle;
-@property int lineJoinStyle;
-@property float lineWidth;
-@property float miterLimit;
-@property BOOL usesEvenOddFillRule;
+@property (nonatomic) struct CGPath { }*CGPath;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentPoint;
+@property (getter=isEmpty, readonly) BOOL empty;
+@property (nonatomic) float flatness;
+@property (nonatomic) int lineCapStyle;
+@property (nonatomic) int lineJoinStyle;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) float miterLimit;
+@property (nonatomic) BOOL usesEvenOddFillRule;
 
 + (id)_bezierPathWithArcRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
 + (id)_bezierPathWithPillRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary, PLEntryNotificationOperatorComposition;
-
 @interface PLIOReportAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
     NSMutableDictionary *_sampleChannelsDaily;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_sampleChannelsSignificantBattery;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChangedNotifications;
-@property(retain) NSMutableDictionary * sampleChannelsDaily;
-@property(retain) NSMutableDictionary * sampleChannelsHalfHour;
-@property(retain) NSMutableDictionary * sampleChannelsSignificantBattery;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications;
+@property (nonatomic, retain) NSMutableDictionary *sampleChannelsDaily;
+@property (nonatomic, retain) NSMutableDictionary *sampleChannelsHalfHour;
+@property (nonatomic, retain) NSMutableDictionary *sampleChannelsSignificantBattery;
 
 + (id)entryEventBackwardDefinitionAmcStatsPerfCounters;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPcieLinkStates;

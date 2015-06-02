@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIDocumentPickerNavigationBridgeController : UINavigationController <_UIDocumentPickerExtensionViewController> {
     BOOL _hasSetInitialNavigationItem;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
@@ -19,7 +17,7 @@
 - (void)_documentPickerDidDismiss;
 - (void)_doneButton:(id)arg1;
 - (void)_locationsMenu:(id)arg1;
-- (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id)arg2;
+- (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setPickableTypes:(id)arg1;
 - (void)_setPickerMode:(unsigned int)arg1;
 - (void)_setTintColor:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSData, NSMutableDictionary, NSString, SFUCryptoKey, SFUDataRepresentation<SFUZipArchiveDataRepresentation>;
-
 @interface SFUZipArchive : NSObject {
     SFUCryptoKey *mCryptoKey;
     SFUDataRepresentation<SFUZipArchiveDataRepresentation> *mDataRepresentation;

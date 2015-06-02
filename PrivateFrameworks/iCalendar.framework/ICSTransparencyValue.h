@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSTransparencyValue : ICSPredefinedValue {
-}
+@interface ICSTransparencyValue : ICSPredefinedValue
 
 + (id)transparencyTypeFromCode:(int)arg1;
 + (id)transparencyValueFromICSString:(id)arg1;

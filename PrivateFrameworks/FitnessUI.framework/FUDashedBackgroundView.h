@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSArray, UIColor;
-
 @interface FUDashedBackgroundView : FUChartBackgroundView {
     UIColor *_color;
     int _direction;
@@ -12,10 +10,10 @@
     unsigned int _numLines;
 }
 
-@property(retain) UIColor * color;
-@property int direction;
-@property int lineType;
-@property unsigned int numLines;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) int direction;
+@property (nonatomic) int lineType;
+@property (nonatomic) unsigned int numLines;
 
 - (void).cxx_destruct;
 - (id)color;

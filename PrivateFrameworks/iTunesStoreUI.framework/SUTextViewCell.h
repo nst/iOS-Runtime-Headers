@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTextViewCellDelegate>, NSString, SUTextContentView, UIScrollView;
-
 @interface SUTextViewCell : SUTableCell <UITextContentViewDelegate> {
     <SUTextViewCellDelegate> *_delegate;
     UIScrollView *_scrollView;
     SUTextContentView *_textContentView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SUTextViewCellDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) SUTextContentView * textContentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUTextViewCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SUTextContentView *textContentView;
 
 - (void)dealloc;
 - (id)delegate;

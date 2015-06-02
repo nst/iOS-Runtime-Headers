@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, UITransitionView, UIViewController, UIWindow;
-
 @interface UIWindowController : NSObject {
     BOOL __interactiveTransition;
     struct CGPoint { 
@@ -29,12 +27,12 @@
     UIWindow *_window;
 }
 
-@property(setter=_setInteractionController:,retain) <UIViewControllerInteractiveTransitioning> * _interactionController;
-@property(getter=_isInteractiveTransition,setter=_setInteractiveTransition:) BOOL _interactiveTransition;
-@property(setter=_setTransitionController:,retain) <UIViewControllerAnimatedTransitioning> * _transitionController;
-@property BOOL presenting;
-@property(readonly) UITransitionView * transitionView;
-@property UIWindow * window;
+@property (setter=_setInteractionController:, nonatomic, retain) <UIViewControllerInteractiveTransitioning> *_interactionController;
+@property (getter=_isInteractiveTransition, setter=_setInteractiveTransition:, nonatomic) BOOL _interactiveTransition;
+@property (setter=_setTransitionController:, nonatomic, retain) <UIViewControllerAnimatedTransitioning> *_transitionController;
+@property (nonatomic) BOOL presenting;
+@property (nonatomic, readonly) UITransitionView *transitionView;
+@property (nonatomic) UIWindow *window;
 
 + (id)windowControllerForWindow:(id)arg1;
 + (void)windowWillBeDeallocated:(id)arg1;
@@ -57,7 +55,7 @@
 - (void)setPresenting:(BOOL)arg1;
 - (void)setWindow:(id)arg1;
 - (void)transition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5;
-- (void)transition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5 animation:(id)arg6;
+- (void)transition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5 animation:(id /* block */)arg6;
 - (id)transitionView;
 - (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 beginOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;
 - (struct CGPoint { float x1; float x2; })transitionView:(id)arg1 endOriginForFromView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint { float x1; float x2; })arg4;

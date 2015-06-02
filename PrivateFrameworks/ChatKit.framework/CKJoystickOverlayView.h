@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKDismissView, CKJoystickView, NSArray, NSString;
-
 @interface CKJoystickOverlayView : UIView <CKDismissViewDelegate, CKJoystickHostView> {
     CKDismissView *_dismissView;
     CKJoystickView *_joystickView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CKDismissView * dismissView;
-@property(readonly) unsigned int hash;
-@property(retain) CKJoystickView * joystickView;
-@property(copy) NSArray * passthroughViews;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CKDismissView *dismissView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKJoystickView *joystickView;
+@property (nonatomic, copy) NSArray *passthroughViews;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUMediaControlsControlCenterTitlesView : MPUMediaControlsTitlesView {
-}
+@interface MPUMediaControlsControlCenterTitlesView : MPUMediaControlsTitlesView
 
 - (Class)labelClass;
 

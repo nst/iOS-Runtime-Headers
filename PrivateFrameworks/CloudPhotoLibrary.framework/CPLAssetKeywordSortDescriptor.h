@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLAssetKeywordSortDescriptor : NSSortDescriptor {
-}
+@interface CPLAssetKeywordSortDescriptor : NSSortDescriptor
 
 + (id)sortedKeywordsForKeywordSet:(id)arg1;
 

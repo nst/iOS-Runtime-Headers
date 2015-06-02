@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptAccessSecurity : NSObject {
-}
+@interface SUScriptAccessSecurity : NSObject
 
 - (id)_accessDictionaryForType:(id)arg1;
 - (id)_copyResourceURLsForWebFrame:(id)arg1;

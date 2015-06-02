@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface BBAccessoryIcon : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary *_imagesForContentSize;
 }
 
-@property(copy) NSDictionary * imagesForContentSize;
+@property (nonatomic, copy) NSDictionary *imagesForContentSize;
 
 + (BOOL)supportsSecureCoding;
 

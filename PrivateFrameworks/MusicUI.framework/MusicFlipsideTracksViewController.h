@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPAVItem, MPMediaItem, MusicFlipsideAlbumDetailHeaderView, NSString, UISegmentedControl, UIView;
-
 @interface MusicFlipsideTracksViewController : UIViewController <MPURatingControlDelegate> {
     UIView *_container;
     MPAVItem *_currentAVItem;
@@ -14,11 +12,11 @@
     MusicFlipsideAlbumDetailHeaderView *_trackInfoView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasPlaylist;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasPlaylist;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

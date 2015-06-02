@@ -2,30 +2,28 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding> {
     NSString *_alternativeText;
 }
 
-@property(copy) NSString * alternativeText;
-@property(readonly) NSString * candidate;
-@property(getter=isCompletionCandidate,readonly) BOOL completionCandidate;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned int deleteCount;
-@property(copy,readonly) NSString * description;
-@property(getter=isEmojiCandidate,readonly) BOOL emojiCandidate;
-@property(getter=isExtensionCandidate,readonly) BOOL extensionCandidate;
-@property(getter=isFullwidthCandidate,readonly) BOOL fullwidthCandidate;
-@property(readonly) unsigned int hash;
-@property(getter=isInlineCompletionCandidate,readonly) BOOL inlineCompletionCandidate;
-@property(readonly) NSString * input;
-@property(readonly) BOOL isAutocorrection;
-@property(readonly) BOOL isForShortcutConversion;
-@property(readonly) NSString * label;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int usageTrackingMask;
-@property(readonly) unsigned int wordOriginFeedbackID;
+@property (nonatomic, copy) NSString *alternativeText;
+@property (nonatomic, readonly) NSString *candidate;
+@property (getter=isCompletionCandidate, nonatomic, readonly) BOOL completionCandidate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) unsigned int deleteCount;
+@property (readonly, copy) NSString *description;
+@property (getter=isEmojiCandidate, nonatomic, readonly) BOOL emojiCandidate;
+@property (getter=isExtensionCandidate, nonatomic, readonly) BOOL extensionCandidate;
+@property (getter=isFullwidthCandidate, nonatomic, readonly) BOOL fullwidthCandidate;
+@property (readonly) unsigned int hash;
+@property (getter=isInlineCompletionCandidate, nonatomic, readonly) BOOL inlineCompletionCandidate;
+@property (nonatomic, readonly) NSString *input;
+@property (nonatomic, readonly) BOOL isAutocorrection;
+@property (nonatomic, readonly) BOOL isForShortcutConversion;
+@property (nonatomic, readonly) NSString *label;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int usageTrackingMask;
+@property (nonatomic, readonly) unsigned int wordOriginFeedbackID;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoContentRequest : PBRequest <NSCopying> {
     unsigned int _fullSyncVersion;
     struct { 
@@ -14,12 +12,12 @@
     NSString *_messageId;
 }
 
-@property unsigned int fullSyncVersion;
-@property BOOL hasFullSyncVersion;
-@property BOOL hasHighPriority;
-@property(readonly) BOOL hasMessageId;
-@property BOOL highPriority;
-@property(retain) NSString * messageId;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic) BOOL hasHighPriority;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic) BOOL highPriority;
+@property (nonatomic, retain) NSString *messageId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

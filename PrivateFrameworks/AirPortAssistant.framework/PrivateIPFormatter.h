@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface PrivateIPFormatter : MinMaxIntFormatter {
-}
+@interface PrivateIPFormatter : MinMaxIntFormatter
 
 + (id)privateIPFormatter;
 

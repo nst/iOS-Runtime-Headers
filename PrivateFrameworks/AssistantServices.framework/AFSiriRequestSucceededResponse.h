@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFSiriRequestSucceededResponse : AFSiriResponse {
-}
+@interface AFSiriRequestSucceededResponse : AFSiriResponse
 
 @end

@@ -2,36 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIColor, UIVisualEffect, _UITableViewCellActionButton;
-
 @interface UITableViewRowAction : NSObject <NSCopying> {
     UIColor *_backgroundColor;
     UIVisualEffect *_backgroundEffect;
     _UITableViewCellActionButton *_button;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     int _style;
     NSString *_title;
 }
 
-@property(copy) UIColor * backgroundColor;
-@property(copy) UIVisualEffect * backgroundEffect;
-@property(getter=_handler,readonly) id handler;
-@property(readonly) int style;
-@property(copy) NSString * title;
+@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic, copy) UIVisualEffect *backgroundEffect;
+@property (getter=_handler, nonatomic, readonly) id /* block */ handler;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, copy) NSString *title;
 
-+ (id)rowActionWithStyle:(int)arg1 title:(id)arg2 handler:(id)arg3;
++ (id)rowActionWithStyle:(int)arg1 title:(id)arg2 handler:(id /* block */)arg3;
 
 - (id)_button;
-- (id)_handler;
-- (id)_initWithStyle:(id)arg1 title:(id)arg2 handler:(id)arg3;
+- (id /* block */)_handler;
+- (id)_initWithStyle:(id)arg1 title:(id)arg2 handler:(id /* block */)arg3;
 - (void)_setButton:(id)arg1;
 - (id)backgroundColor;
 - (id)backgroundEffect;

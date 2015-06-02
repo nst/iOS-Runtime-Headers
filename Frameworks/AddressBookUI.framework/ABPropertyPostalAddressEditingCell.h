@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPostalAddressEditorView, UIColor;
-
 @interface ABPropertyPostalAddressEditingCell : ABPropertyEditingCell {
     ABPostalAddressEditorView *_addressEditor;
 }
 
-@property(retain) ABPostalAddressEditorView * addressEditor;
-@property(copy) UIColor * editorSeparatorColor;
+@property (nonatomic, retain) ABPostalAddressEditorView *addressEditor;
+@property (nonatomic, copy) UIColor *editorSeparatorColor;
 
 - (id)addressEditor;
 - (id)constantConstraints;

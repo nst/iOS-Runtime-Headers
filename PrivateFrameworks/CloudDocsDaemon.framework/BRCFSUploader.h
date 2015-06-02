@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDeadlineScheduler, BRCDeadlineToken, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCFSUploader : BRCFSSchedulerBase <BRCModule> {
     BOOL _initialKickDone;
     BOOL _isDefaultOwnerOutOfQuota;
@@ -15,13 +13,13 @@
     BRCDeadlineScheduler *_uploadsDeadlineScheduler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property BOOL isDefaultOwnerOutOfQuota;
-@property(readonly) Class superclass;
-@property(readonly) BRCDeadlineScheduler * uploadsDeadlineScheduler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic) BOOL isDefaultOwnerOutOfQuota;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BRCDeadlineScheduler *uploadsDeadlineScheduler;
 
 - (void).cxx_destruct;
 - (id)_buildItemTooLargeErrorIfNeeded:(id)arg1 syncContext:(id)arg2;
@@ -62,7 +60,7 @@
 - (void)rescheduleThrottlesPendingInitialSyncInZone:(id)arg1;
 - (void)resume;
 - (void)scheduleQuotaFetchIfNeededForOwner:(id)arg1;
-- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id)arg4;
+- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (void)setIsDefaultOwnerOutOfQuota:(BOOL)arg1;
 - (void)suspend;
 - (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;

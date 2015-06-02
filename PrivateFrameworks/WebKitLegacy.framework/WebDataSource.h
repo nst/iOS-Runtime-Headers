@@ -2,30 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <WebDocumentRepresentation>, NSArray, NSData, NSMutableURLRequest, NSString, NSURL, NSURLRequest, NSURLResponse, WebArchive, WebFrame, WebResource;
-
 @interface WebDataSource : NSObject {
     void *_private;
 }
 
-@property(copy,readonly) NSData * data;
-@property(readonly) NSURLRequest * initialRequest;
-@property(getter=isLoading,readonly) BOOL loading;
-@property(readonly) WebResource * mainResource;
-@property(copy,readonly) NSString * pageTitle;
-@property(readonly) <WebDocumentRepresentation> * representation;
-@property(readonly) NSMutableURLRequest * request;
-@property(readonly) NSURLResponse * response;
-@property(copy,readonly) NSArray * subresources;
-@property(copy,readonly) NSString * textEncodingName;
-@property(readonly) NSURL * unreachableURL;
-@property(readonly) WebArchive * webArchive;
-@property(readonly) WebFrame * webFrame;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (nonatomic, readonly) NSURLRequest *initialRequest;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly) WebResource *mainResource;
+@property (nonatomic, readonly, copy) NSString *pageTitle;
+@property (nonatomic, readonly) <WebDocumentRepresentation> *representation;
+@property (nonatomic, readonly) NSMutableURLRequest *request;
+@property (nonatomic, readonly) NSURLResponse *response;
+@property (nonatomic, readonly, copy) NSArray *subresources;
+@property (nonatomic, readonly, copy) NSString *textEncodingName;
+@property (nonatomic, readonly) NSURL *unreachableURL;
+@property (nonatomic, readonly) WebArchive *webArchive;
+@property (nonatomic, readonly) WebFrame *webFrame;
 
 + (id)_repTypesAllowImageTypeOmission:(BOOL)arg1;
 + (Class)_representationClassForMIMEType:(id)arg1 allowingPlugins:(BOOL)arg2;

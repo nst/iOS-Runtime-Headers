@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKPShieldIndex : PBCodable <NSCopying> {
     NSMutableArray *_entries;
     NSMutableArray *_textEntries;
 }
 
-@property(retain) NSMutableArray * entries;
-@property(retain) NSMutableArray * textEntries;
+@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, retain) NSMutableArray *textEntries;
 
 - (void)addEntries:(id)arg1;
 - (void)addTextEntries:(id)arg1;

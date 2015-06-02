@@ -2,50 +2,47 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString;
+@interface SASportsTeam : SASportsEntity
 
-@interface SASportsTeam : SASportsEntity {
-}
-
-@property(copy) NSString * abbreviatedName;
-@property BOOL alwaysUseAthleteFullName;
-@property(copy) NSArray * athletes;
-@property(copy) NSString * awayLosses;
-@property(copy) NSString * awayOvertimeLosses;
-@property(copy) NSString * awayPoints;
-@property(copy) NSString * awayTies;
-@property(copy) NSString * awayWins;
-@property(copy) NSNumber * clinchedQualificationPosition;
-@property(copy) NSNumber * conferencePosition;
-@property(copy) NSString * gamesBehind;
-@property(copy) NSString * gamesPlayed;
-@property(copy) NSString * groupName;
-@property(copy) NSNumber * groupPosition;
-@property(copy) NSString * groupPositionDescription;
-@property(copy) NSString * homeLosses;
-@property(copy) NSString * homeOvertimeLosses;
-@property(copy) NSString * homePoints;
-@property(copy) NSString * homeTies;
-@property(copy) NSString * homeWins;
-@property(copy) NSString * location;
-@property(copy) NSString * losses;
-@property(copy) NSArray * news;
-@property(copy) NSString * overtimeLosses;
-@property(copy) NSString * points;
-@property(copy) NSString * pointsAgainst;
-@property(copy) NSString * pointsFor;
-@property(copy) NSNumber * primaryColor;
-@property(copy) NSString * qualificationPosition;
-@property(copy) NSArray * rankings;
-@property(copy) NSNumber * secondaryColor;
-@property(copy) NSArray * statistics;
-@property(copy) NSString * streakNumber;
-@property(copy) NSString * streakType;
-@property(copy) NSString * ties;
-@property(copy) NSString * venueLocation;
-@property(copy) NSString * venueName;
-@property(copy) NSString * winPercentage;
-@property(copy) NSString * wins;
+@property (nonatomic, copy) NSString *abbreviatedName;
+@property (nonatomic) BOOL alwaysUseAthleteFullName;
+@property (nonatomic, copy) NSArray *athletes;
+@property (nonatomic, copy) NSString *awayLosses;
+@property (nonatomic, copy) NSString *awayOvertimeLosses;
+@property (nonatomic, copy) NSString *awayPoints;
+@property (nonatomic, copy) NSString *awayTies;
+@property (nonatomic, copy) NSString *awayWins;
+@property (nonatomic, copy) NSNumber *clinchedQualificationPosition;
+@property (nonatomic, copy) NSNumber *conferencePosition;
+@property (nonatomic, copy) NSString *gamesBehind;
+@property (nonatomic, copy) NSString *gamesPlayed;
+@property (nonatomic, copy) NSString *groupName;
+@property (nonatomic, copy) NSNumber *groupPosition;
+@property (nonatomic, copy) NSString *groupPositionDescription;
+@property (nonatomic, copy) NSString *homeLosses;
+@property (nonatomic, copy) NSString *homeOvertimeLosses;
+@property (nonatomic, copy) NSString *homePoints;
+@property (nonatomic, copy) NSString *homeTies;
+@property (nonatomic, copy) NSString *homeWins;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, copy) NSString *losses;
+@property (nonatomic, copy) NSArray *news;
+@property (nonatomic, copy) NSString *overtimeLosses;
+@property (nonatomic, copy) NSString *points;
+@property (nonatomic, copy) NSString *pointsAgainst;
+@property (nonatomic, copy) NSString *pointsFor;
+@property (nonatomic, copy) NSNumber *primaryColor;
+@property (nonatomic, copy) NSString *qualificationPosition;
+@property (nonatomic, copy) NSArray *rankings;
+@property (nonatomic, copy) NSNumber *secondaryColor;
+@property (nonatomic, copy) NSArray *statistics;
+@property (nonatomic, copy) NSString *streakNumber;
+@property (nonatomic, copy) NSString *streakType;
+@property (nonatomic, copy) NSString *ties;
+@property (nonatomic, copy) NSString *venueLocation;
+@property (nonatomic, copy) NSString *venueName;
+@property (nonatomic, copy) NSString *winPercentage;
+@property (nonatomic, copy) NSString *wins;
 
 + (id)team;
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;

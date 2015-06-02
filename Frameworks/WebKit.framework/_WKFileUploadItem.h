@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURL, UIImage;
+@interface _WKFileUploadItem : NSObject
 
-@interface _WKFileUploadItem : NSObject {
-}
-
-@property(readonly) UIImage * displayImage;
-@property(readonly) NSURL * fileURL;
-@property(getter=isVideo,readonly) BOOL video;
+@property (nonatomic, readonly) UIImage *displayImage;
+@property (nonatomic, readonly) NSURL *fileURL;
+@property (getter=isVideo, nonatomic, readonly) BOOL video;
 
 - (id)displayImage;
 - (id)fileURL;

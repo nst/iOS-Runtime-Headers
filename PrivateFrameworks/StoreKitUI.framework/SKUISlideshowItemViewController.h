@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISlideshowItemViewControllerDelegate>, NSString, SKUIClientContext, SKUISlideshowImageScrollView, UIImage, UIView;
-
 @interface SKUISlideshowItemViewController : UIViewController <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
     SKUIClientContext *_clientContext;
     <SKUISlideshowItemViewControllerDelegate> *_delegate;
@@ -18,15 +16,15 @@
     BOOL _zoomingGestureThresholdBroken;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUISlideshowItemViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUISlideshowImageScrollView * imageScrollView;
-@property int indexInCollection;
-@property(retain) UIImage * itemImage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUISlideshowItemViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUISlideshowImageScrollView *imageScrollView;
+@property (nonatomic) int indexInCollection;
+@property (nonatomic, retain) UIImage *itemImage;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;

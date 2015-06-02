@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
-
 @interface SPCacheAsset : NSObject {
     double _accessDate;
     NSString *_key;
@@ -11,10 +9,10 @@
     unsigned int _state;
 }
 
-@property double accessDate;
-@property(retain) NSString * key;
-@property unsigned int size;
-@property unsigned int state;
+@property (nonatomic) double accessDate;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned int state;
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;

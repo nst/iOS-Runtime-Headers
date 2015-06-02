@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIColor, UIImage;
-
 @interface ABTransportButton : UIButton {
     UIColor *_glyphColor;
     UIImage *_image;
     int _transportType;
 }
 
-@property(retain) UIColor * glyphColor;
-@property(retain) UIImage * image;
-@property int transportType;
+@property (nonatomic, retain) UIColor *glyphColor;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) int transportType;
 
 + (id)transportButton;
 

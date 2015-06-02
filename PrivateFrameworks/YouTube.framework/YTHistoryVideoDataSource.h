@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray;
-
 @interface YTHistoryVideoDataSource : YTVideoDataSource {
     NSMutableArray *_history;
 }

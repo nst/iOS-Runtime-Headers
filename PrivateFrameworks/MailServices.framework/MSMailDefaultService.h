@@ -6,7 +6,7 @@
     BOOL _shouldLaunch;
 }
 
-@property BOOL shouldLaunchMobileMail;
+@property (nonatomic) BOOL shouldLaunchMobileMail;
 
 - (id)_createServiceOnQueue:(id)arg1;
 - (id)_handleMessageSendFailure:(id)arg1 message:(id)arg2 messageIndex:(long long)arg3 context:(inout id*)arg4;

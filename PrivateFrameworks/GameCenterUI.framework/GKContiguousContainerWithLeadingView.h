@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKContiguousContainerWithLeadingView : GKContiguousContainerView {
-}
+@interface GKContiguousContainerWithLeadingView : GKContiguousContainerView
 
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 

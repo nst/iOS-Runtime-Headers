@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TPLayerDelegateProxyDelegate>;
-
 @interface TPLayerDelegateProxy : NSObject {
     <TPLayerDelegateProxyDelegate> *_delegate;
 }

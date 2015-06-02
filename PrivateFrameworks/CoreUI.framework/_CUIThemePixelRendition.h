@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIRenditionMetrics, CUIRenditionSliceInformation, _CSIRenditionBlockData;
-
 @interface _CUIThemePixelRendition : CUIThemeRendition {
     _CSIRenditionBlockData *_cachedBlockDataBGRX;
     _CSIRenditionBlockData *_cachedBlockDataRGBX;
     CUIRenditionMetrics *_renditionMetrics;
     CUIRenditionSliceInformation *_sliceInformation;
     unsigned long _sourceRowbytes;
-    struct CGImage {} *image[16];
+    struct CGImage {} *image;
     unsigned int nimages;
     struct CGImage { } *unslicedImage;
 }

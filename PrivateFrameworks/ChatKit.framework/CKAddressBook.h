@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAddressBook : NSObject {
-}
+@interface CKAddressBook : NSObject
 
 + (void*)addressBook;
 + (id)contactImageCache;

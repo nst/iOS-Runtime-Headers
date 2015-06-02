@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDApplicationStateMonitor, HMDBackgroundAppMessageFilter, HMDIDSMessageDispatcher, HMMessageDispatcher, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSUUID, NSXPCListener;
-
 @interface HMDXpcServer : HMMessageDispatcher <HMMessageReceiver, NSXPCListenerDelegate> {
     BOOL _activeHomeKitApps;
     NSObject<OS_dispatch_group> *_activeMessageTracker;
@@ -18,23 +16,23 @@
     NSObject<OS_dispatch_queue> *_xpcWorkQueue;
 }
 
-@property BOOL activeHomeKitApps;
-@property(retain) NSObject<OS_dispatch_group> * activeMessageTracker;
-@property(retain) HMDApplicationStateMonitor * appMonitor;
-@property(retain) HMDBackgroundAppMessageFilter * backgroundAppMsgFilter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableSet * foregroundApps;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(retain) HMMessageDispatcher * notificationRelayDispatcher;
-@property(retain) HMDIDSMessageDispatcher * recvDispatcher;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSMutableSet * xpcClients;
-@property(retain) NSXPCListener * xpcListener;
-@property(retain) NSObject<OS_dispatch_queue> * xpcWorkQueue;
+@property (nonatomic) BOOL activeHomeKitApps;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *activeMessageTracker;
+@property (nonatomic, retain) HMDApplicationStateMonitor *appMonitor;
+@property (nonatomic, retain) HMDBackgroundAppMessageFilter *backgroundAppMsgFilter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableSet *foregroundApps;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, retain) HMMessageDispatcher *notificationRelayDispatcher;
+@property (nonatomic, retain) HMDIDSMessageDispatcher *recvDispatcher;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSMutableSet *xpcClients;
+@property (nonatomic, retain) NSXPCListener *xpcListener;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *xpcWorkQueue;
 
 - (void).cxx_destruct;
 - (void)_handleResumeXPCConnectionRequest:(id)arg1;
@@ -58,11 +56,11 @@
 - (id)messageTargetUUID;
 - (id)notificationRelayDispatcher;
 - (id)recvDispatcher;
-- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id)arg3;
+- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id /* block */)arg3;
 - (void)reset;
 - (void)sendMessage:(id)arg1 target:(id)arg2;
-- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id /* block */)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)setActiveHomeKitApps:(BOOL)arg1;
 - (void)setActiveMessageTracker:(id)arg1;
 - (void)setAppMonitor:(id)arg1;

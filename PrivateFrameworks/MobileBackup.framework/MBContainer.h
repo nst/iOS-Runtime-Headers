@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSMutableDictionary, NSString;
-
 @interface MBContainer : NSObject <NSCopying> {
     NSMutableDictionary *_plist;
 }
 
-@property(retain) NSString * containerDir;
-@property(readonly) int containerType;
-@property(readonly) NSString * containerTypeString;
-@property(retain) NSDate * datePlacedInSafeHarbor;
-@property(readonly) NSString * identifier;
-@property(getter=isSafeHarbor,readonly) BOOL safeHarbor;
-@property(readonly) NSString * safeHarborDir;
+@property (nonatomic, retain) NSString *containerDir;
+@property (nonatomic, readonly) int containerType;
+@property (nonatomic, readonly) NSString *containerTypeString;
+@property (nonatomic, retain) NSDate *datePlacedInSafeHarbor;
+@property (nonatomic, readonly) NSString *identifier;
+@property (getter=isSafeHarbor, nonatomic, readonly) BOOL safeHarbor;
+@property (nonatomic, readonly) NSString *safeHarborDir;
 
 + (id)containerWithDomainName:(id)arg1;
 + (id)containerWithPropertyList:(id)arg1;

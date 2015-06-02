@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSUUID;
-
 @interface TSPLazyReferenceInternal : TSPLazyReference {
     NSUUID *_objectUUID;
 }
 
-@property(retain) NSUUID * objectUUID;
+@property (nonatomic, retain) NSUUID *objectUUID;
 
 - (void).cxx_destruct;
 - (id)objectUUID;

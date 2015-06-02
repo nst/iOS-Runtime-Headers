@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData;
-
 @interface OISFUMemoryDataRepresentation : OISFUDataRepresentation {
     NSData *mData;
 }

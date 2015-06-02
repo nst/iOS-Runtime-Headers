@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSCH3DFill;
-
 @interface TSCH3DFillSageFillData : NSObject <TSCH3DSageFillData> {
     TSCH3DFill *mFill;
     NSMutableArray *mTextureBlendModes;

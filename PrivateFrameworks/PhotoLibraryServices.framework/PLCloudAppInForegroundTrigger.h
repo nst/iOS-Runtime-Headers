@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudAppInForegroundTrigger : PLCloudStatelessTrigger {
-}
+@interface PLCloudAppInForegroundTrigger : PLCloudStatelessTrigger
 
 - (id)init;
 

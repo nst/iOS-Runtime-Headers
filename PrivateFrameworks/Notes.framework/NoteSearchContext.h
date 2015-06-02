@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSMutableArray, NoteContext;
-
 @interface NoteSearchContext : NSObject {
     NSMutableArray *integerIds;
     NoteContext *noteContext;
     struct __CXQuery { } *query;
 }
 
-@property(readonly) struct __CXQuery { }* query;
+@property (nonatomic, readonly) struct __CXQuery { }*query;
 
 - (void).cxx_destruct;
 - (void)dealloc;

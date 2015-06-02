@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class CDAttribute;
-
 @interface _CDDailyProgressForecastQuery : NSObject {
     CDAttribute *_attribute;
     BOOL _attributeEncodesProgress;
@@ -14,7 +12,7 @@
     double _temporalResolution;
 }
 
-@property(retain) CDAttribute * attribute;
+@property (retain) CDAttribute *attribute;
 @property BOOL attributeEncodesProgress;
 @property BOOL considerAlternateDayPattern;
 @property BOOL considerDailyPattern;

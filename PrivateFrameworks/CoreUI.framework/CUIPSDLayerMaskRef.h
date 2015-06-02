@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDLayerRef;
-
 @interface CUIPSDLayerMaskRef : NSObject {
     BOOL _isVectorMask;
     CUIPSDLayerRef *_layerRef;

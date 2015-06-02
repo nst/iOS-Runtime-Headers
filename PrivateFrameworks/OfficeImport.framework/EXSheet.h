@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXSheet : NSObject {
-}
+@interface EXSheet : NSObject
 
 + (Class)exSheetClassFromXmlSheetType:(id)arg1 location:(id)arg2;
 + (void)readAllDrawablesWithState:(id)arg1;

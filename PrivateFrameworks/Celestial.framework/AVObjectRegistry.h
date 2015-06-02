@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSHashTable, NSRecursiveLock;
-
 @interface AVObjectRegistry : NSObject {
     NSRecursiveLock *_lock;
     NSHashTable *_registeredObjects;

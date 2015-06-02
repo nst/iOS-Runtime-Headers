@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks;
-
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying> {
     GEOPDAutocompleteParametersAllEntries *_allEntries;
     GEOPDAutocompleteParametersFullEntriesOnly *_fullEntries;
@@ -14,14 +12,14 @@
     int _requestType;
 }
 
-@property(retain) GEOPDAutocompleteParametersAllEntries * allEntries;
-@property(retain) GEOPDAutocompleteParametersFullEntriesOnly * fullEntries;
-@property(readonly) BOOL hasAllEntries;
-@property(readonly) BOOL hasFullEntries;
-@property(readonly) BOOL hasLocalitiesAndLandmarks;
-@property BOOL hasRequestType;
-@property(retain) GEOPDAutocompleteParametersLocalitiesAndLandmarks * localitiesAndLandmarks;
-@property int requestType;
+@property (nonatomic, retain) GEOPDAutocompleteParametersAllEntries *allEntries;
+@property (nonatomic, retain) GEOPDAutocompleteParametersFullEntriesOnly *fullEntries;
+@property (nonatomic, readonly) BOOL hasAllEntries;
+@property (nonatomic, readonly) BOOL hasFullEntries;
+@property (nonatomic, readonly) BOOL hasLocalitiesAndLandmarks;
+@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic, retain) GEOPDAutocompleteParametersLocalitiesAndLandmarks *localitiesAndLandmarks;
+@property (nonatomic) int requestType;
 
 - (id)allEntries;
 - (void)copyTo:(id)arg1;

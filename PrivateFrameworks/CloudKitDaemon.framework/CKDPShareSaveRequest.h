@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShare, NSData;
-
 @interface CKDPShareSaveRequest : PBRequest <NSCopying> {
     NSData *_protectedFullToken;
     CKDPShare *_share;
     NSData *_shortTokenHash;
 }
 
-@property(readonly) BOOL hasProtectedFullToken;
-@property(readonly) BOOL hasShare;
-@property(readonly) BOOL hasShortTokenHash;
-@property(retain) NSData * protectedFullToken;
-@property(retain) CKDPShare * share;
-@property(retain) NSData * shortTokenHash;
+@property (nonatomic, readonly) BOOL hasProtectedFullToken;
+@property (nonatomic, readonly) BOOL hasShare;
+@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic, retain) NSData *protectedFullToken;
+@property (nonatomic, retain) CKDPShare *share;
+@property (nonatomic, retain) NSData *shortTokenHash;
 
 + (id)options;
 

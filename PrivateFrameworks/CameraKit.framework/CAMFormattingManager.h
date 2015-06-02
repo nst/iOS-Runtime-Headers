@@ -7,8 +7,8 @@
     BOOL _wantsCustomKerning;
 }
 
-@property(readonly) BOOL supportsVerticalText;
-@property(readonly) BOOL wantsCustomKerning;
+@property (nonatomic, readonly) BOOL supportsVerticalText;
+@property (nonatomic, readonly) BOOL wantsCustomKerning;
 
 + (id)sharedManager;
 

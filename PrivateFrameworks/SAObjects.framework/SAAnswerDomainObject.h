@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAAnswerDirectAnswer, SAUIAppPunchOut;
+@interface SAAnswerDomainObject : SADomainObject
 
-@interface SAAnswerDomainObject : SADomainObject {
-}
-
-@property(retain) SAUIAppPunchOut * appPunchOut;
-@property(copy) NSString * category;
-@property(retain) SAAnswerDirectAnswer * directAnswer;
-@property(copy) NSArray * linkedAnswerGroups;
-@property(copy) NSArray * structuredAnswers;
+@property (nonatomic, retain) SAUIAppPunchOut *appPunchOut;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, retain) SAAnswerDirectAnswer *directAnswer;
+@property (nonatomic, copy) NSArray *linkedAnswerGroups;
+@property (nonatomic, copy) NSArray *structuredAnswers;
 
 + (id)domainObject;
 + (id)domainObjectWithDictionary:(id)arg1 context:(id)arg2;

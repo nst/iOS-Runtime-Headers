@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSURLError : NSError {
-}
+@interface NSURLError : NSError
 
 - (void)encodeWithCoder:(id)arg1;
 

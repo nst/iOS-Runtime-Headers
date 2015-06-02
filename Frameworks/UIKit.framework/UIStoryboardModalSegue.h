@@ -10,11 +10,11 @@
     BOOL _useDefaultModalTransitionStyle;
 }
 
-@property BOOL animates;
-@property int modalPresentationStyle;
-@property int modalTransitionStyle;
-@property BOOL useDefaultModalPresentationStyle;
-@property BOOL useDefaultModalTransitionStyle;
+@property (nonatomic) BOOL animates;
+@property (nonatomic) int modalPresentationStyle;
+@property (nonatomic) int modalTransitionStyle;
+@property (nonatomic) BOOL useDefaultModalPresentationStyle;
+@property (nonatomic) BOOL useDefaultModalTransitionStyle;
 
 - (BOOL)animates;
 - (int)modalPresentationStyle;

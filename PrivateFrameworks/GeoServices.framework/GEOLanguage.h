@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOLanguage : PBCodable <NSCopying> {
     unsigned int _identifier;
     NSMutableArray *_languages;
 }
 
-@property unsigned int identifier;
-@property(retain) NSMutableArray * languages;
+@property (nonatomic) unsigned int identifier;
+@property (nonatomic, retain) NSMutableArray *languages;
 
 - (void)addLanguage:(id)arg1;
 - (void)clearLanguages;

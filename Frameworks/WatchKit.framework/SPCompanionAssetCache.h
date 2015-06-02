@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class SPAssetCacheClientCache;
-
 @interface SPCompanionAssetCache : NSObject {
     SPAssetCacheClientCache *_permanentCache;
     SPAssetCacheClientCache *_transientCache;
 }
 
-@property(retain) SPAssetCacheClientCache * permanentCache;
-@property(retain) SPAssetCacheClientCache * transientCache;
+@property (nonatomic, retain) SPAssetCacheClientCache *permanentCache;
+@property (nonatomic, retain) SPAssetCacheClientCache *transientCache;
 
 + (id)sharedInstance;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSCHChartDrawableLayoutLegendResizer : NSObject {
-    float mAnchoringPosition[2];
-    int mAnchoringStates[2];
+    float mAnchoringPosition;
+    int mAnchoringStates;
     NSArray *mLegendConfinementBounds;
     BOOL mShouldUpdateConfinedPushableAnchoring;
 }
 
-@property(copy) NSArray * p_legendConfinementBounds;
-@property BOOL p_shouldUpdateConfinedPushableAnchoring;
+@property (nonatomic, copy) NSArray *p_legendConfinementBounds;
+@property (nonatomic) BOOL p_shouldUpdateConfinedPushableAnchoring;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })innerAnchoringFrameFromChartAreaFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)legendResizerWithInitialFrames:(struct TSCHChartDrawableLayoutLegendResizerFrames { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;

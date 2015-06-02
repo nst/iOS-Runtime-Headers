@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSliderIncrementButton : UIButton {
-}
+@interface PTSliderIncrementButton : UIButton
 
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPRecordRetrieveVersionsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int isDeleted : 1; 
@@ -12,9 +10,9 @@
     NSMutableArray *_recordVersions;
 }
 
-@property BOOL hasIsDeleted;
-@property BOOL isDeleted;
-@property(retain) NSMutableArray * recordVersions;
+@property (nonatomic) BOOL hasIsDeleted;
+@property (nonatomic) BOOL isDeleted;
+@property (nonatomic, retain) NSMutableArray *recordVersions;
 
 - (void).cxx_destruct;
 - (void)addRecordVersions:(id)arg1;

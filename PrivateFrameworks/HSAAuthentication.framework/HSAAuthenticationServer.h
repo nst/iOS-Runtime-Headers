@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HSAAuthentication.framework/HSAAuthentication
  */
 
-@class NSMutableArray, NSObject<OS_xpc_object>;
-
 @interface HSAAuthenticationServer : NSObject {
     NSMutableArray *_clients;
     NSObject<OS_xpc_object> *_connection;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDDocument, WDListLevel;
-
 @interface WDListLevelOverride : NSObject {
     WDDocument *mDocument;
     unsigned char mLevel;

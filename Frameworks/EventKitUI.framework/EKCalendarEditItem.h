@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarEditItemDelegate>, <EKStyleProvider>, EKCalendar, EKEventStore;
-
 @interface EKCalendarEditItem : NSObject {
     EKCalendar *_calendar;
     <EKCalendarEditItemDelegate> *_delegate;
@@ -11,9 +9,9 @@
     <EKStyleProvider> *_styleProvider;
 }
 
-@property(readonly) EKCalendar * calendar;
-@property <EKCalendarEditItemDelegate> * delegate;
-@property(retain) <EKStyleProvider> * styleProvider;
+@property (nonatomic, readonly) EKCalendar *calendar;
+@property (nonatomic) <EKCalendarEditItemDelegate> *delegate;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
 
 - (void).cxx_destruct;
 - (void)applyStyleProviderToCell:(id)arg1;

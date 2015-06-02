@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <TextLinkButtonDelegate>, NSString;
-
 @interface TextLinkButton : UIButton {
     <TextLinkButtonDelegate> *_delegate;
     NSString *_urlString;
 }
 
-@property <TextLinkButtonDelegate> * delegate;
-@property(retain) NSString * urlString;
+@property (nonatomic) <TextLinkButtonDelegate> *delegate;
+@property (nonatomic, retain) NSString *urlString;
 
 - (void)dealloc;
 - (id)delegate;

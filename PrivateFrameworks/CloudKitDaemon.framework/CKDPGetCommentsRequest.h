@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPCommentedOnId, CKDPQuerySort, NSData, NSString;
-
 @interface CKDPGetCommentsRequest : PBRequest <NSCopying> {
     NSData *_continuationMarker;
     struct { 
@@ -15,16 +13,16 @@
     NSString *_path;
 }
 
-@property(retain) NSData * continuationMarker;
-@property(readonly) BOOL hasContinuationMarker;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasLimit;
-@property(readonly) BOOL hasOrderBy;
-@property(readonly) BOOL hasPath;
-@property(retain) CKDPCommentedOnId * identifier;
-@property unsigned int limit;
-@property(retain) CKDPQuerySort * orderBy;
-@property(retain) NSString * path;
+@property (nonatomic, retain) NSData *continuationMarker;
+@property (nonatomic, readonly) BOOL hasContinuationMarker;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasLimit;
+@property (nonatomic, readonly) BOOL hasOrderBy;
+@property (nonatomic, readonly) BOOL hasPath;
+@property (nonatomic, retain) CKDPCommentedOnId *identifier;
+@property (nonatomic) unsigned int limit;
+@property (nonatomic, retain) CKDPQuerySort *orderBy;
+@property (nonatomic, retain) NSString *path;
 
 + (id)options;
 

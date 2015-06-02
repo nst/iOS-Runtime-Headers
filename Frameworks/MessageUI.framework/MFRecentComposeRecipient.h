@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class CRRecentContact;
-
 @interface MFRecentComposeRecipient : MFComposeRecipient {
     CRRecentContact *_recent;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class DBManager;
-
 @interface CallDBManager : NSObject {
     unsigned char _dataStoreType;
     DBManager *_dbManager;
@@ -12,7 +10,7 @@
 }
 
 @property unsigned char dataStoreType;
-@property(retain) DBManager * dbManager;
+@property (retain) DBManager *dbManager;
 @property BOOL deviceUnlocked;
 @property unsigned char notifyDataStoreChangeReason;
 

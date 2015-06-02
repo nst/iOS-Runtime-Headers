@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, TCDumpType;
-
 @interface TCDumpField : NSObject {
     NSString *mName;
     TCDumpType *mType;

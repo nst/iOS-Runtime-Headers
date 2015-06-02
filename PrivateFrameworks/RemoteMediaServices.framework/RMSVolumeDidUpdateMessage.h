@@ -11,10 +11,10 @@
     float _volume;
 }
 
-@property BOOL hasSessionIdentifier;
-@property BOOL hasVolume;
-@property int sessionIdentifier;
-@property float volume;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) BOOL hasVolume;
+@property (nonatomic) int sessionIdentifier;
+@property (nonatomic) float volume;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

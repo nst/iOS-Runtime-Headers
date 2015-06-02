@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CUIImage, NSArray, NSSet, NSString, TDSchemaDefinition;
-
 @interface TDSchemaPartDefinition : NSManagedObject {
     unsigned int partFeatures;
     CUIImage *previewImage;
@@ -11,14 +9,14 @@
     NSArray *renditions;
 }
 
-@property(retain) TDSchemaDefinition * element;
-@property(retain) NSString * name;
-@property unsigned int partFeatures;
-@property(retain) CUIImage * previewImage;
-@property(retain) NSSet * productions;
-@property(retain) NSArray * renditionGroups;
-@property(copy) NSArray * renditions;
-@property(retain) NSString * widgetID;
+@property (nonatomic, retain) TDSchemaDefinition *element;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned int partFeatures;
+@property (nonatomic, retain) CUIImage *previewImage;
+@property (nonatomic, retain) NSSet *productions;
+@property (nonatomic, retain) NSArray *renditionGroups;
+@property (nonatomic, copy) NSArray *renditions;
+@property (nonatomic, retain) NSString *widgetID;
 
 - (int)_renditionKeyValueForTokenIdentifier:(unsigned short)arg1;
 - (id)_schema;

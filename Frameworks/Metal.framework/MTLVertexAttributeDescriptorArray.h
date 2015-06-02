@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLVertexAttributeDescriptor;
-
 @interface MTLVertexAttributeDescriptorArray : NSObject {
-    MTLVertexAttributeDescriptor *_descriptors[31];
+    MTLVertexAttributeDescriptor *_descriptors;
 }
 
 - (void)dealloc;

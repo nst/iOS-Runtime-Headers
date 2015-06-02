@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIEditorialLinkView, SKUITextBoxView;
-
 @interface SKUIEditorialCellLayout : SKUICellLayout <SKUIEditorialLinkViewDelegate> {
     struct UIEdgeInsets { 
         float top; 
@@ -17,12 +15,12 @@
     float _totalHeight;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) SKUITextBoxView * textBoxView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUITextBoxView *textBoxView;
 
 - (void).cxx_destruct;
 - (void)_initSKUIEditorialCellLayout;

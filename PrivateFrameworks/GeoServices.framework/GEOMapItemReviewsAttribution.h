@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray;
+@interface GEOMapItemReviewsAttribution : GEOMapItemAttribution
 
-@interface GEOMapItemReviewsAttribution : GEOMapItemAttribution {
-}
-
-@property(readonly) NSArray * addReviewURLs;
+@property (nonatomic, readonly) NSArray *addReviewURLs;
 
 - (id)addReviewURLs;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;

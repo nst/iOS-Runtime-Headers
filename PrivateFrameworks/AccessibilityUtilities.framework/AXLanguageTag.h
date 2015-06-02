@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXDialectMap, NSMutableOrderedSet, NSString;
-
 @interface AXLanguageTag : NSObject <NSCopying> {
     NSMutableOrderedSet *_ambiguousDialects;
     NSString *_content;
@@ -15,15 +13,15 @@
     BOOL _wasPredicted;
 }
 
-@property(retain) NSMutableOrderedSet * ambiguousDialects;
-@property NSString * content;
-@property(readonly) NSString * contentSubstring;
-@property(readonly) AXDialectMap * dialect;
-@property(readonly) AXDialectMap * preferredAmbiguousDialect;
-@property(readonly) AXDialectMap * preferredUnambiguousDialect;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(retain) NSMutableOrderedSet * unambiguousDialects;
-@property BOOL wasPredicted;
+@property (nonatomic, retain) NSMutableOrderedSet *ambiguousDialects;
+@property (nonatomic) NSString *content;
+@property (nonatomic, readonly) NSString *contentSubstring;
+@property (nonatomic, readonly) AXDialectMap *dialect;
+@property (nonatomic, readonly) AXDialectMap *preferredAmbiguousDialect;
+@property (nonatomic, readonly) AXDialectMap *preferredUnambiguousDialect;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, retain) NSMutableOrderedSet *unambiguousDialects;
+@property (nonatomic) BOOL wasPredicted;
 
 + (id)tagWithDialects:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 content:(id)arg3 predictedByTagger:(BOOL)arg4;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class BKSApplicationDataStoreRepositoryClient, NSObject<OS_dispatch_queue>;
-
 @interface BKSApplicationDataStoreClientFactory : NSObject {
     unsigned long long _count;
     NSObject<OS_dispatch_queue> *_queue;

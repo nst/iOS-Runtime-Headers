@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLTimeReferenceKernel : PLTimeReference {
-}
+@interface PLTimeReferenceKernel : PLTimeReference
 
 - (id)currentTime;
 - (void)initializeOffsetWithEntry:(id)arg1;

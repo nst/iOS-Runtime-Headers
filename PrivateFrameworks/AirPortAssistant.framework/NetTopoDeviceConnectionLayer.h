@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class CAShapeLayer;
-
 @interface NetTopoDeviceConnectionLayer : NetTopoObjectLayer {
     struct CGPath { } *_arrowhead;
     struct CGColor { } *_clearColor;
@@ -33,15 +31,15 @@
     struct CGColor { } *_whiteColor;
 }
 
-@property(readonly) unsigned int connectionMedium;
-@property unsigned int connectionMediumFallback;
-@property unsigned int connectionStyle;
-@property struct CGPoint { float x1; float x2; } downstreamConnectionPoint;
-@property(readonly) struct CGPath { }* hitTestPath;
-@property struct CGPoint { float x1; float x2; } siblingMergePoint;
-@property struct CGPoint { float x1; float x2; } upstreamConnectionPoint;
-@property unsigned int upstreamConnectionSide;
-@property unsigned int upstreamDeviceSpatialRelationship;
+@property (nonatomic, readonly) unsigned int connectionMedium;
+@property (nonatomic) unsigned int connectionMediumFallback;
+@property (nonatomic) unsigned int connectionStyle;
+@property (nonatomic) struct CGPoint { float x1; float x2; } downstreamConnectionPoint;
+@property (nonatomic, readonly) struct CGPath { }*hitTestPath;
+@property (nonatomic) struct CGPoint { float x1; float x2; } siblingMergePoint;
+@property (nonatomic) struct CGPoint { float x1; float x2; } upstreamConnectionPoint;
+@property (nonatomic) unsigned int upstreamConnectionSide;
+@property (nonatomic) unsigned int upstreamDeviceSpatialRelationship;
 
 - (void)addBottomWindingConnectionToPath:(struct CGPath { }*)arg1 withOffset:(float)arg2;
 - (void)addCurvedArrowConnectionToPath:(struct CGPath { }*)arg1 withOffset:(float)arg2;

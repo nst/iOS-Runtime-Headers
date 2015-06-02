@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSLock;
-
 @interface MFWeakSet : NSMutableSet {
     unsigned long _gen;
     NSLock *_lock;
@@ -26,13 +24,13 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateObjectsUsingBlock:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
 - (id)initWithArray:(id)arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
@@ -51,8 +49,8 @@
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
-- (id)objectsPassingTest:(id)arg1;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)objectsPassingTest:(id /* block */)arg1;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;
 - (id)setByAddingObject:(id)arg1;

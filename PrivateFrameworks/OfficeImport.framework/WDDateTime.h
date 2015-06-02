@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, WDCharacterProperties;
-
 @interface WDDateTime : WDRun {
     NSDate *mDate;
     WDCharacterProperties *mProperties;

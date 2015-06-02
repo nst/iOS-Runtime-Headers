@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSString;
-
 @interface ML3DatabaseNaturalStatement : NSObject <NSSecureCoding> {
     NSMutableArray *_parameters;
     NSString *_sql;
 }
 
-@property(retain) NSMutableArray * parameters;
-@property(copy) NSString * sql;
+@property (nonatomic, retain) NSMutableArray *parameters;
+@property (nonatomic, copy) NSString *sql;
 
 + (id)naturalStatementWithSQL:(id)arg1 parameters:(id)arg2;
 + (BOOL)supportsSecureCoding;

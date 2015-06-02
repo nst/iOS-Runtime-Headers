@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKServerChangeToken, NSData, NSNumber;
-
 @interface CKFetchRecordChangesOperationResult : CKOperationResult <NSSecureCoding> {
     NSData *_clientChangeTokenData;
     CKServerChangeToken *_serverChangeToken;
     NSNumber *_status;
 }
 
-@property(retain) NSData * clientChangeTokenData;
-@property(retain) CKServerChangeToken * serverChangeToken;
-@property(retain) NSNumber * status;
+@property (nonatomic, retain) NSData *clientChangeTokenData;
+@property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
+@property (nonatomic, retain) NSNumber *status;
 
 + (BOOL)supportsSecureCoding;
 

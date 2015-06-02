@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CPMLBestShim.framework/CPMLBestShim
  */
 
-@interface CPMLBestShim : NSObject {
-}
+@interface CPMLBestShim : NSObject
 
 + (id)bestShim;
 + (id)bestShimWithDBPath:(id)arg1 withModelPath:(id)arg2 withPListPath:(id)arg3;

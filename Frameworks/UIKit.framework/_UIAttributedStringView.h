@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString;
-
 @interface _UIAttributedStringView : UIView {
     NSAttributedString *_string;
 }

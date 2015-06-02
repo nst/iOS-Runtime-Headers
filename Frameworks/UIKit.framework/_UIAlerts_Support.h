@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlerts_Support : NSObject {
-}
+@interface _UIAlerts_Support : NSObject
 
 + (id)alertSheetStack;
 + (id)alertWindow;

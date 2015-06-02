@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDocumentPickerModalManagementViewController : UINavigationController {
-}
+@interface _UIDocumentPickerModalManagementViewController : UINavigationController
 
 - (void)_donePressed:(id)arg1;
 - (id)init;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFPersonContactHandle : NSObject <NSSecureCoding> {
     NSString *_handle;
     NSString *_label;
     unsigned int _type;
 }
 
-@property(copy) NSString * handle;
-@property(copy) NSString * label;
-@property unsigned int type;
+@property (nonatomic, copy) NSString *handle;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned int type;
 
 + (BOOL)supportsSecureCoding;
 

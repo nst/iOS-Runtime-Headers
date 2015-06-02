@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString, NSURL;
-
 @interface GKAuthenticateResponse : GKInternalRepresentation {
     NSString *_accountName;
     NSString *_authToken;
@@ -15,14 +13,14 @@
     BOOL _shouldShowLinkAccountsUI;
 }
 
-@property(retain) NSString * accountName;
-@property(retain) NSString * authToken;
-@property int environment;
-@property BOOL loginDisabled;
-@property BOOL passwordChangeRequired;
-@property(retain) NSURL * passwordChangeURL;
-@property(retain) NSString * playerID;
-@property BOOL shouldShowLinkAccountsUI;
+@property (nonatomic, retain) NSString *accountName;
+@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic) int environment;
+@property (nonatomic) BOOL loginDisabled;
+@property (nonatomic) BOOL passwordChangeRequired;
+@property (nonatomic, retain) NSURL *passwordChangeURL;
+@property (nonatomic, retain) NSString *playerID;
+@property (nonatomic) BOOL shouldShowLinkAccountsUI;
 
 + (id)secureCodedPropertyKeys;
 

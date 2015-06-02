@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableSet, NSSet, UIGestureRecognizer;
-
 @interface MFComposeScrollView : UIScrollView {
     NSMutableSet *_disabledSubviews;
     int _scrollBlocked;
@@ -16,9 +14,9 @@
     } _tapLocation;
 }
 
-@property(readonly) NSSet * disabledSubviews;
-@property BOOL shouldScrollToFirstResponder;
-@property BOOL subviewsDisabled;
+@property (nonatomic, readonly) NSSet *disabledSubviews;
+@property (nonatomic) BOOL shouldScrollToFirstResponder;
+@property (nonatomic) BOOL subviewsDisabled;
 
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (void)beginBlockingScroll;

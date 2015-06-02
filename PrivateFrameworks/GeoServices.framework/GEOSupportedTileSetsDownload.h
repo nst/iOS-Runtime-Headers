@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEODownloadMetadata, GEOSupportedTileSets;
-
 @interface GEOSupportedTileSetsDownload : PBCodable <NSCopying> {
     GEODownloadMetadata *_metadata;
     GEOSupportedTileSets *_tileSets;
 }
 
-@property(retain) GEODownloadMetadata * metadata;
-@property(retain) GEOSupportedTileSets * tileSets;
+@property (nonatomic, retain) GEODownloadMetadata *metadata;
+@property (nonatomic, retain) GEOSupportedTileSets *tileSets;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

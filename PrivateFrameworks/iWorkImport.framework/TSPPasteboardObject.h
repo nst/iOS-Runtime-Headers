@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSPObject;
-
 @interface TSPPasteboardObject : TSPObject {
     TSPObject *_appNativeObject;
     NSArray *_drawables;
@@ -18,17 +16,17 @@
     TSPObject *_wpStorage;
 }
 
-@property(retain) TSPObject * appNativeObject;
-@property(copy) NSArray * drawables;
-@property(retain) TSPObject * guideStorage;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property BOOL isSmartCopyPaste;
-@property BOOL isTextPrimary;
-@property(copy) NSArray * styles;
-@property(retain) TSPObject * stylesheet;
-@property(retain) TSPObject * theme;
-@property(retain) TSPObject * wpStorage;
+@property (nonatomic, retain) TSPObject *appNativeObject;
+@property (nonatomic, copy) NSArray *drawables;
+@property (nonatomic, retain) TSPObject *guideStorage;
+@property (nonatomic, readonly) BOOL isCrossAppPaste;
+@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
+@property (nonatomic) BOOL isSmartCopyPaste;
+@property (nonatomic) BOOL isTextPrimary;
+@property (nonatomic, copy) NSArray *styles;
+@property (nonatomic, retain) TSPObject *stylesheet;
+@property (nonatomic, retain) TSPObject *theme;
+@property (nonatomic, retain) TSPObject *wpStorage;
 
 - (void).cxx_destruct;
 - (id)appNativeObject;

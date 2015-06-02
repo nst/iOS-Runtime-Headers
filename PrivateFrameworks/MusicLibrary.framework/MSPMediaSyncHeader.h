@@ -11,10 +11,10 @@
     int _totalPackages;
 }
 
-@property BOOL hasSyncType;
-@property BOOL hasTotalPackages;
-@property int syncType;
-@property int totalPackages;
+@property (nonatomic) BOOL hasSyncType;
+@property (nonatomic) BOOL hasTotalPackages;
+@property (nonatomic) int syncType;
+@property (nonatomic) int totalPackages;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

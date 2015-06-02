@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent;
-
 @interface EKEventDetailCell : UITableViewCell {
     BOOL _editable;
     EKEvent *_event;
@@ -11,7 +9,7 @@
     float _lastLaidOutWidth;
 }
 
-@property(readonly) BOOL isEditable;
+@property (nonatomic, readonly) BOOL isEditable;
 
 + (id)_bodyFontAtDefaultSize;
 + (float)_scaledDistanceCalculatedFromBottomToBaseline:(float)arg1;

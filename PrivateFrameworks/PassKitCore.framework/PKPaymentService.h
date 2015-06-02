@@ -2,52 +2,50 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class <PKPaymentServiceDelegate>, NSString, PKPaymentWebServiceContext, PKXPCService;
-
 @interface PKPaymentService : NSObject <PKPaymentServiceExportedInterface, PKXPCServiceDelegate> {
     <PKPaymentServiceDelegate> *_delegate;
     unsigned int _paymentInterfacePreventionCounter;
     PKXPCService *_remoteService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSString * defaultPaymentPassUniqueIdentifier;
-@property <PKPaymentServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL paymentDeviceIsAvailable;
-@property(readonly) BOOL paymentDeviceIsInField;
-@property(readonly) BOOL paymentDeviceIsInRestrictedMode;
-@property(readonly) NSString * secureElementIdentifier;
-@property(retain) PKPaymentWebServiceContext * sharedPaymentWebServiceContext;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSString *defaultPaymentPassUniqueIdentifier;
+@property (nonatomic) <PKPaymentServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL paymentDeviceIsAvailable;
+@property (nonatomic, readonly) BOOL paymentDeviceIsInField;
+@property (nonatomic, readonly) BOOL paymentDeviceIsInRestrictedMode;
+@property (nonatomic, readonly) NSString *secureElementIdentifier;
+@property (nonatomic, retain) PKPaymentWebServiceContext *sharedPaymentWebServiceContext;
+@property (readonly) Class superclass;
 
 + (BOOL)paymentServiceIsAvailable;
 
-- (void)_activationStateForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
-- (void)_defaultPaymentPassUniqueIdentifier:(id)arg1;
-- (void)_deleteMessageWithIdentifier:(id)arg1 fromPassWithUniqueIdentifier:(id)arg2 completion:(id)arg3;
+- (void)_activationStateForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_defaultPaymentPassUniqueIdentifier:(id /* block */)arg1;
+- (void)_deleteMessageWithIdentifier:(id)arg1 fromPassWithUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)_existingRemoteObjectProxy;
-- (void)_messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
-- (void)_paymentDeviceIsAvailableWithCompletion:(id)arg1;
-- (void)_paymentDeviceIsInFieldWithCompletion:(id)arg1;
-- (void)_paymentDeviceIsInRestrictedModeWithCompletion:(id)arg1;
+- (void)_messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_paymentDeviceIsAvailableWithCompletion:(id /* block */)arg1;
+- (void)_paymentDeviceIsInFieldWithCompletion:(id /* block */)arg1;
+- (void)_paymentDeviceIsInRestrictedModeWithCompletion:(id /* block */)arg1;
 - (id)_remoteObjectProxy;
-- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
-- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
-- (void)_secureElementIdentifierWithCompletion:(id)arg1;
-- (void)_setNewAuthRandomWithRetryCount:(unsigned int)arg1 completion:(id)arg2;
-- (void)_sharedPaymentWebServiceContextWithCompletion:(id)arg1;
-- (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
-- (void)activatePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
+- (void)_secureElementIdentifierWithCompletion:(id /* block */)arg1;
+- (void)_setNewAuthRandomWithRetryCount:(unsigned int)arg1 completion:(id /* block */)arg2;
+- (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
+- (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)activatePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (int)activationStateForPassWithUniqueIdentifier:(id)arg1;
-- (void)authorizeInAppPaymentRequest:(id)arg1 completion:(id)arg2;
-- (void)authorizePaymentPassWithUniqueIdentifier:(id)arg1 authenticationCredential:(id)arg2 completion:(id)arg3;
+- (void)authorizeInAppPaymentRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)authorizePaymentPassWithUniqueIdentifier:(id)arg1 authenticationCredential:(id)arg2 completion:(id /* block */)arg3;
 - (void)beginPreventingPaymentInterfacePresentation;
 - (void)consistencyCheck;
 - (void)dealloc;
-- (void)deauthorizePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
+- (void)deauthorizePaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)defaultPaymentPassUniqueIdentifier;
 - (id)delegate;
 - (void)deleteMessageWithIdentifier:(id)arg1 fromPassWithUniqueIdentifier:(id)arg2;
@@ -56,10 +54,10 @@
 - (void)endPreventingPaymentInterfacePresentation;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (void)insertOrUpdatePaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 completion:(id)arg4;
+- (void)insertOrUpdatePaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 completion:(id /* block */)arg4;
 - (void)markAllPaymentApplicationsForDelete;
 - (id)messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
-- (void)messagesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id)arg2;
+- (void)messagesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)paymentDeviceDidBecomeAvailable;
 - (void)paymentDeviceDidBecomeUnavailable;
 - (void)paymentDeviceDidEnterField;
@@ -79,7 +77,7 @@
 - (void)paymentPassWithUniqueIdentifierDidCompleteTransaction:(id)arg1;
 - (void)paymentPassWithUniqueIdentifierDidDeauthorize:(id)arg1;
 - (void)paymentPassWithUniqueIdentifierDidFailTransaction:(id)arg1;
-- (void)presentPaymentInterfaceWithCompletion:(id)arg1;
+- (void)presentPaymentInterfaceWithCompletion:(id /* block */)arg1;
 - (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
 - (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
 - (void)scheduleSetupReminders;
@@ -87,13 +85,13 @@
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNewAuthRandom;
-- (void)setNewAuthRandomIfNecessaryWithRetryCount:(unsigned int)arg1 completion:(id)arg2;
+- (void)setNewAuthRandomIfNecessaryWithRetryCount:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
 - (void)simulatePaymentPush;
 - (void)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forDPANIdentifier:(id)arg3;
-- (void)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forDPANIdentifier:(id)arg3 completion:(id)arg4;
+- (void)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forDPANIdentifier:(id)arg3 completion:(id /* block */)arg4;
 - (id)transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 includingSources:(unsigned int)arg2 limit:(int)arg3 completion:(id)arg4;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 includingSources:(unsigned int)arg2 limit:(int)arg3 completion:(id /* block */)arg4;
 
 @end

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class ATDeviceSettings, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver, ATMessageLinkRequestHandler, ATSessionObserver> {
     NSMutableDictionary *_activeSessionsForLinkIDAndDataClass;
     NSObject<OS_dispatch_queue> *_queue;
     ATDeviceSettings *_settings;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)deviceSyncManager;
 

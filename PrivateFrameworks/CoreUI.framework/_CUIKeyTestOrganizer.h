@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSArray;
-
 @interface _CUIKeyTestOrganizer : NSObject {
     unsigned int chooseCount;
     unsigned int flexAttributesCount;
@@ -11,12 +9,12 @@
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } originalKey[16];
+    } originalKey;
     unsigned int subchooseCount;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } testKey[16];
+    } testKey;
 }
 
 - (unsigned int)_attributeToBumpIndex;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSData, NSString, PLAdditionalAssetAttributes, PLPerson;
+@interface PLPersonReference : PLManagedObject
 
-@interface PLPersonReference : PLManagedObject {
-}
-
-@property(retain) PLAdditionalAssetAttributes * assetAttributes;
-@property(retain) PLPerson * person;
-@property(retain) NSData * personData;
-@property(retain) NSString * personUUID;
+@property (nonatomic, retain) PLAdditionalAssetAttributes *assetAttributes;
+@property (nonatomic, retain) PLPerson *person;
+@property (nonatomic, retain) NSData *personData;
+@property (nonatomic, retain) NSString *personUUID;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

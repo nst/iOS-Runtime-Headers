@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACAudioRoute : NSObject {
     BOOL _picked;
     NSString *_routeName;
@@ -13,12 +11,12 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(getter=isPicked,readonly) BOOL picked;
-@property(readonly) NSString * routeName;
-@property(readonly) int routeSubtype;
-@property(readonly) int routeType;
-@property(readonly) BOOL supportsVolumeControl;
-@property(readonly) NSString * uniqueIdentifier;
+@property (getter=isPicked, nonatomic, readonly) BOOL picked;
+@property (nonatomic, readonly) NSString *routeName;
+@property (nonatomic, readonly) int routeSubtype;
+@property (nonatomic, readonly) int routeType;
+@property (nonatomic, readonly) BOOL supportsVolumeControl;
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
 
 + (int)_routeBufferSubtypeFromMPAVRouteSubtype:(int)arg1;
 + (int)_routeBufferTypeFromMPAVRouteType:(int)arg1;

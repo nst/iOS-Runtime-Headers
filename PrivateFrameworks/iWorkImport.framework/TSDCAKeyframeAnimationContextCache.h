@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSDCAKeyframeAnimationContextCache : TSDCAPropertyAnimationContextCache {
     BOOL _isObjectTypeCGColor;
     NSArray *_keyTimes;
@@ -11,10 +9,10 @@
     NSArray *_values;
 }
 
-@property(readonly) BOOL isObjectTypeCGColor;
-@property(readonly) NSArray * keyTimes;
-@property(readonly) NSArray * timingFunctions;
-@property(readonly) NSArray * values;
+@property (nonatomic, readonly) BOOL isObjectTypeCGColor;
+@property (nonatomic, readonly) NSArray *keyTimes;
+@property (nonatomic, readonly) NSArray *timingFunctions;
+@property (nonatomic, readonly) NSArray *values;
 
 - (id)initWithAnimation:(id)arg1;
 - (BOOL)isObjectTypeCGColor;

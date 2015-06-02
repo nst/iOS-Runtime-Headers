@@ -2,38 +2,28 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDGetRecordZonesURLRequest : CKDURLRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordZoneFetchedBlock;
-
+    id /* block */ _recordZoneFetchedBlock;
     NSArray *_recordZones;
     NSMutableDictionary *_zoneIDByRequestID;
     NSArray *_zoneIDs;
 }
 
-@property(copy) id recordZoneFetchedBlock;
-@property(readonly) NSArray * recordZones;
-@property(retain) NSMutableDictionary * zoneIDByRequestID;
-@property(retain) NSArray * zoneIDs;
+@property (nonatomic, copy) id /* block */ recordZoneFetchedBlock;
+@property (nonatomic, readonly) NSArray *recordZones;
+@property (nonatomic, retain) NSMutableDictionary *zoneIDByRequestID;
+@property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;
 - (id)initWithRecordZoneIDs:(id)arg1;
 - (int)operationType;
-- (id)recordZoneFetchedBlock;
+- (id /* block */)recordZoneFetchedBlock;
 - (id)recordZones;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setRecordZoneFetchedBlock:(id)arg1;
+- (void)setRecordZoneFetchedBlock:(id /* block */)arg1;
 - (void)setZoneIDByRequestID:(id)arg1;
 - (void)setZoneIDs:(id)arg1;
 - (id)zoneIDByRequestID;

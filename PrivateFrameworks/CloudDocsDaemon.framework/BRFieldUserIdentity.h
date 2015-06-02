@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRFieldUserIdentity : PBCodable <NSCopying> {
     NSString *_displayName;
     NSString *_firstName;
     NSString *_lastName;
 }
 
-@property(retain) NSString * displayName;
-@property(retain) NSString * firstName;
-@property(readonly) BOOL hasDisplayName;
-@property(readonly) BOOL hasFirstName;
-@property(readonly) BOOL hasLastName;
-@property(retain) NSString * lastName;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic, readonly) BOOL hasFirstName;
+@property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, retain) NSString *lastName;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

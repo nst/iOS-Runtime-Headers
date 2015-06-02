@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXConditionalFormattingRule : NSObject {
-}
+@interface EXConditionalFormattingRule : NSObject
 
 + (int)edOperatorFromXmlOperatorString:(id)arg1;
 + (int)edRuleTypeFromXmlRuleTypeString:(id)arg1;

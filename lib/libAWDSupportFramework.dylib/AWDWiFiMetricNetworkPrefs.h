@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDWiFiMetricNetworkPrefs : PBCodable <NSCopying> {
     unsigned int _adhocNetsCount;
     unsigned int _applePersHotspotNetsCount;
@@ -40,37 +38,37 @@
     unsigned int _wpaNetsCount;
 }
 
-@property unsigned int adhocNetsCount;
-@property unsigned int applePersHotspotNetsCount;
-@property unsigned int atjCanceledCount;
-@property BOOL atjEnabled;
-@property unsigned int atjUsedCount;
-@property unsigned int captiveNetsCount;
-@property unsigned int eapNetsCount;
-@property BOOL hasAdhocNetsCount;
-@property BOOL hasApplePersHotspotNetsCount;
-@property BOOL hasAtjCanceledCount;
-@property BOOL hasAtjEnabled;
-@property BOOL hasAtjUsedCount;
-@property BOOL hasCaptiveNetsCount;
-@property BOOL hasEapNetsCount;
-@property BOOL hasHiddenNetsCount;
-@property BOOL hasMostUsedCount;
-@property BOOL hasOpenNonCaptiveNetsCount;
-@property BOOL hasPrefNetsCount;
-@property BOOL hasTimestamp;
-@property BOOL hasWapiNetsCount;
-@property BOOL hasWepNetsCount;
-@property BOOL hasWpaNetsCount;
-@property unsigned int hiddenNetsCount;
-@property unsigned int mostUsedCount;
-@property(retain) NSMutableArray * mostUsedNetworks;
-@property unsigned int openNonCaptiveNetsCount;
-@property unsigned int prefNetsCount;
-@property unsigned long long timestamp;
-@property unsigned int wapiNetsCount;
-@property unsigned int wepNetsCount;
-@property unsigned int wpaNetsCount;
+@property (nonatomic) unsigned int adhocNetsCount;
+@property (nonatomic) unsigned int applePersHotspotNetsCount;
+@property (nonatomic) unsigned int atjCanceledCount;
+@property (nonatomic) BOOL atjEnabled;
+@property (nonatomic) unsigned int atjUsedCount;
+@property (nonatomic) unsigned int captiveNetsCount;
+@property (nonatomic) unsigned int eapNetsCount;
+@property (nonatomic) BOOL hasAdhocNetsCount;
+@property (nonatomic) BOOL hasApplePersHotspotNetsCount;
+@property (nonatomic) BOOL hasAtjCanceledCount;
+@property (nonatomic) BOOL hasAtjEnabled;
+@property (nonatomic) BOOL hasAtjUsedCount;
+@property (nonatomic) BOOL hasCaptiveNetsCount;
+@property (nonatomic) BOOL hasEapNetsCount;
+@property (nonatomic) BOOL hasHiddenNetsCount;
+@property (nonatomic) BOOL hasMostUsedCount;
+@property (nonatomic) BOOL hasOpenNonCaptiveNetsCount;
+@property (nonatomic) BOOL hasPrefNetsCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasWapiNetsCount;
+@property (nonatomic) BOOL hasWepNetsCount;
+@property (nonatomic) BOOL hasWpaNetsCount;
+@property (nonatomic) unsigned int hiddenNetsCount;
+@property (nonatomic) unsigned int mostUsedCount;
+@property (nonatomic, retain) NSMutableArray *mostUsedNetworks;
+@property (nonatomic) unsigned int openNonCaptiveNetsCount;
+@property (nonatomic) unsigned int prefNetsCount;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int wapiNetsCount;
+@property (nonatomic) unsigned int wepNetsCount;
+@property (nonatomic) unsigned int wpaNetsCount;
 
 - (void)addMostUsedNetworks:(id)arg1;
 - (unsigned int)adhocNetsCount;

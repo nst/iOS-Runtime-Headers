@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDMMCSError : PBCodable <NSCopying> {
     int _code;
     NSString *_domain;
@@ -13,11 +11,11 @@
     NSMutableArray *_underlyingErrors;
 }
 
-@property int code;
-@property(retain) NSString * domain;
-@property BOOL hasCode;
-@property(readonly) BOOL hasDomain;
-@property(retain) NSMutableArray * underlyingErrors;
+@property (nonatomic) int code;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic) BOOL hasCode;
+@property (nonatomic, readonly) BOOL hasDomain;
+@property (nonatomic, retain) NSMutableArray *underlyingErrors;
 
 - (void)addUnderlyingErrors:(id)arg1;
 - (void)clearUnderlyingErrors;

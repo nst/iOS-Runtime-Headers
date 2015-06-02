@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSearchControllerDelegate>, NSMutableArray, NSMutableDictionary, NSString, PSListController, PSSearchResults, UISearchBar, UISearchDisplayController;
-
 @interface PSSearchController : NSObject <PSSearchModelDataSource, PSSearchModelDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     <PSSearchControllerDelegate> *_delegate;
     UISearchDisplayController *_displayController;
@@ -18,13 +16,13 @@
     BOOL _showToggles;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PSSearchControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PSListController * listController;
-@property(readonly) UISearchBar * searchBar;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSSearchControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PSListController *listController;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (readonly) Class superclass;
 
 + (float)_additionalHeightForLabelWithText:(id)arg1 font:(id)arg2 boundingWidth:(float)arg3;
 

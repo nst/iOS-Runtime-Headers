@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SKPhysicsContactDelegate>;
-
 @interface SKPhysicsWorld : NSObject <NSCoding> {
     <SKPhysicsContactDelegate> *_contactDelegate;
     struct CGVector { 
@@ -17,9 +11,9 @@
     float speed;
 }
 
-@property <SKPhysicsContactDelegate> * contactDelegate;
-@property struct CGVector { float x1; float x2; } gravity;
-@property float speed;
+@property (nonatomic) <SKPhysicsContactDelegate> *contactDelegate;
+@property (nonatomic) struct CGVector { float x1; float x2; } gravity;
+@property (nonatomic) float speed;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,9 +27,9 @@
 - (id)bodyInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)contactDelegate;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateBodiesAlongRayStart:(struct CGPoint { float x1; float x2; })arg1 end:(struct CGPoint { float x1; float x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateBodiesAtPoint:(struct CGPoint { float x1; float x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateBodiesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateBodiesAlongRayStart:(struct CGPoint { float x1; float x2; })arg1 end:(struct CGPoint { float x1; float x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateBodiesAtPoint:(struct CGPoint { float x1; float x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateBodiesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (id)fields;
 - (struct CGVector { float x1; float x2; })gravity;
 - (BOOL)hasBodies;
@@ -45,12 +39,8 @@
 - (void)removeAllJoints;
 - (void)removeBody:(id)arg1;
 - (void)removeJoint:(id)arg1;
-- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFields:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-     /* Encoded args for previous method: 24@0:48 */
-
-- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)sampleFieldsAt:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-     /* Encoded args for previous method: 24@0:48 */
-
+- (void)sampleFields;
+- (void)sampleFieldsAt;
 - (void)setContactDelegate:(id)arg1;
 - (void)setGravity:(struct CGVector { float x1; float x2; })arg1;
 - (void)setSpeed:(float)arg1;

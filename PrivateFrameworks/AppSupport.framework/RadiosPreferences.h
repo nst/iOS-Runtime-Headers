@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <RadiosPreferencesDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface RadiosPreferences : NSObject {
     int _applySkipCount;
     BOOL _cachedAirplaneMode;
@@ -19,9 +12,9 @@
     BOOL notifyForExternalChangeOnly;
 }
 
-@property BOOL airplaneMode;
-@property <RadiosPreferencesDelegate> * delegate;
-@property BOOL notifyForExternalChangeOnly;
+@property (nonatomic) BOOL airplaneMode;
+@property (nonatomic) <RadiosPreferencesDelegate> *delegate;
+@property (nonatomic) BOOL notifyForExternalChangeOnly;
 
 + (BOOL)shouldMirrorAirplaneMode;
 
@@ -38,7 +31,7 @@
 - (oneway void)release;
 - (void)setAirplaneMode:(BOOL)arg1;
 - (void)setAirplaneModeWithoutMirroring:(BOOL)arg1;
-- (void)setCallback:(int (*)())arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
+- (void)setCallback:(int (*)arg1 withContext:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setNotifyForExternalChangeOnly:(BOOL)arg1;
 - (void)setValue:(void*)arg1 forKey:(id)arg2;

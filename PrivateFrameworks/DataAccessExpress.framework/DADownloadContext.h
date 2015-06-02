@@ -2,41 +2,27 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface DADownloadContext : NSObject {
     NSString *_accountID;
     NSString *_attachmentUUID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
+    id /* block */ _completionBlock;
+    id /* block */ _progressBlock;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) NSString * accountID;
-@property(readonly) NSString * attachmentUUID;
-@property(copy,readonly) id completionBlock;
-@property(copy,readonly) id progressBlock;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) NSString *attachmentUUID;
+@property (nonatomic, readonly, copy) id /* block */ completionBlock;
+@property (nonatomic, readonly, copy) id /* block */ progressBlock;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
 - (id)accountID;
 - (id)attachmentUUID;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)finishedWithError:(id)arg1;
-- (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 downloadProgressBlock:(id)arg4 completionBlock:(id)arg5;
-- (id)progressBlock;
+- (id)initWithAttachmentUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 downloadProgressBlock:(id /* block */)arg4 completionBlock:(id /* block */)arg5;
+- (id /* block */)progressBlock;
 - (id)queue;
 - (void)updateProgressDownloadedByteCount:(long long)arg1 totalByteCount:(long long)arg2;
 

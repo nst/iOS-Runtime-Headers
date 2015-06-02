@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, SUClientInterface, SUItem, SUStructuredPage;
-
 @interface SUStructuredPageTableDataSource : SUTableDataSource {
     SUItem *_activeLoadMoreItem;
     NSMutableArray *_cachedHeaderViews;
@@ -13,10 +11,10 @@
     int _style;
 }
 
-@property(retain) SUItem * activeLoadMoreItem;
-@property(retain) SUClientInterface * clientInterface;
-@property(retain) SUStructuredPage * structuredPage;
-@property int style;
+@property (nonatomic, retain) SUItem *activeLoadMoreItem;
+@property (nonatomic, retain) SUClientInterface *clientInterface;
+@property (nonatomic, retain) SUStructuredPage *structuredPage;
+@property (nonatomic) int style;
 
 - (void)_configureLoadMoreCell:(id)arg1 forItem:(id)arg2;
 - (id)_itemOfferButtonForCell:(id)arg1 item:(id)arg2;

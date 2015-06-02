@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStyle;
-
 @interface GQDWPLink : GQDWPInlineList {
     GQDSStyle *mCharStyle;
     struct __CFString { } *mHref;

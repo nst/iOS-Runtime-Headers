@@ -2,14 +2,9 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface ABCCallbackInvoker : NSObject {
     void *ab;
-    int (*cb)();
+    int (*cb;
     void *context;
 }
 

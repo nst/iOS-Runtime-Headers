@@ -9,8 +9,8 @@
     int _statusCode;
 }
 
-@property BOOL hasStatusCode;
-@property int statusCode;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) int statusCode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

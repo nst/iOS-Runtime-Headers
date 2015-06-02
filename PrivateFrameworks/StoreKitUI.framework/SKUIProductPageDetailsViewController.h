@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableHeaderOnlySection, SKUIProductPageTableTextBoxSection, SKUIProductPageTableViewController, SKUIResourceLoader, UIScrollView;
-
 @interface SKUIProductPageDetailsViewController : UIViewController <SKUIItemStateCenterObserver, SKUIProductPageChildViewController, SKUIScreenshotsDelegate, SKUITableViewSectionDelegate> {
     BOOL _askPermission;
     SKUIClientContext *_clientContext;
@@ -21,17 +19,17 @@
     SKUIProductPageTableTextBoxSection *_whatsNewSection;
 }
 
-@property BOOL askPermission;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIProductPageChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIProductPageHeaderViewController * headerViewController;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) SKUIProductPage * productPage;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL askPermission;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly) SKUIProductPage *productPage;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
 
 + (float)defaultPageWidthForUserInterfaceIdiom:(int)arg1;
 

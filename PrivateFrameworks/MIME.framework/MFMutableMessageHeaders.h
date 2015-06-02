@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface MFMutableMessageHeaders : MFMessageHeaders {
     NSMutableDictionary *_headersAdded;
     NSMutableArray *_headersRemoved;

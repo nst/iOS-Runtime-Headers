@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAAISongTag, SAUIAppPunchOut;
+@interface SAAISongTagSnippet : SAUISnippet
 
-@interface SAAISongTagSnippet : SAUISnippet {
-}
-
-@property(retain) SAUIAppPunchOut * attributionPunchOut;
-@property(retain) SAUIAppPunchOut * purchaseSongPunchOut;
-@property(retain) SAUIAppPunchOut * songDetailsPunchOut;
-@property(retain) SAAISongTag * songTag;
+@property (nonatomic, retain) SAUIAppPunchOut *attributionPunchOut;
+@property (nonatomic, retain) SAUIAppPunchOut *purchaseSongPunchOut;
+@property (nonatomic, retain) SAUIAppPunchOut *songDetailsPunchOut;
+@property (nonatomic, retain) SAAISongTag *songTag;
 
 + (id)songTagSnippet;
 + (id)songTagSnippetWithDictionary:(id)arg1 context:(id)arg2;

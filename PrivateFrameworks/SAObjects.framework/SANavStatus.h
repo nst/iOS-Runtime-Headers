@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SANavStatus : AceObject <SABackgroundContextObject>
 
-@interface SANavStatus : AceObject <SABackgroundContextObject> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * statusValue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *statusValue;
+@property (readonly) Class superclass;
 
 + (id)navStatus;
 + (id)navStatusWithDictionary:(id)arg1 context:(id)arg2;

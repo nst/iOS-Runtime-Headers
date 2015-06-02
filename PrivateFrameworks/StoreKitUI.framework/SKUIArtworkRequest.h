@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIArtworkRequestDelegate>, NSURL, SSVURLDataConsumer;
-
 @interface SKUIArtworkRequest : SKUIResourceRequest <NSCopying> {
     SSVURLDataConsumer *_dataConsumer;
     <SKUIArtworkRequestDelegate> *_delegate;
     NSURL *_url;
 }
 
-@property(copy) NSURL * URL;
-@property(retain) SSVURLDataConsumer * dataConsumer;
-@property <SKUIArtworkRequestDelegate> * delegate;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, retain) SSVURLDataConsumer *dataConsumer;
+@property (nonatomic) <SKUIArtworkRequestDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)URL;

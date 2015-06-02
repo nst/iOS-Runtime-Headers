@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3BaseLocation : ML3Entity {
-}
+@interface ML3BaseLocation : ML3Entity
 
 + (id)databaseTable;
 + (BOOL)insertionChangesLibraryContents;
 + (id)newWithDictionary:(id)arg1 inLibrary:(id)arg2;
 
-- (void)enumerateOrphanedAssetsUsingBlock:(id)arg1;
+- (void)enumerateOrphanedAssetsUsingBlock:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSMutableDictionary;
-
 @interface RadioPlaybackTimeoutInfo : NSObject <NSCopying, NSMutableCopying> {
     NSMutableDictionary *_playbackTimeoutIdentifierToTimeoutNumber;
 }

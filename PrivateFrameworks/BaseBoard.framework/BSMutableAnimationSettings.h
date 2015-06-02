@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class CAMediaTimingFunction;
+@interface BSMutableAnimationSettings : BSAnimationSettings
 
-@interface BSMutableAnimationSettings : BSAnimationSettings {
-}
-
-@property double delay;
-@property double duration;
-@property double frameInterval;
-@property(retain) CAMediaTimingFunction * timingFunction;
+@property (nonatomic) double delay;
+@property (nonatomic) double duration;
+@property (nonatomic) double frameInterval;
+@property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)settingsWithDuration:(double)arg1;
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWNodeInput, BWNodeOutput, BWPipelineStage, NSString;
-
 @interface BWNodeConnection : NSObject <BWNodeOutputConsumer> {
     BWNodeInput *_input;
     BWNodeOutput *_output;
     BWPipelineStage *_pipelineStage;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BWNodeInput * input;
-@property(readonly) BWNodeOutput * output;
-@property(readonly) BWPipelineStage * pipelineStage;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) BWNodeInput *input;
+@property (readonly) BWNodeOutput *output;
+@property (readonly) BWPipelineStage *pipelineStage;
+@property (readonly) Class superclass;
 
 + (id)_requirementsArrayForInputByResolvingPassthroughTree:(id)arg1;
 + (void)initialize;

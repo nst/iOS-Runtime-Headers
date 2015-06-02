@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKActivityIndicatorElement, IKCheckMarkElement, IKOrdinalElement, IKProgressIndicatorElement, IKTextElement, IKViewElement, NSArray, NSString;
+@interface IKListItemLockupElement : IKViewElement
 
-@interface IKListItemLockupElement : IKViewElement {
-}
-
-@property(retain,readonly) IKActivityIndicatorElement * activityIndicator;
-@property(retain,readonly) IKCheckMarkElement * checkMark;
-@property(retain,readonly) NSArray * decorationImages;
-@property(retain,readonly) IKTextElement * decorationLabel;
-@property(retain,readonly) NSArray * images;
-@property(readonly) NSString * itemHeight;
-@property(retain,readonly) IKOrdinalElement * ordinal;
-@property(retain,readonly) IKProgressIndicatorElement * progressIndicator;
-@property(retain,readonly) IKViewElement * relatedContent;
-@property(retain,readonly) IKTextElement * subtitle;
-@property(retain,readonly) IKTextElement * title;
+@property (nonatomic, readonly, retain) IKActivityIndicatorElement *activityIndicator;
+@property (nonatomic, readonly, retain) IKCheckMarkElement *checkMark;
+@property (nonatomic, readonly, retain) NSArray *decorationImages;
+@property (nonatomic, readonly, retain) IKTextElement *decorationLabel;
+@property (nonatomic, readonly, retain) NSArray *images;
+@property (nonatomic, readonly) NSString *itemHeight;
+@property (nonatomic, readonly, retain) IKOrdinalElement *ordinal;
+@property (nonatomic, readonly, retain) IKProgressIndicatorElement *progressIndicator;
+@property (nonatomic, readonly, retain) IKViewElement *relatedContent;
+@property (nonatomic, readonly, retain) IKTextElement *subtitle;
+@property (nonatomic, readonly, retain) IKTextElement *title;
 
 - (id)activityIndicator;
 - (id)checkMark;

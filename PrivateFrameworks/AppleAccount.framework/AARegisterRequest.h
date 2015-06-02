@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSMutableDictionary;
-
 @interface AARegisterRequest : AAAuthenticateRequest {
     NSMutableDictionary *_additionalCookieHeaders;
 }

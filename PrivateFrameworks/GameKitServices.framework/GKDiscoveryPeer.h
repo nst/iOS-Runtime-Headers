@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKDiscoveryPeerConnection, GKSimpleTimer, NSMutableArray, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKDiscoveryPeer : NSObject <GKSimpleTimerDelegate> {
     NSMutableArray *_attemptedInterfaces;
     NSNumber *_chosenInterface;
@@ -17,11 +11,7 @@
     NSMutableSet *_interfaces;
     NSMutableArray *_orderedInterfaces;
     NSString *_playerID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resolveTimeoutHandler;
-
+    id /* block */ _resolveTimeoutHandler;
     GKSimpleTimer *_resolveTimer;
     NSMutableArray *_sendDataBuffer;
     NSString *_serviceName;
@@ -31,22 +21,22 @@
     GKDiscoveryPeerConnection *_trialConnection;
 }
 
-@property(retain) NSMutableArray * attemptedInterfaces;
-@property(retain) NSNumber * chosenInterface;
-@property(retain) GKDiscoveryPeerConnection * connection;
-@property(copy) NSString * deviceID;
-@property double discoveryTimeStamp;
-@property(retain) NSMutableSet * interfaces;
-@property(retain) NSMutableArray * orderedInterfaces;
-@property(copy) NSString * playerID;
-@property(copy) id resolveTimeoutHandler;
-@property(retain) GKSimpleTimer * resolveTimer;
-@property(retain) NSMutableArray * sendDataBuffer;
-@property(copy) NSString * serviceName;
-@property BOOL shouldSignalDiscovery;
-@property int state;
-@property(readonly) NSObject<OS_dispatch_queue> * syncQueue;
-@property(retain) GKDiscoveryPeerConnection * trialConnection;
+@property (nonatomic, retain) NSMutableArray *attemptedInterfaces;
+@property (nonatomic, retain) NSNumber *chosenInterface;
+@property (nonatomic, retain) GKDiscoveryPeerConnection *connection;
+@property (nonatomic, copy) NSString *deviceID;
+@property (nonatomic) double discoveryTimeStamp;
+@property (nonatomic, retain) NSMutableSet *interfaces;
+@property (nonatomic, retain) NSMutableArray *orderedInterfaces;
+@property (nonatomic, copy) NSString *playerID;
+@property (nonatomic, copy) id /* block */ resolveTimeoutHandler;
+@property (nonatomic, retain) GKSimpleTimer *resolveTimer;
+@property (nonatomic, retain) NSMutableArray *sendDataBuffer;
+@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic) BOOL shouldSignalDiscovery;
+@property (nonatomic) int state;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, retain) GKDiscoveryPeerConnection *trialConnection;
 
 - (id)attemptedInterfaces;
 - (id)chosenInterface;
@@ -65,9 +55,9 @@
 - (id)orderedInterfaces;
 - (BOOL)parseServiceNameForInit:(id)arg1;
 - (id)playerID;
-- (id)resolveTimeoutHandler;
+- (id /* block */)resolveTimeoutHandler;
 - (id)resolveTimer;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)sendDataBuffer;
 - (id)serviceName;
 - (void)setAttemptedInterfaces:(id)arg1;
@@ -78,7 +68,7 @@
 - (void)setInterfaces:(id)arg1;
 - (void)setOrderedInterfaces:(id)arg1;
 - (void)setPlayerID:(id)arg1;
-- (void)setResolveTimeoutHandler:(id)arg1;
+- (void)setResolveTimeoutHandler:(id /* block */)arg1;
 - (void)setResolveTimer:(id)arg1;
 - (void)setSendDataBuffer:(id)arg1;
 - (void)setServiceName:(id)arg1;
@@ -86,7 +76,7 @@
 - (void)setState:(int)arg1;
 - (void)setTrialConnection:(id)arg1;
 - (BOOL)shouldSignalDiscovery;
-- (void)startResolveTimerWithHandler:(id)arg1;
+- (void)startResolveTimerWithHandler:(id /* block */)arg1;
 - (int)state;
 - (void)stopResolveTimer;
 - (id)stringForState:(int)arg1;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCHChartInfo, TSCHChunkManager, TSPObject<TSCHMediatorProvider>;
-
 @interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDMixing, TSDReducableInfo, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
     TSCHChartInfo *mChart;
     TSCHChunkManager *mChunkManager;
     TSPObject<TSCHMediatorProvider> *mMediatorPersistentObject;
 }
 
-@property(readonly) TSCHChartInfo * chart;
-@property(readonly) TSCHChunkManager * chunkManager;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int multiDataSetIndex;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSCHChartInfo *chart;
+@property (nonatomic, readonly) TSCHChunkManager *chunkManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int multiDataSetIndex;
+@property (readonly) Class superclass;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (BOOL)needsObjectUUID;
@@ -71,7 +69,7 @@
 - (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (Class)repClass;
-- (void)replaceReferencedStylesUsingBlock:(id)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (BOOL)reverseChunkingIsSupported;
 - (void)saveToArchiver:(id)arg1;
 - (void)setGeometry:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, OITSUPointerKeyDictionary;
-
 @interface EDSheet : OCDDelayedNode {
     OITSUPointerKeyDictionary *mCommentMap;
     EDColorReference *mDefaultGridlineColorReference;
@@ -22,7 +20,7 @@
     EDWorkbook *mWorkbook;
 }
 
-@property bool isDialogSheet;
+@property (nonatomic) bool isDialogSheet;
 
 + (id)sheetWithWorkbook:(id)arg1;
 

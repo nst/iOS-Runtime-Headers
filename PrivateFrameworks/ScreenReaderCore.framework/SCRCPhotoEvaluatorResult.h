@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCPhotoEvaluatorResult : NSObject {
-}
+@interface SCRCPhotoEvaluatorResult : NSObject
 
 - (id)humanReadableResult;
 

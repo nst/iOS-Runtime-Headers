@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface SKTextureAtlas : NSObject <NSCoding> {
     NSString *_atlasName;
     NSDictionary *_textureDict;
 }
 
-@property(readonly) NSArray * textureNames;
+@property (nonatomic, readonly) NSArray *textureNames;
 
 + (id)atlasNamed:(id)arg1;
 + (id)atlasWithDictionary:(id)arg1;
 + (BOOL)canUseObjectForAtlas:(id)arg1;
 + (id)findTextureNamed:(id)arg1;
 + (id)getSupportedPostfixes;
-+ (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id)_copyImageData;
@@ -29,7 +27,7 @@
 - (void)loadTextures;
 - (void)parseAtlasPropertyList:(id)arg1 withPath:(id)arg2;
 - (void)preload;
-- (void)preloadWithCompletionHandler:(id)arg1;
+- (void)preloadWithCompletionHandler:(id /* block */)arg1;
 - (id)textureNamed:(id)arg1;
 - (id)textureNames;
 - (void)unload;

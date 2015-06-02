@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADAdSheetConnection, NSString;
-
 @interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate, ADAdSheetProxyDelegate> {
     ADAdSheetConnection *_connection;
 }
 
-@property(retain) ADAdSheetConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ADAdSheetConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedManager;
 
@@ -20,13 +18,13 @@
 - (id)additionalAdSheetLaunchOptions;
 - (void)configureConnection:(id)arg1;
 - (id)connection;
-- (void)getiAdIDsWithCompletionHandler:(id)arg1;
+- (void)getiAdIDsWithCompletionHandler:(id /* block */)arg1;
 - (void)handleAccountChange;
 - (id)init;
 - (void)refreshOptInStatus;
-- (void)refreshOptInStatusRefreshingWeakToken:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)refreshOptInStatusRefreshingWeakToken:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setConnection:(id)arg1;
-- (void)setOptInStatus:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)setOptInStatus:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)shouldLaunchAdSheet;
 
 @end

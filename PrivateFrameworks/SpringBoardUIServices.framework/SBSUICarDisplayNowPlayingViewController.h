@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBSUICarDisplayNowPlayingViewController : UIViewController <SBSUICarDisplayNowPlayingInterface> {
-}
+@interface SBSUICarDisplayNowPlayingViewController : UIViewController <SBSUICarDisplayNowPlayingInterface>
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;

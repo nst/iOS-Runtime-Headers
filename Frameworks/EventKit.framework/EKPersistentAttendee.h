@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
+@interface EKPersistentAttendee : EKPersistentParticipant
 
-@interface EKPersistentAttendee : EKPersistentParticipant {
-}
-
-@property BOOL commentChanged;
-@property(copy) NSDate * lastModified;
-@property int participantRole;
-@property int participantStatus;
-@property int participantType;
-@property int pendingStatus;
-@property BOOL statusChanged;
+@property (nonatomic) BOOL commentChanged;
+@property (nonatomic, copy) NSDate *lastModified;
+@property (nonatomic) int participantRole;
+@property (nonatomic) int participantStatus;
+@property (nonatomic) int participantType;
+@property (nonatomic) int pendingStatus;
+@property (nonatomic) BOOL statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)attendeeWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3;

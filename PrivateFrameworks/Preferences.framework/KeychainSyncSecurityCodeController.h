@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIButton, UILabel;
-
 @interface KeychainSyncSecurityCodeController : KeychainSyncTextEntryController {
     NSString *_firstPasscodeEntry;
     UIButton *_footerButton;
@@ -15,10 +13,10 @@
     BOOL _showsAdvancedSettings;
 }
 
-@property(retain) NSString * firstPasscodeEntry;
-@property int mode;
-@property int securityCodeType;
-@property BOOL showsAdvancedSettings;
+@property (nonatomic, retain) NSString *firstPasscodeEntry;
+@property (nonatomic) int mode;
+@property (nonatomic) int securityCodeType;
+@property (nonatomic) BOOL showsAdvancedSettings;
 
 - (void)animatePasscodeFieldLeft:(BOOL)arg1;
 - (void)dealloc;

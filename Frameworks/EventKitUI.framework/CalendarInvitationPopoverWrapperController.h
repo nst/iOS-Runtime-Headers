@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventViewController;
-
 @interface CalendarInvitationPopoverWrapperController : UINavigationController {
     EKEventViewController *_eventViewController;
 }
 
-@property(retain) EKEventViewController * eventViewController;
+@property (nonatomic, retain) EKEventViewController *eventViewController;
 
 - (void).cxx_destruct;
 - (id)eventViewController;

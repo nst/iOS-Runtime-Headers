@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSGlobalBlock : NSBlock {
-}
+@interface __NSGlobalBlock : NSBlock
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;

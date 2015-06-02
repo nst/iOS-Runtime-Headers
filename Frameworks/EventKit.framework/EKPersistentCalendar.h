@@ -2,59 +2,56 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentSource, NSSet, NSString, NSURL;
+@interface EKPersistentCalendar : EKPersistentObject
 
-@interface EKPersistentCalendar : EKPersistentObject {
-}
-
-@property(readonly) NSString * UUID;
-@property unsigned int allowedEntityTypes;
-@property BOOL allowsContentModifications;
-@property(copy) NSString * bulkRequests;
-@property BOOL canBePublished;
-@property BOOL canBeShared;
-@property(getter=isColorDisplayOnly) BOOL colorDisplayOnly;
-@property(copy) NSString * colorString;
-@property int displayOrder;
-@property(copy) NSString * externalID;
-@property(copy) NSString * externalModificationTag;
-@property(getter=isHidden) BOOL hidden;
-@property(getter=isImmutable) BOOL immutable;
-@property unsigned int invitationStatus;
-@property(readonly) BOOL isDefaultCalendarForSource;
-@property BOOL isFacebookBirthdayCalendar;
-@property BOOL isFamilyCalendar;
-@property BOOL isHolidaySubscribedCalendar;
-@property BOOL isIgnoringEventAlerts;
-@property BOOL isIgnoringSharedCalendarNotifications;
-@property BOOL isMarkedImmutableSharees;
-@property BOOL isMarkedUndeletable;
-@property(copy) NSURL * ownerIdentityAddress;
-@property(copy) NSString * ownerIdentityDisplayName;
-@property(copy) NSString * ownerIdentityEmail;
-@property(copy) NSString * ownerIdentityFirstName;
-@property(copy) NSString * ownerIdentityLastName;
-@property BOOL prohibitsScheduling;
-@property(getter=isPublished) BOOL published;
-@property(copy) NSString * publishedURL;
-@property(copy) NSString * pushKey;
-@property BOOL schedulingProhibited;
-@property(copy) NSURL * selfIdentityAddress;
-@property(copy) NSString * selfIdentityDisplayName;
-@property(copy) NSString * selfIdentityEmail;
-@property(copy) NSString * selfIdentityFirstName;
-@property(copy) NSString * selfIdentityLastName;
-@property(copy) NSURL * sharedOwnerAddress;
-@property(copy) NSString * sharedOwnerName;
-@property(copy) NSSet * sharees;
-@property(getter=isSharingInvitation) BOOL sharingInvitation;
-@property int sharingInvitationResponse;
-@property int sharingStatus;
-@property(retain) EKPersistentSource * source;
-@property(copy) NSString * subcalAccountID;
-@property(getter=isSubscribed) BOOL subscribed;
-@property(copy) NSString * symbolicColorName;
-@property(copy) NSString * title;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic) unsigned int allowedEntityTypes;
+@property (nonatomic) BOOL allowsContentModifications;
+@property (nonatomic, copy) NSString *bulkRequests;
+@property (nonatomic) BOOL canBePublished;
+@property (nonatomic) BOOL canBeShared;
+@property (getter=isColorDisplayOnly, nonatomic) BOOL colorDisplayOnly;
+@property (nonatomic, copy) NSString *colorString;
+@property (nonatomic) int displayOrder;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *externalModificationTag;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (getter=isImmutable, nonatomic) BOOL immutable;
+@property (nonatomic) unsigned int invitationStatus;
+@property (nonatomic, readonly) BOOL isDefaultCalendarForSource;
+@property (nonatomic) BOOL isFacebookBirthdayCalendar;
+@property (nonatomic) BOOL isFamilyCalendar;
+@property (nonatomic) BOOL isHolidaySubscribedCalendar;
+@property (nonatomic) BOOL isIgnoringEventAlerts;
+@property (nonatomic) BOOL isIgnoringSharedCalendarNotifications;
+@property (nonatomic) BOOL isMarkedImmutableSharees;
+@property (nonatomic) BOOL isMarkedUndeletable;
+@property (nonatomic, copy) NSURL *ownerIdentityAddress;
+@property (nonatomic, copy) NSString *ownerIdentityDisplayName;
+@property (nonatomic, copy) NSString *ownerIdentityEmail;
+@property (nonatomic, copy) NSString *ownerIdentityFirstName;
+@property (nonatomic, copy) NSString *ownerIdentityLastName;
+@property (nonatomic) BOOL prohibitsScheduling;
+@property (getter=isPublished, nonatomic) BOOL published;
+@property (nonatomic, copy) NSString *publishedURL;
+@property (nonatomic, copy) NSString *pushKey;
+@property (nonatomic) BOOL schedulingProhibited;
+@property (nonatomic, copy) NSURL *selfIdentityAddress;
+@property (nonatomic, copy) NSString *selfIdentityDisplayName;
+@property (nonatomic, copy) NSString *selfIdentityEmail;
+@property (nonatomic, copy) NSString *selfIdentityFirstName;
+@property (nonatomic, copy) NSString *selfIdentityLastName;
+@property (nonatomic, copy) NSURL *sharedOwnerAddress;
+@property (nonatomic, copy) NSString *sharedOwnerName;
+@property (nonatomic, copy) NSSet *sharees;
+@property (getter=isSharingInvitation, nonatomic) BOOL sharingInvitation;
+@property (nonatomic) int sharingInvitationResponse;
+@property (nonatomic) int sharingStatus;
+@property (nonatomic, retain) EKPersistentSource *source;
+@property (nonatomic, copy) NSString *subcalAccountID;
+@property (getter=isSubscribed, nonatomic) BOOL subscribed;
+@property (nonatomic, copy) NSString *symbolicColorName;
+@property (nonatomic, copy) NSString *title;
 
 + (id)calendar;
 + (id)defaultPropertiesToLoad;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, UIView;
-
 @interface PUCropOverlayView : UIView {
     UIView *__cropWindowView;
     NSArray *__maskViews;
@@ -24,15 +22,15 @@
     BOOL _straightenGridVisible;
 }
 
-@property(setter=_setCropWindowView:,retain) UIView * _cropWindowView;
-@property(setter=_setMaskViews:,retain) NSArray * _maskViews;
-@property(setter=_setOneNinethLines:,retain) NSArray * _oneNinthCropLines;
-@property(setter=_setOneThirdLines:,retain) NSArray * _oneThirdCropLines;
-@property(getter=isCropGridVisible) BOOL cropGridVisible;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
-@property(readonly) id layoutReferenceItem;
-@property(getter=isMaskedContentVisible) BOOL maskedContentVisible;
-@property(getter=isStraightenGridVisible) BOOL straightenGridVisible;
+@property (setter=_setCropWindowView:, nonatomic, retain) UIView *_cropWindowView;
+@property (setter=_setMaskViews:, nonatomic, retain) NSArray *_maskViews;
+@property (setter=_setOneNinethLines:, nonatomic, retain) NSArray *_oneNinthCropLines;
+@property (setter=_setOneThirdLines:, nonatomic, retain) NSArray *_oneThirdCropLines;
+@property (getter=isCropGridVisible, nonatomic) BOOL cropGridVisible;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) id layoutReferenceItem;
+@property (getter=isMaskedContentVisible, nonatomic) BOOL maskedContentVisible;
+@property (getter=isStraightenGridVisible, nonatomic) BOOL straightenGridVisible;
 
 - (void).cxx_destruct;
 - (id)_addLinesSpacedForCount:(unsigned int)arg1 drawFirstAndLast:(BOOL)arg2 visible:(BOOL)arg3;

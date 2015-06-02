@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class FBApplicationProcess, FBProcessExecutionContext, FBProcessManager, FBWaitForProcessDeathTransaction, NSString;
-
 @interface FBApplicationProcessLaunchTransaction : FBTransaction <FBApplicationProcessObserver> {
     NSString *_bundleID;
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _executionContextProvider;
-
+    id /* block */ _executionContextProvider;
     BOOL _exited;
     BOOL _failedLaunch;
     FBApplicationProcess *_process;
@@ -24,13 +14,13 @@
     FBProcessManager *_processManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL exited;
-@property(readonly) BOOL failedLaunch;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) FBApplicationProcess * process;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL exited;
+@property (nonatomic, readonly) BOOL failedLaunch;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBApplicationProcess *process;
+@property (readonly) Class superclass;
 
 - (void)_begin;
 - (BOOL)_canBeInterrupted;
@@ -46,7 +36,7 @@
 - (void)dealloc;
 - (BOOL)exited;
 - (BOOL)failedLaunch;
-- (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id)arg2;
+- (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id /* block */)arg2;
 - (id)initWithApplicationProcess:(id)arg1;
 - (id)process;
 - (void)removeObserver:(id)arg1;

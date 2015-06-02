@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSIndexPath, NSString, PHAsset, PHAssetCollection;
-
 @interface _PUPhotosGridProgressInfo : NSObject {
     PHAsset *_asset;
     NSIndexPath *_cachedIndexPath;
@@ -12,11 +10,11 @@
     float _progress;
 }
 
-@property(retain) PHAsset * asset;
-@property(retain) NSIndexPath * cachedIndexPath;
-@property(retain) PHAssetCollection * collection;
-@property(retain) NSString * identifier;
-@property float progress;
+@property (nonatomic, retain) PHAsset *asset;
+@property (nonatomic, retain) NSIndexPath *cachedIndexPath;
+@property (nonatomic, retain) PHAssetCollection *collection;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) float progress;
 
 - (void).cxx_destruct;
 - (id)asset;

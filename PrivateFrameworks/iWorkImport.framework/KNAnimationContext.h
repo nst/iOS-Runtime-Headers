@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, KNAnimationRegistryWithFallbacks, TSDCapabilities;
-
 @interface KNAnimationContext : NSObject {
     CALayer *mBaseLayer;
     BOOL mBaseLayerVisible;
@@ -53,18 +51,18 @@
     float mViewScale;
 }
 
-@property(readonly) CALayer * baseLayer;
-@property(getter=isBaseLayerVisible,readonly) BOOL baseLayerVisible;
-@property(readonly) TSDCapabilities * capabilities;
-@property struct CGColorSpace { }* colorSpace;
-@property(readonly) float fieldOfViewInRadians;
-@property float pixelAspectRatio;
-@property(readonly) KNAnimationRegistryWithFallbacks * registry;
-@property(readonly) float showScale;
-@property(readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } slideProjectionMatrix;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } slideRect;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledSlideRect;
-@property(readonly) float viewScale;
+@property (nonatomic, readonly) CALayer *baseLayer;
+@property (getter=isBaseLayerVisible, nonatomic, readonly) BOOL baseLayerVisible;
+@property (nonatomic, readonly) TSDCapabilities *capabilities;
+@property (nonatomic) struct CGColorSpace { }*colorSpace;
+@property (nonatomic, readonly) float fieldOfViewInRadians;
+@property (nonatomic) float pixelAspectRatio;
+@property (nonatomic, readonly) KNAnimationRegistryWithFallbacks *registry;
+@property (nonatomic, readonly) float showScale;
+@property (nonatomic, readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } slideProjectionMatrix;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } slideRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledSlideRect;
+@property (nonatomic, readonly) float viewScale;
 
 - (id)baseLayer;
 - (id)capabilities;

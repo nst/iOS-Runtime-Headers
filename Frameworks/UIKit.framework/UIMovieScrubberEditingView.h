@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIImageView;
-
 @interface UIMovieScrubberEditingView : UIView {
     NSArray *_activeImages;
     NSArray *_activeNoEditImages;
@@ -16,9 +14,9 @@
     UIImageView *_rightImageView;
 }
 
-@property float edgeInset;
-@property(getter=isEditing) BOOL editing;
-@property(getter=isEnabled) BOOL enabled;
+@property (nonatomic) float edgeInset;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 
 - (float)_bounceValueForFraction:(float)arg1;
 - (id)_handleImages;

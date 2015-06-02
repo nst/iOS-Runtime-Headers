@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUINavigationBarContext, SKUINavigationPaletteView, SKUIPaletteViewElement, SKUIViewElementLayoutContext;
-
 @interface SKUINavigationPaletteController : SKUINavigationBarSectionController {
     SKUINavigationBarContext *_navigationBarContext;
     SKUINavigationPaletteView *_paletteView;

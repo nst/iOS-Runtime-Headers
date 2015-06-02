@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUReadWriteQueue;
-
 @interface OITSUConcurrentCache : OITSUCache {
     OITSUReadWriteQueue *mReadWriteQueue;
 }
 
-@property(readonly) OITSUReadWriteQueue * readWriteQueue;
+@property (nonatomic, readonly) OITSUReadWriteQueue *readWriteQueue;
 
 - (void)addEntriesFromDictionary:(id)arg1;
 - (unsigned int)count;

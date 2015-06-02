@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSRecursiveLock, NSString;
-
 @interface PFUbiquityGlobalObjectIDCache : NSObject {
     NSString *_localPeerID;
     NSMutableDictionary *_peerIDToEntityNameToPrimaryKey;
@@ -11,8 +9,8 @@
     NSString *_storeName;
 }
 
-@property(retain) NSString * localPeerID;
-@property(retain) NSString * storeName;
+@property (nonatomic, retain) NSString *localPeerID;
+@property (nonatomic, retain) NSString *storeName;
 
 + (id)stringValueFromArray:(id)arg1 atIndexDescribedByStringNumber:(id)arg2;
 

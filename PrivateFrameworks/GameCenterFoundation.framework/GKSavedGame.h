@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSDate, NSString, NSURL;
-
 @interface GKSavedGame : NSObject <NSCopying> {
     NSString *_deviceName;
     NSURL *_fileURL;
@@ -11,17 +9,17 @@
     NSString *_name;
 }
 
-@property(retain) NSString * deviceName;
-@property(retain) NSURL * fileURL;
-@property(retain) NSDate * modificationDate;
-@property(retain) NSString * name;
+@property (retain) NSString *deviceName;
+@property (retain) NSURL *fileURL;
+@property (retain) NSDate *modificationDate;
+@property (retain) NSString *name;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
-- (void)loadDataWithCompletionHandler:(id)arg1;
+- (void)loadDataWithCompletionHandler:(id /* block */)arg1;
 - (id)modificationDate;
 - (id)name;
 - (void)setDeviceName:(id)arg1;

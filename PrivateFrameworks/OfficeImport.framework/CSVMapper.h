@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, NSMutableArray, NSString;
-
 @interface CSVMapper : CMMapper {
     CMArchiveManager *mArchiver;
     unsigned int mColumnCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSCountedSet, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSAppPurchaseHistoryDatabase, SSDownloadManager, SSSoftwareUpdatesStore;
-
 @interface SKUIItemStateCenter : NSObject <SSDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _appInstallRestricted;
@@ -25,15 +23,15 @@
     BOOL _runningInStoreDemoMode;
 }
 
-@property(readonly) SSSoftwareUpdatesStore * appUpdatesStore;
-@property(getter=isApplicationInstallRestricted,readonly) BOOL applicationInstallRestricted;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isGratisEligible,readonly) BOOL gratisEligible;
-@property(readonly) unsigned int hash;
-@property(readonly) int parentalControlsRank;
-@property(getter=isRunningInStoreDemoMode,readonly) BOOL runningInStoreDemoMode;
-@property(readonly) Class superclass;
+@property (readonly) SSSoftwareUpdatesStore *appUpdatesStore;
+@property (getter=isApplicationInstallRestricted, readonly) BOOL applicationInstallRestricted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isGratisEligible, nonatomic, readonly) BOOL gratisEligible;
+@property (readonly) unsigned int hash;
+@property (readonly) int parentalControlsRank;
+@property (getter=isRunningInStoreDemoMode, readonly) BOOL runningInStoreDemoMode;
+@property (readonly) Class superclass;
 
 + (id)defaultCenter;
 
@@ -42,7 +40,7 @@
 - (id)_appUpdatesStore;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (id)_copyItemsStatesForLibraryItems:(id)arg1;
-- (void)_enumerateAvailableItemsForLibraryItems:(id)arg1 usingBlock:(id)arg2;
+- (void)_enumerateAvailableItemsForLibraryItems:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_fireFinishLoadBlocksIfNecessary;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_newPurchaseWithItem:(id)arg1 offer:(id)arg2;
@@ -53,7 +51,7 @@
 - (void)_notifyObserversOfRestrictionsChange;
 - (void)_notifyObserversOfStateChange:(id)arg1;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
-- (void)_performPurchases:(id)arg1 withClientContext:(id)arg2 completionBlock:(id)arg3;
+- (void)_performPurchases:(id)arg1 withClientContext:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)_purchaseHistoryDatabase;
 - (void)_reloadAppUpdatesStore;
 - (void)_reloadDownloadManager;
@@ -84,9 +82,9 @@
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)endObservingLibraryItems:(id)arg1;
-- (void)findLibraryItemsForContentIdentifiers:(id)arg1 options:(id)arg2 completionBlock:(id)arg3;
-- (void)finishLoadingWithCompletionBlock:(id)arg1;
-- (void)getUpdatesWithCompletionBlock:(id)arg1;
+- (void)findLibraryItemsForContentIdentifiers:(id)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)finishLoadingWithCompletionBlock:(id /* block */)arg1;
+- (void)getUpdatesWithCompletionBlock:(id /* block */)arg1;
 - (id)gratisEligibleItemIdentifiers;
 - (id)init;
 - (BOOL)isApplicationInstallRestricted;
@@ -95,16 +93,16 @@
 - (BOOL)isRunningInStoreDemoMode;
 - (id)metricsActionTypeForItem:(id)arg1;
 - (int)parentalControlsRank;
-- (id)performActionForItem:(id)arg1 clientContext:(id)arg2 completionBlock:(id)arg3;
-- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
-- (id)performActionForItem:(id)arg1 withCompletionBlock:(id)arg2;
+- (id)performActionForItem:(id)arg1 clientContext:(id)arg2 completionBlock:(id /* block */)arg3;
+- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
+- (id)performActionForItem:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)performActionForLibraryItem:(id)arg1;
-- (void)purchaseItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
-- (void)purchaseItems:(id)arg1 withClientContext:(id)arg2 completionBlock:(id)arg3;
-- (void)purchaseItems:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)purchaseTone:(id)arg1 withProperties:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
+- (void)purchaseItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)purchaseItems:(id)arg1 withClientContext:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)purchaseItems:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)purchaseTone:(id)arg1 withProperties:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)reloadFromServer;
-- (void)reloadFromServerWithCompletionBlock:(id)arg1;
+- (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadGratisEligibilityWithBundleIdentifiers:(id)arg1 clientContext:(id)arg2;
 - (void)reloadMediaLibrary:(id)arg1;
 - (void)removeMediaLibrary:(id)arg1;

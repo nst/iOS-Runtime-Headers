@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentAuthorizationParam : NSObject {
-}
+@interface PKPaymentAuthorizationParam : NSObject
 
 + (id)param;
 

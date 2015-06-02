@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, UIColor, UITabBarItem, UIViewController;
-
 @interface SKUITabBarItem : NSObject <NSCopying> {
     BOOL _alwaysCreatesRootViewController;
     int _barTintStyle;
@@ -16,15 +14,15 @@
     UIColor *_userInterfaceTintColor;
 }
 
-@property BOOL alwaysCreatesRootViewController;
-@property int barTintStyle;
-@property(retain) UIViewController * customRootViewController;
-@property(copy) NSString * metricsIdentifier;
-@property(copy) NSURL * rootURL;
-@property(retain) Class rootViewControllerClass;
-@property(readonly) NSString * tabIdentifier;
-@property(retain) UITabBarItem * underlyingTabBarItem;
-@property(retain) UIColor * userInterfaceTintColor;
+@property (nonatomic) BOOL alwaysCreatesRootViewController;
+@property (nonatomic) int barTintStyle;
+@property (nonatomic, retain) UIViewController *customRootViewController;
+@property (nonatomic, copy) NSString *metricsIdentifier;
+@property (nonatomic, copy) NSURL *rootURL;
+@property (nonatomic, retain) Class rootViewControllerClass;
+@property (nonatomic, readonly) NSString *tabIdentifier;
+@property (nonatomic, retain) UITabBarItem *underlyingTabBarItem;
+@property (nonatomic, retain) UIColor *userInterfaceTintColor;
 
 - (void).cxx_destruct;
 - (BOOL)alwaysCreatesRootViewController;

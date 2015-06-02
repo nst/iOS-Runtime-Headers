@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSObject<OS_dispatch_source>;
-
 @interface VKMemoryObserver : NSObject {
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     SEL _selector;

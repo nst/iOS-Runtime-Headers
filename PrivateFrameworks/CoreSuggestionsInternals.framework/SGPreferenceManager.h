@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSObject<OS_dispatch_queue>, NSUserDefaults;
-
 @interface SGPreferenceManager : NSObject {
     NSObject<OS_dispatch_queue> *_settingsUpdateQueue;
     NSUserDefaults *_suggestionsDefaults;
@@ -13,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)registerBlock:(id)arg1;
+- (void)registerBlock:(id /* block */)arg1;
 
 @end

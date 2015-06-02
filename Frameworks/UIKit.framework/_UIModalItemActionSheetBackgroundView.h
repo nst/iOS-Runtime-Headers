@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIModalItemActionSheetBackgroundView : _UIModalItemBackgroundView {
-}
+@interface _UIModalItemActionSheetBackgroundView : _UIModalItemBackgroundView
 
 @end

@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableDropShadow : TSDDropShadow {
-}
+@interface TSDMutableDropShadow : TSDDropShadow
 
-@property float angle;
-@property struct CGColor { }* color;
-@property(getter=isEnabled) BOOL enabled;
-@property float offset;
-@property float opacity;
-@property float radius;
+@property (nonatomic) float angle;
+@property (nonatomic) struct CGColor { }*color;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) float offset;
+@property (nonatomic) float opacity;
+@property (nonatomic) float radius;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAngle:(float)arg1;

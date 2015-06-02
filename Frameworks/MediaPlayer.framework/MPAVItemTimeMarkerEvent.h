@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem, MPTimeMarker;
-
 @interface MPAVItemTimeMarkerEvent : NSObject {
     MPAVItem *_AVItem;
     MPTimeMarker *_URLMarker;
@@ -12,11 +10,11 @@
     MPTimeMarker *_closedCaptionMarker;
 }
 
-@property(retain) MPAVItem * AVItem;
-@property(retain) MPTimeMarker * URLMarker;
-@property(retain) MPTimeMarker * artworkMarker;
-@property(retain) MPTimeMarker * chapterMarker;
-@property(retain) MPTimeMarker * closedCaptionMarker;
+@property (nonatomic, retain) MPAVItem *AVItem;
+@property (nonatomic, retain) MPTimeMarker *URLMarker;
+@property (nonatomic, retain) MPTimeMarker *artworkMarker;
+@property (nonatomic, retain) MPTimeMarker *chapterMarker;
+@property (nonatomic, retain) MPTimeMarker *closedCaptionMarker;
 
 - (void).cxx_destruct;
 - (id)AVItem;

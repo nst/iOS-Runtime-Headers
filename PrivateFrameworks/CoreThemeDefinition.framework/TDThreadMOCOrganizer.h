@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CoreThemeDocument, NSThread;
-
 @interface TDThreadMOCOrganizer : NSObject {
     CoreThemeDocument *document;
     NSThread *mainThread;

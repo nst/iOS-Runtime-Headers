@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSObject<MFDeviceDriver>, OITSUColor;
-
 @interface MFDeviceContext : NSObject <NSCopying> {
     int m_arcDirection;
     OITSUColor *m_bkColour;

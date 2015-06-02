@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMWebKitCSSTransformValue : DOMCSSValueList {
-}
+@interface DOMWebKitCSSTransformValue : DOMCSSValueList
 
-@property(readonly) unsigned short operationType;
+@property (readonly) unsigned short operationType;
 
 - (unsigned short)operationType;
 

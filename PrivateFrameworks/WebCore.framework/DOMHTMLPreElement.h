@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLPreElement : DOMHTMLElement {
-}
+@interface DOMHTMLPreElement : DOMHTMLElement
 
 @property int width;
 @property BOOL wrap;

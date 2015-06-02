@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-@class JSContext;
-
 @interface JSValue : NSObject {
     JSContext *_context;
     struct OpaqueJSValue { } *m_value;
 }
 
-@property(readonly) JSContext * context;
+@property (readonly) JSContext *context;
+
+// Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
 
 + (SEL)selectorForStructToValue:(const char *)arg1;
 + (SEL)selectorForValueToStruct:(const char *)arg1;
@@ -27,11 +27,8 @@
 + (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inContext:(id)arg2;
 + (id)valueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(id)arg2;
 + (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithTransform3D:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
 + (id)valueWithUInt32:(unsigned int)arg1 inContext:(id)arg2;
 + (id)valueWithUndefinedInContext:(id)arg1;
-+ (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
-+ (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
 
 - (struct OpaqueJSValue { }*)JSValueRef;
 - (id)callWithArguments:(id)arg1;
@@ -74,11 +71,18 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toRect;
 - (struct CGSize { float x1; float x2; })toSize;
 - (id)toString;
-- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toTransform3D;
 - (unsigned int)toUInt32;
-- (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
-- (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
 - (id)valueAtIndex:(unsigned int)arg1;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
++ (id)valueWithTransform3D:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
++ (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
++ (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
+
+- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toTransform3D;
+- (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
+- (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
 
 @end

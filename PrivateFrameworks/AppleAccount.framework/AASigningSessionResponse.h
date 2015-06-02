@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData;
-
 @interface AASigningSessionResponse : AAResponse {
     NSData *_sessionData;
 }
 
-@property(retain) NSData * sessionData;
+@property (nonatomic, retain) NSData *sessionData;
 
 - (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

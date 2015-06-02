@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MPHCZTransportControls : MPTransportControls {
-}
+@interface MPHCZTransportControls : MPTransportControls
 
 - (id)buttonImageForPart:(unsigned long long)arg1;
 - (void)layoutSubviews;

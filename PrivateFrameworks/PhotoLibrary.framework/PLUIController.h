@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSDictionary, UITransitionView;
-
 @interface PLUIController : NSObject {
     NSDictionary *_configuration;
     id _delegate;

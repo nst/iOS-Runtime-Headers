@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyBestIDSValueQuery, NSArray;
-
 @interface ABContactAddFavoriteAction : ABPropertyAction <ABPropertyBestIDSValueQueryDelegate> {
     BOOL _allowFaceTimeAudioFavorites;
     BOOL _allowFaceTimeFavorites;
@@ -14,13 +12,13 @@
     BOOL _hasFaceTimeFavorite;
 }
 
-@property BOOL allowFaceTimeAudioFavorites;
-@property BOOL allowFaceTimeFavorites;
-@property BOOL allowPhoneFavorites;
-@property(retain) ABPropertyBestIDSValueQuery * bestFaceTimeQuery;
-@property(retain) NSArray * filteredPhoneItems;
-@property BOOL hasFaceTimeAudioFavorite;
-@property BOOL hasFaceTimeFavorite;
+@property (nonatomic) BOOL allowFaceTimeAudioFavorites;
+@property (nonatomic) BOOL allowFaceTimeFavorites;
+@property (nonatomic) BOOL allowPhoneFavorites;
+@property (nonatomic, retain) ABPropertyBestIDSValueQuery *bestFaceTimeQuery;
+@property (nonatomic, retain) NSArray *filteredPhoneItems;
+@property (nonatomic) BOOL hasFaceTimeAudioFavorite;
+@property (nonatomic) BOOL hasFaceTimeFavorite;
 
 - (void)_filterFavoritedItems;
 - (void)_queryFaceTimeStatus;

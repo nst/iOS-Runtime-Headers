@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDocumentPasswordField : UITextField {
-}
+@interface UIDocumentPasswordField : UITextField
 
 @end

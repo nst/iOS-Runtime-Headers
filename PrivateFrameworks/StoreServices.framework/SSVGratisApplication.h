@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSNumber, NSString;
-
 @interface SSVGratisApplication : NSObject <NSCopying> {
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
@@ -11,11 +9,11 @@
     NSString *_itemIdentifier;
 }
 
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleVersion;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(copy) NSNumber * externalVersionIdentifier;
-@property(copy) NSString * itemIdentifier;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, copy) NSNumber *externalVersionIdentifier;
+@property (nonatomic, copy) NSString *itemIdentifier;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

@@ -6,7 +6,7 @@
     id _internalLogItem;
 }
 
-@property(readonly) double timestamp;
+@property (nonatomic, readonly) double timestamp;
 
 + (BOOL)supportsSecureCoding;
 

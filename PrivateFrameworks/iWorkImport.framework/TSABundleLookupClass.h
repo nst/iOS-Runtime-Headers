@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSABundleLookupClass : NSObject {
-}
+@interface TSABundleLookupClass : NSObject
 
 @end

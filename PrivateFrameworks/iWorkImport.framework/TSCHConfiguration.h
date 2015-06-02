@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSSPropertyMap;
-
 @interface TSCHConfiguration : NSObject {
     BOOL mDisableHighQualityRenderingIfNecessary;
     BOOL mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
@@ -20,20 +18,20 @@
     BOOL mUse3DFillFor3DChartFallback;
 }
 
-@property(readonly) TSSPropertyMap * appSpecificPropertyOverrides;
-@property BOOL disableHighQualityRenderingIfNecessary;
-@property BOOL exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
-@property Class multiDataChartOptionsControllerBuildSupportClass;
-@property(copy) NSString * saveChartStyleHelpKey;
-@property BOOL shouldForceDiscreteGraphicsFor3D;
-@property BOOL showMessageOnSelection;
-@property BOOL supports3DFillDataEmbeddingRecovery;
-@property BOOL supportsChartDataEditor;
-@property BOOL supportsChartRangeEditingMode;
-@property BOOL supportsNumberFormatSameAsSource;
-@property BOOL supportsTextBackground;
-@property BOOL supportsTextWrapping;
-@property BOOL use3DFillFor3DChartFallback;
+@property (readonly) TSSPropertyMap *appSpecificPropertyOverrides;
+@property (nonatomic) BOOL disableHighQualityRenderingIfNecessary;
+@property (nonatomic) BOOL exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+@property (nonatomic) Class multiDataChartOptionsControllerBuildSupportClass;
+@property (nonatomic, copy) NSString *saveChartStyleHelpKey;
+@property (nonatomic) BOOL shouldForceDiscreteGraphicsFor3D;
+@property (nonatomic) BOOL showMessageOnSelection;
+@property (nonatomic) BOOL supports3DFillDataEmbeddingRecovery;
+@property (nonatomic) BOOL supportsChartDataEditor;
+@property (nonatomic) BOOL supportsChartRangeEditingMode;
+@property (nonatomic) BOOL supportsNumberFormatSameAsSource;
+@property (nonatomic) BOOL supportsTextBackground;
+@property (nonatomic) BOOL supportsTextWrapping;
+@property (nonatomic) BOOL use3DFillFor3DChartFallback;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

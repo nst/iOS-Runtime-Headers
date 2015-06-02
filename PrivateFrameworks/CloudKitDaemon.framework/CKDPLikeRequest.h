@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLikedId;
-
 @interface CKDPLikeRequest : PBRequest <NSCopying> {
     CKDPLikedId *_identifier;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(retain) CKDPLikedId * identifier;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, retain) CKDPLikedId *identifier;
 
 + (id)options;
 

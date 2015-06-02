@@ -8,9 +8,9 @@
     BOOL _replaceBlurs;
 }
 
-@property int blurReplacementMode;
-@property unsigned int colorBoxSize;
-@property BOOL replaceBlurs;
+@property (nonatomic) int blurReplacementMode;
+@property (nonatomic) unsigned int colorBoxSize;
+@property (nonatomic) BOOL replaceBlurs;
 
 + (id)settingsControllerModule;
 

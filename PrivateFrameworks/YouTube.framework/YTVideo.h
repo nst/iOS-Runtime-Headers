@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSCalendarDate, NSMutableArray, NSString, NSURL;
-
 @interface YTVideo : NSObject {
     NSString *_author;
     int _batchStatus;
@@ -30,11 +24,7 @@
     NSString *_restrictedCountries;
     NSString *_shortID;
     NSArray *_tags;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _thumbnailProxyBlock;
-
+    id /* block */ _thumbnailProxyBlock;
     NSURL *_thumbnailURL;
     NSString *_title;
     NSString *_unplayable;
@@ -80,7 +70,7 @@
 - (BOOL)isPlayable;
 - (BOOL)isProcessing;
 - (struct CGImage { }*)largeThumbnailLoadIfAbsent:(BOOL)arg1;
-- (void)loadThumbnailWithCallback:(id)arg1;
+- (void)loadThumbnailWithCallback:(id /* block */)arg1;
 - (unsigned int)numDislikes;
 - (unsigned int)numLikes;
 - (unsigned int)numberOfViews;

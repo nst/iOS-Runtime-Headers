@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString, NSURL;
-
 @interface CardDAVUpdateMeCardTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
     NSURL *_cardURL;
     NSURL *_homeURL;
 }
 
-@property(readonly) NSURL * cardURL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSURL * homeURL;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *cardURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSURL *homeURL;
+@property (readonly) Class superclass;
 
 - (id)_newPropPatchTask;
 - (id)cardURL;

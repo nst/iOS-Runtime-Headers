@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OCPZipPackage;
-
 @interface OCXReader : OCDEncryptedReader {
     OCPZipPackage *mZipPackage;
 }
 
-@property(retain) OCPZipPackage * zipPackage;
+@property (nonatomic, retain) OCPZipPackage *zipPackage;
 
 - (void)dealloc;
 - (bool)isBinaryReader;

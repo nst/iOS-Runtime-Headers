@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGNicknames : NSObject {
-}
+@interface SGNicknames : NSObject
 
 + (id)nicknamesForName:(id)arg1;
 

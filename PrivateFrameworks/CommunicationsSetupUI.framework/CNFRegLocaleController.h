@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class NSArray, NSString, PSSpecifier;
-
 @interface CNFRegLocaleController : CNFRegFirstRunController <CNFRegRegionChooserDelegate> {
     PSSpecifier *_countryFieldSpecifier;
     NSString *_currentPhoneValue;
@@ -17,13 +15,13 @@
     id _regionListChangeObserver;
 }
 
-@property(copy) NSString * currentPhoneValue;
-@property(copy) NSString * currentRegionID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * regionData;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *currentPhoneValue;
+@property (nonatomic, copy) NSString *currentRegionID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *regionData;
+@property (readonly) Class superclass;
 
 - (void)_buildCountryFieldSpecifierCache:(id)arg1;
 - (void)_buildPhoneNumberSpecifierCache:(id)arg1;

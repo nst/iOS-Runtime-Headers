@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUEmphasizedText, SKUICircleProgressIndicator, UIImageView, UILabel;
-
 @interface RUSearchStationTableViewCell : RUTableViewCell {
     SKUICircleProgressIndicator *_activityIndicator;
     UIImageView *_imageView;
@@ -14,10 +12,10 @@
     UILabel *_titleLabel;
 }
 
-@property BOOL showActivityIndicator;
-@property BOOL showsArtwork;
-@property(copy) MPUEmphasizedText * stationDescriptionEmphasizedText;
-@property(copy) MPUEmphasizedText * stationNameEmphasizedText;
+@property (nonatomic) BOOL showActivityIndicator;
+@property (nonatomic) BOOL showsArtwork;
+@property (nonatomic, copy) MPUEmphasizedText *stationDescriptionEmphasizedText;
+@property (nonatomic, copy) MPUEmphasizedText *stationNameEmphasizedText;
 
 + (id)_emphasizedSubtitleLabelAttributesForTraitCollection:(id)arg1;
 + (id)_emphasizedTextColor;

@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVSampleBufferDisplayLayerInternal, NSError, NSString;
-
 @interface AVSampleBufferDisplayLayer : CALayer <AVMediaDataRequesterConsumer, AVQueuedSampleBufferRendering, AVQueuedSampleBufferRenderingInternal> {
     AVSampleBufferDisplayLayerInternal *_sampleBufferDisplayLayerInternal;
 }
 
-@property(retain) struct OpaqueCMTimebase { }* controlTimebase;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
-@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
-@property(readonly) int status;
-@property(readonly) Class superclass;
-@property(retain,readonly) struct OpaqueCMTimebase { }* timebase;
-@property(copy) NSString * videoGravity;
+@property (retain) struct OpaqueCMTimebase { }*controlTimebase;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
+@property (getter=isReadyForMoreMediaData, readonly) BOOL readyForMoreMediaData;
+@property (nonatomic, readonly) int status;
+@property (readonly) Class superclass;
+@property (readonly, retain) struct OpaqueCMTimebase { }*timebase;
+@property (copy) NSString *videoGravity;
 
 + (BOOL)automaticallyNotifiesObserversOfError;
 + (BOOL)automaticallyNotifiesObserversOfStatus;
@@ -27,7 +25,7 @@
 - (void)_addFigVideoQueueListeners;
 - (long)_createVideoQueue;
 - (void)_didFinishSuspension:(id)arg1;
-- (void)_forBoundsAnimations:(id)arg1 applyBlock:(id)arg2;
+- (void)_forBoundsAnimations:(id)arg1 applyBlock:(id /* block */)arg2;
 - (long)_initializeTimebases;
 - (void)_refreshAboveHighWaterLevel;
 - (void)_removeFigVideoQueueListeners;
@@ -52,7 +50,7 @@
 - (id)init;
 - (BOOL)isReadyForMoreMediaData;
 - (BOOL)outputObscuredDueToInsufficientExternalProtection;
-- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (BOOL)setRenderSynchronizer:(id)arg1;

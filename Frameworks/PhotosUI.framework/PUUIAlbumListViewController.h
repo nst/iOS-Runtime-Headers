@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, UIBarButtonItem;
-
 @interface PUUIAlbumListViewController : PUAlbumListViewController {
     NSArray *__imagePickerMediaTypes;
     UIBarButtonItem *_imagePickerCancelButton;
 }
 
-@property(setter=_setImagePickerMediaTypes:,copy) NSArray * _imagePickerMediaTypes;
+@property (setter=_setImagePickerMediaTypes:, nonatomic, copy) NSArray *_imagePickerMediaTypes;
 
 - (void).cxx_destruct;
 - (int)_defaultAlbumListFilter;

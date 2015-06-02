@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface NSMutableParagraphStyleStub : NSObject {
-}
+@interface NSMutableParagraphStyleStub : NSObject
 
 @end

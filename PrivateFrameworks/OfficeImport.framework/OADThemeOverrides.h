@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADThemeOverrides : OADBaseStylesBase {
-}
+@interface OADThemeOverrides : OADBaseStylesBase
 
 - (void)setColorScheme:(id)arg1;
 - (void)setFontScheme:(id)arg1;

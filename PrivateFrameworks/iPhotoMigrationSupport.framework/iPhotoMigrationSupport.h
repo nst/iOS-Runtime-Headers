@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-@class PLPhotoLibrary;
-
 @interface iPhotoMigrationSupport : NSObject {
     int _inFlightMigrationCount;
     PLPhotoLibrary *_pl_library;
 }
 
-@property(readonly) BOOL migrationWasInterrupted;
-@property(setter=setPL_library:,retain) PLPhotoLibrary * pl_library;
+@property (nonatomic, readonly) BOOL migrationWasInterrupted;
+@property (setter=setPL_library:, nonatomic, retain) PLPhotoLibrary *pl_library;
 
 + (id)sharedInstance;
 
@@ -27,13 +25,13 @@
 - (void)_incrementInFlightMigrationCount;
 - (BOOL)_isMigrating;
 - (id)_migratediPhotoDir;
-- (void)_migrateiPhotoLibraryWorkerWithProgressHandler:(id)arg1 iPhotoLibraryDir:(id)arg2;
+- (void)_migrateiPhotoLibraryWorkerWithProgressHandler:(id /* block */)arg1 iPhotoLibraryDir:(id)arg2;
 - (id)_preMigratediPhotoDir;
 - (id)_premigratedProjectUuidMapTable;
 - (BOOL)_validateUuid:(id)arg1;
 - (void)addKeywordIfDoesNotExist:(id)arg1 forAsset:(id)arg2;
-- (void)checkForUnmigratediPhotoContentWithCompletion:(id)arg1;
-- (void)fireMigrationOfiPhotoLibraryWithProgressHandler:(id)arg1;
+- (void)checkForUnmigratediPhotoContentWithCompletion:(id /* block */)arg1;
+- (void)fireMigrationOfiPhotoLibraryWithProgressHandler:(id /* block */)arg1;
 - (BOOL)migrationWasInterrupted;
 - (id)pl_library;
 - (void)setCaption:(id)arg1 forAsset:(id)arg2;

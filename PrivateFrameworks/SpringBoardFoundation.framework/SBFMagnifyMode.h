@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString;
-
 @interface SBFMagnifyMode : NSObject <NSCopying> {
     NSString *_name;
     struct CGSize { 
@@ -13,9 +11,9 @@
     float _zoomFactor;
 }
 
-@property(retain) NSString * name;
-@property struct CGSize { float x1; float x2; } size;
-@property float zoomFactor;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) float zoomFactor;
 
 + (id)currentMagnifyMode;
 + (id)magnifyModeWithSize:(struct CGSize { float x1; float x2; })arg1 name:(id)arg2;

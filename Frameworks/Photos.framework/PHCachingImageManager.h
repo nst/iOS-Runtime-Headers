@@ -6,9 +6,9 @@
     BOOL _allowsCachingHighQualityImages;
 }
 
-@property BOOL allowsCachingHighQualityImages;
+@property (nonatomic) BOOL allowsCachingHighQualityImages;
 
-- (id)_fireCloudDownloadOfImageForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 completionHandler:(id)arg4;
+- (id)_fireCloudDownloadOfImageForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg3 completionHandler:(id /* block */)arg4;
 - (id)_highPriorityRequestWaitGroup;
 - (BOOL)allowsCachingHighQualityImages;
 - (id)approximateThumbnailIndexesForAssets:(id)arg1;

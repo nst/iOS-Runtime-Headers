@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface PLThrottleTimer : NSObject {
     SEL _action;
     BOOL _isInvalid;
@@ -17,10 +15,10 @@
     unsigned int _timeoutId;
 }
 
-@property(readonly) SEL action;
-@property(readonly) double maxTimeout;
-@property(readonly) id target;
-@property(readonly) double timeout;
+@property (nonatomic, readonly) SEL action;
+@property (nonatomic, readonly) double maxTimeout;
+@property (nonatomic, readonly) id target;
+@property (nonatomic, readonly) double timeout;
 
 - (void)_inqFireWithTimeout:(BOOL)arg1 timeoutId:(unsigned int)arg2 maxTimeout:(BOOL)arg3 maxTimeoutId:(unsigned int)arg4;
 - (void)_inqScheduleTimeout:(BOOL)arg1 maxTimeout:(BOOL)arg2;

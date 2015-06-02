@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBlipRef;
-
 @interface OADCustomPattern : OADPattern {
     OADBlipRef *mBlipRef;
     BOOL mIsBlipRefOverridden;

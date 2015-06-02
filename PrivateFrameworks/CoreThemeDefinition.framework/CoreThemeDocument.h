@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class <TDAssetManagementDelegate>, <TDCustomAssetProvider>, NSManagedObjectModel, NSMutableDictionary, NSString, NSURL, TDHistorian, TDThreadMOCOrganizer;
-
 @interface CoreThemeDocument : TDPersistentDocument {
     <TDAssetManagementDelegate> *_assetManagementDelegate;
     int _capabilities;
@@ -21,11 +19,11 @@
     NSString *pathToRepresentedDocument;
 }
 
-@property <TDAssetManagementDelegate> * assetManagementDelegate;
-@property <TDCustomAssetProvider> * customAssetProvider;
-@property int documentCapabilities;
-@property(copy) NSString * pathToRepresentedDocument;
-@property(readonly) NSURL * themeBitSourceURL;
+@property (nonatomic) <TDAssetManagementDelegate> *assetManagementDelegate;
+@property (nonatomic) <TDCustomAssetProvider> *customAssetProvider;
+@property (nonatomic) int documentCapabilities;
+@property (copy) NSString *pathToRepresentedDocument;
+@property (nonatomic, readonly) NSURL *themeBitSourceURL;
 
 + (void)_addThemeDocument:(id)arg1;
 + (id)_imageAssetURLsByCopyingFileURLs:(id)arg1 toManagedLocationAtURL:(id)arg2 error:(id*)arg3;
@@ -116,7 +114,7 @@
 - (id)defaultBaseFileNameForSchemaRendition:(id)arg1 withPartDefinition:(id)arg2;
 - (id)defaultPNGFileNameForSchemaRendition:(id)arg1 withPartDefinition:(id)arg2;
 - (id)defaultPathComponentsForPartDefinition:(id)arg1;
-- (void)deleteNamedAssets:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)deleteNamedAssets:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)deleteObject:(id)arg1;
 - (void)deleteObjects:(id)arg1;
 - (void)deleteProduction:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
@@ -138,10 +136,10 @@
 - (id)idiomWithIdentifier:(int)arg1;
 - (void)importColorsFromURL:(id)arg1 valuesOnly:(BOOL)arg2 getUnusedColorNames:(id*)arg3;
 - (void)importCursorsFromURL:(id)arg1 getUnusedImportedCursors:(id*)arg2 getUnupdatedCursors:(id*)arg3;
-- (void)importCustomAssetsWithImportInfos:(id)arg1 completionHandler:(id)arg2;
-- (void)importNamedAssetsFromFileURLs:(id)arg1 referenceFiles:(BOOL)arg2 completionHandler:(id)arg3;
-- (void)importNamedAssetsWithImportInfos:(id)arg1 completionHandler:(id)arg2;
-- (void)importNamedAssetsWithImportInfos:(id)arg1 referenceFiles:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)importCustomAssetsWithImportInfos:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)importNamedAssetsFromFileURLs:(id)arg1 referenceFiles:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)importNamedAssetsWithImportInfos:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)importNamedAssetsWithImportInfos:(id)arg1 referenceFiles:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (id)initWithType:(id)arg1 error:(id*)arg2;

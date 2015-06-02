@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class SGSimpleMailMessage;
-
 @interface SGMailMessage : NSObject <SGObject> {
     SGSimpleMailMessage *_value;
 }
 
-@property(readonly) SGSimpleMailMessage * value;
+@property (nonatomic, readonly) SGSimpleMailMessage *value;
 
 + (id)mailMessageWithValue:(id)arg1;
 + (BOOL)supportsSecureCoding;

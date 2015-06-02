@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIWriteAReviewTemplateViewElement : SKUIViewElement {
     long long _itemIdentifier;
     NSString *_reviewMetadataURLString;
 }
 
-@property(readonly) long long itemIdentifier;
-@property(readonly) NSString * reviewMetadataURLString;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) NSString *reviewMetadataURLString;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

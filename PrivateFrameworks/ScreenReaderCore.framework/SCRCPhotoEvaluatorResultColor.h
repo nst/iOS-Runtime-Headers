@@ -8,9 +8,9 @@
     float _redLevel;
 }
 
-@property(readonly) float blueLevel;
-@property(readonly) float greenLevel;
-@property(readonly) float redLevel;
+@property (nonatomic, readonly) float blueLevel;
+@property (nonatomic, readonly) float greenLevel;
+@property (nonatomic, readonly) float redLevel;
 
 - (float)blueLevel;
 - (float)greenLevel;

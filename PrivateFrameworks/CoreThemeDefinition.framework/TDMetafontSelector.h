@@ -2,11 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class TDFontDefinition;
+@interface TDMetafontSelector : TDThemeConstant
 
-@interface TDMetafontSelector : TDThemeConstant {
-}
-
-@property(retain) TDFontDefinition * definition;
+@property (nonatomic, retain) TDFontDefinition *definition;
 
 @end

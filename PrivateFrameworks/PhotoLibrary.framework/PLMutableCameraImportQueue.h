@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray;
-
 @interface PLMutableCameraImportQueue : NSObject {
     NSMutableArray *_items;
 }

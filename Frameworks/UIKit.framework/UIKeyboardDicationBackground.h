@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIKeyboardDicationBackgroundGradientView;
-
 @interface UIKeyboardDicationBackground : UIView {
     UIKeyboardDicationBackgroundGradientView *_gradient;
     NSArray *_shadows;
 }
 
-@property(retain) UIKeyboardDicationBackgroundGradientView * gradient;
+@property (nonatomic, retain) UIKeyboardDicationBackgroundGradientView *gradient;
 
 - (void)dealloc;
 - (id)gradient;

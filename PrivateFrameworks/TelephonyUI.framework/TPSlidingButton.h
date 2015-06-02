@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPSlidingButtonDelegateProtocol>, NSString, UIButton, UIImageView, _UIActionSlider;
-
 @interface TPSlidingButton : UIView <_UIActionSliderDelegate> {
     _UIActionSlider *_acceptButton;
     <TPSlidingButtonDelegateProtocol> *_delegate;
@@ -12,14 +10,14 @@
     int _type;
 }
 
-@property(retain) _UIActionSlider * acceptButton;
-@property(copy,readonly) NSString * debugDescription;
-@property <TPSlidingButtonDelegateProtocol> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIImageView * dialImageView;
-@property(readonly) unsigned int hash;
-@property(retain) UIButton * sideButtonRight;
-@property(readonly) Class superclass;
+@property (retain) _UIActionSlider *acceptButton;
+@property (readonly, copy) NSString *debugDescription;
+@property <TPSlidingButtonDelegateProtocol> *delegate;
+@property (readonly, copy) NSString *description;
+@property (retain) UIImageView *dialImageView;
+@property (readonly) unsigned int hash;
+@property (retain) UIButton *sideButtonRight;
+@property (readonly) Class superclass;
 @property int type;
 
 - (struct CGSize { float x1; float x2; })_knobSize;

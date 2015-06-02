@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEONameInfo;
-
 @interface GEORouteName : PBCodable <NSCopying> {
     struct { 
         unsigned int lastZilchStitchedIndex : 1; 
@@ -12,12 +10,13 @@
     GEONameInfo *_nameInfo;
 }
 
-@property BOOL hasLastZilchStitchedIndex;
-@property(readonly) BOOL hasNameInfo;
-@property int lastZilchStitchedIndex;
-@property(retain) GEONameInfo * nameInfo;
+@property (nonatomic) BOOL hasLastZilchStitchedIndex;
+@property (nonatomic, readonly) BOOL hasNameInfo;
+@property (nonatomic) int lastZilchStitchedIndex;
+@property (nonatomic, retain) GEONameInfo *nameInfo;
 
-- (struct CGImage { }*)_mapKitImage;
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -35,5 +34,9 @@
 - (void)setLastZilchStitchedIndex:(int)arg1;
 - (void)setNameInfo:(id)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (struct CGImage { }*)_mapKitImage;
 
 @end

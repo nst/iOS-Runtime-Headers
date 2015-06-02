@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIImage;
-
 @interface _GKImageSpeechBalloonBackgroundView : UIImageView {
     UIImage *_templateImage;
     unsigned char _tipDirection;
 }
 
-@property(retain) UIImage * templateImage;
-@property unsigned char tipDirection;
+@property (nonatomic, retain) UIImage *templateImage;
+@property (nonatomic) unsigned char tipDirection;
 
 - (unsigned char)_tipDirectionForCurrentUILayoutDirection;
 - (void)dealloc;

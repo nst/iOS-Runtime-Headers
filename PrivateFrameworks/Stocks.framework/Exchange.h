@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSDate, NSString;
-
 @interface Exchange : NSObject {
     double _lastUpdateTime;
     NSString *_name;
@@ -12,11 +10,11 @@
     double _streamInterval;
 }
 
-@property(readonly) double lastUpdateTime;
-@property(copy) NSString * name;
-@property(retain) NSDate * nextOpenDate;
-@property int status;
-@property double streamInterval;
+@property (nonatomic, readonly) double lastUpdateTime;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSDate *nextOpenDate;
+@property (nonatomic) int status;
+@property (nonatomic) double streamInterval;
 
 + (id)formattedExchangeNameForName:(id)arg1;
 

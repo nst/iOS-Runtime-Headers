@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLQLDuetQuery : PLQLAccountingQuery {
-}
+@interface PLQLDuetQuery : PLQLAccountingQuery
 
 - (id)runQueryForTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 withSnapRail:(BOOL)arg2;
 

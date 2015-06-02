@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSString, NSURL;
+@interface SAStructuredDictationAddressResult : AceObject <SAAceSerializable>
 
-@interface SAStructuredDictationAddressResult : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * addressLabel;
-@property(copy) NSURL * contactId;
-@property(copy) NSString * contactName;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSData * forwardGeoProtobuf;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *addressLabel;
+@property (nonatomic, copy) NSURL *contactId;
+@property (nonatomic, copy) NSString *contactName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSData *forwardGeoProtobuf;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)structuredDictationAddressResult;
 + (id)structuredDictationAddressResultWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEORouteHypothesizerUpdaterDelegate>, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequestFeedback, GEODirectionsRouteRequest, GEOLocation, GEOMapRegion, GEORouteAttributes, GEORouteMatch, NSDate, NSLock, NSMutableArray;
-
 @interface GEORouteHypothesizerUpdater : NSObject {
     GEOMapRegion *_arrivalMapRegion;
     GEODirectionsRouteRequest *_currentRequest;
@@ -25,13 +23,13 @@
     GEOComposedWaypoint *_source;
 }
 
-@property <GEORouteHypothesizerUpdaterDelegate> * delegate;
-@property(retain) GEODirectionsRequestFeedback * feedback;
-@property(readonly) BOOL hasArrived;
-@property(readonly) BOOL isTraveling;
-@property(readonly) GEOComposedRoute * route;
-@property(readonly) GEORouteMatch * routeMatch;
-@property(readonly) double score;
+@property (nonatomic) <GEORouteHypothesizerUpdaterDelegate> *delegate;
+@property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
+@property (nonatomic, readonly) BOOL hasArrived;
+@property (nonatomic, readonly) BOOL isTraveling;
+@property (nonatomic, readonly) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEORouteMatch *routeMatch;
+@property (nonatomic, readonly) double score;
 
 - (BOOL)_checkForArrival:(id)arg1 routeMatch:(id)arg2;
 - (void)_requestNewRouteFromLocation:(id)arg1 usualRouteData:(id)arg2;

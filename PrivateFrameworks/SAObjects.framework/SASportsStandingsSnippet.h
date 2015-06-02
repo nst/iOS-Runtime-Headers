@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASportsStandingsSnippet : SASportsSnippet
 
-@interface SASportsStandingsSnippet : SASportsSnippet {
-}
-
-@property(copy) NSArray * columns;
-@property(copy) NSArray * entities;
-@property(copy) NSArray * selectedEntities;
-@property BOOL showCardinalPositions;
+@property (nonatomic, copy) NSArray *columns;
+@property (nonatomic, copy) NSArray *entities;
+@property (nonatomic, copy) NSArray *selectedEntities;
+@property (nonatomic) BOOL showCardinalPositions;
 
 + (id)standingsSnippet;
 + (id)standingsSnippetWithDictionary:(id)arg1 context:(id)arg2;

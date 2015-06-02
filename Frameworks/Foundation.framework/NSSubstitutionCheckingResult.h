@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSSubstitutionCheckingResult : NSTextCheckingResult {
     struct _NSRange { 
         unsigned int location; 

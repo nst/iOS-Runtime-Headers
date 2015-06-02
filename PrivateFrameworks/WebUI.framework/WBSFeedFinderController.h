@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSFeedFinderController : NSObject {
-}
+@interface WBSFeedFinderController : NSObject
 
 + (struct OpaqueJSScript { }*)feedFinderScriptForContext:(struct OpaqueJSContext { }*)arg1;
 

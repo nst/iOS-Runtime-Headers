@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKJSPlayerAppBridge>, IKDOMElement;
-
 @interface IKJSPlayer : IKJSObject <IKJSPlayer> {
     <IKJSPlayerAppBridge> *_appBridge;
 }
 
-@property <IKJSPlayerAppBridge> * appBridge;
-@property(readonly) IKDOMElement * currentAVMediaElement;
+@property (nonatomic) <IKJSPlayerAppBridge> *appBridge;
+@property (nonatomic, readonly) IKDOMElement *currentAVMediaElement;
 
 - (void).cxx_destruct;
 - (id)appBridge;

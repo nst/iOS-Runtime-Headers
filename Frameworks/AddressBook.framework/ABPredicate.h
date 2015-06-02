@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface ABPredicate : NSPredicate {
-}
+@interface ABPredicate : NSPredicate
 
 + (id)newQueryFromABPredicate:(id)arg1 withSortOrder:(unsigned int)arg2 addressBook:(void*)arg3 propertyIndices:(const struct __CFDictionary {}**)arg4;
 + (id)newQueryFromCompoundPredicate:(id)arg1 withSortOrder:(unsigned int)arg2 addressBook:(void*)arg3 propertyIndices:(const struct __CFDictionary {}**)arg4;

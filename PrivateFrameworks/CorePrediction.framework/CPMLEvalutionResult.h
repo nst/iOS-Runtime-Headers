@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-@class NSObject;
-
 @interface CPMLEvalutionResult : NSObject {
     unsigned int count;
     NSObject *object;

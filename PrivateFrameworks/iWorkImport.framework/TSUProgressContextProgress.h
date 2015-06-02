@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, TSUProgressContext;
-
 @interface TSUProgressContextProgress : TSUProgress {
     BOOL hasAddedProgressContextObserver;
     TSUProgressContext *mProgressContext;
     NSObject<OS_dispatch_queue> *mProgressContextObserverQueue;
 }
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)initWithProgressContext:(id)arg1;

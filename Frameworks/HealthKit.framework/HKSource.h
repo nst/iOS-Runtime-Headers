@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface HKSource : NSObject <HDCoding, NSCopying, NSSecureCoding> {
     NSString *_bundleIdentifier;
     BOOL _localDevice;
@@ -12,15 +10,17 @@
     NSString *_productType;
 }
 
-@property(readonly) NSString * bundleIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=_isLocalDevice,setter=_setLocalDevice:) BOOL localDevice;
-@property(readonly) NSString * name;
-@property(getter=_options,setter=_setOptions:) unsigned long long options;
-@property(getter=_productType,setter=_setProductType:,retain) NSString * productType;
-@property(readonly) Class superclass;
+@property (readonly) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=_isLocalDevice, setter=_setLocalDevice:, nonatomic) BOOL localDevice;
+@property (readonly) NSString *name;
+@property (getter=_options, setter=_setOptions:, nonatomic) unsigned long long options;
+@property (getter=_productType, setter=_setProductType:, nonatomic, retain) NSString *productType;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_currentSourceProductType:(BOOL)arg1;
 + (id)_generateIdentifierForAppleDevice;
@@ -29,7 +29,6 @@
 + (id)_sourceBundleIdentifierWithEntitlements:(id)arg1;
 + (id)_sourceNameWithRepresentsCurrentDevice:(BOOL)arg1 defaultSource:(BOOL)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
-+ (id)createWithCodable:(id)arg1;
 + (id)defaultSource;
 + (BOOL)supportsSecureCoding;
 
@@ -48,7 +47,6 @@
 - (void)_setOptions:(unsigned long long)arg1;
 - (void)_setProductType:(id)arg1;
 - (id)bundleIdentifier;
-- (id)codableRepresentationForSync;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -57,5 +55,11 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)createWithCodable:(id)arg1;
+
+- (id)codableRepresentationForSync;
 
 @end

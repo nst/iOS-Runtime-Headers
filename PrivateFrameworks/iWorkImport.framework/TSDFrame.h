@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSDFrameSpec;
-
 @interface TSDFrame : TSDStroke {
     struct CGSize { 
         float width; 
@@ -24,8 +17,8 @@
     float mTopHeight;
 }
 
-@property(readonly) float assetScale;
-@property(readonly) TSDFrameSpec * frameSpec;
+@property (nonatomic, readonly) float assetScale;
+@property (nonatomic, readonly) TSDFrameSpec *frameSpec;
 
 + (Class)mutableClass;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonCellLayoutManagerDelegate>, <ABStyleProvider>;
-
 @interface ABPersonCellLayoutManager : UITableViewCellLayoutManager {
     <ABPersonCellLayoutManagerDelegate> *_delegate;
     <ABStyleProvider> *_styleProvider;
 }
 
-@property <ABPersonCellLayoutManagerDelegate> * delegate;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic) <ABPersonCellLayoutManagerDelegate> *delegate;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (float)accessoryViewInsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundEndingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;

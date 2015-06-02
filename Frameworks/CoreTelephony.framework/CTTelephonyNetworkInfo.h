@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CTCarrier, NSDictionary, NSLock, NSString;
-
 @interface CTTelephonyNetworkInfo : NSObject {
     NSString *_cachedCellId;
     NSString *_cachedCurrentRadioAccessTechnology;
@@ -17,23 +11,19 @@
         struct dispatch_object_s {} *fObj; 
     } _queue;
     CTCarrier *_subscriberCellularProvider;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _subscriberCellularProviderDidUpdateNotifier;
-
+    id /* block */ _subscriberCellularProviderDidUpdateNotifier;
     struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned int x5; struct _xpc_connection_s {} *x6; } *server_connection;
     NSLock *server_lock;
 }
 
-@property(retain) NSString * cachedCellId;
-@property(retain) NSString * cachedCurrentRadioAccessTechnology;
-@property(retain) NSDictionary * cachedSignalStrength;
-@property(retain) NSString * cellId;
-@property(retain,readonly) NSString * currentRadioAccessTechnology;
+@property (retain) NSString *cachedCellId;
+@property (retain) NSString *cachedCurrentRadioAccessTechnology;
+@property (retain) NSDictionary *cachedSignalStrength;
+@property (nonatomic, retain) NSString *cellId;
+@property (nonatomic, readonly, retain) NSString *currentRadioAccessTechnology;
 @property BOOL monitoringCellId;
-@property(retain) CTCarrier * subscriberCellularProvider;
-@property(copy) id subscriberCellularProviderDidUpdateNotifier;
+@property (retain) CTCarrier *subscriberCellularProvider;
+@property (nonatomic, copy) id /* block */ subscriberCellularProviderDidUpdateNotifier;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -65,11 +55,11 @@
 - (void)setCellId:(id)arg1;
 - (void)setMonitoringCellId:(BOOL)arg1;
 - (void)setSubscriberCellularProvider:(id)arg1;
-- (void)setSubscriberCellularProviderDidUpdateNotifier:(id)arg1;
+- (void)setSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;
 - (BOOL)setUpServerConnection;
 - (id)signalStrength;
 - (id)subscriberCellularProvider;
-- (id)subscriberCellularProviderDidUpdateNotifier;
+- (id /* block */)subscriberCellularProviderDidUpdateNotifier;
 - (BOOL)updateNetworkInfoAndShouldNotifyClient:(BOOL*)arg1;
 - (void)updateRadioAccessTechnology:(id)arg1;
 - (void)updateSignalStrength:(id)arg1;

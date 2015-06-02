@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class <CLIndoorDelegateProtocol>, NSError, NSString;
-
 @interface IndoorProtocolProxy : NSObject <CLIndoorDelegateProtocol, CLIndoorDelegateProtocolInternal> {
     <CLIndoorDelegateProtocol> *_delegate;
     NSError *_shutdownReason;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CLIndoorDelegateProtocol> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSError * shutdownReason;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CLIndoorDelegateProtocol> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSError *shutdownReason;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;

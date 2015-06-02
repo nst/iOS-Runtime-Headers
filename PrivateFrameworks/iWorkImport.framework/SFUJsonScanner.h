@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCharacterSet, NSString;
-
 @interface SFUJsonScanner : NSObject {
     unsigned short *mCharacters;
     NSCharacterSet *mDecimalDigitCharacterSet;

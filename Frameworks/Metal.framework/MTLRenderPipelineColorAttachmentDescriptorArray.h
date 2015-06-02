@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLRenderPipelineColorAttachmentDescriptor;
-
 @interface MTLRenderPipelineColorAttachmentDescriptorArray : NSObject {
-    MTLRenderPipelineColorAttachmentDescriptor *_descriptors[8];
+    MTLRenderPipelineColorAttachmentDescriptor *_descriptors;
 }
 
 - (id)_descriptorAtIndex:(unsigned int)arg1;

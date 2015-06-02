@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSArray;
-
 @interface AutoEncodeDecodeObject : NSObject <NSCopying> {
     NSArray *_keysToEncode;
 }
 
-@property(retain) NSArray * keysToEncode;
+@property (nonatomic, retain) NSArray *keysToEncode;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

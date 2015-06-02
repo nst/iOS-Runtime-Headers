@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, OCPPackageProperties, OCPPackageRelationshipCollection;
-
 @interface OCPPackage : NSObject {
     NSMutableDictionary *mContentTypeOverrides;
     NSMutableDictionary *mDefaultContentTypes;

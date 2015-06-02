@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImage, UIImageView;
-
 @interface PUReviewScrubberCell : UICollectionViewCell {
     UIImageView *__checkmarkImageView;
     UIImageView *__suggestedImageView;
@@ -14,13 +12,13 @@
     BOOL _wantsSmallSuggestionIndicators;
 }
 
-@property(readonly) UIImageView * _checkmarkImageView;
-@property(readonly) UIImageView * _suggestedImageView;
-@property(readonly) UIImageView * _thumbnailImageView;
-@property(getter=isFavorite) BOOL favorite;
-@property(retain) UIImage * image;
-@property(getter=isSuggested) BOOL suggested;
-@property BOOL wantsSmallSuggestionIndicators;
+@property (nonatomic, readonly) UIImageView *_checkmarkImageView;
+@property (nonatomic, readonly) UIImageView *_suggestedImageView;
+@property (nonatomic, readonly) UIImageView *_thumbnailImageView;
+@property (getter=isFavorite, nonatomic) BOOL favorite;
+@property (nonatomic, retain) UIImage *image;
+@property (getter=isSuggested, nonatomic) BOOL suggested;
+@property (nonatomic) BOOL wantsSmallSuggestionIndicators;
 
 - (void).cxx_destruct;
 - (id)_checkmarkImageView;

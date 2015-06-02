@@ -2,45 +2,35 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPAVController, MPAVItem, MPTransitionController, MPViewController, NSString, UIView;
-
 @interface MPViewController : UIViewController <MPAVControllerNode, MPControllerProtocol> {
-    unsigned int _appearing : 1;
+    unsigned int _appearing;
     id _delegate;
     BOOL _idleTimerDisabled;
     int _interfaceOrientation;
     MPAVItem *_item;
-    unsigned int _observesApplicationSuspendResumeEventsOnly : 1;
+    unsigned int _observesApplicationSuspendResumeEventsOnly;
     MPAVController *_player;
     int _playerLockedCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _popViewControllerHandler;
-
+    id /* block */ _popViewControllerHandler;
     MPTransitionController *_pushedTransitionController;
     MPViewController *_pushedViewController;
     BOOL _registeredForPlayerNotifications;
-    unsigned int _showOverlayWhileAppearingDisabled : 1;
+    unsigned int _showOverlayWhileAppearingDisabled;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=idleTimerDisabled,setter=setIdleTimerDisabled:) BOOL idleTimerDisabled;
-@property(retain) MPAVItem * item;
-@property BOOL observesApplicationSuspendResumeEventsOnly;
-@property int orientation;
-@property(retain) MPAVController * player;
-@property(copy) id popViewControllerHandler;
-@property BOOL registeredForPlayerNotifications;
-@property(readonly) Class superclass;
-@property(retain,readonly) UIView * view;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=idleTimerDisabled, setter=setIdleTimerDisabled:, nonatomic) BOOL idleTimerDisabled;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic) BOOL observesApplicationSuspendResumeEventsOnly;
+@property (nonatomic) int orientation;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic, copy) id /* block */ popViewControllerHandler;
+@property (nonatomic) BOOL registeredForPlayerNotifications;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (BOOL)_canReloadView;
@@ -72,7 +62,7 @@
 - (int)orientation;
 - (id)player;
 - (id)popViewControllerAnimated:(BOOL)arg1;
-- (id)popViewControllerHandler;
+- (id /* block */)popViewControllerHandler;
 - (void)pushViewController:(id)arg1 withTransition:(id)arg2;
 - (void)registerForPlayerNotifications;
 - (BOOL)registeredForPlayerNotifications;
@@ -85,7 +75,7 @@
 - (void)setOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setPlayer:(id)arg1;
-- (void)setPopViewControllerHandler:(id)arg1;
+- (void)setPopViewControllerHandler:(id /* block */)arg1;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
 - (void)setView:(id)arg1;
 - (void)startTicking;

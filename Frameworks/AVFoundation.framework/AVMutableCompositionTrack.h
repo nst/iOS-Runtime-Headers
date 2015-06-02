@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableCompositionTrackInternal, NSArray, NSString;
-
 @interface AVMutableCompositionTrack : AVCompositionTrack {
     AVMutableCompositionTrackInternal *_mutablePriv;
 }
 
-@property(copy) NSString * extendedLanguageTag;
-@property(copy) NSString * languageCode;
-@property int naturalTimeScale;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property float preferredVolume;
-@property(copy) NSArray * segments;
+@property (nonatomic, copy) NSString *extendedLanguageTag;
+@property (nonatomic, copy) NSString *languageCode;
+@property (nonatomic) int naturalTimeScale;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic) float preferredVolume;
+@property (nonatomic, copy) NSArray *segments;
 
 - (void)_setTrackReaderPropertyValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (int)alternateGroupID;

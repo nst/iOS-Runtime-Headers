@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSTermsAndConditions : NSObject <NSCopying> {
     BOOL _requiresAuthentication;
     NSString *_text;
@@ -11,10 +9,10 @@
     long long _versionID;
 }
 
-@property NSString * currentText;
-@property long long currentVersionIdentifier;
-@property(readonly) BOOL requiresAuthentication;
-@property(getter=isUserAccepted) BOOL userAccepted;
+@property (nonatomic) NSString *currentText;
+@property (nonatomic) long long currentVersionIdentifier;
+@property (nonatomic, readonly) BOOL requiresAuthentication;
+@property (getter=isUserAccepted, nonatomic) BOOL userAccepted;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentText;

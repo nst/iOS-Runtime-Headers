@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMTop : NSObject {
-}
+@interface CMTop : NSObject
 
 + (id)documentWithContents:(id)arg1 ofReaderClass:(Class)arg2 archiver:(id)arg3 properties:(id)arg4;
 

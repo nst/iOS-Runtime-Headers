@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSData, NSDictionary, NSMutableArray, NSString, NSURL;
-
 @interface HSRequest : NSObject {
     NSString *_action;
     NSDictionary *_arguments;
@@ -15,13 +13,13 @@
     NSURL *_responseDataDestinationFileURL;
 }
 
-@property(readonly) NSString * action;
-@property(copy) NSData * bodyData;
-@property(getter=isConcurrent,readonly) BOOL concurrent;
-@property BOOL excludeSessionIDFromURL;
-@property int method;
-@property(copy) NSURL * responseDataDestinationFileURL;
-@property(readonly) double timeoutInterval;
+@property (nonatomic, readonly) NSString *action;
+@property (nonatomic, copy) NSData *bodyData;
+@property (getter=isConcurrent, nonatomic, readonly) BOOL concurrent;
+@property (nonatomic) BOOL excludeSessionIDFromURL;
+@property (nonatomic) int method;
+@property (nonatomic, copy) NSURL *responseDataDestinationFileURL;
+@property (nonatomic, readonly) double timeoutInterval;
 
 + (id)request;
 

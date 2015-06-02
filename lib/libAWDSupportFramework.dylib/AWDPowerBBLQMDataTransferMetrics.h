@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerBBLQMDataTransferMetrics : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -17,11 +15,11 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasTimestamp;
-@property(retain) NSMutableArray * lQMBytes;
-@property(readonly) unsigned int* lQMTransitionCntBuckets;
-@property(readonly) unsigned int lQMTransitionCntBucketsCount;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSMutableArray *lQMBytes;
+@property (nonatomic, readonly) unsigned int*lQMTransitionCntBuckets;
+@property (nonatomic, readonly) unsigned int lQMTransitionCntBucketsCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addLQMBytes:(id)arg1;
 - (void)addLQMTransitionCntBuckets:(unsigned int)arg1;

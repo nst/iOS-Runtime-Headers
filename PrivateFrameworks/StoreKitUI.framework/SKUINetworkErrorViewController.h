@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUINetworkErrorDelegate>, NSError, NSString, SKUIClientContext, SKUIProductPageHeaderViewController, UIScrollView;
-
 @interface SKUINetworkErrorViewController : UIViewController <SKUIProductPageChildViewController> {
     SKUIClientContext *_clientContext;
     <SKUINetworkErrorDelegate> *_delegate;
     NSError *_error;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIProductPageHeaderViewController * headerViewController;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
 
 + (BOOL)canDisplayError:(id)arg1;
 

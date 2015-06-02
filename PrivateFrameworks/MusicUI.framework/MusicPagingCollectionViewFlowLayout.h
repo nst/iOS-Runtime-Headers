@@ -8,9 +8,9 @@
     int _numberOfItemsPerPage;
 }
 
-@property float distanceFromCenterForMinimumAlpha;
-@property float minimumCellAlpha;
-@property int numberOfItemsPerPage;
+@property (nonatomic) float distanceFromCenterForMinimumAlpha;
+@property (nonatomic) float minimumCellAlpha;
+@property (nonatomic) int numberOfItemsPerPage;
 
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (float)distanceFromCenterForMinimumAlpha;

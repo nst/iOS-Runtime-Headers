@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface RadioGetTracksResponse : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDate *_expirationDate;
@@ -11,14 +9,14 @@
     NSMutableDictionary *_tracksByStationKey;
 }
 
-@property(copy,readonly) NSDictionary * dialogDictionary;
-@property(retain) NSDate * expirationDate;
-@property(readonly) unsigned long long globalVersion;
-@property(copy,readonly) NSDictionary * responseDictionary;
-@property(readonly) BOOL shouldIncrementSkipCount;
-@property(readonly) NSDate * skipDate;
-@property(readonly) int tracklistActionType;
-@property(copy,readonly) NSArray * unusedKBSyncStrings;
+@property (nonatomic, readonly, copy) NSDictionary *dialogDictionary;
+@property (nonatomic, retain) NSDate *expirationDate;
+@property (nonatomic, readonly) unsigned long long globalVersion;
+@property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
+@property (nonatomic, readonly) BOOL shouldIncrementSkipCount;
+@property (nonatomic, readonly) NSDate *skipDate;
+@property (nonatomic, readonly) int tracklistActionType;
+@property (nonatomic, readonly, copy) NSArray *unusedKBSyncStrings;
 
 - (void).cxx_destruct;
 - (id)_tracksForStationKey:(id)arg1;

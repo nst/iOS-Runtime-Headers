@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecListStyleBoolArray : TSSSpec {
-}
+@interface TSWPSpecListStyleBoolArray : TSSSpec
 
 - (id)getUnsetSpec;
 

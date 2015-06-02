@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABFMFActionButtonsDelegate>, ABPersonTableActionDataSource, ABPersonTableTinyActionCell, ABPersonTableViewDataSource, ABStyleProvider, ABUIPerson, NSString;
-
 @interface ABPersonTableViewActionsDelegate : NSObject <ABPersonTableActionDelegate, ABPersonTableTinyActionDelegate, UIActionSheetDelegate> {
     <ABFMFActionButtonsDelegate> *_FMFActionButtonsDelegate;
     ABPersonTableActionDataSource *_actionDataSource;
@@ -18,19 +16,19 @@
     ABPersonTableTinyActionCell *_tinyActionCell;
 }
 
-@property <ABFMFActionButtonsDelegate> * FMFActionButtonsDelegate;
-@property(readonly) ABPersonTableActionDataSource * actionDataSource;
-@property BOOL actionShouldPickHighlightedValue;
-@property ABPersonTableViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int highlightedValueIdentifier;
-@property(retain) ABUIPerson * highlightedValuePerson;
-@property int highlightedValueProperty;
-@property(retain) ABStyleProvider * styleProvider;
-@property(readonly) Class superclass;
-@property(readonly) ABPersonTableTinyActionCell * tinyActionCell;
+@property (nonatomic) <ABFMFActionButtonsDelegate> *FMFActionButtonsDelegate;
+@property (nonatomic, readonly) ABPersonTableActionDataSource *actionDataSource;
+@property (nonatomic) BOOL actionShouldPickHighlightedValue;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int highlightedValueIdentifier;
+@property (nonatomic, retain) ABUIPerson *highlightedValuePerson;
+@property (nonatomic) int highlightedValueProperty;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) ABPersonTableTinyActionCell *tinyActionCell;
 
 - (id)FMFActionButtonsDelegate;
 - (unsigned int)_sectionForAction:(id)arg1;

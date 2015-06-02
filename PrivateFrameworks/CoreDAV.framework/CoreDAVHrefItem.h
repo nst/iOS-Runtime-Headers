@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL;
-
 @interface CoreDAVHrefItem : CoreDAVLeafItem {
     NSURL *_baseURL;
     int _writeStyle;
 }
 
-@property(retain) NSURL * baseURL;
-@property int writeStyle;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic) int writeStyle;
 
 - (id)baseURL;
 - (void)dealloc;

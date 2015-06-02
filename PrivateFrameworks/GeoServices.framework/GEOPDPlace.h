@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDPlace : PBCodable <NSCopying> {
     NSMutableArray *_components;
     struct { 
@@ -18,15 +16,15 @@
     int _status;
 }
 
-@property(retain) NSMutableArray * components;
-@property BOOL hasMuid;
-@property BOOL hasPreferredMuid;
-@property BOOL hasResultProviderId;
-@property BOOL hasStatus;
-@property unsigned long long muid;
-@property unsigned long long preferredMuid;
-@property int resultProviderId;
-@property int status;
+@property (nonatomic, retain) NSMutableArray *components;
+@property (nonatomic) BOOL hasMuid;
+@property (nonatomic) BOOL hasPreferredMuid;
+@property (nonatomic) BOOL hasResultProviderId;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) unsigned long long muid;
+@property (nonatomic) unsigned long long preferredMuid;
+@property (nonatomic) int resultProviderId;
+@property (nonatomic) int status;
 
 + (id)attributionForPlaceData:(id)arg1 type:(int)arg2;
 + (id)failedPlaceData;

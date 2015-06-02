@@ -9,7 +9,7 @@
     } _textEditingPixelAlignmentOffset;
 }
 
-@property struct CGPoint { float x1; float x2; } textEditingPixelAlignmentOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } textEditingPixelAlignmentOffset;
 
 - (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
 - (BOOL)canRenderSelectionPath:(id)arg1;

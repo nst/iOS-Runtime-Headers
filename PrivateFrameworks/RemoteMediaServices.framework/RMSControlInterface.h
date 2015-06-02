@@ -8,9 +8,9 @@
     BOOL _supportsVolumeControl;
 }
 
-@property BOOL supportsDirectionalControl;
-@property BOOL supportsSpeakerSelection;
-@property BOOL supportsVolumeControl;
+@property (nonatomic) BOOL supportsDirectionalControl;
+@property (nonatomic) BOOL supportsSpeakerSelection;
+@property (nonatomic) BOOL supportsVolumeControl;
 
 - (id)initWithProtobuf:(id)arg1;
 - (id)protobuf;

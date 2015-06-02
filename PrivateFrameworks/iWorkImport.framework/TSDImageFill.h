@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, TSPData, TSUColor, TSUFlushableCachedImage;
-
 @interface TSDImageFill : TSDFill <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
     struct CGSize { 
         float width; 
@@ -30,14 +23,14 @@
     TSUColor *mTintColor;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } fillSize;
-@property(retain,readonly) TSPData * imageData;
-@property(readonly) BOOL interpretsUntaggedImageDataAsGeneric;
-@property(retain,readonly) TSPData * originalImageData;
-@property(readonly) NSString * presetKind;
-@property(readonly) float scale;
-@property int technique;
-@property(copy,readonly) TSUColor * tintColor;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } fillSize;
+@property (nonatomic, readonly, retain) TSPData *imageData;
+@property (nonatomic, readonly) BOOL interpretsUntaggedImageDataAsGeneric;
+@property (nonatomic, readonly, retain) TSPData *originalImageData;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic) int technique;
+@property (nonatomic, readonly, copy) TSUColor *tintColor;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)imageFillDataFromURL:(id)arg1 withContext:(id)arg2 error:(id*)arg3;

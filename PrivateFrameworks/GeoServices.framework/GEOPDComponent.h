@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAttribution, GEOPDSource, NSMutableArray;
-
 @interface GEOPDComponent : PBCodable <NSCopying> {
     GEOPDAttribution *_attribution;
     int _cacheControl;
@@ -29,28 +27,28 @@
     NSMutableArray *_versionDomains;
 }
 
-@property(retain) GEOPDAttribution * attribution;
-@property int cacheControl;
-@property(readonly) BOOL hasAttribution;
-@property BOOL hasCacheControl;
-@property(readonly) BOOL hasSource;
-@property BOOL hasStartIndex;
-@property BOOL hasStatus;
-@property BOOL hasTimestampFirstSeen;
-@property BOOL hasTtl;
-@property BOOL hasType;
-@property BOOL hasValuesAvailable;
-@property BOOL hasVersion;
-@property(retain) GEOPDSource * source;
-@property int startIndex;
-@property int status;
-@property double timestampFirstSeen;
-@property unsigned int ttl;
-@property int type;
-@property(retain) NSMutableArray * values;
-@property int valuesAvailable;
-@property unsigned int version;
-@property(retain) NSMutableArray * versionDomains;
+@property (nonatomic, retain) GEOPDAttribution *attribution;
+@property (nonatomic) int cacheControl;
+@property (nonatomic, readonly) BOOL hasAttribution;
+@property (nonatomic) BOOL hasCacheControl;
+@property (nonatomic, readonly) BOOL hasSource;
+@property (nonatomic) BOOL hasStartIndex;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestampFirstSeen;
+@property (nonatomic) BOOL hasTtl;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasValuesAvailable;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic, retain) GEOPDSource *source;
+@property (nonatomic) int startIndex;
+@property (nonatomic) int status;
+@property (nonatomic) double timestampFirstSeen;
+@property (nonatomic) unsigned int ttl;
+@property (nonatomic) int type;
+@property (nonatomic, retain) NSMutableArray *values;
+@property (nonatomic) int valuesAvailable;
+@property (nonatomic) unsigned int version;
+@property (nonatomic, retain) NSMutableArray *versionDomains;
 
 - (void)addValue:(id)arg1;
 - (void)addVersionDomain:(id)arg1;

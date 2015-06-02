@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CPCharSequence, CPZoneProfile, NSArray, NSMutableArray;
-
 @interface CPZone : CPRegion <CPGraphicUser> {
     double area;
     NSMutableArray *backgroundGraphics;
@@ -50,10 +43,10 @@
 - (BOOL)isStraddleZone;
 - (BOOL)isZone;
 - (id)leftGuides;
-- (BOOL)mapToWordPairs:(int (*)())arg1 passing:(void*)arg2;
-- (BOOL)mapToWordPairsWithIndex:(int (*)())arg1 passing:(void*)arg2;
-- (BOOL)mapToWords:(int (*)())arg1 passing:(void*)arg2;
-- (BOOL)mapToWordsWithIndex:(int (*)())arg1 passing:(void*)arg2;
+- (BOOL)mapToWordPairs:(int (*)arg1 passing:(void*)arg2;
+- (BOOL)mapToWordPairsWithIndex:(int (*)arg1 passing:(void*)arg2;
+- (BOOL)mapToWords:(int (*)arg1 passing:(void*)arg2;
+- (BOOL)mapToWordsWithIndex:(int (*)arg1 passing:(void*)arg2;
 - (long)neighborZOrder;
 - (struct CGColor { }*)newBackgroundColor;
 - (struct CGPoint { float x1; float x2; }*)outerVertices;

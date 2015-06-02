@@ -2,36 +2,34 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFModernAddressAtomDelegate>, MFModernAtomView, NSString, UIFont;
-
 @interface MFModernAddressAtom : UIControl <MFModernAtomViewResembling> {
     void *_addressBook;
-    unsigned int _addressIsPhoneNumber : 1;
+    unsigned int _addressIsPhoneNumber;
     MFModernAtomView *_atomView;
     <MFModernAddressAtomDelegate> *_delegate;
     NSString *_displayString;
     NSString *_fullAddress;
     int _identifier;
-    unsigned int _isDisplayStringFromAddressBook : 1;
+    unsigned int _isDisplayStringFromAddressBook;
     unsigned int _maxWidth;
     void *_person;
-    unsigned int _updatedABPerson : 1;
+    unsigned int _updatedABPerson;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } baselinePoint;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(readonly) unsigned int hash;
-@property BOOL hidesVIPIndicator;
-@property BOOL isPrimaryAddressAtom;
-@property unsigned int presentationOptions;
-@property float scale;
-@property BOOL separatorHidden;
-@property BOOL separatorIsLeftAligned;
-@property int separatorStyle;
-@property(readonly) Class superclass;
-@property(retain) UIFont * titleFont;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesVIPIndicator;
+@property (nonatomic) BOOL isPrimaryAddressAtom;
+@property (nonatomic) unsigned int presentationOptions;
+@property (nonatomic) float scale;
+@property (nonatomic) BOOL separatorHidden;
+@property (nonatomic) BOOL separatorIsLeftAligned;
+@property (nonatomic) int separatorStyle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIFont *titleFont;
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void*)arg2 useAbbreviatedName:(BOOL)arg3;
 

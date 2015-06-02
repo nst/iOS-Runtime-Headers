@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMDrawableStyle, CMTableGridInfo, OADOrientedBounds, OADTable;
-
 @interface PMTableMapper : CMMapper {
     OADOrientedBounds *mBounds;
     CMTableGridInfo *mGrid;

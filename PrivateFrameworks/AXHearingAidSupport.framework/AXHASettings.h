@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class ACAccountStore, NSDictionary, NSMutableDictionary, NSMutableSet;
-
 @interface AXHASettings : NSObject {
     ACAccountStore *_accountStore;
     NSMutableSet *_registeredNotifications;
@@ -11,14 +9,14 @@
     NSMutableDictionary *_updateBlocks;
 }
 
-@property BOOL allowHearingAidControlOnLockScreen;
-@property BOOL independentHearingAidSettings;
-@property(retain) NSDictionary * pairedHearingAids;
-@property(retain) NSMutableSet * registeredNotifications;
-@property BOOL shouldStreamToLeftAid;
-@property BOOL shouldStreamToRightAid;
-@property(retain) NSMutableSet * synchronizePreferences;
-@property(retain) NSMutableDictionary * updateBlocks;
+@property (nonatomic) BOOL allowHearingAidControlOnLockScreen;
+@property (nonatomic) BOOL independentHearingAidSettings;
+@property (nonatomic, retain) NSDictionary *pairedHearingAids;
+@property (nonatomic, retain) NSMutableSet *registeredNotifications;
+@property (nonatomic) BOOL shouldStreamToLeftAid;
+@property (nonatomic) BOOL shouldStreamToRightAid;
+@property (nonatomic, retain) NSMutableSet *synchronizePreferences;
+@property (nonatomic, retain) NSMutableDictionary *updateBlocks;
 
 + (void)initialize;
 + (id)sharedInstance;
@@ -39,7 +37,7 @@
 - (BOOL)isPairedWithFakeHearingAids;
 - (id)pairedHearingAids;
 - (void)pushLocalHearingAidsToiCloud;
-- (void)registerUpdateBlock:(id)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
+- (void)registerUpdateBlock:(id /* block */)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (id)registeredNotifications;
 - (void)setAllowHearingAidControlOnLockScreen:(BOOL)arg1;
 - (void)setIndependentHearingAidSettings:(BOOL)arg1;

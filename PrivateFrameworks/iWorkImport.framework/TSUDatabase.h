@@ -10,8 +10,8 @@
     struct sqlite3_stmt { } *_rollbackTransactionStatement;
 }
 
-@property(readonly) struct sqlite3 { }* _sqliteDatabase;
-@property(readonly) BOOL readonly;
+@property (nonatomic, readonly) struct sqlite3 { }*_sqliteDatabase;
+@property (nonatomic, readonly) BOOL readonly;
 
 - (id)_initWithPath:(id)arg1 readonly:(BOOL)arg2 error:(id*)arg3;
 - (struct sqlite3 { }*)_sqliteDatabase;

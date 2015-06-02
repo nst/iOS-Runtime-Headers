@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAUIAppPunchOut;
+@interface SAGKSnippet : SAUISnippet
 
-@interface SAGKSnippet : SAUISnippet {
-}
-
-@property(retain) SAUIAppPunchOut * appPunchOut;
-@property(copy) NSArray * pods;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, retain) SAUIAppPunchOut *appPunchOut;
+@property (nonatomic, copy) NSArray *pods;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;

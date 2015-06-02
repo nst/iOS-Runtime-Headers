@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIRenditionKey, NSString;
-
 @interface CUINamedImage : NSObject {
     struct _cuiniproperties { 
         unsigned int isVectorBased : 1; 
@@ -21,25 +19,26 @@
     unsigned int _storageRef;
 }
 
-@property(readonly) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
-@property(readonly) int blendMode;
-@property(readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(readonly) int exifOrientation;
-@property(readonly) BOOL hasAlignmentInformation;
-@property(readonly) BOOL hasSliceInformation;
-@property(readonly) struct CGImage { }* image;
-@property(readonly) int imageType;
-@property(readonly) BOOL isStructured;
-@property(readonly) BOOL isTemplate;
-@property(readonly) BOOL isVectorBased;
-@property(copy) NSString * name;
-@property(readonly) float opacity;
-@property(readonly) int resizingMode;
-@property float scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) int templateRenderingMode;
+@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } alignmentEdgeInsets;
+@property (nonatomic, readonly) int blendMode;
+@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, readonly) int exifOrientation;
+@property (nonatomic, readonly) BOOL hasAlignmentInformation;
+@property (nonatomic, readonly) BOOL hasSliceInformation;
+@property (nonatomic, readonly) struct CGImage { }*image;
+@property (nonatomic, readonly) int imageType;
+@property (nonatomic, readonly) BOOL isStructured;
+@property (nonatomic, readonly) BOOL isTemplate;
+@property (nonatomic, readonly) BOOL isVectorBased;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) int resizingMode;
+@property (nonatomic) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) int templateRenderingMode;
 
-- (id)UIImage;
+// Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
+
 - (void)_cacheRenditionProperties;
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;
@@ -77,6 +76,10 @@
 - (int)sizeClassVertical;
 - (unsigned int)subtype;
 - (int)templateRenderingMode;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)UIImage;
 - (id)traitCollection;
 
 @end

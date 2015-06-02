@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoAppRegistry.framework/NanoAppRegistry
  */
 
-@class NSArray, NSNumber, NSUUID;
-
 @interface NARWorkspaceInfo : NSObject <NSSecureCoding> {
     NSUUID *_UUID;
     NSArray *_applications;
     NSNumber *_sequenceNumber;
 }
 
-@property(readonly) NSUUID * UUID;
-@property(readonly) NSArray * applications;
-@property(readonly) NSNumber * sequenceNumber;
+@property (nonatomic, readonly) NSUUID *UUID;
+@property (nonatomic, readonly) NSArray *applications;
+@property (nonatomic, readonly) NSNumber *sequenceNumber;
 
 + (BOOL)supportsSecureCoding;
 

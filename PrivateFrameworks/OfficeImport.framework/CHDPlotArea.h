@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDAxesCollection, CHDChartTypesCollection, OADGraphicProperties;
-
 @interface CHDPlotArea : NSObject {
     CHDAxesCollection *mAxes;
     bool mCategoryAxesReversed;

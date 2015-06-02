@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSArray, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
-
 @interface AppleSpell : NSObject {
     NSMutableArray *_altBundleURLs;
     NSMutableDictionary *_autocorrections;

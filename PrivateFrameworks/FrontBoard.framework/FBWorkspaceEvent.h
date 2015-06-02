@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWorkspaceEvent : BSEventQueueEvent {
-}
+@interface FBWorkspaceEvent : BSEventQueueEvent
 
 - (void)execute;
 

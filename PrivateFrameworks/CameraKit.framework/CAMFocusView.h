@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAKeyframeAnimation, NSArray, UIColor;
-
 @interface CAMFocusView : UIView {
     double _animationStartTime;
     CAKeyframeAnimation *_boundsAnimation;
@@ -18,13 +16,13 @@
     int _suspendCount;
 }
 
-@property(retain) UIColor * color;
-@property(readonly) double lastFadeOutTime;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, readonly) double lastFadeOutTime;
 
 + (double)minimumTimeBeforeFadeOut;
 
 - (void).cxx_destruct;
-- (void)_animateAlpha:(float)arg1 withDuration:(double)arg2 completion:(id)arg3;
+- (void)_animateAlpha:(float)arg1 withDuration:(double)arg2 completion:(id /* block */)arg3;
 - (void)_cancelDelayedDim;
 - (void)_cancelDelayedFadeOut;
 - (void)_cancelDelayedPauseContentsAnimation;

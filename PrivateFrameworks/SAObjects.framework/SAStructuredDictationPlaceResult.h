@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSString;
+@interface SAStructuredDictationPlaceResult : AceObject <SAAceSerializable>
 
-@interface SAStructuredDictationPlaceResult : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * placeResultType;
-@property(copy) NSData * resultData;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *placeResultType;
+@property (nonatomic, copy) NSData *resultData;
+@property (readonly) Class superclass;
 
 + (id)structuredDictationPlaceResult;
 + (id)structuredDictationPlaceResultWithDictionary:(id)arg1 context:(id)arg2;

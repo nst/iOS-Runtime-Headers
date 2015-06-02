@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TNUIStateDelegate>, NSArray, NSMutableDictionary, TNSheetSelection, TSKSelectionPath, TSURetainedPointerKeyDictionary;
-
 @interface TNUIState : NSObject <NSCopying> {
     NSMutableDictionary *mChartUIState;
     <TNUIStateDelegate> *mDelegate;
@@ -38,27 +31,27 @@
     BOOL mShowsComments;
 }
 
-@property(readonly) NSMutableDictionary * chartUIState;
-@property <TNUIStateDelegate> * delegate;
-@property struct CGSize { float x1; float x2; } desktopScreenSize;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } desktopWindowFrame;
-@property int documentMode;
-@property(readonly) BOOL hasPreviousVisibleRect;
-@property(readonly) BOOL hasVisibleRect;
-@property int inspectorPaneViewMode;
-@property(getter=isInspectorPaneVisible) BOOL inspectorPaneVisible;
-@property(readonly) struct CGPoint { float x1; float x2; } previousScrollPosition;
-@property(readonly) float previousViewScale;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousVisibleRect;
-@property BOOL removedAllQuickCalcFunctions;
-@property(readonly) struct CGPoint { float x1; float x2; } scrollPosition;
-@property(copy) NSArray * selectedQuickCalcFunctions;
-@property(retain) TSKSelectionPath * selectionPath;
-@property(readonly) TNSheetSelection * sheetSelection;
-@property BOOL showCanvasGuides;
-@property BOOL showsComments;
-@property(readonly) float viewScale;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (nonatomic, readonly) NSMutableDictionary *chartUIState;
+@property (nonatomic) <TNUIStateDelegate> *delegate;
+@property (nonatomic) struct CGSize { float x1; float x2; } desktopScreenSize;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } desktopWindowFrame;
+@property (nonatomic) int documentMode;
+@property (nonatomic, readonly) BOOL hasPreviousVisibleRect;
+@property (nonatomic, readonly) BOOL hasVisibleRect;
+@property (nonatomic) int inspectorPaneViewMode;
+@property (getter=isInspectorPaneVisible, nonatomic) BOOL inspectorPaneVisible;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } previousScrollPosition;
+@property (nonatomic, readonly) float previousViewScale;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previousVisibleRect;
+@property (nonatomic) BOOL removedAllQuickCalcFunctions;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } scrollPosition;
+@property (nonatomic, copy) NSArray *selectedQuickCalcFunctions;
+@property (nonatomic, retain) TSKSelectionPath *selectionPath;
+@property (nonatomic, readonly) TNSheetSelection *sheetSelection;
+@property (nonatomic) BOOL showCanvasGuides;
+@property (nonatomic) BOOL showsComments;
+@property (nonatomic, readonly) float viewScale;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 
 + (float)maximumViewScale;
 + (float)minimumViewScale;
@@ -76,7 +69,7 @@
 - (struct CGSize { float x1; float x2; })desktopScreenSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desktopWindowFrame;
 - (int)documentMode;
-- (void)enumerateSheetUIStatesWithBlock:(id)arg1;
+- (void)enumerateSheetUIStatesWithBlock:(id /* block */)arg1;
 - (BOOL)hasPreviousVisibleRect;
 - (BOOL)hasVisibleRect;
 - (unsigned int)hash;

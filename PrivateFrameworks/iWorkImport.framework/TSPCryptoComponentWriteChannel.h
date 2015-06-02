@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPComponentWriteChannel>, <TSPMutableCryptoInfo>, NSString;
-
 @interface TSPCryptoComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
     char *_buffer;
     struct { 
@@ -16,10 +14,10 @@
     <TSPComponentWriteChannel> *_writeChannel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

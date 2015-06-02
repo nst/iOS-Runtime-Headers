@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPFootnotePropertyStrings : NSObject {
-}
+@interface TPFootnotePropertyStrings : NSObject
 
 + (id)insertStringForFootnoteKind:(int)arg1;
 + (id)stringForFootnoteFormat:(int)arg1;

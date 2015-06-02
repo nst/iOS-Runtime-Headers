@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFLibraryContentIndexDataSource>, NSMutableArray, NSMutableIndexSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, _MFContentIndexWrapper, _MFLibraryContentIndexResultsCache;
-
 @interface MFLibraryContentIndex : NSObject {
     _MFContentIndexWrapper *_contentIndexWrapper;
     <MFLibraryContentIndexDataSource> *_dataSource;
@@ -13,15 +11,15 @@
     NSString *_indexName;
     NSObject<OS_dispatch_queue> *_indexingQueue;
     int _invalidated;
-    unsigned int _isForeground : 1;
+    unsigned int _isForeground;
     NSString *_path;
     NSMutableArray *_pendingIndexableItems;
     NSMutableIndexSet *_pendingRemovals;
-    unsigned int _processPendingChangesScheduled : 1;
+    unsigned int _processPendingChangesScheduled;
     NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _refreshing : 1;
+    unsigned int _refreshing;
     _MFLibraryContentIndexResultsCache *_resultsCache;
-    unsigned int _shouldReopen : 1;
+    unsigned int _shouldReopen;
     double _startNonIdle;
     int _state;
     unsigned int _throttledBatchSize;

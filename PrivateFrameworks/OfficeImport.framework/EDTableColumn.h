@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, EDString;
-
 @interface EDTableColumn : NSObject {
     unsigned int mDataAreaDxfIndex;
     unsigned int mHeaderRowDxfIndex;

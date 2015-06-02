@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSData, NSDictionary, NSMutableDictionary, NSString, NSURL;
-
 @interface CalDAVAddManagedAttachmentsTaskGroup : CoreDAVTaskGroup {
     NSDictionary *_attachments;
     NSDictionary *_contentTypes;
@@ -20,18 +18,18 @@
     NSString *_updatedScheduleTag;
 }
 
-@property(retain) NSDictionary * attachments;
-@property(retain) NSDictionary * contentTypes;
-@property(retain) NSMutableDictionary * filenamesToServerLocation;
-@property BOOL hadPreconditionFailure;
-@property(retain) NSDictionary * postFailureSizes;
-@property(retain) NSString * previousETag;
-@property(retain) NSString * previousScheduleTag;
-@property(retain) NSURL * resourceURL;
-@property int state;
-@property(retain) NSString * updatedETag;
-@property(retain) NSData * updatedResourcePayload;
-@property(retain) NSString * updatedScheduleTag;
+@property (nonatomic, retain) NSDictionary *attachments;
+@property (nonatomic, retain) NSDictionary *contentTypes;
+@property (nonatomic, retain) NSMutableDictionary *filenamesToServerLocation;
+@property (nonatomic) BOOL hadPreconditionFailure;
+@property (nonatomic, retain) NSDictionary *postFailureSizes;
+@property (nonatomic, retain) NSString *previousETag;
+@property (nonatomic, retain) NSString *previousScheduleTag;
+@property (nonatomic, retain) NSURL *resourceURL;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSString *updatedETag;
+@property (nonatomic, retain) NSData *updatedResourcePayload;
+@property (nonatomic, retain) NSString *updatedScheduleTag;
 
 - (void)_fetchUpdatedContent;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;

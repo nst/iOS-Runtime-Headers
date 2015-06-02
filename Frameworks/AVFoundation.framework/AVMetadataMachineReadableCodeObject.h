@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataMachineReadableCodeObjectInternal, NSArray, NSString;
-
 @interface AVMetadataMachineReadableCodeObject : AVMetadataObject {
     AVMetadataMachineReadableCodeObjectInternal *_internal;
 }
 
-@property(readonly) NSArray * corners;
-@property(readonly) NSString * stringValue;
+@property (readonly) NSArray *corners;
+@property (readonly) NSString *stringValue;
 
 + (id)machineReadableCodeObjectWithFigEmbeddedCaptureDeviceMachineReadableCodeDictionary:(id)arg1 input:(id)arg2;
 

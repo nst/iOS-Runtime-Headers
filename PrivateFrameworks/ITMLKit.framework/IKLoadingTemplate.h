@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKViewElement;
+@interface IKLoadingTemplate : IKViewElement
 
-@interface IKLoadingTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKViewElement * activityElement;
+@property (nonatomic, readonly, retain) IKViewElement *activityElement;
 
 - (id)activityElement;
 

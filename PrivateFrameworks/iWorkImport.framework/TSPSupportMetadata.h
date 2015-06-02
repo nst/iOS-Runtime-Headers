@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSSet;
-
 @interface TSPSupportMetadata : TSPObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableSet *_acknowledgedServerData;
@@ -16,7 +14,7 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isDataAcknowledgedByServer:(id)arg1;
-- (void)isDataAcknowledgedByServer:(id)arg1 completion:(id)arg2;
+- (void)isDataAcknowledgedByServer:(id)arg1 completion:(id /* block */)arg2;
 - (id)packageLocator;
 - (void)resetAcknowledgedServerData;
 - (void)saveToArchiver:(id)arg1;

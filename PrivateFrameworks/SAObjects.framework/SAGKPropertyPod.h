@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAGKPropertyPod : SAGKPodView
 
-@interface SAGKPropertyPod : SAGKPodView {
-}
-
-@property(copy) NSArray * propertyList;
+@property (nonatomic, copy) NSArray *propertyList;
 
 + (id)propertyPod;
 + (id)propertyPodWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,24 +2,14 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MFMailComposeViewControllerDelegate>;
-
 @interface MFMailComposeViewController : UINavigationController {
     BOOL _didChangeStatusBarStyle;
     id _internal;
     int _savedStatusBarStyle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _setupAnimationBlock;
-
+    id /* block */ _setupAnimationBlock;
 }
 
-@property <MFMailComposeViewControllerDelegate> * mailComposeDelegate;
+@property (nonatomic) <MFMailComposeViewControllerDelegate> *mailComposeDelegate;
 
 + (BOOL)canSendMail;
 + (BOOL)canSendMailSourceAccountManagement:(int)arg1;
@@ -32,16 +22,16 @@
 - (id)_internalViewController;
 - (id)_validEmailAddressesFromArray:(id)arg1;
 - (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
-- (void)addSetupAnimationBlock:(id)arg1;
+- (void)addSetupAnimationBlock:(id /* block */)arg1;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (void)autosaveWithHandler:(id)arg1;
+- (void)autosaveWithHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)finalizeCompositionValues;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)mailComposeDelegate;
 - (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
-- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id)arg2;
+- (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id /* block */)arg2;
 - (void)setAutorotationDelegate:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCaretPosition:(unsigned int)arg1;

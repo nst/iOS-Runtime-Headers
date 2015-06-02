@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPProtoSerializer : NSObject {
-}
+@interface SPProtoSerializer : NSObject
 
 + (id)arrayWithSPPlist:(id)arg1;
 + (id)dataWithObject:(id)arg1;

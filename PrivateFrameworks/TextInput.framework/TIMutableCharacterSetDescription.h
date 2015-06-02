@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIMutableCharacterSetDescription : TICharacterSetDescription {
-}
+@interface TIMutableCharacterSetDescription : TICharacterSetDescription
 
 + (BOOL)supportsSecureCoding;
 

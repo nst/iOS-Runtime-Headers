@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAnimationUtils : NSObject {
-}
+@interface KNAnimationUtils : NSObject
 
 + (id)CAAccelerationFromSFXActionAcceleration:(unsigned int)arg1;
 + (id)customAttributesArrayWithDeliveryOptions:(id)arg1;

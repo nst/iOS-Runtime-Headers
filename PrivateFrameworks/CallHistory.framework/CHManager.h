@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class <SyncManagerProtocol>, NSArray, NSDate, NSPredicate, NSString;
-
 @interface CHManager : CHSynchronizedLoggable {
     id _addressBookChangedNotificationRef;
     BOOL _cacheIsDirty;
@@ -27,25 +25,25 @@
     int _unreadCallCount;
 }
 
-@property(retain) id addressBookChangedNotificationRef;
+@property (retain) id addressBookChangedNotificationRef;
 @property BOOL cacheIsDirty;
-@property(copy) NSString * coalescingStrategy;
-@property(retain) id databaseChangedNotificationRef;
+@property (nonatomic, copy) NSString *coalescingStrategy;
+@property (retain) id databaseChangedNotificationRef;
 @property BOOL generateSyncTransactions;
-@property unsigned int limitingCallTypes;
-@property(copy) NSDate * limitingEndDate;
-@property(copy) NSDate * limitingStartDate;
+@property (nonatomic) unsigned int limitingCallTypes;
+@property (nonatomic, copy) NSDate *limitingEndDate;
+@property (nonatomic, copy) NSDate *limitingStartDate;
 @property int numberOfUnseenMissedCalls;
-@property(copy) NSPredicate * postFetchingPredicate;
+@property (nonatomic, copy) NSPredicate *postFetchingPredicate;
 @property BOOL reCoalesce;
-@property(retain) NSArray * recentCalls;
-@property BOOL showsFaceTimeAudioCalls;
-@property BOOL showsFaceTimeCalls;
-@property BOOL showsFaceTimeVideoCalls;
-@property BOOL showsTelephonyCalls;
-@property(retain) <SyncManagerProtocol> * syncManager;
-@property(getter=uncoalescedRecentCallsSync,retain) NSArray * uncoalescedRecentCalls;
-@property(retain) NSArray * uncoalescedUnFilteredRecentCalls;
+@property (nonatomic, retain) NSArray *recentCalls;
+@property (nonatomic) BOOL showsFaceTimeAudioCalls;
+@property (nonatomic) BOOL showsFaceTimeCalls;
+@property (nonatomic) BOOL showsFaceTimeVideoCalls;
+@property (nonatomic) BOOL showsTelephonyCalls;
+@property (retain) <SyncManagerProtocol> *syncManager;
+@property (getter=uncoalescedRecentCallsSync, nonatomic, retain) NSArray *uncoalescedRecentCalls;
+@property (retain) NSArray *uncoalescedUnFilteredRecentCalls;
 @property int unreadCallCount;
 
 + (unsigned int)CHCallStatusForCallWithDuration:(double)arg1 isOriginated:(BOOL)arg2 isAnswered:(BOOL)arg3;

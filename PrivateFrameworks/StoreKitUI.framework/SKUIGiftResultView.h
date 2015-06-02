@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIGiftItemView, UIButton, UIImage, UIImageView, UILabel;
-
 @interface SKUIGiftResultView : UIView {
     UIButton *_giftAgainButton;
     UIImageView *_imageView;
@@ -11,10 +9,10 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly) UIButton * giftAgainButton;
-@property(retain) UIImage * image;
-@property(retain) SKUIGiftItemView * itemView;
-@property(copy) NSString * title;
+@property (nonatomic, readonly) UIButton *giftAgainButton;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) SKUIGiftItemView *itemView;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)giftAgainButton;

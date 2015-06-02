@@ -7,8 +7,8 @@
     int _generationCount;
 }
 
-@property int changeCount;
-@property int generationCount;
+@property (nonatomic) int changeCount;
+@property (nonatomic) int generationCount;
 
 - (int)changeCount;
 - (id)description;

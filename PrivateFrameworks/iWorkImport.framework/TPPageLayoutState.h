@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TPPageIndexPath, TPSection, TSWPStorage;
-
 @interface TPPageLayoutState : NSObject {
     unsigned int _bodyCharIndex;
     void *_bodyLayoutState;
@@ -16,20 +14,20 @@
     TPPageIndexPath *_pageIndexPath;
 }
 
-@property unsigned int bodyCharIndex;
-@property void* bodyLayoutState;
-@property(readonly) unsigned int documentPageIndex;
-@property BOOL doingLayout;
-@property unsigned int footnoteIndex;
-@property(readonly) BOOL isLayoutComplete;
-@property(readonly) unsigned int lastLaidOutDocumentPageIndex;
-@property(readonly) unsigned int lastLaidOutSectionIndex;
-@property(readonly) BOOL onLastSection;
-@property(readonly) unsigned int pageIndex;
-@property(readonly) TPPageIndexPath * pageIndexPath;
-@property(readonly) TPSection * section;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } sectionCharRange;
-@property(readonly) unsigned int sectionIndex;
+@property (nonatomic) unsigned int bodyCharIndex;
+@property (nonatomic) void*bodyLayoutState;
+@property (nonatomic, readonly) unsigned int documentPageIndex;
+@property (nonatomic) BOOL doingLayout;
+@property (nonatomic) unsigned int footnoteIndex;
+@property (nonatomic, readonly) BOOL isLayoutComplete;
+@property (nonatomic, readonly) unsigned int lastLaidOutDocumentPageIndex;
+@property (nonatomic, readonly) unsigned int lastLaidOutSectionIndex;
+@property (nonatomic, readonly) BOOL onLastSection;
+@property (nonatomic, readonly) unsigned int pageIndex;
+@property (nonatomic, readonly) TPPageIndexPath *pageIndexPath;
+@property (nonatomic, readonly) TPSection *section;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } sectionCharRange;
+@property (nonatomic, readonly) unsigned int sectionIndex;
 
 - (void)advancePageIndex;
 - (void)advanceSectionIndex;

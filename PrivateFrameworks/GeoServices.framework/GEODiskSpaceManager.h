@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface GEODiskSpaceManager : NSObject {
     NSMutableDictionary *_freeableClaims;
     NSObject<OS_dispatch_queue> *_queue;

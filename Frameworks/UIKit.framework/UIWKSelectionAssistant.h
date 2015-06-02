@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILongPressGestureRecognizer, _UITextServiceSession;
-
 @interface UIWKSelectionAssistant : UIWebSelectionAssistant {
     _UITextServiceSession *_definitionSession;
     _UITextServiceSession *_learnSession;
 }
 
-@property(readonly) UILongPressGestureRecognizer * selectionLongPressRecognizer;
+@property (nonatomic, readonly) UILongPressGestureRecognizer *selectionLongPressRecognizer;
 
 - (void)blockSelectionChangedWithTouch:(int)arg1 withFlags:(int)arg2 growThreshold:(float)arg3 shrinkThreshold:(float)arg4;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

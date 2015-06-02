@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLImageSource : NSObject {
-}
+@interface PLImageSource : NSObject
 
-@property(readonly) unsigned short sourceIdentifier;
+@property (nonatomic, readonly) unsigned short sourceIdentifier;
 
 - (id)newImageForAsset:(id)arg1 createMetadata:(id*)arg2;
 - (unsigned short)sourceIdentifier;

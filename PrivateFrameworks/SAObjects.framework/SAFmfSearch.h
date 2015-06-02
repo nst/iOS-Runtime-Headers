@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, NSURL, SALocation;
+@interface SAFmfSearch : SABaseClientBoundCommand
 
-@interface SAFmfSearch : SABaseClientBoundCommand {
-}
-
-@property(retain) SALocation * currentLocation;
-@property(copy) NSArray * emailAddresses;
-@property(copy) NSArray * friends;
-@property(copy) NSString * proximity;
-@property(retain) SALocation * requestedLocation;
-@property(copy) NSURL * targetAppId;
+@property (nonatomic, retain) SALocation *currentLocation;
+@property (nonatomic, copy) NSArray *emailAddresses;
+@property (nonatomic, copy) NSArray *friends;
+@property (nonatomic, copy) NSString *proximity;
+@property (nonatomic, retain) SALocation *requestedLocation;
+@property (nonatomic, copy) NSURL *targetAppId;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

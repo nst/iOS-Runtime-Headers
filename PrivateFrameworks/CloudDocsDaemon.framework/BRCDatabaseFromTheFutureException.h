@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDatabaseFromTheFutureException : NSException {
-}
+@interface BRCDatabaseFromTheFutureException : NSException
 
 @end

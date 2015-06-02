@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class <UIFoundationGlobalUserDefaultsHelper>, NSMutableDictionary;
-
 @interface _UIGlobalUserDefaults : NSUserDefaults {
     unsigned int _backgroundTaskIdentifier;
     NSMutableDictionary *_userDefaultsDictionary;
     <UIFoundationGlobalUserDefaultsHelper> *_userDefaultsHelper;
 }
 
-@property unsigned int backgroundTaskIdentifier;
-@property(retain) NSMutableDictionary * userDefaultsDictionary;
-@property(retain) <UIFoundationGlobalUserDefaultsHelper> * userDefaultsHelper;
+@property (nonatomic) unsigned int backgroundTaskIdentifier;
+@property (nonatomic, retain) NSMutableDictionary *userDefaultsDictionary;
+@property (nonatomic, retain) <UIFoundationGlobalUserDefaultsHelper> *userDefaultsHelper;
 
 - (void)_scheduleSynchronization;
 - (void)_synchronizeIfNeeded;

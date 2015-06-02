@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray;
-
 @interface TSTTableTile : TSPObject {
     unsigned char mMaxColumn;
     unsigned short mMaxRow;
@@ -13,11 +11,11 @@
     unsigned char mStorageVersion;
 }
 
-@property(readonly) unsigned char maxColumn;
-@property(readonly) unsigned short maxRow;
-@property(readonly) unsigned short numCells;
-@property(readonly) unsigned short numRows;
-@property(readonly) NSArray * rowInfos;
+@property (nonatomic, readonly) unsigned char maxColumn;
+@property (nonatomic, readonly) unsigned short maxRow;
+@property (nonatomic, readonly) unsigned short numCells;
+@property (nonatomic, readonly) unsigned short numRows;
+@property (nonatomic, readonly) NSArray *rowInfos;
 
 - (void)dealloc;
 - (void)debugDump;

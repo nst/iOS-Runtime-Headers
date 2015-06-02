@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVCalendarServerCancelItem, CalDAVCalendarServerReplyItem, CalDAVCalendarServerUpdateItem, CoreDAVItemWithNoChildren;
-
 @interface CalDAVCalendarServerActionItem : CoreDAVItem {
     CalDAVCalendarServerCancelItem *_cancel;
     CoreDAVItemWithNoChildren *_create;
@@ -11,10 +9,10 @@
     CalDAVCalendarServerUpdateItem *_update;
 }
 
-@property(retain) CalDAVCalendarServerCancelItem * cancel;
-@property(retain) CoreDAVItemWithNoChildren * create;
-@property(retain) CalDAVCalendarServerReplyItem * reply;
-@property(retain) CalDAVCalendarServerUpdateItem * update;
+@property (nonatomic, retain) CalDAVCalendarServerCancelItem *cancel;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *create;
+@property (nonatomic, retain) CalDAVCalendarServerReplyItem *reply;
+@property (nonatomic, retain) CalDAVCalendarServerUpdateItem *update;
 
 - (id)cancel;
 - (id)copyParseRules;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString, NSURL;
-
 @interface SSVContentLink : NSObject {
     NSString *_categoryName;
     int _contentKind;
@@ -14,14 +12,14 @@
     int _targetApplication;
 }
 
-@property(readonly) NSURL * URL;
-@property(copy) NSString * categoryName;
-@property int contentKind;
-@property(copy) NSNumber * itemIdentifier;
-@property(copy) NSString * itemTitle;
-@property(copy) NSString * providerName;
-@property(copy) NSString * searchTerm;
-@property int targetApplication;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, copy) NSString *categoryName;
+@property (nonatomic) int contentKind;
+@property (nonatomic, copy) NSNumber *itemIdentifier;
+@property (nonatomic, copy) NSString *itemTitle;
+@property (nonatomic, copy) NSString *providerName;
+@property (nonatomic, copy) NSString *searchTerm;
+@property (nonatomic) int targetApplication;
 
 - (void).cxx_destruct;
 - (id)URL;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSDate, NSNumber, NSString, NSURL;
-
 @interface GKStoreItemInternal : GKInternalRepresentation {
     NSNumber *_adamID;
     NSString *_artistName;
@@ -17,16 +15,16 @@
     NSURL *_viewItemURL;
 }
 
-@property(retain) NSNumber * adamID;
-@property(retain) NSString * artistName;
-@property float averageUserRating;
-@property(retain) NSDate * expirationDate;
-@property unsigned int numberOfUserRatings;
-@property BOOL owned;
-@property(retain) NSString * priceDisplay;
-@property(retain) NSURL * shortViewItemURL;
-@property(retain) NSURL * tellAFriendMessageContentsUrl;
-@property(retain) NSURL * viewItemURL;
+@property (nonatomic, retain) NSNumber *adamID;
+@property (nonatomic, retain) NSString *artistName;
+@property (nonatomic) float averageUserRating;
+@property (nonatomic, retain) NSDate *expirationDate;
+@property (nonatomic) unsigned int numberOfUserRatings;
+@property (nonatomic) BOOL owned;
+@property (nonatomic, retain) NSString *priceDisplay;
+@property (nonatomic, retain) NSURL *shortViewItemURL;
+@property (nonatomic, retain) NSURL *tellAFriendMessageContentsUrl;
+@property (nonatomic, retain) NSURL *viewItemURL;
 
 + (id)secureCodedPropertyKeys;
 
@@ -52,7 +50,7 @@
 - (void)setTellAFriendMessageContentsUrl:(id)arg1;
 - (void)setViewItemURL:(id)arg1;
 - (id)shortViewItemURL;
-- (void)storeItemURLForGamePlatform:(unsigned char)arg1 withContext:(id)arg2 withHandler:(id)arg3;
+- (void)storeItemURLForGamePlatform:(unsigned char)arg1 withContext:(id)arg2 withHandler:(id /* block */)arg3;
 - (id)storeItemURLForURL:(id)arg1 gamePlatform:(unsigned char)arg2 extraQueryParams:(id)arg3;
 - (id)tellAFriendMessageContentsUrl;
 - (id)viewItemURL;

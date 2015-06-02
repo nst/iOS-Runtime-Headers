@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADBulletColorSpecification : OADBulletColor {
     OADColor *mColor;
 }

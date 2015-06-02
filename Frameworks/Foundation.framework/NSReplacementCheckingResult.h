@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSReplacementCheckingResult : NSSubstitutionCheckingResult {
-}
+@interface NSReplacementCheckingResult : NSSubstitutionCheckingResult
 
 - (unsigned long long)resultType;
 

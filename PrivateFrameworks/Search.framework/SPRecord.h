@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSDate, NSNumber, NSString;
+@interface SPRecord : NSManagedObject
 
-@interface SPRecord : NSManagedObject {
-}
-
-@property(retain) NSString * actionURL;
-@property(retain) NSString * auxsubtitle;
-@property(retain) NSString * auxtitle;
-@property(retain) NSString * content;
-@property(retain) NSNumber * cxid;
-@property(retain) NSDate * date;
-@property(retain) NSString * extid;
-@property(retain) NSNumber * generation;
-@property(retain) NSString * subtitle;
-@property(retain) NSString * summary;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *actionURL;
+@property (nonatomic, retain) NSString *auxsubtitle;
+@property (nonatomic, retain) NSString *auxtitle;
+@property (nonatomic, retain) NSString *content;
+@property (nonatomic, retain) NSNumber *cxid;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) NSString *extid;
+@property (nonatomic, retain) NSNumber *generation;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *summary;
+@property (nonatomic, retain) NSString *title;
 
 @end

@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCMinHeap, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface BRCDeadlineScheduler : NSObject <BRCLifeCycle> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _computeNextAdmissibleDateForScheduling;
-
+    id /* block */ _computeNextAdmissibleDateForScheduling;
     NSObject<OS_dispatch_source> *_delay;
     BOOL _isCancelled;
     BOOL _isResumed;
@@ -25,14 +15,14 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
-@property long long coalescingLeeway;
-@property(copy) id computeNextAdmissibleDateForScheduling;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
+@property (nonatomic) long long coalescingLeeway;
+@property (nonatomic, copy) id /* block */ computeNextAdmissibleDateForScheduling;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addToken:(id)arg1 deadline:(long long)arg2;
@@ -42,14 +32,14 @@
 - (void)cancel;
 - (void)close;
 - (long long)coalescingLeeway;
-- (id)computeNextAdmissibleDateForScheduling;
+- (id /* block */)computeNextAdmissibleDateForScheduling;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (BOOL)isCancelled;
 - (id)queue;
 - (void)resume;
 - (void)setCoalescingLeeway:(long long)arg1;
-- (void)setComputeNextAdmissibleDateForScheduling:(id)arg1;
+- (void)setComputeNextAdmissibleDateForScheduling:(id /* block */)arg1;
 - (void)setIsCancelled:(BOOL)arg1;
 - (void)signal;
 - (void)suspend;

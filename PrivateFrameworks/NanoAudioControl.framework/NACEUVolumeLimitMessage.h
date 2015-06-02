@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACEUVolumeLimitMessage : PBCodable <NSCopying> {
     NSString *_category;
     float _eUVolumeLimit;
@@ -12,10 +10,10 @@
     } _has;
 }
 
-@property(retain) NSString * category;
-@property float eUVolumeLimit;
-@property(readonly) BOOL hasCategory;
-@property BOOL hasEUVolumeLimit;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic) float eUVolumeLimit;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic) BOOL hasEUVolumeLimit;
 
 - (void).cxx_destruct;
 - (id)category;

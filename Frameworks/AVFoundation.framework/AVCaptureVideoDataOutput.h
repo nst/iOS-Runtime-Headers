@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureVideoDataOutputSampleBufferDelegate>, AVCaptureVideoDataOutputInternal, NSArray, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVCaptureVideoDataOutput : AVCaptureOutput {
     AVCaptureVideoDataOutputInternal *_internal;
 }
 
-@property BOOL alwaysDiscardsLateVideoFrames;
-@property(readonly) NSArray * availableVideoCVPixelFormatTypes;
-@property(readonly) NSArray * availableVideoCodecTypes;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
-@property(readonly) NSObject<OS_dispatch_queue> * sampleBufferCallbackQueue;
-@property(readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> * sampleBufferDelegate;
-@property(copy) NSDictionary * videoSettings;
+@property (nonatomic) BOOL alwaysDiscardsLateVideoFrames;
+@property (nonatomic, readonly) NSArray *availableVideoCVPixelFormatTypes;
+@property (nonatomic, readonly) NSArray *availableVideoCodecTypes;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *sampleBufferCallbackQueue;
+@property (nonatomic, readonly) <AVCaptureVideoDataOutputSampleBufferDelegate> *sampleBufferDelegate;
+@property (nonatomic, copy) NSDictionary *videoSettings;
 
 + (id)alloc;
 + (void)initialize;

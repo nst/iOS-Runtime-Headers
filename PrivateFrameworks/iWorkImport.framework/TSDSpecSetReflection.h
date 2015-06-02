@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDReflection;
-
 @interface TSDSpecSetReflection : TSDSpecReflection {
     TSDReflection *_reflection;
     BOOL _unset;

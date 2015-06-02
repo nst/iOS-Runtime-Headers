@@ -2,71 +2,45 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NSXPCListenerEndpoint;
-
 @interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol, NSXPCListenerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancel;
-
+    id /* block */ _cancel;
     NSXPCListenerEndpoint *_endpoint;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _notify;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _periodic;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _purge;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _purgeable;
-
+    id /* block */ _notify;
+    id /* block */ _periodic;
+    id /* block */ _purge;
+    id /* block */ _purgeable;
 }
 
-@property(copy) id cancel;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSXPCListenerEndpoint * endpoint;
-@property(readonly) unsigned int hash;
-@property(copy) id notify;
-@property(copy) id periodic;
-@property(copy) id purge;
-@property(copy) id purgeable;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ cancel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSXPCListenerEndpoint *endpoint;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ notify;
+@property (nonatomic, copy) id /* block */ periodic;
+@property (nonatomic, copy) id /* block */ purge;
+@property (nonatomic, copy) id /* block */ purgeable;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)cancel;
+- (id /* block */)cancel;
 - (id)endpoint;
 - (id)initWithName:(id)arg1 anonymous:(BOOL)arg2;
-- (id)notify;
-- (id)periodic;
-- (id)purge;
-- (id)purgeable;
-- (void)serviceCancelPurge:(id)arg1;
-- (void)serviceNotify:(id)arg1 replyBlock:(id)arg2;
-- (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
-- (void)servicePing:(id)arg1;
-- (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
-- (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
-- (void)setCancel:(id)arg1;
-- (void)setNotify:(id)arg1;
-- (void)setNotifyCallback:(id)arg1;
-- (void)setPeriodic:(id)arg1;
-- (void)setPurge:(id)arg1;
-- (void)setPurgeable:(id)arg1;
+- (id /* block */)notify;
+- (id /* block */)periodic;
+- (id /* block */)purge;
+- (id /* block */)purgeable;
+- (void)serviceCancelPurge:(id /* block */)arg1;
+- (void)serviceNotify:(id)arg1 replyBlock:(id /* block */)arg2;
+- (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)servicePing:(id /* block */)arg1;
+- (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)setCancel:(id /* block */)arg1;
+- (void)setNotify:(id /* block */)arg1;
+- (void)setNotifyCallback:(id /* block */)arg1;
+- (void)setPeriodic:(id /* block */)arg1;
+- (void)setPurge:(id /* block */)arg1;
+- (void)setPurgeable:(id /* block */)arg1;
 
 @end

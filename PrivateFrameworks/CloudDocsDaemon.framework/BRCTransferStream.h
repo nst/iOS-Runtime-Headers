@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, BRCDeadlineToken, BRCSyncContext, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCTransferStream : NSObject <BRCLifeCycle> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _getNextJob;
-
+    id /* block */ _getNextJob;
     BOOL _hasReachedCap;
     NSMutableDictionary *_inFlightOpByID;
     BOOL _isCancelled;
@@ -24,13 +14,13 @@
     NSObject<OS_dispatch_queue> *_transferQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id getNextJob;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) NSArray * operations;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ getNextJob;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (readonly) NSArray *operations;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addOperation:(id)arg1;
@@ -43,13 +33,13 @@
 - (void)cancel;
 - (void)cancelTransferID:(id)arg1 operationID:(id)arg2;
 - (void)close;
-- (id)getNextJob;
+- (id /* block */)getNextJob;
 - (id)initWithSyncContext:(id)arg1 name:(id)arg2 scheduler:(id)arg3;
 - (BOOL)isCancelled;
 - (id)operations;
 - (double)progressForTransferID:(id)arg1 operationID:(id)arg2;
 - (void)resume;
-- (void)setGetNextJob:(id)arg1;
+- (void)setGetNextJob:(id /* block */)arg1;
 - (void)setIsCancelled:(BOOL)arg1;
 - (void)suspend;
 - (void)wakeUpForNextWorkAt:(long long)arg1;

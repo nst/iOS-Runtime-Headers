@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libxpc.dylib
  */
 
-@interface OS_xpc_date : OS_xpc_object <OS_xpc_date> {
-}
+@interface OS_xpc_date : OS_xpc_object <OS_xpc_date>
 
 + (void)load;
 

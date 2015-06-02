@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface APDGenericData : NSObject {
-}
+@interface APDGenericData : NSObject
 
 - (id)initWithDictionary:(id)arg1;
 

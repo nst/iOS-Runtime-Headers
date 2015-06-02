@@ -7,8 +7,8 @@
     int _positionOffset;
 }
 
-@property BOOL didBeginOutput;
-@property int positionOffset;
+@property (nonatomic) BOOL didBeginOutput;
+@property (nonatomic) int positionOffset;
 
 + (BOOL)supportsSecureCoding;
 

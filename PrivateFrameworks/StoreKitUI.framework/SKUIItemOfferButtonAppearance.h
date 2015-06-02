@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIItemOfferButtonAppearance : NSObject {
     UIColor *_buttonColor;
     UIColor *_confirmationColor;
 }
 
-@property(readonly) UIColor * buttonColor;
-@property(readonly) UIColor * confirmationColor;
+@property (nonatomic, readonly) UIColor *buttonColor;
+@property (nonatomic, readonly) UIColor *confirmationColor;
 
 - (void).cxx_destruct;
 - (id)buttonColor;

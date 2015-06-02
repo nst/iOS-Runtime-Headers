@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACAccount, NSData, NSDictionary, NSError, NSMutableDictionary, NSObject<NSCoding>, NSString;
-
 @interface ACRemoteDeviceMessage : NSObject {
     NSData *_data;
     NSString *_identifier;
@@ -12,17 +10,17 @@
     NSMutableDictionary *_payload;
 }
 
-@property(readonly) ACAccount * account;
-@property(readonly) NSString * command;
-@property(readonly) NSData * data;
-@property(readonly) NSError * error;
-@property(readonly) NSString * identifier;
-@property BOOL isReply;
-@property BOOL needsReply;
-@property(readonly) NSDictionary * options;
-@property(readonly) NSObject<NSCoding> * result;
-@property(readonly) NSString * sentMessageIdentifier;
-@property(readonly) BOOL success;
+@property (nonatomic, readonly) ACAccount *account;
+@property (nonatomic, readonly) NSString *command;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic) BOOL isReply;
+@property (nonatomic) BOOL needsReply;
+@property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic, readonly) NSObject<NSCoding> *result;
+@property (nonatomic, readonly) NSString *sentMessageIdentifier;
+@property (nonatomic, readonly) BOOL success;
 
 + (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
 + (id)replyForMessage:(id)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;

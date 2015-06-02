@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIPhotoEffectTonal : CIPhotoEffect {
-}
+@interface CIPhotoEffectTonal : CIPhotoEffect
 
 + (id)customAttributes;
 

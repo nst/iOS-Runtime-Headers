@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class NSLock, SCRCTargetSelectorTimer, SCROConnection;
-
 @interface SCROScriptClient : NSObject {
     SCROConnection *_connection;
     BOOL _isReady;

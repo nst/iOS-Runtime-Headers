@@ -6,7 +6,7 @@
     BOOL _shouldShowHeadersAndFooters;
 }
 
-@property BOOL shouldShowHeadersAndFooters;
+@property (nonatomic) BOOL shouldShowHeadersAndFooters;
 
 - (BOOL)_shouldShowHeadersAndFooters;
 - (BOOL)canBecomeFirstResponder;

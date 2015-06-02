@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSPersistentStoreCoordinator, NSSet, NSString, NSUndoManager;
-
 @interface NSManagedObjectContext : NSObject <NSCoding, NSLocking> {
     id *_additionalPrivateIvars;
     id *_cachedObsInfoByEntity;
@@ -62,21 +60,23 @@
     NSMutableSet *_unprocessedInserts;
 }
 
-@property(readonly) unsigned int concurrencyType;
-@property(readonly) NSSet * deletedObjects;
-@property(readonly) BOOL hasChanges;
-@property(readonly) NSSet * insertedObjects;
-@property(retain) id mergePolicy;
-@property(copy) NSString * name;
-@property(retain) NSManagedObjectContext * parentContext;
-@property(retain) NSPersistentStoreCoordinator * persistentStoreCoordinator;
-@property BOOL propagatesDeletesAtEndOfEvent;
-@property(readonly) NSSet * registeredObjects;
-@property BOOL retainsRegisteredObjects;
+@property (readonly) unsigned int concurrencyType;
+@property (nonatomic, readonly) NSSet *deletedObjects;
+@property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic, readonly) NSSet *insertedObjects;
+@property (retain) id mergePolicy;
+@property (copy) NSString *name;
+@property (retain) NSManagedObjectContext *parentContext;
+@property (retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic) BOOL propagatesDeletesAtEndOfEvent;
+@property (nonatomic, readonly) NSSet *registeredObjects;
+@property (nonatomic) BOOL retainsRegisteredObjects;
 @property double stalenessInterval;
-@property(retain) NSUndoManager * undoManager;
-@property(readonly) NSSet * updatedObjects;
-@property(readonly) NSMutableDictionary * userInfo;
+@property (nonatomic, retain) NSUndoManager *undoManager;
+@property (nonatomic, readonly) NSSet *updatedObjects;
+@property (nonatomic, readonly) NSMutableDictionary *userInfo;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (BOOL)_handleError:(id)arg1 withError:(id*)arg2;
@@ -142,7 +142,7 @@
 - (BOOL)_isDeallocating;
 - (BOOL)_isImportContext;
 - (BOOL)_isPreflightSaveInProgress;
-- (void)_managedObjectContextEditor:(id)arg1 didCommit:(BOOL)arg2 contextInfo:(struct { id x1; SEL x2; void *x3; }*)arg3;
+- (void)_managedObjectContextEditor:(id)arg1 didCommit:(BOOL)arg2 contextInfo:(struct { id x1; void *x2; }*)arg3;
 - (id)_mappedForParentStoreID:(id)arg1;
 - (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
 - (void)_mergeChangesFromRemoteContextSave:(id)arg1;
@@ -159,7 +159,7 @@
 - (BOOL)_parentObtainPermanentIDsForObjects:(id)arg1 context:(id)arg2 error:(id*)arg3;
 - (id)_parentProcessSaveRequest:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 - (id)_parentStore;
-- (void)_performCoordinatorActionAndWait:(id)arg1;
+- (void)_performCoordinatorActionAndWait:(id /* block */)arg1;
 - (void)_persistentStoreDidUpdateAdditionalRowsWithNewVersions:(id)arg1;
 - (void)_postObjectsDidChangeNotificationWithUserInfo:(id)arg1;
 - (void)_postRefreshedObjectsNotificationAndClearList;
@@ -239,9 +239,6 @@
 - (void)detectConflictsForObject:(id)arg1;
 - (void)discardEditing;
 - (void)encodeWithCoder:(id)arg1;
-- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 batchSize:(unsigned int)arg3 usingBlock:(id)arg4;
-- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 usingDefaultBatchSizeWithBlock:(id)arg3;
-- (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 withBlock:(id)arg2;
 - (id)executeFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)executeRequest:(id)arg1 error:(id*)arg2;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -254,7 +251,6 @@
 - (void)insertObject:(id)arg1;
 - (id)insertedObjects;
 - (BOOL)isEditing;
-- (BOOL)isUserInterfaceContext;
 - (void)lock;
 - (void)lockObjectStore;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
@@ -272,12 +268,10 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)parentContext;
-- (void)performBlock:(id)arg1;
-- (void)performBlockAndWait:(id)arg1;
-- (void)performWithOptions:(unsigned int)arg1 andBlock:(id)arg2;
+- (void)performBlock:(id /* block */)arg1;
+- (void)performBlockAndWait:(id /* block */)arg1;
+- (void)performWithOptions:(unsigned int)arg1 andBlock:(id /* block */)arg2;
 - (id)persistentStoreCoordinator;
-- (id)photoLibrary;
-- (void)pl_refresh;
 - (void)processPendingChanges;
 - (BOOL)propagatesDeletesAtEndOfEvent;
 - (void)redo;
@@ -308,5 +302,14 @@
 - (void)unlockObjectStore;
 - (id)updatedObjects;
 - (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 batchSize:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int*)arg2 usingDefaultBatchSizeWithBlock:(id /* block */)arg3;
+- (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 withBlock:(id /* block */)arg2;
+- (BOOL)isUserInterfaceContext;
+- (id)photoLibrary;
+- (void)pl_refresh;
 
 @end

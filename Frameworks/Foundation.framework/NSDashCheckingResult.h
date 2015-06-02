@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDashCheckingResult : NSSubstitutionCheckingResult {
-}
+@interface NSDashCheckingResult : NSSubstitutionCheckingResult
 
 - (unsigned long long)resultType;
 

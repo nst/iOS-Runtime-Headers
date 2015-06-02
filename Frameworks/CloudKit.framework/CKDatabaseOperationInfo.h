@@ -6,7 +6,7 @@
     int _databaseScope;
 }
 
-@property int databaseScope;
+@property (nonatomic) int databaseScope;
 
 + (BOOL)supportsSecureCoding;
 

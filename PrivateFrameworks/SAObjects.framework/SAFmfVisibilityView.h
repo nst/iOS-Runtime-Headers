@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@interface SAFmfVisibilityView : SAUISnippet
 
-@interface SAFmfVisibilityView : SAUISnippet {
-}
-
-@property(copy) NSURL * searchContext;
-@property BOOL visible;
+@property (nonatomic, copy) NSURL *searchContext;
+@property (nonatomic) BOOL visible;
 
 + (id)visibilityView;
 + (id)visibilityViewWithDictionary:(id)arg1 context:(id)arg2;

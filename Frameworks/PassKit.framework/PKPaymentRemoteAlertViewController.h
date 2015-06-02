@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CLInUseAssertion, NSString, PKPassGroupsViewController, PKPaymentService, _UIBackdropView;
-
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate> {
     _UIBackdropView *_backdropView;
     BOOL _backlightActiveOnLaunch;
@@ -12,10 +10,10 @@
     PKPaymentService *_paymentService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_createGroupsController;
 + (BOOL)_isSecureForRemoteViewService;

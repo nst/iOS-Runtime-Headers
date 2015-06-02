@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RemoteUITableViewSubtitleAndValueLayoutManager : UITableViewCellLayoutManager {
-}
+@interface RemoteUITableViewSubtitleAndValueLayoutManager : UITableViewCellLayoutManager
 
 + (id)sharedManager;
 

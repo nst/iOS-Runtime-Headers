@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFStampAnnotation : UIPDFAnnotation {
-}
+@interface UIPDFStampAnnotation : UIPDFAnnotation
 
 - (int)annotationType;
 

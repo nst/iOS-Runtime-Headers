@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMStyle, OADTableCell;
-
 @interface PMTableCellMapper : CMMapper {
     OADTableCell *mCell;
     int mColIndex;

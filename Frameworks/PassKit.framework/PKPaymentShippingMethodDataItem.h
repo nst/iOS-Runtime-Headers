@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKShippingMethod;
+@interface PKPaymentShippingMethodDataItem : PKPaymentDataItem
 
-@interface PKPaymentShippingMethodDataItem : PKPaymentDataItem {
-}
-
-@property(readonly) PKShippingMethod * shippingMethod;
+@property (nonatomic, readonly) PKShippingMethod *shippingMethod;
 
 + (int)dataType;
 

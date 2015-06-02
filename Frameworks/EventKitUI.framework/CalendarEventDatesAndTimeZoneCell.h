@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
-
 @interface CalendarEventDatesAndTimeZoneCell : PreferencesDoubleTwoPartValueCell {
     UILabel *_detailLabel3;
     UILabel *_textLabel3;
 }
 
-@property(retain,readonly) UILabel * detailLabel3;
-@property(retain,readonly) UILabel * textLabel3;
+@property (nonatomic, readonly, retain) UILabel *detailLabel3;
+@property (nonatomic, readonly, retain) UILabel *textLabel3;
 
 - (void).cxx_destruct;
 - (void)_layoutSubviewsCore;

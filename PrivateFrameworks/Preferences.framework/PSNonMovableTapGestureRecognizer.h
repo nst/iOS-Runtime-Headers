@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSNonMovableTapGestureRecognizer : UITapGestureRecognizer {
-}
+@interface PSNonMovableTapGestureRecognizer : UITapGestureRecognizer
 
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 

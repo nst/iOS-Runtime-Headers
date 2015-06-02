@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSTimer;
-
 @interface TSDFPSCACounter : TSDFPSCounter {
     BOOL _shouldRunTimer;
     unsigned int mCAFrameCount;
@@ -11,7 +9,7 @@
     NSTimer *mTimer;
 }
 
-@property BOOL shouldRunTimer;
+@property (nonatomic) BOOL shouldRunTimer;
 
 - (id)init;
 - (void)p_updateFrameCount;

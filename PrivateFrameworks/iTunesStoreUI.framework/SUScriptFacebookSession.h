@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptAppleAccount;
-
 @interface SUScriptFacebookSession : SUScriptObject {
     SUScriptAppleAccount *_account;
 }
 
-@property(readonly) id hasAccounts;
-@property(readonly) unsigned int likeStatusFlagFriendCount;
-@property(readonly) unsigned int likeStatusFlagFriends;
-@property(readonly) unsigned int likeStatusFlagGlobalCount;
-@property(readonly) unsigned int likeStatusFlagMe;
+@property (readonly) id hasAccounts;
+@property (readonly) unsigned int likeStatusFlagFriendCount;
+@property (readonly) unsigned int likeStatusFlagFriends;
+@property (readonly) unsigned int likeStatusFlagGlobalCount;
+@property (readonly) unsigned int likeStatusFlagMe;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

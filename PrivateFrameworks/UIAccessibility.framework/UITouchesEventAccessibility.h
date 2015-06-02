@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UITouchesEventAccessibility : __UITouchesEventAccessibility_super {
-}
+@interface UITouchesEventAccessibility : __UITouchesEventAccessibility_super
 
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;

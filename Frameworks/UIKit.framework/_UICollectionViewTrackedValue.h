@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface _UICollectionViewTrackedValue : NSObject {
     int _currentIndex;
     BOOL _isAccumulating;
@@ -12,8 +10,8 @@
     int _valuesCount;
 }
 
-@property BOOL isAccumulating;
-@property float trackedValue;
+@property (nonatomic) BOOL isAccumulating;
+@property (nonatomic) float trackedValue;
 
 - (void)addValue:(float)arg1;
 - (id)init;

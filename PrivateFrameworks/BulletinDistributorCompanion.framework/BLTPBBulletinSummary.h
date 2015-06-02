@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableArray, NSString;
-
 @interface BLTPBBulletinSummary : PBCodable <NSCopying> {
     unsigned int _destinations;
     NSMutableArray *_keys;
@@ -12,13 +10,13 @@
     NSString *_sectionID;
 }
 
-@property unsigned int destinations;
-@property(readonly) BOOL hasPublisherBulletinID;
-@property(readonly) BOOL hasRecordID;
-@property(retain) NSMutableArray * keys;
-@property(retain) NSString * publisherBulletinID;
-@property(retain) NSString * recordID;
-@property(retain) NSString * sectionID;
+@property (nonatomic) unsigned int destinations;
+@property (nonatomic, readonly) BOOL hasPublisherBulletinID;
+@property (nonatomic, readonly) BOOL hasRecordID;
+@property (nonatomic, retain) NSMutableArray *keys;
+@property (nonatomic, retain) NSString *publisherBulletinID;
+@property (nonatomic, retain) NSString *recordID;
+@property (nonatomic, retain) NSString *sectionID;
 
 - (void).cxx_destruct;
 - (void)addKey:(id)arg1;

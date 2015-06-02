@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@interface SASportsNewsItem : AceObject <SAAceSerializable>
 
-@interface SASportsNewsItem : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * link;
-@property(copy) NSString * summary;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *link;
+@property (nonatomic, copy) NSString *summary;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
 
 + (id)newsItem;
 + (id)newsItemWithDictionary:(id)arg1 context:(id)arg2;

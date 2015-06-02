@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MPMediaPlaylist;
+@interface SUScriptMediaPlaylist : SUScriptMediaItemCollection
 
-@interface SUScriptMediaPlaylist : SUScriptMediaItemCollection {
-}
-
-@property(readonly) MPMediaPlaylist * nativePlaylist;
+@property (nonatomic, readonly) MPMediaPlaylist *nativePlaylist;
 
 + (void)initialize;
 + (unsigned int)nativePlaylistAttributesForScriptPlaylistAttributes:(id)arg1;

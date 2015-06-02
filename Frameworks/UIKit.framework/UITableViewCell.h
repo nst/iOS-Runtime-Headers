@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, NSString, NSTimer, UIColor, UIControl, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITableView, UITableViewCellDeleteConfirmationView, UITapGestureRecognizer, UITextField, UIView, UIVisualEffect, _UITableViewCellOldEditingData, _UITableViewCellSeparatorView;
-
 @interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     SEL _accessoryAction;
     id _accessoryActionSegueTemplate;
@@ -132,33 +130,35 @@
     struct __CFDictionary { } *_unhighlightedStates;
 }
 
-@property int accessoryType;
-@property(retain) UIView * accessoryView;
-@property(retain) UIView * backgroundView;
-@property(retain,readonly) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) UILabel * detailTextLabel;
-@property(getter=isEditing) BOOL editing;
-@property int editingAccessoryType;
-@property(retain) UIView * editingAccessoryView;
-@property(readonly) int editingStyle;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain,readonly) UIImageView * imageView;
-@property int indentationLevel;
-@property float indentationWidth;
-@property(retain) UIView * multipleSelectionBackgroundView;
-@property(copy,readonly) NSString * reuseIdentifier;
-@property(getter=isSelected) BOOL selected;
-@property(retain) UIView * selectedBackgroundView;
-@property int selectionStyle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
-@property BOOL shouldIndentWhileEditing;
-@property(readonly) BOOL showingDeleteConfirmation;
-@property BOOL showsReorderControl;
-@property(readonly) Class superclass;
-@property(retain,readonly) UILabel * textLabel;
+@property (nonatomic) int accessoryType;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, readonly, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) UILabel *detailTextLabel;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) int editingAccessoryType;
+@property (nonatomic, retain) UIView *editingAccessoryView;
+@property (nonatomic, readonly) int editingStyle;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, readonly, retain) UIImageView *imageView;
+@property (nonatomic) int indentationLevel;
+@property (nonatomic) float indentationWidth;
+@property (nonatomic, retain) UIView *multipleSelectionBackgroundView;
+@property (nonatomic, readonly, copy) NSString *reuseIdentifier;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, retain) UIView *selectedBackgroundView;
+@property (nonatomic) int selectionStyle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
+@property (nonatomic) BOOL shouldIndentWhileEditing;
+@property (nonatomic, readonly) BOOL showingDeleteConfirmation;
+@property (nonatomic) BOOL showsReorderControl;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) UILabel *textLabel;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_defaultTopShadowColor;
 + (void)_initializeForIdiom:(int)arg1;
@@ -370,7 +370,6 @@
 - (BOOL)_usesRoundedGroups;
 - (void)_willBeDeleted;
 - (void)_willTransitionToState:(unsigned int)arg1;
-- (id)accessibilityTableViewCellText;
 - (SEL)accessoryAction;
 - (id)accessoryActionSegueTemplate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessoryRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 accessoryView:(id)arg2 isCustom:(BOOL)arg3;
@@ -544,5 +543,9 @@
 - (BOOL)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (id)accessibilityTableViewCellText;
 
 @end

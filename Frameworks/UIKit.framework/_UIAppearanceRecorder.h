@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSData, NSMutableArray, NSString;
-
 @interface _UIAppearanceRecorder : NSObject {
     NSString *_classNameToRecord;
     NSArray *_containerClassNames;
@@ -12,10 +10,10 @@
     NSArray *_unarchivedCustomizations;
 }
 
-@property(setter=_setClassNameToRecord:,copy) NSString * _classNameToRecord;
-@property(setter=_setContainerClassNames:,copy) NSArray * _containerClassNames;
-@property(readonly) NSData * _serializedRepresentation;
-@property(setter=_setSuperclassToRecord:) Class _superclassToRecord;
+@property (setter=_setClassNameToRecord:, nonatomic, copy) NSString *_classNameToRecord;
+@property (setter=_setContainerClassNames:, nonatomic, copy) NSArray *_containerClassNames;
+@property (nonatomic, readonly) NSData *_serializedRepresentation;
+@property (setter=_setSuperclassToRecord:, nonatomic) Class _superclassToRecord;
 
 + (id)_sharedAppearanceRecorder;
 + (id)_sharedAppearanceRecorderForClass:(Class)arg1 whenContainedIn:(id)arg2;

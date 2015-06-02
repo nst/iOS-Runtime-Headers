@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIFlexibleSegmentedControlDelegate>, NSArray, NSString, UISegmentedControl;
-
 @interface SKUIFlexibleSegmentedControl : UIView {
     <SKUIFlexibleSegmentedControlDelegate> *_delegate;
     float _desiredSegmentWidth;
@@ -16,13 +14,13 @@
     int _selectedSegmentIndex;
 }
 
-@property <SKUIFlexibleSegmentedControlDelegate> * delegate;
-@property float desiredSegmentWidth;
-@property(copy) NSArray * itemTitles;
-@property int maximumNumberOfVisibleItems;
-@property(readonly) int moreListIndex;
-@property(copy) NSString * moreListTitle;
-@property int selectedSegmentIndex;
+@property (nonatomic) <SKUIFlexibleSegmentedControlDelegate> *delegate;
+@property (nonatomic) float desiredSegmentWidth;
+@property (nonatomic, copy) NSArray *itemTitles;
+@property (nonatomic) int maximumNumberOfVisibleItems;
+@property (nonatomic, readonly) int moreListIndex;
+@property (nonatomic, copy) NSString *moreListTitle;
+@property (nonatomic) int selectedSegmentIndex;
 
 - (void).cxx_destruct;
 - (void)_configureSegmentedControl:(id)arg1 withTitles:(id)arg2 boundingSize:(struct CGSize { float x1; float x2; })arg3;

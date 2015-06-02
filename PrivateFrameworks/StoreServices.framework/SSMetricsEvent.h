@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSMetricsEvent : NSObject {
-}
+@interface SSMetricsEvent : NSObject
 
 - (id)_dictionaryRepresentationOfBody;
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1;

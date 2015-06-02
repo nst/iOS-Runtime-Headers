@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreIRBusClient : CoreIRBus {
-}
+@interface CoreIRBusClient : CoreIRBus
 
 + (BOOL)supportsSecureCoding;
 

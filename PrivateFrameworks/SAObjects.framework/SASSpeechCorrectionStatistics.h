@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASSpeechCorrectionStatistics : SABaseCommand <SAServerBoundCommand>
 
-@interface SASSpeechCorrectionStatistics : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property int alternativeSelectCount;
-@property int characterChangeCount;
-@property(copy) NSString * correctionSource;
-@property(copy) NSString * correctionText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * interactionId;
-@property(copy) NSString * refId;
-@property(copy) NSString * sessionId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic) int alternativeSelectCount;
+@property (nonatomic) int characterChangeCount;
+@property (nonatomic, copy) NSString *correctionSource;
+@property (nonatomic, copy) NSString *correctionText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *interactionId;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSString *sessionId;
+@property (readonly) Class superclass;
 
 + (id)speechCorrectionStatistics;
 + (id)speechCorrectionStatisticsWithDictionary:(id)arg1 context:(id)arg2;

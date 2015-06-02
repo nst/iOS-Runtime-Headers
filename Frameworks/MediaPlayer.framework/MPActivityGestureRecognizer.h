@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPActivityGestureRecognizer : UIGestureRecognizer {
-}
+@interface MPActivityGestureRecognizer : UIGestureRecognizer
 
 - (void)_reportOngoingActivity;
 - (void)_stopReportingOngoingActivity;

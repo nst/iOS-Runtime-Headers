@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKSosBase : NSObject {
-}
+@interface TSKSosBase : NSObject
 
 - (void)dealloc;
 - (void)deallocSOS;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UITableViewHeaderFooterViewBackground : UIView {
     UIView *_opaqueBackgroundView;
     UIView *_transparentBackgroundView;

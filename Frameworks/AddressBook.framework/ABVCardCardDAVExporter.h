@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface ABVCardCardDAVExporter : ABVCardExporter {
-}
+@interface ABVCardCardDAVExporter : ABVCardExporter
 
 + (id)copyVCardRepresentationOfRecord:(void*)arg1 withPhoto:(id)arg2 extraPhotoParameters:(id)arg3;
 

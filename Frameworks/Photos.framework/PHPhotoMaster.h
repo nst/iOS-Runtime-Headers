@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHPhotoMaster : PHObject {
-}
+@interface PHPhotoMaster : PHObject
 
 @end

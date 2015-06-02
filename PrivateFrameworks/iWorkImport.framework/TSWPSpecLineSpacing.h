@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecLineSpacing : TSSSpec {
-}
+@interface TSWPSpecLineSpacing : TSSSpec
 
 - (id)getUnsetSpec;
 

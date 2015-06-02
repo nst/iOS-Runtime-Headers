@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class NSString;
-
 @interface FMFAppAccountInfo : NSObject {
     NSString *_appAuthToken;
     int _appAuthTokenStatus;
@@ -14,13 +12,13 @@
     NSString *_username;
 }
 
-@property(retain) NSString * appAuthToken;
-@property int appAuthTokenStatus;
-@property(retain) NSString * appServerHost;
-@property(retain) NSString * dsid;
-@property(retain) NSString * legacyDsid;
-@property(retain) NSString * legacyUsername;
-@property(retain) NSString * username;
+@property (nonatomic, retain) NSString *appAuthToken;
+@property (nonatomic) int appAuthTokenStatus;
+@property (nonatomic, retain) NSString *appServerHost;
+@property (nonatomic, retain) NSString *dsid;
+@property (nonatomic, retain) NSString *legacyDsid;
+@property (nonatomic, retain) NSString *legacyUsername;
+@property (nonatomic, retain) NSString *username;
 
 - (void).cxx_destruct;
 - (id)appAuthToken;

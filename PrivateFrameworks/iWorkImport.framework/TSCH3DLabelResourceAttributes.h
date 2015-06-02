@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCH3DLabelBitmapContextInfo, TSWPParagraphStyle;
-
 @interface TSCH3DLabelResourceAttributes : NSObject <NSCopying> {
     TSCH3DLabelBitmapContextInfo *mBitmapContextInfo;
     float mLabelWidth;
@@ -12,11 +10,11 @@
     NSString *mString;
 }
 
-@property(readonly) TSCH3DLabelBitmapContextInfo * bitmapContextInfo;
-@property(readonly) float labelWidth;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) float renderSamples;
-@property(readonly) NSString * string;
+@property (nonatomic, readonly) TSCH3DLabelBitmapContextInfo *bitmapContextInfo;
+@property (nonatomic, readonly) float labelWidth;
+@property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
+@property (nonatomic, readonly) float renderSamples;
+@property (nonatomic, readonly) NSString *string;
 
 + (id)labelAttributesWithParagraphStyle:(id)arg1 string:(id)arg2 bitmapContextInfo:(id)arg3 labelWidth:(float)arg4 renderSamples:(float)arg5;
 

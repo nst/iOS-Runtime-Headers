@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSURLRequest, SKUIClientContext, SSMetricsPageEvent;
-
 @interface SKUILoadProductPageOperation : NSOperation {
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     long long _itemID;
     SSMetricsPageEvent *_metricsPageEvent;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _outputBlock;
-
+    id /* block */ _outputBlock;
     NSURLRequest *_urlRequest;
 }
 
-@property(readonly) SSMetricsPageEvent * metricsPageEvent;
-@property(copy) id outputBlock;
+@property (readonly) SSMetricsPageEvent *metricsPageEvent;
+@property (copy) id /* block */ outputBlock;
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadProductPageOperation;
@@ -30,7 +20,7 @@
 - (id)initWithProductPageURLRequest:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id)metricsPageEvent;
-- (id)outputBlock;
-- (void)setOutputBlock:(id)arg1;
+- (id /* block */)outputBlock;
+- (void)setOutputBlock:(id /* block */)arg1;
 
 @end

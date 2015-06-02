@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWPixelBufferPool, BWVideoFormat;
-
 @interface FigCapturePixelConverter : NSObject {
     BWVideoFormat *_outputFormat;
     struct opaqueCMFormatDescription { } *_outputFormatDescription;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, SKUILockupViewElement;
-
 @interface SKUIEditorialCardLayout : NSObject {
     NSMutableArray *_allLockups;
     SKUILockupViewElement *_primaryLockup;
@@ -14,10 +12,10 @@
     float _secondaryLockupWidth;
 }
 
-@property(readonly) NSArray * allLockups;
-@property(readonly) SKUILockupViewElement * primaryLockup;
-@property(readonly) struct CGSize { float x1; float x2; } primaryLockupSize;
-@property(readonly) float secondaryLockupWidth;
+@property (nonatomic, readonly) NSArray *allLockups;
+@property (nonatomic, readonly) SKUILockupViewElement *primaryLockup;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } primaryLockupSize;
+@property (nonatomic, readonly) float secondaryLockupWidth;
 
 - (void).cxx_destruct;
 - (id)allLockups;

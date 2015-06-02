@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSMutableString, NSObject;
-
 @interface BSDescriptionBuilder : NSObject {
     NSMutableString *_description;
     NSObject *_object;

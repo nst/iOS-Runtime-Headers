@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlaySlideshowSessionStartedOnServer : PBCodable <NSCopying> {
     NSString *_clientModel;
     NSString *_clientVersion;
@@ -24,26 +22,26 @@
     unsigned int _transportType;
 }
 
-@property(retain) NSString * clientModel;
-@property(retain) NSString * clientVersion;
-@property(readonly) BOOL hasClientModel;
-@property(readonly) BOOL hasClientVersion;
-@property BOOL hasRepeat;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasSlideMs;
-@property BOOL hasStatus;
-@property(readonly) BOOL hasTheme;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasTransition;
-@property BOOL hasTransportType;
-@property unsigned int repeat;
-@property(retain) NSString * sessionUUID;
-@property unsigned int slideMs;
-@property int status;
-@property(retain) NSString * theme;
-@property unsigned long long timestamp;
-@property(retain) NSString * transition;
-@property unsigned int transportType;
+@property (nonatomic, retain) NSString *clientModel;
+@property (nonatomic, retain) NSString *clientVersion;
+@property (nonatomic, readonly) BOOL hasClientModel;
+@property (nonatomic, readonly) BOOL hasClientVersion;
+@property (nonatomic) BOOL hasRepeat;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasSlideMs;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) BOOL hasTheme;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTransition;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int repeat;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int slideMs;
+@property (nonatomic) int status;
+@property (nonatomic, retain) NSString *theme;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSString *transition;
+@property (nonatomic) unsigned int transportType;
 
 - (id)clientModel;
 - (id)clientVersion;

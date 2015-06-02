@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@interface BKSPowerMonitor : NSObject {
-}
+@interface BKSPowerMonitor : NSObject
 
 + (id)sharedInstance;
 

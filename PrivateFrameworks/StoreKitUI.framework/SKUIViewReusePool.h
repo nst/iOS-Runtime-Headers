@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSMutableDictionary, UIView;
-
 @interface SKUIViewReusePool : NSObject {
     UIView *_parentView;
     NSMutableDictionary *_reuseClasses;

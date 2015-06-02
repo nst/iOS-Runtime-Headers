@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayScreenSessionEndedOnClient : PBCodable <NSCopying> {
     unsigned int _avgBitrate;
     unsigned int _avgEstimatedBandwidth;
@@ -46,44 +44,44 @@
     int _wifiRSSI;
 }
 
-@property unsigned int avgBitrate;
-@property unsigned int avgEstimatedBandwidth;
-@property unsigned int avgUsedBandwidth;
-@property unsigned int clearScreens;
-@property unsigned int configChanges;
-@property unsigned int cpuAvg;
-@property unsigned int duration;
-@property unsigned int forcedRefreshes;
-@property unsigned int framesSent;
-@property BOOL hasAvgBitrate;
-@property BOOL hasAvgEstimatedBandwidth;
-@property BOOL hasAvgUsedBandwidth;
-@property BOOL hasClearScreens;
-@property BOOL hasConfigChanges;
-@property BOOL hasCpuAvg;
-@property BOOL hasDuration;
-@property BOOL hasForcedRefreshes;
-@property BOOL hasFramesSent;
-@property BOOL hasReason;
-@property BOOL hasResumes;
-@property BOOL hasRetransmitAvg;
-@property BOOL hasRttAvg;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasSuspends;
-@property BOOL hasTimestamp;
-@property BOOL hasUnclearScreens;
-@property BOOL hasWifiChannel;
-@property BOOL hasWifiRSSI;
-@property int reason;
-@property unsigned int resumes;
-@property unsigned int retransmitAvg;
-@property unsigned int rttAvg;
-@property(retain) NSString * sessionUUID;
-@property unsigned int suspends;
-@property unsigned long long timestamp;
-@property unsigned int unclearScreens;
-@property unsigned int wifiChannel;
-@property int wifiRSSI;
+@property (nonatomic) unsigned int avgBitrate;
+@property (nonatomic) unsigned int avgEstimatedBandwidth;
+@property (nonatomic) unsigned int avgUsedBandwidth;
+@property (nonatomic) unsigned int clearScreens;
+@property (nonatomic) unsigned int configChanges;
+@property (nonatomic) unsigned int cpuAvg;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned int forcedRefreshes;
+@property (nonatomic) unsigned int framesSent;
+@property (nonatomic) BOOL hasAvgBitrate;
+@property (nonatomic) BOOL hasAvgEstimatedBandwidth;
+@property (nonatomic) BOOL hasAvgUsedBandwidth;
+@property (nonatomic) BOOL hasClearScreens;
+@property (nonatomic) BOOL hasConfigChanges;
+@property (nonatomic) BOOL hasCpuAvg;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasForcedRefreshes;
+@property (nonatomic) BOOL hasFramesSent;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic) BOOL hasResumes;
+@property (nonatomic) BOOL hasRetransmitAvg;
+@property (nonatomic) BOOL hasRttAvg;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasSuspends;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasUnclearScreens;
+@property (nonatomic) BOOL hasWifiChannel;
+@property (nonatomic) BOOL hasWifiRSSI;
+@property (nonatomic) int reason;
+@property (nonatomic) unsigned int resumes;
+@property (nonatomic) unsigned int retransmitAvg;
+@property (nonatomic) unsigned int rttAvg;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int suspends;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int unclearScreens;
+@property (nonatomic) unsigned int wifiChannel;
+@property (nonatomic) int wifiRSSI;
 
 - (unsigned int)avgBitrate;
 - (unsigned int)avgEstimatedBandwidth;

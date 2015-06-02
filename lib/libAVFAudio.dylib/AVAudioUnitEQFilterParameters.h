@@ -2,20 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface AVAudioUnitEQFilterParameters : NSObject {
     void *_impl;
 }
 
-@property float bandwidth;
-@property BOOL bypass;
-@property int filterType;
-@property float frequency;
-@property float gain;
+@property (nonatomic) float bandwidth;
+@property (nonatomic) BOOL bypass;
+@property (nonatomic) int filterType;
+@property (nonatomic) float frequency;
+@property (nonatomic) float gain;
 
 - (float)bandwidth;
 - (BOOL)bypass;

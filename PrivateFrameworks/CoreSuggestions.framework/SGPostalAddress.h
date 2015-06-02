@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGPostalAddress : SGLabeledObject {
     NSString *_cachedAddress;
     long _cachedAddressDispatchOnceToken;
     NSString *_rawAddress;
 }
 
-@property(readonly) NSString * address;
-@property(readonly) NSString * rawAddress;
+@property (nonatomic, readonly) NSString *address;
+@property (nonatomic, readonly) NSString *rawAddress;
 
 + (id)address:(id)arg1 label:(id)arg2;
 + (id)postalAddress:(id)arg1 label:(id)arg2;

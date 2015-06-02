@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, MTLIOAccelDevice<MTLDevice>, MTLResourceAllocationInfo, NSString;
-
 @interface MTLIOAccelResource : NSObject <MTLResourceSPI> {
     struct _MTLIOAccelResource { 
         union { 
@@ -33,21 +31,21 @@
     } _res;
 }
 
-@property(readonly) MTLResourceAllocationInfo * cachedAllocationInfo;
-@property(readonly) unsigned int cpuCacheMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned long long gpuAddress;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) unsigned int resourceID;
-@property(readonly) struct __IOAccelResource { }* resourceRef;
-@property(readonly) unsigned int resourceSize;
+@property (readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
+@property (readonly) unsigned int cpuCacheMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (nonatomic, readonly) unsigned long long gpuAddress;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (nonatomic, readonly) unsigned int resourceID;
+@property (readonly) struct __IOAccelResource { }*resourceRef;
+@property (nonatomic, readonly) unsigned int resourceSize;
 @property int responsibleProcess;
-@property(readonly) MTLResourceAllocationInfo * sharedAllocationInfo;
-@property(readonly) Class superclass;
-@property(readonly) void* virtualAddress;
+@property (readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) void*virtualAddress;
 
 - (void)annotateResource:(struct __CFDictionary { }*)arg1;
 - (id)cachedAllocationInfo;

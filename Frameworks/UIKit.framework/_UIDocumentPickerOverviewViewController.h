@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIDocumentPickerOverviewDelegate>, NSArray, NSString;
-
 @interface _UIDocumentPickerOverviewViewController : UITableViewController {
     NSArray *_allPickers;
     NSArray *_auxiliaryOptions;
@@ -14,13 +12,13 @@
     <_UIDocumentPickerOverviewDelegate> *_weak_delegate;
 }
 
-@property(retain) NSArray * allPickers;
-@property(retain) NSArray * auxiliaryOptions;
-@property(retain) NSString * currentExtensionIdentifier;
-@property <_UIDocumentPickerOverviewDelegate> * delegate;
-@property(retain) NSArray * fileTypes;
-@property BOOL manage;
-@property unsigned int mode;
+@property (nonatomic, retain) NSArray *allPickers;
+@property (nonatomic, retain) NSArray *auxiliaryOptions;
+@property (nonatomic, retain) NSString *currentExtensionIdentifier;
+@property (nonatomic) <_UIDocumentPickerOverviewDelegate> *delegate;
+@property (nonatomic, retain) NSArray *fileTypes;
+@property (nonatomic) BOOL manage;
+@property (nonatomic) unsigned int mode;
 
 - (id)allPickers;
 - (id)auxiliaryOptions;

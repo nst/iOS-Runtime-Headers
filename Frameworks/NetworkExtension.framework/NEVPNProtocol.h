@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEIdentityKeychainItem, NEKeychainItem, NEProxySettings, NSData, NSString, NSUUID;
-
 @interface NEVPNProtocol : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _disconnectOnIdle;
     int _disconnectOnIdleTimeout;
@@ -35,23 +33,23 @@
 @property BOOL disconnectOnUserSwitch;
 @property BOOL disconnectOnWake;
 @property int disconnectOnWakeTimeout;
-@property(copy) NSUUID * identifier;
-@property(retain) NEIdentityKeychainItem * identity;
-@property(copy) NSData * identityData;
-@property(copy) NSData * identityDataHash;
+@property (copy) NSUUID *identifier;
+@property (retain) NEIdentityKeychainItem *identity;
+@property (copy) NSData *identityData;
+@property (copy) NSData *identityDataHash;
 @property BOOL identityDataImported;
-@property(copy) NSData * identityDataInternal;
-@property(copy) NSString * identityDataPassword;
-@property(copy) NSData * identityReference;
-@property(copy) NSData * identityReferenceInternal;
+@property (copy) NSData *identityDataInternal;
+@property (copy) NSString *identityDataPassword;
+@property (copy) NSData *identityReference;
+@property (copy) NSData *identityReferenceInternal;
 @property int keychainDomain;
-@property(copy) NSString * passwordEncryption;
-@property(copy) NEKeychainItem * passwordKeychainItem;
-@property(copy) NSData * passwordReference;
-@property(copy) NEProxySettings * proxySettings;
-@property(copy) NSString * serverAddress;
-@property(readonly) int type;
-@property(copy) NSString * username;
+@property (copy) NSString *passwordEncryption;
+@property (copy) NEKeychainItem *passwordKeychainItem;
+@property (copy) NSData *passwordReference;
+@property (copy) NEProxySettings *proxySettings;
+@property (copy) NSString *serverAddress;
+@property (readonly) int type;
+@property (copy) NSString *username;
 
 + (BOOL)supportsSecureCoding;
 

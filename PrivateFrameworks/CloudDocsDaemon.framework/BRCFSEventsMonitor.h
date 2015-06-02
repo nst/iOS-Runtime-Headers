@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <BRCFSEventsDelegate>, BRCAccountSession, BRCFSEventsPersistedState, BRCRelativePath, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSString, PQLConnection;
-
 @interface BRCFSEventsMonitor : NSObject <BRCLowDiskDelegate, BRCModule> {
     PQLConnection *_db;
     <BRCFSEventsDelegate> *_delegate;
@@ -16,11 +10,7 @@
     NSObject<OS_dispatch_source> *_historicalEventSource;
     BRCFSEventsPersistedState *_persistedState;
     BRCFSEventsPersistedState *_rendezVous;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_resetCount;
-
+    int _resetCount;
     BRCRelativePath *_root;
     NSString *_rootPathRelativeToDevice;
     NSObject<OS_dispatch_source> *_rootVnodeWatcher;
@@ -28,24 +18,20 @@
     BRCAccountSession *_session;
     struct __FSEventStream { } *_stream;
     NSObject<OS_dispatch_queue> *_streamQueue;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_suspendCount;
-
+    int _suspendCount;
     BOOL _volumeHasLowDiskSpace;
     BOOL _volumeIsCaseSensitive;
 }
 
-@property(setter=setDB:,retain) PQLConnection * db;
-@property(copy,readonly) NSString * debugDescription;
-@property <BRCFSEventsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) BRCRelativePath * root;
-@property(readonly) Class superclass;
-@property(readonly) BOOL volumeIsCaseSensitive;
+@property (setter=setDB:, nonatomic, retain) PQLConnection *db;
+@property (readonly, copy) NSString *debugDescription;
+@property <BRCFSEventsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) BRCRelativePath *root;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL volumeIsCaseSensitive;
 
 - (void).cxx_destruct;
 - (void)_cancel;

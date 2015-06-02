@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSData;
-
 @interface MFHardwareJPEGScaler : NSObject {
     BOOL _canHardwareScaleImage;
     NSData *_imageData;

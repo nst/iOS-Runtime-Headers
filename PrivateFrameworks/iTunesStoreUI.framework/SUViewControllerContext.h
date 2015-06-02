@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface SUViewControllerContext : NSObject <NSCoding> {
     NSMutableDictionary *_metadata;
     NSString *_sectionIdentifier;
     int _type;
 }
 
-@property(retain) NSString * sectionIdentifier;
-@property int type;
+@property (nonatomic, retain) NSString *sectionIdentifier;
+@property (nonatomic) int type;
 
 - (int)_typeForTypeString:(id)arg1;
 - (id)_typeStringForType:(int)arg1;

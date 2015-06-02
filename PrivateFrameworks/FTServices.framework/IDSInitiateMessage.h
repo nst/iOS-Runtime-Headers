@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSArray, NSData, NSDictionary, NSNumber;
-
 @interface IDSInitiateMessage : IDSFaceTimeMessage <NSCopying> {
     NSArray *_canonicalizedPeers;
     NSArray *_peers;
@@ -14,13 +12,13 @@
     NSData *_selfPushToken;
 }
 
-@property(copy) NSArray * canonicalizedPeers;
-@property(copy) NSArray * peers;
-@property(copy) NSDictionary * regionInformation;
-@property(copy) NSData * selfBlob;
-@property(copy) NSNumber * selfNATType;
-@property(copy) NSData * selfNatIP;
-@property(copy) NSData * selfPushToken;
+@property (copy) NSArray *canonicalizedPeers;
+@property (copy) NSArray *peers;
+@property (copy) NSDictionary *regionInformation;
+@property (copy) NSData *selfBlob;
+@property (copy) NSNumber *selfNATType;
+@property (copy) NSData *selfNatIP;
+@property (copy) NSData *selfPushToken;
 
 - (id)bagKey;
 - (id)canonicalizedPeers;

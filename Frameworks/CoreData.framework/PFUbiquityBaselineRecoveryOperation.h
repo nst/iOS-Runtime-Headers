@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSObject<PFUbiquityBaselineRecoveryOperationDelegate>;
+@interface PFUbiquityBaselineRecoveryOperation : PFUbiquityBaselineOperation
 
-@interface PFUbiquityBaselineRecoveryOperation : PFUbiquityBaselineOperation {
-}
-
-@property NSObject<PFUbiquityBaselineRecoveryOperationDelegate> * delegate;
+@property NSObject<PFUbiquityBaselineRecoveryOperationDelegate> *delegate;
 
 - (BOOL)conflictsExistForBaseline:(id)arg1;
 - (id)delegate;

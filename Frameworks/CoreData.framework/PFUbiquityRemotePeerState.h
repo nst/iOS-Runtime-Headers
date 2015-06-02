@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString, PFUbiquityPeer;
+@interface PFUbiquityRemotePeerState : NSManagedObject
 
-@interface PFUbiquityRemotePeerState : NSManagedObject {
-}
-
-@property(retain) PFUbiquityPeer * peer;
-@property(retain) NSString * peerID;
-@property(retain) NSString * storeName;
-@property(retain) NSNumber * transactionNumber;
+@property (nonatomic, retain) PFUbiquityPeer *peer;
+@property (nonatomic, retain) NSString *peerID;
+@property (nonatomic, retain) NSString *storeName;
+@property (nonatomic, retain) NSNumber *transactionNumber;
 
 + (id)remotePeerStatesMatchingStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)remotePeerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2;

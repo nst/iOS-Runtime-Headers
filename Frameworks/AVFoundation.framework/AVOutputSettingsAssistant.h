@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVOutputSettingsAssistantInternal, NSDictionary, NSString;
-
 @interface AVOutputSettingsAssistant : NSObject {
     AVOutputSettingsAssistantInternal *_internal;
 }
 
-@property(readonly) NSDictionary * audioSettings;
-@property(readonly) NSString * outputFileType;
-@property(readonly) NSDictionary * videoSettings;
+@property (nonatomic, readonly) NSDictionary *audioSettings;
+@property (nonatomic, readonly) NSString *outputFileType;
+@property (nonatomic, readonly) NSDictionary *videoSettings;
 
 + (id)_allOutputSettingsPresets;
 + (id)availableOutputSettingsPresets;

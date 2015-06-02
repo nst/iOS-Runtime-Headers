@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSData, NSFetchRequest, NSOrderedSet, NSPredicate, NSString;
-
 @interface PLFetchingAlbum : _PLFetchingAlbum {
     NSPredicate *_ALAssetsGroupFilterPredicate;
     unsigned int _batchSize;
@@ -14,14 +12,14 @@
     unsigned int _videosCount;
 }
 
-@property(retain) NSPredicate * ALAssetsGroupFilterPredicate;
-@property unsigned int batchSize;
-@property(retain) NSData * customQueryParameters;
-@property(retain) NSString * customQueryType;
-@property(retain,readonly) NSPredicate * extraFilterPredicate;
-@property(retain) NSFetchRequest * fetchRequest;
-@property(retain) NSOrderedSet * fetchedAssets;
-@property(readonly) BOOL hasAssetsCache;
+@property (nonatomic, retain) NSPredicate *ALAssetsGroupFilterPredicate;
+@property (nonatomic) unsigned int batchSize;
+@property (nonatomic, retain) NSData *customQueryParameters;
+@property (nonatomic, retain) NSString *customQueryType;
+@property (nonatomic, readonly, retain) NSPredicate *extraFilterPredicate;
+@property (nonatomic, retain) NSFetchRequest *fetchRequest;
+@property (nonatomic, retain) NSOrderedSet *fetchedAssets;
+@property (nonatomic, readonly) BOOL hasAssetsCache;
 
 + (id)_panoramasAlbumPredicate;
 + (BOOL)contextShouldIgnoreChangesForALAssetsGroupFilterPredicate;

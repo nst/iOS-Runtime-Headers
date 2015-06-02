@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TPDocumentRoot, TPPageMaster, TSWPStorage;
-
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection> {
     TPDocumentRoot *_documentRoot;
     BOOL _inheritPreviousHeaderFooter;
@@ -16,26 +9,26 @@
     BOOL _pageMasterEvenOddPagesDifferent;
     BOOL _pageMasterFirstPageDifferent;
     BOOL _pageMasterFirstPageHidesHeaderFooter;
-    TPPageMaster *_pageMasters[3];
+    TPPageMaster *_pageMasters;
     TSWPStorage *_parentStorage;
     unsigned int _sectionPageNumberKind;
     unsigned int _sectionPageNumberStart;
     unsigned int _sectionStartKind;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL inheritPreviousHeaderFooter;
-@property(retain) NSString * name;
-@property BOOL pageMasterEvenOddPagesDifferent;
-@property BOOL pageMasterFirstPageDifferent;
-@property BOOL pageMasterFirstPageHidesHeaderFooter;
-@property TSWPStorage * parentStorage;
-@property unsigned int sectionPageNumberKind;
-@property unsigned int sectionPageNumberStart;
-@property unsigned int sectionStartKind;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inheritPreviousHeaderFooter;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) BOOL pageMasterEvenOddPagesDifferent;
+@property (nonatomic) BOOL pageMasterFirstPageDifferent;
+@property (nonatomic) BOOL pageMasterFirstPageHidesHeaderFooter;
+@property (nonatomic) TSWPStorage *parentStorage;
+@property (nonatomic) unsigned int sectionPageNumberKind;
+@property (nonatomic) unsigned int sectionPageNumberStart;
+@property (nonatomic) unsigned int sectionStartKind;
+@property (readonly) Class superclass;
 
 + (BOOL)needsObjectUUID;
 

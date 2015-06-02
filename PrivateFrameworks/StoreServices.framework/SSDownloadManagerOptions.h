@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString;
-
 @interface SSDownloadManagerOptions : NSObject <NSCopying> {
     NSArray *_downloadKinds;
     BOOL _filterExternalOriginatedDownloads;
@@ -12,11 +10,11 @@
     NSArray *_prefetchedDownloadProperties;
 }
 
-@property(copy) NSArray * downloadKinds;
-@property(copy) NSString * persistenceIdentifier;
-@property(copy) NSArray * prefetchedDownloadExternalProperties;
-@property(copy) NSArray * prefetchedDownloadProperties;
-@property BOOL shouldFilterExternalOriginatedDownloads;
+@property (nonatomic, copy) NSArray *downloadKinds;
+@property (nonatomic, copy) NSString *persistenceIdentifier;
+@property (nonatomic, copy) NSArray *prefetchedDownloadExternalProperties;
+@property (nonatomic, copy) NSArray *prefetchedDownloadProperties;
+@property (nonatomic) BOOL shouldFilterExternalOriginatedDownloads;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

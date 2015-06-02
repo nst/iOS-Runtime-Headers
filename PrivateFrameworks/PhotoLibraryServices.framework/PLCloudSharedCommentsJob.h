@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface PLCloudSharedCommentsJob : PLCloudSharingJob {
     NSString *_albumGUID;
     NSString *_assetGUID;
@@ -13,12 +11,12 @@
     NSDictionary *_mstreamdInfoDictionary;
 }
 
-@property(retain) NSString * albumGUID;
-@property(retain) NSString * assetGUID;
-@property(retain) NSString * commentGUID;
-@property long long jobType;
-@property(retain) NSArray * msASComments;
-@property(retain) NSDictionary * mstreamdInfoDictionary;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic, retain) NSString *assetGUID;
+@property (nonatomic, retain) NSString *commentGUID;
+@property (nonatomic) long long jobType;
+@property (nonatomic, retain) NSArray *msASComments;
+@property (nonatomic, retain) NSDictionary *mstreamdInfoDictionary;
 
 + (void)deleteSharedCommentFromServer:(id)arg1;
 + (id)directoryPathForInFlightComments:(BOOL)arg1;

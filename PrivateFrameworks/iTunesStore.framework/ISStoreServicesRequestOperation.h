@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class SSRequest;
-
 @interface ISStoreServicesRequestOperation : ISOperation {
     SSRequest *_request;
 }
 
-@property(readonly) SSRequest * request;
+@property (readonly) SSRequest *request;
 
 - (void)cancel;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSWorkspaceDelegate>, FBSSerialQueue, FBSWorkspaceClient, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FBSWorkspace : NSObject <FBSWorkspaceClientDelegate> {
     FBSSerialQueue *_callOutQueue;
     FBSWorkspaceClient *_client;
@@ -13,36 +11,36 @@
     NSObject<OS_dispatch_queue> *_scenesQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <FBSWorkspaceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) FBSSerialQueue * queue;
-@property(copy,readonly) NSArray * scenes;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FBSWorkspaceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBSSerialQueue *queue;
+@property (nonatomic, readonly, copy) NSArray *scenes;
+@property (readonly) Class superclass;
 
 - (id)_client;
 - (Class)_clientClass;
 - (id)_internalQueue;
-- (void)_performDelegateCallOut:(id)arg1;
+- (void)_performDelegateCallOut:(id /* block */)arg1;
 - (id)_sceneWithIdentifier:(id)arg1;
 - (void)client:(id)arg1 handleActions:(id)arg2;
-- (void)client:(id)arg1 handleCreateScene:(id)arg2 withCompletion:(id)arg3;
-- (void)client:(id)arg1 handleDestroyScene:(id)arg2 withCompletion:(id)arg3;
+- (void)client:(id)arg1 handleCreateScene:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)client:(id)arg1 handleDestroyScene:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)clientBeginTransaction:(id)arg1;
 - (void)clientEndTransaction:(id)arg1;
 - (void)clientSystemApplicationTerminated:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)enumerateScenesWithBlock:(id)arg1;
+- (void)enumerateScenesWithBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithSerialQueue:(id)arg1;
 - (BOOL)isUIApplicationWorkspace;
 - (id)queue;
-- (void)requestDestructionOfScene:(id)arg1 withCompletion:(id)arg2;
-- (void)requestSceneCreationWithInitialClientSettings:(id)arg1 completion:(id)arg2;
+- (void)requestDestructionOfScene:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)requestSceneCreationWithInitialClientSettings:(id)arg1 completion:(id /* block */)arg2;
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)scenes;
 - (void)setDelegate:(id)arg1;

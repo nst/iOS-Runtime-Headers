@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AccountSettings.framework/AccountSettings
  */
 
-@class NSSet, NSString;
-
 @interface ASRuntimeFixMailAccount : NSObject <ASRuntimeFixProtocol> {
     BOOL _shouldNotifyMobileMail;
     NSSet *_supportedMailClasses;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)_cleanupAccountClass:(id)arg1;
 - (void)accountsHaveBeenSaved:(BOOL)arg1;

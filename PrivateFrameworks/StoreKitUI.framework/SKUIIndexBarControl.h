@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIIndexBarControlDataSource>, <SKUIIndexBarControlDelegate>, NSArray, NSDictionary, NSIndexPath, NSMapTable, SKUIIndexBarEntry;
-
 @interface SKUIIndexBarControl : UIControl {
     SKUIIndexBarEntry *_combinedEntry;
     struct UIEdgeInsets { 
@@ -47,11 +45,11 @@
     } _totalSize;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
-@property <SKUIIndexBarControlDataSource> * dataSource;
-@property(copy) NSDictionary * defaultTextAttributes;
-@property <SKUIIndexBarControlDelegate> * delegate;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
+@property (nonatomic) <SKUIIndexBarControlDataSource> *dataSource;
+@property (nonatomic, copy) NSDictionary *defaultTextAttributes;
+@property (nonatomic) <SKUIIndexBarControlDelegate> *delegate;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
 
 - (void).cxx_destruct;
 - (id)_allEntries;
@@ -61,7 +59,7 @@
 - (id)_displayEntries;
 - (id)_displayEntriesThatFitInViewForGroupedEntries;
 - (id)_entryAtIndexPath:(id)arg1;
-- (void)_enumerateEntryIndexPathsUsingBlock:(id)arg1;
+- (void)_enumerateEntryIndexPathsUsingBlock:(id /* block */)arg1;
 - (void)_invalidateDisplayEntries;
 - (int)_numberOfEntriesInSection:(int)arg1;
 - (int)_numberOfSections;

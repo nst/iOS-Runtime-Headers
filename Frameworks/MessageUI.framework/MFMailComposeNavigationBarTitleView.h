@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, UILabel;
-
 @interface MFMailComposeNavigationBarTitleView : UIView {
     unsigned int _style;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
 - (id)_subtitleTextColor;
 - (float)_verticalOffsetForSubtitleWhenMini:(BOOL)arg1;

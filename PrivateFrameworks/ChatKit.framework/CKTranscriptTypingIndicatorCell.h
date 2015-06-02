@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKTypingView;
-
 @interface CKTranscriptTypingIndicatorCell : CKTranscriptMessageCell {
     CKTypingView *_typingIndicatorLayer;
     CKTypingView *_typingView;
 }
 
-@property(retain) CKTypingView * typingIndicatorLayer;
-@property(retain) CKTypingView * typingView;
+@property (nonatomic, retain) CKTypingView *typingIndicatorLayer;
+@property (nonatomic, retain) CKTypingView *typingView;
 
 + (struct CGSize { float x1; float x2; })indicatorSize;
 
@@ -21,8 +19,8 @@
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviewsForAlignmentContents;
-- (void)performInsertion:(id)arg1;
-- (void)performRemoval:(id)arg1;
+- (void)performInsertion:(id /* block */)arg1;
+- (void)performRemoval:(id /* block */)arg1;
 - (void)prepareForReuse;
 - (void)setOrientation:(BOOL)arg1;
 - (void)setTypingIndicatorLayer:(id)arg1;

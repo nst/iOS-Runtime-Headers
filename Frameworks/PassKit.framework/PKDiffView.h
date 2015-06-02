@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CAShapeLayer;
-
 @interface PKDiffView : UIView {
     CAShapeLayer *_shapeLayer;
 }
@@ -11,7 +9,7 @@
 + (void)initialize;
 
 - (void)dealloc;
-- (void)performStrokeWithCompletion:(id)arg1;
+- (void)performStrokeWithCompletion:(id /* block */)arg1;
 - (void)updateShapeLayer;
 
 @end

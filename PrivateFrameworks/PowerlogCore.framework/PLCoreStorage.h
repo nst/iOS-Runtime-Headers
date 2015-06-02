@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString, PLCFNotificationOperatorComposition, PLKQueue, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition, PLSQLiteConnection, PLStorageCache, PLStorageOperator, PLXPCResponderOperatorComposition;
-
 @interface PLCoreStorage : NSObject {
     PLSQLiteConnection *_connection;
     PLKQueue *_crashReporterKQueue;
@@ -22,20 +20,20 @@
     BOOL _storageReady;
 }
 
-@property(retain) PLSQLiteConnection * connection;
-@property(retain) PLKQueue * crashReporterKQueue;
-@property(retain) PLNSNotificationOperatorComposition * dailyTaskNotification;
-@property(retain) PLNSTimerOperatorComposition * dailyTaskTimer;
-@property(retain) PLCFNotificationOperatorComposition * keybagFirstUnlockNotification;
-@property(retain) PLStorageCache * lastEntryCache;
-@property(retain) NSString * mainDBInCRFolderUUIDString;
-@property(retain) PLNSTimerOperatorComposition * periodicCheckpointTimer;
-@property(retain) NSMutableDictionary * processIDCache;
-@property(retain) PLKQueue * profileDefaultsKQueue;
-@property(retain) NSMutableSet * safeCopyInProgress;
-@property(retain) PLXPCResponderOperatorComposition * safeFileResponder;
-@property BOOL storageLocked;
-@property(retain) PLStorageOperator * storageOperator;
+@property (retain) PLSQLiteConnection *connection;
+@property (retain) PLKQueue *crashReporterKQueue;
+@property (retain) PLNSNotificationOperatorComposition *dailyTaskNotification;
+@property (retain) PLNSTimerOperatorComposition *dailyTaskTimer;
+@property (retain) PLCFNotificationOperatorComposition *keybagFirstUnlockNotification;
+@property (retain) PLStorageCache *lastEntryCache;
+@property (nonatomic, retain) NSString *mainDBInCRFolderUUIDString;
+@property (retain) PLNSTimerOperatorComposition *periodicCheckpointTimer;
+@property (nonatomic, retain) NSMutableDictionary *processIDCache;
+@property (retain) PLKQueue *profileDefaultsKQueue;
+@property (retain) NSMutableSet *safeCopyInProgress;
+@property (retain) PLXPCResponderOperatorComposition *safeFileResponder;
+@property (nonatomic) BOOL storageLocked;
+@property (retain) PLStorageOperator *storageOperator;
 @property BOOL storageReady;
 
 + (id)allOperatorTableFiltersForRolloverDate:(id)arg1;
@@ -45,7 +43,7 @@
 - (void).cxx_destruct;
 - (id)accountingBoundariesInTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1 forAccountingGroups:(id)arg2;
 - (id)aggregateEntriesForKey:(id)arg1 withBucketLength:(double)arg2 inTimeIntervalRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg3;
-- (long long)blockingWriteEntry:(id)arg1 withCompletionBlock:(id)arg2;
+- (long long)blockingWriteEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)cacheProcessIDEntry:(id)arg1;
 - (void)cleanupTmp;
 - (id)connection;
@@ -63,8 +61,8 @@
 - (void)deleteEntry:(id)arg1;
 - (void)deleteEntryForKey:(id)arg1 WithRowID:(long long)arg2;
 - (void)deleteOldCRPowerlogLink;
-- (void)dispatchAsyncForEntrykey:(id)arg1 withBlock:(id)arg2;
-- (void)dispatchSyncForEntrykey:(id)arg1 withBlock:(id)arg2;
+- (void)dispatchAsyncForEntrykey:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)dispatchSyncForEntrykey:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)entriesForKey:(id)arg1 before:(BOOL)arg2 timeInterval:(double)arg3 count:(long long)arg4 withFilters:(id)arg5;
 - (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withCountOfEntriesBefore:(long long)arg3 withCountOfEntriesAfter:(long long)arg4 withFilters:(id)arg5;
 - (id)entriesForKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withFilters:(id)arg3;
@@ -74,7 +72,7 @@
 - (id)entriesForKey:(id)arg1 withProperties:(id)arg2;
 - (id)entryForKey:(id)arg1 withID:(long long)arg2;
 - (id)entryIntervalsForEntryKey:(id)arg1 inTimeRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg2 withIntervalStartKey:(id)arg3 withIntervalEndKey:(id)arg4 withFilters:(id)arg5;
-- (void)enumerateProcessIDCacheWithBlock:(id)arg1;
+- (void)enumerateProcessIDCacheWithBlock:(id /* block */)arg1;
 - (void)handleSchemaMismatchForTable:(id)arg1 expectedVersion:(double)arg2 schemaMatch:(short)arg3;
 - (id)init;
 - (void)initOperatorDependancies;
@@ -135,11 +133,11 @@
 - (BOOL)storageLocked;
 - (id)storageOperator;
 - (BOOL)storageReady;
-- (void)updateEntry:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)updateEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (short)verifySchemaVersionOfTable:(id)arg1 matchesExpectedVersion:(double)arg2;
 - (id)whiteBlackListForOperatorName:(id)arg1;
 - (void)writeAggregateEntry:(id)arg1;
-- (void)writeEntries:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)writeEntry:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)writeEntries:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)writeEntry:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 
 @end

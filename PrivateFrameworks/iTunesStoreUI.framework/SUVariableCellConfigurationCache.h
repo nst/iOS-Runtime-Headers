@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface SUVariableCellConfigurationCache : NSObject {
     NSMutableDictionary *_caches;
     id _cellContext;
     float _tableHeight;
 }
 
-@property(readonly) NSArray * caches;
-@property(retain) id cellContext;
+@property (nonatomic, readonly) NSArray *caches;
+@property (nonatomic, retain) id cellContext;
 
 - (id)cacheForClass:(Class)arg1;
 - (id)caches;

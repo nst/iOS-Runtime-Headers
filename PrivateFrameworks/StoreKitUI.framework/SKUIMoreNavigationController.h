@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMoreNavigationControllerDelegate>, UINavigationController, UIViewController;
-
 @interface SKUIMoreNavigationController : UIMoreNavigationController {
     UINavigationController *_displayedViewController;
     UIViewController *_firstActualViewController;
     <SKUIMoreNavigationControllerDelegate> *_storeKitDelegate;
 }
 
-@property <SKUIMoreNavigationControllerDelegate> * storeKitDelegate;
+@property (nonatomic) <SKUIMoreNavigationControllerDelegate> *storeKitDelegate;
 
 + (Class)_moreListControllerClass;
 

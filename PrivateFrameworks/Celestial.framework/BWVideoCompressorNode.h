@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface BWVideoCompressorNode : BWNode {
     struct OpaqueVTCompressionSession { } *_compressionSession;
     NSDictionary *_compressionSettings;

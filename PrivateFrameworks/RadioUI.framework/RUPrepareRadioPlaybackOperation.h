@@ -2,39 +2,25 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, RURadioGetTracksOperation, RadioRequestContext, RadioStation;
-
 @interface RUPrepareRadioPlaybackOperation : NSOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _firstTrackBlock;
-
+    id /* block */ _firstTrackBlock;
     RURadioGetTracksOperation *_getTracksOperation;
     NSLock *_lock;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _preparedBlock;
-
+    id /* block */ _preparedBlock;
     RadioRequestContext *_requestContext;
     RadioStation *_station;
 }
 
-@property(copy) id preparedBlock;
-@property(copy) RadioRequestContext * requestContext;
+@property (copy) id /* block */ preparedBlock;
+@property (copy) RadioRequestContext *requestContext;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithStation:(id)arg1;
 - (void)main;
-- (id)preparedBlock;
+- (id /* block */)preparedBlock;
 - (id)requestContext;
-- (void)setPreparedBlock:(id)arg1;
+- (void)setPreparedBlock:(id /* block */)arg1;
 - (void)setRequestContext:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
     unsigned int _material;
 }
 
-@property unsigned int material;
+@property (nonatomic) unsigned int material;
 
 + (id)sharedManager;
 

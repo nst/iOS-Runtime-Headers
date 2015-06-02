@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKAvailabilityCache, EKSourceConstraints, NSDate, NSNumber, NSSet, NSString;
-
 @interface EKSource : EKObject {
     EKAvailabilityCache *_availabilityCache;
     NSString *_cachedHost;
@@ -12,30 +10,30 @@
     NSDate *_timeOfLastExternalIdentificationCache;
 }
 
-@property(readonly) NSSet * allCalendars;
-@property(readonly) EKAvailabilityCache * availabilityCache;
-@property(retain) NSString * cachedHost;
-@property(retain) NSSet * cachedOwnerAddresses;
-@property int cachedPort;
-@property(readonly) NSSet * calendars;
-@property(readonly) EKSourceConstraints * constraints;
-@property(copy) NSNumber * defaultAlarmOffset;
-@property(readonly) int displayOrderForNewCalendar;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(copy) NSString * externalID;
-@property(copy) NSString * externalModificationTag;
-@property(readonly) BOOL isFacebookSource;
-@property BOOL onlyCreatorCanModify;
-@property(readonly) NSSet * ownerAddresses;
-@property(readonly) int preferredEventPrivateValue;
-@property(readonly) NSString * serverHost;
-@property(readonly) int serverPort;
-@property(readonly) NSString * sourceIdentifier;
-@property(readonly) int sourceType;
-@property(readonly) int strictestEventPrivateValue;
-@property(retain) NSDate * timeOfLastExternalIdentificationCache;
-@property(copy) NSString * title;
-@property(readonly) BOOL wantsCommentPromptWhenDeclining;
+@property (nonatomic, readonly) NSSet *allCalendars;
+@property (nonatomic, readonly) EKAvailabilityCache *availabilityCache;
+@property (nonatomic, retain) NSString *cachedHost;
+@property (nonatomic, retain) NSSet *cachedOwnerAddresses;
+@property (nonatomic) int cachedPort;
+@property (nonatomic, readonly) NSSet *calendars;
+@property (nonatomic, readonly) EKSourceConstraints *constraints;
+@property (nonatomic, copy) NSNumber *defaultAlarmOffset;
+@property (nonatomic, readonly) int displayOrderForNewCalendar;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *externalModificationTag;
+@property (nonatomic, readonly) BOOL isFacebookSource;
+@property (nonatomic) BOOL onlyCreatorCanModify;
+@property (nonatomic, readonly) NSSet *ownerAddresses;
+@property (nonatomic, readonly) int preferredEventPrivateValue;
+@property (nonatomic, readonly) NSString *serverHost;
+@property (nonatomic, readonly) int serverPort;
+@property (nonatomic, readonly) NSString *sourceIdentifier;
+@property (nonatomic, readonly) int sourceType;
+@property (nonatomic, readonly) int strictestEventPrivateValue;
+@property (nonatomic, retain) NSDate *timeOfLastExternalIdentificationCache;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) BOOL wantsCommentPromptWhenDeclining;
 
 + (id)sourceWithEventStore:(id)arg1;
 

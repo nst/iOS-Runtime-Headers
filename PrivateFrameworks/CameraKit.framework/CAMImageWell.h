@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSMutableArray, NSString, UIImageView, UIView;
-
 @interface CAMImageWell : UIButton {
     UIView *__containerView;
     NSMutableArray *__dimmingViewQueue;
@@ -19,13 +17,13 @@
     } _tappableEdgeInsets;
 }
 
-@property(readonly) UIView * _containerView;
-@property(readonly) NSMutableArray * _dimmingViewQueue;
-@property(readonly) UIImageView * _maskImageView;
-@property(readonly) UIImageView * _thumbnailImageView;
-@property(setter=_setUuid:,retain) NSString * _uuid;
-@property int cameraOrientation;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
+@property (nonatomic, readonly) UIView *_containerView;
+@property (nonatomic, readonly) NSMutableArray *_dimmingViewQueue;
+@property (nonatomic, readonly) UIImageView *_maskImageView;
+@property (nonatomic, readonly) UIImageView *_thumbnailImageView;
+@property (setter=_setUuid:, nonatomic, retain) NSString *_uuid;
+@property (nonatomic) int cameraOrientation;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 - (void).cxx_destruct;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransformForImageOrientation:(int)arg1;
@@ -34,7 +32,7 @@
 - (id)_dimmingViewQueue;
 - (id)_maskImage;
 - (id)_maskImageView;
-- (void)_performEmitAnimationWithImage:(id)arg1 orientation:(int)arg2 withCompletionBlock:(id)arg3;
+- (void)_performEmitAnimationWithImage:(id)arg1 orientation:(int)arg2 withCompletionBlock:(id /* block */)arg3;
 - (void)_removeFirstDimmingView;
 - (void)_setUuid:(id)arg1;
 - (id)_thumbnailImageView;

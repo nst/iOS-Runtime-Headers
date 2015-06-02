@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKAchievementDescriptionInternal : GKAchievementInternal {
-}
+@interface GKAchievementDescriptionInternal : GKAchievementInternal
 
 + (id)secureCodedPropertyKeys;
 

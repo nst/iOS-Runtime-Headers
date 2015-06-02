@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIChineseShared : NSObject {
-}
+@interface TIChineseShared : NSObject
 
 + (id)defaultFuzzyPinyinPairs;
 + (id)validFuzzyPinyinPairs;

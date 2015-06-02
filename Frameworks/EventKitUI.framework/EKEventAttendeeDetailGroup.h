@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventAttendeeDetailGroup : EKEventDetailGroup {
-}
+@interface EKEventAttendeeDetailGroup : EKEventDetailGroup
 
 - (id)itemAtIndex:(unsigned int)arg1;
 

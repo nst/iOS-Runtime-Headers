@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface ATSocket : NSObject <NSSecureCoding> {
     NSMutableArray *_delegates;
     int _descriptor;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _readBuffer[65536];
+    BOOL _readBuffer;
     int _socketMode;
     NSObject<OS_dispatch_source> *_source;
     unsigned int _suggestedBufferSize;
@@ -19,15 +17,15 @@
     unsigned int _writeBufferSize;
 }
 
-@property int descriptor;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property int socketMode;
-@property unsigned int suggestedBufferSize;
-@property(readonly) int transportUpdgradeExceptionCount;
-@property(retain) id userInfo;
-@property unsigned int writeBufferSize;
+@property (nonatomic) int descriptor;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) int socketMode;
+@property (nonatomic) unsigned int suggestedBufferSize;
+@property (nonatomic, readonly) int transportUpdgradeExceptionCount;
+@property (nonatomic, retain) id userInfo;
+@property (nonatomic) unsigned int writeBufferSize;
 
-+ (id)createBoundPair:(id[2])arg1;
++ (id)createBoundPair:(/* Warning: unhandled array encoding: '[2@]' */ id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -63,6 +61,6 @@
 - (id)userInfo;
 - (BOOL)writeAllData:(id)arg1 error:(id*)arg2;
 - (unsigned int)writeBufferSize;
-- (void)writeData:(id)arg1 withCompletion:(id)arg2;
+- (void)writeData:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

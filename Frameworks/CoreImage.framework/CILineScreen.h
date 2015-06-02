@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CILineScreen : _CIScreenFilter {
-}
+@interface CILineScreen : _CIScreenFilter
 
 + (id)customAttributes;
 

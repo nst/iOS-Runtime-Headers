@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSSet, NSString, NSURL;
-
 @interface SKUIChart : NSObject {
     NSArray *_items;
     BOOL _newsstand;
@@ -13,12 +11,12 @@
     NSSet *_unavailableItemIdentifiers;
 }
 
-@property(readonly) NSArray * items;
-@property(getter=isNewsstand,readonly) BOOL newsstand;
-@property(readonly) NSURL * seeAllURL;
-@property(readonly) BOOL showsIndexNumbers;
-@property(readonly) NSString * title;
-@property(copy) NSSet * unavailableItemIdentifiers;
+@property (nonatomic, readonly) NSArray *items;
+@property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
+@property (nonatomic, readonly) NSURL *seeAllURL;
+@property (nonatomic, readonly) BOOL showsIndexNumbers;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, copy) NSSet *unavailableItemIdentifiers;
 
 - (void).cxx_destruct;
 - (id)description;

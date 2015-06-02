@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABKeyboardSettings : NSObject {
-}
+@interface ABKeyboardSettings : NSObject
 
 + (int)autocapitalizationTypeFromDictionary:(id)arg1;
 + (int)autocorrectionTypeFromDictionary:(id)arg1;

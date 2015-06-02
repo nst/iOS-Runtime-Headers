@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewCellLayoutManagerValue1 : UITableViewCellLayoutManager {
-}
+@interface UITableViewCellLayoutManagerValue1 : UITableViewCellLayoutManager
 
 - (id)defaultDetailTextLabelFontForCell:(id)arg1;
 - (float)defaultDetailTextLabelFontSizeForCell:(id)arg1;

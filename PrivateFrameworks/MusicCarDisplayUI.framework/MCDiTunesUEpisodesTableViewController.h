@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDiTunesUEpisodesTableViewController : MCD_OLD_TableViewController {
-}
+@interface MCDiTunesUEpisodesTableViewController : MCD_OLD_TableViewController
 
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

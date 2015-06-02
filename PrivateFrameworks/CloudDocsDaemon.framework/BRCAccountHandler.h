@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class <BRCAccountHandlerDelegate>, BRCAccountSession, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCAccountHandler : NSObject {
     NSString *_currentAccountID;
     <BRCAccountHandlerDelegate> *_delegate;
@@ -13,8 +11,8 @@
     BRCAccountSession *_session;
 }
 
-@property <BRCAccountHandlerDelegate> * delegate;
-@property(readonly) BRCAccountSession * session;
+@property (nonatomic) <BRCAccountHandlerDelegate> *delegate;
+@property (nonatomic, readonly) BRCAccountSession *session;
 
 + (void)_migrateAccountIfNecessaryForAccountID:(id)arg1;
 + (id)inSystemStoreAccountIDForUbiquityDataclass;

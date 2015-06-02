@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIImageViewElement;
-
 @interface SKUIBrowseItemComponent : SKUIPageComponent {
     SKUIImageViewElement *_decorationImage;
     int _index;
@@ -12,11 +10,11 @@
     NSString *_title;
 }
 
-@property(readonly) SKUIImageViewElement * decorationImage;
-@property int index;
-@property BOOL showTopBorder;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) SKUIImageViewElement *decorationImage;
+@property (nonatomic) int index;
+@property (nonatomic) BOOL showTopBorder;
+@property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (int)componentType;

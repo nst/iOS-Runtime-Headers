@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface VSVoiceAsset : NSObject <NSSecureCoding> {
     NSNumber *_contentVersion;
     int _footprint;
@@ -15,14 +13,14 @@
     NSString *_name;
 }
 
-@property(readonly) NSNumber * contentVersion;
-@property(readonly) int footprint;
-@property(readonly) int gender;
-@property BOOL isBuiltInVoice;
-@property(readonly) BOOL isInstalled;
-@property(readonly) NSArray * languages;
-@property(readonly) NSString * masteredVersion;
-@property(readonly) NSString * name;
+@property (nonatomic, readonly) NSNumber *contentVersion;
+@property (nonatomic, readonly) int footprint;
+@property (nonatomic, readonly) int gender;
+@property (nonatomic) BOOL isBuiltInVoice;
+@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) NSArray *languages;
+@property (nonatomic, readonly) NSString *masteredVersion;
+@property (nonatomic, readonly) NSString *name;
 
 + (BOOL)supportsSecureCoding;
 

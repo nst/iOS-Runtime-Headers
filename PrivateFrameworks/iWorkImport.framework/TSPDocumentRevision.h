@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSPDocumentRevision : NSObject <NSCopying> {
     NSString *_identifier;
     int _sequence;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * revisionString;
-@property(readonly) int sequence;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSString *revisionString;
+@property (nonatomic, readonly) int sequence;
 
 + (id)documentRevisionAtURL:(id)arg1 passphrase:(id)arg2 error:(id*)arg3;
 + (id)revisionWithRevisionString:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class HKQuantity;
-
 @interface _FIUIFakeStatistics : NSObject {
     HKQuantity *_sumQuantity;
 }
 
-@property(retain) HKQuantity * sumQuantity;
+@property (nonatomic, retain) HKQuantity *sumQuantity;
 
 - (void).cxx_destruct;
 - (id)description;

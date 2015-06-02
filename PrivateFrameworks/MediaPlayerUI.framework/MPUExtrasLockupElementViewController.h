@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKLockupElement, MPUContentSizeLayoutConstraint, MPUExtrasConstrainedArtworkContainerView, NSLayoutConstraint, NSString, UILabel, UIView;
-
 @interface MPUExtrasLockupElementViewController : MPUExtrasViewElementViewController {
     NSLayoutConstraint *_artworkContainerHeightConstraint;
     NSLayoutConstraint *_artworkContainerTopConstraint;
@@ -29,8 +27,8 @@
     NSLayoutConstraint *_titleVerticalConstraint;
 }
 
-@property(readonly) NSString * descriptionTextStyle;
-@property(readonly) IKLockupElement * viewElement;
+@property (readonly) NSString *descriptionTextStyle;
+@property (readonly) IKLockupElement *viewElement;
 
 - (void).cxx_destruct;
 - (void)_configureArtworkViewForImageElement:(id)arg1 overlays:(id)arg2;

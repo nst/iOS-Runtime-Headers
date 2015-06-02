@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UISwitch;
-
 @interface PTSSwitchRowTableViewCell : PTSRowTableViewCell {
     UISwitch *_switch;
 }

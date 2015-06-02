@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, NSString;
-
 @interface SUBackgroundTaskOperation : ISOperation {
     ISOperation *_operation;
     NSString *_permissionIdentifier;
     unsigned int _taskIdentifier;
 }
 
-@property(readonly) ISOperation * operation;
-@property(readonly) NSString * permissionIdentifier;
+@property (readonly) ISOperation *operation;
+@property (readonly) NSString *permissionIdentifier;
 
 - (void)_cancelBackgroundAssertion;
 - (void)_removeBackgroundAssertion;

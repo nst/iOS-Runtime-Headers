@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSArray;
-
 @interface MSVSystemDialogResponse : NSObject {
     int _buttonIdentifier;
     NSArray *_textFieldValues;
 }
 
-@property(readonly) int buttonIdentifier;
-@property(readonly) NSArray * textFieldValues;
+@property (nonatomic, readonly) int buttonIdentifier;
+@property (nonatomic, readonly) NSArray *textFieldValues;
 
 - (void).cxx_destruct;
 - (int)buttonIdentifier;

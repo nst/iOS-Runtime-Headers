@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSHashTable;
-
 @interface NSKeyValueObservationInfo : NSObject {
     unsigned int _cachedHash;
     BOOL _cachedIsShareable;

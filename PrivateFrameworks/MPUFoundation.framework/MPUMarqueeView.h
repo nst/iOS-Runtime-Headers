@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class <MPUMarqueeViewDelegate>, NSUUID, UIView;
-
 @interface MPUMarqueeView : UIView {
     float _contentGap;
     struct CGSize { 
@@ -19,13 +17,13 @@
     double _marqueeScrollRate;
 }
 
-@property float contentGap;
-@property struct CGSize { float x1; float x2; } contentSize;
-@property(readonly) UIView * contentView;
-@property <MPUMarqueeViewDelegate> * delegate;
-@property double marqueeDelay;
-@property(getter=isMarqueeEnabled) BOOL marqueeEnabled;
-@property double marqueeScrollRate;
+@property (nonatomic) float contentGap;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic) <MPUMarqueeViewDelegate> *delegate;
+@property (nonatomic) double marqueeDelay;
+@property (getter=isMarqueeEnabled, nonatomic) BOOL marqueeEnabled;
+@property (nonatomic) double marqueeScrollRate;
 
 - (void).cxx_destruct;
 - (void)_createMarqueeAnimationIfNeededWithOptions:(long long)arg1;

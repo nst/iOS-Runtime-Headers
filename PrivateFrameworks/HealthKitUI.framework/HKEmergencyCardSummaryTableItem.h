@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKMedicalIDPersonSummaryCell;
-
 @interface HKEmergencyCardSummaryTableItem : HKEmergencyCardTableItem {
     HKMedicalIDPersonSummaryCell *_cell;
 }

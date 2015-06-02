@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class MediaControlClient, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FigCPEFPAirPlaySession : NSObject {
     NSDictionary *_contentInfo;
     unsigned long _fairPlayContext;
@@ -16,7 +14,7 @@
     unsigned long _vodkaVersion;
 }
 
-- (void)beginSessionWithCompletionQueue:(id)arg1 completionHandler:(id)arg2;
+- (void)beginSessionWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)createPicRequestWithError:(id*)arg1;
 - (void)dealloc;
 - (void)endSession;

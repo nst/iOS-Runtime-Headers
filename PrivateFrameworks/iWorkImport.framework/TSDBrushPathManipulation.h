@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface TSDBrushPathManipulation : TSDPathManipulation {
     struct CGPath { } *mBrushStroke;
     NSMutableArray *mMiddleSections;

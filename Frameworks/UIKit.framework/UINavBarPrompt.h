@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UINavigationBar;
-
 @interface UINavBarPrompt : UIView {
     UILabel *_label;
     UINavigationBar *_navBar;

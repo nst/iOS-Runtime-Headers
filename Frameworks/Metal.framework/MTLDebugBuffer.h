@@ -9,10 +9,10 @@
     BOOL _purgeableStateHasBeenSet;
 }
 
-@property unsigned int options;
-@property(readonly) const void* pointer;
-@property(readonly) unsigned int purgeableState;
-@property(readonly) BOOL purgeableStateHasBeenSet;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, readonly) const void*pointer;
+@property (nonatomic, readonly) unsigned int purgeableState;
+@property (nonatomic, readonly) BOOL purgeableStateHasBeenSet;
 
 - (id)description;
 - (id)initWithBuffer:(id)arg1 device:(id)arg2 bytes:(const void*)arg3 options:(unsigned int)arg4;

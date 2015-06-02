@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IDSAccount;
-
 @interface IMDIDSAccount : IMDAccount {
     IDSAccount *_idsAccount;
 }
 
-@property(retain,readonly) IDSAccount * idsAccount;
+@property (nonatomic, readonly, retain) IDSAccount *idsAccount;
 
 - (id)accountDefaults;
 - (void)dealloc;

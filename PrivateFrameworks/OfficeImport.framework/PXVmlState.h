@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ESDObject, PBPresentationReaderState;
-
 @interface PXVmlState : OAVReadState {
     PBPresentationReaderState *mLegacyPresentationState;
     ESDObject *mLegacyTextGlobals;

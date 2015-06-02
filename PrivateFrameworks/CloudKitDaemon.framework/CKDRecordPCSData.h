@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPCSData, CKRecordID;
-
 @interface CKDRecordPCSData : CKDPCSData {
     CKRecordID *_recordID;
     CKDPCSData *_sharePCSData;
     CKDPCSData *_zonePCSData;
 }
 
-@property(retain) CKRecordID * recordID;
-@property(retain) CKDPCSData * sharePCSData;
-@property(retain) CKDPCSData * zonePCSData;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, retain) CKDPCSData *sharePCSData;
+@property (nonatomic, retain) CKDPCSData *zonePCSData;
 
 + (id)dataWithRecordID:(id)arg1 pcsData:(id)arg2;
 + (BOOL)supportsSecureCoding;

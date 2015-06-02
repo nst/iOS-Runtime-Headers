@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNMacUILayout;
-
 @interface KNMacArchivedUILayout : TSPObject {
     KNMacUILayout *mUILayout;
 }
 
-@property(readonly) KNMacUILayout * uiLayout;
+@property (nonatomic, readonly) KNMacUILayout *uiLayout;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

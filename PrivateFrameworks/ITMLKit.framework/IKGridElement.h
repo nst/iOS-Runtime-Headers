@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString;
-
 @interface IKGridElement : IKCollectionElement {
     BOOL _paged;
 }
 
-@property(readonly) unsigned int columnCount;
-@property(getter=isPaged,readonly) BOOL paged;
-@property(readonly) unsigned int rowCount;
-@property(readonly) NSString * rowHeight;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (getter=isPaged, nonatomic, readonly) BOOL paged;
+@property (nonatomic, readonly) unsigned int rowCount;
+@property (nonatomic, readonly) NSString *rowHeight;
 
 - (unsigned int)columnCount;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

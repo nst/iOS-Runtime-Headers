@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPUserAlias : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
@@ -12,10 +10,10 @@
     int _type;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasType;
-@property(retain) NSString * identifier;
-@property int type;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

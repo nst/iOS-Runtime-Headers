@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSString;
-
 @interface IMToSuperParserContext : IMXMLParserContext {
     NSString *_backgroundColor;
     NSMutableArray *_backgroundColorStack;
@@ -24,11 +22,11 @@
     unsigned int _underlineCount;
 }
 
-@property(retain) NSString * backgroundColor;
+@property (nonatomic, retain) NSString *backgroundColor;
 @property int baseWritingDirection;
-@property(readonly) NSAttributedString * body;
-@property(retain) NSArray * fileTransferGUIDs;
-@property(retain) NSString * foregroundColor;
+@property (nonatomic, readonly) NSAttributedString *body;
+@property (nonatomic, retain) NSArray *fileTransferGUIDs;
+@property (nonatomic, retain) NSString *foregroundColor;
 
 - (void)_clearIvars;
 - (void)_incrementMessagePartNumber;

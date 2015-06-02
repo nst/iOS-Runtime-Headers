@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIGiftViewControllerDelegate>, NSOperationQueue, SKUIClientContext, SKUIGift, SKUIGiftComposeViewController, SKUIGiftConfiguration, UIViewController;
-
 @interface SKUIGiftViewController : UINavigationController {
     SKUIClientContext *_clientContext;
     SKUIGift *_gift;
@@ -14,10 +12,10 @@
     SKUIGiftComposeViewController *_rootViewController;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) SKUIGift * gift;
-@property <SKUIGiftViewControllerDelegate> * giftDelegate;
-@property(retain) NSOperationQueue * operationQueue;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, readonly, copy) SKUIGift *gift;
+@property (nonatomic) <SKUIGiftViewControllerDelegate> *giftDelegate;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;

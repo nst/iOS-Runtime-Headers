@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SYSerialization>, <SYStoreDelegate>, NMSMessageCenter, NSDictionary, NSError, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSUUID, SYPersistentStore, SYRetryTimer, SYVectorClock;
-
 @interface SYStore : NSObject <IDSServiceDelegate, NMSMessageCenterDelegate, SYChangeTrackingWithErrors> {
     BOOL _allowsDeletes;
     BOOL _alwaysWins;
@@ -39,11 +33,7 @@
     BOOL _fullSyncWasRequestedBySlave;
     struct __CFString { } *_loggingFacility;
     NMSMessageCenter *_messageCenter;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _nextBatchStep;
-
+    id /* block */ _nextBatchStep;
     NSError *_overflowRetryError;
     NSObject<OS_dispatch_source> *_overflowRetryTimer;
     NSUUID *_pairedDeviceID;
@@ -60,36 +50,36 @@
     SYVectorClock *_vectorClock;
 }
 
-@property BOOL allowsDeletes;
-@property BOOL alwaysWins;
-@property(copy) NSDictionary * customIDSDeliveryOptions;
-@property(retain) NSString * databaseFileName;
-@property(copy,readonly) NSString * debugDescription;
-@property <SYStoreDelegate> * delegate;
-@property unsigned int deliveryQOS;
-@property(copy,readonly) NSString * description;
-@property BOOL encryptPayloads;
-@property BOOL fullSyncWasRequestedBySlave;
-@property(readonly) BOOL hasCompletedFullSync;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL inDeltaSync;
-@property struct __CFString { }* loggingFacility;
-@property int maxBytesInFlight;
-@property(retain) NMSMessageCenter * messageCenter;
-@property(copy) id nextBatchStep;
-@property(getter=isPaired,readonly) BOOL paired;
-@property(retain) NSUUID * pairedDeviceID;
-@property(retain) SYPersistentStore * persistentStore;
-@property int priority;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property BOOL registeredNotificationHandlers;
-@property(retain) <SYSerialization> * serializer;
-@property(retain) NSString * service;
-@property(readonly) int state;
-@property(readonly) Class superclass;
-@property double timeToLive;
-@property BOOL tracksChanges;
-@property(retain) SYVectorClock * vectorClock;
+@property (nonatomic) BOOL allowsDeletes;
+@property (nonatomic) BOOL alwaysWins;
+@property (nonatomic, copy) NSDictionary *customIDSDeliveryOptions;
+@property (nonatomic, retain) NSString *databaseFileName;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SYStoreDelegate> *delegate;
+@property (nonatomic) unsigned int deliveryQOS;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL encryptPayloads;
+@property (nonatomic) BOOL fullSyncWasRequestedBySlave;
+@property (nonatomic, readonly) BOOL hasCompletedFullSync;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL inDeltaSync;
+@property (nonatomic) struct __CFString { }*loggingFacility;
+@property (nonatomic) int maxBytesInFlight;
+@property (nonatomic, retain) NMSMessageCenter *messageCenter;
+@property (nonatomic, copy) id /* block */ nextBatchStep;
+@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (nonatomic, retain) NSUUID *pairedDeviceID;
+@property (nonatomic, retain) SYPersistentStore *persistentStore;
+@property (nonatomic) int priority;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BOOL registeredNotificationHandlers;
+@property (nonatomic, retain) <SYSerialization> *serializer;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic, readonly) int state;
+@property (readonly) Class superclass;
+@property (nonatomic) double timeToLive;
+@property (nonatomic) BOOL tracksChanges;
+@property (nonatomic, retain) SYVectorClock *vectorClock;
 
 + (id)fullSyncActivityDictionary;
 
@@ -104,37 +94,37 @@
 - (BOOL)_isPairedWithDevice:(id)arg1;
 - (void)_listenForPrefsChangeNotifications;
 - (id)_pathForMessageCenterCache;
-- (void)_postBatchEndMessageWithState:(id)arg1 error:(id)arg2 then:(id)arg3;
-- (void)_postBatchStartMessageWithState:(id)arg1 then:(id)arg2;
+- (void)_postBatchEndMessageWithState:(id)arg1 error:(id)arg2 then:(id /* block */)arg3;
+- (void)_postBatchStartMessageWithState:(id)arg1 then:(id /* block */)arg2;
 - (void)_prefsChanged;
 - (void)_recordLastSeqNo:(id)arg1;
-- (void)_restartBatchSyncWithState:(id)arg1 then:(id)arg2;
+- (void)_restartBatchSyncWithState:(id)arg1 then:(id /* block */)arg2;
 - (void)_retrySync;
-- (void)_sendBatchChunk:(id)arg1 withState:(id)arg2 then:(id)arg3;
+- (void)_sendBatchChunk:(id)arg1 withState:(id)arg2 then:(id /* block */)arg3;
 - (void)_setupMessageCenter_LOCKED;
 - (BOOL)_shouldIgnoreSyncID:(id)arg1;
 - (BOOL)_shouldSkipNonSyncMessages;
 - (void)_syncEndedWithSyncID:(id)arg1;
-- (void)_transaction:(id)arg1 context:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4 reportError:(id)arg5;
+- (void)_transaction:(id /* block */)arg1 context:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4 reportError:(id /* block */)arg5;
 - (void)_updateMessageCenterPrefs:(id)arg1;
 - (void)_vectorClockUpdated;
 - (void)addObject:(id)arg1;
-- (void)addObject:(id)arg1 completion:(id)arg2;
+- (void)addObject:(id)arg1 completion:(id /* block */)arg2;
 - (void)addObject:(id)arg1 context:(id)arg2;
 - (void)addObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3;
 - (BOOL)addObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3 error:(id*)arg4;
 - (BOOL)addObject:(id)arg1 error:(id*)arg2;
 - (BOOL)allowsDeletes;
 - (BOOL)alwaysWins;
-- (void)blockingTransaction:(id)arg1;
-- (void)blockingTransaction:(id)arg1 handlingError:(id)arg2;
+- (void)blockingTransaction:(id /* block */)arg1;
+- (void)blockingTransaction:(id /* block */)arg1 handlingError:(id /* block */)arg2;
 - (id)customIDSDeliveryOptions;
 - (id)databaseFileName;
 - (void)dealloc;
 - (id)decodeSYObject:(id)arg1;
 - (id)delegate;
 - (void)deleteObject:(id)arg1;
-- (void)deleteObject:(id)arg1 completion:(id)arg2;
+- (void)deleteObject:(id)arg1 completion:(id /* block */)arg2;
 - (void)deleteObject:(id)arg1 context:(id)arg2;
 - (void)deleteObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3;
 - (BOOL)deleteObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3 error:(id*)arg4;
@@ -149,7 +139,7 @@
 - (void)handleBatchSyncStart:(id)arg1;
 - (void)handleChangeMessage:(id)arg1;
 - (void)handleFullSyncRequest:(id)arg1 response:(id)arg2;
-- (void)handleObjectChanges:(id)arg1 contextInfo:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4 reportError:(id)arg5;
+- (void)handleObjectChanges:(id)arg1 contextInfo:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4 reportError:(id /* block */)arg5;
 - (void)handleSyncAllObjects:(id)arg1 response:(id)arg2;
 - (BOOL)hasCompletedFullSync;
 - (BOOL)inDeltaSync;
@@ -174,7 +164,7 @@
 - (void)messageCenter:(id)arg1 didSuccessfullySendRequestWithIdentifier:(id)arg2 userInfo:(id)arg3;
 - (id)newFullSyncContext;
 - (id)newMessageHeader;
-- (id)nextBatchStep;
+- (id /* block */)nextBatchStep;
 - (BOOL)objectChanged:(id)arg1 sinceVersion:(unsigned long long)arg2;
 - (id)pairedDeviceID;
 - (BOOL)peerState:(id)arg1 fromPeer:(id)arg2 matchesExpectationForChangeCount:(unsigned int)arg3 offsetAmount:(unsigned int*)arg4;
@@ -211,7 +201,7 @@
 - (void)setMessageCenter:(id)arg1;
 - (void)setNeedsFullSync;
 - (void)setNeedsFullSyncWithContext:(id)arg1 idsOptions:(id)arg2;
-- (void)setNextBatchStep:(id)arg1;
+- (void)setNextBatchStep:(id /* block */)arg1;
 - (void)setPairedDeviceID:(id)arg1;
 - (void)setPersistentStore:(id)arg1;
 - (void)setPriority:(int)arg1;
@@ -228,14 +218,14 @@
 - (int)state;
 - (double)timeToLive;
 - (BOOL)tracksChanges;
-- (void)transaction:(id)arg1;
-- (void)transaction:(id)arg1 completion:(id)arg2;
-- (void)transaction:(id)arg1 context:(id)arg2;
-- (void)transaction:(id)arg1 context:(id)arg2 idsOptions:(id)arg3;
-- (void)transaction:(id)arg1 context:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4;
-- (void)transaction:(id)arg1 handlingError:(id)arg2;
+- (void)transaction:(id /* block */)arg1;
+- (void)transaction:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)transaction:(id /* block */)arg1 context:(id)arg2;
+- (void)transaction:(id /* block */)arg1 context:(id)arg2 idsOptions:(id)arg3;
+- (void)transaction:(id /* block */)arg1 context:(id)arg2 idsOptions:(id)arg3 blockUntilSent:(BOOL)arg4;
+- (void)transaction:(id /* block */)arg1 handlingError:(id /* block */)arg2;
 - (void)updateObject:(id)arg1;
-- (void)updateObject:(id)arg1 completion:(id)arg2;
+- (void)updateObject:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateObject:(id)arg1 context:(id)arg2;
 - (void)updateObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3;
 - (BOOL)updateObject:(id)arg1 context:(id)arg2 idsOptions:(id)arg3 error:(id*)arg4;

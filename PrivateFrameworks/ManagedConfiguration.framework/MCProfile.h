@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MCProfile : NSObject {
     NSString *_UUID;
     NSString *_displayName;
@@ -32,40 +30,40 @@
     int _version;
 }
 
-@property(retain,readonly) NSString * UUID;
-@property(retain) NSString * displayName;
-@property(retain,readonly) NSDate * earliestCertificateExpiryDate;
-@property(getter=isEncrypted) BOOL encrypted;
-@property(retain,readonly) NSDate * expiryDate;
-@property(retain,readonly) NSString * friendlyName;
-@property(retain,readonly) NSString * identifier;
-@property(retain) NSDate * installDate;
-@property(retain) NSDictionary * installOptions;
-@property(retain,readonly) NSArray * installationWarnings;
-@property(readonly) BOOL isManagedByProfileService;
-@property(readonly) BOOL isSigned;
-@property(readonly) BOOL isStub;
-@property(readonly) NSString * localizedConsentText;
-@property(retain,readonly) NSArray * localizedManagedPayloadSummaryByType;
-@property(retain,readonly) NSArray * localizedPayloadSummaryByType;
-@property(getter=isLocked) BOOL locked;
-@property(retain,readonly) NSArray * managedPayloads;
-@property BOOL mustInstallNonInteractively;
-@property(readonly) BOOL needsReboot;
-@property(retain,readonly) NSString * organization;
-@property(retain,readonly) NSArray * payloads;
-@property(retain,readonly) NSString * productBuildVersion;
-@property(retain,readonly) NSString * productVersion;
-@property(retain,readonly) NSString * profileDescription;
-@property(retain,readonly) NSString * profileIDHashFileName;
-@property(readonly) NSDate * removalDate;
-@property(retain) NSString * removalPasscode;
-@property(readonly) struct __SecCertificate { }* signerCertificate;
-@property(retain) NSArray * signerCertificates;
-@property(readonly) NSString * signerSummary;
-@property(retain,readonly) NSString * stubFileName;
-@property(readonly) int trustLevel;
-@property(readonly) int version;
+@property (nonatomic, readonly, retain) NSString *UUID;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly, retain) NSDate *earliestCertificateExpiryDate;
+@property (getter=isEncrypted, nonatomic) BOOL encrypted;
+@property (nonatomic, readonly, retain) NSDate *expiryDate;
+@property (nonatomic, readonly, retain) NSString *friendlyName;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, retain) NSDate *installDate;
+@property (nonatomic, retain) NSDictionary *installOptions;
+@property (nonatomic, readonly, retain) NSArray *installationWarnings;
+@property (nonatomic, readonly) BOOL isManagedByProfileService;
+@property (nonatomic, readonly) BOOL isSigned;
+@property (nonatomic, readonly) BOOL isStub;
+@property (nonatomic, readonly) NSString *localizedConsentText;
+@property (nonatomic, readonly, retain) NSArray *localizedManagedPayloadSummaryByType;
+@property (nonatomic, readonly, retain) NSArray *localizedPayloadSummaryByType;
+@property (getter=isLocked, nonatomic) BOOL locked;
+@property (nonatomic, readonly, retain) NSArray *managedPayloads;
+@property (nonatomic) BOOL mustInstallNonInteractively;
+@property (nonatomic, readonly) BOOL needsReboot;
+@property (nonatomic, readonly, retain) NSString *organization;
+@property (nonatomic, readonly, retain) NSArray *payloads;
+@property (nonatomic, readonly, retain) NSString *productBuildVersion;
+@property (nonatomic, readonly, retain) NSString *productVersion;
+@property (nonatomic, readonly, retain) NSString *profileDescription;
+@property (nonatomic, readonly, retain) NSString *profileIDHashFileName;
+@property (nonatomic, readonly) NSDate *removalDate;
+@property (nonatomic, retain) NSString *removalPasscode;
+@property (nonatomic, readonly) struct __SecCertificate { }*signerCertificate;
+@property (nonatomic, retain) NSArray *signerCertificates;
+@property (nonatomic, readonly) NSString *signerSummary;
+@property (nonatomic, readonly, retain) NSString *stubFileName;
+@property (nonatomic, readonly) int trustLevel;
+@property (nonatomic, readonly) int version;
 
 + (id)_malformedProfileError;
 + (id)badFieldTypeErrorWithField:(id)arg1;
@@ -97,7 +95,7 @@
 - (id)displayName;
 - (id)earliestCertificateExpiryDate;
 - (void)evaluateSignerTrust;
-- (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id)arg1;
+- (void)evaluateSignerTrustAsynchronouslyWithCompletion:(id /* block */)arg1;
 - (id)expiryDate;
 - (id)friendlyName;
 - (id)identifier;

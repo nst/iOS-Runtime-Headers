@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureStillImageOutputInternal_FigRecorder, NSArray, NSDictionary;
-
 @interface AVCaptureStillImageOutput_FigRecorder : AVCaptureOutput_FigRecorder {
     AVCaptureStillImageOutputInternal_FigRecorder *_internal;
 }
 
-@property BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
-@property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
-@property(readonly) NSArray * availableImageDataCodecTypes;
-@property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
-@property(copy) NSDictionary * outputSettings;
-@property(getter=isStillImageStabilizationActive,readonly) BOOL stillImageStabilizationActive;
-@property(getter=isStillImageStabilizationSupported,readonly) BOOL stillImageStabilizationSupported;
+@property (nonatomic) BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
+@property (nonatomic, readonly) NSArray *availableImageDataCVPixelFormatTypes;
+@property (nonatomic, readonly) NSArray *availableImageDataCodecTypes;
+@property (getter=isCapturingStillImage, readonly) BOOL capturingStillImage;
+@property (nonatomic, copy) NSDictionary *outputSettings;
+@property (getter=isStillImageStabilizationActive, nonatomic, readonly) BOOL stillImageStabilizationActive;
+@property (getter=isStillImageStabilizationSupported, nonatomic, readonly) BOOL stillImageStabilizationSupported;
 
 + (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
 + (void)initialize;
@@ -29,8 +27,8 @@
 - (BOOL)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (id)availableImageDataCVPixelFormatTypes;
 - (id)availableImageDataCodecTypes;
-- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
-- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)configureAndInitiateCopyStillImageForRequest:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)dealloc;

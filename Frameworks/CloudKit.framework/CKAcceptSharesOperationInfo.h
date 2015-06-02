@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKAcceptSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_shareURLsToAccept;
 }
 
-@property(retain) NSArray * shareURLsToAccept;
+@property (nonatomic, retain) NSArray *shareURLsToAccept;
 
 + (BOOL)supportsSecureCoding;
 

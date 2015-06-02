@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDate, NSMutableDictionary, NSString;
-
 @interface PFUbiquitySaveSnapshot : NSObject {
     NSString *_exportingPeerID;
     NSString *_localPeerID;
@@ -12,11 +10,11 @@
     NSDate *_transactionDate;
 }
 
-@property(readonly) NSString * exportingPeerID;
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSString * modelVersionHash;
-@property(readonly) NSArray * storeNames;
-@property(retain) NSDate * transactionDate;
+@property (nonatomic, readonly) NSString *exportingPeerID;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) NSString *modelVersionHash;
+@property (nonatomic, readonly) NSArray *storeNames;
+@property (nonatomic, retain) NSDate *transactionDate;
 
 - (void)dealloc;
 - (id)description;

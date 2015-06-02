@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, SKUIGiftConfiguration, UITextField, UIView;
-
 @interface SKUIGiftAmountControl : UIControl <UITextFieldDelegate> {
     NSMutableArray *_amountButtons;
     UIView *_customAmountBackgroundView;
@@ -13,12 +11,12 @@
     int _trackingAmount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int selectedAmount;
-@property(readonly) NSString * selectedAmountString;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int selectedAmount;
+@property (nonatomic, readonly) NSString *selectedAmountString;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reloadSelectedButton;

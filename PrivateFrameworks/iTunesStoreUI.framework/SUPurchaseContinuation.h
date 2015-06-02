@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUPurchaseManager;
-
 @interface SUPurchaseContinuation : SUContinuation {
     id _purchase;
     SUPurchaseManager *_purchaseManager;
 }
 
-@property(readonly) id purchase;
-@property SUPurchaseManager * purchaseManager;
+@property (nonatomic, readonly) id purchase;
+@property (nonatomic) SUPurchaseManager *purchaseManager;
 
 - (void)cancel;
 - (void)dealloc;

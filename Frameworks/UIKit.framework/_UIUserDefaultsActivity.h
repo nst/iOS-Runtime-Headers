@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UINavigationController, UIViewController, _UIActivityUserDefaults;
-
 @interface _UIUserDefaultsActivity : UIActivity {
     NSArray *_availableActivities;
     UINavigationController *_navigationController;
@@ -11,10 +9,10 @@
     UIViewController *_userDefaultsViewController;
 }
 
-@property(copy) NSArray * availableActivities;
-@property(retain) UINavigationController * navigationController;
-@property(retain) _UIActivityUserDefaults * userDefaults;
-@property(retain) UIViewController * userDefaultsViewController;
+@property (nonatomic, copy) NSArray *availableActivities;
+@property (nonatomic, retain) UINavigationController *navigationController;
+@property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
+@property (nonatomic, retain) UIViewController *userDefaultsViewController;
 
 - (id)_activityImage;
 - (void)_cleanup;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStoryboardPresentationSegue : UIStoryboardSegue <UIAdaptivePresentationControllerDelegate> {
     BOOL _animates;
     int _modalPresentationStyle;
@@ -12,15 +10,15 @@
     BOOL _useDefaultModalTransitionStyle;
 }
 
-@property BOOL animates;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int modalPresentationStyle;
-@property int modalTransitionStyle;
-@property(readonly) Class superclass;
-@property BOOL useDefaultModalPresentationStyle;
-@property BOOL useDefaultModalTransitionStyle;
+@property (nonatomic) BOOL animates;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int modalPresentationStyle;
+@property (nonatomic) int modalTransitionStyle;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useDefaultModalPresentationStyle;
+@property (nonatomic) BOOL useDefaultModalTransitionStyle;
 
 - (void)_prepare;
 - (BOOL)animates;

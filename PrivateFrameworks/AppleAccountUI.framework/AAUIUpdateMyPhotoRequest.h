@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class ACAccount, NSValue, UIImage;
-
 @interface AAUIUpdateMyPhotoRequest : AARequest {
     ACAccount *_account;
     NSValue *_cropRect;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_Moving : TSKAddedToDocumentContext {
-}
+@interface TSKAddedToDocumentContext_Moving : TSKAddedToDocumentContext
 
 - (id)description;
 - (id)undoContext;

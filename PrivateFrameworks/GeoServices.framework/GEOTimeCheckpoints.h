@@ -15,10 +15,10 @@
     } _timeToNextCheckpoints;
 }
 
-@property(readonly) unsigned int* distToNextCheckpoints;
-@property(readonly) unsigned int distToNextCheckpointsCount;
-@property(readonly) unsigned int* timeToNextCheckpoints;
-@property(readonly) unsigned int timeToNextCheckpointsCount;
+@property (nonatomic, readonly) unsigned int*distToNextCheckpoints;
+@property (nonatomic, readonly) unsigned int distToNextCheckpointsCount;
+@property (nonatomic, readonly) unsigned int*timeToNextCheckpoints;
+@property (nonatomic, readonly) unsigned int timeToNextCheckpointsCount;
 
 - (void)addDistToNextCheckpoint:(unsigned int)arg1;
 - (void)addTimeToNextCheckpoint:(unsigned int)arg1;

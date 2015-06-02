@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSUnarchiveFromDataTransformer : _NSSharedValueTransformer {
-}
+@interface _NSUnarchiveFromDataTransformer : _NSSharedValueTransformer
 
 - (id)description;
 - (id)reverseTransformedValue:(id)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNNoteContainedWPRep : TSWPRep {
-}
+@interface KNNoteContainedWPRep : TSWPRep
 
 @end

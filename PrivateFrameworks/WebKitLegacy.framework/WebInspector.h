@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebInspectorFrontend, WebView;
-
 @interface WebInspector : NSObject {
     WebInspectorFrontend *_frontend;
     WebView *_webView;

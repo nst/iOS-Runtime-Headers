@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class CDSession, NSCountedSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MFPowerController : NSObject <MFDiagnosticsGenerator> {
     unsigned int _appState;
     CDSession *_duetSession;
@@ -16,10 +14,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)powerlog:(id)arg1 eventData:(id)arg2;
 + (id)sharedInstance;

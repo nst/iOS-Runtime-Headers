@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
+@interface SSMetricsMediaEvent : SSMetricsBaseEvent
 
-@interface SSMetricsMediaEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) NSNumber * itemIdentifier;
-@property(retain) NSString * locationDescription;
-@property(retain) NSString * mediaEventType;
-@property(retain) NSString * mediaURL;
+@property (nonatomic, retain) NSNumber *itemIdentifier;
+@property (nonatomic, retain) NSString *locationDescription;
+@property (nonatomic, retain) NSString *mediaEventType;
+@property (nonatomic, retain) NSString *mediaURL;
 
 - (id)init;
 - (id)itemIdentifier;

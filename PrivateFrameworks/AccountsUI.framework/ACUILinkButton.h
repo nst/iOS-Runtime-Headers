@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class NSString;
-
 @interface ACUILinkButton : UIButton {
     NSString *_acui_titleString;
 }
 
-@property(retain) NSString * acui_titleString;
+@property (retain) NSString *acui_titleString;
 
 - (void).cxx_destruct;
 - (id)_highlightedStringAttributes;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFSignatures : NSObject {
-}
+@interface MFSignatures : NSObject
 
 + (id)sharedInstance;
 + (id)signatureMarkupFormat:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSMutableDictionary;
-
 @interface SKThreadSafeMutableDictionary : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableDictionary *_storage;
     int _storageLock;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class <DAFolderChangeConsumer>, NSString;
-
 @interface DAFolderChange : NSObject <NSSecureCoding> {
     int _changeType;
     <DAFolderChangeConsumer> *_consumer;
@@ -15,14 +13,16 @@
     unsigned int _taskId;
 }
 
-@property int changeType;
-@property <DAFolderChangeConsumer> * consumer;
-@property int dataclass;
-@property(retain) NSString * displayName;
-@property(retain) NSString * folderId;
-@property(retain) NSString * parentFolderId;
-@property BOOL renameOnCollision;
-@property unsigned int taskId;
+@property (nonatomic) int changeType;
+@property (nonatomic) <DAFolderChangeConsumer> *consumer;
+@property (nonatomic) int dataclass;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *folderId;
+@property (nonatomic, retain) NSString *parentFolderId;
+@property (nonatomic) BOOL renameOnCollision;
+@property (nonatomic) unsigned int taskId;
+
+// Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
 
 + (BOOL)supportsSecureCoding;
 
@@ -36,7 +36,6 @@
 - (id)folderId;
 - (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
 - (id)initWithCoder:(id)arg1;
-- (id)mf_deferredOperation;
 - (id)parentFolderId;
 - (BOOL)renameOnCollision;
 - (void)setChangeType:(int)arg1;
@@ -48,5 +47,9 @@
 - (void)setRenameOnCollision:(BOOL)arg1;
 - (void)setTaskId:(unsigned int)arg1;
 - (unsigned int)taskId;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
+- (id)mf_deferredOperation;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADGradientFillStop : NSObject <NSCopying> {
     OADColor *mColor;
     float mPosition;

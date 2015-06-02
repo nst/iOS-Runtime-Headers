@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIAlertControllerActionView;
-
 @interface _UIAlertControllerCollectionViewCell : UICollectionViewCell {
     _UIAlertControllerActionView *_actionView;
 }
 
-@property(retain) _UIAlertControllerActionView * actionView;
+@property (nonatomic, retain) _UIAlertControllerActionView *actionView;
 
 - (id)actionView;
 - (void)applyLayoutAttributes:(id)arg1;

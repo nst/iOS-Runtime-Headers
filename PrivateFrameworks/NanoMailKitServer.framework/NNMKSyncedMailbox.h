@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString, NSURL;
-
 @interface NNMKSyncedMailbox : NSObject {
     NSString *_accountId;
     NSString *_customName;
@@ -11,10 +9,10 @@
     NSURL *_url;
 }
 
-@property(retain) NSString * accountId;
-@property(retain) NSString * customName;
-@property unsigned int type;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSString *customName;
+@property (nonatomic) unsigned int type;
+@property (nonatomic, retain) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)accountId;

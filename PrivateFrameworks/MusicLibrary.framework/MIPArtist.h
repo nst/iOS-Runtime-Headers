@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MIPArtist : PBCodable <NSCopying> {
     NSString *_artworkId;
     struct { 
@@ -16,16 +14,16 @@
     long long _storeId;
 }
 
-@property(retain) NSString * artworkId;
-@property(readonly) BOOL hasArtworkId;
-@property(readonly) BOOL hasName;
-@property BOOL hasPersistentId;
-@property(readonly) BOOL hasSortName;
-@property BOOL hasStoreId;
-@property(retain) NSString * name;
-@property long long persistentId;
-@property(retain) NSString * sortName;
-@property long long storeId;
+@property (nonatomic, retain) NSString *artworkId;
+@property (nonatomic, readonly) BOOL hasArtworkId;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasPersistentId;
+@property (nonatomic, readonly) BOOL hasSortName;
+@property (nonatomic) BOOL hasStoreId;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long persistentId;
+@property (nonatomic, retain) NSString *sortName;
+@property (nonatomic) long long storeId;
 
 - (void).cxx_destruct;
 - (id)artworkId;

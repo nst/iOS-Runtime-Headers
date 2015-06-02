@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSArray;
-
 @interface SPStockListComplicationData : SPComplicationData <NSSecureCoding> {
     NSArray *_stockList;
 }
 
-@property(retain) NSArray * stockList;
+@property (nonatomic, retain) NSArray *stockList;
 
 + (BOOL)supportsSecureCoding;
 

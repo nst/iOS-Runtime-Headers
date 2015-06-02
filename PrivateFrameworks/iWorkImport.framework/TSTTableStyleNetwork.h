@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSTCellStyle, TSTTableStyle, TSWPParagraphStyle, TSWPShapeStyle;
-
 @interface TSTTableStyleNetwork : TSPObject <NSFastEnumeration> {
     TSTCellStyle *mBodyCellStyle;
     TSWPParagraphStyle *mBodyTextStyle;
@@ -24,18 +17,18 @@
     TSTTableStyle *mTableStyle;
 }
 
-@property(readonly) TSTCellStyle * bodyCellStyle;
-@property(readonly) TSWPParagraphStyle * bodyTextStyle;
-@property(readonly) TSTCellStyle * footerRowCellStyle;
-@property(readonly) TSWPParagraphStyle * footerRowTextStyle;
-@property(readonly) TSTCellStyle * headerColumnCellStyle;
-@property(readonly) TSWPParagraphStyle * headerColumnTextStyle;
-@property(readonly) TSTCellStyle * headerRowCellStyle;
-@property(readonly) TSWPParagraphStyle * headerRowTextStyle;
-@property unsigned int presetID;
-@property(retain) TSWPShapeStyle * tableNameShapeStyle;
-@property(retain) TSWPParagraphStyle * tableNameStyle;
-@property(retain) TSTTableStyle * tableStyle;
+@property (nonatomic, readonly) TSTCellStyle *bodyCellStyle;
+@property (nonatomic, readonly) TSWPParagraphStyle *bodyTextStyle;
+@property (nonatomic, readonly) TSTCellStyle *footerRowCellStyle;
+@property (nonatomic, readonly) TSWPParagraphStyle *footerRowTextStyle;
+@property (nonatomic, readonly) TSTCellStyle *headerColumnCellStyle;
+@property (nonatomic, readonly) TSWPParagraphStyle *headerColumnTextStyle;
+@property (nonatomic, readonly) TSTCellStyle *headerRowCellStyle;
+@property (nonatomic, readonly) TSWPParagraphStyle *headerRowTextStyle;
+@property (nonatomic) unsigned int presetID;
+@property (nonatomic, retain) TSWPShapeStyle *tableNameShapeStyle;
+@property (nonatomic, retain) TSWPParagraphStyle *tableNameStyle;
+@property (nonatomic, retain) TSTTableStyle *tableStyle;
 
 + (id)createStylesInStylesheet:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
 + (id)curatedTableStylePropertySetForCrossDocumentPasteMasterComparison;
@@ -57,7 +50,7 @@
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)dictionaryWithPreset:(unsigned int)arg1;
 - (id)footerRowCellStyle;

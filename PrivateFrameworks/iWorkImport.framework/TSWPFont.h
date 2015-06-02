@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSWPFont : NSObject {
     NSString *_compatibilityName;
     NSString *_displayName;
@@ -12,10 +10,10 @@
     unsigned int _hash;
 }
 
-@property(copy) NSString * compatibilityName;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * familyName;
-@property(copy) NSString * fontName;
+@property (nonatomic, copy) NSString *compatibilityName;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *familyName;
+@property (nonatomic, copy) NSString *fontName;
 
 + (id)fontForStyles:(id*)arg1 count:(unsigned int)arg2;
 + (id)fontWithName:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <UIViewControllerContextTransitioning>, PUZoomableGridTransition;
-
 @interface PUGridZoomTransitionAnimationController : _UICollectionViewControllerLayoutToLayoutTransition {
     <UIViewControllerContextTransitioning> *_transitionContext;
 }
 
-@property(readonly) PUZoomableGridTransition * gridTransitionInfo;
+@property (nonatomic, readonly) PUZoomableGridTransition *gridTransitionInfo;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;

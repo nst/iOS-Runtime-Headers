@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSCHChartInfo;
-
 @interface TSCHLegendModel : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
     TSCHChartInfo *mChartInfo;
     struct CGRect { 
@@ -23,13 +16,13 @@
     } mLegendFrame;
 }
 
-@property TSCHChartInfo * chartInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGPoint { float x1; float x2; } legendOffset;
-@property struct CGSize { float x1; float x2; } legendSize;
-@property(readonly) Class superclass;
+@property (nonatomic) TSCHChartInfo *chartInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGPoint { float x1; float x2; } legendOffset;
+@property (nonatomic) struct CGSize { float x1; float x2; } legendSize;
+@property (readonly) Class superclass;
 
 + (unsigned char)styleOwnerPathType;
 

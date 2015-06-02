@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, UINavigationBar, UIView;
-
 @interface PLInteractiveNavigationControllerView : UIView <UINavigationBarDelegate> {
     UIView *_bottom;
     struct { 
@@ -20,17 +18,17 @@
     UIView *_top;
 }
 
-@property(retain) UIView * bottomView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * footerView;
-@property(getter=footerViewIsHidden) BOOL footerViewHidden;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * headerView;
-@property(getter=headerViewIsHidden) BOOL headerViewHidden;
-@property(readonly) UINavigationBar * navigationBar;
-@property(readonly) Class superclass;
-@property(retain) UIView * topView;
+@property (nonatomic, retain) UIView *bottomView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *footerView;
+@property (getter=footerViewIsHidden, nonatomic) BOOL footerViewHidden;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *headerView;
+@property (getter=headerViewIsHidden, nonatomic) BOOL headerViewHidden;
+@property (nonatomic, readonly) UINavigationBar *navigationBar;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *topView;
 
 - (void)_adjustViewFrame:(id)arg1;
 - (id)bottomView;

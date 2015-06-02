@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSNumber, NSString;
-
 @interface SKUILibraryItem : NSObject <NSCopying> {
     NSString *_storeFlavorIdentifier;
     NSNumber *_storeItemIdentifier;
 }
 
-@property(copy) NSString * storeFlavorIdentifier;
-@property(copy) NSNumber * storeItemIdentifier;
+@property (nonatomic, copy) NSString *storeFlavorIdentifier;
+@property (nonatomic, copy) NSNumber *storeItemIdentifier;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

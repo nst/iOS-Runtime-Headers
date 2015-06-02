@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFTimer;
-
 @interface AFSetTimerRequest : AFSiriRequest {
     AFTimer *_timer;
 }
 
-@property(retain) AFTimer * timer;
+@property (nonatomic, retain) AFTimer *timer;
 
 + (BOOL)supportsSecureCoding;
 

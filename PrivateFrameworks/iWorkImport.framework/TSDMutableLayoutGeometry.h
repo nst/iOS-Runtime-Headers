@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableLayoutGeometry : TSDLayoutGeometry {
-}
+@interface TSDMutableLayoutGeometry : TSDLayoutGeometry
 
 - (void)outsetBy:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

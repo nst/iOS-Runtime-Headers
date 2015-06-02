@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@interface DEManagedDefaults : NSObject {
-}
+@interface DEManagedDefaults : NSObject
 
 + (id)sharedInstance;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSXPCConnection;
-
 @interface SSEntity : NSObject <SSXPCCoding> {
     SSXPCConnection *_connection;
     NSArray *_dirtyLocalExternalProperties;
@@ -14,15 +12,15 @@
     long long _pid;
 }
 
-@property(getter=_localExternalValues,setter=_setLocalExternalValues:,copy) NSDictionary * _localExternalValues;
-@property(getter=_localValues,setter=_setLocalValues:,copy) NSDictionary * _localValues;
-@property(getter=_isManaged,readonly) BOOL _managed;
-@property(readonly) long long _persistentIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL exists;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=_localExternalValues, setter=_setLocalExternalValues:, copy) NSDictionary *_localExternalValues;
+@property (getter=_localValues, setter=_setLocalValues:, copy) NSDictionary *_localValues;
+@property (getter=_isManaged, readonly) BOOL _managed;
+@property (readonly) long long _persistentIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BOOL exists;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;

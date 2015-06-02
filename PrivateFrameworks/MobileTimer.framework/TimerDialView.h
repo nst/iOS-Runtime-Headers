@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSMutableArray, UIFont;
-
 @interface TimerDialView : UIView {
     double _currentDuration;
     double _currentTime;
@@ -23,11 +21,11 @@
     float _tickHorizontalSpacing;
 }
 
-@property(retain) UIFont * labelFont;
-@property float majorTickHeight;
-@property float minorTickHeight;
-@property unsigned int minorTicksPerSection;
-@property float tickHorizontalSpacing;
+@property (nonatomic, retain) UIFont *labelFont;
+@property (nonatomic) float majorTickHeight;
+@property (nonatomic) float minorTickHeight;
+@property (nonatomic) unsigned int minorTicksPerSection;
+@property (nonatomic) float tickHorizontalSpacing;
 
 - (void)dealloc;
 - (id)graduatedSection;

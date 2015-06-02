@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleDeclaration;
+@interface DOMCSSFontFaceRule : DOMCSSRule
 
-@interface DOMCSSFontFaceRule : DOMCSSRule {
-}
-
-@property(readonly) DOMCSSStyleDeclaration * style;
+@property (readonly) DOMCSSStyleDeclaration *style;
 
 - (id)style;
 

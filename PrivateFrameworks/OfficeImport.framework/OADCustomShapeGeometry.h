@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface OADCustomShapeGeometry : OADShapeGeometry {
     NSMutableArray *mFormulas;
     struct CsRect<int> { int x1[4]; } *mGeometryCoordSpace;

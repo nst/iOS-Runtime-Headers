@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSArray, NSAttributedString;
-
 @interface FIUIPushyLabelView : UIView {
     double _currentAnimationFinishTime;
     NSAttributedString *_currentAttributedText;

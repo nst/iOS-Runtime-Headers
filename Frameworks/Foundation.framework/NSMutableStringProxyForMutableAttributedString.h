@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableAttributedString;
-
 @interface NSMutableStringProxyForMutableAttributedString : NSMutableString {
     NSMutableAttributedString *mutableAttributedString;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKReminderViewControllerDelegate>, <EKStyleProvider>, EKEventStore, EKReminder, EKReminderEditor, NSString;
-
 @interface EKReminderViewController : UIViewController <EKCalendarItemEditorDelegate, EKPickerTableViewDelegate, EKReminderEditorDelegate> {
     SEL _datePickerAction;
     id _datePickerTarget;
@@ -13,15 +11,15 @@
     BOOL _shouldShowDatePicker;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <EKReminderViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) EKReminderEditor * editor;
-@property(retain) EKEventStore * eventStore;
-@property(readonly) unsigned int hash;
-@property(retain) EKReminder * reminder;
-@property(retain) <EKStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKReminderViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) EKReminderEditor *editor;
+@property (nonatomic, retain) EKEventStore *eventStore;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) EKReminder *reminder;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_eventStoreChanged:(id)arg1;

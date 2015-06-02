@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <GEOMapItemPrivate>, NSString, PLRevGeoCompoundNameInfo;
-
 @interface PLRevGeoLocationInfo : NSObject {
     PLRevGeoCompoundNameInfo *_compoundNameInfo;
     PLRevGeoCompoundNameInfo *_compoundSecondaryNameInfo;
@@ -14,14 +12,14 @@
     unsigned int _providerVersion;
 }
 
-@property(retain) PLRevGeoCompoundNameInfo * compoundNameInfo;
-@property(retain) PLRevGeoCompoundNameInfo * compoundSecondaryNameInfo;
-@property(copy,readonly) NSString * countryCode;
-@property(retain) <GEOMapItemPrivate> * geoMapItem;
-@property BOOL isHome;
-@property(readonly) BOOL isValid;
-@property(retain) NSString * providerId;
-@property unsigned int providerVersion;
+@property (nonatomic, retain) PLRevGeoCompoundNameInfo *compoundNameInfo;
+@property (nonatomic, retain) PLRevGeoCompoundNameInfo *compoundSecondaryNameInfo;
+@property (nonatomic, readonly, copy) NSString *countryCode;
+@property (nonatomic, retain) <GEOMapItemPrivate> *geoMapItem;
+@property (nonatomic) BOOL isHome;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, retain) NSString *providerId;
+@property (nonatomic) unsigned int providerVersion;
 
 + (id)_namingOrderForAssetReverseGeoDescription;
 + (id)_newRevGeoLocationInfoFromData:(id)arg1;
@@ -29,7 +27,7 @@
 + (BOOL)isValidFromData:(id)arg1;
 + (id)newDataFromRevGeoLocationInfo:(id)arg1;
 + (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
-+ (id)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
++ (id /* block */)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
 
 - (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
 - (id)compoundNameInfo;

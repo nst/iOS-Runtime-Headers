@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADPlaceholderColor : OADColor {
-}
+@interface OADPlaceholderColor : OADColor
 
 - (id)colorForStyleColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

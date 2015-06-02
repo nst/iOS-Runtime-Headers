@@ -11,11 +11,11 @@
     BOOL _includesActualByteCount;
     BOOL _includesCount;
     BOOL _includesUnit;
-    int _reserved[5];
+    int _reserved;
     BOOL _zeroPadsFractionDigits;
 }
 
-@property(getter=isAdaptive) BOOL adaptive;
+@property (getter=isAdaptive) BOOL adaptive;
 @property unsigned int allowedUnits;
 @property BOOL allowsNonnumericFormatting;
 @property int countStyle;

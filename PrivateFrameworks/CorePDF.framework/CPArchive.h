@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSData, NSMutableString;
-
 @interface CPArchive : NSObject <CPDisposable> {
     NSMutableString *htmlString;
     NSMutableString *htmlStringNoImages;

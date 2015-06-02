@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionCoreAnimationTool, AVVideoCompositionInternal, NSArray;
-
 @interface AVVideoComposition : NSObject <NSCopying, NSMutableCopying> {
     AVVideoCompositionInternal *_videoComposition;
 }
 
-@property(retain,readonly) AVVideoCompositionCoreAnimationTool * animationTool;
-@property(readonly) Class customVideoCompositorClass;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
-@property(copy,readonly) NSArray * instructions;
-@property(readonly) float renderScale;
-@property(readonly) struct CGSize { float x1; float x2; } renderSize;
+@property (nonatomic, readonly, retain) AVVideoCompositionCoreAnimationTool *animationTool;
+@property (nonatomic, readonly) Class customVideoCompositorClass;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } frameDuration;
+@property (nonatomic, readonly, copy) NSArray *instructions;
+@property (nonatomic, readonly) float renderScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } renderSize;
 
 + (void)initialize;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;

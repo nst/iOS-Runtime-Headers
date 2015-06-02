@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPAVItem, RadioStation;
-
 @interface RUAddStationEpilogueContext : NSObject {
     RadioStation *_addedStation;
     MPAVItem *_prefixItem;
@@ -11,10 +9,10 @@
     BOOL _shouldKeepPlayingCurrentItem;
 }
 
-@property(readonly) RadioStation * addedStation;
-@property(retain) MPAVItem * prefixItem;
-@property BOOL shouldBeginPlayback;
-@property BOOL shouldKeepPlayingCurrentItem;
+@property (nonatomic, readonly) RadioStation *addedStation;
+@property (nonatomic, retain) MPAVItem *prefixItem;
+@property (nonatomic) BOOL shouldBeginPlayback;
+@property (nonatomic) BOOL shouldKeepPlayingCurrentItem;
 
 - (void).cxx_destruct;
 - (id)addedStation;

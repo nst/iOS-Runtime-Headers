@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAudioProgressView, NSString, UILabel;
-
 @interface CKAudioProgressTableViewActionButton : _UITableViewCellActionButton <SBBulletinCellButton> {
     double _currentProgress;
     double _duration;
@@ -12,15 +10,15 @@
     CKAudioProgressView *_progressView;
 }
 
-@property double currentProgress;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property(retain) UILabel * label;
-@property double lastProgress;
-@property(retain) CKAudioProgressView * progressView;
-@property(readonly) Class superclass;
+@property (nonatomic) double currentProgress;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic) double lastProgress;
+@property (nonatomic, retain) CKAudioProgressView *progressView;
+@property (readonly) Class superclass;
 
 - (void)_playButtonHit:(id)arg1;
 - (void)_updateTime:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, SKUIArtwork, UIImage;
-
 @interface SKUIIndexBarEntryDescriptor : NSObject {
     SKUIArtwork *_artwork;
     NSAttributedString *_attributedString;
@@ -22,13 +20,13 @@
     int _visibilityPriority;
 }
 
-@property(retain) SKUIArtwork * artwork;
-@property(copy) NSAttributedString * attributedString;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
-@property int entryDescriptorType;
-@property(retain) UIImage * image;
-@property struct CGSize { float x1; float x2; } size;
-@property int visibilityPriority;
+@property (nonatomic, retain) SKUIArtwork *artwork;
+@property (nonatomic, copy) NSAttributedString *attributedString;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
+@property (nonatomic) int entryDescriptorType;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) int visibilityPriority;
 
 + (id)entryDescriptorWithArtwork:(id)arg1;
 + (id)entryDescriptorWithAttributedString:(id)arg1;

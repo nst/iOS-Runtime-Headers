@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface EDLinksCollection : NSObject {
     NSMutableArray *mLinks;
     NSMutableArray *mReferences;

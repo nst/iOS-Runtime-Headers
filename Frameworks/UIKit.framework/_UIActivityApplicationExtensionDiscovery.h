@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface _UIActivityApplicationExtensionDiscovery : NSObject {
     id _extensionMatchingContext;
     NSArray *_extensionPointIdentifiers;
@@ -12,13 +10,13 @@
     BOOL _sourceIsManaged;
 }
 
-@property(retain) id extensionMatchingContext;
-@property(copy) NSArray * extensionPointIdentifiers;
-@property BOOL matchesOnlyUserElectedExtensions;
+@property (retain) id extensionMatchingContext;
+@property (nonatomic, copy) NSArray *extensionPointIdentifiers;
+@property (nonatomic) BOOL matchesOnlyUserElectedExtensions;
 @property BOOL performsInitialMatching;
-@property BOOL sourceIsManaged;
+@property (nonatomic) BOOL sourceIsManaged;
 
-- (id)activitiesMatchingInputItems:(id)arg1 error:(id*)arg2 updateBlock:(id)arg3;
+- (id)activitiesMatchingInputItems:(id)arg1 error:(id*)arg2 updateBlock:(id /* block */)arg3;
 - (void)cancelUpdatesIfNeeded;
 - (void)dealloc;
 - (id)extensionMatchingContext;

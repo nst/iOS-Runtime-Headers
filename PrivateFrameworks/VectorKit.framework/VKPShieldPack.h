@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKPShieldPack : PBCodable <NSCopying> {
     NSMutableArray *_atlas;
     NSMutableArray *_shields;
 }
 
-@property(retain) NSMutableArray * atlas;
-@property(retain) NSMutableArray * shields;
+@property (nonatomic, retain) NSMutableArray *atlas;
+@property (nonatomic, retain) NSMutableArray *shields;
 
 - (void)addAtlas:(id)arg1;
 - (void)addShields:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUIPerson, NSString;
-
 @interface ABPersonLinkedInfo : NSObject {
     NSString *_name;
     ABUIPerson *_person;
@@ -11,10 +9,10 @@
     BOOL _unified;
 }
 
-@property(retain) NSString * name;
-@property(retain) ABUIPerson * person;
-@property(retain) NSString * type;
-@property(getter=isUnified) BOOL unified;
+@property (retain) NSString *name;
+@property (retain) ABUIPerson *person;
+@property (retain) NSString *type;
+@property (getter=isUnified) BOOL unified;
 
 - (void)dealloc;
 - (id)description;

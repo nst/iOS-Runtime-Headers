@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVCustomVideoCompositorSession, AVVideoComposition, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVAssetImageGeneratorInternal : NSObject {
     NSString *apertureMode;
     BOOL appliesPreferredTrackTransform;

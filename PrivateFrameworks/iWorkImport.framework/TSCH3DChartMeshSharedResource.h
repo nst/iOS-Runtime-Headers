@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DDataBuffer;
-
 @interface TSCH3DChartMeshSharedResource : TSCH3DChartMeshSharedChildResource {
     TSCH3DDataBuffer *mMesh;
 }
 
-@property(retain) TSCH3DDataBuffer * mesh;
+@property (nonatomic, retain) TSCH3DDataBuffer *mesh;
 
 - (void)dealloc;
 - (void)flushMemory;

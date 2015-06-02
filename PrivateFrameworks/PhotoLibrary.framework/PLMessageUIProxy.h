@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLMessageUIProxy : NSObject {
-}
+@interface PLMessageUIProxy : NSObject
 
 + (Class)MFComposeRecipientClass;
 + (Class)MFComposeRecipientViewClass;

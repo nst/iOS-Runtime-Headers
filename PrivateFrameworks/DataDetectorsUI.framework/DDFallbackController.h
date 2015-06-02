@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class UIWindow;
-
 @interface DDFallbackController : UIViewController {
     UIWindow *_baseWindow;
     id _interactionDelegate;
@@ -12,10 +10,10 @@
 }
 
 - (void)dealloc;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)initWithWindow:(id)arg1 interactionDelegate:(id)arg2;
 - (void)loadView;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 
 @end

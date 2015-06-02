@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLError : NSError {
-}
+@interface MTLError : NSError
 
 - (id)initWithIOAccelError:(int)arg1;
 - (id)localizedDescription;

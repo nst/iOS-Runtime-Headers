@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSUColor;
-
 @interface TSDShadow : NSObject <NSCopying, NSMutableCopying, TSDMixing, TSSPreset, TSSPresetSource> {
     float mAngle;
     struct CGColor { } *mColor;
@@ -18,15 +11,15 @@
     float mRadius;
 }
 
-@property(copy,readonly) TSUColor * TSUColor;
-@property(readonly) float angle;
-@property(readonly) struct CGColor { }* color;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(readonly) float offset;
-@property(readonly) struct CGPoint { float x1; float x2; } offsetDelta;
-@property(readonly) float opacity;
-@property(readonly) NSString * presetKind;
-@property(readonly) float radius;
+@property (nonatomic, readonly, copy) TSUColor *TSUColor;
+@property (nonatomic, readonly) float angle;
+@property (nonatomic, readonly) struct CGColor { }*color;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) float offset;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } offsetDelta;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic, readonly) float radius;
 
 + (BOOL)automaticallyNotifiesObserversOfTSUColor;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPNotificationMarkReadRequest : PBRequest <NSCopying> {
     NSString *_uuid;
 }
 
-@property(readonly) BOOL hasUuid;
-@property(retain) NSString * uuid;
+@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic, retain) NSString *uuid;
 
 + (id)options;
 

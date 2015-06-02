@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildAppearByCharacter : KNBuildAppear {
-}
+@interface KNBuildAppearByCharacter : KNBuildAppear
 
 + (id)animationFilter;
 + (id)animationName;

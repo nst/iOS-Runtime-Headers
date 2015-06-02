@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSDate, NSDictionary, NSString;
-
 @interface WBSCloudTabDevice : NSObject <NSCopying> {
     BOOL _closeRequestSupported;
     BOOL _hasDuplicateName;
@@ -13,13 +11,13 @@
     NSString *_uuid;
 }
 
-@property(getter=isCloseRequestSupported,readonly) BOOL closeRequestSupported;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) BOOL hasDuplicateName;
-@property(readonly) NSDate * lastModified;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSArray * tabs;
-@property(copy,readonly) NSString * uuid;
+@property (getter=isCloseRequestSupported, nonatomic, readonly) BOOL closeRequestSupported;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) BOOL hasDuplicateName;
+@property (nonatomic, readonly) NSDate *lastModified;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *tabs;
+@property (nonatomic, readonly, copy) NSString *uuid;
 
 + (id)_dictionaryWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4;
 + (id)deviceNameInDictionary:(id)arg1;

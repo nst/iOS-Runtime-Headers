@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNJSImage : UIImage {
-}
+@interface SCNJSImage : UIImage
 
 + (id)SCNJSExportProtocol;
 + (id)imageWithPath:(id)arg1;

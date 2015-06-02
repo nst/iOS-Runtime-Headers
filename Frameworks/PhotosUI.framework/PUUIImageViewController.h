@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUUIImageViewController : PLUIImageViewController {
-}
+@interface PUUIImageViewController : PLUIImageViewController
 
 @end

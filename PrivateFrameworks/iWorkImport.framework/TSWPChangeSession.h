@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, TSKAnnotationAuthor;
-
 @interface TSWPChangeSession : TSPObject {
     TSKAnnotationAuthor *_author;
     NSDate *_date;
     unsigned long _sessionUID;
 }
 
-@property(retain) TSKAnnotationAuthor * author;
-@property(retain) NSDate * date;
-@property unsigned long sessionUID;
+@property (nonatomic, retain) TSKAnnotationAuthor *author;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) unsigned long sessionUID;
 
 + (BOOL)needsObjectUUID;
 

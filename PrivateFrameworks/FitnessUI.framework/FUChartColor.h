@@ -9,8 +9,8 @@
     double _threshold;
 }
 
-@property float chartYValue;
-@property double threshold;
+@property (nonatomic) float chartYValue;
+@property (nonatomic) double threshold;
 
 - (float)chartYValue;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;

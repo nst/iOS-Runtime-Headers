@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSCH3DGetSelectionKnobsPositionsPipelineMergeLabelBounds : NSObject {
     int mKnobsMode;
     int mLabelType;
     NSMutableArray *mLabelsBounds;
 }
 
-@property(readonly) int knobsMode;
-@property(readonly) int labelType;
+@property (nonatomic, readonly) int knobsMode;
+@property (nonatomic, readonly) int labelType;
 
 + (id)boundsWithLabelType:(int)arg1 knobsMode:(int)arg2;
 

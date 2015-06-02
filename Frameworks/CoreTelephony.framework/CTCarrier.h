@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class NSString;
-
 @interface CTCarrier : NSObject {
     BOOL _allowsVOIP;
     NSString *_carrierName;
@@ -12,11 +10,11 @@
     NSString *_mobileNetworkCode;
 }
 
-@property BOOL allowsVOIP;
-@property(retain) NSString * carrierName;
-@property(retain) NSString * isoCountryCode;
-@property(retain) NSString * mobileCountryCode;
-@property(retain) NSString * mobileNetworkCode;
+@property (nonatomic) BOOL allowsVOIP;
+@property (nonatomic, retain) NSString *carrierName;
+@property (nonatomic, retain) NSString *isoCountryCode;
+@property (nonatomic, retain) NSString *mobileCountryCode;
+@property (nonatomic, retain) NSString *mobileNetworkCode;
 
 - (BOOL)allowsVOIP;
 - (id)carrierName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@class NSString;
-
 @interface PKMediaName : NSObject {
     NSString *_baseName;
     double _conversionFactor;
@@ -15,18 +13,18 @@
     NSString *_widthStr;
 }
 
-@property(retain) NSString * baseName;
+@property (retain) NSString *baseName;
 @property double conversionFactor;
-@property(readonly) double height;
+@property (readonly) double height;
 @property double heightInUnits;
-@property(readonly) BOOL isRoll;
-@property(retain) NSString * mediaClass;
-@property(retain) NSString * mediaName;
-@property(retain,readonly) NSString * unitStr;
+@property (readonly) BOOL isRoll;
+@property (retain) NSString *mediaClass;
+@property (retain) NSString *mediaName;
+@property (readonly, retain) NSString *unitStr;
 @property int units;
-@property(readonly) double width;
+@property (readonly) double width;
 @property double widthInUnits;
-@property(retain) NSString * widthStr;
+@property (retain) NSString *widthStr;
 
 + (id)pkMediaNameWithString:(id)arg1;
 

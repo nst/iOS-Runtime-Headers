@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, CAShapeLayer, NSArray, TSWPEditingController, TSWPLayout, TSWPSearchReference, TSWPSelection, TSWPStorage;
-
 @interface TSWPRep : TSDContainerRep {
     TSWPSearchReference *_activeSearchReference;
     BOOL _caretAnimationDisabled;
@@ -38,7 +36,7 @@
     } _secondaryHighlightRange;
     BOOL _selectionChanged;
     CAShapeLayer *_selectionHighlightLayer;
-    CAShapeLayer *_selectionLineLayers[2];
+    CAShapeLayer *_selectionLineLayers;
     CAShapeLayer *_selectionParagraphBorderLayer;
     CAShapeLayer *_smartFieldHighlightLayer;
     BOOL _suppressCaret;
@@ -48,7 +46,7 @@
         unsigned int length; 
     } _suppressedMisspellingRange;
     TSWPEditingController *_textEditor;
-    CALayer *_textLayers[2];
+    CALayer *_textLayers;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -61,21 +59,21 @@
     BOOL _useKeyboardWhenEditing;
 }
 
-@property(retain) TSWPSearchReference * activeSearchReference;
-@property(readonly) NSArray * columns;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } dragRange;
-@property TSWPSelection * dropSelection;
-@property BOOL findIsShowing;
-@property(readonly) BOOL isBeingEdited;
-@property(readonly) TSWPLayout * layout;
-@property(retain) NSArray * searchReferences;
-@property(readonly) TSWPSelection * selection;
-@property(readonly) TSWPStorage * storage;
-@property(getter=isSelectionHighlightSuppressed) BOOL suppressSelectionHighlight;
-@property(readonly) TSWPEditingController * textEditor;
-@property(readonly) BOOL textIsVertical;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToConvertNaturalToScaledRoot;
-@property BOOL useKeyboardWhenEditing;
+@property (nonatomic, retain) TSWPSearchReference *activeSearchReference;
+@property (nonatomic, readonly) NSArray *columns;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } dragRange;
+@property (nonatomic) TSWPSelection *dropSelection;
+@property (nonatomic) BOOL findIsShowing;
+@property (nonatomic, readonly) BOOL isBeingEdited;
+@property (nonatomic, readonly) TSWPLayout *layout;
+@property (nonatomic, retain) NSArray *searchReferences;
+@property (nonatomic, readonly) TSWPSelection *selection;
+@property (nonatomic, readonly) TSWPStorage *storage;
+@property (getter=isSelectionHighlightSuppressed, nonatomic) BOOL suppressSelectionHighlight;
+@property (nonatomic, readonly) TSWPEditingController *textEditor;
+@property (nonatomic, readonly) BOOL textIsVertical;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToConvertNaturalToScaledRoot;
+@property (nonatomic) BOOL useKeyboardWhenEditing;
 
 - (id).cxx_construct;
 - (id)activeSearchReference;
@@ -134,7 +132,7 @@
 - (void)p_teardown;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_topicDragRectForSelection:(id)arg1;
 - (void)p_updateLayersForInsertionPointSelection:(id)arg1;
-- (void)performBlockOnTextLayers:(id)arg1;
+- (void)performBlockOnTextLayers:(id /* block */)arg1;
 - (struct CGPoint { float x1; float x2; })pinToClosestColumn:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pinToNaturalBounds:(struct CGPoint { float x1; float x2; })arg1 andLastLineFragment:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;

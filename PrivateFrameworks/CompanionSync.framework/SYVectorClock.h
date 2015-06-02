@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableArray;
-
 @interface SYVectorClock : PBCodable <NSCopying> {
     NSMutableArray *_clocks;
 }
 
-@property(retain) NSMutableArray * clocks;
+@property (nonatomic, retain) NSMutableArray *clocks;
 
 + (void)initialize;
 

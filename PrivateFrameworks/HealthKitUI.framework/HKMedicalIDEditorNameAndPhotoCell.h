@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSString, UIButton, UIImage, UIView;
-
 @interface HKMedicalIDEditorNameAndPhotoCell : HKMedicalIDEditorMultilineStringCell {
     UIButton *_editPhotoButton;
     UIButton *_editPhotoLabelButton;
     UIView *_nameBottomSeparator;
 }
 
-@property(readonly) UIButton * editPhotoButton;
-@property(readonly) UIButton * editPhotoLabelButton;
-@property(retain) NSString * name;
-@property(retain) UIImage * photo;
+@property (nonatomic, readonly) UIButton *editPhotoButton;
+@property (nonatomic, readonly) UIButton *editPhotoLabelButton;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) UIImage *photo;
 
 + (BOOL)showsLabelAndValue;
 

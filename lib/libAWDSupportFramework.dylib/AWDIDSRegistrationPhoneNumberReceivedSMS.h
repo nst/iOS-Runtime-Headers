@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSRegistrationPhoneNumberReceivedSMS : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasSmsRoundTripDuration;
-@property BOOL hasTimestamp;
-@property unsigned int smsRoundTripDuration;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasSmsRoundTripDuration;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int smsRoundTripDuration;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

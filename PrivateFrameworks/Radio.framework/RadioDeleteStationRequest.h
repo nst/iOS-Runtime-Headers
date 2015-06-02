@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary;
-
 @interface RadioDeleteStationRequest : RadioSyncRequest {
     NSDictionary *_stationDictionary;
     unsigned long long _stationID;
@@ -13,6 +11,6 @@
 - (id)changeList;
 - (id)init;
 - (id)initWithStation:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

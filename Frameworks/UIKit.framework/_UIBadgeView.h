@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIBadgeView : UIView {
     UIView *_alternate;
     UIView *_background;

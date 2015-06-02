@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableExteriorTextWrap : TSDExteriorTextWrap {
-}
+@interface TSDMutableExteriorTextWrap : TSDExteriorTextWrap
 
 - (void)setAlphaThreshold:(float)arg1;
 - (void)setDirection:(int)arg1;

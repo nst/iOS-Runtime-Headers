@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHPCategoryAndSeriesReordering : EDProcessor {
-}
+@interface CHPCategoryAndSeriesReordering : EDProcessor
 
 - (void)applyCategoryReorderingPreprocessor:(id)arg1;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;

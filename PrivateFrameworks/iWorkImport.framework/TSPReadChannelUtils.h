@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPReadChannelUtils : NSObject {
-}
+@interface TSPReadChannelUtils : NSObject
 
 + (id)dataFromReadChannel:(id)arg1;
 

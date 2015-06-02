@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBDataProvider>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface BBLocalDataProvider : BBDataProvider {
     <BBDataProvider> *_dataProvider;
     BOOL _invalidated;
@@ -13,42 +11,42 @@
     NSObject<OS_dispatch_source> *_watchdogTimer;
 }
 
-@property(retain) <BBDataProvider> * dataProvider;
+@property (nonatomic, retain) <BBDataProvider> *dataProvider;
 
 + (id)dataProviderWithDataProvider:(id)arg1 serverQueue:(id)arg2;
-+ (id)dataProviderWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(id)arg3;
++ (id)dataProviderWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(id /* block */)arg3;
 
 - (id)_bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
-- (void)_doAsynchronousRemoteRequest:(id)arg1 conditionalOn:(id)arg2 completion:(id)arg3;
-- (id)_doSynchronousRemoteRequest:(id)arg1 conditionalOn:(id)arg2;
-- (id)_initWithDataProvider:(id)arg1 sectionID:(id)arg2 serverQueue:(id)arg3 initializationCompletion:(id)arg4;
+- (void)_doAsynchronousRemoteRequest:(id /* block */)arg1 conditionalOn:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (id)_doSynchronousRemoteRequest:(id /* block */)arg1 conditionalOn:(id /* block */)arg2;
+- (id)_initWithDataProvider:(id)arg1 sectionID:(id)arg2 serverQueue:(id)arg3 initializationCompletion:(id /* block */)arg4;
 - (void)_ping;
 - (void)_watchdogFired;
 - (id)attachmentAspectRatioForRecordID:(id)arg1;
-- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id)arg2;
+- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id /* block */)arg2;
 - (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
-- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id)arg3;
+- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
-- (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id)arg3;
+- (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)canPerformMigration;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
-- (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id)arg3;
+- (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
 - (id)dataProvider;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
 - (id)initWithDataProvider:(id)arg1 serverQueue:(id)arg2;
-- (id)initWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(id)arg3;
+- (id)initWithPrincipalClass:(Class)arg1 serverQueue:(id)arg2 initializationCompletion:(id /* block */)arg3;
 - (void)invalidate;
 - (BOOL)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;
-- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id)arg2;
-- (void)reloadIdentityWithCompletion:(id)arg1;
+- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id /* block */)arg2;
+- (void)reloadIdentityWithCompletion:(id /* block */)arg1;
 - (void)setDataProvider:(id)arg1;
 - (void)startWatchdog;
-- (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
-- (void)updateSectionInfoWithSectionInfo:(id)arg1 handler:(id)arg2 completion:(id)arg3;
+- (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)updateSectionInfoWithSectionInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;
 
 @end

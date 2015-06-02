@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, UILabel;
-
 @interface SKUISearchAppBundleView : UIView {
     int _count;
     UILabel *_headerLabel;
@@ -11,8 +9,8 @@
     NSArray *_labels;
 }
 
-@property int count;
-@property(copy) NSString * headerTitle;
+@property (nonatomic) int count;
+@property (nonatomic, copy) NSString *headerTitle;
 
 - (void).cxx_destruct;
 - (void)_reload;

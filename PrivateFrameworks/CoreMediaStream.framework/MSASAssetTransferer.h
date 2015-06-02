@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MMCSEngine, MSASPersonModel, MSAlbumSharingDaemon, MSBackoffManager, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSASAssetTransferer : NSObject <MMCSEngineDelegate> {
     MSBackoffManager *_backoffManager;
     MSAlbumSharingDaemon *_daemon;
@@ -21,24 +19,24 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property MSBackoffManager * backoffManager;
-@property MSAlbumSharingDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) MMCSEngine * engine;
-@property(retain) NSObject<OS_dispatch_queue> * eventQueue;
-@property(copy) NSString * focusAlbumGUID;
-@property(copy) NSString * focusAssetCollectionGUID;
-@property BOOL hasShutDown;
-@property(readonly) unsigned int hash;
-@property int maxBatchCount;
-@property double maxMMCSTokenValidityTimeInterval;
-@property int maxRetryCount;
-@property MSASPersonModel * model;
-@property(copy) NSString * personID;
-@property(readonly) Class superclass;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) MSBackoffManager *backoffManager;
+@property (nonatomic) MSAlbumSharingDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) MMCSEngine *engine;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *eventQueue;
+@property (nonatomic, copy) NSString *focusAlbumGUID;
+@property (nonatomic, copy) NSString *focusAssetCollectionGUID;
+@property (nonatomic) BOOL hasShutDown;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int maxBatchCount;
+@property (nonatomic) double maxMMCSTokenValidityTimeInterval;
+@property (nonatomic) int maxRetryCount;
+@property (nonatomic) MSASPersonModel *model;
+@property (nonatomic, copy) NSString *personID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)MMCSEngine:(id)arg1 didCreateRequestorContext:(id)arg2 forAssets:(id)arg3;
@@ -57,7 +55,7 @@
 - (void)_rereadPerformanceLoggingSetting;
 - (void)_sendDidIdleNotification;
 - (id)backoffManager;
-- (void)cancelCompletionBlock:(id)arg1;
+- (void)cancelCompletionBlock:(id /* block */)arg1;
 - (id)daemon;
 - (void)dealloc;
 - (id)delegate;
@@ -89,14 +87,14 @@
 - (void)setModel:(id)arg1;
 - (void)setPersonID:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownCompletionBlock:(id)arg1;
-- (void)stopCompletionBlock:(id)arg1;
+- (void)shutDownCompletionBlock:(id /* block */)arg1;
+- (void)stopCompletionBlock:(id /* block */)arg1;
 - (id)workQueue;
 - (void)workQueueCancel;
 - (double)workQueueMaxMMCSTokenValidityTimeInterval;
 - (unsigned long long)workQueueNextItemID;
 - (void)workQueueRetryOutstandingActivities;
-- (void)workQueueShutDownCompletionBlock:(id)arg1;
+- (void)workQueueShutDownCompletionBlock:(id /* block */)arg1;
 - (void)workQueueStop;
 
 @end

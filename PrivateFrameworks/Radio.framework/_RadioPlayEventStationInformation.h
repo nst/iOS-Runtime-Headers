@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString;
-
 @interface _RadioPlayEventStationInformation : NSObject {
     NSString *_stationHash;
     long long _stationID;
 }
 
-@property(copy) NSString * stationHash;
-@property long long stationID;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
 
 - (void).cxx_destruct;
 - (unsigned int)hash;

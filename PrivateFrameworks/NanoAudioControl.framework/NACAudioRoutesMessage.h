@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSMutableArray, NSString;
-
 @interface NACAudioRoutesMessage : PBCodable <NSCopying> {
     NSMutableArray *_audioRoutes;
     NSString *_category;
 }
 
-@property(retain) NSMutableArray * audioRoutes;
-@property(retain) NSString * category;
-@property(readonly) BOOL hasCategory;
+@property (nonatomic, retain) NSMutableArray *audioRoutes;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, readonly) BOOL hasCategory;
 
 - (void).cxx_destruct;
 - (void)addAudioRoutes:(id)arg1;

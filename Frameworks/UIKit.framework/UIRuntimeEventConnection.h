@@ -6,9 +6,9 @@
     unsigned int eventMask;
 }
 
-@property(readonly) SEL action;
+@property (readonly) SEL action;
 @property unsigned int eventMask;
-@property(readonly) id target;
+@property (readonly) id target;
 
 - (SEL)action;
 - (void)connect;

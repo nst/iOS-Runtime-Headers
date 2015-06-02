@@ -18,7 +18,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)ensureFrameCapacity:(unsigned int)arg1;
 - (void)ensureStringCapacity:(unsigned int)arg1;
-- (void)enumerateKeysUsingBlock:(id)arg1;
+- (void)enumerateKeysUsingBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;

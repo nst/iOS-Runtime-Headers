@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSNumber, NSString;
-
 @interface SKUIGiftAmount : NSObject <NSCopying> {
     NSString *_displayLabel;
     NSString *_partNumber;
     NSNumber *_value;
 }
 
-@property(copy) NSString * displayLabel;
-@property(copy) NSString * partNumber;
-@property(copy) NSNumber * value;
+@property (nonatomic, copy) NSString *displayLabel;
+@property (nonatomic, copy) NSString *partNumber;
+@property (nonatomic, copy) NSNumber *value;
 
 - (void).cxx_destruct;
 - (id)HTTPBodyDictionary;

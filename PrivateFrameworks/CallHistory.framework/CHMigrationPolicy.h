@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface CHMigrationPolicy : NSEntityMigrationPolicy {
     NSString *currentLocale;
     NSString *lastQueriedISOCountryCode;

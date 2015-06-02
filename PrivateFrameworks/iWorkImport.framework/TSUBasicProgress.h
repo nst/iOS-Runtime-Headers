@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUBasicProgressStorage;
-
 @interface TSUBasicProgress : TSUProgress {
     TSUBasicProgressStorage *mStorage;
 }
 
-@property(getter=isIndeterminate) BOOL indeterminate;
+@property (getter=isIndeterminate) BOOL indeterminate;
 @property double value;
 
 - (void)dealloc;

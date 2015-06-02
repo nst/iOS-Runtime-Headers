@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSPrivateCoreDataClassForFindingBundle : NSObject {
-}
+@interface NSPrivateCoreDataClassForFindingBundle : NSObject
 
 @end

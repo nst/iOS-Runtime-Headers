@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTIntegerKeyDict, TSTTableDataObjectKeyDict;
-
 @interface TSTTableDataList : TSPObject {
     TSTIntegerKeyDict *mData;
     TSTTableDataObjectKeyDict *mIDs;
@@ -11,15 +9,15 @@
     unsigned int mNextID;
 }
 
-@property(readonly) TSTIntegerKeyDict * data;
-@property(readonly) unsigned int nextID;
+@property (nonatomic, readonly) TSTIntegerKeyDict *data;
+@property (nonatomic, readonly) unsigned int nextID;
 
 + (id)newObjectForUnarchiver:(id)arg1;
 
 - (id)allRichTextPayloadStorages;
 - (id)data;
 - (void)dealloc;
-- (void)enumerateCustomFormatsUsingBlock:(id)arg1;
+- (void)enumerateCustomFormatsUsingBlock:(id /* block */)arg1;
 - (unsigned long)flushableSize;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithType:(int)arg1 context:(id)arg2;

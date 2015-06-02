@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSuggestedSearchRecent : PUSuggestedSearch {
-}
+@interface PUSuggestedSearchRecent : PUSuggestedSearch
 
 - (id)initFromDictionary:(id)arg1;
 - (id)initWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;

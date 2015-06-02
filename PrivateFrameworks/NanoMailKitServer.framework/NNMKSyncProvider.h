@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKSyncProviderDelegate>, BLTPingSubscriber, NNMKAccountsSyncServiceServer, NNMKDeviceSyncRegistry, NNMKFetchesSyncServiceServer, NNMKMessageContentSyncServiceServer, NNMKMessagesSyncServiceServer, NNMKPairedDeviceInfo, NNMKProtectedSyncServiceServer, NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, PSYSyncCoordinator;
-
 @interface NNMKSyncProvider : NNMKSyncEndpoint <NNMKAccountsSyncServiceServerDelegate, NNMKFetchesSyncServiceServerDelegate, NNMKMessageContentSyncServiceServerDelegate, NNMKMessagesSyncServiceServerDelegate, PSYSyncCoordinatorDelegate> {
     NNMKAccountsSyncServiceServer *_accountsSyncService;
     NNMKMessageContentSyncServiceServer *_contentSyncService;
@@ -29,39 +27,39 @@
     BOOL _trackingInitialSync;
 }
 
-@property(retain) NNMKAccountsSyncServiceServer * accountsSyncService;
-@property(retain) NNMKMessageContentSyncServiceServer * contentSyncService;
-@property(copy,readonly) NSString * debugDescription;
-@property <NNMKSyncProviderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NNMKFetchesSyncServiceServer * fetchesSyncService;
-@property(readonly) unsigned int hash;
-@property(retain) PSYSyncCoordinator * initialSyncCoordinator;
-@property(retain) NSMutableSet * initialSyncMessageIdsOfContentToAck;
-@property(retain) NSMutableSet * initialSyncMessageIdsToSyncContent;
-@property unsigned int initialSyncMessagesCount;
-@property float initialSyncProgress;
-@property unsigned int initialSyncResendInterval;
-@property BOOL isFirstMessagesRequestPending;
-@property(retain) NSMutableSet * messageIdsToIgnoreStatusUpdates;
-@property BOOL messagesQueryAvailable;
-@property(readonly) BOOL messagesSyncActive;
-@property(retain) NNMKMessagesSyncServiceServer * messagesSyncService;
-@property BOOL messagesVerificationTriggered;
-@property(retain) BLTPingSubscriber * notificationsPingSubscriber;
-@property(readonly) BOOL organizeByThread;
-@property(readonly) NNMKPairedDeviceInfo * pairedDeviceInfo;
-@property(retain) NNMKDeviceSyncRegistry * pairedDeviceRegistry;
-@property(retain) NSDate * pendingMoreMessagesForConversationIdRequestBeforeDateReceived;
-@property(retain) NSString * pendingMoreMessagesForConversationIdRequestConversationId;
-@property(retain) NNMKProtectedSyncServiceServer * protectedSyncService;
-@property(retain) NSObject<OS_dispatch_queue> * providerQueue;
-@property(readonly) Class superclass;
-@property(readonly) NSString * syncedMailboxAccountId;
-@property(readonly) NSString * syncedMailboxCustomName;
-@property(readonly) unsigned int syncedMailboxType;
-@property(readonly) NSURL * syncedMailboxURL;
-@property BOOL trackingInitialSync;
+@property (nonatomic, retain) NNMKAccountsSyncServiceServer *accountsSyncService;
+@property (nonatomic, retain) NNMKMessageContentSyncServiceServer *contentSyncService;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NNMKSyncProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NNMKFetchesSyncServiceServer *fetchesSyncService;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSYSyncCoordinator *initialSyncCoordinator;
+@property (nonatomic, retain) NSMutableSet *initialSyncMessageIdsOfContentToAck;
+@property (nonatomic, retain) NSMutableSet *initialSyncMessageIdsToSyncContent;
+@property (nonatomic) unsigned int initialSyncMessagesCount;
+@property (nonatomic) float initialSyncProgress;
+@property (nonatomic) unsigned int initialSyncResendInterval;
+@property (nonatomic) BOOL isFirstMessagesRequestPending;
+@property (nonatomic, retain) NSMutableSet *messageIdsToIgnoreStatusUpdates;
+@property (nonatomic) BOOL messagesQueryAvailable;
+@property (nonatomic, readonly) BOOL messagesSyncActive;
+@property (nonatomic, retain) NNMKMessagesSyncServiceServer *messagesSyncService;
+@property (nonatomic) BOOL messagesVerificationTriggered;
+@property (nonatomic, retain) BLTPingSubscriber *notificationsPingSubscriber;
+@property (nonatomic, readonly) BOOL organizeByThread;
+@property (nonatomic, readonly) NNMKPairedDeviceInfo *pairedDeviceInfo;
+@property (nonatomic, retain) NNMKDeviceSyncRegistry *pairedDeviceRegistry;
+@property (nonatomic, retain) NSDate *pendingMoreMessagesForConversationIdRequestBeforeDateReceived;
+@property (nonatomic, retain) NSString *pendingMoreMessagesForConversationIdRequestConversationId;
+@property (nonatomic, retain) NNMKProtectedSyncServiceServer *protectedSyncService;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *providerQueue;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *syncedMailboxAccountId;
+@property (nonatomic, readonly) NSString *syncedMailboxCustomName;
+@property (nonatomic, readonly) unsigned int syncedMailboxType;
+@property (nonatomic, readonly) NSURL *syncedMailboxURL;
+@property (nonatomic) BOOL trackingInitialSync;
 
 - (void).cxx_destruct;
 - (void)_addMessages:(id)arg1 messagesAreNew:(BOOL)arg2 loadedFromLocalStorage:(BOOL)arg3;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSString;
-
 @interface CalDAVCalendarColorItem : CoreDAVItem {
     NSString *_symbolicColorName;
 }
 
-@property(retain) NSString * colorString;
-@property(retain) NSString * symbolicColorName;
+@property (nonatomic, retain) NSString *colorString;
+@property (nonatomic, retain) NSString *symbolicColorName;
 
 - (id)colorString;
 - (void)dealloc;

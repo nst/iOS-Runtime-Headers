@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
-
 @interface IKHeadElement : IKViewElement {
     NSArray *_headChildren;
 }
 
-@property(retain) NSArray * headChildren;
+@property (nonatomic, retain) NSArray *headChildren;
 
 + (BOOL)shouldParseChildDOMElements;
 

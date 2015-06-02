@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class BodyFixedDetectorParameters, InjectionParameters, MotionTruthParameters, MultiphoneDbmParameters, PdrParameters, PedometryCompassMotionParameters, WifiParameters;
-
 @interface LocalizerParameters : PBCodable <NSCopying> {
     int _bilinearWifi;
     BodyFixedDetectorParameters *_bodyFixed;
@@ -32,36 +30,36 @@
     WifiParameters *_wifi;
 }
 
-@property int bilinearWifi;
-@property(retain) BodyFixedDetectorParameters * bodyFixed;
-@property float confidenceFactor;
-@property BOOL hasBilinearWifi;
-@property(readonly) BOOL hasBodyFixed;
-@property BOOL hasConfidenceFactor;
-@property(readonly) BOOL hasInjection;
-@property BOOL hasLocalizerType;
-@property BOOL hasModeEstimator;
-@property BOOL hasMotionPdrUnmodelledHeadingVariancePerSecond;
-@property(readonly) BOOL hasMotionTruth;
-@property(readonly) BOOL hasMultiphoneDbm;
-@property BOOL hasNotifyIntervalNanos;
-@property BOOL hasNumParticles;
-@property(readonly) BOOL hasPdr;
-@property(readonly) BOOL hasPedomCompassMotion;
-@property BOOL hasTime2dMotionVariancePerSecond;
-@property(readonly) BOOL hasWifi;
-@property(retain) InjectionParameters * injection;
-@property int localizerType;
-@property int modeEstimator;
-@property float motionPdrUnmodelledHeadingVariancePerSecond;
-@property(retain) MotionTruthParameters * motionTruth;
-@property(retain) MultiphoneDbmParameters * multiphoneDbm;
-@property unsigned long long notifyIntervalNanos;
-@property unsigned int numParticles;
-@property(retain) PdrParameters * pdr;
-@property(retain) PedometryCompassMotionParameters * pedomCompassMotion;
-@property float time2dMotionVariancePerSecond;
-@property(retain) WifiParameters * wifi;
+@property (nonatomic) int bilinearWifi;
+@property (nonatomic, retain) BodyFixedDetectorParameters *bodyFixed;
+@property (nonatomic) float confidenceFactor;
+@property (nonatomic) BOOL hasBilinearWifi;
+@property (nonatomic, readonly) BOOL hasBodyFixed;
+@property (nonatomic) BOOL hasConfidenceFactor;
+@property (nonatomic, readonly) BOOL hasInjection;
+@property (nonatomic) BOOL hasLocalizerType;
+@property (nonatomic) BOOL hasModeEstimator;
+@property (nonatomic) BOOL hasMotionPdrUnmodelledHeadingVariancePerSecond;
+@property (nonatomic, readonly) BOOL hasMotionTruth;
+@property (nonatomic, readonly) BOOL hasMultiphoneDbm;
+@property (nonatomic) BOOL hasNotifyIntervalNanos;
+@property (nonatomic) BOOL hasNumParticles;
+@property (nonatomic, readonly) BOOL hasPdr;
+@property (nonatomic, readonly) BOOL hasPedomCompassMotion;
+@property (nonatomic) BOOL hasTime2dMotionVariancePerSecond;
+@property (nonatomic, readonly) BOOL hasWifi;
+@property (nonatomic, retain) InjectionParameters *injection;
+@property (nonatomic) int localizerType;
+@property (nonatomic) int modeEstimator;
+@property (nonatomic) float motionPdrUnmodelledHeadingVariancePerSecond;
+@property (nonatomic, retain) MotionTruthParameters *motionTruth;
+@property (nonatomic, retain) MultiphoneDbmParameters *multiphoneDbm;
+@property (nonatomic) unsigned long long notifyIntervalNanos;
+@property (nonatomic) unsigned int numParticles;
+@property (nonatomic, retain) PdrParameters *pdr;
+@property (nonatomic, retain) PedometryCompassMotionParameters *pedomCompassMotion;
+@property (nonatomic) float time2dMotionVariancePerSecond;
+@property (nonatomic, retain) WifiParameters *wifi;
 
 - (void).cxx_destruct;
 - (int)bilinearWifi;

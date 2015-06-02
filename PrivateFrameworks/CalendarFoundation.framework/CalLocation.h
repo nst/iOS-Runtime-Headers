@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class CLLocation, CLPlacemark, NSString;
-
 @interface CalLocation : NSObject <NSSecureCoding> {
     NSString *_abURLString;
     NSString *_address;
@@ -17,15 +15,15 @@
     int _type;
 }
 
-@property(copy) NSString * abURLString;
-@property(copy) NSString * address;
-@property(copy) NSString * displayName;
-@property(readonly) BOOL isCurrentLocation;
-@property(copy) CLLocation * location;
-@property(retain) CLPlacemark * placemark;
-@property double radius;
-@property(copy) NSString * routeType;
-@property(copy) NSString * title;
+@property (copy) NSString *abURLString;
+@property (copy) NSString *address;
+@property (copy) NSString *displayName;
+@property (nonatomic, readonly) BOOL isCurrentLocation;
+@property (nonatomic, copy) CLLocation *location;
+@property (retain) CLPlacemark *placemark;
+@property (nonatomic) double radius;
+@property (copy) NSString *routeType;
+@property (copy) NSString *title;
 @property int type;
 
 + (id)coordinatesFromGeoURLString:(id)arg1;

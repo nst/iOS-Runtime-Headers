@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemOfferButtonDelegate>, NSMutableAttributedString, NSString, SKUICircleProgressIndicator, SKUIFocusedTouchGestureRecognizer, SKUIItemOfferButtonState, UIColor, UIImage, UIImageView, UILabel, UIView;
-
 @interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
     UIColor *_backgroundColor;
     UIView *_borderView;
@@ -37,24 +35,24 @@
     BOOL _usesDrawRectPath;
 }
 
-@property(copy) UIColor * cloudTintColor;
-@property(copy) NSString * confirmationTitle;
-@property int confirmationTitleStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIItemOfferButtonDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property int fillStyle;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property <SKUIItemOfferButtonDelegate> * itemOfferDelegate;
-@property float progress;
-@property int progressType;
-@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
-@property BOOL showsConfirmationState;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property int titleStyle;
-@property(getter=isUniversal) BOOL universal;
+@property (nonatomic, copy) UIColor *cloudTintColor;
+@property (nonatomic, copy) NSString *confirmationTitle;
+@property (nonatomic) int confirmationTitleStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIItemOfferButtonDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int fillStyle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) <SKUIItemOfferButtonDelegate> *itemOfferDelegate;
+@property (nonatomic) float progress;
+@property (nonatomic) int progressType;
+@property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
+@property (nonatomic) BOOL showsConfirmationState;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) int titleStyle;
+@property (getter=isUniversal, nonatomic) BOOL universal;
 
 + (id)_basicAnimationWithKeyPath:(id)arg1;
 + (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
@@ -86,11 +84,11 @@
 - (void)_sendDidAnimate;
 - (void)_sendWillAnimate;
 - (BOOL)_touchInBounds:(id)arg1;
-- (void)_transitionFromImage:(id)arg1 toImage:(id)arg2 withDuration:(float)arg3 completion:(id)arg4;
-- (void)_transitionFromProgress:(id)arg1 toProgress:(id)arg2 withDuration:(float)arg3 completion:(id)arg4;
-- (void)_transitionFromProgress:(id)arg1 toTitleOrImage:(id)arg2 withDuration:(float)arg3 completion:(id)arg4;
-- (void)_transitionFromTitle:(id)arg1 toTitle:(id)arg2 withDuration:(float)arg3 completion:(id)arg4;
-- (void)_transitionFromTitleOrImage:(id)arg1 toProgress:(id)arg2 withDuration:(float)arg3 completion:(id)arg4;
+- (void)_transitionFromImage:(id)arg1 toImage:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
+- (void)_transitionFromProgress:(id)arg1 toProgress:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
+- (void)_transitionFromProgress:(id)arg1 toTitleOrImage:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
+- (void)_transitionFromTitle:(id)arg1 toTitle:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
+- (void)_transitionFromTitleOrImage:(id)arg1 toProgress:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
 - (void)_updateForChangedConfirmationTitleProperty;
 - (void)_updateForChangedTitleProperty;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

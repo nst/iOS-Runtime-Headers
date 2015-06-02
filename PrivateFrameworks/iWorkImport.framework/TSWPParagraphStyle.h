@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPParagraphStyle : TSSStyle <TSDMixing, TSSPreset> {
     void *_coreTextParagraphStyle;
     struct __CFDictionary { } *_scalePercentStyleCaches;
     struct __CFDictionary { } *_styleCache;
 }
 
-@property(readonly) NSString * presetKind;
+@property (nonatomic, readonly) NSString *presetKind;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;

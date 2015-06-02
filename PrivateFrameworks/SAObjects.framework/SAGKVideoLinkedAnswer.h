@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SAGKVideoLinkedAnswer : SAGKImageLinkedAnswer
 
-@interface SAGKVideoLinkedAnswer : SAGKImageLinkedAnswer {
-}
-
-@property(copy) NSNumber * runtimeInMilliseconds;
+@property (nonatomic, copy) NSNumber *runtimeInMilliseconds;
 
 + (id)videoLinkedAnswer;
 + (id)videoLinkedAnswerWithDictionary:(id)arg1 context:(id)arg2;

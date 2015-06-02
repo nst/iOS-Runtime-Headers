@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODICycle2 : ODICycle {
-}
+@interface ODICycle2 : ODICycle
 
 + (BOOL)map1NodeWithState:(id)arg1;
 + (BOOL)map2NodeWithState:(id)arg1;

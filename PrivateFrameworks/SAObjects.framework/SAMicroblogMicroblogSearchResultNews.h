@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@interface SAMicroblogMicroblogSearchResultNews : SAMicroblogMicroblogSearchResultPost
 
-@interface SAMicroblogMicroblogSearchResultNews : SAMicroblogMicroblogSearchResultPost {
-}
-
-@property(copy) NSURL * articleURL;
-@property(copy) NSString * descriptionText;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSURL *articleURL;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *title;
 
 + (id)microblogSearchResultNews;
 + (id)microblogSearchResultNewsWithDictionary:(id)arg1 context:(id)arg2;

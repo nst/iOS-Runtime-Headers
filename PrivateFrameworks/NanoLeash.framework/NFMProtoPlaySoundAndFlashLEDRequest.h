@@ -9,8 +9,8 @@
     double _timeStamp;
 }
 
-@property BOOL hasTimeStamp;
-@property double timeStamp;
+@property (nonatomic) BOOL hasTimeStamp;
+@property (nonatomic) double timeStamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

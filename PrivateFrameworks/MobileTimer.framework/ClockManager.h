@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray, NSMutableArray, ObjectUpdates;
-
 @interface ClockManager : NSObject {
     ObjectUpdates *_localNotificationUpdates;
     BOOL _performingUpgrade;
@@ -13,11 +11,11 @@
     BOOL runningInSpringBoard;
 }
 
-@property(getter=isIgnoringNotificationPostRequests) BOOL ignoringNotificationPostRequests;
-@property(getter=isRunningInAssistantPlugin) BOOL runningInAssistantPlugin;
-@property(getter=isRunningInSpringBoard) BOOL runningInSpringBoard;
-@property(readonly) NSArray * scheduledLocalNotificationsCache;
-@property(readonly) ObjectUpdates * updatesToLocalNotificationsCache;
+@property (getter=isIgnoringNotificationPostRequests, nonatomic) BOOL ignoringNotificationPostRequests;
+@property (getter=isRunningInAssistantPlugin, nonatomic) BOOL runningInAssistantPlugin;
+@property (getter=isRunningInSpringBoard, nonatomic) BOOL runningInSpringBoard;
+@property (nonatomic, readonly) NSArray *scheduledLocalNotificationsCache;
+@property (nonatomic, readonly) ObjectUpdates *updatesToLocalNotificationsCache;
 
 + (void)loadUserPreferences;
 + (void)saveAndNotifyForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;

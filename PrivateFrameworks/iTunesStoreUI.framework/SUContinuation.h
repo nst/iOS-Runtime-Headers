@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUContinuationDelegate>;
-
 @interface SUContinuation : NSObject {
     <SUContinuationDelegate> *_delegate;
 }
 
-@property <SUContinuationDelegate> * delegate;
+@property (nonatomic) <SUContinuationDelegate> *delegate;
 
 - (void)cancel;
 - (id)delegate;

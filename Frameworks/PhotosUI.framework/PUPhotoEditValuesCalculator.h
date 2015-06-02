@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CIImage, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, PLPhotoEditModel, PUPhotoEditImageValues;
-
 @interface PUPhotoEditValuesCalculator : NSObject {
     CIImage *_baseImage;
     NSObject<OS_dispatch_queue> *_computationQueue;
@@ -14,15 +12,15 @@
     PLPhotoEditModel *_photoEditModelForCurrentValues;
 }
 
-@property(retain) CIImage * baseImage;
-@property(retain) PLPhotoEditModel * photoEditModel;
+@property (nonatomic, retain) CIImage *baseImage;
+@property (nonatomic, retain) PLPhotoEditModel *photoEditModel;
 
 - (void).cxx_destruct;
 - (void)_ensureCurrentImageValuesAreComputed;
 - (void)_ensureInitialImageValuesAreComputed;
 - (BOOL)_imageCurrentValuesCacheIsValid;
 - (id)baseImage;
-- (void)computeAutoEnhanceWithCompletionHandler:(id)arg1;
+- (void)computeAutoEnhanceWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)photoEditModel;
 - (void)precomputeImageValues;

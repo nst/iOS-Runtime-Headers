@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentCalendarItem, NSDate;
+@interface EKPersistentExceptionDate : EKPersistentObject
 
-@interface EKPersistentExceptionDate : EKPersistentObject {
-}
-
-@property(readonly) NSDate * date;
-@property(retain) EKPersistentCalendarItem * owner;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, retain) EKPersistentCalendarItem *owner;
 
 + (id)exceptionDateWithDate:(id)arg1;
 + (id)relations;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTBulletinDistributorSubscriberDelegate>, <BLTPingSubscribing>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSXPCConnection;
-
 @interface BLTBulletinDistributorSubscriber : NSObject <BLTPingService> {
     <BLTPingSubscribing> *_client;
     NSXPCConnection *_connection;
@@ -13,23 +11,23 @@
     NSMutableDictionary *_subscriptions;
 }
 
-@property(retain) <BLTPingSubscribing> * client;
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <BLTBulletinDistributorSubscriberDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * machServiceName;
-@property(readonly) NSSet * sectionIDs;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) <BLTPingSubscribing> *client;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property <BLTBulletinDistributorSubscriberDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *machServiceName;
+@property (nonatomic, readonly) NSSet *sectionIDs;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_connectIfNecessary;
 - (id)client;
 - (id)connection;
 - (id)delegate;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id)arg2;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithClient:(id)arg1;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;

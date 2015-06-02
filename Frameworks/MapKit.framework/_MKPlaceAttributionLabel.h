@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, UIImage;
-
 @interface _MKPlaceAttributionLabel : NSObject {
     UIImage *image;
     float imageBaselineOffset;
@@ -11,9 +9,9 @@
     float textBaselineOffset;
 }
 
-@property(retain) UIImage * image;
+@property (retain) UIImage *image;
 @property float imageBaselineOffset;
-@property(retain) NSString * imagePlaceholder;
+@property (retain) NSString *imagePlaceholder;
 @property float textBaselineOffset;
 
 - (void).cxx_destruct;

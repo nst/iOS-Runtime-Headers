@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDPlaceRequest, GEOPDPlaceResponse, GEOPlaceSearchRequest, GEOPlaceSearchResponse, NSString;
-
 @interface GEORPCorrectedSearch : PBCodable <NSCopying> {
     unsigned int _correctedSearchResultIndex;
     struct { 
@@ -18,20 +16,20 @@
     NSString *_preferredSearchDisplayLocation;
 }
 
-@property unsigned int correctedSearchResultIndex;
-@property BOOL hasCorrectedSearchResultIndex;
-@property BOOL hasOriginalSearchResultIndex;
-@property(readonly) BOOL hasPlaceRequest;
-@property(readonly) BOOL hasPlaceResponse;
-@property(readonly) BOOL hasPlaceSearchRequest;
-@property(readonly) BOOL hasPlaceSearchResponse;
-@property(readonly) BOOL hasPreferredSearchDisplayLocation;
-@property unsigned int originalSearchResultIndex;
-@property(retain) GEOPDPlaceRequest * placeRequest;
-@property(retain) GEOPDPlaceResponse * placeResponse;
-@property(retain) GEOPlaceSearchRequest * placeSearchRequest;
-@property(retain) GEOPlaceSearchResponse * placeSearchResponse;
-@property(retain) NSString * preferredSearchDisplayLocation;
+@property (nonatomic) unsigned int correctedSearchResultIndex;
+@property (nonatomic) BOOL hasCorrectedSearchResultIndex;
+@property (nonatomic) BOOL hasOriginalSearchResultIndex;
+@property (nonatomic, readonly) BOOL hasPlaceRequest;
+@property (nonatomic, readonly) BOOL hasPlaceResponse;
+@property (nonatomic, readonly) BOOL hasPlaceSearchRequest;
+@property (nonatomic, readonly) BOOL hasPlaceSearchResponse;
+@property (nonatomic, readonly) BOOL hasPreferredSearchDisplayLocation;
+@property (nonatomic) unsigned int originalSearchResultIndex;
+@property (nonatomic, retain) GEOPDPlaceRequest *placeRequest;
+@property (nonatomic, retain) GEOPDPlaceResponse *placeResponse;
+@property (nonatomic, retain) GEOPlaceSearchRequest *placeSearchRequest;
+@property (nonatomic, retain) GEOPlaceSearchResponse *placeSearchResponse;
+@property (nonatomic, retain) NSString *preferredSearchDisplayLocation;
 
 - (BOOL)containsReportableData;
 - (void)copyTo:(id)arg1;

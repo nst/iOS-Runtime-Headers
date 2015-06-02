@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView;
-
 @interface UIPrinterTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
     int _printerState;
 }
 
-@property int printerState;
+@property (nonatomic) int printerState;
 
 - (int)printerState;
 - (void)setPrinterState:(int)arg1;

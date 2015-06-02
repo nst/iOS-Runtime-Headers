@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class <MPUDataSourceControllerDelegate>, MPUDataSource, MPUNotificationObserver;
-
 @interface MPUDataSourceController : NSObject {
     MPUDataSource *_dataSource;
     <MPUDataSourceControllerDelegate> *_delegate;
@@ -13,12 +11,12 @@
     MPUNotificationObserver *_willInvalidateObserver;
 }
 
-@property(readonly) MPUDataSource * dataSource;
-@property <MPUDataSourceControllerDelegate> * delegate;
-@property(retain) MPUNotificationObserver * didInvalidateObserver;
-@property BOOL shouldReloadWhenViewControllerIsVisible;
-@property BOOL viewControllerIsVisible;
-@property(retain) MPUNotificationObserver * willInvalidateObserver;
+@property (nonatomic, readonly) MPUDataSource *dataSource;
+@property (nonatomic) <MPUDataSourceControllerDelegate> *delegate;
+@property (nonatomic, retain) MPUNotificationObserver *didInvalidateObserver;
+@property (nonatomic) BOOL shouldReloadWhenViewControllerIsVisible;
+@property (nonatomic) BOOL viewControllerIsVisible;
+@property (nonatomic, retain) MPUNotificationObserver *willInvalidateObserver;
 
 - (void).cxx_destruct;
 - (void)_didInvalidate;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RadioStation;
-
 @interface RUActivityViewController : UIActivityViewController {
     RadioStation *_station;
 }
 
-@property(readonly) RadioStation * station;
+@property (nonatomic, readonly) RadioStation *station;
 
 - (void).cxx_destruct;
 - (id)_titleForActivity:(id)arg1;

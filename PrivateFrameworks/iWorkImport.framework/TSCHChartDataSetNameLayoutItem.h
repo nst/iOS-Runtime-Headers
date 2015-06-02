@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartDataSetNameLayoutItem : TSCHChartTitleLayoutItem {
-}
+@interface TSCHChartDataSetNameLayoutItem : TSCHChartTitleLayoutItem
 
-@property(readonly) BOOL isAboveChartBody;
+@property (nonatomic, readonly) BOOL isAboveChartBody;
 
 - (struct CGSize { float x1; float x2; })calcMinSize;
 - (BOOL)isAboveChartBody;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIImage;
-
 @interface CUIPSDImageLayer : CUIPSDLayer {
     CUIImage *_image;
 }
 
-@property(readonly) struct CGImage { }* cgImageRef;
+@property (nonatomic, readonly) struct CGImage { }*cgImageRef;
 
 - (struct CGImage { }*)cgImageRef;
 - (void)dealloc;

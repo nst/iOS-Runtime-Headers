@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray;
-
 @interface WBSURLSuffixChecker : NSObject {
     NSMutableArray *_failedSuffixes;
     unsigned int _maxLength;

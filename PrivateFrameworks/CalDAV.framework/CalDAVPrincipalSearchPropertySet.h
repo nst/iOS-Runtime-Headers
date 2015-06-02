@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet;
-
 @interface CalDAVPrincipalSearchPropertySet : NSObject {
     NSSet *_properties;
 }
 
-@property(readonly) NSSet * stringProperties;
-@property(readonly) BOOL supportsPropertySearch;
+@property (nonatomic, readonly) NSSet *stringProperties;
+@property (nonatomic, readonly) BOOL supportsPropertySearch;
 
 + (id)searchSetWithProperties:(id)arg1;
 

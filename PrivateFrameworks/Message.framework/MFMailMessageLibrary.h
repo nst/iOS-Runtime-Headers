@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <MFMailMessageLibraryDelegate>, <MFMailboxPathProvider>, MFDbJournal, MFLibraryContentIndex, MFMailMessageLibraryMigrator, MFSQLiteConnectionPool, MFWeakObjectCache, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MFMailMessageLibrary : MFMessageLibrary <MFContentProtectionObserver, MFLibraryContentIndexDataSource, MFSQLiteConnectionPoolDelegate> {
     NSString *_activeAccountClause;
     MFSQLiteConnectionPool *_connectionPool;
@@ -26,12 +19,12 @@
     NSString *_threadLocalHandleKey;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MFMailMessageLibraryDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int protectedDataAvailability;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MFMailMessageLibraryDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int protectedDataAvailability;
+@property (readonly) Class superclass;
 
 + (void)_removeLibrary:(BOOL)arg1 atPath:(id)arg2;
 + (id)defaultInstance;
@@ -67,7 +60,7 @@
 - (id)_messageForStatement:(struct sqlite3_stmt { }*)arg1 options:(unsigned int)arg2 timestamp:(unsigned long long)arg3 isProtectedDataAvailable:(BOOL)arg4;
 - (id)_newConnection;
 - (void)_notifyDidCompact:(BOOL)arg1 messages:(id)arg2 mailboxes:(id)arg3;
-- (void)_performTransaction:(id)arg1 forWriting:(BOOL)arg2;
+- (void)_performTransaction:(id /* block */)arg1 forWriting:(BOOL)arg2;
 - (void)_reconcileAfterKeybagUnlock;
 - (void)_reconcileJournal:(struct sqlite3 { }*)arg1;
 - (void)_removeCachedLibraryMessageWithLibraryID:(unsigned int)arg1;
@@ -78,7 +71,7 @@
 - (BOOL)_writeEmlxFile:(id)arg1 withBodyData:(id)arg2 protectionClass:(int)arg3;
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 addPOPUIDs:(BOOL)arg10 dataSectionsByMessage:(id)arg11;
-- (long long)addReferencesForMessage:(id)arg1 libraryID:(unsigned int)arg2 messageIDHash:(long long)arg3 withSubject:(id)arg4 withReferences:(id)arg5 usingDatabase:(struct sqlite3 { }*)arg6 otherSubjectIDMappings:(id)arg7 usingMailbox:(int)arg8 conversationFlags:(unsigned long long*)arg9 mergeHandler:(id)arg10;
+- (long long)addReferencesForMessage:(id)arg1 libraryID:(unsigned int)arg2 messageIDHash:(long long)arg3 withSubject:(id)arg4 withReferences:(id)arg5 usingDatabase:(struct sqlite3 { }*)arg6 otherSubjectIDMappings:(id)arg7 usingMailbox:(int)arg8 conversationFlags:(unsigned long long*)arg9 mergeHandler:(id /* block */)arg10;
 - (id)addThreadingInfoBySubjectForMessageID:(unsigned int)arg1 nonPrefixedSubject:(id)arg2 messageIDsBySubject:(id)arg3 usingDatabase:(struct sqlite3 { }*)arg4 toReferences:(id)arg5 withinMailbox:(int)arg6;
 - (id)allMailboxURLStrings;
 - (id)allUIDsInMailbox:(id)arg1;
@@ -98,7 +91,7 @@
 - (int)commitTransaction:(struct sqlite3 { }*)arg1;
 - (void)compactMailbox:(id)arg1;
 - (void)compactMessages:(id)arg1 permanently:(BOOL)arg2;
-- (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id)arg2;
+- (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(id /* block */)arg2;
 - (void)contentIndex:(id)arg1 assignTransactionIdentifier:(unsigned int)arg2 forDocumentIdentifiers:(id)arg3;
 - (void)contentIndex:(id)arg1 invalidateItemsGreaterThanTransactionId:(unsigned int)arg2;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
@@ -152,9 +145,9 @@
 - (BOOL)isProtectedDataAvailable:(struct sqlite3 { }*)arg1;
 - (id)itemsRequiringIndexingForContentIndex:(id)arg1 limit:(unsigned int)arg2;
 - (void)iterateMessagesMatchingCriterion:(id)arg1 withResultHandler:(id)arg2 options:(unsigned int)arg3 withMonitor:(id)arg4;
-- (void)iterateStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 withProgressMonitor:(id)arg3 andRowHandler:(int (*)())arg4 context:(void*)arg5;
+- (void)iterateStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 withProgressMonitor:(id)arg3 andRowHandler:(int (*)arg4 context:(void*)arg5;
 - (int)libraryIDForAccount:(id)arg1;
-- (id)loadData:(id)arg1 forMessage:(id)arg2 usingBlock:(id)arg3;
+- (id)loadData:(id)arg1 forMessage:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)loadMeetingMetadataForMessage:(id)arg1;
@@ -195,8 +188,8 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (id)pathForMailboxURL:(id)arg1;
-- (void)performReadTransaction:(id)arg1;
-- (void)performWriteTransaction:(id)arg1;
+- (void)performReadTransaction:(id /* block */)arg1;
+- (void)performWriteTransaction:(id /* block */)arg1;
 - (struct sqlite3_stmt { }*)preparedStatement:(struct sqlite3 { }*)arg1 pattern:(id)arg2;
 - (int)protectedDataAvailability;
 - (void)pruneConversationTables:(double)arg1;
@@ -251,7 +244,7 @@
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
 - (void)updateAdditionalThreadingInfoForSentMessageWithHeaders:(id)arg1 externalConversationID:(long long)arg2;
 - (void)updateFlagsForMessagesInPlace:(id)arg1 success:(BOOL*)arg2;
-- (void)updateMessage:(id)arg1 withMetadata:(id)arg2;
+- (void)updateMessage:(id)arg1 withMetadata:(id /* block */)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (id)urlForMailboxID:(unsigned int)arg1;

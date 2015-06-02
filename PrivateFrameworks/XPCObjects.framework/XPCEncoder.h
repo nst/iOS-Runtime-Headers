@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface XPCEncoder : NSCoder {
     struct __CFDictionary { } *_conditionalObjects;
     NSObject<OS_xpc_object> *_currentObject;

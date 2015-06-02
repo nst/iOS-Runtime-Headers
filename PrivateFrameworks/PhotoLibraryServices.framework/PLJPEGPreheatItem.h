@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, UIImage;
-
 @interface PLJPEGPreheatItem : PLPreheatItem {
     UIImage *_cachedImage;
     BOOL _cachedImageCancelled;
@@ -18,9 +16,9 @@
     NSObject<OS_dispatch_group> *_waitGroup;
 }
 
-@property(setter=_setHasCachedImage:) BOOL _hasCachedImage;
-@property(readonly) NSString * imagePath;
-@property(readonly) unsigned int options;
+@property (setter=_setHasCachedImage:) BOOL _hasCachedImage;
+@property (nonatomic, readonly) NSString *imagePath;
+@property (nonatomic, readonly) unsigned int options;
 
 + (id)jpegDataLoadSemaphore;
 
@@ -30,10 +28,10 @@
 - (void)_leaveWaitGroupIfNeeded;
 - (void)_setHasCachedImage:(BOOL)arg1;
 - (void)_uncancel;
-- (BOOL)addImageHandler:(id)arg1;
+- (BOOL)addImageHandler:(id /* block */)arg1;
 - (id)cachedImage:(BOOL*)arg1;
 - (id)cachedImageIfAvailable:(BOOL*)arg1;
-- (void)cancelPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)cancelPreheatRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)createDecodedImage:(struct CGImage { }*)arg1 data:(id)arg2;
 - (void)dealloc;
 - (struct __CFDictionary { }*)decodeSessionOptions;
@@ -41,10 +39,10 @@
 - (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 options:(unsigned int)arg5;
 - (id)initialDecodeSessionOptions;
 - (BOOL)isCancelled;
-- (void)loadPreheatDataWithHandler:(id)arg1;
+- (void)loadPreheatDataWithHandler:(id /* block */)arg1;
 - (unsigned int)options;
 - (BOOL)originalIsJpeg;
 - (id)preheatData;
-- (void)startPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)startPreheatRequestWithCompletionHandler:(id /* block */)arg1;
 
 @end

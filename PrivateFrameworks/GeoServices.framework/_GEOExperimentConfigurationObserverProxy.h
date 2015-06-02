@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSHashTable, NSLock, NSObject<OS_dispatch_queue>;
-
 @interface _GEOExperimentConfigurationObserverProxy : NSObject {
     NSHashTable *_observers;
     NSLock *_observersLock;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
 
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)forEachObserver:(id)arg1;
+- (void)forEachObserver:(id /* block */)arg1;
 - (id)init;
 - (unsigned int)observersCount;
 - (id)queue;

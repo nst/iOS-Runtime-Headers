@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString;
-
 @interface OpenURLTarget : NSObject {
     unsigned int _applicationState;
     struct { 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtworkList, SKUILink;
-
 @interface SKUISearchEditorialResult : NSObject {
     SKUIArtworkList *_artwork;
     SKUILink *_buttonLink;
@@ -12,11 +10,11 @@
     NSString *_title;
 }
 
-@property(readonly) SKUIArtworkList * artwork;
-@property(readonly) SKUILink * buttonLink;
-@property(readonly) long long editorialIdentifier;
-@property(readonly) NSString * subtitle;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) SKUIArtworkList *artwork;
+@property (nonatomic, readonly) SKUILink *buttonLink;
+@property (nonatomic, readonly) long long editorialIdentifier;
+@property (nonatomic, readonly) NSString *subtitle;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_setValuesWithEditorialDictionary:(id)arg1;

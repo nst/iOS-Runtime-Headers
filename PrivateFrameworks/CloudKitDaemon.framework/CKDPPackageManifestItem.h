@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPPackageManifestItem : PBCodable <NSCopying> {
     struct { 
         unsigned int size : 1; 
@@ -14,12 +12,12 @@
     long long _size;
 }
 
-@property BOOL hasLastItem;
-@property(readonly) BOOL hasSignature;
-@property BOOL hasSize;
-@property BOOL lastItem;
-@property(retain) NSData * signature;
-@property long long size;
+@property (nonatomic) BOOL hasLastItem;
+@property (nonatomic, readonly) BOOL hasSignature;
+@property (nonatomic) BOOL hasSize;
+@property (nonatomic) BOOL lastItem;
+@property (nonatomic, retain) NSData *signature;
+@property (nonatomic) long long size;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

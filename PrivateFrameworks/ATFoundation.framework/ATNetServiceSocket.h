@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSObject<OS_tcp_connection>, NSString;
-
 @interface ATNetServiceSocket : ATSocket <NSNetServiceDelegate, NSStreamDelegate> {
     BOOL _connected;
     NSObject<OS_tcp_connection> *_connection;
     NSString *_interfaceName;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _readBuffer[65536];
+    BOOL _readBuffer;
     NSObject<OS_dispatch_semaphore> *_sema;
     NSString *_serviceDomain;
     NSString *_serviceName;
@@ -17,11 +15,11 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * interfaceName;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *interfaceName;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_connect;

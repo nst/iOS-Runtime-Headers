@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMValidityState : DOMObject {
-}
+@interface DOMValidityState : DOMObject
 
-@property(readonly) BOOL badInput;
-@property(readonly) BOOL customError;
-@property(readonly) BOOL patternMismatch;
-@property(readonly) BOOL rangeOverflow;
-@property(readonly) BOOL rangeUnderflow;
-@property(readonly) BOOL stepMismatch;
-@property(readonly) BOOL tooLong;
-@property(readonly) BOOL typeMismatch;
-@property(readonly) BOOL valid;
-@property(readonly) BOOL valueMissing;
+@property (readonly) BOOL badInput;
+@property (readonly) BOOL customError;
+@property (readonly) BOOL patternMismatch;
+@property (readonly) BOOL rangeOverflow;
+@property (readonly) BOOL rangeUnderflow;
+@property (readonly) BOOL stepMismatch;
+@property (readonly) BOOL tooLong;
+@property (readonly) BOOL typeMismatch;
+@property (readonly) BOOL valid;
+@property (readonly) BOOL valueMissing;
 
 - (BOOL)badInput;
 - (BOOL)customError;

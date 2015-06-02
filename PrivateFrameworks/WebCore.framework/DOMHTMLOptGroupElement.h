@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
-
-@interface DOMHTMLOptGroupElement : DOMHTMLElement {
-}
+@interface DOMHTMLOptGroupElement : DOMHTMLElement
 
 @property BOOL disabled;
-@property(copy) NSString * label;
+@property (copy) NSString *label;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
+
+- (BOOL)disabled;
+- (id)label;
+- (void)setDisabled:(BOOL)arg1;
+- (void)setLabel:(id)arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (id)createPickerCell;
 - (id)createSelectedItem;
-- (BOOL)disabled;
 - (id)itemTitle;
-- (id)label;
 - (void)populateCell:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setLabel:(id)arg1;
 
 @end

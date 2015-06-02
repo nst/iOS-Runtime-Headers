@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSData, NSObject<OS_xpc_object>;
-
 @interface LTEXPCConnection : NSObject {
     NSObject<OS_xpc_object> *connection;
     id context;
@@ -11,10 +9,10 @@
     NSData *tokenData;
 }
 
-@property NSObject<OS_xpc_object> * connection;
-@property(retain) id context;
+@property NSObject<OS_xpc_object> *connection;
+@property (nonatomic, retain) id context;
 @property int pid;
-@property(retain) NSData * tokenData;
+@property (nonatomic, retain) NSData *tokenData;
 
 - (id)connection;
 - (id)context;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableSet, NSSet, NSString, VKMapModel, VKStyleManager;
-
 @interface VKMapTileModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     VKMapModel *_mapModel;
     unsigned char _maximumZ;
@@ -16,16 +14,16 @@
     NSMutableSet *_tilesWillExitScene;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property VKMapModel * mapModel;
-@property(readonly) unsigned char maximumZ;
-@property(readonly) unsigned char minimumZ;
-@property(readonly) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
-@property(readonly) NSSet * tilesInScene;
-@property(readonly) NSSet * tilesInScenePlusExitingTiles;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) VKMapModel *mapModel;
+@property (nonatomic, readonly) unsigned char maximumZ;
+@property (nonatomic, readonly) unsigned char minimumZ;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSSet *tilesInScene;
+@property (nonatomic, readonly) NSSet *tilesInScenePlusExitingTiles;
 
 + (BOOL)reloadOnActiveTileGroupChange;
 + (BOOL)reloadOnStylesheetChange;

@@ -6,6 +6,8 @@
     void *_priv;
 }
 
+// Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
+
 + (id)emptyImage;
 + (id)imageWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 colorSpace:(struct CGColorSpace { }*)arg5;
 + (id)imageWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 options:(id)arg5;
@@ -27,8 +29,6 @@
 + (id)imageWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 options:(id)arg3;
 + (id)noiseImage;
 + (id)noiseImagePadded;
-+ (float)pu_angleFromOrientation:(int)arg1;
-+ (int)pu_orientationFromAngle:(float)arg1;
 
 - (id)TIFFRepresentation;
 - (id)_autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 context:(id)arg3 options:(id)arg4;
@@ -53,10 +53,6 @@
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 options:(id)arg3;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 options:(id)arg2;
 - (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage { }*)arg2 inputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)bl_imageFromAlphaChannel;
-- (id)bl_imageToAlphaChannel;
-- (id)bl_moveAlphaToBlue;
-- (id)bl_moveBlueToAlpha;
 - (struct CGPoint { float x1; float x2; })calcIntersection:(struct CGPoint { float x1; float x2; })arg1 slope1:(struct CGPoint { float x1; float x2; })arg2 pt2:(struct CGPoint { float x1; float x2; })arg3 slope2:(struct CGPoint { float x1; float x2; })arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -91,14 +87,10 @@
 - (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1;
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
-- (id)initWithImage:(id)arg1;
-- (id)initWithImage:(id)arg1 options:(id)arg2;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 options:(id)arg3;
 - (void)printTree;
 - (id)properties;
-- (BOOL)pu_getSuggestionForCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 straightenAngle:(float*)arg2 orientation:(int)arg3;
-- (id)pu_loadAdjustments:(id)arg1 orientation:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })regionOfInterestForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 - (id)smartBlackAndWhiteStatistics;
@@ -106,5 +98,25 @@
 - (id)smartColorStatistics;
 - (id)smartToneAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 - (id)smartToneStatistics;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (float)pu_angleFromOrientation:(int)arg1;
++ (int)pu_orientationFromAngle:(float)arg1;
+
+- (BOOL)pu_getSuggestionForCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 straightenAngle:(float*)arg2 orientation:(int)arg3;
+- (id)pu_loadAdjustments:(id)arg1 orientation:(int)arg2;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 options:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
+
+- (id)bl_imageFromAlphaChannel;
+- (id)bl_imageToAlphaChannel;
+- (id)bl_moveAlphaToBlue;
+- (id)bl_moveBlueToAlpha;
 
 @end

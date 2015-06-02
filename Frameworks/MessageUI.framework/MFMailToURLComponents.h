@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray, NSString;
-
 @interface MFMailToURLComponents : NSObject {
     NSArray *_bccRecipients;
     NSString *_body;
@@ -12,11 +10,11 @@
     NSArray *_toRecipients;
 }
 
-@property(readonly) NSArray * bccRecipients;
-@property(readonly) NSString * body;
-@property(readonly) NSArray * ccRecipients;
-@property(readonly) NSString * subject;
-@property(readonly) NSArray * toRecipients;
+@property (nonatomic, readonly) NSArray *bccRecipients;
+@property (nonatomic, readonly) NSString *body;
+@property (nonatomic, readonly) NSArray *ccRecipients;
+@property (nonatomic, readonly) NSString *subject;
+@property (nonatomic, readonly) NSArray *toRecipients;
 
 + (id)componentsWithURL:(id)arg1;
 

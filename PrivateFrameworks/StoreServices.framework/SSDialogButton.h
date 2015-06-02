@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSString;
-
 @interface SSDialogButton : NSObject {
     NSDictionary *_actionDictionary;
     NSString *_title;
 }
 
-@property(readonly) NSString * URLTarget;
-@property(readonly) id actionParameter;
-@property(readonly) NSString * buttonAction;
-@property(copy,readonly) NSString * buttonTitle;
+@property (nonatomic, readonly) NSString *URLTarget;
+@property (nonatomic, readonly) id actionParameter;
+@property (nonatomic, readonly) NSString *buttonAction;
+@property (nonatomic, readonly, copy) NSString *buttonTitle;
 
 + (id)buttonWithTitle:(id)arg1;
 

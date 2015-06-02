@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKGameCenterControllerDelegate>, GKHostedGameCenterViewController, GKRemoteGameCenterViewController, NSMutableDictionary, NSString, UIAlertController;
-
 @interface GKGameCenterViewController : UINavigationController {
     UIAlertController *_alertController;
     <GKGameCenterControllerDelegate> *_gameCenterDelegateWeak;
@@ -12,15 +10,15 @@
     NSMutableDictionary *_volatileProperties;
 }
 
-@property(retain) UIAlertController * alertController;
-@property <GKGameCenterControllerDelegate> * gameCenterDelegate;
-@property(retain) NSString * leaderboardCategory;
-@property(retain) NSString * leaderboardIdentifier;
-@property int leaderboardTimeScope;
-@property(retain) GKHostedGameCenterViewController * privateViewController;
-@property(retain) GKRemoteGameCenterViewController * remoteViewController;
-@property int viewState;
-@property(retain) NSMutableDictionary * volatileProperties;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic) <GKGameCenterControllerDelegate> *gameCenterDelegate;
+@property (nonatomic, retain) NSString *leaderboardCategory;
+@property (nonatomic, retain) NSString *leaderboardIdentifier;
+@property (nonatomic) int leaderboardTimeScope;
+@property (nonatomic, retain) GKHostedGameCenterViewController *privateViewController;
+@property (nonatomic, retain) GKRemoteGameCenterViewController *remoteViewController;
+@property (nonatomic) int viewState;
+@property (nonatomic, retain) NSMutableDictionary *volatileProperties;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (BOOL)accessInstanceVariablesDirectly;

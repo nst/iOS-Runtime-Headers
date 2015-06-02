@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSMutableDictionary, SUControlAppearance, SUTabBarAppearance, SUToolbarAppearance;
-
 @interface SUUIAppearance : NSObject <NSCopying> {
     SUControlAppearance *_backButtonAppearance;
     SUControlAppearance *_confirmationButtonAppearance;
@@ -19,14 +17,14 @@
     SUToolbarAppearance *_toolbarAppearance;
 }
 
-@property(copy) SUControlAppearance * backButtonAppearance;
-@property(copy) SUControlAppearance * confirmationButtonAppearance;
-@property(copy) SUControlAppearance * destructiveButtonAppearance;
-@property(copy) SUControlAppearance * exitStoreButtonAppearance;
-@property(copy) SUControlAppearance * forwardButtonAppearance;
-@property(copy) NSDictionary * navigationBarTitleTextAttributes;
-@property(copy) SUTabBarAppearance * tabBarAppearance;
-@property(copy) SUToolbarAppearance * toolbarAppearance;
+@property (nonatomic, copy) SUControlAppearance *backButtonAppearance;
+@property (nonatomic, copy) SUControlAppearance *confirmationButtonAppearance;
+@property (nonatomic, copy) SUControlAppearance *destructiveButtonAppearance;
+@property (nonatomic, copy) SUControlAppearance *exitStoreButtonAppearance;
+@property (nonatomic, copy) SUControlAppearance *forwardButtonAppearance;
+@property (nonatomic, copy) NSDictionary *navigationBarTitleTextAttributes;
+@property (nonatomic, copy) SUTabBarAppearance *tabBarAppearance;
+@property (nonatomic, copy) SUToolbarAppearance *toolbarAppearance;
 
 + (id)_defaultBackButtonAppearance;
 + (id)_defaultButtonAppearance;

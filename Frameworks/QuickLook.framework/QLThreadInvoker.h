@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, NSError, NSURLConnection;
-
 @interface QLThreadInvoker : NSObject {
     NSURLConnection *_connection;
     NSData *_data;

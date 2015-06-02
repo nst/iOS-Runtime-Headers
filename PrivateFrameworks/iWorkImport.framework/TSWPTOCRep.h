@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPTOCRep : TSWPShapeRep {
-}
+@interface TSWPTOCRep : TSWPShapeRep
 
 - (BOOL)canMakePathEditable;
 - (unsigned int)charIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;

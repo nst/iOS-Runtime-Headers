@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIDocumentState, TITextInputTraits;
-
 @interface _UIInputViewControllerState : NSObject <NSCopying, NSSecureCoding> {
     TIDocumentState *_documentState;
     TITextInputTraits *_textInputTraits;
 }
 
-@property(retain) TIDocumentState * documentState;
-@property(retain) TITextInputTraits * textInputTraits;
+@property (nonatomic, retain) TIDocumentState *documentState;
+@property (nonatomic, retain) TITextInputTraits *textInputTraits;
 
 + (id)stateForKeyboardState:(id)arg1;
 + (BOOL)supportsSecureCoding;

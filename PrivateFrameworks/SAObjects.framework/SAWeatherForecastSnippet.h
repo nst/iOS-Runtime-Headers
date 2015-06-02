@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, SAUIAppPunchOut, SAUIImageResource;
+@interface SAWeatherForecastSnippet : SAUISnippet
 
-@interface SAWeatherForecastSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * aceWeathers;
-@property(retain) SAUIAppPunchOut * appPunchOut;
-@property(retain) SAUIImageResource * attributionImage;
+@property (nonatomic, copy) NSArray *aceWeathers;
+@property (nonatomic, retain) SAUIAppPunchOut *appPunchOut;
+@property (nonatomic, retain) SAUIImageResource *attributionImage;
 
 + (id)forecastSnippet;
 + (id)forecastSnippetWithDictionary:(id)arg1 context:(id)arg2;

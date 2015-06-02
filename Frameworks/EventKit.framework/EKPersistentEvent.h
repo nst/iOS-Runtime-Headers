@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL;
-
 @interface EKPersistentEvent : EKPersistentCalendarItem {
     struct { 
         int years; 
@@ -15,31 +13,31 @@
     } _cachedDurationUnits;
 }
 
-@property(copy) NSURL * URL;
-@property(copy) NSArray * actions;
-@property(readonly) BOOL allowsParticipationStatusModifications;
-@property int availability;
-@property(readonly) int birthdayID;
-@property(readonly) double duration;
-@property(readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } durationUnits;
-@property(getter=isEditable,readonly) BOOL editable;
-@property(copy) NSDate * endDate;
-@property(readonly) NSString * eventIdentifier;
-@property(getter=isFloating,readonly) BOOL floating;
-@property(getter=isInvitation,readonly) BOOL invitation;
-@property(readonly) unsigned int invitationChangedProperties;
-@property unsigned int invitationStatus;
-@property(getter=isMeeting,readonly) BOOL meeting;
-@property unsigned int modifiedProperties;
-@property BOOL needsOccurrenceCacheUpdate;
-@property(copy) NSDate * originalStartDate;
-@property int participationStatus;
-@property(readonly) int pendingParticipationStatus;
-@property int privacyLevel;
-@property(copy) NSString * responseComment;
-@property int status;
-@property int travelAdvisoryBehavior;
-@property(copy) NSNumber * travelTime;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSArray *actions;
+@property (nonatomic, readonly) BOOL allowsParticipationStatusModifications;
+@property (nonatomic) int availability;
+@property (nonatomic, readonly) int birthdayID;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } durationUnits;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, readonly) NSString *eventIdentifier;
+@property (getter=isFloating, nonatomic, readonly) BOOL floating;
+@property (getter=isInvitation, nonatomic, readonly) BOOL invitation;
+@property (nonatomic, readonly) unsigned int invitationChangedProperties;
+@property (nonatomic) unsigned int invitationStatus;
+@property (getter=isMeeting, nonatomic, readonly) BOOL meeting;
+@property (nonatomic) unsigned int modifiedProperties;
+@property (nonatomic) BOOL needsOccurrenceCacheUpdate;
+@property (nonatomic, copy) NSDate *originalStartDate;
+@property (nonatomic) int participationStatus;
+@property (nonatomic, readonly) int pendingParticipationStatus;
+@property (nonatomic) int privacyLevel;
+@property (nonatomic, copy) NSString *responseComment;
+@property (nonatomic) int status;
+@property (nonatomic) int travelAdvisoryBehavior;
+@property (nonatomic, copy) NSNumber *travelTime;
 
 + (id)defaultPropertiesToLoad;
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;

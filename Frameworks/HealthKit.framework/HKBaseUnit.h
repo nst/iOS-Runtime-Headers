@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString, _HKBaseDimension;
-
 @interface HKBaseUnit : HKUnit <_HKFactor> {
     NSString *_prefix;
     double _proportionalSize;
@@ -12,12 +10,12 @@
     NSString *_unitString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) _HKBaseDimension * dimension;
-@property(readonly) unsigned int hash;
-@property(readonly) double proportionalSize;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) _HKBaseDimension *dimension;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) double proportionalSize;
+@property (readonly) Class superclass;
 
 + (id)_rootUnitWithDefinition:(struct { char *x1; BOOL x2; char *x3; double x4; double x5; })arg1;
 + (id)_uniquedRootUnit:(id)arg1;

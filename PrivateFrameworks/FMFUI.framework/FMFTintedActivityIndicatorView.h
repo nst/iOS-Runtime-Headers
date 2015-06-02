@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@interface FMFTintedActivityIndicatorView : UIActivityIndicatorView {
-}
+@interface FMFTintedActivityIndicatorView : UIActivityIndicatorView
 
 - (void)awakeFromNib;
 - (void)tintColorDidChange;

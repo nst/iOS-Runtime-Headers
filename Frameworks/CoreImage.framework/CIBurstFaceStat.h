@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSMutableArray;
-
 @interface CIBurstFaceStat : NSObject <NSCopying> {
     int FCRBlinkFeaturesSize;
     int FCRLeftEyeFeaturesOffset;
@@ -97,11 +95,11 @@
 @property int FCRBlinkFeaturesSize;
 @property int FCRLeftEyeFeaturesOffset;
 @property int FCRRightEyeFeaturesOffset;
-@property NSMutableArray * FCRSmileAndBlinkFeatures;
+@property NSMutableArray *FCRSmileAndBlinkFeatures;
 @property int FCRSmileFeaturesOffset;
 @property int FCRSmileFeaturesSize;
 @property float faceCropTime;
-@property NSMutableArray * faceHOG;
+@property NSMutableArray *faceHOG;
 @property float faceHOGTime;
 @property int faceId;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } faceRect;

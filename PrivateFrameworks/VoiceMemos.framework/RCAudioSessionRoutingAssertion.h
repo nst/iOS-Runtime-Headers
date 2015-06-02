@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString;
-
 @interface RCAudioSessionRoutingAssertion : NSObject {
     NSString *_debugLabel;
     int _priority;
     BOOL _requiresActiveAudioSession;
 }
 
-@property(readonly) int priority;
-@property(readonly) BOOL requiresActiveAudioSession;
+@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) BOOL requiresActiveAudioSession;
 
 + (id)newCaptureAssertionNamed:(id)arg1;
 + (id)newForegroundAppAssertion;

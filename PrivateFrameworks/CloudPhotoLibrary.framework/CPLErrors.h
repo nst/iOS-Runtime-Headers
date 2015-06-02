@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLErrors : NSObject {
-}
+@interface CPLErrors : NSObject
 
 + (id)cplErrorWithCode:(int)arg1 description:(id)arg2;
 + (id)cplErrorWithCode:(int)arg1 description:(id)arg2 arguments:(void*)arg3;

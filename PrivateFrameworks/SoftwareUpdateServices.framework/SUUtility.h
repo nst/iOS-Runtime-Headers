@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUUtility : NSObject {
-}
+@interface SUUtility : NSObject
 
 + (id)URLIfFileExists:(id)arg1;
 + (id)addToDate:(id)arg1 numberOfDays:(int)arg2;

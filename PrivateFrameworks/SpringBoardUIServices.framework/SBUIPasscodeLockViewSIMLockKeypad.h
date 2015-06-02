@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString, UILabel, UIView;
-
 @interface SBUIPasscodeLockViewSIMLockKeypad : SBUIPasscodeLockViewLongNumericKeypad {
     UIView *_entryFieldFiller;
     BOOL _isShowingStatus;
@@ -13,8 +11,8 @@
     float _targetEntryFieldFillerAlpha;
 }
 
-@property(copy) NSString * statusSubtitle;
-@property(copy) NSString * statusTitle;
+@property (nonatomic, copy) NSString *statusSubtitle;
+@property (nonatomic, copy) NSString *statusTitle;
 
 - (float)_distanceFromLastLineBaselineToTextFieldBoundsHeight:(id)arg1;
 - (float)_distanceToFirstLineBaseline:(id)arg1;

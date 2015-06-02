@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSObject<OS_dispatch_source>, UIButton;
-
 @interface MPUTransportButtonEventHandler : NSObject {
     UIButton *_button;
     BOOL _longPress;
@@ -13,9 +11,9 @@
     BOOL _supportsTapWhenDisabled;
 }
 
-@property UIButton * button;
-@property double minimumLongPressDuration;
-@property BOOL supportsTapWhenDisabled;
+@property (nonatomic) UIButton *button;
+@property (nonatomic) double minimumLongPressDuration;
+@property (nonatomic) BOOL supportsTapWhenDisabled;
 
 - (void).cxx_destruct;
 - (void)_clearLongPressTimer;
@@ -27,7 +25,7 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (double)minimumLongPressDuration;
-- (id)performHitTestingBlock:(id)arg1;
+- (id)performHitTestingBlock:(id /* block */)arg1;
 - (void)setButton:(id)arg1;
 - (void)setMinimumLongPressDuration:(double)arg1;
 - (void)setSupportsTapWhenDisabled:(BOOL)arg1;

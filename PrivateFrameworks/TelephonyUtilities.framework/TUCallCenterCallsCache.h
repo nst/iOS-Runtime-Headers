@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSMapTable, NSMutableSet, NSObject<OS_dispatch_semaphore>;
-
 @interface TUCallCenterCallsCache : NSObject {
     NSMapTable *_callRefToTelephonyCall;
     NSObject<OS_dispatch_semaphore> *_callRefToTelephonyCallSemaphore;
@@ -14,13 +12,13 @@
     NSObject<OS_dispatch_semaphore> *_uniqueProxyIdentifierToProxyCallSemaphore;
 }
 
-@property(retain) NSMapTable * callRefToTelephonyCall;
-@property(retain) NSObject<OS_dispatch_semaphore> * callRefToTelephonyCallSemaphore;
-@property(retain) NSMapTable * chatGUIDToFaceTimeCall;
-@property(retain) NSObject<OS_dispatch_semaphore> * chatGUIDToFaceTimeCallSemaphore;
-@property(retain) NSMutableSet * currentCallSet;
-@property(retain) NSMapTable * uniqueProxyIdentifierToProxyCall;
-@property(retain) NSObject<OS_dispatch_semaphore> * uniqueProxyIdentifierToProxyCallSemaphore;
+@property (nonatomic, retain) NSMapTable *callRefToTelephonyCall;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *callRefToTelephonyCallSemaphore;
+@property (nonatomic, retain) NSMapTable *chatGUIDToFaceTimeCall;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *chatGUIDToFaceTimeCallSemaphore;
+@property (nonatomic, retain) NSMutableSet *currentCallSet;
+@property (nonatomic, retain) NSMapTable *uniqueProxyIdentifierToProxyCall;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *uniqueProxyIdentifierToProxyCallSemaphore;
 
 - (void)_updateCallWithCallState:(id)arg1 loadPersistentState:(BOOL)arg2;
 - (id)callForCTCall:(struct __CTCall { }*)arg1;

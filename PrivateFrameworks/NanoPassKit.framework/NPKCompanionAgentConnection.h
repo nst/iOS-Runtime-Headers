@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface NPKCompanionAgentConnection : NSObject {
     NSObject<OS_dispatch_queue> *_cacheQueue;
     NSMutableDictionary *_cachedPasses;
@@ -12,9 +10,9 @@
     NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
 }
 
-@property(retain) NSMutableDictionary * cachedPasses;
-@property(retain) NSMutableSet * cachedUniqueIDs;
-@property(readonly) NSXPCConnection * xpcConnection;
+@property (retain) NSMutableDictionary *cachedPasses;
+@property (retain) NSMutableSet *cachedUniqueIDs;
+@property (readonly) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
 - (void)_addPassToCache:(id)arg1;
@@ -22,32 +20,32 @@
 - (id)_cachedPassForUniqueID:(id)arg1;
 - (id)_cachedUniqueIDs;
 - (void)_clearCaches;
-- (id)_errorHandlerWithCompletion:(id)arg1;
+- (id /* block */)_errorHandlerWithCompletion:(id /* block */)arg1;
 - (void)_handleDefaultCardChanged:(id)arg1;
 - (void)_handleServerPaymentPassesChanged:(id)arg1;
-- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (void)_removePassWithUniqueIDFromCache:(id)arg1;
 - (void)_setCachedUniqueIDs:(id)arg1;
-- (void)_sharedPaymentWebServiceContextWithCompletion:(id)arg1;
+- (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
 - (id)cachedPasses;
 - (id)cachedUniqueIDs;
-- (void)consistencyCheckWithCompletion:(id)arg1;
+- (void)consistencyCheckWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
-- (void)defaultCardUniqueID:(id)arg1;
-- (void)handlePendingUnpairingWithCompletion:(id)arg1;
-- (void)handlePendingiCloudSignoutWithCompletion:(id)arg1;
+- (void)defaultCardUniqueID:(id /* block */)arg1;
+- (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
+- (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (void)paymentPassUniqueIDs:(id)arg1;
-- (void)paymentPassWithUniqueID:(id)arg1 reply:(id)arg2;
-- (void)redownloadAllPaymentPassesWithCompletion:(id)arg1;
-- (void)removePaymentPassWithUniqueID:(id)arg1 completion:(id)arg2;
-- (void)savePaymentPass:(id)arg1 completion:(id)arg2;
+- (void)paymentPassUniqueIDs:(id /* block */)arg1;
+- (void)paymentPassWithUniqueID:(id)arg1 reply:(id /* block */)arg2;
+- (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
+- (void)removePaymentPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (void)savePaymentPass:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCachedPasses:(id)arg1;
 - (void)setCachedUniqueIDs:(id)arg1;
-- (void)setDefaultCardUniqueID:(id)arg1 completion:(id)arg2;
+- (void)setDefaultCardUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
-- (void)shouldShowApplePaySettingsWithCompletion:(id)arg1;
+- (void)shouldShowApplePaySettingsWithCompletion:(id /* block */)arg1;
 - (id)xpcConnection;
 
 @end

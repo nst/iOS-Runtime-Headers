@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSEnumerator, NSLocale, NSString;
-
 @interface AVMetadataEnumerator : NSEnumerator {
     NSEnumerator *_arrayEnumerator;
     long _count;

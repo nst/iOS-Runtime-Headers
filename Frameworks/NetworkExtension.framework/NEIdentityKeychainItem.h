@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEIdentityKeychainItem : NEKeychainItem {
-}
+@interface NEIdentityKeychainItem : NEKeychainItem
 
 + (id)copyIdentities:(id)arg1 fromDomain:(int)arg2;
 + (id)copyPersistentReferenceForIdentity:(struct __SecIdentity { }*)arg1;

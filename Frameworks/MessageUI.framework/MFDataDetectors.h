@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFDataDetectors : NSObject {
-}
+@interface MFDataDetectors : NSObject
 
 + (Class)_DDURLifierClass;
 + (id)sharedDetectionController;

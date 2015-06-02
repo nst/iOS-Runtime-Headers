@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPCharacterStyle;
-
 @interface TSWPSpecSetCharacterStyle : TSWPSpecCharacterStyle {
     TSWPCharacterStyle *_characterStyle;
     BOOL _unset;

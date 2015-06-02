@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIFocusedTouchGestureRecognizer, SKUIGiftConfirmView, SKUIGiftPurchaseRequest;
-
 @interface SKUIGiftConfirmViewController : SKUIGiftStepViewController {
     SKUIGiftConfirmView *_confirmView;
     BOOL _isShowingConfirmation;

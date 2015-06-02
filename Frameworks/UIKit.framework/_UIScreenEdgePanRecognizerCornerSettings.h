@@ -7,9 +7,9 @@
     double _cornerSize;
 }
 
-@property double cornerAngleWindow;
-@property double cornerAngleWindowDegreees;
-@property double cornerSize;
+@property (nonatomic) double cornerAngleWindow;
+@property (nonatomic) double cornerAngleWindowDegreees;
+@property (nonatomic) double cornerSize;
 
 + (id)keyPathsForValuesAffectingCornerAngleWindowDegreees;
 + (id)settingsControllerModule;

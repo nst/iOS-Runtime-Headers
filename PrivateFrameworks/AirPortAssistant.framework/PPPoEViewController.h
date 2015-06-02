@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, PPPoEConnectionUIViewController, UILabel, UIView;
-
 @interface PPPoEViewController : AssistantSubUIViewController <TableViewManagerDelegate, UINavigationControllerDelegate> {
     UIView *justTextContainerView;
     UILabel *justTextLabel;
@@ -12,14 +10,14 @@
     UIView *tableHeaderContainerView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * justTextContainerView;
-@property UILabel * justTextLabel;
-@property(retain) PPPoEConnectionUIViewController * pppoeConnectionUIViewController;
-@property(readonly) Class superclass;
-@property(retain) UIView * tableHeaderContainerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *justTextContainerView;
+@property (nonatomic) UILabel *justTextLabel;
+@property (retain) PPPoEConnectionUIViewController *pppoeConnectionUIViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *tableHeaderContainerView;
 
 - (void)dealloc;
 - (id)justTextContainerView;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKTileProvider;
-
 @interface _VKTileProviderTimerTarget : NSObject {
     VKTileProvider *_tileProvider;
     VKTileProvider *tileProvider;
 }
 
-@property VKTileProvider * tileProvider;
+@property (nonatomic) VKTileProvider *tileProvider;
 
 - (void)setTileProvider:(id)arg1;
 - (id)tileProvider;

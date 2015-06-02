@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class <CHPhoneBookManagerProtocol>, NSDate, NSMutableArray, NSNumber, NSString;
-
 @interface CHRecentCall : CHSynchronizedLoggable <NSCopying, NSSecureCoding> {
     NSString *_addressBookCallerIDMultiValueId;
     NSString *_addressBookRecordId;
@@ -37,35 +35,35 @@
     unsigned int _unreadCount;
 }
 
-@property(copy) NSString * addressBookCallerIDMultiValueId;
-@property(copy) NSString * addressBookRecordId;
+@property (nonatomic, copy) NSString *addressBookCallerIDMultiValueId;
+@property (nonatomic, copy) NSString *addressBookRecordId;
 @property BOOL answered;
-@property(copy) NSNumber * bytesOfDataUsed;
-@property(retain) NSMutableArray * callOccurrences;
+@property (nonatomic, copy) NSNumber *bytesOfDataUsed;
+@property (nonatomic, retain) NSMutableArray *callOccurrences;
 @property unsigned int callStatus;
 @property unsigned int callType;
-@property(copy) NSString * callerId;
-@property unsigned int callerIdAvailability;
+@property (copy) NSString *callerId;
+@property (nonatomic) unsigned int callerIdAvailability;
 @property BOOL callerIdIsBlocked;
 @property BOOL callerIdIsFormatted;
-@property(copy) NSString * callerIdLabel;
-@property(copy) NSString * callerIdLocation;
-@property(copy) NSString * callerName;
-@property(copy) NSString * callerNetworkFirstName;
-@property(copy) NSString * callerNetworkName;
-@property(copy) NSString * callerNetworkSecondName;
-@property(copy) NSDate * date;
-@property(copy) NSString * devicePhoneId;
-@property(copy) NSNumber * disconnectedCause;
+@property (nonatomic, copy) NSString *callerIdLabel;
+@property (nonatomic, copy) NSString *callerIdLocation;
+@property (nonatomic, copy) NSString *callerName;
+@property (copy) NSString *callerNetworkFirstName;
+@property (nonatomic, copy) NSString *callerNetworkName;
+@property (copy) NSString *callerNetworkSecondName;
+@property (copy) NSDate *date;
+@property (copy) NSString *devicePhoneId;
+@property (nonatomic, copy) NSNumber *disconnectedCause;
 @property double duration;
-@property(copy) NSString * isoCountryCode;
-@property(copy) NSString * mobileCountryCode;
-@property(copy) NSString * mobileNetworkCode;
+@property (copy) NSString *isoCountryCode;
+@property (copy) NSString *mobileCountryCode;
+@property (copy) NSString *mobileNetworkCode;
 @property BOOL mobileOriginated;
 @property BOOL multiCall;
-@property(retain) <CHPhoneBookManagerProtocol> * phoneBookManager;
-@property BOOL read;
-@property(copy) NSString * uniqueId;
+@property (retain) <CHPhoneBookManagerProtocol> *phoneBookManager;
+@property (nonatomic) BOOL read;
+@property (copy) NSString *uniqueId;
 @property unsigned int unreadCount;
 
 + (id)callStatusAsString:(unsigned int)arg1;

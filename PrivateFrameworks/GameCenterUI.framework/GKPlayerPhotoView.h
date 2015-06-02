@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKPlayer, NSString, UIImage;
-
 @interface GKPlayerPhotoView : UIImageView <GKPlayerPhotoContainer> {
     UIImage *_actualImage;
     int _onAdaptiveBackground;
@@ -11,14 +9,14 @@
     BOOL _selected;
 }
 
-@property(retain) UIImage * actualImage;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isOnAdaptiveBackground) int onAdaptiveBackground;
-@property(retain) GKPlayer * player;
-@property BOOL selected;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIImage *actualImage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isOnAdaptiveBackground, nonatomic) int onAdaptiveBackground;
+@property (nonatomic, retain) GKPlayer *player;
+@property (nonatomic) BOOL selected;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 
@@ -29,7 +27,7 @@
 - (int)isOnAdaptiveBackground;
 - (id)player;
 - (void)refreshPhoto;
-- (void)refreshPhotoWithCompletionHandler:(id)arg1;
+- (void)refreshPhotoWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)selected;
 - (void)setActualImage:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;

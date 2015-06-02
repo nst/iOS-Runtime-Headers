@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDMMCS, NSObject<OS_dispatch_semaphore>, NSRunLoop, NSString;
-
 @interface CKDMMCSEngineContext : NSObject {
     CKDMMCS *_MMCS;
     struct __MMCSEngine { } *_MMCSEngine;
@@ -19,18 +17,18 @@
     BOOL _stopMMCSThread;
 }
 
-@property CKDMMCS * MMCS;
-@property struct __MMCSEngine { }* MMCSEngine;
-@property(retain) NSString * applicationBundleID;
-@property unsigned long maxChunkCountForSection;
-@property(retain) NSString * path;
-@property(retain) NSString * protocolVersion;
-@property long refCount;
-@property(retain) NSRunLoop * runLoop;
-@property(retain) NSString * runLoopMode;
-@property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
-@property int state;
-@property BOOL stopMMCSThread;
+@property (nonatomic) CKDMMCS *MMCS;
+@property (nonatomic) struct __MMCSEngine { }*MMCSEngine;
+@property (nonatomic, retain) NSString *applicationBundleID;
+@property (nonatomic) unsigned long maxChunkCountForSection;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSString *protocolVersion;
+@property (nonatomic) long refCount;
+@property (nonatomic, retain) NSRunLoop *runLoop;
+@property (nonatomic, retain) NSString *runLoopMode;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (nonatomic) int state;
+@property (nonatomic) BOOL stopMMCSThread;
 
 + (id)_appID;
 + (id)setupMMCSEngineWithApplicationBundleID:(id)arg1 path:(id)arg2 error:(id*)arg3;
@@ -57,7 +55,7 @@
 - (id)initWithApplicationBundleID:(id)arg1 path:(id)arg2;
 - (unsigned long)maxChunkCountForSection;
 - (id)path;
-- (void)performOnRunLoop:(id)arg1;
+- (void)performOnRunLoop:(id /* block */)arg1;
 - (id)protocolVersion;
 - (long)refCount;
 - (id)runLoop;

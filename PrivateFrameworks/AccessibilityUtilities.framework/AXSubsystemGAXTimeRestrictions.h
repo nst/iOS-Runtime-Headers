@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemGAXTimeRestrictions : AXSubsystem {
-}
+@interface AXSubsystemGAXTimeRestrictions : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CLLocation, CLLocationManager;
-
 @interface PUSuggestedSearchNearby : PUSuggestedSearch {
     BOOL _cancelled;
     CLLocation *_lastLocation;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMapPhotosAlbumViewController : PUPhotosAlbumViewController {
-}
+@interface PUMapPhotosAlbumViewController : PUPhotosAlbumViewController
 
 - (BOOL)wantsGlobalFooter;
 

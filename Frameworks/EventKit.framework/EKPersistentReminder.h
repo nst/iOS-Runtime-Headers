@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectID, NSDate, NSTimeZone;
-
 @interface EKPersistentReminder : EKPersistentCalendarItem {
     EKObjectID *_parentID;
 }
 
-@property(getter=isCompleted) BOOL completed;
-@property(copy) NSDate * completionDate;
-@property unsigned int displayOrder;
-@property(copy) NSDate * dueDate;
-@property BOOL dueDateAllDay;
-@property(copy) NSTimeZone * dueDateTimeZone;
-@property(copy) EKObjectID * parentID;
+@property (getter=isCompleted, nonatomic) BOOL completed;
+@property (nonatomic, copy) NSDate *completionDate;
+@property (nonatomic) unsigned int displayOrder;
+@property (nonatomic, copy) NSDate *dueDate;
+@property (nonatomic) BOOL dueDateAllDay;
+@property (nonatomic, copy) NSTimeZone *dueDateTimeZone;
+@property (nonatomic, copy) EKObjectID *parentID;
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 

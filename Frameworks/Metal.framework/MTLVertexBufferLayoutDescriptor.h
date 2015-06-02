@@ -8,9 +8,9 @@
     unsigned int _stride;
 }
 
-@property unsigned int stepFunction;
-@property unsigned int stepRate;
-@property unsigned int stride;
+@property (nonatomic) unsigned int stepFunction;
+@property (nonatomic) unsigned int stepRate;
+@property (nonatomic) unsigned int stride;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

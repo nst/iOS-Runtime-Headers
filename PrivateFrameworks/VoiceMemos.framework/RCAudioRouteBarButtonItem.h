@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, RCAudioRouteBarButton, RCAudioRouteBarButtonContainer;
-
 @interface RCAudioRouteBarButtonItem : UIBarButtonItem <UIAppearanceContainer> {
     RCAudioRouteBarButton *_button;
     RCAudioRouteBarButtonContainer *_contentView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)newAudioRouteItem;
 

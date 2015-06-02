@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVHrefItem, CoreDAVItemWithNoChildren;
-
 @interface CoreDAVCurrentUserPrincipalItem : CoreDAVItem {
     CoreDAVHrefItem *_href;
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVHrefItem * href;
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
+@property (nonatomic, retain) CoreDAVHrefItem *href;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *unauthenticated;
 
 + (id)copyParseRules;
 

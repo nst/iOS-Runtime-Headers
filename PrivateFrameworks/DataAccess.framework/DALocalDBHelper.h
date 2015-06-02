@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NoteContext;
-
 @interface DALocalDBHelper : NSObject {
     int _abConnectionCount;
     void *_abDB;
@@ -15,26 +9,22 @@
     void *_bookmarkDB;
     int _calConnectionCount;
     struct CalDatabase { } *_calDB;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _calUnitTestCallbackBlock;
-
+    id /* block */ _calUnitTestCallbackBlock;
     NSString *_clientIdentifier;
     int _noteConnectionCount;
     NoteContext *_noteDB;
 }
 
-@property int abConnectionCount;
-@property void* abDB;
-@property int bookmarkConnectionCount;
-@property void* bookmarkDB;
-@property int calConnectionCount;
-@property struct CalDatabase { }* calDB;
-@property(copy) id calUnitTestCallbackBlock;
-@property(retain) NSString * clientIdentifier;
-@property int noteConnectionCount;
-@property(retain) NoteContext * noteDB;
+@property (nonatomic) int abConnectionCount;
+@property (nonatomic) void*abDB;
+@property (nonatomic) int bookmarkConnectionCount;
+@property (nonatomic) void*bookmarkDB;
+@property (nonatomic) int calConnectionCount;
+@property (nonatomic) struct CalDatabase { }*calDB;
+@property (nonatomic, copy) id /* block */ calUnitTestCallbackBlock;
+@property (nonatomic, retain) NSString *clientIdentifier;
+@property (nonatomic) int noteConnectionCount;
+@property (nonatomic, retain) NoteContext *noteDB;
 
 + (void)abSetTestABDBDir:(id)arg1;
 + (id)abTestABDBDir;
@@ -68,8 +58,8 @@
 - (void)calOpenDBWithClientIdentifier:(id)arg1;
 - (BOOL)calSaveDB;
 - (BOOL)calSaveDBAndFlushCaches;
-- (id)calUnitTestCallbackBlock;
-- (void)calUnitTestsSetCallbackBlockForSave:(id)arg1;
+- (id /* block */)calUnitTestCallbackBlock;
+- (void)calUnitTestsSetCallbackBlockForSave:(id /* block */)arg1;
 - (id)changeTrackingID;
 - (id)clientIdentifier;
 - (BOOL)noteCloseDBAndSave:(BOOL)arg1;
@@ -83,7 +73,7 @@
 - (void)setBookmarkDB:(void*)arg1;
 - (void)setCalConnectionCount:(int)arg1;
 - (void)setCalDB:(struct CalDatabase { }*)arg1;
-- (void)setCalUnitTestCallbackBlock:(id)arg1;
+- (void)setCalUnitTestCallbackBlock:(id /* block */)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setNoteConnectionCount:(int)arg1;
 - (void)setNoteDB:(id)arg1;

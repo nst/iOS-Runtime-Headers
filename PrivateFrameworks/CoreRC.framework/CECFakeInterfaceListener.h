@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CECFakeInterfaceListener : CoreRCInterfaceListener {
-}
+@interface CECFakeInterfaceListener : CoreRCInterfaceListener
 
 - (id)fakeAddInterfaceWithProperties:(id)arg1;
 - (BOOL)interface:(id)arg1 pingTo:(unsigned char)arg2 acknowledged:(BOOL*)arg3 error:(id*)arg4;

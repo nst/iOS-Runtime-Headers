@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary;
-
 @interface TSCH3DSageLightingPackageData : NSObject <TSCH3DSageLightingPackageData> {
     NSArray *mLights;
     NSDictionary *mPackage;

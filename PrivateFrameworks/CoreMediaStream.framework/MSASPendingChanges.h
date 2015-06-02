@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSMutableDictionary, NSMutableSet;
-
 @interface MSASPendingChanges : NSObject {
     NSMutableSet *_pendingAlbumChanges;
     NSMutableDictionary *_pendingAlbumGUIDToAssetCollections;
@@ -11,10 +9,10 @@
     NSMutableSet *_pendingAlbumGUIDsWithSharingInfoChanges;
 }
 
-@property(retain) NSMutableSet * pendingAlbumChanges;
-@property(retain) NSMutableDictionary * pendingAlbumGUIDToAssetCollections;
-@property(retain) NSMutableSet * pendingAlbumGUIDsWithKeyValueChanges;
-@property(retain) NSMutableSet * pendingAlbumGUIDsWithSharingInfoChanges;
+@property (nonatomic, retain) NSMutableSet *pendingAlbumChanges;
+@property (nonatomic, retain) NSMutableDictionary *pendingAlbumGUIDToAssetCollections;
+@property (nonatomic, retain) NSMutableSet *pendingAlbumGUIDsWithKeyValueChanges;
+@property (nonatomic, retain) NSMutableSet *pendingAlbumGUIDsWithSharingInfoChanges;
 
 - (void).cxx_destruct;
 - (void)addPendingAssetCollectionChanges:(id)arg1 forAlbumGUID:(id)arg2;

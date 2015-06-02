@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUICarouselCollectionViewLayout : UICollectionViewFlowLayout {
-}
+@interface SKUICarouselCollectionViewLayout : UICollectionViewFlowLayout
 
 + (Class)layoutAttributesClass;
 

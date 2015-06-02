@@ -4,11 +4,11 @@
 
 @interface __NSDictionaryM : NSMutableDictionary {
     id *_keys;
-    unsigned int _kvo : 1;
+    unsigned int _kvo;
     unsigned long _mutations;
     id *_objs;
     unsigned int _size;
-    unsigned int _used : 26;
+    unsigned int _used;
 }
 
 + (id)__new:(const id*)arg1 :(const id*)arg2 :(unsigned int)arg3 :(BOOL)arg4 :(BOOL)arg5;
@@ -22,9 +22,9 @@
 - (void)_mutate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)finalize;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)keyEnumerator;

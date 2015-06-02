@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSData, NSString, NSURL, UIImage;
-
 @interface SFAirDropPayload : NSObject {
     NSURL *_URL;
     NSData *_data;
@@ -14,13 +12,13 @@
     BOOL _wasString;
 }
 
-@property(copy) NSURL * URL;
-@property(retain) NSData * data;
-@property int identifer;
-@property(copy) NSString * payloadDescription;
-@property(retain) UIImage * previewImage;
-@property(copy) NSString * type;
-@property BOOL wasString;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic) int identifer;
+@property (nonatomic, copy) NSString *payloadDescription;
+@property (nonatomic, retain) UIImage *previewImage;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic) BOOL wasString;
 
 + (id)newPayloadWithData:(id)arg1 ofType:(id)arg2 description:(id)arg3 previewImage:(id)arg4 identifier:(int)arg5;
 + (id)newPayloadWithURL:(id)arg1 description:(id)arg2 previewImage:(id)arg3 identifier:(int)arg4;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSString, _NSProgressFraction;
-
 @interface NSProgressValues : NSObject <NSSecureCoding> {
     _NSProgressFraction *_childFraction;
     BOOL _isCancellable;

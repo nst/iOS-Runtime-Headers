@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSAboutTextSheetViewController : UIViewController {
-}
+@interface PSAboutTextSheetViewController : UIViewController
 
 + (void)presentAboutSheetTitled:(id)arg1 attributedText:(id)arg2 fromViewController:(id)arg3;
 

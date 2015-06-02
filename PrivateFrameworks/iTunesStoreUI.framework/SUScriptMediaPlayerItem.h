@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SUMediaPlayerItem;
-
 @interface SUScriptMediaPlayerItem : SUScriptObject {
     SUMediaPlayerItem *_mediaItem;
 }
 
-@property(copy) NSString * URL;
-@property(copy) NSString * backgroundImageURL;
-@property(copy) NSString * bookmarkIdentifier;
-@property(copy) NSString * initialOrientation;
-@property(retain) NSNumber * itemIdentifier;
-@property(copy) NSString * itemType;
-@property(retain) NSNumber * playableDuration;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (copy) NSString *URL;
+@property (copy) NSString *backgroundImageURL;
+@property (copy) NSString *bookmarkIdentifier;
+@property (copy) NSString *initialOrientation;
+@property (retain) NSNumber *itemIdentifier;
+@property (copy) NSString *itemType;
+@property (retain) NSNumber *playableDuration;
+@property (copy) NSString *subtitle;
+@property (copy) NSString *title;
 
 + (id)webScriptNameForKey:(const char *)arg1;
 

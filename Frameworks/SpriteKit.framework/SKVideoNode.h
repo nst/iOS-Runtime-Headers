@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class AVPlayer, NSString, NSURL;
-
 @interface SKVideoNode : SKNode {
     BOOL _isLoaded;
     AVPlayer *_player;
@@ -11,9 +9,9 @@
     NSURL *_videoFileURL;
 }
 
-@property(retain) AVPlayer * _player;
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) AVPlayer *_player;
+@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 
 + (id)videoNodeWithAVPlayer:(id)arg1;
 + (id)videoNodeWithVideoFileNamed:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface SFUCryptoUtils : NSObject {
-}
+@interface SFUCryptoUtils : NSObject
 
 + (BOOL)checkKey:(id)arg1 againstPassphraseVerifier:(id)arg2;
 + (id)decodePassphraseHint:(id)arg1;

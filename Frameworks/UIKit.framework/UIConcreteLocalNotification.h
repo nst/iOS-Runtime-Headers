@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CLRegion, NSCalendar, NSData, NSDate, NSString, NSTimeZone;
-
 @interface UIConcreteLocalNotification : UILocalNotification {
     NSString *alertAction;
     NSString *alertBody;

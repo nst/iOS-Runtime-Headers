@@ -2,15 +2,8 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class ASTrafficLogger, NSData;
-
 @interface DAConvertCRtoCRLFStream : NSInputStream {
-    int (*_clientCallback)();
+    int (*_clientCallback;
     struct { 
         int version; 
         void *info; 
@@ -35,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)_scheduleCallback;
 - (void)_scheduleInCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
-- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)())arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (BOOL)_setCFClientFlags:(unsigned long)arg1 callback:(int (*)arg2 context:(struct { int x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)_streamEventTrigger;
 - (void)_unscheduleFromCFRunLoop:(struct __CFRunLoop { }*)arg1 forMode:(struct __CFString { }*)arg2;
 - (void)close;

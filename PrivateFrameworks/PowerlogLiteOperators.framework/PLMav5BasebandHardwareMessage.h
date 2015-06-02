@@ -23,22 +23,22 @@
     struct _PLMav5BasebandHWStatsUSB { unsigned int x1[3]; } *_mav5_usb;
 }
 
-@property struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; }* apps;
-@property struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; }* apps_sleep;
-@property struct _PLMav5BasebandHWAPPSSleepVeto { unsigned int x1[1]; }* apps_sleep_veto;
-@property struct _PLMav5BasebandHWClocksDuration { unsigned int x1[114]; unsigned int x2[95]; }* clock;
-@property struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }* gps_dpo;
-@property struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }* lpass;
-@property struct _PLMav5BasebandHWStatsMDSP { unsigned int x1[10]; }* mdsp;
-@property struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; }* mpss_sleep;
-@property struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; }* mpss_sleep_veto;
-@property struct _PLMav5BasebandHWStatsProtocol { unsigned int x1[5][16]; }* protocol;
-@property struct _PLMav5BasebandHWStatsQDSP { unsigned int x1[10]; }* qdsp;
-@property struct _PLMav5BasebandHWStatsRPM { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }* rpm;
-@property struct _PLMav5BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; }* rx;
-@property struct _PLMav5BasebandHWStatsRXSQA { unsigned int x1[5][11]; unsigned int x2[5][11]; }* rx_sqa;
-@property struct _PLMav5BasebandHWStatsTX { unsigned int x1[5][12]; }* tx;
-@property struct _PLMav5BasebandHWStatsUSB { unsigned int x1[3]; }* usb;
+@property (nonatomic) struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; }*apps;
+@property (nonatomic) struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; }*apps_sleep;
+@property (nonatomic) struct _PLMav5BasebandHWAPPSSleepVeto { unsigned int x1[1]; }*apps_sleep_veto;
+@property (nonatomic) struct _PLMav5BasebandHWClocksDuration { unsigned int x1[114]; unsigned int x2[95]; }*clock;
+@property (nonatomic) struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }*gps_dpo;
+@property (nonatomic) struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }*lpass;
+@property (nonatomic) struct _PLMav5BasebandHWStatsMDSP { unsigned int x1[10]; }*mdsp;
+@property (nonatomic) struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; }*mpss_sleep;
+@property (nonatomic) struct _PLMav5BasebandHWMPSSSleepVeto { unsigned int x1[3]; }*mpss_sleep_veto;
+@property (nonatomic) struct _PLMav5BasebandHWStatsProtocol { unsigned int x1[5][16]; }*protocol;
+@property (nonatomic) struct _PLMav5BasebandHWStatsQDSP { unsigned int x1[10]; }*qdsp;
+@property (nonatomic) struct _PLMav5BasebandHWStatsRPM { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*rpm;
+@property (nonatomic) struct _PLMav5BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; }*rx;
+@property (nonatomic) struct _PLMav5BasebandHWStatsRXSQA { unsigned int x1[5][11]; unsigned int x2[5][11]; }*rx_sqa;
+@property (nonatomic) struct _PLMav5BasebandHWStatsTX { unsigned int x1[5][12]; }*tx;
+@property (nonatomic) struct _PLMav5BasebandHWStatsUSB { unsigned int x1[3]; }*usb;
 
 - (struct _PLMav5BasebandHWStatsAPPSPerf { unsigned int x1[6]; }*)apps;
 - (struct _PLMav5BasebandHWStatsSleep { unsigned int x1; unsigned int x2; }*)apps_sleep;

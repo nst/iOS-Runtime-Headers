@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartStackedAreaElementsRenderer : TSCHChartAbstractLineElementsRenderer {
-}
+@interface TSCHChartStackedAreaElementsRenderer : TSCHChartAbstractLineElementsRenderer
 
 @end

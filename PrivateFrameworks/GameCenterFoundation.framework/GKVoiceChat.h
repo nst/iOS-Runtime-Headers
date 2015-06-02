@@ -2,36 +2,22 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKSession, GKVoiceChatSession, NSArray, NSString;
-
 @interface GKVoiceChat : NSObject <GKVoiceChatSessionDelegate> {
     GKSession *_gkSession;
     GKVoiceChatSession *_gkVoiceChatSession;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playerStateUpdateHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playerVoiceChatStateDidChangeHandler;
-
+    id /* block */ _playerStateUpdateHandler;
+    id /* block */ _playerVoiceChatStateDidChangeHandler;
     NSArray *_players;
 }
 
-@property(getter=isActive) BOOL active;
-@property(retain) GKSession * gkSession;
-@property(retain) GKVoiceChatSession * gkVoiceChatSession;
-@property(copy,readonly) NSString * name;
-@property(copy) id playerStateUpdateHandler;
-@property(copy) id playerVoiceChatStateDidChangeHandler;
-@property(retain) NSArray * players;
-@property float volume;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic, retain) GKSession *gkSession;
+@property (nonatomic, retain) GKVoiceChatSession *gkVoiceChatSession;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, copy) id /* block */ playerStateUpdateHandler;
+@property (nonatomic, copy) id /* block */ playerVoiceChatStateDidChangeHandler;
+@property (nonatomic, retain) NSArray *players;
+@property (nonatomic) float volume;
 
 + (BOOL)isVoIPAllowed;
 
@@ -43,16 +29,16 @@
 - (BOOL)isActive;
 - (id)name;
 - (id)playerIDs;
-- (id)playerStateUpdateHandler;
-- (id)playerVoiceChatStateDidChangeHandler;
+- (id /* block */)playerStateUpdateHandler;
+- (id /* block */)playerVoiceChatStateDidChangeHandler;
 - (id)players;
 - (void)setActive:(BOOL)arg1;
 - (void)setGkSession:(id)arg1;
 - (void)setGkVoiceChatSession:(id)arg1;
 - (void)setMute:(BOOL)arg1 forPlayer:(id)arg2;
 - (void)setPlayer:(id)arg1 muted:(BOOL)arg2;
-- (void)setPlayerStateUpdateHandler:(id)arg1;
-- (void)setPlayerVoiceChatStateDidChangeHandler:(id)arg1;
+- (void)setPlayerStateUpdateHandler:(id /* block */)arg1;
+- (void)setPlayerVoiceChatStateDidChangeHandler:(id /* block */)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (void)start;

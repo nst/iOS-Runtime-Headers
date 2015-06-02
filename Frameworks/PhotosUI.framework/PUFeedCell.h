@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUFeedCellDelegate>, NSIndexPath, NSString, UITapGestureRecognizer;
-
 @interface PUFeedCell : UICollectionViewCell <UIGestureRecognizerDelegate> {
     UITapGestureRecognizer *__tapGestureRecognizer;
     <PUFeedCellDelegate> *_delegate;
@@ -12,15 +10,15 @@
     BOOL _tappable;
 }
 
-@property(setter=_setTapGestureRecognizer:,retain) UITapGestureRecognizer * _tapGestureRecognizer;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUFeedCellDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSIndexPath * indexPath;
-@property(retain) NSString * representedElementKind;
-@property(readonly) Class superclass;
-@property(getter=isTappable) BOOL tappable;
+@property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUFeedCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, retain) NSString *representedElementKind;
+@property (readonly) Class superclass;
+@property (getter=isTappable, nonatomic) BOOL tappable;
 
 - (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;

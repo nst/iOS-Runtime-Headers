@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSImageUtilities : NSObject {
-}
+@interface WBSImageUtilities : NSObject
 
 + (id)squareThumbnailImageFromImage:(id)arg1 thumbnailWidthInPixels:(float)arg2;
 

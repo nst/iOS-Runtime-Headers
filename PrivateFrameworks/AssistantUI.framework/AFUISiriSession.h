@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriSessionDelegate>, <AFUISiriSessionLocalDataSource>, <AFUISiriSessionLocalDelegate>, AFConnection, AFUISpeechSynthesis, AFUIStateMachine, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUISiriSession, AFUISpeechSynthesisLocalDelegate, AFUIStateMachineDelegate> {
     AFConnection *_connection;
     BOOL _currentRequestDidPresent;
@@ -18,16 +16,16 @@
     AFUIStateMachine *_stateMachine;
 }
 
-@property(getter=_connection,readonly) AFConnection * connection;
-@property(getter=_currentSpeechRequestGroup,setter=_setCurrentSpeechRequestGroup:,retain) NSObject<OS_dispatch_group> * currentSpeechRequestGroup;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) <AFUISiriSessionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEyesFree) BOOL eyesFree;
-@property(readonly) unsigned int hash;
-@property <AFUISiriSessionLocalDataSource> * localDataSource;
-@property <AFUISiriSessionLocalDelegate> * localDelegate;
-@property(readonly) Class superclass;
+@property (getter=_connection, nonatomic, readonly) AFConnection *connection;
+@property (getter=_currentSpeechRequestGroup, setter=_setCurrentSpeechRequestGroup:, nonatomic, retain) NSObject<OS_dispatch_group> *currentSpeechRequestGroup;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <AFUISiriSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEyesFree, nonatomic) BOOL eyesFree;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <AFUISiriSessionLocalDataSource> *localDataSource;
+@property (nonatomic) <AFUISiriSessionLocalDelegate> *localDelegate;
+@property (readonly) Class superclass;
 
 + (unsigned int)availabilityState;
 + (void)beginMonitoringSiriAvailability;
@@ -42,17 +40,17 @@
 - (BOOL)_hasActiveRequest;
 - (void)_outputVoiceDidChange:(id)arg1;
 - (void)_performAceCommand:(id)arg1 forRequestUpdateViewsCommand:(id)arg2 afterDelay:(double)arg3;
-- (void)_performBlockWithDelegate:(id)arg1;
+- (void)_performBlockWithDelegate:(id /* block */)arg1;
 - (void)_performTransitionForEvent:(int)arg1;
 - (id)_preparedSpeechRequestWithRequestOptions:(id)arg1;
-- (void)_requestContextWithCompletion:(id)arg1;
+- (void)_requestContextWithCompletion:(id /* block */)arg1;
 - (void)_requestDidFinishWithError:(id)arg1;
 - (void)_requestWillStart;
 - (void)_setCurrentSpeechRequestGroup:(id)arg1;
 - (void)_siriNetworkAvailabilityDidChange:(id)arg1;
 - (void)_startContinuityRequestWithInfo:(id)arg1;
 - (void)_startDirectActionRequestWithString:(id)arg1 appID:(id)arg2 withMessagesContext:(id)arg3;
-- (void)_startRequestWithBlock:(id)arg1;
+- (void)_startRequestWithBlock:(id /* block */)arg1;
 - (void)_startRequestWithFinalOptions:(id)arg1;
 - (void)_startRequestWithText:(id)arg1;
 - (void)_startSpeechPronunciationRequestWithContext:(id)arg1 options:(id)arg2;
@@ -63,7 +61,7 @@
 - (void)_voiceOverStatusDidChange:(id)arg1;
 - (void)assistantConnection:(id)arg1 didChangeAudioSessionID:(unsigned int)arg2;
 - (void)assistantConnection:(id)arg1 didFinishAcousticIDRequestWithSuccess:(BOOL)arg2;
-- (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(id)arg3;
+- (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2;
 - (void)assistantConnection:(id)arg1 requestFailedWithError:(id)arg2 requestClass:(id)arg3;
 - (void)assistantConnection:(id)arg1 shouldSpeak:(BOOL)arg2;
@@ -93,7 +91,7 @@
 - (id)localDataSource;
 - (id)localDelegate;
 - (void)performAceCommand:(id)arg1;
-- (void)performAceCommand:(id)arg1 conflictHandler:(id)arg2;
+- (void)performAceCommand:(id)arg1 conflictHandler:(id /* block */)arg2;
 - (void)preheat;
 - (void)recordMetrics:(id)arg1;
 - (float)recordingPowerLevel;

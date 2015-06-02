@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _NSXPCDistantObjectWithError : _NSXPCDistantObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _errorBlock;
-
+    id /* block */ _errorBlock;
 }
 
-@property(copy) id errorBlock;
+@property (copy) id /* block */ errorBlock;
 
-- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 generationCount:(unsigned long long)arg3 interface:(id)arg4 error:(id)arg5;
+- (id)_initWithConnection:(id)arg1 proxyNumber:(unsigned long long)arg2 generationCount:(unsigned long long)arg3 interface:(id)arg4 error:(id /* block */)arg5;
 - (void)dealloc;
-- (id)errorBlock;
+- (id /* block */)errorBlock;
 - (void)forwardInvocation:(id)arg1;
-- (void)setErrorBlock:(id)arg1;
+- (void)setErrorBlock:(id /* block */)arg1;
 
 @end

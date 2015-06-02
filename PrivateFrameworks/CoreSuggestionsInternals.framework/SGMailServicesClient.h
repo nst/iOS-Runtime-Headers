@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGMailServicesClient : NSObject <SGMailClient> {
     BOOL _ignoreEmptyMessages;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL ignoreEmptyMessages;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreEmptyMessages;
+@property (readonly) Class superclass;
 
-- (id)allMessagesSince:(id)arg1 onMessage:(id)arg2;
+- (id)allMessagesSince:(id)arg1 onMessage:(id /* block */)arg2;
 - (BOOL)ignoreEmptyMessages;
-- (id)messagesWithIds:(id)arg1 onMessage:(id)arg2;
+- (id)messagesWithIds:(id)arg1 onMessage:(id /* block */)arg2;
 - (void)requestRichDownloadOfMessagesWithReferences:(id)arg1;
 - (void)setIgnoreEmptyMessages:(BOOL)arg1;
 

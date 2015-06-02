@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKAnnotationView;
-
 @interface _MKAnnotationViewAnchor : VKAnchorWrapper {
     MKAnnotationView *_annotationView;
 }
 
-@property MKAnnotationView * annotationView;
+@property (nonatomic) MKAnnotationView *annotationView;
 
 - (void).cxx_destruct;
 - (id)annotationView;

@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CKTranscriptCollectionViewControllerDelegate>, CKAudioController, CKConversation, CKTranscriptCollectionView, IMChat, NSArray, NSIndexSet, NSObject<OS_dispatch_group>, NSString, UITapGestureRecognizer, UIView<CKGradientReferenceView>;
-
 @interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertHandler;
-
+    id /* block */ _alertHandler;
     CKAudioController *_audioController;
     NSArray *_chatItems;
     CKTranscriptCollectionView *_collectionView;
@@ -36,41 +26,37 @@
     float _rightBalloonMaxWidth;
     BOOL _shouldLoadDefaultConversationViewingMessageCountOnAppear;
     BOOL _transcriptUpdateAnimated;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _transcriptUpdateCompletion;
-
+    id /* block */ _transcriptUpdateCompletion;
     NSObject<OS_dispatch_group> *_updateAnimationGroup;
 }
 
-@property(copy) id alertHandler;
-@property(retain) CKAudioController * audioController;
-@property(retain,readonly) IMChat * chat;
-@property(copy) NSArray * chatItems;
-@property(retain) CKTranscriptCollectionView * collectionView;
-@property(retain) CKConversation * conversation;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKTranscriptCollectionViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL filterAllButFirstMessage;
-@property float firstBalloonAlignmentTopInset;
-@property(retain) UIView<CKGradientReferenceView> * gradientReferenceView;
-@property BOOL hasHiddenItems;
-@property(readonly) unsigned int hash;
-@property(copy) NSIndexSet * hiddenItems;
-@property(getter=isInitialLoad) BOOL initialLoad;
-@property BOOL isLoadingEarlierMessages;
-@property(readonly) float leftBalloonMaxWidth;
-@property(retain) UITapGestureRecognizer * loggingTapGestureRecognizer;
-@property struct CGPoint { float x1; float x2; } peekSampleTranslation;
-@property(getter=isPeeking) BOOL peeking;
-@property(readonly) float rightBalloonMaxWidth;
-@property BOOL shouldLoadDefaultConversationViewingMessageCountOnAppear;
-@property(readonly) Class superclass;
-@property(getter=isTranscriptUpdateAnimated) BOOL transcriptUpdateAnimated;
-@property(copy) id transcriptUpdateCompletion;
-@property(retain) NSObject<OS_dispatch_group> * updateAnimationGroup;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (nonatomic, retain) CKAudioController *audioController;
+@property (nonatomic, readonly, retain) IMChat *chat;
+@property (nonatomic, copy) NSArray *chatItems;
+@property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKTranscriptCollectionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL filterAllButFirstMessage;
+@property (nonatomic) float firstBalloonAlignmentTopInset;
+@property (nonatomic, retain) UIView<CKGradientReferenceView> *gradientReferenceView;
+@property (nonatomic) BOOL hasHiddenItems;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSIndexSet *hiddenItems;
+@property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
+@property (nonatomic) BOOL isLoadingEarlierMessages;
+@property (nonatomic, readonly) float leftBalloonMaxWidth;
+@property (nonatomic, retain) UITapGestureRecognizer *loggingTapGestureRecognizer;
+@property (nonatomic) struct CGPoint { float x1; float x2; } peekSampleTranslation;
+@property (getter=isPeeking, nonatomic) BOOL peeking;
+@property (nonatomic, readonly) float rightBalloonMaxWidth;
+@property (nonatomic) BOOL shouldLoadDefaultConversationViewingMessageCountOnAppear;
+@property (readonly) Class superclass;
+@property (getter=isTranscriptUpdateAnimated, nonatomic) BOOL transcriptUpdateAnimated;
+@property (nonatomic, copy) id /* block */ transcriptUpdateCompletion;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *updateAnimationGroup;
 
 - (void)__handleLoggingTapped:(id)arg1;
 - (void)_downgradeMessageAtIndexPath:(id)arg1;
@@ -86,7 +72,7 @@
 - (void)_showLoggingAlertIfNecessary;
 - (void)_tearDownLoggingTapGestureRecognizer;
 - (void)addressBookChanged:(id)arg1;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)audioController;
 - (void)audioController:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
@@ -173,7 +159,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)selectedItems;
-- (void)setAlertHandler:(id)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAudioController:(id)arg1;
 - (void)setChatItems:(id)arg1;
 - (void)setCollectionView:(id)arg1;
@@ -193,7 +179,7 @@
 - (void)setScrollAnchor:(float)arg1;
 - (void)setShouldLoadDefaultConversationViewingMessageCountOnAppear:(BOOL)arg1;
 - (void)setTranscriptUpdateAnimated:(BOOL)arg1;
-- (void)setTranscriptUpdateCompletion:(id)arg1;
+- (void)setTranscriptUpdateCompletion:(id /* block */)arg1;
 - (void)setUpdateAnimationGroup:(id)arg1;
 - (BOOL)shouldLoadDefaultConversationViewingMessageCountOnAppear;
 - (BOOL)shouldShowMenuForBalloonView:(id)arg1;
@@ -201,12 +187,12 @@
 - (void)touchUpInsideMessageCellFailureButton:(id)arg1;
 - (void)touchUpInsideReportSpamCellButton:(id)arg1;
 - (void)touchUpInsideStatusCellButton:(id)arg1;
-- (id)transcriptUpdateCompletion;
+- (id /* block */)transcriptUpdateCompletion;
 - (void)transferRestored:(id)arg1;
 - (void)transferUpdated:(id)arg1;
 - (id)updateAnimationGroup;
-- (void)updateTranscript:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(BOOL)arg6 completion:(id)arg7;
+- (void)updateTranscript:(id /* block */)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(BOOL)arg6 completion:(id /* block */)arg7;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidDisappear:(BOOL)arg1;

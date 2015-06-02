@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class ML3ArtworkConfiguration;
-
 @interface MPArtworkConfiguration : NSObject {
     ML3ArtworkConfiguration *_artworkConfiguration;
 }
 
-@property(retain) ML3ArtworkConfiguration * artworkConfiguration;
+@property (nonatomic, retain) ML3ArtworkConfiguration *artworkConfiguration;
 
 + (id)systemConfiguration;
 

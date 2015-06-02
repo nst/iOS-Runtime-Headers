@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetStatistics.framework/CoreDuetStatistics
  */
 
-@interface CDSEngine : NSObject {
-}
+@interface CDSEngine : NSObject
 
 + (id)canonicalizeBasisObjectSequence:(id)arg1 error:(id*)arg2;
 + (id)durationStatistic:(int)arg1 fromBasisObjects:(id)arg2 error:(id*)arg3;

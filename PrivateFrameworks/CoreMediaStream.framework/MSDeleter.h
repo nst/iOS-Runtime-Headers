@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSDeleterDelegate>, MSDeleteStreamsProtocol, MSMediaStreamDaemon, MSObjectQueue, NSMutableArray, NSString;
-
 @interface MSDeleter : MSCupidStateMachine <MSDeleteStreamsProtocolDelegate, MSDeleter> {
     int _batchSize;
     MSMediaStreamDaemon *_daemon;
@@ -15,13 +13,13 @@
     int _state;
 }
 
-@property int batchSize;
-@property MSMediaStreamDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property <MSDeleterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) int batchSize;
+@property (nonatomic) MSMediaStreamDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MSDeleterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_clearInstantiatedDeletersByPersonID;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;

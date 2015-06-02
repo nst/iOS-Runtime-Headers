@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueGetter, NSKeyValueSetter;
-
 @interface NSKeyValueSlowMutableCollectionGetter : NSKeyValueProxyGetter {
     NSKeyValueGetter *_baseGetter;
     NSKeyValueSetter *_baseSetter;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleSet, NSDictionary, UIView;
-
 @interface _GKBubbleFlowPathTransitionInfo : NSObject {
     NSDictionary *_auxiliaryInfo;
     union _GLKVector3 { 
@@ -23,7 +21,7 @@
             float p; 
         } ; 
         float v[3]; 
-    } _bubbleEndPositionsByType[12];
+    } _bubbleEndPositionsByType;
     union _GLKVector3 { 
         struct { 
             float x; 
@@ -41,7 +39,7 @@
             float p; 
         } ; 
         float v[3]; 
-    } _bubbleStartPositionsByType[12];
+    } _bubbleStartPositionsByType;
     GKBubbleSet *_bubbles;
     BOOL _couldUseFallbackAnimator;
     double _duration;
@@ -51,14 +49,14 @@
     double _startTime;
 }
 
-@property(retain) NSDictionary * auxiliaryInfo;
-@property GKBubbleSet * bubbles;
-@property BOOL couldUseFallbackAnimator;
-@property double duration;
-@property UIView * effectiveView;
-@property int focusBubbleType;
-@property int newlyVisibleBubbles;
-@property double startTime;
+@property (nonatomic, retain) NSDictionary *auxiliaryInfo;
+@property (nonatomic) GKBubbleSet *bubbles;
+@property (nonatomic) BOOL couldUseFallbackAnimator;
+@property (nonatomic) double duration;
+@property (nonatomic) UIView *effectiveView;
+@property (nonatomic) int focusBubbleType;
+@property (nonatomic) int newlyVisibleBubbles;
+@property (nonatomic) double startTime;
 
 - (id)auxiliaryInfo;
 - (id)bubbles;

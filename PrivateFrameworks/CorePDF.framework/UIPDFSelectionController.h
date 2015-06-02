@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class <UIPDFSelectionWidget>, <UIPDFSelectionWidget><NSObject>, UIPDFPageView;
-
 @interface UIPDFSelectionController : NSObject {
     struct CGPoint { 
         float x; 
@@ -42,14 +40,14 @@
     } _startPoint;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } adjustedPoint;
-@property(readonly) struct CGPoint { float x1; float x2; } currentSelectionPoint;
-@property(readonly) struct CGPoint { float x1; float x2; } initialSelectionPoint;
-@property BOOL instantHighlightMode;
-@property(readonly) BOOL isTracking;
-@property UIPDFPageView * pageView;
-@property(readonly) BOOL rangeMode;
-@property(readonly) <UIPDFSelectionWidget> * selectionWidget;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } adjustedPoint;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentSelectionPoint;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } initialSelectionPoint;
+@property (nonatomic) BOOL instantHighlightMode;
+@property (nonatomic, readonly) BOOL isTracking;
+@property (nonatomic) UIPDFPageView *pageView;
+@property (nonatomic, readonly) BOOL rangeMode;
+@property (nonatomic, readonly) <UIPDFSelectionWidget> *selectionWidget;
 
 - (void)addSelectionWidget:(id)arg1;
 - (void)adjustSelection:(struct CGPoint { float x1; float x2; })arg1;

@@ -24,15 +24,15 @@
     BOOL _shouldDisplayCaptionsBelowBatches;
 }
 
-@property float referenceWidth;
-@property BOOL shouldDisplayCaptionsBelowBatches;
+@property (nonatomic) float referenceWidth;
+@property (nonatomic) BOOL shouldDisplayCaptionsBelowBatches;
 
 - (BOOL)_addRowWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
 - (BOOL)_addRowWithTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 count:(int)arg3;
 - (BOOL)_addSpecialSequenceBlock:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (BOOL)_dequeueCaption;
 - (void)_enqueueCaptionWithTileInfo:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; })arg1;
-- (void)_enumerateRowFramesWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id)arg4;
+- (void)_enumerateRowFramesWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id /* block */)arg4;
 - (BOOL)_hasEnqueuedCaption;
 - (BOOL)_hasLeftSuboptimalRow;
 - (BOOL)_isAtEndOfRow;

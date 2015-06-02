@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKShareID, NSData, NSString;
-
 @interface CKShareInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_container;
     int _environment;
@@ -22,21 +20,23 @@
     CKShareID *_shareID;
 }
 
-@property(retain) NSString * container;
-@property int environment;
-@property(retain) NSString * etag;
-@property(retain) NSString * iWorkDocumentName;
-@property(retain) NSString * ownerFirstName;
-@property(retain) NSString * ownerLastName;
-@property int participantPermission;
-@property int participantStatus;
-@property int participantType;
-@property(retain) NSData * privateToken;
-@property(retain) NSData * protectedFullToken;
-@property(retain) NSData * publicProtectionData;
-@property(retain) NSString * publicProtectionEtag;
-@property(retain) NSData * publicToken;
-@property(retain) CKShareID * shareID;
+@property (nonatomic, retain) NSString *container;
+@property (nonatomic) int environment;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSString *iWorkDocumentName;
+@property (nonatomic, retain) NSString *ownerFirstName;
+@property (nonatomic, retain) NSString *ownerLastName;
+@property (nonatomic) int participantPermission;
+@property (nonatomic) int participantStatus;
+@property (nonatomic) int participantType;
+@property (nonatomic, retain) NSData *privateToken;
+@property (nonatomic, retain) NSData *protectedFullToken;
+@property (nonatomic, retain) NSData *publicProtectionData;
+@property (nonatomic, retain) NSString *publicProtectionEtag;
+@property (nonatomic, retain) NSData *publicToken;
+@property (nonatomic, retain) CKShareID *shareID;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (BOOL)supportsSecureCoding;
 
@@ -59,7 +59,6 @@
 - (int)participantType;
 - (id)privateToken;
 - (id)protectedFullToken;
-- (struct _OpaquePCSShareProtection { }*)publicPCS;
 - (id)publicProtectionData;
 - (id)publicProtectionEtag;
 - (id)publicToken;
@@ -74,11 +73,15 @@
 - (void)setParticipantType:(int)arg1;
 - (void)setPrivateToken:(id)arg1;
 - (void)setProtectedFullToken:(id)arg1;
-- (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPublicProtectionData:(id)arg1;
 - (void)setPublicProtectionEtag:(id)arg1;
 - (void)setPublicToken:(id)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (struct _OpaquePCSShareProtection { }*)publicPCS;
+- (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 
 @end

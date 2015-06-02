@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface GKLeaderboardSetInternal : GKInternalRepresentation {
     NSString *_groupIdentifier;
     NSDictionary *_icons;
@@ -12,12 +10,12 @@
     NSString *_title;
 }
 
-@property(retain) NSString * groupIdentifier;
-@property(retain) NSDictionary * icons;
-@property(retain) NSString * identifier;
-@property(retain) NSDictionary * leaderboardIdentifiers;
-@property(retain) NSString * setIdentifier;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *groupIdentifier;
+@property (nonatomic, retain) NSDictionary *icons;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSDictionary *leaderboardIdentifiers;
+@property (nonatomic, retain) NSString *setIdentifier;
+@property (nonatomic, retain) NSString *title;
 
 + (id)secureCodedPropertyKeys;
 

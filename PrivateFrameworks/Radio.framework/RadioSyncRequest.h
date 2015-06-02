@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, SSURLConnectionRequest;
-
 @interface RadioSyncRequest : RadioRequest {
     NSObject<OS_dispatch_queue> *_artworkQueue;
     BOOL _disableArtworkLoading;
@@ -16,11 +14,11 @@
     NSDictionary *_resultingOverrideBagDictionary;
 }
 
-@property BOOL disableArtworkLoading;
-@property BOOL includeCleanTracksOnly;
-@property BOOL isAutomaticUpdate;
-@property(copy) NSString * referer;
-@property(copy,readonly) NSDictionary * resultingOverrideBagDictionary;
+@property (nonatomic) BOOL disableArtworkLoading;
+@property (nonatomic) BOOL includeCleanTracksOnly;
+@property (nonatomic) BOOL isAutomaticUpdate;
+@property (nonatomic, copy) NSString *referer;
+@property (nonatomic, readonly, copy) NSDictionary *resultingOverrideBagDictionary;
 
 - (void).cxx_destruct;
 - (id)_sortedChangesByType:(id)arg1;
@@ -41,6 +39,6 @@
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
 - (void)setIsAutomaticUpdate:(BOOL)arg1;
 - (void)setReferer:(id)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

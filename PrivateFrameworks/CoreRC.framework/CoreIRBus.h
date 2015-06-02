@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreIRBus : CoreRCBus {
-}
+@interface CoreIRBus : CoreRCBus
 
 - (id)addExternalDevice:(id*)arg1;
 

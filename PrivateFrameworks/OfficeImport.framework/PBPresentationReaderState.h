@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TCCancelDelegate>, ESDContainer, ESDObject, ESDRoot, NSMutableArray, NSMutableDictionary, OITSUNoCopyDictionary, PBOfficeArtReaderState, PBOutlineBulletDictionary, PBSlideState, PDPresentation, PDSlideBase;
-
 @interface PBPresentationReaderState : NSObject {
     unsigned int mBulletIndex;
     <TCCancelDelegate> *mCancel;
@@ -37,9 +30,9 @@
     PDSlideBase *mTgtSlide;
 }
 
-@property(retain) <TCCancelDelegate> * cancelDelegate;
+@property (nonatomic, retain) <TCCancelDelegate> *cancelDelegate;
 @property BOOL hasSlideNumberPlaceholder;
-@property ESDContainer * sourceSlideListHolder;
+@property ESDContainer *sourceSlideListHolder;
 
 - (void)addFontEntity:(id)arg1 charSet:(int)arg2 type:(int)arg3 family:(int)arg4;
 - (void)addSlideIndex:(unsigned int)arg1;

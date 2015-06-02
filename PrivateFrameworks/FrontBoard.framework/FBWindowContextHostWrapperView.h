@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBWindowContextHostManager, NSString, UIColor;
-
 @interface FBWindowContextHostWrapperView : UIView <FBWindowContextAppearance> {
     unsigned int _appearanceStyle;
     UIColor *_backgroundColorWhileHosting;
@@ -11,17 +9,17 @@
     FBWindowContextHostManager *_manager;
 }
 
-@property unsigned int appearanceStyle;
-@property(retain) UIColor * backgroundColorWhileHosting;
-@property(retain) UIColor * backgroundColorWhileNotHosting;
-@property(getter=isContextHosted,readonly) BOOL contextHosted;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float level;
-@property(readonly) FBWindowContextHostManager * manager;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceFrame;
-@property(readonly) Class superclass;
+@property (nonatomic) unsigned int appearanceStyle;
+@property (nonatomic, retain) UIColor *backgroundColorWhileHosting;
+@property (nonatomic, retain) UIColor *backgroundColorWhileNotHosting;
+@property (getter=isContextHosted, nonatomic, readonly) BOOL contextHosted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float level;
+@property (nonatomic, readonly) FBWindowContextHostManager *manager;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceFrame;
+@property (readonly) Class superclass;
 
 - (id)_backgroundColorWhileHosting;
 - (id)_backgroundColorWhileNotHosting;

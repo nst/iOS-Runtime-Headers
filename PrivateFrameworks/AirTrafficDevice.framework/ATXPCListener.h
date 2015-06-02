@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSMapTable, NSMutableArray, NSString, NSXPCListener;
-
 @interface ATXPCListener : NSObject <NSXPCListenerDelegate> {
     NSMutableArray *_connections;
     NSMapTable *_proxyMap;
     NSXPCListener *_xpcListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connections;

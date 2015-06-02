@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLFetchCountIntermediate : NSSQLFetchIntermediate {
-}
+@interface NSSQLFetchCountIntermediate : NSSQLFetchIntermediate
 
 - (id)generateSQLStringInContext:(id)arg1;
 

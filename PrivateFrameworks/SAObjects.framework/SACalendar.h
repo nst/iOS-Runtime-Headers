@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SACalendar : AceObject <SAAceSerializable>
 
-@interface SACalendar : AceObject <SAAceSerializable> {
-}
+@property (nonatomic, copy) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *timeZoneId;
 
-@property(copy) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * timeZoneId;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)calendar;
 + (id)calendarWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)afui_timeZone;
 - (id)date;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setDate:(id)arg1;
 - (void)setTimeZoneId:(id)arg1;
 - (id)timeZoneId;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (id)afui_timeZone;
 
 @end

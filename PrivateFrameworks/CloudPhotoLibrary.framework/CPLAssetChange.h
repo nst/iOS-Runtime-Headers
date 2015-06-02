@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CLLocation, CPLAdjustments, NSArray, NSDate, NSNumber, NSString;
-
 @interface CPLAssetChange : CPLItemChange {
     NSDate *_addedDate;
     CPLAdjustments *_adjustments;
@@ -33,32 +31,32 @@
     NSNumber *_timeZoneOffset;
 }
 
-@property(copy) NSDate * addedDate;
-@property(retain) CPLAdjustments * adjustments;
-@property(copy) NSDate * assetDate;
-@property unsigned int assetHDRType;
-@property unsigned int assetSubtype;
-@property unsigned int burstFlags;
-@property(copy) NSString * burstIdentifier;
-@property(copy) NSString * caption;
-@property(copy) NSString * collectionIdentifier;
-@property(copy) NSString * collectionName;
-@property int duration;
-@property(copy) NSString * extendedDescription;
-@property(getter=isFavorite) BOOL favorite;
-@property(getter=isHidden) BOOL hidden;
-@property(copy) NSArray * keywords;
-@property(copy) NSDate * lastSharedDate;
-@property(retain) CLLocation * location;
-@property(copy) NSString * masterIdentifier;
-@property(copy) NSString * momentIdentifier;
-@property(copy) NSString * momentName;
-@property int orientation;
-@property unsigned int originalChoice;
-@property(copy) NSArray * people;
-@property(copy) NSArray * resources;
-@property(copy) NSString * timeZoneName;
-@property(copy) NSNumber * timeZoneOffset;
+@property (nonatomic, copy) NSDate *addedDate;
+@property (nonatomic, retain) CPLAdjustments *adjustments;
+@property (nonatomic, copy) NSDate *assetDate;
+@property (nonatomic) unsigned int assetHDRType;
+@property (nonatomic) unsigned int assetSubtype;
+@property (nonatomic) unsigned int burstFlags;
+@property (nonatomic, copy) NSString *burstIdentifier;
+@property (nonatomic, copy) NSString *caption;
+@property (nonatomic, copy) NSString *collectionIdentifier;
+@property (nonatomic, copy) NSString *collectionName;
+@property (nonatomic) int duration;
+@property (nonatomic, copy) NSString *extendedDescription;
+@property (getter=isFavorite, nonatomic) BOOL favorite;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic, copy) NSArray *keywords;
+@property (nonatomic, copy) NSDate *lastSharedDate;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, copy) NSString *masterIdentifier;
+@property (nonatomic, copy) NSString *momentIdentifier;
+@property (nonatomic, copy) NSString *momentName;
+@property (nonatomic) int orientation;
+@property (nonatomic) unsigned int originalChoice;
+@property (nonatomic, copy) NSArray *people;
+@property (nonatomic, copy) NSArray *resources;
+@property (nonatomic, copy) NSString *timeZoneName;
+@property (nonatomic, copy) NSNumber *timeZoneOffset;
 
 - (void).cxx_destruct;
 - (BOOL)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
@@ -71,7 +69,7 @@
 - (unsigned int)burstFlags;
 - (id)burstIdentifier;
 - (id)caption;
-- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
+- (id /* block */)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)collectionIdentifier;
 - (id)collectionName;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 usingClientCache:(id)arg3;

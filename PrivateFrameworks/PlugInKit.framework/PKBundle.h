@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
  */
 
-@class NSDictionary, NSObject<OS_xpc_object>, NSString, NSURL;
-
 @interface PKBundle : NSObject {
     NSObject<OS_xpc_object> *__bundle;
     NSString *_supportPath;
 }
 
-@property(retain) NSObject<OS_xpc_object> * _bundle;
-@property(readonly) NSString * bundleIdentifier;
-@property(readonly) NSString * executablePath;
-@property(readonly) NSDictionary * infoDictionary;
-@property(readonly) NSString * path;
-@property(readonly) NSString * plugInsPath;
-@property(readonly) NSString * supportPath;
-@property(readonly) NSURL * url;
+@property (retain) NSObject<OS_xpc_object> *_bundle;
+@property (readonly) NSString *bundleIdentifier;
+@property (readonly) NSString *executablePath;
+@property (readonly) NSDictionary *infoDictionary;
+@property (readonly) NSString *path;
+@property (readonly) NSString *plugInsPath;
+@property (readonly) NSString *supportPath;
+@property (readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)_bundle;

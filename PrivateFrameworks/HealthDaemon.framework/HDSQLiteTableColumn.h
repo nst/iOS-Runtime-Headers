@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
-
 @interface HDSQLiteTableColumn : NSObject {
     NSString *_name;
     NSString *_qualifiers;
 }
 
-@property(retain) NSString * name;
-@property(retain) NSString * qualifiers;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *qualifiers;
 
 - (void).cxx_destruct;
 - (id)SQL;

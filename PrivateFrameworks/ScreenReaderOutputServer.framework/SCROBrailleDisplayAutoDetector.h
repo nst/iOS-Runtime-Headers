@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSMutableDictionary;
-
 @interface SCROBrailleDisplayAutoDetector : NSObject {
     BOOL _isDetectingDisplays;
     NSMutableDictionary *_iteratorDict;

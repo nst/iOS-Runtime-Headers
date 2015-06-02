@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSServiceProviderDelegate>, NSMutableDictionary, NSNetServiceBrowser, NSString;
-
 @interface RMSBonjourServiceProvider : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate, RMSServiceProvider> {
     NSMutableDictionary *_cache;
     <RMSServiceProviderDelegate> *_delegate;
@@ -11,15 +9,15 @@
     NSMutableDictionary *_services;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RMSServiceProviderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * searchDomain;
-@property(readonly) NSString * searchScope;
-@property(readonly) NSString * searchType;
-@property(readonly) int serviceDiscoverySource;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RMSServiceProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *searchDomain;
+@property (nonatomic, readonly) NSString *searchScope;
+@property (nonatomic, readonly) NSString *searchType;
+@property (nonatomic, readonly) int serviceDiscoverySource;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_identifierForNetService:(id)arg1;

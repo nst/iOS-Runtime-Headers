@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class NSData, NSString;
-
 @interface CBUUID : NSObject <NSCopying> {
-    unsigned char _bytes[16];
+    unsigned char _bytes;
     BOOL _type;
 }
 
-@property(readonly) NSString * UUIDString;
-@property(readonly) NSData * data;
+@property (nonatomic, readonly) NSString *UUIDString;
+@property (nonatomic, readonly) NSData *data;
 
 + (id)UUIDWithCFUUID:(struct __CFUUID { }*)arg1;
 + (id)UUIDWithData:(id)arg1;

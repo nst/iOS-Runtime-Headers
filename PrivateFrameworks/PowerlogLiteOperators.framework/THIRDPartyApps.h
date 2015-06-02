@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSString;
-
 @interface THIRDPartyApps : NSObject {
     int cellIn;
     int cellOut;
@@ -12,11 +10,11 @@
     int wifiOut;
 }
 
-@property int cellIn;
-@property int cellOut;
-@property(retain) NSString * processName;
-@property int wifiIn;
-@property int wifiOut;
+@property (nonatomic) int cellIn;
+@property (nonatomic) int cellOut;
+@property (nonatomic, retain) NSString *processName;
+@property (nonatomic) int wifiIn;
+@property (nonatomic) int wifiOut;
 
 - (void).cxx_destruct;
 - (int)cellIn;

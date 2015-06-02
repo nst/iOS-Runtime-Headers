@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString;
-
 @interface VMUVMRegion : NSObject {
     unsigned char external_pager;
     BOOL is_submap;

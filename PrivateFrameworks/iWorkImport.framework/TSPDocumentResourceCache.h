@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface TSPDocumentResourceCache : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSURL *_cacheURL;
@@ -11,7 +9,7 @@
     long long _maxCacheSizeInBytes;
 }
 
-@property long long maxCacheSizeInBytes;
+@property (nonatomic) long long maxCacheSizeInBytes;
 
 + (id)defaultCacheURL;
 + (id)sharedCache;
@@ -23,7 +21,7 @@
 - (void)clearCache;
 - (void)endDocumentResourceAccessForDigestString:(id)arg1;
 - (id)entryForDigestString:(id)arg1;
-- (void)enumerateEntriesFromCacheURLWithHandler:(id)arg1;
+- (void)enumerateEntriesFromCacheURLWithHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCacheURL:(id)arg1;
 - (long long)maxCacheSizeInBytes;

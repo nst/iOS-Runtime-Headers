@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLiteIntarrayTable : NSObject {
     struct sqlite3_intarray { } *_intarrayTable;
     NSString *_intarrayTableName;
 }
 
-@property struct sqlite3_intarray { }* intarrayTable;
-@property(retain) NSString * intarrayTableName;
+@property struct sqlite3_intarray { }*intarrayTable;
+@property (retain) NSString *intarrayTableName;
 
 - (void)dealloc;
 - (struct sqlite3_intarray { }*)intarrayTable;

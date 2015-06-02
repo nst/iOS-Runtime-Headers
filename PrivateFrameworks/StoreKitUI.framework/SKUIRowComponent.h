@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIRowViewElement, UIColor;
-
 @interface SKUIRowComponent : SKUIPageComponent {
     UIColor *_backgroundColor;
     NSArray *_childComponents;
@@ -13,12 +11,12 @@
     BOOL _shouldAutoFlow;
 }
 
-@property(readonly) UIColor * backgroundColor;
-@property(readonly) NSArray * childComponents;
-@property(readonly) NSArray * columnWidths;
-@property(readonly) int numberOfColumns;
-@property(readonly) BOOL shouldAutoFlow;
-@property(readonly) SKUIRowViewElement * viewElement;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) NSArray *childComponents;
+@property (nonatomic, readonly) NSArray *columnWidths;
+@property (nonatomic, readonly) int numberOfColumns;
+@property (nonatomic, readonly) BOOL shouldAutoFlow;
+@property (nonatomic, readonly) SKUIRowViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)_childComponentWithContext:(id)arg1;
@@ -29,7 +27,7 @@
 - (id)columnWidths;
 - (int)componentType;
 - (id)description;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithViewElement:(id)arg1;
 - (BOOL)isMissingItemData;

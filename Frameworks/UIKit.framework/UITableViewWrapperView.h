@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray;
-
 @interface UITableViewWrapperView : UIScrollView {
     NSMutableArray *_stuckToBackViews;
 }
 
-@property(readonly) NSArray * stuckToBackViews;
+@property (nonatomic, readonly) NSArray *stuckToBackViews;
 
 - (BOOL)_forwardsToParentScroller;
 - (void)_stickViewToBack:(id)arg1;

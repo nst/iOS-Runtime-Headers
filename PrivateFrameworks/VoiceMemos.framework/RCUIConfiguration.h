@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, UIColor;
-
 @interface RCUIConfiguration : NSObject <NSCopying> {
     float _acousticAnnotationVerticalMargin;
     UIColor *_acousticGradientMaskEndColor;
@@ -26,25 +24,25 @@
     UIColor *_waveformHighlightColor;
 }
 
-@property float acousticAnnotationVerticalMargin;
-@property(retain) UIColor * acousticGradientMaskEndColor;
-@property(retain) UIColor * acousticValueColor;
-@property(retain) UIColor * backgroundColor;
-@property(retain) NSString * debugIdentifier;
-@property float maximumDecibelDisplayRange;
-@property float minimumDecibelDisplayRange;
-@property(retain) UIColor * playbackPositionBarColor;
-@property(retain) UIColor * playbackPositionTimeColor;
-@property(retain) UIColor * selectionOverlayColor;
-@property(retain) UIColor * selectionOverlayEndpointBarColor;
-@property(retain) UIColor * selectionOverlayEndpointTimeColor;
-@property BOOL showsWaveformCenterline;
-@property(retain) UIColor * timeLineMarkerColor;
-@property(retain) UIColor * timeLineTimeColor;
-@property(retain) UIColor * waveformBoundaryLineColor;
-@property BOOL waveformBoundaryLineDimInSelectionMode;
-@property(retain) UIColor * waveformColor;
-@property(retain) UIColor * waveformHighlightColor;
+@property (nonatomic) float acousticAnnotationVerticalMargin;
+@property (nonatomic, retain) UIColor *acousticGradientMaskEndColor;
+@property (nonatomic, retain) UIColor *acousticValueColor;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) NSString *debugIdentifier;
+@property (nonatomic) float maximumDecibelDisplayRange;
+@property (nonatomic) float minimumDecibelDisplayRange;
+@property (nonatomic, retain) UIColor *playbackPositionBarColor;
+@property (nonatomic, retain) UIColor *playbackPositionTimeColor;
+@property (nonatomic, retain) UIColor *selectionOverlayColor;
+@property (nonatomic, retain) UIColor *selectionOverlayEndpointBarColor;
+@property (nonatomic, retain) UIColor *selectionOverlayEndpointTimeColor;
+@property (nonatomic) BOOL showsWaveformCenterline;
+@property (nonatomic, retain) UIColor *timeLineMarkerColor;
+@property (nonatomic, retain) UIColor *timeLineTimeColor;
+@property (nonatomic, retain) UIColor *waveformBoundaryLineColor;
+@property (nonatomic) BOOL waveformBoundaryLineDimInSelectionMode;
+@property (nonatomic, retain) UIColor *waveformColor;
+@property (nonatomic, retain) UIColor *waveformHighlightColor;
 
 + (id)defaultConfiguration;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXVisualAlertSBCCFlashlightSetting : __AXVisualAlertSBCCFlashlightSetting_super {
-}
+@interface AXVisualAlertSBCCFlashlightSetting : __AXVisualAlertSBCCFlashlightSetting_super
 
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;

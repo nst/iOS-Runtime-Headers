@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridLayoutHelper : NSObject {
-}
+@interface PUPhotosGridLayoutHelper : NSObject
 
 + (int)zIndexForFloatingHeaderForVisualSection:(int)arg1;
 + (int)zIndexForItemAtIndexPath:(id)arg1;

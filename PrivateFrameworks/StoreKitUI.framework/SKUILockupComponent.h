@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEditorialComponent, SKUIItem, SKUILockupViewElement;
-
 @interface SKUILockupComponent : SKUIPageComponent {
     SKUIEditorialComponent *_editorial;
     SKUIItem *_item;
@@ -15,12 +13,12 @@
     } _lockupStyle;
 }
 
-@property(readonly) BOOL _needsItemData;
-@property(readonly) SKUIEditorialComponent * editorial;
-@property(readonly) SKUIItem * item;
-@property(readonly) long long itemIdentifier;
-@property(readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
-@property(readonly) SKUILockupViewElement * viewElement;
+@property (nonatomic, readonly) BOOL _needsItemData;
+@property (nonatomic, readonly) SKUIEditorialComponent *editorial;
+@property (nonatomic, readonly) SKUIItem *item;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
+@property (nonatomic, readonly) SKUILockupViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (BOOL)_needsItemData;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface AVCaptureFigAudioDevice_FigRecorder : AVCaptureDevice_FigRecorder {
     struct OpaqueCMClock { } *_deviceClock;
     NSDictionary *_deviceProperties;

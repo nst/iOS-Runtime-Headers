@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>;
-
 @interface BWAudioSourceNode : BWSourceNode {
     struct opaqueCMSession { } *_CMSession;
     struct opaqueCMSimpleQueue { } *_activeBuffersQueue;
@@ -43,11 +41,11 @@
     BOOL _usesVideoCMSessionAudioMode;
 }
 
-@property(readonly) NSArray * audioLevels;
-@property BOOL interrupted;
-@property BOOL levelMeteringEnabled;
-@property BOOL selectsMicForFrontCamera;
-@property BOOL usesVideoCMSessionAudioMode;
+@property (nonatomic, readonly) NSArray *audioLevels;
+@property (nonatomic) BOOL interrupted;
+@property (nonatomic) BOOL levelMeteringEnabled;
+@property (nonatomic) BOOL selectsMicForFrontCamera;
+@property (nonatomic) BOOL usesVideoCMSessionAudioMode;
 
 + (double)_desiredSampleRate;
 + (void)initialize;

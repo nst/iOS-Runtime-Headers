@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary;
-
 @interface BWParallelJoinerNode : BWFunnelNode {
     int _inputsCount;
     NSMutableDictionary *_receivedBuffers;

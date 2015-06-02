@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSCache, NSObject<OS_dispatch_queue>;
-
 @interface MusicPlaylistsDataSource : MusicQueryDataSource {
     NSObject<OS_dispatch_queue> *_cacheQueue;
     NSCache *_cachedCounts;
@@ -13,8 +11,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_bfsNonFolderPlaylistsWithRootPlaylist:(id)arg1 visitedPlaylistPIDs:(id)arg2 stop:(BOOL*)arg3 visitor:(id)arg4;
-- (void)_breadthFirstVisitNonFolderPlaylistsWithRootPlaylist:(id)arg1 visitor:(id)arg2;
+- (void)_bfsNonFolderPlaylistsWithRootPlaylist:(id)arg1 visitedPlaylistPIDs:(id)arg2 stop:(BOOL*)arg3 visitor:(id /* block */)arg4;
+- (void)_breadthFirstVisitNonFolderPlaylistsWithRootPlaylist:(id)arg1 visitor:(id /* block */)arg2;
 - (void)_invalidateCalculatedEntities;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)_representativePlaylistForEntityAtIndex:(unsigned int)arg1;

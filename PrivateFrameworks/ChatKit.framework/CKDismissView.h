@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKDismissViewDelegate>, NSArray;
-
 @interface CKDismissView : UIView {
     <CKDismissViewDelegate> *_delegate;
     NSArray *_passthroughViews;
 }
 
-@property <CKDismissViewDelegate> * delegate;
-@property(copy) NSArray * passthroughViews;
+@property (nonatomic) <CKDismissViewDelegate> *delegate;
+@property (nonatomic, copy) NSArray *passthroughViews;
 
 - (void)dealloc;
 - (id)delegate;

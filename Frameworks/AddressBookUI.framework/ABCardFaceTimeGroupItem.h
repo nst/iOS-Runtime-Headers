@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABCardFaceTimeGroupItem : ABCardGroupItem {
-}
+@interface ABCardFaceTimeGroupItem : ABCardGroupItem
 
 @end

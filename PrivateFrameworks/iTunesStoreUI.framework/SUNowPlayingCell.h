@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUNowPlayingCell : SUTableCell {
-}
+@interface SUNowPlayingCell : SUTableCell
 
 - (void)layoutSubviews;
 - (void)setAccessoryType:(int)arg1;

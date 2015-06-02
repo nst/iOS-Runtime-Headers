@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInput>, NSMutableArray;
-
 @interface UIDictationStreamingOperations : NSObject {
     <UITextInput> *_document;
     NSMutableArray *_operations;
@@ -11,7 +9,7 @@
     double _timeAfterSelectRange;
 }
 
-@property(retain) NSMutableArray * operations;
+@property (nonatomic, retain) NSMutableArray *operations;
 
 - (void)_performReplaceSelectedText:(id)arg1;
 - (void)clearOperations;

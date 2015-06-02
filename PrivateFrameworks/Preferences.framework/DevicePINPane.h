@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, UIKeyboard, UITransitionView, UIView<PINEntryView>;
-
 @interface DevicePINPane : PSEditingPane <PSPINEntryViewDelegate, UIKeyInput, UITextInputTraits> {
     int _autocapitalizationType;
     int _autocorrectionType;
@@ -19,19 +17,19 @@
     BOOL _transitioning;
 }
 
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) unsigned int hash;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(retain) UIView<PINEntryView> * pinView;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, retain) UIView<PINEntryView> *pinView;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
 
 - (void)_setKeypadState:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setPlaysKeyboardClicks:(BOOL)arg1;
@@ -43,7 +41,7 @@
 - (void)clearPassword;
 - (void)deactivateKeypadView;
 - (void)dealloc;
-- (void)delayForTextEntryAnimationsWithCompletion:(id)arg1;
+- (void)delayForTextEntryAnimationsWithCompletion:(id /* block */)arg1;
 - (void)deleteBackward;
 - (void)dismissKeypad;
 - (BOOL)hasText;

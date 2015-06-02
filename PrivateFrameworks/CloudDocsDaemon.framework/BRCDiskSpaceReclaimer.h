@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSObject<OS_dispatch_queue>;
-
 @interface BRCDiskSpaceReclaimer : NSObject {
     BOOL _isClosed;
     NSObject<OS_dispatch_queue> *_queue;
     BRCAccountSession *_session;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
-- (void)_enumerateItemsForEvictSyncWithBlock:(id)arg1 withUrgency:(int)arg2;
+- (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withUrgency:(int)arg2;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)close;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;

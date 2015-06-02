@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSDictionary, NSString, NSURL, PKLinkedAppUserRatingView, SKStoreProductViewController, SSSoftwareLibraryItem, UIActivityIndicatorView, UIButton, UIColor, UIImageView, UILabel;
-
 @interface PKLinkedAppView : UITableViewCell <SKStoreProductViewControllerDelegate> {
     UIActivityIndicatorView *_activityIndicator;
     BOOL _appInstalled;
@@ -26,29 +24,29 @@
     UIButton *_viewButton;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property BOOL appInstalled;
-@property(retain) NSURL * appLaunchURL;
-@property(retain) UILabel * appName;
-@property BOOL appNotAvailable;
-@property(retain) UILabel * appPublisher;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SSSoftwareLibraryItem * foundLibraryItem;
-@property(retain) NSDictionary * foundStoreItem;
-@property(readonly) unsigned int hash;
-@property(retain) UIImageView * iconView;
-@property(retain) UILabel * loadingLabel;
-@property BOOL lookupInitiated;
-@property UIColor * mainLabelColor;
-@property(retain) UILabel * price;
-@property(retain) SKStoreProductViewController * productViewController;
-@property(retain) NSArray * storeIDs;
-@property UIColor * subTextLabelColor;
-@property(readonly) Class superclass;
-@property(retain) UILabel * tapToOpen;
-@property(retain) PKLinkedAppUserRatingView * userRatingView;
-@property(retain) UIButton * viewButton;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) BOOL appInstalled;
+@property (nonatomic, retain) NSURL *appLaunchURL;
+@property (nonatomic, retain) UILabel *appName;
+@property (nonatomic) BOOL appNotAvailable;
+@property (nonatomic, retain) UILabel *appPublisher;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SSSoftwareLibraryItem *foundLibraryItem;
+@property (nonatomic, retain) NSDictionary *foundStoreItem;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) UILabel *loadingLabel;
+@property (nonatomic) BOOL lookupInitiated;
+@property (nonatomic) UIColor *mainLabelColor;
+@property (nonatomic, retain) UILabel *price;
+@property (nonatomic, retain) SKStoreProductViewController *productViewController;
+@property (nonatomic, retain) NSArray *storeIDs;
+@property (nonatomic) UIColor *subTextLabelColor;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *tapToOpen;
+@property (nonatomic, retain) PKLinkedAppUserRatingView *userRatingView;
+@property (nonatomic, retain) UIButton *viewButton;
 
 - (BOOL)_anyAppIsInstalled:(id)arg1;
 - (int)_bindingTypeForNewsstandItem:(id)arg1;

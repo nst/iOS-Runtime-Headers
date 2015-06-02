@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData, NSString;
-
 @interface _PFExternalReferenceData : NSData {
     unsigned int _bytesLengthForExternalReference;
     unsigned int _bytesLengthForStore;

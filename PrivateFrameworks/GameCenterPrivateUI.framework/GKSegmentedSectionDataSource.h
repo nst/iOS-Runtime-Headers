@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewDataSource, GKCollectionViewPlaceholderView, GKSegmentInfo, GKSegmentedSectionHeaderView, NSArray, NSMutableArray, NSString;
-
 @interface GKSegmentedSectionDataSource : GKCollectionViewDataSource <GKSegmentInfoDelegagte> {
     GKSegmentedSectionHeaderView *_headerView;
     SEL _noContentButtonAction;
@@ -21,23 +19,23 @@
     BOOL _waitingForAnimation;
 }
 
-@property(readonly) NSArray * dataSources;
-@property(retain) GKSegmentedSectionHeaderView * headerView;
-@property SEL noContentButtonAction;
-@property id noContentButtonTarget;
-@property(retain) NSString * noContentButtonTitle;
-@property(retain) NSString * noContentMessage;
-@property(retain) NSString * noContentTitle;
-@property(retain) GKCollectionViewPlaceholderView * placeholderView;
-@property(retain) GKCollectionViewDataSource * rootDataSource;
-@property(retain) NSMutableArray * segmentInfos;
-@property Class segmentedHeaderClass;
-@property GKCollectionViewDataSource * selectedDataSource;
-@property unsigned int selectedDataSourceIndex;
-@property(retain) GKSegmentInfo * selectedSegmentInfo;
-@property BOOL shouldHideSegment;
-@property BOOL usePlaceholder;
-@property BOOL waitingForAnimation;
+@property (nonatomic, readonly) NSArray *dataSources;
+@property (nonatomic, retain) GKSegmentedSectionHeaderView *headerView;
+@property (nonatomic) SEL noContentButtonAction;
+@property (nonatomic) id noContentButtonTarget;
+@property (nonatomic, retain) NSString *noContentButtonTitle;
+@property (nonatomic, retain) NSString *noContentMessage;
+@property (nonatomic, retain) NSString *noContentTitle;
+@property (nonatomic, retain) GKCollectionViewPlaceholderView *placeholderView;
+@property (nonatomic, retain) GKCollectionViewDataSource *rootDataSource;
+@property (nonatomic, retain) NSMutableArray *segmentInfos;
+@property (nonatomic) Class segmentedHeaderClass;
+@property (nonatomic) GKCollectionViewDataSource *selectedDataSource;
+@property (nonatomic) unsigned int selectedDataSourceIndex;
+@property (nonatomic, retain) GKSegmentInfo *selectedSegmentInfo;
+@property (nonatomic) BOOL shouldHideSegment;
+@property (nonatomic) BOOL usePlaceholder;
+@property (nonatomic) BOOL waitingForAnimation;
 
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (void)addDataSource:(id)arg1;
@@ -60,7 +58,7 @@
 - (void)dataSource:(id)arg1 didRefreshSections:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveItemsAtIndexPaths:(id)arg2;
 - (void)dataSource:(id)arg1 didRemoveSections:(id)arg2;
-- (void)dataSource:(id)arg1 performBatchUpdate:(id)arg2 complete:(id)arg3;
+- (void)dataSource:(id)arg1 performBatchUpdate:(id /* block */)arg2 complete:(id /* block */)arg3;
 - (void)dataSourceDidLoad;
 - (void)dataSourceDidReloadData:(id)arg1;
 - (id)dataSourceForSection:(unsigned int)arg1;
@@ -88,7 +86,7 @@
 - (id)placeholderView;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)removeDataSource:(id)arg1;
-- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)rootDataSource;
 - (unsigned int)sectionForDataSource:(id)arg1;
 - (void)segmentDidChangeLoadingState:(id)arg1;

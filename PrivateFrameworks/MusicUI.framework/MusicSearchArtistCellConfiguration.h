@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicSearchArtistCellConfiguration : MusicSearchCellConfiguration {
-}
+@interface MusicSearchArtistCellConfiguration : MusicSearchCellConfiguration
 
 + (id)_artistRepresentativeItemProperty;
 + (id)_titleProperty;

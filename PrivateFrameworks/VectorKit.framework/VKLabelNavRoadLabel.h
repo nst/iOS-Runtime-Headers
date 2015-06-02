@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKLabelNavFeature>, NSString;
-
 @interface VKLabelNavRoadLabel : NSObject {
     int _alignment;
     float _desiredOffsetDistance;
@@ -17,14 +15,14 @@
     int _navLabelType;
 }
 
-@property int alignment;
-@property float desiredOffsetDistance;
-@property unsigned int displayID;
-@property(readonly) BOOL isJunctionLabel;
-@property(readonly) BOOL isRoadLabel;
-@property(readonly) BOOL isShieldLabel;
-@property(readonly) const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }* label;
-@property <VKLabelNavFeature> * navFeature;
+@property (nonatomic) int alignment;
+@property (nonatomic) float desiredOffsetDistance;
+@property (nonatomic) unsigned int displayID;
+@property (nonatomic, readonly) BOOL isJunctionLabel;
+@property (nonatomic, readonly) BOOL isRoadLabel;
+@property (nonatomic, readonly) BOOL isShieldLabel;
+@property (nonatomic, readonly) const struct shared_ptr<vk::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*label;
+@property (nonatomic) <VKLabelNavFeature> *navFeature;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

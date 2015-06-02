@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAFolder : NSObject {
     int _dataclass;
     NSString *_folderID;
@@ -13,12 +11,12 @@
     NSString *_parentFolderID;
 }
 
-@property int dataclass;
-@property(copy) NSString * folderID;
-@property(copy) NSString * folderName;
-@property BOOL hasRemoteChanges;
-@property BOOL isDefault;
-@property(copy) NSString * parentFolderID;
+@property (nonatomic) int dataclass;
+@property (nonatomic, copy) NSString *folderID;
+@property (nonatomic, copy) NSString *folderName;
+@property (nonatomic) BOOL hasRemoteChanges;
+@property (nonatomic) BOOL isDefault;
+@property (nonatomic, copy) NSString *parentFolderID;
 
 - (void).cxx_destruct;
 - (int)dataclass;

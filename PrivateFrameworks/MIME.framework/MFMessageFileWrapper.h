@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSData, NSMutableDictionary, NSString;
-
 @interface MFMessageFileWrapper : NSObject {
     NSMutableDictionary *_attributes;
     NSData *_data;
@@ -15,16 +13,14 @@
     NSString *_url;
 }
 
-+ (id)supportedArchivedClassNames;
+// Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 - (id)URL;
 - (void)_isImage:(BOOL*)arg1 orPDFFile:(BOOL*)arg2;
-- (BOOL)_pathExtensionEquals:(id)arg1;
 - (id)contentID;
 - (unsigned long)creator;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (id)eventUniqueID;
 - (id)fileAttributes;
 - (id)fileProtection;
@@ -35,27 +31,19 @@
 - (id)inferredMimeType;
 - (id)initRegularFileWithContents:(id)arg1;
 - (id)initSymbolicLinkWithDestination:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (BOOL)isDirectory;
-- (BOOL)isDisplayableByWebKit;
-- (BOOL)isDisplayableImage;
 - (BOOL)isImageFile;
-- (BOOL)isMedia;
 - (BOOL)isPDFFile;
 - (BOOL)isPlaceholder;
-- (BOOL)isRFC822;
 - (BOOL)isRegularFile;
 - (BOOL)isSymbolicLink;
 - (BOOL)isUnzippableFile;
-- (BOOL)isZip;
 - (id)meetingStorePersistentID;
 - (id)messageID;
 - (id)mimeType;
-- (float)minimumZoomFontSize;
 - (id)path;
 - (id)preferredFilename;
-- (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 - (id)regularFileContents;
 - (void)setContentID:(id)arg1;
 - (void)setCreator:(unsigned long)arg1;
@@ -74,5 +62,23 @@
 - (void)setURL:(id)arg1;
 - (id)symbolicLinkDestination;
 - (unsigned long)type;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (BOOL)_pathExtensionEquals:(id)arg1;
+- (BOOL)isDisplayableByWebKit;
+- (BOOL)isDisplayableImage;
+- (BOOL)isMedia;
+- (BOOL)isRFC822;
+- (BOOL)isZip;
+- (float)minimumZoomFontSize;
+- (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
++ (id)supportedArchivedClassNames;
+
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

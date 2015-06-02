@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsFlatSemiLight : _UIBackdropViewSettingsLight {
-}
+@interface _UIBackdropViewSettingsFlatSemiLight : _UIBackdropViewSettingsLight
 
 - (void)setDefaultValues;
 

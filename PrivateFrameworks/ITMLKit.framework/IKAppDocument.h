@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppDocumentDelegate>, IKAppContext, IKDOMDocument, IKHeadElement, IKJSNavigationDocument, IKJSObject, IKViewElement, JSManagedValue, NSError, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge> {
     IKAppContext *_appContext;
     <IKAppDocumentDelegate> *_delegate;
@@ -22,26 +20,26 @@
     BOOL _updated;
 }
 
-@property(readonly) IKAppContext * appContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <IKAppDocumentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property(retain) IKHeadElement * headElement;
-@property(retain) NSString * identifier;
-@property double impressionThreshold;
-@property(retain) NSMutableSet * impressions;
-@property(retain) NSMutableDictionary * impressionsDict;
-@property(readonly) IKDOMDocument * jsDocument;
-@property(retain) JSManagedValue * jsManagedDocument;
-@property(retain) IKViewElement * navigationBarElement;
-@property(readonly) IKJSNavigationDocument * navigationDocument;
-@property(readonly) IKJSObject * owner;
-@property(getter=isSubtreeUpdated) BOOL subtreeUpdated;
-@property(readonly) Class superclass;
-@property(retain) IKViewElement * templateElement;
-@property(getter=isUpdated) BOOL updated;
+@property (readonly) IKAppContext *appContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IKAppDocumentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IKHeadElement *headElement;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) double impressionThreshold;
+@property (nonatomic, retain) NSMutableSet *impressions;
+@property (nonatomic, retain) NSMutableDictionary *impressionsDict;
+@property (nonatomic, readonly) IKDOMDocument *jsDocument;
+@property (nonatomic, retain) JSManagedValue *jsManagedDocument;
+@property (nonatomic, retain) IKViewElement *navigationBarElement;
+@property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
+@property (nonatomic, readonly) IKJSObject *owner;
+@property (getter=isSubtreeUpdated) BOOL subtreeUpdated;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) IKViewElement *templateElement;
+@property (getter=isUpdated, nonatomic) BOOL updated;
 
 - (void).cxx_destruct;
 - (BOOL)_clearUpdatesForElement:(id)arg1;
@@ -66,10 +64,10 @@
 - (void)onAppear;
 - (void)onDisappear;
 - (void)onLoad;
-- (void)onNeedsUpdateWithCompletion:(id)arg1;
+- (void)onNeedsUpdateWithCompletion:(id /* block */)arg1;
 - (void)onUnload;
 - (void)onUpdate;
-- (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id)arg2;
+- (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id /* block */)arg2;
 - (id)owner;
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (id)recordedImpressions;

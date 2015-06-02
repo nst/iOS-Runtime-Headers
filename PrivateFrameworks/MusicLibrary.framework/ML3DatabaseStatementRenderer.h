@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3DatabaseStatementRenderer : NSObject {
-}
+@interface ML3DatabaseStatementRenderer : NSObject
 
 + (id)defaultRenderer;
 

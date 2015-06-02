@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class GSDaemonProxySync, GSPermanentStorage, NSArray, NSError, NSString;
-
 @interface GSPermanentAdditionEnumerator : NSEnumerator <GSAdditionEnumerating> {
     NSArray *_array;
     NSError *_error;
@@ -16,7 +14,7 @@
     unsigned long long _withoutOptions;
 }
 
-@property(readonly) NSError * error;
+@property (nonatomic, readonly) NSError *error;
 
 - (void)_fetchNextBatch;
 - (void)dealloc;

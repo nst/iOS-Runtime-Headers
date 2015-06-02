@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADRotation3D;
-
 @interface OADCamera : NSObject <NSCopying> {
     int mCameraType;
     float mFieldOfView;

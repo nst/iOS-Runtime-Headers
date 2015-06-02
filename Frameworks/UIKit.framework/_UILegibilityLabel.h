@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIFont;
-
 @interface _UILegibilityLabel : _UILegibilityView {
     UIFont *_font;
     NSString *_string;
     BOOL _usesSecondaryColor;
 }
 
-@property(readonly) float baselineOffset;
-@property(retain) UIFont * font;
-@property(copy) NSString * string;
-@property(readonly) BOOL usesSecondaryColor;
+@property (nonatomic, readonly) float baselineOffset;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, readonly) BOOL usesSecondaryColor;
 
 - (float)baselineOffset;
 - (void)dealloc;

@@ -6,7 +6,7 @@
     int _focusBubbleType;
 }
 
-@property int focusBubbleType;
+@property (nonatomic) int focusBubbleType;
 
 + (float)preferredDuration;
 

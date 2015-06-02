@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIActivityIndicatorView, UIColor, UILabel;
-
 @interface SULoadingView : UIView {
     UIColor *_activityIndicatorColor;
     int _activityIndicatorStyle;
@@ -14,10 +12,10 @@
     UIColor *_textShadowColor;
 }
 
-@property(retain) UIColor * activityIndicatorColor;
-@property int activityIndicatorStyle;
-@property(retain) UIColor * textColor;
-@property(retain) UIColor * textShadowColor;
+@property (nonatomic, retain) UIColor *activityIndicatorColor;
+@property (nonatomic) int activityIndicatorStyle;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) UIColor *textShadowColor;
 
 - (void)_setupSubviews;
 - (id)activityIndicatorColor;

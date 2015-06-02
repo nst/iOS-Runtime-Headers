@@ -7,8 +7,8 @@
     float _textXPosition;
 }
 
-@property float textWidth;
-@property float textXPosition;
+@property (nonatomic) float textWidth;
+@property (nonatomic) float textXPosition;
 
 - (BOOL)_isTextFieldCenteredLabel;
 - (void)setTextWidth:(float)arg1;

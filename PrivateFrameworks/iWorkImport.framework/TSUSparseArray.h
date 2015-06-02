@@ -2,25 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSUSparseArray : NSObject <NSCopying> {
     unsigned int _depth;
     unsigned int _nonNilCount;
     struct tsuSaPage { int (**x1)(); } *_topPage;
 }
 
-@property(readonly) unsigned int count;
+@property (readonly) unsigned int count;
 
 - (void)clear;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
-- (void)foreach:(id)arg1;
+- (void)foreach:(id /* block */)arg1;
 - (BOOL)hasObjectForKey:(unsigned int)arg1;
 - (void)increaseDepth;
 - (unsigned int)maxIndexForCurrentDepth;

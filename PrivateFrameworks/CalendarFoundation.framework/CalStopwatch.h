@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSMutableDictionary;
-
 @interface CalStopwatch : NSObject {
     unsigned long long _elapsedTime;
     NSMutableDictionary *_events;

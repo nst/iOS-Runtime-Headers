@@ -2,36 +2,33 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class <GCNamedProfile>, GCExtendedGamepad, GCGamepad, GCMotion, NSString;
+@interface GCController : NSObject
 
-@interface GCController : NSObject {
-}
-
-@property(getter=isAttachedToDevice,readonly) BOOL attachedToDevice;
-@property(copy) id controllerPausedHandler;
-@property(readonly) struct __IOHIDDevice { }* deviceRef;
-@property(retain,readonly) GCExtendedGamepad * extendedGamepad;
-@property(retain,readonly) GCGamepad * gamepad;
-@property(retain,readonly) GCMotion * motion;
-@property int playerIndex;
-@property(retain) <GCNamedProfile> * profile;
-@property(readonly) unsigned int service;
-@property(copy,readonly) NSString * vendorName;
+@property (getter=isAttachedToDevice, readonly) BOOL attachedToDevice;
+@property (copy) id /* block */ controllerPausedHandler;
+@property (readonly) struct __IOHIDDevice { }*deviceRef;
+@property (readonly, retain) GCExtendedGamepad *extendedGamepad;
+@property (readonly, retain) GCGamepad *gamepad;
+@property (readonly, retain) GCMotion *motion;
+@property (nonatomic) int playerIndex;
+@property (retain) <GCNamedProfile> *profile;
+@property (readonly) unsigned int service;
+@property (readonly, copy) NSString *vendorName;
 
 + (void)__daemon__addController:(id)arg1;
 + (void)__daemon__controllerWithUDID:(unsigned int)arg1 setValue:(float)arg2 forElement:(int)arg3;
 + (void)__daemon__removeController:(id)arg1;
-+ (void)__daemon__requestConnectedHostUpdatesWithHandler:(id)arg1;
++ (void)__daemon__requestConnectedHostUpdatesWithHandler:(id /* block */)arg1;
 + (void)__daemon__setUserActivityUserInfo:(id)arg1;
 + (void)__daemon__startBonjourService;
 + (void)__open__;
-+ (void)__setLogger__:(id)arg1;
-+ (void)_startWirelessControllerDiscoveryWithCompanions:(BOOL)arg1 btClassic:(BOOL)arg2 btle:(BOOL)arg3 completionHandler:(id)arg4;
++ (void)__setLogger__:(id /* block */)arg1;
++ (void)_startWirelessControllerDiscoveryWithCompanions:(BOOL)arg1 btClassic:(BOOL)arg2 btle:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 + (id)controllers;
-+ (void)startWirelessControllerDiscoveryWithCompletionHandler:(id)arg1;
++ (void)startWirelessControllerDiscoveryWithCompletionHandler:(id /* block */)arg1;
 + (void)stopWirelessControllerDiscovery;
 
-- (id)controllerPausedHandler;
+- (id /* block */)controllerPausedHandler;
 - (unsigned int)deviceHash;
 - (struct __IOHIDDevice { }*)deviceRef;
 - (id)extendedGamepad;
@@ -42,7 +39,7 @@
 - (int)playerIndex;
 - (id)profile;
 - (unsigned int)service;
-- (void)setControllerPausedHandler:(id)arg1;
+- (void)setControllerPausedHandler:(id /* block */)arg1;
 - (void)setPlayerIndex:(int)arg1;
 - (void)setProfile:(id)arg1;
 - (id)vendorName;

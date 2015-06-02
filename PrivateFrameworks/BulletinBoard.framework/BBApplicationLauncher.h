@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BKSApplicationStateMonitor, FBSSystemService, NSMutableDictionary;
-
 @interface BBApplicationLauncher : NSObject {
     BKSApplicationStateMonitor *_appStateMonitor;
     NSMutableDictionary *_bundleIdentifierToAssertions;

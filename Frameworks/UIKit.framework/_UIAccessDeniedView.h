@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImageView, UILabel;
-
 @interface _UIAccessDeniedView : UIView {
     UIImageView *_lockView;
     NSString *_message;
@@ -12,8 +10,8 @@
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * message;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *title;
 
 - (id)_textColor;
 - (void)dealloc;

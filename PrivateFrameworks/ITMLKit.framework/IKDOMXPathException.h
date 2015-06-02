@@ -6,7 +6,7 @@
     int code;
 }
 
-@property int code;
+@property (nonatomic) int code;
 
 + (id)exceptionWithAppContext:(id)arg1 code:(int)arg2;
 

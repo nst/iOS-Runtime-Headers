@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputWritingHelper;
-
 @interface AVAssetWriterInputNoMorePassesHelper : AVAssetWriterInputHelper {
     AVAssetWriterInputWritingHelper *_writingHelper;
 }
@@ -19,7 +17,7 @@
 - (void)markAsFinished;
 - (void)markCurrentPassAsFinished;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
-- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (int)status;
 
 @end

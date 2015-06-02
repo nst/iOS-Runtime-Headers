@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
-
 @interface IKColumnCollectionElement : IKViewElement {
     NSArray *_columns;
 }
 
-@property(retain,readonly) NSArray * columns;
+@property (nonatomic, readonly, retain) NSArray *columns;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

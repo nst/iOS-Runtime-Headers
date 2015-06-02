@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarIndicatorItemView : UIStatusBarItemView {
-}
+@interface UIStatusBarIndicatorItemView : UIStatusBarItemView
 
 - (id)contentsImage;
 

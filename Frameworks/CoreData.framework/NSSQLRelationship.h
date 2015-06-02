@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLEntity, NSSQLRelationship;
-
 @interface NSSQLRelationship : NSSQLProperty {
     NSSQLEntity *_destinationEntity;
     NSSQLRelationship *_inverse;

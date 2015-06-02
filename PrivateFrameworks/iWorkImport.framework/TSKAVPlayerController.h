@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKMediaPlayerControllerDelegate>, AVPlayer, NSString;
-
 @interface TSKAVPlayerController : NSObject <TSKMediaPlayerController> {
     BOOL mCanPlay;
     <TSKMediaPlayerControllerDelegate> *mDelegate;
@@ -19,29 +17,29 @@
     float mVolume;
 }
 
-@property(readonly) double absoluteCurrentTime;
-@property(readonly) double absoluteDuration;
-@property(readonly) BOOL canFastForward;
-@property(readonly) BOOL canFastReverse;
-@property(readonly) BOOL canPlay;
-@property(readonly) double currentTime;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <TSKMediaPlayerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property double endTime;
-@property(getter=isFastForwarding) BOOL fastForwarding;
-@property(getter=isFastReversing) BOOL fastReversing;
-@property(readonly) unsigned int hash;
-@property(readonly) AVPlayer * player;
-@property(getter=isPlaying) BOOL playing;
-@property float rate;
-@property(readonly) double remainingTime;
-@property int repeatMode;
-@property(getter=isScrubbing,readonly) BOOL scrubbing;
-@property double startTime;
-@property(readonly) Class superclass;
-@property float volume;
+@property (nonatomic, readonly) double absoluteCurrentTime;
+@property (nonatomic, readonly) double absoluteDuration;
+@property (nonatomic, readonly) BOOL canFastForward;
+@property (nonatomic, readonly) BOOL canFastReverse;
+@property (nonatomic, readonly) BOOL canPlay;
+@property (nonatomic, readonly) double currentTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <TSKMediaPlayerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic) double endTime;
+@property (getter=isFastForwarding, nonatomic) BOOL fastForwarding;
+@property (getter=isFastReversing, nonatomic) BOOL fastReversing;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) AVPlayer *player;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic) float rate;
+@property (nonatomic, readonly) double remainingTime;
+@property (nonatomic) int repeatMode;
+@property (getter=isScrubbing, nonatomic, readonly) BOOL scrubbing;
+@property (nonatomic) double startTime;
+@property (readonly) Class superclass;
+@property (nonatomic) float volume;
 
 + (BOOL)automaticallyNotifiesObserversOfEndTime;
 + (BOOL)automaticallyNotifiesObserversOfRate;
@@ -56,7 +54,7 @@
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
-- (id)addPeriodicTimeObserverForInterval:(double)arg1 block:(id)arg2;
+- (id)addPeriodicTimeObserverForInterval:(double)arg1 block:(id /* block */)arg2;
 - (void)beginScrubbing;
 - (BOOL)canFastForward;
 - (BOOL)canFastReverse;
@@ -93,7 +91,7 @@
 - (void)removePeriodicTimeObserver:(id)arg1;
 - (int)repeatMode;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2;
-- (void)scrubToTime:(double)arg1 withTolerance:(double)arg2 completionHandler:(id)arg3;
+- (void)scrubToTime:(double)arg1 withTolerance:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)seekBackwardByOneFrame;
 - (void)seekForwardByOneFrame;
 - (void)seekToBeginning;

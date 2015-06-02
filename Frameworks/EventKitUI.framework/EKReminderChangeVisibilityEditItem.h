@@ -6,7 +6,7 @@
     int _visibilityToCommit;
 }
 
-@property(readonly) int visibilityToCommit;
+@property (nonatomic, readonly) int visibilityToCommit;
 
 - (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;

@@ -9,10 +9,10 @@
     float _rowHeight;
 }
 
-@property float columnSpacing;
-@property float columnWidth;
-@property int numberOfRows;
-@property float rowHeight;
+@property (nonatomic) float columnSpacing;
+@property (nonatomic) float columnWidth;
+@property (nonatomic) int numberOfRows;
+@property (nonatomic) float rowHeight;
 
 + (Class)layoutAttributesClass;
 + (float)snapToBoundariesDecelerationRate;

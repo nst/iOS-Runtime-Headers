@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSData;
-
 @interface VGLBitmapData : NSObject {
     NSData *_bitmapData;
     struct VGLBitmapInfo { 
@@ -18,8 +16,8 @@
     struct __IOSurface { } *_surface;
 }
 
-@property(readonly) struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; } bitmapInfo;
-@property(readonly) unsigned long dataLength;
+@property (nonatomic, readonly) struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; } bitmapInfo;
+@property (nonatomic, readonly) unsigned long dataLength;
 
 - (void)_commonInitWithBytes:(void*)arg1 bitmapInfo:(const struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; }*)arg2;
 - (struct VGLBitmapInfo { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct CGColorSpace {} *x6; unsigned int x7; })bitmapInfo;

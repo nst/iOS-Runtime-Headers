@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFMimePart, MFPartialNetworkDataConsumer, MFWeakReferenceHolder, NSData, NSMutableDictionary, NSString, NSURL;
-
 @interface MFMimePart : NSObject {
     MFWeakReferenceHolder *_body;
     NSMutableDictionary *_bodyParameters;
@@ -24,23 +22,21 @@
     NSString *_type;
 }
 
+// Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
+
 + (Class)attachmentClass;
 + (void)initialize;
 + (BOOL)isRecognizedClassForContent:(id)arg1;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3;
 + (BOOL)parseContentTypeHeader:(id)arg1 type:(id*)arg2 subtype:(id*)arg3 info:(id*)arg4;
 
-- (id)SMIMEError;
 - (void)_contents:(id*)arg1 toOffset:(unsigned int)arg2 resultOffset:(unsigned int*)arg3 downloadIfNecessary:(BOOL)arg4 asHTML:(BOOL)arg5 isComplete:(BOOL*)arg6;
 - (void)_ensureBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4 decoded:(id*)arg5;
 - (id)_fullMimeTypeEvenInsideAppleDouble;
 - (BOOL)_hasCompleteBodyDataToOffset:(unsigned int)arg1;
-- (BOOL)_needsSignatureVerification:(id*)arg1;
 - (id)_partThatIsAttachment;
 - (void)_setDecryptedMessageBody:(id)arg1 isEncrypted:(BOOL)arg2 isSigned:(BOOL)arg3;
 - (void)_setRFC822DecodedMessageBody:(id)arg1;
-- (void)_setSMIMEError:(id)arg1;
-- (void)_setSigners:(id)arg1;
 - (BOOL)_shouldContinueDecodingProcess;
 - (void)addSubpart:(id)arg1;
 - (id)alternativeAtIndex:(int)arg1;
@@ -73,16 +69,13 @@
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2;
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (id)copyBodyDataToOffset:(unsigned int)arg1 resultOffset:(unsigned int*)arg2 downloadIfNecessary:(BOOL)arg3 isComplete:(BOOL*)arg4;
-- (id)copySigners;
 - (void)dealloc;
 - (id)decodeApplicationOctet_stream;
-- (id)decodeApplicationPkcs7_mime;
 - (id)decodeApplicationZip;
 - (void)decodeIfNecessary;
 - (id)decodeMultipart;
 - (id)decodeMultipartAlternative;
 - (id)decodeMultipartRelated;
-- (id)decodeMultipartSigned;
 - (id)decodeText;
 - (id)decodedDataForData:(id)arg1;
 - (id)decryptedMessageBodyIsEncrypted:(BOOL*)arg1 isSigned:(BOOL*)arg2;
@@ -105,8 +98,6 @@
 - (BOOL)isRich;
 - (id)languages;
 - (id)mimeBody;
-- (id)newEncryptedPartWithData:(id)arg1 compositionSpecification:(id)arg2 encryptedData:(id*)arg3;
-- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 compositionSpecification:(id)arg3 signatureData:(id*)arg4;
 - (id)nextSiblingPart;
 - (int)numberOfAlternatives;
 - (unsigned int)numberOfAttachments;
@@ -145,5 +136,17 @@
 - (unsigned int)totalTextSize;
 - (id)type;
 - (BOOL)usesKnownSignatureProtocol;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
+- (id)SMIMEError;
+- (BOOL)_needsSignatureVerification:(id*)arg1;
+- (void)_setSMIMEError:(id)arg1;
+- (void)_setSigners:(id)arg1;
+- (id)copySigners;
+- (id)decodeApplicationPkcs7_mime;
+- (id)decodeMultipartSigned;
+- (id)newEncryptedPartWithData:(id)arg1 compositionSpecification:(id)arg2 encryptedData:(id*)arg3;
+- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 compositionSpecification:(id)arg3 signatureData:(id*)arg4;
 
 @end

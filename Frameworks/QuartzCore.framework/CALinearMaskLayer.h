@@ -2,15 +2,9 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface CALinearMaskLayer : CALayer
 
-@interface CALinearMaskLayer : CALayer {
-}
-
-@property struct CGColor { }* foregroundColor;
+@property struct CGColor { }*foregroundColor;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)_hasRenderLayerSubclass;

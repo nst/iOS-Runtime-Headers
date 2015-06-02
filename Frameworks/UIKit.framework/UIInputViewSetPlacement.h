@@ -6,11 +6,11 @@
     float _extendedHeight;
 }
 
-@property float extendedHeight;
-@property(readonly) BOOL isInteractive;
-@property(readonly) BOOL isUndocked;
-@property(readonly) BOOL showsInputViews;
-@property(readonly) BOOL showsKeyboard;
+@property (nonatomic) float extendedHeight;
+@property (nonatomic, readonly) BOOL isInteractive;
+@property (nonatomic, readonly) BOOL isUndocked;
+@property (nonatomic, readonly) BOOL showsInputViews;
+@property (nonatomic, readonly) BOOL showsKeyboard;
 
 + (id)placement;
 

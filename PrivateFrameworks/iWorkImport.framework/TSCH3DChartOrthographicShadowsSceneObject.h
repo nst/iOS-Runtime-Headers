@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartOrthographicShadowsSceneObject : TSCH3DChartShadowsSceneObject {
-}
+@interface TSCH3DChartOrthographicShadowsSceneObject : TSCH3DChartShadowsSceneObject
 
 + (id)blurParametersArray;
 

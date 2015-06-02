@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSSet, NSString;
-
 @interface AVMediaFileType : NSObject <NSCopying> {
     BOOL _supportsSampleReferences;
     long _supportsSampleReferencesOnce;
     NSString *_uti;
 }
 
-@property(readonly) NSString * UTI;
-@property(readonly) unsigned long audioFileTypeID;
-@property(readonly) NSString * defaultFileExtension;
-@property(readonly) NSString * figFormatReaderFileFormat;
-@property(readonly) NSSet * supportedMediaTypes;
-@property(readonly) BOOL supportsSampleReferences;
+@property (nonatomic, readonly) NSString *UTI;
+@property (nonatomic, readonly) unsigned long audioFileTypeID;
+@property (nonatomic, readonly) NSString *defaultFileExtension;
+@property (nonatomic, readonly) NSString *figFormatReaderFileFormat;
+@property (nonatomic, readonly) NSSet *supportedMediaTypes;
+@property (nonatomic, readonly) BOOL supportsSampleReferences;
 
 + (id)_mediaFileTypeWithFileTypeIdentifier:(id)arg1 exceptionReason:(id*)arg2;
 + (id)allFileTypeIdentifiers;

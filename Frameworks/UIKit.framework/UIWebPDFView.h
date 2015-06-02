@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSData, NSMutableArray, NSObject<UIWebPDFViewDelegate>, NSString, NSURL, UIColor, UIPDFDocument, UITapGestureRecognizer, WebPDFViewPlaceholder;
-
 @interface UIWebPDFView : UIView <UIGestureRecognizerDelegate, UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, UIPopoverControllerDelegate, WebPDFViewPlaceholderDelegate> {
     NSMutableArray *_backingLayerImageViews;
     struct CGPDFDocument { } *_cgPDFDocument;
@@ -51,29 +49,29 @@
     BOOL readyForSnapshot;
 }
 
-@property(retain) UIColor * backgroundColorForUnRenderedContent;
-@property(readonly) struct CGPDFDocument { }* cgPDFDocument;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) UIPDFDocument * document;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
-@property(readonly) NSData * documentData;
-@property(retain) NSString * documentPassword;
-@property(readonly) float documentScale;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } documentTransform;
-@property(retain) NSURL * documentURL;
-@property(readonly) unsigned int hash;
-@property BOOL hideActivityIndicatorForUnRenderedContent;
-@property BOOL hidePageViewsUntilReadyToRender;
-@property int ignoreContentOffsetChanges;
-@property float initialZoomScale;
-@property(retain) NSArray * pageMinYs;
-@property(retain) NSArray * pageRects;
-@property NSObject<UIWebPDFViewDelegate> * pdfDelegate;
-@property WebPDFViewPlaceholder * pdfPlaceHolderView;
-@property BOOL readyForSnapshot;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int totalPages;
+@property (nonatomic, retain) UIColor *backgroundColorForUnRenderedContent;
+@property (nonatomic, readonly) struct CGPDFDocument { }*cgPDFDocument;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIPDFDocument *document;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property (nonatomic, readonly) NSData *documentData;
+@property (nonatomic, retain) NSString *documentPassword;
+@property (nonatomic, readonly) float documentScale;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } documentTransform;
+@property (nonatomic, retain) NSURL *documentURL;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideActivityIndicatorForUnRenderedContent;
+@property (nonatomic) BOOL hidePageViewsUntilReadyToRender;
+@property (nonatomic) int ignoreContentOffsetChanges;
+@property (nonatomic) float initialZoomScale;
+@property (nonatomic, retain) NSArray *pageMinYs;
+@property (nonatomic, retain) NSArray *pageRects;
+@property (nonatomic) NSObject<UIWebPDFViewDelegate> *pdfDelegate;
+@property WebPDFViewPlaceholder *pdfPlaceHolderView;
+@property (nonatomic) BOOL readyForSnapshot;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int totalPages;
 
 + (void)initialize;
 + (void)setAsPDFDocRepAndView;

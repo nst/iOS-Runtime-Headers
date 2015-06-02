@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface SSVRedeemCodeItem : NSObject {
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly) long long itemIdentifier;
-@property(readonly) NSDictionary * redeemCodeDictionary;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) NSDictionary *redeemCodeDictionary;
 
 - (void).cxx_destruct;
 - (id)initWithLookupItem:(id)arg1;

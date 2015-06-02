@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSMetricsPurchaseEvent : SSMetricsBaseEvent
 
-@interface SSMetricsPurchaseEvent : SSMetricsBaseEvent {
-}
-
-@property double requestStartTime;
-@property double responseEndTime;
-@property double responseStartTime;
-@property(retain) NSString * transactionIdentifier;
+@property (nonatomic) double requestStartTime;
+@property (nonatomic) double responseEndTime;
+@property (nonatomic) double responseStartTime;
+@property (nonatomic, retain) NSString *transactionIdentifier;
 
 - (void)addFieldsFromPurchaseResponse:(id)arg1;
 - (id)init;

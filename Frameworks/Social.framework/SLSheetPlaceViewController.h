@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount, MKMapView, NSArray, NSBundle, NSObject<SLPlaceDataSource>, NSObject<SLSheetPlaceViewControllerDelegate>, NSString, SLPlace, SLSheetPlaceSearchController, UISearchBar, UISearchDisplayController, UITableView;
-
 @interface SLSheetPlaceViewController : UIViewController <MKMapViewDelegate, SLPlaceDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     ACAccount *_account;
     NSBundle *_effectiveBundle;
@@ -22,15 +20,15 @@
     UITableView *_tableView;
 }
 
-@property(retain) ACAccount * account;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<SLPlaceDataSource> * placeDataSource;
-@property(retain) NSArray * places;
-@property BOOL searchEnabled;
-@property NSObject<SLSheetPlaceViewControllerDelegate> * selectionDelegate;
-@property(readonly) Class superclass;
+@property (retain) ACAccount *account;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSObject<SLPlaceDataSource> *placeDataSource;
+@property (retain) NSArray *places;
+@property (nonatomic) BOOL searchEnabled;
+@property NSObject<SLSheetPlaceViewControllerDelegate> *selectionDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_calculatePreferredContentSize;

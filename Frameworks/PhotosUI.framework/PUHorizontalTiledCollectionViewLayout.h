@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUHorizontalTiledCollectionViewLayoutDelegate>, PUCollectionViewData, UICollectionViewLayoutAttributes;
-
 @interface PUHorizontalTiledCollectionViewLayout : UICollectionViewLayout {
     PUCollectionViewData *_data;
     <PUHorizontalTiledCollectionViewLayoutDelegate> *_delegate;
@@ -17,10 +15,10 @@
     } _itemsContentInset;
 }
 
-@property <PUHorizontalTiledCollectionViewLayoutDelegate> * delegate;
-@property(readonly) BOOL hasReferenceIndexPath;
-@property float interitemSpacing;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemsContentInset;
+@property (nonatomic) <PUHorizontalTiledCollectionViewLayoutDelegate> *delegate;
+@property (nonatomic, readonly) BOOL hasReferenceIndexPath;
+@property (nonatomic) float interitemSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemsContentInset;
 
 + (Class)invalidationContextClass;
 

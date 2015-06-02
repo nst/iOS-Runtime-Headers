@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString;
+@interface MusicCollectionTrackTableViewCell : MusicMediaTableViewCell
 
-@interface MusicCollectionTrackTableViewCell : MusicMediaTableViewCell {
-}
-
-@property(copy) NSString * durationText;
-@property float maximumDurationWidth;
-@property(copy) NSString * trackNumberText;
+@property (nonatomic, copy) NSString *durationText;
+@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic, copy) NSString *trackNumberText;
 
 + (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })sizeForDuration:(double)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFAnnotation;
-
 @interface UIPDFAnnotationView : UIView {
     UIPDFAnnotation *_annotation;
 }
 
-@property UIPDFAnnotation * annotation;
+@property (nonatomic) UIPDFAnnotation *annotation;
 
 - (id)annotation;
 - (void)setAnnotation:(id)arg1;

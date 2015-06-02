@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemonExtensions.framework/HealthDaemonExtensions
  */
 
-@class <HDHealthDaemon>, HKActivityCache, HKQuantity, HKQuantityType, HKWorkoutType, NSDate, NSHashTable, NSObject<OS_dispatch_queue>, NSSet, NSString, NSUUID, _HKDelayedOperation;
-
 @interface HDActivityCacheManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver> {
     HKQuantityType *_activeEnergyBurnedType;
     HKQuantityType *_activeHoursType;
@@ -26,18 +24,18 @@
     HKActivityCache *_yesterdayActivityCache;
 }
 
-@property(readonly) HKActivityCache * currentActivityCache;
-@property(retain) NSObject<OS_dispatch_queue> * dataQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <HDHealthDaemon> * healthDaemon;
-@property(retain) NSObject<OS_dispatch_queue> * ivarQueue;
-@property(retain) NSObject<OS_dispatch_queue> * observerQueue;
-@property(retain) NSHashTable * observers;
-@property(readonly) Class superclass;
-@property(retain) HKActivityCache * todayActivityCache;
-@property(retain) HKActivityCache * yesterdayActivityCache;
+@property (nonatomic, readonly) HKActivityCache *currentActivityCache;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dataQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <HDHealthDaemon> *healthDaemon;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *ivarQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerQueue;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) HKActivityCache *todayActivityCache;
+@property (nonatomic, retain) HKActivityCache *yesterdayActivityCache;
 
 - (void).cxx_destruct;
 - (void)_dataQueue_nanoSyncRestoreDidFinish:(id)arg1;

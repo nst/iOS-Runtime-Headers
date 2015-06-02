@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class AVAsset, CLLocation, NSDate, NSObject<OS_dispatch_queue>, NSString, NSURL, PHAdjustmentData, UIImage;
-
 @interface PHContentEditingInput : NSObject {
     PHAdjustmentData *_adjustmentData;
     AVAsset *_avAsset;
@@ -21,18 +19,18 @@
     NSURL *_videoURL;
 }
 
-@property(retain) PHAdjustmentData * adjustmentData;
-@property(readonly) AVAsset * avAsset;
-@property int baseVersion;
-@property(copy) NSDate * creationDate;
-@property(retain) UIImage * displaySizeImage;
+@property (retain) PHAdjustmentData *adjustmentData;
+@property (readonly) AVAsset *avAsset;
+@property (nonatomic) int baseVersion;
+@property (copy) NSDate *creationDate;
+@property (retain) UIImage *displaySizeImage;
 @property int fullSizeImageOrientation;
-@property(copy) NSURL * fullSizeImageURL;
-@property(copy) CLLocation * location;
+@property (copy) NSURL *fullSizeImageURL;
+@property (copy) CLLocation *location;
 @property unsigned int mediaSubtypes;
 @property int mediaType;
-@property(copy) NSString * uniformTypeIdentifier;
-@property(copy) NSURL * videoURL;
+@property (copy) NSString *uniformTypeIdentifier;
+@property (nonatomic, copy) NSURL *videoURL;
 
 - (void).cxx_destruct;
 - (void)_invalidateAVAsset;
@@ -50,11 +48,11 @@
 - (id)imagePreview;
 - (id)init;
 - (BOOL)isMediaSubtype:(unsigned int)arg1;
-- (void)loadFullSizeImageDataWithCompletionHandler:(id)arg1;
+- (void)loadFullSizeImageDataWithCompletionHandler:(id /* block */)arg1;
 - (id)location;
 - (unsigned int)mediaSubtypes;
 - (int)mediaType;
-- (void)requestFullSizeImageURLWithCompletionHandler:(id)arg1;
+- (void)requestFullSizeImageURLWithCompletionHandler:(id /* block */)arg1;
 - (void)setAdjustmentData:(id)arg1;
 - (void)setBaseVersion:(int)arg1;
 - (void)setCreationDate:(id)arg1;

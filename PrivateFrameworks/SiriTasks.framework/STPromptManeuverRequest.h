@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STPromptManeuverRequest : AFSiriRequest {
-}
+@interface STPromptManeuverRequest : AFSiriRequest
 
 - (id)createResponse;
 

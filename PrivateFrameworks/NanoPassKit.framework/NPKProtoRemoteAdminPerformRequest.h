@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData, NSString;
-
 @interface NPKProtoRemoteAdminPerformRequest : PBRequest <NSCopying> {
     NSString *_command;
     NSData *_infoDictionary;
@@ -11,11 +9,11 @@
     NSData *_url;
 }
 
-@property(retain) NSString * command;
-@property(readonly) BOOL hasInfoDictionary;
-@property(retain) NSData * infoDictionary;
-@property(retain) NSString * seid;
-@property(retain) NSData * url;
+@property (nonatomic, retain) NSString *command;
+@property (nonatomic, readonly) BOOL hasInfoDictionary;
+@property (nonatomic, retain) NSData *infoDictionary;
+@property (nonatomic, retain) NSString *seid;
+@property (nonatomic, retain) NSData *url;
 
 - (void).cxx_destruct;
 - (id)command;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteEntryAddress, GEOPDAutocompleteEntryBusiness, GEOPDAutocompleteEntryHighlightLine, GEOPDAutocompleteEntryQuery, PBUnknownFields;
-
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying> {
     GEOPDAutocompleteEntryAddress *_address;
     GEOPDAutocompleteEntryBusiness *_business;
@@ -17,19 +15,19 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) GEOPDAutocompleteEntryAddress * address;
-@property(retain) GEOPDAutocompleteEntryBusiness * business;
-@property(readonly) BOOL hasAddress;
-@property(readonly) BOOL hasBusiness;
-@property(readonly) BOOL hasHighlightExtra;
-@property(readonly) BOOL hasHighlightMain;
-@property(readonly) BOOL hasQuery;
-@property BOOL hasType;
-@property(retain) GEOPDAutocompleteEntryHighlightLine * highlightExtra;
-@property(retain) GEOPDAutocompleteEntryHighlightLine * highlightMain;
-@property(retain) GEOPDAutocompleteEntryQuery * query;
-@property int type;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) GEOPDAutocompleteEntryAddress *address;
+@property (nonatomic, retain) GEOPDAutocompleteEntryBusiness *business;
+@property (nonatomic, readonly) BOOL hasAddress;
+@property (nonatomic, readonly) BOOL hasBusiness;
+@property (nonatomic, readonly) BOOL hasHighlightExtra;
+@property (nonatomic, readonly) BOOL hasHighlightMain;
+@property (nonatomic, readonly) BOOL hasQuery;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightExtra;
+@property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightMain;
+@property (nonatomic, retain) GEOPDAutocompleteEntryQuery *query;
+@property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (id)address;
 - (id)business;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSArray, NSUUID;
-
 @interface HMDHomeData : NSObject {
     NSArray *_accessories;
     NSArray *_homes;
@@ -11,10 +9,10 @@
     NSArray *_uuidsOfRemovedHomes;
 }
 
-@property(copy,readonly) NSArray * accessories;
-@property(copy,readonly) NSArray * homes;
-@property(copy,readonly) NSUUID * primaryHomeUUID;
-@property(copy,readonly) NSArray * uuidsOfRemovedHomes;
+@property (nonatomic, readonly, copy) NSArray *accessories;
+@property (nonatomic, readonly, copy) NSArray *homes;
+@property (nonatomic, readonly, copy) NSUUID *primaryHomeUUID;
+@property (nonatomic, readonly, copy) NSArray *uuidsOfRemovedHomes;
 
 - (void).cxx_destruct;
 - (id)accessories;

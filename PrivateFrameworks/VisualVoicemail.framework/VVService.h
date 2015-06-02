@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSError, NSRecursiveLock, NSString, PCPersistentTimer;
-
 @interface VVService : NSObject {
     BOOL _VVMDataConnectionAvailable;
     NSError *_activationError;

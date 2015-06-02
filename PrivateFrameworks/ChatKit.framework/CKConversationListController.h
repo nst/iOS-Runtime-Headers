@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversationList, CKConversationSearchResultsController, CKMessagesController, CKScheduledUpdater, NSArray, NSIndexPath, NSString, UIBarButtonItem, UISearchController, UITableView, UIToolbar, UIView;
-
 @interface CKConversationListController : UIViewController <CKConversationResultsControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIToolbar *_buttonBar;
     float _conversationCellHeight;
@@ -16,7 +14,7 @@
     NSArray *_frozenConversations;
     BOOL _isInitialLoad;
     BOOL _isShowingSwipeDeleteConfirmation;
-    unsigned int _isVisible : 1;
+    unsigned int _isVisible;
     CKMessagesController *_messagesController;
     UIView *_noMessagesDialogView;
     NSIndexPath *_previouslySelectedIndexPath;
@@ -25,29 +23,29 @@
     UITableView *_table;
     CKScheduledUpdater *_updater;
     unsigned int _willBeMarkedReadCount;
-    unsigned int _willRotate : 1;
+    unsigned int _willRotate;
 }
 
-@property float conversationCellHeight;
-@property CKConversationList * conversationList;
-@property(retain) UIBarButtonItem * currentEditButtonItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int filterMode;
-@property(retain) NSArray * filteredContactsAndSMSConversations;
-@property unsigned int filteredConversationCount;
-@property(retain) NSArray * filteredJunkConversations;
-@property(copy) NSArray * frozenConversations;
-@property(readonly) unsigned int hash;
-@property BOOL isShowingSwipeDeleteConfirmation;
-@property CKMessagesController * messagesController;
-@property(retain) UIView * noMessagesDialogView;
-@property(retain) NSIndexPath * previouslySelectedIndexPath;
-@property(retain) UISearchController * searchController;
-@property(retain) CKConversationSearchResultsController * searchResultsController;
-@property(readonly) BOOL shouldShowPendingCell;
-@property(readonly) Class superclass;
-@property(retain) CKScheduledUpdater * updater;
+@property (nonatomic) float conversationCellHeight;
+@property (nonatomic) CKConversationList *conversationList;
+@property (nonatomic, retain) UIBarButtonItem *currentEditButtonItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int filterMode;
+@property (nonatomic, retain) NSArray *filteredContactsAndSMSConversations;
+@property (nonatomic) unsigned int filteredConversationCount;
+@property (nonatomic, retain) NSArray *filteredJunkConversations;
+@property (nonatomic, copy) NSArray *frozenConversations;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isShowingSwipeDeleteConfirmation;
+@property (nonatomic) CKMessagesController *messagesController;
+@property (nonatomic, retain) UIView *noMessagesDialogView;
+@property (nonatomic, retain) NSIndexPath *previouslySelectedIndexPath;
+@property (nonatomic, retain) UISearchController *searchController;
+@property (nonatomic, retain) CKConversationSearchResultsController *searchResultsController;
+@property (nonatomic, readonly) BOOL shouldShowPendingCell;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CKScheduledUpdater *updater;
 
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_chatParticipantsChangedNotification:(id)arg1;

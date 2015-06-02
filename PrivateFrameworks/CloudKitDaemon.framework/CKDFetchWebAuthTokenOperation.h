@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDFetchWebAuthTokenOperation : CKDDatabaseOperation {
     NSString *_webAuthToken;
 }
 
-@property(copy) NSString * webAuthToken;
+@property (nonatomic, copy) NSString *webAuthToken;
 
 - (void).cxx_destruct;
 - (void)fillOutOperationResult:(id)arg1;

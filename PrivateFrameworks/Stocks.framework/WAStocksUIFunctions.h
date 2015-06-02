@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@interface WAStocksUIFunctions : NSObject {
-}
+@interface WAStocksUIFunctions : NSObject
 
 @end

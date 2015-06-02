@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLCFNotificationOperatorComposition;
-
 @interface PLVideoAgent : PLAgent {
     PLCFNotificationOperatorComposition *_VRPCreated;
     PLCFNotificationOperatorComposition *_VRPFinalized;
@@ -11,10 +9,10 @@
     PLCFNotificationOperatorComposition *_VRPPlaying;
 }
 
-@property(readonly) PLCFNotificationOperatorComposition * VRPCreated;
-@property(readonly) PLCFNotificationOperatorComposition * VRPFinalized;
-@property(readonly) PLCFNotificationOperatorComposition * VRPPaused;
-@property(readonly) PLCFNotificationOperatorComposition * VRPPlaying;
+@property (readonly) PLCFNotificationOperatorComposition *VRPCreated;
+@property (readonly) PLCFNotificationOperatorComposition *VRPFinalized;
+@property (readonly) PLCFNotificationOperatorComposition *VRPPaused;
+@property (readonly) PLCFNotificationOperatorComposition *VRPPlaying;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

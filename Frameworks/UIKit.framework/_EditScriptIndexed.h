@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _EditScriptIndexedAtom;
-
 @interface _EditScriptIndexed : _EditScript {
     _EditScriptIndexedAtom *_currentScriptAtom;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class AUImageView, AULabel, NSString, UIView;
-
 @interface InfoDiagramView : UIView <InfoDiagramCablingAnchorDelegate> {
     UIView *animatingCablingFrameView;
     AUImageView *broadbandImageView;
@@ -21,10 +19,10 @@
     AULabel *wanConnectedBaseLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (struct CGPoint { float x1; float x2; })broadbandInPoint;
 - (struct CGPoint { float x1; float x2; })broadbandOutPoint;

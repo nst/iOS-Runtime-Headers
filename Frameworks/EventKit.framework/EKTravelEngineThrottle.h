@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, PCPersistentTimer;
-
 @interface EKTravelEngineThrottle : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _adviceBlock;
-
+    id /* block */ _adviceBlock;
     PCPersistentTimer *_emissionTimer;
     NSDate *_nextEmissionDate;
     unsigned int _numberOfThrottleAdviceObjectsToEmitLater;
@@ -22,13 +12,13 @@
     NSMutableOrderedSet *_throttledAdviceQueue;
 }
 
-@property(copy) id adviceBlock;
-@property(retain) PCPersistentTimer * emissionTimer;
-@property(retain) NSDate * nextEmissionDate;
-@property unsigned int numberOfThrottleAdviceObjectsToEmitLater;
-@property BOOL running;
-@property NSObject<OS_dispatch_queue> * throttleQueue;
-@property(retain) NSMutableOrderedSet * throttledAdviceQueue;
+@property (nonatomic, copy) id /* block */ adviceBlock;
+@property (nonatomic, retain) PCPersistentTimer *emissionTimer;
+@property (nonatomic, retain) NSDate *nextEmissionDate;
+@property (nonatomic) unsigned int numberOfThrottleAdviceObjectsToEmitLater;
+@property (nonatomic) BOOL running;
+@property (nonatomic) NSObject<OS_dispatch_queue> *throttleQueue;
+@property (nonatomic, retain) NSMutableOrderedSet *throttledAdviceQueue;
 
 + (id)_throttleIdentifier;
 + (double)_throttlePeriodInSeconds;
@@ -41,7 +31,7 @@
 - (void)_uninstallEmissionTimer;
 - (void)_unregisterForNotificationObservation;
 - (void)_updateEmissionTimerWithEmissionDate:(id)arg1;
-- (id)adviceBlock;
+- (id /* block */)adviceBlock;
 - (void)dealloc;
 - (id)description;
 - (id)emissionTimer;
@@ -52,7 +42,7 @@
 - (void)removeAllThrottledAdvice;
 - (void)removeThrottledAdviceForEventWithExternalURL:(id)arg1;
 - (BOOL)running;
-- (void)setAdviceBlock:(id)arg1;
+- (void)setAdviceBlock:(id /* block */)arg1;
 - (void)setEmissionTimer:(id)arg1;
 - (void)setNextEmissionDate:(id)arg1;
 - (void)setNumberOfThrottleAdviceObjectsToEmitLater:(unsigned int)arg1;

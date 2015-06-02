@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBSystemServiceDelegate>, FBApplicationLibrary, FBSystemServiceServer, NSObject<OS_dispatch_queue>;
-
 @interface FBSystemService : NSObject {
     <FBSystemServiceDelegate> *_delegate;
     FBApplicationLibrary *_library;
@@ -11,27 +9,27 @@
     FBSystemServiceServer *_server;
 }
 
-@property <FBSystemServiceDelegate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) FBSystemServiceServer * server;
+@property (nonatomic) <FBSystemServiceDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) FBSystemServiceServer *server;
 
 + (id)sharedInstance;
 
-- (void)_activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id)arg5;
-- (void)_activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id)arg6;
+- (void)_activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
+- (void)_activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id /* block */)arg6;
 - (BOOL)_isWhitelistedLaunchSuspendedApp:(id)arg1;
 - (void)_performExitTasksForRelaunch:(BOOL)arg1;
-- (void)_reallyActivateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id)arg5;
+- (void)_reallyActivateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
 - (BOOL)_requiresOpenApplicationEntitlement:(id)arg1 options:(id)arg2 originalSource:(id)arg3;
 - (void)_terminateProcess:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;
-- (void)activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id)arg5;
-- (void)activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id)arg6;
-- (void)canActivateApplication:(id)arg1 withResult:(id)arg2;
+- (void)activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
+- (void)activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id /* block */)arg6;
+- (void)canActivateApplication:(id)arg1 withResult:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)exitAndRelaunch:(BOOL)arg1;
 - (void)exitAndRelaunch:(BOOL)arg1 withOptions:(unsigned int)arg2;
-- (void)handleActions:(id)arg1 source:(id)arg2 withResult:(id)arg3;
+- (void)handleActions:(id)arg1 source:(id)arg2 withResult:(id /* block */)arg3;
 - (id)initWithQueue:(id)arg1;
 - (int)pidForApplication:(id)arg1;
 - (void)prepareForExitAndRelaunch:(BOOL)arg1;

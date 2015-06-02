@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSString;
-
 @interface IDSServiceMonitor : NSObject {
     int _availability;
     NSString *_service;
     int _token;
 }
 
-@property(retain,readonly) NSString * service;
+@property (nonatomic, readonly, retain) NSString *service;
 
 - (void)_postAvailability:(int)arg1;
 - (void)_updateAvailability;

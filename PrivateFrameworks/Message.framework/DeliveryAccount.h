@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface DeliveryAccount : MFAccount {
-}
+@interface DeliveryAccount : MFAccount
 
 + (void)_postDeliveryAccountsHaveChanged;
 + (id)accountTypeIdentifier;

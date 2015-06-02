@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMCSSValueList : DOMCSSValue {
-}
+@interface DOMCSSValueList : DOMCSSValue
 
-@property(readonly) unsigned int length;
+@property (readonly) unsigned int length;
 
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;

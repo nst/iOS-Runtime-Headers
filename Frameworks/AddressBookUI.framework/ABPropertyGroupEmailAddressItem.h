@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyGroupEmailAddressItem : ABPropertyGroupItem {
-}
+@interface ABPropertyGroupEmailAddressItem : ABPropertyGroupItem
 
 - (id)defaultActionURL;
 

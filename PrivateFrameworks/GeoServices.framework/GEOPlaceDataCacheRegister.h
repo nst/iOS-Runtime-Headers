@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableDictionary;
-
 @interface GEOPlaceDataCacheRegister : NSObject {
     NSMutableDictionary *_caches;
 }
@@ -13,11 +11,11 @@
 - (id)allCacheEntries;
 - (id)allCaches;
 - (id)cacheForProviderID:(int)arg1;
-- (void)calculateFreeableSpaceWithHandler:(id)arg1;
+- (void)calculateFreeableSpaceWithHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (id)init;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id)arg2;
+- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
 
 @end

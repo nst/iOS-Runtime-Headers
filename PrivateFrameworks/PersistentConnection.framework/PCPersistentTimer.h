@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, PCSimpleTimer;
-
 @interface PCPersistentTimer : NSObject <CUTPowerMonitorDelegate, PCLoggingDelegate> {
     BOOL _disableSystemWaking;
     double _fireTime;
@@ -19,14 +17,14 @@
     id _userInfo;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableSystemWaking;
-@property(readonly) double fireTime;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * loggingIdentifier;
-@property double minimumEarlyFireProportion;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableSystemWaking;
+@property (nonatomic, readonly) double fireTime;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *loggingIdentifier;
+@property (nonatomic) double minimumEarlyFireProportion;
+@property (readonly) Class superclass;
 
 + (id)_backgroundUpdateQueue;
 + (double)_currentGuidanceTime;

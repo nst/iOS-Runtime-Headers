@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIComposeReviewHeaderDelegate>, NSString, SKStarRatingControl, SKUIComposeTextFieldListView, SKUIReviewMetadata, UIResponder;
-
 @interface SKUIComposeReviewHeaderView : UIView <SKUIComposeTextFieldListViewDelegate> {
     <SKUIComposeReviewHeaderDelegate> *_delegate;
     SKStarRatingControl *_ratingControl;
@@ -13,17 +11,17 @@
     SKUIComposeTextFieldListView *_textFieldListView;
 }
 
-@property(readonly) int composeReviewStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIComposeReviewHeaderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIResponder * initialFirstResponder;
-@property(readonly) NSString * nickname;
-@property float rating;
-@property(retain) SKUIReviewMetadata * review;
-@property(readonly) Class superclass;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) int composeReviewStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIComposeReviewHeaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIResponder *initialFirstResponder;
+@property (nonatomic, readonly) NSString *nickname;
+@property (nonatomic) float rating;
+@property (nonatomic, retain) SKUIReviewMetadata *review;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (int)composeReviewStyle;

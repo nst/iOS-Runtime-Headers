@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIOpenInNavigationController : UINavigationController {
-}
+@interface _UIOpenInNavigationController : UINavigationController
 
 - (id)initWithDocumentInteractionController:(id)arg1;
 - (id)initWithRootViewController:(id)arg1;

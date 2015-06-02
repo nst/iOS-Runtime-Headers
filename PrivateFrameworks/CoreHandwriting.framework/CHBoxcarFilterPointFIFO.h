@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
  */
 
-@class NSMutableArray;
-
 @interface CHBoxcarFilterPointFIFO : CHPointFIFO {
     NSMutableArray *_prevPoints;
     unsigned int _width;
 }
 
-@property(retain) NSMutableArray * prevPoints;
-@property unsigned int width;
+@property (nonatomic, retain) NSMutableArray *prevPoints;
+@property (nonatomic) unsigned int width;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clear;

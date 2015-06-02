@@ -20,13 +20,13 @@
     int _score;
 }
 
-@property BOOL hasScore;
-@property(readonly) int* intValues;
-@property(readonly) unsigned int intValuesCount;
-@property int key;
-@property(readonly) unsigned long long* longIntValues;
-@property(readonly) unsigned int longIntValuesCount;
-@property int score;
+@property (nonatomic) BOOL hasScore;
+@property (nonatomic, readonly) int*intValues;
+@property (nonatomic, readonly) unsigned int intValuesCount;
+@property (nonatomic) int key;
+@property (nonatomic, readonly) unsigned long long*longIntValues;
+@property (nonatomic, readonly) unsigned int longIntValuesCount;
+@property (nonatomic) int score;
 
 - (void)addIntValue:(int)arg1;
 - (void)addLongIntValue:(unsigned long long)arg1;

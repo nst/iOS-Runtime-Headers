@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMappedObjectStore, NSString;
-
 @interface NSPersistentStoreMap : NSObject {
     NSString *_databaseUUID;
     NSDictionary *_mappings;

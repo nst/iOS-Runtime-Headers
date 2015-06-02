@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString;
-
 @interface GKConstraintLeadingInfo : NSObject {
     NSString *_fontTextStyle;
     float _leading;
 }
 
-@property(retain) NSString * fontTextStyle;
-@property float leading;
+@property (nonatomic, retain) NSString *fontTextStyle;
+@property (nonatomic) float leading;
 
 - (void)dealloc;
 - (id)fontTextStyle;

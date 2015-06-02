@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WXCharacterRun : NSObject {
-}
+@interface WXCharacterRun : NSObject
 
 + (id)fontForRun:(id)arg1 fontType:(int)arg2;
 + (BOOL)isSpecialCharacter:(unsigned short)arg1;

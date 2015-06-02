@@ -2,30 +2,23 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <WKConnectionDelegate>, NSString;
-
 @interface WKConnection : NSObject <WKObject> {
-    struct WeakObjCPtr<id<WKConnectionDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKConnectionDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKConnectionDelegate> > { 
         id m_weakReference; 
     } _delegate;
 }
 
-@property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
-@property(copy,readonly) NSString * debugDescription;
-@property <WKConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly) struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; float x21; int x22; void*x23; void*x24; float x25; int x26; void*x27; void*x28; void*x29; }*_apiObject;
+@property (readonly, copy) NSString *debugDescription;
+@property <WKConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (struct WebConnection { int (**x1)(); id x2; int (**x3)(); int (**x4)(); struct WebConnectionClient { struct WKConnectionClientV0 { struct WKConnectionClientBase { int x_1_3_1; void *x_1_3_2; } x_1_2_1; int (*x_1_2_2)(); int (*x_1_2_3)(); } x_5_1_1; } x5; }*)_connection;
+- (struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; long long x51; void*x52; void*x53; struct  struct CGPoint { float x_1_1_1; float x_1_1_2;  {} x54; void*x55; void*x56; void*x57; void*x58; void*x59; short x60; void*x61; const void*x62; BOOL x63; void*x64; void*x65; unsigned char x66; void*x67; unsigned short x68; int x69; void*x70; void*x71; void*x72; struct  float x_2_1_1; float x_2_1_2;  {} x73; void*x74; void*x75; void*x76; void*x77; void*x78; }*)_apiObject;
+- (struct WebConnection { int (**x1)(); id x2; int (*x3)(); int (**x4)(); struct WebConnectionClient { struct WKConnectionClientV0 { struct WKConnectionClientBase { int x_1_3_1; void *x_1_3_2; } x_1_2_1; int (*x_1_2_2)(); int (*x_1_2_3)(); } x_5_1_1; } x5; }*)_connection;
 - (void)dealloc;
 - (id)delegate;
 - (void)sendMessageWithName:(id)arg1 body:(id)arg2;

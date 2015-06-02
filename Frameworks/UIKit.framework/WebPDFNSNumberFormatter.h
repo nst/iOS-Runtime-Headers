@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface WebPDFNSNumberFormatter : NSNumberFormatter {
-}
+@interface WebPDFNSNumberFormatter : NSNumberFormatter
 
 + (id)copyNumberFormater;
 

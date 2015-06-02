@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableDictionary, NSMutableSet;
-
 @interface ISUniqueOperationContext : NSObject {
     NSMutableSet *_operations;
     NSMutableDictionary *_uniqueOperations;

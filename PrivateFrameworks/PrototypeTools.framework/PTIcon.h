@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, PTIconSettings, UIImage, UIImageView, _UILegibilityLabel, _UILegibilityView;
-
 @interface PTIcon : UIView {
     _UILegibilityView *_iconLegibilityView;
     PTIconSettings *_iconSettings;
@@ -25,14 +23,14 @@
     NSString *_title;
 }
 
-@property(retain) _UILegibilityView * iconLegibilityView;
-@property(retain) PTIconSettings * iconSettings;
-@property(retain) UIImage * image;
-@property struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
-@property(retain) UIImageView * imageView;
-@property(retain) _UILegibilityLabel * label;
-@property struct __CFRunLoopObserver { }* runLoopObserver;
-@property(copy) NSString * title;
+@property (nonatomic, retain) _UILegibilityView *iconLegibilityView;
+@property (nonatomic, retain) PTIconSettings *iconSettings;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) _UILegibilityLabel *label;
+@property (nonatomic) struct __CFRunLoopObserver { }*runLoopObserver;
+@property (nonatomic, copy) NSString *title;
 
 + (id)iconWithImage:(id)arg1 title:(id)arg2;
 + (id)iconWithImageName:(id)arg1 title:(id)arg2;

@@ -6,7 +6,7 @@
     float _previousCellHeight;
 }
 
-@property float previousCellHeight;
+@property (nonatomic) float previousCellHeight;
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 

@@ -10,11 +10,11 @@
     BOOL _isBusy;
 }
 
-@property int UIBusyCount;
-@property unsigned int assertionID;
-@property int busyCount;
-@property BOOL isAssertingPowerAssertion;
-@property BOOL isBusy;
+@property (nonatomic) int UIBusyCount;
+@property (nonatomic) unsigned int assertionID;
+@property (nonatomic) int busyCount;
+@property (nonatomic) BOOL isAssertingPowerAssertion;
+@property (nonatomic) BOOL isBusy;
 
 + (id)sharedManager;
 

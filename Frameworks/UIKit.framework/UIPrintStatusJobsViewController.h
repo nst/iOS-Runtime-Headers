@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIPrintingMessageView;
-
 @interface UIPrintStatusJobsViewController : UITableViewController {
     BOOL _autoPush;
     NSArray *_jobs;

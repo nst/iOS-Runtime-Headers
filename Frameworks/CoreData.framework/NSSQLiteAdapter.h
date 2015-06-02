@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLiteAdapter : NSSQLAdapter {
     NSString *_dbpath;
 }

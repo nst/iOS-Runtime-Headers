@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionId : 1; 
@@ -16,12 +14,12 @@
     NSString *_uriScheme;
 }
 
-@property BOOL hasSessionId;
-@property(readonly) BOOL hasSourceAppBundleId;
-@property(readonly) BOOL hasUriScheme;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionId;
-@property(retain) NSString * sourceAppBundleId;
-@property(retain) NSString * uriScheme;
+@property (nonatomic) BOOL hasSessionId;
+@property (nonatomic, readonly) BOOL hasSourceAppBundleId;
+@property (nonatomic, readonly) BOOL hasUriScheme;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic, retain) NSString *sourceAppBundleId;
+@property (nonatomic, retain) NSString *uriScheme;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

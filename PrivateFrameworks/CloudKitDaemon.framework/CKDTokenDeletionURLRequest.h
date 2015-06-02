@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDTokenDeletionURLRequest : CKDURLRequest {
     NSString *_bundleID;
     NSData *_token;
 }
 
-@property(retain) NSString * bundleID;
-@property(retain) NSData * token;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSData *token;
 
 - (void).cxx_destruct;
 - (id)bundleID;

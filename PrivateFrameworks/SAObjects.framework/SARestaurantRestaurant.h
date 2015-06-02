@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, NSURL;
+@interface SARestaurantRestaurant : SALocalSearchBusiness2
 
-@interface SARestaurantRestaurant : SALocalSearchBusiness2 {
-}
-
-@property(copy) NSArray * attributeSet;
-@property(copy) NSString * currencySymbol;
-@property(copy) NSArray * makeReservationPunchOuts;
-@property(copy) NSURL * menuLink;
-@property(copy) NSArray * openings;
-@property(copy) NSArray * orderDeliveryPunchOuts;
-@property(copy) NSString * priceRange;
+@property (nonatomic, copy) NSArray *attributeSet;
+@property (nonatomic, copy) NSString *currencySymbol;
+@property (nonatomic, copy) NSArray *makeReservationPunchOuts;
+@property (nonatomic, copy) NSURL *menuLink;
+@property (nonatomic, copy) NSArray *openings;
+@property (nonatomic, copy) NSArray *orderDeliveryPunchOuts;
+@property (nonatomic, copy) NSString *priceRange;
 
 + (id)restaurant;
 + (id)restaurantWithDictionary:(id)arg1 context:(id)arg2;

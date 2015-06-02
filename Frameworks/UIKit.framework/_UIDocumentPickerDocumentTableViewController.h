@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSURL, UIActivityIndicatorView, _UIDocumentPickerContainerModel, _UIDocumentPickerSortOrderView, _UIDocumentPickerViewServiceViewController;
-
 @interface _UIDocumentPickerDocumentTableViewController : UITableViewController <_UIDocumentPickerContainedViewController> {
     UIActivityIndicatorView *_initialActivityView;
     _UIDocumentPickerContainerModel *_model;
@@ -15,18 +13,18 @@
     _UIDocumentPickerViewServiceViewController *_weak_serviceViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIActivityIndicatorView * initialActivityView;
-@property(retain) _UIDocumentPickerContainerModel * model;
-@property(retain) id monitoringToken;
-@property(retain) NSURL * observedURL;
-@property _UIDocumentPickerViewServiceViewController * serviceViewController;
-@property BOOL shouldHideSortBar;
-@property(retain) _UIDocumentPickerSortOrderView * sortView;
-@property(readonly) Class superclass;
-@property BOOL updatesMayAnimate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIActivityIndicatorView *initialActivityView;
+@property (nonatomic, retain) _UIDocumentPickerContainerModel *model;
+@property (nonatomic, retain) id monitoringToken;
+@property (nonatomic, retain) NSURL *observedURL;
+@property (nonatomic) _UIDocumentPickerViewServiceViewController *serviceViewController;
+@property (nonatomic) BOOL shouldHideSortBar;
+@property (nonatomic, retain) _UIDocumentPickerSortOrderView *sortView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL updatesMayAnimate;
 
 - (void)_dynamicTypeSizeChanged:(id)arg1;
 - (void)_unlockAnimations;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIColor, UIImageView, UIView;
-
 @interface UISnapshotView : UIView <UIStatusBarTinting> {
     struct UIEdgeInsets { 
         float top; 
@@ -19,8 +17,8 @@
         float width; 
         float height; 
     } _contentSize;
-    unsigned int _disableEdgeAntialiasing : 1;
-    unsigned int _disableVerticalStretch : 1;
+    unsigned int _disableEdgeAntialiasing;
+    unsigned int _disableVerticalStretch;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -50,21 +48,21 @@
     UIColor *_statusBarTintColor;
 }
 
-@property(setter=_setStatusBarTintColor:,retain) UIColor * _statusBarTintColor;
-@property(getter=_contentOffset,setter=_setContentOffset:) struct CGPoint { float x1; float x2; } contentOffset;
-@property(getter=_contentSize,readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEdgeAntialiasingEnabled) BOOL edgeAntialiasingEnabled;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
-@property(retain) UIColor * edgePaddingColor;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * shadowView;
-@property(getter=_snapshotRect,setter=_setSnapshotRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
-@property(getter=_snapshotView,readonly) UIView * snapshotView;
-@property(readonly) Class superclass;
-@property(getter=isVerticalStretchEnabled) BOOL verticalStretchEnabled;
+@property (setter=_setStatusBarTintColor:, nonatomic, retain) UIColor *_statusBarTintColor;
+@property (getter=_contentOffset, setter=_setContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (getter=_contentSize, nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEdgeAntialiasingEnabled, nonatomic) BOOL edgeAntialiasingEnabled;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
+@property (nonatomic, retain) UIColor *edgePaddingColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *shadowView;
+@property (getter=_snapshotRect, setter=_setSnapshotRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotRect;
+@property (getter=_snapshotView, nonatomic, readonly) UIView *snapshotView;
+@property (readonly) Class superclass;
+@property (getter=isVerticalStretchEnabled, nonatomic) BOOL verticalStretchEnabled;
 
 - (void)_addEdgePaddingViewInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_contentOffset;

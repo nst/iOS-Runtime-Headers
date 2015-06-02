@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString, UIFont, UIImageView, UILabel;
-
 @interface SLFacebookLoginInfoCellContentView : UIView {
     UIImageView *_addressBookIcon;
     UILabel *_addressBookLabel;

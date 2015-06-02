@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, UIColor, UIImage;
-
 @interface SKUIProductPageHeaderLabel : UIView {
     NSString *_contentRating;
     UIImage *_contentRatingImage;
@@ -14,12 +12,12 @@
     UIColor *_textColor;
 }
 
-@property(retain) NSString * contentRating;
-@property BOOL isPad;
-@property(retain) UIColor * ratingColor;
-@property(retain) NSArray * secondaryContentRatingImages;
-@property(copy) NSString * text;
-@property(retain) UIColor * textColor;
+@property (nonatomic, retain) NSString *contentRating;
+@property (nonatomic) BOOL isPad;
+@property (nonatomic, retain) UIColor *ratingColor;
+@property (nonatomic, retain) NSArray *secondaryContentRatingImages;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)_imageForContentRating:(id)arg1;

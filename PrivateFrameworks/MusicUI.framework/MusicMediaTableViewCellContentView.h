@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPUEmphasizedText, MPUItemOfferButton, MPUSlantedTextPlaceholderArtworkView, MusicMediaOfferButtonState, MusicNowPlayingIndicatorView, NSString, UIImage, UIImageView, UILabel;
-
 @interface MusicMediaTableViewCellContentView : MusicTableViewCellContentView <SKUIItemOfferButtonDelegate> {
     UIImage *_artworkImage;
     MPUSlantedTextPlaceholderArtworkView *_artworkView;
@@ -26,11 +20,7 @@
     MPUItemOfferButton *_itemOfferButton;
     BOOL _needsContentReload;
     MusicNowPlayingIndicatorView *_nowPlayingIndicatorView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _offerButtonActionHandler;
-
+    id /* block */ _offerButtonActionHandler;
     MusicMediaOfferButtonState *_offerButtonState;
     NSString *_placeholderSubtitleText;
     NSString *_placeholderTitleText;
@@ -46,35 +36,35 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * artworkImage;
-@property(retain) MPUSlantedTextPlaceholderArtworkView * artworkView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentBoundsEdgeInsets;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) MPUEmphasizedText * detailEmphasizedText;
-@property(retain) UILabel * detailLabel;
-@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
-@property(getter=isEditing) BOOL editing;
-@property(getter=isExplicitTrack) BOOL explicitTrack;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) MPUItemOfferButton * itemOfferButton;
-@property(retain) MusicNowPlayingIndicatorView * nowPlayingIndicatorView;
-@property(copy) id offerButtonActionHandler;
-@property(retain) MusicMediaOfferButtonState * offerButtonState;
-@property(copy) NSString * placeholderSubtitleText;
-@property(copy) NSString * placeholderTitleText;
-@property int playbackState;
-@property(retain) UIImage * rightAccessoryHighlightedImage;
-@property(retain) UIImage * rightAccessoryImage;
-@property(retain) UIImageView * rightAccessoryImageView;
-@property(getter=isSelected) BOOL selected;
-@property BOOL showsArtworkImage;
-@property(copy) MPUEmphasizedText * subtitleEmphasizedText;
-@property(retain) UILabel * subtitleLabel;
-@property(readonly) Class superclass;
-@property(copy) MPUEmphasizedText * titleEmphasizedText;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic, retain) MPUSlantedTextPlaceholderArtworkView *artworkView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentBoundsEdgeInsets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) MPUEmphasizedText *detailEmphasizedText;
+@property (nonatomic, retain) UILabel *detailLabel;
+@property (getter=isDisplayingAsDisabled, nonatomic) BOOL displayAsDisabled;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (getter=isExplicitTrack, nonatomic) BOOL explicitTrack;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) MPUItemOfferButton *itemOfferButton;
+@property (nonatomic, retain) MusicNowPlayingIndicatorView *nowPlayingIndicatorView;
+@property (nonatomic, copy) id /* block */ offerButtonActionHandler;
+@property (nonatomic, retain) MusicMediaOfferButtonState *offerButtonState;
+@property (nonatomic, copy) NSString *placeholderSubtitleText;
+@property (nonatomic, copy) NSString *placeholderTitleText;
+@property (nonatomic) int playbackState;
+@property (nonatomic, retain) UIImage *rightAccessoryHighlightedImage;
+@property (nonatomic, retain) UIImage *rightAccessoryImage;
+@property (nonatomic, retain) UIImageView *rightAccessoryImageView;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) BOOL showsArtworkImage;
+@property (nonatomic, copy) MPUEmphasizedText *subtitleEmphasizedText;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) MPUEmphasizedText *titleEmphasizedText;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 + (struct CGSize { float x1; float x2; })artworkSize;
@@ -106,7 +96,7 @@
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutSubviews;
 - (id)nowPlayingIndicatorView;
-- (id)offerButtonActionHandler;
+- (id /* block */)offerButtonActionHandler;
 - (id)offerButtonState;
 - (id)placeholderSubtitleText;
 - (id)placeholderTitleText;
@@ -130,7 +120,7 @@
 - (void)setItemOfferButton:(id)arg1;
 - (void)setNeedsContentReload;
 - (void)setNowPlayingIndicatorView:(id)arg1;
-- (void)setOfferButtonActionHandler:(id)arg1;
+- (void)setOfferButtonActionHandler:(id /* block */)arg1;
 - (void)setOfferButtonState:(id)arg1;
 - (void)setOfferButtonState:(id)arg1 animated:(BOOL)arg2;
 - (void)setPlaceholderSubtitleText:(id)arg1;

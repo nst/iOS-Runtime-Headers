@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class FTMessageQueue, IDSBaseMessage, IMTimer, NSArray, NSNumber, NSString;
-
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
     BOOL _logToRegistration;
     unsigned int _maxConcurrentMessages;
@@ -15,18 +13,18 @@
     NSString *_userAgent;
 }
 
-@property(readonly) NSArray * allMessages;
-@property(readonly) BOOL busy;
-@property(readonly) IDSBaseMessage * currentMessage;
-@property(readonly) BOOL hasQueuedItems;
+@property (readonly) NSArray *allMessages;
+@property (readonly) BOOL busy;
+@property (readonly) IDSBaseMessage *currentMessage;
+@property (readonly) BOOL hasQueuedItems;
 @property BOOL logToRegistration;
 @property unsigned int maxConcurrentMessages;
-@property(readonly) int maxLargeMessageSize;
-@property(readonly) int maxMessageSize;
-@property(copy) NSNumber * protocolVersion;
-@property(readonly) NSArray * queuedMessages;
+@property (readonly) int maxLargeMessageSize;
+@property (readonly) int maxMessageSize;
+@property (copy) NSNumber *protocolVersion;
+@property (readonly) NSArray *queuedMessages;
 @property BOOL retryInAirplaneMode;
-@property(copy) NSString * userAgent;
+@property (copy) NSString *userAgent;
 
 + (Class)APNSMessageDeliveryClass;
 + (Class)HTTPMessageDeliveryClass;

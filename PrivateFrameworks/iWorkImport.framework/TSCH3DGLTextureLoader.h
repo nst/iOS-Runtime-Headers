@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DGLTextureLoader : TSCH3DResourceLoader {
-}
+@interface TSCH3DGLTextureLoader : TSCH3DResourceLoader
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString;
-
 @interface NSUndoManager : NSObject {
     unsigned long long _NSUndoManagerPrivate1;
     void *_NSUndoManagerPrivate2;
@@ -15,21 +13,21 @@
     id _undoStack;
 }
 
-@property(readonly) BOOL canRedo;
-@property(readonly) BOOL canUndo;
-@property(readonly) int groupingLevel;
+@property (readonly) BOOL canRedo;
+@property (readonly) BOOL canUndo;
+@property (readonly) int groupingLevel;
 @property BOOL groupsByEvent;
 @property unsigned int levelsOfUndo;
-@property(readonly) BOOL redoActionIsDiscardable;
-@property(copy,readonly) NSString * redoActionName;
-@property(copy,readonly) NSString * redoMenuItemTitle;
-@property(getter=isRedoing,readonly) BOOL redoing;
-@property(copy) NSArray * runLoopModes;
-@property(readonly) BOOL undoActionIsDiscardable;
-@property(copy,readonly) NSString * undoActionName;
-@property(copy,readonly) NSString * undoMenuItemTitle;
-@property(getter=isUndoRegistrationEnabled,readonly) BOOL undoRegistrationEnabled;
-@property(getter=isUndoing,readonly) BOOL undoing;
+@property (readonly) BOOL redoActionIsDiscardable;
+@property (readonly, copy) NSString *redoActionName;
+@property (readonly, copy) NSString *redoMenuItemTitle;
+@property (getter=isRedoing, readonly) BOOL redoing;
+@property (copy) NSArray *runLoopModes;
+@property (readonly) BOOL undoActionIsDiscardable;
+@property (readonly, copy) NSString *undoActionName;
+@property (readonly, copy) NSString *undoMenuItemTitle;
+@property (getter=isUndoRegistrationEnabled, readonly) BOOL undoRegistrationEnabled;
+@property (getter=isUndoing, readonly) BOOL undoing;
 
 + (void)_endTopLevelGroupings;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;

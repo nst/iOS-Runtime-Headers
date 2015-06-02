@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCharacterSet;
-
 @interface _NSPlaceholderCharacterSet : NSCharacterSet {
     struct { 
         unsigned int _inverted : 1; 

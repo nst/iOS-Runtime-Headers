@@ -2,40 +2,26 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface GEONavigationListener : NSObject {
     NSObject<OS_xpc_object> *_connection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _guidanceStateUpdatedHandler;
-
+    id /* block */ _guidanceStateUpdatedHandler;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _routeSummaryUpdatedHandler;
-
+    id /* block */ _routeSummaryUpdatedHandler;
 }
 
-@property(copy) id guidanceStateUpdatedHandler;
-@property(copy) id routeSummaryUpdatedHandler;
+@property (nonatomic, copy) id /* block */ guidanceStateUpdatedHandler;
+@property (nonatomic, copy) id /* block */ routeSummaryUpdatedHandler;
 
 - (void)_closeConnection;
 - (void)_createConnection;
 - (void)_request:(id)arg1;
 - (void)dealloc;
-- (id)guidanceStateUpdatedHandler;
+- (id /* block */)guidanceStateUpdatedHandler;
 - (id)initWithQueue:(id)arg1;
 - (void)requestGuidanceState;
 - (void)requestRouteSummary;
-- (id)routeSummaryUpdatedHandler;
-- (void)setGuidanceStateUpdatedHandler:(id)arg1;
-- (void)setRouteSummaryUpdatedHandler:(id)arg1;
+- (id /* block */)routeSummaryUpdatedHandler;
+- (void)setGuidanceStateUpdatedHandler:(id /* block */)arg1;
+- (void)setRouteSummaryUpdatedHandler:(id /* block */)arg1;
 
 @end

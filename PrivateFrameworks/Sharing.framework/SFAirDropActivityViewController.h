@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class ALAssetsLibrary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<SFAirDropActivityViewControllerDelegate>, NSOperationQueue, NSString, SFAirDropActiveIconView, SFAirDropBrowser, SFAirDropIconView, SFCollectionViewFlowLayout, SFWirelessSettingsController, UICollectionView, UILabel;
-
 @interface SFAirDropActivityViewController : UIViewController <SFAirDropBrowserDelegate, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     NSLayoutConstraint *_airDropActiveIconLeftConstraint;
     SFAirDropActiveIconView *_airDropActiveIconView;
@@ -43,15 +41,15 @@
     SFWirelessSettingsController *_wirelessSettings;
 }
 
-@property BOOL darkStyleOnLegacyApp;
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<SFAirDropActivityViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL otherActivityViewPresented;
-@property BOOL sharedItemsAvailable;
-@property(readonly) struct CGSize { float x1; float x2; } suggestedThumbnailSize;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL darkStyleOnLegacyApp;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<SFAirDropActivityViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL otherActivityViewPresented;
+@property (nonatomic) BOOL sharedItemsAvailable;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } suggestedThumbnailSize;
+@property (readonly) Class superclass;
 
 + (BOOL)airDropActivityCanPerformActivityWithItems:(id)arg1;
 + (id)classesForItem:(id)arg1;
@@ -77,7 +75,7 @@
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
-- (BOOL)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id)arg6;
+- (BOOL)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id /* block */)arg6;
 - (BOOL)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)delegate;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUMutableRetainedPointerSet : OITSUMutablePointerSet {
-}
+@interface OITSUMutableRetainedPointerSet : OITSUMutablePointerSet
 
 + (Class)privateMutableClass;
 + (Class)privateNonMutableClass;

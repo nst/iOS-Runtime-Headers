@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKNode, SKRange;
-
 @interface SKDistanceConstraint : SKConstraint {
     SKRange *_distanceRange;
     SKNode *_node;
@@ -13,8 +11,8 @@
     } _point;
 }
 
-@property(copy) SKRange * distanceRange;
-@property SKNode * node;
+@property (copy) SKRange *distanceRange;
+@property SKNode *node;
 @property struct CGPoint { float x1; float x2; } point;
 
 + (id)constraintWithNode:(id)arg1 distanceRange:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSUPerformanceTestHarness : NSObject {
     BOOL mPassed;
     int mPassingTests;
@@ -16,10 +14,10 @@
     int mTotalTests;
 }
 
-@property(readonly) BOOL passed;
-@property(readonly) int passingTestCount;
-@property BOOL quiet;
-@property(readonly) int testCount;
+@property (nonatomic, readonly) BOOL passed;
+@property (nonatomic, readonly) int passingTestCount;
+@property (nonatomic) BOOL quiet;
+@property (nonatomic, readonly) int testCount;
 
 + (id)harness;
 

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface WBSCloudTabStore : NSObject {
     NSMutableDictionary *_deviceUUIDsToCloseRequests;
     NSMutableArray *_syncedCloudTabDevices;
 }
 
-@property(copy,readonly) NSArray * syncedCloudTabDevices;
+@property (nonatomic, readonly, copy) NSArray *syncedCloudTabDevices;
 
 - (void).cxx_destruct;
 - (void)_addCloseRequestDictionary:(id)arg1 requestUUID:(id)arg2;

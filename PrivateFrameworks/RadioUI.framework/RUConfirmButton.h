@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUConfirmButtonDelegate>, NSMutableDictionary, RUFocusedTouchGestureRecognizer, UIImageView, UILabel;
-
 @interface RUConfirmButton : UIButton {
     BOOL _attemptsToUseMaximumSize;
     UIImageView *_confirmBackgroundImageView;
@@ -23,14 +21,14 @@
     } _touchAllowance;
 }
 
-@property BOOL attemptsToUseMaximumSize;
-@property(readonly) UILabel * confirmLabel;
-@property Class confirmLabelClass;
-@property(readonly) UILabel * defaultLabel;
-@property Class defaultLabelClass;
-@property <RUConfirmButtonDelegate> * delegate;
-@property(getter=isShowingConfirmation) BOOL showingConfirmation;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchAllowance;
+@property (nonatomic) BOOL attemptsToUseMaximumSize;
+@property (nonatomic, readonly) UILabel *confirmLabel;
+@property (nonatomic) Class confirmLabelClass;
+@property (nonatomic, readonly) UILabel *defaultLabel;
+@property (nonatomic) Class defaultLabelClass;
+@property (nonatomic) <RUConfirmButtonDelegate> *delegate;
+@property (getter=isShowingConfirmation, nonatomic) BOOL showingConfirmation;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchAllowance;
 
 + (id)confirmButton;
 
@@ -59,7 +57,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFont:(id)arg1 forState:(unsigned int)arg2;
 - (void)setShowingConfirmation:(BOOL)arg1;
-- (void)setShowingConfirmation:(BOOL)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned int)arg4 animationCompletionHandler:(id)arg5;
+- (void)setShowingConfirmation:(BOOL)arg1 animationDuration:(double)arg2 animationDelay:(double)arg3 animationOptions:(unsigned int)arg4 animationCompletionHandler:(id /* block */)arg5;
 - (void)setTitleShadowOffset:(struct CGSize { float x1; float x2; })arg1 forState:(unsigned int)arg2;
 - (void)setTouchAllowance:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

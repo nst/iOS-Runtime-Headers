@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class HSConnection, NSString, SSAccount;
-
 @interface HSCloudLibrary : NSObject {
     SSAccount *_account;
     HSConnection *_connection;
@@ -11,10 +9,10 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(readonly) SSAccount * account;
-@property(readonly) HSConnection * connection;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSString * uniqueIdentifier;
+@property (nonatomic, readonly) SSAccount *account;
+@property (nonatomic, readonly) HSConnection *connection;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)account;

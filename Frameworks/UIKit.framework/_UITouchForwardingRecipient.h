@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder;
-
 @interface _UITouchForwardingRecipient : NSObject {
     int autocompletedPhase;
     UIResponder *fromResponder;
@@ -11,10 +9,10 @@
     UIResponder *responder;
 }
 
-@property int autocompletedPhase;
-@property UIResponder * fromResponder;
-@property int recordedPhase;
-@property UIResponder * responder;
+@property (nonatomic) int autocompletedPhase;
+@property (nonatomic) UIResponder *fromResponder;
+@property (nonatomic) int recordedPhase;
+@property (nonatomic) UIResponder *responder;
 
 - (int)autocompletedPhase;
 - (id)description;

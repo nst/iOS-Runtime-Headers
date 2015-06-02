@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUCustomFormat;
-
 @interface TSTTableDataCustomFormat : TSTTableDataObject {
     TSUCustomFormat *mCustomFormat;
 }

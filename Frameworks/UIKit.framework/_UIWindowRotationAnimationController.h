@@ -2,31 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _UIWindowRotationAnimationController : _UIWindowAnimationController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animations;
-
+    id /* block */ _animations;
     double _duration;
     BOOL _skipCallbacks;
     BOOL _updateStatusBarIfNecessary;
 }
 
-@property(copy) id animations;
-@property double duration;
-@property BOOL skipCallbacks;
-@property BOOL updateStatusBarIfNecessary;
+@property (nonatomic, copy) id /* block */ animations;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL skipCallbacks;
+@property (nonatomic) BOOL updateStatusBarIfNecessary;
 
 - (void)animateTransition:(id)arg1;
-- (id)animations;
+- (id /* block */)animations;
 - (void)dealloc;
 - (double)duration;
-- (void)setAnimations:(id)arg1;
+- (void)setAnimations:(id /* block */)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setSkipCallbacks:(BOOL)arg1;
 - (void)setUpdateStatusBarIfNecessary:(BOOL)arg1;

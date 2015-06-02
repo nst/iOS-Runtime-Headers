@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFMarkupAnnotation : UIPDFAnnotation {
-}
+@interface UIPDFMarkupAnnotation : UIPDFAnnotation
 
 @end

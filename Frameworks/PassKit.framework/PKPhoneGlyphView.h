@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CALayer, NSString;
-
 @interface PKPhoneGlyphView : PKMicaView {
     CALayer *_highlightLayer;
     struct CGPoint { 

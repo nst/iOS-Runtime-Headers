@@ -21,7 +21,7 @@
 + (BOOL)hasLearnedWord:(id)arg1;
 + (void)learnWord:(id)arg1;
 + (id)openUserDictionary:(id)arg1;
-+ (void)queryLocalUpdateAssets:(id)arg1;
++ (void)queryLocalUpdateAssets:(id /* block */)arg1;
 + (void)setString:(id)arg1 isExemptFromChecker:(BOOL)arg2;
 + (int)uniqueSpellDocumentTag;
 + (void)unlearnWord:(id)arg1;

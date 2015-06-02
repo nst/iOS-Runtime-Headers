@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKGlyphViewDelegate>, NSMutableArray, NSString, PKCheckGlyphView, PKFingerprintGlyphView, PKPhoneGlyphView, UIColor, UIImage, UIImageView;
-
 @interface PKGlyphView : UIView {
     PKCheckGlyphView *_checkView;
     UIImage *_customImage;
@@ -28,14 +26,14 @@
     BOOL _transitioning;
 }
 
-@property(retain) UIImage * customImage;
-@property <PKGlyphViewDelegate> * delegate;
-@property(copy) UIColor * primaryColor;
-@property(copy) UIColor * secondaryColor;
-@property(readonly) int state;
+@property (nonatomic, retain) UIImage *customImage;
+@property (nonatomic) <PKGlyphViewDelegate> *delegate;
+@property (nonatomic, copy) UIColor *primaryColor;
+@property (nonatomic, copy) UIColor *secondaryColor;
+@property (nonatomic, readonly) int state;
 
 - (void)_endPhoneWiggle;
-- (void)_executeAfterMinimumAnimationDurationForStateTransition:(id)arg1;
+- (void)_executeAfterMinimumAnimationDurationForStateTransition:(id /* block */)arg1;
 - (void)_executeTransitionCompletionHandlers:(BOOL)arg1;
 - (void)_finishTransitionForIndex:(unsigned int)arg1;
 - (double)_minimumAnimationDurationForStateTransition;
@@ -64,7 +62,7 @@
 - (void)setSecondaryColor:(id)arg1;
 - (void)setSecondaryColor:(id)arg1 animated:(BOOL)arg2;
 - (void)setState:(int)arg1;
-- (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (int)state;
 
 @end

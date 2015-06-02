@@ -6,7 +6,7 @@
     BOOL _onlyShowsFourButtons;
 }
 
-@property BOOL onlyShowsFourButtons;
+@property (nonatomic) BOOL onlyShowsFourButtons;
 
 - (void)_addButtonAtPosition:(int)arg1 withIcon:(id)arg2 title:(id)arg3;
 - (void)addButtons;

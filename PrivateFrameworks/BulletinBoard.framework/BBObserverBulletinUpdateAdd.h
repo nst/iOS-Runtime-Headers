@@ -6,7 +6,7 @@
     BOOL _shouldPlayLightsAndSirens;
 }
 
-@property(readonly) BOOL shouldPlayLightsAndSirens;
+@property (nonatomic, readonly) BOOL shouldPlayLightsAndSirens;
 
 + (BOOL)supportsSecureCoding;
 

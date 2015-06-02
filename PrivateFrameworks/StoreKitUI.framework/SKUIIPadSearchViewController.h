@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISearchChildViewControllerDelegate>, NSArray, NSDictionary, NSMutableDictionary, NSString, SKUIClientContext, SKUIIPadSearchHeaderView, SKUIItemCollectionController, SKUIMetricsController, SKUISearchPage, SKUISearchRelatedView, SKUISearchResultGroupController, UICollectionView;
-
 @interface SKUIIPadSearchViewController : UIViewController <SKUIIPadSearchHeaderViewDelegate, SKUIItemCollectionDelegate, SKUIMetricsViewController, SKUISearchRelatedViewDelegate, SKUISearchResultGroupControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerRestoration> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
@@ -21,17 +19,17 @@
     SKUISearchResultGroupController *_searchResultGroupController;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUISearchChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * facetSelections;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIMetricsController * metricsController;
-@property(readonly) NSString * previousRelatedSearchTerm;
-@property(retain) NSArray * searchFacets;
-@property(readonly) SKUISearchPage * searchPage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUISearchChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *facetSelections;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIMetricsController *metricsController;
+@property (nonatomic, readonly) NSString *previousRelatedSearchTerm;
+@property (nonatomic, retain) NSArray *searchFacets;
+@property (nonatomic, readonly) SKUISearchPage *searchPage;
+@property (readonly) Class superclass;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

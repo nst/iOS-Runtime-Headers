@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIKeyboardCandidateListDelegate>, <UIKeyboardCandidateRowViewControllerDelegate>, NSArray, NSString, TIKeyboardCandidateResultSet, UIKBCandidateCollectionView;
-
 @interface UIKeyboardCandidateRowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIKeyboardCandidateList> {
     <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
     TIKeyboardCandidateResultSet *_candidateSet;
@@ -12,17 +10,17 @@
     BOOL _showsHiddenCandidates;
 }
 
-@property <UIKeyboardCandidateListDelegate> * candidateListDelegate;
-@property(retain) TIKeyboardCandidateResultSet * candidateSet;
-@property(readonly) NSArray * candidates;
-@property(retain) Class cellClass;
-@property(readonly) UIKBCandidateCollectionView * collectionView;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIKeyboardCandidateRowViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL showsHiddenCandidates;
-@property(readonly) Class superclass;
+@property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;
+@property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateSet;
+@property (nonatomic, readonly) NSArray *candidates;
+@property (nonatomic, retain) Class cellClass;
+@property (nonatomic, readonly) UIKBCandidateCollectionView *collectionView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIKeyboardCandidateRowViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL showsHiddenCandidates;
+@property (readonly) Class superclass;
 
 + (float)suggestedHeightForCellClass:(Class)arg1;
 

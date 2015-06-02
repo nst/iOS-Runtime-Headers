@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMediaSelectionGroupInternal, AVMediaSelectionOption, NSArray;
-
 @interface AVMediaSelectionGroup : NSObject <NSCopying> {
     AVMediaSelectionGroupInternal *_mediaSelectionGroup;
 }
 
-@property(readonly) BOOL allowsEmptySelection;
-@property(readonly) AVMediaSelectionOption * defaultOption;
-@property(readonly) NSArray * options;
+@property (nonatomic, readonly) BOOL allowsEmptySelection;
+@property (nonatomic, readonly) AVMediaSelectionOption *defaultOption;
+@property (nonatomic, readonly) NSArray *options;
 
 + (id)mediaSelectionGroupWithAsset:(id)arg1 dictionary:(id)arg2;
 + (id)mediaSelectionOptionsFromArray:(id)arg1 filteredAndSortedAccordingToPreferredLanguages:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray, NSLock;
-
 @interface GEOMapService : NSObject {
     NSArray *_preferredLanguages;
     NSLock *_preferredLanguagesLock;
@@ -16,7 +14,7 @@
 - (id)_cl_ticketForReverseGeocodeLocation:(id)arg1 traits:(id)arg2;
 - (id)_geoMapItemForData:(id)arg1;
 - (id)_geoMapItemForData:(id)arg1 withSource:(unsigned int)arg2;
-- (void)_geoMapItemsForResponseData:(id)arg1 handler:(id)arg2;
+- (void)_geoMapItemsForResponseData:(id)arg1 handler:(id /* block */)arg2;
 - (id)_geoMapItemsForUpdatedPlacesInResolution:(id)arg1;
 - (void)_localeChanged:(id)arg1;
 - (id)_preferredLanguages;

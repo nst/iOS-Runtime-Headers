@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIBackdropView;
-
 @interface _UIBackdropViewLayer : CALayer {
     _UIBackdropView *_backdropView;
 }
 
-@property _UIBackdropView * backdropView;
+@property (nonatomic) _UIBackdropView *backdropView;
 
 - (id)backdropView;
 - (void)dealloc;

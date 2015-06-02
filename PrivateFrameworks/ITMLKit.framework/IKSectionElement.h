@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKHeaderElement, NSArray;
-
 @interface IKSectionElement : IKViewElement {
     NSArray *_items;
 }
 
-@property(retain,readonly) IKHeaderElement * header;
-@property(retain,readonly) NSArray * items;
+@property (nonatomic, readonly, retain) IKHeaderElement *header;
+@property (nonatomic, readonly, retain) NSArray *items;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

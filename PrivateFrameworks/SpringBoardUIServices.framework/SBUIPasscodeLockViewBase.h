@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class <SBFLegibilitySettingsProvider>, <SBUIPasscodeLockViewDelegate>, <SBUIPasscodeLockViewDelegate_Internal>, NSString, SBUIPasscodeEntryField, UIColor, _UILegibilitySettings;
-
 @interface SBUIPasscodeLockViewBase : UIView <SBFLegibilitySettingsProviderDelegate, SBUIBiometricEventObserver, SBUIPasscodeLockView, SBUIPasscodeLockView_Internal> {
     BOOL _allowsStatusTextUpdatingOnResignFirstResponder;
     BOOL _appearingForSmartCoverUnlock;
@@ -32,27 +30,27 @@
     int _style;
 }
 
-@property(getter=_entryField,setter=_setEntryField:,retain) SBUIPasscodeEntryField * _entryField;
-@property float backgroundAlpha;
-@property(retain) <SBFLegibilitySettingsProvider> * backgroundLegibilitySettingsProvider;
-@property unsigned int biometricMatchMode;
-@property(retain) UIColor * customBackgroundColor;
-@property(copy,readonly) NSString * debugDescription;
-@property <SBUIPasscodeLockViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=_luminosityBoost,setter=_setLuminosityBoost:) float luminosityBoost;
-@property(readonly) NSString * passcode;
-@property BOOL playsKeypadSounds;
-@property(getter=isScreenOn) BOOL screenOn;
-@property BOOL shouldResetForFailedPasscodeAttempt;
-@property BOOL showsEmergencyCallButton;
-@property BOOL showsStatusField;
-@property(getter=_statusState,setter=_setStatusState:) unsigned int statusState;
-@property(getter=_statusSubtitleText,copy,readonly) NSString * statusSubtitleText;
-@property(getter=_statusText,copy,readonly) NSString * statusText;
-@property int style;
-@property(readonly) Class superclass;
+@property (getter=_entryField, setter=_setEntryField:, nonatomic, retain) SBUIPasscodeEntryField *_entryField;
+@property (nonatomic) float backgroundAlpha;
+@property (nonatomic, retain) <SBFLegibilitySettingsProvider> *backgroundLegibilitySettingsProvider;
+@property (nonatomic) unsigned int biometricMatchMode;
+@property (nonatomic, retain) UIColor *customBackgroundColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBUIPasscodeLockViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=_luminosityBoost, setter=_setLuminosityBoost:, nonatomic) float luminosityBoost;
+@property (nonatomic, readonly) NSString *passcode;
+@property (nonatomic) BOOL playsKeypadSounds;
+@property (getter=isScreenOn, nonatomic) BOOL screenOn;
+@property (nonatomic) BOOL shouldResetForFailedPasscodeAttempt;
+@property (nonatomic) BOOL showsEmergencyCallButton;
+@property (nonatomic) BOOL showsStatusField;
+@property (getter=_statusState, setter=_setStatusState:, nonatomic) unsigned int statusState;
+@property (getter=_statusSubtitleText, nonatomic, readonly, copy) NSString *statusSubtitleText;
+@property (getter=_statusText, nonatomic, readonly, copy) NSString *statusText;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
 
 - (void)_clearBrightnessChangeTimer;
 - (id)_defaultStatusText;
@@ -88,7 +86,7 @@
 - (id)_statusText;
 - (void)_updateStatusStateForLockout;
 - (BOOL)_wantsBiometricAuthentication;
-- (void)autofillForSuccessfulMesaAttemptWithCompletion:(id)arg1;
+- (void)autofillForSuccessfulMesaAttemptWithCompletion:(id /* block */)arg1;
 - (float)backgroundAlpha;
 - (id)backgroundLegibilitySettingsProvider;
 - (BOOL)becomeFirstResponder;

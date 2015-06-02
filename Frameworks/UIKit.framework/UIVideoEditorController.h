@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UINavigationControllerDelegate><UIVideoEditorControllerDelegate>, NSMutableDictionary, NSString;
-
 @interface UIVideoEditorController : UINavigationController {
     struct { 
         unsigned int visible : 1; 
@@ -14,10 +12,10 @@
     NSMutableDictionary *_properties;
 }
 
-@property <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> * delegate;
-@property double videoMaximumDuration;
-@property(copy) NSString * videoPath;
-@property int videoQuality;
+@property (nonatomic) <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> *delegate;
+@property (nonatomic) double videoMaximumDuration;
+@property (nonatomic, copy) NSString *videoPath;
+@property (nonatomic) int videoQuality;
 
 + (BOOL)canEditVideoAtPath:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABGroupWrapperDelegate>, ABGroupWrapper, ACAccountStore, NSSet, NSString;
-
 @interface ABGroupWrapper : NSObject {
     NSString *_accountIdentifier;
     ACAccountStore *_accountStore;
@@ -18,19 +16,19 @@
     void *_source;
 }
 
-@property(readonly) NSString * _accountDescriptionBasedOnIdentifier;
-@property(readonly) NSString * accountIdentifier;
-@property(retain) ACAccountStore * accountStore;
-@property(readonly) void* addressBook;
-@property(retain) NSSet * childGroupWrappers;
-@property <ABGroupWrapperDelegate> * delegate;
-@property(readonly) void* group;
-@property(readonly) NSString * name;
-@property ABGroupWrapper * parentGroupWrapper;
-@property(getter=isSelected) BOOL selected;
-@property BOOL shouldBeSelectedWhenAllChildrenAreSelected;
-@property(readonly) void* source;
-@property(readonly) int sourceType;
+@property (nonatomic, readonly) NSString *_accountDescriptionBasedOnIdentifier;
+@property (nonatomic, readonly) NSString *accountIdentifier;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, readonly) void*addressBook;
+@property (nonatomic, retain) NSSet *childGroupWrappers;
+@property (nonatomic) <ABGroupWrapperDelegate> *delegate;
+@property (nonatomic, readonly) void*group;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic) ABGroupWrapper *parentGroupWrapper;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) BOOL shouldBeSelectedWhenAllChildrenAreSelected;
+@property (nonatomic, readonly) void*source;
+@property (nonatomic, readonly) int sourceType;
 
 + (id)newGroupWrapperFromDictionaryRepresentation:(id)arg1 withAddressBook:(void*)arg2;
 + (id)newGroupWrappersWithAccountIdentifier:(id)arg1 addressBook:(void*)arg2;

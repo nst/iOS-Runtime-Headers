@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVOutputSettingsAssistantBaseSettingsProvider>, <AVOutputSettingsAssistantVideoSettingsAdjuster>;
-
 @interface AVOutputSettingsAssistantInternal : NSObject {
     <AVOutputSettingsAssistantBaseSettingsProvider> *baseSettingsProvider;
     struct opaqueCMFormatDescription { } *sourceAudioFormat;

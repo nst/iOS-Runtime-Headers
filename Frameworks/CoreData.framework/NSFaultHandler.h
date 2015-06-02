@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSFaultHandler : NSObject {
-}
+@interface NSFaultHandler : NSObject
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;

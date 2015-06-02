@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CUIPSDImageRef;
-
 @interface CUIPSDLayerBaseRef : NSObject {
     CUIPSDImageRef *_imageRef;
     unsigned int _layerIndex;
 }
 
-@property(readonly) int blendMode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(readonly) float fillOpacity;
-@property(readonly) BOOL hasLayerMask;
-@property(readonly) BOOL hasVectorMask;
-@property(readonly) float opacity;
-@property(readonly) BOOL visibility;
+@property (readonly) int blendMode;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (readonly) float fillOpacity;
+@property (readonly) BOOL hasLayerMask;
+@property (readonly) BOOL hasVectorMask;
+@property (readonly) float opacity;
+@property (readonly) BOOL visibility;
 
 - (struct CGImage { }*)_createMaskFromAlphaChannel:(int)arg1;
 - (id)_psdImageRef;

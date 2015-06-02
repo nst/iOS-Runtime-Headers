@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSDateFormatter, NSString;
-
 @interface MTDateFormatting : NSObject {
     NSString *_amString;
     NSDateFormatter *_dateOnlyFormatter;
@@ -13,10 +11,10 @@
     BOOL _use24HourTime;
 }
 
-@property(readonly) NSString * amString;
-@property(readonly) NSString * pmString;
-@property(readonly) BOOL timeDesignatorAppearsBeforeTime;
-@property(readonly) BOOL use24HourTime;
+@property (nonatomic, readonly) NSString *amString;
+@property (nonatomic, readonly) NSString *pmString;
+@property (nonatomic, readonly) BOOL timeDesignatorAppearsBeforeTime;
+@property (nonatomic, readonly) BOOL use24HourTime;
 
 + (void)load;
 + (id)sharedInstance;

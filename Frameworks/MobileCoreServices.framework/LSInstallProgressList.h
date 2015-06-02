@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSMutableDictionary;
-
 @interface LSInstallProgressList : NSObject {
     NSMutableDictionary *_progresses;
     NSMutableDictionary *_subscriptions;

@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BSSignal, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface BKSApplicationStateMonitor : NSObject {
     NSObject<OS_xpc_object> *_connection;
     BOOL _denied;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSArray *_interestedBundleIDs;
     unsigned int _interestedStates;
     BSSignal *_invalidationSignal;
@@ -24,18 +14,18 @@
     NSObject<OS_xpc_object> *_serverEndpoint;
 }
 
-@property(copy) id handler;
-@property(copy) NSArray * interestedBundleIDs;
-@property unsigned int interestedStates;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) NSArray *interestedBundleIDs;
+@property (nonatomic) unsigned int interestedStates;
 
 - (id)_connection;
 - (void)_setEndpoint:(id)arg1;
-- (void)applicationInfoForApplication:(id)arg1 completion:(id)arg2;
-- (void)applicationInfoForPID:(int)arg1 completion:(id)arg2;
+- (void)applicationInfoForApplication:(id)arg1 completion:(id /* block */)arg2;
+- (void)applicationInfoForPID:(int)arg1 completion:(id /* block */)arg2;
 - (unsigned int)applicationStateForApplication:(id)arg1;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;
 - (void)dealloc;
-- (id)handler;
+- (id /* block */)handler;
 - (id)init;
 - (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2;
 - (id)initWithEndpoint:(id)arg1 bundleIDs:(id)arg2 states:(unsigned int)arg3;
@@ -49,12 +39,12 @@
 - (void)queue_invalidate;
 - (void)queue_registerWithServer;
 - (void)queue_reregister;
-- (void)queue_setHandler:(id)arg1;
+- (void)queue_setHandler:(id /* block */)arg1;
 - (void)queue_setInterestedBundleIDs:(id)arg1;
 - (void)queue_setInterestedStates:(unsigned int)arg1;
 - (void)queue_updateInterestedStates;
 - (void)queue_updateInterestedStates:(BOOL)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setInterestedBundleIDs:(id)arg1;
 - (void)setInterestedStates:(unsigned int)arg1;
 - (void)updateInterestedBundleIDs:(id)arg1;

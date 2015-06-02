@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString, SGIdentityKey;
-
 @interface SGContactDetailKey : NSObject <SGEntityKey> {
     SGIdentityKey *_identityKey;
     NSString *_label;
     NSString *_value;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SGIdentityKey * identityKey;
-@property(readonly) NSString * label;
-@property(readonly) Class superclass;
-@property(readonly) NSString * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SGIdentityKey *identityKey;
+@property (nonatomic, readonly) NSString *label;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *value;
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
 + (id)prefixForForIdentityKey:(id)arg1;

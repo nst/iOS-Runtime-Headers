@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString, QLPackageChecker;
-
 @interface QLPathTree : NSObject {
     NSMutableDictionary *_directoryChildren;
     QLPackageChecker *_packageChecker;
@@ -11,7 +9,7 @@
     NSString *_path;
 }
 
-@property(copy,readonly) NSString * path;
+@property (readonly, copy) NSString *path;
 
 - (void)addPath:(id)arg1;
 - (void)addPathComponents:(id)arg1;

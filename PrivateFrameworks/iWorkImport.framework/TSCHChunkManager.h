@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartInfo;
-
 @interface TSCHChunkManager : NSObject {
     TSCHChartInfo *mChartInfo;
     unsigned int mChunkMapCount;

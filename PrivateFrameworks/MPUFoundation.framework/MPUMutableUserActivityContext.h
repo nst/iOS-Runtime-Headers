@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface MPUMutableUserActivityContext : MPUUserActivityContext {
     NSMutableArray *_containerItems;
 }
 
-@property(copy) NSArray * containerItems;
-@property int originatorType;
-@property int originatorVersion;
+@property (nonatomic, copy) NSArray *containerItems;
+@property (nonatomic) int originatorType;
+@property (nonatomic) int originatorVersion;
 
 - (void).cxx_destruct;
 - (void)addContainerItem:(id)arg1;

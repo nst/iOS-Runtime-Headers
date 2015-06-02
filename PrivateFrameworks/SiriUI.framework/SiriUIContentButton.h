@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIContentButton : UIButton {
-}
+@interface SiriUIContentButton : UIButton
 
 + (id)button;
 + (id)buttonWithImageMask:(id)arg1;

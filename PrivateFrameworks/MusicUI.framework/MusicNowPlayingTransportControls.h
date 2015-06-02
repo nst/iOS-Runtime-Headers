@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicNowPlayingTransportControls : RUNowPlayingTransportControls {
-}
+@interface MusicNowPlayingTransportControls : RUNowPlayingTransportControls
 
 + (unsigned long long)defaultVisibleParts;
 

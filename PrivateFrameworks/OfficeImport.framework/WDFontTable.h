@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OITSUNoCopyDictionary;
-
 @interface WDFontTable : NSObject {
     OITSUNoCopyDictionary *mFontTable;
     NSMutableArray *mFontsInOrderOfInsertion;

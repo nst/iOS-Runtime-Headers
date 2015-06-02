@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUEditPlugin;
-
 @interface PUEditPluginActivity : UIActivity {
     PUEditPlugin *_plugin;
 }
 
-@property(readonly) PUEditPlugin * plugin;
+@property (nonatomic, readonly) PUEditPlugin *plugin;
 
 + (int)activityCategory;
 

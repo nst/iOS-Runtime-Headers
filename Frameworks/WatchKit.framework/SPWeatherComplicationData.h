@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
-
 @interface SPWeatherComplicationData : SPComplicationData <NSSecureCoding> {
     int _currentConditionsEnum;
     NSString *_currentConditionsText;
@@ -12,11 +10,11 @@
     NSString *_temperatureText;
 }
 
-@property int currentConditionsEnum;
-@property(retain) NSString * currentConditionsText;
-@property(retain) NSString * highLowText;
-@property(retain) NSString * locationText;
-@property(retain) NSString * temperatureText;
+@property (nonatomic) int currentConditionsEnum;
+@property (nonatomic, retain) NSString *currentConditionsText;
+@property (nonatomic, retain) NSString *highLowText;
+@property (nonatomic, retain) NSString *locationText;
+@property (nonatomic, retain) NSString *temperatureText;
 
 + (BOOL)supportsSecureCoding;
 

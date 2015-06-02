@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class NSArray;
-
 @interface STMapViewport : AFSiriModelObject {
     double _eastLongitude;
     double _northLatitude;
@@ -14,13 +12,13 @@
     double _westLongitude;
 }
 
-@property double eastLongitude;
-@property double northLatitude;
-@property double southLatitude;
-@property double timeSinceViewportChanged;
-@property double timeSinceViewportEnteredForeground;
-@property(copy) NSArray * viewportVertices;
-@property double westLongitude;
+@property (nonatomic) double eastLongitude;
+@property (nonatomic) double northLatitude;
+@property (nonatomic) double southLatitude;
+@property (nonatomic) double timeSinceViewportChanged;
+@property (nonatomic) double timeSinceViewportEnteredForeground;
+@property (nonatomic, copy) NSArray *viewportVertices;
+@property (nonatomic) double westLongitude;
 
 + (BOOL)supportsSecureCoding;
 

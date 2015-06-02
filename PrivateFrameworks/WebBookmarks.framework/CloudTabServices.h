@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@interface CloudTabServices : NSObject {
-}
+@interface CloudTabServices : NSObject
 
 + (id)_serverConnection;
 + (void)clearAllCloudTabDevices;

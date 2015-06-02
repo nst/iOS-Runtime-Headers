@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPMescalSessionInfoResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int status : 1; 
@@ -12,10 +10,10 @@
     int _status;
 }
 
-@property(readonly) BOOL hasSessionInfo;
-@property BOOL hasStatus;
-@property(retain) NSData * sessionInfo;
-@property int status;
+@property (nonatomic, readonly) BOOL hasSessionInfo;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, retain) NSData *sessionInfo;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

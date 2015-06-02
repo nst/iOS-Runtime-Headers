@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UICurrentContextPresentationController : UIPresentationController {
-}
+@interface _UICurrentContextPresentationController : UIPresentationController
 
 - (struct { int x1; int x2; })__sizeClassPair;
 - (id)_firstCurrentContextChildInWindow;

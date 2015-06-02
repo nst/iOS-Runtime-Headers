@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBFileManager : NSObject {
-}
+@interface MBFileManager : NSObject
 
 + (id)defaultManager;
 

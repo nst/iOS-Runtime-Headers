@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class _GKCustomDrawnSpeechBalloonBackgroundView, _GKImageSpeechBalloonBackgroundView;
-
 @interface GKSpeechBalloonBackgroundView : UIView {
     _GKCustomDrawnSpeechBalloonBackgroundView *_customDrawnView;
     unsigned char _drawStyle;
@@ -11,10 +9,10 @@
     unsigned char _tipDirection;
 }
 
-@property(retain) _GKCustomDrawnSpeechBalloonBackgroundView * customDrawnView;
-@property unsigned char drawStyle;
-@property(retain) _GKImageSpeechBalloonBackgroundView * strokedImageView;
-@property unsigned char tipDirection;
+@property (nonatomic, retain) _GKCustomDrawnSpeechBalloonBackgroundView *customDrawnView;
+@property (nonatomic) unsigned char drawStyle;
+@property (nonatomic, retain) _GKImageSpeechBalloonBackgroundView *strokedImageView;
+@property (nonatomic) unsigned char tipDirection;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)customDrawnView;

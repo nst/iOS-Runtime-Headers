@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, SKUIClientContext, SKUILayoutCache, SKUIResourceLoader, UIViewController;
-
 @interface SKUINavigationBarContext : NSObject {
     SKUIClientContext *_clientContext;
     float _maximumNavigationBarWidth;
@@ -13,12 +11,12 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property float maximumNavigationBarWidth;
-@property(retain) NSOperationQueue * operationQueue;
-@property UIViewController * parentViewController;
-@property(retain) SKUIResourceLoader * resourceLoader;
-@property(retain) SKUILayoutCache * textLayoutCache;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) float maximumNavigationBarWidth;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
+@property (nonatomic, retain) SKUILayoutCache *textLayoutCache;
 
 - (void).cxx_destruct;
 - (id)clientContext;

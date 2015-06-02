@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSString;
-
 @interface UIUserNotificationActionSettings : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSDictionary *_actionsByContext;
     NSString *_category;
 }
 
-@property(copy) NSDictionary * actionsByContext;
-@property(copy) NSString * category;
+@property (nonatomic, copy) NSDictionary *actionsByContext;
+@property (nonatomic, copy) NSString *category;
 
 + (BOOL)supportsSecureCoding;
 

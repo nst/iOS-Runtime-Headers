@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface EKRecurrenceWeekdayChooserController : EKRecurrenceChooserController {
     NSMutableArray *_cells;
     NSArray *_daysOfTheWeek;
     NSMutableArray *_selectedRows;
 }
 
-@property(retain) NSMutableArray * cells;
-@property(retain) NSArray * daysOfTheWeek;
+@property (nonatomic, retain) NSMutableArray *cells;
+@property (nonatomic, retain) NSArray *daysOfTheWeek;
 
 - (void).cxx_destruct;
 - (int)_dayMask;

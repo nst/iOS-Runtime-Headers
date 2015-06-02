@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL;
-
 @interface KNEmptyMovieFileGenerator : NSObject {
     double mDuration;
     NSURL *mGeneratedFileURL;
 }
 
-@property(readonly) NSURL * generatedFileURL;
+@property (nonatomic, readonly) NSURL *generatedFileURL;
 
 - (void)dealloc;
-- (void)generateFileWithCompletionHandler:(id)arg1;
+- (void)generateFileWithCompletionHandler:(id /* block */)arg1;
 - (id)generatedFileURL;
 - (id)init;
 - (id)initWithGeneratedFileURL:(id)arg1 duration:(double)arg2;

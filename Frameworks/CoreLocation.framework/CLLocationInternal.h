@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class CLLocationMatchInfo;
-
 @interface CLLocationInternal : NSObject {
     struct { 
         int suitability; 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iAdServices.framework/iAdServices
  */
 
-@class <ADAdSheetProxyDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface ADAdSheetProxy : NSObject {
     <ADAdSheetProxyDelegate> *_delegate;
     double _lastLaunchTimestamp;
@@ -16,16 +14,16 @@
     BOOL _waitingForAdSheet;
 }
 
-@property <ADAdSheetProxyDelegate> * delegate;
-@property double lastLaunchTimestamp;
-@property(retain) NSMutableSet * launchAssertions;
-@property double nextScheduledLaunch;
-@property BOOL openApplicationInProgress;
-@property(readonly) NSObject<OS_dispatch_queue> * proxyQueue;
-@property(readonly) double remainingLaunchBackoff;
-@property(readonly) BOOL serviceLaunchThrottled;
-@property int unexpectedTerminationCount;
-@property BOOL waitingForAdSheet;
+@property (nonatomic) <ADAdSheetProxyDelegate> *delegate;
+@property (nonatomic) double lastLaunchTimestamp;
+@property (nonatomic, retain) NSMutableSet *launchAssertions;
+@property (nonatomic) double nextScheduledLaunch;
+@property (nonatomic) BOOL openApplicationInProgress;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *proxyQueue;
+@property (nonatomic, readonly) double remainingLaunchBackoff;
+@property (nonatomic, readonly) BOOL serviceLaunchThrottled;
+@property (nonatomic) int unexpectedTerminationCount;
+@property (nonatomic) BOOL waitingForAdSheet;
 
 + (id)sharedInstance;
 

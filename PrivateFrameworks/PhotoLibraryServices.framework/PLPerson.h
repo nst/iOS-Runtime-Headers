@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSSet, NSString;
+@interface PLPerson : PLManagedObject
 
-@interface PLPerson : PLManagedObject {
-}
-
-@property(retain) NSString * fullName;
-@property(retain) NSSet * personReferences;
-@property(retain) NSString * personUUID;
+@property (nonatomic, retain) NSString *fullName;
+@property (nonatomic, retain) NSSet *personReferences;
+@property (nonatomic, retain) NSString *personUUID;
 
 + (id)allPersonsInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;

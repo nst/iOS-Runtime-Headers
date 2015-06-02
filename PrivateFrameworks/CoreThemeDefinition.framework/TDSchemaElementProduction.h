@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSOrderedSet, NSString;
+@interface TDSchemaElementProduction : TDSimpleArtworkElementProduction
 
-@interface TDSchemaElementProduction : TDSimpleArtworkElementProduction {
-}
-
-@property(retain) NSString * folderName;
-@property(retain) NSOrderedSet * slices;
+@property (nonatomic, retain) NSString *folderName;
+@property (nonatomic, retain) NSOrderedSet *slices;
 
 - (id)associatedFileURLWithDocument:(id)arg1;
 - (void)generateNewRendition;

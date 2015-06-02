@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CITileFilter : CIFilter {
     NSNumber *inputAngle;
     CIVector *inputCenter;
@@ -11,10 +9,10 @@
     NSNumber *inputWidth;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIVector * inputCenter;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputWidth;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputWidth;
 
 + (id)customAttributes;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPAlternateTracksContainerViewController : UIViewController {
-}
+@interface MPAlternateTracksContainerViewController : UIViewController
 
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;

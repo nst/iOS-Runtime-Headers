@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUItemValidatorTest : NSObject <NSCopying> {
-}
+@interface SUItemValidatorTest : NSObject <NSCopying>
 
 + (id)defaultTest;
 

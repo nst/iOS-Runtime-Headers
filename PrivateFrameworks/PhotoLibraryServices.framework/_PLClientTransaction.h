@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface _PLClientTransaction : PLClientServerTransaction {
     NSObject<OS_dispatch_semaphore> *_fdResourceSemaphore;
     int _fileDescriptor;
@@ -11,10 +9,10 @@
     id _processAssertion;
 }
 
-@property NSObject<OS_dispatch_semaphore> * fdResourceSemaphore;
-@property int fileDescriptor;
-@property(retain) NSString * path;
-@property(retain) id processAssertion;
+@property (nonatomic) NSObject<OS_dispatch_semaphore> *fdResourceSemaphore;
+@property (nonatomic) int fileDescriptor;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) id processAssertion;
 
 + (id)_fdIsolationQueue;
 + (id)_fdResourceSemaphore;

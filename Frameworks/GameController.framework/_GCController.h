@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <GCNamedProfile>, NSString;
-
 @interface _GCController : GCController <NSSecureCoding> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _controllerPausedHandler;
-
+    id /* block */ _controllerPausedHandler;
     unsigned int _deviceHash;
     struct __IOHIDDevice { } *_deviceRef;
     int _playerIndex;
@@ -26,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)clearDeviceRef;
-- (id)controllerPausedHandler;
+- (id /* block */)controllerPausedHandler;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)deviceHash;
@@ -42,7 +32,7 @@
 - (int)playerIndex;
 - (id)profile;
 - (unsigned int)service;
-- (void)setControllerPausedHandler:(id)arg1;
+- (void)setControllerPausedHandler:(id /* block */)arg1;
 - (void)setPlayerIndex:(int)arg1;
 - (void)setProfile:(id)arg1;
 - (id)vendorName;

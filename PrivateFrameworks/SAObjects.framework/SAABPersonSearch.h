@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSNumber, NSString, NSURL, SAEmail, SALocation, SAPhone;
+@interface SAABPersonSearch : SADomainCommand
 
-@interface SAABPersonSearch : SADomainCommand {
-}
-
-@property(copy) NSURL * accountIdentifier;
-@property(retain) SALocation * address;
-@property(copy) NSDate * birthday;
-@property(copy) NSString * company;
-@property(retain) SAEmail * email;
-@property(copy) NSNumber * me;
-@property(copy) NSString * name;
-@property(retain) SAPhone * phone;
-@property(copy) NSString * relationship;
-@property(copy) NSString * scope;
+@property (nonatomic, copy) NSURL *accountIdentifier;
+@property (nonatomic, retain) SALocation *address;
+@property (nonatomic, copy) NSDate *birthday;
+@property (nonatomic, copy) NSString *company;
+@property (nonatomic, retain) SAEmail *email;
+@property (nonatomic, copy) NSNumber *me;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SAPhone *phone;
+@property (nonatomic, copy) NSString *relationship;
+@property (nonatomic, copy) NSString *scope;
 
 + (id)personSearch;
 + (id)personSearchWithDictionary:(id)arg1 context:(id)arg2;

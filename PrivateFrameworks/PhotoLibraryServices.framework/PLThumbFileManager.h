@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLThumbFileManager : NSObject <PLThumbPersistenceManager> {
     int _entryLength;
     NSString *_filename;
@@ -18,18 +16,18 @@
     } _thumbnailSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int imageFormat;
-@property(readonly) int imageHeight;
-@property(readonly) int imageLength;
-@property(readonly) int imageRowBytes;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(readonly) int imageWidth;
-@property(readonly) BOOL isReadOnly;
-@property(readonly) NSString * path;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int imageFormat;
+@property (nonatomic, readonly) int imageHeight;
+@property (nonatomic, readonly) int imageLength;
+@property (nonatomic, readonly) int imageRowBytes;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly) int imageWidth;
+@property (nonatomic, readonly) BOOL isReadOnly;
+@property (nonatomic, readonly) NSString *path;
+@property (readonly) Class superclass;
 
 + (BOOL)_deviceShouldUseLowPerformancePixelFormat;
 + (id)baseSessionOptions;

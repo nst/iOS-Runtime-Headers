@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class IDSService, NSMutableDictionary, NSString, NSTimer;
-
 @interface PBBridgeIDSServiceDelegate : NSObject <IDSServiceDelegate> {
     NSMutableDictionary *_inflightMessages;
     NSMutableDictionary *_pendingMessages;
@@ -12,15 +10,15 @@
     NSTimer *_transportReachabilityTimer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * inflightMessages;
-@property(retain) NSMutableDictionary * pendingMessages;
-@property(retain) IDSService * service;
-@property BOOL shouldSuppressTransportReachabilityTimeout;
-@property(readonly) Class superclass;
-@property(retain) NSTimer * transportReachabilityTimer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *inflightMessages;
+@property (nonatomic, retain) NSMutableDictionary *pendingMessages;
+@property (nonatomic, retain) IDSService *service;
+@property (nonatomic) BOOL shouldSuppressTransportReachabilityTimeout;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSTimer *transportReachabilityTimer;
 
 - (void).cxx_destruct;
 - (id)_sendProtoBuf:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5;

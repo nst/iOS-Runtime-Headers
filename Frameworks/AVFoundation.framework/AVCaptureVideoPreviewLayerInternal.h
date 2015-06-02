@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnection, AVCaptureSession, AVWeakReference, CALayer, NSString;
-
 @interface AVCaptureVideoPreviewLayerInternal : NSObject {
     BOOL automaticallyAdjustsMirroring;
     struct CGAffineTransform { 

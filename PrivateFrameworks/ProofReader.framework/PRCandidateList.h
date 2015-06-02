@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSMutableArray;
-
 @interface PRCandidateList : NSObject {
     NSMutableArray *_candidates;
     unsigned int _maxCount;

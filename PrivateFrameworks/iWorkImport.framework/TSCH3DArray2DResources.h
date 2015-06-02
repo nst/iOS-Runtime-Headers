@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DArray2D;
-
 @interface TSCH3DArray2DResources : TSCH3DMutable2DResources {
     TSCH3DArray2D *mResources;
 }

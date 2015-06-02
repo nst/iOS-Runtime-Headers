@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface NNMKProtoMessage : PBCodable <NSCopying> {
     NSString *_accountId;
     NSMutableArray *_ccs;
@@ -21,26 +19,26 @@
     NSMutableArray *_tos;
 }
 
-@property(retain) NSString * accountId;
-@property(retain) NSMutableArray * ccs;
-@property(retain) NSString * conversationId;
-@property(retain) NSData * dateReceived;
-@property(retain) NSData * dateSent;
-@property(retain) NSString * from;
-@property(readonly) BOOL hasAccountId;
-@property(readonly) BOOL hasConversationId;
-@property(readonly) BOOL hasDateReceived;
-@property(readonly) BOOL hasDateSent;
-@property(readonly) BOOL hasFrom;
-@property(readonly) BOOL hasMessageId;
-@property(readonly) BOOL hasMessageIdHeader;
-@property BOOL hasStatus;
-@property(readonly) BOOL hasSubject;
-@property(retain) NSString * messageId;
-@property(retain) NSString * messageIdHeader;
-@property unsigned int status;
-@property(retain) NSString * subject;
-@property(retain) NSMutableArray * tos;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSMutableArray *ccs;
+@property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic, retain) NSData *dateReceived;
+@property (nonatomic, retain) NSData *dateSent;
+@property (nonatomic, retain) NSString *from;
+@property (nonatomic, readonly) BOOL hasAccountId;
+@property (nonatomic, readonly) BOOL hasConversationId;
+@property (nonatomic, readonly) BOOL hasDateReceived;
+@property (nonatomic, readonly) BOOL hasDateSent;
+@property (nonatomic, readonly) BOOL hasFrom;
+@property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, readonly) BOOL hasMessageIdHeader;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) BOOL hasSubject;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, retain) NSString *messageIdHeader;
+@property (nonatomic) unsigned int status;
+@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, retain) NSMutableArray *tos;
 
 - (void).cxx_destruct;
 - (id)accountId;

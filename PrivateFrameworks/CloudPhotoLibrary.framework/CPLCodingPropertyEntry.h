@@ -2,34 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet, NSString;
-
 @interface CPLCodingPropertyEntry : NSObject {
     struct objc_ivar { } *_ivar;
     NSSet *_propertyClasses;
     SEL _propertyGetter;
-    int (*_propertyGetterIMP)();
+    int (*_propertyGetterIMP;
     SEL _propertySetter;
-    int (*_propertySetterIMP)();
+    int (*_propertySetterIMP;
     BOOL _propertyType;
     BOOL _readOnly;
     NSString *_structName;
 }
 
-@property struct objc_ivar { }* ivar;
-@property(retain) NSSet * propertyClasses;
-@property SEL propertyGetter;
-@property int (* propertyGetterIMP;
-@property SEL propertySetter;
-@property int (* propertySetterIMP;
-@property BOOL propertyType;
-@property(getter=isReadOnly) BOOL readOnly;
-@property(copy) NSString * structName;
+@property (nonatomic) struct objc_ivar { }*ivar;
+@property (nonatomic, retain) NSSet *propertyClasses;
+@property (nonatomic) SEL propertyGetter;
+@property (nonatomic) int (*propertyGetterIMP;
+@property (nonatomic) SEL propertySetter;
+@property (nonatomic) int (*propertySetterIMP;
+@property (nonatomic) BOOL propertyType;
+@property (getter=isReadOnly, nonatomic) BOOL readOnly;
+@property (nonatomic, copy) NSString *structName;
 
 - (void).cxx_destruct;
 - (BOOL)isReadOnly;
@@ -38,17 +31,17 @@
 - (id)ivarValueForObject:(id)arg1;
 - (id)propertyClasses;
 - (SEL)propertyGetter;
-- (int (*)())propertyGetterIMP;
+- (int (*)propertyGetterIMP;
 - (SEL)propertySetter;
-- (int (*)())propertySetterIMP;
+- (int (*)propertySetterIMP;
 - (BOOL)propertyType;
 - (void)setIvar:(struct objc_ivar { }*)arg1;
 - (void)setIvarValue:(id)arg1 forObject:(id)arg2;
 - (void)setPropertyClasses:(id)arg1;
 - (void)setPropertyGetter:(SEL)arg1;
-- (void)setPropertyGetterIMP:(int (*)())arg1;
+- (void)setPropertyGetterIMP:(int (*)arg1;
 - (void)setPropertySetter:(SEL)arg1;
-- (void)setPropertySetterIMP:(int (*)())arg1;
+- (void)setPropertySetterIMP:(int (*)arg1;
 - (void)setPropertyType:(BOOL)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setStructName:(id)arg1;

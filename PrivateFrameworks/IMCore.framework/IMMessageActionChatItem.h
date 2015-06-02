@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle;
-
 @interface IMMessageActionChatItem : IMTranscriptChatItem {
     IMHandle *_otherHandle;
     IMHandle *_sender;
 }
 
-@property(readonly) long long actionType;
-@property(retain,readonly) IMHandle * otherHandle;
-@property(retain,readonly) IMHandle * sender;
+@property (nonatomic, readonly) long long actionType;
+@property (nonatomic, readonly, retain) IMHandle *otherHandle;
+@property (nonatomic, readonly, retain) IMHandle *sender;
 
-- (Class)__ck_chatItemClass;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (id)_initWithItem:(id)arg1 sender:(id)arg2 otherHandle:(id)arg3;
 - (long long)actionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)otherHandle;
 - (id)sender;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

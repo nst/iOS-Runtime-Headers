@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNUIState;
-
 @interface TNArchivedUIState : TSPObject {
     TNUIState *mUIState;
 }
 
-@property(readonly) TNUIState * uiState;
+@property (nonatomic, readonly) TNUIState *uiState;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

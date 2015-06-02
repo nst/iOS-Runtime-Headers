@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSData, NSString;
-
 @interface MSMSPlatform : NSObject <MSPlatform> {
     BOOL _isPerfLoggingEnabled;
     NSData *_pushToken;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isPerfLoggingEnabled;
-@property(retain) NSData * pushToken;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isPerfLoggingEnabled;
+@property (nonatomic, retain) NSData *pushToken;
+@property (readonly) Class superclass;
 
 + (id)thePlatform;
 

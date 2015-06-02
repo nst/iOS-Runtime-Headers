@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSData, NSString, NSURLDownloadInternal, NSURLRequest;
-
 @interface NSURLDownload : NSObject <NSURLAuthenticationChallengeSender> {
     NSURLDownloadInternal *_internal;
 }
 
-@property(copy,readonly) NSString * debugDescription;
+@property (readonly, copy) NSString *debugDescription;
 @property BOOL deletesFileUponFailure;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSURLRequest * request;
-@property(copy,readonly) NSData * resumeData;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly, copy) NSURLRequest *request;
+@property (readonly, copy) NSData *resumeData;
+@property (readonly) Class superclass;
 
 + (id)_downloadWithLoadingCFURLConnection:(struct _CFURLConnection { }*)arg1 request:(struct _CFURLRequest { }*)arg2 response:(struct _CFURLResponse { }*)arg3 delegate:(id)arg4 proxy:(id)arg5;
 + (id)_downloadWithLoadingConnection:(id)arg1 request:(id)arg2 response:(id)arg3 delegate:(id)arg4 proxy:(id)arg5;
@@ -67,6 +65,6 @@
 - (void)setDestination:(id)arg1 allowOverwrite:(BOOL)arg2;
 - (id)url;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
-- (void)withDelegate:(id)arg1;
+- (void)withDelegate:(id /* block */)arg1;
 
 @end

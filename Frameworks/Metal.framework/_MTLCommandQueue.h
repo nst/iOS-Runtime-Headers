@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSString;
-
 @interface _MTLCommandQueue : NSObject {
     int _backgroundTrackingPID;
     NSObject<OS_dispatch_semaphore> *_commandBufferSemaphore;
@@ -28,8 +26,8 @@
 
 @property int backgroundTrackingPID;
 @property BOOL executionEnabled;
-@property(copy) NSString * label;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
+@property (copy) NSString *label;
+@property (getter=isProfilingEnabled) BOOL profilingEnabled;
 @property BOOL skipRender;
 
 - (void)_submitAvailableCommandBuffers;

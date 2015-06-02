@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class ACAccountStore, NSArray, NSLock, NSObject<OS_dispatch_group>, NoteContext;
-
 @interface AccountUtilities : NSObject {
     NSArray *_accountIDsEnabledForNotes;
     ACAccountStore *_accountStore;
@@ -12,9 +10,9 @@
     NSLock *_updateAccountInfosLock;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(retain) NSObject<OS_dispatch_group> * backgroundDispatchGroup;
-@property(retain) NSLock * updateAccountInfosLock;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *backgroundDispatchGroup;
+@property (retain) NSLock *updateAccountInfosLock;
 
 + (id)sharedAccountUtilities;
 

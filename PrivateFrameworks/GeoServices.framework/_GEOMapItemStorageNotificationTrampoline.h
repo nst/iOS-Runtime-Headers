@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOMapItemPrivate>, GEOMapItemStorage;
-
 @interface _GEOMapItemStorageNotificationTrampoline : NSObject {
     <GEOMapItemPrivate> *_mapItem;
     GEOMapItemStorage *_storage;

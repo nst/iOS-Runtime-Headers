@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWBracketSettingsProvider>, <BWStillImageCaptureStatusDelegate>, BWBracketSettings, BWFigVideoCaptureDevice, BWNodeInput, BWNodeOutput, FigCaptureStillImageSettings, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BWStillImageCoordinatorNode : BWNode <BWBracketSettingsProvider, BWFigVideoDeviceStillImageCaptureDelegate> {
     BWBracketSettings *_bracketSettings;
     BWFigVideoCaptureDevice *_captureDevice;
@@ -30,16 +28,16 @@
     struct opaqueCMSimpleQueue { } *_stillImageRequestQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) BWNodeOutput * defaultOutput;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BWNodeOutput * hdrOutput;
-@property(readonly) BWNodeOutput * sisOutput;
-@property <BWStillImageCaptureStatusDelegate> * stillImageCaptureStatusDelegate;
-@property(readonly) BWNodeInput * stillImageInput;
-@property(readonly) Class superclass;
-@property(readonly) int worstCaseInitialMaxBracketedCaptureBufferCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BWNodeOutput *defaultOutput;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BWNodeOutput *hdrOutput;
+@property (nonatomic, readonly) BWNodeOutput *sisOutput;
+@property (nonatomic) <BWStillImageCaptureStatusDelegate> *stillImageCaptureStatusDelegate;
+@property (nonatomic, readonly) BWNodeInput *stillImageInput;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int worstCaseInitialMaxBracketedCaptureBufferCount;
 
 + (void)initialize;
 

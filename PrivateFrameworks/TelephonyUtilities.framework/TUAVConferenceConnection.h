@@ -2,47 +2,33 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface TUAVConferenceConnection : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didStartHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didStopHandler;
-
+    id /* block */ _didStartHandler;
+    id /* block */ _didStopHandler;
     BOOL _host;
     NSString *_identifier;
     BOOL _receivedDidStart;
 }
 
-@property(copy) id didStartHandler;
-@property(copy) id didStopHandler;
-@property(getter=isHost) BOOL host;
-@property(copy) NSString * identifier;
-@property BOOL receivedDidStart;
+@property (nonatomic, copy) id /* block */ didStartHandler;
+@property (nonatomic, copy) id /* block */ didStopHandler;
+@property (getter=isHost, nonatomic) BOOL host;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) BOOL receivedDidStart;
 
 + (id)conferenceConnectionWithIdentifier:(id)arg1 host:(BOOL)arg2;
 
 - (void)dealloc;
 - (id)description;
-- (id)didStartHandler;
-- (id)didStopHandler;
+- (id /* block */)didStartHandler;
+- (id /* block */)didStopHandler;
 - (id)identifier;
 - (void)invokeDidStartIfNecessary:(BOOL)arg1 error:(id)arg2;
 - (void)invokeDidStopIfNecessary:(BOOL)arg1 error:(id)arg2;
 - (BOOL)isHost;
 - (BOOL)receivedDidStart;
-- (void)setDidStartHandler:(id)arg1;
-- (void)setDidStopHandler:(id)arg1;
+- (void)setDidStartHandler:(id /* block */)arg1;
+- (void)setDidStopHandler:(id /* block */)arg1;
 - (void)setHost:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setReceivedDidStart:(BOOL)arg1;

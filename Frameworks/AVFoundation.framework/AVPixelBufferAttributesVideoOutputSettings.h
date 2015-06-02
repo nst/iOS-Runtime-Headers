@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary;
-
 @interface AVPixelBufferAttributesVideoOutputSettings : AVVideoOutputSettings <AVDecodedVideoSettingsForFig> {
     NSDictionary *_VTCleanApertureDictionary;
     NSDictionary *_VTPixelAspectRatioDictionary;
 }
 
-@property(readonly) NSDictionary * pixelBufferAttributes;
+@property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
 
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;

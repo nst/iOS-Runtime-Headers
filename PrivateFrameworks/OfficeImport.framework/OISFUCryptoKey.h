@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, NSString;
-
 @interface OISFUCryptoKey : NSObject {
     NSString *_passphrase;
     unsigned int mIterationCount;
@@ -12,7 +10,7 @@
     NSData *mSaltData;
 }
 
-@property(readonly) NSString * passphrase;
+@property (nonatomic, readonly) NSString *passphrase;
 
 - (void)dealloc;
 - (id)initAes128Key:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;

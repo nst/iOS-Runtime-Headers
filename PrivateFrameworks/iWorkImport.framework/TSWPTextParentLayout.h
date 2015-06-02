@@ -9,7 +9,7 @@
     } _maximumFrameSizeForChildren;
 }
 
-@property struct CGSize { float x1; float x2; } maximumFrameSizeForChildren;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumFrameSizeForChildren;
 
 - (id).cxx_construct;
 - (id)initWithInfo:(id)arg1;

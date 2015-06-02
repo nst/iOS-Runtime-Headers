@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSString;
-
 @interface MBSnapshot : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     NSString *_deviceName;
@@ -14,13 +12,13 @@
     NSString *_systemVersion;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSString * deviceName;
-@property(readonly) BOOL isCompatible;
-@property(readonly) unsigned long long quotaReserved;
-@property(readonly) unsigned int snapshotID;
-@property(readonly) int state;
-@property(readonly) NSString * systemVersion;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSString *deviceName;
+@property (nonatomic, readonly) BOOL isCompatible;
+@property (nonatomic, readonly) unsigned long long quotaReserved;
+@property (nonatomic, readonly) unsigned int snapshotID;
+@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) NSString *systemVersion;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;

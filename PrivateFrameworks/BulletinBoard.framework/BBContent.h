@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString;
-
 @interface BBContent : NSObject <NSCopying, NSSecureCoding> {
     NSString *_message;
     NSString *_subtitle;
     NSString *_title;
 }
 
-@property(copy) NSString * message;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 + (id)contentWithTitle:(id)arg1 subtitle:(id)arg2 message:(id)arg3;
 + (BOOL)supportsSecureCoding;

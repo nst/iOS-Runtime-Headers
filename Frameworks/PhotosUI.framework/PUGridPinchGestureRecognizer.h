@@ -15,10 +15,10 @@
     unsigned int _transitionDirection;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } centerOffset;
-@property(readonly) unsigned int transitionDirection;
-@property(readonly) float transitionProgress;
-@property(readonly) BOOL transitionShouldFinish;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } centerOffset;
+@property (nonatomic, readonly) unsigned int transitionDirection;
+@property (nonatomic, readonly) float transitionProgress;
+@property (nonatomic, readonly) BOOL transitionShouldFinish;
 
 - (void)_resetTransitionState;
 - (struct CGSize { float x1; float x2; })centerOffset;

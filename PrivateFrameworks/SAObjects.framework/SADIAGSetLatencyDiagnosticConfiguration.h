@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SADIAGSetLatencyDiagnosticConfiguration : SABaseClientBoundCommand
 
-@interface SADIAGSetLatencyDiagnosticConfiguration : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * diagnosticActions;
+@property (nonatomic, copy) NSArray *diagnosticActions;
 
 + (id)setLatencyDiagnosticConfiguration;
 + (id)setLatencyDiagnosticConfigurationWithDictionary:(id)arg1 context:(id)arg2;

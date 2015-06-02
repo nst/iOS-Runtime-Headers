@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, UITableView, _UISettingsGroup;
-
 @interface PTSSavedModeTableViewController : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, _UISettingsGroupObserver> {
     unsigned int _modalEditingIndex;
     _UISettingsGroup *_settingsGroup;
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int modalEditingIndex;
-@property _UISettingsGroup * settingsGroup;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int modalEditingIndex;
+@property (nonatomic) _UISettingsGroup *settingsGroup;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableView *tableView;
 
 + (id)sharedInstance;
 + (id)sharedInstanceIfExists;

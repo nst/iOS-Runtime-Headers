@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface _NSKoreanBigramKeySet_SKS : _NSSharedKeySetS {
-}
+@interface _NSKoreanBigramKeySet_SKS : _NSSharedKeySetS
 
 - (void)dealloc;
 - (void)finalize;

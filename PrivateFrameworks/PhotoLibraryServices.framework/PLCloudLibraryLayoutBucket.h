@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, PLCloudResourceRange, PLPhotoLibrary;
-
 @interface PLCloudLibraryLayoutBucket : NSObject {
     unsigned short _category;
     PLCloudResourceRange *_mediumsRange;
@@ -15,18 +9,14 @@
     PLPhotoLibrary *_photoLibrary;
     PLCloudResourceRange *_thumbnailsRange;
     unsigned int budgetShare;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id predicate;
-
+    id /* block */ predicate;
 }
 
-@property unsigned int budgetShare;
-@property(readonly) unsigned short category;
-@property(readonly) NSString * name;
-@property(copy) id predicate;
-@property(readonly) unsigned long long totalAssetsCount;
+@property (nonatomic) unsigned int budgetShare;
+@property (nonatomic, readonly) unsigned short category;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy) id /* block */ predicate;
+@property (nonatomic, readonly) unsigned long long totalAssetsCount;
 
 - (unsigned int)budgetShare;
 - (unsigned short)category;
@@ -36,9 +26,9 @@
 - (unsigned int)includeAsset:(id)arg1;
 - (id)initWithIdentifier:(unsigned short)arg1 photoLibrary:(id)arg2;
 - (id)name;
-- (id)predicate;
+- (id /* block */)predicate;
 - (void)setBudgetShare:(unsigned int)arg1;
-- (void)setPredicate:(id)arg1;
+- (void)setPredicate:(id /* block */)arg1;
 - (unsigned long long)totalAssetsCount;
 - (unsigned long long)totalSizeForQualityClass:(unsigned short)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 

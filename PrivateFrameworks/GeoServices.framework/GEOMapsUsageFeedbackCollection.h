@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOCarInfo, GEOMapRegion, GEOPlaceActionDetails, NSString;
-
 @interface GEOMapsUsageFeedbackCollection : PBCodable <NSCopying> {
     int _actionType;
     GEOCarInfo *_carInfo;
@@ -26,24 +24,24 @@
     double _zoomLevel;
 }
 
-@property int actionType;
-@property(retain) GEOCarInfo * carInfo;
-@property BOOL hasActionType;
-@property(readonly) BOOL hasCarInfo;
-@property(readonly) BOOL hasMapRegion;
-@property(readonly) BOOL hasPlaceActionDetails;
-@property(readonly) BOOL hasProviderId;
-@property BOOL hasSequenceNumber;
-@property BOOL hasSessionID;
-@property BOOL hasSessionRelativeTimestamp;
-@property BOOL hasZoomLevel;
-@property(retain) GEOMapRegion * mapRegion;
-@property(retain) GEOPlaceActionDetails * placeActionDetails;
-@property(retain) NSString * providerId;
-@property int sequenceNumber;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property double sessionRelativeTimestamp;
-@property double zoomLevel;
+@property (nonatomic) int actionType;
+@property (nonatomic, retain) GEOCarInfo *carInfo;
+@property (nonatomic) BOOL hasActionType;
+@property (nonatomic, readonly) BOOL hasCarInfo;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic, readonly) BOOL hasPlaceActionDetails;
+@property (nonatomic, readonly) BOOL hasProviderId;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasSessionRelativeTimestamp;
+@property (nonatomic) BOOL hasZoomLevel;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic, retain) GEOPlaceActionDetails *placeActionDetails;
+@property (nonatomic, retain) NSString *providerId;
+@property (nonatomic) int sequenceNumber;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) double sessionRelativeTimestamp;
+@property (nonatomic) double zoomLevel;
 
 + (id)feedbackCollectionWithTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 + (id)feedbackCollectionWithTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;

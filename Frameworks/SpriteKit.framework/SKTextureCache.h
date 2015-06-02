@@ -31,22 +31,22 @@
     int wrapMode;
 }
 
-@property unsigned int* alphaMap;
-@property struct CGSize { float x1; float x2; } alphaMapSize;
-@property int filteringMode;
-@property BOOL hasAlpha;
-@property BOOL isLoaded;
-@property BOOL isPOT;
-@property(getter=getLock,readonly) int* lock;
-@property char * pixelData;
-@property struct CGSize { float x1; float x2; } pixelSize;
-@property struct CGSize { float x1; float x2; } size;
-@property int state;
-@property unsigned int texFormat;
-@property unsigned int texId;
-@property int texInternalFormat;
-@property unsigned int texType;
-@property int wrapMode;
+@property (nonatomic) unsigned int*alphaMap;
+@property (nonatomic) struct CGSize { float x1; float x2; } alphaMapSize;
+@property (nonatomic) int filteringMode;
+@property (nonatomic) BOOL hasAlpha;
+@property (nonatomic) BOOL isLoaded;
+@property (nonatomic) BOOL isPOT;
+@property (getter=getLock, nonatomic, readonly) int*lock;
+@property (nonatomic) char *pixelData;
+@property (nonatomic) struct CGSize { float x1; float x2; } pixelSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) int state;
+@property (nonatomic) unsigned int texFormat;
+@property (nonatomic) unsigned int texId;
+@property (nonatomic) int texInternalFormat;
+@property (nonatomic) unsigned int texType;
+@property (nonatomic) int wrapMode;
 
 - (id).cxx_construct;
 - (unsigned int*)alphaMap;

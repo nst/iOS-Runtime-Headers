@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSIndexSet, NSString;
-
 @interface MFMessageCriterion : NSObject {
-    unsigned int _allCriteriaMustBeSatisfied : 1;
+    unsigned int _allCriteriaMustBeSatisfied;
     NSArray *_criteria;
     NSString *_criterionIdentifier;
-    unsigned int _dateIsRelative : 1;
+    unsigned int _dateIsRelative;
     int _dateUnitType;
     NSString *_expression;
     BOOL _expressionIsSanitized;
-    unsigned int _includeRelatedMessages : 1;
+    unsigned int _includeRelatedMessages;
     NSIndexSet *_libraryIdentifiers;
     NSString *_name;
     int _qualifier;
@@ -27,10 +20,10 @@
     BOOL _useFlaggedForUnreadCount;
 }
 
-@property BOOL expressionIsSanitized;
-@property BOOL includeRelatedMessages;
-@property(retain) NSIndexSet * libraryIdentifiers;
-@property BOOL useFlaggedForUnreadCount;
+@property (nonatomic) BOOL expressionIsSanitized;
+@property (nonatomic) BOOL includeRelatedMessages;
+@property (nonatomic, retain) NSIndexSet *libraryIdentifiers;
+@property (nonatomic) BOOL useFlaggedForUnreadCount;
 
 + (id)ThreadNotifyMessageCriterion;
 + (id)VIPSenderMessageCriterion;
@@ -52,9 +45,9 @@
 + (id)todayMessageCriterion;
 + (id)unreadMessageCriterion;
 
-- (id)SQLExpressionWithContext:(struct { id x1; id x2; unsigned int x3; unsigned int x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 depth:(unsigned int)arg2;
+- (id)SQLExpressionWithContext:(struct { id x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; BOOL x6; }*)arg1 depth:(unsigned int)arg2;
 - (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 contentIndex:(id)arg4 mailboxIDs:(id)arg5;
-- (void)_addCriteriaSatisfyingPredicate:(int (*)())arg1 toCollector:(id)arg2;
+- (void)_addCriteriaSatisfyingPredicate:(int (*)arg1 toCollector:(id)arg2;
 - (id)_collapsedMessageNumberCriterion:(id)arg1 allMustBeSatisfied:(BOOL)arg2 collapsedIndexes:(id*)arg3;
 - (id)_criterionForSQL;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
@@ -79,8 +72,8 @@
 - (BOOL)allCriteriaMustBeSatisfied;
 - (unsigned int)bestBaseTable;
 - (id)criteria;
-- (id)criteriaSatisfyingPredicate:(int (*)())arg1;
-- (id)criterionByApplyingTransform:(id)arg1;
+- (id)criteriaSatisfyingPredicate:(int (*)arg1;
+- (id)criterionByApplyingTransform:(id /* block */)arg1;
 - (id)criterionForSQL;
 - (id)criterionIdentifier;
 - (int)criterionType;
@@ -101,7 +94,7 @@
 - (BOOL)hasNonFullTextSearchableCriterion;
 - (unsigned int)hash;
 - (BOOL)includeRelatedMessages;
-- (BOOL)includesCriterionSatisfyingPredicate:(int (*)())arg1 restrictive:(BOOL)arg2;
+- (BOOL)includesCriterionSatisfyingPredicate:(int (*)arg1 restrictive:(BOOL)arg2;
 - (id)init;
 - (id)initWithCriterion:(id)arg1 expression:(id)arg2;
 - (id)initWithDictionary:(id)arg1;

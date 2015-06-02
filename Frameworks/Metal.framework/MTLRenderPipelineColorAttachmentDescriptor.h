@@ -25,15 +25,15 @@
     } _private;
 }
 
-@property unsigned int alphaBlendOperation;
-@property(getter=isBlendingEnabled) BOOL blendingEnabled;
-@property unsigned int destinationAlphaBlendFactor;
-@property unsigned int destinationRGBBlendFactor;
-@property unsigned int pixelFormat;
-@property unsigned int rgbBlendOperation;
-@property unsigned int sourceAlphaBlendFactor;
-@property unsigned int sourceRGBBlendFactor;
-@property unsigned int writeMask;
+@property (nonatomic) unsigned int alphaBlendOperation;
+@property (getter=isBlendingEnabled, nonatomic) BOOL blendingEnabled;
+@property (nonatomic) unsigned int destinationAlphaBlendFactor;
+@property (nonatomic) unsigned int destinationRGBBlendFactor;
+@property (nonatomic) unsigned int pixelFormat;
+@property (nonatomic) unsigned int rgbBlendOperation;
+@property (nonatomic) unsigned int sourceAlphaBlendFactor;
+@property (nonatomic) unsigned int sourceRGBBlendFactor;
+@property (nonatomic) unsigned int writeMask;
 
 - (id).cxx_construct;
 - (const struct MTLRenderPipelineAttachmentDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 3; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 4; unsigned int x_1_2_5 : 4; unsigned int x_1_2_6 : 4; unsigned int x_1_2_7 : 4; unsigned int x_1_2_8 : 4; unsigned int x_1_2_9 : 4; unsigned int x_1_2_10 : 1; unsigned int x_1_2_11; } x_1_1_1; struct { unsigned long long x_2_2_1; } x_1_1_2; } x1; }*)_descriptorPrivate;

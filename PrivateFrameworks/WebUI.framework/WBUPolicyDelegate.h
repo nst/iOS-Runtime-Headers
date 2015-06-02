@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBUPolicyDelegate : WebDefaultPolicyDelegate {
-}
+@interface WBUPolicyDelegate : WebDefaultPolicyDelegate
 
 + (id)sharedPolicyDelegate;
 

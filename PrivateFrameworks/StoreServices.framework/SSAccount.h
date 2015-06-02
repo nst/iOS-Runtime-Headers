@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSLock, NSNumber, NSString;
-
 @interface SSAccount : NSObject <NSCopying, SSXPCCoding> {
     int _accountKind;
     NSString *_accountName;
@@ -29,35 +27,35 @@
     NSNumber *_uniqueIdentifier;
 }
 
-@property(copy) NSString * ITunesPassSerialNumber;
+@property (copy) NSString *ITunesPassSerialNumber;
 @property int accountKind;
-@property(copy) NSString * accountName;
+@property (copy) NSString *accountName;
 @property int accountScope;
 @property int accountSource;
-@property(getter=isActive) BOOL active;
-@property(getter=isActiveLockerAccount) BOOL activeLockerAccount;
-@property(getter=isAuthenticated,readonly) BOOL authenticated;
+@property (getter=isActive) BOOL active;
+@property (getter=isActiveLockerAccount) BOOL activeLockerAccount;
+@property (getter=isAuthenticated, readonly) BOOL authenticated;
 @property int availableServiceTypes;
-@property(copy) NSString * creditsString;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDemoAccount) BOOL demoAccount;
-@property(copy,readonly) NSString * description;
+@property (copy) NSString *creditsString;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDemoAccount) BOOL demoAccount;
+@property (readonly, copy) NSString *description;
 @property int enabledServiceTypes;
-@property(copy) NSString * firstName;
+@property (copy) NSString *firstName;
 @property int freeDownloadsPasswordSetting;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * lastName;
-@property(getter=isNewCustomer) BOOL newCustomer;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *lastName;
+@property (getter=isNewCustomer) BOOL newCustomer;
 @property int paidPurchasesPasswordSetting;
-@property(copy) NSString * secureToken;
-@property(getter=isSocialEnabled) BOOL socialEnabled;
-@property(copy) NSString * storeFrontIdentifier;
-@property(readonly) Class superclass;
-@property(retain) NSNumber * uniqueIdentifier;
+@property (copy) NSString *secureToken;
+@property (getter=isSocialEnabled) BOOL socialEnabled;
+@property (copy) NSString *storeFrontIdentifier;
+@property (readonly) Class superclass;
+@property (retain) NSNumber *uniqueIdentifier;
 
 - (id)ITunesPassSerialNumber;
 - (void)_sendBlockingXPCMessage:(id)arg1;
-- (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (int)accountKind;
 - (id)accountName;
 - (int)accountScope;
@@ -75,11 +73,11 @@
 - (int)enabledServiceTypes;
 - (id)firstName;
 - (int)freeDownloadsPasswordSetting;
-- (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id)arg1;
-- (void)getITunesMatchStatusWithCompletionBlock:(id)arg1;
-- (void)getKeybagSyncDataWithType:(int)arg1 completionHandler:(id)arg2;
-- (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id)arg2;
-- (void)getTermsAndConditionsWithBlock:(id)arg1;
+- (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id /* block */)arg1;
+- (void)getITunesMatchStatusWithCompletionBlock:(id /* block */)arg1;
+- (void)getKeybagSyncDataWithType:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)getTermsAndConditionsWithBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initDemoAccount;
@@ -124,6 +122,6 @@
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)storeFrontIdentifier;
 - (id)uniqueIdentifier;
-- (void)updateAccountPasswordSettings:(id)arg1;
+- (void)updateAccountPasswordSettings:(id /* block */)arg1;
 
 @end

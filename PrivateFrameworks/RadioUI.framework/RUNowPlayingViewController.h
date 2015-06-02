@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUNowPlayingViewControllerDelegate>, NSString, RUPurchaseAlbumView, RUStationActionsViewController, RUTrackActionsModalItem, RUTrackActionsViewController, RUTrackDownloadView, SKStoreProductViewController, UIPopoverPresentationController, UIView;
-
 @interface RUNowPlayingViewController : MPUNowPlayingViewController <RUNowPlayingPlaybackControlsViewDelegate, RUStationActionsViewControllerDelegate, RUTrackActionsDelegate, RUTrackDownloadViewDelegate, SKStoreProductViewControllerDelegate, UIModalItemDelegate, UIPopoverPresentationControllerDelegate> {
     <RUNowPlayingViewControllerDelegate> *_delegate;
     UIView *_infoButtonContainerView;
@@ -20,14 +18,14 @@
     BOOL _visuallyEngagedAds;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUNowPlayingViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUNowPlayingViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)MPU_prepareForNavigationController:(id)arg1 poppingToViewController:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)MPU_prepareForNavigationController:(id)arg1 poppingToViewController:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_adTrackDidFailToLoadNotification:(id)arg1;
 - (void)_addStationFromItem:(id)arg1 usingArtist:(BOOL)arg2;
 - (id)_albumTextForItem:(id)arg1;
@@ -37,7 +35,7 @@
 - (struct CGSize { float x1; float x2; })_contentViewSizeForItem:(id)arg1 withContentView:(id)arg2 orientation:(int)arg3;
 - (id)_createContentViewForItem:(id)arg1 contentViewController:(id*)arg2;
 - (void)_didUpdateArtworkImage;
-- (BOOL)_dismissModalViewsAnimated:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (BOOL)_dismissModalViewsAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleTrackAction:(int)arg1 withItem:(id)arg2;
 - (void)_infoButtonAction:(id)arg1;
 - (BOOL)_isActionForHandlingDoubleTapOnArtworkImageViewEnabled;

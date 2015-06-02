@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKMessageClassifier : NSObject {
-}
+@interface RKMessageClassifier : NSObject
 
 + (id)messageClassification:(id)arg1 withLanguageIdentifier:(id)arg2;
 

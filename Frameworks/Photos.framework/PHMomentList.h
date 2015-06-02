@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSDate;
-
 @interface PHMomentList : PHCollectionList {
     short _generationType;
     short _granularityLevel;
@@ -11,10 +9,10 @@
     int _sortIndex;
 }
 
-@property(readonly) short generationType;
-@property(readonly) short granularityLevel;
-@property(readonly) NSDate * representativeDate;
-@property(readonly) int sortIndex;
+@property (nonatomic, readonly) short generationType;
+@property (nonatomic, readonly) short granularityLevel;
+@property (nonatomic, readonly) NSDate *representativeDate;
+@property (nonatomic, readonly) int sortIndex;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;

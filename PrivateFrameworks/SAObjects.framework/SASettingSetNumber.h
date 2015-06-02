@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingSetNumber : SASettingSetValue {
-}
+@interface SASettingSetNumber : SASettingSetValue
 
-@property BOOL increment;
+@property (nonatomic) BOOL increment;
 
 + (id)setNumber;
 + (id)setNumberWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString;
-
 @interface PHObjectPlaceholder : PHObject {
     int _assetMediaType;
     NSString *_localIdentifier;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWebDateTimePopoverViewController;
-
 @interface UIWebDefaultDateTimePopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
     UIWebDateTimePopoverViewController *_webDateTimeViewController;
 }
 
-@property(retain) UIWebDateTimePopoverViewController * _webDateTimeViewController;
+@property (nonatomic, retain) UIWebDateTimePopoverViewController *_webDateTimeViewController;
 
 - (id)_webDateTimeViewController;
 - (void)clear:(id)arg1;

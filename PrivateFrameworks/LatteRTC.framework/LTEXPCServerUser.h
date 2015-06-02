@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface LTEXPCServerUser : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id block;
-
+    id /* block */ block;
     NSObject<OS_dispatch_queue> *queue;
 }
 
-@property(copy) id block;
-@property NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, copy) id /* block */ block;
+@property NSObject<OS_dispatch_queue> *queue;
 
-- (id)block;
+- (id /* block */)block;
 - (id)queue;
-- (void)setBlock:(id)arg1;
+- (void)setBlock:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

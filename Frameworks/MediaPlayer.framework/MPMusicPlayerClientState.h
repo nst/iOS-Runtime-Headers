@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaPlaylist, MPMediaQuery, MPRadioStation;
-
 @interface MPMusicPlayerClientState : NSObject {
     BOOL _allowsBackgroundVideo;
     int _backgroundPlaybackAccess;
@@ -19,18 +17,18 @@
     BOOL _videoPlaybackEnabled;
 }
 
-@property BOOL allowsBackgroundVideo;
-@property int backgroundPlaybackAccess;
-@property(retain) MPMediaItem * firstItem;
-@property(retain) MPMediaPlaylist * geniusMixPlaylist;
-@property BOOL hasAudioBackgroundMode;
-@property(retain) MPMediaQuery * query;
-@property(retain) MPRadioStation * radioStation;
-@property int repeatMode;
-@property BOOL seeking;
-@property int shuffleMode;
-@property BOOL useApplicationSpecificQueue;
-@property BOOL videoPlaybackEnabled;
+@property (nonatomic) BOOL allowsBackgroundVideo;
+@property (nonatomic) int backgroundPlaybackAccess;
+@property (nonatomic, retain) MPMediaItem *firstItem;
+@property (nonatomic, retain) MPMediaPlaylist *geniusMixPlaylist;
+@property (nonatomic) BOOL hasAudioBackgroundMode;
+@property (nonatomic, retain) MPMediaQuery *query;
+@property (nonatomic, retain) MPRadioStation *radioStation;
+@property (nonatomic) int repeatMode;
+@property (nonatomic) BOOL seeking;
+@property (nonatomic) int shuffleMode;
+@property (nonatomic) BOOL useApplicationSpecificQueue;
+@property (nonatomic) BOOL videoPlaybackEnabled;
 
 - (void).cxx_destruct;
 - (BOOL)allowsBackgroundVideo;

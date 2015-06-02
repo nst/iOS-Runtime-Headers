@@ -2,38 +2,28 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CertInfoCertificateHeaderCell, CertInfoCertificateSummaryDescriptionCell, NSDate, NSString, UITableView;
-
 @interface CertInfoCertificateSummaryView : UIView <UITableViewDataSource, UITableViewDelegate> {
     CertInfoCertificateSummaryDescriptionCell *_descriptionCell;
     NSDate *_expirationDate;
     CertInfoCertificateHeaderCell *_headerCell;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _moreDetailsSelectedBlock;
-
+    id /* block */ _moreDetailsSelectedBlock;
     NSString *_purpose;
     UITableView *_tableView;
     NSString *_trustSubtitle;
     NSString *_trustTitle;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CertInfoCertificateSummaryDescriptionCell * descriptionCell;
-@property(retain) NSDate * expirationDate;
-@property(readonly) unsigned int hash;
-@property(retain) CertInfoCertificateHeaderCell * headerCell;
-@property(retain) NSString * purpose;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
-@property(retain) NSString * trustSubtitle;
-@property(retain) NSString * trustTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CertInfoCertificateSummaryDescriptionCell *descriptionCell;
+@property (nonatomic, retain) NSDate *expirationDate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CertInfoCertificateHeaderCell *headerCell;
+@property (nonatomic, retain) NSString *purpose;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, retain) NSString *trustSubtitle;
+@property (nonatomic, retain) NSString *trustTitle;
 
 - (void).cxx_destruct;
 - (id)_cellForReuseIdentifier:(id)arg1;
@@ -46,7 +36,7 @@
 - (void)setDescriptionCell:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setHeaderCell:(id)arg1;
-- (void)setMoreDetailsSelectedBlock:(id)arg1;
+- (void)setMoreDetailsSelectedBlock:(id /* block */)arg1;
 - (void)setPurpose:(id)arg1;
 - (void)setTrustSubtitle:(id)arg1;
 - (void)setTrustTitle:(id)arg1;

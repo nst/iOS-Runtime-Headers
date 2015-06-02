@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString, NSURL;
-
 @interface IKAssetElement : IKViewElement {
     BOOL _infiniteDuration;
 }
 
-@property(retain,readonly) NSString * actionParams;
-@property(retain,readonly) NSString * adamID;
-@property(retain,readonly) NSString * bookmarkID;
-@property(retain,readonly) NSString * contentID;
-@property(getter=isInfiniteDuration,readonly) BOOL infiniteDuration;
-@property(readonly) int keyDelivery;
-@property(retain,readonly) NSString * serviceID;
-@property(readonly) int type;
-@property(retain,readonly) NSURL * url;
+@property (nonatomic, readonly, retain) NSString *actionParams;
+@property (nonatomic, readonly, retain) NSString *adamID;
+@property (nonatomic, readonly, retain) NSString *bookmarkID;
+@property (nonatomic, readonly, retain) NSString *contentID;
+@property (getter=isInfiniteDuration, nonatomic, readonly) BOOL infiniteDuration;
+@property (nonatomic, readonly) int keyDelivery;
+@property (nonatomic, readonly, retain) NSString *serviceID;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, retain) NSURL *url;
 
 + (BOOL)shouldParseChildDOMElements;
 

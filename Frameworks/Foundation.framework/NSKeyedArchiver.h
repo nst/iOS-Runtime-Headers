@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSKeyedArchiverDelegate>;
-
 @interface NSKeyedArchiver : NSCoder {
     void *_cache;
     unsigned int _cacheSize;
@@ -24,10 +22,11 @@
     id _visited;
 }
 
-@property <NSKeyedArchiverDelegate> * delegate;
+@property <NSKeyedArchiverDelegate> *delegate;
 @property unsigned int outputFormat;
 
-+ (id)_sp_secureArchivedDataWithRootObject:(id)arg1;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 + (id)archivedDataWithRootObject:(id)arg1;
 + (id)classNameForClass:(Class)arg1;
@@ -76,5 +75,9 @@
 - (void)setRequiresSecureCoding:(BOOL)arg1;
 - (unsigned int)systemVersion;
 - (int)versionForClassName:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Search.framework/Search
+
++ (id)_sp_secureArchivedDataWithRootObject:(id)arg1;
 
 @end

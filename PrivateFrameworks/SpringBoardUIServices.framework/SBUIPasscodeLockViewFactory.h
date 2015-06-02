@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIPasscodeLockViewFactory : NSObject {
-}
+@interface SBUIPasscodeLockViewFactory : NSObject
 
 + (id)_passcodeLockViewForStyle:(int)arg1 withLightStyle:(BOOL)arg2;
 + (void)_warmupKBDIfNecessary;

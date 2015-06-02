@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADGraphic;
-
 @interface OADGraphic : OADDrawable {
     OADGraphic *mMasterGraphic;
 }

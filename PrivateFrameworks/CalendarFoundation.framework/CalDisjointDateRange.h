@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSMutableSet;
-
 @interface CalDisjointDateRange : NSObject <NSCopying, NSSecureCoding> {
     NSMutableSet *_distinctRanges;
 }
 
-@property(copy) NSMutableSet * distinctRanges;
+@property (nonatomic, copy) NSMutableSet *distinctRanges;
 
 + (id)disjointRangeWithDistinctRanges:(id)arg1;
 + (id)disjointRangeWithSingleRange:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <TCCancelDelegate>, CXNamespace, NSMutableArray, OAXDrawingState, OCPPackagePart, OITSUNoCopyDictionary, WDCharacterRun, WDDocument, WXOAVReadState;
-
 @interface WXReadState : OCXReadState {
     struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; } *mAnnotationDocument;
     OCPPackagePart *mAnnotationPart;
@@ -45,15 +43,15 @@
     CXNamespace *mWXShapeNamespace;
 }
 
-@property(retain) CXNamespace * WXDrawingNamespace;
-@property(retain) CXNamespace * WXGroupNamespace;
-@property(retain) CXNamespace * WXMainNamespace;
-@property(retain) CXNamespace * WXMathNamespace;
-@property(retain) CXNamespace * WXOOBibliographyNamespace;
-@property(retain) CXNamespace * WXRelationshipNamespace;
-@property(retain) CXNamespace * WXShapeNamespace;
-@property(retain) <TCCancelDelegate> * cancelDelegate;
-@property int currentOfficeArtTextType;
+@property (nonatomic, retain) CXNamespace *WXDrawingNamespace;
+@property (nonatomic, retain) CXNamespace *WXGroupNamespace;
+@property (nonatomic, retain) CXNamespace *WXMainNamespace;
+@property (nonatomic, retain) CXNamespace *WXMathNamespace;
+@property (nonatomic, retain) CXNamespace *WXOOBibliographyNamespace;
+@property (nonatomic, retain) CXNamespace *WXRelationshipNamespace;
+@property (nonatomic, retain) CXNamespace *WXShapeNamespace;
+@property (nonatomic, retain) <TCCancelDelegate> *cancelDelegate;
+@property (nonatomic) int currentOfficeArtTextType;
 
 - (id)WXDrawingNamespace;
 - (id)WXGroupNamespace;

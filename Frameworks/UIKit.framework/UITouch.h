@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UITouchPhaseChangeDelegate>, NSArray, NSMutableArray, NSString, UIResponder, UIView, UIWindow;
-
 @interface UITouch : NSObject <_UIResponderForwardable> {
     <_UITouchPhaseChangeDelegate> *__phaseChangeDelegate;
     UIWindow *__windowServerHitTestWindow;
@@ -46,38 +44,40 @@
     UIWindow *_window;
 }
 
-@property(setter=_setDisplacement:) struct CGSize { float x1; float x2; } _displacement;
-@property(getter=_isEaten,setter=_setEaten:) BOOL _eaten;
-@property(setter=_setEdgeType:) int _edgeType;
-@property(setter=_setForwardablePhase:) int _forwardablePhase;
-@property(setter=_setPathIdentity:) unsigned char _pathIdentity;
-@property(setter=_setPathIndex:) unsigned char _pathIndex;
-@property(setter=_setPhaseChangeDelegate:,retain) <_UITouchPhaseChangeDelegate> * _phaseChangeDelegate;
-@property(readonly) float _pressure;
-@property(setter=_setResponder:,retain) UIResponder * _responder;
-@property(setter=_setWindowServerHitTestWindow:,retain) UIWindow * _windowServerHitTestWindow;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSArray * gestureRecognizers;
-@property(readonly) unsigned int hash;
-@property BOOL isTap;
-@property float majorRadius;
-@property(readonly) float majorRadius;
-@property float majorRadiusTolerance;
-@property(readonly) float majorRadiusTolerance;
-@property int phase;
-@property(readonly) int phase;
-@property BOOL sentTouchesEnded;
-@property(readonly) Class superclass;
-@property unsigned int tapCount;
-@property(readonly) unsigned int tapCount;
-@property double timestamp;
-@property(readonly) double timestamp;
-@property(retain) UIView * view;
-@property(retain,readonly) UIView * view;
-@property(retain) UIView * warpedIntoView;
-@property(retain) UIWindow * window;
-@property(retain,readonly) UIWindow * window;
+@property (setter=_setDisplacement:, nonatomic) struct CGSize { float x1; float x2; } _displacement;
+@property (getter=_isEaten, setter=_setEaten:, nonatomic) BOOL _eaten;
+@property (setter=_setEdgeType:, nonatomic) int _edgeType;
+@property (setter=_setForwardablePhase:, nonatomic) int _forwardablePhase;
+@property (setter=_setPathIdentity:, nonatomic) unsigned char _pathIdentity;
+@property (setter=_setPathIndex:, nonatomic) unsigned char _pathIndex;
+@property (setter=_setPhaseChangeDelegate:, nonatomic, retain) <_UITouchPhaseChangeDelegate> *_phaseChangeDelegate;
+@property (nonatomic, readonly) float _pressure;
+@property (setter=_setResponder:, nonatomic, retain) UIResponder *_responder;
+@property (setter=_setWindowServerHitTestWindow:, nonatomic, retain) UIWindow *_windowServerHitTestWindow;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *gestureRecognizers;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isTap;
+@property (nonatomic) float majorRadius;
+@property (nonatomic, readonly) float majorRadius;
+@property (nonatomic) float majorRadiusTolerance;
+@property (nonatomic, readonly) float majorRadiusTolerance;
+@property (nonatomic) int phase;
+@property (nonatomic, readonly) int phase;
+@property (nonatomic) BOOL sentTouchesEnded;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int tapCount;
+@property (nonatomic, readonly) unsigned int tapCount;
+@property (nonatomic) double timestamp;
+@property (nonatomic, readonly) double timestamp;
+@property (nonatomic, retain) UIView *view;
+@property (nonatomic, readonly, retain) UIView *view;
+@property (nonatomic, retain) UIView *warpedIntoView;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, readonly, retain) UIWindow *window;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_createTouchesWithGSEvent:(struct __GSEvent { }*)arg1 phase:(int)arg2 view:(id)arg3;
 
@@ -133,12 +133,10 @@
 - (int)info;
 - (BOOL)isDelayed;
 - (BOOL)isTap;
-- (struct CGPoint { float x1; float x2; })locationInNode:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (float)majorRadius;
 - (float)majorRadiusTolerance;
 - (int)phase;
-- (struct CGPoint { float x1; float x2; })previousLocationInNode:(id)arg1;
 - (struct CGPoint { float x1; float x2; })previousLocationInView:(id)arg1;
 - (BOOL)sentTouchesEnded;
 - (void)setIsDelayed:(BOOL)arg1;
@@ -157,5 +155,10 @@
 - (id)view;
 - (id)warpedIntoView;
 - (id)window;
+
+// Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
+
+- (struct CGPoint { float x1; float x2; })locationInNode:(id)arg1;
+- (struct CGPoint { float x1; float x2; })previousLocationInNode:(id)arg1;
 
 @end

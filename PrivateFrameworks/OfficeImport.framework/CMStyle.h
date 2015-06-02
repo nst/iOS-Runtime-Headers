@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableString;
-
 @interface CMStyle : NSObject <NSCopying> {
     NSMutableString *mStyleString;
     NSMutableDictionary *properties;

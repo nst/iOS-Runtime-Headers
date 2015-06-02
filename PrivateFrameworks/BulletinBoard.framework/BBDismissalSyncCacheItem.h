@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface BBDismissalSyncCacheItem : NSObject {
     NSMutableArray *_dismissalDictionariesAndFeeds;
     NSMutableDictionary *_dismissalIDToFeeds;
 }
 
-@property(retain,readonly) NSMutableArray * dismissalDictionariesAndFeeds;
-@property(retain,readonly) NSMutableDictionary * dismissalIDToFeeds;
+@property (nonatomic, readonly, retain) NSMutableArray *dismissalDictionariesAndFeeds;
+@property (nonatomic, readonly, retain) NSMutableDictionary *dismissalIDToFeeds;
 
 - (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned int)arg3;
 - (void)dealloc;

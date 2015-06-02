@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PLCameraEffectsRendererDelegate>, CAMEffectsFullsizeView, CAMEffectsGridView, CAMVideoPreviewView, CIContext, EAGLContext, NSObject<OS_dispatch_queue>;
-
 @interface CAMEffectsRenderer : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __atomicPreviewStartedBlock;
-
+    id /* block */ __atomicPreviewStartedBlock;
     BOOL __atomicPreviewStartedNotificationNeeded;
     BOOL __inBackground;
     BOOL __previewLayerEnabled;
@@ -35,25 +25,25 @@
     unsigned int _totalFramesSinceLastReportedFrameDrop;
 }
 
-@property(getter=_isInBackground,setter=_setInBackground:) BOOL _inBackground;
-@property(setter=_setPreviewLayerEnabled:) BOOL _previewLayerEnabled;
-@property(setter=_setPreviewStartedBlock:,copy) id _previewStartedBlock;
-@property(setter=_setPreviewStartedNotificationNeeded:) BOOL _previewStartedNotificationNeeded;
-@property(setter=_setRenderEffectsFullsizeView:,retain) CAMEffectsFullsizeView * _renderEffectsFullsizeView;
-@property(setter=_setRenderGridView:,retain) CAMEffectsGridView * _renderGridView;
+@property (getter=_isInBackground, setter=_setInBackground:) BOOL _inBackground;
+@property (setter=_setPreviewLayerEnabled:, nonatomic) BOOL _previewLayerEnabled;
+@property (setter=_setPreviewStartedBlock:, copy) id /* block */ _previewStartedBlock;
+@property (setter=_setPreviewStartedNotificationNeeded:) BOOL _previewStartedNotificationNeeded;
+@property (setter=_setRenderEffectsFullsizeView:, retain) CAMEffectsFullsizeView *_renderEffectsFullsizeView;
+@property (setter=_setRenderGridView:, retain) CAMEffectsGridView *_renderGridView;
 @property unsigned int atomicFilterIndex;
-@property(retain) CAMVideoPreviewView * atomicVideoPreviewView;
+@property (retain) CAMVideoPreviewView *atomicVideoPreviewView;
 @property int cameraMode;
-@property <PLCameraEffectsRendererDelegate> * delegate;
-@property unsigned int filterIndex;
+@property (nonatomic) <PLCameraEffectsRendererDelegate> *delegate;
+@property (nonatomic) unsigned int filterIndex;
 @property BOOL mirrorFilterRendering;
-@property(getter=isShowingGrid) BOOL showGrid;
-@property(retain) CAMVideoPreviewView * videoPreviewView;
+@property (getter=isShowingGrid, nonatomic) BOOL showGrid;
+@property (nonatomic, retain) CAMVideoPreviewView *videoPreviewView;
 
 - (void).cxx_destruct;
 - (void)_animateGridLayerZoomToGrid:(BOOL)arg1;
 - (void)_animateLayer:(id)arg1 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 viewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 animationDuration:(double)arg5 animationTimingFunction:(id)arg6 animationDelegate:(id)arg7;
-- (void)_animateToGrid:(BOOL)arg1 layer:(id)arg2 fadeOutLayer:(id)arg3 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 completion:(id)arg6;
+- (void)_animateToGrid:(BOOL)arg1 layer:(id)arg2 fadeOutLayer:(id)arg3 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 completion:(id /* block */)arg6;
 - (id)_animatedLayerForView:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -72,18 +62,18 @@
 - (void)_notifyOfRenderIfNecessary;
 - (BOOL)_previewLayerEnabled;
 - (void)_previewStarted:(id)arg1;
-- (id)_previewStartedBlock;
+- (id /* block */)_previewStartedBlock;
 - (BOOL)_previewStartedNotificationNeeded;
 - (id)_renderEffectsFullsizeView;
 - (id)_renderGridView;
 - (void)_renderWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_reportStatsForFrameDrops;
 - (void)_resumeRendering;
-- (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id)arg1;
+- (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id /* block */)arg1;
 - (void)_setGridTransitionIsInFlight:(BOOL)arg1;
 - (void)_setInBackground:(BOOL)arg1;
 - (void)_setPreviewLayerEnabled:(BOOL)arg1;
-- (void)_setPreviewStartedBlock:(id)arg1;
+- (void)_setPreviewStartedBlock:(id /* block */)arg1;
 - (void)_setPreviewStartedNotificationNeeded:(BOOL)arg1;
 - (void)_setRenderEffectsFullsizeView:(id)arg1;
 - (void)_setRenderGridView:(id)arg1;
@@ -92,8 +82,8 @@
 - (id)_setupEffectsGridView;
 - (void)_setupEffectsView:(id)arg1;
 - (void)_tearDownEffectsView:(id)arg1 removeFromSuperview:(BOOL)arg2;
-- (void)_transitionFromGrid:(id)arg1;
-- (void)_transitionToGrid:(id)arg1;
+- (void)_transitionFromGrid:(id /* block */)arg1;
+- (void)_transitionToGrid:(id /* block */)arg1;
 - (void)_updateEffectsFullsizeView;
 - (void)_updateStatsForFrameWasDropped:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_zoomedFrameForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromFullFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toZoomFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -114,7 +104,7 @@
 - (void)setCameraMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilterIndex:(unsigned int)arg1;
-- (void)setFilterIndex:(unsigned int)arg1 forceStateChange:(BOOL)arg2 renderNotifyBlock:(id)arg3;
+- (void)setFilterIndex:(unsigned int)arg1 forceStateChange:(BOOL)arg2 renderNotifyBlock:(id /* block */)arg3;
 - (void)setMirrorFilterRendering:(BOOL)arg1;
 - (void)setShowGrid:(BOOL)arg1;
 - (void)setShowGrid:(BOOL)arg1 animated:(BOOL)arg2;

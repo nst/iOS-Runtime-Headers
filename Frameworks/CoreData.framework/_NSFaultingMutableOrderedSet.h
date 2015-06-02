@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSMutableDictionary, NSPropertyDescription;
-
 @interface _NSFaultingMutableOrderedSet : NSMutableOrderedSet {
     int _cd_rc;
     struct _NSFaultingMutableOrderedSetFlags { 
@@ -22,9 +20,9 @@
     NSManagedObject *_source;
 }
 
-@property(getter=isFault,readonly) BOOL fault;
-@property(readonly) NSPropertyDescription * relationship;
-@property(readonly) NSManagedObject * source;
+@property (getter=isFault, nonatomic, readonly) BOOL fault;
+@property (nonatomic, readonly) NSPropertyDescription *relationship;
+@property (nonatomic, readonly) NSManagedObject *source;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
@@ -52,19 +50,19 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)getObjects:(id*)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (id)initWithOrderedSet:(id)arg1;
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
@@ -90,9 +88,9 @@
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id)arg3;
-- (void)sortUsingComparator:(id)arg1;
-- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (void)sortRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 options:(unsigned int)arg2 usingComparator:(id /* block */)arg3;
+- (void)sortUsingComparator:(id /* block */)arg1;
+- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
 - (id)source;
 - (void)turnIntoFault;
 - (void)unionOrderedSet:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString, UIColor;
-
 @interface GKDebugHighlightView : UIView {
     NSString *_caption;
     UIColor *_color;
     BOOL _isOval;
 }
 
-@property(retain) NSString * caption;
-@property(retain) UIColor * color;
-@property BOOL isOval;
+@property (nonatomic, retain) NSString *caption;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) BOOL isOval;
 
 - (id)caption;
 - (id)color;

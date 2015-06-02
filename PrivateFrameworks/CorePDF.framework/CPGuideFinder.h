@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPCluster, CPZone, NSMutableArray;
-
 @interface CPGuideFinder : NSObject <CPDisposable> {
     double *anchorArray;
     CPCluster *anchors;

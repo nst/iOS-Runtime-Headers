@@ -11,10 +11,10 @@
     int _objectType;
 }
 
-@property long long anchor;
-@property BOOL hasAnchor;
-@property BOOL hasObjectType;
-@property int objectType;
+@property (nonatomic) long long anchor;
+@property (nonatomic) BOOL hasAnchor;
+@property (nonatomic) BOOL hasObjectType;
+@property (nonatomic) int objectType;
 
 - (long long)anchor;
 - (void)copyTo:(id)arg1;

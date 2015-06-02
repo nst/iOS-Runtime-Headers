@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class NSArray, NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface FigDisplayMirroringChangeObserver : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSArray *_baseDisplayList;

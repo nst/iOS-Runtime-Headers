@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVLeafItem;
-
 @interface CoreDAVMatchResultsItem : CoreDAVItem {
     CoreDAVLeafItem *_calendarDescription;
     CoreDAVLeafItem *_language;
@@ -11,10 +9,10 @@
     CoreDAVLeafItem *_region;
 }
 
-@property(retain) CoreDAVLeafItem * calendarDescription;
-@property(retain) CoreDAVLeafItem * language;
-@property(retain) CoreDAVLeafItem * rank;
-@property(retain) CoreDAVLeafItem * region;
+@property (nonatomic, retain) CoreDAVLeafItem *calendarDescription;
+@property (nonatomic, retain) CoreDAVLeafItem *language;
+@property (nonatomic, retain) CoreDAVLeafItem *rank;
+@property (nonatomic, retain) CoreDAVLeafItem *region;
 
 + (id)copyParseRules;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMapTable, NSObject<UIWebPDFViewHandlerDelegate>, UIAlertView, UIColor, UIDocumentPasswordView, UIView, UIWebPDFLabelView, UIWebPDFView, WebPDFNSNumberFormatter, _UIHighlightView, _UIRotatingAlertController;
-
 @interface UIWebPDFViewHandler : NSObject <UIDocumentPasswordViewDelegate, UIWebPDFViewDelegate, UIWebPDFViewPrivateDelegate, _UIRotatingAlertControllerDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
     UIColor *_backgroundColorForUnRenderedContent;
     BOOL _cachedScrollViewShadowsState;
@@ -46,14 +44,14 @@
     BOOL _showsShadowsForHTMLContent;
 }
 
-@property(retain) UIColor * backgroundColorForUnRenderedContent;
-@property(readonly) UIView * frontView;
-@property BOOL hideActivityIndicatorForUnRenderedContent;
-@property BOOL hidePageViewsUntilReadyToRender;
-@property NSObject<UIWebPDFViewHandlerDelegate> * pdfHandlerDelegate;
-@property(readonly) UIWebPDFView * pdfView;
-@property BOOL scalesPageToFit;
-@property BOOL showPageLabels;
+@property (nonatomic, retain) UIColor *backgroundColorForUnRenderedContent;
+@property (nonatomic, readonly) UIView *frontView;
+@property (nonatomic) BOOL hideActivityIndicatorForUnRenderedContent;
+@property (nonatomic) BOOL hidePageViewsUntilReadyToRender;
+@property (nonatomic) NSObject<UIWebPDFViewHandlerDelegate> *pdfHandlerDelegate;
+@property (nonatomic, readonly) UIWebPDFView *pdfView;
+@property (nonatomic) BOOL scalesPageToFit;
+@property (nonatomic) BOOL showPageLabels;
 
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
 - (id)_actionForType:(int)arg1;

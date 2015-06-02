@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, TIKeyboardCandidateResultSet, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateSortControl, UIView;
-
 @interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateGridCollectionViewControllerDelegate> {
     UIView *_clippingView;
     UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
@@ -19,15 +17,15 @@
     } _visualStyling;
 }
 
-@property(readonly) TIKeyboardCandidateResultSet * candidateResultSet;
-@property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIKeyboardCandidateSortControl * scrollViewSortControl;
-@property unsigned int selectedSortIndex;
-@property(readonly) Class superclass;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, readonly) TIKeyboardCandidateResultSet *candidateResultSet;
+@property (nonatomic, retain) UIKeyboardCandidateGridCollectionViewController *collectionViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIKeyboardCandidateSortControl *scrollViewSortControl;
+@property (nonatomic) unsigned int selectedSortIndex;
+@property (readonly) Class superclass;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 - (void)addSubview:(id)arg1;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;

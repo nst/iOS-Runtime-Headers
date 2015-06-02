@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString, SYErrorInfo, SYMessageHeader;
-
 @interface SYSyncEndResponse : PBCodable <NSCopying> {
     SYErrorInfo *_error;
     int _errorResolution;
@@ -14,12 +12,12 @@
     NSString *_syncID;
 }
 
-@property(retain) SYErrorInfo * error;
-@property int errorResolution;
-@property(readonly) BOOL hasError;
-@property BOOL hasErrorResolution;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * syncID;
+@property (nonatomic, retain) SYErrorInfo *error;
+@property (nonatomic) int errorResolution;
+@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic) BOOL hasErrorResolution;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSObject<OS_dispatch_semaphore>, PKPassLibrary, UIWindow;
-
 @interface PKPassSnapshotter : NSObject {
     PKPassLibrary *_passLibrary;
     float _scale;
@@ -11,24 +9,24 @@
     UIWindow *_snapshotWindow;
 }
 
-@property BOOL runsInBackgroundProcess;
+@property (nonatomic) BOOL runsInBackgroundProcess;
 
 + (void)purgeCacheOfPassSnapshotsWithUinqueID:(id)arg1;
 
 - (void)_cacheItem:(id)arg1 withKey:(id)arg2;
-- (BOOL)_cachedImageWithKey:(id)arg1 completion:(id)arg2;
-- (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
-- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id)arg4;
+- (BOOL)_cachedImageWithKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
+- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
 - (id)passLibrary;
 - (BOOL)runsInBackgroundProcess;
 - (void)setRunsInBackgroundProcess:(BOOL)arg1;
-- (void)snapshotWithPass:(id)arg1 completion:(id)arg2;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 withCache:(BOOL)arg3 completion:(id)arg4;
-- (void)snapshotWithUniqueID:(id)arg1 completion:(id)arg2;
-- (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id)arg4;
-- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id)arg3;
+- (void)snapshotWithPass:(id)arg1 completion:(id /* block */)arg2;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 withCache:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)snapshotWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
+- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
 
 @end

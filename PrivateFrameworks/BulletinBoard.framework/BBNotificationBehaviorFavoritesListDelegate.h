@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface BBNotificationBehaviorFavoritesListDelegate : NSObject <ABPredicateDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handlerBlock;
-
+    id /* block */ _handlerBlock;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithHandlerBlock:(id)arg1;
+- (id)initWithHandlerBlock:(id /* block */)arg1;
 - (BOOL)predicateShouldContinue:(id)arg1;
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 

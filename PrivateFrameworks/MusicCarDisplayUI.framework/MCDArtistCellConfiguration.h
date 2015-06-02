@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDArtistCellConfiguration : MCDCellConfiguration {
-}
+@interface MCDArtistCellConfiguration : MCDCellConfiguration
 
 + (void)_appDefaultsDidChangeNotification:(id)arg1;
 + (id)collectionPropertiesToFetch;

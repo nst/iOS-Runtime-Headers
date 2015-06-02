@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSString;
-
 @interface MBDomainInfo : NSObject <NSCoding, NSCopying> {
     NSString *_domainName;
     BOOL _enabled;
@@ -13,16 +11,16 @@
     BOOL _systemApp;
 }
 
-@property(getter=isAppDomain,readonly) BOOL appDomain;
-@property(readonly) NSString * bundleID;
-@property(getter=isCameraRollDomain,readonly) BOOL cameraRollDomain;
-@property(retain) NSString * domainName;
-@property(getter=isEnabled) BOOL enabled;
-@property unsigned long long localSize;
-@property unsigned long long remoteSize;
-@property(getter=isRestricted) BOOL restricted;
-@property(readonly) unsigned long long size;
-@property(getter=isSystemApp) BOOL systemApp;
+@property (getter=isAppDomain, nonatomic, readonly) BOOL appDomain;
+@property (nonatomic, readonly) NSString *bundleID;
+@property (getter=isCameraRollDomain, nonatomic, readonly) BOOL cameraRollDomain;
+@property (nonatomic, retain) NSString *domainName;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) unsigned long long localSize;
+@property (nonatomic) unsigned long long remoteSize;
+@property (getter=isRestricted, nonatomic) BOOL restricted;
+@property (nonatomic, readonly) unsigned long long size;
+@property (getter=isSystemApp, nonatomic) BOOL systemApp;
 
 + (id)domainInfoWithName:(id)arg1 systemApp:(BOOL)arg2 remoteSize:(unsigned long long)arg3 localSize:(unsigned long long)arg4 enabled:(BOOL)arg5 restricted:(BOOL)arg6;
 + (id)domainNameForBundleID:(id)arg1;

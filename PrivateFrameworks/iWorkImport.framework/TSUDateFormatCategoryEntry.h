@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet;
-
 @interface TSUDateFormatCategoryEntry : NSObject {
     NSMutableSet *mFormatStrings;
     struct __CFArray { } *mFormatters;

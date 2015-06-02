@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableMetadataDictionary, NSData, NSString;
-
 @interface HDCodableObject : PBCodable <NSCopying> {
     double _creationDate;
     struct { 
@@ -14,14 +12,14 @@
     NSData *_uuid;
 }
 
-@property double creationDate;
-@property BOOL hasCreationDate;
-@property(readonly) BOOL hasMetadataDictionary;
-@property(readonly) BOOL hasSourceBundleIdentifier;
-@property(readonly) BOOL hasUuid;
-@property(retain) HDCodableMetadataDictionary * metadataDictionary;
-@property(retain) NSString * sourceBundleIdentifier;
-@property(retain) NSData * uuid;
+@property (nonatomic) double creationDate;
+@property (nonatomic) BOOL hasCreationDate;
+@property (nonatomic, readonly) BOOL hasMetadataDictionary;
+@property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic, retain) HDCodableMetadataDictionary *metadataDictionary;
+@property (nonatomic, retain) NSString *sourceBundleIdentifier;
+@property (nonatomic, retain) NSData *uuid;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

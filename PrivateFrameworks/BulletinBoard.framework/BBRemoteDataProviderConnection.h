@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBRemoteDataProviderStoreDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BBRemoteDataProviderConnection : NSObject <BBDataProviderConnectionServerProxy, BBDataProviderStore, BBRemoteDataProviderDelegate> {
     NSString *_bundleID;
     BOOL _clientReady;
@@ -15,19 +13,19 @@
     NSString *_serviceName;
 }
 
-@property(readonly) NSString * bundleID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isConnected;
-@property(readonly) NSString * serviceName;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSString *bundleID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isConnected;
+@property (nonatomic, readonly) NSString *serviceName;
+@property (readonly) Class superclass;
 
 - (void)_queue_removeDataProvider:(id)arg1;
-- (void)addDataProviderWithSectionID:(id)arg1 clientProxy:(id)arg2 identity:(id)arg3 completion:(id)arg4;
+- (void)addDataProviderWithSectionID:(id)arg1 clientProxy:(id)arg2 identity:(id)arg3 completion:(id /* block */)arg4;
 - (void)addParentSectionFactory:(id)arg1;
 - (id)bundleID;
-- (void)clientIsReady:(id)arg1;
+- (void)clientIsReady:(id /* block */)arg1;
 - (id)dataProviderForSectionID:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;
 - (void)dealloc;
@@ -36,11 +34,11 @@
 - (id)initWithServiceName:(id)arg1 bundleID:(id)arg2 delegate:(id)arg3;
 - (BOOL)isConnected;
 - (void)loadAllDataProviders;
-- (void)performBlockOnDataProviders:(id)arg1;
+- (void)performBlockOnDataProviders:(id /* block */)arg1;
 - (void)remoteDataProviderNeedsToWakeClient:(id)arg1;
 - (void)removeDataProvider:(id)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (id)serviceName;
-- (void)setConnected:(BOOL)arg1 completion:(id)arg2;
+- (void)setConnected:(BOOL)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class CALayer;
-
 @interface SCNLayerSource : SCNImageSource {
     CALayer *_layer;
 }
 
-@property(retain) CALayer * layer;
+@property (nonatomic, retain) CALayer *layer;
 
 - (void)dealloc;
 - (BOOL)isOpaque;

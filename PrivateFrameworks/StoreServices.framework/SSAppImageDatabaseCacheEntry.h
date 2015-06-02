@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSAppImageDatabaseCacheEntry : SSDatabaseCacheEntry {
-}
+@interface SSAppImageDatabaseCacheEntry : SSDatabaseCacheEntry
 
 + (id)databaseTable;
 

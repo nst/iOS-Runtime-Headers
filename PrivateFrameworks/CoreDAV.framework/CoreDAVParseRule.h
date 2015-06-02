@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
-
 @interface CoreDAVParseRule : NSObject {
     NSString *_elementName;
     int _maximumNumber;
@@ -13,12 +11,12 @@
     SEL _setterMethod;
 }
 
-@property(readonly) NSString * elementName;
-@property(readonly) int maximumNumber;
-@property(readonly) int minimumNumber;
-@property(readonly) NSString * nameSpace;
-@property(readonly) Class objectClass;
-@property(readonly) SEL setterMethod;
+@property (nonatomic, readonly) NSString *elementName;
+@property (nonatomic, readonly) int maximumNumber;
+@property (nonatomic, readonly) int minimumNumber;
+@property (nonatomic, readonly) NSString *nameSpace;
+@property (nonatomic, readonly) Class objectClass;
+@property (nonatomic, readonly) SEL setterMethod;
 
 + (id)ruleWithMinimumNumber:(int)arg1 maximumNumber:(int)arg2 nameSpace:(id)arg3 elementName:(id)arg4 objectClass:(Class)arg5 setterMethod:(SEL)arg6;
 

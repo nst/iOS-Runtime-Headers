@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UICalloutView;
-
 @interface MKCalloutBasedAnnotationCalloutController : MKAnnotationCalloutController {
     UICalloutView *_calloutView;
 }

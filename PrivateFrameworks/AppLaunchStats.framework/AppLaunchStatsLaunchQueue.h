@@ -2,29 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface AppLaunchStatsLaunchQueue : NSObject <DuetLoggerProtocol> {
     NSDate *ageWifiChargerQueue;
     long long allowedAppLaunchCap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id highPriorityBlock;
-
+    id /* block */ highPriorityBlock;
     NSMutableArray *highPriorityPushQueue;
     NSMutableArray *highPriorityRetryList;
     NSDate *lastRetryTrigTime;
     NSObject<OS_dispatch_queue> *launchQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id lowPriorityBlock;
-
+    id /* block */ lowPriorityBlock;
     NSMutableArray *lowPriorityPushQueue;
     NSMutableArray *lowPriorityRetryList;
     bool pushHigh;
@@ -32,24 +18,20 @@
     unsigned long long scheduleLaunchQueue;
     NSMutableArray *trendingQueue;
     NSMutableArray *whatToLaunchQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id wifiChargerCheck;
-
+    id /* block */ wifiChargerCheck;
     long long wifiChargerDuration;
     NSMutableArray *wifiChargerQueue;
 }
 
 - (void).cxx_destruct;
 - (bool)acquireReservationStation:(id)arg1;
-- (void)addToHighPriorityQueue:(id)arg1 withLaunchBlock:(id)arg2;
-- (void)addToLaunchQueue:(id)arg1 withQueueType:(int)arg2 withItem:(id)arg3;
-- (void)addToLowPriorityQueue:(id)arg1 withLaunchBlock:(id)arg2;
-- (bool)confirmReservationStation:(id)arg1 seqNum:(long long)arg2 type:(int)arg3 release:(id)arg4;
+- (void)addToHighPriorityQueue:(id)arg1 withLaunchBlock:(id /* block */)arg2;
+- (void)addToLaunchQueue:(id)arg1 withQueueType:(int)arg2 withItem:(id /* block */)arg3;
+- (void)addToLowPriorityQueue:(id)arg1 withLaunchBlock:(id /* block */)arg2;
+- (bool)confirmReservationStation:(id)arg1 seqNum:(long long)arg2 type:(int)arg3 release:(id /* block */)arg4;
 - (void)doDispatchQueuedLPLaunches;
 - (void)doDispatchQueuedLaunches;
-- (void)enableWifiChargerQueue:(id)arg1;
+- (void)enableWifiChargerQueue:(id /* block */)arg1;
 - (id)init;
 - (int)launchObject:(id)arg1;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;

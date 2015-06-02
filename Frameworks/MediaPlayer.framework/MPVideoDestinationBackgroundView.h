@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, UIImageView, UILabel;
-
 @interface MPVideoDestinationBackgroundView : UIView {
     NSString *_destinationName;
     UILabel *_destinationSubtitleLabel;
@@ -12,8 +10,8 @@
     UIImageView *_videosImageView;
 }
 
-@property(copy) NSString * destinationName;
-@property int style;
+@property (nonatomic, copy) NSString *destinationName;
+@property (nonatomic) int style;
 
 - (void).cxx_destruct;
 - (id)destinationName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLInteractiveNavigationControllerDelegate>, NSMutableArray, NSString, PLExpandableView, PLInteractiveNavigationControllerView, UIView, UIViewController;
-
 @interface PLInteractiveNavigationController : UIViewController <PLExpandableViewDelegate, UINavigationBarDelegate> {
     struct { 
         unsigned int blockAppearanceCallbacks : 1; 
@@ -30,16 +28,16 @@
     <PLInteractiveNavigationControllerDelegate> *delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PLInteractiveNavigationControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * footerView;
-@property(getter=footerViewIsHidden) BOOL footerViewHidden;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * headerView;
-@property(getter=headerViewIsHidden) BOOL headerViewHidden;
-@property BOOL shouldPropagateEditingMode;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLInteractiveNavigationControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *footerView;
+@property (getter=footerViewIsHidden, nonatomic) BOOL footerViewHidden;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *headerView;
+@property (getter=headerViewIsHidden, nonatomic) BOOL headerViewHidden;
+@property (nonatomic) BOOL shouldPropagateEditingMode;
+@property (readonly) Class superclass;
 
 - (void)_addViewController:(id)arg1;
 - (id)_contentView;
@@ -94,10 +92,10 @@
 - (BOOL)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
 - (BOOL)pl_behavesLikeNavigationControllerForNotifications;
 - (void)popToRootViewController;
-- (void)popToRootViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)popToRootViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)popToViewController:(id)arg1;
 - (void)popViewController;
-- (void)popViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)popViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)replaceTopViewControllerWithViewController:(id)arg1;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;

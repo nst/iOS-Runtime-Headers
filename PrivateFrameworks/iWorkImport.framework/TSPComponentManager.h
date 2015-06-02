@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCache, NSHashTable, NSMapTable, NSObject<OS_dispatch_queue>, NSString, TSPComponent, TSPObjectContext;
-
 @interface TSPComponentManager : NSObject <TSPComponentDelegate, TSPObjectModifyDelegate> {
     NSCache *_componentCache;
     NSMapTable *_componentDictionary;
@@ -17,29 +15,29 @@
     TSPComponent *_viewStateComponent;
 }
 
-@property(readonly) TSPObjectContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) TSPComponent * documentComponent;
-@property(readonly) TSPComponent * documentMetadataComponent;
-@property(readonly) TSPComponent * documentObjectContainerComponent;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDocumentComponentTreeModified;
-@property(readonly) BOOL isSupportComponentTreeModified;
-@property(readonly) TSPComponent * packageMetadataComponent;
-@property(readonly) Class superclass;
-@property(readonly) TSPComponent * supportComponent;
-@property(readonly) TSPComponent * supportMetadataComponent;
-@property(readonly) TSPComponent * supportObjectContainerComponent;
-@property(retain) TSPComponent * viewStateComponent;
+@property (nonatomic, readonly) TSPObjectContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TSPComponent *documentComponent;
+@property (nonatomic, readonly) TSPComponent *documentMetadataComponent;
+@property (nonatomic, readonly) TSPComponent *documentObjectContainerComponent;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isDocumentComponentTreeModified;
+@property (nonatomic, readonly) BOOL isSupportComponentTreeModified;
+@property (nonatomic, readonly) TSPComponent *packageMetadataComponent;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TSPComponent *supportComponent;
+@property (nonatomic, readonly) TSPComponent *supportMetadataComponent;
+@property (nonatomic, readonly) TSPComponent *supportObjectContainerComponent;
+@property (retain) TSPComponent *viewStateComponent;
 
 - (void).cxx_destruct;
 - (void)beginIgnoringCachedObjectEviction;
 - (void)cacheComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
 - (id)componentForRootObjectIdentifier:(long long)arg1;
-- (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)componentForRootObjectIdentifier:(long long)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)componentForRootObjectOfLazyReference:(id)arg1;
-- (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)componentForRootObjectOfLazyReference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)componentForRootObjectOfLazyReferenceImpl:(id)arg1;
 - (id)context;
 - (void)dealloc;
@@ -51,7 +49,7 @@
 - (id)documentMetadataComponent;
 - (id)documentObjectContainerComponent;
 - (void)endIgnoringCachedObjectEviction;
-- (void)enumerateComponents:(id)arg1;
+- (void)enumerateComponents:(id /* block */)arg1;
 - (void)evictAllCachedObjects;
 - (void)flushComponent:(id)arg1 isDiscardingContent:(BOOL)arg2;
 - (id)init;
@@ -63,7 +61,7 @@
 - (id)objectForIdentifier:(long long)arg1;
 - (id)packageMetadataComponent;
 - (void)resumeLoadingModifiedFlushedComponents;
-- (void)retrieveOrCreateComponentForRootObject:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (void)retrieveOrCreateComponentForRootObject:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)rootComponentForPackageIdentifier:(unsigned char)arg1;
 - (id)rootComponentWithIdentifierImpl:(long long)arg1 locator:(id)arg2 packageIdentifier:(unsigned char)arg3;
 - (void)setViewStateComponent:(id)arg1;
@@ -74,7 +72,7 @@
 - (id)supportObjectContainerComponent;
 - (void)suspendLoadingModifiedFlushedComponentsAndWait;
 - (void)tearDown;
-- (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id)arg2;
+- (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id /* block */)arg2;
 - (id)viewStateComponent;
 - (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
 

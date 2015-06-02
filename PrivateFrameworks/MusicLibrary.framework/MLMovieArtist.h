@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, NSNumber, NSString;
-
 @interface MLMovieArtist : NSObject <NSCopying> {
     NSMutableDictionary *_dictionary;
 }
 
-@property(copy) NSNumber * ITunesStoreIdentifier;
-@property(copy) NSString * artistName;
+@property (nonatomic, copy) NSNumber *ITunesStoreIdentifier;
+@property (nonatomic, copy) NSString *artistName;
 
 - (void).cxx_destruct;
 - (id)ITunesStoreIdentifier;

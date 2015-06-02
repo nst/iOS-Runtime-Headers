@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString, NSURL;
-
 @interface PRSEngagementFeedback : PRSFeedback {
     unsigned int _action_area;
     NSString *_action_card_type;
@@ -16,12 +14,12 @@
 }
 
 @property unsigned int action_area;
-@property(retain) NSString * action_card_type;
-@property(retain) NSURL * action_destination;
+@property (nonatomic, retain) NSString *action_card_type;
+@property (nonatomic, retain) NSURL *action_destination;
 @property unsigned int action_type;
-@property(retain) NSString * fbr;
-@property(retain) NSString * local_result;
-@property(retain) NSString * parsec_result;
+@property (nonatomic, retain) NSString *fbr;
+@property (nonatomic, retain) NSString *local_result;
+@property (nonatomic, retain) NSString *parsec_result;
 @property BOOL userReturnedToResultsList;
 
 + (BOOL)supportsSecureCoding;

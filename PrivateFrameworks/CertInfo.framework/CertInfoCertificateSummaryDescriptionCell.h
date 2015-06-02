@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class CertInfoDescriptionCellContentView;
-
 @interface CertInfoCertificateSummaryDescriptionCell : UITableViewCell {
     CertInfoDescriptionCellContentView *_customContentView;
 }

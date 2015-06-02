@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property int error;
-@property BOOL hasError;
+@property (nonatomic) int error;
+@property (nonatomic) BOOL hasError;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

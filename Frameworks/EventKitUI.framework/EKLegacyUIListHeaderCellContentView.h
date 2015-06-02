@@ -8,9 +8,9 @@
     BOOL _showWeekNumber;
 }
 
-@property double date;
-@property BOOL indentsForDots;
-@property BOOL showWeekNumber;
+@property (nonatomic) double date;
+@property (nonatomic) BOOL indentsForDots;
+@property (nonatomic) BOOL showWeekNumber;
 
 - (id)_normalTextColor;
 - (id)_normalTextShadowColor;

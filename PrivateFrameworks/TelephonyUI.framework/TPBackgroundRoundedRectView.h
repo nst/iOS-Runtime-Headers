@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPRevealingRingView;
-
 @interface TPBackgroundRoundedRectView : UIView {
     TPRevealingRingView *_ringView;
 }

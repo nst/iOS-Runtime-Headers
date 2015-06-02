@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAHAIdentifierListFilter : SAHAFilter
 
-@interface SAHAIdentifierListFilter : SAHAFilter {
-}
-
-@property(copy) NSArray * identifiers;
+@property (nonatomic, copy) NSArray *identifiers;
 
 + (id)identifierListFilter;
 + (id)identifierListFilterWithDictionary:(id)arg1 context:(id)arg2;

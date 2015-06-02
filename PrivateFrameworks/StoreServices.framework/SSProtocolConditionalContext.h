@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface SSProtocolConditionalContext : NSObject <NSCopying> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _itemLookupBlock;
-
+    id /* block */ _itemLookupBlock;
     NSString *_platformName;
     NSString *_systemVersion;
 }
 
-@property(copy) id itemLookupBlock;
-@property(copy) NSString * platformName;
-@property(copy) NSString * systemVersion;
+@property (nonatomic, copy) id /* block */ itemLookupBlock;
+@property (nonatomic, copy) NSString *platformName;
+@property (nonatomic, copy) NSString *systemVersion;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)itemLookupBlock;
+- (id /* block */)itemLookupBlock;
 - (id)platformName;
-- (void)setItemLookupBlock:(id)arg1;
+- (void)setItemLookupBlock:(id /* block */)arg1;
 - (void)setPlatformName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;
 - (id)systemVersion;

@@ -6,7 +6,7 @@
     int _property;
 }
 
-@property int property;
+@property (nonatomic) int property;
 
 - (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)init;

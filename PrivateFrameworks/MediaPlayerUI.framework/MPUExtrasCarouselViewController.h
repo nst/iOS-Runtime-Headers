@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasCarouselViewControllerDataSource>, <MPUExtrasCarouselViewControllerDelegate>, MPUExtrasCarouselCollectionView, NSString, UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout>;
-
 @interface MPUExtrasCarouselViewController : UIViewController <MPUExtrasCarouselCollectionViewDelegate, MPUExtrasZoomingImageTransitionParticipant, UICollectionViewDataSource, UICollectionViewDelegate> {
     MPUExtrasCarouselCollectionView *_carouselCollectionView;
     UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> *_carouselCollectionViewLayout;
@@ -12,16 +10,16 @@
     BOOL _revealingNavigationBarDuringTransition;
 }
 
-@property(retain) MPUExtrasCarouselCollectionView * carouselCollectionView;
-@property(retain) UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> * carouselCollectionViewLayout;
-@property <MPUExtrasCarouselViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUExtrasCarouselViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int indexOfVisibleItem;
-@property(getter=isRevealingNavigationBarDuringTransition) BOOL revealingNavigationBarDuringTransition;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) MPUExtrasCarouselCollectionView *carouselCollectionView;
+@property (nonatomic, retain) UICollectionViewLayout<MPUExtrasCarouselCollectionViewLayout> *carouselCollectionViewLayout;
+@property (nonatomic) <MPUExtrasCarouselViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUExtrasCarouselViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int indexOfVisibleItem;
+@property (getter=isRevealingNavigationBarDuringTransition, nonatomic) BOOL revealingNavigationBarDuringTransition;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_isPhone;

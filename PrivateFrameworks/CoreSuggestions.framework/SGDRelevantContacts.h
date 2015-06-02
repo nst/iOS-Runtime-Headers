@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGDRelevantContacts : NSObject {
-}
+@interface SGDRelevantContacts : NSObject
 
 + (id)_recentCallHistory:(int)arg1;
 + (id)_recentMessagesHistory:(int)arg1;
-+ (void)relevantABRecordIDsWithLimit:(int)arg1 completion:(id)arg2;
++ (void)relevantABRecordIDsWithLimit:(int)arg1 completion:(id /* block */)arg2;
 + (void)setABRef:(void*)arg1;
 
 @end

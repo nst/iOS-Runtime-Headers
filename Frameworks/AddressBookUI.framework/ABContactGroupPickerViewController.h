@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactGroupPickerDelegate>, CNContactStyle, NSArray, NSString, UITableView;
-
 @interface ABContactGroupPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CNContactStyle *_contactStyle;
     <ABContactGroupPickerDelegate> *_groupPickerDelegate;
@@ -11,12 +9,12 @@
     UITableView *_tableView;
 }
 
-@property(retain) CNContactStyle * contactStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <ABContactGroupPickerDelegate> * groupPickerDelegate;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <ABContactGroupPickerDelegate> *groupPickerDelegate;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)pickableGroupsWithPickedGroups:(id)arg1;
 + (BOOL)propertiesLeftToPickWithPickedGroups:(id)arg1;

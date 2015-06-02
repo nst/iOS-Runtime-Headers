@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIPhysicalKeyboardEvent : UIPhysicalButtonsEvent {
     NSString *_commandModifiedInput;
     int _inputFlags;
@@ -15,17 +13,17 @@
     NSString *_unmodifiedInput;
 }
 
-@property(retain) NSString * _commandModifiedInput;
-@property(readonly) int _gsModifierFlags;
-@property int _inputFlags;
-@property(readonly) BOOL _isKeyDown;
-@property(readonly) long _keyCode;
-@property(retain) NSString * _markedInput;
-@property(retain) NSString * _modifiedInput;
-@property int _modifierFlags;
-@property(retain) NSString * _privateInput;
-@property(retain) NSString * _shiftModifiedInput;
-@property(retain) NSString * _unmodifiedInput;
+@property (nonatomic, retain) NSString *_commandModifiedInput;
+@property (nonatomic, readonly) int _gsModifierFlags;
+@property (nonatomic) int _inputFlags;
+@property (nonatomic, readonly) BOOL _isKeyDown;
+@property (nonatomic, readonly) long _keyCode;
+@property (nonatomic, retain) NSString *_markedInput;
+@property (nonatomic, retain) NSString *_modifiedInput;
+@property (nonatomic) int _modifierFlags;
+@property (nonatomic, retain) NSString *_privateInput;
+@property (nonatomic, retain) NSString *_shiftModifiedInput;
+@property (nonatomic, retain) NSString *_unmodifiedInput;
 
 + (id)_eventWithInput:(id)arg1 inputFlags:(int)arg2;
 

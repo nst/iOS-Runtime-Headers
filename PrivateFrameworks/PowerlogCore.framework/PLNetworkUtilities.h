@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLNetworkUtilities : NSObject {
-}
+@interface PLNetworkUtilities : NSObject
 
 + (id)decodeEtherType:(unsigned short)arg1;
 + (id)decodeIPPacket:(id)arg1;

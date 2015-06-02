@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSIndexSet;
-
 @interface _NSIndexSetEnumerator : NSEnumerator {
     unsigned int _index;
     NSIndexSet *_indexSet;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class ICCameraDevice, ICCameraFolder, NSDate, NSMutableDictionary, NSString;
-
 @interface ICCameraItemProperties : NSObject {
     NSString *_UTI;
     NSDate *_creationDate;
@@ -15,14 +13,14 @@
     NSMutableDictionary *_userData;
 }
 
-@property(retain) NSString * UTI;
-@property(retain) NSDate * creationDate;
-@property ICCameraDevice * device;
+@property (retain) NSString *UTI;
+@property (retain) NSDate *creationDate;
+@property ICCameraDevice *device;
 @property BOOL locked;
-@property(retain) NSDate * modificationDate;
-@property(retain) NSString * name;
-@property ICCameraFolder * parentFolder;
-@property(retain) NSMutableDictionary * userData;
+@property (retain) NSDate *modificationDate;
+@property (retain) NSString *name;
+@property ICCameraFolder *parentFolder;
+@property (retain) NSMutableDictionary *userData;
 
 - (id)UTI;
 - (id)creationDate;

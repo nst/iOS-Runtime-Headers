@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface CollectionCellAnalogClockView : AnalogClockView {
-}
+@interface CollectionCellAnalogClockView : AnalogClockView
 
 + (BOOL)doesFaceHaveShadow;
 + (float)faceRadius;

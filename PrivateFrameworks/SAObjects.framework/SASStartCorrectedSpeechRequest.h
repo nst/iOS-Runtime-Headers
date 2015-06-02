@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASStartCorrectedSpeechRequest : SAStartRequest
 
-@interface SASStartCorrectedSpeechRequest : SAStartRequest {
-}
-
-@property(copy) NSString * interactionId;
-@property(copy) NSString * sessionId;
+@property (nonatomic, copy) NSString *interactionId;
+@property (nonatomic, copy) NSString *sessionId;
 
 + (id)startCorrectedSpeechRequest;
 + (id)startCorrectedSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;

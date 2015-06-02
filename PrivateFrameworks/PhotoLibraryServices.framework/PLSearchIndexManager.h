@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString, PLKeywordManager, PLPhotoLibrary, PLSearchIndexDateFormatter, PLThrottleTimer, PLXPCTransaction, PSIDatabase;
-
 @interface PLSearchIndexManager : NSObject {
     BOOL __indexing;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __inqAfterIndexingDidIterate;
-
+    id /* block */ __inqAfterIndexingDidIterate;
     PLSearchIndexDateFormatter *_dateFormatter;
     PSIDatabase *_db;
     BOOL _hasValidSearchIndex;
@@ -30,10 +20,10 @@
     PLXPCTransaction *_xpcTransaction;
 }
 
-@property(getter=_isIndexing,setter=_setIndexing:) BOOL _indexing;
-@property(setter=_setInqAfterIndexingDidIterate:,copy) id _inqAfterIndexingDidIterate;
-@property(readonly) unsigned int enqueuedUUIDsCount;
-@property(getter=isIndexingPaused,setter=setIndexingPaused:) BOOL indexingPaused;
+@property (getter=_isIndexing, setter=_setIndexing:) BOOL _indexing;
+@property (setter=_setInqAfterIndexingDidIterate:, nonatomic, copy) id /* block */ _inqAfterIndexingDidIterate;
+@property (readonly) unsigned int enqueuedUUIDsCount;
+@property (getter=isIndexingPaused, setter=setIndexingPaused:) BOOL indexingPaused;
 
 + (id)_databasePathInDirectory:(id)arg1;
 + (id)_defaultDatabaseDirectory;
@@ -46,9 +36,9 @@
 - (void)_dropXPCTransactionIfNeeded;
 - (void)_inqAddUpdatesWithUUIDs:(id)arg1 forKey:(id)arg2;
 - (void)_inqAddUpdatesWithUUIDsArray:(id)arg1 forKey:(id)arg2;
-- (id)_inqAfterIndexingDidIterate;
+- (id /* block */)_inqAfterIndexingDidIterate;
 - (void)_inqCloseIndexIfAbleOrForce:(BOOL)arg1 isDelete:(BOOL)arg2;
-- (void)_inqCloseSearchIndexAndDelete:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)_inqCloseSearchIndexAndDelete:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (unsigned int)_inqEnqueuedUUIDsCountForceLoad:(BOOL)arg1;
 - (void)_inqEnsurePhotoLibraryExists;
 - (void)_inqEnsureSearchIndexExists;
@@ -67,13 +57,13 @@
 - (BOOL)_removeFileAtPath:(id)arg1 description:(id)arg2;
 - (void)_scheduleCloseIndex;
 - (void)_setIndexing:(BOOL)arg1;
-- (void)_setInqAfterIndexingDidIterate:(id)arg1;
+- (void)_setInqAfterIndexingDidIterate:(id /* block */)arg1;
 - (void)_takeXPCTransactionIfNeeded;
 - (void)_throttleTimerFire:(id)arg1;
-- (void)applyUpdates:(id)arg1 completion:(id)arg2;
-- (void)closeSearchIndexWithCompletion:(id)arg1;
+- (void)applyUpdates:(id)arg1 completion:(id /* block */)arg2;
+- (void)closeSearchIndexWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
-- (void)dropSearchIndexWithCompletion:(id)arg1;
+- (void)dropSearchIndexWithCompletion:(id /* block */)arg1;
 - (unsigned int)enqueuedUUIDsCount;
 - (void)ensureSearchIndexExists;
 - (id)initWithSearchIndexDirectory:(id)arg1;

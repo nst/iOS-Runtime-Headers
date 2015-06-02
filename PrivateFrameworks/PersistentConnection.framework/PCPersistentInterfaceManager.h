@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSMapTable, NSRecursiveLock, NSString, NSTimer, PCSimpleTimer;
-
 @interface PCPersistentInterfaceManager : NSObject <PCInterfaceMonitorDelegate> {
     long _WWANContextIdentifier;
     NSString *_WWANInterfaceName;
@@ -31,24 +29,24 @@
     int _wwanRSSI;
 }
 
-@property(readonly) NSString * WWANInterfaceName;
-@property(readonly) BOOL areAllNetworkInterfacesDisabled;
-@property(retain,readonly) NSString * currentLinkQualityString;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL doesWWANInterfaceExist;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isInCall;
-@property(readonly) BOOL isInternetReachable;
-@property(readonly) BOOL isInternetReachableViaWiFi;
-@property(readonly) BOOL isPowerStateDetectionSupported;
-@property(readonly) BOOL isWWANBetterThanWiFi;
-@property(readonly) BOOL isWWANInHomeCountry;
-@property(readonly) BOOL isWWANInterfaceActivationPermitted;
-@property(readonly) BOOL isWWANInterfaceInProlongedHighPowerState;
-@property(readonly) BOOL isWWANInterfaceUp;
-@property(readonly) BOOL isWakeOnWiFiSupported;
-@property(readonly) Class superclass;
+@property (readonly) NSString *WWANInterfaceName;
+@property (readonly) BOOL areAllNetworkInterfacesDisabled;
+@property (nonatomic, readonly, retain) NSString *currentLinkQualityString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BOOL doesWWANInterfaceExist;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isInCall;
+@property (readonly) BOOL isInternetReachable;
+@property (readonly) BOOL isInternetReachableViaWiFi;
+@property (readonly) BOOL isPowerStateDetectionSupported;
+@property (readonly) BOOL isWWANBetterThanWiFi;
+@property (readonly) BOOL isWWANInHomeCountry;
+@property (readonly) BOOL isWWANInterfaceActivationPermitted;
+@property (readonly) BOOL isWWANInterfaceInProlongedHighPowerState;
+@property (readonly) BOOL isWWANInterfaceUp;
+@property (readonly) BOOL isWakeOnWiFiSupported;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

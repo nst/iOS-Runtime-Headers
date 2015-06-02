@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIObjectPickerViewControllerDelegate>, SAUIDomainObjectPicker;
-
 @interface SiriUIObjectPickerViewController : UIViewController {
     SAUIDomainObjectPicker *_picker;
     <SiriUIObjectPickerViewControllerDelegate> *_pickerDelegate;
 }
 
-@property(getter=_picker,readonly) SAUIDomainObjectPicker * picker;
-@property <SiriUIObjectPickerViewControllerDelegate> * pickerDelegate;
+@property (getter=_picker, nonatomic, readonly) SAUIDomainObjectPicker *picker;
+@property (nonatomic) <SiriUIObjectPickerViewControllerDelegate> *pickerDelegate;
 
 + (id)pickerControllerWithPicker:(id)arg1;
 

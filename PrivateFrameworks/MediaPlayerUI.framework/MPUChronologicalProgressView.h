@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUChronologicalProgressViewDelegate>, MPDetailScrubController, MPUNowPlayingIndicatorView, NSString, UILabel, UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding>;
-
 @interface MPUChronologicalProgressView : UIView <MPDetailScrubControllerDelegate, MPUContentSizeCategoryChanging> {
     BOOL _alwaysLive;
     double _currentTime;
@@ -24,20 +22,20 @@
     double _totalDuration;
 }
 
-@property(getter=isAlwaysLive) BOOL alwaysLive;
-@property double currentTime;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUChronologicalProgressViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL scrubbingEnabled;
-@property BOOL showIsPlaying;
-@property BOOL showTimeLabels;
-@property(readonly) int style;
-@property int substyle;
-@property(readonly) Class superclass;
-@property double totalDuration;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackRect;
+@property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
+@property (nonatomic) double currentTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUChronologicalProgressViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL scrubbingEnabled;
+@property (nonatomic) BOOL showIsPlaying;
+@property (nonatomic) BOOL showTimeLabels;
+@property (nonatomic, readonly) int style;
+@property (nonatomic) int substyle;
+@property (readonly) Class superclass;
+@property (nonatomic) double totalDuration;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackRect;
 
 - (void).cxx_destruct;
 - (id)_createIndicatorViewWithStyle:(int)arg1;

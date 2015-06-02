@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKIconArtwork;
-
 @interface _VKScaledFallbackIconArtwork : VKIconArtwork {
     VKIconArtwork *_artwork;
     struct CGSize { 

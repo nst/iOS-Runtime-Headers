@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCalendar, NSObject<OS_dispatch_semaphore>;
-
 @interface TSCECalendar : NSObject {
     NSCalendar *mCalendar;
     NSObject<OS_dispatch_semaphore> *mSem;

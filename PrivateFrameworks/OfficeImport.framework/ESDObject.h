@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class ESDContainer;
-
 @interface ESDObject : NSObject {
     struct EshObject { int (**x1)(); unsigned short x2; } *mEshObject;
     bool mIsChart;

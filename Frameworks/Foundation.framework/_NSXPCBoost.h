@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface _NSXPCBoost : NSObject {
     NSObject<OS_xpc_object> *_event;
 }

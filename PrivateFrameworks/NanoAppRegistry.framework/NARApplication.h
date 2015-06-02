@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAppRegistry.framework/NanoAppRegistry
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface NARApplication : NSObject <NSSecureCoding> {
     NSDictionary *_iTunesPlistStrings;
     NSDictionary *_infoPlist;
@@ -12,21 +10,21 @@
     unsigned int _sequenceNumber;
 }
 
-@property(readonly) NSString * applicationIdentifier;
-@property(readonly) NSString * bundleName;
-@property(readonly) NSString * bundleVersion;
-@property(retain) NSDictionary * iTunesPlistStrings;
-@property(retain) NSDictionary * infoPlist;
-@property(readonly) NSString * itemName;
-@property(copy) NSString * launchServicesBundleType;
-@property(readonly) NSArray * localizations;
-@property(readonly) NSDictionary * localizedBundleNames;
-@property(readonly) NSString * localizedDisplayName;
-@property(readonly) NSDictionary * localizedDisplayNames;
-@property(retain) NSDictionary * localizedStrings;
-@property unsigned int sequenceNumber;
-@property(readonly) NSArray * supportedSchemes;
-@property(readonly) NSString * vendorName;
+@property (nonatomic, readonly) NSString *applicationIdentifier;
+@property (nonatomic, readonly) NSString *bundleName;
+@property (nonatomic, readonly) NSString *bundleVersion;
+@property (nonatomic, retain) NSDictionary *iTunesPlistStrings;
+@property (nonatomic, retain) NSDictionary *infoPlist;
+@property (nonatomic, readonly) NSString *itemName;
+@property (nonatomic, copy) NSString *launchServicesBundleType;
+@property (nonatomic, readonly) NSArray *localizations;
+@property (nonatomic, readonly) NSDictionary *localizedBundleNames;
+@property (nonatomic, readonly) NSString *localizedDisplayName;
+@property (nonatomic, readonly) NSDictionary *localizedDisplayNames;
+@property (nonatomic, retain) NSDictionary *localizedStrings;
+@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic, readonly) NSArray *supportedSchemes;
+@property (nonatomic, readonly) NSString *vendorName;
 
 + (BOOL)supportsSecureCoding;
 

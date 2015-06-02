@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSString;
-
 @interface _RKResponse : NSObject {
     NSString *_text;
     unsigned int _type;
 }
 
-@property(retain) NSString * text;
+@property (retain) NSString *text;
 @property unsigned int type;
 
 - (void).cxx_destruct;

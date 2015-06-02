@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray;
-
 @interface PKInAppPaymentEntitlement : NSObject {
     BOOL _ignoreMerchantIdentifiers;
     NSArray *_merchantIdentifiers;
 }
 
-@property(readonly) BOOL hasMerchantIdentifiers;
-@property(readonly) BOOL ignoreMerchantIdentifiers;
+@property (nonatomic, readonly) BOOL hasMerchantIdentifiers;
+@property (nonatomic, readonly) BOOL ignoreMerchantIdentifiers;
 
 - (void)_probeEntitlementsWithToken:(struct { unsigned int x1[8]; })arg1;
 - (void)dealloc;

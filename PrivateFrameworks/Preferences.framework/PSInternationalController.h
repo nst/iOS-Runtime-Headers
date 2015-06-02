@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSLocale, NSMutableArray, NSString, PSSpecifier;
-
 @interface PSInternationalController : PSListController {
     PSSpecifier *_addLanguageSpecifier;
     BOOL _changePrimaryLanguage;
@@ -18,14 +16,14 @@
     NSMutableArray *_updatedAppleLanguages;
 }
 
-@property(retain) PSSpecifier * addLanguageSpecifier;
-@property BOOL changePrimaryLanguage;
-@property(retain) NSArray * deviceLanguageGroup;
-@property(retain) NSArray * preferredLanguagesGroup;
-@property(retain) NSArray * regionFormatExampleGroup;
-@property(retain) NSArray * regionFormatGroup;
-@property BOOL shouldReloadSpecifiers;
-@property(retain) NSMutableArray * updatedAppleLanguages;
+@property (nonatomic, retain) PSSpecifier *addLanguageSpecifier;
+@property (nonatomic) BOOL changePrimaryLanguage;
+@property (nonatomic, retain) NSArray *deviceLanguageGroup;
+@property (nonatomic, retain) NSArray *preferredLanguagesGroup;
+@property (nonatomic, retain) NSArray *regionFormatExampleGroup;
+@property (nonatomic, retain) NSArray *regionFormatGroup;
+@property (nonatomic) BOOL shouldReloadSpecifiers;
+@property (nonatomic, retain) NSMutableArray *updatedAppleLanguages;
 
 + (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
 + (id)capitalizeFirstPartOfCountry:(id)arg1;

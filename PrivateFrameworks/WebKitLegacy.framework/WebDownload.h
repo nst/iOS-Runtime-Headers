@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebDownloadInternal;
-
 @interface WebDownload : NSURLDownload {
     WebDownloadInternal *_webInternal;
 }

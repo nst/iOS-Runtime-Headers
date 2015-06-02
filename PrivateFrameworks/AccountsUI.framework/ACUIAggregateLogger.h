@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@interface ACUIAggregateLogger : NSObject {
-}
+@interface ACUIAggregateLogger : NSObject
 
 + (id)_aggregateDictionaryKeyForDataclass:(id)arg1 accountType:(id)arg2 enabled:(BOOL)arg3;
 + (void)logDataclass:(id)arg1 wasDisabledOnAccountOfType:(id)arg2;

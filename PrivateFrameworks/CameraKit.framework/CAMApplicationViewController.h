@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSObject>, <PLApplicationCameraViewControllerDelegate>, CAMKeepDaemonAliveAssertion, NSDictionary, NSString, UIView, UIViewController;
-
 @interface CAMApplicationViewController : CAMCameraViewController <CAMCameraRollObserver, PLPhotoBrowserControllerDelegate, UINavigationControllerDelegate> {
     UIView *__autorotationCorrectionView;
     <NSObject> *__cameraRollNotificationToken;
@@ -22,18 +16,10 @@
     BOOL __shouldShowCameraRoll;
     NSDictionary *_configuration;
     <PLApplicationCameraViewControllerDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _doneButtonAction;
-
+    id /* block */ _doneButtonAction;
     BOOL _isReadyToTest;
     CAMKeepDaemonAliveAssertion *_keepDaemonAliveAssertion;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _previewButtonAction;
-
+    id /* block */ _previewButtonAction;
     double _sessionStartTime;
     int _testPictureCounter;
     double _testPictureRepeatDelay;
@@ -41,25 +27,25 @@
     BOOL _usesSessionAlbum;
 }
 
-@property(readonly) UIView * _autorotationCorrectionView;
-@property(readonly) <NSObject> * _cameraRollNotificationToken;
-@property(readonly) UIViewController * _cameraRollViewController;
-@property BOOL _didApplyConfigurationToCameraView;
-@property(getter=_isDismissingCameraRoll,setter=_setDismissingCameraRoll:) BOOL _dismissingCameraRoll;
-@property(getter=_isDismissingCameraRollForSuspension,setter=_setDismissingCameraRollForSuspension:) BOOL _dismissingCameraRollForSuspension;
-@property(setter=_setHasLockedSinceLastConfigurationChange:) BOOL _hasLockedSinceLastConfigurationChange;
-@property(readonly) int _lockToResetToken;
-@property(readonly) UIView * _rootContainerView;
-@property(readonly) BOOL _shouldRetryDismissal;
-@property(setter=_setShouldShowCameraRoll:) BOOL _shouldShowCameraRoll;
-@property(copy,readonly) NSString * debugDescription;
-@property <PLApplicationCameraViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id previewButtonAction;
-@property(readonly) Class superclass;
-@property int testPictureCounter;
-@property double testPictureRepeatDelay;
+@property (nonatomic, readonly) UIView *_autorotationCorrectionView;
+@property (nonatomic, readonly) <NSObject> *_cameraRollNotificationToken;
+@property (nonatomic, readonly) UIViewController *_cameraRollViewController;
+@property (nonatomic) BOOL _didApplyConfigurationToCameraView;
+@property (getter=_isDismissingCameraRoll, setter=_setDismissingCameraRoll:, nonatomic) BOOL _dismissingCameraRoll;
+@property (getter=_isDismissingCameraRollForSuspension, setter=_setDismissingCameraRollForSuspension:, nonatomic) BOOL _dismissingCameraRollForSuspension;
+@property (setter=_setHasLockedSinceLastConfigurationChange:, nonatomic) BOOL _hasLockedSinceLastConfigurationChange;
+@property (nonatomic, readonly) int _lockToResetToken;
+@property (nonatomic, readonly) UIView *_rootContainerView;
+@property (nonatomic, readonly) BOOL _shouldRetryDismissal;
+@property (setter=_setShouldShowCameraRoll:, nonatomic) BOOL _shouldShowCameraRoll;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLApplicationCameraViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ previewButtonAction;
+@property (readonly) Class superclass;
+@property (nonatomic) int testPictureCounter;
+@property (nonatomic) double testPictureRepeatDelay;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -99,7 +85,7 @@
 - (BOOL)_shouldResumeTorch;
 - (BOOL)_shouldRetryDismissal;
 - (BOOL)_shouldShowCameraRoll;
-- (void)_startCameraPreviewWithPreviewStartedBlock:(id)arg1;
+- (void)_startCameraPreviewWithPreviewStartedBlock:(id /* block */)arg1;
 - (void)_startPictureTestAfterSeconds:(double)arg1;
 - (id)_stringForHDRMode:(int)arg1;
 - (id)_stringForTimerDuration:(int)arg1;
@@ -136,11 +122,11 @@
 - (void)prepareForDismissal;
 - (void)prepareForSuspension;
 - (void)presentCameraRollAboveCameraView:(id)arg1;
-- (id)previewButtonAction;
+- (id /* block */)previewButtonAction;
 - (void)reloadAlbumNavigationController:(id)arg1 withCameraRoll:(id)arg2;
 - (void)saveCameraConfiguration;
 - (void)setDelegate:(id)arg1;
-- (void)setPreviewButtonAction:(id)arg1;
+- (void)setPreviewButtonAction:(id /* block */)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setTestPictureCounter:(int)arg1;
 - (void)setTestPictureRepeatDelay:(double)arg1;

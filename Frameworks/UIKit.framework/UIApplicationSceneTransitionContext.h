@@ -2,41 +2,43 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
+@interface UIApplicationSceneTransitionContext : FBSSceneTransitionContext
 
-@interface UIApplicationSceneTransitionContext : FBSSceneTransitionContext {
-}
+@property (nonatomic) BOOL allowCPUThrottling;
+@property (nonatomic) double execTime;
+@property (nonatomic) BOOL forTesting;
+@property (getter=_lifecycleActionType, setter=_setLifecycleActionType:, nonatomic) unsigned int lifecycleActionType;
+@property (nonatomic, retain) NSDictionary *payload;
+@property (nonatomic) BOOL runWatchdogIndependently;
+@property (nonatomic) BOOL safeMode;
+@property (nonatomic) double userLaunchEventTime;
+@property (nonatomic) double watchdogExtension;
 
-@property BOOL allowCPUThrottling;
-@property double execTime;
-@property BOOL forTesting;
-@property(getter=_lifecycleActionType,setter=_setLifecycleActionType:) unsigned int lifecycleActionType;
-@property(retain) NSDictionary * payload;
-@property BOOL runWatchdogIndependently;
-@property BOOL safeMode;
-@property double userLaunchEventTime;
-@property double watchdogExtension;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (unsigned int)_lifecycleActionType;
 - (void)_setLifecycleActionType:(unsigned int)arg1;
-- (BOOL)allowCPUThrottling;
 - (double)execTime;
 - (BOOL)forTesting;
 - (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)payload;
-- (BOOL)runWatchdogIndependently;
 - (BOOL)safeMode;
-- (void)setAllowCPUThrottling:(BOOL)arg1;
 - (void)setExecTime:(double)arg1;
 - (void)setForTesting:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
-- (void)setRunWatchdogIndependently:(BOOL)arg1;
 - (void)setSafeMode:(BOOL)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
-- (void)setWatchdogExtension:(double)arg1;
 - (double)userLaunchEventTime;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
+
+- (BOOL)allowCPUThrottling;
+- (BOOL)runWatchdogIndependently;
+- (void)setAllowCPUThrottling:(BOOL)arg1;
+- (void)setRunWatchdogIndependently:(BOOL)arg1;
+- (void)setWatchdogExtension:(double)arg1;
 - (double)watchdogExtension;
 
 @end

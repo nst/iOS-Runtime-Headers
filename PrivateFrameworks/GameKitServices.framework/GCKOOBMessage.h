@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSData;
-
 @interface GCKOOBMessage : NSObject <NSCoding> {
     unsigned int band;
     NSData *data;

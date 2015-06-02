@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUINavigationDocumentDelegate>, NSArray, NSMutableArray, NSString, SKUIClientContext, UINavigationController;
-
 @interface SKUINavigationDocumentController : NSObject <IKAppNavigationController> {
     SKUIClientContext *_clientContext;
     <SKUINavigationDocumentDelegate> *_delegate;
@@ -12,15 +10,15 @@
     NSMutableArray *_stackItems;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUINavigationDocumentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) NSArray * documentStackItems;
-@property(readonly) unsigned int hash;
-@property(readonly) UINavigationController * navigationController;
-@property(retain) UINavigationController * overrideNavigationController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUINavigationDocumentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *documentStackItems;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (nonatomic, retain) UINavigationController *overrideNavigationController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activeNavigationController;

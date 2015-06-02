@@ -13,12 +13,12 @@
     int _sequenceNumber;
 }
 
-@property int actionType;
-@property double duration;
-@property BOOL hasActionType;
-@property BOOL hasDuration;
-@property BOOL hasSequenceNumber;
-@property int sequenceNumber;
+@property (nonatomic) int actionType;
+@property (nonatomic) double duration;
+@property (nonatomic) BOOL hasActionType;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) int sequenceNumber;
 
 - (int)actionType;
 - (void)copyTo:(id)arg1;

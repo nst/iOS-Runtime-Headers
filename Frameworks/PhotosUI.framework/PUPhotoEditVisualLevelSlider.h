@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoEditVisualLevelSliderDataSource>, NSString, UICollectionView, UICollectionViewFlowLayout;
-
 @interface PUPhotoEditVisualLevelSlider : PUPhotoEditLevelSlider <UICollectionViewDataSource> {
     <PUPhotoEditVisualLevelSliderDataSource> *_dataSource;
     struct CGSize { 
@@ -14,12 +12,12 @@
     UICollectionViewFlowLayout *_thumbnailsStripFlowLayout;
 }
 
-@property <PUPhotoEditVisualLevelSliderDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property struct CGSize { float x1; float x2; } thumbnailSize;
+@property (nonatomic) <PUPhotoEditVisualLevelSliderDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGSize { float x1; float x2; } thumbnailSize;
 
 - (void).cxx_destruct;
 - (void)_configureCell:(id)arg1 thumbnailIndex:(int)arg2 animated:(BOOL)arg3;

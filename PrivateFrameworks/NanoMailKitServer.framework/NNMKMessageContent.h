@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSArray, NSData, NSString;
-
 @interface NNMKMessageContent : NSObject <NSSecureCoding> {
     NSArray *_attachments;
     BOOL _mainAlternativeValid;
@@ -12,11 +10,11 @@
     NSData *_textData;
 }
 
-@property(retain) NSArray * attachments;
-@property BOOL mainAlternativeValid;
-@property(retain) NSString * messageId;
-@property BOOL partiallyLoaded;
-@property(retain) NSData * textData;
+@property (nonatomic, retain) NSArray *attachments;
+@property (nonatomic) BOOL mainAlternativeValid;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic) BOOL partiallyLoaded;
+@property (nonatomic, retain) NSData *textData;
 
 + (id)classesForUnarchivingTextData;
 + (BOOL)supportsSecureCoding;

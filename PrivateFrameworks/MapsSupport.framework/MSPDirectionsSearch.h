@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class GEOStorageRouteRequestStorage, PBUnknownFields;
-
 @interface MSPDirectionsSearch : PBCodable <NSCopying> {
     GEOStorageRouteRequestStorage *_routeRequestStorage;
     PBUnknownFields *_unknownFields;
 }
 
-@property(readonly) BOOL hasRouteRequestStorage;
-@property(retain) GEOStorageRouteRequestStorage * routeRequestStorage;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, readonly) BOOL hasRouteRequestStorage;
+@property (nonatomic, retain) GEOStorageRouteRequestStorage *routeRequestStorage;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

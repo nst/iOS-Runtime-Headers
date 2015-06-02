@@ -6,7 +6,7 @@
     struct sqlite3 { } *_dbConnection;
 }
 
-@property struct sqlite3 { }* dbConnection;
+@property struct sqlite3 { }*dbConnection;
 
 - (struct sqlite3 { }*)dbConnection;
 - (void)dealloc;

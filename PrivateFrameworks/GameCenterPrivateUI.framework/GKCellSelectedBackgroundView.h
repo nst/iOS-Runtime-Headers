@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKCellSelectedBackgroundView : UIView {
-}
+@interface GKCellSelectedBackgroundView : UIView
 
 @end

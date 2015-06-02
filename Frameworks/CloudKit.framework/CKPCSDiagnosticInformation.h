@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface CKPCSDiagnosticInformation : NSObject <NSSecureCoding> {
     NSString *_identityInfo;
     NSMutableArray *_notFoundZoneIDs;
@@ -11,10 +9,10 @@
     NSString *_serviceIdentityInfo;
 }
 
-@property(retain) NSString * identityInfo;
-@property(retain) NSMutableArray * notFoundZoneIDs;
-@property(retain) NSMutableDictionary * pcsInfoByZoneID;
-@property(retain) NSString * serviceIdentityInfo;
+@property (nonatomic, retain) NSString *identityInfo;
+@property (nonatomic, retain) NSMutableArray *notFoundZoneIDs;
+@property (nonatomic, retain) NSMutableDictionary *pcsInfoByZoneID;
+@property (nonatomic, retain) NSString *serviceIdentityInfo;
 
 + (BOOL)supportsSecureCoding;
 

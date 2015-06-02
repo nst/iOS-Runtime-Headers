@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateBarCell_SecondaryCandidate : UIKeyboardCandidateBarCell {
-}
+@interface UIKeyboardCandidateBarCell_SecondaryCandidate : UIKeyboardCandidateBarCell
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
 + (id)font;

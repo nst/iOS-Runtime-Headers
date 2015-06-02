@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSPlaceholderMutableString : NSMutableString {
-}
+@interface NSPlaceholderMutableString : NSMutableString
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;

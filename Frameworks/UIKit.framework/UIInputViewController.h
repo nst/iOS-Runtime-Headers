@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject<UITextDocumentProxy>, NSString, UIInputView, UIKeyboard;
-
 @interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
     BOOL _alignsToContentViewController;
     NSString *_primaryLanguage;
     NSObject<UITextDocumentProxy> *_textDocumentProxy;
 }
 
-@property BOOL _alignsToContentViewController;
-@property(readonly) UIKeyboard * _keyboard;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIInputView * inputView;
-@property(copy) NSString * primaryLanguage;
-@property(readonly) Class superclass;
-@property(readonly) NSObject<UITextDocumentProxy> * textDocumentProxy;
+@property (nonatomic) BOOL _alignsToContentViewController;
+@property (nonatomic, readonly) UIKeyboard *_keyboard;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIInputView *inputView;
+@property (nonatomic, copy) NSString *primaryLanguage;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<UITextDocumentProxy> *textDocumentProxy;
 
 + (BOOL)_requiresProxyInterface;
 
@@ -44,7 +42,7 @@
 - (id)inputView;
 - (void)loadView;
 - (id)primaryLanguage;
-- (void)requestSupplementaryLexiconWithCompletion:(id)arg1;
+- (void)requestSupplementaryLexiconWithCompletion:(id /* block */)arg1;
 - (void)returnToPreviousInputMode;
 - (void)selectionDidChange:(id)arg1;
 - (void)selectionWillChange:(id)arg1;

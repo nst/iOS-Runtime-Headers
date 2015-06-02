@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKCorrelationType, HKDataUnitGroupChartingRules, NSArray, NSAttributedString, NSMutableDictionary, NSString, UIImage;
-
 @interface HKDataUnitGroup : NSObject {
     NSAttributedString *_attributedSummaryAttribution;
     int _categoryID;
@@ -26,26 +24,26 @@
     NSString *_unitChangeCautionaryText;
 }
 
-@property(readonly) NSAttributedString * attributedSummaryAttribution;
-@property(readonly) int categoryID;
-@property(readonly) NSString * cautionaryText;
-@property(readonly) HKDataUnitGroupChartingRules * chartingRules;
-@property(readonly) HKCorrelationType * correlationType;
-@property(readonly) int dataUnitGroupID;
-@property(readonly) NSArray * dataUnits;
-@property(readonly) NSArray * dataUnitsOrderedForDataEntry;
-@property(readonly) UIImage * detailImage;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * embeddedDisplayName;
-@property(readonly) UIImage * groupIcon;
-@property(readonly) NSString * joinString;
-@property(readonly) NSString * keywords;
-@property(readonly) UIImage * shareIcon;
-@property(readonly) NSString * summary;
-@property(readonly) NSString * summaryAttribution;
-@property(readonly) NSString * unitChangeCautionaryText;
-@property(readonly) UIImage * unitIcon;
-@property(readonly) BOOL unitPreferencesRequireChangeConfirmation;
+@property (nonatomic, readonly) NSAttributedString *attributedSummaryAttribution;
+@property (nonatomic, readonly) int categoryID;
+@property (nonatomic, readonly) NSString *cautionaryText;
+@property (nonatomic, readonly) HKDataUnitGroupChartingRules *chartingRules;
+@property (nonatomic, readonly) HKCorrelationType *correlationType;
+@property (nonatomic, readonly) int dataUnitGroupID;
+@property (nonatomic, readonly) NSArray *dataUnits;
+@property (nonatomic, readonly) NSArray *dataUnitsOrderedForDataEntry;
+@property (nonatomic, readonly) UIImage *detailImage;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *embeddedDisplayName;
+@property (nonatomic, readonly) UIImage *groupIcon;
+@property (nonatomic, readonly) NSString *joinString;
+@property (nonatomic, readonly) NSString *keywords;
+@property (nonatomic, readonly) UIImage *shareIcon;
+@property (nonatomic, readonly) NSString *summary;
+@property (nonatomic, readonly) NSString *summaryAttribution;
+@property (nonatomic, readonly) NSString *unitChangeCautionaryText;
+@property (nonatomic, readonly) UIImage *unitIcon;
+@property (nonatomic, readonly) BOOL unitPreferencesRequireChangeConfirmation;
 
 - (void).cxx_destruct;
 - (void)_applyChartingProperties:(id)arg1;

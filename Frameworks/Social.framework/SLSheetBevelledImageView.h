@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class UIImageView, UIView;
-
 @interface SLSheetBevelledImageView : SLSheetImagePreviewView {
     BOOL _needsURLPlaceholderImage;
     UIImageView *_placeholderGlyphView;
     UIView *_placeholderPreviewView;
 }
 
-@property BOOL needsURLPlaceholderImage;
+@property (nonatomic) BOOL needsURLPlaceholderImage;
 
 - (void).cxx_destruct;
 - (void)ensurePlaceholderPreviewImage;

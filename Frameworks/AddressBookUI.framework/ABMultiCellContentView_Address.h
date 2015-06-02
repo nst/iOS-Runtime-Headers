@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface ABMultiCellContentView_Address : ABMultiCellContentView_DisplayAlternate {
     unsigned int _entryFieldIndexOfFirstStreetField;
     NSArray *_lineInfos;

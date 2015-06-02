@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDKeyValueEntity : HDHealthEntity {
-}
+@interface HDKeyValueEntity : HDHealthEntity
 
 + (int)_deviceLocalCategory;
 + (BOOL)_doInsertValues:(id)arg1 forKeys:(id)arg2 modificationDates:(id)arg3 domain:(id)arg4 category:(id)arg5 provenance:(id)arg6 database:(id)arg7 error:(id*)arg8;
 + (Class)_entityClassForKeyValueCategory:(int)arg1;
-+ (BOOL)_enumerateMergedKeyValueEntitiesInCategory:(int)arg1 withPredicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id)arg5;
++ (BOOL)_enumerateMergedKeyValueEntitiesInCategory:(int)arg1 withPredicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id /* block */)arg5;
 + (BOOL)_insertCodableCategoryDomainDictionary:(id)arg1 provenance:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(id)arg4 provenance:(id)arg5 database:(id)arg6 error:(id*)arg7;
 + (BOOL)_insertKeysAndValues:(id)arg1 modificationDate:(id)arg2 domain:(id)arg3 category:(id)arg4 provenance:(id)arg5 healthDaemon:(id)arg6 error:(id*)arg7;
@@ -24,11 +23,11 @@
 + (id)_rawValueForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)_rawValuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 database:(id)arg4 error:(id*)arg5;
 + (id)_rawValuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
-+ (BOOL)_readRawValuesInCategory:(int)arg1 withPredicate:(id)arg2 withDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id)arg5;
++ (BOOL)_readRawValuesInCategory:(int)arg1 withPredicate:(id)arg2 withDatabase:(id)arg3 error:(id*)arg4 usingBlock:(id /* block */)arg5;
 + (BOOL)_setRawKeysAndValues:(id)arg1 domain:(id)arg2 category:(int)arg3 database:(id)arg4 error:(id*)arg5;
 + (BOOL)_setRawKeysAndValues:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (BOOL)_validateEntityClassForCategory:(int)arg1;
-+ (id)_valuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5 handler:(id)arg6;
++ (id)_valuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5 handler:(id /* block */)arg6;
 + (id)allValuesForDomain:(id)arg1 category:(int)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)createTableSQL;
 + (id)dataForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 entity:(id*)arg5 error:(id*)arg6;

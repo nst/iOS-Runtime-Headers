@@ -2,25 +2,25 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class ICCameraDevice, ICCameraFolder, NSDate, NSDictionary, NSMutableDictionary, NSString;
-
 @interface ICCameraItem : NSObject {
     void *_itemProperties;
 }
 
-@property(readonly) NSString * UTI;
-@property(readonly) NSDate * creationDate;
-@property(readonly) ICCameraDevice * device;
-@property(readonly) NSString * fileSystemPath;
-@property(readonly) BOOL hasMetadata;
-@property(readonly) BOOL hasThumbnail;
-@property(getter=isLocked) BOOL locked;
-@property(readonly) NSDictionary * metadata;
-@property(readonly) NSDate * modificationDate;
-@property(readonly) NSString * name;
-@property(readonly) ICCameraFolder * parentFolder;
-@property(readonly) struct CGImage { }* thumbnail;
-@property(readonly) NSMutableDictionary * userData;
+@property (readonly) NSString *UTI;
+@property (readonly) NSDate *creationDate;
+@property (readonly) ICCameraDevice *device;
+@property (readonly) NSString *fileSystemPath;
+@property (readonly) BOOL hasMetadata;
+@property (readonly) BOOL hasThumbnail;
+@property (getter=isLocked) BOOL locked;
+@property (readonly) NSDictionary *metadata;
+@property (readonly) NSDate *modificationDate;
+@property (readonly) NSString *name;
+@property (readonly) ICCameraFolder *parentFolder;
+@property (readonly) struct CGImage { }*thumbnail;
+@property (readonly) NSMutableDictionary *userData;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
 - (id)UTI;
 - (void)appendToPath:(id)arg1;
@@ -35,7 +35,6 @@
 - (BOOL)hasMetadata;
 - (BOOL)hasThumbnail;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
-- (BOOL)isCameraFile;
 - (BOOL)isLocked;
 - (id)metadata;
 - (id)modificationDate;
@@ -50,5 +49,9 @@
 - (struct CGImage { }*)thumbnail;
 - (id)userData;
 - (id)valueForUndefinedKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (BOOL)isCameraFile;
 
 @end

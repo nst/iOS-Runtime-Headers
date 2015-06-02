@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSRegularExpression;
-
 @interface PRSParsecResultSetPattern : NSObject {
     int _patternLength;
     NSRegularExpression *_regularExpression;
 }
 
-@property(readonly) int patternLength;
+@property (readonly) int patternLength;
 
 + (id)_nextTokenInResultSetPattern:(id)arg1 optional:(BOOL*)arg2;
 + (id)_regularExpressionPatternForResultSetPatternSuffix:(id)arg1 tokenCount:(int*)arg2;

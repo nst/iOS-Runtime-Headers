@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class FUShapeView;
-
 @interface FUGradientView : UIView {
     FUShapeView *_maskView;
 }

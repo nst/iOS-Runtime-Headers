@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<NSLocking>, NSString, TSUFlushingManager;
-
 @interface TSUFlushableObject : NSObject <TSUFlushable> {
     TSUFlushingManager *_flushingManager;
     NSObject<NSLocking> *_flushingManagerIvarLock;
@@ -11,10 +9,10 @@
     int _retainCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

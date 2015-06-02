@@ -13,12 +13,12 @@
     float _scale;
 }
 
-@property float bias;
-@property float errorPeriodSeconds;
-@property BOOL hasBias;
-@property BOOL hasErrorPeriodSeconds;
-@property BOOL hasScale;
-@property float scale;
+@property (nonatomic) float bias;
+@property (nonatomic) float errorPeriodSeconds;
+@property (nonatomic) BOOL hasBias;
+@property (nonatomic) BOOL hasErrorPeriodSeconds;
+@property (nonatomic) BOOL hasScale;
+@property (nonatomic) float scale;
 
 - (float)bias;
 - (void)copyTo:(id)arg1;

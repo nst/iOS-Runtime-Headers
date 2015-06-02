@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIHtmlView : SAAceView
 
-@interface SAUIHtmlView : SAAceView {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSString * descriptionText;
-@property(copy) NSString * html;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *html;
 
 + (id)htmlView;
 + (id)htmlViewWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DPrefilteredLineOutputColorShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DPrefilteredLineOutputColorShaderEffect : TSCH3DShaderEffect
 
 + (id)variablePrefilterStrokeColor;
 

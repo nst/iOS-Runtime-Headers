@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface> {
-}
+@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface>
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;

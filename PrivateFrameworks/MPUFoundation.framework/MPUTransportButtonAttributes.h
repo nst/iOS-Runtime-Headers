@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class UIColor, UIImage;
-
 @interface MPUTransportButtonAttributes : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -31,12 +29,12 @@
     UIColor *_selectedButtonColor;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } expandedTouchRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(retain) UIColor * highlightedButtonColor;
-@property(retain) UIImage * image;
-@property(retain) UIColor * normalButtonColor;
-@property(retain) UIColor * selectedButtonColor;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } expandedTouchRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, retain) UIColor *highlightedButtonColor;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIColor *normalButtonColor;
+@property (nonatomic, retain) UIColor *selectedButtonColor;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedTouchRect;

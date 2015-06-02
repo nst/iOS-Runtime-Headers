@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassPaymentSummaryCellDelegate>, NSString, UIButton, UIImage, UILabel;
-
 @interface PKPassPaymentSummaryCell : UITableViewCell {
     UILabel *_amountLabel;
     <PKPassPaymentSummaryCellDelegate> *_delegate;
     UIButton *_detailsButton;
 }
 
-@property(retain) NSString * amountText;
-@property <PKPassPaymentSummaryCellDelegate> * delegate;
-@property(retain) NSString * detailText;
-@property(retain) UIImage * image;
-@property(retain) NSString * primaryText;
-@property int primaryTextNumberOfLines;
-@property BOOL showDetailsButton;
+@property (nonatomic, retain) NSString *amountText;
+@property (nonatomic) <PKPassPaymentSummaryCellDelegate> *delegate;
+@property (nonatomic, retain) NSString *detailText;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) NSString *primaryText;
+@property (nonatomic) int primaryTextNumberOfLines;
+@property (nonatomic) BOOL showDetailsButton;
 
 + (id)_amountTextFont;
 + (id)_detailTextFont;

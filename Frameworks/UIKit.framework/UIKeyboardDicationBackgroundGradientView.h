@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIDictationView, UIKBRenderConfig;
-
 @interface UIKeyboardDicationBackgroundGradientView : UIView <_UIBasicAnimationFactory> {
     UIDictationView *_dictationView;
     UIKBRenderConfig *_renderConfig;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property UIDictationView * dictationView;
-@property(readonly) unsigned int hash;
-@property(retain) UIKBRenderConfig * renderConfig;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIDictationView *dictationView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIKBRenderConfig *renderConfig;
+@property (readonly) Class superclass;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_backgroundFillFrame;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;

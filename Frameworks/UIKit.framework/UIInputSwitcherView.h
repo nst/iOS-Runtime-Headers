@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UISwitch;
-
 @interface UIInputSwitcherView : UIKeyboardMenuView {
     int m_currentInputModeIndex;
     NSMutableArray *m_inputModes;
@@ -11,8 +9,8 @@
     UISwitch *m_predictiveSwitch;
 }
 
-@property(retain) NSArray * inputModes;
-@property BOOL keyboardSettingsFromSwitcher;
+@property (nonatomic, retain) NSArray *inputModes;
+@property (nonatomic) BOOL keyboardSettingsFromSwitcher;
 
 + (id)activeInstance;
 + (id)sharedInstance;

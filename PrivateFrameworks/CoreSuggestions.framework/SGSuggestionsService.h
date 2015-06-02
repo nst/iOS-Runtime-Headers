@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSObject<OS_dispatch_queue>, SGDaemonConnection;
-
 @interface SGSuggestionsService : NSObject {
     SGDaemonConnection *_daemonConnection;
     NSObject<OS_dispatch_queue> *_replyQueue;
@@ -12,54 +10,54 @@
 - (void).cxx_destruct;
 - (id)_remoteSuggestionManager;
 - (BOOL)clearCachesFully:(BOOL)arg1 error:(id*)arg2;
-- (void)clearCachesFully:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)clearCachesFully:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)confirmContact:(id)arg1 error:(id*)arg2;
-- (void)confirmContact:(id)arg1 withCompletion:(id)arg2;
+- (void)confirmContact:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)confirmEvent:(id)arg1 error:(id*)arg2;
-- (void)confirmEvent:(id)arg1 withCompletion:(id)arg2;
+- (void)confirmEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)contactFromABRecordID:(int)arg1 error:(id*)arg2;
-- (void)contactFromABRecordID:(int)arg1 withCompletion:(id)arg2;
+- (void)contactFromABRecordID:(int)arg1 withCompletion:(id /* block */)arg2;
 - (id)contactMatchesByEmailAddress:(id)arg1 error:(id*)arg2;
-- (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(id)arg2;
+- (void)contactMatchesByEmailAddress:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)contactMatchesByPhoneNumber:(id)arg1 error:(id*)arg2;
-- (void)contactMatchesByPhoneNumber:(id)arg1 withCompletion:(id)arg2;
+- (void)contactMatchesByPhoneNumber:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isEnabledWithError:(id*)arg1;
 - (id)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 error:(id*)arg6;
-- (void)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(id)arg6;
+- (void)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(id /* block */)arg6;
 - (id)predictedToEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 error:(id*)arg6;
-- (void)predictedToEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(id)arg6;
+- (void)predictedToEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 withCompletion:(id /* block */)arg6;
 - (BOOL)prepareForRealtimeExtraction:(id*)arg1;
-- (void)prepareForRealtimeExtractionWithCompletion:(id)arg1;
+- (void)prepareForRealtimeExtractionWithCompletion:(id /* block */)arg1;
 - (BOOL)rejectContact:(id)arg1 error:(id*)arg2;
-- (void)rejectContact:(id)arg1 withCompletion:(id)arg2;
+- (void)rejectContact:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)rejectEvent:(id)arg1 error:(id*)arg2;
-- (void)rejectEvent:(id)arg1 withCompletion:(id)arg2;
+- (void)rejectEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)relevantABRecordIDsWithLimit:(int)arg1 error:(id*)arg2;
-- (void)relevantABRecordIDsWithLimit:(int)arg1 withCompletion:(id)arg2;
+- (void)relevantABRecordIDsWithLimit:(int)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)resetConfirmationAndRejectionHistory:(id*)arg1;
-- (void)resetConfirmationAndRejectionHistoryWithCompletion:(id)arg1;
+- (void)resetConfirmationAndRejectionHistoryWithCompletion:(id /* block */)arg1;
 - (BOOL)sendRTCLogs:(id*)arg1;
 - (id)suggestContactMatchesWithFullTextSearch:(id)arg1 limitTo:(unsigned int)arg2 error:(id*)arg3;
-- (void)suggestContactMatchesWithFullTextSearch:(id)arg1 limitTo:(unsigned int)arg2 withCompletion:(id)arg3;
+- (void)suggestContactMatchesWithFullTextSearch:(id)arg1 limitTo:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
 - (id)suggestContactMatchesWithMessagingPrefix:(id)arg1 limitTo:(unsigned int)arg2 error:(id*)arg3;
-- (void)suggestContactMatchesWithMessagingPrefix:(id)arg1 limitTo:(unsigned int)arg2 withCompletion:(id)arg3;
+- (void)suggestContactMatchesWithMessagingPrefix:(id)arg1 limitTo:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
 - (id)suggestEventsInFutureLimitTo:(unsigned int)arg1 error:(id*)arg2;
 - (id)suggestEventsInFutureLimitTo:(unsigned int)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (void)suggestEventsInFutureLimitTo:(unsigned int)arg1 options:(unsigned int)arg2 withCompletion:(id)arg3;
-- (void)suggestEventsInFutureLimitTo:(unsigned int)arg1 withCompletion:(id)arg2;
+- (void)suggestEventsInFutureLimitTo:(unsigned int)arg1 options:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
+- (void)suggestEventsInFutureLimitTo:(unsigned int)arg1 withCompletion:(id /* block */)arg2;
 - (id)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 error:(id*)arg4;
 - (id)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 options:(unsigned int)arg4 error:(id*)arg5;
-- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 options:(unsigned int)arg4 withCompletion:(id)arg5;
-- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 withCompletion:(id)arg4;
+- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 options:(unsigned int)arg4 withCompletion:(id /* block */)arg5;
+- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 limitTo:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 - (id)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 error:(id*)arg5;
 - (id)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 options:(unsigned int)arg5 error:(id*)arg6;
-- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 options:(unsigned int)arg5 withCompletion:(id)arg6;
-- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 withCompletion:(id)arg5;
+- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 options:(unsigned int)arg5 withCompletion:(id /* block */)arg6;
+- (void)suggestEventsStartingAt:(id)arg1 endingAt:(id)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 withCompletion:(id /* block */)arg5;
 - (id)suggestionsFromEmailContent:(id)arg1 headers:(id)arg2 source:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5;
-- (void)suggestionsFromEmailContent:(id)arg1 headers:(id)arg2 source:(id)arg3 options:(unsigned int)arg4 withCompletion:(id)arg5;
+- (void)suggestionsFromEmailContent:(id)arg1 headers:(id)arg2 source:(id)arg3 options:(unsigned int)arg4 withCompletion:(id /* block */)arg5;
 - (id)suggestionsFromRFC822Data:(id)arg1 source:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
-- (void)suggestionsFromRFC822Data:(id)arg1 source:(id)arg2 options:(unsigned int)arg3 withCompletion:(id)arg4;
+- (void)suggestionsFromRFC822Data:(id)arg1 source:(id)arg2 options:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 
 @end

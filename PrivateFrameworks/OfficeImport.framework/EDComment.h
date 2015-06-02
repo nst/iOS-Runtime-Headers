@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDString;
-
 @interface EDComment : NSObject {
     EDString *_author;
     int _columnIndex;
@@ -11,10 +9,10 @@
     BOOL _visible;
 }
 
-@property(retain) EDString * author;
-@property int columnIndex;
-@property int rowIndex;
-@property BOOL visible;
+@property (nonatomic, retain) EDString *author;
+@property (nonatomic) int columnIndex;
+@property (nonatomic) int rowIndex;
+@property (nonatomic) BOOL visible;
 
 - (id)author;
 - (int)columnIndex;

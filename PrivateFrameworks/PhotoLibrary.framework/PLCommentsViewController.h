@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLCommentsViewControllerDelegate>, CAGradientLayer, NSCache, NSString, PLCloudSharedComment, PLManagedAsset, PLPhotoCommentEntryView, UIBarButtonItem, UIImageView, UITableView, UIView, _UIBackdropView;
-
 @interface PLCommentsViewController : UIViewController <PLCloudCommentsChangeObserver, PLDismissableViewController, PLPhotoCommentEntryViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     PLManagedAsset *_asset;
     struct CGRect { 
@@ -35,18 +33,18 @@
     BOOL _temporaryKeyboardHideReshow;
 }
 
-@property(retain) PLManagedAsset * asset;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availableBounds;
-@property(readonly) UIBarButtonItem * cancelButton;
-@property <PLCommentsViewControllerDelegate> * commentsControllerDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * draftComment;
-@property BOOL editMode;
-@property(readonly) unsigned int hash;
-@property BOOL isCompact;
-@property(retain) PLCloudSharedComment * justInsertedComment;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAsset *asset;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } availableBounds;
+@property (nonatomic, readonly) UIBarButtonItem *cancelButton;
+@property (nonatomic) <PLCommentsViewControllerDelegate> *commentsControllerDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *draftComment;
+@property (nonatomic) BOOL editMode;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCompact;
+@property (nonatomic, retain) PLCloudSharedComment *justInsertedComment;
+@property (readonly) Class superclass;
 
 - (void)_addCommentButtonTapped:(id)arg1;
 - (void)_adjustInitialScrollPosition:(BOOL)arg1;
@@ -110,7 +108,7 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (int)textCommentSection;
 - (void)updateForSizeChange;
-- (void)updateViewLayoutWithDuration:(double)arg1 completion:(id)arg2;
+- (void)updateViewLayoutWithDuration:(double)arg1 completion:(id /* block */)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

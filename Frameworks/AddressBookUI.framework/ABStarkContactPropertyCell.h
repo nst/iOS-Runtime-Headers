@@ -11,7 +11,7 @@
     } _contentInsets;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 + (BOOL)wantsHorizontalLayout;
 

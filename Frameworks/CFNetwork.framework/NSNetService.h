@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NSNetServiceDelegate>, NSArray, NSString;
-
 @interface NSNetService : NSObject {
     id _delegate;
     id _netService;
     id _reserved;
 }
 
-@property(copy,readonly) NSArray * addresses;
-@property <NSNetServiceDelegate> * delegate;
-@property(copy,readonly) NSString * domain;
-@property(copy,readonly) NSString * hostName;
+@property (readonly, copy) NSArray *addresses;
+@property <NSNetServiceDelegate> *delegate;
+@property (readonly, copy) NSString *domain;
+@property (readonly, copy) NSString *hostName;
 @property BOOL includesPeerToPeer;
-@property(copy,readonly) NSString * name;
-@property(readonly) int port;
-@property(copy,readonly) NSString * type;
+@property (readonly, copy) NSString *name;
+@property (readonly) int port;
+@property (readonly, copy) NSString *type;
 
 + (id)dataFromTXTRecordDictionary:(id)arg1;
 + (id)dictionaryFromTXTRecordData:(id)arg1;

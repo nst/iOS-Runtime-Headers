@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSDictionary;
-
 @interface NSStringDrawingContext : NSObject {
     float _actualScaleFactor;
     float _actualTrackingAdjustment;
@@ -39,26 +37,26 @@
     } _totalBounds;
 }
 
-@property float actualScaleFactor;
-@property float actualTrackingAdjustment;
-@property float baselineOffset;
-@property BOOL cachesLayout;
-@property BOOL drawsDebugBaselines;
-@property float firstBaselineOffset;
-@property(retain) id layout;
-@property unsigned int maximumNumberOfLines;
-@property float minimumScaleFactor;
-@property float minimumTrackingAdjustment;
-@property unsigned int numberOfLineFragments;
-@property float scaledBaselineOffset;
-@property float scaledLineHeight;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } totalBounds;
-@property BOOL usesSimpleTextEffects;
-@property BOOL wantsBaselineOffset;
-@property BOOL wantsNumberOfLineFragments;
-@property BOOL wantsScaledBaselineOffset;
-@property BOOL wantsScaledLineHeight;
-@property BOOL wrapsForTruncationMode;
+@property (nonatomic) float actualScaleFactor;
+@property (nonatomic) float actualTrackingAdjustment;
+@property (nonatomic) float baselineOffset;
+@property (nonatomic) BOOL cachesLayout;
+@property (nonatomic) BOOL drawsDebugBaselines;
+@property (nonatomic) float firstBaselineOffset;
+@property (nonatomic, retain) id layout;
+@property (nonatomic) unsigned int maximumNumberOfLines;
+@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) float minimumTrackingAdjustment;
+@property (nonatomic) unsigned int numberOfLineFragments;
+@property (nonatomic) float scaledBaselineOffset;
+@property (nonatomic) float scaledLineHeight;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } totalBounds;
+@property (nonatomic) BOOL usesSimpleTextEffects;
+@property (nonatomic) BOOL wantsBaselineOffset;
+@property (nonatomic) BOOL wantsNumberOfLineFragments;
+@property (nonatomic) BOOL wantsScaledBaselineOffset;
+@property (nonatomic) BOOL wantsScaledLineHeight;
+@property (nonatomic) BOOL wrapsForTruncationMode;
 
 - (float)actualScaleFactor;
 - (float)actualTrackingAdjustment;

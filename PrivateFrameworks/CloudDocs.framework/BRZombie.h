@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@interface BRZombie : NSObject {
-}
+@interface BRZombie : NSObject
 
 + (void)turnInZombieObject:(id)arg1;
 

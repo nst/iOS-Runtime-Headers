@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary;
-
 @interface ATVHighSecurityAccountSendCode : AAAppleTVRequest {
     NSDictionary *_device;
 }

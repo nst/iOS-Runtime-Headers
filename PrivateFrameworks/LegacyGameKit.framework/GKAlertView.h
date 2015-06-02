@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
  */
 
-@class UIView;
-
 @interface GKAlertView : UIAlertView {
     UIView *_clipView;
     UIView *_contentView;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer;
-
 @interface UIMotionEvent : UIInternalEvent {
     double _highLevelTime;
-    float _highPassState[2];
+    float _highPassState;
     unsigned int _highPassStateIndex;
     NSTimer *_idleTimer;
     double _lastMovementTime;
     double _lowEndTimeout;
-    float _lowPassState[10];
+    float _lowPassState;
     unsigned int _lowPassStateIndex;
     id _motionAccelerometer;
     BOOL _sentMotionBegan;
@@ -22,7 +20,7 @@
     int notifyToken;
 }
 
-@property int shakeState;
+@property (nonatomic) int shakeState;
 
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (BOOL)_detectWhenNotActive;

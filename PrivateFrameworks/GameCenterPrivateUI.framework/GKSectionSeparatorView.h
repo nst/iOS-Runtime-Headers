@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIView;
-
 @interface GKSectionSeparatorView : UICollectionReusableView {
     UIView *_underlineView;
 }
 
-@property(retain) UIView * underlineView;
+@property (nonatomic, retain) UIView *underlineView;
 
 + (BOOL)requiresConstraintBasedLayout;
 

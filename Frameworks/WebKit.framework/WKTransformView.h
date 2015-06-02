@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKTransformView : WKCompositingView {
-}
+@interface WKTransformView : WKCompositingView
 
 + (Class)layerClass;
 

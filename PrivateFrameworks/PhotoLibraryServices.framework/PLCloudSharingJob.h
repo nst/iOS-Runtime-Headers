@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLPhotoLibrary;
-
 @interface PLCloudSharingJob : PLDaemonJob {
     NSString *_archiveFilename;
     PLPhotoLibrary *_photoLibrary;
     BOOL _shouldPrioritize;
 }
 
-@property BOOL shouldPrioritize;
-@property(retain,readonly) PLPhotoLibrary * transientPhotoLibrary;
+@property (nonatomic) BOOL shouldPrioritize;
+@property (nonatomic, readonly, retain) PLPhotoLibrary *transientPhotoLibrary;
 
 + (id)archiveDirectory;
 + (void)deleteAllRecoveryEvents;

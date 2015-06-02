@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSMutableArray;
-
 @interface WKInspectorHighlightView : UIView {
     NSMutableArray *_layers;
 }

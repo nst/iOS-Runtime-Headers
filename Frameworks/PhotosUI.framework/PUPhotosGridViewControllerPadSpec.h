@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridViewControllerPadSpec : PUPhotosGridViewControllerSpec {
-}
+@interface PUPhotosGridViewControllerPadSpec : PUPhotosGridViewControllerSpec
 
 - (id)albumPickerViewControllerSpec;
 - (struct CGSize { float x1; float x2; })baseInterItemSpacing;

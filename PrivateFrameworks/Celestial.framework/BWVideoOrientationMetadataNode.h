@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWDeviceOrientationMonitor, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BWVideoOrientationMetadataNode : BWNode <BWDeviceOrientationMonitorPortraitLandscapeUpdateDelegate> {
-    struct OpaqueCMBlockBuffer {} *_bbufCache[5];
+    struct OpaqueCMBlockBuffer {} *_bbufCache;
     struct opaqueCMFormatDescription { } *_boxedMetadataFormatDescription;
     struct OpaqueCMClock { } *_clock;
     BWDeviceOrientationMonitor *_deviceOrientationMonitor;
@@ -18,10 +16,10 @@
     NSMutableArray *_transforms;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

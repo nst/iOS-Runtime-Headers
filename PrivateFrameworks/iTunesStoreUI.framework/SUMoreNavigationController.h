@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUMoreNavigationController : UIMoreNavigationController {
-}
+@interface SUMoreNavigationController : UIMoreNavigationController
 
 + (Class)_moreListControllerClass;
 

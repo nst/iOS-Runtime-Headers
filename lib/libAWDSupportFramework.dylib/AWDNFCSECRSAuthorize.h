@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCSECRSAuthorize : PBCodable <NSCopying> {
     BOOL _activated;
     NSData *_aid;
@@ -21,20 +19,20 @@
     NSData *_uuidReference;
 }
 
-@property BOOL activated;
-@property(retain) NSData * aid;
-@property BOOL hasActivated;
-@property(readonly) BOOL hasAid;
-@property BOOL hasMethod;
-@property BOOL hasStatus;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned int method;
-@property unsigned int status;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
+@property (nonatomic) BOOL activated;
+@property (nonatomic, retain) NSData *aid;
+@property (nonatomic) BOOL hasActivated;
+@property (nonatomic, readonly) BOOL hasAid;
+@property (nonatomic) BOOL hasMethod;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned int method;
+@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (BOOL)activated;
 - (id)aid;

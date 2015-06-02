@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, SCNOrderedDictionary;
-
 @interface SCNConstraint : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary *_animations;
     struct __C3DConstraint { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFString {} *x2; struct { int (*x_3_1_1)(); int (*x_3_1_2)(); } x3; float x4; bool x5; } *_constraintRef;
@@ -17,11 +10,11 @@
     float _influenceFactor;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float influenceFactor;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float influenceFactor;
+@property (readonly) Class superclass;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;

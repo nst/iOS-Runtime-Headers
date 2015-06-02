@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUICore.framework/SiriUICore
  */
 
-@class <SUICSiriLanguageDelegate>, NSString;
-
 @interface SUICSiriLanguage : NSObject {
     <SUICSiriLanguageDelegate> *_delegate;
     BOOL _setupAssistantNeedsToRunAvailable;
@@ -11,10 +9,10 @@
     NSString *_spokenLanguageCode;
 }
 
-@property(getter=_delegate,readonly) <SUICSiriLanguageDelegate> * delegate;
-@property(getter=_setupAssistantNeedsToRunAvailable) BOOL setupAssistantNeedsToRunAvailable;
-@property BOOL setupAssistantNeedsToRunChecked;
-@property(copy) NSString * spokenLanguageCode;
+@property (getter=_delegate, nonatomic, readonly) <SUICSiriLanguageDelegate> *delegate;
+@property (getter=_setupAssistantNeedsToRunAvailable, nonatomic) BOOL setupAssistantNeedsToRunAvailable;
+@property (nonatomic) BOOL setupAssistantNeedsToRunChecked;
+@property (nonatomic, copy) NSString *spokenLanguageCode;
 
 - (void).cxx_destruct;
 - (id)_computeSpokenLanguageCode;

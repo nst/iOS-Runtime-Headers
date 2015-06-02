@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <WLOTcpConnectionDelegate>, NSInputStream, NSOutputStream, NSString;
-
 @interface WLOTcpConnection : NSObject <NSStreamDelegate> {
     <WLOTcpConnectionDelegate> *_delegate;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <WLOTcpConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSInputStream * inputStream;
-@property(retain) NSOutputStream * outputStream;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WLOTcpConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSInputStream *inputStream;
+@property (nonatomic, retain) NSOutputStream *outputStream;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_readData:(BOOL)arg1;

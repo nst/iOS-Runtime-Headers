@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUInsetProxyScrollView, NSMutableDictionary, NSString;
-
 @interface MPUAdaptiveCollectionViewController : MPUDataSourceViewController <MPUInsetProxyScrollViewDelegate> {
     struct UIEdgeInsets { 
         float top; 
@@ -21,11 +19,11 @@
     NSMutableDictionary *_sizeClassToClassMap;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * sizeClassToClassMap;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *sizeClassToClassMap;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyNewContentInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 withExistingContentInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 toScrollView:(id)arg3;

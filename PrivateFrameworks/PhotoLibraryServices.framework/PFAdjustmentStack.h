@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSOrderedSet;
-
 @interface PFAdjustmentStack : NSObject <NSCopying, NSFastEnumeration> {
     NSArray *_adjustments;
     unsigned int _formatVersion;
@@ -17,7 +15,7 @@
 - (id)adjustmentsWithIdentifier:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)debugDescription;
 - (id)description;
 - (id)envelopeDictionary;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIColor;
-
 @interface FIUIMetricColors : NSObject {
     UIColor *_adjustmentButtonBackgroundColor;
     UIColor *_buttonDisabledTextColor;
@@ -14,13 +12,13 @@
     UIColor *_valueDisplayColor;
 }
 
-@property(retain) UIColor * adjustmentButtonBackgroundColor;
-@property(retain) UIColor * buttonDisabledTextColor;
-@property(retain) UIColor * buttonTextColor;
-@property(retain) UIColor * gradientDarkColor;
-@property(retain) UIColor * gradientLightColor;
-@property(retain) UIColor * nonGradientTextColor;
-@property(retain) UIColor * valueDisplayColor;
+@property (nonatomic, retain) UIColor *adjustmentButtonBackgroundColor;
+@property (nonatomic, retain) UIColor *buttonDisabledTextColor;
+@property (nonatomic, retain) UIColor *buttonTextColor;
+@property (nonatomic, retain) UIColor *gradientDarkColor;
+@property (nonatomic, retain) UIColor *gradientLightColor;
+@property (nonatomic, retain) UIColor *nonGradientTextColor;
+@property (nonatomic, retain) UIColor *valueDisplayColor;
 
 + (id)briskColors;
 + (id)calorieColors;

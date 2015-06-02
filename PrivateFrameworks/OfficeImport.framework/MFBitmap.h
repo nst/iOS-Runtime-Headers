@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableData;
-
 @interface MFBitmap : NSObject {
     unsigned int m_bitsPerPixel;
     NSMutableData *m_bmpData;

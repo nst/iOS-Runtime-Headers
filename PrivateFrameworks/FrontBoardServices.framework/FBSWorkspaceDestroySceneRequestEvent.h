@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSWorkspaceDestroySceneRequestEvent : FBSWorkspaceSceneEvent {
-}
+@interface FBSWorkspaceDestroySceneRequestEvent : FBSWorkspaceSceneEvent
 
 @end

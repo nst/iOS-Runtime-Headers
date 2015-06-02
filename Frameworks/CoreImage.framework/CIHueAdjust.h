@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIHueAdjust : CIFilter {
     NSNumber *inputAngle;
     CIImage *inputImage;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVMkcalendarResponseItem : CoreDAVItem {
-}
+@interface CalDAVMkcalendarResponseItem : CoreDAVItem
 
 @end

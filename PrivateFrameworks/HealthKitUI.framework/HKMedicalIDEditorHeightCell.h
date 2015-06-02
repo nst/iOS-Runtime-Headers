@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSLengthFormatter, NSNumber, NSString, UIPickerView;
-
 @interface HKMedicalIDEditorHeightCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
     NSNumber *_centimeterValue;
     NSLengthFormatter *_lengthFormatter;
@@ -11,11 +9,11 @@
     BOOL _usesImperialUnits;
 }
 
-@property(retain) NSNumber * centimeterValue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *centimeterValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (double)defaultCentimeterValue;
 

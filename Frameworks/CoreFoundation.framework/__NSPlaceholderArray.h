@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSPlaceholderArray : NSMutableArray {
-}
+@interface __NSPlaceholderArray : NSMutableArray
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)immutablePlaceholder;

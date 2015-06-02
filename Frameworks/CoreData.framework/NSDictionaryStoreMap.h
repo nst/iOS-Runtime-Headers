@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary;
-
 @interface NSDictionaryStoreMap : NSPersistentStoreMap {
     NSMutableDictionary *_theMap;
 }

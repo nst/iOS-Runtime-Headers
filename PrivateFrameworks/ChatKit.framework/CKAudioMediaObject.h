@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray;
+@interface CKAudioMediaObject : CKAVMediaObject
 
-@interface CKAudioMediaObject : CKAVMediaObject {
-}
-
-@property(retain) NSArray * powerLevels;
+@property (nonatomic, retain) NSArray *powerLevels;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCPrivateDocumentItem : BRCDocumentItem {
-}
+@interface BRCPrivateDocumentItem : BRCDocumentItem
 
 @end

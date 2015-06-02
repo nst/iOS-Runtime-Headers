@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXHATimer, AXHearingAidDevice, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface AXHAController : NSObject <AXHAControllerBrowserDelegateProtocol> {
     NSDictionary *_availableDevicesDescription;
     NSMutableArray *_clients;
@@ -13,14 +11,14 @@
     AXHearingAidDevice *_pairedDevice;
 }
 
-@property(retain) NSDictionary * availableDevicesDescription;
-@property(retain) NSMutableArray * clients;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableDictionary * handlers;
-@property(readonly) unsigned int hash;
-@property(retain) AXHearingAidDevice * pairedDevice;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *availableDevicesDescription;
+@property (nonatomic, retain) NSMutableArray *clients;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *handlers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) AXHearingAidDevice *pairedDevice;
+@property (readonly) Class superclass;
 
 + (id)entitlementsForMessageID:(unsigned long long)arg1;
 + (id)sharedController;

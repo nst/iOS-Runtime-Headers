@@ -2,29 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPUItemOfferButton, MPUSlantedTextPlaceholderArtworkView, NSString, UIButton, UIImage, UILabel, UIView;
-
 @interface MusicAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
     MPUSlantedTextPlaceholderArtworkView *_artworkView;
     float _cloudRightInset;
     UILabel *_copyrightLabel;
     UILabel *_detailTextLabel;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadActionBlock;
-
+    id /* block */ _downloadActionBlock;
     UIView *_hairlineView;
     MPUItemOfferButton *_itemOfferButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shuffleActionBlock;
-
+    id /* block */ _shuffleActionBlock;
     UIButton *_shuffleButton;
     int _songCount;
     UILabel *_titleLabel;
@@ -33,19 +19,19 @@
     UILabel *_yearLabel;
 }
 
-@property(retain) UIImage * artworkImage;
-@property float cloudRightInset;
-@property(copy) NSString * copyrightText;
-@property(copy) id downloadActionBlock;
-@property(getter=isDownloadable) BOOL downloadable;
-@property(copy) NSString * placeholderSubtitleText;
-@property(copy) NSString * placeholderTitleText;
-@property(getter=isShufflable) BOOL shufflable;
-@property(copy) id shuffleActionBlock;
-@property(readonly) int songCount;
-@property(copy) NSString * title;
-@property(readonly) double totalDuration;
-@property(copy) NSString * yearText;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) float cloudRightInset;
+@property (nonatomic, copy) NSString *copyrightText;
+@property (nonatomic, copy) id /* block */ downloadActionBlock;
+@property (getter=isDownloadable, nonatomic) BOOL downloadable;
+@property (nonatomic, copy) NSString *placeholderSubtitleText;
+@property (nonatomic, copy) NSString *placeholderTitleText;
+@property (getter=isShufflable, nonatomic) BOOL shufflable;
+@property (nonatomic, copy) id /* block */ shuffleActionBlock;
+@property (nonatomic, readonly) int songCount;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) double totalDuration;
+@property (nonatomic, copy) NSString *yearText;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 + (float)defaultHeight;
@@ -60,7 +46,7 @@
 - (float)cloudRightInset;
 - (id)copyrightText;
 - (void)dealloc;
-- (id)downloadActionBlock;
+- (id /* block */)downloadActionBlock;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)isDownloadable;
 - (BOOL)isShufflable;
@@ -71,17 +57,17 @@
 - (void)setBackgroundTransitionProgress:(float)arg1;
 - (void)setCloudRightInset:(float)arg1;
 - (void)setCopyrightText:(id)arg1;
-- (void)setDownloadActionBlock:(id)arg1;
+- (void)setDownloadActionBlock:(id /* block */)arg1;
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setPlaceholderSubtitleText:(id)arg1;
 - (void)setPlaceholderTitleText:(id)arg1;
 - (void)setShufflable:(BOOL)arg1;
-- (void)setShuffleActionBlock:(id)arg1;
+- (void)setShuffleActionBlock:(id /* block */)arg1;
 - (void)setSongCount:(int)arg1 totalDuration:(double)arg2;
 - (void)setTableViewStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setYearText:(id)arg1;
-- (id)shuffleActionBlock;
+- (id /* block */)shuffleActionBlock;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)songCount;
 - (id)title;

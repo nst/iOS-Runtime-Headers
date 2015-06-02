@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class CALayer, GKEditActionsView, GKHairlineView, GKStaticRenderContentView, NSArray, NSLayoutConstraint, UIView;
-
 @interface GKCollectionViewCell : UICollectionViewCell {
     GKHairlineView *_bottomHairline;
     NSLayoutConstraint *_contentLeftConstraint;
@@ -23,27 +21,27 @@
     float _trailingMargin;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRectForText;
-@property(retain) GKHairlineView * bottomHairline;
-@property(retain) NSLayoutConstraint * contentLeftConstraint;
-@property(retain) GKStaticRenderContentView * contentRenderView;
-@property BOOL doesAbutLeftEdge;
-@property(retain) NSArray * editActions;
-@property(retain) NSArray * editActionsConstraints;
-@property(readonly) GKEditActionsView * editActionsView;
-@property float editingContentOriginX;
-@property(retain) NSArray * hairlineConstraints;
-@property(readonly) UIView * interactiveContentView;
-@property float leadingMargin;
-@property(retain) CALayer * leftGradientMask;
-@property(retain) id representedItem;
-@property(readonly) UIView * staticContentView;
-@property(retain) GKHairlineView * topHairline;
-@property float trailingMargin;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRectForText;
+@property (nonatomic, retain) GKHairlineView *bottomHairline;
+@property (nonatomic, retain) NSLayoutConstraint *contentLeftConstraint;
+@property (nonatomic, retain) GKStaticRenderContentView *contentRenderView;
+@property (nonatomic) BOOL doesAbutLeftEdge;
+@property (nonatomic, retain) NSArray *editActions;
+@property (nonatomic, retain) NSArray *editActionsConstraints;
+@property (nonatomic, readonly) GKEditActionsView *editActionsView;
+@property (nonatomic) float editingContentOriginX;
+@property (nonatomic, retain) NSArray *hairlineConstraints;
+@property (nonatomic, readonly) UIView *interactiveContentView;
+@property (nonatomic) float leadingMargin;
+@property (nonatomic, retain) CALayer *leftGradientMask;
+@property (nonatomic, retain) id representedItem;
+@property (nonatomic, readonly) UIView *staticContentView;
+@property (nonatomic, retain) GKHairlineView *topHairline;
+@property (nonatomic) float trailingMargin;
 
 + (void)registerCellClassesWithCollectionView:(id)arg1;
 
-- (void)_gkEnumerateSubviewsUsingBlock:(id)arg1;
+- (void)_gkEnumerateSubviewsUsingBlock:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRectForText;
 - (void)animateOutSwipeToEditAccessories;
 - (void)applyGradientMaskIfNeeded;
@@ -91,7 +89,7 @@
 - (void)setTopHairline:(id)arg1;
 - (void)setTrailingMargin:(float)arg1;
 - (void)setUserInteractionEnabledForEditing:(BOOL)arg1;
-- (void)shutActionPaneAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)shutActionPaneAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)staticContentView;
 - (id)topHairline;
 - (BOOL)touchWithinEditActions:(id)arg1;

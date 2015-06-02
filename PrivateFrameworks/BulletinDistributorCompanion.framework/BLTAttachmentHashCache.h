@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableDictionary;
-
 @interface BLTAttachmentHashCache : NSObject {
     NSMutableDictionary *_cacheBySectionID;
 }

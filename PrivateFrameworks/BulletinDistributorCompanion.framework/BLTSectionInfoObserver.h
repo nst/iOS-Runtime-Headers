@@ -2,39 +2,29 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <BLTSectionInfoObserverDelegate>, BBObserver, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BLTSectionInfoObserver : NSObject <BBObserverDelegate> {
     <BLTSectionInfoObserverDelegate> *_delegate;
     BBObserver *_observer;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reloadSectionInfoCompletion;
-
+    id /* block */ _reloadSectionInfoCompletion;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BLTSectionInfoObserverDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BLTSectionInfoObserverDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_getBBSectionInfoExtendedProperties:(id)arg1 withCompletion:(id)arg2;
+- (void)_getBBSectionInfoExtendedProperties:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_reconnectObserver;
-- (void)_reloadSectionInfosWithCompletion:(id)arg1;
+- (void)_reloadSectionInfosWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(BOOL)arg2;
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
-- (void)reloadWithCompletion:(id)arg1;
+- (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)updateSectionInfoBySectionIDs:(id)arg1;
 

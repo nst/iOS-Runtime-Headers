@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString, SYErrorInfo, SYMessageHeader;
-
 @interface SYBatchSyncEnd : PBCodable <NSCopying> {
     SYErrorInfo *_error;
     SYMessageHeader *_header;
     NSString *_syncID;
 }
 
-@property(retain) SYErrorInfo * error;
-@property(readonly) BOOL hasError;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * syncID;
+@property (nonatomic, retain) SYErrorInfo *error;
+@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

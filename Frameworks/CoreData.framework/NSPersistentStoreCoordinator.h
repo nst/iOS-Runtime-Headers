@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSManagedObjectModel, NSString;
-
 @interface NSPersistentStoreCoordinator : NSObject <NSLocking> {
     id *_additionalPrivateIvars;
     void *_dispatchQueue;
@@ -17,9 +15,9 @@
     id _queueOwner;
 }
 
-@property(readonly) NSManagedObjectModel * managedObjectModel;
-@property(copy) NSString * name;
-@property(readonly) NSArray * persistentStores;
+@property (readonly) NSManagedObjectModel *managedObjectModel;
+@property (copy) NSString *name;
+@property (readonly) NSArray *persistentStores;
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
 + (id)_beginPowerAssertionWithAssert:(unsigned int*)arg1;
@@ -106,8 +104,8 @@
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (BOOL)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
-- (void)performBlock:(id)arg1;
-- (void)performBlockAndWait:(id)arg1;
+- (void)performBlock:(id /* block */)arg1;
+- (void)performBlockAndWait:(id /* block */)arg1;
 - (id)persistentStoreCoordinator;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (id)persistentStoreForURL:(id)arg1;

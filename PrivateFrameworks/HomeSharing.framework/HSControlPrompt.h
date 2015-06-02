@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSString;
-
 @interface HSControlPrompt : NSObject {
     unsigned int _keyboardType;
     unsigned int _messageType;
@@ -16,15 +14,15 @@
     unsigned int _version;
 }
 
-@property unsigned int keyboardType;
-@property unsigned int messageType;
-@property unsigned int promptID;
-@property(getter=isSecureText) BOOL secureText;
-@property unsigned long long sessionID;
-@property(copy) NSString * string;
-@property(copy) NSString * subText;
-@property(copy) NSString * title;
-@property unsigned int version;
+@property (nonatomic) unsigned int keyboardType;
+@property (nonatomic) unsigned int messageType;
+@property (nonatomic) unsigned int promptID;
+@property (getter=isSecureText, nonatomic) BOOL secureText;
+@property (nonatomic) unsigned long long sessionID;
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, copy) NSString *subText;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) unsigned int version;
 
 - (void).cxx_destruct;
 - (id)description;

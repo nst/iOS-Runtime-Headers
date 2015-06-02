@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioFormat, NSURL;
-
 @interface AVAudioFile : NSObject {
     void *_impl;
 }
 
-@property(readonly) AVAudioFormat * fileFormat;
-@property long long framePosition;
-@property(readonly) long long length;
-@property(readonly) AVAudioFormat * processingFormat;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) AVAudioFormat *fileFormat;
+@property (nonatomic) long long framePosition;
+@property (nonatomic, readonly) long long length;
+@property (nonatomic, readonly) AVAudioFormat *processingFormat;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void)dealloc;
 - (id)fileFormat;

@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface PLPlacesMapKitSupport : NSObject {
     Class _annotationViewClass;
     struct { 
@@ -30,16 +25,16 @@
         } size; 
     } _mapRectWorld;
     Class _mapViewClass;
-    int (*_mkCoordinateForMapPoint)();
-    int (*_mkCoordinateRegionForMapRect)();
-    int (*_mkMapPointForCoordinate)();
-    int (*_mkMapPointsPerMeterAtLatitude)();
-    int (*_mkMapRectForCoordinateRegion)();
-    int (*_mkMapRectIntersectsMapRectWrappingMeridian)();
-    int (*_mkMapRectIntersectsRect)();
-    int (*_mkMapRectMakeWithRadialDistance)();
-    int (*_mkMapRectUnion)();
-    int (*_mkMetersPerMapPointAtLatitude)();
+    int (*_mkCoordinateForMapPoint;
+    int (*_mkCoordinateRegionForMapRect;
+    int (*_mkMapPointForCoordinate;
+    int (*_mkMapPointsPerMeterAtLatitude;
+    int (*_mkMapRectForCoordinateRegion;
+    int (*_mkMapRectIntersectsMapRectWrappingMeridian;
+    int (*_mkMapRectIntersectsRect;
+    int (*_mkMapRectMakeWithRadialDistance;
+    int (*_mkMapRectUnion;
+    int (*_mkMetersPerMapPointAtLatitude;
     Class _pinAnnotationViewClass;
     Class _polylineClass;
     Class _polylineViewClass;

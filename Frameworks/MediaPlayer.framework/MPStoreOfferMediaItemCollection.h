@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaQuery, MPStoreCompletionOfferResponse, MPStoreOfferContentRating, NSArray;
-
 @interface MPStoreOfferMediaItemCollection : MPMediaItemCollection {
     MPStoreOfferContentRating *_collectionContentRating;
     BOOL _hasHiddenRestrictedContent;
@@ -14,10 +12,10 @@
     NSArray *_unmergedStoreMediaItems;
 }
 
-@property(readonly) BOOL isCollectionOfferPresentable;
-@property(readonly) NSArray * items;
-@property(readonly) NSArray * itemsByRemovingLocalItems;
-@property(readonly) NSArray * itemsByRemovingStoreOffers;
+@property (nonatomic, readonly) BOOL isCollectionOfferPresentable;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, readonly) NSArray *itemsByRemovingLocalItems;
+@property (nonatomic, readonly) NSArray *itemsByRemovingStoreOffers;
 
 + (id)albumOrderedChildItemIDsForLookupCollectionPropertyValues:(id)arg1;
 + (id)collectionLookupKeyForMediaProperty:(id)arg1;

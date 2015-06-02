@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDDataclassOwnersManagerInterface : NSObject {
-}
+@interface ACDDataclassOwnersManagerInterface : NSObject
 
 + (id)XPCInterface;
 

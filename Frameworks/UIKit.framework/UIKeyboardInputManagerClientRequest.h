@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSInvocation;
-
 @interface UIKeyboardInputManagerClientRequest : NSObject {
     unsigned int _errorCount;
     NSInvocation *_invocation;
 }
 
-@property unsigned int errorCount;
-@property(readonly) NSInvocation * invocation;
+@property (nonatomic) unsigned int errorCount;
+@property (nonatomic, readonly) NSInvocation *invocation;
 
 + (id)untargetedInvocationWithInvocation:(id)arg1 withCompletion:(BOOL)arg2;
 

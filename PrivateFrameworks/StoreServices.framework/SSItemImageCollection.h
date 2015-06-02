@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray;
-
 @interface SSItemImageCollection : NSObject <NSCopying> {
     NSArray *_itemImages;
 }
 
-@property(readonly) NSArray * itemImages;
+@property (nonatomic, readonly) NSArray *itemImages;
 
 - (id)_imagesForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_newImagesForDictionary:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, OITSDBezierPath, OITSUColor;
-
 @interface MFPPathGradientBrush : MFPGradientBrush {
     OITSUColor *mCenterColor;
     struct CGPoint { 

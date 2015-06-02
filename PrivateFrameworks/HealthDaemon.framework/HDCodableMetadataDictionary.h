@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableArray;
-
 @interface HDCodableMetadataDictionary : PBCodable <NSCopying> {
     NSMutableArray *_keyValuePairs;
 }
 
-@property(retain) NSMutableArray * keyValuePairs;
+@property (nonatomic, retain) NSMutableArray *keyValuePairs;
 
 - (void).cxx_destruct;
 - (void)addKeyValuePairs:(id)arg1;

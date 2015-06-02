@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATSession, NSArray, NSDictionary, NSError, NSString;
-
 @interface ATSessionTask : NSObject <NSCopying, NSSecureCoding> {
     BOOL _cancelled;
     unsigned int _completedItemCount;
@@ -21,19 +19,19 @@
     unsigned int _totalItemCount;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
+@property (getter=isCancelled) BOOL cancelled;
 @property unsigned int completedItemCount;
-@property(copy) NSArray * currentItemDescriptions;
-@property(copy) NSArray * currentItems;
-@property(copy) NSError * error;
-@property(getter=isFinished) BOOL finished;
-@property(copy) NSString * localizedDescription;
+@property (copy) NSArray *currentItemDescriptions;
+@property (copy) NSArray *currentItems;
+@property (copy) NSError *error;
+@property (getter=isFinished) BOOL finished;
+@property (copy) NSString *localizedDescription;
 @property double progress;
-@property(copy) NSDictionary * properties;
-@property(getter=isRunning) BOOL running;
-@property ATSession * session;
-@property(copy) NSString * sessionGroupingKey;
-@property(copy) NSString * sessionTaskIdentifier;
+@property (copy) NSDictionary *properties;
+@property (getter=isRunning) BOOL running;
+@property ATSession *session;
+@property (copy) NSString *sessionGroupingKey;
+@property (copy) NSString *sessionTaskIdentifier;
 @property unsigned int totalItemCount;
 
 + (BOOL)supportsSecureCoding;

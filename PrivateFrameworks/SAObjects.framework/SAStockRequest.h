@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAStockRequest : SADomainObject
 
-@interface SAStockRequest : SADomainObject {
-}
-
-@property(copy) NSDate * endDate;
-@property(copy) NSString * requestType;
-@property(copy) NSDate * startDate;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSString *requestType;
+@property (nonatomic, copy) NSDate *startDate;
 
 + (id)request;
 + (id)requestWithDictionary:(id)arg1 context:(id)arg2;

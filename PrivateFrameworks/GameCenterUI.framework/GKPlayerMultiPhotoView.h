@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface GKPlayerMultiPhotoView : UIImageView {
     NSMutableDictionary *_photoImages;
     NSArray *_players;
 }
 
-@property(retain) NSMutableDictionary * photoImages;
-@property(retain) NSArray * players;
+@property (nonatomic, retain) NSMutableDictionary *photoImages;
+@property (nonatomic, retain) NSArray *players;
 
 - (void)dealloc;
 - (id)photoImages;

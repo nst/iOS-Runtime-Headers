@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDGradient, CUIShapeEffectPreset, NSData, NSDate, NSMutableArray, NSString;
-
 @interface CSIGenerator : NSObject {
     BOOL _allowsMultiPassEncoding;
     NSMutableArray *_bitmaps;
@@ -33,22 +31,22 @@
     NSString *_utiType;
 }
 
-@property BOOL allowsMultiPassEncoding;
-@property int blendMode;
-@property short colorSpaceID;
-@property(retain) CUIShapeEffectPreset * effectPreset;
-@property(getter=isExcludedFromContrastFilter) BOOL excludedFromContrastFilter;
-@property int exifOrientation;
-@property(retain) CUIPSDGradient * gradient;
-@property BOOL isRenditionFPO;
-@property BOOL isVectorBased;
-@property(copy) NSDate * modtime;
-@property(copy) NSString * name;
-@property float opacity;
-@property unsigned int pixelFormat;
-@property unsigned int scaleFactor;
-@property int templateRenderingMode;
-@property(copy) NSString * utiType;
+@property (nonatomic) BOOL allowsMultiPassEncoding;
+@property (nonatomic) int blendMode;
+@property (nonatomic) short colorSpaceID;
+@property (nonatomic, retain) CUIShapeEffectPreset *effectPreset;
+@property (getter=isExcludedFromContrastFilter, nonatomic) BOOL excludedFromContrastFilter;
+@property (nonatomic) int exifOrientation;
+@property (nonatomic, retain) CUIPSDGradient *gradient;
+@property (nonatomic) BOOL isRenditionFPO;
+@property (nonatomic) BOOL isVectorBased;
+@property (nonatomic, copy) NSDate *modtime;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) float opacity;
+@property (nonatomic) unsigned int pixelFormat;
+@property (nonatomic) unsigned int scaleFactor;
+@property (nonatomic) int templateRenderingMode;
+@property (nonatomic, copy) NSString *utiType;
 
 + (int)fileCompression;
 + (void)initialize;

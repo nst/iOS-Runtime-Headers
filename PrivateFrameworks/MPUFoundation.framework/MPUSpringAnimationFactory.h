@@ -9,10 +9,10 @@
     float _velocity;
 }
 
-@property float damping;
-@property float mass;
-@property float stiffness;
-@property float velocity;
+@property (nonatomic) float damping;
+@property (nonatomic) float mass;
+@property (nonatomic) float stiffness;
+@property (nonatomic) float velocity;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (float)damping;

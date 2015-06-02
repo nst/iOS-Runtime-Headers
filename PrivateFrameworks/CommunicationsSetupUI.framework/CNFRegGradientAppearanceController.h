@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegGradientAppearanceController : CNFRegAppearanceController {
-}
+@interface CNFRegGradientAppearanceController : CNFRegAppearanceController
 
 - (BOOL)actionSheetsUsePopoverStyle;
 - (int)modalPresentationStyle;

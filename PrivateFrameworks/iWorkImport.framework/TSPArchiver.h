@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSHashTable, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_group>, NSUUID, TSPObject;
-
 @interface TSPArchiver : TSPArchiverBase {
     NSHashTable *_aggregatedCommandToModelReferences;
     NSHashTable *_aggregatedDataReferences;
@@ -27,23 +20,23 @@
     NSArray *_unknownMessages;
 }
 
-@property(readonly) NSHashTable * aggregatedCommandToModelReferences;
-@property(readonly) NSHashTable * aggregatedDataReferences;
-@property(readonly) NSHashTable * aggregatedLazyReferences;
-@property(readonly) NSHashTable * aggregatedStrongReferences;
-@property(readonly) NSHashTable * aggregatedWeakReferences;
-@property(readonly) NSHashTable * alternates;
-@property(readonly) NSObject<OS_dispatch_group> * archiveGroup;
-@property(readonly) unsigned long long documentReadVersion;
-@property(readonly) unsigned long long documentWriteVersion;
-@property(readonly) TSPObject * explicitComponentRootObject;
-@property unsigned long long messageVersion;
-@property(readonly) BOOL needsArchive;
-@property(readonly) NSUUID * objectUUID;
-@property(readonly) NSObject<OS_dispatch_group> * serializeGroup;
-@property(readonly) NSObject<OS_dispatch_data> * serializedData;
-@property(readonly) BOOL shouldSaveAlternates;
-@property(readonly) BOOL success;
+@property (nonatomic, readonly) NSHashTable *aggregatedCommandToModelReferences;
+@property (nonatomic, readonly) NSHashTable *aggregatedDataReferences;
+@property (nonatomic, readonly) NSHashTable *aggregatedLazyReferences;
+@property (nonatomic, readonly) NSHashTable *aggregatedStrongReferences;
+@property (nonatomic, readonly) NSHashTable *aggregatedWeakReferences;
+@property (nonatomic, readonly) NSHashTable *alternates;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *archiveGroup;
+@property (nonatomic, readonly) unsigned long long documentReadVersion;
+@property (nonatomic, readonly) unsigned long long documentWriteVersion;
+@property (nonatomic, readonly) TSPObject *explicitComponentRootObject;
+@property (nonatomic) unsigned long long messageVersion;
+@property (nonatomic, readonly) BOOL needsArchive;
+@property (nonatomic, readonly) NSUUID *objectUUID;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *serializeGroup;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *serializedData;
+@property (nonatomic, readonly) BOOL shouldSaveAlternates;
+@property (nonatomic, readonly) BOOL success;
 
 - (void).cxx_destruct;
 - (id)addAlternateForMessageVersion:(unsigned long long)arg1;

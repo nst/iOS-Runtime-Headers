@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSString, NSXPCInterface, NSXPCListener, Protocol;
-
 @interface SLServiceListener : NSObject <NSXPCListenerDelegate> {
     NSArray *_allowedEntitlements;
     NSXPCInterface *_clientInterface;
@@ -15,14 +13,14 @@
     Class _sessionClass;
 }
 
-@property(retain) NSXPCInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * managedObjectModelPath;
-@property(retain) NSString * persistentStoreName;
-@property(retain) NSString * serviceName;
-@property(readonly) Class superclass;
+@property (retain) NSXPCInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSString *managedObjectModelPath;
+@property (retain) NSString *persistentStoreName;
+@property (retain) NSString *serviceName;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_verifyAuthorizationForConnection:(id)arg1;

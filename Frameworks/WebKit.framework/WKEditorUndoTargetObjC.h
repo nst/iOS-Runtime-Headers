@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKEditorUndoTargetObjC : NSObject {
-}
+@interface WKEditorUndoTargetObjC : NSObject
 
 - (void)redoEditing:(id)arg1;
 - (void)undoEditing:(id)arg1;

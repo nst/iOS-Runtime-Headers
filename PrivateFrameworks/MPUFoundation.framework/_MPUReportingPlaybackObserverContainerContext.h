@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSString;
-
 @interface _MPUReportingPlaybackObserverContainerContext : NSObject {
     NSString *_containerID;
     unsigned int _containerType;
     NSString *_personalizedContainerID;
 }
 
-@property(copy) NSString * containerID;
-@property unsigned int containerType;
-@property(copy) NSString * personalizedContainerID;
+@property (nonatomic, copy) NSString *containerID;
+@property (nonatomic) unsigned int containerType;
+@property (nonatomic, copy) NSString *personalizedContainerID;
 
 - (void).cxx_destruct;
 - (id)containerID;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSError, NSMutableDictionary;
-
 @interface CKDMMCSItemGroupSet : NSObject {
     NSMutableDictionary *_itemsByGroupTuple;
 }
 
-@property(readonly) NSError * error;
-@property(retain) NSMutableDictionary * itemsByGroupTuple;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, retain) NSMutableDictionary *itemsByGroupTuple;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

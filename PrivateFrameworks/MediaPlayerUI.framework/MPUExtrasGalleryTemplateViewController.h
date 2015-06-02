@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasBannerController, MPUExtrasGridElementViewController;
-
 @interface MPUExtrasGalleryTemplateViewController : MPUExtrasTemplateViewController {
     MPUExtrasBannerController *_bannerController;
     MPUExtrasGridElementViewController *_gridViewController;
     unsigned int _selectedItemIndex;
 }
 
-@property unsigned int selectedItemIndex;
+@property (nonatomic) unsigned int selectedItemIndex;
 
 - (void).cxx_destruct;
 - (void)_prepareLayout;

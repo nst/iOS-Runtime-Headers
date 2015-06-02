@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage, CIVector, NSNumber;
-
 @interface CICopyMachineTransition : CIFilter {
     NSNumber *inputAngle;
     CIColor *inputColor;
@@ -15,14 +13,14 @@
     NSNumber *inputWidth;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIColor * inputColor;
-@property(retain) CIVector * inputExtent;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputOpacity;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
-@property(retain) NSNumber * inputWidth;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) CIVector *inputExtent;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputOpacity;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
+@property (nonatomic, retain) NSNumber *inputWidth;
 
 + (id)customAttributes;
 

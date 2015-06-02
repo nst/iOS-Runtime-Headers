@@ -9,10 +9,10 @@
     unsigned int _shuffleType;
 }
 
-@property BOOL keepPlayingCurrentItemIfPossible;
-@property unsigned int repeatType;
-@property BOOL shouldStartPlayback;
-@property unsigned int shuffleType;
+@property (nonatomic) BOOL keepPlayingCurrentItemIfPossible;
+@property (nonatomic) unsigned int repeatType;
+@property (nonatomic) BOOL shouldStartPlayback;
+@property (nonatomic) unsigned int shuffleType;
 
 + (Class)queueFeederClass;
 

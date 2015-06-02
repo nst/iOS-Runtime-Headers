@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TPAppDelegate : TSABaseApplicationDelegate {
     BOOL _appDoneLaunching;
     BOOL _cachedBidiIsSupported;
 }
 
-@property(readonly) NSArray * wordDocumentTypes;
+@property (nonatomic, readonly) NSArray *wordDocumentTypes;
 
 + (id)sharedDelegate;
 

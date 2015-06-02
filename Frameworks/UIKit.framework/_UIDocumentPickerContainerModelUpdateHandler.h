@@ -2,25 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _UIDocumentPickerContainerModelUpdateHandler : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     id _weak_weakSelf;
 }
 
-@property(copy) id handler;
-@property id weakSelf;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic) id weakSelf;
 
 - (void)dealloc;
-- (id)handler;
-- (void)setHandler:(id)arg1;
+- (id /* block */)handler;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setWeakSelf:(id)arg1;
 - (id)weakSelf;
 

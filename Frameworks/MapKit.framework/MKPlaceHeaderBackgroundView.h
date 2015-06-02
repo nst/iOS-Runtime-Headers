@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceHeaderBackgroundViewDelegate>, MKMapItem, NSString;
-
 @interface MKPlaceHeaderBackgroundView : UIView <MKPlaceHeaderViewCinematics> {
     int _backgroundType;
     <MKPlaceHeaderBackgroundViewDelegate> *_delegate;
@@ -11,14 +9,14 @@
     int _preparationState;
 }
 
-@property int backgroundType;
-@property(copy,readonly) NSString * debugDescription;
-@property <MKPlaceHeaderBackgroundViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapItem * mapItem;
-@property int preparationState;
-@property(readonly) Class superclass;
+@property (nonatomic) int backgroundType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKPlaceHeaderBackgroundViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) int preparationState;
+@property (readonly) Class superclass;
 
 + (int)backgroundTypeForMapItem:(id)arg1;
 + (id)backgroundViewForBackgroundType:(int)arg1 mapItem:(id)arg2 headerView:(id)arg3;

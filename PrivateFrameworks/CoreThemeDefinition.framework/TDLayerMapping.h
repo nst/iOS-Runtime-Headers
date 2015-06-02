@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDLayerMapping : NSManagedObject {
-}
+@interface TDLayerMapping : NSManagedObject
 
 - (id)copyDataFromAttributes;
 - (void)setAttributesFromCopyData:(id)arg1;

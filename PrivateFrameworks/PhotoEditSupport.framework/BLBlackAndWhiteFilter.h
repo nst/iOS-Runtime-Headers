@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLPixelImageBuffer, CIFilter, CIImage, CIVector, NSData, NSNumber;
-
 @interface BLBlackAndWhiteFilter : CIFilter {
     CIFilter *_colorCubeFilterBW;
     CIFilter *_colorCubeFilterGrain;
@@ -41,22 +39,22 @@
     NSData *_precomputedCube;
 }
 
-@property(retain) CIFilter * colorCubeFilterBW;
-@property(retain) CIFilter * colorCubeFilterGrain;
-@property(retain) BLPixelImageBuffer * grainImage;
-@property(copy) NSNumber * inputAmount;
-@property(copy) NSNumber * inputApplyGrain;
-@property(copy) NSNumber * inputApplySepia;
-@property(copy) CIVector * inputDestinationRect;
-@property(copy) CIVector * inputHueStrengthArray;
-@property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputNeutralGamma;
-@property(copy) NSNumber * inputPadding;
-@property(copy) NSNumber * inputPhototone;
-@property(copy) NSNumber * inputPreset;
-@property(copy) NSNumber * inputVersion;
-@property(retain) CIVector * lastHueStrengthArray;
-@property(retain) NSData * precomputedCube;
+@property (nonatomic, retain) CIFilter *colorCubeFilterBW;
+@property (nonatomic, retain) CIFilter *colorCubeFilterGrain;
+@property (nonatomic, retain) BLPixelImageBuffer *grainImage;
+@property (nonatomic, copy) NSNumber *inputAmount;
+@property (nonatomic, copy) NSNumber *inputApplyGrain;
+@property (nonatomic, copy) NSNumber *inputApplySepia;
+@property (nonatomic, copy) CIVector *inputDestinationRect;
+@property (nonatomic, copy) CIVector *inputHueStrengthArray;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, copy) NSNumber *inputNeutralGamma;
+@property (nonatomic, copy) NSNumber *inputPadding;
+@property (nonatomic, copy) NSNumber *inputPhototone;
+@property (nonatomic, copy) NSNumber *inputPreset;
+@property (nonatomic, copy) NSNumber *inputVersion;
+@property (nonatomic, retain) CIVector *lastHueStrengthArray;
+@property (nonatomic, retain) NSData *precomputedCube;
 
 - (void).cxx_destruct;
 - (id)applyGrain:(id)arg1 cube:(id)arg2 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 padding:(float)arg4;

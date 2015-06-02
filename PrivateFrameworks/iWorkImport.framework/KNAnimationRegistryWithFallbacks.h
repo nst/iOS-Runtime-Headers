@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimationRegistry, NSMutableDictionary;
-
 @interface KNAnimationRegistryWithFallbacks : NSObject {
     NSMutableDictionary *mFallbacks;
     KNAnimationRegistry *mRegistry;

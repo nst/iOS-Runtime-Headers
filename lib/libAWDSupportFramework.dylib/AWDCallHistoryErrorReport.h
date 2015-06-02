@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int domain;
-@property unsigned int error;
-@property BOOL hasDomain;
-@property BOOL hasError;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int domain;
+@property (nonatomic) unsigned int error;
+@property (nonatomic) BOOL hasDomain;
+@property (nonatomic) BOOL hasError;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

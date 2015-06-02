@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView, _UIBackdropView;
-
 @interface SKUISegmentedTableHeaderView : UIView {
     _UIBackdropView *_backdropView;
     UIView *_borderView;
     UIView *_segmentedControl;
 }
 
-@property(readonly) _UIBackdropView * backdropView;
-@property BOOL hidesBorderView;
-@property(retain) UIView * segmentedControl;
+@property (nonatomic, readonly) _UIBackdropView *backdropView;
+@property (nonatomic) BOOL hidesBorderView;
+@property (nonatomic, retain) UIView *segmentedControl;
 
 - (void).cxx_destruct;
 - (id)_borderView;

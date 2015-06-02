@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewController;
-
 @interface UITableViewControllerKeyboardSupport : NSObject {
     float _adjustmentForKeyboard;
-    unsigned int _registeredForNotifications : 1;
+    unsigned int _registeredForNotifications;
     UITableViewController *_tableViewController;
-    unsigned int _viewIsDisappearing : 1;
+    unsigned int _viewIsDisappearing;
 }
 
-@property float adjustmentForKeyboard;
-@property BOOL registeredForNotifications;
-@property BOOL viewIsDisappearing;
+@property (nonatomic) float adjustmentForKeyboard;
+@property (nonatomic) BOOL registeredForNotifications;
+@property (nonatomic) BOOL viewIsDisappearing;
 
 - (void)_keyboardDidChangeFrame:(id)arg1;
 - (void)_keyboardDidHide:(id)arg1;

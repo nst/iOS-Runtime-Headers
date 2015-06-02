@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableDictionary, NSString, TSSStylesheet;
-
 @interface TSSTheme : TSPObject <TSKModel, TSSPresetSource> {
     TSSStylesheet *mDocumentStylesheet;
     TSSStylesheet *mLegacyStylesheet;
@@ -17,13 +10,13 @@
     NSString *mThemeIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) TSSStylesheet * documentStylesheet;
-@property(readonly) unsigned int hash;
-@property(retain) TSSStylesheet * legacyStylesheet;
-@property(readonly) Class superclass;
-@property(retain) NSString * themeIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TSSStylesheet *documentStylesheet;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) TSSStylesheet *legacyStylesheet;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *themeIdentifier;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)presetBootstrapOrder;
@@ -98,6 +91,6 @@
 - (void)tswpSaveToArchive:(struct ThemeArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_3_1_1; } x3; unsigned int x4[1]; int x5; struct Reference {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; struct RepeatedPtrField<TSP::UUID> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedPtrField<TSP::UUID> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::Color> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; }*)arg1 archiver:(id)arg2;
 - (id)undeletableStyles;
 - (id)unmodifiableStyles;
-- (void)upgradeStylesWithBlock:(id)arg1;
+- (void)upgradeStylesWithBlock:(id /* block */)arg1;
 
 @end

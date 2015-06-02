@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SASportsBaseballMatchup : SASportsMatchup
 
-@interface SASportsBaseballMatchup : SASportsMatchup {
-}
-
-@property(copy) NSNumber * awayErrors;
-@property(copy) NSNumber * awayHits;
-@property(copy) NSNumber * balls;
-@property(copy) NSNumber * homeErrors;
-@property(copy) NSNumber * homeHits;
-@property(copy) NSString * inningStatus;
-@property(copy) NSNumber * onFirst;
-@property(copy) NSNumber * onSecond;
-@property(copy) NSNumber * onThird;
-@property(copy) NSNumber * outs;
-@property(copy) NSNumber * strikes;
+@property (nonatomic, copy) NSNumber *awayErrors;
+@property (nonatomic, copy) NSNumber *awayHits;
+@property (nonatomic, copy) NSNumber *balls;
+@property (nonatomic, copy) NSNumber *homeErrors;
+@property (nonatomic, copy) NSNumber *homeHits;
+@property (nonatomic, copy) NSString *inningStatus;
+@property (nonatomic, copy) NSNumber *onFirst;
+@property (nonatomic, copy) NSNumber *onSecond;
+@property (nonatomic, copy) NSNumber *onThird;
+@property (nonatomic, copy) NSNumber *outs;
+@property (nonatomic, copy) NSNumber *strikes;
 
 + (id)baseballMatchup;
 + (id)baseballMatchupWithDictionary:(id)arg1 context:(id)arg2;

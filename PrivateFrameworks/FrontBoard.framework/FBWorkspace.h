@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBWorkspaceDelegate>, BSAuditToken, BSZeroingWeakReference, FBProcess, FBSceneClientProviderInvalidationAction, FBWorkspaceServer, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FBWorkspace : NSObject <FBSceneClientProvider> {
     NSObject<OS_dispatch_queue> *_callOutQueue;
     NSMapTable *_hostToClientMap;
@@ -16,18 +14,18 @@
     BSZeroingWeakReference *_zeroingWeakProcess;
 }
 
-@property(retain,readonly) BSAuditToken * auditToken;
-@property(copy,readonly) NSString * debugDescription;
-@property <FBWorkspaceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) FBProcess * process;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) BSAuditToken *auditToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FBWorkspaceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) FBProcess *process;
+@property (readonly) Class superclass;
 
 - (id)_newSceneWithHost:(id)arg1 initialClientSettings:(id)arg2;
 - (id)_newWorkspaceServer;
 - (id)_queue;
-- (void)_queue_enumerateScenes:(id)arg1;
+- (void)_queue_enumerateScenes:(id /* block */)arg1;
 - (void)_queue_fireInvalidationAction;
 - (void)_queue_invalidateAllScenes;
 - (void)_queue_willInvalidateAllScenes;
@@ -43,8 +41,8 @@
 - (id)registerHost:(id)arg1 withInitialClientSettings:(id)arg2;
 - (void)registerInvalidationAction:(id)arg1;
 - (void)sendActions:(id)arg1;
-- (void)server:(id)arg1 handleCreateSceneRequest:(id)arg2 withCompletion:(id)arg3;
-- (void)server:(id)arg1 handleDestroySceneRequest:(id)arg2 withCompletion:(id)arg3;
+- (void)server:(id)arg1 handleCreateSceneRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)server:(id)arg1 handleDestroySceneRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterHost:(id)arg1;
 

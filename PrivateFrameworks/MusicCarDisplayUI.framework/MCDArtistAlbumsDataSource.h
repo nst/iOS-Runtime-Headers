@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface MCDArtistAlbumsDataSource : MCDQueryDataSource {
     NSArray *_sectionEntities;
     NSMutableDictionary *_sectionRanges;

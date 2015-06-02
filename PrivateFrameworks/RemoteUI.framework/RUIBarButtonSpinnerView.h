@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UIActivityIndicatorView;
-
 @interface RUIBarButtonSpinnerView : UIBarButtonItem {
     UIActivityIndicatorView *_spinner;
 }

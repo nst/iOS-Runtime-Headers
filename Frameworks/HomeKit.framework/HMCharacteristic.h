@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMCharacteristicMetadata, HMService, NSArray, NSNumber, NSString;
-
 @interface HMCharacteristic : NSObject <NSSecureCoding> {
     NSString *_characteristicType;
     NSNumber *_instanceID;
@@ -14,13 +12,13 @@
     id _value;
 }
 
-@property(copy,readonly) NSString * characteristicType;
-@property(retain) NSNumber * instanceID;
-@property(readonly) HMCharacteristicMetadata * metadata;
-@property(getter=isNotificationEnabled) BOOL notificationEnabled;
-@property(copy,readonly) NSArray * properties;
-@property HMService * service;
-@property(copy) id value;
+@property (nonatomic, readonly, copy) NSString *characteristicType;
+@property (nonatomic, retain) NSNumber *instanceID;
+@property (nonatomic, readonly) HMCharacteristicMetadata *metadata;
+@property (getter=isNotificationEnabled, nonatomic) BOOL notificationEnabled;
+@property (nonatomic, readonly, copy) NSArray *properties;
+@property (nonatomic) HMService *service;
+@property (nonatomic, copy) id value;
 
 + (id)characteristicTypeAsString:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -29,7 +27,7 @@
 - (id)characteristicType;
 - (id)characteristicTypeDescription;
 - (void)configure:(id)arg1;
-- (void)enableNotification:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)enableNotification:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
@@ -38,15 +36,15 @@
 - (int)mapToCuapProperties:(id)arg1;
 - (id)metadata;
 - (id)properties;
-- (void)readValueWithCompletionHandler:(id)arg1;
+- (void)readValueWithCompletionHandler:(id /* block */)arg1;
 - (id)service;
 - (void)setInstanceID:(id)arg1;
 - (void)setNotificationEnabled:(BOOL)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)updateAuthorizationData:(id)arg1 completionHandler:(id)arg2;
+- (void)updateAuthorizationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateValue:(id)arg1;
 - (id)value;
-- (void)writeValue:(id)arg1 completionHandler:(id)arg2;
+- (void)writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

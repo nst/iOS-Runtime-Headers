@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@interface ExFATCameraDeviceManager : DeviceManager {
-}
+@interface ExFATCameraDeviceManager : DeviceManager
 
 - (void)closeDeviceImp:(id)arg1;
 - (void)closeSessionImp:(id)arg1;

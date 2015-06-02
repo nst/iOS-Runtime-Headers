@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDictionary, NSNumber, NSString, NSURL, SSAccount;
+@interface HSMutableConnectionConfiguration : HSConnectionConfiguration
 
-@interface HSMutableConnectionConfiguration : HSConnectionConfiguration {
-}
-
-@property(retain) SSAccount * account;
-@property(copy) NSURL * baseURL;
-@property(copy) NSString * buildIdentifier;
-@property(copy) NSDictionary * cookieHeaders;
-@property(retain) NSNumber * familyMemberStoreID;
-@property(copy) NSString * purchaseClientIdentifier;
-@property long long requestReason;
-@property(copy) NSDictionary * urlBag;
-@property(copy) NSString * userAgent;
+@property (nonatomic, retain) SSAccount *account;
+@property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) NSString *buildIdentifier;
+@property (nonatomic, copy) NSDictionary *cookieHeaders;
+@property (nonatomic, retain) NSNumber *familyMemberStoreID;
+@property (nonatomic, copy) NSString *purchaseClientIdentifier;
+@property (nonatomic) long long requestReason;
+@property (nonatomic, copy) NSDictionary *urlBag;
+@property (nonatomic, copy) NSString *userAgent;
 
 - (id)account;
 - (id)baseURL;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUMiniPlayerActionsViewControllerDelegate>, MPAVItem, NSArray;
-
 @interface MPUMiniPlayerActionsViewController : UITableViewController {
     NSArray *_actions;
     <MPUMiniPlayerActionsViewControllerDelegate> *_delegate;
     MPAVItem *_item;
 }
 
-@property <MPUMiniPlayerActionsViewControllerDelegate> * delegate;
-@property(readonly) MPAVItem * item;
+@property (nonatomic) <MPUMiniPlayerActionsViewControllerDelegate> *delegate;
+@property (nonatomic, readonly) MPAVItem *item;
 
 + (id)_actionsForItem:(id)arg1;
 + (id)_imageForAction:(int)arg1;

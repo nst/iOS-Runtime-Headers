@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASTGridItem : AceObject <SASTTemplateItem>
 
-@interface SASTGridItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * gridCells;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *gridCells;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)gridItem;
 + (id)gridItemWithDictionary:(id)arg1 context:(id)arg2;

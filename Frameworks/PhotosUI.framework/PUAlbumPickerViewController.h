@@ -2,35 +2,25 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, PHCollectionList, PUAlbumListViewController, PUAlbumPickerSessionInfo, PUAlbumPickerViewControllerSpec, UINavigationController;
-
 @interface PUAlbumPickerViewController : UIViewController <PUSessionInfoObserver, UINavigationControllerDelegate> {
     PUAlbumListViewController *__albumListViewController;
     PUAlbumPickerSessionInfo *_albumPickerSessionInfo;
     PHCollectionList *_collectionList;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     UINavigationController *_contentNavigationController;
     PUAlbumPickerViewControllerSpec *_spec;
 }
 
-@property(setter=_setAlbumListViewController:,retain) PUAlbumListViewController * _albumListViewController;
-@property(retain) PUAlbumPickerSessionInfo * albumPickerSessionInfo;
-@property(retain) PHCollectionList * collectionList;
-@property(copy) id completionHandler;
-@property(retain) UINavigationController * contentNavigationController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PUAlbumPickerViewControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (setter=_setAlbumListViewController:, nonatomic, retain) PUAlbumListViewController *_albumListViewController;
+@property (nonatomic, retain) PUAlbumPickerSessionInfo *albumPickerSessionInfo;
+@property (nonatomic, retain) PHCollectionList *collectionList;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, retain) UINavigationController *contentNavigationController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PUAlbumPickerViewControllerSpec *spec;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_albumListViewController;
@@ -40,7 +30,7 @@
 - (void)_setSpec:(id)arg1;
 - (id)albumPickerSessionInfo;
 - (id)collectionList;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (id)contentNavigationController;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
@@ -50,7 +40,7 @@
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setCollectionList:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (BOOL)shouldAutorotate;
 - (id)spec;
 - (unsigned int)supportedInterfaceOrientations;

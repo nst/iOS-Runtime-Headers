@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary;
-
 @interface TSDBitmapRenderingQualityInfo : NSObject {
     float mCanvasScale;
     NSMutableDictionary *mImageMap;
     int mQuality;
 }
 
-@property(readonly) int quality;
+@property (nonatomic, readonly) int quality;
 
 - (void)cacheProvider:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIGestureAnimation, UIScrollAnimation;
-
 @interface UIGestureInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 

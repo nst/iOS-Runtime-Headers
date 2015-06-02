@@ -7,8 +7,8 @@
     double _rightAscension;
 }
 
-@property(readonly) double declination;
-@property(readonly) double rightAscension;
+@property (nonatomic, readonly) double declination;
+@property (nonatomic, readonly) double rightAscension;
 
 - (double)declination;
 - (id)initWithDate:(id)arg1 body:(int)arg2;

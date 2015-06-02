@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray, NSObject<TSDContainerInfo>, NSString, TNDocumentRoot, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPStorage;
-
 @interface TNSheet : TSPObject <TSCEResolverContainer, TSDDrawableContainerInfo, TSKDocumentObject, TSKModel, TSKSearchTarget, TSWPHeaderFooterProvider> {
     float _pageFooterInset;
     float _pageHeaderInset;
@@ -22,7 +15,7 @@
     BOOL _usingStartPageNumber;
     NSMutableArray *mChildInfos;
     float mContentScale;
-    TSWPStorage *mHeaderFooters[2][3];
+    TSWPStorage *mHeaderFooters;
     BOOL mInDocument;
     BOOL mInPortraitPageOrientation;
     BOOL mIsAutofitOn;
@@ -33,34 +26,34 @@
     BOOL mUsesSingleHeaderFooter;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property float contentScale;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) TNDocumentRoot * documentRoot;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(readonly) NSArray * footerStorages;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * headerStorages;
-@property BOOL inPortraitPageOrientation;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property BOOL isAutofitOn;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property(retain) NSString * name;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic) float contentScale;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TNDocumentRoot *documentRoot;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, readonly) NSArray *footerStorages;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *headerStorages;
+@property (nonatomic) BOOL inPortraitPageOrientation;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic) BOOL isAutofitOn;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property float pageFooterInset;
 @property float pageHeaderInset;
 @property int pageOrder;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } printMargins;
-@property BOOL showPageNumbers;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } printMargins;
+@property (nonatomic) BOOL showPageNumbers;
 @property int startPageNumber;
-@property(readonly) Class superclass;
-@property BOOL usesSingleHeaderFooter;
-@property(getter=isUsingStartPageNumber) BOOL usingStartPageNumber;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesSingleHeaderFooter;
+@property (getter=isUsingStartPageNumber) BOOL usingStartPageNumber;
 
 + (BOOL)needsObjectUUID;
 + (id)sheetForSelectionModel:(id)arg1 outIsPaginated:(BOOL*)arg2;
@@ -79,7 +72,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentRoot;
-- (void)enumerateHeaderFooterStoragesWithBlock:(id)arg1;
+- (void)enumerateHeaderFooterStoragesWithBlock:(id /* block */)arg1;
 - (id)footerStorages;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (id)geometry;

@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPAVRoutingController, NSArray, NSMutableArray, NSMutableDictionary, NSString, PUAirplayRoute;
-
 @interface PUAirplayController : NSObject <MPAVRoutingControllerDelegate> {
     MPAVRoutingController *_airplayDeviceController;
     BOOL _applicationInBackground;
@@ -17,19 +11,15 @@
     PUAirplayRoute *_defaultRoute;
     BOOL _hasNonDefaultRoute;
     NSMutableDictionary *_knownRoutes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _routeChangeCompletionBlock;
-
+    id /* block */ _routeChangeCompletionBlock;
     NSMutableArray *_routeHandlers;
     NSArray *_sortedRoutes;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -46,10 +36,10 @@
 - (id)defaultRoute;
 - (id)description;
 - (id)init;
-- (void)makeRouteCurrent:(id)arg1 completion:(id)arg2;
-- (void)requestCurrentRouteUpdatesFor:(id)arg1 handler:(id)arg2;
-- (void)requestRouteAvailabilityUpdatesFor:(id)arg1 handler:(id)arg2;
-- (void)requestRouteUpdatesFor:(id)arg1 handler:(id)arg2;
+- (void)makeRouteCurrent:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestCurrentRouteUpdatesFor:(id)arg1 handler:(id /* block */)arg2;
+- (void)requestRouteAvailabilityUpdatesFor:(id)arg1 handler:(id /* block */)arg2;
+- (void)requestRouteUpdatesFor:(id)arg1 handler:(id /* block */)arg2;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)stopCurrentRouteUpdatesFor:(id)arg1;

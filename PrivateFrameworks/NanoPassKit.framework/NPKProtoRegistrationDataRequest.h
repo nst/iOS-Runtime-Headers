@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSString;
-
 @interface NPKProtoRegistrationDataRequest : PBRequest <NSCopying> {
     NSString *_authToken;
 }
 
-@property(retain) NSString * authToken;
-@property(readonly) BOOL hasAuthToken;
+@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic, readonly) BOOL hasAuthToken;
 
 - (void).cxx_destruct;
 - (id)authToken;

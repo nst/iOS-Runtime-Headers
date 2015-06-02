@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SADomainObject;
+@interface SADomainObjectCancel : SABaseClientBoundCommand <SADomainObjectCommand>
 
-@interface SADomainObjectCancel : SABaseClientBoundCommand <SADomainObjectCommand> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SADomainObject * identifier;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SADomainObject *identifier;
+@property (readonly) Class superclass;
 
 + (id)domainObjectCancel;
 + (id)domainObjectCancelWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
-
 @interface SGMicrodataDocument : NSObject {
     NSMutableDictionary *_htmlIds;
     NSMutableArray *_items;
 }
 
-@property(readonly) NSDictionary * htmlIds;
-@property(readonly) NSArray * items;
+@property (nonatomic, readonly) NSDictionary *htmlIds;
+@property (nonatomic, readonly) NSArray *items;
 
 - (void).cxx_destruct;
 - (void)addItem:(id)arg1;

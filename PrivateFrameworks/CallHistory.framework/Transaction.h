@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSData;
-
 @interface Transaction : NSObject <NSSecureCoding> {
     NSData *_record;
     unsigned int _transactionType;
 }
 
-@property(retain) NSData * record;
+@property (retain) NSData *record;
 @property unsigned int transactionType;
 
 + (BOOL)supportsSecureCoding;

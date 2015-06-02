@@ -11,10 +11,10 @@
     int _trackedTransportType;
 }
 
-@property BOOL hasNavigationState;
-@property BOOL hasTrackedTransportType;
-@property int navigationState;
-@property int trackedTransportType;
+@property (nonatomic) BOOL hasNavigationState;
+@property (nonatomic) BOOL hasTrackedTransportType;
+@property (nonatomic) int navigationState;
+@property (nonatomic) int trackedTransportType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

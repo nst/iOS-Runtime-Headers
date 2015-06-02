@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKPassFieldTemplate;
-
 @interface PKPassBucketTemplate : NSObject {
     int _bucketAlignment;
     struct CGRect { 
@@ -23,13 +21,13 @@
     BOOL _sitsOnStripImage;
 }
 
-@property int bucketAlignment;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bucketRect;
-@property(retain) PKPassFieldTemplate * defaultFieldTemplate;
-@property(retain) NSMutableArray * fieldTemplates;
-@property unsigned int maxFields;
-@property float minFieldPadding;
-@property BOOL sitsOnStripImage;
+@property (nonatomic) int bucketAlignment;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bucketRect;
+@property (nonatomic, retain) PKPassFieldTemplate *defaultFieldTemplate;
+@property (nonatomic, retain) NSMutableArray *fieldTemplates;
+@property (nonatomic) unsigned int maxFields;
+@property (nonatomic) float minFieldPadding;
+@property (nonatomic) BOOL sitsOnStripImage;
 
 - (void)addFieldTemplate:(id)arg1;
 - (int)bucketAlignment;

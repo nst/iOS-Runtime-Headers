@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSMutableArray;
-
 @interface SFCollectionViewFlowLayout : UICollectionViewFlowLayout {
     NSMutableArray *_deletedIndexPaths;
     NSMutableArray *_handledIndexPaths;
@@ -12,7 +10,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (void)_applyToLayoutAttributes:(id)arg1 toView:(id)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;

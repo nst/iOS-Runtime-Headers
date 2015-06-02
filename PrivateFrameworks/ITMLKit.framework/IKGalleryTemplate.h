@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBackgroundElement, IKDocumentBannerElement, IKGridElement;
+@interface IKGalleryTemplate : IKViewElement
 
-@interface IKGalleryTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKBackgroundElement * background;
-@property(retain,readonly) IKDocumentBannerElement * documentBanner;
-@property(retain,readonly) IKGridElement * grid;
+@property (nonatomic, readonly, retain) IKBackgroundElement *background;
+@property (nonatomic, readonly, retain) IKDocumentBannerElement *documentBanner;
+@property (nonatomic, readonly, retain) IKGridElement *grid;
 
 - (id)background;
 - (id)documentBanner;

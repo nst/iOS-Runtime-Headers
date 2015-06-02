@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class CalPreferences, NSArray, NSString;
-
 @interface CalFoundationPreferences : NSObject {
     CalPreferences *_preferences;
 }
 
-@property(readonly) BOOL logAutoFlush;
-@property(readonly) BOOL logEmitUserNotifications;
-@property(readonly) NSString * logFilePath;
-@property(readonly) NSArray * logSimpleConfiguration;
+@property (nonatomic, readonly) BOOL logAutoFlush;
+@property (nonatomic, readonly) BOOL logEmitUserNotifications;
+@property (nonatomic, readonly) NSString *logFilePath;
+@property (nonatomic, readonly) NSArray *logSimpleConfiguration;
 
 + (id)shared;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIFamilyInvitationAcceptanceDelegate>, AAFamilyInvite, AAGrandSlamSigner, ACAccount, ACAccountStore, NSMutableURLRequest, NSOperationQueue, NSString, RemoteUIController;
-
 @interface AAUIFamilyInvitationAcceptanceViewController : AAUIBleachedNavigationController <AAUIConfirmIdentityViewControllerDelegate, RemoteUIControllerDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -15,11 +13,11 @@
     NSMutableURLRequest *_startRemoteUIRequest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIFamilyInvitationAcceptanceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIFamilyInvitationAcceptanceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonWasTapped:(id)arg1;

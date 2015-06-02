@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class <EAAccessoryDelegate>, EAAccessoryInternal, NSArray, NSString;
-
 @interface EAAccessory : NSObject {
     EAAccessoryInternal *_internal;
 }
 
-@property(getter=isConnected,readonly) BOOL connected;
-@property(readonly) unsigned int connectionID;
-@property <EAAccessoryDelegate> * delegate;
-@property(readonly) NSString * firmwareRevision;
-@property(readonly) NSString * hardwareRevision;
-@property(readonly) NSString * manufacturer;
-@property(readonly) NSString * modelNumber;
-@property(readonly) NSString * name;
-@property(readonly) NSArray * protocolStrings;
-@property(readonly) NSString * serialNumber;
+@property (getter=isConnected, nonatomic, readonly) BOOL connected;
+@property (nonatomic, readonly) unsigned int connectionID;
+@property (nonatomic) <EAAccessoryDelegate> *delegate;
+@property (nonatomic, readonly) NSString *firmwareRevision;
+@property (nonatomic, readonly) NSString *hardwareRevision;
+@property (nonatomic, readonly) NSString *manufacturer;
+@property (nonatomic, readonly) NSString *modelNumber;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSArray *protocolStrings;
+@property (nonatomic, readonly) NSString *serialNumber;
 
 - (void)_addSession:(id)arg1;
 - (id)_createWakeToken;
@@ -48,7 +46,7 @@
 - (BOOL)getEphemerisExpirationInterval:(double*)arg1;
 - (BOOL)getEphemerisRecommendRefreshInterval:(double*)arg1;
 - (BOOL)getEphemerisURL:(id*)arg1;
-- (void)getIAPTimeSyncInfo:(id)arg1 completionHandler:(id)arg2;
+- (void)getIAPTimeSyncInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)getNMEASentence:(id*)arg1;
 - (id)getVehicleInfoData;
 - (id)hardwareRevision;

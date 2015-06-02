@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class VKRasterMapTileRequest;
-
 @interface VKRasterMapTileServerCallback : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id handler;
-
+    id /* block */ handler;
     VKRasterMapTileRequest *request;
     double startTimestamp;
 }
 
-@property(copy) id handler;
-@property(retain) VKRasterMapTileRequest * request;
-@property double startTimestamp;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, retain) VKRasterMapTileRequest *request;
+@property (nonatomic) double startTimestamp;
 
 - (void)dealloc;
 - (id)description;
-- (id)handler;
+- (id /* block */)handler;
 - (id)request;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setStartTimestamp:(double)arg1;
 - (double)startTimestamp;

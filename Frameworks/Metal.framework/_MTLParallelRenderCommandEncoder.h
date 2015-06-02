@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLCommandQueue>, <MTLDevice>, MTLRenderPassDescriptor, NSString, _MTLCommandBuffer<MTLCommandBuffer>;
-
 @interface _MTLParallelRenderCommandEncoder : NSObject <MTLParallelRenderCommandEncoder> {
     _MTLCommandBuffer<MTLCommandBuffer> *_commandBuffer;
     id *_commandBuffers;
@@ -20,12 +18,12 @@
     BOOL _retainedReferences;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (readonly) Class superclass;
 
 - (id)_renderCommandEncoderCommon;
 - (id)commandBuffer;

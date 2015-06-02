@@ -9,10 +9,10 @@
     unsigned int mLength;
 }
 
-@property(readonly) const char * content;
-@property(readonly) unsigned int identifier;
-@property(readonly) unsigned int length;
-@property(readonly) unsigned char tokenClass;
+@property (readonly) const char *content;
+@property (readonly) unsigned int identifier;
+@property (readonly) unsigned int length;
+@property (readonly) unsigned char tokenClass;
 
 + (id)readOpaqueTokenFromBuffer:(const char *)arg1;
 + (id)readTokenFromBuffer:(const char *)arg1;

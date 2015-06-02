@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPostCommentContainerView : UIView {
-}
+@interface PUPostCommentContainerView : UIView
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray;
-
 @interface PUFeedCollectionViewSectionLayoutInfo : NSObject {
     int _firstJoinedSection;
     NSArray *_fixedLayoutAttributes;
@@ -40,23 +38,23 @@
     NSArray *_tileLayoutAttributes;
 }
 
-@property int firstJoinedSection;
-@property(retain) NSArray * fixedLayoutAttributes;
-@property(retain) NSArray * floatingLayoutAttributes;
-@property struct CGSize { float x1; float x2; } footerSize;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(retain) id groupID;
-@property struct CGSize { float x1; float x2; } headerSize;
-@property(getter=isHidden) BOOL hidden;
-@property int lastJoinedSection;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margins;
-@property int nextVisibleSection;
-@property int numberOfTilesOmitted;
-@property struct CGPoint { float x1; float x2; } origin;
-@property int previousVisibleSection;
-@property int sectionType;
-@property struct CGSize { float x1; float x2; } size;
-@property(retain) NSArray * tileLayoutAttributes;
+@property (nonatomic) int firstJoinedSection;
+@property (nonatomic, retain) NSArray *fixedLayoutAttributes;
+@property (nonatomic, retain) NSArray *floatingLayoutAttributes;
+@property (nonatomic) struct CGSize { float x1; float x2; } footerSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, retain) id groupID;
+@property (nonatomic) struct CGSize { float x1; float x2; } headerSize;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic) int lastJoinedSection;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margins;
+@property (nonatomic) int nextVisibleSection;
+@property (nonatomic) int numberOfTilesOmitted;
+@property (nonatomic) struct CGPoint { float x1; float x2; } origin;
+@property (nonatomic) int previousVisibleSection;
+@property (nonatomic) int sectionType;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) NSArray *tileLayoutAttributes;
 
 - (void).cxx_destruct;
 - (int)firstJoinedSection;

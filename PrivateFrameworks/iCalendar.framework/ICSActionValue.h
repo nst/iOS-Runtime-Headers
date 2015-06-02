@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSActionValue : ICSPredefinedValue {
-}
+@interface ICSActionValue : ICSPredefinedValue
 
 + (id)actionParameterFromCode:(int)arg1;
 + (id)actionValueFromICSString:(id)arg1;

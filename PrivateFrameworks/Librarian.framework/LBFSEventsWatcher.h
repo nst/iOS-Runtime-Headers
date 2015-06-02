@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Librarian.framework/Librarian
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSURL;
-
 @interface LBFSEventsWatcher : NSObject {
     int _disableCount;
     NSObject<OS_dispatch_queue> *_eventQueue;
@@ -15,16 +9,12 @@
     NSOperationQueue *_messageQueue;
     BOOL _started;
     struct __FSEventStream { } *_streamRef;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateHandler;
-
+    id /* block */ _updateHandler;
     NSURL *_url;
 }
 
-@property(copy) id updateHandler;
-@property(readonly) NSURL * url;
+@property (nonatomic, copy) id /* block */ updateHandler;
+@property (readonly) NSURL *url;
 
 - (void)dealloc;
 - (void)disableUpdates;
@@ -34,10 +24,10 @@
 - (void)processEventForPath:(id)arg1 flags:(unsigned long)arg2;
 - (void)scanDirectory:(id)arg1 isGathering:(BOOL)arg2;
 - (void)sendMessage:(id)arg1;
-- (void)setUpdateHandler:(id)arg1;
+- (void)setUpdateHandler:(id /* block */)arg1;
 - (void)start;
 - (void)stop;
-- (id)updateHandler;
+- (id /* block */)updateHandler;
 - (id)url;
 
 @end

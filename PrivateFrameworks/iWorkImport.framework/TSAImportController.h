@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, <TSAImportDelegate>, <TSKImporter>, NSError, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSOperationQueue, NSString, NSURL, NSUUID, TSKCollaborationState, TSPObjectContext, TSUProgressContext, TSUTemporaryDirectory;
-
 @interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
     NSMutableArray *_deferredWriters;
     <TSAImportDelegate> *_delegate;
@@ -30,39 +28,39 @@
     TSUTemporaryDirectory *_temporaryDirectory;
 }
 
-@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
-@property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(readonly) TSKCollaborationState * collaborationState;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSString * defaultDraftName;
-@property <TSAImportDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * documentCachePath;
-@property(readonly) TSPObjectContext * documentContext;
-@property(readonly) int documentTypeCategory;
-@property(readonly) NSError * error;
-@property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) BOOL hasWarnings;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL ignoreDocumentSupport;
-@property(readonly) <TSKImporter> * importer;
-@property(readonly) BOOL importingDesignDemoDoc;
-@property(readonly) BOOL isBrowsingVersions;
-@property(readonly) BOOL isDocumentSupportTemporary;
-@property(readonly) BOOL isImportCancelled;
-@property(readonly) BOOL isInCollaborationMode;
-@property(readonly) BOOL isInReadOnlyMode;
-@property(readonly) BOOL isPasswordProtected;
-@property(readonly) NSString * name;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property BOOL preserveDocumentAfterImport;
-@property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(retain) TSUProgressContext * progressContext;
-@property(readonly) NSString * sourcePath;
-@property(readonly) Class superclass;
-@property(readonly) NSURL * temporaryURL;
+@property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
+@property (nonatomic, readonly) TSKCollaborationState *collaborationState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *defaultDraftName;
+@property (nonatomic) <TSAImportDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *documentCachePath;
+@property (nonatomic, readonly) TSPObjectContext *documentContext;
+@property (nonatomic, readonly) int documentTypeCategory;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
+@property (nonatomic, readonly) BOOL hasWarnings;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL ignoreDocumentSupport;
+@property (nonatomic, readonly) <TSKImporter> *importer;
+@property (nonatomic, readonly) BOOL importingDesignDemoDoc;
+@property (nonatomic, readonly) BOOL isBrowsingVersions;
+@property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
+@property (nonatomic, readonly) BOOL isImportCancelled;
+@property (nonatomic, readonly) BOOL isInCollaborationMode;
+@property (nonatomic, readonly) BOOL isInReadOnlyMode;
+@property (nonatomic, readonly) BOOL isPasswordProtected;
+@property (nonatomic, readonly) NSString *name;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (nonatomic) BOOL preserveDocumentAfterImport;
+@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (nonatomic, retain) TSUProgressContext *progressContext;
+@property (nonatomic, readonly) NSString *sourcePath;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *temporaryURL;
 
 - (void)_beginImport;
 - (void)_continueImportWithSuccess:(BOOL)arg1 error:(id)arg2 completedSteps:(int)arg3;
@@ -108,10 +106,10 @@
 - (id)presentedItemURL;
 - (BOOL)preserveDocumentAfterImport;
 - (id)progressContext;
-- (void)relinquishPresentedItemToWriter:(id)arg1;
+- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
 - (void)removeFilePresenter;
 - (void)removeWarning:(id)arg1;
-- (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id)arg2;
+- (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setPreserveDocumentAfterImport:(BOOL)arg1;
 - (void)setProgressContext:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFEmailSearchOperation : _MFAddressBookPropertySearchOperation {
-}
+@interface MFEmailSearchOperation : _MFAddressBookPropertySearchOperation
 
 + (int)property;
 

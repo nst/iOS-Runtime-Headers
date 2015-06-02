@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSNumber, NSString, TSTLayout;
-
 @interface TSTLayoutHint : NSObject <TSDHint> {
     struct { 
         unsigned short row; 
@@ -41,19 +34,19 @@
     NSNumber *mPartitioningPass;
 }
 
-@property struct { unsigned short x1; unsigned char x2; unsigned char x3; } cacheHintID;
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cellRange;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct CGSize { float x1; float x2; } effectiveSize;
-@property(readonly) unsigned int hash;
-@property BOOL horizontal;
-@property BOOL isValid;
-@property TSTLayout * layout;
-@property struct CGSize { float x1; float x2; } maximumSize;
-@property unsigned int partitionPosition;
-@property(retain) NSNumber * partitioningPass;
-@property(readonly) Class superclass;
+@property (nonatomic) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cacheHintID;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } cellRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct CGSize { float x1; float x2; } effectiveSize;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL horizontal;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic) TSTLayout *layout;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumSize;
+@property (nonatomic) unsigned int partitionPosition;
+@property (nonatomic, retain) NSNumber *partitioningPass;
+@property (readonly) Class superclass;
 
 + (Class)archivedHintClass;
 

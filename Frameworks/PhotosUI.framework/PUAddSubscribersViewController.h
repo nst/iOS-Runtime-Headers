@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLCloudSharedAlbum, PUPhotoStreamRecipientViewController, UIBarButtonItem;
-
 @interface PUAddSubscribersViewController : UIViewController {
     UIBarButtonItem *_addButton;
     PLCloudSharedAlbum *_album;
     PUPhotoStreamRecipientViewController *_composeRecipientController;
 }
 
-@property(readonly) PLCloudSharedAlbum * album;
+@property (nonatomic, readonly) PLCloudSharedAlbum *album;
 
 - (void).cxx_destruct;
 - (void)_addButtonHandler;

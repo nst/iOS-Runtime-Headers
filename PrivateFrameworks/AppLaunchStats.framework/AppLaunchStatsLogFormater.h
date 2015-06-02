@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSMutableString;
-
 @interface AppLaunchStatsLogFormater : NSObject {
     NSMutableString *blacklistCandidate;
     NSMutableString *fetchBlackList;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSString;
-
 @interface GKSupplementaryViewMetrics : NSObject <NSCopying> {
     int _animateWithSection;
     SEL _configurator;
@@ -22,18 +20,18 @@
     id _target;
 }
 
-@property int animateWithSection;
-@property SEL configurator;
-@property float desiredHeight;
-@property float desiredWidth;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
-@property(getter=isHidden) BOOL hidden;
-@property(retain) NSString * kind;
-@property Class reusableViewClass;
-@property BOOL shouldPin;
-@property BOOL shouldPinGlobal;
-@property BOOL shouldUseGlobalIndexing;
-@property id target;
+@property (nonatomic) int animateWithSection;
+@property (nonatomic) SEL configurator;
+@property (nonatomic) float desiredHeight;
+@property (nonatomic) float desiredWidth;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSString *kind;
+@property (nonatomic) Class reusableViewClass;
+@property (nonatomic) BOOL shouldPin;
+@property (nonatomic) BOOL shouldPinGlobal;
+@property (nonatomic) BOOL shouldUseGlobalIndexing;
+@property (nonatomic) id target;
 
 + (id)supplementaryMetrics;
 

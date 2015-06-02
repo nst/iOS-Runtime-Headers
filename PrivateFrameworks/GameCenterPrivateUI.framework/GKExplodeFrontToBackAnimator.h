@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKExplodeFrontToBackAnimator : GKBubblePathAnimator {
-}
+@interface GKExplodeFrontToBackAnimator : GKBubblePathAnimator
 
 + (float)preferredDuration;
 

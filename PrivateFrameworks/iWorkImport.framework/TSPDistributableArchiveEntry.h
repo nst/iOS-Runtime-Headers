@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, SFUDataRepresentation;
-
 @interface TSPDistributableArchiveEntry : NSObject <TSPIdentifiedDataRepresentation> {
     int _classType;
     NSString *_fileStateIdentifier;
@@ -14,13 +12,13 @@
     unsigned int _version;
 }
 
-@property int classType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * relativeDataPath;
-@property(readonly) Class superclass;
-@property unsigned int version;
+@property (nonatomic) int classType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *relativeDataPath;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int version;
 
 - (void).cxx_destruct;
 - (int)classType;

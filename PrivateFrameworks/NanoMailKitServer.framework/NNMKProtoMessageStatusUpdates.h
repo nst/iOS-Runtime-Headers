@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSMutableArray;
-
 @interface NNMKProtoMessageStatusUpdates : PBCodable <NSCopying> {
     NSData *_dateSynced;
     unsigned int _fullSyncVersion;
@@ -13,11 +11,11 @@
     NSMutableArray *_messageStatusUpdates;
 }
 
-@property(retain) NSData * dateSynced;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasDateSynced;
-@property BOOL hasFullSyncVersion;
-@property(retain) NSMutableArray * messageStatusUpdates;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasDateSynced;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic, retain) NSMutableArray *messageStatusUpdates;
 
 - (void).cxx_destruct;
 - (void)addMessageStatusUpdate:(id)arg1;

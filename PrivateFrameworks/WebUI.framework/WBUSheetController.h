@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray, NSString, UIAlertController, UITableView, WebUIAlert;
-
 @interface WBUSheetController : NSObject <UITableViewDataSource, UITableViewDelegate> {
     WebUIAlert *_alert;
     UIAlertController *_alertController;
@@ -13,10 +11,10 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_alertDidDismissWithAction:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSString, SLComposeServiceViewController, SLSheetTitleView, UIImage, UINavigationItem, UITableView, UITableViewController, UIView, UIViewController;
-
 @interface SLSheetRootViewController : UIViewController <SLComposeSheetConfigurationItemObserving, UITableViewDataSource, UITableViewDelegate> {
     UIViewController *_autoCompletionViewController;
     NSArray *_configurationItems;
@@ -15,15 +13,15 @@
     SLSheetTitleView *_titleView;
 }
 
-@property(copy) NSArray * configurationItems;
-@property(retain) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property SLComposeServiceViewController * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * serviceIconImage;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (nonatomic, copy) NSArray *configurationItems;
+@property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) SLComposeServiceViewController *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *serviceIconImage;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 - (void).cxx_destruct;
 - (float)_preferredTableViewHeight;
@@ -34,12 +32,12 @@
 - (id)contentView;
 - (void)dealloc;
 - (id)delegate;
-- (void)dismissAutoCompletionViewControllerWithContentViewChangeBlock:(id)arg1;
+- (void)dismissAutoCompletionViewControllerWithContentViewChangeBlock:(id /* block */)arg1;
 - (void)loadView;
 - (id)navigationItem;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)observeConfigurationItems:(id)arg1;
-- (void)presentAutoCompletionViewController:(id)arg1 apparentContentHeight:(float)arg2 contentViewChangeBlock:(id)arg3;
+- (void)presentAutoCompletionViewController:(id)arg1 apparentContentHeight:(float)arg2 contentViewChangeBlock:(id /* block */)arg3;
 - (void)resetConfigurationItems;
 - (id)serviceIconImage;
 - (void)setConfigurationItems:(id)arg1;

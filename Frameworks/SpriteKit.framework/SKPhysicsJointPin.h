@@ -14,12 +14,12 @@
     float _upperAngleLimit;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } anchor;
-@property float frictionTorque;
-@property float lowerAngleLimit;
-@property float rotationSpeed;
-@property BOOL shouldEnableLimits;
-@property float upperAngleLimit;
+@property (readonly) struct CGPoint { float x1; float x2; } anchor;
+@property (nonatomic) float frictionTorque;
+@property (nonatomic) float lowerAngleLimit;
+@property (nonatomic) float rotationSpeed;
+@property (nonatomic) BOOL shouldEnableLimits;
+@property (nonatomic) float upperAngleLimit;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;

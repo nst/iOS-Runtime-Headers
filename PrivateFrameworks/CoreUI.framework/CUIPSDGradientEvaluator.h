@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSArray;
-
 @interface CUIPSDGradientEvaluator : NSObject <NSCoding, NSCopying> {
     int blendMode;
     NSArray *colorMidpointLocations;
@@ -25,7 +23,7 @@
     float smoothingCoefficient;
 }
 
-@property int blendMode;
+@property (nonatomic) int blendMode;
 
 + (void)initialize;
 

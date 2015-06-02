@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UINavigationBarBackIndicatorView : UIImageView {
-}
+@interface _UINavigationBarBackIndicatorView : UIImageView
 
 @end

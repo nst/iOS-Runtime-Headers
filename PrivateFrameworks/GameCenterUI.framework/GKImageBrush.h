@@ -2,25 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface GKImageBrush : GKThemeBrush {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _inputTransform;
-
+    id /* block */ _inputTransform;
 }
 
-@property(copy) id inputTransform;
+@property (nonatomic, copy) id /* block */ inputTransform;
 
 - (void)dealloc;
 - (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withContext:(struct CGContext { }*)arg2 input:(id)arg3;
-- (id)inputTransform;
+- (id /* block */)inputTransform;
 - (float)scaleForInput:(id)arg1;
-- (void)setInputTransform:(id)arg1;
+- (void)setInputTransform:(id /* block */)arg1;
 - (struct CGSize { float x1; float x2; })sizeForInput:(id)arg1;
 
 @end

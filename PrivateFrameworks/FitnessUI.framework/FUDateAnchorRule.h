@@ -7,8 +7,8 @@
     int _roundingValue;
 }
 
-@property unsigned int calendarUnit;
-@property int roundingValue;
+@property (nonatomic) unsigned int calendarUnit;
+@property (nonatomic) int roundingValue;
 
 - (id)_anchorDiffComponents;
 - (BOOL)_componentsSuccessful:(id)arg1;

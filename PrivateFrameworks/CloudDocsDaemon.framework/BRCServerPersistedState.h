@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCServerChangeState, NSMutableDictionary, NSString;
-
 @interface BRCServerPersistedState : NSObject <NSCopying, NSSecureCoding, PQLBindable> {
     long long _nextRank;
     NSMutableDictionary *_pendingMigrations;
     BRCServerChangeState *_sharedDatabaseChangeState;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property long long nextRank;
-@property(retain) BRCServerChangeState * sharedDatabaseChangeState;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) long long nextRank;
+@property (retain) BRCServerChangeState *sharedDatabaseChangeState;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

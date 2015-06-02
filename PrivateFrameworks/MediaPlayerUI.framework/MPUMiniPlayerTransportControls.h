@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUMiniPlayerTransportControlsDelegate>, MPQueueFeeder, MPUProspectivePlaybackInformation;
-
 @interface MPUMiniPlayerTransportControls : MPTransportControls {
     <MPUMiniPlayerTransportControlsDelegate> *_delegate;
     MPQueueFeeder *_feeder;
     MPUProspectivePlaybackInformation *_prospectivePlaybackInformation;
 }
 
-@property <MPUMiniPlayerTransportControlsDelegate> * delegate;
-@property(retain) MPUProspectivePlaybackInformation * prospectivePlaybackInformation;
+@property (nonatomic) <MPUMiniPlayerTransportControlsDelegate> *delegate;
+@property (nonatomic, retain) MPUProspectivePlaybackInformation *prospectivePlaybackInformation;
 
 + (Class)buttonClass;
 + (BOOL)buttonImagesUseBackgroundImage;

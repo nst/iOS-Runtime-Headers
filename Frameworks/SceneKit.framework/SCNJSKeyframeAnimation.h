@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNJSKeyframeAnimation : CAKeyframeAnimation {
-}
+@interface SCNJSKeyframeAnimation : CAKeyframeAnimation
 
 + (id)SCNJSExportProtocol;
 + (id)keyframeAnimationWithKeyPath:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetInspector, AVWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader {
     NSURL *_URL;
     AVAssetInspector *_assetInspector;
@@ -50,8 +48,8 @@
 - (BOOL)isExportable;
 - (BOOL)isPlayable;
 - (BOOL)isReadable;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
 - (id)resolvedURL;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSLanguageSelector;
-
 @interface PSInternationalLanguageSetupController : PSSetupController <UIActionSheetDelegate, UIAlertViewDelegate> {
     PSLanguageSelector *_languageSelector;
     NSString *_languageToSet;
@@ -11,11 +9,11 @@
     BOOL _useOfficialLanguages;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PSLanguageSelector * languageSelector;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSLanguageSelector *languageSelector;
+@property (readonly) Class superclass;
 
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDFacetDefinition : NSManagedObject {
-}
+@interface TDFacetDefinition : NSManagedObject
 
 - (void)copyAttributesInto:(id)arg1;
 - (id)dateOfLastChange;

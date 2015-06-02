@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegAuthorizedAccountWebViewController : CNFRegAccountWebViewController {
-}
+@interface CNFRegAuthorizedAccountWebViewController : CNFRegAccountWebViewController
 
 - (BOOL)canSendURLRequest:(id)arg1;
 - (void)setHeadersForRequest:(id)arg1;

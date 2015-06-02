@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString, TSUColor;
+@interface TSDMutableGradient : TSDGradient <TSDGradientStopContainer>
 
-@interface TSDMutableGradient : TSDGradient <TSDGradientStopContainer> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) TSUColor * firstColor;
-@property(retain) NSArray * gradientStops;
-@property unsigned int gradientType;
-@property(readonly) unsigned int hash;
-@property BOOL isAdvancedGradient;
-@property(retain) TSUColor * lastColor;
-@property float opacity;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TSUColor *firstColor;
+@property (nonatomic, retain) NSArray *gradientStops;
+@property (nonatomic) unsigned int gradientType;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAdvancedGradient;
+@property (nonatomic, retain) TSUColor *lastColor;
+@property (nonatomic) float opacity;
+@property (readonly) Class superclass;
 
 - (void)evenlyDistributeStops;
 - (void)insertGradientStop:(id)arg1;

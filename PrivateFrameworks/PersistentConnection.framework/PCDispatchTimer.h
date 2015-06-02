@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class CUTWeakReference, NSDate, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface PCDispatchTimer : NSObject {
     NSDate *_fireDate;
     unsigned long long _fireTime;
@@ -14,8 +12,8 @@
     NSObject<OS_dispatch_source> *_timerSource;
 }
 
-@property(retain) NSDate * fireDate;
-@property(readonly) BOOL isValid;
+@property (nonatomic, retain) NSDate *fireDate;
+@property (nonatomic, readonly) BOOL isValid;
 
 - (void)_callTarget;
 - (void)_cleanupTimer;

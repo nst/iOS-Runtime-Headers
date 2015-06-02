@@ -2,30 +2,23 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSSet, NSString, SSDownloadManager;
-
 @interface SSDownloadQueue : NSObject <SSDownloadManagerObserverPrivate> {
     BOOL _autoFinishDownloads;
     SSDownloadManager *_downloadManager;
     struct __CFSet { } *_observers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSSet * downloadKinds;
-@property(readonly) SSDownloadManager * downloadManager;
-@property(readonly) NSArray * downloads;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * placeholderDownloads;
-@property(readonly) NSArray * preorders;
-@property BOOL shouldAutomaticallyFinishDownloads;
-@property(readonly) Class superclass;
-@property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSSet *downloadKinds;
+@property (readonly) SSDownloadManager *downloadManager;
+@property (nonatomic, readonly) NSArray *downloads;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *placeholderDownloads;
+@property (nonatomic, readonly) NSArray *preorders;
+@property (nonatomic) BOOL shouldAutomaticallyFinishDownloads;
+@property (readonly) Class superclass;
+@property (getter=isUsingNetwork, readonly) BOOL usingNetwork;
 
 + (id)mediaDownloadKinds;
 + (id)softwareApplicationDownloadKinds;
@@ -33,7 +26,7 @@
 - (void)_handleDownloadsDidChange:(id)arg1;
 - (void)_handleDownloadsRemoved:(id)arg1;
 - (id)_initWithDownloadManagerOptions:(id)arg1;
-- (void)_messageObserversWithFunction:(int (*)())arg1 context:(void*)arg2;
+- (void)_messageObserversWithFunction:(int (*)arg1 context:(void*)arg2;
 - (void)_sendDownloadStatusChangedAtIndex:(int)arg1;
 - (void)_sendQueueChangedWithRemovals:(id)arg1;
 - (void)_sendQueueNetworkUsageChanged;
@@ -52,7 +45,7 @@
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;
-- (void)getDownloadsUsingBlock:(id)arg1;
+- (void)getDownloadsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDownloadKinds:(id)arg1;
 - (id)initWithDownloadManagerOptions:(id)arg1;

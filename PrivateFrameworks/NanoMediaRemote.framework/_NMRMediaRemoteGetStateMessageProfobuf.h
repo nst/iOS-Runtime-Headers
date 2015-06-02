@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData;
-
 @interface _NMRMediaRemoteGetStateMessageProfobuf : PBCodable <NSCopying> {
     NSData *_applicationInfoDigest;
     struct { 
@@ -17,18 +15,18 @@
     double _timestamp;
 }
 
-@property(retain) NSData * applicationInfoDigest;
-@property(readonly) BOOL hasApplicationInfoDigest;
-@property(readonly) BOOL hasKnownDigest;
-@property(readonly) BOOL hasNowPlayingInfoDigest;
-@property BOOL hasState;
-@property(readonly) BOOL hasSupportedCommandsDigest;
-@property BOOL hasTimestamp;
-@property(retain) NSData * knownDigest;
-@property(retain) NSData * nowPlayingInfoDigest;
-@property int state;
-@property(retain) NSData * supportedCommandsDigest;
-@property double timestamp;
+@property (nonatomic, retain) NSData *applicationInfoDigest;
+@property (nonatomic, readonly) BOOL hasApplicationInfoDigest;
+@property (nonatomic, readonly) BOOL hasKnownDigest;
+@property (nonatomic, readonly) BOOL hasNowPlayingInfoDigest;
+@property (nonatomic) BOOL hasState;
+@property (nonatomic, readonly) BOOL hasSupportedCommandsDigest;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSData *knownDigest;
+@property (nonatomic, retain) NSData *nowPlayingInfoDigest;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSData *supportedCommandsDigest;
+@property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
 - (id)applicationInfoDigest;

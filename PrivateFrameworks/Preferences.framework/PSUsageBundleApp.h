@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSStorageReporting>, NSArray, NSString, PSWeakReference;
-
 @interface PSUsageBundleApp : NSObject {
     NSString *_bundleIdentifier;
     NSArray *_categories;
@@ -12,11 +10,11 @@
     float _totalSize;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSArray * categories;
-@property(retain) NSString * name;
-@property float totalSize;
-@property <PSStorageReporting> * usageBundleStorageReporter;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) NSArray *categories;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) float totalSize;
+@property (nonatomic) <PSStorageReporting> *usageBundleStorageReporter;
 
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2 andCategories:(id)arg3;

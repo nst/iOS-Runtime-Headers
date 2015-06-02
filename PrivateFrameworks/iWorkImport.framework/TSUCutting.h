@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUCutting : NSObject {
-}
+@interface TSUCutting : NSObject
 
 + (void)beginCutting;
 + (void)endCutting;

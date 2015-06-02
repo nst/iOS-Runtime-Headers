@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIFamilySetupPrompterDelegate>, ACAccount, ACAccountStore, NSOperationQueue, NSString, SSAccount, UIViewController;
-
 @interface AAUIFamilySetupPrompter : NSObject <AAUIFamilySetupDelegate> {
     ACAccountStore *_accountStore;
     ACAccount *_appleAccount;
@@ -15,11 +13,11 @@
     UIViewController *_presentingViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIFamilySetupPrompterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIFamilySetupPrompterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_goToFamilySetup;

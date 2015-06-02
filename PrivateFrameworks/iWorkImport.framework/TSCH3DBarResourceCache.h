@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUNoCopyDictionary;
-
 @interface TSCH3DBarResourceCache : NSObject {
     TSUNoCopyDictionary *mCache;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURLRequest, NSURLResponse, WKFrameInfo;
-
 @interface WKNavigationResponse : NSObject {
     BOOL _canShowMIMEType;
     struct RetainPtr<WKFrameInfo> { 
@@ -17,11 +15,11 @@
     } _response;
 }
 
-@property(readonly) WKFrameInfo * _frame;
-@property(readonly) NSURLRequest * _request;
-@property BOOL canShowMIMEType;
-@property(getter=isForMainFrame,readonly) BOOL forMainFrame;
-@property(copy) NSURLResponse * response;
+@property (nonatomic, readonly) WKFrameInfo *_frame;
+@property (nonatomic, readonly) NSURLRequest *_request;
+@property (nonatomic) BOOL canShowMIMEType;
+@property (getter=isForMainFrame, nonatomic, readonly) BOOL forMainFrame;
+@property (nonatomic, copy) NSURLResponse *response;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

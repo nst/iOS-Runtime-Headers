@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardCandidateBarSegmentControl;
-
 @interface UIKeyboardCandidatePageControl : UIView {
     UIKeyboardCandidateBarSegmentControl *_pageControl;
     BOOL _usingVerticalArrows;

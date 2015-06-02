@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKTimeLoggerLogPauseRecord : NSObject {
     NSString *_message;
     double _time;
 }
 
-@property(retain) NSString * message;
-@property double time;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic) double time;
 
 - (void).cxx_destruct;
 - (id)message;

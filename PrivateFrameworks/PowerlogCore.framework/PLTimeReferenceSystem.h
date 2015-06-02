@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLTimeReferenceSystem : PLTimeReferenceDynamic {
-}
+@interface PLTimeReferenceSystem : PLTimeReferenceDynamic
 
 - (id)currentTime;
 - (void)dealloc;

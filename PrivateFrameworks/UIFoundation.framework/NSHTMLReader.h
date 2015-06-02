@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class DOMDocument, DOMRange, NSData, NSDictionary, NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSString, NSURL, WebDataSource, WebView;
-
 @interface NSHTMLReader : NSObject {
     NSMutableAttributedString *_attrStr;
     NSMutableDictionary *_attributesForElements;

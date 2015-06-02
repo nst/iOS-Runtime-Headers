@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CIMirror : CIFilter {
     NSNumber *inputAngle;
     CIImage *inputImage;
     CIVector *inputPoint;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputPoint;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputPoint;
 
 + (id)customAttributes;
 

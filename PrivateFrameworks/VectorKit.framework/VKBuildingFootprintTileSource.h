@@ -8,7 +8,7 @@
     BOOL _prepareExtrusion;
 }
 
-@property BOOL makeFacades;
+@property (nonatomic) BOOL makeFacades;
 
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
 - (BOOL)makeFacades;

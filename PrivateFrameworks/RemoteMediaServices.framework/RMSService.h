@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSService : NSObject {
     NSString *_displayName;
     NSString *_homeSharingGroupKey;
@@ -15,14 +13,14 @@
     int _serviceType;
 }
 
-@property(retain) NSString * displayName;
-@property(retain) NSString * homeSharingGroupKey;
-@property(retain) NSString * hostName;
-@property(retain) NSString * networkName;
-@property int port;
-@property int serviceDiscoverySource;
-@property int serviceLegacyFlags;
-@property int serviceType;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *homeSharingGroupKey;
+@property (nonatomic, retain) NSString *hostName;
+@property (nonatomic, retain) NSString *networkName;
+@property (nonatomic) int port;
+@property (nonatomic) int serviceDiscoverySource;
+@property (nonatomic) int serviceLegacyFlags;
+@property (nonatomic) int serviceType;
 
 + (id)protobufsFromServices:(id)arg1;
 + (id)servicesFromProtobufs:(id)arg1;

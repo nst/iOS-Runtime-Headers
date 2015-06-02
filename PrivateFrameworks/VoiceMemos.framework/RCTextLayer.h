@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString, UIColor, UIFont;
-
 @interface RCTextLayer : CALayer {
     struct CGSize { 
         float width; 
@@ -17,11 +15,11 @@
     UIColor *_textColor;
 }
 
-@property(retain) UIFont * font;
-@property int preferredAlignment;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic) int preferredAlignment;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)_attributes;

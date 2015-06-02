@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUFaceTimeVideoCall : TUFaceTimeCall {
-}
+@interface TUFaceTimeVideoCall : TUFaceTimeCall
 
 - (id)audioCategory;
 - (id)audioMode;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSCache;
-
 @interface _MFTableCellAttributesCache : NSObject {
     NSCache *_attributesCache;
 }
@@ -11,7 +9,7 @@
 + (id)sharedInstance;
 
 - (void)_didReceiveFontSizeChangeNotification:(id)arg1;
-- (id)cachedAttributesForIdentifier:(id)arg1 constructionBlock:(id)arg2;
+- (id)cachedAttributesForIdentifier:(id)arg1 constructionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 

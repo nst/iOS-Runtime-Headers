@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartSeries;
-
 @interface TSCHErrorBarData : NSObject <TSCHUnretainedParent> {
     BOOL mErrorBarsInvalid;
     double mMaxValue;
@@ -22,8 +20,8 @@
     BOOL mSupportsXAxisBars;
 }
 
-@property(readonly) int maxValueGroupIndex;
-@property(readonly) int minValueGroupIndex;
+@property (nonatomic, readonly) int maxValueGroupIndex;
+@property (nonatomic, readonly) int minValueGroupIndex;
 
 + (BOOL)hasErrorBarsForSeries:(id)arg1;
 + (int)p_errorBarSettingForSeries:(id)arg1 useXAxis:(BOOL)arg2 axisID:(id)arg3;

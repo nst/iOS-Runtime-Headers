@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKOperationPropertiesUtils : NSObject {
-}
+@interface TSKOperationPropertiesUtils : NSObject
 
 + (void)initialize;
 + (BOOL)isFirstOneWinProperty:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class AVAsset, CALayer, NSObject<TSKMediaPlayerController>, TSDButtonKnob, TSDFrameRep, TSDMovieInfo;
-
 @interface TSDMovieRep : TSDMediaRep {
     struct CGImage { } *mAlternatePosterImage;
     AVAsset *mAssetForPlayability;
@@ -34,8 +32,8 @@
     CALayer *mReflectionPlayerStrokeMaskLayer;
 }
 
-@property struct CGImage { }* alternatePosterImage;
-@property(readonly) TSDMovieInfo * movieInfo;
+@property (nonatomic) struct CGImage { }*alternatePosterImage;
+@property (nonatomic, readonly) TSDMovieInfo *movieInfo;
 
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
 

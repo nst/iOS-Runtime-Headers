@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UILabel;
-
 @interface CKTranscriptLocationShareCell : UITableViewCell {
     double _offerTimeRemaining;
     BOOL _showOfferTimeRemaining;
     UILabel *_timeRemainingLabel;
 }
 
-@property double offerTimeRemaining;
-@property BOOL showOfferTimeRemaining;
-@property(retain) UILabel * timeRemainingLabel;
+@property (nonatomic) double offerTimeRemaining;
+@property (nonatomic) BOOL showOfferTimeRemaining;
+@property (nonatomic, retain) UILabel *timeRemainingLabel;
 
 + (id)identifier;
 

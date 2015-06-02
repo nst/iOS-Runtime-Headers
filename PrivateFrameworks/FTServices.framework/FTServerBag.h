@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSString, NSURL;
-
 @interface FTServerBag : NSObject {
     int _type;
 }
 
-@property(readonly) BOOL allowSelfSignedCertificates;
-@property(readonly) BOOL allowUnsignedBags;
-@property(retain,readonly) NSString * apsEnvironmentName;
-@property(retain,readonly) NSURL * bagURL;
-@property(readonly) BOOL isInDebilitatedMode;
-@property(readonly) BOOL isLoaded;
-@property(readonly) BOOL isLoading;
-@property(readonly) BOOL isServerAvailable;
+@property (readonly) BOOL allowSelfSignedCertificates;
+@property (readonly) BOOL allowUnsignedBags;
+@property (readonly, retain) NSString *apsEnvironmentName;
+@property (readonly, retain) NSURL *bagURL;
+@property (readonly) BOOL isInDebilitatedMode;
+@property (readonly) BOOL isLoaded;
+@property (readonly) BOOL isLoading;
+@property (readonly) BOOL isServerAvailable;
 
 + (id)_sharedInstance;
 + (id)_sharedInstanceForType:(int)arg1;

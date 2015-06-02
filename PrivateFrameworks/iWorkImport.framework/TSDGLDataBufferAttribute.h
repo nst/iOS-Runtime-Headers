@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDGLDataArrayBuffer, TSDGLDataBuffer;
-
 @interface TSDGLDataBufferAttribute : NSObject {
     unsigned int _bufferOffset;
     unsigned int _bufferUsage;
@@ -16,15 +14,15 @@
     NSString *_name;
 }
 
-@property unsigned int bufferOffset;
-@property(readonly) unsigned int bufferUsage;
-@property(readonly) int componentCount;
-@property TSDGLDataArrayBuffer * dataArrayBuffer;
-@property TSDGLDataBuffer * dataBuffer;
-@property(readonly) int dataType;
-@property(readonly) BOOL isNormalized;
-@property int locationInShader;
-@property(copy) NSString * name;
+@property (nonatomic) unsigned int bufferOffset;
+@property (nonatomic, readonly) unsigned int bufferUsage;
+@property (nonatomic, readonly) int componentCount;
+@property (nonatomic) TSDGLDataArrayBuffer *dataArrayBuffer;
+@property (nonatomic) TSDGLDataBuffer *dataBuffer;
+@property (nonatomic, readonly) int dataType;
+@property (nonatomic, readonly) BOOL isNormalized;
+@property (nonatomic) int locationInShader;
+@property (nonatomic, copy) NSString *name;
 
 + (id)attributeWithName:(id)arg1 bufferUsage:(unsigned int)arg2 dataType:(int)arg3 normalized:(BOOL)arg4 componentCount:(unsigned int)arg5;
 

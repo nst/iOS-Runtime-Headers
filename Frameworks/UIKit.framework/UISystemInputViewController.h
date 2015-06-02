@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableDictionary, UIKeyboard, UIResponder<UITextInput>;
-
 @interface UISystemInputViewController : UIInputViewController {
     NSMutableDictionary *_accessoryConstraints;
     NSMutableDictionary *_accessoryViews;
@@ -12,9 +10,9 @@
     UIResponder<UITextInput> *_persistentDelegate;
 }
 
-@property(retain) UIKeyboard * keyboard;
-@property(retain) NSArray * keyboardConstraits;
-@property(retain) UIResponder<UITextInput> * persistentDelegate;
+@property (nonatomic, retain) UIKeyboard *keyboard;
+@property (nonatomic, retain) NSArray *keyboardConstraits;
+@property (nonatomic, retain) UIResponder<UITextInput> *persistentDelegate;
 
 + (BOOL)_requiresProxyInterface;
 

@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <GKMatchDelegate>, GKConnection, GKSession, GKThreadsafeDictionary, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _chooseHostCompletion;
-
+    id /* block */ _chooseHostCompletion;
     GKConnection *_connection;
     <GKMatchDelegate> *_delegateWeak;
     unsigned int _expectedPlayerCount;
@@ -35,31 +25,31 @@
     unsigned char _version;
 }
 
-@property(copy) id chooseHostCompletion;
-@property(retain) GKConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <GKMatchDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int expectedPlayerCount;
-@property(readonly) unsigned int hash;
-@property BOOL hostScoreForQuery;
-@property(retain) NSMutableDictionary * hostScores;
-@property <GKMatchDelegate> * inviteDelegate;
-@property BOOL needHostScore;
-@property(retain) NSDictionary * networkStatistics;
-@property(retain) NSMutableArray * opponentIDs;
-@property unsigned int packetSequenceNumber;
-@property(retain) NSMutableDictionary * playerEventQueues;
-@property(retain) NSMutableDictionary * playerPushTokens;
-@property(readonly) NSArray * players;
-@property(retain) GKThreadsafeDictionary * playersByIdentifier;
-@property(retain) NSMutableArray * reinvitedPlayers;
-@property int rematchCount;
-@property(retain) NSString * rematchID;
-@property(retain) NSData * selfBlob;
-@property(retain) GKSession * session;
-@property(readonly) Class superclass;
-@property unsigned char version;
+@property (nonatomic, copy) id /* block */ chooseHostCompletion;
+@property (nonatomic, retain) GKConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GKMatchDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int expectedPlayerCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hostScoreForQuery;
+@property (nonatomic, retain) NSMutableDictionary *hostScores;
+@property (nonatomic) <GKMatchDelegate> *inviteDelegate;
+@property (nonatomic) BOOL needHostScore;
+@property (nonatomic, retain) NSDictionary *networkStatistics;
+@property (nonatomic, retain) NSMutableArray *opponentIDs;
+@property (nonatomic) unsigned int packetSequenceNumber;
+@property (nonatomic, retain) NSMutableDictionary *playerEventQueues;
+@property (nonatomic, retain) NSMutableDictionary *playerPushTokens;
+@property (nonatomic, readonly) NSArray *players;
+@property (nonatomic, retain) GKThreadsafeDictionary *playersByIdentifier;
+@property (nonatomic, retain) NSMutableArray *reinvitedPlayers;
+@property (nonatomic) int rematchCount;
+@property (nonatomic, retain) NSString *rematchID;
+@property (nonatomic, retain) NSData *selfBlob;
+@property (nonatomic, retain) GKSession *session;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned char version;
 
 - (void)_delegate:(id)arg1 didReceiveData:(id)arg2 fromPlayer:(id)arg3;
 - (void)acceptRelayResponse:(id)arg1 player:(id)arg2;
@@ -67,9 +57,9 @@
 - (void)addPlayers:(id)arg1;
 - (id)allIDs;
 - (void)calculateHostScore;
-- (void)chooseBestHostPlayerWithCompletionHandler:(id)arg1;
-- (void)chooseBestHostingPlayerWithCompletionHandler:(id)arg1;
-- (id)chooseHostCompletion;
+- (void)chooseBestHostPlayerWithCompletionHandler:(id /* block */)arg1;
+- (void)chooseBestHostingPlayerWithCompletionHandler:(id /* block */)arg1;
+- (id /* block */)chooseHostCompletion;
 - (void)conditionallyReinvitePlayer:(id)arg1 sessionToken:(id)arg2;
 - (void)conditionallyRelaunchPlayer:(id)arg1;
 - (void)connectToNearbyPlayer:(id)arg1 withConnectionData:(id)arg2;
@@ -83,7 +73,7 @@
 - (id)description;
 - (void)disconnect;
 - (unsigned int)expectedPlayerCount;
-- (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (void)getLocalConnectionDataWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)haveAllHostScores;
 - (BOOL)hostScoreForQuery;
 - (id)hostScores;
@@ -121,7 +111,7 @@
 - (void)relayPushNotification:(id)arg1;
 - (int)rematchCount;
 - (id)rematchID;
-- (void)rematchWithCompletionHandler:(id)arg1;
+- (void)rematchWithCompletionHandler:(id /* block */)arg1;
 - (void)requestRelayInitForPlayer:(id)arg1;
 - (void)requestRelayUpdateForPlayer:(id)arg1;
 - (BOOL)selectHostIfRequestedAndAllScored;
@@ -144,7 +134,7 @@
 - (void)session:(id)arg1 networkStatisticsChanged:(id)arg2;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
 - (void)session:(id)arg1 updateRelay:(id)arg2 forPeer:(id)arg3;
-- (void)setChooseHostCompletion:(id)arg1;
+- (void)setChooseHostCompletion:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostScoreForQuery:(BOOL)arg1;
@@ -171,8 +161,8 @@
 - (void)updateStateForPlayer:(id)arg1 state:(int)arg2;
 - (unsigned char)version;
 - (id)voiceChatWithName:(id)arg1;
-- (void)withEventQueueForPlayer:(id)arg1 create:(id)arg2 perform:(id)arg3;
-- (void)withEventQueueForPlayer:(id)arg1 createIfNeeded:(BOOL)arg2 perform:(id)arg3;
-- (void)withEventQueueForPlayer:(id)arg1 perform:(id)arg2;
+- (void)withEventQueueForPlayer:(id)arg1 create:(id /* block */)arg2 perform:(id /* block */)arg3;
+- (void)withEventQueueForPlayer:(id)arg1 createIfNeeded:(BOOL)arg2 perform:(id /* block */)arg3;
+- (void)withEventQueueForPlayer:(id)arg1 perform:(id /* block */)arg2;
 
 @end

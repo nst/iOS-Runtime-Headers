@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMCharacteristic, NSError;
-
 @interface HMCharacteristicResponseTuple : NSObject {
     HMCharacteristic *_characteristic;
     NSError *_error;
 }
 
-@property(readonly) HMCharacteristic * characteristic;
-@property(readonly) NSError * error;
+@property (nonatomic, readonly) HMCharacteristic *characteristic;
+@property (nonatomic, readonly) NSError *error;
 
 + (id)tupleWithCharacteristic:(id)arg1 error:(id)arg2;
 

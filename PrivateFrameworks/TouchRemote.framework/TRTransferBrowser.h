@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRTransferBrowserDelegate>, NSObject<OS_dispatch_queue>, NSString, WPTransfer;
-
 @interface TRTransferBrowser : NSObject <WPTransferDelegate> {
     struct { struct _CCCryptor {} *x1; unsigned char x2[16]; unsigned char x3[16]; unsigned int x4; } *_aesContext;
     <TRTransferBrowserDelegate> *_delegate;
@@ -16,12 +14,12 @@
     WPTransfer *_transferSession;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <TRTransferBrowserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TRTransferBrowserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int state;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginScanningIfPowered;

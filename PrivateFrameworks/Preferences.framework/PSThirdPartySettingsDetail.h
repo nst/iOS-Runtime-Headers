@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSThirdPartySettingsDetail : NSObject {
-}
+@interface PSThirdPartySettingsDetail : NSObject
 
 + (id)preferencesURLForBundleID:(id)arg1 forSettingType:(int)arg2;
 

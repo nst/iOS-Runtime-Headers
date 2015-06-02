@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString, NSTimeZone;
-
 @interface SBFLockScreenSimpleDateFormatter : NSObject <SBFLockScreenDateFormatter> {
     NSTimeZone *_timeZone;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSTimeZone * timeZone;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void)dealloc;
 - (id)formatDateAsDayOfWeekMonthDayStyle:(id)arg1;

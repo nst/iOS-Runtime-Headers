@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSFileHandle, NSString;
-
 @interface TSUHTMLLog : NSObject {
     NSFileHandle *_handle;
     BOOL _logStarted;
@@ -15,10 +13,10 @@
     unsigned int _uniquifier;
 }
 
-@property(readonly) NSString * path;
-@property(copy) NSString * script;
-@property(copy) NSString * stylesheet;
-@property(copy) NSString * title;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, copy) NSString *script;
+@property (nonatomic, copy) NSString *stylesheet;
+@property (nonatomic, copy) NSString *title;
 
 - (void)_writeMarkupData:(id)arg1;
 - (void)clear;

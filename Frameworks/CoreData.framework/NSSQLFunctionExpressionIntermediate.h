@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLFunctionExpressionIntermediate : NSSQLExpressionIntermediate {
-}
+@interface NSSQLFunctionExpressionIntermediate : NSSQLExpressionIntermediate
 
 + (BOOL)functionIsAcceptableAsAggregate:(id)arg1;
 

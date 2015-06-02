@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WDIterator : NSObject {
-}
+@interface WDIterator : NSObject
 
 - (BOOL)hasNext;
 - (id)next;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUIDataCollectorLogger, NSString;
-
 @interface ABUIDataCollector : NSObject {
     NSString *_appIdentifier;
     ABUIDataCollectorLogger *_logger;
 }
 
-@property(retain) NSString * appIdentifier;
-@property(retain) ABUIDataCollectorLogger * logger;
+@property (nonatomic, retain) NSString *appIdentifier;
+@property (nonatomic, retain) ABUIDataCollectorLogger *logger;
 
 + (BOOL)isEnabled;
 + (id)sharedCollector;

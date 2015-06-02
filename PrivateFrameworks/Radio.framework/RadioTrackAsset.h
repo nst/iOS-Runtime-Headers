@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSDictionary, NSString, NSURL;
-
 @interface RadioTrackAsset : NSObject {
     NSDictionary *_responseDictionary;
 }
 
-@property(retain,readonly) NSURL * URL;
-@property(copy,readonly) NSString * downloadKey;
-@property(copy,readonly) NSString * flavor;
-@property(copy,readonly) NSDictionary * responseDictionary;
-@property(copy,readonly) NSArray * sinfs;
+@property (nonatomic, readonly, retain) NSURL *URL;
+@property (nonatomic, readonly, copy) NSString *downloadKey;
+@property (nonatomic, readonly, copy) NSString *flavor;
+@property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
+@property (nonatomic, readonly, copy) NSArray *sinfs;
 
 - (void).cxx_destruct;
 - (id)URL;

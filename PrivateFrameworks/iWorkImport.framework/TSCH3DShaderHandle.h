@@ -6,7 +6,7 @@
     unsigned int mType;
 }
 
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned int type;
 
 + (id)handleWithType:(unsigned int)arg1;
 

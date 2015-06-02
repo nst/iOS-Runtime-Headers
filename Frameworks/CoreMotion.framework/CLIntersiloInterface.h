@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class Protocol;
-
 @interface CLIntersiloInterface : NSObject {
     Protocol *_protocol;
     struct map<SEL *, CLIntersiloInterfaceSelectorInfo *, std::__1::less<SEL *>, std::__1::allocator<std::__1::pair<SEL *const, CLIntersiloInterfaceSelectorInfo *> > > { 
@@ -21,7 +19,7 @@
     } _selectors;
 }
 
-@property(readonly) Protocol * protocol;
+@property (nonatomic, readonly) Protocol *protocol;
 
 + (id)interfaceWithProtocol:(id)arg1 base:(id)arg2;
 

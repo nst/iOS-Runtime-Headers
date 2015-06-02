@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCSSavedRecordingServiceConnection : NSXPCConnection {
-}
+@interface RCSSavedRecordingServiceConnection : NSXPCConnection
 
 + (id)clientInterface;
 + (id)newConnection;

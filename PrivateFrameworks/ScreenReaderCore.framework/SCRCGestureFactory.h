@@ -2,24 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCGestureFactory, SCRCTargetSelectorTimer;
-
 @interface SCRCGestureFactory : NSObject {
     unsigned int _absoluteFingerCount;
     struct { 
         float horizontal; 
         float vertical; 
     } _axisFlipper;
-    struct { 
+    /* Warning: unhandled struct encoding: '{?="track"@"tap"@"gutterUp"@"splitTap"@"canSplitTap"@}' */ struct { 
         id track; 
-        id tap; 
-        id gutterUp; 
-        id splitTap; 
-        id canSplitTap; 
     } _delegate;
     int _direction;
     float _directionalSlope;
-    int _directions[7];
+    int _directions;
     float _distance;
     double _echoWaitTime;
     struct SCRCFingerState { 
@@ -72,7 +66,7 @@
             float x; 
             float y; 
         } lastDownPoint; 
-    } _finger[2];
+    } _finger;
     unsigned short _fingerCount;
     float _flickVelocityThreshold;
     struct CGRect { 
@@ -208,7 +202,7 @@
     SCRCTargetSelectorTimer *_trackingTimer;
 }
 
-@property BOOL thumbRejectionEnabled;
+@property (nonatomic) BOOL thumbRejectionEnabled;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentTapRect;
 - (void)_down:(id)arg1;

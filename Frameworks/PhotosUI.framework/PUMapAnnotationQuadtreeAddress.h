@@ -8,9 +8,9 @@
     unsigned int _treeLevel;
 }
 
-@property(readonly) unsigned int quantizedX;
-@property(readonly) unsigned int quantizedY;
-@property(readonly) unsigned int treeLevel;
+@property (nonatomic, readonly) unsigned int quantizedX;
+@property (nonatomic, readonly) unsigned int quantizedY;
+@property (nonatomic, readonly) unsigned int treeLevel;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

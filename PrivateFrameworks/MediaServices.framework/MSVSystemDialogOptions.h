@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSString;
-
 @interface MSVSystemDialogOptions : NSObject {
     NSString *_alertHeader;
     NSString *_alertMessage;
@@ -15,14 +13,14 @@
     BOOL _showOnLockscreen;
 }
 
-@property(copy) NSString * alertHeader;
-@property(copy) NSString * alertMessage;
-@property(copy) NSString * alternateButtonTitle;
-@property(copy) NSString * defaultButtonTitle;
-@property BOOL dismissOverlaysOnLockscreen;
-@property BOOL forceModalAlertAppearance;
-@property BOOL showAsTopmost;
-@property BOOL showOnLockscreen;
+@property (nonatomic, copy) NSString *alertHeader;
+@property (nonatomic, copy) NSString *alertMessage;
+@property (nonatomic, copy) NSString *alternateButtonTitle;
+@property (nonatomic, copy) NSString *defaultButtonTitle;
+@property (nonatomic) BOOL dismissOverlaysOnLockscreen;
+@property (nonatomic) BOOL forceModalAlertAppearance;
+@property (nonatomic) BOOL showAsTopmost;
+@property (nonatomic) BOOL showOnLockscreen;
 
 - (void).cxx_destruct;
 - (id)alertHeader;

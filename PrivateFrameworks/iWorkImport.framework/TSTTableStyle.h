@@ -2,38 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface TSTTableStyle : TSSStyle <TSDMixing, TSTTableStrokeProviding>
 
-@class NSString, TSDStroke;
-
-@interface TSTTableStyle : TSSStyle <TSDMixing, TSTTableStrokeProviding> {
-}
-
-@property(readonly) TSDStroke * bodyColumnStroke;
-@property(readonly) TSDStroke * bodyRowStroke;
-@property(readonly) TSDStroke * bodyRowStrokeEvenIfNotVisible;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) TSDStroke * defaultHorizontalBorderStroke;
-@property(readonly) TSDStroke * defaultHorizontalBorderStrokeEvenIfNotVisible;
-@property(readonly) TSDStroke * defaultVerticalBorderStroke;
-@property(copy,readonly) NSString * description;
-@property(readonly) TSDStroke * footerRowBodyColumnStroke;
-@property(readonly) TSDStroke * footerRowBodyRowStroke;
-@property(readonly) TSDStroke * footerRowBorderStroke;
-@property(readonly) TSDStroke * footerRowSeparatorStroke;
-@property(readonly) unsigned int hash;
-@property(readonly) TSDStroke * headerColumnBodyColumnStroke;
-@property(readonly) TSDStroke * headerColumnBodyRowStroke;
-@property(readonly) TSDStroke * headerColumnBorderStroke;
-@property(readonly) TSDStroke * headerColumnSeparatorStroke;
-@property(readonly) TSDStroke * headerRowBodyColumnStroke;
-@property(readonly) TSDStroke * headerRowBodyRowStroke;
-@property(readonly) TSDStroke * headerRowBorderStroke;
-@property(readonly) TSDStroke * headerRowSeparatorStroke;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSDStroke *bodyColumnStroke;
+@property (nonatomic, readonly) TSDStroke *bodyRowStroke;
+@property (nonatomic, readonly) TSDStroke *bodyRowStrokeEvenIfNotVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) TSDStroke *defaultHorizontalBorderStroke;
+@property (nonatomic, readonly) TSDStroke *defaultHorizontalBorderStrokeEvenIfNotVisible;
+@property (nonatomic, readonly) TSDStroke *defaultVerticalBorderStroke;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TSDStroke *footerRowBodyColumnStroke;
+@property (nonatomic, readonly) TSDStroke *footerRowBodyRowStroke;
+@property (nonatomic, readonly) TSDStroke *footerRowBorderStroke;
+@property (nonatomic, readonly) TSDStroke *footerRowSeparatorStroke;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSDStroke *headerColumnBodyColumnStroke;
+@property (nonatomic, readonly) TSDStroke *headerColumnBodyRowStroke;
+@property (nonatomic, readonly) TSDStroke *headerColumnBorderStroke;
+@property (nonatomic, readonly) TSDStroke *headerColumnSeparatorStroke;
+@property (nonatomic, readonly) TSDStroke *headerRowBodyColumnStroke;
+@property (nonatomic, readonly) TSDStroke *headerRowBodyRowStroke;
+@property (nonatomic, readonly) TSDStroke *headerRowBorderStroke;
+@property (nonatomic, readonly) TSDStroke *headerRowSeparatorStroke;
+@property (readonly) Class superclass;
 
 + (void)initDefaultPropertyMap:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
 + (void)initDefaultStrokePresetListInPropertyMap:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3;

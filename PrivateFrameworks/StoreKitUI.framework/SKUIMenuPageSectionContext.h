@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary;
-
 @interface SKUIMenuPageSectionContext : NSObject {
     NSMutableDictionary *_sections;
     int _selectedIndex;
 }
 
-@property int selectedIndex;
+@property (nonatomic) int selectedIndex;
 
 - (void).cxx_destruct;
 - (id)sectionsForIndex:(int)arg1;

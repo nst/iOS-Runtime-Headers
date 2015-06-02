@@ -2,42 +2,32 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_io>;
-
 @interface NEIPC : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _messageHandler;
-
+    id /* block */ _messageHandler;
     NSObject<OS_dispatch_data> *_previousData;
     int _socket;
     NSObject<OS_dispatch_io> *_socket_io;
 }
 
-@property(copy) id messageHandler;
-@property(retain) NSObject<OS_dispatch_data> * previousData;
+@property (copy) id /* block */ messageHandler;
+@property (retain) NSObject<OS_dispatch_data> *previousData;
 @property int socket;
-@property(retain) NSObject<OS_dispatch_io> * socket_io;
+@property (retain) NSObject<OS_dispatch_io> *socket_io;
 
 - (void).cxx_destruct;
 - (id)initWithSocket:(int)arg1;
 - (void)logMessageType:(unsigned int)arg1 data:(id)arg2 actionString:(id)arg3;
-- (id)messageHandler;
+- (id /* block */)messageHandler;
 - (BOOL)parseMessageFromData:(id)arg1 messageHeader:(struct { unsigned int x1; unsigned int x2; }*)arg2 messageData:(id*)arg3;
 - (id)previousData;
 - (BOOL)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 andQueue:(id)arg3;
-- (void)setMessageHandler:(id)arg1;
+- (void)setMessageHandler:(id /* block */)arg1;
 - (void)setPreviousData:(id)arg1;
 - (void)setSocket:(int)arg1;
 - (void)setSocket_io:(id)arg1;
 - (int)socket;
 - (id)socket_io;
-- (void)startWithQueue:(id)arg1 messageHandler:(id)arg2;
+- (void)startWithQueue:(id)arg1 messageHandler:(id /* block */)arg2;
 - (void)stop;
 
 @end

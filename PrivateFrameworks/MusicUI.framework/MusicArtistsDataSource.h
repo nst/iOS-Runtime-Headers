@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicArtistsDataSource : MusicQueryDataSource {
-}
+@interface MusicArtistsDataSource : MusicQueryDataSource
 
 - (id)entityCountFormat;
 - (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;

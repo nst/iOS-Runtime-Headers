@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFWeakReferenceHolder;
-
 @interface MFWeakProxy : NSProxy {
     unsigned int _hash;
     Class _objectClass;

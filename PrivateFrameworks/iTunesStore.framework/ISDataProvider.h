@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISOperation, NSNumber, NSString, NSURL, SSAuthenticationContext, SSURLBagContext;
-
 @interface ISDataProvider : NSObject <NSCopying> {
     NSNumber *_authenticatedAccountDSID;
     SSAuthenticationContext *_authenticationContext;
@@ -16,15 +14,15 @@
     NSURL *_redirectURL;
 }
 
-@property(retain) NSNumber * authenticatedAccountDSID;
-@property(retain) SSAuthenticationContext * authenticationContext;
-@property(retain) SSURLBagContext * bagContext;
+@property (retain) NSNumber *authenticatedAccountDSID;
+@property (retain) SSAuthenticationContext *authenticationContext;
+@property (retain) SSURLBagContext *bagContext;
 @property long long contentLength;
-@property(retain) NSString * contentType;
+@property (retain) NSString *contentType;
 @property int errorHandlerResponseType;
-@property(retain) id output;
-@property ISOperation * parentOperation;
-@property(retain) NSURL * redirectURL;
+@property (retain) id output;
+@property ISOperation *parentOperation;
+@property (retain) NSURL *redirectURL;
 
 + (id)provider;
 

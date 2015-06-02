@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVCalendarServerScheduleChangesItem, CalDAVUpdateOwnerItem, NSString;
-
 @interface CalDAVCalendarItemData : CoreDAVLeafDataPayload <CalDAVCalendarItemProtocol> {
     CalDAVUpdateOwnerItem *_createdBy;
     CalDAVCalendarServerScheduleChangesItem *_scheduleChanges;
@@ -11,10 +9,10 @@
     CalDAVUpdateOwnerItem *_updatedBy;
 }
 
-@property(retain) CalDAVUpdateOwnerItem * createdBy;
-@property(retain) CalDAVCalendarServerScheduleChangesItem * scheduleChanges;
-@property(retain) NSString * scheduleTag;
-@property(retain) CalDAVUpdateOwnerItem * updatedBy;
+@property (nonatomic, retain) CalDAVUpdateOwnerItem *createdBy;
+@property (nonatomic, retain) CalDAVCalendarServerScheduleChangesItem *scheduleChanges;
+@property (nonatomic, retain) NSString *scheduleTag;
+@property (nonatomic, retain) CalDAVUpdateOwnerItem *updatedBy;
 
 - (id)createdBy;
 - (void)dealloc;

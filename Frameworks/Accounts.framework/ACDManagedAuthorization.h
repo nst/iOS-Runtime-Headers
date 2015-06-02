@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class ACDManagedAccountType, NSString;
+@interface ACDManagedAuthorization : NSManagedObject
 
-@interface ACDManagedAuthorization : NSManagedObject {
-}
-
-@property(retain) ACDManagedAccountType * accountType;
-@property(retain) NSString * bundleID;
-@property(retain) NSString * grantedPermissions;
-@property(retain) id options;
+@property (nonatomic, retain) ACDManagedAccountType *accountType;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSString *grantedPermissions;
+@property (nonatomic, retain) id options;
 
 @end

@@ -40,8 +40,8 @@
 - (BOOL)_remove420Surface;
 - (BOOL)_removeJPEGSurface;
 - (void)dealloc;
-- (void)decodeSurfaceFromJPEGData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
-- (void)decodeSurfaceFromJPEGPath:(id)arg1 completionQueue:(id)arg2 completionBlock:(id)arg3;
+- (void)decodeSurfaceFromJPEGData:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)decodeSurfaceFromJPEGPath:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 cachedCount:(int)arg2;
 - (unsigned int)maxJPEGSize;
 - (struct __IOSurface { }*)newSurfaceFromJPEGData:(id)arg1;

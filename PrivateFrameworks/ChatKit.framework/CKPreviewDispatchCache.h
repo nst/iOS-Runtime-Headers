@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKDispatchCache, CKMultiDict;
-
 @interface CKPreviewDispatchCache : NSObject <IMSystemMonitorListener> {
     CKDispatchCache *_dispatchCache;
     CKMultiDict *_pendingBlocks;
 }
 
-@property(retain) CKDispatchCache * dispatchCache;
-@property(retain) CKMultiDict * pendingBlocks;
+@property (nonatomic, retain) CKDispatchCache *dispatchCache;
+@property (nonatomic, retain) CKMultiDict *pendingBlocks;
 
 + (id)detailsPreviewCache;
 + (id)mapThumbnailQueue;
@@ -22,9 +20,9 @@
 - (void)didReceiveMemoryWarning;
 - (id)dispatchCache;
 - (void)endGeneratingForKey:(id)arg1;
-- (void)enqueueGenerationBlock:(id)arg1 completion:(id)arg2 withPriority:(int)arg3 forKey:(id)arg4;
-- (void)enqueueSaveBlock:(id)arg1 forMediaObject:(id)arg2 withPriority:(int)arg3;
-- (void)enqueueSaveBlock:(id)arg1 withPriority:(int)arg2;
+- (void)enqueueGenerationBlock:(id /* block */)arg1 completion:(id /* block */)arg2 withPriority:(int)arg3 forKey:(id)arg4;
+- (void)enqueueSaveBlock:(id /* block */)arg1 forMediaObject:(id)arg2 withPriority:(int)arg3;
+- (void)enqueueSaveBlock:(id /* block */)arg1 withPriority:(int)arg2;
 - (void)flush;
 - (id)init;
 - (BOOL)isGeneratingPreviewForKey:(id)arg1;

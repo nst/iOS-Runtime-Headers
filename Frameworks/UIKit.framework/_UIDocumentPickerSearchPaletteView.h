@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSString, UISearchController, _UIDocumentPickerContainerViewController, _UIDocumentPickerSearchContainerModel, _UINavigationControllerPalette;
-
 @interface _UIDocumentPickerSearchPaletteView : UIView <UISearchBarDelegate> {
     _UINavigationControllerPalette *_palette;
     _UIDocumentPickerContainerViewController *_resultsController;
@@ -13,16 +11,16 @@
     _UIDocumentPickerSearchContainerModel *_searchModel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property _UINavigationControllerPalette * palette;
-@property(retain) _UIDocumentPickerContainerViewController * resultsController;
-@property(retain) UISearchController * searchController;
-@property(retain) NSLayoutConstraint * searchFieldLeftConstraint;
-@property(retain) NSLayoutConstraint * searchFieldRightConstraint;
-@property(retain) _UIDocumentPickerSearchContainerModel * searchModel;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) _UINavigationControllerPalette *palette;
+@property (nonatomic, retain) _UIDocumentPickerContainerViewController *resultsController;
+@property (nonatomic, retain) UISearchController *searchController;
+@property (nonatomic, retain) NSLayoutConstraint *searchFieldLeftConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *searchFieldRightConstraint;
+@property (nonatomic, retain) _UIDocumentPickerSearchContainerModel *searchModel;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIDissolveTransition : CIFilter {
     CIImage *inputImage;
     CIImage *inputTargetImage;
     NSNumber *inputTime;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
 
 + (id)customAttributes;
 

@@ -12,7 +12,7 @@
     } mRangeList;
 }
 
-@property(readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned int count;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -19,7 +19,7 @@
 - (void)_unregisterForSettingsChange;
 - (void)dealloc;
 - (void)dependencyUpdated:(id)arg1;
-- (id)initWithCallback:(id)arg1 queue:(id)arg2;
+- (id)initWithCallback:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isEnabled;
 - (void)reload;
 

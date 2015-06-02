@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSArray, NSSet;
-
 @interface CalLogFilter : NSObject {
     NSArray *_excludes;
     NSArray *_excludesAsRegexes;
@@ -13,12 +11,12 @@
     int _minimumLevel;
 }
 
-@property(copy) NSArray * excludes;
-@property(retain) NSArray * excludesAsRegexes;
-@property(copy) NSArray * includes;
-@property(retain) NSArray * includesAsRegexes;
-@property(copy) NSSet * includesRegardlessOfLevel;
-@property int minimumLevel;
+@property (nonatomic, copy) NSArray *excludes;
+@property (nonatomic, retain) NSArray *excludesAsRegexes;
+@property (nonatomic, copy) NSArray *includes;
+@property (nonatomic, retain) NSArray *includesAsRegexes;
+@property (nonatomic, copy) NSSet *includesRegardlessOfLevel;
+@property (nonatomic) int minimumLevel;
 
 - (void).cxx_destruct;
 - (id)description;

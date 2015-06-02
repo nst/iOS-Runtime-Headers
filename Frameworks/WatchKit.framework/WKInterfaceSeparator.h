@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceSeparator : WKInterfaceObject {
-}
+@interface WKInterfaceSeparator : WKInterfaceObject
 
 - (void)setColor:(id)arg1;
 

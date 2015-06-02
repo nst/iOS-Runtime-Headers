@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSString, SSItemArtworkImage;
-
 @interface SUItemContentRating : NSObject <NSCopying> {
     NSDictionary *_dictionary;
     int _rank;
@@ -14,14 +12,14 @@
     BOOL _shouldHideWhenRestricted;
 }
 
-@property(getter=isExplicitContent,readonly) BOOL explicitContent;
-@property int rank;
-@property(copy) NSString * ratingDescription;
-@property(copy) NSString * ratingLabel;
-@property int ratingSystem;
-@property(copy) SSItemArtworkImage * ratingSystemLogo;
-@property(getter=isRestricted,readonly) BOOL restricted;
-@property BOOL shouldHideWhenRestricted;
+@property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
+@property (nonatomic) int rank;
+@property (nonatomic, copy) NSString *ratingDescription;
+@property (nonatomic, copy) NSString *ratingLabel;
+@property (nonatomic) int ratingSystem;
+@property (nonatomic, copy) SSItemArtworkImage *ratingSystemLogo;
+@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (nonatomic) BOOL shouldHideWhenRestricted;
 
 + (int)ratingSystemFromString:(id)arg1;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSCalendar;
-
 @interface _UIDatePickerChineseCalendar : NSCalendar {
     NSCalendar *realCalendar;
 }
 
-@property NSCalendar * realCalendar;
+@property NSCalendar *realCalendar;
 
 + (id)cyclicalFromRelated:(id)arg1;
 + (id)relatedFromCyclical:(id)arg1;

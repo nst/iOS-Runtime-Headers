@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableSet;
-
 @interface ABKeyboardAdjuster : NSObject {
     BOOL _active;
     NSMutableSet *_adjustmentRecords;
 }
 
-@property BOOL active;
+@property (nonatomic) BOOL active;
 
 + (id)sharedAdjuster;
 

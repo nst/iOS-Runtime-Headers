@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSString;
-
 @interface PTPObjectInfoDataset : NSObject {
     unsigned long _associationDesc;
     unsigned short _associationType;

@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUpdateRestrictions : SABaseCommand <SAServerBoundCommand>
 
-@interface SAUpdateRestrictions : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * refId;
-@property(copy) NSArray * restrictionsToAdd;
-@property(copy) NSArray * restrictionsToRemove;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSArray *restrictionsToAdd;
+@property (nonatomic, copy) NSArray *restrictionsToRemove;
+@property (readonly) Class superclass;
 
 + (id)updateRestrictions;
 + (id)updateRestrictionsWithDictionary:(id)arg1 context:(id)arg2;

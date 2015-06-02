@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPWebAuthTokenRetrieveResponse : PBCodable <NSCopying> {
     NSString *_token;
 }
 
-@property(readonly) BOOL hasToken;
-@property(retain) NSString * token;
+@property (nonatomic, readonly) BOOL hasToken;
+@property (nonatomic, retain) NSString *token;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UIButton;
-
 @interface AAUIAddPhotoView : UIView {
     UIButton *_addPhotoButton;
 }

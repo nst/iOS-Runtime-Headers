@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBGeometry, UIKBShape;
-
 @interface UIKBShape : NSObject <NSCoding, NSCopying> {
     struct CGRect { 
         struct CGPoint { 
@@ -31,12 +29,12 @@
     unsigned int m_uid;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(retain) UIKBGeometry * geometry;
-@property(retain) UIKBShape * originalShape;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } paddedFrame;
-@property BOOL scaled;
-@property(readonly) unsigned int uid;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, retain) UIKBGeometry *geometry;
+@property (nonatomic, retain) UIKBShape *originalShape;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } paddedFrame;
+@property (nonatomic) BOOL scaled;
+@property (nonatomic, readonly) unsigned int uid;
 
 + (id)shape;
 + (id)shapeByCombining:(id)arg1 withShape:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSString, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition;
-
 @interface PLWifiAgent : PLAgent {
     unsigned int _autoJoinScanDuration;
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
@@ -21,18 +19,18 @@
 }
 
 @property unsigned int autoJoinScanDuration;
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(retain) PLEntryNotificationOperatorComposition * deviceWake;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (retain) PLEntryNotificationOperatorComposition *deviceWake;
 @property unsigned int lastLoggedTimestamp;
 @property unsigned int locationScanDuration;
-@property(readonly) PLCFNotificationOperatorComposition * notificationWiFiChanged;
+@property (readonly) PLCFNotificationOperatorComposition *notificationWiFiChanged;
 @property unsigned int pipelineScanDuration;
 @property unsigned int setupScanDuration;
 @property unsigned int unknownScanDuration;
-@property(readonly) NSString * wifiChipset;
-@property struct __WiFiDeviceClient { }* wifiDevice;
-@property struct __WiFiManagerClient { }* wifiManager;
-@property(readonly) NSString * wifiManufacturer;
+@property (readonly) NSString *wifiChipset;
+@property (nonatomic) struct __WiFiDeviceClient { }*wifiDevice;
+@property (nonatomic) struct __WiFiManagerClient { }*wifiManager;
+@property (readonly) NSString *wifiManufacturer;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitionCumulativeBasic;

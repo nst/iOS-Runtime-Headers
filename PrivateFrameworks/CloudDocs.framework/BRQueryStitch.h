@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSArray, NSNumber, NSURL;
-
 @interface BRQueryStitch : NSObject {
     NSURL *_fromURL;
     BOOL _kind;
@@ -12,8 +10,8 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * fromURL;
-@property(retain) NSArray * queries;
+@property (nonatomic, retain) NSURL *fromURL;
+@property (nonatomic, retain) NSArray *queries;
 
 - (void)_creationDone;
 - (void)_deletionDone;

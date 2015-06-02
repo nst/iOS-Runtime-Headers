@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class WebScriptWorld;
-
 @interface WBUFormMetadataController : WBSFormMetadataController {
     WebScriptWorld *_scriptWorld;
 }
 
-@property(readonly) WebScriptWorld * scriptWorld;
+@property (nonatomic, readonly) WebScriptWorld *scriptWorld;
 
 + (id)sharedFormMetadataController;
 

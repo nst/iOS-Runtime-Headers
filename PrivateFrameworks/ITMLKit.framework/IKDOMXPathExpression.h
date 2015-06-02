@@ -2,24 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface IKDOMXPathExpression : IKJSObject <IKJSDOMXPathExpression> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _evaluatingBlock;
-
+    id /* block */ _evaluatingBlock;
 }
 
-@property(copy) id evaluatingBlock;
+@property (nonatomic, copy) id /* block */ evaluatingBlock;
 
 - (void).cxx_destruct;
 - (id)evaluate:(id)arg1 :(int)arg2 :(id)arg3;
-- (id)evaluatingBlock;
-- (id)initWithAppContext:(id)arg1 evaluatingBlock:(id)arg2;
-- (void)setEvaluatingBlock:(id)arg1;
+- (id /* block */)evaluatingBlock;
+- (id)initWithAppContext:(id)arg1 evaluatingBlock:(id /* block */)arg2;
+- (void)setEvaluatingBlock:(id /* block */)arg1;
 
 @end

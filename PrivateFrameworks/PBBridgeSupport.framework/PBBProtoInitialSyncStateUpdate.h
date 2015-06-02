@@ -11,10 +11,10 @@
     unsigned int _state;
 }
 
-@property BOOL hasProgress;
-@property BOOL hasState;
-@property double progress;
-@property unsigned int state;
+@property (nonatomic) BOOL hasProgress;
+@property (nonatomic) BOOL hasState;
+@property (nonatomic) double progress;
+@property (nonatomic) unsigned int state;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

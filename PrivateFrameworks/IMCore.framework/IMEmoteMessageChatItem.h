@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSAttributedString;
+@interface IMEmoteMessageChatItem : IMMessageChatItem
 
-@interface IMEmoteMessageChatItem : IMMessageChatItem {
-}
+@property (nonatomic, readonly, copy) NSAttributedString *text;
 
-@property(copy,readonly) NSAttributedString * text;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (Class)__ck_chatItemClass;
 - (id)_initWithItem:(id)arg1;
 - (id)text;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

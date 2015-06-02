@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSUUID;
-
 @interface UIPercentDrivenInteractiveTransition : NSObject <UIViewControllerInteractiveTransitioning> {
     NSString *__originalFillMode;
     BOOL __transitionInterrupted;
@@ -14,17 +12,17 @@
     float _duration;
 }
 
-@property(setter=_setOriginalFillMode:,retain) NSString * _originalFillMode;
-@property(getter=_isTransitionInterrupted,setter=_setTransitionInterrupted:) BOOL _transitionInterrupted;
-@property(setter=_setUuid:,retain) NSUUID * _uuid;
-@property int completionCurve;
-@property float completionSpeed;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) float duration;
-@property(readonly) unsigned int hash;
-@property(readonly) float percentComplete;
-@property(readonly) Class superclass;
+@property (setter=_setOriginalFillMode:, nonatomic, retain) NSString *_originalFillMode;
+@property (getter=_isTransitionInterrupted, setter=_setTransitionInterrupted:, nonatomic) BOOL _transitionInterrupted;
+@property (setter=_setUuid:, nonatomic, retain) NSUUID *_uuid;
+@property (nonatomic) int completionCurve;
+@property (nonatomic) float completionSpeed;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) float duration;
+@property (readonly) unsigned int hash;
+@property (readonly) float percentComplete;
+@property (readonly) Class superclass;
 
 - (BOOL)_isTransitionInterrupted;
 - (id)_originalFillMode;
@@ -48,7 +46,7 @@
 - (void)setCompletionCurve:(int)arg1;
 - (void)setCompletionSpeed:(float)arg1;
 - (void)startInteractiveTransition:(id)arg1;
-- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id)arg3;
+- (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id /* block */)arg3;
 - (void)updateInteractiveTransition:(float)arg1;
 
 @end

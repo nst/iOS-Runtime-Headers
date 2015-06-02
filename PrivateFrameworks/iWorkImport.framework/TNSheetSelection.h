@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNSheet;
-
 @interface TNSheetSelection : TSKSelection {
     BOOL mIsPaginated;
     TNSheet *mSheet;
 }
 
-@property(getter=isPaginated,readonly) BOOL paginated;
-@property(retain,readonly) TNSheet * sheet;
+@property (getter=isPaginated, nonatomic, readonly) BOOL paginated;
+@property (nonatomic, readonly, retain) TNSheet *sheet;
 
 + (Class)archivedSelectionClass;
 + (id)selectionForSheet:(id)arg1 paginated:(BOOL)arg2;

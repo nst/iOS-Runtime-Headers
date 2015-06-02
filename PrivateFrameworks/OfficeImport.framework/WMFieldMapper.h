@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableString, NSString;
-
 @interface WMFieldMapper : WMParagraphMapper {
     NSString *mLink;
     NSMutableString *mMarkerText;

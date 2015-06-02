@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAMicroblogSearchResultsSnippet : SAUISnippet
 
-@interface SAMicroblogSearchResultsSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * searches;
+@property (nonatomic, copy) NSArray *searches;
 
 + (id)searchResultsSnippet;
 + (id)searchResultsSnippetWithDictionary:(id)arg1 context:(id)arg2;

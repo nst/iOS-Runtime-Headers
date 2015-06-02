@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PassbookTableCell : PSTableCell {
-}
+@interface PassbookTableCell : PSTableCell
 
 - (void)_updateActivityIndicatorForSpecifier:(id)arg1;
 - (BOOL)canReload;

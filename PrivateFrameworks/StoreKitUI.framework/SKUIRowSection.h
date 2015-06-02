@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSMutableIndexSet, NSString, SKUIClientContext, SKUILockupComponent, SKUIMissingItemLoader, SKUIProductPageOverlayController, SKUIRowComponent;
-
 @interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     SKUIClientContext *_clientContext;
     NSMapTable *_columnViews;
@@ -20,11 +18,11 @@
     float _portraitCellContentHeight;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIRowComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIRowComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (float)_cellContentHeightForRowWidth:(float)arg1;
@@ -33,7 +31,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForColumnIndex:(int)arg1;
 - (id)_editorialLayoutForEditorial:(id)arg1 columnIndex:(int)arg2;
 - (id)_editorialLayoutForLockup:(id)arg1 columnIndex:(int)arg2;
-- (void)_enumerateLockupsWithBlock:(id)arg1;
+- (void)_enumerateLockupsWithBlock:(id /* block */)arg1;
 - (void)_expandEditorialComponent:(id)arg1 columnIndex:(int)arg2;
 - (float)_heightForArtwork:(id)arg1 columnIndex:(int)arg2 rowWidth:(float)arg3;
 - (float)_heightForComponent:(id)arg1 columnIndex:(float)arg2 rowWidth:(float)arg3;

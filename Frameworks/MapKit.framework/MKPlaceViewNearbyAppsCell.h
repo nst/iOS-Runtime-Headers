@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceViewNearbyAppsCellDelegate>, NSArray, NSLayoutConstraint, NSString, UICollectionView, UILabel, _MKNearbyAppsFlowLayout;
-
 @interface MKPlaceViewNearbyAppsCell : ABContactCell <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     NSLayoutConstraint *_collectionHeightConstraint;
     UICollectionView *_collectionView;
@@ -19,13 +17,13 @@
     NSArray *_storeItems;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MKPlaceViewNearbyAppsCellDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * marginConstraints;
-@property(retain) NSArray * storeItems;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKPlaceViewNearbyAppsCellDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic, retain) NSArray *storeItems;
+@property (readonly) Class superclass;
 
 + (float)_headerBaselineOffsetFromTop;
 + (id)_headerLabelFont;

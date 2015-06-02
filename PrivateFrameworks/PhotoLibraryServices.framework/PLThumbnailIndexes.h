@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableIndexSet, NSObject<OS_dispatch_queue>;
-
 @interface PLThumbnailIndexes : NSObject {
     unsigned long long _fetchTimestamp;
     NSObject<OS_dispatch_queue> *isolation;
@@ -11,8 +9,8 @@
     int usedMax;
 }
 
-+ (void)getAvailableThumbnailIndexWithHandler:(id)arg1;
-+ (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
++ (void)getAvailableThumbnailIndexWithHandler:(id /* block */)arg1;
++ (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id /* block */)arg2;
 + (unsigned int)nextAvailableThumbnailIndex;
 + (void)recycleThumbnailIndexes:(id)arg1;
 + (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
@@ -20,7 +18,7 @@
 
 - (id)fetchOccupiedThumbnailIndexesWithLibrary:(id)arg1;
 - (void)getAvailableThumbnailIndexesFromDatabase;
-- (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id)arg2;
+- (void)getAvailableThumbnailIndexesWithCount:(unsigned int)arg1 handler:(id /* block */)arg2;
 - (id)init;
 - (void)recycleThumbnailIndexes:(id)arg1 timestamp:(unsigned long long)arg2;
 

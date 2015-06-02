@@ -2,26 +2,23 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface NSThread : NSObject {
-    unsigned char _bytes[44];
+    unsigned char _bytes;
     id _private;
 }
 
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(getter=isExecuting,readonly) BOOL executing;
-@property(getter=isFinished,readonly) BOOL finished;
-@property(readonly) BOOL isMainThread;
-@property(copy) NSString * name;
+@property (getter=isCancelled, readonly) BOOL cancelled;
+@property (getter=isExecuting, readonly) BOOL executing;
+@property (getter=isFinished, readonly) BOOL finished;
+@property (readonly) BOOL isMainThread;
+@property (copy) NSString *name;
 @property int qualityOfService;
 @property unsigned int stackSize;
-@property(retain,readonly) NSMutableDictionary * threadDictionary;
+@property (readonly, retain) NSMutableDictionary *threadDictionary;
 @property double threadPriority;
 
-+ (void)_im_runBlock:(id)arg1;
-+ (id)_mapkit_networkIOThread;
-+ (void)_mapkit_runThread:(id)arg1;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)callStackReturnAddresses;
 + (id)callStackSymbols;
 + (id)currentThread;
@@ -35,20 +32,7 @@
 + (void)sleepForTimeInterval:(double)arg1;
 + (void)sleepUntilDate:(id)arg1;
 + (double)threadPriority;
-+ (BOOL)tsp_hasReadFileAccess;
-+ (BOOL)tsp_isArchiverThread;
-+ (BOOL)tsp_isRunningFinalizeHandlersForLegacyDocument;
-+ (void)tsp_performSynchronousArchiverOperationUsingBlock:(id)arg1;
-+ (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(id)arg1;
-+ (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id)arg3;
-+ (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(id)arg2;
 
-- (void)__im_performBlock:(id)arg1;
-- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2;
-- (void)__im_performBlock:(id)arg1 afterDelay:(double)arg2 modes:(id)arg3;
-- (void)__im_performBlock:(id)arg1 modes:(id)arg2;
-- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2;
-- (void)__im_performBlock:(id)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
 - (void)_nq:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
@@ -63,17 +47,46 @@
 - (void)main;
 - (id)name;
 - (int)qualityOfService;
-- (void)registerForStopNotification;
 - (id)runLoop;
 - (void)setName:(id)arg1;
 - (void)setQualityOfService:(int)arg1;
 - (void)setStackSize:(unsigned int)arg1;
 - (void)setThreadPriority:(double)arg1;
-- (BOOL)shouldStop;
 - (unsigned int)stackSize;
 - (void)start;
 - (id)threadDictionary;
 - (double)threadPriority;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_networkIOThread;
++ (void)_mapkit_runThread:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
++ (void)_im_runBlock:(id /* block */)arg1;
+
+- (void)__im_performBlock:(id /* block */)arg1;
+- (void)__im_performBlock:(id /* block */)arg1 afterDelay:(double)arg2;
+- (void)__im_performBlock:(id /* block */)arg1 afterDelay:(double)arg2 modes:(id)arg3;
+- (void)__im_performBlock:(id /* block */)arg1 modes:(id)arg2;
+- (void)__im_performBlock:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
+- (void)__im_performBlock:(id /* block */)arg1 waitUntilDone:(BOOL)arg2 modes:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
+- (void)registerForStopNotification;
+- (BOOL)shouldStop;
 - (void)unregisterForStopNotification;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (BOOL)tsp_hasReadFileAccess;
++ (BOOL)tsp_isArchiverThread;
++ (BOOL)tsp_isRunningFinalizeHandlersForLegacyDocument;
++ (void)tsp_performSynchronousArchiverOperationUsingBlock:(id /* block */)arg1;
++ (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(id /* block */)arg1;
++ (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(id /* block */)arg2;
 
 @end

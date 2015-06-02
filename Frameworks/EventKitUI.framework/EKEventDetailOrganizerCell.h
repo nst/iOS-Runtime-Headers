@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString, UILabel;
-
 @interface EKEventDetailOrganizerCell : EKEventDetailCell {
     NSString *_organizerName;
     UILabel *_organizerView;

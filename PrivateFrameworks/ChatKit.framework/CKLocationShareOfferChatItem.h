@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class FMFLocation, IMHandle, NSString;
-
 @interface CKLocationShareOfferChatItem : CKBalloonChatItem {
     FMFLocation *_lastKnownLocation;
 }
 
-@property(retain) FMFLocation * lastKnownLocation;
-@property(readonly) NSString * locationText;
-@property(readonly) int offerState;
-@property(readonly) IMHandle * sender;
-@property(readonly) NSString * titleText;
+@property (nonatomic, retain) FMFLocation *lastKnownLocation;
+@property (nonatomic, readonly) NSString *locationText;
+@property (nonatomic, readonly) int offerState;
+@property (nonatomic, readonly) IMHandle *sender;
+@property (nonatomic, readonly) NSString *titleText;
 
 + (id)placeholderPreviewCache;
 + (id)titleBarMaskImageForWidth:(float)arg1;

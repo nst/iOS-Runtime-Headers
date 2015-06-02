@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary, NSString;
+@interface SAEndpoint : AceObject <SAAceSerializable>
 
-@interface SAEndpoint : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * operations;
-@property(copy) NSString * providerId;
-@property(readonly) Class superclass;
-@property BOOL supportsAuthentication;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *operations;
+@property (nonatomic, copy) NSString *providerId;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL supportsAuthentication;
 
 + (id)endpoint;
 + (id)endpointWithDictionary:(id)arg1 context:(id)arg2;

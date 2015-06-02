@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray, NSMutableSet, NSMutableString, NSString;
-
 @interface IKXMLErrorHandlerContext : NSObject {
     NSMutableString *_mutableErrorMessages;
     NSMutableSet *_mutableParserErrors;
 }
 
-@property(readonly) NSString * errorMessage;
-@property(retain) NSMutableString * mutableErrorMessages;
-@property(retain) NSMutableSet * mutableParserErrors;
-@property(readonly) NSArray * parserErrors;
+@property (nonatomic, readonly) NSString *errorMessage;
+@property (nonatomic, retain) NSMutableString *mutableErrorMessages;
+@property (nonatomic, retain) NSMutableSet *mutableParserErrors;
+@property (nonatomic, readonly) NSArray *parserErrors;
 
 - (void).cxx_destruct;
 - (void)clear;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsFilterInternal;
-
 @interface ALAssetsFilter : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetsFilterInternal * internal;
+@property (nonatomic, retain) ALAssetsFilterInternal *internal;
 
 + (id)allAssets;
 + (id)allPhotos;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEUnitRegistry : NSObject {
-}
+@interface TSCEUnitRegistry : NSObject
 
 + (int)binaryUnitPrefixForChars:(unsigned short)arg1 :(unsigned short)arg2;
 + (int)canonicalUnitForDimension:(int)arg1;

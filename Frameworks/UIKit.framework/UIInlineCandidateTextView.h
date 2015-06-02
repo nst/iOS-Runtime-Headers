@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, _UIInlineCandidateCell;
-
 @interface UIInlineCandidateTextView : UIView {
     SEL _action;
     BOOL _arrowHighlighted;

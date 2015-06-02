@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLRemoteComposeViewControllerDelegateProtocol>;
-
 @interface SLRemoteComposeViewController : _UIRemoteViewController {
     <SLRemoteComposeViewControllerDelegateProtocol> *_delegate;
 }
 
-@property <SLRemoteComposeViewControllerDelegateProtocol> * delegate;
+@property (nonatomic) <SLRemoteComposeViewControllerDelegateProtocol> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

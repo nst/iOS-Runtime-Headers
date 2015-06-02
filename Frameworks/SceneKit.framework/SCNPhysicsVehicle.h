@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, SCNPhysicsBody, SCNPhysicsWorld;
-
 @interface SCNPhysicsVehicle : SCNPhysicsBehavior {
     SCNPhysicsBody *_chassisBody;
     float _speedKmHour;
@@ -17,9 +10,9 @@
     SCNPhysicsWorld *_world;
 }
 
-@property(readonly) SCNPhysicsBody * chassisBody;
-@property(readonly) float speedInKilometersPerHour;
-@property(readonly) NSArray * wheels;
+@property (nonatomic, readonly) SCNPhysicsBody *chassisBody;
+@property (nonatomic, readonly) float speedInKilometersPerHour;
+@property (nonatomic, readonly) NSArray *wheels;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;

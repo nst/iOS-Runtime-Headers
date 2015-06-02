@@ -2,25 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface MPUNavigationController : UINavigationController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _overrideSupportedInterfaceOrientationsHandler;
-
+    id /* block */ _overrideSupportedInterfaceOrientationsHandler;
     BOOL _supportsStandardInterfaceOrientations;
 }
 
-@property(copy) id overrideSupportedInterfaceOrientationsHandler;
-@property BOOL supportsStandardInterfaceOrientations;
+@property (nonatomic, copy) id /* block */ overrideSupportedInterfaceOrientationsHandler;
+@property (nonatomic) BOOL supportsStandardInterfaceOrientations;
 
 - (void).cxx_destruct;
-- (id)overrideSupportedInterfaceOrientationsHandler;
-- (void)setOverrideSupportedInterfaceOrientationsHandler:(id)arg1;
+- (id /* block */)overrideSupportedInterfaceOrientationsHandler;
+- (void)setOverrideSupportedInterfaceOrientationsHandler:(id /* block */)arg1;
 - (void)setSupportsStandardInterfaceOrientations:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (BOOL)supportsStandardInterfaceOrientations;

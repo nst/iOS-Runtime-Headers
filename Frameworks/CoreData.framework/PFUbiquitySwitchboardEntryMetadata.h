@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSPersistentStoreCoordinator, NSSQLCore, NSSet, NSString, PFUbiquityBaselineHeuristics, PFUbiquityLocation, PFUbiquityRecordsImporterSchedulingContext, PFUbiquitySwitchboardCacheWrapper, _PFUbiquityRecordsExporter, _PFUbiquityRecordsImporter;
-
 @interface PFUbiquitySwitchboardEntryMetadata : NSObject {
     NSString *_activeModelVersionHash;
     PFUbiquityBaselineHeuristics *_baselineHeuristics;
@@ -23,18 +21,18 @@
     BOOL _useLocalStorage;
 }
 
-@property(readonly) NSString * activeModelVersionHash;
-@property(readonly) PFUbiquityBaselineHeuristics * baselineHeuristics;
-@property(retain) PFUbiquitySwitchboardCacheWrapper * cacheWrapper;
-@property(readonly) _PFUbiquityRecordsExporter * exporter;
-@property(readonly) _PFUbiquityRecordsImporter * importer;
-@property(readonly) NSPersistentStoreCoordinator * privatePSC;
-@property(readonly) NSSQLCore * privateStore;
-@property(readonly) PFUbiquityRecordsImporterSchedulingContext * schedulingContext;
-@property(readonly) NSSet * stores;
-@property(retain) PFUbiquityLocation * ubiquityRootLocation;
-@property BOOL useLocalAccount;
-@property BOOL useLocalStorage;
+@property (nonatomic, readonly) NSString *activeModelVersionHash;
+@property (nonatomic, readonly) PFUbiquityBaselineHeuristics *baselineHeuristics;
+@property (nonatomic, retain) PFUbiquitySwitchboardCacheWrapper *cacheWrapper;
+@property (nonatomic, readonly) _PFUbiquityRecordsExporter *exporter;
+@property (nonatomic, readonly) _PFUbiquityRecordsImporter *importer;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *privatePSC;
+@property (nonatomic, readonly) NSSQLCore *privateStore;
+@property (nonatomic, readonly) PFUbiquityRecordsImporterSchedulingContext *schedulingContext;
+@property (nonatomic, readonly) NSSet *stores;
+@property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
+@property (nonatomic) BOOL useLocalAccount;
+@property (nonatomic) BOOL useLocalStorage;
 
 - (id)activeModelVersionHash;
 - (void)addPersistentStore:(id)arg1;

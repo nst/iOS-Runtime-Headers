@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSArray, NSManagedObjectModel, NSString;
-
 @interface NotesMigrationMapping : NSObject {
     NSString *_descriptionString;
     NSManagedObjectModel *_destinationModel;
@@ -11,9 +9,9 @@
     int _type;
 }
 
-@property(copy) NSString * descriptionString;
-@property(retain) NSManagedObjectModel * destinationModel;
-@property(copy) NSArray * sourceModels;
+@property (copy) NSString *descriptionString;
+@property (retain) NSManagedObjectModel *destinationModel;
+@property (copy) NSArray *sourceModels;
 @property int type;
 
 + (id)customMappingFromSourceModelName:(id)arg1 toDestinationModelName:(id)arg2;

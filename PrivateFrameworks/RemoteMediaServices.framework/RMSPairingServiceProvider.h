@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSPairingServiceProvider : RMSBonjourServiceProvider {
-}
+@interface RMSPairingServiceProvider : RMSBonjourServiceProvider
 
 - (id)searchType;
 - (int)serviceDiscoverySource;

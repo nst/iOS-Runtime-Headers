@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
-
 @interface ICSTimeZone : ICSComponent {
     id _systemTimeZone;
 }
 
-@property(retain) NSString * tzid;
+@property (nonatomic, retain) NSString *tzid;
 
 + (id)blocksAfterDate:(id)arg1 untilDate:(id)arg2 forTimeZone:(id)arg3;
 + (int)matchTypeForSubarray:(id)arg1 inTZChangeArray:(id)arg2;

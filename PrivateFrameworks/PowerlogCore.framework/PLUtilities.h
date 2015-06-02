@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLUtilities : NSObject {
-}
+@interface PLUtilities : NSObject
 
 + (int)MavRev;
 + (id)MavRevStringQuery;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFURLSessionXPC : NSObject {
-}
+@interface __NSCFURLSessionXPC : NSObject
 
 + (id)bgSessionClientInterface;
 + (id)bgSessionInterface;

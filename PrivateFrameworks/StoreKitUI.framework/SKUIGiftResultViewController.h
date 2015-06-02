@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIGiftItemView, UIButton, UIImage;
-
 @interface SKUIGiftResultViewController : SKUIGiftStepViewController {
     UIButton *_giftAgainButton;
     UIImage *_itemImage;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PBParagraphProperties : NSObject {
-}
+@interface PBParagraphProperties : NSObject
 
 + (int)pptAlignmentTypeWithOADTextAlignType:(int)arg1;
 + (int)pptFontAlignWithOADTextFontAlign:(int)arg1;

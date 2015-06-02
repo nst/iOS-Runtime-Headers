@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, NSMutableArray;
-
 @interface GEODirectionsResponse : PBCodable <NSCopying> {
     NSData *_directionsResponseID;
     struct { 
@@ -31,25 +29,25 @@
     } _supportedTransportTypes;
 }
 
-@property(retain) NSData * directionsResponseID;
-@property(readonly) BOOL hasDirectionsResponseID;
-@property BOOL hasInstructionSignFillColor;
-@property BOOL hasIsNavigable;
-@property BOOL hasLocalDistanceUnits;
-@property BOOL hasRouteDeviatesFromOriginal;
-@property(retain) NSMutableArray * incidentsOffRoutes;
-@property(retain) NSMutableArray * incidentsOnRoutes;
-@property int instructionSignFillColor;
-@property BOOL isNavigable;
-@property int localDistanceUnits;
-@property(retain) NSMutableArray * placeSearchResponses;
-@property(readonly) struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* problemDetails;
-@property(readonly) unsigned int problemDetailsCount;
-@property BOOL routeDeviatesFromOriginal;
-@property(retain) NSMutableArray * routes;
-@property int status;
-@property(readonly) int* supportedTransportTypes;
-@property(readonly) unsigned int supportedTransportTypesCount;
+@property (nonatomic, retain) NSData *directionsResponseID;
+@property (nonatomic, readonly) BOOL hasDirectionsResponseID;
+@property (nonatomic) BOOL hasInstructionSignFillColor;
+@property (nonatomic) BOOL hasIsNavigable;
+@property (nonatomic) BOOL hasLocalDistanceUnits;
+@property (nonatomic) BOOL hasRouteDeviatesFromOriginal;
+@property (nonatomic, retain) NSMutableArray *incidentsOffRoutes;
+@property (nonatomic, retain) NSMutableArray *incidentsOnRoutes;
+@property (nonatomic) int instructionSignFillColor;
+@property (nonatomic) BOOL isNavigable;
+@property (nonatomic) int localDistanceUnits;
+@property (nonatomic, retain) NSMutableArray *placeSearchResponses;
+@property (nonatomic, readonly) struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*problemDetails;
+@property (nonatomic, readonly) unsigned int problemDetailsCount;
+@property (nonatomic) BOOL routeDeviatesFromOriginal;
+@property (nonatomic, retain) NSMutableArray *routes;
+@property (nonatomic) int status;
+@property (nonatomic, readonly) int*supportedTransportTypes;
+@property (nonatomic, readonly) unsigned int supportedTransportTypesCount;
 
 - (void)addIncidentsOffRoutes:(id)arg1;
 - (void)addIncidentsOnRoutes:(id)arg1;

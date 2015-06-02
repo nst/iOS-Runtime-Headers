@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDate, NSMutableArray;
-
 @interface PKCatalog : NSObject <NSSecureCoding> {
     NSMutableArray *_groups;
     NSDate *_timestamp;
 }
 
-@property(retain) NSMutableArray * groups;
-@property(retain) NSDate * timestamp;
+@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, retain) NSDate *timestamp;
 
 + (id)catalogWithContentsOfURL:(id)arg1;
 + (BOOL)supportsSecureCoding;

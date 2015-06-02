@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPDSource : PBCodable <NSCopying> {
     struct { 
         unsigned int resultProviderId : 1; 
@@ -13,12 +11,12 @@
     NSString *_version;
 }
 
-@property BOOL hasResultProviderId;
-@property(readonly) BOOL hasSourceId;
-@property(readonly) BOOL hasVersion;
-@property int resultProviderId;
-@property(retain) NSString * sourceId;
-@property(retain) NSString * version;
+@property (nonatomic) BOOL hasResultProviderId;
+@property (nonatomic, readonly) BOOL hasSourceId;
+@property (nonatomic, readonly) BOOL hasVersion;
+@property (nonatomic) int resultProviderId;
+@property (nonatomic, retain) NSString *sourceId;
+@property (nonatomic, retain) NSString *version;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

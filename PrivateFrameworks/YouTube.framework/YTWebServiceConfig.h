@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface YTWebServiceConfig : NSObject {
-}
+@interface YTWebServiceConfig : NSObject
 
 + (void)addYouTubeHeadersToRequest:(id)arg1 includingHostHeader:(BOOL)arg2;
 

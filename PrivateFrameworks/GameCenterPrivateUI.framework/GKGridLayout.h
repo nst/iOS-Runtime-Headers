@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewDataSource, GKCollectionViewLayoutAttributes, GKDataSourceMetrics, GKSectionMetrics, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableSet, NSPointerArray, NSSet;
-
 @interface GKGridLayout : UICollectionViewLayout {
     GKCollectionViewLayoutAttributes *_clipViewAttributes;
     NSArray *_currentUpdateItems;
@@ -59,54 +57,54 @@
     NSSet *_visibleIndexPathsFilter;
 }
 
-@property(retain) GKCollectionViewLayoutAttributes * clipViewAttributes;
-@property(retain) NSArray * currentUpdateItems;
-@property(retain) GKCollectionViewDataSource * dataSourceForUpdate;
-@property(retain) GKDataSourceMetrics * dataSourceMetrics;
-@property(retain) GKSectionMetrics * defaultSectionMetricsInternal;
-@property BOOL displayClipView;
-@property BOOL displayingOverlay;
-@property float hiddenSearchBarOffset;
-@property BOOL hideAboveSegmentOnAppear;
-@property BOOL hideSearchBarOnAppear;
-@property(retain) NSIndexPath * indexPathOfTouchedShowMore;
-@property(retain) NSMutableDictionary * indexPathToDecoration;
-@property(retain) NSMutableDictionary * indexPathToItem;
-@property(retain) NSMutableDictionary * indexPathToMetrics;
-@property(retain) NSMutableDictionary * indexPathToSupplementary;
-@property unsigned long long invalidationFlags;
-@property(retain) NSMutableDictionary * keyToMetricData;
-@property(retain) NSMutableSet * knownSupplementaryKinds;
-@property(retain) NSMutableArray * laidOutAttributes;
-@property struct CGSize { float x1; float x2; } laidOutContentSize;
-@property(retain) NSMutableOrderedSet * laidOutPinnableAttributes;
-@property unsigned int landscapeInterleavedSectionsCount;
-@property float leftLayoutGuideOffset;
-@property int metricsInvalidationCount;
-@property struct CGSize { float x1; float x2; } minimumLaidOutContentSize;
-@property BOOL movedItemsInUpdateCarrySections;
-@property BOOL noMoreShowMore;
-@property(retain) NSMutableDictionary * oldIndexPathToDecoration;
-@property(retain) NSMutableDictionary * oldIndexPathToItem;
-@property(retain) NSMutableDictionary * oldIndexPathToSupplementary;
-@property struct CGSize { float x1; float x2; } oldLaidOutContentSize;
-@property(retain) NSMutableDictionary * oldSectionToMetricKeys;
-@property unsigned int portraitInterleavedSectionsCount;
-@property(retain) NSMutableSet * revealedIndexPaths;
-@property float rightLayoutGuideOffset;
-@property(retain) NSPointerArray * sectionToMetricData;
-@property(retain) NSPointerArray * sectionToPresentationData;
-@property(retain) NSMutableIndexSet * sectionsWithPinnedHeaders;
-@property float segmentedBoxY;
-@property float segmentedHeaderPinningOffset;
-@property BOOL showPlaceholder;
-@property unsigned int updateType;
-@property NSSet * visibleIndexPathsFilter;
+@property (nonatomic, retain) GKCollectionViewLayoutAttributes *clipViewAttributes;
+@property (nonatomic, retain) NSArray *currentUpdateItems;
+@property (nonatomic, retain) GKCollectionViewDataSource *dataSourceForUpdate;
+@property (nonatomic, retain) GKDataSourceMetrics *dataSourceMetrics;
+@property (nonatomic, retain) GKSectionMetrics *defaultSectionMetricsInternal;
+@property (nonatomic) BOOL displayClipView;
+@property (nonatomic) BOOL displayingOverlay;
+@property (nonatomic) float hiddenSearchBarOffset;
+@property (nonatomic) BOOL hideAboveSegmentOnAppear;
+@property (nonatomic) BOOL hideSearchBarOnAppear;
+@property (nonatomic, retain) NSIndexPath *indexPathOfTouchedShowMore;
+@property (nonatomic, retain) NSMutableDictionary *indexPathToDecoration;
+@property (nonatomic, retain) NSMutableDictionary *indexPathToItem;
+@property (nonatomic, retain) NSMutableDictionary *indexPathToMetrics;
+@property (nonatomic, retain) NSMutableDictionary *indexPathToSupplementary;
+@property (nonatomic) unsigned long long invalidationFlags;
+@property (nonatomic, retain) NSMutableDictionary *keyToMetricData;
+@property (nonatomic, retain) NSMutableSet *knownSupplementaryKinds;
+@property (nonatomic, retain) NSMutableArray *laidOutAttributes;
+@property (nonatomic) struct CGSize { float x1; float x2; } laidOutContentSize;
+@property (nonatomic, retain) NSMutableOrderedSet *laidOutPinnableAttributes;
+@property (nonatomic) unsigned int landscapeInterleavedSectionsCount;
+@property (nonatomic) float leftLayoutGuideOffset;
+@property (nonatomic) int metricsInvalidationCount;
+@property (nonatomic) struct CGSize { float x1; float x2; } minimumLaidOutContentSize;
+@property (nonatomic) BOOL movedItemsInUpdateCarrySections;
+@property (nonatomic) BOOL noMoreShowMore;
+@property (nonatomic, retain) NSMutableDictionary *oldIndexPathToDecoration;
+@property (nonatomic, retain) NSMutableDictionary *oldIndexPathToItem;
+@property (nonatomic, retain) NSMutableDictionary *oldIndexPathToSupplementary;
+@property (nonatomic) struct CGSize { float x1; float x2; } oldLaidOutContentSize;
+@property (nonatomic, retain) NSMutableDictionary *oldSectionToMetricKeys;
+@property (nonatomic) unsigned int portraitInterleavedSectionsCount;
+@property (nonatomic, retain) NSMutableSet *revealedIndexPaths;
+@property (nonatomic) float rightLayoutGuideOffset;
+@property (nonatomic, retain) NSPointerArray *sectionToMetricData;
+@property (nonatomic, retain) NSPointerArray *sectionToPresentationData;
+@property (nonatomic, retain) NSMutableIndexSet *sectionsWithPinnedHeaders;
+@property (nonatomic) float segmentedBoxY;
+@property (nonatomic) float segmentedHeaderPinningOffset;
+@property (nonatomic) BOOL showPlaceholder;
+@property (nonatomic) unsigned int updateType;
+@property (nonatomic) NSSet *visibleIndexPathsFilter;
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (BOOL)_areWePortrait;
 - (id)_existingPresentationDataForSection:(int)arg1;
 - (void)_filterPinnedAttributes;
@@ -134,7 +132,7 @@
 - (BOOL)displayClipView;
 - (BOOL)displayingOverlay;
 - (void)enableClipView;
-- (void)enumerateSectionsIndexesOverlappingYOffset:(float)arg1 block:(id)arg2;
+- (void)enumerateSectionsIndexesOverlappingYOffset:(float)arg1 block:(id /* block */)arg2;
 - (unsigned int)filteredTotalItemCountForSection:(int)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;

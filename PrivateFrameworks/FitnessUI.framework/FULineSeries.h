@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class FUGradientObject, FUGradientView, FUShapeView, NSArray, UIColor, UIImageView, UIView;
-
 @interface FULineSeries : FUChartSeries {
     NSArray *_barViews;
     FUGradientObject *_fillGradient;
@@ -38,24 +36,24 @@
     int _waveForm;
 }
 
-@property(retain) NSArray * barViews;
-@property(retain) FUGradientObject * fillGradient;
-@property(retain) UIColor * highlightIndicatorColor;
-@property struct CGGradient { }* highlightIndicatorGradient;
-@property(retain) UIView * highlightView;
-@property(retain) UIColor * lineColor;
-@property float lineWidth;
-@property(retain) NSArray * plotPoints;
-@property(retain) UIColor * pointColor;
-@property int pointOccurrence;
-@property float pointRadius;
-@property int pointStyle;
-@property(retain) FUGradientObject * selectedFillGradient;
-@property(retain) UIColor * selectedLineColor;
-@property(retain) UIColor * selectedPointColor;
-@property float sineWaveSmoothingFactor;
-@property BOOL snapToPoint;
-@property int waveForm;
+@property (nonatomic, retain) NSArray *barViews;
+@property (nonatomic, retain) FUGradientObject *fillGradient;
+@property (nonatomic, retain) UIColor *highlightIndicatorColor;
+@property (nonatomic) struct CGGradient { }*highlightIndicatorGradient;
+@property (nonatomic, retain) UIView *highlightView;
+@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic) float lineWidth;
+@property (nonatomic, retain) NSArray *plotPoints;
+@property (nonatomic, retain) UIColor *pointColor;
+@property (nonatomic) int pointOccurrence;
+@property (nonatomic) float pointRadius;
+@property (nonatomic) int pointStyle;
+@property (nonatomic, retain) FUGradientObject *selectedFillGradient;
+@property (nonatomic, retain) UIColor *selectedLineColor;
+@property (nonatomic, retain) UIColor *selectedPointColor;
+@property (nonatomic) float sineWaveSmoothingFactor;
+@property (nonatomic) BOOL snapToPoint;
+@property (nonatomic) int waveForm;
 
 - (void).cxx_destruct;
 - (void)_clipHighlightLayerWithPoints:(id)arg1;

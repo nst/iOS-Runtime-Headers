@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSData, NSString, UIImage;
-
 @interface PTSImageSettings : _UISettings <_UISettingsKeyObserver> {
     UIImage *_image;
     int _imageOrientation;
@@ -12,14 +10,14 @@
     BOOL _unarchiving;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) UIImage *image;
 @property int imageOrientation;
 @property float imageScale;
-@property(retain) NSData * pngData;
-@property(readonly) Class superclass;
+@property (retain) NSData *pngData;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_updateImageData;

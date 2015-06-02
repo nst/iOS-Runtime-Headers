@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSString;
-
 @interface DAContactsSearchQuery : DASearchQuery {
     BOOL _includePhotos;
     NSString *_searchBase;
     NSString *_searchScope;
 }
 
-@property BOOL includePhotos;
-@property(copy) NSString * searchBase;
-@property(copy) NSString * searchScope;
+@property (nonatomic) BOOL includePhotos;
+@property (nonatomic, copy) NSString *searchBase;
+@property (nonatomic, copy) NSString *searchScope;
 
 + (id)contactsSearchQueryWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLIOAccelDevice, MTLIOAccelDeviceShmem, MTLIOAccelDeviceShmemPool;
-
 @interface MTLIOAccelDeviceShmem : NSObject {
     MTLIOAccelDevice *_device;
-    struct _MTLIOAccelDeviceShmemPrivate { 
+    /* Warning: unhandled struct encoding: '{_MTLIOAccelDeviceShmemPrivate="pool"@"MTLIOAccelDeviceShmemPool""entry"{?="tqe_next"@"MTLIOAccelDeviceShmem""tqe_prev"^@}"time_added"Q}' */ struct _MTLIOAccelDeviceShmemPrivate { 
         MTLIOAccelDeviceShmemPool *pool; 
         struct { 
             MTLIOAccelDeviceShmem *tqe_next; 
             id *tqe_prev; 
+            unsigned long long time_added; 
         } entry; 
-        unsigned long long time_added; 
     } _priv;
     unsigned int _shmemID;
     unsigned int _shmemSize;
@@ -20,9 +18,9 @@
     bool purgeable;
 }
 
-@property(readonly) unsigned int shmemID;
-@property(readonly) unsigned int shmemSize;
-@property(readonly) void* virtualAddress;
+@property (readonly) unsigned int shmemID;
+@property (readonly) unsigned int shmemSize;
+@property (readonly) void*virtualAddress;
 
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 shmemSize:(unsigned int)arg2;

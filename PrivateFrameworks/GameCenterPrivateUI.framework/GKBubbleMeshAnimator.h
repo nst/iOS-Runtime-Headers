@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class CADisplayLink, NSMutableSet;
-
 @interface GKBubbleMeshAnimator : NSObject {
     NSMutableSet *_animatingViews;
     CADisplayLink *_displayLink;
     double _lastUpdateTime;
 }
 
-@property(retain) NSMutableSet * animatingViews;
-@property CADisplayLink * displayLink;
-@property double lastUpdateTime;
+@property (nonatomic, retain) NSMutableSet *animatingViews;
+@property (nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) double lastUpdateTime;
 
 + (id)sharedAnimator;
 

@@ -4,10 +4,10 @@
 
 @interface FigIOHIDMotionDelegate : NSObject {
     int accelRingIndex;
-    double accelRingTime[64];
-    float accelRingX[64];
-    float accelRingY[64];
-    float accelRingZ[64];
+    double accelRingTime;
+    float accelRingX;
+    float accelRingY;
+    float accelRingZ;
     BOOL manageAccel;
     struct _opaque_pthread_mutex_t { 
         long __sig; 

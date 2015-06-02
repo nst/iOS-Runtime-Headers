@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, VKPGlobalProperties, VKPMatchingTree;
-
 @interface VKPSheet : PBCodable <NSCopying> {
     VKPGlobalProperties *_globalProperties;
     struct { 
@@ -19,18 +17,18 @@
     unsigned int _version;
 }
 
-@property(retain) VKPGlobalProperties * globalProperties;
-@property(readonly) BOOL hasGlobalProperties;
-@property BOOL hasMapTypeSupport;
-@property(readonly) BOOL hasMatchingTree;
-@property BOOL hasMatchingTreeVersion;
-@property BOOL hasVersion;
-@property unsigned int mapTypeSupport;
-@property(retain) NSMutableArray * matchingGraphNodes;
-@property(retain) VKPMatchingTree * matchingTree;
-@property unsigned int matchingTreeVersion;
-@property(retain) NSMutableArray * styles;
-@property unsigned int version;
+@property (nonatomic, retain) VKPGlobalProperties *globalProperties;
+@property (nonatomic, readonly) BOOL hasGlobalProperties;
+@property (nonatomic) BOOL hasMapTypeSupport;
+@property (nonatomic, readonly) BOOL hasMatchingTree;
+@property (nonatomic) BOOL hasMatchingTreeVersion;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) unsigned int mapTypeSupport;
+@property (nonatomic, retain) NSMutableArray *matchingGraphNodes;
+@property (nonatomic, retain) VKPMatchingTree *matchingTree;
+@property (nonatomic) unsigned int matchingTreeVersion;
+@property (nonatomic, retain) NSMutableArray *styles;
+@property (nonatomic) unsigned int version;
 
 - (void)addMatchingGraphNodes:(id)arg1;
 - (void)addStyle:(id)arg1;

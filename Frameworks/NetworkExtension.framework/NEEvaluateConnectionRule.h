@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSArray, NSURL;
-
 @interface NEEvaluateConnectionRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     int _action;
     NSArray *_matchDomains;
@@ -11,10 +9,10 @@
     NSArray *_useDNSServers;
 }
 
-@property(readonly) int action;
-@property(readonly) NSArray * matchDomains;
-@property(copy) NSURL * probeURL;
-@property(copy) NSArray * useDNSServers;
+@property (readonly) int action;
+@property (readonly) NSArray *matchDomains;
+@property (copy) NSURL *probeURL;
+@property (copy) NSArray *useDNSServers;
 
 + (BOOL)supportsSecureCoding;
 

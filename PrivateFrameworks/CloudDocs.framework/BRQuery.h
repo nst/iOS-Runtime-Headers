@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRNotificationReceiver, NSArray, NSMetadataQuery, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSPredicate, NSString;
-
 @interface BRQuery : NSObject <BRNotificationReceiverDelegate> {
     struct { 
         unsigned int first_max_num; 
@@ -19,14 +12,14 @@
         unsigned int update_max_ms; 
     } _batchingParameters;
     NSString *_bundleIdentifier;
-    int (*_create_result_callbacks_equal)();
-    int (*_create_result_callbacks_release)();
+    int (*_create_result_callbacks_equal;
+    int (*_create_result_callbacks_release;
     void *_create_result_context;
-    int (*_create_result_fn)();
-    int (*_create_value_callbacks_equal)();
-    int (*_create_value_callbacks_release)();
+    int (*_create_result_fn;
+    int (*_create_value_callbacks_equal;
+    int (*_create_value_callbacks_release;
     void *_create_value_context;
-    int (*_create_value_fn)();
+    int (*_create_value_fn;
     int _disableCount;
     BOOL _needsCrashEvicting;
     BOOL _needsCrashMarking;
@@ -42,7 +35,7 @@
     NSArray *_searchScopes;
     BOOL _sendHasUpdateNotification;
     void *_sort_context;
-    int (*_sort_fn)();
+    int (*_sort_fn;
     NSArray *_sortingAttributes;
     NSMutableDictionary *_toBeInsertedByFileObjectID;
     NSMutableDictionary *_toBeRemovedByFileObjectID;
@@ -51,11 +44,11 @@
     NSArray *_values;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSMetadataQuery * query;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property NSMetadataQuery *query;
+@property (readonly) Class superclass;
 
 + (void)didEndPossibleFileOperation:(id)arg1;
 + (void)initialize;
@@ -64,7 +57,7 @@
 + (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;
 
 - (BOOL)_collectUpdates:(id)arg1;
-- (void)_performBlockAsync:(id)arg1;
+- (void)_performBlockAsync:(id /* block */)arg1;
 - (void)_postNote:(struct __CFString { }*)arg1;
 - (void)_postNote:(struct __CFString { }*)arg1 userInfo:(id)arg2;
 - (void)_processChanges:(id)arg1;
@@ -95,14 +88,14 @@
 - (const void*)resultAtIndex:(int)arg1;
 - (unsigned int)resultCount;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
-- (void)setCreateResultFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
-- (void)setCreateValueFunction:(int (*)())arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (void)setCreateResultFunction:(int (*)arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (void)setCreateValueFunction:(int (*)arg1 withContext:(void*)arg2 callbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (void)setExternalDocumentsBundleIdentifier:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryQueue:(id)arg1;
 - (void)setSearchScope:(id)arg1 withOptions:(unsigned long)arg2;
 - (void)setSendHasUpdateNotification:(BOOL)arg1;
-- (void)setSortComparator:(int (*)())arg1 withContext:(void*)arg2;
+- (void)setSortComparator:(int (*)arg1 withContext:(void*)arg2;
 - (void)stop;
 - (id)valuesOfAttribute:(id)arg1;
 

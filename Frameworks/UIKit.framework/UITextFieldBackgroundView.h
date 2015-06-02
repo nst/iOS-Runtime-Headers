@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface UITextFieldBackgroundView : UIView {
     BOOL _active;
     BOOL _enabled;
@@ -11,7 +9,7 @@
     float _progress;
 }
 
-@property(retain) UIColor * fillColor;
+@property (nonatomic, retain) UIColor *fillColor;
 
 - (void)_updateImages;
 - (void)dealloc;

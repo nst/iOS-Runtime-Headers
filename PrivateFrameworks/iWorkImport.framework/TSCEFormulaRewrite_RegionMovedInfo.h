@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSCEFormulaRewrite_RegionInfo, TSCEFormulaRewrite_Uids;
-
 @interface TSCEFormulaRewrite_RegionMovedInfo : NSObject {
     TSCEFormulaRewrite_RegionInfo *_dstRegion;
     struct TSUUuidMap { 
@@ -70,20 +59,20 @@
     } _srcUidForDstUid;
 }
 
-@property(readonly) TSCEFormulaRewrite_Uids * dstColumnUids;
-@property(readonly) TSCEFormulaRewrite_RegionInfo * dstRegion;
-@property(readonly) TSCEFormulaRewrite_Uids * dstRowUids;
-@property(readonly) struct __CFUUID { }* dstTableID;
-@property(readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } dstTableUID;
-@property(readonly) const struct * dstUidForSrcUid; /* unknown property attribute:  true> >=f}}} */
-@property BOOL spanningColumns;
-@property BOOL spanningRows;
-@property(readonly) TSCEFormulaRewrite_Uids * srcColumnUids;
-@property(readonly) TSCEFormulaRewrite_RegionInfo * srcRegion;
-@property(readonly) TSCEFormulaRewrite_Uids * srcRowUids;
-@property(readonly) struct __CFUUID { }* srcTableID;
-@property(readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } srcTableUID;
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSUUuidMap={__hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>' */ struct * srcUidForDstUid; /* unknown property attribute:  true> >=f}}} */
+@property (nonatomic, readonly) TSCEFormulaRewrite_Uids *dstColumnUids;
+@property (nonatomic, readonly) TSCEFormulaRewrite_RegionInfo *dstRegion;
+@property (nonatomic, readonly) TSCEFormulaRewrite_Uids *dstRowUids;
+@property (nonatomic, readonly) struct __CFUUID { }*dstTableID;
+@property (nonatomic, readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } dstTableUID;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSUUuidMap={__hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>' */ struct *dstUidForSrcUid; /* unknown property attribute:  true> >=f}}} */
+@property (nonatomic) BOOL spanningColumns;
+@property (nonatomic) BOOL spanningRows;
+@property (nonatomic, readonly) TSCEFormulaRewrite_Uids *srcColumnUids;
+@property (nonatomic, readonly) TSCEFormulaRewrite_RegionInfo *srcRegion;
+@property (nonatomic, readonly) TSCEFormulaRewrite_Uids *srcRowUids;
+@property (nonatomic, readonly) struct __CFUUID { }*srcTableID;
+@property (nonatomic, readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } srcTableUID;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSUUuidMap={__hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>' */ struct *srcUidForDstUid; /* unknown property attribute:  true> >=f}}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFormatRequirements : NSObject {
-}
+@interface BWFormatRequirements : NSObject
 
-@property(readonly) unsigned long mediaType;
+@property (readonly) unsigned long mediaType;
 
 - (Class)formatClass;
 - (id)init;

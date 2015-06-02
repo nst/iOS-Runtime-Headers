@@ -8,9 +8,9 @@
     unsigned int _searchBarStyle;
 }
 
-@property BOOL backgroundContainer;
-@property int barStyle;
-@property unsigned int searchBarStyle;
+@property (nonatomic) BOOL backgroundContainer;
+@property (nonatomic) int barStyle;
+@property (nonatomic) unsigned int searchBarStyle;
 
 - (id)_fillColor:(BOOL)arg1;
 - (id)_strokeColor:(BOOL)arg1;

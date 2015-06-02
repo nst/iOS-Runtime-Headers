@@ -3,11 +3,11 @@
  */
 
 @interface MFPColorMatrixEffect : MFPEffect {
-    float mColorMatrix[5][5];
+    float mColorMatrix;
 }
 
 + (id)GUID;
 
-- (id)initWithColorMatrix:(float[5][5])arg1;
+- (id)initWithColorMatrix:(float)arg1;
 
 @end

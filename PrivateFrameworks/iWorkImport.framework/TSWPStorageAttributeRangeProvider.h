@@ -3,7 +3,7 @@
  */
 
 @interface TSWPStorageAttributeRangeProvider : TSWPStorageRangeProvider {
-    struct TSWPAttributeEnumerator { id x1; unsigned int x2; unsigned int x3; struct TSWPAttributeArray {} *x4; BOOL x5; unsigned int x6; bool x7; struct TSWPAttributeRecord { unsigned int x_8_1_1; union { id x_2_2_1; struct TSWPParagraphData { union { struct { unsigned int x_1_5_1; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned short x_2_5_2; } x_1_4_2; struct { unsigned short x_3_5_1; unsigned short x_3_5_2; } x_1_4_3; struct { int x_4_5_1; } x_1_4_4; struct { unsigned int x_5_5_1; } x_1_4_5; struct { unsigned short x_6_5_1; unsigned short x_6_5_2; } x_1_4_6; } x_2_3_1; } x_2_2_2; } x_8_1_2; } x8; } *_enumerator;
+    struct TSWPAttributeEnumerator { id x1; unsigned int x2; struct TSWPAttributeArray {} *x3; BOOL x4; unsigned int x5; bool x6; struct TSWPAttributeRecord { unsigned int x_7_1_1; union { id x_2_2_1; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x_2_2_2; unsigned short x_2_2_3; void*x_2_2_4; void*x_2_2_5; void*x_2_2_6; void*x_2_2_7; const void*x_2_2_8; void*x_2_2_9; const void*x_2_2_10; void*x_2_2_11; void*x_2_2_12; long doublex_2_2_13; void*x_2_2_14; void*x_2_2_15; void*x_2_2_16; void*x_2_2_17; union { struct { unsigned int x_1_4_1; } x_18_3_1; struct { unsigned short x_2_4_1; unsigned short x_2_4_2; } x_18_3_2; struct { unsigned short x_3_4_1; unsigned short x_3_4_2; } x_18_3_3; struct { int x_4_4_1; } x_18_3_4; struct { unsigned int x_5_4_1; } x_18_3_5; struct { unsigned short x_6_4_1; unsigned short x_6_4_2; } x_18_3_6; } x_2_2_18; void*x_2_2_19; } x_7_1_2; } x7; } *_enumerator;
 }
 
 - (void)dealloc;

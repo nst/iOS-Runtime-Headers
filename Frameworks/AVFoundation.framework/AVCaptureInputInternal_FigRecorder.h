@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSession_FigRecorder;
-
 @interface AVCaptureInputInternal_FigRecorder : NSObject {
     AVCaptureSession_FigRecorder *_session;
 }

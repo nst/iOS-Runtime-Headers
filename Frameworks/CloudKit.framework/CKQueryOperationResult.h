@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKQueryCursor;
-
 @interface CKQueryOperationResult : CKOperationResult <NSSecureCoding> {
     CKQueryCursor *_cursor;
 }
 
-@property(retain) CKQueryCursor * cursor;
+@property (nonatomic, retain) CKQueryCursor *cursor;
 
 + (BOOL)supportsSecureCoding;
 

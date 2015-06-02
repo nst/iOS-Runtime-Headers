@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDHealthDaemon>, HDSourceEntity, HKObjectType, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HDDataCollector : NSObject <HDHealthDataCollector> {
     double _collectionInterval;
     BOOL _disabled;
@@ -15,12 +13,12 @@
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL disabled;
-@property(readonly) unsigned int hash;
-@property(readonly) HDSourceEntity * sourceEntity;
-@property(readonly) Class superclass;
+@property (readonly) unsigned int hash;
+@property (readonly) HDSourceEntity *sourceEntity;
+@property (readonly) Class superclass;
 
 + (id)domain;
 + (id)observedType;
@@ -31,8 +29,8 @@
 - (id)_contextFromDictionary:(id)arg1;
 - (id)_contextFromSensorDatum:(id)arg1;
 - (id)_dictionaryFromContext:(id)arg1;
-- (void)_performAsync:(id)arg1;
-- (void)_performSync:(id)arg1;
+- (void)_performAsync:(id /* block */)arg1;
+- (void)_performSync:(id /* block */)arg1;
 - (BOOL)_persistContext:(id)arg1 forKey:(id)arg2;
 - (BOOL)_persistPrimaryContext:(id)arg1;
 - (BOOL)_persistSecondaryContext:(id)arg1;

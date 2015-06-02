@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString;
-
 @interface MCRemovalPasswordPayload : MCPayload {
     NSString *_removalPasscode;
 }
 
-@property(retain) NSString * removalPasscode;
+@property (nonatomic, retain) NSString *removalPasscode;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

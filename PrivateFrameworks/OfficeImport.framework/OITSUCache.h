@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface OITSUCache : OITSUFlushableObject {
     NSMutableDictionary *mCache;
     NSString *mCacheName;

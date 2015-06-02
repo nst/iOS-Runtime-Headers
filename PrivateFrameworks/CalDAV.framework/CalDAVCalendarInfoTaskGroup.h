@@ -6,7 +6,7 @@
     BOOL _fetchSharees;
 }
 
-@property BOOL fetchSharees;
+@property (nonatomic) BOOL fetchSharees;
 
 - (id)_copyContainerParserMappings;
 - (id)_copyContainerWithURL:(id)arg1 andProperties:(id)arg2;

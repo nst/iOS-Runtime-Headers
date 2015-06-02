@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUStationActionsViewControllerDelegate>, MPAVItem, NSArray, NSMutableArray, NSString, RUInnerShadowHeaderFooterView, RUStationTrackInfoView, RUStationTuningView, RadioStation, UILabel, UISwitch, UITableView, UITableViewCell;
-
 @interface RUStationActionsViewController : UIViewController <MCProfileConnectionObserver, RUStationTrackInfoViewDelegate, SKStoreProductViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _bagShowsExplicitToggle;
     UILabel *_copyrightLabel;
@@ -25,17 +23,17 @@
     RUStationTrackInfoView *_trackInfoView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUStationActionsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPAVItem * item;
-@property BOOL showsDoneButton;
-@property(readonly) RadioStation * station;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUStationActionsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPAVItem *item;
+@property (nonatomic) BOOL showsDoneButton;
+@property (nonatomic, readonly) RadioStation *station;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)_addDerivedStationUsingArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;

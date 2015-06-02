@@ -6,7 +6,7 @@
     BOOL _didPlay;
 }
 
-@property BOOL didPlay;
+@property (nonatomic) BOOL didPlay;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

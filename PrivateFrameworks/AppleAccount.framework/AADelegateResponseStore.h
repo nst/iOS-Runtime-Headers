@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AADelegateResponseStore : NSObject {
-}
+@interface AADelegateResponseStore : NSObject
 
 + (void)_saveKeychainItem:(id)arg1 forUsername:(id)arg2 service:(id)arg3 itemDescription:(id)arg4;
 + (id)responseAndTokenRuntimeStore;

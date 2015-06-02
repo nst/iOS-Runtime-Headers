@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIButton;
-
 @interface SKUIQuicklinkCollectionViewCell : SKUICollectionViewCell {
     UIButton *_linkButton;
 }

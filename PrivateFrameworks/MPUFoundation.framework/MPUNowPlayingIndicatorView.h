@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSMutableArray, UIColor;
-
 @interface MPUNowPlayingIndicatorView : UIControl {
     float _interLevelSpacing;
     float _levelCornerRadius;
@@ -17,15 +15,15 @@
     BOOL _showsLevelGutters;
 }
 
-@property float interLevelSpacing;
-@property float levelCornerRadius;
-@property(retain) UIColor * levelGuttersColor;
-@property float levelWidth;
-@property float maximumLevelHeight;
-@property float minimumLevelHeight;
-@property int numberOfLevels;
-@property int playbackState;
-@property BOOL showsLevelGutters;
+@property (nonatomic) float interLevelSpacing;
+@property (nonatomic) float levelCornerRadius;
+@property (nonatomic, retain) UIColor *levelGuttersColor;
+@property (nonatomic) float levelWidth;
+@property (nonatomic) float maximumLevelHeight;
+@property (nonatomic) float minimumLevelHeight;
+@property (nonatomic) int numberOfLevels;
+@property (nonatomic) int playbackState;
+@property (nonatomic) BOOL showsLevelGutters;
 
 - (void).cxx_destruct;
 - (void)_reloadLevelViews;

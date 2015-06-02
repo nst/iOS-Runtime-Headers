@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIButton, UILabel;
-
 @interface UITableViewIndexOverlaySelectionViewCollectionViewCell : UICollectionViewCell {
     UIButton *_button;
     float _rightMargin;
@@ -12,11 +10,11 @@
     id _tapTarget;
 }
 
-@property(readonly) UIButton * button;
-@property(readonly) UILabel * label;
-@property float rightMargin;
-@property(copy) NSString * text;
-@property int textAlignment;
+@property (readonly) UIButton *button;
+@property (readonly) UILabel *label;
+@property (nonatomic) float rightMargin;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
 
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)button;

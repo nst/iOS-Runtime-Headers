@@ -7,8 +7,8 @@
     BOOL _snapsToItemCenters;
 }
 
-@property BOOL snapsToItemBoundaries;
-@property BOOL snapsToItemCenters;
+@property (nonatomic) BOOL snapsToItemBoundaries;
+@property (nonatomic) BOOL snapsToItemCenters;
 
 + (float)snapToBoundariesDecelerationRate;
 

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class <WeatherValidatorDelegate>, CLGeocoder, MKLocalSearchCompleter, NSString;
-
 @interface TWCValidator : NSObject <MKSearchCompleterDelegate> {
     MKLocalSearchCompleter *_completer;
     <WeatherValidatorDelegate> *_delegate;
     CLGeocoder *_geocoder;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <WeatherValidatorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WeatherValidatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedValidator;
 

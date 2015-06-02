@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSCharacterSet, NSString;
-
 @interface MACFormatter : APFormatter {
     NSCharacterSet *_possibleSeparators;
     NSCharacterSet *_possibleSeparatorsInvertedSet;

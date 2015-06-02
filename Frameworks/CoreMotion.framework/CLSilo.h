@@ -2,26 +2,24 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSString;
-
 @interface CLSilo : NSObject <NSCopying> {
     NSString *_identifier;
 }
 
-@property(readonly) NSString * identifier;
+@property (nonatomic, readonly) NSString *identifier;
 
 + (id)main;
 
 - (void).cxx_destruct;
-- (void)afterInterval:(double)arg1 async:(id)arg2;
+- (void)afterInterval:(double)arg1 async:(id /* block */)arg2;
 - (void)assertInside;
 - (void)assertOutside;
-- (void)async:(id)arg1;
+- (void)async:(id /* block */)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (id)newTimer;
-- (void)sync:(id)arg1;
+- (void)sync:(id /* block */)arg1;
 
 @end

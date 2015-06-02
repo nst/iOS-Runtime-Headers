@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, NSString, PLManagedAsset, PLPhotoLibrary;
-
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
     BOOL _isValid;
     ALAssetsLibrary *_library;
@@ -11,17 +9,17 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(retain) PLPhotoLibrary * _photoLibrary;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDeletable,readonly) BOOL deletable;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isValid;
-@property ALAssetsLibrary * library;
-@property(retain) PLManagedAsset * photo;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeletable, nonatomic, readonly) BOOL deletable;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic) ALAssetsLibrary *library;
+@property (nonatomic, retain) PLManagedAsset *photo;
+@property (readonly) Class superclass;
 
-- (void)_performBlockAndWait:(id)arg1;
+- (void)_performBlockAndWait:(id /* block */)arg1;
 - (id)_photoLibrary;
 - (void)dealloc;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;

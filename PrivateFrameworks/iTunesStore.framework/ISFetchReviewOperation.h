@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISReview, NSURL;
-
 @interface ISFetchReviewOperation : ISOperation {
     int _assetType;
     BOOL _backgroundReview;
@@ -14,11 +12,11 @@
 }
 
 @property int assetType;
-@property(getter=isBackgroundReview) BOOL backgroundReview;
+@property (getter=isBackgroundReview) BOOL backgroundReview;
 @property unsigned long long itemIdentifier;
-@property(retain) ISReview * review;
+@property (retain) ISReview *review;
 @property unsigned int softwareVersionIdentifier;
-@property(retain) NSURL * url;
+@property (retain) NSURL *url;
 
 - (void)_fetchReviewInformation;
 - (int)assetType;

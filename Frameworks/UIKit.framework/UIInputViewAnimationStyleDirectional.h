@@ -6,7 +6,7 @@
     int _outDirection;
 }
 
-@property int outDirection;
+@property (nonatomic) int outDirection;
 
 + (id)animationStyleAnimated:(BOOL)arg1 duration:(double)arg2 outDirection:(int)arg3;
 

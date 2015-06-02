@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <BTDevicePickerDelegate>, BluetoothManager, NSMutableArray, NSPredicate, NSString, PSSpecifierStub, UIAlertView, UITableView;
-
 @interface BTDevicePicker : NSObject <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIAlertView *_alertView;
     id _btAlert;
@@ -22,11 +20,11 @@
     NSString *_title;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BTDevicePickerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BTDevicePickerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_btSSPConfirmationHandler:(id)arg1;
 - (void)_btSSPNumericComparisonHandler:(id)arg1;

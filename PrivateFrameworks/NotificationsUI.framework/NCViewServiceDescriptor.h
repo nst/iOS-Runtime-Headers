@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@class NSString;
-
 @interface NCViewServiceDescriptor : NSObject <NSCopying, NSSecureCoding> {
     NSString *_bundleIdentifier;
     NSString *_viewControllerClassName;
 }
 
-@property(copy,readonly) NSString * bundleIdentifier;
-@property(copy,readonly) NSString * viewControllerClassName;
+@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (nonatomic, readonly, copy) NSString *viewControllerClassName;
 
 + (id)descriptorWithViewControllerClassName:(id)arg1 bundleIdentifier:(id)arg2;
 + (BOOL)supportsSecureCoding;

@@ -6,7 +6,7 @@
     unsigned short _numberOfFooterRows;
 }
 
-@property unsigned short numberOfFooterRows;
+@property (nonatomic) unsigned short numberOfFooterRows;
 
 - (unsigned short)numberOfFooterRows;
 - (void)setNumberOfFooterRows:(unsigned short)arg1;

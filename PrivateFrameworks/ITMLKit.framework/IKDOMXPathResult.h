@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMNode, NSArray, NSString;
-
 @interface IKDOMXPathResult : IKJSObject <IKJSDOMXPathResult> {
     NSArray *_nodes;
     int _type;
 }
 
-@property(readonly) BOOL booleanValue;
-@property(readonly) BOOL invalidIteratorState;
-@property(copy) NSArray * nodes;
-@property(readonly) int numberValue;
-@property(readonly) int resultType;
-@property(readonly) IKDOMNode * singleNodeValue;
-@property(readonly) int snapshotLength;
-@property(readonly) NSString * stringValue;
+@property (nonatomic, readonly) BOOL booleanValue;
+@property (nonatomic, readonly) BOOL invalidIteratorState;
+@property (nonatomic, copy) NSArray *nodes;
+@property (nonatomic, readonly) int numberValue;
+@property (nonatomic, readonly) int resultType;
+@property (nonatomic, readonly) IKDOMNode *singleNodeValue;
+@property (nonatomic, readonly) int snapshotLength;
+@property (nonatomic, readonly) NSString *stringValue;
 @property int type;
 
 - (void).cxx_destruct;

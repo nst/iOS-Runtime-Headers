@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface MPUStringTruncationStrategy : NSObject {
     NSString *_componentsNamePlural;
     NSString *_componentsNameSingular;
@@ -15,11 +13,11 @@
     NSString *_truncationTokenFormat;
 }
 
-@property(copy) NSString * componentsNamePlural;
-@property(copy) NSString * componentsNameSingular;
-@property(readonly) struct CGSize { float x1; float x2; } drawingSize;
-@property(readonly) NSDictionary * textAttributes;
-@property(copy) NSString * truncationTokenFormat;
+@property (nonatomic, copy) NSString *componentsNamePlural;
+@property (nonatomic, copy) NSString *componentsNameSingular;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } drawingSize;
+@property (nonatomic, readonly) NSDictionary *textAttributes;
+@property (nonatomic, copy) NSString *truncationTokenFormat;
 
 + (id)truncationStrategyWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { float x1; float x2; })arg2;
 

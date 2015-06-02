@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class FCRFaceDetector, NSMutableArray, NSMutableDictionary;
-
 @interface CIBurstImageFaceAnalysisContext : NSObject {
     int _version;
     NSMutableDictionary *curConfig;

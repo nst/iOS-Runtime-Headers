@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCTelephonyController : NSObject {
-}
+@interface RCTelephonyController : NSObject
 
-@property(readonly) BOOL isCallPresent;
+@property (nonatomic, readonly) BOOL isCallPresent;
 
 + (id)sharedTelephonyController;
 

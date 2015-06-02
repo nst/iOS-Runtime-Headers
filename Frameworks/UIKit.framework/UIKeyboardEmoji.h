@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKeyboardEmoji : NSObject {
     NSString *_emojiString;
     unsigned int _variantMask;
 }
 
-@property(retain) NSString * emojiString;
+@property (nonatomic, retain) NSString *emojiString;
 @property unsigned int variantMask;
 
 + (id)emojiWithString:(id)arg1 withVariantMask:(unsigned int)arg2;

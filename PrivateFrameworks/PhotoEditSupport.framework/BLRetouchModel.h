@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLRetouchLayerStack, NSDictionary, NSLock;
-
 @interface BLRetouchModel : NSObject {
     BLRetouchLayerStack *_layerStack;
     NSLock *_lock;

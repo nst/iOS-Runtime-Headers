@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAMailAccount, NSString;
-
 @interface MFDADelivery : MFMailDelivery {
     DAMailAccount *_DAMailAccount;
     NSString *_accountId;

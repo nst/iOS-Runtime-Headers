@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
-
 @interface SUHitTestView : UIView {
     NSMutableArray *_hitTestTargets;
 }

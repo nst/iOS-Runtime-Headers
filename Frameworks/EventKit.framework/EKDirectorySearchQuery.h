@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSSet;
-
 @interface EKDirectorySearchQuery : NSObject {
     BOOL _findGroups;
     BOOL _findLocations;
@@ -13,12 +11,12 @@
     NSSet *_terms;
 }
 
-@property BOOL findGroups;
-@property BOOL findLocations;
-@property BOOL findResources;
-@property BOOL findUsers;
-@property unsigned int resultLimit;
-@property(retain) NSSet * terms;
+@property (nonatomic) BOOL findGroups;
+@property (nonatomic) BOOL findLocations;
+@property (nonatomic) BOOL findResources;
+@property (nonatomic) BOOL findUsers;
+@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic, retain) NSSet *terms;
 
 - (BOOL)findGroups;
 - (BOOL)findLocations;

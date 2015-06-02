@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSDGLShader, TSDGLTextureInfo;
-
 @interface TSDGLEdgeDistanceFieldTraceEffect : NSObject {
     struct CGSize { 
         float width; 
@@ -32,12 +30,12 @@
     struct __CFArray { } *_zeroesArray;
 }
 
-@property(readonly) TSDGLTextureInfo * edgeDistanceFieldTextureInfo;
-@property(readonly) BOOL isValid;
-@property(readonly) struct CGPoint { float x1; float x2; } randomStrokePoint;
-@property(readonly) TSDGLShader * shader;
-@property(readonly) NSArray * strokeLineSegment;
-@property(readonly) TSDGLTextureInfo * traceTextureInfo;
+@property (nonatomic, readonly) TSDGLTextureInfo *edgeDistanceFieldTextureInfo;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } randomStrokePoint;
+@property (nonatomic, readonly) TSDGLShader *shader;
+@property (nonatomic, readonly) NSArray *strokeLineSegment;
+@property (nonatomic, readonly) TSDGLTextureInfo *traceTextureInfo;
 
 + (void)didEndUsingShaders;
 + (void)willBeginUsingShaders;

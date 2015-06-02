@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageHeaderViewDelegate>, NSOperationQueue, NSString, SKUIClientContext, SKUIContentRatingArtworkResourceLoader, SKUIItem, SKUIItemArtworkContext, SKUIItemOffer, SKUIProductPage, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SSVLoadURLOperation, UIImage, UIPopoverController;
-
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
     UIPopoverController *_activityPopoverController;
     SKUIItemArtworkContext *_artworkContext;
@@ -28,18 +26,18 @@
     BOOL _wantsActivityViewController;
 }
 
-@property BOOL askPermission;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIProductPageHeaderViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) SKUIProductPageHeaderFloatingView * floatingView;
-@property(readonly) unsigned int hash;
-@property(readonly) UIImage * iconImage;
-@property(readonly) SKUIItem * item;
-@property(retain) NSOperationQueue * operationQueue;
-@property int selectedSectionIndex;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL askPermission;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIProductPageHeaderViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SKUIProductPageHeaderFloatingView *floatingView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIImage *iconImage;
+@property (nonatomic, readonly) SKUIItem *item;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic) int selectedSectionIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activeItem;

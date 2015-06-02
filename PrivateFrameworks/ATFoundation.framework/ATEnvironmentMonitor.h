@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>;
-
 @interface ATEnvironmentMonitor : NSObject {
     BOOL _internetReachable;
     BOOL _internetReachableViaOnlyWWAN;
@@ -14,9 +12,9 @@
     struct __SCNetworkReachability { } *_reachability;
 }
 
-@property(getter=isInternetReachable,readonly) BOOL internetReachable;
-@property(getter=isInternetReachableViaOnlyWWAN,readonly) BOOL internetReachableViaOnlyWWAN;
-@property(getter=hasPower,readonly) BOOL power;
+@property (getter=isInternetReachable, nonatomic, readonly) BOOL internetReachable;
+@property (getter=isInternetReachableViaOnlyWWAN, nonatomic, readonly) BOOL internetReachableViaOnlyWWAN;
+@property (getter=hasPower, nonatomic, readonly) BOOL power;
 
 + (id)sharedMonitor;
 

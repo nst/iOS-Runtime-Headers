@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSObject>, MSASAlbum, NSString;
-
 @interface MSASPersonModelItem : NSObject <NSCopying> {
     MSASAlbum *_album;
     NSString *_albumGUID;
@@ -11,10 +9,10 @@
     <NSObject> *_object;
 }
 
-@property(retain) MSASAlbum * album;
-@property(retain) NSString * albumGUID;
-@property int errorCount;
-@property(retain) <NSObject> * object;
+@property (nonatomic, retain) MSASAlbum *album;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic) int errorCount;
+@property (nonatomic, retain) <NSObject> *object;
 
 - (void).cxx_destruct;
 - (id)album;

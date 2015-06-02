@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUCellConfiguration;
-
 @interface SUTableCellContentOverlayView : UIView {
     SUCellConfiguration *_configuration;
 }
 
-@property(retain) SUCellConfiguration * configuration;
+@property (nonatomic, retain) SUCellConfiguration *configuration;
 
 - (id)configuration;
 - (void)dealloc;

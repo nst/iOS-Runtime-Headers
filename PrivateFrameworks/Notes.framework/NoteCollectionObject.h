@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteCollectionObject : NSManagedObject {
-}
+@interface NoteCollectionObject : NSManagedObject
 
 - (id)basicAccountIdentifier;
 - (id)collectionInfo;

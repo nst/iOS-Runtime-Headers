@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, NSMutableArray;
-
 @interface GEODirectionsFeedback : PBCodable <NSCopying> {
     NSData *_directionResponseID;
     struct { double x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_stepFeedbacks;
@@ -13,12 +11,12 @@
     NSMutableArray *_traversedRouteIDs;
 }
 
-@property(retain) NSData * directionResponseID;
-@property(readonly) BOOL hasDirectionResponseID;
-@property(readonly) struct { double x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* stepFeedbacks;
-@property(readonly) unsigned int stepFeedbacksCount;
-@property(retain) NSMutableArray * trafficRerouteFeedbacks;
-@property(retain) NSMutableArray * traversedRouteIDs;
+@property (nonatomic, retain) NSData *directionResponseID;
+@property (nonatomic, readonly) BOOL hasDirectionResponseID;
+@property (nonatomic, readonly) struct { double x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*stepFeedbacks;
+@property (nonatomic, readonly) unsigned int stepFeedbacksCount;
+@property (nonatomic, retain) NSMutableArray *trafficRerouteFeedbacks;
+@property (nonatomic, retain) NSMutableArray *traversedRouteIDs;
 
 - (void)addStepFeedback:(struct { double x1; unsigned int x2; BOOL x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)addTrafficRerouteFeedback:(id)arg1;

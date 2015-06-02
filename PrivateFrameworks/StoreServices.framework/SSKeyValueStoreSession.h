@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSQLiteDatabase;
-
 @interface SSKeyValueStoreSession : NSObject {
     SSSQLiteDatabase *_database;
 }
 
-@property(readonly) SSSQLiteDatabase * database;
+@property (nonatomic, readonly) SSSQLiteDatabase *database;
 
 - (id)copyAccountDictionaryForDomain:(id)arg1;
 - (id)copyDataForDomain:(id)arg1 key:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, PKPrinter, UINavigationController, UIPopoverController, UIPrintInfo, UIPrintInteractionController, UIPrintPanelTableViewController, UIPrintPaper, UIViewController, UIWindow;
-
 @interface UIPrintPanelViewController : NSObject <UIPrinterBrowserOwner> {
     BOOL _animated;
     BOOL _dismissed;
@@ -18,23 +16,23 @@
     UIWindow *_window;
 }
 
-@property int copies;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL duplex;
-@property(readonly) unsigned int hash;
-@property(readonly) int pageCount;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
-@property(retain) UIPrintPaper * paper;
-@property(readonly) NSArray * paperList;
-@property(retain) PKPrinter * printer;
-@property(readonly) BOOL showCopies;
-@property(readonly) BOOL showDuplex;
-@property(readonly) BOOL showPageRange;
-@property(readonly) BOOL showPaper;
-@property(readonly) BOOL showPaperSelection;
-@property(readonly) BOOL showPrinterWarning;
-@property(readonly) Class superclass;
+@property (nonatomic) int copies;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL duplex;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int pageCount;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
+@property (nonatomic, retain) UIPrintPaper *paper;
+@property (nonatomic, readonly) NSArray *paperList;
+@property (nonatomic, retain) PKPrinter *printer;
+@property (nonatomic, readonly) BOOL showCopies;
+@property (nonatomic, readonly) BOOL showDuplex;
+@property (nonatomic, readonly) BOOL showPageRange;
+@property (nonatomic, readonly) BOOL showPaper;
+@property (nonatomic, readonly) BOOL showPaperSelection;
+@property (nonatomic, readonly) BOOL showPrinterWarning;
+@property (readonly) Class superclass;
 
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(BOOL)arg1;

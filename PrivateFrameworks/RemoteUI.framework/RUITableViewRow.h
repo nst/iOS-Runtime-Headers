@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUITableViewRowDelegate>, <RUITextFieldChangeObserver>, NSData, NSDate, NSDictionary, NSMutableArray, NSString, RUIWebContainerView, RemoteUITableViewCell, UIControl, UISwitch, UIView;
-
 @interface RUITableViewRow : RUIElement <UIPickerViewDelegate, UITextFieldDelegate> {
     float _cachedHeight;
     BOOL _configured;
@@ -27,25 +25,25 @@
     RUIWebContainerView *_webContainerView;
 }
 
-@property BOOL configured;
-@property(readonly) UIControl * control;
-@property(retain) NSData * data;
-@property(retain) NSDate * date;
-@property(retain) NSDate * dateMax;
-@property(retain) NSDate * dateMin;
-@property(readonly) int datePickerMode;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUITableViewRowDelegate> * delegate;
-@property(retain) NSDictionary * deleteAction;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float height;
-@property(retain) UIView * pickerView;
-@property BOOL rowInvalid;
-@property(getter=isSelected) BOOL selected;
-@property(readonly) int selectedRow;
-@property(readonly) Class superclass;
-@property <RUITextFieldChangeObserver> * textFieldChangeObserver;
+@property (nonatomic) BOOL configured;
+@property (nonatomic, readonly) UIControl *control;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) NSDate *dateMax;
+@property (nonatomic, retain) NSDate *dateMin;
+@property (nonatomic, readonly) int datePickerMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUITableViewRowDelegate> *delegate;
+@property (nonatomic, retain) NSDictionary *deleteAction;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float height;
+@property (nonatomic, retain) UIView *pickerView;
+@property (nonatomic) BOOL rowInvalid;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, readonly) int selectedRow;
+@property (readonly) Class superclass;
+@property (nonatomic) <RUITextFieldChangeObserver> *textFieldChangeObserver;
 
 + (id)_formatterForDateYMD;
 + (id)_formatterForMonthAndDay;
@@ -72,7 +70,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deleteAction;
-- (void)detailLabelActivatedLinkFromCell:(id)arg1 completion:(id)arg2;
+- (void)detailLabelActivatedLinkFromCell:(id)arg1 completion:(id /* block */)arg2;
 - (float)height;
 - (BOOL)isSelected;
 - (BOOL)loadAccessoryImage;

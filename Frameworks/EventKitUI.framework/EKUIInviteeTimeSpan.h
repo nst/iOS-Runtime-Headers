@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDate, NSMutableArray;
-
 @interface EKUIInviteeTimeSpan : NSObject <NSCopying> {
     NSMutableArray *_conflictedParticipants;
     NSDate *_endDate;
     NSDate *_startDate;
 }
 
-@property(retain) NSMutableArray * conflictedParticipants;
-@property(retain) NSDate * endDate;
-@property(retain) NSDate * startDate;
+@property (nonatomic, retain) NSMutableArray *conflictedParticipants;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
 
 - (void).cxx_destruct;
 - (id)conflictedParticipants;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAPersonalInfoUIRequest : AAAppleIDSettingsRequest {
-}
+@interface AAPersonalInfoUIRequest : AAAppleIDSettingsRequest
 
 - (id)urlString;
 

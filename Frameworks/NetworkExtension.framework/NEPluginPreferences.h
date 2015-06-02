@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEPluginPreferences : NSObject {
     NSString *_pluginType;
     struct __SCPreferences { } *_prefs;
 }
 
-@property(readonly) NSString * pluginType;
-@property struct __SCPreferences { }* prefs;
+@property (readonly) NSString *pluginType;
+@property struct __SCPreferences { }*prefs;
 
 + (void)removePreferencesForPluginType:(id)arg1;
 

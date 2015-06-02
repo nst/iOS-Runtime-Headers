@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class ICSDateValue, NSString;
-
 @interface CalDAVCalendarServerResourceChangeDeletedElement : CalDAVCalendarServerResourceChangeElement {
     NSString *_componentType;
     NSString *_displayName;
@@ -12,11 +10,11 @@
     NSString *_summary;
 }
 
-@property(retain) NSString * componentType;
-@property(retain) NSString * displayName;
-@property BOOL hadMoreInstances;
-@property(retain) ICSDateValue * nextInstance;
-@property(retain) NSString * summary;
+@property (nonatomic, retain) NSString *componentType;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) BOOL hadMoreInstances;
+@property (nonatomic, retain) ICSDateValue *nextInstance;
+@property (nonatomic, retain) NSString *summary;
 
 - (id)componentType;
 - (id)copyParseRules;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDWorkoutEntity : HDSampleEntity {
-}
+@interface HDWorkoutEntity : HDSampleEntity
 
 + (Class)_associatedDataObjectClass;
 + (id)_columnsSQL;

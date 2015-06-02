@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class CLLocation, CLLocationManager, NSDate, NSError, NSMutableArray, NSString, NSTimer;
-
 @interface IMLocationManager : NSObject <CLLocationManagerDelegate, IMLocationManager> {
     NSError *_error;
     NSMutableArray *_handlers;
@@ -14,17 +12,17 @@
     NSTimer *_timeoutHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(retain) NSMutableArray * handlers;
-@property(readonly) unsigned int hash;
-@property(retain) NSDate * locateStartTime;
-@property(retain) CLLocation * location;
-@property(readonly) BOOL locationAuthorizationDenied;
-@property(retain) CLLocationManager * locationManager;
-@property(retain) NSTimer * locationUpdateTimer;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSMutableArray *handlers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDate *locateStartTime;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, readonly) BOOL locationAuthorizationDenied;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, retain) NSTimer *locationUpdateTimer;
+@property (readonly) Class superclass;
 
 + (Class)__CLLocationManagerClass;
 + (id)locationShifter;
@@ -51,7 +49,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setLocationManager:(id)arg1;
 - (void)setLocationUpdateTimer:(id)arg1;
-- (void)shiftedLocationWithLocation:(id)arg1 completion:(id)arg2;
-- (void)startUpdatingCurrentLocationWithHandler:(id)arg1;
+- (void)shiftedLocationWithLocation:(id)arg1 completion:(id /* block */)arg2;
+- (void)startUpdatingCurrentLocationWithHandler:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKInGameColorPalette : GKColorPalette {
-}
+@interface GKInGameColorPalette : GKColorPalette
 
 - (id)floatingHeaderViewBackgroundColor;
 - (id)monogramBackgroundColor;

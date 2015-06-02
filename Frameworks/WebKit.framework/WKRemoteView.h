@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKRemoteView : WKCompositingView {
-}
+@interface WKRemoteView : WKCompositingView
 
 + (Class)layerClass;
 

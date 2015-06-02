@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSArray, NSDecimalNumber, NSLocale, NSString;
-
 @interface SKProductInternal : NSObject {
     NSString *_contentVersion;
     NSArray *_downloadContentLengths;

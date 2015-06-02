@@ -6,7 +6,7 @@
     BOOL _success;
 }
 
-@property BOOL success;
+@property (nonatomic) BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

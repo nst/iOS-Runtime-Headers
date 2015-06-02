@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSMutableDictionary;
-
 @interface GKVoiceChatDictionary : NSObject {
     NSMutableDictionary *actualDictionary;
     unsigned long orignalCallID;
@@ -12,7 +10,7 @@
 
 @property unsigned long callID;
 @property int nonce;
-@property(readonly) unsigned long originalCallID;
+@property (readonly) unsigned long originalCallID;
 
 + (id)dictionaryFromData:(id)arg1;
 + (id)inviteDictionaryToParticipantID:(id)arg1 fromParticipantID:(id)arg2 connectionData:(id)arg3 callID:(unsigned long)arg4 focus:(BOOL)arg5;

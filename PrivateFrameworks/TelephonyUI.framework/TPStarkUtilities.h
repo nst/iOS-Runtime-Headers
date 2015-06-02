@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@interface TPStarkUtilities : NSObject {
-}
+@interface TPStarkUtilities : NSObject
 
 + (BOOL)activeInterfaceMechanismIsHardware;
 + (BOOL)activeInterfaceMechanismIsTouchOnly;

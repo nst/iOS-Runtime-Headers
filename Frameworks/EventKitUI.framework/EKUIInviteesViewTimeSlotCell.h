@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSMutableDictionary, UIButton, UIColor, UIImageView, UILabel, UITapGestureRecognizer, UITextView, UIView;
-
 @interface EKUIInviteesViewTimeSlotCell : UITableViewCell {
     struct CGRect { 
         struct CGPoint { 
@@ -34,18 +28,10 @@
     NSLayoutConstraint *_participantsViewToBottomTimeLabelConstraint;
     NSLayoutConstraint *_participantsViewToContentViewConstraint;
     NSArray *_persistentConstraints;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _showAllConflictedParticipantsTapped;
-
+    id /* block */ _showAllConflictedParticipantsTapped;
     BOOL _showAllParticipants;
     UIButton *_showPreviewButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _showPreviewOfEventAtTime;
-
+    id /* block */ _showPreviewOfEventAtTime;
     NSDate *_startDate;
     UITapGestureRecognizer *_tappedMoreRecognizer;
     UITextView *_textViewForTextSizeTesting;
@@ -57,37 +43,37 @@
     BOOL _updateTimeText;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } andMoreBoundingRect;
-@property(retain) UIView * andMoreDebugOverlay;
-@property(retain) NSDictionary * andMoreStringCache;
-@property(retain) UILabel * bottomTimeLabel;
-@property(retain) NSLayoutConstraint * bottomTimeLabelHeightConstraint;
-@property(retain) NSLayoutConstraint * bottomTimeLabelToTopTimeLabelConstraint;
-@property(retain) NSArray * busyParticipants;
-@property BOOL checked;
-@property(retain) UIImageView * checkmarkImageView;
-@property(retain) NSMutableDictionary * colorToBusyImageAttributedString;
-@property(retain) NSDate * endDate;
-@property(retain) UILabel * labelForTextSizeTesting;
-@property(readonly) UIColor * participantsTextColor;
-@property(retain) UITextView * participantsTextView;
-@property(retain) NSLayoutConstraint * participantsViewToBottomTimeLabelConstraint;
-@property(retain) NSLayoutConstraint * participantsViewToContentViewConstraint;
-@property(retain) NSArray * persistentConstraints;
-@property(copy) id showAllConflictedParticipantsTapped;
-@property BOOL showAllParticipants;
-@property(retain) UIButton * showPreviewButton;
-@property(copy) id showPreviewOfEventAtTime;
-@property(retain) NSDate * startDate;
-@property(retain) UITapGestureRecognizer * tappedMoreRecognizer;
-@property(retain) UITextView * textViewForTextSizeTesting;
-@property(readonly) UIColor * timeTextColor;
-@property(retain) UILabel * topTimeLabel;
-@property(retain) NSLayoutConstraint * topTimeLabelHeightConstraint;
-@property(retain) NSLayoutConstraint * topTimeLabelToTopContentViewConstraint;
-@property BOOL updateFontBasedConstraints;
-@property BOOL updateParticipantsText;
-@property BOOL updateTimeText;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } andMoreBoundingRect;
+@property (nonatomic, retain) UIView *andMoreDebugOverlay;
+@property (nonatomic, retain) NSDictionary *andMoreStringCache;
+@property (nonatomic, retain) UILabel *bottomTimeLabel;
+@property (nonatomic, retain) NSLayoutConstraint *bottomTimeLabelHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *bottomTimeLabelToTopTimeLabelConstraint;
+@property (nonatomic, retain) NSArray *busyParticipants;
+@property (nonatomic) BOOL checked;
+@property (nonatomic, retain) UIImageView *checkmarkImageView;
+@property (nonatomic, retain) NSMutableDictionary *colorToBusyImageAttributedString;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) UILabel *labelForTextSizeTesting;
+@property (nonatomic, readonly) UIColor *participantsTextColor;
+@property (nonatomic, retain) UITextView *participantsTextView;
+@property (nonatomic, retain) NSLayoutConstraint *participantsViewToBottomTimeLabelConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *participantsViewToContentViewConstraint;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, copy) id /* block */ showAllConflictedParticipantsTapped;
+@property (nonatomic) BOOL showAllParticipants;
+@property (nonatomic, retain) UIButton *showPreviewButton;
+@property (nonatomic, copy) id /* block */ showPreviewOfEventAtTime;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, retain) UITapGestureRecognizer *tappedMoreRecognizer;
+@property (nonatomic, retain) UITextView *textViewForTextSizeTesting;
+@property (nonatomic, readonly) UIColor *timeTextColor;
+@property (nonatomic, retain) UILabel *topTimeLabel;
+@property (nonatomic, retain) NSLayoutConstraint *topTimeLabelHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *topTimeLabelToTopContentViewConstraint;
+@property (nonatomic) BOOL updateFontBasedConstraints;
+@property (nonatomic) BOOL updateParticipantsText;
+@property (nonatomic) BOOL updateTimeText;
 
 + (id)_andMoreLeftSpacing;
 + (id)_generateAndMoreStringWithCount:(unsigned int)arg1 attributes:(id)arg2;
@@ -153,10 +139,10 @@
 - (void)setParticipantsViewToBottomTimeLabelConstraint:(id)arg1;
 - (void)setParticipantsViewToContentViewConstraint:(id)arg1;
 - (void)setPersistentConstraints:(id)arg1;
-- (void)setShowAllConflictedParticipantsTapped:(id)arg1;
+- (void)setShowAllConflictedParticipantsTapped:(id /* block */)arg1;
 - (void)setShowAllParticipants:(BOOL)arg1;
 - (void)setShowPreviewButton:(id)arg1;
-- (void)setShowPreviewOfEventAtTime:(id)arg1;
+- (void)setShowPreviewOfEventAtTime:(id /* block */)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTappedMoreRecognizer:(id)arg1;
 - (void)setTextViewForTextSizeTesting:(id)arg1;
@@ -166,10 +152,10 @@
 - (void)setUpdateFontBasedConstraints:(BOOL)arg1;
 - (void)setUpdateParticipantsText:(BOOL)arg1;
 - (void)setUpdateTimeText:(BOOL)arg1;
-- (id)showAllConflictedParticipantsTapped;
+- (id /* block */)showAllConflictedParticipantsTapped;
 - (BOOL)showAllParticipants;
 - (id)showPreviewButton;
-- (id)showPreviewOfEventAtTime;
+- (id /* block */)showPreviewOfEventAtTime;
 - (id)startDate;
 - (id)tappedMoreRecognizer;
 - (id)textViewForTextSizeTesting;

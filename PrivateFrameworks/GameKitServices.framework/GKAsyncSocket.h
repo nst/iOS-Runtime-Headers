@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSObject<OS_dispatch_queue>;
+@interface GKAsyncSocket : NSObject
 
-@interface GKAsyncSocket : NSObject {
-}
-
-@property(copy) id connectedHandler;
-@property(copy) id receiveDataHandler;
-@property(retain) id socketName;
-@property NSObject<OS_dispatch_queue> * targetQueue;
+@property (nonatomic, copy) id /* block */ connectedHandler;
+@property (nonatomic, copy) id /* block */ receiveDataHandler;
+@property (nonatomic, retain) id socketName;
+@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id)connectedHandler;
+- (id /* block */)connectedHandler;
 - (void)invalidate;
-- (id)receiveDataHandler;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setConnectedHandler:(id)arg1;
-- (void)setReceiveDataHandler:(id)arg1;
+- (id /* block */)receiveDataHandler;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setConnectedHandler:(id /* block */)arg1;
+- (void)setReceiveDataHandler:(id /* block */)arg1;
 - (void)setSocketName:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;

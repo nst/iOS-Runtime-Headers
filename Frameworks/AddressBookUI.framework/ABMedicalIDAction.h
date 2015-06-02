@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, HKHealthStore, NSString, _HKMedicalIDData;
-
 @interface ABMedicalIDAction : ABPropertyAction <HKMedicalIDViewControllerDelegate> {
     _HKMedicalIDData *_healthData;
     HKHealthStore *_healthStore;
     int _medicalIDActionType;
 }
 
-@property(retain) CNContact * contact;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) _HKMedicalIDData * healthData;
-@property(retain) HKHealthStore * healthStore;
-@property int medicalIDActionType;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CNContact *contact;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _HKMedicalIDData *healthData;
+@property (nonatomic, retain) HKHealthStore *healthStore;
+@property (nonatomic) int medicalIDActionType;
+@property (readonly) Class superclass;
 
 - (id)healthData;
 - (id)healthStore;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUIColorScheme, SKUILayoutCache;
-
 @interface SKUIProductPageTableTextBoxSection : SKUIProductPageTableSection {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
@@ -14,11 +12,11 @@
     NSString *_title;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property int stringIndex;
-@property(copy) NSString * subtitle;
-@property(retain) SKUILayoutCache * textLayoutCache;
-@property(copy) NSString * title;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) int stringIndex;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, retain) SKUILayoutCache *textLayoutCache;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)colorScheme;

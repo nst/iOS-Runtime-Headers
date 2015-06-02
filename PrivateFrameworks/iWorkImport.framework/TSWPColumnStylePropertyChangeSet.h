@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSSpecBool, TSSSpecDouble, TSSSpecInteger, TSWPSpecColumns, TSWPSpecPadding;
-
 @interface TSWPColumnStylePropertyChangeSet : TSSStylePropertyChangeSet {
     TSWPSpecColumns *_columns;
     TSSSpecBool *_continuous;
@@ -25,7 +23,7 @@
     TSSSpecInteger *_writingDirection;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

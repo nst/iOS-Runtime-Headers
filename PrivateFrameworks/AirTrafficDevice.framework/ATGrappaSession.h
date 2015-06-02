@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSData;
-
 @interface ATGrappaSession : NSObject {
     unsigned long _sessionId;
     NSData *_sessionRequestData;

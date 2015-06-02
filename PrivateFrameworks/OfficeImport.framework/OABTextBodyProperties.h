@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface OABTextBodyProperties : NSObject {
-}
+@interface OABTextBodyProperties : NSObject
 
 + (void)readTextBodyProperties:(id)arg1 textBox:(const struct EshTextBox { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; }*)arg2 useDefaults:(bool)arg3 state:(id)arg4;
 + (void)setAutoFit:(bool)arg1 textBodyProperties:(id)arg2;

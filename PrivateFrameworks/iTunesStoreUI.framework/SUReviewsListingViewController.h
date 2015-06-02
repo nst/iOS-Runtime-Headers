@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUButtonAccessoryView;
-
 @interface SUReviewsListingViewController : SUStructuredPageViewController {
     SUButtonAccessoryView *_accessoryView;
 }

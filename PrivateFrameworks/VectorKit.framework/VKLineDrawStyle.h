@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLineDrawStyle : VKRenderStyle {
-}
+@interface VKLineDrawStyle : VKRenderStyle
 
 + (int)renderStyleID;
 

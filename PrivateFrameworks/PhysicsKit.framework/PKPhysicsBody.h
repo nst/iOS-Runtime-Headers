@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSObject>, NSArray, NSMutableArray, PKPhysicsWorld, SKNode;
-
 @interface PKPhysicsBody : NSObject <NSCoding, NSCopying> {
     BOOL _allowsRotation;
     struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; } *_body;
@@ -61,11 +55,7 @@
         struct PKPath {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _pathPtr;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _postStepBlock;
-
+    id /* block */ _postStepBlock;
     struct shared_ptr<QuadTree> { 
         struct QuadTree {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -87,37 +77,39 @@
     PKPhysicsWorld *_world;
 }
 
-@property struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }* _body;
-@property struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; } _bodyDef;
-@property(readonly) struct * _shapes; /* unknown property attribute:  std::__1::allocator<PKPhysicsShape *> >=^^{PKPhysicsShape}}} */
-@property BOOL affectedByGravity;
-@property BOOL allowsRotation;
-@property float angularDamping;
-@property float angularVelocity;
-@property(readonly) float area;
-@property unsigned int categoryBitMask;
-@property float charge;
-@property unsigned int collisionBitMask;
-@property unsigned int contactTestBitMask;
-@property float density;
-@property(getter=isDynamic) BOOL dynamic;
-@property unsigned int fieldBitMask;
-@property float friction;
-@property(readonly) NSArray * joints;
-@property float linearDamping;
-@property float mass;
-@property(readonly) SKNode * node;
-@property struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; } outline;
-@property BOOL pinned;
-@property struct CGPoint { float x1; float x2; } position;
-@property(copy) id postStepBlock;
-@property float radius;
-@property <NSObject> * representedObject;
-@property(getter=isResting) BOOL resting;
-@property float restitution;
-@property float rotation;
-@property BOOL usesPreciseCollisionDetection;
-@property struct CGVector { float x1; float x2; } velocity;
+@property (nonatomic) struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*_body;
+@property (nonatomic) struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; } _bodyDef;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<PKPhysicsShape *' */ struct *_shapes; /* unknown property attribute:  std::__1::allocator<PKPhysicsShape *> >=^^{PKPhysicsShape}}} */
+@property (nonatomic) BOOL affectedByGravity;
+@property (nonatomic) BOOL allowsRotation;
+@property (nonatomic) float angularDamping;
+@property (nonatomic) float angularVelocity;
+@property (nonatomic, readonly) float area;
+@property (nonatomic) unsigned int categoryBitMask;
+@property (nonatomic) float charge;
+@property (nonatomic) unsigned int collisionBitMask;
+@property (nonatomic) unsigned int contactTestBitMask;
+@property (nonatomic) float density;
+@property (getter=isDynamic, nonatomic) BOOL dynamic;
+@property (nonatomic) unsigned int fieldBitMask;
+@property (nonatomic) float friction;
+@property (nonatomic, readonly) NSArray *joints;
+@property (nonatomic) float linearDamping;
+@property (nonatomic) float mass;
+@property (nonatomic, readonly) SKNode *node;
+@property (nonatomic) struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; } outline;
+@property (nonatomic) BOOL pinned;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, copy) id /* block */ postStepBlock;
+@property (nonatomic) float radius;
+@property (nonatomic) <NSObject> *representedObject;
+@property (getter=isResting, nonatomic) BOOL resting;
+@property (nonatomic) float restitution;
+@property (nonatomic) float rotation;
+@property (nonatomic) BOOL usesPreciseCollisionDetection;
+@property (nonatomic) struct CGVector { float x1; float x2; } velocity;
+
+// Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
 
 + (id)bodyWithBodies:(id)arg1;
 + (id)bodyWithCircleOfRadius:(float)arg1;
@@ -131,7 +123,7 @@
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2 edgeRadius:(float)arg3;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 edgeRadius:(float)arg2;
-+ (id)initWithMarchingCubes:(struct PKCGrid { int x1; int x2; int x3; struct Range { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x_5_1_1; char *x_5_1_2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_2_1; } x_5_1_3; } x5; struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {} x6; }*)arg1 pixelFrame:(void)arg2;
++ (id)initWithMarchingCubes:(struct PKCGrid { int x1; int x2; int x3; struct Range { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x_5_1_1; char *x_5_1_2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_2_1; } x_5_1_3; } x5; struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {} x6; }*)arg1 pixelFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)initWithQuadTree:(id)arg1;
 
 - (id).cxx_construct;
@@ -139,7 +131,6 @@
 - (BOOL)_allowSleep;
 - (struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; struct b2ContactEdge {} *x22; float x23; float x24; float x25; float x26; float x27; float x28; float x29; float x30; void *x31; }*)_body;
 - (struct b2BodyDef { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; struct b2Vec2 { float x_7_1_1; float x_7_1_2; } x7; float x8; struct b2Vec2 { float x_9_1_1; float x_9_1_2; } x9; float x10; float x11; float x12; float x13; bool x14; bool x15; bool x16; bool x17; bool x18; void *x19; })_bodyDef;
-- (id)_descriptionClassName;
 - (id)_descriptionClassName;
 - (id)_descriptionFormat;
 - (BOOL)_inUse;
@@ -193,11 +184,10 @@
 - (id)joints;
 - (float)linearDamping;
 - (float)mass;
-- (id)node;
 - (struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; })outline;
 - (BOOL)pinned;
 - (struct CGPoint { float x1; float x2; })position;
-- (id)postStepBlock;
+- (id /* block */)postStepBlock;
 - (float)radius;
 - (void)reapplyScale:(float)arg1 yScale:(float)arg2;
 - (id)representedObject;
@@ -221,7 +211,7 @@
 - (void)setOutline:(struct shared_ptr<PKPath> { struct PKPath {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setPinned:(BOOL)arg1;
 - (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPostStepBlock:(id)arg1;
+- (void)setPostStepBlock:(id /* block */)arg1;
 - (void)setRadius:(float)arg1;
 - (void)setRepresentedObject:(id)arg1;
 - (void)setResting:(BOOL)arg1;
@@ -237,5 +227,10 @@
 - (void)set_world:(id)arg1;
 - (BOOL)usesPreciseCollisionDetection;
 - (struct CGVector { float x1; float x2; })velocity;
+
+// Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
+
+- (id)_descriptionClassName;
+- (id)node;
 
 @end

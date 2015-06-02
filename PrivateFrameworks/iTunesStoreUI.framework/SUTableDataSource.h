@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLOperationPool, NSArray, SUImageCache, SUVariableCellConfigurationCache;
-
 @interface SUTableDataSource : NSObject {
     id _cellReuseSource;
     int _columnCount;
@@ -11,14 +9,14 @@
     int _preferringUserInteractionCount;
 }
 
-@property id cellReuseSource;
-@property int columnCount;
-@property(readonly) SUImageCache * imageCache;
-@property(readonly) ISURLOperationPool * imagePool;
-@property(readonly) int numberOfSections;
-@property(getter=isPreferringUserInteraction,readonly) BOOL preferringUserInteraction;
-@property(readonly) NSArray * sectionIndexTitles;
-@property(readonly) int tableViewStyle;
+@property (nonatomic) id cellReuseSource;
+@property (nonatomic) int columnCount;
+@property (nonatomic, readonly) SUImageCache *imageCache;
+@property (nonatomic, readonly) ISURLOperationPool *imagePool;
+@property (nonatomic, readonly) int numberOfSections;
+@property (getter=isPreferringUserInteraction, nonatomic, readonly) BOOL preferringUserInteraction;
+@property (nonatomic, readonly) NSArray *sectionIndexTitles;
+@property (nonatomic, readonly) int tableViewStyle;
 
 - (void)beginPreferringUserInteraction;
 - (id)cachedConfigurationForClass:(Class)arg1 index:(int)arg2;

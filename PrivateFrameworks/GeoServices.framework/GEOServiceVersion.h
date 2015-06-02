@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOServiceVersion : PBCodable <NSCopying> {
     struct { 
         unsigned int minimumVersion : 1; 
@@ -12,9 +10,9 @@
     NSMutableArray *_versionDomains;
 }
 
-@property BOOL hasMinimumVersion;
-@property unsigned int minimumVersion;
-@property(retain) NSMutableArray * versionDomains;
+@property (nonatomic) BOOL hasMinimumVersion;
+@property (nonatomic) unsigned int minimumVersion;
+@property (nonatomic, retain) NSMutableArray *versionDomains;
 
 - (void)addVersionDomain:(id)arg1;
 - (void)clearVersionDomains;

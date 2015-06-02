@@ -9,8 +9,8 @@
     double _totalTime;
 }
 
-@property BOOL isRunning;
-@property double totalTime;
+@property (nonatomic) BOOL isRunning;
+@property (nonatomic) double totalTime;
 
 + (id)createTimingInstanceWithStartTime:(float)arg1;
 

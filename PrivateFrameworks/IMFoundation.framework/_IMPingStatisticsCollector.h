@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMPingStatistics, NSMutableArray, NSMutableString, _IMPingPacketData;
-
 @interface _IMPingStatisticsCollector : NSObject {
     NSMutableArray *_roundTriptimes;
     IMPingStatistics *_stats;
     NSMutableString *_stringToWriteToFile;
-    _IMPingPacketData *_timestampArray[160];
+    _IMPingPacketData *_timestampArray;
 }
 
 - (double)_computeMedianTime:(id)arg1;

@@ -6,7 +6,7 @@
     int _row;
 }
 
-@property int row;
+@property (nonatomic) int row;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setRow:(int)arg1;

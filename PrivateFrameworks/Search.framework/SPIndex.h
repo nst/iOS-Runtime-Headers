@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSManagedObjectContext, NSManagedObjectModel, NSNumber, NSPersistentStoreCoordinator, NSURL;
-
 @interface SPIndex : NSObject {
     NSManagedObjectContext *_managedObjectContext;
     NSManagedObjectModel *_managedObjectModel;

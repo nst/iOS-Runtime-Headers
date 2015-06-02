@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class NSDictionary, NSString;
-
 @interface FAFamilyCloudKitProperties : NSObject <NSSecureCoding> {
     NSDictionary *_dictionary;
 }
 
-@property(copy,readonly) NSString * bundleID;
-@property(copy,readonly) NSDictionary * dictionary;
-@property(copy,readonly) NSString * participantID;
-@property(copy,readonly) NSString * shareID;
-@property(copy,readonly) NSString * zoneID;
+@property (nonatomic, readonly, copy) NSString *bundleID;
+@property (nonatomic, readonly, copy) NSDictionary *dictionary;
+@property (nonatomic, readonly, copy) NSString *participantID;
+@property (nonatomic, readonly, copy) NSString *shareID;
+@property (nonatomic, readonly, copy) NSString *zoneID;
 
 + (BOOL)supportsSecureCoding;
 

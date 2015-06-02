@@ -11,10 +11,10 @@
     unsigned long long _timestamp;
 }
 
-@property int btState;
-@property BOOL hasBtState;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) int btState;
+@property (nonatomic) BOOL hasBtState;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)btState;
 - (void)copyTo:(id)arg1;

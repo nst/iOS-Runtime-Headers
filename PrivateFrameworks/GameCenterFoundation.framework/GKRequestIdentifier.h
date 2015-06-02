@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSArray;
-
 @interface GKRequestIdentifier : NSObject <NSCopying> {
     NSArray *_arguments;
     unsigned int _savedHash;

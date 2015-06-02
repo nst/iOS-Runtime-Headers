@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLDetailsElement : DOMHTMLElement {
-}
+@interface DOMHTMLDetailsElement : DOMHTMLElement
 
 @property BOOL open;
 

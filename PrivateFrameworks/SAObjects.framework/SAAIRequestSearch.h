@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAAIRequestSearch : SABaseClientBoundCommand
 
-@interface SAAIRequestSearch : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * acousticIdSearchSessionId;
+@property (nonatomic, copy) NSString *acousticIdSearchSessionId;
 
 + (id)requestSearch;
 + (id)requestSearchWithDictionary:(id)arg1 context:(id)arg2;

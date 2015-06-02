@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKUIDividedGridViewController;
-
 @interface EKUIDividedGridView : UIView {
     EKUIDividedGridViewController *_viewController;
 }
 
-@property EKUIDividedGridViewController * viewController;
+@property EKUIDividedGridViewController *viewController;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;

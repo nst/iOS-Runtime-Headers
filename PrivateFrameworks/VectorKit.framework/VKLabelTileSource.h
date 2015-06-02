@@ -11,8 +11,8 @@
     BOOL _localizeLabels;
 }
 
-@property int labelScaleFactor;
-@property BOOL localizeLabels;
+@property (nonatomic) int labelScaleFactor;
+@property (nonatomic) BOOL localizeLabels;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

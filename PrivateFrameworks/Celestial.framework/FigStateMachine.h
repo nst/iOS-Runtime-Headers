@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString;
-
 @interface FigStateMachine : NSObject {
     unsigned int _currentState;
     NSString *_label;
     int _lock;
     id _owner;
     BOOL _performsAtomicStateTransitions;
-    struct FigStateMachineStateConfiguration { BOOL x1; id x2; id x3; id x4; } *_stateConfigurations;
+    struct FigStateMachineStateConfiguration { BOOL x1; id x2; id x3; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; } *_stateConfigurations;
     BOOL _stateCount;
 }
 
-@property(readonly) unsigned int currentState;
-@property(readonly) NSString * currentStateLabel;
-@property(readonly) NSString * label;
-@property BOOL performsAtomicStateTransitions;
+@property (readonly) unsigned int currentState;
+@property (readonly) NSString *currentStateLabel;
+@property (readonly) NSString *label;
+@property (nonatomic) BOOL performsAtomicStateTransitions;
 
 + (void)initialize;
 
@@ -37,10 +35,10 @@
 - (BOOL)transitionToState:(unsigned int)arg1 errorStatus:(long)arg2;
 - (BOOL)transitionToState:(unsigned int)arg1 fromState:(unsigned int)arg2;
 - (BOOL)transitionToState:(unsigned int)arg1 fromStates:(unsigned int)arg2;
-- (void)whenTransitioningFromState:(unsigned int)arg1 toState:(unsigned int)arg2 callHandler:(id)arg3;
-- (void)whenTransitioningToState:(unsigned int)arg1 callHandler:(id)arg2;
-- (void)whenTransitioningToStateFails:(unsigned int)arg1 callHandler:(id)arg2;
-- (void)whenTransitioningToStates:(unsigned int)arg1 callHandler:(id)arg2;
-- (void)whenTransitioningToStatesFail:(unsigned int)arg1 callHandler:(id)arg2;
+- (void)whenTransitioningFromState:(unsigned int)arg1 toState:(unsigned int)arg2 callHandler:(id /* block */)arg3;
+- (void)whenTransitioningToState:(unsigned int)arg1 callHandler:(id /* block */)arg2;
+- (void)whenTransitioningToStateFails:(unsigned int)arg1 callHandler:(id /* block */)arg2;
+- (void)whenTransitioningToStates:(unsigned int)arg1 callHandler:(id /* block */)arg2;
+- (void)whenTransitioningToStatesFail:(unsigned int)arg1 callHandler:(id /* block */)arg2;
 
 @end

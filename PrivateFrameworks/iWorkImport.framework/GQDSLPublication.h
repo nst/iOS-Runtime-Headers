@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSLPageMargins, GQDSStylesheet;
-
 @interface GQDSLPublication : GQDRoot {
     BOOL mHasBody;
     BOOL mHasFooters;

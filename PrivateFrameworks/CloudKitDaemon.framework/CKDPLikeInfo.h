@@ -11,10 +11,10 @@
     BOOL _likedByCurrentUser;
 }
 
-@property BOOL hasLikeCount;
-@property BOOL hasLikedByCurrentUser;
-@property int likeCount;
-@property BOOL likedByCurrentUser;
+@property (nonatomic) BOOL hasLikeCount;
+@property (nonatomic) BOOL hasLikedByCurrentUser;
+@property (nonatomic) int likeCount;
+@property (nonatomic) BOOL likedByCurrentUser;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

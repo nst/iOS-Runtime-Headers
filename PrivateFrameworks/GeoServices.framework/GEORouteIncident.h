@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSString;
-
 @interface GEORouteIncident : PBCodable <NSCopying> {
     NSString *_crossStreet;
     long long _endTime;
@@ -30,34 +28,35 @@
     long long _updateTime;
 }
 
-@property(retain) NSString * crossStreet;
-@property long long endTime;
-@property BOOL endTimeReliable;
-@property(readonly) BOOL hasCrossStreet;
-@property BOOL hasEndTime;
-@property BOOL hasEndTimeReliable;
-@property(readonly) BOOL hasIncidentId;
-@property(readonly) BOOL hasInfo;
-@property BOOL hasLaneClosureCount;
-@property BOOL hasLaneClosureType;
-@property(readonly) BOOL hasPosition;
-@property BOOL hasSignificance;
-@property BOOL hasStartTime;
-@property(readonly) BOOL hasStreet;
-@property BOOL hasType;
-@property BOOL hasUpdateTime;
-@property(retain) NSString * incidentId;
-@property(retain) NSString * info;
-@property unsigned int laneClosureCount;
-@property int laneClosureType;
-@property(retain) GEOLatLng * position;
-@property int significance;
-@property long long startTime;
-@property(retain) NSString * street;
-@property int type;
-@property long long updateTime;
+@property (nonatomic, retain) NSString *crossStreet;
+@property (nonatomic) long long endTime;
+@property (nonatomic) BOOL endTimeReliable;
+@property (nonatomic, readonly) BOOL hasCrossStreet;
+@property (nonatomic) BOOL hasEndTime;
+@property (nonatomic) BOOL hasEndTimeReliable;
+@property (nonatomic, readonly) BOOL hasIncidentId;
+@property (nonatomic, readonly) BOOL hasInfo;
+@property (nonatomic) BOOL hasLaneClosureCount;
+@property (nonatomic) BOOL hasLaneClosureType;
+@property (nonatomic, readonly) BOOL hasPosition;
+@property (nonatomic) BOOL hasSignificance;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic, readonly) BOOL hasStreet;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasUpdateTime;
+@property (nonatomic, retain) NSString *incidentId;
+@property (nonatomic, retain) NSString *info;
+@property (nonatomic) unsigned int laneClosureCount;
+@property (nonatomic) int laneClosureType;
+@property (nonatomic, retain) GEOLatLng *position;
+@property (nonatomic) int significance;
+@property (nonatomic) long long startTime;
+@property (nonatomic, retain) NSString *street;
+@property (nonatomic) int type;
+@property (nonatomic) long long updateTime;
 
-- (struct CGImage { }*)_mapKitImage;
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)crossStreet;
@@ -115,5 +114,9 @@
 - (int)type;
 - (long long)updateTime;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (struct CGImage { }*)_mapKitImage;
 
 @end

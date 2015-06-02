@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLBodyElement : DOMHTMLElement
 
-@interface DOMHTMLBodyElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * aLink;
-@property(copy) NSString * background;
-@property(copy) NSString * bgColor;
-@property(copy) NSString * link;
-@property(copy) NSString * text;
-@property(copy) NSString * vLink;
+@property (copy) NSString *aLink;
+@property (copy) NSString *background;
+@property (copy) NSString *bgColor;
+@property (copy) NSString *link;
+@property (copy) NSString *text;
+@property (copy) NSString *vLink;
 
 - (id)aLink;
 - (id)background;

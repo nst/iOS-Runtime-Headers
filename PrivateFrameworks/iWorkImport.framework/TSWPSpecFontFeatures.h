@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecFontFeatures : TSSSpec {
-}
+@interface TSWPSpecFontFeatures : TSSSpec
 
 - (id)getUnsetSpec;
 

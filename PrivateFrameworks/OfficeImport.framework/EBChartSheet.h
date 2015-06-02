@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBChartSheet : NSObject {
-}
+@interface EBChartSheet : NSObject
 
 + (void)readChildrenWithState:(id)arg1;
 + (void)readWithState:(id)arg1;

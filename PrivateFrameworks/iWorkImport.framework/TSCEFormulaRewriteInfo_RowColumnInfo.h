@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSIndexSet, TSCEFormulaRewriteInfo_RowColumnInfo, TSCEFormulaRewrite_RelocatedMergeCells, TSCEFormulaRewrite_Uids, TSUMutableUUIDSet, TSUUUIDSet;
-
 @interface TSCEFormulaRewriteInfo_RowColumnInfo : NSObject {
     TSCEFormulaRewriteInfo_RowColumnInfo *_auxRowColumnInfo;
     struct UUIDData<TSP::UUIDData> { 
@@ -96,17 +85,17 @@
     } _tableUID;
 }
 
-@property(retain,readonly) TSCEFormulaRewriteInfo_RowColumnInfo * auxRowColumnInfo;
-@property(readonly) const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }* conditionalStyleOwnerUID;
-@property(retain,readonly) TSUUUIDSet * expandedRowColumnUuids;
-@property(readonly) BOOL isColumns;
-@property(readonly) BOOL isRows;
-@property unsigned int maxMergeFormulaIndex;
-@property(retain,readonly) TSCEFormulaRewrite_RelocatedMergeCells * relocatedMergeCells;
-@property(retain,readonly) NSIndexSet * rowOrColumnIndices;
-@property(retain,readonly) TSCEFormulaRewrite_Uids * rowOrColumnUids;
-@property(readonly) const /* Warning: unhandled struct encoding: '{vector<TSU::UUIDData<TSP::UUIDData>' */ struct * rowOrColumnUuids; /* unknown property attribute:  std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > >=^{UUIDData<TSP::UUIDData>}}} */
-@property(readonly) const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }* tableUID;
+@property (nonatomic, readonly, retain) TSCEFormulaRewriteInfo_RowColumnInfo *auxRowColumnInfo;
+@property (nonatomic, readonly) const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*conditionalStyleOwnerUID;
+@property (nonatomic, readonly, retain) TSUUUIDSet *expandedRowColumnUuids;
+@property (nonatomic, readonly) BOOL isColumns;
+@property (nonatomic, readonly) BOOL isRows;
+@property (nonatomic) unsigned int maxMergeFormulaIndex;
+@property (nonatomic, readonly, retain) TSCEFormulaRewrite_RelocatedMergeCells *relocatedMergeCells;
+@property (nonatomic, readonly, retain) NSIndexSet *rowOrColumnIndices;
+@property (nonatomic, readonly, retain) TSCEFormulaRewrite_Uids *rowOrColumnUids;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<TSU::UUIDData<TSP::UUIDData>' */ struct *rowOrColumnUuids; /* unknown property attribute:  std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > >=^{UUIDData<TSP::UUIDData>}}} */
+@property (nonatomic, readonly) const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*tableUID;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

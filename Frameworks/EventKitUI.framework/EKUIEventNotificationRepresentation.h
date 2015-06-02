@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKUITextAndHeaderItem, NSArray, NSDate, NSDictionary;
-
 @interface EKUIEventNotificationRepresentation : NSObject {
     BOOL _allDay;
     NSDate *_date;
@@ -15,15 +13,15 @@
     NSDictionary *_userActivityUserInfo;
 }
 
-@property(getter=isAllDay) BOOL allDay;
-@property(retain) NSDate * date;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) NSDictionary * organizerContactDictionary;
-@property(retain) EKUITextAndHeaderItem * subtitleItem;
-@property(retain) NSArray * supplementaryItems;
-@property(retain) EKUITextAndHeaderItem * titleItem;
-@property unsigned int type;
-@property(retain) NSDictionary * userActivityUserInfo;
+@property (getter=isAllDay, nonatomic) BOOL allDay;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) NSDictionary *organizerContactDictionary;
+@property (nonatomic, retain) EKUITextAndHeaderItem *subtitleItem;
+@property (nonatomic, retain) NSArray *supplementaryItems;
+@property (nonatomic, retain) EKUITextAndHeaderItem *titleItem;
+@property (nonatomic) unsigned int type;
+@property (nonatomic, retain) NSDictionary *userActivityUserInfo;
 
 + (BOOL)_invitationNotificationHasResourceChanges:(id)arg1 changesString:(id*)arg2;
 + (id)defaultEventNotificationRepresentationWithTitle:(id)arg1 message:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3MigrationAddedColumn : NSObject {
     NSString *_columnName;
     NSString *_foreignColumnName;
@@ -11,11 +9,11 @@
     NSString *_joinColumnName;
 }
 
-@property(readonly) NSString * columnName;
-@property(readonly) NSString * foreignColumnName;
-@property(readonly) NSString * foreignTableName;
-@property(readonly) NSString * joinColumnName;
-@property(readonly) BOOL shouldImportFromForeignTable;
+@property (nonatomic, readonly) NSString *columnName;
+@property (nonatomic, readonly) NSString *foreignColumnName;
+@property (nonatomic, readonly) NSString *foreignTableName;
+@property (nonatomic, readonly) NSString *joinColumnName;
+@property (nonatomic, readonly) BOOL shouldImportFromForeignTable;
 
 - (void).cxx_destruct;
 - (id)columnName;

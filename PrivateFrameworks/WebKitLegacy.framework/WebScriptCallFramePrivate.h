@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebScriptObject;
-
 @interface WebScriptCallFramePrivate : NSObject {
     struct JSValue { 
         union EncodedValueDescriptor { 

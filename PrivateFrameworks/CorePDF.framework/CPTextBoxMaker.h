@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPBody, CPZone;
-
 @interface CPTextBoxMaker : NSObject {
     CPBody *bodyZone;
     CPZone *mainZone;

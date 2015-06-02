@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAMPMediaItem;
+@interface SAMPGeniusSummon : SADomainCommand
 
-@interface SAMPGeniusSummon : SADomainCommand {
-}
-
-@property(retain) SAMPMediaItem * mediaItem;
+@property (nonatomic, retain) SAMPMediaItem *mediaItem;
 
 + (id)geniusSummon;
 + (id)geniusSummonWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOSearchRequest : GEOPlaceSearchRequest {
-}
+@interface GEOSearchRequest : GEOPlaceSearchRequest
 
 - (id)initWithBusinessIDs:(id)arg1 traits:(id)arg2;
 - (id)initWithFragment:(id)arg1 entriesType:(int)arg2 listType:(int)arg3 traits:(id)arg4;

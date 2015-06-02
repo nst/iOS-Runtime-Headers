@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSString, PLPhotoEditMutableModel, PUAdjustmentsMode, PUPhotoEditValuesCalculator, UIImage;
-
 @interface PUAdjustmentsMode : NSObject {
     int __modeType;
     PLPhotoEditMutableModel *_photoEditModel;
@@ -14,17 +12,17 @@
     PUPhotoEditValuesCalculator *_valuesCalculator;
 }
 
-@property(readonly) int _modeType;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) UIImage * icon;
-@property(copy,readonly) NSString * localizedName;
-@property(readonly) PLPhotoEditMutableModel * photoEditModel;
-@property(readonly) int sliderStyle;
-@property(copy) NSArray * submodes;
-@property PUAdjustmentsMode * supermode;
-@property(getter=isToggleable,readonly) BOOL toggleable;
-@property BOOL useAccurateStatistics;
-@property(readonly) PUPhotoEditValuesCalculator * valuesCalculator;
+@property (nonatomic, readonly) int _modeType;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) UIImage *icon;
+@property (nonatomic, readonly, copy) NSString *localizedName;
+@property (nonatomic, readonly) PLPhotoEditMutableModel *photoEditModel;
+@property (nonatomic, readonly) int sliderStyle;
+@property (nonatomic, copy) NSArray *submodes;
+@property (nonatomic) PUAdjustmentsMode *supermode;
+@property (getter=isToggleable, nonatomic, readonly) BOOL toggleable;
+@property (nonatomic) BOOL useAccurateStatistics;
+@property (nonatomic, readonly) PUPhotoEditValuesCalculator *valuesCalculator;
 
 + (id)newVisibleModesWithPhotoEditModel:(id)arg1 valuesCalculator:(id)arg2;
 

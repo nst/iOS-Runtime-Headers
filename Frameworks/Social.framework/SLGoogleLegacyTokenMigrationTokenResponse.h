@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString;
-
 @interface SLGoogleLegacyTokenMigrationTokenResponse : SLGoogleLegacyTokenMigrationResponse {
     NSString *_errorMessage;
     NSString *_token;
 }
 
-@property(readonly) NSString * errorMessage;
-@property(readonly) NSString * token;
+@property (readonly) NSString *errorMessage;
+@property (readonly) NSString *token;
 
 - (void).cxx_destruct;
 - (id)errorMessage;

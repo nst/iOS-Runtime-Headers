@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, NSMutableArray;
-
 @interface GEOTrafficTile : PBCodable <NSCopying> {
     NSMutableArray *_trafficIncidents;
     NSMutableArray *_trafficSegments;
     NSData *_vertices;
 }
 
-@property(readonly) BOOL hasVertices;
-@property(retain) NSMutableArray * trafficIncidents;
-@property(retain) NSMutableArray * trafficSegments;
-@property(retain) NSData * vertices;
+@property (nonatomic, readonly) BOOL hasVertices;
+@property (nonatomic, retain) NSMutableArray *trafficIncidents;
+@property (nonatomic, retain) NSMutableArray *trafficSegments;
+@property (nonatomic, retain) NSData *vertices;
 
 - (void)addTrafficIncident:(id)arg1;
 - (void)addTrafficSegment:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface MDTextureCanvas : NSObject <MDRenderTarget> {
     float _contentScale;
     struct CGSize { 
@@ -16,14 +14,14 @@
     } _sizeInPixels;
 }
 
-@property(readonly) float averageFPS;
-@property(readonly) float contentScale;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) struct CGSize { float x1; float x2; } sizeInPixels;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) float averageFPS;
+@property (nonatomic, readonly) float contentScale;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeInPixels;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (float)contentScale;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <XPCClientDelegate>, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSRecursiveLock, NSString;
-
 @interface XPCClient : NSObject {
     NSObject<OS_xpc_object> *_connection;
     <XPCClientDelegate> *_delegate;
@@ -15,14 +13,14 @@
     NSString *_type;
 }
 
-@property(retain) NSObject<OS_xpc_object> * connection;
-@property <XPCClientDelegate> * delegate;
-@property(retain) NSRecursiveLock * delegateLock;
-@property(copy) NSString * machName;
-@property(copy) NSDictionary * options;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property int state;
-@property(copy) NSString * type;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
+@property (nonatomic) <XPCClientDelegate> *delegate;
+@property (retain) NSRecursiveLock *delegateLock;
+@property (copy) NSString *machName;
+@property (copy) NSDictionary *options;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) int state;
+@property (copy) NSString *type;
 
 - (void).cxx_destruct;
 - (void)closeConnection;

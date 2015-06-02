@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPopoverController : UIPopoverController {
-}
+@interface _MKPopoverController : UIPopoverController
 
 + (BOOL)_popoversDisabled;
 

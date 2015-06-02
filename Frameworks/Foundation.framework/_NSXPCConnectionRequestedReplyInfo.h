@@ -2,28 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSProgress;
-
 @interface _NSXPCConnectionRequestedReplyInfo : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cleanupBlock;
-
+    id /* block */ _cleanupBlock;
     NSProgress *_progress;
 }
 
-@property(copy) id cleanupBlock;
-@property(retain) NSProgress * progress;
+@property (copy) id /* block */ cleanupBlock;
+@property (retain) NSProgress *progress;
 
-- (id)cleanupBlock;
+- (id /* block */)cleanupBlock;
 - (void)dealloc;
 - (id)progress;
-- (void)setCleanupBlock:(id)arg1;
+- (void)setCleanupBlock:(id /* block */)arg1;
 - (void)setProgress:(id)arg1;
 
 @end

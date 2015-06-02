@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSArray, NSMutableData;
-
 @interface ABVCardLexer : NSObject {
     NSArray *_activeTokenSets;
     char *_bytes;

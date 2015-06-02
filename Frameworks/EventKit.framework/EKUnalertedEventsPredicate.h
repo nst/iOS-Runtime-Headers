@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKUnalertedEventsPredicate : NSPredicate <NSSecureCoding> {
-}
+@interface EKUnalertedEventsPredicate : NSPredicate <NSSecureCoding>
 
 + (id)predicate;
 + (BOOL)supportsSecureCoding;

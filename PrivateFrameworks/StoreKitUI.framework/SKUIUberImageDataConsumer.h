@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIUberImageDataConsumer : SKUIImageDataConsumer {
     UIColor *_backgroundColor;
 }
 
-@property(retain) UIColor * backgroundColor;
+@property (nonatomic, retain) UIColor *backgroundColor;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;

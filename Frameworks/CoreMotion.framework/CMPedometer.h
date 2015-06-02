@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CMPedometerProxy;
-
 @interface CMPedometer : NSObject {
     CMPedometerProxy *_pedometerProxy;
 }
 
-@property(readonly) CMPedometerProxy * pedometerProxy;
+@property (nonatomic, readonly) CMPedometerProxy *pedometerProxy;
 
 + (BOOL)isDistanceAvailable;
 + (BOOL)isFloorCountingAvailable;
@@ -18,10 +16,10 @@
 - (void)dealloc;
 - (id)init;
 - (id)pedometerProxy;
-- (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id)arg3;
-- (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id)arg2;
-- (void)queryPedometerDataSinceRecord:(int)arg1 withHandler:(id)arg2;
-- (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id)arg2;
+- (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)queryPedometerDataSinceRecord:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)stopPedometerUpdates;
 
 @end

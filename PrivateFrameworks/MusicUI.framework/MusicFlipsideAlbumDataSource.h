@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicFlipsideAlbumDataSource : MusicArtistAlbumsDataSource {
-}
+@interface MusicFlipsideAlbumDataSource : MusicArtistAlbumsDataSource
 
 - (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
 

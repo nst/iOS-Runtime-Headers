@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class AVAssetResourceLoadingRequest, NSURL;
-
 @interface SUPastisOperation : ISOperation {
     NSURL *_certificateUrl;
     NSURL *_keyUrl;
     AVAssetResourceLoadingRequest *_loadingRequest;
 }
 
-@property(retain) NSURL * certificateURL;
-@property(retain) NSURL * keyURL;
-@property(retain) AVAssetResourceLoadingRequest * loadingRequest;
+@property (nonatomic, retain) NSURL *certificateURL;
+@property (nonatomic, retain) NSURL *keyURL;
+@property (nonatomic, retain) AVAssetResourceLoadingRequest *loadingRequest;
 
 - (id)_getAppCertWithError:(id*)arg1;
 - (id)_getCKCForSPC:(id)arg1 URI:(id)arg2 error:(id*)arg3;

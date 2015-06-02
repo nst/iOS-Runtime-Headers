@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKNode;
-
 @interface IKLink : NSObject {
     float _angle;
     float _angleInitial;
@@ -33,12 +31,12 @@
     } _size;
 }
 
-@property(readonly) float angle;
-@property float angleInitial;
-@property float length;
-@property(retain) SKNode * node;
-@property union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } position;
-@property union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } size;
+@property (nonatomic, readonly) float angle;
+@property (nonatomic) float angleInitial;
+@property (nonatomic) float length;
+@property (nonatomic, retain) SKNode *node;
+@property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } position;
+@property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } size;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

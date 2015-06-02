@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface WDArrayIterator : WDIterator {
     NSArray *mArray;
     unsigned int mNextIndex;

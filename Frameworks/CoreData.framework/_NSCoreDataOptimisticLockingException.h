@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _NSCoreDataOptimisticLockingException : NSException {
-}
+@interface _NSCoreDataOptimisticLockingException : NSException
 
 @end

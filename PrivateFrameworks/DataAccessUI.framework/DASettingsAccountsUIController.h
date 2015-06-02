@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class DAAccount, NSString;
-
 @interface DASettingsAccountsUIController : ACUIViewController <DAValidityCheckConsumer, UIActionSheetDelegate, UIAlertViewDelegate> {
     DAAccount *_account;
     BOOL _accountNeedsAdd;
@@ -17,20 +15,20 @@
     BOOL _validatedSuccessfully;
 }
 
-@property(retain) DAAccount * account;
-@property BOOL accountNeedsAdd;
-@property BOOL attemptedValidation;
-@property BOOL confirmedUnvalidatedAccount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didSetFullHostURL;
-@property(readonly) unsigned int hash;
-@property BOOL haveRegisteredForAccountsChanged;
-@property BOOL isSettingUpNewAccount;
-@property BOOL needsSave;
-@property(readonly) Class superclass;
-@property BOOL transitioningToFinishedAccountSetup;
-@property BOOL validatedSuccessfully;
+@property (nonatomic, retain) DAAccount *account;
+@property (nonatomic) BOOL accountNeedsAdd;
+@property (nonatomic) BOOL attemptedValidation;
+@property (nonatomic) BOOL confirmedUnvalidatedAccount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didSetFullHostURL;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL haveRegisteredForAccountsChanged;
+@property (nonatomic) BOOL isSettingUpNewAccount;
+@property (nonatomic) BOOL needsSave;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL transitioningToFinishedAccountSetup;
+@property (nonatomic) BOOL validatedSuccessfully;
 
 - (void).cxx_destruct;
 - (void)_accountsChanged:(id)arg1;

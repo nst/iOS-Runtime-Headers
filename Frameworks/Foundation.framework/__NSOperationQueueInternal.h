@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSOperation;
-
 @interface __NSOperationQueueInternal : NSObject {
     int __actualMaxNumOps;
     NSObject<OS_dispatch_queue> *__dispatch_queue;
     NSOperation *__firstOperation;
-    NSOperation *__firstPriOperation[5];
+    NSOperation *__firstPriOperation;
     NSOperation *__lastOperation;
-    NSOperation *__lastPriOperation[5];
+    NSOperation *__lastPriOperation;
     unsigned char __mainQ;
     int __maxNumOps;
-    BOOL __nameBuffer[160];
+    BOOL __nameBuffer;
     int __numExecOps;
     unsigned char __overcommit;
     NSOperation *__pendingFirstOperation;

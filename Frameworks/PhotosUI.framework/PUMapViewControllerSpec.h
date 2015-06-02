@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMapViewControllerSpec : NSObject {
-}
+@interface PUMapViewControllerSpec : NSObject
 
-@property(readonly) BOOL alwaysFadeRemoves;
-@property(readonly) struct CGSize { float x1; float x2; } annotationSize;
-@property(readonly) float annotationWidth;
-@property(readonly) float borderAnnotationPadding;
-@property(readonly) int thumbnailImageFormat;
+@property (readonly) BOOL alwaysFadeRemoves;
+@property (readonly) struct CGSize { float x1; float x2; } annotationSize;
+@property (readonly) float annotationWidth;
+@property (readonly) float borderAnnotationPadding;
+@property (readonly) int thumbnailImageFormat;
 
 - (BOOL)alwaysFadeRemoves;
 - (struct CGSize { float x1; float x2; })annotationSize;

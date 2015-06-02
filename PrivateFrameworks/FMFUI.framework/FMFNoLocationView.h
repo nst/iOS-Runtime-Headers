@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class <FMFNoLocationViewDelegate>, NSLayoutConstraint, UIImage, UIImageView, UILabel, UIView;
-
 @interface FMFNoLocationView : UIView {
     BOOL _blockLabelUpdates;
     UIView *_blur;
@@ -17,16 +15,16 @@
     NSLayoutConstraint *_topInsetConstraint;
 }
 
-@property BOOL blockLabelUpdates;
-@property(retain) UIView * blur;
-@property(retain) NSLayoutConstraint * bottomInsetConstraint;
-@property <FMFNoLocationViewDelegate> * delegate;
-@property(retain) UILabel * detailsLabel;
-@property(retain) UIView * insetView;
-@property(retain) UIImage * offlineProfileImage;
-@property(retain) UIImageView * offlineProfileImageView;
-@property(retain) UIImageView * personImageView;
-@property(retain) NSLayoutConstraint * topInsetConstraint;
+@property (nonatomic) BOOL blockLabelUpdates;
+@property (nonatomic, retain) UIView *blur;
+@property (nonatomic, retain) NSLayoutConstraint *bottomInsetConstraint;
+@property (nonatomic) <FMFNoLocationViewDelegate> *delegate;
+@property (nonatomic, retain) UILabel *detailsLabel;
+@property (nonatomic, retain) UIView *insetView;
+@property (nonatomic, retain) UIImage *offlineProfileImage;
+@property (nonatomic, retain) UIImageView *offlineProfileImageView;
+@property (nonatomic, retain) UIImageView *personImageView;
+@property (nonatomic, retain) NSLayoutConstraint *topInsetConstraint;
 
 - (void).cxx_destruct;
 - (void)addLayoutConstraints;

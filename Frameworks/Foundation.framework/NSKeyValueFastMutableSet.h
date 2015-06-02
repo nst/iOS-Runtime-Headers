@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueMutatingSetMethodSet;
-
 @interface NSKeyValueFastMutableSet : NSKeyValueMutableSet {
     NSKeyValueMutatingSetMethodSet *_mutatingMethods;
 }

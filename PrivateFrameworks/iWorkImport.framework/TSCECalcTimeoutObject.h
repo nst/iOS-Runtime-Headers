@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSCECalcTimeoutObject : NSObject {
     NSString *_blockingIdentifier;
     double _timeoutInterval;
 }
 
-@property(readonly) NSString * blockingIdentifier;
-@property(readonly) double timeoutInterval;
+@property (readonly) NSString *blockingIdentifier;
+@property (readonly) double timeoutInterval;
 
 - (id)blockingIdentifier;
 - (void)dealloc;

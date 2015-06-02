@@ -2,39 +2,36 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSURL, UIView;
-
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
     id _implementation;
 }
 
-@property(readonly) UIView * backgroundView;
-@property(copy) NSURL * contentURL;
-@property int controlStyle;
-@property float currentPlaybackRate;
-@property double currentPlaybackTime;
-@property(getter=isFullscreen) BOOL fullscreen;
-@property(readonly) BOOL isPreparedToPlay;
-@property(readonly) unsigned int loadState;
-@property(readonly) int playbackState;
-@property(readonly) BOOL readyForDisplay;
-@property int repeatMode;
-@property int scalingMode;
-@property BOOL shouldAutoplay;
-@property(readonly) UIView * view;
+@property (nonatomic, readonly) UIView *backgroundView;
+@property (nonatomic, copy) NSURL *contentURL;
+@property (nonatomic) int controlStyle;
+@property (nonatomic) float currentPlaybackRate;
+@property (nonatomic) double currentPlaybackTime;
+@property (getter=isFullscreen, nonatomic) BOOL fullscreen;
+@property (nonatomic, readonly) BOOL isPreparedToPlay;
+@property (nonatomic, readonly) unsigned int loadState;
+@property (nonatomic, readonly) int playbackState;
+@property (nonatomic, readonly) BOOL readyForDisplay;
+@property (nonatomic) int repeatMode;
+@property (nonatomic) int scalingMode;
+@property (nonatomic) BOOL shouldAutoplay;
+@property (nonatomic, readonly) UIView *view;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (void)allInstancesResignActive;
-+ (void)preparePrerollAds;
 
 - (void).cxx_destruct;
-- (id)_iAd_prerollController;
 - (BOOL)_isReadyForDisplay;
 - (void)_resignActive;
 - (BOOL)allowsAirPlay;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
-- (void)cancelPreroll;
 - (id)contentURL;
 - (int)controlStyle;
 - (float)currentPlaybackRate;
@@ -59,7 +56,6 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (void)pause;
 - (void)play;
-- (void)playPrerollAdWithCompletionHandler:(id)arg1;
 - (double)playableDuration;
 - (int)playbackState;
 - (void)prepareToPlay;
@@ -79,12 +75,20 @@
 - (void)setRepeatMode:(int)arg1;
 - (void)setScalingMode:(int)arg1;
 - (void)setShouldAutoplay:(BOOL)arg1;
-- (void)set_iAd_prerollController:(id)arg1;
 - (BOOL)shouldAutoplay;
 - (void)skipToBeginning;
 - (void)skipToNextItem;
 - (void)skipToPreviousItem;
 - (void)stop;
 - (id)view;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (void)preparePrerollAds;
+
+- (id)_iAd_prerollController;
+- (void)cancelPreroll;
+- (void)playPrerollAdWithCompletionHandler:(id /* block */)arg1;
+- (void)set_iAd_prerollController:(id)arg1;
 
 @end

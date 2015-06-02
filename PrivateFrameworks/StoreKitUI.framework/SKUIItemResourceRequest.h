@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemRequestDelegate>, NSArray, NSString;
-
 @interface SKUIItemResourceRequest : SKUIResourceRequest <NSCopying> {
     <SKUIItemRequestDelegate> *_delegate;
     NSString *_imageProfile;
@@ -11,10 +9,10 @@
     NSString *_keyProfile;
 }
 
-@property <SKUIItemRequestDelegate> * delegate;
-@property(copy) NSString * imageProfile;
-@property(copy) NSArray * itemIdentifiers;
-@property(copy) NSString * keyProfile;
+@property (nonatomic) <SKUIItemRequestDelegate> *delegate;
+@property (nonatomic, copy) NSString *imageProfile;
+@property (nonatomic, copy) NSArray *itemIdentifiers;
+@property (nonatomic, copy) NSString *keyProfile;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

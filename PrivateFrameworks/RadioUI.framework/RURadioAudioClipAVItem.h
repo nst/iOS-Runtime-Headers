@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RURadioAudioClipAVItem : RURadioAVItem {
-}
+@interface RURadioAudioClipAVItem : RURadioAVItem
 
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)audioClip;

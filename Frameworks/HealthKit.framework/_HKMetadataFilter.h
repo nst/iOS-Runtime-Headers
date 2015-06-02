@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface _HKMetadataFilter : _HKFilter {
     NSString *_key;
     unsigned int _operatorType;
 }
 
-@property(copy,readonly) NSString * key;
-@property(readonly) unsigned int operatorType;
+@property (nonatomic, readonly, copy) NSString *key;
+@property (nonatomic, readonly) unsigned int operatorType;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (BOOL)_acceptsOperatorType:(unsigned int)arg1;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
@@ -25,6 +25,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (unsigned int)operatorType;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

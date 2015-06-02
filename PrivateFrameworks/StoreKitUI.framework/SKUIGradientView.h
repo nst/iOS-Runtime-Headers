@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CAGradientLayer;
+@interface SKUIGradientView : UIView
 
-@interface SKUIGradientView : UIView {
-}
-
-@property(retain,readonly) CAGradientLayer * layer;
+@property (nonatomic, readonly, retain) CAGradientLayer *layer;
 
 + (Class)layerClass;
 

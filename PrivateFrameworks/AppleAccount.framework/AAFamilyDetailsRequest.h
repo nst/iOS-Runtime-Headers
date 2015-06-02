@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAFamilyDetailsRequest : AAFamilyRequest {
-}
+@interface AAFamilyDetailsRequest : AAFamilyRequest
 
 + (Class)responseClass;
 

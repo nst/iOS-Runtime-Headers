@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAFolder;
-
 @interface MFDAMessageStore : MFLibraryStore {
     DAFolder *_DAFolder;
 }
@@ -14,7 +12,7 @@
 - (id)_fetchBodyDataForSearchResult:(id)arg1 format:(int)arg2 streamConsumer:(id)arg3;
 - (BOOL)_fetchDataForMimePart:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 consumer:(id)arg4;
 - (id)_folderIDForFetching;
-- (void)_remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 filterByDate:(BOOL)arg3 handler:(id)arg4;
+- (void)_remoteIDsMatchingCriterion:(id)arg1 limit:(unsigned int)arg2 filterByDate:(BOOL)arg3 handler:(id /* block */)arg4;
 - (id)additionalHeadersForForwardOfMessage:(id)arg1;
 - (id)additionalHeadersForReplyOfMessage:(id)arg1;
 - (BOOL)allowsAppend;

@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface _GKBubbleFlowPseudoModalViewController : GKBubbleFlowRootViewController {
-}
+@interface _GKBubbleFlowPseudoModalViewController : GKBubbleFlowRootViewController
 
 - (id)_backgroundColorForModalFormSheet;
 - (BOOL)_cleanupRemovableCoveredViewControllers;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (unsigned int)supportedInterfaceOrientations;
 
 @end

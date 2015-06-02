@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UISiriTranscriptTextView : UITextView {
-}
+@interface _UISiriTranscriptTextView : UITextView
 
 @end

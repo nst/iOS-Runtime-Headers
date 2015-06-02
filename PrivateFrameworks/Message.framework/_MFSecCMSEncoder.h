@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData;
-
 @interface _MFSecCMSEncoder : MFBufferedDataConsumer {
     long _SecCMSError;
     struct SecCmsEncoderStr { } *_encoder;
@@ -11,7 +9,7 @@
     NSMutableData *_singleShot;
 }
 
-@property(readonly) long lastSecCMSError;
+@property (nonatomic, readonly) long lastSecCMSError;
 
 - (void)_appendBytes:(const void*)arg1 length:(unsigned long)arg2;
 - (int)appendData:(id)arg1;

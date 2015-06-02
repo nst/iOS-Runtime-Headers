@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL;
-
 @interface CoreDAVCopyOrMoveTask : CoreDAVTask {
     NSURL *_destinationURL;
     int _overwrite;
 }
 
-@property(retain) NSURL * destinationURL;
-@property int overwrite;
+@property (nonatomic, retain) NSURL *destinationURL;
+@property (nonatomic) int overwrite;
 
 + (id)stringFromOverwriteValue:(int)arg1;
 

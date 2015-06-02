@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSData, NSMutableDictionary, NSNumber;
-
 @interface SSVGratisRequestBody : NSObject <NSCopying> {
     NSNumber *_accountID;
     NSMutableDictionary *_additionalParameters;
@@ -14,15 +12,15 @@
     int _style;
 }
 
-@property(readonly) NSData * JSONBodyData;
-@property(copy) NSNumber * accountIdentifier;
-@property(copy) NSArray * applications;
-@property(getter=isBackgroundRequest) BOOL backgroundRequest;
-@property(readonly) NSMutableDictionary * bodyDictionary;
-@property(copy) NSArray * bundleIdentifiers;
-@property(copy) NSArray * itemIdentifiers;
-@property(readonly) NSData * propertyListBodyData;
-@property(readonly) int requestStyle;
+@property (nonatomic, readonly) NSData *JSONBodyData;
+@property (nonatomic, copy) NSNumber *accountIdentifier;
+@property (nonatomic, copy) NSArray *applications;
+@property (getter=isBackgroundRequest, nonatomic) BOOL backgroundRequest;
+@property (nonatomic, readonly) NSMutableDictionary *bodyDictionary;
+@property (nonatomic, copy) NSArray *bundleIdentifiers;
+@property (nonatomic, copy) NSArray *itemIdentifiers;
+@property (nonatomic, readonly) NSData *propertyListBodyData;
+@property (nonatomic, readonly) int requestStyle;
 
 - (void).cxx_destruct;
 - (id)JSONBodyData;

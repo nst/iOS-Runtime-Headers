@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPTokenRegistrationBody;
-
 @interface CKDPTokenRegistrationRequest : PBRequest <NSCopying> {
     CKDPTokenRegistrationBody *_tokenRegistrationBody;
 }
 
-@property(readonly) BOOL hasTokenRegistrationBody;
-@property(retain) CKDPTokenRegistrationBody * tokenRegistrationBody;
+@property (nonatomic, readonly) BOOL hasTokenRegistrationBody;
+@property (nonatomic, retain) CKDPTokenRegistrationBody *tokenRegistrationBody;
 
 + (id)options;
 

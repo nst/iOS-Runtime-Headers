@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@interface MSDSuggestionsHintsInterface : NSObject {
-}
+@interface MSDSuggestionsHintsInterface : NSObject
 
 + (id)XPCInterface;
 + (id)_xpcInterface;

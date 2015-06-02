@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
-
 @interface EKTravelEventsPredicate : EKPredicate {
     NSDate *_endDate;
     NSDate *_startDate;
 }
 
-@property(retain) NSDate * endDate;
-@property(retain) NSDate * startDate;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 

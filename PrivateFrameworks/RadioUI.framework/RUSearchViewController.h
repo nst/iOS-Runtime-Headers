@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUSearchViewControllerDelegate>, NSError, NSMutableArray, NSString, RUMetricsController, RUSearchDataSource, RadioSearchStationResult, SKUICircleProgressIndicator, SSMetricsPageEvent, UILabel, UITableView, UIView;
-
 @interface RUSearchViewController : UIViewController <RUSearchDataSourceDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicatorView;
     RadioSearchStationResult *_addingStationResult;
@@ -35,19 +33,19 @@
     UIView *_tableViewBackgroundView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUSearchViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL displaysCoreSeedName;
-@property BOOL excludeFeaturedStations;
-@property(readonly) unsigned int hash;
-@property BOOL showsAddingIndicator;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
-@property(retain) UIView * tableViewBackgroundView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUSearchViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displaysCoreSeedName;
+@property (nonatomic) BOOL excludeFeaturedStations;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL showsAddingIndicator;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, retain) UIView *tableViewBackgroundView;
 
 - (void).cxx_destruct;
-- (void)_addMetricsControllerOperationBlock:(id)arg1;
+- (void)_addMetricsControllerOperationBlock:(id /* block */)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_clearButtonAction:(id)arg1;
 - (void)_configureSectionHeader:(id)arg1 forResultCategory:(id)arg2;

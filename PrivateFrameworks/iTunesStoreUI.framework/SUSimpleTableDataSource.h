@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray;
-
 @interface SUSimpleTableDataSource : SUTableDataSource {
     Class _cellConfigurationClass;
     NSArray *_objects;
 }
 
-@property(retain) Class cellConfigurationClass;
-@property(retain) NSArray * objects;
+@property (nonatomic, retain) Class cellConfigurationClass;
+@property (nonatomic, retain) NSArray *objects;
 
 - (Class)cellConfigurationClass;
 - (id)cellForIndexPath:(id)arg1;

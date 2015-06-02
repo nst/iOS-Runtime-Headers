@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class CAGradientLayer;
+@interface MPUGradientView : UIView
 
-@interface MPUGradientView : UIView {
-}
-
-@property(readonly) CAGradientLayer * gradientLayer;
+@property (nonatomic, readonly) CAGradientLayer *gradientLayer;
 
 + (Class)layerClass;
 

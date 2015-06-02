@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface RUJingleTiltReportingController : MPUReportingController {
     NSObject<OS_dispatch_queue> *_accessQueue;
     double _flushInterval;

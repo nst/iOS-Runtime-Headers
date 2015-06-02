@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGEntityTag : NSObject <NSCopying> {
     BOOL _indexed;
     NSString *_name;
     BOOL _stored;
 }
 
-@property(readonly) BOOL indexed;
-@property(readonly) NSString * name;
-@property(readonly) BOOL stored;
+@property (nonatomic, readonly) BOOL indexed;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL stored;
 
 + (id)allDay;
 + (id)contactDetail:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, TSULRUCache;
-
 @interface TSWPFontCache : NSObject {
     NSMutableArray *_cachedAvailableMembers;
     NSString *_cachedMembersFamilyName;

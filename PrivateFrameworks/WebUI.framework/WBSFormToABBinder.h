@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSFormToABBinder : NSObject {
-}
+@interface WBSFormToABBinder : NSObject
 
 + (struct __WBSFieldLabelPatternMatcherArray { }*)addressBookFieldLabelPatternMatchers;
 + (id)allSynonymsForMatch:(id)arg1;

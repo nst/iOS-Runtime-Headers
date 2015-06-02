@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISLoadSoftwareMapOperation : ISOperation {
-}
+@interface ISLoadSoftwareMapOperation : ISOperation
 
 - (void)run;
 - (id)uniqueKey;

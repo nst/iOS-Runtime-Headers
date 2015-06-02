@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureFileOutputRecordingDelegate_FigRecorder><AVCaptureFileOutputPauseResumeDelegate_FigRecorder>, NSArray, NSURL;
-
 @interface AVCaptureFileOutputDelegateWrapper_FigRecorder : NSObject {
     NSArray *_connections;
     <AVCaptureFileOutputRecordingDelegate_FigRecorder><AVCaptureFileOutputPauseResumeDelegate_FigRecorder> *_delegate;
@@ -14,11 +12,11 @@
     BOOL _receivedDidStopRecording;
 }
 
-@property(readonly) NSArray * connections;
-@property(readonly) <AVCaptureFileOutputRecordingDelegate_FigRecorder><AVCaptureFileOutputPauseResumeDelegate_FigRecorder> * delegate;
+@property (readonly) NSArray *connections;
+@property (readonly) <AVCaptureFileOutputRecordingDelegate_FigRecorder><AVCaptureFileOutputPauseResumeDelegate_FigRecorder> *delegate;
 @property long didStopRecordingError;
-@property(retain) NSArray * metadata;
-@property(readonly) NSURL * outputFileURL;
+@property (retain) NSArray *metadata;
+@property (readonly) NSURL *outputFileURL;
 @property BOOL receivedDidStartRecording;
 @property BOOL receivedDidStopRecording;
 

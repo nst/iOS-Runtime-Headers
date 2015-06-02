@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMHandle, NSDate;
-
 @interface CKBalloonChatItem : CKChatItem {
     BOOL _isFirstChatItem;
 }
 
-@property(readonly) unsigned int balloonCorners;
-@property(readonly) BOOL balloonOrientation;
-@property(readonly) Class balloonViewClass;
-@property(readonly) BOOL failed;
-@property(getter=isFromMe,readonly) BOOL fromMe;
-@property BOOL isFirstChatItem;
-@property(retain,readonly) IMHandle * sender;
-@property(retain,readonly) NSDate * time;
+@property (nonatomic, readonly) unsigned int balloonCorners;
+@property (nonatomic, readonly) BOOL balloonOrientation;
+@property (nonatomic, readonly) Class balloonViewClass;
+@property (nonatomic, readonly) BOOL failed;
+@property (getter=isFromMe, nonatomic, readonly) BOOL fromMe;
+@property (nonatomic) BOOL isFirstChatItem;
+@property (nonatomic, readonly, retain) IMHandle *sender;
+@property (nonatomic, readonly, retain) NSDate *time;
 
 - (unsigned int)balloonCorners;
 - (BOOL)balloonOrientation;

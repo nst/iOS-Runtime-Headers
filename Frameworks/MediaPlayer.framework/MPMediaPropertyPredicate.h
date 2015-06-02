@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
-
 @interface MPMediaPropertyPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     int _comparisonType;
     NSString *_property;
     id _value;
 }
 
-@property int comparisonType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * property;
-@property(readonly) Class superclass;
-@property(copy) id value;
+@property (nonatomic) int comparisonType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *property;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id value;
 
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(int)arg3;

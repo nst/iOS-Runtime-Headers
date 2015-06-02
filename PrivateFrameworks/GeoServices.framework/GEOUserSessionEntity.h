@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSNumber, NSString;
-
 @interface GEOUserSessionEntity : NSObject {
     unsigned int _sequenceNumber;
     double _sessionCreationTime;
@@ -16,11 +14,11 @@
 @property unsigned int sequenceNumber;
 @property double sessionCreationTime;
 @property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property(readonly) NSNumber * sessionIDHigh;
-@property(readonly) NSString * sessionIDHighString;
-@property(readonly) NSNumber * sessionIDLow;
-@property(readonly) NSString * sessionIDLowString;
-@property(readonly) NSString * sessionIDString;
+@property (nonatomic, readonly) NSNumber *sessionIDHigh;
+@property (nonatomic, readonly) NSString *sessionIDHighString;
+@property (nonatomic, readonly) NSNumber *sessionIDLow;
+@property (nonatomic, readonly) NSString *sessionIDLowString;
+@property (nonatomic, readonly) NSString *sessionIDString;
 
 - (id)description;
 - (unsigned int)sequenceNumber;

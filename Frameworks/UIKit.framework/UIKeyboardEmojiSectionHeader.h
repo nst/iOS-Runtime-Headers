@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UILabel;
-
 @interface UIKeyboardEmojiSectionHeader : UICollectionReusableView {
     UILabel *_emojiSectionHeader;
 }
 
-@property float headerFontSize;
-@property(copy) NSString * headerName;
-@property float headerOpacity;
-@property(copy) UIColor * headerTextColor;
-@property BOOL useVibrantBlend;
+@property (nonatomic) float headerFontSize;
+@property (nonatomic, copy) NSString *headerName;
+@property (nonatomic) float headerOpacity;
+@property (nonatomic, copy) UIColor *headerTextColor;
+@property (nonatomic) BOOL useVibrantBlend;
 
 - (void)dealloc;
 - (float)headerFontSize;

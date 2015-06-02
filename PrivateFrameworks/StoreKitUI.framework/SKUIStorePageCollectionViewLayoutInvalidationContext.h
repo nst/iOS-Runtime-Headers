@@ -6,7 +6,7 @@
     BOOL _invalidateItemPinningLayoutInformation;
 }
 
-@property BOOL invalidateItemPinningLayoutInformation;
+@property (nonatomic) BOOL invalidateItemPinningLayoutInformation;
 
 - (BOOL)invalidateItemPinningLayoutInformation;
 - (void)setInvalidateItemPinningLayoutInformation:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSString;
-
 @interface VMUProcInfo : NSObject {
     NSArray *_arguments;
     NSArray *_envVars;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString;
-
 @interface MusicStoreClientController : SUClientController <MCProfileConnectionObserver, SSDownloadManagerObserver> {
     BOOL _hasContinueSearchCapability;
     BOOL _isUsingNetwork;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasStoreSearchCapability;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasStoreSearchCapability;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)continueSearchingURLForMediaType:(unsigned int)arg1 searchString:(id)arg2;
 + (id)musicStoreURLWithAction:(id)arg1;

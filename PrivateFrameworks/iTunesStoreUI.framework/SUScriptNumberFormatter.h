@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumberFormatter, NSString;
-
 @interface SUScriptNumberFormatter : SUScriptObject {
     NSNumberFormatter *_numberFormatter;
 }
 
-@property(retain) NSString * localeIdentifier;
-@property(retain) NSString * style;
+@property (retain) NSString *localeIdentifier;
+@property (retain) NSString *style;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface WBSQuickWebsiteSearchController : NSObject {
     NSMutableDictionary *_hostSetsByOpenSearchDescriptionDocumentURLString;
     NSMutableDictionary *_openSearchDescriptionsByDescriptionDocumentURLString;
@@ -17,7 +15,7 @@
     } _writer;
 }
 
-@property(readonly) NSArray * quickWebsiteSearchHosts;
+@property (nonatomic, readonly) NSArray *quickWebsiteSearchHosts;
 @property BOOL quickWebsiteSearchProvidersLoadedFromDisk;
 
 + (id)sharedController;
@@ -32,7 +30,7 @@
 - (void)_pruneUnusedQuickWebsiteSearchProviders;
 - (BOOL)_quickWebsiteSearchProviderHasSearchURLTemplateStringOnAccessQueue:(id)arg1;
 - (void)_removeHost:(id)arg1 fromOpenSearchDescriptionWithDocumentURL:(id)arg2;
-- (void)_resetCachedDataWithCompletionHandler:(id)arg1;
+- (void)_resetCachedDataWithCompletionHandler:(id /* block */)arg1;
 - (void)_saveToDiskSoon;
 - (id)_searchDescriptionsURL;
 - (void)_sendNotification:(id)arg1 forQuickWebsiteSearchProvider:(id)arg2;

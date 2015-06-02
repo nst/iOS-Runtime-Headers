@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class _MKPlacePhotosCollectionView;
-
 @interface _MKPlacePhotosCollectionViewCell : UITableViewCell {
     _MKPlacePhotosCollectionView *_photoGrid;
 }
 
-@property(readonly) _MKPlacePhotosCollectionView * photoGrid;
+@property (nonatomic, readonly) _MKPlacePhotosCollectionView *photoGrid;
 
 + (id)reuseIdentifier;
 

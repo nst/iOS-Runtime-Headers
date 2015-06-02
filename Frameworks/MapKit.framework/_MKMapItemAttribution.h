@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOMapItemAttribution, NSArray, NSString;
-
 @interface _MKMapItemAttribution : NSObject {
     GEOMapItemAttribution *_geoAttribution;
 }
 
-@property(readonly) NSArray * attributionApps;
-@property(readonly) NSArray * attributionURLs;
-@property(readonly) NSString * providerID;
-@property(readonly) NSString * providerName;
-@property(readonly) BOOL requiresAttributionInCallout;
+@property (nonatomic, readonly) NSArray *attributionApps;
+@property (nonatomic, readonly) NSArray *attributionURLs;
+@property (nonatomic, readonly) NSString *providerID;
+@property (nonatomic, readonly) NSString *providerName;
+@property (nonatomic, readonly) BOOL requiresAttributionInCallout;
 
 - (void).cxx_destruct;
 - (id)attributionApps;

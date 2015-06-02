@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class PTLegibleTextAssistantSettings;
-
 @interface PTLegibleTextAssistant : NSObject {
     float _alphaStrength;
     BOOL _effectsDisabled;
@@ -23,12 +21,12 @@
     PTLegibleTextAssistantSettings *_settings;
 }
 
-@property float alphaStrength;
-@property BOOL effectsDisabled;
-@property struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
-@property float largestShadowRadius;
-@property float radiusStrength;
-@property(retain) PTLegibleTextAssistantSettings * settings;
+@property (nonatomic) float alphaStrength;
+@property (nonatomic) BOOL effectsDisabled;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
+@property (nonatomic) float largestShadowRadius;
+@property (nonatomic) float radiusStrength;
+@property (nonatomic, retain) PTLegibleTextAssistantSettings *settings;
 
 - (void).cxx_destruct;
 - (float)alphaStrength;

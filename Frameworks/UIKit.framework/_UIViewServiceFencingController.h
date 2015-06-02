@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableSet, NSTimer;
-
 @interface _UIViewServiceFencingController : NSObject {
     unsigned int _expectedParticipatingFencingProxyCount;
     NSTimer *_fencingControlTimeoutTimer;

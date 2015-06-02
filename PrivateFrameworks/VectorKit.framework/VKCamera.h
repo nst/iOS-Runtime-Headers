@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <VKCameraDelegate>, VKFootprint, VKViewVolume;
-
 @interface VKCamera : NSObject {
     BOOL _allowDatelineWraparound;
     float _aspectRatio;
@@ -107,63 +101,63 @@
     } _worldMatrix;
 }
 
-@property BOOL allowDatelineWraparound;
-@property float aspectRatio;
-@property struct VKCameraState { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; float x5; } cameraState;
-@property double canonicalPitch;
-@property <VKCameraDelegate> * delegate;
-@property(readonly) double distanceToGroundAndFarClipPlaneIntersection;
-@property(readonly) double farClipDistance;
-@property(readonly) VKFootprint * footprint;
-@property(readonly) struct  forwardVector; /* unknown property attribute:  1>=[3d]} */
-@property double fractionOfScreenAboveFarClipPlaneAtCanonicalPitch;
-@property(readonly) struct { BOOL x1; double x2; double x3; double x4; double x5; } frustum;
-@property(readonly) struct  gmForwardVector; /* unknown property attribute:  1>=[4d]} */
-@property(readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct * gmPosition; /* unknown property attribute:  1>=[3d]} */
-@property(readonly) const struct * gmProjectionMatrix; /* unknown property attribute:  4>=[16d]} */
-@property(readonly) struct  gmRightVector; /* unknown property attribute:  1>=[4d]} */
-@property(readonly) const struct * gmUnscaledViewMatrix; /* unknown property attribute:  4>=[16d]} */
-@property(readonly) struct  gmUpVector; /* unknown property attribute:  1>=[4d]} */
-@property(readonly) const struct * gmViewMatrix; /* unknown property attribute:  4>=[16d]} */
-@property(readonly) const struct * gmViewProjectionMatrix; /* unknown property attribute:  4>=[16d]} */
-@property(readonly) const struct * gmViewProjectionMatrixWithoutOffset; /* unknown property attribute:  4>=[16d]} */
-@property(readonly) struct VKPoint { double x1; double x2; double x3; } groundPoint;
-@property(readonly) float horizontalFieldOfView;
-@property double horizontalOffset;
-@property double maxHeight;
-@property double maxHeightNoPitch;
-@property double maxPitch;
-@property double minHeight;
-@property(readonly) double nearClipDistance;
-@property const struct { double x1[4][4]; }* orientation;
-@property(readonly) double pitch;
-@property struct VKPoint { double x1; double x2; double x3; } position;
-@property(readonly) const struct { double x1[4][4]; }* projectionMatrix;
-@property(readonly) const struct { double x1[4][4]; }* projectionMatrixUnscaled;
-@property(readonly) const struct { double x1[4][4]; }* projectionMatrixUnscaledWithoutOffset;
-@property struct VKPoint { double x1; double x2; double x3; } puckPosition;
-@property(readonly) struct  rightVector; /* unknown property attribute:  1>=[3d]} */
-@property(readonly) double screenHeightOfGroundAndFarClipPlaneIntersection;
-@property(readonly) double tanHalfHorizFOV;
-@property(readonly) double tanHalfVerticalFOV;
-@property double terrainHeight;
-@property(readonly) struct  upVector; /* unknown property attribute:  1>=[3d]} */
-@property(readonly) int updateNumber;
-@property float verticalFieldOfView;
-@property(readonly) const struct { double x1[4][4]; }* viewMatrix;
-@property(readonly) const struct { double x1[4][4]; }* viewMatrixUnscaled;
-@property(readonly) const struct { double x1[4][4]; }* viewProjectionMatrix;
-@property(readonly) const struct { double x1[4][4]; }* viewProjectionMatrixUnscaled;
-@property(readonly) VKViewVolume * viewVolume;
-@property(readonly) const struct { double x1[4][4]; }* worldMatrix;
-@property(readonly) double yaw;
+@property (nonatomic) BOOL allowDatelineWraparound;
+@property (nonatomic) float aspectRatio;
+@property (nonatomic) struct VKCameraState { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; float x5; } cameraState;
+@property (nonatomic) double canonicalPitch;
+@property (nonatomic) <VKCameraDelegate> *delegate;
+@property (nonatomic, readonly) double distanceToGroundAndFarClipPlaneIntersection;
+@property (nonatomic, readonly) double farClipDistance;
+@property (nonatomic, readonly) VKFootprint *footprint;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  forwardVector; /* unknown property attribute:  1>=[3d]} */
+@property (nonatomic) double fractionOfScreenAboveFarClipPlaneAtCanonicalPitch;
+@property (nonatomic, readonly) struct { BOOL x1; double x2; double x3; double x4; double x5; } frustum;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  gmForwardVector; /* unknown property attribute:  1>=[4d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmPosition; /* unknown property attribute:  1>=[3d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmProjectionMatrix; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  gmRightVector; /* unknown property attribute:  1>=[4d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmUnscaledViewMatrix; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  gmUpVector; /* unknown property attribute:  1>=[4d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmViewMatrix; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmViewProjectionMatrix; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *gmViewProjectionMatrixWithoutOffset; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) struct VKPoint { double x1; double x2; double x3; } groundPoint;
+@property (nonatomic, readonly) float horizontalFieldOfView;
+@property (nonatomic) double horizontalOffset;
+@property (nonatomic) double maxHeight;
+@property (nonatomic) double maxHeightNoPitch;
+@property (nonatomic) double maxPitch;
+@property (nonatomic) double minHeight;
+@property (nonatomic, readonly) double nearClipDistance;
+@property (nonatomic) const struct { double x1[4][4]; }*orientation;
+@property (nonatomic, readonly) double pitch;
+@property (nonatomic) struct VKPoint { double x1; double x2; double x3; } position;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*projectionMatrix;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*projectionMatrixUnscaled;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*projectionMatrixUnscaledWithoutOffset;
+@property (nonatomic) struct VKPoint { double x1; double x2; double x3; } puckPosition;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  rightVector; /* unknown property attribute:  1>=[3d]} */
+@property (nonatomic, readonly) double screenHeightOfGroundAndFarClipPlaneIntersection;
+@property (nonatomic, readonly) double tanHalfHorizFOV;
+@property (nonatomic, readonly) double tanHalfVerticalFOV;
+@property (nonatomic) double terrainHeight;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<double' */ struct  upVector; /* unknown property attribute:  1>=[3d]} */
+@property (nonatomic, readonly) int updateNumber;
+@property (nonatomic) float verticalFieldOfView;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*viewMatrix;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*viewMatrixUnscaled;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*viewProjectionMatrix;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*viewProjectionMatrixUnscaled;
+@property (nonatomic, readonly) VKViewVolume *viewVolume;
+@property (nonatomic, readonly) const struct { double x1[4][4]; }*worldMatrix;
+@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
 - (void)_setPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
 - (void)adjustClipPlanes;
 - (BOOL)allowDatelineWraparound;
-- (id)annotationCoordinateTest;
-- (id)annotationRectTest;
+- (id /* block */)annotationCoordinateTest;
+- (id /* block */)annotationRectTest;
 - (float)aspectRatio;
 - (struct VKCameraState { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1[4][4]; } x2; float x3; float x4; float x5; })cameraState;
 - (double)canonicalPitch;

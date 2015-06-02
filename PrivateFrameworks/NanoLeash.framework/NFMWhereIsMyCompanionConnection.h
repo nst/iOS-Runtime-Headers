@@ -2,48 +2,34 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NSXPCConnection;
-
 @interface NFMWhereIsMyCompanionConnection : NSObject <NFMWhereIsMyCompanionConnectionProtocol> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playSoundAndLEDCompletion;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playSoundCompletion;
-
+    id /* block */ _playSoundAndLEDCompletion;
+    id /* block */ _playSoundCompletion;
     NSXPCConnection *_serverConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id playSoundAndLEDCompletion;
-@property(copy) id playSoundCompletion;
-@property(retain) NSXPCConnection * serverConnection;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ playSoundAndLEDCompletion;
+@property (nonatomic, copy) id /* block */ playSoundCompletion;
+@property (retain) NSXPCConnection *serverConnection;
+@property (readonly) Class superclass;
 
 + (id)sharedDeviceConnection;
 
 - (void).cxx_destruct;
-- (void)applicationIdentifierWithReply:(id)arg1;
+- (void)applicationIdentifierWithReply:(id /* block */)arg1;
 - (id)init;
-- (id)playSoundAndLEDCompletion;
-- (void)playSoundAndLightsOnCompanionWithCompletion:(id)arg1;
-- (id)playSoundCompletion;
-- (void)playSoundOnCompanionWithCompletion:(id)arg1;
+- (id /* block */)playSoundAndLEDCompletion;
+- (void)playSoundAndLightsOnCompanionWithCompletion:(id /* block */)arg1;
+- (id /* block */)playSoundCompletion;
+- (void)playSoundOnCompanionWithCompletion:(id /* block */)arg1;
 - (void)playedSound:(BOOL)arg1;
 - (void)playedSoundAndLED:(BOOL)arg1;
 - (id)serverConnection;
-- (void)setPlaySoundAndLEDCompletion:(id)arg1;
-- (void)setPlaySoundCompletion:(id)arg1;
+- (void)setPlaySoundAndLEDCompletion:(id /* block */)arg1;
+- (void)setPlaySoundCompletion:(id /* block */)arg1;
 - (void)setServerConnection:(id)arg1;
 
 @end

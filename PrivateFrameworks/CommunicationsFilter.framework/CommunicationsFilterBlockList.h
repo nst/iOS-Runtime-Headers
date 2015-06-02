@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
  */
 
-@class CommunicationsFilterBlockListCache, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface CommunicationsFilterBlockList : NSObject {
     CommunicationsFilterBlockListCache *_cache;
     NSObject<OS_xpc_object> *_connection;
@@ -18,7 +16,7 @@
 - (BOOL)_disconnect;
 - (void)_disconnected;
 - (id)_sendSynchronousXPCRequest:(id)arg1;
-- (void)_sendXPCRequest:(id)arg1 completionBlock:(id)arg2;
+- (void)_sendXPCRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)addItemForAllServices:(id)arg1;
 - (id)copyAllItems;
 - (void)dealloc;

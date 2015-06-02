@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface UIMenuController : NSObject <UICalloutBarDelegate> {
     int _arrowDirection;
     struct CGRect { 
@@ -18,14 +16,14 @@
     } _targetRect;
 }
 
-@property int arrowDirection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } menuFrame;
-@property(copy) NSArray * menuItems;
-@property(getter=isMenuVisible) BOOL menuVisible;
-@property(readonly) Class superclass;
+@property (nonatomic) int arrowDirection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } menuFrame;
+@property (nonatomic, copy) NSArray *menuItems;
+@property (getter=isMenuVisible, nonatomic) BOOL menuVisible;
+@property (readonly) Class superclass;
 
 + (id)sharedMenuController;
 

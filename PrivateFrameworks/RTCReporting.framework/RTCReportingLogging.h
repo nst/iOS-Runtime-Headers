@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RTCReporting.framework/RTCReporting
  */
 
-@interface RTCReportingLogging : NSObject {
-}
+@interface RTCReportingLogging : NSObject
 
 + (void)startLogging:(char *)arg1 facility:(char *)arg2;
 

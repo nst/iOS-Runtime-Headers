@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSString, TSPObjectContext, TSPPasteboardObject;
-
 @interface TSPPasteboardReadAssistant : NSObject <TSPDecoderReadCoordinatorDelegate> {
     NSDictionary *_dataInfos;
     BOOL _isCrossAppPaste;
@@ -12,12 +10,12 @@
     TSPPasteboardObject *_pasteboardObject;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) TSPObjectContext * pasteboardContext;
-@property(readonly) TSPPasteboardObject * pasteboardObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSPObjectContext *pasteboardContext;
+@property (nonatomic, readonly) TSPPasteboardObject *pasteboardObject;
+@property (readonly) Class superclass;
 
 + (id)contentDescriptionFromPasteboard:(id)arg1;
 

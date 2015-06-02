@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioIONode : AVAudioNode {
-}
+@interface AVAudioIONode : AVAudioNode
 
-@property(readonly) struct OpaqueAudioComponentInstance { }* audioUnit;
-@property(readonly) double presentationLatency;
+@property (nonatomic, readonly) struct OpaqueAudioComponentInstance { }*audioUnit;
+@property (nonatomic, readonly) double presentationLatency;
 
 - (struct OpaqueAudioComponentInstance { }*)audioUnit;
 - (double)presentationLatency;

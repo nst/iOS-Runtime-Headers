@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableDictionary, NSMutableString, NSNumber;
-
 @interface PLBBEurekaLogMsg : PLBasebandMessage {
     NSDate *_bbDate;
     NSNumber *_bbSeqNum;
@@ -16,15 +14,15 @@
     NSMutableString *_sdState;
 }
 
-@property(retain) NSDate * bbDate;
-@property(retain) NSNumber * bbSeqNum;
-@property double* bbTimeCal;
-@property(retain) NSMutableDictionary * commonInfo;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSMutableString * sdAct;
-@property(retain) NSMutableString * sdEvent;
-@property(retain) NSMutableString * sdState;
+@property (retain) NSDate *bbDate;
+@property (retain) NSNumber *bbSeqNum;
+@property double*bbTimeCal;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (nonatomic, retain) NSMutableString *sdAct;
+@property (nonatomic, retain) NSMutableString *sdEvent;
+@property (nonatomic, retain) NSMutableString *sdState;
 
 + (id)bbEuLogMsgNameICEStats;
 + (id)bbEuLogMsgNameLTESleepMgrStats;

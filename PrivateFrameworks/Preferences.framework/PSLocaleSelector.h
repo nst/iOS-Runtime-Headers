@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSLocaleSelector : NSObject {
-}
+@interface PSLocaleSelector : NSObject
 
 + (id)sharedInstance;
 

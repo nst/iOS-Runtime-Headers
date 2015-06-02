@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface _UIAsyncInvocationObserver : NSObject {
     NSObject<OS_dispatch_queue> *_postCompletionQueue;
 }
 
-+ (void)whenInvocationsCompleteForObservers:(id)arg1 do:(id)arg2;
++ (void)whenInvocationsCompleteForObservers:(id)arg1 do:(id /* block */)arg2;
 
 - (void)_didCompleteInvocation;
 - (void)dealloc;
 - (id)init;
-- (void)whenCompleteDo:(id)arg1;
+- (void)whenCompleteDo:(id /* block */)arg1;
 
 @end

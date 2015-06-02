@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class UIImageView;
-
 @interface AXHearingProgramCell : PSTableCell {
     UIImageView *_checkedView;
 }

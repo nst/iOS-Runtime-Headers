@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsDarkLow : _UIBackdropViewSettingsDark {
-}
+@interface _UIBackdropViewSettingsDarkLow : _UIBackdropViewSettingsDark
 
 - (void)setDefaultValues;
 

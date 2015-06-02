@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIImage, UIImage;
-
 @interface BLImage : NSObject <NSCopying> {
     struct CGImage { } *_CGImage;
     CIImage *_CIImage;
@@ -18,14 +16,14 @@
     int _storageType;
 }
 
-@property int askedImageType;
-@property(readonly) int imageOrientation;
-@property BOOL isPlaceholder;
-@property(readonly) unsigned int memoryUsage;
-@property int obtainedImageType;
-@property(readonly) float scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) int storageType;
+@property (nonatomic) int askedImageType;
+@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic) BOOL isPlaceholder;
+@property (nonatomic, readonly) unsigned int memoryUsage;
+@property (nonatomic) int obtainedImageType;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) int storageType;
 
 + (id)abbreviatedDescriptionWithImageType:(int)arg1;
 + (id)descriptionWithImageType:(int)arg1;

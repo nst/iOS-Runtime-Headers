@@ -9,10 +9,10 @@
     BOOL _showingConfirmation;
 }
 
-@property BOOL hasImage;
-@property BOOL highlighted;
-@property int progressType;
-@property BOOL showingConfirmation;
+@property (nonatomic) BOOL hasImage;
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) int progressType;
+@property (nonatomic) BOOL showingConfirmation;
 
 - (BOOL)hasImage;
 - (BOOL)highlighted;

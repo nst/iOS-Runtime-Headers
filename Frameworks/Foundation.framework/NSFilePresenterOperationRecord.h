@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSFilePresenterOperationRecord : NSObject {
     NSString *operationDescription;
     id reactor;
     int state;
 }
 
-@property(readonly) NSString * operationDescription;
+@property (readonly) NSString *operationDescription;
 @property id reactor;
-@property(readonly) int state;
+@property (readonly) int state;
 
 + (id)operationRecordWithDescription:(id)arg1;
 

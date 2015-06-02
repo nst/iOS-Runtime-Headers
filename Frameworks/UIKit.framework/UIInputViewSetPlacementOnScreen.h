@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement {
-}
+@interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement
 
 - (BOOL)inputViewWillAppear;
 - (BOOL)showsInputViews;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, UIImageView;
-
 @interface MPMovieTVHUDView : UIView {
     unsigned int _currentState;
     UIImageView *_playbackMode;
     MPAVController *_player;
 }
 
-@property(retain) MPAVController * player;
+@property (nonatomic, retain) MPAVController *player;
 
 - (void).cxx_destruct;
 - (void)_changeState;

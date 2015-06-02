@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIRedeemTextField : UITextField {
     BOOL _backdropBackground;
     UIView *_backdropView;
@@ -11,7 +9,7 @@
     UIView *_topBorderView;
 }
 
-@property BOOL backdropBackground;
+@property (nonatomic) BOOL backdropBackground;
 
 - (void).cxx_destruct;
 - (BOOL)backdropBackground;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardEmojiGraphics : NSObject {
-}
+@interface UIKeyboardEmojiGraphics : NSObject
 
 + (BOOL)boldText;
 + (unsigned char)colCount:(BOOL)arg1;

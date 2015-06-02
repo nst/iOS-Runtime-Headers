@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class ISLoadURLBagOperation, NSDictionary, NSNumber, NSString, SSMetricsController;
-
 @interface IKJSITunesStore : IKJSObject <IKJSITunesStore> {
     int _bagOperationLock;
     NSString *_cookieURL;
@@ -12,14 +10,14 @@
     ISLoadURLBagOperation *_pendingBagOperation;
 }
 
-@property(readonly) NSString * DSID;
-@property(readonly) NSDictionary * accountInfo;
-@property(retain) id cookie;
-@property(retain) NSString * cookieURL;
-@property(readonly) NSString * networkConnectionType;
-@property ISLoadURLBagOperation * pendingBagOperation;
-@property(retain) NSString * storefront;
-@property(readonly) NSString * userAgent;
+@property (nonatomic, readonly) NSString *DSID;
+@property (nonatomic, readonly) NSDictionary *accountInfo;
+@property (nonatomic, retain) id cookie;
+@property (nonatomic, retain) NSString *cookieURL;
+@property (nonatomic, readonly) NSString *networkConnectionType;
+@property (nonatomic) ISLoadURLBagOperation *pendingBagOperation;
+@property (nonatomic, retain) NSString *storefront;
+@property (nonatomic, readonly) NSString *userAgent;
 
 + (id)_URLBagContext;
 + (void)setHeadersForURL:(id)arg1 inRequestProperties:(id)arg2;

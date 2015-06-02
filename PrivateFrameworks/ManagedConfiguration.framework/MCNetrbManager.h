@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class RadiosPreferences;
-
 @interface MCNetrbManager : NSObject {
     BOOL _needStateUpdate;
     struct NETRBClient { } *_netClient;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHPreUFFChartNonStyleForUpgrade : TSCHPreUFFStyleStubForUpgrade {
-}
+@interface TSCHPreUFFChartNonStyleForUpgrade : TSCHPreUFFStyleStubForUpgrade
 
 + (Class)realStyleClass;
 

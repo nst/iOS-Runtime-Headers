@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate, NSNumber;
-
 @interface CMOdometerData : NSObject <NSCopying, NSSecureCoding> {
     NSNumber *_averageSpeed;
     NSNumber *_currentSpeed;
@@ -12,11 +10,11 @@
     NSDate *_startDate;
 }
 
-@property(readonly) NSNumber * averageSpeed;
-@property(readonly) NSNumber * currentSpeed;
-@property(readonly) NSNumber * distance;
-@property(readonly) NSDate * endDate;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) NSNumber *averageSpeed;
+@property (nonatomic, readonly) NSNumber *currentSpeed;
+@property (nonatomic, readonly) NSNumber *distance;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 

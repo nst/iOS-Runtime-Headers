@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition, PLNSTimerOperatorComposition, PLSemaphore, PLXPCResponderOperatorComposition;
-
 @interface PLBatteryAgent : PLAgent {
     struct __IOHIDEventSystemClient { } *_accessoryCurrentHIDRef;
     NSArray *_accessoryCurrentMatchingSensors;
@@ -23,22 +21,22 @@
     PLEntryNotificationOperatorComposition *_wakeEntryNotifications;
 }
 
-@property struct __IOHIDEventSystemClient { }* accessoryCurrentHIDRef;
-@property(retain) NSArray * accessoryCurrentMatchingSensors;
-@property struct __IOHIDEventSystemClient { }* accessoryVoltageHIDRef;
-@property(retain) NSArray * accessoryVoltageMatchingSensors;
+@property struct __IOHIDEventSystemClient { }*accessoryCurrentHIDRef;
+@property (retain) NSArray *accessoryCurrentMatchingSensors;
+@property struct __IOHIDEventSystemClient { }*accessoryVoltageHIDRef;
+@property (retain) NSArray *accessoryVoltageMatchingSensors;
 @property BOOL allowGasGaugeRead;
-@property(retain) PLXPCResponderOperatorComposition * batteryInfoResponder;
+@property (retain) PLXPCResponderOperatorComposition *batteryInfoResponder;
 @property double batteryLevelPercent;
-@property(readonly) PLEntryNotificationOperatorComposition * canSleepEntryNotifications;
-@property(retain) PLSemaphore * canSleepSemaphore;
+@property (readonly) PLEntryNotificationOperatorComposition *canSleepEntryNotifications;
+@property (retain) PLSemaphore *canSleepSemaphore;
 @property BOOL deviceIsPluggedIn;
-@property struct ggcontext { }* gasGagueConnection;
+@property struct ggcontext { }*gasGagueConnection;
 @property int gasGaugeConsecutiveEmptyEntriesCount;
-@property(retain) PLNSTimerOperatorComposition * gasGaugeTimer;
-@property(readonly) PLIOKitOperatorComposition * iokit;
+@property (retain) PLNSTimerOperatorComposition *gasGaugeTimer;
+@property (readonly) PLIOKitOperatorComposition *iokit;
 @property double rawBatteryVoltageVolt;
-@property(readonly) PLEntryNotificationOperatorComposition * wakeEntryNotifications;
+@property (readonly) PLEntryNotificationOperatorComposition *wakeEntryNotifications;
 
 + (id)defaults;
 + (id)entryEventBackwardDefinitionBattery;

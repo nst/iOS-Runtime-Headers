@@ -6,7 +6,7 @@
     struct OpaqueFigMutableComposition { } *_figMutableComposition;
 }
 
-@property(getter=_mutableComposition,readonly) struct OpaqueFigMutableComposition { }* mutableComposition;
+@property (getter=_mutableComposition, nonatomic, readonly) struct OpaqueFigMutableComposition { }*mutableComposition;
 
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;

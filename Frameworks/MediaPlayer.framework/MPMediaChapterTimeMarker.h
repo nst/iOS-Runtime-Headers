@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
-
 @interface MPMediaChapterTimeMarker : MPTimeMarker {
     unsigned int _chapterIndex;
     NSArray *_chapters;
     BOOL _hasArtworkAtPlaybackTime;
 }
 
-@property unsigned int chapterIndex;
-@property(retain) NSArray * chapters;
-@property BOOL hasArtworkAtPlaybackTime;
+@property (nonatomic) unsigned int chapterIndex;
+@property (nonatomic, retain) NSArray *chapters;
+@property (nonatomic) BOOL hasArtworkAtPlaybackTime;
 
 - (void).cxx_destruct;
 - (unsigned int)chapterIndex;

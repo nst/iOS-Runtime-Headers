@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPSearchMatcher;
-
 @interface ALCityManager : NSObject {
     CPSearchMatcher *_citySearchMatcher;
     struct sqlite3 { } *_db;
     struct sqlite3 { } *_localizedDb;
 }
 
-@property(readonly) CPSearchMatcher * citySearchMatcher;
+@property (readonly) CPSearchMatcher *citySearchMatcher;
 
 + (id)_localeDictionaryFromSQLRow:(char **)arg1;
 + (struct __CFArray { }*)legacyCityForCity:(id)arg1;

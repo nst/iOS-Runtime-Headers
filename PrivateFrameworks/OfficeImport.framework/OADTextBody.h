@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADTextBodyProperties, OADTextListStyle;
-
 @interface OADTextBody : NSObject {
     NSMutableArray *mParagraphs;
     OADTextBodyProperties *mProperties;

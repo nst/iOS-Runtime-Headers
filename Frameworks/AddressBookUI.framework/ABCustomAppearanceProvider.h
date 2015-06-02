@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABStyleProvider;
-
 @interface ABCustomAppearanceProvider : NSObject {
     ABStyleProvider *_styleProvider;
 }

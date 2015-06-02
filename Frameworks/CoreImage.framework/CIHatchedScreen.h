@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIHatchedScreen : _CIScreenFilter {
-}
+@interface CIHatchedScreen : _CIScreenFilter
 
 + (id)customAttributes;
 

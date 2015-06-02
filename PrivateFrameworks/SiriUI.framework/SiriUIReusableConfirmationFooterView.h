@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class SAUIConfirmationOptions, SiriUIKeyline, UIButton;
-
 @interface SiriUIReusableConfirmationFooterView : SiriUIReusableFooterView {
     UIButton *_cancelButton;
     UIButton *_confirmButton;
@@ -11,9 +9,9 @@
     SiriUIKeyline *_verticalKeyline;
 }
 
-@property(readonly) UIButton * cancelButton;
-@property(readonly) UIButton * confirmButton;
-@property(retain) SAUIConfirmationOptions * confirmationOptions;
+@property (nonatomic, readonly) UIButton *cancelButton;
+@property (nonatomic, readonly) UIButton *confirmButton;
+@property (nonatomic, retain) SAUIConfirmationOptions *confirmationOptions;
 
 + (float)defaultHeight;
 

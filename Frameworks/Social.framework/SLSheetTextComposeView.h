@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class UILabel, UITextView;
-
 @interface SLSheetTextComposeView : UIView {
     UILabel *_placeholderLabel;
     float _textRightInset;
     UITextView *_textView;
 }
 
-@property(retain) UILabel * placeholderLabel;
-@property float textRightInset;
-@property(retain) UITextView * textView;
+@property (nonatomic, retain) UILabel *placeholderLabel;
+@property (nonatomic) float textRightInset;
+@property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
 - (void)_assembleView;

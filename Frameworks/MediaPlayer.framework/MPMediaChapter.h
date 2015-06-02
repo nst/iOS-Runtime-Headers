@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPMediaLibraryArtworkDataSource, MPMediaLibraryArtworkRequest;
-
 @interface MPMediaChapter : NSObject {
     MPMediaLibraryArtworkDataSource *_artworkDataSource;
     MPMediaLibraryArtworkRequest *_artworkRequest;
@@ -17,22 +11,18 @@
     double _playbackDuration;
     double _playbackTime;
     id _value;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _valueLoader;
-
+    id /* block */ _valueLoader;
 }
 
-@property MPMediaLibraryArtworkDataSource * artworkDataSource;
-@property(retain) MPMediaLibraryArtworkRequest * artworkRequest;
-@property int chapterType;
-@property unsigned int indexInChaptersWithAnyType;
-@property unsigned int indexInChaptersWithSameType;
-@property double playbackDuration;
-@property double playbackTime;
-@property(retain) id value;
-@property(copy) id valueLoader;
+@property (nonatomic) MPMediaLibraryArtworkDataSource *artworkDataSource;
+@property (nonatomic, retain) MPMediaLibraryArtworkRequest *artworkRequest;
+@property (nonatomic) int chapterType;
+@property (nonatomic) unsigned int indexInChaptersWithAnyType;
+@property (nonatomic) unsigned int indexInChaptersWithSameType;
+@property (nonatomic) double playbackDuration;
+@property (nonatomic) double playbackTime;
+@property (nonatomic, retain) id value;
+@property (nonatomic, copy) id /* block */ valueLoader;
 
 - (void).cxx_destruct;
 - (int)_sortByChapterIndex:(id)arg1;
@@ -56,9 +46,9 @@
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setPlaybackTime:(double)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValueLoader:(id)arg1;
+- (void)setValueLoader:(id /* block */)arg1;
 - (id)title;
 - (id)value;
-- (id)valueLoader;
+- (id /* block */)valueLoader;
 
 @end

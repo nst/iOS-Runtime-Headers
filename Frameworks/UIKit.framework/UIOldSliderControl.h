@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIImage, UIView;
-
 @interface UIOldSliderControl : UIControl {
     float _animationEndValue;
     float _hitOffset;
@@ -40,24 +34,16 @@
         unsigned int reserved : 24; 
     } _sliderFlags;
     UIImage *_sliderLeftCap;
-
-  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
-    union { 
+    /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     } _sliderLeftFill;
-
     UIImage *_sliderLeftFillCap;
     UIImage *_sliderRightCap;
-
-  /* Error parsing encoded ivar type info: (?="image"@"UIImage""view"@"UIView") */
-    union { 
+    /* Warning: unhandled union encoding: '(?="image"@"UIImage""view"@"UIView")' */ union { 
         UIImage *image; 
         id view; 
-        /* Warning: Unrecognized filer type: ')' using 'void*' */ void*UIView; 
     } _sliderRightFill;
-
     UIImage *_sliderRightFullCap;
     float _value;
 }

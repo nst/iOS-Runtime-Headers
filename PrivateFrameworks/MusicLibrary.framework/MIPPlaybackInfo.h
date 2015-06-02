@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MIPPlaybackInfo : PBCodable <NSCopying> {
     int _beatsPerMinute;
     int _bitRate;
@@ -44,44 +42,44 @@
     long long _volumeNormalizationEnergy;
 }
 
-@property int beatsPerMinute;
-@property int bitRate;
-@property int codecSubType;
-@property int codecType;
-@property int dataKind;
-@property(retain) NSString * dataUrl;
-@property long long durationInSamples;
-@property(retain) NSString * eqPreset;
-@property long long gaplessEncodingDrainCode;
-@property long long gaplessFrameResyncCode;
-@property long long gaplessHeuristicCode;
-@property long long gaplessHeuristicDelayCode;
-@property BOOL hasBeatsPerMinute;
-@property BOOL hasBitRate;
-@property BOOL hasCodecSubType;
-@property BOOL hasCodecType;
-@property BOOL hasDataKind;
-@property(readonly) BOOL hasDataUrl;
-@property BOOL hasDurationInSamples;
-@property(readonly) BOOL hasEqPreset;
-@property BOOL hasGaplessEncodingDrainCode;
-@property BOOL hasGaplessFrameResyncCode;
-@property BOOL hasGaplessHeuristicCode;
-@property BOOL hasGaplessHeuristicDelayCode;
-@property(readonly) BOOL hasPlaybackFormat;
-@property BOOL hasProgressionDirection;
-@property BOOL hasRelativeVolume;
-@property BOOL hasSampleRate;
-@property BOOL hasStartTime;
-@property BOOL hasStopTime;
-@property BOOL hasVolumeNormalizationEnergy;
-@property(retain) NSString * playbackFormat;
-@property int progressionDirection;
-@property int relativeVolume;
-@property int sampleRate;
-@property long long startTime;
-@property long long stopTime;
-@property long long volumeNormalizationEnergy;
+@property (nonatomic) int beatsPerMinute;
+@property (nonatomic) int bitRate;
+@property (nonatomic) int codecSubType;
+@property (nonatomic) int codecType;
+@property (nonatomic) int dataKind;
+@property (nonatomic, retain) NSString *dataUrl;
+@property (nonatomic) long long durationInSamples;
+@property (nonatomic, retain) NSString *eqPreset;
+@property (nonatomic) long long gaplessEncodingDrainCode;
+@property (nonatomic) long long gaplessFrameResyncCode;
+@property (nonatomic) long long gaplessHeuristicCode;
+@property (nonatomic) long long gaplessHeuristicDelayCode;
+@property (nonatomic) BOOL hasBeatsPerMinute;
+@property (nonatomic) BOOL hasBitRate;
+@property (nonatomic) BOOL hasCodecSubType;
+@property (nonatomic) BOOL hasCodecType;
+@property (nonatomic) BOOL hasDataKind;
+@property (nonatomic, readonly) BOOL hasDataUrl;
+@property (nonatomic) BOOL hasDurationInSamples;
+@property (nonatomic, readonly) BOOL hasEqPreset;
+@property (nonatomic) BOOL hasGaplessEncodingDrainCode;
+@property (nonatomic) BOOL hasGaplessFrameResyncCode;
+@property (nonatomic) BOOL hasGaplessHeuristicCode;
+@property (nonatomic) BOOL hasGaplessHeuristicDelayCode;
+@property (nonatomic, readonly) BOOL hasPlaybackFormat;
+@property (nonatomic) BOOL hasProgressionDirection;
+@property (nonatomic) BOOL hasRelativeVolume;
+@property (nonatomic) BOOL hasSampleRate;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic) BOOL hasStopTime;
+@property (nonatomic) BOOL hasVolumeNormalizationEnergy;
+@property (nonatomic, retain) NSString *playbackFormat;
+@property (nonatomic) int progressionDirection;
+@property (nonatomic) int relativeVolume;
+@property (nonatomic) int sampleRate;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long stopTime;
+@property (nonatomic) long long volumeNormalizationEnergy;
 
 - (void).cxx_destruct;
 - (int)beatsPerMinute;

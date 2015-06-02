@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADPrerollTopBarDelegate>, ADPrerollButton, ADProgressView, UIStatusBar;
-
 @interface ADPrerollTopBar : UIView {
     <ADPrerollTopBarDelegate> *_delegate;
     ADPrerollButton *_doneButton;
@@ -14,13 +12,13 @@
     UIStatusBar *_statusBar;
 }
 
-@property <ADPrerollTopBarDelegate> * delegate;
-@property(retain) ADPrerollButton * doneButton;
-@property BOOL isFullscreen;
-@property BOOL layoutForExpandedSize;
-@property(retain) ADProgressView * progressView;
-@property(retain) ADPrerollButton * scaleToFillButton;
-@property(retain) UIStatusBar * statusBar;
+@property (nonatomic) <ADPrerollTopBarDelegate> *delegate;
+@property (nonatomic, retain) ADPrerollButton *doneButton;
+@property (nonatomic) BOOL isFullscreen;
+@property (nonatomic) BOOL layoutForExpandedSize;
+@property (nonatomic, retain) ADProgressView *progressView;
+@property (nonatomic, retain) ADPrerollButton *scaleToFillButton;
+@property (nonatomic, retain) UIStatusBar *statusBar;
 
 - (void)_doneButtonTapped:(id)arg1;
 - (void)_scaleToFillButtonTapped:(id)arg1;

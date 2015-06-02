@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libsystem_network.dylib
  */
 
-@interface OS_tcp_connection_details : OS_object {
-}
+@interface OS_tcp_connection_details : OS_object
 
 - (void)_dispose;
 

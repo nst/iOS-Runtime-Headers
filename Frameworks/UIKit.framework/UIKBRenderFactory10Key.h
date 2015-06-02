@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory10Key : UIKBRenderFactory {
-}
+@interface UIKBRenderFactory10Key : UIKBRenderFactory
 
 + (BOOL)_isActiveKeyplaneSwitchKey:(id)arg1;
 

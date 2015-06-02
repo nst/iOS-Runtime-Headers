@@ -7,8 +7,8 @@
     unsigned int _validityMask;
 }
 
-@property unsigned int style;
-@property unsigned int validityMask;
+@property (nonatomic) unsigned int style;
+@property (nonatomic) unsigned int validityMask;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

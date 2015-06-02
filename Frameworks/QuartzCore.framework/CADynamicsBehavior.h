@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray;
-
-@interface CADynamicsBehavior : CABehavior {
-}
+@interface CADynamicsBehavior : CABehavior
 
 @property float angularDrag;
 @property double collisionInterval;
 @property float drag;
-@property(copy) NSArray * forceFields;
+@property (copy) NSArray *forceFields;
 @property double minimumTimeStep;
 @property BOOL reactsToCollisions;
 @property float springScale;
-@property(copy) NSArray * springs;
+@property (copy) NSArray *springs;
 @property float stoppedAngularVelocity;
 @property float stoppedVelocity;
 @property double timeStep;

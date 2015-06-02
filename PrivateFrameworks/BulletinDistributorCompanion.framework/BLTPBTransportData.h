@@ -11,10 +11,10 @@
     unsigned long long _sequenceNumber;
 }
 
-@property BOOL hasIsInitialSequenceNumber;
-@property BOOL hasSequenceNumber;
-@property BOOL isInitialSequenceNumber;
-@property unsigned long long sequenceNumber;
+@property (nonatomic) BOOL hasIsInitialSequenceNumber;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL isInitialSequenceNumber;
+@property (nonatomic) unsigned long long sequenceNumber;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

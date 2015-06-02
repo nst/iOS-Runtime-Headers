@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface ICCameraFileProperties : NSObject {
     BOOL _burstFavorite;
     BOOL _burstPicked;
@@ -30,7 +28,7 @@
 
 @property BOOL burstFavorite;
 @property BOOL burstPicked;
-@property(retain) NSString * burstUUID;
+@property (retain) NSString *burstUUID;
 @property double duration;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
@@ -39,13 +37,13 @@
 @property BOOL hasOverriddenOrientation;
 @property BOOL hasThumbnail;
 @property BOOL highFramerate;
-@property(retain) NSMutableDictionary * metadata;
-@property(retain) NSMutableDictionary * metadata_hidden;
+@property (retain) NSMutableDictionary *metadata;
+@property (retain) NSMutableDictionary *metadata_hidden;
 @property unsigned int orientation;
-@property struct CGImage { }* originalThumbnail;
-@property(getter=isRaw) BOOL raw;
-@property(retain) NSMutableArray * sidecarFiles;
-@property struct CGImage { }* thumbnail;
+@property struct CGImage { }*originalThumbnail;
+@property (getter=isRaw) BOOL raw;
+@property (retain) NSMutableArray *sidecarFiles;
+@property struct CGImage { }*thumbnail;
 @property BOOL timeLapse;
 
 - (BOOL)burstFavorite;

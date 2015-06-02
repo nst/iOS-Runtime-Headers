@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKPlayerPickerInfo, UIImageView, UILabel;
-
 @interface GKPlayerPickerCell : GKBasePlayerCell {
     UILabel *_infoLabel;
     GKPlayerPickerInfo *_pickerInfo;
@@ -12,11 +10,11 @@
     UILabel *_statusLabel;
 }
 
-@property(retain) UILabel * infoLabel;
-@property(retain) GKPlayerPickerInfo * pickerInfo;
-@property unsigned int selectionStatus;
-@property(retain) UIImageView * selectionView;
-@property(retain) UILabel * statusLabel;
+@property (nonatomic, retain) UILabel *infoLabel;
+@property (nonatomic, retain) GKPlayerPickerInfo *pickerInfo;
+@property (nonatomic) unsigned int selectionStatus;
+@property (nonatomic, retain) UIImageView *selectionView;
+@property (nonatomic, retain) UILabel *statusLabel;
 
 + (Class)cellClassForPickerInfo:(id)arg1;
 + (void)registerCellClassesWithCollectionView:(id)arg1;

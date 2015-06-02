@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSCondition, NSMutableArray;
-
 @interface OITSUDateParserLibrary : NSObject {
     NSMutableArray *mAvailableDateParsers;
     unsigned int mMaxPermittedParsers;

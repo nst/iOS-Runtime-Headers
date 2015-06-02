@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBBulletin;
-
 @interface BBSyncDelayedDismissal : NSObject {
     BBBulletin *_bulletin;
     unsigned int _feeds;
 }
 
-@property(retain) BBBulletin * bulletin;
-@property unsigned int feeds;
+@property (nonatomic, retain) BBBulletin *bulletin;
+@property (nonatomic) unsigned int feeds;
 
 - (id)bulletin;
 - (void)dealloc;

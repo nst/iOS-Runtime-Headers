@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class GraphRenderOperation, LineGraphView, NSArray, NSMutableArray, StockChartData, StockChartDisplayMode, UIView<StockGraphViewContainer>, VolumeGraphView;
-
 @interface StockGraphView : UIView <GraphRenderOperationDelegate> {
     StockChartData *_chartData;
     UIView<StockGraphViewContainer> *_chartViewDelegate;
@@ -34,11 +32,11 @@
     VolumeGraphView *_volumeView;
 }
 
-@property UIView<StockGraphViewContainer> * chartViewDelegate;
-@property(retain) StockChartDisplayMode * displayMode;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
-@property(readonly) BOOL isRendered;
-@property(readonly) BOOL isRendering;
+@property (nonatomic) UIView<StockGraphViewContainer> *chartViewDelegate;
+@property (nonatomic, retain) StockChartDisplayMode *displayMode;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
+@property (nonatomic, readonly) BOOL isRendered;
+@property (nonatomic, readonly) BOOL isRendering;
 
 - (void).cxx_destruct;
 - (void)_finishCurrentLine;

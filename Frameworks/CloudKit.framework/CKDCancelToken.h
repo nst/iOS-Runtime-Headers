@@ -2,25 +2,17 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CKDCancelToken : NSObject <CKDCancelling> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelAction;
-
+    id /* block */ _cancelAction;
     BOOL _isCancelled;
 }
 
-@property(copy) id cancelAction;
+@property (nonatomic, copy) id /* block */ cancelAction;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)cancelAction;
+- (id /* block */)cancelAction;
 - (BOOL)isCancelled;
-- (void)setCancelAction:(id)arg1;
+- (void)setCancelAction:(id /* block */)arg1;
 
 @end

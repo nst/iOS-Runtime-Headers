@@ -15,14 +15,14 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int fetchLimit;
-@property BOOL hasFetchLimit;
-@property BOOL hasSchema;
-@property BOOL hasSize;
-@property BOOL hasTimestamp;
-@property unsigned int schema;
-@property unsigned int size;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int fetchLimit;
+@property (nonatomic) BOOL hasFetchLimit;
+@property (nonatomic) BOOL hasSchema;
+@property (nonatomic) BOOL hasSize;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int schema;
+@property (nonatomic) unsigned int size;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

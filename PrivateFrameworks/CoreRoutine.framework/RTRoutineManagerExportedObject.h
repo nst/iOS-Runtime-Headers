@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSString, RTRoutineManager;
-
 @interface RTRoutineManagerExportedObject : NSObject <RTFrameworkProtocol> {
     RTRoutineManager *_routineManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property RTRoutineManager * routineManager;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) RTRoutineManager *routineManager;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithRoutineManager:(id)arg1;

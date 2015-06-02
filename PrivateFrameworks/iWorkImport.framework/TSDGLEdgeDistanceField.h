@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLState;
-
 @interface TSDGLEdgeDistanceField : NSObject {
     TSDGLState *_GLState;
     float _downsampleScale;
@@ -16,7 +14,7 @@
     TSDGLFrameBuffer *_exteriorFramebuffer;
     unsigned int _inputTexture;
     TSDGLFrameBuffer *_interiorFramebuffer;
-    int _oldViewport[4];
+    int _oldViewport;
     TSDGLDataBuffer *_origDataBuffer;
     TSDGLDataBuffer *_rectDataBuffer;
     struct CGSize { 

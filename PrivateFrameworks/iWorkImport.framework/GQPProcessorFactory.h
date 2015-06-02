@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQPProcessorFactory : NSObject {
-}
+@interface GQPProcessorFactory : NSObject
 
 + (int)applicationForDocumentUti:(struct __CFString { }*)arg1;
 + (struct __CFString { }*)createUtiForDocument:(struct __CFString { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIOverFullscreenPresentationController : _UIFullscreenPresentationController {
-}
+@interface _UIOverFullscreenPresentationController : _UIFullscreenPresentationController
 
 - (BOOL)_shouldChangeStatusBarViewController;
 - (int)presentationStyle;

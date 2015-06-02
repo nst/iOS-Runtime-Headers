@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSMutableArray, NSString, UITableView;
-
 @interface MPUTableViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, MPUActionTableViewDataSource, UITableViewDelegate> {
     Class _cellConfigurationClass;
     BOOL _hasAppearedOnce;
@@ -14,15 +12,15 @@
     NSMutableArray *_visibleActionRows;
 }
 
-@property(readonly) Class cellConfigurationClass;
-@property(readonly) struct CGPoint { float x1; float x2; } contentOffsetRevealingFirstDataSourceSection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL shouldDeselectImmediately;
-@property(readonly) BOOL shouldScrollToFirstDataSourceSectionOnInitialAppearance;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (nonatomic, readonly) Class cellConfigurationClass;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffsetRevealingFirstDataSourceSection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL shouldDeselectImmediately;
+@property (nonatomic, readonly) BOOL shouldScrollToFirstDataSourceSectionOnInitialAppearance;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 + (Class)_tableViewClass;
 + (id)actionCellConfigurationClasses;

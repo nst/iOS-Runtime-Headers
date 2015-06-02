@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDHealthDaemon>, HDLastIntervalInfo, NSArray, NSDictionary, NSMutableArray;
-
 @interface HDCumulativeCollectionCalculator : NSObject {
     unsigned int _bucketIndex;
     NSArray *_bucketPeriods;
@@ -60,21 +58,21 @@
     NSArray *_orderedSourceIds;
 }
 
-@property unsigned int bucketIndex;
-@property(retain) NSArray * bucketPeriods;
-@property unsigned int currPeriod;
-@property long long currentAligned;
-@property(retain) <HDHealthDaemon> * daemon;
-@property unsigned int dataCount;
-@property BOOL detailBySource;
-@property(retain) NSMutableArray * futureBuckets;
-@property(retain) NSMutableArray * futureCounts;
-@property(retain) NSMutableArray * futureIntervals;
-@property BOOL lastBucket;
-@property(readonly) HDLastIntervalInfo * lastIntervalInfo;
-@property unsigned int mergeStrategy;
-@property(retain) NSArray * orderedSourceIds;
-@property(readonly) NSDictionary * sumsBySource;
+@property (nonatomic) unsigned int bucketIndex;
+@property (nonatomic, retain) NSArray *bucketPeriods;
+@property (nonatomic) unsigned int currPeriod;
+@property (nonatomic) long long currentAligned;
+@property (nonatomic, retain) <HDHealthDaemon> *daemon;
+@property (nonatomic) unsigned int dataCount;
+@property (nonatomic) BOOL detailBySource;
+@property (nonatomic, retain) NSMutableArray *futureBuckets;
+@property (nonatomic, retain) NSMutableArray *futureCounts;
+@property (nonatomic, retain) NSMutableArray *futureIntervals;
+@property (nonatomic) BOOL lastBucket;
+@property (nonatomic, readonly) HDLastIntervalInfo *lastIntervalInfo;
+@property (nonatomic) unsigned int mergeStrategy;
+@property (nonatomic, retain) NSArray *orderedSourceIds;
+@property (nonatomic, readonly) NSDictionary *sumsBySource;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

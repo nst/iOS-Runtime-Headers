@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBUIButton, UIButton, UILabel, UIView;
-
 @interface SBUILongNumericPasscodeEntryField : SBUINumericPasscodeEntryFieldBase {
     BOOL _firstResponder;
     UIView *_leftPaddingView;
@@ -16,12 +14,12 @@
     UIView *_springViewParent;
 }
 
-@property(readonly) UIButton * okButton;
-@property(readonly) UILabel * promptLabel;
-@property BOOL showsOkButton;
-@property BOOL showsPromptLabel;
+@property (nonatomic, readonly) UIButton *okButton;
+@property (nonatomic, readonly) UILabel *promptLabel;
+@property (nonatomic) BOOL showsOkButton;
+@property (nonatomic) BOOL showsPromptLabel;
 
-- (void)_autofillForMesaWithCompletion:(id)arg1;
+- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_getPasscodeFieldSize:(struct CGSize { float x1; float x2; }*)arg1 okButtonSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (void)_okButtonHit;

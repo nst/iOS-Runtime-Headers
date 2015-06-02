@@ -2,13 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface CASpringAnimation : CABasicAnimation {
-}
+@interface CASpringAnimation : CABasicAnimation
 
 @property float damping;
 @property float mass;

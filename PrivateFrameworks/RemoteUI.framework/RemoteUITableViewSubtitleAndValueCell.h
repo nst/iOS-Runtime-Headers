@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class UILabel;
-
 @interface RemoteUITableViewSubtitleAndValueCell : RemoteUITableViewCell {
     UILabel *_valueLabel;
 }
 
-@property(readonly) UILabel * valueLabel;
+@property (nonatomic, readonly) UILabel *valueLabel;
 
 - (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

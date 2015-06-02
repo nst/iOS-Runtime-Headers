@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSISInlineStorageVariable : NSISVariable <NSISVariableDelegate> {
     NSString *_name;
     BOOL _shouldBeMinimized;
     int _valueRestriction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *name;
 @property BOOL shouldBeMinimized;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 @property int valueRestriction;
 
 - (oneway void)dealloc;

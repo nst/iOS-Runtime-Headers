@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <NSObject><NSCopying>, AVWeakReference, NSLocale, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVChapterMetadataItemInternal : NSObject {
     NSString *chapterDataType;
     long chapterGroupIndex;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UIImage, UIImageView, UILabel;
-
 @interface SKUILockupSwooshCellLayout : SKUIItemCellLayout {
     UILabel *_artistNameLabel;
     UILabel *_categoryLabel;
@@ -27,15 +25,15 @@
     unsigned int _visibleFields;
 }
 
-@property(copy) NSString * artistName;
-@property(copy) NSString * category;
-@property(copy) NSString * itemCountString;
-@property struct CGSize { float x1; float x2; } maxImageSize;
-@property(copy) NSString * price;
-@property(copy) NSString * title;
-@property struct CGSize { float x1; float x2; } videoSize;
-@property(retain) UIImage * videoThumbnailImage;
-@property unsigned int visibleFields;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSString *itemCountString;
+@property (nonatomic) struct CGSize { float x1; float x2; } maxImageSize;
+@property (nonatomic, copy) NSString *price;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) struct CGSize { float x1; float x2; } videoSize;
+@property (nonatomic, retain) UIImage *videoThumbnailImage;
+@property (nonatomic) unsigned int visibleFields;
 
 - (void).cxx_destruct;
 - (void)_layoutFieldsHorizontal;

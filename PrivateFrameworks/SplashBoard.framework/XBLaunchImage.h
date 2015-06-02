@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBLaunchImage : UIImage {
-}
+@interface XBLaunchImage : UIImage
 
 @end

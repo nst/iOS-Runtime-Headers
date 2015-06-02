@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIAcePronunciationItem : AceObject <SAAceSerializable>
 
-@interface SAUIAcePronunciationItem : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSArray * commands;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(copy) NSString * tts;
+@property (nonatomic, copy) NSArray *commands;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *tts;
 
 + (id)acePronunciationItem;
 + (id)acePronunciationItemWithDictionary:(id)arg1 context:(id)arg2;

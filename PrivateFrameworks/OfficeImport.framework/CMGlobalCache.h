@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMGlobalCache : NSObject {
-}
+@interface CMGlobalCache : NSObject
 
 + (id)borderStyleCache;
 + (id)borderWidthCache;

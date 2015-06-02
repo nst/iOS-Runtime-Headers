@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class NSMutableDictionary;
-
 @interface BudgetPool : NSObject <DuetLoggerProtocol> {
     int budgetMode;
     long long currentGlobalPool;

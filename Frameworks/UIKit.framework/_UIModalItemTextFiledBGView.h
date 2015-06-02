@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
-
 @interface _UIModalItemTextFiledBGView : _UITextFieldRoundedRectBackgroundViewNeue {
     UIColor *_backgroundColor;
     UIView *_separatorView;
@@ -11,9 +9,9 @@
     int _textFieldsCount;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) UIColor * separatorsColor;
-@property int textFieldsCount;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIColor *separatorsColor;
+@property (nonatomic) int textFieldsCount;
 
 - (id)backgroundColor;
 - (void)dealloc;

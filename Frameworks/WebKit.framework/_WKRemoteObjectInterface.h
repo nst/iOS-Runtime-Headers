@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, Protocol;
-
 @interface _WKRemoteObjectInterface : NSObject {
     struct HashMap<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow>, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow> > > { 
         struct HashTable<SEL *, WTF::KeyValuePair<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow> > >, WTF::PtrHash<SEL *>, WTF::HashMap<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow>, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow> > >::KeyValuePairTraits, WTF::HashTraits<SEL *> > { 
@@ -18,8 +16,8 @@
     Protocol *_protocol;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) Protocol * protocol;
+@property (readonly) NSString *identifier;
+@property (readonly) Protocol *protocol;
 
 + (id)remoteObjectInterfaceWithProtocol:(id)arg1;
 

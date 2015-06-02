@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SARadarGetAceRadarDetails : SABaseClientBoundCommand {
-}
+@interface SARadarGetAceRadarDetails : SABaseClientBoundCommand
 
 + (id)getAceRadarDetails;
 + (id)getAceRadarDetailsWithDictionary:(id)arg1 context:(id)arg2;

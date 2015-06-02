@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSString, PUActivityItemSource;
-
 @interface _PUActivityItemSourceOperation : NSOperation {
     BOOL __pu_cancelled;
     NSString *_activityType;
@@ -11,9 +9,9 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(getter=_pu_isCancelled,setter=_pu_setCancelled:) BOOL _pu_cancelled;
-@property(getter=pu_isCancelled,readonly) BOOL pu_cancelled;
-@property(readonly) NSObject<OS_dispatch_semaphore> * semaphore;
+@property (getter=_pu_isCancelled, setter=_pu_setCancelled:) BOOL _pu_cancelled;
+@property (getter=pu_isCancelled, readonly) BOOL pu_cancelled;
+@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 
 - (void).cxx_destruct;
 - (BOOL)_pu_isCancelled;

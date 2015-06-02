@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSDate, NSString;
-
 @interface BSTransactionAuditHistoryItem : NSObject {
     NSString *_category;
     NSDate *_date;

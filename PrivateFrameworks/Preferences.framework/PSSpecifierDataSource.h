@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableArray, NSMutableSet, NSString;
-
 @interface PSSpecifierDataSource : NSObject <PSSpecifierDataSource> {
     NSMutableSet *_observerRefs;
     NSMutableArray *_specifiers;
     BOOL _specifiersLoaded;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSMutableArray * specifiers;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSMutableArray *specifiers;
+@property (readonly) Class superclass;
 
 + (id)loadSpecifiersFromPlist:(id)arg1 inBundle:(id)arg2 target:(id)arg3 stringsTable:(id)arg4;
 + (id)sharedInstance;
@@ -24,14 +22,14 @@
 - (void)addObserver:(id)arg1;
 - (BOOL)areSpecifiersLoaded;
 - (void)dealloc;
-- (void)enumerateObserversOfClass:(Class)arg1 usingBlock:(id)arg2;
-- (void)enumerateObserversUsingBlock:(id)arg1;
+- (void)enumerateObserversOfClass:(Class)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateObserversUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (void)loadSpecifiers;
 - (id)observers;
 - (id)observersOfClass:(Class)arg1;
 - (void)performUpdates:(id)arg1;
-- (void)performUpdatesAnimated:(BOOL)arg1 usingBlock:(id)arg2;
+- (void)performUpdatesAnimated:(BOOL)arg1 usingBlock:(id /* block */)arg2;
 - (id)readPreferenceValue:(id)arg1;
 - (void)reloadSpecifiers;
 - (void)removeObserver:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary;
-
 @interface IMDAccountController : NSObject {
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_activeAccounts;
@@ -11,13 +9,13 @@
     BOOL _isLoading;
 }
 
-@property(readonly) NSArray * accounts;
-@property(readonly) NSArray * activeAccounts;
-@property(readonly) NSArray * activeSessions;
-@property(readonly) NSArray * connectedAccounts;
-@property(readonly) NSArray * connectingAccounts;
-@property(readonly) BOOL isLoading;
-@property(readonly) NSDictionary * loadOldStatusStore;
+@property (nonatomic, readonly) NSArray *accounts;
+@property (nonatomic, readonly) NSArray *activeAccounts;
+@property (nonatomic, readonly) NSArray *activeSessions;
+@property (nonatomic, readonly) NSArray *connectedAccounts;
+@property (nonatomic, readonly) NSArray *connectingAccounts;
+@property (nonatomic, readonly) BOOL isLoading;
+@property (nonatomic, readonly) NSDictionary *loadOldStatusStore;
 
 + (id)sharedAccountController;
 + (id)sharedInstance;

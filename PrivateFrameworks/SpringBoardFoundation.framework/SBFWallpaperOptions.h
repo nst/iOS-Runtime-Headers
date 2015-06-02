@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString;
-
 @interface SBFWallpaperOptions : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -22,13 +20,13 @@
     float _zoomScale;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
-@property(readonly) BOOL isPortrait;
-@property(copy,readonly) NSString * name;
-@property(readonly) BOOL parallaxEnabled;
-@property(readonly) float parallaxFactor;
-@property(readonly) BOOL supportsCropping;
-@property(readonly) float zoomScale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) BOOL isPortrait;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) BOOL parallaxEnabled;
+@property (nonatomic, readonly) float parallaxFactor;
+@property (nonatomic, readonly) BOOL supportsCropping;
+@property (nonatomic, readonly) float zoomScale;
 
 + (id)optionsWithName:(id)arg1 parallaxFactor:(float)arg2 zoomScale:(float)arg3 supportsCropping:(BOOL)arg4 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 portrait:(BOOL)arg6;
 

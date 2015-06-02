@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class _NMRCommandOptionsProtobuf;
-
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying> {
     int _command;
     struct { 
@@ -14,12 +12,12 @@
     double _timestamp;
 }
 
-@property int command;
-@property BOOL hasCommand;
-@property(readonly) BOOL hasOptions;
-@property BOOL hasTimestamp;
-@property(retain) _NMRCommandOptionsProtobuf * options;
-@property double timestamp;
+@property (nonatomic) int command;
+@property (nonatomic) BOOL hasCommand;
+@property (nonatomic, readonly) BOOL hasOptions;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) _NMRCommandOptionsProtobuf *options;
+@property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
 - (int)command;

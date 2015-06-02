@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface UIKBGradient : NSObject <NSCopying> {
     NSArray *_colors;
     BOOL _didQueryRGBColors;
@@ -17,9 +15,9 @@
     BOOL _usesRGBColors;
 }
 
-@property BOOL horizontal;
-@property float opacity;
-@property(readonly) BOOL usesRGBColors;
+@property (nonatomic) BOOL horizontal;
+@property (nonatomic) float opacity;
+@property (nonatomic, readonly) BOOL usesRGBColors;
 
 + (id)gradientWith3Colors:(id)arg1 middleLocation:(float)arg2;
 + (id)gradientWithFlatColor:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class CNFRegShadowView, UIImage;
-
 @interface CNFRegEditableTableCell : PSEditableTableCell {
     UIImage *_customCheckmarkImage;
     UIImage *_customCheckmarkImageSelected;
@@ -17,11 +15,11 @@
     BOOL _textFieldIsEmpty;
 }
 
-@property(retain) UIImage * customCheckmarkImage;
-@property(retain) UIImage * customCheckmarkImageSelected;
-@property(retain) UIImage * shadowImage;
-@property(retain) CNFRegShadowView * shadowView;
-@property BOOL skipDelegateCallback;
+@property (nonatomic, retain) UIImage *customCheckmarkImage;
+@property (nonatomic, retain) UIImage *customCheckmarkImageSelected;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (nonatomic, retain) CNFRegShadowView *shadowView;
+@property (nonatomic) BOOL skipDelegateCallback;
 
 - (void)_handleTextChanged;
 - (void)_startListeningForTextChanges;

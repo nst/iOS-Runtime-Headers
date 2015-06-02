@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <NSObject><NSCopying>, NSDictionary, NSLocale, NSString;
-
 @interface AVMetadataItemInternal : NSObject {
     NSString *commonKey;
     NSString *dataType;

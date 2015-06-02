@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, PKPassLibrary;
-
 @interface SUScriptPassbookLibrary : SUScriptObject {
     PKPassLibrary *_passLibrary;
 }
 
-@property(readonly) NSArray * passes;
+@property (readonly) NSArray *passes;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

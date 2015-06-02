@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CADisplayLink, NSObject<OS_dispatch_queue>;
-
 @interface SCNDisplayLink : NSObject {
     BOOL _asynchronous;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     CADisplayLink *_caDisplayLink;
     int _frameInterval;
     BOOL _invalidated;
@@ -26,8 +16,8 @@
     id _reserved;
 }
 
-@property int frameInterval;
-@property(getter=isPaused) BOOL paused;
+@property (nonatomic) int frameInterval;
+@property (getter=isPaused, nonatomic) BOOL paused;
 
 - (void)_caDisplayLinkCallback;
 - (void)_callbackWithTime:(double)arg1 andDeltaTime:(double)arg2;
@@ -38,7 +28,7 @@
 - (void)dealloc;
 - (int)frameInterval;
 - (id)init;
-- (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id)arg3;
+- (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
 - (void)invalidate;
 - (BOOL)isPaused;
 - (int)queuedFrameCount;

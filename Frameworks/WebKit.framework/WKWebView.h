@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKHistoryDelegatePrivate>, <WKNavigationDelegate>, <WKUIDelegate>, <_WKFindDelegate>, <_WKFormDelegate>, NSArray, NSData, NSString, NSURL, UIScrollView, WKBackForwardList, WKBrowsingContextHandle, WKWebViewConfiguration, _WKSessionState, _WKWebViewPrintFormatter;
-
 @interface WKWebView : UIView <UIScrollViewDelegate> {
     BOOL _allowsBackForwardNavigationGestures;
     struct RetainPtr<WKWebViewConfiguration> { 
@@ -32,7 +30,7 @@
     } _exposedRectToRestore;
     unsigned long long _firstPaintAfterCommitLoadTransactionID;
     unsigned long long _firstTransactionIDAfterPageRestore;
-    struct WeakObjCPtr<id<_WKFormDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<_WKFormDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<_WKFormDelegate> > { 
         id m_weakReference; 
     } _formDelegate;
     struct unique_ptr<WebKit::ViewGestureController, std::__1::default_delete<WebKit::ViewGestureController> > { 
@@ -141,66 +139,66 @@
     float _viewportMetaTagWidth;
 }
 
-@property <WKUIDelegate> * UIDelegate;
-@property(copy,readonly) NSURL * URL;
-@property(readonly) NSString * _MIMEType;
-@property(setter=_setAddsVisitedLinks:) BOOL _addsVisitedLinks;
-@property(setter=_setAllowsRemoteInspection:) BOOL _allowsRemoteInspection;
-@property(setter=_setApplicationNameForUserAgent:,copy) NSString * _applicationNameForUserAgent;
-@property(setter=_setBackgroundExtendsBeyondPage:) BOOL _backgroundExtendsBeyondPage;
-@property(readonly) NSArray * _certificateChain;
-@property(readonly) NSURL * _committedURL;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _computedContentInset;
-@property(setter=_setCustomUserAgent:,copy) NSString * _customUserAgent;
-@property(readonly) NSData * _dataForDisplayedPDF;
-@property(getter=_isDisplayingPDF,readonly) BOOL _displayingPDF;
-@property(getter=_isDisplayingStandaloneImageDocument,readonly) BOOL _displayingStandaloneImageDocument;
-@property(setter=_setFindDelegate:) <_WKFindDelegate> * _findDelegate;
-@property(setter=_setFormDelegate:) <_WKFormDelegate> * _formDelegate;
-@property(setter=_setGapBetweenPages:) float _gapBetweenPages;
-@property(readonly) WKBrowsingContextHandle * _handle;
-@property(setter=_setHistoryDelegate:) <WKHistoryDelegatePrivate> * _historyDelegate;
-@property(setter=_setInterfaceOrientationOverride:) int _interfaceOrientationOverride;
-@property(setter=_setMaximumUnobscuredSizeOverride:) struct CGSize { float x1; float x2; } _maximumUnobscuredSizeOverride;
-@property(setter=_setMinimumLayoutSizeOverride:) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverride;
-@property(setter=_setMinimumLayoutSizeOverrideForMinimalUI:) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverrideForMinimalUI;
-@property(readonly) BOOL _networkRequestsInProgress;
-@property(setter=_setObscuredInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _obscuredInsets;
-@property(setter=_setObservedRenderingProgressEvents:) unsigned int _observedRenderingProgressEvents;
-@property(readonly) unsigned int _pageCount;
-@property(setter=_setPageLength:) float _pageLength;
-@property(setter=_setPageZoomFactor:) double _pageZoomFactor;
-@property(setter=_setPaginationBehavesLikeColumns:) BOOL _paginationBehavesLikeColumns;
-@property(setter=_setPaginationMode:) int _paginationMode;
-@property(setter=_setPrintedDocument:) struct CGPDFDocument { }* _printedDocument;
-@property(readonly) id _remoteObjectRegistry;
-@property(readonly) _WKSessionState * _sessionState;
-@property(readonly) NSData * _sessionStateData;
-@property(getter=_isShowingNavigationGestureSnapshot,readonly) BOOL _showingNavigationGestureSnapshot;
-@property(readonly) NSString * _suggestedFilenameForDisplayedPDF;
-@property(readonly) BOOL _supportsTextZoom;
-@property(setter=_setTextZoomFactor:) double _textZoomFactor;
-@property(readonly) NSURL * _unreachableURL;
-@property(readonly) BOOL _usesMinimalUI;
-@property(setter=_setUsesMinimalUI:) BOOL _usesMinimalUI;
-@property(readonly) float _viewportMetaTagWidth;
-@property(readonly) int _webProcessIdentifier;
-@property(readonly) _WKWebViewPrintFormatter * _webViewPrintFormatter;
-@property BOOL allowsBackForwardNavigationGestures;
-@property(readonly) WKBackForwardList * backForwardList;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
-@property(copy,readonly) WKWebViewConfiguration * configuration;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double estimatedProgress;
-@property(readonly) BOOL hasOnlySecureContent;
-@property(readonly) unsigned int hash;
-@property(getter=isLoading,readonly) BOOL loading;
-@property <WKNavigationDelegate> * navigationDelegate;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * title;
+@property (nonatomic) <WKUIDelegate> *UIDelegate;
+@property (nonatomic, readonly, copy) NSURL *URL;
+@property (nonatomic, readonly) NSString *_MIMEType;
+@property (setter=_setAddsVisitedLinks:, nonatomic) BOOL _addsVisitedLinks;
+@property (setter=_setAllowsRemoteInspection:, nonatomic) BOOL _allowsRemoteInspection;
+@property (setter=_setApplicationNameForUserAgent:, copy) NSString *_applicationNameForUserAgent;
+@property (setter=_setBackgroundExtendsBeyondPage:, nonatomic) BOOL _backgroundExtendsBeyondPage;
+@property (nonatomic, readonly) NSArray *_certificateChain;
+@property (nonatomic, readonly) NSURL *_committedURL;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _computedContentInset;
+@property (setter=_setCustomUserAgent:, copy) NSString *_customUserAgent;
+@property (nonatomic, readonly) NSData *_dataForDisplayedPDF;
+@property (getter=_isDisplayingPDF, nonatomic, readonly) BOOL _displayingPDF;
+@property (getter=_isDisplayingStandaloneImageDocument, nonatomic, readonly) BOOL _displayingStandaloneImageDocument;
+@property (setter=_setFindDelegate:, nonatomic) <_WKFindDelegate> *_findDelegate;
+@property (setter=_setFormDelegate:, nonatomic) <_WKFormDelegate> *_formDelegate;
+@property (setter=_setGapBetweenPages:, nonatomic) float _gapBetweenPages;
+@property (nonatomic, readonly) WKBrowsingContextHandle *_handle;
+@property (setter=_setHistoryDelegate:, nonatomic) <WKHistoryDelegatePrivate> *_historyDelegate;
+@property (setter=_setInterfaceOrientationOverride:, nonatomic) int _interfaceOrientationOverride;
+@property (setter=_setMaximumUnobscuredSizeOverride:, nonatomic) struct CGSize { float x1; float x2; } _maximumUnobscuredSizeOverride;
+@property (setter=_setMinimumLayoutSizeOverride:, nonatomic) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverride;
+@property (setter=_setMinimumLayoutSizeOverrideForMinimalUI:, nonatomic) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverrideForMinimalUI;
+@property (nonatomic, readonly) BOOL _networkRequestsInProgress;
+@property (setter=_setObscuredInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _obscuredInsets;
+@property (setter=_setObservedRenderingProgressEvents:, nonatomic) unsigned int _observedRenderingProgressEvents;
+@property (readonly) unsigned int _pageCount;
+@property (setter=_setPageLength:, nonatomic) float _pageLength;
+@property (setter=_setPageZoomFactor:, nonatomic) double _pageZoomFactor;
+@property (setter=_setPaginationBehavesLikeColumns:, nonatomic) BOOL _paginationBehavesLikeColumns;
+@property (setter=_setPaginationMode:, nonatomic) int _paginationMode;
+@property (setter=_setPrintedDocument:, nonatomic) struct CGPDFDocument { }*_printedDocument;
+@property (nonatomic, readonly) id _remoteObjectRegistry;
+@property (nonatomic, readonly) _WKSessionState *_sessionState;
+@property (nonatomic, readonly) NSData *_sessionStateData;
+@property (getter=_isShowingNavigationGestureSnapshot, nonatomic, readonly) BOOL _showingNavigationGestureSnapshot;
+@property (nonatomic, readonly) NSString *_suggestedFilenameForDisplayedPDF;
+@property (nonatomic, readonly) BOOL _supportsTextZoom;
+@property (setter=_setTextZoomFactor:, nonatomic) double _textZoomFactor;
+@property (nonatomic, readonly) NSURL *_unreachableURL;
+@property (nonatomic, readonly) BOOL _usesMinimalUI;
+@property (setter=_setUsesMinimalUI:, nonatomic) BOOL _usesMinimalUI;
+@property (nonatomic, readonly) float _viewportMetaTagWidth;
+@property (nonatomic, readonly) int _webProcessIdentifier;
+@property (nonatomic, readonly) _WKWebViewPrintFormatter *_webViewPrintFormatter;
+@property (nonatomic) BOOL allowsBackForwardNavigationGestures;
+@property (nonatomic, readonly) WKBackForwardList *backForwardList;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic, readonly, copy) WKWebViewConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double estimatedProgress;
+@property (nonatomic, readonly) BOOL hasOnlySecureContent;
+@property (readonly) unsigned int hash;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic) <WKNavigationDelegate> *navigationDelegate;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -212,7 +210,7 @@
 - (BOOL)_allowsRemoteInspection;
 - (id)_applicationNameForUserAgent;
 - (BOOL)_backgroundExtendsBeyondPage;
-- (void)_beginAnimatedResizeWithUpdates:(id)arg1;
+- (void)_beginAnimatedResizeWithUpdates:(id /* block */)arg1;
 - (void)_beginInteractiveObscuredInsetsChange;
 - (id)_certificateChain;
 - (void)_close;
@@ -242,8 +240,8 @@
 - (id)_formDelegate;
 - (void)_frameOrBoundsChanged;
 - (float)_gapBetweenPages;
-- (void)_getMainResourceDataWithCompletionHandler:(id)arg1;
-- (void)_getWebArchiveDataWithCompletionHandler:(id)arg1;
+- (void)_getMainResourceDataWithCompletionHandler:(id /* block */)arg1;
+- (void)_getWebArchiveDataWithCompletionHandler:(id /* block */)arg1;
 - (id)_handle;
 - (void)_hideFindUI;
 - (id)_historyDelegate;
@@ -274,7 +272,7 @@
 - (struct CGPDFDocument { }*)_printedDocument;
 - (void)_processDidExit;
 - (id)_remoteObjectRegistry;
-- (void)_resizeWhileHidingContentWithUpdates:(id)arg1;
+- (void)_resizeWhileHidingContentWithUpdates:(id /* block */)arg1;
 - (void)_restoreFromSessionStateData:(id)arg1;
 - (void)_restorePageStateToExposedRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scale:(double)arg2;
 - (void)_restorePageStateToUnobscuredCenter:(struct FloatPoint { float x1; float x2; })arg1 scale:(double)arg2;
@@ -309,7 +307,7 @@
 - (void)_setTextZoomFactor:(double)arg1;
 - (void)_setUsesMinimalUI:(BOOL)arg1;
 - (void)_setViewportMetaTagWidth:(float)arg1;
-- (void)_snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id)arg3;
+- (void)_snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id /* block */)arg3;
 - (id)_suggestedFilenameForDisplayedPDF;
 - (BOOL)_supportsTextZoom;
 - (struct PassRefPtr<WebKit::ViewSnapshot> { struct ViewSnapshot {} *x1; })_takeViewSnapshot;
@@ -338,7 +336,7 @@
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (double)estimatedProgress;
-- (void)evaluateJavaScript:(id)arg1 completionHandler:(id)arg2;
+- (void)evaluateJavaScript:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)goBack;
 - (id)goForward;
 - (id)goToBackForwardListItem:(id)arg1;

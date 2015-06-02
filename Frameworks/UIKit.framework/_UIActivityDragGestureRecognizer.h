@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIAutoscroll, UIScrollView;
-
 @interface _UIActivityDragGestureRecognizer : UILongPressGestureRecognizer <UIAutoscrollDelegate, _UIScrollNotification> {
     UIAutoscroll *_autoscroll;
     struct UIEdgeInsets { 
@@ -15,13 +13,13 @@
     UIScrollView *_targetScrollView;
 }
 
-@property(retain) UIAutoscroll * autoscroll;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } draggingInsets;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) UIScrollView * targetScrollView;
+@property (nonatomic, retain) UIAutoscroll *autoscroll;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } draggingInsets;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIScrollView *targetScrollView;
 
 - (void)_didScroll;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;

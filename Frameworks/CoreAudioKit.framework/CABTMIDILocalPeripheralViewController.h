@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class AMSBTLEAdvertisementManager, NSString, NSTimer, UIActivityIndicatorView, UITextField;
-
 @interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     int advertiseTimeout;
     NSTimer *advertiseTimer;
@@ -18,17 +16,17 @@
     NSString *theServiceName;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)activateController:(id)arg1;
 - (void)advertiseServiceSwitchToggled:(id)arg1;
-- (BOOL)advertiseServiceWithName:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
+- (BOOL)advertiseServiceWithName:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
 - (void)advertiseTimerFired:(id)arg1;
 - (id)advertisedServiceName;
-- (BOOL)changeServiceNameTo:(id)arg1 completionBlock:(id)arg2 error:(id*)arg3;
+- (BOOL)changeServiceNameTo:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
 - (void)cleanup;
 - (void)deactivateController:(id)arg1;
 - (void)dealloc;
@@ -42,7 +40,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setStatusString:(id)arg1 animateIndicator:(BOOL)arg2 isError:(BOOL)arg3;
 - (id)statusString;
-- (BOOL)stopAdvertisingServiceWithCompletionBlock:(id)arg1 error:(id*)arg2;
+- (BOOL)stopAdvertisingServiceWithCompletionBlock:(id /* block */)arg1 error:(id*)arg2;
 - (void)stopTimers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

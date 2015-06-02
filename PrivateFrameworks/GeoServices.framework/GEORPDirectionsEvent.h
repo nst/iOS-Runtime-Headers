@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSData, NSString;
-
 @interface GEORPDirectionsEvent : PBCodable <NSCopying> {
     long long _errorCode;
     NSString *_errorDomain;
@@ -26,28 +24,28 @@
     int _type;
 }
 
-@property long long errorCode;
-@property(retain) NSString * errorDomain;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasErrorDomain;
-@property(readonly) BOOL hasOccurrenceLatLng;
-@property BOOL hasOccurrenceResponseIndex;
-@property(readonly) BOOL hasOccurrenceRouteId;
-@property BOOL hasOccurrenceStepIndex;
-@property BOOL hasSwitchedToResponseIndex;
-@property(readonly) BOOL hasSwitchedToRouteId;
-@property(readonly) BOOL hasSynthesizedStepInstructions;
-@property BOOL hasSynthesizedStepManeuverType;
-@property BOOL hasType;
-@property(retain) GEOLatLng * occurrenceLatLng;
-@property unsigned int occurrenceResponseIndex;
-@property(retain) NSData * occurrenceRouteId;
-@property unsigned int occurrenceStepIndex;
-@property unsigned int switchedToResponseIndex;
-@property(retain) NSData * switchedToRouteId;
-@property(retain) NSString * synthesizedStepInstructions;
-@property int synthesizedStepManeuverType;
-@property int type;
+@property (nonatomic) long long errorCode;
+@property (nonatomic, retain) NSString *errorDomain;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasErrorDomain;
+@property (nonatomic, readonly) BOOL hasOccurrenceLatLng;
+@property (nonatomic) BOOL hasOccurrenceResponseIndex;
+@property (nonatomic, readonly) BOOL hasOccurrenceRouteId;
+@property (nonatomic) BOOL hasOccurrenceStepIndex;
+@property (nonatomic) BOOL hasSwitchedToResponseIndex;
+@property (nonatomic, readonly) BOOL hasSwitchedToRouteId;
+@property (nonatomic, readonly) BOOL hasSynthesizedStepInstructions;
+@property (nonatomic) BOOL hasSynthesizedStepManeuverType;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) GEOLatLng *occurrenceLatLng;
+@property (nonatomic) unsigned int occurrenceResponseIndex;
+@property (nonatomic, retain) NSData *occurrenceRouteId;
+@property (nonatomic) unsigned int occurrenceStepIndex;
+@property (nonatomic) unsigned int switchedToResponseIndex;
+@property (nonatomic, retain) NSData *switchedToRouteId;
+@property (nonatomic, retain) NSString *synthesizedStepInstructions;
+@property (nonatomic) int synthesizedStepManeuverType;
+@property (nonatomic) int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

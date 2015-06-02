@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFContentSniffer : NSObject {
-}
+@interface WFContentSniffer : NSObject
 
 + (id)MIMETypeForData:(id)arg1;
 + (id)MIMETypeForData:(id)arg1 andString:(id)arg2;

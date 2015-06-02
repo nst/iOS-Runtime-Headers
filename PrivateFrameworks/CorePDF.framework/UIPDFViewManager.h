@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIView;
-
 @interface UIPDFViewManager : NSObject {
     UIView *_activeView;
 }

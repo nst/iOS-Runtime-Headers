@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCThrottleBase, BRCTransferStream, BRCUserDefaults, CDAttribute, CDBudget, CKContainer, NSString;
-
 @interface BRCSyncContext : NSObject <BRCLowDiskDelegate> {
     NSString *_admissionTicket;
     BRCThrottleBase *_applyThrottle;
@@ -23,24 +21,24 @@
     BRCTransferStream *_uploader;
 }
 
-@property(readonly) NSString * admissionTicket;
-@property(readonly) BRCThrottleBase * applyThrottle;
-@property(readonly) CKContainer * ckContainer;
-@property(readonly) NSString * contextIdentifier;
-@property(readonly) CDBudget * dataBudget;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) BRCUserDefaults * defaults;
-@property(copy,readonly) NSString * description;
-@property(readonly) BRCThrottleBase * downloadThrottle;
-@property(readonly) BRCTransferStream * downloader;
-@property(readonly) CDBudget * energyBudget;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isShared;
-@property(readonly) BRCThrottleBase * readerThrottle;
-@property(readonly) BRCAccountSession * session;
-@property(readonly) Class superclass;
-@property(readonly) BRCThrottleBase * uploadThrottle;
-@property(readonly) BRCTransferStream * uploader;
+@property (nonatomic, readonly) NSString *admissionTicket;
+@property (nonatomic, readonly) BRCThrottleBase *applyThrottle;
+@property (nonatomic, readonly) CKContainer *ckContainer;
+@property (nonatomic, readonly) NSString *contextIdentifier;
+@property (nonatomic, readonly) CDBudget *dataBudget;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BRCUserDefaults *defaults;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BRCThrottleBase *downloadThrottle;
+@property (nonatomic, readonly) BRCTransferStream *downloader;
+@property (nonatomic, readonly) CDBudget *energyBudget;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isShared;
+@property (nonatomic, readonly) BRCThrottleBase *readerThrottle;
+@property (nonatomic, readonly) BRCAccountSession *session;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BRCThrottleBase *uploadThrottle;
+@property (nonatomic, readonly) BRCTransferStream *uploader;
 
 + (id)contextIdentifierForZone:(id)arg1;
 

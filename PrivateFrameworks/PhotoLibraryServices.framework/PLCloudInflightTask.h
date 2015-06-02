@@ -2,29 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PLCloudInflightTask : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
+    id /* block */ _completionHandler;
+    id /* block */ _progressBlock;
 }
 
-@property(readonly) id completionHandler;
-@property(readonly) id progressBlock;
+@property (readonly) id /* block */ completionHandler;
+@property (readonly) id /* block */ progressBlock;
 
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
-- (id)initWithProgressBlock:(id)arg1 completionHandler:(id)arg2;
-- (id)progressBlock;
+- (id)initWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (id /* block */)progressBlock;
 
 @end

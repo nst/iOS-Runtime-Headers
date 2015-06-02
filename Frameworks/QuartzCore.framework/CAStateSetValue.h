@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSString;
-
 @interface CAStateSetValue : CAStateElement {
     NSString *_keyPath;
     id _value;
 }
 
-@property(copy) NSString * keyPath;
-@property(retain) id value;
+@property (nonatomic, copy) NSString *keyPath;
+@property (nonatomic, retain) id value;
 
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)apply:(id)arg1;
@@ -19,7 +17,7 @@
 - (id)debugDescription;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)foreachLayer:(id)arg1;
+- (void)foreachLayer:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
 - (BOOL)matches:(id)arg1;

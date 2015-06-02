@@ -7,8 +7,8 @@
     int _abPersonChangeId;
 }
 
-@property int abGroupChangeId;
-@property int abPersonChangeId;
+@property (nonatomic) int abGroupChangeId;
+@property (nonatomic) int abPersonChangeId;
 
 - (int)abGroupChangeId;
 - (int)abPersonChangeId;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIAccountButtonsDelegate>, NSString, SKUIAccountButtonsView, SKUIClientContext, SKUILink;
-
 @interface SKUIAccountButtonsViewController : UIViewController <UINavigationControllerDelegate> {
     SKUIAccountButtonsView *_buttonsView;
     SKUIClientContext *_clientContext;
@@ -11,15 +9,15 @@
     SKUILink *_ecommerceLink;
 }
 
-@property(retain) SKUILink * ECommerceLink;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIAccountButtonsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isGiftingHidden) BOOL giftingHidden;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
+@property (nonatomic, retain) SKUILink *ECommerceLink;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIAccountButtonsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isGiftingHidden, nonatomic) BOOL giftingHidden;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (getter=isTermsAndConditionsHidden, nonatomic) BOOL termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceLink;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMStyle, OADOrientedBounds, OADTextBody;
-
 @interface PMShapeTextMapper : CMMapper {
     OADOrientedBounds *mBounds;
     BOOL mRectangular;

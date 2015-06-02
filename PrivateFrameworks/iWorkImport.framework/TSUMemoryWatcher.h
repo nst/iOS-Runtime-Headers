@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUFlushingManager;
-
 @interface TSUMemoryWatcher : NSObject {
     TSUFlushingManager *_flushingManager;
     BOOL _going;

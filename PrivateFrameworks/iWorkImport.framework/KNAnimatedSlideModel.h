@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNAnimatedSlideView, KNPlaybackSession, NSArray, NSMutableArray, TSUNoCopyDictionary;
-
 @interface KNAnimatedSlideModel : NSObject {
     KNAnimatedSlideView *_ASV;
     TSUNoCopyDictionary *_animatedBuildToRendererMap;
@@ -15,9 +13,9 @@
     KNPlaybackSession *_session;
 }
 
-@property(readonly) NSArray * animatedBuilds;
-@property(getter=isFirstBuildEventAutomatic,readonly) BOOL firstBuildEventAutomatic;
-@property unsigned int numberOfAddedEvents;
+@property (nonatomic, readonly) NSArray *animatedBuilds;
+@property (getter=isFirstBuildEventAutomatic, nonatomic, readonly) BOOL firstBuildEventAutomatic;
+@property (nonatomic) unsigned int numberOfAddedEvents;
 
 - (id)actionEffectForDrawable:(id)arg1 atBeginningOfEvent:(int)arg2;
 - (id)animatedBuildForInfo:(id)arg1 aroundEvent:(int)arg2 isAtEndOfBuild:(BOOL*)arg3;
@@ -28,8 +26,8 @@
 - (id)createInfoToBuildMap:(id)arg1;
 - (void)dealloc;
 - (double)durationForEventIndexes:(id)arg1;
-- (void)enumerateAnimatedBuildsAndTimeRangesAtIndex:(unsigned int)arg1 ignoreInitialDelay:(BOOL)arg2 usingBlock:(id)arg3;
-- (void)enumerateAnimatedBuildsAndTimeRangesAtIndex:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateAnimatedBuildsAndTimeRangesAtIndex:(unsigned int)arg1 ignoreInitialDelay:(BOOL)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateAnimatedBuildsAndTimeRangesAtIndex:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })eventRangeForInfos:(id)arg1;
 - (id)eventsAtIndex:(unsigned int)arg1;
 - (id)finalActionEffectForDrawable:(id)arg1;

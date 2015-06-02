@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface APDDataCacheController : NSObject {
     int _URLSessionDataType;
     NSString *_cacheDirectory;
@@ -15,8 +13,8 @@
     unsigned int _maxDataCacheSize;
 }
 
-@property(retain) NSMutableArray * dataCacheArray;
-@property(retain) NSString * locale;
+@property (nonatomic, retain) NSMutableArray *dataCacheArray;
+@property (nonatomic, retain) NSString *locale;
 
 + (void)removeInstance;
 + (id)sharedInstance;
@@ -27,7 +25,7 @@
 - (BOOL)cacheValidForPath:(id)arg1;
 - (id)dataCacheArray;
 - (id)dataCacheForPath:(id)arg1;
-- (id)dataCacheForPath:(id)arg1 completionHandler:(id)arg2;
+- (id)dataCacheForPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 directoryName:(id)arg2 maxCacheSize:(unsigned int)arg3 URLSessionDataType:(int)arg4;
 - (id)locale;

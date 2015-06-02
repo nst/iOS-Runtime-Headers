@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class NSString;
-
 @interface EAWiFiUnconfiguredAccessory : NSObject {
     NSString *_macAddress;
     NSString *_manufacturer;
@@ -13,12 +11,12 @@
     NSString *_ssid;
 }
 
-@property(copy,readonly) NSString * macAddress;
-@property(copy,readonly) NSString * manufacturer;
-@property(copy,readonly) NSString * model;
-@property(copy,readonly) NSString * name;
-@property(readonly) unsigned int properties;
-@property(copy,readonly) NSString * ssid;
+@property (nonatomic, readonly, copy) NSString *macAddress;
+@property (nonatomic, readonly, copy) NSString *manufacturer;
+@property (nonatomic, readonly, copy) NSString *model;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) unsigned int properties;
+@property (nonatomic, readonly, copy) NSString *ssid;
 
 - (void).cxx_destruct;
 - (id)description;

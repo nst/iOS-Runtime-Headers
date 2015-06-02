@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLiteInPlaceMigrationManager : NSMigrationManager {
-}
+@interface NSSQLiteInPlaceMigrationManager : NSMigrationManager
 
 + (BOOL)_canMigrateWithMappingModel:(id)arg1;
 

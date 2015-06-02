@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFRegion : NSObject <MFObject> {
-}
+@interface MFRegion : NSObject <MFObject>
 
 - (int)fill:(id)arg1 :(id)arg2;
 - (int)frame:(id)arg1 :(id)arg2;

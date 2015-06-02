@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXVisualAlertSBBulletinSoundController : __AXVisualAlertSBBulletinSoundController_super {
-}
+@interface AXVisualAlertSBBulletinSoundController : __AXVisualAlertSBBulletinSoundController_super
 
 + (Class)safeCategoryTargetClass;
 + (id)safeCategoryTargetClassName;

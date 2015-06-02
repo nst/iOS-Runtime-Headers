@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDate, NSString;
-
 @interface PKPaymentMessage : NSObject <NSSecureCoding> {
     BOOL _allowDeepLink;
     NSString *_content;
@@ -14,13 +12,13 @@
     NSDate *_messageDate;
 }
 
-@property BOOL allowDeepLink;
-@property(copy) NSString * content;
-@property(copy) NSDate * expirationDate;
-@property BOOL expiresOnNextTransaction;
-@property BOOL hasAssociatedPaymentApplication;
-@property(copy) NSString * identifier;
-@property(copy) NSDate * messageDate;
+@property (nonatomic) BOOL allowDeepLink;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic) BOOL expiresOnNextTransaction;
+@property (nonatomic) BOOL hasAssociatedPaymentApplication;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSDate *messageDate;
 
 + (id)paymentMessageWithDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;

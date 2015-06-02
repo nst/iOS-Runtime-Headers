@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSArray, NSString;
-
 @interface SPSearchQuery : NSObject <NSCopying> {
     double _cancellationTime;
     BOOL _cancelled;
@@ -16,12 +14,12 @@
     NSString *_searchString;
 }
 
-@property(readonly) double cancellationTime;
-@property(readonly) BOOL cancelled;
-@property(readonly) double creationTime;
-@property BOOL extendedTime;
-@property(readonly) NSArray * searchDomains;
-@property(readonly) NSString * searchString;
+@property (nonatomic, readonly) double cancellationTime;
+@property (nonatomic, readonly) BOOL cancelled;
+@property (nonatomic, readonly) double creationTime;
+@property (nonatomic) BOOL extendedTime;
+@property (nonatomic, readonly) NSArray *searchDomains;
+@property (nonatomic, readonly) NSString *searchString;
 
 - (void)cancel;
 - (double)cancellationTime;

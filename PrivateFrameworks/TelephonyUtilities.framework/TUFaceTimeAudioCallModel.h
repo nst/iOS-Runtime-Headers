@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUFaceTimeAudioCallModel : TUCallModel {
-}
+@interface TUFaceTimeAudioCallModel : TUCallModel
 
 + (id)sharedInstance;
 

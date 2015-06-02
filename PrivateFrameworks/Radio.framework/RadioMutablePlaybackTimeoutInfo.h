@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioMutablePlaybackTimeoutInfo : RadioPlaybackTimeoutInfo {
-}
+@interface RadioMutablePlaybackTimeoutInfo : RadioPlaybackTimeoutInfo
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)removeAllPlaybackTimeouts;

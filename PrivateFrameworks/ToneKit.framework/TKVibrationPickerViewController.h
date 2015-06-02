@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKVibrationPickerStyleProvider>, <TKVibrationPickerViewControllerDelegate>, <TKVibrationPickerViewControllerDismissalDelegate>, NSArray, NSIndexPath, NSString, NSTimer, TKLabelContainerView, TKVibratorController, TLVibrationManager;
-
 @interface TKVibrationPickerViewController : UITableViewController <TKVibrationPickerTableViewCellDelegate, TKVibrationRecorderViewControllerDelegate, UINavigationControllerDelegate> {
     NSString *_accountIdentifier;
     <TKVibrationPickerViewControllerDelegate> *_additionalDelegate;
@@ -40,42 +38,42 @@
     BOOL _viewHasAppearedAtLeastOnce;
 }
 
-@property(setter=_setAdditionalDelegate:) <TKVibrationPickerViewControllerDelegate> * _additionalDelegate;
-@property(setter=_setDefaultSectionHeaderView:,retain) TKLabelContainerView * _defaultSectionHeaderView;
-@property(setter=_setDefaultVibrationIdentifier:,copy) NSString * _defaultVibrationIdentifier;
-@property(setter=_setDefaultVibrationIdentifierWasExplicitlySet:) BOOL _defaultVibrationIdentifierWasExplicitlySet;
-@property(setter=_setDismissalDelegate:) <TKVibrationPickerViewControllerDismissalDelegate> * _dismissalDelegate;
-@property(setter=_setIndexPathOfCellBeingDeleted:,retain) NSIndexPath * _indexPathOfCellBeingDeleted;
-@property(readonly) int _sectionForDefaultGroup;
-@property(readonly) int _sectionForNoneGroup;
-@property(readonly) int _sectionForSystemGroup;
-@property(readonly) int _sectionForUserGeneratedGroup;
-@property(setter=_setSelectedVibrationIndexPathAdjustedForCurrentEditingMode:,retain) NSIndexPath * _selectedVibrationIndexPathAdjustedForCurrentEditingMode;
-@property(setter=_setShouldForceShowingAllAvailableSections:) BOOL _shouldForceShowingAllAvailableSections;
-@property(readonly) BOOL _showsOnlyEditableSections;
-@property(readonly) NSArray * _sortedUserGeneratedVibrationIdentifiers;
-@property(readonly) NSArray * _sortedVibrationIdentifiers;
-@property(setter=_setStyleProvider:,retain) <TKVibrationPickerStyleProvider> * _styleProvider;
-@property(setter=_setSystemSectionHeaderView:,retain) TKLabelContainerView * _systemSectionHeaderView;
-@property(setter=_setUserGeneratedSectionHeaderView:,retain) TKLabelContainerView * _userGeneratedSectionHeaderView;
-@property(copy) NSString * accountIdentifier;
-@property(readonly) int alertType;
-@property BOOL allowsDeletingDefaultVibration;
-@property(readonly) BOOL canEnterEditingMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSString * defaultVibrationIdentifier;
-@property <TKVibrationPickerViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * noneString;
-@property(retain) NSString * selectedVibrationIdentifier;
-@property BOOL showsDefault;
-@property BOOL showsEditButtonInNavigationBar;
-@property BOOL showsNone;
-@property BOOL showsNothingSelected;
-@property BOOL showsUserGenerated;
-@property(retain) <TKVibrationPickerStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (setter=_setAdditionalDelegate:, nonatomic) <TKVibrationPickerViewControllerDelegate> *_additionalDelegate;
+@property (setter=_setDefaultSectionHeaderView:, nonatomic, retain) TKLabelContainerView *_defaultSectionHeaderView;
+@property (setter=_setDefaultVibrationIdentifier:, nonatomic, copy) NSString *_defaultVibrationIdentifier;
+@property (setter=_setDefaultVibrationIdentifierWasExplicitlySet:, nonatomic) BOOL _defaultVibrationIdentifierWasExplicitlySet;
+@property (setter=_setDismissalDelegate:, nonatomic) <TKVibrationPickerViewControllerDismissalDelegate> *_dismissalDelegate;
+@property (setter=_setIndexPathOfCellBeingDeleted:, nonatomic, retain) NSIndexPath *_indexPathOfCellBeingDeleted;
+@property (nonatomic, readonly) int _sectionForDefaultGroup;
+@property (nonatomic, readonly) int _sectionForNoneGroup;
+@property (nonatomic, readonly) int _sectionForSystemGroup;
+@property (nonatomic, readonly) int _sectionForUserGeneratedGroup;
+@property (setter=_setSelectedVibrationIndexPathAdjustedForCurrentEditingMode:, nonatomic, retain) NSIndexPath *_selectedVibrationIndexPathAdjustedForCurrentEditingMode;
+@property (setter=_setShouldForceShowingAllAvailableSections:, nonatomic) BOOL _shouldForceShowingAllAvailableSections;
+@property (nonatomic, readonly) BOOL _showsOnlyEditableSections;
+@property (nonatomic, readonly) NSArray *_sortedUserGeneratedVibrationIdentifiers;
+@property (nonatomic, readonly) NSArray *_sortedVibrationIdentifiers;
+@property (setter=_setStyleProvider:, nonatomic, retain) <TKVibrationPickerStyleProvider> *_styleProvider;
+@property (setter=_setSystemSectionHeaderView:, nonatomic, retain) TKLabelContainerView *_systemSectionHeaderView;
+@property (setter=_setUserGeneratedSectionHeaderView:, nonatomic, retain) TKLabelContainerView *_userGeneratedSectionHeaderView;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic, readonly) int alertType;
+@property (nonatomic) BOOL allowsDeletingDefaultVibration;
+@property (nonatomic, readonly) BOOL canEnterEditingMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSString *defaultVibrationIdentifier;
+@property (nonatomic) <TKVibrationPickerViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *noneString;
+@property (nonatomic, retain) NSString *selectedVibrationIdentifier;
+@property (nonatomic) BOOL showsDefault;
+@property (nonatomic) BOOL showsEditButtonInNavigationBar;
+@property (nonatomic) BOOL showsNone;
+@property (nonatomic) BOOL showsNothingSelected;
+@property (nonatomic) BOOL showsUserGenerated;
+@property (nonatomic, retain) <TKVibrationPickerStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (id)_actualIndexPathFromNonEditingIndexPath:(id)arg1;
 - (id)_additionalDelegate;
@@ -92,7 +90,7 @@
 - (id)_indexPathOfCellBeingDeleted;
 - (id)_navigationItem;
 - (id)_nonEditingIndexPathFromActualIndexPath:(id)arg1;
-- (void)_performBlockForcingShowingAllAvailableSections:(id)arg1;
+- (void)_performBlockForcingShowingAllAvailableSections:(id /* block */)arg1;
 - (void)_presentVibrationRecorderViewController;
 - (void)_processSelectionOfVibrationWithIdentifier:(id)arg1;
 - (int)_sectionForDefaultGroup;
@@ -123,7 +121,7 @@
 - (id)_systemSectionHeaderView;
 - (void)_updateEditButtonItem;
 - (void)_updateEditButtonItemWithAnimation:(BOOL)arg1;
-- (void)_updateSectionVisibilityFlagAtLocation:(BOOL*)arg1 toValue:(BOOL)arg2 sectionIndexGetter:(id)arg3;
+- (void)_updateSectionVisibilityFlagAtLocation:(BOOL*)arg1 toValue:(BOOL)arg2 sectionIndexGetter:(id /* block */)arg3;
 - (void)_updateSelectionStyleForCell:(id)arg1 indexPath:(id)arg2;
 - (void)_updateStyleOfTableView:(id)arg1 forStyleProvider:(id)arg2;
 - (id)_userGeneratedSectionHeaderView;

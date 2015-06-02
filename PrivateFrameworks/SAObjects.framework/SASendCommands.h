@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASendCommands : SABaseClientBoundCommand
 
-@interface SASendCommands : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * commands;
+@property (nonatomic, copy) NSArray *commands;
 
 + (id)sendCommands;
 + (id)sendCommandsWithDictionary:(id)arg1 context:(id)arg2;

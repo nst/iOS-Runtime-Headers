@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPlaceDataCacheUsageFeedbackCollection : PBCodable <NSCopying> {
     NSMutableArray *_cacheFeedbacks;
 }
 
-@property(retain) NSMutableArray * cacheFeedbacks;
+@property (nonatomic, retain) NSMutableArray *cacheFeedbacks;
 
 - (void)addCacheFeedback:(id)arg1;
 - (id)cacheFeedbackAtIndex:(unsigned int)arg1;

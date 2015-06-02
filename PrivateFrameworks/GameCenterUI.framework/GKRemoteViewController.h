@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKGame, GKHostedViewController, NSMutableDictionary, NSString, UIColor;
-
 @interface GKRemoteViewController : _UIRemoteViewController <GKServiceViewControllerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _blockToPerformAfterViewDidAppear;
-
+    id /* block */ _blockToPerformAfterViewDidAppear;
     BOOL _didSetRemoteGame;
     NSMutableDictionary *_dirtyProperties;
     GKGame *_game;
@@ -22,19 +12,19 @@
     BOOL _viewDidAppear;
 }
 
-@property(copy) id blockToPerformAfterViewDidAppear;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didSetRemoteGame;
-@property(retain) NSMutableDictionary * dirtyProperties;
-@property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
-@property GKHostedViewController * managingViewController;
-@property(retain) UIColor * previousStatusBarColor;
-@property(readonly) BOOL serviceNeedsCurrentGame;
-@property(readonly) BOOL serviceNeedsLocalPlayer;
-@property(readonly) Class superclass;
-@property BOOL viewDidAppear;
+@property (nonatomic, copy) id /* block */ blockToPerformAfterViewDidAppear;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didSetRemoteGame;
+@property (nonatomic, retain) NSMutableDictionary *dirtyProperties;
+@property (nonatomic, retain) GKGame *game;
+@property (readonly) unsigned int hash;
+@property (nonatomic) GKHostedViewController *managingViewController;
+@property (nonatomic, retain) UIColor *previousStatusBarColor;
+@property (nonatomic, readonly) BOOL serviceNeedsCurrentGame;
+@property (nonatomic, readonly) BOOL serviceNeedsLocalPlayer;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL viewDidAppear;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
@@ -45,7 +35,7 @@
 - (BOOL)_dismissSelfAfterGettingShouldFinish;
 - (void)_performBlockAfterViewDidAppearIfNeeded;
 - (void)_performSelectorAfterAppearingOrTimeOut:(SEL)arg1;
-- (id)blockToPerformAfterViewDidAppear;
+- (id /* block */)blockToPerformAfterViewDidAppear;
 - (void)dealloc;
 - (BOOL)didSetRemoteGame;
 - (id)dirtyProperties;
@@ -61,7 +51,7 @@
 - (void)remoteViewControllerIsFinishing;
 - (BOOL)serviceNeedsCurrentGame;
 - (BOOL)serviceNeedsLocalPlayer;
-- (void)setBlockToPerformAfterViewDidAppear:(id)arg1;
+- (void)setBlockToPerformAfterViewDidAppear:(id /* block */)arg1;
 - (void)setDidSetRemoteGame:(BOOL)arg1;
 - (void)setDirtyProperties:(id)arg1;
 - (void)setGame:(id)arg1;

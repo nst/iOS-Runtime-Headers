@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFComposeRecipientAtomDelegate>, MFComposeRecipient, UITextInputTraits;
-
 @interface MFModernComposeRecipientAtom : MFModernAtomView {
     <MFComposeRecipientAtomDelegate> *_delegate;
     MFComposeRecipient *_recipient;
-    unsigned int _touchesWereCancelled : 1;
+    unsigned int _touchesWereCancelled;
     UITextInputTraits *_traits;
-    unsigned int _wasSelectedWhenTouchesBegan : 1;
+    unsigned int _wasSelectedWhenTouchesBegan;
 }
 
-@property <MFComposeRecipientAtomDelegate> * delegate;
-@property(readonly) MFComposeRecipient * recipient;
+@property (nonatomic) <MFComposeRecipientAtomDelegate> *delegate;
+@property (nonatomic, readonly) MFComposeRecipient *recipient;
 
 - (void)dealloc;
 - (id)delegate;

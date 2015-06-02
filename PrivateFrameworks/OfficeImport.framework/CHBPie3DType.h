@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHBPie3DType : NSObject {
-}
+@interface CHBPie3DType : NSObject
 
 + (id)chdChartTypeWithState:(id)arg1;
 

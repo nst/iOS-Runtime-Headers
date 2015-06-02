@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLSemaphore;
-
 @interface PLSleepWakeAgent : PLAgent {
     PLSemaphore *_canSleepSemaphore;
     unsigned int _pmNotifier;
@@ -11,10 +9,10 @@
     struct IONotificationPort { } *_systemPowerPortRef;
 }
 
-@property(retain) PLSemaphore * canSleepSemaphore;
+@property (retain) PLSemaphore *canSleepSemaphore;
 @property unsigned int pmNotifier;
 @property unsigned int rootDomainConnect;
-@property struct IONotificationPort { }* systemPowerPortRef;
+@property struct IONotificationPort { }*systemPowerPortRef;
 
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionPowerState;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKModifyRecordAccessOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_recordIDsToGrant;
     NSArray *_recordIDsToRevoke;
 }
 
-@property(retain) NSArray * recordIDsToGrant;
-@property(retain) NSArray * recordIDsToRevoke;
+@property (nonatomic, retain) NSArray *recordIDsToGrant;
+@property (nonatomic, retain) NSArray *recordIDsToRevoke;
 
 + (BOOL)supportsSecureCoding;
 

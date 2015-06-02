@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreTime.framework/CoreTime
  */
 
-@class NSString;
-
 @interface _TMBlockDebugger : NSObject {
     NSString *_name;
 }

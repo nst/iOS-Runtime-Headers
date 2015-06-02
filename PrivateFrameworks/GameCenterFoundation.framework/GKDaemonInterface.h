@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKDaemonInterface : NSXPCInterface {
-}
+@interface GKDaemonInterface : NSXPCInterface
 
 + (id)interface;
 

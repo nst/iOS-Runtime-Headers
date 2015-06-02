@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
  */
 
-@class NSArray, NSObject<OS_xpc_object>, NSString;
-
 @interface XPCDecoder : NSCoder {
     NSArray *_allowedClasses;
     NSObject<OS_xpc_object> *_currentObject;
@@ -13,7 +11,7 @@
     struct __CFSet { } *_requestedDecodedObjects;
 }
 
-@property(copy) NSString * errorDescription;
+@property (nonatomic, copy) NSString *errorDescription;
 
 + (id)rootObjectForEncoding:(id)arg1;
 + (id)rootObjectForEncoding:(id)arg1 allowedClasses:(id)arg2;

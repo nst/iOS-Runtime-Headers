@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableString, WDCharacterProperties, WDDocument, WDOfficeArt, WDParagraphProperties;
-
 @interface WDListLevel : NSObject {
     WDCharacterProperties *mCharacterProperties;
     WDDocument *mDocument;

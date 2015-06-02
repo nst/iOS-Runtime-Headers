@@ -6,10 +6,10 @@
     void *_msCameraFolderProperties;
 }
 
-@property(readonly) struct timespec { int x1; long x2; } fsCreationTime;
-@property(readonly) struct timespec { int x1; long x2; } fsModificationTime;
-@property(readonly) unsigned long long fsSN;
-@property(readonly) long long fsSize;
+@property (readonly) struct timespec { int x1; long x2; } fsCreationTime;
+@property (readonly) struct timespec { int x1; long x2; } fsModificationTime;
+@property (readonly) unsigned long long fsSN;
+@property (readonly) long long fsSize;
 
 - (void)dealloc;
 - (BOOL)deleteItemFromCamera:(id)arg1;

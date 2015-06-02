@@ -9,12 +9,12 @@
     id _rootObject;
 }
 
-@property(readonly) BOOL forDisplay;
+@property (nonatomic, readonly) BOOL forDisplay;
 
 + (id)archivedDataWithRootObject:(id)arg1;
-+ (id)archivedDataWithRootObject:(id)arg1 usingBlock:(id)arg2;
++ (id)archivedDataWithRootObject:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)archivedPropertyListWithRootObject:(id)arg1;
-+ (id)archivedPropertyListWithRootObject:(id)arg1 usingBlock:(id)arg2;
++ (id)archivedPropertyListWithRootObject:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)displayablePropertyListWithRootObject:(id)arg1;
 + (id)fullDescriptionForObject:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1 ofClass:(Class)arg2;
@@ -68,7 +68,7 @@
 - (BOOL)forDisplay;
 - (id)initWithArchive:(id)arg1 rootClass:(Class)arg2;
 - (id)initWithRootObject:(id)arg1 forDisplay:(BOOL)arg2;
-- (id)initWithRootObject:(id)arg1 forDisplay:(BOOL)arg2 block:(id)arg3;
+- (id)initWithRootObject:(id)arg1 forDisplay:(BOOL)arg2 block:(id /* block */)arg3;
 - (struct _NSZone { }*)objectZone;
 - (id)rootObject;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;

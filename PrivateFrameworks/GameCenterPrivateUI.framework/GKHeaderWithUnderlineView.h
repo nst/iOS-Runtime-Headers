@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSArray, NSMutableDictionary, UIImageView, UIView;
-
 @interface GKHeaderWithUnderlineView : UICollectionReusableView {
     BOOL _didSetupConstraints;
     NSArray *_gutterConstraints;
@@ -17,16 +15,16 @@
     UIView *_underlineView;
 }
 
-@property BOOL didSetupConstraints;
-@property(retain) NSArray * gutterConstraints;
-@property BOOL isPinned;
-@property float leadingMargin;
-@property(retain) NSMutableDictionary * metrics;
-@property(retain) UIView * pinnedBackdropView;
-@property(retain) UIImageView * shadowView;
-@property float trailingMargin;
-@property BOOL underlineHasRightMargin;
-@property(retain) UIView * underlineView;
+@property (nonatomic) BOOL didSetupConstraints;
+@property (nonatomic, retain) NSArray *gutterConstraints;
+@property (nonatomic) BOOL isPinned;
+@property (nonatomic) float leadingMargin;
+@property (nonatomic, retain) NSMutableDictionary *metrics;
+@property (nonatomic, retain) UIView *pinnedBackdropView;
+@property (nonatomic, retain) UIImageView *shadowView;
+@property (nonatomic) float trailingMargin;
+@property (nonatomic) BOOL underlineHasRightMargin;
+@property (nonatomic, retain) UIView *underlineView;
 
 + (void)initialize;
 + (id)macMetrics;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString;
-
 @interface SFPeerDevice : NSObject <NSSecureCoding> {
     BOOL _defaultPairedDevice;
     NSString *_deviceColor;
@@ -16,15 +14,15 @@
     NSString *_uniqueID;
 }
 
-@property(getter=isDefaultPairedDevice) BOOL defaultPairedDevice;
-@property(copy) NSString * deviceColor;
-@property(copy) NSString * enclosureColor;
-@property(copy) NSString * modelIdentifier;
-@property(copy) NSString * name;
-@property(copy) NSString * productBuildVersion;
-@property(copy) NSString * productName;
-@property(copy) NSString * productVersion;
-@property(copy) NSString * uniqueID;
+@property (getter=isDefaultPairedDevice) BOOL defaultPairedDevice;
+@property (copy) NSString *deviceColor;
+@property (copy) NSString *enclosureColor;
+@property (copy) NSString *modelIdentifier;
+@property (copy) NSString *name;
+@property (copy) NSString *productBuildVersion;
+@property (copy) NSString *productName;
+@property (copy) NSString *productVersion;
+@property (copy) NSString *uniqueID;
 
 + (BOOL)supportsSecureCoding;
 

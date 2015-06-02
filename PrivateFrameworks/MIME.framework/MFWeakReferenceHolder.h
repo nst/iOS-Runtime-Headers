@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class <NSObject>;
-
 @interface MFWeakReferenceHolder : NSObject {
     <NSObject> *_reference;
 }

@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSOutputStream : NSStream {
-}
+@interface NSOutputStream : NSStream
 
-@property(readonly) BOOL hasSpaceAvailable;
+@property (readonly) BOOL hasSpaceAvailable;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)outputStreamToBuffer:(char *)arg1 capacity:(unsigned int)arg2;

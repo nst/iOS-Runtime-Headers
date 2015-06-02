@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCJCOPRestrictedModeEvent : PBCodable <NSCopying> {
     BOOL _contactless;
     struct { 
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL contactless;
-@property BOOL hasContactless;
-@property(readonly) BOOL hasLog;
-@property BOOL hasTimestamp;
-@property(retain) NSData * log;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL contactless;
+@property (nonatomic) BOOL hasContactless;
+@property (nonatomic, readonly) BOOL hasLog;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSData *log;
+@property (nonatomic) unsigned long long timestamp;
 
 - (BOOL)contactless;
 - (void)copyTo:(id)arg1;

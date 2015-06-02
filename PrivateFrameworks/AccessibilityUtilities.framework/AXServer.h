@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXIPCClient, AXIPCServer, NSString;
-
 @interface AXServer : NSObject {
     AXIPCClient *_client;
     AXIPCServer *_server;
@@ -11,10 +9,10 @@
     BOOL _shouldRegisterClientCallbackSourceOnMainRunloop;
 }
 
-@property(retain) AXIPCClient * client;
-@property(retain) AXIPCServer * server;
-@property(copy) NSString * serverIdentifier;
-@property BOOL shouldRegisterClientCallbackSourceOnMainRunloop;
+@property (nonatomic, retain) AXIPCClient *client;
+@property (nonatomic, retain) AXIPCServer *server;
+@property (nonatomic, copy) NSString *serverIdentifier;
+@property (nonatomic) BOOL shouldRegisterClientCallbackSourceOnMainRunloop;
 
 - (BOOL)_connectIfNecessary;
 - (void)_connectServerIfNecessary;

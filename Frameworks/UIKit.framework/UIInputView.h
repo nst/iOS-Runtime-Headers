@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, NSArray, NSMutableDictionary, NSString, UIImage, UIKBRenderConfig, UIView, _UIInputViewContent;
-
 @interface UIInputView : UIView <UISplittableInputView> {
     float _contentRatio;
     struct CGSize { 
@@ -38,20 +36,20 @@
     NSArray *_visibleLayers;
 }
 
-@property(retain) UIImage * _mergedImage;
-@property(retain) NSMutableDictionary * _mergedSliceMap;
-@property(retain) UIImage * _splitImage;
-@property(retain) NSMutableDictionary * _splitSliceMap;
-@property float contentRatio;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int inputViewStyle;
-@property(readonly) UIView * leftContentView;
-@property struct CGSize { float x1; float x2; } leftContentViewSize;
-@property(readonly) UIView * rightContentView;
-@property struct CGSize { float x1; float x2; } rightContentViewSize;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIImage *_mergedImage;
+@property (nonatomic, retain) NSMutableDictionary *_mergedSliceMap;
+@property (nonatomic, retain) UIImage *_splitImage;
+@property (nonatomic, retain) NSMutableDictionary *_splitSliceMap;
+@property (nonatomic) float contentRatio;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int inputViewStyle;
+@property (nonatomic, readonly) UIView *leftContentView;
+@property (nonatomic) struct CGSize { float x1; float x2; } leftContentViewSize;
+@property (nonatomic, readonly) UIView *rightContentView;
+@property (nonatomic) struct CGSize { float x1; float x2; } rightContentViewSize;
+@property (readonly) Class superclass;
 
 + (void)_setupAppearanceIfNecessary;
 

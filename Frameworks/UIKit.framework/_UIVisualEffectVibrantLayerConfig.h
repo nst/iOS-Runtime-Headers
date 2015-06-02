@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface _UIVisualEffectVibrantLayerConfig : _UIVisualEffectLayerConfig {
     UIColor *_tintColor;
     UIColor *_vibrantColor;
 }
 
-@property(readonly) UIColor * tintColor;
-@property(readonly) UIColor * vibrantColor;
+@property (nonatomic, readonly) UIColor *tintColor;
+@property (nonatomic, readonly) UIColor *vibrantColor;
 
 + (id)layerWithVibrantColor:(id)arg1 tintColor:(id)arg2 filterType:(id)arg3;
 

@@ -7,7 +7,7 @@
     BOOL _selected;
 }
 
-@property(getter=isSelected) BOOL selected;
+@property (getter=isSelected, nonatomic) BOOL selected;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (unsigned int)elementType;

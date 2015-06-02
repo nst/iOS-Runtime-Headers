@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, PSSpecifier, UILabel;
-
 @interface PSLargeTextController : PSListController {
     UILabel *_bodyExampleLabel;
     NSArray *_contentSizeCategories;
@@ -14,7 +12,7 @@
     BOOL _usesExtendedRange;
 }
 
-@property BOOL showsExtendedRangeSwitch;
+@property (nonatomic) BOOL showsExtendedRangeSwitch;
 
 - (void)dealloc;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary;
-
 @interface NSTransitInformationCheckingResult : NSTextCheckingResult {
     NSDictionary *_components;
     struct _NSRange { 
@@ -13,7 +11,7 @@
     id _underlyingResult;
 }
 
-@property(readonly) void* underlyingResult;
+@property (readonly) void*underlyingResult;
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)components;

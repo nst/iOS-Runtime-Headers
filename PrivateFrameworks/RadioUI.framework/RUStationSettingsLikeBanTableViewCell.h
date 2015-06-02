@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface RUStationSettingsLikeBanTableViewCell : RUTableViewCell {
     NSString *_album;
     UILabel *_albumLabel;
@@ -16,13 +14,13 @@
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * album;
-@property float albumMinXRatioWithContentWidth;
-@property(copy) NSString * artist;
-@property float artistMinXRatioWithContentWidth;
-@property(retain) UIImage * artworkImage;
-@property float artworkMinX;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *album;
+@property (nonatomic) float albumMinXRatioWithContentWidth;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic) float artistMinXRatioWithContentWidth;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) float artworkMinX;
+@property (nonatomic, copy) NSString *title;
 
 + (id)_textLabelFontWithEmphasis:(BOOL)arg1;
 + (struct CGSize { float x1; float x2; })artworkSize;

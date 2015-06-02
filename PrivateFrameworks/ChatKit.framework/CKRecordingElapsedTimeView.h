@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDate, NSTimer, UILabel, UIView;
-
 @interface CKRecordingElapsedTimeView : UIView {
     UIView *__recordingDotView;
     NSDate *__startTime;
@@ -11,10 +9,10 @@
     NSTimer *__updateTimer;
 }
 
-@property(readonly) UIView * _recordingDotView;
-@property(readonly) NSDate * _startTime;
-@property(readonly) UILabel * _timeLabel;
-@property(readonly) NSTimer * _updateTimer;
+@property (nonatomic, readonly) UIView *_recordingDotView;
+@property (nonatomic, readonly) NSDate *_startTime;
+@property (nonatomic, readonly) UILabel *_timeLabel;
+@property (nonatomic, readonly) NSTimer *_updateTimer;
 
 - (void)_beginRecordingAnimation;
 - (void)_commonCAMElapsedTimeViewInitialization;

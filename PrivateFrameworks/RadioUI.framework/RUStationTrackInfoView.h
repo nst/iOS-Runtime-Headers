@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUStationTrackInfoViewDelegate>, MPAVItem, NSString, RUTrackDownloadView, UIButton, UIImageView, UILabel, UITapGestureRecognizer, UIViewController;
-
 @interface RUStationTrackInfoView : UIView <RUTrackDownloadViewDelegate> {
     UILabel *_albumLabel;
     UILabel *_artistLabel;
@@ -16,15 +14,15 @@
     RUTrackDownloadView *_trackDownloadView;
 }
 
-@property(setter=setAVItem:,retain) MPAVItem * avItem;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUStationTrackInfoViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property(readonly) Class superclass;
-@property UIViewController * trackDownloadPresentingViewController;
+@property (setter=setAVItem:, nonatomic, retain) MPAVItem *avItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUStationTrackInfoViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
+@property (readonly) Class superclass;
+@property (nonatomic) UIViewController *trackDownloadPresentingViewController;
 
 + (id)_albumLabelFont;
 + (id)_artistLabelFont;

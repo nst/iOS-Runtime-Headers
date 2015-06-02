@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class NSMutableArray;
-
 @interface FigHUDGraphLayer : CALayer {
     struct __CTFont { } *_Font;
     struct CGPoint { float x1; float x2; } *_Lines;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSSet;
-
 @interface PLChangeNode : NSObject {
     Class _changeHubClass;
     NSObject<OS_xpc_object> *_hubConnection;
     BOOL _isObservingOrderKeys;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     unsigned long long _lastKnownChangeHubEventIndex;
-    unsigned char _nodeUUID[16];
+    unsigned char _nodeUUID;
     int _notifyToken;
     NSSet *_observedRelationships;
     NSMutableDictionary *_updatedOrderKeyObjectIDs;

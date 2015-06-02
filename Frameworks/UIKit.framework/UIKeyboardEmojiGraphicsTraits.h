@@ -25,23 +25,23 @@
     float _sectionOffset;
 }
 
-@property(readonly) float alertTextWidth;
-@property(readonly) float categoryHeaderFontSize;
-@property(readonly) float categoryHeaderHeight;
-@property(readonly) float categoryHeaderLeftPadding;
-@property(readonly) float categorySelectedCirPadding;
-@property(readonly) float categorySelectedCirWidth;
-@property(readonly) float columnOffset;
-@property(readonly) float emojiKeyWidth;
-@property(readonly) struct CGSize { float x1; float x2; } fakeEmojiKeySize;
-@property(readonly) float inputViewLeftMostPadding;
-@property(readonly) float inputViewRightMostPadding;
-@property(readonly) float minimumInteritemSpacing;
-@property(readonly) float minimumLineSpacing;
-@property(readonly) int prepolulatedRecentCount;
-@property(readonly) float rightBiasPercentage;
-@property(readonly) float scrubViewTopPadding;
-@property(readonly) float sectionOffset;
+@property (nonatomic, readonly) float alertTextWidth;
+@property (nonatomic, readonly) float categoryHeaderFontSize;
+@property (nonatomic, readonly) float categoryHeaderHeight;
+@property (nonatomic, readonly) float categoryHeaderLeftPadding;
+@property (nonatomic, readonly) float categorySelectedCirPadding;
+@property (nonatomic, readonly) float categorySelectedCirWidth;
+@property (nonatomic, readonly) float columnOffset;
+@property (nonatomic, readonly) float emojiKeyWidth;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } fakeEmojiKeySize;
+@property (nonatomic, readonly) float inputViewLeftMostPadding;
+@property (nonatomic, readonly) float inputViewRightMostPadding;
+@property (nonatomic, readonly) float minimumInteritemSpacing;
+@property (nonatomic, readonly) float minimumLineSpacing;
+@property (nonatomic, readonly) int prepolulatedRecentCount;
+@property (nonatomic, readonly) float rightBiasPercentage;
+@property (nonatomic, readonly) float scrubViewTopPadding;
+@property (nonatomic, readonly) float sectionOffset;
 
 + (id)emojiGraphicsTraitsWithScreenTraits:(id)arg1;
 

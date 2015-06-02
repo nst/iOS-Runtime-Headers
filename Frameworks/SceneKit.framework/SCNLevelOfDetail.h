@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNGeometry;
-
 @interface SCNLevelOfDetail : NSObject <NSCopying, NSSecureCoding> {
     SCNGeometry *_geometry;
     struct __C3DLOD { } *_lod;
@@ -11,9 +9,9 @@
     id _reserved;
 }
 
-@property(readonly) SCNGeometry * geometry;
-@property(readonly) float screenSpaceRadius;
-@property(readonly) float worldSpaceDistance;
+@property (readonly) SCNGeometry *geometry;
+@property (readonly) float screenSpaceRadius;
+@property (readonly) float worldSpaceDistance;
 
 + (id)SCNJSExportProtocol;
 + (id)levelOfDetailWithGeometry:(id)arg1 screenSpaceRadius:(float)arg2;

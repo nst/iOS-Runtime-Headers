@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKSentenceClassifier_en_US : RKSentenceClassifier {
-}
+@interface RKSentenceClassifier_en_US : RKSentenceClassifier
 
 + (id)preProcessTextMessageForLinguisticTagger:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface AVQueueFeeder : NSObject {
-}
+@interface AVQueueFeeder : NSObject
 
 - (double)bookmarkTimeForIndex:(unsigned int)arg1;
 - (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;

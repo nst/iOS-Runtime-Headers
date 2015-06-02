@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIStateRestoring>, MFMailComposeViewController, NSString;
-
 @interface UIMailActivity : UIActivity <UIStateRestoring> {
     NSString *_autosaveIdentifier;
     BOOL _hasAnyAccount;
@@ -13,18 +11,18 @@
     BOOL _sourceIsManaged;
 }
 
-@property(retain) NSString * autosaveIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasAnyAccount;
-@property BOOL hasFilteredAccount;
-@property(readonly) unsigned int hash;
-@property BOOL keyboardVisible;
-@property(retain) MFMailComposeViewController * mailComposeViewController;
-@property(readonly) Class objectRestorationClass;
-@property(readonly) <UIStateRestoring> * restorationParent;
-@property BOOL sourceIsManaged;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *autosaveIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasAnyAccount;
+@property (nonatomic) BOOL hasFilteredAccount;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL keyboardVisible;
+@property (nonatomic, retain) MFMailComposeViewController *mailComposeViewController;
+@property (nonatomic, readonly) Class objectRestorationClass;
+@property (nonatomic, readonly) <UIStateRestoring> *restorationParent;
+@property (nonatomic) BOOL sourceIsManaged;
+@property (readonly) Class superclass;
 
 + (int)activityCategory;
 
@@ -41,7 +39,7 @@
 - (id)activityType;
 - (id)activityViewController;
 - (id)autosaveIdentifier;
-- (void)autosaveWithHandler:(id)arg1;
+- (void)autosaveWithHandler:(id /* block */)arg1;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;

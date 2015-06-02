@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDChartSheet;
-
 @interface EMChartsheetMapper : EMSheetMapper {
     struct CGRect { 
         struct CGPoint { 

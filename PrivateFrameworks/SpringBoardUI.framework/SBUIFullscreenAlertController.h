@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSInvocation, NSNumber, NSString;
-
 @interface SBUIFullscreenAlertController : UIViewController <NSCopying> {
     NSString *_activationContext;
     NSNumber *_animationStartTime;
@@ -11,9 +9,9 @@
     BOOL _shouldAnimateIn;
 }
 
-@property(retain) NSString * activationContext;
-@property(retain) NSNumber * animationStartTime;
-@property BOOL shouldAnimateIn;
+@property (nonatomic, retain) NSString *activationContext;
+@property (nonatomic, retain) NSNumber *animationStartTime;
+@property (nonatomic) BOOL shouldAnimateIn;
 
 - (id)activationContext;
 - (BOOL)allowStackingOfAlert:(id)arg1;
@@ -38,7 +36,7 @@
 - (id)init;
 - (BOOL)isSlidingViewController;
 - (id)pendingDeactivationInvocation;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)removeBackgroundStyleWithDuration:(double)arg1;
 - (void)requestActivationAnimated:(BOOL)arg1 animateCurrentDisplayOut:(BOOL)arg2 withDelay:(BOOL)arg3;
 - (void)requestDeactivationAnimated:(BOOL)arg1 animateOldDisplayInWithStyle:(int)arg2;

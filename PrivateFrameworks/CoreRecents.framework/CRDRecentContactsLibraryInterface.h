@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents
  */
 
-@interface CRDRecentContactsLibraryInterface : NSObject {
-}
+@interface CRDRecentContactsLibraryInterface : NSObject
 
 + (id)XPCInterface;
 + (id)_xpcInterface;

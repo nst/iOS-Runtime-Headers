@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSData;
-
 @interface MFMessageDataContainer : NSObject {
     NSData *_data;
     BOOL _incomplete;

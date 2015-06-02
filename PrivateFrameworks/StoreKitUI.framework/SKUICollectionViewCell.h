@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, UIView;
-
 @interface SKUICollectionViewCell : UICollectionViewCell {
     UIView *_bottomBorderView;
     int _position;
@@ -13,9 +11,9 @@
     UIView *_topBorderView;
 }
 
-@property(retain) UIColor * separatorColor;
-@property int separatorStyle;
-@property BOOL showsCellSeparators;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic) BOOL showsCellSeparators;
 
 - (void).cxx_destruct;
 - (void)_setPosition:(int)arg1;

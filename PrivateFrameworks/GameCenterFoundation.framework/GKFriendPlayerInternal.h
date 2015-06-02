@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGameInternal, NSDate, NSString;
-
 @interface GKFriendPlayerInternal : GKFamiliarPlayerInternal {
     NSDate *_lastPlayedDate;
     GKGameInternal *_lastPlayedGame;

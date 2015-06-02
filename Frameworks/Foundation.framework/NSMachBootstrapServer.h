@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSMachBootstrapServer : NSPortNameServer {
-}
+@interface NSMachBootstrapServer : NSPortNameServer
 
 + (id)sharedInstance;
 

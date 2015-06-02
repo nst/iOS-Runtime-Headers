@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSMutableSet, _UIFlowLayoutInfo;
-
 @interface _UIFlowLayoutSection : NSObject {
     float _actualGap;
     float _beginMargin;
@@ -97,33 +95,33 @@
     float _verticalInterstice;
 }
 
-@property(readonly) float actualGap;
-@property(readonly) float beginMargin;
-@property(readonly) float endMargin;
-@property BOOL fixedItemSize;
-@property(readonly) float footerDimension;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footerFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) float headerDimension;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } headerFrame;
-@property float horizontalInterstice;
-@property(readonly) int indexOfIncompleteRow;
-@property(readonly) NSArray * invalidatedIndexPaths;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property(readonly) NSMutableArray * items;
-@property(readonly) int itemsByRowCount;
-@property int itemsCount;
-@property(readonly) float lastRowActualGap;
-@property(readonly) float lastRowBeginMargin;
-@property(readonly) float lastRowEndMargin;
-@property(readonly) BOOL lastRowIncomplete;
-@property _UIFlowLayoutInfo * layoutInfo;
-@property(readonly) float otherMargin;
-@property struct { int x1; int x2; int x3; } rowAlignmentOptions;
-@property(readonly) NSMutableArray * rows;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionMargins;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } validItemRange;
-@property float verticalInterstice;
+@property (nonatomic, readonly) float actualGap;
+@property (nonatomic, readonly) float beginMargin;
+@property (nonatomic, readonly) float endMargin;
+@property (nonatomic) BOOL fixedItemSize;
+@property (nonatomic, readonly) float footerDimension;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } footerFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) float headerDimension;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } headerFrame;
+@property (nonatomic) float horizontalInterstice;
+@property (nonatomic, readonly) int indexOfIncompleteRow;
+@property (nonatomic, readonly) NSArray *invalidatedIndexPaths;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic, readonly) NSMutableArray *items;
+@property (nonatomic, readonly) int itemsByRowCount;
+@property (nonatomic) int itemsCount;
+@property (nonatomic, readonly) float lastRowActualGap;
+@property (nonatomic, readonly) float lastRowBeginMargin;
+@property (nonatomic, readonly) float lastRowEndMargin;
+@property (nonatomic, readonly) BOOL lastRowIncomplete;
+@property (nonatomic) _UIFlowLayoutInfo *layoutInfo;
+@property (nonatomic, readonly) float otherMargin;
+@property (nonatomic) struct { int x1; int x2; int x3; } rowAlignmentOptions;
+@property (nonatomic, readonly) NSMutableArray *rows;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionMargins;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } validItemRange;
+@property (nonatomic) float verticalInterstice;
 
 - (float)actualGap;
 - (void)addInvalidatedIndexPath:(id)arg1;

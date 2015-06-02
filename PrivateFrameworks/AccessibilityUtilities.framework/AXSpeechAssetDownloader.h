@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSpeechAssetDownloader : AXSubsystem {
-}
+@interface AXSpeechAssetDownloader : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

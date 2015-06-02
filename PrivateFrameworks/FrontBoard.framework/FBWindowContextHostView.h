@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBWindowContextHostViewDelegate>, FBLayerHostContainer, FBScene, FBWindowContextHostViewContentLayerDelegate, FBWindowContextManager, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSSet, NSString, UIScreen;
-
 @interface FBWindowContextHostView : UIView <FBSceneBoundsDelegate, FBWindowContextManagerObserver> {
     FBLayerHostContainer *_contentLayer;
     FBWindowContextHostViewContentLayerDelegate *_contentLayerDelegate;
@@ -17,14 +15,14 @@
     UIScreen *_screen;
 }
 
-@property(retain) FBWindowContextManager * contextManager;
-@property(copy,readonly) NSString * debugDescription;
-@property <FBWindowContextHostViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSSet * hiddenContexts;
-@property(retain,readonly) FBScene * scene;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) FBWindowContextManager *contextManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FBWindowContextHostViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSSet *hiddenContexts;
+@property (nonatomic, readonly, retain) FBScene *scene;
+@property (readonly) Class superclass;
 
 - (void)_adjustLayerFrameAndTransform:(id)arg1;
 - (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;

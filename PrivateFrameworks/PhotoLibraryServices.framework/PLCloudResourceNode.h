@@ -2,27 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLCloudResource, PLCloudResourceNode;
+@interface PLCloudResourceNode : PLManagedObject
 
-@interface PLCloudResourceNode : PLManagedObject {
-}
-
-@property unsigned short budgetingCategory;
-@property unsigned short color;
-@property(retain) PLCloudResourceNode * leftChild;
-@property(retain) PLCloudResourceNode * next;
-@property(retain) PLCloudResourceNode * parent;
-@property unsigned short qualityClass;
-@property(retain) PLCloudResource * resource;
-@property(retain) PLCloudResourceNode * rightChild;
-@property unsigned long long totalResourceCount;
-@property unsigned long long totalResourceSize;
+@property (nonatomic) unsigned short budgetingCategory;
+@property (nonatomic) unsigned short color;
+@property (nonatomic, retain) PLCloudResourceNode *leftChild;
+@property (nonatomic, retain) PLCloudResourceNode *next;
+@property (nonatomic, retain) PLCloudResourceNode *parent;
+@property (nonatomic) unsigned short qualityClass;
+@property (nonatomic, retain) PLCloudResource *resource;
+@property (nonatomic, retain) PLCloudResourceNode *rightChild;
+@property (nonatomic) unsigned long long totalResourceCount;
+@property (nonatomic) unsigned long long totalResourceSize;
 
 + (id)entityName;
 
 - (id)description;
 - (id)grandparentNode;
-- (void)insertChildNode:(id)arg1 usingComparer:(id)arg2;
+- (void)insertChildNode:(id)arg1 usingComparer:(id /* block */)arg2;
 - (BOOL)isLeaf;
 - (BOOL)isNullNode;
 - (id)nodeAtIndex:(unsigned int)arg1;

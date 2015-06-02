@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL;
-
 @interface TSUTemporaryDirectoryManager : NSObject {
     NSURL *_baseDirectoryURL;
 }

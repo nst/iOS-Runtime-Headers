@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIActivityIndicatorView;
-
 @interface EKEventAttachmentCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
 }

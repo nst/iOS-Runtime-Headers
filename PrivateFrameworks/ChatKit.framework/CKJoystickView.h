@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKJoystickButtonItem, CKJoystickController, NSArray, NSMutableArray, UIView;
-
 @interface CKJoystickView : UIView {
     NSMutableArray *_allButtonItems;
     BOOL _autoDismiss;
@@ -24,29 +22,29 @@
     BOOL _touchInside;
 }
 
-@property(retain) NSMutableArray * allButtonItems;
-@property BOOL autoDismiss;
-@property(retain) CKJoystickButtonItem * centerButtonItem;
-@property(getter=isCollapsed) BOOL collapsed;
-@property CKJoystickController * controller;
-@property BOOL delegateCollapsedWillChange;
-@property(retain) UIView * discView;
-@property(getter=isDragging) BOOL dragging;
-@property double endAngle;
-@property(getter=isExpanded) BOOL expanded;
-@property unsigned int highlightStyle;
-@property CKJoystickButtonItem * highlightedButtonItem;
-@property double incrementAngle;
-@property(copy) NSArray * radialButtonItems;
-@property double startAngle;
-@property unsigned int style;
-@property(getter=isTouchInside) BOOL touchInside;
+@property (nonatomic, retain) NSMutableArray *allButtonItems;
+@property (nonatomic) BOOL autoDismiss;
+@property (nonatomic, retain) CKJoystickButtonItem *centerButtonItem;
+@property (getter=isCollapsed, nonatomic) BOOL collapsed;
+@property (nonatomic) CKJoystickController *controller;
+@property (nonatomic) BOOL delegateCollapsedWillChange;
+@property (nonatomic, retain) UIView *discView;
+@property (getter=isDragging, nonatomic) BOOL dragging;
+@property (nonatomic) double endAngle;
+@property (getter=isExpanded, nonatomic) BOOL expanded;
+@property (nonatomic) unsigned int highlightStyle;
+@property (nonatomic) CKJoystickButtonItem *highlightedButtonItem;
+@property (nonatomic) double incrementAngle;
+@property (nonatomic, copy) NSArray *radialButtonItems;
+@property (nonatomic) double startAngle;
+@property (nonatomic) unsigned int style;
+@property (getter=isTouchInside, nonatomic) BOOL touchInside;
 
-+ (void)buttonChangeAnimation:(id)arg1 completion:(id)arg2;
-+ (void)buttonRotateAnimation:(id)arg1 completion:(id)arg2;
-+ (void)collapseAnimation:(id)arg1 completion:(id)arg2;
-+ (void)expandAnimation:(id)arg1 completion:(id)arg2;
-+ (void)highlightAnimation:(id)arg1 completion:(id)arg2;
++ (void)buttonChangeAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
++ (void)buttonRotateAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
++ (void)collapseAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
++ (void)expandAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
++ (void)highlightAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
 
 - (id)allButtonItems;
 - (BOOL)autoDismiss;
@@ -75,14 +73,14 @@
 - (void)setCenterButtonItem:(id)arg1;
 - (void)setCenterButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setCollapsed:(BOOL)arg1;
-- (void)setCollapsed:(BOOL)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)setCollapsed:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setController:(id)arg1;
 - (void)setDelegateCollapsedWillChange:(BOOL)arg1;
 - (void)setDiscView:(id)arg1;
 - (void)setDragging:(BOOL)arg1;
 - (void)setEndAngle:(double)arg1;
 - (void)setExpanded:(BOOL)arg1;
-- (void)setExpanded:(BOOL)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)setExpanded:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setHighlightStyle:(unsigned int)arg1;
 - (void)setHighlightedButtonItem:(id)arg1;
 - (void)setIncrementAngle:(double)arg1;

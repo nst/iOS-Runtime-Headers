@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPlayReceiver.framework/AirPlayReceiver
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class AirPlayControllerServer, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, WPAirPlaySolo;
-
 @interface AirPlayReceiverPlatform : NSObject <WPAirPlaySoloDelegate> {
     struct { 
         unsigned char flags; 
@@ -26,7 +19,7 @@
     int _conferenceRoomModeNotifyToken;
     AirPlayControllerServer *_controllerServer;
     int _dacpErrorNotifyToken;
-    int _dacpNotifyTokens[24];
+    int _dacpNotifyTokens;
     int _lockDownActivationStateToken;
     int _managedDefaultsChangedNotificationToken;
     unsigned char _p2pSolo;
@@ -34,7 +27,7 @@
     int _playbackPreventNotifyToken;
     unsigned char _playbackPrevented;
     int _prefChangedNotifyToken;
-    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; void *x2; id x3; struct { void *x_4_1_1; void *x_4_1_2; int (*x_4_1_3)(); int (*x_4_1_4)(); int (*x_4_1_5)(); int (*x_4_1_6)(); int (*x_4_1_7)(); } x4; unsigned char x5; unsigned long long x6; id x7; struct _DNSServiceRef_t {} *x8; unsigned char x9; unsigned char x10; struct _DNSServiceRef_t {} *x11; struct HTTPServerPrivate {} *x12; id x13; struct HTTPServerPrivate {} *x14; unsigned char x15[16]; float x16; struct AirPlayScreenServerPrivate {} *x17; id x18; unsigned char x19; int x20; unsigned char x21; unsigned char x22; unsigned char x23; unsigned char x24; unsigned char x25; unsigned char x26[6]; BOOL x27[17]; BOOL x28[64]; int x29; unsigned char x30; unsigned char x31; unsigned char x32; id x33; unsigned char x34; unsigned char x35; unsigned char x36; BOOL x37[8]; unsigned long long x38; BOOL x39[8]; unsigned char x40; BOOL x41[64]; unsigned char x42; unsigned char x43; int x44; unsigned char x45; struct __CFDictionary {} *x46; struct __CFDictionary {} *x47; struct MediaControlServerPrivate {} *x48; struct __CFDictionary {} *x49; unsigned int x50; int x51; unsigned int x52; } *_server;
+    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; void *x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; void *x6; void *x7; int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); } *_server;
     struct __CFDictionary { } *_soloDevices;
     int _systemBufferSamples;
     int _systemSampleRate;
@@ -44,10 +37,10 @@
     unsigned char _voiceForTelephony;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_btleStart;
 - (long)_btleStartListeningForNetworkChanges;

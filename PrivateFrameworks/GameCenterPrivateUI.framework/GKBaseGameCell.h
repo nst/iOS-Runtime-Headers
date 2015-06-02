@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKGame, GKGameRecord, UIImageView, UILabel;
-
 @interface GKBaseGameCell : GKCollectionViewCell {
     UIImageView *_iconView;
     UILabel *_nameLabel;
 }
 
-@property(retain) GKGame * game;
-@property(retain) GKGameRecord * gameRecord;
-@property(retain) UIImageView * iconView;
-@property(retain) UILabel * nameLabel;
+@property (nonatomic, retain) GKGame *game;
+@property (nonatomic, retain) GKGameRecord *gameRecord;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) UILabel *nameLabel;
 
 + (float)defaultRowHeight;
 + (id)itemHeightList;

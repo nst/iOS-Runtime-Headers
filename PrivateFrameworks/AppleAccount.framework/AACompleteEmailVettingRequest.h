@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AACompleteEmailVettingRequest : AAEmailVettingRequest {
     NSString *_token;
 }

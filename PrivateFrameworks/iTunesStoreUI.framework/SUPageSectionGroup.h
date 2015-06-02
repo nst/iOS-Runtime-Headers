@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, UIColor;
-
 @interface SUPageSectionGroup : NSObject <NSCopying> {
     int _defaultSectionIndex;
     NSArray *_sections;
@@ -12,11 +10,11 @@
     int _tintStyle;
 }
 
-@property int defaultSectionIndex;
-@property(retain) NSArray * sections;
-@property int style;
-@property(retain) UIColor * tintColor;
-@property int tintStyle;
+@property (nonatomic) int defaultSectionIndex;
+@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic) int style;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic) int tintStyle;
 
 - (int)_sectionStyleForString:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

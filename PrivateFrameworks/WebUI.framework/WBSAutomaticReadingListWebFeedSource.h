@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSUbiquitousKeyValueStore, NSXPCConnection, WBSAutomaticReadingListTrackedRecordsInfo;
-
 @interface WBSAutomaticReadingListWebFeedSource : WBSAutomaticReadingListSocialSource {
     BOOL _canFetchFeeds;
     BOOL _cloudSyncEnabled;
@@ -18,9 +16,9 @@
     NSObject<OS_dispatch_queue> *_webFeedSourceDataSynchronizationQueue;
 }
 
-@property BOOL cloudSyncEnabled;
-@property(readonly) WBSAutomaticReadingListTrackedRecordsInfo * items;
-@property(retain) NSXPCConnection * webFeedParserConnection;
+@property (nonatomic) BOOL cloudSyncEnabled;
+@property (nonatomic, readonly) WBSAutomaticReadingListTrackedRecordsInfo *items;
+@property (nonatomic, retain) NSXPCConnection *webFeedParserConnection;
 
 + (id)sharedSource;
 
@@ -51,10 +49,10 @@
 - (void)blockFeedWithItem:(id)arg1;
 - (BOOL)cloudSyncEnabled;
 - (void)debugClearWebFeedSubscriptionsKeyValueStore;
-- (void)fetchPotentialSubscriptionFeedSources:(id)arg1;
-- (void)getFeedSourcesWithState:(int)arg1 completionBlock:(id)arg2;
-- (void)getSiteIconURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
-- (void)getSourceURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
+- (void)fetchPotentialSubscriptionFeedSources:(id /* block */)arg1;
+- (void)getFeedSourcesWithState:(int)arg1 completionBlock:(id /* block */)arg2;
+- (void)getSiteIconURLsForFeedURL:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)getSourceURLsForFeedURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isActive;
 - (id)items;

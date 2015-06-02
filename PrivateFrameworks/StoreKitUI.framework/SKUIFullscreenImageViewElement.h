@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIFullscreenImageViewElement : SKUIImageViewElement {
-}
+@interface SKUIFullscreenImageViewElement : SKUIImageViewElement
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOCarInfo : PBCodable <NSCopying> {
     struct { 
         unsigned int screenResolution : 1; 
@@ -22,14 +20,14 @@
     } _screenResolution;
 }
 
-@property BOOL hasInteractionModel;
-@property(readonly) BOOL hasManufacturer;
-@property(readonly) BOOL hasModel;
-@property BOOL hasScreenResolution;
-@property int interactionModel;
-@property(retain) NSString * manufacturer;
-@property(retain) NSString * model;
-@property struct { double x1; double x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } screenResolution;
+@property (nonatomic) BOOL hasInteractionModel;
+@property (nonatomic, readonly) BOOL hasManufacturer;
+@property (nonatomic, readonly) BOOL hasModel;
+@property (nonatomic) BOOL hasScreenResolution;
+@property (nonatomic) int interactionModel;
+@property (nonatomic, retain) NSString *manufacturer;
+@property (nonatomic, retain) NSString *model;
+@property (nonatomic) struct { double x1; double x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } screenResolution;
 
 + (id)carInfoWithTraits:(id)arg1;
 

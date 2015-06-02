@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class AWDServerConnection;
-
 @interface AWDLogger : CHLogger {
     AWDServerConnection *_awdServer;
 }
 
-@property(retain) AWDServerConnection * awdServer;
+@property (nonatomic, retain) AWDServerConnection *awdServer;
 
 + (id)instance;
 

@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosSharingViewControllerSpec : NSObject {
-}
+@interface PUPhotosSharingViewControllerSpec : NSObject
 
-@property(readonly) float interItemSpacing;
-@property(readonly) unsigned int selectionBadgeCorner;
-@property(readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
-@property(readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
+@property (nonatomic, readonly) float interItemSpacing;
+@property (nonatomic, readonly) unsigned int selectionBadgeCorner;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } selectionBadgeOffset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } selectionBadgeSize;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)embedsActivityViewForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 horizontalSizeClass:(int)arg2 verticalSizeClass:(int)arg3;

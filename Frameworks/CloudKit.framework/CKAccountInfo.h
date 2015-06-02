@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
     BOOL _accountWantsPushRegistration;
     NSString *_email;
@@ -11,10 +9,10 @@
     NSString *_password;
 }
 
-@property BOOL accountWantsPushRegistration;
-@property(readonly) NSString * email;
-@property BOOL isUnitTestingAccount;
-@property(readonly) NSString * password;
+@property (nonatomic) BOOL accountWantsPushRegistration;
+@property (nonatomic, readonly) NSString *email;
+@property (nonatomic) BOOL isUnitTestingAccount;
+@property (nonatomic, readonly) NSString *password;
 
 + (BOOL)supportsSecureCoding;
 

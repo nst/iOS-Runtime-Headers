@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKTimeZone;
-
 @interface EKCalendarDate : NSObject <NSCopying, NSMutableCopying> {
     double _dateAbs;
     struct { 

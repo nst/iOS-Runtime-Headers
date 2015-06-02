@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary, NSString, SSEventMonitor;
-
 @interface PLStoreAgent : PLAgent <SSEventMonitorDelegate> {
     NSMutableDictionary *_currentDownloads;
     SSEventMonitor *_monitor;
 }
 
-@property(retain) NSMutableDictionary * currentDownloads;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SSEventMonitor * monitor;
-@property(readonly) Class superclass;
+@property (retain) NSMutableDictionary *currentDownloads;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) SSEventMonitor *monitor;
+@property (readonly) Class superclass;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

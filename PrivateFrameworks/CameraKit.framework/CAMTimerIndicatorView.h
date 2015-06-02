@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMAnimationDelegate, UILabel, UIView;
-
 @interface CAMTimerIndicatorView : UIView {
     CAMAnimationDelegate *__animationDelegate;
     UILabel *__countdownLabel;
@@ -16,15 +14,15 @@
     int _style;
 }
 
-@property(readonly) CAMAnimationDelegate * _animationDelegate;
-@property(readonly) UILabel * _countdownLabel;
-@property(setter=_setDeferredOrientation:) int _deferredLabelOrientation;
-@property(readonly) UIView * _dimmingView;
-@property(setter=_setLabelOrientation:) int _labelOrientation;
-@property(getter=_isPerformingStyleAnimation,setter=_setPerformingStyleAnimation:) BOOL _performingStyleAnimation;
-@property(readonly) int _remainingTicks;
-@property(readonly) int _startingTicks;
-@property int style;
+@property (nonatomic, readonly) CAMAnimationDelegate *_animationDelegate;
+@property (nonatomic, readonly) UILabel *_countdownLabel;
+@property (setter=_setDeferredOrientation:, nonatomic) int _deferredLabelOrientation;
+@property (nonatomic, readonly) UIView *_dimmingView;
+@property (setter=_setLabelOrientation:, nonatomic) int _labelOrientation;
+@property (getter=_isPerformingStyleAnimation, setter=_setPerformingStyleAnimation:, nonatomic) BOOL _performingStyleAnimation;
+@property (nonatomic, readonly) int _remainingTicks;
+@property (nonatomic, readonly) int _startingTicks;
+@property (nonatomic) int style;
 
 - (void).cxx_destruct;
 - (void)_addDecrementAnimationForTick:(int)arg1;

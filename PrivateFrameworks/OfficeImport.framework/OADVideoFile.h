@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADVideoFile : OADLinkedMediaFile {
-}
+@interface OADVideoFile : OADLinkedMediaFile
 
 @end

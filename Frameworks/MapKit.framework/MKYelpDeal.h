@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
-
 @interface MKYelpDeal : NSObject <MKMapItemVendorDeal> {
     NSString *identifier;
     NSString *title;
     NSString *urlString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * identifier;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property(retain) NSString * urlString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *identifier;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *urlString;
 
 + (id)dealWithJSONObject:(id)arg1;
 

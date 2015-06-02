@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSArray;
-
 @interface BBActionGroup : BBAction {
     NSArray *_actions;
 }
 
-@property(copy) NSArray * actions;
+@property (nonatomic, copy) NSArray *actions;
 
 + (id)actionGroupWithActions:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSTimer;
-
 @interface GEOTestTileRequester : GEOTileRequester {
     NSTimer *_timer;
 }

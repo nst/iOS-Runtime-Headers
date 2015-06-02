@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGDataNormalization : NSObject {
-}
+@interface SGDataNormalization : NSObject
 
 @end

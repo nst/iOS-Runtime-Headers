@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSHashTable, NSMapTable, NSObject<OS_dispatch_queue>, NSString, WBUFormAutoCompleteStateWK1;
-
 @interface WBUFormDataControllerWK1 : WBUFormDataController <UIWebAutoFillDelegate> {
     WBUFormAutoCompleteStateWK1 *_autoCompleteState;
     NSMapTable *_editedTextFieldsByFrame;
@@ -11,10 +9,10 @@
     NSHashTable *_webBrowserViewsWithUnsubmittedForms;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedFormDataController;
 
@@ -48,7 +46,7 @@
 - (void)webBrowserView:(id)arg1 textDidChangeInTextField:(id)arg2 inFrame:(id)arg3;
 - (void)webBrowserView:(id)arg1 updateAutoFillButton:(id)arg2;
 - (void)webBrowserView:(id)arg1 willSendSubmitEventToForm:(id)arg2 inFrame:(id)arg3 withValues:(id)arg4;
-- (void)webBrowserView:(id)arg1 willSubmitForm:(id)arg2 toFrame:(id)arg3 fromFrame:(id)arg4 withValues:(id)arg5 submissionHandler:(id)arg6;
+- (void)webBrowserView:(id)arg1 willSubmitForm:(id)arg2 toFrame:(id)arg3 fromFrame:(id)arg4 withValues:(id)arg5 submissionHandler:(id /* block */)arg6;
 - (BOOL)webBrowserViewShouldShowAutoFillButton:(id)arg1;
 
 @end

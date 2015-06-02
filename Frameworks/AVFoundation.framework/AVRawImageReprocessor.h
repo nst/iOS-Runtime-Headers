@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVRawImageReprocessorInternal;
-
 @interface AVRawImageReprocessor : NSObject {
     AVRawImageReprocessorInternal *_internal;
 }
@@ -13,6 +11,6 @@
 - (void)dealloc;
 - (void)handlePhotoReady:(id)arg1;
 - (id)init;
-- (void)reprocessRawImageSurface:(struct __IOSurface { }*)arg1 andMetadata:(id)arg2 withOutputSettings:(id)arg3 completionHandler:(id)arg4;
+- (void)reprocessRawImageSurface:(struct __IOSurface { }*)arg1 andMetadata:(id)arg2 withOutputSettings:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

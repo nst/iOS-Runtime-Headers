@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSURL;
-
 @interface CoreDAVOrderedAction : CoreDAVAction {
     int _absoluteOrder;
     NSURL *_priorURL;
 }
 
-@property(readonly) int absoluteOrder;
-@property(retain) NSURL * priorURL;
+@property (nonatomic, readonly) int absoluteOrder;
+@property (nonatomic, retain) NSURL *priorURL;
 
 - (int)absoluteOrder;
 - (void)dealloc;

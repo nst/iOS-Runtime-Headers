@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSDictionary;
-
 @interface BLTWatchKitAppList : NSObject {
     NSDictionary *_appsByAppBundleID;
     struct _opaque_pthread_mutex_t { 

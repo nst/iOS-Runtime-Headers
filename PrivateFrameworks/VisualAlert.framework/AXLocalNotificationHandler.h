@@ -6,7 +6,7 @@
     id _opaqueObserver;
 }
 
-@property(setter=_setOpaqueObserver:,retain) id _opaqueObserver;
+@property (setter=_setOpaqueObserver:, nonatomic, retain) id _opaqueObserver;
 
 - (id)_notificationTypeDescription;
 - (id)_opaqueObserver;

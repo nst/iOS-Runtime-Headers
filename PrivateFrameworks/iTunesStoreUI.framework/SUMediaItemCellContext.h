@@ -8,9 +8,9 @@
     BOOL _itemsHaveArtwork;
 }
 
-@property float artworkWidth;
-@property int hiddenMediaIconTypes;
-@property BOOL itemsHaveArtwork;
+@property (nonatomic) float artworkWidth;
+@property (nonatomic) int hiddenMediaIconTypes;
+@property (nonatomic) BOOL itemsHaveArtwork;
 
 - (float)artworkWidth;
 - (int)hiddenMediaIconTypes;

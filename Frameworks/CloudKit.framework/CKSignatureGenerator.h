@@ -7,8 +7,8 @@
     BOOL _valid;
 }
 
-@property void* generator;
-@property(getter=isValid) BOOL valid;
+@property (nonatomic) void*generator;
+@property (getter=isValid, nonatomic) BOOL valid;
 
 + (BOOL)isValidSignature:(id)arg1;
 + (id)signatureWithFileDescriptor:(int)arg1 error:(id*)arg2;

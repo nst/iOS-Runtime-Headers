@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPHeaderFooterProvider>, TSWPLayout;
-
 @interface TSWPPageLayout : TSDLayout {
     struct CGRect { 
         struct CGPoint { 
@@ -14,7 +12,7 @@
             float width; 
             float height; 
         } size; 
-    } _headerFooterBorderRects[2][3];
+    } _headerFooterBorderRects;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -24,18 +22,18 @@
             float width; 
             float height; 
         } size; 
-    } _headerFooterClipRects[2][3];
-    TSWPLayout *_headerFooterLayouts[2][3];
+    } _headerFooterClipRects;
+    TSWPLayout *_headerFooterLayouts;
 }
 
-@property(readonly) BOOL allowsHeaderFooter;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
-@property(readonly) float footerHeight;
-@property(readonly) BOOL hasFooters;
-@property(readonly) BOOL hasHeaders;
-@property(readonly) <TSWPHeaderFooterProvider> * headerFooterProvider;
-@property(readonly) BOOL headerFooterProviderValid;
-@property(readonly) float headerHeight;
+@property (nonatomic, readonly) BOOL allowsHeaderFooter;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
+@property (nonatomic, readonly) float footerHeight;
+@property (nonatomic, readonly) BOOL hasFooters;
+@property (nonatomic, readonly) BOOL hasHeaders;
+@property (nonatomic, readonly) <TSWPHeaderFooterProvider> *headerFooterProvider;
+@property (nonatomic, readonly) BOOL headerFooterProviderValid;
+@property (nonatomic, readonly) float headerHeight;
 
 - (id).cxx_construct;
 - (BOOL)allowsHeaderFooter;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSDate, NSDictionary, NSObject<OS_xpc_object>;
-
 @interface HDBackgroundTask : NSObject {
     NSObject<OS_xpc_object> *_job;
 }
 
-@property(retain) NSDate * endDate;
-@property(retain) NSDate * startDate;
-@property(retain) NSDictionary * userContext;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, retain) NSDictionary *userContext;
 
 - (void).cxx_destruct;
 - (id)_initWithJob:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SSURLRequestProperties;
-
 @interface SUNavigationHistoryItem : NSObject <NSCopying> {
     NSString *_title;
     SSURLRequestProperties *_urlRequestProperties;
 }
 
-@property(readonly) SSURLRequestProperties * URLRequestProperties;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) SSURLRequestProperties *URLRequestProperties;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)URLRequestProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

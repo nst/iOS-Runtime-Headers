@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormat_FigRecorder, AVCaptureDeviceInternal_FigRecorder, NSArray, NSString;
-
 @interface AVCaptureDevice_FigRecorder : NSObject {
     AVCaptureDeviceInternal_FigRecorder *_internal;
 }
 
-@property(retain) AVCaptureDeviceFormat_FigRecorder * activeFormat;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMaxFrameDuration;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMinFrameDuration;
-@property(getter=isConnected,readonly) BOOL connected;
-@property(readonly) NSArray * formats;
-@property(readonly) NSString * localizedName;
-@property(readonly) NSString * modelID;
-@property(readonly) NSString * uniqueID;
+@property (nonatomic, retain) AVCaptureDeviceFormat_FigRecorder *activeFormat;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMaxFrameDuration;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMinFrameDuration;
+@property (getter=isConnected, nonatomic, readonly) BOOL connected;
+@property (nonatomic, readonly) NSArray *formats;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) NSString *modelID;
+@property (nonatomic, readonly) NSString *uniqueID;
 
 + (id)_devices;
 + (int)authorizationStatusForMediaType:(id)arg1;
@@ -24,7 +22,7 @@
 + (id)devices;
 + (id)devicesWithMediaType:(id)arg1;
 + (void)initialize;
-+ (void)requestAccessForMediaType:(id)arg1 completionHandler:(id)arg2;
++ (void)requestAccessForMediaType:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (BOOL)HDRUsesPreBracketedFrameAsEV0;
 - (void)_applyOverridesToCaptureOptions:(id)arg1;

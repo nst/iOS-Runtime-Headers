@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDTokenTreeNode;
-
 @interface EDTokenTreeNode : NSObject {
     EDTokenTreeNode *mFirstChild;
     EDTokenTreeNode *mSibling;

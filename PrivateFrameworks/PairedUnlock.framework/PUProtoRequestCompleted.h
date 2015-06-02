@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-@class NSData;
-
 @interface PUProtoRequestCompleted : PBCodable <NSCopying> {
     NSData *_errorData;
     unsigned int _messageID;
     BOOL _success;
 }
 
-@property(retain) NSData * errorData;
-@property(readonly) BOOL hasErrorData;
-@property unsigned int messageID;
-@property BOOL success;
+@property (nonatomic, retain) NSData *errorData;
+@property (nonatomic, readonly) BOOL hasErrorData;
+@property (nonatomic) unsigned int messageID;
+@property (nonatomic) BOOL success;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

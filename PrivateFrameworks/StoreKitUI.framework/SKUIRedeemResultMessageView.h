@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UILabel;
-
 @interface SKUIRedeemResultMessageView : UIView {
     UILabel *_messageLabel;
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * message;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;

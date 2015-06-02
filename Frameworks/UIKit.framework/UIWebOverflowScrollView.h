@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode, UIWebBrowserView, UIWebOverflowContentView, UIWebOverflowScrollListener;
-
 @interface UIWebOverflowScrollView : UIScrollView {
     BOOL _beingRemoved;
     DOMNode *_node;
@@ -12,11 +10,11 @@
     UIWebBrowserView *_webBrowserView;
 }
 
-@property(getter=isBeingRemoved) BOOL beingRemoved;
-@property(retain) DOMNode * node;
-@property(retain) UIWebOverflowContentView * overflowContentView;
-@property(retain) UIWebOverflowScrollListener * scrollListener;
-@property UIWebBrowserView * webBrowserView;
+@property (getter=isBeingRemoved, nonatomic) BOOL beingRemoved;
+@property (nonatomic, retain) DOMNode *node;
+@property (nonatomic, retain) UIWebOverflowContentView *overflowContentView;
+@property (nonatomic, retain) UIWebOverflowScrollListener *scrollListener;
+@property (nonatomic) UIWebBrowserView *webBrowserView;
 
 - (void)_replaceLayer:(id)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDReference, EDResources, NSString;
-
 @interface EDPivotTable : NSObject {
     bool mApplyAlignmentFormats;
     bool mApplyBorderFormats;

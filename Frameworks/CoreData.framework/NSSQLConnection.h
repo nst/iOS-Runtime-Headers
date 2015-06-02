@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSSQLAdapter, NSSQLStatement;
-
 @interface NSSQLConnection : NSObject {
     NSSQLAdapter *_adapter;
     NSArray *_columnsToFetch;

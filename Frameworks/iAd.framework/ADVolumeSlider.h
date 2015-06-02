@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class UIColor;
-
 @interface ADVolumeSlider : MPVolumeSlider {
     UIColor *_maximumTintUsedForTrackImageColor;
     UIColor *_minimumTintUsedForTrackImageColor;

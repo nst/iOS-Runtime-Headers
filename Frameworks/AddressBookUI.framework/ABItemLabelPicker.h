@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyGroup, ABStyleProvider, NSIndexPath, NSMutableArray, NSString, UITableView;
-
 @interface ABItemLabelPicker : UIView <ABSimpleTextInputViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _addLabelDisabled;
     NSMutableArray *_additionalLabels;
@@ -25,15 +23,15 @@
     UITableView *_tableView;
 }
 
-@property(getter=isAddLabelDisabled) BOOL addLabelDisabled;
-@property void* addressBook;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didCreateNewLabel;
-@property(readonly) unsigned int hash;
-@property(retain) ABStyleProvider * styleProvider;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (getter=isAddLabelDisabled, nonatomic) BOOL addLabelDisabled;
+@property (nonatomic) void*addressBook;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didCreateNewLabel;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 + (id)_defaultLabelsForProperty:(int)arg1 person:(id)arg2 propertyGroup:(id)arg3 index:(int)arg4 addressBook:(void*)arg5 outBestLabelIndex:(int*)arg6 forceIncludeLabels:(id)arg7;
 + (id)builtInLabelsForProperty:(int)arg1;

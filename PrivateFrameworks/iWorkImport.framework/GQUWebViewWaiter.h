@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQUWebViewWaiter : NSObject {
-}
+@interface GQUWebViewWaiter : NSObject
 
 + (id)waiter;
 

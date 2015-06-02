@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
  */
 
-@class NSString;
-
 @interface SUBProgress : NSObject <NSSecureCoding> {
     double _estimatedTimeRemaining;
     BOOL _isDone;
@@ -11,10 +9,10 @@
     float _portionComplete;
 }
 
-@property double estimatedTimeRemaining;
-@property BOOL isDone;
-@property(retain) NSString * phase;
-@property float portionComplete;
+@property (nonatomic) double estimatedTimeRemaining;
+@property (nonatomic) BOOL isDone;
+@property (nonatomic, retain) NSString *phase;
+@property (nonatomic) float portionComplete;
 
 + (BOOL)supportsSecureCoding;
 

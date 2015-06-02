@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSScheduleForceSendParameter : ICSPredefinedValue {
-}
+@interface ICSScheduleForceSendParameter : ICSPredefinedValue
 
 + (id)scheduleForceSendParameterFromCode:(int)arg1;
 + (id)scheduleForceSendParameterFromICSString:(id)arg1;

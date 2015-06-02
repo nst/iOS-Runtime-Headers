@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, SKUIVerticalLockupView;
-
 @interface SKUIEditorialCardCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIPerspectiveView, SKUIViewElementView> {
     NSMutableArray *_allLockupViews;
     struct CGSize { 
@@ -13,10 +11,10 @@
     SKUIVerticalLockupView *_primaryLockupView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 + (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;

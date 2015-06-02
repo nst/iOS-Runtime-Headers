@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSOutputStream;
-
 @interface ML3ExportSession : NSData {
     ML3MusicLibrary *_library;
     NSOutputStream *_outputStream;
 }
 
-@property(readonly) ML3MusicLibrary * library;
-@property(readonly) NSOutputStream * outputStream;
+@property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (nonatomic, readonly) NSOutputStream *outputStream;
 
 - (void).cxx_destruct;
 - (id)begin:(unsigned int)arg1;

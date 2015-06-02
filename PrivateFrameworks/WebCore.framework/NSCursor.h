@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface NSCursor : NSObject {
-}
+@interface NSCursor : NSObject
 
 + (void)setHiddenUntilMouseMoves:(BOOL)arg1;
 

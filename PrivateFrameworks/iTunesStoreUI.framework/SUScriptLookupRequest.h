@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SSLookupRequest;
-
 @interface SUScriptLookupRequest : SUScriptObject {
     SSLookupRequest *_request;
 }
 
-@property(retain) id authenticatesIfNeeded;
-@property(copy) NSString * keyProfile;
+@property (retain) id authenticatesIfNeeded;
+@property (copy) NSString *keyProfile;
 @property int localizationStyle;
-@property(readonly) int localizationStyleDevice;
-@property(readonly) int localizationStyleServer;
+@property (readonly) int localizationStyleDevice;
+@property (readonly) int localizationStyleServer;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

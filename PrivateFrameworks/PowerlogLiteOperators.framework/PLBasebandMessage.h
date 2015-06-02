@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSData, NSDate, NSNumber, NSString, PLAgent, PLBBMsg;
-
 @interface PLBasebandMessage : NSObject {
     PLAgent *_agent;
     NSDate *_apTimestamp;
@@ -19,20 +17,20 @@
     double timeCalibration;
 }
 
-@property(retain) PLAgent * agent;
-@property(retain,readonly) NSDate * apTimestamp;
-@property(retain,readonly) NSDate * calibratedTimestamp;
-@property(retain) NSDate * date;
-@property(retain) PLBBMsg * logger;
-@property(retain) NSNumber * msgType;
-@property(retain) NSString * pload;
-@property(retain,readonly) NSData * rawData;
-@property(retain) NSNumber * seqNum;
-@property(readonly) unsigned int ticksInGPSONState;
-@property(readonly) unsigned int ticksInGoodState;
+@property (nonatomic, retain) PLAgent *agent;
+@property (nonatomic, readonly, retain) NSDate *apTimestamp;
+@property (nonatomic, readonly, retain) NSDate *calibratedTimestamp;
+@property (nonatomic, retain) NSDate *date;
+@property (retain) PLBBMsg *logger;
+@property (retain) NSNumber *msgType;
+@property (retain) NSString *pload;
+@property (nonatomic, readonly, retain) NSData *rawData;
+@property (nonatomic, retain) NSNumber *seqNum;
+@property (nonatomic, readonly) unsigned int ticksInGPSONState;
+@property (nonatomic, readonly) unsigned int ticksInGoodState;
 @property double timeCal;
-@property double timeCalibration;
-@property(retain,readonly) NSDate * timestamp;
+@property (nonatomic) double timeCalibration;
+@property (nonatomic, readonly, retain) NSDate *timestamp;
 
 + (id)messageWithData:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVWeakReference, NSDictionary, NSString;
-
 @interface AVPlayerItemTrackInternal : NSObject {
     AVAsset *asset;
     BOOL enabled;

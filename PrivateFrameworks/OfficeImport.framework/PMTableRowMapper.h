@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTable, OADTableRow;
-
 @interface PMTableRowMapper : CMMapper {
     OADTableRow *mRow;
     unsigned int mRowIndex;

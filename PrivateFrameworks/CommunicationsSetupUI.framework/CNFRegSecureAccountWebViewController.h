@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class IMAccount;
-
 @interface CNFRegSecureAccountWebViewController : CNFRegAuthorizedAccountWebViewController {
     IMAccount *_account;
     BOOL _gotNewCredential;
@@ -11,7 +9,7 @@
     BOOL _triedGettingNewCredentials;
 }
 
-@property(retain) IMAccount * account;
+@property (nonatomic, retain) IMAccount *account;
 
 - (void)_handleTimeout;
 - (void)_incrementSigninFailureCount;

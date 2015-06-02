@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIScrollViewAutomaticContentSizeConstraint : NSAutoresizingMaskLayoutConstraint {
-}
+@interface _UIScrollViewAutomaticContentSizeConstraint : NSAutoresizingMaskLayoutConstraint
 
 - (id)description;
 

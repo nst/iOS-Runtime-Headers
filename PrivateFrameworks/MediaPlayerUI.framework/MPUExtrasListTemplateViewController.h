@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasViewElementViewController, NSArray, NSIndexPath, NSMapTable, NSString, UIImageView, UITableView;
-
 @interface MPUExtrasListTemplateViewController : MPUExtrasTemplateViewController <UITableViewDataSource, UITableViewDelegate> {
     NSIndexPath *_autohighlightIndexPath;
     NSArray *_detailViewConstraints;
@@ -16,11 +14,11 @@
     UIImageView *_vignetteView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPUExtrasViewElementViewController * relatedContentViewController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUExtrasViewElementViewController *relatedContentViewController;
+@property (readonly) Class superclass;
 
 + (id)relatedContentViewControllerForElement:(id)arg1;
 

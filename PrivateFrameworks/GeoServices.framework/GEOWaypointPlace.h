@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSMutableArray;
-
 @interface GEOWaypointPlace : PBCodable <NSCopying> {
     GEOLatLng *_center;
     NSMutableArray *_roadAccessPoints;
 }
 
-@property(retain) GEOLatLng * center;
-@property(readonly) BOOL hasCenter;
-@property(retain) NSMutableArray * roadAccessPoints;
+@property (nonatomic, retain) GEOLatLng *center;
+@property (nonatomic, readonly) BOOL hasCenter;
+@property (nonatomic, retain) NSMutableArray *roadAccessPoints;
 
 - (void)addRoadAccessPoint:(id)arg1;
 - (id)center;

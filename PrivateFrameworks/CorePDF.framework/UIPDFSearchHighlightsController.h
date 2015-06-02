@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableArray, UIPDFPageView, UIPDFSelection;
-
 @interface UIPDFSearchHighlightsController : NSObject {
     struct CGColor { } *_borderColor;
     struct CGColor { } *_highlightColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData;
-
 @interface _PFEncodedArray : NSArray {
     int _cd_rc;
     unsigned int _count;

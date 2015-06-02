@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData, NSDate, NSString;
-
 @interface NSPageData : NSData {
     NSDate *_originalFileModDate;
     NSString *_originalFilePath;

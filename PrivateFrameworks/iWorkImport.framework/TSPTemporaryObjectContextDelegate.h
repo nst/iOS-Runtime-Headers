@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFilePresenter>, NSError, NSMutableSet, NSSet, NSString, NSUUID;
-
 @interface TSPTemporaryObjectContextDelegate : NSObject <TSPObjectContextDelegate> {
     NSError *_error;
     BOOL _ignoreDocumentSupport;
     NSMutableSet *_persistenceWarnings;
 }
 
-@property(readonly) BOOL areNewExternalReferencesToDataAllowed;
-@property(readonly) NSUUID * baseUUIDForObjectUUID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) <NSFilePresenter> * filePresenter;
-@property(readonly) unsigned int hash;
-@property BOOL ignoreDocumentSupport;
-@property(readonly) BOOL isDocumentSupportTemporary;
-@property(readonly) BOOL isInCollaborationMode;
-@property(readonly) BOOL isInReadOnlyMode;
-@property(readonly) NSSet * persistenceWarnings;
-@property(readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreDocumentSupport;
+@property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
+@property (nonatomic, readonly) BOOL isInCollaborationMode;
+@property (nonatomic, readonly) BOOL isInReadOnlyMode;
+@property (nonatomic, readonly) NSSet *persistenceWarnings;
+@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addPersistenceWarnings:(id)arg1;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSTCellRegion;
-
 @interface TSTCellSelection : TSKSelection <TSDTextSelection> {
     struct { 
         unsigned short row; 
@@ -29,19 +22,19 @@
     int mSelectionType;
 }
 
-@property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } anchorCellID;
-@property(readonly) TSTCellRegion * baseRegion;
-@property(readonly) unsigned int cellCount;
-@property(readonly) TSTCellRegion * cellRegion;
-@property(readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cursorCellID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isAtEndOfLine;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } searchReferenceRange;
-@property(readonly) int selectionType;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } anchorCellID;
+@property (nonatomic, readonly) TSTCellRegion *baseRegion;
+@property (nonatomic, readonly) unsigned int cellCount;
+@property (nonatomic, readonly) TSTCellRegion *cellRegion;
+@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } cursorCellID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isAtEndOfLine;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } searchReferenceRange;
+@property (nonatomic, readonly) int selectionType;
+@property (readonly) Class superclass;
 
 + (Class)archivedSelectionClass;
 + (id)selectionWithTableModel:(id)arg1 cellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
@@ -60,8 +53,8 @@
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cursorCellID;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateSelectedCellsInTable:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateSelectedCellsInTable:(id)arg1 withFlags:(unsigned long)arg2 usingBlock:(id)arg3;
+- (void)enumerateSelectedCellsInTable:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateSelectedCellsInTable:(id)arg1 withFlags:(unsigned long)arg2 usingBlock:(id /* block */)arg3;
 - (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CellID {} *x6; struct RepeatedPtrField<TST::CellRange> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TST::CellRange> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct CellID {} *x9; int x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithTableModel:(id)arg1 andCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)initWithTableModel:(id)arg1 andCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;

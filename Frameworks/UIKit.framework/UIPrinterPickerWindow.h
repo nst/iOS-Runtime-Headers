@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPrinterPickerWindow : UIWindow {
-}
+@interface UIPrinterPickerWindow : UIWindow
 
 - (BOOL)_canAffectStatusBarAppearance;
 

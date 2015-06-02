@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIAutocorrectionList, TIKeyboardCandidate;
-
 @interface UIKeyboardAutocorrectionController : NSObject {
     TIAutocorrectionList *_autocorrectionList;
     BOOL _deferredAutocorrection;
@@ -11,11 +9,11 @@
     BOOL _requestedAutocorrection;
 }
 
-@property(readonly) TIKeyboardCandidate * autocorrection;
-@property(retain) TIAutocorrectionList * autocorrectionList;
-@property BOOL deferredAutocorrection;
-@property BOOL needsAutocorrection;
-@property BOOL requestedAutocorrection;
+@property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;
+@property (nonatomic, retain) TIAutocorrectionList *autocorrectionList;
+@property (nonatomic) BOOL deferredAutocorrection;
+@property (nonatomic) BOOL needsAutocorrection;
+@property (nonatomic) BOOL requestedAutocorrection;
 
 - (id)autocorrection;
 - (id)autocorrectionList;

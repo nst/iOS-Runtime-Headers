@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableArray, NSRecursiveLock;
-
 @interface AVQueue : NSObject {
     int _isBeingModifiedCount;
     NSMutableArray *_items;

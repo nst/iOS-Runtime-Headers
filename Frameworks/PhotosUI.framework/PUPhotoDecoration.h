@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIColor;
-
 @interface PUPhotoDecoration : NSObject <NSCopying> {
     UIColor *_borderColor;
     float _borderWidth;
     UIColor *_foregroundColor;
 }
 
-@property(copy) UIColor * borderColor;
-@property float borderWidth;
-@property(copy) UIColor * foregroundColor;
+@property (nonatomic, copy) UIColor *borderColor;
+@property (nonatomic) float borderWidth;
+@property (nonatomic, copy) UIColor *foregroundColor;
 
 - (void).cxx_destruct;
 - (id)borderColor;

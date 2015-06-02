@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPrintPanelWindow : UIWindow {
-}
+@interface UIPrintPanelWindow : UIWindow
 
 - (BOOL)_canAffectStatusBarAppearance;
 

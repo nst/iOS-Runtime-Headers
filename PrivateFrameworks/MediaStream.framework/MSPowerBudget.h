@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class <MSPowerBudgetDelegate>, MSPBTimerContext, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSPowerBudget : NSObject {
     <MSPowerBudgetDelegate> *_delegate;
     NSString *_focusAlbumGUID;
@@ -21,23 +19,23 @@
     MSPBTimerContext *_workQueuePushTimerContext;
 }
 
-@property <MSPowerBudgetDelegate> * delegate;
-@property(getter=isFileTransferAllowed,readonly) BOOL fileTransferAllowed;
-@property(retain) NSString * focusAlbumGUID;
-@property(retain) NSString * focusAssetCollectionGUID;
-@property(getter=hasForegroundFocus,readonly) BOOL foregroundFocus;
-@property(readonly) BOOL hasActiveTimers;
-@property double maxActiveTimeAfterGlobalResetSync;
-@property double maxActiveTimeAfterLossOfForeground;
-@property double maxActiveTimeAfterPush;
-@property(retain) NSString * personID;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property(retain) MSPBTimerContext * workQueueGlobalResetSyncTimerContext;
-@property(setter=workQueueSetExternalPowered:) BOOL workQueueIsExternalPowered;
-@property(setter=workQueueSetFileTransferAllowed:) BOOL workQueueIsFileTransferAllowed;
-@property(setter=workQueueSetForeground:) BOOL workQueueIsForeground;
-@property(retain) MSPBTimerContext * workQueuePostForegroundTimerContext;
-@property(retain) MSPBTimerContext * workQueuePushTimerContext;
+@property (nonatomic) <MSPowerBudgetDelegate> *delegate;
+@property (getter=isFileTransferAllowed, nonatomic, readonly) BOOL fileTransferAllowed;
+@property (nonatomic, retain) NSString *focusAlbumGUID;
+@property (nonatomic, retain) NSString *focusAssetCollectionGUID;
+@property (getter=hasForegroundFocus, nonatomic, readonly) BOOL foregroundFocus;
+@property (nonatomic, readonly) BOOL hasActiveTimers;
+@property (nonatomic) double maxActiveTimeAfterGlobalResetSync;
+@property (nonatomic) double maxActiveTimeAfterLossOfForeground;
+@property (nonatomic) double maxActiveTimeAfterPush;
+@property (nonatomic, retain) NSString *personID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, retain) MSPBTimerContext *workQueueGlobalResetSyncTimerContext;
+@property (setter=workQueueSetExternalPowered:, nonatomic) BOOL workQueueIsExternalPowered;
+@property (setter=workQueueSetFileTransferAllowed:, nonatomic) BOOL workQueueIsFileTransferAllowed;
+@property (setter=workQueueSetForeground:, nonatomic) BOOL workQueueIsForeground;
+@property (nonatomic, retain) MSPBTimerContext *workQueuePostForegroundTimerContext;
+@property (nonatomic, retain) MSPBTimerContext *workQueuePushTimerContext;
 
 - (void).cxx_destruct;
 - (void)_globalResetSyncTimerDidExpire:(id)arg1;

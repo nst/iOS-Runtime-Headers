@@ -18,19 +18,19 @@
     struct { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned long long x4; } *_rpmNew;
 }
 
-@property struct { unsigned int x1[5]; }* appsNew;
-@property struct { unsigned int x1; unsigned long long x2; }* apps_sleepNew;
-@property struct { unsigned int x1[12]; }* mcpm_sleep_vetoNew;
-@property struct { unsigned int x1; unsigned long long x2; }* mpss_sleepNew;
-@property struct { unsigned int x1[9]; }* qdspNew;
-@property struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; struct { unsigned int x_4_1_1[6]; } x4; }* rf1x;
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; }* rfGSM;
-@property struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; struct { unsigned int x_4_1_1; unsigned int x_4_1_2; } x4; struct { unsigned int x_5_1_1; unsigned int x_5_1_2; } x5; }* rfHDR;
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[5]; unsigned int x10[6]; }* rfLTE;
-@property struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }* rfOOS;
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; }* rfTDS;
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; }* rfWCDMA;
-@property struct { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned long long x4; }* rpmNew;
+@property (nonatomic) struct { unsigned int x1[5]; }*appsNew;
+@property (nonatomic) struct { unsigned int x1; unsigned long long x2; }*apps_sleepNew;
+@property (nonatomic) struct { unsigned int x1[12]; }*mcpm_sleep_vetoNew;
+@property (nonatomic) struct { unsigned int x1; unsigned long long x2; }*mpss_sleepNew;
+@property (nonatomic) struct { unsigned int x1[9]; }*qdspNew;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; struct { unsigned int x_4_1_1[6]; } x4; }*rf1x;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[3]; }*rfGSM;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; struct { unsigned int x_4_1_1; unsigned int x_4_1_2; } x4; struct { unsigned int x_5_1_1; unsigned int x_5_1_2; } x5; }*rfHDR;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[4]; unsigned int x6[2][16]; unsigned int x7[12]; unsigned int x8[1][4]; unsigned int x9[5]; unsigned int x10[6]; }*rfLTE;
+@property (nonatomic) struct { unsigned short x1; unsigned int x2; unsigned int x3; unsigned char x4; unsigned short x5[4][6]; unsigned int x6[4][6]; }*rfOOS;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[7]; unsigned int x4[3]; }*rfTDS;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3[2][3]; unsigned int x4[2][4]; unsigned int x5[2]; unsigned int x6[4]; unsigned int x7[4]; unsigned int x8[12]; }*rfWCDMA;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned long long x4; }*rpmNew;
 
 - (int)GetClockCount:(struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*)arg1;
 - (void)SetClocks:(struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*)arg1 oftype:(int)arg2 withData:(char *)arg3;

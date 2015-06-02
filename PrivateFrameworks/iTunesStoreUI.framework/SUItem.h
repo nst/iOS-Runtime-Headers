@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSURL, SSItemImageCollection, SSItemOffer, SUItem, SUItemContentRating, SUItemLink, SUItemReviewStatistics;
-
 @interface SUItem : NSObject <NSCopying> {
     NSString *_artistName;
     NSString *_bundleIdentifier;
@@ -41,46 +39,46 @@
     NSArray *_versionOrdering;
 }
 
-@property(copy) NSString * artistName;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleVersion;
-@property(copy) NSString * collectionName;
-@property(retain) SUItem * containerItem;
-@property(copy) NSString * containerName;
-@property(copy) SUItemContentRating * contentRating;
-@property(copy) NSString * copyrightString;
-@property(readonly) SSItemOffer * defaultStoreOffer;
-@property(copy) NSString * disclaimerString;
-@property(getter=isDownloadable,readonly) BOOL downloadable;
-@property(readonly) SUItemLink * externalArtistPageLink;
-@property(getter=isGameCenterEnabled) BOOL gameCenterEnabled;
-@property(copy) NSString * genreName;
-@property(copy) NSString * humanReadableDescription;
-@property(getter=isInstalled,readonly) BOOL installed;
-@property(readonly) NSDictionary * itemDictionary;
-@property int itemDisplayType;
-@property unsigned long long itemIdentifier;
-@property(copy) SSItemImageCollection * itemImageCollection;
-@property(copy) NSArray * itemLinks;
-@property(copy) NSString * itemMediaKind;
-@property int itemType;
-@property(readonly) NSString * itemTypeString;
-@property(retain) NSDate * releaseDate;
-@property int representedItemCount;
-@property(copy) SUItemReviewStatistics * reviewStatistics;
-@property(copy) NSString * secondaryTitle;
-@property(copy) NSString * softwareType;
-@property(copy) NSArray * storeOffers;
-@property(readonly) NSString * tellAFriendBody;
-@property(readonly) NSString * tellAFriendBodyMIMEType;
-@property(readonly) NSURL * tellAFriendBodyURL;
-@property(readonly) NSString * tellAFriendSubject;
-@property(copy) NSString * title;
-@property(readonly) NSString * tweetInitialText;
-@property(readonly) NSURL * tweetURL;
-@property(copy) NSString * unmodifiedTitle;
-@property(retain) NSNumber * versionIdentifier;
-@property(copy) NSArray * versionOrdering;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic, copy) NSString *collectionName;
+@property (nonatomic, retain) SUItem *containerItem;
+@property (nonatomic, copy) NSString *containerName;
+@property (nonatomic, copy) SUItemContentRating *contentRating;
+@property (nonatomic, copy) NSString *copyrightString;
+@property (nonatomic, readonly) SSItemOffer *defaultStoreOffer;
+@property (nonatomic, copy) NSString *disclaimerString;
+@property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
+@property (nonatomic, readonly) SUItemLink *externalArtistPageLink;
+@property (getter=isGameCenterEnabled, nonatomic) BOOL gameCenterEnabled;
+@property (nonatomic, copy) NSString *genreName;
+@property (nonatomic, copy) NSString *humanReadableDescription;
+@property (getter=isInstalled, nonatomic, readonly) BOOL installed;
+@property (nonatomic, readonly) NSDictionary *itemDictionary;
+@property (nonatomic) int itemDisplayType;
+@property (nonatomic) unsigned long long itemIdentifier;
+@property (nonatomic, copy) SSItemImageCollection *itemImageCollection;
+@property (nonatomic, copy) NSArray *itemLinks;
+@property (nonatomic, copy) NSString *itemMediaKind;
+@property (nonatomic) int itemType;
+@property (nonatomic, readonly) NSString *itemTypeString;
+@property (nonatomic, retain) NSDate *releaseDate;
+@property (nonatomic) int representedItemCount;
+@property (nonatomic, copy) SUItemReviewStatistics *reviewStatistics;
+@property (nonatomic, copy) NSString *secondaryTitle;
+@property (nonatomic, copy) NSString *softwareType;
+@property (nonatomic, copy) NSArray *storeOffers;
+@property (nonatomic, readonly) NSString *tellAFriendBody;
+@property (nonatomic, readonly) NSString *tellAFriendBodyMIMEType;
+@property (nonatomic, readonly) NSURL *tellAFriendBodyURL;
+@property (nonatomic, readonly) NSString *tellAFriendSubject;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) NSString *tweetInitialText;
+@property (nonatomic, readonly) NSURL *tweetURL;
+@property (nonatomic, copy) NSString *unmodifiedTitle;
+@property (nonatomic, retain) NSNumber *versionIdentifier;
+@property (nonatomic, copy) NSArray *versionOrdering;
 
 - (int)_linkTargetForTargetString:(id)arg1 typeString:(id)arg2;
 - (int)_linkTypeForString:(id)arg1;

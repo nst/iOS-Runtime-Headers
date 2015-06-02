@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKHealthStore, NSDictionary, NSMutableDictionary;
-
 @interface HKUnitController : NSObject {
     HKHealthStore *_healthStore;
     NSDictionary *_hkUnitPreferences;

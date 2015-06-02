@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData, NSString;
-
 @interface NSAttributeDescription : NSPropertyDescription {
     struct __attributeDescriptionFlags { 
         unsigned int _hasMaxValueInExtraIvars : 1; 
@@ -20,10 +18,10 @@
 
 @property BOOL allowsExternalBinaryDataStorage;
 @property unsigned int attributeType;
-@property(copy) NSString * attributeValueClassName;
-@property(retain) id defaultValue;
-@property(copy) NSString * valueTransformerName;
-@property(copy,readonly) NSData * versionHash;
+@property (copy) NSString *attributeValueClassName;
+@property (retain) id defaultValue;
+@property (copy) NSString *valueTransformerName;
+@property (readonly, copy) NSData *versionHash;
 
 + (id)_classNameForType:(unsigned int)arg1;
 + (void)initialize;

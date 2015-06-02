@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
-
 @interface PLUserActivityTrackerJob : PLDaemonJob {
     long long _activity;
     NSString *_clientID;
     NSArray *_uuids;
 }
 
-@property long long activity;
-@property(retain) NSString * clientID;
-@property(retain) NSArray * uuids;
+@property (nonatomic) long long activity;
+@property (nonatomic, retain) NSString *clientID;
+@property (nonatomic, retain) NSArray *uuids;
 
 + (void)_noteActivity:(long long)arg1 uuid:(id)arg2;
 + (void)_noteActivity:(long long)arg1 uuids:(id)arg2;

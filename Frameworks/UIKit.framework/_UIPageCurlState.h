@@ -2,23 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIView, _UIPageCurl;
-
 @interface _UIPageCurlState : _UITransitionState {
     UIView *_backPageView;
     UIView *_backView;
     int _completionCount;
     int _curlState;
     int _curlType;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finally;
-
+    id /* block */ _finally;
     BOOL _finished;
     UIView *_frontPageView;
     UIView *_frontView;
@@ -34,16 +24,16 @@
     BOOL _willComplete;
 }
 
-@property(readonly) UIView * backPageView;
-@property(readonly) UIView * backView;
-@property(readonly) int curlState;
-@property(readonly) int curlType;
-@property(readonly) UIView * frontPageView;
-@property(readonly) UIView * frontView;
-@property(readonly) struct CGPoint { float x1; float x2; } initialLocation;
-@property(readonly) _UIPageCurl * pageCurl;
-@property(getter=hasPendingAnimations,readonly) BOOL pendingAnimations;
-@property(readonly) struct CGPoint { float x1; float x2; } referenceLocation;
+@property (nonatomic, readonly) UIView *backPageView;
+@property (nonatomic, readonly) UIView *backView;
+@property (nonatomic, readonly) int curlState;
+@property (nonatomic, readonly) int curlType;
+@property (nonatomic, readonly) UIView *frontPageView;
+@property (nonatomic, readonly) UIView *frontView;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } initialLocation;
+@property (nonatomic, readonly) _UIPageCurl *pageCurl;
+@property (getter=hasPendingAnimations, nonatomic, readonly) BOOL pendingAnimations;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } referenceLocation;
 
 - (int)_effectiveTransitionDirection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageViewFrame;
@@ -62,7 +52,7 @@
 - (id)frontView;
 - (BOOL)hasPendingAnimations;
 - (void)incrementCompletionCount;
-- (id)initWithPageCurl:(id)arg1 andCurlType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 withReferenceLocation:(struct CGPoint { float x1; float x2; })arg4 inDirection:(int)arg5 withView:(id)arg6 revealingView:(id)arg7 completion:(id)arg8 finally:(id)arg9;
+- (id)initWithPageCurl:(id)arg1 andCurlType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 withReferenceLocation:(struct CGPoint { float x1; float x2; })arg4 inDirection:(int)arg5 withView:(id)arg6 revealingView:(id)arg7 completion:(id /* block */)arg8 finally:(id /* block */)arg9;
 - (struct CGPoint { float x1; float x2; })initialLocation;
 - (void)invalidatePageCurl;
 - (BOOL)isCompatibleWithCurlOfType:(int)arg1 inDirection:(int)arg2;

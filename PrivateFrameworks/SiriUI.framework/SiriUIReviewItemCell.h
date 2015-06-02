@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UILabel, UIView;
-
 @interface SiriUIReviewItemCell : SiriUIContentCollectionViewCell {
     UILabel *_authorLabel;
     int _characterLimit;
@@ -21,8 +19,8 @@
     UIView *_ratingView;
 }
 
-@property int characterLimit;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) int characterLimit;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 
 + (id)_authorDateFontAttribute;
 + (id)_authorFontAttribute;

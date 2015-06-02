@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString, SYMessageHeader;
-
 @interface SYRequestFullSync : PBCodable <NSCopying> {
     SYMessageHeader *_header;
     NSString *_syncID;
 }
 
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * syncID;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

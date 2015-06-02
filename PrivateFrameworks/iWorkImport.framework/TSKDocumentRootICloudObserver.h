@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSOperationQueue;
-
 @interface TSKDocumentRootICloudObserver : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     long long _identifer;
     long long _identifier;
     NSOperationQueue *_operationQueue;
 }
 
-@property(readonly) long long identifer;
+@property (nonatomic, readonly) long long identifer;
 
 - (void)dealloc;
 - (long long)identifer;
-- (id)initWithBlock:(id)arg1;
+- (id)initWithBlock:(id /* block */)arg1;
 - (void)invokeWithDocumentRoot:(id)arg1;
 
 @end

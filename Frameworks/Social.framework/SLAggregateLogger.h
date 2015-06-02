@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLAggregateLogger : NSObject {
-}
+@interface SLAggregateLogger : NSObject
 
 + (id)_logIdentifierForPID:(int)arg1;
 + (BOOL)_tencentWeiboAttachmentsContainImage:(id)arg1;

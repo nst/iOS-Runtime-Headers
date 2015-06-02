@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSDAAPRequestManagerDelegate>, NSString, NSURLSession, RMSFairPlaySession;
-
 @interface RMSDAAPRequestManager : NSObject {
     <RMSDAAPRequestManagerDelegate> *_delegate;
     RMSFairPlaySession *_fairPlaySession;
@@ -15,13 +13,13 @@
     NSURLSession *_urlSession;
 }
 
-@property <RMSDAAPRequestManagerDelegate> * delegate;
-@property(retain) RMSFairPlaySession * fairPlaySession;
-@property(copy) NSString * homeSharingGroupKey;
-@property(copy) NSString * hostName;
-@property(copy) NSString * pairingGUID;
-@property int port;
-@property int sessionIdentifier;
+@property (nonatomic) <RMSDAAPRequestManagerDelegate> *delegate;
+@property (nonatomic, retain) RMSFairPlaySession *fairPlaySession;
+@property (nonatomic, copy) NSString *homeSharingGroupKey;
+@property (nonatomic, copy) NSString *hostName;
+@property (nonatomic, copy) NSString *pairingGUID;
+@property (nonatomic) int port;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -31,8 +29,8 @@
 - (id)init;
 - (id)pairingGUID;
 - (int)port;
-- (id)requestControlCommand:(id)arg1 text:(id)arg2 promptRevision:(int)arg3 completionHandler:(id)arg4;
-- (id)requestWithPath:(id)arg1 method:(id)arg2 postData:(id)arg3 queryArgs:(id)arg4 completionHandler:(id)arg5;
+- (id)requestControlCommand:(id)arg1 text:(id)arg2 promptRevision:(int)arg3 completionHandler:(id /* block */)arg4;
+- (id)requestWithPath:(id)arg1 method:(id)arg2 postData:(id)arg3 queryArgs:(id)arg4 completionHandler:(id /* block */)arg5;
 - (int)sessionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setFairPlaySession:(id)arg1;

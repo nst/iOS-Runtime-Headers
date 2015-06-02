@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLocationCoordinate, CKDPRecordFieldIdentifier;
-
 @interface CKDPQuerySort : PBCodable <NSCopying> {
     CKDPLocationCoordinate *_coordinate;
     CKDPRecordFieldIdentifier *_fieldName;
@@ -13,12 +11,12 @@
     int _order;
 }
 
-@property(retain) CKDPLocationCoordinate * coordinate;
-@property(retain) CKDPRecordFieldIdentifier * fieldName;
-@property(readonly) BOOL hasCoordinate;
-@property(readonly) BOOL hasFieldName;
-@property BOOL hasOrder;
-@property int order;
+@property (nonatomic, retain) CKDPLocationCoordinate *coordinate;
+@property (nonatomic, retain) CKDPRecordFieldIdentifier *fieldName;
+@property (nonatomic, readonly) BOOL hasCoordinate;
+@property (nonatomic, readonly) BOOL hasFieldName;
+@property (nonatomic) BOOL hasOrder;
+@property (nonatomic) int order;
 
 - (void).cxx_destruct;
 - (id)coordinate;

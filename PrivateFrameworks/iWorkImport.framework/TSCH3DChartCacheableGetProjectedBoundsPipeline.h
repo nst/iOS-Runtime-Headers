@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DGetBoundsProjector;
-
 @interface TSCH3DChartCacheableGetProjectedBoundsPipeline : TSCH3DChartGetProjectedBoundsPipeline {
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
@@ -154,7 +152,7 @@
     BOOL mUseIndividualBounds;
 }
 
-@property BOOL useIndividualBounds;
+@property (nonatomic) BOOL useIndividualBounds;
 
 + (BOOL)includesDepthForUnitScaleForScene:(id)arg1;
 + (void)setIncludesDepthForUnitScale:(BOOL)arg1 forScene:(id)arg2;

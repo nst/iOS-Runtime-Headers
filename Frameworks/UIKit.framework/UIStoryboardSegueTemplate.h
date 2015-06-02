@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIViewController;
-
 @interface UIStoryboardSegueTemplate : NSObject <NSCoding> {
     NSString *_destinationViewControllerIdentifier;
     NSString *_identifier;
@@ -12,9 +10,9 @@
     UIViewController *_viewController;
 }
 
-@property(readonly) NSString * identifier;
-@property BOOL performOnViewLoad;
-@property UIViewController * viewController;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic) BOOL performOnViewLoad;
+@property (nonatomic) UIViewController *viewController;
 
 - (void)_perform:(id)arg1;
 - (void)dealloc;

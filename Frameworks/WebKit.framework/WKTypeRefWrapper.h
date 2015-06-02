@@ -8,7 +8,7 @@
     } _object;
 }
 
-@property(readonly) void* object;
+@property (readonly) void*object;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

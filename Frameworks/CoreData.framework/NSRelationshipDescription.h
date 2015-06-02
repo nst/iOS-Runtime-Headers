@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData, NSEntityDescription, NSRelationshipDescription, NSString;
-
 @interface NSRelationshipDescription : NSPropertyDescription {
     unsigned int _deleteRule;
     NSEntityDescription *_destinationEntity;
@@ -17,13 +15,13 @@
 }
 
 @property unsigned int deleteRule;
-@property NSEntityDescription * destinationEntity;
-@property NSRelationshipDescription * inverseRelationship;
+@property (nonatomic) NSEntityDescription *destinationEntity;
+@property (nonatomic) NSRelationshipDescription *inverseRelationship;
 @property unsigned int maxCount;
 @property unsigned int minCount;
-@property(getter=isOrdered) BOOL ordered;
-@property(getter=isToMany,readonly) BOOL toMany;
-@property(copy,readonly) NSData * versionHash;
+@property (getter=isOrdered) BOOL ordered;
+@property (getter=isToMany, readonly) BOOL toMany;
+@property (readonly, copy) NSData *versionHash;
 
 + (void)initialize;
 

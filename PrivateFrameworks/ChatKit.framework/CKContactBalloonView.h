@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMediaObject, NSString, UIImageView, UILabel;
-
 @interface CKContactBalloonView : CKColoredBalloonView <CKContactBalloonViewProtocol> {
     UIImageView *_chevron;
     UIImageView *_contactImageView;
@@ -12,15 +10,15 @@
     UILabel *_organizationLabel;
 }
 
-@property(retain) UIImageView * chevron;
-@property(retain) UIImageView * contactImageView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CKMediaObject * mediaObject;
-@property(retain) UILabel * nameLabel;
-@property(retain) UILabel * organizationLabel;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIImageView *chevron;
+@property (nonatomic, retain) UIImageView *contactImageView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKMediaObject *mediaObject;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UILabel *organizationLabel;
+@property (readonly) Class superclass;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)chevron;

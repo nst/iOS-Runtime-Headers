@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPURatingControl;
-
 @interface MusicFlipsideAlbumTrackTableViewCell : MusicCollectionTrackTableViewCell {
     MPURatingControl *_ratingControl;
     BOOL _showsRatingControl;
 }
 
-@property(readonly) MPURatingControl * ratingControl;
-@property BOOL showsRatingControl;
+@property (nonatomic, readonly) MPURatingControl *ratingControl;
+@property (nonatomic) BOOL showsRatingControl;
 
 + (Class)contentViewClass;
 

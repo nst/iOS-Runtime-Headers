@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartCategoryAxisTitleSceneObject : TSCH3DChartAxisTitleSceneObject {
-}
+@interface TSCH3DChartCategoryAxisTitleSceneObject : TSCH3DChartAxisTitleSceneObject
 
 + (id)axisForInfo:(id)arg1;
 + (float)textRotationForChartInfo:(id)arg1;

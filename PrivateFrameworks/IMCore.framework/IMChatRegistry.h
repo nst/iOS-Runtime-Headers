@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMTimer, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSUserActivity;
-
 @interface IMChatRegistry : NSObject <NSFastEnumeration> {
     NSMutableArray *_allChats;
     NSMutableArray *_allChatsInThreadNameMap;
@@ -29,11 +27,13 @@
     BOOL _wantsHistoryReload;
 }
 
-@property(setter=_setDefaultNumberOfMessagesToLoad:) unsigned int _defaultNumberOfMessagesToLoad;
-@property(readonly) BOOL _isLoading;
-@property(setter=_setPostMessageSentNotifications:) BOOL _postMessageSentNotifications;
-@property(readonly) NSArray * allExistingChats;
-@property(readonly) unsigned int numberOfExistingChats;
+@property (setter=_setDefaultNumberOfMessagesToLoad:, nonatomic) unsigned int _defaultNumberOfMessagesToLoad;
+@property (nonatomic, readonly) BOOL _isLoading;
+@property (setter=_setPostMessageSentNotifications:, nonatomic) BOOL _postMessageSentNotifications;
+@property (nonatomic, readonly) NSArray *allExistingChats;
+@property (nonatomic, readonly) unsigned int numberOfExistingChats;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (Class)chatClass;
 + (Class)chatRegistryClass;
@@ -73,8 +73,6 @@
 - (void)_chat_sendReadReceiptForAllMessages:(id)arg1;
 - (void)_chat_storeItem:(id)arg1 inChat:(id)arg2;
 - (id)_chatsWithMessage:(id)arg1;
-- (id)_ck_chatForHandles:(id)arg1 createIfNecessary:(BOOL)arg2;
-- (id)_ck_chatForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3 createIfNecessary:(BOOL)arg4;
 - (void)_clearMarkAsReadTimerIfNecessary;
 - (id)_createdChatForIMHandle:(id)arg1;
 - (id)_createdChatForIMHandles:(id)arg1 style:(unsigned char)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(BOOL)arg5;
@@ -95,7 +93,7 @@
 - (void)_processMessageForAccount:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 message:(id)arg5;
 - (void)_registerChat:(id)arg1 isIncoming:(BOOL)arg2 guid:(id)arg3;
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(BOOL)arg3 newGUID:(id)arg4;
-- (void)_registerCompletion:(id)arg1 forQueryID:(id)arg2;
+- (void)_registerCompletion:(id /* block */)arg1 forQueryID:(id)arg2;
 - (void)_setChatHasCommunicatedOveriMessage:(id)arg1;
 - (void)_setDefaultNumberOfMessagesToLoad:(unsigned int)arg1;
 - (void)_setPostMessageSentNotifications:(BOOL)arg1;
@@ -125,7 +123,7 @@
 - (id)chatForIMHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3;
 - (id)chatForRoom:(id)arg1 onAccount:(id)arg2;
 - (id)chatForURL:(id)arg1 outMessageText:(id*)arg2 outRecipientIDs:(id*)arg3 outService:(id*)arg4 outMessageGUID:(id*)arg5;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)existingChatForIMHandle:(id)arg1;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(BOOL)arg2;
@@ -157,5 +155,10 @@
 - (void)unreadCountChanged:(int)arg1;
 - (void)unregisterChat:(id)arg1;
 - (void)unregisterChatWithGUID:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)_ck_chatForHandles:(id)arg1 createIfNecessary:(BOOL)arg2;
+- (id)_ck_chatForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3 createIfNecessary:(BOOL)arg4;
 
 @end

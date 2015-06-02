@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDAccessPluginManager, ACDAuthenticationDialogManager, ACDAuthenticationPluginManager, ACDDataclassOwnersManager, ACRemoteDeviceProxy, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSXPCListener;
-
 @interface ACDServer : NSObject <ACDAccountStoreDelegate, NSXPCListenerDelegate> {
     ACDAccessPluginManager *_accessPluginManager;
     NSMutableArray *_accountStoreClients;
@@ -23,15 +21,15 @@
     ACRemoteDeviceProxy *_remoteDeviceProxy;
 }
 
-@property(retain) ACDAccessPluginManager * accessPluginManager;
-@property(retain) ACDAuthenticationDialogManager * authenticationDialogManager;
-@property(retain) ACDAuthenticationPluginManager * authenticationPluginManager;
-@property(retain) ACDDataclassOwnersManager * dataclassOwnersManager;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ACRemoteDeviceProxy * remoteDeviceProxy;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ACDAccessPluginManager *accessPluginManager;
+@property (nonatomic, retain) ACDAuthenticationDialogManager *authenticationDialogManager;
+@property (nonatomic, retain) ACDAuthenticationPluginManager *authenticationPluginManager;
+@property (nonatomic, retain) ACDDataclassOwnersManager *dataclassOwnersManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ACRemoteDeviceProxy *remoteDeviceProxy;
+@property (readonly) Class superclass;
 
 + (id)sharedServer;
 

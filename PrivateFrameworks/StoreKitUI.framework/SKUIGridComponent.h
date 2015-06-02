@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface SKUIGridComponent : SKUIPageComponent {
     NSMutableArray *_children;
     struct SKUIEditorialStyle { 
@@ -25,11 +23,11 @@
     BOOL _showsIndexNumbers;
 }
 
-@property(readonly) NSArray * children;
-@property(readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
-@property(readonly) int gridType;
-@property(readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
-@property(readonly) BOOL showsIndexNumbers;
+@property (nonatomic, readonly) NSArray *children;
+@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
+@property (nonatomic, readonly) int gridType;
+@property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
+@property (nonatomic, readonly) BOOL showsIndexNumbers;
 
 - (void).cxx_destruct;
 - (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle { int x1; int x2; unsigned int x3; })arg2;
@@ -41,7 +39,7 @@
 - (int)componentType;
 - (id)description;
 - (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
 - (int)gridType;
 - (id)initWithBrickItems:(id)arg1;
 - (id)initWithCustomPageContext:(id)arg1;

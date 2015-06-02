@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAMPCollection : SAMPMediaEntity
 
-@interface SAMPCollection : SAMPMediaEntity {
-}
-
-@property(copy) NSArray * items;
+@property (nonatomic, copy) NSArray *items;
 
 + (id)collection;
 + (id)collectionWithDictionary:(id)arg1 context:(id)arg2;

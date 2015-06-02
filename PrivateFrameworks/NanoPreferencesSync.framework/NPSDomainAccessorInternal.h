@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
  */
 
-@class NPSDomainAccessorFilePresenter, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID;
-
 @interface NPSDomainAccessorInternal : NSObject <NPSDomainAccessorFilePresenterDelegate> {
     NSMutableSet *_dirtyKeysForWriting;
     NSString *_domain;
@@ -19,18 +17,18 @@
     unsigned int _referenceCounter;
 }
 
-@property(retain) NSMutableSet * dirtyKeysForWriting;
-@property(retain) NSString * domain;
-@property(retain) NSURL * domainURL;
-@property(retain) NSObject<OS_dispatch_queue> * externalQueue;
-@property(retain) NPSDomainAccessorFilePresenter * filePresenter;
-@property BOOL hasReadFromDisk;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSMutableDictionary * map;
-@property BOOL nanoSettingsDirectoryExists;
-@property(retain) NSUUID * pairingID;
-@property(retain) NSString * pairingStorePath;
-@property unsigned int referenceCounter;
+@property (nonatomic, retain) NSMutableSet *dirtyKeysForWriting;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, retain) NSURL *domainURL;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *externalQueue;
+@property (nonatomic, retain) NPSDomainAccessorFilePresenter *filePresenter;
+@property (nonatomic) BOOL hasReadFromDisk;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSMutableDictionary *map;
+@property (nonatomic) BOOL nanoSettingsDirectoryExists;
+@property (nonatomic, retain) NSUUID *pairingID;
+@property (nonatomic, retain) NSString *pairingStorePath;
+@property (nonatomic) unsigned int referenceCounter;
 
 + (void)applicationDidEnterBackground;
 + (void)applicationDidResume;
@@ -87,7 +85,7 @@
 - (id)map;
 - (BOOL)nanoSettingsDirectoryExists;
 - (id)objectForKey:(id)arg1;
-- (void)objectForKey:(id)arg1 completionHandler:(id)arg2;
+- (void)objectForKey:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)pairingID;
 - (id)pairingStorePath;
 - (unsigned int)referenceCounter;
@@ -107,7 +105,7 @@
 - (void)setMap:(id)arg1;
 - (void)setNanoSettingsDirectoryExists:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setObject:(id)arg1 forKey:(id)arg2 completionHandler:(id)arg3;
+- (void)setObject:(id)arg1 forKey:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setPairingID:(id)arg1;
 - (void)setPairingStorePath:(id)arg1;
 - (void)setReferenceCounter:(unsigned int)arg1;
@@ -115,6 +113,6 @@
 - (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)synchronize;
-- (void)synchronizeWithCompletionHandler:(id)arg1;
+- (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
 
 @end

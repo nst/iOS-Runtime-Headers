@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVTextBodyProperties : NSObject {
-}
+@interface OAVTextBodyProperties : NSObject
 
 + (int)flowTypeWithLayoutFlowString:(id)arg1 altLayoutFlowString:(id)arg2;
 + (int)readAnchor:(id)arg1;

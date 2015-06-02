@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMText : DOMCharacterData
 
-@interface DOMText : DOMCharacterData {
-}
-
-@property(copy,readonly) NSString * wholeText;
+@property (readonly, copy) NSString *wholeText;
 
 - (id)replaceWholeText:(id)arg1;
 - (id)splitText:(unsigned int)arg1;

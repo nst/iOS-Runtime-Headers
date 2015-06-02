@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSDictionary;
-
 @interface ML3TrackImporter : NSObject {
     ML3MusicLibrary *_library;
     NSDictionary *_nameOrders;
     BOOL _updateSmartPlaylists;
 }
 
-@property(retain) NSDictionary * nameOrders;
-@property BOOL updateSmartPlaylists;
+@property (nonatomic, retain) NSDictionary *nameOrders;
+@property (nonatomic) BOOL updateSmartPlaylists;
 
 - (void).cxx_destruct;
 - (id)_addAlbumArtistForImportTrackProperties:(id)arg1;
@@ -22,7 +20,7 @@
 - (id)_addStoreLinkForImportTrackProperties:(id)arg1;
 - (id)_newTrackPropertiesByProcessingImportTrack:(id)arg1 insertStringsIntoSortMap:(BOOL)arg2;
 - (BOOL)_shouldInsertITMediaKindIntoPurchasedPlaylist:(unsigned long)arg1;
-- (void)importTrack:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)importTrack:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)initWithMusicLibrary:(id)arg1;
 - (id)nameOrders;
 - (void)setNameOrders:(id)arg1;

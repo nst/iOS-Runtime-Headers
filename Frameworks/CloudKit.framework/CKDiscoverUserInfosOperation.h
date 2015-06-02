@@ -2,42 +2,32 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDiscoverUserInfosOperation : CKOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _discoverUserInfosCompletionBlock;
-
+    id /* block */ _discoverUserInfosCompletionBlock;
     NSArray *_emailAddresses;
     NSMutableDictionary *_emailsToUserInfos;
     NSArray *_userRecordIDs;
     NSMutableDictionary *_userRecordIDsToUserInfos;
 }
 
-@property(copy) id discoverUserInfosCompletionBlock;
-@property(copy) NSArray * emailAddresses;
-@property(retain) NSMutableDictionary * emailsToUserInfos;
-@property(copy) NSArray * userRecordIDs;
-@property(retain) NSMutableDictionary * userRecordIDsToUserInfos;
+@property (nonatomic, copy) id /* block */ discoverUserInfosCompletionBlock;
+@property (nonatomic, copy) NSArray *emailAddresses;
+@property (nonatomic, retain) NSMutableDictionary *emailsToUserInfos;
+@property (nonatomic, copy) NSArray *userRecordIDs;
+@property (nonatomic, retain) NSMutableDictionary *userRecordIDsToUserInfos;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (id)discoverUserInfosCompletionBlock;
+- (id /* block */)discoverUserInfosCompletionBlock;
 - (id)emailAddresses;
 - (id)emailsToUserInfos;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithEmailAddresses:(id)arg1 userRecordIDs:(id)arg2;
 - (void)performCKOperation;
-- (void)setDiscoverUserInfosCompletionBlock:(id)arg1;
+- (void)setDiscoverUserInfosCompletionBlock:(id /* block */)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setEmailsToUserInfos:(id)arg1;
 - (void)setUserRecordIDs:(id)arg1;

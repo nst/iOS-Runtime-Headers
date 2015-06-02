@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHMultiDataChartType : TSCH2DChartType {
-}
+@interface TSCHMultiDataChartType : TSCH2DChartType
 
 + (id)g_genericToSpecificPropertyMapCategoryAxis;
 

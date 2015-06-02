@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureArea : TSCHChartFeatureCategory {
-}
+@interface TSCHChartFeatureArea : TSCHChartFeatureCategory
 
 - (id)categoryLabelPositioner;
 - (id)defaultDataFileName;

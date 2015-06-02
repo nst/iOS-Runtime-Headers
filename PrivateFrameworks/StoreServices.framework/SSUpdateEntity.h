@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSUpdateEntity : SSSQLiteEntity {
-}
+@interface SSUpdateEntity : SSSQLiteEntity
 
 + (id)databaseTable;
 

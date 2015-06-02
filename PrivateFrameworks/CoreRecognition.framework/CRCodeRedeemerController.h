@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class <CRCodeRedeemerControllerDelegate>, NSString;
-
 @interface CRCodeRedeemerController : CRCameraReader <CRCameraReaderDelegate> {
     <CRCodeRedeemerControllerDelegate> *_delegate;
 }
 
-@property(copy) NSString * cameraMode;
+@property (copy) NSString *cameraMode;
 @property int cameraPosition;
 @property unsigned int captureCount;
-@property(getter=isCaptureMode) BOOL captureMode;
-@property(copy,readonly) NSString * debugDescription;
-@property <CRCodeRedeemerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
+@property (getter=isCaptureMode) BOOL captureMode;
+@property (readonly, copy) NSString *debugDescription;
+@property <CRCodeRedeemerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property int exposureMode;
 @property int focusMode;
-@property(readonly) unsigned int hash;
+@property (readonly) unsigned int hash;
 @property double sessionTimeout;
 @property BOOL showDiagnosticHUD;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 @property int torchMode;
 @property int whiteBalanceMode;
 

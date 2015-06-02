@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUNowPlayingTransportControls : MPUNowPlayingTransportControls {
-}
+@interface RUNowPlayingTransportControls : MPUNowPlayingTransportControls
 
 + (unsigned long long)defaultVisibleParts;
 

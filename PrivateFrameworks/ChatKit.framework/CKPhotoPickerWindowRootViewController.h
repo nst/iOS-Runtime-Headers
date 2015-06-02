@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKPhotoPickerWindowRootViewController : UIViewController {
-}
+@interface CKPhotoPickerWindowRootViewController : UIViewController
 
 - (BOOL)shouldAutorotate;
 - (void)viewDidLoad;

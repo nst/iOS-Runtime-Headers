@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPAVItem, MPButton, NSMutableIndexSet, NSString;
-
 @interface MPTransportControls : UIView {
     BOOL _allowsWirelessPlayback;
     MPButton *_alternatesButton;
@@ -19,7 +17,7 @@
     MPButton *_nextButton;
     MPButton *_playButton;
     MPAVController *_player;
-    unsigned int _playing : 1;
+    unsigned int _playing;
     MPButton *_previousButton;
     BOOL _registeredForPlayerNotifications;
     MPButton *_rewind15SecondsButton;
@@ -31,17 +29,17 @@
     id _volumeSlider;
 }
 
-@property BOOL allowsWirelessPlayback;
-@property unsigned long long desiredParts;
-@property unsigned long long disabledParts;
-@property(retain) MPAVItem * item;
-@property(readonly) NSString * pauseButtonImage;
-@property(readonly) NSString * playButtonImage;
-@property(readonly) NSString * playPauseButtonImage;
-@property(retain) MPAVController * player;
-@property BOOL registeredForPlayerNotifications;
-@property id target;
-@property unsigned long long visibleParts;
+@property (nonatomic) BOOL allowsWirelessPlayback;
+@property (nonatomic) unsigned long long desiredParts;
+@property (nonatomic) unsigned long long disabledParts;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic, readonly) NSString *pauseButtonImage;
+@property (nonatomic, readonly) NSString *playButtonImage;
+@property (nonatomic, readonly) NSString *playPauseButtonImage;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic) BOOL registeredForPlayerNotifications;
+@property (nonatomic) id target;
+@property (nonatomic) unsigned long long visibleParts;
 
 + (Class)buttonClass;
 + (BOOL)buttonImagesUseBackgroundImage;

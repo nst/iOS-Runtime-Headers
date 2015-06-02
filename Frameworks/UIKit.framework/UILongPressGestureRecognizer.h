@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableSet;
-
 @interface UILongPressGestureRecognizer : UIGestureRecognizer {
     NSMutableSet *_activeTouches;
     float _allowableMovement;
     int _buttonType;
-    unsigned int _cancelPastAllowableMovement : 1;
+    unsigned int _cancelPastAllowableMovement;
     id _enoughTimeElapsed;
-    unsigned int _gotEnoughTaps : 1;
-    unsigned int _gotTooMany : 1;
-    unsigned int _gotTouchEnd : 1;
+    unsigned int _gotEnoughTaps;
+    unsigned int _gotTooMany;
+    unsigned int _gotTouchEnd;
     id _imp;
     double _minimumPressDuration;
     unsigned int _numberOfTouchesRequired;
@@ -24,16 +22,16 @@
     NSArray *_touches;
 }
 
-@property(setter=_setButtonType:) int _buttonType;
-@property float allowableMovement;
-@property BOOL cancelPastAllowableMovement;
-@property(readonly) struct CGPoint { float x1; float x2; } centroid;
-@property double delay;
-@property double minimumPressDuration;
-@property unsigned int numberOfTapsRequired;
-@property unsigned int numberOfTouchesRequired;
-@property(readonly) struct CGPoint { float x1; float x2; } startPoint;
-@property(retain,readonly) NSArray * touches;
+@property (setter=_setButtonType:, nonatomic) int _buttonType;
+@property (nonatomic) float allowableMovement;
+@property (nonatomic) BOOL cancelPastAllowableMovement;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
+@property (nonatomic) double delay;
+@property (nonatomic) double minimumPressDuration;
+@property (nonatomic) unsigned int numberOfTapsRequired;
+@property (nonatomic) unsigned int numberOfTouchesRequired;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
+@property (nonatomic, readonly, retain) NSArray *touches;
 
 - (int)_buttonType;
 - (void)_interactionsEndedWithValidTouches:(BOOL)arg1;

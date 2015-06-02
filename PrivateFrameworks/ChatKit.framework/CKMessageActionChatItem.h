@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageActionChatItem : CKMultilineStampChatItem {
-}
+@interface CKMessageActionChatItem : CKMultilineStampChatItem
 
 - (long long)actionType;
 - (id)handle;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString, SSMetricsConfiguration, SSMetricsPageEvent, SSURLConnectionRequest;
-
 @interface RadioSearchRequest : RadioRequest {
     BOOL _excludeFeaturedStations;
     SSMetricsConfiguration *_metricsConfiguration;
@@ -16,14 +14,14 @@
     BOOL _shouldProcessCategories;
 }
 
-@property BOOL excludeFeaturedStations;
-@property(retain,readonly) SSMetricsConfiguration * metricsConfiguration;
-@property(copy,readonly) SSMetricsPageEvent * metricsPageEvent;
-@property unsigned int numberOfSearchResults;
-@property int searchCategory;
-@property unsigned int searchResultsOffset;
-@property(readonly) NSString * searchTerm;
-@property BOOL shouldProcessCategories;
+@property (nonatomic) BOOL excludeFeaturedStations;
+@property (nonatomic, readonly, retain) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, readonly, copy) SSMetricsPageEvent *metricsPageEvent;
+@property (nonatomic) unsigned int numberOfSearchResults;
+@property (nonatomic) int searchCategory;
+@property (nonatomic) unsigned int searchResultsOffset;
+@property (nonatomic, readonly) NSString *searchTerm;
+@property (nonatomic) BOOL shouldProcessCategories;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -43,6 +41,6 @@
 - (void)setSearchResultsOffset:(unsigned int)arg1;
 - (void)setShouldProcessCategories:(BOOL)arg1;
 - (BOOL)shouldProcessCategories;
-- (void)startWithSearchCompletionHandler:(id)arg1;
+- (void)startWithSearchCompletionHandler:(id /* block */)arg1;
 
 @end

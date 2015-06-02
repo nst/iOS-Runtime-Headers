@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NSString, TLSound;
-
 @interface TLAlertTone : NSObject {
     TLSound *_actualSound;
     NSString *_filePath;
     TLSound *_previewSound;
 }
 
-@property(retain) TLSound * actualSound;
-@property(copy) NSString * filePath;
-@property(retain) TLSound * previewSound;
+@property (nonatomic, retain) TLSound *actualSound;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, retain) TLSound *previewSound;
 
 - (void)_setActualSound:(id)arg1;
 - (void)_setFilePath:(id)arg1;

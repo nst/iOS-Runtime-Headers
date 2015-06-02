@@ -2,23 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSBlock, NSDictionary, NSXPCInterface;
-
 @interface _NSXPCConnectionExpectedReplyInfo : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cleanupBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _errorBlock;
-
+    id /* block */ _cleanupBlock;
+    id /* block */ _errorBlock;
     NSXPCInterface *_interface;
     unsigned long long _proxyNumber;
     NSBlock *_replyBlock;
@@ -26,23 +12,23 @@
     NSDictionary *_userInfo;
 }
 
-@property(copy) id cleanupBlock;
-@property(copy) id errorBlock;
-@property(retain) NSXPCInterface * interface;
+@property (copy) id /* block */ cleanupBlock;
+@property (copy) id /* block */ errorBlock;
+@property (retain) NSXPCInterface *interface;
 @property unsigned long long proxyNumber;
-@property(copy) NSBlock * replyBlock;
+@property (copy) NSBlock *replyBlock;
 @property SEL selector;
-@property(retain) NSDictionary * userInfo;
+@property (retain) NSDictionary *userInfo;
 
-- (id)cleanupBlock;
+- (id /* block */)cleanupBlock;
 - (void)dealloc;
-- (id)errorBlock;
+- (id /* block */)errorBlock;
 - (id)interface;
 - (unsigned long long)proxyNumber;
 - (id)replyBlock;
 - (SEL)selector;
-- (void)setCleanupBlock:(id)arg1;
-- (void)setErrorBlock:(id)arg1;
+- (void)setCleanupBlock:(id /* block */)arg1;
+- (void)setErrorBlock:(id /* block */)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setProxyNumber:(unsigned long long)arg1;
 - (void)setReplyBlock:(id)arg1;

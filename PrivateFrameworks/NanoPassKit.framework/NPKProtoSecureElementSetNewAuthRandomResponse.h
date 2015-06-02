@@ -11,10 +11,10 @@
     BOOL _success;
 }
 
-@property BOOL hasPending;
-@property BOOL hasSuccess;
-@property BOOL pending;
-@property BOOL success;
+@property (nonatomic) BOOL hasPending;
+@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL pending;
+@property (nonatomic) BOOL success;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

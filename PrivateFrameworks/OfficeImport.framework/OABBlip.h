@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface OABBlip : NSObject {
-}
+@interface OABBlip : NSObject
 
 + (int)blipTypeForBlipSignature:(int)arg1;
 + (id)compressMetafileData:(id)arg1 info:(struct EshMetafileBlipInfo { unsigned short *x1; struct UID { unsigned char x_2_1_1[16]; } x2; struct OcBinaryData { int (**x_3_1_1)(); unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; bool x_3_1_7; struct SsrwOOStream {} *x_3_1_8; } x3; int x4; struct CsRect<int> { int x_5_1_1[4]; } x5; struct CsPoint<int> { int x_6_1_1[2]; } x6; int x7; unsigned char x8; unsigned char x9; }*)arg2;

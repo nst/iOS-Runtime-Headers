@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, WDDocument, WDListDefinition;
-
 @interface WDListDefinitionTable : NSObject {
     WDDocument *mDocument;
     NSMutableDictionary *mListDefinitionMapById;

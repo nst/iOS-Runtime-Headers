@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasSlideshowViewControllerDataSource>, MPUExtrasConstrainedArtworkContainerView, NSString, NSTimer, UIImage;
-
 @interface MPUExtrasSlideshowViewController : UIViewController <MPUExtrasZoomingImageTransitionParticipant> {
     BOOL _animatingTransition;
     <MPUExtrasSlideshowViewControllerDataSource> *_dataSource;
@@ -17,20 +15,20 @@
     unsigned int _visibleImageIndex;
 }
 
-@property(getter=isAnimatingTransition) BOOL animatingTransition;
-@property <MPUExtrasSlideshowViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) MPUExtrasConstrainedArtworkContainerView * disappearingImageContainerView;
-@property(readonly) unsigned int hash;
-@property(retain) MPUExtrasConstrainedArtworkContainerView * imageContainerView;
-@property(retain) UIImage * nextImage;
-@property(readonly) Class superclass;
-@property double transitionInterval;
-@property unsigned int transitionStyle;
-@property(retain) NSTimer * transitionTimer;
-@property(getter=isViewVisible) BOOL viewVisible;
-@property unsigned int visibleImageIndex;
+@property (getter=isAnimatingTransition, nonatomic) BOOL animatingTransition;
+@property (nonatomic) <MPUExtrasSlideshowViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) MPUExtrasConstrainedArtworkContainerView *disappearingImageContainerView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUExtrasConstrainedArtworkContainerView *imageContainerView;
+@property (nonatomic, retain) UIImage *nextImage;
+@property (readonly) Class superclass;
+@property (nonatomic) double transitionInterval;
+@property (nonatomic) unsigned int transitionStyle;
+@property (nonatomic, retain) NSTimer *transitionTimer;
+@property (getter=isViewVisible, nonatomic) BOOL viewVisible;
+@property (nonatomic) unsigned int visibleImageIndex;
 
 - (void).cxx_destruct;
 - (void)_invalidateTransitionTimer;

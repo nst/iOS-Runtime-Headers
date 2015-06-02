@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextPosition;
-
 @interface UITextInputArrowKeyHistory : NSObject {
     BOOL affinityDownstream;
     int amount;
@@ -14,13 +12,13 @@
     UITextPosition *startPosition;
 }
 
-@property BOOL affinityDownstream;
-@property int amount;
-@property int anchor;
-@property(retain) UITextPosition * cursor;
-@property(retain) UITextPosition * end;
-@property(retain) UITextPosition * start;
-@property(retain) UITextPosition * startPosition;
+@property (nonatomic) BOOL affinityDownstream;
+@property (nonatomic) int amount;
+@property (nonatomic) int anchor;
+@property (nonatomic, retain) UITextPosition *cursor;
+@property (nonatomic, retain) UITextPosition *end;
+@property (nonatomic, retain) UITextPosition *start;
+@property (nonatomic, retain) UITextPosition *startPosition;
 
 - (BOOL)affinityDownstream;
 - (int)amount;

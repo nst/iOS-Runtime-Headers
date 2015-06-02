@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebCoreStatistics : NSObject {
-}
+@interface WebCoreStatistics : NSObject
 
 + (int)autoreleasedPageCount;
 + (unsigned long)cachedFontDataCount;

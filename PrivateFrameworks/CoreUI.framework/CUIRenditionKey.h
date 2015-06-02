@@ -8,7 +8,7 @@
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackKey[16];
+    } _stackKey;
 }
 
 + (id)_placeHolderKey;

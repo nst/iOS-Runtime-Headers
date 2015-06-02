@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIButtonContentCenteringSpacer : UIView {
-}
+@interface _UIButtonContentCenteringSpacer : UIView
 
 @end

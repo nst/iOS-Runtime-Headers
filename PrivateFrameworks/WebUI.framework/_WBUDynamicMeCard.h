@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray;
-
 @interface _WBUDynamicMeCard : NSObject {
     NSMutableArray *_blocksPendingMeCard;
     void *_me;
@@ -16,7 +14,7 @@
 - (void)_addressBookChanged:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)performWhenReady:(id)arg1;
+- (void)performWhenReady:(id /* block */)arg1;
 - (id)valueForProperty:(id)arg1 isMultiValue:(BOOL*)arg2;
 - (id)valueForProxyProperty:(id)arg1;
 

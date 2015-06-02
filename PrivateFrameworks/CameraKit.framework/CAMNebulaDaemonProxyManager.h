@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface CAMNebulaDaemonProxyManager : NSObject <CAMNebulaDaemonClientProtocol, CAMNebulaDaemonProtocol> {
     NSXPCConnection *__connection;
     int __connectionCount;
     NSObject<OS_dispatch_queue> *__queue;
 }
 
-@property(readonly) NSXPCConnection * _connection;
-@property(readonly) int _connectionCount;
-@property(readonly) NSObject<OS_dispatch_queue> * _queue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSXPCConnection *_connection;
+@property (nonatomic, readonly) int _connectionCount;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_queue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_clientProtocolInterface;
 + (id)_daemonProtocolInterface;
@@ -27,7 +25,7 @@
 - (id)_connection;
 - (int)_connectionCount;
 - (void)_ensureConnectionToDaemon;
-- (void)_getProxyForExecutingBlock:(id)arg1;
+- (void)_getProxyForExecutingBlock:(id /* block */)arg1;
 - (id)_queue;
 - (void)closeConnectionToDaemon;
 - (void)ensureConnectionToDaemon;

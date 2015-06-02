@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewRowAction, UIVisualEffect;
-
 @interface _UITableViewCellActionButton : UIButton {
     UITableViewRowAction *_action;
     UIVisualEffect *_backgroundEffect;
     unsigned int _style;
 }
 
-@property(retain) UITableViewRowAction * action;
-@property(copy) UIVisualEffect * backgroundEffect;
-@property unsigned int style;
+@property (nonatomic, retain) UITableViewRowAction *action;
+@property (nonatomic, copy) UIVisualEffect *backgroundEffect;
+@property (nonatomic) unsigned int style;
 
 + (id)actionButtonWithStyle:(unsigned int)arg1;
 

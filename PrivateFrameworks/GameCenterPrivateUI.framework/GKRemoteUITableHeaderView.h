@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <GKRemoteUIAuxiliaryViewDelegate>, GKButton, GKLabel, NSArray, NSDictionary, NSString;
-
 @interface GKRemoteUITableHeaderView : UIView <RUIPageAccessory> {
     NSDictionary *_attributes;
     GKButton *_button;
@@ -15,18 +13,18 @@
     GKLabel *_subLabel;
 }
 
-@property(retain) NSDictionary * attributes;
-@property(retain) GKButton * button;
-@property(copy,readonly) NSString * debugDescription;
-@property <GKRemoteUIAuxiliaryViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float height;
-@property(retain) GKLabel * label;
-@property int layoutStyle;
-@property(retain) NSArray * replaceableConstraints;
-@property(retain) GKLabel * subLabel;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *attributes;
+@property (nonatomic, retain) GKButton *button;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GKRemoteUIAuxiliaryViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float height;
+@property (nonatomic, retain) GKLabel *label;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic, retain) NSArray *replaceableConstraints;
+@property (nonatomic, retain) GKLabel *subLabel;
+@property (readonly) Class superclass;
 
 - (void)applyConstraints;
 - (id)attributes;

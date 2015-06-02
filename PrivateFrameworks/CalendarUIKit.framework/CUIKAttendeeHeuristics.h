@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKAttendeeHeuristics : NSObject {
-}
+@interface CUIKAttendeeHeuristics : NSObject
 
 + (id)_participantRoleSortPriority;
 + (id)_participantStatusSortPriority;

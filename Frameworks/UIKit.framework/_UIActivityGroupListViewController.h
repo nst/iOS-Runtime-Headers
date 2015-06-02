@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UILabel;
-
 @interface _UIActivityGroupListViewController : UICollectionViewController {
     NSArray *_activityGroupViewControllers;
     BOOL _darkStyleOnLegacyApp;
@@ -12,11 +10,11 @@
     NSArray *_visibleActivityGroupViewControllers;
 }
 
-@property(copy) NSArray * activityGroupViewControllers;
-@property BOOL darkStyleOnLegacyApp;
-@property(getter=isEmbedded) BOOL embedded;
-@property(retain) UILabel * placeholderLabel;
-@property(copy) NSArray * visibleActivityGroupViewControllers;
+@property (nonatomic, copy) NSArray *activityGroupViewControllers;
+@property (nonatomic) BOOL darkStyleOnLegacyApp;
+@property (getter=isEmbedded, nonatomic) BOOL embedded;
+@property (nonatomic, retain) UILabel *placeholderLabel;
+@property (nonatomic, copy) NSArray *visibleActivityGroupViewControllers;
 
 - (id)activityGroupViewControllers;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

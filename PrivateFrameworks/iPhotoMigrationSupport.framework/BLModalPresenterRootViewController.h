@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-@class UIImageView;
-
 @interface BLModalPresenterRootViewController : UIViewController {
     UIImageView *_background;
 }

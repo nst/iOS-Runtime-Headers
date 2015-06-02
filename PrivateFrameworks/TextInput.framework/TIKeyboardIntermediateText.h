@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIKeyboardIntermediateText : NSObject <NSSecureCoding> {
     NSString *_displayString;
     NSString *_inputString;
@@ -11,10 +9,10 @@
     unsigned int _selectionOffset;
 }
 
-@property(readonly) NSString * displayString;
-@property(readonly) NSString * inputString;
-@property(readonly) NSString * searchString;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
+@property (nonatomic, readonly) NSString *displayString;
+@property (nonatomic, readonly) NSString *inputString;
+@property (nonatomic, readonly) NSString *searchString;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
 
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2;
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3;

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCApplyScheduler, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCFSDownloader, BRCFSEventsMonitor, BRCFSReader<BRCFileCoordinationReading>, BRCFSUploader, BRCFSWriter<BRCFileCoordinationWriting>, BRCNotificationManager, BRCRelativePath, BRCServerPersistedState, BRCStageRegistry, BRCThrottle, CDSession, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, PQLConnection;
-
 @interface BRCAccountSession : NSObject <BRCCloudDocsAppsObserver> {
     NSString *_accountID;
     BRCThrottle *_aliasRemovalThrottle;
@@ -29,21 +23,13 @@
         BOOL __opaque[124]; 
     } _containersLock;
     CDSession *_coreDuetSession;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _dbProfilingHook;
-
+    id /* block */ _dbProfilingHook;
     NSURL *_dbURL;
     NSObject<OS_dispatch_source> *_dbWatcher;
     NSObject<OS_dispatch_queue> *_dbWatcherQueue;
     BRCDeadlineScheduler *_defaultScheduler;
     BRCDiskSpaceReclaimer *_diskReclaimer;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_downloadSuspendCount;
-
+    int _downloadSuspendCount;
     BRCFSDownloader *_fsDownloader;
     BRCFSEventsMonitor *_fsEventsMonitor;
     BRCFSReader<BRCFileCoordinationReading> *_fsReader;
@@ -66,47 +52,43 @@
     BRCThrottle *_syncAppContainerThrottle;
     NSMutableDictionary *_syncContexts;
     NSString *_ubiquityTokenSalt;
-
-  /* Unexpected information at end of encoded ivar type: i */
-  /* Error parsing encoded ivar type info: Ai */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_uploadSuspendCount;
-
+    int _uploadSuspendCount;
     NSMutableSet *_xpcClients;
 }
 
-@property(readonly) NSString * accountID;
-@property(readonly) BRCThrottle * aliasRemovalThrottle;
-@property(retain) NSString * appSupportDirPath;
-@property(readonly) BRCApplyScheduler * applyScheduler;
-@property(retain) NSString * cacheDirPath;
-@property(readonly) PQLConnection * clientDB;
-@property(readonly) NSMutableDictionary * clientState;
-@property(readonly) BRCThrottle * containerResetThrottle;
-@property(readonly) BRCThrottle * containerScanThrottle;
-@property(readonly) BRCContainerScheduler * containerScheduler;
-@property(readonly) CDSession * coreDuetSession;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) BRCDeadlineScheduler * defaultScheduler;
-@property(copy,readonly) NSString * description;
-@property(readonly) BRCDiskSpaceReclaimer * diskReclaimer;
-@property(readonly) BRCFSDownloader * fsDownloader;
-@property(readonly) BRCFSEventsMonitor * fsEventsMonitor;
-@property(readonly) BRCFSReader<BRCFileCoordinationReading> * fsReader;
-@property(readonly) BRCFSUploader * fsUploader;
-@property(readonly) BRCFSWriter<BRCFileCoordinationWriting> * fsWriter;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCancelled;
-@property(readonly) BRCThrottle * lostItemThrottle;
-@property(readonly) BRCNotificationManager * notificationManager;
-@property(readonly) BRCThrottle * operationFailureThrottle;
-@property(readonly) BRCRelativePath * root;
-@property(retain) NSString * rootDirPath;
-@property(readonly) PQLConnection * serverDB;
-@property(readonly) BRCServerPersistedState * serverState;
-@property(readonly) BRCStageRegistry * stageRegistry;
-@property(readonly) Class superclass;
-@property(readonly) BRCThrottle * syncAppContainerThrottle;
-@property(readonly) NSString * ubiquityTokenSalt;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) BRCThrottle *aliasRemovalThrottle;
+@property (nonatomic, retain) NSString *appSupportDirPath;
+@property (nonatomic, readonly) BRCApplyScheduler *applyScheduler;
+@property (nonatomic, retain) NSString *cacheDirPath;
+@property (nonatomic, readonly) PQLConnection *clientDB;
+@property (nonatomic, readonly) NSMutableDictionary *clientState;
+@property (nonatomic, readonly) BRCThrottle *containerResetThrottle;
+@property (nonatomic, readonly) BRCThrottle *containerScanThrottle;
+@property (nonatomic, readonly) BRCContainerScheduler *containerScheduler;
+@property (nonatomic, readonly) CDSession *coreDuetSession;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BRCDeadlineScheduler *defaultScheduler;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BRCDiskSpaceReclaimer *diskReclaimer;
+@property (nonatomic, readonly) BRCFSDownloader *fsDownloader;
+@property (nonatomic, readonly) BRCFSEventsMonitor *fsEventsMonitor;
+@property (nonatomic, readonly) BRCFSReader<BRCFileCoordinationReading> *fsReader;
+@property (nonatomic, readonly) BRCFSUploader *fsUploader;
+@property (nonatomic, readonly) BRCFSWriter<BRCFileCoordinationWriting> *fsWriter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) BRCThrottle *lostItemThrottle;
+@property (nonatomic, readonly) BRCNotificationManager *notificationManager;
+@property (nonatomic, readonly) BRCThrottle *operationFailureThrottle;
+@property (nonatomic, readonly) BRCRelativePath *root;
+@property (nonatomic, retain) NSString *rootDirPath;
+@property (nonatomic, readonly) PQLConnection *serverDB;
+@property (nonatomic, readonly) BRCServerPersistedState *serverState;
+@property (nonatomic, readonly) BRCStageRegistry *stageRegistry;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BRCThrottle *syncAppContainerThrottle;
+@property (nonatomic, readonly) NSString *ubiquityTokenSalt;
 
 + (id)sessionForDumpingDatabasesAtURL:(id)arg1;
 
@@ -171,9 +153,9 @@
 - (id)diskReclaimer;
 - (BOOL)dumpDatabaseToFileHandle:(id)arg1 containerID:(id)arg2 error:(id*)arg3;
 - (void)enableDatabaseProfilingForDB:(id)arg1;
-- (void)enumeratePrivateContainers:(id)arg1;
-- (void)enumerateServerZones:(id)arg1;
-- (void)enumerateSharedContainers:(id)arg1;
+- (void)enumeratePrivateContainers:(id /* block */)arg1;
+- (void)enumerateServerZones:(id /* block */)arg1;
+- (void)enumerateSharedContainers:(id /* block */)arg1;
 - (id)fsDownloader;
 - (id)fsEventsMonitor;
 - (id)fsReader;

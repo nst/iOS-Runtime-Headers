@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSMetadataQuery, NSObject<OS_dispatch_queue>, NSOperationQueue, NSOrderedSet, NSPredicate, NSString;
-
 @interface _UIDocumentPickerDirectoryObserver : NSObject <NSMetadataQueryDelegate> {
     BOOL _afterInitialUpdate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     Class _itemClass;
     NSOrderedSet *_lastSnapshot;
     NSDate *_lastSnapshotDate;
@@ -27,23 +17,23 @@
     id _weak_updateHandlerWeakSelf;
 }
 
-@property BOOL afterInitialUpdate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id handler;
-@property(readonly) unsigned int hash;
-@property Class itemClass;
-@property(retain) NSOrderedSet * lastSnapshot;
-@property(retain) NSDate * lastSnapshotDate;
-@property(retain) NSPredicate * predicate;
-@property(retain) NSMetadataQuery * query;
-@property(retain) NSObject<OS_dispatch_queue> * queryQueue;
-@property(retain) NSOperationQueue * queryWorkerQueue;
-@property(retain) NSArray * scopes;
-@property(retain) NSArray * sortDescriptors;
-@property(retain) NSOrderedSet * staticItems;
-@property(readonly) Class superclass;
-@property id updateHandlerWeakSelf;
+@property (nonatomic) BOOL afterInitialUpdate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned int hash;
+@property (nonatomic) Class itemClass;
+@property (nonatomic, retain) NSOrderedSet *lastSnapshot;
+@property (nonatomic, retain) NSDate *lastSnapshotDate;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic, retain) NSMetadataQuery *query;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queryQueue;
+@property (nonatomic, retain) NSOperationQueue *queryWorkerQueue;
+@property (nonatomic, retain) NSArray *scopes;
+@property (nonatomic, retain) NSArray *sortDescriptors;
+@property (nonatomic, retain) NSOrderedSet *staticItems;
+@property (readonly) Class superclass;
+@property (nonatomic) id updateHandlerWeakSelf;
 
 - (id)_computeUpdatesFromOld:(id)arg1 toNew:(id)arg2 changedItems:(id)arg3;
 - (void)_initialGatherFinished:(id)arg1;
@@ -53,8 +43,8 @@
 - (void)_updateObservers:(id)arg1 reloadAll:(BOOL)arg2;
 - (BOOL)afterInitialUpdate;
 - (void)dealloc;
-- (id)handler;
-- (id)initWithScopes:(id)arg1 weakSelf:(id)arg2 updateHandler:(id)arg3 itemClass:(Class)arg4;
+- (id /* block */)handler;
+- (id)initWithScopes:(id)arg1 weakSelf:(id)arg2 updateHandler:(id /* block */)arg3 itemClass:(Class)arg4;
 - (void)invalidate;
 - (Class)itemClass;
 - (id)lastSnapshot;
@@ -66,7 +56,7 @@
 - (id)queryWorkerQueue;
 - (id)scopes;
 - (void)setAfterInitialUpdate:(BOOL)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setItemClass:(Class)arg1;
 - (void)setLastSnapshot:(id)arg1;
 - (void)setLastSnapshotDate:(id)arg1;

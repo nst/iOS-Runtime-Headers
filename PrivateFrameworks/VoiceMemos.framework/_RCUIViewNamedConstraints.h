@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSArray, NSString;
-
 @interface _RCUIViewNamedConstraints : NSObject {
     NSArray *_constraints;
     NSString *_name;
     id _stalenessToken;
 }
 
-@property(readonly) NSArray * constraints;
-@property(readonly) NSString * name;
-@property(copy,readonly) id stalenessToken;
+@property (nonatomic, readonly) NSArray *constraints;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, copy) id stalenessToken;
 
 - (void).cxx_destruct;
 - (id)constraints;

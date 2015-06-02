@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CATiledLayer : CALayer {
-}
+@interface CATiledLayer : CALayer
 
-@property(getter=isDrawingEnabled) BOOL drawingEnabled;
-@property struct CGColor { }* fillColor;
+@property (getter=isDrawingEnabled) BOOL drawingEnabled;
+@property struct CGColor { }*fillColor;
 @property unsigned long levelsOfDetail;
 @property unsigned long levelsOfDetailBias;
 @property float maximumTileScale;

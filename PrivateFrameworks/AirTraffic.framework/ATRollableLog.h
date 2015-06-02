@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSDate, NSFileHandle, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface ATRollableLog : NSObject {
     NSString *_baseFilename;
     NSString *_directory;
@@ -15,8 +13,8 @@
     NSObject<OS_dispatch_queue> *_logRequestQueue;
 }
 
-@property(retain) NSFileHandle * fh;
-@property(retain) NSDate * lastStatDate;
+@property (retain) NSFileHandle *fh;
+@property (retain) NSDate *lastStatDate;
 
 + (id)_filenameWithBase:(id)arg1 generationalFormat:(id)arg2 generation:(int)arg3;
 + (id)_generationalFormatFromBase:(id)arg1;

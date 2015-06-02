@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileAccessNode, NSMutableDictionary, NSString;
-
 @interface NSFileAccessNode : NSObject {
     id _accessClaimOrClaims;
     NSMutableDictionary *_childrenByNormalizedName;
@@ -40,22 +38,22 @@
 - (id)descendantForFileURL:(id)arg1;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(BOOL)arg2;
-- (void)forEachAccessClaimOnItemOrContainedItemPerformProcedure:(id)arg1;
-- (void)forEachAccessClaimOnItemPerformProcedure:(id)arg1;
-- (void)forEachDescendantPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfContainedItemPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfContainingFilePackagePerformProcedure:(id)arg1;
-- (void)forEachPresenterOfContainingItemPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfItemOrContainingItemPerformProcedure:(id)arg1;
-- (void)forEachPresenterOfItemPerformProcedure:(id)arg1;
-- (void)forEachProgressPublisherOfItemOrContainedItemPerformProcedure:(id)arg1;
-- (void)forEachProgressPublisherOfItemPerformProcedure:(id)arg1;
-- (void)forEachProgressSubscriberOfItemOrContainingItemPerformProcedure:(id)arg1;
-- (void)forEachProgressSubscriberOfItemPerformProcedure:(id)arg1;
-- (void)forEachProgressThingOfItemOrContainedItemPerformProcedure:(id)arg1;
-- (void)forEachReactorToItemOrContainedItemPerformProcedure:(id)arg1;
-- (void)forEachRelevantAccessClaimPerformProcedure:(id)arg1;
+- (void)forEachAccessClaimOnItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachAccessClaimOnItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachDescendantPerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfContainingFilePackagePerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfContainingItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfItemOrContainingItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachPresenterOfItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachProgressPublisherOfItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachProgressPublisherOfItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachProgressSubscriberOfItemOrContainingItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachProgressSubscriberOfItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachProgressThingOfItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachReactorToItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachRelevantAccessClaimPerformProcedure:(id /* block */)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
 - (BOOL)itemIsFilePackage;
 - (BOOL)itemIsInItemAtLocation:(id)arg1;

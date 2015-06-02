@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalMessageTracer : NSObject {
-}
+@interface CalMessageTracer : NSObject
 
 + (void)log:(id)arg1 domain:(id)arg2 signature:(id)arg3 result:(int)arg4;
 + (void)log:(id)arg1 domain:(id)arg2 signature:(id)arg3 result:(int)arg4 value:(id)arg5;

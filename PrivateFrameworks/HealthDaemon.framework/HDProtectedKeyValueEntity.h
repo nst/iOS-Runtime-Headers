@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDProtectedKeyValueEntity : HDKeyValueEntity {
-}
+@interface HDProtectedKeyValueEntity : HDKeyValueEntity
 
 + (int)_deviceLocalCategory;
 + (id)_keyForDataType:(id)arg1 error:(id*)arg2;

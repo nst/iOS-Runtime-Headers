@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSString, WebHistoryItemPrivate;
-
 @interface WebHistoryItem : NSObject <NSCopying> {
     WebHistoryItemPrivate *_private;
 }
 
-@property(copy,readonly) NSString * URLString;
-@property(copy) NSString * alternateTitle;
-@property(readonly) double lastVisitedTimeInterval;
-@property(copy,readonly) NSString * originalURLString;
-@property(copy,readonly) NSString * title;
+@property (nonatomic, readonly, copy) NSString *URLString;
+@property (nonatomic, copy) NSString *alternateTitle;
+@property (nonatomic, readonly) double lastVisitedTimeInterval;
+@property (nonatomic, readonly, copy) NSString *originalURLString;
+@property (nonatomic, readonly, copy) NSString *title;
 
 + (id)entryWithURL:(id)arg1;
 + (void)initialize;

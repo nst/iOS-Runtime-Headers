@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicTableViewDelegate>, UITraitCollection;
-
 @interface MusicTableView : UITableView {
     float _footerBackgroundTransitionWeighting;
     float _headerBackgroundTransitionWeighting;
@@ -11,10 +9,10 @@
     UITraitCollection *_previousTraitCollection;
 }
 
-@property <MusicTableViewDelegate> * delegate;
-@property float footerBackgroundTransitionWeighting;
-@property float headerBackgroundTransitionWeighting;
-@property float minimumContentSizeHeightAdditions;
+@property (nonatomic) <MusicTableViewDelegate> *delegate;
+@property (nonatomic) float footerBackgroundTransitionWeighting;
+@property (nonatomic) float headerBackgroundTransitionWeighting;
+@property (nonatomic) float minimumContentSizeHeightAdditions;
 
 - (void).cxx_destruct;
 - (float)footerBackgroundTransitionWeighting;

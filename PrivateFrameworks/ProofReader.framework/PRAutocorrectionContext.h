@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@interface PRAutocorrectionContext : NSObject {
-}
+@interface PRAutocorrectionContext : NSObject
 
 + (id)autocorrectionContextOfType:(unsigned int)arg1;
 

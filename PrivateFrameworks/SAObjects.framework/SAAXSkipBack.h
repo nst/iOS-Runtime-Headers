@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAXSkipBack : SADomainCommand {
-}
+@interface SAAXSkipBack : SADomainCommand
 
 + (id)skipBack;
 + (id)skipBackWithDictionary:(id)arg1 context:(id)arg2;

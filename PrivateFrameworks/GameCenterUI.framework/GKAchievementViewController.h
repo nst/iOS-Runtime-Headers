@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKAchievementViewControllerDelegate>;
-
 @interface GKAchievementViewController : GKGameCenterViewController {
     <GKAchievementViewControllerDelegate> *_achievementDelegate;
 }
 
-@property <GKAchievementViewControllerDelegate> * achievementDelegate;
+@property (nonatomic) <GKAchievementViewControllerDelegate> *achievementDelegate;
 
 - (id)achievementDelegate;
 - (void)dealloc;

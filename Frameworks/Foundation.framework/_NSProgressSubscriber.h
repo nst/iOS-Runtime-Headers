@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, NSMutableDictionary, NSString, NSXPCConnection;
-
 @interface _NSProgressSubscriber : NSObject <NSProgressSubscriber> {
     NSXPCConnection *_connection;
     NSLock *_lock;
     NSMutableDictionary *_proxiesByPublisherID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _publishingHandler;
-
+    id /* block */ _publishingHandler;
     NSString *_subscriberID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (oneway void)addPublisher:(id)arg1 forID:(id)arg2 withValues:(id)arg3 isOld:(BOOL)arg4;
 - (void)dealloc;
-- (id)initWithPublishingHandler:(id)arg1;
+- (id)initWithPublishingHandler:(id /* block */)arg1;
 - (oneway void)observePublisherForID:(id)arg1 value:(id)arg2 forKey:(id)arg3 inUserInfo:(BOOL)arg4;
 - (oneway void)removePublisherForID:(id)arg1;
 - (void)startForCategory:(id)arg1;

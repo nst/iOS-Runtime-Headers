@@ -2,37 +2,27 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIImage, UIImagePickerController;
-
 @interface RUIPhotoPicker : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *_imagePickerController;
     UIImage *_pickedImage;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pickerCompletion;
-
+    id /* block */ _pickerCompletion;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * pickedImage;
-@property(copy) id pickerCompletion;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *pickedImage;
+@property (nonatomic, copy) id /* block */ pickerCompletion;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dismissWithImage:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)pickImageWithParentController:(id)arg1 completion:(id)arg2;
+- (void)pickImageWithParentController:(id)arg1 completion:(id /* block */)arg2;
 - (id)pickedImage;
-- (id)pickerCompletion;
+- (id /* block */)pickerCompletion;
 - (void)setPickedImage:(id)arg1;
-- (void)setPickerCompletion:(id)arg1;
+- (void)setPickerCompletion:(id /* block */)arg1;
 
 @end

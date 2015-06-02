@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPTOCInfo;
-
 @interface TSWPTOCPartitioner : NSObject <TSDPartitioner> {
     TSWPTOCInfo *_info;
 }
 
-@property(readonly) TSWPTOCInfo * info;
+@property (nonatomic, readonly) TSWPTOCInfo *info;
 
 - (BOOL)didHint:(id)arg1 syncWithNextHint:(id)arg2 horizontally:(BOOL)arg3 delta:(int)arg4;
 - (id)hintForLayout:(id)arg1;

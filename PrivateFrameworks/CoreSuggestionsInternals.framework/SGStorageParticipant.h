@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class SGIdentityKey, SGStorageContact;
-
 @interface SGStorageParticipant : NSObject {
     SGStorageContact *_contact;
     SGIdentityKey *_participatingIdentity;
     unsigned int _role;
 }
 
-@property(retain) SGStorageContact * contact;
-@property(retain) SGIdentityKey * participatingIdentity;
-@property unsigned int role;
+@property (nonatomic, retain) SGStorageContact *contact;
+@property (nonatomic, retain) SGIdentityKey *participatingIdentity;
+@property (nonatomic) unsigned int role;
 
 + (id)participantWithContact:(id)arg1 participatingIdentity:(id)arg2 roleType:(unsigned int)arg3;
 

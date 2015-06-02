@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSConcreteNotifyingMutableAttributedString, NSLayoutManager, NSString, NSTextContainer;
-
 @interface NSStringDrawingTextStorage : NSTextStorage <NSLayoutManagerDelegate> {
     float _baselineDelta;
     CUICatalog *_catalog;
@@ -22,14 +20,14 @@
     NSTextContainer *_textContainer;
 }
 
-@property(retain) CUICatalog * cuiCatalog;
-@property(retain) CUIStyleEffectConfiguration * cuiStyleEffects;
-@property(copy,readonly) NSString * debugDescription;
+@property (nonatomic, retain) CUICatalog *cuiCatalog;
+@property (nonatomic, retain) CUIStyleEffectConfiguration *cuiStyleEffects;
+@property (readonly, copy) NSString *debugDescription;
 @property float defaultTighteningFactor;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(getter=_usesSimpleTextEffects,setter=_setUsesSimpleTextEffects:) BOOL usesSimpleTextEffects;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:, nonatomic) BOOL usesSimpleTextEffects;
 
 + (BOOL)_hasCustomSettings;
 + (void)_setHasCustomSettings:(BOOL)arg1;

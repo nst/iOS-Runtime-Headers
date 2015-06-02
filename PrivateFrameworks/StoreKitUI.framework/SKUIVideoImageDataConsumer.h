@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIColorScheme, UIColor;
-
 @interface SKUIVideoImageDataConsumer : SKUIImageDataConsumer {
     unsigned int _allowedOrientations;
     UIColor *_backgroundColor;
@@ -18,11 +16,11 @@
     } _portraitSize;
 }
 
-@property unsigned int allowedOrientations;
-@property(retain) UIColor * backgroundColor;
-@property(retain) SKUIColorScheme * colorScheme;
-@property struct CGSize { float x1; float x2; } landscapeSize;
-@property struct CGSize { float x1; float x2; } portraitSize;
+@property (nonatomic) unsigned int allowedOrientations;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct CGSize { float x1; float x2; } landscapeSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } portraitSize;
 
 - (void).cxx_destruct;
 - (unsigned int)allowedOrientations;

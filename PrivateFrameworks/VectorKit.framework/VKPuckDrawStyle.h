@@ -2,25 +2,20 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@interface VKPuckDrawStyle : VKRenderStyle
 
-@interface VKPuckDrawStyle : VKRenderStyle {
-}
-
-@property(readonly) float arrowBrightness;
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) float circleBrightness;
-@property(readonly) BOOL hasArrowBrightness;
-@property(readonly) BOOL hasArrowColor;
-@property(readonly) BOOL hasArrowColorStale;
-@property(readonly) BOOL hasCircleBrightness;
-@property(readonly) BOOL hasOffset;
-@property(readonly) BOOL hasSize;
-@property(readonly) float offset;
-@property(readonly) float size;
+@property (nonatomic, readonly) float arrowBrightness;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  arrowColorStale; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, readonly) float circleBrightness;
+@property (nonatomic, readonly) BOOL hasArrowBrightness;
+@property (nonatomic, readonly) BOOL hasArrowColor;
+@property (nonatomic, readonly) BOOL hasArrowColorStale;
+@property (nonatomic, readonly) BOOL hasCircleBrightness;
+@property (nonatomic, readonly) BOOL hasOffset;
+@property (nonatomic, readonly) BOOL hasSize;
+@property (nonatomic, readonly) float offset;
+@property (nonatomic, readonly) float size;
 
 + (int)renderStyleID;
 

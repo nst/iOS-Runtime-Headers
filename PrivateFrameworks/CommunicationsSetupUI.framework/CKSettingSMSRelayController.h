@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class IDSService, NSString;
-
 @interface CKSettingSMSRelayController : PSListController <IDSServiceDelegate> {
     IDSService *_relayService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) IDSService * relayService;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IDSService *relayService;
+@property (readonly) Class superclass;
 
 + (id)authorizedSMSRelayDevices;
 + (BOOL)deviceIsAuthorized:(id)arg1;

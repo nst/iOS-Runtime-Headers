@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROSBrailleDisplayManagerDelegate>, NSAttributedString, NSData, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SCROBrailleDisplay, SCROBrailleDisplayHistory, SCROBrailleDisplayManagedQueue, SCROBrailleEventDispatcher, SCROBrailleFormatter, SCRODBluetoothBrailleDisplay;
-
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
     int _alertPriority;
     double _alertTimeout;
@@ -44,12 +42,12 @@
     SCROBrailleDisplay *_stealthBrailleDisplay;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int inputContractionMode;
-@property BOOL inputEightDotBraille;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int inputContractionMode;
+@property (nonatomic) BOOL inputEightDotBraille;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

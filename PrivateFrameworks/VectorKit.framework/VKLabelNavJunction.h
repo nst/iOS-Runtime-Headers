@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray, NSString, VKLabelNavJunction, VKLabelNavRoad, VKLabelNavRoadLabel, VKLabelTile;
-
 @interface VKLabelNavJunction : NSObject <VKLabelNavFeature> {
     BOOL _areLabelsDisabled;
     unsigned int _depthFromRoute;
@@ -26,7 +15,7 @@
     BOOL _isRouteOverpass;
     BOOL _isRouteRefineJunction;
     VKLabelNavRoadLabel *_junctionSign;
-    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; struct { float x_3_1_1; float x_3_1_2; } x3; unsigned char x4; unsigned char x5; unsigned char x6; struct { /* ? */ } *x7; BOOL x8; } *_labelFeature;
+    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; struct { float x_3_1_1; float x_3_1_2; } x3; unsigned char x4; unsigned char x5; unsigned char x6; struct { /* ? */ } *x7; BOOL x8; } *_labelFeature;
     int _largestRoadClass;
     NSString *_name;
     VKLabelNavRoad *_outgoingRoad;
@@ -53,42 +42,42 @@
     double _worldUnitsPerMeter;
 }
 
-@property unsigned int depthFromRoute;
-@property float distanceFromPreviousShieldLabel;
-@property(readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }* geoJunction;
-@property(readonly) BOOL hasSharedRouteDirection;
-@property(readonly) VKLabelNavRoad * incomingRoad;
-@property(readonly) int intraRoadPriority;
-@property(readonly) BOOL isAwayFromRoute;
-@property(readonly) BOOL isGuidanceStepStart;
-@property(readonly) BOOL isInGuidance;
-@property(readonly) BOOL isIntersection;
-@property(readonly) BOOL isIntraRamp;
-@property(readonly) BOOL isMultiRoadIntersection;
-@property(readonly) BOOL isOffRouteGraph;
-@property BOOL isOnDualCarriageway;
-@property(readonly) BOOL isOnRoute;
-@property(readonly) BOOL isOverpass;
-@property(readonly) BOOL isRamp;
-@property(readonly) BOOL isRoadTerminus;
-@property BOOL isRouteOverpass;
-@property BOOL isRouteRefineJunction;
-@property(readonly) BOOL isStartOfRoadName;
-@property(readonly) BOOL isTileEdgeJunction;
-@property(readonly) VKLabelNavRoadLabel * junctionSign;
-@property(readonly) int largestRoadClass;
-@property(readonly) NSString * name;
-@property(readonly) VKLabelNavRoad * outgoingRoad;
-@property VKLabelNavJunction * overpassJunction;
-@property int preferredLabelPlacement;
-@property(readonly) int requiredLabelPlacement;
-@property(readonly) NSArray * roads;
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
-@property struct  sharedRouteDirection; /* unknown property attribute:  1>=[2f]} */
-@property(readonly) NSString * shieldDisplayGroup;
-@property(readonly) VKLabelTile * tile;
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  tileCoordinate; /* unknown property attribute:  1>=[2f]} */
-@property(readonly) double worldUnitsPerMeter;
+@property (nonatomic) unsigned int depthFromRoute;
+@property (nonatomic) float distanceFromPreviousShieldLabel;
+@property (nonatomic, readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*geoJunction;
+@property (nonatomic, readonly) BOOL hasSharedRouteDirection;
+@property (nonatomic, readonly) VKLabelNavRoad *incomingRoad;
+@property (nonatomic, readonly) int intraRoadPriority;
+@property (nonatomic, readonly) BOOL isAwayFromRoute;
+@property (nonatomic, readonly) BOOL isGuidanceStepStart;
+@property (nonatomic, readonly) BOOL isInGuidance;
+@property (nonatomic, readonly) BOOL isIntersection;
+@property (nonatomic, readonly) BOOL isIntraRamp;
+@property (nonatomic, readonly) BOOL isMultiRoadIntersection;
+@property (nonatomic, readonly) BOOL isOffRouteGraph;
+@property (nonatomic) BOOL isOnDualCarriageway;
+@property (nonatomic, readonly) BOOL isOnRoute;
+@property (nonatomic, readonly) BOOL isOverpass;
+@property (nonatomic, readonly) BOOL isRamp;
+@property (nonatomic, readonly) BOOL isRoadTerminus;
+@property (nonatomic) BOOL isRouteOverpass;
+@property (nonatomic) BOOL isRouteRefineJunction;
+@property (nonatomic, readonly) BOOL isStartOfRoadName;
+@property (nonatomic, readonly) BOOL isTileEdgeJunction;
+@property (nonatomic, readonly) VKLabelNavRoadLabel *junctionSign;
+@property (nonatomic, readonly) int largestRoadClass;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) VKLabelNavRoad *outgoingRoad;
+@property (nonatomic) VKLabelNavJunction *overpassJunction;
+@property (nonatomic) int preferredLabelPlacement;
+@property (nonatomic, readonly) int requiredLabelPlacement;
+@property (nonatomic, readonly) NSArray *roads;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  sharedRouteDirection; /* unknown property attribute:  1>=[2f]} */
+@property (nonatomic, readonly) NSString *shieldDisplayGroup;
+@property (nonatomic, readonly) VKLabelTile *tile;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  tileCoordinate; /* unknown property attribute:  1>=[2f]} */
+@property (nonatomic, readonly) double worldUnitsPerMeter;
 
 - (id).cxx_construct;
 - (struct VKPoint { double x1; double x2; double x3; })_anchorCoordinateForSignOrientation:(int)arg1;

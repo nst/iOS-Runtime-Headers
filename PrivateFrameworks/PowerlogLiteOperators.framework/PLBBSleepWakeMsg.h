@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBSleepWakeMsg : PLBBMsgRoot {
     NSMutableDictionary *_commonInfo;
     NSMutableDictionary *_kvPairs;
@@ -23,22 +21,22 @@
     NSNumber *_swSvcId;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSString * swAtCmd;
-@property(retain) NSString * swCTData;
-@property(retain) NSString * swChan;
-@property(retain) NSString * swClientId;
-@property(retain) NSString * swCmd;
-@property(retain) NSString * swCmdFullName;
-@property(retain) NSString * swCmdName;
-@property(retain) NSDictionary * swIpData;
-@property(retain) NSString * swMsgId;
-@property(retain) NSString * swMsgType;
-@property(retain) NSString * swRadioClass;
-@property(retain) NSString * swRawData;
-@property(retain) NSString * swReason;
-@property(retain) NSNumber * swSvcId;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSString *swAtCmd;
+@property (retain) NSString *swCTData;
+@property (retain) NSString *swChan;
+@property (retain) NSString *swClientId;
+@property (retain) NSString *swCmd;
+@property (retain) NSString *swCmdFullName;
+@property (retain) NSString *swCmdName;
+@property (retain) NSDictionary *swIpData;
+@property (retain) NSString *swMsgId;
+@property (retain) NSString *swMsgType;
+@property (retain) NSString *swRadioClass;
+@property (retain) NSString *swRawData;
+@property (retain) NSString *swReason;
+@property (retain) NSNumber *swSvcId;
 
 + (id)entryEventPointDefinitionSleepWakeActivity;
 

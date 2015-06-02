@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject, NSString, UIKBRenderConfig, UIKBTree, UITextInputTraits;
-
 @interface UIKBBackgroundView : UIKBSplitImageView <UIKBCacheableView> {
     BOOL _centerFilled;
     NSObject *_geometryCacheKey;
@@ -56,16 +54,16 @@
     int _visualStyle;
 }
 
-@property(readonly) BOOL cacheDeferable;
-@property(readonly) NSString * cacheKey;
-@property(readonly) float cachedWidth;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject * geometryCacheKey;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL keepNonPersistent;
-@property(retain) UIKBRenderConfig * renderConfig;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL cacheDeferable;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, readonly) float cachedWidth;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject *geometryCacheKey;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL keepNonPersistent;
+@property (nonatomic, retain) UIKBRenderConfig *renderConfig;
+@property (readonly) Class superclass;
 
 - (BOOL)cacheDeferable;
 - (id)cacheKey;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface PDParagraphBuild : PDBuild {
     double mAutoAdvanceTime;
     int mBuildLevel;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface AULabel : UILabel {
-}
+@interface AULabel : UILabel
 
 @end

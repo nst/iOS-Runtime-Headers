@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <UIViewControllerContextTransitioning>, NSString, UIPercentDrivenInteractiveTransition;
-
 @interface PUViewControllerTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     double _duration;
     BOOL _interactive;
@@ -12,13 +10,13 @@
     <UIViewControllerContextTransitioning> *_transitionContext;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) unsigned int hash;
-@property(getter=isInteractive) BOOL interactive;
-@property(setter=_setInteractiveProgress:) float interactiveProgress;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
+@property (getter=isInteractive, nonatomic) BOOL interactive;
+@property (setter=_setInteractiveProgress:, nonatomic) float interactiveProgress;
+@property (readonly) Class superclass;
 
 + (id)interactionControllerForAnimationController:(id)arg1;
 

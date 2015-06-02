@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSData, NSString;
-
 @interface SLRequestMultiPart : NSObject {
     NSString *_filename;
     NSString *_multiPartBoundary;
@@ -13,12 +11,12 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(copy) NSString * filename;
-@property(copy) NSString * multiPartBoundary;
-@property(copy) NSString * name;
-@property(retain) NSData * payload;
-@property(copy) NSString * type;
-@property(readonly) NSString * uniqueIdentifier;
+@property (nonatomic, copy) NSString *filename;
+@property (nonatomic, copy) NSString *multiPartBoundary;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSData *payload;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
 
 + (id)multiPartWithName:(id)arg1 payload:(id)arg2 type:(id)arg3 multiPartBoundary:(id)arg4;
 

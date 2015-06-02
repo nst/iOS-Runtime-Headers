@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKModelObject;
-
 @interface VKModelObject_DrawPass : NSObject {
     unsigned char _pass;
     VKModelObject *_submodel;
 }
 
-@property unsigned char pass;
-@property(retain) VKModelObject * submodel;
+@property (nonatomic) unsigned char pass;
+@property (nonatomic, retain) VKModelObject *submodel;
 
 - (void)dealloc;
 - (id)description;

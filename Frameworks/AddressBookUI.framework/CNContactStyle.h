@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIColor;
-
 @interface CNContactStyle : NSObject {
     UIColor *_backgroundColor;
     int _barStyle;
@@ -18,17 +16,17 @@
     BOOL _usesOpaqueBackground;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property int barStyle;
-@property int keyboardAppearance;
-@property(readonly) UIColor * placeholderTextColor;
-@property(retain) UIColor * sectionBackgroundColor;
-@property(retain) UIColor * selectedCellBackgroundColor;
-@property int separatorBackdropOverlayBlendMode;
-@property(retain) UIColor * separatorColor;
-@property int separatorStyle;
-@property(retain) UIColor * textColor;
-@property BOOL usesOpaqueBackground;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) int barStyle;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic, readonly) UIColor *placeholderTextColor;
+@property (nonatomic, retain) UIColor *sectionBackgroundColor;
+@property (nonatomic, retain) UIColor *selectedCellBackgroundColor;
+@property (nonatomic) int separatorBackdropOverlayBlendMode;
+@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic) int separatorStyle;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) BOOL usesOpaqueBackground;
 
 - (id)backgroundColor;
 - (int)barStyle;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>;
-
 @interface ABChameleonCell : UITableViewCell {
     int _abCellStyle;
     BOOL _hasConfiguredBackgroundViews;
     <ABStyleProvider> *_styleProvider;
 }
 
-@property int abCellStyle;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic) int abCellStyle;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (void)_updateBackgroundViewsForCellStyleAndLocation;
 - (void)_updateTextStylesForCellStyle;

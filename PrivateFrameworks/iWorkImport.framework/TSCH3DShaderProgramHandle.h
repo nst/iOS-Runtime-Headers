@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TSCH3DShaderEffectsStates, TSCH3DShaderHandle;
-
 @interface TSCH3DShaderProgramHandle : TSCH3DGLHandle {
     NSMutableDictionary *mAttributeLocations;
     TSCH3DShaderEffectsStates *mCurrentEffectsStates;
@@ -12,11 +10,11 @@
     TSCH3DShaderHandle *mVertexShader;
 }
 
-@property(readonly) NSMutableDictionary * attributeLocations;
-@property(readonly) TSCH3DShaderEffectsStates * currentEffectsStates;
-@property(readonly) TSCH3DShaderHandle * fragmentShader;
-@property(readonly) NSMutableDictionary * uniformLocations;
-@property(readonly) TSCH3DShaderHandle * vertexShader;
+@property (nonatomic, readonly) NSMutableDictionary *attributeLocations;
+@property (nonatomic, readonly) TSCH3DShaderEffectsStates *currentEffectsStates;
+@property (nonatomic, readonly) TSCH3DShaderHandle *fragmentShader;
+@property (nonatomic, readonly) NSMutableDictionary *uniformLocations;
+@property (nonatomic, readonly) TSCH3DShaderHandle *vertexShader;
 
 - (id)attributeLocations;
 - (id)currentEffectsStates;

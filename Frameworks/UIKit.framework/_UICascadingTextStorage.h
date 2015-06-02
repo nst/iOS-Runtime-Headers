@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableDictionary, UIColor, UIFont;
-
 @interface _UICascadingTextStorage : NSConcreteTextStorage {
     NSMutableDictionary *_defaultAttributes;
 }
 
-@property(copy) NSDictionary * defaultAttributes;
-@property(retain) UIFont * font;
-@property int lineBreakMode;
-@property float shadowBlur;
-@property(retain) UIColor * shadowColor;
-@property struct CGSize { float x1; float x2; } shadowOffset;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
+@property (nonatomic, copy) NSDictionary *defaultAttributes;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic) int lineBreakMode;
+@property (nonatomic) float shadowBlur;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
 
 + (id)defaultFont;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _PFEncodedString : _PFString {
-}
+@interface _PFEncodedString : _PFString
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;

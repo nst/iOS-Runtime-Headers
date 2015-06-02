@@ -3,14 +3,14 @@
  */
 
 @interface MFPColorLUTEffect : MFPEffect {
-    unsigned char mLutA[256];
-    unsigned char mLutB[256];
-    unsigned char mLutG[256];
-    unsigned char mLutR[256];
+    unsigned char mLutA;
+    unsigned char mLutB;
+    unsigned char mLutG;
+    unsigned char mLutR;
 }
 
 + (id)GUID;
 
-- (id)initWithLUTA:(unsigned char[256])arg1 LUTR:(unsigned char[256])arg2 LUTG:(unsigned char[256])arg3 LUTB:(unsigned char[256])arg4;
+- (id)initWithLUTA:(unsigned char)arg1 LUTR:(unsigned char)arg2 LUTG:(unsigned char)arg3 LUTB:(unsigned char)arg4;
 
 @end

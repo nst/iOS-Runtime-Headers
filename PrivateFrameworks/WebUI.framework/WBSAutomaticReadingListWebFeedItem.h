@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, NSURL;
-
 @interface WBSAutomaticReadingListWebFeedItem : WBSAutomaticReadingListItem {
     NSString *_feedURLString;
     NSURL *_homepageURL;
@@ -11,10 +9,10 @@
     NSString *_title;
 }
 
-@property(copy) NSString * feedURLString;
-@property(copy) NSURL * homepageURL;
-@property(copy) NSString * originatorProfileImageURLString;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *feedURLString;
+@property (nonatomic, copy) NSURL *homepageURL;
+@property (nonatomic, copy) NSString *originatorProfileImageURLString;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)biggerOriginatorProfileImageURL;

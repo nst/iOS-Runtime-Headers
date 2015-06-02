@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray;
-
 @interface ML3ItemArtworkTable : ML3DatabaseTable {
     NSArray *_columns;
 }

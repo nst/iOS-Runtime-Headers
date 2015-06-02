@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIImage, UIPDFPage, UIPDFPageRenderOperation;
-
 @interface UIPDFPageRenderJob : NSObject {
     SEL _callback;
     UIImage *_image;
@@ -22,12 +20,12 @@
     id _userData;
 }
 
-@property(retain,readonly) UIImage * image;
-@property UIPDFPageRenderOperation * operation;
-@property(readonly) unsigned int pageIndex;
-@property(readonly) int priority;
+@property (readonly, retain) UIImage *image;
+@property UIPDFPageRenderOperation *operation;
+@property (readonly) unsigned int pageIndex;
+@property (readonly) int priority;
 @property BOOL releaseWhenDone;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (readonly) struct CGSize { float x1; float x2; } size;
 
 - (void)cancel;
 - (void)cancelOperation;

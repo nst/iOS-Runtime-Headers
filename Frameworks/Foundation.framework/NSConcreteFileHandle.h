@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_io>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface NSConcreteFileHandle : NSFileHandle {
     unsigned short _activity;
     NSObject<OS_dispatch_source> *_dsrc;
@@ -18,26 +12,18 @@
     NSObject<OS_dispatch_queue> *_monitoringQueue;
     NSObject<OS_dispatch_io> *_readChannel;
     NSObject<OS_dispatch_source> *_readMonitoringSource;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _readabilityHandler;
-
+    id /* block */ _readabilityHandler;
     NSObject<OS_dispatch_data> *_resultData;
     int _resultSocket;
     struct __CFRunLoop { } *_rl;
     struct __CFRunLoopSource { } *_source;
     NSObject<OS_dispatch_source> *_writeMonitoringSource;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _writeabilityHandler;
-
+    id /* block */ _writeabilityHandler;
 }
 
 - (void)_cancelDispatchSources;
 - (void)_commonDealloc;
-- (void)_locked_clearHandler:(id*)arg1 forSource:(id*)arg2;
+- (void)_locked_clearHandler:(id /* block */*)arg1 forSource:(id*)arg2;
 - (id)_monitor:(int)arg1;
 - (void)acceptConnectionInBackgroundAndNotify;
 - (void)acceptConnectionInBackgroundAndNotifyForModes:(id)arg1;
@@ -64,17 +50,17 @@
 - (void)readInBackgroundAndNotifyForModes:(id)arg1;
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
-- (id)readabilityHandler;
+- (id /* block */)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
 - (void)setPort:(id)arg1;
-- (void)setReadabilityHandler:(id)arg1;
-- (void)setWriteabilityHandler:(id)arg1;
+- (void)setReadabilityHandler:(id /* block */)arg1;
+- (void)setWriteabilityHandler:(id /* block */)arg1;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
 - (void)writeData:(id)arg1;
-- (id)writeabilityHandler;
+- (id /* block */)writeabilityHandler;
 
 @end

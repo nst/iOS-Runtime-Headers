@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class SLURLPreviewGenerator, UIImage, UIImageView, UIView;
-
 @interface SLSheetURLPreviewView : SLSheetImagePreviewView {
     UIImageView *_placeholderGlyphView;
     UIView *_placeholderPreviewView;

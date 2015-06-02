@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDColorReference;
-
 @interface EDPatternFill : EDFill {
     EDColorReference *mBackColorReference;
     EDColorReference *mForeColorReference;

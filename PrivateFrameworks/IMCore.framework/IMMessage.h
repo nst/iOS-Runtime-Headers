@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMHandle, IMMessageItem, NSArray, NSAttributedString, NSDate, NSError, NSString;
-
 @interface IMMessage : NSObject <NSCopying> {
     NSError *_error;
     NSArray *_fileTransferGUIDs;
@@ -22,45 +20,47 @@
     NSDate *_timeRead;
 }
 
-@property(retain,readonly) IMMessageItem * _imMessageItem;
-@property(retain) NSError * error;
-@property(copy) NSArray * fileTransferGUIDs;
-@property unsigned long long flags;
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasDataDetectorResults;
-@property(readonly) BOOL hasInlineAttachments;
-@property(retain,readonly) NSArray * inlineAttachmentAttributesArray;
-@property(readonly) BOOL isAddressedToMe;
-@property(readonly) BOOL isAlert;
-@property(readonly) BOOL isAudioMessage;
-@property(readonly) BOOL isAutoReply;
-@property(readonly) BOOL isDelayed;
-@property(readonly) BOOL isDelivered;
-@property(readonly) BOOL isEmote;
-@property(readonly) BOOL isEmpty;
-@property(readonly) BOOL isFinished;
-@property(readonly) BOOL isFromMe;
-@property BOOL isInvitationMessage;
-@property(readonly) BOOL isLocatingMessage;
-@property(readonly) BOOL isPlayed;
-@property(readonly) BOOL isRead;
-@property(readonly) BOOL isSent;
-@property(readonly) BOOL isSystemMessage;
-@property(readonly) BOOL isTypingMessage;
-@property long long messageID;
-@property(retain,readonly) NSAttributedString * messageSubject;
-@property(retain,readonly) NSString * plainBody;
-@property(retain) IMHandle * sender;
-@property(retain,readonly) NSString * senderName;
-@property(retain,readonly) IMHandle * subject;
-@property(retain,readonly) NSString * summaryString;
-@property(retain) NSAttributedString * text;
-@property(retain) NSDate * time;
-@property(retain) NSDate * timeDelivered;
-@property(retain) NSDate * timePlayed;
-@property(retain) NSDate * timeRead;
-@property(readonly) BOOL wasDataDetected;
-@property(readonly) BOOL wasDowngraded;
+@property (nonatomic, readonly, retain) IMMessageItem *_imMessageItem;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, copy) NSArray *fileTransferGUIDs;
+@property (nonatomic) unsigned long long flags;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasDataDetectorResults;
+@property (nonatomic, readonly) BOOL hasInlineAttachments;
+@property (nonatomic, readonly, retain) NSArray *inlineAttachmentAttributesArray;
+@property (nonatomic, readonly) BOOL isAddressedToMe;
+@property (nonatomic, readonly) BOOL isAlert;
+@property (nonatomic, readonly) BOOL isAudioMessage;
+@property (nonatomic, readonly) BOOL isAutoReply;
+@property (nonatomic, readonly) BOOL isDelayed;
+@property (nonatomic, readonly) BOOL isDelivered;
+@property (nonatomic, readonly) BOOL isEmote;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic, readonly) BOOL isFromMe;
+@property (nonatomic) BOOL isInvitationMessage;
+@property (nonatomic, readonly) BOOL isLocatingMessage;
+@property (nonatomic, readonly) BOOL isPlayed;
+@property (nonatomic, readonly) BOOL isRead;
+@property (nonatomic, readonly) BOOL isSent;
+@property (nonatomic, readonly) BOOL isSystemMessage;
+@property (nonatomic, readonly) BOOL isTypingMessage;
+@property (nonatomic) long long messageID;
+@property (nonatomic, readonly, retain) NSAttributedString *messageSubject;
+@property (nonatomic, readonly, retain) NSString *plainBody;
+@property (nonatomic, retain) IMHandle *sender;
+@property (nonatomic, readonly, retain) NSString *senderName;
+@property (nonatomic, readonly, retain) IMHandle *subject;
+@property (nonatomic, readonly, retain) NSString *summaryString;
+@property (nonatomic, retain) NSAttributedString *text;
+@property (nonatomic, retain) NSDate *time;
+@property (nonatomic, retain) NSDate *timeDelivered;
+@property (nonatomic, retain) NSDate *timePlayed;
+@property (nonatomic, retain) NSDate *timeRead;
+@property (nonatomic, readonly) BOOL wasDataDetected;
+@property (nonatomic, readonly) BOOL wasDowngraded;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (id)_vCardDataWithCLLocation:(id)arg1;
 + (id)defaultInvitationMessageFromSender:(id)arg1 flags:(unsigned long long)arg2;
@@ -73,14 +73,6 @@
 + (id)messageFromIMMessageItemDictionary:(id)arg1 body:(id)arg2 sender:(id)arg3 subject:(id)arg4;
 + (id)messageWithLocation:(id)arg1 flags:(unsigned long long)arg2 error:(id)arg3 guid:(id)arg4;
 
-- (id)__ck_attachmentText:(BOOL)arg1;
-- (id)__ck_downgradedMessage;
-- (BOOL)__ck_isEqualToMessageUsingGUID:(id)arg1;
-- (BOOL)__ck_isSMS;
-- (BOOL)__ck_isiMessage;
-- (id)__ck_previewText;
-- (id)__ck_service;
-- (id)__ck_undowngradedMessage;
 - (id)_copyWithFlags:(unsigned long long)arg1;
 - (id)_imMessageItem;
 - (id)_initWithSender:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 plainText:(id)arg6 text:(id)arg7 messageSubject:(id)arg8 fileTransferGUIDs:(id)arg9 flags:(unsigned long long)arg10 error:(id)arg11 guid:(id)arg12 messageID:(long long)arg13 subject:(id)arg14;
@@ -144,5 +136,16 @@
 - (id)timeRead;
 - (BOOL)wasDataDetected;
 - (BOOL)wasDowngraded;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_attachmentText:(BOOL)arg1;
+- (id)__ck_downgradedMessage;
+- (BOOL)__ck_isEqualToMessageUsingGUID:(id)arg1;
+- (BOOL)__ck_isSMS;
+- (BOOL)__ck_isiMessage;
+- (id)__ck_previewText;
+- (id)__ck_service;
+- (id)__ck_undowngradedMessage;
 
 @end

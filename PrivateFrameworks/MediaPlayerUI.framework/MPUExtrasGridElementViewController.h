@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKGridElement, MPUExtrasGridViewControllerStyle, NSArray, NSString, UICollectionView, UIView, _MPUExtrasGridHeaderView, _MPUExtrasShelfCollectionViewLayout;
-
 @interface MPUExtrasGridElementViewController : MPUExtrasViewElementViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     UICollectionView *_collectionView;
     MPUExtrasGridViewControllerStyle *_extraLargeStyle;
@@ -19,19 +17,19 @@
     MPUExtrasGridViewControllerStyle *_wideStyle;
 }
 
-@property(readonly) UICollectionView * collectionView;
-@property(readonly) MPUExtrasGridViewControllerStyle * currentStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) MPUExtrasGridViewControllerStyle * extraLargeStyle;
-@property(readonly) unsigned int hash;
-@property(retain) MPUExtrasGridViewControllerStyle * largeStyle;
-@property(retain) MPUExtrasGridViewControllerStyle * mediumStyle;
-@property(getter=isShelfStyle) BOOL shelfStyle;
-@property(retain) MPUExtrasGridViewControllerStyle * smallStyle;
-@property(readonly) Class superclass;
-@property(readonly) IKGridElement * viewElement;
-@property(retain) MPUExtrasGridViewControllerStyle * wideStyle;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic, readonly) MPUExtrasGridViewControllerStyle *currentStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) MPUExtrasGridViewControllerStyle *extraLargeStyle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUExtrasGridViewControllerStyle *largeStyle;
+@property (nonatomic, retain) MPUExtrasGridViewControllerStyle *mediumStyle;
+@property (getter=isShelfStyle, nonatomic) BOOL shelfStyle;
+@property (nonatomic, retain) MPUExtrasGridViewControllerStyle *smallStyle;
+@property (readonly) Class superclass;
+@property (readonly) IKGridElement *viewElement;
+@property (nonatomic, retain) MPUExtrasGridViewControllerStyle *wideStyle;
 
 + (id)_defaultCellStyle;
 + (id)_fontAttributes;

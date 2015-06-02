@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIFont;
-
 @interface UIAutocorrectTextView : UIView {
     BOOL m_animating;
     int m_edgeType;
@@ -13,8 +11,8 @@
     int m_type;
 }
 
-@property BOOL animating;
-@property BOOL isLongString;
+@property (nonatomic) BOOL animating;
+@property (nonatomic) BOOL isLongString;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (BOOL)animating;

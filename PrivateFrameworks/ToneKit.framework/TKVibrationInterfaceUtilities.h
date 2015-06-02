@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKVibrationInterfaceUtilities : NSObject {
-}
+@interface TKVibrationInterfaceUtilities : NSObject
 
 + (void)configureVibrationNameTextField:(id)arg1;
 + (id)descriptionForDuration:(double)arg1;

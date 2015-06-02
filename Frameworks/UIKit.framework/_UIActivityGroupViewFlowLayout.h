@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSIndexPath, UILongPressGestureRecognizer, _UIActivityGroupActivityCell;
-
 @interface _UIActivityGroupViewFlowLayout : UICollectionViewLayout {
     struct UIOffset { 
         float horizontal; 
@@ -31,16 +29,16 @@
     NSArray *_preparedUpdateItems;
 }
 
-@property struct UIOffset { float x1; float x2; } draggingOffset;
-@property(retain) _UIActivityGroupActivityCell * draggingView;
-@property(retain) UILongPressGestureRecognizer * editingGestureRecognizer;
-@property struct CGSize { float x1; float x2; } evaluatedContentSize;
-@property float evaluatedHorizontalItemOffset;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } evaluatedInset;
-@property struct CGSize { float x1; float x2; } evaluatedItemSize;
-@property(copy) NSIndexPath * indexPathForDraggedItem;
-@property(copy) NSArray * preparedLayoutAttributes;
-@property(copy) NSArray * preparedUpdateItems;
+@property (nonatomic) struct UIOffset { float x1; float x2; } draggingOffset;
+@property (nonatomic, retain) _UIActivityGroupActivityCell *draggingView;
+@property (nonatomic, retain) UILongPressGestureRecognizer *editingGestureRecognizer;
+@property (nonatomic) struct CGSize { float x1; float x2; } evaluatedContentSize;
+@property (nonatomic) float evaluatedHorizontalItemOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } evaluatedInset;
+@property (nonatomic) struct CGSize { float x1; float x2; } evaluatedItemSize;
+@property (nonatomic, copy) NSIndexPath *indexPathForDraggedItem;
+@property (nonatomic, copy) NSArray *preparedLayoutAttributes;
+@property (nonatomic, copy) NSArray *preparedUpdateItems;
 
 - (float)_evaluateHorizontalItemOffsetForItemSize:(struct CGSize { float x1; float x2; })arg1 inset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_evaluateInsetForSectionAtIndex:(int)arg1;

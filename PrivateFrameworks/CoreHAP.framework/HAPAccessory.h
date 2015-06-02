@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <HAPAccessoryDelegate>, HAPAccessoryServer, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HAPAccessory : NSObject {
     <HAPAccessoryDelegate> *_delegate;
     NSString *_identifier;
@@ -20,22 +18,22 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property <HAPAccessoryDelegate> * delegate;
-@property(copy) NSString * identifier;
-@property(copy) NSNumber * instanceID;
-@property(readonly) int linkType;
-@property(copy) NSString * manufacturer;
-@property(copy) NSString * model;
-@property(copy) NSString * name;
-@property(getter=isPaired,readonly) BOOL paired;
-@property(getter=isPrimary) BOOL primary;
-@property(getter=isReachable) BOOL reachable;
-@property(copy) NSString * serialNumber;
-@property HAPAccessoryServer * server;
-@property(retain) NSArray * services;
-@property(readonly) BOOL supportsGroupedRequests;
-@property(copy) NSString * uniqueIdentifier;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) <HAPAccessoryDelegate> *delegate;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSNumber *instanceID;
+@property (nonatomic, readonly) int linkType;
+@property (nonatomic, copy) NSString *manufacturer;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *name;
+@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (getter=isPrimary, nonatomic) BOOL primary;
+@property (getter=isReachable, nonatomic) BOOL reachable;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) HAPAccessoryServer *server;
+@property (nonatomic, retain) NSArray *services;
+@property (nonatomic, readonly) BOOL supportsGroupedRequests;
+@property (nonatomic, copy) NSString *uniqueIdentifier;
+@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)isAccessoryPairedWithIdentifier:(id)arg1;
 + (BOOL)isAccessoryPrimaryWithUniqueIdentifier:(id)arg1;
@@ -61,8 +59,8 @@
 - (id)manufacturer;
 - (id)model;
 - (id)name;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)serialNumber;
 - (id)server;
 - (id)services;
@@ -83,7 +81,7 @@
 - (id)uniqueIdentifier;
 - (BOOL)validateCharacteristicValues:(id*)arg1;
 - (id)workQueue;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

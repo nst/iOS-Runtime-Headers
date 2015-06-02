@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureStackedBar : TSCHChartFeatureBar {
-}
+@interface TSCHChartFeatureStackedBar : TSCHChartFeatureBar
 
 - (id)defaultDataFileName;
 - (BOOL)drawValueLabelsForZero;

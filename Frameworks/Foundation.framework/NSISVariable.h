@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSISVariableDelegate>;
-
 @interface NSISVariable : NSObject {
     <NSISVariableDelegate> *_delegate;
     unsigned int _ident;
     int _refCount;
 }
 
-@property <NSISVariableDelegate> * delegate;
-@property(readonly) BOOL shouldBeMinimized;
-@property(readonly) int valueRestriction;
+@property <NSISVariableDelegate> *delegate;
+@property (readonly) BOOL shouldBeMinimized;
+@property (readonly) int valueRestriction;
 
 + (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
 + (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;

@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCropToolControllerSpec : PUPhotoEditToolControllerSpec {
-}
+@interface PUCropToolControllerSpec : PUPhotoEditToolControllerSpec
 
-@property(readonly) struct CGSize { float x1; float x2; } cropActionButtonSize;
-@property(readonly) float cropHandleViewLineMargin;
-@property(readonly) float cropHandleViewLineThickness;
-@property(readonly) float cropRectMargin;
-@property(readonly) struct CGSize { float x1; float x2; } minimumCropHandleViewSize;
-@property(readonly) float minimumCropInset;
-@property(readonly) struct CGSize { float x1; float x2; } minimumCropSize;
-@property(readonly) float standardBottomBarWidth;
-@property(readonly) float standardSideBarHeight;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } cropActionButtonSize;
+@property (nonatomic, readonly) float cropHandleViewLineMargin;
+@property (nonatomic, readonly) float cropHandleViewLineThickness;
+@property (nonatomic, readonly) float cropRectMargin;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumCropHandleViewSize;
+@property (nonatomic, readonly) float minimumCropInset;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumCropSize;
+@property (nonatomic, readonly) float standardBottomBarWidth;
+@property (nonatomic, readonly) float standardSideBarHeight;
 
 - (struct CGSize { float x1; float x2; })cropActionButtonSize;
 - (float)cropHandleViewLineMargin;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString;
-
 @interface StepByStepUIViewController_Join_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
     int deviceKind;
     NSString *personalizedBaseName;
@@ -11,7 +9,7 @@
     BOOL supportsSpruce;
 }
 
-@property(retain) NSString * personalizedBaseName;
+@property (nonatomic, retain) NSString *personalizedBaseName;
 
 - (id)devicePickerLabel;
 - (id)deviceTableLabel;

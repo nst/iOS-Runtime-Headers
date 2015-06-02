@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <GEOMapServiceCompletionTicket>, <MKLocationManagerOperation>, NSArray, NSTimer;
-
 @interface MKLocalSearchCompleter : MKSearchCompleter {
     BOOL _dirty;
     double _lastRequestTime;

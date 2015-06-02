@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSDate, NSDateComponents, NSString, NSTimeZone, NSTimer;
-
 @interface HMDTimerTrigger : HMDTrigger {
     NSDate *_currentFireDate;
     NSDate *_fireDate;
@@ -13,12 +11,12 @@
     NSString *_timerID;
 }
 
-@property(retain) NSDate * currentFireDate;
-@property(copy) NSDate * fireDate;
-@property(copy) NSTimeZone * fireDateTimeZone;
-@property(copy) NSDateComponents * fireRepeatInterval;
-@property(retain) NSTimer * timer;
-@property(retain) NSString * timerID;
+@property (nonatomic, retain) NSDate *currentFireDate;
+@property (nonatomic, copy) NSDate *fireDate;
+@property (nonatomic, copy) NSTimeZone *fireDateTimeZone;
+@property (nonatomic, copy) NSDateComponents *fireRepeatInterval;
+@property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, retain) NSString *timerID;
 
 + (BOOL)supportsSecureCoding;
 + (id)validateWholeMinuteDate:(id)arg1 onCalendar:(id)arg2;

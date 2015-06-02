@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class NSCache;
-
 @interface FMFMapImageCache : NSObject {
     NSCache *__cache;
 }
 
-@property(retain) NSCache * _cache;
+@property (nonatomic, retain) NSCache *_cache;
 
 + (id)sharedInstance;
 

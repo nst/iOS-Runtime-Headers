@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_tcp_listener>, NSString;
-
 @interface ATNetServiceListener : ATMessageLinkListener {
     NSString *_interfaceName;
     NSObject<OS_dispatch_queue> *_queue;
@@ -13,7 +11,7 @@
     NSObject<OS_tcp_listener> *_tcpListener;
 }
 
-@property(copy) NSString * interfaceName;
+@property (nonatomic, copy) NSString *interfaceName;
 
 - (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1 type:(id)arg2 domain:(id)arg3;

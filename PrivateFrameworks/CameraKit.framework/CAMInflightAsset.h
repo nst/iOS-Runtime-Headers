@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDate, NSString;
-
 @interface CAMInflightAsset : NSObject {
     BOOL __didPersistAvalanche;
     BOOL __hasPendingAvalanchePersistenceUpdate;
@@ -19,18 +17,18 @@
     short _visibilityState;
 }
 
-@property(readonly) BOOL _didPersistAvalanche;
-@property(readonly) BOOL _hasPendingAvalanchePersistenceUpdate;
-@property int avalanchePickType;
-@property(retain) NSString * avalancheUUID;
-@property int captureDeviceDuringCapture;
-@property(retain) NSDate * dateCreated;
-@property int deviceOrientationDuringCapture;
-@property(retain) NSString * directory;
-@property(retain) NSString * filename;
-@property BOOL isVideo;
-@property(retain) NSString * uuid;
-@property short visibilityState;
+@property (nonatomic, readonly) BOOL _didPersistAvalanche;
+@property (nonatomic, readonly) BOOL _hasPendingAvalanchePersistenceUpdate;
+@property (nonatomic) int avalanchePickType;
+@property (nonatomic, retain) NSString *avalancheUUID;
+@property (nonatomic) int captureDeviceDuringCapture;
+@property (nonatomic, retain) NSDate *dateCreated;
+@property (nonatomic) int deviceOrientationDuringCapture;
+@property (nonatomic, retain) NSString *directory;
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic) BOOL isVideo;
+@property (nonatomic, retain) NSString *uuid;
+@property (nonatomic) short visibilityState;
 
 - (void).cxx_destruct;
 - (void)_avalanchePersistenceStateDidChange;

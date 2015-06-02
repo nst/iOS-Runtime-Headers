@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString;
-
 @interface _MTLComputePipelineState : NSObject {
     <MTLDevice> *_device;
     NSString *_label;
 }
 
-@property(readonly) <MTLDevice> * device;
-@property(readonly) NSString * label;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) NSString *label;
 
 - (void)dealloc;
 - (id)description;

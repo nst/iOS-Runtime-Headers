@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIVector;
-
 @interface CIZoomBlur : CILinearBlur {
     CIVector *inputCenter;
 }
 
-@property(retain) CIVector * inputCenter;
+@property (nonatomic, retain) CIVector *inputCenter;
 
 + (id)customAttributes;
 

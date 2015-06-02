@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGPhoneNumber : SGLabeledObject {
     NSString *_phoneNumber;
 }
 
-@property(readonly) NSString * phoneNumber;
+@property (nonatomic, readonly) NSString *phoneNumber;
 
 + (id)phoneNumber:(id)arg1 label:(id)arg2;
 + (BOOL)supportsSecureCoding;

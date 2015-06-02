@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIRemoteInputViewController : _UIRemoteViewController {
-}
+@interface _UIRemoteInputViewController : _UIRemoteViewController
 
 + (BOOL)__shouldHostRemoteTextEffectsWindow;
 

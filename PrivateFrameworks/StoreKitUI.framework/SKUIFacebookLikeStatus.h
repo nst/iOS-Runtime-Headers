@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSURL;
-
 @interface SKUIFacebookLikeStatus : NSObject <NSCopying> {
     NSArray *_friends;
     NSURL *_url;
     BOOL _userLiked;
 }
 
-@property(copy) NSURL * URL;
-@property(copy) NSArray * friendNames;
-@property(getter=isUserLiked) BOOL userLiked;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSArray *friendNames;
+@property (getter=isUserLiked, nonatomic) BOOL userLiked;
 
 - (void).cxx_destruct;
 - (id)URL;

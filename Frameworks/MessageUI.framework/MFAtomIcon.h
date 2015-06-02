@@ -9,7 +9,7 @@
     } drawingOffset;
 }
 
-@property struct CGPoint { float x1; float x2; } drawingOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } drawingOffset;
 
 - (struct CGPoint { float x1; float x2; })drawingOffset;
 - (void)setDrawingOffset:(struct CGPoint { float x1; float x2; })arg1;

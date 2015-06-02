@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSWPCitationRecord : TSPObject {
     NSString *_authorsString;
     NSString *_endNoteXML;
@@ -19,19 +17,19 @@
     NSString *_year;
 }
 
-@property(copy) NSString * authorsString;
-@property(readonly) NSString * cacheKey;
-@property(copy) NSString * endNoteXML;
-@property BOOL hideAuthorNames;
-@property BOOL hideYear;
-@property(copy) NSString * pageRange;
-@property(copy) NSString * prefix;
-@property BOOL recordXMLApplied;
-@property BOOL shouldRemove;
-@property(copy) NSString * suffix;
-@property(copy) NSString * title;
-@property(copy) NSString * type;
-@property(copy) NSString * year;
+@property (nonatomic, copy) NSString *authorsString;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, copy) NSString *endNoteXML;
+@property (nonatomic) BOOL hideAuthorNames;
+@property (nonatomic) BOOL hideYear;
+@property (nonatomic, copy) NSString *pageRange;
+@property (nonatomic, copy) NSString *prefix;
+@property (nonatomic) BOOL recordXMLApplied;
+@property (nonatomic) BOOL shouldRemove;
+@property (nonatomic, copy) NSString *suffix;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *year;
 
 - (id)authorYearString;
 - (id)authorsString;

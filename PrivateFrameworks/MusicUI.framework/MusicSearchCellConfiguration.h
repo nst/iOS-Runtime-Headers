@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicSearchCellConfiguration : MusicSongListCellConfiguration {
-}
+@interface MusicSearchCellConfiguration : MusicSongListCellConfiguration
 
 + (void)_appDefaultsDidChangeNotification:(id)arg1;
 + (void)appDefaultsDidChange;

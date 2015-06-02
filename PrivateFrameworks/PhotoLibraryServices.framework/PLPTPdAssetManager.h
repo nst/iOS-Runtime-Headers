@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSFileManager, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<PhotoLibraryPTPDelegate>, NSSet, NSString, PLManagedObjectContext, PLPhotoLibrary;
-
 @interface PLPTPdAssetManager : NSObject <PLManagedObjectContextPTPNotificationDelegate> {
     NSArray *_albumObjectIDs;
     NSSet *_availableAssetIDs;
@@ -16,21 +14,21 @@
     NSFileManager *fileManager;
 }
 
-@property(retain,readonly) NSArray * albumObjectIDs;
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<PhotoLibraryPTPDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSFileManager * fileManager;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) PLManagedObjectContext * managedObjectContext;
-@property(retain,readonly) PLPhotoLibrary * photoLibrary;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) NSArray *albumObjectIDs;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) NSObject<PhotoLibraryPTPDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSFileManager *fileManager;
+@property (readonly) unsigned int hash;
+@property (readonly, retain) PLManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
+@property (readonly) Class superclass;
 
 - (id)_allAssetObjectIDs;
 - (id)_fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
 - (BOOL)_isPTPAlbum:(id)arg1;
-- (void)_performBlockAndWait:(id)arg1;
-- (void)_performTransactionAndWait:(id)arg1;
+- (void)_performBlockAndWait:(id /* block */)arg1;
+- (void)_performTransactionAndWait:(id /* block */)arg1;
 - (id)_ptpInformationForAllAssets;
 - (void)_registerForFirstUnlockNotification;
 - (id)albumHandles;

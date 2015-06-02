@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItem, NSObject<OS_dispatch_queue>;
-
 @interface AVSynchronizedLayerInternal : NSObject {
     BOOL isVisible;
     AVPlayerItem *playerItem;

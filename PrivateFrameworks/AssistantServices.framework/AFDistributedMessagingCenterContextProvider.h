@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFDistributedMessagingCenterContextProvider : NSObject <AFSiriAppContextProviding> {
     NSString *_bundleIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)getAppContextWithDeliveryHandler:(id)arg1 completionHandler:(id)arg2;
+- (void)getAppContextWithDeliveryHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithAppBundleIdentifier:(id)arg1;
 
 @end

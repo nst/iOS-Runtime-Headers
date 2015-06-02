@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class APSConnection, NSData, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface IDSPushHandler : NSObject <APSConnectionDelegate> {
     Class _APSConnectionClass;
     APSConnection *_apsConnection;
@@ -13,12 +11,12 @@
     NSMutableSet *_topicsCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isConnected;
-@property(readonly) NSData * pushToken;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isConnected;
+@property (nonatomic, readonly) NSData *pushToken;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

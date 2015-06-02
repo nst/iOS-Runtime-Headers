@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray, NSDictionary;
-
 @interface BWVideoFormatRequirements : BWFormatRequirements {
     unsigned long _bytesPerRowAlignment;
     unsigned long _height;
@@ -16,16 +14,16 @@
     unsigned long _widthAlignment;
 }
 
-@property unsigned long bytesPerRowAlignment;
-@property unsigned long height;
-@property unsigned long heightAlignment;
-@property(readonly) NSDictionary * pixelBufferAttributes;
-@property unsigned long planeAlignment;
-@property BOOL prewireBuffers;
-@property(copy) NSArray * supportedCacheModes;
-@property(copy) NSArray * supportedPixelFormats;
-@property unsigned long width;
-@property unsigned long widthAlignment;
+@property (nonatomic) unsigned long bytesPerRowAlignment;
+@property (nonatomic) unsigned long height;
+@property (nonatomic) unsigned long heightAlignment;
+@property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
+@property (nonatomic) unsigned long planeAlignment;
+@property (nonatomic) BOOL prewireBuffers;
+@property (nonatomic, copy) NSArray *supportedCacheModes;
+@property (nonatomic, copy) NSArray *supportedPixelFormats;
+@property (nonatomic) unsigned long width;
+@property (nonatomic) unsigned long widthAlignment;
 
 + (id)cacheModesForCacheProfile:(int)arg1;
 + (id)cacheModesForOptimizedCPUAccess;

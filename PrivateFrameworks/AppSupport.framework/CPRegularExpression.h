@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString;
-
 @interface CPRegularExpression : NSObject <NSCoding, NSCopying> {
     NSString *_expressionString;
     void *_reserved;

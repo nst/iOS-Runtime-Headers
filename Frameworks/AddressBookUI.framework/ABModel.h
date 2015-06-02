@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABContactsFilter, NSArray, NSMutableArray, NSRecursiveLock;
-
 @interface ABModel : NSObject {
     void *_addressBook;
     BOOL _autoInvalidateOnDatabaseChange;
@@ -34,12 +32,12 @@
     void *_selectedPerson;
 }
 
-@property void* addressBook;
-@property(retain) ABContactsFilter * displayedContactsFilter;
-@property(readonly) void* groupForNewRecords;
-@property(readonly) ABContactsFilter * lastSelectedContactsFilter;
-@property(readonly) ABContactsFilter * selectedContactsFilter;
-@property(readonly) void* sourceForNewRecords;
+@property (nonatomic) void*addressBook;
+@property (nonatomic, retain) ABContactsFilter *displayedContactsFilter;
+@property (nonatomic, readonly) void*groupForNewRecords;
+@property (nonatomic, readonly) ABContactsFilter *lastSelectedContactsFilter;
+@property (nonatomic, readonly) ABContactsFilter *selectedContactsFilter;
+@property (nonatomic, readonly) void*sourceForNewRecords;
 
 + (void)initialize;
 + (unsigned int)sortOrdering;

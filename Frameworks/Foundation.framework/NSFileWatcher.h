@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSFileWatcherObservations, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL;
-
 @interface NSFileWatcher : NSObject {
     NSObject<OS_dispatch_source> *_eventSource;
     struct __FSEventStream { } *_eventStream;
@@ -19,11 +13,7 @@
     BOOL _isWatching;
     NSFileWatcherObservations *_itemObservations;
     unsigned long long _lastObservedEventID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _observer;
-
+    id /* block */ _observer;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_subitemObservationsByEventPath;
     NSURL *_url;
@@ -34,7 +24,7 @@
 - (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
 - (id)initWithQueue:(id)arg1;
 - (void)setLastObservedEventID:(unsigned long long)arg1;
-- (void)setObserver:(id)arg1;
+- (void)setObserver:(id /* block */)arg1;
 - (void)setURL:(id)arg1;
 - (void)settle;
 - (void)start;

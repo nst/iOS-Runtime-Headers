@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNSlideNode, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString, TSUPointerKeyDictionary;
-
 @interface KNSlideTree : TSPContainedObject <KNSlideCollection> {
     NSMutableArray *mDisplayedSlideNodeCache;
     TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
@@ -17,14 +10,14 @@
     NSMutableDictionary *mSlideNodesForUniqueIdentifiersCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) KNSlideNode * defaultSlideNodeForNewSelection;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * displayedSlideNodes;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * slideNodes;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * visibleSlideNodes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) KNSlideNode *defaultSlideNodeForNewSelection;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *displayedSlideNodes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *slideNodes;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *visibleSlideNodes;
 
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 atDepths:(id)arg2 minimumValidDepth:(unsigned int)arg3;
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned int)arg2;

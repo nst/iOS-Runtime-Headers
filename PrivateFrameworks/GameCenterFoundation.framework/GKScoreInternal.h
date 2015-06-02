@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayerInternal, NSDate, NSString;
-
 @interface GKScoreInternal : GKInternalRepresentation {
     unsigned long long _context;
     NSDate *_date;
@@ -16,18 +14,18 @@
     BOOL _valueSet;
 }
 
-@property(retain) NSString * category;
-@property unsigned long long context;
-@property(retain) NSDate * date;
-@property(retain) NSString * formattedValue;
-@property(retain) NSString * groupCategory;
-@property(retain) NSString * groupLeaderboardIdentifier;
-@property(retain) NSString * leaderboardIdentifier;
-@property(retain) GKPlayerInternal * player;
-@property(readonly) NSString * playerID;
-@property unsigned int rank;
-@property long long value;
-@property BOOL valueSet;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic) unsigned long long context;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) NSString *formattedValue;
+@property (nonatomic, retain) NSString *groupCategory;
+@property (nonatomic, retain) NSString *groupLeaderboardIdentifier;
+@property (nonatomic, retain) NSString *leaderboardIdentifier;
+@property (nonatomic, retain) GKPlayerInternal *player;
+@property (nonatomic, readonly) NSString *playerID;
+@property (nonatomic) unsigned int rank;
+@property (nonatomic) long long value;
+@property (nonatomic) BOOL valueSet;
 
 + (id)secureCodedPropertyKeys;
 + (BOOL)supportsSecureCoding;

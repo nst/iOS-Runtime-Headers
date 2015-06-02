@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemCollectionDelegate>, NSArray, NSMutableDictionary, NSString, SKUIClientContext, SKUIItemArtworkContext, SKUIResourceLoader, SKUIScreenshotDataConsumer, SKUIStyledImageDataConsumer, UIImage;
-
 @interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
     SKUIItemArtworkContext *_artworkContext;
     SKUIResourceLoader *_artworkLoader;
@@ -23,23 +21,23 @@
     NSMutableDictionary *_screenshotArtworkRequestIDs;
 }
 
-@property(retain) SKUIItemArtworkContext * artworkContext;
-@property(retain) SKUIResourceLoader * artworkLoader;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIItemCollectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIStyledImageDataConsumer * iconDataConsumer;
-@property(copy) NSArray * items;
-@property(retain) SKUIScreenshotDataConsumer * landscapeScreenshotDataConsumer;
-@property int numberOfItemsPerPage;
-@property float numberOfPagesToCacheAhead;
-@property(retain) SKUIScreenshotDataConsumer * portraitScreenshotDataConsumer;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;
+@property (nonatomic, retain) SKUIResourceLoader *artworkLoader;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIItemCollectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIStyledImageDataConsumer *iconDataConsumer;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, retain) SKUIScreenshotDataConsumer *landscapeScreenshotDataConsumer;
+@property (nonatomic) int numberOfItemsPerPage;
+@property (nonatomic) float numberOfPagesToCacheAhead;
+@property (nonatomic, retain) SKUIScreenshotDataConsumer *portraitScreenshotDataConsumer;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkLoader;
-- (void)_enumerateVisibleCellLayoutsWithBlock:(id)arg1;
+- (void)_enumerateVisibleCellLayoutsWithBlock:(id /* block */)arg1;
 - (id)_iconArtworkRequestWithItem:(id)arg1;
 - (id)_initSKUIItemCollectionController;
 - (BOOL)_loadArtworkForItem:(id)arg1 reason:(int)arg2;

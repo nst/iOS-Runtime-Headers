@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNBuild, KNBuildAttributeValue, KNBuildChunk, KNBuildChunkIdentifier, NSString, NSUUID;
-
 @interface KNBuildAttributeTuple : TSPObject <NSCopying> {
     KNBuildAttributeValue *_attributeValue;
     KNBuildChunkIdentifier *_buildChunkIdentifier;
@@ -14,12 +12,12 @@
     NSString *_property;
 }
 
-@property(readonly) KNBuild * build;
-@property(readonly) KNBuildChunk * chunk;
-@property(readonly) BOOL isBuildTuple;
-@property(readonly) BOOL isChunkTuple;
-@property(readonly) NSString * property;
-@property(readonly) KNBuildAttributeValue * value;
+@property (nonatomic, readonly) KNBuild *build;
+@property (nonatomic, readonly) KNBuildChunk *chunk;
+@property (nonatomic, readonly) BOOL isBuildTuple;
+@property (nonatomic, readonly) BOOL isChunkTuple;
+@property (nonatomic, readonly) NSString *property;
+@property (nonatomic, readonly) KNBuildAttributeValue *value;
 
 + (id)tupleForBuild:(id)arg1 property:(id)arg2 value:(id)arg3;
 + (id)tupleWithChunk:(id)arg1 property:(id)arg2 value:(id)arg3;

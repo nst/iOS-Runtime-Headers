@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber;
+@interface CDDMBacklightEvent : NSManagedObject
 
-@interface CDDMBacklightEvent : NSManagedObject {
-}
-
-@property(retain) NSNumber * anonymizedBeacon;
-@property(retain) NSNumber * anonymizedLocation;
-@property(retain) NSNumber * backlightLevel;
-@property(retain) NSDate * creationDate;
-@property(retain) NSNumber * displayId;
-@property(retain) NSNumber * localDaysSinceSunday;
-@property(retain) NSNumber * localTime;
-@property(retain) NSNumber * localTimeQuarterHourSlot;
-@property(retain) NSNumber * networkQuality;
-@property(retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber *anonymizedBeacon;
+@property (nonatomic, retain) NSNumber *anonymizedLocation;
+@property (nonatomic, retain) NSNumber *backlightLevel;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSNumber *displayId;
+@property (nonatomic, retain) NSNumber *localDaysSinceSunday;
+@property (nonatomic, retain) NSNumber *localTime;
+@property (nonatomic, retain) NSNumber *localTimeQuarterHourSlot;
+@property (nonatomic, retain) NSNumber *networkQuality;
+@property (nonatomic, retain) NSNumber *userId;
 
 @end

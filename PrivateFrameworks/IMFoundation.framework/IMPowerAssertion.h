@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMPowerAssertion : NSObject {
     unsigned int _assertion;
     NSString *_identifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVPropFindTask, NSSet, NSString, NSURL;
-
 @interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVACLTaskDelegate, CoreDAVPropFindTaskDelegate> {
     NSSet *_aceItems;
     CoreDAVPropFindTask *_fetchTask;
@@ -11,14 +9,14 @@
     NSURL *_url;
 }
 
-@property(retain) NSSet * aceItems;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CoreDAVPropFindTask * fetchTask;
-@property(readonly) unsigned int hash;
-@property int state;
-@property(readonly) Class superclass;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSSet *aceItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CoreDAVPropFindTask *fetchTask;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSURL *url;
 
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_startGetACL;

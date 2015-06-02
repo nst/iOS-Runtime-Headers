@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class BKSTouchDeliveryPolicyAssertion, NSArray, NSError, NSMutableArray, NSString, UIActionSheet, UIDimmingView, UIView, _UIAsyncInvocation, _UIRemoteView, _UIRemoteViewService, _UISizeTrackingView, _UITextEffectsRemoteView, _UITextServiceSession, _UIViewServiceInterface;
-
 @interface _UIRemoteViewController : UIViewController <UIActionSheetDelegate, _UIRemoteViewController_TextEffectsOperatorInterface, _UIRemoteViewController_ViewControllerOperatorInterface> {
     BOOL __automatic_invalidation_invalidated;
     int __automatic_invalidation_retainCount;
@@ -49,27 +47,27 @@
     id _viewControllerOperatorProxy;
 }
 
-@property(setter=_setIsUpdatingSize:) BOOL _isUpdatingSize;
-@property(setter=_setTouchDeliveryPolicyAssertion:,retain) BKSTouchDeliveryPolicyAssertion * _touchDeliveryPolicyAssertion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct { unsigned int x1[8]; } serviceAuditToken;
-@property(readonly) NSString * serviceBundleIdentifier;
-@property(readonly) int serviceProcessIdentifier;
-@property BOOL serviceViewShouldShareTouchesWithHost;
-@property(readonly) Class superclass;
+@property (setter=_setIsUpdatingSize:, nonatomic) BOOL _isUpdatingSize;
+@property (setter=_setTouchDeliveryPolicyAssertion:, nonatomic, retain) BKSTouchDeliveryPolicyAssertion *_touchDeliveryPolicyAssertion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct { unsigned int x1[8]; } serviceAuditToken;
+@property (nonatomic, readonly) NSString *serviceBundleIdentifier;
+@property (nonatomic, readonly) int serviceProcessIdentifier;
+@property (nonatomic) BOOL serviceViewShouldShareTouchesWithHost;
+@property (readonly) Class superclass;
 
 + (BOOL)__shouldAllowHostProcessToTakeFocus;
 + (BOOL)__shouldHostRemoteTextEffectsWindow;
-+ (id)_requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 service:(id)arg4 connectionHandler:(id)arg5;
++ (id)_requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 service:(id)arg4 connectionHandler:(id /* block */)arg5;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (BOOL)_shouldSendLegacyMethodsFromViewWillTransitionToSize;
 + (id)exportedInterface;
-+ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id)arg3;
-+ (id)requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 connectionHandler:(id)arg4;
-+ (id)requestViewControllerWithService:(id)arg1 connectionHandler:(id)arg2;
-+ (id)requestViewControllerWithService:(id)arg1 traitCollection:(id)arg2 connectionHandler:(id)arg3;
++ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(id /* block */)arg3;
++ (id)requestViewController:(id)arg1 traitCollection:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 connectionHandler:(id /* block */)arg4;
++ (id)requestViewControllerWithService:(id)arg1 connectionHandler:(id /* block */)arg2;
++ (id)requestViewControllerWithService:(id)arg1 traitCollection:(id)arg2 connectionHandler:(id /* block */)arg3;
 + (id)serviceViewControllerInterface;
 + (BOOL)shouldPropagateAppearanceCustomizations;
 
@@ -82,19 +80,19 @@
 - (void)__setSupportedInterfaceOrientations:(id)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(BOOL)arg1;
 - (BOOL)__shouldRemoteViewControllerFenceOperations;
-- (void)__showServiceForText:(id)arg1 type:(int)arg2 fromRectValue:(id)arg3 replyHandler:(id)arg4;
+- (void)__showServiceForText:(id)arg1 type:(int)arg2 fromRectValue:(id)arg3 replyHandler:(id /* block */)arg4;
 - (void)__viewServiceDidPromoteFirstResponder;
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 hidden:(BOOL)arg2;
 - (void)__viewServiceDidUpdateTintColor:(id)arg1 duration:(double)arg2;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fenceSendRight:(id)arg2;
-- (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id)arg4;
+- (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fenceSendRight:(id)arg3 withReplyHandler:(id /* block */)arg4;
 - (void)__viewServicePopoverDidSetUseToolbarShine:(BOOL)arg1;
 - (void)__viewServicePreferredContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fenceSendRight:(id)arg2;
 - (void)__willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (id)_addAutoAllowedNotifications:(id)arg1;
-- (void)_addPreFencedCommitAction:(id)arg1;
+- (void)_addPreFencedCommitAction:(id /* block */)arg1;
 - (void)_appearanceInvocationsDidChange:(id)arg1;
 - (id)_appearanceSource;
 - (void)_applicationDidAddDeactivationReason:(id)arg1;
@@ -121,7 +119,7 @@
 - (void)_prepareTouchDeliveryPolicy;
 - (BOOL)_requiresKeyboardWindowWhenFirstResponder;
 - (void)_restoreTextEffectsRemoteView;
-- (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id)arg2;
+- (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (BOOL)_serviceHasScrollToTopView;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setDeferred:(BOOL)arg1 forDisplayUUID:(id)arg2;
@@ -132,7 +130,7 @@
 - (void)_snapshotAndRemoveTextEffectsRemoteView;
 - (void)_statusBarHeightDidChange:(id)arg1;
 - (void)_statusBarOrientationDidChange:(id)arg1;
-- (void)_terminateUnconditionallyThen:(id)arg1;
+- (void)_terminateUnconditionallyThen:(id /* block */)arg1;
 - (id)_terminateWithError:(id)arg1;
 - (id)_touchDeliveryPolicyAssertion;
 - (void)_traitCollectionDidChange:(id)arg1;
@@ -163,14 +161,14 @@
 - (id)serviceBundleIdentifier;
 - (int)serviceProcessIdentifier;
 - (id)serviceViewControllerProxy;
-- (id)serviceViewControllerProxyWithErrorHandler:(id)arg1;
+- (id)serviceViewControllerProxyWithErrorHandler:(id /* block */)arg1;
 - (BOOL)serviceViewShouldShareTouchesWithHost;
 - (void)setAllowedNotifications:(id)arg1;
 - (void)setInheritsSecurity:(BOOL)arg1;
 - (void)setServiceViewShouldShareTouchesWithHost:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
-- (void)synchronizeAnimationsInActions:(id)arg1;
+- (void)synchronizeAnimationsInActions:(id /* block */)arg1;
 - (id)textEffectsWindowForServiceScreen;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

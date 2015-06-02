@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKShare;
-
 @interface BRShareDestroyOperation : BROperation {
     CKShare *_share;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareDestroyCompletionBlock;
-
+    id /* block */ _shareDestroyCompletionBlock;
 }
 
-@property(retain) CKShare * share;
-@property(copy) id shareDestroyCompletionBlock;
+@property (nonatomic, retain) CKShare *share;
+@property (copy) id /* block */ shareDestroyCompletionBlock;
 
 - (void)dealloc;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithShare:(id)arg1;
 - (void)main;
 - (void)setShare:(id)arg1;
-- (void)setShareDestroyCompletionBlock:(id)arg1;
+- (void)setShareDestroyCompletionBlock:(id /* block */)arg1;
 - (id)share;
-- (id)shareDestroyCompletionBlock;
+- (id /* block */)shareDestroyCompletionBlock;
 
 @end

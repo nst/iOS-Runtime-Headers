@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSNumber, NSString;
-
 @interface HMCharacteristicMetadata : NSObject <NSSecureCoding> {
     NSString *_format;
     NSString *_manufacturerDescription;
@@ -14,13 +12,13 @@
     NSString *_units;
 }
 
-@property(copy,readonly) NSString * format;
-@property(copy,readonly) NSString * manufacturerDescription;
-@property(readonly) NSNumber * maxLength;
-@property(readonly) NSNumber * maximumValue;
-@property(readonly) NSNumber * minimumValue;
-@property(readonly) NSNumber * stepValue;
-@property(copy,readonly) NSString * units;
+@property (nonatomic, readonly, copy) NSString *format;
+@property (nonatomic, readonly, copy) NSString *manufacturerDescription;
+@property (nonatomic, readonly) NSNumber *maxLength;
+@property (nonatomic, readonly) NSNumber *maximumValue;
+@property (nonatomic, readonly) NSNumber *minimumValue;
+@property (nonatomic, readonly) NSNumber *stepValue;
+@property (nonatomic, readonly, copy) NSString *units;
 
 + (BOOL)supportsSecureCoding;
 

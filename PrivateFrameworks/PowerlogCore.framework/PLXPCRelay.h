@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface PLXPCRelay : NSObject {
     BOOL _relayActive;
     NSObject<OS_xpc_object> *_relayConnection;
@@ -11,8 +9,8 @@
 }
 
 @property BOOL relayActive;
-@property(retain) NSObject<OS_xpc_object> * relayConnection;
-@property(retain) NSObject<OS_xpc_object> * xpcConnection;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *relayConnection;
+@property (retain) NSObject<OS_xpc_object> *xpcConnection;
 
 + (id)sharedInstance;
 

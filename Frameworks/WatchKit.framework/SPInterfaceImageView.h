@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPInterfaceImageView : SPInterfaceObject {
-}
+@interface SPInterfaceImageView : SPInterfaceObject
 
 - (void)setImage:(id)arg1;
 - (void)setImageData:(id)arg1;

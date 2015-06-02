@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKRootlessActivityViewController : UIActivityViewController {
-}
+@interface GKRootlessActivityViewController : UIActivityViewController
 
 - (void)viewDidAppear:(BOOL)arg1;
 

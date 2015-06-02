@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSDate, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSTimer;
-
 @interface LSObserverTimer : NSObject {
     SEL _appObserverSelector;
     NSMutableSet *_applications;
@@ -17,13 +15,13 @@
 }
 
 @property SEL appObserverSelector;
-@property(retain) NSMutableSet * applications;
-@property(retain) NSDate * lastFiredDate;
-@property(readonly) double latency;
-@property(readonly) double minInterval;
-@property(retain) NSString * name;
-@property(retain) NSMutableSet * plugins;
-@property(retain) NSTimer * timer;
+@property (nonatomic, retain) NSMutableSet *applications;
+@property (nonatomic, retain) NSDate *lastFiredDate;
+@property (nonatomic, readonly) double latency;
+@property (nonatomic, readonly) double minInterval;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSMutableSet *plugins;
+@property (nonatomic, retain) NSTimer *timer;
 
 - (void)addApplication:(id)arg1;
 - (SEL)appObserverSelector;

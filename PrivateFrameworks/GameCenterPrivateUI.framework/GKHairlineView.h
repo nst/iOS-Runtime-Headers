@@ -6,7 +6,7 @@
     int _alignment;
 }
 
-@property int alignment;
+@property (nonatomic) int alignment;
 
 + (id)hairlineViewForAlignment:(int)arg1;
 

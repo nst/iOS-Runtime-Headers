@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSURL, NSURLRequest, WKFrameInfo;
-
 @interface WKNavigationAction : NSObject {
     BOOL _canHandleRequest;
     int _navigationType;
@@ -22,14 +20,14 @@
     BOOL _userInitiated;
 }
 
-@property(readonly) BOOL _canHandleRequest;
-@property(readonly) NSURL * _originalURL;
-@property(setter=_setOriginalURL:,copy) NSURL * _originalURL;
-@property(getter=_isUserInitiated,readonly) BOOL _userInitiated;
-@property(readonly) int navigationType;
-@property(copy) NSURLRequest * request;
-@property(copy) WKFrameInfo * sourceFrame;
-@property(copy) WKFrameInfo * targetFrame;
+@property (nonatomic, readonly) BOOL _canHandleRequest;
+@property (nonatomic, readonly) NSURL *_originalURL;
+@property (setter=_setOriginalURL:, nonatomic, copy) NSURL *_originalURL;
+@property (getter=_isUserInitiated, nonatomic, readonly) BOOL _userInitiated;
+@property (nonatomic, readonly) int navigationType;
+@property (nonatomic, copy) NSURLRequest *request;
+@property (nonatomic, copy) WKFrameInfo *sourceFrame;
+@property (nonatomic, copy) WKFrameInfo *targetFrame;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

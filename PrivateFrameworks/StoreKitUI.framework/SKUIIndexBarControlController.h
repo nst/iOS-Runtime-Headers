@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIIndexBarControlControllerDataSource>, <SKUIIndexBarControlControllerDelegate>, NSMapTable, NSString, SKUIIndexBarControl, SKUIIndexBarEntryDescriptor, SKUIResourceLoader;
-
 @interface SKUIIndexBarControlController : NSObject <SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate> {
     SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;
     <SKUIIndexBarControlControllerDataSource> *_dataSource;
@@ -23,14 +21,14 @@
     SKUIResourceLoader *_resourceLoader;
 }
 
-@property <SKUIIndexBarControlControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIIndexBarControlControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIIndexBarControl * indexBarControl;
-@property(retain) SKUIResourceLoader * resourceLoader;
-@property(readonly) Class superclass;
+@property (nonatomic) <SKUIIndexBarControlControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIIndexBarControlControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIIndexBarControl *indexBarControl;
+@property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_URLForEntryDescriptor:(id)arg1;

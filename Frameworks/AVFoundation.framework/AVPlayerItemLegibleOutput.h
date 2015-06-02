@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVPlayerItemLegibleOutputPushDelegate>, AVPlayerItemLegibleOutputInternal, NSObject<OS_dispatch_queue>;
-
 @interface AVPlayerItemLegibleOutput : AVPlayerItemOutput {
     AVPlayerItemLegibleOutputInternal *_legibleOutputInternal;
 }
 
-@property double advanceIntervalForDelegateInvocation;
-@property(readonly) <AVPlayerItemLegibleOutputPushDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
+@property (nonatomic) double advanceIntervalForDelegateInvocation;
+@property (nonatomic, readonly) <AVPlayerItemLegibleOutputPushDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 
 + (void)initialize;
 

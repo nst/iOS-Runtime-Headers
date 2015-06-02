@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSData, NSString, SPProtoCacheSyncData;
-
 @interface SPProtoCacheMessage : PBCodable <NSCopying> {
     NSData *_assetData;
     NSString *_assetKey;
@@ -13,16 +11,16 @@
     SPProtoCacheSyncData *_syncData;
 }
 
-@property(retain) NSData * assetData;
-@property(retain) NSString * assetKey;
-@property int cacheType;
-@property(retain) NSString * gizmoCacheIdentifier;
-@property(readonly) BOOL hasAssetData;
-@property(readonly) BOOL hasAssetKey;
-@property(readonly) BOOL hasGizmoCacheIdentifier;
-@property(readonly) BOOL hasSyncData;
-@property int messageType;
-@property(retain) SPProtoCacheSyncData * syncData;
+@property (nonatomic, retain) NSData *assetData;
+@property (nonatomic, retain) NSString *assetKey;
+@property (nonatomic) int cacheType;
+@property (nonatomic, retain) NSString *gizmoCacheIdentifier;
+@property (nonatomic, readonly) BOOL hasAssetData;
+@property (nonatomic, readonly) BOOL hasAssetKey;
+@property (nonatomic, readonly) BOOL hasGizmoCacheIdentifier;
+@property (nonatomic, readonly) BOOL hasSyncData;
+@property (nonatomic) int messageType;
+@property (nonatomic, retain) SPProtoCacheSyncData *syncData;
 
 - (void).cxx_destruct;
 - (id)assetData;

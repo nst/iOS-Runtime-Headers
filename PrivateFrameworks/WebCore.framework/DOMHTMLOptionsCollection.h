@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLOptionsCollection : DOMObject {
-}
+@interface DOMHTMLOptionsCollection : DOMObject
 
 @property unsigned int length;
 @property int selectedIndex;

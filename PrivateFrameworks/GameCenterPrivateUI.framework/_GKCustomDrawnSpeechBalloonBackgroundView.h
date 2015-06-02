@@ -7,8 +7,8 @@
     unsigned char _tipDirection;
 }
 
-@property unsigned char drawStyle;
-@property unsigned char tipDirection;
+@property (nonatomic) unsigned char drawStyle;
+@property (nonatomic) unsigned char tipDirection;
 
 - (struct CGGradient { }*)_gradientForColor:(id)arg1;
 - (unsigned char)_tipDirectionForCurrentUILayoutDirection;

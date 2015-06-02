@@ -6,12 +6,12 @@
     id _internal;
 }
 
-@property(readonly) struct { double x1; double x2; } matchCoordinate;
-@property(readonly) double matchCourse;
-@property(readonly) int matchFormOfWay;
-@property(readonly) int matchQuality;
-@property(readonly) int matchRoadClass;
-@property(getter=isMatchShifted,readonly) BOOL matchShifted;
+@property (nonatomic, readonly) struct { double x1; double x2; } matchCoordinate;
+@property (nonatomic, readonly) double matchCourse;
+@property (nonatomic, readonly) int matchFormOfWay;
+@property (nonatomic, readonly) int matchQuality;
+@property (nonatomic, readonly) int matchRoadClass;
+@property (getter=isMatchShifted, nonatomic, readonly) BOOL matchShifted;
 
 + (BOOL)supportsSecureCoding;
 

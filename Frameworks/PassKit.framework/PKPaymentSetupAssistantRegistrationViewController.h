@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton;
-
 @interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController {
     UIButton *_skipButton;
 }
@@ -14,7 +12,7 @@
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)dealloc;
 - (id)initWithPaymentWebService:(id)arg1 context:(int)arg2 delegate:(id)arg3;
-- (void)preflightWithCompletion:(id)arg1;
+- (void)preflightWithCompletion:(id /* block */)arg1;
 - (void)privacyButtonTouched:(id)arg1;
 - (void)skip:(id)arg1;
 

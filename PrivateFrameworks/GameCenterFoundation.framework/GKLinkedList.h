@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKListNode;
-
 @interface GKLinkedList : NSObject {
     GKListNode *_headNode;
     GKListNode *_tailNode;
 }
 
-@property GKListNode * headNode;
-@property GKListNode * tailNode;
+@property (nonatomic) GKListNode *headNode;
+@property (nonatomic) GKListNode *tailNode;
 
 - (void)dealloc;
 - (id)description;

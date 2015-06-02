@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_SubstorageForChangeTrackingCopy : TSKAddedToDocumentContext {
-}
+@interface TSKAddedToDocumentContext_SubstorageForChangeTrackingCopy : TSKAddedToDocumentContext
 
 - (BOOL)changeTrackingSubstorage;
 - (id)description;

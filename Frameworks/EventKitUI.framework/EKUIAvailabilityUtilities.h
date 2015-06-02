@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKUIAvailabilityUtilities : NSObject {
-}
+@interface EKUIAvailabilityUtilities : NSObject
 
 + (int)_orderForType:(int)arg1;
 + (BOOL)showTypeAsBusy:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression;
-
 @interface NSExpressionDescription : NSPropertyDescription {
     NSExpression *_expression;
     unsigned int _expressionResultType;
@@ -18,7 +16,7 @@
     void *_reservedtype2_3;
 }
 
-@property(retain) NSExpression * expression;
+@property (retain) NSExpression *expression;
 @property unsigned int expressionResultType;
 
 - (unsigned int)_propertyType;

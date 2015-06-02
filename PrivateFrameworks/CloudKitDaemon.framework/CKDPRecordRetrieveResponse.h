@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord;
-
 @interface CKDPRecordRetrieveResponse : PBCodable <NSCopying> {
     BOOL _clientVersionETagMatch;
     struct { 
@@ -12,10 +10,10 @@
     CKDPRecord *_record;
 }
 
-@property BOOL clientVersionETagMatch;
-@property BOOL hasClientVersionETagMatch;
-@property(readonly) BOOL hasRecord;
-@property(retain) CKDPRecord * record;
+@property (nonatomic) BOOL clientVersionETagMatch;
+@property (nonatomic) BOOL hasClientVersionETagMatch;
+@property (nonatomic, readonly) BOOL hasRecord;
+@property (nonatomic, retain) CKDPRecord *record;
 
 - (void).cxx_destruct;
 - (BOOL)clientVersionETagMatch;

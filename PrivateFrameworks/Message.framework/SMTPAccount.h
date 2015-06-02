@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFSMTPConnection, NSTimer;
-
 @interface SMTPAccount : DeliveryAccount {
     MFSMTPConnection *_connection;
     Class _deliveryClass;
     long _lastTimerSetTime;
-    unsigned int _supportsOutboxCopy : 1;
-    unsigned int _supportsPipelining : 1;
+    unsigned int _supportsOutboxCopy;
+    unsigned int _supportsPipelining;
     NSTimer *_timer;
-    unsigned int _useCellDataOnly : 1;
+    unsigned int _useCellDataOnly;
 }
 
 + (id)accountTypeString;

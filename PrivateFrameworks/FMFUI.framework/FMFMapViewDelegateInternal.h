@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class <FMFMapViewDelegateInternalDelegate>, FMFWildcardGestureRecognizer, NSString;
-
 @interface FMFMapViewDelegateInternal : NSObject <MKMapViewDelegate> {
     <FMFMapViewDelegateInternalDelegate> *_delegate;
     FMFWildcardGestureRecognizer *_gr;
     BOOL _respondingToUserTouch;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <FMFMapViewDelegateInternalDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) FMFWildcardGestureRecognizer * gr;
-@property(readonly) unsigned int hash;
-@property BOOL respondingToUserTouch;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FMFMapViewDelegateInternalDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FMFWildcardGestureRecognizer *gr;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL respondingToUserTouch;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_moveCenterByOffset:(struct CGPoint { float x1; float x2; })arg1 from:(struct { double x1; double x2; })arg2 mapView:(id)arg3;

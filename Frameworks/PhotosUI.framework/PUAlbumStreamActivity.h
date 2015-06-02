@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUAlbumStreamActivityDelegate>, NSObject<PLUserEditableAlbumProtocol>, NSString, PUActivityItemSourceController, PUPhotoStreamComposeServiceViewController, PUVideoTrimQueueController, UIViewController;
-
 @interface PUAlbumStreamActivity : PUActivity <PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate> {
     UIViewController *_activityController;
     <PUAlbumStreamActivityDelegate> *_delegate;
@@ -19,15 +17,15 @@
     PUVideoTrimQueueController *_trimController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PUAlbumStreamActivityDelegate> * delegate;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUAlbumStreamActivityDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property BOOL destinationAlbumWasCreated;
-@property(retain) NSObject<PLUserEditableAlbumProtocol> * destinationStreamingAlbum;
-@property(readonly) unsigned int hash;
-@property(setter=setPresentedFromActivityViewController:) BOOL isPresentedFromActivityViewController;
-@property UIViewController * referenceViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSObject<PLUserEditableAlbumProtocol> *destinationStreamingAlbum;
+@property (readonly) unsigned int hash;
+@property (setter=setPresentedFromActivityViewController:, nonatomic) BOOL isPresentedFromActivityViewController;
+@property (nonatomic) UIViewController *referenceViewController;
+@property (readonly) Class superclass;
 
 + (int)activityCategory;
 
@@ -36,10 +34,10 @@
 - (id)_activitySettingsImage;
 - (void)_createStreamsPickerContainerWithExisting:(BOOL)arg1;
 - (void)_handleDismissWithSuccess:(BOOL)arg1;
-- (void)_performPresentationOnViewController:(id)arg1 completion:(id)arg2;
+- (void)_performPresentationOnViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_prepareToPost:(id)arg1 albumName:(id)arg2 recipients:(id)arg3 comments:(id)arg4;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (void)_publishAssets:(id)arg1 andTrimmedVideoPathInfo:(id)arg2 toAlbum:(id)arg3 orCreateWithName:(id)arg4 comment:(id)arg5 invitationRecipients:(id)arg6 wantsPublicWebsite:(BOOL)arg7 completion:(id)arg8;
+- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)_publishAssets:(id)arg1 andTrimmedVideoPathInfo:(id)arg2 toAlbum:(id)arg3 orCreateWithName:(id)arg4 comment:(id)arg5 invitationRecipients:(id)arg6 wantsPublicWebsite:(BOOL)arg7 completion:(id /* block */)arg8;
 - (id)_selectedVideo;
 - (BOOL)_sharedAlbumAllowsAdding:(struct NSObject { Class x1; }*)arg1;
 - (id)activityTitle;
@@ -57,7 +55,7 @@
 - (void)photoStreamComposeService:(id)arg1 didPostComment:(id)arg2;
 - (void)photoStreamComposeServiceDidCancel:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
-- (void)presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)referenceViewController;
 - (void)setDelegate:(id)arg1;
 - (void)setDestinationAlbumWasCreated:(BOOL)arg1;

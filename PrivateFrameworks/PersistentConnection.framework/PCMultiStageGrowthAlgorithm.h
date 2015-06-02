@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface PCMultiStageGrowthAlgorithm : NSObject <PCGrowthAlgorithm> {
     NSString *_algorithmName;
     unsigned int _countOfGrowthActions;
@@ -19,16 +17,16 @@
     double _minimumKeepAliveInterval;
 }
 
-@property(copy,readonly) NSDictionary * cacheInfo;
-@property(readonly) unsigned int countOfGrowthActions;
-@property(readonly) double currentKeepAliveInterval;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * loggingIdentifier;
-@property double maximumKeepAliveInterval;
-@property double minimumKeepAliveInterval;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSDictionary *cacheInfo;
+@property (nonatomic, readonly) unsigned int countOfGrowthActions;
+@property (nonatomic, readonly) double currentKeepAliveInterval;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *loggingIdentifier;
+@property (nonatomic) double maximumKeepAliveInterval;
+@property (nonatomic) double minimumKeepAliveInterval;
+@property (readonly) Class superclass;
 
 + (void)_loadDefaultValue:(double*)arg1 forKey:(struct __CFString { }*)arg2;
 + (void)_loadDefaults;

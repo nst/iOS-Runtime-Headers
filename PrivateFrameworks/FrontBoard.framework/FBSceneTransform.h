@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSHashTable;
-
 @interface FBSceneTransform : NSObject {
     NSHashTable *_targets;
     struct CGAffineTransform { 
@@ -16,7 +14,7 @@
     } _transform;
 }
 
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })concatenateTransforms:(id)arg1;
 

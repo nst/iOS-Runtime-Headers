@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSearchOperationDelegate>, NSSet, NSString, PSSearchResults;
-
 @interface PSSearchOperation : NSOperation {
     PSSearchResults *_currentResults;
     <PSSearchOperationDelegate> *_delegate;
@@ -12,11 +10,11 @@
     NSSet *_rootEntries;
 }
 
-@property(copy,readonly) PSSearchResults * currentResults;
-@property <PSSearchOperationDelegate> * delegate;
-@property(getter=isNewQuery) BOOL newQuery;
-@property(copy,readonly) NSString * query;
-@property(copy,readonly) NSSet * rootEntries;
+@property (readonly, copy) PSSearchResults *currentResults;
+@property (nonatomic) <PSSearchOperationDelegate> *delegate;
+@property (getter=isNewQuery, nonatomic) BOOL newQuery;
+@property (nonatomic, readonly, copy) NSString *query;
+@property (nonatomic, readonly, copy) NSSet *rootEntries;
 
 + (struct __CFStringTokenizer { }*)_wordBoundaryTokenizer;
 

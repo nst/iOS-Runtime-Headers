@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMLSParser : IKJSObject <IKJSDOMLSParser> {
-}
+@interface IKDOMLSParser : IKJSObject <IKJSDOMLSParser>
 
 + (id)_dataFromInput:(id)arg1;
 

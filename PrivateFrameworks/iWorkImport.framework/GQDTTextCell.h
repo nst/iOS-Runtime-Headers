@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDWPLayoutStorage;
-
 @interface GQDTTextCell : GQDTCell {
     GQDWPLayoutStorage *mLayoutStorage;
     struct __CFString { } *mStringValue;

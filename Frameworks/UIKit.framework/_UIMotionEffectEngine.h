@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, CMMotionManager, NSArray, NSMapTable, NSMutableSet, NSOperationQueue, _UIAssociationTable, _UILazyMapTable, _UIMotionEffectEngineLogger;
-
 @interface _UIMotionEffectEngine : NSObject {
     BOOL _allAnalyzersAreCentered;
     _UILazyMapTable *_analyzerSettingsToAnalyzers;
@@ -64,8 +62,8 @@
     int _thermalNotificationToken;
 }
 
-@property(setter=_setTargetInterfaceOrientation:) int _targetInterfaceOrientation;
-@property(readonly) NSArray * suspensionReasons;
+@property (setter=_setTargetInterfaceOrientation:, nonatomic) int _targetInterfaceOrientation;
+@property (nonatomic, readonly) NSArray *suspensionReasons;
 
 + (BOOL)_motionEffectsEnabled;
 + (BOOL)_motionEffectsSupported;

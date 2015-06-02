@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/CoreDuetDaemonProtocol
  */
 
-@class NSDate;
-
 @interface CDDHistoryWindow : NSObject {
     double _duration;
     double _recurrenceDelta;
@@ -11,10 +9,10 @@
     NSDate *_start;
 }
 
-@property(readonly) double duration;
-@property(readonly) double recurrenceDelta;
-@property(readonly) double recurrenceWidth;
-@property(readonly) NSDate * start;
+@property (readonly) double duration;
+@property (readonly) double recurrenceDelta;
+@property (readonly) double recurrenceWidth;
+@property (readonly) NSDate *start;
 
 + (id)allTimeHistoryWindow;
 + (id)dailyHistoryWindowWithWidth:(double)arg1 endingOnDate:(id)arg2 historyLengthInDays:(int)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFHeaderLabelView : UILabel {
-}
+@interface MFHeaderLabelView : UILabel
 
 + (id)_defaultColor;
 

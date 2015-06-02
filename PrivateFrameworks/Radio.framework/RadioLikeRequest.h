@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioStation, SSURLConnectionRequest;
-
 @interface RadioLikeRequest : RadioRequest {
     BOOL _isSeed;
     long long _itemID;
@@ -13,8 +11,8 @@
     RadioStation *_station;
 }
 
-@property BOOL isSeed;
-@property int likeStatus;
+@property (nonatomic) BOOL isSeed;
+@property (nonatomic) int likeStatus;
 
 - (void).cxx_destruct;
 - (id)init;
@@ -25,7 +23,7 @@
 - (int)likeStatus;
 - (void)setIsSeed:(BOOL)arg1;
 - (void)setLikeStatus:(int)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
-- (void)startWithLikeCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithLikeCompletionHandler:(id /* block */)arg1;
 
 @end

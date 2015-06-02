@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKDigestVerification : NSObject {
-}
+@interface GKDigestVerification : NSObject
 
 + (id)computeVerificationHashForDigest:(id)arg1;
 + (BOOL)digest:(id)arg1 matchesHash:(id)arg2;

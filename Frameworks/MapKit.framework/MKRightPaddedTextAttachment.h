@@ -6,7 +6,7 @@
     float _padding;
 }
 
-@property float padding;
+@property (nonatomic) float padding;
 
 - (id)_contentViewForImage:(id)arg1;
 - (float)padding;

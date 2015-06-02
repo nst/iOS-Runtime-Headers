@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PBBulletProperties : NSObject {
-}
+@interface PBBulletProperties : NSObject
 
 + (int)readBulletNumberScheme:(int)arg1;
 + (int)readBulletNumberSchemeFromExtended:(unsigned int)arg1;

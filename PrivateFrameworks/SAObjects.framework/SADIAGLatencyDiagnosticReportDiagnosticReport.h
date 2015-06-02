@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL;
+@interface SADIAGLatencyDiagnosticReportDiagnosticReport : AceObject <SAAceSerializable>
 
-@interface SADIAGLatencyDiagnosticReportDiagnosticReport : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSNumber * latency;
-@property(readonly) Class superclass;
-@property(copy) NSURL * uri;
-@property(copy) NSString * verb;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSNumber *latency;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *uri;
+@property (nonatomic, copy) NSString *verb;
 
 + (id)latencyDiagnosticReportDiagnosticReport;
 + (id)latencyDiagnosticReportDiagnosticReportWithDictionary:(id)arg1 context:(id)arg2;

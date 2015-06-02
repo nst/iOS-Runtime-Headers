@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMMediaList : DOMObject
 
-@interface DOMMediaList : DOMObject {
-}
-
-@property(readonly) unsigned int length;
-@property(copy) NSString * mediaText;
+@property (readonly) unsigned int length;
+@property (copy) NSString *mediaText;
 
 - (void)appendMedium:(id)arg1;
 - (void)dealloc;

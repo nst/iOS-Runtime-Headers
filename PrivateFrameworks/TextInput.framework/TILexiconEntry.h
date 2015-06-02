@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TILexiconEntry : NSObject <NSCopying, NSSecureCoding> {
     NSString *_documentText;
     NSString *_userInput;
 }
 
-@property(readonly) NSString * documentText;
-@property(readonly) NSString * userInput;
+@property (nonatomic, readonly) NSString *documentText;
+@property (nonatomic, readonly) NSString *userInput;
 
 + (id)entryWithDocumentText:(id)arg1 userInput:(id)arg2;
 + (BOOL)supportsSecureCoding;

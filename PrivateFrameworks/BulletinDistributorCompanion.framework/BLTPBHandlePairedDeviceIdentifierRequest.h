@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSString;
-
 @interface BLTPBHandlePairedDeviceIdentifierRequest : PBRequest <NSCopying> {
     BOOL _carry;
     struct { 
@@ -12,10 +10,10 @@
     NSString *_identifier;
 }
 
-@property BOOL carry;
-@property BOOL hasCarry;
-@property(readonly) BOOL hasIdentifier;
-@property(retain) NSString * identifier;
+@property (nonatomic) BOOL carry;
+@property (nonatomic) BOOL hasCarry;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
 - (BOOL)carry;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDProgressTracker, CKRecord, CKRecordID, NSError, NSString;
-
 @interface CKDModifyRecordMetadata : NSObject {
     NSError *_error;
     NSString *_etag;
@@ -15,14 +13,14 @@
     unsigned int _uploadState;
 }
 
-@property(retain) NSError * error;
-@property(retain) NSString * etag;
-@property BOOL isDelete;
-@property(retain) CKDProgressTracker * progressTracker;
-@property(retain) CKRecord * record;
-@property(retain) CKRecordID * recordID;
-@property(retain) CKRecord * serverRecord;
-@property unsigned int uploadState;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic) BOOL isDelete;
+@property (nonatomic, retain) CKDProgressTracker *progressTracker;
+@property (nonatomic, retain) CKRecord *record;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, retain) CKRecord *serverRecord;
+@property (nonatomic) unsigned int uploadState;
 
 + (id)_stringForUploadState:(unsigned int)arg1;
 + (id)modifyMetadataForDeleteWithRecordID:(id)arg1;

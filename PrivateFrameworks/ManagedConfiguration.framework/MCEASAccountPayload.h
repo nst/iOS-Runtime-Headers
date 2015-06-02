@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface MCEASAccountPayload : MCEmailAccountPayloadBase {
     NSString *_accountDescription;
     NSString *_accountPersistentUUID;
@@ -22,22 +20,22 @@
     NSString *_username;
 }
 
-@property(retain,readonly) NSString * accountDescription;
-@property(copy) NSString * accountPersistentUUID;
-@property(retain) NSData * certificatePersistentID;
-@property(retain,readonly) NSString * certificateUUID;
-@property(copy) NSString * emailAddress;
-@property(retain,readonly) NSData * embeddedCertificate;
-@property(retain,readonly) NSString * embeddedCertificateName;
-@property(copy) NSString * embeddedCertificatePassword;
-@property(readonly) BOOL hasCertificate;
-@property(retain,readonly) NSString * hostname;
-@property(retain,readonly) NSNumber * mailNumberOfPastDaysToSync;
-@property(copy) NSString * password;
-@property BOOL syncDefaultFoldersOnly;
-@property(readonly) NSNumber * syncDefaultFoldersOnlyNum;
-@property(retain) NSNumber * useSSL;
-@property(copy) NSString * username;
+@property (nonatomic, readonly, retain) NSString *accountDescription;
+@property (nonatomic, copy) NSString *accountPersistentUUID;
+@property (nonatomic, retain) NSData *certificatePersistentID;
+@property (nonatomic, readonly, retain) NSString *certificateUUID;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, readonly, retain) NSData *embeddedCertificate;
+@property (nonatomic, readonly, retain) NSString *embeddedCertificateName;
+@property (nonatomic, copy) NSString *embeddedCertificatePassword;
+@property (nonatomic, readonly) BOOL hasCertificate;
+@property (nonatomic, readonly, retain) NSString *hostname;
+@property (nonatomic, readonly, retain) NSNumber *mailNumberOfPastDaysToSync;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic) BOOL syncDefaultFoldersOnly;
+@property (nonatomic, readonly) NSNumber *syncDefaultFoldersOnlyNum;
+@property (nonatomic, retain) NSNumber *useSSL;
+@property (nonatomic, copy) NSString *username;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

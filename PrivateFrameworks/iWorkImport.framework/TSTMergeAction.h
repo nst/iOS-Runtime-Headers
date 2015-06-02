@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSTMergeAction : NSObject {
     struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
         unsigned int *__begin_; 
@@ -34,9 +27,9 @@
     } _uidRanges;
 }
 
-@property(readonly) NSString * description;
-@property(readonly) BOOL hasMergeFormulas;
-@property(readonly) int type;
+@property (readonly) NSString *description;
+@property (nonatomic, readonly) BOOL hasMergeFormulas;
+@property (nonatomic, readonly) int type;
 
 + (id)stringForMergeType:(int)arg1;
 
@@ -46,7 +39,7 @@
 - (void)addFormulaIndex:(unsigned int)arg1;
 - (id)changeDescriptorForTable:(id)arg1;
 - (id)description;
-- (void)enumerateMergeFormulasUsingBlock:(id)arg1;
+- (void)enumerateMergeFormulasUsingBlock:(id /* block */)arg1;
 - (BOOL)hasMergeFormulas;
 - (id)initWithArchive:(const struct MergeOperationArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::CellUIDRangeArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSCE::FormulaArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<unsigned int> { unsigned int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; int x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithType:(int)arg1 uidRange:(const struct TSTCellUIDRange { struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_1_1_1; struct UUIDData<TSP::UUIDData> {} *x_1_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_1_1_3; } x1; struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_2_1_1; struct UUIDData<TSP::UUIDData> {} *x_2_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_2_1_3; } x2; }*)arg2;

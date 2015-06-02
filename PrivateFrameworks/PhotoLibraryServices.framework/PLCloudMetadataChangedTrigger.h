@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudMetadataChangedTrigger : PLCloudStatelessTrigger {
-}
+@interface PLCloudMetadataChangedTrigger : PLCloudStatelessTrigger
 
 - (id)init;
 

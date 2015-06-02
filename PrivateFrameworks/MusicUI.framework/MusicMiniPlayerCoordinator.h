@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicMiniPlayerCoordinator : RUMiniPlayerCoordinator {
-}
+@interface MusicMiniPlayerCoordinator : RUMiniPlayerCoordinator
 
 + (id)sharedCoordinator;
 

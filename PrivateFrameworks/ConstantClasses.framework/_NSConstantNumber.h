@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConstantClasses.framework/ConstantClasses
  */
 
-@interface _NSConstantNumber : NSNumber {
-}
+@interface _NSConstantNumber : NSNumber
 
 + (id)alloc;
 + (void)load;

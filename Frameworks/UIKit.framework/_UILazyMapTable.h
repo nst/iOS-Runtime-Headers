@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMapTable;
-
 @interface _UILazyMapTable : NSObject {
     NSMapTable *_keysToClientTables;
     NSMapTable *_keysToValues;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _mappingBlock;
-
+    id /* block */ _mappingBlock;
     NSMapTable *_valuesToKeys;
 }
 
@@ -25,7 +15,7 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasCachedObjectForKey:(id)arg1;
-- (id)initWithMappingBlock:(id)arg1;
+- (id)initWithMappingBlock:(id /* block */)arg1;
 - (id)keyEnumerable;
 - (id)keys;
 - (id)objectForKey:(id)arg1;

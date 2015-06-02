@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class TIKeyboardCandidate, UIKBKeyView, UIMorphingLabel, UIView;
-
 @interface UIKeyboardPredictionCell : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -52,15 +50,15 @@
     UIView *m_maskView;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } baseFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } collapsedFrame;
-@property BOOL isAutocorrection;
-@property BOOL isCenter;
-@property BOOL isLongCandidate;
-@property BOOL isTypedString;
-@property(retain,readonly) TIKeyboardCandidate * prediction;
-@property int state;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } baseFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } collapsedFrame;
+@property (nonatomic) BOOL isAutocorrection;
+@property (nonatomic) BOOL isCenter;
+@property (nonatomic) BOOL isLongCandidate;
+@property (nonatomic) BOOL isTypedString;
+@property (nonatomic, readonly, retain) TIKeyboardCandidate *prediction;
+@property (nonatomic) int state;
 
 + (id)initKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1 state:(int)arg2 needsBackground:(BOOL)arg3;
 

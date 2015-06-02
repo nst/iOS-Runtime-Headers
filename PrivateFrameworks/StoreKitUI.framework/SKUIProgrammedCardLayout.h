@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIProgrammedCardLayout : SKUICardLayout {
-}
+@interface SKUIProgrammedCardLayout : SKUICardLayout
 
 + (BOOL)allowsViewElement:(id)arg1;
 

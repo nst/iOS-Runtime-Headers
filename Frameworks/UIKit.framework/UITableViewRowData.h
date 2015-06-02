@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, UITableView;
-
 @interface UITableViewRowData : NSObject <NSCopying> {
     BOOL _estimatesRowHeights;
     NSIndexPath *_gapIndexPath;
@@ -26,15 +24,15 @@
     float _tableViewWidth;
 }
 
-@property BOOL estimatesRowHeights;
-@property(readonly) float heightForAutohidingTableHeaderView;
-@property(readonly) float heightForTableHeaderViewHiding;
-@property float minimumRowHeight;
-@property(readonly) NSIndexPath * reorderGapIndexPath;
-@property(readonly) float reorderedRowHeight;
-@property float tableBottomPadding;
-@property float tableSidePadding;
-@property float tableTopPadding;
+@property (nonatomic) BOOL estimatesRowHeights;
+@property (nonatomic, readonly) float heightForAutohidingTableHeaderView;
+@property (nonatomic, readonly) float heightForTableHeaderViewHiding;
+@property (nonatomic) float minimumRowHeight;
+@property (nonatomic, readonly) NSIndexPath *reorderGapIndexPath;
+@property (nonatomic, readonly) float reorderedRowHeight;
+@property (nonatomic) float tableBottomPadding;
+@property (nonatomic) float tableSidePadding;
+@property (nonatomic) float tableTopPadding;
 
 - (void)_ensureSectionOffsetIsValidForSection:(int)arg1;
 - (int)_sectionForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithSection:(int)arg2 numberOfSections:(int)arg3;

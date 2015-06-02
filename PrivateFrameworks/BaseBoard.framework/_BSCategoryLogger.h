@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
 @interface _BSCategoryLogger : NSObject <BSLogging> {
     NSString *_category;
     NSString *_name;
 }
 
-@property(retain) NSString * category;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * name;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *category;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *name;
+@property (readonly) Class superclass;
 
 - (id)category;
 - (void)dealloc;

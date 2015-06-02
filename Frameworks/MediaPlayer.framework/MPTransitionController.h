@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPViewController, NSMutableSet, UIView, UIViewController;
-
 @interface MPTransitionController : NSObject {
     float _duration;
     int _fromInterfaceOrientation;
@@ -19,13 +17,13 @@
     NSMutableSet *_viewsToFadeOut;
 }
 
-@property float duration;
-@property int fromInterfaceOrientation;
-@property(retain) MPViewController * fromViewController;
-@property(retain) UIView * rootView;
-@property(retain) UIViewController * toContainerViewController;
-@property int toInterfaceOrientation;
-@property(retain) MPViewController * toViewController;
+@property (nonatomic) float duration;
+@property (nonatomic) int fromInterfaceOrientation;
+@property (nonatomic, retain) MPViewController *fromViewController;
+@property (nonatomic, retain) UIView *rootView;
+@property (nonatomic, retain) UIViewController *toContainerViewController;
+@property (nonatomic) int toInterfaceOrientation;
+@property (nonatomic, retain) MPViewController *toViewController;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1 didEndSelector:(SEL)arg2;

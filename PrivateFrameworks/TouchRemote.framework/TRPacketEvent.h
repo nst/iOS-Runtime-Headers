@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSData, NSDictionary;
-
 @interface TRPacketEvent : NSObject <NSSecureCoding> {
     unsigned int _packetEventType;
     NSDictionary *_payloadDictionary;
     unsigned int _version;
 }
 
-@property(readonly) NSData * networkRepresentation;
-@property unsigned int packetEventType;
-@property(readonly) NSDictionary * payloadDictionary;
-@property(readonly) unsigned int version;
+@property (nonatomic, readonly) NSData *networkRepresentation;
+@property (nonatomic) unsigned int packetEventType;
+@property (nonatomic, readonly) NSDictionary *payloadDictionary;
+@property (nonatomic, readonly) unsigned int version;
 
 + (Class)_packetClassForPacketEventType:(unsigned int)arg1;
 + (unsigned int)_packetEventType;

@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
+@interface SSMetricsClickEvent : SSMetricsBaseEvent
 
-@interface SSMetricsClickEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) id actionDetails;
-@property(retain) NSString * actionType;
-@property(retain) id impressions;
-@property(retain) NSString * locationDescription;
-@property(retain) NSNumber * positionX;
-@property(retain) NSNumber * positionY;
-@property(retain) NSString * targetIdentifier;
-@property(retain) NSString * targetType;
-@property(retain) NSString * targetURL;
+@property (nonatomic, retain) id actionDetails;
+@property (nonatomic, retain) NSString *actionType;
+@property (nonatomic, retain) id impressions;
+@property (nonatomic, retain) NSString *locationDescription;
+@property (nonatomic, retain) NSNumber *positionX;
+@property (nonatomic, retain) NSNumber *positionY;
+@property (nonatomic, retain) NSString *targetIdentifier;
+@property (nonatomic, retain) NSString *targetType;
+@property (nonatomic, retain) NSString *targetURL;
 
 - (id)actionDetails;
 - (id)actionType;

@@ -6,7 +6,7 @@
     BOOL _backgroundReview;
 }
 
-@property(getter=isBackgroundReview) BOOL backgroundReview;
+@property (getter=isBackgroundReview) BOOL backgroundReview;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isBackgroundReview;

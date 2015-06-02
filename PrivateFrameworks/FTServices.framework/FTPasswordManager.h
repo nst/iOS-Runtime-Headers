@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class ACAccountStore, NSMutableSet;
-
 @interface FTPasswordManager : NSObject {
     ACAccountStore *_accountStore;
     NSMutableSet *_runningQueries;
@@ -14,15 +12,15 @@
 
 - (void)cancelRequestID:(id)arg1 serviceIdentifier:(id)arg2;
 - (void)dealloc;
-- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id)arg5;
-- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 profileID:(id)arg3 outRequestID:(id*)arg4 blockingly:(BOOL)arg5 completionBlock:(id)arg6;
-- (void)fetchPasswordForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id)arg5;
+- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 profileID:(id)arg3 outRequestID:(id*)arg4 blockingly:(BOOL)arg5 completionBlock:(id /* block */)arg6;
+- (void)fetchPasswordForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 - (id)init;
-- (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id)arg6;
-- (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id)arg7;
-- (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id)arg7;
-- (void)setPairedAccountPasswordForUsername:(id)arg1 password:(id)arg2 completionBlock:(id)arg3;
-- (void)setPasswordForUsername:(id)arg1 service:(id)arg2 password:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id)arg5;
+- (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id /* block */)arg6;
+- (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)setPairedAccountPasswordForUsername:(id)arg1 password:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setPasswordForUsername:(id)arg1 service:(id)arg2 password:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (BOOL)supportsAuthTokenRequests;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSThread;
-
 @interface ThreadedInvocationTrampoline : InvocationTrampoline {
     BOOL _immediateForMatchingThread;
     NSThread *_thread;

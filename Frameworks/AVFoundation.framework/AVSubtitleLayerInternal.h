@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVSubtitleLayerInternal : NSObject {
     NSDictionary *currentSubtitleSample;
     BOOL currentSubtitleSampleIsForced;

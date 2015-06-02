@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FamilyNotification.framework/FamilyNotification
  */
 
-@class <FAFamilyNotificationDelegate>, NSLock, NSString, NSXPCConnection, NSXPCListener;
-
 @interface FAFamilyNotifier : NSObject <FAFamilyNotifierRemoteObjectProtocol, NSXPCListenerDelegate> {
     NSXPCConnection *_conn;
     NSLock *_connLock;
@@ -13,13 +11,13 @@
     NSString *_serviceName;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <FAFamilyNotificationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * serviceName;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property <FAFamilyNotificationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSString *identifier;
+@property (readonly) NSString *serviceName;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_agentConnectionFailedToBootstrap;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEProfileIngestionPayloadInfo : NSObject <NEConfigurationLegacySupport, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _applicationCreated;
     BOOL _isSetAside;
@@ -17,12 +15,12 @@
 
 @property BOOL applicationCreated;
 @property BOOL isSetAside;
-@property(copy) NSString * payloadOrganization;
-@property(copy) NSString * payloadProtocolType;
-@property(copy) NSString * payloadUUID;
-@property(copy) NSString * profileIdentifier;
-@property(copy) NSString * profileOrganization;
-@property(copy) NSString * profileUUID;
+@property (copy) NSString *payloadOrganization;
+@property (copy) NSString *payloadProtocolType;
+@property (copy) NSString *payloadUUID;
+@property (copy) NSString *profileIdentifier;
+@property (copy) NSString *profileOrganization;
+@property (copy) NSString *profileUUID;
 
 + (BOOL)supportsSecureCoding;
 

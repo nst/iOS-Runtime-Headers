@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDSongsViewController : MCDTableViewController {
-}
+@interface MCDSongsViewController : MCDTableViewController
 
 + (id)actionCellConfigurationClasses;
 

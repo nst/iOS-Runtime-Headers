@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSSoftwareUpdateAnimatedIcon, PSWebContainerView, UIImage, UILabel, UIProgressView;
-
 @interface PSSoftwareUpdateTitleCell : PSTableCell <UIWebViewDelegate> {
     PSSoftwareUpdateAnimatedIcon *_animatedGearView;
     BOOL _animatingGearView;
@@ -13,15 +11,15 @@
     UILabel *_updateStatusLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) UIImage * gearBackgroundImage;
-@property(readonly) unsigned int hash;
-@property(retain) UIProgressView * progressBar;
-@property int progressDisplayStyle;
-@property(retain) PSWebContainerView * releaseNotesSummaryView;
-@property(readonly) Class superclass;
-@property(retain) UILabel * updateStatusLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) UIImage *gearBackgroundImage;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIProgressView *progressBar;
+@property (nonatomic) int progressDisplayStyle;
+@property (nonatomic, retain) PSWebContainerView *releaseNotesSummaryView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *updateStatusLabel;
 
 + (int)cellStyle;
 

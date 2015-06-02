@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSDictionary, NSMutableArray, NSString, TSDFPSCounter;
-
 @interface KNTransitionRenderer : KNAnimationRenderer {
     NSDictionary *mAnimatedLayers;
     BOOL mAnimationsRanToCompletion;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface ADAdImpressionPublicAttributes : NSObject <NSSecureCoding> {
     NSString *_accessibilityLabel;
     int _action;
@@ -23,22 +21,22 @@
     NSArray *_videoAssets;
 }
 
-@property(copy) NSString * accessibilityLabel;
-@property int action;
-@property BOOL actionLeavesApplication;
-@property BOOL actionViewControllerHidesStatusBar;
-@property unsigned int actionViewControllerPresentationOrientationMask;
-@property(retain) NSURL * audioURL;
-@property(copy) NSString * descriptionForLCD;
-@property(copy) NSString * headlineForLCD;
-@property(retain) NSURL * logoImageURL;
-@property double minimumIntervalBetweenPresentations;
-@property int modalPresentationStyle;
-@property double skipThreshold;
-@property(retain) NSURL * staticImageURL;
-@property BOOL unbranded;
-@property(copy) NSString * uniqueIdentifier;
-@property(retain) NSArray * videoAssets;
+@property (nonatomic, copy) NSString *accessibilityLabel;
+@property (nonatomic) int action;
+@property (nonatomic) BOOL actionLeavesApplication;
+@property (nonatomic) BOOL actionViewControllerHidesStatusBar;
+@property (nonatomic) unsigned int actionViewControllerPresentationOrientationMask;
+@property (nonatomic, retain) NSURL *audioURL;
+@property (nonatomic, copy) NSString *descriptionForLCD;
+@property (nonatomic, copy) NSString *headlineForLCD;
+@property (nonatomic, retain) NSURL *logoImageURL;
+@property (nonatomic) double minimumIntervalBetweenPresentations;
+@property (nonatomic) int modalPresentationStyle;
+@property (nonatomic) double skipThreshold;
+@property (nonatomic, retain) NSURL *staticImageURL;
+@property (nonatomic) BOOL unbranded;
+@property (nonatomic, copy) NSString *uniqueIdentifier;
+@property (nonatomic, retain) NSArray *videoAssets;
 
 + (BOOL)supportsSecureCoding;
 

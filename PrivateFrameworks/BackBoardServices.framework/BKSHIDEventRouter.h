@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSSet;
-
 @interface BKSHIDEventRouter : NSObject <NSSecureCoding> {
     int _destination;
     NSSet *_hidEventDescriptors;
 }
 
-@property(readonly) int destination;
-@property(readonly) NSSet * hidEventDescriptors;
+@property (readonly) int destination;
+@property (readonly) NSSet *hidEventDescriptors;
 
 + (id)defaultEventRouters;
 + (id)defaultFocusedAppEventRouter;

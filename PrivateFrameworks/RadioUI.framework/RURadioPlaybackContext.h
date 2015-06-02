@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPAVItem, NSArray, NSMapTable, RadioStation;
-
 @interface RURadioPlaybackContext : MPPlaybackContext {
     MPAVItem *_prefixItem;
     NSMapTable *_preparedAdSlotByRadioTrack;
@@ -11,10 +9,10 @@
     NSArray *_tracks;
 }
 
-@property(copy,readonly) NSArray * allPreparedAdSlotRadioTracks;
-@property(retain) MPAVItem * prefixItem;
-@property(readonly) RadioStation * station;
-@property(copy) NSArray * tracks;
+@property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
+@property (nonatomic, retain) MPAVItem *prefixItem;
+@property (nonatomic, readonly) RadioStation *station;
+@property (nonatomic, copy) NSArray *tracks;
 
 + (Class)queueFeederClass;
 

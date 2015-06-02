@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSIndexSet, NSMapTable, NSString, UIColor;
-
 @interface SKUIStorePageCollectionViewLayout : UICollectionViewFlowLayout <SKUIStorePageCollectionViewLayout> {
     BOOL _allowsPinningTransitions;
     NSString *_backdropGroupName;
@@ -29,16 +27,16 @@
     NSArray *_updateItems;
 }
 
-@property BOOL allowsPinningTransitions;
-@property(copy) NSString * backdropGroupName;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSIndexSet * expandChildPageSectionsIndexSet;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * indexPathsForPinningItems;
-@property float overrideContentWidth;
-@property BOOL rendersWithPerspective;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowsPinningTransitions;
+@property (nonatomic, copy) NSString *backdropGroupName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSIndexSet *expandChildPageSectionsIndexSet;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *indexPathsForPinningItems;
+@property (nonatomic) float overrideContentWidth;
+@property (nonatomic) BOOL rendersWithPerspective;
+@property (readonly) Class superclass;
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;

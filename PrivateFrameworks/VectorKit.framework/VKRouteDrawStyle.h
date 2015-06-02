@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKRouteDrawStyle : VKRenderStyle {
     struct VKProfileSparseRamp<_VGLColor> { 
         union _u { 
@@ -47,20 +45,20 @@
     } _width;
 }
 
-@property(readonly) float arrowMinZoom;
-@property(readonly) float brightness;
-@property(readonly) float enlargementMaxScale;
-@property(readonly) float enlargementScale;
-@property(readonly) float enlargementStartZoom;
-@property(readonly) BOOL hasBrightness;
-@property(readonly) BOOL hasFillColor;
-@property(readonly) BOOL hasObscuredTexture;
-@property(readonly) BOOL hasTexture;
-@property(readonly) BOOL hasTravelledTexture;
-@property(readonly) NSString * obscuredTexture;
-@property(readonly) float selectedArrowMinZoom;
-@property(readonly) NSString * texture;
-@property(readonly) NSString * travelledTexture;
+@property (nonatomic, readonly) float arrowMinZoom;
+@property (nonatomic, readonly) float brightness;
+@property (nonatomic, readonly) float enlargementMaxScale;
+@property (nonatomic, readonly) float enlargementScale;
+@property (nonatomic, readonly) float enlargementStartZoom;
+@property (nonatomic, readonly) BOOL hasBrightness;
+@property (nonatomic, readonly) BOOL hasFillColor;
+@property (nonatomic, readonly) BOOL hasObscuredTexture;
+@property (nonatomic, readonly) BOOL hasTexture;
+@property (nonatomic, readonly) BOOL hasTravelledTexture;
+@property (nonatomic, readonly) NSString *obscuredTexture;
+@property (nonatomic, readonly) float selectedArrowMinZoom;
+@property (nonatomic, readonly) NSString *texture;
+@property (nonatomic, readonly) NSString *travelledTexture;
 
 + (int)renderStyleID;
 

@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface OITSUProgressObserver : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mHandler;
-
+    id /* block */ mHandler;
     BOOL mLastHandledIndeterminate;
     double mLastHandledValue;
     NSObject<OS_dispatch_queue> *mQueue;
     double mValueInterval;
 }
 
-@property(readonly) double valueInterval;
+@property (nonatomic, readonly) double valueInterval;
 
 - (void)dealloc;
 - (void)handleValue:(double)arg1 maxValue:(double)arg2 isIndeterminate:(BOOL)arg3;
 - (id)init;
-- (id)initWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)initWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (double)valueInterval;
 
 @end

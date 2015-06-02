@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSLogFileOptions : NSObject <NSCopying> {
     NSString *_directoryPath;
     NSString *_fileName;
@@ -11,10 +9,10 @@
     unsigned long _maxSizeInBytes;
 }
 
-@property(copy) NSString * logDirectoryPath;
-@property(copy) NSString * logFileBaseName;
-@property unsigned long maxLogFileSize;
-@property int maxNumberOfLogFiles;
+@property (nonatomic, copy) NSString *logDirectoryPath;
+@property (nonatomic, copy) NSString *logFileBaseName;
+@property (nonatomic) unsigned long maxLogFileSize;
+@property (nonatomic) int maxNumberOfLogFiles;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

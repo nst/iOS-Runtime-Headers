@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABCardContentProvider>, <ABPersonEditDelegate>, <ABPersonViewControllerPrivateDelegate>, <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABDatePickerViewController, ABMultiCellContentView_RelatedName, ABPeoplePickerNavigationController, ABPersonTableView, ABPersonTableViewDataSource, ABPersonTableViewLinkingDelegate, ABUIPerson, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIPopoverController, UITableView, UIView, UIViewController;
-
 @interface ABPersonViewControllerHelper : NSObject <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, ABPersonEditDelegate, ABPersonTableViewDataSourceDelegate, ABPersonViewControllerDelegate, ABPickerViewControllerDismissDelegate, ABPopoverRepresentDelegate, UIActionSheetDelegate, UIPopoverControllerDelegate, UIScrollViewDelegate, UIViewControllerRestoration> {
     id _actionSheetDelegate;
     id _activeDialog;
@@ -48,36 +46,36 @@
     BOOL _willPresentDatePickerViewController;
 }
 
-@property(copy) NSString * addToPersonButtonTitle;
-@property void* addressBook;
-@property BOOL allowsAddingToAddressBook;
-@property BOOL allowsSettingAsPreferredCardForName;
-@property BOOL automaticallySetEditing;
-@property(readonly) UITableView * controllerTableView;
-@property ABPersonTableViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disablePopoverUpdates;
-@property(readonly) NSArray * displayedPeople;
-@property(retain) ABUIPerson * displayedPerson;
-@property(copy) NSArray * displayedProperties;
-@property <ABPersonEditDelegate> * editDelegate;
-@property(readonly) void* existingAddressBook;
-@property(readonly) BOOL hasPopoverController;
-@property(readonly) unsigned int hash;
-@property BOOL isLocation;
-@property ABPersonTableViewLinkingDelegate * linkingDelegate;
-@property(readonly) <ABPersonViewControllerPrivateDelegate> * personViewDelegate;
-@property(retain) NSIndexPath * popoverCellIndexPath;
-@property(retain) NSIndexPath * popoverViewInCellIndexPath;
-@property(getter=isReadonly,readonly) BOOL readonly;
-@property(readonly) UIBarButtonItem * reusableCancelButton;
-@property BOOL savesNewContactOnSuspend;
-@property BOOL showsPeoplePickerCancelButton;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
-@property(readonly) <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
-@property(readonly) UIViewController * viewController;
+@property (nonatomic, copy) NSString *addToPersonButtonTitle;
+@property (nonatomic) void*addressBook;
+@property (nonatomic) BOOL allowsAddingToAddressBook;
+@property (nonatomic) BOOL allowsSettingAsPreferredCardForName;
+@property (nonatomic) BOOL automaticallySetEditing;
+@property (nonatomic, readonly) UITableView *controllerTableView;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disablePopoverUpdates;
+@property (nonatomic, readonly) NSArray *displayedPeople;
+@property (nonatomic, retain) ABUIPerson *displayedPerson;
+@property (nonatomic, copy) NSArray *displayedProperties;
+@property (nonatomic) <ABPersonEditDelegate> *editDelegate;
+@property (nonatomic, readonly) void*existingAddressBook;
+@property (nonatomic, readonly) BOOL hasPopoverController;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isLocation;
+@property (nonatomic) ABPersonTableViewLinkingDelegate *linkingDelegate;
+@property (nonatomic, readonly) <ABPersonViewControllerPrivateDelegate> *personViewDelegate;
+@property (nonatomic, retain) NSIndexPath *popoverCellIndexPath;
+@property (nonatomic, retain) NSIndexPath *popoverViewInCellIndexPath;
+@property (getter=isReadonly, readonly) BOOL readonly;
+@property (nonatomic, readonly) UIBarButtonItem *reusableCancelButton;
+@property (nonatomic) BOOL savesNewContactOnSuspend;
+@property (nonatomic) BOOL showsPeoplePickerCancelButton;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <ABUnknownPersonViewControllerDelegate> *unknownPersonViewDelegate;
+@property (nonatomic, readonly) UIViewController *viewController;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

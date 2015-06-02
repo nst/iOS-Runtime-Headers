@@ -2,33 +2,36 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKAchievement;
-
 @interface GKAchievementChallenge : GKChallenge {
     GKAchievement *_achievement;
 }
 
-@property(retain) GKAchievement * achievement;
+@property (nonatomic, retain) GKAchievement *achievement;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 
 - (id)achievement;
-- (id)alertGoalText;
-- (id)composeGoalText;
 - (void)dealloc;
 - (id)description;
-- (id)detailGoalText;
 - (id)detailGoalTextForPlayer:(id)arg1 withAchievement:(id)arg2;
 - (BOOL)detailsLoaded;
-- (id)iconSource;
-- (id)iconURLString;
 - (id)initWithInternalRepresentation:(id)arg1;
-- (id)listGoalText;
-- (id)listTitleText;
-- (void)loadDetailsWithCompletionHandler:(id)arg1;
+- (void)loadDetailsWithCompletionHandler:(id /* block */)arg1;
 - (void)setAchievement:(id)arg1;
 - (void)setInternal:(id)arg1;
-- (id)smallIconURLString;
 - (id)titleText;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (id)alertGoalText;
+- (id)composeGoalText;
+- (id)detailGoalText;
+- (id)iconSource;
+- (id)iconURLString;
+- (id)listGoalText;
+- (id)listTitleText;
+- (id)smallIconURLString;
 
 @end

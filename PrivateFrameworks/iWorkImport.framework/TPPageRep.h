@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSString, TPMarginAdjustRep;
-
 @interface TPPageRep : TSWPPageRep <TSDMasterDrawableDelegate> {
     TPMarginAdjustRep *_marginAdjustRep;
     CALayer *_separatorLayer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) TPMarginAdjustRep * marginAdjustRep;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TPMarginAdjustRep *marginAdjustRep;
+@property (readonly) Class superclass;
 
 - (id)bodyReps;
 - (BOOL)childRepIsMasterDrawable:(id)arg1;
@@ -23,13 +21,13 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawInLayerContext:(struct CGContext { }*)arg1;
 - (id)hitMasterRep:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (id)layerClass;
 - (id)marginAdjustRep;
 - (BOOL)masksToBounds;
 - (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
 - (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (id)p_hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)p_hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (BOOL)p_pageRequiresSeparator;
 - (void)p_updateBorderLayers;
 - (void)p_updateLayoutBordersVisibility;

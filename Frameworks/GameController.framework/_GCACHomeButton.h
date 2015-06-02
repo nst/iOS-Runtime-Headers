@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class <_GCACHomeButtonDelegate>;
-
 @interface _GCACHomeButton : _GCControllerButtonInput {
     <_GCACHomeButtonDelegate> *_delegate;
     BOOL needsReset;

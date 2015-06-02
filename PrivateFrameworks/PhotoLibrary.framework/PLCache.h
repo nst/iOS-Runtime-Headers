@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableDictionary;
-
 @interface PLCache : NSObject {
     NSMutableDictionary *_cacheEntries;
     int _countLimit;

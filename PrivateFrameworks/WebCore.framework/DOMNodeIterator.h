@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMNodeFilter>, DOMNode;
+@interface DOMNodeIterator : DOMObject
 
-@interface DOMNodeIterator : DOMObject {
-}
-
-@property(readonly) BOOL expandEntityReferences;
-@property(readonly) <DOMNodeFilter> * filter;
-@property(readonly) BOOL pointerBeforeReferenceNode;
-@property(readonly) DOMNode * referenceNode;
-@property(readonly) DOMNode * root;
-@property(readonly) unsigned int whatToShow;
+@property (readonly) BOOL expandEntityReferences;
+@property (readonly) <DOMNodeFilter> *filter;
+@property (readonly) BOOL pointerBeforeReferenceNode;
+@property (readonly) DOMNode *referenceNode;
+@property (readonly) DOMNode *root;
+@property (readonly) unsigned int whatToShow;
 
 - (void)dealloc;
 - (void)detach;

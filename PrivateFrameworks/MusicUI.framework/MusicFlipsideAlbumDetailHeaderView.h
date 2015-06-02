@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPUItemOfferButton, NSString, UIImage, UIImageView, UILabel, UIView;
-
 @interface MusicFlipsideAlbumDetailHeaderView : UITableViewHeaderFooterView {
     UILabel *_albumLabel;
     UILabel *_artistLabel;
@@ -15,11 +9,7 @@
     float _cloudRightInset;
     NSString *_copyright;
     UILabel *_copyrightYearLabel;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadActionBlock;
-
+    id /* block */ _downloadActionBlock;
     UILabel *_durationLabel;
     UIView *_hairlineView;
     MPUItemOfferButton *_itemOfferButton;
@@ -30,16 +20,16 @@
     NSString *_year;
 }
 
-@property(copy) NSString * album;
-@property(copy) NSString * artist;
-@property(retain) UIImage * artworkImage;
-@property float cloudRightInset;
-@property(copy,readonly) NSString * copyright;
-@property(copy) id downloadActionBlock;
-@property(getter=isDownloadable) BOOL downloadable;
-@property int songCount;
-@property double totalDuration;
-@property(copy,readonly) NSString * year;
+@property (nonatomic, copy) NSString *album;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) float cloudRightInset;
+@property (nonatomic, readonly, copy) NSString *copyright;
+@property (nonatomic, copy) id /* block */ downloadActionBlock;
+@property (getter=isDownloadable, nonatomic) BOOL downloadable;
+@property (nonatomic) int songCount;
+@property (nonatomic) double totalDuration;
+@property (nonatomic, readonly, copy) NSString *year;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 
@@ -53,7 +43,7 @@
 - (float)cloudRightInset;
 - (id)copyright;
 - (void)dealloc;
-- (id)downloadActionBlock;
+- (id /* block */)downloadActionBlock;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDownloadable;
 - (void)layoutSubviews;
@@ -63,7 +53,7 @@
 - (void)setBackgroundTransitionProgress:(float)arg1;
 - (void)setCloudRightInset:(float)arg1;
 - (void)setCopyright:(id)arg1 year:(id)arg2;
-- (void)setDownloadActionBlock:(id)arg1;
+- (void)setDownloadActionBlock:(id /* block */)arg1;
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setSongCount:(int)arg1;
 - (void)setTableViewStyle:(int)arg1;

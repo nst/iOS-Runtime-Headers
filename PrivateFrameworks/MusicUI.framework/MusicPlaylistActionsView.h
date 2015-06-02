@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSMutableArray, NSString, UIView, _UIBackdropView;
-
 @interface MusicPlaylistActionsView : UIView {
     int _actionsStyle;
     _UIBackdropView *_backdropView;
@@ -11,8 +9,8 @@
     UIView *_hairlineView;
 }
 
-@property int actionsStyle;
-@property(copy) NSString * backdropViewGroupName;
+@property (nonatomic) int actionsStyle;
+@property (nonatomic, copy) NSString *backdropViewGroupName;
 
 - (void).cxx_destruct;
 - (void)_addButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;

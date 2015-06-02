@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkPhoneCallContainerDataSource>, <TPStarkPhoneCallContainerDelegate>, NSMutableArray;
-
 @interface TPStarkPhoneCallContainer : UIView {
     <TPStarkPhoneCallContainerDataSource> *_dataSource;
     <TPStarkPhoneCallContainerDelegate> *_delegate;
@@ -12,18 +10,18 @@
     NSMutableArray *_visibleCells;
 }
 
-@property <TPStarkPhoneCallContainerDataSource> * dataSource;
-@property <TPStarkPhoneCallContainerDelegate> * delegate;
-@property(getter=isMerging) BOOL merging;
+@property (nonatomic) <TPStarkPhoneCallContainerDataSource> *dataSource;
+@property (nonatomic) <TPStarkPhoneCallContainerDelegate> *delegate;
+@property (getter=isMerging) BOOL merging;
 @property BOOL shouldMerge;
-@property(retain) NSMutableArray * visibleCells;
+@property (retain) NSMutableArray *visibleCells;
 
 - (id)_reloadQueue;
 - (void)addConstraintsForNewCell:(id)arg1;
 - (void)addRelationForLeftOfCell:(id)arg1;
 - (void)addRelationForRightOfCell:(id)arg1;
 - (void)addRelationForWidthOfCell:(id)arg1;
-- (void)animateLayoutOfViewWithCompletionBlock:(id)arg1;
+- (void)animateLayoutOfViewWithCompletionBlock:(id /* block */)arg1;
 - (id)constraintToFillContainerWithLeftOfCell:(id)arg1;
 - (id)constraintToFillContainerWithRightOfCell:(id)arg1;
 - (void)createVisibleCells:(unsigned int)arg1;

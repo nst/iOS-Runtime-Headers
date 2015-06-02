@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIView;
-
 @interface EKRecurrenceTypeTableViewCell : EKUIConstrainedFontsTableViewCell {
     BOOL _checked;
     UIView *_checkmarkView;
 }
 
-@property(getter=isChecked) BOOL checked;
+@property (getter=isChecked, nonatomic) BOOL checked;
 
 - (void).cxx_destruct;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXHATimer, CBCentralManager, NSLock, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AXHearingAidDeviceController : NSObject <AXHADeviceControllerProtocol, CBCentralManagerDelegate> {
     AXHATimer *_advertisingTimeoutTimer;
     NSMutableDictionary *_advertisingTimestamps;
@@ -24,18 +22,18 @@
     NSMutableArray *centralRequestBlocks;
 }
 
-@property(retain) NSMutableArray * availablePeripherals;
-@property(retain) NSMutableArray * availableSearchBlocks;
-@property(retain) NSMutableArray * centralRequestBlocks;
-@property(retain) NSMutableArray * connectedDevices;
-@property(retain) NSMutableArray * connectedSearchBlocks;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * loadedDevices;
-@property(retain) NSMutableArray * persistentDevices;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * updateDeviceBlocks;
+@property (nonatomic, retain) NSMutableArray *availablePeripherals;
+@property (nonatomic, retain) NSMutableArray *availableSearchBlocks;
+@property (nonatomic, retain) NSMutableArray *centralRequestBlocks;
+@property (nonatomic, retain) NSMutableArray *connectedDevices;
+@property (nonatomic, retain) NSMutableArray *connectedSearchBlocks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSMutableArray *loadedDevices;
+@property (nonatomic, retain) NSMutableArray *persistentDevices;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *updateDeviceBlocks;
 
 + (id)sharedController;
 
@@ -82,15 +80,15 @@
 - (void)pairingAgent:(id)arg1 peerDidUnpair:(id)arg2;
 - (BOOL)peripheralIsPaired:(id)arg1;
 - (id)persistentDevices;
-- (void)registerForPropertyUpdates:(id)arg1;
+- (void)registerForPropertyUpdates:(id /* block */)arg1;
 - (void)removeAvailableDevice:(id)arg1;
 - (void)removeConnectedDevice:(id)arg1;
 - (void)removeLoadedDevice:(id)arg1;
 - (void)resetConnectionToPeripheral:(id)arg1;
 - (void)searchForAvailableDevices;
-- (void)searchForAvailableDevicesWithCompletion:(id)arg1;
+- (void)searchForAvailableDevicesWithCompletion:(id /* block */)arg1;
 - (void)searchForConnectedDevices;
-- (void)sendRequestToCentralManager:(id)arg1;
+- (void)sendRequestToCentralManager:(id /* block */)arg1;
 - (void)setAvailablePeripherals:(id)arg1;
 - (void)setAvailableSearchBlocks:(id)arg1;
 - (void)setCentralRequestBlocks:(id)arg1;

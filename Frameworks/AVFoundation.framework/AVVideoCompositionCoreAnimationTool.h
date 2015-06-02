@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionCoreAnimationToolInternal;
-
 @interface AVVideoCompositionCoreAnimationTool : NSObject {
     AVVideoCompositionCoreAnimationToolInternal *_videoCompositionTool;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSString, UIImage;
-
 @interface SFAirDropNode : NSObject {
     UIImage *_displayIcon;
     NSString *_displayName;
@@ -17,15 +15,15 @@
     BOOL _unknown;
 }
 
-@property(retain) UIImage * displayIcon;
-@property(retain) NSString * displayName;
-@property(getter=isMonogram) BOOL monogram;
-@property(retain) id node;
-@property(retain) NSString * realName;
-@property(retain) NSString * secondaryName;
-@property(readonly) BOOL supportsMixedTypes;
-@property(readonly) BOOL supportsPasses;
-@property(getter=isUnknown) BOOL unknown;
+@property (retain) UIImage *displayIcon;
+@property (retain) NSString *displayName;
+@property (getter=isMonogram) BOOL monogram;
+@property (retain) id node;
+@property (retain) NSString *realName;
+@property (retain) NSString *secondaryName;
+@property (readonly) BOOL supportsMixedTypes;
+@property (readonly) BOOL supportsPasses;
+@property (getter=isUnknown) BOOL unknown;
 
 + (id)nodeWithSFNode:(struct __SFNode { }*)arg1;
 

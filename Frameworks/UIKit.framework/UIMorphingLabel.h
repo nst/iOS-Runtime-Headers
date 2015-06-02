@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIColor, UIFont, UIMorphingLabelGlyphSet, UIView, _UIViewAnimationAttributes;
-
 @interface UIMorphingLabel : UIView {
     struct { 
         struct _NSRange { 
@@ -15,8 +13,8 @@
             unsigned int length; 
         } dst; 
         BOOL isEqual; 
-    } _alignment[100];
-    float _alignmentDelays[100];
+    } _alignment;
+    float _alignmentDelays;
     unsigned int _alignmentSize;
     UIView *_colorView;
     UIMorphingLabelGlyphSet *_dstGlyphSet;
@@ -27,7 +25,7 @@
     struct { 
         unsigned int len; 
         unsigned int dir; 
-    } _memo[51][51];
+    } _memo;
     float _rippleFactor;
     float _scaleFactor;
     float _slowdown;
@@ -52,12 +50,12 @@
     } _visibleRect;
 }
 
-@property(retain) UIFont * font;
-@property BOOL suppressLayoutSubviews;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic) BOOL suppressLayoutSubviews;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
 
 - (float)alphaForFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)animateAlignmentHunkAtIndex:(unsigned int)arg1;

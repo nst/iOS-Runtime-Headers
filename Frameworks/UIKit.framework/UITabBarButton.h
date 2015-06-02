@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSValue, UIColor, UIImage, UITabBarButtonLabel, UITabBarSelectionIndicatorView, UIView, UIVisualEffectView, _UIBadgeView;
-
 @interface UITabBarButton : UIControl {
     Class _appearanceGuideClass;
     _UIBadgeView *_badge;
@@ -47,13 +45,13 @@
     UIVisualEffectView *_vibrancyEffectView;
 }
 
-@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
-@property(setter=_setCenterAllContents:) BOOL _centerAllContents;
-@property(getter=_isSelected,setter=_setSelected:) BOOL _selected;
-@property(setter=_setShowsHighlightedState:) BOOL _showsHighlightedState;
-@property(retain) NSValue * labelOffsetValue;
-@property(readonly) UITabBarButtonLabel * tabBarButtonLabel;
-@property(getter=_unselectedTintColor,setter=_setUnselectedTintColor:,retain) UIColor * unselectedTintColor;
+@property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;
+@property (setter=_setCenterAllContents:, nonatomic) BOOL _centerAllContents;
+@property (getter=_isSelected, setter=_setSelected:, nonatomic) BOOL _selected;
+@property (setter=_setShowsHighlightedState:, nonatomic) BOOL _showsHighlightedState;
+@property (nonatomic, retain) NSValue *labelOffsetValue;
+@property (nonatomic, readonly) UITabBarButtonLabel *tabBarButtonLabel;
+@property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
 + (id)_defaultLabelColor;
 

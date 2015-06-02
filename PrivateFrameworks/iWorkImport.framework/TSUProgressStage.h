@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUProgressContext, TSUProgressStage;
-
 @interface TSUProgressStage : NSObject {
     TSUProgressContext *m_context;
     double m_currentPosition;

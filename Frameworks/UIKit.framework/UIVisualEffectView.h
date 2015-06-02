@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIView, UIVisualEffect, _UIVisualEffectContentView;
-
 @interface UIVisualEffectView : UIView <NSSecureCoding> {
     _UIVisualEffectContentView *_contentView;
     UIVisualEffect *_effect;
@@ -15,9 +13,9 @@
     UIView *_maskView;
 }
 
-@property(setter=_setGroupName:,copy) NSString * _groupName;
-@property(retain) UIView * contentView;
-@property(copy) UIVisualEffect * effect;
+@property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, copy) UIVisualEffect *effect;
 
 + (BOOL)supportsSecureCoding;
 

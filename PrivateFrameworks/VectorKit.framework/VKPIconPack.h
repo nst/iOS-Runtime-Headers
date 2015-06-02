@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKPIconPack : PBCodable <NSCopying> {
     NSMutableArray *_atlas;
     NSMutableArray *_icons;
     unsigned int _identifier;
 }
 
-@property(retain) NSMutableArray * atlas;
-@property(retain) NSMutableArray * icons;
-@property unsigned int identifier;
+@property (nonatomic, retain) NSMutableArray *atlas;
+@property (nonatomic, retain) NSMutableArray *icons;
+@property (nonatomic) unsigned int identifier;
 
 - (void)addAtlas:(id)arg1;
 - (void)addIcons:(id)arg1;

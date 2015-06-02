@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@interface SASmsDraftShow : SADomainCommand
 
-@interface SASmsDraftShow : SADomainCommand {
-}
-
-@property(copy) NSURL * smsIdentifier;
+@property (nonatomic, copy) NSURL *smsIdentifier;
 
 + (id)draftShow;
 + (id)draftShowWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSMutableDictionary, NSNumber;
-
 @interface ISPersonalizeOffersRequest : NSObject <NSCopying> {
     NSNumber *_accountIdentifier;
     NSMutableDictionary *_itemIDsByType;
 }
 
-@property(retain) NSNumber * accountIdentifier;
-@property(readonly) NSArray * allItemTypes;
+@property (nonatomic, retain) NSNumber *accountIdentifier;
+@property (nonatomic, readonly) NSArray *allItemTypes;
 
 - (id)accountIdentifier;
 - (void)addItemIdentifier:(id)arg1 forItemType:(id)arg2;

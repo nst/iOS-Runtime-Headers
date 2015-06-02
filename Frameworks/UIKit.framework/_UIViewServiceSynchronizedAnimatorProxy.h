@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIRemoteViewController_ViewControllerOperatorInterface>;
-
 @interface _UIViewServiceSynchronizedAnimatorProxy : _UITargetedProxy {
     <_UIRemoteViewController_ViewControllerOperatorInterface> *_behaviorProxy;
 }
 
 + (id)proxyWithTarget:(id)arg1 remoteOperator:(id)arg2;
 
-- (BOOL)animateAlongsideTransition:(id)arg1 completion:(id)arg2;
-- (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id)arg2 completion:(id)arg3;
+- (BOOL)animateAlongsideTransition:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
 
 @end

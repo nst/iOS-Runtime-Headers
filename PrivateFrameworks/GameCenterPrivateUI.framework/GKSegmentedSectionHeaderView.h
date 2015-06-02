@@ -6,7 +6,7 @@
     unsigned int _sectionIndex;
 }
 
-@property unsigned int sectionIndex;
+@property (nonatomic) unsigned int sectionIndex;
 
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)prepareForReuse;

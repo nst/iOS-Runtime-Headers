@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PKPaymentWebServiceConfiguration, PKPaymentWebServiceRegion;
-
 @interface PKPaymentWebServiceContext : NSObject <NSSecureCoding> {
     NSArray *_certificates;
     PKPaymentWebServiceConfiguration *_configuration;
@@ -24,23 +22,23 @@
     int _version;
 }
 
-@property(readonly) NSDictionary * TSMURLStringByPushTopic;
-@property(copy) NSArray * certificates;
-@property(retain) PKPaymentWebServiceConfiguration * configuration;
-@property(copy) NSDate * configurationDate;
+@property (readonly) NSDictionary *TSMURLStringByPushTopic;
+@property (copy) NSArray *certificates;
+@property (retain) PKPaymentWebServiceConfiguration *configuration;
+@property (copy) NSDate *configurationDate;
 @property int consistencyCheckBackoffLevel;
 @property BOOL devSigned;
-@property(copy) NSString * deviceID;
-@property(copy) NSString * lastUpdatedTag;
+@property (copy) NSString *deviceID;
+@property (copy) NSString *lastUpdatedTag;
 @property BOOL messageServiceDisabled;
-@property(readonly) PKPaymentWebServiceRegion * primaryRegion;
-@property(copy) NSString * primaryRegionIdentifier;
-@property(copy) NSString * pushToken;
-@property(retain) NSDictionary * regions;
-@property(copy) NSDate * registrationDate;
-@property(copy) NSString * secureElementID;
+@property (readonly) PKPaymentWebServiceRegion *primaryRegion;
+@property (copy) NSString *primaryRegionIdentifier;
+@property (copy) NSString *pushToken;
+@property (retain) NSDictionary *regions;
+@property (copy) NSDate *registrationDate;
+@property (copy) NSString *secureElementID;
 @property BOOL transactionServiceDisabled;
-@property(retain) NSMutableDictionary * verificationRequestsByPassUniqueID;
+@property (retain) NSMutableDictionary *verificationRequestsByPassUniqueID;
 @property int version;
 
 + (void)_migrateContext:(id)arg1;

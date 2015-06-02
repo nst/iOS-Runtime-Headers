@@ -2,45 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDModifySubscriptionsOperation : CKDDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deleteCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveCompletionBlock;
-
+    id /* block */ _deleteCompletionBlock;
+    id /* block */ _saveCompletionBlock;
     NSArray *_subscriptionIDsToDelete;
     NSMutableDictionary *_subscriptionsByServerID;
     NSArray *_subscriptionsToSave;
 }
 
-@property(copy) id deleteCompletionBlock;
-@property(copy) id saveCompletionBlock;
-@property(retain) NSArray * subscriptionIDsToDelete;
-@property(retain) NSMutableDictionary * subscriptionsByServerID;
-@property(retain) NSArray * subscriptionsToSave;
+@property (nonatomic, copy) id /* block */ deleteCompletionBlock;
+@property (nonatomic, copy) id /* block */ saveCompletionBlock;
+@property (nonatomic, retain) NSArray *subscriptionIDsToDelete;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionsByServerID;
+@property (nonatomic, retain) NSArray *subscriptionsToSave;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleSubscriptionDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 error:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 responseCode:(id)arg2;
-- (id)deleteCompletionBlock;
+- (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (id)saveCompletionBlock;
-- (void)setDeleteCompletionBlock:(id)arg1;
-- (void)setSaveCompletionBlock:(id)arg1;
+- (id /* block */)saveCompletionBlock;
+- (void)setDeleteCompletionBlock:(id /* block */)arg1;
+- (void)setSaveCompletionBlock:(id /* block */)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;
 - (void)setSubscriptionsByServerID:(id)arg1;
 - (void)setSubscriptionsToSave:(id)arg1;

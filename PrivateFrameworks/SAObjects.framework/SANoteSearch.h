@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SANoteSearch : SADomainCommand
 
-@interface SANoteSearch : SADomainCommand {
-}
-
-@property(copy) NSString * contentQuery;
-@property(copy) NSDate * fromDate;
-@property(copy) NSDate * toDate;
+@property (nonatomic, copy) NSString *contentQuery;
+@property (nonatomic, copy) NSDate *fromDate;
+@property (nonatomic, copy) NSDate *toDate;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

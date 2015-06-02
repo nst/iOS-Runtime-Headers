@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSString;
-
 @interface LTERTCPSourceDescription : LTERTCPPacket {
     NSString *_text;
     unsigned char _type;
 }
 
-@property(retain) NSString * text;
-@property unsigned char type;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic) unsigned char type;
 
 - (void)dealloc;
 - (id)description;

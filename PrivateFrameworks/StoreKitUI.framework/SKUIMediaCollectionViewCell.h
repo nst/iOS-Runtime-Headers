@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEmbeddedMediaView;
-
 @interface SKUIMediaCollectionViewCell : SKUICollectionViewCell {
     struct UIEdgeInsets { 
         float top; 
@@ -14,8 +12,8 @@
     SKUIEmbeddedMediaView *_mediaView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(readonly) SKUIEmbeddedMediaView * mediaView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, readonly) SKUIEmbeddedMediaView *mediaView;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;

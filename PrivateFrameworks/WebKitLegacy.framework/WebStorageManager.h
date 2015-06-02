@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebStorageManager : NSObject {
-}
+@interface WebStorageManager : NSObject
 
 + (id)_storageDirectoryPath;
 + (void)closeIdleLocalStorageDatabases;

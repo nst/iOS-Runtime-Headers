@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
+@interface ATVHighSecurityAccountSendCodeResponse : AAResponse
 
-@interface ATVHighSecurityAccountSendCodeResponse : AAResponse {
-}
-
-@property(readonly) int errorCode;
-@property(readonly) NSString * errorMessage;
-@property(readonly) NSString * errorTitle;
-@property(readonly) BOOL success;
-@property(readonly) NSDictionary * userDisplayStrings;
+@property (nonatomic, readonly) int errorCode;
+@property (nonatomic, readonly) NSString *errorMessage;
+@property (nonatomic, readonly) NSString *errorTitle;
+@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly) NSDictionary *userDisplayStrings;
 
 - (int)errorCode;
 - (id)errorMessage;

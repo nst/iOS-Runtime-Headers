@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIView;
-
 @interface PUPhotosZoomingSharingGridCell : PUPhotosSharingGridCell {
     UIView *_badgeView;
     struct CGPoint { 

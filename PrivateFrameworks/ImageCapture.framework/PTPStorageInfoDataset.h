@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSString;
-
 @interface PTPStorageInfoDataset : NSObject {
     unsigned short _accessCapability;
     NSMutableData *_content;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAUIConfirmationOptions;
+@interface SAUISnippet : SAAceView
 
-@interface SAUISnippet : SAAceView {
-}
-
-@property(retain) SAUIConfirmationOptions * confirmationOptions;
+@property (nonatomic, retain) SAUIConfirmationOptions *confirmationOptions;
 
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;

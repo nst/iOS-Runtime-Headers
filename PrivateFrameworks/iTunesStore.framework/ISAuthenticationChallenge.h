@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <NSURLAuthenticationChallengeSender>, NSString;
-
 @interface ISAuthenticationChallenge : NSObject {
     NSString *_localizedMessage;
     NSString *_localizedTitle;
 }
 
-@property(readonly) int failureCount;
-@property(readonly) BOOL hasPassword;
-@property(retain) NSString * localizedMessage;
-@property(retain) NSString * localizedTitle;
-@property(retain,readonly) NSString * password;
-@property(readonly) <NSURLAuthenticationChallengeSender> * sender;
-@property(retain,readonly) NSString * user;
-@property(readonly) BOOL userNameIsEditable;
-@property(readonly) BOOL userNameIsEmail;
+@property (readonly) int failureCount;
+@property (readonly) BOOL hasPassword;
+@property (retain) NSString *localizedMessage;
+@property (retain) NSString *localizedTitle;
+@property (readonly, retain) NSString *password;
+@property (readonly) <NSURLAuthenticationChallengeSender> *sender;
+@property (readonly, retain) NSString *user;
+@property (readonly) BOOL userNameIsEditable;
+@property (readonly) BOOL userNameIsEmail;
 
 - (void)cancelAuthentication;
 - (void)dealloc;

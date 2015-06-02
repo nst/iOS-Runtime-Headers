@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLVertexBufferLayoutDescriptor;
-
 @interface MTLVertexBufferLayoutDescriptorArray : NSObject {
-    MTLVertexBufferLayoutDescriptor *_descriptors[31];
+    MTLVertexBufferLayoutDescriptor *_descriptors;
 }
 
 - (void)dealloc;

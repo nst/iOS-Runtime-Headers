@@ -7,8 +7,8 @@
     BOOL _debugLoggingEnabled;
 }
 
-@property(readonly) double _enqueueTime;
-@property(getter=isDebugLoggingEnabled) BOOL debugLoggingEnabled;
+@property (nonatomic, readonly) double _enqueueTime;
+@property (getter=isDebugLoggingEnabled, nonatomic) BOOL debugLoggingEnabled;
 
 - (double)_enqueueTime;
 - (void)didCaptureStillImageForRequest:(id)arg1;

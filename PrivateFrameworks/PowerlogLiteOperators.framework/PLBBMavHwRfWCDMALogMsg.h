@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfWCDMALogMsg : PLBasebandMessage {
     NSArray *_DCEqStatCnt;
     NSArray *_DCQsetEqStatCnt;
@@ -23,22 +21,22 @@
     NSNumber *_logDuration;
 }
 
-@property(retain) NSArray * DCEqStatCnt;
-@property(retain) NSArray * DCQsetEqStatCnt;
-@property(retain) NSArray * DurInCarrierMode;
-@property(retain) NSArray * RABModeCnt;
-@property(retain) NSArray * RABTypeCnt;
-@property(retain) NSArray * SCEqStatCnt;
-@property(retain) NSArray * SCQsetEqStatCnt;
-@property(retain) NSArray * TxPwrBucket;
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSString * error;
-@property(retain) NSMutableArray * groupArrEntries;
-@property(retain) NSString * groupEntryKey;
-@property(retain) NSString * groupID;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
+@property (retain) NSArray *DCEqStatCnt;
+@property (retain) NSArray *DCQsetEqStatCnt;
+@property (retain) NSArray *DurInCarrierMode;
+@property (retain) NSArray *RABModeCnt;
+@property (retain) NSArray *RABTypeCnt;
+@property (retain) NSArray *SCEqStatCnt;
+@property (retain) NSArray *SCQsetEqStatCnt;
+@property (retain) NSArray *TxPwrBucket;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSString *error;
+@property (retain) NSMutableArray *groupArrEntries;
+@property (retain) NSString *groupEntryKey;
+@property (retain) NSString *groupID;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
 
 + (id)entryEventBackwardDefinitionBBMavHwRfWCDMA;
 

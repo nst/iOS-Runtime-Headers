@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSSet, NSString;
-
 @interface CoreDAVExpandProperty : NSObject {
     NSString *_expandedName;
     NSString *_expandedNameSpace;
     NSSet *_propertiesToFind;
 }
 
-@property(retain) NSString * expandedName;
-@property(retain) NSString * expandedNameSpace;
-@property(retain) NSSet * propertiesToFind;
+@property (nonatomic, retain) NSString *expandedName;
+@property (nonatomic, retain) NSString *expandedNameSpace;
+@property (nonatomic, retain) NSSet *propertiesToFind;
 
 - (void)dealloc;
 - (id)expandedName;

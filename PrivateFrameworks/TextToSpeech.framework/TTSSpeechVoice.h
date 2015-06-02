@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class <TTSSpeechService>, NSString;
-
 @interface TTSSpeechVoice : NSObject {
     int _footprint;
     int _gender;
@@ -16,14 +14,14 @@
     BOOL _useVoiceBooster;
 }
 
-@property int footprint;
-@property int gender;
-@property(retain) NSString * identifier;
-@property BOOL isCustomVoice;
-@property(readonly) BOOL isDefault;
-@property(retain) NSString * language;
-@property(retain) NSString * name;
-@property(readonly) BOOL useVoiceBooster;
+@property (nonatomic) int footprint;
+@property (nonatomic) int gender;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) BOOL isCustomVoice;
+@property (nonatomic, readonly) BOOL isDefault;
+@property (nonatomic, retain) NSString *language;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) BOOL useVoiceBooster;
 
 - (void).cxx_destruct;
 - (void)_initializeVoiceBooster;

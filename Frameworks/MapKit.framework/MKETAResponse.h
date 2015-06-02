@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItem, NSArray;
-
 @interface MKETAResponse : NSObject {
     MKMapItem *_destination;
     double _distance;
@@ -12,11 +10,11 @@
     MKMapItem *_source;
 }
 
-@property(readonly) MKMapItem * destination;
-@property(getter=_distance,readonly) double distance;
-@property(readonly) double expectedTravelTime;
-@property(getter=_sortedETAs,readonly) NSArray * sortedETAs;
-@property(readonly) MKMapItem * source;
+@property (nonatomic, readonly) MKMapItem *destination;
+@property (getter=_distance, nonatomic, readonly) double distance;
+@property (nonatomic, readonly) double expectedTravelTime;
+@property (getter=_sortedETAs, nonatomic, readonly) NSArray *sortedETAs;
+@property (nonatomic, readonly) MKMapItem *source;
 
 - (void).cxx_destruct;
 - (double)_distance;

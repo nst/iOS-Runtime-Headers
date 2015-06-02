@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDEditableBezierPathSource, TSUPointerKeyDictionary;
-
 @interface TSDEditableBezierPathSourceMorphInfo : NSObject {
     TSDEditableBezierPathSource *mOriginal;
     TSUPointerKeyDictionary *mOriginalNodeIndexMapping;
     TSDEditableBezierPathSource *mSmoothOriginal;
 }
 
-@property(retain) TSDEditableBezierPathSource * original;
-@property(retain) TSDEditableBezierPathSource * smoothOriginal;
+@property (nonatomic, retain) TSDEditableBezierPathSource *original;
+@property (nonatomic, retain) TSDEditableBezierPathSource *smoothOriginal;
 
 - (void)dealloc;
 - (id)initWithEditableBezierPathSource:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUITrendingSearchTemplateElement, SKUITrendingSearchView;
-
 @interface SKUITrendingSearchDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
     SKUITrendingSearchView *_resultsView;
     SKUITrendingSearchTemplateElement *_template;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reloadResultsView;

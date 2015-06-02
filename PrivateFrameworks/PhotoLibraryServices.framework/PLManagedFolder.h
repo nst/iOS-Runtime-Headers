@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSOrderedSet, NSString;
-
 @interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer> {
     BOOL _needsFixedOrderKeysComplianceUpdate;
     BOOL _needsPersistenceUpdate;
 }
 
-@property(retain,readonly) NSString * _prettyDescription;
-@property(retain,readonly) NSString * _typeDescription;
-@property(readonly) unsigned int albumsCount;
-@property(copy,readonly) id albumsSortingComparator;
-@property(retain) NSOrderedSet * childCollections;
-@property(readonly) unsigned int containersCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int filter;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isFolder;
-@property BOOL needsFixedOrderKeysComplianceUpdate;
-@property BOOL needsPersistenceUpdate;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int unreadAlbumsCount;
+@property (nonatomic, readonly, retain) NSString *_prettyDescription;
+@property (nonatomic, readonly, retain) NSString *_typeDescription;
+@property (nonatomic, readonly) unsigned int albumsCount;
+@property (nonatomic, readonly, copy) id /* block */ albumsSortingComparator;
+@property (nonatomic, retain) NSOrderedSet *childCollections;
+@property (nonatomic, readonly) unsigned int containersCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int filter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isFolder;
+@property (nonatomic) BOOL needsFixedOrderKeysComplianceUpdate;
+@property (nonatomic) BOOL needsPersistenceUpdate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int unreadAlbumsCount;
 
 + (id)childKeyForOrdering;
 + (id)entityInManagedObjectContext:(id)arg1;
@@ -38,7 +36,7 @@
 - (short)albumListType;
 - (id)albums;
 - (unsigned int)albumsCount;
-- (id)albumsSortingComparator;
+- (id /* block */)albumsSortingComparator;
 - (unsigned int)approximateCount;
 - (id)assets;
 - (unsigned int)assetsCount;

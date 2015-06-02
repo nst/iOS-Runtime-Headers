@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppMenuBarDocument;
-
 @interface IKMenuBarElement : IKCollectionElement {
     IKAppMenuBarDocument *_menuBarDocument;
 }
 
-@property(readonly) IKAppMenuBarDocument * menuBarDocument;
+@property (nonatomic, readonly) IKAppMenuBarDocument *menuBarDocument;
 
 + (id)supportedFeatures;
 

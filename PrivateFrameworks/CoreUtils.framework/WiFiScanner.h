@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSSet;
-
 @interface WiFiScanner : NSObject {
     BOOL _autoPoweredOn;
     NSMutableSet *_devices;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _scanActive;
     struct __CFArray { } *_scanChannels;
@@ -28,11 +18,11 @@
     struct __WiFiManagerClient { } *_wifiManager;
 }
 
-@property(copy,readonly) NSSet * devices;
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property(copy) id handler;
-@property struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }* logCategory;
-@property unsigned int scanFlags;
+@property (readonly, copy) NSSet *devices;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic) struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*logCategory;
+@property (nonatomic) unsigned int scanFlags;
 
 - (BOOL)_isUnconfiguredIE:(id)arg1;
 - (void)_scanProcessResults:(id)arg1;
@@ -43,12 +33,12 @@
 - (void)dealloc;
 - (id)devices;
 - (id)dispatchQueue;
-- (id)handler;
+- (id /* block */)handler;
 - (id)init;
 - (struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)logCategory;
 - (unsigned int)scanFlags;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setLogCategory:(struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; }*)arg1;
 - (void)setScanFlags:(unsigned int)arg1;
 - (void)start;

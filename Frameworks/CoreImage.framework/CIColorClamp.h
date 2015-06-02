@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CIColorClamp : CIFilter {
     CIImage *inputImage;
     CIVector *inputMaxComponents;
     CIVector *inputMinComponents;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputMaxComponents;
-@property(retain) CIVector * inputMinComponents;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputMaxComponents;
+@property (nonatomic, retain) CIVector *inputMinComponents;
 
 + (id)customAttributes;
 

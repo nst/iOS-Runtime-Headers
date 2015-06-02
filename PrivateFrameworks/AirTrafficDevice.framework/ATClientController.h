@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSDictionary;
-
 @interface ATClientController : NSObject {
     NSDictionary *_clientMap;
     struct __CFDictionary { } *_queueMap;

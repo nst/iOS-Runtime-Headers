@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKGradientReferenceView;
-
 @interface CKSendAnimationWindow : UIAutoRotatingWindow {
     CKGradientReferenceView *_gradientReferenceView;
 }
 
-@property(retain) CKGradientReferenceView * gradientReferenceView;
+@property (nonatomic, retain) CKGradientReferenceView *gradientReferenceView;
 
 - (void)dealloc;
 - (id)gradientReferenceView;

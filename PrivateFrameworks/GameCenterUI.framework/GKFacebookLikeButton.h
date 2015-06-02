@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKButton, GKLabel, GKOpenGraphNode, GKStoreItemInternal, NSArray, UIActivityIndicatorView, UIImageView, UIView;
-
 @interface GKFacebookLikeButton : UIView {
     GKButton *_button;
     UIView *_containerSpacerLeft;
@@ -17,16 +15,16 @@
     GKStoreItemInternal *_storeItem;
 }
 
-@property(retain) GKButton * button;
-@property(retain) UIView * containerSpacerLeft;
-@property(retain) UIView * containerSpacerRight;
-@property(retain) UIView * containerView;
-@property(retain) GKLabel * labelView;
-@property(retain) UIImageView * logoView;
-@property(retain) GKOpenGraphNode * openGraphNode;
-@property(retain) NSArray * replaceableConstraints;
-@property(retain) UIActivityIndicatorView * spinner;
-@property(retain) GKStoreItemInternal * storeItem;
+@property (nonatomic, retain) GKButton *button;
+@property (nonatomic, retain) UIView *containerSpacerLeft;
+@property (nonatomic, retain) UIView *containerSpacerRight;
+@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, retain) GKLabel *labelView;
+@property (nonatomic, retain) UIImageView *logoView;
+@property (nonatomic, retain) GKOpenGraphNode *openGraphNode;
+@property (nonatomic, retain) NSArray *replaceableConstraints;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (nonatomic, retain) GKStoreItemInternal *storeItem;
 
 - (void)applyConstraints;
 - (id)button;

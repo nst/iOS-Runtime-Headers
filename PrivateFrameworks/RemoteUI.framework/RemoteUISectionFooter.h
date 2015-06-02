@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUITableFooterDelegate>, NSString, NSURL, UIButton, UILabel;
-
 @interface RemoteUISectionFooter : UIView <RemoteUITableFooter> {
     <RUITableFooterDelegate> *_delegate;
     UIButton *_linkButton;
@@ -13,13 +11,13 @@
     BOOL _usesCustomTextAlignment;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUITableFooterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIButton * linkButton;
-@property(retain) NSURL * linkURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUITableFooterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIButton *linkButton;
+@property (nonatomic, retain) NSURL *linkURL;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_linkPressed;

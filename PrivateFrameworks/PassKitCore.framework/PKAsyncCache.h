@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSCache, NSMutableDictionary;
-
 @interface PKAsyncCache : NSObject {
     NSMutableDictionary *_deliveryBlocksByKey;
     NSCache *_itemByKey;
 }
 
-- (void)_executeRetrievalBlock:(id)arg1 forKey:(id)arg2;
+- (void)_executeRetrievalBlock:(id /* block */)arg1 forKey:(id)arg2;
 - (void)_queue_executeDeliveryBlocksForKey:(id)arg1 withItem:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithCache:(id)arg1;
-- (void)retrieveItemForKey:(id)arg1 retrievalBlock:(id)arg2 deliveryBlock:(id)arg3;
+- (void)retrieveItemForKey:(id)arg1 retrievalBlock:(id /* block */)arg2 deliveryBlock:(id /* block */)arg3;
 
 @end

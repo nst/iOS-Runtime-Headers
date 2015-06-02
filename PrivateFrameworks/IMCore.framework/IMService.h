@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@interface IMService : NSObject {
-}
+@interface IMService : NSObject
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (id)aimService;
 + (id)allServices;
@@ -26,11 +27,6 @@
 + (unsigned int)statusForIMPerson:(id)arg1;
 + (id)subnetService;
 
-- (BOOL)__ck_displayColor;
-- (id)__ck_displayName;
-- (BOOL)__ck_isSMS;
-- (BOOL)__ck_isiMessage;
-- (int)__ck_maxRecipientCount;
 - (id)canonicalFormOfID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)infoForAllPeople;
@@ -50,5 +46,13 @@
 - (id)peopleWithScreenName:(id)arg1;
 - (id)screenNamesForPerson:(id)arg1;
 - (unsigned int)status;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (BOOL)__ck_displayColor;
+- (id)__ck_displayName;
+- (BOOL)__ck_isSMS;
+- (BOOL)__ck_isiMessage;
+- (int)__ck_maxRecipientCount;
 
 @end

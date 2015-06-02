@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInput, AVAssetWriterInputGroupInternal, NSArray;
-
 @interface AVAssetWriterInputGroup : AVMediaSelectionGroup {
     AVAssetWriterInputGroupInternal *_internal;
 }
 
-@property(readonly) AVAssetWriterInput * defaultInput;
-@property(readonly) NSArray * inputs;
+@property (nonatomic, readonly) AVAssetWriterInput *defaultInput;
+@property (nonatomic, readonly) NSArray *inputs;
 
 + (id)assetWriterInputGroupWithInputs:(id)arg1 defaultInput:(id)arg2;
 

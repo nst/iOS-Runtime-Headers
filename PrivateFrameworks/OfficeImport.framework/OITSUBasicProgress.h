@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUBasicProgressStorage;
-
 @interface OITSUBasicProgress : OITSUProgress {
     OITSUBasicProgressStorage *mStorage;
 }
 
-@property(getter=isIndeterminate) BOOL indeterminate;
+@property (getter=isIndeterminate) BOOL indeterminate;
 @property double value;
 
 - (void)dealloc;

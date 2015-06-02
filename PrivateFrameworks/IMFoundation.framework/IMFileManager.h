@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMFileManager : NSFileManager {
-}
+@interface IMFileManager : NSFileManager
 
 + (id)defaultHFSFileManager;
 + (id)defaultManager;

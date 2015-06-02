@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSMutableDictionary, NSMutableOrderedSet, NSString, TSPEncoderWriteCoordinator, TSPMemoryEncoder, TSPObjectContext, TSPPasteboard, TSPPasteboardNativeDataProvider, TSPPasteboardObject;
-
 @interface TSPPasteboardWriteAssistant : NSObject <TSPEncoderWriteCoordinatorDelegate, TSPPasteboardWriting, TSPProxyObjectMapping> {
     NSDictionary *_contentDescription;
     NSMutableDictionary *_dataProviderMap;
@@ -21,14 +19,14 @@
     long _writeNativeDataToPasteboardOnceToken;
 }
 
-@property(copy) NSDictionary * contentDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL excludeNativeData;
-@property(readonly) unsigned int hash;
-@property(readonly) TSPObjectContext * pasteboardContext;
-@property(readonly) TSPPasteboardObject * pasteboardObject;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *contentDescription;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL excludeNativeData;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSPObjectContext *pasteboardContext;
+@property (nonatomic, readonly) TSPPasteboardObject *pasteboardObject;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)componentWriterMode;

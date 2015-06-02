@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKAppDocument, NSHashTable, NSOperationQueue, NSString, SKUIClientContext, SUAudioPlayer;
-
 @interface SKUIPreviewDocumentController : NSObject <IKAppDocumentDelegate> {
     SUAudioPlayer *_audioPlayer;
     SKUIClientContext *_clientContext;
@@ -12,12 +10,12 @@
     NSHashTable *_viewControllers;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isPreviewActive,readonly) BOOL previewActive;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isPreviewActive, nonatomic, readonly) BOOL previewActive;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_audioPlayerStatusChangeNotification:(id)arg1;

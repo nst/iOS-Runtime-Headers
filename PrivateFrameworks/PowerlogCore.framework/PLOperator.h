@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PLCoreAccountingGroup, PLCoreRail, PLCoreStorage, PLNSTimerOperatorComposition;
-
 @interface PLOperator : NSObject {
     NSMutableArray *_bufferedEntries;
     NSMutableDictionary *_filterDefinitions;
@@ -13,18 +11,18 @@
     PLNSTimerOperatorComposition *_triggerBufferFlush;
 }
 
-@property(readonly) PLCoreAccountingGroup * accountingGroups;
-@property(retain) NSMutableArray * bufferedEntries;
-@property(readonly) NSString * className;
-@property(retain) NSMutableDictionary * filterDefinitions;
-@property(retain) NSMutableDictionary * filterDeltaLastEntryIDs;
-@property(retain) NSMutableDictionary * lastLogDateForEntryKey;
-@property(retain) NSMutableDictionary * localCache;
-@property(readonly) PLCoreRail * rails;
-@property(readonly) PLCoreStorage * storage;
-@property(readonly) NSObject<OS_dispatch_queue> * storageQueue;
-@property(retain) PLNSTimerOperatorComposition * triggerBufferFlush;
-@property(readonly) NSObject<OS_dispatch_queue> * workQueue;
+@property (readonly) PLCoreAccountingGroup *accountingGroups;
+@property (retain) NSMutableArray *bufferedEntries;
+@property (readonly) NSString *className;
+@property (retain) NSMutableDictionary *filterDefinitions;
+@property (retain) NSMutableDictionary *filterDeltaLastEntryIDs;
+@property (retain) NSMutableDictionary *lastLogDateForEntryKey;
+@property (retain) NSMutableDictionary *localCache;
+@property (readonly) PLCoreRail *rails;
+@property (readonly) PLCoreStorage *storage;
+@property (readonly) NSObject<OS_dispatch_queue> *storageQueue;
+@property (retain) PLNSTimerOperatorComposition *triggerBufferFlush;
+@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)accountingGroupDefinitions;
 + (id)className;

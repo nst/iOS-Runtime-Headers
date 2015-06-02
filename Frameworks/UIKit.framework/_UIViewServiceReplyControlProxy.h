@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLock, _UIViewServiceReplyAwaitingTrampoline, _UIViewServiceReplyControlTrampoline;
-
 @interface _UIViewServiceReplyControlProxy : NSObject <_UIViewServiceProxy_ReplyControl> {
     _UIViewServiceReplyAwaitingTrampoline *_awaitingTrampoline;
     _UIViewServiceReplyControlTrampoline *_controlTrampoline;

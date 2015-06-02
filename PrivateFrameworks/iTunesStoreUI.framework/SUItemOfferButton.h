@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUItemOfferButton : UIButton {
     int _animationHorizontalAlignment;
     NSString *_buttonStyle;
@@ -13,18 +11,18 @@
     BOOL _shouldShowConfirmation;
 }
 
-@property int animationHorizontalAlignment;
-@property(copy) NSString * confirmationTitle;
-@property(copy) NSString * itemOfferButtonStyle;
-@property(copy) NSString * offerTitle;
-@property BOOL shouldShowConfirmation;
-@property(getter=isShowingConfirmation) BOOL showingConfirmation;
+@property (nonatomic) int animationHorizontalAlignment;
+@property (nonatomic, copy) NSString *confirmationTitle;
+@property (nonatomic, copy) NSString *itemOfferButtonStyle;
+@property (nonatomic, copy) NSString *offerTitle;
+@property (nonatomic) BOOL shouldShowConfirmation;
+@property (getter=isShowingConfirmation, nonatomic) BOOL showingConfirmation;
 
 + (double)defaultAnimationDuration;
 + (id)itemOfferButtonStyleForItem:(id)arg1 offer:(id)arg2;
 
-- (void)_applyConfiguration:(struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })arg1;
-- (struct { id x1; int x2; int x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; id x5; id x6; })_configurationForStyle:(id)arg1;
+- (void)_applyConfiguration:(struct { id x1; int x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; id x4; })arg1;
+- (struct { id x1; int x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; id x4; })_configurationForStyle:(id)arg1;
 - (void)_reloadButton;
 - (int)animationHorizontalAlignment;
 - (BOOL)configureForItem:(id)arg1 offer:(id)arg2;

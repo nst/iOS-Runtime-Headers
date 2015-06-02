@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPTitleCollection : SAMPCollection {
-}
+@interface SAMPTitleCollection : SAMPCollection
 
 + (id)titleCollection;
 + (id)titleCollectionWithDictionary:(id)arg1 context:(id)arg2;

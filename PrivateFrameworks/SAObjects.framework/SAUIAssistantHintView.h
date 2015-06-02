@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAUIAssistantHintView : SAUIAssistantUtteranceView
 
-@interface SAUIAssistantHintView : SAUIAssistantUtteranceView {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSArray * regions;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSArray *regions;
 
 + (id)assistantHintView;
 + (id)assistantHintViewWithDictionary:(id)arg1 context:(id)arg2;

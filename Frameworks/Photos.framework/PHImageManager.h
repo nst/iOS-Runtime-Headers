@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString;
-
 @interface PHImageManager : NSObject <PHPhotoLibraryChangeObserver> {
     id _cachedDomain;
     unsigned int _managerID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int managerID;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int managerID;
+@property (readonly) Class superclass;
 
 + (id)defaultManager;
 + (struct CGSize { float x1; float x2; })fullScreenSizeForScreen:(id)arg1 contentMode:(int*)arg2;
@@ -24,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)_domain;
-- (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
+- (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(BOOL)arg3;
 - (void)cancelImageRequest:(int)arg1;
 - (void)dealloc;
@@ -36,21 +34,21 @@
 - (struct CGImage { }*)newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentMode:(int)arg4;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)registerRequest:(id)arg1;
-- (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
-- (id)requestAsynchronousImageForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 contentMode:(int)arg4 options:(id)arg5 resultHandler:(id)arg6;
-- (id)requestAsynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id)arg5;
-- (id)requestAsynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id)arg5;
-- (id)requestAsynchronousVideoURLForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 options:(id)arg3 resultHandler:(id)arg4;
-- (id)requestAsynchronousVideoURLForAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
-- (id)requestAsynchronousVideoURLForImageLoadingAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
-- (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(id)arg4;
-- (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
-- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id)arg5;
-- (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id)arg3;
-- (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id)arg5;
-- (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id)arg5;
+- (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (id)requestAsynchronousImageForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 contentMode:(int)arg4 options:(id)arg5 resultHandler:(id /* block */)arg6;
+- (id)requestAsynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (id)requestAsynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (id)requestAsynchronousVideoURLForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 options:(id)arg3 resultHandler:(id /* block */)arg4;
+- (id)requestAsynchronousVideoURLForAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (id)requestAsynchronousVideoURLForImageLoadingAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(id /* block */)arg4;
+- (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)thumbnailDataForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id)arg3;
+- (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)unregisterRequest:(id)arg1;
 
 @end

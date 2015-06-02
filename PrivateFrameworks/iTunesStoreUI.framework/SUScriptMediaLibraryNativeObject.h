@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptMediaLibraryNativeObject : SUScriptNativeObject {
-}
+@interface SUScriptMediaLibraryNativeObject : SUScriptNativeObject
 
 - (void)_libraryChangedNotification:(id)arg1;
 - (void)destroyNativeObject;

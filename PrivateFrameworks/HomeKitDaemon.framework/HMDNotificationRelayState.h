@@ -2,41 +2,31 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HMDNotificationRelayState : NSObject {
     NSString *_destination;
     NSDictionary *_response;
     NSError *_responseError;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _responseHandler;
-
+    id /* block */ _responseHandler;
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
-@property(retain) NSString * destination;
-@property(retain) NSDictionary * response;
-@property(retain) NSError * responseError;
-@property(copy) id responseHandler;
-@property(retain) NSObject<OS_dispatch_queue> * responseQueue;
+@property (nonatomic, retain) NSString *destination;
+@property (nonatomic, retain) NSDictionary *response;
+@property (nonatomic, retain) NSError *responseError;
+@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *responseQueue;
 
 - (void).cxx_destruct;
 - (id)destination;
-- (id)initWithDestination:(id)arg1 responseQueue:(id)arg2 responseHandler:(id)arg3;
+- (id)initWithDestination:(id)arg1 responseQueue:(id)arg2 responseHandler:(id /* block */)arg3;
 - (id)response;
 - (id)responseError;
-- (id)responseHandler;
+- (id /* block */)responseHandler;
 - (id)responseQueue;
 - (void)setDestination:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setResponseError:(id)arg1;
-- (void)setResponseHandler:(id)arg1;
+- (void)setResponseHandler:(id /* block */)arg1;
 - (void)setResponseQueue:(id)arg1;
 
 @end

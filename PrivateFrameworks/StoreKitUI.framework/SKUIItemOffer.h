@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, NSMutableDictionary, NSString;
-
 @interface SKUIItemOffer : NSObject <SKUICacheCoding> {
     NSString *_actionParameters;
     NSString *_buttonText;
@@ -15,20 +13,20 @@
     NSString *_variantIdentifier;
 }
 
-@property(readonly) NSString * actionParameters;
-@property(readonly) NSString * buttonText;
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(readonly) NSString * confirmationText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) long long fileSize;
-@property(readonly) NSString * fileSizeText;
-@property(readonly) unsigned int hash;
-@property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) int offerType;
-@property(readonly) float price;
-@property(readonly) Class superclass;
-@property(readonly) NSString * variantIdentifier;
+@property (nonatomic, readonly) NSString *actionParameters;
+@property (nonatomic, readonly) NSString *buttonText;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (nonatomic, readonly) NSString *confirmationText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long fileSize;
+@property (nonatomic, readonly) NSString *fileSizeText;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDictionary *lookupDictionary;
+@property (nonatomic, readonly) int offerType;
+@property (nonatomic, readonly) float price;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
 - (void)_addActionParameterWithName:(id)arg1 value:(id)arg2;

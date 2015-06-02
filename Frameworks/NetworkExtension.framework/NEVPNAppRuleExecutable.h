@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEVPNAppRuleExecutable : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
@@ -11,10 +9,10 @@
     BOOL _requiresDomains;
 }
 
-@property(readonly) NSString * matchDesignatedRequirement;
-@property(copy) NSString * matchPath;
-@property(readonly) NSString * matchSigningIdentifier;
-@property(readonly) BOOL requiresDomains;
+@property (readonly) NSString *matchDesignatedRequirement;
+@property (copy) NSString *matchPath;
+@property (readonly) NSString *matchSigningIdentifier;
+@property (readonly) BOOL requiresDomains;
 
 + (BOOL)supportsSecureCoding;
 

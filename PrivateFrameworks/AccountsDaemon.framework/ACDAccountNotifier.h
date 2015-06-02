@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSDictionary, NSMutableDictionary, NSSet;
-
 @interface ACDAccountNotifier : NSObject {
     NSMutableDictionary *_instantiatedPluginsByAccountTypeID;
     NSSet *_notificationPlugins;

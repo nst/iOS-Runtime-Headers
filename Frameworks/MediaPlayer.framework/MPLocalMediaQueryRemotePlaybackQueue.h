@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaQuery;
-
 @interface MPLocalMediaQueryRemotePlaybackQueue : MPRemotePlaybackQueue {
     MPMediaItem *_firstItem;
     MPMediaQuery *_mediaQuery;
@@ -11,10 +9,10 @@
     unsigned int _shuffleType;
 }
 
-@property(readonly) MPMediaItem * firstItem;
-@property(readonly) MPMediaQuery * mediaQuery;
-@property(readonly) unsigned int repeatType;
-@property(readonly) unsigned int shuffleType;
+@property (nonatomic, readonly) MPMediaItem *firstItem;
+@property (nonatomic, readonly) MPMediaQuery *mediaQuery;
+@property (nonatomic, readonly) unsigned int repeatType;
+@property (nonatomic, readonly) unsigned int shuffleType;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkContactAddressPropertyCell : ABPropertyPostalAddressCell {
-}
+@interface ABStarkContactAddressPropertyCell : ABPropertyPostalAddressCell
 
 - (float)bottomBaselineConstant;
 - (id)constantConstraints;

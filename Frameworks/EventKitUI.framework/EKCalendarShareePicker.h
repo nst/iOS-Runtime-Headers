@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKCalendarShareePicker : EKEventAttendeePicker {
-}
+@interface EKCalendarShareePicker : EKEventAttendeePicker
 
 - (id)peoplePickerPrompt;
 - (BOOL)showAvailability;

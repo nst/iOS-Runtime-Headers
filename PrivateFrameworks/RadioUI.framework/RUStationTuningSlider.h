@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RadioStation;
-
 @interface RUStationTuningSlider : UISlider {
     RadioStation *_station;
 }
 
-@property(retain) RadioStation * station;
+@property (nonatomic, retain) RadioStation *station;
 
 - (void).cxx_destruct;
 - (void)_snapToMixType;

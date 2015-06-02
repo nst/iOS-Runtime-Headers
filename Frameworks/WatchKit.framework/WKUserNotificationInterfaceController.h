@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKUserNotificationInterfaceController : WKInterfaceController {
-}
+@interface WKUserNotificationInterfaceController : WKInterfaceController
 
-- (void)didReceiveLocalNotification:(id)arg1 withCompletion:(id)arg2;
-- (void)didReceiveRemoteNotification:(id)arg1 withCompletion:(id)arg2;
+- (void)didReceiveLocalNotification:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)didReceiveRemoteNotification:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
 
 @end

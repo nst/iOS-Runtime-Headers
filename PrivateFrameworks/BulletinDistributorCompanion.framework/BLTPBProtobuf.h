@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class IDSProtobuf, PBCodable;
-
 @interface BLTPBProtobuf : IDSProtobuf {
     BOOL _hasSequenceNumber;
     IDSProtobuf *_idsProtobuf;
@@ -12,11 +10,11 @@
     unsigned long long _sequenceNumber;
 }
 
-@property BOOL hasSequenceNumber;
-@property(retain) IDSProtobuf * idsProtobuf;
-@property(readonly) BOOL isInitialSequenceNumber;
-@property(retain) PBCodable * protobuf;
-@property unsigned long long sequenceNumber;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic, retain) IDSProtobuf *idsProtobuf;
+@property (nonatomic, readonly) BOOL isInitialSequenceNumber;
+@property (nonatomic, retain) PBCodable *protobuf;
+@property (nonatomic) unsigned long long sequenceNumber;
 
 - (void).cxx_destruct;
 - (BOOL)hasSequenceNumber;

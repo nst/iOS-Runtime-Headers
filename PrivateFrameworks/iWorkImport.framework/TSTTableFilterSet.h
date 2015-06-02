@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray;
-
 @interface TSTTableFilterSet : TSPObject <TSPCopying> {
     struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
         unsigned int *__begin_; 
@@ -23,12 +16,12 @@
     int mType;
 }
 
-@property(readonly) BOOL canAddRules;
-@property(readonly) unsigned int filterCount;
-@property int filterSetType;
-@property BOOL isEnabled;
-@property(readonly) unsigned int newFilterIndex;
-@property(readonly) unsigned int ruleCount;
+@property (nonatomic, readonly) BOOL canAddRules;
+@property (nonatomic, readonly) unsigned int filterCount;
+@property (nonatomic) int filterSetType;
+@property (nonatomic) BOOL isEnabled;
+@property (nonatomic, readonly) unsigned int newFilterIndex;
+@property (nonatomic, readonly) unsigned int ruleCount;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -40,10 +33,10 @@
 - (id)copyByRewritingFilterRulesToUidFormWithContext:(id)arg1 withTableModel:(id)arg2;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (void)enumerateFilterIndicesInTable:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateFiltersForColumn:(unsigned char)arg1 withTable:(id)arg2 usingBlock:(id)arg3;
-- (void)enumerateFiltersInTable:(id)arg1 usingBlock:(id)arg2;
-- (void)enumerateRulesInFilterIndex:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateFilterIndicesInTable:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateFiltersForColumn:(unsigned char)arg1 withTable:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateFiltersInTable:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateRulesInFilterIndex:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)filterAtIndex:(unsigned int)arg1 inTable:(id)arg2;
 - (unsigned int)filterCount;
 - (id)filterIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;

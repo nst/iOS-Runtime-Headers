@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSTextCheckingResult : NSObject <NSCoding, NSCopying> {
-}
+@interface NSTextCheckingResult : NSObject <NSCoding, NSCopying>
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) unsigned long long resultType;
+@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (readonly) unsigned long long resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
 + (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;

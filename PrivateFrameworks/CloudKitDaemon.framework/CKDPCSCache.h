@@ -2,36 +2,26 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface CKDPCSCache : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchPCSItemForCacheBlock;
-
+    id /* block */ _fetchPCSItemForCacheBlock;
     NSMutableDictionary *_itemIDToPCSCacheItem;
     NSObject<OS_dispatch_queue> *_itemPCSFetchQueue;
 }
 
-@property(copy) id fetchPCSItemForCacheBlock;
-@property(retain) NSMutableDictionary * itemIDToPCSCacheItem;
-@property(retain) NSObject<OS_dispatch_queue> * itemPCSFetchQueue;
+@property (nonatomic, copy) id /* block */ fetchPCSItemForCacheBlock;
+@property (nonatomic, retain) NSMutableDictionary *itemIDToPCSCacheItem;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *itemPCSFetchQueue;
 
 - (void).cxx_destruct;
 - (void)_initCache;
 - (void)clearCache;
-- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id)arg3;
-- (id)fetchPCSItemForCacheBlock;
+- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id /* block */)fetchPCSItemForCacheBlock;
 - (id)init;
 - (id)itemIDToPCSCacheItem;
 - (id)itemPCSFetchQueue;
 - (void)pcsDataFetched:(id)arg1 forItemWithID:(id)arg2 error:(id)arg3;
-- (void)setFetchPCSItemForCacheBlock:(id)arg1;
+- (void)setFetchPCSItemForCacheBlock:(id /* block */)arg1;
 - (void)setItemIDToPCSCacheItem:(id)arg1;
 - (void)setItemPCSFetchQueue:(id)arg1;
 - (void)setPCSData:(id)arg1 forItemWithID:(id)arg2;

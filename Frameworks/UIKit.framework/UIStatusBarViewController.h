@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIClassicStatusBarView, UIView, UIWindow;
-
 @interface UIStatusBarViewController : UIViewController {
     BOOL _iPhoneWS;
     BOOL _keyboardVisible;
@@ -12,7 +10,7 @@
     UIWindow *_window;
 }
 
-@property(readonly) UIWindow * window;
+@property (nonatomic, readonly) UIWindow *window;
 
 + (double)statusBarOrientationAnimationDurationFrom:(int)arg1 to:(int)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIDatePickerMode_Time : _UIDatePickerMode {
     NSString *_hourFormat;
     NSString *_minuteFormat;

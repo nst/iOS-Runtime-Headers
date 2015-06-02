@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUItem, SUItemList, SUPageSectionGroup, SUStorePageProtocol;
-
 @interface SUStructuredPage : NSObject <NSCopying> {
     BOOL _artworkShouldFitWidth;
     float _artworkWidth;
@@ -19,19 +17,19 @@
     BOOL _wantsIndexBar;
 }
 
-@property(readonly) BOOL artworkShouldFitWidth;
-@property(readonly) float artworkWidth;
-@property(readonly) BOOL didShowDialog;
-@property(readonly) int displayStyle;
-@property(readonly) BOOL hasDisplayableContent;
-@property(retain) SUItem * item;
-@property(retain) SUItemList * itemList;
-@property(retain) SUStorePageProtocol * protocol;
-@property(retain) SUPageSectionGroup * sectionsGroup;
-@property(readonly) BOOL shouldHideSignInButton;
-@property(retain) NSString * title;
-@property int type;
-@property(readonly) BOOL wantsIndexBar;
+@property (nonatomic, readonly) BOOL artworkShouldFitWidth;
+@property (nonatomic, readonly) float artworkWidth;
+@property (nonatomic, readonly) BOOL didShowDialog;
+@property (nonatomic, readonly) int displayStyle;
+@property (nonatomic, readonly) BOOL hasDisplayableContent;
+@property (nonatomic, retain) SUItem *item;
+@property (nonatomic, retain) SUItemList *itemList;
+@property (nonatomic, retain) SUStorePageProtocol *protocol;
+@property (nonatomic, retain) SUPageSectionGroup *sectionsGroup;
+@property (nonatomic, readonly) BOOL shouldHideSignInButton;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) int type;
+@property (nonatomic, readonly) BOOL wantsIndexBar;
 
 + (int)pageTypeForStorePageDictionary:(id)arg1;
 + (int)pageTypeForStorePageString:(id)arg1;

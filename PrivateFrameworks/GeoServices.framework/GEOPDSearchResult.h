@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSMutableArray;
-
 @interface GEOPDSearchResult : PBCodable <NSCopying> {
     NSMutableArray *_disambiguationLabels;
     GEOMapRegion *_displayMapRegion;
 }
 
-@property(retain) NSMutableArray * disambiguationLabels;
-@property(retain) GEOMapRegion * displayMapRegion;
-@property(readonly) BOOL hasDisplayMapRegion;
+@property (nonatomic, retain) NSMutableArray *disambiguationLabels;
+@property (nonatomic, retain) GEOMapRegion *displayMapRegion;
+@property (nonatomic, readonly) BOOL hasDisplayMapRegion;
 
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)clearDisambiguationLabels;

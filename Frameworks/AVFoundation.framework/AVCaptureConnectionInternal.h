@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDevice, AVCaptureInputPort, AVWeakReference, NSArray, NSMutableArray;
-
 @interface AVCaptureConnectionInternal : NSObject {
     BOOL active;
     int activeVideoStabilizationMode;

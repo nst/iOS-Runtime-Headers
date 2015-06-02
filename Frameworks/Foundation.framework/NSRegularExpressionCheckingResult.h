@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSRegularExpression;
+@interface NSRegularExpressionCheckingResult : NSTextCheckingResult
 
-@interface NSRegularExpressionCheckingResult : NSTextCheckingResult {
-}
-
-@property(readonly) NSArray * rangeArray;
-@property(readonly) NSRegularExpression * regularExpression;
+@property (readonly) NSArray *rangeArray;
+@property (readonly) NSRegularExpression *regularExpression;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

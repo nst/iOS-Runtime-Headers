@@ -2,33 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFAssistantUIService>, <AFSpeechDelegate>, NSArray, NSError, NSMutableDictionary, NSObject<OS_dispatch_source>, NSString, NSXPCConnection;
-
 @interface AFConnection : NSObject {
     unsigned int _audioSessionID;
     NSArray *_cachedBulletins;
-    unsigned int _clientStateIsInSync : 1;
+    unsigned int _clientStateIsInSync;
     NSXPCConnection *_connection;
     <AFAssistantUIService> *_delegate;
     BOOL _hasActiveRequest;
     BOOL _hasActiveTimeout;
-    unsigned int _hasOutstandingRequest : 1;
-    unsigned int _isCapturingSpeech : 1;
+    unsigned int _hasOutstandingRequest;
+    unsigned int _isCapturingSpeech;
     NSError *_lastRetryError;
     void *_levelsSharedMem;
     NSObject<OS_dispatch_source> *_levelsTimer;
     NSString *_outstandingRequestClass;
     NSMutableDictionary *_replyHandlerForAceId;
     unsigned long _sharedMemSize;
-    unsigned int _shouldSpeak : 1;
+    unsigned int _shouldSpeak;
     <AFSpeechDelegate> *_speechDelegate;
-    unsigned int _stateInSync : 1;
-    unsigned int _voiceOverIsActive : 1;
+    unsigned int _stateInSync;
+    unsigned int _voiceOverIsActive;
 }
 
-@property <AFAssistantUIService> * delegate;
-@property(readonly) BOOL isRecording;
-@property <AFSpeechDelegate> * speechDelegate;
+@property (nonatomic) <AFAssistantUIService> *delegate;
+@property (nonatomic, readonly) BOOL isRecording;
+@property (nonatomic) <AFSpeechDelegate> *speechDelegate;
 
 + (BOOL)assistantIsSupported;
 + (BOOL)assistantIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
@@ -54,10 +52,10 @@
 - (void)_clearAssistantInfoForAccountWithIdentifier:(id)arg1;
 - (void)_clearConnection;
 - (id)_clientService;
-- (id)_clientServiceWithErrorHandler:(id)arg1;
+- (id)_clientServiceWithErrorHandler:(id /* block */)arg1;
 - (id)_connection;
 - (void)_connectionInterrupted;
-- (void)_doCommand:(id)arg1 reply:(id)arg2;
+- (void)_doCommand:(id)arg1 reply:(id /* block */)arg2;
 - (void)_extendExistingRequestTimeout;
 - (void)_extendRequestTimeout;
 - (void)_invokeRequestTimeout;
@@ -113,7 +111,7 @@
 - (void)rollbackClearContext;
 - (void)rollbackRequest;
 - (void)sendGenericAceCommand:(id)arg1;
-- (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id)arg2;
+- (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id /* block */)arg2;
 - (void)sendReplyCommand:(id)arg1;
 - (void)setAlertContextWithBulletins:(id)arg1;
 - (void)setApplicationContext:(id)arg1;
@@ -129,7 +127,7 @@
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
 - (void)startContinuationRequestWithUserInfo:(id)arg1;
 - (void)startDirectActionRequestWithString:(id)arg1;
-- (void)startRecordingForPendingSpeechRequestWithOptions:(id)arg1 completion:(id)arg2;
+- (void)startRecordingForPendingSpeechRequestWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)startRequestWithCorrectedText:(id)arg1 forSpeechIdentifier:(id)arg2;
 - (void)startRequestWithText:(id)arg1;
 - (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;

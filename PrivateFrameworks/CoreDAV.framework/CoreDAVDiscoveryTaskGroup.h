@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVAccountInfoProvider>, <CoreDAVDiscoveryTaskGroupDelegate>, NSArray, NSMutableArray, NSString;
-
 @interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate> {
     BOOL _didReceiveAuthenticationError;
     <CoreDAVAccountInfoProvider> *_discoveredAccountInfo;
@@ -18,16 +16,16 @@
     NSString *_wellKnownPath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreDAVDiscoveryTaskGroupDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didReceiveAuthenticationError;
-@property(retain) <CoreDAVAccountInfoProvider> * discoveredAccountInfo;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * potentialContextPaths;
-@property BOOL shouldBailEarly;
-@property(readonly) Class superclass;
-@property(retain) NSString * wellKnownPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreDAVDiscoveryTaskGroupDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didReceiveAuthenticationError;
+@property (nonatomic, retain) <CoreDAVAccountInfoProvider> *discoveredAccountInfo;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *potentialContextPaths;
+@property (nonatomic) BOOL shouldBailEarly;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *wellKnownPath;
 
 - (void)addToDiscoveryArray:(id*)arg1 discovery:(id)arg2;
 - (id)allDiscoveryPaths:(id)arg1;

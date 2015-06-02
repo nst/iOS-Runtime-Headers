@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SAUIAppPunchOut;
+@interface SALocalSearchPhoto : AceObject <SAAceSerializable>
 
-@interface SALocalSearchPhoto : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSURL * fullsize;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(copy) NSURL * largeSize;
-@property(copy) NSURL * maximumSize;
-@property(retain) SAUIAppPunchOut * photoPunchOut;
-@property(readonly) Class superclass;
-@property(copy) NSURL * thumbnail;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSURL *fullsize;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSURL *largeSize;
+@property (nonatomic, copy) NSURL *maximumSize;
+@property (nonatomic, retain) SAUIAppPunchOut *photoPunchOut;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *thumbnail;
 
 + (id)photo;
 + (id)photoWithDictionary:(id)arg1 context:(id)arg2;

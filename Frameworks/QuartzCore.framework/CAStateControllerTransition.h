@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer, CAStateController, CAStateTransition, NSMutableArray, NSString;
-
 @interface CAStateControllerTransition : NSObject {
     NSMutableArray *_animations;
     double _beginTime;
@@ -15,11 +13,11 @@
     CAStateTransition *_transition;
 }
 
-@property(readonly) double beginTime;
-@property(readonly) double duration;
-@property(readonly) CALayer * layer;
-@property(readonly) float speed;
-@property(readonly) CAStateTransition * transition;
+@property (nonatomic, readonly) double beginTime;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) CALayer *layer;
+@property (nonatomic, readonly) float speed;
+@property (nonatomic, readonly) CAStateTransition *transition;
 
 - (void)addAnimation:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

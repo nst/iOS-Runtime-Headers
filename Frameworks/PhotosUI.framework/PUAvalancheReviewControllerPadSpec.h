@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAvalancheReviewControllerPadSpec : PUAvalancheReviewControllerSpec {
-}
+@interface PUAvalancheReviewControllerPadSpec : PUAvalancheReviewControllerSpec
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewLayoutContentInsetForOrientation:(int)arg1;
 - (float)interItemSpacing;

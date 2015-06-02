@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PLCloudSharedAlbumProtocol>, NSArray, NSDate, NSIndexSet, NSOrderedSet, NSString, PLCloudFeedEntry, PLCloudSharedAlbumInvitationRecord, PLManagedAsset;
-
 @interface PUFeedSectionInfo : NSObject <PLAssetContainer> {
     NSString *_albumTitle;
     PLCloudFeedEntry *_cloudFeedEntry;
@@ -21,38 +19,38 @@
     NSString *_transientIdentifier;
 }
 
-@property(copy) NSString * albumTitle;
-@property(readonly) unsigned int approximateCount;
-@property(retain,readonly) NSOrderedSet * assets;
-@property(readonly) unsigned int assetsCount;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
-@property(readonly) PLCloudFeedEntry * cloudFeedEntry;
-@property(copy) NSDate * date;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSDate * endDate;
-@property(copy) NSIndexSet * excludedAssetIndexes;
-@property(readonly) unsigned int hash;
-@property(retain) PLCloudSharedAlbumInvitationRecord * invitationRecord;
-@property(readonly) BOOL isEmpty;
-@property(retain) PLManagedAsset * keyAsset;
-@property(getter=isLoaded) BOOL loaded;
-@property(copy,readonly) NSArray * localizedLocationNames;
-@property(copy,readonly) NSString * localizedTitle;
-@property int numberOfItems;
-@property(readonly) unsigned int photosCount;
-@property(retain) PLManagedAsset * secondaryKeyAsset;
-@property(readonly) int sectionType;
-@property(retain) <PLCloudSharedAlbumProtocol> * sharedAlbum;
-@property BOOL shouldBeVisibleWhenEmpty;
-@property(retain,readonly) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) PLManagedAsset * tertiaryKeyAsset;
-@property(retain,readonly) NSString * title;
-@property(copy,readonly) NSString * transientIdentifier;
-@property(retain,readonly) NSString * uuid;
-@property(readonly) unsigned int videosCount;
+@property (nonatomic, copy) NSString *albumTitle;
+@property (nonatomic, readonly) unsigned int approximateCount;
+@property (nonatomic, readonly, retain) NSOrderedSet *assets;
+@property (nonatomic, readonly) unsigned int assetsCount;
+@property (nonatomic, readonly) BOOL canShowAvalancheStacks;
+@property (nonatomic, readonly) BOOL canShowComments;
+@property (nonatomic, readonly) PLCloudFeedEntry *cloudFeedEntry;
+@property (nonatomic, copy) NSDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSDate *endDate;
+@property (nonatomic, copy) NSIndexSet *excludedAssetIndexes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PLCloudSharedAlbumInvitationRecord *invitationRecord;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (getter=isLoaded, nonatomic) BOOL loaded;
+@property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
+@property (nonatomic, readonly, copy) NSString *localizedTitle;
+@property (nonatomic) int numberOfItems;
+@property (nonatomic, readonly) unsigned int photosCount;
+@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
+@property (nonatomic, readonly) int sectionType;
+@property (nonatomic, retain) <PLCloudSharedAlbumProtocol> *sharedAlbum;
+@property (nonatomic) BOOL shouldBeVisibleWhenEmpty;
+@property (nonatomic, readonly, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, readonly, retain) NSString *title;
+@property (nonatomic, readonly, copy) NSString *transientIdentifier;
+@property (nonatomic, readonly, retain) NSString *uuid;
+@property (nonatomic, readonly) unsigned int videosCount;
 
 + (void)beginCachingSharedAlbumsByGUIDs;
 + (void)endCachingSharedAlbumsByGUIDs;

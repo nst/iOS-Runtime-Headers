@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIKBRenderConfig;
-
 @interface UIKBRenderFactory : NSObject {
     BOOL _boldTextEnabled;
     BOOL _lightweightFactory;
@@ -13,12 +11,12 @@
     NSMutableArray *_segmentTraits;
 }
 
-@property(readonly) BOOL boldTextEnabled;
-@property BOOL lightweightFactory;
-@property(readonly) UIKBRenderConfig * renderConfig;
-@property float rivenSizeFactor;
-@property float scale;
-@property(readonly) NSArray * segmentTraits;
+@property (nonatomic, readonly) BOOL boldTextEnabled;
+@property (nonatomic) BOOL lightweightFactory;
+@property (nonatomic, readonly) UIKBRenderConfig *renderConfig;
+@property (nonatomic) float rivenSizeFactor;
+@property (nonatomic) float scale;
+@property (nonatomic, readonly) NSArray *segmentTraits;
 
 + (BOOL)_enabled;
 + (int)_graphicsQuality;

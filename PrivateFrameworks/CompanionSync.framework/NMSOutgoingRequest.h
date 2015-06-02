@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NMSMessageCenter, NSData, NSDictionary, NSString;
-
 @interface NMSOutgoingRequest : NSObject <NMSObfuscatableDescriptionProviding> {
     NSData *_data;
     NSDictionary *_extraIDSOptions;
@@ -18,21 +16,21 @@
     BOOL _shouldEncrypt;
 }
 
-@property(retain) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * extraIDSOptions;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * idsIdentifier;
-@property NMSMessageCenter * messageCenter;
-@property unsigned short messageID;
-@property(retain) id pbRequest;
-@property(retain) NSDictionary * persistentUserInfo;
-@property unsigned int priority;
-@property double responseTimeout;
-@property double sendTimeout;
-@property BOOL shouldEncrypt;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *extraIDSOptions;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) NMSMessageCenter *messageCenter;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) id pbRequest;
+@property (nonatomic, retain) NSDictionary *persistentUserInfo;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic) double responseTimeout;
+@property (nonatomic) double sendTimeout;
+@property (nonatomic) BOOL shouldEncrypt;
+@property (readonly) Class superclass;
 
 + (id)requestWithMessageID:(unsigned short)arg1;
 

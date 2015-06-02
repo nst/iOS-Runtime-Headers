@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDLearnMoreViewControllerDelegate>, APDDataManager, APDGlossaryViewController, APDKVOManager, APDSearchViewController, APDTOCViewController, APDTopicViewController, NSArray, NSString, NSURL, UIBarButtonItem, UIColor, UIImageView, UINavigationController, UITapGestureRecognizer, UIToolbar, UIView;
-
 @interface APDLearnMoreViewController : UIViewController <APDDataManagerDelegate, APDGlossaryViewControllerDelegate, APDSearchViewControllerDelegate, APDTOCViewControllerDelegate, APDTopicViewControllerDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate, UIToolbarDelegate> {
     APDKVOManager *_KVOManager;
     BOOL _RTL;
@@ -46,48 +44,48 @@
     NSArray *_viewInterfaceOrientations;
 }
 
-@property(retain) APDKVOManager * KVOManager;
-@property BOOL RTL;
-@property(retain) APDTOCViewController * TOCViewController;
-@property(copy) NSString * appName;
-@property UIBarButtonItem * backToolbarButton;
-@property(copy) NSURL * baseURL;
-@property(copy) UIColor * cellHighlightedColor;
-@property(copy) NSString * configServerAppIdentifier;
-@property(copy) NSString * configServerTargetedReleaseVersion;
-@property(copy) NSURL * configServerURL;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDLearnMoreViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * deviceType;
-@property UIBarButtonItem * doneToolbarButton;
-@property BOOL enableContextMenu;
-@property UIBarButtonItem * forwardToolbarButton;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * helpVersion;
-@property(copy) NSURL * localResourceBundleURL;
-@property int mode;
-@property(copy) NSURL * remoteHelpURL;
-@property(copy) UIColor * searchBarBarTintColor;
-@property(copy) UIColor * searchBarTintColor;
-@property UIBarButtonItem * searchToolbarButton;
-@property(retain) APDSearchViewController * searchViewController;
-@property(copy) NSString * selectedISOCode;
-@property(copy) NSString * selectedTopicID;
-@property(copy) NSString * selectedTopicName;
-@property BOOL showDoneButton;
-@property BOOL showGlossaryLinks;
-@property(readonly) Class superclass;
-@property UIBarButtonItem * tocToolbarButton;
-@property UIToolbar * toolbar;
-@property(copy) UIColor * toolbarBarTintColor;
-@property UIView * toolbarBottomStrokeView;
-@property(copy) UIColor * toolbarTintColor;
-@property UIView * topicView;
-@property UIImageView * topicViewLeftShadow;
-@property BOOL translucentBar;
-@property BOOL useRemoteAssetsForLocalHelp;
-@property(copy) NSArray * viewInterfaceOrientations;
+@property (nonatomic, retain) APDKVOManager *KVOManager;
+@property (nonatomic) BOOL RTL;
+@property (nonatomic, retain) APDTOCViewController *TOCViewController;
+@property (nonatomic, copy) NSString *appName;
+@property (nonatomic) UIBarButtonItem *backToolbarButton;
+@property (nonatomic, copy) NSURL *baseURL;
+@property (nonatomic, copy) UIColor *cellHighlightedColor;
+@property (nonatomic, copy) NSString *configServerAppIdentifier;
+@property (nonatomic, copy) NSString *configServerTargetedReleaseVersion;
+@property (nonatomic, copy) NSURL *configServerURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDLearnMoreViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *deviceType;
+@property (nonatomic) UIBarButtonItem *doneToolbarButton;
+@property (nonatomic) BOOL enableContextMenu;
+@property (nonatomic) UIBarButtonItem *forwardToolbarButton;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *helpVersion;
+@property (nonatomic, copy) NSURL *localResourceBundleURL;
+@property (nonatomic) int mode;
+@property (nonatomic, copy) NSURL *remoteHelpURL;
+@property (nonatomic, copy) UIColor *searchBarBarTintColor;
+@property (nonatomic, copy) UIColor *searchBarTintColor;
+@property (nonatomic) UIBarButtonItem *searchToolbarButton;
+@property (nonatomic, retain) APDSearchViewController *searchViewController;
+@property (nonatomic, copy) NSString *selectedISOCode;
+@property (nonatomic, copy) NSString *selectedTopicID;
+@property (nonatomic, copy) NSString *selectedTopicName;
+@property (nonatomic) BOOL showDoneButton;
+@property (nonatomic) BOOL showGlossaryLinks;
+@property (readonly) Class superclass;
+@property (nonatomic) UIBarButtonItem *tocToolbarButton;
+@property (nonatomic) UIToolbar *toolbar;
+@property (nonatomic, copy) UIColor *toolbarBarTintColor;
+@property (nonatomic) UIView *toolbarBottomStrokeView;
+@property (nonatomic, copy) UIColor *toolbarTintColor;
+@property (nonatomic) UIView *topicView;
+@property (nonatomic) UIImageView *topicViewLeftShadow;
+@property (nonatomic) BOOL translucentBar;
+@property (nonatomic) BOOL useRemoteAssetsForLocalHelp;
+@property (nonatomic, copy) NSArray *viewInterfaceOrientations;
 
 + (id)learnMoreViewController;
 + (id)learnMoreViewControllerWithAPDID:(id)arg1;

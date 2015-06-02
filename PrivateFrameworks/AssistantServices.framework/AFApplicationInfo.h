@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFApplicationInfo : NSObject <NSSecureCoding> {
     NSString *_identifier;
     int _pid;
 }
 
-@property(copy) NSString * identifier;
-@property int pid;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) int pid;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUPlaybackTimeoutInfoController : RadioPlaybackTimeoutInfoController {
-}
+@interface RUPlaybackTimeoutInfoController : RadioPlaybackTimeoutInfoController
 
 - (id)_generateCurrentTimeoutInfoReturningReady:(BOOL*)arg1;
 

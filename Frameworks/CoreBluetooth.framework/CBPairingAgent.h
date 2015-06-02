@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBPairingAgentDelegate>, <CBPairingAgentParentDelegate>;
-
 @interface CBPairingAgent : NSObject {
     <CBPairingAgentDelegate> *_delegate;
     <CBPairingAgentParentDelegate> *_parentManager;
     BOOL _useOOBMode;
 }
 
-@property <CBPairingAgentDelegate> * delegate;
-@property BOOL useOOBMode;
+@property (nonatomic) <CBPairingAgentDelegate> *delegate;
+@property (nonatomic) BOOL useOOBMode;
 
 - (id)delegate;
 - (void)handlePairingCompleted:(id)arg1;

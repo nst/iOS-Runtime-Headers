@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, GKPlayerMultiPhotoView, NSDictionary, UIImageView;
-
 @interface GKFriendRequestsSynopsisCell : GKCollectionViewCell {
     UIImageView *_caretView;
     GKPlayerMultiPhotoView *_iconView;
@@ -12,11 +10,11 @@
     GKLabel *_titleLabel;
 }
 
-@property(retain) UIImageView * caretView;
-@property(retain) GKPlayerMultiPhotoView * iconView;
-@property(retain) NSDictionary * metricsOverrides;
-@property(retain) GKLabel * subtitleLabel;
-@property(retain) GKLabel * titleLabel;
+@property (nonatomic, retain) UIImageView *caretView;
+@property (nonatomic, retain) GKPlayerMultiPhotoView *iconView;
+@property (nonatomic, retain) NSDictionary *metricsOverrides;
+@property (nonatomic, retain) GKLabel *subtitleLabel;
+@property (nonatomic, retain) GKLabel *titleLabel;
 
 + (id)padMetrics;
 + (id)phoneMetrics;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface CHXAutoStyling : CHAutoStyling <CHAutoStyling> {
     BOOL __autoChartFillIsHollow;
     BOOL __autoChartStrokeIsHollow;
@@ -11,10 +9,10 @@
 
 @property BOOL _autoChartFillIsHollow;
 @property BOOL _autoChartStrokeIsHollow;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)colorWithSchemeColorId:(int)arg1 shade:(float)arg2;
 + (id)colorWithSchemeColorId:(int)arg1 tint:(float)arg2;

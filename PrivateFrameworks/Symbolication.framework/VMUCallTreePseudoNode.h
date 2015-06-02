@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@interface VMUCallTreePseudoNode : VMUCallTreeNode {
-}
+@interface VMUCallTreePseudoNode : VMUCallTreeNode
 
 - (BOOL)isPseudo;
 - (id)largestTopOfStackPath;

@@ -2,24 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSUColor;
-
 @interface TSDColorFill : TSDFill <NSCopying, NSMutableCopying, TSDMixing> {
     TSUColor *mColor;
 }
 
-@property(readonly) struct CGColor { }* CGColor;
-@property(readonly) float brightness;
-@property(copy,readonly) TSUColor * color;
-@property(readonly) float hue;
-@property(readonly) float luminance;
-@property(readonly) float opacity;
-@property(readonly) float saturation;
+@property (nonatomic, readonly) struct CGColor { }*CGColor;
+@property (nonatomic, readonly) float brightness;
+@property (nonatomic, readonly, copy) TSUColor *color;
+@property (nonatomic, readonly) float hue;
+@property (nonatomic, readonly) float luminance;
+@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) float saturation;
 
 + (id)blackColor;
 + (id)blueColor;

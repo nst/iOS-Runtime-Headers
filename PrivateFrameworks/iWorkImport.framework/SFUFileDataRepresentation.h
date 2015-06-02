@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUInputStream>, NSString, SFUCryptoKey;
-
 @interface SFUFileDataRepresentation : SFUDataRepresentation {
     SFUCryptoKey *mCryptoKey;
     BOOL mDeleteFileWhenDone;

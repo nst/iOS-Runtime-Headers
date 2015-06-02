@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface _PUKeyValuePair : NSObject {
     NSString *_key;
     NSString *_value;
 }
 
-@property(copy,readonly) NSString * key;
-@property(copy,readonly) NSString * value;
+@property (nonatomic, readonly, copy) NSString *key;
+@property (nonatomic, readonly, copy) NSString *value;
 
 - (void).cxx_destruct;
 - (int)compare:(id)arg1;

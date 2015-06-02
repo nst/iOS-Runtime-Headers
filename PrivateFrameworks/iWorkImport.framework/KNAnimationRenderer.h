@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <KNAnimationPluginContext>, KNAnimatedSlideView, KNPlaybackSession;
-
 @interface KNAnimationRenderer : NSObject {
     <KNAnimationPluginContext> *_pluginContext;
     KNAnimatedSlideView *mASV;
@@ -15,11 +13,11 @@
     KNPlaybackSession *mSession;
 }
 
-@property unsigned int direction;
-@property double duration;
-@property(readonly) id plugin;
-@property(readonly) Class pluginClass;
-@property(readonly) <KNAnimationPluginContext> * pluginContext;
+@property (nonatomic) unsigned int direction;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) id plugin;
+@property (nonatomic, readonly) Class pluginClass;
+@property (nonatomic, readonly) <KNAnimationPluginContext> *pluginContext;
 
 - (void)dealloc;
 - (unsigned int)direction;

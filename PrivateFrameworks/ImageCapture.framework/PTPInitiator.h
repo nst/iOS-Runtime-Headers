@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString, PTPDeviceInfoDataset, PTPEventPacket, PTPOperationResponsePacket, PTPTransport, PTPWrappedBytes;
-
 @interface PTPInitiator : NSObject {
     NSString *_UUIDString;
     BOOL _appleDeviceHasNewFW;

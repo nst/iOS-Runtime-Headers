@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUClientDelegate>, ISURLOperationPool, NSLock, NSString, SUClientInterface, SUImageCache, SUScriptExecutionContext;
-
 @interface SUClient : NSObject {
     struct __CFArray { } *_assetTypes;
     SUClientInterface *_clientInterface;
@@ -15,14 +13,14 @@
     SUScriptExecutionContext *_scriptExecutionContext;
 }
 
-@property(readonly) SUClientInterface * clientInterface;
-@property <SUClientDelegate> * delegate;
-@property BOOL dontSaveNavigationPath;
-@property(retain) SUImageCache * imageCache;
-@property(retain) ISURLOperationPool * imagePool;
-@property(readonly) SUScriptExecutionContext * scriptExecutionContext;
-@property(retain) NSString * searchHintsURLBagKey;
-@property(retain) NSString * searchURLBagKey;
+@property (readonly) SUClientInterface *clientInterface;
+@property (nonatomic) <SUClientDelegate> *delegate;
+@property (nonatomic) BOOL dontSaveNavigationPath;
+@property (nonatomic, retain) SUImageCache *imageCache;
+@property (nonatomic, retain) ISURLOperationPool *imagePool;
+@property (nonatomic, readonly) SUScriptExecutionContext *scriptExecutionContext;
+@property (nonatomic, retain) NSString *searchHintsURLBagKey;
+@property (nonatomic, retain) NSString *searchURLBagKey;
 
 + (id)imagePool;
 + (void)setSharedClient:(id)arg1;

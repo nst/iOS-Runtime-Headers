@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIImageView, UILabel, UISnapshotView, UITabBar, UITabBarItem, UITabBarItemProxy;
-
 @interface UITabBarCustomizeView : UIView {
     NSArray *_availableItems;
     UISnapshotView *_dragImage;
@@ -34,7 +32,7 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) NSArray * availableItems;
+@property (nonatomic, retain) NSArray *availableItems;
 
 - (int)_barMetrics;
 - (void)adjustDragImageWithTouches:(id)arg1 withEvent:(id)arg2;

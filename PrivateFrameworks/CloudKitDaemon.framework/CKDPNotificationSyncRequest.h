@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPNotificationSyncRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int maxChanges : 1; 
@@ -12,10 +10,10 @@
     NSData *_serverChangeToken;
 }
 
-@property BOOL hasMaxChanges;
-@property(readonly) BOOL hasServerChangeToken;
-@property unsigned int maxChanges;
-@property(retain) NSData * serverChangeToken;
+@property (nonatomic) BOOL hasMaxChanges;
+@property (nonatomic, readonly) BOOL hasServerChangeToken;
+@property (nonatomic) unsigned int maxChanges;
+@property (nonatomic, retain) NSData *serverChangeToken;
 
 + (id)options;
 

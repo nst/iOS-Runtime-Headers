@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIComposeTextFieldConfiguration, UILabel, UITextField;
-
 @interface SKUIComposeTextField : UIView <UITextFieldDelegate> {
     SKUIComposeTextFieldConfiguration *_configuration;
     int _currentTextLength;
@@ -13,16 +11,16 @@
     UITextField *_textField;
 }
 
-@property(readonly) int composeReviewStyle;
-@property(readonly) SKUIComposeTextFieldConfiguration * configuration;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
-@property(readonly) UITextField * textField;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, readonly) int composeReviewStyle;
+@property (nonatomic, readonly) SKUIComposeTextFieldConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, readonly) UITextField *textField;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 + (id)labelColorForStyle:(int)arg1;
 + (id)labelFontForStyle:(int)arg1;

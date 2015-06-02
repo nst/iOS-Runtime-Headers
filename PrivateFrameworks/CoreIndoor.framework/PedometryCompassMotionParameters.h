@@ -13,12 +13,12 @@
     float _walkMore;
 }
 
-@property BOOL hasNotWalkingVariancePerAxisPerSecond;
-@property BOOL hasTimeheadingAverageChangeDirectionRate;
-@property BOOL hasWalkMore;
-@property float notWalkingVariancePerAxisPerSecond;
-@property float timeheadingAverageChangeDirectionRate;
-@property float walkMore;
+@property (nonatomic) BOOL hasNotWalkingVariancePerAxisPerSecond;
+@property (nonatomic) BOOL hasTimeheadingAverageChangeDirectionRate;
+@property (nonatomic) BOOL hasWalkMore;
+@property (nonatomic) float notWalkingVariancePerAxisPerSecond;
+@property (nonatomic) float timeheadingAverageChangeDirectionRate;
+@property (nonatomic) float walkMore;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

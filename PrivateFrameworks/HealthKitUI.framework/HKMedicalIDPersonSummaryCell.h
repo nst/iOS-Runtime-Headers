@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSDate, NSLayoutConstraint, NSString, UIFont, UIImage, UIImageView, UILabel;
-
 @interface HKMedicalIDPersonSummaryCell : UITableViewCell {
     NSDate *_birthdate;
     UILabel *_birthdateLabel;
@@ -17,9 +15,9 @@
     BOOL _resetFormatters;
 }
 
-@property(retain) NSDate * birthdate;
-@property(retain) NSString * name;
-@property(retain) UIImage * picture;
+@property (nonatomic, retain) NSDate *birthdate;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) UIImage *picture;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;

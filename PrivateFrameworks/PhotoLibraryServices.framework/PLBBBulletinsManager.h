@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, PLXPCTransaction;
-
 @interface PLBBBulletinsManager : NSObject <PLBBPendingBulletinsBatchDelegate> {
     void *_addressBook;
     int _alertFiltrationEnabled;
@@ -20,11 +18,11 @@
     PLXPCTransaction *_saveTimerTransaction;
 }
 
-@property(readonly) NSArray * currentBulletinDictionaries;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly) NSArray *currentBulletinDictionaries;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedManager;
 
@@ -50,14 +48,14 @@
 - (id)bulletinsBatch:(id)arg1 bulletinByMergingPersistedListWithBulletin:(id)arg2;
 - (void)bulletinsBatch:(id)arg1 didProcessReadyBulletins:(id)arg2 stillPending:(BOOL)arg3;
 - (BOOL)bulletinsBatch:(id)arg1 shouldAllowAlertsFromContactWithEmail:(id)arg2;
-- (void)calculateCurrentBadgeCountWithCompletionHandler:(id)arg1;
+- (void)calculateCurrentBadgeCountWithCompletionHandler:(id /* block */)arg1;
 - (void)clearAllBulletinsUpToRecordID:(unsigned long long)arg1;
 - (id)currentBulletinDictionaries;
 - (void)dealloc;
 - (void)discardAllBulletins;
 - (BOOL)enableTemporaryDebugMode;
 - (void)forceWriteUnsavedChanges;
-- (void)getThumbnailImageDataForBulletinWithRecordID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)getThumbnailImageDataForBulletinWithRecordID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)noteDidChangePlaceholderKindForAsset:(id)arg1 fromOldKind:(short)arg2 forSharedAlbum:(id)arg3 mstreamdInfo:(id)arg4;
 - (void)noteDidDeleteSharedAlbum:(id)arg1;

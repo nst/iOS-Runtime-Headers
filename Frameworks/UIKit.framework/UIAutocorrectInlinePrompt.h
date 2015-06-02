@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSString, TIKeyboardCandidateResultSet, UIView;
-
 @interface UIAutocorrectInlinePrompt : UIView <UIKeyboardCandidateList> {
     TIKeyboardCandidateResultSet *_candidateResultSet;
     BOOL _showHiddenCandidatesOnly;
@@ -35,14 +33,14 @@
     NSArray *m_usageTrackingTypes;
 }
 
-@property(retain) TIKeyboardCandidateResultSet * candidateResultSet;
-@property(readonly) TIKeyboardCandidateResultSet * candidates;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL showHiddenCandidatesOnly;
-@property(readonly) Class superclass;
-@property unsigned int usageTrackingMask;
+@property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateResultSet;
+@property (nonatomic, readonly) TIKeyboardCandidateResultSet *candidates;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL showHiddenCandidatesOnly;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int usageTrackingMask;
 
 - (void)_candidateSelected:(id)arg1;
 - (id)activeCandidateList;

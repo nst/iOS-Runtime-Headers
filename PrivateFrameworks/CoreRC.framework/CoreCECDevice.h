@@ -14,16 +14,16 @@
     unsigned int _vendorID;
 }
 
-@property unsigned int cecVersion;
-@property(readonly) unsigned int deckStatus;
-@property unsigned char deckStatusInternal;
-@property unsigned int deviceType;
-@property BOOL isActiveSource;
-@property unsigned char logicalAddress;
-@property unsigned int physicalAddress;
-@property unsigned int powerStatus;
-@property(readonly) BOOL systemAudioControlEnabled;
-@property unsigned int vendorID;
+@property (nonatomic) unsigned int cecVersion;
+@property (nonatomic, readonly) unsigned int deckStatus;
+@property (nonatomic) unsigned char deckStatusInternal;
+@property (nonatomic) unsigned int deviceType;
+@property (nonatomic) BOOL isActiveSource;
+@property (nonatomic) unsigned char logicalAddress;
+@property (nonatomic) unsigned int physicalAddress;
+@property (nonatomic) unsigned int powerStatus;
+@property (nonatomic, readonly) BOOL systemAudioControlEnabled;
+@property (nonatomic) unsigned int vendorID;
 
 + (BOOL)supportsSecureCoding;
 

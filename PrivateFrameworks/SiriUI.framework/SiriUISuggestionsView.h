@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUISuggestionsViewDelegate>, NSArray, NSMutableOrderedSet, NSString, NSTimer, SiriUIAcousticIDSpinner, UIColor, UILabel;
-
 @interface SiriUISuggestionsView : UIView {
     SiriUIAcousticIDSpinner *_acousticIDSpinner;
     struct CGPoint { 
@@ -27,13 +25,13 @@
     NSTimer *_updateSuggestionsTimer;
 }
 
-@property struct CGPoint { float x1; float x2; } contentOffset;
-@property <SiriUISuggestionsViewDelegate> * delegate;
-@property(copy) NSString * headerText;
-@property(copy) NSString * largeSubheaderText;
-@property int orientation;
-@property(copy) NSString * subheaderText;
-@property(copy) UIColor * textColor;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic) <SiriUISuggestionsViewDelegate> *delegate;
+@property (nonatomic, copy) NSString *headerText;
+@property (nonatomic, copy) NSString *largeSubheaderText;
+@property (nonatomic) int orientation;
+@property (nonatomic, copy) NSString *subheaderText;
+@property (nonatomic, copy) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (void)_animateHeaderIn;
@@ -58,7 +56,7 @@
 - (void)_updateSuggestions;
 - (double)_updateSuggestionsDelay;
 - (void)acousticIDSpinnerDidHide:(id)arg1;
-- (void)animateOutWithCompletion:(id)arg1;
+- (void)animateOutWithCompletion:(id /* block */)arg1;
 - (void)clearCurrentSuggestions;
 - (struct CGPoint { float x1; float x2; })contentOffset;
 - (id)delegate;

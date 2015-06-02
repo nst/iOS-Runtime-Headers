@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUColor;
+@interface TSDMutableCurvedShadow : TSDCurvedShadow
 
-@interface TSDMutableCurvedShadow : TSDCurvedShadow {
-}
-
-@property(copy) TSUColor * TSUColor;
-@property float angle;
-@property struct CGColor { }* color;
-@property float curve;
-@property(getter=isEnabled) BOOL enabled;
-@property float offset;
-@property float opacity;
-@property float radius;
+@property (nonatomic, copy) TSUColor *TSUColor;
+@property (nonatomic) float angle;
+@property (nonatomic) struct CGColor { }*color;
+@property (nonatomic) float curve;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) float offset;
+@property (nonatomic) float opacity;
+@property (nonatomic) float radius;
 
 - (void)setAngle:(float)arg1;
 - (void)setColor:(struct CGColor { }*)arg1;

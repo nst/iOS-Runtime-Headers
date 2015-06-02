@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MSVSystemDialogOptions, NSArray, NSMutableArray;
-
 @interface MSVSystemDialog : NSObject {
     struct __CFRunLoopSource { } *_activeRunLoopSource;
     MSVSystemDialogOptions *_options;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pendingCompletion;
-
+    id /* block */ _pendingCompletion;
     struct __CFUserNotification { } *_presentedUserNotification;
     NSMutableArray *_textFields;
 }
 
-@property struct __CFRunLoopSource { }* activeRunLoopSource;
-@property(readonly) MSVSystemDialogOptions * options;
-@property(copy) id pendingCompletion;
-@property struct __CFUserNotification { }* presentedUserNotification;
-@property(readonly) NSArray * textFields;
+@property (nonatomic) struct __CFRunLoopSource { }*activeRunLoopSource;
+@property (nonatomic, readonly) MSVSystemDialogOptions *options;
+@property (nonatomic, copy) id /* block */ pendingCompletion;
+@property (nonatomic) struct __CFUserNotification { }*presentedUserNotification;
+@property (nonatomic, readonly) NSArray *textFields;
 
 + (id)passwordAlertWithOptions:(id)arg1;
 + (id)systemDialogWithOptions:(id)arg1;
@@ -37,11 +27,11 @@
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1;
 - (id)options;
-- (id)pendingCompletion;
-- (void)presentWithCompletion:(id)arg1;
+- (id /* block */)pendingCompletion;
+- (void)presentWithCompletion:(id /* block */)arg1;
 - (struct __CFUserNotification { }*)presentedUserNotification;
 - (void)setActiveRunLoopSource:(struct __CFRunLoopSource { }*)arg1;
-- (void)setPendingCompletion:(id)arg1;
+- (void)setPendingCompletion:(id /* block */)arg1;
 - (void)setPresentedUserNotification:(struct __CFUserNotification { }*)arg1;
 - (id)textFields;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface HMDPowerManager : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _ethernetActive;
@@ -14,7 +12,7 @@
     BOOL _started;
 }
 
-@property(getter=isNetworkAccessRequired) BOOL networkAccessRequired;
+@property (getter=isNetworkAccessRequired, nonatomic) BOOL networkAccessRequired;
 
 - (void).cxx_destruct;
 - (long)_ensureNetworkInterfaceMonitorStarted;

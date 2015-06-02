@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString, NSURL;
-
 @interface EKCalendarEventInvitationNotificationAttendee : NSObject <EKIdentityProtocol> {
     NSString *_comment;
     BOOL _commentChanged;
@@ -16,19 +14,19 @@
     NSURL *_url;
 }
 
-@property(readonly) NSString * comment;
-@property(readonly) BOOL commentChanged;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * emailAddress;
-@property(readonly) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * lastName;
-@property(readonly) NSString * name;
-@property(readonly) int participantStatus;
-@property(readonly) BOOL statusChanged;
-@property(readonly) Class superclass;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSString *comment;
+@property (nonatomic, readonly) BOOL commentChanged;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *emailAddress;
+@property (nonatomic, readonly) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int participantStatus;
+@property (nonatomic, readonly) BOOL statusChanged;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *url;
 
 - (id)comment;
 - (BOOL)commentChanged;

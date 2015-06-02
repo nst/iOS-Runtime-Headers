@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableArray;
-
 @interface EventSystemManager : NSObject {
     int accelEventIndex;
     int accelUpdateInternalUS;

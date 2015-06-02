@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIViewServiceDeputyXPCInterfaceInvocationFactory : NSObject {
-}
+@interface _UIViewServiceDeputyXPCInterfaceInvocationFactory : NSObject
 
 + (id)invocationForConnectionSelector:(id)arg1;
 

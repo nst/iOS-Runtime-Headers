@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class AMSBTLEConnectionManager, NSMutableArray, NSString, NSTimer, UIActivityIndicatorView, UIBarButtonItem;
-
 @interface CABTMIDICentralViewController : UITableViewController <BTLEConnectionTable, UITableViewDataSource, UITableViewDelegate> {
     UIBarButtonItem *cancelButton;
     AMSBTLEConnectionManager *connectionManager;
@@ -17,10 +15,10 @@
     NSMutableArray *peripheralList;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)activateController:(id)arg1;
 - (void)cancelAction:(id)arg1;

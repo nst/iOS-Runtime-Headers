@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, UIDatePicker, UIViewController;
-
 @interface ABPropertyDateEditingCell : ABPropertySimpleEditingCell <ABPickerControllerDelegate, UITextFieldDelegate> {
     UIViewController *_contentViewController;
     UIDatePicker *_datePicker;
 }
 
-@property(retain) UIViewController * contentViewController;
-@property(retain) UIDatePicker * datePicker;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIViewController *contentViewController;
+@property (nonatomic, retain) UIDatePicker *datePicker;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)_shouldUseYearlessPickerForDateComponents:(id)arg1;
 - (id)contentViewController;

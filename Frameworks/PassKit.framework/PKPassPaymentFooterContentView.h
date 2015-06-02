@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentPass, UIButton, UIView;
-
 @interface PKPassPaymentFooterContentView : UIView {
     UIView *_bottomRule;
     UIButton *_infoButton;
@@ -11,10 +9,10 @@
     PKPaymentPass *_pass;
 }
 
-@property(readonly) UIView * bottomRule;
-@property(readonly) UIButton * infoButton;
-@property(readonly) BOOL isVisibleAsFooter;
-@property(readonly) PKPaymentPass * pass;
+@property (nonatomic, readonly) UIView *bottomRule;
+@property (nonatomic, readonly) UIButton *infoButton;
+@property (nonatomic, readonly) BOOL isVisibleAsFooter;
+@property (nonatomic, readonly) PKPaymentPass *pass;
 
 - (void)_infoButtonPressed:(id)arg1;
 - (id)bottomRule;

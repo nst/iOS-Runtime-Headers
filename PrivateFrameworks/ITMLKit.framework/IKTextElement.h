@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, UIColor;
-
 @interface IKTextElement : IKViewElement {
     NSAttributedString *_text;
     NSMutableArray *_textBadges;
     unsigned int _textStyle;
 }
 
-@property(readonly) unsigned int alignment;
-@property(readonly) NSArray * badges;
-@property(readonly) UIColor * color;
-@property(readonly) int maxLines;
-@property(retain,readonly) NSAttributedString * text;
-@property(retain) NSMutableArray * textBadges;
-@property(readonly) unsigned int textStyle;
+@property (nonatomic, readonly) unsigned int alignment;
+@property (nonatomic, readonly) NSArray *badges;
+@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic, readonly) int maxLines;
+@property (nonatomic, readonly, retain) NSAttributedString *text;
+@property (nonatomic, retain) NSMutableArray *textBadges;
+@property (nonatomic, readonly) unsigned int textStyle;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 + (BOOL)shouldParseChildDOMElements;
 
@@ -36,8 +36,11 @@
 - (int)maxLines;
 - (void)setTextBadges:(id)arg1;
 - (id)text;
-- (id)textAttributes;
 - (id)textBadges;
 - (unsigned int)textStyle;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (id)textAttributes;
 
 @end

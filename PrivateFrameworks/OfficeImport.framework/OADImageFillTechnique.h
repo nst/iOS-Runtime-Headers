@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADImageFillTechnique : OADProperties <NSCopying> {
-}
+@interface OADImageFillTechnique : OADProperties <NSCopying>
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;

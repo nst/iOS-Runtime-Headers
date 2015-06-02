@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSDate, NSDictionary, NSIndexPath, NSMutableArray, NSString, RUIBarButtonItem, RUIObjectModel<RUITableViewDelegate>, RUIPhotoPicker, RUITableHeaderView, RUITableViewRow, UIDatePicker, UIPickerView, UITableView, _UIBackdropView;
-
 @interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITableViewSectionDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
@@ -29,24 +27,24 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) RUITableViewRow * defaultFirstResponderRow;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * footerViewAttributes;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * headerTitle;
-@property(readonly) RUITableHeaderView * headerView;
-@property(retain) NSDictionary * headerViewAttributes;
-@property RUIObjectModel<RUITableViewDelegate> * objectModel;
-@property(readonly) NSMutableArray * sections;
-@property(getter=isShowingPicker,readonly) BOOL showingPicker;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) RUITableViewRow *defaultFirstResponderRow;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *footerViewAttributes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *headerTitle;
+@property (nonatomic, readonly) RUITableHeaderView *headerView;
+@property (nonatomic, retain) NSDictionary *headerViewAttributes;
+@property (nonatomic) RUIObjectModel<RUITableViewDelegate> *objectModel;
+@property (nonatomic, readonly) NSMutableArray *sections;
+@property (getter=isShowingPicker, nonatomic, readonly) BOOL showingPicker;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_becomeFirstResponderAtIndexPath:(id)arg1;
 - (void)_clearPickers;
 - (void)_datePickerRevert;
-- (void)_enumerateRowsUsingBlock:(id)arg1;
+- (void)_enumerateRowsUsingBlock:(id /* block */)arg1;
 - (void)_handleLinkPress:(id)arg1 attributes:(id)arg2;
 - (void)_hideDatePickerNavBarButtonsIfNeeded;
 - (id)_objectModelIndexPathForIndexPath:(id)arg1;
@@ -75,12 +73,12 @@
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)rowActivatedLink:(id)arg1 attributes:(id)arg2;
-- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id)arg3;
+- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
 - (void)rowDidChange:(id)arg1;
 - (void)rowDidEndEditing:(id)arg1;
 - (void)rowIsFirstResponder:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)sectionActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id)arg3;
+- (void)sectionActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
 - (id)sections;
 - (void)setAttributes:(id)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;

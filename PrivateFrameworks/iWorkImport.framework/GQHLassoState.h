@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQHXML;
-
 @interface GQHLassoState : GQHState {
     struct __CFString { } *mCssUri;
     unsigned int mCurrentDrawableZOrder;

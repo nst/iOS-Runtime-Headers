@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMessageWebProtocol : NSURLProtocol {
-}
+@interface MFMessageWebProtocol : NSURLProtocol
 
 + (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;

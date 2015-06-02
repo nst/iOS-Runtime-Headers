@@ -6,7 +6,7 @@
     unsigned int _eventType;
 }
 
-@property unsigned int eventType;
+@property (nonatomic) unsigned int eventType;
 
 - (id)description;
 - (unsigned int)eventType;

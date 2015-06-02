@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPMetadataCharacteristicValue;
-
 @interface HMDHAPMetadataCharacteristicValue : NSObject <NSSecureCoding> {
     HAPMetadataCharacteristicValue *_hapValueMetadata;
 }
 
-@property(retain) HAPMetadataCharacteristicValue * hapValueMetadata;
+@property (nonatomic, retain) HAPMetadataCharacteristicValue *hapValueMetadata;
 
 + (BOOL)supportsSecureCoding;
 

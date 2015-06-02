@@ -2,58 +2,44 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKChallenge, NSArray, NSString;
-
 @interface GKHostedChallengeIssueController : GKHostedViewController {
     GKChallenge *_challenge;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSString *_defaultMessage;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _dismissCompletionHandler;
-
+    id /* block */ _dismissCompletionHandler;
     BOOL _forcePicker;
     NSArray *_players;
 }
 
-@property(retain) GKChallenge * challenge;
-@property(copy) id completionHandler;
-@property(copy) NSString * defaultMessage;
-@property(copy) id dismissCompletionHandler;
-@property BOOL forcePicker;
-@property(retain) NSArray * players;
+@property (nonatomic, retain) GKChallenge *challenge;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) NSString *defaultMessage;
+@property (nonatomic, copy) id /* block */ dismissCompletionHandler;
+@property (nonatomic) BOOL forcePicker;
+@property (nonatomic, retain) NSArray *players;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
-+ (id)hostedIssueControllerWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
++ (id)hostedIssueControllerWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id /* block */)arg4;
 + (void)presentHostedIssueControllerWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3;
 + (id)presentationQueue;
 
 - (id)_remote;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)challenge;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)defaultMessage;
-- (id)dismissCompletionHandler;
+- (id /* block */)dismissCompletionHandler;
 - (void)doneWithPlayers:(id)arg1 message:(id)arg2;
 - (BOOL)forcePicker;
 - (id)hostSideViewControllerClassName;
-- (id)initWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id)arg4;
+- (id)initWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)players;
 - (id)serviceSideViewControllerClassName;
 - (void)setChallenge:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDefaultMessage:(id)arg1;
-- (void)setDismissCompletionHandler:(id)arg1;
+- (void)setDismissCompletionHandler:(id /* block */)arg1;
 - (void)setForcePicker:(BOOL)arg1;
 - (void)setPlayers:(id)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;

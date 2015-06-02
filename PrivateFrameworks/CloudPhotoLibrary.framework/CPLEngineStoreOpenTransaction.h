@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLEngineStoreOpenTransaction : CPLEngineStoreTransaction {
-}
+@interface CPLEngineStoreOpenTransaction : CPLEngineStoreTransaction
 
 @end

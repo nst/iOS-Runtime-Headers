@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarExternalTranslucentForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes {
-}
+@interface UIStatusBarExternalTranslucentForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes
 
 @end

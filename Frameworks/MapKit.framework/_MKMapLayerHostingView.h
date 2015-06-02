@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class VKMapView;
-
 @interface _MKMapLayerHostingView : UIView {
     VKMapView *_mapView;
 }
 
-@property(retain) VKMapView * mapView;
+@property (nonatomic, retain) VKMapView *mapView;
 
 + (Class)layerClass;
 

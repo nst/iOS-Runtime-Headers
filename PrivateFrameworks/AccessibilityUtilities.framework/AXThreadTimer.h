@@ -2,36 +2,26 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AXThreadTimerTask, NSString, NSThread;
-
 @interface AXThreadTimer : NSObject <AXTimer> {
     BOOL _automaticallyCancelPendingBlockUponSchedulingNewBlock;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelBlock;
-
+    id /* block */ _cancelBlock;
     AXThreadTimerTask *_task;
     NSThread *_thread;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isPending,readonly) BOOL pending;
-@property(readonly) Class superclass;
-@property(retain) AXThreadTimerTask * task;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic) BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
+@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isPending, nonatomic, readonly) BOOL pending;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) AXThreadTimerTask *task;
 
 - (void)_runAfterDelay:(id)arg1;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2 cancelBlock:(id)arg3;
+- (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2 cancelBlock:(id /* block */)arg3;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;

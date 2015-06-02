@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSHashTable, NSObject<OS_dispatch_queue>, NSString, TSPDatabase;
-
 @interface TSPDatabaseReader : TSPReader <TSPDatabaseUnarchiverDelegate> {
     TSPDatabase *_database;
     NSObject<OS_dispatch_queue> *_databaseQueue;
@@ -41,20 +34,20 @@
     } _readIdentifiers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL didFinishResolvingReferences;
-@property(readonly) unsigned long long fileFormatVersion;
-@property(readonly) BOOL hasDocumentVersionUUID;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
-@property(readonly) BOOL isFromCopy;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL didFinishResolvingReferences;
+@property (nonatomic, readonly) unsigned long long fileFormatVersion;
+@property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isCrossAppPaste;
+@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
+@property (nonatomic, readonly) BOOL isFromCopy;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id)arg2;
+- (void)beginReadingWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataForOldDataArchive:(const struct DatabaseDataArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; unsigned long long x8; unsigned int x9; bool x10; }*)arg1;
 - (void)dealloc;
 - (void)didUnarchiveObject:(id)arg1 withUnarchiver:(id)arg2;

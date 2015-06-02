@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class CLLocation, NSString, NSURL;
-
 @interface PKMerchant : NSObject <NSSecureCoding> {
     NSString *_industryCategory;
     int _industryCode;
@@ -17,18 +15,18 @@
     NSURL *_url;
 }
 
-@property(readonly) NSString * displayName;
-@property(copy) NSString * industryCategory;
-@property int industryCode;
-@property(copy) CLLocation * location;
-@property double locationLatitude;
-@property double locationLongitude;
-@property unsigned long long mapsIdentifier;
-@property(copy) NSString * mapsName;
-@property(copy) NSString * name;
-@property(copy) NSString * phoneNumber;
-@property(copy) NSString * rawName;
-@property(setter=setURL:,copy) NSURL * url;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, copy) NSString *industryCategory;
+@property (nonatomic) int industryCode;
+@property (nonatomic, copy) CLLocation *location;
+@property (nonatomic) double locationLatitude;
+@property (nonatomic) double locationLongitude;
+@property (nonatomic) unsigned long long mapsIdentifier;
+@property (nonatomic, copy) NSString *mapsName;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *rawName;
+@property (setter=setURL:, nonatomic, copy) NSURL *url;
 
 + (BOOL)supportsSecureCoding;
 

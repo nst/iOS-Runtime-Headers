@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class <BKSAlternateSystemAppDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSXPCConnection;
-
 @interface BKSAlternateSystemApp : NSObject <BKSAlternateSystemAppClientProtocol> {
     NSString *_bundleId;
     NSXPCConnection *_connection;
@@ -14,17 +12,17 @@
     BOOL _stateChangeWaiter;
 }
 
-@property(copy) NSString * bundleId;
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <BKSAlternateSystemAppDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property int state;
-@property(retain) NSObject<OS_dispatch_semaphore> * stateChangeSemaphore;
-@property BOOL stateChangeWaiter;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *bundleId;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BKSAlternateSystemAppDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *stateChangeSemaphore;
+@property (nonatomic) BOOL stateChangeWaiter;
+@property (readonly) Class superclass;
 
 - (void)_handleInterruptedConnection;
 - (void)_handleInvalidatedConnection;

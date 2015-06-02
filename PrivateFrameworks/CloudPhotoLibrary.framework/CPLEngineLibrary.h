@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLConfiguration, CPLEngineScheduler, CPLEngineStore, CPLEngineSyncManager, CPLEngineSystemMonitor, CPLEngineTransport, CPLPlatformObject, CPLStatistics, CPLStatus, NSArray, NSDate, NSError, NSHashTable, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
     NSHashTable *_attachedObjects;
     NSURL *_clientLibraryBaseURL;
@@ -27,48 +25,48 @@
     CPLEngineTransport *_transport;
 }
 
-@property(copy,readonly) NSURL * clientLibraryBaseURL;
-@property(copy,readonly) NSURL * cloudLibraryResourceStorageURL;
-@property(copy,readonly) NSURL * cloudLibraryStateStorageURL;
-@property(readonly) CPLConfiguration * configuration;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDate * exitDeleteTime;
-@property BOOL hasChangesToProcess;
-@property(readonly) unsigned int hash;
-@property BOOL iCloudLibraryExists;
-@property BOOL iCloudLibraryHasBeenWiped;
-@property BOOL isExceedingQuota;
-@property(copy,readonly) NSString * libraryIdentifier;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) CPLEngineScheduler * scheduler;
-@property(readonly) CPLStatistics * statistics;
-@property(readonly) CPLEngineStore * store;
-@property(readonly) Class superclass;
-@property(readonly) CPLEngineSyncManager * syncManager;
-@property(readonly) CPLEngineSystemMonitor * systemMonitor;
-@property(readonly) CPLEngineTransport * transport;
+@property (nonatomic, readonly, copy) NSURL *clientLibraryBaseURL;
+@property (nonatomic, readonly, copy) NSURL *cloudLibraryResourceStorageURL;
+@property (nonatomic, readonly, copy) NSURL *cloudLibraryStateStorageURL;
+@property (nonatomic, readonly) CPLConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDate *exitDeleteTime;
+@property (nonatomic) BOOL hasChangesToProcess;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL iCloudLibraryExists;
+@property (nonatomic) BOOL iCloudLibraryHasBeenWiped;
+@property (nonatomic) BOOL isExceedingQuota;
+@property (nonatomic, readonly, copy) NSString *libraryIdentifier;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (nonatomic, readonly) CPLEngineScheduler *scheduler;
+@property (nonatomic, readonly) CPLStatistics *statistics;
+@property (nonatomic, readonly) CPLEngineStore *store;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) CPLEngineSyncManager *syncManager;
+@property (nonatomic, readonly) CPLEngineSystemMonitor *systemMonitor;
+@property (nonatomic, readonly) CPLEngineTransport *transport;
 
 + (id)platformImplementationProtocol;
 
 - (void).cxx_destruct;
-- (void)_closeNextComponent:(id)arg1 deactivate:(BOOL)arg2 lastError:(id)arg3 completionHandler:(id)arg4;
-- (void)_openNextComponent:(id)arg1 completionHandler:(id)arg2;
-- (void)_performBlockWithLibrary:(BOOL)arg1 enumerateAttachedObjects:(id)arg2;
+- (void)_closeNextComponent:(id)arg1 deactivate:(BOOL)arg2 lastError:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_openNextComponent:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_performBlockWithLibrary:(BOOL)arg1 enumerateAttachedObjects:(id /* block */)arg2;
 - (void)_updateTotalAssetCountWithAssetCounts:(id)arg1;
-- (void)attachObject:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)attachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)clientLibraryBaseURL;
-- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudLibraryResourceStorageURL;
 - (id)cloudLibraryStateStorageURL;
 - (id)componentName;
 - (id)configuration;
 - (id)description;
-- (void)detachObject:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)detachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)exitDeleteTime;
-- (void)getListOfComponentsWithCompletionHandler:(id)arg1;
-- (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id)arg2;
-- (void)getStatusForComponents:(id)arg1 completionHandler:(id)arg2;
+- (void)getListOfComponentsWithCompletionHandler:(id /* block */)arg1;
+- (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getStatusForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)hasChangesToProcess;
 - (BOOL)iCloudLibraryExists;
 - (BOOL)iCloudLibraryHasBeenWiped;
@@ -82,7 +80,7 @@
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didProgress:(float)arg2;
 - (void)notifyAttachedObjectsUploadTaskDidStart:(id)arg1;
-- (void)openWithCompletionHandler:(id)arg1;
+- (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
 - (void)reportLibraryCorrupted;
 - (void)reportUnsuccessfulSync;

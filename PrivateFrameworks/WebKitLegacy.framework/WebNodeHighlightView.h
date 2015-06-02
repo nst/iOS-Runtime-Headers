@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSMutableArray, WebNodeHighlight;
-
 @interface WebNodeHighlightView : WAKView {
     NSMutableArray *_layers;
     WebNodeHighlight *_webNodeHighlight;

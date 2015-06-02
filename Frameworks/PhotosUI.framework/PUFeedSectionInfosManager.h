@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUFeedSectionInfosManagerDelegate>, NSDate, NSMapTable, NSMutableArray, PLPhotoLibrary;
-
 @interface PUFeedSectionInfosManager : NSObject <PLAssetChangeObserver, PLCloudCommentsChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
     <PUFeedSectionInfosManagerDelegate> *_delegate;
     NSDate *_earliestDate;
@@ -15,13 +13,13 @@
     NSMapTable *_sectionInfosByCloudFeedEntry;
 }
 
-@property <PUFeedSectionInfosManagerDelegate> * delegate;
+@property (nonatomic) <PUFeedSectionInfosManagerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_didFinishPostingNotifications:(id)arg1;
 - (void)_getEarliestDate:(out id*)arg1 mostRecentEntries:(out id*)arg2 forBatchWithLatestDate:(id)arg3;
 - (void)_rebuildSectionInfos;
-- (id)_sectionInfoSortingComparator;
+- (id /* block */)_sectionInfoSortingComparator;
 - (BOOL)_shouldPerformFullReloadForFeedEntriesChangeNotifications:(id)arg1 commentsChangeNotifications:(id)arg2;
 - (void)_updateSectionInfosForFeedEntriesChangeNotifications:(id)arg1 commentsChangeNotifications:(id)arg2 assetsChangeNotifications:(id)arg3;
 - (void)assetsDidChange:(id)arg1;

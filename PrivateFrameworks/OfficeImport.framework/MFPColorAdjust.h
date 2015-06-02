@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDictionary, OITSUColor;
-
 @interface MFPColorAdjust : NSObject {
     struct MFPColorMatrix { float x1[5][5]; } *mColorMatrix;
     int mColorMatrixFlags;

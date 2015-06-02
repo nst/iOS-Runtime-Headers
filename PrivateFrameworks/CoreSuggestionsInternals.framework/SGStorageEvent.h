@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSArray, NSData, NSSet, NSString, SGDuplicateKey, SGSimpleTimeRange;
-
 @interface SGStorageEvent : NSObject {
     NSString *_content;
     double _creationTimestamp;
@@ -19,18 +17,18 @@
     SGSimpleTimeRange *_when;
 }
 
-@property(readonly) NSString * content;
-@property(readonly) double creationTimestamp;
-@property(readonly) BOOL curated;
-@property(readonly) SGDuplicateKey * duplicateKey;
-@property(readonly) double lastModifiedTimestamp;
-@property(readonly) NSArray * locations;
-@property(readonly) NSString * sourceKey;
-@property(readonly) unsigned int state;
-@property(readonly) NSData * structuredData;
-@property(readonly) NSSet * tags;
-@property(readonly) NSString * title;
-@property(readonly) SGSimpleTimeRange * when;
+@property (nonatomic, readonly) NSString *content;
+@property (nonatomic, readonly) double creationTimestamp;
+@property (nonatomic, readonly) BOOL curated;
+@property (nonatomic, readonly) SGDuplicateKey *duplicateKey;
+@property (nonatomic, readonly) double lastModifiedTimestamp;
+@property (nonatomic, readonly) NSArray *locations;
+@property (nonatomic, readonly) NSString *sourceKey;
+@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) NSData *structuredData;
+@property (nonatomic, readonly) NSSet *tags;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) SGSimpleTimeRange *when;
 
 + (id)storageEventFromEntity:(id)arg1 usingStore:(id)arg2;
 

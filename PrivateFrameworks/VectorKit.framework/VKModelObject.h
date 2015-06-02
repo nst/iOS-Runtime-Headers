@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray, NSObject<OS_dispatch_semaphore>, VKModelObject, VKStyleManager, VKWorld;
-
 @interface VKModelObject : NSObject {
     BOOL _active;
     struct map<md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> >, std::__1::less<md::CommandBufferId>, std::__1::allocator<std::__1::pair<const md::CommandBufferId, std::__1::unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > > > > { 
@@ -41,11 +34,11 @@
     VKWorld *_world;
 }
 
-@property(getter=isActive) BOOL active;
-@property(readonly) VKStyleManager * styleManager;
-@property(readonly) NSArray * submodels;
-@property(readonly) VKModelObject * supermodel;
-@property VKWorld * world;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) NSArray *submodels;
+@property (nonatomic, readonly) VKModelObject *supermodel;
+@property (nonatomic) VKWorld *world;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

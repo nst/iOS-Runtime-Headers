@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>, PLCloudPhotoLibraryManager, PLPhotoLibrary;
-
 @interface PLCloudPruneAgent : PLCloudScenarioProducer {
     NSObject<OS_dispatch_queue> *_agentQueue;
     long _lastPruneRequest;
@@ -12,19 +10,19 @@
     struct { 
         int retries; 
         int state; 
-    } _walkStatus[5];
+    } _walkStatus;
 }
 
-@property(retain) PLPhotoLibrary * localLibrary;
-@property(retain) PLCloudPhotoLibraryManager * remoteLibrary;
+@property (retain) PLPhotoLibrary *localLibrary;
+@property (retain) PLCloudPhotoLibraryManager *remoteLibrary;
 
-- (void)_beginPruningResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id)arg4;
+- (void)_beginPruningResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 startingAtOffset:(unsigned int)arg3 then:(id /* block */)arg4;
 - (void)activate;
 - (void)appInForeground:(id)arg1;
 - (unsigned int)batchSize;
-- (void)beginPruningResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id)arg3;
+- (void)beginPruningResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id /* block */)arg3;
 - (void)cacheDeleteRequestReceived:(id)arg1;
-- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned int)arg2 startingAtOffset:(unsigned int)arg3 completionHandler:(id)arg4;
+- (void)cplResourcesForFetchRequest:(id)arg1 ofType:(unsigned int)arg2 startingAtOffset:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (void)emergencyPrune;
 - (id)init;
@@ -32,9 +30,9 @@
 - (void)pruneOlderMediums;
 - (void)pruneOlderOriginals;
 - (void)pruneResources;
-- (void)pruneResources:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)pruneResourcesOfType:(unsigned int)arg1 createdBeforeDate:(id)arg2 then:(id)arg3;
-- (void)pruneResourcesOfType:(unsigned int)arg1 then:(id)arg2;
+- (void)pruneResources:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)pruneResourcesOfType:(unsigned int)arg1 createdBeforeDate:(id)arg2 then:(id /* block */)arg3;
+- (void)pruneResourcesOfType:(unsigned int)arg1 then:(id /* block */)arg2;
 - (BOOL)pruningEnabled;
 - (id)remoteLibrary;
 - (void)resetWalkStatus;

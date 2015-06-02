@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSURetainedPointerKeyDictionary;
-
 @interface TSTRWRetainedPointerKeyDictionary : NSObject {
     struct _opaque_pthread_rwlock_t { 
         long __sig; 

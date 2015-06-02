@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitVarispeed : AVAudioUnitTimeEffect {
-}
+@interface AVAudioUnitVarispeed : AVAudioUnitTimeEffect
 
-@property float rate;
+@property (nonatomic) float rate;
 
 - (id)init;
 - (float)rate;

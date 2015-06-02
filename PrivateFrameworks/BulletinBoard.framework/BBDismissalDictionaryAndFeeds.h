@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString;
-
 @interface BBDismissalDictionaryAndFeeds : BBDismissalItem {
     NSString *_dismissalHash;
     double _dismissalTimeInterval;
 }
 
-@property(copy,readonly) NSString * dismissalHash;
-@property(readonly) double dismissalTimeInterval;
+@property (nonatomic, readonly, copy) NSString *dismissalHash;
+@property (nonatomic, readonly) double dismissalTimeInterval;
 
 - (void)dealloc;
 - (id)description;

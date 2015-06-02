@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSNumberFormatter, NSString;
-
 @interface PLValue : NSObject {
     short _formatter;
     NSString *_unit;
@@ -11,9 +9,9 @@
 }
 
 @property short formatter;
-@property(readonly) NSNumberFormatter * numberFormatter;
-@property(retain) NSString * unit;
-@property(retain) id value;
+@property (readonly) NSNumberFormatter *numberFormatter;
+@property (nonatomic, retain) NSString *unit;
+@property (nonatomic, retain) id value;
 
 + (id)formattedStringForDate:(id)arg1;
 + (BOOL)isFormater:(short)arg1 validForObject:(id)arg2;

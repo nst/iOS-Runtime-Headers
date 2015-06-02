@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSString, PHQuery;
-
 @interface PHCollectionList : PHCollection {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _childCollectionsSortingComparator;
-
+    id /* block */ _childCollectionsSortingComparator;
     int _collectionListSubtype;
     int _collectionListType;
     NSArray *_collections;
@@ -28,17 +18,17 @@
     unsigned int _unreadAssetCollectionsCount;
 }
 
-@property(copy,readonly) id childCollectionsSortingComparator;
-@property(readonly) int collectionListSubtype;
-@property(readonly) int collectionListType;
-@property(readonly) NSArray * collections;
-@property(readonly) NSDate * endDate;
-@property(readonly) unsigned int estimatedChildCollectionCount;
-@property(readonly) NSArray * localizedLocationNames;
-@property(readonly) PHQuery * query;
-@property(readonly) NSDate * startDate;
-@property(readonly) NSString * transientIdentifier;
-@property(readonly) unsigned int unreadAssetCollectionsCount;
+@property (nonatomic, readonly, copy) id /* block */ childCollectionsSortingComparator;
+@property (nonatomic, readonly) int collectionListSubtype;
+@property (nonatomic, readonly) int collectionListType;
+@property (nonatomic, readonly) NSArray *collections;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) unsigned int estimatedChildCollectionCount;
+@property (nonatomic, readonly) NSArray *localizedLocationNames;
+@property (nonatomic, readonly) PHQuery *query;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) NSString *transientIdentifier;
+@property (nonatomic, readonly) unsigned int unreadAssetCollectionsCount;
 
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchCollectionListsContainingCollection:(id)arg1 options:(id)arg2;
@@ -66,7 +56,7 @@
 - (BOOL)canContainCollections;
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (Class)changeRequestClass;
-- (id)childCollectionsSortingComparator;
+- (id /* block */)childCollectionsSortingComparator;
 - (BOOL)collectionHasFixedOrder;
 - (int)collectionListSubtype;
 - (int)collectionListType;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSData, NSString;
-
 @interface HDCodableTimestampedKeyValuePair : PBCodable <NSCopying> {
     NSData *_bytesValue;
     struct { 
@@ -18,18 +16,18 @@
     double _timestamp;
 }
 
-@property(retain) NSData * bytesValue;
-@property(readonly) BOOL hasBytesValue;
-@property(readonly) BOOL hasKey;
-@property BOOL hasNumberDoubleValue;
-@property BOOL hasNumberIntValue;
-@property(readonly) BOOL hasStringValue;
-@property BOOL hasTimestamp;
-@property(retain) NSString * key;
-@property double numberDoubleValue;
-@property long long numberIntValue;
-@property(retain) NSString * stringValue;
-@property double timestamp;
+@property (nonatomic, retain) NSData *bytesValue;
+@property (nonatomic, readonly) BOOL hasBytesValue;
+@property (nonatomic, readonly) BOOL hasKey;
+@property (nonatomic) BOOL hasNumberDoubleValue;
+@property (nonatomic) BOOL hasNumberIntValue;
+@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic) double numberDoubleValue;
+@property (nonatomic) long long numberIntValue;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
 - (id)bytesValue;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSLock, NSMutableArray;
-
 @interface SUGradient : NSObject <NSCoding, NSCopying> {
     NSMutableArray *_colorStops;
     NSLock *_lock;
@@ -25,12 +23,12 @@
     int _type;
 }
 
-@property(readonly) NSArray * colorStopColors;
-@property(readonly) NSArray * colorStopOffsets;
-@property(readonly) int gradientType;
-@property(readonly) int numberOfColorStops;
-@property(readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p0;
-@property(readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p1;
+@property (readonly) NSArray *colorStopColors;
+@property (readonly) NSArray *colorStopOffsets;
+@property (readonly) int gradientType;
+@property (readonly) int numberOfColorStops;
+@property (readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p0;
+@property (readonly) struct SUGradientPoint { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } p1;
 
 + (id)gradientWithColor:(id)arg1;
 

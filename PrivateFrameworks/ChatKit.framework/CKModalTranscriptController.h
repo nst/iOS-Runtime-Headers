@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray;
-
 @interface CKModalTranscriptController : CKTranscriptController {
     BOOL _alreadySetUp;
     BOOL _cameraSelectionDisabled;
@@ -14,8 +12,8 @@
     NSMutableArray *_typesToInsert;
 }
 
-@property BOOL forceMMS;
-@property BOOL mimeType;
+@property (nonatomic) BOOL forceMMS;
+@property (nonatomic) BOOL mimeType;
 
 - (void)_conversationListDidFinishLoading:(id)arg1;
 - (BOOL)_insertMediaObject:(id)arg1;

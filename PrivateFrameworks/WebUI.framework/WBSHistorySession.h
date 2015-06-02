@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate;
-
 @interface WBSHistorySession : NSObject {
     NSDate *_startDate;
 }
 
-@property(readonly) BOOL isCurrentSession;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) BOOL isCurrentSession;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (id)currentSession;
 

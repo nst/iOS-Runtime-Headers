@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSString;
-
 @interface NEProxyServer : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_address;
     BOOL _authenticationRequired;
@@ -13,12 +11,12 @@
     NSString *_username;
 }
 
-@property(readonly) NSString * address;
+@property (readonly) NSString *address;
 @property BOOL authenticationRequired;
-@property(copy) NSString * password;
-@property(readonly) int port;
-@property(readonly) int type;
-@property(copy) NSString * username;
+@property (copy) NSString *password;
+@property (readonly) int port;
+@property (readonly) int type;
+@property (copy) NSString *username;
 
 + (BOOL)supportsSecureCoding;
 

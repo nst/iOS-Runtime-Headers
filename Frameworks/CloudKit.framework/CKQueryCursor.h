@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordZoneID, NSData;
-
 @interface CKQueryCursor : NSObject <NSCopying, NSSecureCoding> {
     NSData *_data;
     CKRecordZoneID *_zoneID;
 }
 
-@property(retain) NSData * data;
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (BOOL)supportsSecureCoding;
 

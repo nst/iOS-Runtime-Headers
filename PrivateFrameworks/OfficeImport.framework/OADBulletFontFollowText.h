@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADBulletFontFollowText : OADBulletFont {
-}
+@interface OADBulletFontFollowText : OADBulletFont
 
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

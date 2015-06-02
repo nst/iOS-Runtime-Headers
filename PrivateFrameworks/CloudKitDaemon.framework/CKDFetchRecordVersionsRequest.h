@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary, NSString;
-
 @interface CKDFetchRecordVersionsRequest : CKDURLRequest {
     NSArray *_desiredKeys;
     BOOL _isDeleted;
     NSString *_minimumVersionETag;
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordVersionsFetchedBlock;
-
+    id /* block */ _recordVersionsFetchedBlock;
 }
 
-@property(retain) NSArray * desiredKeys;
-@property BOOL isDeleted;
-@property(retain) NSString * minimumVersionETag;
-@property(retain) NSMutableDictionary * recordIDByRequestID;
-@property(retain) NSArray * recordIDs;
-@property(copy) id recordVersionsFetchedBlock;
+@property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic) BOOL isDeleted;
+@property (nonatomic, retain) NSString *minimumVersionETag;
+@property (nonatomic, retain) NSMutableDictionary *recordIDByRequestID;
+@property (nonatomic, retain) NSArray *recordIDs;
+@property (nonatomic, copy) id /* block */ recordVersionsFetchedBlock;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
@@ -36,7 +26,7 @@
 - (int)operationType;
 - (id)recordIDByRequestID;
 - (id)recordIDs;
-- (id)recordVersionsFetchedBlock;
+- (id /* block */)recordVersionsFetchedBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
@@ -46,7 +36,7 @@
 - (void)setMinimumVersionETag:(id)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
-- (void)setRecordVersionsFetchedBlock:(id)arg1;
+- (void)setRecordVersionsFetchedBlock:(id /* block */)arg1;
 - (id)zoneIDsToLock;
 
 @end

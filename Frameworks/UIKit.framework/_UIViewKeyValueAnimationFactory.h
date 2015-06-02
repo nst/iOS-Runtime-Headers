@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIViewKeyValueAnimationFactory : NSObject {
-}
+@interface _UIViewKeyValueAnimationFactory : NSObject
 
 + (id)animationForKeyPathsAndRelativeValues:(id)arg1;
 + (id)animationForKeyPathsAndValues:(id)arg1;

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <BRNonLocalVersionReceiving>, BRCItemID, BRCServerZone, BRCStatInfo, BRCXPCClient, CKRecordID, NSString, NSURL;
-
 @interface BRCNonLocalVersionsSender : _BRCOperation <BRCOperationSubclass, BRNonLocalVersionSending> {
     BRCXPCClient *_client;
     NSString *_currentEtag;
@@ -17,24 +11,20 @@
     NSURL *_physicalURL;
     <BRNonLocalVersionReceiving> *_receiver;
     CKRecordID *_recordID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reply;
-
+    id /* block */ _reply;
     BRCServerZone *_serverZone;
     BRCStatInfo *_st;
     struct NSObject { Class x1; } *_storage;
     NSString *_storagePathPrefix;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL includeCachedVersions;
-@property(readonly) NSURL * logicalURL;
-@property(readonly) NSURL * physicalURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL includeCachedVersions;
+@property (nonatomic, readonly) NSURL *logicalURL;
+@property (nonatomic, readonly) NSURL *physicalURL;
+@property (readonly) Class superclass;
 
 + (id)senderWithLookup:(id)arg1 client:(id)arg2 XPCReceiver:(id)arg3 error:(id*)arg4;
 
@@ -46,7 +36,7 @@
 - (BOOL)includeCachedVersions;
 - (id)initWithDocument:(id)arg1 serverItem:(id)arg2 relpath:(id)arg3 logicalURL:(id)arg4 client:(id)arg5 XPCReceiver:(id)arg6 error:(id*)arg7;
 - (oneway void)invalidate;
-- (void)listNonLocalVersionsWithReply:(id)arg1;
+- (void)listNonLocalVersionsWithReply:(id /* block */)arg1;
 - (id)logicalURL;
 - (void)main;
 - (id)physicalURL;

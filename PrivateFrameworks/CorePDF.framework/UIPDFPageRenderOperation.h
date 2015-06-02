@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPageRenderJob;
-
 @interface UIPDFPageRenderOperation : NSOperation {
     UIPDFPageRenderJob *_job;
     BOOL executing;
     BOOL finished;
 }
 
-@property(retain) UIPDFPageRenderJob * job;
+@property (retain) UIPDFPageRenderJob *job;
 
 - (void)completeOperation;
 - (void)dealloc;

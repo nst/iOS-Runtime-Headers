@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PLCameraControllerDelegate>, AVCaptureDevice, AVCaptureDeviceFormat, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureMovieFileOutput, AVCaptureOutput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BKSAccelerometer, CAMAvalancheCaptureService, CAMDebugCaptureService, CAMEffectsRenderer, CCCameraConnection, CIFilter, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer;
-
 @interface CAMCaptureController : NSObject <AVCaptureFileOutputRecordingDelegate, AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, BKSAccelerometerDelegate, PLCameraEffectsRendererDelegate> {
     BOOL _HDRDetectionEnabled;
     BOOL __atomicEffectsAvailable;
@@ -31,11 +25,7 @@
     BOOL __locationAcquiredForTimelapseCapture;
     BOOL __lockExposureAfterExposeFinishes;
     BOOL __lockFocusAfterFocusFinishes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __lockLensPositionCompletionBlock;
-
+    id /* block */ __lockLensPositionCompletionBlock;
     float __lockLensPositionTarget;
     BOOL __panoramaProcessorReadyForSampleBuffers;
     BOOL __previewLayerEnabledForRenderer;
@@ -228,99 +218,95 @@
     BOOL _userLockedFocus;
     NSString *_videoCapturePath;
     int _videoCaptureQuality;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id postSessionSetupBlock;
-
+    id /* block */ postSessionSetupBlock;
 }
 
-@property(getter=isHDRDetectionEnabled) BOOL HDRDetectionEnabled;
-@property(getter=isHDRSuggested,readonly) BOOL HDRSuggested;
-@property(setter=_setAtomicEffectsAvailable:) BOOL _atomicEffectsAvailable;
-@property(getter=_isAtomicModeChangeWaitingForConfigureSession,setter=_setAtomicModeChangeWaitingForConfigureSession:) BOOL _atomicModeChangeWaitingForConfigureSession;
-@property(getter=_isAtomicModeChangeWaitingForPreviewStarted,setter=_setAtomicModeChangeWaitingForPreviewStarted:) BOOL _atomicModeChangeWaitingForPreviewStarted;
-@property(readonly) CAMAvalancheCaptureService * _avalancheCaptureService;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * _captureIsolationQueue;
-@property(getter=_isConfiguringCamera,setter=_setConfiguringCamera:) BOOL _configuringCamera;
-@property(readonly) NSMutableArray * _currentFaceMetadata;
-@property(readonly) CAMDebugCaptureService * _debugCaptureService;
-@property(readonly) NSMutableArray * _deferredVideoCaptureRequests;
-@property(setter=_setDeviceLockCount:) int _deviceLockCount;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * _effectFilterIndexQueue;
-@property(setter=_setEffectFilterIndices:,retain) NSDictionary * _effectFilterIndices;
-@property(retain,readonly) NSObject<OS_dispatch_queue> * _effectRenderingQueue;
-@property(setter=_setEffectsAvailable:) BOOL _effectsAvailable;
-@property(readonly) BOOL _ignoreSubjectAreaChanges;
-@property(readonly) double _ignoreSubjectAreaChangesUntilTime;
-@property(readonly) NSMutableArray * _inflightPanoramaCaptureRequests;
-@property(readonly) NSMutableArray * _inflightStillImageCaptureRequests;
-@property(readonly) NSMutableArray * _inflightVideoCaptureResponses;
-@property(readonly) BOOL _locationAcquiredForTimelapseCapture;
-@property(readonly) BOOL _lockExposureAfterExposeFinishes;
-@property(readonly) BOOL _lockFocusAfterFocusFinishes;
-@property(setter=_setLockLensPositionCompletionBlock:,copy) id _lockLensPositionCompletionBlock;
-@property(setter=_setLockLensPositionTarget:) float _lockLensPositionTarget;
-@property(getter=_isModeChangeWaitingForConfigureSession,setter=_setModeChangeWaitingForConfigureSession:) BOOL _modeChangeWaitingForConfigureSession;
-@property(getter=_isModeChangeWaitingForPreviewStarted,setter=_setModeChangeWaitingForPreviewStarted:) BOOL _modeChangeWaitingForPreviewStarted;
-@property(readonly) BOOL _panoramaProcessorReadyForSampleBuffers;
-@property(setter=_setPreviewLayerEnabledForRenderer:) BOOL _previewLayerEnabledForRenderer;
-@property(getter=_isPreviewPaused,setter=_setPreviewPaused:) BOOL _previewPaused;
-@property(readonly) NSMutableArray * _processingPanoramaCaptureRequests;
-@property BOOL _rebuildingSession;
-@property(readonly) NSMutableDictionary * _servicesByType;
-@property(getter=_isSessionReady,setter=_setSessionReady:) BOOL _sessionReady;
-@property(setter=_setVideoDataOutputEnabledForRenderer:) BOOL _videoDataOutputEnabledForRenderer;
-@property(readonly) BOOL _wasStillImageStabilzationOnBeforeTimedCapture;
-@property(retain,readonly) CIFilter * activeFilter;
-@property(readonly) BOOL allowsAlternateSlomoFront;
-@property(readonly) BOOL allowsAlternateSlomoRear;
-@property int cameraDevice;
-@property int cameraMode;
-@property(readonly) int cameraOrientation;
-@property BOOL canCapturePhotoFromVideoModeWhenNotRecording;
-@property int captureOrientation;
-@property(getter=isCapturingTimelapse) BOOL capturingTimelapse;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cleanAperture;
-@property BOOL convertSampleBufferToJPEG;
-@property AVCaptureDevice * currentDevice;
-@property AVCaptureDeviceInput * currentInput;
-@property AVCaptureOutput * currentOutput;
-@property(readonly) AVCaptureSession * currentSession;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableAllPreviewSuspensionDuringCapture;
-@property(retain) CAMEffectsRenderer * effectsRenderer;
-@property struct CGPoint { float x1; float x2; } exposurePointOfInterest;
-@property float exposureTargetBias;
-@property(readonly) float exposureTargetBiasDefault;
-@property(readonly) float exposureTargetBiasMax;
-@property(readonly) float exposureTargetBiasMin;
-@property int flashMode;
-@property struct CGPoint { float x1; float x2; } focusPointOfInterest;
-@property(readonly) unsigned int hash;
-@property(readonly) AVCaptureStillImageOutput * imageOutput;
-@property BOOL isCameraApp;
-@property(readonly) BOOL isStillImageStabilizationActive;
-@property(readonly) float panoramaPreviewScale;
-@property(readonly) struct CGSize { float x1; float x2; } panoramaPreviewSize;
-@property BOOL performingAvalancheCapture;
-@property(copy) id postSessionSetupBlock;
-@property(readonly) AVCaptureVideoPreviewLayer * previewLayer;
-@property int previewOrientation;
-@property(readonly) CCCameraConnection * remoteShutterConnection;
-@property BOOL resetExposureWhenSubjectAreaChanged;
-@property BOOL resetFocusWhenSubjectAreaChanged;
-@property(readonly) Class superclass;
-@property(copy) NSArray * supportedCameraModes;
-@property(readonly) BOOL supportsHDR;
-@property(readonly) BOOL supportsHDRSuggestion;
-@property BOOL use60FPSVideo;
-@property BOOL useAlternateSlomoFront;
-@property BOOL useAlternateSlomoRear;
-@property BOOL userLockedExposure;
-@property BOOL userLockedFocus;
-@property float videoZoomFactor;
+@property (getter=isHDRDetectionEnabled, nonatomic) BOOL HDRDetectionEnabled;
+@property (getter=isHDRSuggested, nonatomic, readonly) BOOL HDRSuggested;
+@property (setter=_setAtomicEffectsAvailable:) BOOL _atomicEffectsAvailable;
+@property (getter=_isAtomicModeChangeWaitingForConfigureSession, setter=_setAtomicModeChangeWaitingForConfigureSession:) BOOL _atomicModeChangeWaitingForConfigureSession;
+@property (getter=_isAtomicModeChangeWaitingForPreviewStarted, setter=_setAtomicModeChangeWaitingForPreviewStarted:) BOOL _atomicModeChangeWaitingForPreviewStarted;
+@property (nonatomic, readonly) CAMAvalancheCaptureService *_avalancheCaptureService;
+@property (readonly, retain) NSObject<OS_dispatch_queue> *_captureIsolationQueue;
+@property (getter=_isConfiguringCamera, setter=_setConfiguringCamera:) BOOL _configuringCamera;
+@property (nonatomic, readonly) NSMutableArray *_currentFaceMetadata;
+@property (nonatomic, readonly) CAMDebugCaptureService *_debugCaptureService;
+@property (nonatomic, readonly) NSMutableArray *_deferredVideoCaptureRequests;
+@property (setter=_setDeviceLockCount:) int _deviceLockCount;
+@property (readonly, retain) NSObject<OS_dispatch_queue> *_effectFilterIndexQueue;
+@property (setter=_setEffectFilterIndices:, nonatomic, retain) NSDictionary *_effectFilterIndices;
+@property (readonly, retain) NSObject<OS_dispatch_queue> *_effectRenderingQueue;
+@property (setter=_setEffectsAvailable:, nonatomic) BOOL _effectsAvailable;
+@property (nonatomic, readonly) BOOL _ignoreSubjectAreaChanges;
+@property (nonatomic, readonly) double _ignoreSubjectAreaChangesUntilTime;
+@property (nonatomic, readonly) NSMutableArray *_inflightPanoramaCaptureRequests;
+@property (nonatomic, readonly) NSMutableArray *_inflightStillImageCaptureRequests;
+@property (nonatomic, readonly) NSMutableArray *_inflightVideoCaptureResponses;
+@property (nonatomic, readonly) BOOL _locationAcquiredForTimelapseCapture;
+@property (nonatomic, readonly) BOOL _lockExposureAfterExposeFinishes;
+@property (nonatomic, readonly) BOOL _lockFocusAfterFocusFinishes;
+@property (setter=_setLockLensPositionCompletionBlock:, nonatomic, copy) id /* block */ _lockLensPositionCompletionBlock;
+@property (setter=_setLockLensPositionTarget:, nonatomic) float _lockLensPositionTarget;
+@property (getter=_isModeChangeWaitingForConfigureSession, setter=_setModeChangeWaitingForConfigureSession:, nonatomic) BOOL _modeChangeWaitingForConfigureSession;
+@property (getter=_isModeChangeWaitingForPreviewStarted, setter=_setModeChangeWaitingForPreviewStarted:, nonatomic) BOOL _modeChangeWaitingForPreviewStarted;
+@property (nonatomic, readonly) BOOL _panoramaProcessorReadyForSampleBuffers;
+@property (setter=_setPreviewLayerEnabledForRenderer:, nonatomic) BOOL _previewLayerEnabledForRenderer;
+@property (getter=_isPreviewPaused, setter=_setPreviewPaused:, nonatomic) BOOL _previewPaused;
+@property (nonatomic, readonly) NSMutableArray *_processingPanoramaCaptureRequests;
+@property (nonatomic) BOOL _rebuildingSession;
+@property (nonatomic, readonly) NSMutableDictionary *_servicesByType;
+@property (getter=_isSessionReady, setter=_setSessionReady:, nonatomic) BOOL _sessionReady;
+@property (setter=_setVideoDataOutputEnabledForRenderer:, nonatomic) BOOL _videoDataOutputEnabledForRenderer;
+@property (nonatomic, readonly) BOOL _wasStillImageStabilzationOnBeforeTimedCapture;
+@property (nonatomic, readonly, retain) CIFilter *activeFilter;
+@property (nonatomic, readonly) BOOL allowsAlternateSlomoFront;
+@property (nonatomic, readonly) BOOL allowsAlternateSlomoRear;
+@property (nonatomic) int cameraDevice;
+@property (nonatomic) int cameraMode;
+@property (nonatomic, readonly) int cameraOrientation;
+@property (nonatomic) BOOL canCapturePhotoFromVideoModeWhenNotRecording;
+@property (nonatomic) int captureOrientation;
+@property (getter=isCapturingTimelapse, nonatomic) BOOL capturingTimelapse;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cleanAperture;
+@property (nonatomic) BOOL convertSampleBufferToJPEG;
+@property (nonatomic) AVCaptureDevice *currentDevice;
+@property (nonatomic) AVCaptureDeviceInput *currentInput;
+@property (nonatomic) AVCaptureOutput *currentOutput;
+@property (nonatomic, readonly) AVCaptureSession *currentSession;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableAllPreviewSuspensionDuringCapture;
+@property (retain) CAMEffectsRenderer *effectsRenderer;
+@property (nonatomic) struct CGPoint { float x1; float x2; } exposurePointOfInterest;
+@property (nonatomic) float exposureTargetBias;
+@property (nonatomic, readonly) float exposureTargetBiasDefault;
+@property (nonatomic, readonly) float exposureTargetBiasMax;
+@property (nonatomic, readonly) float exposureTargetBiasMin;
+@property (nonatomic) int flashMode;
+@property (nonatomic) struct CGPoint { float x1; float x2; } focusPointOfInterest;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) AVCaptureStillImageOutput *imageOutput;
+@property (nonatomic) BOOL isCameraApp;
+@property (nonatomic, readonly) BOOL isStillImageStabilizationActive;
+@property (nonatomic, readonly) float panoramaPreviewScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } panoramaPreviewSize;
+@property (nonatomic) BOOL performingAvalancheCapture;
+@property (nonatomic, copy) id /* block */ postSessionSetupBlock;
+@property (nonatomic, readonly) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic) int previewOrientation;
+@property (nonatomic, readonly) CCCameraConnection *remoteShutterConnection;
+@property (nonatomic) BOOL resetExposureWhenSubjectAreaChanged;
+@property (nonatomic) BOOL resetFocusWhenSubjectAreaChanged;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedCameraModes;
+@property (nonatomic, readonly) BOOL supportsHDR;
+@property (nonatomic, readonly) BOOL supportsHDRSuggestion;
+@property (nonatomic) BOOL use60FPSVideo;
+@property (nonatomic) BOOL useAlternateSlomoFront;
+@property (nonatomic) BOOL useAlternateSlomoRear;
+@property (nonatomic) BOOL userLockedExposure;
+@property (nonatomic) BOOL userLockedFocus;
+@property (nonatomic) float videoZoomFactor;
 
 + (id)_dateFormatterForVideoMetadata;
 + (BOOL)_shouldExtractDiagnostics;
@@ -437,7 +423,7 @@
 - (BOOL)_lockFocusAfterFocusFinishes;
 - (void)_lockFocusAndExposureForPano;
 - (void)_lockFocusForAvalancheCapture;
-- (id)_lockLensPositionCompletionBlock;
+- (id /* block */)_lockLensPositionCompletionBlock;
 - (float)_lockLensPositionTarget;
 - (BOOL)_modeAllowsAEAF;
 - (BOOL)_modeUsesCompassHeading;
@@ -470,14 +456,14 @@
 - (void)_resetFocusAndExposureIfNotExplicitlyLocked;
 - (void)_resetIdleTimer;
 - (void)_resetRecentFaceMetadata;
-- (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id)arg1;
+- (void)_runOnMainThreadImmediatelyIfPossibleWithBlock:(id /* block */)arg1;
 - (BOOL)_safeSetCameraMode:(int)arg1 cameraDevice:(int)arg2;
 - (unsigned int)_sanitizeEffectFilterIndex:(unsigned int)arg1 forMode:(int)arg2;
 - (id)_sanitizePanoramaCaptureRequest:(id)arg1;
 - (id)_sanitizeStillImageRequest:(id)arg1;
 - (id)_sanitizeVideoCaptureRequest:(id)arg1;
 - (BOOL)_sanityCheckSessionCanCaptureWithOutput:(id)arg1;
-- (void)_saveStillImageResponse:(id)arg1 completionBlock:(id)arg2;
+- (void)_saveStillImageResponse:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_serverDied:(id)arg1;
 - (int)_serviceTypeForCaptureRequest:(id)arg1;
 - (id)_servicesByType;
@@ -504,7 +490,7 @@
 - (void)_setFocusModeLockedWithLensPosition;
 - (void)_setKeepAlive:(BOOL)arg1 forVideoCapture:(BOOL)arg2;
 - (void)_setLocationEnabled:(BOOL)arg1;
-- (void)_setLockLensPositionCompletionBlock:(id)arg1;
+- (void)_setLockLensPositionCompletionBlock:(id /* block */)arg1;
 - (void)_setLockLensPositionTarget:(float)arg1;
 - (void)_setModeChangeWaitingForConfigureSession:(BOOL)arg1;
 - (void)_setModeChangeWaitingForPreviewStarted:(BOOL)arg1;
@@ -527,7 +513,7 @@
 - (void)_startContinuousAEAFAtCenter;
 - (void)_startContinuousAutoExposureAtCenter;
 - (void)_startContinuousAutoFocusAtCenter;
-- (void)_startPreview:(id)arg1;
+- (void)_startPreview:(id /* block */)arg1;
 - (void)_startPreviewWithCameraDevice:(int)arg1 cameraMode:(int)arg2 effectFilterIndices:(id)arg3;
 - (id)_stillImageCaptureResponseForRequest:(id)arg1 error:(id)arg2;
 - (void)_subjectAreaDidChange:(id)arg1;
@@ -542,7 +528,7 @@
 - (void)_torchLevelChanged;
 - (void)_unlockCurrentDeviceForConfiguration;
 - (void)_updateCallStatus;
-- (void)_updateEffectsRendererFilterIndexForceStateChange:(BOOL)arg1 renderNotifyBlock:(id)arg2;
+- (void)_updateEffectsRendererFilterIndexForceStateChange:(BOOL)arg1 renderNotifyBlock:(id /* block */)arg2;
 - (void)_updateEffectsRendererMirroring;
 - (void)_updateEffectsVideoDataOutputEnabled;
 - (void)_updateFocusAndExposureForVideoRecording;
@@ -633,12 +619,12 @@
 - (int)effectiveExposureMode;
 - (int)effectiveFocusMode;
 - (id)effectsRenderer;
-- (void)enqueueBlockInCaptureSessionQueue:(id)arg1;
-- (void)enqueueBlockOnMainQueue:(id)arg1;
+- (void)enqueueBlockInCaptureSessionQueue:(id /* block */)arg1;
+- (void)enqueueBlockOnMainQueue:(id /* block */)arg1;
 - (void)enqueuePanoramaRequest:(id)arg1;
 - (BOOL)enqueueStillImageCaptureRequest:(id)arg1;
 - (void)enqueueVideoCaptureRequest:(id)arg1;
-- (void)executeBlockOnMainQueue:(id)arg1;
+- (void)executeBlockOnMainQueue:(id /* block */)arg1;
 - (struct CGPoint { float x1; float x2; })exposurePointOfInterest;
 - (float)exposureTargetBias;
 - (float)exposureTargetBiasDefault;
@@ -694,7 +680,7 @@
 - (void)performAutofocusAfterCapture;
 - (BOOL)performingAvalancheCapture;
 - (void)postOrientationChangedNotification:(int)arg1 force:(BOOL)arg2;
-- (id)postSessionSetupBlock;
+- (id /* block */)postSessionSetupBlock;
 - (id)previewLayer;
 - (int)previewOrientation;
 - (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2;
@@ -729,13 +715,13 @@
 - (void)setFlashMode:(int)arg1;
 - (void)setFocusDisabled:(BOOL)arg1;
 - (void)setFocusMode:(int)arg1;
-- (void)setFocusModeLockedWithLensPosition:(float)arg1 completionBlock:(id)arg2;
+- (void)setFocusModeLockedWithLensPosition:(float)arg1 completionBlock:(id /* block */)arg2;
 - (void)setFocusPointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setHDRDetectionEnabled:(BOOL)arg1;
 - (void)setIsCameraApp:(BOOL)arg1;
 - (void)setPanoramaCaptureDirection:(int)arg1;
 - (void)setPanoramaImageQueueLayer:(id)arg1;
-- (void)setPostSessionSetupBlock:(id)arg1;
+- (void)setPostSessionSetupBlock:(id /* block */)arg1;
 - (void)setPreviewOrientation:(int)arg1;
 - (void)setResetExposureWhenSubjectAreaChanged:(BOOL)arg1;
 - (void)setResetFocusWhenSubjectAreaChanged:(BOOL)arg1;
@@ -752,7 +738,7 @@
 - (void)smoothFocusAtCenterForVideoRecording;
 - (void)startAvalancheCapture;
 - (void)startPreview;
-- (void)startPreview:(id)arg1;
+- (void)startPreview:(id /* block */)arg1;
 - (void)startVideoCapture;
 - (void)stopPanoramaCapture;
 - (void)stopPreview;

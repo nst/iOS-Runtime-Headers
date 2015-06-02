@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSString, SKUIGradientView, SKUIPreviewProgressIndicator, SKUITrackViewElement, SKUITracklistColumnData, SUPlayerStatus, UIView;
-
 @interface SKUITracklistLockupCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIPreviewContainerView, SKUIViewElementView> {
     SKUITracklistColumnData *_columnData;
     NSMutableDictionary *_columnViewsByIndex;
@@ -15,10 +13,10 @@
     SKUITrackViewElement *_track;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_attributedStringForOrdinal:(id)arg1 context:(id)arg2;
 + (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
@@ -31,7 +29,7 @@
 - (void)_audioPlayerStatusChangeNotification:(id)arg1;
 - (void)_buttonAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
-- (void)_enumerateViewElementViewsUsingBlock:(id)arg1;
+- (void)_enumerateViewElementViewsUsingBlock:(id /* block */)arg1;
 - (void)_layoutConfirmationGradientRelativeToView:(id)arg1 alpha:(float)arg2;
 - (id)_previewColumnView;
 - (id)_previewControlViewElement;

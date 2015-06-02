@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUISetSuggestedUtterances : SABaseClientBoundCommand
 
-@interface SAUISetSuggestedUtterances : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * language;
-@property(copy) NSArray * utterances;
+@property (nonatomic, copy) NSString *language;
+@property (nonatomic, copy) NSArray *utterances;
 
 + (id)setSuggestedUtterances;
 + (id)setSuggestedUtterancesWithDictionary:(id)arg1 context:(id)arg2;

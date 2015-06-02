@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSMutableArray;
-
 @interface MusicGeniusMixesDataSource : MusicQueryDataSource {
     NSMutableArray *_mixes;
 }

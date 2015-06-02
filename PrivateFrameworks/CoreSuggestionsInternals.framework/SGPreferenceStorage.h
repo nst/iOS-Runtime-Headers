@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGPreferenceStorage : NSObject {
-}
+@interface SGPreferenceStorage : NSObject
 
 + (id)defaults;
 + (id)defaultsForTests;
-+ (void)registerBlockOnSuggestionsSettingsChange:(id)arg1;
++ (void)registerBlockOnSuggestionsSettingsChange:(id /* block */)arg1;
 + (BOOL)reharvestKey;
 + (void)removeDeprecatedDefaults;
 + (void)resetAllPreferences;

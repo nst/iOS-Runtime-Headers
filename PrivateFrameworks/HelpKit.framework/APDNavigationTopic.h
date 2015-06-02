@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSArray, NSString;
-
 @interface APDNavigationTopic : APDNavigationItem {
     NSArray *_categories;
     NSString *_href;
 }
 
-@property(retain) NSArray * categories;
-@property(getter=isCopyright,readonly) BOOL copyright;
-@property(getter=isGlossary,readonly) BOOL glossary;
-@property(copy) NSString * href;
+@property (nonatomic, retain) NSArray *categories;
+@property (getter=isCopyright, nonatomic, readonly) BOOL copyright;
+@property (getter=isGlossary, nonatomic, readonly) BOOL glossary;
+@property (nonatomic, copy) NSString *href;
 
 - (void).cxx_destruct;
 - (id)categories;

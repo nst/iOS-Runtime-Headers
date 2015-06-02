@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSUserDefaults;
-
 @interface StocksPreferences : NSObject {
     BOOL _changeColorSwapped;
     NSUserDefaults *_sharedDefaults;
@@ -11,9 +9,9 @@
     unsigned int _textDirection;
 }
 
-@property(getter=isChangeColorSwapped,readonly) BOOL changeColorSwapped;
-@property(readonly) BOOL textAttachmentDirectionIsRightToLeft;
-@property(readonly) unsigned int textDirection;
+@property (getter=isChangeColorSwapped, nonatomic, readonly) BOOL changeColorSwapped;
+@property (nonatomic, readonly) BOOL textAttachmentDirectionIsRightToLeft;
+@property (nonatomic, readonly) unsigned int textDirection;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKTravelAdvisor, EKTravelAgendaItem, NSString;
-
 @interface EKTravelEngineAgendaEntry : NSObject {
     EKTravelAdvisor *_advisor;
     EKTravelAgendaItem *_agendaItem;
@@ -11,10 +9,10 @@
     NSString *_eventExternalURL;
 }
 
-@property(retain) EKTravelAdvisor * advisor;
-@property(retain) EKTravelAgendaItem * agendaItem;
-@property BOOL dismissed;
-@property(retain) NSString * eventExternalURL;
+@property (nonatomic, retain) EKTravelAdvisor *advisor;
+@property (nonatomic, retain) EKTravelAgendaItem *agendaItem;
+@property (nonatomic) BOOL dismissed;
+@property (nonatomic, retain) NSString *eventExternalURL;
 
 - (id)advisor;
 - (id)agendaItem;

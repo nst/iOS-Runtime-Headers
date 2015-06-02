@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface CMBordersProperty : CMProperty {
     OITSUColor *mBorderBottomColor;
     OITSUColor *mBorderColor;
     OITSUColor *mBorderLeftColor;
     OITSUColor *mBorderRightColor;
-    int mBorderStyle[5];
+    int mBorderStyle;
     OITSUColor *mBorderTopColor;
-    int mBorderWidth[5];
+    int mBorderWidth;
     int mCustomWidth;
 }
 

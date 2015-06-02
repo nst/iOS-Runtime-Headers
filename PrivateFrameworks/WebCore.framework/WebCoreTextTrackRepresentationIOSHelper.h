@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WebCoreTextTrackRepresentationIOSHelper : NSObject {
     struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; } *_parent;
 }
 
-@property struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }* parent;
+@property struct TextTrackRepresentationIOS { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationIOSHelper> { void *x_4_1_1; } x4; }*parent;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;

@@ -2,13 +2,10 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class ACDManagedAccount, NSString;
+@interface ACDManagedAccountProperty : NSManagedObject
 
-@interface ACDManagedAccountProperty : NSManagedObject {
-}
-
-@property(retain) NSString * key;
-@property(retain) ACDManagedAccount * owner;
-@property(retain) id value;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) ACDManagedAccount *owner;
+@property (nonatomic, retain) id value;
 
 @end

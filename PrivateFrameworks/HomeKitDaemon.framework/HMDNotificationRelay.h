@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDIDSMessageDispatcher, HMMessageDispatcher, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMDNotificationRelay : NSObject <HMMessageReceiver> {
     HMDIDSMessageDispatcher *_msgDispatcher;
     HMMessageDispatcher *_notificationRelayDispatcher;
@@ -12,23 +10,23 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property HMDIDSMessageDispatcher * msgDispatcher;
-@property HMMessageDispatcher * notificationRelayDispatcher;
-@property(retain) NSMutableDictionary * pendingNotifications;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic) HMDIDSMessageDispatcher *msgDispatcher;
+@property (nonatomic) HMMessageDispatcher *notificationRelayDispatcher;
+@property (nonatomic, retain) NSMutableDictionary *pendingNotifications;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_handleNotification:(id)arg1;
 - (void)_registerForNotifications;
 - (void)_relayResponseForNotificationState:(id)arg1;
-- (void)addPendingNotification:(id)arg1 forDestination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)addPendingNotification:(id)arg1 forDestination:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)initWithMessageDispatcher:(id)arg1 notificationRelayDispatcher:(id)arg2;
 - (id)messageReceiveQueue;

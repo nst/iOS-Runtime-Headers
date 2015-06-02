@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSError;
-
 @interface SUPlayerStatus : NSObject <NSCopying> {
     double _currentTime;
     double _duration;
@@ -11,10 +9,10 @@
     int _state;
 }
 
-@property double currentTime;
-@property double duration;
-@property(retain) NSError * error;
-@property int playerState;
+@property (nonatomic) double currentTime;
+@property (nonatomic) double duration;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic) int playerState;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)currentTime;

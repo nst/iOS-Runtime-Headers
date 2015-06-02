@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUCollectionViewReorderDelegate>, NSIndexPath, NSString, PUAutoScroller, UILongPressGestureRecognizer, UIView;
-
 @interface PUCollectionView : UICollectionView <UIGestureRecognizerDelegate> {
     PUAutoScroller *_autoScroller;
     UILongPressGestureRecognizer *_dragGestureRecognizer;
@@ -17,18 +15,18 @@
     <PUCollectionViewReorderDelegate> *_reorderDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <PUCollectionViewReorderDelegate> * reorderDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <PUCollectionViewReorderDelegate> *reorderDelegate;
+@property (readonly) Class superclass;
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_handleDrag:(id)arg1;
 - (id)_reorderableLayout;
-- (void)_updateDragUsingIndexPathUpdateBlock:(id)arg1;
+- (void)_updateDragUsingIndexPathUpdateBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -38,6 +36,6 @@
 - (void)reloadData;
 - (id)reorderDelegate;
 - (void)setReorderDelegate:(id)arg1;
-- (void)visiblyInsertItemAtIndexPath:(id)arg1 modelUpdate:(id)arg2 completionHandler:(id)arg3;
+- (void)visiblyInsertItemAtIndexPath:(id)arg1 modelUpdate:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 
 @end

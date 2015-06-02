@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypeStackedBar3D : TSCH3DChartType {
-}
+@interface TSCHChartTypeStackedBar3D : TSCH3DChartType
 
 - (float)categoryAxisTitleRotation;
 - (id)defaultSeriesType:(unsigned int)arg1;

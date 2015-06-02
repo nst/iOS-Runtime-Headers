@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class SBFWallpaperView;
-
 @interface SBFBackdropStatisticsProvider : NSObject {
     SBFWallpaperView *_wallpaperView;
 }
 
-@property SBFWallpaperView * wallpaperView;
+@property SBFWallpaperView *wallpaperView;
 
 - (void)backdropLayerStatisticsDidChange:(id)arg1;
 - (void)setWallpaperView:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotosGridViewController, PUSearchViewController;
-
 @interface PUSearchModalTransition : PUModalTransition {
     PUPhotosGridViewController *_searchResultsViewController;
     PUSearchViewController *_searchViewController;
 }
 
-@property(retain) PUPhotosGridViewController * searchResultsViewController;
-@property(retain) PUSearchViewController * searchViewController;
+@property (nonatomic, retain) PUPhotosGridViewController *searchResultsViewController;
+@property (nonatomic, retain) PUSearchViewController *searchViewController;
 
 - (void).cxx_destruct;
 - (void)animateDismissTransition;

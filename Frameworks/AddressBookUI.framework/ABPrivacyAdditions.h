@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPrivacyAdditions : NSObject {
-}
+@interface ABPrivacyAdditions : NSObject
 
 + (void)updateAccessDeniedView:(id)arg1 forAuthorizationStatus:(long)arg2;
 

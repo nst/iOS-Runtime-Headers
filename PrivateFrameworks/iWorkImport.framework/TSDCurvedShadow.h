@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDCurvedShadow : TSDShadow {
     float mCurve;
 }
 
-@property(readonly) float curve;
+@property (nonatomic, readonly) float curve;
 
 + (id)curvedShadowWithOffset:(float)arg1 angle:(float)arg2 radius:(float)arg3 curve:(float)arg4 opacity:(float)arg5 color:(struct CGColor { }*)arg6 enabled:(BOOL)arg7;
 + (id)instanceWithArchive:(const struct ShadowArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; float x7; int x8; float x9; bool x10; int x11; struct DropShadowArchive {} *x12; struct ContactShadowArchive {} *x13; struct CurvedShadowArchive {} *x14; }*)arg1 unarchiver:(id)arg2;

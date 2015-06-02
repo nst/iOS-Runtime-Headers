@@ -2,28 +2,18 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ALAssetsLibrary, AVAssetExportSession, NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface SLAssetDataProvider : NSObject {
     AVAssetExportSession *_assetExportSession;
     ALAssetsLibrary *_assetsLibrary;
     NSMutableArray *_deliveryQueue;
     NSObject<OS_dispatch_queue> *_downsamplingQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchCompletion;
-
+    id /* block */ _fetchCompletion;
     NSError *_lastError;
     unsigned int _maxByteSize;
     int _numRequestedImages;
 }
 
-@property(copy) id fetchCompletion;
+@property (copy) id /* block */ fetchCompletion;
 
 - (void).cxx_destruct;
 - (void)_assetFetchFailedWithError:(id)arg1;
@@ -31,12 +21,12 @@
 - (void)_downsamplingCompletedForAsset:(id)arg1 withDownsampledData:(id)arg2;
 - (void)_downsamplingFailedForAsset:(id)arg1 withError:(id)arg2;
 - (id)_generateTemporaryFilename;
-- (void)exportDataFromVideoAssetURL:(id)arg1 toFileURL:(id)arg2 exportPreset:(id)arg3 completion:(id)arg4;
-- (id)fetchCompletion;
-- (void)fetchImageDataForAssetsURLs:(id)arg1 maxByteSize:(unsigned int)arg2 completion:(id)arg3;
+- (void)exportDataFromVideoAssetURL:(id)arg1 toFileURL:(id)arg2 exportPreset:(id)arg3 completion:(id /* block */)arg4;
+- (id /* block */)fetchCompletion;
+- (void)fetchImageDataForAssetsURLs:(id)arg1 maxByteSize:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)fetchedAsset:(id)arg1;
 - (id)init;
-- (void)mappedDataFromVideoAtFileURL:(id)arg1 completion:(id)arg2;
-- (void)setFetchCompletion:(id)arg1;
+- (void)mappedDataFromVideoAtFileURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)setFetchCompletion:(id /* block */)arg1;
 
 @end

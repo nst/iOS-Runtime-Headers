@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKNotificationID : NSObject <NSCopying, NSSecureCoding> {
     NSString *_notificationUUID;
 }
 
-@property(copy) NSString * notificationUUID;
+@property (nonatomic, copy) NSString *notificationUUID;
 
 + (BOOL)supportsSecureCoding;
 

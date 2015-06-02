@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueProxyGetter;
-
 @interface NSKeyValueNotifyingMutableCollectionGetter : NSKeyValueProxyGetter {
     NSKeyValueProxyGetter *_mutableCollectionGetter;
 }

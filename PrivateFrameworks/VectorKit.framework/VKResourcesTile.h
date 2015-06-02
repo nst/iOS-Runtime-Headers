@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray;
-
 @interface VKResourcesTile : VKTile {
     NSArray *_attributions;
     NSArray *_resourceNames;
 }
 
-@property(retain) NSArray * attributions;
-@property(retain) NSArray * resourceNames;
+@property (nonatomic, retain) NSArray *attributions;
+@property (nonatomic, retain) NSArray *resourceNames;
 
 - (id)attributions;
 - (void)dealloc;

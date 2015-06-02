@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABAccountsAndGroupsNavigationController : UINavigationController <UIViewControllerRestoration> {
-}
+@interface ABAccountsAndGroupsNavigationController : UINavigationController <UIViewControllerRestoration>
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

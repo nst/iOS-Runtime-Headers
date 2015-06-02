@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCComposition, RCCompositionWaveformDataSource, RCGLWaveformRenderer, RCUIConfiguration, UIImage;
-
 @interface RCWaveformRasterizationOperation : NSOperation {
     RCComposition *_composition;
     RCCompositionWaveformDataSource *_dataSource;
@@ -16,10 +14,10 @@
     RCGLWaveformRenderer *_renderer;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property(readonly) RCComposition * composition;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(readonly) UIImage * rasterizedImage;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (nonatomic, readonly) RCComposition *composition;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly) UIImage *rasterizedImage;
 
 + (id)waveformImageForComposition:(id)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
 

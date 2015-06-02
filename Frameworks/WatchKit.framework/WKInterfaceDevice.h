@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSDictionary, NSString;
-
 @interface WKInterfaceDevice : NSObject {
     NSString *_preferredContentSizeCategory;
     struct CGRect { 
@@ -19,10 +17,10 @@
     float _screenScale;
 }
 
-@property(readonly) NSDictionary * cachedImages;
-@property(copy) NSString * preferredContentSizeCategory;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property float screenScale;
+@property (nonatomic, readonly) NSDictionary *cachedImages;
+@property (nonatomic, copy) NSString *preferredContentSizeCategory;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
+@property (nonatomic) float screenScale;
 
 + (id)currentDevice;
 

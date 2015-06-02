@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIImage, CUIShapeEffectPreset, NSDictionary;
-
 @interface CUIThemeSchemaEffectRendition : CUIThemeRendition {
     NSDictionary *_cuiInfo;
     CUIShapeEffectPreset *_effectPreset;

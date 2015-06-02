@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSSQLitePropertyPredicate : SSSQLitePredicate <NSCopying> {
     NSString *_property;
 }
 
-@property(readonly) NSString * property;
+@property (nonatomic, readonly) NSString *property;
 
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, NSURL, UIImage;
-
 @interface _WKActivatedElementInfo : NSObject {
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
@@ -34,12 +32,12 @@
     } _uiImage;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) struct CGPoint { float x1; float x2; } _interactionLocation;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
-@property(copy,readonly) UIImage * image;
-@property(readonly) NSString * title;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } _interactionLocation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
+@property (nonatomic, readonly, copy) UIImage *image;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) int type;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

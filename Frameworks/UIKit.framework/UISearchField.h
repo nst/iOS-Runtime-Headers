@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISearchField : UITextField {
-}
+@interface UISearchField : UITextField
 
 + (float)defaultHeight;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineSyncTaskDelegate>, <NSCoding>, CPLEngineLibrary, NSString;
-
 @interface CPLEngineSyncTask : NSObject {
     BOOL _cancelled;
     <CPLEngineSyncTaskDelegate> *_delegate;
@@ -13,13 +11,13 @@
     <NSCoding> *_transportUserIdentifier;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property(retain) <CPLEngineSyncTaskDelegate> * delegate;
-@property(readonly) CPLEngineLibrary * engineLibrary;
-@property BOOL foreground;
-@property(getter=isPaused) BOOL paused;
-@property(readonly) NSString * taskIdentifier;
-@property(retain) <NSCoding> * transportUserIdentifier;
+@property (getter=isCancelled) BOOL cancelled;
+@property (retain) <CPLEngineSyncTaskDelegate> *delegate;
+@property (nonatomic, readonly) CPLEngineLibrary *engineLibrary;
+@property (nonatomic) BOOL foreground;
+@property (getter=isPaused) BOOL paused;
+@property (nonatomic, readonly) NSString *taskIdentifier;
+@property (nonatomic, retain) <NSCoding> *transportUserIdentifier;
 
 + (id)taskWithEngineLibrary:(id)arg1;
 

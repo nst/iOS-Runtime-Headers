@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface _MFDAMessageStoreSetFlagsRequest : DAMailboxSetFlagsRequest <MFDAMailAccountRequest> {
-}
+@interface _MFDAMessageStoreSetFlagsRequest : DAMailboxSetFlagsRequest <MFDAMailAccountRequest>
 
-@property(readonly) BOOL isUserRequested;
-@property(readonly) BOOL shouldSend;
+@property (nonatomic, readonly) BOOL isUserRequested;
+@property (nonatomic, readonly) BOOL shouldSend;
 
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;

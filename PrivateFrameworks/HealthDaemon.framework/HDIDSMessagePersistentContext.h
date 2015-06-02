@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface HDIDSMessagePersistentContext : NSObject <NSSecureCoding> {
     NSDate *_date;
     BOOL _fromRequest;
@@ -12,11 +10,11 @@
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSDate * date;
-@property(getter=isFromRequest) BOOL fromRequest;
-@property(copy) NSString * idsIdentifier;
-@property unsigned short messageID;
-@property(retain) NSDictionary * userInfo;
+@property (nonatomic, retain) NSDate *date;
+@property (getter=isFromRequest, nonatomic) BOOL fromRequest;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) NSDictionary *userInfo;
 
 + (BOOL)supportsSecureCoding;
 

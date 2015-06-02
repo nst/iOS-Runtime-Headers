@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSMutableArray;
-
 @interface CKDPNotificationSyncResponse : PBCodable <NSCopying> {
     NSData *_changeID;
     struct { 
@@ -13,11 +11,11 @@
     NSMutableArray *_pushMessages;
 }
 
-@property(retain) NSData * changeID;
-@property(readonly) BOOL hasChangeID;
-@property BOOL hasMoreAvailable;
-@property BOOL moreAvailable;
-@property(retain) NSMutableArray * pushMessages;
+@property (nonatomic, retain) NSData *changeID;
+@property (nonatomic, readonly) BOOL hasChangeID;
+@property (nonatomic) BOOL hasMoreAvailable;
+@property (nonatomic) BOOL moreAvailable;
+@property (nonatomic, retain) NSMutableArray *pushMessages;
 
 - (void).cxx_destruct;
 - (void)addPushMessage:(id)arg1;

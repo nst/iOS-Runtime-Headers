@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSObject<MBConnectionHandler>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface MBConnection : NSObject {
     NSObject<OS_xpc_object> *_conn;
     NSObject<OS_dispatch_queue> *_eventQueue;
     NSObject<MBConnectionHandler> *_handler;
 }
 
-@property NSObject<MBConnectionHandler> * messageHandler;
+@property (nonatomic) NSObject<MBConnectionHandler> *messageHandler;
 
 - (void)_handleXPCError:(id)arg1;
 - (void)_handleXPCEvent:(id)arg1;

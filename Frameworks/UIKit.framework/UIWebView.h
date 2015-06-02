@@ -2,35 +2,35 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebViewDelegate>, NSString, NSURLRequest, UIScrollView, UIWebViewInternal;
-
 @interface UIWebView : UIView <NSCoding, UIScrollViewDelegate> {
     UIWebViewInternal *_internal;
 }
 
-@property BOOL allowsInlineMediaPlayback;
-@property(getter=canGoBack,readonly) BOOL canGoBack;
-@property(getter=canGoForward,readonly) BOOL canGoForward;
-@property unsigned int dataDetectorTypes;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIWebViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL detectsPhoneNumbers;
-@property float gapBetweenPages;
-@property(readonly) unsigned int hash;
-@property BOOL keyboardDisplayRequiresUserAction;
-@property(getter=isLoading,readonly) BOOL loading;
-@property BOOL mediaPlaybackAllowsAirPlay;
-@property BOOL mediaPlaybackRequiresUserAction;
-@property(readonly) unsigned int pageCount;
-@property float pageLength;
-@property int paginationBreakingMode;
-@property int paginationMode;
-@property(retain,readonly) NSURLRequest * request;
-@property BOOL scalesPageToFit;
-@property(retain,readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
-@property BOOL suppressesIncrementalRendering;
+@property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (getter=canGoBack, nonatomic, readonly) BOOL canGoBack;
+@property (getter=canGoForward, nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic) unsigned int dataDetectorTypes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIWebViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL detectsPhoneNumbers;
+@property (nonatomic) float gapBetweenPages;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL keyboardDisplayRequiresUserAction;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
+@property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (nonatomic) float pageLength;
+@property (nonatomic) int paginationBreakingMode;
+@property (nonatomic) int paginationMode;
+@property (nonatomic, readonly, retain) NSURLRequest *request;
+@property (nonatomic) BOOL scalesPageToFit;
+@property (nonatomic, readonly, retain) UIScrollView *scrollView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressesIncrementalRendering;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_fixPathsForSandboxDirectoryChange;
 + (id)_relativePathFromAbsolutePath:(id)arg1 removingPathComponents:(unsigned int)arg2;
@@ -102,7 +102,6 @@
 - (float)gapBetweenPages;
 - (void)goBack;
 - (void)goForward;
-- (int)highlightAllOccurencesOfString:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
@@ -119,7 +118,6 @@
 - (int)paginationBreakingMode;
 - (int)paginationMode;
 - (void)reload;
-- (void)removeAllHighlights;
 - (id)request;
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;
@@ -194,5 +192,10 @@
 - (void)webViewMainFrameDidFinishLoad:(id)arg1;
 - (void)webViewMainFrameDidFirstVisuallyNonEmptyLayoutInFrame:(id)arg1;
 - (void)webViewSupportedOrientationsUpdated:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
+
+- (int)highlightAllOccurencesOfString:(id)arg1;
+- (void)removeAllHighlights;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray;
-
 @interface NSSQLUpdateColumnsIntermediate : NSSQLIntermediate {
     NSArray *_propertiesToUpdate;
     NSArray *_valuesToUpdateTo;

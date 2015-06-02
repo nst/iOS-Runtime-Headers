@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface __NSBundleAccessibility_super : UIAccessibilitySafeCategory {
-}
+@interface __NSBundleAccessibility_super : UIAccessibilitySafeCategory
 
 @end

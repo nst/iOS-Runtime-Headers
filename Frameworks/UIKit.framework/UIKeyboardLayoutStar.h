@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIDelayedAction, UIKBBackgroundView, UIKBKeyplaneView, UIKBRenderConfig, UIKBTree, UIKeyboardKeyplaneTransition, UIKeyboardSplitTransitionView, UISwipeGestureRecognizer, UIView, _UIKeyboardTypingSpeedLogger;
-
 @interface UIKeyboardLayoutStar : UIKeyboardLayout <UIKBEmojiHitTestResponder> {
     NSMutableSet *_accentInfo;
     UIKBTree *_activeKey;
@@ -55,7 +53,7 @@
     int _multitapCount;
     UIKBTree *_multitapKey;
     BOOL _pinchDetected;
-    float _pinchSeparationValues[4];
+    float _pinchSeparationValues;
     NSString *_preRotateKeyplaneName;
     BOOL _preRotateShift;
     NSString *_preTouchKeyplaneName;
@@ -92,28 +90,28 @@
     int playKeyClickSoundOn;
 }
 
-@property(retain) UIKBTree * activeKey;
-@property BOOL autoShift;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didLongPress;
-@property(readonly) unsigned int hash;
-@property(readonly) UIKBTree * keyboard;
-@property(copy) NSString * keyboardName;
-@property(readonly) UIKBTree * keyplane;
-@property(copy) NSString * keyplaneName;
-@property(retain) NSString * layoutTag;
-@property(copy) NSString * localizedInputKey;
-@property(readonly) NSString * localizedInputMode;
-@property(retain) UIView * modalDisplayView;
-@property int playKeyClickSoundOn;
-@property(copy) NSString * preTouchKeyplaneName;
-@property(retain) UIKBRenderConfig * renderConfig;
-@property(getter=isRotating,readonly) BOOL rotating;
-@property BOOL shift;
-@property(readonly) BOOL showsDictationKey;
-@property(readonly) BOOL showsInternationalKey;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIKBTree *activeKey;
+@property (nonatomic) BOOL autoShift;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didLongPress;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIKBTree *keyboard;
+@property (nonatomic, copy) NSString *keyboardName;
+@property (nonatomic, readonly) UIKBTree *keyplane;
+@property (nonatomic, copy) NSString *keyplaneName;
+@property (nonatomic, retain) NSString *layoutTag;
+@property (nonatomic, copy) NSString *localizedInputKey;
+@property (nonatomic, readonly) NSString *localizedInputMode;
+@property (nonatomic, retain) UIView *modalDisplayView;
+@property (nonatomic) int playKeyClickSoundOn;
+@property (nonatomic, copy) NSString *preTouchKeyplaneName;
+@property (nonatomic, retain) UIKBRenderConfig *renderConfig;
+@property (getter=isRotating, nonatomic, readonly) BOOL rotating;
+@property (nonatomic) BOOL shift;
+@property (nonatomic, readonly) BOOL showsDictationKey;
+@property (nonatomic, readonly) BOOL showsInternationalKey;
+@property (readonly) Class superclass;
 
 + (Class)_subclassForScreenTraits:(id)arg1;
 + (void)accessibilitySensitivityChanged;

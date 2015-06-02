@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUStreamReadChannel>, NSArray, NSObject<OS_dispatch_data>, NSString, SFUCryptoKey;
-
 @interface TSPCryptoReadChannel : NSObject <TSUStreamReadChannel> {
     NSArray *_blockInfos;
     struct _CCCryptor { } *_cryptor;
@@ -17,17 +15,17 @@
     unsigned long _remainingBlockSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_readBlocksWithHandler:(id)arg1;
+- (void)_readBlocksWithHandler:(id /* block */)arg1;
 - (void)_resetCryptor;
 - (void)close;
 - (void)dealloc;
 - (id)initWithReadChannel:(id)arg1 decryptionKey:(id)arg2 blockInfos:(id)arg3;
-- (void)readWithHandler:(id)arg1;
+- (void)readWithHandler:(id /* block */)arg1;
 
 @end

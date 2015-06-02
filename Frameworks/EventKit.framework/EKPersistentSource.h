@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKSourceConstraints, NSNumber, NSString;
-
 @interface EKPersistentSource : EKPersistentObject {
     EKSourceConstraints *_constraints;
 }
 
-@property NSString * UUID;
-@property(readonly) EKSourceConstraints * constraints;
-@property(copy) NSNumber * defaultAlarmOffset;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * externalID;
-@property(copy) NSString * externalModificationTag;
-@property BOOL onlyCreatorCanModify;
-@property int preferredEventPrivateValue;
-@property int sourceType;
-@property int strictestEventPrivateValue;
-@property(copy) NSString * title;
+@property (nonatomic) NSString *UUID;
+@property (nonatomic, readonly) EKSourceConstraints *constraints;
+@property (nonatomic, copy) NSNumber *defaultAlarmOffset;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *externalModificationTag;
+@property (nonatomic) BOOL onlyCreatorCanModify;
+@property (nonatomic) int preferredEventPrivateValue;
+@property (nonatomic) int sourceType;
+@property (nonatomic) int strictestEventPrivateValue;
+@property (nonatomic, copy) NSString *title;
 
 + (int)_calEventPrivacyLevelToEKPrivacyLevel:(int)arg1;
 + (int)_ekPrivacyLevelToCalEventPrivacyLevel:(int)arg1;

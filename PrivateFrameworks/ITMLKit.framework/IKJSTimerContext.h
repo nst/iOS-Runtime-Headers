@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKJSManagedArray, JSManagedValue, NSTimer;
-
 @interface IKJSTimerContext : NSObject {
     BOOL _isRepeating;
     IKJSManagedArray *_managedArgs;
@@ -12,11 +10,11 @@
     NSTimer *_timer;
 }
 
-@property(readonly) BOOL isRepeating;
-@property(retain,readonly) IKJSManagedArray * managedArgs;
-@property(retain,readonly) JSManagedValue * managedCallback;
-@property(retain,readonly) id ownerObject;
-@property(retain) NSTimer * timer;
+@property (nonatomic, readonly) BOOL isRepeating;
+@property (nonatomic, readonly, retain) IKJSManagedArray *managedArgs;
+@property (nonatomic, readonly, retain) JSManagedValue *managedCallback;
+@property (nonatomic, readonly, retain) id ownerObject;
+@property (nonatomic, retain) NSTimer *timer;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLEntryNotificationOperatorComposition;
-
 @interface PLAWDBattery : PLAWDAuxMetrics {
     PLEntryNotificationOperatorComposition *_batteryEventCallback;
     long _batterySubmitCnt;
@@ -16,10 +14,10 @@
     double _prevVoltage;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *batteryEventCallback;
 @property long batterySubmitCnt;
 @property long dispOnOffCnt;
-@property(retain) PLEntryNotificationOperatorComposition * displayEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *displayEventCallback;
 @property double prevCapacity;
 @property BOOL prevDeviceCharging;
 @property double prevDispTimeStamp;

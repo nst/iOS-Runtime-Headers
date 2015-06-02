@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGame, GKMatchmakerViewController, NSString;
-
 @interface GKRemoteMatchmakerViewController : GKRemoteViewController <GKMatchmakerRemoteDelegate, GKMatchmakerServiceViewControllerDelegate> {
     GKMatchmakerViewController *_delegateWeak;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property GKMatchmakerViewController * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) GKMatchmakerViewController *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) GKGame *game;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

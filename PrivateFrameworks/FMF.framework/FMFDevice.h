@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class NSString;
-
 @interface FMFDevice : NSObject <NSCopying, NSSecureCoding> {
     NSString *_deviceId;
     NSString *_deviceName;
@@ -11,10 +9,10 @@
     BOOL _isThisDevice;
 }
 
-@property(copy) NSString * deviceId;
-@property(copy) NSString * deviceName;
-@property BOOL isActiveDevice;
-@property BOOL isThisDevice;
+@property (nonatomic, copy) NSString *deviceId;
+@property (nonatomic, copy) NSString *deviceName;
+@property (nonatomic) BOOL isActiveDevice;
+@property (nonatomic) BOOL isThisDevice;
 
 + (id)deviceWithId:(id)arg1 name:(id)arg2 isActive:(BOOL)arg3 isThisDevice:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;

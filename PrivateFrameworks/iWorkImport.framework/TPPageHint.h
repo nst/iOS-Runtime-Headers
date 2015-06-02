@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSDHint>, NSDictionary, NSString;
-
 @interface TPPageHint : NSObject <TSWPOffscreenColumn> {
     NSDictionary *_anchoredAttachmentPositions;
     <TSDHint> *_firstChildHint;
@@ -52,22 +41,22 @@
     } _topicNumbers;
 }
 
-@property(retain) NSDictionary * anchoredAttachmentPositions;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) <TSDHint> * firstChildHint;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } footnoteAutoNumberRange;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } footnoteLayoutRange;
-@property(readonly) unsigned int hash;
-@property(retain) <TSDHint> * lastChildHint;
-@property(readonly) unsigned int nextWidowPullsDownFromCharIndex;
-@property int pageKind;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) unsigned int startAnchoredCharIndex;
-@property(readonly) unsigned int startCharIndex;
-@property(readonly) Class superclass;
-@property /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * topicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, retain) NSDictionary *anchoredAttachmentPositions;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <TSDHint> *firstChildHint;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } footnoteAutoNumberRange;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } footnoteLayoutRange;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <TSDHint> *lastChildHint;
+@property (nonatomic, readonly) unsigned int nextWidowPullsDownFromCharIndex;
+@property (nonatomic) int pageKind;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) unsigned int startAnchoredCharIndex;
+@property (nonatomic, readonly) unsigned int startCharIndex;
+@property (readonly) Class superclass;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *topicNumbers; /* unknown property attribute:  true> >=L}}}II} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

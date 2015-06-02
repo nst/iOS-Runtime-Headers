@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
  */
 
-@class NSString;
-
 @interface MIDINetworkHost : NSObject {
-    struct _MIDINetworkHostImpl { id x1; id x2; unsigned int x3; id x4; id x5; } *_impl;
+    struct _MIDINetworkHostImpl { id x1; unsigned int x2; id x3; } *_impl;
 }
 
-@property(retain,readonly) NSString * address;
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSString * netServiceDomain;
-@property(retain,readonly) NSString * netServiceName;
-@property(readonly) unsigned int port;
+@property (nonatomic, readonly, retain) NSString *address;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly, retain) NSString *netServiceDomain;
+@property (nonatomic, readonly, retain) NSString *netServiceName;
+@property (nonatomic, readonly) unsigned int port;
 
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;
 + (id)hostWithName:(id)arg1 address:(id)arg2 port:(unsigned int)arg3;

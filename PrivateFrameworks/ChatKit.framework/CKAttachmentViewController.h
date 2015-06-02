@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKAttachmentViewControllerDelegate>, CKAttachmentCollectionView, CKConversation, CKFeedCollectionViewLayout, CKQLPreviewController, CKTranscriptRecipientsController, NSArray, NSMutableArray, NSString, UIBarButtonItem, UICollectionViewFlowLayout;
-
 @interface CKAttachmentViewController : CKViewController <CKAttachmentCellDelegate, CKFeedCollectionViewLayoutDatasource, CKFeedCollectionViewLayoutDelegate, CKTranscriptRecipientsControllerDelegate, QLPreviewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     CKAttachmentCollectionView *_collectionView;
     CKConversation *_conversation;
@@ -20,23 +18,23 @@
     NSArray *_visibleMediaObjects;
 }
 
-@property(retain) CKAttachmentCollectionView * collectionView;
-@property(retain) CKConversation * conversation;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKAttachmentViewControllerDelegate> * delegate;
-@property(retain) UIBarButtonItem * deleteButton;
-@property(copy,readonly) NSString * description;
-@property(retain) CKFeedCollectionViewLayout * feedLayout;
-@property(retain) UICollectionViewFlowLayout * flowLayout;
-@property(readonly) unsigned int hash;
-@property(getter=isInitialLoad) BOOL initialLoad;
-@property(retain) NSMutableArray * mediaObjects;
-@property(retain) CKQLPreviewController * qlPreviewController;
-@property(retain) CKTranscriptRecipientsController * recipientsController;
-@property(retain) UIBarButtonItem * saveButton;
-@property(getter=isSelectingAttachments) BOOL selectingAttachments;
-@property(readonly) Class superclass;
-@property(retain) NSArray * visibleMediaObjects;
+@property (nonatomic, retain) CKAttachmentCollectionView *collectionView;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKAttachmentViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UIBarButtonItem *deleteButton;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CKFeedCollectionViewLayout *feedLayout;
+@property (nonatomic, retain) UICollectionViewFlowLayout *flowLayout;
+@property (readonly) unsigned int hash;
+@property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
+@property (nonatomic, retain) NSMutableArray *mediaObjects;
+@property (nonatomic, retain) CKQLPreviewController *qlPreviewController;
+@property (nonatomic, retain) CKTranscriptRecipientsController *recipientsController;
+@property (nonatomic, retain) UIBarButtonItem *saveButton;
+@property (getter=isSelectingAttachments, nonatomic) BOOL selectingAttachments;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *visibleMediaObjects;
 
 - (void)_chatItemsChanged:(id)arg1;
 - (void)_configureCell:(id)arg1 withCollectionView:(id)arg2 forItemAtIndexPath:(id)arg3;

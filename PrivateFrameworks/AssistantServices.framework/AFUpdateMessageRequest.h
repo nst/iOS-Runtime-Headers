@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFMessage;
-
 @interface AFUpdateMessageRequest : AFSiriRequest {
     AFMessage *_message;
 }

@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLCollection, NSString;
+@interface DOMHTMLTableSectionElement : DOMHTMLElement
 
-@interface DOMHTMLTableSectionElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * align;
-@property(copy) NSString * ch;
-@property(copy) NSString * chOff;
-@property(readonly) DOMHTMLCollection * rows;
-@property(copy) NSString * vAlign;
+@property (copy) NSString *align;
+@property (copy) NSString *ch;
+@property (copy) NSString *chOff;
+@property (readonly) DOMHTMLCollection *rows;
+@property (copy) NSString *vAlign;
 
 - (id)align;
 - (id)ch;

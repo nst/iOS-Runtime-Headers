@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWNodeOutputConsumer>, BWFormat, BWFormatRequirements, BWNode, BWNodeConnection, BWPixelBufferPool, BWVideoFormat, NSString;
-
 @interface BWNodeOutput : NSObject {
     long long _configurationID;
     <BWNodeOutputConsumer> *_consumer;
@@ -44,30 +42,30 @@
     unsigned long _retainedBufferCount;
 }
 
-@property BOOL buffersOriginateUpstream;
-@property long long configurationID;
-@property(readonly) BWNodeConnection * connection;
-@property <BWNodeOutputConsumer> * consumer;
-@property BOOL discardsSampleData;
-@property BOOL dropsSampleBuffersWithUnexpectedPTS;
-@property(copy) BWFormat * format;
-@property(copy) BWFormatRequirements * formatRequirements;
-@property int indexOfInputWhichDrivesThisOutput;
-@property(readonly) long long liveConfigurationID;
-@property(retain) BWFormat * liveFormat;
-@property(readonly) BWPixelBufferPool * livePixelBufferPool;
-@property float maxSampleDataOutputRate;
-@property(readonly) unsigned long mediaType;
-@property(copy) NSString * name;
-@property(readonly) BWNode * node;
-@property(readonly) unsigned int numberOfBuffersDropped;
-@property(readonly) unsigned int numberOfBuffersEmitted;
-@property unsigned long owningNodeRetainedBufferCount;
-@property int passthroughMode;
-@property(readonly) BWPixelBufferPool * preparedPixelBufferPool;
-@property BOOL providesPixelBufferPool;
-@property unsigned long retainedBufferCount;
-@property(readonly) BWVideoFormat * videoFormat;
+@property (nonatomic) BOOL buffersOriginateUpstream;
+@property (nonatomic) long long configurationID;
+@property (nonatomic, readonly) BWNodeConnection *connection;
+@property (nonatomic) <BWNodeOutputConsumer> *consumer;
+@property (nonatomic) BOOL discardsSampleData;
+@property (nonatomic) BOOL dropsSampleBuffersWithUnexpectedPTS;
+@property (nonatomic, copy) BWFormat *format;
+@property (nonatomic, copy) BWFormatRequirements *formatRequirements;
+@property (nonatomic) int indexOfInputWhichDrivesThisOutput;
+@property (nonatomic, readonly) long long liveConfigurationID;
+@property (nonatomic, retain) BWFormat *liveFormat;
+@property (nonatomic, readonly) BWPixelBufferPool *livePixelBufferPool;
+@property (nonatomic) float maxSampleDataOutputRate;
+@property (nonatomic, readonly) unsigned long mediaType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) BWNode *node;
+@property (nonatomic, readonly) unsigned int numberOfBuffersDropped;
+@property (nonatomic, readonly) unsigned int numberOfBuffersEmitted;
+@property (nonatomic) unsigned long owningNodeRetainedBufferCount;
+@property (nonatomic) int passthroughMode;
+@property (nonatomic, readonly) BWPixelBufferPool *preparedPixelBufferPool;
+@property (nonatomic) BOOL providesPixelBufferPool;
+@property (nonatomic) unsigned long retainedBufferCount;
+@property (nonatomic, readonly) BWVideoFormat *videoFormat;
 
 + (void)initialize;
 

@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface WBDocument : NSObject {
-}
+@interface WBDocument : NSObject
 
 + (id)readFrom:(id)arg1;
 + (void)readNoteSeparatorFrom:(id)arg1 type:(int)arg2 separator:(id)arg3;

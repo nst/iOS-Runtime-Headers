@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, NSMutableIndexSet, NSOperationQueue, NSString, SKComposeReviewViewController, SKUIClientContext, SKUIFacebookLikeStatus, SKUIIPadCustomerReviewsHeaderView, SKUILayoutCache, SKUIProductPage, SKUIProductPageHeaderViewController, SKUIProductPageTableView, SKUIReviewList, SKUIReviewsFacebookViewController, SKUIReviewsHistogramViewController, SKUIStarRatingQueue, SSVLoadURLOperation, UIScrollView;
-
 @interface SKUIProductPageReviewsViewController : UIViewController <SKComposeReviewDelegate, SKUILayoutCacheDelegate, SKUIProductPageChildViewController, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _askPermission;
     SKUIClientContext *_clientContext;
@@ -27,18 +25,18 @@
     SKUIProductPageTableView *_tableView;
 }
 
-@property BOOL askPermission;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIProductPageChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIProductPageHeaderViewController * headerViewController;
-@property(readonly) NSOperationQueue * operationQueue;
-@property(readonly) SKUIProductPage * productPage;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL askPermission;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) SKUIFacebookLikeStatus *facebookLikeStatus;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
+@property (nonatomic, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly) SKUIProductPage *productPage;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addHeaderView;

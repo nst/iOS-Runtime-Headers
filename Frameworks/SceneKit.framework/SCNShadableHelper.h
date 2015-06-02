@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSArray, NSDictionary, SCNProgram;
-
 @interface SCNShadableHelper : NSObject <NSSecureCoding> {
     id _owner;
     SCNProgram *_program;
@@ -13,10 +11,10 @@
     NSDictionary *_uniformNameToType;
 }
 
-@property(readonly) id owner;
-@property(retain) SCNProgram * program;
-@property(copy) NSDictionary * shaderModifiers;
-@property(readonly) NSArray * shaderModifiersUniformNames;
+@property (nonatomic, readonly) id owner;
+@property (nonatomic, retain) SCNProgram *program;
+@property (nonatomic, copy) NSDictionary *shaderModifiers;
+@property (nonatomic, readonly) NSArray *shaderModifiersUniformNames;
 
 + (BOOL)supportsSecureCoding;
 
@@ -45,8 +43,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
-- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
+- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOwner:(id)arg1;
 - (BOOL)isOpaque;

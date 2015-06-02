@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSConditionLock, NSMutableArray;
-
 @interface MFRequestQueue : NSObject {
     NSConditionLock *_condition;
     NSMutableArray *_consumers;

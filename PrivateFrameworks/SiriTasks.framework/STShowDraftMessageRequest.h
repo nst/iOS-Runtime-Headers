@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class NSURL;
-
 @interface STShowDraftMessageRequest : AFSiriRequest {
     NSURL *_draftMessageIdentifier;
 }

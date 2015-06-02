@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsLightLow : _UIBackdropViewSettingsLight {
-}
+@interface _UIBackdropViewSettingsLightLow : _UIBackdropViewSettingsLight
 
 - (void)setDefaultValues;
 

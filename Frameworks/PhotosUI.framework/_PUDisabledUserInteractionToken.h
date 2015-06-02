@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface _PUDisabledUserInteractionToken : NSObject {
     NSString *_identifier;
     int _reason;
 }
 
-@property(copy) NSString * identifier;
-@property int reason;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) int reason;
 
 - (void).cxx_destruct;
 - (id)description;

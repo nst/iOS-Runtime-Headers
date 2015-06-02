@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-@interface CTCellularPlanJsonResponseParser : NSObject {
-}
+@interface CTCellularPlanJsonResponseParser : NSObject
 
 + (BOOL)parseCreateSessionResponseData:(id)arg1 intoSessionId:(id*)arg2 podId:(id*)arg3 urls:(id*)arg4 error:(id*)arg5;
 + (BOOL)parseHandoffTokenResponseData:(id)arg1 intoHandoffToken:(id*)arg2 error:(id*)arg3;

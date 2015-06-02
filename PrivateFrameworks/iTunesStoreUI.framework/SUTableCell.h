@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUCellConfiguration, SUItemOfferButton, SUTableCellContentView, UIBezierPath, UIColor;
-
 @interface SUTableCell : UITableViewCell {
     UIColor *_bottomBorderColor;
     SUTableCellContentView *_configurationView;
     int _editState;
-    unsigned int _hideHighlight : 1;
+    unsigned int _hideHighlight;
     SUItemOfferButton *_itemOfferButton;
     struct { 
         unsigned int localIndex; 
@@ -19,18 +17,18 @@
     UIColor *_topBorderColor;
 }
 
-@property(retain) UIColor * bottomBorderColor;
-@property int clipCorners;
-@property(readonly) UIBezierPath * clippingPath;
-@property(retain) SUCellConfiguration * configuration;
-@property BOOL drawAsDisabled;
-@property int editState;
-@property BOOL highlightsOnlyContentView;
-@property(retain,readonly) SUItemOfferButton * itemOfferButton;
-@property struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
-@property BOOL showHighlight;
-@property(retain) UIColor * topBorderColor;
-@property BOOL usesSubviews;
+@property (nonatomic, retain) UIColor *bottomBorderColor;
+@property (nonatomic) int clipCorners;
+@property (nonatomic, readonly) UIBezierPath *clippingPath;
+@property (nonatomic, retain) SUCellConfiguration *configuration;
+@property (nonatomic) BOOL drawAsDisabled;
+@property (nonatomic) int editState;
+@property (nonatomic) BOOL highlightsOnlyContentView;
+@property (nonatomic, readonly, retain) SUItemOfferButton *itemOfferButton;
+@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;
+@property (nonatomic) BOOL showHighlight;
+@property (nonatomic, retain) UIColor *topBorderColor;
+@property (nonatomic) BOOL usesSubviews;
 
 - (BOOL)_canDrawContent;
 - (id)bottomBorderColor;

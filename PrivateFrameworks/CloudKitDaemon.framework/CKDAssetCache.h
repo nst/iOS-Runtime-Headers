@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDMMCS, CKSQLitePool, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface CKDAssetCache : NSObject {
     CKDMMCS *_MMCS;
     NSString *_applicationBundleID;
@@ -19,18 +17,18 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property CKDMMCS * MMCS;
-@property(retain) NSString * applicationBundleID;
-@property(retain) NSString * dbPath;
-@property(readonly) CKSQLitePool * dbPool;
-@property(retain) NSObject<OS_dispatch_source> * expiryTimer;
-@property(retain) NSString * fileDownloadPath;
-@property int fileDownloadPathFd;
+@property (nonatomic) CKDMMCS *MMCS;
+@property (nonatomic, retain) NSString *applicationBundleID;
+@property (nonatomic, retain) NSString *dbPath;
+@property (nonatomic, readonly) CKSQLitePool *dbPool;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *expiryTimer;
+@property (nonatomic, retain) NSString *fileDownloadPath;
+@property (nonatomic) int fileDownloadPathFd;
 @property BOOL isEvictionScheduled;
-@property BOOL isUnitTestingAccount;
-@property(retain) NSString * packageDownloadPath;
-@property(retain) NSString * packageUploadPath;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic) BOOL isUnitTestingAccount;
+@property (nonatomic, retain) NSString *packageDownloadPath;
+@property (nonatomic, retain) NSString *packageUploadPath;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)_sharedCachesByBundleID;
 + (id)_sharedCachesQueue;
@@ -43,8 +41,8 @@
 - (unsigned long long)_evictDownloadedFilesWithDatabase:(id)arg1 forced:(BOOL)arg2 evictNow:(BOOL)arg3;
 - (unsigned long long)_evictFilesForced:(BOOL)arg1 evictNow:(BOOL)arg2;
 - (unsigned long long)_evictPackagesForced:(BOOL)arg1 evictNow:(BOOL)arg2;
-- (void)_expireAssetHandlesWithCompletionBlock:(id)arg1;
-- (void)_expireAssetHandlesWithExpiryDate:(id)arg1 completionBlock:(id)arg2;
+- (void)_expireAssetHandlesWithCompletionBlock:(id /* block */)arg1;
+- (void)_expireAssetHandlesWithExpiryDate:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)_getAssetHandlesForDownloadedMMCSItems:(id)arg1 error:(id*)arg2;
 - (id)_saveData:(id)arg1 error:(id*)arg2;
 - (void)_scheduleEvictionForDownloadedFiles;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableArray, NSMutableDictionary, PLEntryNotificationOperatorComposition, PLNSTimerOperatorComposition, PLQLAccountingQuery, PLXPCListenerOperatorComposition;
-
 @interface PLBLMAccountingService : PLService {
     double _APSOCBasePower;
     PLEntryNotificationOperatorComposition *_LTESleepStatsQueryCallback;
@@ -27,26 +25,26 @@
     PLXPCListenerOperatorComposition *_xpcListenerDuetEvent;
 }
 
-@property(readonly) double APSOCBasePower;
-@property(retain) PLEntryNotificationOperatorComposition * LTESleepStatsQueryCallback;
-@property(retain) PLQLAccountingQuery * autoLockQuery;
-@property(retain) PLEntryNotificationOperatorComposition * bbCallback;
-@property(readonly) NSMutableDictionary * daemonRename;
-@property(readonly) double highBrightnessThreshold;
-@property(retain) PLEntryNotificationOperatorComposition * ioreportCallback;
-@property(retain) NSDate * lastQueryRunTime;
+@property (readonly) double APSOCBasePower;
+@property (retain) PLEntryNotificationOperatorComposition *LTESleepStatsQueryCallback;
+@property (retain) PLQLAccountingQuery *autoLockQuery;
+@property (retain) PLEntryNotificationOperatorComposition *bbCallback;
+@property (readonly) NSMutableDictionary *daemonRename;
+@property (readonly) double highBrightnessThreshold;
+@property (retain) PLEntryNotificationOperatorComposition *ioreportCallback;
+@property (retain) NSDate *lastQueryRunTime;
 @property double lastSafeTimeForSnapping;
-@property(retain) PLNSTimerOperatorComposition * lteSleepStatsQueryTimer;
-@property(retain) NSMutableDictionary * postAccoutingQueries;
-@property(retain) NSMutableDictionary * postpostAccoutingQueries;
-@property(retain) PLEntryNotificationOperatorComposition * processmonitorCallback;
-@property(retain) PLEntryNotificationOperatorComposition * processnetworkCallback;
-@property(retain) NSMutableDictionary * queries;
-@property(retain) NSMutableArray * registeredNotifications;
-@property(retain) PLNSTimerOperatorComposition * runQueryTimer;
-@property(retain) NSMutableArray * snapRails;
-@property(retain) PLEntryNotificationOperatorComposition * wifiCallback;
-@property(retain) PLXPCListenerOperatorComposition * xpcListenerDuetEvent;
+@property (retain) PLNSTimerOperatorComposition *lteSleepStatsQueryTimer;
+@property (retain) NSMutableDictionary *postAccoutingQueries;
+@property (retain) NSMutableDictionary *postpostAccoutingQueries;
+@property (retain) PLEntryNotificationOperatorComposition *processmonitorCallback;
+@property (retain) PLEntryNotificationOperatorComposition *processnetworkCallback;
+@property (retain) NSMutableDictionary *queries;
+@property (retain) NSMutableArray *registeredNotifications;
+@property (retain) PLNSTimerOperatorComposition *runQueryTimer;
+@property (retain) NSMutableArray *snapRails;
+@property (retain) PLEntryNotificationOperatorComposition *wifiCallback;
+@property (retain) PLXPCListenerOperatorComposition *xpcListenerDuetEvent;
 
 + (id)BBOOSRailsForCurrentDevice;
 + (id)BBRailsForCurrentDevice;

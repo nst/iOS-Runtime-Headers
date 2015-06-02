@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary;
-
 @interface MKMapAttributionImage : NSObject {
     NSDictionary *_imageNameForScale;
 }

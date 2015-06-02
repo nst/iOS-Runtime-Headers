@@ -11,7 +11,7 @@
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2;
 - (id)initWithManager:(id)arg1 documentResourceInfo:(id)arg2 isValidated:(BOOL)arg3;
 - (BOOL)isReadable;
-- (void)performReadWithAccessor:(id)arg1;
+- (void)performReadWithAccessor:(id /* block */)arg1;
 - (void)validateIfNeeded;
 
 @end

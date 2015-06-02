@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABDatePickerViewControllerDismissDelegate>, UIDatePicker;
-
 @interface ABDatePickerViewController : UIViewController {
     void *_context;
     UIDatePicker *_datePicker;
     <ABDatePickerViewControllerDismissDelegate> *_dismissDelegate;
 }
 
-@property void* context;
-@property(retain) UIDatePicker * datePicker;
-@property <ABDatePickerViewControllerDismissDelegate> * dismissDelegate;
+@property (nonatomic) void*context;
+@property (nonatomic, retain) UIDatePicker *datePicker;
+@property (nonatomic) <ABDatePickerViewControllerDismissDelegate> *dismissDelegate;
 
 + (struct CGSize { float x1; float x2; })datePickerSize;
 

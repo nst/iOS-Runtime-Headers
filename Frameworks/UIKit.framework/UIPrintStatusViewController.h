@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPrintStatusDelegate>, UIPopoverController;
-
 @interface UIPrintStatusViewController : UINavigationController {
     UIPopoverController *_poverController;
     <UIPrintStatusDelegate> *_printStatusDelegate;
 }
 
-@property <UIPrintStatusDelegate> * printStatusDelegate;
+@property (nonatomic) <UIPrintStatusDelegate> *printStatusDelegate;
 
 - (void)dealloc;
 - (void)dismissAnimated:(BOOL)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CICrop : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     CIVector *inputRectangle;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputRectangle;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputRectangle;
 
 + (id)customAttributes;
 

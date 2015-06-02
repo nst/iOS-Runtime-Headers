@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVPlaylistFeeder>, MPAVItem, MPAVQueuePlayerFeeder, MPQueuePlayer, NSString;
-
 @interface MPAVPlaylistManager : NSObject <MPAVQueuePlayerFeederSource> {
     NSString *_audioSessionModeOverride;
     MPAVItem *_currentItem;
@@ -18,23 +16,23 @@
     BOOL _updatedAudioSessionMode;
 }
 
-@property(retain) NSString * audioSessionModeOverride;
-@property(readonly) BOOL canChangePlaylistFeeder;
-@property(readonly) int currentIndex;
-@property(readonly) MPAVItem * currentItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL forceSynchronousQueueFilling;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isChangingPlaylistFeeder;
-@property(readonly) int lastSelectionDirection;
-@property BOOL managesSystemDownloads;
-@property unsigned int maxQueueDepth;
-@property unsigned int minQueueDepth;
-@property(readonly) MPQueuePlayer * player;
-@property(retain) <MPAVPlaylistFeeder> * playlistFeeder;
+@property (nonatomic, retain) NSString *audioSessionModeOverride;
+@property (nonatomic, readonly) BOOL canChangePlaylistFeeder;
+@property (readonly) int currentIndex;
+@property (readonly) MPAVItem *currentItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL forceSynchronousQueueFilling;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isChangingPlaylistFeeder;
+@property (readonly) int lastSelectionDirection;
+@property (nonatomic) BOOL managesSystemDownloads;
+@property (nonatomic) unsigned int maxQueueDepth;
+@property (nonatomic) unsigned int minQueueDepth;
+@property (readonly) MPQueuePlayer *player;
+@property (nonatomic, retain) <MPAVPlaylistFeeder> *playlistFeeder;
 @property int repeatMode;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_assetCancelNotification:(id)arg1;

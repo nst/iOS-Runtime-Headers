@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class PLRoundProgressView, UIImageView;
-
 @interface CKPhotoPickerCell : UICollectionViewCell {
     UIImageView *_imageView;
     BOOL _isVideo;
@@ -11,10 +9,10 @@
     UIImageView *_videoImageView;
 }
 
-@property(retain) UIImageView * imageView;
-@property BOOL isVideo;
-@property(retain) PLRoundProgressView * progressView;
-@property(retain) UIImageView * videoImageView;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) BOOL isVideo;
+@property (nonatomic, retain) PLRoundProgressView *progressView;
+@property (nonatomic, retain) UIImageView *videoImageView;
 
 - (void)dealloc;
 - (id)imageView;

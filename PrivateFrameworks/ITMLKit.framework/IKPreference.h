@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKPreference : NSObject {
-}
+@interface IKPreference : NSObject
 
 + (BOOL)ignoreHTTPCache;
 + (BOOL)jsContextInspectable;

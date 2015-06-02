@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultUIKitDelegate : NSObject {
-}
+@interface WebDefaultUIKitDelegate : NSObject
 
 + (id)sharedUIKitDelegate;
 

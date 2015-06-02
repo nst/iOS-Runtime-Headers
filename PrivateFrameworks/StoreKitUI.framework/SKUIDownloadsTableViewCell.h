@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDownloadsCellView;
-
 @interface SKUIDownloadsTableViewCell : UITableViewCell {
     SKUIDownloadsCellView *_cellView;
 }
 
-@property(readonly) SKUIDownloadsCellView * cellView;
+@property (nonatomic, readonly) SKUIDownloadsCellView *cellView;
 
 - (void).cxx_destruct;
 - (id)cellView;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKDatabase;
-
 @interface CKDatabaseOperation : CKOperation {
     CKDatabase *_database;
 }
 
-@property(retain) CKDatabase * database;
+@property (nonatomic, retain) CKDatabase *database;
 
 - (void).cxx_destruct;
 - (id)database;

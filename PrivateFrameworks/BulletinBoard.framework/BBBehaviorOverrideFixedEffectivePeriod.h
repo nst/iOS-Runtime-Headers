@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSDate, NSString, NSUUID;
-
 @interface BBBehaviorOverrideFixedEffectivePeriod : NSObject <BBBehaviorOverrideEffectivePeriod> {
     double _effectiveInterval;
     NSUUID *_identifier;
     NSDate *_startDate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double effectiveInterval;
-@property(readonly) unsigned int hash;
-@property(copy) NSUUID * identifier;
-@property(copy) NSDate * startDate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double effectiveInterval;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSUUID *identifier;
+@property (nonatomic, copy) NSDate *startDate;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

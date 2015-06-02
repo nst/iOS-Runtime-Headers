@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SACalendar;
+@interface SAMPPlaybackInfo : AceObject <SAAceSerializable>
 
-@interface SAMPPlaybackInfo : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SACalendar * lastPlayedDate;
-@property int playbackPositionMillis;
-@property int plays;
-@property BOOL rememberPlaybackPosition;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SACalendar *lastPlayedDate;
+@property (nonatomic) int playbackPositionMillis;
+@property (nonatomic) int plays;
+@property (nonatomic) BOOL rememberPlaybackPosition;
+@property (readonly) Class superclass;
 
 + (id)playbackInfo;
 + (id)playbackInfoWithDictionary:(id)arg1 context:(id)arg2;

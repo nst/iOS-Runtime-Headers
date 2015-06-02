@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class <WebPluginManualLoader>, WAKView, WebDataSource;
-
 @interface WebHTMLRepresentationPrivate : NSObject {
     WebDataSource *dataSource;
     BOOL hasSentResponseToPlugin;

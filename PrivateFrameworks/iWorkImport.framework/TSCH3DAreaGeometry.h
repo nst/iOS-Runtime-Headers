@@ -25,10 +25,10 @@
     float mZeroValue;
 }
 
-@property float maxZ;
-@property float minZ;
-@property BOOL stacked;
-@property float zeroValue;
+@property (nonatomic) float maxZ;
+@property (nonatomic) float minZ;
+@property (nonatomic) BOOL stacked;
+@property (nonatomic) float zeroValue;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

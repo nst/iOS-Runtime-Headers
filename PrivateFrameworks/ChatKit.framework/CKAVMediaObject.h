@@ -7,7 +7,7 @@
     BOOL _durationLoaded;
 }
 
-@property double duration;
+@property (nonatomic) double duration;
 
 + (id)durationCache;
 

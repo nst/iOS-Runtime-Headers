@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSMutableData, NSString, NSURLConnection, NSURLRequest;
-
 @interface RUIHTTPRequest : NSObject <NSURLConnectionDataDelegate> {
     NSURLConnection *_connection;
     id _delegate;
@@ -12,11 +10,11 @@
     NSURLRequest *_request;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)anyRequestLoading;
 + (id)invalidResponseError;

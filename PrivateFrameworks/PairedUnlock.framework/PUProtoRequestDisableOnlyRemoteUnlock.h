@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-@interface PUProtoRequestDisableOnlyRemoteUnlock : PBCodable <NSCopying> {
-}
+@interface PUProtoRequestDisableOnlyRemoteUnlock : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

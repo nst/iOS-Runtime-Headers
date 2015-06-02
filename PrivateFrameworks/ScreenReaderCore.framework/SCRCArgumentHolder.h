@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCArgumentHolderPrivate;
-
 @interface SCRCArgumentHolder : NSObject {
     SCRCArgumentHolderPrivate *_private;
 }

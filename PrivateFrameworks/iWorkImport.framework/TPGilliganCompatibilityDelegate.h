@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPGilliganCompatibilityDelegate : TPBaseCompatibilityDelegate {
-}
+@interface TPGilliganCompatibilityDelegate : TPBaseCompatibilityDelegate
 
 - (Class)exporterClassForType:(id)arg1 options:(id)arg2;
 

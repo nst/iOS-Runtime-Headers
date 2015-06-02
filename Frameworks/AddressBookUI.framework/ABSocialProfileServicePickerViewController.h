@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABSocialProfileServicePickerViewController : ABServicePickerViewController {
-}
+@interface ABSocialProfileServicePickerViewController : ABServicePickerViewController
 
 + (id)defaultServices;
 

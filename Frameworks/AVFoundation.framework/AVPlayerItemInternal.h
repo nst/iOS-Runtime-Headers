@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AVPlayerItemDelegate>, AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface AVPlayerItemInternal : NSObject {
     unsigned int RTCReportingFlags;
     NSURL *URL;
@@ -122,11 +116,7 @@
         long long epoch; 
     } reversePlaybackEndTime;
     BOOL savesDownloadedDataToDiskWhenDone;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id seekCompletionHandler;
-
+    id /* block */ seekCompletionHandler;
     struct OpaqueFigSimpleMutex { } *seekIDMutex;
     BOOL seekingWaitsForVideoCompositionRendering;
     NSString *serviceIdentifier;

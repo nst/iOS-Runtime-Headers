@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface UIKeyboardEmojiInputController : NSObject {
     int _currentSequence;
     int _lastViewedCategory;

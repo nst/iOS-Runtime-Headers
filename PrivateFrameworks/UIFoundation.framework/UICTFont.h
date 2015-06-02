@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface UICTFont : UIFont {
-}
+@interface UICTFont : UIFont
 
 - (unsigned long)_cfTypeID;
 - (BOOL)allowsWeakReference;

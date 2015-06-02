@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMappingModel, NSMutableDictionary, NSSQLAdapter, NSSQLConnection, NSSQLCore, NSSQLModel;
-
 @interface _NSSQLiteStoreMigrator : NSObject {
     NSSQLAdapter *_adapter;
     NSMutableDictionary *_addedEntityMigrations;
@@ -22,7 +20,7 @@
     NSMutableDictionary *_transformedEntityMigrations;
 }
 
-@property(readonly) NSSQLAdapter * adapter;
+@property (readonly) NSSQLAdapter *adapter;
 
 + (BOOL)_annotatesMigrationMetadata;
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;

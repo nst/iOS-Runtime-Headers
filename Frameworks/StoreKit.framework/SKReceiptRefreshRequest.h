@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSDictionary;
-
 @interface SKReceiptRefreshRequest : SKRequest {
     NSDictionary *_properties;
 }
 
-@property(readonly) NSDictionary * receiptProperties;
+@property (nonatomic, readonly) NSDictionary *receiptProperties;
 
 - (void)_handleReply:(id)arg1;
 - (void)_sendXPCMessage;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class NSURL;
-
 @interface CANodeButton : UIButton {
     NSURL *_url;
     BOOL hasLabel;
 }
 
 @property BOOL hasLabel;
-@property(retain) NSURL * url;
+@property (retain) NSURL *url;
 
 - (BOOL)hasLabel;
 - (id)init;

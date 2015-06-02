@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class NSString;
-
 @interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate> {
     int _profileToken;
     BOOL _showingChildViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)currentKeepMessages;
 + (BOOL)currentMessageAutoKeepForType:(int)arg1;

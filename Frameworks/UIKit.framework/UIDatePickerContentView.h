@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel;
-
 @interface UIDatePickerContentView : UIView {
     struct { 
         unsigned int isAmPm : 1; 
@@ -14,11 +12,11 @@
     float _titleLabelMaxX;
 }
 
-@property BOOL isAmPm;
-@property BOOL isModern;
-@property int titleAlignment;
-@property(readonly) UILabel * titleLabel;
-@property float titleLabelMaxX;
+@property (nonatomic) BOOL isAmPm;
+@property (nonatomic) BOOL isModern;
+@property (nonatomic) int titleAlignment;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic) float titleLabelMaxX;
 
 - (BOOL)_canBeReusedInPickerView;
 - (void)dealloc;

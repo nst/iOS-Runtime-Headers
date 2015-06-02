@@ -2,20 +2,13 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSDictionary;
-
 @interface CAEAGLLayer : CALayer <EAGLDrawable> {
-    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; int (*x_1_1_2)(); int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); struct x_list_struct {} *x6; unsigned int x7; unsigned int x8; struct Atomic { struct { int x_1_2_1; } x_9_1_1; } x9; struct Atomic { struct { int x_1_2_1; } x_10_1_1; } x10; struct SpinLock { struct { int x_1_2_1; } x_11_1_1; } x11; struct _CAImageQueue {} *x12; id x13; struct x_list_struct {} *x14; unsigned int x15; struct CAEAGLBuffer {} *x16; struct CAEAGLBuffer {} *x17; unsigned int x18; unsigned int x19; unsigned int x20; struct CAEAGLBuffer {} *x21; id x22; struct Atomic { struct { int x_1_2_1; } x_23_1_1; } x23; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; } *_win;
+    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; int (*x_1_1_2)(); int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); struct x_list_struct {} *x6; unsigned int x7; unsigned int x8; struct Atomic { struct { int x_1_2_1; } x_9_1_1; } x9; struct Atomic { struct { int x_1_2_1; } x_10_1_1; } x10; struct SpinLock { struct { int x_1_2_1; } x_11_1_1; } x11; struct _CAImageQueue {} *x12; id x13; struct x_list_struct {} x14; unsigned int x15; struct CAEAGLBuffer {} *x16; struct CAEAGLBuffer {} *x17; unsigned int x18; unsigned int x19; unsigned int x20; struct CAEAGLBuffer {} *x21; id x22; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x23; out void*x24; int x25; BOOL x26; void*x27; struct { int x_28_1_1; } x28; } *_win;
 }
 
-@property(getter=isAsynchronous) BOOL asynchronous;
-@property(copy) NSDictionary * drawableProperties;
-@property(readonly) struct _EAGLNativeWindowObject { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); }* nativeWindow;
+@property (getter=isAsynchronous) BOOL asynchronous;
+@property (copy) NSDictionary *drawableProperties;
+@property (readonly) struct _EAGLNativeWindowObject { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); }*nativeWindow;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;

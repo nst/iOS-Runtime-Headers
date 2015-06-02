@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPanoramaViewControllerPhoneSpec : PUPhotosPanoramaViewControllerSpec {
-}
+@interface PUPhotosPanoramaViewControllerPhoneSpec : PUPhotosPanoramaViewControllerSpec
 
 - (id)gridSpec;
 - (struct CGSize { float x1; float x2; })itemSizeForOrientation:(int)arg1;

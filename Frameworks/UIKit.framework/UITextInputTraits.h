@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage;
-
 @interface UITextInputTraits : NSObject <NSCopying, UITextInputTraits, UITextInputTraits_Private> {
     BOOL acceptsEmoji;
     BOOL acceptsFloatingKeyboard;
@@ -22,8 +20,8 @@
     UIColor *insertionPointColor;
     unsigned int insertionPointWidth;
     BOOL isSingleLineDocument;
-    unsigned int keyboardAppearance : 8;
-    unsigned int keyboardType : 8;
+    unsigned int keyboardAppearance;
+    unsigned int keyboardType;
     BOOL learnsCorrections;
     NSString *responseContext;
     BOOL returnKeyGoesToNextResponder;
@@ -42,45 +40,45 @@
     BOOL useInterfaceLanguageForLocalization;
 }
 
-@property BOOL acceptsEmoji;
-@property BOOL acceptsFloatingKeyboard;
-@property BOOL acceptsSplitKeyboard;
-@property int autocapitalizationType;
-@property(copy) NSString * autocorrectionContext;
-@property int autocorrectionType;
-@property BOOL contentsIsSingleValue;
-@property(copy,readonly) NSString * debugDescription;
-@property BOOL deferBecomingResponder;
-@property(copy,readonly) NSString * description;
-@property BOOL disablePrediction;
-@property BOOL displaySecureTextUsingPlainText;
-@property int emptyContentReturnKeyType;
-@property BOOL enablesReturnKeyAutomatically;
-@property BOOL enablesReturnKeyOnNonWhiteSpaceContent;
-@property BOOL forceEnableDictation;
-@property(readonly) unsigned int hash;
-@property(retain) UIColor * insertionPointColor;
-@property unsigned int insertionPointWidth;
-@property BOOL isSingleLineDocument;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property BOOL learnsCorrections;
-@property(copy) NSString * responseContext;
-@property BOOL returnKeyGoesToNextResponder;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property(retain) UIColor * selectionBarColor;
-@property(retain) UIImage * selectionDragDotImage;
-@property(retain) UIColor * selectionHighlightColor;
-@property int shortcutConversionType;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property BOOL suppressReturnKeyStyling;
-@property int textLoupeVisibility;
-@property int textSelectionBehavior;
-@property id textSuggestionDelegate;
-@property struct __CFCharacterSet { }* textTrimmingSet;
-@property BOOL useInterfaceLanguageForLocalization;
+@property (nonatomic) BOOL acceptsEmoji;
+@property (nonatomic) BOOL acceptsFloatingKeyboard;
+@property (nonatomic) BOOL acceptsSplitKeyboard;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic, copy) NSString *autocorrectionContext;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic) BOOL contentsIsSingleValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL deferBecomingResponder;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disablePrediction;
+@property (nonatomic) BOOL displaySecureTextUsingPlainText;
+@property (nonatomic) int emptyContentReturnKeyType;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property (nonatomic) BOOL forceEnableDictation;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIColor *insertionPointColor;
+@property (nonatomic) unsigned int insertionPointWidth;
+@property (nonatomic) BOOL isSingleLineDocument;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic) BOOL learnsCorrections;
+@property (nonatomic, copy) NSString *responseContext;
+@property (nonatomic) BOOL returnKeyGoesToNextResponder;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic, retain) UIColor *selectionBarColor;
+@property (nonatomic, retain) UIImage *selectionDragDotImage;
+@property (nonatomic, retain) UIColor *selectionHighlightColor;
+@property (nonatomic) int shortcutConversionType;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressReturnKeyStyling;
+@property (nonatomic) int textLoupeVisibility;
+@property (nonatomic) int textSelectionBehavior;
+@property (nonatomic) id textSuggestionDelegate;
+@property (nonatomic) struct __CFCharacterSet { }*textTrimmingSet;
+@property (nonatomic) BOOL useInterfaceLanguageForLocalization;
 
 + (int)accessibleAppearanceForAppearance:(int)arg1;
 + (id)defaultTextInputTraits;

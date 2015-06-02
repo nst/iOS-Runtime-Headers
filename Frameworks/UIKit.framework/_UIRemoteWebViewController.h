@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIWebViewController;
-
 @interface _UIRemoteWebViewController : _UIRemoteViewController {
     _UIWebViewController *_webViewController;
 }
 
-@property _UIWebViewController * webViewController;
+@property (nonatomic) _UIWebViewController *webViewController;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

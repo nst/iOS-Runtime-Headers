@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCGLWaveformViewDelegate>, NSMutableArray, NSString, NSTimer, RCAcousticAnnotationView, RCGLWaveformRenderer, RCLayoutMetrics, RCUIConfiguration, RCWaveformDataSource, RCWaveformScrollView, RCWaveformSelectionOverlay, UIView;
-
 @interface RCGLWaveformViewController : UIViewController <RCGLWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate, UIScrollViewDelegate> {
     RCUIConfiguration *_UIConfiguration;
     RCAcousticAnnotationView *_acousticAnnotationView;
@@ -59,30 +57,30 @@
     } _visibleTimeRangeBeforeSelectionTracking;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property(getter=isAutoscrolling,readonly) BOOL autoscrolling;
-@property BOOL capturing;
-@property BOOL clipTimeMarkersToDuration;
-@property double currentTime;
-@property unsigned int currentTimeDisplayOptions;
-@property(retain) RCWaveformDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <RCGLWaveformViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property struct { double x1; double x2; } highlightTimeRange;
-@property(retain) RCLayoutMetrics * layoutMetrics;
-@property double maximumSelectionDuration;
-@property BOOL playing;
-@property BOOL screenUpdatesDisabled;
-@property BOOL scrubbingEnabled;
-@property struct { double x1; double x2; } selectedTimeRange;
-@property(getter=isSelectedTimeRangeEditingEnabled) BOOL selectedTimeRangeEditingEnabled;
-@property(getter=isSelectedTimeRangeEditingEnabled) BOOL selectedTimeRangeScrubbingEnabled;
-@property float selectionVisibleMargin;
-@property(readonly) Class superclass;
-@property struct { double x1; double x2; } visibleTimeRange;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (getter=isAutoscrolling, nonatomic, readonly) BOOL autoscrolling;
+@property (nonatomic) BOOL capturing;
+@property (nonatomic) BOOL clipTimeMarkersToDuration;
+@property (nonatomic) double currentTime;
+@property (nonatomic) unsigned int currentTimeDisplayOptions;
+@property (nonatomic, retain) RCWaveformDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RCGLWaveformViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct { double x1; double x2; } highlightTimeRange;
+@property (nonatomic, retain) RCLayoutMetrics *layoutMetrics;
+@property (nonatomic) double maximumSelectionDuration;
+@property (nonatomic) BOOL playing;
+@property (nonatomic) BOOL screenUpdatesDisabled;
+@property (nonatomic) BOOL scrubbingEnabled;
+@property (nonatomic) struct { double x1; double x2; } selectedTimeRange;
+@property (getter=isSelectedTimeRangeEditingEnabled, nonatomic) BOOL selectedTimeRangeEditingEnabled;
+@property (getter=isSelectedTimeRangeEditingEnabled, nonatomic) BOOL selectedTimeRangeScrubbingEnabled;
+@property (nonatomic) float selectionVisibleMargin;
+@property (readonly) Class superclass;
+@property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;
@@ -98,7 +96,7 @@
 - (void)_setSelectedTimeRange:(struct { double x1; double x2; })arg1 updateVisibleTimeRange:(BOOL)arg2 notifyDelegate:(BOOL)arg3 animationDuration:(double)arg4;
 - (void)_setTimeMarkerViewUpdatesDisabled:(BOOL)arg1;
 - (void)_setTimeMarkerViewsNeedInitialLayout:(BOOL)arg1;
-- (void)_setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2 completionBlock:(id)arg3;
+- (void)_setVisibleTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)_shouldAutoAnimateScrollChanges;
 - (BOOL)_shouldCenterTimeIndicator;
 - (void)_startDisplayLink;

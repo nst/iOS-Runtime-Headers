@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface OCXContentTypes : NSObject {
     NSMutableDictionary *mContentTypeCountMap;
     NSMutableDictionary *mContentTypeObjectMap;

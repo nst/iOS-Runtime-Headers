@@ -8,9 +8,9 @@
     float _value;
 }
 
-@property(readonly) int numberOfRatings;
-@property(readonly) int numberOfStars;
-@property(readonly) float value;
+@property (nonatomic, readonly) int numberOfRatings;
+@property (nonatomic, readonly) int numberOfStars;
+@property (nonatomic, readonly) float value;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

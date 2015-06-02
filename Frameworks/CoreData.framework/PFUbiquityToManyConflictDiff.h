@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet, NSString;
-
 @interface PFUbiquityToManyConflictDiff : NSObject {
     NSMutableSet *_deletedObjectIDs;
     NSMutableSet *_insertedObjectIDs;
     NSString *_relationshipKey;
 }
 
-@property(readonly) NSMutableSet * deletedObjectIDs;
-@property(readonly) NSMutableSet * insertedObjectIDs;
-@property(readonly) NSString * relationshipKey;
+@property (nonatomic, readonly) NSMutableSet *deletedObjectIDs;
+@property (nonatomic, readonly) NSMutableSet *insertedObjectIDs;
+@property (nonatomic, readonly) NSString *relationshipKey;
 
 - (void)dealloc;
 - (id)deletedObjectIDs;

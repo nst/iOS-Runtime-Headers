@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOMatchedToken : PBCodable <NSCopying> {
     struct { 
         unsigned long long *list; 
@@ -17,11 +15,11 @@
     NSString *_matchedToken;
 }
 
-@property(readonly) unsigned long long* geoIds;
-@property(readonly) unsigned int geoIdsCount;
-@property int geoType;
-@property BOOL hasGeoType;
-@property(retain) NSString * matchedToken;
+@property (nonatomic, readonly) unsigned long long*geoIds;
+@property (nonatomic, readonly) unsigned int geoIdsCount;
+@property (nonatomic) int geoType;
+@property (nonatomic) BOOL hasGeoType;
+@property (nonatomic, retain) NSString *matchedToken;
 
 - (void)addGeoId:(unsigned long long)arg1;
 - (void)clearGeoIds;

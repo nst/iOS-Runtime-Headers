@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@interface IMErrorMessagePartChatItem : IMAttachmentMessagePartChatItem {
-}
+@interface IMErrorMessagePartChatItem : IMAttachmentMessagePartChatItem
 
 @end

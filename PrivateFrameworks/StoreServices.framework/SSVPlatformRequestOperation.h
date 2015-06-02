@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSString, SSVPlatformContext;
-
 @interface SSVPlatformRequestOperation : NSOperation {
     NSMutableDictionary *_additionalParameters;
     NSString *_caller;
@@ -17,28 +11,24 @@
     NSArray *_itemIdentifiers;
     NSString *_keyProfile;
     int _personalizationStyle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _responseBlock;
-
+    id /* block */ _responseBlock;
     NSString *_storeFrontSuffix;
     NSNumber *_timeoutInterval;
     NSString *_userAgent;
 }
 
-@property(copy) NSString * imageProfile;
-@property(copy) NSArray * itemIdentifiers;
-@property(copy) NSString * keyProfile;
+@property (copy) NSString *imageProfile;
+@property (copy) NSArray *itemIdentifiers;
+@property (copy) NSString *keyProfile;
 @property int personalizationStyle;
-@property(copy) id responseBlock;
-@property(copy) NSString * storeFrontSuffix;
-@property(copy) NSNumber * timeoutInterval;
+@property (copy) id /* block */ responseBlock;
+@property (copy) NSString *storeFrontSuffix;
+@property (copy) NSNumber *timeoutInterval;
 
 - (void).cxx_destruct;
 - (id)_URLBagContext;
 - (id)_callerValue;
-- (void)_enumerateQueryParametersUsingBlock:(id)arg1;
+- (void)_enumerateQueryParametersUsingBlock:(id /* block */)arg1;
 - (id)_lookupWithRequest:(id)arg1 error:(id*)arg2;
 - (void)_makeLocalJSSignRequest;
 - (void)_makeLocalMescalRequest;
@@ -52,12 +42,12 @@
 - (id)keyProfile;
 - (void)main;
 - (int)personalizationStyle;
-- (id)responseBlock;
+- (id /* block */)responseBlock;
 - (void)setImageProfile:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
 - (void)setPersonalizationStyle:(int)arg1;
-- (void)setResponseBlock:(id)arg1;
+- (void)setResponseBlock:(id /* block */)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;

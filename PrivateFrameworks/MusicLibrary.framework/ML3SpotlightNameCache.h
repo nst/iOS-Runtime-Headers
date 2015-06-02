@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary;
-
 @interface ML3SpotlightNameCache : NSObject {
     BOOL _idle;
     ML3MusicLibrary *_library;
@@ -34,12 +32,12 @@
     } _map;
 }
 
-+ (id)copyFromLibrary:(id)arg1 cancelHandler:(id)arg2;
++ (id)copyFromLibrary:(id)arg1 cancelHandler:(id /* block */)arg2;
 + (void)initialize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_initWithLibrary:(id)arg1 cancelHandler:(id)arg2;
+- (id)_initWithLibrary:(id)arg1 cancelHandler:(id /* block */)arg2;
 - (void)dealloc;
 
 @end

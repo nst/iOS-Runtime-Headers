@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, NSString;
-
 @interface PDComment : NSObject {
     unsigned int mAuthorId;
     NSDate *mDate;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <TIKeyboardInputManager>, <_UIIVCResponseDelegateImpl>, NSMutableArray;
-
 @interface UIKeyboardInputManagerMux : NSObject {
     NSMutableArray *_clients;
     <_UIIVCResponseDelegateImpl> *_responseDelegate;
     <TIKeyboardInputManager> *_systemInputManager;
 }
 
-@property(readonly) BOOL hasSystemInputManager;
-@property(retain) <_UIIVCResponseDelegateImpl> * responseDelegate;
-@property(retain) <TIKeyboardInputManager> * systemInputManager;
+@property (nonatomic, readonly) BOOL hasSystemInputManager;
+@property (nonatomic, retain) <_UIIVCResponseDelegateImpl> *responseDelegate;
+@property (nonatomic, retain) <TIKeyboardInputManager> *systemInputManager;
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (id)sharedInstance;

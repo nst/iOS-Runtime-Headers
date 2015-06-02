@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSDictionary;
-
 @interface GKSectionMetrics : GKGridLayoutMetrics {
     unsigned int _alignment;
     float _desiredItemHeight;
@@ -28,26 +26,26 @@
     BOOL _shouldShowSectionHeadersWhenNoItems;
 }
 
-@property unsigned int alignment;
-@property(readonly) float calculatedItemHeight;
-@property float desiredItemHeight;
-@property float desiredItemWidth;
-@property float flowColumnWidth;
-@property unsigned int flowMaxColumnCount;
-@property BOOL incrementalRevealConsumesPadding;
-@property unsigned int incrementalRevealItemCount;
-@property float interitemSpacing;
-@property(retain) NSDictionary * itemHeightList;
-@property unsigned int lastLineItemAlignment;
-@property float lineSpacing;
-@property float marginBetweenItems;
-@property unsigned int maximumVisibleItemCount;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
-@property float sectionHeaderHeight;
-@property BOOL sectionHeadersShouldPin;
-@property BOOL shouldAlwaysIncludeShowMore;
-@property BOOL shouldShowSectionHeadersWhenNoItems;
-@property float showMoreHeight;
+@property (nonatomic) unsigned int alignment;
+@property (nonatomic, readonly) float calculatedItemHeight;
+@property (nonatomic) float desiredItemHeight;
+@property (nonatomic) float desiredItemWidth;
+@property (nonatomic) float flowColumnWidth;
+@property (nonatomic) unsigned int flowMaxColumnCount;
+@property (nonatomic) BOOL incrementalRevealConsumesPadding;
+@property (nonatomic) unsigned int incrementalRevealItemCount;
+@property (nonatomic) float interitemSpacing;
+@property (nonatomic, retain) NSDictionary *itemHeightList;
+@property (nonatomic) unsigned int lastLineItemAlignment;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic) float marginBetweenItems;
+@property (nonatomic) unsigned int maximumVisibleItemCount;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
+@property (nonatomic) float sectionHeaderHeight;
+@property (nonatomic) BOOL sectionHeadersShouldPin;
+@property (nonatomic) BOOL shouldAlwaysIncludeShowMore;
+@property (nonatomic) BOOL shouldShowSectionHeadersWhenNoItems;
+@property (nonatomic) float showMoreHeight;
 
 + (id)metricsForIdiom:(int)arg1;
 

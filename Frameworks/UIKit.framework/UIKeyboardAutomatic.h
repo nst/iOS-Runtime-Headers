@@ -9,10 +9,10 @@
     BOOL showsCandidateInline;
 }
 
-@property BOOL caretBlinks;
-@property BOOL receivedCandidatesInCurrentInputMode;
-@property BOOL showsCandidateBar;
-@property BOOL showsCandidateInline;
+@property (nonatomic) BOOL caretBlinks;
+@property (nonatomic) BOOL receivedCandidatesInCurrentInputMode;
+@property (nonatomic) BOOL showsCandidateBar;
+@property (nonatomic) BOOL showsCandidateInline;
 
 - (BOOL)_isAutomaticKeyboard;
 - (void)activate;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotosSharingTransitionDelegate>, PUPhotosSharingTransitionContext, UICollectionViewLayout, UIViewController<PUPhotosSharingTransitionViewController>;
-
 @interface PUPhotosSharingTransition : PUModalTransition {
     UICollectionViewLayout *__transitionLayout;
     <PUPhotosSharingTransitionDelegate> *_delegate;
@@ -11,10 +9,10 @@
     UIViewController<PUPhotosSharingTransitionViewController> *_sharingTransitionViewController;
 }
 
-@property(setter=_setTransitionLayout:,retain) UICollectionViewLayout * _transitionLayout;
-@property <PUPhotosSharingTransitionDelegate> * delegate;
-@property(retain) PUPhotosSharingTransitionContext * photosSharingTransitionContext;
-@property(retain) UIViewController<PUPhotosSharingTransitionViewController> * sharingTransitionViewController;
+@property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_transitionLayout;
+@property (nonatomic) <PUPhotosSharingTransitionDelegate> *delegate;
+@property (nonatomic, retain) PUPhotosSharingTransitionContext *photosSharingTransitionContext;
+@property (nonatomic, retain) UIViewController<PUPhotosSharingTransitionViewController> *sharingTransitionViewController;
 
 - (void).cxx_destruct;
 - (void)_setTransitionLayout:(id)arg1;

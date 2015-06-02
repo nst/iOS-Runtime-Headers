@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPRemoteCommand, NSDictionary;
-
 @interface MPRemoteCommandEvent : NSObject {
     MPRemoteCommand *_command;
     NSDictionary *_mediaRemoteOptions;
     double _timestamp;
 }
 
-@property(readonly) MPRemoteCommand * command;
-@property(readonly) double timestamp;
+@property (nonatomic, readonly) MPRemoteCommand *command;
+@property (nonatomic, readonly) double timestamp;
 
 + (id)eventWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class MSVArtworkServiceRequest, NSError;
-
 @interface MSVArtworkServiceOperation : NSOperation {
     NSError *_operationError;
     MSVArtworkServiceRequest *_request;
 }
 
-@property(readonly) NSError * operationError;
-@property(readonly) MSVArtworkServiceRequest * request;
+@property (nonatomic, readonly) NSError *operationError;
+@property (nonatomic, readonly) MSVArtworkServiceRequest *request;
 
 - (void).cxx_destruct;
 - (id)initWithArtworkRequest:(id)arg1;

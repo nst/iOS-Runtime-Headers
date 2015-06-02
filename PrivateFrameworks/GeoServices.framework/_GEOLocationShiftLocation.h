@@ -2,47 +2,29 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface _GEOLocationShiftLocation : NSObject {
     double _accuracy;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     struct { 
         double latitude; 
         double longitude; 
     } _coordinate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _errorHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _mustGoToNetworkCallback;
-
+    id /* block */ _errorHandler;
+    id /* block */ _mustGoToNetworkCallback;
     NSObject<OS_dispatch_queue> *_queue;
     struct __CFRunLoop { } *_runLoop;
 }
 
-@property(readonly) double accuracy;
-@property(readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) double accuracy;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 
-- (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5;
-- (void)_performOnCallbackQueue:(id)arg1;
+- (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5;
+- (void)_performOnCallbackQueue:(id /* block */)arg1;
 - (double)accuracy;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5 callbackQueue:(id)arg6;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5 callbackRunLoop:(struct __CFRunLoop { }*)arg6;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackQueue:(id)arg6;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackRunLoop:(struct __CFRunLoop { }*)arg6;
 - (void)performCompletionHandlerWithShiftedCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
 - (void)performErrorHandler:(id)arg1;
 - (void)performMustGoToNetwork;

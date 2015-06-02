@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSString, NSUUID;
-
 @interface AXSwitch : NSObject <NSSecureCoding> {
     int _action;
     int _buttonNumber;
@@ -17,16 +15,16 @@
     NSUUID *_uuid;
 }
 
-@property int action;
-@property int buttonNumber;
-@property int headSwitch;
-@property unsigned short keyCode;
-@property(copy) NSString * manufacturerName;
-@property(copy) NSString * name;
-@property(copy) NSString * productName;
-@property(retain) NSString * source;
-@property(retain) NSString * type;
-@property(retain) NSUUID * uuid;
+@property (nonatomic) int action;
+@property (nonatomic) int buttonNumber;
+@property (nonatomic) int headSwitch;
+@property (nonatomic) unsigned short keyCode;
+@property (nonatomic, copy) NSString *manufacturerName;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *productName;
+@property (nonatomic, retain) NSString *source;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSUUID *uuid;
 
 + (BOOL)supportsSecureCoding;
 + (id)switchWithAction:(int)arg1 name:(id)arg2 source:(struct NSString { Class x1; }*)arg3 type:(struct NSString { Class x1; }*)arg4;

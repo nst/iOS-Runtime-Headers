@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, UIView, UIWebOverflowScrollView;
-
 @interface UIWebOverflowScrollViewInfo : NSObject {
     UIView *_oldSuperview;
     UIWebOverflowScrollView *_scrollView;
     CALayer *_scrollViewLayer;
 }
 
-@property(retain) UIView * oldSuperview;
-@property(retain) UIWebOverflowScrollView * scrollView;
+@property (nonatomic, retain) UIView *oldSuperview;
+@property (nonatomic, retain) UIWebOverflowScrollView *scrollView;
 
 - (void)dealloc;
 - (id)initWithScrollView:(id)arg1;

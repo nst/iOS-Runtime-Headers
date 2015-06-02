@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPUMediaDownloadObserver, NSString;
-
 @interface MusicMediaOfferButtonState : NSObject {
     NSString *_confirmationTitle;
     MPUMediaDownloadObserver *_downloadObserver;
@@ -15,14 +13,14 @@
     NSString *_title;
 }
 
-@property(copy) NSString * confirmationTitle;
-@property(retain) MPUMediaDownloadObserver * downloadObserver;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isHidden) BOOL hidden;
-@property int progressType;
-@property BOOL showsCloudButton;
-@property BOOL showsConfirmationState;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *confirmationTitle;
+@property (nonatomic, retain) MPUMediaDownloadObserver *downloadObserver;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic) int progressType;
+@property (nonatomic) BOOL showsCloudButton;
+@property (nonatomic) BOOL showsConfirmationState;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)confirmationTitle;

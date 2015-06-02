@@ -2,54 +2,40 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSError, NSObject<OS_dispatch_queue>, NSString;
-
 @interface _AXReplayInstance : NSObject {
     BOOL _async;
     int _attemptsRemaining;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     BOOL _didSucceed;
     double _interval;
     int _maxAttempts;
     NSString *_name;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _replayBlock;
-
+    id /* block */ _replayBlock;
     NSError *_underlyingError;
     id _underlyingResult;
 }
 
-@property BOOL async;
-@property int attemptsRemaining;
-@property(copy) id completionBlock;
-@property BOOL didSucceed;
-@property double interval;
-@property int maxAttempts;
-@property(retain) NSString * name;
-@property NSObject<OS_dispatch_queue> * queue;
-@property(copy) id replayBlock;
-@property(retain) NSError * underlyingError;
-@property(retain) id underlyingResult;
+@property (nonatomic) BOOL async;
+@property (nonatomic) int attemptsRemaining;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic) BOOL didSucceed;
+@property (nonatomic) double interval;
+@property (nonatomic) int maxAttempts;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) id /* block */ replayBlock;
+@property (nonatomic, retain) NSError *underlyingError;
+@property (nonatomic, retain) id underlyingResult;
 
-+ (id)replayBlock:(id)arg1 name:(id)arg2 attempts:(int)arg3 interval:(double)arg4 async:(BOOL)arg5 queue:(id)arg6 completion:(id)arg7;
++ (id)replayBlock:(id /* block */)arg1 name:(id)arg2 attempts:(int)arg3 interval:(double)arg4 async:(BOOL)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 
 - (void)_dispatchAsynchronously;
 - (void)_dispatchSynchronously;
 - (id)_genericFailError;
 - (BOOL)async;
 - (int)attemptsRemaining;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)dealloc;
 - (BOOL)didSucceed;
 - (void)dispatch;
@@ -57,16 +43,16 @@
 - (int)maxAttempts;
 - (id)name;
 - (id)queue;
-- (id)replayBlock;
+- (id /* block */)replayBlock;
 - (void)setAsync:(BOOL)arg1;
 - (void)setAttemptsRemaining:(int)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDidSucceed:(BOOL)arg1;
 - (void)setInterval:(double)arg1;
 - (void)setMaxAttempts:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setReplayBlock:(id)arg1;
+- (void)setReplayBlock:(id /* block */)arg1;
 - (void)setUnderlyingError:(id)arg1;
 - (void)setUnderlyingResult:(id)arg1;
 - (id)underlyingError;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class NSUUID, PSYTestInput;
-
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
     BOOL _dryRun;
     BOOL _terminateDuringDryRun;
@@ -11,10 +9,10 @@
     NSUUID *_transactionID;
 }
 
-@property BOOL dryRun;
-@property BOOL terminateDuringDryRun;
-@property(retain) PSYTestInput * testInput;
-@property(copy) NSUUID * transactionID;
+@property (nonatomic) BOOL dryRun;
+@property (nonatomic) BOOL terminateDuringDryRun;
+@property (nonatomic, retain) PSYTestInput *testInput;
+@property (nonatomic, copy) NSUUID *transactionID;
 
 + (BOOL)supportsSecureCoding;
 

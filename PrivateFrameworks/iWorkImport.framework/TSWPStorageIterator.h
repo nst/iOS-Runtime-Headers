@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCharacterSet, NSMutableArray, TSWPStorage;
-
 @interface TSWPStorageIterator : NSObject {
     unsigned int _charIndex;
     BOOL _lastEventWasMarker;
@@ -16,7 +14,7 @@
     TSWPStorage *_storage;
 }
 
-@property(retain) NSCharacterSet * markers;
+@property (nonatomic, retain) NSCharacterSet *markers;
 
 - (void)addAttributeRangeProvider:(int)arg1;
 - (void)addLocationProvider:(id)arg1;

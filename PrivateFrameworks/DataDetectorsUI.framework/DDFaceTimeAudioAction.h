@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDFaceTimeAudioAction : DDTelephoneNumberAction {
-}
+@interface DDFaceTimeAudioAction : DDTelephoneNumberAction
 
 + (BOOL)isAvailable;
 

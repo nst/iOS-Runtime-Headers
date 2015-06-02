@@ -7,8 +7,8 @@
     int _type;
 }
 
-@property(readonly) BOOL isDestructive;
-@property(readonly) int type;
+@property (nonatomic, readonly) BOOL isDestructive;
+@property (nonatomic, readonly) int type;
 
 + (id)actionWithType:(int)arg1;
 + (id)destructiveActionWithType:(int)arg1;

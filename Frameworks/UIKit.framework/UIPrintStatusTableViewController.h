@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDateFormatter, PKJob;
-
 @interface UIPrintStatusTableViewController : UITableViewController {
     PKJob *_printJob;
     NSDateFormatter *_sentFormatter;

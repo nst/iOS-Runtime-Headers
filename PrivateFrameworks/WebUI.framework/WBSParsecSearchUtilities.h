@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSParsecSearchUtilities : NSObject {
-}
+@interface WBSParsecSearchUtilities : NSObject
 
 + (BOOL)anyParsecSearchResult:(id)arg1 fuzzyMatchesSuggestedSiteURLString:(id)arg2;
 

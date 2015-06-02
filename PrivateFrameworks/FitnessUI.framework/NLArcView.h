@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class CAGradientLayer, CALayer, NLArcLayer, NLArcMaskLayer, NLArcSegmentLayer, UIImage;
-
 @interface NLArcView : UIView {
     NLArcMaskLayer *_arcMaskLayer;
     float _arcStart;
@@ -22,15 +20,15 @@
     CALayer *_whiteDotIndicatorLayer;
 }
 
-@property float arcStart;
-@property(retain) UIImage * icon;
-@property float indicatorPercentage;
-@property float lineWidth;
-@property int numberOfSegments;
-@property float radius;
-@property BOOL shouldDrawIndicator;
-@property BOOL shouldDrawSegmented;
-@property BOOL shouldShowIcon;
+@property (nonatomic) float arcStart;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic) float indicatorPercentage;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) int numberOfSegments;
+@property (nonatomic) float radius;
+@property (nonatomic) BOOL shouldDrawIndicator;
+@property (nonatomic) BOOL shouldDrawSegmented;
+@property (nonatomic) BOOL shouldShowIcon;
 
 - (void).cxx_destruct;
 - (id)_coloredDotIndicatorLayer;
@@ -60,7 +58,7 @@
 - (void)setPercentageFull:(float)arg1;
 - (void)setPercentageFull:(float)arg1 animated:(BOOL)arg2;
 - (void)setPercentageFull:(float)arg1 animatedWithDuration:(float)arg2;
-- (void)setPercentageFull:(float)arg1 animatedWithDuration:(float)arg2 completion:(id)arg3;
+- (void)setPercentageFull:(float)arg1 animatedWithDuration:(float)arg2 completion:(id /* block */)arg3;
 - (void)setPercentageUnfull:(float)arg1 animatedWithDuration:(float)arg2;
 - (void)setRadius:(float)arg1;
 - (void)setRadius:(float)arg1 animated:(BOOL)arg2;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libmecabra.dylib
  */
 
-@class NSArray, NSString;
-
 @interface MecabraWordProperties : NSObject {
     NSString *_analysisString;
     NSArray *_characterInformation;
@@ -12,11 +10,11 @@
     int _language;
 }
 
-@property(copy) NSString * analysisString;
-@property(retain) NSArray * characterInformation;
-@property(retain) NSArray * codeLookupInformation;
-@property(getter=isEmoji) BOOL emoji;
-@property int language;
+@property (nonatomic, copy) NSString *analysisString;
+@property (nonatomic, retain) NSArray *characterInformation;
+@property (nonatomic, retain) NSArray *codeLookupInformation;
+@property (getter=isEmoji, nonatomic) BOOL emoji;
+@property (nonatomic) int language;
 
 + (struct __IDXIndex { }*)characterInformationDictionary;
 + (struct __IDXIndex { }*)codeLookupInformationDictionary;

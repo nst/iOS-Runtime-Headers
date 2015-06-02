@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSValue, UIColor, _UIBarBackButtonItemAppearanceStorage;
-
 @interface _UIBarButtonItemAppearanceStorage : _UIBarItemAppearanceStorage {
     _UIBarBackButtonItemAppearanceStorage *backButtonAppearance;
     NSMutableDictionary *backgroundImages;
@@ -14,11 +12,11 @@
     NSValue *titlePositionOffset;
 }
 
-@property(retain) NSValue * backButtonTitlePositionOffset;
-@property(retain) NSValue * miniBackButtonTitlePositionOffset;
-@property(retain) NSValue * miniTitlePositionOffset;
-@property(retain) UIColor * tintColor;
-@property(retain) NSValue * titlePositionOffset;
+@property (nonatomic, retain) NSValue *backButtonTitlePositionOffset;
+@property (nonatomic, retain) NSValue *miniBackButtonTitlePositionOffset;
+@property (nonatomic, retain) NSValue *miniTitlePositionOffset;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic, retain) NSValue *titlePositionOffset;
 
 - (id)anyBackButtonBackgroundImage;
 - (id)anyBackgroundImage;

@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderOutputInternal, AVWeakReference, NSDictionary, NSString;
-
 @interface AVAssetReaderOutput : NSObject {
     AVAssetReaderOutputInternal *_internal;
 }
 
-@property BOOL alwaysCopiesSampleData;
-@property(getter=_extractionID,setter=_setExtractionID:) int extractionID;
-@property(getter=_figAssetReaderExtractionOptions,readonly) NSDictionary * figAssetReaderExtractionOptions;
-@property(readonly) NSString * mediaType;
-@property(getter=_trimsSampleDurations,readonly) BOOL trimsSampleDurations;
-@property(getter=_weakReferenceToAssetReader,readonly) AVWeakReference * weakReferenceToAssetReader;
+@property (nonatomic) BOOL alwaysCopiesSampleData;
+@property (getter=_extractionID, setter=_setExtractionID:, nonatomic) int extractionID;
+@property (getter=_figAssetReaderExtractionOptions, nonatomic, readonly) NSDictionary *figAssetReaderExtractionOptions;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (getter=_trimsSampleDurations, nonatomic, readonly) BOOL trimsSampleDurations;
+@property (getter=_weakReferenceToAssetReader, nonatomic, readonly) AVWeakReference *weakReferenceToAssetReader;
 
 + (void)initialize;
 

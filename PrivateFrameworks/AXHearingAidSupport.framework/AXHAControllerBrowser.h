@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class <AXHAControllerBrowserDelegateProtocol>, AXHATimer, AXHearingSlaveController, NSMutableArray, NSMutableDictionary, NSNetServiceBrowser, NSString;
-
 @interface AXHAControllerBrowser : NSObject <AXHADeviceControllerProtocol, AXHARemoteControllerDelegate, NSNetServiceBrowserDelegate> {
     NSNetServiceBrowser *_browser;
     <AXHAControllerBrowserDelegateProtocol> *_delegate;
@@ -15,16 +13,16 @@
     NSMutableArray *_updateDeviceBlocks;
 }
 
-@property(retain) NSNetServiceBrowser * browser;
-@property(copy,readonly) NSString * debugDescription;
-@property <AXHAControllerBrowserDelegateProtocol> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * remoteControllers;
-@property(retain) AXHearingSlaveController * slaveController;
-@property int state;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * updateDeviceBlocks;
+@property (nonatomic, retain) NSNetServiceBrowser *browser;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXHAControllerBrowserDelegateProtocol> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *remoteControllers;
+@property (nonatomic, retain) AXHearingSlaveController *slaveController;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *updateDeviceBlocks;
 
 + (id)sharedInstance;
 
@@ -46,13 +44,13 @@
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
-- (void)registerForPropertyUpdates:(id)arg1;
+- (void)registerForPropertyUpdates:(id /* block */)arg1;
 - (id)remoteControllerForHostname:(id)arg1;
 - (id)remoteControllers;
-- (void)resolveMasterWithCompletion:(id)arg1;
-- (void)sendObject:(id)arg1 toAllControllersExcept:(id)arg2 withCompletion:(id)arg3;
-- (void)sendObject:(id)arg1 toController:(id)arg2 withCompletion:(id)arg3;
-- (void)sendObject:(id)arg1 toController:(id)arg2 withSendCompletion:(id)arg3;
+- (void)resolveMasterWithCompletion:(id /* block */)arg1;
+- (void)sendObject:(id)arg1 toAllControllersExcept:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)sendObject:(id)arg1 toController:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)sendObject:(id)arg1 toController:(id)arg2 withSendCompletion:(id /* block */)arg3;
 - (void)setBrowser:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteControllers:(id)arg1;
@@ -64,7 +62,7 @@
 - (int)state;
 - (void)stop;
 - (void)stopPropertyUpdates;
-- (void)transitionToSlaveWithCompletion:(id)arg1;
+- (void)transitionToSlaveWithCompletion:(id /* block */)arg1;
 - (id)updateDeviceBlocks;
 - (void)updateProperty:(int)arg1 forDeviceID:(id)arg2;
 - (void)writePayload:(id)arg1 toControllers:(id)arg2;

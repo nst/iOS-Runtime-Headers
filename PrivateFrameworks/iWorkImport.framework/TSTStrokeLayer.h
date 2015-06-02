@@ -13,8 +13,8 @@
     } mStrokeRuns;
 }
 
-@property unsigned short columnOrRowIndex;
-@property(readonly) BOOL isEmpty;
+@property (nonatomic) unsigned short columnOrRowIndex;
+@property (nonatomic, readonly) BOOL isEmpty;
 
 + (id)strokeLayer;
 
@@ -23,8 +23,8 @@
 - (unsigned short)columnOrRowIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateStrokesUsingBlock:(id)arg1;
+- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateStrokesUsingBlock:(id /* block */)arg1;
 - (id)findStrokeAndRangeAtIndex:(int)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 columnOrRowIndex:(unsigned short)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicQueryPlaybackContext : MPQueryPlaybackContext {
-}
+@interface MusicQueryPlaybackContext : MPQueryPlaybackContext
 
 + (Class)queueFeederClass;
 

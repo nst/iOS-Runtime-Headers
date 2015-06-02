@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UIImageView, UILabel;
-
 @interface SKUITextBoxView : UIControl {
     SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
@@ -32,15 +30,15 @@
     NSString *_underlyingText;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(copy) NSString * moreButtonTitle;
-@property int numberOfVisibleLines;
-@property float rating;
-@property(copy) NSString * ratingText;
-@property(copy) NSString * subtitle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleInsets;
-@property int truncationStyle;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, copy) NSString *moreButtonTitle;
+@property (nonatomic) int numberOfVisibleLines;
+@property (nonatomic) float rating;
+@property (nonatomic, copy) NSString *ratingText;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleInsets;
+@property (nonatomic) int truncationStyle;
 
 - (void).cxx_destruct;
 - (id)_moreButtonLabel;

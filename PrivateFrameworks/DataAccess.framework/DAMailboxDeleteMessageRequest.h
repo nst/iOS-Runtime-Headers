@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAMailboxDeleteMessageRequest : DAMailboxRequest {
-}
+@interface DAMailboxDeleteMessageRequest : DAMailboxRequest
 
 - (id)description;
 - (unsigned int)hash;

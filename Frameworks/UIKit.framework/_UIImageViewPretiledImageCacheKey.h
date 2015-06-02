@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface _UIImageViewPretiledImageCacheKey : NSObject {
     UIImage *_originalImage;
     struct CGSize { 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDLineEnd;
-
 @interface TSDSpecSetLineEnd : TSDSpecLineEnd {
     TSDLineEnd *_lineEnd;
     BOOL _unset;

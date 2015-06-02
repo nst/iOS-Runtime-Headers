@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFUnderlineAnnotation : UIPDFMarkupAnnotation {
-}
+@interface UIPDFUnderlineAnnotation : UIPDFMarkupAnnotation
 
 - (int)annotationType;
 - (void)drawInContext:(struct CGContext { }*)arg1;

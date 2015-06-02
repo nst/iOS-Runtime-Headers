@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIRemoveControlMinusButton, UIView;
-
 @interface UIRemoveControl : UIView {
     id _delegate;
     NSString *_label;

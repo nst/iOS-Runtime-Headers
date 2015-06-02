@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class DeviceManagerThread, NSDictionary, NSMutableDictionary, NSString;
-
 @interface DeviceManager : NSObject <ICDeviceManagerProtocol> {
     NSDictionary *_deviceMatchingInfo;
     NSMutableDictionary *_devices;
     DeviceManagerThread *_thread;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)closeDevice:(id)arg1 contextInfo:(void*)arg2;
 - (void)closeDeviceImp:(id)arg1;

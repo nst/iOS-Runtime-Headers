@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLUpdateColumnsIntermediate;
-
 @interface NSSQLUpdateIntermediate : NSSQLStatementIntermediate {
     NSSQLUpdateColumnsIntermediate *_updateColumns;
 }

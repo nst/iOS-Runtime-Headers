@@ -17,16 +17,16 @@
     long long _int64Value;
 }
 
-@property BOOL boolValue;
-@property double doubleValue;
-@property float floatValue;
-@property BOOL hasBoolValue;
-@property BOOL hasDoubleValue;
-@property BOOL hasFloatValue;
-@property BOOL hasInt32Value;
-@property BOOL hasInt64Value;
-@property int int32Value;
-@property long long int64Value;
+@property (nonatomic) BOOL boolValue;
+@property (nonatomic) double doubleValue;
+@property (nonatomic) float floatValue;
+@property (nonatomic) BOOL hasBoolValue;
+@property (nonatomic) BOOL hasDoubleValue;
+@property (nonatomic) BOOL hasFloatValue;
+@property (nonatomic) BOOL hasInt32Value;
+@property (nonatomic) BOOL hasInt64Value;
+@property (nonatomic) int int32Value;
+@property (nonatomic) long long int64Value;
 
 - (BOOL)boolValue;
 - (void)copyTo:(id)arg1;

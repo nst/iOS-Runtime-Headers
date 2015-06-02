@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
-
 @interface PLCloudStreamShareJob : PLCloudSharingJob {
     NSString *_albumCloudGUID;
     NSString *_albumName;
@@ -12,11 +10,11 @@
     NSArray *_recipientsInfo;
 }
 
-@property(retain) NSString * albumCloudGUID;
-@property(retain) NSString * albumName;
-@property(retain) NSString * commentText;
-@property(retain) NSArray * mediaSources;
-@property(retain) NSArray * recipientsInfo;
+@property (nonatomic, retain) NSString *albumCloudGUID;
+@property (nonatomic, retain) NSString *albumName;
+@property (nonatomic, retain) NSString *commentText;
+@property (nonatomic, retain) NSArray *mediaSources;
+@property (nonatomic, retain) NSArray *recipientsInfo;
 
 + (void)publishMediaFromSources:(id)arg1 toNewSharedAlbumWithName:(id)arg2 withCommentText:(id)arg3 recipients:(id)arg4;
 + (void)publishMediaFromSources:(id)arg1 toSharedAlbum:(id)arg2 withCommentText:(id)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCUnknownPayload : MCPayload {
-}
+@interface MCUnknownPayload : MCPayload
 
 - (id)description;
 - (id)subtitle1Description;

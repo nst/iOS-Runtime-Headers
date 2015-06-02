@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SAAnswerSocialAnswer : SAAnswerAbstractSocialPost
 
-@interface SAAnswerSocialAnswer : SAAnswerAbstractSocialPost {
-}
-
-@property(copy) NSNumber * selectedAnswer;
+@property (nonatomic, copy) NSNumber *selectedAnswer;
 
 + (id)socialAnswer;
 + (id)socialAnswerWithDictionary:(id)arg1 context:(id)arg2;

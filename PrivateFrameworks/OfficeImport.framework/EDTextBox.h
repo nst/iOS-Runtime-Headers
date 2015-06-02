@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDAlignmentInfo, EDProtection, EDString;
-
 @interface EDTextBox : NSObject {
     EDAlignmentInfo *mAlignmentInfo;
     EDProtection *mProtection;

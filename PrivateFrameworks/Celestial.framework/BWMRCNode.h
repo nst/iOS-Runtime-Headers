@@ -2,15 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary;
-
 @interface BWMRCNode : BWNode {
-    int (*_createSampleBufferProcessorFunction)();
+    int (*_createSampleBufferProcessorFunction;
     int _lastMRCCount;
     NSDictionary *_metadataIdentifierToSymbologyDictionary;
     int _metadataOutputRate;

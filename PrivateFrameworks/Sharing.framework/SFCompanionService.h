@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSNumber, NSString;
-
 @interface SFCompanionService : NSObject <NSCopying, NSSecureCoding> {
     NSString *_deviceID;
     NSString *_deviceName;
@@ -14,13 +12,13 @@
     NSString *_serviceType;
 }
 
-@property(copy) NSString * deviceID;
-@property(copy) NSString * deviceName;
-@property(copy) NSString * identifier;
-@property(copy) NSString * ipAddress;
-@property(copy) NSString * managerID;
-@property(copy) NSNumber * nsxpcVersion;
-@property(copy) NSString * serviceType;
+@property (copy) NSString *deviceID;
+@property (copy) NSString *deviceName;
+@property (copy) NSString *identifier;
+@property (copy) NSString *ipAddress;
+@property (copy) NSString *managerID;
+@property (copy) NSNumber *nsxpcVersion;
+@property (copy) NSString *serviceType;
 
 + (id)serviceFromAuthorData:(id)arg1;
 + (id)serviceFromDictionary:(id)arg1;

@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSData, NSString;
-
 @interface IMPerson : NSObject {
     int _recordID;
     BOOL _registered;
 }
 
-@property(readonly) int _recordID;
-@property(readonly) void* _recordRef;
-@property(readonly) BOOL _registered;
-@property(retain,readonly) NSString * abbreviatedName;
-@property(readonly) NSArray * allEmails;
-@property(readonly) NSString * companyName;
-@property(retain,readonly) NSString * displayName;
-@property(copy) NSArray * emails;
-@property(copy) NSString * firstName;
-@property(retain,readonly) NSString * fullName;
-@property(retain,readonly) NSArray * groups;
-@property(retain) NSData * imageData;
-@property(readonly) NSData * imageDataWithoutLoading;
-@property(readonly) BOOL isCompany;
-@property(readonly) BOOL isInAddressBook;
-@property(copy) NSString * lastName;
-@property(readonly) NSArray * mobileNumbers;
-@property(retain,readonly) NSString * name;
-@property(copy) NSString * nickname;
-@property NSArray * phoneNumbers;
-@property(readonly) int recordID;
-@property(readonly) unsigned int status;
-@property(retain,readonly) NSString * uniqueID;
+@property (nonatomic, readonly) int _recordID;
+@property (nonatomic, readonly) void*_recordRef;
+@property (nonatomic, readonly) BOOL _registered;
+@property (nonatomic, readonly, retain) NSString *abbreviatedName;
+@property (nonatomic, readonly) NSArray *allEmails;
+@property (nonatomic, readonly) NSString *companyName;
+@property (nonatomic, readonly, retain) NSString *displayName;
+@property (nonatomic, copy) NSArray *emails;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, readonly, retain) NSString *fullName;
+@property (nonatomic, readonly, retain) NSArray *groups;
+@property (nonatomic, retain) NSData *imageData;
+@property (nonatomic, readonly) NSData *imageDataWithoutLoading;
+@property (nonatomic, readonly) BOOL isCompany;
+@property (nonatomic, readonly) BOOL isInAddressBook;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, readonly) NSArray *mobileNumbers;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, copy) NSString *nickname;
+@property (nonatomic) NSArray *phoneNumbers;
+@property (nonatomic, readonly) int recordID;
+@property (nonatomic, readonly) unsigned int status;
+@property (nonatomic, readonly, retain) NSString *uniqueID;
 
 + (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
 + (void)_setCachedQueriesEnabled:(BOOL)arg1;

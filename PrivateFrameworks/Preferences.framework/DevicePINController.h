@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <DevicePINControllerDelegate>, NSString, UIBarButtonItem;
-
 @interface DevicePINController : PSDetailController {
     UIBarButtonItem *_cancelButton;
     UIBarButtonItem *_doneButton;
@@ -20,8 +18,8 @@
     BOOL _success;
 }
 
-@property BOOL hidesNavigationButtons;
-@property <DevicePINControllerDelegate> * pinDelegate;
+@property (nonatomic) BOOL hidesNavigationButtons;
+@property (nonatomic) <DevicePINControllerDelegate> *pinDelegate;
 
 + (BOOL)settingEnabled;
 
@@ -70,7 +68,7 @@
 - (void)setMode:(int)arg1;
 - (void)setOldPassword:(id)arg1;
 - (void)setPIN:(id)arg1;
-- (void)setPIN:(id)arg1 completion:(id)arg2;
+- (void)setPIN:(id)arg1 completion:(id /* block */)arg2;
 - (void)setPane:(id)arg1;
 - (void)setPinDelegate:(id)arg1;
 - (void)setSpecifier:(id)arg1;

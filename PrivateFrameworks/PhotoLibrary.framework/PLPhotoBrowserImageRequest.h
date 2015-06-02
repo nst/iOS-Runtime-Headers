@@ -7,8 +7,8 @@
     int _imageManagerRequestID;
 }
 
-@property BOOL canceled;
-@property int imageManagerRequestID;
+@property (nonatomic) BOOL canceled;
+@property (nonatomic) int imageManagerRequestID;
 
 - (BOOL)canceled;
 - (int)imageManagerRequestID;

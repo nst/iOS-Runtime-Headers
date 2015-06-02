@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildUtility : NSObject {
-}
+@interface KNBuildUtility : NSObject
 
 + (BOOL)animationInfo:(id)arg1 onInfo:(id)arg2 canRunSimultaneouslyWithAnimationInfo:(id)arg3 onInfo:(id)arg4;
 + (id)buildsForChunks:(id)arg1;

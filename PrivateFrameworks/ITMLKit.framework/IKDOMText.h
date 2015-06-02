@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMText : IKDOMCharacterData <IKJSDOMText> {
-}
+@interface IKDOMText : IKDOMCharacterData <IKJSDOMText>
 
 - (id)nodeName;
 - (int)nodeType;

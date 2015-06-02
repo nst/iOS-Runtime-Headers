@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class <NSFastEnumeration>;
-
 @interface __NSFastEnumerationEnumerator : NSEnumerator {
     unsigned int _count;
     unsigned int _mut;

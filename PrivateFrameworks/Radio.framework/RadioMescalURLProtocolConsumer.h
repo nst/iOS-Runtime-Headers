@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioMescalURLProtocolConsumer : SSVURLProtocolConsumer {
-}
+@interface RadioMescalURLProtocolConsumer : SSVURLProtocolConsumer
 
 - (id)objectForData:(id)arg1 response:(id)arg2 error:(id*)arg3;
 

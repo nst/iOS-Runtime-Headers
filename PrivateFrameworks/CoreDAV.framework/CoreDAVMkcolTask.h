@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVTaskDelegate>, NSSet, NSURL;
-
 @interface CoreDAVMkcolTask : CoreDAVActionBackedTask {
     int _absoluteOrder;
     NSURL *_priorOrderedURL;
@@ -11,10 +9,10 @@
     BOOL _sendOrder;
 }
 
-@property int absoluteOrder;
-@property <CoreDAVTaskDelegate> * delegate;
-@property(retain) NSURL * priorOrderedURL;
-@property(retain) NSSet * propertiesToSet;
+@property (nonatomic) int absoluteOrder;
+@property (nonatomic) <CoreDAVTaskDelegate> *delegate;
+@property (nonatomic, retain) NSURL *priorOrderedURL;
+@property (nonatomic, retain) NSSet *propertiesToSet;
 
 - (int)absoluteOrder;
 - (id)additionalHeaderValues;

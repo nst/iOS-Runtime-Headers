@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView;
-
 @interface SUPurchaseAnimationDelegate : NSObject {
     UIView *_view;
 }

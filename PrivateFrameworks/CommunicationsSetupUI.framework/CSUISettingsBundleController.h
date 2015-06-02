@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CSUISettingsBundleController : PSBundleController {
-}
+@interface CSUISettingsBundleController : PSBundleController
 
 - (BOOL)_cnfreg_overrideForController:(id)arg1 withDictionary:(id)arg2;
 - (void)_resetSpecifierAction:(id)arg1;

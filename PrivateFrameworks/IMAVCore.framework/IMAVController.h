@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class <IMAVControllerDelegate>, NSArray, NSMutableArray;
-
 @interface IMAVController : NSObject {
     BOOL _blockIncomingInvitationsDuringCall;
     BOOL _blockMultipleIncomingInvitations;
@@ -11,20 +9,20 @@
     NSMutableArray *_delegates;
 }
 
-@property(retain) NSMutableArray * _delegates;
-@property(readonly) BOOL _ready;
-@property BOOL blockIncomingInvitationsDuringCall;
-@property BOOL blockMultipleIncomingInvitations;
-@property BOOL blockOutgoingInvitationsDuringCall;
-@property(readonly) BOOL cameraCapable;
-@property(readonly) BOOL cameraConnected;
-@property <IMAVControllerDelegate> * delegate;
-@property(retain,readonly) NSArray * delegates;
-@property(readonly) BOOL hasActiveConference;
-@property(readonly) BOOL hasRunningConference;
-@property(readonly) BOOL microphoneCapable;
-@property(readonly) BOOL microphoneConnected;
-@property(readonly) unsigned int overallChatState;
+@property (nonatomic, retain) NSMutableArray *_delegates;
+@property (nonatomic, readonly) BOOL _ready;
+@property (nonatomic) BOOL blockIncomingInvitationsDuringCall;
+@property (nonatomic) BOOL blockMultipleIncomingInvitations;
+@property (nonatomic) BOOL blockOutgoingInvitationsDuringCall;
+@property (nonatomic, readonly) BOOL cameraCapable;
+@property (nonatomic, readonly) BOOL cameraConnected;
+@property (nonatomic) <IMAVControllerDelegate> *delegate;
+@property (nonatomic, readonly, retain) NSArray *delegates;
+@property (nonatomic, readonly) BOOL hasActiveConference;
+@property (nonatomic, readonly) BOOL hasRunningConference;
+@property (nonatomic, readonly) BOOL microphoneCapable;
+@property (nonatomic, readonly) BOOL microphoneConnected;
+@property (nonatomic, readonly) unsigned int overallChatState;
 
 + (id)sharedInstance;
 

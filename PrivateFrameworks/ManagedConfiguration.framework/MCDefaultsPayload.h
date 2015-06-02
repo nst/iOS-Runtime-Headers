@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSDictionary;
-
 @interface MCDefaultsPayload : MCPayload {
     NSDictionary *_defaultsByDomain;
 }

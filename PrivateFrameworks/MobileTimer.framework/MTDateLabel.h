@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class <MTDateLabelObserver>, NSDate, NSTimeZone, UIColor, UIFont, UILabel;
-
 @interface MTDateLabel : UIView {
     NSDate *_date;
     UILabel *_dateLabel;
@@ -15,18 +13,18 @@
     NSTimeZone *_timeZone;
 }
 
-@property(copy) NSDate * date;
-@property(readonly) UILabel * dateLabel;
-@property(retain) UIFont * font;
-@property(readonly) BOOL hasTimeDesignator;
-@property BOOL hideTimeDesignator;
-@property <MTDateLabelObserver> * observer;
-@property float paddingFromTimeToDesignator;
-@property(retain) UIColor * textColor;
-@property int timeDesignatorBaselineAdjustment;
-@property(retain) UIFont * timeDesignatorFont;
-@property(readonly) UILabel * timeDesignatorLabel;
-@property(retain) NSTimeZone * timeZone;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, readonly) UILabel *dateLabel;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, readonly) BOOL hasTimeDesignator;
+@property (nonatomic) BOOL hideTimeDesignator;
+@property (nonatomic) <MTDateLabelObserver> *observer;
+@property (nonatomic) float paddingFromTimeToDesignator;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) int timeDesignatorBaselineAdjustment;
+@property (nonatomic, retain) UIFont *timeDesignatorFont;
+@property (nonatomic, readonly) UILabel *timeDesignatorLabel;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void)_noteLayoutChange;
 - (void)_updateDateString;

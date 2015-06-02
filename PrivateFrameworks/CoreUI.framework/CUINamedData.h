@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIRenditionKey, NSData, NSString;
-
 @interface CUINamedData : NSObject {
     CUIRenditionKey *_key;
     NSString *_name;
     unsigned int _storageRef;
 }
 
-@property(readonly) NSData * data;
-@property(copy) NSString * name;
-@property(readonly) NSString * utiType;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) NSString *utiType;
 
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;

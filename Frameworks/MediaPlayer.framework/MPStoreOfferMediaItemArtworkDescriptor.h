@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface MPStoreOfferMediaItemArtworkDescriptor : NSObject {
     NSString *_cacheID;
     NSArray *_containerArtworkSizes;
@@ -16,7 +14,7 @@
     NSDictionary *_screenshotURLs;
 }
 
-@property(readonly) NSString * cacheID;
+@property (nonatomic, readonly) NSString *cacheID;
 
 - (void).cxx_destruct;
 - (id)_availableSizesForArtworkURLs:(id)arg1;

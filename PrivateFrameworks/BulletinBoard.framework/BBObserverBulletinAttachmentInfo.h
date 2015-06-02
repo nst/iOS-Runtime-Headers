@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface BBObserverBulletinAttachmentInfo : NSObject {
     NSMutableDictionary *_imageSizePairs;
     BOOL _imagesFetched;
@@ -12,10 +10,10 @@
     NSString *_sizesRecordID;
 }
 
-@property BOOL imagesFetched;
-@property(copy) NSString * imagesRecordID;
-@property BOOL sizesFetched;
-@property(copy) NSString * sizesRecordID;
+@property (nonatomic) BOOL imagesFetched;
+@property (nonatomic, copy) NSString *imagesRecordID;
+@property (nonatomic) BOOL sizesFetched;
+@property (nonatomic, copy) NSString *sizesRecordID;
 
 - (id)_pairForKey:(id)arg1 create:(BOOL)arg2;
 - (void)dealloc;

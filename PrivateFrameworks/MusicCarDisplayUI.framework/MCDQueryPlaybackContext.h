@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDQueryPlaybackContext : MPQueryPlaybackContext {
-}
+@interface MCDQueryPlaybackContext : MPQueryPlaybackContext
 
 + (Class)queueFeederClass;
 

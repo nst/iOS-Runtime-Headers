@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfTDSLogMsg : PLBasebandMessage {
     NSMutableDictionary *_commonInfo;
     NSString *_error;
@@ -14,13 +12,13 @@
     NSArray *_srvcTypeCnt;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSString * error;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
-@property(retain) NSArray * rxdStateCnt;
-@property(retain) NSArray * srvcTypeCnt;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSString *error;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
+@property (retain) NSArray *rxdStateCnt;
+@property (retain) NSArray *srvcTypeCnt;
 
 + (id)entryEventBackwardDefinitionBBMavHwRfTDS;
 

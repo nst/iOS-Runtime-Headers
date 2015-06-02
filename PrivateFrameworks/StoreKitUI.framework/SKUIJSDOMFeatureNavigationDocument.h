@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKAppContext, IKJSNavigationDocument, NSMutableArray, NSString, SKUINavigationDocumentController;
-
 @interface SKUIJSDOMFeatureNavigationDocument : NSObject <IKAppNavigationController, SKUIDOMFeature> {
     IKAppContext *_appContext;
     NSString *_featureName;
@@ -12,13 +10,13 @@
     NSMutableArray *_stackItems;
 }
 
-@property IKAppContext * appContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned int hash;
-@property(retain) SKUINavigationDocumentController * navigationDocumentController;
-@property(readonly) Class superclass;
+@property IKAppContext *appContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSString *featureName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUINavigationDocumentController *navigationDocumentController;
+@property (readonly) Class superclass;
 
 + (id)possibleFeatureNames;
 

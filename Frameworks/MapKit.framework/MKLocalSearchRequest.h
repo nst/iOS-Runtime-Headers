@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <GEOCompletionItem>, CLLocation, NSArray, NSString, _MKLocalSearchMerchantParameters;
-
 @interface MKLocalSearchRequest : NSObject <NSCopying> {
     BOOL _allowPhoneNumberLookupUsingCellular;
     NSString *_canonicalSearchString;
@@ -28,18 +26,18 @@
     int _resultProviderID;
 }
 
-@property(readonly) BOOL _hasRegion;
-@property(getter=_allowPhoneNumberLookupUsingCellular,setter=_setAllowPhoneNumberLookupUsingCellular:) BOOL allowPhoneNumberLookupUsingCellular;
-@property(getter=_canonicalSearchString,setter=_setCanonicalSearchString:,retain) NSString * canonicalSearchString;
-@property(getter=_contactsDataString,setter=_setContactsDataString:,retain) NSString * contactsDataString;
-@property(getter=_deviceLocation,setter=_setDeviceLocation:,retain) CLLocation * deviceLocation;
-@property(readonly) <GEOCompletionItem> * geoCompletionItem;
-@property(getter=_merchantParameters,setter=_setMerchantParameters:,retain) _MKLocalSearchMerchantParameters * merchantParameters;
-@property(getter=_muids,setter=_setMuids:,retain) NSArray * muids;
-@property(copy) NSString * naturalLanguageQuery;
-@property(getter=_phoneNumbers,setter=_setPhoneNumbers:,retain) NSArray * phoneNumbers;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
-@property(getter=_resultProviderID,setter=_setResultProviderID:) int resultProviderID;
+@property (nonatomic, readonly) BOOL _hasRegion;
+@property (getter=_allowPhoneNumberLookupUsingCellular, setter=_setAllowPhoneNumberLookupUsingCellular:, nonatomic) BOOL allowPhoneNumberLookupUsingCellular;
+@property (getter=_canonicalSearchString, setter=_setCanonicalSearchString:, nonatomic, retain) NSString *canonicalSearchString;
+@property (getter=_contactsDataString, setter=_setContactsDataString:, nonatomic, retain) NSString *contactsDataString;
+@property (getter=_deviceLocation, setter=_setDeviceLocation:, nonatomic, retain) CLLocation *deviceLocation;
+@property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
+@property (getter=_merchantParameters, setter=_setMerchantParameters:, nonatomic, retain) _MKLocalSearchMerchantParameters *merchantParameters;
+@property (getter=_muids, setter=_setMuids:, nonatomic, retain) NSArray *muids;
+@property (nonatomic, copy) NSString *naturalLanguageQuery;
+@property (getter=_phoneNumbers, setter=_setPhoneNumbers:, nonatomic, retain) NSArray *phoneNumbers;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property (getter=_resultProviderID, setter=_setResultProviderID:, nonatomic) int resultProviderID;
 
 + (id)searchRequestWithCompletion:(id)arg1;
 

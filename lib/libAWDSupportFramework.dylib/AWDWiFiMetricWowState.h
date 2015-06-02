@@ -11,10 +11,10 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasIsWowEnabled;
-@property BOOL hasTimestamp;
-@property BOOL isWowEnabled;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasIsWowEnabled;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL isWowEnabled;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

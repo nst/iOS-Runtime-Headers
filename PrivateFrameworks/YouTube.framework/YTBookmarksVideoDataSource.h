@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, YTSearchRequest;
-
 @interface YTBookmarksVideoDataSource : YTVideoDataSource {
     NSMutableArray *_bookmarkedShortIDs;
     YTSearchRequest *_bookmarksSearchRequest;

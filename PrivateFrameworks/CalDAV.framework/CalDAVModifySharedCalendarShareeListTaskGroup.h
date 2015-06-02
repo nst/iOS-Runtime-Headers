@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CoreDAVTaskGroupDelegate>, NSMutableSet, NSSet, NSString, NSURL;
-
 @interface CalDAVModifySharedCalendarShareeListTaskGroup : CoreDAVTaskGroup <CoreDAVPostTaskDelegate> {
     NSURL *_calendarURL;
     NSMutableSet *_invalidSharees;
@@ -12,16 +10,16 @@
     NSString *_summary;
 }
 
-@property(retain) NSURL * calendarURL;
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreDAVTaskGroupDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableSet * invalidSharees;
-@property(retain) NSSet * shareesToRemove;
-@property(retain) NSSet * shareesToSet;
-@property(retain) NSString * summary;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURL *calendarURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableSet *invalidSharees;
+@property (nonatomic, retain) NSSet *shareesToRemove;
+@property (nonatomic, retain) NSSet *shareesToSet;
+@property (nonatomic, retain) NSString *summary;
+@property (readonly) Class superclass;
 
 - (id)calendarURL;
 - (void)dealloc;

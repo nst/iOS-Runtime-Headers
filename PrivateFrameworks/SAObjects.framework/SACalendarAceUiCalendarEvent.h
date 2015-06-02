@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SACalendarAceUiCalendarEvent : SACalendarEvent
 
-@interface SACalendarAceUiCalendarEvent : SACalendarEvent {
-}
-
-@property(copy) NSNumber * durationInMinutes;
+@property (nonatomic, copy) NSNumber *durationInMinutes;
 
 + (id)aceUiCalendarEvent;
 + (id)aceUiCalendarEventWithDictionary:(id)arg1 context:(id)arg2;

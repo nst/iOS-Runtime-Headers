@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKNotificationID, NSArray, NSNumber, NSString;
-
 @interface CKNotification : NSObject <NSSecureCoding> {
     NSString *_alertActionLocalizationKey;
     NSString *_alertBody;
@@ -18,17 +16,17 @@
     NSString *_soundName;
 }
 
-@property(copy) NSString * alertActionLocalizationKey;
-@property(copy) NSString * alertBody;
-@property(copy) NSString * alertLaunchImage;
-@property(copy) NSArray * alertLocalizationArgs;
-@property(copy) NSString * alertLocalizationKey;
-@property(copy) NSNumber * badge;
-@property(copy) NSString * containerIdentifier;
-@property BOOL isPruned;
-@property(copy) CKNotificationID * notificationID;
-@property int notificationType;
-@property(copy) NSString * soundName;
+@property (nonatomic, copy) NSString *alertActionLocalizationKey;
+@property (nonatomic, copy) NSString *alertBody;
+@property (nonatomic, copy) NSString *alertLaunchImage;
+@property (nonatomic, copy) NSArray *alertLocalizationArgs;
+@property (nonatomic, copy) NSString *alertLocalizationKey;
+@property (nonatomic, copy) NSNumber *badge;
+@property (nonatomic, copy) NSString *containerIdentifier;
+@property (nonatomic) BOOL isPruned;
+@property (nonatomic, copy) CKNotificationID *notificationID;
+@property (nonatomic) int notificationType;
+@property (nonatomic, copy) NSString *soundName;
 
 + (id)_realNotificationFromRemoteNotificationDictionary:(id)arg1;
 + (id)notificationFromRemoteNotificationDictionary:(id)arg1;

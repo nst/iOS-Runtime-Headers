@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class NSString, SiriUISnippetViewController;
+@interface SiriUIReusableFooterView : UICollectionReusableView <SiriUIReusableView>
 
-@interface SiriUIReusableFooterView : UICollectionReusableView <SiriUIReusableView> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property SiriUISnippetViewController * snippetViewController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) SiriUISnippetViewController *snippetViewController;
+@property (readonly) Class superclass;
 
 + (float)defaultHeight;
 + (id)elementKind;

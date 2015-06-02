@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface MPAVPeriodicTimeObserverInfo : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     struct { 
         long long value; 
         int timescale; 
@@ -23,13 +13,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) id block;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } interval;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly, copy) id /* block */ block;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } interval;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
-- (id)block;
-- (id)initWithInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 block:(id)arg3;
+- (id /* block */)block;
+- (id)initWithInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 block:(id /* block */)arg3;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })interval;
 - (id)queue;
 

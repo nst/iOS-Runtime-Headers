@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@interface IDSSocketPairGenericGroupMessageCommand : IDSSocketPairDataMessage {
-}
+@interface IDSSocketPairGenericGroupMessageCommand : IDSSocketPairDataMessage
 
 - (unsigned char)command;
 

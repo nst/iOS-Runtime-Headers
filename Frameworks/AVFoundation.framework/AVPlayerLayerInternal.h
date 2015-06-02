@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVPlayerItem, CALayer, FigSubtitleCALayer, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVPlayerLayerInternal : NSObject {
     AVPlayer *_player;
     CALayer *closedCaptionLayer;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableString;
-
 @interface PLMav7BasebandHardwareMessage : PLMav5BasebandHardwareMessage {
     struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } *_apps_clock_count_mask;
     NSMutableString *_apps_clock_duration;
@@ -19,18 +17,18 @@
     struct _PLMav7BasebandHWStatsRFTech { unsigned int x1[6][4]; unsigned int x2[6][13]; unsigned int x3[6][13]; unsigned int x4[6][12]; unsigned int x5[6][11]; unsigned int x6[6][11]; } *_rf;
 }
 
-@property struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }* apps_clock_count_mask;
-@property NSMutableString * apps_clock_duration;
-@property struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }* apps_clock_duration_mask;
-@property struct _PLMav7BasebandGPSDPOBin { unsigned int x1[6]; }* gps_dpo_bins;
-@property struct _PLMav7BasebandHWStatsHSICState { unsigned int x1[8]; }* hsic;
-@property struct _PLMav7BasebandHWStatsMCPMVeto { unsigned int x1[6]; }* mcpm_sleep_veto;
-@property struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }* mpss_clock_count_mask;
-@property NSMutableString * mpss_clock_duration;
-@property struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }* mpss_clock_duration_mask;
-@property struct _PLMav7BasebandHWStatsNPAVeto { unsigned int x1; unsigned int x2[24]; }* npa_sleep_veto;
-@property struct _PLMav7BasebandHWStatsProtocol { unsigned int x1[6][16]; unsigned int x2[6]; }* protocol;
-@property struct _PLMav7BasebandHWStatsRFTech { unsigned int x1[6][4]; unsigned int x2[6][13]; unsigned int x3[6][13]; unsigned int x4[6][12]; unsigned int x5[6][11]; unsigned int x6[6][11]; }* rf;
+@property (nonatomic) struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*apps_clock_count_mask;
+@property (nonatomic) NSMutableString *apps_clock_duration;
+@property (nonatomic) struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*apps_clock_duration_mask;
+@property (nonatomic) struct _PLMav7BasebandGPSDPOBin { unsigned int x1[6]; }*gps_dpo_bins;
+@property (nonatomic) struct _PLMav7BasebandHWStatsHSICState { unsigned int x1[8]; }*hsic;
+@property (nonatomic) struct _PLMav7BasebandHWStatsMCPMVeto { unsigned int x1[6]; }*mcpm_sleep_veto;
+@property (nonatomic) struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*mpss_clock_count_mask;
+@property (nonatomic) NSMutableString *mpss_clock_duration;
+@property (nonatomic) struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*mpss_clock_duration_mask;
+@property (nonatomic) struct _PLMav7BasebandHWStatsNPAVeto { unsigned int x1; unsigned int x2[24]; }*npa_sleep_veto;
+@property (nonatomic) struct _PLMav7BasebandHWStatsProtocol { unsigned int x1[6][16]; unsigned int x2[6]; }*protocol;
+@property (nonatomic) struct _PLMav7BasebandHWStatsRFTech { unsigned int x1[6][4]; unsigned int x2[6][13]; unsigned int x3[6][13]; unsigned int x4[6][12]; unsigned int x5[6][11]; unsigned int x6[6][11]; }*rf;
 
 - (int)GetClockCount:(struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*)arg1;
 - (void)SetClocks:(struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*)arg1 oftype:(int)arg2 withData:(char *)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIContentLabel : UILabel {
-}
+@interface SiriUIContentLabel : UILabel
 
 + (id)label;
 + (id)labelWithHeaderFont;

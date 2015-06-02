@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKChallenge;
-
 @interface GKChallengesPickerDataSource : GKFriendsSplittingDataSource {
     GKChallenge *_challenge;
 }
 
-@property(retain) GKChallenge * challenge;
+@property (nonatomic, retain) GKChallenge *challenge;
 
 - (BOOL)canSelectPlayerInfo:(id)arg1;
 - (id)challenge;

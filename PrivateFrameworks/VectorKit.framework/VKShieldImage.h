@@ -9,7 +9,7 @@
     } _center;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } center;
+@property (readonly) struct CGPoint { float x1; float x2; } center;
 
 - (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })center;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MSPMediaSyncError : PBCodable <NSCopying> {
     int _errorCode;
     NSString *_errorDescription;
@@ -12,10 +10,10 @@
     } _has;
 }
 
-@property int errorCode;
-@property(retain) NSString * errorDescription;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasErrorDescription;
+@property (nonatomic) int errorCode;
+@property (nonatomic, retain) NSString *errorDescription;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasErrorDescription;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

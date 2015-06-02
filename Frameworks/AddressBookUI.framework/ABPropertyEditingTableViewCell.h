@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyEditingTableViewCellDelegate>, NSString, UITextField;
-
 @interface ABPropertyEditingTableViewCell : UITableViewCell <ABStyleProviding> {
     <ABPropertyEditingTableViewCellDelegate> *_delegate;
     NSString *_placeholder;
@@ -11,11 +9,11 @@
     UITextField *_textField;
 }
 
-@property <ABPropertyEditingTableViewCellDelegate> * delegate;
-@property(copy) NSString * placeholder;
-@property int property;
-@property BOOL usesLargeFont;
-@property(copy) NSString * value;
+@property (nonatomic) <ABPropertyEditingTableViewCellDelegate> *delegate;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic) int property;
+@property (nonatomic) BOOL usesLargeFont;
+@property (nonatomic, copy) NSString *value;
 
 - (void)_resizeAndCenterTextField;
 - (BOOL)becomeFirstResponder;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTStrokeLayer;
-
 @interface TSTStrokeOrderedLayer : TSTStrokeLayer {
     TSTStrokeLayer *_majorStrokeLayer;
     TSTStrokeLayer *_minorStrokeLayer;
 }
 
-@property(retain) TSTStrokeLayer * majorStrokeLayer;
-@property(retain) TSTStrokeLayer * minorStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *majorStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *minorStrokeLayer;
 
 - (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
-- (void)enumerateRawStrokesSegmentsUsingBlock:(id)arg1;
-- (void)enumerateStrokesUsingBlock:(id)arg1;
+- (void)enumerateRawStrokesSegmentsUsingBlock:(id /* block */)arg1;
+- (void)enumerateStrokesUsingBlock:(id /* block */)arg1;
 - (id)findStrokeAndRangeAtIndex:(int)arg1;
 - (id)initWithContext:(id)arg1 majorStrokeLayer:(id)arg2 minorStrokeLayer:(id)arg3;
 - (void)insertStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;

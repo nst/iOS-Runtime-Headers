@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSNumberFormatter, UIActivityIndicatorView, UILabel;
-
 @interface PLSyncProgressView : UIView {
     NSNumberFormatter *_countFormatter;
     unsigned int _currentCount;
@@ -14,10 +12,10 @@
     unsigned int _totalCount;
 }
 
-@property(readonly) unsigned int currentCount;
-@property(readonly) int progressType;
-@property(readonly) int style;
-@property(readonly) unsigned int totalCount;
+@property (nonatomic, readonly) unsigned int currentCount;
+@property (nonatomic, readonly) int progressType;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) unsigned int totalCount;
 
 - (id)_progressDescription;
 - (unsigned int)currentCount;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreIRDeviceProvider, IRInterface, NSString;
-
 @interface CoreIRBusProvider : CoreIRBus <IRInterfaceDelegate> {
     IRInterface *_interface;
     CoreIRDeviceProvider *_localDevice;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) IRInterface * interface;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) IRInterface *interface;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

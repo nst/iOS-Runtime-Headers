@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class CIFilter;
-
 @interface SKTransition : NSObject {
     struct { 
         int type; 
@@ -20,8 +18,8 @@
     BOOL _pauseOutgoing;
 }
 
-@property BOOL pausesIncomingScene;
-@property BOOL pausesOutgoingScene;
+@property (nonatomic) BOOL pausesIncomingScene;
+@property (nonatomic) BOOL pausesOutgoingScene;
 
 + (id)crossFadeWithDuration:(double)arg1;
 + (id)doorsCloseHorizontalWithDuration:(double)arg1;

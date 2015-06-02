@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface _RUTrackActionsHeaderView : UIView {
     UILabel *_artistLabel;
     UIImageView *_artworkImageView;
     UILabel *_songLabel;
 }
 
-@property(copy) NSString * artistText;
-@property(retain) UIImage * artworkImage;
-@property(copy) NSString * songText;
+@property (nonatomic, copy) NSString *artistText;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic, copy) NSString *songText;
 
 + (id)_artistLabelFont;
 + (id)_songLabelFont;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray;
-
 @interface MFAddressPickerReformatter : NSObject {
     NSArray *_addresses;
     BOOL _attributesDisabled;
@@ -15,7 +13,7 @@
 }
 
 - (void)_attemptUniquingDisplayedStrings;
-- (BOOL)_attemptUniquingDisplayedStringsUsingBlock:(id)arg1;
+- (BOOL)_attemptUniquingDisplayedStringsUsingBlock:(id /* block */)arg1;
 - (unsigned int)_defaultOptions;
 - (void)_determineFontSize:(BOOL*)arg1;
 - (void)_expandAllLocalParts;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableArray, UIWebPaginationInfo;
-
 @interface QLLayoutedPrintPageRenderer : QLWebViewPrintPageHelper {
     NSMutableArray *_nodes;
     UIWebPaginationInfo *_paginationInfo;

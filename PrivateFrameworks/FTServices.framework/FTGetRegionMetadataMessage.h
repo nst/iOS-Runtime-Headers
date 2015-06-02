@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary, NSString;
-
 @interface FTGetRegionMetadataMessage : IDSBaseMessage <NSCopying> {
     NSString *_language;
     NSDictionary *_responseRegionInformation;
 }
 
-@property(copy) NSString * language;
-@property(copy) NSDictionary * responseRegionInformation;
+@property (copy) NSString *language;
+@property (copy) NSDictionary *responseRegionInformation;
 
 - (id)bagKey;
 - (int)command;

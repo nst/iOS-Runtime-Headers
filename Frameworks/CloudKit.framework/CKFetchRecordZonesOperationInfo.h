@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKFetchRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     BOOL _ignorePCSFailures;
     BOOL _isFetchAllRecordZonesOperation;
     NSArray *_recordZoneIDs;
 }
 
-@property BOOL ignorePCSFailures;
-@property BOOL isFetchAllRecordZonesOperation;
-@property(retain) NSArray * recordZoneIDs;
+@property (nonatomic) BOOL ignorePCSFailures;
+@property (nonatomic) BOOL isFetchAllRecordZonesOperation;
+@property (nonatomic, retain) NSArray *recordZoneIDs;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class NSMutableDictionary;
-
 @interface CECFakeInterface : CECInterface {
     NSMutableDictionary *_properties;
 }

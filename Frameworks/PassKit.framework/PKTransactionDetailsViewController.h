@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSDictionary, PKPaymentTransaction, UITableViewCell;
-
 @interface PKTransactionDetailsViewController : UITableViewController {
     UITableViewCell *_mapsCell;
     NSDictionary *_merchantDetails;
@@ -11,8 +9,8 @@
     NSDictionary *_transactionDetails;
 }
 
-@property(retain) NSDictionary * merchantDetails;
-@property(retain) NSDictionary * transactionDetails;
+@property (nonatomic, retain) NSDictionary *merchantDetails;
+@property (nonatomic, retain) NSDictionary *transactionDetails;
 
 - (id)_cellWithPrimaryText:(id)arg1 infoText:(id)arg2;
 - (void)_didSelectMap;

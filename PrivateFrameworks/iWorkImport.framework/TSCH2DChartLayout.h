@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSValue, TSCHChartRootLayoutItem;
-
 @interface TSCH2DChartLayout : TSCHChartLayout {
     NSValue *mCachedOriginRelativeToChartAreaFrame;
     struct CGSize { 
@@ -37,8 +35,8 @@
     } mStartingSize;
 }
 
-@property(readonly) TSCHChartRootLayoutItem * p_layoutTree;
-@property(copy) NSDictionary * seriesIndexedPieWedgeExplosions;
+@property (readonly) TSCHChartRootLayoutItem *p_layoutTree;
+@property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
 + (id)propertiesThatInvalidateLayout;
 
@@ -49,7 +47,7 @@
 - (unsigned int)dataSetIndex;
 - (void)dealloc;
 - (void)endDynamicOperation;
-- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidate;
 - (void)invalidateCachedOriginRelativeToChartAreaFrame;

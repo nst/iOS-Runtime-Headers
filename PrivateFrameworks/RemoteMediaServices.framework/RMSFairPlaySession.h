@@ -11,7 +11,7 @@
     struct FPSAPContextOpaque_ { } *_sessionToken;
 }
 
-@property(getter=isHandshakeComplete,readonly) BOOL handshakeComplete;
+@property (getter=isHandshakeComplete, nonatomic, readonly) BOOL handshakeComplete;
 
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;
 - (id)_hexStringForData:(id)arg1;

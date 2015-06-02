@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKProductPageViewController;
-
 @interface SKScriptInterface : SUScriptInterface {
     SKProductPageViewController *_parentProductPageViewController;
 }
 
-@property SKProductPageViewController * parentProductPageViewController;
+@property (nonatomic) SKProductPageViewController *parentProductPageViewController;
 
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;

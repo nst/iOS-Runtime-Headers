@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSWishlistItemEntity : SSSQLiteEntity {
-}
+@interface SSWishlistItemEntity : SSSQLiteEntity
 
 + (id)databaseTable;
 

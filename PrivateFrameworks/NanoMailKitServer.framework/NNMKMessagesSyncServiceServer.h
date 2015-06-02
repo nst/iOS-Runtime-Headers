@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKMessagesSyncServiceServerDelegate>;
-
 @interface NNMKMessagesSyncServiceServer : NNMKSyncServiceEndpoint {
     <NNMKMessagesSyncServiceServerDelegate> *_delegate;
 }
 
-@property <NNMKMessagesSyncServiceServerDelegate> * delegate;
+@property (nonatomic) <NNMKMessagesSyncServiceServerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)addMessages:(id)arg1 notificationPriority:(BOOL)arg2;

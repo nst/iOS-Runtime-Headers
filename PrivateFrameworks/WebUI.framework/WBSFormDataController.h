@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface WBSFormDataController : NSObject {
     NSDictionary *_allCredentialsCache;
     NSObject<OS_dispatch_queue> *_allCredentialsCacheAccessQueue;

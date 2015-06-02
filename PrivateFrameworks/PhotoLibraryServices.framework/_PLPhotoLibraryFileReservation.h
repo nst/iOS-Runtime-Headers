@@ -6,7 +6,7 @@
     int _fileDescriptor;
 }
 
-@property int fileDescriptor;
+@property (nonatomic) int fileDescriptor;
 
 - (void)dealloc;
 - (int)fileDescriptor;

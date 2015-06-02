@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart, CHDFormula, EDString, OADGraphicProperties;
-
 @interface CHDTitle : NSObject {
     CHDChart *mChart;
     OADGraphicProperties *mGraphicProperties;

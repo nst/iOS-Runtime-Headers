@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class ISDataProvider, NSData, NSDictionary, NSString, NSURL, SBKTransaction;
-
 @interface SBKRequest : NSObject {
     NSString *_action;
     NSDictionary *_arguments;
@@ -19,14 +17,14 @@
     SBKTransaction *_transaction;
 }
 
-@property(retain) NSData * bodyData;
-@property(getter=isConcurrent,readonly) BOOL concurrent;
-@property BOOL includeDeviceGUID;
-@property int method;
-@property(retain) ISDataProvider * responseDataProvider;
-@property BOOL shouldAuthenticate;
-@property(readonly) double timeoutInterval;
-@property(retain) SBKTransaction * transaction;
+@property (nonatomic, retain) NSData *bodyData;
+@property (getter=isConcurrent, nonatomic, readonly) BOOL concurrent;
+@property (nonatomic) BOOL includeDeviceGUID;
+@property (nonatomic) int method;
+@property (nonatomic, retain) ISDataProvider *responseDataProvider;
+@property (nonatomic) BOOL shouldAuthenticate;
+@property (nonatomic, readonly) double timeoutInterval;
+@property (nonatomic, retain) SBKTransaction *transaction;
 
 + (id)_contentEncodingTypeStringForBodyContentEncodingType:(int)arg1;
 + (id)_contentTypeStringForBodyContentType:(int)arg1;

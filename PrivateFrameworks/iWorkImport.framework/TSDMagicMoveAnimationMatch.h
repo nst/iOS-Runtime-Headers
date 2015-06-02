@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSLock, TSDTextureSet;
-
 @interface TSDMagicMoveAnimationMatch : NSObject {
     BOOL _didUseMorphTexture;
     BOOL _hasBeenTornDown;
@@ -21,14 +19,14 @@
     BOOL _shouldDisableTextMorphing;
 }
 
-@property(retain) TSDTextureSet * incomingTexture;
-@property(readonly) BOOL isMatched;
-@property BOOL isMorphMatch;
-@property BOOL isTextStyleIdenticalExceptSize;
-@property int matchType;
-@property(retain) TSDTextureSet * outgoingTexture;
-@property float outgoingTextureActionBuildFinalAngle;
-@property BOOL shouldDisableTextMorphing;
+@property (nonatomic, retain) TSDTextureSet *incomingTexture;
+@property (nonatomic, readonly) BOOL isMatched;
+@property (nonatomic) BOOL isMorphMatch;
+@property (nonatomic) BOOL isTextStyleIdenticalExceptSize;
+@property (nonatomic) int matchType;
+@property (nonatomic, retain) TSDTextureSet *outgoingTexture;
+@property (nonatomic) float outgoingTextureActionBuildFinalAngle;
+@property (nonatomic) BOOL shouldDisableTextMorphing;
 
 + (unsigned int)magicMoveMorphTexturesPerSecond;
 

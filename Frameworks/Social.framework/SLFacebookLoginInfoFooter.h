@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSString, UIFont, UILabel;
-
 @interface SLFacebookLoginInfoFooter : UIView {
     UIFont *_font;
     UILabel *_label1;

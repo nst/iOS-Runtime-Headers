@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, TSTCellUIDList;
-
 @interface TSTCellMap : TSPObject <NSCopying> {
     BOOL _appliesToHidden;
     struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { 
@@ -56,15 +50,15 @@
     } _unmergeUIDRanges;
 }
 
-@property BOOL appliesToHidden;
-@property(retain) NSMutableArray * cellLists;
-@property(retain) TSTCellUIDList * cellUIDs;
-@property BOOL mayModifyFormulasInCells;
-@property BOOL mayModifyValuesReferencedByFormulas;
-@property(getter=isOneToMany,readonly) BOOL oneToMany;
-@property /* Warning: unhandled struct encoding: '{unordered_map<TSUColumnRowCoordinate' */ struct * searchableIDMap; /* unknown property attribute:  true> >=f}}} */
-@property struct * searchableUIDMap; /* unknown property attribute:  true> >=f}}} */
-@property(getter=isUIDBased) BOOL uidBased;
+@property (nonatomic) BOOL appliesToHidden;
+@property (nonatomic, retain) NSMutableArray *cellLists;
+@property (nonatomic, retain) TSTCellUIDList *cellUIDs;
+@property (nonatomic) BOOL mayModifyFormulasInCells;
+@property (nonatomic) BOOL mayModifyValuesReferencedByFormulas;
+@property (getter=isOneToMany, nonatomic, readonly) BOOL oneToMany;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{unordered_map<TSUColumnRowCoordinate' */ struct *searchableIDMap; /* unknown property attribute:  true> >=f}}} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{unordered_map<TSTCellUID' */ struct *searchableUIDMap; /* unknown property attribute:  true> >=f}}} */
+@property (getter=isUIDBased, nonatomic) BOOL uidBased;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -92,8 +86,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)enumerateCellsWithIDsUsingBlock:(id)arg1;
-- (void)enumerateCellsWithUIDsUsingBlock:(id)arg1;
+- (void)enumerateCellsWithIDsUsingBlock:(id /* block */)arg1;
+- (void)enumerateCellsWithUIDsUsingBlock:(id /* block */)arg1;
 - (id)findCellForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)findCellForCellUID:(const struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1;
 - (id)initFromUnarchiver:(id)arg1;

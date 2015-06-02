@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableArray;
-
 @interface BLTPBBehaviorOverride : PBCodable <NSCopying> {
     unsigned long long _behaviorOverrideMode;
     unsigned long long _behaviorOverrideType;
@@ -14,11 +12,11 @@
     } _has;
 }
 
-@property unsigned long long behaviorOverrideMode;
-@property unsigned long long behaviorOverrideType;
-@property(retain) NSMutableArray * effectiveIntervals;
-@property BOOL hasBehaviorOverrideMode;
-@property BOOL hasBehaviorOverrideType;
+@property (nonatomic) unsigned long long behaviorOverrideMode;
+@property (nonatomic) unsigned long long behaviorOverrideType;
+@property (nonatomic, retain) NSMutableArray *effectiveIntervals;
+@property (nonatomic) BOOL hasBehaviorOverrideMode;
+@property (nonatomic) BOOL hasBehaviorOverrideType;
 
 - (void).cxx_destruct;
 - (void)addEffectiveIntervals:(id)arg1;

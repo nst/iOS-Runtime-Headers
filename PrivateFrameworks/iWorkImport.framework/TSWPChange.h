@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, TSUColor, TSWPChangeSession, TSWPStorage;
-
 @interface TSWPChange : TSPObject <TSKDocumentObject, TSPCopying> {
     BOOL _changeWasAddedToDocumentRoot;
     NSDate *_date;
@@ -12,17 +10,17 @@
     TSWPChangeSession *_session;
 }
 
-@property(readonly) TSUColor * changeAdornmentsColor;
-@property BOOL changeWasAddedToDocumentRoot;
-@property(retain) NSDate * date;
-@property(getter=isHidden,readonly) BOOL hidden;
-@property(readonly) BOOL isDeletion;
-@property(readonly) BOOL isInsertion;
-@property TSWPStorage * parentStorage;
-@property(retain) TSWPChangeSession * session;
-@property(readonly) BOOL showsHiddenDeletionMarkup;
-@property(readonly) BOOL showsMarkup;
-@property(readonly) TSUColor * textMarkupColor;
+@property (nonatomic, readonly) TSUColor *changeAdornmentsColor;
+@property (nonatomic) BOOL changeWasAddedToDocumentRoot;
+@property (nonatomic, retain) NSDate *date;
+@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
+@property (nonatomic, readonly) BOOL isDeletion;
+@property (nonatomic, readonly) BOOL isInsertion;
+@property (nonatomic) TSWPStorage *parentStorage;
+@property (nonatomic, retain) TSWPChangeSession *session;
+@property (nonatomic, readonly) BOOL showsHiddenDeletionMarkup;
+@property (nonatomic, readonly) BOOL showsMarkup;
+@property (nonatomic, readonly) TSUColor *textMarkupColor;
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (BOOL)canMergeWithKind:(int)arg1 session:(id)arg2;

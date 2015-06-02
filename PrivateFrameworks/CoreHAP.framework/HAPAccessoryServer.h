@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <HAPKeyStore>, HAPAccessory, NSArray, NSHashTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HAPAccessoryServer : NSObject {
     NSArray *_accessories;
     NSString *_homeName;
@@ -19,20 +17,20 @@
     BOOL _unconnected;
 }
 
-@property(copy) NSArray * accessories;
-@property(readonly) BOOL hasPairings;
-@property(copy) NSString * homeName;
-@property(copy) NSString * identifier;
-@property(readonly) NSObject<OS_dispatch_queue> * internalDelegateQueue;
-@property(readonly) NSHashTable * internalDelegates;
-@property <HAPKeyStore> * keyStore;
-@property(readonly) int linkType;
-@property(copy) NSString * name;
-@property(copy) NSString * pairSetupPassword;
-@property(getter=isPaired,readonly) BOOL paired;
-@property(retain) HAPAccessory * primaryAccessory;
-@property(getter=isReachable) BOOL reachable;
-@property(getter=isUnconnected) BOOL unconnected;
+@property (nonatomic, copy) NSArray *accessories;
+@property (nonatomic, readonly) BOOL hasPairings;
+@property (nonatomic, copy) NSString *homeName;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *internalDelegateQueue;
+@property (nonatomic, readonly) NSHashTable *internalDelegates;
+@property (nonatomic) <HAPKeyStore> *keyStore;
+@property (nonatomic, readonly) int linkType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *pairSetupPassword;
+@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (nonatomic, retain) HAPAccessory *primaryAccessory;
+@property (getter=isReachable, nonatomic) BOOL reachable;
+@property (getter=isUnconnected, nonatomic) BOOL unconnected;
 
 + (BOOL)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
 
@@ -47,12 +45,12 @@
 - (void)discoverCharacteristics:(id)arg1 forService:(id)arg2;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;
 - (void)discoverServices:(id)arg1 forAccessory:(id)arg2;
-- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
-- (void)enumerateInternalDelegatesUsingBlock:(id)arg1;
+- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (void)enumerateInternalDelegatesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasPairings;
 - (id)homeName;
 - (id)identifier;
-- (void)identifyWithCompletion:(id)arg1;
+- (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)internalDelegateQueue;
 - (id)internalDelegates;
@@ -62,14 +60,14 @@
 - (id)keyStore;
 - (int)linkType;
 - (id)name;
-- (BOOL)pairAdditionalControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
+- (BOOL)pairAdditionalControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id /* block */)arg3;
 - (id)pairSetupPassword;
 - (id)primaryAccessory;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)readValueForDescriptor:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readValueForDescriptor:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)removeInternalDelegate:(id)arg1;
-- (BOOL)removePairingForControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id)arg3;
+- (BOOL)removePairingForControllerWithName:(id)arg1 publicKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)setAccessories:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setHomeName:(id)arg1;
@@ -83,7 +81,7 @@
 - (void)startPairing;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

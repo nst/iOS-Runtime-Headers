@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUActivityItemProviderDelegate>, NSObject<OS_dispatch_queue>, UIActivity, UIImage;
-
 @interface SUActivityItemProvider : UIActivityItemProvider {
     UIActivity *_activity;
     <SUActivityItemProviderDelegate> *_delegate;
@@ -12,10 +10,10 @@
     UIImage *_previewImage;
 }
 
-@property <SUActivityItemProviderDelegate> * delegate;
-@property(setter=setSUActivity:,retain) UIActivity * suActivity;
-@property(readonly) id suLastProvidedItem;
-@property(setter=setSUPreviewImage:,retain) UIImage * suPreviewImage;
+@property <SUActivityItemProviderDelegate> *delegate;
+@property (setter=setSUActivity:, retain) UIActivity *suActivity;
+@property (readonly) id suLastProvidedItem;
+@property (setter=setSUPreviewImage:, retain) UIImage *suPreviewImage;
 
 - (void)dealloc;
 - (id)delegate;

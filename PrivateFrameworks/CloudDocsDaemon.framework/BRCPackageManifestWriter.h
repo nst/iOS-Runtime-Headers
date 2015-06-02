@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, NSError, NSOutputStream, NSString, NSURL, PBMessageStreamWriter;
-
 @interface BRCPackageManifestWriter : NSObject {
     NSError *_error;
     BRCAccountSession *_session;
@@ -14,8 +12,8 @@
     PBMessageStreamWriter *_writer;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (void)_applyDirectoryMetadataWithManifestItem:(id)arg1 packageRootFD:(int)arg2;

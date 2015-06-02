@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, PUStackView, UILabel, UIView;
-
 @interface PUPickerBannerView : UIView {
     int __alignment;
     BOOL __animatingStackView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __animationCompletionHandler;
-
+    id /* block */ __animationCompletionHandler;
     UILabel *__label;
     PUStackView *__stackView;
     NSArray *_images;
@@ -25,32 +15,32 @@
     NSString *_title;
 }
 
-@property(setter=_setAlignment:) int _alignment;
-@property(setter=_setAnimatingStackView:) BOOL _animatingStackView;
-@property(setter=_setAnimationCompletionHandler:,copy) id _animationCompletionHandler;
-@property(setter=_setLabel:,retain) UILabel * _label;
-@property(setter=_setStackView:,retain) PUStackView * _stackView;
-@property(copy) NSArray * images;
-@property(retain) UIView * leftView;
-@property(retain) UIView * rightView;
-@property unsigned int style;
-@property(copy) NSString * title;
+@property (setter=_setAlignment:, nonatomic) int _alignment;
+@property (setter=_setAnimatingStackView:, nonatomic) BOOL _animatingStackView;
+@property (setter=_setAnimationCompletionHandler:, nonatomic, copy) id /* block */ _animationCompletionHandler;
+@property (setter=_setLabel:, nonatomic, retain) UILabel *_label;
+@property (setter=_setStackView:, nonatomic, retain) PUStackView *_stackView;
+@property (nonatomic, copy) NSArray *images;
+@property (nonatomic, retain) UIView *leftView;
+@property (nonatomic, retain) UIView *rightView;
+@property (nonatomic) unsigned int style;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (int)_alignment;
 - (BOOL)_animatingStackView;
-- (id)_animationCompletionHandler;
+- (id /* block */)_animationCompletionHandler;
 - (id)_label;
 - (void)_setAlignment:(int)arg1;
 - (void)_setAnimatingStackView:(BOOL)arg1;
-- (void)_setAnimationCompletionHandler:(id)arg1;
+- (void)_setAnimationCompletionHandler:(id /* block */)arg1;
 - (void)_setLabel:(id)arg1;
 - (void)_setStackView:(id)arg1;
 - (id)_stackView;
 - (void)_updateAlignment;
 - (void)_updateLabel;
 - (void)_updateStackView;
-- (void)animateImagesOntoView:(id)arg1 inContainerView:(id)arg2 completionHandler:(id)arg3;
+- (void)animateImagesOntoView:(id)arg1 inContainerView:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)images;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

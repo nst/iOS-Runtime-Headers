@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSString, NSURL, UIImage, WBSAutomaticReadingListSocialSource;
-
 @interface WBSAutomaticReadingListItem : NSObject {
     UIImage *_fallbackProfileImage;
     BOOL _fetchingProfileImage;
@@ -21,30 +19,30 @@
     NSString *_urlString;
 }
 
-@property(readonly) NSURL * biggerOriginatorProfileImageURL;
-@property(readonly) NSString * continuousBannerDisplayString;
-@property(readonly) NSString * continuousBannerTitle;
-@property(readonly) NSString * displayString;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } displayURLRange;
-@property(readonly) NSString * domainString;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } emphasizedTextRange;
-@property BOOL fetchingProfileImage;
-@property(copy,readonly) NSString * originatorDisplayName;
-@property(copy,readonly) id originatorID;
-@property(retain) UIImage * originatorProfileImage;
-@property(readonly) NSURL * originatorProfileImageURL;
-@property(readonly) NSURL * originatorProfileURL;
-@property(getter=isRepostedByAuthenticatedUser) BOOL repostedByAuthenticatedUser;
-@property(readonly) NSString * reposterDisplayName;
-@property(readonly) NSString * reposterScreenName;
-@property(readonly) WBSAutomaticReadingListSocialSource * socialSource;
-@property(copy,readonly) NSString * socialSourceAccountIdentifier;
-@property(copy,readonly) NSDate * sourceRecordCreationDate;
-@property(copy,readonly) id sourceRecordID;
-@property(copy,readonly) NSString * sourceRecordText;
-@property(readonly) NSURL * sourceRecordURL;
-@property(copy) NSString * uniqueIdentifier;
-@property(copy,readonly) NSString * urlString;
+@property (nonatomic, readonly) NSURL *biggerOriginatorProfileImageURL;
+@property (nonatomic, readonly) NSString *continuousBannerDisplayString;
+@property (nonatomic, readonly) NSString *continuousBannerTitle;
+@property (nonatomic, readonly) NSString *displayString;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } displayURLRange;
+@property (nonatomic, readonly) NSString *domainString;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } emphasizedTextRange;
+@property (nonatomic) BOOL fetchingProfileImage;
+@property (nonatomic, readonly, copy) NSString *originatorDisplayName;
+@property (nonatomic, readonly, copy) id originatorID;
+@property (nonatomic, retain) UIImage *originatorProfileImage;
+@property (nonatomic, readonly) NSURL *originatorProfileImageURL;
+@property (nonatomic, readonly) NSURL *originatorProfileURL;
+@property (getter=isRepostedByAuthenticatedUser, nonatomic) BOOL repostedByAuthenticatedUser;
+@property (nonatomic, readonly) NSString *reposterDisplayName;
+@property (nonatomic, readonly) NSString *reposterScreenName;
+@property (nonatomic, readonly) WBSAutomaticReadingListSocialSource *socialSource;
+@property (nonatomic, readonly, copy) NSString *socialSourceAccountIdentifier;
+@property (nonatomic, readonly, copy) NSDate *sourceRecordCreationDate;
+@property (nonatomic, readonly, copy) id sourceRecordID;
+@property (nonatomic, readonly, copy) NSString *sourceRecordText;
+@property (nonatomic, readonly) NSURL *sourceRecordURL;
+@property (nonatomic, copy) NSString *uniqueIdentifier;
+@property (nonatomic, readonly, copy) NSString *urlString;
 
 + (id)keyPathsForValuesAffectingDomainString;
 

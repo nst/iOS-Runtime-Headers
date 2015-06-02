@@ -2,19 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface BRCUploadOperation : BRCTransferOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _perEntryCompletionBlock;
-
+    id /* block */ _perEntryCompletionBlock;
 }
 
-@property(copy) id perEntryCompletionBlock;
+@property (copy) id /* block */ perEntryCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)__doneWithEntry:(id)arg1 error:(id)arg2;
@@ -22,7 +14,7 @@
 - (void)addItem:(id)arg1 stageID:(id)arg2 record:(id)arg3 transferSize:(unsigned long long)arg4;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithSyncContext:(id)arg1;
-- (id)perEntryCompletionBlock;
-- (void)setPerEntryCompletionBlock:(id)arg1;
+- (id /* block */)perEntryCompletionBlock;
+- (void)setPerEntryCompletionBlock:(id /* block */)arg1;
 
 @end

@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
+@interface MKPlaceURLActivityProvider : MKPlaceActivityProvider <MKActivityItemSocialSource, MKActivityItemSource>
 
-@interface MKPlaceURLActivityProvider : MKPlaceActivityProvider <MKActivityItemSocialSource, MKActivityItemSource> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)activityViewController:(id)arg1 attachmentULRTypeForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

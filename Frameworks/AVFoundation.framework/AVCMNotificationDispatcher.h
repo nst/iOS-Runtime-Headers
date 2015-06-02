@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class AVCallbackRegistry, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVCMNotificationDispatcher : NSObject {
     AVCallbackRegistry *_callbackRegistry;
     struct opaqueCMNotificationCenter { } *_cmNotificationCenter;
@@ -16,21 +9,21 @@
     NSObject<OS_dispatch_queue> *_listenerObjectsQueue;
 }
 
-@property(readonly) struct opaqueCMNotificationCenter { }* CMNotificationCenter;
-@property(getter=_callbackRegistry,readonly) AVCallbackRegistry * callbackRegistry;
+@property (nonatomic, readonly) struct opaqueCMNotificationCenter { }*CMNotificationCenter;
+@property (getter=_callbackRegistry, nonatomic, readonly) AVCallbackRegistry *callbackRegistry;
 
 + (void)initialize;
 + (id)notificationDispatcherForCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;
 
 - (struct opaqueCMNotificationCenter { }*)CMNotificationCenter;
-- (void)_addListenerAndCallback:(id)arg1 forWeakReferenceToListener:(id)arg2 callback:(int (*)())arg3 name:(struct __CFString { }*)arg4 object:(const void*)arg5;
+- (void)_addListenerAndCallback:(id)arg1 forWeakReferenceToListener:(id)arg2 callback:(int (*)arg3 name:(struct __CFString { }*)arg4 object:(const void*)arg5;
 - (id)_callbackRegistry;
-- (id)_copyAndRemoveListenerAndCallbackForWeakReferenceToListener:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
-- (void)addListenerWithWeakReference:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4 flags:(unsigned long)arg5;
+- (id)_copyAndRemoveListenerAndCallbackForWeakReferenceToListener:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
+- (void)addListenerWithWeakReference:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4 flags:(unsigned long)arg5;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
 - (id)initWithCMNotificationCenter:(struct opaqueCMNotificationCenter { }*)arg1;
-- (void)removeListenerWithWeakReference:(id)arg1 callback:(int (*)())arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
+- (void)removeListenerWithWeakReference:(id)arg1 callback:(int (*)arg2 name:(struct __CFString { }*)arg3 object:(const void*)arg4;
 
 @end

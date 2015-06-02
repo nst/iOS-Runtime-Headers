@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSData, NSString;
-
 @interface BLTPBBulletinSummaryKey : PBCodable <NSCopying> {
     NSString *_key;
     NSData *_value;
 }
 
-@property(readonly) BOOL hasValue;
-@property(retain) NSString * key;
-@property(retain) NSData * value;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSData *value;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

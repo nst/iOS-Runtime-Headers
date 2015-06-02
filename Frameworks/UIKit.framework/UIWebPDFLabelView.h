@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UILabel, _UIBackdropView;
-
 @interface UIWebPDFLabelView : UIView {
     _UIBackdropView *_backdropView;
     UILabel *_label;
@@ -11,8 +9,8 @@
     unsigned int currentPageIndex;
 }
 
-@property unsigned int currentPageIndex;
-@property(getter=isTimerInstalled,readonly) BOOL timerInstalled;
+@property (nonatomic) unsigned int currentPageIndex;
+@property (getter=isTimerInstalled, nonatomic, readonly) BOOL timerInstalled;
 
 - (void)_fadeOutAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (double)_fadeOutDelay;

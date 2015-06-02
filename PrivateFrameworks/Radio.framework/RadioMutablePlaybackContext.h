@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray;
+@interface RadioMutablePlaybackContext : RadioPlaybackContext
 
-@interface RadioMutablePlaybackContext : RadioPlaybackContext {
-}
-
-@property int numberOfSkipsUsed;
-@property(copy) NSArray * trackPlaybackDescriptorQueue;
+@property (nonatomic) int numberOfSkipsUsed;
+@property (nonatomic, copy) NSArray *trackPlaybackDescriptorQueue;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setNumberOfSkipsUsed:(int)arg1;

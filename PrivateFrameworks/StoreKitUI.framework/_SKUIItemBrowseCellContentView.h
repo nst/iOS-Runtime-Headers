@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUICellImageView, UILabel;
-
 @interface _SKUIItemBrowseCellContentView : UIView {
     UILabel *_indexNumberLabel;
     UILabel *_subtitleLabel;
@@ -12,11 +10,11 @@
     UILabel *_userRatingLabel;
 }
 
-@property(retain) UILabel * indexNumberLabel;
-@property(retain) UILabel * subtitleLabel;
-@property(retain) UILabel * titleLabel;
-@property(retain) SKUICellImageView * userRatingImageView;
-@property(retain) UILabel * userRatingLabel;
+@property (nonatomic, retain) UILabel *indexNumberLabel;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) SKUICellImageView *userRatingImageView;
+@property (nonatomic, retain) UILabel *userRatingLabel;
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

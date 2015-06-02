@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPFileDataStorage : TSPStreamDataStorage {
-}
+@interface TSPFileDataStorage : TSPStreamDataStorage
 
 - (id)AVAssetWithOptions:(id)arg1 forData:(id)arg2;
 - (id)bookmarkDataWithOptions:(unsigned int)arg1;
 - (unsigned long long)encodedLength;
 - (BOOL)isReadable;
-- (void)performIOChannelReadWithAccessor:(id)arg1;
-- (void)performReadWithAccessor:(id)arg1;
+- (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
+- (void)performReadWithAccessor:(id /* block */)arg1;
 
 @end

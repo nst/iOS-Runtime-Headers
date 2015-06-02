@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, ML3MusicLibrary, NSData, NSMutableArray, NSMutableDictionary;
-
 @interface ML3SortMap : NSObject {
     ML3DatabaseConnection *_connection;
     NSMutableArray *_entries;

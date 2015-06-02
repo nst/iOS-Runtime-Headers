@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
+@interface IKVideoElement : IKMediaElement
 
-@interface IKVideoElement : IKMediaElement {
-}
-
-@property(retain,readonly) NSArray * timelines;
+@property (nonatomic, readonly, retain) NSArray *timelines;
 
 - (id)timelines;
 

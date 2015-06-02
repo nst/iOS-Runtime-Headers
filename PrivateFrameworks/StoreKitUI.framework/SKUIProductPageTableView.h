@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIProductPageTableView : UITableView {
     UIView *_productPageHeaderView;
 }
 
-@property(retain) UIView * productPageHeaderView;
+@property (nonatomic, retain) UIView *productPageHeaderView;
 
 - (void).cxx_destruct;
 - (void)_addContentSubview:(id)arg1 atBack:(BOOL)arg2;

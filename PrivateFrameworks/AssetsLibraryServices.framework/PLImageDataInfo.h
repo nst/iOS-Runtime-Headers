@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSString, NSURL;
-
 @interface PLImageDataInfo : NSObject {
     int _EXIFOrientation;
     NSURL *_URL;
@@ -15,12 +13,12 @@
 }
 
 @property int EXIFOrientation;
-@property(retain) NSURL * URL;
-@property(retain) NSString * UTI;
+@property (retain) NSURL *URL;
+@property (retain) NSString *UTI;
 @property BOOL canDownloadFromCloud;
 @property int deliveredFormat;
 @property BOOL deliveredPlaceholder;
-@property(retain) NSString * sandboxExtensionToken;
+@property (retain) NSString *sandboxExtensionToken;
 
 - (int)EXIFOrientation;
 - (id)URL;

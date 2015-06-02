@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSValue;
-
 @interface _UIBarBackButtonItemAppearanceStorage : NSObject {
     NSMutableDictionary *backgroundImages;
     NSMutableDictionary *backgroundVerticalAdjustmentsForBarMetrics;
@@ -12,8 +10,8 @@
     NSValue *titlePositionOffset;
 }
 
-@property(retain) NSValue * miniTitlePositionOffset;
-@property(retain) NSValue * titlePositionOffset;
+@property (nonatomic, retain) NSValue *miniTitlePositionOffset;
+@property (nonatomic, retain) NSValue *titlePositionOffset;
 
 - (id)anyBackgroundImage;
 - (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;

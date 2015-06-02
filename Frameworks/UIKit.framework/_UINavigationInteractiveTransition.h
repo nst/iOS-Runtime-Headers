@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScreenEdgePanGestureRecognizer;
-
 @interface _UINavigationInteractiveTransition : _UINavigationInteractiveTransitionBase {
     UIScreenEdgePanGestureRecognizer *_edgePanRecognizer;
 }
 
-@property(readonly) UIScreenEdgePanGestureRecognizer * screenEdgePanGestureRecognizer;
+@property (nonatomic, readonly) UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer;
 
 - (void)_configureNavigationGesture;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;

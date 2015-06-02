@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class BubbleTextLayer, NSMutableArray, NSString, NSTimer, NetTopoObjectLayer, TopoNumberBadge, TopoProgressBar, UIImage;
-
 @interface NetTopoObjectLayer : CALayer {
     NetTopoObjectLayer *_ancestor;
     id _associatedNode;
@@ -85,7 +83,7 @@
     unsigned int _statusLightMode;
     unsigned int _statusLightState;
     NSTimer *_statusLightTimer;
-    UIImage *_statusLights[4];
+    UIImage *_statusLights;
     unsigned int _topoBadgeNumber;
     TopoNumberBadge *_topoNumberBadge;
     TopoProgressBar *_topoProgressBar;
@@ -94,39 +92,39 @@
     id _userObject;
 }
 
-@property NetTopoObjectLayer * ancestor;
-@property(retain) id associatedNode;
-@property struct CGSize { float x1; float x2; } boundsSizeConstraint;
-@property float change;
-@property(retain) NSMutableArray * children;
-@property unsigned int column;
-@property NetTopoObjectLayer * contourThread;
-@property(getter=isExpanded) BOOL expanded;
-@property(getter=isGhosted) BOOL ghosted;
-@property(retain) NSString * label;
-@property float labelPinnedHeight;
-@property struct CGPoint { float x1; float x2; } layoutOrigin;
-@property float layoutScale;
-@property float mod;
-@property unsigned int number;
-@property(readonly) unsigned int numberOfChildren;
-@property(retain) struct CGImage { }* objectImage;
-@property id owningView;
-@property(retain) NetTopoObjectLayer * parent;
-@property(readonly) NetTopoObjectLayer * parentDevice;
-@property float prelim;
-@property unsigned int row;
-@property(retain) NSString * saveLabel;
-@property(retain) NSString * secondaryLabel;
-@property(getter=isSelectable) BOOL selectable;
-@property(getter=isSelected) BOOL selected;
-@property float shift;
-@property BOOL smallSize;
-@property(retain) UIImage * statusBadgeImage;
-@property unsigned int statusLightMode;
-@property unsigned int topoBadgeNumber;
-@property float topoProgressValue;
-@property(retain) id userObject;
+@property (nonatomic) NetTopoObjectLayer *ancestor;
+@property (nonatomic, retain) id associatedNode;
+@property (nonatomic) struct CGSize { float x1; float x2; } boundsSizeConstraint;
+@property (nonatomic) float change;
+@property (nonatomic, retain) NSMutableArray *children;
+@property (nonatomic) unsigned int column;
+@property (nonatomic) NetTopoObjectLayer *contourThread;
+@property (getter=isExpanded, nonatomic) BOOL expanded;
+@property (getter=isGhosted, nonatomic) BOOL ghosted;
+@property (nonatomic, retain) NSString *label;
+@property (nonatomic) float labelPinnedHeight;
+@property (nonatomic) struct CGPoint { float x1; float x2; } layoutOrigin;
+@property (nonatomic) float layoutScale;
+@property (nonatomic) float mod;
+@property (nonatomic) unsigned int number;
+@property (nonatomic, readonly) unsigned int numberOfChildren;
+@property (nonatomic, retain) struct CGImage { }*objectImage;
+@property (nonatomic) id owningView;
+@property (nonatomic, retain) NetTopoObjectLayer *parent;
+@property (nonatomic, readonly) NetTopoObjectLayer *parentDevice;
+@property (nonatomic) float prelim;
+@property (nonatomic) unsigned int row;
+@property (nonatomic, retain) NSString *saveLabel;
+@property (nonatomic, retain) NSString *secondaryLabel;
+@property (getter=isSelectable, nonatomic) BOOL selectable;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) float shift;
+@property (nonatomic) BOOL smallSize;
+@property (nonatomic, retain) UIImage *statusBadgeImage;
+@property (nonatomic) unsigned int statusLightMode;
+@property (nonatomic) unsigned int topoBadgeNumber;
+@property (nonatomic) float topoProgressValue;
+@property (nonatomic, retain) id userObject;
 
 + (BOOL)needsDisplayForKey:(id)arg1;
 

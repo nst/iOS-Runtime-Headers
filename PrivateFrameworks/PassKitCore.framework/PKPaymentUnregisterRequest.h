@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentUnregisterRequest : PKPaymentWebServiceRequest {
-}
+@interface PKPaymentUnregisterRequest : PKPaymentWebServiceRequest
 
 + (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
 

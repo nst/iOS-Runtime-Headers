@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKDirectoryResource : EKDirectoryRecord {
-}
+@interface EKDirectoryResource : EKDirectoryRecord
 
 @end

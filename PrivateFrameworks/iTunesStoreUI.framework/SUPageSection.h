@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SSMutableURLRequestProperties, SSURLRequestProperties, UIImage;
-
 @interface SUPageSection : NSObject {
     double _expirationTime;
     NSString *_identifier;
@@ -14,14 +12,14 @@
     id _userInfo;
 }
 
-@property(copy) SSURLRequestProperties * URLRequestProperties;
-@property double expirationTime;
-@property(retain) NSString * identifier;
-@property(retain) UIImage * image;
-@property(readonly) id segmentedControlItem;
-@property int structuredPageType;
-@property(retain) NSString * title;
-@property(retain) id userInfo;
+@property (nonatomic, copy) SSURLRequestProperties *URLRequestProperties;
+@property (nonatomic) double expirationTime;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) id segmentedControlItem;
+@property (nonatomic) int structuredPageType;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) id userInfo;
 
 - (id)URLRequestProperties;
 - (void)_setURL:(id)arg1;

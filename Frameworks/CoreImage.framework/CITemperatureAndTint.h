@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CITemperatureAndTint : CIFilter {
     CIImage *inputImage;
     CIVector *inputNeutral;
     CIVector *inputTargetNeutral;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputNeutral;
-@property(retain) CIVector * inputTargetNeutral;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputNeutral;
+@property (nonatomic, retain) CIVector *inputTargetNeutral;
 
 + (id)customAttributes;
 

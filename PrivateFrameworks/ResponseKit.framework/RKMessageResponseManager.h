@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKMessageResponseManager : NSObject {
-}
+@interface RKMessageResponseManager : NSObject
 
 + (id)sharedManager;
 

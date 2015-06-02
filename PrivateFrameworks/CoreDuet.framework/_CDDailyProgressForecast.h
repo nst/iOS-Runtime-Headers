@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class NSArray;
-
 @interface _CDDailyProgressForecast : NSObject {
     double _averageVar;
     NSArray *_mean;
@@ -12,9 +10,9 @@
 }
 
 @property double averageVar;
-@property(retain) NSArray * mean;
+@property (retain) NSArray *mean;
 @property double temporalResolution;
-@property(retain) NSArray * var;
+@property (retain) NSArray *var;
 
 - (void).cxx_destruct;
 - (double)averageProgressVariance;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionViewControllerWrapperView : UIView {
-}
+@interface UICollectionViewControllerWrapperView : UIView
 
 - (id)_collectionViewController;
 - (id)_viewControllerToNotifyOnLayoutSubviews;

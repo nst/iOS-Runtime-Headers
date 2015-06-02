@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBadgeElement;
-
 @interface IKTextBadgeAttachment : NSTextAttachment {
     IKBadgeElement *_badge;
 }
 
-@property(retain,readonly) IKBadgeElement * badge;
+@property (nonatomic, readonly, retain) IKBadgeElement *badge;
 
 - (void).cxx_destruct;
 - (id)badge;

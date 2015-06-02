@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISPropertyListProvider, SUClientInterface;
-
 @interface SUStorePageDataProvider : ISDataProvider {
     SUClientInterface *_clientInterface;
     int _outputType;
     ISPropertyListProvider *_propertyListDataProvider;
 }
 
-@property(retain) SUClientInterface * clientInterface;
+@property (retain) SUClientInterface *clientInterface;
 @property int outputType;
-@property(copy) ISPropertyListProvider * propertyListDataProvider;
+@property (copy) ISPropertyListProvider *propertyListDataProvider;
 
 - (void)_loadPersonalizedStoreOffersForPage:(id)arg1;
 - (id)clientInterface;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSString, UIFont, UIImage;
-
 @interface CertInfoGradientLabel : UIView {
     UIFont *_font;
     UIImage *_gradient;
@@ -11,9 +9,9 @@
     NSString *_text;
 }
 
-@property(retain) UIFont * font;
-@property(retain) UIImage * gradient;
-@property(retain) NSString * text;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIImage *gradient;
+@property (nonatomic, retain) NSString *text;
 
 - (void).cxx_destruct;
 - (struct CGColor { }*)_patternColor;

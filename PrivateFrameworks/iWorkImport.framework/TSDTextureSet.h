@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, TSDBitmapRenderingQualityInfo, TSDRep, TSUNoCopyDictionary;
-
 @interface TSDTextureSet : NSObject <NSCopying> {
     BOOL _isFlippedHorizontally;
     int _objectType;
@@ -57,34 +55,34 @@
     NSMutableArray *mTextures;
 }
 
-@property(readonly) NSArray * allTextures;
-@property(retain) CALayer * alternateLayer;
-@property(retain) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
-@property(retain) NSDictionary * boundingRectForStage;
-@property struct CGPoint { float x1; float x2; } center;
-@property(readonly) unsigned int chunkCount;
-@property struct CGColorSpace { }* colorSpace;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property BOOL isBackground;
-@property BOOL isBaked;
-@property BOOL isFlippedHorizontally;
-@property(readonly) BOOL isImageSource;
-@property BOOL isMagicMove;
-@property(readonly) BOOL isRenderable;
-@property(readonly) CALayer * layer;
-@property(readonly) int maxStageIndex;
-@property int objectType;
-@property struct CGPoint { float x1; float x2; } originalPosition;
-@property TSDRep * rep;
-@property BOOL shouldIncludeFinalTexturesInVisibleSet;
-@property BOOL shouldTransformUsingTextureCenter;
-@property(readonly) int stageIndex;
-@property float textureAngle;
-@property float textureAnimationPercent;
-@property float textureOpacity;
-@property int textureZOrder;
-@property(readonly) NSArray * visibleTextures;
+@property (nonatomic, readonly) NSArray *allTextures;
+@property (nonatomic, retain) CALayer *alternateLayer;
+@property (nonatomic, retain) TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingRect;
+@property (nonatomic, retain) NSDictionary *boundingRectForStage;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic, readonly) unsigned int chunkCount;
+@property (nonatomic) struct CGColorSpace { }*colorSpace;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic) BOOL isBackground;
+@property (nonatomic) BOOL isBaked;
+@property (nonatomic) BOOL isFlippedHorizontally;
+@property (nonatomic, readonly) BOOL isImageSource;
+@property (nonatomic) BOOL isMagicMove;
+@property (nonatomic, readonly) BOOL isRenderable;
+@property (nonatomic, readonly) CALayer *layer;
+@property (nonatomic, readonly) int maxStageIndex;
+@property (nonatomic) int objectType;
+@property (nonatomic) struct CGPoint { float x1; float x2; } originalPosition;
+@property TSDRep *rep;
+@property (nonatomic) BOOL shouldIncludeFinalTexturesInVisibleSet;
+@property (nonatomic) BOOL shouldTransformUsingTextureCenter;
+@property (nonatomic, readonly) int stageIndex;
+@property (nonatomic) float textureAngle;
+@property (nonatomic) float textureAnimationPercent;
+@property (nonatomic) float textureOpacity;
+@property (nonatomic) int textureZOrder;
+@property (nonatomic, readonly) NSArray *visibleTextures;
 
 + (id)newFlattenedTextureFromTextures:(id)arg1 newRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 

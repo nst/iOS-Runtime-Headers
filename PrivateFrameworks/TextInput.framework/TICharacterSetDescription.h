@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSCharacterSet, NSString;
-
 @interface TICharacterSetDescription : NSObject <NSCopying, NSSecureCoding> {
     long _baseIdentifier;
     NSCharacterSet *_characterSet;
@@ -11,10 +9,10 @@
     BOOL _inverted;
 }
 
-@property(readonly) long baseIdentifier;
-@property(readonly) NSCharacterSet * characterSet;
-@property(copy) NSString * charactersAddedToBase;
-@property(readonly) BOOL inverted;
+@property (nonatomic, readonly) long baseIdentifier;
+@property (nonatomic, readonly) NSCharacterSet *characterSet;
+@property (nonatomic, copy) NSString *charactersAddedToBase;
+@property (nonatomic, readonly) BOOL inverted;
 
 + (BOOL)supportsSecureCoding;
 

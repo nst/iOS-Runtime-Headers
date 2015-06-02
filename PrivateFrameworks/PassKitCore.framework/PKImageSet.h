@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSURL;
-
 @interface PKImageSet : NSObject <NSSecureCoding> {
     NSURL *_originCacheURL;
     int _version;
 }
 
-@property(copy) NSURL * originCacheURL;
-@property int version;
+@property (nonatomic, copy) NSURL *originCacheURL;
+@property (nonatomic) int version;
 
 + (id)_archiveURL:(id)arg1;
 + (id)_archivedImageSet:(id)arg1 forDisplayProfile:(id)arg2;

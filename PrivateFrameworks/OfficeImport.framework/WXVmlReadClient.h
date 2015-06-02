@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WXVmlReadClient : NSObject <OAVReadClient> {
-}
+@interface WXVmlReadClient : NSObject <OAVReadClient>
 
 + (void)copyFromDrawable:(id)arg1 toContent:(id)arg2;
 + (BOOL)floating:(id)arg1;

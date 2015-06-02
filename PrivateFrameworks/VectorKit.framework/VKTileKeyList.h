@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKTileKeyMap;
-
 @interface VKTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
     unsigned int _count;
     void *_head;
@@ -20,7 +18,7 @@
 - (id)copyWithMaxCapacity:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)firstKey;
@@ -29,7 +27,7 @@
 - (BOOL)isEqualToList:(id)arg1;
 - (id)listWithout:(id)arg1;
 - (BOOL)removeKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (void)removeKeysMatchingPredicate:(id)arg1;
-- (void)sort:(id)arg1;
+- (void)removeKeysMatchingPredicate:(id /* block */)arg1;
+- (void)sort:(id /* block */)arg1;
 
 @end

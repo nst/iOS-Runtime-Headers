@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKLoadableContentStateMachine : GKStateMachine {
-}
+@interface GKLoadableContentStateMachine : GKStateMachine
 
 - (id)init;
 

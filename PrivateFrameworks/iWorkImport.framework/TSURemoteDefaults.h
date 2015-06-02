@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSURL;
-
 @interface TSURemoteDefaults : NSObject {
     NSObject<OS_dispatch_queue> *_checkQueue;
     NSObject<OS_dispatch_source> *_updateTimer;
 }
 
-@property(readonly) NSURL * downloadableContentURL;
+@property (nonatomic, readonly) NSURL *downloadableContentURL;
 
 + (id)sharedDefaults;
 

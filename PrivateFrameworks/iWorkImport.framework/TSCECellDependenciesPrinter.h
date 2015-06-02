@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSString;
-
 @interface TSCECellDependenciesPrinter : NSObject {
     NSMutableArray *_cleanCellDependencyRows;
     NSMutableArray *_dirtyCellDependencyRows;
@@ -12,9 +10,9 @@
     BOOL _showCleanCells;
 }
 
-@property unsigned int numDirtyCells;
-@property(retain) NSString * ownerName;
-@property BOOL showCleanCells;
+@property (nonatomic) unsigned int numDirtyCells;
+@property (nonatomic, retain) NSString *ownerName;
+@property (nonatomic) BOOL showCleanCells;
 
 - (void)addDependencyRow:(id)arg1;
 - (void)dealloc;

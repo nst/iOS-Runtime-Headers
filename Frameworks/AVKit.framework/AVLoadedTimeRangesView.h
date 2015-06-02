@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class NSArray, UIColor;
-
 @interface AVLoadedTimeRangesView : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -19,9 +17,9 @@
     NSArray *_loadedTimeRanges;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } clipRect;
-@property(retain) UIColor * fillColor;
-@property(retain) NSArray * loadedTimeRanges;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } clipRect;
+@property (nonatomic, retain) UIColor *fillColor;
+@property (nonatomic, retain) NSArray *loadedTimeRanges;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;

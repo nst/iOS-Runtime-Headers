@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CITriangleKaleidoscope : CIFilter {
     NSNumber *inputDecay;
     CIImage *inputImage;
@@ -12,11 +10,11 @@
     NSNumber *inputSize;
 }
 
-@property(retain) NSNumber * inputDecay;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputPoint;
-@property(retain) NSNumber * inputRotation;
-@property(retain) NSNumber * inputSize;
+@property (nonatomic, retain) NSNumber *inputDecay;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputPoint;
+@property (nonatomic, retain) NSNumber *inputRotation;
+@property (nonatomic, retain) NSNumber *inputSize;
 
 + (id)customAttributes;
 

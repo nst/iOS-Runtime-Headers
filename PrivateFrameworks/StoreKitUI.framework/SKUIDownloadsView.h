@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIDownloadsView : UIView {
     UIView *_contentView;
     UIView *_overlayView;
 }
 
-@property(retain) UIView * contentView;
-@property(retain) UIView * overlayView;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) UIView *overlayView;
 
 - (void).cxx_destruct;
 - (id)contentView;

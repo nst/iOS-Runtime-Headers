@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasContextDelegate>, MPMediaItem, MPPlaybackContext, MPUExtrasRootViewController, NSString, NSURL, UIViewController;
-
 @interface MPUExtrasContext : NSObject <MPUExtrasPlaybackDelegate> {
     NSString *_buyParameters;
     <MPUExtrasContextDelegate> *_delegate;
@@ -15,18 +13,18 @@
     long long _storeID;
 }
 
-@property(copy,readonly) NSString * buyParameters;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUExtrasContextDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) MPUExtrasRootViewController * extrasRootViewController;
-@property(retain) MPPlaybackContext * featurePlaybackContext;
-@property(retain) UIViewController * featurePlaybackViewController;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSURL * javascriptURL;
-@property(readonly) MPMediaItem * mediaItem;
-@property(readonly) long long storeID;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *buyParameters;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUExtrasContextDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) MPUExtrasRootViewController *extrasRootViewController;
+@property (nonatomic, retain) MPPlaybackContext *featurePlaybackContext;
+@property (nonatomic, retain) UIViewController *featurePlaybackViewController;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSURL *javascriptURL;
+@property (nonatomic, readonly) MPMediaItem *mediaItem;
+@property (nonatomic, readonly) long long storeID;
+@property (readonly) Class superclass;
 
 + (Class)extrasRootViewControllerClass;
 + (id)overriddenJavascriptURL;

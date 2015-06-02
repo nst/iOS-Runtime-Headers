@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DArray2D, TSCH3DLabelResources, TSCH3DTransform;
-
 @interface TSCH3DChartMutableElementProperties : TSCH3DChartElementProperties {
     TSCH3DTransform *mChartTransform;
     TSCH3DTransform *mElementsTransform;
@@ -11,10 +9,10 @@
     TSCH3DArray2D *mLightingModels;
 }
 
-@property(retain) TSCH3DTransform * chartTransform;
-@property(retain) TSCH3DTransform * elementsTransform;
-@property(retain) TSCH3DLabelResources * labels;
-@property(retain) TSCH3DArray2D * lightingModels;
+@property (nonatomic, retain) TSCH3DTransform *chartTransform;
+@property (nonatomic, retain) TSCH3DTransform *elementsTransform;
+@property (nonatomic, retain) TSCH3DLabelResources *labels;
+@property (nonatomic, retain) TSCH3DArray2D *lightingModels;
 
 - (id)chartTransform;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

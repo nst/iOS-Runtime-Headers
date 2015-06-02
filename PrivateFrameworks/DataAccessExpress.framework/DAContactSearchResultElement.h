@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSArray, NSData, NSString;
-
 @interface DAContactSearchResultElement : NSObject <NSSecureCoding> {
     NSString *_alias;
     NSString *_appleFloor;
@@ -43,42 +41,44 @@
     NSString *_zip;
 }
 
-@property(copy) NSString * alias;
-@property(copy) NSString * appleFloor;
-@property(copy) NSString * buildingName;
-@property(copy) NSString * city;
-@property(copy) NSString * company;
-@property(copy) NSString * country;
-@property(copy) NSArray * cuAddresses;
-@property(copy) NSString * department;
-@property(copy) NSString * displayName;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * faxPhone;
-@property(copy) NSString * firstName;
-@property(copy) NSString * homePhone;
-@property(copy) NSString * homePostalAddress;
-@property(copy) NSString * iPhone;
-@property(retain) NSString * identifierOnServer;
-@property(copy) NSString * imService;
-@property(copy) NSString * imUsername;
-@property(copy) NSData * jpegPhoto;
-@property(copy) NSString * lastName;
-@property(copy) NSString * mainPhone;
-@property(copy) NSString * mobilePhone;
-@property(copy) NSString * office;
-@property(copy) NSString * pagerNumber;
-@property(copy) NSString * postalAddress;
-@property(copy) NSString * preferredUserAddress;
-@property(copy) NSString * principalPath;
-@property(copy) NSString * recordName;
-@property(copy) NSString * serverSource;
-@property(copy) NSString * state;
-@property(copy) NSString * street;
-@property(copy) NSString * title;
-@property(copy) NSString * uri;
-@property(copy) NSString * workFaxPhone;
-@property(copy) NSString * workPhone;
-@property(copy) NSString * zip;
+@property (nonatomic, copy) NSString *alias;
+@property (nonatomic, copy) NSString *appleFloor;
+@property (nonatomic, copy) NSString *buildingName;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *company;
+@property (nonatomic, copy) NSString *country;
+@property (nonatomic, copy) NSArray *cuAddresses;
+@property (nonatomic, copy) NSString *department;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *faxPhone;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *homePhone;
+@property (nonatomic, copy) NSString *homePostalAddress;
+@property (nonatomic, copy) NSString *iPhone;
+@property (nonatomic, retain) NSString *identifierOnServer;
+@property (nonatomic, copy) NSString *imService;
+@property (nonatomic, copy) NSString *imUsername;
+@property (nonatomic, copy) NSData *jpegPhoto;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy) NSString *mainPhone;
+@property (nonatomic, copy) NSString *mobilePhone;
+@property (nonatomic, copy) NSString *office;
+@property (nonatomic, copy) NSString *pagerNumber;
+@property (nonatomic, copy) NSString *postalAddress;
+@property (nonatomic, copy) NSString *preferredUserAddress;
+@property (nonatomic, copy) NSString *principalPath;
+@property (nonatomic, copy) NSString *recordName;
+@property (nonatomic, copy) NSString *serverSource;
+@property (nonatomic, copy) NSString *state;
+@property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *uri;
+@property (nonatomic, copy) NSString *workFaxPhone;
+@property (nonatomic, copy) NSString *workPhone;
+@property (nonatomic, copy) NSString *zip;
+
+// Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
 
 + (BOOL)supportsSecureCoding;
 
@@ -110,7 +110,6 @@
 - (id)lastName;
 - (id)mainPhone;
 - (id)mobilePhone;
-- (void*)newAddressBookRecordWithSource:(void*)arg1;
 - (id)office;
 - (id)pagerNumber;
 - (id)postalAddress;
@@ -161,5 +160,9 @@
 - (id)workFaxPhone;
 - (id)workPhone;
 - (id)zip;
+
+// Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
+
+- (void*)newAddressBookRecordWithSource:(void*)arg1;
 
 @end

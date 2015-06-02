@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHLineAreaScatterElementBuilder : TSCHElementBuilder {
-}
+@interface TSCHLineAreaScatterElementBuilder : TSCHElementBuilder
 
 - (unsigned int)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect {}**)arg4 outNewClipRects:(struct CGRect {}**)arg5 outNewElementPaths:(const struct CGPath {}***)arg6 outSelectionKnobLocations:(id*)arg7;
 - (unsigned int)countOfErrorBarsInSeries:(id)arg1 forGroups:(id)arg2 forAxisID:(id)arg3 forBodyLayout:(id)arg4 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5 outNewErrorBarDescriptors:(struct { /* ? */ }**)arg6;
@@ -13,10 +12,10 @@
 - (float)dataPointDimension:(id)arg1 symbolType:(int)arg2 stroke:(id)arg3;
 - (struct CGPoint { float x1; float x2; })labelPointForPosition:(unsigned int)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stringSize:(struct CGSize { float x1; float x2; })arg3 symbolType:(int)arg4;
 - (BOOL)needsSeparateHitTestingPaths;
-- (BOOL)p_addBottomStroke:(struct { id x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; id x4; id x5; }*)arg1 toPath:(struct CGPath { }*)arg2 seriesIndex:(unsigned int)arg3 valuesStart:(unsigned int)arg4 valuesEnd:(unsigned int)arg5 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg6 withCount:(unsigned int)arg7;
-- (void)p_addCurvedTopStroke:(struct { id x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; id x4; id x5; }*)arg1 toPath:(struct CGPath { }*)arg2 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg3 withCount:(unsigned int)arg4;
+- (BOOL)p_addBottomStroke:(struct { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; id x3; }*)arg1 toPath:(struct CGPath { }*)arg2 seriesIndex:(unsigned int)arg3 valuesStart:(unsigned int)arg4 valuesEnd:(unsigned int)arg5 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg6 withCount:(unsigned int)arg7;
+- (void)p_addCurvedTopStroke:(struct { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; id x3; }*)arg1 toPath:(struct CGPath { }*)arg2 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg3 withCount:(unsigned int)arg4;
 - (void)p_addKnobsForPoint:(struct CGPoint { float x1; float x2; })arg1 strokedUnitSymbolRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toKnobSet:(id)arg3 symbolsShowing:(BOOL)arg4 includePoint:(BOOL)arg5;
-- (void)p_addTopStroke:(struct { id x1; id x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; id x4; id x5; }*)arg1 toPath:(struct CGPath { }*)arg2 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg3 withCount:(unsigned int)arg4 lineType:(int)arg5;
+- (void)p_addTopStroke:(struct { id x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; id x3; }*)arg1 toPath:(struct CGPath { }*)arg2 withPointsArray:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg3 withCount:(unsigned int)arg4 lineType:(int)arg5;
 - (float)p_bubbleMaxForSeries:(id)arg1 inChartBodyLayoutSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)p_calculateSelectionKnobSet:(id)arg1;
 - (BOOL)p_centerPointForSeries:(id)arg1 forGroupIndex:(unsigned int)arg2 xAxis:(id)arg3 yAxis:(id)arg4 plotAreaFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 nullsUseIntercept:(BOOL)arg6 outPoint:(struct CGPoint { float x1; float x2; }*)arg7;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIPageSheetPresentationController : _UIFormSheetPresentationController {
-}
+@interface _UIPageSheetPresentationController : _UIFormSheetPresentationController
 
 - (BOOL)_presentationPotentiallyUnderlapsStatusBar;
 - (BOOL)_shouldHideBottomCorner;

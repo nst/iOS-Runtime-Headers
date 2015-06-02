@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL;
-
 @interface CoreDAVBulkUploadTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
     NSURL *_folderURL;
     NSMutableDictionary *_hrefToETag;
@@ -20,21 +18,21 @@
     BOOL _validCTag;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSURL * folderURL;
-@property(readonly) unsigned int hash;
-@property(readonly) NSDictionary * hrefToETag;
-@property(readonly) NSDictionary * hrefToErrorItems;
-@property(readonly) NSDictionary * hrefToStatus;
-@property unsigned int multiPutBatchMaxNumResources;
-@property unsigned int multiPutBatchMaxSize;
-@property(retain) NSString * nextCTag;
-@property(readonly) Class superclass;
-@property(readonly) NSDictionary * uuidToErrorItems;
-@property(readonly) NSDictionary * uuidToHREF;
-@property(readonly) NSDictionary * uuidToStatus;
-@property(readonly) BOOL validCTag;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *folderURL;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDictionary *hrefToETag;
+@property (nonatomic, readonly) NSDictionary *hrefToErrorItems;
+@property (nonatomic, readonly) NSDictionary *hrefToStatus;
+@property (nonatomic) unsigned int multiPutBatchMaxNumResources;
+@property (nonatomic) unsigned int multiPutBatchMaxSize;
+@property (nonatomic, retain) NSString *nextCTag;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *uuidToErrorItems;
+@property (nonatomic, readonly) NSDictionary *uuidToHREF;
+@property (nonatomic, readonly) NSDictionary *uuidToStatus;
+@property (nonatomic, readonly) BOOL validCTag;
 
 - (void)_sendNextBatch;
 - (void)dealloc;

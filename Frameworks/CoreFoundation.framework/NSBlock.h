@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSBlock : NSObject <NSCopying> {
-}
+@interface NSBlock : NSObject <NSCopying>
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSString, UIButton, UITextField, UIView;
-
 @interface APDSearchBar : UISearchBar {
     BOOL _RTL;
     UIView *_clearButtonView;
@@ -15,12 +13,12 @@
     UIView *_searchGlassView;
 }
 
-@property BOOL RTL;
-@property UIView * clearButtonView;
-@property UIButton * searchBarCancelButton;
-@property(retain) NSString * searchBarCancelText;
-@property UITextField * searchBarTextField;
-@property UIView * searchGlassView;
+@property (nonatomic) BOOL RTL;
+@property (nonatomic) UIView *clearButtonView;
+@property (nonatomic) UIButton *searchBarCancelButton;
+@property (nonatomic, retain) NSString *searchBarCancelText;
+@property (nonatomic) UITextField *searchBarTextField;
+@property (nonatomic) UIView *searchGlassView;
 
 - (void).cxx_destruct;
 - (BOOL)RTL;

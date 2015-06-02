@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsFieldNoise : PKPhysicsField {
-}
+@interface PKPhysicsFieldNoise : PKPhysicsField
 
-@property float animationSpeed;
-@property float smoothness;
+@property (nonatomic) float animationSpeed;
+@property (nonatomic) float smoothness;
 
 + (id)field;
 

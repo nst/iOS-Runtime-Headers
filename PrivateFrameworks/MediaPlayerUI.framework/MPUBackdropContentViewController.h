@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUPinningView, UIView, UIViewController, _UIBackdropView;
-
 @interface MPUBackdropContentViewController : UIViewController {
     _UIBackdropView *_backdropView;
     int _backdropViewPrivateStyle;
@@ -12,9 +10,9 @@
     MPUPinningView *_pinningView;
 }
 
-@property int backdropViewPrivateStyle;
-@property(retain) UIView * backgroundView;
-@property(retain) UIViewController * contentViewController;
+@property (nonatomic) int backdropViewPrivateStyle;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, retain) UIViewController *contentViewController;
 
 - (void).cxx_destruct;
 - (void)_embedBackgroundView;

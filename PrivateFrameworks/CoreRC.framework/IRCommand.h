@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class IRProtocol;
-
 @interface IRCommand : NSObject {
     BOOL _isRepeat;
     unsigned long long _payload;
@@ -11,10 +9,10 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL isRepeat;
-@property(readonly) unsigned long long payload;
-@property(readonly) IRProtocol * protocol;
-@property unsigned long long timestamp;
+@property (nonatomic, readonly) BOOL isRepeat;
+@property (nonatomic, readonly) unsigned long long payload;
+@property (nonatomic, readonly) IRProtocol *protocol;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)dealloc;
 - (id)init;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSString, UIImage, UIVisualEffectView;
-
 @interface SBUIControlCenterSlider : _UIDynamicSlider <SBUIControlCenterControl, _UISettingsKeyObserver> {
     BOOL _adjusting;
     BOOL _customTrackImage;
@@ -22,17 +20,17 @@
     float _valueImagePadding;
 }
 
-@property(getter=isAdjusting) BOOL adjusting;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL highlightMinimumTrackImage;
-@property(retain) UIImage * maxValueMaskImage;
-@property(retain) UIImage * minValueMaskImage;
-@property BOOL shouldHighlightValueImagesWhileAdjusting;
-@property(readonly) Class superclass;
+@property (getter=isAdjusting, nonatomic) BOOL adjusting;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL highlightMinimumTrackImage;
+@property (retain) UIImage *maxValueMaskImage;
+@property (retain) UIImage *minValueMaskImage;
+@property (nonatomic) BOOL shouldHighlightValueImagesWhileAdjusting;
+@property (readonly) Class superclass;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } trackCapInsets;
-@property(retain) UIImage * trackMaskImage;
+@property (retain) UIImage *trackMaskImage;
 
 + (id)_createTrackImageForState:(int)arg1;
 + (id)_knobImage;

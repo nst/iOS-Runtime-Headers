@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSData, NSString;
-
 @interface MCProfileServiceProfile : MCProfile {
     NSString *_URLString;
     NSArray *_bogusPayloads;
@@ -13,11 +11,11 @@
     NSData *_enrollmentIdentityPersistentID;
 }
 
-@property(retain) NSString * URLString;
-@property(retain,readonly) id challenge;
-@property(readonly) BOOL confirmInstallation;
-@property(retain,readonly) NSArray * deviceAttributes;
-@property(retain) NSData * enrollmentIdentityPersistentID;
+@property (nonatomic, retain) NSString *URLString;
+@property (nonatomic, readonly, retain) id challenge;
+@property (nonatomic, readonly) BOOL confirmInstallation;
+@property (nonatomic, readonly, retain) NSArray *deviceAttributes;
+@property (nonatomic, retain) NSData *enrollmentIdentityPersistentID;
 
 - (void).cxx_destruct;
 - (id)URLString;

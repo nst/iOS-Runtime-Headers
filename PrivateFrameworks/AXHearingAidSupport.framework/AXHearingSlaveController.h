@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AXHATimer, AXRemoteHearingAidDevice, NSString;
-
 @interface AXHearingSlaveController : AXHARemoteController <AXHARemoteUpdateProtocol, NSNetServiceDelegate> {
     AXRemoteHearingAidDevice *_device;
     struct __CFSocket { } *_ipv4socket;
     struct __CFSocket { } *_ipv6socket;
     BOOL _isVisible;
     AXHATimer *_resolveTimer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _searchCompletion;
-
+    id /* block */ _searchCompletion;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) AXRemoteHearingAidDevice * device;
-@property(readonly) unsigned int hash;
-@property(copy) id searchCompletion;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) AXRemoteHearingAidDevice *device;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ searchCompletion;
+@property (readonly) Class superclass;
 
 - (void)acceptConnection:(int)arg1;
 - (void)closeConnectionWithError:(id)arg1;
@@ -42,10 +32,10 @@
 - (void)openConnectionIfNecessary;
 - (void)receivedData:(id)arg1;
 - (void)resetConnection;
-- (void)resolveMasterWithCompletion:(id)arg1;
-- (id)searchCompletion;
+- (void)resolveMasterWithCompletion:(id /* block */)arg1;
+- (id /* block */)searchCompletion;
 - (void)setDevice:(id)arg1;
-- (void)setSearchCompletion:(id)arg1;
+- (void)setSearchCompletion:(id /* block */)arg1;
 - (BOOL)setVisible:(BOOL)arg1;
 - (void)updateProperty:(int)arg1 forDeviceID:(id)arg2;
 - (void)validatePairedAid;

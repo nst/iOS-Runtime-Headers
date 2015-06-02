@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryHWR_Landscape : UIKBRenderFactoryHWR_Portrait {
-}
+@interface UIKBRenderFactoryHWR_Landscape : UIKBRenderFactoryHWR_Portrait
 
 - (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIFloatingOverlayView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -14,8 +12,8 @@
     UIView *_contentView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(retain) UIView * contentView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, retain) UIView *contentView;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;

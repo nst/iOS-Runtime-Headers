@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class FigCaptureStillImageSettings, NSArray, NSDictionary, NSString;
-
 @interface BWSISNode : BWNode <BWBracketSettingsProvider> {
     NSArray *_afWindowParamsArray;
     BOOL _allowExperimentalOverrides;
     float _bracketGainCap;
-    int (*_createSampleBufferProcessorFunction)();
+    int (*_createSampleBufferProcessorFunction;
     FigCaptureStillImageSettings *_currentCaptureSettings;
     NSArray *_exposureValues;
     NSDictionary *_fusionParamsDictionary;
@@ -32,11 +25,11 @@
     int _sisBracketCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) double integrationTimeThreshold;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) double integrationTimeThreshold;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

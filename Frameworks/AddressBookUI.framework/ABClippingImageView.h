@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, NSArray, UIImage;
-
 @interface ABClippingImageView : UIView {
     UIImage *_clippingImage;
     UIImage *_image;
@@ -11,8 +9,8 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) UIImage * image;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_canDrawContent;
 - (void)dealloc;

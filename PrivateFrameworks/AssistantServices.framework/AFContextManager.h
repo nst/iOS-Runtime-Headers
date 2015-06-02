@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class CPDistributedMessagingCenter;
-
 @interface AFContextManager : NSObject {
     CPDistributedMessagingCenter *_center;
     struct __CFArray { } *_contextProviders;

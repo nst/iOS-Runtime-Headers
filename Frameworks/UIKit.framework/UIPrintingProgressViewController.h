@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UINavigationController, UIPrintingMessageView, UIPrintingProgress, UIWindow;
-
 @interface UIPrintingProgressViewController : UITableViewController {
     UIPrintingMessageView *_messageView;
     UINavigationController *_navController;

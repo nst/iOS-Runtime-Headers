@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/LocalAuthentication.framework/LocalAuthentication
  */
 
-@class LAClient, NSData, NSNumber, NSString;
-
 @interface LAContext : NSObject {
     BOOL _cancelButtonVisible;
     LAClient *_client;
@@ -13,23 +11,23 @@
     NSNumber *_maxBiometryFailures;
 }
 
-@property(getter=isCancelButtonVisible) BOOL cancelButtonVisible;
-@property(readonly) NSString * creatorDisplayName;
-@property(retain) NSData * externalizedContext;
-@property(getter=isFallbackButtonVisible) BOOL fallbackButtonVisible;
-@property(copy) NSString * localizedFallbackTitle;
-@property(retain) NSNumber * maxBiometryFailures;
+@property (getter=isCancelButtonVisible, nonatomic) BOOL cancelButtonVisible;
+@property (readonly) NSString *creatorDisplayName;
+@property (retain) NSData *externalizedContext;
+@property (getter=isFallbackButtonVisible, nonatomic) BOOL fallbackButtonVisible;
+@property (nonatomic, copy) NSString *localizedFallbackTitle;
+@property (nonatomic, retain) NSNumber *maxBiometryFailures;
 
 - (void).cxx_destruct;
 - (BOOL)canEvaluatePolicy:(int)arg1 error:(id*)arg2;
 - (id)creatorDisplayName;
-- (void)enterPassword:(id)arg1 reply:(id)arg2;
-- (void)evaluatePolicy:(int)arg1 localizedReason:(id)arg2 reply:(id)arg3;
+- (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
+- (void)evaluatePolicy:(int)arg1 localizedReason:(id)arg2 reply:(id /* block */)arg3;
 - (id)evaluatePolicy:(int)arg1 options:(id)arg2 error:(id*)arg3;
-- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id)arg3;
+- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
 - (id)evaluationMechanismsForPolicy:(int)arg1 error:(id*)arg2;
 - (id)externalizedContext;
-- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id)arg3;
+- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
 - (id)init;
 - (id)initWithExternalizedContext:(id)arg1;
 - (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;

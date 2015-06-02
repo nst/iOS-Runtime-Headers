@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicQueryNowPlayingItem : MPMediaQueryNowPlayingItem {
-}
+@interface MusicQueryNowPlayingItem : MPMediaQueryNowPlayingItem
 
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 

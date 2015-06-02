@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class CTPhoneNumber, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<CTMessageAddress><NSCopying>, NSString, NSUUID;
-
 @interface CTMessage : NSObject {
     NSString *_contentType;
     NSMutableDictionary *_contentTypeParams;
@@ -21,19 +19,19 @@
     NSUUID *_uuid;
 }
 
-@property(copy) NSString * contentType;
-@property(copy,readonly) NSString * countryCode;
-@property(readonly) NSDate * date;
-@property(readonly) NSArray * items;
-@property unsigned int messageId;
-@property int messageType;
-@property(readonly) NSDictionary * rawHeaders;
-@property(readonly) NSArray * recipients;
-@property(readonly) unsigned int replaceMessage;
-@property(copy) NSObject<CTMessageAddress><NSCopying> * sender;
-@property(copy) CTPhoneNumber * serviceCenter;
-@property(copy) NSString * subject;
-@property(retain) NSUUID * uniqueIdentifier;
+@property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, readonly, copy) NSString *countryCode;
+@property (readonly) NSDate *date;
+@property (readonly) NSArray *items;
+@property (nonatomic) unsigned int messageId;
+@property (nonatomic) int messageType;
+@property (readonly) NSDictionary *rawHeaders;
+@property (readonly) NSArray *recipients;
+@property (readonly) unsigned int replaceMessage;
+@property (nonatomic, copy) NSObject<CTMessageAddress><NSCopying> *sender;
+@property (nonatomic, copy) CTPhoneNumber *serviceCenter;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, retain) NSUUID *uniqueIdentifier;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)addData:(id)arg1 withContentType:(id)arg2;

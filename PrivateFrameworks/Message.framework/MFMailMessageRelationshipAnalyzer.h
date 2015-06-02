@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray;
-
 @interface MFMailMessageRelationshipAnalyzer : NSObject {
     NSArray *_messages;
     NSArray *_relationships;

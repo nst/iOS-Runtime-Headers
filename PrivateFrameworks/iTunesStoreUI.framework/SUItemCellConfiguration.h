@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUItemCellConfiguration : SUArtworkCellConfiguration {
-}
+@interface SUItemCellConfiguration : SUArtworkCellConfiguration
 
 + (id)copyDefaultContext;
 

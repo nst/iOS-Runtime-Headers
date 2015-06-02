@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DFixedFunctionMaterialShaderEffect : TSCH3DMaterialShaderEffect {
-}
+@interface TSCH3DFixedFunctionMaterialShaderEffect : TSCH3DMaterialShaderEffect
 
 - (void)inject:(id)arg1;
 

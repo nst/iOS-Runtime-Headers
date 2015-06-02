@@ -8,9 +8,9 @@
     BOOL _suspended;
 }
 
-@property double gain;
-@property struct CGPoint { float x1; float x2; } listenerPosition;
-@property BOOL suspended;
+@property (nonatomic) double gain;
+@property (nonatomic) struct CGPoint { float x1; float x2; } listenerPosition;
+@property (nonatomic) BOOL suspended;
 
 + (id)context;
 + (id)currentContext;

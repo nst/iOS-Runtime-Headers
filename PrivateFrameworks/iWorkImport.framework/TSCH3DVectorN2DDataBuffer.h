@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface TSCH3DVectorN2DDataBuffer : TSCH3D2DDataBuffer {
     struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
         char *__begin_; 
@@ -16,7 +12,7 @@
     } mContainer;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{vector<unsigned char' */ struct * container; /* unknown property attribute:  std::__1::allocator<unsigned char> >=*}} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<unsigned char' */ struct *container; /* unknown property attribute:  std::__1::allocator<unsigned char> >=*}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

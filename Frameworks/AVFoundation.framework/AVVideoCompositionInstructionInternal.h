@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray;
-
 @interface AVVideoCompositionInstructionInternal : NSObject {
     struct CGColor { } *backgroundColor;
     BOOL enablePostProcessing;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKHealthStore, HKSource, NSArray, NSMutableSet;
-
 @interface HKSourceAuthorizationController : NSObject {
     HKHealthStore *_healthStore;
     NSArray *_orderedTypesForReading;
@@ -13,12 +11,12 @@
     NSMutableSet *_typesEnabledForSharing;
 }
 
-@property(readonly) HKHealthStore * healthStore;
-@property(retain) NSArray * orderedTypesForReading;
-@property(retain) NSArray * orderedTypesForSharing;
-@property(readonly) HKSource * source;
-@property(retain) NSMutableSet * typesEnabledForReading;
-@property(retain) NSMutableSet * typesEnabledForSharing;
+@property (nonatomic, readonly) HKHealthStore *healthStore;
+@property (nonatomic, retain) NSArray *orderedTypesForReading;
+@property (nonatomic, retain) NSArray *orderedTypesForSharing;
+@property (nonatomic, readonly) HKSource *source;
+@property (nonatomic, retain) NSMutableSet *typesEnabledForReading;
+@property (nonatomic, retain) NSMutableSet *typesEnabledForSharing;
 
 - (void).cxx_destruct;
 - (int)_authorizationStatusWithType:(id)arg1;

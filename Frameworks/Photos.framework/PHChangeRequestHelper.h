@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSManagedObjectID, NSMutableDictionary, NSString;
-
 @interface PHChangeRequestHelper : NSObject {
     id _changeRequest;
     BOOL _didRequestUUID;
@@ -15,13 +13,13 @@
     NSString *_uuidSaveToken;
 }
 
-@property id changeRequest;
-@property(getter=isMutated) BOOL mutated;
-@property(readonly) NSMutableDictionary * mutations;
-@property(getter=isNew) BOOL new;
-@property(retain) NSManagedObjectID * objectID;
-@property(readonly) NSString * uuid;
-@property(readonly) NSString * uuidSaveToken;
+@property (nonatomic) id changeRequest;
+@property (getter=isMutated, nonatomic) BOOL mutated;
+@property (nonatomic, readonly) NSMutableDictionary *mutations;
+@property (getter=isNew, nonatomic) BOOL new;
+@property (nonatomic, retain) NSManagedObjectID *objectID;
+@property (nonatomic, readonly) NSString *uuid;
+@property (nonatomic, readonly) NSString *uuidSaveToken;
 
 + (id)changeRequestForObject:(id)arg1;
 + (id)changeRequestWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier;
-
 @interface CKDPSubscriptionRetrieveRequest : PBRequest <NSCopying> {
     CKDPIdentifier *_identifier;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(retain) CKDPIdentifier * identifier;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, retain) CKDPIdentifier *identifier;
 
 + (id)options;
 

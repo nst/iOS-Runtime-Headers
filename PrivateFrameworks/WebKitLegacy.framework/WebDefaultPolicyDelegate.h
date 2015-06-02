@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultPolicyDelegate : NSObject {
-}
+@interface WebDefaultPolicyDelegate : NSObject
 
 + (id)sharedPolicyDelegate;
 

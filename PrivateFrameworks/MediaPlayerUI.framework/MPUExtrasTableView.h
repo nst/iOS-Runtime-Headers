@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUExtrasTableView : UITableView {
-}
+@interface MPUExtrasTableView : UITableView
 
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 

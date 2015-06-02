@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaCompoundAllPredicate : MPMediaCompoundPredicate {
-}
+@interface MPMediaCompoundAllPredicate : MPMediaCompoundPredicate
 
 @end

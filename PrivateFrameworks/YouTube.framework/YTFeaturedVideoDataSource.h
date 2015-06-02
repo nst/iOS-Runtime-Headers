@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface YTFeaturedVideoDataSource : YTVideoDataSource {
-}
+@interface YTFeaturedVideoDataSource : YTVideoDataSource
 
 - (void)reloadData;
 

@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class NSString;
-
 @interface AFUIDialogPhase : NSObject <NSSecureCoding> {
     int _type;
 }
 
-@property(readonly) NSString * aceDialogPhaseValue;
-@property(getter=isCancelledDialogPhase,readonly) BOOL cancelledDialogPhase;
-@property(getter=isClarificationDialogPhase,readonly) BOOL clarificationDialogPhase;
-@property(getter=isConfirmationDialogPhase,readonly) BOOL confirmationDialogPhase;
-@property(getter=isConfirmedDialogPhase,readonly) BOOL confirmedDialogPhase;
-@property(getter=isErrorDialogPhase,readonly) BOOL errorDialogPhase;
-@property(getter=isExpository,readonly) BOOL expository;
-@property(getter=isReflectionDialogPhase,readonly) BOOL reflectionDialogPhase;
-@property(getter=isTemporary,readonly) BOOL temporary;
-@property(getter=_type,readonly) int type;
-@property(getter=isUserRequestDialogPhase,readonly) BOOL userRequestDialogPhase;
+@property (nonatomic, readonly) NSString *aceDialogPhaseValue;
+@property (getter=isCancelledDialogPhase, nonatomic, readonly) BOOL cancelledDialogPhase;
+@property (getter=isClarificationDialogPhase, nonatomic, readonly) BOOL clarificationDialogPhase;
+@property (getter=isConfirmationDialogPhase, nonatomic, readonly) BOOL confirmationDialogPhase;
+@property (getter=isConfirmedDialogPhase, nonatomic, readonly) BOOL confirmedDialogPhase;
+@property (getter=isErrorDialogPhase, nonatomic, readonly) BOOL errorDialogPhase;
+@property (getter=isExpository, nonatomic, readonly) BOOL expository;
+@property (getter=isReflectionDialogPhase, nonatomic, readonly) BOOL reflectionDialogPhase;
+@property (getter=isTemporary, nonatomic, readonly) BOOL temporary;
+@property (getter=_type, nonatomic, readonly) int type;
+@property (getter=isUserRequestDialogPhase, nonatomic, readonly) BOOL userRequestDialogPhase;
 
 + (id)_dialogPhaseWithType:(int)arg1;
 + (id)acknowledgementDialogPhase;

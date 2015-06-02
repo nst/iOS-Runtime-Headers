@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, RUTrackDownloadView, SKUICircleProgressIndicator, UIButton, UITapGestureRecognizer, UIView;
-
 @interface RUMiniPlayerRadioTransportControls : MPUMiniPlayerTransportControls <MPUStackViewDataSource, RUTrackDownloadViewDelegate> {
     SKUICircleProgressIndicator *_createActivityIndicatorView;
     UIButton *_infoButton;
@@ -14,13 +12,13 @@
     RUTrackDownloadView *_trackDownloadView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isShowingCreateLoadingIndicator) BOOL showingCreateLoadingIndicator;
-@property(readonly) Class superclass;
-@property(readonly) UIView * viewForPresentingStationActions;
-@property(readonly) UIView * viewForPresentingTrackActions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isShowingCreateLoadingIndicator, nonatomic) BOOL showingCreateLoadingIndicator;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *viewForPresentingStationActions;
+@property (nonatomic, readonly) UIView *viewForPresentingTrackActions;
 
 + (unsigned long long)defaultVisibleParts;
 

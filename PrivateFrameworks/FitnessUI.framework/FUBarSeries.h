@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSArray, UIColor;
-
 @interface FUBarSeries : FUChartSeries {
     UIColor *_backgroundStrokeColor;
     float _backgroundStrokeWidth;
@@ -22,21 +20,21 @@
     float _strokeWidth;
 }
 
-@property(retain) UIColor * backgroundStrokeColor;
-@property float backgroundStrokeWidth;
-@property(retain) UIColor * barColor;
-@property(retain) NSArray * barColors;
-@property struct CGGradient { }* barGradient;
-@property(retain) NSArray * barLabels;
-@property float barSpacing;
-@property float barWidth;
-@property BOOL fadeZeroBars;
-@property(retain) UIColor * fadedBarColor;
-@property(retain) NSArray * labelAttributes;
-@property(retain) NSArray * plotPoints;
-@property float roundedCornerRadius;
-@property(retain) UIColor * strokeColor;
-@property float strokeWidth;
+@property (nonatomic, retain) UIColor *backgroundStrokeColor;
+@property (nonatomic) float backgroundStrokeWidth;
+@property (nonatomic, retain) UIColor *barColor;
+@property (nonatomic, retain) NSArray *barColors;
+@property (nonatomic) struct CGGradient { }*barGradient;
+@property (nonatomic, retain) NSArray *barLabels;
+@property (nonatomic) float barSpacing;
+@property (nonatomic) float barWidth;
+@property (nonatomic) BOOL fadeZeroBars;
+@property (nonatomic, retain) UIColor *fadedBarColor;
+@property (nonatomic, retain) NSArray *labelAttributes;
+@property (nonatomic, retain) NSArray *plotPoints;
+@property (nonatomic) float roundedCornerRadius;
+@property (nonatomic, retain) UIColor *strokeColor;
+@property (nonatomic) float strokeWidth;
 
 - (void).cxx_destruct;
 - (id)_chartColorForChartYValue:(float)arg1;

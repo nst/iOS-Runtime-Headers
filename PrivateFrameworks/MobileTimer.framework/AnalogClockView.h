@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSCalendar, NSDate, NSTimeZone, UIImage, UIImageView, UIView<HandView>;
-
 @interface AnalogClockView : UIView <Clock> {
     NSCalendar *_calendar;
-    UIView<HandView> *_dayHands[3];
+    UIView<HandView> *_dayHands;
     UIImage *_faceDayImage;
     UIImage *_faceNightImage;
     UIImageView *_faceView;
@@ -16,22 +14,22 @@
     UIImageView *_middleDotNight;
     UIImageView *_middleRedDot;
     BOOL _minuteHourAnimationTriggered;
-    UIView<HandView> *_nightHands[3];
+    UIView<HandView> *_nightHands;
     BOOL _nighttime;
     int _runMode;
     double _seconds;
     NSDate *_time;
 }
 
-@property(readonly) UIImageView * faceView;
-@property(readonly) int hour;
-@property(readonly) int minute;
-@property(getter=isNighttime,readonly) BOOL nighttime;
-@property int runMode;
-@property(getter=isStarted,readonly) BOOL started;
-@property(readonly) int style;
-@property(retain) NSDate * time;
-@property(retain) NSTimeZone * timeZone;
+@property (nonatomic, readonly) UIImageView *faceView;
+@property (nonatomic, readonly) int hour;
+@property (nonatomic, readonly) int minute;
+@property (getter=isNighttime, nonatomic, readonly) BOOL nighttime;
+@property (nonatomic) int runMode;
+@property (getter=isStarted, nonatomic, readonly) BOOL started;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, retain) NSDate *time;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 
 + (void)adjustNumberalCenter:(struct CGPoint { float x1; float x2; }*)arg1 forNumeralIndex:(int)arg2;
 + (id)analogClockWithStyle:(int)arg1;
@@ -53,7 +51,7 @@
 + (float)hourHandLength;
 + (float)hourHandWidth;
 + (id)imageCacheNameForType:(int)arg1 daytime:(BOOL)arg2;
-+ (id)imageForType:(int)arg1 dayTime:(BOOL)arg2 generation:(id)arg3;
++ (id)imageForType:(int)arg1 dayTime:(BOOL)arg2 generation:(id /* block */)arg3;
 + (id)imageInBundleForName:(id)arg1;
 + (void)initialize;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetsForStyle:(int)arg1;
@@ -81,7 +79,7 @@
 + (id)resourcePath;
 + (float)secondHandLength;
 + (float)secondHandWidth;
-+ (struct ShadowInfo { id x1; float x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; float x4; })shadowInfoAtIndex:(unsigned int)arg1;
++ (struct ShadowInfo { id x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; float x3; })shadowInfoAtIndex:(unsigned int)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
 + (struct CGPoint { float x1; float x2; })shadowRotationalCenterForHand:(int)arg1;
 + (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;

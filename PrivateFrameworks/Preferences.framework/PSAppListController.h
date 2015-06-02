@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSystemPolicyForApp;
-
 @interface PSAppListController : PSListController {
     PSSystemPolicyForApp *_systemPolicy;
 }
 
-@property(retain) PSSystemPolicyForApp * systemPolicy;
+@property (nonatomic, retain) PSSystemPolicyForApp *systemPolicy;
 
 + (id)_localizedTitlesFromUnlocalizedTitles:(id)arg1 stringsTable:(id)arg2 parentSpecifier:(id)arg3;
 + (id)childPaneSpecifierFromDictionary:(id)arg1 stringsTable:(id)arg2 parentSpecifier:(id)arg3 target:(id)arg4;

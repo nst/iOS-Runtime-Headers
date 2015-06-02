@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@interface SCROIOUSBHIDElement : SCROIOHIDElement {
-}
+@interface SCROIOUSBHIDElement : SCROIOHIDElement
 
 - (id)initWithIOObject:(unsigned int)arg1;
 - (int)transport;

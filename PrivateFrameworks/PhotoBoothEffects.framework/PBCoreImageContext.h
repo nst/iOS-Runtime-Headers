@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoBoothEffects.framework/PhotoBoothEffects
  */
 
-@class CIContext, EAGLContext;
-
 @interface PBCoreImageContext : PBContext {
     CIContext *_ciContext;
     EAGLContext *_glesContext;

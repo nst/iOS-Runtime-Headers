@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLArchiveTableViewCell : UITableViewCell {
-}
+@interface QLArchiveTableViewCell : UITableViewCell
 
 - (float)indentationMargin;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

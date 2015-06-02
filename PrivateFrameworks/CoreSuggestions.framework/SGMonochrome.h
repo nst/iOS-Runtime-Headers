@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGMonochrome : NSObject {
-}
+@interface SGMonochrome : NSObject
 
 + (id)stringByExtractingPlainTextFromHTML:(id)arg1;
 + (id)stringByExtractingPlainTextFromHTML:(id)arg1 tableDelimiters:(BOOL)arg2;

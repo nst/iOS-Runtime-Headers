@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DTexturePool : NSObject {
-}
+@interface TSCH3DTexturePool : NSObject
 
 + (id)pool;
 

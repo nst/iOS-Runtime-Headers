@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDThemeState : TDThemeConstant {
-}
+@interface TDThemeState : TDThemeConstant
 
 @end

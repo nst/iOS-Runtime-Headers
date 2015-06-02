@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIImageView;
-
 @interface SKUISlideshowDismissalAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
     struct CGRect { 
         struct CGPoint { 
@@ -18,12 +16,12 @@
     UIImageView *_imageView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageRect;
-@property(retain) UIImageView * imageView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageRect;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;

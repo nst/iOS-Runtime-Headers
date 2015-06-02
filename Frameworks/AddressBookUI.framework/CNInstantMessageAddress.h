@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface CNInstantMessageAddress : NSObject <NSCopying> {
     NSString *_service;
     NSString *_username;
 }
 
-@property(copy,readonly) NSString * service;
-@property(copy,readonly) NSString * username;
+@property (readonly, copy) NSString *service;
+@property (readonly, copy) NSString *username;
 
 + (id)instantMessageAddressWithUsername:(id)arg1 service:(id)arg2;
 

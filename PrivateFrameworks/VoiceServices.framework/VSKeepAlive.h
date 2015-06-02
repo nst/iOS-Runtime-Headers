@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSXPCConnection;
-
 @interface VSKeepAlive : NSObject {
     BOOL _active;
     int _audioType;
@@ -11,9 +9,9 @@
     NSXPCConnection *_serverConnection;
 }
 
-@property BOOL active;
-@property int audioType;
-@property BOOL keepAudioSessionActive;
+@property (nonatomic) BOOL active;
+@property (nonatomic) int audioType;
+@property (nonatomic) BOOL keepAudioSessionActive;
 
 - (void).cxx_destruct;
 - (void)_ensureKeepAliveMaintenance;

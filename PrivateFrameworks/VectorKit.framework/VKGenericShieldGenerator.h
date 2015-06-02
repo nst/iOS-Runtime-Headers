@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSCache, NSString, VKGenericShieldDrawStyle, VKResourceManager;
-
 @interface VKGenericShieldGenerator : NSObject <GEOResourceManifestTileGroupObserver> {
     VKGenericShieldDrawStyle *_defaultStyle;
     NSCache *_defaultStylePacks;
@@ -11,10 +9,10 @@
     unsigned int _tileGroupIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;

@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CECBusPollingOperation, CECInterface, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CoreCECBusProvider : CoreCECBus <CECBusPollingOperationDelegate, CECInterfaceDelegate, NSCopying, NSSecureCoding> {
     CECInterface *_interface;
     CECBusPollingOperation *_pollingOperation;
     unsigned char _powerStatus;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) CECInterface * interface;
-@property(retain) CECBusPollingOperation * pollingOperation;
-@property unsigned char powerStatus;
-@property(readonly) NSObject<OS_dispatch_queue> * serialQueue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) CECInterface *interface;
+@property (nonatomic, retain) CECBusPollingOperation *pollingOperation;
+@property (nonatomic) unsigned char powerStatus;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

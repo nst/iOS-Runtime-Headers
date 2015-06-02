@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUIndexPathSet : NSObject <NSCopying, NSMutableCopying> {
-}
+@interface PUIndexPathSet : NSObject <NSCopying, NSMutableCopying>
 
 - (BOOL)containsIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)count;
-- (void)enumerateIndexPathsUsingBlock:(id)arg1;
+- (void)enumerateIndexPathsUsingBlock:(id /* block */)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

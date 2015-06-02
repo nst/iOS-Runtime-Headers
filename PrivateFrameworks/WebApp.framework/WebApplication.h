@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
  */
 
-@class NSMutableDictionary, NSString, NSURL, UIWindow;
-
 @interface WebApplication : UIApplication <UIApplicationDelegate> {
     NSURL *_lastActiveWebClipURL;
     BOOL _wasSuspendedUnderLock;
     NSMutableDictionary *webAppControllerDictionary;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) UIWindow * window;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIWindow *window;
 
 - (id)_currentWebAppController;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;

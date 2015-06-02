@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OCXContentType : NSObject {
     NSString *mContentType;
     NSString *mExtension;
     NSString *mPath;
 }
 
-@property(readonly) NSString * contentType;
-@property(readonly) NSString * path;
+@property (nonatomic, readonly) NSString *contentType;
+@property (nonatomic, readonly) NSString *path;
 
 - (id)contentType;
 - (void)dealloc;

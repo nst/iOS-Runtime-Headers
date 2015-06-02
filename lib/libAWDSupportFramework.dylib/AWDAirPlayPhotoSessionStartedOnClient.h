@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayPhotoSessionStartedOnClient : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

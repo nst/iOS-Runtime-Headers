@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIRedeemResultSimpleTableViewCell : UITableViewCell {
     struct UIEdgeInsets { 
         float top; 
@@ -14,8 +12,8 @@
     UIView *_childContentView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } childContentInsets;
-@property(retain) UIView * childContentView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } childContentInsets;
+@property (nonatomic, retain) UIView *childContentView;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })childContentInsets;

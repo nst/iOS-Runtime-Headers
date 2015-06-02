@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDMetadataValueEntity : HDHealthEntity {
-}
+@interface HDMetadataValueEntity : HDHealthEntity
 
 + (BOOL)_deleteMetadataValuesWithObjectID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)_insertMetadataValueWithKeyID:(id)arg1 objectID:(id)arg2 value:(id)arg3 database:(id)arg4 error:(id*)arg5;

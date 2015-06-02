@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewController>, <SKUIProductPageChildViewControllerDelegate>, NSArray, NSString, SKUIClientContext, SKUIColorScheme, SKUILayoutCache, SKUIProductPageHeaderViewController, SKUIProductPageTableView, UIColor, UITableView;
-
 @interface SKUIProductPageTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     SKUIClientContext *_clientContext;
     UIColor *_color;
@@ -17,18 +15,18 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) SKUIColorScheme * colorScheme;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIProductPageChildViewControllerDelegate> * delegate;
-@property <SKUIProductPageChildViewController> * delegateSender;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIProductPageHeaderViewController * headerViewController;
-@property(copy) NSArray * sections;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
-@property(retain) SKUILayoutCache * textLayoutCache;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, copy) SKUIColorScheme *colorScheme;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
+@property (nonatomic) <SKUIProductPageChildViewController> *delegateSender;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
+@property (nonatomic, copy) NSArray *sections;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, retain) SKUILayoutCache *textLayoutCache;
 
 - (void).cxx_destruct;
 - (void)_addHeaderView;

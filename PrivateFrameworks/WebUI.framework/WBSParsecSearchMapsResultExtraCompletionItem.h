@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, NSURL, WBSParsecImageRepresentation, WBSParsecSearchMapsResult;
-
 @interface WBSParsecSearchMapsResultExtraCompletionItem : NSObject <WBSCompletionListItem> {
     WBSParsecImageRepresentation *_icon;
     WBSParsecSearchMapsResult *_mapsResult;
@@ -11,14 +9,14 @@
     NSURL *_url;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * feedbackIdentifier;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * parsecDomainIdentifier;
-@property(readonly) Class superclass;
-@property(readonly) NSString * title;
-@property(readonly) NSURL * url;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *feedbackIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *parsecDomainIdentifier;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)feedbackIdentifier;

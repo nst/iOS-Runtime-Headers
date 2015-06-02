@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIProductPageChildViewControllerDelegate>, NSArray, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUIColorScheme, SKUIMetricsController, SKUIProductPageHeaderViewController, SKUIResourceLoader, SSVPlatformRequestOperation, UIScrollView;
-
 @interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIProductPageChildViewController, SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate> {
     SKUIResourceLoader *_artworkLoader;
     BOOL _askPermission;
@@ -20,19 +18,19 @@
     NSMutableArray *_viewControllers;
 }
 
-@property BOOL askPermission;
-@property(retain) SKUIClientContext * clientContext;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIProductPageChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIProductPageHeaderViewController * headerViewController;
-@property(retain) SKUIMetricsController * metricsController;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) UIScrollView * scrollView;
-@property(readonly) Class superclass;
-@property(copy) NSArray * swooshComponents;
+@property (nonatomic) BOOL askPermission;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
+@property (nonatomic, retain) SKUIMetricsController *metricsController;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *swooshComponents;
 
 - (void).cxx_destruct;
 - (void)_addHeaderView;

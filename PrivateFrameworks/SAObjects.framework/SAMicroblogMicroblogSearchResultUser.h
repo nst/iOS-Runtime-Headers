@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMicroblogMicroblogSearchResultUser : SAMicroblogMicroblogSearchResultBase {
-}
+@interface SAMicroblogMicroblogSearchResultUser : SAMicroblogMicroblogSearchResultBase
 
 + (id)microblogSearchResultUser;
 + (id)microblogSearchResultUserWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UILabel;
-
 @interface CAMSlalomIndicatorView : UIView {
     UILabel *__framerateLabel;
     int _framesPerSecond;
 }
 
-@property(readonly) UILabel * _framerateLabel;
-@property int framesPerSecond;
+@property (nonatomic, readonly) UILabel *_framerateLabel;
+@property (nonatomic) int framesPerSecond;
 
 - (void).cxx_destruct;
 - (void)_commonCAMSlalomIndicatorViewInitialization;

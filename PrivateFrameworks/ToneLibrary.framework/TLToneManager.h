@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NPSDomainAccessor, NSDictionary, NSMutableDictionary, NSString, TLAccessQueue;
-
 @interface TLToneManager : NSObject {
     TLAccessQueue *_accessQueue;
     NSMutableDictionary *_alertTonesByIdentifier;
@@ -17,22 +15,22 @@
     NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
 }
 
-@property(setter=_setAccessQueue:,retain) TLAccessQueue * _accessQueue;
-@property(setter=_setAlertTonesByIdentifier:,retain) NSMutableDictionary * _alertTonesByIdentifier;
-@property(setter=_setCachedTonePreferences:,retain) NSDictionary * _cachedTonePreferences;
-@property(readonly) NSString * _deviceITunesRingtoneDirectory;
-@property(readonly) NSString * _deviceITunesRingtoneInformationPlist;
-@property(readonly) NSString * _iTunesRingtoneDirectory;
-@property(readonly) NSString * _iTunesRingtoneInformationPlist;
-@property(setter=_setITunesToneIdentifiersByPID:,retain) NSMutableDictionary * _iTunesToneIdentifiersByPID;
-@property(setter=_setITunesTonesByIdentifier:,retain) NSMutableDictionary * _iTunesTonesByIdentifier;
-@property(setter=_setPreviewBehaviorsByDefaultIdentifier:,retain) NSDictionary * _previewBehaviorsByDefaultIdentifier;
-@property(readonly) NSString * _rootDirectory;
-@property(setter=_setShouldIgnoreNextToneDidChangeNotification:) BOOL _shouldIgnoreNextToneDidChangeNotification;
-@property(setter=_setShouldUseServiceToAccessTonePreferences:) BOOL _shouldUseServiceToAccessTonePreferences;
-@property(readonly) NSString * _systemRingtoneDirectory;
-@property(setter=_setToneIdentifierAliasMap:,retain) NSDictionary * _toneIdentifierAliasMap;
-@property(setter=_setTransientNanoPreferencesDomainAccessor:,retain) NPSDomainAccessor * _transientNanoPreferencesDomainAccessor;
+@property (setter=_setAccessQueue:, retain) TLAccessQueue *_accessQueue;
+@property (setter=_setAlertTonesByIdentifier:, nonatomic, retain) NSMutableDictionary *_alertTonesByIdentifier;
+@property (setter=_setCachedTonePreferences:, nonatomic, retain) NSDictionary *_cachedTonePreferences;
+@property (nonatomic, readonly) NSString *_deviceITunesRingtoneDirectory;
+@property (nonatomic, readonly) NSString *_deviceITunesRingtoneInformationPlist;
+@property (nonatomic, readonly) NSString *_iTunesRingtoneDirectory;
+@property (nonatomic, readonly) NSString *_iTunesRingtoneInformationPlist;
+@property (setter=_setITunesToneIdentifiersByPID:, nonatomic, retain) NSMutableDictionary *_iTunesToneIdentifiersByPID;
+@property (setter=_setITunesTonesByIdentifier:, nonatomic, retain) NSMutableDictionary *_iTunesTonesByIdentifier;
+@property (setter=_setPreviewBehaviorsByDefaultIdentifier:, nonatomic, retain) NSDictionary *_previewBehaviorsByDefaultIdentifier;
+@property (nonatomic, readonly) NSString *_rootDirectory;
+@property (setter=_setShouldIgnoreNextToneDidChangeNotification:, nonatomic) BOOL _shouldIgnoreNextToneDidChangeNotification;
+@property (setter=_setShouldUseServiceToAccessTonePreferences:, nonatomic) BOOL _shouldUseServiceToAccessTonePreferences;
+@property (nonatomic, readonly) NSString *_systemRingtoneDirectory;
+@property (setter=_setToneIdentifierAliasMap:, nonatomic, retain) NSDictionary *_toneIdentifierAliasMap;
+@property (setter=_setTransientNanoPreferencesDomainAccessor:, nonatomic, retain) NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
 
 + (struct __CFString { }*)_copySharedResourcesPreferencesDomainForDomain:(struct __CFString { }*)arg1;
 + (id)_defaultToneIdentifierForAlertType:(int)arg1 accountIdentifier:(id)arg2;
@@ -85,7 +83,7 @@
 - (int)_lockManifestAtPath:(id)arg1;
 - (id)_nameForToneIdentifier:(id)arg1 isValid:(BOOL*)arg2;
 - (id)_newServiceConnection;
-- (void)_performBlockInAccessQueue:(id)arg1;
+- (void)_performBlockInAccessQueue:(id /* block */)arg1;
 - (unsigned long)_previewBehaviorForDefaultIdentifier:(id)arg1;
 - (id)_previewBehaviorsByDefaultIdentifier;
 - (id)_previewSoundForToneIdentifier:(id)arg1;
@@ -141,7 +139,7 @@
 - (id)defaultRingtoneIdentifier;
 - (id)defaultToneIdentifierForAlertType:(int)arg1;
 - (id)filePathForToneIdentifier:(id)arg1;
-- (void)importTone:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
+- (void)importTone:(id)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1;
 - (id)nameForToneIdentifier:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface _MFRootlessMailboxUid : MFMailboxUid {
-}
+@interface _MFRootlessMailboxUid : MFMailboxUid
 
 - (id)displayName;
 - (id)fullPath;

@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SCNRenderer>, SCNNode, SCNScene;
-
 @interface SK3DNode : SKNode {
     struct SCNVector3 { 
         float x; 
@@ -23,12 +17,12 @@
     double sceneTime;
 }
 
-@property BOOL autoenablesDefaultLighting;
-@property BOOL loops;
-@property(getter=isPlaying) BOOL playing;
-@property(retain) SCNNode * pointOfView;
-@property double sceneTime;
-@property(retain) SCNScene * scnScene;
+@property (nonatomic) BOOL autoenablesDefaultLighting;
+@property (nonatomic) BOOL loops;
+@property (getter=isPlaying) BOOL playing;
+@property (nonatomic, retain) SCNNode *pointOfView;
+@property (nonatomic) double sceneTime;
+@property (nonatomic, retain) SCNScene *scnScene;
 @property struct CGSize { float x1; float x2; } viewportSize;
 
 + (id)nodeWithViewportSize:(struct CGSize { float x1; float x2; })arg1;
@@ -47,9 +41,7 @@
 - (BOOL)isPlaying;
 - (BOOL)loops;
 - (id)pointOfView;
-- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)projectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-     /* Encoded args for previous method: 24@0:48 */
-
+- (void)projectPoint;
 - (double)sceneTime;
 - (id)scnScene;
 - (void)setAutoenablesDefaultLighting:(BOOL)arg1;
@@ -59,9 +51,7 @@
 - (void)setSceneTime:(double)arg1;
 - (void)setScnScene:(id)arg1;
 - (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1;
-- (/* Warning: Unrecognized filer type: '2' using 'void*' */ void*)unprojectPoint:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-     /* Encoded args for previous method: 24@0:48 */
-
+- (void)unprojectPoint;
 - (struct CGSize { float x1; float x2; })viewportSize;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WAKResponder : NSObject {
-}
+@interface WAKResponder : NSObject
 
 - (void)_forwardEvent:(id)arg1;
 - (BOOL)acceptsFirstResponder;

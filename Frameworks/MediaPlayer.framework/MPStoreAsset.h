@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAsset;
-
 @interface MPStoreAsset : NSObject {
     AVAsset *_asset;
     unsigned int _storeAssetType;
 }
 
-@property(retain) AVAsset * asset;
-@property unsigned int storeAssetType;
+@property (nonatomic, retain) AVAsset *asset;
+@property (nonatomic) unsigned int storeAssetType;
 
 + (id)assetForContext:(id)arg1 allowCloudDialogue:(BOOL)arg2;
 + (void)setShouldAlwaysAirPlayFromCloud:(BOOL)arg1;

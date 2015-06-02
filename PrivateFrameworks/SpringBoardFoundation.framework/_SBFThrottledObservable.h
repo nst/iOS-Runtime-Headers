@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFCancelable>, <SBFObservable>, <SBFScheduler>;
-
 @interface _SBFThrottledObservable : SBFObservable {
     <SBFCancelable> *_delayToken;
     BOOL _hasResult;

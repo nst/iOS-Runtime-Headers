@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKLabelMarkerView : MKAnnotationView {
-}
+@interface MKLabelMarkerView : MKAnnotationView
 
 + (BOOL)_followsTerrain;
 

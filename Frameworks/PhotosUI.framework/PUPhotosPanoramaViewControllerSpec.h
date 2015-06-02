@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPanoramaViewControllerSpec : NSObject {
-}
+@interface PUPhotosPanoramaViewControllerSpec : NSObject
 
 - (int)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1;

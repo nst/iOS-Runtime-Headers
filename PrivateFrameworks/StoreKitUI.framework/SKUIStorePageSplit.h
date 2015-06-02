@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIStorePageSectionContext, UIColor;
-
 @interface SKUIStorePageSplit : NSObject <NSCopying> {
     UIColor *_dividerColor;
     int _numberOfPageSections;
@@ -12,11 +10,11 @@
     float _widthFraction;
 }
 
-@property(copy) UIColor * dividerColor;
-@property int numberOfPageSections;
-@property(copy) NSArray * pageComponents;
-@property(retain) SKUIStorePageSectionContext * sectionContext;
-@property float widthFraction;
+@property (nonatomic, copy) UIColor *dividerColor;
+@property (nonatomic) int numberOfPageSections;
+@property (nonatomic, copy) NSArray *pageComponents;
+@property (nonatomic, retain) SKUIStorePageSectionContext *sectionContext;
+@property (nonatomic) float widthFraction;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

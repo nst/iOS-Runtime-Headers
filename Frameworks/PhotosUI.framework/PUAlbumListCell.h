@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAlbumListCellContentView;
+@interface PUAlbumListCell : UICollectionViewCell
 
-@interface PUAlbumListCell : UICollectionViewCell {
-}
-
-@property(readonly) PUAlbumListCellContentView * albumListCellContentView;
+@property (nonatomic, readonly) PUAlbumListCellContentView *albumListCellContentView;
 
 - (id)albumListCellContentView;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;

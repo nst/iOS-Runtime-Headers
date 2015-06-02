@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData, NSObject<OS_dispatch_semaphore>;
-
 @interface _UIDecompressionInfo : NSObject {
     BOOL decompressionComplete;
     NSData *imageData;

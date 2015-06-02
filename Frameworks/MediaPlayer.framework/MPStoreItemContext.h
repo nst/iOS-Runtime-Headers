@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, NSDictionary, NSString, NSURL;
-
 @interface MPStoreItemContext : NSObject <NSCopying> {
     NSDictionary *_buyParametersDictionary;
     NSString *_buyParametersString;
@@ -13,28 +11,28 @@
     long long _storeID;
 }
 
-@property(copy,readonly) NSDictionary * ITunesStoreContentDownloadInfo;
-@property(copy,readonly) NSDictionary * ITunesStoreContentStreamingInfo;
-@property(copy,readonly) NSDictionary * buyParametersDictionary;
-@property(copy,readonly) NSString * buyParametersString;
-@property(copy,readonly) NSString * contentTitle;
-@property(copy) NSString * downloadIdentifier;
-@property(readonly) BOOL isDownloadInProgress;
-@property(readonly) BOOL isDownloadable;
-@property(readonly) BOOL isDownloadableStoreOffer;
-@property(readonly) BOOL isPurchasableStoreOffer;
-@property(readonly) BOOL localFileIsStreamingQuality;
-@property(readonly) BOOL localFileIsTemporaryCloudDownload;
-@property(readonly) BOOL localFileIsValidForPlayback;
-@property(copy,readonly) NSString * localFileName;
-@property(copy) NSString * localFilePath;
-@property(readonly) long long matchID;
-@property(readonly) unsigned int mediaType;
-@property(readonly) unsigned long long persistentStorageIdentifier;
-@property(copy,readonly) NSURL * protectedContentSupportStorageURL;
-@property(readonly) long long purchaseHistoryID;
-@property(readonly) long long storeID;
-@property(readonly) float volumeNormalization;
+@property (nonatomic, readonly, copy) NSDictionary *ITunesStoreContentDownloadInfo;
+@property (nonatomic, readonly, copy) NSDictionary *ITunesStoreContentStreamingInfo;
+@property (nonatomic, readonly, copy) NSDictionary *buyParametersDictionary;
+@property (nonatomic, readonly, copy) NSString *buyParametersString;
+@property (nonatomic, readonly, copy) NSString *contentTitle;
+@property (nonatomic, copy) NSString *downloadIdentifier;
+@property (nonatomic, readonly) BOOL isDownloadInProgress;
+@property (nonatomic, readonly) BOOL isDownloadable;
+@property (nonatomic, readonly) BOOL isDownloadableStoreOffer;
+@property (nonatomic, readonly) BOOL isPurchasableStoreOffer;
+@property (nonatomic, readonly) BOOL localFileIsStreamingQuality;
+@property (nonatomic, readonly) BOOL localFileIsTemporaryCloudDownload;
+@property (nonatomic, readonly) BOOL localFileIsValidForPlayback;
+@property (nonatomic, readonly, copy) NSString *localFileName;
+@property (nonatomic, copy) NSString *localFilePath;
+@property (nonatomic, readonly) long long matchID;
+@property (nonatomic, readonly) unsigned int mediaType;
+@property (nonatomic, readonly) unsigned long long persistentStorageIdentifier;
+@property (nonatomic, readonly, copy) NSURL *protectedContentSupportStorageURL;
+@property (nonatomic, readonly) long long purchaseHistoryID;
+@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly) float volumeNormalization;
 
 + (id)contextWithMediaItem:(id)arg1;
 + (id)contextWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3;

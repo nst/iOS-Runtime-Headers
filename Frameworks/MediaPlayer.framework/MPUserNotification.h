@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MPUserNotification : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_callbackInvocationQueue;
@@ -15,16 +9,12 @@
     BOOL _isShowing;
     struct __CFRunLoopSource { } *_runLoopSource;
     NSMutableArray *_showingCompletionHandlers;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willShowNotificationHandler;
-
+    id /* block */ _willShowNotificationHandler;
     id strongSelf;
 }
 
-@property(readonly) struct __CFUserNotification { }* cfUserNotification;
-@property(copy) id willShowNotificationHandler;
+@property (nonatomic, readonly) struct __CFUserNotification { }*cfUserNotification;
+@property (nonatomic, copy) id /* block */ willShowNotificationHandler;
 
 + (void)_setUserNotification:(id)arg1 forCFUserNotification:(struct __CFUserNotification { }*)arg2;
 + (id)_userNotificationConversionAccessQueue;
@@ -38,8 +28,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithCFUserNotification:(struct __CFUserNotification { }*)arg1;
-- (void)setWillShowNotificationHandler:(id)arg1;
-- (void)showWithCompletionHandler:(id)arg1;
-- (id)willShowNotificationHandler;
+- (void)setWillShowNotificationHandler:(id /* block */)arg1;
+- (void)showWithCompletionHandler:(id /* block */)arg1;
+- (id /* block */)willShowNotificationHandler;
 
 @end

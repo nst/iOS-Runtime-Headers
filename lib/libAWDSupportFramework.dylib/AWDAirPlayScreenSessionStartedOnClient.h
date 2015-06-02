@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayScreenSessionStartedOnClient : PBCodable <NSCopying> {
     unsigned int _audioCompressionType;
     unsigned int _bonjourMs;
@@ -26,24 +24,24 @@
     unsigned int _transportType;
 }
 
-@property unsigned int audioCompressionType;
-@property unsigned int bonjourMs;
-@property unsigned int configMs;
-@property unsigned int connectMs;
-@property BOOL hasAudioCompressionType;
-@property BOOL hasBonjourMs;
-@property BOOL hasConfigMs;
-@property BOOL hasConnectMs;
-@property BOOL hasPrepareMs;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property unsigned int prepareMs;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic) unsigned int audioCompressionType;
+@property (nonatomic) unsigned int bonjourMs;
+@property (nonatomic) unsigned int configMs;
+@property (nonatomic) unsigned int connectMs;
+@property (nonatomic) BOOL hasAudioCompressionType;
+@property (nonatomic) BOOL hasBonjourMs;
+@property (nonatomic) BOOL hasConfigMs;
+@property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasPrepareMs;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) unsigned int prepareMs;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (unsigned int)audioCompressionType;
 - (unsigned int)bonjourMs;

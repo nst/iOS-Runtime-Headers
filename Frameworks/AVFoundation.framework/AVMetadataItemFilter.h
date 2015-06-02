@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataItemFilterInternal, NSDictionary;
-
 @interface AVMetadataItemFilter : NSObject {
     AVMetadataItemFilterInternal *_itemFilterInternal;
 }
 
-@property(readonly) NSDictionary * whitelist;
+@property (readonly) NSDictionary *whitelist;
 
 + (id)metadataItemFilterForSharing;
 

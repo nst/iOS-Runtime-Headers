@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SUScriptCanvasFunction, SUScriptFunction, SUScriptViewController, SUScriptWindowContext, WebScriptObject;
-
 @interface SUScriptWindow : SUScriptObject {
     SUScriptViewController *_backViewController;
     BOOL _canSwipeToDismiss;
@@ -17,18 +15,18 @@
     id _width;
 }
 
-@property(retain) SUScriptViewController * backViewController;
-@property(copy) id canSwipeToDismiss;
-@property(readonly) SUScriptWindowContext * context;
-@property(retain) SUScriptViewController * frontViewController;
-@property(retain) NSNumber * height;
-@property(retain) WebScriptObject * maskFunction;
-@property(retain) NSNumber * shadowOpacity;
-@property(retain) NSNumber * shadowRadius;
-@property(retain) WebScriptObject * shouldDismissFunction;
-@property(readonly) NSString * style;
-@property(retain) NSNumber * width;
-@property(readonly) SUScriptViewController * windowParentViewController;
+@property (retain) SUScriptViewController *backViewController;
+@property (copy) id canSwipeToDismiss;
+@property (readonly) SUScriptWindowContext *context;
+@property (retain) SUScriptViewController *frontViewController;
+@property (retain) NSNumber *height;
+@property (retain) WebScriptObject *maskFunction;
+@property (retain) NSNumber *shadowOpacity;
+@property (retain) NSNumber *shadowRadius;
+@property (retain) WebScriptObject *shouldDismissFunction;
+@property (readonly) NSString *style;
+@property (retain) NSNumber *width;
+@property (readonly) SUScriptViewController *windowParentViewController;
 
 + (void)dismissWindowsWithOptions:(id)arg1;
 + (void)initialize;

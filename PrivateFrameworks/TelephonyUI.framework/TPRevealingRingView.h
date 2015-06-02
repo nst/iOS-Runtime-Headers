@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPBackgroundRoundedRectView, TPPathView, UIColor;
-
 @interface TPRevealingRingView : UIView {
     float _alphaInsideRing;
     float _alphaOutsideRing;
@@ -33,21 +31,21 @@
     float _unrevealAnimationDuration;
 }
 
-@property float alphaInsideRing;
-@property float alphaOutsideRing;
-@property int animationStyle;
-@property(retain) UIColor * colorInsideRing;
-@property(retain) UIColor * colorOutsideRing;
-@property float cornerRadius;
-@property float defaultRingStrokeWidth;
-@property float gammaBoost;
-@property BOOL gammaBoostInside;
-@property BOOL gammaBoostOuterRing;
-@property float minimumRevealingScale;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingOutsideRing;
-@property float revealAnimationDuration;
-@property(readonly) struct CGSize { float x1; float x2; } ringSize;
-@property float unrevealAnimationDuration;
+@property (nonatomic) float alphaInsideRing;
+@property (nonatomic) float alphaOutsideRing;
+@property (nonatomic) int animationStyle;
+@property (nonatomic, retain) UIColor *colorInsideRing;
+@property (nonatomic, retain) UIColor *colorOutsideRing;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic) float defaultRingStrokeWidth;
+@property (nonatomic) float gammaBoost;
+@property (nonatomic) BOOL gammaBoostInside;
+@property (nonatomic) BOOL gammaBoostOuterRing;
+@property (nonatomic) float minimumRevealingScale;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingOutsideRing;
+@property (nonatomic) float revealAnimationDuration;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } ringSize;
+@property (nonatomic) float unrevealAnimationDuration;
 
 - (void)_adjustGammaBoostIfNecessary;
 - (void)_animateForReveal:(BOOL)arg1 withDuration:(float)arg2 delay:(double)arg3;

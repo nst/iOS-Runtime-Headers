@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSArray, NSMutableArray, NSProtocolChecker;
-
 @interface IMAVDaemonListener : NSObject {
     NSMutableArray *_handlers;
     BOOL _postedSetupComplete;
@@ -11,8 +9,8 @@
     BOOL _setupComplete;
 }
 
-@property(readonly) NSArray * handlers;
-@property(readonly) BOOL isSetupComplete;
+@property (nonatomic, readonly) NSArray *handlers;
+@property (nonatomic, readonly) BOOL isSetupComplete;
 
 - (void)_noteDisconnected;
 - (void)addHandler:(id)arg1;

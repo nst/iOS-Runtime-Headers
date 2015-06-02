@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalTimeIntervalLocalization : NSObject {
-}
+@interface CalTimeIntervalLocalization : NSObject
 
 + (void)_calculateDurations:(id)arg1 timeUnits:(id)arg2 forDuration:(double)arg3 allDay:(BOOL)arg4 abbreviate:(BOOL)arg5;
 + (void)_calculateDurations:(id)arg1 timeUnits:(id)arg2 forDuration:(double)arg3 allDay:(BOOL)arg4 dayDuration:(id*)arg5 hourDuration:(id*)arg6 minuteDuration:(id*)arg7 secondDuration:(id*)arg8 abbreviate:(BOOL)arg9;

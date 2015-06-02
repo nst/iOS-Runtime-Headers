@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDSiriSessionLoadTimeout : PBCodable <NSCopying> {
     unsigned long long _connectionTechnology;
     NSString *_connectionURL;
@@ -20,18 +18,18 @@
     BOOL _wwanPreferred;
 }
 
-@property unsigned long long connectionTechnology;
-@property(retain) NSString * connectionURL;
-@property BOOL hasConnectionTechnology;
-@property(readonly) BOOL hasConnectionURL;
-@property BOOL hasInterfaceIndex;
-@property BOOL hasSendBufferSize;
-@property BOOL hasTimestamp;
-@property BOOL hasWwanPreferred;
-@property unsigned long long interfaceIndex;
-@property unsigned long long sendBufferSize;
-@property unsigned long long timestamp;
-@property BOOL wwanPreferred;
+@property (nonatomic) unsigned long long connectionTechnology;
+@property (nonatomic, retain) NSString *connectionURL;
+@property (nonatomic) BOOL hasConnectionTechnology;
+@property (nonatomic, readonly) BOOL hasConnectionURL;
+@property (nonatomic) BOOL hasInterfaceIndex;
+@property (nonatomic) BOOL hasSendBufferSize;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasWwanPreferred;
+@property (nonatomic) unsigned long long interfaceIndex;
+@property (nonatomic) unsigned long long sendBufferSize;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) BOOL wwanPreferred;
 
 - (unsigned long long)connectionTechnology;
 - (id)connectionURL;

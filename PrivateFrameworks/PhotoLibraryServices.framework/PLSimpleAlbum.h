@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSDate, NSOrderedSet, NSString, PLManagedAsset;
-
 @interface PLSimpleAlbum : NSObject <PLAssetContainer> {
     NSOrderedSet *_assets;
     PLManagedAsset *_keyAsset;
@@ -12,27 +10,27 @@
     NSString *_title;
 }
 
-@property(readonly) unsigned int approximateCount;
-@property(retain,readonly) NSOrderedSet * assets;
-@property(readonly) unsigned int assetsCount;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSDate * endDate;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property(retain) PLManagedAsset * keyAsset;
-@property(copy,readonly) NSArray * localizedLocationNames;
-@property(copy,readonly) NSString * localizedTitle;
-@property(readonly) unsigned int photosCount;
-@property(retain) PLManagedAsset * secondaryKeyAsset;
-@property(retain,readonly) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) PLManagedAsset * tertiaryKeyAsset;
-@property(retain,readonly) NSString * title;
-@property(retain,readonly) NSString * uuid;
-@property(readonly) unsigned int videosCount;
+@property (nonatomic, readonly) unsigned int approximateCount;
+@property (nonatomic, readonly, retain) NSOrderedSet *assets;
+@property (nonatomic, readonly) unsigned int assetsCount;
+@property (nonatomic, readonly) BOOL canShowAvalancheStacks;
+@property (nonatomic, readonly) BOOL canShowComments;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSDate *endDate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
+@property (nonatomic, readonly, copy) NSString *localizedTitle;
+@property (nonatomic, readonly) unsigned int photosCount;
+@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
+@property (nonatomic, readonly, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, readonly, retain) NSString *title;
+@property (nonatomic, readonly, retain) NSString *uuid;
+@property (nonatomic, readonly) unsigned int videosCount;
 
 - (int)_countOfAssetType:(short)arg1;
 - (unsigned int)approximateCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSArray, NSData, NSMutableDictionary, NSString;
-
 @interface NSHTTPURLRequestParameters : NSObject {
     BOOL _pad1;
     BOOL _pad2;

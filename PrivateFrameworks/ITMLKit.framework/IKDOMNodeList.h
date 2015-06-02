@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class IKDOMNode, NSArray, NSString;
-
 @interface IKDOMNodeList : IKJSObject <IKDOMObserver, IKJSDOMNodeList> {
     IKDOMNode *_contextNode;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _evaluationBlock;
-
+    id /* block */ _evaluationBlock;
     NSArray *_nodes;
 }
 
-@property(retain) IKDOMNode * contextNode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy,readonly) id evaluationBlock;
-@property(readonly) unsigned int hash;
-@property(readonly) int length;
-@property(copy) NSArray * nodes;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) IKDOMNode *contextNode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) id /* block */ evaluationBlock;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int length;
+@property (nonatomic, copy) NSArray *nodes;
+@property (readonly) Class superclass;
 
 + (id)nodeListWithAppContext:(id)arg1 contextNode:(id)arg2 xpath:(id)arg3;
 
@@ -33,8 +23,8 @@
 - (void)_updateNodes;
 - (id)contextNode;
 - (void)domDidUpdateForContextNode:(id)arg1;
-- (id)evaluationBlock;
-- (id)initWithAppContext:(id)arg1 contextNode:(id)arg2 evaluationBlock:(id)arg3;
+- (id /* block */)evaluationBlock;
+- (id)initWithAppContext:(id)arg1 contextNode:(id)arg2 evaluationBlock:(id /* block */)arg3;
 - (id)item:(int)arg1;
 - (int)length;
 - (id)nodes;

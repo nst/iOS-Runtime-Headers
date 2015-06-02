@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDAnalyticMetadata : PBCodable <NSCopying> {
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
@@ -30,29 +28,29 @@
     } _sessionId;
 }
 
-@property(retain) NSString * appIdentifier;
-@property(retain) NSString * appMajorVersion;
-@property(retain) NSString * appMinorVersion;
-@property(retain) NSString * hardwareModel;
-@property(readonly) BOOL hasAppIdentifier;
-@property(readonly) BOOL hasAppMajorVersion;
-@property(readonly) BOOL hasAppMinorVersion;
-@property(readonly) BOOL hasHardwareModel;
-@property BOOL hasIsFromApi;
-@property BOOL hasIsInternalInstall;
-@property BOOL hasIsInternalTool;
-@property(readonly) BOOL hasOsVersion;
-@property BOOL hasRequestSource;
-@property BOOL hasSequenceNumber;
-@property BOOL hasSessionId;
-@property BOOL isFromApi;
-@property BOOL isInternalInstall;
-@property BOOL isInternalTool;
-@property(retain) NSString * osVersion;
-@property int requestSource;
-@property unsigned int sequenceNumber;
-@property(retain) NSMutableArray * serviceTags;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic, retain) NSString *appIdentifier;
+@property (nonatomic, retain) NSString *appMajorVersion;
+@property (nonatomic, retain) NSString *appMinorVersion;
+@property (nonatomic, retain) NSString *hardwareModel;
+@property (nonatomic, readonly) BOOL hasAppIdentifier;
+@property (nonatomic, readonly) BOOL hasAppMajorVersion;
+@property (nonatomic, readonly) BOOL hasAppMinorVersion;
+@property (nonatomic, readonly) BOOL hasHardwareModel;
+@property (nonatomic) BOOL hasIsFromApi;
+@property (nonatomic) BOOL hasIsInternalInstall;
+@property (nonatomic) BOOL hasIsInternalTool;
+@property (nonatomic, readonly) BOOL hasOsVersion;
+@property (nonatomic) BOOL hasRequestSource;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL hasSessionId;
+@property (nonatomic) BOOL isFromApi;
+@property (nonatomic) BOOL isInternalInstall;
+@property (nonatomic) BOOL isInternalTool;
+@property (nonatomic, retain) NSString *osVersion;
+@property (nonatomic) int requestSource;
+@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic, retain) NSMutableArray *serviceTags;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
 
 - (void)addServiceTag:(id)arg1;
 - (id)appIdentifier;

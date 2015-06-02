@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSArray, NSError, NSMutableArray, NSOperation, NSOperationQueue, NSString, NSURL, QLPreviewThumbnailGenerator, UIDocumentInteractionController, UIImage;
-
 @interface QLPreviewArchiveItem : NSObject <QLPreviewUIItem> {
     int _UIItemIndex;
     UIDocumentInteractionController *_archiveController;
@@ -21,20 +19,20 @@
 }
 
 @property int UIItemIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIImage * icon;
-@property(readonly) BOOL isFolder;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) UIImage *icon;
+@property (readonly) BOOL isFolder;
 @property int level;
-@property(readonly) NSString * path;
+@property (readonly) NSString *path;
 @property int previewItemIndex;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property(retain) NSURL * rootUnzippingURL;
-@property(copy) NSArray * subItems;
-@property(readonly) Class superclass;
-@property(readonly) BOOL unarchived;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (retain) NSURL *rootUnzippingURL;
+@property (copy) NSArray *subItems;
+@property (readonly) Class superclass;
+@property (readonly) BOOL unarchived;
 
 - (int)UIItemIndex;
 - (void)cancelIconUpdate;
@@ -57,9 +55,9 @@
 - (void)setSubItems:(id)arg1;
 - (void)setUIItemIndex:(int)arg1;
 - (id)subItems;
-- (void)unarchiveWithCompletionBlock:(id)arg1;
+- (void)unarchiveWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)unarchived;
 - (id)unarchivingError;
-- (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id)arg2;
+- (void)updateIconWithSize:(struct CGSize { float x1; float x2; })arg1 completionBlock:(id /* block */)arg2;
 
 @end

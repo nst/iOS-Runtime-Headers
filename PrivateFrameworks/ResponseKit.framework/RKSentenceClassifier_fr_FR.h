@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKSentenceClassifier_fr_FR : RKSentenceClassifier {
-}
+@interface RKSentenceClassifier_fr_FR : RKSentenceClassifier
 
 - (id)alternativeConjunction;
 - (void)analyzeSentence;

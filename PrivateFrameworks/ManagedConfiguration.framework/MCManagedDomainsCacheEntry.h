@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber, NSString;
-
 @interface MCManagedDomainsCacheEntry : NSObject {
     NSString *_domain;
     NSString *_path;
@@ -11,10 +9,10 @@
     BOOL _subdomainsMatch;
 }
 
-@property(retain) NSString * domain;
-@property(retain) NSString * path;
-@property(retain) NSNumber * port;
-@property BOOL subdomainsMatch;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSNumber *port;
+@property (nonatomic) BOOL subdomainsMatch;
 
 + (id)normalizedPatternString:(id)arg1;
 

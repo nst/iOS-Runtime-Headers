@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSArray, NSDictionary, NSString, NSURLRequest;
-
 @interface PRSSearchFeedback : PRSFeedback {
     BOOL _cached;
     NSDictionary *_client_error;
@@ -20,18 +18,18 @@
     NSURLRequest *_urlRequest;
 }
 
-@property BOOL cached;
-@property(retain) NSDictionary * client_error;
-@property(readonly) NSString * connectionType;
-@property int delta;
-@property int delta_ref;
-@property BOOL error;
-@property(retain) NSString * error_code;
-@property int latency;
-@property long long responseSize;
-@property(retain) NSArray * serverStatus;
-@property int ttfb;
-@property(retain) NSURLRequest * urlRequest;
+@property (nonatomic) BOOL cached;
+@property (nonatomic, retain) NSDictionary *client_error;
+@property (readonly) NSString *connectionType;
+@property (nonatomic) int delta;
+@property (nonatomic) int delta_ref;
+@property (nonatomic) BOOL error;
+@property (nonatomic, retain) NSString *error_code;
+@property (nonatomic) int latency;
+@property (nonatomic) long long responseSize;
+@property (nonatomic, retain) NSArray *serverStatus;
+@property (nonatomic) int ttfb;
+@property (nonatomic, retain) NSURLRequest *urlRequest;
 
 + (BOOL)supportsSecureCoding;
 

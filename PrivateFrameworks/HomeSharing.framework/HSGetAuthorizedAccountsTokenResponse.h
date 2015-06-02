@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSData;
-
 @interface HSGetAuthorizedAccountsTokenResponse : HSResponse {
     NSData *tokenData;
 }
 
-@property(copy) NSData * tokenData;
+@property (nonatomic, copy) NSData *tokenData;
 
 - (void).cxx_destruct;
 - (void)setTokenData:(id)arg1;

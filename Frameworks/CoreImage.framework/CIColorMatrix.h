@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CIColorMatrix : CIFilter {
     CIVector *inputAVector;
     CIVector *inputBVector;
@@ -13,12 +11,12 @@
     CIVector *inputRVector;
 }
 
-@property(retain) CIVector * inputAVector;
-@property(retain) CIVector * inputBVector;
-@property(retain) CIVector * inputBiasVector;
-@property(retain) CIVector * inputGVector;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputRVector;
+@property (nonatomic, retain) CIVector *inputAVector;
+@property (nonatomic, retain) CIVector *inputBVector;
+@property (nonatomic, retain) CIVector *inputBiasVector;
+@property (nonatomic, retain) CIVector *inputGVector;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputRVector;
 
 + (id)customAttributes;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CoreThemeDocument;
-
 @interface TDThemeSchema : NSObject {
     CoreThemeDocument *_doc;
 }

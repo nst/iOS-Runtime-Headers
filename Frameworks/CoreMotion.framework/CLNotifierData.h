@@ -2,28 +2,20 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CLNotifierData : NSObject {
     void *_data;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _destructor;
-
+    id /* block */ _destructor;
 }
 
-@property void* data;
-@property(copy) id destructor;
+@property (nonatomic) void*data;
+@property (nonatomic, copy) id /* block */ destructor;
 
 - (void).cxx_destruct;
 - (void*)data;
 - (void)dealloc;
-- (id)destructor;
-- (id)initWithData:(void*)arg1 destructor:(id)arg2;
+- (id /* block */)destructor;
+- (id)initWithData:(void*)arg1 destructor:(id /* block */)arg2;
 - (void)setData:(void*)arg1;
-- (void)setDestructor:(id)arg1;
+- (void)setDestructor:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UICollectionViewUpdateItem;
-
 @interface UICollectionViewUpdateGap : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -31,16 +29,16 @@
     UICollectionViewUpdateItem *_lastUpdateItem;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginningRect;
-@property(readonly) NSArray * deleteItems;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endingRect;
-@property(retain) UICollectionViewUpdateItem * firstUpdateItem;
-@property(readonly) BOOL hasInserts;
-@property(readonly) NSArray * insertItems;
-@property(readonly) BOOL isDeleteBasedGap;
-@property(readonly) BOOL isSectionBasedGap;
-@property(retain) UICollectionViewUpdateItem * lastUpdateItem;
-@property(readonly) NSArray * updateItems;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginningRect;
+@property (nonatomic, readonly) NSArray *deleteItems;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endingRect;
+@property (nonatomic, retain) UICollectionViewUpdateItem *firstUpdateItem;
+@property (nonatomic, readonly) BOOL hasInserts;
+@property (nonatomic, readonly) NSArray *insertItems;
+@property (nonatomic, readonly) BOOL isDeleteBasedGap;
+@property (nonatomic, readonly) BOOL isSectionBasedGap;
+@property (nonatomic, retain) UICollectionViewUpdateItem *lastUpdateItem;
+@property (nonatomic, readonly) NSArray *updateItems;
 
 + (id)gapWithUpdateItem:(id)arg1;
 

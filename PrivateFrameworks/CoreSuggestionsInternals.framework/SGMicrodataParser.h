@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class SGMicrodataParserStackItem;
-
 @interface SGMicrodataParser : NSObject {
     SGMicrodataParserStackItem *_stackItem;
 }
 
-@property(readonly) SGMicrodataParserStackItem * stackItem;
+@property (nonatomic, readonly) SGMicrodataParserStackItem *stackItem;
 
 + (id)parse:(id)arg1;
 + (id)whitespaceSplit:(id)arg1;

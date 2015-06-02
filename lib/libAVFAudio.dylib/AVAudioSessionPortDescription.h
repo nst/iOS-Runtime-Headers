@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioSessionDataSourceDescription, NSArray, NSString;
-
 @interface AVAudioSessionPortDescription : NSObject {
     void *_impl;
 }
 
-@property(readonly) NSString * UID;
-@property(readonly) NSArray * channels;
-@property(readonly) NSArray * dataSources;
-@property(readonly) NSString * portName;
-@property(readonly) NSString * portType;
-@property(readonly) AVAudioSessionDataSourceDescription * preferredDataSource;
-@property(readonly) AVAudioSessionDataSourceDescription * selectedDataSource;
+@property (readonly) NSString *UID;
+@property (readonly) NSArray *channels;
+@property (readonly) NSArray *dataSources;
+@property (readonly) NSString *portName;
+@property (readonly) NSString *portType;
+@property (readonly) AVAudioSessionDataSourceDescription *preferredDataSource;
+@property (readonly) AVAudioSessionDataSourceDescription *selectedDataSource;
 
 + (id)privateCreateOrConfigureArray:(id)arg1 withRawPortArray:(id)arg2;
 + (BOOL)privateMatchesInputs:(id)arg1 toRawInputs:(id)arg2;
@@ -35,7 +33,7 @@
 - (id)portType;
 - (id)preferredDataSource;
 - (id)privateGetID;
-- (struct PortDescriptionImpl { id x1; id x2; id x3; id x4; bool x5; id x6; id x7; id x8; id x9; }*)privateGetImplementation;
+- (struct PortDescriptionImpl { id x1; id x2; bool x3; id x4; id x5; }*)privateGetImplementation;
 - (BOOL)privateMatchesRawDescription:(id)arg1;
 - (id)selectedDataSource;
 - (BOOL)setPreferredDataSource:(id)arg1 error:(id*)arg2;

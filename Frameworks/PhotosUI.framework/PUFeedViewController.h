@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLDateRangeFormatter, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedSectionInfosManager, PUFeedViewController, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, UIBarButtonItem, UICollectionView, UITapGestureRecognizer, UIViewController, _UIContentUnavailableView;
-
 @interface PUFeedViewController : UIViewController <PLCloudFeedNavigating, PLNavigableCloudFeedViewController, PUAlbumStreamActivityDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedSectionInfosManagerDelegate, PUFeedTextCellDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _UISettingsKeyObserver> {
     PUAlbumStreamActivity *__albumStreamActivity;
     BOOL __appJustEnteredForeground;
@@ -60,57 +58,57 @@
     PUFeedViewControllerSpec *_spec;
 }
 
-@property(setter=_setAlbumStreamActivity:,retain) PUAlbumStreamActivity * _albumStreamActivity;
-@property(setter=_setAppJustEnteredForeground:) BOOL _appJustEnteredForeground;
-@property(setter=_setBarsState:) int _barsState;
-@property(setter=_setBrowsingAssetContainerList:,retain) PUFeedAssetContainerList * _browsingAssetContainerList;
-@property(setter=_setBrowsingSelectedAsset:,retain) PLManagedAsset * _browsingSelectedAsset;
-@property(setter=_setBrowsingSelectedComment:,retain) PLCloudSharedComment * _browsingSelectedComment;
-@property(readonly) PHCachingImageManager * _cachingImageManager;
-@property(getter=_isCollectionViewScrolledToNewest,setter=_setCollectionViewScrolledToNewest:) BOOL _collectionViewScrolledToNewest;
-@property(setter=_setCollectionViewSpeedometer:,retain) PUScrollViewSpeedometer * _collectionViewSpeedometer;
-@property(setter=_setCurrentCollectionView:,retain) UICollectionView * _currentCollectionView;
-@property(setter=_setCurrentCollectionViewType:) int _currentCollectionViewType;
-@property(readonly) PLDateRangeFormatter * _dateRangeFormatter;
-@property(setter=_setEmptyPlaceholderView:,retain) _UIContentUnavailableView * _emptyPlaceholderView;
-@property(readonly) PUFeedSectionInfosManager * _feedSectionInfosManager;
-@property(getter=_isFlowDirectionReversed,setter=_setFlowDirectionReversed:) BOOL _flowDirectionReversed;
-@property(setter=_setIndexPathForImageHiddenDuringZoomTransition:,copy) NSIndexPath * _indexPathForImageHiddenDuringZoomTransition;
-@property(getter=_isInterfaceBatchUpdateScheduled,setter=_setInterfaceBatchUpdateScheduled:) BOOL _interfaceBatchUpdateScheduled;
-@property(setter=_setInvitationsBarButtonItem:,retain) UIBarButtonItem * _invitationsBarButtonItem;
-@property(setter=_setInvitationsPopoverRootController:,retain) PUFeedViewController * _invitationsPopoverRootController;
-@property(getter=_isInvitationsPopoverShowPending,setter=_setInvitationsPopoverShowPending:) BOOL _invitationsPopoverShowPending;
-@property(setter=_setJustLikedSections:,retain) NSDictionary * _justLikedSections;
-@property(retain) NSMutableArray * _lastPreheatIndexPathInfoList;
-@property(retain) NSMutableArray * _lastPreheatIndexPathList;
-@property(setter=_setLastPreheatedContentOffset:) struct CGPoint { float x1; float x2; } _lastPreheatedContentOffset;
-@property(getter=_isLibraryUpdatingPreviouslyExpired,setter=_setLibraryUpdatingPreviouslyExpired:) BOOL _libraryUpdatingPreviouslyExpired;
-@property(setter=_setLoadedSectionInfosWindowSize:) int _loadedSectionInfosWindowSize;
-@property(setter=_setPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _pinchGestureRecognizer;
-@property(setter=_setPinchedCollectionView:,retain) UICollectionView * _pinchedCollectionView;
-@property(setter=_setPreheatingWindowSize:) float _preheatingWindowSize;
-@property(setter=_setPresentedPhotosPickerViewController:,retain) PUPhotosPickerViewController * _presentedPhotosPickerViewController;
-@property(setter=_setPushedAlbum:,retain) PLCloudSharedAlbum * _pushedAlbum;
-@property(setter=_setPushedViewController:,retain) UIViewController * _pushedViewController;
-@property(setter=_setRotationLastRestorableState:,retain) PUFeedViewControllerRestorableState * _rotationLastRestorableState;
-@property(setter=_setSectionInfosWithCommentChanges:,retain) NSMutableSet * _sectionInfosWithCommentChanges;
-@property(readonly) PLManagedAlbumList * _sharedAlbumList;
-@property(setter=_setShouldSuspendQualityImageFormats:) BOOL _shouldSuspendQualityImageFormats;
-@property(setter=_setSizeTransitionState:) int _sizeTransitionState;
-@property(setter=_setTapGestureRecognizer:,retain) UITapGestureRecognizer * _tapGestureRecognizer;
-@property(setter=_setTargetCollectionView:,retain) UICollectionView * _targetCollectionView;
-@property(setter=_setTargetCollectionViewType:) int _targetCollectionViewType;
-@property(setter=_setTargetSize:) struct CGSize { float x1; float x2; } _targetSize;
-@property(setter=_setUpdatedAssets:,retain) NSMutableSet * _updatedAssets;
-@property(setter=_setUserDidDismissPlaceholder:) BOOL _userDidDismissPlaceholder;
-@property(setter=_setViewDidAppear:) BOOL _viewDidAppear;
-@property(getter=_areViewsInSyncWithModel,setter=_setViewsInSyncWithModel:) BOOL _viewsInSyncWithModel;
-@property(readonly) int contentType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PUFeedViewControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (setter=_setAlbumStreamActivity:, nonatomic, retain) PUAlbumStreamActivity *_albumStreamActivity;
+@property (setter=_setAppJustEnteredForeground:, nonatomic) BOOL _appJustEnteredForeground;
+@property (setter=_setBarsState:, nonatomic) int _barsState;
+@property (setter=_setBrowsingAssetContainerList:, nonatomic, retain) PUFeedAssetContainerList *_browsingAssetContainerList;
+@property (setter=_setBrowsingSelectedAsset:, nonatomic, retain) PLManagedAsset *_browsingSelectedAsset;
+@property (setter=_setBrowsingSelectedComment:, nonatomic, retain) PLCloudSharedComment *_browsingSelectedComment;
+@property (nonatomic, readonly) PHCachingImageManager *_cachingImageManager;
+@property (getter=_isCollectionViewScrolledToNewest, setter=_setCollectionViewScrolledToNewest:, nonatomic) BOOL _collectionViewScrolledToNewest;
+@property (setter=_setCollectionViewSpeedometer:, nonatomic, retain) PUScrollViewSpeedometer *_collectionViewSpeedometer;
+@property (setter=_setCurrentCollectionView:, nonatomic, retain) UICollectionView *_currentCollectionView;
+@property (setter=_setCurrentCollectionViewType:, nonatomic) int _currentCollectionViewType;
+@property (nonatomic, readonly) PLDateRangeFormatter *_dateRangeFormatter;
+@property (setter=_setEmptyPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_emptyPlaceholderView;
+@property (nonatomic, readonly) PUFeedSectionInfosManager *_feedSectionInfosManager;
+@property (getter=_isFlowDirectionReversed, setter=_setFlowDirectionReversed:, nonatomic) BOOL _flowDirectionReversed;
+@property (setter=_setIndexPathForImageHiddenDuringZoomTransition:, nonatomic, copy) NSIndexPath *_indexPathForImageHiddenDuringZoomTransition;
+@property (getter=_isInterfaceBatchUpdateScheduled, setter=_setInterfaceBatchUpdateScheduled:, nonatomic) BOOL _interfaceBatchUpdateScheduled;
+@property (setter=_setInvitationsBarButtonItem:, nonatomic, retain) UIBarButtonItem *_invitationsBarButtonItem;
+@property (setter=_setInvitationsPopoverRootController:, nonatomic, retain) PUFeedViewController *_invitationsPopoverRootController;
+@property (getter=_isInvitationsPopoverShowPending, setter=_setInvitationsPopoverShowPending:, nonatomic) BOOL _invitationsPopoverShowPending;
+@property (setter=_setJustLikedSections:, nonatomic, retain) NSDictionary *_justLikedSections;
+@property (nonatomic, retain) NSMutableArray *_lastPreheatIndexPathInfoList;
+@property (nonatomic, retain) NSMutableArray *_lastPreheatIndexPathList;
+@property (setter=_setLastPreheatedContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _lastPreheatedContentOffset;
+@property (getter=_isLibraryUpdatingPreviouslyExpired, setter=_setLibraryUpdatingPreviouslyExpired:, nonatomic) BOOL _libraryUpdatingPreviouslyExpired;
+@property (setter=_setLoadedSectionInfosWindowSize:, nonatomic) int _loadedSectionInfosWindowSize;
+@property (setter=_setPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_pinchGestureRecognizer;
+@property (setter=_setPinchedCollectionView:, nonatomic, retain) UICollectionView *_pinchedCollectionView;
+@property (setter=_setPreheatingWindowSize:, nonatomic) float _preheatingWindowSize;
+@property (setter=_setPresentedPhotosPickerViewController:, nonatomic, retain) PUPhotosPickerViewController *_presentedPhotosPickerViewController;
+@property (setter=_setPushedAlbum:, nonatomic, retain) PLCloudSharedAlbum *_pushedAlbum;
+@property (setter=_setPushedViewController:, nonatomic, retain) UIViewController *_pushedViewController;
+@property (setter=_setRotationLastRestorableState:, nonatomic, retain) PUFeedViewControllerRestorableState *_rotationLastRestorableState;
+@property (setter=_setSectionInfosWithCommentChanges:, nonatomic, retain) NSMutableSet *_sectionInfosWithCommentChanges;
+@property (nonatomic, readonly) PLManagedAlbumList *_sharedAlbumList;
+@property (setter=_setShouldSuspendQualityImageFormats:, nonatomic) BOOL _shouldSuspendQualityImageFormats;
+@property (setter=_setSizeTransitionState:, nonatomic) int _sizeTransitionState;
+@property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
+@property (setter=_setTargetCollectionView:, nonatomic, retain) UICollectionView *_targetCollectionView;
+@property (setter=_setTargetCollectionViewType:, nonatomic) int _targetCollectionViewType;
+@property (setter=_setTargetSize:, nonatomic) struct CGSize { float x1; float x2; } _targetSize;
+@property (setter=_setUpdatedAssets:, nonatomic, retain) NSMutableSet *_updatedAssets;
+@property (setter=_setUserDidDismissPlaceholder:, nonatomic) BOOL _userDidDismissPlaceholder;
+@property (setter=_setViewDidAppear:, nonatomic) BOOL _viewDidAppear;
+@property (getter=_areViewsInSyncWithModel, setter=_setViewsInSyncWithModel:, nonatomic) BOOL _viewsInSyncWithModel;
+@property (nonatomic, readonly) int contentType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PUFeedViewControllerSpec *spec;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 
@@ -165,7 +163,7 @@
 - (void)_dismissInvitationsPopoverIfNeeded;
 - (id)_emptyPlaceholderView;
 - (void)_ensureWindowOfLoadedSectionInfosIncludesSection:(int)arg1;
-- (void)_enumerateCenterAssetsInRestorableState:(id)arg1 inCollectionView:(id)arg2 usingBlock:(id)arg3;
+- (void)_enumerateCenterAssetsInRestorableState:(id)arg1 inCollectionView:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)_expandWindowOfLoadedSectionInfos;
 - (id)_feedSectionInfosManager;
 - (void)_getDescriptionPhrase:(out id*)arg1 streamAffordanceLabel:(out id*)arg2 actionText:(out id*)arg3 buttonType:(int*)arg4 forSections:(id)arg5 inCollectionView:(id)arg6;
@@ -196,10 +194,10 @@
 - (void)_libraryUpdatingDidExpire:(id)arg1;
 - (id)_loadedSectionInfoForCloudFeedEntry:(id)arg1;
 - (int)_loadedSectionInfosWindowSize;
-- (void)_navigateToRevealAsset:(id)arg1 completion:(id)arg2;
-- (BOOL)_navigateToRevealComment:(id)arg1 completion:(id)arg2;
+- (void)_navigateToRevealAsset:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)_navigateToRevealComment:(id)arg1 completion:(id /* block */)arg2;
 - (void)_navigateToRevealPhoto:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
-- (void)_navigateToSectionInfo:(id)arg1 atItemIndex:(int)arg2 completion:(id)arg3;
+- (void)_navigateToSectionInfo:(id)arg1 atItemIndex:(int)arg2 completion:(id /* block */)arg3;
 - (int)_numberOfSectionInfosForCollectionView:(id)arg1;
 - (void)_openiCloudSettings;
 - (void)_performInterfaceBatchUpdateNow;
@@ -270,7 +268,7 @@
 - (BOOL)_shouldShowTransitionUI;
 - (BOOL)_shouldSuspendQualityImageFormats;
 - (void)_showInvitationsPopoverAnimated:(BOOL)arg1;
-- (void)_showOutOfNetworkInvitationMessageForSharedAlbum:(id)arg1 completionHandler:(id)arg2;
+- (void)_showOutOfNetworkInvitationMessageForSharedAlbum:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)_sizeTransitionState;
 - (id)_suppressionContexts;
 - (id)_tapGestureRecognizer;
@@ -340,12 +338,12 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithSpec:(id)arg1 contentType:(int)arg2;
-- (void)navigateToCloudFeedAsset:(id)arg1 completion:(id)arg2;
-- (void)navigateToCloudFeedComment:(id)arg1 completion:(id)arg2;
+- (void)navigateToCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToNewestContentAnimated:(BOOL)arg1;
-- (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id)arg2;
-- (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id)arg2;
-- (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id)arg2;
+- (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
+- (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)ppt_currentCollectionView;
@@ -381,7 +379,7 @@
 - (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 forPhotoToken:(id)arg4 operation:(int)arg5;
 - (id)zoomTransition:(id)arg1 photoTokenForPhoto:(id)arg2 inCollection:(id)arg3;
 - (void)zoomTransition:(id)arg1 setVisibility:(BOOL)arg2 forPhotoToken:(id)arg3;
-- (BOOL)zoomTransition:(id)arg1 transitionImageForPhotoToken:(id)arg2 callback:(id)arg3;
+- (BOOL)zoomTransition:(id)arg1 transitionImageForPhotoToken:(id)arg2 callback:(id /* block */)arg3;
 - (void)zoomTransition:(id)arg1 willBeginForOperation:(int)arg2 animated:(BOOL)arg3 interactive:(BOOL)arg4;
 
 @end

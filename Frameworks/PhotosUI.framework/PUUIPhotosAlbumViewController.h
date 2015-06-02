@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, PUUIImagePickerControllerHelper, UIBarButtonItem;
-
 @interface PUUIPhotosAlbumViewController : PUPhotosAlbumViewController {
     int __albumFilter;
     PUUIImagePickerControllerHelper *__imagePickerControllerHelper;
@@ -12,9 +10,9 @@
     UIBarButtonItem *_imagePickerMultipleSelectionDoneButton;
 }
 
-@property(setter=_setAlbumFilter:) int _albumFilter;
-@property(readonly) PUUIImagePickerControllerHelper * _imagePickerControllerHelper;
-@property(setter=_setImagePickerMediaTypes:,copy) NSArray * _imagePickerMediaTypes;
+@property (setter=_setAlbumFilter:, nonatomic) int _albumFilter;
+@property (readonly) PUUIImagePickerControllerHelper *_imagePickerControllerHelper;
+@property (setter=_setImagePickerMediaTypes:, nonatomic, copy) NSArray *_imagePickerMediaTypes;
 
 - (void).cxx_destruct;
 - (int)_albumFilter;

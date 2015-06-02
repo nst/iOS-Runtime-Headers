@@ -3,14 +3,14 @@
  */
 
 @interface __NSArrayM : NSMutableArray {
-    unsigned int _doHardRetain : 1;
-    unsigned int _doWeakAccess : 1;
-    unsigned int _hasObjects : 1;
-    unsigned int _hasStrongReferences : 1;
+    unsigned int _doHardRetain;
+    unsigned int _doWeakAccess;
+    unsigned int _hasObjects;
+    unsigned int _hasStrongReferences;
     id *_list;
     unsigned long _mutations;
     unsigned int _offset;
-    unsigned int _size : 28;
+    unsigned int _size;
     unsigned int _used;
 }
 
@@ -24,9 +24,9 @@
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
 - (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSMutableString, NSString;
-
 @interface MFStringAccumulator : NSObject {
     NSString *_immutable;
     NSMutableString *_mutable;

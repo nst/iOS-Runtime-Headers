@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegTableFooterLabel : CNFRegTableLabel {
-}
+@interface CNFRegTableFooterLabel : CNFRegTableLabel
 
 - (id)_URLTarget;
 - (id)_URLText;

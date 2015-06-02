@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties, WDFont;
-
 @interface WDSymbol : WDRun {
     unsigned short mCharacter;
     WDFont *mFont;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHStyleSemanticTag;
-
 @interface TSCHSemanticTagAndPropertyPair : NSObject <NSCopying> {
     int mProperty;
     TSCHStyleSemanticTag *mSemanticTag;

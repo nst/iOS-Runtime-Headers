@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleSet, NSArray, NSMutableArray;
-
 @interface GKBubbleFlowContainerView : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -14,19 +12,19 @@
             float width; 
             float height; 
         } size; 
-    } _bubbleRestingRects[12];
+    } _bubbleRestingRects;
     NSMutableArray *_bubbleSets;
     int _supportedBubbles;
 }
 
-@property(readonly) NSArray * bubbleSets;
-@property(readonly) GKBubbleSet * primaryBubbleControls;
-@property(readonly) int supportedBubbles;
+@property (nonatomic, readonly) NSArray *bubbleSets;
+@property (nonatomic, readonly) GKBubbleSet *primaryBubbleControls;
+@property (nonatomic, readonly) int supportedBubbles;
 
 - (void)addBubbleSet:(id)arg1;
 - (id)bubbleSets;
 - (void)dealloc;
-- (void)enumerateBubbles:(id)arg1;
+- (void)enumerateBubbles:(id /* block */)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;

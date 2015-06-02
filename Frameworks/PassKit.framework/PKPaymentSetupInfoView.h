@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentSetupPrivacyFooterView, UIActivityIndicatorView, UIImageView, UILabel;
-
 @interface PKPaymentSetupInfoView : UIView {
     UIActivityIndicatorView *_activityIndicatorView;
     UILabel *_bodyLabel;
@@ -12,9 +10,9 @@
     PKPaymentSetupPrivacyFooterView *_privacyFooter;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicatorView;
-@property int context;
-@property(retain) PKPaymentSetupPrivacyFooterView * privacyFooter;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic) int context;
+@property (nonatomic, retain) PKPaymentSetupPrivacyFooterView *privacyFooter;
 
 - (id)_bodyFont;
 - (id)_titleFont;

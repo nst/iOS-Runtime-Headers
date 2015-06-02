@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface _UILegibilityImageSet : NSObject {
     UIImage *_image;
     UIImage *_shadowImage;
 }
 
-@property(retain) UIImage * image;
-@property(retain) UIImage * shadowImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *shadowImage;
 
 + (id)imageFromImage:(id)arg1 withShadowImage:(id)arg2;
 

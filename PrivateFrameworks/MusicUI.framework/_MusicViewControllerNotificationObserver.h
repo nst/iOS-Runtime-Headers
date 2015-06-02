@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString;
-
 @interface _MusicViewControllerNotificationObserver : NSObject {
     NSString *_notificationName;
     id _object;
@@ -11,10 +9,10 @@
     id _target;
 }
 
-@property(readonly) NSString * notificationName;
-@property(readonly) id object;
-@property(readonly) SEL selector;
-@property(readonly) id target;
+@property (nonatomic, readonly) NSString *notificationName;
+@property (nonatomic, readonly) id object;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly) id target;
 
 - (void).cxx_destruct;
 - (void)_didReceiveNotification:(id)arg1;

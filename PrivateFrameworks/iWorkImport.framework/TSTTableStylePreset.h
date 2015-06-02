@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSTTableStyleNetwork;
-
 @interface TSTTableStylePreset : TSPObject <TSKModel, TSSPreset, TSSStyleClient> {
     TSTTableStyleNetwork *_styleNetwork;
     unsigned int _tempUpgradePresetID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int presetID;
-@property(readonly) NSString * presetKind;
-@property(copy) TSTTableStyleNetwork * styleNetwork;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int presetID;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic, copy) TSTTableStyleNetwork *styleNetwork;
+@property (readonly) Class superclass;
 
 + (BOOL)needsObjectUUID;
 
@@ -35,7 +28,7 @@
 - (unsigned int)presetID;
 - (id)presetKind;
 - (id)referencedStyles;
-- (void)replaceReferencedStylesUsingBlock:(id)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (void)saveToArchive:(struct TableStylePresetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; int x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setStyleNetwork:(id)arg1;

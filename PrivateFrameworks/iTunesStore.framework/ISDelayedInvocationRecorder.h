@@ -6,7 +6,7 @@
     double _delayInterval;
 }
 
-@property double delayInterval;
+@property (nonatomic) double delayInterval;
 
 - (double)delayInterval;
 - (void)invokeInvocation:(id)arg1;

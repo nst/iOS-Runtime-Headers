@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface TDLogger : NSObject {
     int _logMaxVerbosity;
     NSObject<OS_dispatch_queue> *_loggingQueue;
     int _verbosity;
 }
 
-@property int verbosity;
+@property (nonatomic) int verbosity;
 
 + (id)logger;
 

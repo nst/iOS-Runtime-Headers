@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RURadioDataSourceDelegate>, NSArray, NSString, RURadioPlaybackCoordinator, RadioPushNotificationController;
-
 @interface RURadioDataSource : MPUDataSource <RadioPushNotificationControllerDelegate> {
     <RURadioDataSourceDelegate> *_delegate;
     NSArray *_featuredStations;
@@ -14,16 +12,16 @@
     NSArray *_userStations;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RURadioDataSourceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * featuredStations;
-@property(readonly) unsigned int hash;
-@property(getter=isOptedInToRadio,readonly) BOOL optedInToRadio;
-@property(retain) RURadioPlaybackCoordinator * playbackCoordinator;
-@property(readonly) NSArray * stations;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * userStations;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RURadioDataSourceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *featuredStations;
+@property (readonly) unsigned int hash;
+@property (getter=isOptedInToRadio, nonatomic, readonly) BOOL optedInToRadio;
+@property (nonatomic, retain) RURadioPlaybackCoordinator *playbackCoordinator;
+@property (nonatomic, readonly) NSArray *stations;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *userStations;
 
 + (void)_accountStoreDidChangeNotification:(id)arg1;
 + (void)_networkReachabilityDidChangeNotification:(id)arg1;
@@ -42,7 +40,7 @@
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
 - (void)_reloadOptedInToRadio;
-- (void)checkAcceptedTermsWithCompletionHandler:(id)arg1;
+- (void)checkAcceptedTermsWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deauthenticateIfNecessary;
 - (id)delegate;
@@ -63,7 +61,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPlaybackCoordinator:(id)arg1;
 - (id)stations;
-- (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)userStations;
 
 @end

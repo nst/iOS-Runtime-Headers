@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSError;
-
 @interface ML3DatabaseException : MLException {
     NSError *_sqliteError;
 }
 
-@property(readonly) NSError * sqliteError;
+@property (nonatomic, readonly) NSError *sqliteError;
 
 + (id)databaseExceptionWithReason:(id)arg1 sqliteError:(id)arg2;
 

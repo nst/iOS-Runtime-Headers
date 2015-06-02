@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <VKGlobeLineContainerDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMutableArray, NSMutableSet, NSString, VKPolylineOverlay;
-
 @interface VKGlobeLineContainer : NSObject <VKPolylineGroupOverlayObserver, VKPolylineObserver> {
     <VKGlobeLineContainerDelegate> *_delegate;
     struct GlobeView { int (**x1)(); } *_globeView;
@@ -28,18 +21,18 @@
         } __tree_; 
     } _polylinesToRoutes;
     <VKRouteMatchedAnnotationPresentation> *_routeLineSplitAnnotation;
-    struct VKGlobeRouteSplit { int (**x1)(); id x2; } *_routeSplit;
+    struct VKGlobeRouteSplit { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; char *x26; void*x27; void*x28; void*x29; char *x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; oneway void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; out void*x61; out short x62; void*x63; const int x64; double x65; unsigned char x66; void*x67; long x68; long x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; oneway void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; unsigned short x86; void*x87; short x88; void*x89; void*x90; void*x91; void*x92; unsigned long x93; int x94; unsigned int x95/* : ? */; const void*x96; const void*x97; void*x98; void*x99; const void*x100; void*x101; void*x102; void*x103; out const void*x104; short x105; void*x106; void*x107; void*x108; out void*x109; out short x110; void*x111; unsigned int x112; void*x113; float x114; const void*x115; void*x116; void*x117; void*x118; out const void*x119; void*x120; void*x121; void*x122; out void*x123; out short x124; void*x125; unsigned int x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; union x133; void*x134; void*x135; void*x136; void*x137; void*x138; oneway void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; unsigned short x147; void*x148; short x149; void*x150; void*x151; void*x152; void*x153; unsigned long x154; int x155; unsigned int x156/* : ? */; const void*x157; const void*x158; void*x159; void*x160; const void*x161; void*x162; void*x163; void*x164; out const void*x165; short x166; void*x167; void*x168; void*x169; out void*x170; out short x171; void*x172; unsigned int x173; void*x174; float x175; const void*x176; void*x177; void*x178; void*x179; out const void*x180; void*x181; void*x182; void*x183; out void*x184; out short x185; void*x186; unsigned int x187; void*x188; void*x189; void*x190; } *_routeSplit;
     struct RouteStyle { float x1; float x2; float x3; struct Color { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; } x4; struct Color { unsigned char x_5_1_1; unsigned char x_5_1_2; unsigned char x_5_1_3; unsigned char x_5_1_4; } x5; struct Color { unsigned char x_6_1_1; unsigned char x_6_1_2; unsigned char x_6_1_3; unsigned char x_6_1_4; } x6; struct Color { unsigned char x_7_1_1; unsigned char x_7_1_2; unsigned char x_7_1_3; unsigned char x_7_1_4; } x7; struct Color { unsigned char x_8_1_1; unsigned char x_8_1_2; unsigned char x_8_1_3; unsigned char x_8_1_4; } x8; float x9; float x10; float x11; float x12; float x13; } *_routeStyle;
     VKPolylineOverlay *_selectedPolyline;
     BOOL _trafficEnabled;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <VKGlobeLineContainerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VKGlobeLineContainerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

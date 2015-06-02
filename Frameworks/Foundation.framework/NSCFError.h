@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSCFError : NSError {
-}
+@interface NSCFError : NSError
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

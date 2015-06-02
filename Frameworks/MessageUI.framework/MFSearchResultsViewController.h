@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFSearchResultsViewController : UIViewController {
-}
+@interface MFSearchResultsViewController : UIViewController
 
 @end

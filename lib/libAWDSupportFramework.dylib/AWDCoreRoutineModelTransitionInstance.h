@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class AWDCoreRoutineTransitionMotionType;
-
 @interface AWDCoreRoutineModelTransitionInstance : PBCodable <NSCopying> {
     unsigned int _distance;
     unsigned int _duration;
@@ -14,12 +12,12 @@
     AWDCoreRoutineTransitionMotionType *_transitionHistogram;
 }
 
-@property unsigned int distance;
-@property unsigned int duration;
-@property BOOL hasDistance;
-@property BOOL hasDuration;
-@property(readonly) BOOL hasTransitionHistogram;
-@property(retain) AWDCoreRoutineTransitionMotionType * transitionHistogram;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic, readonly) BOOL hasTransitionHistogram;
+@property (nonatomic, retain) AWDCoreRoutineTransitionMotionType *transitionHistogram;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

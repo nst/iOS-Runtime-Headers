@@ -2,27 +2,25 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSDictionary, NSString, UIImageView, UILabel, UIView, UIView<ABText>;
-
 @interface ABLabeledCell : ABContactCell {
     UIImageView *_chevron;
     NSDictionary *_labelTextAttributes;
     NSDictionary *_valueTextAttributes;
 }
 
-@property(readonly) float bottomBaselineConstant;
-@property(readonly) UIImageView * chevron;
-@property(readonly) float chevronWidth;
-@property(readonly) NSString * labelString;
-@property(copy) NSDictionary * labelTextAttributes;
-@property(readonly) UIView<ABText> * labelView;
-@property(readonly) UIView * rightMostView;
-@property(readonly) UILabel * standardLabelView;
-@property(readonly) UILabel * standardValueView;
-@property(readonly) float topBaselineConstant;
-@property(readonly) NSString * valueString;
-@property(copy) NSDictionary * valueTextAttributes;
-@property(readonly) UIView<ABText> * valueView;
+@property (nonatomic, readonly) float bottomBaselineConstant;
+@property (nonatomic, readonly) UIImageView *chevron;
+@property (nonatomic, readonly) float chevronWidth;
+@property (nonatomic, readonly) NSString *labelString;
+@property (nonatomic, copy) NSDictionary *labelTextAttributes;
+@property (nonatomic, readonly) UIView<ABText> *labelView;
+@property (nonatomic, readonly) UIView *rightMostView;
+@property (nonatomic, readonly) UILabel *standardLabelView;
+@property (nonatomic, readonly) UILabel *standardValueView;
+@property (nonatomic, readonly) float topBaselineConstant;
+@property (nonatomic, readonly) NSString *valueString;
+@property (nonatomic, copy) NSDictionary *valueTextAttributes;
+@property (nonatomic, readonly) UIView<ABText> *valueView;
 
 + (BOOL)wantsChevron;
 + (BOOL)wantsHorizontalLayout;

@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSString;
+@interface AVPlayerItemLegibleOutputRealDependencyFactory : NSObject <AVPlayerItemLegibleOutputDependencyFactory>
 
-@interface AVPlayerItemLegibleOutputRealDependencyFactory : NSObject <AVPlayerItemLegibleOutputDependencyFactory> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)playerItemOutputHostForPlayerItem:(id)arg1;
 

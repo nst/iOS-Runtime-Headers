@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSManagedObjectContext, NSManagedObjectID;
-
 @interface PLTransientOrderKey : NSObject {
     NSManagedObjectContext *_moc;
     NSManagedObjectID *_objectID;
     long long _orderValue;
 }
 
-@property(retain) NSManagedObjectContext * moc;
-@property(retain) NSManagedObjectID * objectID;
-@property long long orderValue;
+@property (nonatomic, retain) NSManagedObjectContext *moc;
+@property (nonatomic, retain) NSManagedObjectID *objectID;
+@property (nonatomic) long long orderValue;
 
 - (id)childManagedObject;
 - (void)dealloc;

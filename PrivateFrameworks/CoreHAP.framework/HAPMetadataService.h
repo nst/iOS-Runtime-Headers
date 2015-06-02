@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSArray, NSString;
-
 @interface HAPMetadataService : NSObject {
     BOOL _allowAssociatedService;
     NSString *_btleuuidStr;
@@ -15,14 +13,14 @@
     NSString *_uuidStr;
 }
 
-@property BOOL allowAssociatedService;
-@property(retain) NSString * btleuuidStr;
-@property(retain) NSString * localizationKey;
-@property(retain) NSArray * mandatoryCharacteristics;
-@property(retain) NSString * name;
-@property(retain) NSArray * optionalCharacteristics;
-@property(retain) NSString * svcDescription;
-@property(retain) NSString * uuidStr;
+@property (nonatomic) BOOL allowAssociatedService;
+@property (nonatomic, retain) NSString *btleuuidStr;
+@property (nonatomic, retain) NSString *localizationKey;
+@property (nonatomic, retain) NSArray *mandatoryCharacteristics;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSArray *optionalCharacteristics;
+@property (nonatomic, retain) NSString *svcDescription;
+@property (nonatomic, retain) NSString *uuidStr;
 
 - (void).cxx_destruct;
 - (BOOL)allowAssociatedService;

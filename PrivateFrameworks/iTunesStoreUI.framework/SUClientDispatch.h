@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUClientDispatch : NSObject {
-}
+@interface SUClientDispatch : NSObject
 
 + (id)clientInterface;
 + (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString;
-
 @interface CPExclusiveLock : NSObject <NSLocking> {
     int _fd;
     NSString *_name;

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUAssertionHandler : NSAssertionHandler {
-}
+@interface OITSUAssertionHandler : NSAssertionHandler
 
 + (id)currentHandler;
 + (void)installAsNSHandler;
-+ (id)performBlockIgnoringAssertions:(id)arg1;
++ (id)performBlockIgnoringAssertions:(id /* block */)arg1;
 + (void)testCaseStarted:(id)arg1;
 + (void)testCaseStopped:(id)arg1;
 

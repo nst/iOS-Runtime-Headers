@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKRenderingExporter>, NSString, TSABaseApplicationDelegate, TSACirrusDocument, TSUTemporaryDirectory;
-
 @interface TQQuicklook : NSObject {
     TSABaseApplicationDelegate *mBaseAppDelegate;
     TSACirrusDocument *mDocument;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, PUUIImagePickerControllerHelper, UIBarButtonItem;
-
 @interface PUUIMomentsGridViewController : PUPhotosGridViewController {
     PUUIImagePickerControllerHelper *__imagePickerControllerHelper;
     NSArray *__imagePickerMediaTypes;
@@ -11,8 +9,8 @@
     UIBarButtonItem *_imagePickerMultipleSelectionDoneButton;
 }
 
-@property(readonly) PUUIImagePickerControllerHelper * _imagePickerControllerHelper;
-@property(setter=_setImagePickerMediaTypes:,copy) NSArray * _imagePickerMediaTypes;
+@property (readonly) PUUIImagePickerControllerHelper *_imagePickerControllerHelper;
+@property (setter=_setImagePickerMediaTypes:, nonatomic, copy) NSArray *_imagePickerMediaTypes;
 
 - (void).cxx_destruct;
 - (void)_handleImagePickerCancel:(id)arg1;

@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AVAsset, AVAssetTrack, AVAudioMix, AVCustomVideoCompositorSession, AVMetadataItemFilter, AVVideoComposition, AVWeakReference, NSArray, NSError, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSURL;
-
 @interface AVAssetExportSessionInternal : NSObject {
     NSString *actualOutputFileType;
     AVAsset *asset;
@@ -22,11 +16,7 @@
     NSError *error;
     void *figVideoCompositor;
     AVAssetTrack *firstVideoTrack;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id handler;
-
+    id /* block */ handler;
     long long maxFileSize;
     NSArray *metadata;
     AVMetadataItemFilter *metadataItemFilter;

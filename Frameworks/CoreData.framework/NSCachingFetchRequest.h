@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableSet;
-
 @interface NSCachingFetchRequest : NSFetchRequest {
     NSMutableSet *_cachingCoordinators;
     BOOL _hasCachedInfo;
@@ -11,8 +9,8 @@
     NSDictionary *_substitutionVariables;
 }
 
-@property(readonly) id _identifier;
-@property(copy) NSDictionary * substitutionVariables;
+@property (nonatomic, readonly) id _identifier;
+@property (nonatomic, copy) NSDictionary *substitutionVariables;
 
 + (id)_generateIdentifier;
 

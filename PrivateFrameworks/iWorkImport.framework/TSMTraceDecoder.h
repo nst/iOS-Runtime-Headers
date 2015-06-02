@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSMTraceDecoder : NSObject {
-}
+@interface TSMTraceDecoder : NSObject
 
 + (id)decoder;
 

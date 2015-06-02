@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@interface PBBridgeAggregateReporter : NSObject {
-}
+@interface PBBridgeAggregateReporter : NSObject
 
 + (id)descriptionForCommTimingType:(unsigned int)arg1;
 + (id)descriptionForSuccessType:(unsigned int)arg1;

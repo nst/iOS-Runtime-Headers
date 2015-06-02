@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage;
-
 @interface SKUIStarBarView : UIView {
     UIImage *_emptyStarImage;
     UIImage *_fullStarImage;
@@ -11,8 +9,8 @@
     float _value;
 }
 
-@property int numberOfStars;
-@property float value;
+@property (nonatomic) int numberOfStars;
+@property (nonatomic) float value;
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

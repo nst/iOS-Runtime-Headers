@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKPGenericShieldVariant : PBCodable <NSCopying> {
     NSString *_fontName;
     float _fontSize;
@@ -29,26 +27,26 @@
     float _textBaseline;
 }
 
-@property(retain) NSString * fontName;
-@property float fontSize;
-@property(readonly) BOOL hasFontName;
-@property BOOL hasFontSize;
-@property BOOL hasLeftCapWidth;
-@property BOOL hasLeftPadding;
-@property BOOL hasLineSpacing;
-@property BOOL hasNumberOfLines;
-@property BOOL hasRightCapWidth;
-@property BOOL hasRightPadding;
-@property BOOL hasTextBaseline;
-@property(readonly) struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }* layers;
-@property(readonly) unsigned int layersCount;
-@property float leftCapWidth;
-@property float leftPadding;
-@property float lineSpacing;
-@property unsigned int numberOfLines;
-@property float rightCapWidth;
-@property float rightPadding;
-@property float textBaseline;
+@property (nonatomic, retain) NSString *fontName;
+@property (nonatomic) float fontSize;
+@property (nonatomic, readonly) BOOL hasFontName;
+@property (nonatomic) BOOL hasFontSize;
+@property (nonatomic) BOOL hasLeftCapWidth;
+@property (nonatomic) BOOL hasLeftPadding;
+@property (nonatomic) BOOL hasLineSpacing;
+@property (nonatomic) BOOL hasNumberOfLines;
+@property (nonatomic) BOOL hasRightCapWidth;
+@property (nonatomic) BOOL hasRightPadding;
+@property (nonatomic) BOOL hasTextBaseline;
+@property (nonatomic, readonly) struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
+@property (nonatomic, readonly) unsigned int layersCount;
+@property (nonatomic) float leftCapWidth;
+@property (nonatomic) float leftPadding;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic) unsigned int numberOfLines;
+@property (nonatomic) float rightCapWidth;
+@property (nonatomic) float rightPadding;
+@property (nonatomic) float textBaseline;
 
 - (struct CGSize { float x1; float x2; })_imageSizeWithTextureAtlases:(id)arg1;
 - (void)addLayer:(struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;

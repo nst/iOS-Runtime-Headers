@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@class UIView;
-
 @interface UIAccessibilityMathNavigationBar : UINavigationBar {
     UIView *_titleView;
 }

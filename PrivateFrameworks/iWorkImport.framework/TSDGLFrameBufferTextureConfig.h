@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString;
-
 @interface TSDGLFrameBufferTextureConfig : NSObject {
     unsigned int _GLFormat;
     int _GLInternalFormat;
@@ -18,13 +16,13 @@
     NSArray *_textureParameters;
 }
 
-@property(readonly) unsigned int GLFormat;
-@property(readonly) int GLInternalFormat;
-@property(readonly) unsigned int GLType;
-@property(readonly) unsigned int attachment;
-@property(readonly) NSString * name;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) NSArray * textureParameters;
+@property (nonatomic, readonly) unsigned int GLFormat;
+@property (nonatomic, readonly) int GLInternalFormat;
+@property (nonatomic, readonly) unsigned int GLType;
+@property (nonatomic, readonly) unsigned int attachment;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) NSArray *textureParameters;
 
 + (id)textureConfigWithSize:(struct CGSize { float x1; float x2; })arg1 attachment:(unsigned int)arg2 textureParameters:(id)arg3 name:(id)arg4;
 + (id)textureConfigWithSize:(struct CGSize { float x1; float x2; })arg1 internalFormat:(int)arg2 format:(unsigned int)arg3 type:(unsigned int)arg4 attachment:(unsigned int)arg5 textureParameters:(id)arg6 name:(id)arg7;

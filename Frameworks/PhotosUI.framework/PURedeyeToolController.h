@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableArray, NSString, PUPhotoEditOverlayBadge, PURedeyeToolControllerSpec, UITapGestureRecognizer;
-
 @interface PURedeyeToolController : PUPhotoEditToolController <UIGestureRecognizerDelegate> {
     BOOL _failureAnimationIsInProgress;
     PUPhotoEditOverlayBadge *_failureLabel;
@@ -15,11 +13,11 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PURedeyeToolControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PURedeyeToolControllerSpec *spec;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_animateFailureAppearance;

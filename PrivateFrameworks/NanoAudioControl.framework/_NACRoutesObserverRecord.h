@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class MPAVRoutingController, NACRunAssertion;
-
 @interface _NACRoutesObserverRecord : NSObject {
     MPAVRoutingController *_routingController;
     NACRunAssertion *_runAssertion;
 }
 
-@property(retain) MPAVRoutingController * routingController;
-@property(retain) NACRunAssertion * runAssertion;
+@property (nonatomic, retain) MPAVRoutingController *routingController;
+@property (nonatomic, retain) NACRunAssertion *runAssertion;
 
 - (void).cxx_destruct;
 - (id)routingController;

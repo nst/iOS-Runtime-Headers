@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSArray, NSMutableArray, NSString, TUCall, TUCallCenterCallsCache, TUCallModelState;
-
 @interface TUCallCenter : NSObject <IDSIDQueryControllerDelegate> {
     TUCallModelState *_callModelState;
     TUCallCenterCallsCache *_callsCache;
@@ -11,23 +9,23 @@
     NSMutableArray *_displayedCalls;
 }
 
-@property(retain) TUCallModelState * callModelState;
-@property(retain) TUCallCenterCallsCache * callsCache;
-@property(readonly) BOOL canMergeCalls;
-@property(readonly) TUCall * conferenceCall;
-@property(retain) NSMutableArray * conferenceParticipantCalls;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) TUCall * displayedCall;
-@property(retain) NSMutableArray * displayedCalls;
-@property(readonly) NSArray * displayedCallsNotIncludingIncomingCall;
-@property(retain,readonly) TUCall * frontmostAudioOrVideoCall;
-@property(readonly) TUCall * frontmostCall;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL inCall;
-@property(retain,readonly) TUCall * incomingCall;
-@property(retain,readonly) NSArray * incomingCalls;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) TUCallModelState *callModelState;
+@property (nonatomic, retain) TUCallCenterCallsCache *callsCache;
+@property (nonatomic, readonly) BOOL canMergeCalls;
+@property (nonatomic, readonly) TUCall *conferenceCall;
+@property (nonatomic, retain) NSMutableArray *conferenceParticipantCalls;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TUCall *displayedCall;
+@property (nonatomic, retain) NSMutableArray *displayedCalls;
+@property (nonatomic, readonly) NSArray *displayedCallsNotIncludingIncomingCall;
+@property (nonatomic, readonly, retain) TUCall *frontmostAudioOrVideoCall;
+@property (nonatomic, readonly) TUCall *frontmostCall;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL inCall;
+@property (nonatomic, readonly, retain) TUCall *incomingCall;
+@property (nonatomic, readonly, retain) NSArray *incomingCalls;
+@property (readonly) Class superclass;
 
 + (id)_sharedInstanceWithDaemonDelegate:(id)arg1;
 + (id)defaultCallState;

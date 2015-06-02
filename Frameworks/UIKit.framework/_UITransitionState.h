@@ -2,33 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate;
-
 @interface _UITransitionState : NSObject {
     NSDate *_beginDate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     int _transitionDirection;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) NSDate * beginDate;
-@property(readonly) int effectiveTransitionDirection;
-@property(readonly) int transitionDirection;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) NSDate *beginDate;
+@property (nonatomic, readonly) int effectiveTransitionDirection;
+@property (nonatomic, readonly) int transitionDirection;
 
 - (id)beginDate;
 - (void)cleanupWithFinishedState:(BOOL)arg1 completedState:(BOOL)arg2;
 - (void)dealloc;
 - (id)description;
 - (int)effectiveTransitionDirection;
-- (id)initWithTransitionDirection:(int)arg1 completion:(id)arg2;
+- (id)initWithTransitionDirection:(int)arg1 completion:(id /* block */)arg2;
 - (BOOL)isActive;
 - (BOOL)isCompatibleWithTransitionInDirection:(int)arg1;
 - (void)markBeginDate;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray;
-
 @interface NSSQLCompoundWhereIntermediate : NSSQLWhereIntermediate {
     NSMutableArray *_subclauses;
 }

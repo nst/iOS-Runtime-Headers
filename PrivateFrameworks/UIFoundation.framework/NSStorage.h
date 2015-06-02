@@ -4,7 +4,7 @@
 
 @interface NSStorage : NSObject {
     long _hintCapacity;
-    unsigned int _reserved[4];
+    unsigned int _reserved;
     id _storage;
 }
 
@@ -17,7 +17,7 @@
 - (id)description;
 - (void*)elementAtIndex:(unsigned int)arg1;
 - (unsigned int)elementSize;
-- (void)enumerateElementsUsingBlock:(id)arg1;
+- (void)enumerateElementsUsingBlock:(id /* block */)arg1;
 - (unsigned int)hintCapacity;
 - (id)init;
 - (id)initWithElementSize:(unsigned int)arg1 capacity:(unsigned int)arg2;

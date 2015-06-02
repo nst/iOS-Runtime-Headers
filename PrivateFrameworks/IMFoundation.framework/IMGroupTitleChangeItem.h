@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMGroupTitleChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSString *_otherCountryCode;
     NSString *_otherHandle;
@@ -11,12 +9,13 @@
     NSString *_title;
 }
 
-@property(retain) NSString * otherCountryCode;
-@property(retain) NSString * otherHandle;
-@property(retain) NSString * otherUnformattedID;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *otherCountryCode;
+@property (nonatomic, retain) NSString *otherHandle;
+@property (nonatomic, retain) NSString *otherUnformattedID;
+@property (nonatomic, retain) NSString *title;
 
-- (id)_newChatItems;
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -31,5 +30,9 @@
 - (void)setOtherUnformattedID:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (id)_newChatItems;
 
 @end

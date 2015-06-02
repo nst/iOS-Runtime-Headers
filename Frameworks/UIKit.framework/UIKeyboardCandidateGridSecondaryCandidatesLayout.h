@@ -13,8 +13,8 @@
     } _visualStyling;
 }
 
-@property int candidatesVisualStyle;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 + (Class)layoutAttributesClass;
 

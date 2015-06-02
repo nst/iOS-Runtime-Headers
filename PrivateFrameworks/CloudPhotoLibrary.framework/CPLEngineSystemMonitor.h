@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLEngineLibrary, CPLNetworkWatcher, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface CPLEngineSystemMonitor : NSObject <CPLEngineComponent, CPLNetworkWatcherDelegate> {
     CPLEngineLibrary *_engineLibrary;
     NSObject<OS_dispatch_queue> *_queue;
@@ -11,21 +9,21 @@
     CPLNetworkWatcher *_watcher;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) CPLEngineLibrary * engineLibrary;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CPLEngineLibrary *engineLibrary;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)componentName;
 - (unsigned int)diskPressureState;
 - (id)engineLibrary;
-- (void)getStatusWithCompletionHandler:(id)arg1;
+- (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isNetworkConnected;
 - (void)networkStateDidChangeForNetworkWatched:(id)arg1;
-- (void)openWithCompletionHandler:(id)arg1;
+- (void)openWithCompletionHandler:(id /* block */)arg1;
 
 @end

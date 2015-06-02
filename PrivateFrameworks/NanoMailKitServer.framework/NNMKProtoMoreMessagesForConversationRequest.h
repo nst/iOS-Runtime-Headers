@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSString;
-
 @interface NNMKProtoMoreMessagesForConversationRequest : PBRequest <NSCopying> {
     NSData *_beforeDateReceived;
     NSString *_conversationId;
@@ -13,12 +11,12 @@
     } _has;
 }
 
-@property(retain) NSData * beforeDateReceived;
-@property(retain) NSString * conversationId;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasBeforeDateReceived;
-@property(readonly) BOOL hasConversationId;
-@property BOOL hasFullSyncVersion;
+@property (nonatomic, retain) NSData *beforeDateReceived;
+@property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasBeforeDateReceived;
+@property (nonatomic, readonly) BOOL hasConversationId;
+@property (nonatomic) BOOL hasFullSyncVersion;
 
 - (void).cxx_destruct;
 - (id)beforeDateReceived;

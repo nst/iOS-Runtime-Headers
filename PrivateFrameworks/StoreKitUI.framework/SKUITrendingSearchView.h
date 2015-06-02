@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, UILabel;
-
 @interface SKUITrendingSearchView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,9 +13,9 @@
     UILabel *_titleLabel;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy) NSArray * resultButtons;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, copy) NSArray *resultButtons;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 + (id)defaultButtonFont;
 + (id)defaultTitleColor;

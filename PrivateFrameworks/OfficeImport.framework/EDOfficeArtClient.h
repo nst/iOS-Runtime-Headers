@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDAnchor, EDComment, EDSheet, EDTextBox, NSMutableDictionary, NSString;
-
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
     EDAnchor *mAnchor;
     struct CGRect { 
@@ -24,10 +22,10 @@
     EDTextBox *mTextBox;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (id)anchor;

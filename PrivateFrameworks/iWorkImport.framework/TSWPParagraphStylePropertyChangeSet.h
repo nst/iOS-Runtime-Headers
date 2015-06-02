@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDSpecStroke, TSSSpecBool, TSSSpecColor, TSSSpecDouble, TSSSpecInteger, TSSSpecString, TSWPSpecLineSpacing, TSWPSpecListStyle, TSWPSpecParagraphStyle, TSWPSpecRuleOffset, TSWPSpecTabs;
-
 @interface TSWPParagraphStylePropertyChangeSet : TSWPCharacterStylePropertyChangeSet {
     TSSSpecInteger *_alignment;
     TSSSpecString *_decimalTab;
@@ -55,7 +53,7 @@
     TSSSpecInteger *_widowControl;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

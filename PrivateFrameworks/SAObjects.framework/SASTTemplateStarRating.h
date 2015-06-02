@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASTTemplateStarRating : SASTTemplateRating {
-}
+@interface SASTTemplateStarRating : SASTTemplateRating
 
-@property double maximumValue;
-@property double value;
+@property (nonatomic) double maximumValue;
+@property (nonatomic) double value;
 
 + (id)templateStarRating;
 + (id)templateStarRatingWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKSource, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString;
-
 @interface EKUIInviteeAlternativeTimeSearcher : NSObject {
     BOOL _availabilityRequestInProgress;
     NSOperationQueue *_availabilityRequestsQueue;
@@ -28,40 +22,36 @@
     NSObject<OS_dispatch_queue> *_processingQueue;
     unsigned int _remainingSearchAttempts;
     EKSource *_source;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stateChanged;
-
+    id /* block */ _stateChanged;
 }
 
-@property BOOL availabilityRequestInProgress;
-@property(retain) NSOperationQueue * availabilityRequestsQueue;
-@property double availabilitySearchDurationMultiplier;
-@property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
-@property(retain) NSString * ignoredEventID;
-@property(retain) NSMutableArray * internalOriginalConflictedParticipants;
-@property(retain) NSDate * internalOriginalEndDate;
-@property(retain) NSDate * internalOriginalStartDate;
-@property BOOL internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
-@property BOOL internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
-@property(retain) NSMutableArray * internalTimesWhenAllAttendeesCanAttend;
-@property(retain) NSMutableArray * internalTimesWhenSomeAttendeesCanAttend;
-@property(retain) NSMutableArray * leftoverSpans;
-@property(retain) NSDate * nextAvailabilityRangeStartDate;
-@property(retain) NSString * organizerAddress;
-@property(readonly) NSArray * originalConflictedParticipants;
-@property(readonly) NSDate * originalEndDate;
-@property(readonly) NSDate * originalStartDate;
-@property(retain) NSMutableDictionary * participantAddressesToParticipants;
-@property(retain) NSObject<OS_dispatch_queue> * processingQueue;
-@property unsigned int remainingSearchAttempts;
-@property(readonly) BOOL searchingForMoreTimesWhenAllAttendeesCanAttend;
-@property(readonly) BOOL searchingForMoreTimesWhenSomeAttendeesCanAttend;
-@property(retain) EKSource * source;
-@property(copy) id stateChanged;
-@property(readonly) NSArray * timesWhenAllAttendeesCanAttend;
-@property(readonly) NSArray * timesWhenSomeAttendeesCanAttend;
+@property (nonatomic) BOOL availabilityRequestInProgress;
+@property (nonatomic, retain) NSOperationQueue *availabilityRequestsQueue;
+@property (nonatomic) double availabilitySearchDurationMultiplier;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, retain) NSString *ignoredEventID;
+@property (nonatomic, retain) NSMutableArray *internalOriginalConflictedParticipants;
+@property (nonatomic, retain) NSDate *internalOriginalEndDate;
+@property (nonatomic, retain) NSDate *internalOriginalStartDate;
+@property (nonatomic) BOOL internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
+@property (nonatomic) BOOL internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
+@property (nonatomic, retain) NSMutableArray *internalTimesWhenAllAttendeesCanAttend;
+@property (nonatomic, retain) NSMutableArray *internalTimesWhenSomeAttendeesCanAttend;
+@property (nonatomic, retain) NSMutableArray *leftoverSpans;
+@property (nonatomic, retain) NSDate *nextAvailabilityRangeStartDate;
+@property (nonatomic, retain) NSString *organizerAddress;
+@property (nonatomic, readonly) NSArray *originalConflictedParticipants;
+@property (nonatomic, readonly) NSDate *originalEndDate;
+@property (nonatomic, readonly) NSDate *originalStartDate;
+@property (nonatomic, retain) NSMutableDictionary *participantAddressesToParticipants;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
+@property (nonatomic) unsigned int remainingSearchAttempts;
+@property (nonatomic, readonly) BOOL searchingForMoreTimesWhenAllAttendeesCanAttend;
+@property (nonatomic, readonly) BOOL searchingForMoreTimesWhenSomeAttendeesCanAttend;
+@property (nonatomic, retain) EKSource *source;
+@property (nonatomic, copy) id /* block */ stateChanged;
+@property (nonatomic, readonly) NSArray *timesWhenAllAttendeesCanAttend;
+@property (nonatomic, readonly) NSArray *timesWhenSomeAttendeesCanAttend;
 
 + (id)_addressesForParticipants:(id)arg1;
 + (id)_allButFirstItemInArray:(id)arg1;
@@ -96,7 +86,7 @@
 - (id)callbackQueue;
 - (void)dealloc;
 - (id)ignoredEventID;
-- (id)initWithStateChangedCallback:(id)arg1;
+- (id)initWithStateChangedCallback:(id /* block */)arg1;
 - (id)internalOriginalConflictedParticipants;
 - (id)internalOriginalEndDate;
 - (id)internalOriginalStartDate;
@@ -137,9 +127,9 @@
 - (void)setProcessingQueue:(id)arg1;
 - (void)setRemainingSearchAttempts:(unsigned int)arg1;
 - (void)setSource:(id)arg1;
-- (void)setStateChanged:(id)arg1;
+- (void)setStateChanged:(id /* block */)arg1;
 - (id)source;
-- (id)stateChanged;
+- (id /* block */)stateChanged;
 - (id)timesWhenAllAttendeesCanAttend;
 - (id)timesWhenSomeAttendeesCanAttend;
 

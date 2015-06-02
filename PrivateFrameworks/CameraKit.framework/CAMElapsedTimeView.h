@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDate, NSTimer, UIImageView, UILabel;
-
 @interface CAMElapsedTimeView : UIView {
     UIImageView *__recordingImageView;
     NSDate *__startTime;
@@ -11,10 +9,10 @@
     NSTimer *__updateTimer;
 }
 
-@property(readonly) UIImageView * _recordingImageView;
-@property(readonly) NSDate * _startTime;
-@property(readonly) UILabel * _timeLabel;
-@property(readonly) NSTimer * _updateTimer;
+@property (nonatomic, readonly) UIImageView *_recordingImageView;
+@property (nonatomic, readonly) NSDate *_startTime;
+@property (nonatomic, readonly) UILabel *_timeLabel;
+@property (nonatomic, readonly) NSTimer *_updateTimer;
 
 - (void).cxx_destruct;
 - (void)_beginRecordingAnimation;

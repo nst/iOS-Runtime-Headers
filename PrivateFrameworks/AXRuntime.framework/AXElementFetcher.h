@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
  */
 
-@class <AXElementFetcherDelegate>, AXElement, AXElementGroup, AXElementGroupPruner, AXVisualElementGrouper, NSArray, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface AXElementFetcher : NSObject {
     unsigned int _activeFetchEvents;
     struct __AXObserver { } *_axRuntimeNotificationObserver;
@@ -29,29 +27,29 @@
     AXVisualElementGrouper *_visualElementGrouper;
 }
 
-@property unsigned int activeFetchEvents;
-@property(readonly) NSArray * availableElements;
-@property(retain) AXElement * currentApp;
-@property <AXElementFetcherDelegate> * delegate;
-@property BOOL didSendFakeScreenChangeOnLastFetch;
-@property(retain) NSArray * elementCache;
-@property(retain) AXElementGroupPruner * elementGroupPruner;
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isEventManagementEnabled) BOOL eventManagementEnabled;
-@property(retain) NSMapTable * fetchObservers;
-@property int fetchPolicy;
-@property(getter=isFetchingElements) BOOL fetchingElements;
-@property(readonly) AXElementGroup * firstKeyboardRow;
-@property(getter=isGroupingEnabled) BOOL groupingEnabled;
-@property(readonly) AXElementGroup * keyboardGroup;
-@property(retain) AXElementGroup * keyboardGroupCache;
-@property(readonly) AXElementGroup * lastKeyboardRow;
-@property(retain) NSMutableDictionary * postFetchFilters;
-@property(readonly) AXElementGroup * rootGroup;
-@property(retain) AXElementGroup * rootGroupCache;
-@property BOOL shouldUsePadInterfaceHeuristics;
-@property(retain) AXVisualElementGrouper * visualElementGrouper;
-@property(readonly) BOOL willFetchElements;
+@property (nonatomic) unsigned int activeFetchEvents;
+@property (nonatomic, readonly) NSArray *availableElements;
+@property (nonatomic, retain) AXElement *currentApp;
+@property (nonatomic) <AXElementFetcherDelegate> *delegate;
+@property (nonatomic) BOOL didSendFakeScreenChangeOnLastFetch;
+@property (nonatomic, retain) NSArray *elementCache;
+@property (nonatomic, retain) AXElementGroupPruner *elementGroupPruner;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEventManagementEnabled, nonatomic) BOOL eventManagementEnabled;
+@property (nonatomic, retain) NSMapTable *fetchObservers;
+@property (nonatomic) int fetchPolicy;
+@property (getter=isFetchingElements, nonatomic) BOOL fetchingElements;
+@property (nonatomic, readonly) AXElementGroup *firstKeyboardRow;
+@property (getter=isGroupingEnabled, nonatomic) BOOL groupingEnabled;
+@property (nonatomic, readonly) AXElementGroup *keyboardGroup;
+@property (nonatomic, retain) AXElementGroup *keyboardGroupCache;
+@property (nonatomic, readonly) AXElementGroup *lastKeyboardRow;
+@property (nonatomic, retain) NSMutableDictionary *postFetchFilters;
+@property (nonatomic, readonly) AXElementGroup *rootGroup;
+@property (nonatomic, retain) AXElementGroup *rootGroupCache;
+@property (nonatomic) BOOL shouldUsePadInterfaceHeuristics;
+@property (nonatomic, retain) AXVisualElementGrouper *visualElementGrouper;
+@property (nonatomic, readonly) BOOL willFetchElements;
 
 + (id)_applicationForElement:(id)arg1;
 + (id)currentAppWithPositionHint:(struct CGPoint { float x1; float x2; })arg1;
@@ -69,10 +67,10 @@
 - (id)_fetchFirstElements;
 - (BOOL)_fetchGroups:(BOOL)arg1;
 - (id)_fetchVisibleElements;
-- (id)_filterElements:(id)arg1 withFilter:(id)arg2;
-- (id)_filterGroup:(id)arg1 withFilter:(id)arg2;
-- (id)_findElementsMatchingBlock:(id)arg1 internalRequest:(BOOL)arg2;
-- (id)_findGroupableMatchingBlock:(id)arg1 inElementGroup:(id)arg2;
+- (id)_filterElements:(id)arg1 withFilter:(id /* block */)arg2;
+- (id)_filterGroup:(id)arg1 withFilter:(id /* block */)arg2;
+- (id)_findElementsMatchingBlock:(id /* block */)arg1 internalRequest:(BOOL)arg2;
+- (id)_findGroupableMatchingBlock:(id /* block */)arg1 inElementGroup:(id)arg2;
 - (id)_findGroupableMatchingGroupable:(id)arg1 inElementGroup:(id)arg2;
 - (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2;
 - (id)_groupWithItems:(id)arg1 groupTraits:(int)arg2 label:(id)arg3 currentPid:(int)arg4;
@@ -88,7 +86,7 @@
 - (BOOL)_updateCurrentApp;
 - (unsigned int)activeFetchEvents;
 - (void)addFetchEvents:(unsigned int)arg1;
-- (void)addPostFetchFilter:(id)arg1 withIdentifier:(id)arg2;
+- (void)addPostFetchFilter:(id /* block */)arg1 withIdentifier:(id)arg2;
 - (id)availableElements;
 - (id)closestElementToElement:(id)arg1;
 - (id)closestElementToPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -104,10 +102,10 @@
 - (void)fetchEventOccurred:(unsigned int)arg1;
 - (id)fetchObservers;
 - (int)fetchPolicy;
-- (id)findElementMatchingBlock:(id)arg1;
+- (id)findElementMatchingBlock:(id /* block */)arg1;
 - (id)findElementMatchingElement:(id)arg1;
-- (id)findElementsMatchingBlock:(id)arg1;
-- (id)findGroupableMatchingBlock:(id)arg1;
+- (id)findElementsMatchingBlock:(id /* block */)arg1;
+- (id)findGroupableMatchingBlock:(id /* block */)arg1;
 - (id)findGroupableMatchingGroupable:(id)arg1;
 - (id)firstElement;
 - (id)firstKeyboardRow;

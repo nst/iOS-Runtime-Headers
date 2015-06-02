@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicFlipsidePlaylistTracksCellConfiguration : MusicPlaylistSongCellConfiguration {
-}
+@interface MusicFlipsidePlaylistTracksCellConfiguration : MusicPlaylistSongCellConfiguration
 
 + (float)cloudRightInsetForDurationWidth:(float)arg1;
 + (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SAPhone : AceObject <SAAceSerializable>
 
-@interface SAPhone : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSNumber * favoriteFacetime;
-@property(copy) NSNumber * favoriteFacetimeAudio;
-@property(copy) NSNumber * favoriteVoice;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(copy) NSString * number;
-@property(copy) NSNumber * pseudo;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSNumber *favoriteFacetime;
+@property (nonatomic, copy) NSNumber *favoriteFacetimeAudio;
+@property (nonatomic, copy) NSNumber *favoriteVoice;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *number;
+@property (nonatomic, copy) NSNumber *pseudo;
+@property (readonly) Class superclass;
 
 + (id)phone;
 + (id)phoneWithDictionary:(id)arg1 context:(id)arg2;

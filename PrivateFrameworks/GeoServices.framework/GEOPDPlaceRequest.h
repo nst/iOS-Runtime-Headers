@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAnalyticMetadata, GEOPDClientMetadata, GEOPDPlaceRequestParameters, NSMutableArray;
-
 @interface GEOPDPlaceRequest : PBRequest <NSCopying> {
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEOPDClientMetadata *_clientMetadata;
@@ -19,19 +17,19 @@
     BOOL _suppressResultsRequiringAttribution;
 }
 
-@property(retain) GEOPDAnalyticMetadata * analyticMetadata;
-@property(retain) GEOPDClientMetadata * clientMetadata;
-@property(retain) NSMutableArray * displayLocales;
-@property(readonly) BOOL hasAnalyticMetadata;
-@property(readonly) BOOL hasClientMetadata;
-@property(readonly) BOOL hasPlaceRequestParameters;
-@property BOOL hasRequestType;
-@property BOOL hasSuppressResultsRequiringAttribution;
-@property(retain) GEOPDPlaceRequestParameters * placeRequestParameters;
-@property int requestType;
-@property(retain) NSMutableArray * requestedComponents;
-@property(retain) NSMutableArray * spokenLocales;
-@property BOOL suppressResultsRequiringAttribution;
+@property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
+@property (nonatomic, retain) GEOPDClientMetadata *clientMetadata;
+@property (nonatomic, retain) NSMutableArray *displayLocales;
+@property (nonatomic, readonly) BOOL hasAnalyticMetadata;
+@property (nonatomic, readonly) BOOL hasClientMetadata;
+@property (nonatomic, readonly) BOOL hasPlaceRequestParameters;
+@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic) BOOL hasSuppressResultsRequiringAttribution;
+@property (nonatomic, retain) GEOPDPlaceRequestParameters *placeRequestParameters;
+@property (nonatomic) int requestType;
+@property (nonatomic, retain) NSMutableArray *requestedComponents;
+@property (nonatomic, retain) NSMutableArray *spokenLocales;
+@property (nonatomic) BOOL suppressResultsRequiringAttribution;
 
 - (void)addDisplayLocale:(id)arg1;
 - (void)addRequestedComponent:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSDateTimeUTCValue : ICSDateTimeValue {
-}
+@interface ICSDateTimeUTCValue : ICSDateTimeValue
 
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 

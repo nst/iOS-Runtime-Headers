@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableIndexSet, NSString, UIColor;
-
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
     NSMutableIndexSet *_checkedRows;
     float _lastClickedOffset;
@@ -44,15 +42,15 @@
     } _visibleRect;
 }
 
-@property(getter=_textColor,setter=_setTextColor:,retain) UIColor * _textColor;
-@property(getter=_usesModernStyle,setter=_setUsesModernStyle:) BOOL _usesModernStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int lastSelectedRow;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionBarRect;
-@property int selectionBarRow;
-@property(readonly) Class superclass;
+@property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *_textColor;
+@property (getter=_usesModernStyle, setter=_setUsesModernStyle:) BOOL _usesModernStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int lastSelectedRow;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionBarRect;
+@property (nonatomic) int selectionBarRow;
+@property (readonly) Class superclass;
 
 - (id)_anyDateLabel;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;

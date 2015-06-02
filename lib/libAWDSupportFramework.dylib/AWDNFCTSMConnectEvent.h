@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCTSMConnectEvent : PBCodable <NSCopying> {
     BOOL _connected;
     struct { 
@@ -18,16 +16,16 @@
     NSData *_uuidReference;
 }
 
-@property BOOL connected;
-@property BOOL hasConnected;
-@property BOOL hasHttpStatus;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned int httpStatus;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
+@property (nonatomic) BOOL connected;
+@property (nonatomic) BOOL hasConnected;
+@property (nonatomic) BOOL hasHttpStatus;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned int httpStatus;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (BOOL)connected;
 - (void)copyTo:(id)arg1;

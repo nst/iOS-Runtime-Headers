@@ -2,24 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDStrokePattern : NSObject <NSCopying, TSDMixing> {
     unsigned int mCount;
-    float mPattern[6];
+    float mPattern;
     float mPhase;
     int mType;
 }
 
-@property(readonly) unsigned int count;
-@property(readonly) BOOL isDash;
-@property(readonly) BOOL isRoundDash;
-@property(readonly) float* pattern;
-@property(readonly) int patternType;
-@property(readonly) float phase;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) BOOL isDash;
+@property (nonatomic, readonly) BOOL isRoundDash;
+@property (nonatomic, readonly) float*pattern;
+@property (nonatomic, readonly) int patternType;
+@property (nonatomic, readonly) float phase;
 
 + (id)dashPatternWithSpacing:(float)arg1;
 + (id)emptyPattern;

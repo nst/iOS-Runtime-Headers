@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreCECDevice;
-
 @interface CoreCECDeviceProvider : CoreCECDevice {
     unsigned short _deckStatusRequestMask;
     unsigned char _sendFromAddress;
@@ -51,8 +49,8 @@
     } _userControlInitiatorState;
 }
 
-@property(readonly) unsigned short deckStatusRequestMask;
-@property unsigned char sendFromAddress;
+@property (nonatomic, readonly) unsigned short deckStatusRequestMask;
+@property (nonatomic) unsigned char sendFromAddress;
 
 + (BOOL)supportsSecureCoding;
 

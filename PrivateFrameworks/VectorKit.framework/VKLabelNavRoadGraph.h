@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface VKLabelNavRoadGraph : NSObject {
     unsigned int _currentRoadStartSimplifiedPointIndex;
     NSMutableSet *_duplicateTiles;
@@ -80,7 +73,7 @@
     } _unitHeading;
 }
 
-@property(retain) NSMutableArray * junctions;
+@property (nonatomic, retain) NSMutableArray *junctions;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

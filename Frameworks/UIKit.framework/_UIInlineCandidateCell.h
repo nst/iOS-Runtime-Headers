@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIFont;
-
 @interface _UIInlineCandidateCell : UIView {
     SEL _action;
     NSString *_candidate;

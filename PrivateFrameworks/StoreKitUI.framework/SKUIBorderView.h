@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
+@interface SKUIBorderView : UIView
 
-@interface SKUIBorderView : UIView {
-}
-
-@property(retain) UIColor * color;
+@property (nonatomic, retain) UIColor *color;
 
 - (id)color;
 - (void)setBackgroundColor:(id)arg1;

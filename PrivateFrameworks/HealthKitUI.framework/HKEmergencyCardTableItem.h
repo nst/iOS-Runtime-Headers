@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class UIViewController, _HKMedicalIDData;
-
 @interface HKEmergencyCardTableItem : NSObject {
     _HKMedicalIDData *_data;
     BOOL _isInEditMode;
     UIViewController *_owningViewController;
 }
 
-@property(retain) _HKMedicalIDData * data;
-@property(readonly) BOOL isInEditMode;
-@property UIViewController * owningViewController;
+@property (nonatomic, retain) _HKMedicalIDData *data;
+@property (nonatomic, readonly) BOOL isInEditMode;
+@property (nonatomic) UIViewController *owningViewController;
 
 - (void).cxx_destruct;
 - (id)_dequeueNoValueCellInTableView:(id)arg1 withTitle:(id)arg2;

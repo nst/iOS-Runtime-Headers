@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKBShadowEffect : NSObject <UIKBRenderEffect> {
     NSString *_colorName;
     struct UIEdgeInsets { 
@@ -25,17 +23,17 @@
     float _weight;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } concaveInsets;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property(readonly) BOOL isValid;
-@property struct CGSize { float x1; float x2; } offset;
-@property(readonly) SEL renderSelector;
-@property(readonly) BOOL renderUnder;
-@property(readonly) Class superclass;
-@property float weight;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } concaveInsets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic) struct CGSize { float x1; float x2; } offset;
+@property (nonatomic, readonly) SEL renderSelector;
+@property (nonatomic, readonly) BOOL renderUnder;
+@property (readonly) Class superclass;
+@property (nonatomic) float weight;
 
 + (id)effectWithColor:(id)arg1 offset:(struct CGSize { float x1; float x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 weight:(float)arg4;
 

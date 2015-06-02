@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVPlayerItemErrorLog, NSArray, NSData;
-
 @interface MPMovieErrorLog : NSObject <NSCopying> {
     AVPlayerItemErrorLog *_errorLog;
 }
 
-@property(readonly) NSArray * events;
-@property(readonly) NSData * extendedLogData;
-@property(readonly) unsigned int extendedLogDataStringEncoding;
+@property (nonatomic, readonly) NSArray *events;
+@property (nonatomic, readonly) NSData *extendedLogData;
+@property (nonatomic, readonly) unsigned int extendedLogDataStringEncoding;
 
 - (void).cxx_destruct;
 - (id)_initWithAVItemErrorLog:(id)arg1;

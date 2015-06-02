@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSMutableArray, NSNumber;
-
 @interface PKCatalogGroup : NSObject <NSCopying, NSSecureCoding> {
     NSNumber *_groupID;
     NSMutableArray *_uniqueIDs;
 }
 
-@property(retain) NSNumber * groupID;
-@property(retain) NSMutableArray * uniqueIDs;
+@property (nonatomic, retain) NSNumber *groupID;
+@property (nonatomic, retain) NSMutableArray *uniqueIDs;
 
 + (BOOL)supportsSecureCoding;
 

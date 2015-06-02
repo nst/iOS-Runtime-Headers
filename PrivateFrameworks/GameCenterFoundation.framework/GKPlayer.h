@@ -2,65 +2,62 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGame, GKPlayerInternal, NSArray, NSAttributedString, NSDate, NSString;
-
 @interface GKPlayer : NSObject <NSCoding, NSSecureCoding> {
     NSArray *_friends;
     GKPlayerInternal *_internal;
     NSAttributedString *_whenString;
 }
 
-@property(copy) NSString * alias;
-@property(readonly) NSString * cacheKey;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * firstName;
-@property(retain) NSArray * friends;
-@property(readonly) BOOL hasPhoto;
-@property(retain) GKPlayerInternal * internal;
-@property(readonly) BOOL isAnonymousPlayer;
-@property(readonly) BOOL isAutomatchPlayer;
-@property(readonly) BOOL isFamiliarFriend;
-@property BOOL isFriend;
-@property(readonly) BOOL isFriendRecommendation;
-@property(readonly) BOOL isLocalPlayer;
-@property(readonly) BOOL isUnknownPlayer;
-@property(readonly) NSString * lastName;
-@property(readonly) NSDate * lastPlayedDate;
-@property(readonly) GKGame * lastPlayedGame;
-@property(getter=isLoaded,readonly) BOOL loaded;
-@property unsigned int numberOfFriends;
-@property(retain) NSString * playerID;
-@property(retain) NSString * reason;
-@property(retain) NSString * reason2;
-@property(readonly) NSString * referenceKey;
-@property unsigned int rid;
-@property int source;
-@property(readonly) struct { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; } stats;
-@property(copy) NSString * status;
-@property(retain) NSAttributedString * whenString;
+@property (nonatomic, copy) NSString *alias;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, readonly) BOOL hasPhoto;
+@property (retain) GKPlayerInternal *internal;
+@property (nonatomic, readonly) BOOL isAnonymousPlayer;
+@property (nonatomic, readonly) BOOL isAutomatchPlayer;
+@property (nonatomic, readonly) BOOL isFamiliarFriend;
+@property (nonatomic) BOOL isFriend;
+@property (nonatomic, readonly) BOOL isFriendRecommendation;
+@property (nonatomic, readonly) BOOL isLocalPlayer;
+@property (nonatomic, readonly) BOOL isUnknownPlayer;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSDate *lastPlayedDate;
+@property (nonatomic, readonly) GKGame *lastPlayedGame;
+@property (getter=isLoaded, nonatomic, readonly) BOOL loaded;
+@property (nonatomic) unsigned int numberOfFriends;
+@property (nonatomic, retain) NSString *playerID;
+@property (nonatomic, retain) NSString *reason;
+@property (nonatomic, retain) NSString *reason2;
+@property (readonly) NSString *referenceKey;
+@property (nonatomic) unsigned int rid;
+@property (nonatomic) int source;
+@property (nonatomic, readonly) struct { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; } stats;
+@property (nonatomic, copy) NSString *status;
+@property (nonatomic, retain) NSAttributedString *whenString;
 
-+ (void)_loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
++ (void)_loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (id)anonymousPlayer;
 + (id)automatchPlayer;
 + (id)cacheKeyForPlayerID:(id)arg1;
 + (id)canonicalizedPlayerForInternal:(id)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
-+ (void)loadCompletePlayersForPlayers:(id)arg1 completionHandler:(id)arg2;
-+ (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
-+ (void)loadPlayersForLegacyIdentifiers:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)loadCompletePlayersForPlayers:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)loadPlayersForIdentifiers:(id)arg1 withCompletionHandler:(id /* block */)arg2;
++ (void)loadPlayersForLegacyIdentifiers:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (id)playerFromPlayerID:(id)arg1;
-+ (void)preloadImagesForPlayers:(id)arg1 size:(int)arg2;
-+ (int)sizeForPhotoSize:(int)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)unknownPlayer;
 
-- (void)_loadPhotoForSize:(int)arg1 withCompletionHandler:(id)arg2;
 - (void)_postChangeNotification;
-- (void)acceptFriendRequestWithCompletionHandler:(id)arg1;
+- (void)acceptFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)cacheKey;
 - (void)dealloc;
-- (void)declineFriendRequestWithCompletionHandler:(id)arg1;
+- (void)declineFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)description;
 - (id)displayName;
 - (id)displayNameWithOptions:(unsigned char)arg1;
@@ -71,8 +68,6 @@
 - (id)friends;
 - (BOOL)hasPhoto;
 - (unsigned int)hash;
-- (id)imageSourceForPlaceholders;
-- (id)imageURLForPhotoSizeList;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
@@ -82,19 +77,15 @@
 - (BOOL)isFriendRecommendation;
 - (BOOL)isFriendablePlayer;
 - (id)lastPlayedGame;
-- (void)loadCommonFriends:(BOOL)arg1 asPlayersWithCompletionHandler:(id)arg2;
-- (void)loadFriendsAsPlayersWithCompletionHandler:(id)arg1;
-- (void)loadGamesPlayed:(id)arg1;
-- (void)loadGamesPlayedDetailsWithCompletionHandler:(id)arg1;
-- (void)loadGamesPlayedIncludingInstalledGames:(BOOL)arg1 completionHandler:(id)arg2;
-- (void)loadPhotoForSize:(int)arg1 withCompletionHandler:(id)arg2;
-- (void)loadProfileWithCompletionHandler:(id)arg1;
-- (void)loadRecentMatchesForGame:(id)arg1 block:(id)arg2;
+- (void)loadCommonFriends:(BOOL)arg1 asPlayersWithCompletionHandler:(id /* block */)arg2;
+- (void)loadFriendsAsPlayersWithCompletionHandler:(id /* block */)arg1;
+- (void)loadGamesPlayed:(id /* block */)arg1;
+- (void)loadGamesPlayedDetailsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadGamesPlayedIncludingInstalledGames:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadProfileWithCompletionHandler:(id /* block */)arg1;
+- (void)loadRecentMatchesForGame:(id)arg1 block:(id /* block */)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)minimalPlayer;
-- (id)photoURLForSize:(int)arg1;
-- (id)placeholderImage;
-- (id)placeholderImageForType:(unsigned char)arg1;
 - (id)playerID;
 - (void)postChangeNotification;
 - (id)referenceKey;
@@ -107,5 +98,18 @@
 - (struct { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; int x9; })stats;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)whenString;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
++ (void)preloadImagesForPlayers:(id)arg1 size:(int)arg2;
++ (int)sizeForPhotoSize:(int)arg1;
+
+- (void)_loadPhotoForSize:(int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)imageSourceForPlaceholders;
+- (id)imageURLForPhotoSizeList;
+- (void)loadPhotoForSize:(int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)photoURLForSize:(int)arg1;
+- (id)placeholderImage;
+- (id)placeholderImageForType:(unsigned char)arg1;
 
 @end

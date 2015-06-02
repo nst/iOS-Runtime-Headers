@@ -2,34 +2,27 @@
    Image: /usr/lib/libmecabra.dylib
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface MecabraCandidate : NSObject <NSCopying> {
     void *_rawCandidate;
 }
 
-@property(readonly) NSString * analysisString;
-@property(readonly) NSString * convertedAnalysisString;
-@property(readonly) NSString * dictionaryReading;
-@property(readonly) BOOL isAutocorrectedCandidate;
-@property(readonly) BOOL isConversionCandidate;
-@property(readonly) BOOL isEmojiCandidate;
-@property(readonly) BOOL isExtensionCandidate;
-@property(readonly) BOOL isFuzzyMatchCandidate;
-@property(readonly) BOOL isLearningDictionaryCandidate;
-@property(readonly) BOOL isPersonName;
-@property(readonly) BOOL isPredictionCandidate;
-@property(readonly) BOOL isUserWordCandidate;
-@property(readonly) struct MecabraCandidateBase { int (**x1)(); int x2; }* rawCandidate;
-@property(readonly) struct ConversionCandidate { int (**x1)(); int x2; }* rawConversionCandidate;
-@property(readonly) NSString * surface;
-@property(readonly) int type;
-@property(readonly) unsigned int wordCount;
+@property (nonatomic, readonly) NSString *analysisString;
+@property (nonatomic, readonly) NSString *convertedAnalysisString;
+@property (nonatomic, readonly) NSString *dictionaryReading;
+@property (nonatomic, readonly) BOOL isAutocorrectedCandidate;
+@property (nonatomic, readonly) BOOL isConversionCandidate;
+@property (nonatomic, readonly) BOOL isEmojiCandidate;
+@property (nonatomic, readonly) BOOL isExtensionCandidate;
+@property (nonatomic, readonly) BOOL isFuzzyMatchCandidate;
+@property (nonatomic, readonly) BOOL isLearningDictionaryCandidate;
+@property (nonatomic, readonly) BOOL isPersonName;
+@property (nonatomic, readonly) BOOL isPredictionCandidate;
+@property (nonatomic, readonly) BOOL isUserWordCandidate;
+@property (nonatomic, readonly) struct MecabraCandidateBase { int (**x1)(); int x2; }*rawCandidate;
+@property (nonatomic, readonly) struct ConversionCandidate { int (**x1)(); int x2; }*rawConversionCandidate;
+@property (nonatomic, readonly) NSString *surface;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) unsigned int wordCount;
 
 + (id)createSyntheticCandidate:(id)arg1 withLexicon:(void*)arg2 language:(int)arg3;
 

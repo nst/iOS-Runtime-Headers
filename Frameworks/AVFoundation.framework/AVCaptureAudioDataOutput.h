@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVCaptureAudioDataOutputSampleBufferDelegate>, AVCaptureAudioDataOutputInternal, NSObject<OS_dispatch_queue>;
-
 @interface AVCaptureAudioDataOutput : AVCaptureOutput {
     AVCaptureAudioDataOutputInternal *_internal;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * sampleBufferCallbackQueue;
-@property(readonly) <AVCaptureAudioDataOutputSampleBufferDelegate> * sampleBufferDelegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *sampleBufferCallbackQueue;
+@property (nonatomic, readonly) <AVCaptureAudioDataOutputSampleBufferDelegate> *sampleBufferDelegate;
 
 + (id)alloc;
 + (void)initialize;

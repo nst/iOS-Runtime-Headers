@@ -7,10 +7,10 @@
     int mType;
 }
 
-@property(readonly) unsigned int index;
-@property(readonly) BOOL isReferenceLine;
-@property(readonly) BOOL isSeries;
-@property(readonly) int type;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) BOOL isReferenceLine;
+@property (nonatomic, readonly) BOOL isSeries;
+@property (nonatomic, readonly) int type;
 
 + (id)styleSemanticTagWithType:(int)arg1 index:(unsigned int)arg2;
 

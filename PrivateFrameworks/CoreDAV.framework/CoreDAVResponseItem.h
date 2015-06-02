@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVErrorItem, CoreDAVItemWithHrefChildItem, CoreDAVLeafItem, CoreDAVMatchResultsItem, NSMutableArray, NSMutableSet;
-
 @interface CoreDAVResponseItem : CoreDAVItem {
     CoreDAVErrorItem *_errorItem;
     NSMutableArray *_hrefs;
@@ -15,14 +13,14 @@
     CoreDAVLeafItem *_status;
 }
 
-@property(retain) CoreDAVErrorItem * errorItem;
-@property(retain) NSMutableArray * hrefs;
-@property(retain) CoreDAVItemWithHrefChildItem * location;
-@property(retain) CoreDAVMatchResultsItem * matchResults;
-@property(retain) NSMutableSet * propStats;
-@property(retain) CoreDAVLeafItem * responseDescription;
-@property(retain) CoreDAVLeafItem * serverUID;
-@property(retain) CoreDAVLeafItem * status;
+@property (nonatomic, retain) CoreDAVErrorItem *errorItem;
+@property (nonatomic, retain) NSMutableArray *hrefs;
+@property (nonatomic, retain) CoreDAVItemWithHrefChildItem *location;
+@property (nonatomic, retain) CoreDAVMatchResultsItem *matchResults;
+@property (nonatomic, retain) NSMutableSet *propStats;
+@property (nonatomic, retain) CoreDAVLeafItem *responseDescription;
+@property (nonatomic, retain) CoreDAVLeafItem *serverUID;
+@property (nonatomic, retain) CoreDAVLeafItem *status;
 
 + (id)copyParseRules;
 

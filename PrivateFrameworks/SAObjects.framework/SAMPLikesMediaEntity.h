@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPLikesMediaEntity : SABaseClientBoundCommand {
-}
+@interface SAMPLikesMediaEntity : SABaseClientBoundCommand
 
 + (id)likesMediaEntity;
 + (id)likesMediaEntityWithDictionary:(id)arg1 context:(id)arg2;

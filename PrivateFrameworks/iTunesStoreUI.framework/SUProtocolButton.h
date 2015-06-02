@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSString, NSURL;
-
 @interface SUProtocolButton : NSObject <NSCopying> {
     NSDictionary *_buttonDictionary;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSDictionary * buttonDictionary;
-@property(readonly) NSString * buttonLocation;
-@property(readonly) NSString * buttonTarget;
-@property(readonly) NSString * buttonTitle;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSDictionary *buttonDictionary;
+@property (nonatomic, readonly) NSString *buttonLocation;
+@property (nonatomic, readonly) NSString *buttonTarget;
+@property (nonatomic, readonly) NSString *buttonTitle;
 
 - (id)URL;
 - (id)buttonDictionary;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFPhoneFont : MFFont {
-}
+@interface MFPhoneFont : MFFont
 
 - (struct __CTFont { }*)createCTFontEquivalent;
 

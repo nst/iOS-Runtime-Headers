@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReferenceCollection, EDWorkbook;
-
 @interface CHDFormula : EDFormula {
     EDReferenceCollection *mReferences;
     EDWorkbook *mWorkbook;

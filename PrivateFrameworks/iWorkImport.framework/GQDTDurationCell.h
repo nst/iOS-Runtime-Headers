@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDTComputedFormatSpec;
-
 @interface GQDTDurationCell : GQDTCell {
     GQDTComputedFormatSpec *mComputedFormat;
     struct __CFBundle { } *mProcessorBundle;

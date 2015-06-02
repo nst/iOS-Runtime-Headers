@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPrintPanelViewController;
-
 @interface UIPrintPanelTableViewController : UITableViewController {
     BOOL _contactingPrinter;
     int _copiesRow;

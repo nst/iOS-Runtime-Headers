@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface CNDate : NSObject {
-}
+@interface CNDate : NSObject
 
 + (id)componentsFromDate:(id)arg1;
 + (id)componentsFromDate:(id)arg1 calendar:(id)arg2;

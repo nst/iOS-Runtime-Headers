@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptTweetComposeViewController : SUScriptViewController {
-}
+@interface SUScriptTweetComposeViewController : SUScriptViewController
 
-@property(readonly) id canSendTweet;
+@property (readonly) id canSendTweet;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

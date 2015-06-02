@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIBookViewControllerDelegate>, UIView, UIViewController;
-
 @interface UIBookViewController : UIViewController {
     int _animatedPageTurns;
     struct UIEdgeInsets { 
@@ -23,12 +21,12 @@
     float _turnMargin;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property <UIBookViewControllerDelegate> * delegate;
-@property(retain) UIViewController * evenPage;
-@property(retain) UIViewController * oddPage;
-@property double turnDuration;
-@property float turnMargin;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) <UIBookViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UIViewController *evenPage;
+@property (nonatomic, retain) UIViewController *oddPage;
+@property (nonatomic) double turnDuration;
+@property (nonatomic) float turnMargin;
 
 - (void)_positionPage:(id)arg1 isLeft:(BOOL)arg2;
 - (void)_setNewPage:(id)arg1 isLeft:(BOOL)arg2;

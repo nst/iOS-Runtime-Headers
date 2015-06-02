@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIRemoteApplication : NSObject {
     NSString *_machServiceName;
     unsigned int _port;

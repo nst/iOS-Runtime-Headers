@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSArray, NSString;
-
 @interface GEOResourceInfo : NSObject {
     BOOL _allowResumingPartialDownload;
     NSString *_checksum;
@@ -12,11 +10,11 @@
     int _type;
 }
 
-@property(getter=_allowResumingPartialDownload,setter=_setAllowResumingPartialDownload:) BOOL allowResumingPartialDownload;
-@property(readonly) NSString * checksum;
-@property(copy) NSArray * equivalentResources;
-@property(readonly) NSString * name;
-@property(readonly) int type;
+@property (getter=_allowResumingPartialDownload, setter=_setAllowResumingPartialDownload:, nonatomic) BOOL allowResumingPartialDownload;
+@property (nonatomic, readonly) NSString *checksum;
+@property (nonatomic, copy) NSArray *equivalentResources;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int type;
 
 - (BOOL)_allowResumingPartialDownload;
 - (void)_setAllowResumingPartialDownload:(BOOL)arg1;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSString;
-
 @interface CKReference : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
     CKRecordID *_recordID;
     unsigned int _referenceAction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) CKRecordID * recordID;
-@property(readonly) unsigned int referenceAction;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) CKRecordID *recordID;
+@property (nonatomic, readonly) unsigned int referenceAction;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

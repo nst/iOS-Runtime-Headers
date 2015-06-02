@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDeadlineScheduler, NSString;
-
 @interface BRCFSDownloader : BRCFSSchedulerBase <BRCModule> {
     BRCDeadlineScheduler *_downloadsDeadlineScheduler;
     BOOL _initialKickDone;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BRCDeadlineScheduler * downloadsDeadlineScheduler;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BRCDeadlineScheduler *downloadsDeadlineScheduler;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelThrottles:(id)arg1 state:(int)arg2;
@@ -51,7 +49,7 @@
 - (void)scheduleContentDownloadForItem:(id)arg1 serverItem:(id)arg2;
 - (void)scheduleLosersDownloadForItem:(id)arg1 serverItem:(id)arg2 purgeStaleEntries:(BOOL)arg3 applySchedulerState:(int*)arg4;
 - (void)scheduleThumbnailDownloadForItem:(id)arg1 serverItem:(id)arg2 applySchedulerState:(int*)arg3;
-- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id)arg4;
+- (void)sendBatchForSyncContext:(id)arg1 maxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (BOOL)shouldScheduleLosersEvictionForItem:(id)arg1;
 - (void)suspend;
 - (void)updateContentDownloadForMetaOnlyChange:(id)arg1 fromEtag:(id)arg2 toEtag:(id)arg3;

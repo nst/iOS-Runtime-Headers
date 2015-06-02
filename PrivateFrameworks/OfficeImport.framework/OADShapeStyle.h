@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFontReference, OADStyleMatrixReference;
-
 @interface OADShapeStyle : NSObject <NSCopying> {
     OADStyleMatrixReference *mEffectReference;
     OADStyleMatrixReference *mFillReference;

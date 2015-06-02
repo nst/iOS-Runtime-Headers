@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class <NSXPCProxyCreating>, <_HKActiveWorkoutDelegate>, <_HKActiveWorkoutLifecycleDelegate>, NSData, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface _HKActiveWorkout : HKWorkout <_HKActiveWorkoutClient> {
     NSMutableData *_associatedObjectUUIDData;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -18,17 +16,17 @@
     int _workoutState;
 }
 
-@property(getter=_associatedObjectUUIDData,readonly) NSData * associatedObjectUUIDData;
-@property(copy,readonly) NSString * debugDescription;
-@property <_HKActiveWorkoutDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=_lifecycleDelegate,setter=_setLifecycleDelegate:) <_HKActiveWorkoutLifecycleDelegate> * lifecycleDelegate;
-@property(readonly) NSDictionary * resumeDataByType;
-@property(readonly) int serverState;
-@property(getter=_shouldUseDeviceData,readonly) BOOL shouldUseDeviceData;
-@property(readonly) Class superclass;
-@property(readonly) int workoutState;
+@property (getter=_associatedObjectUUIDData, readonly) NSData *associatedObjectUUIDData;
+@property (readonly, copy) NSString *debugDescription;
+@property <_HKActiveWorkoutDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=_lifecycleDelegate, setter=_setLifecycleDelegate:) <_HKActiveWorkoutLifecycleDelegate> *lifecycleDelegate;
+@property (readonly) NSDictionary *resumeDataByType;
+@property (readonly) int serverState;
+@property (getter=_shouldUseDeviceData, readonly) BOOL shouldUseDeviceData;
+@property (readonly) Class superclass;
+@property (readonly) int workoutState;
 
 + (id)_clientInterface;
 + (id)_serverInterface;
@@ -38,7 +36,7 @@
 - (void).cxx_destruct;
 - (void)_addSamples:(id)arg1;
 - (id)_associatedObjectUUIDData;
-- (void)_attachServerWithClientQueue:(id)arg1 lifecycleDelegate:(id)arg2 connection:(id)arg3 completion:(id)arg4;
+- (void)_attachServerWithClientQueue:(id)arg1 lifecycleDelegate:(id)arg2 connection:(id)arg3 completion:(id /* block */)arg4;
 - (void)_connectionDidEncounterError:(id)arg1;
 - (void)_handleWorkoutPausedWithDate:(id)arg1;
 - (id)_inactiveCopy;
@@ -66,20 +64,20 @@
 - (void)_setTotalDistance:(id)arg1;
 - (void)_setTotalEnergyBurned:(id)arg1;
 - (BOOL)_shouldUseDeviceData;
-- (id)_workoutServerWithErrorHandler:(id)arg1;
-- (void)activateWorkoutWithCompletion:(id)arg1;
+- (id)_workoutServerWithErrorHandler:(id /* block */)arg1;
+- (void)activateWorkoutWithCompletion:(id /* block */)arg1;
 - (id)delegate;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (void)endWorkoutWithDate:(id)arg1 completion:(id)arg2;
-- (void)endWorkoutWithDate:(id)arg1 metadata:(id)arg2 completion:(id)arg3;
+- (void)endWorkoutWithDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)endWorkoutWithDate:(id)arg1 metadata:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)metadata;
-- (void)pauseWorkoutWithDate:(id)arg1 completion:(id)arg2;
+- (void)pauseWorkoutWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)resumeDataByType;
-- (void)resumeWorkoutFromDate:(id)arg1 completion:(id)arg2;
-- (void)serverPausedWithDate:(id)arg1 completion:(id)arg2;
+- (void)resumeWorkoutFromDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)serverPausedWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (int)serverState;
 - (void)setDelegate:(id)arg1;
 - (id)totalDistance;

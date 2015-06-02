@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSString;
+@interface PQLRawInjection : PQLNameInjectionBase <PQLInjecting>
 
-@interface PQLRawInjection : PQLNameInjectionBase <PQLInjecting> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * sql;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *sql;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 + (id)rawInjection:(const char *)arg1 length:(unsigned long)arg2;

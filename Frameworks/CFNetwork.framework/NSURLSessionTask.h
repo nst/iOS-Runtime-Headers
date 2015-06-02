@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSError, NSObject<OS_dispatch_queue>, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSession, NSValue;
-
 @interface NSURLSessionTask : NSObject <NSCopying> {
     unsigned long __allowedProtocolTypes;
     bool __allowsCellular;
@@ -68,63 +61,63 @@
 
 @property unsigned long _allowedProtocolTypes;
 @property bool _allowsCellular;
-@property(copy) NSDictionary * _backgroundTaskTimingData;
-@property(retain) NSString * _boundInterfaceIdentifier;
+@property (nonatomic, copy) NSDictionary *_backgroundTaskTimingData;
+@property (retain) NSString *_boundInterfaceIdentifier;
 @property int _cachePolicy;
-@property(retain) struct _CFURLCache { }* _cfCache;
-@property(retain) struct OpaqueCFHTTPCookieStorage { }* _cfCookies;
-@property(retain) struct _CFURLCredentialStorage { }* _cfCreds;
-@property(retain) struct _CFHSTSPolicy { }* _cfHSTS;
-@property(setter=_setConnectionIsCellular:) BOOL _connectionIsCellular;
-@property(copy) NSValue * _connectionPropertyDuet;
-@property(retain) NSArray * _contentDispositionFallbackArray;
+@property (retain) struct _CFURLCache { }*_cfCache;
+@property (retain) struct OpaqueCFHTTPCookieStorage { }*_cfCookies;
+@property (retain) struct _CFURLCredentialStorage { }*_cfCreds;
+@property (retain) struct _CFHSTSPolicy { }*_cfHSTS;
+@property (setter=_setConnectionIsCellular:) BOOL _connectionIsCellular;
+@property (copy) NSValue *_connectionPropertyDuet;
+@property (retain) NSArray *_contentDispositionFallbackArray;
 @property int _cookieAcceptPolicy;
-@property(retain) struct _CFURLRequest { }* _currentCFURLRequest;
+@property (retain) struct _CFURLRequest { }*_currentCFURLRequest;
 @property bool _disallowCellular;
 @property long long _expectedWorkload;
-@property(copy) NSURL * _ledBellyFallbackURL;
-@property(copy) NSString * _ledBellyServiceIdentifier;
-@property(retain) NSDictionary * _legacySocketStreamProperties;
+@property (copy) NSURL *_ledBellyFallbackURL;
+@property (copy) NSString *_ledBellyServiceIdentifier;
+@property (retain) NSDictionary *_legacySocketStreamProperties;
 @property int _networkServiceType;
-@property struct __PerformanceTiming { }* _performanceTiming;
+@property (nonatomic) struct __PerformanceTiming { }*_performanceTiming;
 @property unsigned int _powerAssertion;
 @property bool _preventsIdleSystemSleep;
 @property long long _priority;
 @property float _priorityHint;
 @property long long _priorityValue;
 @property BOOL _prohibitAuthUI;
-@property id _protocolForTask;
-@property(retain) NSDictionary * _proxySettings;
+@property (nonatomic) id _protocolForTask;
+@property (retain) NSDictionary *_proxySettings;
 @property long _requestPriority;
 @property bool _shouldHandleCookies;
 @property bool _shouldPipelineHTTP;
 @property bool _shouldSkipPipelineProbe;
 @property BOOL _shouldSkipPreferredClientCertificateLookup;
 @property bool _shouldUsePipelineHeuristics;
-@property(retain) NSDictionary * _sslSettings;
+@property (retain) NSDictionary *_sslSettings;
 @property BOOL _strictContentLength;
 @property long long _suspensionThreshhold;
 @property double _timeWindowDelay;
 @property double _timeWindowDuration;
 @property double _timeoutInterval;
-@property(copy) NSString * _uniqueIdentifier;
+@property (copy) NSString *_uniqueIdentifier;
 @property long long countOfBytesExpectedToReceive;
 @property long long countOfBytesExpectedToSend;
 @property long long countOfBytesReceived;
 @property long long countOfBytesSent;
-@property(copy,readonly) NSURLRequest * currentRequest;
-@property(retain,readonly) NSURL * currentRequest_URL;
-@property(copy) NSError * error;
-@property(copy) NSURLRequest * originalRequest;
-@property(retain,readonly) NSURL * originalRequest_mainDocumentURL;
+@property (readonly, copy) NSURLRequest *currentRequest;
+@property (readonly, retain) NSURL *currentRequest_URL;
+@property (copy) NSError *error;
+@property (copy) NSURLRequest *originalRequest;
+@property (readonly, retain) NSURL *originalRequest_mainDocumentURL;
 @property float priority;
-@property(copy) NSURLResponse * response;
-@property(retain) NSURLSession * session;
+@property (copy) NSURLResponse *response;
+@property (retain) NSURLSession *session;
 @property double startTime;
 @property int state;
-@property(copy) NSString * taskDescription;
+@property (copy) NSString *taskDescription;
 @property unsigned int taskIdentifier;
-@property NSObject<OS_dispatch_queue> * workQueue;
+@property NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)supportsSecureCoding;
 + (id)taskForWrappedRequest:(id)arg1;

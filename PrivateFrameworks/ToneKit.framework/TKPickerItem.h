@@ -6,7 +6,7 @@
     int _section;
 }
 
-@property int section;
+@property (nonatomic) int section;
 
 - (void)_appendDescriptionOfAttributeNamed:(id)arg1 withBoolValue:(BOOL)arg2 toString:(id)arg3;
 - (void)_appendDescriptionOfAttributeNamed:(id)arg1 withIntegerValue:(int)arg2 toString:(id)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKCartoStyle, VKStyleManager;
-
 @interface VKDrawStyle : NSObject {
     struct StyleData { 
         struct { 
@@ -264,8 +262,8 @@
     VKStyleManager *_styleManager;
 }
 
-@property(readonly) float blendingFactor;
-@property(readonly) id variant;
+@property (nonatomic, readonly) float blendingFactor;
+@property (nonatomic, readonly) id variant;
 
 + (int)renderStyleID;
 

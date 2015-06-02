@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableData, NSString;
-
 @interface MFDbJournal : NSObject {
     NSMutableData *_buffer;
     int _fd;

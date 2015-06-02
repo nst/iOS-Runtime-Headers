@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEReferenceResolver : NSObject {
-}
+@interface TSCEReferenceResolver : NSObject
 
 + (Class)resolverClass;
 + (id)resolverContainerMatchingName:(id)arg1 inDocumentRoot:(id)arg2;

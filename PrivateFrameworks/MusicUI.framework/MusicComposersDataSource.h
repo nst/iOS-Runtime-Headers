@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicComposersDataSource : MusicQueryDataSource {
-}
+@interface MusicComposersDataSource : MusicQueryDataSource
 
 - (id)entityCountFormat;
 - (BOOL)showsEntityCountFooter;

@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKUIDividedGridViewController, UIView;
-
 @interface EKUIDividedGridViewTableViewCell : UITableViewCell {
     UIView *_bottomDivider;
     EKUIDividedGridViewController *_gridViewController;
     UIView *_topDivider;
 }
 
-@property(retain) UIView * bottomDivider;
-@property BOOL drawsTopDivider;
-@property(retain) EKUIDividedGridViewController * gridViewController;
-@property(retain) UIView * topDivider;
+@property (nonatomic, retain) UIView *bottomDivider;
+@property (nonatomic) BOOL drawsTopDivider;
+@property (retain) EKUIDividedGridViewController *gridViewController;
+@property (nonatomic, retain) UIView *topDivider;
 
 - (void).cxx_destruct;
 - (BOOL)_isWiderThanMaximum;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface DiscLayer : CALayer {
-}
+@interface DiscLayer : CALayer
 
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 

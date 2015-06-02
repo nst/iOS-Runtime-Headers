@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, PMPresentationMapper, PMState;
-
 @interface PMTop : CMTop <OIProgressiveReaderDelegate> {
     CMArchiveManager *_archiver;
     PMPresentationMapper *_mapper;

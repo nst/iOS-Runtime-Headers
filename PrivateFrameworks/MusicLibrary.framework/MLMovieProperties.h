@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray, NSMutableDictionary, NSString;
-
 @interface MLMovieProperties : NSObject <NSCopying> {
     NSMutableDictionary *_dictionary;
 }
 
-@property(copy) NSArray * castMembers;
-@property(copy) NSString * copyrightWarning;
-@property(copy) NSArray * directors;
-@property(copy) NSArray * producers;
-@property(copy) NSArray * screenwriters;
-@property(copy) NSString * studioName;
+@property (nonatomic, copy) NSArray *castMembers;
+@property (nonatomic, copy) NSString *copyrightWarning;
+@property (nonatomic, copy) NSArray *directors;
+@property (nonatomic, copy) NSArray *producers;
+@property (nonatomic, copy) NSArray *screenwriters;
+@property (nonatomic, copy) NSString *studioName;
 
 - (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;

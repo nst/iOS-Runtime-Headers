@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSMutableAttributedString, NSString;
-
 @interface SKUIViewElementText : NSObject {
     NSMutableAttributedString *_attributedString;
     NSArray *_badges;
@@ -11,12 +9,12 @@
     NSArray *_trailingBadges;
 }
 
-@property(readonly) NSArray * badges;
-@property(readonly) NSString * string;
-@property(readonly) NSArray * trailingBadges;
+@property (nonatomic, readonly) NSArray *badges;
+@property (nonatomic, readonly) NSString *string;
+@property (nonatomic, readonly) NSArray *trailingBadges;
 
 - (void).cxx_destruct;
-- (void)_enumerateTextStylesUsingBlock:(id)arg1;
+- (void)_enumerateTextStylesUsingBlock:(id /* block */)arg1;
 - (id)_spanAttributeValueForDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)_stringFromDateElement:(id)arg1;
 - (id)_stringFromDurationElement:(id)arg1;

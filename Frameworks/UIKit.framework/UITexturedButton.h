@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITexturedButton : UIButton {
-}
+@interface UITexturedButton : UIButton
 
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)backgroundImageForState:(unsigned int)arg1;

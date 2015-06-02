@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface ODDFillColorList : NSObject {
     NSArray *mColors;
     int mHueDirection;

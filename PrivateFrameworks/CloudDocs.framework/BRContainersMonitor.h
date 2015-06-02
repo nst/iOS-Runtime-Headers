@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface BRContainersMonitor : NSObject {
     NSMutableDictionary *_notifyTokenByContainerID;
     NSMutableDictionary *_observersByContainerID;

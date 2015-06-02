@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion;
-
 @interface GEOPDBounds : PBCodable <NSCopying> {
     GEOMapRegion *_displayMapRegion;
     GEOMapRegion *_mapRegion;
 }
 
-@property(retain) GEOMapRegion * displayMapRegion;
-@property(readonly) BOOL hasDisplayMapRegion;
-@property(readonly) BOOL hasMapRegion;
-@property(retain) GEOMapRegion * mapRegion;
+@property (nonatomic, retain) GEOMapRegion *displayMapRegion;
+@property (nonatomic, readonly) BOOL hasDisplayMapRegion;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
 
 + (id)boundsInfoForPlaceData:(id)arg1;
 

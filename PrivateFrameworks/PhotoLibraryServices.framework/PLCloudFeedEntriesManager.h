@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLPhotoLibrary;
-
 @interface PLCloudFeedEntriesManager : NSObject {
     PLPhotoLibrary *__library;
 }
 
-@property(retain,readonly) PLPhotoLibrary * _library;
+@property (nonatomic, readonly, retain) PLPhotoLibrary *_library;
 
 + (id)sharedManager;
 
 - (void)_addAsset:(id)arg1 toEntry:(id)arg2;
 - (id)_albumCreatedEntryForSharedAlbum:(id)arg1;
-- (id)_assetSortingComparator;
+- (id /* block */)_assetSortingComparator;
 - (BOOL)_commentIsBatchCaption:(id)arg1;
-- (id)_commentSortingComparator;
+- (id /* block */)_commentSortingComparator;
 - (id)_dateForAsset:(id)arg1;
 - (id)_firstEntryAfterDate:(id)arg1;
 - (id)_firstEntryOnOrAfterDate:(id)arg1;
@@ -55,7 +53,7 @@
 - (BOOL)_wasCommentPublishedBeforeSubscription:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)processAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 completionHandler:(id)arg7;
-- (void)rebuildAllEntries:(id)arg1;
+- (void)processAlbumUpdates:(id)arg1 assetInserts:(id)arg2 assetUpdates:(id)arg3 commentInserts:(id)arg4 invitationRecordUpdates:(id)arg5 deletionEntries:(id)arg6 completionHandler:(id /* block */)arg7;
+- (void)rebuildAllEntries:(id /* block */)arg1;
 
 @end

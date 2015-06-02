@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSMapTable, NSString;
-
 @interface RadioPlayEventCollection : NSObject <NSCopying, NSMutableCopying> {
     NSString *_deviceName;
     NSMapTable *_stationInformationToPlayEvents;
 }
 
-@property(copy,readonly) NSString * deviceName;
+@property (nonatomic, readonly, copy) NSString *deviceName;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

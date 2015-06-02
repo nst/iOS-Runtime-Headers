@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString, PBUnknownFields;
-
 @interface GEOPDAutocompleteEntryHighlightLine : PBCodable <NSCopying> {
     NSString *_line;
     NSMutableArray *_spans;
     PBUnknownFields *_unknownFields;
 }
 
-@property(readonly) BOOL hasLine;
-@property(retain) NSString * line;
-@property(retain) NSMutableArray * spans;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, readonly) BOOL hasLine;
+@property (nonatomic, retain) NSString *line;
+@property (nonatomic, retain) NSMutableArray *spans;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)addSpan:(id)arg1;
 - (void)clearSpans;

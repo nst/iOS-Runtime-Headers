@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDResources, OADGraphicProperties;
-
 @interface CHDLegend : NSObject {
     unsigned int mFontIndex;
     OADGraphicProperties *mGraphicProperties;

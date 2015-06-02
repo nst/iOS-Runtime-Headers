@@ -2,21 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _GEOURLManifestListenerCallback : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     struct __CFRunLoop { } *_runLoop;
 }
 
 - (void)dealloc;
-- (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1 handler:(id)arg2;
+- (id)initWithRunLoop:(struct __CFRunLoop { }*)arg1 handler:(id /* block */)arg2;
 - (void)performHandler:(BOOL)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class <MSTrackListHeaderDelegate>, SUItem, SUItemOfferButton, SUReflectionImageView, SUTouchCaptureView, UIImage, UILabel;
-
 @interface MSTrackListHeaderView : UIView {
     UILabel *_albumLabel;
     UILabel *_artistLabel;
@@ -18,9 +16,9 @@
     SUTouchCaptureView *_touchCaptureView;
 }
 
-@property(retain) UIImage * artworkImage;
-@property <MSTrackListHeaderDelegate> * delegate;
-@property(retain) SUItem * item;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) <MSTrackListHeaderDelegate> *delegate;
+@property (nonatomic, retain) SUItem *item;
 
 - (void)_hidePurchaseConfirmation;
 - (id)_newGenericSmallFontLabel;

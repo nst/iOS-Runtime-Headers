@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKDGetSubscriptionsURLRequest : CKDURLRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _subscriptionFetchedBlock;
-
+    id /* block */ _subscriptionFetchedBlock;
     NSMutableDictionary *_subscriptionIDByRequestID;
     NSArray *_subscriptionIDs;
     NSMutableArray *_subscriptions;
 }
 
-@property(copy) id subscriptionFetchedBlock;
-@property(retain) NSMutableDictionary * subscriptionIDByRequestID;
-@property(retain) NSArray * subscriptionIDs;
-@property(retain) NSArray * subscriptions;
+@property (nonatomic, copy) id /* block */ subscriptionFetchedBlock;
+@property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;
+@property (nonatomic, retain) NSArray *subscriptionIDs;
+@property (nonatomic, retain) NSArray *subscriptions;
 
 - (void).cxx_destruct;
 - (id)initWithSubscriptionIDs:(id)arg1;
@@ -31,11 +21,11 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setSubscriptionFetchedBlock:(id)arg1;
+- (void)setSubscriptionFetchedBlock:(id /* block */)arg1;
 - (void)setSubscriptionIDByRequestID:(id)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (void)setSubscriptions:(id)arg1;
-- (id)subscriptionFetchedBlock;
+- (id /* block */)subscriptionFetchedBlock;
 - (id)subscriptionIDByRequestID;
 - (id)subscriptionIDs;
 - (id)subscriptions;

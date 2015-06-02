@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface SUMediaPlayerItem : NSObject <NSCopying> {
     NSURL *_backgroundImageURL;
     NSString *_bookmarkIdentifier;
@@ -18,18 +16,18 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) NSURL * backgroundImageURL;
-@property(copy) NSString * bookmarkIdentifier;
-@property double bookmarkedStartTime;
-@property(copy) NSArray * downloadPingURLs;
-@property int initialOrientation;
-@property unsigned long long itemIdentifier;
-@property int itemType;
-@property double playableDuration;
-@property(copy) NSArray * playbackPingURLs;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) NSURL *backgroundImageURL;
+@property (nonatomic, copy) NSString *bookmarkIdentifier;
+@property (nonatomic) double bookmarkedStartTime;
+@property (nonatomic, copy) NSArray *downloadPingURLs;
+@property (nonatomic) int initialOrientation;
+@property (nonatomic) unsigned long long itemIdentifier;
+@property (nonatomic) int itemType;
+@property (nonatomic) double playableDuration;
+@property (nonatomic, copy) NSArray *playbackPingURLs;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 - (id)URL;
 - (id)_newPingURLsWithArray:(id)arg1;

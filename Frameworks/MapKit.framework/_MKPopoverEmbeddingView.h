@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <_MKPopoverEmbeddingViewWindowDelegate>;
-
 @interface _MKPopoverEmbeddingView : UIView {
     <_MKPopoverEmbeddingViewWindowDelegate> *_windowDelegate;
 }
 
-@property <_MKPopoverEmbeddingViewWindowDelegate> * windowDelegate;
+@property (nonatomic) <_MKPopoverEmbeddingViewWindowDelegate> *windowDelegate;
 
 - (void).cxx_destruct;
 - (void)didMoveToWindow;

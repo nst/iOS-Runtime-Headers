@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPZone, NSString;
-
 @interface CKDPZoneSaveRequest : PBRequest <NSCopying> {
     NSString *_etag;
     CKDPZone *_recordZone;
     NSString *_zoneProtectionInfoTag;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasRecordZone;
-@property(readonly) BOOL hasZoneProtectionInfoTag;
-@property(retain) CKDPZone * recordZone;
-@property(retain) NSString * zoneProtectionInfoTag;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasRecordZone;
+@property (nonatomic, readonly) BOOL hasZoneProtectionInfoTag;
+@property (nonatomic, retain) CKDPZone *recordZone;
+@property (nonatomic, retain) NSString *zoneProtectionInfoTag;
 
 + (id)options;
 

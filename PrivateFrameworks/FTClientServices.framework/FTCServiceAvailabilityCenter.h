@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTClientServices.framework/FTClientServices
  */
 
-@class NSMutableDictionary;
-
 @interface FTCServiceAvailabilityCenter : NSObject {
     NSMutableDictionary *_availabilityHandlers;
 }

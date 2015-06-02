@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioURLConnectionRequest : SSURLConnectionRequest {
-}
+@interface RadioURLConnectionRequest : SSURLConnectionRequest
 
-- (void)startWithConnectionResponseBlock:(id)arg1;
+- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
 
 @end

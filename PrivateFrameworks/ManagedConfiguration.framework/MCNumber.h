@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber;
-
 @interface MCNumber : NSObject <NSSecureCoding> {
     NSNumber *_number;
 }
 
-@property(retain) NSNumber * number;
+@property (nonatomic, retain) NSNumber *number;
 
 + (id)numberWithInt:(int)arg1;
 + (id)numberWithInteger:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDNetworkUsage : PBCodable <NSCopying> {
     NSString *_bundleName;
     unsigned long long _cellIn;
@@ -20,18 +18,18 @@
     unsigned long long _wifiOut;
 }
 
-@property(retain) NSString * bundleName;
-@property unsigned long long cellIn;
-@property unsigned long long cellOut;
-@property(readonly) BOOL hasBundleName;
-@property BOOL hasCellIn;
-@property BOOL hasCellOut;
-@property BOOL hasNumConnections;
-@property BOOL hasWifiIn;
-@property BOOL hasWifiOut;
-@property unsigned int numConnections;
-@property unsigned long long wifiIn;
-@property unsigned long long wifiOut;
+@property (nonatomic, retain) NSString *bundleName;
+@property (nonatomic) unsigned long long cellIn;
+@property (nonatomic) unsigned long long cellOut;
+@property (nonatomic, readonly) BOOL hasBundleName;
+@property (nonatomic) BOOL hasCellIn;
+@property (nonatomic) BOOL hasCellOut;
+@property (nonatomic) BOOL hasNumConnections;
+@property (nonatomic) BOOL hasWifiIn;
+@property (nonatomic) BOOL hasWifiOut;
+@property (nonatomic) unsigned int numConnections;
+@property (nonatomic) unsigned long long wifiIn;
+@property (nonatomic) unsigned long long wifiOut;
 
 - (id)bundleName;
 - (unsigned long long)cellIn;

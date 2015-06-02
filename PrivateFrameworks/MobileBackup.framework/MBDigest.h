@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBDigest : NSObject {
-}
+@interface MBDigest : NSObject
 
 + (id)sha1;
 + (id)sha1ForData:(id)arg1;

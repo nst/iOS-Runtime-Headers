@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBFormField : NSObject {
-}
+@interface WBFormField : NSObject
 
 @end

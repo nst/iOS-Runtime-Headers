@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicMediaCellConfiguration : MusicCellConfiguration {
-}
+@interface MusicMediaCellConfiguration : MusicCellConfiguration
 
 + (void)configureCellForSizing:(id)arg1;
 + (BOOL)mediaCellConfigurationUsesSubtitle;

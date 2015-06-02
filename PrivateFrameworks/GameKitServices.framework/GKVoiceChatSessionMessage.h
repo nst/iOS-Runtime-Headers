@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSData;
-
 @interface GKVoiceChatSessionMessage : GKOOBMessage {
     unsigned int _conferenceID;
     NSData *_data;

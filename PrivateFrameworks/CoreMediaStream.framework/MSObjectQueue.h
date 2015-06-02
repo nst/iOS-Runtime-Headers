@@ -7,7 +7,7 @@
     struct __CFDictionary { } *_statements;
 }
 
-@property(readonly) long long count;
+@property (readonly) long long count;
 
 - (id)_objectWrapperFromQueueQuery:(struct sqlite3_stmt { }*)arg1 outSize:(long long*)arg2;
 - (struct sqlite3_stmt { }*)_statementLabel:(id)arg1 query:(const char *)arg2;

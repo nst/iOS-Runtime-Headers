@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class FBSUIApplicationLaunchResponse;
-
 @interface FBSUIApplicationLaunchResponseEvent : FBSWorkspaceEvent {
     FBSUIApplicationLaunchResponse *_response;
 }
 
-@property(retain) FBSUIApplicationLaunchResponse * response;
+@property (nonatomic, retain) FBSUIApplicationLaunchResponse *response;
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLFrameSetElement : DOMHTMLElement
 
-@interface DOMHTMLFrameSetElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * cols;
-@property(copy) NSString * rows;
+@property (copy) NSString *cols;
+@property (copy) NSString *rows;
 
 - (id)cols;
 - (id)rows;

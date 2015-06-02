@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSRegularExpression, NSString;
-
 @interface SUOverlayConfiguration : NSObject {
     NSRegularExpression *_bagKeyPattern;
     int _cornerRadius;
@@ -16,10 +14,10 @@
     NSRegularExpression *_urlPattern;
 }
 
-@property(readonly) int cornerRadius;
-@property(readonly) BOOL shouldShowNavigationBar;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) NSString * transitionName;
+@property (nonatomic, readonly) int cornerRadius;
+@property (nonatomic, readonly) BOOL shouldShowNavigationBar;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) NSString *transitionName;
 
 - (int)cornerRadius;
 - (void)dealloc;

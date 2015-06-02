@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString;
+@interface IMPreferredServiceManager : NSObject <IDSIDQueryControllerDelegate>
 
-@interface IMPreferredServiceManager : NSObject <IDSIDQueryControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)hasActiveiMessageAccount;
 + (BOOL)isiMessageAvailable;
@@ -25,12 +22,12 @@
 - (void)_handleLoginStatusChange:(id)arg1;
 - (void)_handleOperationalAccountsChanged:(id)arg1;
 - (unsigned int)_optionsForRecipients:(id)arg1 inChat:(id)arg2;
-- (id)_preferredServiceForHandles:(id)arg1 inChat:(id)arg2 newComposition:(BOOL)arg3 error:(char *)arg4 serverCheckCompletionBlock:(id)arg5;
-- (id)_preferredServiceForHandles:(id)arg1 options:(unsigned int)arg2 error:(char *)arg3 serverCheckCompletionBlock:(id)arg4;
+- (id)_preferredServiceForHandles:(id)arg1 inChat:(id)arg2 newComposition:(BOOL)arg3 error:(char *)arg4 serverCheckCompletionBlock:(id /* block */)arg5;
+- (id)_preferredServiceForHandles:(id)arg1 options:(unsigned int)arg2 error:(char *)arg3 serverCheckCompletionBlock:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
 - (void)notifyOfServiceAvailabilityChange;
-- (id)preferredServiceForHandles:(id)arg1 inChat:(id)arg2 newComposition:(BOOL)arg3 error:(char *)arg4 serverCheckCompletionBlock:(id)arg5;
-- (id)preferredServiceForHandles:(id)arg1 newComposition:(BOOL)arg2 error:(char *)arg3 serverCheckCompletionBlock:(id)arg4;
+- (id)preferredServiceForHandles:(id)arg1 inChat:(id)arg2 newComposition:(BOOL)arg3 error:(char *)arg4 serverCheckCompletionBlock:(id /* block */)arg5;
+- (id)preferredServiceForHandles:(id)arg1 newComposition:(BOOL)arg2 error:(char *)arg3 serverCheckCompletionBlock:(id /* block */)arg4;
 
 @end

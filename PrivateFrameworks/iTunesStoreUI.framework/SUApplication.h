@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIColor, UIWindow;
-
 @interface SUApplication : UIApplication <UIApplicationDelegate> {
     UIColor *_interactionTintColor;
     BOOL _terminateOnNextSuspend;
     UIWindow *_window;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) UIColor * interactionTintColor;
-@property(readonly) Class superclass;
-@property(retain) UIWindow * window;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) UIColor *interactionTintColor;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIWindow *window;
 
 - (void)_applicationDidFinishLaunching:(id)arg1;
 - (void)_exitForStoreNotAvailable;

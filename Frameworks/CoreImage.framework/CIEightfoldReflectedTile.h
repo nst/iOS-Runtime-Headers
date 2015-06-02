@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIEightfoldReflectedTile : CITileFilter {
-}
+@interface CIEightfoldReflectedTile : CITileFilter
 
 + (id)customAttributes;
 

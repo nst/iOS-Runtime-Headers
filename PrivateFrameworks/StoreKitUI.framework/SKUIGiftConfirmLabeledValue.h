@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIGiftDashView, UILabel;
-
 @interface SKUIGiftConfirmLabeledValue : UIView {
     SKUIGiftDashView *_dashView;
     UILabel *_labelLabel;
@@ -11,9 +9,9 @@
     UILabel *_valueLabel;
 }
 
-@property(readonly) int giftConfirmLabelStyle;
-@property(copy) NSString * label;
-@property(copy) NSString * value;
+@property (nonatomic, readonly) int giftConfirmLabelStyle;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *value;
 
 - (void).cxx_destruct;
 - (int)giftConfirmLabelStyle;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
+@interface SKUIShareTemplateViewElement : SKUIViewElement
 
-@interface SKUIShareTemplateViewElement : SKUIViewElement {
-}
-
-@property(readonly) NSArray * activities;
+@property (nonatomic, readonly) NSArray *activities;
 
 - (id)activities;
 - (id)activityForShareSheetActivityType:(id)arg1;

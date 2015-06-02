@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface _NSCoreDataException : NSException {
     long _code;
     NSString *_domain;

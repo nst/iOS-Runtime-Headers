@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSArray, NSMutableSet;
-
 @interface _NACAudioRoutesRecord : NSObject {
     NSArray *_audioRoutes;
     NSMutableSet *_observers;
 }
 
-@property(retain) NSArray * audioRoutes;
-@property(retain) NSMutableSet * observers;
+@property (nonatomic, retain) NSArray *audioRoutes;
+@property (nonatomic, retain) NSMutableSet *observers;
 
 - (void).cxx_destruct;
 - (id)audioRoutes;

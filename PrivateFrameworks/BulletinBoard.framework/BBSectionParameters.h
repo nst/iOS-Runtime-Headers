@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBSectionIcon, BBSectionSubtypeParameters, NSLock, NSMutableDictionary, NSString;
-
 @interface BBSectionParameters : NSObject <BBUniquableObject, NSSecureCoding> {
     NSMutableDictionary *_allSubtypeParameters;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
@@ -19,20 +17,20 @@
     BOOL _usesVariableLayout;
 }
 
-@property(retain) NSMutableDictionary * allSubtypeParameters;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) BBSectionSubtypeParameters * defaultSubtypeParameters;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * displayName;
-@property BOOL displaysCriticalBulletins;
-@property(readonly) unsigned int hash;
-@property(retain) BBSectionIcon * icon;
-@property unsigned int messageNumberOfLines;
-@property BOOL orderSectionUsingRecencyDate;
-@property BOOL showsDateInFloatingLockScreenAlert;
-@property BOOL showsSubtitle;
-@property(readonly) Class superclass;
-@property BOOL usesVariableLayout;
+@property (nonatomic, retain) NSMutableDictionary *allSubtypeParameters;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) BBSectionSubtypeParameters *defaultSubtypeParameters;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic) BOOL displaysCriticalBulletins;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) BBSectionIcon *icon;
+@property (nonatomic) unsigned int messageNumberOfLines;
+@property (nonatomic) BOOL orderSectionUsingRecencyDate;
+@property (nonatomic) BOOL showsDateInFloatingLockScreenAlert;
+@property (nonatomic) BOOL showsSubtitle;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesVariableLayout;
 
 + (id)addSectionParametersToCache:(id)arg1;
 + (id)copyCachedSectionParametersWithIdentifier:(id)arg1;

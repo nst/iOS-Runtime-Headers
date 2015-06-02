@@ -14,10 +14,10 @@
     } _supportedProblemTypes;
 }
 
-@property BOOL hasStatusCode;
-@property int statusCode;
-@property(readonly) int* supportedProblemTypes;
-@property(readonly) unsigned int supportedProblemTypesCount;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) int statusCode;
+@property (nonatomic, readonly) int*supportedProblemTypes;
+@property (nonatomic, readonly) unsigned int supportedProblemTypesCount;
 
 - (void)addSupportedProblemType:(int)arg1;
 - (void)clearSupportedProblemTypes;

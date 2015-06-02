@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSString, UIFont, UIImage;
-
 @interface _CertInfoGradientLabel : UIView {
     UIImage *_checkImage;
     UIFont *_font;

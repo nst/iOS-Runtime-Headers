@@ -106,7 +106,7 @@
     float shapeOpacity;
 }
 
-@property(readonly) unsigned int outputBlendMode;
+@property (readonly) unsigned int outputBlendMode;
 
 + (id)adjustOpacity:(id)arg1 by:(float)arg2;
 + (id)bevelEmbossFrom:(id)arg1 withSize:(unsigned int)arg2 soften:(unsigned int)arg3 angle:(float)arg4 altitude:(float)arg5 highlightRed:(float)arg6 highlightGreen:(float)arg7 highlightBlue:(float)arg8 highlightOpacity:(float)arg9 shadowRed:(float)arg10 shadowGreen:(float)arg11 shadowBlue:(float)arg12 shadowOpacity:(float)arg13;

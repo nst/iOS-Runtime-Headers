@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPlaylistFolderViewController : MusicPlaylistsViewController {
-}
+@interface MusicPlaylistFolderViewController : MusicPlaylistsViewController
 
 @end

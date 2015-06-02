@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKRecurrenceTypeEditItemViewControllerDelegate>, EKCalendarItem, EKRecurrenceRule, EKUICustomRecurrenceViewController, NSDate, NSIndexPath, NSString, UITableView;
-
 @interface EKRecurrenceTypeEditItemViewController : EKEditItemViewController <UITableViewDataSource, UITableViewDelegate> {
     EKCalendarItem *_calendarItem;
     NSIndexPath *_checkedItem;
@@ -16,16 +14,16 @@
     UITableView *_table;
 }
 
-@property(retain) EKCalendarItem * calendarItem;
-@property(retain) EKUICustomRecurrenceViewController * customRecurrenceViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKRecurrenceTypeEditItemViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) EKRecurrenceRule * recurrenceRule;
-@property int repeatType;
-@property(retain) NSDate * suggestedStartDate;
-@property(readonly) Class superclass;
+@property (retain) EKCalendarItem *calendarItem;
+@property (retain) EKUICustomRecurrenceViewController *customRecurrenceViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property <EKRecurrenceTypeEditItemViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) EKRecurrenceRule *recurrenceRule;
+@property (nonatomic) int repeatType;
+@property (nonatomic, retain) NSDate *suggestedStartDate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_checkItemAtIndexPath:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount;
-
 @interface AAAddEmailUIRequest : AARequest {
     ACAccount *_account;
 }
 
-@property(retain) ACAccount * account;
+@property (nonatomic, retain) ACAccount *account;
 
 - (void).cxx_destruct;
 - (id)account;

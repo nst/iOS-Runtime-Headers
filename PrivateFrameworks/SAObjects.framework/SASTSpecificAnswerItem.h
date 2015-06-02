@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText;
+@interface SASTSpecificAnswerItem : AceObject <SASTTemplateItem>
 
-@interface SASTSpecificAnswerItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) SAUIDecoratedText * decoratedFooter;
-@property(retain) SAUIDecoratedText * decoratedValue;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * footer;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedFooter;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedValue;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *footer;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
 
 + (id)specificAnswerItem;
 + (id)specificAnswerItemWithDictionary:(id)arg1 context:(id)arg2;

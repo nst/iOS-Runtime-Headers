@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <PLCameraPanoramaViewDelegate>, CADisplayLink, CALayer, CAMPanoramaArrowView, CAMPanoramaLabel, CAMPanoramaLevelView, CMMotionManager, NSOperationQueue, NSString, UIImageView, UIView;
-
 @interface CAMPanoramaView : UIView <UIAccelerometerDelegate> {
     NSOperationQueue *_accelerometerQueue;
     CAMPanoramaArrowView *_arrowView;
@@ -90,12 +88,12 @@
     } _visiblePreviewRect;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PLCameraPanoramaViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CALayer * panoramaPreviewLayer;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLCameraPanoramaViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CALayer *panoramaPreviewLayer;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_arrowWasTapped:(id)arg1;

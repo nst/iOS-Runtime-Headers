@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDDocument;
-
 @interface WDList : NSObject {
     WDDocument *mDocument;
     NSMutableArray *mLevelOverrides;
@@ -11,8 +9,8 @@
     long mListId;
 }
 
-@property(readonly) long listDefinitionId;
-@property(readonly) long listId;
+@property (nonatomic, readonly) long listDefinitionId;
+@property (nonatomic, readonly) long listId;
 
 - (id)addLevelOverrideWithLevel:(unsigned char)arg1;
 - (void)dealloc;

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSDBezierNode, TSUBezierPath;
-
 @interface TSDBezierSubpath : NSObject {
     BOOL mClosed;
     NSMutableArray *mNodes;
 }
 
-@property(readonly) BOOL allNodesSelected;
-@property(readonly) TSUBezierPath * bezierPath;
-@property(readonly) BOOL canDeleteSelectedNodes;
-@property(readonly) BOOL closeIfEndpointsAreEqual;
-@property(getter=isClosed) BOOL closed;
-@property(readonly) TSDBezierNode * firstNode;
-@property(readonly) BOOL hasSelectedNode;
-@property(readonly) BOOL isRectangular;
-@property(readonly) TSDBezierNode * lastNode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nodeBounds;
-@property(retain) NSMutableArray * nodes;
+@property (nonatomic, readonly) BOOL allNodesSelected;
+@property (nonatomic, readonly) TSUBezierPath *bezierPath;
+@property (nonatomic, readonly) BOOL canDeleteSelectedNodes;
+@property (nonatomic, readonly) BOOL closeIfEndpointsAreEqual;
+@property (getter=isClosed, nonatomic) BOOL closed;
+@property (nonatomic, readonly) TSDBezierNode *firstNode;
+@property (nonatomic, readonly) BOOL hasSelectedNode;
+@property (nonatomic, readonly) BOOL isRectangular;
+@property (nonatomic, readonly) TSDBezierNode *lastNode;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nodeBounds;
+@property (nonatomic, retain) NSMutableArray *nodes;
 
 - (void)addNode:(id)arg1;
 - (void)addNodesToArray:(id)arg1;

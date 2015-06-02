@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class ATPError, ATPRequest, ATPResponse, NSData;
-
 @interface ATPMessage : PBCodable <NSCopying> {
     BOOL _additionalPayload;
     struct { 
@@ -24,28 +22,28 @@
     ATPError *_streamError;
 }
 
-@property BOOL additionalPayload;
-@property BOOL hasAdditionalPayload;
-@property BOOL hasMessageID;
-@property BOOL hasMessageType;
-@property(readonly) BOOL hasParameters;
-@property(readonly) BOOL hasParamsSignature;
-@property(readonly) BOOL hasPayload;
-@property(readonly) BOOL hasPayloadSignature;
-@property(readonly) BOOL hasRequest;
-@property(readonly) BOOL hasResponse;
-@property BOOL hasSessionID;
-@property(readonly) BOOL hasStreamError;
-@property unsigned int messageID;
-@property int messageType;
-@property(retain) NSData * parameters;
-@property(retain) NSData * paramsSignature;
-@property(retain) NSData * payload;
-@property(retain) NSData * payloadSignature;
-@property(retain) ATPRequest * request;
-@property(retain) ATPResponse * response;
-@property unsigned int sessionID;
-@property(retain) ATPError * streamError;
+@property (nonatomic) BOOL additionalPayload;
+@property (nonatomic) BOOL hasAdditionalPayload;
+@property (nonatomic) BOOL hasMessageID;
+@property (nonatomic) BOOL hasMessageType;
+@property (nonatomic, readonly) BOOL hasParameters;
+@property (nonatomic, readonly) BOOL hasParamsSignature;
+@property (nonatomic, readonly) BOOL hasPayload;
+@property (nonatomic, readonly) BOOL hasPayloadSignature;
+@property (nonatomic, readonly) BOOL hasRequest;
+@property (nonatomic, readonly) BOOL hasResponse;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic, readonly) BOOL hasStreamError;
+@property (nonatomic) unsigned int messageID;
+@property (nonatomic) int messageType;
+@property (nonatomic, retain) NSData *parameters;
+@property (nonatomic, retain) NSData *paramsSignature;
+@property (nonatomic, retain) NSData *payload;
+@property (nonatomic, retain) NSData *payloadSignature;
+@property (nonatomic, retain) ATPRequest *request;
+@property (nonatomic, retain) ATPResponse *response;
+@property (nonatomic) unsigned int sessionID;
+@property (nonatomic, retain) ATPError *streamError;
 
 - (void).cxx_destruct;
 - (BOOL)additionalPayload;

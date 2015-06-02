@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class <CNFRegRegionChooserDelegate>, NSArray, NSString, PSRootController, PSSpecifier, UISearchController, UIViewController<PSController>;
-
 @interface CNFRegRegionChooserController : UITableViewController <CNFRegRegionChooserDelegate, PSController, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     <CNFRegRegionChooserDelegate> *_delegate;
     NSArray *_filteredRegionList;
@@ -15,15 +13,15 @@
     PSSpecifier *_specifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CNFRegRegionChooserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * filteredRegionList;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * regionList;
-@property(retain) UISearchController * searchController;
-@property(retain) NSString * selectedRegionID;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CNFRegRegionChooserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *filteredRegionList;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *regionList;
+@property (nonatomic, retain) UISearchController *searchController;
+@property (nonatomic, retain) NSString *selectedRegionID;
+@property (readonly) Class superclass;
 
 - (void)_drillDownControllersWithArray:(id)arg1;
 - (void)_hideTableViewCells;

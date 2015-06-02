@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSString;
-
 @interface RCLayoutMetrics : NSObject <NSCopying> {
     float _hPresentedRecordMemoHeight;
     NSString *_label;
@@ -31,23 +29,23 @@
     } _metricInfo;
 }
 
-@property(readonly) float hDeltaAcousticAnnotationLabelToWaveformRight;
-@property(readonly) float hDeltaAdditionalInsetFromWaveformEdge;
-@property(readonly) float hDeltaControlButtonsSpacing;
-@property(readonly) float hDeltaTrimProgressInset;
-@property(readonly) float hDetailNavigationBarInset;
-@property(readonly) BOOL hIsWaveformFlushToEdges;
-@property float hPresentedRecordMemoHeight;
-@property(readonly) float hTrimModeInset;
-@property(readonly) float vDeltaControlsBottomToBottom;
-@property(readonly) float vDeltaControlsTopToNavigationBottom;
-@property(readonly) float vDeltaDateBaselineToControlsTop;
-@property(readonly) float vDeltaLockAbsoluteTopToWaveformTop;
-@property(readonly) float vDeltaLockNotificationListBottom;
-@property(readonly) float vDeltaLockNotificationListBottomToRecordingTimeBaseline;
-@property(readonly) float vDeltaTimeBaselineToTitleBaseline;
-@property(readonly) float vDeltaTitleBaselineToDateBaseline;
-@property(readonly) float vDeltaWaveformToTimeBaseline;
+@property (nonatomic, readonly) float hDeltaAcousticAnnotationLabelToWaveformRight;
+@property (nonatomic, readonly) float hDeltaAdditionalInsetFromWaveformEdge;
+@property (nonatomic, readonly) float hDeltaControlButtonsSpacing;
+@property (nonatomic, readonly) float hDeltaTrimProgressInset;
+@property (nonatomic, readonly) float hDetailNavigationBarInset;
+@property (nonatomic, readonly) BOOL hIsWaveformFlushToEdges;
+@property (nonatomic) float hPresentedRecordMemoHeight;
+@property (nonatomic, readonly) float hTrimModeInset;
+@property (nonatomic, readonly) float vDeltaControlsBottomToBottom;
+@property (nonatomic, readonly) float vDeltaControlsTopToNavigationBottom;
+@property (nonatomic, readonly) float vDeltaDateBaselineToControlsTop;
+@property (nonatomic, readonly) float vDeltaLockAbsoluteTopToWaveformTop;
+@property (nonatomic, readonly) float vDeltaLockNotificationListBottom;
+@property (nonatomic, readonly) float vDeltaLockNotificationListBottomToRecordingTimeBaseline;
+@property (nonatomic, readonly) float vDeltaTimeBaselineToTitleBaseline;
+@property (nonatomic, readonly) float vDeltaTitleBaselineToDateBaseline;
+@property (nonatomic, readonly) float vDeltaWaveformToTimeBaseline;
 
 + (id)defaultMetrics;
 + (id)largeHorizontalMetrics;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITestDataURLProtocol : NSURLProtocol {
-}
+@interface SKUITestDataURLProtocol : NSURLProtocol
 
 + (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;

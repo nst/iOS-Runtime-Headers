@@ -13,12 +13,12 @@
     unsigned int _uploadRecordCount;
 }
 
-@property unsigned int downloadRecordCount;
-@property BOOL hasDownloadRecordCount;
-@property BOOL hasTimestamp;
-@property BOOL hasUploadRecordCount;
-@property unsigned long long timestamp;
-@property unsigned int uploadRecordCount;
+@property (nonatomic) unsigned int downloadRecordCount;
+@property (nonatomic) BOOL hasDownloadRecordCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasUploadRecordCount;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int uploadRecordCount;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSPlayInfoRequestDelegate>, NSString, SSPlayInfoRequestContext, SSPlayInfoResponse;
-
 @interface SSPlayInfoRequest : SSRequest <SSXPCCoding> {
     SSPlayInfoRequestContext *_context;
     SSPlayInfoResponse *_response;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SSPlayInfoRequestDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SSPlayInfoRequestContext * playInfoContext;
-@property(readonly) SSPlayInfoResponse * playInfoResponse;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SSPlayInfoRequestDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) SSPlayInfoRequestContext *playInfoContext;
+@property (readonly) SSPlayInfoResponse *playInfoResponse;
+@property (readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -25,7 +23,7 @@
 - (id)playInfoContext;
 - (id)playInfoResponse;
 - (BOOL)start;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithPlayInfoResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithPlayInfoResponseBlock:(id /* block */)arg1;
 
 @end

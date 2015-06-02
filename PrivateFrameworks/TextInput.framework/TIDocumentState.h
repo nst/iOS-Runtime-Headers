@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIDocumentState : NSObject <NSSecureCoding> {
     NSString *_contextAfterInput;
     NSString *_contextBeforeInput;
@@ -15,27 +13,22 @@
     NSString *_selectedText;
 }
 
-@property(readonly) NSString * contextAfterInput;
-@property(readonly) NSString * contextBeforeInput;
-@property(readonly) NSString * markedText;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRangeInMarkedText;
-@property(readonly) NSString * selectedText;
+@property (nonatomic, readonly) NSString *contextAfterInput;
+@property (nonatomic, readonly) NSString *contextBeforeInput;
+@property (nonatomic, readonly) NSString *markedText;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRangeInMarkedText;
+@property (nonatomic, readonly) NSString *selectedText;
 
-+ (id)documentStateOfDocument:(id)arg1;
-+ (id)documentStateOfSecureTextDocument:(id)arg1;
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
+
 + (id)documentStateWithContextBefore:(id)arg1 markedText:(id)arg2 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 contextAfter:(id)arg4;
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (id)documentStateWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (BOOL)supportsSecureCoding;
 
-- (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2;
-- (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2;
-- (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id)arg3;
-- (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id)arg3;
 - (id)contextAfterInput;
 - (id)contextBeforeInput;
-- (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (BOOL)documentIsEmpty;
@@ -53,18 +46,29 @@
 - (unsigned int)hashString:(id)arg1 intoHashValue:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContextBefore:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 contextAfter:(id)arg4 selectedRangeInMarkedText:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
-- (id)initWithDocument:(id)arg1;
-- (id)initWithSecureTextDocument:(id)arg1;
 - (id)initWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)inputIndexWithTerminatorPredicate:(id)arg1;
-- (id)inputStemWithTerminatorPredicate:(id)arg1;
-- (id)inputStringWithTerminatorPredicate:(id)arg1;
+- (unsigned int)inputIndexWithTerminatorPredicate:(id /* block */)arg1;
+- (id)inputStemWithTerminatorPredicate:(id /* block */)arg1;
+- (id)inputStringWithTerminatorPredicate:(id /* block */)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)markedText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRangeInMarkedText;
 - (id)selectedText;
 - (BOOL)string:(id)arg1 matchesString:(id)arg2;
+- (id)wordPrefixOfString:(id)arg1 withTerminatorPredicate:(id /* block */)arg2 reverse:(BOOL)arg3;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)documentStateOfDocument:(id)arg1;
++ (id)documentStateOfSecureTextDocument:(id)arg1;
+
+- (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2;
+- (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2;
+- (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
+- (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
+- (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
+- (id)initWithDocument:(id)arg1;
+- (id)initWithSecureTextDocument:(id)arg1;
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2 inDocument:(id)arg3;
-- (id)wordPrefixOfString:(id)arg1 withTerminatorPredicate:(id)arg2 reverse:(BOOL)arg3;
 
 @end

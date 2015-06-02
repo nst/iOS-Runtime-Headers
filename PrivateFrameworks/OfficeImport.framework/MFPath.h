@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFPath : NSObject <NSCopying> {
-}
+@interface MFPath : NSObject <NSCopying>
 
 - (int)abort;
 - (int)begin;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class _IDSBatchIDQueryController;
-
 @interface IDSBatchIDQueryController : NSObject {
     _IDSBatchIDQueryController *_internal;
 }

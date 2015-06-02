@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapItemStorage, NSData, NSMutableArray, NSString;
-
 @interface GEOCompanionRouteDetails : PBCodable <NSCopying> {
     BOOL _canNavigate;
     struct { 
@@ -38,31 +36,31 @@
     } _trafficColors;
 }
 
-@property BOOL canNavigate;
-@property(readonly) double* coordinates;
-@property(readonly) unsigned int coordinatesCount;
-@property(retain) GEOMapItemStorage * destination;
-@property(retain) NSString * destinationName;
-@property unsigned int distance;
-@property BOOL hasCanNavigate;
-@property(readonly) BOOL hasDestination;
-@property(readonly) BOOL hasDestinationName;
-@property BOOL hasDistance;
-@property BOOL hasHistoricalDuration;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasOrigin;
-@property BOOL hasOriginalDuration;
-@property(readonly) BOOL hasRouteID;
-@property unsigned int historicalDuration;
-@property(retain) NSString * name;
-@property(retain) GEOMapItemStorage * origin;
-@property unsigned int originalDuration;
-@property(retain) NSData * routeID;
-@property(retain) NSMutableArray * steps;
-@property(readonly) unsigned int* trafficColorOffsets;
-@property(readonly) unsigned int trafficColorOffsetsCount;
-@property(readonly) unsigned int* trafficColors;
-@property(readonly) unsigned int trafficColorsCount;
+@property (nonatomic) BOOL canNavigate;
+@property (nonatomic, readonly) double*coordinates;
+@property (nonatomic, readonly) unsigned int coordinatesCount;
+@property (nonatomic, retain) GEOMapItemStorage *destination;
+@property (nonatomic, retain) NSString *destinationName;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) BOOL hasCanNavigate;
+@property (nonatomic, readonly) BOOL hasDestination;
+@property (nonatomic, readonly) BOOL hasDestinationName;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasHistoricalDuration;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) BOOL hasOrigin;
+@property (nonatomic) BOOL hasOriginalDuration;
+@property (nonatomic, readonly) BOOL hasRouteID;
+@property (nonatomic) unsigned int historicalDuration;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) GEOMapItemStorage *origin;
+@property (nonatomic) unsigned int originalDuration;
+@property (nonatomic, retain) NSData *routeID;
+@property (nonatomic, retain) NSMutableArray *steps;
+@property (nonatomic, readonly) unsigned int*trafficColorOffsets;
+@property (nonatomic, readonly) unsigned int trafficColorOffsetsCount;
+@property (nonatomic, readonly) unsigned int*trafficColors;
+@property (nonatomic, readonly) unsigned int trafficColorsCount;
 
 - (void)addCoordinates:(double)arg1;
 - (void)addStep:(id)arg1;

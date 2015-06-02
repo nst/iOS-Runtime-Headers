@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableArray, NSMutableDictionary;
-
 @interface SCNOrderedDictionary : NSObject {
     NSMutableDictionary *_keyValues;
     NSMutableArray *_keys;
@@ -17,7 +10,7 @@
 - (void)_setupFrom:(id)arg1;
 - (id)allKeys;
 - (id)allValues;
-- (void)applyFunction:(int (*)())arg1 withContext:(void*)arg2;
+- (void)applyFunction:(int (*)arg1 withContext:(void*)arg2;
 - (id)copy;
 - (unsigned int)count;
 - (void)dealloc;

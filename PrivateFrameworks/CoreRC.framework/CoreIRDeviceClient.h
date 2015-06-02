@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreIRDeviceClient : CoreIRDevice {
-}
+@interface CoreIRDeviceClient : CoreIRDevice
 
 + (BOOL)supportsSecureCoding;
 

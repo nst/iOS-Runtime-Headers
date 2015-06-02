@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSUColor;
-
 @interface TSAExportableDocumentType : NSObject {
     TSUColor *_exportFormatChooserItemTextColor;
     NSString *_exportProgressMessage;
@@ -11,10 +9,10 @@
     NSString *_type;
 }
 
-@property(readonly) TSUColor * exportFormatChooserItemTextColor;
-@property(readonly) NSString * exportProgressMessage;
-@property(readonly) NSString * localizedName;
-@property(readonly) NSString * type;
+@property (nonatomic, readonly) TSUColor *exportFormatChooserItemTextColor;
+@property (nonatomic, readonly) NSString *exportProgressMessage;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) NSString *type;
 
 + (id)exportableTypeWithType:(id)arg1 localizedName:(id)arg2 exportFormatChooserItemTextColor:(id)arg3;
 + (id)exportableTypeWithType:(id)arg1 localizedName:(id)arg2 exportFormatChooserItemTextColor:(id)arg3 exportProgressMessage:(id)arg4;

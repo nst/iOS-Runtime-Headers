@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMStyle, ECColumnWidthConvertor, EDWorksheet;
-
 @interface EMWorksheetMapper : EMSheetMapper {
     EDWorksheet *edWorksheet;
     double *mColumnGrid;

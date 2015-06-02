@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, UIView;
-
 @interface MPPlaybackTitlesView : UIControl {
     UIView *_contentView;
     NSArray *_labels;
@@ -13,11 +11,11 @@
     NSArray *_titles;
 }
 
-@property(readonly) UIView * contentView;
-@property unsigned int marqueeScrollableIndex;
-@property BOOL marqueeScrollingActive;
-@property BOOL showingLoadingUI;
-@property(retain) NSArray * titles;
+@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic) unsigned int marqueeScrollableIndex;
+@property (nonatomic) BOOL marqueeScrollingActive;
+@property (nonatomic) BOOL showingLoadingUI;
+@property (nonatomic, retain) NSArray *titles;
 
 - (void).cxx_destruct;
 - (id)_addLabel:(unsigned int)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, MTLIOAccelDevice<MTLDevice>;
-
 @interface MTLIOAccelCommandQueue : _MTLCommandQueue {
     struct __IOAccelCommandQueue { } *_commandQueue;
     MTLIOAccelDevice<MTLDevice> *_device;
 }
 
-@property(readonly) <MTLDevice> * device;
+@property (readonly) <MTLDevice> *device;
 
 - (void)dealloc;
 - (id)device;

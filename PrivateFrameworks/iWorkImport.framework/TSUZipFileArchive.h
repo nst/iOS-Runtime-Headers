@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, NSURL, TSUZipFileDescriptorWrapper;
-
 @interface TSUZipFileArchive : TSUZipArchive {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long long _archiveLength;
@@ -13,7 +11,7 @@
 
 + (BOOL)isZipArchiveAtFD:(int)arg1;
 + (BOOL)isZipArchiveAtURL:(id)arg1 error:(id*)arg2;
-+ (void)readArchiveFromURL:(id)arg1 options:(unsigned int)arg2 queue:(id)arg3 completion:(id)arg4;
++ (void)readArchiveFromURL:(id)arg1 options:(unsigned int)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 + (id)zipArchiveFromURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;

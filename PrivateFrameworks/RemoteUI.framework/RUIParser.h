@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIParserDelegate>, NSData, NSDictionary, NSMutableArray, NSMutableString, NSString, NSURL, NSXMLParser, RUIObjectModel;
-
 @interface RUIParser : NSObject <NSXMLParserDelegate> {
     NSMutableString *_accumulator;
     int _actionSignal;
@@ -19,14 +17,14 @@
     NSData *_xmlData;
 }
 
-@property(retain) NSURL * baseURL;
-@property(copy,readonly) NSString * debugDescription;
-@property <RUIParserDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL succeeded;
-@property(readonly) Class superclass;
-@property(retain) NSData * xmlData;
+@property (nonatomic, retain) NSURL *baseURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUIParserDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL succeeded;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSData *xmlData;
 
 + (int)textAlignmentForString:(id)arg1;
 

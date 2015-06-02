@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSString, NSURL, SSURLBag;
-
 @interface SBKStoreURLBagContext : NSObject <NSCopying, NSMutableCopying> {
     SSURLBag *_bag;
     NSString *_domain;
@@ -16,21 +14,21 @@
     NSURL *_syncRequestURL;
 }
 
-@property(retain) SSURLBag * bag;
-@property(copy) NSString * domain;
+@property (retain) SSURLBag *bag;
+@property (copy) NSString *domain;
 @property BOOL domainDisabled;
 @property double pollingIntervalInSeconds;
-@property(retain) NSURL * pullAllKeyValueRequestURL;
-@property(retain) NSURL * pullKeyValueRequestURL;
-@property(retain) NSURL * pushAllKeyValueRequestURL;
-@property(retain) NSURL * pushKeyValueRequestURL;
-@property(retain) NSURL * syncRequestURL;
+@property (retain) NSURL *pullAllKeyValueRequestURL;
+@property (retain) NSURL *pullKeyValueRequestURL;
+@property (retain) NSURL *pushAllKeyValueRequestURL;
+@property (retain) NSURL *pushKeyValueRequestURL;
+@property (retain) NSURL *syncRequestURL;
 
 + (id)ExtrasDomainIdentifier;
 + (id)UPPDomainIdentifier;
-+ (void)_findFirstValueInBag:(id)arg1 keyEnumerator:(id)arg2 valueTransformer:(id)arg3 defaultValue:(id)arg4 completionBlock:(id)arg5;
-+ (void)enumerateRequestURLBagKeysWithBlock:(id)arg1;
-+ (void)loadBagContextFromURLBag:(id)arg1 domain:(id)arg2 completionBlock:(id)arg3;
++ (void)_findFirstValueInBag:(id)arg1 keyEnumerator:(id)arg2 valueTransformer:(id /* block */)arg3 defaultValue:(id)arg4 completionBlock:(id /* block */)arg5;
++ (void)enumerateRequestURLBagKeysWithBlock:(id /* block */)arg1;
++ (void)loadBagContextFromURLBag:(id)arg1 domain:(id)arg2 completionBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)_initWithDomain:(id)arg1 syncRequestURL:(id)arg2 domainDisabled:(BOOL)arg3;

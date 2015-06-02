@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKInternalRepresentation : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-}
+@interface GKInternalRepresentation : NSObject <NSCoding, NSCopying, NSSecureCoding>
 
 + (id)codedPropertyKeys;
 + (id)internalRepresentation;

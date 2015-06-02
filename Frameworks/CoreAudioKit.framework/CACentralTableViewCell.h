@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class NSArray, UIActivityIndicatorView, UILabel;
-
 @interface CACentralTableViewCell : UITableViewCell {
     NSArray *_activityHConstraints;
     UIActivityIndicatorView *_activityIndicator;
@@ -16,15 +14,15 @@
     UILabel *_slashLabel;
 }
 
-@property(retain) NSArray * activityHConstraints;
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property(retain) NSArray * activityVConstraints;
-@property(retain) UILabel * connectionStatusLabel;
-@property(retain) UILabel * deviceNameLabel;
-@property(retain) UILabel * inputLabel;
-@property(retain) NSArray * labelConstraints;
-@property(retain) UILabel * outputLabel;
-@property(retain) UILabel * slashLabel;
+@property (nonatomic, retain) NSArray *activityHConstraints;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) NSArray *activityVConstraints;
+@property (nonatomic, retain) UILabel *connectionStatusLabel;
+@property (nonatomic, retain) UILabel *deviceNameLabel;
+@property (nonatomic, retain) UILabel *inputLabel;
+@property (nonatomic, retain) NSArray *labelConstraints;
+@property (nonatomic, retain) UILabel *outputLabel;
+@property (nonatomic, retain) UILabel *slashLabel;
 
 - (id)activityHConstraints;
 - (id)activityIndicator;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBThemedView, UIKeyboardCandidateBarSegmentControl, UISegmentedControl;
-
 @interface UIKeyboardCandidateSortControl : UIView {
     int _candidatesVisualStyle;
     BOOL _legacyAlertAppearance;
@@ -11,8 +9,8 @@
     UIKBThemedView *_themedView;
 }
 
-@property(readonly) UISegmentedControl * segmentedControl;
-@property(retain) UIKBThemedView * themedView;
+@property (readonly) UISegmentedControl *segmentedControl;
+@property (nonatomic, retain) UIKBThemedView *themedView;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 

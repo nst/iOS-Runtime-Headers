@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMButtonLabel;
-
 @interface CAMHDRButton : CAMExpandableMenuButton {
     CAMButtonLabel *__headerLabel;
     BOOL _allowsAutomaticHDR;
 }
 
-@property int HDRMode;
-@property(readonly) CAMButtonLabel * _headerLabel;
-@property BOOL allowsAutomaticHDR;
+@property (nonatomic) int HDRMode;
+@property (nonatomic, readonly) CAMButtonLabel *_headerLabel;
+@property (nonatomic) BOOL allowsAutomaticHDR;
 
 - (void).cxx_destruct;
 - (int)HDRMode;

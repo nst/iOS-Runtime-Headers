@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCH3DRenderBufferAllocator>;
-
 @interface TSCH3DFBOLoader : TSCH3DResourceLoader {
     <TSCH3DRenderBufferAllocator> *mColorAllocator;
     <TSCH3DRenderBufferAllocator> *mDepthAllocator;
@@ -30,10 +28,10 @@
     } mSize;
 }
 
-@property(readonly) <TSCH3DRenderBufferAllocator> * colorAllocator;
-@property(readonly) <TSCH3DRenderBufferAllocator> * depthAllocator;
-@property(readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } framebufferAttributes;
-@property(readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
+@property (nonatomic, readonly) <TSCH3DRenderBufferAllocator> *colorAllocator;
+@property (nonatomic, readonly) <TSCH3DRenderBufferAllocator> *depthAllocator;
+@property (nonatomic, readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } framebufferAttributes;
+@property (nonatomic, readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
 
 + (unsigned int)estimatedMemoryInBytesForSize:(struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })arg1 samples:(unsigned int)arg2 hasColorbuffer:(BOOL)arg3 hasDepthbuffer:(BOOL)arg4;
 + (id)loaderWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
@@ -50,7 +48,7 @@
 - (unsigned int)hash;
 - (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1 size:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2 colorAllocator:(id)arg3 depthAllocator:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
-- (struct SessionLoadResourceResult { BOOL x1; BOOL x2; BOOL x3; id x4; id x5; })loadResource:(id)arg1 insideSession:(id)arg2;
+- (struct SessionLoadResourceResult { BOOL x1; BOOL x2; BOOL x3; id x4; })loadResource:(id)arg1 insideSession:(id)arg2;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })size;
 - (unsigned int)uploadDataBuffer:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
 

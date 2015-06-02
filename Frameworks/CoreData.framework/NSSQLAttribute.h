@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLAttribute : NSSQLColumn {
-}
+@interface NSSQLAttribute : NSSQLColumn
 
 - (unsigned int)_sqlTypeForAttributeType:(unsigned int)arg1 flags:(unsigned int)arg2;
 - (id)attributeDescription;

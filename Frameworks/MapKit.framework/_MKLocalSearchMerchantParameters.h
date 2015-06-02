@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CLLocation, NSDate, NSString;
-
 @interface _MKLocalSearchMerchantParameters : NSObject <NSCopying> {
     NSString *_merchantCode;
     NSString *_paymentNetwork;
@@ -12,11 +10,11 @@
     CLLocation *_transactionLocation;
 }
 
-@property(copy) NSString * merchantCode;
-@property(copy) NSString * paymentNetwork;
-@property(copy) NSString * rawMerchantCode;
-@property(retain) NSDate * transactionDate;
-@property(retain) CLLocation * transactionLocation;
+@property (nonatomic, copy) NSString *merchantCode;
+@property (nonatomic, copy) NSString *paymentNetwork;
+@property (nonatomic, copy) NSString *rawMerchantCode;
+@property (nonatomic, retain) NSDate *transactionDate;
+@property (nonatomic, retain) CLLocation *transactionLocation;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

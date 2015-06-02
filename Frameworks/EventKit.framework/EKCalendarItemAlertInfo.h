@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class <EKTravelAdvice>, NSDate, NSString, NSTimeZone, NSURL;
-
 @interface EKCalendarItemAlertInfo : NSObject <NSCopying> {
     BOOL _acknowledged;
     NSURL *_action;
@@ -34,31 +32,31 @@
     NSString *_title;
 }
 
-@property(readonly) BOOL acknowledged;
-@property(readonly) NSURL * action;
-@property(readonly) NSString * alarmID;
-@property(readonly) BOOL allDay;
-@property(readonly) NSString * dismissalID;
-@property(readonly) NSDate * endDate;
-@property(readonly) NSURL * entityID;
-@property(readonly) NSDate * eventDate;
-@property(readonly) NSTimeZone * eventTimeZone;
-@property(readonly) NSString * externalID;
-@property(retain) NSDate * firstDateAlertedForTravelAdvice;
-@property struct { double x1; double x2; } geoLocationCoordinates;
-@property BOOL hasGeoLocationCoordinates;
-@property BOOL hasOrganizerThatIsNotCurrentUser;
-@property(readonly) BOOL isOffsetFromTravelTimeStart;
-@property(retain) NSDate * lastFireTimeOfAlertOffsetFromTravelTime;
-@property(retain) <EKTravelAdvice> * latestTravelAdvice;
-@property(readonly) NSString * location;
-@property(retain) NSString * organizerEmailAddress;
-@property(readonly) int proximity;
-@property(readonly) NSString * publisherBulletinID;
-@property(readonly) NSString * recordID;
-@property(retain) NSString * startLocationRouting;
-@property(readonly) BOOL tentative;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) BOOL acknowledged;
+@property (nonatomic, readonly) NSURL *action;
+@property (nonatomic, readonly) NSString *alarmID;
+@property (nonatomic, readonly) BOOL allDay;
+@property (nonatomic, readonly) NSString *dismissalID;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSURL *entityID;
+@property (nonatomic, readonly) NSDate *eventDate;
+@property (nonatomic, readonly) NSTimeZone *eventTimeZone;
+@property (nonatomic, readonly) NSString *externalID;
+@property (nonatomic, retain) NSDate *firstDateAlertedForTravelAdvice;
+@property (nonatomic) struct { double x1; double x2; } geoLocationCoordinates;
+@property (nonatomic) BOOL hasGeoLocationCoordinates;
+@property (nonatomic) BOOL hasOrganizerThatIsNotCurrentUser;
+@property (nonatomic, readonly) BOOL isOffsetFromTravelTimeStart;
+@property (nonatomic, retain) NSDate *lastFireTimeOfAlertOffsetFromTravelTime;
+@property (nonatomic, retain) <EKTravelAdvice> *latestTravelAdvice;
+@property (nonatomic, readonly) NSString *location;
+@property (nonatomic, retain) NSString *organizerEmailAddress;
+@property (nonatomic, readonly) int proximity;
+@property (nonatomic, readonly) NSString *publisherBulletinID;
+@property (nonatomic, readonly) NSString *recordID;
+@property (nonatomic, retain) NSString *startLocationRouting;
+@property (nonatomic, readonly) BOOL tentative;
+@property (nonatomic, readonly) NSString *title;
 
 - (BOOL)acknowledged;
 - (id)action;

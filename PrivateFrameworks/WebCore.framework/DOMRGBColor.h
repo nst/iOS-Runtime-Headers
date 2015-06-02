@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSPrimitiveValue;
+@interface DOMRGBColor : DOMObject
 
-@interface DOMRGBColor : DOMObject {
-}
-
-@property(readonly) DOMCSSPrimitiveValue * alpha;
-@property(readonly) DOMCSSPrimitiveValue * blue;
-@property(readonly) DOMCSSPrimitiveValue * green;
-@property(readonly) DOMCSSPrimitiveValue * red;
+@property (readonly) DOMCSSPrimitiveValue *alpha;
+@property (readonly) DOMCSSPrimitiveValue *blue;
+@property (readonly) DOMCSSPrimitiveValue *green;
+@property (readonly) DOMCSSPrimitiveValue *red;
 
 - (id)alpha;
 - (id)blue;

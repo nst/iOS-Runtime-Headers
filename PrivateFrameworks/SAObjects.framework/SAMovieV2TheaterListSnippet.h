@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAMovieV2TheaterListSnippet : SAUISnippet
 
-@interface SAMovieV2TheaterListSnippet : SAUISnippet {
-}
-
-@property(copy) NSString * subtitle;
-@property(copy) NSArray * theaterListCells;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSArray *theaterListCells;
+@property (nonatomic, copy) NSString *title;
 
 + (id)theaterListSnippet;
 + (id)theaterListSnippetWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIButton;
-
 @interface ABContactActionSplitCell : ABLabeledCell {
     UIButton *_leftLabel;
     UIButton *_rightLabel;
 }
 
-@property(readonly) UIButton * leftLabel;
-@property(readonly) UIButton * rightLabel;
+@property (nonatomic, readonly) UIButton *leftLabel;
+@property (nonatomic, readonly) UIButton *rightLabel;
 
 - (void)_setupButton:(id)arg1 forAction:(id)arg2;
 - (id)constantConstraints;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIImageView, UINavigationBar, UIView, _UIBackdropView, _UINavigationControllerPalette;
-
 @interface _UINavigationPaletteBackground : UIView <_UIBackdropViewGraphicsQualityChangeDelegate> {
     _UIBackdropView *_adaptiveBackdrop;
     UINavigationBar *_bar;
@@ -17,11 +15,11 @@
     UIImageView *_shadowView;
 }
 
-@property int barStyle;
-@property(retain) UIColor * barTintColor;
-@property BOOL paletteWantsAdaptiveBackdrop;
-@property(getter=_shadowView,setter=_setShadowView:,retain) UIView * shadowView;
-@property(getter=isTranslucent) BOOL translucent;
+@property (nonatomic) int barStyle;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (nonatomic) BOOL paletteWantsAdaptiveBackdrop;
+@property (getter=_shadowView, setter=_setShadowView:, nonatomic, retain) UIView *shadowView;
+@property (getter=isTranslucent, nonatomic) BOOL translucent;
 
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forceUpdateBackgroundImage:(BOOL)arg2;

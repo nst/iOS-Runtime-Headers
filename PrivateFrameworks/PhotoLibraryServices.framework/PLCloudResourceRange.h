@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLCloudResourceNode, PLPhotoLibrary;
-
 @interface PLCloudResourceRange : NSObject {
     unsigned short _category;
     PLPhotoLibrary *_photoLibrary;
@@ -11,17 +9,17 @@
     PLCloudResourceNode *_rootNode;
 }
 
-@property(readonly) unsigned short category;
-@property(readonly) unsigned short qualityClass;
-@property(readonly) unsigned long long totalCount;
-@property(readonly) unsigned long long totalSize;
+@property (nonatomic, readonly) unsigned short category;
+@property (nonatomic, readonly) unsigned short qualityClass;
+@property (nonatomic, readonly) unsigned long long totalCount;
+@property (nonatomic, readonly) unsigned long long totalSize;
 
 - (void)assignSuccessorNode:(id)arg1;
 - (unsigned short)category;
 - (id)cloudResourceAtIndex:(unsigned int)arg1;
 - (id)cloudResourcesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;
-- (void)enumerateResourcesWithBlock:(id)arg1;
+- (void)enumerateResourcesWithBlock:(id /* block */)arg1;
 - (id)initWithBudgetingCategory:(unsigned short)arg1 qualityClass:(unsigned short)arg2 photoLibrary:(id)arg3;
 - (void)insertCloudResource:(id)arg1;
 - (void)insertionRebalanceCaseFive:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSData, NSString;
-
 @interface SCNGeometrySource : NSObject <NSSecureCoding> {
     int _bytesPerComponent;
     int _componentsPerVector;
@@ -17,14 +15,14 @@
     int _vectorCount;
 }
 
-@property(readonly) int bytesPerComponent;
-@property(readonly) int componentsPerVector;
-@property(readonly) NSData * data;
-@property(readonly) int dataOffset;
-@property(readonly) int dataStride;
-@property(readonly) BOOL floatComponents;
-@property(readonly) NSString * semantic;
-@property(readonly) int vectorCount;
+@property (nonatomic, readonly) int bytesPerComponent;
+@property (nonatomic, readonly) int componentsPerVector;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) int dataOffset;
+@property (nonatomic, readonly) int dataStride;
+@property (nonatomic, readonly) BOOL floatComponents;
+@property (nonatomic, readonly) NSString *semantic;
+@property (nonatomic, readonly) int vectorCount;
 
 + (id)SCNJSExportProtocol;
 + (id)dataWithPointArray:(const struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;

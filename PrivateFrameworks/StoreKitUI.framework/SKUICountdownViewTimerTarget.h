@@ -2,23 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface SKUICountdownViewTimerTarget : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _actionBlock;
-
+    id /* block */ _actionBlock;
 }
 
-@property(copy) id actionBlock;
+@property (nonatomic, copy) id /* block */ actionBlock;
 
 - (void).cxx_destruct;
 - (void)action;
-- (id)actionBlock;
-- (void)setActionBlock:(id)arg1;
+- (id /* block */)actionBlock;
+- (void)setActionBlock:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAShapeLayer, UIBezierPath;
-
 @interface _UITextFieldPasscodeCutoutBackground : UITextFieldBackgroundView {
     float _cornerRadius;
     BOOL _customFillColor;
@@ -12,9 +10,9 @@
     float _outlineAlpha;
 }
 
-@property float cornerRadius;
-@property(readonly) UIBezierPath * customPath;
-@property float outlineAlpha;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic, readonly) UIBezierPath *customPath;
+@property (nonatomic) float outlineAlpha;
 
 + (id)_fillColor:(BOOL)arg1;
 + (id)_strokeColor:(BOOL)arg1;

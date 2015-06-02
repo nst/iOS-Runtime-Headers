@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFHashBuilder : NSObject {
-}
+@interface SBFHashBuilder : NSObject
 
 + (unsigned int)arrayHash:(id)arg1;
 + (unsigned int)boolHash:(BOOL)arg1;
 + (unsigned int)doubleHash:(double)arg1;
-+ (unsigned int)hashWithBlocks:(id)arg1;
++ (unsigned int)hashWithBlocks:(id /* block */)arg1;
 + (unsigned int)integerHash:(int)arg1;
 + (unsigned int)objectHash:(id)arg1;
 + (unsigned int)pointerHash:(void*)arg1;

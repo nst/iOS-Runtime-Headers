@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSKnownKeysMappingStrategy2 : NSKnownKeysMappingStrategy1 {
-}
+@interface NSKnownKeysMappingStrategy2 : NSKnownKeysMappingStrategy1
 
 - (BOOL)_isDeallocating;
 - (id)_setupForKeys:(id*)arg1 count:(unsigned int)arg2 table:(void*)arg3 inData:(id)arg4;

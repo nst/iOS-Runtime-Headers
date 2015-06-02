@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@interface CTMmsEncoder : NSObject {
-}
+@interface CTMmsEncoder : NSObject
 
 + (id)decodeMessageFromData:(id)arg1;
 + (id)decodeSmsFromData:(id)arg1;

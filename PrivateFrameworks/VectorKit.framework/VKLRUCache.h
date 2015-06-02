@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKLRUCacheDelegate>;
-
 @interface VKLRUCache : NSObject <NSFastEnumeration> {
     unsigned int _count;
     <VKLRUCacheDelegate> *_delegate;
@@ -14,15 +12,15 @@
     id _tail;
 }
 
-@property(readonly) unsigned int count;
-@property <VKLRUCacheDelegate> * delegate;
-@property(readonly) unsigned int maximumCapacity;
-@property(readonly) unsigned int reservedCapacity;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic) <VKLRUCacheDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int maximumCapacity;
+@property (nonatomic, readonly) unsigned int reservedCapacity;
 
 - (void)consistencyCheck;
 - (id)contentsDescription;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -37,7 +35,7 @@
 - (void)purge;
 - (void)removeAllObjects;
 - (void)removeNode:(id)arg1;
-- (void)removeObjectsMatchingPredicate:(id)arg1;
+- (void)removeObjectsMatchingPredicate:(id /* block */)arg1;
 - (unsigned int)reservedCapacity;
 - (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;

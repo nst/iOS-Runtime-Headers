@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPLoggingUtility : NSObject {
-}
+@interface MPLoggingUtility : NSObject
 
 + (void)debugLog:(id)arg1;
 + (void)debugLogForDefaultsKey:(id)arg1 format:(id)arg2;

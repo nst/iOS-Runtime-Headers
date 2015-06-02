@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPTOCLayoutHint : NSObject <TSDHint> {
     struct _NSRange { 
         unsigned int location; 
@@ -16,11 +9,11 @@
     } _charRange;
 }
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } charRange;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } charRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (Class)archivedHintClass;
 

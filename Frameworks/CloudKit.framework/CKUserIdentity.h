@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSData, NSString;
-
 @interface CKUserIdentity : NSObject <NSSecureCoding> {
     NSString *_emailAddress;
     NSString *_firstName;
@@ -14,14 +12,14 @@
     CKRecordID *_userRecordID;
 }
 
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * firstName;
-@property BOOL hasiCloudAccount;
-@property BOOL hasiCloudAccountSupportingSharing;
-@property(copy) NSString * lastName;
-@property(copy,readonly) NSString * localizedDisplayName;
-@property(retain) NSData * protectionData;
-@property(copy) CKRecordID * userRecordID;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic) BOOL hasiCloudAccount;
+@property (nonatomic) BOOL hasiCloudAccountSupportingSharing;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, readonly, copy) NSString *localizedDisplayName;
+@property (nonatomic, retain) NSData *protectionData;
+@property (nonatomic, copy) CKRecordID *userRecordID;
 
 + (BOOL)supportsSecureCoding;
 

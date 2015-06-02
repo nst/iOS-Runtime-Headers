@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSLayoutConstraint, UILabel;
-
 @interface EKUIInviteesViewInvisibleInviteeStatusCell : UITableViewCell {
     UILabel *_commentLabel;
     float _leftInset;
@@ -14,13 +12,13 @@
     NSArray *_removableConstraints;
 }
 
-@property(retain) UILabel * commentLabel;
-@property float leftInset;
-@property(retain) NSLayoutConstraint * minimumHeightConstraint;
-@property(retain) NSLayoutConstraint * nameBaselineToTopConstraint;
-@property(retain) UILabel * nameLabel;
-@property(retain) NSArray * persistentConstraints;
-@property(retain) NSArray * removableConstraints;
+@property (nonatomic, retain) UILabel *commentLabel;
+@property (nonatomic) float leftInset;
+@property (nonatomic, retain) NSLayoutConstraint *minimumHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *nameBaselineToTopConstraint;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, retain) NSArray *removableConstraints;
 
 + (id)_commentLabelFont;
 + (id)_nameLabelFont;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAMPCollection;
+@interface SAMPMediaEntityList : SAAbstractItemList
 
-@interface SAMPMediaEntityList : SAAbstractItemList {
-}
-
-@property int mediaType;
-@property(retain) SAMPCollection * parentCollection;
+@property (nonatomic) int mediaType;
+@property (nonatomic, retain) SAMPCollection *parentCollection;
 
 + (id)mediaEntityList;
 + (id)mediaEntityListWithDictionary:(id)arg1 context:(id)arg2;

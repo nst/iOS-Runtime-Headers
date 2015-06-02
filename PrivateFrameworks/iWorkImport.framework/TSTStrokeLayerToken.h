@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDStroke;
-
 @interface TSTStrokeLayerToken : NSObject <TSTStrokeLayerStrokeAndRange> {
     int _order;
     unsigned int _position;
@@ -14,14 +12,14 @@
     TSDStroke *_stroke;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int order;
-@property unsigned int position;
-@property struct TSTSimpleRange { int x1; unsigned int x2; } range;
-@property(retain) TSDStroke * stroke;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int order;
+@property (nonatomic) unsigned int position;
+@property (nonatomic) struct TSTSimpleRange { int x1; unsigned int x2; } range;
+@property (nonatomic, retain) TSDStroke *stroke;
+@property (readonly) Class superclass;
 
 + (id)tokenWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 andPosition:(unsigned int)arg4;
 

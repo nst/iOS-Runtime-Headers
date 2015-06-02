@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSMutableArray, NSMutableString, NSSQLColumn, NSSQLEntity, NSSQLFetchIntermediate, NSString;
-
 @interface NSSQLSubqueryExpressionIntermediate : NSSQLExpressionIntermediate {
     NSSQLFetchIntermediate *_fetchIntermediate;
     NSSQLEntity *_governingEntityForVariable;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class CALayer, UIView;
-
 @interface MPUPinningView : UIView {
     UIView *_containerView;
     UIView *_contentView;
@@ -11,8 +9,8 @@
     UIView *_pinningSourceView;
 }
 
-@property(retain) UIView * contentView;
-@property(retain) UIView * pinningSourceView;
+@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) UIView *pinningSourceView;
 
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;

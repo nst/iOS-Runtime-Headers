@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEORPCorrectedField : PBCodable <NSCopying> {
     NSString *_correctedValue;
     int _field;
@@ -16,16 +14,16 @@
     NSString *_originalValue;
 }
 
-@property(retain) NSString * correctedValue;
-@property int field;
-@property(retain) NSString * fieldName;
-@property(readonly) BOOL hasCorrectedValue;
-@property BOOL hasField;
-@property(readonly) BOOL hasFieldName;
-@property BOOL hasIsMarkedIncorrect;
-@property(readonly) BOOL hasOriginalValue;
-@property BOOL isMarkedIncorrect;
-@property(retain) NSString * originalValue;
+@property (nonatomic, retain) NSString *correctedValue;
+@property (nonatomic) int field;
+@property (nonatomic, retain) NSString *fieldName;
+@property (nonatomic, readonly) BOOL hasCorrectedValue;
+@property (nonatomic) BOOL hasField;
+@property (nonatomic, readonly) BOOL hasFieldName;
+@property (nonatomic) BOOL hasIsMarkedIncorrect;
+@property (nonatomic, readonly) BOOL hasOriginalValue;
+@property (nonatomic) BOOL isMarkedIncorrect;
+@property (nonatomic, retain) NSString *originalValue;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

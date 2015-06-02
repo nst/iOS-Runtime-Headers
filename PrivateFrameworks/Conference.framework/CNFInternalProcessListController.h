@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@interface CNFInternalProcessListController : PSListController {
-}
+@interface CNFInternalProcessListController : PSListController
 
 - (id)bundle;
 - (void)conferenceKillProcesses:(id)arg1;

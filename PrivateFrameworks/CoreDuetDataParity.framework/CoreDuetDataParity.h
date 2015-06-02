@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataParity.framework/CoreDuetDataParity
  */
 
-@interface CoreDuetDataParity : NSObject {
-}
+@interface CoreDuetDataParity : NSObject
 
 - (id)CDDMAirplaneModeEventWithSource:(id)arg1 intoContext:(id)arg2;
 - (id)CDDMAppStateChangeEventWithSource:(id)arg1 intoContext:(id)arg2;

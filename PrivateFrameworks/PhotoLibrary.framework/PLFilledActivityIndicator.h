@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIActivityIndicatorView;
-
 @interface PLFilledActivityIndicator : UIView {
     UIActivityIndicatorView *_indicatorView;
 }

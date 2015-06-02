@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSNumber, NSString, RadioArtworkCollection;
-
 @interface _MPRadioStreamMetadata : NSObject {
     NSString *_album;
     NSString *_albumBuyButtonText;
@@ -14,13 +12,13 @@
     NSString *_title;
 }
 
-@property(copy) NSString * album;
-@property(copy) NSString * albumBuyButtonText;
-@property int albumBuyButtonType;
-@property(copy) NSString * artist;
-@property(retain) RadioArtworkCollection * artworkCollection;
-@property(getter=isExplicit,retain) NSNumber * explicit;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *album;
+@property (nonatomic, copy) NSString *albumBuyButtonText;
+@property (nonatomic) int albumBuyButtonType;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, retain) RadioArtworkCollection *artworkCollection;
+@property (getter=isExplicit, nonatomic, retain) NSNumber *explicit;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)album;

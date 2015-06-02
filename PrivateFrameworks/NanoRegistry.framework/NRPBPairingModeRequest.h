@@ -6,7 +6,7 @@
     int _pairingMode;
 }
 
-@property int pairingMode;
+@property (nonatomic) int pairingMode;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

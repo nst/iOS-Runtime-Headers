@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class CMNetworkActivityObserver, NSObject<OS_dispatch_queue>;
-
 @interface CMNetworkActivityMonitor : NSObject {
     CMNetworkActivityObserver *_cmObserver;
     int _monitoringActiveCount;
@@ -12,10 +10,10 @@
     int _showingNetworkActivityCount;
 }
 
-@property(setter=setCMObserver:,retain) CMNetworkActivityObserver * cmObserver;
-@property int monitoringActiveCount;
-@property BOOL networkIsActive;
-@property int showingNetworkActivityCount;
+@property (setter=setCMObserver:, nonatomic, retain) CMNetworkActivityObserver *cmObserver;
+@property (nonatomic) int monitoringActiveCount;
+@property (nonatomic) BOOL networkIsActive;
+@property (nonatomic) int showingNetworkActivityCount;
 
 + (id)sharedActivityMonitor;
 

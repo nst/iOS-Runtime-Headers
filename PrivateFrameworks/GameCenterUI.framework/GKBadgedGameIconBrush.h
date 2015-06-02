@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKThemeBrush;
-
 @interface GKBadgedGameIconBrush : GKThemeBrush {
     GKThemeBrush *_badgeBrush;
 }
 
-@property(retain) GKThemeBrush * badgeBrush;
+@property (nonatomic, retain) GKThemeBrush *badgeBrush;
 
 - (id)badgeBrush;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

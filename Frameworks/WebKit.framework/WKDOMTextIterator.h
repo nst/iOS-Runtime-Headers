@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKDOMRange;
-
 @interface WKDOMTextIterator : NSObject {
     struct unique_ptr<WebCore::TextIterator, std::__1::default_delete<WebCore::TextIterator> > { 
         struct __compressed_pair<WebCore::TextIterator *, std::__1::default_delete<WebCore::TextIterator> > { 
@@ -17,10 +15,10 @@
     } _upconvertedText;
 }
 
-@property(readonly) BOOL atEnd;
-@property(readonly) WKDOMRange * currentRange;
-@property(readonly) unsigned int currentTextLength;
-@property(readonly) const unsigned short* currentTextPointer;
+@property (readonly) BOOL atEnd;
+@property (readonly) WKDOMRange *currentRange;
+@property (readonly) unsigned int currentTextLength;
+@property (readonly) const unsigned short*currentTextPointer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

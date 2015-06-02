@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CECInterfaceDelegate>, NSDictionary;
-
 @interface CECInterface : CoreRCInterface {
     unsigned short _addressMask;
     <CECInterfaceDelegate> *_delegate;
@@ -15,12 +13,12 @@
     BOOL _promiscMode;
 }
 
-@property(readonly) unsigned short addressMask;
-@property <CECInterfaceDelegate> * delegate;
-@property(readonly) BOOL isValid;
-@property(readonly) struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; } lastReceivedFrame;
-@property(readonly) BOOL promiscMode;
-@property(readonly) NSDictionary * properties;
+@property (nonatomic, readonly) unsigned short addressMask;
+@property (nonatomic) <CECInterfaceDelegate> *delegate;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; } lastReceivedFrame;
+@property (nonatomic, readonly) BOOL promiscMode;
+@property (nonatomic, readonly) NSDictionary *properties;
 
 - (unsigned short)addressMask;
 - (BOOL)allocateCECAddress:(unsigned char*)arg1 forDeviceType:(unsigned char)arg2 error:(id*)arg3;

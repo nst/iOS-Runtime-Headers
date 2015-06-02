@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSNumber, NSString;
-
 @interface PHCloudSharedAlbum : PHAssetCollection {
     short _cloudAlbumSubtype;
     BOOL _cloudMultipleContributorsEnabled;
@@ -14,13 +12,13 @@
     BOOL _owned;
 }
 
-@property(readonly) short cloudAlbumSubtype;
-@property(getter=isCloudMultipleContributorsEnabled,readonly) BOOL cloudMultipleContributorsEnabled;
-@property(retain,readonly) NSNumber * cloudOwnerEmailKey;
-@property(retain,readonly) NSString * cloudOwnerFirstName;
-@property(retain,readonly) NSString * cloudOwnerFullName;
-@property(retain,readonly) NSString * cloudOwnerLastName;
-@property(getter=isOwned,readonly) BOOL owned;
+@property (nonatomic, readonly) short cloudAlbumSubtype;
+@property (getter=isCloudMultipleContributorsEnabled, nonatomic, readonly) BOOL cloudMultipleContributorsEnabled;
+@property (nonatomic, readonly, retain) NSNumber *cloudOwnerEmailKey;
+@property (nonatomic, readonly, retain) NSString *cloudOwnerFirstName;
+@property (nonatomic, readonly, retain) NSString *cloudOwnerFullName;
+@property (nonatomic, readonly, retain) NSString *cloudOwnerLastName;
+@property (getter=isOwned, nonatomic, readonly) BOOL owned;
 
 + (id)identifierCode;
 + (id)managedEntityName;

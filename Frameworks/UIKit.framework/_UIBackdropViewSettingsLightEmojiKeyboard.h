@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsLightEmojiKeyboard : _UIBackdropViewSettingsLightKeyboard {
-}
+@interface _UIBackdropViewSettingsLightEmojiKeyboard : _UIBackdropViewSettingsLightKeyboard
 
 - (id)_defaultColorTintColorWithOpacity:(float)arg1;
 - (BOOL)_shouldUseDarkeningTintLayer;

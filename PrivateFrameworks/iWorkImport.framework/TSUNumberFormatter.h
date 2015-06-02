@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface TSUNumberFormatter : NSObject {
     struct __CFString { } *mAdditionalCurrencyCode;
     struct __CFArray { } *mAdditionalCurrencyCodeFormatters;

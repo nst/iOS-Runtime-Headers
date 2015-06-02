@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString;
-
 @interface RURadioTrackAVItem : RURadioAVItem {
     NSString *_assetFlavor;
 }

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TPDocumentRoot, TSUPointerKeyDictionary;
-
 @interface TPFloatingDrawables : TSPObject <TSKDocumentObject> {
     TPDocumentRoot *_documentRoot;
     NSMutableDictionary *_drawablesByPageIndex;
     TSUPointerKeyDictionary *_pageIndexByDrawable;
 }
 
-@property(readonly) TPDocumentRoot * documentRoot;
+@property (nonatomic, readonly) TPDocumentRoot *documentRoot;
 
 - (void)addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3;
 - (void)addDrawable:(id)arg1 toPageIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUVignetteBackgroundView, UIAlertView, _UIContentUnavailableView;
-
 @interface RUPlaceholderView : UIView {
     MPUVignetteBackgroundView *_backgroundView;
     BOOL _cellularNetworkingAllowed;
@@ -12,8 +10,8 @@
     UIAlertView *_useCellularAlertView;
 }
 
-@property BOOL cellularNetworkingAllowed;
-@property int style;
+@property (nonatomic) BOOL cellularNetworkingAllowed;
+@property (nonatomic) int style;
 
 - (void).cxx_destruct;
 - (void)_useCellularAction:(id)arg1;

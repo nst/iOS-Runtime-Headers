@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSettings : _UISettings {
-}
+@interface PUSettings : _UISettings
 
 + (void)addDeferredObservers;
 + (id)sharedInstance;

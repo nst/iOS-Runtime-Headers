@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class UIImageView;
-
 @interface SFAirDropIconView : UIControl {
     UIImageView *_imageView;
 }

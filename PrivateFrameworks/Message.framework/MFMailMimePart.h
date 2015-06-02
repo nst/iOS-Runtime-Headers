@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailMimePart : MFMimePart {
-}
+@interface MFMailMimePart : MFMimePart
 
 + (Class)attachmentClass;
 + (BOOL)isRecognizedClassForContent:(id)arg1;

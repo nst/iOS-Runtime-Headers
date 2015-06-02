@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@class <APSConnectionDelegate>, CUTWeakReference, NSArray, NSData, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSObject<OS_xpc_object>, NSString;
-
 @interface APSConnection : NSObject {
     NSObject<OS_xpc_object> *_connection;
     unsigned int _connectionPort;
@@ -30,15 +28,15 @@
     BOOL _usesAppLaunchStats;
 }
 
-@property <APSConnectionDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(readonly) NSObject<OS_dispatch_queue> * ivarQueue;
-@property unsigned int largeMessageSize;
-@property unsigned int messageSize;
-@property(retain,readonly) NSData * publicToken;
-@property BOOL usesAppLaunchStats;
+@property (nonatomic) <APSConnectionDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *ivarQueue;
+@property (nonatomic) unsigned int largeMessageSize;
+@property (nonatomic) unsigned int messageSize;
+@property (nonatomic, readonly, retain) NSData *publicToken;
+@property (nonatomic) BOOL usesAppLaunchStats;
 
-+ (void)_blockingXPCCallWithArgumentBlock:(id)arg1 resultHandler:(id)arg2;
++ (void)_blockingXPCCallWithArgumentBlock:(id /* block */)arg1 resultHandler:(id /* block */)arg2;
 + (void)_safelyCancelAndReleaseAfterBarrierConnection:(id)arg1;
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
 + (void)_setTokenState;
@@ -53,7 +51,7 @@
 - (void)_addEnableCriticalReliabilityToXPCMessage:(id)arg1;
 - (void)_addEnableStatusNotificationsToXPCMessage:(id)arg1;
 - (void)_addUsesAppLaunchStatsToXPCMessage:(id)arg1;
-- (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
+- (void)_callDelegateOnIvarQueueWithBlock:(id /* block */)arg1;
 - (void)_cancelConnection;
 - (void)_cancelConnectionOnIvarQueue;
 - (void)_connectIfNecessary;
@@ -69,7 +67,7 @@
 - (void)_disconnect;
 - (void)_disconnectFromDealloc;
 - (void)_disconnectOnIvarQueue;
-- (void)_handleEvent:(id)arg1 withHandler:(id)arg2;
+- (void)_handleEvent:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)_listForIdentifierOnIvarQueue:(unsigned int)arg1;
 - (void)_noteDisconnectedFromDaemonOnIvarQueue;
 - (void)_onIvarQueue_setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3 sendToDaemon:(BOOL)arg4;

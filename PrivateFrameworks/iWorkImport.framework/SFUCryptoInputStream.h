@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUInputStream>, NSString, SFUCryptor;
-
 @interface SFUCryptoInputStream : NSObject <SFUInputStream> {
     <SFUInputStream> *mBaseStream;
     SFUCryptor *mCryptor;
     long long mOffset;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)canSeek;
 - (void)close;

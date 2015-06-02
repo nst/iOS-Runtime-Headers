@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSNumberFormatter, NSString;
-
 @interface MCDAudiobookPartsTableViewController : MCD_OLD_TableViewController {
     NSNumberFormatter *_formatter;
     NSString *_numberOfParts;

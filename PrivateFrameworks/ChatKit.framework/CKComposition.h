@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, NSAttributedString;
-
 @interface CKComposition : NSObject {
     BOOL _isFromExternalSource;
     NSAttributedString *_subject;
     NSAttributedString *_text;
 }
 
-@property(getter=isExpirableComposition,readonly) BOOL expirableComposition;
-@property(readonly) BOOL hasContent;
-@property(readonly) BOOL hasNonwhiteSpaceContent;
-@property BOOL isFromExternalSource;
-@property(retain,readonly) NSArray * mediaObjects;
-@property(retain,readonly) NSArray * pasteboardItems;
-@property(getter=isSaveable,readonly) BOOL saveable;
-@property(getter=isSendAnimated,readonly) BOOL sendAnimated;
-@property(copy) NSAttributedString * subject;
-@property(copy) NSAttributedString * text;
-@property(getter=isTextOnly,readonly) BOOL textOnly;
+@property (getter=isExpirableComposition, nonatomic, readonly) BOOL expirableComposition;
+@property (nonatomic, readonly) BOOL hasContent;
+@property (nonatomic, readonly) BOOL hasNonwhiteSpaceContent;
+@property (nonatomic) BOOL isFromExternalSource;
+@property (nonatomic, readonly, retain) NSArray *mediaObjects;
+@property (nonatomic, readonly, retain) NSArray *pasteboardItems;
+@property (getter=isSaveable, nonatomic, readonly) BOOL saveable;
+@property (getter=isSendAnimated, nonatomic, readonly) BOOL sendAnimated;
+@property (nonatomic, copy) NSAttributedString *subject;
+@property (nonatomic, copy) NSAttributedString *text;
+@property (getter=isTextOnly, nonatomic, readonly) BOOL textOnly;
 
 + (id)audioCompositionWithMediaObject:(id)arg1;
 + (id)composition;

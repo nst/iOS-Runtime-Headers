@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDGradientEvaluator;
-
 @interface CUIPSDGradient : NSObject {
     float drawingAngle;
     CUIPSDGradientEvaluator *evaluator;
@@ -11,7 +9,7 @@
 }
 
 @property float drawingAngle;
-@property(retain) CUIPSDGradientEvaluator * evaluator;
+@property (retain) CUIPSDGradientEvaluator *evaluator;
 @property unsigned int gradientStyle;
 
 + (id)cuiPSDGradientWithColors:(id)arg1 locations:(id)arg2 midpointLocations:(id)arg3 angle:(float)arg4 isRadial:(BOOL)arg5;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKWebView, _WKFrameHandle;
-
 @interface _WKWebViewPrintFormatter : UIViewPrintFormatter {
     _WKFrameHandle *_frameToPrint;
     struct PrintInfo { 
@@ -14,8 +12,8 @@
     double _totalScaleFactor;
 }
 
-@property(retain) _WKFrameHandle * frameToPrint;
-@property(readonly) WKWebView * webView;
+@property (nonatomic, retain) _WKFrameHandle *frameToPrint;
+@property (nonatomic, readonly) WKWebView *webView;
 
 - (id).cxx_construct;
 - (int)_recalcPageCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSTimer, UIImageView, UILabel, UIView;
-
 @interface UICalloutView : UIControl {
     struct { 
         struct CGPoint { 
@@ -65,22 +63,24 @@
     UIImageView *_topAnchor;
 }
 
-@property(readonly) float UICalloutViewButtonPadding;
-@property(readonly) float UICalloutViewCapHeight;
-@property(readonly) float UICalloutViewCapPaddingTop;
-@property(readonly) float UICalloutViewHorizontalMargin;
-@property(readonly) float UICalloutViewHorizontalPadding;
-@property(readonly) double UICalloutViewLayoutDuration;
-@property(readonly) float UICalloutViewMinimumWidth;
-@property(readonly) float UICalloutViewVerticalMargin;
-@property BOOL canAnchorFromBottom;
-@property(retain) UIView * leftView;
-@property float maximumWidth;
-@property(retain) UIView * rightView;
-@property int subtitleLineBreakMode;
-@property int subtitleTextAlignment;
-@property int titleLineBreakMode;
-@property int titleTextAlignment;
+@property (nonatomic, readonly) float UICalloutViewButtonPadding;
+@property (nonatomic, readonly) float UICalloutViewCapHeight;
+@property (nonatomic, readonly) float UICalloutViewCapPaddingTop;
+@property (nonatomic, readonly) float UICalloutViewHorizontalMargin;
+@property (nonatomic, readonly) float UICalloutViewHorizontalPadding;
+@property (nonatomic, readonly) double UICalloutViewLayoutDuration;
+@property (nonatomic, readonly) float UICalloutViewMinimumWidth;
+@property (nonatomic, readonly) float UICalloutViewVerticalMargin;
+@property (nonatomic) BOOL canAnchorFromBottom;
+@property (nonatomic, retain) UIView *leftView;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic, retain) UIView *rightView;
+@property (nonatomic) int subtitleLineBreakMode;
+@property (nonatomic) int subtitleTextAlignment;
+@property (nonatomic) int titleLineBreakMode;
+@property (nonatomic) int titleTextAlignment;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
@@ -121,7 +121,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isExpanded;
 - (id)leftView;
 - (float)maximumWidth;
 - (struct CGPoint { float x1; float x2; })offset;
@@ -151,5 +150,9 @@
 - (id)title;
 - (int)titleLineBreakMode;
 - (int)titleTextAlignment;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (BOOL)isExpanded;
 
 @end

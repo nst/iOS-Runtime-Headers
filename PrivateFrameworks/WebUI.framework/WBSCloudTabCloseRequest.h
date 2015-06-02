@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSDictionary, NSURL, NSUUID;
-
 @interface WBSCloudTabCloseRequest : NSObject <NSCopying> {
     NSUUID *_destinationDeviceUUID;
     NSDate *_lastModified;
@@ -13,13 +11,13 @@
     NSURL *_url;
 }
 
-@property(readonly) NSUUID * destinationDeviceUUID;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) NSDate * lastModified;
-@property(readonly) NSUUID * requestUUID;
-@property(readonly) NSUUID * sourceDeviceUUID;
-@property(readonly) NSUUID * tabUUID;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSUUID *destinationDeviceUUID;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) NSDate *lastModified;
+@property (nonatomic, readonly) NSUUID *requestUUID;
+@property (nonatomic, readonly) NSUUID *sourceDeviceUUID;
+@property (nonatomic, readonly) NSUUID *tabUUID;
+@property (nonatomic, readonly) NSURL *url;
 
 + (id)_dictionaryWithURL:(id)arg1 tabUUID:(id)arg2 lastModified:(id)arg3 sourceDeviceUUID:(id)arg4 destinationDeviceUUID:(id)arg5;
 + (id)destinationDeviceUUIDInDictionary:(id)arg1;

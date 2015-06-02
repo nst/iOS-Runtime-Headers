@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKRatingView, GKStoreItemInternal, UILabel;
-
 @interface GKPurchasableGameCell : GKBaseGameCell {
     float _capturedRating;
     UILabel *_developerLabel;
@@ -13,12 +11,12 @@
     GKStoreItemInternal *_storeItem;
 }
 
-@property float capturedRating;
-@property(retain) UILabel * developerLabel;
-@property(retain) UILabel * numberRatings;
-@property(retain) UILabel * priceLabel;
-@property(retain) GKRatingView * ratingStarsView;
-@property(retain) GKStoreItemInternal * storeItem;
+@property (nonatomic) float capturedRating;
+@property (nonatomic, retain) UILabel *developerLabel;
+@property (nonatomic, retain) UILabel *numberRatings;
+@property (nonatomic, retain) UILabel *priceLabel;
+@property (nonatomic, retain) GKRatingView *ratingStarsView;
+@property (nonatomic, retain) GKStoreItemInternal *storeItem;
 
 - (BOOL)canRemoveItem;
 - (float)capturedRating;

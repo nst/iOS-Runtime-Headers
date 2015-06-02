@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleActAlike>, NSArray, NSString, TSCHChartAxis, TSCHChartAxisID, TSCHChartModel, TSUFastReadInvalidatingCache, TSULocale;
-
 @interface TSCHChartAxis : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
     TSUFastReadInvalidatingCache *mAnalysisCache;
     TSCHChartAxisID *mAxisID;
@@ -17,18 +15,18 @@
     unsigned int mStyleIndex;
 }
 
-@property(readonly) TSCHChartAxisID * axisID;
-@property(readonly) int currentAxisScaleSetting;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCategory;
-@property(readonly) BOOL isRangeContinuous;
-@property(readonly) TSULocale * locale;
-@property(readonly) TSCHChartModel * model;
-@property(readonly) NSArray * referenceLines;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsReferenceLines;
+@property (nonatomic, readonly) TSCHChartAxisID *axisID;
+@property (nonatomic, readonly) int currentAxisScaleSetting;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isCategory;
+@property (readonly) BOOL isRangeContinuous;
+@property (nonatomic, readonly) TSULocale *locale;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (nonatomic, readonly) NSArray *referenceLines;
+@property (readonly) Class superclass;
+@property (readonly) BOOL supportsReferenceLines;
 
 + (id)axisForInfo:(id)arg1;
 + (id)defaultNumberFormat;

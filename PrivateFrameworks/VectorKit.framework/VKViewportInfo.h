@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSDictionary;
-
 @interface VKViewportInfo : NSObject {
     struct { 
         double latitude; 
@@ -15,12 +13,12 @@
     float _zoomLevel;
 }
 
-@property struct { double x1; double x2; } centerCoordinate;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property double pitch;
-@property int tileSize;
-@property double yaw;
-@property float zoomLevel;
+@property (nonatomic) struct { double x1; double x2; } centerCoordinate;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic) double pitch;
+@property (nonatomic) int tileSize;
+@property (nonatomic) double yaw;
+@property (nonatomic) float zoomLevel;
 
 - (id).cxx_construct;
 - (struct { double x1; double x2; })centerCoordinate;

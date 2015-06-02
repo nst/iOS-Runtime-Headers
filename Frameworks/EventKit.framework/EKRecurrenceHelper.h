@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSString;
-
 @interface EKRecurrenceHelper : NSObject {
     NSArray *_daysOfTheMonth;
     NSArray *_daysOfTheWeek;
@@ -16,14 +14,14 @@
     NSArray *_weeksOfTheYear;
 }
 
-@property(copy) NSArray * daysOfTheMonth;
-@property(copy) NSArray * daysOfTheWeek;
-@property(copy) NSArray * daysOfTheYear;
-@property(readonly) BOOL isDirty;
-@property(copy) NSArray * monthsOfTheYear;
-@property(copy) NSArray * setPositions;
-@property(copy) NSString * specifier;
-@property(copy) NSArray * weeksOfTheYear;
+@property (nonatomic, copy) NSArray *daysOfTheMonth;
+@property (nonatomic, copy) NSArray *daysOfTheWeek;
+@property (nonatomic, copy) NSArray *daysOfTheYear;
+@property (nonatomic, readonly) BOOL isDirty;
+@property (nonatomic, copy) NSArray *monthsOfTheYear;
+@property (nonatomic, copy) NSArray *setPositions;
+@property (nonatomic, copy) NSString *specifier;
+@property (nonatomic, copy) NSArray *weeksOfTheYear;
 
 - (void)_appendDaysOfTheWeek:(id)arg1 toSpecifier:(id)arg2;
 - (void)_appendIndexList:(id)arg1 toSpecifier:(id)arg2 propertyKey:(unsigned short)arg3;

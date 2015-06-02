@@ -17,16 +17,16 @@
     unsigned int _travelTimeBestEstimate;
 }
 
-@property unsigned int distance;
-@property BOOL hasDistance;
-@property BOOL hasHistoricTravelTime;
-@property BOOL hasStatus;
-@property BOOL hasTransportType;
-@property BOOL hasTravelTimeBestEstimate;
-@property unsigned int historicTravelTime;
-@property int status;
-@property int transportType;
-@property unsigned int travelTimeBestEstimate;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasHistoricTravelTime;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) BOOL hasTravelTimeBestEstimate;
+@property (nonatomic) unsigned int historicTravelTime;
+@property (nonatomic) int status;
+@property (nonatomic) int transportType;
+@property (nonatomic) unsigned int travelTimeBestEstimate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

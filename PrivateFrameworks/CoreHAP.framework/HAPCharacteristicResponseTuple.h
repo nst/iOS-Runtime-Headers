@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPCharacteristic, NSError;
-
 @interface HAPCharacteristicResponseTuple : NSObject {
     HAPCharacteristic *_characteristic;
     NSError *_error;
 }
 
-@property(retain) HAPCharacteristic * characteristic;
-@property(retain) NSError * error;
+@property (nonatomic, retain) HAPCharacteristic *characteristic;
+@property (nonatomic, retain) NSError *error;
 
 + (id)responseTupleForCharacteristic:(id)arg1 error:(id)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDAxis, CHDChart, CHDChartType, CHDSeries, CMState, EDResources;
-
 @interface EMChartMapper : CMMapper {
     CHDAxis *mBaseAxis;
     CHDChart *mChart;

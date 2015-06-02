@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDMMCSGetRequestInfo : PBCodable <NSCopying> {
     NSMutableArray *_authHttpInfos;
     NSMutableArray *_cancelErrors;
@@ -35,35 +33,35 @@
     long long _timestamp;
 }
 
-@property(retain) NSMutableArray * authHttpInfos;
-@property(retain) NSMutableArray * cancelErrors;
-@property int cancelledErrorCode;
-@property(retain) NSString * cancelledErrorDomain;
-@property(retain) NSString * clientId;
-@property(retain) NSMutableArray * completeHttpInfos;
-@property(retain) NSMutableArray * containerHttpInfos;
-@property long long duration;
-@property(retain) NSMutableArray * errors;
-@property BOOL hasCancelledErrorCode;
-@property(readonly) BOOL hasCancelledErrorDomain;
-@property(readonly) BOOL hasClientId;
-@property BOOL hasDuration;
-@property BOOL hasItemCount;
-@property BOOL hasItemsNeedingChunks;
-@property BOOL hasLocalBytes;
-@property BOOL hasRequestErrorCode;
-@property(readonly) BOOL hasRequestErrorDomain;
-@property BOOL hasResumedBytes;
-@property BOOL hasStartTime;
-@property BOOL hasTimestamp;
-@property int itemCount;
-@property int itemsNeedingChunks;
-@property long long localBytes;
-@property int requestErrorCode;
-@property(retain) NSString * requestErrorDomain;
-@property long long resumedBytes;
-@property long long startTime;
-@property long long timestamp;
+@property (nonatomic, retain) NSMutableArray *authHttpInfos;
+@property (nonatomic, retain) NSMutableArray *cancelErrors;
+@property (nonatomic) int cancelledErrorCode;
+@property (nonatomic, retain) NSString *cancelledErrorDomain;
+@property (nonatomic, retain) NSString *clientId;
+@property (nonatomic, retain) NSMutableArray *completeHttpInfos;
+@property (nonatomic, retain) NSMutableArray *containerHttpInfos;
+@property (nonatomic) long long duration;
+@property (nonatomic, retain) NSMutableArray *errors;
+@property (nonatomic) BOOL hasCancelledErrorCode;
+@property (nonatomic, readonly) BOOL hasCancelledErrorDomain;
+@property (nonatomic, readonly) BOOL hasClientId;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasItemCount;
+@property (nonatomic) BOOL hasItemsNeedingChunks;
+@property (nonatomic) BOOL hasLocalBytes;
+@property (nonatomic) BOOL hasRequestErrorCode;
+@property (nonatomic, readonly) BOOL hasRequestErrorDomain;
+@property (nonatomic) BOOL hasResumedBytes;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int itemCount;
+@property (nonatomic) int itemsNeedingChunks;
+@property (nonatomic) long long localBytes;
+@property (nonatomic) int requestErrorCode;
+@property (nonatomic, retain) NSString *requestErrorDomain;
+@property (nonatomic) long long resumedBytes;
+@property (nonatomic) long long startTime;
+@property (nonatomic) long long timestamp;
 
 - (void)addAuthHttpInfos:(id)arg1;
 - (void)addCancelError:(id)arg1;

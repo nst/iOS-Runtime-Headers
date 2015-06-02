@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPPCompoundPredicate, MPPConditionalPredicate, MPPPersistentIDsPredicate, MPPPropertyPredicate, MPPSearchStringPredicate;
-
 @interface MPPMediaPredicate : PBCodable <NSCopying> {
     MPPCompoundPredicate *_compoundPredicate;
     MPPConditionalPredicate *_conditionalPredicate;
@@ -16,18 +14,18 @@
     int _type;
 }
 
-@property(retain) MPPCompoundPredicate * compoundPredicate;
-@property(retain) MPPConditionalPredicate * conditionalPredicate;
-@property(readonly) BOOL hasCompoundPredicate;
-@property(readonly) BOOL hasConditionalPredicate;
-@property(readonly) BOOL hasPersistentIDsPredicate;
-@property(readonly) BOOL hasPropertyPredicate;
-@property(readonly) BOOL hasSearchStringPredicate;
-@property BOOL hasType;
-@property(retain) MPPPersistentIDsPredicate * persistentIDsPredicate;
-@property(retain) MPPPropertyPredicate * propertyPredicate;
-@property(retain) MPPSearchStringPredicate * searchStringPredicate;
-@property int type;
+@property (nonatomic, retain) MPPCompoundPredicate *compoundPredicate;
+@property (nonatomic, retain) MPPConditionalPredicate *conditionalPredicate;
+@property (nonatomic, readonly) BOOL hasCompoundPredicate;
+@property (nonatomic, readonly) BOOL hasConditionalPredicate;
+@property (nonatomic, readonly) BOOL hasPersistentIDsPredicate;
+@property (nonatomic, readonly) BOOL hasPropertyPredicate;
+@property (nonatomic, readonly) BOOL hasSearchStringPredicate;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) MPPPersistentIDsPredicate *persistentIDsPredicate;
+@property (nonatomic, retain) MPPPropertyPredicate *propertyPredicate;
+@property (nonatomic, retain) MPPSearchStringPredicate *searchStringPredicate;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)compoundPredicate;

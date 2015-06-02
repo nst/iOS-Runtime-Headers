@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EAAccessory, EASession, NSRecursiveLock;
-
 @interface EAOutputStream : NSOutputStream {
     EAAccessory *_accessory;
     struct __CFSocket { } *_cfSocket;

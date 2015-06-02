@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData;
-
 @interface AAUpgradeiOSTermsResponse : AAResponse {
     NSData *_xmlUIData;
 }
 
-@property(readonly) NSData * xmlUIData;
+@property (nonatomic, readonly) NSData *xmlUIData;
 
 - (void).cxx_destruct;
 - (BOOL)bodyIsPlist;

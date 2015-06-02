@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSNumber, NSString;
-
 @interface PKAuthenticatorEvaluationRequest : NSObject {
     NSNumber *_PINLength;
     NSString *_PINTitle;
     int _policy;
 }
 
-@property(copy) NSNumber * PINLength;
-@property(copy) NSString * PINTitle;
-@property(readonly) int policy;
+@property (nonatomic, copy) NSNumber *PINLength;
+@property (nonatomic, copy) NSString *PINTitle;
+@property (nonatomic, readonly) int policy;
 
 - (id)PINLength;
 - (id)PINTitle;

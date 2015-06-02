@@ -5,11 +5,11 @@
 @interface MKJunction : NSObject {
     unsigned long _count;
     struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_elements;
-    struct { /* ? */ } *_snapped[8];
+    struct { /* ? */ } *_snapped;
     int _type;
 }
 
-@property(readonly) int type;
+@property (nonatomic, readonly) int type;
 
 - (void)dealloc;
 - (void)getArrowPath:(id*)arg1 arrowStrokePath:(id*)arg2 intersectionBackgroundPath:(id*)arg3 strokePath:(id*)arg4 withSize:(struct CGSize { float x1; float x2; })arg5 metrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; float x6; float x7; float x8; int x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; float x19; float x20; float x21; float x22; float x23; float x24; float x25; BOOL x26; float x27; float x28; float x29; BOOL x30; BOOL x31; })arg6 drivingSide:(int)arg7 visualCenter:(struct CGPoint { float x1; float x2; }*)arg8;

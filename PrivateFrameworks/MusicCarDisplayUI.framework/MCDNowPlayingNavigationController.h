@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UIViewController;
-
 @interface MCDNowPlayingNavigationController : UINavigationController {
     UIViewController *_fakeViewController;
 }
 
-@property(readonly) UIViewController * previousViewController;
+@property (nonatomic, readonly) UIViewController *previousViewController;
 
 - (void).cxx_destruct;
 - (id)initWithRootViewController:(id)arg1;

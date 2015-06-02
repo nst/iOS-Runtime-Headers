@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSString;
-
 @interface CUIKUserActivityRemindersListSharedInvitation : CUIKUserActivityWithSource {
     NSString *_title;
 }
 
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (BOOL)_isMatchForSource:(id)arg1 andTitle:(id)arg2;

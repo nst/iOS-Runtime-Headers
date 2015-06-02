@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class VKBuildingFootprintMapModel;
-
 @interface VK3DObjectSubMapModel : NSObject {
     VKBuildingFootprintMapModel *_buildingMapModel;
     struct unique_ptr<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::FoggedBuilding::Shader::Setup> > > { 
@@ -49,8 +42,8 @@
     int _vectorType;
 }
 
-@property VKBuildingFootprintMapModel * buildingMapModel;
-@property int vectorType;
+@property (nonatomic) VKBuildingFootprintMapModel *buildingMapModel;
+@property (nonatomic) int vectorType;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

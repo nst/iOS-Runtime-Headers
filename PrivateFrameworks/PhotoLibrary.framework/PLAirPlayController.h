@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLAirPlayController : NSObject {
-}
+@interface PLAirPlayController : NSObject
 
 + (id)routeIDForAirplayRoute:(id)arg1;
 + (id)routeNameForAirplayRoute:(id)arg1;

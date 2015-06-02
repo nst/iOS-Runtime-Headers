@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPPlaceholderArtwork : NSObject {
-}
+@interface MPPlaceholderArtwork : NSObject
 
 + (id)noArtPlaceholderImageForMediaType:(unsigned int)arg1;
 

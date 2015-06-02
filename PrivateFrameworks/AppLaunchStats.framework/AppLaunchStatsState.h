@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AppLaunchStatsSaveAndRestore, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AppLaunchStatsState : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, PCInterfaceMonitorDelegate> {
     long long BGDataBudgetCap;
     long long BGDataCarryCap;
@@ -28,11 +22,7 @@
     unsigned long long appForecastQuality;
     NSMutableDictionary *appsAliveInLSTDict;
     NSMutableArray *cacheAppsforFullDebug;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id clientCallBack;
-
+    id /* block */ clientCallBack;
     NSMutableArray *dailyAppForecastSlots;
     NSMutableArray *dailyDataBGBudgetSlots;
     NSMutableArray *dailyDataBudgetSlots;
@@ -74,61 +64,61 @@
     NSMutableArray *weeklyLaunchArrays;
 }
 
-@property(readonly) long long BGDataBudgetCap;
-@property(readonly) long long BGDataCarryCap;
-@property(readonly) long long BGMinSlotData;
-@property(retain) NSMutableArray * appForecastArray;
-@property unsigned long long appForecastQuality;
-@property(retain) NSMutableDictionary * appsAliveInLSTDict;
-@property(readonly) NSMutableArray * cacheAppsforFullDebug;
-@property(retain) NSMutableArray * dailyAppForecastSlots;
-@property(retain) NSMutableArray * dailyDataBGBudgetSlots;
-@property(retain) NSMutableArray * dailyDataBudgetSlots;
-@property(retain) NSMutableArray * dailyDataNDISCBudgetSlots;
-@property(retain) NSMutableArray * dailyLaunchArrays;
-@property(retain) NSMutableArray * dailyPowerFetchBudgetSlots;
-@property(retain) NSMutableArray * dailyPowerNDISCBudgetSlots;
-@property(retain) NSMutableArray * dailyPowerPushBudgetSlots;
-@property(readonly) float dataCellMultiplier;
-@property(retain) NSMutableArray * dataForecastArray;
-@property unsigned long long dataForecastQuality;
-@property(readonly) float dataWifiMultiplier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (nonatomic, readonly) long long BGDataBudgetCap;
+@property (nonatomic, readonly) long long BGDataCarryCap;
+@property (nonatomic, readonly) long long BGMinSlotData;
+@property (nonatomic, retain) NSMutableArray *appForecastArray;
+@property (nonatomic) unsigned long long appForecastQuality;
+@property (retain) NSMutableDictionary *appsAliveInLSTDict;
+@property (nonatomic, readonly) NSMutableArray *cacheAppsforFullDebug;
+@property (nonatomic, retain) NSMutableArray *dailyAppForecastSlots;
+@property (nonatomic, retain) NSMutableArray *dailyDataBGBudgetSlots;
+@property (nonatomic, retain) NSMutableArray *dailyDataBudgetSlots;
+@property (nonatomic, retain) NSMutableArray *dailyDataNDISCBudgetSlots;
+@property (nonatomic, retain) NSMutableArray *dailyLaunchArrays;
+@property (nonatomic, retain) NSMutableArray *dailyPowerFetchBudgetSlots;
+@property (nonatomic, retain) NSMutableArray *dailyPowerNDISCBudgetSlots;
+@property (nonatomic, retain) NSMutableArray *dailyPowerPushBudgetSlots;
+@property (nonatomic, readonly) float dataCellMultiplier;
+@property (nonatomic, retain) NSMutableArray *dataForecastArray;
+@property (nonatomic) unsigned long long dataForecastQuality;
+@property (nonatomic, readonly) float dataWifiMultiplier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property bool doUniformBudget;
-@property BOOL enableBlackListCheck;
-@property(readonly) BOOL enableBudgetCheck;
-@property(readonly) BOOL enableForeGroundAppCheck;
-@property(readonly) BOOL enableLiveListCheck;
-@property(readonly) BOOL enableOpportunisticFetchCheck;
+@property (nonatomic) BOOL enableBlackListCheck;
+@property (nonatomic, readonly) BOOL enableBudgetCheck;
+@property (nonatomic, readonly) BOOL enableForeGroundAppCheck;
+@property (nonatomic, readonly) BOOL enableLiveListCheck;
+@property (nonatomic, readonly) BOOL enableOpportunisticFetchCheck;
 @property long long endofdayBGDataBudget;
 @property long long endofdayDataBudget;
 @property long long endofdayNDISCDataBudget;
-@property(retain) NSMutableArray * fireDates;
-@property(readonly) long long globalDataBudgetCap;
-@property(readonly) long long globalDataCarryCap;
-@property(readonly) float globalFetchPWPC;
-@property(readonly) long long globalMinSlotData;
-@property(readonly) float globalNonactivePWPC;
-@property(readonly) float globalPushPWPC;
-@property(readonly) long long globalTimeThreshold;
-@property(readonly) bool hasCellConnected;
+@property (retain) NSMutableArray *fireDates;
+@property (nonatomic, readonly) long long globalDataBudgetCap;
+@property (nonatomic, readonly) long long globalDataCarryCap;
+@property (nonatomic, readonly) float globalFetchPWPC;
+@property (nonatomic, readonly) long long globalMinSlotData;
+@property (nonatomic, readonly) float globalNonactivePWPC;
+@property (nonatomic, readonly) float globalPushPWPC;
+@property (nonatomic, readonly) long long globalTimeThreshold;
+@property (readonly) bool hasCellConnected;
 @property bool hasTransitionedToCoreDuet;
-@property(readonly) bool hasWifiConnected;
-@property(readonly) unsigned int hash;
+@property (readonly) bool hasWifiConnected;
+@property (readonly) unsigned int hash;
 @property bool isBatteryChargerConnected;
 @property bool isDataResourceAvailable;
 @property bool isDeviceInCall;
-@property(readonly) bool isDeviceInGoodCellularCondition;
+@property (readonly) bool isDeviceInGoodCellularCondition;
 @property bool isDeviceUnderThermalPressure;
 @property bool isFetchPowerResourceAvailable;
 @property bool isFetchPushPowerResourceAvailable;
-@property(readonly) bool isWIFIConnected;
-@property(retain) NSMutableArray * powerFetchForecastArray;
-@property(retain) NSMutableArray * powerPushForecastArray;
-@property(retain) NSMutableArray * recentLaunchArrays;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * weeklyLaunchArrays;
+@property (readonly) bool isWIFIConnected;
+@property (nonatomic, retain) NSMutableArray *powerFetchForecastArray;
+@property (nonatomic, retain) NSMutableArray *powerPushForecastArray;
+@property (nonatomic, retain) NSMutableArray *recentLaunchArrays;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *weeklyLaunchArrays;
 
 - (void).cxx_destruct;
 - (long long)BGDataBudgetCap;
@@ -211,7 +201,7 @@
 - (void)setAppForecastArray:(id)arg1;
 - (void)setAppForecastQuality:(unsigned long long)arg1;
 - (void)setAppsAliveInLSTDict:(id)arg1;
-- (void)setClientblock:(id)arg1;
+- (void)setClientblock:(id /* block */)arg1;
 - (void)setDailyAppForecastSlots:(id)arg1;
 - (void)setDailyDataBGBudgetSlots:(id)arg1;
 - (void)setDailyDataBudgetSlots:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class UIImageView, UILabel, UIView;
-
 @interface SLSheetVideoPreviewView : SLSheetImagePreviewView {
     UILabel *_durationLabel;
     UIView *_infoBar;

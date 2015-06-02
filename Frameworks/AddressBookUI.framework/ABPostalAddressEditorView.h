@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPresenterDelegate>, CNContactStyle, CNPostalAddress, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor, UITableView;
-
 @interface ABPostalAddressEditorView : UIControl <ABCountryPickerControllerDelegate, ABText, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     CNPostalAddress *_address;
     NSDictionary *_addressFormats;
@@ -15,21 +13,21 @@
     NSDictionary *_valueTextAttributes;
 }
 
-@property(copy) NSString * ab_text;
-@property(copy) NSDictionary * ab_textAttributes;
-@property(copy) CNPostalAddress * address;
-@property(copy) NSDictionary * addressFormats;
-@property(copy) NSArray * cellsLayout;
-@property(retain) CNContactStyle * contactStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABPresenterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int lineCount;
-@property(copy) UIColor * separatorColor;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
-@property(copy) NSMutableDictionary * textFields;
+@property (nonatomic, copy) NSString *ab_text;
+@property (nonatomic, copy) NSDictionary *ab_textAttributes;
+@property (nonatomic, copy) CNPostalAddress *address;
+@property (nonatomic, copy) NSDictionary *addressFormats;
+@property (nonatomic, copy) NSArray *cellsLayout;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABPresenterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int lineCount;
+@property (nonatomic, copy) UIColor *separatorColor;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, copy) NSMutableDictionary *textFields;
 
 - (id)_addressPlaceholderForKey:(id)arg1;
 - (id)_addressValueForKey:(id)arg1;

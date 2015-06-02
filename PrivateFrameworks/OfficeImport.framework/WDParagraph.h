@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDParagraphProperties;
-
 @interface WDParagraph : WDBlock {
     WDParagraphProperties *mProperties;
     NSMutableArray *mRuns;

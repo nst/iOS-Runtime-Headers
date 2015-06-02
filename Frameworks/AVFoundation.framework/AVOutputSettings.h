@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary, NSSet;
-
 @interface AVOutputSettings : NSObject <NSCopying> {
     NSDictionary *_outputSettingsDictionary;
 }
 
-@property(readonly) NSSet * compatibleMediaTypes;
-@property(readonly) NSDictionary * outputSettingsDictionary;
-@property(readonly) BOOL willYieldCompressedSamples;
+@property (nonatomic, readonly) NSSet *compatibleMediaTypes;
+@property (nonatomic, readonly) NSDictionary *outputSettingsDictionary;
+@property (nonatomic, readonly) BOOL willYieldCompressedSamples;
 
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (unsigned int)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <NSObject><UIWebPDFViewHandlerDelegate>, UIWebView;
-
 @interface QLPDFHanderDelegateForwarder : NSObject <UIWebPDFViewHandlerDelegate> {
     <NSObject><UIWebPDFViewHandlerDelegate> *_delegate;
     UIWebView *_webView;
 }
 
-@property <NSObject><UIWebPDFViewHandlerDelegate> * delegate;
-@property UIWebView * webView;
+@property (nonatomic) <NSObject><UIWebPDFViewHandlerDelegate> *delegate;
+@property (nonatomic) UIWebView *webView;
 
 - (id)delegate;
 - (void)forwardInvocation:(id)arg1;

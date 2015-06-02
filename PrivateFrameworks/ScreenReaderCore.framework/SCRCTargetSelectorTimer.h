@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSLock;
-
 @interface SCRCTargetSelectorTimer : SCRCTargetSelector {
     BOOL _createdTimer;
     BOOL _isCanceled;

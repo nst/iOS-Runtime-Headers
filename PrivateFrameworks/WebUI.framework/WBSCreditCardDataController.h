@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSMapTable;
-
 @interface WBSCreditCardDataController : NSObject {
     NSMapTable *_creditCardDataKeychainReferences;
 }
 
-@property(readonly) NSArray * creditCardData;
+@property (nonatomic, readonly) NSArray *creditCardData;
 
 + (BOOL)hasCreditCardData;
 

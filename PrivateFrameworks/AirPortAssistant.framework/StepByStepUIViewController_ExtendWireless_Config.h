@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString;
-
 @interface StepByStepUIViewController_ExtendWireless_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
     NSString *connectionType;
     BOOL isReallyJoin;
@@ -11,7 +9,7 @@
     NSString *unlocalizedStatusString;
 }
 
-@property(retain) NSString * personalizedBaseName;
+@property (nonatomic, retain) NSString *personalizedBaseName;
 
 - (id)devicePickerLabel;
 - (id)deviceTableLabel;

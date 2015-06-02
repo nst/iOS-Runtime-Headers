@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class <ACUIIdentityPickerViewControllerDelegate>, NSArray, NSString;
-
 @interface ACUIIdentityPickerViewController : PSListController {
     BOOL _allowEditing;
     <ACUIIdentityPickerViewControllerDelegate> *_delegate;
@@ -12,7 +10,7 @@
     NSString *_property;
 }
 
-@property(readonly) NSString * property;
+@property (nonatomic, readonly) NSString *property;
 
 - (void).cxx_destruct;
 - (BOOL)_allowIdentitySelection;

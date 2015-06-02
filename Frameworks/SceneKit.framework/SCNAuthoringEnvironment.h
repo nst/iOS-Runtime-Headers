@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class <SCNSceneRenderer>, NSMutableArray, SCNManipulator;
-
 @interface SCNAuthoringEnvironment : NSObject {
     unsigned short _arrowIndicesCount;
     const void *_arrowIndicesOffset;
@@ -271,13 +269,13 @@
     } _textInfo;
 }
 
-@property(readonly) <SCNSceneRenderer> * sceneRenderer;
-@property BOOL showsAllBoundingBoxes;
-@property BOOL showsAllBoundingSpheres;
-@property BOOL showsAttributesOfAllCameras;
-@property BOOL showsAttributesOfAllLights;
-@property BOOL showsLighting;
-@property BOOL showsPhysics;
+@property (readonly) <SCNSceneRenderer> *sceneRenderer;
+@property (nonatomic) BOOL showsAllBoundingBoxes;
+@property (nonatomic) BOOL showsAllBoundingSpheres;
+@property (nonatomic) BOOL showsAttributesOfAllCameras;
+@property (nonatomic) BOOL showsAttributesOfAllLights;
+@property (nonatomic) BOOL showsLighting;
+@property (nonatomic) BOOL showsPhysics;
 
 + (id)authoringEnvironmentForSceneRenderer:(id)arg1;
 

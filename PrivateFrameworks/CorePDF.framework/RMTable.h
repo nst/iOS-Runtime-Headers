@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableArray;
-
 @interface RMTable : NSObject <NSFastEnumeration> {
     NSMutableArray *_columnFirstElements;
     unsigned int _elementCount;
@@ -14,13 +12,13 @@
     struct CGPDFNode { } *_tableRoot;
 }
 
-@property(readonly) struct CGPDFPage { }* page;
+@property (readonly) struct CGPDFPage { }*page;
 @property BOOL rowOrder;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)columnAtIndex:(unsigned int)arg1;
 - (unsigned int)columns;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)dump;
 - (id)initWithRoot:(struct CGPDFNode { }*)arg1 layout:(struct CGPDFLayout { }*)arg2;

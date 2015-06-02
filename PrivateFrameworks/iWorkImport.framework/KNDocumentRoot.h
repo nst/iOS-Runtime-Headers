@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <KNDocumentRootDelegate>, KNRecordingSyncMaintainer, KNShow, KNSlidePreviewManager, KNThumbnailManager, NSString;
-
 @interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSTResolverContainerNameProvider> {
     BOOL _isShowcastAllowed;
     BOOL mIsObservingRecording;
@@ -18,13 +11,13 @@
     KNThumbnailManager *mThumbnailManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <KNDocumentRootDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isShowcastAllowed;
-@property(retain) KNShow * show;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <KNDocumentRootDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isShowcastAllowed;
+@property (nonatomic, retain) KNShow *show;
+@property (readonly) Class superclass;
 
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2;
 
@@ -75,7 +68,7 @@
 - (BOOL)validateUIState:(id)arg1;
 - (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;
 - (void)willClose;
-- (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
+- (void)withRootSearchTargetAtIndex:(unsigned int)arg1 executeBlock:(id /* block */)arg2;
 - (unsigned int)writingDirection;
 - (unsigned int)writingDirectionForStorage;
 

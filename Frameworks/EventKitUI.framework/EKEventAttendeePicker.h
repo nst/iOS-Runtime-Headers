@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventAttendeePickerDelegate>, EKEvent, MFComposeRecipientTextView, MFContactsSearchManager, MFContactsSearchResultsModel, MFSearchShadowView, NSArray, NSDate, NSMutableDictionary, NSNumber, NSOperationQueue, NSString, UIKeyboard, UIScrollView, UITableView;
-
 @interface EKEventAttendeePicker : UIViewController <ABPeoplePickerNavigationControllerDelegate, ABPersonViewControllerDelegate, ABUnknownPersonViewControllerDelegate, MFComposeRecipientTextViewDelegate, MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
     BOOL _ABAccessDenied;
     NSMutableDictionary *_atomPresentationOptionsByRecipient;
@@ -39,16 +37,16 @@
     BOOL _suppressAvailabilityRequests;
 }
 
-@property(readonly) NSArray * addresses;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <EKEventAttendeePickerDelegate> * emailValidationDelegate;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * recipients;
-@property(readonly) NSString * remainingText;
-@property(copy) NSString * searchAccountID;
-@property(readonly) BOOL showAvailability;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *addresses;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <EKEventAttendeePickerDelegate> *emailValidationDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, readonly) NSString *remainingText;
+@property (nonatomic, copy) NSString *searchAccountID;
+@property (nonatomic, readonly) BOOL showAvailability;
+@property (readonly) Class superclass;
 
 + (id)_addressForRecipient:(id)arg1;
 + (BOOL)_participantHasResponded:(id)arg1;

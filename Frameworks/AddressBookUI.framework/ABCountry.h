@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface ABCountry : NSObject {
     NSString *_countryCode;
     NSString *_countryName;
     NSString *_phoneticCountryName;
 }
 
-@property(copy) NSString * countryCode;
-@property(copy) NSString * countryName;
-@property(copy) NSString * phoneticCountryName;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, copy) NSString *countryName;
+@property (nonatomic, copy) NSString *phoneticCountryName;
 
 - (id)countryCode;
 - (id)countryName;

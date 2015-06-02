@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAudioSessionDelegateMediaPlayerOnly>, AVAudioSessionMediaPlayerOnlyInternal, NSString;
-
 @interface AVAudioSessionMediaPlayerOnly : NSObject {
     AVAudioSessionMediaPlayerOnlyInternal *_audioSession;
 }
 
-@property(readonly) NSString * category;
-@property(readonly) int currentHardwareInputNumberOfChannels;
-@property(readonly) int currentHardwareOutputNumberOfChannels;
-@property(readonly) double currentHardwareSampleRate;
-@property <AVAudioSessionDelegateMediaPlayerOnly> * delegate;
-@property(readonly) BOOL inputIsAvailable;
-@property(readonly) NSString * mode;
-@property(readonly) double preferredHardwareSampleRate;
-@property(readonly) double preferredIOBufferDuration;
+@property (readonly) NSString *category;
+@property (readonly) int currentHardwareInputNumberOfChannels;
+@property (readonly) int currentHardwareOutputNumberOfChannels;
+@property (readonly) double currentHardwareSampleRate;
+@property <AVAudioSessionDelegateMediaPlayerOnly> *delegate;
+@property (readonly) BOOL inputIsAvailable;
+@property (readonly) NSString *mode;
+@property (readonly) double preferredHardwareSampleRate;
+@property (readonly) double preferredIOBufferDuration;
 
 + (void)initialize;
 

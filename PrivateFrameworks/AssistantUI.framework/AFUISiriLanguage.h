@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISiriLanguageDelegate>, NSString;
-
 @interface AFUISiriLanguage : NSObject {
     <AFUISiriLanguageDelegate> *_delegate;
     NSString *_spokenLanguageCode;
 }
 
-@property(getter=_delegate,readonly) <AFUISiriLanguageDelegate> * delegate;
-@property(copy) NSString * spokenLanguageCode;
+@property (getter=_delegate, nonatomic, readonly) <AFUISiriLanguageDelegate> *delegate;
+@property (nonatomic, copy) NSString *spokenLanguageCode;
 
 - (void).cxx_destruct;
 - (id)_computeSpokenLanguageCode;

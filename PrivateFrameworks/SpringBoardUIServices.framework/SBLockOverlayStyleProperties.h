@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UIColor, _UIBackdropViewSettings;
-
 @interface SBLockOverlayStyleProperties : NSObject {
     float _blurRadius;
     UIColor *_primaryColor;
@@ -15,11 +13,11 @@
     UIColor *_tintColor;
 }
 
-@property(readonly) float blurRadius;
-@property(readonly) int graphicsQuality;
-@property(readonly) unsigned int style;
-@property(readonly) float tintAlpha;
-@property(readonly) UIColor * tintColor;
+@property (nonatomic, readonly) float blurRadius;
+@property (nonatomic, readonly) int graphicsQuality;
+@property (nonatomic, readonly) unsigned int style;
+@property (nonatomic, readonly) float tintAlpha;
+@property (nonatomic, readonly) UIColor *tintColor;
 
 - (void)_configure;
 - (id)_settingsForStyle;

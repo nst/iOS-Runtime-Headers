@@ -6,7 +6,7 @@
     BOOL _parked;
 }
 
-@property(getter=isParked,readonly) BOOL parked;
+@property (getter=isParked, nonatomic, readonly) BOOL parked;
 
 - (void)dealloc;
 - (id)init;

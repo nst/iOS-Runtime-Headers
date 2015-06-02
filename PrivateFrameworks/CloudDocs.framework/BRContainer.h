@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSData, NSDate, NSMultiReadUniWriteLock, NSMutableDictionary, NSSet, NSString, NSURL;
-
 @interface BRContainer : NSObject <NSSecureCoding> {
     unsigned int _currentStatus;
     long _currentStatusOnceToken;
@@ -19,24 +17,24 @@
     NSData *_sbExtension;
 }
 
-@property(copy,readonly) NSSet * bundleIdentifiers;
-@property unsigned int currentStatus;
-@property(readonly) unsigned int currentStatus;
-@property(readonly) NSSet * documentsTypes;
-@property(readonly) NSURL * documentsURL;
-@property(readonly) NSSet * exportedTypes;
-@property(readonly) NSString * identifier;
-@property(readonly) NSSet * importedTypes;
-@property BOOL isCloudSyncTCCDisabled;
-@property(readonly) BOOL isDocumentScopePublic;
-@property BOOL isInInitialState;
-@property(retain) NSDate * lastServerUpdate;
-@property(retain,readonly) NSDate * lastServerUpdate;
-@property(readonly) NSString * localizedName;
-@property(getter=isOverQuota) BOOL overQuota;
-@property(getter=isOverQuota,readonly) BOOL overQuota;
-@property(readonly) NSData * propertiesData;
-@property(readonly) NSString * supportedFolderLevels;
+@property (nonatomic, readonly, copy) NSSet *bundleIdentifiers;
+@property (nonatomic) unsigned int currentStatus;
+@property (nonatomic, readonly) unsigned int currentStatus;
+@property (nonatomic, readonly) NSSet *documentsTypes;
+@property (nonatomic, readonly) NSURL *documentsURL;
+@property (nonatomic, readonly) NSSet *exportedTypes;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSSet *importedTypes;
+@property (nonatomic) BOOL isCloudSyncTCCDisabled;
+@property (nonatomic, readonly) BOOL isDocumentScopePublic;
+@property (nonatomic) BOOL isInInitialState;
+@property (nonatomic, retain) NSDate *lastServerUpdate;
+@property (nonatomic, readonly, retain) NSDate *lastServerUpdate;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (getter=isOverQuota, nonatomic) BOOL overQuota;
+@property (getter=isOverQuota, nonatomic, readonly) BOOL overQuota;
+@property (nonatomic, readonly) NSData *propertiesData;
+@property (nonatomic, readonly) NSString *supportedFolderLevels;
 
 + (id)URLForPlistOfContainerIdentifier:(id)arg1;
 + (void)_generateiOSIconsIntoDict:(id)arg1 usingBundle:(id)arg2;
@@ -68,7 +66,7 @@
 
 - (void)_computeCachedProperties;
 - (BOOL)_getIsDocumentScopePublic;
-- (void)_performWhileAccessingSecurityScopedContainer:(id)arg1;
+- (void)_performWhileAccessingSecurityScopedContainer:(id /* block */)arg1;
 - (BOOL)_setProperties:(id)arg1 stagedBundleIconPaths:(id)arg2 bundleIconsDict:(id)arg3 salt:(id)arg4 needsRefresh:(BOOL)arg5;
 - (id)bundleIdentifiers;
 - (id)bundleIdentifiersEnumerator;

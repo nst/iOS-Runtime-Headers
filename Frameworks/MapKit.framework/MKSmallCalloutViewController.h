@@ -2,26 +2,24 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKSmallCalloutViewControllerDelegate>, MKCalloutBackgroundView, MKSmallCalloutView, NSString, UIView;
-
 @interface MKSmallCalloutViewController : UIViewController <CalloutViewControllerProtocol> {
     <MKSmallCalloutViewControllerDelegate> *_delegate;
     MKSmallCalloutView *_smallCalloutView;
 }
 
-@property(retain) MKCalloutBackgroundView * calloutBackgroundView;
-@property(copy) NSString * calloutSubtitle;
-@property(copy) NSString * calloutTitle;
-@property(copy,readonly) NSString * debugDescription;
-@property <MKSmallCalloutViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * detailView;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * leftView;
-@property unsigned int mapDisplayStyle;
-@property float maximumWidth;
-@property(retain) UIView * rightView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) MKCalloutBackgroundView *calloutBackgroundView;
+@property (nonatomic, copy) NSString *calloutSubtitle;
+@property (nonatomic, copy) NSString *calloutTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKSmallCalloutViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *detailView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *leftView;
+@property (nonatomic) unsigned int mapDisplayStyle;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic, retain) UIView *rightView;
+@property (readonly) Class superclass;
 
 + (struct CGSize { float x1; float x2; })defaultSize;
 

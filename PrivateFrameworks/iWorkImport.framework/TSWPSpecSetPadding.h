@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPPadding;
-
 @interface TSWPSpecSetPadding : TSWPSpecPadding {
     TSWPPadding *_padding;
     BOOL _unset;

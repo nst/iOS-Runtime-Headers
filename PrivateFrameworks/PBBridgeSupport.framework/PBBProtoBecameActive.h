@@ -6,7 +6,7 @@
     BOOL _wantsConfirmation;
 }
 
-@property BOOL wantsConfirmation;
+@property (nonatomic) BOOL wantsConfirmation;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

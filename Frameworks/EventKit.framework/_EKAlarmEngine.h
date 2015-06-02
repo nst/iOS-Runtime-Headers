@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class CLLocationManager, NSDate, NSDateFormatter, NSObject<OS_dispatch_queue>, NSString, NSTimer, PCPersistentTimer;
-
 @interface _EKAlarmEngine : NSObject <CLLocationManagerDelegate> {
     NSDateFormatter *_dateFormatter;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -23,10 +21,10 @@
     NSDate *_tomorrow;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_publisherBulletinIDForReminder:(id)arg1;
 + (id)_publisherBulletinIDForTask:(void*)arg1;

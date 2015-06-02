@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderSampleReferenceOutputInternal, AVAssetTrack;
-
 @interface AVAssetReaderSampleReferenceOutput : AVAssetReaderOutput {
     AVAssetReaderSampleReferenceOutputInternal *_sampleReferenceOutputInternal;
 }
 
-@property(readonly) AVAssetTrack * track;
+@property (nonatomic, readonly) AVAssetTrack *track;
 
 + (id)assetReaderSampleReferenceOutputWithTrack:(id)arg1;
 

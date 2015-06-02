@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface VK3DObjectGroup : NSObject {
     struct Box<float, 3> { 
         struct Matrix<float, 3, 1> { 
@@ -27,9 +23,9 @@
     } _styleQuery;
 }
 
-@property(readonly) struct  bounds; /* unknown property attribute:  1>=[3f]}} */
-@property(readonly) /* Warning: unhandled struct encoding: '{MeshVendor<ggl::Building::BuildingMesh>={vector<ggl::Building::BuildingMesh *' */ struct * meshVendor; /* unknown property attribute:  std::__1::allocator<ggl::Building::BuildingMesh *> >=^^{BuildingMesh}}}^{BuildingMesh}} */
-@property struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; } styleQuery;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Box<float' */ struct  bounds; /* unknown property attribute:  1>=[3f]}} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{MeshVendor<ggl::Building::BuildingMesh>={vector<ggl::Building::BuildingMesh *' */ struct *meshVendor; /* unknown property attribute:  std::__1::allocator<ggl::Building::BuildingMesh *> >=^^{BuildingMesh}}}^{BuildingMesh}} */
+@property (nonatomic) struct shared_ptr<md::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; } styleQuery;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CKExpireDurationSelectionList : PSListItemsController {
-}
+@interface CKExpireDurationSelectionList : PSListItemsController
 
 - (id)_groupSpecifier;
 - (void)_updateFooterText;

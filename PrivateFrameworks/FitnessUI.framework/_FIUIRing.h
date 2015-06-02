@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIColor, _FIUIIcon;
-
 @interface _FIUIRing : FIUIAnimatableObject {
     UIColor *_bottomColor;
     float _bottomColorBlue;
@@ -26,22 +24,22 @@
     float _topColorRed;
 }
 
-@property(retain) UIColor * bottomColor;
-@property(readonly) float bottomColorBlue;
-@property(readonly) float bottomColorGreen;
-@property(readonly) float bottomColorRed;
-@property(retain) _FIUIIcon * dotIcon;
-@property float dotPercentage;
-@property(retain) _FIUIIcon * icon;
-@property float opacity;
-@property float percentage;
-@property struct CGPoint { float x1; float x2; } position;
-@property float size;
-@property float thickness;
-@property(retain) UIColor * topColor;
-@property(readonly) float topColorBlue;
-@property(readonly) float topColorGreen;
-@property(readonly) float topColorRed;
+@property (nonatomic, retain) UIColor *bottomColor;
+@property (nonatomic, readonly) float bottomColorBlue;
+@property (nonatomic, readonly) float bottomColorGreen;
+@property (nonatomic, readonly) float bottomColorRed;
+@property (nonatomic, retain) _FIUIIcon *dotIcon;
+@property (nonatomic) float dotPercentage;
+@property (nonatomic, retain) _FIUIIcon *icon;
+@property (nonatomic) float opacity;
+@property (nonatomic) float percentage;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic) float size;
+@property (nonatomic) float thickness;
+@property (nonatomic, retain) UIColor *topColor;
+@property (nonatomic, readonly) float topColorBlue;
+@property (nonatomic, readonly) float topColorGreen;
+@property (nonatomic, readonly) float topColorRed;
 
 - (void).cxx_destruct;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;

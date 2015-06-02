@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString, NSURL;
-
 @interface PKPaymentPassContent : PKPassContent <NSSecureCoding> {
     NSString *_appURLScheme;
     NSString *_messagePushTopic;
@@ -14,13 +12,13 @@
     NSURL *_transactionServiceURL;
 }
 
-@property(copy) NSString * appURLScheme;
-@property(copy) NSString * messagePushTopic;
-@property(copy) NSURL * messageServiceURL;
-@property BOOL supportsDPANNotifications;
-@property BOOL supportsFPANNotifications;
-@property(copy) NSString * transactionPushTopic;
-@property(copy) NSURL * transactionServiceURL;
+@property (nonatomic, copy) NSString *appURLScheme;
+@property (nonatomic, copy) NSString *messagePushTopic;
+@property (nonatomic, copy) NSURL *messageServiceURL;
+@property (nonatomic) BOOL supportsDPANNotifications;
+@property (nonatomic) BOOL supportsFPANNotifications;
+@property (nonatomic, copy) NSString *transactionPushTopic;
+@property (nonatomic, copy) NSURL *transactionServiceURL;
 
 + (BOOL)supportsSecureCoding;
 

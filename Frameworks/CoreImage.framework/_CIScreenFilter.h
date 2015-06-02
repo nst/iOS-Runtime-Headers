@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface _CIScreenFilter : CIFilter {
     NSNumber *inputAngle;
     CIVector *inputCenter;
@@ -12,11 +10,11 @@
     NSNumber *inputWidth;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIVector * inputCenter;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputSharpness;
-@property(retain) NSNumber * inputWidth;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputSharpness;
+@property (nonatomic, retain) NSNumber *inputWidth;
 
 + (id)customAttributes;
 

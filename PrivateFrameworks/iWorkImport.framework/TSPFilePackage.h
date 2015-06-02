@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, TSUTemporaryDirectory, TSUZipArchive;
-
 @interface TSPFilePackage : TSPPackage {
     NSObject<OS_dispatch_queue> *_bookmarkDataQueue;
     TSUZipArchive *_componentZipArchive;
@@ -24,7 +22,7 @@
 - (BOOL)hasDataAtRelativePath:(id)arg1;
 - (id)initWithPackageIdentifier:(unsigned char)arg1 documentProperties:(id)arg2 fileFormatVersion:(unsigned long long)arg3 decryptionKey:(id)arg4 fileCoordinatorDelegate:(id)arg5 isLazyLoading:(BOOL)arg6;
 - (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2;
-- (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id)arg2 error:(id*)arg3;
+- (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
 - (int)packageType;
 - (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;

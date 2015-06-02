@@ -2,25 +2,22 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSDate, NSNumber, NSString, PLCloudSharedAlbum;
+@interface PLCloudSharedAlbumInvitationRecord : PLManagedObject
 
-@interface PLCloudSharedAlbumInvitationRecord : PLManagedObject {
-}
-
-@property(retain) PLCloudSharedAlbum * album;
-@property(retain) NSString * albumGUID;
-@property(retain) NSString * cloudGUID;
-@property(retain) NSNumber * invitationState;
-@property(retain) NSNumber * invitationStateLocal;
-@property NSNumber * inviteeEmailKey;
-@property(readonly) NSArray * inviteeEmails;
-@property(retain) NSString * inviteeFirstName;
-@property(retain) NSString * inviteeFullName;
-@property NSString * inviteeHashedPersonID;
-@property(retain) NSString * inviteeLastName;
-@property(readonly) NSArray * inviteePhones;
-@property(retain) NSDate * inviteeSubscriptionDate;
-@property BOOL isMine;
+@property (nonatomic, retain) PLCloudSharedAlbum *album;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic, retain) NSString *cloudGUID;
+@property (nonatomic, retain) NSNumber *invitationState;
+@property (nonatomic, retain) NSNumber *invitationStateLocal;
+@property (nonatomic) NSNumber *inviteeEmailKey;
+@property (nonatomic, readonly) NSArray *inviteeEmails;
+@property (nonatomic, retain) NSString *inviteeFirstName;
+@property (nonatomic, retain) NSString *inviteeFullName;
+@property (nonatomic) NSString *inviteeHashedPersonID;
+@property (nonatomic, retain) NSString *inviteeLastName;
+@property (nonatomic, readonly) NSArray *inviteePhones;
+@property (nonatomic, retain) NSDate *inviteeSubscriptionDate;
+@property (nonatomic) BOOL isMine;
 
 + (id)cloudSharedAlbumInvitationRecordWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudSharedAlbumInvitationRecordsWithAlbumGUID:(id)arg1 inLibrary:(id)arg2;

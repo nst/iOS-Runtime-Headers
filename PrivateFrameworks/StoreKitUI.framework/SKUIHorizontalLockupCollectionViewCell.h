@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIButtonViewElement, SKUICellScrollView, SKUICheckboxInputViewElement, SKUIHorizontalLockupView, UIButton, UIImageView, UIView;
-
 @interface SKUIHorizontalLockupCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView, SKUIViewElementView, UIScrollViewAccessibilityDelegate> {
     UIButton *_actionButton;
     SKUIButtonViewElement *_actionButtonViewElement;
@@ -20,12 +18,12 @@
     SKUIHorizontalLockupView *_lockupView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isScrollingCellToHideActionButton,readonly) BOOL scrollingCellToHideActionButton;
-@property(readonly) Class superclass;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isScrollingCellToHideActionButton, nonatomic, readonly) BOOL scrollingCellToHideActionButton;
+@property (readonly) Class superclass;
 
 + (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 + (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;

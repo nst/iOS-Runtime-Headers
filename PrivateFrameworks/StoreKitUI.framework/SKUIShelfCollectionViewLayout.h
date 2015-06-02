@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIShelfLayoutData;
-
 @interface SKUIShelfCollectionViewLayout : UICollectionViewLayout {
     SKUIShelfLayoutData *_layoutData;
 }
 
-@property(retain) SKUIShelfLayoutData * layoutData;
+@property (nonatomic, retain) SKUIShelfLayoutData *layoutData;
 
 + (Class)layoutAttributesClass;
 + (float)snapToBoundariesDecelerationRate;

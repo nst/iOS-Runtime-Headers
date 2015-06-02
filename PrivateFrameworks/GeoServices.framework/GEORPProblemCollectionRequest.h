@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, GEORPUserCredentials, NSData, NSMutableArray, NSString;
-
 @interface GEORPProblemCollectionRequest : PBRequest <NSCopying> {
     NSString *_countryCode;
     NSData *_devicePushToken;
@@ -16,23 +14,23 @@
     GEOLocation *_userLocation;
 }
 
-@property(retain) NSString * countryCode;
-@property(retain) NSData * devicePushToken;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasDevicePushToken;
-@property(readonly) BOOL hasHwMachine;
-@property(readonly) BOOL hasInputLanguage;
-@property(readonly) BOOL hasOsRelease;
-@property(readonly) BOOL hasUserCredentials;
-@property(readonly) BOOL hasUserEmail;
-@property(readonly) BOOL hasUserLocation;
-@property(retain) NSString * hwMachine;
-@property(retain) NSString * inputLanguage;
-@property(retain) NSString * osRelease;
-@property(retain) NSMutableArray * requestElements;
-@property(retain) GEORPUserCredentials * userCredentials;
-@property(retain) NSString * userEmail;
-@property(retain) GEOLocation * userLocation;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic, retain) NSData *devicePushToken;
+@property (nonatomic, readonly) BOOL hasCountryCode;
+@property (nonatomic, readonly) BOOL hasDevicePushToken;
+@property (nonatomic, readonly) BOOL hasHwMachine;
+@property (nonatomic, readonly) BOOL hasInputLanguage;
+@property (nonatomic, readonly) BOOL hasOsRelease;
+@property (nonatomic, readonly) BOOL hasUserCredentials;
+@property (nonatomic, readonly) BOOL hasUserEmail;
+@property (nonatomic, readonly) BOOL hasUserLocation;
+@property (nonatomic, retain) NSString *hwMachine;
+@property (nonatomic, retain) NSString *inputLanguage;
+@property (nonatomic, retain) NSString *osRelease;
+@property (nonatomic, retain) NSMutableArray *requestElements;
+@property (nonatomic, retain) GEORPUserCredentials *userCredentials;
+@property (nonatomic, retain) NSString *userEmail;
+@property (nonatomic, retain) GEOLocation *userLocation;
 
 - (void)addRequestElement:(id)arg1;
 - (void)clearRequestElements;

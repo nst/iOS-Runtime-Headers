@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSString, UILabel, UITableView, _UISettings;
-
 @interface PTSPicker : UIView <PTSHUDControl, UITableViewDataSource, UITableViewDelegate, _UISettingsKeyPathObserver> {
     int _alignment;
     NSArray *_choices;
@@ -15,18 +13,18 @@
     NSString *_valueKeyPath;
 }
 
-@property int alignment;
-@property(copy) NSArray * choices;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property _UISettings * settings;
-@property(retain) NSArray * subviewConstraints;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
-@property(retain) UILabel * titleLabel;
-@property(copy) NSString * valueKeyPath;
+@property (nonatomic) int alignment;
+@property (nonatomic, copy) NSArray *choices;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) _UISettings *settings;
+@property (nonatomic, retain) NSArray *subviewConstraints;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, copy) NSString *valueKeyPath;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)picker;

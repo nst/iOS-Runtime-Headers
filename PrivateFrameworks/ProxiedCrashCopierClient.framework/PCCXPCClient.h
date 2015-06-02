@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ProxiedCrashCopierClient.framework/ProxiedCrashCopierClient
  */
 
-@interface PCCXPCClient : NSObject {
-}
+@interface PCCXPCClient : NSObject
 
 - (id)connection;
-- (void)requestLogTransferFor:(int)arg1 onCompletion:(id)arg2;
+- (void)requestLogTransferFor:(int)arg1 onCompletion:(id /* block */)arg2;
 
 @end

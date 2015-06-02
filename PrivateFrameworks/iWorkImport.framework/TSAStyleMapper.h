@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSAStyleMapper : TSSStyleMapper {
-}
+@interface TSAStyleMapper : TSSStyleMapper
 
 - (BOOL)shouldMapParentOfStyle:(id)arg1;
 - (id)stylesheetForNewRootStyleFromStyle:(id)arg1;

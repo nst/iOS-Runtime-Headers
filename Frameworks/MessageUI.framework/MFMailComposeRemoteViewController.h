@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeRemoteViewControllerDelegate>;
-
 @interface MFMailComposeRemoteViewController : _UIRemoteViewController <MFMailComposeRemoteHost> {
     <MFMailComposeRemoteViewControllerDelegate> *_delegate;
 }
 
-@property <MFMailComposeRemoteViewControllerDelegate> * delegate;
+@property (nonatomic) <MFMailComposeRemoteViewControllerDelegate> *delegate;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void)bodyFinishedDrawing;

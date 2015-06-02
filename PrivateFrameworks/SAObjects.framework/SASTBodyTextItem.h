@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASTBodyTextItem : AceObject <SASTTemplateItem>
 
-@interface SASTBodyTextItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy) NSString * bodyText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *bodyText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)bodyTextItem;
 + (id)bodyTextItemWithDictionary:(id)arg1 context:(id)arg2;

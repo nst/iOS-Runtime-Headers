@@ -21,20 +21,20 @@
     unsigned int _voicePowerMicroWatt;
 }
 
-@property unsigned int aPWakeCacheFlushCnt;
-@property BOOL hasAPWakeCacheFlushCnt;
-@property BOOL hasIdlePowerMicroWatt;
-@property BOOL hasOOSPowerMicroWatt;
-@property BOOL hasRegistrationPowerMicroWatt;
-@property BOOL hasScanPowerMicroWatt;
-@property BOOL hasTimestamp;
-@property BOOL hasVoicePowerMicroWatt;
-@property unsigned int idlePowerMicroWatt;
-@property unsigned int oOSPowerMicroWatt;
-@property unsigned int registrationPowerMicroWatt;
-@property unsigned int scanPowerMicroWatt;
-@property unsigned long long timestamp;
-@property unsigned int voicePowerMicroWatt;
+@property (nonatomic) unsigned int aPWakeCacheFlushCnt;
+@property (nonatomic) BOOL hasAPWakeCacheFlushCnt;
+@property (nonatomic) BOOL hasIdlePowerMicroWatt;
+@property (nonatomic) BOOL hasOOSPowerMicroWatt;
+@property (nonatomic) BOOL hasRegistrationPowerMicroWatt;
+@property (nonatomic) BOOL hasScanPowerMicroWatt;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasVoicePowerMicroWatt;
+@property (nonatomic) unsigned int idlePowerMicroWatt;
+@property (nonatomic) unsigned int oOSPowerMicroWatt;
+@property (nonatomic) unsigned int registrationPowerMicroWatt;
+@property (nonatomic) unsigned int scanPowerMicroWatt;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int voicePowerMicroWatt;
 
 - (unsigned int)aPWakeCacheFlushCnt;
 - (void)copyTo:(id)arg1;

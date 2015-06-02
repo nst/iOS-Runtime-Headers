@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSData, NSURL;
-
 @interface _UIDocumentPickerNSURLWrapper : NSObject <NSSecureCoding> {
     BOOL _createSandbox;
     NSData *_scope;
     NSURL *_url;
 }
 
-@property BOOL createSandbox;
-@property(copy) NSData * scope;
-@property(copy) NSURL * url;
+@property (nonatomic) BOOL createSandbox;
+@property (nonatomic, copy) NSData *scope;
+@property (nonatomic, copy) NSURL *url;
 
 + (void)assembleURL:(id)arg1 sandbox:(id)arg2 physicalURL:(id)arg3 physicalSandbox:(id)arg4;
 + (BOOL)supportsSecureCoding;

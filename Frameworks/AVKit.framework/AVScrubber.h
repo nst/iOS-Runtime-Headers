@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVLoadedTimeRangesView, NSArray, NSString, UIImageView;
-
 @interface AVScrubber : UISlider {
     float _beginTouchLocationInViewY;
     NSArray *_loadedTimeRanges;
@@ -13,10 +11,10 @@
     float _touchLocationOffsetFromThumbViewCenter;
 }
 
-@property(retain) NSArray * loadedTimeRanges;
-@property(readonly) NSString * localizedScrubbingSpeedName;
-@property(getter=isPreciseScrubbingFeasible,readonly) BOOL preciseScrubbingFeasible;
-@property int scrubbingSpeed;
+@property (nonatomic, retain) NSArray *loadedTimeRanges;
+@property (nonatomic, readonly) NSString *localizedScrubbingSpeedName;
+@property (getter=isPreciseScrubbingFeasible, nonatomic, readonly) BOOL preciseScrubbingFeasible;
+@property (nonatomic) int scrubbingSpeed;
 
 + (id)keyPathsForValuesAffectingLocalizedScrubbingSpeedName;
 + (id)keyPathsForValuesAffectingPreciseScrubbingFeasible;

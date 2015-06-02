@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class DevicePINController, NSString, UIKeyboard;
-
 @interface KeychainSyncDevicePINController : KeychainSyncTextEntryController {
     DevicePINController *_devicePINController;
     UIKeyboard *_disabledKeyboard;
@@ -12,9 +10,9 @@
     BOOL _showingBlockedMessage;
 }
 
-@property(retain) UIKeyboard * disabledKeyboard;
-@property(retain) NSString * enterPasscodeReason;
-@property(retain) NSString * enterPasscodeTitle;
+@property (nonatomic, retain) UIKeyboard *disabledKeyboard;
+@property (nonatomic, retain) NSString *enterPasscodeReason;
+@property (nonatomic, retain) NSString *enterPasscodeTitle;
 
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;

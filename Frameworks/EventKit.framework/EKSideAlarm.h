@@ -2,20 +2,17 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSNumber, NSString;
+@interface EKSideAlarm : NSManagedObject
 
-@interface EKSideAlarm : NSManagedObject {
-}
-
-@property(retain) NSDate * acknowledgedDate;
-@property(retain) NSNumber * alarmID;
-@property(retain) NSNumber * allDay;
-@property(retain) NSDate * entityDate;
-@property(retain) NSNumber * entityID;
-@property(retain) NSString * entityTimeZone;
-@property(retain) NSString * entityURI;
-@property(retain) NSString * externalID;
-@property(retain) NSDate * fireTime;
-@property(retain) NSNumber * isDelayedProximityAlarm;
+@property (nonatomic, retain) NSDate *acknowledgedDate;
+@property (nonatomic, retain) NSNumber *alarmID;
+@property (nonatomic, retain) NSNumber *allDay;
+@property (nonatomic, retain) NSDate *entityDate;
+@property (nonatomic, retain) NSNumber *entityID;
+@property (nonatomic, retain) NSString *entityTimeZone;
+@property (nonatomic, retain) NSString *entityURI;
+@property (nonatomic, retain) NSString *externalID;
+@property (nonatomic, retain) NSDate *fireTime;
+@property (nonatomic, retain) NSNumber *isDelayedProximityAlarm;
 
 @end

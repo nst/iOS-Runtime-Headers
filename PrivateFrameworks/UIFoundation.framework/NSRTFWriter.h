@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSAttributedString, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableData, NSMutableDictionary;
-
 @interface NSRTFWriter : NSObject {
     NSAttributedString *_attrString;
     unsigned int _attrStringLength;

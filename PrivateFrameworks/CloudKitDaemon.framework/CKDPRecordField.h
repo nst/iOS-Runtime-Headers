@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordFieldIdentifier, CKDPRecordFieldValue;
-
 @interface CKDPRecordField : PBCodable <NSCopying> {
     CKDPRecordFieldIdentifier *_identifier;
     CKDPRecordFieldValue *_value;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasValue;
-@property(retain) CKDPRecordFieldIdentifier * identifier;
-@property(retain) CKDPRecordFieldValue * value;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) CKDPRecordFieldIdentifier *identifier;
+@property (nonatomic, retain) CKDPRecordFieldValue *value;
 
 + (id)emptyFieldWithKey:(id)arg1;
 

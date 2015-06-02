@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUZoomableGridViewControllerPhoneSpec : PUZoomableGridViewControllerSpec {
-}
+@interface PUZoomableGridViewControllerPhoneSpec : PUZoomableGridViewControllerSpec
 
 - (BOOL)canDisplayMultipleRightBarButtonItems;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionsLevelSectionHeaderContentInset;

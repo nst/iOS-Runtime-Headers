@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString;
-
 @interface MFCalendarComposeRecipient : MFComposeRecipient {
     NSString *_calAttendeeName;
     id _participant;
 }
 
-@property(retain) id participant;
+@property (nonatomic, retain) id participant;
 
 - (void)dealloc;
 - (id)displayString;

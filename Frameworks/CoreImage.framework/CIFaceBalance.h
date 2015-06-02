@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIFaceBalance : CIFilter <_CIFilterProperties> {
     CIImage *inputImage;
     NSNumber *inputOrigI;
@@ -12,11 +10,11 @@
     NSNumber *inputWarmth;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputOrigI;
-@property(retain) NSNumber * inputOrigQ;
-@property(retain) NSNumber * inputStrength;
-@property(retain) NSNumber * inputWarmth;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputOrigI;
+@property (nonatomic, retain) NSNumber *inputOrigQ;
+@property (nonatomic, retain) NSNumber *inputStrength;
+@property (nonatomic, retain) NSNumber *inputWarmth;
 
 + (id)customAttributes;
 

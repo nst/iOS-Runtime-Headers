@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UILabel;
-
 @interface GKFriendRecommendationCell : GKBasePlayerCell {
     UILabel *_reasonLabel;
 }
 
-@property(retain) UILabel * reasonLabel;
+@property (nonatomic, retain) UILabel *reasonLabel;
 
 - (void)dealloc;
 - (void)didUpdateModel;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMDesktopNetworkManager : IMNetworkManager {
-}
+@interface IMDesktopNetworkManager : IMNetworkManager
 
 @end

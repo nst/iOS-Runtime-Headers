@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UIButton, UILabel, UIScrollView, UIView;
-
 @interface AAUIExplainAppleIDViewController : UIViewController {
     UIView *_contentView;
     UILabel *_descriptionLabel;
@@ -13,7 +11,7 @@
     UILabel *_titleLabel;
 }
 
-@property BOOL shouldShowInviteeInstructions;
+@property (nonatomic) BOOL shouldShowInviteeInstructions;
 
 - (void).cxx_destruct;
 - (float)_heightForText:(id)arg1 constrainedToWidth:(float)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKAnchorDelegate>;
-
 @interface VKAnchor : NSObject {
     struct shared_ptr<vk::Anchor> { 
         struct Anchor {} *__ptr_; 
@@ -11,13 +9,13 @@
     } _anchor;
 }
 
-@property struct { double x1; double x2; } coordinate;
-@property <VKAnchorDelegate> * delegate;
-@property(readonly) BOOL followsTerrain;
-@property(readonly) BOOL isGeocentric;
-@property(readonly) BOOL isMercator;
-@property(readonly) struct VKPoint { double x1; double x2; double x3; } mercatorPoint;
-@property(readonly) struct VKPoint { double x1; double x2; double x3; } worldPoint;
+@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (nonatomic) <VKAnchorDelegate> *delegate;
+@property (nonatomic, readonly) BOOL followsTerrain;
+@property (nonatomic, readonly) BOOL isGeocentric;
+@property (nonatomic, readonly) BOOL isMercator;
+@property (nonatomic, readonly) struct VKPoint { double x1; double x2; double x3; } mercatorPoint;
+@property (nonatomic, readonly) struct VKPoint { double x1; double x2; double x3; } worldPoint;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

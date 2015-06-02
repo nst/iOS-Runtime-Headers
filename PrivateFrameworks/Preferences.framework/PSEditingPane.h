@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier, UIViewController;
-
 @interface PSEditingPane : UIView {
     id _delegate;
-    unsigned int _requiresKeyboard : 1;
+    unsigned int _requiresKeyboard;
     PSSpecifier *_specifier;
     UIViewController *_viewController;
 }
 
-@property UIViewController * viewController;
+@property (nonatomic) UIViewController *viewController;
 
 + (id)defaultBackgroundColor;
 + (float)preferredHeight;

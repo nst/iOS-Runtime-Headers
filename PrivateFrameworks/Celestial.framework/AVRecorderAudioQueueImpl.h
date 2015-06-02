@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface AVRecorderAudioQueueImpl : NSObject <AVRecorderImpl> {
     NSMutableDictionary *_attributes;
     unsigned long _audioCodec;
@@ -11,8 +9,8 @@
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevels;
     struct AudioQueueLevelMeterState { float x1; float x2; } *_audioLevelsDB;
     struct OpaqueAudioQueue { } *_audioQueue;
-    BOOL _bufferUsed[3];
-    struct AudioQueueBuffer {} *_buffers[3];
+    BOOL _bufferUsed;
+    struct AudioQueueBuffer {} *_buffers;
     unsigned long _fileType;
     BOOL _haveRecordedMaxPCMFrames;
     BOOL _isActive;
@@ -36,10 +34,10 @@
     unsigned long _totalPacketsRecorded;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)activate:(id*)arg1;
 - (id)attributeForKey:(id)arg1;

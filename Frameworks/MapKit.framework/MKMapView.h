@@ -2,25 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MKMapViewDelegate>, <MKMapViewDelegate><MKMapViewDelegatePrivate>, CLLocation, MKAnnotationContainerView, MKAnnotationView, MKAttributionLabel, MKBasicMapView, MKCompassView, MKMapAnnotationManager, MKMapCamera, MKMapGestureController, MKMapViewInternal, MKOverlayContainerView, MKScaleView, MKUserLocation, NSArray, NSString, NSTimer, UIGestureRecognizer, UIImageView, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer, UITextView, UIView, VKLabelMarker, VKMapView, VKPuckAnimator, _MKEnvironmentLabel;
-
 @interface MKMapView : UIView <GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate, VKPuckAnimatorDelegate> {
     MKAnnotationContainerView *_annotationContainer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _annotationCoordinateTest;
-
+    id /* block */ _annotationCoordinateTest;
     MKMapAnnotationManager *_annotationManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _annotationRectTest;
-
+    id /* block */ _annotationRectTest;
     UIImageView *_attributionBadgeView;
     MKAttributionLabel *_attributionLabel;
     BOOL _automaticallySnapsToNorth;
@@ -33,11 +19,7 @@
     BOOL _compassVisible;
     UIView *_contentView;
     unsigned long long _currentFlyoverAnimationID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _debugConsoleAdditionalInfoProvider;
-
+    id /* block */ _debugConsoleAdditionalInfoProvider;
     _MKEnvironmentLabel *_debugCurrentEnvironmentLabel;
     NSTimer *_debugTimer;
     UILabel *_debugView;
@@ -129,27 +111,15 @@
     MKOverlayContainerView *_overlayContainer;
     int _preGesturingLoopRate;
     VKLabelMarker *_pressedLabelMarker;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _regionSetterWhenSized;
-
+    id /* block */ _regionSetterWhenSized;
     <MKMapViewDelegate><MKMapViewDelegatePrivate> *_safeDelegate;
     BOOL _scaleEnabled;
     MKScaleView *_scaleView;
     BOOL _scaleVisible;
     UIView *_scrollContainerView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _selectAnnotationViewAfterRedrawBlock;
-
+    id /* block */ _selectAnnotationViewAfterRedrawBlock;
     UITapGestureRecognizer *_selectingTapGestureRecognizer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _showCalloutAfterRegionChangeBlock;
-
+    id /* block */ _showCalloutAfterRegionChangeBlock;
     NSTimer *_startEffectsTimer;
     unsigned int _suspendedEffectsCount;
     id _topLayoutGuide;
@@ -163,36 +133,36 @@
     double _verticalYawOverride;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } annotationVisibleRect;
-@property(readonly) NSArray * annotations;
-@property(copy) MKMapCamera * camera;
-@property struct { double x1; double x2; } centerCoordinate;
-@property(getter=_currentFlyoverAnimationID,setter=_setCurrentFlyoverAnimationID:) unsigned long long currentFlyoverAnimationID;
-@property(copy,readonly) NSString * debugDescription;
-@property <MKMapViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=_detailedDescription,readonly) NSString * detailedDescription;
-@property(readonly) unsigned int hash;
-@property BOOL ignoreLocationUpdates;
-@property unsigned int mapType;
-@property(readonly) NSArray * overlays;
-@property(getter=isPitchEnabled) BOOL pitchEnabled;
-@property(retain) CLLocation * predictedUserLocation;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
-@property(getter=isRotateEnabled) BOOL rotateEnabled;
-@property(getter=isScrollEnabled) BOOL scrollEnabled;
-@property(copy) NSArray * selectedAnnotations;
-@property BOOL showsBuildings;
-@property BOOL showsPointsOfInterest;
-@property BOOL showsUserLocation;
-@property(readonly) Class superclass;
-@property(readonly) MKUserLocation * userLocation;
-@property(retain,readonly) MKAnnotationView * userLocationView;
-@property(getter=isUserLocationVisible,readonly) BOOL userLocationVisible;
-@property int userTrackingMode;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } visibleMapRect;
-@property(getter=_visibleTileSets,readonly) NSArray * visibleTileSets;
-@property(getter=isZoomEnabled) BOOL zoomEnabled;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } annotationVisibleRect;
+@property (nonatomic, readonly) NSArray *annotations;
+@property (nonatomic, copy) MKMapCamera *camera;
+@property (nonatomic) struct { double x1; double x2; } centerCoordinate;
+@property (getter=_currentFlyoverAnimationID, setter=_setCurrentFlyoverAnimationID:, nonatomic) unsigned long long currentFlyoverAnimationID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKMapViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=_detailedDescription, nonatomic, readonly) NSString *detailedDescription;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreLocationUpdates;
+@property (nonatomic) unsigned int mapType;
+@property (nonatomic, readonly) NSArray *overlays;
+@property (getter=isPitchEnabled, nonatomic) BOOL pitchEnabled;
+@property (nonatomic, retain) CLLocation *predictedUserLocation;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property (getter=isRotateEnabled, nonatomic) BOOL rotateEnabled;
+@property (getter=isScrollEnabled, nonatomic) BOOL scrollEnabled;
+@property (nonatomic, copy) NSArray *selectedAnnotations;
+@property (nonatomic) BOOL showsBuildings;
+@property (nonatomic) BOOL showsPointsOfInterest;
+@property (nonatomic) BOOL showsUserLocation;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) MKUserLocation *userLocation;
+@property (nonatomic, readonly, retain) MKAnnotationView *userLocationView;
+@property (getter=isUserLocationVisible, nonatomic, readonly) BOOL userLocationVisible;
+@property (nonatomic) int userTrackingMode;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } visibleMapRect;
+@property (getter=_visibleTileSets, nonatomic, readonly) NSArray *visibleTileSets;
+@property (getter=isZoomEnabled, nonatomic) BOOL zoomEnabled;
 
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectThatFitsViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4 minZoomLevel:(float)arg5 maxZoomLevel:(float)arg6 snapToZoomLevel:(BOOL)arg7;
 + (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_regionThatFitsMapType:(unsigned int)arg1 viewSize:(struct CGSize { float x1; float x2; })arg2 viewInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 edgePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4 region:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg5 minZoomLevel:(float)arg6 maxZoomLevel:(float)arg7 snapToZoomLevel:(BOOL)arg8;
@@ -206,7 +176,7 @@
 - (void)_addAnnotations:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)_addDebugGesture;
 - (void)_addPersistentVectorOverlay:(id)arg1;
-- (void)_addSetRegionBlockWhenSized:(id)arg1;
+- (void)_addSetRegionBlockWhenSized:(id /* block */)arg1;
 - (void)_addVectorOverlay:(id)arg1;
 - (void)_addViewsForAnnotations:(id)arg1;
 - (id)_additionalManifestConfiguration;
@@ -247,7 +217,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRectToView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentEnvironmentNameFrame;
 - (unsigned long long)_currentFlyoverAnimationID;
-- (id)_debugConsoleAdditionalInfoProvider;
+- (id /* block */)_debugConsoleAdditionalInfoProvider;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_debugViewFrame;
 - (id)_defaultLocationTimer;
 - (void)_deselectLabelMarkerAnimated:(BOOL)arg1;
@@ -268,7 +238,7 @@
 - (void)_forceFrame;
 - (double)_goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2 animated:(BOOL)arg3;
 - (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3;
-- (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3 completionHandler:(id)arg4;
+- (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleLongPressDidEnd;
 - (void)_handleStyleDebugGesture:(id)arg1;
 - (void)_handleTapToDeselect:(id)arg1;
@@ -313,7 +283,7 @@
 - (void)_performFlyoverAnimation:(id)arg1;
 - (void)_performFlyoverAnimation:(id)arg1 animateToStart:(BOOL)arg2;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_prepareFlyoverAnimation:(id)arg1 completion:(id)arg2;
+- (void)_prepareFlyoverAnimation:(id)arg1 completion:(id /* block */)arg2;
 - (void)_removePersistentVectorOverlay:(id)arg1;
 - (void)_removeVectorOverlay:(id)arg1;
 - (void)_replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
@@ -337,13 +307,13 @@
 - (void)_setAutomaticallySnapsToNorth:(BOOL)arg1;
 - (void)_setCamera:(id)arg1;
 - (void)_setCamera:(id)arg1 animated:(BOOL)arg2;
-- (void)_setCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
+- (void)_setCamera:(id)arg1 duration:(double)arg2 timing:(id /* block */)arg3;
 - (void)_setCamera:(id)arg1 duration:(double)arg2 timingCurve:(int)arg3;
 - (void)_setCanSelectAllLabels:(BOOL)arg1;
 - (void)_setCanSelectPOIs:(BOOL)arg1;
 - (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setCurrentFlyoverAnimationID:(unsigned long long)arg1;
-- (void)_setDebugConsoleAdditionalInfoProvider:(id)arg1;
+- (void)_setDebugConsoleAdditionalInfoProvider:(id /* block */)arg1;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 explicit:(BOOL)arg2;
 - (void)_setLabelEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -371,8 +341,8 @@
 - (void)_setUserTrackingZoomStyle:(int)arg1;
 - (void)_setVectorKitConsoleEnabled:(BOOL)arg1;
 - (void)_setVectorKitStyleDebugEnabled:(BOOL)arg1;
-- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2 completionHandler:(id)arg3;
-- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 duration:(double)arg2 completionHandler:(id)arg3;
+- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)_setVisibleMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 duration:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)_setZoomScale:(float)arg1 centerCoordinate:(struct { double x1; double x2; })arg2 duration:(double)arg3 animated:(BOOL)arg4;
 - (void)_setZoomScale:(float)arg1 centerMapPoint:(struct { double x1; double x2; })arg2 duration:(double)arg3 animated:(BOOL)arg4;
 - (BOOL)_shouldAnimatePositionWithRouteMatch;
@@ -389,7 +359,7 @@
 - (void)_sizeWillChange;
 - (void)_snapToNorthIfNecessary;
 - (id)_startEffectsTimer;
-- (void)_startFlyoverTourAnimation:(unsigned long long)arg1 completion:(id)arg2;
+- (void)_startFlyoverTourAnimation:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)_startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_startTrackingHeading;
 - (void)_startZoomForExternalGesture;
@@ -410,7 +380,7 @@
 - (void)_updateEnvironmentLabelText;
 - (void)_updateFallbackTileLoading;
 - (void)_updateFromCamera:(id)arg1;
-- (void)_updateFromCamera:(id)arg1 duration:(double)arg2 timing:(id)arg3;
+- (void)_updateFromCamera:(id)arg1 duration:(double)arg2 timing:(id /* block */)arg3;
 - (void)_updateHeading:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateHeadingOrientation;
 - (void)_updateIconsShouldAlignToPixels;
@@ -457,7 +427,7 @@
 - (void)addOverlays:(id)arg1 level:(int)arg2;
 - (void)annotationContainer:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (float)annotationContainer:(id)arg1 pinDropDistanceForCoordinate:(struct { double x1; double x2; })arg2 maxDistance:(float*)arg3 startPoint:(struct CGPoint { float x1; float x2; }*)arg4 shadowStartPoint:(struct CGPoint { float x1; float x2; }*)arg5;
-- (void)annotationContainer:(id)arg1 scrollToRevealCalloutWithOffset:(struct CGPoint { float x1; float x2; })arg2 annotationCoordinate:(struct { double x1; double x2; })arg3 completionHandler:(id)arg4;
+- (void)annotationContainer:(id)arg1 scrollToRevealCalloutWithOffset:(struct CGPoint { float x1; float x2; })arg2 annotationCoordinate:(struct { double x1; double x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)annotationContainerDidAnimateBubble:(id)arg1;
 - (void)annotationContainerDidDropPins:(id)arg1;
 - (void)annotationContainerDidFinishMapsTransitionExpanding:(id)arg1;
@@ -466,13 +436,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationContainerVisibleRect:(id)arg1;
 - (void)annotationContainerWillAnimateBubble:(id)arg1;
 - (void)annotationContainerWillDropPins:(id)arg1;
-- (id)annotationCoordinateTest;
+- (id /* block */)annotationCoordinateTest;
 - (void)annotationManager:(id)arg1 didAddAnnotationRepresentations:(id)arg2;
 - (void)annotationManager:(id)arg1 didDeselectAnnotationRepresentation:(id)arg2;
 - (void)annotationManager:(id)arg1 didSelectAnnotationRepresentation:(id)arg2;
 - (id)annotationManager:(id)arg1 representationForAnnotation:(id)arg2;
 - (void)annotationManager:(id)arg1 willDeselectAnnotationRepresentation:(id)arg2;
-- (id)annotationRectTest;
+- (id /* block */)annotationRectTest;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationVisibleRect;
 - (id)annotations;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor, UILabel, UIView;
-
 @interface SKUIQuicklinksView : UIView {
     UIView *_borderView;
     UIView *_collectionView;
@@ -11,8 +9,8 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIView * collectionView;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIView *collectionView;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)collectionView;

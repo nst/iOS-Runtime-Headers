@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, NSString;
+@interface MTLToolsComputeCommandEncoder : MTLToolsCommandEncoder <MTLComputeCommandEncoder>
 
-@interface MTLToolsComputeCommandEncoder : MTLToolsCommandEncoder <MTLComputeCommandEncoder> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (readonly) Class superclass;
 
 - (void)acceptVisitor:(id)arg1;
 - (void)dispatchThreadgroups:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg2;

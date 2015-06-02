@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary;
-
 @interface CMDiagramShapeHierarchyMapper : CMDiagramShapeMapper {
     BOOL mIsLayered;
     NSMutableDictionary *mNodeInfoMap;

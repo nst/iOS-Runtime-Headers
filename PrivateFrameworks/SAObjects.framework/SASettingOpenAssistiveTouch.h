@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenAssistiveTouch : SASettingOpenSettings {
-}
+@interface SASettingOpenAssistiveTouch : SASettingOpenSettings
 
 + (id)openAssistiveTouch;
 + (id)openAssistiveTouchWithDictionary:(id)arg1 context:(id)arg2;

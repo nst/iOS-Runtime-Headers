@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@interface NFMWiFiManager : NSObject {
-}
+@interface NFMWiFiManager : NSObject
 
 + (id)sharedManager;
 

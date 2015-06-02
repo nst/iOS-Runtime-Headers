@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSArray, NSMutableArray, NSNumber, NSString;
-
 @interface HAPMetadata : NSObject {
     NSString *_hapBaseUUIDSuffix;
     NSArray *_hapCharacteristics;
@@ -16,15 +14,15 @@
     NSNumber *_version;
 }
 
-@property(retain) NSString * hapBaseUUIDSuffix;
-@property(retain) NSArray * hapCharacteristics;
-@property(retain) NSArray * hapProperties;
-@property(retain) NSArray * hapServices;
-@property(retain) NSArray * hapSupportsAuthDataTuples;
-@property(retain) NSArray * hapValueUnits;
-@property(retain) NSMutableArray * parsedUUIDs;
-@property(retain) NSNumber * schemaVersion;
-@property(retain) NSNumber * version;
+@property (nonatomic, retain) NSString *hapBaseUUIDSuffix;
+@property (nonatomic, retain) NSArray *hapCharacteristics;
+@property (nonatomic, retain) NSArray *hapProperties;
+@property (nonatomic, retain) NSArray *hapServices;
+@property (nonatomic, retain) NSArray *hapSupportsAuthDataTuples;
+@property (nonatomic, retain) NSArray *hapValueUnits;
+@property (nonatomic, retain) NSMutableArray *parsedUUIDs;
+@property (nonatomic, retain) NSNumber *schemaVersion;
+@property (nonatomic, retain) NSNumber *version;
 
 + (id)expandHAPType:(id)arg1 baseUUIDSuffix:(id)arg2;
 + (id)getBuiltinInstance;

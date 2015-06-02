@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptMultilineLabelCell : CKTranscriptLabelCell {
-}
+@interface CKTranscriptMultilineLabelCell : CKTranscriptLabelCell
 
 + (id)label;
 

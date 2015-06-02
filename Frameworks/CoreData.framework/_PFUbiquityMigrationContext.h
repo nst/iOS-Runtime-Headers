@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class PFUbiquityStoreSaveSnapshot, PFUbiquityTransactionLog;
-
 @interface _PFUbiquityMigrationContext : NSObject {
     PFUbiquityStoreSaveSnapshot *_destinationStoreSaveSnapshot;
     PFUbiquityStoreSaveSnapshot *_sourceStoreSaveSnapshot;
     PFUbiquityTransactionLog *_transactionLog;
 }
 
-@property(retain) PFUbiquityStoreSaveSnapshot * destinationStoreSaveSnapshot;
-@property(retain) PFUbiquityStoreSaveSnapshot * sourceStoreSaveSnapshot;
-@property(retain) PFUbiquityTransactionLog * transactionLog;
+@property (nonatomic, retain) PFUbiquityStoreSaveSnapshot *destinationStoreSaveSnapshot;
+@property (nonatomic, retain) PFUbiquityStoreSaveSnapshot *sourceStoreSaveSnapshot;
+@property (nonatomic, retain) PFUbiquityTransactionLog *transactionLog;
 
 - (void)dealloc;
 - (id)destinationStoreSaveSnapshot;

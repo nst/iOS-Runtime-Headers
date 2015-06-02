@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MusicTableViewCellContentView;
-
 @interface MusicTableViewCell : UITableViewCell {
     MusicTableViewCellContentView *_cellContentView;
     float _maximumContentViewHeight;
 }
 
-@property(readonly) MusicTableViewCellContentView * cellContentView;
-@property float maximumContentViewHeight;
+@property (nonatomic, readonly) MusicTableViewCellContentView *cellContentView;
+@property (nonatomic) float maximumContentViewHeight;
 
 + (Class)contentViewClass;
 

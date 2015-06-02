@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary, NSMutableArray, NSString, PLEntry, PLXPCListenerOperatorComposition;
-
 @interface PLAudioAgent : PLAgent {
     PLXPCListenerOperatorComposition *_audioAppXPCListener;
     NSString *_audioHardware;
@@ -16,14 +14,14 @@
     BOOL _speakerIsPlayingAudio;
 }
 
-@property(retain) PLXPCListenerOperatorComposition * audioAppXPCListener;
-@property(readonly) NSString * audioHardware;
-@property(readonly) NSDictionary * audioPowerModel;
-@property(retain) PLEntry * entryRoutingOld;
-@property(retain) PLEntry * entrySpeakerPowerOld;
-@property(readonly) NSMutableArray * nsOutputNotifications;
-@property(readonly) NSMutableArray * nsRoutingNotifications;
-@property(retain) PLXPCListenerOperatorComposition * speakerAmpXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *audioAppXPCListener;
+@property (readonly) NSString *audioHardware;
+@property (readonly) NSDictionary *audioPowerModel;
+@property (retain) PLEntry *entryRoutingOld;
+@property (retain) PLEntry *entrySpeakerPowerOld;
+@property (readonly) NSMutableArray *nsOutputNotifications;
+@property (readonly) NSMutableArray *nsRoutingNotifications;
+@property (retain) PLXPCListenerOperatorComposition *speakerAmpXPCListener;
 @property BOOL speakerIsPlayingAudio;
 
 + (id)accountingGroupDefinitions;

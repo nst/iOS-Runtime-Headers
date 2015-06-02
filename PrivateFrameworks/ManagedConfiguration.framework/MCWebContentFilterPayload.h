@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface MCWebContentFilterPayload : MCPayload {
     BOOL _autoFilterEnabled;
     NSArray *_blacklistedURLStrings;
@@ -17,16 +15,16 @@
     NSArray *_whitelistedBookmarks;
 }
 
-@property BOOL autoFilterEnabled;
-@property(retain) NSArray * blacklistedURLStrings;
-@property BOOL filterBrowsers;
-@property BOOL filterSockets;
-@property(copy) NSString * filterType;
-@property(copy) NSString * name;
-@property(retain) NSArray * permittedURLStrings;
-@property(copy) NSString * pluginBundleID;
-@property(retain) NSDictionary * pluginConfiguration;
-@property(retain) NSArray * whitelistedBookmarks;
+@property (nonatomic) BOOL autoFilterEnabled;
+@property (nonatomic, retain) NSArray *blacklistedURLStrings;
+@property (nonatomic) BOOL filterBrowsers;
+@property (nonatomic) BOOL filterSockets;
+@property (nonatomic, copy) NSString *filterType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSArray *permittedURLStrings;
+@property (nonatomic, copy) NSString *pluginBundleID;
+@property (nonatomic, retain) NSDictionary *pluginConfiguration;
+@property (nonatomic, retain) NSArray *whitelistedBookmarks;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

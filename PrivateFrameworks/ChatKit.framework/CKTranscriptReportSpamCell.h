@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, UIButton;
-
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell {
     UIButton *_reportSpamButton;
 }
 
-@property(copy) NSAttributedString * attributedButtonText;
-@property(retain) UIButton * reportSpamButton;
+@property (nonatomic, copy) NSAttributedString *attributedButtonText;
+@property (nonatomic, retain) UIButton *reportSpamButton;
 
 + (id)reportSpamButton;
 

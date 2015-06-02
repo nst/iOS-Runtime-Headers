@@ -7,8 +7,8 @@
     float _rowHeight;
 }
 
-@property unsigned int highlightedRowIndex;
-@property float rowHeight;
+@property (nonatomic) unsigned int highlightedRowIndex;
+@property (nonatomic) float rowHeight;
 
 + (struct CGColor { }*)backgroundColor;
 + (id)collectionViewKind;

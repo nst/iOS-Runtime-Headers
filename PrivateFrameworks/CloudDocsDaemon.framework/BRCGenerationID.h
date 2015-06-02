@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface BRCGenerationID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
     unsigned int _generationID;
     NSData *_signature;
 }
 
-@property(readonly) const char * UTF8String;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSNumber * fsGenerationID;
-@property(readonly) NSString * generationIDString;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * signature;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) const char *UTF8String;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSNumber *fsGenerationID;
+@property (nonatomic, readonly) NSString *generationIDString;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *signature;
+@property (readonly) Class superclass;
 
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (BOOL)supportsSecureCoding;

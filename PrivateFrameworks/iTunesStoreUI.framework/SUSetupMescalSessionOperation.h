@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SSURLRequestProperties, SUMescalSession;
-
 @interface SUSetupMescalSessionOperation : ISOperation {
     SSURLRequestProperties *_requestProperties;
     SUMescalSession *_session;
 }
 
-@property(readonly) SUMescalSession * mescalSession;
+@property (readonly) SUMescalSession *mescalSession;
 
 - (BOOL)_isMescalEnabled;
 - (id)_setupSAPCertificate:(id*)arg1;

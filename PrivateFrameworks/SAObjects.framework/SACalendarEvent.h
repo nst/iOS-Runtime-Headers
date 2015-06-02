@@ -2,25 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL;
+@interface SACalendarEvent : SADomainObject
 
-@interface SACalendarEvent : SADomainObject {
-}
-
-@property(copy) NSArray * alerts;
-@property BOOL allDay;
-@property(copy) NSArray * attendees;
-@property(copy) NSURL * calendarId;
-@property(copy) NSURL * calendarPunchoutURI;
-@property(copy) NSDate * endDate;
-@property(copy) NSNumber * includeRecurrences;
-@property(copy) NSString * location;
-@property(copy) NSString * notes;
-@property(copy) NSNumber * readOnly;
-@property(copy) NSArray * recurrences;
-@property(copy) NSDate * startDate;
-@property(copy) NSString * timeZoneId;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSArray *alerts;
+@property (nonatomic) BOOL allDay;
+@property (nonatomic, copy) NSArray *attendees;
+@property (nonatomic, copy) NSURL *calendarId;
+@property (nonatomic, copy) NSURL *calendarPunchoutURI;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSNumber *includeRecurrences;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, copy) NSString *notes;
+@property (nonatomic, copy) NSNumber *readOnly;
+@property (nonatomic, copy) NSArray *recurrences;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic, copy) NSString *timeZoneId;
+@property (nonatomic, copy) NSString *title;
 
 + (id)event;
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSCECalculationEngine, TSCECellCoordinateVector, TSTTableInfo;
-
 @interface TSTConditionalStyleFormulaOwner : NSObject <TSCEFormulaOwning> {
     TSCECalculationEngine *mCalculationEngine;
     TSCECellCoordinateVector *mCellsToInvalidate;
@@ -12,10 +10,10 @@
     TSTTableInfo *mTableInfo;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)addFormulaForConditionalStyle:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class <SBUIBannerTargetImplementation>, NSString;
-
 @interface SBUIBannerTargetProxy : NSObject <SBUIBannerTarget> {
     void *_identifier;
     int _idiom;
     <SBUIBannerTargetImplementation> *_implementation;
 }
 
-@property(readonly) void* bannerTargetIdentifier;
-@property(readonly) int bannerTargetIdiom;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) void*bannerTargetIdentifier;
+@property (nonatomic, readonly) int bannerTargetIdiom;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void*)bannerTargetIdentifier;
 - (int)bannerTargetIdiom;
-- (void)cacheBannerForContext:(id)arg1 withCompletion:(id)arg2;
+- (void)cacheBannerForContext:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)currentBannerContextForSource:(id)arg1;
 - (id)description;
 - (void)dismissCurrentBannerContextForSource:(id)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIIndexBarViewElement : SKUIViewElement {
-}
+@interface SKUIIndexBarViewElement : SKUIViewElement
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface IMDServiceController : NSObject {
     NSMutableDictionary *_services;
 }
 
-@property(readonly) NSArray * allServices;
+@property (nonatomic, readonly) NSArray *allServices;
 
 + (id)sharedInstance;
 

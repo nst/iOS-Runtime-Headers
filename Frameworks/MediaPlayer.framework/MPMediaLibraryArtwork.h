@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class ML3Artwork, MPMediaLibraryArtworkRequest, NSArray, NSURL;
-
 @interface MPMediaLibraryArtwork : NSObject {
     ML3Artwork *_artwork;
     MPMediaLibraryArtworkRequest *_artworkRequest;
     NSArray *_validSizes;
 }
 
-@property(retain) ML3Artwork * artwork;
-@property MPMediaLibraryArtworkRequest * artworkRequest;
-@property(readonly) NSURL * originalFileURL;
-@property(retain) NSArray * validSizes;
+@property (nonatomic, retain) ML3Artwork *artwork;
+@property (nonatomic) MPMediaLibraryArtworkRequest *artworkRequest;
+@property (nonatomic, readonly) NSURL *originalFileURL;
+@property (nonatomic, retain) NSArray *validSizes;
 
 + (BOOL)artworkExistsForRequest:(id)arg1;
 + (void)cancelLoadingArtworkForRequest:(id)arg1;
 + (id)existingArtworkWithRequest:(id)arg1;
-+ (void)loadArtworkForRequest:(id)arg1 completionHandler:(id)arg2;
++ (void)loadArtworkForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (id)artwork;

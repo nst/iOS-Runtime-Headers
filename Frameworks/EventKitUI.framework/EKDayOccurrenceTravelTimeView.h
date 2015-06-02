@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayOccurrenceTravelTimeViewMetricsDelegate>, NSString, UIColor, UIImageView, UILabel, UIView;
-
 @interface EKDayOccurrenceTravelTimeView : UIView {
     <EKDayOccurrenceTravelTimeViewMetricsDelegate> *_delegate;
     UIColor *_elementColor;
@@ -19,15 +17,15 @@
     UILabel *_travelTimeLabel;
 }
 
-@property <EKDayOccurrenceTravelTimeViewMetricsDelegate> * delegate;
-@property(retain) UIColor * elementColor;
-@property float hairlineYPosition;
-@property(retain) UIColor * lineColor;
-@property(copy) NSString * location;
-@property int occurrenceBackgroundStyle;
-@property int routingMode;
-@property BOOL selected;
-@property double travelTime;
+@property (nonatomic) <EKDayOccurrenceTravelTimeViewMetricsDelegate> *delegate;
+@property (nonatomic, retain) UIColor *elementColor;
+@property (nonatomic) float hairlineYPosition;
+@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic) int occurrenceBackgroundStyle;
+@property (nonatomic) int routingMode;
+@property (nonatomic) BOOL selected;
+@property (nonatomic) double travelTime;
 
 - (void).cxx_destruct;
 - (float)_iconScale;

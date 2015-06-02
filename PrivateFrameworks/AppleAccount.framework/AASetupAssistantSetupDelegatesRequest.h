@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AASigningSession, ACAccount, NSDictionary;
-
 @interface AASetupAssistantSetupDelegatesRequest : AARequest {
     ACAccount *_account;
     NSDictionary *setupParameters;

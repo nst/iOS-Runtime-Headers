@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureStillImageOutputInternal, NSArray, NSDictionary;
-
 @interface AVCaptureStillImageOutput : AVCaptureOutput {
     AVCaptureStillImageOutputInternal *_internal;
 }
 
-@property BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
-@property(readonly) NSArray * availableImageDataCVPixelFormatTypes;
-@property(readonly) NSArray * availableImageDataCodecTypes;
-@property(getter=isCapturingStillImage,readonly) BOOL capturingStillImage;
-@property(getter=isHighResolutionStillImageOutputEnabled) BOOL highResolutionStillImageOutputEnabled;
-@property(copy) NSDictionary * outputSettings;
-@property(getter=isStillImageStabilizationActive,readonly) BOOL stillImageStabilizationActive;
-@property(getter=isStillImageStabilizationSupported,readonly) BOOL stillImageStabilizationSupported;
+@property (nonatomic) BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
+@property (nonatomic, readonly) NSArray *availableImageDataCVPixelFormatTypes;
+@property (nonatomic, readonly) NSArray *availableImageDataCodecTypes;
+@property (getter=isCapturingStillImage, readonly) BOOL capturingStillImage;
+@property (getter=isHighResolutionStillImageOutputEnabled, nonatomic) BOOL highResolutionStillImageOutputEnabled;
+@property (nonatomic, copy) NSDictionary *outputSettings;
+@property (getter=isStillImageStabilizationActive, nonatomic, readonly) BOOL stillImageStabilizationActive;
+@property (getter=isStillImageStabilizationSupported, nonatomic, readonly) BOOL stillImageStabilizationSupported;
 
 + (id)alloc;
 + (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
@@ -36,9 +34,9 @@
 - (BOOL)automaticallyEnablesStillImageStabilizationWhenAvailable;
 - (id)availableImageDataCVPixelFormatTypes;
 - (id)availableImageDataCodecTypes;
-- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
-- (void)captureStillImageBracketAsynchronouslyFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id)arg3;
-- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)captureStillImageBracketAsynchronouslyFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)clearPreparedBracketIfNeeded;
 - (id)connectionMediaTypes;
 - (void)dealloc;
@@ -63,7 +61,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputSettings;
 - (void)playShutterSound:(unsigned long)arg1;
-- (void)prepareToCaptureStillImageBracketFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id)arg3;
+- (void)prepareToCaptureStillImageBracketFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id /* block */)arg3;
 - (struct CGSize { float x1; float x2; })previewImageSize;
 - (void)removeConnection:(id)arg1;
 - (BOOL)resumeVideoProcessing;

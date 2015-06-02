@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL, TSUASLClient, TSUASLLogFile;
-
 @interface TSULogCollaboration : NSObject {
     TSUASLClient *_aslClient;
     TSUASLLogFile *_currentLogFile;
@@ -16,11 +14,11 @@
     int _stderrLevelMask;
 }
 
-@property int filterLevel;
-@property(readonly) NSURL * logFileURL;
-@property BOOL shouldLogCommandTrace;
-@property BOOL shouldLogToFile;
-@property BOOL shouldLogToStderr;
+@property (nonatomic) int filterLevel;
+@property (nonatomic, readonly) NSURL *logFileURL;
+@property (nonatomic) BOOL shouldLogCommandTrace;
+@property (nonatomic) BOOL shouldLogToFile;
+@property (nonatomic) BOOL shouldLogToStderr;
 
 + (void)defineCategories;
 + (id)sharedInstance;

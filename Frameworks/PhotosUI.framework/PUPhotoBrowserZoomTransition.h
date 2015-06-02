@@ -2,41 +2,31 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUPhotoBrowserZoomTransitionDelegate>, NSString, PUPhotoPinchGestureRecognizer, PUTransitionViewAnimator, UIImageView;
-
 @interface PUPhotoBrowserZoomTransition : PUNavigationTransition <PUTransitionViewAnimatorDelegate> {
     PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
     PUTransitionViewAnimator *__transitionViewAnimator;
     <PUPhotoBrowserZoomTransitionDelegate> *_delegate;
     BOOL _didFinish;
     UIImageView *_impostorImageView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _individualAnimationCompletion;
-
+    id /* block */ _individualAnimationCompletion;
     BOOL _shouldEnd;
     BOOL _useFallbackAnimation;
     id _userInteractionDisabledToken;
 }
 
-@property(setter=_setPhotoPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoPinchGestureRecognizer;
-@property(setter=_setTransitionViewAnimator:,retain) PUTransitionViewAnimator * _transitionViewAnimator;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotoBrowserZoomTransitionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setPhotoPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
+@property (setter=_setTransitionViewAnimator:, nonatomic, retain) PUTransitionViewAnimator *_transitionViewAnimator;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoBrowserZoomTransitionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_animationTransitionForOperation:(int)arg1 betweenViewController:(id)arg2 andPhotoBrowserController:(id)arg3;
 - (void)_endTransitionViewAnimatorForceCancel:(BOOL)arg1;
 - (BOOL)_getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 contentMode:(int*)arg2 forPhotoToken:(id)arg3 operation:(int)arg4;
-- (void)_getFullsizedImageForPhoto:(id)arg1 cachingImageManager:(id)arg2 completionHandler:(id)arg3;
+- (void)_getFullsizedImageForPhoto:(id)arg1 cachingImageManager:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_photoPinchGestureRecognizer;
 - (void)_setImageForImpostor:(id)arg1 photo:(id)arg2 photoToken:(id)arg3 fromCachingImageManager:(id)arg4;
 - (void)_setPhotoPinchGestureRecognizer:(id)arg1;

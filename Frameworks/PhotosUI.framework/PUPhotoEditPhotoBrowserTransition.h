@@ -6,7 +6,7 @@
     BOOL _editSessionDidSaveChanges;
 }
 
-@property BOOL editSessionDidSaveChanges;
+@property (nonatomic) BOOL editSessionDidSaveChanges;
 
 - (void)_prepareViewForTransitionIsPresenting:(BOOL)arg1;
 - (void)animatePopTransition;

@@ -11,13 +11,13 @@
     BOOL _useEmojiStyles;
 }
 
-@property(readonly) int backdropStyle;
-@property float blurRadius;
-@property float blurSaturation;
-@property float keycapOpacity;
-@property BOOL lightKeyboard;
-@property float lightKeycapOpacity;
-@property(readonly) BOOL whiteText;
+@property (nonatomic, readonly) int backdropStyle;
+@property (nonatomic) float blurRadius;
+@property (nonatomic) float blurSaturation;
+@property (nonatomic) float keycapOpacity;
+@property (nonatomic) BOOL lightKeyboard;
+@property (nonatomic) float lightKeycapOpacity;
+@property (nonatomic, readonly) BOOL whiteText;
 
 + (int)backdropStyleForStyle:(int)arg1;
 + (id)configForAppearance:(int)arg1 inputMode:(id)arg2;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ACTFramework.framework/ACTFramework
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CMMotionManager, NSMutableArray, NSOperationQueue;
-
 @interface SwingEstimator : NSObject {
     float LA;
     float LOmega;
@@ -22,7 +15,7 @@
     int numberOfValidSamplesAngularVelocity;
     int numberOfValidSamplesLinearAcceleration;
     NSOperationQueue *operationQueue;
-    int (*outputCallback)();
+    int (*outputCallback;
     void *outputRefCon;
     BOOL showDebugData;
     unsigned long long startTime;
@@ -37,7 +30,7 @@
 @property int numberOfSamples;
 @property int numberOfValidSamplesAngularVelocity;
 @property int numberOfValidSamplesLinearAcceleration;
-@property(readonly) NSOperationQueue * operationQueue;
+@property (readonly) NSOperationQueue *operationQueue;
 
 - (float)LA;
 - (float)LOmega;
@@ -48,7 +41,7 @@
 - (BOOL)estimate;
 - (void)estimateSwingMotion;
 - (void)initSensors;
-- (id)initWithCallback:(int (*)())arg1 userData:(void*)arg2;
+- (id)initWithCallback:(int (*)arg1 userData:(void*)arg2;
 - (bool)isSignalTooNoisy:(float)arg1 withMean:(float)arg2 andWithStandardDeviation:(float)arg3 withMargin:(float)arg4;
 - (bool)isSignalTooWeak:(float)arg1 withRespectTo:(float)arg2 withMargin:(float)arg3;
 - (int)numberOfSamples;

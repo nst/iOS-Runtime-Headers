@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSString;
+@interface CPLEngineCloudCache : CPLEngineStorage <CPLAbstractObject>
 
-@interface CPLEngineCloudCache : CPLEngineStorage <CPLAbstractObject> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasDoneAFirstSynchronization;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BOOL hasDoneAFirstSynchronization;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 - (BOOL)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id*)arg3;
 - (BOOL)addRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;

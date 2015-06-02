@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBColor, BBSectionIcon, BBSectionSubtypeParameters, NSNumber, NSSet, NSString;
-
 @interface BBSectionSubtypeParameters : NSObject <NSSecureCoding> {
     NSString *_alternateActionLabel;
     NSString *_bannerAccessoryRemoteServiceBundleIdentifier;
@@ -37,54 +35,54 @@
     NSString *_unlockActionLabel;
 }
 
-@property(retain) NSSet * alertSuppressionAppIDs;
-@property(copy) NSString * alternateActionLabel;
-@property(copy) NSString * bannerAccessoryRemoteServiceBundleIdentifier;
-@property(copy) NSString * bannerAccessoryRemoteViewControllerClassName;
-@property BOOL bannerShowsSubtitle;
-@property(retain) NSNumber * boxedBannerShowsSubtitle;
-@property(retain) NSNumber * boxedCanBeSilencedByMenuButtonPress;
-@property(retain) NSNumber * boxedCoalescesWhenLocked;
-@property(retain) NSNumber * boxedIPodOutAlertType;
-@property(retain) NSNumber * boxedIgnoresQuietMode;
-@property(retain) NSNumber * boxedInertWhenLocked;
-@property(retain) NSNumber * boxedPlaysSoundForModify;
-@property(retain) NSNumber * boxedPreservesUnlockActionCase;
-@property(retain) NSNumber * boxedPreventLock;
-@property(retain) NSNumber * boxedRealertCount;
-@property(retain) NSNumber * boxedShowsContactPhoto;
-@property(retain) NSNumber * boxedShowsUnreadIndicatorForNoticesFeed;
-@property(retain) NSNumber * boxedSubtypePriority;
-@property(retain) NSNumber * boxedSuppressesAlertsWhenAppIsActive;
-@property(retain) NSNumber * boxedSuppressesMessageForPrivacy;
-@property(retain) NSNumber * boxedSuppressesTitle;
-@property(retain) NSNumber * boxedVisuallyIndicatesWhenDateIsInFuture;
-@property BOOL canBeSilencedByMenuButtonPress;
-@property BOOL coalescesWhenLocked;
-@property BBSectionSubtypeParameters * fallbackParameters;
-@property(copy) NSString * fullAlternateActionLabel;
-@property(copy) NSString * fullUnlockActionLabel;
-@property int iPodOutAlertType;
-@property BOOL ignoresQuietMode;
-@property BOOL inertWhenLocked;
-@property(copy) NSString * missedBannerDescriptionFormat;
-@property BOOL playsSoundForModify;
-@property BOOL preservesUnlockActionCase;
-@property BOOL preventLock;
-@property unsigned int realertCount;
-@property(copy) NSString * secondaryContentRemoteServiceBundleIdentifier;
-@property(copy) NSString * secondaryContentRemoteViewControllerClassName;
-@property(copy) BBSectionIcon * sectionIconOverride;
-@property BOOL showsContactPhoto;
-@property BOOL showsUnreadIndicatorForNoticesFeed;
-@property unsigned int subtypePriority;
-@property BOOL suppressesAlertsWhenAppIsActive;
-@property BOOL suppressesMessageForPrivacy;
-@property BOOL suppressesTitle;
-@property(retain) BBColor * tintColor;
-@property(copy) NSString * topic;
-@property(copy) NSString * unlockActionLabel;
-@property BOOL visuallyIndicatesWhenDateIsInFuture;
+@property (nonatomic, retain) NSSet *alertSuppressionAppIDs;
+@property (nonatomic, copy) NSString *alternateActionLabel;
+@property (nonatomic, copy) NSString *bannerAccessoryRemoteServiceBundleIdentifier;
+@property (nonatomic, copy) NSString *bannerAccessoryRemoteViewControllerClassName;
+@property (nonatomic) BOOL bannerShowsSubtitle;
+@property (nonatomic, retain) NSNumber *boxedBannerShowsSubtitle;
+@property (nonatomic, retain) NSNumber *boxedCanBeSilencedByMenuButtonPress;
+@property (nonatomic, retain) NSNumber *boxedCoalescesWhenLocked;
+@property (nonatomic, retain) NSNumber *boxedIPodOutAlertType;
+@property (nonatomic, retain) NSNumber *boxedIgnoresQuietMode;
+@property (nonatomic, retain) NSNumber *boxedInertWhenLocked;
+@property (nonatomic, retain) NSNumber *boxedPlaysSoundForModify;
+@property (nonatomic, retain) NSNumber *boxedPreservesUnlockActionCase;
+@property (nonatomic, retain) NSNumber *boxedPreventLock;
+@property (nonatomic, retain) NSNumber *boxedRealertCount;
+@property (nonatomic, retain) NSNumber *boxedShowsContactPhoto;
+@property (nonatomic, retain) NSNumber *boxedShowsUnreadIndicatorForNoticesFeed;
+@property (nonatomic, retain) NSNumber *boxedSubtypePriority;
+@property (nonatomic, retain) NSNumber *boxedSuppressesAlertsWhenAppIsActive;
+@property (nonatomic, retain) NSNumber *boxedSuppressesMessageForPrivacy;
+@property (nonatomic, retain) NSNumber *boxedSuppressesTitle;
+@property (nonatomic, retain) NSNumber *boxedVisuallyIndicatesWhenDateIsInFuture;
+@property (nonatomic) BOOL canBeSilencedByMenuButtonPress;
+@property (nonatomic) BOOL coalescesWhenLocked;
+@property (nonatomic) BBSectionSubtypeParameters *fallbackParameters;
+@property (nonatomic, copy) NSString *fullAlternateActionLabel;
+@property (nonatomic, copy) NSString *fullUnlockActionLabel;
+@property (nonatomic) int iPodOutAlertType;
+@property (nonatomic) BOOL ignoresQuietMode;
+@property (nonatomic) BOOL inertWhenLocked;
+@property (nonatomic, copy) NSString *missedBannerDescriptionFormat;
+@property (nonatomic) BOOL playsSoundForModify;
+@property (nonatomic) BOOL preservesUnlockActionCase;
+@property (nonatomic) BOOL preventLock;
+@property (nonatomic) unsigned int realertCount;
+@property (nonatomic, copy) NSString *secondaryContentRemoteServiceBundleIdentifier;
+@property (nonatomic, copy) NSString *secondaryContentRemoteViewControllerClassName;
+@property (nonatomic, copy) BBSectionIcon *sectionIconOverride;
+@property (nonatomic) BOOL showsContactPhoto;
+@property (nonatomic) BOOL showsUnreadIndicatorForNoticesFeed;
+@property (nonatomic) unsigned int subtypePriority;
+@property (nonatomic) BOOL suppressesAlertsWhenAppIsActive;
+@property (nonatomic) BOOL suppressesMessageForPrivacy;
+@property (nonatomic) BOOL suppressesTitle;
+@property (nonatomic, retain) BBColor *tintColor;
+@property (nonatomic, copy) NSString *topic;
+@property (nonatomic, copy) NSString *unlockActionLabel;
+@property (nonatomic) BOOL visuallyIndicatesWhenDateIsInFuture;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSMutableArray, NSString, UILabel, UIView, _MKRightImageButton;
-
 @interface MKPlaceSectionHeaderView : UIView {
     SEL _action;
     NSArray *_marginConstraints;
@@ -18,17 +16,17 @@
     id _target;
 }
 
-@property SEL action;
-@property(retain) NSArray * marginConstraints;
-@property(retain) NSMutableArray * scaledConstraints;
-@property(retain) UILabel * sectionHeaderLabel;
-@property(copy) NSString * sectionHeaderText;
-@property(retain) _MKRightImageButton * seeMoreButton;
-@property(retain) NSArray * seeMoreButtonConstraints;
-@property(retain) UIView * separator;
-@property BOOL showSeeMoreButton;
-@property BOOL showSeparator;
-@property id target;
+@property (nonatomic) SEL action;
+@property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic, retain) NSMutableArray *scaledConstraints;
+@property (nonatomic, retain) UILabel *sectionHeaderLabel;
+@property (nonatomic, copy) NSString *sectionHeaderText;
+@property (nonatomic, retain) _MKRightImageButton *seeMoreButton;
+@property (nonatomic, retain) NSArray *seeMoreButtonConstraints;
+@property (nonatomic, retain) UIView *separator;
+@property (nonatomic) BOOL showSeeMoreButton;
+@property (nonatomic) BOOL showSeparator;
+@property (nonatomic) id target;
 
 + (float)intrinsicContentHeight;
 

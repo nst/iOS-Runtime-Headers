@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTranscriptRecipientsControllerDelegate>, CKConversation, CKGroupRecipientSelectionController, CKTranscriptAddRecipientCell, CKTranscriptDetailsResizableCell, CKTranscriptLocationShareCell, CKTranscriptRecipientCell, NSDictionary, NSString, NSTimer, UITextView;
-
 @interface CKTranscriptRecipientsController : UITableViewController <UIActionSheetDelegate, UIAlertViewDelegate, UITextViewDelegate> {
     CKTranscriptAddRecipientCell *_addRecipientCell;
     CKGroupRecipientSelectionController *_addRecipientsController;
@@ -22,25 +20,25 @@
     CKTranscriptRecipientCell *_sizingRecipientCell;
 }
 
-@property(retain) CKTranscriptAddRecipientCell * addRecipientCell;
-@property(retain) CKGroupRecipientSelectionController * addRecipientsController;
-@property(retain) CKConversation * conversation;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKTranscriptRecipientsControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * facetimeAudioIDStatuses;
-@property(retain) NSDictionary * facetimeIDStatuses;
-@property BOOL fmfDisabled;
-@property BOOL fmfRestricted;
-@property(retain) NSTimer * fmfUpdateTimer;
-@property(readonly) unsigned int hash;
-@property(retain) CKTranscriptDetailsResizableCell * locationSendCell;
-@property(retain) CKTranscriptLocationShareCell * locationShareCell;
-@property(retain) UITextView * locationSharingTextView;
-@property(retain) CKTranscriptDetailsResizableCell * locationStartShareCell;
-@property(retain) NSString * serviceAvailabilityKey;
-@property(retain) CKTranscriptRecipientCell * sizingRecipientCell;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CKTranscriptAddRecipientCell *addRecipientCell;
+@property (nonatomic, retain) CKGroupRecipientSelectionController *addRecipientsController;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKTranscriptRecipientsControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *facetimeAudioIDStatuses;
+@property (nonatomic, retain) NSDictionary *facetimeIDStatuses;
+@property (nonatomic) BOOL fmfDisabled;
+@property (nonatomic) BOOL fmfRestricted;
+@property (nonatomic, retain) NSTimer *fmfUpdateTimer;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKTranscriptDetailsResizableCell *locationSendCell;
+@property (nonatomic, retain) CKTranscriptLocationShareCell *locationShareCell;
+@property (nonatomic, retain) UITextView *locationSharingTextView;
+@property (nonatomic, retain) CKTranscriptDetailsResizableCell *locationStartShareCell;
+@property (nonatomic, retain) NSString *serviceAvailabilityKey;
+@property (nonatomic, retain) CKTranscriptRecipientCell *sizingRecipientCell;
+@property (readonly) Class superclass;
 
 - (void)_configureDNDCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)_configureRecipientCell:(id)arg1 atIndexPath:(id)arg2;
@@ -65,7 +63,7 @@
 - (void)_presentLeaveActionSheetInView:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_presentRemoveRecipientSheetForRecipient:(id)arg1 inView:(id)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_presentSharingActionSheet:(BOOL)arg1 inView:(id)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)_refreshFaceTimeIDSStatusWithCompletion:(id)arg1;
+- (void)_refreshFaceTimeIDSStatusWithCompletion:(id /* block */)arg1;
 - (void)_requestCallTypeForEntity:(id)arg1 withAddresses:(id)arg2 withLabels:(id)arg3 faceTimeAudioEnabled:(BOOL)arg4;
 - (void)_sendCurrentLocation;
 - (void)_setupFMFUpdateTimerIfNecessary;

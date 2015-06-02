@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSHistoryLoaderDelegate>, NSCountedSet, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface WBSHistoryPropertyListLoader : NSObject <WBSHistoryLoader> {
     double _ageLimit;
     <WBSHistoryLoaderDelegate> *_delegate;
@@ -17,11 +15,11 @@
     NSURL *_url;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <WBSHistoryLoaderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WBSHistoryLoaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishLoadingOnMainThread;

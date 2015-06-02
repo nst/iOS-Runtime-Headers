@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIBarsSwipeTransition : CIFilter {
     NSNumber *inputAngle;
     NSNumber *inputBarOffset;
@@ -13,12 +11,12 @@
     NSNumber *inputWidth;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) NSNumber * inputBarOffset;
-@property(retain) CIImage * inputImage;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
-@property(retain) NSNumber * inputWidth;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) NSNumber *inputBarOffset;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
+@property (nonatomic, retain) NSNumber *inputWidth;
 
 + (id)customAttributes;
 

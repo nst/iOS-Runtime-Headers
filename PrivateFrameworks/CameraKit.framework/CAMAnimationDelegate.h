@@ -2,32 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CAMAnimationDelegate : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _start;
-
+    id /* block */ _completion;
+    id /* block */ _start;
 }
 
-@property(copy) id completion;
-@property(copy) id start;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id /* block */ start;
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)completion;
-- (void)setCompletion:(id)arg1;
-- (void)setStart:(id)arg1;
-- (id)start;
+- (id /* block */)completion;
+- (void)setCompletion:(id /* block */)arg1;
+- (void)setStart:(id /* block */)arg1;
+- (id /* block */)start;
 
 @end

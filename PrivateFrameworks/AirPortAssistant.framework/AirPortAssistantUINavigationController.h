@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface AirPortAssistantUINavigationController : UINavigationController {
-}
+@interface AirPortAssistantUINavigationController : UINavigationController
 
 - (BOOL)disablesAutomaticKeyboardDismissal;
 - (BOOL)shouldAutorotate;

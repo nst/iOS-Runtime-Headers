@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLSharedPhotoLibrary : PLPhotoLibrary {
-}
+@interface PLSharedPhotoLibrary : PLPhotoLibrary
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedPhotoLibrary;

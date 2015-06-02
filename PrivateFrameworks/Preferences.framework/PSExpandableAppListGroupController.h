@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSExpandableAppListGroupController : PSExpandableListGroupController {
-}
+@interface PSExpandableAppListGroupController : PSExpandableListGroupController
 
 - (id)showAllSpecifier;
 

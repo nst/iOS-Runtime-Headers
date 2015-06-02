@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString;
-
 @interface CNLabeledValue : NSObject <NSCopying> {
     NSString *_label;
     int _multiValueIdentifier;
     id _value;
 }
 
-@property(copy,readonly) NSString * identifier;
-@property(copy,readonly) NSString * label;
-@property(copy,readonly) NSString * localizedLabel;
-@property(readonly) int multiValueIdentifier;
-@property(copy,readonly) id value;
+@property (readonly, copy) NSString *identifier;
+@property (readonly, copy) NSString *label;
+@property (readonly, copy) NSString *localizedLabel;
+@property (readonly) int multiValueIdentifier;
+@property (readonly, copy) id value;
 
 + (void*)addressBook;
 + (id)allCustomLabels;

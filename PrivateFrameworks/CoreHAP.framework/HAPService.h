@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPAccessory, NSArray, NSNumber, NSString;
-
 @interface HAPService : NSObject {
     HAPAccessory *_accessory;
     NSArray *_characteristics;
@@ -12,11 +10,11 @@
     NSString *_type;
 }
 
-@property HAPAccessory * accessory;
-@property(retain) NSArray * characteristics;
-@property(readonly) NSArray * includedServices;
-@property(copy) NSNumber * instanceID;
-@property(copy) NSString * type;
+@property (nonatomic) HAPAccessory *accessory;
+@property (nonatomic, retain) NSArray *characteristics;
+@property (nonatomic, readonly) NSArray *includedServices;
+@property (nonatomic, copy) NSNumber *instanceID;
+@property (nonatomic, copy) NSString *type;
 
 - (void).cxx_destruct;
 - (BOOL)_updateAndValidateCharacteristics;

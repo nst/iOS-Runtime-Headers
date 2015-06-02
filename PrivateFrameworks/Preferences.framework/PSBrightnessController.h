@@ -2,31 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PSBrightnessController : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _brightnessChangedExternally;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _isTracking;
-
+    id /* block */ _brightnessChangedExternally;
+    id /* block */ _isTracking;
 }
 
-@property(copy) id brightnessChangedExternally;
-@property(copy) id isTracking;
+@property (nonatomic, copy) id /* block */ brightnessChangedExternally;
+@property (nonatomic, copy) id /* block */ isTracking;
 
 + (id)sharedController;
 
-- (id)brightnessChangedExternally;
-- (id)isTracking;
-- (void)setBrightnessChangedExternally:(id)arg1;
-- (void)setIsTracking:(id)arg1;
+- (id /* block */)brightnessChangedExternally;
+- (id /* block */)isTracking;
+- (void)setBrightnessChangedExternally:(id /* block */)arg1;
+- (void)setIsTracking:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXDialectMap, NSArray, NSString;
-
 @interface AXLangMap : NSObject {
     NSArray *_alternateLanguageIDs;
     BOOL _ambiguous;
@@ -15,16 +13,16 @@
     AXDialectMap *userLocaleDialect;
 }
 
-@property(retain) NSArray * alternateLanguageIDs;
-@property(readonly) NSArray * alternativeVoiceIdentifiers;
-@property(getter=isAmbiguous) BOOL ambiguous;
-@property(retain) NSArray * associatedAmbiguousLanguages;
-@property(readonly) AXDialectMap * defaultDialect;
-@property(retain) NSArray * dialects;
-@property(copy) NSString * generalLanguageID;
-@property(readonly) AXDialectMap * userLocaleDialect;
-@property AXDialectMap * userPreferredDialect;
-@property(getter=isWestern) BOOL western;
+@property (nonatomic, retain) NSArray *alternateLanguageIDs;
+@property (nonatomic, readonly) NSArray *alternativeVoiceIdentifiers;
+@property (getter=isAmbiguous, nonatomic) BOOL ambiguous;
+@property (nonatomic, retain) NSArray *associatedAmbiguousLanguages;
+@property (nonatomic, readonly) AXDialectMap *defaultDialect;
+@property (nonatomic, retain) NSArray *dialects;
+@property (nonatomic, copy) NSString *generalLanguageID;
+@property (nonatomic, readonly) AXDialectMap *userLocaleDialect;
+@property (nonatomic) AXDialectMap *userPreferredDialect;
+@property (getter=isWestern, nonatomic) BOOL western;
 
 - (id)alternateLanguageIDs;
 - (id)alternativeVoiceIdentifiers;

@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, SALocation;
+@interface SALocalSearchMapItemSnippet : SAUISnippet
 
-@interface SALocalSearchMapItemSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * items;
-@property(copy) NSArray * providerCommand;
-@property(copy) NSNumber * regionOfInterestRadiusInMiles;
-@property(retain) SALocation * searchRegionCenter;
-@property(copy) NSNumber * userCurrentLocation;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSArray *providerCommand;
+@property (nonatomic, copy) NSNumber *regionOfInterestRadiusInMiles;
+@property (nonatomic, retain) SALocation *searchRegionCenter;
+@property (nonatomic, copy) NSNumber *userCurrentLocation;
 
 + (id)mapItemSnippet;
 + (id)mapItemSnippetWithDictionary:(id)arg1 context:(id)arg2;

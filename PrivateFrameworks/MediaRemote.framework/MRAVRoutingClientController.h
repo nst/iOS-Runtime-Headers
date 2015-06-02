@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MRAVRoutingClientController : NSObject {
     NSMutableDictionary *_cachedRoutesForCategories;
     struct MRMediaRemoteService { } *_mediaRemoteService;
@@ -11,13 +9,13 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property(readonly) struct MRMediaRemoteService { }* mediaRemoteService;
+@property (nonatomic, readonly) struct MRMediaRemoteService { }*mediaRemoteService;
 
 - (void)_cacheFetchedPickableRoutes:(id)arg1 forCategory:(id)arg2;
 - (void)_flushPendingCompletionHandlersWithPickableRoutes:(id)arg1 forCategory:(id)arg2;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (void)fetchPickableRoutesForCategory:(id)arg1 completion:(id)arg2;
+- (void)fetchPickableRoutesForCategory:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithMediaRemoteService:(struct MRMediaRemoteService { }*)arg1;
 - (struct MRMediaRemoteService { }*)mediaRemoteService;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPGetState : SADomainCommand {
-}
+@interface SAMPGetState : SADomainCommand
 
 + (id)getState;
 + (id)getStateWithDictionary:(id)arg1 context:(id)arg2;

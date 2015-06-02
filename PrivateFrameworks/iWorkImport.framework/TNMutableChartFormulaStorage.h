@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TNMutableChartFormulaStorage : TNChartFormulaStorage {
-}
+@interface TNMutableChartFormulaStorage : TNChartFormulaStorage
 
 - (void)addFormula:(id)arg1 withFormulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2;
 - (void)clearFormulaListForKey:(unsigned int)arg1;

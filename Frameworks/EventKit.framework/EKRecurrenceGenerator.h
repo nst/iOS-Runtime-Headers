@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSArray, NSCalendar, NSDate, NSTimeZone;
-
 @interface EKRecurrenceGenerator : NSObject {
     BOOL _allDay;
     NSCalendar *_calendar;
@@ -24,17 +22,17 @@
     NSArray *_weeksOfTheYear;
 }
 
-@property BOOL allDay;
-@property(copy) NSArray * daysOfTheMonth;
-@property(copy) NSArray * daysOfTheWeek;
-@property(copy) NSArray * daysOfTheYear;
-@property(copy) NSDate * endDate;
-@property(copy) NSDate * eventEndDate;
-@property(copy) NSDate * eventStartDate;
-@property(copy) NSTimeZone * eventTimeZone;
-@property(copy) NSArray * monthsOfTheYear;
-@property(copy) NSArray * setPositions;
-@property(copy) NSArray * weeksOfTheYear;
+@property (nonatomic) BOOL allDay;
+@property (nonatomic, copy) NSArray *daysOfTheMonth;
+@property (nonatomic, copy) NSArray *daysOfTheWeek;
+@property (nonatomic, copy) NSArray *daysOfTheYear;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSDate *eventEndDate;
+@property (nonatomic, copy) NSDate *eventStartDate;
+@property (nonatomic, copy) NSTimeZone *eventTimeZone;
+@property (nonatomic, copy) NSArray *monthsOfTheYear;
+@property (nonatomic, copy) NSArray *setPositions;
+@property (nonatomic, copy) NSArray *weeksOfTheYear;
 
 + (id)generator;
 

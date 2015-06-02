@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPDetailScrubController, NSString;
-
 @interface _MPUControlCenterDetailSlider : SBUIControlCenterSlider <MPDetailedScrubbing, _MPUSliderScrubForwarding> {
     MPDetailScrubController *_scrubController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property MPDetailScrubController * scrubController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) MPDetailScrubController *scrubController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSPointerArray;
-
 @interface MTLToolsPointerArray : NSObject {
     unsigned int _pointerAdditions;
     NSPointerArray *_pointerArray;
@@ -13,9 +11,9 @@
 - (void).cxx_destruct;
 - (void)_addPointer:(void*)arg1;
 - (void)addPointer:(void*)arg1;
-- (void)enumeratePointersUsingBlock:(id)arg1;
+- (void)enumeratePointersUsingBlock:(id /* block */)arg1;
 - (id)initWithOptions:(unsigned int)arg1;
-- (id)objectAssociatedWithBaseObject:(id)arg1 usingBlock:(id)arg2;
+- (id)objectAssociatedWithBaseObject:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)removeObjectAssociatedWithBaseObject:(id)arg1;
 
 @end

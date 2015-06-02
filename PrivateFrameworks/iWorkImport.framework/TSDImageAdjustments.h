@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDImageAdjustments : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
     float mBottomLevel;
     float mContrast;
@@ -24,20 +19,20 @@
     float mTopLevel;
 }
 
-@property(readonly) float bottomLevel;
-@property(readonly) float contrast;
-@property(readonly) float denoise;
-@property(readonly) BOOL enhance;
-@property(readonly) float exposure;
-@property(readonly) float gamma;
-@property(readonly) float highlights;
-@property(readonly) BOOL representsSageAdjustments;
-@property(readonly) float saturation;
-@property(readonly) float shadows;
-@property(readonly) float sharpness;
-@property(readonly) float temperature;
-@property(readonly) float tint;
-@property(readonly) float topLevel;
+@property (nonatomic, readonly) float bottomLevel;
+@property (nonatomic, readonly) float contrast;
+@property (nonatomic, readonly) float denoise;
+@property (nonatomic, readonly) BOOL enhance;
+@property (nonatomic, readonly) float exposure;
+@property (nonatomic, readonly) float gamma;
+@property (nonatomic, readonly) float highlights;
+@property (nonatomic, readonly) BOOL representsSageAdjustments;
+@property (nonatomic, readonly) float saturation;
+@property (nonatomic, readonly) float shadows;
+@property (nonatomic, readonly) float sharpness;
+@property (nonatomic, readonly) float temperature;
+@property (nonatomic, readonly) float tint;
+@property (nonatomic, readonly) float topLevel;
 
 - (float)bottomLevel;
 - (float)contrast;

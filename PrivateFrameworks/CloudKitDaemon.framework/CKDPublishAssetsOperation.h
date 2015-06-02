@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDictionary, NSMutableDictionary, NSOperation;
-
 @interface CKDPublishAssetsOperation : CKDDatabaseOperation {
     unsigned int _URLOptions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _assetPublishedBlock;
-
+    id /* block */ _assetPublishedBlock;
     NSOperation *_fetchRecordsOperation;
     NSMutableDictionary *_fetchedRecordsByID;
     NSDictionary *_fileNamesByAssetFieldNames;
@@ -22,13 +12,13 @@
     unsigned int _requestedTTL;
 }
 
-@property unsigned int URLOptions;
-@property(copy) id assetPublishedBlock;
-@property(retain) NSOperation * fetchRecordsOperation;
-@property(retain) NSMutableDictionary * fetchedRecordsByID;
-@property(retain) NSDictionary * fileNamesByAssetFieldNames;
-@property(retain) NSArray * recordIDs;
-@property unsigned int requestedTTL;
+@property (nonatomic) unsigned int URLOptions;
+@property (nonatomic, copy) id /* block */ assetPublishedBlock;
+@property (retain) NSOperation *fetchRecordsOperation;
+@property (nonatomic, retain) NSMutableDictionary *fetchedRecordsByID;
+@property (nonatomic, retain) NSDictionary *fileNamesByAssetFieldNames;
+@property (nonatomic, retain) NSArray *recordIDs;
+@property (nonatomic) unsigned int requestedTTL;
 
 - (void).cxx_destruct;
 - (unsigned int)URLOptions;
@@ -37,7 +27,7 @@
 - (void)_fetchPCSForRecords;
 - (void)_fetchRecords;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (id)assetPublishedBlock;
+- (id /* block */)assetPublishedBlock;
 - (void)cancel;
 - (id)fetchRecordsOperation;
 - (id)fetchedRecordsByID;
@@ -48,7 +38,7 @@
 - (id)nameForState:(unsigned int)arg1;
 - (id)recordIDs;
 - (unsigned int)requestedTTL;
-- (void)setAssetPublishedBlock:(id)arg1;
+- (void)setAssetPublishedBlock:(id /* block */)arg1;
 - (void)setFetchRecordsOperation:(id)arg1;
 - (void)setFetchedRecordsByID:(id)arg1;
 - (void)setFileNamesByAssetFieldNames:(id)arg1;

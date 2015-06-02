@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary;
-
 @interface TSCEEdgeListPrinter : NSObject {
     NSMutableDictionary *_edgesForOwner;
 }

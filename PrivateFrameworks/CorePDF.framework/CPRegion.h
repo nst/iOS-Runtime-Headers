@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPRegion;
-
 @interface CPRegion : CPChunk {
     BOOL isCompoundShape;
     BOOL isImageRegion;

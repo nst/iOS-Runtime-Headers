@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceActivityProviderDelegate>, MKMapItem;
-
 @interface MKPlaceActivityProvider : NSObject {
     <MKPlaceActivityProviderDelegate> *_delegate;
     MKMapItem *_mapItem;
 }
 
-@property <MKPlaceActivityProviderDelegate> * delegate;
-@property(retain) MKMapItem * mapItem;
+@property (nonatomic) <MKPlaceActivityProviderDelegate> *delegate;
+@property (nonatomic, retain) MKMapItem *mapItem;
 
 - (void).cxx_destruct;
 - (id)activityAnnotationView;

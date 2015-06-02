@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class ATService, NSString, NSXPCConnection;
-
 @interface ATServiceProxyConnection : NSObject <ATServiceObserver, ATServiceProxyConnection> {
     NSXPCConnection *_connection;
     ATService *_service;
 }
 
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property ATService * service;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) ATService *service;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)connectWithCompletion:(id)arg1;
+- (void)connectWithCompletion:(id /* block */)arg1;
 - (id)connection;
-- (void)fetchMessageLinksWithCompletion:(id)arg1;
+- (void)fetchMessageLinksWithCompletion:(id /* block */)arg1;
 - (id)initWithService:(id)arg1 connection:(id)arg2;
 - (id)service;
 - (void)service:(id)arg1 willOpenMessageLink:(id)arg2;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class SGAsset;
-
 @interface SGWeakAsset : NSObject {
     SGAsset *_asset;
 }
 
-@property(readonly) SGAsset * asset;
+@property (readonly) SGAsset *asset;
 
 - (void).cxx_destruct;
 - (id)asset;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSFreeBusyTime : ICSProperty {
-}
+@interface ICSFreeBusyTime : ICSProperty
 
-@property int fbtype;
+@property (nonatomic) int fbtype;
 
 - (int)fbtype;
 - (id)initWithPeriod:(id)arg1;

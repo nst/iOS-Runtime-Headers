@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CLLocationManager, NSArray, NSDictionary, NSObject<OS_dispatch_source>, NSString, SKUIClientContext, SSLookupRequest;
-
 @interface SKUINearMeController : NSObject <CLLocationManagerDelegate, SKUIItemStateCenterObserver> {
     int _authorizationStatus;
     SKUIClientContext *_clientContext;
@@ -18,14 +16,14 @@
     int _status;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * items;
-@property(readonly) NSDictionary * responseDictionary;
-@property(readonly) int status;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, readonly) NSDictionary *responseDictionary;
+@property (nonatomic, readonly) int status;
+@property (readonly) Class superclass;
 
 + (id)sharedController;
 

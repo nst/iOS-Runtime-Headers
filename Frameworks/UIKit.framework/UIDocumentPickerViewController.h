@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentPickerDelegate>, NSMutableArray, NSURL, _UIDocumentPickerRemoteViewController, _UIRemoteViewService;
-
 @interface UIDocumentPickerViewController : UIViewController <_UIDocumentPickerRemoteViewControllerContaining> {
     unsigned int _documentPickerMode;
     _UIDocumentPickerRemoteViewController *_remoteViewController;
@@ -13,12 +11,12 @@
     <UIDocumentPickerDelegate> *_weak_delegate;
 }
 
-@property <UIDocumentPickerDelegate> * delegate;
-@property unsigned int documentPickerMode;
-@property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) _UIDocumentPickerRemoteViewController * remoteViewController;
-@property(retain) _UIRemoteViewService * remoteViewService;
-@property(retain) NSMutableArray * stitchingTokens;
-@property(copy) NSURL * uploadURL;
+@property (nonatomic) <UIDocumentPickerDelegate> *delegate;
+@property (nonatomic) unsigned int documentPickerMode;
+@property (getter=_remoteViewController, setter=_setRemoteViewController:, nonatomic, retain) _UIDocumentPickerRemoteViewController *remoteViewController;
+@property (nonatomic, retain) _UIRemoteViewService *remoteViewService;
+@property (nonatomic, retain) NSMutableArray *stitchingTokens;
+@property (nonatomic, copy) NSURL *uploadURL;
 
 + (id)_extension;
 + (id)_identifier;
@@ -28,7 +26,7 @@
 + (unsigned int)supportedModes;
 
 - (void)_callDelegateWithSelectedURLAndDismiss:(id)arg1;
-- (void)_commonInitWithCompletion:(id)arg1;
+- (void)_commonInitWithCompletion:(id /* block */)arg1;
 - (void)_didSelectPicker;
 - (void)_didSelectURL:(id)arg1;
 - (void)_dismissViewController;

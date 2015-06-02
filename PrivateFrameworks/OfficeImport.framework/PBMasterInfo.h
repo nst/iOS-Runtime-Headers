@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDictionary, NSMutableArray, PDSlideMaster;
-
 @interface PBMasterInfo : NSObject {
     NSDictionary *mLayoutMap;
     unsigned int mMainPbRef;

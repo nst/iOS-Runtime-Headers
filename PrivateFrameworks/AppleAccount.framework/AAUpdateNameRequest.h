@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AAUpdateNameRequest : AAAppleIDSettingsRequest {
     NSString *_newFirstName;
     NSString *_newLastName;

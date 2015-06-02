@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, PFUbiquityKnowledgeVector, PFUbiquityLocation;
-
 @interface PFUbiquityBaselineMetadata : NSObject <NSCoding> {
     NSString *_authorPeerID;
     PFUbiquityKnowledgeVector *_kv;
@@ -14,13 +12,13 @@
     NSString *_storeName;
 }
 
-@property(readonly) NSString * authorPeerID;
-@property(readonly) PFUbiquityKnowledgeVector * knowledgeVector;
-@property(readonly) NSString * modelVersionHash;
-@property(readonly) NSDictionary * peerRanges;
-@property(readonly) PFUbiquityKnowledgeVector * previousKnowledgeVector;
-@property(readonly) PFUbiquityLocation * rootLocation;
-@property(readonly) NSString * storeName;
+@property (readonly) NSString *authorPeerID;
+@property (readonly) PFUbiquityKnowledgeVector *knowledgeVector;
+@property (readonly) NSString *modelVersionHash;
+@property (readonly) NSDictionary *peerRanges;
+@property (nonatomic, readonly) PFUbiquityKnowledgeVector *previousKnowledgeVector;
+@property (readonly) PFUbiquityLocation *rootLocation;
+@property (readonly) NSString *storeName;
 
 - (void)_migrateToModelVersionHash:(id)arg1;
 - (void)addDictionaryForPeerRange:(id)arg1;

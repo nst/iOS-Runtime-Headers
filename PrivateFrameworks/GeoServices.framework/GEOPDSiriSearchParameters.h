@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAddress, GEOPDIndexQueryNode, GEOPDViewportInfo, NSData, NSMutableArray, NSString;
-
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying> {
     GEOAddress *_address;
     NSMutableArray *_businessCategoryFilters;
@@ -24,26 +22,26 @@
     NSData *_zilchPoints;
 }
 
-@property(retain) GEOAddress * address;
-@property(retain) NSMutableArray * businessCategoryFilters;
-@property(readonly) BOOL hasAddress;
-@property(readonly) BOOL hasIndexFilter;
-@property BOOL hasIsStrictMapRegion;
-@property BOOL hasMaxResultCount;
-@property(readonly) BOOL hasSearchString;
-@property BOOL hasSortOrder;
-@property BOOL hasStructuredSearch;
-@property(readonly) BOOL hasViewportInfo;
-@property(readonly) BOOL hasZilchPoints;
-@property(retain) GEOPDIndexQueryNode * indexFilter;
-@property BOOL isStrictMapRegion;
-@property unsigned int maxResultCount;
-@property(retain) NSString * searchString;
-@property(retain) NSMutableArray * searchSubstringDescriptors;
-@property int sortOrder;
-@property BOOL structuredSearch;
-@property(retain) GEOPDViewportInfo * viewportInfo;
-@property(retain) NSData * zilchPoints;
+@property (nonatomic, retain) GEOAddress *address;
+@property (nonatomic, retain) NSMutableArray *businessCategoryFilters;
+@property (nonatomic, readonly) BOOL hasAddress;
+@property (nonatomic, readonly) BOOL hasIndexFilter;
+@property (nonatomic) BOOL hasIsStrictMapRegion;
+@property (nonatomic) BOOL hasMaxResultCount;
+@property (nonatomic, readonly) BOOL hasSearchString;
+@property (nonatomic) BOOL hasSortOrder;
+@property (nonatomic) BOOL hasStructuredSearch;
+@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic, retain) GEOPDIndexQueryNode *indexFilter;
+@property (nonatomic) BOOL isStrictMapRegion;
+@property (nonatomic) unsigned int maxResultCount;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic, retain) NSMutableArray *searchSubstringDescriptors;
+@property (nonatomic) int sortOrder;
+@property (nonatomic) BOOL structuredSearch;
+@property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
+@property (nonatomic, retain) NSData *zilchPoints;
 
 - (void)addBusinessCategoryFilter:(id)arg1;
 - (void)addSearchSubstringDescriptor:(id)arg1;

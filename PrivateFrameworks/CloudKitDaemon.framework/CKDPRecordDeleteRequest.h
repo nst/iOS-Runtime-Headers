@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordIdentifier, NSString;
-
 @interface CKDPRecordDeleteRequest : PBRequest <NSCopying> {
     NSString *_etag;
     CKDPRecordIdentifier *_recordIdentifier;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasRecordIdentifier;
-@property(retain) CKDPRecordIdentifier * recordIdentifier;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 
 + (id)options;
 

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPProtectionInfo, CKDPRecordZoneIdentifier, NSString;
-
 @interface CKDPZone : PBCodable <NSCopying> {
     NSString *_etag;
     CKDPProtectionInfo *_protectionInfo;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasProtectionInfo;
-@property(readonly) BOOL hasZoneIdentifier;
-@property(retain) CKDPProtectionInfo * protectionInfo;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasProtectionInfo;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

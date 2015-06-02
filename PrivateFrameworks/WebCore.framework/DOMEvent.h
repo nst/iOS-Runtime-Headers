@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMEventTarget>, NSString;
+@interface DOMEvent : DOMObject
 
-@interface DOMEvent : DOMObject {
-}
-
-@property(readonly) BOOL bubbles;
+@property (readonly) BOOL bubbles;
 @property BOOL cancelBubble;
-@property(readonly) BOOL cancelable;
-@property(readonly) <DOMEventTarget> * currentTarget;
-@property(readonly) unsigned short eventPhase;
+@property (readonly) BOOL cancelable;
+@property (readonly) <DOMEventTarget> *currentTarget;
+@property (readonly) unsigned short eventPhase;
 @property BOOL returnValue;
-@property(readonly) <DOMEventTarget> * srcElement;
-@property(readonly) <DOMEventTarget> * target;
-@property(readonly) unsigned long long timeStamp;
-@property(copy,readonly) NSString * type;
+@property (readonly) <DOMEventTarget> *srcElement;
+@property (readonly) <DOMEventTarget> *target;
+@property (readonly) unsigned long long timeStamp;
+@property (readonly, copy) NSString *type;
 
 - (BOOL)bubbles;
 - (BOOL)cancelBubble;

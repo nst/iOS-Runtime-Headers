@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUBorderConfiguration, MPUBorderView, UIColor;
-
 @interface MPUStandardImageStackItemView : MPUImageStackItemView {
     MPUBorderConfiguration *_borderConfiguration;
     MPUBorderView *_borderView;
@@ -20,15 +18,15 @@
     UIColor *_overlayCenterColor;
 }
 
-@property float dropShadowAlpha;
-@property(retain) UIColor * dropShadowColor;
-@property unsigned int dropShadowEdges;
-@property float dropShadowWidth;
-@property float overlayBorderAlpha;
-@property(retain) UIColor * overlayBorderColor;
-@property float overlayBorderWidth;
-@property float overlayCenterAlpha;
-@property(retain) UIColor * overlayCenterColor;
+@property (nonatomic) float dropShadowAlpha;
+@property (nonatomic, retain) UIColor *dropShadowColor;
+@property (nonatomic) unsigned int dropShadowEdges;
+@property (nonatomic) float dropShadowWidth;
+@property (nonatomic) float overlayBorderAlpha;
+@property (nonatomic, retain) UIColor *overlayBorderColor;
+@property (nonatomic) float overlayBorderWidth;
+@property (nonatomic) float overlayCenterAlpha;
+@property (nonatomic, retain) UIColor *overlayCenterColor;
 
 - (void).cxx_destruct;
 - (void)_updateForBorderViewChange;

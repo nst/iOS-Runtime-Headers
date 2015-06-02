@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class IMAccount, NSString;
-
 @interface CNFRegAlias : NSObject {
     IMAccount *_account;
     NSString *_alias;
     NSString *_displayName;
 }
 
-@property(retain) IMAccount * account;
-@property(copy) NSString * alias;
-@property(copy,readonly) NSString * displayName;
-@property(retain,readonly) NSString * identifier;
-@property(readonly) int type;
+@property (nonatomic, retain) IMAccount *account;
+@property (nonatomic, copy) NSString *alias;
+@property (nonatomic, readonly, copy) NSString *displayName;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, readonly) int type;
 
 - (id)account;
 - (id)alias;

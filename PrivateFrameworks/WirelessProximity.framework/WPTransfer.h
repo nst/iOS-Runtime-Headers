@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WPTransferDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString, XPCClient;
-
 @interface WPTransfer : NSObject <XPCClientDelegate> {
     int _advertiserState;
     XPCClient *_connection;
@@ -14,15 +12,15 @@
 }
 
 @property int advertiserState;
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <WPTransferDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property <WPTransferDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
 @property int scannerState;
-@property(retain) NSObject<OS_xpc_object> * server;
-@property(readonly) Class superclass;
+@property (retain) NSObject<OS_xpc_object> *server;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)advertiserState;

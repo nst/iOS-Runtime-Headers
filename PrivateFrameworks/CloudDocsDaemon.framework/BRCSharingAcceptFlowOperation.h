@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCItemID, BRCLocalContainer, BRCPrivateLocalContainer, BRCUserNotification, BRCXPCClient, CKShareID, CKShareInfo, NSArray, NSString, NSURL;
-
 @interface BRCSharingAcceptFlowOperation : _BRCOperation <BRCForegroundClient, BRCOperationSubclass> {
     NSArray *_acceptationFlow;
     BRCPrivateLocalContainer *_aliasContainer;
@@ -22,11 +20,11 @@
     BRCXPCClient *_xpcClient;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * identifier;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (readonly) Class superclass;
 
 + (void)_openAppStoreForShareURL:(id)arg1;
 + (void)_openShareURLInWebBrowser:(id)arg1 withReason:(id)arg2;

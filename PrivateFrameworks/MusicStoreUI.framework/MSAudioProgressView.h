@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class MSPieImageView, NSObject<OS_dispatch_source>, SUPlayerStatus, UIImageView;
-
 @interface MSAudioProgressView : UIView {
     UIImageView *_bufferingImageView;
     NSObject<OS_dispatch_source> *_bufferingTimer;
@@ -13,8 +11,8 @@
     UIImageView *_stopImageView;
 }
 
-@property(getter=isHighlighted) BOOL highlighted;
-@property(copy) SUPlayerStatus * playerStatus;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, copy) SUPlayerStatus *playerStatus;
 
 - (void)_cancelBufferingTimer;
 - (id)_newBufferingImageView;

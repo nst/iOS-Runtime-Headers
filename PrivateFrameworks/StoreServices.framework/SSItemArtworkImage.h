@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSString, NSURL;
-
 @interface SSItemArtworkImage : NSObject <NSCopying, SSXPCCoding> {
     NSMutableDictionary *_dictionary;
     NSString *_imageKind;
 }
 
-@property(retain) NSURL * URL;
-@property(readonly) NSString * URLString;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int height;
-@property(copy) NSString * imageKind;
-@property(readonly) int imageOrientation;
-@property(readonly) float imageScale;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(getter=isPrerendered,readonly) BOOL prerendered;
-@property(readonly) Class superclass;
-@property(readonly) int width;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, readonly) NSString *URLString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int height;
+@property (nonatomic, copy) NSString *imageKind;
+@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) float imageScale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (getter=isPrerendered, nonatomic, readonly) BOOL prerendered;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int width;
 
 - (id)URL;
 - (id)URLString;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMCharacterData : DOMNode
 
-@interface DOMCharacterData : DOMNode {
-}
-
-@property(copy) NSString * data;
-@property(readonly) unsigned int length;
+@property (copy) NSString *data;
+@property (readonly) unsigned int length;
 
 - (void)appendData:(id)arg1;
 - (id)data;

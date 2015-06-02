@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCharacterSet, NSData;
+@interface NSCharacterSet : NSObject <NSCoding, NSCopying, NSMutableCopying>
 
-@interface NSCharacterSet : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-}
+@property (readonly, copy) NSData *bitmapRepresentation;
+@property (readonly, copy) NSCharacterSet *invertedSet;
 
-@property(copy,readonly) NSData * bitmapRepresentation;
-@property(copy,readonly) NSCharacterSet * invertedSet;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)URLFragmentAllowedCharacterSet;
 + (id)URLHostAllowedCharacterSet;
@@ -32,31 +31,10 @@
 + (id)newlineCharacterSet;
 + (id)nonBaseCharacterSet;
 + (id)punctuationCharacterSet;
-+ (id)safari_lockRelatedEmojiCharacterSet;
 + (id)symbolCharacterSet;
-+ (id)tsce_characterSetRequiringSingleQuotes;
-+ (id)tsce_dollarSignCharacterSet;
-+ (id)tsce_internationalColonCharacterSet;
-+ (id)tsce_internationalWhitespaceAndNewlineCharacterSet;
-+ (id)tsce_internationalWhitespaceCharacterSet;
-+ (id)tsce_listDelimiterCharacterSet;
-+ (id)tsce_periodCharacterSet;
-+ (id)tsce_singleQuoteCharacterSet;
-+ (id)tswp_allQuotesCharacterSetExcludingLeft;
-+ (id)tswp_allQuotesCharacterSetExcludingRight;
-+ (id)tswp_breakingSpaceCharacterSet;
-+ (id)tswp_invisibleCharacterSet;
-+ (id)tswp_lineBreakingCharacterSet;
-+ (id)tswp_postSmartSet;
-+ (id)tswp_preSmartSet;
-+ (id)tswp_smartSingleQuotesCharacterSet;
-+ (id)tswp_spaceCharacterSet;
-+ (id)tswp_variationSelectorCharacterSet;
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
-+ (id)whitespaceNewlineAndSpecialCharacterSet;
-+ (id)wordBreakCharacterSet;
 
 - (unsigned long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
@@ -79,5 +57,35 @@
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
++ (id)whitespaceNewlineAndSpecialCharacterSet;
++ (id)wordBreakCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
++ (id)safari_lockRelatedEmojiCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tsce_characterSetRequiringSingleQuotes;
++ (id)tsce_dollarSignCharacterSet;
++ (id)tsce_internationalColonCharacterSet;
++ (id)tsce_internationalWhitespaceAndNewlineCharacterSet;
++ (id)tsce_internationalWhitespaceCharacterSet;
++ (id)tsce_listDelimiterCharacterSet;
++ (id)tsce_periodCharacterSet;
++ (id)tsce_singleQuoteCharacterSet;
++ (id)tswp_allQuotesCharacterSetExcludingLeft;
++ (id)tswp_allQuotesCharacterSetExcludingRight;
++ (id)tswp_breakingSpaceCharacterSet;
++ (id)tswp_invisibleCharacterSet;
++ (id)tswp_lineBreakingCharacterSet;
++ (id)tswp_postSmartSet;
++ (id)tswp_preSmartSet;
++ (id)tswp_smartSingleQuotesCharacterSet;
++ (id)tswp_spaceCharacterSet;
++ (id)tswp_variationSelectorCharacterSet;
 
 @end

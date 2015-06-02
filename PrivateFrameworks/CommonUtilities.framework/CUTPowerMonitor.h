@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class CUTWeakReference, NSMutableArray;
-
 @interface CUTPowerMonitor : NSObject {
     struct IONotificationPort { } *_batteryIONotifyPort;
     unsigned int _batteryNotificationRef;
@@ -17,9 +15,9 @@
     struct IONotificationPort { } *_pmPort;
 }
 
-@property(readonly) double batteryPercentRemaining;
-@property double currentLevel;
-@property BOOL isExternalPowerConnected;
+@property (nonatomic, readonly) double batteryPercentRemaining;
+@property (nonatomic) double currentLevel;
+@property (nonatomic) BOOL isExternalPowerConnected;
 
 + (id)sharedInstance;
 

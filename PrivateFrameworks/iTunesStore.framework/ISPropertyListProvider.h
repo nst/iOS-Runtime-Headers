@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISPropertyListProvider : ISProtocolDataProvider <NSCopying> {
-}
+@interface ISPropertyListProvider : ISProtocolDataProvider <NSCopying>
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)processDialogFromPropertyList:(id)arg1 returningError:(id*)arg2;

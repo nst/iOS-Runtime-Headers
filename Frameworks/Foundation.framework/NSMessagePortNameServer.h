@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSMessagePortNameServer : NSPortNameServer {
-}
+@interface NSMessagePortNameServer : NSPortNameServer
 
 + (id)sharedInstance;
 

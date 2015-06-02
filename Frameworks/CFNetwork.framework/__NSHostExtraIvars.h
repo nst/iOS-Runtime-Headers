@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface __NSHostExtraIvars : NSObject {
     NSObject<OS_dispatch_queue> *cacheAccessQueue;
     NSObject<OS_dispatch_queue> *callbackQueue;
@@ -13,12 +11,12 @@
     NSString *thingToResolve;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * cacheAccessQueue;
-@property(readonly) NSObject<OS_dispatch_queue> * callbackQueue;
-@property(readonly) NSObject<OS_dispatch_queue> * resolveQueue;
-@property int resolveType;
+@property (readonly) NSObject<OS_dispatch_queue> *cacheAccessQueue;
+@property (readonly) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (readonly) NSObject<OS_dispatch_queue> *resolveQueue;
+@property (nonatomic) int resolveType;
 @property BOOL startedResolving;
-@property(retain) NSString * thingToResolve;
+@property (nonatomic, retain) NSString *thingToResolve;
 
 - (id)cacheAccessQueue;
 - (id)callbackQueue;

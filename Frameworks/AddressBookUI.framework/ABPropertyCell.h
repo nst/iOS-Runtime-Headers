@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPresenterDelegate>, <ABPropertyCellDelegate>, ABPropertyGroupItem, UIResponder;
-
 @interface ABPropertyCell : ABLabeledCell {
     BOOL _allowsEditing;
     <ABPropertyCellDelegate> *_delegate;
@@ -12,12 +10,12 @@
     <ABPresenterDelegate> *_presentingDelegate;
 }
 
-@property BOOL allowsEditing;
-@property <ABPropertyCellDelegate> * delegate;
-@property(readonly) UIResponder * firstResponderItem;
-@property float labelWidth;
-@property <ABPresenterDelegate> * presentingDelegate;
-@property(readonly) ABPropertyGroupItem * propertyItem;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) <ABPropertyCellDelegate> *delegate;
+@property (nonatomic, readonly) UIResponder *firstResponderItem;
+@property (nonatomic) float labelWidth;
+@property (nonatomic) <ABPresenterDelegate> *presentingDelegate;
+@property (nonatomic, readonly) ABPropertyGroupItem *propertyItem;
 
 - (BOOL)allowsEditing;
 - (void)copy:(id)arg1;

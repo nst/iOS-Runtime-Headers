@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText, SAUINanoImageResource;
+@interface SASTAncillaryImageItem : AceObject <SASTTemplateItem>
 
-@interface SASTAncillaryImageItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUINanoImageResource * imageResource;
-@property(retain) SAUIDecoratedText * subtitle;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUINanoImageResource *imageResource;
+@property (nonatomic, retain) SAUIDecoratedText *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
 
 + (id)ancillaryImageItem;
 + (id)ancillaryImageItemWithDictionary:(id)arg1 context:(id)arg2;

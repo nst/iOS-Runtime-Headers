@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMicroblogGetSocialCredential : SABaseClientBoundCommand
 
-@interface SAMicroblogGetSocialCredential : SABaseClientBoundCommand {
-}
-
-@property(copy) NSString * explicitUserPermission;
-@property(copy) NSString * socialNetwork;
+@property (nonatomic, copy) NSString *explicitUserPermission;
+@property (nonatomic, copy) NSString *socialNetwork;
 
 + (id)getSocialCredential;
 + (id)getSocialCredentialWithDictionary:(id)arg1 context:(id)arg2;

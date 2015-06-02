@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextPosition : NSObject {
-}
+@interface UITextPosition : NSObject
 
 @end

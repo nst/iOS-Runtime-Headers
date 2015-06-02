@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIRemoteKeyboardPlaceholderView : UIView <_UIRemoteKeyboardInputViewPlaceholder> {
     UIView *_mirroredView;
 }
 
-@property(retain,readonly) UIView * placeheldView;
+@property (readonly, retain) UIView *placeheldView;
 
 + (id)placeholderForView:(id)arg1;
 + (id)placeholderWithWidth:(float)arg1 height:(float)arg2;

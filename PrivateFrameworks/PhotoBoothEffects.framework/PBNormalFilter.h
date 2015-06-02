@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoBoothEffects.framework/PhotoBoothEffects
  */
 
-@interface PBNormalFilter : PBFilter {
-}
+@interface PBNormalFilter : PBFilter
 
 @end

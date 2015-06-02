@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, NSData, NSString;
-
 @interface CKDPPublicKey : PBCodable <NSCopying> {
     NSData *_keyData;
     NSString *_keyHash;
     CKDPIdentifier *_userId;
 }
 
-@property(readonly) BOOL hasKeyData;
-@property(readonly) BOOL hasKeyHash;
-@property(readonly) BOOL hasUserId;
-@property(retain) NSData * keyData;
-@property(retain) NSString * keyHash;
-@property(retain) CKDPIdentifier * userId;
+@property (nonatomic, readonly) BOOL hasKeyData;
+@property (nonatomic, readonly) BOOL hasKeyHash;
+@property (nonatomic, readonly) BOOL hasUserId;
+@property (nonatomic, retain) NSData *keyData;
+@property (nonatomic, retain) NSString *keyHash;
+@property (nonatomic, retain) CKDPIdentifier *userId;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

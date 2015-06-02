@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString;
-
 @interface RadioTrackAdInfo : NSObject <NSSecureCoding> {
     BOOL _gatewayAdSlot;
     NSString *_slotIdentifier;
 }
 
-@property(getter=isGatewayAdSlot,readonly) BOOL gatewayAdSlot;
-@property(copy,readonly) NSString * slotIdentifier;
+@property (getter=isGatewayAdSlot, nonatomic, readonly) BOOL gatewayAdSlot;
+@property (nonatomic, readonly, copy) NSString *slotIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

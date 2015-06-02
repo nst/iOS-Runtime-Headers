@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableArray;
-
 @interface BWBreadthFirstEnumerator : BWNodeEnumerator {
     NSMutableArray *_holdQueue;
     NSMutableArray *_queue;

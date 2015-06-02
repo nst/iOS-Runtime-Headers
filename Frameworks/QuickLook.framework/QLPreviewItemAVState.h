@@ -9,7 +9,7 @@
 }
 
 @property double duration;
-@property(getter=isPlaying) BOOL playing;
+@property (getter=isPlaying) BOOL playing;
 @property double position;
 
 + (id)avStateWithPosition:(double)arg1 duration:(double)arg2 playing:(BOOL)arg3;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>;
-
 @interface ABLinkedCardsPlaceholderCell : ABPropertyPlaceholderCell {
     <ABPropertyCellDelegate> *_delegate;
 }
 
-@property <ABPropertyCellDelegate> * delegate;
+@property (nonatomic) <ABPropertyCellDelegate> *delegate;
 
 - (id)delegate;
 - (void)performDefaultAction;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CALayer, CAReplicatorLayer;
-
 @interface CAMTimelapseShutterRingView : UIView {
     CALayer *__largeTickLayer;
     CAReplicatorLayer *__largeTickReplicatorLayer;
@@ -14,13 +12,13 @@
     BOOL _animating;
 }
 
-@property(readonly) CALayer * _largeTickLayer;
-@property(readonly) CAReplicatorLayer * _largeTickReplicatorLayer;
-@property(readonly) CALayer * _smallTickLayer;
-@property(readonly) CAReplicatorLayer * _smallTickReplicatorLayer;
-@property(readonly) CALayer * _timerHandLayer;
-@property(readonly) CALayer * _timerHandParentLayer;
-@property(getter=isAnimating) BOOL animating;
+@property (nonatomic, readonly) CALayer *_largeTickLayer;
+@property (nonatomic, readonly) CAReplicatorLayer *_largeTickReplicatorLayer;
+@property (nonatomic, readonly) CALayer *_smallTickLayer;
+@property (nonatomic, readonly) CAReplicatorLayer *_smallTickReplicatorLayer;
+@property (nonatomic, readonly) CALayer *_timerHandLayer;
+@property (nonatomic, readonly) CALayer *_timerHandParentLayer;
+@property (getter=isAnimating, nonatomic) BOOL animating;
 
 - (void).cxx_destruct;
 - (void)_addStartAnimations;

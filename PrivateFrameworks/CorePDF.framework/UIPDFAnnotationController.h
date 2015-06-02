@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class <NSObject><UIPDFAnnotationControllerDelegate>, CALayer, NSString, UIColor, UIPDFAnnotation, UIPDFMarkupAnnotation, UIPDFPageView;
-
 @interface UIPDFAnnotationController : NSObject <UIGestureRecognizerDelegate> {
     BOOL _allowEditing;
     struct CGSize { 
@@ -29,18 +27,18 @@
     BOOL makeUnderlineAnnotation;
 }
 
-@property BOOL allowEditing;
-@property(retain) UIPDFAnnotation * currentAnnotation;
-@property UIColor * currentColor;
-@property(copy,readonly) NSString * debugDescription;
-@property <NSObject><UIPDFAnnotationControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property CALayer * drawingSurface;
-@property(readonly) unsigned int hash;
-@property BOOL makeUnderlineAnnotation;
-@property(readonly) UIPDFPageView * pageView;
-@property(readonly) Class superclass;
-@property(readonly) BOOL tracking;
+@property (nonatomic) BOOL allowEditing;
+@property (nonatomic, retain) UIPDFAnnotation *currentAnnotation;
+@property (nonatomic) UIColor *currentColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NSObject><UIPDFAnnotationControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) CALayer *drawingSurface;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL makeUnderlineAnnotation;
+@property (nonatomic, readonly) UIPDFPageView *pageView;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL tracking;
 
 + (id)newAnnotation:(struct CGPDFDictionary { }*)arg1 type:(const char *)arg2;
 + (struct CGImage { }*)newMaskImage:(struct CGPDFPage { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;

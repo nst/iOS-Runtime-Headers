@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<TSKCOIntermediateOperationEnumerator>, TSPObject;
-
 @interface TSKCOOperationTransformer : NSObject <NSCopying> {
     TSPObject *mDelegate;
     NSObject<TSKCOIntermediateOperationEnumerator> *mEnumerator;
     BOOL mIsHigherPriority;
 }
 
-@property TSPObject * delegate;
+@property (nonatomic) TSPObject *delegate;
 
 - (void)appendOperation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

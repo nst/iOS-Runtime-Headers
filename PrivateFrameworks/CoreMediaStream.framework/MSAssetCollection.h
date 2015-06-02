@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSAsset, NSArray, NSData, NSDate, NSString;
-
 @interface MSAssetCollection : NSObject <NSSecureCoding> {
     NSString *_assetCollectionID;
     NSString *_ctag;
@@ -15,15 +13,15 @@
     BOOL _wasDeleted;
 }
 
-@property(retain) NSString * assetCollectionID;
-@property(retain) NSString * ctag;
-@property(retain) NSArray * derivedAssets;
-@property(retain) NSString * fileName;
-@property long long initialFailureDate;
-@property(retain) MSAsset * masterAsset;
-@property(readonly) NSData * masterAssetHash;
-@property(retain) NSDate * serverUploadedDate;
-@property BOOL wasDeleted;
+@property (nonatomic, retain) NSString *assetCollectionID;
+@property (nonatomic, retain) NSString *ctag;
+@property (nonatomic, retain) NSArray *derivedAssets;
+@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic) long long initialFailureDate;
+@property (nonatomic, retain) MSAsset *masterAsset;
+@property (nonatomic, readonly) NSData *masterAssetHash;
+@property (nonatomic, retain) NSDate *serverUploadedDate;
+@property (nonatomic) BOOL wasDeleted;
 
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CALayer;
-
 @interface MKCompassView : UIView {
     CALayer *_imageLayer;
 }
 
-@property float yaw;
+@property (nonatomic) float yaw;
 
 - (void).cxx_destruct;
 - (void)dealloc;

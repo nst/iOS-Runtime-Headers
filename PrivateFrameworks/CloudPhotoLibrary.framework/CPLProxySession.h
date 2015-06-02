@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString;
+@interface CPLProxySession : CPLPlatformObject <CPLChangeSessionImplementation>
 
-@interface CPLProxySession : CPLPlatformObject <CPLChangeSessionImplementation> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
++ (void)beginSessionForProxy:(id)arg1 knownVersion:(id)arg2 completionHandler:(id /* block */)arg3;
 
-+ (void)beginSessionForProxy:(id)arg1 knownVersion:(id)arg2 completionHandler:(id)arg3;
-
-- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
-- (void)dispatchBlockWhenLibraryIsOpen:(id)arg1;
-- (void)finalizeWithCompletionHandler:(id)arg1;
+- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)dispatchBlockWhenLibraryIsOpen:(id /* block */)arg1;
+- (void)finalizeWithCompletionHandler:(id /* block */)arg1;
 - (id)proxyLibraryManager;
-- (id)proxyWithErrorHandler:(id)arg1;
-- (void)tearDownWithCompletionHandler:(id)arg1;
+- (id)proxyWithErrorHandler:(id /* block */)arg1;
+- (void)tearDownWithCompletionHandler:(id /* block */)arg1;
 
 @end

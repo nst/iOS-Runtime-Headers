@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class <TrustCertificateViewControllerDelegate>, CertificateViewController;
-
 @interface TrustCertificateViewController : UINavigationController {
     CertificateViewController *_certificateViewController;
     <TrustCertificateViewControllerDelegate> *_trustCertificateDelegate;
 }
 
-@property(retain) CertificateViewController * certificateViewController;
-@property <TrustCertificateViewControllerDelegate> * trustCertificateDelegate;
+@property (nonatomic, retain) CertificateViewController *certificateViewController;
+@property (nonatomic) <TrustCertificateViewControllerDelegate> *trustCertificateDelegate;
 
 - (void).cxx_destruct;
 - (void)_accept;
@@ -23,7 +21,7 @@
 - (id)initWithTrustCertificateDelegate:(id)arg1;
 - (void)setCertificateInfo:(id)arg1 issuer:(id)arg2 purpose:(id)arg3 expiration:(id)arg4 isRoot:(BOOL)arg5 properties:(id)arg6 action:(int)arg7;
 - (void)setCertificateViewController:(id)arg1;
-- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id)arg5;
+- (void)setShowCertificateButton:(BOOL)arg1 localizedTitle:(id)arg2 localizedDescription:(id)arg3 destructive:(BOOL)arg4 handler:(id /* block */)arg5;
 - (void)setTrustCertificateDelegate:(id)arg1;
 - (id)trustCertificateDelegate;
 

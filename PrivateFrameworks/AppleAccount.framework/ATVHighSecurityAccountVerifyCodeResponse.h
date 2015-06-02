@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
+@interface ATVHighSecurityAccountVerifyCodeResponse : AAResponse
 
-@interface ATVHighSecurityAccountVerifyCodeResponse : AAResponse {
-}
-
-@property(readonly) int errorCode;
-@property(readonly) NSString * errorMessage;
-@property(readonly) NSString * errorTitle;
-@property(readonly) BOOL success;
+@property (nonatomic, readonly) int errorCode;
+@property (nonatomic, readonly) NSString *errorMessage;
+@property (nonatomic, readonly) NSString *errorTitle;
+@property (nonatomic, readonly) BOOL success;
 
 - (int)errorCode;
 - (id)errorMessage;

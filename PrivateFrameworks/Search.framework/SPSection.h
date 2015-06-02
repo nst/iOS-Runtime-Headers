@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSURL;
+@interface SPSection : SPProxyObject <PRSSection>
 
-@interface SPSection : SPProxyObject <PRSSection> {
-}
-
-@property(retain) NSURL * attribution_url;
-@property(retain) NSString * type;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSURL *attribution_url;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSURL *url;
 
 @end

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSIndexPath;
-
 @interface MPPlayableContentCallbackContext : NSObject {
     NSIndexPath *_indexPath;
     BOOL _serviced;
 }
 
-@property(readonly) NSIndexPath * indexPath;
-@property BOOL serviced;
+@property (nonatomic, readonly) NSIndexPath *indexPath;
+@property (nonatomic) BOOL serviced;
 
 - (void).cxx_destruct;
 - (id)indexPath;

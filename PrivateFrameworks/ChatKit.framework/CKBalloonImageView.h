@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImage;
-
 @interface CKBalloonImageView : UIView {
     UIImage *_image;
 }
 
-@property(retain) UIImage * image;
+@property (nonatomic, retain) UIImage *image;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)dealloc;

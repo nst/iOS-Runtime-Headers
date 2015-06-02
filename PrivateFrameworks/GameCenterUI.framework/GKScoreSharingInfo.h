@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGame, GKLeaderboard, GKPlayer, UIImage;
-
 @interface GKScoreSharingInfo : NSObject <NSCoding, NSSecureCoding> {
     UIImage *_badgeImage;
     BOOL _complete;
@@ -13,12 +11,12 @@
     GKPlayer *_player;
 }
 
-@property(retain) UIImage * badgeImage;
-@property BOOL complete;
-@property(retain) GKGame * game;
-@property(retain) UIImage * iconImage;
-@property(retain) GKLeaderboard * leaderboardCategory;
-@property(retain) GKPlayer * player;
+@property (nonatomic, retain) UIImage *badgeImage;
+@property (nonatomic) BOOL complete;
+@property (nonatomic, retain) GKGame *game;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, retain) GKLeaderboard *leaderboardCategory;
+@property (nonatomic, retain) GKPlayer *player;
 
 + (BOOL)supportsSecureCoding;
 

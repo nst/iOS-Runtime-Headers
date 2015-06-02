@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface SUAudioPlayerSessionManager : NSObject {
     NSMutableDictionary *_sessions;
 }
 
-@property(readonly) NSArray * allSessionURLs;
+@property (nonatomic, readonly) NSArray *allSessionURLs;
 
 + (id)sessionManager;
 

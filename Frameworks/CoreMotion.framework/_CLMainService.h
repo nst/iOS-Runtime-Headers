@@ -6,7 +6,7 @@
     BOOL _valid;
 }
 
-@property BOOL valid;
+@property (nonatomic) BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

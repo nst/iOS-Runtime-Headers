@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface EDPivotDataField : NSObject {
     long mBaseField;
     unsigned long mBaseItem;

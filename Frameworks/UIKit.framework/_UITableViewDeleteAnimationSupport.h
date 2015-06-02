@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface _UITableViewDeleteAnimationSupport : NSObject {
     NSMutableArray *_cellsToDeleteAfterAnimation;
     int _deleteCount;
-    unsigned int _enabledStateBeforeDeleteAnimation : 1;
-    unsigned int _reserved : 30;
+    unsigned int _enabledStateBeforeDeleteAnimation;
+    unsigned int _reserved;
 }
 
 @end

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSNumber;
-
 @interface MCChaperonePayload : MCPayload {
     BOOL _nonChaperonePairingAllowed;
     NSNumber *_nonChaperonePairingAllowedNum;
     NSData *_pairingCertificateData;
 }
 
-@property(readonly) BOOL nonChaperonePairingAllowed;
-@property(readonly) NSNumber * nonChaperonePairingAllowedNum;
-@property(retain,readonly) NSData * pairingCertificateData;
+@property (nonatomic, readonly) BOOL nonChaperonePairingAllowed;
+@property (nonatomic, readonly) NSNumber *nonChaperonePairingAllowedNum;
+@property (nonatomic, readonly, retain) NSData *pairingCertificateData;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

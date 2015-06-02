@@ -2,18 +2,10 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PHImageRequestOptions : NSObject <NSCopying> {
     BOOL _allowPlaceholder;
     double _aspectRatioHint;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cachingCompletedHandler;
-
+    id /* block */ _cachingCompletedHandler;
     BOOL _degradedFormatPreferJPEG;
     BOOL _deliveryFirstResultAsynchronously;
     int _deliveryMode;
@@ -32,41 +24,37 @@
             float height; 
         } size; 
     } _normalizedCropRect;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
     int _rank;
     int _resizeMode;
     BOOL _synchronous;
     int _version;
 }
 
-@property BOOL allowPlaceholder;
-@property double aspectRatioHint;
-@property(copy) id cachingCompletedHandler;
-@property BOOL degradedFormatPreferJPEG;
-@property BOOL deliveryFirstResultAsynchronously;
-@property int deliveryMode;
-@property double demoteFactor;
-@property double downloadUpdateInterval;
-@property int loadingMode;
-@property(getter=isMemoryCachingAllowed) BOOL memoryCachingAllowed;
-@property(getter=isNetworkAccessAllowed) BOOL networkAccessAllowed;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
-@property(copy) id progressHandler;
-@property int rank;
-@property int resizeMode;
-@property(getter=isSynchronous) BOOL synchronous;
-@property int version;
+@property (nonatomic) BOOL allowPlaceholder;
+@property (nonatomic) double aspectRatioHint;
+@property (nonatomic, copy) id /* block */ cachingCompletedHandler;
+@property (nonatomic) BOOL degradedFormatPreferJPEG;
+@property (nonatomic) BOOL deliveryFirstResultAsynchronously;
+@property (nonatomic) int deliveryMode;
+@property (nonatomic) double demoteFactor;
+@property (nonatomic) double downloadUpdateInterval;
+@property (nonatomic) int loadingMode;
+@property (getter=isMemoryCachingAllowed, nonatomic) BOOL memoryCachingAllowed;
+@property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
+@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) int rank;
+@property (nonatomic) int resizeMode;
+@property (getter=isSynchronous, nonatomic) BOOL synchronous;
+@property (nonatomic) int version;
 
 + (id)defaultOptionsAllowingPlaceholder;
 
 - (void).cxx_destruct;
 - (BOOL)allowPlaceholder;
 - (double)aspectRatioHint;
-- (id)cachingCompletedHandler;
+- (id /* block */)cachingCompletedHandler;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)degradedFormatPreferJPEG;
 - (BOOL)deliveryFirstResultAsynchronously;
@@ -80,12 +68,12 @@
 - (BOOL)isSynchronous;
 - (int)loadingMode;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedCropRect;
-- (id)progressHandler;
+- (id /* block */)progressHandler;
 - (int)rank;
 - (int)resizeMode;
 - (void)setAllowPlaceholder:(BOOL)arg1;
 - (void)setAspectRatioHint:(double)arg1;
-- (void)setCachingCompletedHandler:(id)arg1;
+- (void)setCachingCompletedHandler:(id /* block */)arg1;
 - (void)setDegradedFormatPreferJPEG:(BOOL)arg1;
 - (void)setDeliveryFirstResultAsynchronously:(BOOL)arg1;
 - (void)setDeliveryMode:(int)arg1;
@@ -95,7 +83,7 @@
 - (void)setMemoryCachingAllowed:(BOOL)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setNormalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setProgressHandler:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 - (void)setRank:(int)arg1;
 - (void)setResizeMode:(int)arg1;
 - (void)setSynchronous:(BOOL)arg1;

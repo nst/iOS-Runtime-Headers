@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface _NSJapaneseBigramKeySet : _NSSharedKeySetS {
-}
+@interface _NSJapaneseBigramKeySet : _NSSharedKeySetS
 
 - (void)dealloc;
 - (void)finalize;

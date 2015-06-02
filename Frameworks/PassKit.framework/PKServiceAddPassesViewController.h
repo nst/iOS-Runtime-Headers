@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableData, NSString, NSURLConnection, PKGroupsController, PKPassGroupStackView, UINavigationBar, UIProgressView;
-
 @interface PKServiceAddPassesViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKServiceAddPassesViewControllerProtocol, UIScrollViewDelegate> {
     BOOL _allowsPassIngestion;
     BOOL _alreadyAdding;
@@ -18,11 +12,7 @@
     int _groupLoadState;
     PKGroupsController *_groupsController;
     BOOL _haveStartedCardAnimation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _loadedGroupsCallback;
-
+    id /* block */ _loadedGroupsCallback;
     NSArray *_localPassDatas;
     NSMutableArray *_localPasses;
     NSMutableArray *_minimumCardHeightFromHereToTop;
@@ -32,20 +22,20 @@
     BOOL _viewAppeared;
 }
 
-@property(retain) PKPassGroupStackView * cardStackView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) PKGroupsController * groupsController;
-@property(readonly) unsigned int hash;
-@property BOOL haveStartedCardAnimation;
-@property(retain) NSArray * localPassDatas;
-@property(retain) NSMutableArray * localPasses;
-@property(retain) NSMutableArray * minimumCardHeightFromHereToTop;
-@property(retain) UINavigationBar * navigationBar;
-@property int presentationState;
-@property(retain) UIProgressView * progressView;
-@property(readonly) Class superclass;
-@property BOOL viewAppeared;
+@property (nonatomic, retain) PKPassGroupStackView *cardStackView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PKGroupsController *groupsController;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL haveStartedCardAnimation;
+@property (nonatomic, retain) NSArray *localPassDatas;
+@property (nonatomic, retain) NSMutableArray *localPasses;
+@property (nonatomic, retain) NSMutableArray *minimumCardHeightFromHereToTop;
+@property (retain) UINavigationBar *navigationBar;
+@property (nonatomic) int presentationState;
+@property (nonatomic, retain) UIProgressView *progressView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL viewAppeared;
 
 + (id)_exportedInterface;
 + (BOOL)_preventsAppearanceProxyCustomization;

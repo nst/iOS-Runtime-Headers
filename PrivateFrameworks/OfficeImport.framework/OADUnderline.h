@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADFill, OADStroke;
-
 @interface OADUnderline : NSObject {
     OADFill *mFill;
-    unsigned int mIsUsingTextFill : 1;
-    unsigned int mIsUsingTextStroke : 1;
+    unsigned int mIsUsingTextFill;
+    unsigned int mIsUsingTextStroke;
     OADStroke *mStroke;
     unsigned char mType;
 }

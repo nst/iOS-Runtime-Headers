@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSDateFormatter;
-
 @interface MCDPodcastEpisodesTableViewController : MCD_OLD_TableViewController {
     NSDateFormatter *_formatter;
 }

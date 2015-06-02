@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKSelection : NSObject <NSCopying> {
-}
+@interface TSKSelection : NSObject <NSCopying>
 
 + (Class)archivedSelectionClass;
 

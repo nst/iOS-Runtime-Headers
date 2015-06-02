@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, NSMapTable, NSMutableArray, NSMutableSet, NSNotificationCenter, NSNumber, PLManagedObjectContext;
-
 @interface PLChangeNotificationCenter : NSObject {
     struct contentChanges_s { 
         NSMutableArray *container; 
@@ -64,8 +62,8 @@
     NSMutableArray *_snapshots;
 }
 
-@property(readonly) BOOL _shouldForceFetchingAlbumsToReload;
-@property(retain,readonly) NSNotificationCenter * backingCenter;
+@property (nonatomic, readonly) BOOL _shouldForceFetchingAlbumsToReload;
+@property (nonatomic, readonly, retain) NSNotificationCenter *backingCenter;
 
 + (id)allManagedObjectKeysStrategy;
 + (id)defaultCenter;
@@ -114,13 +112,13 @@
 - (void)addCloudFeedEntriesObserver:(id)arg1;
 - (void)addInvitationRecordsObserver:(id)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
-- (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id)arg4;
+- (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;
 - (void)addShouldReloadObserver:(id)arg1;
 - (id)backingCenter;
 - (void)dealloc;
 - (id)descriptionOfSplitChanges;
 - (void)enqueueNotification:(id)arg1;
-- (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id)arg2;
+- (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)inflightAssetsAlbumWillChange:(id)arg1;
 - (id)init;
 - (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;

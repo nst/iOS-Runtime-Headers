@@ -6,8 +6,8 @@
     char *_data;
     unsigned int _dataPixelFormat;
     unsigned char _imageBlockReleaseCount;
-    unsigned int _mmappedData : 1;
-    BOOL _name[128];
+    unsigned int _mmappedData;
+    BOOL _name;
     unsigned int _nrows;
     int _pixelFormat;
     unsigned long _rowbytes;

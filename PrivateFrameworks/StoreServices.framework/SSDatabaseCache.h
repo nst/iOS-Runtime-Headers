@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, SSPersistentCache, SSSQLiteDatabase;
-
 @interface SSDatabaseCache : NSObject {
     Class _cacheEntryClass;
     NSString *_cacheName;
@@ -15,7 +13,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property unsigned int maximumInlineBlobSize;
+@property (nonatomic) unsigned int maximumInlineBlobSize;
 
 - (BOOL)_setupDatabase;
 - (id)cacheEntryForLookupKey:(id)arg1;

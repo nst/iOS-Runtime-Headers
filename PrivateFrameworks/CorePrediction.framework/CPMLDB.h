@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-@class CPMLSchema, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableString, NSString;
-
 @interface CPMLDB : NSObject {
     NSDictionary *_cInfo;
     NSString *_dbFileName;
@@ -31,9 +29,9 @@
     NSMutableDictionary *vectorListCardinality;
 }
 
-@property(readonly) CPMLSchema * cpSchema;
-@property(readonly) struct sqlite3 { }* db;
-@property(readonly) NSString * dbFileName;
+@property (readonly) CPMLSchema *cpSchema;
+@property (nonatomic, readonly) struct sqlite3 { }*db;
+@property (readonly) NSString *dbFileName;
 
 + (id)getConfigurationFromPlist:(id)arg1;
 

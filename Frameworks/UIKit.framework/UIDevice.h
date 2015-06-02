@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSUUID;
-
 @interface UIDevice : NSObject {
     float _batteryLevel;
     struct { 
@@ -17,45 +15,41 @@
     int _numDeviceOrientationObservers;
 }
 
-@property(setter=_setBacklightLevel:) float _backlightLevel;
-@property(readonly) float batteryLevel;
-@property(getter=isBatteryMonitoringEnabled) BOOL batteryMonitoringEnabled;
-@property(readonly) int batteryState;
-@property(retain,readonly) NSString * buildVersion;
-@property(getter=isGeneratingDeviceOrientationNotifications,readonly) BOOL generatesDeviceOrientationNotifications;
-@property(retain,readonly) NSUUID * identifierForVendor;
-@property(retain,readonly) NSString * localizedModel;
-@property(retain,readonly) NSString * model;
-@property(getter=isMultitaskingSupported,readonly) BOOL multitaskingSupported;
-@property(retain,readonly) NSString * name;
-@property int orientation;
-@property(readonly) int orientation;
-@property(getter=isProximityMonitoringEnabled) BOOL proximityMonitoringEnabled;
-@property(readonly) BOOL proximityState;
-@property(retain,readonly) NSString * systemName;
-@property(retain,readonly) NSString * systemVersion;
-@property(readonly) int userInterfaceIdiom;
+@property (setter=_setBacklightLevel:, nonatomic) float _backlightLevel;
+@property (nonatomic, readonly) float batteryLevel;
+@property (getter=isBatteryMonitoringEnabled, nonatomic) BOOL batteryMonitoringEnabled;
+@property (nonatomic, readonly) int batteryState;
+@property (nonatomic, readonly, retain) NSString *buildVersion;
+@property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) BOOL generatesDeviceOrientationNotifications;
+@property (nonatomic, readonly, retain) NSUUID *identifierForVendor;
+@property (nonatomic, readonly, retain) NSString *localizedModel;
+@property (nonatomic, readonly, retain) NSString *model;
+@property (getter=isMultitaskingSupported, nonatomic, readonly) BOOL multitaskingSupported;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic) int orientation;
+@property (nonatomic, readonly) int orientation;
+@property (getter=isProximityMonitoringEnabled, nonatomic) BOOL proximityMonitoringEnabled;
+@property (nonatomic, readonly) BOOL proximityState;
+@property (nonatomic, readonly, retain) NSString *systemName;
+@property (nonatomic, readonly, retain) NSString *systemVersion;
+@property (nonatomic, readonly) int userInterfaceIdiom;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_isWatch;
 + (BOOL)_isWatchCompanion;
 + (id)currentDevice;
 + (int)currentDeviceOrientationAllowingAmbiguous:(BOOL)arg1;
 + (id)modelSpecificLocalizedStringKeyForKey:(id)arg1;
-+ (id)platformString;
-+ (id)platformString;
 
 - (float)_backlightLevel;
 - (void)_clearGraphicsQualityOverride;
-- (id)_currentProduct;
-- (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (int)_graphicsQuality;
-- (int)_graphicsQualityIncludingMediumN41:(BOOL)arg1;
 - (BOOL)_hasGraphicsQualityOverride;
 - (BOOL)_isTTYEnabled;
 - (int)_keyboardGraphicsQuality;
-- (id)_mediumQualityProductsIncludingN41:(BOOL)arg1;
 - (void)_playSystemSound:(unsigned long)arg1;
 - (int)_predictionGraphicsQuality;
 - (void)_registerForSystemSounds:(id)arg1;
@@ -85,8 +79,6 @@
 - (int)orientation;
 - (void)playInputClick;
 - (BOOL)proximityState;
-- (int)sbf_bannerGraphicsQuality;
-- (int)sbf_controlCenterGraphicsQuality;
 - (void)setBatteryMonitoringEnabled:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
@@ -95,5 +87,22 @@
 - (id)systemVersion;
 - (id)uniqueIdentifier;
 - (int)userInterfaceIdiom;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (id)platformString;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+
+- (id)_currentProduct;
+- (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
+- (int)_graphicsQualityIncludingMediumN41:(BOOL)arg1;
+- (id)_mediumQualityProductsIncludingN41:(BOOL)arg1;
+- (int)sbf_bannerGraphicsQuality;
+- (int)sbf_controlCenterGraphicsQuality;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)platformString;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface ASAccountActor : DADisableableObject <ASAccountActorMessages> {
-}
+@interface ASAccountActor : DADisableableObject <ASAccountActorMessages>
 
 - (oneway void)_accountPasswordChanged;
 - (oneway void)_daemonDiedNotification:(id)arg1;

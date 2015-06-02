@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class <MFSecureMIMECompositionManagerDelegate>, MFError, MailAccount, NSLock, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString;
-
 @interface MFSecureMIMECompositionManager : NSObject {
     NSMutableDictionary *_certificatesByRecipient;
     <MFSecureMIMECompositionManagerDelegate> *_delegate;
@@ -26,14 +24,14 @@
     unsigned int _signingStatusSemaphore;
 }
 
-@property <MFSecureMIMECompositionManagerDelegate> * delegate;
-@property(readonly) int encryptionPolicy;
-@property(readonly) int encryptionStatus;
-@property(readonly) NSSet * recipients;
-@property(readonly) MailAccount * sendingAccount;
-@property(copy) NSString * sendingAddress;
-@property(readonly) int signingPolicy;
-@property(readonly) int signingStatus;
+@property <MFSecureMIMECompositionManagerDelegate> *delegate;
+@property (readonly) int encryptionPolicy;
+@property (readonly) int encryptionStatus;
+@property (readonly) NSSet *recipients;
+@property (readonly) MailAccount *sendingAccount;
+@property (copy) NSString *sendingAddress;
+@property (readonly) int signingPolicy;
+@property (readonly) int signingStatus;
 
 + (id)copyEncryptionCertificatesForAccount:(id)arg1 recipientAddress:(id)arg2 error:(id*)arg3;
 + (struct __SecIdentity { }*)copyEncryptionIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;

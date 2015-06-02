@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UISwitch;
-
 @interface CKTranscriptDNDCell : UITableViewCell {
     UISwitch *_muteSwitch;
 }
 
-@property(retain) UISwitch * muteSwitch;
+@property (nonatomic, retain) UISwitch *muteSwitch;
 
 + (id)identifier;
 + (float)preferredHeight;

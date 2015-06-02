@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSample;
-
 @interface HDCodableCategorySample : PBCodable <NSCopying> {
     struct { 
         unsigned int value : 1; 
@@ -12,10 +10,10 @@
     long long _value;
 }
 
-@property(readonly) BOOL hasSample;
-@property BOOL hasValue;
-@property(retain) HDCodableSample * sample;
-@property long long value;
+@property (nonatomic, readonly) BOOL hasSample;
+@property (nonatomic) BOOL hasValue;
+@property (nonatomic, retain) HDCodableSample *sample;
+@property (nonatomic) long long value;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

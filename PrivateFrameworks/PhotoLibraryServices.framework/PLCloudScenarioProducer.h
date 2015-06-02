@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLCloudScenarioConsumer>, NSArray;
-
 @interface PLCloudScenarioProducer : NSObject {
     <PLCloudScenarioConsumer> *_consumer;
     NSArray *_triggers;
 }
 
-@property(retain) <PLCloudScenarioConsumer> * consumer;
-@property(retain) NSArray * triggers;
+@property (nonatomic, retain) <PLCloudScenarioConsumer> *consumer;
+@property (nonatomic, retain) NSArray *triggers;
 
 - (void)activate;
 - (id)consumer;

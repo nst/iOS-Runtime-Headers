@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@interface SBCMusicLibraryPlaybackPositionDomain : SBCPlaybackPositionDomain {
-}
+@interface SBCMusicLibraryPlaybackPositionDomain : SBCPlaybackPositionDomain
 
 @end

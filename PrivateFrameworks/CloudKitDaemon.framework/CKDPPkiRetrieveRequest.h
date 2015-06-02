@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPPkiRetrieveRequest : PBRequest <NSCopying> {
     NSMutableArray *_userIds;
 }
 
-@property(retain) NSMutableArray * userIds;
+@property (nonatomic, retain) NSMutableArray *userIds;
 
 + (id)options;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@class NSArray, NSMutableArray, NSString, NSXPCConnection;
-
 @interface NRDeviceDiscoveryController : NSObject <NRDeviceDiscoveryControllerXPCFrameworkDelegate, NSXPCConnectionDelegate> {
     unsigned int _counter;
     NSArray *_devices;
@@ -11,14 +9,14 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property unsigned int counter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * devices;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * mutableDevices;
-@property(readonly) Class superclass;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic) unsigned int counter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *devices;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *mutableDevices;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)sharedInstance;
 

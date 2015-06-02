@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKDCancelTokenGroup, NSArray, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface CKDUploadAssetsOperation : CKDDatabaseOperation {
     NSMutableArray *_MMCSItemsToUpload;
     NSArray *_assetsToUpload;
@@ -16,35 +10,23 @@
     NSMutableArray *_openedPackages;
     NSMutableArray *_packageManifests;
     NSObject<OS_dispatch_queue> *_queue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _uploadCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _uploadPreparationBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _uploadProgressBlock;
-
+    id /* block */ _uploadCompletionBlock;
+    id /* block */ _uploadPreparationBlock;
+    id /* block */ _uploadProgressBlock;
     NSMapTable *_uploadTasksByPackages;
 }
 
-@property(retain) NSMutableArray * MMCSItemsToUpload;
-@property(retain) NSArray * assetsToUpload;
-@property(retain) CKDCancelTokenGroup * cancelTokens;
-@property unsigned int maxPackageUploadsPerBatch;
-@property(retain) NSMutableArray * openedPackages;
-@property(retain) NSMutableArray * packageManifests;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(copy) id uploadCompletionBlock;
-@property(copy) id uploadPreparationBlock;
-@property(copy) id uploadProgressBlock;
-@property(retain) NSMapTable * uploadTasksByPackages;
+@property (nonatomic, retain) NSMutableArray *MMCSItemsToUpload;
+@property (nonatomic, retain) NSArray *assetsToUpload;
+@property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
+@property (nonatomic) unsigned int maxPackageUploadsPerBatch;
+@property (nonatomic, retain) NSMutableArray *openedPackages;
+@property (nonatomic, retain) NSMutableArray *packageManifests;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) id /* block */ uploadCompletionBlock;
+@property (nonatomic, copy) id /* block */ uploadPreparationBlock;
+@property (nonatomic, copy) id /* block */ uploadProgressBlock;
+@property (nonatomic, retain) NSMapTable *uploadTasksByPackages;
 
 - (void).cxx_destruct;
 - (id)MMCSItemsToUpload;
@@ -69,10 +51,10 @@
 - (BOOL)_prepareForUpload;
 - (void)_removePackageManifests;
 - (BOOL)_upload;
-- (void)_uploadPackageSection:(id)arg1 task:(id)arg2 completionBlock:(id)arg3;
-- (void)_uploadPackageSectionsWithEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id)arg3;
+- (void)_uploadPackageSection:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_uploadPackageSectionsWithEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uploadPackageSectionsWithPendingTasks:(id)arg1 uploadingTasks:(id)arg2 completedTasks:(id)arg3;
-- (void)_uploadPackageSectionsWithTask:(id)arg1 completionBlock:(id)arg2;
+- (void)_uploadPackageSectionsWithTask:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)assetsToUpload;
 - (void)cancel;
 - (id)cancelTokens;
@@ -92,13 +74,13 @@
 - (void)setOpenedPackages:(id)arg1;
 - (void)setPackageManifests:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setUploadCompletionBlock:(id)arg1;
-- (void)setUploadPreparationBlock:(id)arg1;
-- (void)setUploadProgressBlock:(id)arg1;
+- (void)setUploadCompletionBlock:(id /* block */)arg1;
+- (void)setUploadPreparationBlock:(id /* block */)arg1;
+- (void)setUploadProgressBlock:(id /* block */)arg1;
 - (void)setUploadTasksByPackages:(id)arg1;
-- (id)uploadCompletionBlock;
-- (id)uploadPreparationBlock;
-- (id)uploadProgressBlock;
+- (id /* block */)uploadCompletionBlock;
+- (id /* block */)uploadPreparationBlock;
+- (id /* block */)uploadProgressBlock;
 - (id)uploadTasksByPackages;
 
 @end

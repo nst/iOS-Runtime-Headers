@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIViewPrintFormatter : UIPrintFormatter {
     UIView *_view;
 }
 
-@property(readonly) UIView * view;
+@property (nonatomic, readonly) UIView *view;
 
 - (id)_initWithView:(id)arg1;
 - (int)_recalcPageCount;

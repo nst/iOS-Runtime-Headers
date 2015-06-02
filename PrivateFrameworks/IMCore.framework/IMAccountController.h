@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface IMAccountController : NSObject {
     NSMutableDictionary *_accountMap;
     NSMutableArray *_accounts;
@@ -16,22 +14,19 @@
     NSMutableDictionary *_serviceToOperationalAccountsMap;
 }
 
-@property(readonly) NSMutableArray * _accounts;
-@property(readonly) NSArray * accounts;
-@property(readonly) NSArray * activeAccounts;
-@property(readonly) id bestAccountForStatus;
-@property(readonly) NSArray * connectedAccounts;
-@property(readonly) int numberOfAccounts;
-@property(readonly) NSArray * operationalAccounts;
+@property (nonatomic, readonly) NSMutableArray *_accounts;
+@property (nonatomic, readonly) NSArray *accounts;
+@property (nonatomic, readonly) NSArray *activeAccounts;
+@property (nonatomic, readonly) id bestAccountForStatus;
+@property (nonatomic, readonly) NSArray *connectedAccounts;
+@property (nonatomic, readonly) int numberOfAccounts;
+@property (nonatomic, readonly) NSArray *operationalAccounts;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
 
-- (id)__ck_bestAccountForAddress:(id)arg1;
-- (id)__ck_bestAccountForAddresses:(id)arg1;
-- (id)__ck_bestAccountForAddresses:(id)arg1 withFallbackService:(id)arg2;
-- (id)__ck_defaultAccountForService:(id)arg1;
-- (id)__ck_operationalPhoneAccountForService:(id)arg1;
 - (id)__iCloudSystemAccountForService:(id)arg1;
 - (void)_accountRegistrationStatusChanged:(id)arg1;
 - (id)_accounts;
@@ -101,5 +96,13 @@
 - (id)operationalAccountsWithCapability:(unsigned long long)arg1;
 - (BOOL)readOnly;
 - (void)setReadOnly:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_bestAccountForAddress:(id)arg1;
+- (id)__ck_bestAccountForAddresses:(id)arg1;
+- (id)__ck_bestAccountForAddresses:(id)arg1 withFallbackService:(id)arg2;
+- (id)__ck_defaultAccountForService:(id)arg1;
+- (id)__ck_operationalPhoneAccountForService:(id)arg1;
 
 @end

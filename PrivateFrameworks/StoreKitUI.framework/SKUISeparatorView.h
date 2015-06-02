@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUISeparatorView : UIView {
     UIColor *_color1;
     UIColor *_color2;
     int _separatorStyle;
 }
 
-@property(copy) UIColor * color1;
-@property(copy) UIColor * color2;
-@property int separatorStyle;
+@property (nonatomic, copy) UIColor *color1;
+@property (nonatomic, copy) UIColor *color2;
+@property (nonatomic) int separatorStyle;
 
 - (void).cxx_destruct;
 - (id)color1;

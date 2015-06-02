@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class CADisplayLink, UIImageView;
-
 @interface MPUDownloadProgressIndicator : UIButton {
     float _animatedStartValue;
     float _animatedValue;
@@ -19,9 +17,9 @@
     float _value;
 }
 
-@property BOOL canCancel;
-@property(readonly) int style;
-@property float value;
+@property (nonatomic) BOOL canCancel;
+@property (nonatomic, readonly) int style;
+@property (nonatomic) float value;
 
 + (void)_drawModernGradientInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (BOOL)_isStyleModernShimmer:(int)arg1;

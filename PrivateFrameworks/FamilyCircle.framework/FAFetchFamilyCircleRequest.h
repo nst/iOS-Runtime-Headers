@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class NSArray, NSDictionary;
-
 @interface FAFetchFamilyCircleRequest : FAFamilyCircleRequest {
     BOOL _doNotFetchFromServer;
     NSArray *_expectedDSIDs;
@@ -14,10 +12,10 @@
 }
 
 @property BOOL doNotFetchFromServer;
-@property(copy) NSArray * expectedDSIDs;
+@property (copy) NSArray *expectedDSIDs;
 @property BOOL forceServerFetch;
 @property BOOL promptUserToResolveAuthenticatonFailure;
-@property(retain,readonly) NSDictionary * serverResponse;
+@property (readonly, retain) NSDictionary *serverResponse;
 @property BOOL signedInAccountShouldBeApprover;
 
 - (void).cxx_destruct;
@@ -33,6 +31,6 @@
 - (void)setPromptUserToResolveAuthenticatonFailure:(BOOL)arg1;
 - (void)setSignedInAccountShouldBeApprover:(BOOL)arg1;
 - (BOOL)signedInAccountShouldBeApprover;
-- (void)startRequestWithCompletionHandler:(id)arg1;
+- (void)startRequestWithCompletionHandler:(id /* block */)arg1;
 
 @end

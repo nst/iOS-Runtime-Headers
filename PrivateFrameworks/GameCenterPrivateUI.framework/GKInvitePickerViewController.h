@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKInvitePickerDataSource, NSSet;
-
 @interface GKInvitePickerViewController : GKPlayerPickerViewController {
     NSSet *_hiddenPlayers;
     GKInvitePickerDataSource *_invitePickerDataSource;
 }
 
-@property(retain) NSSet * hiddenPlayers;
-@property(retain) GKInvitePickerDataSource * invitePickerDataSource;
+@property (nonatomic, retain) NSSet *hiddenPlayers;
+@property (nonatomic, retain) GKInvitePickerDataSource *invitePickerDataSource;
 
 - (void)configureDataSource;
 - (void)configureNearbyDataSource;

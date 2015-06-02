@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CECRouter;
-
 @interface CECRouterInterface : CECInterface {
     CECRouter *_router;
 }

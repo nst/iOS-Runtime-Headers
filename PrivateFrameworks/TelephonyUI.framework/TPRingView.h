@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class CALayer;
-
 @interface TPRingView : UIView {
     CALayer *_dodgeRingLayer;
     CALayer *_highlightDodgeLayer;
@@ -12,11 +10,11 @@
     CALayer *_selectionLayer;
 }
 
-@property(retain) CALayer * dodgeRingLayer;
-@property(retain) CALayer * highlightDodgeLayer;
-@property(retain) CALayer * highlightLuminanceLayer;
-@property(retain) CALayer * luminanceRingLayer;
-@property(retain) CALayer * selectionLayer;
+@property (retain) CALayer *dodgeRingLayer;
+@property (retain) CALayer *highlightDodgeLayer;
+@property (retain) CALayer *highlightLuminanceLayer;
+@property (retain) CALayer *luminanceRingLayer;
+@property (retain) CALayer *selectionLayer;
 
 + (id)colorForDodge;
 + (id)colorForLuminance;

@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAUserNotificationUtilities : NSObject {
-}
+@interface DAUserNotificationUtilities : NSObject
 
-+ (void)showUserNotification:(struct __CFUserNotification { }*)arg1 groupIdentifier:(id)arg2 withCompletionBlock:(id)arg3;
++ (void)showUserNotification:(struct __CFUserNotification { }*)arg1 groupIdentifier:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 
 @end

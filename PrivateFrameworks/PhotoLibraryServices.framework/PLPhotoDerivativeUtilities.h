@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLPhotoDerivativeUtilities : NSObject {
-}
+@interface PLPhotoDerivativeUtilities : NSObject
 
 + (BOOL)_isOrientationUpForImageProperties:(id)arg1;
 + (BOOL)_resizeImageUsingHWForUtiType:(id)arg1 inputFilePath:(id)arg2 outputFilePath:(id)arg3 derivedSize:(struct CGSize { float x1; float x2; })arg4;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>;
-
 @interface ABSectionListHeaderView : UITableViewHeaderFooterView {
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (void)dealloc;
 - (void)layoutSubviews;

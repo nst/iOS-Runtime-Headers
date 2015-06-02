@@ -2,26 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface ExFATCameraFile : ICCameraFile {
     void *_exFATCameraFileProperties;
 }
 
 @property int bitsPerPixel;
-@property(copy) NSString * exifCreationDateTime;
-@property(copy) NSString * exifModificationDateTime;
-@property(readonly) struct timespec { int x1; long x2; } fsCreationTime;
-@property(readonly) struct timespec { int x1; long x2; } fsModificationTime;
-@property(readonly) long long fsSize;
+@property (copy) NSString *exifCreationDateTime;
+@property (copy) NSString *exifModificationDateTime;
+@property (readonly) struct timespec { int x1; long x2; } fsCreationTime;
+@property (readonly) struct timespec { int x1; long x2; } fsModificationTime;
+@property (readonly) long long fsSize;
 @property int imgHeight;
 @property int imgWidth;
-@property(readonly) id object;
+@property (readonly) id object;
 @property int thmHeight;
 @property int thmOffset;
 @property int thmSize;

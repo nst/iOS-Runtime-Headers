@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLLegibilityViewHelper : NSObject {
-}
+@interface PLLegibilityViewHelper : NSObject
 
 + (id)_imageFromLabel:(id)arg1 sizeToFit:(BOOL)arg2;
 + (id)imageForText:(id)arg1 font:(id)arg2 textAlignment:(int)arg3 constrainedToSize:(struct CGSize { float x1; float x2; })arg4;

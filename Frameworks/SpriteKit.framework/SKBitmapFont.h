@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSArray, NSString;
-
 @interface SKBitmapFont : NSObject <NSCoding> {
     float _baseLine;
     struct map<unsigned short, float, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, float> > > { 

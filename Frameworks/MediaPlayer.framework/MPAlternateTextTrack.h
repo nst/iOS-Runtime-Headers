@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSLocale, NSString;
-
 @interface MPAlternateTextTrack : MPAlternateTrack {
     NSLocale *_locale;
     NSString *_name;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(readonly) BOOL isInBand;
-@property(readonly) NSLocale * locale;
-@property int tag;
-@property(readonly) int type;
+@property (nonatomic, readonly) BOOL isInBand;
+@property (nonatomic, readonly) NSLocale *locale;
+@property (nonatomic) int tag;
+@property (nonatomic, readonly) int type;
 
 + (id)autoTrack;
 + (id)offTrack;

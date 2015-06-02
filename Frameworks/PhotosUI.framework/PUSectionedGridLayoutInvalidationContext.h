@@ -9,10 +9,10 @@
     BOOL _sectioningIsPreserved;
 }
 
-@property BOOL invalidateForVerticalScroll;
-@property BOOL invalidationHasBeenRedispatched;
-@property BOOL samplingIsPreserved;
-@property BOOL sectioningIsPreserved;
+@property (nonatomic) BOOL invalidateForVerticalScroll;
+@property (nonatomic) BOOL invalidationHasBeenRedispatched;
+@property (nonatomic) BOOL samplingIsPreserved;
+@property (nonatomic) BOOL sectioningIsPreserved;
 
 - (id)description;
 - (BOOL)invalidateForVerticalScroll;

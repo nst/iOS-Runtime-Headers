@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUCZCollectionViewControllerDelegate>, MPUCZCollectionView, MPUDataSource, NSString, UICollectionView;
-
 @interface MPUCZCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     MPUCZCollectionView *_collectionView;
     int _coverCountPerColumn;
@@ -15,15 +13,15 @@
     } _itemSize;
 }
 
-@property(readonly) UICollectionView * collectionView;
-@property int coverCountPerColumn;
-@property(retain) MPUDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUCZCollectionViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic) int coverCountPerColumn;
+@property (nonatomic, retain) MPUDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUCZCollectionViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginPreloadingAlbums;

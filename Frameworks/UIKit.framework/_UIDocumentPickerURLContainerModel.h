@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSURL, _UIDocumentPickerDirectoryObserver;
-
 @interface _UIDocumentPickerURLContainerModel : _UIDocumentPickerContainerModel {
     NSString *_displayTitle;
     NSArray *_modelObjects;
@@ -11,10 +9,10 @@
     NSURL *_url;
 }
 
-@property(copy) NSString * displayTitle;
-@property(retain) NSArray * modelObjects;
-@property(retain) _UIDocumentPickerDirectoryObserver * observer;
-@property(retain) NSURL * url;
+@property (nonatomic, copy) NSString *displayTitle;
+@property (nonatomic, retain) NSArray *modelObjects;
+@property (nonatomic, retain) _UIDocumentPickerDirectoryObserver *observer;
+@property (nonatomic, retain) NSURL *url;
 
 + (id)_tagBlipColors;
 + (void)_tagColorsDidChange;

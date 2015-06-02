@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFunnelNode : BWNode {
-}
+@interface BWFunnelNode : BWNode
 
 + (void)initialize;
 

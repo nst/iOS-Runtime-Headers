@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText;
+@interface SASTSubheaderItem : AceObject <SASTTemplateItem>
 
-@interface SASTSubheaderItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUIDecoratedText * leftText;
-@property(retain) SAUIDecoratedText * rightText;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUIDecoratedText *leftText;
+@property (nonatomic, retain) SAUIDecoratedText *rightText;
+@property (readonly) Class superclass;
 
 + (id)subheaderItem;
 + (id)subheaderItemWithDictionary:(id)arg1 context:(id)arg2;

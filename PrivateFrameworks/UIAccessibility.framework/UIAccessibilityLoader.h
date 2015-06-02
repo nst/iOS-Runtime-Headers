@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UIAccessibilityLoader : NSObject {
-}
+@interface UIAccessibilityLoader : NSObject
 
 + (id)_accessibilityBundlesForBundle:(id)arg1;
 + (void)_accessibilityInitializeRuntimeOverrides;

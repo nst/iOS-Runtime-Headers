@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSArray, NSTimer, TPLegacyLockKnobView, TPLegacyLockTextView, TPLegacyWell, UIImageView, UIView;
-
 @interface TPLegacyBottomLockBar : TPLegacyBottomBar {
     UIImageView *_backgroundView;
     int _currentLabelIndex;

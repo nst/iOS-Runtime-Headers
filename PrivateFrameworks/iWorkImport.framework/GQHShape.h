@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHShape : NSObject {
-}
+@interface GQHShape : NSObject
 
 + (int)handleShape:(id)arg1 isFloating:(BOOL)arg2 state:(id)arg3;
 + (void)mapPath:(id)arg1 shapeContext:(id)arg2 state:(id)arg3;

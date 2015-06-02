@@ -2,27 +2,19 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface SCNAnimationEvent : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _eventBlock;
-
+    id /* block */ _eventBlock;
     double _eventTime;
     id _reserved;
 }
 
 + (id)SCNJSExportProtocol;
-+ (id)animationEventWithKeyTime:(float)arg1 block:(id)arg2;
++ (id)animationEventWithKeyTime:(float)arg1 block:(id /* block */)arg2;
 
 - (void)dealloc;
-- (id)eventBlock;
+- (id /* block */)eventBlock;
 - (id)init;
-- (void)setEventBlock:(id)arg1;
+- (void)setEventBlock:(id /* block */)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;
 

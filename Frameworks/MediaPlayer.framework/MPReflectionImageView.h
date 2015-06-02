@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImage, UIImageView;
-
 @interface MPReflectionImageView : _UIReflectingView {
     UIImageView *_imageView;
     BOOL _squareImage;
 }
 
-@property(retain) UIImage * image;
-@property(readonly) UIImageView * imageView;
-@property BOOL squareImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic) BOOL squareImage;
 
 + (float)defaultReflectionHeight;
 

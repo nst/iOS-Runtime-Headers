@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSMutableDictionary;
-
 @interface PSNavBarSpinnerManager : NSObject {
     NSMutableDictionary *_navigationItems;
     NSMutableDictionary *_savedLeftItems;

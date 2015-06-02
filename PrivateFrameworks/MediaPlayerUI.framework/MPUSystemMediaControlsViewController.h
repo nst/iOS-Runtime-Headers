@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUSystemMediaControlsDelegate>, MPAVRoutingController, MPUNowPlayingController, MPUSystemMediaControlsView, NSArray, NSDictionary, NSString, NSTimer, RUTrackActionsModalItem, RUTrackActionsViewController, UIImageView, UIPopoverController, UIView;
-
 @interface MPUSystemMediaControlsViewController : UIViewController <MPAVRoutingControllerDelegate, MPUChronologicalProgressViewDelegate, MPUMediaControlsTitlesViewDelegate, MPUNowPlayingDelegate, MPURemoteViewControllerPresentation, MPUSystemMediaControlsViewDelegate, MPUTransportControlsViewDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverControllerDelegate> {
     UIImageView *_artworkImageView;
     NSString *_audioCategoryForDisabledHUD;
@@ -29,14 +27,14 @@
     BOOL _wantsToLaunchNowPlayingApp;
 }
 
-@property(readonly) UIView * artworkView;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUSystemMediaControlsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL persistentUpdatesEnabled;
-@property(readonly) int style;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UIView *artworkView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUSystemMediaControlsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL persistentUpdatesEnabled;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyNowPlayingInformation:(id)arg1 toTrackActioningController:(id)arg2;

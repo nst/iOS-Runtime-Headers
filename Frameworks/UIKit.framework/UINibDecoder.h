@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UINibStringIDTable;
-
 @interface UINibDecoder : NSCoder {
     Class arrayClass;
     Class *classes;

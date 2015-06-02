@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode;
-
 @interface UIWebOverflowScrollInfo : NSObject {
     BOOL _isUserScroll;
     DOMNode *_node;
@@ -13,9 +11,9 @@
     } _offset;
 }
 
-@property BOOL isUserScroll;
-@property(retain) DOMNode * node;
-@property struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) BOOL isUserScroll;
+@property (nonatomic, retain) DOMNode *node;
+@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
 
 - (BOOL)coalesceScrollForNode:(id)arg1 offset:(struct CGPoint { float x1; float x2; })arg2 isUserScroll:(BOOL)arg3;
 - (void)dealloc;

@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSArray, NSString, PLWallpaperNavigationItem, SBSUIWallpaperPreviewViewController;
-
 @interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate> {
-    unsigned int _didSetImageMode : 1;
+    unsigned int _didSetImageMode;
     BOOL _isWallpaperEdit;
     PLWallpaperNavigationItem *_navItem;
     NSArray *_navigationToolbarItems;
@@ -17,12 +15,12 @@
     NSString *_wallpaperTitle;
 }
 
-@property BOOL isWallpaperEdit;
-@property int previewType;
-@property int previewVariant;
-@property BOOL saveWallpaperData;
-@property(retain) SBSUIWallpaperPreviewViewController * wallpaperPreviewViewController;
-@property(copy) NSString * wallpaperTitle;
+@property (nonatomic) BOOL isWallpaperEdit;
+@property (nonatomic) int previewType;
+@property (nonatomic) int previewVariant;
+@property (nonatomic) BOOL saveWallpaperData;
+@property (nonatomic, retain) SBSUIWallpaperPreviewViewController *wallpaperPreviewViewController;
+@property (nonatomic, copy) NSString *wallpaperTitle;
 
 - (void)_adjustScrollViewGeometry;
 - (void)_backgroundCropWallpaper;

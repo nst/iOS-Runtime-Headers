@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class NSArray, NSData, NSString;
-
 @interface GSStagingPrefix : NSObject {
     int _deviceID;
     NSData *_extension;
     NSString *_path;
     NSArray *_pathComponents;
     long long _sandboxHandle;
-    unsigned char _volumeUUID[16];
+    unsigned char _volumeUUID;
 }
 
 - (void)_connectionWithDaemonWasLost;

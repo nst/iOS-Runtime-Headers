@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLAggregateAlbumList, PLAssetContainerListChangeNotification;
-
 @interface PLAggregateAlbumListChangeNotification : PLAssetContainerListChangeNotification {
     PLAggregateAlbumList *_albumList;
     unsigned int _indexOffet;
@@ -20,7 +18,7 @@
 - (void)dealloc;
 - (id)deletedIndexes;
 - (id)deletedObjects;
-- (void)enumerateMovesWithBlock:(id)arg1;
+- (void)enumerateMovesWithBlock:(id /* block */)arg1;
 - (id)initWithAggregateAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2 indexOffset:(unsigned int)arg3;
 - (id)insertedIndexes;
 - (id)insertedObjects;

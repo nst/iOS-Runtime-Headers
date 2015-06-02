@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources;
-
 @interface CHDLegendEntry : NSObject {
     unsigned int mEntryIndex;
     unsigned int mFontIndex;

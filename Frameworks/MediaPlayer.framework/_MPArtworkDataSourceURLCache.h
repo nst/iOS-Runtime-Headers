@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMapTable, NSObject<OS_dispatch_queue>;
-
 @interface _MPArtworkDataSourceURLCache : NSURLCache {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMapTable *_requestSizeMap;

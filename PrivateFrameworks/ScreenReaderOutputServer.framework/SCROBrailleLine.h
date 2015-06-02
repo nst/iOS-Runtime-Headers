@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROBrailleDriverProtocol>, NSData, NSMutableAttributedString;
-
 @interface SCROBrailleLine : NSObject {
     BOOL _anyUnread;
     id _appToken;
@@ -44,8 +42,8 @@
     } _virtualStatus;
 }
 
-@property BOOL displayEnabled;
-@property(readonly) BOOL needsDisplayFlush;
+@property (nonatomic) BOOL displayEnabled;
+@property (nonatomic, readonly) BOOL needsDisplayFlush;
 
 + (void)initialize;
 

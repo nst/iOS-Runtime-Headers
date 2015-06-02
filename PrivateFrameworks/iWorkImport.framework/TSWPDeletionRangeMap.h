@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPRangeArray;
-
 @interface TSWPDeletionRangeMap : NSObject {
     TSWPRangeArray *_removedRanges;
     unsigned int _subRangeStart;

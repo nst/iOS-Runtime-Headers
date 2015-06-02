@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKRecurrenceChooserControllerDelegate>, EKRecurrenceMonthDayChooserController, EKRecurrenceOrdinalChooserController, UITableViewCell;
-
 @interface EKRecurrenceMonthlyChooserController : EKRecurrenceChooserController {
     <EKRecurrenceChooserControllerDelegate> *_delegate;
     EKRecurrenceMonthDayChooserController *_monthDayChooser;
@@ -13,7 +11,7 @@
     int _selectedRow;
 }
 
-@property BOOL prohibitsMultipleDaysInMonthlyRecurrence;
+@property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
 
 - (void).cxx_destruct;
 - (id)_currentChooser;

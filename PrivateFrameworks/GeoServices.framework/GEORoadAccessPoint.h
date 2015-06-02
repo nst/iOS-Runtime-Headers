@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng;
-
 @interface GEORoadAccessPoint : PBCodable <NSCopying> {
     int _drivingDirection;
     struct { 
@@ -16,14 +14,14 @@
     int _walkingDirection;
 }
 
-@property int drivingDirection;
-@property BOOL hasDrivingDirection;
-@property BOOL hasIsApproximate;
-@property(readonly) BOOL hasLocation;
-@property BOOL hasWalkingDirection;
-@property BOOL isApproximate;
-@property(retain) GEOLatLng * location;
-@property int walkingDirection;
+@property (nonatomic) int drivingDirection;
+@property (nonatomic) BOOL hasDrivingDirection;
+@property (nonatomic) BOOL hasIsApproximate;
+@property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic) BOOL hasWalkingDirection;
+@property (nonatomic) BOOL isApproximate;
+@property (nonatomic, retain) GEOLatLng *location;
+@property (nonatomic) int walkingDirection;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

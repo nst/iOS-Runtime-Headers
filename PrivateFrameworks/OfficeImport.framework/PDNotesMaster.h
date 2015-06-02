@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColorMap, OADTextListStyle, OADTheme;
-
 @interface PDNotesMaster : PDSlideBase {
     OADColorMap *mColorMap;
     OADTextListStyle *mNotesTextStyle;

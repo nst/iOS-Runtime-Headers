@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class <NSObject>, NSString;
-
 @interface NMSObfuscatableDescriptionItem : NSObject {
     NSString *_format;
     BOOL _obfuscated;
     <NSObject> *_value;
 }
 
-@property(retain) NSString * format;
-@property BOOL obfuscated;
-@property(retain) <NSObject> * value;
+@property (nonatomic, retain) NSString *format;
+@property (nonatomic) BOOL obfuscated;
+@property (nonatomic, retain) <NSObject> *value;
 
 - (void).cxx_destruct;
 - (id)format;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@class NSString;
-
 @interface SBSStatusBarStyleOverridesAssertionData : NSObject <NSSecureCoding> {
     BOOL _exclusive;
     BOOL _isExclusive;
@@ -12,11 +10,11 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(getter=isExclusive) BOOL exclusive;
-@property(readonly) BOOL isExclusive;
-@property int pid;
-@property int statusBarStyleOverrides;
-@property(copy) NSString * uniqueIdentifier;
+@property (getter=isExclusive, nonatomic) BOOL exclusive;
+@property (nonatomic, readonly) BOOL isExclusive;
+@property (nonatomic) int pid;
+@property (nonatomic) int statusBarStyleOverrides;
+@property (nonatomic, copy) NSString *uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

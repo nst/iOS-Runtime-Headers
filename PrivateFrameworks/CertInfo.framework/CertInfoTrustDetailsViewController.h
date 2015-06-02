@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertInfoTrustDetailsViewController : UIViewController {
     NSArray *_trustProperties;
 }
 
-@property(retain) NSArray * trustProperties;
+@property (nonatomic, retain) NSArray *trustProperties;
 
 - (void).cxx_destruct;
 - (void)_setupNavItem;

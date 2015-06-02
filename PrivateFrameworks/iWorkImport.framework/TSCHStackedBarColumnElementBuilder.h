@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHStackedBarColumnElementBuilder : TSCHBarColumnElementBuilder {
-}
+@interface TSCHStackedBarColumnElementBuilder : TSCHBarColumnElementBuilder
 
 - (double)p_beginValueForSeries:(id)arg1 index:(unsigned int)arg2 unitSpaceIntercept:(double)arg3 relativelyPositive:(BOOL)arg4 valueAxis:(id)arg5;
 - (unsigned int)p_logicalSeriesIndexForSeries:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSError, NSURL, RCCompositionComposedAssetWriter;
-
 @interface RCTrimAudioFileOperation : RCTrimTimeRangeOperation {
     RCCompositionComposedAssetWriter *_assetWriter;
     BOOL _createWaveform;
@@ -14,9 +12,9 @@
     BOOL _success;
 }
 
-@property(readonly) BOOL createWaveform;
-@property(copy,readonly) NSURL * destinationURL;
-@property(copy,readonly) NSURL * sourceURL;
+@property (nonatomic, readonly) BOOL createWaveform;
+@property (nonatomic, readonly, copy) NSURL *destinationURL;
+@property (nonatomic, readonly, copy) NSURL *sourceURL;
 
 + (id)exportableAudioFormatPathExtensionWithSourceURL:(id)arg1;
 

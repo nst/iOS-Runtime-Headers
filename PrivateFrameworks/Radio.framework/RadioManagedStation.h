@@ -2,50 +2,47 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL;
+@interface RadioManagedStation : NSManagedObject
 
-@interface RadioManagedStation : NSManagedObject {
-}
-
-@property(retain) NSData * adData;
-@property long long adamID;
-@property(copy) NSURL * artworkURL;
-@property(copy) NSData * artworkURLData;
-@property(copy) NSString * coreSeedName;
-@property(copy) NSDictionary * debugDictionary;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property BOOL editEnabled;
-@property(retain) NSArray * editableFields;
-@property(getter=isFeatured) BOOL featured;
-@property(getter=isGatewayVideoAdEnabled) BOOL gatewayVideoAdEnabled;
-@property unsigned int impressionThreshold;
-@property BOOL isExplicit;
-@property BOOL likesEnabled;
-@property(copy) NSString * name;
-@property long long persistentID;
-@property(getter=isPremiumPlacement) BOOL premiumPlacement;
-@property(getter=isPreview,readonly) BOOL preview;
-@property(getter=isPreviewOnly) BOOL previewOnly;
-@property(retain) NSArray * seedTracks;
-@property(copy) NSString * shareToken;
-@property(getter=isShared) BOOL shared;
-@property(getter=isSharingEnabled) BOOL sharingEnabled;
-@property BOOL skipEnabled;
-@property int skipFrequency;
-@property(copy) NSString * skipIdentifier;
-@property double skipInterval;
-@property(copy) NSArray * skipTimestamps;
-@property int songMixType;
-@property int sortOrder;
-@property(getter=isSponsored) BOOL sponsored;
-@property(copy) NSString * stationDescription;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property(retain) NSURL * streamURL;
-@property(getter=isSubscribed) BOOL subscribed;
-@property int subscriberCount;
-@property(copy) NSArray * trackPlaybackDescriptorQueue;
-@property BOOL virtualPlayEnabled;
+@property (nonatomic, retain) NSData *adData;
+@property (nonatomic) long long adamID;
+@property (nonatomic, copy) NSURL *artworkURL;
+@property (nonatomic, copy) NSData *artworkURLData;
+@property (nonatomic, copy) NSString *coreSeedName;
+@property (nonatomic, copy) NSDictionary *debugDictionary;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic) BOOL editEnabled;
+@property (nonatomic, retain) NSArray *editableFields;
+@property (getter=isFeatured, nonatomic) BOOL featured;
+@property (getter=isGatewayVideoAdEnabled, nonatomic) BOOL gatewayVideoAdEnabled;
+@property (nonatomic) unsigned int impressionThreshold;
+@property (nonatomic) BOOL isExplicit;
+@property (nonatomic) BOOL likesEnabled;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) long long persistentID;
+@property (getter=isPremiumPlacement, nonatomic) BOOL premiumPlacement;
+@property (getter=isPreview, nonatomic, readonly) BOOL preview;
+@property (getter=isPreviewOnly, nonatomic) BOOL previewOnly;
+@property (nonatomic, retain) NSArray *seedTracks;
+@property (nonatomic, copy) NSString *shareToken;
+@property (getter=isShared, nonatomic) BOOL shared;
+@property (getter=isSharingEnabled, nonatomic) BOOL sharingEnabled;
+@property (nonatomic) BOOL skipEnabled;
+@property (nonatomic) int skipFrequency;
+@property (nonatomic, copy) NSString *skipIdentifier;
+@property (nonatomic) double skipInterval;
+@property (nonatomic, copy) NSArray *skipTimestamps;
+@property (nonatomic) int songMixType;
+@property (nonatomic) int sortOrder;
+@property (getter=isSponsored, nonatomic) BOOL sponsored;
+@property (nonatomic, copy) NSString *stationDescription;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
+@property (nonatomic, retain) NSURL *streamURL;
+@property (getter=isSubscribed, nonatomic) BOOL subscribed;
+@property (nonatomic) int subscriberCount;
+@property (nonatomic, copy) NSArray *trackPlaybackDescriptorQueue;
+@property (nonatomic) BOOL virtualPlayEnabled;
 
 + (id)defaultPropertiesToFetch;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface IMFileTransferCenter : NSObject {
     NSMutableDictionary *_accountIDToTransferGUIDsMap;
     NSMutableSet *_activeTransfers;
@@ -14,13 +12,13 @@
     NSMutableArray *_preauthorizedInfos;
 }
 
-@property(readonly) NSArray * activeTransferGUIDs;
-@property(readonly) NSArray * activeTransfers;
-@property(readonly) BOOL hasActiveFileTransfers;
-@property(readonly) BOOL hasPendingFileTransfers;
-@property(readonly) NSArray * orderedTransfers;
-@property(readonly) NSArray * orderedTransfersGUIDs;
-@property(readonly) NSDictionary * transfers;
+@property (nonatomic, readonly) NSArray *activeTransferGUIDs;
+@property (nonatomic, readonly) NSArray *activeTransfers;
+@property (nonatomic, readonly) BOOL hasActiveFileTransfers;
+@property (nonatomic, readonly) BOOL hasPendingFileTransfers;
+@property (nonatomic, readonly) NSArray *orderedTransfers;
+@property (nonatomic, readonly) NSArray *orderedTransfersGUIDs;
+@property (nonatomic, readonly) NSDictionary *transfers;
 
 + (Class)fileTransferClass;
 + (void)setTransferCenterClass:(Class)arg1;

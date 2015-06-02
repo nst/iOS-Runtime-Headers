@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class GCMotion, NSData, NSString;
-
 @interface _GCExtendedGamepadSnapshot : _GCExtendedGamepad <_GCSnapshot> {
     GCMotion *_motion;
     NSData *_snapshotData;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSData * snapshotData;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) NSData *snapshotData;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)init;

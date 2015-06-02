@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUCloudSharedCreateAlbumViewControllerDelegate>, NSArray, NSString, PUPhotoStreamRecipientViewController, UINavigationItem;
-
 @interface PUCloudSharedCreateAlbumViewController : UIViewController {
     NSArray *__albumRecipients;
     PUPhotoStreamRecipientViewController *_composeRecipientController;
@@ -12,10 +10,10 @@
     NSString *_nextButtonTitle;
 }
 
-@property(setter=_setAlbumRecipients:,retain) NSArray * _albumRecipients;
-@property(readonly) NSArray * albumRecipients;
-@property <PUCloudSharedCreateAlbumViewControllerDelegate> * delegate;
-@property(retain) NSString * nextButtonTitle;
+@property (setter=_setAlbumRecipients:, nonatomic, retain) NSArray *_albumRecipients;
+@property (nonatomic, readonly) NSArray *albumRecipients;
+@property (nonatomic) <PUCloudSharedCreateAlbumViewControllerDelegate> *delegate;
+@property (nonatomic, retain) NSString *nextButtonTitle;
 
 - (void).cxx_destruct;
 - (id)_albumRecipients;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSDictionary, NSString, UIView, _UISettings, _UISettingsGroup;
-
 @interface PTSHUD : UIView <UIGestureRecognizerDelegate, _UISettingsGroupObserver, _UISettingsKeyPathObserver> {
     NSDictionary *_configuration;
     BOOL _enteringModalEditingSavedModeTableViewCell;
@@ -21,21 +19,21 @@
     BOOL _showing;
 }
 
-@property(copy) NSDictionary * configuration;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enteringModalEditingSavedModeTableViewCell;
-@property BOOL exitingModalEditingSavedModeTableViewCell;
-@property(readonly) unsigned int hash;
-@property struct CGPoint { float x1; float x2; } initialPoint;
-@property(copy) NSString * mode;
-@property(retain) UIView * panView;
-@property(retain) NSArray * savedModeRows;
-@property unsigned int savedSettingsIndex;
-@property(retain) _UISettings * settings;
-@property(retain) _UISettingsGroup * settingsGroup;
-@property BOOL showing;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enteringModalEditingSavedModeTableViewCell;
+@property (nonatomic) BOOL exitingModalEditingSavedModeTableViewCell;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialPoint;
+@property (nonatomic, copy) NSString *mode;
+@property (nonatomic, retain) UIView *panView;
+@property (nonatomic, retain) NSArray *savedModeRows;
+@property (nonatomic) unsigned int savedSettingsIndex;
+@property (nonatomic, retain) _UISettings *settings;
+@property (nonatomic, retain) _UISettingsGroup *settingsGroup;
+@property (nonatomic) BOOL showing;
+@property (readonly) Class superclass;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)sharedInstance;

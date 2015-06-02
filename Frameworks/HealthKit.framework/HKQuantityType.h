@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKUnit, NSString, _HKDimension;
-
 @interface HKQuantityType : HKSampleType {
     int _aggregationStyle;
     HKUnit *_canonicalUnit;
@@ -11,9 +9,9 @@
     NSString *_unitString;
 }
 
-@property(readonly) int aggregationStyle;
-@property(readonly) HKUnit * canonicalUnit;
-@property(readonly) _HKDimension * dimension;
+@property (readonly) int aggregationStyle;
+@property (nonatomic, readonly) HKUnit *canonicalUnit;
+@property (nonatomic, readonly) _HKDimension *dimension;
 
 + (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 + (id)_quantityTypeWithCode:(int)arg1;

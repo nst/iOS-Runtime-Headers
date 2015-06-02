@@ -2,60 +2,46 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface SPXPCConnection : NSObject {
     NSString *_bundleID;
     NSObject<OS_xpc_object> *_conn;
     id _context;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _disconnectHandler;
-
+    id /* block */ _disconnectHandler;
     NSObject<OS_dispatch_queue> *_eventQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _messageHandler;
-
+    id /* block */ _messageHandler;
     NSMutableSet *_outstandingMessages;
     NSObject<OS_dispatch_queue> *_outstandingMessagesQueue;
     BOOL _ownsQueue;
     int _timeoutDisabled;
 }
 
-@property(readonly) NSString * bundleID;
-@property(retain) id context;
-@property(copy) id disconnectHandler;
-@property(copy) id messageHandler;
-@property(readonly) NSString * serviceName;
+@property (readonly) NSString *bundleID;
+@property (nonatomic, retain) id context;
+@property (nonatomic, copy) id /* block */ disconnectHandler;
+@property (nonatomic, copy) id /* block */ messageHandler;
+@property (readonly) NSString *serviceName;
 
 - (void)_handleXPCError:(id)arg1;
 - (void)_handleXPCMessage:(id)arg1;
 - (int)_outstandingMessages;
 - (void)_registerMessage:(id)arg1;
 - (void)_removeMessage:(id)arg1;
-- (void)_sendMessage:(id)arg1 handler:(id)arg2;
+- (void)_sendMessage:(id)arg1 handler:(id /* block */)arg2;
 - (void)_setEventHandlerOnConnection:(id)arg1;
 - (id)bundleID;
 - (id)context;
 - (void)dealloc;
-- (id)disconnectHandler;
+- (id /* block */)disconnectHandler;
 - (id)eventQueue;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (id)initWithXPCConnection:(id)arg1;
-- (id)messageHandler;
+- (id /* block */)messageHandler;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessage:(id)arg1 withReply:(id)arg2;
+- (void)sendMessage:(id)arg1 withReply:(id /* block */)arg2;
 - (id)serviceName;
 - (void)setContext:(id)arg1;
-- (void)setDisconnectHandler:(id)arg1;
-- (void)setMessageHandler:(id)arg1;
+- (void)setDisconnectHandler:(id /* block */)arg1;
+- (void)setMessageHandler:(id /* block */)arg1;
 - (void)setTimeoutDisabled:(BOOL)arg1;
 - (void)shutdown;
 - (BOOL)timeoutDisabled;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_Unarchiving : TSKAddedToDocumentContext {
-}
+@interface TSKAddedToDocumentContext_Unarchiving : TSKAddedToDocumentContext
 
 - (BOOL)autoUpdateSmartFields;
 - (id)description;

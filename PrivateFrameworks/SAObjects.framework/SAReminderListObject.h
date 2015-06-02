@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAReminderListObject : SADomainObject
 
-@interface SAReminderListObject : SADomainObject {
-}
-
-@property(copy) NSString * name;
+@property (nonatomic, copy) NSString *name;
 
 + (id)listObject;
 + (id)listObjectWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSString;
-
 @interface CoreDAVSyncReportTask : CoreDAVPropertyFindBaseTask {
     BOOL _moreToSync;
     NSString *_nextSyncToken;
@@ -11,9 +9,9 @@
     BOOL _wasInvalidSyncToken;
 }
 
-@property(readonly) BOOL moreToSync;
-@property(readonly) NSString * nextSyncToken;
-@property(readonly) BOOL wasInvalidSyncToken;
+@property (nonatomic, readonly) BOOL moreToSync;
+@property (nonatomic, readonly) NSString *nextSyncToken;
+@property (nonatomic, readonly) BOOL wasInvalidSyncToken;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;

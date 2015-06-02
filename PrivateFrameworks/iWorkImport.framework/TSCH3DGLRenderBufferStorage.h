@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DGLRenderBufferStorage : TSCH3DRenderBufferStorage {
-}
+@interface TSCH3DGLRenderBufferStorage : TSCH3DRenderBufferStorage
 
 + (id)storage;
 

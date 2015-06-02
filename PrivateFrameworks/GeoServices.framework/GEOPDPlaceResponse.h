@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDPlaceGlobalResult, NSMutableArray;
-
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
     GEOPDPlaceGlobalResult *_globalResult;
     struct { 
@@ -15,13 +13,13 @@
     int _status;
 }
 
-@property(retain) GEOPDPlaceGlobalResult * globalResult;
-@property(readonly) BOOL hasGlobalResult;
-@property BOOL hasRequestType;
-@property BOOL hasStatus;
-@property(retain) NSMutableArray * placeResults;
-@property int requestType;
-@property int status;
+@property (nonatomic, retain) GEOPDPlaceGlobalResult *globalResult;
+@property (nonatomic, readonly) BOOL hasGlobalResult;
+@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, retain) NSMutableArray *placeResults;
+@property (nonatomic) int requestType;
+@property (nonatomic) int status;
 
 - (id)_disambiguationLabels;
 - (void)addPlaceResult:(id)arg1;

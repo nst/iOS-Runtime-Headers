@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableString, NSString;
-
 @interface IMSuperToPlainParserContext : IMFromSuperParserContext {
     BOOL _extractLinks;
     NSMutableString *_plainString;
 }
 
-@property(readonly) NSString * plainString;
+@property (nonatomic, readonly) NSString *plainString;
 
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1;

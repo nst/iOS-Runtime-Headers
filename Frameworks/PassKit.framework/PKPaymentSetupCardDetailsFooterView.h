@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton;
-
 @interface PKPaymentSetupCardDetailsFooterView : UIView {
     int _context;
     UIButton *_manualEntryButton;
     UIButton *_setupLaterButton;
 }
 
-@property int context;
-@property(retain) UIButton * manualEntryButton;
-@property(retain) UIButton * setupLaterButton;
+@property (nonatomic) int context;
+@property (nonatomic, retain) UIButton *manualEntryButton;
+@property (nonatomic, retain) UIButton *setupLaterButton;
 
 - (int)context;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIView;
-
 @interface _UIFocusRegionMap : NSObject <NSSecureCoding> {
     BOOL _builtRegionMap;
     UIView *_containingView;
@@ -14,9 +12,9 @@
     } _windowSize;
 }
 
-@property(retain) UIView * containingView;
-@property(retain) NSMutableArray * mapEntries;
-@property struct CGSize { float x1; float x2; } windowSize;
+@property (nonatomic, retain) UIView *containingView;
+@property (nonatomic, retain) NSMutableArray *mapEntries;
+@property (nonatomic) struct CGSize { float x1; float x2; } windowSize;
 
 + (BOOL)supportsSecureCoding;
 

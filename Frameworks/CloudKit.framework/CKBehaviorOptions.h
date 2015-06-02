@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface CKBehaviorOptions : NSObject {
     NSMutableDictionary *_cachedPrefs;
     NSObject<OS_dispatch_queue> *_cachedPrefsQueue;
 }
 
-@property(retain) NSMutableDictionary * cachedPrefs;
-@property(retain) NSObject<OS_dispatch_queue> * cachedPrefsQueue;
+@property (nonatomic, retain) NSMutableDictionary *cachedPrefs;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *cachedPrefsQueue;
 
 + (id)sharedOptions;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CaliCalendarPRODID : NSObject {
-}
+@interface CaliCalendarPRODID : NSObject
 
 + (id)copyString;
 

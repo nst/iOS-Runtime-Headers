@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMutableArray;
-
 @interface PUFeedCollectionViewLayout : UICollectionViewLayout {
     struct UIEdgeInsets { 
         float top; 
@@ -46,27 +44,27 @@
     float _thumbnailSpacing;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } floatPadding;
-@property float floatingBottomDecorationHeight;
-@property int flowDirection;
-@property(readonly) unsigned int flowDirectionEdge;
-@property struct CGSize { float x1; float x2; } interTileSpacing;
-@property struct CGSize { float x1; float x2; } noCaptionSpacing;
-@property float sectionHeaderBackgroundHeight;
-@property struct CGSize { float x1; float x2; } sectionReferenceSize;
-@property BOOL shouldDisplayCaptionsBelowBatches;
-@property BOOL shouldDisplaySectionHeadersBelowSections;
-@property BOOL shouldFloatOverShortDistances;
-@property BOOL shouldFloatSectionHeaders;
-@property BOOL shouldFloatThumbnails;
-@property BOOL shouldFloatWithEase;
-@property float thumbnailSpacing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } captionPadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } floatPadding;
+@property (nonatomic) float floatingBottomDecorationHeight;
+@property (nonatomic) int flowDirection;
+@property (nonatomic, readonly) unsigned int flowDirectionEdge;
+@property (nonatomic) struct CGSize { float x1; float x2; } interTileSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } noCaptionSpacing;
+@property (nonatomic) float sectionHeaderBackgroundHeight;
+@property (nonatomic) struct CGSize { float x1; float x2; } sectionReferenceSize;
+@property (nonatomic) BOOL shouldDisplayCaptionsBelowBatches;
+@property (nonatomic) BOOL shouldDisplaySectionHeadersBelowSections;
+@property (nonatomic) BOOL shouldFloatOverShortDistances;
+@property (nonatomic) BOOL shouldFloatSectionHeaders;
+@property (nonatomic) BOOL shouldFloatThumbnails;
+@property (nonatomic) BOOL shouldFloatWithEase;
+@property (nonatomic) float thumbnailSpacing;
 
 - (void).cxx_destruct;
 - (void)_adjustFloatingLayoutAttributes:(id)arg1 inSection:(int)arg2;
 - (id)_delegate;
-- (void)_enumerateSectionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withBlock:(id)arg2;
+- (void)_enumerateSectionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withBlock:(id /* block */)arg2;
 - (void)_getSize:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
 - (void)_getSizeForHorizontalFlowDirection:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
 - (void)_getSizeForVerticalFlowDirection:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
@@ -76,7 +74,7 @@
 - (void)_updateSectionLayoutInfosIfNecessary;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })captionPadding;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
-- (void)enumerateImageElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateImageElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })floatPadding;
 - (float)floatingBottomDecorationHeight;
 - (int)flowDirection;

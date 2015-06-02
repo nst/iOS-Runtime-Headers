@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSCache, NSString, UIAlertController, UIImage, UITextField;
-
 @interface MusicPlaylistsViewController : MusicTableViewController <MusicPickerOverlayDelegate, UITextFieldDelegate> {
     UIImage *_initialPlaceholderImage;
     UIAlertController *_newPlaylistAlertController;
@@ -12,11 +10,11 @@
     NSCache *_playlistMetadataCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSCache * playlistMetadataCache;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSCache *playlistMetadataCache;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)MPH_supportsCoverFlow;

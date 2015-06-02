@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, SKUIClientContext;
-
 @interface SKUISyncWishlistOperation : NSOperation {
     SKUIClientContext *_clientContext;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resultBlock;
-
+    id /* block */ _resultBlock;
 }
 
-@property(copy) id resultBlock;
+@property (copy) id /* block */ resultBlock;
 
 - (void).cxx_destruct;
 - (BOOL)_loadRemoteItemsForWishlist:(id)arg1 didChange:(BOOL*)arg2 error:(id*)arg3;
@@ -27,7 +17,7 @@
 - (id)init;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;
-- (id)resultBlock;
-- (void)setResultBlock:(id)arg1;
+- (id /* block */)resultBlock;
+- (void)setResultBlock:(id /* block */)arg1;
 
 @end

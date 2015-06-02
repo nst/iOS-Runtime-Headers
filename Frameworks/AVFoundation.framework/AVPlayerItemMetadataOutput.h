@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVPlayerItemMetadataOutputPushDelegate>, AVPlayerItemMetadataOutputInternal, NSObject<OS_dispatch_queue>;
-
 @interface AVPlayerItemMetadataOutput : AVPlayerItemOutput {
     AVPlayerItemMetadataOutputInternal *_metadataOutputInternal;
 }
 
-@property double advanceIntervalForDelegateInvocation;
-@property(readonly) <AVPlayerItemMetadataOutputPushDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
+@property (nonatomic) double advanceIntervalForDelegateInvocation;
+@property (nonatomic, readonly) <AVPlayerItemMetadataOutputPushDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 
 + (void)initialize;
 

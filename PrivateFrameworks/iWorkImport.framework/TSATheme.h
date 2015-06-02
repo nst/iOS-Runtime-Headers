@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSATheme : TSSTheme {
-}
+@interface TSATheme : TSSTheme
 
 + (id)localizedNameForPresetKind:(id)arg1;
 + (id)localizedNameForStylePickerTitle:(id)arg1;

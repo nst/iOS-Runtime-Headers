@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class SCRCIndexMap;
-
 @interface SCROBrailleDisplayManagedQueue : NSObject {
     struct __CFDictionary { } *_displayQueueDict;
     unsigned int _maxActiveQueueSize;

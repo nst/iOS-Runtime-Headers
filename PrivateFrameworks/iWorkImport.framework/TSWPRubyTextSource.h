@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPTextSource>, NSString, TSWPRangeMap;
-
 @interface TSWPRubyTextSource : NSObject <TSWPTextSource> {
     struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
         unsigned int *__begin_; 
@@ -32,17 +30,17 @@
     unsigned int _storageLength;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)adjustRangesByDelta:(int)arg1;
 - (id)attachmentAtCharIndex:(unsigned int)arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
-- (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL[19])arg2 attributesTable:(id[19])arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
+- (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL)arg2 attributesTable:(/* Warning: unhandled array encoding: '[19@]' */ id)arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
 - (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
 - (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;

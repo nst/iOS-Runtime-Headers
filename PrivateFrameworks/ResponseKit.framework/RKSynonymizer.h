@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSDictionary, NSString;
-
 @interface RKSynonymizer : NSObject {
     NSString *_context;
     NSString *_keyboardLanguage;

@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
+@interface UIWatchKitExtensionRequestActionResponse : BSActionResponse
 
-@interface UIWatchKitExtensionRequestActionResponse : BSActionResponse {
-}
-
-@property(readonly) NSDictionary * result;
+@property (nonatomic, readonly) NSDictionary *result;
 
 + (id)responseWithWatchKitExtensionResult:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAudiobookTracksDataSource : MusicQueryDataSource {
-}
+@interface MusicAudiobookTracksDataSource : MusicQueryDataSource
 
 - (id)initWithQuery:(id)arg1 entityType:(int)arg2;
 

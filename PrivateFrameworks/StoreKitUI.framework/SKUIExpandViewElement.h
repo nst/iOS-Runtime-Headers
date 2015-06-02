@@ -7,8 +7,8 @@
     BOOL _previousIsOpen;
 }
 
-@property(getter=isOpen,readonly) BOOL open;
-@property BOOL previousIsOpen;
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (nonatomic) BOOL previousIsOpen;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

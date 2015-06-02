@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSTTableStrokeProviding>, NSPointerArray, TSTMasterLayout;
-
 @interface TSTStrokeDefaultVendor : NSObject {
     unsigned int _bodySideBorderColumn;
     unsigned int _bottomBorderRow;
@@ -18,17 +16,17 @@
     unsigned int _topBorderRow;
 }
 
-@property unsigned int bodySideBorderColumn;
-@property unsigned int bottomBorderRow;
-@property unsigned int footerRowSeparatorRow;
-@property unsigned int headerColumnSeparatorColumn;
-@property unsigned int headerRowSeparatorRow;
-@property unsigned int headerSideBorderColumn;
-@property BOOL isValid;
-@property TSTMasterLayout * masterLayout;
-@property <TSTTableStrokeProviding> * strokeProvider;
-@property(retain) NSPointerArray * strokeTypeToLayerMap;
-@property unsigned int topBorderRow;
+@property (nonatomic) unsigned int bodySideBorderColumn;
+@property (nonatomic) unsigned int bottomBorderRow;
+@property (nonatomic) unsigned int footerRowSeparatorRow;
+@property (nonatomic) unsigned int headerColumnSeparatorColumn;
+@property (nonatomic) unsigned int headerRowSeparatorRow;
+@property (nonatomic) unsigned int headerSideBorderColumn;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic) TSTMasterLayout *masterLayout;
+@property (nonatomic) <TSTTableStrokeProviding> *strokeProvider;
+@property (nonatomic, retain) NSPointerArray *strokeTypeToLayerMap;
+@property (nonatomic) unsigned int topBorderRow;
 
 - (unsigned int)bodySideBorderColumn;
 - (unsigned int)bottomBorderRow;

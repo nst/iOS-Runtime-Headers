@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class SCROWeakReferenceContainer;
-
 @interface SCROConnection : NSObject {
     SCROWeakReferenceContainer *_delegate;
     int _handlerType;

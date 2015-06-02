@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class NSArray, NSURL;
-
 @interface PSYOptions : NSObject <NSSecureCoding> {
     NSURL *_activityInfoDirectory;
     BOOL _dryRun;
@@ -14,13 +12,13 @@
     NSArray *_testInputs;
 }
 
-@property(copy) NSURL * activityInfoDirectory;
-@property BOOL dryRun;
-@property(copy) NSArray * jobs;
-@property(getter=shouldResetDeviceSyncState) BOOL resetDeviceSyncState;
-@property(getter=shouldResumePendingJobs) BOOL resumePendingJobs;
-@property unsigned int terminationJobCount;
-@property(copy) NSArray * testInputs;
+@property (nonatomic, copy) NSURL *activityInfoDirectory;
+@property (nonatomic) BOOL dryRun;
+@property (nonatomic, copy) NSArray *jobs;
+@property (getter=shouldResetDeviceSyncState, nonatomic) BOOL resetDeviceSyncState;
+@property (getter=shouldResumePendingJobs, nonatomic) BOOL resumePendingJobs;
+@property (nonatomic) unsigned int terminationJobCount;
+@property (nonatomic, copy) NSArray *testInputs;
 
 + (BOOL)supportsSecureCoding;
 

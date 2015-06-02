@@ -7,7 +7,7 @@
     unsigned int mUsageCount;
 }
 
-@property unsigned int usageCount;
+@property (nonatomic) unsigned int usageCount;
 
 - (int)compareUsageCount:(id)arg1;
 - (void)dealloc;

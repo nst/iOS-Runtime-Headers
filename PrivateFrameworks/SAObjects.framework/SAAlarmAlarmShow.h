@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAAlarmAlarmShow : AceObject <SAAlarmAlarmAction>
 
-@interface SAAlarmAlarmShow : AceObject <SAAlarmAlarmAction> {
-}
-
-@property(copy) NSArray * alarmIds;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *alarmIds;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)alarmShow;
 + (id)alarmShowWithDictionary:(id)arg1 context:(id)arg2;

@@ -6,7 +6,7 @@
     BOOL _requestingDefermentToPlaybackQueuePosition;
 }
 
-@property(getter=isRequestingDefermentToPlaybackQueuePosition,readonly) BOOL requestingDefermentToPlaybackQueuePosition;
+@property (getter=isRequestingDefermentToPlaybackQueuePosition, nonatomic, readonly) BOOL requestingDefermentToPlaybackQueuePosition;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (BOOL)isRequestingDefermentToPlaybackQueuePosition;

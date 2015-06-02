@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor, OADFontReference;
-
 @interface OADTableTextStyle : NSObject {
     int mBold;
     OADColor *mColor;

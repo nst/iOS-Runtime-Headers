@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSFont;
-
 @interface NSIdentityGlyphInfo : NSGlyphInfo {
     NSFont *_font;
     unsigned int _glyph;

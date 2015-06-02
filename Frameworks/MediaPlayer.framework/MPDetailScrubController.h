@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPDetailScrubControllerDelegate>, UIControl<MPDetailedScrubbing>;
-
 @interface MPDetailScrubController : NSObject {
     float _accumulatedDelta;
     struct CGPoint { 
@@ -30,14 +28,14 @@
     float _scrubbingVerticalRange;
 }
 
-@property(readonly) int currentScrubSpeed;
-@property <MPDetailScrubControllerDelegate> * delegate;
-@property BOOL detailedScrubbingEnabled;
-@property double duration;
-@property(readonly) BOOL durationAllowsForDetailedScrubbing;
-@property(readonly) BOOL isTracking;
-@property UIControl<MPDetailedScrubbing> * scrubbingControl;
-@property float scrubbingVerticalRange;
+@property (nonatomic, readonly) int currentScrubSpeed;
+@property (nonatomic) <MPDetailScrubControllerDelegate> *delegate;
+@property (nonatomic) BOOL detailedScrubbingEnabled;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) BOOL durationAllowsForDetailedScrubbing;
+@property (nonatomic, readonly) BOOL isTracking;
+@property (nonatomic) UIControl<MPDetailedScrubbing> *scrubbingControl;
+@property (nonatomic) float scrubbingVerticalRange;
 
 - (void).cxx_destruct;
 - (void)_beginScrubbing;

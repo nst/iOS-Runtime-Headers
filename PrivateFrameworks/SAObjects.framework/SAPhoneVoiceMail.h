@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SAPhoneVoiceMail : SAPhoneCallSearchResult
 
-@interface SAPhoneVoiceMail : SAPhoneCallSearchResult {
-}
-
-@property(copy) NSString * filePath;
-@property(copy) NSNumber * length;
+@property (nonatomic, copy) NSString *filePath;
+@property (nonatomic, copy) NSNumber *length;
 
 + (id)voiceMail;
 + (id)voiceMailWithDictionary:(id)arg1 context:(id)arg2;

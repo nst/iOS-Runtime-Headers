@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class <EKTravelAdvice>, NSString;
-
 @interface EKTravelEngineThrottledAdvice : NSObject {
     <EKTravelAdvice> *_advice;
     NSString *_eventExternalURL;
 }
 
-@property(retain) <EKTravelAdvice> * advice;
-@property(retain,readonly) NSString * eventExternalURL;
+@property (nonatomic, retain) <EKTravelAdvice> *advice;
+@property (nonatomic, readonly, retain) NSString *eventExternalURL;
 
 - (id)advice;
 - (void)dealloc;

@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSString;
-
 @interface GKAddressBookSearchOperation : ABSearchOperation <ABSearchOperationDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     NSMutableArray *_matches;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id handler;
-@property(readonly) unsigned int hash;
-@property(readonly) NSMutableArray * matches;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSMutableArray *matches;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)handler;
+- (id /* block */)handler;
 - (id)init;
 - (id)matches;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 
 @end

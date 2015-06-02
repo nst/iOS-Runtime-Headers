@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int placeTypeLimit : 1; 
@@ -12,9 +10,9 @@
     int _placeTypeLimit;
 }
 
-@property BOOL hasPlaceTypeLimit;
-@property(retain) NSMutableArray * locations;
-@property int placeTypeLimit;
+@property (nonatomic) BOOL hasPlaceTypeLimit;
+@property (nonatomic, retain) NSMutableArray *locations;
+@property (nonatomic) int placeTypeLimit;
 
 - (void)addLocation:(id)arg1;
 - (void)clearLocations;

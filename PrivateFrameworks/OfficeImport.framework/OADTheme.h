@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBaseStyles, OADDefaultProperties;
-
 @interface OADTheme : NSObject {
     OADBaseStyles *mBaseStyles;
     OADDefaultProperties *mLineDefaults;
@@ -11,10 +9,10 @@
     OADDefaultProperties *mTextDefaults;
 }
 
-@property(retain) OADBaseStyles * baseStyles;
-@property(retain) OADDefaultProperties * lineDefaults;
-@property(retain) OADDefaultProperties * shapeDefaults;
-@property(retain) OADDefaultProperties * textDefaults;
+@property (nonatomic, retain) OADBaseStyles *baseStyles;
+@property (nonatomic, retain) OADDefaultProperties *lineDefaults;
+@property (nonatomic, retain) OADDefaultProperties *shapeDefaults;
+@property (nonatomic, retain) OADDefaultProperties *textDefaults;
 
 - (void)addDefaults;
 - (id)addLineDefaults;

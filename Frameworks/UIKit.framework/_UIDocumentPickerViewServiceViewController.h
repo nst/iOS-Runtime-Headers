@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIDocumentPickerViewControllerHost>, NSArray, NSString, NSURL;
-
 @interface _UIDocumentPickerViewServiceViewController : UINavigationController <_UIDocumentPickerOverviewDelegate, _UIDocumentPickerRemoteViewControllerContaining, _UIDocumentPickerServiceViewController, _UIDocumentPickerViewController> {
     NSArray *_auxiliaryOptions;
     NSString *_currentPickerIdentifier;
@@ -15,21 +13,21 @@
     NSURL *_uploadURL;
 }
 
-@property(setter=_setAuxiliaryOptions:,retain) NSArray * auxiliaryOptions;
-@property(retain) NSString * currentPickerIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int displayMode;
-@property BOOL displayedAsMenu;
-@property BOOL hasBeenDismissed;
-@property(readonly) unsigned int hash;
-@property(readonly) <_UIDocumentPickerViewControllerHost> * hostingViewController;
-@property(copy) NSArray * pickableTypes;
-@property unsigned int pickerMode;
-@property BOOL showingSpinner;
-@property int sortOrder;
-@property(readonly) Class superclass;
-@property(copy) NSURL * uploadURL;
+@property (setter=_setAuxiliaryOptions:, nonatomic, retain) NSArray *auxiliaryOptions;
+@property (nonatomic, retain) NSString *currentPickerIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int displayMode;
+@property (nonatomic) BOOL displayedAsMenu;
+@property (nonatomic) BOOL hasBeenDismissed;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) <_UIDocumentPickerViewControllerHost> *hostingViewController;
+@property (nonatomic, copy) NSArray *pickableTypes;
+@property (nonatomic) unsigned int pickerMode;
+@property (nonatomic) BOOL showingSpinner;
+@property (nonatomic) int sortOrder;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *uploadURL;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
@@ -47,7 +45,7 @@
 - (void)_displayLocationsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_documentPickerDidDismiss;
 - (void)_doneButton:(id)arg1;
-- (void)_prepareForDisplayWithCompletion:(id)arg1;
+- (void)_prepareForDisplayWithCompletion:(id /* block */)arg1;
 - (void)_presentError:(id)arg1 forThirdPartyPickerWithDescription:(id)arg2;
 - (void)_setAuxiliaryOptions:(id)arg1;
 - (void)_setPickableTypes:(id)arg1;
@@ -63,7 +61,7 @@
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)_willAppearInRemoteViewController;
 - (id)auxiliaryOptions;
-- (void)beginDownloadingURL:(id)arg1 completion:(id)arg2;
+- (void)beginDownloadingURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)currentPickerIdentifier;
 - (void)dealloc;
 - (void)dismissWithURL:(id)arg1 forBundleIdentifier:(id)arg2;

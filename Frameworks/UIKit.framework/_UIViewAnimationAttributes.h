@@ -9,9 +9,9 @@
     unsigned int _options;
 }
 
-@property(getter=_curve,readonly) int curve;
-@property(getter=_delay,readonly) double delay;
-@property(getter=_duration,readonly) double duration;
+@property (getter=_curve, nonatomic, readonly) int curve;
+@property (getter=_delay, nonatomic, readonly) double delay;
+@property (getter=_duration, nonatomic, readonly) double duration;
 
 + (BOOL)supportsSecureCoding;
 

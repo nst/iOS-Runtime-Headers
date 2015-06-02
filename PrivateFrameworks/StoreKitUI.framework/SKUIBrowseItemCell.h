@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel, UIView;
-
 @interface SKUIBrowseItemCell : UICollectionViewCell {
     UIView *_borderView;
     UIImage *_decorationImage;
@@ -15,11 +13,11 @@
     UIView *_topBorderView;
 }
 
-@property(retain) UIImage * decorationImage;
-@property BOOL hasBlueBackgroundWhenSelected;
-@property BOOL showTopBorder;
-@property(retain) NSString * subtitle;
-@property(retain) NSString * title;
+@property (nonatomic, retain) UIImage *decorationImage;
+@property (nonatomic) BOOL hasBlueBackgroundWhenSelected;
+@property (nonatomic) BOOL showTopBorder;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_reloadHighlightState;

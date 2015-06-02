@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSString;
-
 @interface PLCloudSharingViewedStateChangeJob : PLCloudSharingJob {
     NSString *_albumGUID;
     BOOL _albumHasUnseenContent;
@@ -14,13 +12,13 @@
     long long _jobType;
 }
 
-@property(retain) NSString * albumGUID;
-@property BOOL albumHasUnseenContent;
-@property long long albumUnviewedAssetCount;
-@property(retain) NSString * assetCollectionGUID;
-@property BOOL assetCollectionHasUnreadComments;
-@property(retain) NSDate * assetCollectionLastViewedCommentDate;
-@property long long jobType;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic) BOOL albumHasUnseenContent;
+@property (nonatomic) long long albumUnviewedAssetCount;
+@property (nonatomic, retain) NSString *assetCollectionGUID;
+@property (nonatomic) BOOL assetCollectionHasUnreadComments;
+@property (nonatomic, retain) NSDate *assetCollectionLastViewedCommentDate;
+@property (nonatomic) long long jobType;
 
 + (void)markAlbum:(id)arg1 asHavingUnseenContent:(BOOL)arg2;
 + (void)markAssetCollection:(id)arg1 asHavingUnreadComments:(BOOL)arg2 inAlbum:(id)arg3;

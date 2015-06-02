@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueUnnestedProperty, NSString;
-
 @interface NSKeyValueNestedProperty : NSKeyValueProperty {
     id _dependentValueKeyOrKeys;
     BOOL _dependentValueKeyOrKeysIsASet;
@@ -26,7 +24,7 @@
 - (BOOL)matchesWithoutOperatorComponentsKeyPath:(id)arg1;
 - (void)object:(id)arg1 didAddObservance:(id)arg2 recurse:(BOOL)arg3;
 - (void)object:(id)arg1 didRemoveObservance:(id)arg2 recurse:(BOOL)arg3;
-- (void)object:(id)arg1 withObservance:(id)arg2 didChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; id x2; })arg5;
-- (BOOL)object:(id)arg1 withObservance:(id)arg2 willChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; id x2; }*)arg5;
+- (void)object:(id)arg1 withObservance:(id)arg2 didChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; })arg5;
+- (BOOL)object:(id)arg1 withObservance:(id)arg2 willChangeValueForKeyOrKeys:(id)arg3 recurse:(BOOL)arg4 forwardingValues:(struct { id x1; }*)arg5;
 
 @end

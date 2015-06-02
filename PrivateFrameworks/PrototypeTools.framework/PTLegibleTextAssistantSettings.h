@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSString, UIColor;
-
 @interface PTLegibleTextAssistantSettings : _UISettings {
     BOOL _drawingShadowDrawsText;
     UIColor *_foregroundColor;
@@ -23,12 +21,12 @@
     NSArray *_shadowRadii;
 }
 
-@property BOOL drawingShadowDrawsText;
-@property(retain) UIColor * foregroundColor;
-@property struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
-@property(copy) NSArray * shadowAlphas;
-@property(copy) NSString * shadowCompositingFilterName;
-@property(copy) NSArray * shadowRadii;
+@property (nonatomic) BOOL drawingShadowDrawsText;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
+@property (nonatomic, copy) NSArray *shadowAlphas;
+@property (nonatomic, copy) NSString *shadowCompositingFilterName;
+@property (nonatomic, copy) NSArray *shadowRadii;
 
 + (id)settingsWithImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
 

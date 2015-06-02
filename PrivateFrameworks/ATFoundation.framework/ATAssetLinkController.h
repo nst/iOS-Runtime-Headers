@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSHashTable, NSMapTable, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATAssetLinkController : NSObject <ATAssetLinkDelegate> {
     NSMutableOrderedSet *_assetLinks;
     NSMutableOrderedSet *_assetQueue;
@@ -14,10 +12,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -41,7 +39,7 @@
 - (void)cancelAllAssetsMatchingPredicate:(id)arg1;
 - (void)cancelAssets:(id)arg1;
 - (void)enqueueAssets:(id)arg1;
-- (void)enqueueAssets:(id)arg1 progress:(id)arg2 completion:(id)arg3;
+- (void)enqueueAssets:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (void)prioritizeAsset:(id)arg1;
 - (void)removeAssetLink:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardPredictionBarGrabber : UIView {
-}
+@interface UIKeyboardPredictionBarGrabber : UIView
 
 + (struct CGSize { float x1; float x2; })size;
 

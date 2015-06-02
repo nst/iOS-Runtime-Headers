@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSData;
-
 @interface GEORPPhotoWithMetadata : PBCodable <NSCopying> {
     double _creationDate;
     NSData *_data;
@@ -17,16 +15,16 @@
     } _has;
 }
 
-@property double creationDate;
-@property(retain) NSData * data;
-@property(retain) GEOLatLng * geotagCoordinate;
-@property double geotagHorizontalAccuracy;
-@property double geotagTimestamp;
-@property BOOL hasCreationDate;
-@property(readonly) BOOL hasData;
-@property(readonly) BOOL hasGeotagCoordinate;
-@property BOOL hasGeotagHorizontalAccuracy;
-@property BOOL hasGeotagTimestamp;
+@property (nonatomic) double creationDate;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) GEOLatLng *geotagCoordinate;
+@property (nonatomic) double geotagHorizontalAccuracy;
+@property (nonatomic) double geotagTimestamp;
+@property (nonatomic) BOOL hasCreationDate;
+@property (nonatomic, readonly) BOOL hasData;
+@property (nonatomic, readonly) BOOL hasGeotagCoordinate;
+@property (nonatomic) BOOL hasGeotagHorizontalAccuracy;
+@property (nonatomic) BOOL hasGeotagTimestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -6,7 +6,7 @@
     BOOL _allowsActions;
 }
 
-@property BOOL allowsActions;
+@property (nonatomic) BOOL allowsActions;
 
 + (id)actionCellConfigurationClasses;
 + (int)containerItemType;

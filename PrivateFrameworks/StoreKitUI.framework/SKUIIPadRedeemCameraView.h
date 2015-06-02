@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIRedeemCameraViewDelegate>, NSString, SKUIRedeemCameraLandingView, SKUIRedeemTextField, UIButton, UIImage, UIScrollView, UIView;
-
 @interface SKUIIPadRedeemCameraView : UIView <UITextFieldDelegate> {
     <SKUIRedeemCameraViewDelegate> *_delegate;
     SKUIRedeemTextField *_inputAccessoryTextField;
@@ -14,14 +12,14 @@
     SKUIRedeemTextField *_textField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIRedeemCameraViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIRedeemCameraViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (void)_hideKeyboard;

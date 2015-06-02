@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFMessageStoreObjectCache, NSMutableSet, NSString;
-
 @interface MFMessageStore : NSObject <NSCopying> {
     MFMessageStoreObjectCache *_objectCache;
     NSMutableSet *_uniqueStrings;
 }
 
-@property(retain,readonly) MFMessageStoreObjectCache * objectCache;
-@property(copy) NSString * storagePath;
+@property (nonatomic, readonly, retain) MFMessageStoreObjectCache *objectCache;
+@property (nonatomic, copy) NSString *storagePath;
 
 + (Class)classForMimePart;
 + (Class)headersClass;

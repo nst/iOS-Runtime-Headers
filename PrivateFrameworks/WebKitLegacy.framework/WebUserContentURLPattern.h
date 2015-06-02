@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebUserContentURLPatternPrivate;
-
 @interface WebUserContentURLPattern : NSObject {
     WebUserContentURLPatternPrivate *_private;
 }

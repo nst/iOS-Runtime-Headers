@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUTransportControlsViewDelegate>, MPUTransportButtonAttributes, NSArray, NSMutableDictionary, UIButton, UIButton<MPUTransportButton>, UIFont;
-
 @interface MPUTransportControlsView : UIView {
     BOOL _alwaysLive;
     NSArray *_availableControls;
@@ -34,18 +32,18 @@
     BOOL _useCustomHighlightAppearance;
 }
 
-@property(setter=_setInsetsForExpandingButtons:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _insetsForExpandingButtons;
-@property(getter=isAlwaysLive) BOOL alwaysLive;
-@property(copy) NSArray * availableControls;
-@property <MPUTransportControlsViewDelegate> * delegate;
-@property double displayedSkipBackwardInterval;
-@property double displayedSkipForwardInterval;
-@property(retain) UIFont * displayedSkipIntervalFont;
-@property unsigned int repeatType;
-@property BOOL showAccessoryButtons;
-@property BOOL showIsPlaying;
-@property unsigned int shuffleType;
-@property(retain) Class transportButtonClass;
+@property (setter=_setInsetsForExpandingButtons:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _insetsForExpandingButtons;
+@property (getter=isAlwaysLive, nonatomic) BOOL alwaysLive;
+@property (nonatomic, copy) NSArray *availableControls;
+@property (nonatomic) <MPUTransportControlsViewDelegate> *delegate;
+@property (nonatomic) double displayedSkipBackwardInterval;
+@property (nonatomic) double displayedSkipForwardInterval;
+@property (nonatomic, retain) UIFont *displayedSkipIntervalFont;
+@property (nonatomic) unsigned int repeatType;
+@property (nonatomic) BOOL showAccessoryButtons;
+@property (nonatomic) BOOL showIsPlaying;
+@property (nonatomic) unsigned int shuffleType;
+@property (nonatomic, retain) Class transportButtonClass;
 
 + (id)_skipIntervalButtonImageForInterval:(double)arg1 baseImage:(id)arg2 font:(id)arg3 scale:(float)arg4;
 + (id)_stringForDisplayedSkipInterval:(double)arg1;

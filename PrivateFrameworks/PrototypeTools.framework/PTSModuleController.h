@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, PTSModule, _UISettings;
-
 @interface PTSModuleController : UITableViewController <PTSModuleObserver, PTSRowTableViewCellDelegate> {
     PTSModule *_module;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) _UISettings * settings;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) _UISettings *settings;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)additionalToolbarItems;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSMutableArray, NSString;
-
 @interface CKTimeLoggerLog : NSObject <NSCoding> {
     double _beginTime;
     NSString *_beginningMessage;
@@ -13,13 +11,13 @@
     NSString *_type;
 }
 
-@property double beginTime;
-@property(retain) NSString * beginningMessage;
-@property(readonly) double elapsedTime;
-@property double endTime;
-@property(retain) NSString * endingMessage;
-@property(retain) NSMutableArray * pauseRecords;
-@property(retain) NSString * type;
+@property (nonatomic) double beginTime;
+@property (nonatomic, retain) NSString *beginningMessage;
+@property (readonly) double elapsedTime;
+@property (nonatomic) double endTime;
+@property (nonatomic, retain) NSString *endingMessage;
+@property (nonatomic, retain) NSMutableArray *pauseRecords;
+@property (nonatomic, retain) NSString *type;
 
 - (void).cxx_destruct;
 - (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned int)arg2 showingPointers:(BOOL)arg3;

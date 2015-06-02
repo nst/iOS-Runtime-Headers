@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildMovieStart : KNBuildAppear {
-}
+@interface KNBuildMovieStart : KNBuildAppear
 
 + (int)animationCategory;
 + (id)animationFilter;

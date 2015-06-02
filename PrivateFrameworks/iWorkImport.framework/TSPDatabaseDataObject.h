@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPData;
-
 @interface TSPDatabaseDataObject : TSPObject {
     TSPData *_data;
 }
 
-@property(readonly) TSPData * data;
+@property (nonatomic, readonly) TSPData *data;
 
 - (void).cxx_destruct;
 - (id)data;

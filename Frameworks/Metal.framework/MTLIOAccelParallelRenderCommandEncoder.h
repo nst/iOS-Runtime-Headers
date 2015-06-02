@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLIOAccelParallelRenderCommandEncoder : _MTLParallelRenderCommandEncoder {
-}
+@interface MTLIOAccelParallelRenderCommandEncoder : _MTLParallelRenderCommandEncoder
 
 @end

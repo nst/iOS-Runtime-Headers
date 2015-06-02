@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKTextBubbleContentView : UIView {
-}
+@interface GKTextBubbleContentView : UIView
 
 @end

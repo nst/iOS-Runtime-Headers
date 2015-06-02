@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPropertyGroupNoteItem : ABPropertyGroupItem {
-}
+@interface ABPropertyGroupNoteItem : ABPropertyGroupItem
 
 - (BOOL)canRemove;
 - (id)displayLabel;

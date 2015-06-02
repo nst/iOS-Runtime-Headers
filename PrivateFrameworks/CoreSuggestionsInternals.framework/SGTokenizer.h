@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGTokenizer : NSObject {
-}
+@interface SGTokenizer : NSObject
 
 + (id)tokenize:(id)arg1;
 

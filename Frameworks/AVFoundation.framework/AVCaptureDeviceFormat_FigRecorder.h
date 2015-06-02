@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormatInternal_FigRecorder, NSArray, NSString;
-
 @interface AVCaptureDeviceFormat_FigRecorder : NSObject {
     AVCaptureDeviceFormatInternal_FigRecorder *_internal;
 }
 
-@property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
-@property(readonly) NSString * mediaType;
-@property(getter=isVideoBinned,readonly) BOOL videoBinned;
-@property(readonly) float videoFieldOfView;
-@property(readonly) float videoMaxZoomFactor;
-@property(getter=isVideoStabilizationSupported,readonly) BOOL videoStabilizationSupported;
-@property(readonly) NSArray * videoSupportedFrameRateRanges;
-@property(readonly) float videoZoomFactorUpscaleThreshold;
+@property (nonatomic, readonly) struct opaqueCMFormatDescription { }*formatDescription;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (getter=isVideoBinned, nonatomic, readonly) BOOL videoBinned;
+@property (nonatomic, readonly) float videoFieldOfView;
+@property (nonatomic, readonly) float videoMaxZoomFactor;
+@property (getter=isVideoStabilizationSupported, nonatomic, readonly) BOOL videoStabilizationSupported;
+@property (nonatomic, readonly) NSArray *videoSupportedFrameRateRanges;
+@property (nonatomic, readonly) float videoZoomFactorUpscaleThreshold;
 
 + (id)deviceFormatWithDictionary:(id)arg1;
 + (void)initialize;

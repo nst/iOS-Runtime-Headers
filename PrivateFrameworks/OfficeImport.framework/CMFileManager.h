@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMFileManager : NSObject {
-}
+@interface CMFileManager : NSObject
 
 + (id)canonicalUrlPrefix:(id)arg1;
 + (int)getFileTypeFromPath:(id)arg1;

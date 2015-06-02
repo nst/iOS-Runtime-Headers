@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSAccount, SSAppPurchaseHistoryDatabase, SSDatabaseCache;
-
 @interface SSAppPurchaseHistoryCache : NSObject {
     SSAccount *_account;
     SSDatabaseCache *_databaseCache;

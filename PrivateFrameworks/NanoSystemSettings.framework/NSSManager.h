@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoSystemSettings.framework/NanoSystemSettings
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface NSSManager : NSObject {
     NSObject<OS_dispatch_queue> *_externalQueue;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * externalQueue;
-@property(retain) NSObject<OS_dispatch_queue> * internalQueue;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *externalQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (void)displayAirplaneModeMirroringUserEducationAlert;
 + (void)displayAlertFailedRemoteAirplaneMode;
@@ -21,25 +19,25 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
-- (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)externalQueue;
-- (void)getAboutInfo:(id)arg1;
-- (void)getLegalDocuments:(id)arg1;
-- (void)getLocalesInfo:(id)arg1;
-- (void)getProfileWithIdentifier:(id)arg1 completionHandler:(id)arg2;
-- (void)getProfilesInfo:(id)arg1;
-- (void)getUsage:(id)arg1;
-- (void)getiCloudInfo:(id)arg1;
+- (void)getAboutInfo:(id /* block */)arg1;
+- (void)getLegalDocuments:(id /* block */)arg1;
+- (void)getLocalesInfo:(id /* block */)arg1;
+- (void)getProfileWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getProfilesInfo:(id /* block */)arg1;
+- (void)getUsage:(id /* block */)arg1;
+- (void)getiCloudInfo:(id /* block */)arg1;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (void)installProfile:(id)arg1 completionHandler:(id)arg2;
+- (void)installProfile:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)internalQueue;
 - (void)invalidate;
-- (void)obliterateGizmo:(id)arg1;
+- (void)obliterateGizmo:(id /* block */)arg1;
 - (id)protocol;
-- (void)purgeUsageBundle:(id)arg1 completionHandler:(id)arg2;
+- (void)purgeUsageBundle:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)rebootDevice;
-- (void)removeProfileWithIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)removeProfileWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setDeviceName:(id)arg1;
 - (void)setExternalQueue:(id)arg1;
 - (void)setInternalQueue:(id)arg1;

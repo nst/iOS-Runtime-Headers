@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILabel;
-
 @interface ABPropertySimpleCell : ABPropertyCell {
     UILabel *_labelLabel;
     UILabel *_valueLabel;
 }
 
-@property(readonly) UILabel * labelLabel;
-@property(readonly) UILabel * valueLabel;
+@property (nonatomic, readonly) UILabel *labelLabel;
+@property (nonatomic, readonly) UILabel *valueLabel;
 
 - (void)dealloc;
 - (id)labelLabel;

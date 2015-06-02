@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUAutoDownloadPolicy : SUDefaultDownloadPolicy {
-}
+@interface SUAutoDownloadPolicy : SUDefaultDownloadPolicy
 
 - (id)computeTimeOfWifiOnlyPeriodEndFromDate:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableDictionary;
-
 @interface IMPersonRegistrar : NSObject {
     NSMutableDictionary *_personMap;
 }
 
-@property(retain) NSMutableDictionary * _personMap;
+@property (retain) NSMutableDictionary *_personMap;
 
 + (id)sharedInstance;
 

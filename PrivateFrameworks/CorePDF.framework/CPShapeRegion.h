@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPShapeRegion : CPGraphicRegion {
-}
+@interface CPShapeRegion : CPGraphicRegion
 
 - (void)accept:(id)arg1;
 - (BOOL)isShapeRegion;

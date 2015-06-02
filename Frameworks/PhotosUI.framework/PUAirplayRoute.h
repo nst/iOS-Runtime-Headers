@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class MPAVRoute, NSDictionary, NSString, PUAirplaySession;
-
 @interface PUAirplayRoute : NSObject {
     PUAirplaySession *_airplaySession;
     NSString *_audioScreenDNSName;
@@ -28,28 +26,28 @@
     BOOL _supportsVideo;
 }
 
-@property(readonly) PUAirplaySession * airplaySession;
-@property(copy,readonly) NSString * audioScreenDNSName;
-@property(readonly) BOOL audioScreenDNSNameP2POnly;
-@property(readonly) MPAVRoute * avRoute;
-@property(readonly) MPAVRoute * avScreenRoute;
-@property(copy,readonly) NSString * displayName;
-@property(readonly) BOOL isCurrentRoute;
-@property(readonly) BOOL isDefaultRoute;
-@property(readonly) BOOL isPasswordPIN;
-@property(readonly) BOOL isSecondScreenActive;
-@property(copy,readonly) NSString * lastKnownPassword;
-@property(copy,readonly) NSString * photoVideoDNSName;
-@property(readonly) BOOL photoVideoDNSNameP2POnly;
-@property(readonly) BOOL requiresPassword;
-@property(copy,readonly) NSDictionary * routeDescription;
-@property(copy,readonly) NSString * routeUID;
-@property(copy,readonly) NSDictionary * screenRouteDescription;
-@property(readonly) BOOL supportsAudio;
-@property(readonly) BOOL supportsMirroring;
-@property(readonly) BOOL supportsPhotos;
-@property(readonly) BOOL supportsSlideshow;
-@property(readonly) BOOL supportsVideo;
+@property (nonatomic, readonly) PUAirplaySession *airplaySession;
+@property (nonatomic, readonly, copy) NSString *audioScreenDNSName;
+@property (nonatomic, readonly) BOOL audioScreenDNSNameP2POnly;
+@property (nonatomic, readonly) MPAVRoute *avRoute;
+@property (nonatomic, readonly) MPAVRoute *avScreenRoute;
+@property (nonatomic, readonly, copy) NSString *displayName;
+@property (nonatomic, readonly) BOOL isCurrentRoute;
+@property (nonatomic, readonly) BOOL isDefaultRoute;
+@property (nonatomic, readonly) BOOL isPasswordPIN;
+@property (nonatomic, readonly) BOOL isSecondScreenActive;
+@property (nonatomic, readonly, copy) NSString *lastKnownPassword;
+@property (nonatomic, readonly, copy) NSString *photoVideoDNSName;
+@property (nonatomic, readonly) BOOL photoVideoDNSNameP2POnly;
+@property (nonatomic, readonly) BOOL requiresPassword;
+@property (nonatomic, readonly, copy) NSDictionary *routeDescription;
+@property (nonatomic, readonly, copy) NSString *routeUID;
+@property (nonatomic, readonly, copy) NSDictionary *screenRouteDescription;
+@property (nonatomic, readonly) BOOL supportsAudio;
+@property (nonatomic, readonly) BOOL supportsMirroring;
+@property (nonatomic, readonly) BOOL supportsPhotos;
+@property (nonatomic, readonly) BOOL supportsSlideshow;
+@property (nonatomic, readonly) BOOL supportsVideo;
 
 - (void).cxx_destruct;
 - (BOOL)_sameAsAVRoute:(id)arg1;
@@ -69,7 +67,7 @@
 - (BOOL)isSameRoute:(id)arg1;
 - (BOOL)isSecondScreenActive;
 - (id)lastKnownPassword;
-- (void)makeRouteCurrentWithCompletion:(id)arg1;
+- (void)makeRouteCurrentWithCompletion:(id /* block */)arg1;
 - (id)photoVideoDNSName;
 - (BOOL)photoVideoDNSNameP2POnly;
 - (BOOL)requiresPassword;

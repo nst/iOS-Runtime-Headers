@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioArtworkCollection, RadioSeedMetadata;
-
 @interface RadioMutableLikeBanItem : RadioLikeBanItem {
     long long _itemID;
 }
 
-@property long long albumID;
-@property(retain) RadioArtworkCollection * artworkCollection;
-@property BOOL isSeed;
-@property long long itemID;
-@property(copy) RadioSeedMetadata * seedMetadata;
-@property long long storeID;
-@property int type;
+@property (nonatomic) long long albumID;
+@property (nonatomic, retain) RadioArtworkCollection *artworkCollection;
+@property (nonatomic) BOOL isSeed;
+@property (nonatomic) long long itemID;
+@property (nonatomic, copy) RadioSeedMetadata *seedMetadata;
+@property (nonatomic) long long storeID;
+@property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)itemID;

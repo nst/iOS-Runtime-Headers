@@ -2,36 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AOSKit.framework/AOSKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, NSThread;
-
 @interface AOSContext : NSObject <NSPortDelegate> {
     struct AOSAccount { } *_account;
-    int (*_callback)();
+    int (*_callback;
     NSThread *_callbackThread;
     id _info;
-
-  /* Error parsing encoded ivar type info: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?} */
-    struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); } *_transaction;
-
+    struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); } *_transaction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-+ (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg2;
-     /* Encoded args for previous method: @16@0:4^{AOSAccount=}8^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}12 */
-
++ (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); }*)arg2;
 
 - (id)_callbackThread;
 - (void)_performCallback;
@@ -43,11 +27,7 @@
 - (BOOL)scheduleCallback;
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (void)setInfo:(id)arg1;
-- (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)arg1;
-     /* Encoded args for previous method: v12@0:4^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8 */
-
-- (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id x7; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x8; id x9; void *x10; id x11; int (*x12)(); int (*x13)(); }*)transaction;
-     /* Encoded args for previous method: ^{AOSTransactionC=#CC^v^{__CFError}^?@?@^v@^?^?}8@0:4 */
-
+- (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); }*)arg1;
+- (struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); }*)transaction;
 
 @end

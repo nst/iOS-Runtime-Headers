@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel;
-
 @interface UIPrintingMessageView : UIView {
     UILabel *_message;
     UILabel *_title;

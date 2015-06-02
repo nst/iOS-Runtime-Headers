@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSLayoutConstraint, UIImageView, UILabel;
-
 @interface EKUIInviteesViewRespondedInviteesCell : UITableViewCell {
     UILabel *_commentLabel;
     NSLayoutConstraint *_minimumHeightConstraint;
@@ -14,13 +12,13 @@
     NSArray *_removableConstraints;
 }
 
-@property(retain) UILabel * commentLabel;
-@property(retain) NSLayoutConstraint * minimumHeightConstraint;
-@property(retain) NSLayoutConstraint * nameBaselineToTopConstraint;
-@property(retain) UILabel * nameLabel;
-@property(retain) UIImageView * participationStatusImageView;
-@property(retain) NSArray * persistentConstraints;
-@property(retain) NSArray * removableConstraints;
+@property (nonatomic, retain) UILabel *commentLabel;
+@property (nonatomic, retain) NSLayoutConstraint *minimumHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *nameBaselineToTopConstraint;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UIImageView *participationStatusImageView;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, retain) NSArray *removableConstraints;
 
 + (id)_commentLabelFont;
 + (float)_leftTextInset;

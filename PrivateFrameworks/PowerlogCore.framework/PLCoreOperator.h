@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary;
-
 @interface PLCoreOperator : NSObject {
     NSMutableDictionary *_operators;
 }
 
-@property(retain) NSMutableDictionary * operators;
+@property (retain) NSMutableDictionary *operators;
 
 + (void)registerOperator:(Class)arg1;
 + (id)registeredOperators;

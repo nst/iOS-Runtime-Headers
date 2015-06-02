@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString;
-
 @interface CKReportSpamChatItem : CKStampChatItem {
     NSAttributedString *_transcriptButtonText;
 }
 
-@property(copy) NSAttributedString * transcriptButtonText;
+@property (nonatomic, copy) NSAttributedString *transcriptButtonText;
 
 - (Class)cellClass;
 - (void)dealloc;

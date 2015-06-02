@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAssetResourceRenewalRequest : AVAssetResourceLoadingRequest {
-}
+@interface AVAssetResourceRenewalRequest : AVAssetResourceLoadingRequest
 
 @end

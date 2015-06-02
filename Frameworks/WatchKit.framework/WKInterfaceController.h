@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSArray, NSString;
-
 @interface WKInterfaceController : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -20,15 +18,15 @@
     NSString *_viewControllerID;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
-@property(copy) NSArray * properties;
-@property(retain) NSArray * topLevelObjects;
-@property(retain) NSString * viewControllerID;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, retain) NSArray *topLevelObjects;
+@property (nonatomic, retain) NSString *viewControllerID;
 
 + (void)_insertPageControllersAtIndexes:(id)arg1 withNames:(id)arg2 contexts:(id)arg3;
 + (void)_movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
 + (void)_removePageControllersAtIndexes:(id)arg1;
-+ (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
++ (BOOL)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
 + (float)screenScale;
@@ -59,7 +57,7 @@
 - (void)popToRootController;
 - (void)presentControllerWithName:(id)arg1 context:(id)arg2;
 - (void)presentControllerWithNames:(id)arg1 contexts:(id)arg2;
-- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(id)arg3;
+- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(id /* block */)arg3;
 - (id)properties;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
 - (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOAttributeKeyValue : PBCodable <NSCopying> {
     NSString *_attributeKey;
     NSString *_attributeValue;
 }
 
-@property(retain) NSString * attributeKey;
-@property(retain) NSString * attributeValue;
+@property (nonatomic, retain) NSString *attributeKey;
+@property (nonatomic, retain) NSString *attributeValue;
 
 - (id)attributeKey;
 - (id)attributeValue;

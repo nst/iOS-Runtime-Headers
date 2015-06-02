@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAttachmentItem, NSObject<CKAttachmentCellDelegate>, UIImageView;
-
 @interface CKAttachmentCell : UICollectionViewCell {
     UIImageView *_checkmarkView;
     NSObject<CKAttachmentCellDelegate> *_delegate;
@@ -11,10 +9,10 @@
     CKAttachmentItem *_representedObject;
 }
 
-@property(retain) UIImageView * checkmarkView;
-@property NSObject<CKAttachmentCellDelegate> * delegate;
-@property(getter=isEditing) BOOL editing;
-@property(retain) CKAttachmentItem * representedObject;
+@property (nonatomic, retain) UIImageView *checkmarkView;
+@property (nonatomic) NSObject<CKAttachmentCellDelegate> *delegate;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic, retain) CKAttachmentItem *representedObject;
 
 - (id)checkmarkView;
 - (void)copy:(id)arg1;

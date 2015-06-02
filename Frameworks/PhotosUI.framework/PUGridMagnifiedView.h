@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSIndexPath, UIImage, UIImageView;
-
 @interface PUGridMagnifiedView : UIView {
     UIImageView *_imageView;
     UIImage *_itemImage;
@@ -20,11 +18,11 @@
     } _magnifiedImageSize;
 }
 
-@property(retain) UIImageView * imageView;
-@property(retain) UIImage * itemImage;
-@property(retain) NSIndexPath * itemIndexPath;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } magnifiedDragEdgeInsets;
-@property struct CGSize { float x1; float x2; } magnifiedImageSize;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) UIImage *itemImage;
+@property (nonatomic, retain) NSIndexPath *itemIndexPath;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } magnifiedDragEdgeInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } magnifiedImageSize;
 
 - (void).cxx_destruct;
 - (void)hideAnimate:(BOOL)arg1;

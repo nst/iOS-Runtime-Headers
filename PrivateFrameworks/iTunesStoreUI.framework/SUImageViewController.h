@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUTouchCaptureView, UIImageView;
-
 @interface SUImageViewController : SUViewController {
     SUTouchCaptureView *_backstopView;
     UIImageView *_imageView;

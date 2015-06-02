@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SACalendar;
+@interface SADynamiteClientState : SAAceClientState
 
-@interface SADynamiteClientState : SAAceClientState {
-}
-
-@property(retain) SACalendar * expirationDate;
-@property(copy) NSString * status;
+@property (nonatomic, retain) SACalendar *expirationDate;
+@property (nonatomic, copy) NSString *status;
 
 + (id)deliveryDeadline;
 + (id)dynamiteClientState;

@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTPingSubscribing>, BLTBulletinDistributorSubscriber, NSString;
-
 @interface BLTLocalPingSubscriberService : NSObject <BLTPingService> {
     <BLTPingSubscribing> *_delegate;
     BLTBulletinDistributorSubscriber *_subscriber;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BLTPingSubscribing> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) BLTBulletinDistributorSubscriber * subscriber;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BLTPingSubscribing> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) BLTBulletinDistributorSubscriber *subscriber;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (void)pingWithBulletin:(id)arg1;
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2;
 - (void)sendBulletinSummary:(id)arg1;

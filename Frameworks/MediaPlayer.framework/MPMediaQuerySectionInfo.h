@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
-
 @interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSArray *_sectionIndexTitles;
     NSArray *_sections;
 }
 
-@property(readonly) unsigned int count;
-@property(copy) NSArray * sectionIndexTitles;
-@property(copy,readonly) NSArray * sections;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, copy) NSArray *sectionIndexTitles;
+@property (nonatomic, readonly, copy) NSArray *sections;
 
 + (BOOL)supportsSecureCoding;
 

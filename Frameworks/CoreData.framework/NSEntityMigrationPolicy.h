@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSEntityMigrationPolicy : NSObject {
-}
+@interface NSEntityMigrationPolicy : NSObject
 
 - (id)_nonNilValueOrDefaultValueForAttribute:(id)arg1 source:(id)arg2 destination:(id)arg3;
 - (BOOL)beginEntityMapping:(id)arg1 manager:(id)arg2 error:(id*)arg3;

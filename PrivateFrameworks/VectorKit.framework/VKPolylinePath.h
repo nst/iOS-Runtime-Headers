@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOComposedRouteSection, GEOSnappedRoutePath, VKPolylineOverlay;
-
 @interface VKPolylinePath : NSObject {
     VKPolylineOverlay *_overlay;
     BOOL _ownsPoints;
@@ -26,15 +20,15 @@
     BOOL _trafficSpeed;
 }
 
-@property(readonly) BOOL hasCompletedMapMatching;
-@property(readonly) BOOL isMapMatched;
-@property(readonly) unsigned int pointCount;
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct * points; /* unknown property attribute:  1>=[2f]} */
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeStart;
-@property(readonly) GEOComposedRouteSection * section;
-@property(readonly) GEOSnappedRoutePath * snappedPath;
-@property BOOL trafficSpeed;
+@property (readonly) BOOL hasCompletedMapMatching;
+@property (readonly) BOOL isMapMatched;
+@property (nonatomic, readonly) unsigned int pointCount;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *points; /* unknown property attribute:  1>=[2f]} */
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeStart;
+@property (nonatomic, readonly) GEOComposedRouteSection *section;
+@property (nonatomic, readonly) GEOSnappedRoutePath *snappedPath;
+@property (nonatomic) BOOL trafficSpeed;
 
 - (id).cxx_construct;
 - (void)assignPoints:(struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 count:(unsigned int)arg2;

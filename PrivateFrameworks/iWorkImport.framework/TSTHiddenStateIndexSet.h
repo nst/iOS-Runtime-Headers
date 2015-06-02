@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableIndexSet;
-
 @interface TSTHiddenStateIndexSet : NSObject {
     NSMutableIndexSet *_visibleIndexSet;
 }
 
-@property(retain) NSMutableIndexSet * visibleIndexSet;
+@property (nonatomic, retain) NSMutableIndexSet *visibleIndexSet;
 
 - (BOOL)anyHiddenIndicesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;

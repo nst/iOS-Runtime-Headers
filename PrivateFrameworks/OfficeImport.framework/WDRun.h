@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDParagraph;
-
 @interface WDRun : NSObject {
     WDParagraph *mParagraph;
 }

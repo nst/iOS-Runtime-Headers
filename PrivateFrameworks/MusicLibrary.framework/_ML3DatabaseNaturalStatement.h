@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableArray, NSString;
-
 @interface _ML3DatabaseNaturalStatement : NSObject {
     NSMutableArray *_parameters;
     NSString *_sql;
 }
 
-@property(retain) NSMutableArray * parameters;
-@property(retain) NSString * sql;
+@property (nonatomic, retain) NSMutableArray *parameters;
+@property (nonatomic, retain) NSString *sql;
 
 + (id)naturalStatementWithSQL:(id)arg1 parameters:(id)arg2;
 

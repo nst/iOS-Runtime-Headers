@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDLQMDataTransfer : PBCodable <NSCopying> {
     NSString *_bundleName;
     struct { 
@@ -18,16 +16,16 @@
     unsigned int _txBytes;
 }
 
-@property(retain) NSString * bundleName;
-@property(readonly) BOOL hasBundleName;
-@property BOOL hasLQM;
-@property BOOL hasRxBytes;
-@property BOOL hasStateDuration;
-@property BOOL hasTxBytes;
-@property int lQM;
-@property unsigned int rxBytes;
-@property unsigned int stateDuration;
-@property unsigned int txBytes;
+@property (nonatomic, retain) NSString *bundleName;
+@property (nonatomic, readonly) BOOL hasBundleName;
+@property (nonatomic) BOOL hasLQM;
+@property (nonatomic) BOOL hasRxBytes;
+@property (nonatomic) BOOL hasStateDuration;
+@property (nonatomic) BOOL hasTxBytes;
+@property (nonatomic) int lQM;
+@property (nonatomic) unsigned int rxBytes;
+@property (nonatomic) unsigned int stateDuration;
+@property (nonatomic) unsigned int txBytes;
 
 - (id)bundleName;
 - (void)copyTo:(id)arg1;

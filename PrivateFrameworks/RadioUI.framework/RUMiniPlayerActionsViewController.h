@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUMiniPlayerActionsViewController : MPUMiniPlayerActionsViewController {
-}
+@interface RUMiniPlayerActionsViewController : MPUMiniPlayerActionsViewController
 
 + (id)_actionsForItem:(id)arg1;
 + (id)_imageForAction:(int)arg1;

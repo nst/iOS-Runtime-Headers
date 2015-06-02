@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPRecordSaveRequestConflictLoserUpdate : PBCodable <NSCopying> {
     NSMutableArray *_conflictLoserEtags;
 }
 
-@property(retain) NSMutableArray * conflictLoserEtags;
+@property (nonatomic, retain) NSMutableArray *conflictLoserEtags;
 
 - (void).cxx_destruct;
 - (void)addConflictLoserEtags:(id)arg1;

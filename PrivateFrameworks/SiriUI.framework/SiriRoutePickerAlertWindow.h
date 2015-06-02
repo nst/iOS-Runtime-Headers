@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriRoutePickerAlertWindow : UIWindow {
-}
+@interface SiriRoutePickerAlertWindow : UIWindow
 
 + (BOOL)_isSecure;
 

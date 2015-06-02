@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, SUTextViewCell;
-
 @interface SUConcernListDataSource : SUTableDataSource {
     NSArray *_concerns;
     int _selectedConcernIndex;
     SUTextViewCell *_textViewCell;
 }
 
-@property(retain) NSArray * concerns;
-@property int selectedConcernIndex;
-@property(readonly) SUTextViewCell * textViewCell;
+@property (nonatomic, retain) NSArray *concerns;
+@property (nonatomic) int selectedConcernIndex;
+@property (nonatomic, readonly) SUTextViewCell *textViewCell;
 
 - (id)_titleCellForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;

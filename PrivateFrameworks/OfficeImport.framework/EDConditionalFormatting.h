@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReferenceCollection, NSMutableArray;
-
 @interface EDConditionalFormatting : NSObject {
     bool mApplyToDate;
     EDReferenceCollection *mRanges;

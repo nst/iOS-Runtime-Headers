@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKListItemLockupElement, MPUContentSizeLayoutConstraint, MPUExtrasConstrainedArtworkContainerView, NSArray, NSLayoutConstraint, UILabel, UIView;
-
 @interface MPUExtrasTableViewCell : UITableViewCell {
     MPUExtrasConstrainedArtworkContainerView *_artworkContainer;
     NSLayoutConstraint *_artworkHeightConstraint;
@@ -25,8 +23,8 @@
     NSLayoutConstraint *_topLabelConstraint;
 }
 
-@property(readonly) MPUExtrasConstrainedArtworkContainerView * artworkContainerView;
-@property IKListItemLockupElement * element;
+@property (nonatomic, readonly) MPUExtrasConstrainedArtworkContainerView *artworkContainerView;
+@property (nonatomic) IKListItemLockupElement *element;
 
 - (void).cxx_destruct;
 - (id)artworkContainerView;

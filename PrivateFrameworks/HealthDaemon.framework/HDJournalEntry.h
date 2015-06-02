@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDJournalEntry : NSObject <NSSecureCoding> {
-}
+@interface HDJournalEntry : NSObject <NSSecureCoding>
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

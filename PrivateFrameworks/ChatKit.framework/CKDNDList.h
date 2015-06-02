@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NPSManager;
-
 @interface CKDNDList : NSObject {
     NPSManager *_syncManager;
 }
 
-@property(retain) NPSManager * syncManager;
+@property (nonatomic, retain) NPSManager *syncManager;
 
 + (id)sharedList;
 

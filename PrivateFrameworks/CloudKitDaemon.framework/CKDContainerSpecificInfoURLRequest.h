@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDContainerInfo, NSString;
-
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString *_containerIdentifier;
     CKDContainerInfo *_containerInfo;
     BOOL _needUserID;
 }
 
-@property NSString * containerIdentifier;
-@property(copy) CKDContainerInfo * containerInfo;
-@property BOOL needUserID;
+@property (nonatomic) NSString *containerIdentifier;
+@property (nonatomic, copy) CKDContainerInfo *containerInfo;
+@property (nonatomic) BOOL needUserID;
 
 - (void).cxx_destruct;
 - (id)additionalHeaderValues;

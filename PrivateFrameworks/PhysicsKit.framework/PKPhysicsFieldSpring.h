@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsFieldSpring : PKPhysicsField {
-}
+@interface PKPhysicsFieldSpring : PKPhysicsField
 
 + (id)field;
 

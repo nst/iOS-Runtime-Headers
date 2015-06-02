@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MMCSEngine;
-
 @interface MMCSRequestorContext : NSObject {
     char **_authTokens;
     unsigned long _count;
@@ -14,13 +12,13 @@
     int _type;
 }
 
-@property char ** authTokens;
-@property unsigned long count;
-@property MMCSEngine * engine;
-@property unsigned int* itemFlags;
-@property unsigned long long* itemIDs;
-@property char ** signatures;
-@property int type;
+@property (nonatomic) char **authTokens;
+@property (nonatomic) unsigned long count;
+@property (nonatomic) MMCSEngine *engine;
+@property (nonatomic) unsigned int*itemFlags;
+@property (nonatomic) unsigned long long*itemIDs;
+@property (nonatomic) char **signatures;
+@property (nonatomic) int type;
 
 + (id)contextWithEngine:(id)arg1 type:(int)arg2;
 

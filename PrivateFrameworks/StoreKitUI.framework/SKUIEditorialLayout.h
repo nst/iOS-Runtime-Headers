@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIEditorialComponent, SKUILayoutCache;
-
 @interface SKUIEditorialLayout : NSObject {
     SKUIEditorialComponent *_editorial;
     int _landscapeLinkLayoutIndex;
@@ -17,7 +15,7 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(readonly) SKUIEditorialComponent * editorialComponent;
+@property (nonatomic, readonly) SKUIEditorialComponent *editorialComponent;
 
 - (void).cxx_destruct;
 - (id)_bodyTextLayoutRequestWithTotalWidth:(float)arg1;

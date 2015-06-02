@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSFileHandle, NSLock, NSRegularExpression, NSString;
-
 @interface SBKLogger : NSObject {
     NSString *_auxPath;
     NSFileHandle *_fileHandle;
@@ -15,8 +13,8 @@
     NSRegularExpression *_runtimeOverrideRegex;
 }
 
-@property(copy) NSString * filter;
-@property(copy) NSString * runtimeOverride;
+@property (copy) NSString *filter;
+@property (copy) NSString *runtimeOverride;
 
 + (BOOL)debugLoggingEnabled;
 + (id)sharedLogger;
@@ -32,7 +30,7 @@
 - (void)logFile:(const char *)arg1 lineNumber:(int)arg2 format:(id)arg3;
 - (void)logFunction:(const char *)arg1 format:(id)arg2;
 - (void)logString:(id)arg1;
-- (void)performLoggingBlock:(id)arg1;
+- (void)performLoggingBlock:(id /* block */)arg1;
 - (void)removeRuntimeOverride:(id)arg1;
 - (id)runtimeOverride;
 - (void)setAuxPath:(id)arg1;

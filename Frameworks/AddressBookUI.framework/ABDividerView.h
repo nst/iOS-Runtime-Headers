@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABSteadfastLineView, UIColor;
-
 @interface ABDividerView : UIView {
     UIColor *_defaultColor;
     BOOL _disappearsOnHighlight;
@@ -13,10 +11,10 @@
     ABSteadfastLineView *_shadowLine;
 }
 
-@property(retain) UIColor * defaultColor;
-@property BOOL disappearsOnHighlight;
-@property(retain) UIColor * shadowColor;
-@property(getter=isVertical) BOOL vertical;
+@property (nonatomic, retain) UIColor *defaultColor;
+@property (nonatomic) BOOL disappearsOnHighlight;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (getter=isVertical, nonatomic) BOOL vertical;
 
 - (void)dealloc;
 - (id)defaultColor;

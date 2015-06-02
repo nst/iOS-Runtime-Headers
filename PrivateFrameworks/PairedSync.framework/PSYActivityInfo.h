@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface PSYActivityInfo : NSObject <NSSecureCoding> {
     NSString *_backboardPrelaunchBundleIdentifier;
     NSArray *_dependencies;
@@ -13,12 +11,12 @@
     NSNumber *_timeoutSeconds;
 }
 
-@property(copy) NSString * backboardPrelaunchBundleIdentifier;
-@property(copy) NSArray * dependencies;
-@property(copy) NSString * label;
-@property(copy) NSString * machServiceName;
-@property(copy) NSString * priority;
-@property(copy) NSNumber * timeoutSeconds;
+@property (nonatomic, copy) NSString *backboardPrelaunchBundleIdentifier;
+@property (nonatomic, copy) NSArray *dependencies;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *machServiceName;
+@property (nonatomic, copy) NSString *priority;
+@property (nonatomic, copy) NSNumber *timeoutSeconds;
 
 + (id)activityWithPlist:(id)arg1;
 + (BOOL)supportsSecureCoding;

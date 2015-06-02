@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDAnimationInfoData, PDMediaNode;
-
 @interface PDAnimationInfo : NSObject {
     PDAnimationInfoData *mEntrance;
     PDAnimationInfoData *mExit;
@@ -11,8 +9,8 @@
     PDMediaNode *mediaNode;
 }
 
-@property(retain) PDAnimationInfoData * mediaData;
-@property(retain) PDMediaNode * mediaNode;
+@property (nonatomic, retain) PDAnimationInfoData *mediaData;
+@property (nonatomic, retain) PDMediaNode *mediaNode;
 
 - (void)dealloc;
 - (id)entranceData;

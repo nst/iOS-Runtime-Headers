@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSRestrictionsPasscodeController : NSObject {
-}
+@interface PSRestrictionsPasscodeController : NSObject
 
 + (id)_generateSalt;
 + (id)_keychainPasswordForRestrictions;

@@ -2,21 +2,20 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@interface GCControllerButtonInput : GCControllerElement {
-}
+@interface GCControllerButtonInput : GCControllerElement
 
-@property(getter=isPressed,readonly) BOOL pressed;
-@property(copy) id pressedChangedHandler;
-@property(readonly) float value;
-@property(copy) id valueChangedHandler;
+@property (getter=isPressed, readonly) BOOL pressed;
+@property (copy) id /* block */ pressedChangedHandler;
+@property (readonly) float value;
+@property (copy) id /* block */ valueChangedHandler;
 
 - (BOOL)_setValue:(float)arg1;
 - (BOOL)isPressed;
-- (id)pressedChangedHandler;
+- (id /* block */)pressedChangedHandler;
 - (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
-- (void)setPressedChangedHandler:(id)arg1;
-- (void)setValueChangedHandler:(id)arg1;
+- (void)setPressedChangedHandler:(id /* block */)arg1;
+- (void)setValueChangedHandler:(id /* block */)arg1;
 - (float)value;
-- (id)valueChangedHandler;
+- (id /* block */)valueChangedHandler;
 
 @end

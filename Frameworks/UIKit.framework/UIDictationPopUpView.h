@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationPopUpView : UIDictationView {
-}
+@interface UIDictationPopUpView : UIDictationView
 
 - (BOOL)drawsOwnBackground;
 - (void)layoutSubviews;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@class NSDictionary, SCRCMathExpression;
-
 @interface UIAccessibilityMathViewController : UIViewController {
     NSDictionary *_mathDictionary;
     SCRCMathExpression *_mathExpression;
 }
 
-@property(readonly) NSDictionary * mathDictionary;
+@property (nonatomic, readonly) NSDictionary *mathDictionary;
 
 + (id)_uiaxBundle;
 

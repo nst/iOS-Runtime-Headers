@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableArray, SYMessageHeader;
-
 @interface SYChangeMessage : PBCodable <NSCopying> {
     NSMutableArray *_changes;
     SYMessageHeader *_header;
 }
 
-@property(retain) NSMutableArray * changes;
-@property(retain) SYMessageHeader * header;
+@property (nonatomic, retain) NSMutableArray *changes;
+@property (nonatomic, retain) SYMessageHeader *header;
 
 - (void).cxx_destruct;
 - (void)addChanges:(id)arg1;

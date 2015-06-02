@@ -2,25 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLCollection, DOMHTMLTableCaptionElement, DOMHTMLTableSectionElement, NSString;
+@interface DOMHTMLTableElement : DOMHTMLElement
 
-@interface DOMHTMLTableElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * align;
-@property(copy) NSString * bgColor;
-@property(copy) NSString * border;
-@property(retain) DOMHTMLTableCaptionElement * caption;
-@property(copy) NSString * cellPadding;
-@property(copy) NSString * cellSpacing;
-@property(copy) NSString * frameBorders;
-@property(readonly) DOMHTMLCollection * rows;
-@property(copy) NSString * rules;
-@property(copy) NSString * summary;
-@property(readonly) DOMHTMLCollection * tBodies;
-@property(retain) DOMHTMLTableSectionElement * tFoot;
-@property(retain) DOMHTMLTableSectionElement * tHead;
-@property(copy) NSString * width;
+@property (copy) NSString *align;
+@property (copy) NSString *bgColor;
+@property (copy) NSString *border;
+@property (retain) DOMHTMLTableCaptionElement *caption;
+@property (copy) NSString *cellPadding;
+@property (copy) NSString *cellSpacing;
+@property (copy) NSString *frameBorders;
+@property (readonly) DOMHTMLCollection *rows;
+@property (copy) NSString *rules;
+@property (copy) NSString *summary;
+@property (readonly) DOMHTMLCollection *tBodies;
+@property (retain) DOMHTMLTableSectionElement *tFoot;
+@property (retain) DOMHTMLTableSectionElement *tHead;
+@property (copy) NSString *width;
 
 - (id)align;
 - (id)bgColor;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLDepthStencilDescriptor;
-
 @interface MTLDebugDepthStencilState : MTLToolsDepthStencilState {
     MTLDepthStencilDescriptor *_descriptor;
 }
 
-@property(readonly) MTLDepthStencilDescriptor * descriptor;
+@property (nonatomic, readonly) MTLDepthStencilDescriptor *descriptor;
 
 - (void).cxx_destruct;
 - (id)description;

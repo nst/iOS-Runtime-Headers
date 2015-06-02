@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSRestrictionsController : NSObject {
-}
+@interface PSRestrictionsController : NSObject
 
 + (id)TCCServices;
 + (void)resetRestrictions;

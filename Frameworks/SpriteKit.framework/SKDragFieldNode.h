@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKDragFieldNode : SKFieldNode {
-}
+@interface SKDragFieldNode : SKFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

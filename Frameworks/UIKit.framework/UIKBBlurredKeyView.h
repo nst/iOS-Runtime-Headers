@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBBackdropView, UIKBKeyView;
-
 @interface UIKBBlurredKeyView : UIKBKeyView {
     UIKBBackdropView *_backdropView;
     UIKBKeyView *_keyView;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKContentView;
-
 @interface WKFormRotatingAccessoryPopover : WKRotatingPopover <WKRotatingPopoverDelegate> {
     WKContentView *_view;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIDotScreen : _CIScreenFilter {
-}
+@interface CIDotScreen : _CIScreenFilter
 
 + (id)customAttributes;
 

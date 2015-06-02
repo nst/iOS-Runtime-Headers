@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIKBKeyDisplayContents;
-
 @interface UIKBKeyDisplayContents : NSObject {
     int _displayPathType;
     NSString *_displayString;
@@ -20,19 +18,19 @@
     NSArray *_variantDisplayContents;
 }
 
-@property int displayPathType;
-@property(retain) NSString * displayString;
-@property(retain) NSString * displayStringImage;
-@property(retain) UIKBKeyDisplayContents * fallbackContents;
-@property BOOL fillPath;
-@property BOOL force1xImages;
-@property(retain) NSArray * highlightedVariantsList;
-@property BOOL isCustomGlyph;
-@property(retain) NSString * secondaryDisplayString;
-@property(retain) NSString * secondaryDisplayStringImage;
-@property BOOL secondaryIsCustomGlyph;
-@property BOOL stringKeycapOverImage;
-@property(retain) NSArray * variantDisplayContents;
+@property (nonatomic) int displayPathType;
+@property (nonatomic, retain) NSString *displayString;
+@property (nonatomic, retain) NSString *displayStringImage;
+@property (nonatomic, retain) UIKBKeyDisplayContents *fallbackContents;
+@property (nonatomic) BOOL fillPath;
+@property (nonatomic) BOOL force1xImages;
+@property (nonatomic, retain) NSArray *highlightedVariantsList;
+@property (nonatomic) BOOL isCustomGlyph;
+@property (nonatomic, retain) NSString *secondaryDisplayString;
+@property (nonatomic, retain) NSString *secondaryDisplayStringImage;
+@property (nonatomic) BOOL secondaryIsCustomGlyph;
+@property (nonatomic) BOOL stringKeycapOverImage;
+@property (nonatomic, retain) NSArray *variantDisplayContents;
 
 + (id)displayContents;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIActivityIndicatorView, UIImageView, UILabel;
-
 @interface EKUIConferenceRoomSearchResultCell : UITableViewCell {
     UIImageView *_image;
     UIActivityIndicatorView *_spinner;

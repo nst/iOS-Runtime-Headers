@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputPassDescriptionInternal, NSArray;
-
 @interface AVAssetWriterInputPassDescription : NSObject {
     AVAssetWriterInputPassDescriptionInternal *_internal;
 }
 
-@property(readonly) NSArray * sourceTimeRanges;
+@property (nonatomic, readonly) NSArray *sourceTimeRanges;
 
 - (void)dealloc;
 - (id)description;

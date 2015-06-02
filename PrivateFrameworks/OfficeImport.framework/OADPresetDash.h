@@ -3,7 +3,7 @@
  */
 
 @interface OADPresetDash : OADDash {
-    unsigned int mIsTypeOverridden : 1;
+    unsigned int mIsTypeOverridden;
     unsigned char mType;
 }
 

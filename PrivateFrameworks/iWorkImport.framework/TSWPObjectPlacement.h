@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject, TSUUUIDPath;
-
 @interface TSWPObjectPlacement : NSObject {
     int _index;
     NSObject *_object;
     TSUUUIDPath *_uuidPath;
 }
 
-@property int index;
-@property(readonly) NSObject * object;
-@property(readonly) TSUUUIDPath * uuidPath;
+@property (nonatomic) int index;
+@property (nonatomic, readonly) NSObject *object;
+@property (nonatomic, readonly) TSUUUIDPath *uuidPath;
 
 + (id)objectPlacementWithObject:(id)arg1 uuidPath:(id)arg2 index:(int)arg3;
 

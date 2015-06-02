@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SSMutableURLRequestProperties;
-
 @interface SUScriptURLRequest : SUScriptObject {
     SSMutableURLRequestProperties *_requestProperties;
 }
 
-@property(copy) NSString * URLBagKey;
-@property(copy) id URLs;
-@property(copy) NSNumber * timeoutInterval;
+@property (copy) NSString *URLBagKey;
+@property (copy) id URLs;
+@property (copy) NSNumber *timeoutInterval;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

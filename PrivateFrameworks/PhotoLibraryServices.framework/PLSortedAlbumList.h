@@ -2,40 +2,30 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NSObject><NSCopying>, NSMutableOrderedSet, NSObject<PLAlbumContainer>, NSString;
-
 @interface PLSortedAlbumList : NSObject <PLAlbumContainer, PLIndexMappingCache> {
     struct NSObject { Class x1; } *_backingAlbumList;
     struct __CFArray { } *_fromBackingMap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sortComparator;
-
+    id /* block */ _sortComparator;
     struct __CFArray { } *_toBackingMap;
     NSMutableOrderedSet *_weak_albums;
 }
 
-@property(retain) NSMutableOrderedSet * _albums;
-@property(retain,readonly) NSString * _prettyDescription;
-@property(retain,readonly) NSString * _typeDescription;
-@property(readonly) unsigned int albumsCount;
-@property(copy,readonly) id albumsSortingComparator;
-@property(retain) NSObject<PLAlbumContainer> * backingAlbumList;
-@property(copy,readonly) <NSObject><NSCopying> * cachedIndexMapState;
-@property(readonly) unsigned int containersCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int filter;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isFolder;
-@property(copy) id sortComparator;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int unreadAlbumsCount;
+@property (nonatomic, retain) NSMutableOrderedSet *_albums;
+@property (nonatomic, readonly, retain) NSString *_prettyDescription;
+@property (nonatomic, readonly, retain) NSString *_typeDescription;
+@property (nonatomic, readonly) unsigned int albumsCount;
+@property (nonatomic, readonly, copy) id /* block */ albumsSortingComparator;
+@property (nonatomic, retain) NSObject<PLAlbumContainer> *backingAlbumList;
+@property (nonatomic, readonly, copy) <NSObject><NSCopying> *cachedIndexMapState;
+@property (nonatomic, readonly) unsigned int containersCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int filter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isFolder;
+@property (nonatomic, copy) id /* block */ sortComparator;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int unreadAlbumsCount;
 
 - (id)_albums;
 - (id)_prettyDescription;
@@ -44,7 +34,7 @@
 - (short)albumListType;
 - (id)albums;
 - (unsigned int)albumsCount;
-- (id)albumsSortingComparator;
+- (id /* block */)albumsSortingComparator;
 - (struct NSObject { Class x1; }*)backingAlbumList;
 - (id)cachedIndexMapState;
 - (BOOL)canEditAlbums;
@@ -60,7 +50,7 @@
 - (BOOL)hasAtLeastOneAlbum;
 - (id)identifier;
 - (unsigned int)indexInSortedAlbumsOfObject:(id)arg1;
-- (id)initWithAlbumList:(struct NSObject { Class x1; }*)arg1 sortComparator:(id)arg2;
+- (id)initWithAlbumList:(struct NSObject { Class x1; }*)arg1 sortComparator:(id /* block */)arg2;
 - (void)insertObject:(id)arg1 inSortedAlbumsAtIndex:(unsigned int)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isFolder;
@@ -75,9 +65,9 @@
 - (void)replaceObjectInSortedAlbumsAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)setBackingAlbumList:(struct NSObject { Class x1; }*)arg1;
 - (void)setNeedsReordering;
-- (void)setSortComparator:(id)arg1;
+- (void)setSortComparator:(id /* block */)arg1;
 - (void)set_albums:(id)arg1;
-- (id)sortComparator;
+- (id /* block */)sortComparator;
 - (unsigned int)unreadAlbumsCount;
 - (void)updateAlbumsOrderIfNeeded;
 

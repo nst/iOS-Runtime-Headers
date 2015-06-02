@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUISiriStatusViewAnimationDelegate>, <SiriUISiriStatusViewDelegate>, NSString, UIButton, UIImageView, UILongPressGestureRecognizer, UIScreen, UIView, _UISiriWaveyView;
-
 @interface SiriUISiriStatusView : UIView <SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate, _UISiriWaveyViewDelegate> {
     <SiriUISiriStatusViewAnimationDelegate> *_animationDelegate;
     UIButton *_button;
@@ -20,15 +18,15 @@
     float _waveyViewWidth;
 }
 
-@property <SiriUISiriStatusViewAnimationDelegate> * animationDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property <SiriUISiriStatusViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property float disabledMicOpacity;
-@property(readonly) unsigned int hash;
-@property int mode;
-@property(readonly) Class superclass;
-@property float waveyViewWidth;
+@property (nonatomic) <SiriUISiriStatusViewAnimationDelegate> *animationDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SiriUISiriStatusViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float disabledMicOpacity;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int mode;
+@property (readonly) Class superclass;
+@property (nonatomic) float waveyViewWidth;
 
 + (float)statusViewHeightForWidthSizeClass:(BOOL)arg1;
 

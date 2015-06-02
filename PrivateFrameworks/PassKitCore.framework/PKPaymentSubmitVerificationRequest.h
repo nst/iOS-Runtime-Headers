@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentSubmitVerificationRequest : PKPaymentWebServiceRequest {
-}
+@interface PKPaymentSubmitVerificationRequest : PKPaymentWebServiceRequest
 
 + (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 pass:(id)arg3 verificationCode:(id)arg4 verificationData:(id)arg5 account:(id)arg6;
 

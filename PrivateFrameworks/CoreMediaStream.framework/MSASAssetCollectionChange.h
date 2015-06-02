@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString;
-
 @interface MSASAssetCollectionChange : NSObject {
     NSString *_GUID;
     NSString *_ctag;
     BOOL _wasDeleted;
 }
 
-@property(retain) NSString * GUID;
-@property(retain) NSString * ctag;
-@property BOOL wasDeleted;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic, retain) NSString *ctag;
+@property (nonatomic) BOOL wasDeleted;
 
 - (void).cxx_destruct;
 - (id)GUID;

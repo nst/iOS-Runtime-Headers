@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSTExpressionNode;
-
 @interface TSTWPTokenAttachment : TSWPUIGraphicalAttachment {
     BOOL mActive;
     struct CGImage { } *mCachedImage;
@@ -34,13 +27,13 @@
     } mTextSize;
 }
 
-@property(getter=isActive) BOOL active;
-@property struct CGImage { }* cachedImage;
-@property float cachedImageScreenScale;
-@property(retain) TSTExpressionNode * expressionNode;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(getter=neverShowsMenu) BOOL neverShowsMenu;
-@property(getter=isSelected) BOOL selected;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) struct CGImage { }*cachedImage;
+@property (nonatomic) float cachedImageScreenScale;
+@property (nonatomic, retain) TSTExpressionNode *expressionNode;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (getter=neverShowsMenu, nonatomic) BOOL neverShowsMenu;
+@property (getter=isSelected, nonatomic) BOOL selected;
 
 - (id).cxx_construct;
 - (struct CGImage { }*)cachedImage;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWNodeEndOfDataMessage : BWNodeMessage {
-}
+@interface BWNodeEndOfDataMessage : BWNodeMessage
 
 + (id)newMessage;
 

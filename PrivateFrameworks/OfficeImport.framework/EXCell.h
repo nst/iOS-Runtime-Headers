@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXCell : NSObject {
-}
+@interface EXCell : NSObject
 
 + (double)dateTimeNumberFromXmlDateString:(id)arg1 state:(id)arg2;
 + (bool)edBoolFromXmlBoolString:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationPresenterWindow : UIWindow {
-}
+@interface UIDictationPresenterWindow : UIWindow
 
 - (BOOL)_canAffectStatusBarAppearance;
 

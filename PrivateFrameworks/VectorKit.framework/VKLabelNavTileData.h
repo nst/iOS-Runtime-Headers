@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMapTable, NSMutableArray, VKLabelTile;
-
 @interface VKLabelNavTileData : NSObject {
     BOOL _foundTileEdgeJunctions;
     NSMapTable *_geoJunctionToJunctionMap;
@@ -20,9 +18,9 @@
     NSMutableArray *_tileEdgeJunctions;
 }
 
-@property(retain,readonly) NSMutableArray * oppositeCarriagewayJunctions;
-@property BOOL oppositeCarriagewayJunctionsValid;
-@property(retain,readonly) VKLabelTile * tile;
+@property (nonatomic, readonly, retain) NSMutableArray *oppositeCarriagewayJunctions;
+@property (nonatomic) BOOL oppositeCarriagewayJunctionsValid;
+@property (nonatomic, readonly, retain) VKLabelTile *tile;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

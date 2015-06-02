@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUDatePickerDelegate>, FUScrollWheel, NSArray, NSDate, NSDateFormatter, NSMutableArray, NSString, UILabel;
-
 @interface FUDatePicker : UIView <FUScrollWheelDataSource, FUScrollWheelDelegate> {
     NSDate *_date;
     NSDateFormatter *_dateFormatter;
@@ -28,15 +26,15 @@
     NSMutableArray *_yearsWithNames;
 }
 
-@property(retain) NSDate * date;
-@property(retain) FUScrollWheel * dateWheel;
-@property(copy,readonly) NSString * debugDescription;
-@property <FUDatePickerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) FUScrollWheel * monthWheel;
-@property(readonly) Class superclass;
-@property(retain) FUScrollWheel * yearWheel;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) FUScrollWheel *dateWheel;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FUDatePickerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) FUScrollWheel *monthWheel;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) FUScrollWheel *yearWheel;
 
 - (void).cxx_destruct;
 - (void)_updateDateRange:(BOOL)arg1;

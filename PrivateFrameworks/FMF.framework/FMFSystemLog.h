@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMFSystemLog : NSObject {
-}
+@interface FMFSystemLog : NSObject
 
 + (id)sharedInstance;
 

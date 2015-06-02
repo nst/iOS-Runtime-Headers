@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDDiscoverUserInfosURLRequest : CKDURLRequest {
     NSMutableDictionary *_emailAliasToEmailAddress;
     NSArray *_emailsToDiscover;
     NSMutableDictionary *_hashedEmailByRequestID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
+    id /* block */ _progressBlock;
     NSArray *_userRecordIDsToDiscover;
     BOOL _wantsProtectionInfo;
 }
 
-@property(retain) NSMutableDictionary * emailAliasToEmailAddress;
-@property(retain) NSArray * emailsToDiscover;
-@property(retain) NSMutableDictionary * hashedEmailByRequestID;
-@property(copy) id progressBlock;
-@property(retain) NSArray * userRecordIDsToDiscover;
-@property BOOL wantsProtectionInfo;
+@property (nonatomic, retain) NSMutableDictionary *emailAliasToEmailAddress;
+@property (nonatomic, retain) NSArray *emailsToDiscover;
+@property (nonatomic, retain) NSMutableDictionary *hashedEmailByRequestID;
+@property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic, retain) NSArray *userRecordIDsToDiscover;
+@property (nonatomic) BOOL wantsProtectionInfo;
 
 - (void).cxx_destruct;
 - (id)emailAliasToEmailAddress;
@@ -34,7 +24,7 @@
 - (id)hashedEmailByRequestID;
 - (id)initWithEmailAddresses:(id)arg1 userRecordIDs:(id)arg2;
 - (int)operationType;
-- (id)progressBlock;
+- (id /* block */)progressBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
@@ -42,7 +32,7 @@
 - (void)setEmailAliasToEmailAddress:(id)arg1;
 - (void)setEmailsToDiscover:(id)arg1;
 - (void)setHashedEmailByRequestID:(id)arg1;
-- (void)setProgressBlock:(id)arg1;
+- (void)setProgressBlock:(id /* block */)arg1;
 - (void)setUserRecordIDsToDiscover:(id)arg1;
 - (void)setWantsProtectionInfo:(BOOL)arg1;
 - (id)userRecordIDsToDiscover;

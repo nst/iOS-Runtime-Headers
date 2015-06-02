@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AssistantViewControllerDelegate>, AUPasswordUIAlert, AUUIAlert, AssistantCallbackController, AssistantSubUIViewController, AssistantUIController, NSArray, NSDictionary, NSString, NetTopoMiniStaticLayout, UIActivityIndicatorView, UIBarButtonItem, UILabel, UITableView, UITextField, UIView;
-
 @interface AssistantUIViewController : AUUITableViewController <AUUIAlertDelegate, AssistantCallbackUIDelegate, AssistantUIDelegate, TableViewManagerDelegate, UINavigationControllerDelegate> {
     id _assistantDelegate;
     AssistantUIController *_assistantUIController;
@@ -43,38 +41,38 @@
     AUUIAlert *uiAlert;
 }
 
-@property(retain) AssistantUIController * _assistantUIController;
-@property(retain) AssistantCallbackController * _controllerContext;
-@property(retain) AUUIAlert * askUserQuestionAlert;
-@property <AssistantViewControllerDelegate> * assistantDelegate;
-@property(copy) NSDictionary * callerParamDict;
-@property(retain) UIBarButtonItem * cancelButton;
-@property(retain) AUUIAlert * connectionVerificationAlert;
-@property(retain) AssistantSubUIViewController * currentSubController;
-@property(retain) UITextField * currentTextField;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * justTextContainerView;
-@property UILabel * justTextLabel;
-@property int letMeChooseButtonIndex;
-@property(copy) NSString * macAddress;
-@property(retain) UITableView * mainTableView;
-@property(retain) UIBarButtonItem * nextButton;
-@property(copy) NSArray * paramScanResults;
-@property(retain) AUPasswordUIAlert * passwordAlert;
-@property int recommendationButtonIndex;
-@property(copy) NSDictionary * recommendationParamDict;
-@property int restoreButtonIndex;
-@property(copy) NSDictionary * scanInfoRecord;
-@property(retain) NSString * settingUpStatusText;
-@property(retain) UIView * spinnerWithStatusAdjacentView;
-@property(retain) UIView * spinnerWithStatusBelowView;
-@property(readonly) Class superclass;
-@property(retain) UIView * tableHeaderContainerView;
-@property(retain) NetTopoMiniStaticLayout * topoLayout;
-@property(retain) UIView * topoView;
-@property(retain) AUUIAlert * uiAlert;
+@property (nonatomic, retain) AssistantUIController *_assistantUIController;
+@property (nonatomic, retain) AssistantCallbackController *_controllerContext;
+@property (nonatomic, retain) AUUIAlert *askUserQuestionAlert;
+@property (nonatomic) <AssistantViewControllerDelegate> *assistantDelegate;
+@property (nonatomic, copy) NSDictionary *callerParamDict;
+@property (nonatomic, retain) UIBarButtonItem *cancelButton;
+@property (nonatomic, retain) AUUIAlert *connectionVerificationAlert;
+@property (nonatomic, retain) AssistantSubUIViewController *currentSubController;
+@property (nonatomic, retain) UITextField *currentTextField;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *justTextContainerView;
+@property (nonatomic) UILabel *justTextLabel;
+@property (nonatomic) int letMeChooseButtonIndex;
+@property (nonatomic, copy) NSString *macAddress;
+@property (nonatomic, retain) UITableView *mainTableView;
+@property (nonatomic, retain) UIBarButtonItem *nextButton;
+@property (nonatomic, copy) NSArray *paramScanResults;
+@property (nonatomic, retain) AUPasswordUIAlert *passwordAlert;
+@property (nonatomic) int recommendationButtonIndex;
+@property (nonatomic, copy) NSDictionary *recommendationParamDict;
+@property (nonatomic) int restoreButtonIndex;
+@property (nonatomic, copy) NSDictionary *scanInfoRecord;
+@property (retain) NSString *settingUpStatusText;
+@property (nonatomic, retain) UIView *spinnerWithStatusAdjacentView;
+@property (nonatomic, retain) UIView *spinnerWithStatusBelowView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *tableHeaderContainerView;
+@property (nonatomic, retain) NetTopoMiniStaticLayout *topoLayout;
+@property (nonatomic, retain) UIView *topoView;
+@property (nonatomic, retain) AUUIAlert *uiAlert;
 
 + (void)readjustSubviewsInContainer:(id)arg1;
 

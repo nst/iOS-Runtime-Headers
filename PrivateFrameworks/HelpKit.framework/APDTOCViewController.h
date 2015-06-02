@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDTOCViewControllerDelegate>, APDKVOManager, APDNavigationItem, NSMutableArray, NSString, UIActivityIndicatorView, UIButton, UIView;
-
 @interface APDTOCViewController : APDNavigationTableViewController <UIGestureRecognizerDelegate> {
     APDKVOManager *_KVOManager;
     UIButton *_copyrightFooterButton;
@@ -15,16 +13,16 @@
     BOOL _showingHelpInfo;
 }
 
-@property UIButton * copyrightFooterButton;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDTOCViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property UIView * footerViewSeparatorView;
-@property(readonly) unsigned int hash;
-@property UIActivityIndicatorView * loadingIndicator;
-@property UIView * loadingView;
-@property(retain) APDNavigationItem * pendingOpenItem;
-@property(readonly) Class superclass;
+@property (nonatomic) UIButton *copyrightFooterButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDTOCViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIView *footerViewSeparatorView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic) UIView *loadingView;
+@property (nonatomic, retain) APDNavigationItem *pendingOpenItem;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;

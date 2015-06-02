@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class MPMediaItemCollection;
-
 @interface PLPhotosDefaults : NSObject {
     MPMediaItemCollection *_musicCollection;
     int _secondsPerSlide;

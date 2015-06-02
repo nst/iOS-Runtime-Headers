@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, UIImageView, UILabel;
-
 @interface ABPersonCellContentView : UIView {
     UIImageView *_badge;
     BOOL _editing;
@@ -31,8 +29,8 @@
     } _valueViewRect;
 }
 
-@property(readonly) UILabel * label;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 + (void)computeLabelViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 valueViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 forSize:(struct CGSize { float x1; float x2; })arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstValueFrameForValueViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 whenEditing:(BOOL)arg3;

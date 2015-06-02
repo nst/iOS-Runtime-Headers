@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEORPCarPlayAuxiliaryControl, GEORPWatchAuxiliaryControl;
-
 @interface GEORPAuxiliaryControl : PBCodable <NSCopying> {
     GEORPCarPlayAuxiliaryControl *_car;
     GEORPWatchAuxiliaryControl *_watch;
 }
 
-@property(retain) GEORPCarPlayAuxiliaryControl * car;
-@property(readonly) BOOL hasCar;
-@property(readonly) BOOL hasWatch;
-@property(retain) GEORPWatchAuxiliaryControl * watch;
+@property (nonatomic, retain) GEORPCarPlayAuxiliaryControl *car;
+@property (nonatomic, readonly) BOOL hasCar;
+@property (nonatomic, readonly) BOOL hasWatch;
+@property (nonatomic, retain) GEORPWatchAuxiliaryControl *watch;
 
 - (id)car;
 - (void)copyTo:(id)arg1;

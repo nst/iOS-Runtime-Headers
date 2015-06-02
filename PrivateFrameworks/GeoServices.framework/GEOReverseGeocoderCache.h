@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOReverseGeocoderCache : NSCache {
-}
+@interface GEOReverseGeocoderCache : NSCache
 
 + (id)sharedCache;
 

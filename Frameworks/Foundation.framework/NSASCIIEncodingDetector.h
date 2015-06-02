@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSASCIIEncodingDetector : NSSingleByteEncodingDetector {
-}
+@interface NSASCIIEncodingDetector : NSSingleByteEncodingDetector
 
 - (double)confidence;
 - (id)init;

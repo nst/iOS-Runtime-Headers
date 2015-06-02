@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSString;
-
 @interface BLTPBHandleDidPlayLightsAndSirensReplyRequest : PBRequest <NSCopying> {
     double _date;
     BOOL _didPlayLightsAndSirens;
@@ -15,14 +13,14 @@
     NSString *_publisherMatchID;
 }
 
-@property double date;
-@property BOOL didPlayLightsAndSirens;
-@property BOOL hasDate;
-@property BOOL hasDidPlayLightsAndSirens;
-@property(readonly) BOOL hasPhoneSectionID;
-@property(readonly) BOOL hasPublisherMatchID;
-@property(retain) NSString * phoneSectionID;
-@property(retain) NSString * publisherMatchID;
+@property (nonatomic) double date;
+@property (nonatomic) BOOL didPlayLightsAndSirens;
+@property (nonatomic) BOOL hasDate;
+@property (nonatomic) BOOL hasDidPlayLightsAndSirens;
+@property (nonatomic, readonly) BOOL hasPhoneSectionID;
+@property (nonatomic, readonly) BOOL hasPublisherMatchID;
+@property (nonatomic, retain) NSString *phoneSectionID;
+@property (nonatomic, retain) NSString *publisherMatchID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

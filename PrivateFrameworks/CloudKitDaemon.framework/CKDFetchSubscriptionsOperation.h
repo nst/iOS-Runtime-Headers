@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray;
-
 @interface CKDFetchSubscriptionsOperation : CKDDatabaseOperation {
     BOOL _isFetchAllSubscriptionsOperation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _subscriptionFetchedProgressBlock;
-
+    id /* block */ _subscriptionFetchedProgressBlock;
     NSArray *_subscriptionIDs;
     NSArray *_subscriptions;
 }
 
-@property BOOL isFetchAllSubscriptionsOperation;
-@property(copy) id subscriptionFetchedProgressBlock;
-@property(retain) NSArray * subscriptionIDs;
-@property(retain) NSArray * subscriptions;
+@property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
+@property (nonatomic, copy) id /* block */ subscriptionFetchedProgressBlock;
+@property (nonatomic, retain) NSArray *subscriptionIDs;
+@property (nonatomic, retain) NSArray *subscriptions;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -31,10 +21,10 @@
 - (BOOL)isFetchAllSubscriptionsOperation;
 - (void)main;
 - (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
-- (void)setSubscriptionFetchedProgressBlock:(id)arg1;
+- (void)setSubscriptionFetchedProgressBlock:(id /* block */)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (void)setSubscriptions:(id)arg1;
-- (id)subscriptionFetchedProgressBlock;
+- (id /* block */)subscriptionFetchedProgressBlock;
 - (id)subscriptionIDs;
 - (id)subscriptions;
 

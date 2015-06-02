@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventStandardTravelTimeCell : EKCalendarChooserCell {
-}
+@interface EKEventStandardTravelTimeCell : EKCalendarChooserCell
 
 - (id)init;
 

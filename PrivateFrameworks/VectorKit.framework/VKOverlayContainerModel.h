@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <VKOverlayContainerDelegate>, <VKOverlayContainerRouteDelegate>, <VKRouteMatchedAnnotationPresentation>, NSMapTable, NSMutableArray, NSMutableSet, NSSet, NSString, VKSkyModel, VKStyleManager;
-
 @interface VKOverlayContainerModel : VKMapTileModel <VKMapLayer, VKRouteMatchedAnnotationPresentationObserver, VKStyleManagerObserver> {
     unsigned int _applicationState;
     struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; int x6; unsigned char x7; struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_2_1[2]; } x_8_1_1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_2_1[2]; } x_8_1_2; } x8; } *_clearItem;
@@ -38,22 +31,22 @@
     NSMutableSet *_visibleOverlays;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <VKOverlayContainerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isInRealisticMode,readonly) BOOL inRealisticMode;
-@property(readonly) BOOL isShowingRouteInStandardMode;
-@property(readonly) NSSet * persistentOverlays;
-@property(readonly) struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
-@property <VKOverlayContainerRouteDelegate> * routeDelegate;
-@property(retain) <VKRouteMatchedAnnotationPresentation> * routeLineSplitAnnotation;
-@property BOOL shouldCheckForOcclusion;
-@property BOOL shouldOccludeTraffic;
-@property BOOL shouldShowTraffic;
-@property(retain) VKSkyModel * skyModel;
-@property(readonly) VKStyleManager * styleManager;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VKOverlayContainerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isInRealisticMode, nonatomic, readonly) BOOL inRealisticMode;
+@property (nonatomic, readonly) BOOL isShowingRouteInStandardMode;
+@property (nonatomic, readonly) NSSet *persistentOverlays;
+@property (nonatomic, readonly) struct { struct VKPoint { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; double x2; BOOL x3; } puckPosition;
+@property (nonatomic) <VKOverlayContainerRouteDelegate> *routeDelegate;
+@property (nonatomic, retain) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
+@property (nonatomic) BOOL shouldCheckForOcclusion;
+@property (nonatomic) BOOL shouldOccludeTraffic;
+@property (nonatomic) BOOL shouldShowTraffic;
+@property (nonatomic, retain) VKSkyModel *skyModel;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 

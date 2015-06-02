@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigDelegateStorage, FigStateMachine;
-
 @interface FigCameraViewfinderStream : NSObject {
     FigDelegateStorage *_delegateStorage;
     struct OpaqueFigVirtualDisplaySource { } *_displaySource;

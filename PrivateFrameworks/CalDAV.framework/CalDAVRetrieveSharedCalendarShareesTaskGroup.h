@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet, NSString, NSURL;
-
 @interface CalDAVRetrieveSharedCalendarShareesTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
     NSSet *_sharees;
     NSURL *_url;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSSet * sharees;
-@property(readonly) Class superclass;
-@property(retain) NSURL * url;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSSet *sharees;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSURL *url;
 
 - (void)dealloc;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;

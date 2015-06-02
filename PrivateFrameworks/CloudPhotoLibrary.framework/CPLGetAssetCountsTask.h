@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineTransportGetAssetCountsTask>;
-
 @interface CPLGetAssetCountsTask : CPLEngineSyncTask {
     <CPLEngineTransportGetAssetCountsTask> *_transportTask;
 }

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL;
+@interface SAWeatherLocationSearch : SADomainCommand
 
-@interface SAWeatherLocationSearch : SADomainCommand {
-}
-
-@property(copy) NSURL * identifier;
-@property(copy) NSString * locationId;
+@property (nonatomic, copy) NSURL *identifier;
+@property (nonatomic, copy) NSString *locationId;
 
 + (id)locationSearch;
 + (id)locationSearchWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebBackForwardListPrivate, WebHistoryItem;
-
 @interface WebBackForwardList : NSObject {
     WebBackForwardListPrivate *_private;
 }
 
-@property(readonly) WebHistoryItem * backItem;
-@property(readonly) int backListCount;
-@property int capacity;
-@property(readonly) WebHistoryItem * currentItem;
-@property(readonly) WebHistoryItem * forwardItem;
-@property(readonly) int forwardListCount;
+@property (nonatomic, readonly) WebHistoryItem *backItem;
+@property (nonatomic, readonly) int backListCount;
+@property (nonatomic) int capacity;
+@property (nonatomic, readonly) WebHistoryItem *currentItem;
+@property (nonatomic, readonly) WebHistoryItem *forwardItem;
+@property (nonatomic, readonly) int forwardListCount;
 
 + (void)initialize;
 

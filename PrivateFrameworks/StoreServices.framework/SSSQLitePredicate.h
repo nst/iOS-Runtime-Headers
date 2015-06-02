@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSSQLitePredicate : NSObject <NSCopying> {
-}
+@interface SSSQLitePredicate : NSObject <NSCopying>
 
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;

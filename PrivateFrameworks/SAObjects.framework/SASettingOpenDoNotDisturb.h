@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenDoNotDisturb : SASettingOpenSettings {
-}
+@interface SASettingOpenDoNotDisturb : SASettingOpenSettings
 
 + (id)openDoNotDisturb;
 + (id)openDoNotDisturbWithDictionary:(id)arg1 context:(id)arg2;

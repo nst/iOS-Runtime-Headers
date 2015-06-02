@@ -2,31 +2,29 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSArray, NSString, NSURL;
-
 @interface AVAssetInspectorLoader : NSObject <AVAsynchronousKeyValueLoading, NSCopying> {
     AVWeakReference *_weakReference;
 }
 
-@property(readonly) NSURL * URL;
-@property(getter=_classForTrackInspectors,readonly) Class classForTrackInspectors;
-@property(getter=isCompatibleWithSavedPhotosAlbum,readonly) BOOL compatibleWithSavedPhotosAlbum;
-@property(getter=isComposable,readonly) BOOL composable;
-@property(readonly) unsigned long long downloadToken;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property(getter=isExportable,readonly) BOOL exportable;
-@property(getter=_figAsset,readonly) struct OpaqueFigAsset { }* figAsset;
-@property(readonly) NSArray * figChapterGroupInfo;
-@property(readonly) NSArray * figChapters;
-@property(getter=_formatReader,readonly) struct OpaqueFigFormatReader { }* formatReader;
-@property(readonly) BOOL hasProtectedContent;
-@property(readonly) NSString * lyrics;
-@property(getter=isPlayable,readonly) BOOL playable;
-@property(getter=_playbackItem,readonly) struct OpaqueFigPlaybackItem { }* playbackItem;
-@property(getter=isReadable,readonly) BOOL readable;
-@property(readonly) NSURL * resolvedURL;
-@property(getter=_isStreaming,readonly) BOOL streaming;
-@property(getter=_weakReference,readonly) AVWeakReference * weakReference;
+@property (nonatomic, readonly) NSURL *URL;
+@property (getter=_classForTrackInspectors, nonatomic, readonly) Class classForTrackInspectors;
+@property (getter=isCompatibleWithSavedPhotosAlbum, nonatomic, readonly) BOOL compatibleWithSavedPhotosAlbum;
+@property (getter=isComposable, nonatomic, readonly) BOOL composable;
+@property (nonatomic, readonly) unsigned long long downloadToken;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (getter=isExportable, nonatomic, readonly) BOOL exportable;
+@property (getter=_figAsset, nonatomic, readonly) struct OpaqueFigAsset { }*figAsset;
+@property (nonatomic, readonly) NSArray *figChapterGroupInfo;
+@property (nonatomic, readonly) NSArray *figChapters;
+@property (getter=_formatReader, nonatomic, readonly) struct OpaqueFigFormatReader { }*formatReader;
+@property (nonatomic, readonly) BOOL hasProtectedContent;
+@property (nonatomic, readonly) NSString *lyrics;
+@property (getter=isPlayable, nonatomic, readonly) BOOL playable;
+@property (getter=_playbackItem, nonatomic, readonly) struct OpaqueFigPlaybackItem { }*playbackItem;
+@property (getter=isReadable, nonatomic, readonly) BOOL readable;
+@property (nonatomic, readonly) NSURL *resolvedURL;
+@property (getter=_isStreaming, nonatomic, readonly) BOOL streaming;
+@property (getter=_weakReference, nonatomic, readonly) AVWeakReference *weakReference;
 
 + (void)initialize;
 
@@ -55,8 +53,8 @@
 - (BOOL)isExportable;
 - (BOOL)isPlayable;
 - (BOOL)isReadable;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id)arg3;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
 - (id)resolvedURL;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;

@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
+@interface BRCContainerMetadataSyncUpOperation : _BRCOperation <BRCOperationSubclass>
 
-@interface BRCContainerMetadataSyncUpOperation : _BRCOperation <BRCOperationSubclass> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)initWithSession:(id)arg1;
 - (void)main;
-- (void)performAfterSavingRecords:(id)arg1;
+- (void)performAfterSavingRecords:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 
 @end

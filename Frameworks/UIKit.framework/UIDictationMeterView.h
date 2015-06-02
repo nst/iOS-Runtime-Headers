@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, CALayer, NSMutableArray, NSTimer, UIImageView;
-
 @interface UIDictationMeterView : UIButton {
     CALayer *_animatingLayer;
     UIImageView *_background;
@@ -17,7 +15,7 @@
     unsigned int _powerPointer;
     float _releaseLevel;
     double _releaseStart;
-    float _runningPowerLevels[5];
+    float _runningPowerLevels;
     int _state;
 }
 

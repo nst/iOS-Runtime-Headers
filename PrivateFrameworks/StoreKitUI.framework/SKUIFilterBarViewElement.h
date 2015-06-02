@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDividerViewElement;
+@interface SKUIFilterBarViewElement : SKUIViewElement
 
-@interface SKUIFilterBarViewElement : SKUIViewElement {
-}
-
-@property(readonly) SKUIDividerViewElement * bottomDivider;
+@property (nonatomic, readonly) SKUIDividerViewElement *bottomDivider;
 
 - (id)bottomDivider;
 - (id)childViewElementsForAlignment:(unsigned int)arg1;
-- (void)enumerateChildrenUsingBlock:(id)arg1;
+- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (int)pageComponentType;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDate, NSLock, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityLocation;
-
 @interface _PFUbiquityRecordsExporter : NSObject {
     BOOL _allowTempLogStorage;
     NSDate *_lastTransactionDate;
@@ -19,15 +17,15 @@
     BOOL _useLocalStorage;
 }
 
-@property BOOL allowTempLogStorage;
-@property(readonly) PFUbiquityLocation * currentRootLocation;
-@property(retain) NSDate * lastTransactionDate;
-@property(readonly) NSString * localPeerID;
-@property(readonly) PFUbiquityLocation * localRootLocation;
-@property(readonly) BOOL pendingTempLogMove;
-@property BOOL throwOptimisticLockingException;
-@property(retain) PFUbiquityLocation * ubiquityRootLocation;
-@property BOOL useLocalStorage;
+@property (nonatomic) BOOL allowTempLogStorage;
+@property (nonatomic, readonly) PFUbiquityLocation *currentRootLocation;
+@property (retain) NSDate *lastTransactionDate;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) PFUbiquityLocation *localRootLocation;
+@property (nonatomic, readonly) BOOL pendingTempLogMove;
+@property (nonatomic) BOOL throwOptimisticLockingException;
+@property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
+@property (nonatomic) BOOL useLocalStorage;
 
 - (BOOL)allowTempLogStorage;
 - (void)beginWatchingForChangesFromStore:(id)arg1;

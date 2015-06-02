@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIStorePageSectionsDelegate>, NSArray, NSIndexPath, NSMapTable, NSMutableArray, NSMutableIndexSet, NSString, NSValue, SKUICollectionView, SKUIColorScheme, SKUIIndexBarControl, SKUILayoutCache, SKUIMetricsController, SKUIMetricsImpressionSession, SKUIProductPageOverlayController, SKUIResourceLoader, SKUIStackedBar, SKUIStorePageSplitsDescription, UICollectionView, UITapGestureRecognizer, UIView;
-
 @interface SKUIStorePageSectionsViewController : SKUIViewController <SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     SKUIProductPageOverlayController *_activeOverlayController;
@@ -43,19 +41,19 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(retain) SKUIMetricsImpressionSession * activeMetricsImpressionSession;
-@property(readonly) UICollectionView * collectionView;
-@property(copy) SKUIColorScheme * colorScheme;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIStorePageSectionsDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isDisplayingOverlays,readonly) BOOL displayingOverlays;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIIndexBarControl * indexBarControl;
-@property(retain) SKUIMetricsController * metricsController;
-@property int pinningTransitionStyle;
-@property(readonly) NSArray * sections;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIMetricsImpressionSession *activeMetricsImpressionSession;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic, copy) SKUIColorScheme *colorScheme;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIStorePageSectionsDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayingOverlays, nonatomic, readonly) BOOL displayingOverlays;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIIndexBarControl *indexBarControl;
+@property (nonatomic, retain) SKUIMetricsController *metricsController;
+@property (nonatomic) int pinningTransitionStyle;
+@property (nonatomic, readonly) NSArray *sections;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
@@ -71,8 +69,8 @@
 - (id)_defaultSectionForSwooshComponent:(id)arg1;
 - (void)_deselectCellsForAppearance:(BOOL)arg1;
 - (void)_endIgnoringSectionChanges;
-- (void)_enumerateSectionContextsUsingBlock:(id)arg1;
-- (void)_enumerateVisibleSectionsUsingBlock:(id)arg1;
+- (void)_enumerateSectionContextsUsingBlock:(id /* block */)arg1;
+- (void)_enumerateVisibleSectionsUsingBlock:(id /* block */)arg1;
 - (id)_expandContextForMenuComponent:(id)arg1;
 - (id)_impressionableViewElements;
 - (void)_initSKUIStorePageSectionsViewController;
@@ -97,7 +95,7 @@
 - (void)_setSelectedIndex:(int)arg1 forMenuSection:(id)arg2;
 - (id)_splitForSectionIndex:(int)arg1;
 - (id)_textLayoutCache;
-- (void)_updateCollectionViewWithUpdates:(id)arg1;
+- (void)_updateCollectionViewWithUpdates:(id /* block */)arg1;
 - (void)_updateSectionsAfterMenuChange;
 - (void)_updateSectionsForIndex:(int)arg1 menuSection:(id)arg2;
 - (id)_visibleMetricsImpressionsString;

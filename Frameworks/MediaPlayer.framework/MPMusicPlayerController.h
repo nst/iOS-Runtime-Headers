@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMusicPlayerControllerInternal;
-
 @interface MPMusicPlayerController : NSObject <MPMediaPlayback> {
     MPMusicPlayerControllerInternal *_internal;
 }
 
-@property float currentPlaybackRate;
-@property double currentPlaybackTime;
-@property(readonly) BOOL isPreparedToPlay;
+@property (nonatomic) float currentPlaybackRate;
+@property (nonatomic) double currentPlaybackTime;
+@property (nonatomic, readonly) BOOL isPreparedToPlay;
 
 + (id)applicationMusicPlayer;
 + (id)iPodMusicPlayer;

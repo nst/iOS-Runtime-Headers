@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDictionary;
-
 @interface RTAction : NSObject <NSSecureCoding> {
     NSDictionary *_options;
     int _type;
 }
 
-@property(readonly) NSDictionary * options;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic, readonly) int type;
 
 + (id)actionTypeToString:(int)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceSharedAttributionDelegate>, NSAttributedString, NSString;
-
 @interface MKSharedAttributionViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
     NSAttributedString *_attribution;
     <MKPlaceSharedAttributionDelegate> *_delegate;
     BOOL _isSelectable;
 }
 
-@property(copy) NSAttributedString * attribution;
-@property(copy,readonly) NSString * debugDescription;
-@property <MKPlaceSharedAttributionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isSelectable;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSAttributedString *attribution;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKPlaceSharedAttributionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isSelectable;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)attribution;

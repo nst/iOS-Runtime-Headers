@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface UIFontDescriptor : NSObject <NSCoding, NSCopying> {
     NSMutableDictionary *_attributes;
     id _reserved1;
@@ -13,10 +11,10 @@
     id _reserved5;
 }
 
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } matrix;
-@property(readonly) float pointSize;
-@property(readonly) NSString * postscriptName;
-@property(readonly) unsigned int symbolicTraits;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } matrix;
+@property (nonatomic, readonly) float pointSize;
+@property (nonatomic, readonly) NSString *postscriptName;
+@property (nonatomic, readonly) unsigned int symbolicTraits;
 
 + (id)_createMungledDictionary:(id)arg1;
 + (id)defaultFontDescriptorWithTextStyle:(id)arg1;

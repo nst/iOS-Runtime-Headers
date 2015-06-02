@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSArray, NSString;
-
 @interface SCRCMathArrayExpression : SCRCMathExpression {
     NSArray *_children;
 }
 
-@property(readonly) NSArray * mathMLAttributes;
-@property(readonly) NSString * mathMLTag;
+@property (nonatomic, readonly) NSArray *mathMLAttributes;
+@property (nonatomic, readonly) NSString *mathMLTag;
 
 - (id)childSpeakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 parentTreePosition:(id)arg3 childIndex:(unsigned int*)arg4;
 - (id)children;

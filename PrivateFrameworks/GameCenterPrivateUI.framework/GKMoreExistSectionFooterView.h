@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, NSString;
-
 @interface GKMoreExistSectionFooterView : UICollectionReusableView {
     GKLabel *_label;
 }
 
-@property(retain) GKLabel * label;
-@property(retain) NSString * text;
+@property (nonatomic, retain) GKLabel *label;
+@property (nonatomic, retain) NSString *text;
 
 + (float)defaultHeight;
 + (BOOL)requiresConstraintBasedLayout;

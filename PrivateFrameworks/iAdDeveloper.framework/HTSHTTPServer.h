@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
  */
 
-@class <HTSHTTPServerDelegate>, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface HTSHTTPServer : NSObject {
     NSMutableArray *_activeConnections;
     NSMutableDictionary *_authTokens;
@@ -28,20 +26,20 @@
     unsigned long long _totalBytesWritten;
 }
 
-@property double bandwidthStddev;
-@property int cacheMaxAge;
-@property struct __CFHTTPMessage { }* currentRequest;
-@property <HTSHTTPServerDelegate> * delegate;
-@property NSObject<OS_dispatch_queue> * delegateQueue;
-@property BOOL digestAuthenticationEnabled;
-@property(copy) NSString * documentRoot;
-@property double kbps;
-@property double latency;
-@property double latencyStddev;
-@property BOOL pipeliningEnabled;
-@property(readonly) unsigned short port;
-@property(readonly) unsigned long long totalBytesWritten;
-@property(readonly) NSString * urlString;
+@property (nonatomic) double bandwidthStddev;
+@property (nonatomic) int cacheMaxAge;
+@property (nonatomic) struct __CFHTTPMessage { }*currentRequest;
+@property (nonatomic) <HTSHTTPServerDelegate> *delegate;
+@property (nonatomic) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (nonatomic) BOOL digestAuthenticationEnabled;
+@property (nonatomic, copy) NSString *documentRoot;
+@property (nonatomic) double kbps;
+@property (nonatomic) double latency;
+@property (nonatomic) double latencyStddev;
+@property (nonatomic) BOOL pipeliningEnabled;
+@property (nonatomic, readonly) unsigned short port;
+@property (nonatomic, readonly) unsigned long long totalBytesWritten;
+@property (nonatomic, readonly) NSString *urlString;
 
 - (id)_authenticationResponseForRequest:(id)arg1;
 - (void)_cleanupListenSocket;

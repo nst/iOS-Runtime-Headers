@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface WDCitationAuthor : NSObject {
     NSString *mFirst;
     NSString *mLast;
 }
 
-@property(retain) NSString * first;
-@property(retain) NSString * last;
+@property (nonatomic, retain) NSString *first;
+@property (nonatomic, retain) NSString *last;
 
 - (void)dealloc;
 - (id)first;

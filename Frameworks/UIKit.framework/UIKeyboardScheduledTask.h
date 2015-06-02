@@ -2,50 +2,36 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSTimer, UIKeyboardTaskQueue, _UIActionWhenIdle;
-
 @interface UIKeyboardScheduledTask : NSObject {
     _UIActionWhenIdle *_deferredAction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _enqueuedTask;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _task;
-
+    id /* block */ _enqueuedTask;
+    id /* block */ _task;
     UIKeyboardTaskQueue *_taskQueue;
     double _timeInterval;
     NSTimer *_timer;
 }
 
-@property(retain) _UIActionWhenIdle * deferredAction;
-@property(copy) id enqueuedTask;
-@property(readonly) BOOL repeats;
-@property(readonly) id task;
-@property(readonly) UIKeyboardTaskQueue * taskQueue;
-@property(readonly) double timeInterval;
-@property(retain) NSTimer * timer;
+@property (nonatomic, retain) _UIActionWhenIdle *deferredAction;
+@property (nonatomic, copy) id /* block */ enqueuedTask;
+@property (nonatomic, readonly) BOOL repeats;
+@property (nonatomic, readonly) id /* block */ task;
+@property (nonatomic, readonly) UIKeyboardTaskQueue *taskQueue;
+@property (nonatomic, readonly) double timeInterval;
+@property (nonatomic, retain) NSTimer *timer;
 
 - (void)dealloc;
 - (id)deferredAction;
-- (id)enqueuedTask;
+- (id /* block */)enqueuedTask;
 - (void)handleDeferredTimerFiredEvent;
-- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3 task:(id)arg4;
+- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3 task:(id /* block */)arg4;
 - (void)invalidate;
 - (BOOL)isValid;
 - (BOOL)repeats;
 - (void)resetTimer;
 - (void)setDeferredAction:(id)arg1;
-- (void)setEnqueuedTask:(id)arg1;
+- (void)setEnqueuedTask:(id /* block */)arg1;
 - (void)setTimer:(id)arg1;
-- (id)task;
+- (id /* block */)task;
 - (id)taskQueue;
 - (double)timeInterval;
 - (id)timer;

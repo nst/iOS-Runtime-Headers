@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTImportWarningSet;
-
 @interface TSTTableDataImportWarningSet : TSTTableDataObject {
     TSTImportWarningSet *mImportWarningSet;
 }

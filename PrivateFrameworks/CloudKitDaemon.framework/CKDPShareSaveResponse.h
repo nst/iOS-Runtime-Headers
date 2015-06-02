@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPShare;
-
 @interface CKDPShareSaveResponse : PBCodable <NSCopying> {
     CKDPShare *_share;
 }
 
-@property(readonly) BOOL hasShare;
-@property(retain) CKDPShare * share;
+@property (nonatomic, readonly) BOOL hasShare;
+@property (nonatomic, retain) CKDPShare *share;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

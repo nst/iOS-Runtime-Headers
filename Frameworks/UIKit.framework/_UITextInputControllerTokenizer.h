@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextInputController;
-
 @interface _UITextInputControllerTokenizer : UITextInputStringTokenizer {
     UITextInputController *_textInput;
     struct __CFStringTokenizer { } *_tokenizer;

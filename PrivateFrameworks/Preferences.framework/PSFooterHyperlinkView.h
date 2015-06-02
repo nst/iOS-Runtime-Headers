@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, NSURL, UITextView;
-
 @interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
     NSURL *_URL;
     SEL _action;
@@ -16,15 +14,15 @@
     UITextView *_textView;
 }
 
-@property(retain) NSURL * URL;
+@property (retain) NSURL *URL;
 @property SEL action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } linkRange;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 @property id target;
-@property(retain) NSString * text;
+@property (retain) NSString *text;
 
 - (id)URL;
 - (void)_linkify;

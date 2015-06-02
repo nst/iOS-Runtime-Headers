@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGameInternal, NSArray, NSDate, NSDictionary, NSNumber, NSString;
-
 @interface GKPlayerInternal : GKInternalRepresentation {
     NSString *_alias;
     union { 
@@ -27,40 +25,40 @@
     NSString *_playerID;
 }
 
-@property(retain) NSString * accountName;
-@property(retain) NSString * alias;
-@property(retain) NSString * compositeName;
-@property(retain) NSArray * emailAddresses;
-@property(retain) NSString * facebookUserID;
-@property(getter=isFindable) BOOL findable;
-@property(retain) NSString * firstName;
-@property unsigned int flags;
-@property(retain) NSArray * friends;
-@property(retain) NSNumber * iCloudUserID;
-@property(readonly) BOOL isAnonymousPlayer;
-@property(readonly) BOOL isAutomatchPlayer;
-@property(readonly) BOOL isFriend;
-@property(readonly) BOOL isLoaded;
-@property(readonly) BOOL isLocalPlayer;
-@property(readonly) BOOL isUnknownPlayer;
-@property(retain) NSString * lastName;
-@property(retain) NSDate * lastPlayedDate;
-@property(retain) GKGameInternal * lastPlayedGame;
-@property unsigned int numberOfAchievementPoints;
-@property unsigned int numberOfAchievements;
-@property unsigned short numberOfChallenges;
-@property unsigned short numberOfFriends;
-@property unsigned short numberOfFriendsInCommon;
-@property unsigned short numberOfGames;
-@property unsigned short numberOfGamesInCommon;
-@property unsigned short numberOfRequests;
-@property unsigned short numberOfTurns;
-@property(getter=isPhotoPending) BOOL photoPending;
-@property(retain) NSDictionary * photos;
-@property(retain) NSString * playerID;
-@property(getter=isPurpleBuddyAccount) BOOL purpleBuddyAccount;
-@property(retain) NSString * status;
-@property(getter=isUnderage) BOOL underage;
+@property (nonatomic, retain) NSString *accountName;
+@property (nonatomic, retain) NSString *alias;
+@property (nonatomic, retain) NSString *compositeName;
+@property (nonatomic, retain) NSArray *emailAddresses;
+@property (nonatomic, retain) NSString *facebookUserID;
+@property (getter=isFindable, nonatomic) BOOL findable;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, retain) NSNumber *iCloudUserID;
+@property (nonatomic, readonly) BOOL isAnonymousPlayer;
+@property (nonatomic, readonly) BOOL isAutomatchPlayer;
+@property (nonatomic, readonly) BOOL isFriend;
+@property (nonatomic, readonly) BOOL isLoaded;
+@property (nonatomic, readonly) BOOL isLocalPlayer;
+@property (nonatomic, readonly) BOOL isUnknownPlayer;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSDate *lastPlayedDate;
+@property (nonatomic, retain) GKGameInternal *lastPlayedGame;
+@property (nonatomic) unsigned int numberOfAchievementPoints;
+@property (nonatomic) unsigned int numberOfAchievements;
+@property (nonatomic) unsigned short numberOfChallenges;
+@property (nonatomic) unsigned short numberOfFriends;
+@property (nonatomic) unsigned short numberOfFriendsInCommon;
+@property (nonatomic) unsigned short numberOfGames;
+@property (nonatomic) unsigned short numberOfGamesInCommon;
+@property (nonatomic) unsigned short numberOfRequests;
+@property (nonatomic) unsigned short numberOfTurns;
+@property (getter=isPhotoPending, nonatomic) BOOL photoPending;
+@property (nonatomic, retain) NSDictionary *photos;
+@property (nonatomic, retain) NSString *playerID;
+@property (getter=isPurpleBuddyAccount, nonatomic) BOOL purpleBuddyAccount;
+@property (nonatomic, retain) NSString *status;
+@property (getter=isUnderage, nonatomic) BOOL underage;
 
 + (Class)classForFamiliarity:(int)arg1;
 + (id)compositeNameForFirstName:(id)arg1 lastName:(id)arg2;

@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class MPMediaItemCollection, NSString, PUAirplayRoute;
-
 @interface PUSlideshowSettings : NSObject <NSCopying> {
     PUAirplayRoute *_airplayRoute;
     MPMediaItemCollection *_musicCollection;
     NSString *_transition;
 }
 
-@property(retain) PUAirplayRoute * airplayRoute;
-@property(readonly) BOOL isOrigamiTransition;
-@property(retain) MPMediaItemCollection * musicCollection;
-@property(copy) NSString * transition;
+@property (nonatomic, retain) PUAirplayRoute *airplayRoute;
+@property (nonatomic, readonly) BOOL isOrigamiTransition;
+@property (nonatomic, retain) MPMediaItemCollection *musicCollection;
+@property (nonatomic, copy) NSString *transition;
 
 + (id)settingsForAirplayRoute:(id)arg1;
 

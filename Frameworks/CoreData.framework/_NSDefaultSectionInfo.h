@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSFetchedResultsController, NSString;
-
 @interface _NSDefaultSectionInfo : NSObject <NSFetchedResultsSectionInfo> {
     NSFetchedResultsController *_controller;
     NSString *_indexTitle;
@@ -14,13 +12,13 @@
     unsigned int _sectionOffset;
 }
 
-@property(readonly) NSString * indexTitle;
-@property(readonly) NSString * name;
-@property(readonly) unsigned int numberOfObjects;
-@property(readonly) NSArray * objects;
-@property unsigned int oldSectionNumber;
-@property(readonly) unsigned int sectionNumber;
-@property(readonly) unsigned int sectionOffset;
+@property (nonatomic, readonly) NSString *indexTitle;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned int numberOfObjects;
+@property (nonatomic, readonly) NSArray *objects;
+@property (nonatomic) unsigned int oldSectionNumber;
+@property (nonatomic, readonly) unsigned int sectionNumber;
+@property (nonatomic, readonly) unsigned int sectionOffset;
 
 - (void)clearSectionObjectsCache;
 - (void)dealloc;

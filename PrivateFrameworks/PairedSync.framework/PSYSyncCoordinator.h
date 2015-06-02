@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PSYSyncCoordinatorDelegate>, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection, NSXPCListener, PSYSyncRestrictionProvider;
-
 @interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYSyncRestrictionProviderDelegate> {
     NSXPCConnection *_connection;
     <PSYSyncCoordinatorDelegate> *_delegate;
@@ -19,24 +13,20 @@
     BOOL _hasStartedListening;
     BOOL _isFullSyncInProgress;
     NSXPCListener *_listener;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pendingCompletion;
-
+    id /* block */ _pendingCompletion;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
     unsigned int _syncRestriction;
     PSYSyncRestrictionProvider *_syncRestrictionProvider;
 }
 
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <PSYSyncCoordinatorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSString * serviceName;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSYSyncCoordinatorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *serviceName;
+@property (readonly) Class superclass;
 @property unsigned int syncRestriction;
 
 + (void)initialize;
@@ -44,8 +34,8 @@
 
 - (void).cxx_destruct;
 - (void)_cleanup;
-- (void)beginDryRunSyncWithOptions:(id)arg1 completion:(id)arg2;
-- (oneway void)beginSyncWithOptions:(id)arg1 completion:(id)arg2;
+- (void)beginDryRunSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)beginSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)clearPersistentState;
 - (id)connection;
 - (id)defaultsCompletionErrorKey;
@@ -56,7 +46,7 @@
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)performDelegateBlock:(id)arg1;
+- (void)performDelegateBlock:(id /* block */)arg1;
 - (id)persistedCompletionError;
 - (int)persistedState;
 - (id)persistedTransactionID;

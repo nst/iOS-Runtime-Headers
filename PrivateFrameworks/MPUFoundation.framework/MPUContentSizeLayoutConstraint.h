@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUNotificationObserver, NSString, UILabel;
-
 @interface MPUContentSizeLayoutConstraint : NSLayoutConstraint {
     float _defaultSizeConstant;
     float _fontSizeMultiplier;
@@ -16,9 +14,9 @@
     float _textStyleDefaultLeading;
 }
 
-@property float defaultSizeConstant;
-@property float fontSizeMultiplier;
-@property(copy) NSString * textStyle;
+@property (nonatomic) float defaultSizeConstant;
+@property (nonatomic) float fontSizeMultiplier;
+@property (nonatomic, copy) NSString *textStyle;
 
 + (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 multiplier:(float)arg6 nonStandardLeading:(float)arg7;
 + (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 nonStandardLeading:(float)arg6;

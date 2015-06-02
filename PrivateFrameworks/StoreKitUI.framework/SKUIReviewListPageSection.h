@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIReviewListPageComponent, SKUIViewElementLayoutContext;
-
 @interface SKUIReviewListPageSection : SKUIStorePageSection {
     SKUIViewElementLayoutContext *_cellLayoutContext;
 }
 
-@property(readonly) SKUIReviewListPageComponent * pageComponent;
+@property (nonatomic, readonly) SKUIReviewListPageComponent *pageComponent;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForReviewIndex:(int)arg1;

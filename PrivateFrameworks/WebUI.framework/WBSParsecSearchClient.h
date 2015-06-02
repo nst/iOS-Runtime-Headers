@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <WBSParsecSearchClientStorage>, CLLocation, CLLocationManager, GEOUserSessionEntity, NSArray, NSMutableDictionary, NSNumber, NSString, NSThread, NSTimer, NSURL, NSURLQueryItem, NSURLSessionConfiguration, NSURLSessionTask, WBSParsecSearchMescalSession;
-
 @interface WBSParsecSearchClient : NSObject <CLLocationManagerDelegate> {
     NSString *_applicationNameForUserAgent;
     NSURLSessionTask *_bagFetchTask;
@@ -70,38 +64,38 @@
     int ipChangeNotificationToken;
 }
 
-@property(readonly) NSString * applicationNameForUserAgent;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled,readonly) BOOL enabled;
-@property(readonly) NSArray * enabledDomains;
-@property(readonly) BOOL feedbackEnabled;
-@property(readonly) NSURL * feedbackFallbackURL;
-@property(readonly) NSURL * feedbackURL;
-@property(readonly) NSString * firstUseDescriptionText;
-@property(readonly) NSString * firstUseLearnMoreText;
-@property(readonly) NSString * firstUseLearnMoreURLString;
-@property(readonly) GEOUserSessionEntity * geoUserSessionEntity;
-@property(readonly) unsigned int hash;
-@property /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  latestQueryTimestamp; /* unknown property attribute:  1000000000> >=q}} */
-@property(readonly) CLLocation * location;
-@property(readonly) unsigned int maximumCachedQueriesToSend;
-@property(readonly) unsigned int maximumCachedResultsToSend;
-@property(readonly) WBSParsecSearchMescalSession * mescalSession;
-@property(readonly) double minimumIntervalBetweenQueriesFromBag;
-@property double minimumIntervalBetweenQueriesFromSearchResponse;
-@property(readonly) unsigned int minimumQueryLength;
-@property(readonly) NSArray * optionalQueryItems;
-@property(readonly) NSNumber * otherRenderTimeout;
-@property BOOL safeModeEnabled;
-@property(readonly) NSURL * searchFallbackURL;
-@property(readonly) NSNumber * searchRenderTimeout;
-@property(readonly) NSURL * searchURL;
-@property(readonly) NSURLQueryItem * secretKeyQueryItem;
-@property(readonly) <WBSParsecSearchClientStorage> * storage;
-@property(readonly) Class superclass;
-@property(copy) NSArray * supportedDomainIdentifiers;
-@property(readonly) NSURLSessionConfiguration * urlSessionConfiguration;
+@property (nonatomic, readonly) NSString *applicationNameForUserAgent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) NSArray *enabledDomains;
+@property (nonatomic, readonly) BOOL feedbackEnabled;
+@property (nonatomic, readonly) NSURL *feedbackFallbackURL;
+@property (nonatomic, readonly) NSURL *feedbackURL;
+@property (nonatomic, readonly) NSString *firstUseDescriptionText;
+@property (nonatomic, readonly) NSString *firstUseLearnMoreText;
+@property (nonatomic, readonly) NSString *firstUseLearnMoreURLString;
+@property (nonatomic, readonly) GEOUserSessionEntity *geoUserSessionEntity;
+@property (readonly) unsigned int hash;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  latestQueryTimestamp; /* unknown property attribute:  1000000000> >=q}} */
+@property (nonatomic, readonly) CLLocation *location;
+@property (nonatomic, readonly) unsigned int maximumCachedQueriesToSend;
+@property (nonatomic, readonly) unsigned int maximumCachedResultsToSend;
+@property (nonatomic, readonly) WBSParsecSearchMescalSession *mescalSession;
+@property (nonatomic, readonly) double minimumIntervalBetweenQueriesFromBag;
+@property (nonatomic) double minimumIntervalBetweenQueriesFromSearchResponse;
+@property (nonatomic, readonly) unsigned int minimumQueryLength;
+@property (nonatomic, readonly) NSArray *optionalQueryItems;
+@property (nonatomic, readonly) NSNumber *otherRenderTimeout;
+@property (nonatomic) BOOL safeModeEnabled;
+@property (nonatomic, readonly) NSURL *searchFallbackURL;
+@property (nonatomic, readonly) NSNumber *searchRenderTimeout;
+@property (nonatomic, readonly) NSURL *searchURL;
+@property (nonatomic, readonly) NSURLQueryItem *secretKeyQueryItem;
+@property (nonatomic, readonly) <WBSParsecSearchClientStorage> *storage;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedDomainIdentifiers;
+@property (nonatomic, readonly) NSURLSessionConfiguration *urlSessionConfiguration;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -117,10 +111,10 @@
 - (id)_localeQueryItem;
 - (id)_locationSourceForLocation:(id)arg1;
 - (void)_locationThread;
-- (void)_performBlock:(id)arg1;
-- (void)_performBlockOnLocationThread:(id)arg1;
-- (void)_performBlockOnLocationThread:(id)arg1 wait:(BOOL)arg2;
-- (void)_performBlockOnLocationThreadAndWait:(id)arg1;
+- (void)_performBlock:(id /* block */)arg1;
+- (void)_performBlockOnLocationThread:(id /* block */)arg1;
+- (void)_performBlockOnLocationThread:(id /* block */)arg1 wait:(BOOL)arg2;
+- (void)_performBlockOnLocationThreadAndWait:(id /* block */)arg1;
 - (void)_refreshGEOUserSession;
 - (void)_requestDeviceIP;
 - (void)_setDeviceIP:(id)arg1;

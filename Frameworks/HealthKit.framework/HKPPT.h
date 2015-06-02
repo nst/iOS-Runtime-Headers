@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSMutableDictionary;
-
 @interface HKPPT : NSObject {
     id _application;
     NSMutableDictionary *_healthStores;
 }
 
-@property(retain) id application;
-@property(retain) NSMutableDictionary * healthStores;
+@property (nonatomic, retain) id application;
+@property (nonatomic, retain) NSMutableDictionary *healthStores;
 
 - (void).cxx_destruct;
 - (id)_createStepSampleWithStepCount:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;

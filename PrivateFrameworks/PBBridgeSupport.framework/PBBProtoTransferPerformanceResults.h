@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSMutableArray;
-
 @interface PBBProtoTransferPerformanceResults : PBCodable <NSCopying> {
     NSMutableArray *_macroActivites;
     NSMutableArray *_measures;
     NSMutableArray *_milestones;
 }
 
-@property(retain) NSMutableArray * macroActivites;
-@property(retain) NSMutableArray * measures;
-@property(retain) NSMutableArray * milestones;
+@property (nonatomic, retain) NSMutableArray *macroActivites;
+@property (nonatomic, retain) NSMutableArray *measures;
+@property (nonatomic, retain) NSMutableArray *milestones;
 
 - (void).cxx_destruct;
 - (void)addMacroActivites:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWNodeError;
-
 @interface BWNodeErrorMessage : BWNodeMessage {
     BWNodeError *_nodeError;
 }
 
-@property(readonly) BWNodeError * nodeError;
+@property (readonly) BWNodeError *nodeError;
 
 + (id)newMessageWithNodeError:(id)arg1;
 

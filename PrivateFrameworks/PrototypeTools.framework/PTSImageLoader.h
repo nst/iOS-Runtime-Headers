@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class <PTSImageLoaderDelegate>, NSString;
-
 @interface PTSImageLoader : NSObject {
     <PTSImageLoaderDelegate> *_delegate;
     BOOL _loading;
     NSString *_path;
 }
 
-@property <PTSImageLoaderDelegate> * delegate;
-@property(getter=isLoading) BOOL loading;
+@property (nonatomic) <PTSImageLoaderDelegate> *delegate;
+@property (getter=isLoading) BOOL loading;
 
 - (void).cxx_destruct;
 - (id)delegate;

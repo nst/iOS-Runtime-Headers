@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIView;
-
 @interface MPFlipTransitionController : MPTransitionController {
     UIView *_fromView;
     struct CGRect { 
@@ -19,9 +17,9 @@
     float _topMargin;
 }
 
-@property(retain) UIView * fromView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toFrame;
-@property float topMargin;
+@property (nonatomic, retain) UIView *fromView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } toFrame;
+@property (nonatomic) float topMargin;
 
 - (void).cxx_destruct;
 - (id)_subtypeForTransitionType:(unsigned int)arg1;

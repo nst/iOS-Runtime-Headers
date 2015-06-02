@@ -2,26 +2,18 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface HDNanoSyncRequestContext : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     BOOL _pullRequest;
 }
 
-@property(copy,readonly) id completion;
-@property(getter=isPullRequest,readonly) BOOL pullRequest;
+@property (nonatomic, readonly, copy) id /* block */ completion;
+@property (getter=isPullRequest, nonatomic, readonly) BOOL pullRequest;
 
-+ (id)requestContextWithCompletion:(id)arg1 pullRequest:(BOOL)arg2;
++ (id)requestContextWithCompletion:(id /* block */)arg1 pullRequest:(BOOL)arg2;
 
 - (void).cxx_destruct;
-- (id)completion;
+- (id /* block */)completion;
 - (BOOL)isPullRequest;
 
 @end

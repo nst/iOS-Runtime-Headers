@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWImageQueueSinkNodePreviewTapDelegate>;
-
 @interface BWImageQueueSinkNode : BWSinkNode {
     struct _CAImageQueue { } *_imageQueue;
     unsigned int _imageQueueCapacity;
@@ -16,9 +14,9 @@
     BOOL _syncedWithDisplay;
 }
 
-@property(readonly) struct _CAImageQueue { }* imageQueue;
-@property(readonly) unsigned int imageQueueSlot;
-@property <BWImageQueueSinkNodePreviewTapDelegate> * previewTapDelegate;
+@property (nonatomic, readonly) struct _CAImageQueue { }*imageQueue;
+@property (nonatomic, readonly) unsigned int imageQueueSlot;
+@property (nonatomic) <BWImageQueueSinkNodePreviewTapDelegate> *previewTapDelegate;
 
 + (void)initialize;
 

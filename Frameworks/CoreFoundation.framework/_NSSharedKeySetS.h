@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@class _NSSharedKeySetS;
-
 @interface _NSSharedKeySetS : NSObject <NSCopying> {
     unsigned int _M;
     double _c;
-    unsigned char *_ckeys[3];
+    unsigned char *_ckeys;
     unsigned int _factor;
     char *_g;
     unsigned int _keyLen;
-    unsigned short *_keys1[1];
-    unsigned short *_keys2[2];
-    unsigned short *_keys3[3];
+    unsigned short *_keys1;
+    unsigned short *_keys2;
+    unsigned short *_keys3;
     unsigned int _numKey;
     void *_rankTable;
     unsigned int *_seeds;
@@ -24,25 +22,25 @@
 
 @property unsigned int M;
 @property double c;
-@property unsigned char* ckeys;
+@property unsigned char*ckeys;
 @property unsigned int factor;
-@property char * g;
+@property char *g;
 @property unsigned int keyLen;
-@property unsigned short* keys1;
-@property unsigned short* keys2;
-@property unsigned short* keys3;
+@property unsigned short*keys1;
+@property unsigned short*keys2;
+@property unsigned short*keys3;
 @property unsigned int numKey;
-@property void* rankTable;
-@property unsigned int* seeds;
+@property void*rankTable;
+@property unsigned int*seeds;
 @property unsigned char select;
-@property(retain) _NSSharedKeySetS * subSharedKeySet;
+@property (retain) _NSSharedKeySetS *subSharedKeySet;
 @property unsigned int type;
 
 - (unsigned int)M;
 - (id)allKeys;
 - (char *)bytesAtIndex:(unsigned int)arg1;
 - (double)c;
-- (unsigned char*[3])ckeys;
+- (unsigned char*)ckeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
@@ -60,9 +58,9 @@
 - (unsigned short*)keyAtIndex:(unsigned int)arg1;
 - (unsigned int)keyLen;
 - (unsigned int)keySetCount;
-- (unsigned short*[1])keys1;
-- (unsigned short*[2])keys2;
-- (unsigned short*[3])keys3;
+- (unsigned short*)keys1;
+- (unsigned short*)keys2;
+- (unsigned short*)keys3;
 - (unsigned int)maximumIndex;
 - (id)newKeySetWithKeys:(id)arg1 encoding:(unsigned long)arg2;
 - (unsigned int)numKey;
@@ -70,13 +68,13 @@
 - (unsigned int*)seeds;
 - (unsigned char)select;
 - (void)setC:(double)arg1;
-- (void)setCkeys:(unsigned char*[3])arg1;
+- (void)setCkeys:(unsigned char*)arg1;
 - (void)setFactor:(unsigned int)arg1;
 - (void)setG:(char *)arg1;
 - (void)setKeyLen:(unsigned int)arg1;
-- (void)setKeys1:(unsigned short*[1])arg1;
-- (void)setKeys2:(unsigned short*[2])arg1;
-- (void)setKeys3:(unsigned short*[3])arg1;
+- (void)setKeys1:(unsigned short*)arg1;
+- (void)setKeys2:(unsigned short*)arg1;
+- (void)setKeys3:(unsigned short*)arg1;
 - (void)setM:(unsigned int)arg1;
 - (void)setNumKey:(unsigned int)arg1;
 - (void)setRankTable:(void*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, _UIFlowLayoutInfo;
-
 @interface UICollectionViewFlowLayout : UICollectionViewLayout {
     struct CGPoint { 
         float x; 
@@ -65,15 +63,15 @@
     } _sectionInset;
 }
 
-@property struct CGSize { float x1; float x2; } estimatedItemSize;
-@property(getter=_estimatesSizes,readonly) BOOL estimatesSizes;
-@property struct CGSize { float x1; float x2; } footerReferenceSize;
-@property struct CGSize { float x1; float x2; } headerReferenceSize;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property float minimumInteritemSpacing;
-@property float minimumLineSpacing;
-@property int scrollDirection;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
+@property (nonatomic) struct CGSize { float x1; float x2; } estimatedItemSize;
+@property (getter=_estimatesSizes, nonatomic, readonly) BOOL estimatesSizes;
+@property (nonatomic) struct CGSize { float x1; float x2; } footerReferenceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } headerReferenceSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic) float minimumInteritemSpacing;
+@property (nonatomic) float minimumLineSpacing;
+@property (nonatomic) int scrollDirection;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
 
 + (Class)invalidationContextClass;
 

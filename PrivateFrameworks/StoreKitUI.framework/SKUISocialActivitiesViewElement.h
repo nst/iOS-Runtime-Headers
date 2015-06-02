@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUISocialActivitiesViewElement : SKUIViewElement {
-}
+@interface SKUISocialActivitiesViewElement : SKUIViewElement
 
 @end

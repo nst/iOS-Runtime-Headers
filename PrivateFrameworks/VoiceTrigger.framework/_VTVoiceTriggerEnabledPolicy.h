@@ -11,7 +11,7 @@
 - (void)_listenForReload;
 - (void)_update;
 - (void)dealloc;
-- (id)initWithCallback:(id)arg1 queue:(id)arg2;
+- (id)initWithCallback:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isEnabled;
 
 @end

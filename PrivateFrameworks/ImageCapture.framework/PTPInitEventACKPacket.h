@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@interface PTPInitEventACKPacket : NSObject {
-}
+@interface PTPInitEventACKPacket : NSObject
 
 - (id)contentForTCP;
 - (id)description;

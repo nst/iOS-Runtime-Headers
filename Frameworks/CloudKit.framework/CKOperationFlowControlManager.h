@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSMutableDictionary;
-
 @interface CKOperationFlowControlManager : NSObject {
     NSMutableDictionary *_flowControlledOperationClasses;
 }
 
-@property(readonly) NSMutableDictionary * flowControlledOperationClasses;
+@property (readonly) NSMutableDictionary *flowControlledOperationClasses;
 
 - (void).cxx_destruct;
 - (id)flowControlledOperationClasses;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDData;
-
 @interface CHDBubbleSeries : CHDSeries {
     bool mBubble3D;
     bool mInvertIfNegative;

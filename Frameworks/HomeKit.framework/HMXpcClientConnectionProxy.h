@@ -2,35 +2,25 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class HMMessageDispatcher, NSString;
-
 @interface HMXpcClientConnectionProxy : NSObject <HMMessageTransport> {
     HMMessageDispatcher *_recvDispatcher;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _refreshHandler;
-
+    id /* block */ _refreshHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) HMMessageDispatcher * recvDispatcher;
-@property(copy) id refreshHandler;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HMMessageDispatcher *recvDispatcher;
+@property (nonatomic, copy) id /* block */ refreshHandler;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
-- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id)arg5;
-- (id)initWithMessageDispatcher:(id)arg1 refreshHandler:(id)arg2;
+- (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id /* block */)arg5;
+- (id)initWithMessageDispatcher:(id)arg1 refreshHandler:(id /* block */)arg2;
 - (id)recvDispatcher;
-- (id)refreshHandler;
+- (id /* block */)refreshHandler;
 - (void)setRecvDispatcher:(id)arg1;
-- (void)setRefreshHandler:(id)arg1;
+- (void)setRefreshHandler:(id /* block */)arg1;
 
 @end

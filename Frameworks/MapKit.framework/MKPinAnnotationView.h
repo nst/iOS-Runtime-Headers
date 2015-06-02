@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImageView;
-
 @interface MKPinAnnotationView : MKAnnotationView {
     BOOL _animatesDrop;
     id _delegate;
@@ -12,8 +10,8 @@
     int _state;
 }
 
-@property BOOL animatesDrop;
-@property unsigned int pinColor;
+@property (nonatomic) BOOL animatesDrop;
+@property (nonatomic) unsigned int pinColor;
 
 + (id)_bounceAnimation;
 + (struct CGPoint { float x1; float x2; })_calloutOffset;

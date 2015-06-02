@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStyle, GQDWPLayoutStorage;
-
 @interface GQDWPLayoutFrame : NSObject {
     GQDWPLayoutStorage *mStorage;
     GQDSStyle *mStyle;

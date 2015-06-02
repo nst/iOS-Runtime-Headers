@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSArray, NSURL, UIImageView, UILabel, UIMoviePlayerController, YTSearchRequest, YTVideo;
-
 @interface YTMovieView : UIView {
     UIImageView *_bugView;
     BOOL _canAutoPlay;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPersistentStore, NSSQLiteConnection, NSString, PFUbiquityLocation;
-
 @interface PFUbiquityStoreMetadataMedic : NSObject {
     NSSQLiteConnection *_connection;
     NSString *_localPeerID;
@@ -12,11 +10,11 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
-@property(readonly) NSSQLiteConnection * connection;
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSPersistentStore * store;
-@property(readonly) NSString * storeName;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
+@property (nonatomic, readonly) NSSQLiteConnection *connection;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) NSPersistentStore *store;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
 
 - (BOOL)addTransactionHistoryEntriesForObjectIDs:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;
 - (BOOL)cacheMetadataForTransactionLog:(id)arg1 withImportContext:(id)arg2 error:(id*)arg3;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class <SGReverseTemplateJS>, NSString, NSXPCConnection, SGAsset;
-
 @interface SGExtractionDissector : NSObject <SGPipelineDissector> {
     SGAsset *_asset;
     <SGReverseTemplateJS> *_reverseTemplateJS;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)addParams:(id)arg1 toParameterizedString:(id)arg2;
 + (id)addressDictionaryToString:(id)arg1;

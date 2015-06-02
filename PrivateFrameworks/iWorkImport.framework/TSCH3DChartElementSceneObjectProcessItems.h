@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartElementProperties, TSCH3DChartElementSceneObject, TSCH3DRenderProcessor, TSCH3DSceneRenderPipeline;
-
 @interface TSCH3DChartElementSceneObjectProcessItems : NSObject <TSCHUnretainedParent> {
     struct vector<TSCH3D::RenderElementInfo, std::__1::allocator<TSCH3D::RenderElementInfo> > { 
         struct RenderElementInfo {} *__begin_; 
@@ -17,10 +15,10 @@
     TSCH3DChartElementSceneObject *mSceneObject;
 }
 
-@property(readonly) BOOL geometryOnly;
-@property(readonly) TSCH3DRenderProcessor * processor;
-@property(readonly) BOOL pushStates;
-@property(readonly) BOOL useBoundsGeometry;
+@property (nonatomic, readonly) BOOL geometryOnly;
+@property (nonatomic, readonly) TSCH3DRenderProcessor *processor;
+@property (nonatomic, readonly) BOOL pushStates;
+@property (nonatomic, readonly) BOOL useBoundsGeometry;
 
 + (id)processItemsWithSceneObject:(id)arg1 properties:(id)arg2 pipeline:(id)arg3;
 
@@ -28,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)clearParent;
 - (void)dealloc;
-- (struct RenderElementInfo { id x1; id x2; id x3; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_4_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_4_1_2; } x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; })elementInfoWithSeries:(id)arg1 position:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
+- (struct RenderElementInfo { id x1; id x2; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x3; void x4; void*x5; BOOL x6; void*x7; void*x8; int x9; in void*x10; void*x11; void*x12; union { int x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; union { int x_14_1_1; int x_14_1_2; int x_14_1_3; } x14; })elementInfoWithSeries:(id)arg1 position:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg2;
 - (BOOL)geometryOnly;
 - (id)initWithSceneObject:(id)arg1 properties:(id)arg2 pipeline:(id)arg3;
 - (BOOL)p_delayedItemsAreUnique;

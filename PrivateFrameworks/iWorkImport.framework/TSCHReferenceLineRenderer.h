@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHReferenceLineRenderer : TSCHRenderer {
-}
+@interface TSCHReferenceLineRenderer : TSCHRenderer
 
 - (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
 - (BOOL)canRenderSelectionPath:(id)arg1;

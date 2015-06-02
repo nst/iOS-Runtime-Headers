@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSHashTable, NSMapTable, NSObject<OS_dispatch_queue>;
-
 @interface FigCaptureSessionObservatory : NSObject {
     NSMapTable *_captureSessionsStorage;
     long long _lastRunningIdentifier;

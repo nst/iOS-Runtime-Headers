@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptNavigationItem>, NSArray, NSString, SUScriptButton, SUScriptNavigationItem;
+@interface SUScriptNavigationBar : SUScriptObject
 
-@interface SUScriptNavigationBar : SUScriptObject {
-}
-
-@property(readonly) SUScriptNavigationItem * backNavigationItem;
+@property (readonly) SUScriptNavigationItem *backNavigationItem;
 @property int barStyle;
-@property(readonly) int barStyleBlack;
-@property(readonly) int barStyleDefault;
-@property(retain) SUScriptButton * leftButton;
-@property(retain) <SUScriptNavigationItem> * leftItem;
-@property(readonly) NSArray * navigationItems;
-@property(retain) NSString * prompt;
-@property(retain) SUScriptButton * rightButton;
-@property(retain) <SUScriptNavigationItem> * rightItem;
-@property(readonly) SUScriptNavigationItem * topNavigationItem;
-@property(copy) id translucent;
+@property (readonly) int barStyleBlack;
+@property (readonly) int barStyleDefault;
+@property (retain) SUScriptButton *leftButton;
+@property (retain) <SUScriptNavigationItem> *leftItem;
+@property (readonly) NSArray *navigationItems;
+@property (retain) NSString *prompt;
+@property (retain) SUScriptButton *rightButton;
+@property (retain) <SUScriptNavigationItem> *rightItem;
+@property (readonly) SUScriptNavigationItem *topNavigationItem;
+@property (copy) id translucent;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

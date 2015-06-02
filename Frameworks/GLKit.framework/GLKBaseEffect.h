@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKEffect, GLKEffectPropertyConstantColor, GLKEffectPropertyFog, GLKEffectPropertyLight, GLKEffectPropertyMaterial, GLKEffectPropertyTexture, GLKEffectPropertyTransform, NSArray, NSMutableArray, NSString;
-
 @interface GLKBaseEffect : NSObject <GLKNamedEffect> {
     unsigned char _colorMaterialEnabled;
     union _GLKVector4 { 
@@ -70,28 +68,28 @@
     unsigned char _useConstantColor;
 }
 
-@property unsigned char colorMaterialEnabled;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } constantColor;
-@property(readonly) GLKEffectPropertyConstantColor * constantColorProp;
-@property GLKEffect * effect;
-@property unsigned char effectStale;
-@property(readonly) GLKEffectPropertyFog * fog;
-@property(copy) NSString * label;
-@property(readonly) GLKEffectPropertyLight * light0;
-@property(readonly) GLKEffectPropertyLight * light1;
-@property(readonly) GLKEffectPropertyLight * light2;
-@property union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } lightModelAmbientColor;
-@property unsigned char lightModelTwoSided;
-@property int lightingType;
-@property(readonly) GLKEffectPropertyMaterial * material;
-@property unsigned int programName;
-@property(readonly) NSMutableArray * propertyArray;
-@property unsigned char propertyArrayStale;
-@property(readonly) GLKEffectPropertyTexture * texture2d0;
-@property(readonly) GLKEffectPropertyTexture * texture2d1;
-@property(copy) NSArray * textureOrder;
-@property(readonly) GLKEffectPropertyTransform * transform;
-@property unsigned char useConstantColor;
+@property (nonatomic) unsigned char colorMaterialEnabled;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } constantColor;
+@property (nonatomic, readonly) GLKEffectPropertyConstantColor *constantColorProp;
+@property (nonatomic) GLKEffect *effect;
+@property (nonatomic) unsigned char effectStale;
+@property (nonatomic, readonly) GLKEffectPropertyFog *fog;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly) GLKEffectPropertyLight *light0;
+@property (nonatomic, readonly) GLKEffectPropertyLight *light1;
+@property (nonatomic, readonly) GLKEffectPropertyLight *light2;
+@property (nonatomic) union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; } lightModelAmbientColor;
+@property (nonatomic) unsigned char lightModelTwoSided;
+@property (nonatomic) int lightingType;
+@property (nonatomic, readonly) GLKEffectPropertyMaterial *material;
+@property (nonatomic) unsigned int programName;
+@property (nonatomic, readonly) NSMutableArray *propertyArray;
+@property (nonatomic) unsigned char propertyArrayStale;
+@property (nonatomic, readonly) GLKEffectPropertyTexture *texture2d0;
+@property (nonatomic, readonly) GLKEffectPropertyTexture *texture2d1;
+@property (nonatomic, copy) NSArray *textureOrder;
+@property (nonatomic, readonly) GLKEffectPropertyTransform *transform;
+@property (nonatomic) unsigned char useConstantColor;
 
 - (unsigned char)colorMaterialEnabled;
 - (union _GLKVector4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; float x4[4]; })constantColor;

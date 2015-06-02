@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@interface TPLegacyWell : UIImageView {
-}
+@interface TPLegacyWell : UIImageView
 
 - (id)initWithImage:(id)arg1;
 

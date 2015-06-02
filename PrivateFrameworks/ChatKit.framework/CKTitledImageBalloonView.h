@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKTitledImageBalloonViewDelegate>, NSString, UIImageView, UILabel;
-
 @interface CKTitledImageBalloonView : CKImageBalloonView {
     UIImageView *_chevron;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImageView * chevron;
-@property <CKTitledImageBalloonViewDelegate> * delegate;
-@property(copy) NSString * title;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UIImageView *chevron;
+@property (nonatomic) <CKTitledImageBalloonViewDelegate> *delegate;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)chevron;

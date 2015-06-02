@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class <JSONHTTPRequestDelegate>, NSData, NSDictionary, NSHTTPURLResponse, NSMutableData, NSMutableURLRequest, NSString, NSURLConnection, OAURLRequestSigner;
-
 @interface JSONHTTPRequest : NSObject <NSURLConnectionDelegate> {
     int _HTTPMethod;
     NSString *_HTTPRequestBoundary;
@@ -23,18 +21,18 @@
     NSDictionary *_unsignedPostParams;
 }
 
-@property int HTTPMethod;
-@property BOOL allowsCellularAccess;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * getParams;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * postParams;
-@property(readonly) NSHTTPURLResponse * response;
-@property int responseType;
-@property BOOL signsMultipartPOSTData;
-@property(readonly) Class superclass;
-@property(retain) NSDictionary * unsignedPostParams;
+@property (nonatomic) int HTTPMethod;
+@property (nonatomic) BOOL allowsCellularAccess;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDictionary *getParams;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *postParams;
+@property (nonatomic, readonly) NSHTTPURLResponse *response;
+@property (nonatomic) int responseType;
+@property (nonatomic) BOOL signsMultipartPOSTData;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *unsignedPostParams;
 
 + (id)encodedStringForParameterDictionary:(id)arg1;
 

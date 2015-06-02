@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class AppLaunchStatsComputation, AppLaunchStatsState, AppLaunchStatsStateHandlerQueue, NSObject<OS_dispatch_queue>;
-
 @interface AppLaunchStatsREventHandler : NSObject {
     AppLaunchStatsComputation *aplsComputation;
     AppLaunchStatsState *aplsState;

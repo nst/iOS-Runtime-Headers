@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUBannerCellConfiguration : SUItemCellConfiguration {
-}
+@interface SUBannerCellConfiguration : SUItemCellConfiguration
 
 + (id)copyDefaultContext;
 + (float)minimumRowHeight;

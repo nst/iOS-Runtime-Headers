@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData;
-
 @interface _NMRMediaRemoteSetArtworkMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -13,12 +11,12 @@
     double _timestamp;
 }
 
-@property(readonly) BOOL hasJpegData;
-@property(readonly) BOOL hasOriginalDigest;
-@property BOOL hasTimestamp;
-@property(retain) NSData * jpegData;
-@property(retain) NSData * originalDigest;
-@property double timestamp;
+@property (nonatomic, readonly) BOOL hasJpegData;
+@property (nonatomic, readonly) BOOL hasOriginalDigest;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSData *jpegData;
+@property (nonatomic, retain) NSData *originalDigest;
+@property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSDictionary, NSIndexSet, PHChange, PHFetchResultChangeDetails;
-
 @interface PUPhotosDataSourceChange : NSObject {
     NSDictionary *_assetCollectionChangeDetails;
     NSDictionary *_assetCollectionToSectionCache;
@@ -20,15 +18,15 @@
     int _previousCollectionsCount;
 }
 
-@property(copy,readonly) NSArray * changedIndexPaths;
-@property(copy,readonly) NSIndexSet * changedSections;
-@property(copy,readonly) NSArray * contentChangedIndexPaths;
-@property(copy,readonly) NSArray * deletedIndexPaths;
-@property(copy,readonly) NSIndexSet * deletedSections;
-@property(readonly) BOOL hasIncrementalChanges;
-@property(copy,readonly) NSArray * insertedIndexPaths;
-@property(copy,readonly) NSIndexSet * insertedSections;
-@property(readonly) PHChange * originatingPhotoLibraryChange;
+@property (readonly, copy) NSArray *changedIndexPaths;
+@property (readonly, copy) NSIndexSet *changedSections;
+@property (readonly, copy) NSArray *contentChangedIndexPaths;
+@property (readonly, copy) NSArray *deletedIndexPaths;
+@property (readonly, copy) NSIndexSet *deletedSections;
+@property (readonly) BOOL hasIncrementalChanges;
+@property (readonly, copy) NSArray *insertedIndexPaths;
+@property (readonly, copy) NSIndexSet *insertedSections;
+@property (readonly) PHChange *originatingPhotoLibraryChange;
 
 - (void).cxx_destruct;
 - (void)_prepareIncrementalDetails;

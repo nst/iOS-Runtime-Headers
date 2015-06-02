@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDSymptomsNetworkAnalyticsHistorical : PBCodable <NSCopying> {
     unsigned long long _bytesIn;
     unsigned long long _bytesOut;
@@ -34,32 +32,32 @@
     unsigned long long _totalStaySecs;
 }
 
-@property unsigned long long bytesIn;
-@property unsigned long long bytesOut;
-@property unsigned long long connAttempts;
-@property unsigned long long connSuccess;
-@property unsigned long long epochs;
-@property unsigned long long faultyStaySecs;
-@property BOOL hasBytesIn;
-@property BOOL hasBytesOut;
-@property BOOL hasConnAttempts;
-@property BOOL hasConnSuccess;
-@property BOOL hasEpochs;
-@property BOOL hasFaultyStaySecs;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasNetworkType;
-@property BOOL hasPacketsIn;
-@property BOOL hasPacketsOut;
-@property BOOL hasSecsSinceLastTrimmed;
-@property BOOL hasTimestamp;
-@property BOOL hasTotalStaySecs;
-@property(retain) NSString * identifier;
-@property int networkType;
-@property unsigned long long packetsIn;
-@property unsigned long long packetsOut;
-@property unsigned long long secsSinceLastTrimmed;
-@property unsigned long long timestamp;
-@property unsigned long long totalStaySecs;
+@property (nonatomic) unsigned long long bytesIn;
+@property (nonatomic) unsigned long long bytesOut;
+@property (nonatomic) unsigned long long connAttempts;
+@property (nonatomic) unsigned long long connSuccess;
+@property (nonatomic) unsigned long long epochs;
+@property (nonatomic) unsigned long long faultyStaySecs;
+@property (nonatomic) BOOL hasBytesIn;
+@property (nonatomic) BOOL hasBytesOut;
+@property (nonatomic) BOOL hasConnAttempts;
+@property (nonatomic) BOOL hasConnSuccess;
+@property (nonatomic) BOOL hasEpochs;
+@property (nonatomic) BOOL hasFaultyStaySecs;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasNetworkType;
+@property (nonatomic) BOOL hasPacketsIn;
+@property (nonatomic) BOOL hasPacketsOut;
+@property (nonatomic) BOOL hasSecsSinceLastTrimmed;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTotalStaySecs;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) int networkType;
+@property (nonatomic) unsigned long long packetsIn;
+@property (nonatomic) unsigned long long packetsOut;
+@property (nonatomic) unsigned long long secsSinceLastTrimmed;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned long long totalStaySecs;
 
 - (unsigned long long)bytesIn;
 - (unsigned long long)bytesOut;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class ACAccountStore, ACAccountType, CKDBackingAccount, CKDClientContext, NSString;
-
 @interface CKDAccount : NSObject <CKDAccountInfoProvider> {
     ACAccountType *_acAccountType;
     ACAccountStore *_accountStore;
@@ -15,24 +13,24 @@
     BOOL _isUnitTestingAccount;
 }
 
-@property(retain) ACAccountType * acAccountType;
-@property(readonly) NSString * accountID;
-@property(readonly) NSString * accountIdentifier;
-@property(retain) ACAccountStore * accountStore;
-@property BOOL accountWantsPushRegistration;
-@property(readonly) BOOL allowsCellularAccess;
-@property(readonly) CKDBackingAccount * backingAccount;
-@property(readonly) BOOL cloudKitIsEnabled;
-@property(readonly) BOOL cloudPhotosIsEnabled;
-@property CKDClientContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL haveWarnedAboutServerPreferredPushEnvironment;
-@property BOOL isAnonymousAccount;
-@property(readonly) BOOL isFakeAccount;
-@property BOOL isUnitTestingAccount;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ACAccountType *acAccountType;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) NSString *accountIdentifier;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic) BOOL accountWantsPushRegistration;
+@property (nonatomic, readonly) BOOL allowsCellularAccess;
+@property (nonatomic, readonly) CKDBackingAccount *backingAccount;
+@property (nonatomic, readonly) BOOL cloudKitIsEnabled;
+@property (nonatomic, readonly) BOOL cloudPhotosIsEnabled;
+@property (nonatomic) CKDClientContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL haveWarnedAboutServerPreferredPushEnvironment;
+@property (nonatomic) BOOL isAnonymousAccount;
+@property (nonatomic, readonly) BOOL isFakeAccount;
+@property (nonatomic) BOOL isUnitTestingAccount;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_initWithContext:(id)arg1;
@@ -59,10 +57,10 @@
 - (id)deviceName;
 - (id)dsid;
 - (id)enabledKeyboards;
-- (void)fetchConfigurationUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)fetchContainerScopedUserIDUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)fetchDeviceIDUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)fetchPublicURLUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 serverType:(int)arg3 completionHandler:(id)arg4;
+- (void)fetchConfigurationUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchContainerScopedUserIDUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchDeviceIDUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchPublicURLUsingBackgroundSession:(BOOL)arg1 allowsCellularAccess:(BOOL)arg2 serverType:(int)arg3 completionHandler:(id /* block */)arg4;
 - (id)hardwareID;
 - (BOOL)haveWarnedAboutServerPreferredPushEnvironment;
 - (id)iCloudAuthToken;
@@ -80,8 +78,8 @@
 - (void)noteSuccessfulRequestWithNumDownloadedElements:(int)arg1;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (id)regionCode;
-- (void)renewAuthTokenWithCompletionHandler:(id)arg1;
-- (void)renewMescalSessionForRequest:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)renewAuthTokenWithCompletionHandler:(id /* block */)arg1;
+- (void)renewMescalSessionForRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)resetMescalSession;
 - (id)serverPreferredPushEnvironment;
 - (void)setAcAccountType:(id)arg1;

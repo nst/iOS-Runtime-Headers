@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSGlyphGenerator : NSObject {
-}
+@interface NSGlyphGenerator : NSObject
 
 + (id)defaultGlyphGenerator;
 + (void)initialize;

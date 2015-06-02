@@ -2,19 +2,16 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDictionary, NSNumber, NSString, NSURL;
+@interface EKPersistentAttachment : EKPersistentObject <NSCopying>
 
-@interface EKPersistentAttachment : EKPersistentObject <NSCopying> {
-}
-
-@property(copy) NSURL * URL;
-@property(readonly) NSString * UUID;
-@property(copy) NSDictionary * XProperties;
-@property(copy) NSString * fileFormat;
-@property(copy) NSString * fileName;
-@property(copy) NSNumber * fileSize;
-@property(readonly) BOOL isBinary;
-@property(copy) NSURL * localURL;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSDictionary *XProperties;
+@property (nonatomic, copy) NSString *fileFormat;
+@property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, copy) NSNumber *fileSize;
+@property (nonatomic, readonly) BOOL isBinary;
+@property (nonatomic, copy) NSURL *localURL;
 
 + (id)relations;
 

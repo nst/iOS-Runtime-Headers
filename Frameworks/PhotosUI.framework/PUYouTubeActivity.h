@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUYouTubeActivity : PUPublishingActivity {
-}
+@interface PUYouTubeActivity : PUPublishingActivity
 
 - (id)_activityImage;
 - (id)_activitySettingsImage;

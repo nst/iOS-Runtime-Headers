@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface OITSUSharedLocale : NSObject {
     struct __CFLocale { } *mCurrentLocale;
     NSArray *mObserverObjects;

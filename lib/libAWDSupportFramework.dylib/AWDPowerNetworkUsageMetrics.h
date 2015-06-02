@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDPowerNetworkUsageMetrics : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -12,9 +10,9 @@
     NSMutableArray *_usages;
 }
 
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
-@property(retain) NSMutableArray * usages;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSMutableArray *usages;
 
 - (void)addUsage:(id)arg1;
 - (void)clearUsages;

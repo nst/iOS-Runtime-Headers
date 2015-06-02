@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, NSURL, PHAdjustmentData;
-
 @interface PHContentEditingOutput : NSObject <NSSecureCoding> {
     PHAdjustmentData *_adjustmentData;
     int _baseVersion;
@@ -16,15 +14,15 @@
     NSURL *_renderedContentURL;
 }
 
-@property(retain) PHAdjustmentData * adjustmentData;
+@property (retain) PHAdjustmentData *adjustmentData;
 @property int baseVersion;
-@property(retain) NSURL * editorBundleURL;
-@property int fullSizeRenderHeight;
-@property int fullSizeRenderWidth;
-@property BOOL isSubstandardRender;
-@property(readonly) int mediaType;
-@property(retain) NSData * penultimateRenderedJPEGData;
-@property(copy) NSURL * renderedContentURL;
+@property (retain) NSURL *editorBundleURL;
+@property (nonatomic) int fullSizeRenderHeight;
+@property (nonatomic) int fullSizeRenderWidth;
+@property (nonatomic) BOOL isSubstandardRender;
+@property (readonly) int mediaType;
+@property (retain) NSData *penultimateRenderedJPEGData;
+@property (copy) NSURL *renderedContentURL;
 
 + (unsigned int)maximumAdjustmentDataLength;
 + (BOOL)supportsSecureCoding;

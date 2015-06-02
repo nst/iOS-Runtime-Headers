@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory10Key_LandscapeChoco : UIKBRenderFactory10Key_Landscape {
-}
+@interface UIKBRenderFactory10Key_LandscapeChoco : UIKBRenderFactory10Key_Landscape
 
 - (float)controlColumnWidthFactor;
 - (void)setupColumnLayoutSegmentsWithControlWidth:(float)arg1;

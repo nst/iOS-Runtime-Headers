@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRTCPConnectionDelegate>, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, TRTCPConnectionStream;
-
 @interface TRTCPConnection : NSObject <TRTCPConnectionStreamDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _closed;
@@ -16,13 +14,13 @@
     int _uniqueID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <TRTCPConnectionDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) int uniqueID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <TRTCPConnectionDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int uniqueID;
 
 - (void).cxx_destruct;
 - (void)_handleReceivedPacketEvent:(id)arg1;
@@ -33,7 +31,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)sendPacketEvent:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)sendPacketEvent:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1 delegateQueue:(id)arg2;
 - (int)uniqueID;
 

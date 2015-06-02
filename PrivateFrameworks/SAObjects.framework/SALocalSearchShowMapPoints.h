@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, SALocalSearchMapItem, SALocalSearchMapItemList;
+@interface SALocalSearchShowMapPoints : SADomainCommand
 
-@interface SALocalSearchShowMapPoints : SADomainCommand {
-}
-
-@property(copy) NSString * directionsType;
-@property(retain) SALocalSearchMapItem * itemDestination;
-@property(retain) SALocalSearchMapItem * itemSource;
-@property(copy) NSString * language;
-@property(copy) NSNumber * regionOfInterestRadiusInMiles;
-@property(retain) SALocalSearchMapItemList * searchItems;
-@property BOOL showDirections;
-@property BOOL showTraffic;
+@property (nonatomic, copy) NSString *directionsType;
+@property (nonatomic, retain) SALocalSearchMapItem *itemDestination;
+@property (nonatomic, retain) SALocalSearchMapItem *itemSource;
+@property (nonatomic, copy) NSString *language;
+@property (nonatomic, copy) NSNumber *regionOfInterestRadiusInMiles;
+@property (nonatomic, retain) SALocalSearchMapItemList *searchItems;
+@property (nonatomic) BOOL showDirections;
+@property (nonatomic) BOOL showTraffic;
 
 + (id)showMapPoints;
 + (id)showMapPointsWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartBarElementProperties;
-
 @interface TSCH3DBarChartDefaultAppearance : NSObject <TSCH3DBarChartAppearance, TSCHUnretainedParent> {
     TSCH3DChartBarElementProperties *mProperties;
 }

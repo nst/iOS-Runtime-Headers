@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSData;
-
 @interface HDCodableAchievement : PBCodable <NSCopying> {
     long long _achievementType;
     double _completedDate;
@@ -19,18 +17,18 @@
     NSData *_uuid;
 }
 
-@property long long achievementType;
-@property double completedDate;
-@property double doubleValue;
-@property(retain) NSData * extraData;
-@property BOOL hasAchievementType;
-@property BOOL hasCompletedDate;
-@property BOOL hasDoubleValue;
-@property(readonly) BOOL hasExtraData;
-@property BOOL hasIntValue;
-@property(readonly) BOOL hasUuid;
-@property long long intValue;
-@property(retain) NSData * uuid;
+@property (nonatomic) long long achievementType;
+@property (nonatomic) double completedDate;
+@property (nonatomic) double doubleValue;
+@property (nonatomic, retain) NSData *extraData;
+@property (nonatomic) BOOL hasAchievementType;
+@property (nonatomic) BOOL hasCompletedDate;
+@property (nonatomic) BOOL hasDoubleValue;
+@property (nonatomic, readonly) BOOL hasExtraData;
+@property (nonatomic) BOOL hasIntValue;
+@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic) long long intValue;
+@property (nonatomic, retain) NSData *uuid;
 
 - (void).cxx_destruct;
 - (long long)achievementType;

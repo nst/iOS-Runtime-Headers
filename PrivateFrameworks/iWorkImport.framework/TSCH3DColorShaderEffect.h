@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DColorShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DColorShaderEffect : TSCH3DShaderEffect
 
 - (void)inject:(id)arg1;
 

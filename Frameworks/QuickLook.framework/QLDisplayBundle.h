@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewItem>, <QLPreviewItemInteractionDelegate>, NSString, NSTimer, UIView;
-
 @interface QLDisplayBundle : UIViewController {
     <QLPreviewItemInteractionDelegate> *_delegate;
     int _index;
@@ -33,18 +31,18 @@
     } clientContext;
 }
 
-@property(readonly) UIView * accessoryView;
-@property(readonly) int airPlayMode;
-@property(readonly) UIView * airplayView;
+@property (readonly) UIView *accessoryView;
+@property (readonly) int airPlayMode;
+@property (readonly) UIView *airplayView;
 @property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
-@property <QLPreviewItemInteractionDelegate> * delegate;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property <QLPreviewItemInteractionDelegate> *delegate;
 @property int index;
 @property BOOL loaded;
 @property BOOL loading;
 @property float navigationBarVerticalOffset;
-@property(retain) NSString * password;
-@property(retain) <QLPreviewItem> * previewItem;
+@property (retain) NSString *password;
+@property (retain) <QLPreviewItem> *previewItem;
 @property int previewMode;
 
 + (double)allowedLoadingDelay;

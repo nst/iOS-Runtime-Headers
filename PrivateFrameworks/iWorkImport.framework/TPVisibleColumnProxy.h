@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TPPageController;
-
 @interface TPVisibleColumnProxy : NSObject <TSWPOffscreenColumn> {
     TPPageController *_pageController;
     unsigned int _pageIndex;
 }
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int nextWidowPullsDownFromCharIndex;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) unsigned int startAnchoredCharIndex;
-@property(readonly) unsigned int startCharIndex;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int nextWidowPullsDownFromCharIndex;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) unsigned int startAnchoredCharIndex;
+@property (nonatomic, readonly) unsigned int startCharIndex;
+@property (readonly) Class superclass;
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })anchoredRange;
 - (void)dealloc;

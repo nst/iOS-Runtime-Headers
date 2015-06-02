@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSystemPolicyManager : NSObject {
-}
+@interface PSSystemPolicyManager : NSObject
 
 + (BOOL)_backgroundAppRefreshSettingsNeededForProxy:(id)arg1;
 + (BOOL)_cellularDataSettingsNeededForBundleID:(id)arg1;

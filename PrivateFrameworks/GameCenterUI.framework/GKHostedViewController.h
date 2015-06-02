@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKGame, GKRemoteViewController;
-
 @interface GKHostedViewController : UIViewController {
     GKGame *_game;
     BOOL _gkIsDisappearing;
     BOOL _isRequestingRemoteViewController;
     BOOL _presentingRemoteViewController;
     GKRemoteViewController *_remoteViewController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _remoteViewReadyHandler;
-
+    id /* block */ _remoteViewReadyHandler;
     BOOL _shouldPresentRemoteViewController;
 }
 
-@property(retain) GKGame * game;
-@property BOOL gkIsDisappearing;
-@property BOOL isRequestingRemoteViewController;
-@property BOOL presentingRemoteViewController;
-@property(retain) GKRemoteViewController * remoteViewController;
-@property(copy) id remoteViewReadyHandler;
-@property BOOL shouldPresentRemoteViewController;
+@property (nonatomic, retain) GKGame *game;
+@property (nonatomic) BOOL gkIsDisappearing;
+@property (nonatomic) BOOL isRequestingRemoteViewController;
+@property (nonatomic) BOOL presentingRemoteViewController;
+@property (nonatomic, retain) GKRemoteViewController *remoteViewController;
+@property (nonatomic, copy) id /* block */ remoteViewReadyHandler;
+@property (nonatomic) BOOL shouldPresentRemoteViewController;
 
 - (id)_presentingViewController;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
@@ -36,7 +26,7 @@
 - (void)didGetRemoteViewController;
 - (void)didReceiveMemoryWarning;
 - (void)dismissModalViewControllerAnimated:(BOOL)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)donePressed:(id)arg1;
 - (id)game;
 - (BOOL)gkIsDisappearing;
@@ -46,7 +36,7 @@
 - (void)presentRemoteViewControllerIfNeeded;
 - (BOOL)presentingRemoteViewController;
 - (id)remoteViewController;
-- (id)remoteViewReadyHandler;
+- (id /* block */)remoteViewReadyHandler;
 - (void)requestRemoteViewControllerIfNeeded;
 - (void)resetRemoteViewController;
 - (id)serviceSideViewControllerClassName;
@@ -55,7 +45,7 @@
 - (void)setIsRequestingRemoteViewController:(BOOL)arg1;
 - (void)setPresentingRemoteViewController:(BOOL)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setRemoteViewReadyHandler:(id)arg1;
+- (void)setRemoteViewReadyHandler:(id /* block */)arg1;
 - (void)setShouldPresentRemoteViewController:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;

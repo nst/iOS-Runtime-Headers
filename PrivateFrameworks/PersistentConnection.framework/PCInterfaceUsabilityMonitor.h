@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class <PCInterfaceUsabilityMonitorDelegate>, CUTWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PCInterfaceUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol> {
     NSObject<OS_dispatch_queue> *_delegateQueue;
     CUTWeakReference *_delegateReference;
@@ -22,29 +20,29 @@
     double _trackedTimeInterval;
 }
 
-@property(readonly) struct __CFString { }* currentRAT;
-@property(copy,readonly) NSString * debugDescription;
-@property <PCInterfaceUsabilityMonitorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int interfaceIdentifier;
-@property(readonly) BOOL isBadLinkQuality;
-@property(readonly) BOOL isInterfaceHistoricallyUsable;
-@property(readonly) BOOL isInterfaceUsable;
-@property(readonly) BOOL isInternetReachable;
-@property(readonly) BOOL isLTEWithCDRX;
-@property(readonly) BOOL isPoorLinkQuality;
-@property(readonly) BOOL isRadioHot;
-@property(readonly) int linkQuality;
-@property(retain,readonly) NSString * linkQualityString;
-@property(readonly) Class superclass;
-@property(readonly) struct __CFString { }* wwanInterfaceName;
+@property (nonatomic, readonly) struct __CFString { }*currentRAT;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PCInterfaceUsabilityMonitorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int interfaceIdentifier;
+@property (nonatomic, readonly) BOOL isBadLinkQuality;
+@property (nonatomic, readonly) BOOL isInterfaceHistoricallyUsable;
+@property (nonatomic, readonly) BOOL isInterfaceUsable;
+@property (nonatomic, readonly) BOOL isInternetReachable;
+@property (nonatomic, readonly) BOOL isLTEWithCDRX;
+@property (nonatomic, readonly) BOOL isPoorLinkQuality;
+@property (nonatomic, readonly) BOOL isRadioHot;
+@property (nonatomic, readonly) int linkQuality;
+@property (nonatomic, readonly, retain) NSString *linkQualityString;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 
 + (BOOL)isBadLinkQuality:(int)arg1;
 + (BOOL)isPoorLinkQuality:(int)arg1;
 + (id)stringForLinkQuality:(int)arg1;
 
-- (void)_callDelegateOnIvarQueueWithBlock:(id)arg1;
+- (void)_callDelegateOnIvarQueueWithBlock:(id /* block */)arg1;
 - (void)_createLinkQualityMonitor;
 - (void)_createLinkQualityMonitorOnIvarQueue;
 - (void)_createReachabilityMonitor;

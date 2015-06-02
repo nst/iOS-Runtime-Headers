@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKAsset, CKPackage, CKRecordID, NSData, NSError, NSMutableArray, NSNumber, NSString, NSURL;
-
 @interface CKDMMCSItem : NSObject {
     CKAsset *_asset;
     NSData *_assetKey;
@@ -38,37 +36,37 @@
     NSData *_wrappedAssetKey;
 }
 
-@property(retain) CKAsset * asset;
-@property(retain) NSData * assetKey;
-@property(retain) NSData * authRequest;
-@property(retain) NSString * authToken;
-@property unsigned long chunkCount;
-@property(retain) NSURL * contentBaseURL;
-@property(retain) NSNumber * deviceID;
-@property(retain) NSError * error;
-@property(retain) NSNumber * fileID;
-@property(retain) NSURL * fileURL;
-@property BOOL finished;
-@property(retain) NSNumber * generationID;
-@property BOOL hasOffset;
-@property BOOL hasSize;
-@property unsigned long long itemID;
-@property unsigned long long offset;
-@property(retain) NSString * owner;
-@property(retain) CKPackage * package;
-@property unsigned int packageIndex;
-@property double progress;
-@property(retain) CKRecordID * recordID;
-@property(retain) NSString * recordKey;
-@property(retain) NSString * recordType;
-@property(retain) NSData * referenceSignature;
-@property(retain) NSString * requestor;
-@property(retain) NSMutableArray * sectionItems;
-@property(retain) NSData * signature;
-@property unsigned long long size;
-@property(retain) NSString * trackingUUID;
-@property(retain) NSString * uploadReceipt;
-@property(retain) NSData * wrappedAssetKey;
+@property (nonatomic, retain) CKAsset *asset;
+@property (nonatomic, retain) NSData *assetKey;
+@property (nonatomic, retain) NSData *authRequest;
+@property (nonatomic, retain) NSString *authToken;
+@property (nonatomic) unsigned long chunkCount;
+@property (nonatomic, retain) NSURL *contentBaseURL;
+@property (nonatomic, retain) NSNumber *deviceID;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSNumber *fileID;
+@property (nonatomic, retain) NSURL *fileURL;
+@property (nonatomic) BOOL finished;
+@property (nonatomic, retain) NSNumber *generationID;
+@property (nonatomic) BOOL hasOffset;
+@property (nonatomic) BOOL hasSize;
+@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) unsigned long long offset;
+@property (nonatomic, retain) NSString *owner;
+@property (nonatomic, retain) CKPackage *package;
+@property (nonatomic) unsigned int packageIndex;
+@property (nonatomic) double progress;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, retain) NSString *recordKey;
+@property (nonatomic, retain) NSString *recordType;
+@property (nonatomic, retain) NSData *referenceSignature;
+@property (nonatomic, retain) NSString *requestor;
+@property (nonatomic, retain) NSMutableArray *sectionItems;
+@property (nonatomic, retain) NSData *signature;
+@property (nonatomic) unsigned long long size;
+@property (nonatomic, retain) NSString *trackingUUID;
+@property (nonatomic, retain) NSString *uploadReceipt;
+@property (nonatomic, retain) NSData *wrappedAssetKey;
 
 + (int)openFileDescriptorForDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3 path:(id)arg4 error:(id*)arg5;
 

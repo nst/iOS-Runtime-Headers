@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableIndexSet;
-
 @interface TSTConcurrentMutableIndexSet : NSObject {
     NSMutableIndexSet *mMutableIndexSet;
     struct _opaque_pthread_rwlock_t { 
@@ -14,7 +12,7 @@
 
 - (void)addIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (void)enumerateIndexesUsingBlock:(id)arg1;
+- (void)enumerateIndexesUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (void)removeAllIndexes;
 

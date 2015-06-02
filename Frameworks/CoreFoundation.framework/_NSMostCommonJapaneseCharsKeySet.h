@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface _NSMostCommonJapaneseCharsKeySet : _NSSharedKeySetS {
-}
+@interface _NSMostCommonJapaneseCharsKeySet : _NSSharedKeySetS
 
 - (void)dealloc;
 - (void)finalize;

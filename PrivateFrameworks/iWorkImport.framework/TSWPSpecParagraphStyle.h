@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecParagraphStyle : TSSSpec {
-}
+@interface TSWPSpecParagraphStyle : TSSSpec
 
 - (id)getUnsetSpec;
 

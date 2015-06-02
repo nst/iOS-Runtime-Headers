@@ -7,8 +7,8 @@
     unsigned short _recordIndex;
 }
 
-@property(readonly) unsigned char fieldIndex;
-@property(readonly) unsigned short recordIndex;
+@property (nonatomic, readonly) unsigned char fieldIndex;
+@property (nonatomic, readonly) unsigned short recordIndex;
 
 + (Class)archivedSelectionClass;
 + (id)selection;

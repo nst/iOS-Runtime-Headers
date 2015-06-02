@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class Exchange, NSString, NSURL, StockChartData, StockDataSource;
-
 @interface Stock : NSObject {
     NSString *_averageVolume;
     NSString *_change;
-    StockChartData *_chartDataArray[9];
+    StockChartData *_chartDataArray;
     NSString *_companyName;
     StockDataSource *_dataSource;
     NSString *_dividendYield;
@@ -30,28 +28,28 @@
     NSString *_yearLow;
 }
 
-@property(retain) NSString * averageVolume;
-@property(retain) NSString * change;
-@property(retain) NSString * companyName;
-@property(retain) StockDataSource * dataSource;
-@property(retain) NSString * dividendYield;
-@property(retain) Exchange * exchange;
-@property(retain) NSString * high;
-@property(retain) NSURL * infoURL;
-@property(retain) NSString * low;
-@property(retain) NSString * marketcap;
-@property(retain) NSString * open;
-@property(retain) NSString * peRatio;
-@property(retain) NSString * price;
-@property(readonly) unsigned int pricePrecision;
-@property(retain) NSString * shortCompanyName;
-@property(retain) NSString * symbol;
-@property(retain) NSString * symbolType;
-@property double timeMetadataLastUpdated;
-@property double timeQuoteLastUpdated;
-@property(retain) NSString * volume;
-@property(retain) NSString * yearHigh;
-@property(retain) NSString * yearLow;
+@property (nonatomic, retain) NSString *averageVolume;
+@property (nonatomic, retain) NSString *change;
+@property (nonatomic, retain) NSString *companyName;
+@property (nonatomic, retain) StockDataSource *dataSource;
+@property (nonatomic, retain) NSString *dividendYield;
+@property (nonatomic, retain) Exchange *exchange;
+@property (nonatomic, retain) NSString *high;
+@property (nonatomic, retain) NSURL *infoURL;
+@property (nonatomic, retain) NSString *low;
+@property (nonatomic, retain) NSString *marketcap;
+@property (nonatomic, retain) NSString *open;
+@property (nonatomic, retain) NSString *peRatio;
+@property (nonatomic, retain) NSString *price;
+@property (nonatomic, readonly) unsigned int pricePrecision;
+@property (nonatomic, retain) NSString *shortCompanyName;
+@property (nonatomic, retain) NSString *symbol;
+@property (nonatomic, retain) NSString *symbolType;
+@property (nonatomic) double timeMetadataLastUpdated;
+@property (nonatomic) double timeQuoteLastUpdated;
+@property (nonatomic, retain) NSString *volume;
+@property (nonatomic, retain) NSString *yearHigh;
+@property (nonatomic, retain) NSString *yearLow;
 
 + (id)BlankValueString;
 + (id)PercentFormatter;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton, UILabel, UIScrollView;
-
 @interface PKPaymentSetupAboutView : UIView {
     UILabel *_aboutTextLabel;
     UIButton *_actionButton;

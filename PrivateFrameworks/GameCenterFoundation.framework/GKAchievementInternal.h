@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayerInternal, NSDate, NSDictionary, NSString;
-
 @interface GKAchievementInternal : GKInternalRepresentation {
     NSString *_achievedDescription;
     union { 
@@ -25,19 +23,19 @@
     NSString *_unachievedDescription;
 }
 
-@property(retain) NSString * achievedDescription;
-@property unsigned int attributes;
-@property(retain) NSString * groupIdentifier;
-@property(getter=isHidden) BOOL hidden;
-@property(retain) NSDictionary * icons;
-@property(retain) NSString * identifier;
-@property(retain) NSDate * lastReportedDate;
-@property unsigned short maximumPoints;
-@property double percentComplete;
-@property(retain) GKPlayerInternal * player;
-@property(getter=isReplayable) BOOL replayable;
-@property(retain) NSString * title;
-@property(retain) NSString * unachievedDescription;
+@property (nonatomic, retain) NSString *achievedDescription;
+@property (nonatomic) unsigned int attributes;
+@property (nonatomic, retain) NSString *groupIdentifier;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSDictionary *icons;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSDate *lastReportedDate;
+@property (nonatomic) unsigned short maximumPoints;
+@property (nonatomic) double percentComplete;
+@property (nonatomic, retain) GKPlayerInternal *player;
+@property (getter=isReplayable, nonatomic) BOOL replayable;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *unachievedDescription;
 
 + (id)secureCodedPropertyKeys;
 + (BOOL)supportsSecureCoding;

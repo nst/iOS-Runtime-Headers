@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>;
-
 @interface FBSSerialQueue : NSObject {
     NSArray *_mainRunLoopModes;
     NSObject<OS_dispatch_queue> *_queue;
@@ -22,6 +20,6 @@
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
-- (void)performAsync:(id)arg1;
+- (void)performAsync:(id /* block */)arg1;
 
 @end

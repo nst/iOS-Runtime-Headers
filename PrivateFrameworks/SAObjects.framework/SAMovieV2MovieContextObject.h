@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMovieV2MovieContextObject : SADomainObject
 
-@interface SAMovieV2MovieContextObject : SADomainObject {
-}
-
-@property(copy) NSString * movieName;
+@property (nonatomic, copy) NSString *movieName;
 
 + (id)movieContextObject;
 + (id)movieContextObjectWithDictionary:(id)arg1 context:(id)arg2;

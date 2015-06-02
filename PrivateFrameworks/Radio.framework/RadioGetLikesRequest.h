@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class RadioStation, SSURLConnectionRequest;
-
 @interface RadioGetLikesRequest : RadioRequest {
     unsigned int _numberOfBannedTracks;
     unsigned int _numberOfLikedTracks;
@@ -12,9 +10,9 @@
     RadioStation *_station;
 }
 
-@property unsigned int numberOfBannedTracks;
-@property unsigned int numberOfLikedTracks;
-@property BOOL shouldProcessItems;
+@property (nonatomic) unsigned int numberOfBannedTracks;
+@property (nonatomic) unsigned int numberOfLikedTracks;
+@property (nonatomic) BOOL shouldProcessItems;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -26,6 +24,6 @@
 - (void)setNumberOfLikedTracks:(unsigned int)arg1;
 - (void)setShouldProcessItems:(BOOL)arg1;
 - (BOOL)shouldProcessItems;
-- (void)startWithLikeBanCompletionHandler:(id)arg1;
+- (void)startWithLikeBanCompletionHandler:(id /* block */)arg1;
 
 @end

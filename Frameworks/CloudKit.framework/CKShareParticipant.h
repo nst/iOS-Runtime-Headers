@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKShareID, CKUserIdentity, NSString;
-
 @interface CKShareParticipant : NSObject <NSCopying, NSSecureCoding> {
     int _acceptanceStatus;
     BOOL _isCurrentUser;
@@ -18,17 +16,17 @@
     CKUserIdentity *_userIdentity;
 }
 
-@property int acceptanceStatus;
-@property BOOL isCurrentUser;
-@property int originalAcceptanceStatus;
-@property int originalParticipantType;
-@property int originalPermission;
-@property(retain) CKUserIdentity * originalUserIdentity;
-@property(retain) NSString * participantID;
-@property int permission;
-@property(retain) CKShareID * shareID;
-@property int type;
-@property(retain) CKUserIdentity * userIdentity;
+@property (nonatomic) int acceptanceStatus;
+@property (nonatomic) BOOL isCurrentUser;
+@property (nonatomic) int originalAcceptanceStatus;
+@property (nonatomic) int originalParticipantType;
+@property (nonatomic) int originalPermission;
+@property (nonatomic, retain) CKUserIdentity *originalUserIdentity;
+@property (nonatomic, retain) NSString *participantID;
+@property (nonatomic) int permission;
+@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic) int type;
+@property (nonatomic, retain) CKUserIdentity *userIdentity;
 
 + (BOOL)supportsSecureCoding;
 

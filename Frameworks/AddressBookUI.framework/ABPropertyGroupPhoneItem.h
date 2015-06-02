@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNPhoneNumber;
+@interface ABPropertyGroupPhoneItem : ABPropertyGroupItem
 
-@interface ABPropertyGroupPhoneItem : ABPropertyGroupItem {
-}
-
-@property(readonly) CNPhoneNumber * phoneNumber;
+@property (nonatomic, readonly) CNPhoneNumber *phoneNumber;
 
 - (id)bestLabel:(id)arg1;
 - (id)defaultActionURL;

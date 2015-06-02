@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAWeatherShowWeatherLocations : SADomainCommand {
-}
+@interface SAWeatherShowWeatherLocations : SADomainCommand
 
 + (id)showWeatherLocations;
 + (id)showWeatherLocationsWithDictionary:(id)arg1 context:(id)arg2;

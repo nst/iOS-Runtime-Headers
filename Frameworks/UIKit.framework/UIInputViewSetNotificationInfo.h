@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
-
 @interface UIInputViewSetNotificationInfo : NSObject {
     struct CGPoint { 
         float x; 
@@ -48,16 +46,16 @@
     unsigned int _options;
 }
 
-@property struct CGPoint { float x1; float x2; } beginCenter;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrame;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property BOOL changedAccessoryOnly;
-@property float duration;
-@property struct CGPoint { float x1; float x2; } endCenter;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
-@property unsigned int options;
-@property(readonly) NSDictionary * privateUserInfo;
-@property(readonly) NSDictionary * userInfo;
+@property (nonatomic) struct CGPoint { float x1; float x2; } beginCenter;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) BOOL changedAccessoryOnly;
+@property (nonatomic) float duration;
+@property (nonatomic) struct CGPoint { float x1; float x2; } endCenter;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, readonly) NSDictionary *privateUserInfo;
+@property (nonatomic, readonly) NSDictionary *userInfo;
 
 + (id)info;
 

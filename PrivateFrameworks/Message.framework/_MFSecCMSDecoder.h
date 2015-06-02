@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSArray, NSString;
-
 @interface _MFSecCMSDecoder : NSObject <MFCollectingDataConsumer> {
     long _SecCMSError;
     struct SecCmsDigestContextStr { } *_digest;
@@ -14,12 +12,12 @@
     NSArray *_signers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) long lastSecCMSError;
-@property(readonly) NSArray * signers;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long lastSecCMSError;
+@property (nonatomic, readonly) NSArray *signers;
+@property (readonly) Class superclass;
 
 - (int)appendData:(id)arg1;
 - (id)data;

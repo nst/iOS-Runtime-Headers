@@ -4,12 +4,12 @@
 
 @interface AVTimeFormatter : NSFormatter {
     double _formatTemplate;
-    unsigned int _fullWidth : 1;
+    unsigned int _fullWidth;
     int _style;
 }
 
 @property double formatTemplate;
-@property(getter=isFullWidth) BOOL fullWidth;
+@property (getter=isFullWidth) BOOL fullWidth;
 @property int style;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

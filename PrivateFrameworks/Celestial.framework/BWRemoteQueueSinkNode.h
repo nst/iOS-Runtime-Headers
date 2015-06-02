@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWRemoteQueueSinkNodeDelegate>, NSDictionary;
-
 @interface BWRemoteQueueSinkNode : BWSinkNode {
     BOOL _attachPanoramaMetadata;
     struct opaqueCMFormatDescription { } *_cachedVideoFormatDescription;
@@ -23,7 +21,7 @@
     NSDictionary *_videoColorInfo;
 }
 
-@property <BWRemoteQueueSinkNodeDelegate> * delegate;
+@property (nonatomic) <BWRemoteQueueSinkNodeDelegate> *delegate;
 
 + (void)initialize;
 

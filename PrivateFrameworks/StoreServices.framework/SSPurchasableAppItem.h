@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPurchasableAppItem : SSPurchasableItem {
-}
+@interface SSPurchasableAppItem : SSPurchasableItem
 
 + (id)allItemsFromDatabase:(id)arg1 forAccount:(long long)arg2 sortedBy:(id)arg3 sortAscending:(BOOL)arg4;
 + (id)allPropertyKeys;

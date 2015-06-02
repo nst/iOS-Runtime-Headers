@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMMapper;
-
 @interface CMMapper : NSObject <CMMapperRootArchiver> {
     CMMapper *mParent;
 }

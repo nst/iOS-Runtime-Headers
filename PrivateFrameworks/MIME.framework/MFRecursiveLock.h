@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSString;
-
 @interface MFRecursiveLock : NSRecursiveLock <MFLockObject> {
     id _delegate;
     NSString *_name;

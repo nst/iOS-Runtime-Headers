@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3StatementCacheNode, NSObject<NSCopying>;
-
 @interface ML3StatementCacheNode : NSObject {
     NSObject<NSCopying> *_dictionaryKey;
     ML3StatementCacheNode *_next;
 }
 
-@property(copy) NSObject<NSCopying> * dictionaryKey;
-@property(retain) ML3StatementCacheNode * next;
+@property (nonatomic, copy) NSObject<NSCopying> *dictionaryKey;
+@property (nonatomic, retain) ML3StatementCacheNode *next;
 
 - (void).cxx_destruct;
 - (id)description;

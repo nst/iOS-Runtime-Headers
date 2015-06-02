@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSPData;
-
 @interface KNMovieSegment : NSObject {
     TSPData *mMovieData;
     double mStartTime;
 }
 
-@property(getter=isEmptySegment,readonly) BOOL emptySegment;
-@property(readonly) TSPData * movieData;
-@property(readonly) double startTime;
+@property (getter=isEmptySegment, nonatomic, readonly) BOOL emptySegment;
+@property (nonatomic, readonly) TSPData *movieData;
+@property (nonatomic, readonly) double startTime;
 
 - (void)dealloc;
 - (id)init;

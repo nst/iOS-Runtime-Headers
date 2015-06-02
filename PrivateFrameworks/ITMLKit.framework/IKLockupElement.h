@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKImageElement, IKOrdinalElement, IKTextElement, IKViewElement;
+@interface IKLockupElement : IKViewElement
 
-@interface IKLockupElement : IKViewElement {
-}
-
-@property(retain,readonly) IKTextElement * descriptionText;
-@property(retain,readonly) IKImageElement * fullscreenImage;
-@property(retain,readonly) IKImageElement * image;
-@property(retain,readonly) IKOrdinalElement * ordinal;
-@property(retain,readonly) IKViewElement * overlays;
-@property(readonly) BOOL showTitlesOnFocus;
-@property(retain,readonly) IKTextElement * subtitle;
-@property(retain,readonly) IKTextElement * title;
+@property (nonatomic, readonly, retain) IKTextElement *descriptionText;
+@property (nonatomic, readonly, retain) IKImageElement *fullscreenImage;
+@property (nonatomic, readonly, retain) IKImageElement *image;
+@property (nonatomic, readonly, retain) IKOrdinalElement *ordinal;
+@property (nonatomic, readonly, retain) IKViewElement *overlays;
+@property (nonatomic, readonly) BOOL showTitlesOnFocus;
+@property (nonatomic, readonly, retain) IKTextElement *subtitle;
+@property (nonatomic, readonly, retain) IKTextElement *title;
 
 - (id)descriptionText;
 - (id)fullscreenImage;

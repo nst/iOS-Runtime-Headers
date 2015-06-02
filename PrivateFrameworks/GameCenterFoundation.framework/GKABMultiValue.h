@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKABMultiValue : GKABObject {
-}
+@interface GKABMultiValue : GKABObject
 
-@property(readonly) void* ABMultiValue;
+@property (readonly) void*ABMultiValue;
 
 - (void*)ABMultiValue;
 - (id)allValues;
 - (int)count;
-- (void)enumerateValuesUsingBlock:(id)arg1;
+- (void)enumerateValuesUsingBlock:(id /* block */)arg1;
 - (id)mutableCopy;
 - (id)valueAtIndex:(int)arg1;
 

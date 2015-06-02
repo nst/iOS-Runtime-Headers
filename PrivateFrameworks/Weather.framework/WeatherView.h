@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class City, UIView;
-
 @interface WeatherView : UIView <CityUpdaterDelegate> {
     City *_city;
     BOOL _showWind;
@@ -11,7 +9,7 @@
     UIView *_windView;
 }
 
-@property(setter=showCity:,retain) City * city;
+@property (setter=showCity:, nonatomic, retain) City *city;
 
 - (BOOL)_setCity:(id)arg1 associateAsDelegate:(BOOL)arg2;
 - (id)bundle;

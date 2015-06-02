@@ -11,10 +11,10 @@
     long long _type;
 }
 
-@property double date;
-@property BOOL hasDate;
-@property BOOL hasType;
-@property long long type;
+@property (nonatomic) double date;
+@property (nonatomic) BOOL hasDate;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) long long type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

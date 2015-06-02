@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSNumber, NSString;
-
 @interface CKAssetHandle : CKObject {
     NSString *_UUID;
     NSNumber *_deviceID;
@@ -14,13 +12,13 @@
     NSString *_path;
 }
 
-@property(retain) NSString * UUID;
-@property(retain) NSNumber * deviceID;
-@property(retain) NSNumber * fileID;
-@property(retain) NSNumber * generationID;
-@property(retain) NSNumber * itemID;
-@property(retain) NSNumber * lastUsedTime;
-@property(retain) NSString * path;
+@property (nonatomic, retain) NSString *UUID;
+@property (nonatomic, retain) NSNumber *deviceID;
+@property (nonatomic, retain) NSNumber *fileID;
+@property (nonatomic, retain) NSNumber *generationID;
+@property (nonatomic, retain) NSNumber *itemID;
+@property (nonatomic, retain) NSNumber *lastUsedTime;
+@property (nonatomic, retain) NSString *path;
 
 + (BOOL)getDeviceID:(id*)arg1 fileID:(id*)arg2 generationID:(id*)arg3 forPath:(id)arg4 error:(id*)arg5;
 

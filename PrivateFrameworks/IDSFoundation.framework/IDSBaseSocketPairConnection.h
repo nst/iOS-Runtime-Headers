@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class IMWeakReference, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface IDSBaseSocketPairConnection : NSObject {
     long _bytesReceived;
     int _connectedSocket;
@@ -18,9 +16,9 @@
     BOOL _writeSourceIsResumed;
 }
 
-@property(readonly) int socket;
+@property (nonatomic, readonly) int socket;
 
-- (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_processBytesAvailable;
 - (void)_sendToConnectedSocket;
 - (void)_setupWriteSource;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSOutputStream;
-
 @interface PBMessageStreamWriter : NSObject {
     NSOutputStream *_stream;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <CHAutoStyling>, CHDChart, CHDChartType, CHDSeries, EDResources, EXOfficeArtState, OADParagraphProperties, OCPPackagePart;
-
 @interface CHXReadState : NSObject {
     <CHAutoStyling> *mAutoStyling;
     CHDChart *mChart;
@@ -17,7 +15,7 @@
     EDResources *mResources;
 }
 
-@property BOOL ignoreFormulas;
+@property (nonatomic) BOOL ignoreFormulas;
 
 - (id)autoStyling;
 - (id)chart;

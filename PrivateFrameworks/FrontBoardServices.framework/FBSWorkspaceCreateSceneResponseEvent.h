@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class FBSWorkspaceCreateSceneResponse;
+@interface FBSWorkspaceCreateSceneResponseEvent : FBSWorkspaceSceneUpdateResponseEvent
 
-@interface FBSWorkspaceCreateSceneResponseEvent : FBSWorkspaceSceneUpdateResponseEvent {
-}
-
-@property(retain) FBSWorkspaceCreateSceneResponse * response;
+@property (nonatomic, retain) FBSWorkspaceCreateSceneResponse *response;
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

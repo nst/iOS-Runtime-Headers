@@ -6,10 +6,10 @@
     int _infoListType;
 }
 
-@property(readonly) int infoListType;
+@property (nonatomic, readonly) int infoListType;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (void)enumerateChildrenUsingBlock:(id)arg1;
+- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (int)infoListType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (int)pageComponentType;

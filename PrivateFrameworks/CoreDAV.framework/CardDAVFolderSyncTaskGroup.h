@@ -6,7 +6,7 @@
     BOOL _isInitialSync;
 }
 
-@property BOOL isInitialSync;
+@property (nonatomic) BOOL isInitialSync;
 
 - (Class)bulkChangeTaskClass;
 - (id)copyGetTaskWithURL:(id)arg1;

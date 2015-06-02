@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItemWithNoChildren, NSMutableSet;
-
 @interface CoreDAVItemWithHrefChildren : CoreDAVItem {
     NSMutableSet *_hrefs;
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) NSMutableSet * hrefs;
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
+@property (nonatomic, retain) NSMutableSet *hrefs;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *unauthenticated;
 
 + (id)copyParseRules;
 

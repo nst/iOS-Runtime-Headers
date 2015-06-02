@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSMutableDictionary;
-
 @interface IMParentalControls : NSObject {
     BOOL _active;
     BOOL _disableAV;
@@ -12,13 +10,13 @@
     BOOL _shouldPostNotifications;
 }
 
-@property(readonly) BOOL _disableAV;
-@property(readonly) BOOL _forceChatLogging;
-@property(retain,readonly) NSMutableDictionary * _parentalControls;
-@property(readonly) BOOL active;
-@property(readonly) BOOL disableAV;
-@property(readonly) BOOL forceChatLogging;
-@property BOOL shouldPostNotifications;
+@property (nonatomic, readonly) BOOL _disableAV;
+@property (nonatomic, readonly) BOOL _forceChatLogging;
+@property (nonatomic, readonly, retain) NSMutableDictionary *_parentalControls;
+@property (nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) BOOL disableAV;
+@property (nonatomic, readonly) BOOL forceChatLogging;
+@property (nonatomic) BOOL shouldPostNotifications;
 
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;

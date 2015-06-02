@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUCreateStationViewControllerDelegate>, NSMutableArray, NSString, RUMetricsController, RUSearchViewController, RUStationTreeViewController, UISearchDisplayController;
-
 @interface RUCreateStationViewController : UIViewController <RUSearchViewControllerDelegate, RUStationTreeViewControllerDelegate, UIScrollViewDelegate> {
     <RUCreateStationViewControllerDelegate> *_delegate;
     RUMetricsController *_metricsController;
@@ -15,16 +13,16 @@
     RUStationTreeViewController *_stationTreeViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUCreateStationViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUCreateStationViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
-- (void)_addMetricsControllerOperationBlock:(id)arg1;
+- (void)_addMetricsControllerOperationBlock:(id /* block */)arg1;
 - (void)_addStationWithDictionary:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInset;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;

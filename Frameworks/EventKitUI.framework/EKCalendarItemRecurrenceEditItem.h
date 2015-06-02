@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendarItemRecurrenceEndCell, EKRecurrenceTypeEditItemViewController, NSDate, NSString, PreferencesValueCell;
-
 @interface EKCalendarItemRecurrenceEditItem : EKCalendarItemEditItem <EKCellShortener, EKRecurrenceTypeEditItemViewControllerDelegate> {
     NSString *_customRepeatDescription;
     unsigned int _disclosedSubitem;
@@ -17,10 +15,10 @@
     int _shorteningStatus;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryChanged:(id)arg1;

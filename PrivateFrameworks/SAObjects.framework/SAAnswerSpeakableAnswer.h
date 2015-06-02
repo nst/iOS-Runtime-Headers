@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary, NSString;
+@interface SAAnswerSpeakableAnswer : AceObject <SAAceSerializable>
 
-@interface SAAnswerSpeakableAnswer : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * parameters;
-@property(readonly) Class superclass;
-@property(copy) NSString * templateName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *parameters;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *templateName;
 
 + (id)speakableAnswer;
 + (id)speakableAnswerWithDictionary:(id)arg1 context:(id)arg2;

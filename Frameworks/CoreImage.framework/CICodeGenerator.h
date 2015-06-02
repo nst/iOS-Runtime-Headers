@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSData;
-
 @interface CICodeGenerator : CIFilter {
     NSData *inputMessage;
 }
 
-@property(copy) NSData * inputMessage;
+@property (nonatomic, copy) NSData *inputMessage;
 
 - (id)inputMessage;
 - (struct CGImage { }*)outputCGImage;

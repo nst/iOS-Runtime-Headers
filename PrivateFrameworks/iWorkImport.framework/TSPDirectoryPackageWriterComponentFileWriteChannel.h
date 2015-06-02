@@ -2,32 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, NSURL, TSUFileIOChannel;
-
 @interface TSPDirectoryPackageWriterComponentFileWriteChannel : NSObject <TSPComponentWriteChannel> {
     NSURL *_URL;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     BOOL _isClosed;
     NSObject<OS_dispatch_queue> *_queue;
     TSUFileIOChannel *_writeChannel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)close;
-- (id)initWithURL:(id)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)initWithURL:(id)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)writeData:(id)arg1;
 
 @end

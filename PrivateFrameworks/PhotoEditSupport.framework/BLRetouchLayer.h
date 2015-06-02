@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLBaseLayerStack, BLRetouchLayer, NSData;
-
 @interface BLRetouchLayer : NSObject {
     int _brushType;
     BOOL _enabled;
@@ -11,13 +9,13 @@
     BLBaseLayerStack *_layerStack;
 }
 
-@property int brushType;
-@property BOOL enabled;
-@property(readonly) BOOL hasLayerMask;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property BLRetouchLayer * layerBelow;
-@property NSData * layerData;
-@property BLBaseLayerStack * layerStack;
+@property (nonatomic) int brushType;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic, readonly) BOOL hasLayerMask;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) BLRetouchLayer *layerBelow;
+@property (nonatomic) NSData *layerData;
+@property (nonatomic) BLBaseLayerStack *layerStack;
 
 + (id)layer;
 

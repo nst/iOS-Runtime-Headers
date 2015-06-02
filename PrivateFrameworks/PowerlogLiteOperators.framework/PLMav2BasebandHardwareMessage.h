@@ -7,8 +7,8 @@
     struct _PLMav2BasebandHWStatsTX { unsigned int x1[5][12]; } *_mav2_tx;
 }
 
-@property struct _PLMav2BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; }* rx;
-@property struct _PLMav2BasebandHWStatsTX { unsigned int x1[5][12]; }* tx;
+@property (nonatomic) struct _PLMav2BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; }*rx;
+@property (nonatomic) struct _PLMav2BasebandHWStatsTX { unsigned int x1[5][12]; }*tx;
 
 - (id)indexToRAT:(unsigned int)arg1;
 - (id)initWithData:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarExternalStyleAttributes : UIStatusBarNewUIStyleAttributes {
-}
+@interface UIStatusBarExternalStyleAttributes : UIStatusBarNewUIStyleAttributes
 
 - (id)backgroundImageName;
 - (Class)foregroundStyleClass;

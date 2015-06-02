@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface NNMKSyncEndpoint : NSObject {
     NSMutableDictionary *_datesForIDSIdentifiersScheduledToBeResent;
     NSObject<OS_dispatch_queue> *_endpointQueue;
@@ -11,10 +9,10 @@
     NSObject<OS_dispatch_queue> *_resendingQueue;
 }
 
-@property(retain) NSMutableDictionary * datesForIDSIdentifiersScheduledToBeResent;
-@property(retain) NSObject<OS_dispatch_queue> * endpointQueue;
-@property(retain) NSMutableDictionary * lastResendIntervalKeyedByIDSIdentifier;
-@property(retain) NSObject<OS_dispatch_queue> * resendingQueue;
+@property (nonatomic, retain) NSMutableDictionary *datesForIDSIdentifiersScheduledToBeResent;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *endpointQueue;
+@property (nonatomic, retain) NSMutableDictionary *lastResendIntervalKeyedByIDSIdentifier;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *resendingQueue;
 
 - (void).cxx_destruct;
 - (id)datesForIDSIdentifiersScheduledToBeResent;

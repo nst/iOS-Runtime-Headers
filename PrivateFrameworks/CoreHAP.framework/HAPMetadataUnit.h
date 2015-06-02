@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSString;
-
 @interface HAPMetadataUnit : NSObject {
     NSString *_localizationKey;
     NSString *_name;
     NSString *_unitDescription;
 }
 
-@property(retain) NSString * localizationKey;
-@property(retain) NSString * name;
-@property(retain) NSString * unitDescription;
+@property (nonatomic, retain) NSString *localizationKey;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *unitDescription;
 
 + (id)init:(id)arg1 withDictionary:(id)arg2;
 

@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface TSCH3DPhongLikeLightingModel : TSCH3DLightingModel {
-}
+@interface TSCH3DPhongLikeLightingModel : TSCH3DLightingModel
 
 - (void)affect:(id)arg1 states:(id)arg2 scene:(id)arg3 texturePool:(id)arg4 percentage:(id)arg5;
 - (id)diffuseTextureTiling;

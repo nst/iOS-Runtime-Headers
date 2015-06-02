@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString;
-
 @interface TUPhoneNumber : NSObject <NSCoding, NSSecureCoding> {
     struct __CFPhoneNumber { } *_phoneNumberRef;
 }
 
-@property(readonly) NSString * countryCode;
-@property(readonly) NSString * digits;
-@property(readonly) NSString * formattedInternationalRepresentation;
-@property(readonly) NSString * formattedRepresentation;
-@property struct __CFPhoneNumber { }* phoneNumberRef;
-@property(readonly) NSString * unformattedInternationalRepresentation;
+@property (readonly) NSString *countryCode;
+@property (readonly) NSString *digits;
+@property (readonly) NSString *formattedInternationalRepresentation;
+@property (readonly) NSString *formattedRepresentation;
+@property struct __CFPhoneNumber { }*phoneNumberRef;
+@property (readonly) NSString *unformattedInternationalRepresentation;
 
 + (id)phoneNumberWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;

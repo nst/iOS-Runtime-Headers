@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSessionController>, NSArray, NSMutableArray, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PRSSearchSession : NSObject <PRSImageSource, PRSResourceProvider> {
     NSMutableSet *_cachedResults;
     NSMutableSet *_cachedWebResults;
@@ -25,21 +23,21 @@
     BOOL _valid;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * clientQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL enableFeedbackDebugLogging;
-@property(readonly) NSString * fteLearnMoreString;
-@property(readonly) NSString * fteLocString;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * lookupFirstUseDescription1;
-@property(readonly) NSString * lookupFirstUseDescription2;
+@property (nonatomic, readonly) NSString *fteLearnMoreString;
+@property (nonatomic, readonly) NSString *fteLocString;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *lookupFirstUseDescription1;
+@property (nonatomic, readonly) NSString *lookupFirstUseDescription2;
 @property double retryAfter;
-@property(readonly) double searchRenderTimeout;
+@property (nonatomic, readonly) double searchRenderTimeout;
 @property double sessionStartTime;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * supportedServices;
-@property(getter=isValid,readonly) BOOL valid;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *supportedServices;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (void).cxx_destruct;
 - (void)_endSession;
@@ -64,10 +62,10 @@
 - (id)fteLearnMoreString;
 - (id)fteLocString;
 - (void)getCachedQueries:(id*)arg1 results:(id*)arg2 webSearch:(BOOL)arg3;
-- (void)getImageWithIdentifier:(id)arg1 block:(id)arg2;
+- (void)getImageWithIdentifier:(id)arg1 block:(id /* block */)arg2;
 - (id)initWithClient:(id)arg1;
 - (id)initWithClient:(id)arg1 clientQueue:(id)arg2;
-- (void)isLocaleSupported:(id)arg1 withReply:(id)arg2;
+- (void)isLocaleSupported:(id)arg1 withReply:(id /* block */)arg2;
 - (BOOL)isValid;
 - (void)killFeedback;
 - (id)lookupFirstUseDescription1;

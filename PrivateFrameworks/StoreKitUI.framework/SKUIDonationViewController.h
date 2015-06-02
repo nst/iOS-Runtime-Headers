@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIDonationConfiguration, UIViewController;
-
 @interface SKUIDonationViewController : UINavigationController {
     NSString *_charityID;
     SKUIClientContext *_clientContext;
@@ -12,9 +10,9 @@
     UIViewController *_placeholderViewController;
 }
 
-@property(readonly) NSString * charityIdentifier;
-@property(retain) SKUIClientContext * clientContext;
-@property(retain) NSOperationQueue * operationQueue;
+@property (nonatomic, readonly) NSString *charityIdentifier;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;

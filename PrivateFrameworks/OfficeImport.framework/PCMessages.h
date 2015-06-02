@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PCMessages : NSObject {
-}
+@interface PCMessages : NSObject
 
 + (void)initialize;
 

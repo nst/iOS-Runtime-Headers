@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString;
-
 @interface GEOMapQuery : PBCodable <NSCopying> {
     int _clientImgFmt;
     int _clientImgMaxHeight;
@@ -40,38 +38,38 @@
     int _zoomlevel;
 }
 
-@property int clientImgFmt;
-@property int clientImgMaxHeight;
-@property int clientImgMaxWidth;
-@property BOOL hasClientImgFmt;
-@property BOOL hasClientImgMaxHeight;
-@property BOOL hasClientImgMaxWidth;
-@property BOOL hasMapCenterX;
-@property BOOL hasMapCenterY;
-@property(readonly) BOOL hasMapRegion;
-@property BOOL hasMapSpanX;
-@property BOOL hasMapSpanY;
-@property(readonly) BOOL hasPlaceSearchRequest;
-@property(readonly) BOOL hasQuery;
-@property BOOL hasRequestType;
-@property BOOL hasSessionID;
-@property BOOL hasTilesizeX;
-@property BOOL hasTilesizeY;
-@property(readonly) BOOL hasUserLocation;
-@property BOOL hasZoomlevel;
-@property int mapCenterX;
-@property int mapCenterY;
-@property(retain) GEOMapRegion * mapRegion;
-@property int mapSpanX;
-@property int mapSpanY;
-@property(retain) GEOPlaceSearchRequest * placeSearchRequest;
-@property(retain) NSString * query;
-@property int requestType;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property int tilesizeX;
-@property int tilesizeY;
-@property(retain) GEOLocation * userLocation;
-@property int zoomlevel;
+@property (nonatomic) int clientImgFmt;
+@property (nonatomic) int clientImgMaxHeight;
+@property (nonatomic) int clientImgMaxWidth;
+@property (nonatomic) BOOL hasClientImgFmt;
+@property (nonatomic) BOOL hasClientImgMaxHeight;
+@property (nonatomic) BOOL hasClientImgMaxWidth;
+@property (nonatomic) BOOL hasMapCenterX;
+@property (nonatomic) BOOL hasMapCenterY;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic) BOOL hasMapSpanX;
+@property (nonatomic) BOOL hasMapSpanY;
+@property (nonatomic, readonly) BOOL hasPlaceSearchRequest;
+@property (nonatomic, readonly) BOOL hasQuery;
+@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasTilesizeX;
+@property (nonatomic) BOOL hasTilesizeY;
+@property (nonatomic, readonly) BOOL hasUserLocation;
+@property (nonatomic) BOOL hasZoomlevel;
+@property (nonatomic) int mapCenterX;
+@property (nonatomic) int mapCenterY;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) int mapSpanX;
+@property (nonatomic) int mapSpanY;
+@property (nonatomic, retain) GEOPlaceSearchRequest *placeSearchRequest;
+@property (nonatomic, retain) NSString *query;
+@property (nonatomic) int requestType;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) int tilesizeX;
+@property (nonatomic) int tilesizeY;
+@property (nonatomic, retain) GEOLocation *userLocation;
+@property (nonatomic) int zoomlevel;
 
 - (int)clientImgFmt;
 - (int)clientImgMaxHeight;

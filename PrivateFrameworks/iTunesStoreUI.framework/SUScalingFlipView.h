@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScalingFlipViewDelegate>, UIView;
-
 @interface SUScalingFlipView : UIView {
     UIView *_backView;
     <SUScalingFlipViewDelegate> *_delegate;
@@ -32,9 +30,9 @@
     } _toFrame;
 }
 
-@property <SUScalingFlipViewDelegate> * delegate;
-@property int direction;
-@property double duration;
+@property (nonatomic) <SUScalingFlipViewDelegate> *delegate;
+@property (nonatomic) int direction;
+@property (nonatomic) double duration;
 
 - (id)_backLayerAnimation;
 - (id)_fixedAnimationForAnimation:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIPhotoGrain : CIFilter {
     NSNumber *inputAmount;
     NSNumber *inputISO;
@@ -11,10 +9,10 @@
     NSNumber *inputSeed;
 }
 
-@property(copy) NSNumber * inputAmount;
-@property(copy) NSNumber * inputISO;
-@property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputSeed;
+@property (nonatomic, copy) NSNumber *inputAmount;
+@property (nonatomic, copy) NSNumber *inputISO;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, copy) NSNumber *inputSeed;
 
 - (id)_grainBlendAndMixKernel;
 - (id)_interpolateGrainKernel;

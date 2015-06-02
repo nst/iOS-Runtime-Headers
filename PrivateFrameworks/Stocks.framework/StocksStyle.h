@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class UIColor, UIFont;
-
 @interface StocksStyle : NSObject {
     UIColor *_chartHighlightColor;
     UIFont *_chartLabelFont;

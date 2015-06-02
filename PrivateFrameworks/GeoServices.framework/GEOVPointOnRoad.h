@@ -10,9 +10,9 @@
     int _vertexIndex;
 }
 
-@property int featureIndex;
-@property BOOL hasVertexIndex;
-@property int vertexIndex;
+@property (nonatomic) int featureIndex;
+@property (nonatomic) BOOL hasVertexIndex;
+@property (nonatomic) int vertexIndex;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

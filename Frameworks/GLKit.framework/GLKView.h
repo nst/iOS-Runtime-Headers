@@ -2,19 +2,12 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <GLKViewDelegate>, EAGLContext, NSMutableDictionary, UIImage;
-
 @interface GLKView : UIView <NSCoding> {
     EAGLContext *_context;
     <GLKViewDelegate> *_delegate;
     unsigned int _depthRenderbuffer;
     unsigned int _depthStencilRenderbuffer;
-    int (*_drawRectIMP)();
+    int (*_drawRectIMP;
     int _drawableColorFormat;
     int _drawableDepthFormat;
     int _drawableHeight;
@@ -43,29 +36,29 @@
     float _viewContentScaleFactor;
 }
 
-@property(retain) EAGLContext * context;
-@property <GLKViewDelegate> * delegate;
-@property unsigned int depthRenderbuffer;
-@property unsigned int depthStencilRenderbuffer;
-@property int (* drawRectIMP;
-@property int drawableColorFormat;
-@property int drawableDepthFormat;
-@property(readonly) int drawableHeight;
-@property int drawableMultisample;
-@property(retain) NSMutableDictionary * drawableProperties;
-@property int drawableStencilFormat;
-@property(readonly) int drawableWidth;
-@property BOOL enableSetNeedsDisplay;
-@property BOOL inDraw;
-@property unsigned int multisampleColorRenderbuffer;
-@property unsigned int multisampleFramebuffer;
-@property unsigned int resolveColorRenderbuffer;
-@property unsigned int resolveFramebuffer;
-@property BOOL shouldDeleteFramebuffer;
-@property(readonly) UIImage * snapshot;
-@property unsigned int stencilRenderbuffer;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewBounds;
-@property float viewContentScaleFactor;
+@property (nonatomic, retain) EAGLContext *context;
+@property (nonatomic) <GLKViewDelegate> *delegate;
+@property (nonatomic) unsigned int depthRenderbuffer;
+@property (nonatomic) unsigned int depthStencilRenderbuffer;
+@property (nonatomic) int (*drawRectIMP;
+@property (nonatomic) int drawableColorFormat;
+@property (nonatomic) int drawableDepthFormat;
+@property (nonatomic, readonly) int drawableHeight;
+@property (nonatomic) int drawableMultisample;
+@property (nonatomic, retain) NSMutableDictionary *drawableProperties;
+@property (nonatomic) int drawableStencilFormat;
+@property (nonatomic, readonly) int drawableWidth;
+@property (nonatomic) BOOL enableSetNeedsDisplay;
+@property (nonatomic) BOOL inDraw;
+@property (nonatomic) unsigned int multisampleColorRenderbuffer;
+@property (nonatomic) unsigned int multisampleFramebuffer;
+@property (nonatomic) unsigned int resolveColorRenderbuffer;
+@property (nonatomic) unsigned int resolveFramebuffer;
+@property (nonatomic) BOOL shouldDeleteFramebuffer;
+@property (readonly) UIImage *snapshot;
+@property (nonatomic) unsigned int stencilRenderbuffer;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewBounds;
+@property (nonatomic) float viewContentScaleFactor;
 
 + (Class)layerClass;
 
@@ -87,7 +80,7 @@
 - (unsigned int)depthStencilRenderbuffer;
 - (void)display;
 - (void)displayLayer:(id)arg1;
-- (int (*)())drawRectIMP;
+- (int (*)drawRectIMP;
 - (int)drawableColorFormat;
 - (int)drawableDepthFormat;
 - (int)drawableHeight;
@@ -111,7 +104,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDepthRenderbuffer:(unsigned int)arg1;
 - (void)setDepthStencilRenderbuffer:(unsigned int)arg1;
-- (void)setDrawRectIMP:(int (*)())arg1;
+- (void)setDrawRectIMP:(int (*)arg1;
 - (void)setDrawableColorFormat:(int)arg1;
 - (void)setDrawableDepthFormat:(int)arg1;
 - (void)setDrawableMultisample:(int)arg1;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSString;
-
 @interface NPKProtoRelevantPassTuple : PBCodable <NSCopying> {
     NSString *_passID;
     NSString *_relevantText;
 }
 
-@property(readonly) BOOL hasRelevantText;
-@property(retain) NSString * passID;
-@property(retain) NSString * relevantText;
+@property (nonatomic, readonly) BOOL hasRelevantText;
+@property (nonatomic, retain) NSString *passID;
+@property (nonatomic, retain) NSString *relevantText;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class UIImageView, UILabel, UIView;
-
 @interface CertUIItemSummaryCell : UITableViewCell {
     UIImageView *_itemImageView;
     UILabel *_itemSubtitleLabel;
@@ -11,10 +9,10 @@
     UIView *_itemTitleView;
 }
 
-@property(retain) UIImageView * itemImageView;
-@property(retain) UILabel * itemSubtitleLabel;
-@property(retain) UILabel * itemTitleLabel;
-@property(retain) UIView * itemTitleView;
+@property (nonatomic, retain) UIImageView *itemImageView;
+@property (nonatomic, retain) UILabel *itemSubtitleLabel;
+@property (nonatomic, retain) UILabel *itemTitleLabel;
+@property (nonatomic, retain) UIView *itemTitleView;
 
 + (float)titleOriginX;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextEffectsWindowHosted : UITextEffectsWindow {
-}
+@interface UITextEffectsWindowHosted : UITextEffectsWindow
 
 - (BOOL)_isClippedByScreenJail;
 - (BOOL)_isConstrainedByScreenJail;

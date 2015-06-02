@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, NSString, WDDocument;
-
 @interface WMDocumentMapper : CMMapper <CMMapperRoot> {
     CMArchiveManager *mArchiver;
     NSString *mFileName;

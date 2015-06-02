@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSNumber, NSString;
+@interface SAUISayIt : SABaseClientBoundCommand
 
-@interface SAUISayIt : SABaseClientBoundCommand {
-}
+@property (nonatomic, retain) <SAAceSerializable> *context;
+@property (nonatomic, copy) NSNumber *listenAfterSpeaking;
+@property (nonatomic, copy) NSString *message;
 
-@property(retain) <SAAceSerializable> * context;
-@property(copy) NSNumber * listenAfterSpeaking;
-@property(copy) NSString * message;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)sayIt;
 + (id)sayItWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)context;
 - (id)encodedClassName;
 - (id)groupIdentifier;
@@ -24,5 +22,9 @@
 - (void)setContext:(id)arg1;
 - (void)setListenAfterSpeaking:(id)arg1;
 - (void)setMessage:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

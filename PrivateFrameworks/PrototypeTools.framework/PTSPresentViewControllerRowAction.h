@@ -2,26 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PTSPresentViewControllerRowAction : PTSRowAction {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _viewControllerCreator;
-
+    id /* block */ _viewControllerCreator;
 }
 
-@property(copy) id viewControllerCreator;
+@property (nonatomic, copy) id /* block */ viewControllerCreator;
 
-+ (id)actionWithViewControllerCreator:(id)arg1;
++ (id)actionWithViewControllerCreator:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setViewControllerCreator:(id)arg1;
-- (id)viewControllerCreator;
+- (void)setViewControllerCreator:(id /* block */)arg1;
+- (id /* block */)viewControllerCreator;
 
 @end

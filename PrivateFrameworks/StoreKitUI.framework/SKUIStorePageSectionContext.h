@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIColorScheme, SKUIItemOfferButtonAppearance, SKUILayoutCache, SKUIMetricsController, SKUIMetricsImpressionSession, SKUIResourceLoader, SKUIStorePageSectionsViewController, UICollectionView, UIColor;
-
 @interface SKUIStorePageSectionContext : NSObject {
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     float _activePageWidth;
@@ -21,21 +19,21 @@
     SKUILayoutCache *_textLayoutCache;
 }
 
-@property(readonly) SKUIMetricsImpressionSession * activeMetricsImpressionSession;
-@property(readonly) float activePageWidth;
-@property(readonly) SKUIClientContext * clientContext;
-@property(readonly) UICollectionView * collectionView;
-@property(readonly) SKUIColorScheme * colorScheme;
-@property(readonly) int defaultPinningTransitionStyle;
-@property(readonly) SKUIItemOfferButtonAppearance * itemOfferButtonAppearance;
-@property(readonly) float landscapePageWidth;
-@property(readonly) int layoutStyle;
-@property(readonly) SKUIMetricsController * metricsController;
-@property(readonly) SKUIStorePageSectionsViewController * parentViewController;
-@property(readonly) UIColor * placeholderColor;
-@property(readonly) float portraitPageWidth;
-@property(readonly) SKUIResourceLoader * resourceLoader;
-@property(readonly) SKUILayoutCache * textLayoutCache;
+@property (nonatomic, readonly) SKUIMetricsImpressionSession *activeMetricsImpressionSession;
+@property (nonatomic, readonly) float activePageWidth;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) UICollectionView *collectionView;
+@property (nonatomic, readonly) SKUIColorScheme *colorScheme;
+@property (nonatomic, readonly) int defaultPinningTransitionStyle;
+@property (nonatomic, readonly) SKUIItemOfferButtonAppearance *itemOfferButtonAppearance;
+@property (nonatomic, readonly) float landscapePageWidth;
+@property (nonatomic, readonly) int layoutStyle;
+@property (nonatomic, readonly) SKUIMetricsController *metricsController;
+@property (nonatomic, readonly) SKUIStorePageSectionsViewController *parentViewController;
+@property (nonatomic, readonly) UIColor *placeholderColor;
+@property (nonatomic, readonly) float portraitPageWidth;
+@property (nonatomic, readonly) SKUIResourceLoader *resourceLoader;
+@property (nonatomic, readonly) SKUILayoutCache *textLayoutCache;
 
 - (void).cxx_destruct;
 - (void)_setActiveMetricsImpressionSession:(id)arg1;

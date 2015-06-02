@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class <WRMClientDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface WRMClient : NSObject {
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     <WRMClientDelegate> *_wrmClientDelegate;
 }
 
-@property <WRMClientDelegate> * delegate;
+@property <WRMClientDelegate> *delegate;
 
 - (void)dealloc;
 - (id)delegate;

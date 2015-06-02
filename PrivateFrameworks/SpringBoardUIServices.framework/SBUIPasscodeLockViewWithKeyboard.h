@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString, SBPasscodeKeyboard, SBUIAlphanumericPasscodeEntryField, SBUIRingViewLabelButton, UILabel, UIView;
-
 @interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate> {
     SBUIAlphanumericPasscodeEntryField *_alphaEntryField;
     BOOL _disableAnimationsDuringMinMax;
@@ -24,12 +22,12 @@
     BOOL _wasMinimizedWhenAnimationStarted;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UILabel * statusField;
-@property(retain) UILabel * statusSubtitleView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UILabel *statusField;
+@property (nonatomic, retain) UILabel *statusSubtitleView;
+@property (readonly) Class superclass;
 
 - (void)_acceptOrCancelReturnKeyPress;
 - (BOOL)_canMinMaxKeyboard;

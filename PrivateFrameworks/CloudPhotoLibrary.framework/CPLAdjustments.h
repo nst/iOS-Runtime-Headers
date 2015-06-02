@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLResource, NSData, NSString;
-
 @interface CPLAdjustments : NSObject <NSCopying, NSSecureCoding> {
     NSString *_adjustmentCompoundVersion;
     NSString *_adjustmentCreatorCode;
@@ -16,15 +14,15 @@
     NSData *_simpleAdjustmentData;
 }
 
-@property(copy) NSString * adjustmentCompoundVersion;
-@property(copy) NSString * adjustmentCreatorCode;
-@property(retain) CPLResource * adjustmentData;
-@property unsigned int adjustmentSourceType;
-@property(copy) NSString * adjustmentType;
-@property(copy) NSString * creatorCode;
-@property(copy) NSString * otherAdjustmentsFingerprint;
-@property(copy) NSString * similarToOriginalAdjustmentsFingerprint;
-@property(retain) NSData * simpleAdjustmentData;
+@property (nonatomic, copy) NSString *adjustmentCompoundVersion;
+@property (nonatomic, copy) NSString *adjustmentCreatorCode;
+@property (nonatomic, retain) CPLResource *adjustmentData;
+@property (nonatomic) unsigned int adjustmentSourceType;
+@property (nonatomic, copy) NSString *adjustmentType;
+@property (nonatomic, copy) NSString *creatorCode;
+@property (nonatomic, copy) NSString *otherAdjustmentsFingerprint;
+@property (nonatomic, copy) NSString *similarToOriginalAdjustmentsFingerprint;
+@property (nonatomic, retain) NSData *simpleAdjustmentData;
 
 + (BOOL)supportsSecureCoding;
 

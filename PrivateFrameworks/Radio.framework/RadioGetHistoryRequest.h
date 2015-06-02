@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString, RadioPlayEventCollection, SSURLConnectionRequest;
-
 @interface RadioGetHistoryRequest : RadioRequest {
     BOOL _aggregateSessions;
     BOOL _fetchForAccount;
@@ -16,14 +14,14 @@
     long long _stationID;
 }
 
-@property BOOL aggregateSessions;
-@property BOOL fetchForAccount;
-@property BOOL includesAds;
-@property unsigned int maxNumberOfTracks;
-@property(copy) RadioPlayEventCollection * playEventCollection;
-@property BOOL shouldProcessCategories;
-@property(copy) NSString * stationHash;
-@property long long stationID;
+@property (nonatomic) BOOL aggregateSessions;
+@property (nonatomic) BOOL fetchForAccount;
+@property (nonatomic) BOOL includesAds;
+@property (nonatomic) unsigned int maxNumberOfTracks;
+@property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
+@property (nonatomic) BOOL shouldProcessCategories;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
 
 - (void).cxx_destruct;
 - (id)_newHistoryCategoryWithDictionary:(id)arg1;
@@ -44,8 +42,8 @@
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
 - (BOOL)shouldProcessCategories;
-- (void)startWithCompletionHandler:(id)arg1;
-- (void)startWithHistoryCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithHistoryCompletionHandler:(id /* block */)arg1;
 - (id)stationHash;
 - (long long)stationID;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSURL;
-
 @interface OCPPackageRelationship : NSObject {
     NSString *mIdentifier;
     NSURL *mTargetLocation;

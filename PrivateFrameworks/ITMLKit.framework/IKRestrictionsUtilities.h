@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString;
+@interface IKRestrictionsUtilities : NSObject <NSCacheDelegate>
 
-@interface IKRestrictionsUtilities : NSObject <NSCacheDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_purgableRatingsDictionary;
 + (id)orderedRankingsInDomain:(id)arg1 countryCode:(id)arg2;

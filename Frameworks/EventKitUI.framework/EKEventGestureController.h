@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <EKEventGestureControllerDelegate>, <EKEventGestureControllerUntimedDelegate>, EKCalendarDate, EKDayOccurrenceView, EKEvent, NSString, NSTimer, UILongPressGestureRecognizer;
-
 @interface EKEventGestureController : NSObject <UIAlertViewDelegate, UIGestureRecognizerDelegate> {
     BOOL _commitBlocked;
     int _consecutivePageTurnCount;
@@ -43,11 +37,7 @@
     double _previousTouchTime;
     float _previousTouchVelocity;
     UILongPressGestureRecognizer *_recognizer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recurrenceSheetCompletionHandler;
-
+    id /* block */ _recurrenceSheetCompletionHandler;
     NSTimer *_scrollTimer;
     NSString *_sessionIdentifierForDebug;
     double _timeSinceEnteredPageMargin;
@@ -61,22 +51,22 @@
     BOOL _usesXDragOffsetInCancelRegion;
 }
 
-@property BOOL commitBlocked;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKEventGestureControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) EKDayOccurrenceView * draggingView;
-@property(retain) EKDayOccurrenceView * draggingViewSource;
-@property(retain) EKEvent * event;
-@property(readonly) struct CGPoint { float x1; float x2; } firstTouchPoint;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGPoint { float x1; float x2; } latestTouchPoint;
-@property(retain) NSString * sessionIdentifierForDebug;
-@property(readonly) Class superclass;
-@property(readonly) struct CGPoint { float x1; float x2; } touchOffset;
-@property <EKEventGestureControllerUntimedDelegate> * untimedDelegate;
-@property BOOL usesHorizontalDragLocking;
-@property BOOL usesXDragOffsetInCancelRegion;
+@property (nonatomic) BOOL commitBlocked;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKEventGestureControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) EKDayOccurrenceView *draggingView;
+@property (nonatomic, retain) EKDayOccurrenceView *draggingViewSource;
+@property (nonatomic, retain) EKEvent *event;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } firstTouchPoint;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } latestTouchPoint;
+@property (nonatomic, retain) NSString *sessionIdentifierForDebug;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } touchOffset;
+@property (nonatomic) <EKEventGestureControllerUntimedDelegate> *untimedDelegate;
+@property (nonatomic) BOOL usesHorizontalDragLocking;
+@property (nonatomic) BOOL usesXDragOffsetInCancelRegion;
 
 - (void).cxx_destruct;
 - (float)_Debug_HoursSinceStartOfDay:(double)arg1;
@@ -117,7 +107,7 @@
 - (void)invalidate;
 - (BOOL)isDraggingOccurrence;
 - (struct CGPoint { float x1; float x2; })latestTouchPoint;
-- (void)promptUserForRecurrenceActionOnOccurrence:(id)arg1 whenFinished:(id)arg2;
+- (void)promptUserForRecurrenceActionOnOccurrence:(id)arg1 whenFinished:(id /* block */)arg2;
 - (void)removeDraggedOccurrence;
 - (id)sessionIdentifierForDebug;
 - (void)setCommitBlocked:(BOOL)arg1;

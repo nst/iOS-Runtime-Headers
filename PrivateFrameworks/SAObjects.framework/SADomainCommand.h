@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSURL;
+@interface SADomainCommand : SABaseClientBoundCommand
 
-@interface SADomainCommand : SABaseClientBoundCommand {
-}
-
-@property(copy) NSURL * targetAppId;
-@property(copy) NSURL * targetPluginId;
-@property(copy) NSNumber * timeout;
+@property (nonatomic, copy) NSURL *targetAppId;
+@property (nonatomic, copy) NSURL *targetPluginId;
+@property (nonatomic, copy) NSNumber *timeout;
 
 + (id)domainCommand;
 + (id)domainCommandWithDictionary:(id)arg1 context:(id)arg2;

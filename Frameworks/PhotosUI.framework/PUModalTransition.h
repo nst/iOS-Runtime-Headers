@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface PUModalTransition : PUViewControllerTransition <UIViewControllerTransitioningDelegate> {
     int __operation;
 }
 
-@property(setter=_setOperation:) int _operation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setOperation:, nonatomic) int _operation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)_operation;
 - (void)_setOperation:(int)arg1;

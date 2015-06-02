@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface _SBFQueueScheduler : NSObject <SBFScheduler> {
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-- (id)afterDelay:(double)arg1 performBlock:(id)arg2;
+- (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
-- (id)performBlock:(id)arg1;
-- (id)performCancelableBlock:(id)arg1;
+- (id)performBlock:(id /* block */)arg1;
+- (id)performCancelableBlock:(id /* block */)arg1;
 
 @end

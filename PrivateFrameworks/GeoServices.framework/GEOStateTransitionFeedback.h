@@ -13,12 +13,12 @@
     int _stateType;
 }
 
-@property BOOL hasNewValue;
-@property BOOL hasOldValue;
-@property BOOL hasStateType;
-@property int newValue;
-@property int oldValue;
-@property int stateType;
+@property (nonatomic) BOOL hasNewValue;
+@property (nonatomic) BOOL hasOldValue;
+@property (nonatomic) BOOL hasStateType;
+@property (nonatomic) int newValue;
+@property (nonatomic) int oldValue;
+@property (nonatomic) int stateType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

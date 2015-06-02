@@ -6,29 +6,29 @@
     long long _conversationHash;
     unsigned int _dateReceivedInterval;
     unsigned int _dateSentInterval;
-    unsigned int _deleted : 1;
-    unsigned int _flagged : 1;
+    unsigned int _deleted;
+    unsigned int _flagged;
     long long _generationNumber;
-    unsigned int _hasAttachments : 1;
-    unsigned int _isVIP : 1;
+    unsigned int _hasAttachments;
+    unsigned int _isVIP;
     unsigned int _mailboxID;
-    unsigned int _read : 1;
+    unsigned int _read;
     unsigned int _uid;
-    unsigned int _uidIsLibraryID : 1;
+    unsigned int _uidIsLibraryID;
 }
 
-@property long long conversationHash;
-@property unsigned int dateReceivedInterval;
-@property unsigned int dateSentInterval;
-@property BOOL deleted;
-@property BOOL flagged;
-@property(readonly) long long generationNumber;
-@property BOOL isVIP;
-@property(getter=isKnownToHaveAttachments) BOOL knownToHaveAttachments;
-@property unsigned int mailboxID;
-@property BOOL read;
-@property unsigned int uid;
-@property BOOL uidIsLibraryID;
+@property (nonatomic) long long conversationHash;
+@property (nonatomic) unsigned int dateReceivedInterval;
+@property (nonatomic) unsigned int dateSentInterval;
+@property (nonatomic) BOOL deleted;
+@property (nonatomic) BOOL flagged;
+@property (nonatomic, readonly) long long generationNumber;
+@property (nonatomic) BOOL isVIP;
+@property (getter=isKnownToHaveAttachments, nonatomic) BOOL knownToHaveAttachments;
+@property (nonatomic) unsigned int mailboxID;
+@property (nonatomic) BOOL read;
+@property (nonatomic) unsigned int uid;
+@property (nonatomic) BOOL uidIsLibraryID;
 
 + (long long)newGenerationNumber;
 

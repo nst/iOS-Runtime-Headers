@@ -7,8 +7,8 @@
     float _widthFactor;
 }
 
-@property(readonly) float heightFactor;
-@property(readonly) float widthFactor;
+@property (nonatomic, readonly) float heightFactor;
+@property (nonatomic, readonly) float widthFactor;
 
 - (float)applyResizeHeightFactor:(float)arg1;
 - (float)applyResizeWidthFactor:(float)arg1;

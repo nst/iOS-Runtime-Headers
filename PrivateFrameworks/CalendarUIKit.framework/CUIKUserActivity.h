@@ -7,8 +7,8 @@
     unsigned int _version;
 }
 
-@property unsigned int type;
-@property unsigned int version;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned int version;
 
 + (double)_doubleFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;
 + (int)_integerFromDictionary:(id)arg1 key:(id)arg2 error:(BOOL*)arg3;

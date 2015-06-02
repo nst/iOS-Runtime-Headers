@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMTranscriptChatItem, NSAttributedString, NSString, UIImage;
-
 @interface CKChatItem : NSObject {
     IMTranscriptChatItem *_imChatItem;
     float _maxWidth;
@@ -22,30 +20,30 @@
     NSAttributedString *_transcriptText;
 }
 
-@property(retain) IMTranscriptChatItem * IMChatItem;
-@property(readonly) unsigned char attachmentContiguousType;
-@property(readonly) BOOL canCopy;
-@property(readonly) BOOL canDelete;
-@property(readonly) BOOL canExport;
-@property(readonly) BOOL canForward;
-@property(readonly) BOOL canSendAsTextMessage;
-@property(readonly) Class cellClass;
-@property(copy,readonly) NSString * cellIdentifier;
-@property(retain,readonly) UIImage * contactImage;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(readonly) unsigned char contiguousType;
-@property(readonly) BOOL displayDuringSend;
-@property(readonly) BOOL hasTail;
-@property(readonly) BOOL isEditable;
-@property float maxWidth;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(getter=isSizeLoaded) BOOL sizeLoaded;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
-@property(copy) NSAttributedString * transcriptDrawerText;
-@property(readonly) BOOL transcriptOrientation;
-@property(copy) NSAttributedString * transcriptText;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } transcriptTextAlignmentInsets;
-@property(readonly) BOOL wantsDrawerLayout;
+@property (nonatomic, retain) IMTranscriptChatItem *IMChatItem;
+@property (nonatomic, readonly) unsigned char attachmentContiguousType;
+@property (nonatomic, readonly) BOOL canCopy;
+@property (nonatomic, readonly) BOOL canDelete;
+@property (nonatomic, readonly) BOOL canExport;
+@property (nonatomic, readonly) BOOL canForward;
+@property (nonatomic, readonly) BOOL canSendAsTextMessage;
+@property (nonatomic, readonly) Class cellClass;
+@property (nonatomic, readonly, copy) NSString *cellIdentifier;
+@property (nonatomic, readonly, retain) UIImage *contactImage;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, readonly) unsigned char contiguousType;
+@property (nonatomic, readonly) BOOL displayDuringSend;
+@property (nonatomic, readonly) BOOL hasTail;
+@property (nonatomic, readonly) BOOL isEditable;
+@property (nonatomic) float maxWidth;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (getter=isSizeLoaded, nonatomic) BOOL sizeLoaded;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
+@property (nonatomic, copy) NSAttributedString *transcriptDrawerText;
+@property (nonatomic, readonly) BOOL transcriptOrientation;
+@property (nonatomic, copy) NSAttributedString *transcriptText;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } transcriptTextAlignmentInsets;
+@property (nonatomic, readonly) BOOL wantsDrawerLayout;
 
 + (id)chatItemWithIMChatItem:(id)arg1 rightBalloonMaxWidth:(float)arg2 leftBalloonMaxWidth:(float)arg3 otherMaxWidth:(float)arg4;
 

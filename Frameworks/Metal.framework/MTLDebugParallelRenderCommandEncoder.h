@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLRenderPassDescriptor;
-
 @interface MTLDebugParallelRenderCommandEncoder : MTLToolsParallelRenderCommandEncoder {
     MTLRenderPassDescriptor *_descriptor;
 }
 
-@property(copy,readonly) MTLRenderPassDescriptor * descriptor;
+@property (nonatomic, readonly, copy) MTLRenderPassDescriptor *descriptor;
 
 - (void).cxx_destruct;
 - (id)description;

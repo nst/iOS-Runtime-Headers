@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, NSURL, SUGradient, SUPlaceholderViewController, SUShadow, SUSplitView, SUStructuredPage, UIViewController;
-
 @interface SUSplitViewController : SUViewController {
     NSURL *_displayedURL;
     UIViewController *_firstViewController;
@@ -18,17 +16,17 @@
     BOOL _viewIsReady;
 }
 
-@property(retain) NSURL * displayedURL;
-@property(retain) UIViewController * firstViewController;
-@property int layoutType;
-@property(retain) NSString * mainTitle;
-@property float minimumPaneSize;
-@property(retain) UIViewController * secondViewController;
-@property float splitPosition;
-@property(copy) SUShadow * splitShadow;
-@property BOOL usesSharedPlaceholder;
-@property(getter=isVertical) BOOL vertical;
-@property BOOL viewIsReady;
+@property (nonatomic, retain) NSURL *displayedURL;
+@property (nonatomic, retain) UIViewController *firstViewController;
+@property (nonatomic) int layoutType;
+@property (nonatomic, retain) NSString *mainTitle;
+@property (nonatomic) float minimumPaneSize;
+@property (nonatomic, retain) UIViewController *secondViewController;
+@property (nonatomic) float splitPosition;
+@property (nonatomic, copy) SUShadow *splitShadow;
+@property (nonatomic) BOOL usesSharedPlaceholder;
+@property (getter=isVertical, nonatomic) BOOL vertical;
+@property (nonatomic) BOOL viewIsReady;
 
 + (BOOL)isValidSplitPositionValue:(id)arg1;
 + (BOOL)isValidSplitTypeString:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSMutableDictionary;
-
 @interface _HKCFGNodeCache : NSObject {
     NSMutableDictionary *_cache;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDTokenTree : NSObject {
-}
+@interface EDTokenTree : NSObject
 
 + (id)buildSubtree:(unsigned int)arg1 formula:(id)arg2;
 + (id)buildSubtreeAtIndex:(unsigned int*)arg1 formula:(id)arg2;

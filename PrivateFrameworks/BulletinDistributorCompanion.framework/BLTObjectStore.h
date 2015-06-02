@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface BLTObjectStore : NSObject <BLTObjectCacheDelegate> {
     NSString *_path;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithPath:(id)arg1;
-- (void)objectCache:(id)arg1 keysWithBlock:(id)arg2;
-- (void)objectCache:(id)arg1 objectForKey:(id)arg2 withBlock:(id)arg3;
-- (void)objectCache:(id)arg1 removeObjectForKey:(id)arg2 withBlock:(id)arg3;
-- (void)objectCache:(id)arg1 storeObject:(id)arg2 withKey:(id)arg3 withBlock:(id)arg4;
+- (void)objectCache:(id)arg1 keysWithBlock:(id /* block */)arg2;
+- (void)objectCache:(id)arg1 objectForKey:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)objectCache:(id)arg1 removeObjectForKey:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)objectCache:(id)arg1 storeObject:(id)arg2 withKey:(id)arg3 withBlock:(id /* block */)arg4;
 
 @end

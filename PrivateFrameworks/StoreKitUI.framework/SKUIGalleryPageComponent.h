@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUIGalleryPageComponent : SKUIPageComponent {
     NSArray *_childComponents;
     double _cycleInterval;
     BOOL _hidesPageIndicator;
 }
 
-@property(readonly) NSArray * childComponents;
-@property double cycleInterval;
-@property BOOL hidesPageIndicator;
+@property (nonatomic, readonly) NSArray *childComponents;
+@property (nonatomic) double cycleInterval;
+@property (nonatomic) BOOL hidesPageIndicator;
 
 - (void).cxx_destruct;
 - (id)childComponents;

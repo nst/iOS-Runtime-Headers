@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
-
 @interface PKShippingMethod : PKPaymentSummaryItem <NSCopying, NSSecureCoding> {
     NSString *_detail;
     NSString *_identifier;
 }
 
-@property(copy) NSString * detail;
-@property(copy) NSString * identifier;
+@property (nonatomic, copy) NSString *detail;
+@property (nonatomic, copy) NSString *identifier;
 
 + (BOOL)supportsSecureCoding;
 

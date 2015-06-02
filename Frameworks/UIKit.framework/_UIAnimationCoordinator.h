@@ -2,23 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSString, UIPercentDrivenInteractiveTransition, UIView, UIViewController, _UIViewControllerOneToOneTransitionContext;
-
 @interface _UIAnimationCoordinator : NSObject <UIViewControllerAnimatedTransitioning> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animator;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _animator;
+    id /* block */ _completion;
     UIView *_containerView;
     double _duration;
     struct CGRect { 
@@ -32,11 +18,7 @@
         } size; 
     } _endFrame;
     UIPercentDrivenInteractiveTransition *_interactiveTransition;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _preperation;
-
+    id /* block */ _preperation;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -52,41 +34,41 @@
     UIViewController *_viewController;
 }
 
-@property(copy) id animator;
-@property(copy) id completion;
-@property(retain) UIView * containerView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
-@property(readonly) unsigned int hash;
-@property(copy) id preperation;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startFrame;
-@property(retain,readonly) NSMutableDictionary * stash;
-@property(readonly) Class superclass;
-@property(retain,readonly) _UIViewControllerOneToOneTransitionContext * transitionContext;
-@property(retain) UIViewController * viewController;
+@property (nonatomic, copy) id /* block */ animator;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, retain) UIView *containerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ preperation;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startFrame;
+@property (nonatomic, readonly, retain) NSMutableDictionary *stash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) _UIViewControllerOneToOneTransitionContext *transitionContext;
+@property (nonatomic, retain) UIViewController *viewController;
 
 - (void)_updateTransitionContext;
 - (void)animate;
 - (void)animateInteractively;
 - (void)animateTransition:(id)arg1;
 - (void)animationEnded:(BOOL)arg1;
-- (id)animator;
+- (id /* block */)animator;
 - (void)cancelInteractiveAnimation;
-- (id)completion;
+- (id /* block */)completion;
 - (id)containerView;
 - (void)dealloc;
 - (double)duration;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (void)finishInteractiveAnimation;
-- (id)preperation;
-- (void)setAnimator:(id)arg1;
-- (void)setCompletion:(id)arg1;
+- (id /* block */)preperation;
+- (void)setAnimator:(id /* block */)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setContainerView:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPreperation:(id)arg1;
+- (void)setPreperation:(id /* block */)arg1;
 - (void)setStartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startFrame;

@@ -6,7 +6,7 @@
     unsigned long long _pageID;
 }
 
-@property(getter=_pageID,readonly) unsigned long long pageID;
+@property (getter=_pageID, nonatomic, readonly) unsigned long long pageID;
 
 + (BOOL)supportsSecureCoding;
 

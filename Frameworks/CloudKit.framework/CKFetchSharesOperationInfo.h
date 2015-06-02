@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKFetchSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_shareIDs;
     NSArray *_zoneIDs;
 }
 
-@property(retain) NSArray * shareIDs;
-@property(retain) NSArray * zoneIDs;
+@property (nonatomic, retain) NSArray *shareIDs;
+@property (nonatomic, retain) NSArray *zoneIDs;
 
 + (BOOL)supportsSecureCoding;
 

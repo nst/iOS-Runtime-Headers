@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation, MFComposeRecipientTextView, UIButton, UIView, _UIBackdropView;
-
 @interface CKTranscriptGroupHeaderView : UIView {
     UIButton *_actionButton;
     _UIBackdropView *_backdropView;
@@ -12,11 +10,11 @@
     MFComposeRecipientTextView *_textView;
 }
 
-@property(retain) UIButton * actionButton;
-@property(retain) _UIBackdropView * backdropView;
-@property(retain) CKConversation * conversation;
-@property(retain) UIView * separator;
-@property(retain) MFComposeRecipientTextView * textView;
+@property (nonatomic, retain) UIButton *actionButton;
+@property (nonatomic, retain) _UIBackdropView *backdropView;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (nonatomic, retain) UIView *separator;
+@property (nonatomic, retain) MFComposeRecipientTextView *textView;
 
 - (id)actionButton;
 - (id)backdropView;

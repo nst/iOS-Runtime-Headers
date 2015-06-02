@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRecognition.framework/CoreRecognition
  */
 
-@class AVCaptureVideoPreviewLayer, CAShapeLayer, CRColor, NSMutableArray;
-
 @interface DiagnosticHUDLayer : CALayer {
     CAShapeLayer *_cameraAreaLayer;
     CAShapeLayer *_focusIndicatorLayer;
@@ -15,14 +13,14 @@
     CRColor *_stalePointColor;
 }
 
-@property(retain) CAShapeLayer * cameraAreaLayer;
-@property(retain) CAShapeLayer * focusIndicatorLayer;
-@property(retain) CAShapeLayer * focusPointLayer;
-@property(retain) CAShapeLayer * frameIndicator;
-@property(retain) CRColor * freshPointColor;
-@property(retain) NSMutableArray * pointLayers;
-@property(retain) AVCaptureVideoPreviewLayer * previewLayer;
-@property(retain) CRColor * stalePointColor;
+@property (retain) CAShapeLayer *cameraAreaLayer;
+@property (retain) CAShapeLayer *focusIndicatorLayer;
+@property (retain) CAShapeLayer *focusPointLayer;
+@property (retain) CAShapeLayer *frameIndicator;
+@property (retain) CRColor *freshPointColor;
+@property (retain) NSMutableArray *pointLayers;
+@property (retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (retain) CRColor *stalePointColor;
 
 + (id)layer;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, PLPhotoLibrary;
-
 @interface PLRelationshipOrderKeyManager : NSObject {
     NSMutableDictionary *_enqueuedAlbumAssetsOrderValueUpdates;
     NSMutableDictionary *_enqueuedFolderAlbumsOrderValueUpdates;
@@ -14,7 +12,7 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(readonly) BOOL hasStashedLocationValues;
+@property (nonatomic, readonly) BOOL hasStashedLocationValues;
 
 + (id)sharedManager;
 
@@ -47,7 +45,7 @@
 - (void)stashAlbumAssetsLocationValue:(long long)arg1 forAssetWithID:(id)arg2 inAlbumWithID:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)stashFolderAlbumsLocationValue:(long long)arg1 forAlbumWithID:(id)arg2 inFolderWithID:(id)arg3 atIndex:(unsigned int)arg4;
 - (void)updateAlbumAssetsUsingTransientOrdersByAlbumOID:(id)arg1 inLibrary:(id)arg2;
-- (void)updateAlbumCounts:(id)arg1 inLibrary:(id)arg2 completionHandler:(id)arg3;
+- (void)updateAlbumCounts:(id)arg1 inLibrary:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)writeStashedLocationValuesInLibrary:(id)arg1 error:(id*)arg2;
 
 @end

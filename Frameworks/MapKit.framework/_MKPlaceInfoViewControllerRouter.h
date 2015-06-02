@@ -6,7 +6,7 @@
     id _selectorDelegate;
 }
 
-@property id selectorDelegate;
+@property (nonatomic) id selectorDelegate;
 
 - (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;

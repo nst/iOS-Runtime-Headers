@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class <GEOMapServiceTicket>, NSArray, NSObject<OS_dispatch_semaphore>;
-
 @interface _RTBatchSliceGeocoder : NSObject {
     NSArray *_geoMapItems;
     struct _NSRange { 
@@ -14,10 +12,10 @@
     <GEOMapServiceTicket> *_ticket;
 }
 
-@property(retain) NSArray * geoMapItems;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
-@property(retain) <GEOMapServiceTicket> * ticket;
+@property (nonatomic, retain) NSArray *geoMapItems;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (nonatomic, retain) <GEOMapServiceTicket> *ticket;
 
 - (void).cxx_destruct;
 - (void)_cancelTicket:(id)arg1;

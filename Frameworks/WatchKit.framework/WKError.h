@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKError : NSObject {
-}
+@interface WKError : NSObject
 
 + (id)errorWithCode:(int)arg1;
 

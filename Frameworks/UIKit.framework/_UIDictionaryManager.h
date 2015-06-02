@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface _UIDictionaryManager : NSObject {
     NSArray *_availableDefinitionDictionaries;
 }
 
-@property(readonly) NSArray * availableDefinitionDictionaries;
+@property (readonly) NSArray *availableDefinitionDictionaries;
 
 + (id)_filteredDictionaryIDs;
 + (id)assetManager;

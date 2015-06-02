@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSMutableArray, NSNumber, NSObject<SLSheetViewHostProtocol>, NSString, SLSheetContentView, SLSheetMasklayer, SLSheetNavigationController, SLSheetPreviewImageSource, SLSheetRootViewController, UIAlertController, UIImage, UITextView, UIView, UIViewController;
-
 @interface SLComposeServiceViewController : UIViewController <UINavigationControllerDelegate, UITextViewDelegate> {
     UIAlertController *_alertController;
     NSMutableArray *_attachments;
@@ -46,24 +44,24 @@
     BOOL _wasPresented;
 }
 
-@property(retain) UIViewController * autoCompletionViewController;
-@property(retain) NSNumber * charactersRemaining;
-@property(retain) NSMutableArray * constraints;
-@property(readonly) NSString * contentText;
-@property(retain) SLSheetContentView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned long maxImageAttachmentSize;
-@property(retain) SLSheetNavigationController * navigationController;
-@property(copy) NSString * placeholder;
-@property BOOL preventSheetPositionChanges;
-@property(retain) SLSheetRootViewController * sheetRootViewController;
-@property(readonly) UIView * sheetView;
-@property(readonly) Class superclass;
-@property BOOL suppressKeyboard;
-@property(readonly) UITextView * textView;
-@property(readonly) BOOL wasPresented;
+@property (nonatomic, retain) UIViewController *autoCompletionViewController;
+@property (nonatomic, retain) NSNumber *charactersRemaining;
+@property (retain) NSMutableArray *constraints;
+@property (nonatomic, readonly) NSString *contentText;
+@property (nonatomic, retain) SLSheetContentView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long maxImageAttachmentSize;
+@property (nonatomic, retain) SLSheetNavigationController *navigationController;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic) BOOL preventSheetPositionChanges;
+@property (nonatomic, retain) SLSheetRootViewController *sheetRootViewController;
+@property (readonly) UIView *sheetView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressKeyboard;
+@property (nonatomic, readonly) UITextView *textView;
+@property (readonly) BOOL wasPresented;
 
 + (id)_imageAttachmentLoadDownsamplePreviewQueue;
 + (BOOL)_preventsAppearanceProxyCustomization;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSDGLDataBuffer, TSDGLDataBufferAttribute, TSDGLShader;
-
 @interface TSDGLParticleSystem : NSObject {
     TSDGLDataBufferAttribute *_centerAttribute;
     TSDGLDataBufferAttribute *_colorAttribute;
@@ -42,28 +40,28 @@
     unsigned int _visibleParticleCount;
 }
 
-@property(readonly) TSDGLDataBufferAttribute * centerAttribute;
-@property(readonly) TSDGLDataBufferAttribute * colorAttribute;
-@property(readonly) TSDGLDataBuffer * dataBuffer;
-@property(readonly) NSArray * dataBufferAttributes;
-@property(readonly) unsigned int direction;
-@property(readonly) float duration;
-@property(readonly) TSDGLDataBufferAttribute * lifeSpanAttribute;
-@property(readonly) struct CGSize { float x1; float x2; } objectSize;
-@property(readonly) unsigned int particleCount;
-@property(readonly) struct CGSize { float x1; float x2; } particleSize;
-@property(readonly) TSDGLDataBufferAttribute * particleTexCoordAttribute;
-@property(readonly) unsigned int particlesHigh;
-@property(readonly) unsigned int particlesWide;
-@property(readonly) TSDGLDataBufferAttribute * positionAttribute;
-@property(readonly) TSDGLDataBufferAttribute * rotationAttribute;
-@property(readonly) TSDGLDataBufferAttribute * scaleAttribute;
-@property(readonly) TSDGLShader * shader;
-@property(readonly) BOOL shouldDraw;
-@property(readonly) struct CGSize { float x1; float x2; } slideSize;
-@property(readonly) TSDGLDataBufferAttribute * speedAttribute;
-@property(readonly) TSDGLDataBufferAttribute * texCoordAttribute;
-@property(readonly) unsigned int visibleParticleCount;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *centerAttribute;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *colorAttribute;
+@property (nonatomic, readonly) TSDGLDataBuffer *dataBuffer;
+@property (nonatomic, readonly) NSArray *dataBufferAttributes;
+@property (nonatomic, readonly) unsigned int direction;
+@property (nonatomic, readonly) float duration;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *lifeSpanAttribute;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } objectSize;
+@property (nonatomic, readonly) unsigned int particleCount;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } particleSize;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *particleTexCoordAttribute;
+@property (nonatomic, readonly) unsigned int particlesHigh;
+@property (nonatomic, readonly) unsigned int particlesWide;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *positionAttribute;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *rotationAttribute;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *scaleAttribute;
+@property (nonatomic, readonly) TSDGLShader *shader;
+@property (nonatomic, readonly) BOOL shouldDraw;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } slideSize;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *speedAttribute;
+@property (nonatomic, readonly) TSDGLDataBufferAttribute *texCoordAttribute;
+@property (nonatomic, readonly) unsigned int visibleParticleCount;
 
 + (id)newDataBufferAttributeWithName:(id)arg1;
 + (unsigned int)numberOfVerticesPerParticle;

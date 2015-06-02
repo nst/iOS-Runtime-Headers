@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface PLEmailAddressManager : NSObject {
     NSMutableDictionary *_emailsForKey;
     NSMutableDictionary *_keysForEmails;

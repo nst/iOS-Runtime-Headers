@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSMutableArray;
-
 @interface MKPlaceInfoViewAmenitiesCell : ABContactCell {
     NSArray *_keyValues;
     NSMutableArray *_labelConstraints;
@@ -11,8 +9,8 @@
     NSMutableArray *_values;
 }
 
-@property(retain) NSArray * keyValues;
-@property(retain) NSMutableArray * labelConstraints;
+@property (nonatomic, retain) NSArray *keyValues;
+@property (nonatomic, retain) NSMutableArray *labelConstraints;
 
 + (float)intrinsicContentHeight;
 + (id)reuseIdentifier;

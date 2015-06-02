@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSFamilyCircleRequest : SSRequest <SSXPCCoding> {
     int _authenticationPromptStyle;
     BOOL _fetchITunesAccountNames;
 }
 
-@property int authenticationPromptStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL fetchITunesAccountNames;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) int authenticationPromptStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL fetchITunesAccountNames;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (int)authenticationPromptStyle;
 - (id)copyXPCEncoding;
@@ -22,7 +20,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (void)setAuthenticationPromptStyle:(int)arg1;
 - (void)setFetchITunesAccountNames:(BOOL)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithResponseBlock:(id /* block */)arg1;
 
 @end

@@ -17,11 +17,11 @@
     } _startValue;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } currentValue;
-@property(readonly) struct CGPoint { float x1; float x2; } endValue;
-@property(readonly) struct CGPoint { float x1; float x2; } startValue;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentValue;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } endValue;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startValue;
 
-+ (id)animationWithEndingCGPointValue:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2 timingFunction:(id)arg3 completion:(id)arg4;
++ (id)animationWithEndingCGPointValue:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2 timingFunction:(id)arg3 completion:(id /* block */)arg4;
 
 - (id)_currentValue;
 - (id)_endValue;

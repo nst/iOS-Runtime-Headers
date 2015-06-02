@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIColor;
-
 @interface MPUNowPlayingVolumeSlider : MPVolumeSlider {
     UIColor *_maximumTintUsedForTrackImageColor;
     UIColor *_minimumTintUsedForTrackImageColor;

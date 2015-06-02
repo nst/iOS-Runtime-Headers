@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class CALayer, UIColor, _SLSheetMaskLayer;
-
 @interface SLSheetMasklayer : CALayer {
     UIColor *_backgroundColor;
     CALayer *_bottomLayer;
@@ -36,8 +34,8 @@
     CALayer *_topLayer;
 }
 
-@property(retain) UIColor * clipBackgroundColor;
-@property float clipCornerRadius;
+@property (nonatomic, retain) UIColor *clipBackgroundColor;
+@property (nonatomic) float clipCornerRadius;
 
 - (void).cxx_destruct;
 - (void)animateSheetMaskFromOldSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;

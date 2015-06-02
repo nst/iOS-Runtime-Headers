@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, NSString;
-
 @interface TCNamedData : NSObject {
     NSData *mData;
     NSString *mName;
 }
 
-@property(readonly) NSData * data;
-@property(readonly) NSString * name;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) NSString *name;
 
 + (id)namedDataWithData:(id)arg1 named:(id)arg2;
 

@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUTrackActionsDelegate>, NSString, UIImage, _RUTrackActionsModalItemContentView;
-
 @interface RUTrackActionsModalItem : _UIModalItem <RUTrackActioning> {
     _RUTrackActionsModalItemContentView *_contentView;
 }
 
-@property(copy) NSString * artistText;
-@property(retain) UIImage * artworkImage;
-@property(readonly) int cancelIndex;
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int enabledActions;
-@property(readonly) unsigned int hash;
-@property int onActions;
-@property(copy) NSString * songText;
-@property(readonly) Class superclass;
-@property <RUTrackActionsDelegate> * trackActionsDelegate;
+@property (nonatomic, copy) NSString *artistText;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic, readonly) int cancelIndex;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int enabledActions;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int onActions;
+@property (nonatomic, copy) NSString *songText;
+@property (readonly) Class superclass;
+@property (nonatomic) <RUTrackActionsDelegate> *trackActionsDelegate;
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 

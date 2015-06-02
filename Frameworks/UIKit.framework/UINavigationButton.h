@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem;
-
 @interface UINavigationButton : UIButton {
     struct UIEdgeInsets { 
         float top; 
@@ -30,32 +28,32 @@
     UINavigationItem *_originatingNavigationItem;
     NSSet *_possibleSystemItems;
     NSSet *_possibleTitles;
-    unsigned int _size : 2;
+    unsigned int _size;
     int _style;
     NSDictionary *_stylesForSizingTitles;
     BOOL _wantsBlendModeForAccessibilityBackgrounds;
-    unsigned int _wantsLetterpressContent : 1;
+    unsigned int _wantsLetterpressContent;
 }
 
-@property(setter=_setAdditionalSelectionInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
-@property(setter=_setAppearanceGuideClass:) Class _appearanceGuideClass;
-@property(setter=_setBarItemHidden:) BOOL _barItemHidden;
-@property(setter=_setButtonItemStyle:) int _buttonItemStyle;
-@property(setter=_setCreatedByBarButtonItem:) BOOL _createdByBarButtonItem;
-@property(setter=_setFontScaleAdjustment:) float _fontScaleAdjustment;
-@property(setter=_setFontScaleInvalid:) BOOL _isFontScaleInvalid;
-@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
-@property(setter=_setWantsBlendModeForAccessibilityBackgrounds:) BOOL _wantsBlendModeForAccessibilityBackgrounds;
-@property int barStyle;
-@property int controlSize;
-@property(retain) UIImage * image;
-@property float maximumWidth;
-@property float minimumWidth;
-@property UIBarButtonItem * originatingButtonItem;
-@property UINavigationItem * originatingNavigationItem;
-@property int style;
-@property(retain) UIColor * tintColor;
-@property(retain) NSString * title;
+@property (setter=_setAdditionalSelectionInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _additionalSelectionInsets;
+@property (setter=_setAppearanceGuideClass:, nonatomic) Class _appearanceGuideClass;
+@property (setter=_setBarItemHidden:, nonatomic) BOOL _barItemHidden;
+@property (setter=_setButtonItemStyle:, nonatomic) int _buttonItemStyle;
+@property (setter=_setCreatedByBarButtonItem:, nonatomic) BOOL _createdByBarButtonItem;
+@property (setter=_setFontScaleAdjustment:, nonatomic) float _fontScaleAdjustment;
+@property (setter=_setFontScaleInvalid:, nonatomic) BOOL _isFontScaleInvalid;
+@property (setter=_setStylesForSizingTitles:, nonatomic, copy) NSDictionary *_stylesForSizingTitles;
+@property (setter=_setWantsBlendModeForAccessibilityBackgrounds:, nonatomic) BOOL _wantsBlendModeForAccessibilityBackgrounds;
+@property (nonatomic) int barStyle;
+@property (nonatomic) int controlSize;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) float maximumWidth;
+@property (nonatomic) float minimumWidth;
+@property (nonatomic) UIBarButtonItem *originatingButtonItem;
+@property (nonatomic) UINavigationItem *originatingNavigationItem;
+@property (nonatomic) int style;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic, retain) NSString *title;
 
 + (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(int)arg2 isEnabled:(BOOL)arg3 withAccessibilityBackground:(BOOL)arg4 wantsBlendModeForAccessibilityBackgrounds:(BOOL)arg5;
 + (id)defaultFont;

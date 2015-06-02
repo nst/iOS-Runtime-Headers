@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3Composer : ML3Collection {
-}
+@interface ML3Composer : ML3Collection
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)allProperties;
 + (id)artworkCacheIDProperty;
@@ -15,7 +16,6 @@
 + (id)joinClausesForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
-+ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (BOOL)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (int)revisionTrackingCode;
@@ -25,5 +25,9 @@
 - (id)protocolItem;
 - (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2 withArtworkToken:(id)arg3;
 - (void)updateTrackValues:(id)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 @end

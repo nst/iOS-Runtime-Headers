@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPopoverBackgroundView : UIView <UIPopoverBackgroundViewMethods> {
-}
+@interface UIPopoverBackgroundView : UIView <UIPopoverBackgroundViewMethods>
 
-@property unsigned int arrowDirection;
-@property float arrowOffset;
+@property (nonatomic) unsigned int arrowDirection;
+@property (nonatomic) float arrowOffset;
 
 + (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
 + (float)arrowBase;

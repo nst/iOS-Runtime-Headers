@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOProxyClient, NSLock, NSMutableSet;
-
 @interface GEOProxyClientRegistry : NSObject {
     GEOProxyClient *_currentComposite;
     NSMutableSet *_currentSet;

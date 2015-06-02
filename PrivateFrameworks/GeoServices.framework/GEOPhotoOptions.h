@@ -15,11 +15,11 @@
     int _photoType;
 }
 
-@property BOOL hasPhotoType;
-@property int maxPhotos;
-@property(readonly) int* photoSizes;
-@property(readonly) unsigned int photoSizesCount;
-@property int photoType;
+@property (nonatomic) BOOL hasPhotoType;
+@property (nonatomic) int maxPhotos;
+@property (nonatomic, readonly) int*photoSizes;
+@property (nonatomic, readonly) unsigned int photoSizesCount;
+@property (nonatomic) int photoType;
 
 - (void)addPhotoSize:(int)arg1;
 - (void)clearPhotoSizes;

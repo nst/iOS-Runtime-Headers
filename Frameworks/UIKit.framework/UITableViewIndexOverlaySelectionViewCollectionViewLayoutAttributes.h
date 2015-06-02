@@ -6,7 +6,7 @@
     float rightMargin;
 }
 
-@property float rightMargin;
+@property (nonatomic) float rightMargin;
 
 - (float)rightMargin;
 - (void)setRightMargin:(float)arg1;

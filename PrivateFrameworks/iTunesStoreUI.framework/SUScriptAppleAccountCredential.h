@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ACAccountCredential, NSString;
-
 @interface SUScriptAppleAccountCredential : SUScriptObject {
     ACAccountCredential *_credential;
 }
 
-@property(readonly) NSString * oauthToken;
+@property (readonly) NSString *oauthToken;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

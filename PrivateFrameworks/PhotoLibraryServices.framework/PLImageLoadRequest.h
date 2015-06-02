@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSManagedObjectID, NSMutableArray, NSMutableSet, PLImageSource, PLLoadRequestKey;
-
 @interface PLImageLoadRequest : NSObject {
     NSManagedObjectID *_assetID;
     NSMutableArray *_completionBlocks;
@@ -13,14 +11,14 @@
     PLImageSource *_source;
 }
 
-@property(readonly) NSArray * completionBlocks;
-@property(retain,readonly) PLLoadRequestKey * key;
-@property int priority;
-@property(retain,readonly) PLImageSource * source;
+@property (nonatomic, readonly) NSArray *completionBlocks;
+@property (nonatomic, readonly, retain) PLLoadRequestKey *key;
+@property (nonatomic) int priority;
+@property (nonatomic, readonly, retain) PLImageSource *source;
 
-+ (id)requestWithAsset:(id)arg1 source:(id)arg2 priority:(int)arg3 completion:(id)arg4 loadingQueue:(id)arg5;
++ (id)requestWithAsset:(id)arg1 source:(id)arg2 priority:(int)arg3 completion:(id /* block */)arg4 loadingQueue:(id)arg5;
 
-- (void)addCompletionBlock:(id)arg1;
+- (void)addCompletionBlock:(id /* block */)arg1;
 - (id)assetInPhotoLibrary:(id)arg1;
 - (id)completionBlocks;
 - (void)dealloc;

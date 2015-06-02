@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMFileError : DOMObject {
-}
+@interface DOMFileError : DOMObject
 
-@property(readonly) unsigned short code;
+@property (readonly) unsigned short code;
 
 - (unsigned short)code;
 - (void)dealloc;

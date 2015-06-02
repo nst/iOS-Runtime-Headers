@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableString, NSString;
-
 @interface CMDictArchiveManager : CMArchiveManager {
     NSMutableString *mCssString;
     bool mIsFrameset;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNNode;
-
 @interface SCNLookAtConstraint : SCNConstraint {
     BOOL _gimbalLockEnabled;
     id _reserved;
     SCNNode *_target;
 }
 
-@property BOOL gimbalLockEnabled;
-@property(readonly) SCNNode * target;
+@property (nonatomic) BOOL gimbalLockEnabled;
+@property (nonatomic, readonly) SCNNode *target;
 
 + (id)SCNJSExportProtocol;
 + (id)lookAtConstraintWithTarget:(id)arg1;

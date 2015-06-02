@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString;
-
 @interface PKPaymentOptionGroupItem : NSObject {
     NSString *_detail;
     BOOL _editable;
@@ -12,14 +10,14 @@
     NSString *_title;
 }
 
-@property(readonly) NSString * detail;
-@property(getter=isEditable) BOOL editable;
-@property(readonly) NSString * groupType;
-@property(readonly) BOOL isDeletable;
-@property(readonly) BOOL isSelectable;
-@property(readonly) id referenceObject;
-@property(readonly) Class tableViewCellClass;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *detail;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (nonatomic, readonly) NSString *groupType;
+@property (nonatomic, readonly) BOOL isDeletable;
+@property (nonatomic, readonly) BOOL isSelectable;
+@property (nonatomic, readonly) id referenceObject;
+@property (nonatomic, readonly) Class tableViewCellClass;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)_singleLineGroupTypes;
 

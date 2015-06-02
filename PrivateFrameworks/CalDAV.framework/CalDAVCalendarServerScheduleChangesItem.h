@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVCalendarServerActionItem, CoreDAVLeafItem;
-
 @interface CalDAVCalendarServerScheduleChangesItem : CoreDAVItem {
     CalDAVCalendarServerActionItem *_action;
     CoreDAVLeafItem *_dtstamp;
 }
 
-@property(retain) CalDAVCalendarServerActionItem * action;
-@property(retain) CoreDAVLeafItem * dtstamp;
+@property (nonatomic, retain) CalDAVCalendarServerActionItem *action;
+@property (nonatomic, retain) CoreDAVLeafItem *dtstamp;
 
 - (id)action;
 - (id)copyParseRules;

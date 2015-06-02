@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface PKPaymentWebServiceBackgroundContext : NSObject <NSSecureCoding> {
     NSMutableDictionary *_backgroundTaskRecordsByTaskIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSMutableDictionary * backgroundTaskRecordsByTaskIdentifier;
+@property (retain) NSMutableDictionary *backgroundTaskRecordsByTaskIdentifier;
 
 + (id)contextWithArchive:(id)arg1;
 + (BOOL)supportsSecureCoding;

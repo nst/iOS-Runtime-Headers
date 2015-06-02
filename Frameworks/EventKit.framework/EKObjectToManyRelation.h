@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSMutableSet, NSSet;
-
 @interface EKObjectToManyRelation : EKObjectRelation {
     NSMutableSet *_addedItems;
     NSMutableSet *_effectiveItems;
@@ -11,14 +9,14 @@
     NSMutableSet *_removedItems;
 }
 
-@property(retain) NSMutableSet * addedItems;
-@property(readonly) unsigned int count;
-@property(retain) NSMutableSet * effectiveItems;
-@property(copy) NSSet * items;
-@property(readonly) BOOL itemsWereAdded;
-@property(readonly) BOOL itemsWereRemoved;
-@property(retain) NSMutableSet * loadedItems;
-@property(retain) NSMutableSet * removedItems;
+@property (nonatomic, retain) NSMutableSet *addedItems;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, retain) NSMutableSet *effectiveItems;
+@property (nonatomic, copy) NSSet *items;
+@property (nonatomic, readonly) BOOL itemsWereAdded;
+@property (nonatomic, readonly) BOOL itemsWereRemoved;
+@property (nonatomic, retain) NSMutableSet *loadedItems;
+@property (nonatomic, retain) NSMutableSet *removedItems;
 
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (id)_effectiveItems;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalWellKnownPaths : NSObject {
-}
+@interface CalWellKnownPaths : NSObject
 
 + (id)calendarCachePath;
 + (id)calendarClientIdConflictsPath;

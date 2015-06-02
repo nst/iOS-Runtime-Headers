@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class <BBSyncServiceDelegate>, IDSService, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer;
-
 @interface BBSyncService : NSObject <IDSServiceDelegate> {
     NSMutableDictionary *_deferredDismissalsBySectionID;
     NSTimer *_deferredTimer;
@@ -18,11 +16,11 @@
     IDSService *_service;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BBSyncServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BBSyncServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_addDeferredDismissalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 - (void)_clearDeferredTimer;

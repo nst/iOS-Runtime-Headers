@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString, RadioTrack, SSURLConnectionRequest;
-
 @interface RadioAddToWishListRequest : RadioRequest {
     int _action;
     SSURLConnectionRequest *_request;
@@ -13,8 +11,8 @@
     long long _trackStoreID;
 }
 
-@property int action;
-@property(readonly) long long trackStoreID;
+@property (nonatomic) int action;
+@property (nonatomic, readonly) long long trackStoreID;
 
 - (void).cxx_destruct;
 - (int)action;
@@ -23,7 +21,7 @@
 - (id)initWithTrack:(id)arg1 station:(id)arg2;
 - (id)initWithTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3;
 - (void)setAction:(int)arg1;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 - (long long)trackStoreID;
 
 @end

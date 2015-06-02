@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSIndexSet, NSString;
-
 @interface _SSVPlayActivityEndpointRevisionInformation : NSObject <NSCopying, NSSecureCoding> {
     NSIndexSet *_additionalPendingRevisionsIndexSet;
     unsigned long long _currentRevision;
     NSString *_revisionVersionToken;
 }
 
-@property(copy) NSIndexSet * additionalPendingRevisionsIndexSet;
-@property unsigned long long currentRevision;
-@property(copy) NSString * revisionVersionToken;
+@property (nonatomic, copy) NSIndexSet *additionalPendingRevisionsIndexSet;
+@property (nonatomic) unsigned long long currentRevision;
+@property (nonatomic, copy) NSString *revisionVersionToken;
 
 + (BOOL)supportsSecureCoding;
 

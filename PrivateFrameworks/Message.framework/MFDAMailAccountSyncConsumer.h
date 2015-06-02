@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFActivityMonitor, NSArray, NSMutableData, NSString;
-
 @interface MFDAMailAccountSyncConsumer : MFDAMailAccountConsumer <DAMailboxRequestConsumer, DAMailboxStreamingContentConsumer> {
     NSString *_accountID;
     NSMutableData *_bodyData;
@@ -19,9 +17,9 @@
     NSString *_tag;
 }
 
-@property(readonly) BOOL moreAvailable;
-@property(retain) id streamConsumer;
-@property(readonly) NSString * tag;
+@property (nonatomic, readonly) BOOL moreAvailable;
+@property (nonatomic, retain) id streamConsumer;
+@property (nonatomic, readonly) NSString *tag;
 
 - (void)_setTag:(id)arg1;
 - (id)actionsConsumer;

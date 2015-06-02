@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableReflection : TSDReflection {
-}
+@interface TSDMutableReflection : TSDReflection
 
 - (void)setFadeAcceleration:(float)arg1;
 - (void)setOpacity:(float)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPDistributedMessagingCenter, NSData, NSDictionary, NSError, NSString, NSThread;
-
 @interface CPDistributedMessagingAsyncOperation : NSOperation {
     NSThread *_calloutThread;
     CPDistributedMessagingCenter *_center;

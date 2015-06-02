@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, NSURL;
-
 @interface SUCompletionItem : NSObject {
     NSString *_alternateTitle;
     NSString *_title;
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * alternateTitle;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSString *alternateTitle;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)URL;
 - (id)alternateTitle;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
-
 @interface C3DIONSZipFileArchive : NSObject {
     NSMutableDictionary *_cachedContents;
     NSDictionary *_contents;
@@ -14,7 +12,7 @@
     NSDictionary *_properties;
     id _provider;
     void *_reserved;
-    void *_reserved2[5];
+    void *_reserved2;
     struct __zFlags { 
         unsigned int providerSuppliesContents : 1; 
         unsigned int providerSuppliesStreams : 1; 

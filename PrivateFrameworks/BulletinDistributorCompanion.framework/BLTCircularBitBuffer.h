@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSMutableData;
-
 @interface BLTCircularBitBuffer : NSObject {
     unsigned long long _beginIndex;
     NSMutableData *_bitVector;
     unsigned int _capacity;
 }
 
-@property(readonly) unsigned long long beginIndex;
-@property(readonly) unsigned int capacity;
+@property (nonatomic, readonly) unsigned long long beginIndex;
+@property (nonatomic, readonly) unsigned int capacity;
 
 + (unsigned int)actualCapacity:(unsigned int)arg1;
 

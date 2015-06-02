@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray, UIImageView, UILabel;
-
 @interface CKMessageEntryWaveformView : UIView {
     UIImageView *_balloonImageView;
     double _duration;
@@ -13,12 +11,12 @@
     UIImageView *_waveformImageView;
 }
 
-@property(retain) UIImageView * balloonImageView;
-@property double duration;
-@property unsigned int maxPowerLevelsCount;
-@property(retain) NSMutableArray * powerLevels;
-@property(retain) UILabel * timeLabel;
-@property(retain) UIImageView * waveformImageView;
+@property (nonatomic, retain) UIImageView *balloonImageView;
+@property (nonatomic) double duration;
+@property (nonatomic) unsigned int maxPowerLevelsCount;
+@property (nonatomic, retain) NSMutableArray *powerLevels;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UIImageView *waveformImageView;
 
 + (id)waveformCurveTransform;
 

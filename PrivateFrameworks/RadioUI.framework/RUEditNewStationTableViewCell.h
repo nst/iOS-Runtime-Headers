@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UIImageView, UILabel;
-
 @interface RUEditNewStationTableViewCell : RUTableViewCell {
     UIImageView *_plusBackgroundView;
     UILabel *_titleLabel;

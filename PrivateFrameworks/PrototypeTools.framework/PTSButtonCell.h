@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSButtonCell : UITableViewCell {
-}
+@interface PTSButtonCell : UITableViewCell
 
 - (id)initWithReuseIdentifier:(id)arg1;
 

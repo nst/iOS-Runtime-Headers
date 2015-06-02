@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIImageResource;
+@interface SAGKSummaryPod : SAGKPodView
 
-@interface SAGKSummaryPod : SAGKPodView {
-}
-
-@property(copy) NSString * caption;
-@property(retain) SAUIImageResource * imageResource;
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *caption;
+@property (nonatomic, retain) SAUIImageResource *imageResource;
+@property (nonatomic, copy) NSString *text;
 
 + (id)summaryPod;
 + (id)summaryPodWithDictionary:(id)arg1 context:(id)arg2;

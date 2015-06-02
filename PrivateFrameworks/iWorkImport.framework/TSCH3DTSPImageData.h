@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DTSPImageDataTexture, TSPData;
-
 @interface TSCH3DTSPImageData : NSObject <TSCHUnretainedParent> {
     TSPData *mData;
     TSCH3DTSPImageDataTexture *mParent;
 }
 
-@property(retain) TSPData * data;
+@property (nonatomic, retain) TSPData *data;
 
 + (id)dataWithTSPImageData:(id)arg1;
 

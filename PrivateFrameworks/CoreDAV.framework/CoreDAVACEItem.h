@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVDenyItem, CoreDAVGrantItem, CoreDAVInvertItem, CoreDAVItemWithHrefChildItem, CoreDAVItemWithNoChildren, CoreDAVPrincipalItem;
-
 @interface CoreDAVACEItem : CoreDAVItem {
     CoreDAVDenyItem *_deny;
     CoreDAVGrantItem *_grant;
@@ -13,12 +11,12 @@
     CoreDAVItemWithNoChildren *_protectedItem;
 }
 
-@property(retain) CoreDAVDenyItem * deny;
-@property(retain) CoreDAVGrantItem * grant;
-@property(retain) CoreDAVItemWithHrefChildItem * inherited;
-@property(retain) CoreDAVInvertItem * invert;
-@property(retain) CoreDAVPrincipalItem * principal;
-@property(retain) CoreDAVItemWithNoChildren * protectedItem;
+@property (nonatomic, retain) CoreDAVDenyItem *deny;
+@property (nonatomic, retain) CoreDAVGrantItem *grant;
+@property (nonatomic, retain) CoreDAVItemWithHrefChildItem *inherited;
+@property (nonatomic, retain) CoreDAVInvertItem *invert;
+@property (nonatomic, retain) CoreDAVPrincipalItem *principal;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *protectedItem;
 
 + (id)copyParseRules;
 + (id)privilegeItemWithNameSpace:(id)arg1 andName:(id)arg2;

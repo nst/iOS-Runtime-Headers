@@ -16,17 +16,17 @@
     float _whitePointRed;
 }
 
-@property float averageLinearBlue;
-@property float averageLinearGreen;
-@property float averageLinearRed;
-@property float blackPoint;
-@property float blackPointBlue;
-@property float blackPointGreen;
-@property float blackPointRed;
-@property float whitePoint;
-@property float whitePointBlue;
-@property float whitePointGreen;
-@property float whitePointRed;
+@property (nonatomic) float averageLinearBlue;
+@property (nonatomic) float averageLinearGreen;
+@property (nonatomic) float averageLinearRed;
+@property (nonatomic) float blackPoint;
+@property (nonatomic) float blackPointBlue;
+@property (nonatomic) float blackPointGreen;
+@property (nonatomic) float blackPointRed;
+@property (nonatomic) float whitePoint;
+@property (nonatomic) float whitePointBlue;
+@property (nonatomic) float whitePointGreen;
+@property (nonatomic) float whitePointRed;
 
 - (id)analysisDictionary;
 - (float)averageLinearBlue;

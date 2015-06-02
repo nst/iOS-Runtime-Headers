@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, EKDayView, EKEvent, NSDate, NSString;
-
 @interface EKDayPreviewController : UIViewController <EKDayViewDataSource, EKEditItemViewControllerProtocol> {
     NSDate *_date;
     EKDayView *_dayView;
@@ -15,13 +13,13 @@
     NSDate *_overriddenEventStartDate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <EKEditItemViewControllerDelegate> * editDelegate;
-@property BOOL editItemShouldBeAskedForInjectableViewController;
-@property(readonly) unsigned int hash;
-@property BOOL presentModally;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
+@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL presentModally;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_eventsForStartDate:(id)arg1 endDate:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDocumentInteractionController;
-
 @interface _UIQuickLookActivity : UIActivity {
     UIDocumentInteractionController *_documentInteractionController;
 }

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSString, SUScriptFunction, WebScriptObject;
-
 @interface SUScriptMenuViewController : SUScriptViewController {
     SUScriptFunction *_action;
 }
 
-@property(retain) WebScriptObject * action;
-@property(retain) id items;
-@property(retain) NSNumber * selectedIndex;
-@property(retain) NSString * title;
+@property (retain) WebScriptObject *action;
+@property (retain) id items;
+@property (retain) NSNumber *selectedIndex;
+@property (retain) NSString *title;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

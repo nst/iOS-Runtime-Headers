@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CALayer, UIPDFDocument, UIPDFPageView;
-
 @interface UIPDFPageContentDelegate : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -46,14 +44,14 @@
 }
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } box;
-@property(retain) UIPDFDocument * document;
-@property struct CGColor { }* highlightColor;
+@property (retain) UIPDFDocument *document;
+@property struct CGColor { }*highlightColor;
 @property BOOL isCancelled;
-@property CALayer * owner;
+@property CALayer *owner;
 @property unsigned int pageIndex;
 @property unsigned int pageRotation;
-@property(readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property UIPDFPageView * view;
+@property (readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property UIPDFPageView *view;
 
 - (void)addRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toPath:(struct CGPath { }*)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg3 view:(id)arg4 owner:(id)arg5;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;

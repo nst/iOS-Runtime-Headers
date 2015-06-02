@@ -2,20 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, UIButton, UIImage, UILabel;
-
 @interface PUAdjustmentsModePickerCell : UITableViewCell {
     UIButton *_accessoryButton;
     NSArray *_accessoryButtonConstraints;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _buttonAction;
-
+    id /* block */ _buttonAction;
     int _buttonType;
     NSString *_currentDisplayValue;
     UILabel *_displayValueLabel;
@@ -25,12 +15,12 @@
     UIImage *_modeIcon;
 }
 
-@property(copy) id buttonAction;
-@property int buttonType;
-@property(copy) NSString * currentDisplayValue;
-@property BOOL isSubMode;
-@property(copy) NSString * localizedModeName;
-@property(retain) UIImage * modeIcon;
+@property (nonatomic, copy) id /* block */ buttonAction;
+@property (nonatomic) int buttonType;
+@property (nonatomic, copy) NSString *currentDisplayValue;
+@property (nonatomic) BOOL isSubMode;
+@property (nonatomic, copy) NSString *localizedModeName;
+@property (nonatomic, retain) UIImage *modeIcon;
 
 + (void)configureModePickerCellLabel:(id)arg1;
 
@@ -38,7 +28,7 @@
 - (void)_handleAccessoryButton:(id)arg1;
 - (void)_updateButton;
 - (void)_updateDisplayValueLabel;
-- (id)buttonAction;
+- (id /* block */)buttonAction;
 - (int)buttonType;
 - (id)currentDisplayValue;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
@@ -46,7 +36,7 @@
 - (id)localizedModeName;
 - (id)modeIcon;
 - (void)prepareForReuse;
-- (void)setButtonAction:(id)arg1;
+- (void)setButtonAction:(id /* block */)arg1;
 - (void)setButtonType:(int)arg1;
 - (void)setCurrentDisplayValue:(id)arg1;
 - (void)setIsSubMode:(BOOL)arg1;

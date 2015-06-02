@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSError, NSString;
-
 @interface SBKResponseStatus : NSObject {
     NSString *_consoleDescription;
     BOOL _isError;
@@ -13,18 +11,18 @@
     int _statusCode;
 }
 
-@property(copy,readonly) NSString * consoleDescription;
-@property(readonly) BOOL isAuthenticationError;
-@property(readonly) BOOL isError;
-@property(readonly) BOOL isGenericError;
-@property(readonly) BOOL isPuntedError;
-@property(readonly) BOOL isRecoverable;
-@property(readonly) BOOL isSuccess;
-@property(readonly) BOOL isUnsupportedClient;
-@property(readonly) BOOL isValidationError;
-@property(readonly) NSError * requestError;
-@property(readonly) BOOL shouldFileRadar;
-@property(readonly) int statusCode;
+@property (readonly, copy) NSString *consoleDescription;
+@property (readonly) BOOL isAuthenticationError;
+@property (readonly) BOOL isError;
+@property (readonly) BOOL isGenericError;
+@property (readonly) BOOL isPuntedError;
+@property (readonly) BOOL isRecoverable;
+@property (readonly) BOOL isSuccess;
+@property (readonly) BOOL isUnsupportedClient;
+@property (readonly) BOOL isValidationError;
+@property (readonly) NSError *requestError;
+@property (readonly) BOOL shouldFileRadar;
+@property (readonly) int statusCode;
 
 + (id)responseStatusForStatusCodeNumber:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKPickerTableViewCell : UITableViewCell {
-}
+@interface TKPickerTableViewCell : UITableViewCell
 
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
 

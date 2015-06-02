@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImageView, UILabel;
-
 @interface CKTranscriptAddRecipientCell : UITableViewCell {
     UIImageView *_addIcon;
     UILabel *_addLabel;
 }
 
-@property(retain) UIImageView * addIcon;
-@property(retain) UILabel * addLabel;
+@property (nonatomic, retain) UIImageView *addIcon;
+@property (nonatomic, retain) UILabel *addLabel;
 
 + (float)preferredHeight;
 

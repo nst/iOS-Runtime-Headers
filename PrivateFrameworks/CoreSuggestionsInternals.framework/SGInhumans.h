@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGInhumans : NSObject {
-}
+@interface SGInhumans : NSObject
 
 + (BOOL)areHumanHeaders:(id)arg1;
 + (void)initialize;

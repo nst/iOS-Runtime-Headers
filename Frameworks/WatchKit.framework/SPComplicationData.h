@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSDate;
-
 @interface SPComplicationData : NSObject <NSSecureCoding> {
     double _timeToLive;
     NSDate *_timestamp;
 }
 
-@property double timeToLive;
-@property(retain) NSDate * timestamp;
+@property (nonatomic) double timeToLive;
+@property (nonatomic, retain) NSDate *timestamp;
 
 + (BOOL)supportsSecureCoding;
 

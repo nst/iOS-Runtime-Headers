@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAKeychainManager : NSObject {
-}
+@interface AAKeychainManager : NSObject
 
 + (void)initialize;
 + (id)passwordForServiceName:(id)arg1 username:(id)arg2 accessGroup:(id)arg3;

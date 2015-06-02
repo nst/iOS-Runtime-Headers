@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartStackedColumnSceneObject : TSCH3DChartColumnSceneObject {
-}
+@interface TSCH3DChartStackedColumnSceneObject : TSCH3DChartColumnSceneObject
 
 + (id)chartSeriesType;
 + (BOOL)isHorizontalChart;

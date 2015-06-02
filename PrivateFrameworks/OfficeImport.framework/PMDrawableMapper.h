@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMDrawingContext, OADShape;
-
 @interface PMDrawableMapper : CMDrawableMapper {
     CMDrawingContext *mDrawingContext;
     OADShape *mShape;

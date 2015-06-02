@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOActiveTileSet, VKTilePool, VKTimer, _VKTileSetBackedTileSourceTimerTarget;
-
 @interface VKTileSetBackedTileSource : VKTileSource {
     struct _GEOTileKey { 
         unsigned int z : 6; 
@@ -29,7 +27,7 @@
     } _zoomLevelRange;
 }
 
-@property(retain) GEOActiveTileSet * tileSet;
+@property (nonatomic, retain) GEOActiveTileSet *tileSet;
 
 - (id).cxx_construct;
 - (double)_expirationInterval;

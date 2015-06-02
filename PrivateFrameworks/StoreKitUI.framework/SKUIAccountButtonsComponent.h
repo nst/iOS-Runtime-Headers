@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIAccountButtonsViewElement, SKUILink;
-
 @interface SKUIAccountButtonsComponent : SKUIPageComponent {
     SKUILink *_ecommerceLink;
     BOOL _hidesTermsAndConditions;
 }
 
-@property(retain) SKUILink * ECommerceLink;
-@property BOOL hidesTermsAndConditions;
-@property(readonly) SKUIAccountButtonsViewElement * viewElement;
+@property (nonatomic, retain) SKUILink *ECommerceLink;
+@property (nonatomic) BOOL hidesTermsAndConditions;
+@property (nonatomic, readonly) SKUIAccountButtonsViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)ECommerceLink;

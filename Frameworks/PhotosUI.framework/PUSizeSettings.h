@@ -10,11 +10,11 @@
     double __widthDelay;
 }
 
-@property float _desiredWidth;
-@property float _testIncrement;
-@property double _testInterval;
-@property double _testStartDelay;
-@property double _widthDelay;
+@property (nonatomic) float _desiredWidth;
+@property (nonatomic) float _testIncrement;
+@property (nonatomic) double _testInterval;
+@property (nonatomic) double _testStartDelay;
+@property (nonatomic) double _widthDelay;
 
 + (void)runSizeTest;
 + (id)settingsControllerModule;

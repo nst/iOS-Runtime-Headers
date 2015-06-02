@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITableViewDataSource>, NSString;
-
 @interface _UIFilteredDataSource : NSObject <UITableViewDataSource> {
     int _filterType;
     BOOL _limitingWithSections;
@@ -12,12 +10,12 @@
     <UITableViewDataSource> *_tableDataSource;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int filterType;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property <UITableViewDataSource> * tableDataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int filterType;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) <UITableViewDataSource> *tableDataSource;
 
 - (int)_filteredNumberOfItemsGivenSection:(int)arg1 numberOfItems:(int)arg2;
 - (int)filterType;

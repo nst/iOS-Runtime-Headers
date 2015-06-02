@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoEditToolControllerDelegate>, NSString, PLPhotoEditAggregateSession, PLPhotoEditMutableModel, PUPhotoEditToolControllerSpec, PUPhotoEditValuesCalculator, UIButton, UIColor, UIImage, UIScrollView, UIView;
-
 @interface PUPhotoEditToolController : UIViewController <PUPhotoEditLayoutDynamicAdaptable, UIScrollViewDelegate> {
     UIView *__dummyScrollContentView;
     UIScrollView *__toolControllerScrollView;
@@ -21,36 +19,36 @@
     PUPhotoEditValuesCalculator *_valuesCalculator;
 }
 
-@property(setter=_setDummyScrollContentView:,retain) UIView * _dummyScrollContentView;
-@property(setter=_setToolControllerScrollView:,retain) UIScrollView * _toolControllerScrollView;
-@property(retain) PLPhotoEditAggregateSession * aggregateSession;
-@property(readonly) PLPhotoEditAggregateSession * aggregateSession;
-@property(readonly) BOOL canResetToDefaultValue;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotoEditToolControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int layoutOrientation;
-@property(readonly) NSString * localizedName;
-@property(readonly) NSString * localizedResetToolActionTitle;
-@property(getter=isPerformingLiveInteraction) BOOL performingLiveInteraction;
-@property(getter=isPerformingLiveInteraction,readonly) BOOL performingLiveInteraction;
-@property(readonly) PLPhotoEditMutableModel * photoEditModel;
-@property(retain) UIButton * preferredAlternateToolbarButton;
-@property(readonly) UIButton * preferredAlternateToolbarButton;
-@property(copy,readonly) UIColor * preferredPreviewBackgroundColor;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredPreviewViewInsets;
-@property unsigned int preferredRenderMode;
-@property(readonly) unsigned int preferredRenderMode;
-@property(readonly) UIImage * selectedToolbarIcon;
-@property(retain) PUPhotoEditToolControllerSpec * spec;
-@property(readonly) PUPhotoEditToolControllerSpec * spec;
-@property(readonly) Class superclass;
-@property(readonly) UIImage * toolbarIcon;
-@property(readonly) PUPhotoEditValuesCalculator * valuesCalculator;
-@property(readonly) BOOL wantsDefaultPreviewView;
-@property(readonly) BOOL wantsSecondaryToolbarVisible;
-@property(readonly) BOOL wantsZoomAndPanEnabled;
+@property (setter=_setDummyScrollContentView:, nonatomic, retain) UIView *_dummyScrollContentView;
+@property (setter=_setToolControllerScrollView:, nonatomic, retain) UIScrollView *_toolControllerScrollView;
+@property (nonatomic, retain) PLPhotoEditAggregateSession *aggregateSession;
+@property (nonatomic, readonly) PLPhotoEditAggregateSession *aggregateSession;
+@property (nonatomic, readonly) BOOL canResetToDefaultValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoEditToolControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) NSString *localizedResetToolActionTitle;
+@property (getter=isPerformingLiveInteraction, nonatomic) BOOL performingLiveInteraction;
+@property (getter=isPerformingLiveInteraction, nonatomic, readonly) BOOL performingLiveInteraction;
+@property (nonatomic, readonly) PLPhotoEditMutableModel *photoEditModel;
+@property (nonatomic, retain) UIButton *preferredAlternateToolbarButton;
+@property (nonatomic, readonly) UIButton *preferredAlternateToolbarButton;
+@property (nonatomic, readonly, copy) UIColor *preferredPreviewBackgroundColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredPreviewViewInsets;
+@property (nonatomic) unsigned int preferredRenderMode;
+@property (nonatomic, readonly) unsigned int preferredRenderMode;
+@property (nonatomic, readonly) UIImage *selectedToolbarIcon;
+@property (nonatomic, retain) PUPhotoEditToolControllerSpec *spec;
+@property (nonatomic, readonly) PUPhotoEditToolControllerSpec *spec;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIImage *toolbarIcon;
+@property (nonatomic, readonly) PUPhotoEditValuesCalculator *valuesCalculator;
+@property (nonatomic, readonly) BOOL wantsDefaultPreviewView;
+@property (nonatomic, readonly) BOOL wantsSecondaryToolbarVisible;
+@property (nonatomic, readonly) BOOL wantsZoomAndPanEnabled;
 
 - (void).cxx_destruct;
 - (id)_dummyScrollContentView;

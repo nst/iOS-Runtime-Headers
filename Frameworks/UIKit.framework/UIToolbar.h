@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIToolbarDelegate>, NSArray, NSString, UIColor, UIImageView, UIView, _UIBackdropView;
-
 @interface UIToolbar : UIView <UIBarPositioning, _UIBackdropViewGraphicsQualityChangeDelegate, _UIBarPositioningInternal, _UIShadowedView> {
     _UIBackdropView *_adaptiveBackdrop;
     id _appearanceStorage;
@@ -35,24 +33,26 @@
     BOOL _wantsLetterpressContent;
 }
 
-@property(getter=_isAdaptiveToolbarDisabled,setter=_setAdaptiveToolbarDisabled:) BOOL _adaptiveToolbarDisabled;
-@property(getter=_isLocked,setter=_setLocked:) BOOL _locked;
-@property(setter=_setShadowView:,retain) UIView * _shadowView;
-@property(setter=_setWantsLetterpressContent:) BOOL _wantsLetterpressContent;
-@property(getter=_backdropViewLayerGroupName,setter=_setBackdropViewLayerGroupName:,retain) NSString * backdropViewLayerGroupName;
-@property(readonly) int barPosition;
-@property int barStyle;
-@property(retain) UIColor * barTintColor;
-@property BOOL centerTextButtons;
-@property(getter=isCollapsed) BOOL collapsed;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIToolbarDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * items;
-@property(readonly) Class superclass;
-@property(retain) UIColor * tintColor;
-@property(getter=isTranslucent) BOOL translucent;
+@property (getter=_isAdaptiveToolbarDisabled, setter=_setAdaptiveToolbarDisabled:, nonatomic) BOOL _adaptiveToolbarDisabled;
+@property (getter=_isLocked, setter=_setLocked:, nonatomic) BOOL _locked;
+@property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;
+@property (setter=_setWantsLetterpressContent:, nonatomic) BOOL _wantsLetterpressContent;
+@property (getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:, nonatomic, retain) NSString *backdropViewLayerGroupName;
+@property (nonatomic, readonly) int barPosition;
+@property (nonatomic) int barStyle;
+@property (nonatomic, retain) UIColor *barTintColor;
+@property (nonatomic) BOOL centerTextButtons;
+@property (getter=isCollapsed, nonatomic) BOOL collapsed;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIToolbarDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *items;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (getter=isTranslucent, nonatomic) BOOL translucent;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (float)_buttonGap;
 + (Class)defaultButtonClass;
@@ -159,7 +159,6 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
 - (BOOL)isTranslucent;
-- (id)itemWithTag:(int)arg1;
 - (id)items;
 - (void)layoutSubviews;
 - (int)mode;
@@ -197,5 +196,9 @@
 - (void)showButtonGroup:(int)arg1 withDuration:(double)arg2;
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (id)itemWithTag:(int)arg1;
 
 @end

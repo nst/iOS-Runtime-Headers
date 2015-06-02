@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDImageLayout, TSDInfoGeometry, TSDPathSource;
-
 @interface TSDMaskLayout : TSDLayout {
     struct CGPath { } *mCachedPath;
     struct CGPath { } *mCachedPathNoScale;
@@ -37,8 +35,8 @@
     BOOL mScalingInMaskMode;
 }
 
-@property(readonly) TSDImageLayout * imageLayout;
-@property float pathScale;
+@property (nonatomic, readonly) TSDImageLayout *imageLayout;
+@property (nonatomic) float pathScale;
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransformForTightPathBounds;
 - (id)computeLayoutGeometry;

@@ -2,33 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUConnectionDelegate>, NSString, NSXPCConnection;
-
 @interface PUConnection : NSObject <PUUnlockClient> {
     NSXPCConnection *_connection;
     <PUConnectionDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _getRemoteDevicePasscodeStateHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _remoteDeviceRemoveLockoutHandler;
-
+    id /* block */ _getRemoteDevicePasscodeStateHandler;
+    id /* block */ _remoteDeviceRemoveLockoutHandler;
 }
 
-@property(readonly) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connection;
@@ -41,14 +27,14 @@
 - (void)didUnpairForUnlock:(BOOL)arg1 error:(id)arg2;
 - (void)disableOnlyRemoteUnlock;
 - (void)enableOnlyRemoteUnlockWithPasscode:(id)arg1;
-- (void)getRemoteDeviceState:(id)arg1;
+- (void)getRemoteDeviceState:(id /* block */)arg1;
 - (id)init;
 - (void)pairForUnlockWithPasscode:(id)arg1;
 - (void)remoteDeviceDidCompletePasscodeAction:(BOOL)arg1 error:(id)arg2;
 - (void)remoteDeviceDidRemoveLockout:(BOOL)arg1 error:(id)arg2;
 - (void)remoteDeviceDidUnlock;
 - (void)requestRemoteDevicePasscodeAction:(int)arg1 type:(int)arg2;
-- (void)requestRemoteDeviceRemoveLockout:(id)arg1;
+- (void)requestRemoteDeviceRemoveLockout:(id /* block */)arg1;
 - (void)requestRemoteDeviceUnlockNotification;
 - (void)setDelegate:(id)arg1;
 - (void)unpairForUnlock;

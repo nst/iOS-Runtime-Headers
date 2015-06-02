@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSDate, NSMutableArray, NSString;
-
 @interface AXHearingAidFakeDevice : AXHearingAidDevice {
     BOOL _connected;
     NSString *_deviceUUID;
@@ -26,23 +24,23 @@
     int _type;
 }
 
-@property BOOL connected;
-@property(retain) NSString * deviceUUID;
-@property BOOL isConnecting;
-@property float leftBatteryLevel;
-@property(retain) NSDate * leftBatteryLowDate;
-@property(retain) NSString * leftFirmwareVersion;
-@property(retain) NSString * leftHardwareVersion;
-@property(retain) NSString * leftUUID;
-@property(retain) NSString * manufacturer;
-@property(retain) NSString * model;
-@property(retain) NSString * name;
-@property float rightBatteryLevel;
-@property(retain) NSDate * rightBatteryLowDate;
-@property(retain) NSString * rightFirmwareVersion;
-@property(retain) NSString * rightHardwareVersion;
-@property(retain) NSString * rightUUID;
-@property int type;
+@property (nonatomic) BOOL connected;
+@property (nonatomic, retain) NSString *deviceUUID;
+@property (nonatomic) BOOL isConnecting;
+@property (nonatomic) float leftBatteryLevel;
+@property (nonatomic, retain) NSDate *leftBatteryLowDate;
+@property (nonatomic, retain) NSString *leftFirmwareVersion;
+@property (nonatomic, retain) NSString *leftHardwareVersion;
+@property (nonatomic, retain) NSString *leftUUID;
+@property (nonatomic, retain) NSString *manufacturer;
+@property (nonatomic, retain) NSString *model;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) float rightBatteryLevel;
+@property (nonatomic, retain) NSDate *rightBatteryLowDate;
+@property (nonatomic, retain) NSString *rightFirmwareVersion;
+@property (nonatomic, retain) NSString *rightHardwareVersion;
+@property (nonatomic, retain) NSString *rightUUID;
+@property (nonatomic) int type;
 
 - (void)connect;
 - (BOOL)connected;

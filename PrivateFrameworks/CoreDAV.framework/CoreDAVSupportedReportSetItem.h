@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet;
-
 @interface CoreDAVSupportedReportSetItem : CoreDAVItem {
     NSMutableSet *_supportedReports;
 }
 
-@property(retain) NSMutableSet * supportedReports;
+@property (nonatomic, retain) NSMutableSet *supportedReports;
 
 + (id)copyParseRules;
 

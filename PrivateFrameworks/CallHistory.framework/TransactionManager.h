@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSMutableArray, NSXPCConnection, NSXPCInterface;
-
 @interface TransactionManager : CHSynchronizedLoggable {
     NSXPCConnection *_connection;
     NSXPCInterface *_interface;

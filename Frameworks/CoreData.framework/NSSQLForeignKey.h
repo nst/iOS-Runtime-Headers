@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLToOne;
-
 @interface NSSQLForeignKey : NSSQLColumn {
     NSSQLToOne *_toOne;
 }

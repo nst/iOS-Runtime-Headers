@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAsset, ALAssetPrivate;
-
 @interface ALAsset : NSObject {
     id _internal;
 }
 
-@property(getter=isEditable,readonly) BOOL editable;
-@property(retain) ALAssetPrivate * internal;
-@property(readonly) ALAsset * originalAsset;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (nonatomic, retain) ALAssetPrivate *internal;
+@property (nonatomic, readonly) ALAsset *originalAsset;
 
 + (struct CGSize { float x1; float x2; })largePreviewImageSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 
@@ -30,13 +28,13 @@
 - (id)representationForUTI:(id)arg1;
 - (void)requestDefaultRepresentation;
 - (void)setExternalUsageIntent:(unsigned int)arg1;
-- (void)setImageData:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
+- (void)setImageData:(id)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setInternal:(id)arg1;
-- (void)setLargePreviewImageWithImageData:(id)arg1 completionBlock:(id)arg2;
-- (void)setVideoAtPath:(id)arg1 completionBlock:(id)arg2;
+- (void)setLargePreviewImageWithImageData:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)setVideoAtPath:(id)arg1 completionBlock:(id /* block */)arg2;
 - (struct CGImage { }*)thumbnail;
 - (id)valueForProperty:(id)arg1;
-- (void)writeModifiedImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (void)writeModifiedVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;
+- (void)writeModifiedImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)writeModifiedVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id /* block */)arg2;
 
 @end

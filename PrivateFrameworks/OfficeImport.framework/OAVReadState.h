@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSMutableSet, OAXDrawingState, OCPPackagePart;
-
 @interface OAVReadState : OCXReadState {
     Class mClient;
     NSMutableSet *mDualDrawables;

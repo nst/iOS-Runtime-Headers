@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSString, OADBlip;
-
 @interface OADBlipRef : NSObject <NSCopying> {
     OADBlip *mBlip;
     NSMutableArray *mEffects;

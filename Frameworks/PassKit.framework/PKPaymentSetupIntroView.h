@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPaymentSetupHeroView, PKPaymentSetupInfoView, UIImageView;
-
 @interface PKPaymentSetupIntroView : UIView {
     int _context;
     UIImageView *_heroImage;
@@ -11,8 +9,8 @@
     PKPaymentSetupInfoView *_infoView;
 }
 
-@property(retain) UIImageView * heroImage;
-@property(retain) PKPaymentSetupInfoView * infoView;
+@property (nonatomic, retain) UIImageView *heroImage;
+@property (nonatomic, retain) PKPaymentSetupInfoView *infoView;
 
 - (void)_createSubviews;
 - (void)dealloc;

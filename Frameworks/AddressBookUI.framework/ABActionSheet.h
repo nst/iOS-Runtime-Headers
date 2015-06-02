@@ -10,7 +10,7 @@
     struct __CFArray { } *_tags;
 }
 
-@property void* ab_context;
+@property (nonatomic) void*ab_context;
 
 - (int)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;

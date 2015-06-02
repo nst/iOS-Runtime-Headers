@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAAnswerObject : SADomainObject
 
-@interface SAAnswerObject : SADomainObject {
-}
-
-@property(copy) NSArray * lines;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSArray *lines;
+@property (nonatomic, copy) NSString *title;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;

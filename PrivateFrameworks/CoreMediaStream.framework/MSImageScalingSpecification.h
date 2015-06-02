@@ -9,10 +9,10 @@
     float _nominalShortSideLength;
 }
 
-@property int assetTypeFlags;
-@property float maximumLongSideLength;
-@property float minimumLongSideLength;
-@property float nominalShortSideLength;
+@property (nonatomic) int assetTypeFlags;
+@property (nonatomic) float maximumLongSideLength;
+@property (nonatomic) float minimumLongSideLength;
+@property (nonatomic) float nominalShortSideLength;
 
 + (id)assetsToGenerateFromImageWithInputSize:(struct CGSize { float x1; float x2; })arg1 toConformToSpecifications:(id)arg2;
 + (id)specificationWithSharedAlbumSpecificationString:(id)arg1;

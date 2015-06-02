@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class CADisplayLink, NSMutableSet;
-
 @interface AXDisplayLinkManager : NSObject {
     NSMutableSet *_activeTargetActions;
     BOOL _handlingDisplayRefresh;
@@ -13,18 +11,18 @@
     unsigned int _warmUpModeRequirementsCount;
 }
 
-@property(retain) NSMutableSet * activeTargetActions;
-@property(retain) CADisplayLink * displayLink;
-@property(readonly) double duration;
-@property(readonly) unsigned int frameInterval;
-@property(getter=isHandlingDisplayRefresh) BOOL handlingDisplayRefresh;
-@property BOOL hasUpdatedTargetActions;
-@property(getter=isPaused,readonly) BOOL paused;
-@property(retain) CADisplayLink * storedDisplayLink;
-@property(readonly) double timestamp;
-@property(retain) NSMutableSet * updatedTargetActions;
-@property(getter=isWarmUpModeEnabled,readonly) BOOL warmUpModeEnabled;
-@property unsigned int warmUpModeRequirementsCount;
+@property (nonatomic, retain) NSMutableSet *activeTargetActions;
+@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) unsigned int frameInterval;
+@property (getter=isHandlingDisplayRefresh, nonatomic) BOOL handlingDisplayRefresh;
+@property (nonatomic) BOOL hasUpdatedTargetActions;
+@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (nonatomic, retain) CADisplayLink *storedDisplayLink;
+@property (nonatomic, readonly) double timestamp;
+@property (nonatomic, retain) NSMutableSet *updatedTargetActions;
+@property (getter=isWarmUpModeEnabled, nonatomic, readonly) BOOL warmUpModeEnabled;
+@property (nonatomic) unsigned int warmUpModeRequirementsCount;
 
 + (void)_releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;

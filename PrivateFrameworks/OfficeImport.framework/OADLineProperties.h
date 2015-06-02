@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADLineProperties : OADShapeProperties {
-}
+@interface OADLineProperties : OADShapeProperties
 
 + (id)defaultProperties;
 

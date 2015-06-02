@@ -2,17 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDAngleGradient : TSDGradient <TSDMixing> {
     float mAngle;
 }
 
-@property float gradientAngle;
-@property(readonly) float gradientAngleInDegrees;
+@property (nonatomic) float gradientAngle;
+@property (nonatomic, readonly) float gradientAngleInDegrees;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

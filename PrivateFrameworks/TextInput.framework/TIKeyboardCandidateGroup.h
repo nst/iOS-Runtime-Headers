@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSOrderedSet, NSString;
-
 @interface TIKeyboardCandidateGroup : NSObject <NSCopying, NSSecureCoding> {
     NSOrderedSet *_candidates;
     NSArray *_nonExtensionCandidates;
     NSString *_title;
 }
 
-@property(copy) NSOrderedSet * candidates;
-@property(retain) NSArray * nonExtensionCandidates;
-@property(copy) NSString * title;
+@property (copy) NSOrderedSet *candidates;
+@property (retain) NSArray *nonExtensionCandidates;
+@property (copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 
@@ -32,8 +30,8 @@
 - (void)setCandidates:(id)arg1;
 - (void)setNonExtensionCandidates:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)sortUsingComparator:(id)arg1;
-- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (void)sortUsingComparator:(id /* block */)arg1;
+- (void)sortWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
 - (id)title;
 
 @end

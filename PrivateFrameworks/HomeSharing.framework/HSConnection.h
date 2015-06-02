@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class HSConnectionConfiguration, HSConnectionStream, HSFairPlayInfo, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSURL, NSURLSession;
-
 @interface HSConnection : NSObject {
     NSObject<OS_dispatch_source> *_activityTimerSource;
     HSConnectionConfiguration *_configuration;
@@ -29,39 +27,39 @@
     NSString *username;
 }
 
-@property(getter=isAuthenticationRequired) BOOL authenticationRequired;
+@property (getter=isAuthenticationRequired) BOOL authenticationRequired;
 @property unsigned int basePlaylistContainerID;
-@property(readonly) NSURL * baseURL;
+@property (readonly) NSURL *baseURL;
 @property int connectionState;
-@property(readonly) int connectionType;
+@property (readonly) int connectionType;
 @property unsigned int controlKey;
 @property unsigned int controlPort;
 @property unsigned int databaseID;
 @property unsigned int databaseRevision;
-@property(retain) HSFairPlayInfo * fairPlayInfo;
-@property(copy) NSString * homeSharingGroupID;
+@property (retain) HSFairPlayInfo *fairPlayInfo;
+@property (copy) NSString *homeSharingGroupID;
 @property unsigned int interfaceID;
-@property(copy) NSString * password;
-@property unsigned int promptID;
+@property (copy) NSString *password;
+@property (nonatomic) unsigned int promptID;
 @property unsigned int sessionID;
 @property BOOL tokenCheckRequired;
-@property(getter=isTokenCheckRequired,readonly) BOOL tokenCheckRequred;
-@property(copy) NSString * username;
+@property (getter=isTokenCheckRequired, readonly) BOOL tokenCheckRequred;
+@property (copy) NSString *username;
 
 + (void)_scheduleDialogResetIfNeeded;
 
 - (void).cxx_destruct;
-- (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id)arg2;
-- (void)_loadDatabaseWithInternalConnectionCompletionHandler:(id)arg1;
+- (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id /* block */)arg2;
+- (void)_loadDatabaseWithInternalConnectionCompletionHandler:(id /* block */)arg1;
 - (id)_onSerialQueue_connectionSession;
-- (void)_onSerialQueue_sendRequest:(id)arg1 withInternalResponseHandler:(id)arg2;
+- (void)_onSerialQueue_sendRequest:(id)arg1 withInternalResponseHandler:(id /* block */)arg2;
 - (unsigned int)_sapVersionForConnectionType;
-- (void)_sendRequest:(id)arg1 withInternalResponseHandler:(id)arg2;
-- (void)_setupControlConnectionWithInternalConnectionCompletionHandler:(id)arg1;
+- (void)_sendRequest:(id)arg1 withInternalResponseHandler:(id /* block */)arg2;
+- (void)_setupControlConnectionWithInternalConnectionCompletionHandler:(id /* block */)arg1;
 - (unsigned int)basePlaylistContainerID;
 - (id)baseURL;
-- (void)checkForDatabaseUpdatesWithCompletionHandler:(id)arg1;
-- (void)connectWithCompletionHandler:(id)arg1;
+- (void)checkForDatabaseUpdatesWithCompletionHandler:(id /* block */)arg1;
+- (void)connectWithCompletionHandler:(id /* block */)arg1;
 - (int)connectionState;
 - (int)connectionType;
 - (unsigned int)controlKey;
@@ -81,7 +79,7 @@
 - (id)newControlConnection;
 - (id)password;
 - (unsigned int)promptID;
-- (void)sendRequest:(id)arg1 withResponseHandler:(id)arg2;
+- (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (unsigned int)sessionID;
 - (void)setAuthenticationRequired:(BOOL)arg1;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;

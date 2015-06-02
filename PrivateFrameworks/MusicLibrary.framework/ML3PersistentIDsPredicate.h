@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray;
-
 @interface ML3PersistentIDsPredicate : ML3Predicate {
     NSArray *_persistentIDs;
     BOOL _shouldContain;
 }
 
-@property(readonly) BOOL shouldContain;
+@property (nonatomic, readonly) BOOL shouldContain;
 
 + (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 shouldContain:(BOOL)arg3;
 + (id)predicateWithPersistentIDs:(id)arg1 shouldContain:(BOOL)arg2;

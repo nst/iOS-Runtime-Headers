@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewDataSource, NSArray, NSMutableDictionary, NSString;
-
 @interface GKDataSourceMetrics : GKGridLayoutMetrics {
     NSString *_cachedKey;
     NSArray *_childMetrics;
@@ -19,12 +17,12 @@
     NSMutableDictionary *_sectionToMetrics;
 }
 
-@property(retain) NSString * cachedKey;
-@property(retain) NSArray * childMetrics;
-@property(retain) GKCollectionViewDataSource * dataSource;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } localSectionRange;
-@property(retain) NSMutableDictionary * sectionToMetrics;
+@property (nonatomic, retain) NSString *cachedKey;
+@property (nonatomic, retain) NSArray *childMetrics;
+@property (nonatomic, retain) GKCollectionViewDataSource *dataSource;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } localSectionRange;
+@property (nonatomic, retain) NSMutableDictionary *sectionToMetrics;
 
 + (id)dataSourceMetricsWithMetrics:(id)arg1 dataSource:(id)arg2;
 

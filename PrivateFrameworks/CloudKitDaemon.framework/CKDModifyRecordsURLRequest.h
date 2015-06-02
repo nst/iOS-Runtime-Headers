@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSData, NSDictionary, NSMutableDictionary;
-
 @interface CKDModifyRecordsURLRequest : CKDURLRequest {
     BOOL _atomic;
     NSData *_clientChangeTokenData;
@@ -17,26 +11,22 @@
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordPostedBlock;
-
+    id /* block */ _recordPostedBlock;
     NSArray *_records;
     BOOL _sendAllFields;
 }
 
-@property BOOL atomic;
-@property(retain) NSData * clientChangeTokenData;
-@property(retain) NSDictionary * conflictLosersToResolveByRecordID;
-@property BOOL oplock;
-@property(retain) NSMutableDictionary * recordByRequestID;
-@property(retain) NSMutableDictionary * recordIDByRequestID;
-@property(retain) NSArray * recordIDsToDelete;
-@property(retain) NSDictionary * recordIDsToDeleteToEtags;
-@property(copy) id recordPostedBlock;
-@property(retain) NSArray * records;
-@property BOOL sendAllFields;
+@property (nonatomic) BOOL atomic;
+@property (nonatomic, retain) NSData *clientChangeTokenData;
+@property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic) BOOL oplock;
+@property (nonatomic, retain) NSMutableDictionary *recordByRequestID;
+@property (nonatomic, retain) NSMutableDictionary *recordIDByRequestID;
+@property (nonatomic, retain) NSArray *recordIDsToDelete;
+@property (nonatomic, retain) NSDictionary *recordIDsToDeleteToEtags;
+@property (nonatomic, copy) id /* block */ recordPostedBlock;
+@property (nonatomic, retain) NSArray *records;
+@property (nonatomic) BOOL sendAllFields;
 
 - (void).cxx_destruct;
 - (BOOL)atomic;
@@ -50,7 +40,7 @@
 - (id)recordIDByRequestID;
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
-- (id)recordPostedBlock;
+- (id /* block */)recordPostedBlock;
 - (id)records;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
@@ -65,7 +55,7 @@
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
-- (void)setRecordPostedBlock:(id)arg1;
+- (void)setRecordPostedBlock:(id /* block */)arg1;
 - (void)setRecords:(id)arg1;
 - (void)setSendAllFields:(BOOL)arg1;
 - (id)zoneIDsToLock;

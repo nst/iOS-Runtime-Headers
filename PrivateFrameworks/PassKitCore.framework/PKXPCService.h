@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class <PKXPCServiceDelegate>, NSLock, NSString, NSXPCConnection, NSXPCInterface, PKWeakReference, PKXPCForwarder;
-
 @interface PKXPCService : NSObject {
     NSString *_className;
     NSXPCConnection *_connection;
@@ -17,13 +15,13 @@
     BOOL _suspendCallbacks;
 }
 
-@property <PKXPCServiceDelegate> * delegate;
+@property (nonatomic) <PKXPCServiceDelegate> *delegate;
 
-+ (void)setCallbacksSuspendedEvaluator:(id)arg1;
++ (void)setCallbacksSuspendedEvaluator:(id /* block */)arg1;
 
 - (id)_connection;
 - (void)_createConnectionIfPossible;
-- (id)_errorHandlerWithSemaphore:(id)arg1;
+- (id /* block */)_errorHandlerWithSemaphore:(id)arg1;
 - (void)_establishServiceConnection;
 - (void)_invalidateConnectionIfPossible;
 - (void)_registerForApplicationLifeCycleNotifications;
@@ -32,16 +30,16 @@
 - (void)_sendSuspended;
 - (void)_unregisterForApplicationLifeCycleNotifications;
 - (void)_unregisterForServiceListenerResumedNotifications;
-- (id)_wrappedErrorHandlerForHandler:(id)arg1;
+- (id /* block */)_wrappedErrorHandlerForHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)existingRemoteObjectProxy;
-- (id)existingRemoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)existingRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
-- (id)remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

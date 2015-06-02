@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
-
 @interface GEOOriginalRoute : PBCodable <NSCopying> {
     struct { 
         unsigned int originalRoutePurpose : 1; 
@@ -13,12 +11,12 @@
     NSData *_routeHandle;
 }
 
-@property(readonly) BOOL hasOriginalDirectionsResponseID;
-@property BOOL hasOriginalRoutePurpose;
-@property(readonly) BOOL hasRouteHandle;
-@property(retain) NSData * originalDirectionsResponseID;
-@property int originalRoutePurpose;
-@property(retain) NSData * routeHandle;
+@property (nonatomic, readonly) BOOL hasOriginalDirectionsResponseID;
+@property (nonatomic) BOOL hasOriginalRoutePurpose;
+@property (nonatomic, readonly) BOOL hasRouteHandle;
+@property (nonatomic, retain) NSData *originalDirectionsResponseID;
+@property (nonatomic) int originalRoutePurpose;
+@property (nonatomic, retain) NSData *routeHandle;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

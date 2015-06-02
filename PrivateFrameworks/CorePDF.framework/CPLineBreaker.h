@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPLineBreaker : NSObject {
-}
+@interface CPLineBreaker : NSObject
 
 + (void)breakLinesInPage:(id)arg1;
 

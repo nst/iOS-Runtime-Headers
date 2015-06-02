@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface CUIMutableStructuredThemeStore : CUIStructuredThemeStore {
     NSString *_identifier;
     int _maxNameIdentifier;

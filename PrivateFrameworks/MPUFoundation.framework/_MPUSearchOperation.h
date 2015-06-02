@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPMediaQuery, MPUSearchDataSource, NSString;
-
 @interface _MPUSearchOperation : NSOperation {
     MPUSearchDataSource *_dataSource;
     int _entityType;
@@ -11,8 +9,8 @@
     NSString *_searchString;
 }
 
-@property(readonly) MPUSearchDataSource * dataSource;
-@property(copy,readonly) NSString * searchString;
+@property (nonatomic, readonly) MPUSearchDataSource *dataSource;
+@property (nonatomic, readonly, copy) NSString *searchString;
 
 - (void).cxx_destruct;
 - (id)dataSource;

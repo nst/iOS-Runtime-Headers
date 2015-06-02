@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CIPerspectiveTransformWithExtent : CIFilter {
     CIVector *inputBottomLeft;
     CIVector *inputBottomRight;
@@ -13,12 +11,12 @@
     CIVector *inputTopRight;
 }
 
-@property(retain) CIVector * inputBottomLeft;
-@property(retain) CIVector * inputBottomRight;
-@property(retain) CIVector * inputExtent;
-@property(retain) CIImage * inputImage;
-@property(retain) CIVector * inputTopLeft;
-@property(retain) CIVector * inputTopRight;
+@property (nonatomic, retain) CIVector *inputBottomLeft;
+@property (nonatomic, retain) CIVector *inputBottomRight;
+@property (nonatomic, retain) CIVector *inputExtent;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) CIVector *inputTopLeft;
+@property (nonatomic, retain) CIVector *inputTopRight;
 
 + (id)customAttributes;
 

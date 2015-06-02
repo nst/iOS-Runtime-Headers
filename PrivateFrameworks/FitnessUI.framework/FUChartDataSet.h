@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUChartDataSetDataSource>, NSArray;
-
 @interface FUChartDataSet : NSObject {
     NSArray *_data;
     <FUChartDataSetDataSource> *_dataSource;
@@ -11,8 +9,8 @@
     int _tag;
 }
 
-@property <FUChartDataSetDataSource> * dataSource;
-@property int tag;
+@property (nonatomic) <FUChartDataSetDataSource> *dataSource;
+@property (nonatomic) int tag;
 
 - (void).cxx_destruct;
 - (id)_getChartPointAtIndex:(unsigned int)arg1;

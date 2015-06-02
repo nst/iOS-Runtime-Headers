@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKRecurrenceOrdinalPickerViewControllerDelegate>, NSString, UIPickerView;
-
 @interface EKRecurrenceOrdinalPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     <EKRecurrenceOrdinalPickerViewControllerDelegate> *_delegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <EKRecurrenceOrdinalPickerViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIPickerView * pickerView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property <EKRecurrenceOrdinalPickerViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIPickerView *pickerView;
+@property (readonly) Class superclass;
 
 - (id)_leftColumn;
 - (id)_rightColumn;

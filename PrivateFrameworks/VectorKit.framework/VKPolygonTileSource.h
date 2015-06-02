@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPolygonTileSource : VKVectorTileSource {
-}
+@interface VKPolygonTileSource : VKVectorTileSource
 
 - (int)defaultMinimumZoomLevel;
 - (unsigned long long)mapLayerForZoomLevelRange;

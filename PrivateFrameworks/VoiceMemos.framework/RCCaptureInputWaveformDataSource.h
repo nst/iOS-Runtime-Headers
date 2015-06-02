@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSArray, NSString, RCComposition, RCCompositionFragment, RCMutableComposition, RCMutableCompositionFragment, RCWaveform;
-
 @interface RCCaptureInputWaveformDataSource : RCWaveformDataSource <AVCaptureAudioDataOutputSampleBufferDelegate> {
     RCWaveform *_baseWaveform;
     BOOL _canUpdateCaptureComposition;
@@ -19,22 +17,22 @@
     double _updatedCapturedFragmentDuration;
 }
 
-@property(readonly) RCWaveform * baseWaveform;
-@property(readonly) BOOL canUpdateCaptureComposition;
-@property(readonly) NSArray * captureInitialDecomposedFragments;
-@property(readonly) double captureInsertionDurationInComposition;
-@property(readonly) double captureInsertionTimeInComposition;
-@property(readonly) RCMutableComposition * capturedComposition;
-@property(readonly) RCMutableCompositionFragment * capturedFragment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) RCComposition * destinationComposition;
-@property(readonly) RCCompositionFragment * destinationFragment;
-@property(readonly) double finalCapturedFragmentDuration;
-@property(readonly) unsigned int hash;
-@property(getter=isOverdub,readonly) BOOL overdub;
-@property(readonly) Class superclass;
-@property(readonly) double updatedCapturedFragmentDuration;
+@property (nonatomic, readonly) RCWaveform *baseWaveform;
+@property (nonatomic, readonly) BOOL canUpdateCaptureComposition;
+@property (nonatomic, readonly) NSArray *captureInitialDecomposedFragments;
+@property (nonatomic, readonly) double captureInsertionDurationInComposition;
+@property (nonatomic, readonly) double captureInsertionTimeInComposition;
+@property (nonatomic, readonly) RCMutableComposition *capturedComposition;
+@property (nonatomic, readonly) RCMutableCompositionFragment *capturedFragment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) RCComposition *destinationComposition;
+@property (nonatomic, readonly) RCCompositionFragment *destinationFragment;
+@property (nonatomic, readonly) double finalCapturedFragmentDuration;
+@property (readonly) unsigned int hash;
+@property (getter=isOverdub, nonatomic, readonly) BOOL overdub;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double updatedCapturedFragmentDuration;
 
 - (void).cxx_destruct;
 - (id)_captureSegmentsInComponentWaveform:(id)arg1 captureTimeRange:(struct { double x1; double x2; })arg2 componentWaveformSegmentOffset:(double)arg3;
@@ -58,8 +56,8 @@
 - (id)destinationFragment;
 - (double)duration;
 - (double)finalCapturedFragmentDuration;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id)arg2;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id)arg3;
+- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id /* block */)arg3;
 - (void)flushPendingCapturedSampleBuffers;
 - (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2 isOverdub:(BOOL)arg3;
 - (BOOL)isOverdub;

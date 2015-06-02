@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSCache, NSMapTable, NSMutableDictionary, NSString;
-
 @interface MKAppImageManager : NSObject <NSURLConnectionDataDelegate> {
     NSMapTable *_containers;
     NSCache *_iconCache;
     NSMutableDictionary *_urlConnections;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedImageManager;
 
@@ -24,6 +22,6 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)init;
-- (void)loadAppImageAtURL:(id)arg1 completionHandler:(id)arg2;
+- (void)loadAppImageAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

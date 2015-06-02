@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSManagedObjectID, NSString, PHAssetCollection, PHChangeRequestHelper, PHCollectionChangeRequestHelper, PHObjectPlaceholder;
-
 @interface PHAssetCollectionChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
     PHCollectionChangeRequestHelper *_assetsHelper;
     NSString *_clientName;
@@ -13,23 +11,23 @@
     PHAssetCollection *_originalAssetCollection;
 }
 
-@property(readonly) PHCollectionChangeRequestHelper * assetsHelper;
-@property(readonly) NSString * clientName;
-@property(readonly) int clientProcessID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEntitled,readonly) BOOL entitled;
-@property(readonly) unsigned int hash;
-@property(readonly) PHChangeRequestHelper * helper;
-@property(readonly) NSString * managedEntityName;
-@property(getter=isMutated,readonly) BOOL mutated;
-@property(getter=isNew,readonly) BOOL new;
-@property(readonly) NSManagedObjectID * objectID;
-@property(retain) PHAssetCollection * originalAssetCollection;
-@property(readonly) PHObjectPlaceholder * placeholderForCreatedAssetCollection;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property(readonly) NSString * uuid;
+@property (nonatomic, readonly) PHCollectionChangeRequestHelper *assetsHelper;
+@property (nonatomic, readonly) NSString *clientName;
+@property (nonatomic, readonly) int clientProcessID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEntitled, nonatomic, readonly) BOOL entitled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PHChangeRequestHelper *helper;
+@property (nonatomic, readonly) NSString *managedEntityName;
+@property (getter=isMutated, readonly) BOOL mutated;
+@property (getter=isNew, readonly) BOOL new;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, retain) PHAssetCollection *originalAssetCollection;
+@property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedAssetCollection;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) NSString *uuid;
 
 + (id)changeRequestForAssetCollection:(id)arg1;
 + (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;

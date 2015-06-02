@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class WBSSQLiteRow, WBSSQLiteStatement;
-
 @interface WBSSQLiteRowEnumerator : NSEnumerator {
     int _lastResultCode;
     WBSSQLiteRow *_row;
     WBSSQLiteStatement *_statement;
 }
 
-@property(readonly) int lastResultCode;
-@property(readonly) WBSSQLiteStatement * statement;
+@property (nonatomic, readonly) int lastResultCode;
+@property (nonatomic, readonly) WBSSQLiteStatement *statement;
 
 - (void).cxx_destruct;
 - (id)initWithResultsOfStatement:(id)arg1;

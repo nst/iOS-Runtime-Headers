@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNBuild, KNBuildChunkIdentifier, KNSlide, NSArray, NSSet, NSString, NSUUID, TSPLazyReference;
-
 @interface KNBuildChunk : TSPObject <KNInspectableAnimation, NSCopying> {
     BOOL _automatic;
     KNBuildChunkIdentifier *_buildChunkIdentifier;
@@ -26,31 +19,31 @@
     unsigned int _referent;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) unsigned int activeIndexOnSlide;
-@property(getter=isAutomatic) BOOL automatic;
-@property(getter=isAutomaticWithPreviousChunk,readonly) BOOL automaticWithPreviousChunk;
-@property(getter=isAutomaticWithPreviousChunkOnSameDrawable,readonly) BOOL automaticWithPreviousChunkOnSameDrawable;
-@property(readonly) NSArray * availableEventTriggers;
-@property(readonly) KNBuild * build;
-@property(readonly) BOOL canEditAnimations;
-@property(readonly) KNBuildChunkIdentifier * chunkIdentifier;
-@property double delay;
-@property(readonly) unsigned int deliveryGroupIndex;
-@property double duration;
-@property(readonly) unsigned int eventTrigger;
-@property(readonly) BOOL hasComplement;
-@property(readonly) NSUUID * i_buildId;
-@property(readonly) unsigned int indexInBuild;
-@property(readonly) unsigned int indexOnSlide;
-@property(readonly) NSSet * inspectableAttributes;
-@property(readonly) BOOL isFirstInBuild;
-@property(readonly) BOOL isFirstInDeliveryGroup;
-@property(readonly) BOOL isFirstOnSlide;
-@property unsigned int referent;
-@property(readonly) KNSlide * slide;
-@property(readonly) BOOL supportsWithStart;
-@property(readonly) NSString * title;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) unsigned int activeIndexOnSlide;
+@property (getter=isAutomatic, nonatomic) BOOL automatic;
+@property (getter=isAutomaticWithPreviousChunk, nonatomic, readonly) BOOL automaticWithPreviousChunk;
+@property (getter=isAutomaticWithPreviousChunkOnSameDrawable, nonatomic, readonly) BOOL automaticWithPreviousChunkOnSameDrawable;
+@property (nonatomic, readonly) NSArray *availableEventTriggers;
+@property (nonatomic, readonly) KNBuild *build;
+@property (nonatomic, readonly) BOOL canEditAnimations;
+@property (nonatomic, readonly) KNBuildChunkIdentifier *chunkIdentifier;
+@property (nonatomic) double delay;
+@property (nonatomic, readonly) unsigned int deliveryGroupIndex;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) unsigned int eventTrigger;
+@property (nonatomic, readonly) BOOL hasComplement;
+@property (nonatomic, readonly) NSUUID *i_buildId;
+@property (nonatomic, readonly) unsigned int indexInBuild;
+@property (nonatomic, readonly) unsigned int indexOnSlide;
+@property (nonatomic, readonly) NSSet *inspectableAttributes;
+@property (nonatomic, readonly) BOOL isFirstInBuild;
+@property (nonatomic, readonly) BOOL isFirstInDeliveryGroup;
+@property (nonatomic, readonly) BOOL isFirstOnSlide;
+@property (nonatomic) unsigned int referent;
+@property (nonatomic, readonly) KNSlide *slide;
+@property (nonatomic, readonly) BOOL supportsWithStart;
+@property (nonatomic, readonly) NSString *title;
 
 + (BOOL)needsObjectUUID;
 

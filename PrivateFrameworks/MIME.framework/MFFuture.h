@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSConditionLock, NSError, NSMutableArray, NSString;
-
 @interface MFFuture : NSObject <MFFuture> {
     NSMutableArray *_completionBlocks;
     NSError *_error;
@@ -11,20 +9,20 @@
     NSConditionLock *_stateLock;
 }
 
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isFinished,readonly) BOOL finished;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=isCancelled, readonly) BOOL cancelled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isFinished, readonly) BOOL finished;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)future;
 
-- (void)_addCompletionBlock:(id)arg1;
+- (void)_addCompletionBlock:(id /* block */)arg1;
 - (void)_flushCompletionBlocks;
 - (BOOL)_nts_isFinished;
-- (void)addFailureBlock:(id)arg1;
-- (void)addSuccessBlock:(id)arg1;
+- (void)addFailureBlock:(id /* block */)arg1;
+- (void)addSuccessBlock:(id /* block */)arg1;
 - (BOOL)cancel;
 - (void)dealloc;
 - (void)didCancel;

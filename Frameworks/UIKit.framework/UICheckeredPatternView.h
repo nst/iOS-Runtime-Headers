@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface UICheckeredPatternView : UIView {
     UIColor *m_checkerColor;
     UIColor *m_patternColor;

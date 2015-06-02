@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLManyToMany;
-
 @interface NSSQLCorrelation : NSObject {
     long long _fk;
     unsigned int _fok;

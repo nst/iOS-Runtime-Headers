@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAAnswerSocialQuestion : SAAnswerAbstractSocialPost
 
-@interface SAAnswerSocialQuestion : SAAnswerAbstractSocialPost {
-}
-
-@property(copy) NSArray * socialAnswers;
+@property (nonatomic, copy) NSArray *socialAnswers;
 
 + (id)socialQuestion;
 + (id)socialQuestionWithDictionary:(id)arg1 context:(id)arg2;

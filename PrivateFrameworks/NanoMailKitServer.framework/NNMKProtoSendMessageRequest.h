@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableArray, NSString;
-
 @interface NNMKProtoSendMessageRequest : PBRequest <NSCopying> {
     NSString *_body;
     NSMutableArray *_ccs;
@@ -11,12 +9,12 @@
     NSMutableArray *_tos;
 }
 
-@property(retain) NSString * body;
-@property(retain) NSMutableArray * ccs;
-@property(readonly) BOOL hasBody;
-@property(readonly) BOOL hasSubject;
-@property(retain) NSString * subject;
-@property(retain) NSMutableArray * tos;
+@property (nonatomic, retain) NSString *body;
+@property (nonatomic, retain) NSMutableArray *ccs;
+@property (nonatomic, readonly) BOOL hasBody;
+@property (nonatomic, readonly) BOOL hasSubject;
+@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, retain) NSMutableArray *tos;
 
 - (void).cxx_destruct;
 - (void)addCc:(id)arg1;

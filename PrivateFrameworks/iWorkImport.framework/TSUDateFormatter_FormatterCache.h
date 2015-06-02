@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSLock, NSMutableDictionary;
-
 @interface TSUDateFormatter_FormatterCache : NSObject {
     NSMutableDictionary *_dateFormatterCache;
     NSLock *_dateFormatterCacheLock;

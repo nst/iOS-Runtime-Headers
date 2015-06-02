@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIButton, UIImageView, UILabel;
-
 @interface SKUISearchNoResultsView : UIView {
     UIButton *_button;
     UIImageView *_imageView;
     UILabel *_label;
 }
 
-@property(readonly) UIButton * button;
+@property (nonatomic, readonly) UIButton *button;
 
 - (void).cxx_destruct;
 - (id)button;

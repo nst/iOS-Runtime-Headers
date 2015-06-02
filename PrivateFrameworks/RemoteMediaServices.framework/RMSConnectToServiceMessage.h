@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString, RMSServiceMessage;
-
 @interface RMSConnectToServiceMessage : PBCodable <NSCopying> {
     NSString *_pairingGUID;
     RMSServiceMessage *_service;
 }
 
-@property(readonly) BOOL hasPairingGUID;
-@property(readonly) BOOL hasService;
-@property(retain) NSString * pairingGUID;
-@property(retain) RMSServiceMessage * service;
+@property (nonatomic, readonly) BOOL hasPairingGUID;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic, retain) NSString *pairingGUID;
+@property (nonatomic, retain) RMSServiceMessage *service;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

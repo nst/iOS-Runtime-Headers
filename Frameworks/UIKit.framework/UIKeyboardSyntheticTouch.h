@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow;
-
 @interface UIKeyboardSyntheticTouch : NSObject {
     unsigned char _pathIdentity;
     unsigned char _pathIndex;
@@ -18,14 +16,14 @@
     UIWindow *window;
 }
 
-@property(readonly) unsigned char _pathIdentity;
-@property(readonly) unsigned char _pathIndex;
-@property float _pathMajorRadius;
-@property struct CGPoint { float x1; float x2; } locationInWindow;
-@property int phase;
-@property unsigned int tapCount;
-@property double timestamp;
-@property(retain) UIWindow * window;
+@property (nonatomic, readonly) unsigned char _pathIdentity;
+@property (nonatomic, readonly) unsigned char _pathIndex;
+@property (nonatomic) float _pathMajorRadius;
+@property (nonatomic) struct CGPoint { float x1; float x2; } locationInWindow;
+@property (nonatomic) int phase;
+@property (nonatomic) unsigned int tapCount;
+@property (nonatomic) double timestamp;
+@property (nonatomic, retain) UIWindow *window;
 
 + (id)syntheticTouchWithPoint:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 window:(id)arg3;
 

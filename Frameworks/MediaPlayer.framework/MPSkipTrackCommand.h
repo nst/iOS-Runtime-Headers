@@ -11,8 +11,8 @@
     } _skipLimit;
 }
 
-@property BOOL adPreventsDisplay;
-@property struct { int x1; int x2; double x3; } skipLimit;
+@property (nonatomic) BOOL adPreventsDisplay;
+@property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;
 
 - (id)_mediaRemoteCommandInfoOptions;
 - (BOOL)adPreventsDisplay;

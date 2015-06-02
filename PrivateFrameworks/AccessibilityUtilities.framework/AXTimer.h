@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXAccessQueue, NSObject<OS_dispatch_source>, NSString;
-
 @interface AXTimer : NSObject <AXTimer> {
     AXAccessQueue *_accessQueue;
     BOOL _accessQueueIsExternal;
@@ -14,33 +12,33 @@
     int _state;
 }
 
-@property(retain) AXAccessQueue * accessQueue;
-@property BOOL accessQueueIsExternal;
-@property(getter=isActive) BOOL active;
-@property BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject<OS_dispatch_source> * dispatchTimer;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(getter=isPending,readonly) BOOL pending;
-@property int state;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) AXAccessQueue *accessQueue;
+@property (nonatomic) BOOL accessQueueIsExternal;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *dispatchTimer;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (getter=isPending, nonatomic, readonly) BOOL pending;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 + (id)timerTargettingMainAccessQueue;
 
-- (void)_afterDelay:(double)arg1 processBlock:(id)arg2 shouldTreatAsWritingBlock:(BOOL)arg3;
+- (void)_afterDelay:(double)arg1 processBlock:(id /* block */)arg2 shouldTreatAsWritingBlock:(BOOL)arg3;
 - (void)_didFinishProcessingBlock;
-- (void)_performEnqueuedWritingBlock:(id)arg1 asynchronousExecutionWarningHandler:(SEL)arg2;
+- (void)_performEnqueuedWritingBlock:(id /* block */)arg1 asynchronousExecutionWarningHandler:(SEL)arg2;
 - (void)_reallyCancel;
 - (void)_warnAboutAsynchronousCancelling;
 - (void)_warnAboutAsynchronousScheduling;
 - (id)accessQueue;
 - (BOOL)accessQueueIsExternal;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processReadingBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processWritingBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 processReadingBlock:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 processWritingBlock:(id /* block */)arg2;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;

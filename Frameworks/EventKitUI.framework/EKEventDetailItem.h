@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventDetailItemDelegate>, EKEvent, EKEventStore, EKUIRecurrenceAlertController, NSString, UIViewController, UIViewController<EKEditItemViewControllerProtocol>;
-
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
     BOOL _allowsEditing;
     int _cellPosition;
@@ -15,17 +13,17 @@
     UIViewController<EKEditItemViewControllerProtocol> *_viewController;
 }
 
-@property BOOL allowsEditing;
-@property int cellPosition;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKEventDetailItemDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int maximumNumberOfSubItems;
-@property(readonly) BOOL requiresLayoutForSubitemCount;
-@property BOOL shouldIndent;
-@property(readonly) Class superclass;
-@property(retain) UIViewController * viewController;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) int cellPosition;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKEventDetailItemDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int maximumNumberOfSubItems;
+@property (nonatomic, readonly) BOOL requiresLayoutForSubitemCount;
+@property (nonatomic) BOOL shouldIndent;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
 - (BOOL)allowsEditing;

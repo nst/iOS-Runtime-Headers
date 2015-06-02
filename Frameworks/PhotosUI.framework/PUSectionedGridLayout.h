@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUCollectionViewLayoutTransitioningDelegate>, <PUSectionedGridLayoutDelegate>, NSArray, NSDictionary, NSIndexPath, NSIndexSet, NSPointerArray, NSSet, NSString, PULayoutAnimationsHelper, PULayoutSampledSectioning, PUSectionedGridLayoutInvalidationContext, UICollectionViewLayout, UICollectionViewLayoutAttributes;
-
 @interface PUSectionedGridLayout : UICollectionViewLayout <PUCollectionViewLayoutDelegating, PUGridLayoutProtocol, PUPhotosGridTransitioningLayout, PUReorderableLayout> {
     PUSectionedGridLayoutInvalidationContext *_cachedFloatingHeaderInvalidationContext;
     int _cachedFloatingHeaderInvalidationContextNewVisualSection;
@@ -83,11 +77,7 @@
     int _totalVisualSections;
     int _transitionAnchorColumnOffset;
     BOOL _transitionAnchorShiftsColumns;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _transitionAnimationEndCleanupBlock;
-
+    id /* block */ _transitionAnimationEndCleanupBlock;
     PULayoutAnimationsHelper *_transitionAnimationsHelper;
     BOOL _transitionApplyingEffectiveContentOrigin;
     struct CGPoint { 
@@ -121,49 +111,49 @@
     NSArray *_visualToRealSectionIndexes;
 }
 
-@property int columnsPerRow;
-@property float cropAmount;
-@property int cropType;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSectionedGridLayoutDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL floatingSectionHeadersEnabled;
-@property float globalBottomPadding;
-@property float globalFooterHeight;
-@property(readonly) NSIndexPath * globalFooterIndexPath;
-@property(readonly) UICollectionViewLayoutAttributes * globalHeaderAttributes;
-@property float globalHeaderHeight;
-@property(readonly) NSIndexPath * globalHeaderIndexPath;
-@property float globalTopPadding;
-@property(readonly) unsigned int hash;
-@property(copy) NSSet * hiddenItemIndexPaths;
-@property struct CGSize { float x1; float x2; } interItemSpacing;
-@property struct CGSize { float x1; float x2; } itemSize;
-@property(readonly) int itemsPerRow;
-@property(readonly) PULayoutSampledSectioning * layoutSectioning;
-@property(readonly) int numberOfVisualSections;
-@property(copy) NSString * renderedStripsElementKind;
-@property float sectionBottomPadding;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
-@property(copy) NSString * sectionHeaderElementKind;
-@property float sectionHeaderHeight;
-@property float sectionTopPadding;
-@property(readonly) Class superclass;
-@property(readonly) struct CGSize { float x1; float x2; } transitionActualContentSize;
-@property(readonly) int transitionAnchorColumnOffset;
-@property BOOL transitionAnchorShiftsColumns;
-@property struct CGPoint { float x1; float x2; } transitionEffectiveContentOrigin;
-@property(readonly) struct CGPoint { float x1; float x2; } transitionEndContentOffset;
-@property(copy) NSIndexPath * transitionExplicitAnchorItemIndexPath;
-@property(copy,readonly) NSIndexPath * transitionFirstVisibleRowVisualPath;
-@property BOOL transitionIsAnimated;
-@property(readonly) BOOL transitionIsAppearing;
-@property(copy,readonly) NSIndexPath * transitionLastVisibleRowVisualPath;
-@property(readonly) UICollectionViewLayout * transitionLayout;
-@property struct CGPoint { float x1; float x2; } transitionStartContentOffset;
-@property BOOL transitionZoomingOut;
-@property <PUCollectionViewLayoutTransitioningDelegate> * transitioningDelegate;
-@property BOOL usesRenderedStripTopExtendersForTransitions;
+@property (nonatomic) int columnsPerRow;
+@property (nonatomic) float cropAmount;
+@property (nonatomic) int cropType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSectionedGridLayoutDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL floatingSectionHeadersEnabled;
+@property (nonatomic) float globalBottomPadding;
+@property (nonatomic) float globalFooterHeight;
+@property (nonatomic, readonly) NSIndexPath *globalFooterIndexPath;
+@property (nonatomic, readonly) UICollectionViewLayoutAttributes *globalHeaderAttributes;
+@property (nonatomic) float globalHeaderHeight;
+@property (nonatomic, readonly) NSIndexPath *globalHeaderIndexPath;
+@property (nonatomic) float globalTopPadding;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSSet *hiddenItemIndexPaths;
+@property (nonatomic) struct CGSize { float x1; float x2; } interItemSpacing;
+@property (nonatomic) struct CGSize { float x1; float x2; } itemSize;
+@property (nonatomic, readonly) int itemsPerRow;
+@property (nonatomic, readonly) PULayoutSampledSectioning *layoutSectioning;
+@property (nonatomic, readonly) int numberOfVisualSections;
+@property (nonatomic, copy) NSString *renderedStripsElementKind;
+@property (nonatomic) float sectionBottomPadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
+@property (nonatomic, copy) NSString *sectionHeaderElementKind;
+@property (nonatomic) float sectionHeaderHeight;
+@property (nonatomic) float sectionTopPadding;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } transitionActualContentSize;
+@property (nonatomic, readonly) int transitionAnchorColumnOffset;
+@property (nonatomic) BOOL transitionAnchorShiftsColumns;
+@property (nonatomic) struct CGPoint { float x1; float x2; } transitionEffectiveContentOrigin;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } transitionEndContentOffset;
+@property (nonatomic, copy) NSIndexPath *transitionExplicitAnchorItemIndexPath;
+@property (nonatomic, readonly, copy) NSIndexPath *transitionFirstVisibleRowVisualPath;
+@property (nonatomic) BOOL transitionIsAnimated;
+@property (nonatomic, readonly) BOOL transitionIsAppearing;
+@property (nonatomic, readonly, copy) NSIndexPath *transitionLastVisibleRowVisualPath;
+@property (nonatomic, readonly) UICollectionViewLayout *transitionLayout;
+@property (nonatomic) struct CGPoint { float x1; float x2; } transitionStartContentOffset;
+@property (nonatomic) BOOL transitionZoomingOut;
+@property (nonatomic) <PUCollectionViewLayoutTransitioningDelegate> *transitioningDelegate;
+@property (nonatomic) BOOL usesRenderedStripTopExtendersForTransitions;
 
 + (Class)invalidationContextClass;
 
@@ -172,14 +162,14 @@
 - (void)_adjustItemLayoutAttributesForReordering:(id)arg1;
 - (void)_adjustRenderedStripLayoutAttributes:(id)arg1 toOrFromGridLayout:(id)arg2 isAppearing:(BOOL)arg3;
 - (void)_adjustSectionHeaderLayoutAttributes:(id)arg1 toOrFromGridLayout:(id)arg2 isAppearing:(BOOL)arg3;
-- (id)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
+- (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (void)_clearLayoutCaches;
 - (void)_clearRetainedCaches;
 - (void)_clearSamplingCaches;
 - (void)_clearSectioningCaches;
 - (struct CGPoint { float x1; float x2; })_currentVisibleRectOrigin;
 - (void)_didFinishLayoutTransitionAnimations:(BOOL)arg1;
-- (void)_enumerateVisualItemFramesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id)arg2;
+- (void)_enumerateVisualItemFramesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (int)_firstVisualItemIndexForRenderedStripIndex:(int)arg1;
 - (int)_floatingHeaderVisualSectionForVisibleOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameByAdjustingOffScreenEnteringFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forRowAtVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg2 transitionSectionInfo:(id)arg3 toOrFromGridLayout:(id)arg4 isAppearing:(BOOL)arg5;
@@ -199,7 +189,7 @@
 - (void)_prepareLayoutIfNeeded;
 - (void)_prepareSamplingDataIfNeeded;
 - (void)_prepareSectioningDataIfNeeded;
-- (id)_realItemIndexPathClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withTest:(id)arg3;
+- (id)_realItemIndexPathClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withTest:(id /* block */)arg3;
 - (int)_renderedStripIndexForSectionRowIndex:(int)arg1;
 - (float)_sectionWidth;
 - (void)_setColumnsPerRow:(int)arg1;
@@ -229,8 +219,8 @@
 - (id)description;
 - (void)endInsertingItem;
 - (void)endReordering;
-- (void)enumerateItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)finalizeAnimatedBoundsChange;
@@ -294,7 +284,7 @@
 - (void)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)prepareLayout;
 - (id)pu_debugRows;
-- (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id)arg3;
+- (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id /* block */)arg3;
 - (id)realSectionsForVisualSection:(int)arg1 forSectioning:(id)arg2;
 - (id)renderedStripsElementKind;
 - (id)reorderedIndexPath:(id)arg1;

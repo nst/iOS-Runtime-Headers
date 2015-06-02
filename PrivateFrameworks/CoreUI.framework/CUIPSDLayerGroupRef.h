@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class _CUIPSDSublayerInfo;
-
 @interface CUIPSDLayerGroupRef : CUIPSDLayerBaseRef {
     _CUIPSDSublayerInfo *_sublayerInfo;
 }

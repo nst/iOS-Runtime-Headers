@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
-
 @interface _UIFocusDebugOverlayView : UIView {
     UIView *_highlightView;
     UIColor *_overlayColor;
 }
 
-@property(retain) UIView * highlightView;
-@property(copy) UIColor * overlayColor;
+@property (nonatomic, retain) UIView *highlightView;
+@property (nonatomic, copy) UIColor *overlayColor;
 
 - (id)_focusItemsOverlayCreateIfNecessary:(BOOL)arg1;
 - (void)_highlightPreferredFocusView:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGName : NSObject <SGObject> {
     NSString *_firstName;
     NSString *_fullName;
@@ -13,13 +11,13 @@
     NSString *_suffix;
 }
 
-@property(readonly) NSString * firstName;
-@property(readonly) NSString * fullName;
-@property(readonly) NSString * lastName;
-@property(readonly) NSString * middleName;
-@property(readonly) NSString * name;
-@property(readonly) NSString * prefix;
-@property(readonly) NSString * suffix;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSString *middleName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *prefix;
+@property (nonatomic, readonly) NSString *suffix;
 
 + (id)nameWithFirstName:(id)arg1;
 + (id)nameWithFirstName:(id)arg1 lastName:(id)arg2;

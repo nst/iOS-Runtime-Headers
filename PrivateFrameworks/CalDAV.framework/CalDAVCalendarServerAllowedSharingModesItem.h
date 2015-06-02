@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVItemWithNoChildren;
-
 @interface CalDAVCalendarServerAllowedSharingModesItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_canBePublished;
     CoreDAVItemWithNoChildren *_canBeShared;
@@ -11,10 +9,10 @@
     CoreDAVItemWithNoChildren *_isMarkedUndeletable;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * canBePublished;
-@property(retain) CoreDAVItemWithNoChildren * canBeShared;
-@property(retain) CoreDAVItemWithNoChildren * isMarkedImmutableSharees;
-@property(retain) CoreDAVItemWithNoChildren * isMarkedUndeletable;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *canBePublished;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *canBeShared;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *isMarkedImmutableSharees;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *isMarkedUndeletable;
 
 - (id)canBePublished;
 - (id)canBeShared;

@@ -2,32 +2,30 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnectionInternal_FigRecorder, AVCaptureOutput_FigRecorder, AVCaptureVideoPreviewLayer_FigRecorder, NSArray;
-
 @interface AVCaptureConnection_FigRecorder : NSObject {
     AVCaptureConnectionInternal_FigRecorder *_internal;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) NSArray * audioChannels;
-@property BOOL automaticallyAdjustsVideoMirroring;
-@property(getter=isEnabled) BOOL enabled;
-@property BOOL enablesVideoStabilizationWhenAvailable;
-@property(readonly) NSArray * inputPorts;
-@property(readonly) AVCaptureOutput_FigRecorder * output;
-@property(getter=isVideoMaxFrameDurationSupported,readonly) BOOL supportsVideoMaxFrameDuration;
-@property(getter=isVideoMinFrameDurationSupported,readonly) BOOL supportsVideoMinFrameDuration;
-@property(getter=isVideoMirroringSupported,readonly) BOOL supportsVideoMirroring;
-@property(getter=isVideoOrientationSupported,readonly) BOOL supportsVideoOrientation;
-@property(getter=isVideoStabilizationSupported,readonly) BOOL supportsVideoStabilization;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
-@property(readonly) float videoMaxScaleAndCropFactor;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
-@property(getter=isVideoMirrored) BOOL videoMirrored;
-@property int videoOrientation;
-@property(readonly) AVCaptureVideoPreviewLayer_FigRecorder * videoPreviewLayer;
-@property float videoScaleAndCropFactor;
-@property(getter=isVideoStabilizationEnabled,readonly) BOOL videoStabilizationEnabled;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) NSArray *audioChannels;
+@property (nonatomic) BOOL automaticallyAdjustsVideoMirroring;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) BOOL enablesVideoStabilizationWhenAvailable;
+@property (nonatomic, readonly) NSArray *inputPorts;
+@property (nonatomic, readonly) AVCaptureOutput_FigRecorder *output;
+@property (getter=isVideoMaxFrameDurationSupported, nonatomic, readonly) BOOL supportsVideoMaxFrameDuration;
+@property (getter=isVideoMinFrameDurationSupported, nonatomic, readonly) BOOL supportsVideoMinFrameDuration;
+@property (getter=isVideoMirroringSupported, nonatomic, readonly) BOOL supportsVideoMirroring;
+@property (getter=isVideoOrientationSupported, nonatomic, readonly) BOOL supportsVideoOrientation;
+@property (getter=isVideoStabilizationSupported, nonatomic, readonly) BOOL supportsVideoStabilization;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
+@property (nonatomic, readonly) float videoMaxScaleAndCropFactor;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
+@property (getter=isVideoMirrored, nonatomic) BOOL videoMirrored;
+@property (nonatomic) int videoOrientation;
+@property (nonatomic, readonly) AVCaptureVideoPreviewLayer_FigRecorder *videoPreviewLayer;
+@property (nonatomic) float videoScaleAndCropFactor;
+@property (getter=isVideoStabilizationEnabled, nonatomic, readonly) BOOL videoStabilizationEnabled;
 
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;

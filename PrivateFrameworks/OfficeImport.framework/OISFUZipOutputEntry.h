@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OISFUZipOutputEntry : NSObject {
     unsigned long long compressedDataOffset;
     unsigned long long compressedSize;

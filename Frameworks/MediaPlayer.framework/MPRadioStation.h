@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, RadioStation;
-
 @interface MPRadioStation : NSObject <NSCopying> {
     RadioStation *_station;
 }
 
-@property(getter=_station,readonly) RadioStation * _station;
-@property(readonly) NSString * localizedDescription;
-@property(readonly) NSString * localizedName;
-@property(readonly) long long uniqueIdentifier;
+@property (getter=_station, nonatomic, readonly) RadioStation *_station;
+@property (nonatomic, readonly) NSString *localizedDescription;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) long long uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

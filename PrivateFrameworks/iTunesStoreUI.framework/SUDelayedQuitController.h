@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray;
-
 @interface SUDelayedQuitController : NSObject {
     int _delayTerminateCount;
     NSMutableArray *_longLivedViewControllers;

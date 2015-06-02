@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewCell;
-
 @interface GKCancelSwipeToEditGestureRecognizer : UITapGestureRecognizer {
     GKCollectionViewCell *_currentEditingCell;
 }
 
-@property(retain) GKCollectionViewCell * currentEditingCell;
+@property (nonatomic, retain) GKCollectionViewCell *currentEditingCell;
 
 - (id)currentEditingCell;
 - (void)dealloc;

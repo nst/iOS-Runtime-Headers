@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKSimpleTimerDelegate>, NSObject<OS_dispatch_source>;
-
 @interface GKSimpleTimer : NSObject {
     id _delegate;
     double _interval;
@@ -16,8 +14,8 @@
     BOOL _timerSourceSet;
 }
 
-@property <GKSimpleTimerDelegate> * delegate;
-@property(readonly) double interval;
+@property (nonatomic) <GKSimpleTimerDelegate> *delegate;
+@property (nonatomic, readonly) double interval;
 
 - (void)dealloc;
 - (id)delegate;

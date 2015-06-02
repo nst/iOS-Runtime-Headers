@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPDCanonicalLocationSearchParameters : PBCodable <NSCopying> {
     NSString *_queryString;
 }
 
-@property(readonly) BOOL hasQueryString;
-@property(retain) NSString * queryString;
+@property (nonatomic, readonly) BOOL hasQueryString;
+@property (nonatomic, retain) NSString *queryString;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

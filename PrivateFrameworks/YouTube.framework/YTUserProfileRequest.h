@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class <YTUserProfileRequestDelegate>, YTUserProfile;
-
 @interface YTUserProfileRequest : YTXMLHTTPRequest {
     <YTUserProfileRequestDelegate> *_delegate;
     YTUserProfile *_profile;

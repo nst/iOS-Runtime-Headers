@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSClassificationValue : ICSPredefinedValue {
-}
+@interface ICSClassificationValue : ICSPredefinedValue
 
 + (id)classificationFromCode:(int)arg1;
 + (id)classificationValueFromICSString:(id)arg1;

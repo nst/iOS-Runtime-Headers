@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIShadowView, UITableView, UIView;
-
 @interface UICompletionTablePrivate : NSObject {
     id _delegate;
     UIShadowView *_shadowView;

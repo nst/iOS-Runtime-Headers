@@ -9,8 +9,8 @@
     unsigned int _window;
 }
 
-@property(readonly) double average;
-@property(readonly) unsigned int window;
+@property (nonatomic, readonly) double average;
+@property (nonatomic, readonly) unsigned int window;
 
 - (double)average;
 - (void)dealloc;

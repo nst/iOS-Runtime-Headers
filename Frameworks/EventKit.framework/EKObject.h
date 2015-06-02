@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKObjectRelation, EKPersistentObject, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface EKObject : NSObject {
     NSMutableDictionary *_cachedProperties;
     NSMutableDictionary *_dirtyProperties;
@@ -15,17 +13,17 @@
     NSMutableSet *_weakRelations;
 }
 
-@property(retain) NSMutableDictionary * cachedProperties;
-@property(retain) NSMutableDictionary * dirtyProperties;
-@property unsigned long flags;
-@property EKObjectRelation * owningRelation;
-@property(retain) EKPersistentObject * persistentObject;
-@property(copy) NSString * propertyName;
-@property(retain) NSMutableDictionary * relations;
-@property(retain) NSMutableSet * weakRelations;
+@property (nonatomic, retain) NSMutableDictionary *cachedProperties;
+@property (nonatomic, retain) NSMutableDictionary *dirtyProperties;
+@property (nonatomic) unsigned long flags;
+@property (nonatomic) EKObjectRelation *owningRelation;
+@property (nonatomic, retain) EKPersistentObject *persistentObject;
+@property (nonatomic, copy) NSString *propertyName;
+@property (nonatomic, retain) NSMutableDictionary *relations;
+@property (nonatomic, retain) NSMutableSet *weakRelations;
 
 - (void)addWeakRelation:(id)arg1;
-- (BOOL)boolPropertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
+- (BOOL)boolPropertyForKey:(id)arg1 withPersistentFallback:(id /* block */)arg2;
 - (void)cachePropertyValue:(id)arg1 forKey:(id)arg2;
 - (id)cachedProperties;
 - (void)childRelationChanged:(id)arg1;
@@ -42,7 +40,7 @@
 - (BOOL)hasChanges;
 - (id)initWithPersistentObject:(id)arg1;
 - (void)insertPersistentObjectIfNeeded;
-- (int)intPropertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
+- (int)intPropertyForKey:(id)arg1 withPersistentFallback:(id /* block */)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNew;
 - (BOOL)isPropertyDirty:(id)arg1;
@@ -52,7 +50,7 @@
 - (id)owningRelation;
 - (id)persistentObject;
 - (id)persistentOrDirtyPropertyForKey:(id)arg1;
-- (id)propertyForKey:(id)arg1 withPersistentFallback:(id)arg2;
+- (id)propertyForKey:(id)arg1 withPersistentFallback:(id /* block */)arg2;
 - (id)propertyName;
 - (id)propertyValueForKey:(id)arg1;
 - (BOOL)propertyValueForKey:(id)arg1 value:(id*)arg2;

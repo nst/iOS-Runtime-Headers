@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id handler;
-
+    id /* block */ handler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id handler;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-+ (id)snapshotRequesterWitHandler:(id)arg1;
++ (id)snapshotRequesterWitHandler:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (id)handler;
+- (id /* block */)handler;
 - (void)mapSnapshotCreator:(id)arg1 didCreateSnapshot:(id)arg2 attributionString:(id)arg3 context:(id)arg4;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 
 @end

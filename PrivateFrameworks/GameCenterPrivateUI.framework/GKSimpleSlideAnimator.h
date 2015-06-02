@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKSimpleSlideAnimator : GKBubblePathAnimator {
-}
+@interface GKSimpleSlideAnimator : GKBubblePathAnimator
 
 - (void)animateTransition:(id)arg1;
 - (int)animatorType;

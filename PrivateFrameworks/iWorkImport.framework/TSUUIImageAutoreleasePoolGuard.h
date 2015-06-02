@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class UIImage;
-
 @interface TSUUIImageAutoreleasePoolGuard : NSObject {
     UIImage *mImage;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVPath : NSObject {
-}
+@interface OAVPath : NSObject
 
 + (int)parseCommand:(const char **)arg1;
 + (struct EshComputedValue { bool x1; int x2; })parseParam:(const char **)arg1 first:(BOOL)arg2;

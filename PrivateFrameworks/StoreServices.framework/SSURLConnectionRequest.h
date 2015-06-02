@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSURLConnectionRequestDelegate>, NSString, NSURL, NSURLRequest, SSAuthenticationContext, SSURLRequestProperties, SSVURLDataConsumer;
-
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
     SSVURLDataConsumer *_dataConsumer;
@@ -14,21 +12,21 @@
     BOOL _shouldMescalSign;
 }
 
-@property(readonly) NSURLRequest * URLRequest;
-@property(copy) SSAuthenticationContext * authenticationContext;
-@property(retain) SSVURLDataConsumer * dataConsumer;
-@property(copy,readonly) NSString * debugDescription;
-@property <SSURLConnectionRequestDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSURL * destinationFileURL;
-@property(readonly) unsigned int hash;
-@property(readonly) SSURLRequestProperties * requestProperties;
+@property (readonly) NSURLRequest *URLRequest;
+@property (copy) SSAuthenticationContext *authenticationContext;
+@property (retain) SSVURLDataConsumer *dataConsumer;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SSURLConnectionRequestDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (copy) NSURL *destinationFileURL;
+@property (readonly) unsigned int hash;
+@property (readonly) SSURLRequestProperties *requestProperties;
 @property BOOL runsInProcess;
 @property BOOL sendsResponseForHTTPFailures;
 @property BOOL shouldMescalSign;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
-+ (id)newRadioRequestWithRequestProperties:(id)arg1;
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)URLRequest;
 - (BOOL)_canRunInProcess;
@@ -52,7 +50,11 @@
 - (void)setShouldMescalSign:(BOOL)arg1;
 - (BOOL)shouldMescalSign;
 - (BOOL)start;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithConnectionResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
+
++ (id)newRadioRequestWithRequestProperties:(id)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@class NSArray, NSString;
-
 @interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding> {
     BOOL _alwaysLaunchesFullScreen;
     NSString *_bundleIdentifier;
@@ -15,19 +13,19 @@
     NSString *_sandboxPath;
 }
 
-@property(readonly) BOOL allowsSavingLaunchImages;
-@property BOOL alwaysLaunchesFullScreen;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundlePath;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * launchImageInfos;
-@property(copy) NSString * launchNibName;
-@property(copy) NSString * launchStoryboardName;
-@property BOOL launchesOpaque;
-@property(copy) NSString * sandboxPath;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL allowsSavingLaunchImages;
+@property (nonatomic) BOOL alwaysLaunchesFullScreen;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundlePath;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *launchImageInfos;
+@property (nonatomic, copy) NSString *launchNibName;
+@property (nonatomic, copy) NSString *launchStoryboardName;
+@property (nonatomic) BOOL launchesOpaque;
+@property (nonatomic, copy) NSString *sandboxPath;
+@property (readonly) Class superclass;
 
 + (id)_compatibilityInfoForBundleIdentifier:(id)arg1 creatingIfNecessaryWithBundle:(id)arg2 andSandboxPath:(id)arg3;
 + (id)_compatibilityInfoForBundleIdentifier:(id)arg1 creatingIfNecessaryWithBundle:(id)arg2 andSandboxPath:(id)arg3 lazy:(BOOL)arg4;
@@ -41,7 +39,7 @@
 - (id)_snapshotContainerName;
 - (id)_snapshotSceneContainerNameForSceneID:(id)arg1;
 - (void)_writeOutChanges;
-- (void)addLaunchImageForRequest:(id)arg1 finalOrientation:(int)arg2 ifCreatedAt:(id)arg3;
+- (void)addLaunchImageForRequest:(id)arg1 finalOrientation:(int)arg2 ifCreatedAt:(id /* block */)arg3;
 - (BOOL)allowsSavingLaunchImages;
 - (BOOL)alwaysLaunchesFullScreen;
 - (id)appLaunchImagePathForSceneID:(id)arg1 downscaled:(BOOL)arg2;

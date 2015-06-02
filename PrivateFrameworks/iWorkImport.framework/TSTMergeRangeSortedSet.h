@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_semaphore>;
-
 @interface TSTMergeRangeSortedSet : NSObject {
     struct __tree_const_iterator<TSTMergeRangeElem, std::__1::__tree_node<TSTMergeRangeElem, void *> *, int> { 
         struct __tree_node<TSTMergeRangeElem, void *> {} *__ptr_; 

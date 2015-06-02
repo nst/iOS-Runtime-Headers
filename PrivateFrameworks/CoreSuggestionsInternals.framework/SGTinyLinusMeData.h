@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSSet, NSString;
-
 @interface SGTinyLinusMeData : NSObject {
     NSSet *_addresses;
     NSString *_compositeName;
@@ -13,12 +11,12 @@
     NSSet *_normalizedPhones;
 }
 
-@property(readonly) NSSet * addresses;
-@property(readonly) NSString * compositeName;
-@property(readonly) NSString * firstName;
-@property(readonly) NSString * lastName;
-@property(readonly) NSSet * normalizedEmails;
-@property(readonly) NSSet * normalizedPhones;
+@property (nonatomic, readonly) NSSet *addresses;
+@property (nonatomic, readonly) NSString *compositeName;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *lastName;
+@property (nonatomic, readonly) NSSet *normalizedEmails;
+@property (nonatomic, readonly) NSSet *normalizedPhones;
 
 + (void)clearCache;
 + (id)fetch;

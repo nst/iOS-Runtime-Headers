@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSConditionLock;
-
 @interface _SCRCThreadTask : NSObject {
     unsigned long _count;
     unsigned long _mask;
-    void *_objects[6];
+    void *_objects;
     SEL _selector;
     id _target;
     NSConditionLock *_waitLock;

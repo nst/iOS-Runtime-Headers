@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, CAShapeLayer, TSDFrameRep, TSDMediaInfo, TSDMediaLayout;
-
 @interface TSDMediaRep : TSDStyledRep {
     CALayer *mFrameMaskLayer;
     TSDFrameRep *mFrameRep;
@@ -23,8 +21,8 @@
     CALayer *mTapToReplaceLayer;
 }
 
-@property(readonly) TSDMediaInfo * mediaInfo;
-@property(readonly) TSDMediaLayout * mediaLayout;
+@property (nonatomic, readonly) TSDMediaInfo *mediaInfo;
+@property (nonatomic, readonly) TSDMediaLayout *mediaLayout;
 
 - (void)dealloc;
 - (BOOL)i_shouldRenderStroke:(id)arg1;

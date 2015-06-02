@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAMovieV2ReviewListCell : SADomainObject
 
-@interface SAMovieV2ReviewListCell : SADomainObject {
-}
-
-@property(copy) NSString * reviewAuthor;
-@property(copy) NSDate * reviewDate;
-@property(copy) NSString * reviewText;
+@property (nonatomic, copy) NSString *reviewAuthor;
+@property (nonatomic, copy) NSDate *reviewDate;
+@property (nonatomic, copy) NSString *reviewText;
 
 + (id)reviewListCell;
 + (id)reviewListCellWithDictionary:(id)arg1 context:(id)arg2;

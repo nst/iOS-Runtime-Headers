@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, PKPassView;
-
 @interface PKStringActivityItemProvider : UIActivityItemProvider {
     NSString *_passOrganizationName;
     NSString *_passSharingString;

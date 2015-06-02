@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetAdmissionControlLog.framework/CoreDuetAdmissionControlLog
  */
 
-@class NSString, WeakPowerLogInterface;
-
 @interface CDAdmissionControlLogWriter : NSObject {
     struct __asl_object_s { } *_ablemsg;
     struct __asl_object_s { } *_aslclient;
@@ -12,11 +10,11 @@
     WeakPowerLogInterface *_powerLog;
 }
 
-@property struct __asl_object_s { }* ablemsg;
-@property struct __asl_object_s { }* aslclient;
-@property const char * facility;
-@property(retain) NSString * logfile;
-@property(retain) WeakPowerLogInterface * powerLog;
+@property struct __asl_object_s { }*ablemsg;
+@property struct __asl_object_s { }*aslclient;
+@property const char *facility;
+@property (retain) NSString *logfile;
+@property (retain) WeakPowerLogInterface *powerLog;
 
 - (void).cxx_destruct;
 - (struct __asl_object_s { }*)ablemsg;

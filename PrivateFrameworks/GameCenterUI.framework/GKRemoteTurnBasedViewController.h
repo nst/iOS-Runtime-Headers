@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGame, GKTurnBasedMatchmakerViewController, NSString;
-
 @interface GKRemoteTurnBasedViewController : GKRemoteViewController <GKTurnBasedServiceViewControllerDelegate> {
     GKTurnBasedMatchmakerViewController *_delegateWeak;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property GKTurnBasedMatchmakerViewController * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) GKTurnBasedMatchmakerViewController *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) GKGame *game;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

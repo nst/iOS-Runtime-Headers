@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIResourceLoaderDelegate>, NSMapTable, NSMutableDictionary, NSOperationQueue, SKUIClientContext;
-
 @interface SKUIResourceLoader : NSObject {
     SKUIClientContext *_clientContext;
     <SKUIResourceLoaderDelegate> *_delegate;
@@ -13,10 +11,10 @@
     NSMutableDictionary *_resourcesByRequestID;
 }
 
-@property(readonly) SKUIClientContext * clientContext;
-@property <SKUIResourceLoaderDelegate> * delegate;
-@property(getter=isIdle,readonly) BOOL idle;
-@property(readonly) NSOperationQueue * operationQueue;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic) <SKUIResourceLoaderDelegate> *delegate;
+@property (getter=isIdle, nonatomic, readonly) BOOL idle;
+@property (nonatomic, readonly) NSOperationQueue *operationQueue;
 
 - (void).cxx_destruct;
 - (void)_finishLoadForRequest:(id)arg1 withResource:(id)arg2;

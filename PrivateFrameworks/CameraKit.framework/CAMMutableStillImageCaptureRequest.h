@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMStillImageCaptureRequestDelegate>;
+@interface CAMMutableStillImageCaptureRequest : CAMStillImageCaptureRequest
 
-@interface CAMMutableStillImageCaptureRequest : CAMStillImageCaptureRequest {
-}
-
-@property int captureDevice;
-@property <CAMStillImageCaptureRequestDelegate> * delegate;
-@property int deviceOrientation;
-@property int flashMode;
-@property int hdrMode;
-@property(getter=isTransient) BOOL transient;
-@property BOOL usesStillImageStabilization;
-@property BOOL wantsAudioForCapture;
+@property (nonatomic) int captureDevice;
+@property (nonatomic) <CAMStillImageCaptureRequestDelegate> *delegate;
+@property (nonatomic) int deviceOrientation;
+@property (nonatomic) int flashMode;
+@property (nonatomic) int hdrMode;
+@property (getter=isTransient, nonatomic) BOOL transient;
+@property (nonatomic) BOOL usesStillImageStabilization;
+@property (nonatomic) BOOL wantsAudioForCapture;
 
 - (void)setCaptureDevice:(int)arg1;
 - (void)setDelegate:(id)arg1;

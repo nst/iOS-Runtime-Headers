@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItemWithNoChildren, NSSet;
-
 @interface CoreDAVResourceTypeItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_addressBook;
     CoreDAVItemWithNoChildren *_collection;
@@ -13,37 +11,31 @@
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * addressBook;
-@property(retain) CoreDAVItemWithNoChildren * bookmarkBarFolder;
-@property(retain) CoreDAVItemWithNoChildren * bookmarkFolder;
-@property(retain) CoreDAVItemWithNoChildren * bookmarkMenuFolder;
-@property(retain) CoreDAVItemWithNoChildren * collection;
-@property(retain) CoreDAVItemWithNoChildren * principal;
-@property(retain) CoreDAVItemWithNoChildren * searchAddressBook;
-@property(retain) CoreDAVItemWithNoChildren * shared;
-@property(readonly) NSSet * stringSet;
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *addressBook;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *bookmarkBarFolder;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *bookmarkFolder;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *bookmarkMenuFolder;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *collection;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *principal;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *searchAddressBook;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *shared;
+@property (nonatomic, readonly) NSSet *stringSet;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *unauthenticated;
+
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 + (id)copyParseRules;
 
 - (id)addressBook;
-- (id)bookmarkBarFolder;
-- (id)bookmarkFolder;
-- (id)bookmarkMenuFolder;
 - (id)collection;
 - (void)dealloc;
 - (id)description;
-- (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
 - (id)init;
 - (BOOL)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)principal;
 - (id)searchAddressBook;
 - (void)setAddressBook:(id)arg1;
-- (void)setBookmarkBarFolder:(id)arg1;
-- (void)setBookmarkFolder:(id)arg1;
-- (void)setBookmarkMenuFolder:(id)arg1;
 - (void)setCollection:(id)arg1;
-- (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 - (void)setPrincipal:(id)arg1;
 - (void)setSearchAddressBook:(id)arg1;
 - (void)setShared:(id)arg1;
@@ -52,5 +44,16 @@
 - (id)stringSet;
 - (id)unauthenticated;
 - (void)write:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
+
+- (id)bookmarkBarFolder;
+- (id)bookmarkFolder;
+- (id)bookmarkMenuFolder;
+- (id)extraChildWithNameSpace:(id)arg1 name:(id)arg2;
+- (void)setBookmarkBarFolder:(id)arg1;
+- (void)setBookmarkFolder:(id)arg1;
+- (void)setBookmarkMenuFolder:(id)arg1;
+- (void)setExtraChild:(id)arg1 forNameSpace:(id)arg2 name:(id)arg3;
 
 @end

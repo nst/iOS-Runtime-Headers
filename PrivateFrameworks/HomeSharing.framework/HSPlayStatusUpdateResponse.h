@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDictionary;
-
 @interface HSPlayStatusUpdateResponse : HSResponse {
     unsigned int _nextRevisionID;
     unsigned long long _nowPlayingContainerID;
@@ -13,12 +11,12 @@
     NSDictionary *_playStatusInformation;
 }
 
-@property unsigned int nextRevisionID;
-@property unsigned long long nowPlayingContainerID;
-@property unsigned long long nowPlayingContainerItemID;
-@property unsigned long long nowPlayingDatabaseID;
-@property unsigned long long nowPlayingItemID;
-@property(copy) NSDictionary * playStatusInformation;
+@property (nonatomic) unsigned int nextRevisionID;
+@property (nonatomic) unsigned long long nowPlayingContainerID;
+@property (nonatomic) unsigned long long nowPlayingContainerItemID;
+@property (nonatomic) unsigned long long nowPlayingDatabaseID;
+@property (nonatomic) unsigned long long nowPlayingItemID;
+@property (nonatomic, copy) NSDictionary *playStatusInformation;
 
 - (void).cxx_destruct;
 - (id)description;

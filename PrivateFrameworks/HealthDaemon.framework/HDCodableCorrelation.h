@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSample;
-
 @interface HDCodableCorrelation : PBCodable <NSCopying> {
     HDCodableSample *_sample;
 }
 
-@property(readonly) BOOL hasSample;
-@property(retain) HDCodableSample * sample;
+@property (nonatomic, readonly) BOOL hasSample;
+@property (nonatomic, retain) HDCodableSample *sample;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

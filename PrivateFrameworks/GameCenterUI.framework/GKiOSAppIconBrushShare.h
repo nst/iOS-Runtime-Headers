@@ -9,7 +9,7 @@
     } _outputSize;
 }
 
-@property struct CGSize { float x1; float x2; } outputSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } outputSize;
 
 - (struct CGSize { float x1; float x2; })outputSize;
 - (void)setOutputSize:(struct CGSize { float x1; float x2; })arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABConferenceCell : UITableViewCell {
-}
+@interface ABConferenceCell : UITableViewCell
 
 - (void)layoutSubviews;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSString;
-
 @interface CLIndoorLocation : NSObject <NSSecureCoding> {
     struct { 
         int suitability; 
@@ -35,10 +33,10 @@
     BOOL _requestsGpsAssistance;
 }
 
-@property struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; } location;
-@property(retain) NSString * locationDescription;
-@property(retain) NSString * locationId;
-@property BOOL requestsGpsAssistance;
+@property (nonatomic) struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; } location;
+@property (nonatomic, retain) NSString *locationDescription;
+@property (nonatomic, retain) NSString *locationId;
+@property (nonatomic) BOOL requestsGpsAssistance;
 
 + (BOOL)supportsSecureCoding;
 

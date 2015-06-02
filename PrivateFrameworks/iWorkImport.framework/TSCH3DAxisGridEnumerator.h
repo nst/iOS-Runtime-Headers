@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxis;
-
 @interface TSCH3DAxisGridEnumerator : TSCH3DValueEnumerator {
     TSCHChartAxis *mAxis;
 }
 
-@property(readonly) TSCHChartAxis * axis;
-@property(readonly) int type;
+@property (nonatomic, readonly) TSCHChartAxis *axis;
+@property (nonatomic, readonly) int type;
 
 + (id)enumeratorWithAxis:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSOperationQueue;
-
 @interface RadioImageCache : NSObject {
     NSOperationQueue *_imageRequestQueue;
 }
@@ -21,7 +19,7 @@
 - (id)cachedImageDataForStation:(id)arg1 withExactSize:(struct CGSize { float x1; float x2; })arg2 MIMEType:(id*)arg3;
 - (void)dealloc;
 - (id)init;
-- (void)loadImageForRadioArtwork:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)loadImageForStation:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 completionHandler:(id)arg3;
+- (void)loadImageForRadioArtwork:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)loadImageForStation:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
 
 @end

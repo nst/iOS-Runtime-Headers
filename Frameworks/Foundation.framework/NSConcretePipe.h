@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileHandle;
-
 @interface NSConcretePipe : NSPipe {
     NSFileHandle *_readHandle;
     NSFileHandle *_writeHandle;

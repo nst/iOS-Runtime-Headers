@@ -7,8 +7,8 @@
     long long _objectIdentifier;
 }
 
-@property(readonly) long long componentIdentifier;
-@property(readonly) long long objectIdentifier;
+@property (nonatomic, readonly) long long componentIdentifier;
+@property (nonatomic, readonly) long long objectIdentifier;
 
 + (id)newReferenceInfoWithObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2;
 

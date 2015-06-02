@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@interface ABPhoneFormatting : NSObject {
-}
+@interface ABPhoneFormatting : NSObject
 
 + (id)abCopyPhoneNumberFromString:(id)arg1;
 + (id)abDefaultCountryCode;

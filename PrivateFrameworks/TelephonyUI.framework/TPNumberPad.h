@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSArray, NSMutableArray;
-
 @interface TPNumberPad : UIControl {
     NSMutableArray *_buttons;
     BOOL _numberButtonsEnabled;
 }
 
-@property float buttonBackgroundAlpha;
-@property(retain) NSArray * buttons;
-@property BOOL numberButtonsEnabled;
+@property (nonatomic) float buttonBackgroundAlpha;
+@property (retain) NSArray *buttons;
+@property (nonatomic) BOOL numberButtonsEnabled;
 
 - (void)_addButton:(id)arg1;
 - (float)_backgroundAlphaOfButton:(id)arg1;

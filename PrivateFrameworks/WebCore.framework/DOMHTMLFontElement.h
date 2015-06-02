@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLFontElement : DOMHTMLElement
 
-@interface DOMHTMLFontElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * color;
-@property(copy) NSString * face;
-@property(copy) NSString * size;
+@property (copy) NSString *color;
+@property (copy) NSString *face;
+@property (copy) NSString *size;
 
 - (id)color;
 - (id)face;

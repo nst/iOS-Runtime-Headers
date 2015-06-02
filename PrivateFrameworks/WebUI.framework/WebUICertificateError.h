@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WebUICertificateError : NSObject {
-}
+@interface WebUICertificateError : NSObject
 
 + (BOOL)canAuthenticateAgainstProtectionSpace:(id)arg1;
 + (BOOL)isClientCertificateError:(int)arg1;

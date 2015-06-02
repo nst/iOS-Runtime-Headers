@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-@class JSValue, NSMapTable;
-
 @interface JSManagedValue : NSObject {
     struct Weak<JSC::JSGlobalObject> { 
         struct WeakImpl {} *m_impl; 
@@ -35,7 +33,7 @@
     } m_weakValue;
 }
 
-@property(readonly) JSValue * value;
+@property (readonly) JSValue *value;
 
 + (id)managedValueWithValue:(id)arg1;
 + (id)managedValueWithValue:(id)arg1 andOwner:(id)arg2;

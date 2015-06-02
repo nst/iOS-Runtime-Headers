@@ -7,8 +7,8 @@
     float _radians;
 }
 
-@property int degrees;
-@property float radians;
+@property (nonatomic) int degrees;
+@property (nonatomic) float radians;
 
 - (void)_updateTransform;
 - (int)degrees;

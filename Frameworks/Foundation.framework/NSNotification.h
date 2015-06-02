@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSString;
+@interface NSNotification : NSObject <NSCoding, NSCopying>
 
-@interface NSNotification : NSObject <NSCoding, NSCopying> {
-}
-
-@property(copy,readonly) NSString * name;
-@property(retain,readonly) id object;
-@property(copy,readonly) NSDictionary * userInfo;
+@property (readonly, copy) NSString *name;
+@property (readonly, retain) id object;
+@property (readonly, copy) NSDictionary *userInfo;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)notificationWithName:(id)arg1 object:(id)arg2;

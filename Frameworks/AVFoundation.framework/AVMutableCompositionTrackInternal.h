@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVMutableCompositionTrackInternal : NSObject {
-}
+@interface AVMutableCompositionTrackInternal : NSObject
 
 @end

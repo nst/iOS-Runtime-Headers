@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
+@interface MPMediaPredicate : NSObject <MPPProtobufferCoding, NSSecureCoding>
 
-@interface MPMediaPredicate : NSObject <MPPProtobufferCoding, NSSecureCoding> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

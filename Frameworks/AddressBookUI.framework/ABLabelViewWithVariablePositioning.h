@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UILabel;
-
 @interface ABLabelViewWithVariablePositioning : UIView {
     float _bottomPadding;
     float _horizontalPadding;
@@ -11,9 +9,9 @@
     float _topPadding;
 }
 
-@property float bottomPadding;
-@property float horizontalPadding;
-@property float topPadding;
+@property (nonatomic) float bottomPadding;
+@property (nonatomic) float horizontalPadding;
+@property (nonatomic) float topPadding;
 
 - (float)bottomPadding;
 - (void)dealloc;

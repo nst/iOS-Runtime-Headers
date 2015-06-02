@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSNumber, TSCH3DCamera, TSCH3DGLFramebuffer, TSCH3DScene, TSCH3DSceneRenderPipeline, TSCH3DSceneRenderSetup;
-
 @interface TSCH3DSceneRenderPipeline : TSCH3DRenderPipeline {
     TSCH3DCamera *mCamera;
     TSCH3DGLFramebuffer *mFramebuffer;
@@ -16,16 +14,16 @@
     NSNumber *mSuperSamples;
 }
 
-@property(readonly) TSCH3DCamera * camera;
-@property(retain) TSCH3DGLFramebuffer * framebuffer;
-@property(retain) TSCH3DSceneRenderPipeline * original;
-@property BOOL preserveFramebufferContent;
-@property(readonly) float renderScale;
-@property float samples;
-@property float scale;
-@property(retain) TSCH3DScene * scene;
-@property(retain) TSCH3DSceneRenderSetup * setup;
-@property float superSamples;
+@property (nonatomic, readonly) TSCH3DCamera *camera;
+@property (nonatomic, retain) TSCH3DGLFramebuffer *framebuffer;
+@property (nonatomic, retain) TSCH3DSceneRenderPipeline *original;
+@property (nonatomic) BOOL preserveFramebufferContent;
+@property (nonatomic, readonly) float renderScale;
+@property (nonatomic) float samples;
+@property (nonatomic) float scale;
+@property (nonatomic, retain) TSCH3DScene *scene;
+@property (nonatomic, retain) TSCH3DSceneRenderSetup *setup;
+@property (nonatomic) float superSamples;
 
 + (id)pipelineWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
 

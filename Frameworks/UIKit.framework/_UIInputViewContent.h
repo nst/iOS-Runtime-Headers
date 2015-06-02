@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInputView;
-
 @interface _UIInputViewContent : UIView {
     float _contentHeight;
     float _contentWidth;
@@ -11,7 +9,7 @@
     int _unclippableCorners;
 }
 
-@property int _unclippableCorners;
+@property (nonatomic) int _unclippableCorners;
 
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (BOOL)_isToolbar;

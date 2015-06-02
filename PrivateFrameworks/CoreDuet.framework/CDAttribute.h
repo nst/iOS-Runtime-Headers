@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class CDSession, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CDAttribute : NSObject {
     unsigned short _admissionMask;
     NSObject<OS_dispatch_queue> *_deferredRequestsQ;
@@ -27,27 +25,27 @@
     NSMutableDictionary *tokenCache;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * deferredRequestsQ;
-@property(readonly) NSString * fullName;
-@property(readonly) unsigned long long integerId;
-@property(readonly) NSString * name;
-@property(readonly) CDSession * session;
-@property(readonly) int type;
+@property (readonly) NSObject<OS_dispatch_queue> *deferredRequestsQ;
+@property (readonly) NSString *fullName;
+@property (readonly) unsigned long long integerId;
+@property (readonly) NSString *name;
+@property (readonly) CDSession *session;
+@property (readonly) int type;
 
 - (void).cxx_destruct;
 - (BOOL)activityStartedWithValue:(id)arg1 cost:(long long)arg2 error:(id*)arg3;
 - (BOOL)activityStartedWithValue:(id)arg1 cost:(long long)arg2 onDate:(id)arg3 error:(id*)arg4;
 - (BOOL)activityStoppedWithValue:(id)arg1 cost:(long long)arg2 error:(id*)arg3;
 - (BOOL)activityStoppedWithValue:(id)arg1 cost:(long long)arg2 onDate:(id)arg3 error:(id*)arg4;
-- (BOOL)activityWithValue:(id)arg1 cost:(long long)arg2 error:(id*)arg3 block:(id)arg4;
-- (BOOL)admissionCheckOfValue:(id)arg1 andOccurredWithValue:(id)arg2 cost:(long long)arg3 error:(id*)arg4 handler:(id)arg5;
-- (BOOL)admissionCheckOfValue:(id)arg1 andOccurredWithValue:(id)arg2 cost:(long long)arg3 type:(int)arg4 options:(id)arg5 error:(id*)arg6 handler:(id)arg7;
-- (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 error:(id*)arg4 handler:(id)arg5;
-- (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 type:(int)arg4 options:(id)arg5 error:(id*)arg6 handler:(id)arg7;
-- (BOOL)admissionCheckOfValue:(id)arg1 type:(int)arg2 options:(id)arg3 error:(id*)arg4 handler:(id)arg5;
+- (BOOL)activityWithValue:(id)arg1 cost:(long long)arg2 error:(id*)arg3 block:(id /* block */)arg4;
+- (BOOL)admissionCheckOfValue:(id)arg1 andOccurredWithValue:(id)arg2 cost:(long long)arg3 error:(id*)arg4 handler:(id /* block */)arg5;
+- (BOOL)admissionCheckOfValue:(id)arg1 andOccurredWithValue:(id)arg2 cost:(long long)arg3 type:(int)arg4 options:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
+- (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 error:(id*)arg4 handler:(id /* block */)arg5;
+- (BOOL)admissionCheckOfValue:(id)arg1 andStartedWithValue:(id)arg2 cost:(long long)arg3 type:(int)arg4 options:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
+- (BOOL)admissionCheckOfValue:(id)arg1 type:(int)arg2 options:(id)arg3 error:(id*)arg4 handler:(id /* block */)arg5;
 - (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3;
-- (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3 handler:(id)arg4;
-- (void)admissionCheckOfValueAsync:(id)arg1 type:(int)arg2 options:(id)arg3 handleQueue:(id)arg4 handler:(id)arg5;
+- (BOOL)admissionCheckOfValue:(id)arg1 withReason:(id*)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
+- (void)admissionCheckOfValueAsync:(id)arg1 type:(int)arg2 options:(id)arg3 handleQueue:(id)arg4 handler:(id /* block */)arg5;
 - (BOOL)associateToAttribute:(id)arg1 error:(id*)arg2;
 - (BOOL)associateToBudget:(id)arg1 error:(id*)arg2;
 - (BOOL)attributeIsClientWriteable;
@@ -84,20 +82,20 @@
 - (id)repeatedStatistic:(int)arg1 forHistoryWindow:(id)arg2 deviceDescription:(id)arg3 error:(id*)arg4;
 - (id)repeatedStatistic:(int)arg1 forHistoryWindow:(id)arg2 error:(id*)arg3;
 - (id)repeatedStatisticXPCObjectToArray:(id)arg1 error:(id*)arg2;
-- (BOOL)requestPeerForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 error:(id*)arg5 handler:(id)arg6;
-- (BOOL)requestStatisticFromDevice:(id)arg1 statistic:(int)arg2 forHistoryWindow:(id)arg3 error:(id*)arg4 handler:(id)arg5;
-- (BOOL)requestTemporalForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 error:(id*)arg5 handler:(id)arg6;
+- (BOOL)requestPeerForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 error:(id*)arg5 handler:(id /* block */)arg6;
+- (BOOL)requestStatisticFromDevice:(id)arg1 statistic:(int)arg2 forHistoryWindow:(id)arg3 error:(id*)arg4 handler:(id /* block */)arg5;
+- (BOOL)requestTemporalForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 error:(id*)arg5 handler:(id /* block */)arg6;
 - (BOOL)reset:(int)arg1 error:(id*)arg2;
 - (BOOL)resetAdmissionBitMask:(unsigned long long)arg1 error:(id*)arg2;
 - (id)session;
 - (BOOL)setAdmissionBitMask:(unsigned long long)arg1 error:(id*)arg2;
 - (BOOL)setAdmissionManualType:(bool)arg1 error:(id*)arg2;
-- (BOOL)setAdmissionRevocationBlockWithError:(id*)arg1 handler:(id)arg2;
+- (BOOL)setAdmissionRevocationBlockWithError:(id*)arg1 handler:(id /* block */)arg2;
 - (BOOL)setCategory:(int)arg1 error:(id*)arg2;
-- (BOOL)setResourceAvailabilityBlockWithError:(id*)arg1 handler:(id)arg2;
+- (BOOL)setResourceAvailabilityBlockWithError:(id*)arg1 handler:(id /* block */)arg2;
 - (BOOL)setResourceDispatch:(id*)arg1;
 - (BOOL)setRevocationDispatch;
-- (BOOL)setTrendBlockForValue:(id)arg1 withConfig:(id)arg2 error:(id*)arg3 handler:(id)arg4;
+- (BOOL)setTrendBlockForValue:(id)arg1 withConfig:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
 - (id)statistic:(int)arg1 forHistoryWindow:(id)arg2 device:(id)arg3 error:(id*)arg4;
 - (id)statistic:(int)arg1 forHistoryWindow:(id)arg2 deviceDescription:(id)arg3 error:(id*)arg4;
 - (id)statistic:(int)arg1 forHistoryWindow:(id)arg2 error:(id*)arg3;

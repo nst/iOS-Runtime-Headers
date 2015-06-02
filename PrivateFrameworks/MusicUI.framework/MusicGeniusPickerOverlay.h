@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaItem;
-
 @interface MusicGeniusPickerOverlay : MusicPickerOverlay {
     MPMediaItem *_pickedItem;
 }

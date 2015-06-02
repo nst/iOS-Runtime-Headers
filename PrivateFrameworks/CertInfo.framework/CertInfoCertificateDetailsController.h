@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class <CertInfoCertificateDetailsControllerDelegate>, NSArray, UIBarButtonItem;
-
 @interface CertInfoCertificateDetailsController : UITableViewController {
     <CertInfoCertificateDetailsControllerDelegate> *_delegate;
     UIBarButtonItem *_doneButton;
     NSArray *_sectionDictionaries;
-    unsigned int _showsDoneButton : 1;
+    unsigned int _showsDoneButton;
 }
 
-@property <CertInfoCertificateDetailsControllerDelegate> * delegate;
-@property BOOL showsDoneButton;
+@property (nonatomic) <CertInfoCertificateDetailsControllerDelegate> *delegate;
+@property (nonatomic) BOOL showsDoneButton;
 
 - (void).cxx_destruct;
 - (void)_doneButtonPressed:(id)arg1;

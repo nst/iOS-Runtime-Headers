@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKExpandingTextView, NSString;
-
 @interface EKReminderInlineEditItemCell : UITableViewCell {
     float _lastSeenContentWidth;
     EKExpandingTextView *_textView;
     float _verticalPadding;
 }
 
-@property(copy) NSString * placeholder;
-@property(readonly) EKExpandingTextView * textView;
-@property float verticalPadding;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, readonly) EKExpandingTextView *textView;
+@property (nonatomic) float verticalPadding;
 
 - (void).cxx_destruct;
 - (float)_textViewWidthForContentWidth:(float)arg1;

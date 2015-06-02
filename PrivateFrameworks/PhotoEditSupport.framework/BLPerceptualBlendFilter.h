@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIImage;
-
 @interface BLPerceptualBlendFilter : CIFilter {
     CIImage *_inputBackgroundImage;
     CIImage *_inputImage;
     CIImage *_inputMaskImage;
 }
 
-@property(retain) CIImage * inputBackgroundImage;
-@property(retain) CIImage * inputImage;
-@property(retain) CIImage * inputMaskImage;
+@property (retain) CIImage *inputBackgroundImage;
+@property (retain) CIImage *inputImage;
+@property (retain) CIImage *inputMaskImage;
 
 - (void).cxx_destruct;
 - (id)inputBackgroundImage;

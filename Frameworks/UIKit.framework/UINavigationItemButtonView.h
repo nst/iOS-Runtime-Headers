@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImageView, _UIBarButtonItemAppearanceStorage;
-
 @interface UINavigationItemButtonView : UINavigationItemView <UIGestureRecognizerDelegate> {
     unsigned int _abbreviatedTitleIndex;
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
@@ -15,13 +13,13 @@
     BOOL _wantsBlendModeForAccessibilityBackgrounds;
 }
 
-@property(setter=_setAbbreviatedTitleIndex:) unsigned int _abbreviatedTitleIndex;
-@property(setter=_setTintColor:,retain) UIColor * _tintColor;
-@property(setter=_setWantsBlendModeForAccessibilityBackgrounds:) BOOL _wantsBlendModeForAccessibilityBackgrounds;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setAbbreviatedTitleIndex:, nonatomic) unsigned int _abbreviatedTitleIndex;
+@property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
+@property (setter=_setWantsBlendModeForAccessibilityBackgrounds:, nonatomic) BOOL _wantsBlendModeForAccessibilityBackgrounds;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;

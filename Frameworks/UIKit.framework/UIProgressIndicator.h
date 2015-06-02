@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIProgressIndicator : UIActivityIndicatorView {
-}
+@interface UIProgressIndicator : UIActivityIndicatorView
 
-@property int progressIndicatorStyle;
+@property (nonatomic) int progressIndicatorStyle;
 
 + (struct CGSize { float x1; float x2; })size;
 

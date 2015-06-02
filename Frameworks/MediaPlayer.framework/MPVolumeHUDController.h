@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray, NSMutableSet;
-
 @interface MPVolumeHUDController : NSObject {
     NSMutableSet *_categories;
     NSMutableArray *_contexts;
 }
 
-@property(readonly) id mainContext;
+@property (nonatomic, readonly) id mainContext;
 
 + (id)sharedInstance;
 

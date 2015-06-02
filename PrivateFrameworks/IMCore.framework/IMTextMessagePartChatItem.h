@@ -2,19 +2,22 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSAttributedString;
-
 @interface IMTextMessagePartChatItem : IMMessagePartChatItem {
     NSAttributedString *_subject;
 }
 
-@property(copy,readonly) NSAttributedString * subject;
+@property (nonatomic, readonly, copy) NSAttributedString *subject;
 
-- (Class)__ck_chatItemClass;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (id)_initWithItem:(id)arg1 text:(id)arg2 index:(int)arg3 subject:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)subject;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

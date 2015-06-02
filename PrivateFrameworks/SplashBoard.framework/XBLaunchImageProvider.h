@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface XBLaunchImageProvider : NSObject {
     NSMutableDictionary *_clients;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSMutableDictionary * clients;
+@property (nonatomic, retain) NSMutableDictionary *clients;
 
 + (void*)createIOSurfaceWithContextIds:(const unsigned int*)arg1 count:(unsigned int)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 scale:(float)arg4 orientation:(int)arg5 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
 + (id)sharedInstance;
 
 - (id)_clientForApplicationWithBundleID:(id)arg1;
-- (void)captureLaunchImageApplicationWithCompatibilityInfo:(id)arg1 launchRequests:(id)arg2 firstImageIsReady:(id)arg3;
+- (void)captureLaunchImageApplicationWithCompatibilityInfo:(id)arg1 launchRequests:(id)arg2 firstImageIsReady:(id /* block */)arg3;
 - (id)clients;
 - (void)dealloc;
 - (id)init;

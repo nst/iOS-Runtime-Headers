@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableView, _UIBackdropView;
-
 @interface _UIModalItemActionSheetContentView : _UIModalItemContentView {
     UITableView *_cancelTableView;
     _UIBackdropView *_effectView;

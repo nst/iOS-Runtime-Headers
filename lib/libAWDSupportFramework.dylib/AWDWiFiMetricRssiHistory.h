@@ -14,10 +14,10 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasTimestamp;
-@property(readonly) int* rssiHistorys;
-@property(readonly) unsigned int rssiHistorysCount;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) int*rssiHistorys;
+@property (nonatomic, readonly) unsigned int rssiHistorysCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addRssiHistory:(int)arg1;
 - (void)clearRssiHistorys;

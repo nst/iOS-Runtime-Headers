@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_Unhiding : TSKAddedToDocumentContext {
-}
+@interface TSKAddedToDocumentContext_Unhiding : TSKAddedToDocumentContext
 
 - (id)description;
 - (id)undoContext;

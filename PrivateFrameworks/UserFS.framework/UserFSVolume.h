@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/UserFS.framework/UserFS
  */
 
-@class NSObject<OS_xpc_object>, NSString;
-
 @interface UserFSVolume : NSObject {
     NSObject<OS_xpc_object> *_connection;
     NSString *_deviceName;
     BOOL _isLocked;
 }
 
-@property(retain) NSObject<OS_xpc_object> * connection;
-@property(copy,readonly) NSString * deviceName;
-@property(readonly) BOOL isLocked;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
+@property (nonatomic, readonly, copy) NSString *deviceName;
+@property (nonatomic, readonly) BOOL isLocked;
 
 + (BOOL)prepareToAccessDeviceName:(id)arg1 error:(id*)arg2;
 + (id)volumeWithDeviceName:(id)arg1 error:(id*)arg2;

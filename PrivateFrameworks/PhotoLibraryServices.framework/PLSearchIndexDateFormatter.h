@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDateFormatter, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PLSearchIndexDateFormatter : NSObject {
     NSDateFormatter *_dateFormatter;
     NSString *_displayFormat;

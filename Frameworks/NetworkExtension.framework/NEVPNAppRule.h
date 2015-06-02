@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSArray, NSString;
-
 @interface NEVPNAppRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSString *_identifier;
     NSArray *_matchAccountIdentifiers;
@@ -11,10 +9,10 @@
     NSArray *_matchExecutables;
 }
 
-@property(readonly) NSString * identifier;
-@property(copy) NSArray * matchAccountIdentifiers;
-@property(copy) NSArray * matchDomains;
-@property(copy) NSArray * matchExecutables;
+@property (readonly) NSString *identifier;
+@property (copy) NSArray *matchAccountIdentifiers;
+@property (copy) NSArray *matchDomains;
+@property (copy) NSArray *matchExecutables;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIStatusBarServiceItemView : UIStatusBarItemView {
     int _contentType;
     unsigned int _crossfadeStep;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUTransportButtonEventHandler, NSString;
-
 @interface MPUStandardTransportButton : MPTransportButton <MPUTransportButton> {
     MPUTransportButtonEventHandler *_transportButtonEventHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) MPUTransportButtonEventHandler * transportButtonEventHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) MPUTransportButtonEventHandler *transportButtonEventHandler;
 
 - (void).cxx_destruct;
 - (void)applyTransportButtonAttributes:(id)arg1;

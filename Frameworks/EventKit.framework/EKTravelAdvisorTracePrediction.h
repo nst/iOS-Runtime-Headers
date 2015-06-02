@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKTravelPrediction, NSDate;
-
 @interface EKTravelAdvisorTracePrediction : NSObject <NSSecureCoding> {
     NSDate *_date;
     double _delay;
     EKTravelPrediction *_prediction;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) double delay;
-@property(readonly) EKTravelPrediction * prediction;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) double delay;
+@property (nonatomic, readonly) EKTravelPrediction *prediction;
 
 + (BOOL)supportsSecureCoding;
 

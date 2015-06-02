@@ -2,35 +2,23 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PHContentEditingInputRequestOptions : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _canHandleAdjustmentData;
-
+    id /* block */ _canHandleAdjustmentData;
     BOOL _networkAccessAllowed;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
 }
 
-@property(copy) id canHandleAdjustmentData;
-@property(getter=isNetworkAccessAllowed) BOOL networkAccessAllowed;
-@property(copy) id progressHandler;
+@property (nonatomic, copy) id /* block */ canHandleAdjustmentData;
+@property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
+@property (nonatomic, copy) id /* block */ progressHandler;
 
 - (void).cxx_destruct;
-- (id)canHandleAdjustmentData;
+- (id /* block */)canHandleAdjustmentData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isNetworkAccessAllowed;
-- (id)progressHandler;
-- (void)setCanHandleAdjustmentData:(id)arg1;
+- (id /* block */)progressHandler;
+- (void)setCanHandleAdjustmentData:(id /* block */)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
-- (void)setProgressHandler:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 
 @end

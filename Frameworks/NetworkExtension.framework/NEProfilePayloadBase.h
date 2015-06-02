@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface NEProfilePayloadBase : NSObject <NEProfilePayloadBaseDelegate> {
     NSDictionary *_payloadAtom;
     NSMutableDictionary *_pendingCertificates;
 }
 
-@property(retain) NSDictionary * payloadAtom;
-@property(copy) NSMutableDictionary * pendingCertificates;
+@property (nonatomic, retain) NSDictionary *payloadAtom;
+@property (nonatomic, copy) NSMutableDictionary *pendingCertificates;
 
 - (void).cxx_destruct;
 - (BOOL)addCertificatePending:(id)arg1 certificateTag:(id)arg2;

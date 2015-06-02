@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AppLaunchStatsAppWorkSpace : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace *appWorkSpace;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id callback;
-
+    id /* block */ callback;
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
     NSMutableDictionary *uninstalledApps;
     NSObject<OS_dispatch_queue> *wsQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)deleteExpiredApps;
-- (id)init:(id)arg1;
+- (id)init:(id /* block */)arg1;
 - (bool)isInUninstalledList:(id)arg1;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;

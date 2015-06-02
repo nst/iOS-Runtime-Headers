@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPAVController, MPAVItem, MPUReportingController, NSString;
-
 @interface MPUReportingPlaybackObserver : NSObject {
     BOOL _SBEnabled;
     BOOL _isReloadingWithPlaybackContext;
@@ -18,12 +16,12 @@
     unsigned long long _storeAccountID;
 }
 
-@property(getter=isSBEnabled) BOOL SBEnabled;
-@property(getter=isOffline) BOOL offline;
-@property(readonly) MPAVController * player;
-@property(readonly) MPUReportingController * reportingController;
-@property double startTimeForCurrentItem;
-@property unsigned long long storeAccountID;
+@property (getter=isSBEnabled, nonatomic) BOOL SBEnabled;
+@property (getter=isOffline, nonatomic) BOOL offline;
+@property (nonatomic, readonly) MPAVController *player;
+@property (nonatomic, readonly) MPUReportingController *reportingController;
+@property (nonatomic) double startTimeForCurrentItem;
+@property (nonatomic) unsigned long long storeAccountID;
 
 - (void).cxx_destruct;
 - (void)_itemNewAccessLogEntryNotification:(id)arg1;

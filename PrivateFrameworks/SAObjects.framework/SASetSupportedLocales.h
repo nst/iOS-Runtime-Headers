@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASetSupportedLocales : SABaseClientBoundCommand
 
-@interface SASetSupportedLocales : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * locales;
+@property (nonatomic, copy) NSArray *locales;
 
 + (id)setSupportedLocales;
 + (id)setSupportedLocalesWithDictionary:(id)arg1 context:(id)arg2;

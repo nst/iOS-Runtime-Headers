@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAutoupdatingRelativeDateFormatter : CKAutoupdatingDateFormatter {
-}
+@interface CKAutoupdatingRelativeDateFormatter : CKAutoupdatingDateFormatter
 
 + (id)relativeDateFormatter;
 + (id)relativeStringFromDate:(id)arg1;

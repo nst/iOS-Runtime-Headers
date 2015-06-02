@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIImageView;
-
 @interface PKPassBoardingPassFrontFaceView : PKPassFrontFaceView {
     UIImageView *_footerImageView;
     UIImageView *_transitImageView;

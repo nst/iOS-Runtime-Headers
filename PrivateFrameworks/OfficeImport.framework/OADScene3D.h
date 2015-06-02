@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBackdrop, OADCamera, OADLightRig;
-
 @interface OADScene3D : NSObject <NSCopying> {
     OADBackdrop *mBackdrop;
     OADCamera *mCamera;

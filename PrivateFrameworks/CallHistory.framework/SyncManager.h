@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class CallHistoryDBClientHandle, NSString, TransactionManager;
-
 @interface SyncManager : CHLogger <SyncManagerProtocol> {
     CallHistoryDBClientHandle *_dbHandle;
     TransactionManager *_transactionManager;
 }
 
-@property(readonly) CallHistoryDBClientHandle * dbHandle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) CallHistoryDBClientHandle *dbHandle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addUpdateTransactions:(id)arg1;

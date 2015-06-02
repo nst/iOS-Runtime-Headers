@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, ODDOtherwise;
-
 @interface ODDChoose : ODDLayoutObject {
     ODDOtherwise *mOtherwise;
     NSMutableArray *mWhens;

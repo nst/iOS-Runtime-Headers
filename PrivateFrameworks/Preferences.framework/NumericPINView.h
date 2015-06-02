@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSPasscodeField;
-
 @interface NumericPINView : PINView <PSPasscodeFieldDelegate> {
     PSPasscodeField *_passcodeField;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertBackgroundView : UIView {
-}
+@interface _UIAlertBackgroundView : UIView
 
 + (Class)layerClass;
 

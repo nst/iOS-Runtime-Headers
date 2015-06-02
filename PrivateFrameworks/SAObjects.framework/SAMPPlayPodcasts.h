@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPPlayPodcasts : SADomainCommand
 
-@interface SAMPPlayPodcasts : SADomainCommand {
-}
-
-@property(copy) NSString * episodePlaybackOrder;
+@property (nonatomic, copy) NSString *episodePlaybackOrder;
 
 + (id)playPodcasts;
 + (id)playPodcastsWithDictionary:(id)arg1 context:(id)arg2;

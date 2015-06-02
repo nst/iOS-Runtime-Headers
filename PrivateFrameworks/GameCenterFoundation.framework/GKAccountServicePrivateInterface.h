@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKAccountServicePrivateInterface : GKServiceInterface {
-}
+@interface GKAccountServicePrivateInterface : GKServiceInterface
 
 + (id)interfaceProtocol;
 

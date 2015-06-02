@@ -2,44 +2,34 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSString, RUIObjectModel<RUIAlertViewDelegate>, UIAlertController;
-
 @interface RUIAlertView : RUIElement {
     UIAlertController *_alertController;
     int _buttonIndex;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     NSString *_message;
     RUIObjectModel<RUIAlertViewDelegate> *_objectModel;
     NSString *_title;
 }
 
-@property(retain) NSDictionary * attributes;
-@property(readonly) int buttonIndex;
-@property(copy) id completion;
-@property(retain) NSString * message;
-@property RUIObjectModel<RUIAlertViewDelegate> * objectModel;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSDictionary *attributes;
+@property (nonatomic, readonly) int buttonIndex;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic) RUIObjectModel<RUIAlertViewDelegate> *objectModel;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 destructive:(BOOL)arg3 attributes:(id)arg4;
 - (id)alertController;
 - (int)buttonIndex;
-- (id)completion;
+- (id /* block */)completion;
 - (void)dealloc;
 - (id)init;
 - (id)message;
 - (id)objectModel;
-- (void)runAlertInController:(id)arg1 completion:(id)arg2;
+- (void)runAlertInController:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCancelButtonTitle:(id)arg1;
-- (void)setCompletion:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setTitle:(id)arg1;

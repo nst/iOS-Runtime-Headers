@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString, NSUUID;
-
 @interface AFSiriRequest : NSObject <NSSecureCoding> {
     NSUUID *_identifier;
     NSString *_originatingAceID;

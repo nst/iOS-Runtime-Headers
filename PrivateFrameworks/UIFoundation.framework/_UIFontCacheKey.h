@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSString, UIFontDescriptor;
-
 @interface _UIFontCacheKey : NSObject <NSCopying> {
     NSString *_contentSizeCategory;
     UIFontDescriptor *_fontDescriptor;
@@ -13,12 +11,12 @@
     int _traits;
 }
 
-@property(copy) NSString * contentSizeCategory;
-@property(copy) UIFontDescriptor * fontDescriptor;
-@property(copy) NSString * fontName;
-@property float pointSize;
-@property(copy) NSString * textStyle;
-@property int traits;
+@property (nonatomic, copy) NSString *contentSizeCategory;
+@property (nonatomic, copy) UIFontDescriptor *fontDescriptor;
+@property (nonatomic, copy) NSString *fontName;
+@property (nonatomic) float pointSize;
+@property (nonatomic, copy) NSString *textStyle;
+@property (nonatomic) int traits;
 
 + (id)fontCacheKeyWithFontDescriptor:(id)arg1 pointSize:(float)arg2;
 + (id)fontCacheKeyWithFontName:(id)arg1 traits:(int)arg2 pointSize:(float)arg3;

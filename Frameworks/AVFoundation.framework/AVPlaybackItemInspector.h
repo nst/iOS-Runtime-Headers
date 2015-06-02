@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray;
-
 @interface AVPlaybackItemInspector : AVAssetInspector {
     struct OpaqueFigPlaybackItem { } *_playbackItem;
     NSArray *_trackIDs;
 }
 
-@property(getter=_playbackItem,setter=_setPlaybackItem:,retain) struct OpaqueFigPlaybackItem { }* playbackItem;
+@property (getter=_playbackItem, setter=_setPlaybackItem:, nonatomic, retain) struct OpaqueFigPlaybackItem { }*playbackItem;
 
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_setPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableDictionary;
-
 @interface _WBSFieldLabelPatternMatcherFactory : NSObject {
     NSMutableDictionary *_trie;
 }

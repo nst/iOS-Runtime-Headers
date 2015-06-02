@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRCThrottleBase : NSObject {
     unsigned int _finalRetryCount;
     unsigned int _initialRetryCount;
@@ -13,8 +11,8 @@
     long long _nsecsBeforeForgettingCounter;
 }
 
-@property(readonly) NSString * name;
-@property(readonly) long long nsecsBeforeForgettingCounter;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) long long nsecsBeforeForgettingCounter;
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 andParameters:(id)arg2;

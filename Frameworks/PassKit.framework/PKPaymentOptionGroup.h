@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString;
-
 @interface PKPaymentOptionGroup : NSObject {
     BOOL _editable;
     NSString *_groupDisplayMode;
@@ -16,24 +10,20 @@
     int _indexForSelectedItem;
     NSArray *_items;
     NSString *_readOnlyDisplayName;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _selectionChangedHandler;
-
+    id /* block */ _selectionChangedHandler;
 }
 
-@property(readonly) NSString * abTitleDisplayName;
-@property(readonly) NSString * addExistingDisplayName;
-@property(readonly) NSString * addNewDisplayName;
-@property(getter=isEditable) BOOL editable;
-@property(retain) NSString * groupDisplayMode;
-@property(retain) NSString * groupDisplayName;
-@property(copy) NSString * groupType;
-@property int indexForSelectedItem;
-@property(retain) NSArray * items;
-@property(retain) NSString * readOnlyDisplayName;
-@property(copy) id selectionChangedHandler;
+@property (nonatomic, readonly) NSString *abTitleDisplayName;
+@property (nonatomic, readonly) NSString *addExistingDisplayName;
+@property (nonatomic, readonly) NSString *addNewDisplayName;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (nonatomic, retain) NSString *groupDisplayMode;
+@property (nonatomic, retain) NSString *groupDisplayName;
+@property (nonatomic, copy) NSString *groupType;
+@property (nonatomic) int indexForSelectedItem;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, retain) NSString *readOnlyDisplayName;
+@property (nonatomic, copy) id /* block */ selectionChangedHandler;
 
 - (id)abTitleDisplayName;
 - (id)addExistingDisplayName;
@@ -50,7 +40,7 @@
 - (void)prependGroupItems:(id)arg1 afterItem:(id)arg2;
 - (id)readOnlyDisplayName;
 - (void)removeGroupItem:(id)arg1;
-- (id)selectionChangedHandler;
+- (id /* block */)selectionChangedHandler;
 - (void)setEditable:(BOOL)arg1;
 - (void)setGroupDisplayMode:(id)arg1;
 - (void)setGroupDisplayName:(id)arg1;
@@ -58,6 +48,6 @@
 - (void)setIndexForSelectedItem:(int)arg1;
 - (void)setItems:(id)arg1;
 - (void)setReadOnlyDisplayName:(id)arg1;
-- (void)setSelectionChangedHandler:(id)arg1;
+- (void)setSelectionChangedHandler:(id /* block */)arg1;
 
 @end

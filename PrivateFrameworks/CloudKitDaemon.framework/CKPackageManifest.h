@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKPackageManifest : NSObject {
-}
+@interface CKPackageManifest : NSObject
 
 + (id)packageWithContentsOfFile:(id)arg1 error:(id*)arg2;
 + (BOOL)readContentsOfFile:(id)arg1 intoPackage:(id)arg2 error:(id*)arg3;

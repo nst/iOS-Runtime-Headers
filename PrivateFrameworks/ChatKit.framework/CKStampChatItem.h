@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKStampChatItem : CKChatItem {
-}
+@interface CKStampChatItem : CKChatItem
 
 - (Class)cellClass;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;

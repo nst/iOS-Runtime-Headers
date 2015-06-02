@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <IKAppDataStoring>, IKAppContext, MPUExtrasArtworkDataSource, MPUExtrasContext, MPUExtrasFeatureContainerViewController, MPUExtrasMainTemplateViewController, MPUExtrasNavigationController, NSObject<OS_dispatch_queue>, NSString, UINavigationController, UIView;
-
 @interface MPUExtrasRootViewController : UIViewController <IKAppContextDelegate, IKAppDeviceConfig, IKApplication, MPVideoOverlayDelegate, UICollectionViewDelegate, UINavigationControllerDelegate> {
     IKAppContext *_applicationContext;
     MPUExtrasArtworkDataSource *_artworkDataSource;
@@ -17,19 +15,19 @@
     <IKAppDataStoring> *_vendorStorage;
 }
 
-@property(retain) IKAppContext * applicationContext;
-@property(retain) MPUExtrasArtworkDataSource * artworkDataSource;
-@property(readonly) MPUExtrasContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) MPUExtrasFeatureContainerViewController * featureContainer;
-@property(readonly) unsigned int hash;
-@property(retain) <IKAppDataStoring> * localStorage;
-@property(readonly) UIView * mainMenuBar;
-@property(retain) MPUExtrasMainTemplateViewController * mainTemplateViewController;
-@property(readonly) UINavigationController * navigationController;
-@property(readonly) Class superclass;
-@property(retain) <IKAppDataStoring> * vendorStorage;
+@property (nonatomic, retain) IKAppContext *applicationContext;
+@property (nonatomic, retain) MPUExtrasArtworkDataSource *artworkDataSource;
+@property (nonatomic, readonly) MPUExtrasContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) MPUExtrasFeatureContainerViewController *featureContainer;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <IKAppDataStoring> *localStorage;
+@property (nonatomic, readonly) UIView *mainMenuBar;
+@property (nonatomic, retain) MPUExtrasMainTemplateViewController *mainTemplateViewController;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <IKAppDataStoring> *vendorStorage;
 
 + (id)currentController;
 

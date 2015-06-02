@@ -2,8 +2,7 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface Protocol : NSObject {
-}
+@interface Protocol : NSObject
 
 + (void)load;
 

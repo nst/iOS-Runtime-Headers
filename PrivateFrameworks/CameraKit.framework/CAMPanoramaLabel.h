@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString, _UIBackdropView, _UILegibilitySettingsProvider, _UILegibilityView;
-
 @interface CAMPanoramaLabel : UIView <_UIBackdropViewObserver> {
     _UIBackdropView *_backdropView;
     _UILegibilitySettingsProvider *_legibilitySettingsProvider;
@@ -11,7 +9,7 @@
     NSString *_text;
 }
 
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (void)_updateLegibilityView;

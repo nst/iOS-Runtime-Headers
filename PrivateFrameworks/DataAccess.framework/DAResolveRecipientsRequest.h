@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSArray, NSDate;
-
 @interface DAResolveRecipientsRequest : NSObject {
     NSArray *_emailAddresses;
     NSDate *_endTime;
@@ -12,11 +10,11 @@
     NSDate *_startTime;
 }
 
-@property(retain) NSArray * emailAddresses;
-@property(retain) NSDate * endTime;
-@property BOOL retrieveAvailablilty;
-@property BOOL retrieveCertificates;
-@property(retain) NSDate * startTime;
+@property (nonatomic, retain) NSArray *emailAddresses;
+@property (nonatomic, retain) NSDate *endTime;
+@property (nonatomic) BOOL retrieveAvailablilty;
+@property (nonatomic) BOOL retrieveCertificates;
+@property (nonatomic, retain) NSDate *startTime;
 
 - (void).cxx_destruct;
 - (id)description;

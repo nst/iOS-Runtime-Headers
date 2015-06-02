@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDKeyedCollection, NSString;
-
 @interface EDTableStyle : NSObject <NSCopying> {
     NSString *mName;
     EDKeyedCollection *mTableStyleElements;

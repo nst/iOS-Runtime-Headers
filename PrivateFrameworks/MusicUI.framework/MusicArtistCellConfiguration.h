@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicArtistCellConfiguration : MusicStandardMediaCellConfiguration {
-}
+@interface MusicArtistCellConfiguration : MusicStandardMediaCellConfiguration
 
 + (void)_appDefaultsDidChangeNotification:(id)arg1;
 + (id)collectionPropertiesToFetch;

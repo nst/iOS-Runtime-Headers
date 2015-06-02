@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicQueryDataSource : MPUCompletionQueryDataSource {
-}
+@interface MusicQueryDataSource : MPUCompletionQueryDataSource
 
 - (void)_defaultsDidChangeNotification:(id)arg1;
 - (id)_queryForNowPlayingComparisonAtIndex:(unsigned int)arg1;

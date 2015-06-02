@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>;
-
 @interface LSApplicationWorkspaceRemoteObserver : LSApplicationWorkspaceObserver {
     NSHashTable *_observers;
     BOOL _observinglsd;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAHAFilter : SADomainObject {
-}
+@interface SAHAFilter : SADomainObject
 
 - (id)encodedClassName;
 - (id)groupIdentifier;

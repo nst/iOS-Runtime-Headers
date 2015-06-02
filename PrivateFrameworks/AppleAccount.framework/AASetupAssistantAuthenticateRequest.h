@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AASetupAssistantAuthenticateRequest : AAAuthenticateRequest {
-}
+@interface AASetupAssistantAuthenticateRequest : AAAuthenticateRequest
 
 - (id)urlString;
 

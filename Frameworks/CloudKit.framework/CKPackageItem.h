@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSData, NSNumber, NSURL;
-
 @interface CKPackageItem : NSObject {
     NSNumber *_deviceID;
     NSNumber *_fileID;
@@ -18,17 +16,17 @@
     NSData *_wrappedAssetKey;
 }
 
-@property(retain) NSNumber * deviceID;
-@property(retain) NSNumber * fileID;
-@property(retain) NSURL * fileURL;
-@property(retain) NSNumber * generationID;
-@property unsigned long long itemID;
-@property long long offset;
-@property int packageIndex;
-@property long sectionIndex;
-@property(retain) NSData * signature;
-@property long long size;
-@property(retain) NSData * wrappedAssetKey;
+@property (nonatomic, retain) NSNumber *deviceID;
+@property (nonatomic, retain) NSNumber *fileID;
+@property (nonatomic, retain) NSURL *fileURL;
+@property (nonatomic, retain) NSNumber *generationID;
+@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) long long offset;
+@property (nonatomic) int packageIndex;
+@property (nonatomic) long sectionIndex;
+@property (nonatomic, retain) NSData *signature;
+@property (nonatomic) long long size;
+@property (nonatomic, retain) NSData *wrappedAssetKey;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

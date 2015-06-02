@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSString, NSThread;
-
 @interface AXEventProcessor : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _HIDEventHandler;
-
+    id /* block */ _HIDEventHandler;
     NSThread *_HIDEventReceiveThread;
     NSString *_HIDEventTapIdentifier;
     int _HIDEventTapPriority;
@@ -25,33 +15,29 @@
     BOOL _shouldNotifyUserEventOccurred;
     BOOL _shouldRunHIDReceiveThreadRunloop;
     NSMutableArray *_systemActualEventTapEnabledReasons;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _systemEventHandler;
-
+    id /* block */ _systemEventHandler;
     NSString *_systemEventTapIdentifier;
     int _systemEventTapPriority;
 }
 
-@property(copy) id HIDEventHandler;
-@property(retain) NSThread * HIDEventReceiveThread;
-@property(retain) NSString * HIDEventTapIdentifier;
-@property int HIDEventTapPriority;
-@property(getter=isHandlingHIDEvents) BOOL handlingHIDEvents;
-@property(getter=isHandlingSystemEvents) BOOL handlingSystemEvents;
-@property(retain) NSMutableArray * hidActualEventTapEnabledReasons;
-@property(readonly) NSArray * hidEventTapEnabledReasons;
-@property BOOL ignoreAllHIDEvents;
-@property BOOL ignoreAllSystemEvents;
-@property BOOL shouldNotifyUserEventOccurred;
-@property(retain) NSMutableArray * systemActualEventTapEnabledReasons;
-@property(copy) id systemEventHandler;
-@property(readonly) NSArray * systemEventTapEnabledReasons;
-@property(retain) NSString * systemEventTapIdentifier;
-@property int systemEventTapPriority;
+@property (nonatomic, copy) id /* block */ HIDEventHandler;
+@property (nonatomic, retain) NSThread *HIDEventReceiveThread;
+@property (nonatomic, retain) NSString *HIDEventTapIdentifier;
+@property (nonatomic) int HIDEventTapPriority;
+@property (getter=isHandlingHIDEvents, nonatomic) BOOL handlingHIDEvents;
+@property (getter=isHandlingSystemEvents, nonatomic) BOOL handlingSystemEvents;
+@property (nonatomic, retain) NSMutableArray *hidActualEventTapEnabledReasons;
+@property (nonatomic, readonly) NSArray *hidEventTapEnabledReasons;
+@property (nonatomic) BOOL ignoreAllHIDEvents;
+@property (nonatomic) BOOL ignoreAllSystemEvents;
+@property (nonatomic) BOOL shouldNotifyUserEventOccurred;
+@property (nonatomic, retain) NSMutableArray *systemActualEventTapEnabledReasons;
+@property (nonatomic, copy) id /* block */ systemEventHandler;
+@property (nonatomic, readonly) NSArray *systemEventTapEnabledReasons;
+@property (nonatomic, retain) NSString *systemEventTapIdentifier;
+@property (nonatomic) int systemEventTapPriority;
 
-- (id)HIDEventHandler;
+- (id /* block */)HIDEventHandler;
 - (id)HIDEventReceiveThread;
 - (id)HIDEventTapIdentifier;
 - (int)HIDEventTapPriority;
@@ -76,7 +62,7 @@
 - (void)raiseSystemEventTapPriorityToMaximum;
 - (void)restoreHIDEventTapPriorityToDefault;
 - (void)restoreSystemEventTapPriorityToDefault;
-- (void)setHIDEventHandler:(id)arg1;
+- (void)setHIDEventHandler:(id /* block */)arg1;
 - (void)setHIDEventReceiveThread:(id)arg1;
 - (void)setHIDEventTapIdentifier:(id)arg1;
 - (void)setHIDEventTapPriority:(int)arg1;
@@ -87,12 +73,12 @@
 - (void)setIgnoreAllSystemEvents:(BOOL)arg1;
 - (void)setShouldNotifyUserEventOccurred:(BOOL)arg1;
 - (void)setSystemActualEventTapEnabledReasons:(id)arg1;
-- (void)setSystemEventHandler:(id)arg1;
+- (void)setSystemEventHandler:(id /* block */)arg1;
 - (void)setSystemEventTapIdentifier:(id)arg1;
 - (void)setSystemEventTapPriority:(int)arg1;
 - (BOOL)shouldNotifyUserEventOccurred;
 - (id)systemActualEventTapEnabledReasons;
-- (id)systemEventHandler;
+- (id /* block */)systemEventHandler;
 - (id)systemEventTapEnabledReasons;
 - (id)systemEventTapIdentifier;
 - (int)systemEventTapPriority;

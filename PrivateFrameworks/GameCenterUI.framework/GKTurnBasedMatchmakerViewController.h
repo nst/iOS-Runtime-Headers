@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKTurnBasedMatchmakerViewControllerDelegate>, GKHostedTurnBasedViewController, GKMatchRequest, GKRemoteTurnBasedViewController, UIAlertController;
-
 @interface GKTurnBasedMatchmakerViewController : UINavigationController {
     UIAlertController *_alertController;
     GKHostedTurnBasedViewController *_hostedViewController;
@@ -13,12 +11,12 @@
     <GKTurnBasedMatchmakerViewControllerDelegate> *_turnBasedMatchmakerDelegateWeak;
 }
 
-@property(retain) UIAlertController * alertController;
-@property(retain) GKHostedTurnBasedViewController * hostedViewController;
-@property(retain) GKMatchRequest * matchRequest;
-@property(retain) GKRemoteTurnBasedViewController * remoteViewController;
-@property BOOL showExistingMatches;
-@property <GKTurnBasedMatchmakerViewControllerDelegate> * turnBasedMatchmakerDelegate;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic, retain) GKHostedTurnBasedViewController *hostedViewController;
+@property (nonatomic, retain) GKMatchRequest *matchRequest;
+@property (nonatomic, retain) GKRemoteTurnBasedViewController *remoteViewController;
+@property (nonatomic) BOOL showExistingMatches;
+@property (nonatomic) <GKTurnBasedMatchmakerViewControllerDelegate> *turnBasedMatchmakerDelegate;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADLineToPathElement : OADToPointPathElement {
-}
+@interface OADLineToPathElement : OADToPointPathElement
 
 @end

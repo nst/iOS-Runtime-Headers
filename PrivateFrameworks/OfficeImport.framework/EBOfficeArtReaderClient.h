@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface EBOfficeArtReaderClient : NSObject <OABReaderClient> {
-}
+@interface EBOfficeArtReaderClient : NSObject <OABReaderClient>
 
 + (BOOL)escherIsFullySupported;
 + (void)readClientDataFromGroup:(id)arg1 toGroup:(id)arg2 state:(id)arg3;

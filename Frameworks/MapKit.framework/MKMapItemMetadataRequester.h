@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class ACAccountCredential, ACAccountStore, NSMapTable, NSString, OAURLRequestSigner;
-
 @interface MKMapItemMetadataRequester : NSObject <NSURLConnectionDelegate> {
     ACAccountStore *_accountStore;
     NSMapTable *_connectionsForURLs;
@@ -14,12 +12,12 @@
     ACAccountCredential *_yelpAccountCredentials;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) OAURLRequestSigner * signer;
-@property(readonly) Class superclass;
-@property(readonly) ACAccountCredential * yelpAccountCredentials;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) OAURLRequestSigner *signer;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) ACAccountCredential *yelpAccountCredentials;
 
 + (id)sharedInstance;
 

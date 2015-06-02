@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, NSString;
-
 @interface AAUpdateProvisioningRequest : AARequest {
     ACAccount *_account;
     NSString *_authToken;
 }
 
-@property(retain) ACAccount * account;
-@property(copy) NSString * authToken;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, copy) NSString *authToken;
 
 + (Class)responseClass;
 

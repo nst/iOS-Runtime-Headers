@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSURL;
-
 @interface YTVideoReference : NSObject {
     NSURL *_contentURL;
     unsigned int _duration;

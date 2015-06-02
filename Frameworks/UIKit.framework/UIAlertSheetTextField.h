@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIThreePartImageView;
-
 @interface UIAlertSheetTextField : UITextField {
     UIThreePartImageView *_sheetBackgroundView;
 }

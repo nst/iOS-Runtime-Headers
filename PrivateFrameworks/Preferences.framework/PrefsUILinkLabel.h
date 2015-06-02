@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSURL;
-
 @interface PrefsUILinkLabel : UILabel {
     NSURL *_URL;
     SEL _action;
@@ -12,9 +10,9 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * URL;
-@property SEL action;
-@property id target;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic) SEL action;
+@property (nonatomic) id target;
 
 - (id)URL;
 - (SEL)action;

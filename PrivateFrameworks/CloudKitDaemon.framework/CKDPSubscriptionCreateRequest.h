@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPSubscription;
-
 @interface CKDPSubscriptionCreateRequest : PBRequest <NSCopying> {
     CKDPSubscription *_subscription;
 }
 
-@property(readonly) BOOL hasSubscription;
-@property(retain) CKDPSubscription * subscription;
+@property (nonatomic, readonly) BOOL hasSubscription;
+@property (nonatomic, retain) CKDPSubscription *subscription;
 
 + (id)options;
 

@@ -2,35 +2,33 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString, NSURL;
+@interface DOMHTMLAnchorElement : DOMHTMLElement
 
-@interface DOMHTMLAnchorElement : DOMHTMLElement {
-}
+@property (readonly, copy) NSURL *absoluteLinkURL;
+@property (copy) NSString *accessKey;
+@property (copy) NSString *charset;
+@property (copy) NSString *coords;
+@property (readonly, copy) NSString *hashName;
+@property (readonly, copy) NSString *host;
+@property (readonly, copy) NSString *hostname;
+@property (copy) NSString *href;
+@property (copy) NSString *hreflang;
+@property (copy) NSString *name;
+@property (readonly, copy) NSString *pathname;
+@property (readonly, copy) NSString *port;
+@property (readonly, copy) NSString *protocol;
+@property (copy) NSString *rel;
+@property (copy) NSString *rev;
+@property (readonly, copy) NSString *search;
+@property (copy) NSString *shape;
+@property (copy) NSString *target;
+@property (readonly, copy) NSString *text;
+@property (copy) NSString *type;
 
-@property(copy,readonly) NSURL * absoluteLinkURL;
-@property(copy) NSString * accessKey;
-@property(copy) NSString * charset;
-@property(copy) NSString * coords;
-@property(copy,readonly) NSString * hashName;
-@property(copy,readonly) NSString * host;
-@property(copy,readonly) NSString * hostname;
-@property(copy) NSString * href;
-@property(copy) NSString * hreflang;
-@property(copy) NSString * name;
-@property(copy,readonly) NSString * pathname;
-@property(copy,readonly) NSString * port;
-@property(copy,readonly) NSString * protocol;
-@property(copy) NSString * rel;
-@property(copy) NSString * rev;
-@property(copy,readonly) NSString * search;
-@property(copy) NSString * shape;
-@property(copy) NSString * target;
-@property(copy,readonly) NSString * text;
-@property(copy) NSString * type;
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)absoluteLinkURL;
 - (id)accessKey;
-- (BOOL)alwaysAttemptToShowTapHighlight;
 - (id)charset;
 - (id)coords;
 - (id)hashName;
@@ -62,5 +60,9 @@
 - (id)target;
 - (id)text;
 - (id)type;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)alwaysAttemptToShowTapHighlight;
 
 @end

@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, NSMutableArray, NSString, NSURLRequest, QLPDFHanderDelegateForwarder, QLPreviewConverter, QLScrubView, UIView, UIWebView;
-
 @interface QLWebViewDisplayBundle : QLDisplayBundle <QLScrubViewDataSource, UIScrollViewDelegate, UIWebPDFViewHandlerDelegate, UIWebViewDelegate> {
     UIView *_accessoryView;
     float _defaultZoom;
     QLPDFHanderDelegateForwarder *_forwarder;
     NSMutableArray *_htmlSlideNodes;
     BOOL _inScroll;
-    unsigned int _isCSVContent : 1;
-    unsigned int _isHTMLContent : 1;
-    unsigned int _isLoadedDuringZoom : 1;
-    unsigned int _isPDFContent : 1;
-    unsigned int _isPlainText : 1;
-    unsigned int _isRTFContent : 1;
-    unsigned int _isSpreadsheetContent : 1;
-    unsigned int _isXMLContent : 1;
+    unsigned int _isCSVContent;
+    unsigned int _isHTMLContent;
+    unsigned int _isLoadedDuringZoom;
+    unsigned int _isPDFContent;
+    unsigned int _isPlainText;
+    unsigned int _isRTFContent;
+    unsigned int _isSpreadsheetContent;
+    unsigned int _isXMLContent;
     int _lastPage;
-    unsigned int _loadStarted : 1;
+    unsigned int _loadStarted;
     NSData *_pdfPreviewData;
     QLPreviewConverter *_previewConverter;
     NSURLRequest *_previewRequest;
@@ -28,10 +26,10 @@
     BOOL _webViewReadyForThumbnailing;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_copyPreviewConverterForPreviewItem:(id)arg1;
 - (struct CGPDFDocument { }*)_getCGPDFDocumentRef;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPickerViewDataSource>, <UIPickerViewDelegate>, CALayer, NSMutableArray, NSString, UIColor, UIImageView, UIView, _UIPickerViewTestParameters;
-
 @interface UIPickerView : UIView <NSCoding, UIPickerTableViewContainerDelegate, UIPickerViewScrollTesting, UITableViewDataSource, UITableViewDelegate> {
     UIView *_backgroundView;
     UIImageView *_bottomGradient;
@@ -44,20 +42,20 @@
     BOOL _usesModernStyle;
 }
 
-@property(setter=_setInLayoutSubviews:) BOOL _isInLayoutSubviews;
-@property(setter=_setMagnifierEnabled:) BOOL _magnifierEnabled;
-@property <UIPickerViewDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIPickerViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=_highlightColor,setter=_setHighlightColor:,retain) UIColor * highlightColor;
-@property(readonly) int numberOfComponents;
-@property BOOL showsSelectionIndicator;
-@property(readonly) Class superclass;
-@property(getter=_textColor,setter=_setTextColor:,retain) UIColor * textColor;
-@property(getter=_textShadowColor,setter=_setTextShadowColor:,retain) UIColor * textShadowColor;
-@property(getter=_usesModernStyle,setter=_setUsesModernStyle:) BOOL usesModernStyle;
+@property (setter=_setInLayoutSubviews:, nonatomic) BOOL _isInLayoutSubviews;
+@property (setter=_setMagnifierEnabled:, nonatomic) BOOL _magnifierEnabled;
+@property (nonatomic) <UIPickerViewDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIPickerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=_highlightColor, setter=_setHighlightColor:, nonatomic, retain) UIColor *highlightColor;
+@property (nonatomic, readonly) int numberOfComponents;
+@property (nonatomic) BOOL showsSelectionIndicator;
+@property (readonly) Class superclass;
+@property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *textColor;
+@property (getter=_textShadowColor, setter=_setTextShadowColor:, nonatomic, retain) UIColor *textShadowColor;
+@property (getter=_usesModernStyle, setter=_setUsesModernStyle:) BOOL usesModernStyle;
 
 + (id)_modernCenterCellFont;
 + (id)_modernNonCenterCellFont;

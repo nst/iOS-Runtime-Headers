@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber, NSString;
+@interface CDDMBookkeeping : NSManagedObject
 
-@interface CDDMBookkeeping : NSManagedObject {
-}
-
-@property(retain) NSNumber * budgetVersion;
-@property(retain) NSNumber * databaseVersion;
-@property(retain) NSString * deviceDescription;
-@property(retain) NSNumber * maxAttributeIntegerId;
-@property(retain) NSNumber * maxForecastGroupId;
-@property(retain) NSNumber * maxPoolIntegerId;
-@property(retain) NSDate * newestEntryDate;
-@property(retain) NSDate * oldestEntryDate;
-@property(retain) NSNumber * systemCumulativeComputeUtilizationGauge;
-@property(retain) NSNumber * systemCumulativeIoReadBytesGauge;
-@property(retain) NSNumber * systemCumulativeIoWriteBytesGauge;
-@property(retain) NSNumber * systemCumulativeMillijoulesGauge;
-@property(retain) NSNumber * systemCumulativeNetworkBytesGauge;
-@property(retain) NSNumber * systemCumulativePushesGauge;
+@property (nonatomic, retain) NSNumber *budgetVersion;
+@property (nonatomic, retain) NSNumber *databaseVersion;
+@property (nonatomic, retain) NSString *deviceDescription;
+@property (nonatomic, retain) NSNumber *maxAttributeIntegerId;
+@property (nonatomic, retain) NSNumber *maxForecastGroupId;
+@property (nonatomic, retain) NSNumber *maxPoolIntegerId;
+@property (nonatomic, retain) NSDate *newestEntryDate;
+@property (nonatomic, retain) NSDate *oldestEntryDate;
+@property (nonatomic, retain) NSNumber *systemCumulativeComputeUtilizationGauge;
+@property (nonatomic, retain) NSNumber *systemCumulativeIoReadBytesGauge;
+@property (nonatomic, retain) NSNumber *systemCumulativeIoWriteBytesGauge;
+@property (nonatomic, retain) NSNumber *systemCumulativeMillijoulesGauge;
+@property (nonatomic, retain) NSNumber *systemCumulativeNetworkBytesGauge;
+@property (nonatomic, retain) NSNumber *systemCumulativePushesGauge;
 
 @end

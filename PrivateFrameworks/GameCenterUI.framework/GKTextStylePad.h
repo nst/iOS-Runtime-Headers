@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKTextStylePad : GKTextStyle {
-}
+@interface GKTextStylePad : GKTextStyle
 
 + (float)bubbleTextScale;
 + (float)standardFontSize;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotation>, <MKAnnotationManagerDelegate>, <MKAnnotationMarkerContainer>, <MKAnnotationRepresentation>, MKQuadTrie, NSArray, NSMapTable, NSMutableSet, NSTimer;
-
 @interface MKAnnotationManager : NSObject {
     NSMutableSet *_annotationRepresentations;
     BOOL _annotationRepresentationsAreAddedImmediately;
@@ -24,13 +22,13 @@
     NSMutableSet *_visibleAnnotations;
 }
 
-@property(readonly) NSArray * annotationRepresentations;
-@property BOOL annotationRepresentationsAreAddedImmediately;
-@property(readonly) NSArray * annotations;
-@property <MKAnnotationMarkerContainer> * container;
-@property <MKAnnotationManagerDelegate> * delegate;
-@property <MKAnnotation> * draggedAnnotation;
-@property(readonly) <MKAnnotationRepresentation> * selectedAnnotationRepresentation;
+@property (nonatomic, readonly) NSArray *annotationRepresentations;
+@property (nonatomic) BOOL annotationRepresentationsAreAddedImmediately;
+@property (nonatomic, readonly) NSArray *annotations;
+@property (nonatomic) <MKAnnotationMarkerContainer> *container;
+@property (nonatomic) <MKAnnotationManagerDelegate> *delegate;
+@property (nonatomic) <MKAnnotation> *draggedAnnotation;
+@property (nonatomic, readonly) <MKAnnotationRepresentation> *selectedAnnotationRepresentation;
 
 - (void).cxx_destruct;
 - (void)_addAnnotation:(id)arg1 updateVisible:(BOOL)arg2;

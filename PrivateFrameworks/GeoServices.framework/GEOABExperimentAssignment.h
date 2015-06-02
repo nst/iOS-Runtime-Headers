@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOABExperimentAssignment : PBCodable <NSCopying> {
     struct { 
         unsigned int placeRequestType : 1; 
@@ -14,12 +12,12 @@
     int _serviceType;
 }
 
-@property BOOL hasPlaceRequestType;
-@property(readonly) BOOL hasQuerySubstring;
-@property BOOL hasServiceType;
-@property int placeRequestType;
-@property(retain) NSString * querySubstring;
-@property int serviceType;
+@property (nonatomic) BOOL hasPlaceRequestType;
+@property (nonatomic, readonly) BOOL hasQuerySubstring;
+@property (nonatomic) BOOL hasServiceType;
+@property (nonatomic) int placeRequestType;
+@property (nonatomic, retain) NSString *querySubstring;
+@property (nonatomic) int serviceType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

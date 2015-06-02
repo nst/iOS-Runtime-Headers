@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSNumber, NSString;
+@interface SAAceView : AceObject <SAAceSerializable>
 
-@interface SAAceView : AceObject <SAAceSerializable> {
-}
-
-@property(retain) <SAAceSerializable> * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSNumber * deferredRendering;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSNumber * listenAfterSpeaking;
-@property(copy) NSString * speakableText;
-@property(readonly) Class superclass;
-@property(copy) NSString * viewId;
+@property (nonatomic, retain) <SAAceSerializable> *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSNumber *deferredRendering;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSNumber *listenAfterSpeaking;
+@property (nonatomic, copy) NSString *speakableText;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *viewId;
 
 + (id)aceView;
 + (id)aceViewWithDictionary:(id)arg1 context:(id)arg2;

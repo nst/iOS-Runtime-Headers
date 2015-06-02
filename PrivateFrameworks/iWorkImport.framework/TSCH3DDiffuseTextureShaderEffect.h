@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DDiffuseTextureShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DDiffuseTextureShaderEffect : TSCH3DShaderEffect
 
 + (Class)stateClass;
 

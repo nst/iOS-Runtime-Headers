@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSULinkedPointerSetEntry;
-
 @interface TSULinkedPointerSetEntry : NSObject {
     TSULinkedPointerSetEntry *mNext;
     id mObject;

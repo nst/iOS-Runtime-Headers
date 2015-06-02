@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUPhotosSharingViewControllerDelegate>, NSIndexPath, NSMutableDictionary, NSMutableSet, NSPredicate, NSString, PHAsset, PHCachingImageManager, PHFetchResult, PUActivityViewController, PUPhotoPinchGestureRecognizer, PUPhotoSelectionManager, PUPhotosSharingCollectionViewLayout, PUPhotosSharingTransitionContext, PUPhotosSharingViewControllerSpec, PUPhotosZoomingSharingGridCell, PUScrollViewSpeedometer, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer, UIView;
-
 @interface PUPhotosSharingViewController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PUActivityViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUScrollViewSpeedometerDelegate, PUTransitionViewAnimatorDelegate, UIActivityViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     PHCachingImageManager *__cachingImageManager;
     PUActivityViewController *__embeddedActivityViewController;
@@ -16,11 +10,7 @@
     PUTransitionViewAnimator *__photoZoomAnimator;
     PUPhotosZoomingSharingGridCell *__photoZoomCell;
     PUPhotoPinchGestureRecognizer *__photoZoomPinchGestureRecognizer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __pptOnDidEndScrollingBlock;
-
+    id /* block */ __pptOnDidEndScrollingBlock;
     NSMutableSet *__preheatedAssets;
     struct CGRect { 
         struct CGPoint { 
@@ -58,36 +48,36 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(readonly) PUActivityViewController * _activityViewController;
-@property(readonly) PHCachingImageManager * _cachingImageManager;
-@property(setter=_setEmbeddedActivityViewController:,retain) PUActivityViewController * _embeddedActivityViewController;
-@property(setter=_setLastKnownReferenceAsset:,retain) PHAsset * _lastKnownReferenceAsset;
-@property(setter=_setLastKnownReferenceIndexPath:,retain) NSIndexPath * _lastKnownReferenceIndexPath;
-@property(setter=_setPhotoZoomAnimator:,retain) PUTransitionViewAnimator * _photoZoomAnimator;
-@property(setter=_setPhotoZoomCell:,retain) PUPhotosZoomingSharingGridCell * _photoZoomCell;
-@property(setter=_setPhotoZoomPinchGestureRecognizer:,retain) PUPhotoPinchGestureRecognizer * _photoZoomPinchGestureRecognizer;
-@property(setter=_pptSetOnDidEndScrollingBlock:,copy) id _pptOnDidEndScrollingBlock;
-@property(setter=_setPreheatedAssets:,retain) NSMutableSet * _preheatedAssets;
-@property(setter=_setPreviousPreheatRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
-@property(setter=_setTransitionLayout:,retain) UICollectionViewLayout * _transitionLayout;
-@property(setter=_setUnembeddedActivityViewController:,retain) PUActivityViewController * _unembeddedActivityViewController;
-@property(getter=_isViewInSyncWithModel,setter=_setViewInSyncWithModel:) BOOL _viewInSyncWithModel;
-@property(readonly) PHFetchResult * assetCollectionsFetchResult;
-@property(readonly) NSIndexPath * currentIndexPath;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotosSharingViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(setter=_setEmbeddedActivityView:,retain) UIView * embeddedActivityView;
-@property(readonly) NSPredicate * filterPredicate;
-@property(readonly) unsigned int hash;
-@property(getter=isLockScreenCamera) BOOL lockScreenCamera;
-@property(setter=_setMainCollectionView:,retain) UICollectionView * mainCollectionView;
-@property(setter=_setMainCollectionViewLayout:,retain) PUPhotosSharingCollectionViewLayout * mainCollectionViewLayout;
-@property(readonly) PHFetchResult * photoCollectionsFetchResult;
-@property(retain) PUPhotoSelectionManager * photoSelectionManager;
-@property(retain) PUPhotosSharingTransitionContext * photosSharingTransitionContext;
-@property(retain) PUPhotosSharingViewControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) PUActivityViewController *_activityViewController;
+@property (nonatomic, readonly) PHCachingImageManager *_cachingImageManager;
+@property (setter=_setEmbeddedActivityViewController:, nonatomic, retain) PUActivityViewController *_embeddedActivityViewController;
+@property (setter=_setLastKnownReferenceAsset:, nonatomic, retain) PHAsset *_lastKnownReferenceAsset;
+@property (setter=_setLastKnownReferenceIndexPath:, nonatomic, retain) NSIndexPath *_lastKnownReferenceIndexPath;
+@property (setter=_setPhotoZoomAnimator:, nonatomic, retain) PUTransitionViewAnimator *_photoZoomAnimator;
+@property (setter=_setPhotoZoomCell:, nonatomic, retain) PUPhotosZoomingSharingGridCell *_photoZoomCell;
+@property (setter=_setPhotoZoomPinchGestureRecognizer:, nonatomic, retain) PUPhotoPinchGestureRecognizer *_photoZoomPinchGestureRecognizer;
+@property (setter=_pptSetOnDidEndScrollingBlock:, nonatomic, copy) id /* block */ _pptOnDidEndScrollingBlock;
+@property (setter=_setPreheatedAssets:, nonatomic, retain) NSMutableSet *_preheatedAssets;
+@property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
+@property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_transitionLayout;
+@property (setter=_setUnembeddedActivityViewController:, nonatomic, retain) PUActivityViewController *_unembeddedActivityViewController;
+@property (getter=_isViewInSyncWithModel, setter=_setViewInSyncWithModel:, nonatomic) BOOL _viewInSyncWithModel;
+@property (nonatomic, readonly) PHFetchResult *assetCollectionsFetchResult;
+@property (nonatomic, readonly) NSIndexPath *currentIndexPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotosSharingViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (setter=_setEmbeddedActivityView:, nonatomic, retain) UIView *embeddedActivityView;
+@property (nonatomic, readonly) NSPredicate *filterPredicate;
+@property (readonly) unsigned int hash;
+@property (getter=isLockScreenCamera, nonatomic) BOOL lockScreenCamera;
+@property (setter=_setMainCollectionView:, nonatomic, retain) UICollectionView *mainCollectionView;
+@property (setter=_setMainCollectionViewLayout:, nonatomic, retain) PUPhotosSharingCollectionViewLayout *mainCollectionViewLayout;
+@property (nonatomic, readonly) PHFetchResult *photoCollectionsFetchResult;
+@property (nonatomic, retain) PUPhotoSelectionManager *photoSelectionManager;
+@property (nonatomic, retain) PUPhotosSharingTransitionContext *photosSharingTransitionContext;
+@property (nonatomic, retain) PUPhotosSharingViewControllerSpec *spec;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activityViewController;
@@ -125,8 +115,8 @@
 - (id)_photoZoomAnimator;
 - (id)_photoZoomCell;
 - (id)_photoZoomPinchGestureRecognizer;
-- (id)_pptOnDidEndScrollingBlock;
-- (void)_pptSetOnDidEndScrollingBlock:(id)arg1;
+- (id /* block */)_pptOnDidEndScrollingBlock;
+- (void)_pptSetOnDidEndScrollingBlock:(id /* block */)arg1;
 - (id)_preheatedAssets;
 - (void)_prepareActivityViewControllerForUse;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
@@ -197,7 +187,7 @@
 - (id)photoSelectionManager;
 - (id)photosSharingTransitionContext;
 - (void)ppt_faultInScollViewContentSize;
-- (BOOL)ppt_scrollToAssetAtRelativeIndex:(int)arg1 completion:(id)arg2;
+- (BOOL)ppt_scrollToAssetAtRelativeIndex:(int)arg1 completion:(id /* block */)arg2;
 - (id)ppt_scrollView;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPhotoLibraryChange:(id)arg1;

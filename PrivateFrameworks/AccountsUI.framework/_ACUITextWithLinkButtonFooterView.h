@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class NSArray, NSString, UILabel;
-
 @interface _ACUITextWithLinkButtonFooterView : UIView <PSHeaderFooterView> {
     NSString *_footerText;
     NSArray *_linkButtons;

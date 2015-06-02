@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSArray;
+@interface MusicStandardMediaTableViewCellContentView : MusicMediaTableViewCellContentView
 
-@interface MusicStandardMediaTableViewCellContentView : MusicMediaTableViewCellContentView {
-}
-
-@property(copy,readonly) NSArray * rightAccessoryViews;
-@property(readonly) float rightContentInset;
-@property(readonly) int titleLabelNumberOfLines;
+@property (nonatomic, readonly, copy) NSArray *rightAccessoryViews;
+@property (nonatomic, readonly) float rightContentInset;
+@property (nonatomic, readonly) int titleLabelNumberOfLines;
 
 + (id)_subtitleRegularTextAttributes;
 + (id)_titleRegularTextAttributes;

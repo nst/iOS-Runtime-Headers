@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMHandle;
-
 @interface CKIMComposeRecipient : MFComposeRecipient {
     IMHandle *_handle;
 }
 
-@property(retain,readonly) IMHandle * handle;
+@property (nonatomic, readonly, retain) IMHandle *handle;
 
 - (id)address;
 - (id)commentedAddress;

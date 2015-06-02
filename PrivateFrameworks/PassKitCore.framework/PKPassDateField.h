@@ -9,10 +9,10 @@
     int _timeStyle;
 }
 
-@property int dateStyle;
-@property BOOL ignoresTimeZone;
-@property BOOL isRelative;
-@property int timeStyle;
+@property (nonatomic) int dateStyle;
+@property (nonatomic) BOOL ignoresTimeZone;
+@property (nonatomic) BOOL isRelative;
+@property (nonatomic) int timeStyle;
 
 + (BOOL)supportsSecureCoding;
 

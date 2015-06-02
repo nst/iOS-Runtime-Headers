@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKUIInviteesViewOriginalConflictCell : EKUIInviteesViewTimeSlotCell {
-}
+@interface EKUIInviteesViewOriginalConflictCell : EKUIInviteesViewTimeSlotCell
 
 - (id)participantsTextColor;
 - (id)timeTextColor;

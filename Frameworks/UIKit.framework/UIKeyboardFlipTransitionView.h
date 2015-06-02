@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, NSMutableDictionary, UIKBCacheToken;
-
 @interface UIKeyboardFlipTransitionView : UIKeyboardSplitTransitionView {
     CALayer *_backDarkening;
     CALayer *_backDarkeningLeft;
@@ -23,7 +21,7 @@
     UIKBCacheToken *_startKeyplaneToken;
 }
 
-@property(getter=isShowingFrontFace) BOOL showingFrontFace;
+@property (getter=isShowingFrontFace, nonatomic) BOOL showingFrontFace;
 
 - (void)_delayedUpdateTransition;
 - (void)_flipToFront:(BOOL)arg1 animated:(BOOL)arg2;

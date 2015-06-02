@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentWebServiceRequest : NSObject {
-}
+@interface PKPaymentWebServiceRequest : NSObject
 
 + (id)_HTTPBodyWithDictionary:(id)arg1;
 + (id)_bridgedClientInfo;

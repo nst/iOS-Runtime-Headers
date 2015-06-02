@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUWebViewRotationController : SURotationController {
-}
+@interface SUWebViewRotationController : SURotationController
 
 - (void)finishRotationFromInterfaceOrientation:(int)arg1;
 - (void)prepareToRotateToInterfaceOrientation:(int)arg1;

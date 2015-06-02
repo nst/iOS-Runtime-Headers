@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface TSUFakeProgress : TSUBasicProgress {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned int _currentStage;

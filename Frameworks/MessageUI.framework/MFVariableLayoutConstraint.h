@@ -2,34 +2,26 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface MFVariableLayoutConstraint : NSObject {
     float _cachedInterpolatedValue;
     BOOL _cachedInterpolatedValueIsValid;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _interpolationFormula;
-
+    id /* block */ _interpolationFormula;
     float _medianValue;
 }
 
-@property id interpolationFormula;
-@property float medianValue;
+@property (nonatomic) id /* block */ interpolationFormula;
+@property (nonatomic) float medianValue;
 
 + (int)_medianContentSizeIndex;
 + (id)medianContentSizeCategory;
 
 - (void)_didReceiveContentSizeCategoryNameDidChageNotification:(id)arg1;
 - (void)dealloc;
-- (id)initWithMedianConstraintValue:(float)arg1 interpolationFormula:(id)arg2;
+- (id)initWithMedianConstraintValue:(float)arg1 interpolationFormula:(id /* block */)arg2;
 - (float)interpolatedValue;
-- (id)interpolationFormula;
+- (id /* block */)interpolationFormula;
 - (float)medianValue;
-- (void)setInterpolationFormula:(id)arg1;
+- (void)setInterpolationFormula:(id /* block */)arg1;
 - (void)setMedianValue:(float)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString;
-
 @interface PEPServiceConfiguration : NSObject {
     NSString *_cacheFilePath;
     double _cachedFileLastModifyDate;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsNonAdaptive : _UIBackdropViewSettings {
-}
+@interface _UIBackdropViewSettingsNonAdaptive : _UIBackdropViewSettings
 
 - (void)setDefaultValues;
 

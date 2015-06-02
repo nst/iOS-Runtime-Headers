@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIImageViewElement;
-
 @interface SKUIVideoViewElement : SKUIViewElement {
     BOOL _enabled;
     long long _itemIdentifier;
@@ -11,10 +9,10 @@
     SKUIImageViewElement *_thumbnailImage;
 }
 
-@property(readonly) NSArray * assets;
-@property(readonly) long long itemIdentifier;
-@property(readonly) int playbackStyle;
-@property(readonly) SKUIImageViewElement * thumbnailImage;
+@property (nonatomic, readonly) NSArray *assets;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) int playbackStyle;
+@property (nonatomic, readonly) SKUIImageViewElement *thumbnailImage;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceDate : WKInterfaceObject {
-}
+@interface WKInterfaceDate : WKInterfaceObject
 
 - (void)setCalendar:(id)arg1;
 - (void)setTextColor:(id)arg1;

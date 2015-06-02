@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSHashTable, NSMutableArray, NSString;
-
 @interface StockUpdateManager : NSObject <StockUpdaterDelegate> {
     NSMutableArray *_activeUpdaters;
     NSMutableArray *_inactiveUpdaters;
@@ -11,18 +9,18 @@
     NSHashTable *_updateObservers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)_enumerateObserversRespondingToSelector:(SEL)arg1 usingBlock:(id)arg2;
-- (void)_kickoffUpdater:(id)arg1 forStocks:(id)arg2 comprehensive:(BOOL)arg3 forceUpdate:(BOOL)arg4 completion:(id)arg5;
+- (void)_enumerateObserversRespondingToSelector:(SEL)arg1 usingBlock:(id /* block */)arg2;
+- (void)_kickoffUpdater:(id)arg1 forStocks:(id)arg2 comprehensive:(BOOL)arg3 forceUpdate:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)_stocksDidReload;
-- (void)_updateStocksBasic:(id)arg1 forced:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)_updateStocksBasic:(id)arg1 forced:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)_updaterDidCancelOrFinish:(id)arg1;
 - (void)addUpdateObserver:(id)arg1;
 - (id)availableStockUpdater;
@@ -40,12 +38,12 @@
 - (void)stockUpdater:(id)arg1 didUpdateStocks:(id)arg2 isComprehensive:(BOOL)arg3;
 - (void)stocksDidUpdateRemotely;
 - (void)updateAllStocksBasic;
-- (void)updateAllStocksBasicWithCompletion:(id)arg1;
-- (void)updateStaleStocksBasicWithCompletion:(id)arg1;
-- (void)updateStockBasicWithCompletion:(id)arg1 withCompletion:(id)arg2;
+- (void)updateAllStocksBasicWithCompletion:(id /* block */)arg1;
+- (void)updateStaleStocksBasicWithCompletion:(id /* block */)arg1;
+- (void)updateStockBasicWithCompletion:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateStockComprehensive:(id)arg1;
-- (void)updateStockComprehensive:(id)arg1 forced:(BOOL)arg2 withCompletion:(id)arg3;
-- (void)updateStockComprehensive:(id)arg1 withCompletion:(id)arg2;
+- (void)updateStockComprehensive:(id)arg1 forced:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)updateStockComprehensive:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateStocksComprehensive:(id)arg1;
 
 @end

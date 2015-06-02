@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKScoreInternal, NSDate;
-
 @interface GKGameRecordInternal : GKGameInternal {
     short _achievementPoints;
     unsigned short _achievements;
@@ -16,15 +14,15 @@
     GKScoreInternal *_score;
 }
 
-@property short achievementPoints;
-@property unsigned short achievements;
-@property unsigned short friendRank;
-@property(retain) NSDate * lastPlayedDate;
-@property unsigned short maxFriendRank;
-@property unsigned int maxRank;
-@property(retain) NSDate * purchaseDate;
-@property unsigned int rank;
-@property(retain) GKScoreInternal * score;
+@property (nonatomic) short achievementPoints;
+@property (nonatomic) unsigned short achievements;
+@property (nonatomic) unsigned short friendRank;
+@property (nonatomic, retain) NSDate *lastPlayedDate;
+@property (nonatomic) unsigned short maxFriendRank;
+@property (nonatomic) unsigned int maxRank;
+@property (nonatomic, retain) NSDate *purchaseDate;
+@property (nonatomic) unsigned int rank;
+@property (nonatomic, retain) GKScoreInternal *score;
 
 + (id)gameRecordForGame:(id)arg1;
 + (id)secureCodedPropertyKeys;

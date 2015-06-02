@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray;
-
 @interface AWDWiFiMetricsManagerAwdlUsage : PBCodable <NSCopying> {
     unsigned int _appRxBytes;
     unsigned int _appTxBytes;
@@ -42,39 +40,39 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int appRxBytes;
-@property unsigned int appTxBytes;
-@property unsigned int cachedPeersNotAssociated;
-@property unsigned int cachedPeersOn24G;
-@property unsigned int cachedPeersOn5G;
-@property unsigned int cachedPeersOnDFS;
-@property unsigned int flags;
-@property BOOL hasAppRxBytes;
-@property BOOL hasAppTxBytes;
-@property BOOL hasCachedPeersNotAssociated;
-@property BOOL hasCachedPeersOn24G;
-@property BOOL hasCachedPeersOn5G;
-@property BOOL hasCachedPeersOnDFS;
-@property BOOL hasFlags;
-@property BOOL hasIfPacketFailures;
-@property BOOL hasIfRxBytes;
-@property BOOL hasIfTxBytes;
-@property BOOL hasNumOfCachedPeers;
-@property BOOL hasNumOfPeers;
-@property BOOL hasPeerInfraChannel;
-@property BOOL hasPeriodInMinutes;
-@property BOOL hasSelfInfraChannel;
-@property BOOL hasTimestamp;
-@property unsigned int ifPacketFailures;
-@property unsigned int ifRxBytes;
-@property unsigned int ifTxBytes;
-@property unsigned int numOfCachedPeers;
-@property unsigned int numOfPeers;
-@property unsigned int peerInfraChannel;
-@property unsigned int periodInMinutes;
-@property unsigned int selfInfraChannel;
-@property(retain) NSMutableArray * states;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int appRxBytes;
+@property (nonatomic) unsigned int appTxBytes;
+@property (nonatomic) unsigned int cachedPeersNotAssociated;
+@property (nonatomic) unsigned int cachedPeersOn24G;
+@property (nonatomic) unsigned int cachedPeersOn5G;
+@property (nonatomic) unsigned int cachedPeersOnDFS;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic) BOOL hasAppRxBytes;
+@property (nonatomic) BOOL hasAppTxBytes;
+@property (nonatomic) BOOL hasCachedPeersNotAssociated;
+@property (nonatomic) BOOL hasCachedPeersOn24G;
+@property (nonatomic) BOOL hasCachedPeersOn5G;
+@property (nonatomic) BOOL hasCachedPeersOnDFS;
+@property (nonatomic) BOOL hasFlags;
+@property (nonatomic) BOOL hasIfPacketFailures;
+@property (nonatomic) BOOL hasIfRxBytes;
+@property (nonatomic) BOOL hasIfTxBytes;
+@property (nonatomic) BOOL hasNumOfCachedPeers;
+@property (nonatomic) BOOL hasNumOfPeers;
+@property (nonatomic) BOOL hasPeerInfraChannel;
+@property (nonatomic) BOOL hasPeriodInMinutes;
+@property (nonatomic) BOOL hasSelfInfraChannel;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int ifPacketFailures;
+@property (nonatomic) unsigned int ifRxBytes;
+@property (nonatomic) unsigned int ifTxBytes;
+@property (nonatomic) unsigned int numOfCachedPeers;
+@property (nonatomic) unsigned int numOfPeers;
+@property (nonatomic) unsigned int peerInfraChannel;
+@property (nonatomic) unsigned int periodInMinutes;
+@property (nonatomic) unsigned int selfInfraChannel;
+@property (nonatomic, retain) NSMutableArray *states;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addStates:(id)arg1;
 - (unsigned int)appRxBytes;

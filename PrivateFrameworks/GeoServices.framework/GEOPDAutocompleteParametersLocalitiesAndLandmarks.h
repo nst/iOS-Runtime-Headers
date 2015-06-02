@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDViewportInfo, NSString;
-
 @interface GEOPDAutocompleteParametersLocalitiesAndLandmarks : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
@@ -13,12 +11,12 @@
     GEOPDViewportInfo *_viewportInfo;
 }
 
-@property BOOL hasMaxResults;
-@property(readonly) BOOL hasQuery;
-@property(readonly) BOOL hasViewportInfo;
-@property int maxResults;
-@property(retain) NSString * query;
-@property(retain) GEOPDViewportInfo * viewportInfo;
+@property (nonatomic) BOOL hasMaxResults;
+@property (nonatomic, readonly) BOOL hasQuery;
+@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) int maxResults;
+@property (nonatomic, retain) NSString *query;
+@property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertUIItemDetailsSummaryCell : UITableViewCell {
     float _detailLabelOriginX;
     NSArray *_detailViews;
 }
 
-@property float detailLabelOriginX;
-@property(retain) NSArray * detailViews;
+@property (nonatomic) float detailLabelOriginX;
+@property (nonatomic, retain) NSArray *detailViews;
 
 - (void).cxx_destruct;
 - (void)createViewWithDescriptors:(id)arg1;

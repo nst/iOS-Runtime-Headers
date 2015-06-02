@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber, NSString;
-
 @interface MCEmailAccountPayload : MCEmailAccountPayloadBase {
     NSString *_emailAccountDescription;
     NSString *_emailAccountName;
@@ -28,27 +26,27 @@
     NSNumber *_outgoingPasswordSameAsIncomingPasswordNum;
 }
 
-@property(retain,readonly) NSString * emailAccountDescription;
-@property(retain,readonly) NSString * emailAccountName;
-@property(retain,readonly) NSString * emailAccountType;
-@property(retain,readonly) NSString * emailAddress;
-@property(retain,readonly) NSString * incomingMailServerAuthentication;
-@property(retain,readonly) NSString * incomingMailServerHostname;
-@property(retain,readonly) NSString * incomingMailServerIMAPPathPrefix;
-@property(retain,readonly) NSNumber * incomingMailServerPortNumber;
-@property(readonly) BOOL incomingMailServerUseSSL;
-@property(readonly) NSNumber * incomingMailServerUseSSLNum;
-@property(retain,readonly) NSString * incomingMailServerUsername;
-@property(retain,readonly) NSString * incomingPassword;
-@property(retain,readonly) NSString * outgoingMailServerAuthentication;
-@property(retain,readonly) NSString * outgoingMailServerHostname;
-@property(retain,readonly) NSNumber * outgoingMailServerPortNumber;
-@property(readonly) BOOL outgoingMailServerUseSSL;
-@property(readonly) NSNumber * outgoingMailServerUseSSLNum;
-@property(retain,readonly) NSString * outgoingMailServerUsername;
-@property(retain,readonly) NSString * outgoingPassword;
-@property(readonly) BOOL outgoingPasswordSameAsIncomingPassword;
-@property(readonly) NSNumber * outgoingPasswordSameAsIncomingPasswordNum;
+@property (nonatomic, readonly, retain) NSString *emailAccountDescription;
+@property (nonatomic, readonly, retain) NSString *emailAccountName;
+@property (nonatomic, readonly, retain) NSString *emailAccountType;
+@property (nonatomic, readonly, retain) NSString *emailAddress;
+@property (nonatomic, readonly, retain) NSString *incomingMailServerAuthentication;
+@property (nonatomic, readonly, retain) NSString *incomingMailServerHostname;
+@property (nonatomic, readonly, retain) NSString *incomingMailServerIMAPPathPrefix;
+@property (nonatomic, readonly, retain) NSNumber *incomingMailServerPortNumber;
+@property (nonatomic, readonly) BOOL incomingMailServerUseSSL;
+@property (nonatomic, readonly) NSNumber *incomingMailServerUseSSLNum;
+@property (nonatomic, readonly, retain) NSString *incomingMailServerUsername;
+@property (nonatomic, readonly, retain) NSString *incomingPassword;
+@property (nonatomic, readonly, retain) NSString *outgoingMailServerAuthentication;
+@property (nonatomic, readonly, retain) NSString *outgoingMailServerHostname;
+@property (nonatomic, readonly, retain) NSNumber *outgoingMailServerPortNumber;
+@property (nonatomic, readonly) BOOL outgoingMailServerUseSSL;
+@property (nonatomic, readonly) NSNumber *outgoingMailServerUseSSLNum;
+@property (nonatomic, readonly, retain) NSString *outgoingMailServerUsername;
+@property (nonatomic, readonly, retain) NSString *outgoingPassword;
+@property (nonatomic, readonly) BOOL outgoingPasswordSameAsIncomingPassword;
+@property (nonatomic, readonly) NSNumber *outgoingPasswordSameAsIncomingPasswordNum;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

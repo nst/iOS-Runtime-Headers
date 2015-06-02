@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_data>;
-
 @interface TSUDispatchData : NSObject {
     BOOL _alwaysDefragmentData;
     NSObject<OS_dispatch_data> *_data;
@@ -14,13 +12,13 @@
     unsigned long _size;
 }
 
-@property BOOL alwaysDefragmentData;
-@property(readonly) NSObject<OS_dispatch_data> * data;
-@property(readonly) NSObject<OS_dispatch_data> * defragmentedData;
-@property(readonly) NSObject<OS_dispatch_data> * fragmentedData;
-@property(readonly) unsigned int fragmentsCount;
-@property unsigned int maxFragmentsCount;
-@property(readonly) unsigned long size;
+@property (nonatomic) BOOL alwaysDefragmentData;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *data;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *defragmentedData;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *fragmentedData;
+@property (nonatomic, readonly) unsigned int fragmentsCount;
+@property (nonatomic) unsigned int maxFragmentsCount;
+@property (nonatomic, readonly) unsigned long size;
 
 - (void).cxx_destruct;
 - (BOOL)alwaysDefragmentData;

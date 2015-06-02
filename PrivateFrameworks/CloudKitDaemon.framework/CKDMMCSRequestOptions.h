@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray, NSString;
-
 @interface CKDMMCSRequestOptions : NSObject {
     BOOL _allowsCellularAccess;
     BOOL _allowsPowerNapScheduling;
@@ -14,13 +12,13 @@
     NSArray *_zoneNames;
 }
 
-@property BOOL allowsCellularAccess;
-@property BOOL allowsPowerNapScheduling;
-@property(retain) NSString * applicationBundleID;
-@property(retain) NSString * applicationSecondaryID;
-@property(retain) NSString * containerID;
-@property BOOL usesBackgroundSession;
-@property(retain) NSArray * zoneNames;
+@property (nonatomic) BOOL allowsCellularAccess;
+@property (nonatomic) BOOL allowsPowerNapScheduling;
+@property (nonatomic, retain) NSString *applicationBundleID;
+@property (nonatomic, retain) NSString *applicationSecondaryID;
+@property (nonatomic, retain) NSString *containerID;
+@property (nonatomic) BOOL usesBackgroundSession;
+@property (nonatomic, retain) NSArray *zoneNames;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

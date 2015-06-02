@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@interface _PLManagedKeyword : PLManagedObject
 
-@interface _PLManagedKeyword : PLManagedObject {
-}
-
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *title;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

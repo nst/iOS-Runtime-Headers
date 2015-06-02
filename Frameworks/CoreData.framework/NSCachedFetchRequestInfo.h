@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray;
-
 @interface NSCachedFetchRequestInfo : NSObject {
     NSArray *_substIntarrayBindOrdering;
     NSArray *_substVarBindOrdering;
 }
 
-@property(retain) NSArray * substitutionBindIntarrayOrder;
-@property(retain) NSArray * substitutionBindVariableOrder;
+@property (nonatomic, retain) NSArray *substitutionBindIntarrayOrder;
+@property (nonatomic, retain) NSArray *substitutionBindVariableOrder;
 
 - (void)dealloc;
 - (void)setSubstitutionBindIntarrayOrder:(id)arg1;

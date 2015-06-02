@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString;
-
 @interface SKUIItemList : NSObject <NSCopying, SKUICacheCoding> {
     NSMutableArray *_items;
     NSString *_seeAllTitle;
@@ -12,16 +10,16 @@
     NSSet *_unavailableItemIdentifiers;
 }
 
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * items;
-@property(copy) NSString * seeAllTitle;
-@property(copy) NSString * seeAllURLString;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(copy) NSSet * unavailableItemIdentifiers;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSString *seeAllTitle;
+@property (nonatomic, copy) NSString *seeAllURLString;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSSet *unavailableItemIdentifiers;
 
 - (void).cxx_destruct;
 - (void)addItem:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity {
-}
+@interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity
 
 + (int)category;
 + (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
-
 @interface CKTranscriptJunkHeaderView : UIView {
     _UIBackdropView *_backdropView;
     UIView *_bottomSeparator;
@@ -15,14 +13,14 @@
     UIView *_titleSeparator;
 }
 
-@property(retain) _UIBackdropView * backdropView;
-@property(retain) UIView * bottomSeparator;
-@property(retain) UIView * buttonSeparator;
-@property(retain) UIButton * ignoreButton;
-@property(retain) UIButton * reportJunkButton;
-@property(retain) UIImageView * titleImageView;
-@property(retain) UILabel * titleLabel;
-@property(retain) UIView * titleSeparator;
+@property (nonatomic, retain) _UIBackdropView *backdropView;
+@property (nonatomic, retain) UIView *bottomSeparator;
+@property (nonatomic, retain) UIView *buttonSeparator;
+@property (nonatomic, retain) UIButton *ignoreButton;
+@property (nonatomic, retain) UIButton *reportJunkButton;
+@property (nonatomic, retain) UIImageView *titleImageView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UIView *titleSeparator;
 
 - (id)backdropView;
 - (id)bottomSeparator;

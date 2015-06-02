@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class TDPhotoshopLayer;
+@interface TDPhotoshopRenditionSpec : TDRenditionSpec
 
-@interface TDPhotoshopRenditionSpec : TDRenditionSpec {
-}
-
-@property(retain) TDPhotoshopLayer * photoshopLayer;
+@property (nonatomic, retain) TDPhotoshopLayer *photoshopLayer;
 
 - (int)_layerIndexInPSDImage:(id)arg1;
 - (void)_logError:(id)arg1;

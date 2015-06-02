@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression;
-
 @interface NSSetExpression : NSExpression {
     NSExpression *_left;
     NSExpression *_right;
 }
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -22,8 +22,11 @@
 - (id)initWithType:(unsigned int)arg1 leftExpression:(id)arg2 rightExpression:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)leftExpression;
-- (id)minimalFormInContext:(id)arg1;
 - (id)predicateFormat;
 - (id)rightExpression;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
+- (id)minimalFormInContext:(id)arg1;
 
 @end

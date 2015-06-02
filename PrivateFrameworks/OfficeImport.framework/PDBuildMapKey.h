@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, NSValue;
-
 @interface PDBuildMapKey : NSObject <NSCopying> {
     NSValue *mDrawableValue;
     NSString *mGroupId;

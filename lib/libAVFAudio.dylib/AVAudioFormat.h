@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioChannelLayout, NSDictionary;
-
 @interface AVAudioFormat : NSObject {
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
@@ -21,14 +19,14 @@
     void *_reserved;
 }
 
-@property(readonly) unsigned int channelCount;
-@property(readonly) AVAudioChannelLayout * channelLayout;
-@property(readonly) unsigned int commonFormat;
-@property(getter=isInterleaved,readonly) BOOL interleaved;
-@property(readonly) double sampleRate;
-@property(readonly) NSDictionary * settings;
-@property(getter=isStandard,readonly) BOOL standard;
-@property(readonly) const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }* streamDescription;
+@property (nonatomic, readonly) unsigned int channelCount;
+@property (nonatomic, readonly) AVAudioChannelLayout *channelLayout;
+@property (nonatomic, readonly) unsigned int commonFormat;
+@property (getter=isInterleaved, nonatomic, readonly) BOOL interleaved;
+@property (nonatomic, readonly) double sampleRate;
+@property (nonatomic, readonly) NSDictionary *settings;
+@property (getter=isStandard, nonatomic, readonly) BOOL standard;
+@property (nonatomic, readonly) const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*streamDescription;
 
 + (id)settingsFromASBD:(const struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 channelLayout:(id)arg2;
 

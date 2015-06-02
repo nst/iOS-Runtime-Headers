@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABSwellTextView, UIColor;
-
 @interface ABUITextView : UITextView {
     BOOL _disallowsSetContentOffset;
     UIColor *_highlightedTextColor;
@@ -23,12 +21,12 @@
     } _shadowOffset;
 }
 
-@property BOOL disallowsSetContentOffset;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIColor * highlightedTextColor;
-@property ABSwellTextView * parent;
-@property(retain) UIColor * shadowColor;
-@property struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) BOOL disallowsSetContentOffset;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIColor *highlightedTextColor;
+@property (nonatomic) ABSwellTextView *parent;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
 
 - (void)_beginPinningInputViews;
 - (void)_endPinningInputViews;

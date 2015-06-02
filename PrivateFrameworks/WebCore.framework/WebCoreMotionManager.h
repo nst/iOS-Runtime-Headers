@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CLLocationManager, CMMotionManager, NSTimer;
-
 @interface WebCoreMotionManager : NSObject {
     struct HashSet<WebCore::DeviceMotionClientIOS *, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
         struct HashTable<WebCore::DeviceMotionClientIOS *, WebCore::DeviceMotionClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
@@ -39,16 +32,16 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; bool x5; }*)arg1;
-- (void)addOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x_4_1_1; } x4; bool x5; }*)arg1;
+- (void)addMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; bool x5; }*)arg1;
+- (void)addOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} x3; struct RefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x_4_1_1; } x4; bool x5; }*)arg1;
 - (void)checkClientStatus;
 - (void)dealloc;
 - (BOOL)gyroAvailable;
 - (BOOL)headingAvailable;
 - (id)init;
 - (void)initializeOnMainThread;
-- (void)removeMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} *x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; bool x5; }*)arg1;
-- (void)removeOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} *x3; struct RefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x_4_1_1; } x4; bool x5; }*)arg1;
+- (void)removeMotionClient:(struct DeviceMotionClientIOS { int (**x1)(); id x2; struct DeviceMotionController {} x3; struct RefPtr<WebCore::DeviceMotionData> { struct DeviceMotionData {} *x_4_1_1; } x4; bool x5; }*)arg1;
+- (void)removeOrientationClient:(struct DeviceOrientationClientIOS { int (**x1)(); id x2; struct DeviceOrientationController {} x3; struct RefPtr<WebCore::DeviceOrientationData> { struct DeviceOrientationData {} *x_4_1_1; } x4; bool x5; }*)arg1;
 - (void)sendAccelerometerData:(id)arg1;
 - (void)sendMotionData:(id)arg1 withHeading:(id)arg2;
 - (void)update;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-@class NSString;
+@interface CTCellularPlanResponseCodeParser : NSObject <CTCellularPlanValidating>
 
-@interface CTCellularPlanResponseCodeParser : NSObject <CTCellularPlanValidating> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)validate:(id)arg1;
 + (BOOL)validate:(id)arg1 parseTo:(int*)arg2 responseText:(id*)arg3 error:(id*)arg4;

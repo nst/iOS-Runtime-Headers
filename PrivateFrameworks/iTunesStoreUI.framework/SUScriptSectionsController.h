@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptSection;
+@interface SUScriptSectionsController : SUScriptObject
 
-@interface SUScriptSectionsController : SUScriptObject {
-}
-
-@property(readonly) id sections;
-@property(retain) SUScriptSection * selectedSection;
+@property (readonly) id sections;
+@property (retain) SUScriptSection *selectedSection;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

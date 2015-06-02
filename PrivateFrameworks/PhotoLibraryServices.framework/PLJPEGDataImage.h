@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSData;
-
 @interface PLJPEGDataImage : UIImage {
     struct __CVBuffer { } *_pixelBuffer;
     NSData *_plData;

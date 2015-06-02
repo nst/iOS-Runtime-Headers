@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSBusyStatusValue : ICSPredefinedValue {
-}
+@interface ICSBusyStatusValue : ICSPredefinedValue
 
 + (id)busyStatusTypeFromCode:(int)arg1;
 + (id)busyStatusValueFromICSString:(id)arg1;

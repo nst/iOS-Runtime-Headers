@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class DAMailAccount;
-
 @interface DADeliveryAccount : DeliveryAccount {
     DAMailAccount *_DAMailAccount;
 }

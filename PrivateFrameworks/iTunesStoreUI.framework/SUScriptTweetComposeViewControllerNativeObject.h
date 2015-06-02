@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptTweetComposeViewControllerNativeObject : SUScriptViewControllerNativeObject {
-}
+@interface SUScriptTweetComposeViewControllerNativeObject : SUScriptViewControllerNativeObject
 
 - (void)destroyNativeObject;
 - (void)setupNativeObject;

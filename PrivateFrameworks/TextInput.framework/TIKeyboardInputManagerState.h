@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString, TICharacterSetDescription, TIKeyEventMap, TIKeyboardBehaviors, TIKeyboardCandidate;
-
 @interface TIKeyboardInputManagerState : NSObject <NSCopying, NSSecureCoding> {
     TIKeyboardCandidate *_autocorrectionRecordForInputString;
     unsigned int _initialCandidateBatchCount;
@@ -45,39 +43,39 @@
     NSString *_wordSeparator;
 }
 
-@property(retain) TIKeyboardCandidate * autocorrectionRecordForInputString;
-@property BOOL canHandleKeyHitTest;
-@property BOOL commitsAcceptedCandidate;
-@property BOOL ignoresDeadKeys;
-@property unsigned int initialCandidateBatchCount;
-@property unsigned int inputCount;
-@property unsigned int inputIndex;
-@property(copy) NSString * inputString;
-@property BOOL inputStringIsExemptFromChecker;
-@property(copy) TICharacterSetDescription * inputsPreventingAcceptSelectedCandidate;
-@property(copy) TICharacterSetDescription * inputsToReject;
-@property(retain) TIKeyEventMap * keyEventMap;
-@property(retain) TIKeyboardBehaviors * keyboardBehaviors;
-@property BOOL needsKeyHitTestResults;
-@property BOOL nextInputWouldStartSentence;
-@property(copy) NSString * replacementForDoubleSpace;
-@property(copy) NSString * searchStringForMarkedText;
-@property(copy) NSString * shadowTyping;
-@property(copy) TICharacterSetDescription * shortcutCompletions;
-@property BOOL shouldAddModifierSymbolsToWordCharacters;
-@property BOOL shouldExtendPriorWord;
-@property BOOL suppliesCompletions;
-@property BOOL supportsNumberKeySelection;
-@property BOOL supportsSetPhraseBoundary;
-@property BOOL suppressCompletionsForFieldEditor;
-@property BOOL suppressPlaceholderCandidate;
-@property(copy) TICharacterSetDescription * terminatorsDeletingAutospace;
-@property(copy) TICharacterSetDescription * terminatorsPreventingAutocorrection;
-@property BOOL usesAutoDeleteWord;
-@property BOOL usesAutocorrectionLists;
-@property BOOL usesCandidateSelection;
-@property(copy) TICharacterSetDescription * wordCharacters;
-@property(copy) NSString * wordSeparator;
+@property (nonatomic, retain) TIKeyboardCandidate *autocorrectionRecordForInputString;
+@property (nonatomic) BOOL canHandleKeyHitTest;
+@property (nonatomic) BOOL commitsAcceptedCandidate;
+@property (nonatomic) BOOL ignoresDeadKeys;
+@property (nonatomic) unsigned int initialCandidateBatchCount;
+@property (nonatomic) unsigned int inputCount;
+@property (nonatomic) unsigned int inputIndex;
+@property (nonatomic, copy) NSString *inputString;
+@property (nonatomic) BOOL inputStringIsExemptFromChecker;
+@property (nonatomic, copy) TICharacterSetDescription *inputsPreventingAcceptSelectedCandidate;
+@property (nonatomic, copy) TICharacterSetDescription *inputsToReject;
+@property (nonatomic, retain) TIKeyEventMap *keyEventMap;
+@property (nonatomic, retain) TIKeyboardBehaviors *keyboardBehaviors;
+@property (nonatomic) BOOL needsKeyHitTestResults;
+@property (nonatomic) BOOL nextInputWouldStartSentence;
+@property (nonatomic, copy) NSString *replacementForDoubleSpace;
+@property (nonatomic, copy) NSString *searchStringForMarkedText;
+@property (nonatomic, copy) NSString *shadowTyping;
+@property (nonatomic, copy) TICharacterSetDescription *shortcutCompletions;
+@property (nonatomic) BOOL shouldAddModifierSymbolsToWordCharacters;
+@property (nonatomic) BOOL shouldExtendPriorWord;
+@property (nonatomic) BOOL suppliesCompletions;
+@property (nonatomic) BOOL supportsNumberKeySelection;
+@property (nonatomic) BOOL supportsSetPhraseBoundary;
+@property (nonatomic) BOOL suppressCompletionsForFieldEditor;
+@property (nonatomic) BOOL suppressPlaceholderCandidate;
+@property (nonatomic, copy) TICharacterSetDescription *terminatorsDeletingAutospace;
+@property (nonatomic, copy) TICharacterSetDescription *terminatorsPreventingAutocorrection;
+@property (nonatomic) BOOL usesAutoDeleteWord;
+@property (nonatomic) BOOL usesAutocorrectionLists;
+@property (nonatomic) BOOL usesCandidateSelection;
+@property (nonatomic, copy) TICharacterSetDescription *wordCharacters;
+@property (nonatomic, copy) NSString *wordSeparator;
 
 + (BOOL)supportsSecureCoding;
 

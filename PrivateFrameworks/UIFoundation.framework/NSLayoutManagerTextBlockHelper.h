@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSTextBlock;
-
 @interface NSLayoutManagerTextBlockHelper : NSObject {
     NSTextBlock *_block;
     struct CGRect { 

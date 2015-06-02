@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSNumber;
-
 @interface FUChartBackgroundView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,9 +13,9 @@
     NSNumber *_minValue;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lineInsets;
-@property(retain) NSNumber * maxValue;
-@property(retain) NSNumber * minValue;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lineInsets;
+@property (nonatomic, retain) NSNumber *maxValue;
+@property (nonatomic, retain) NSNumber *minValue;
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

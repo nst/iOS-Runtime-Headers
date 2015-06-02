@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLManagedAsset, UIImageView;
-
 @interface PUBlinkRenderingTest : UIViewController {
     PLManagedAsset *_asset;
     UIImageView *_imageView;
 }
 
-@property(retain) PLManagedAsset * asset;
-@property(retain) UIImageView * imageView;
+@property (nonatomic, retain) PLManagedAsset *asset;
+@property (nonatomic, retain) UIImageView *imageView;
 
 - (void).cxx_destruct;
 - (id)asset;

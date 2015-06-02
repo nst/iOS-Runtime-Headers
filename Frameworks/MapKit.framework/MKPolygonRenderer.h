@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKPolygon;
+@interface MKPolygonRenderer : MKOverlayPathRenderer
 
-@interface MKPolygonRenderer : MKOverlayPathRenderer {
-}
-
-@property(readonly) MKPolygon * polygon;
+@property (nonatomic, readonly) MKPolygon *polygon;
 
 - (void)createPath;
 - (void)fillPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;

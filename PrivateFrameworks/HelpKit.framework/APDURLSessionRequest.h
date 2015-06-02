@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSMutableArray, NSURLSessionTask;
-
 @interface APDURLSessionRequest : NSObject {
     NSMutableArray *_completionHandlers;
     NSURLSessionTask *_sessionTask;
 }
 
-@property(retain) NSMutableArray * completionHandlers;
-@property(retain) NSURLSessionTask * sessionTask;
+@property (nonatomic, retain) NSMutableArray *completionHandlers;
+@property (nonatomic, retain) NSURLSessionTask *sessionTask;
 
 + (id)urlSessionRequestWithSessionTask:(id)arg1 completionHandler:(id)arg2;
 

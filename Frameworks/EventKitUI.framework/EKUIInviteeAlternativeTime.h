@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSDate;
-
 @interface EKUIInviteeAlternativeTime : NSObject {
     NSArray *_conflictedParticipants;
     NSDate *_endDate;
     NSDate *_startDate;
 }
 
-@property(retain) NSArray * conflictedParticipants;
-@property(retain) NSDate * endDate;
-@property(retain) NSDate * startDate;
+@property (nonatomic, retain) NSArray *conflictedParticipants;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, retain) NSDate *startDate;
 
 - (void).cxx_destruct;
 - (id)conflictedParticipants;

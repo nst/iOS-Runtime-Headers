@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoCompositionLayerInstructionInternal;
-
 @interface AVVideoCompositionLayerInstruction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     AVVideoCompositionLayerInstructionInternal *_layerInstruction;
 }
 
-@property(readonly) int trackID;
+@property (nonatomic, readonly) int trackID;
 
 + (void)initialize;
 + (BOOL)supportsSecureCoding;

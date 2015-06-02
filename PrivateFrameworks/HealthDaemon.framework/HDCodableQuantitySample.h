@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSample;
-
 @interface HDCodableQuantitySample : PBCodable <NSCopying> {
     struct { 
         unsigned int valueInCanonicalUnit : 1; 
@@ -12,10 +10,10 @@
     double _valueInCanonicalUnit;
 }
 
-@property(readonly) BOOL hasSample;
-@property BOOL hasValueInCanonicalUnit;
-@property(retain) HDCodableSample * sample;
-@property double valueInCanonicalUnit;
+@property (nonatomic, readonly) BOOL hasSample;
+@property (nonatomic) BOOL hasValueInCanonicalUnit;
+@property (nonatomic, retain) HDCodableSample *sample;
+@property (nonatomic) double valueInCanonicalUnit;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

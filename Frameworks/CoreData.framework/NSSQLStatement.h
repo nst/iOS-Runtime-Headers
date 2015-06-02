@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSCachedFetchRequestInfo, NSMutableArray, NSSQLEntity, NSString;
-
 @interface NSSQLStatement : NSObject {
     NSMutableArray *_bindIntarrays;
     NSMutableArray *_bindVariables;
@@ -14,7 +12,7 @@
     NSString *_sqlString;
 }
 
-@property(retain) NSCachedFetchRequestInfo * cachedStatementInfo;
+@property (nonatomic, retain) NSCachedFetchRequestInfo *cachedStatementInfo;
 
 - (unsigned int)addBindIntarray:(id)arg1;
 - (unsigned int)addBindVariable:(id)arg1;

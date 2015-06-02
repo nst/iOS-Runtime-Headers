@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMutableArray;
-
 @interface BRFieldXattrBlob : PBCodable <NSCopying> {
     NSMutableArray *_xattrs;
 }
 
-@property(retain) NSMutableArray * xattrs;
+@property (nonatomic, retain) NSMutableArray *xattrs;
 
 + (BOOL)loadXattrsFromFD:(int)arg1 structuralBlob:(id*)arg2 contentBlob:(id*)arg3 withMaximumSize:(unsigned int)arg4 error:(id*)arg5;
 + (BOOL)removeXattrsOnFD:(int)arg1 includingContentRelated:(BOOL)arg2 error:(id*)arg3;

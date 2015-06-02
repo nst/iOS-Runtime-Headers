@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OITSUDurationFormatter : NSFormatter {
     int mCompactStyleStartUnit;
     NSString *mFormat;
 }
 
-@property int compactStyleStartUnit;
-@property(copy) NSString * format;
+@property (nonatomic) int compactStyleStartUnit;
+@property (nonatomic, copy) NSString *format;
 
 - (int)compactStyleStartUnit;
 - (void)dealloc;

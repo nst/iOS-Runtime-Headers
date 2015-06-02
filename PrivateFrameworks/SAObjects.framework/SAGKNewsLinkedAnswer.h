@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAGKNewsLinkedAnswer : SAGKLinkedAnswer
 
-@interface SAGKNewsLinkedAnswer : SAGKLinkedAnswer {
-}
-
-@property(copy) NSDate * publicationDate;
-@property(copy) NSString * source;
+@property (nonatomic, copy) NSDate *publicationDate;
+@property (nonatomic, copy) NSString *source;
 
 + (id)newsLinkedAnswer;
 + (id)newsLinkedAnswerWithDictionary:(id)arg1 context:(id)arg2;

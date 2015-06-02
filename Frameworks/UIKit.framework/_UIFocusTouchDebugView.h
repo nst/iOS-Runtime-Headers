@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIFocusTouchDebugView : UIView {
     UIView *_boundaryView;
     UIView *_touchView;

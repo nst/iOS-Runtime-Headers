@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSCondition;
-
 @interface AVCallbackHandler : NSObject {
     SEL _action;
     NSCondition *_condition;

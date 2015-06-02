@@ -2,26 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSCountedSet;
-
 @interface NSFilePresenterRelinquishment : NSObject {
     NSCountedSet *_blockingAccessClaimIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reacquirer;
-
+    id /* block */ _reacquirer;
 }
 
 - (BOOL)addBlockingAccessClaimID:(id)arg1;
 - (void)dealloc;
 - (void)removeAllBlockingAccessClaimIDs;
 - (void)removeBlockingAccessClaimID:(id)arg1;
-- (void)removeBlockingAccessClaimID:(id)arg1 thenContinue:(id)arg2;
-- (void)setReacquirer:(id)arg1;
+- (void)removeBlockingAccessClaimID:(id)arg1 thenContinue:(id /* block */)arg2;
+- (void)setReacquirer:(id /* block */)arg1;
 
 @end

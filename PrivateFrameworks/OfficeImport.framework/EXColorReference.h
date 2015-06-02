@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXColorReference : NSObject {
-}
+@interface EXColorReference : NSObject
 
 + (id)autoColorWithCallerClass:(Class)arg1 resources:(id)arg2;
 + (unsigned int)colorIndexForColor:(id)arg1 state:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFWallpaperDefaults : NSObject {
-}
+@interface SBFWallpaperDefaults : NSObject
 
 + (id)defaults;
 

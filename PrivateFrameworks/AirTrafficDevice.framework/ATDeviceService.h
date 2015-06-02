@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class ATDevicePairedSyncManager, ATDeviceSettings, ATDeviceSyncManager, ATEnvironmentMonitor, ATIDSService, ATLegacyDeviceSyncManager, ATLockdownListener, ATNetServiceListener, ATServiceProxyListener, ATStatusObserverListener, ATWorkspaceObserver, ATXPCListener, MSVXPCTransaction, NSMapTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATDeviceService : ATConcreteService <ATEnvironmentMonitorObserver, ATIDSServiceListener, ATMessageLinkListenerDelegate, ATSyncClientDelegate, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol> {
     int _atcRunningToken;
     ATDeviceSyncManager *_deviceSyncManager;
@@ -24,10 +22,10 @@
     MSVXPCTransaction *_xpcTransaction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -46,28 +44,28 @@
 - (void)applicationInstallsDidPrioritize:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
-- (void)cancelSyncWithCompletion:(id)arg1;
-- (void)clearSyncDataWithCompletion:(id)arg1;
-- (void)dataMigrationFinishedWithCompletion:(id)arg1;
+- (void)cancelSyncWithCompletion:(id /* block */)arg1;
+- (void)clearSyncDataWithCompletion:(id /* block */)arg1;
+- (void)dataMigrationFinishedWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;
-- (void)getAssetMetricswithCompletion:(id)arg1;
-- (void)getSyncStateWithCompletion:(id)arg1;
+- (void)getAssetMetricswithCompletion:(id /* block */)arg1;
+- (void)getSyncStateWithCompletion:(id /* block */)arg1;
 - (void)idsServiceDevicesDidChange:(id)arg1;
 - (id)init;
-- (void)keepATCAlive:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)keepATCAlive:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;
-- (void)lowBatteryNotificationWithCompletion:(id)arg1;
+- (void)lowBatteryNotificationWithCompletion:(id /* block */)arg1;
 - (void)messageLinkWasClosed:(id)arg1;
-- (void)openDeviceMessageLinkWithPriority:(int)arg1 withCompletion:(id)arg2;
-- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id)arg3;
+- (void)openDeviceMessageLinkWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)proxyListenerForMessageLink:(id)arg1;
-- (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id)arg3;
-- (void)registerForStatusOfDataclasses:(id)arg1 enabled:(id)arg2 withCompletion:(id)arg3;
+- (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)registerForStatusOfDataclasses:(id)arg1 enabled:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)removeMessageLink:(id)arg1;
-- (void)requestSyncForLibrary:(id)arg1 withCompletion:(id)arg2;
-- (void)requestSyncForPairedDeviceWithPriority:(int)arg1 withCompletion:(id)arg2;
+- (void)requestSyncForLibrary:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)requestSyncForPairedDeviceWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)run;
 - (BOOL)stop;
 - (void)syncClient:(id)arg1 hasChangesWithPriority:(int)arg2;

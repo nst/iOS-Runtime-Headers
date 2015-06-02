@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface _MKRightImageButton : UIControl {
     UIImageView *_imageView;
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * image;
-@property(readonly) UIImageView * imageView;
-@property(retain) NSString * title;
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)image;

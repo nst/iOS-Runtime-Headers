@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumListViewControllerPhoneSpec : PUAlbumListViewControllerSpec {
-}
+@interface PUAlbumListViewControllerPhoneSpec : PUAlbumListViewControllerSpec
 
 - (id)_nameOfAddSharedAlbumPlaceholderImage;
 - (id)_nameOfEmptyAlbumPlaceholderImage;

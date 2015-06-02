@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceFormat_FigRecorder, AVWeakReference, NSArray, NSDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface AVCaptureFigVideoDevice_FigRecorder : AVCaptureDevice_FigRecorder <MCProfileConnectionObserver> {
     AVCaptureDeviceFormat_FigRecorder *_activeFormat;
     struct { 
@@ -97,10 +95,10 @@
     float _whiteBalanceTemperature;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_cameraAccessIsEnabled;
 + (id)_devices;
@@ -245,7 +243,7 @@
 - (void)setExposureGain:(float)arg1;
 - (void)setExposureMode:(int)arg1;
 - (void)setExposurePointOfInterest:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setExposureTargetBias:(float)arg1 completionHandler:(id)arg2;
+- (void)setExposureTargetBias:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)setFaceDetectionDebugMetadataReportingEnabled:(BOOL)arg1;
 - (void)setFaceDetectionDrivenImageProcessingEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;

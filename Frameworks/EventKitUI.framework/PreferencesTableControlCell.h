@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIControl;
+@interface PreferencesTableControlCell : EKUIConstrainedFontsTableViewCell
 
-@interface PreferencesTableControlCell : EKUIConstrainedFontsTableViewCell {
-}
-
-@property(retain) UIControl * control;
+@property (nonatomic, retain) UIControl *control;
 
 - (id)control;
 - (void)setControl:(id)arg1;

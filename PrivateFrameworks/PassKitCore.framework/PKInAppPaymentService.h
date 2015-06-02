@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKXPCService;
-
 @interface PKInAppPaymentService : NSObject {
     PKXPCService *_remoteService;
 }
 
 - (id)_remoteObjectProxy;
-- (id)_remoteObjectProxyWithErrorHandler:(id)arg1;
-- (id)_remoteObjectProxyWithFailureHandler:(id)arg1;
+- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)presentInAppPaymentInterfaceWithPaymentRequest:(id)arg1 forHostIdentifier:(id)arg2 orientation:(id)arg3 completion:(id)arg4;
-- (void)registerPaymentListenerEndpoint:(id)arg1 forHostIdentifier:(id)arg2 completion:(id)arg3;
-- (void)retrievePaymentListenerEndpointForHostIdentifier:(id)arg1 completion:(id)arg2;
+- (void)presentInAppPaymentInterfaceWithPaymentRequest:(id)arg1 forHostIdentifier:(id)arg2 orientation:(id)arg3 completion:(id /* block */)arg4;
+- (void)registerPaymentListenerEndpoint:(id)arg1 forHostIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)retrievePaymentListenerEndpointForHostIdentifier:(id)arg1 completion:(id /* block */)arg2;
 
 @end

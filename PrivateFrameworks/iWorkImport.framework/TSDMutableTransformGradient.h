@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString, TSUColor;
+@interface TSDMutableTransformGradient : TSDTransformGradient <TSDGradientStopContainer>
 
-@interface TSDMutableTransformGradient : TSDTransformGradient <TSDGradientStopContainer> {
-}
-
-@property struct CGSize { float x1; float x2; } baseNaturalSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct CGPoint { float x1; float x2; } endPoint;
-@property(retain) TSUColor * firstColor;
-@property(retain) NSArray * gradientStops;
-@property unsigned int gradientType;
-@property(readonly) unsigned int hash;
-@property BOOL isAdvancedGradient;
-@property(retain) TSUColor * lastColor;
-@property float opacity;
-@property struct CGPoint { float x1; float x2; } startPoint;
-@property(readonly) Class superclass;
+@property (nonatomic) struct CGSize { float x1; float x2; } baseNaturalSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct CGPoint { float x1; float x2; } endPoint;
+@property (nonatomic, retain) TSUColor *firstColor;
+@property (nonatomic, retain) NSArray *gradientStops;
+@property (nonatomic) unsigned int gradientType;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAdvancedGradient;
+@property (nonatomic, retain) TSUColor *lastColor;
+@property (nonatomic) float opacity;
+@property (nonatomic) struct CGPoint { float x1; float x2; } startPoint;
+@property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)evenlyDistributeStops;

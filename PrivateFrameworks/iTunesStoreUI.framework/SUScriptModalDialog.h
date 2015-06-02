@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISDialog, UIAlertView;
-
 @interface SUScriptModalDialog : NSObject {
     UIAlertView *_alert;
     int _buttonIndex;

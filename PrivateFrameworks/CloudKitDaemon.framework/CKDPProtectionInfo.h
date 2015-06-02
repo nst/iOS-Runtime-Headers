@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDPProtectionInfo : PBCodable <NSCopying> {
     NSData *_protectionInfo;
     NSString *_protectionInfoTag;
 }
 
-@property(readonly) BOOL hasProtectionInfo;
-@property(readonly) BOOL hasProtectionInfoTag;
-@property(retain) NSData * protectionInfo;
-@property(retain) NSString * protectionInfoTag;
+@property (nonatomic, readonly) BOOL hasProtectionInfo;
+@property (nonatomic, readonly) BOOL hasProtectionInfoTag;
+@property (nonatomic, retain) NSData *protectionInfo;
+@property (nonatomic, retain) NSString *protectionInfoTag;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

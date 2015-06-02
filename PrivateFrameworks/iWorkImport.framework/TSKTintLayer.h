@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer;
-
 @interface TSKTintLayer : CAReplicatorLayer {
     CALayer *_contentsLayer;
 }
 
-@property(retain) CALayer * contentsLayer;
-@property struct CGColor { }* tintColor;
+@property (nonatomic, retain) CALayer *contentsLayer;
+@property struct CGColor { }*tintColor;
 
 - (id)contents;
 - (id)contentsLayer;

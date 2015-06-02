@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SASTTemplateAction>, NSString, SAUIDecoratedText, SAUILocalImageResource;
+@interface SASTButtonItem : AceObject <SASTActionableTemplateItem>
 
-@interface SASTButtonItem : AceObject <SASTActionableTemplateItem> {
-}
-
-@property(retain) <SASTTemplateAction> * action;
-@property BOOL centered;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) SAUIDecoratedText * decoratedLabel;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUILocalImageResource * localImageResource;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) <SASTTemplateAction> *action;
+@property (nonatomic) BOOL centered;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedLabel;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUILocalImageResource *localImageResource;
+@property (readonly) Class superclass;
 
 + (id)buttonItem;
 + (id)buttonItemWithDictionary:(id)arg1 context:(id)arg2;

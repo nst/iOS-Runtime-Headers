@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, SKUIItemOfferButton;
-
 @interface RUPurchaseAlbumView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,10 +13,10 @@
     int _purchaseAlbumViewStyle;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
-@property(readonly) SKUIItemOfferButton * itemOfferButton;
-@property int purchaseAlbumViewStyle;
-@property(copy) NSString * title;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property (nonatomic, readonly) SKUIItemOfferButton *itemOfferButton;
+@property (nonatomic) int purchaseAlbumViewStyle;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_updateForStyle:(int)arg1 animated:(BOOL)arg2;

@@ -8,9 +8,9 @@
     unsigned int _vertexFormat;
 }
 
-@property unsigned int bufferIndex;
-@property unsigned int format;
-@property unsigned int offset;
+@property (nonatomic) unsigned int bufferIndex;
+@property (nonatomic) unsigned int format;
+@property (nonatomic) unsigned int offset;
 
 - (unsigned int)bufferIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

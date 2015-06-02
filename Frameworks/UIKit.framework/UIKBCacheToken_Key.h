@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKBCacheToken_Key : UIKBCacheToken {
     NSString *_cacheDisplayString;
     int _clipCorners;
@@ -37,7 +35,7 @@
 + (id)tokenForKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 
 - (id)_initWithKey:(id)arg1 style:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg2 displayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-- (id)_stringWithAdditionalValues:(id)arg1;
+- (id)_stringWithAdditionalValues:(id /* block */)arg1;
 - (void)dealloc;
 - (int)displayHint;
 - (BOOL)hasKey;

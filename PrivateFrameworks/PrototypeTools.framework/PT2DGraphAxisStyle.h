@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, UIColor;
-
 @interface PT2DGraphAxisStyle : NSObject {
     UIColor *_color;
     UIColor *_gridlineColor;
@@ -17,16 +15,16 @@
     UIColor *_titleColor;
 }
 
-@property(retain) UIColor * color;
-@property(retain) UIColor * gridlineColor;
-@property unsigned int gridlineCount;
-@property float hashmarkInterval;
-@property float lineWidth;
-@property BOOL showsGridlines;
-@property BOOL showsHashmarks;
-@property BOOL showsTitle;
-@property NSString * title;
-@property(retain) UIColor * titleColor;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, retain) UIColor *gridlineColor;
+@property (nonatomic) unsigned int gridlineCount;
+@property (nonatomic) float hashmarkInterval;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) BOOL showsGridlines;
+@property (nonatomic) BOOL showsHashmarks;
+@property (nonatomic) BOOL showsTitle;
+@property (nonatomic) NSString *title;
+@property (nonatomic, retain) UIColor *titleColor;
 
 - (void).cxx_destruct;
 - (id)color;

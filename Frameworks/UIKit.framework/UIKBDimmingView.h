@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBTree;
-
 @interface UIKBDimmingView : UIView {
     UIKBTree *_keyplane;
 }

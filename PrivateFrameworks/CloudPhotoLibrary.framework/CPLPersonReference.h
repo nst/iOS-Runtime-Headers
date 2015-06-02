@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSDictionary, NSString;
-
 @interface CPLPersonReference : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary *_extraProperties;
     NSString *_personIdentifier;
 }
 
-@property(copy) NSDictionary * extraProperties;
-@property(copy) NSString * personIdentifier;
+@property (nonatomic, copy) NSDictionary *extraProperties;
+@property (nonatomic, copy) NSString *personIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

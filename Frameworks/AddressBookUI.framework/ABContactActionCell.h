@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardActionGroupItem, ABContactAction, ABTransportButton, UILabel;
-
 @interface ABContactActionCell : ABLabeledCell {
     UILabel *_label;
     ABTransportButton *_transportIcon;
 }
 
-@property(readonly) ABContactAction * action;
-@property(readonly) ABCardActionGroupItem * actionGroupItem;
-@property(retain) UILabel * label;
-@property(retain) ABTransportButton * transportIcon;
+@property (nonatomic, readonly) ABContactAction *action;
+@property (nonatomic, readonly) ABCardActionGroupItem *actionGroupItem;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) ABTransportButton *transportIcon;
 
 - (id)action;
 - (id)actionGroupItem;

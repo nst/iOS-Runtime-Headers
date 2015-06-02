@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFContactAddress;
-
 @interface AFCall : AFSiriModelObject {
     AFContactAddress *_initiatorAddress;
     AFContactAddress *_recipientAddress;

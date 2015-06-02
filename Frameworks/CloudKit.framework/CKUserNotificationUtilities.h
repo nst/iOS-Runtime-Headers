@@ -2,9 +2,8 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKUserNotificationUtilities : NSObject {
-}
+@interface CKUserNotificationUtilities : NSObject
 
-+ (void)showUserNotification:(struct __CFUserNotification { }*)arg1 withCompletionBlock:(id)arg2;
++ (void)showUserNotification:(struct __CFUserNotification { }*)arg1 withCompletionBlock:(id /* block */)arg2;
 
 @end

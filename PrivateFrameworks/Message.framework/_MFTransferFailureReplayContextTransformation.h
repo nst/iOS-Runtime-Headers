@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFOfflineTransferFailureSnapshot, NSString;
-
 @interface _MFTransferFailureReplayContextTransformation : NSObject <MFOfflineCacheReplayContextTransformation> {
     MFOfflineTransferFailureSnapshot *_snapshot;
     NSString *_temporaryID;

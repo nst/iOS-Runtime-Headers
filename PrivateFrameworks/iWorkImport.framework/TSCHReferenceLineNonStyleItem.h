@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSUUID, TSCHReferenceLineNonStyle;
-
 @interface TSCHReferenceLineNonStyleItem : NSObject {
     TSCHReferenceLineNonStyle *mNonStyle;
     NSUUID *mUUID;
 }
 
-@property(retain) TSCHReferenceLineNonStyle * nonStyle;
-@property(readonly) NSUUID * uuid;
+@property (nonatomic, retain) TSCHReferenceLineNonStyle *nonStyle;
+@property (nonatomic, readonly) NSUUID *uuid;
 
 - (void)dealloc;
 - (id)description;

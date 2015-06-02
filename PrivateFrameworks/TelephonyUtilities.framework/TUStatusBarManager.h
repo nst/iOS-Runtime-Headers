@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class <TUStatusBarManagerDelegate>, NSString, NSTimer, TUCall;
-
 @interface TUStatusBarManager : NSObject {
     NSTimer *_callDurationUpdateTimer;
     NSString *_currentStatusBarString;
@@ -11,11 +9,11 @@
     BOOL _inCallServiceActive;
 }
 
-@property(retain) NSTimer * callDurationUpdateTimer;
-@property(retain) NSString * currentStatusBarString;
-@property <TUStatusBarManagerDelegate> * delegate;
-@property(retain,readonly) TUCall * displayedCall;
-@property(getter=isInCallServiceActive) BOOL inCallServiceActive;
+@property (nonatomic, retain) NSTimer *callDurationUpdateTimer;
+@property (nonatomic, retain) NSString *currentStatusBarString;
+@property (nonatomic) <TUStatusBarManagerDelegate> *delegate;
+@property (nonatomic, readonly, retain) TUCall *displayedCall;
+@property (getter=isInCallServiceActive, nonatomic) BOOL inCallServiceActive;
 
 - (id)callDurationUpdateTimer;
 - (void)clearStatusBarInCallState;

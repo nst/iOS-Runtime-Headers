@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSMutableArray, NSString;
-
 @interface CalLogConfiguration : NSObject {
     NSString *_name;
     NSMutableArray *_nodes;
 }
 
-@property(retain) NSString * name;
-@property(retain) NSMutableArray * nodes;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSMutableArray *nodes;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUTF16BEEncodingDetector : NSUTF16BaseEncodingDetector {
-}
+@interface NSUTF16BEEncodingDetector : NSUTF16BaseEncodingDetector
 
 - (id)init;
 - (unsigned long)recognizeString:(const char *)arg1 withDataLength:(unsigned long)arg2 withReplacement:(const char *)arg3 withReplacementLength:(unsigned long)arg4 inNewData:(char *)arg5 maxBufferLength:(unsigned long)arg6 actualBufferLength:(unsigned int*)arg7;

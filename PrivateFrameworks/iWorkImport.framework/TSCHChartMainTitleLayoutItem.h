@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartMainTitleLayoutItem : TSCHChartTitleLayoutItem {
-}
+@interface TSCHChartMainTitleLayoutItem : TSCHChartTitleLayoutItem
 
 - (BOOL)isTitleOn;
 - (unsigned int)titleParagraphStyleIndex;

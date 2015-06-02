@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAsset, AVWeakKeyValueObserverProxy, AVWeakReference, NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface AVAssetReaderInternal : NSObject {
     AVWeakKeyValueObserverProxy *KVOProxy;
     AVAsset *asset;

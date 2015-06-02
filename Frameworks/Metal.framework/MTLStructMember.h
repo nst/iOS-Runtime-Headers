@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSString;
-
 @interface MTLStructMember : NSObject {
-    unsigned int _dataType : 16;
+    unsigned int _dataType;
     id _details;
     NSString *_name;
-    unsigned int _offset : 32;
+    unsigned int _offset;
 }
 
-@property(readonly) unsigned int dataType;
-@property(readonly) NSString * name;
-@property(readonly) unsigned int offset;
+@property (readonly) unsigned int dataType;
+@property (readonly) NSString *name;
+@property (readonly) unsigned int offset;
 
 - (id)arrayType;
 - (unsigned int)dataType;

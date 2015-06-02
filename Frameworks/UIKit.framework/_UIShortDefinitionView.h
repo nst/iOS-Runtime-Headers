@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextView, _UIDefinitionValue;
-
 @interface _UIShortDefinitionView : UIView {
     UITextView *_definitionTextView;
     _UIDefinitionValue *_definitionValue;
 }
 
-@property(retain) _UIDefinitionValue * definitionValue;
+@property (nonatomic, retain) _UIDefinitionValue *definitionValue;
 
 - (void)dealloc;
 - (id)definitionValue;

@@ -11,12 +11,12 @@
     unsigned int mTextStyleIndex;
 }
 
-@property(readonly) int fillCategory;
-@property(readonly) unsigned int fillIndex;
-@property(readonly) unsigned char reflectionOpacity;
-@property(readonly) unsigned int shadowIndex;
-@property(readonly) unsigned int strokeIndex;
-@property(readonly) unsigned int textStyleIndex;
+@property (nonatomic, readonly) int fillCategory;
+@property (nonatomic, readonly) unsigned int fillIndex;
+@property (nonatomic, readonly) unsigned char reflectionOpacity;
+@property (nonatomic, readonly) unsigned int shadowIndex;
+@property (nonatomic, readonly) unsigned int strokeIndex;
+@property (nonatomic, readonly) unsigned int textStyleIndex;
 
 - (int)fillCategory;
 - (unsigned int)fillIndex;

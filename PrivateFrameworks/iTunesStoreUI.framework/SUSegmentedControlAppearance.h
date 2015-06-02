@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableDictionary, SUControlAppearance, UIImage;
-
 @interface SUSegmentedControlAppearance : NSObject <NSCopying> {
     SUControlAppearance *_backgroundImages;
     NSMutableDictionary *_dividerImages;
@@ -11,7 +9,7 @@
     NSMutableDictionary *_titleTextAttributes;
 }
 
-@property(retain) UIImage * optionsBackgroundImage;
+@property (nonatomic, retain) UIImage *optionsBackgroundImage;
 
 + (id)defaultBarAppearance;
 + (id)defaultOptionsAppearanceForTintStyle:(int)arg1;

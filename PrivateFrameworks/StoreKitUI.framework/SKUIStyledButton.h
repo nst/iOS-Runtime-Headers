@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIItemOfferButtonDelegate>, NSString, SKUIAttributedStringLayout, SKUIAttributedStringView, SKUIItemOfferButton, UIImageView;
-
 @interface SKUIStyledButton : UIControl <SKUIViewElementOfferButton> {
     SKUIAttributedStringView *_attributedStringView;
     int _buttonType;
@@ -14,17 +12,17 @@
     BOOL _usesTintColor;
 }
 
-@property(readonly) float baselineOffset;
-@property int buttonType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) float firstBaselineOffset;
-@property(readonly) unsigned int hash;
-@property <SKUIItemOfferButtonDelegate> * itemOfferDelegate;
-@property(readonly) Class superclass;
-@property(retain) SKUIAttributedStringLayout * titleLayout;
-@property BOOL usesTintColor;
-@property(getter=isUsingItemOfferAppearance,readonly) BOOL usingItemOfferAppearance;
+@property (nonatomic, readonly) float baselineOffset;
+@property (nonatomic) int buttonType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) float firstBaselineOffset;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <SKUIItemOfferButtonDelegate> *itemOfferDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SKUIAttributedStringLayout *titleLayout;
+@property (nonatomic) BOOL usesTintColor;
+@property (getter=isUsingItemOfferAppearance, nonatomic, readonly) BOOL usingItemOfferAppearance;
 
 + (struct CGSize { float x1; float x2; })sizeForTextSize:(struct CGSize { float x1; float x2; })arg1 buttonType:(int)arg2;
 + (BOOL)usesItemOfferAppearanceForButtonType:(int)arg1 itemState:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDHomeKitEvent : PBCodable <NSCopying> {
     unsigned int _eventType;
     NSString *_guid;
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int eventType;
-@property(retain) NSString * guid;
-@property BOOL hasEventType;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int eventType;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasEventType;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

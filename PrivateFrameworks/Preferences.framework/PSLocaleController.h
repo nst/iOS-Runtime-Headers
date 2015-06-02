@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString, PSLocaleSelector, PSRegion, UISearchBar, UITableView, UIView;
-
 @interface PSLocaleController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIView *_contentView;
     PSRegion *_currentRegion;
@@ -17,15 +15,15 @@
     UITableView *_tableView;
 }
 
-@property(retain) PSRegion * currentRegion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * filteredListContent;
-@property(readonly) unsigned int hash;
-@property(retain) PSLocaleSelector * localeSelector;
-@property(retain) NSArray * regionsList;
-@property(retain) NSArray * sections;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PSRegion *currentRegion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *filteredListContent;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSLocaleSelector *localeSelector;
+@property (nonatomic, retain) NSArray *regionsList;
+@property (nonatomic, retain) NSArray *sections;
+@property (readonly) Class superclass;
 
 - (id)_mainContentView;
 - (id)currentRegion;

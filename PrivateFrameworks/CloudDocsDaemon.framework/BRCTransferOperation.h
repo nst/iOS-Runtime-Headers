@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSObject<OS_dispatch_group>, NSString;
-
 @interface BRCTransferOperation : _BRCOperation <BRCOperationSubclass> {
     unsigned long long _doneSize;
     NSMutableDictionary *_entriesByRecordID;
     NSMutableDictionary *_entriesBySecondaryRecordID;
     NSMutableDictionary *_entriesByTransferID;
     NSObject<OS_dispatch_group> *_pendingGroup;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressed;
-
+    id /* block */ _progressed;
     unsigned long long _totalSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property unsigned long long doneSize;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int itemsCount;
-@property(readonly) NSObject<OS_dispatch_group> * pendingGroup;
-@property(copy) id progressed;
-@property(readonly) Class superclass;
+@property (readonly) unsigned int hash;
+@property (readonly) unsigned int itemsCount;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *pendingGroup;
+@property (copy) id /* block */ progressed;
+@property (readonly) Class superclass;
 @property unsigned long long totalSize;
 
 - (void).cxx_destruct;
@@ -53,9 +43,9 @@
 - (void)main;
 - (id)pendingGroup;
 - (double)progressForTransferID:(id)arg1;
-- (id)progressed;
+- (id /* block */)progressed;
 - (void)setDoneSize:(unsigned long long)arg1;
-- (void)setProgressed:(id)arg1;
+- (void)setProgressed:(id /* block */)arg1;
 - (void)setTotalSize:(unsigned long long)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (unsigned long long)totalSize;

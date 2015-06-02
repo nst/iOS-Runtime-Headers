@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemCollection, MPMediaLibrary, MPMediaPlaylist, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSArray, NSDictionary, NSSet, NSString;
-
 @interface MPMediaQuery : NSObject <MPPProtobufferCoding, NSCopying, NSSecureCoding> {
     MPMediaQueryCriteria *_criteria;
     int _isFilteringDisabled;
@@ -12,45 +10,46 @@
     unsigned int _staticEntityType;
 }
 
-@property(getter=MCD_playlist,readonly) MPMediaPlaylist * MCD_playlist;
-@property(getter=MCD_playlistTitle,readonly) NSString * MCD_playlistTitle;
-@property(readonly) unsigned int _countOfCollections;
-@property(readonly) unsigned int _countOfItems;
-@property(readonly) BOOL _hasCollections;
-@property(readonly) BOOL _hasItems;
-@property(readonly) MPMediaItemCollection * collectionByJoiningCollections;
-@property(readonly) NSArray * collectionPersistentIdentifiers;
-@property(copy) NSSet * collectionPropertiesToFetch;
-@property(readonly) MPMediaQuerySectionInfo * collectionSectionInfo;
-@property(readonly) NSArray * collectionSections;
-@property(readonly) NSArray * collections;
-@property(readonly) MPMediaPlaylist * containingPlaylist;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL excludesEntitiesWithBlankNames;
-@property(retain) NSSet * filterPredicates;
-@property int groupingType;
-@property(readonly) unsigned int hash;
-@property BOOL ignoreSystemFilterPredicates;
-@property(readonly) NSArray * itemPersistentIdentifiers;
-@property(copy) NSSet * itemPropertiesToFetch;
-@property(readonly) MPMediaQuerySectionInfo * itemSectionInfo;
-@property(readonly) NSArray * itemSections;
-@property(readonly) NSArray * items;
-@property(retain) MPMediaLibrary * mediaLibrary;
-@property(getter=music_playlist,readonly) MPMediaPlaylist * music_playlist;
-@property(getter=music_playlistTitle,readonly) NSString * music_playlistTitle;
-@property(getter=_orderingDirectionMappings,setter=_setOrderingDirectionMappings:,copy) NSDictionary * orderingDirectionMappings;
-@property(getter=_orderingProperties,setter=_setOrderingProperties:,copy) NSArray * orderingProperties;
-@property BOOL sortItems;
-@property(readonly) BOOL specifiesPlaylistItems;
-@property(readonly) Class superclass;
-@property BOOL useSections;
-@property(readonly) BOOL willGroupEntities;
+@property (getter=MCD_playlist, nonatomic, readonly) MPMediaPlaylist *MCD_playlist;
+@property (getter=MCD_playlistTitle, nonatomic, readonly) NSString *MCD_playlistTitle;
+@property (nonatomic, readonly) unsigned int _countOfCollections;
+@property (nonatomic, readonly) unsigned int _countOfItems;
+@property (nonatomic, readonly) BOOL _hasCollections;
+@property (nonatomic, readonly) BOOL _hasItems;
+@property (nonatomic, readonly) MPMediaItemCollection *collectionByJoiningCollections;
+@property (nonatomic, readonly) NSArray *collectionPersistentIdentifiers;
+@property (nonatomic, copy) NSSet *collectionPropertiesToFetch;
+@property (nonatomic, readonly) MPMediaQuerySectionInfo *collectionSectionInfo;
+@property (nonatomic, readonly) NSArray *collectionSections;
+@property (nonatomic, readonly) NSArray *collections;
+@property (nonatomic, readonly) MPMediaPlaylist *containingPlaylist;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL excludesEntitiesWithBlankNames;
+@property (nonatomic, retain) NSSet *filterPredicates;
+@property (nonatomic) int groupingType;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreSystemFilterPredicates;
+@property (nonatomic, readonly) NSArray *itemPersistentIdentifiers;
+@property (nonatomic, copy) NSSet *itemPropertiesToFetch;
+@property (nonatomic, readonly) MPMediaQuerySectionInfo *itemSectionInfo;
+@property (nonatomic, readonly) NSArray *itemSections;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
+@property (getter=music_playlist, nonatomic, readonly) MPMediaPlaylist *music_playlist;
+@property (getter=music_playlistTitle, nonatomic, readonly) NSString *music_playlistTitle;
+@property (getter=_orderingDirectionMappings, setter=_setOrderingDirectionMappings:, nonatomic, copy) NSDictionary *orderingDirectionMappings;
+@property (getter=_orderingProperties, setter=_setOrderingProperties:, nonatomic, copy) NSArray *orderingProperties;
+@property (nonatomic) BOOL sortItems;
+@property (nonatomic, readonly) BOOL specifiesPlaylistItems;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useSections;
+@property (nonatomic, readonly) BOOL willGroupEntities;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)ITunesUAudioQuery;
 + (id)ITunesUQuery;
-+ (id)MCD_queryWithFilterPredicates:(id)arg1;
 + (id)activeGeniusPlaylist;
 + (id)albumArtistsQuery;
 + (id)albumsQuery;
@@ -69,7 +68,6 @@
 + (BOOL)isFilteringDisabled;
 + (id)movieRentalsQuery;
 + (id)moviesQuery;
-+ (id)musicQueryWithFilterPredicates:(id)arg1;
 + (id)musicVideosQuery;
 + (id)playlistsQuery;
 + (id)podcastsQuery;
@@ -82,27 +80,21 @@
 + (id)videosQuery;
 
 - (void).cxx_destruct;
-- (BOOL)MCD_isEqualToNowPlayingQuery:(id)arg1;
-- (id)MCD_playlist;
-- (id)MCD_playlistTitle;
 - (BOOL)MPSD_hasDownloadableEntities;
 - (BOOL)MPSD_hasDownloadingEntities;
 - (id)MPSD_mediaQueryForDownloadableEntities;
 - (id)MPSD_mediaQueryForDownloadingEntities;
-- (id)_MPUSDS_searchPredicate;
 - (unsigned int)_countOfCollections;
 - (unsigned int)_countOfItems;
-- (void)_enumerateCollectionsInOrder:(BOOL)arg1 usingBlock:(id)arg2;
-- (void)_enumerateCollectionsUsingBlock:(id)arg1;
-- (void)_enumerateItemsInOrder:(BOOL)arg1 usingBlock:(id)arg2;
-- (void)_enumerateItemsUsingBlock:(id)arg1;
-- (void)_enumerateUnorderedCollectionsUsingBlock:(id)arg1;
-- (void)_enumerateUnorderedItemsUsingBlock:(id)arg1;
+- (void)_enumerateCollectionsInOrder:(BOOL)arg1 usingBlock:(id /* block */)arg2;
+- (void)_enumerateCollectionsUsingBlock:(id /* block */)arg1;
+- (void)_enumerateItemsInOrder:(BOOL)arg1 usingBlock:(id /* block */)arg2;
+- (void)_enumerateItemsUsingBlock:(id /* block */)arg1;
+- (void)_enumerateUnorderedCollectionsUsingBlock:(id /* block */)arg1;
+- (void)_enumerateUnorderedItemsUsingBlock:(id /* block */)arg1;
 - (BOOL)_hasCollections;
 - (BOOL)_hasItems;
 - (BOOL)_isFilteringDisabled;
-- (id)_music_nowPlayingComparableQuery;
-- (id)_music_nowPlayingComparableQuery;
 - (id)_orderingDirectionMappings;
 - (id)_orderingProperties;
 - (void)_setOrderingDirectionMappings:(id)arg1;
@@ -142,10 +134,6 @@
 - (id)itemSections;
 - (id)items;
 - (id)mediaLibrary;
-- (void)music_getListingCountFormatString:(id*)arg1 isFallbackFormatString:(BOOL*)arg2;
-- (BOOL)music_isEqualToNowPlayingQuery:(id)arg1;
-- (id)music_playlist;
-- (id)music_playlistTitle;
 - (id)predicateForProperty:(id)arg1;
 - (id)protobufferEncodableObject;
 - (void)removeFilterPredicate:(id)arg1;
@@ -168,5 +156,28 @@
 - (id)valueForAggregateFunction:(id)arg1 onCollectionsForProperty:(id)arg2;
 - (id)valueForAggregateFunction:(id)arg1 onItemsForProperty:(id)arg2;
 - (BOOL)willGroupEntities;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)_MPUSDS_searchPredicate;
+
+// Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
+
++ (id)MCD_queryWithFilterPredicates:(id)arg1;
+
+- (BOOL)MCD_isEqualToNowPlayingQuery:(id)arg1;
+- (id)MCD_playlist;
+- (id)MCD_playlistTitle;
+- (id)_music_nowPlayingComparableQuery;
+
+// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+
++ (id)musicQueryWithFilterPredicates:(id)arg1;
+
+- (id)_music_nowPlayingComparableQuery;
+- (void)music_getListingCountFormatString:(id*)arg1 isFallbackFormatString:(BOOL*)arg2;
+- (BOOL)music_isEqualToNowPlayingQuery:(id)arg1;
+- (id)music_playlist;
+- (id)music_playlistTitle;
 
 @end

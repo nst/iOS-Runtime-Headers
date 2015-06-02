@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CLLocation, NSDate, NSString;
-
 @interface CAMTimelapseState : NSObject <NSCoding, NSCopying> {
     BOOL _allFramesWritten;
     int _captureOrientation;
@@ -20,20 +18,20 @@
     BOOL _usingFrontCamera;
 }
 
-@property BOOL allFramesWritten;
-@property int captureOrientation;
-@property(readonly) double captureTimeInterval;
-@property(readonly) int connectionMode;
-@property float focusLensPosition;
-@property(readonly) int frameIndexStride;
-@property(retain) NSDate * lastFrameResponseTime;
-@property(readonly) int nextFrameIndex;
-@property(retain) CLLocation * startLocation;
-@property(retain) NSDate * startTime;
-@property int stopReasons;
-@property(retain) NSDate * stopTime;
-@property(retain) NSString * timelapseUUID;
-@property(getter=isUsingFrontCamera) BOOL usingFrontCamera;
+@property (nonatomic) BOOL allFramesWritten;
+@property (nonatomic) int captureOrientation;
+@property (nonatomic, readonly) double captureTimeInterval;
+@property (nonatomic, readonly) int connectionMode;
+@property (nonatomic) float focusLensPosition;
+@property (nonatomic, readonly) int frameIndexStride;
+@property (nonatomic, retain) NSDate *lastFrameResponseTime;
+@property (nonatomic, readonly) int nextFrameIndex;
+@property (nonatomic, retain) CLLocation *startLocation;
+@property (nonatomic, retain) NSDate *startTime;
+@property (nonatomic) int stopReasons;
+@property (nonatomic, retain) NSDate *stopTime;
+@property (nonatomic, retain) NSString *timelapseUUID;
+@property (getter=isUsingFrontCamera, nonatomic) BOOL usingFrontCamera;
 
 + (double)maxTimeToWaitForWrittenFrameAfterStop;
 + (id)stateWithContentsOfFile:(id)arg1;

@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSArray, NSMutableArray, NSString, SCNOrderedDictionary;
-
 @interface SCNMorpher : NSObject <NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary *_animations;
     int _calculationMode;
-    unsigned int _isPresentationInstance : 1;
+    unsigned int _isPresentationInstance;
     struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; } *_morpher;
     NSString *_name;
     id _reserved;
@@ -16,12 +14,12 @@
     NSMutableArray *_weights;
 }
 
-@property int calculationMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSArray * targets;
+@property (nonatomic) int calculationMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *targets;
 
 + (id)SCNJSExportProtocol;
 + (id)morpher;

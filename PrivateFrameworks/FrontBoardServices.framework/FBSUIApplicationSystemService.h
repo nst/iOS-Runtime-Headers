@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class <FBSUIApplicationSystemServiceDelegate>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FBSUIApplicationSystemService : NSObject {
     <FBSUIApplicationSystemServiceDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
-@property(readonly) double backgroundTimeRemaining;
-@property int badgeNumber;
-@property(copy) NSString * badgeString;
-@property float currentBacklightLevel;
-@property <FBSUIApplicationSystemServiceDelegate> * delegate;
+@property (nonatomic, readonly) double backgroundTimeRemaining;
+@property (nonatomic) int badgeNumber;
+@property (nonatomic, copy) NSString *badgeString;
+@property (nonatomic) float currentBacklightLevel;
+@property (nonatomic) <FBSUIApplicationSystemServiceDelegate> *delegate;
 
 - (id)_getBadgeValue;
 - (double)backgroundTimeRemaining;

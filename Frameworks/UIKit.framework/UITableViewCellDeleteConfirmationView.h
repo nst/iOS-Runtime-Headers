@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, _UITableViewCellActionButton;
-
 @interface UITableViewCellDeleteConfirmationView : UIView {
     _UITableViewCellActionButton *_accessoryView;
     NSArray *_actionButtons;
@@ -18,13 +16,13 @@
     float _visibleWidth;
 }
 
-@property(readonly) _UITableViewCellActionButton * accessoryView;
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
-@property float cornerRadius;
-@property(readonly) _UITableViewCellActionButton * deleteView;
-@property int sectionLocation;
-@property float visibleHeightRatio;
-@property float visibleWidth;
+@property (nonatomic, readonly) _UITableViewCellActionButton *accessoryView;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) float cornerRadius;
+@property (nonatomic, readonly) _UITableViewCellActionButton *deleteView;
+@property (nonatomic) int sectionLocation;
+@property (nonatomic) float visibleHeightRatio;
+@property (nonatomic) float visibleWidth;
 
 - (id)accessoryView;
 - (struct CGSize { float x1; float x2; })contentSize;

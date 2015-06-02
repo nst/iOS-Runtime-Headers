@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, NSManagedObjectContext, NSMutableDictionary, NSMutableSet, NSObject<_PFUbiquityRecordImportOperationDelegate>, NSPersistentStoreCoordinator, NSString, PFUbiquityImportContext, PFUbiquityKnowledgeVector, PFUbiquitySwitchboardEntry, PFUbiquityTransactionLog;
-
 @interface _PFUbiquityRecordImportOperation : PFUbiquityImportOperation <NSManagedObjectContextFaultingDelegate> {
     NSMutableSet *_deletedObjectIDs;
     PFUbiquitySwitchboardEntry *_entry;
@@ -26,27 +24,27 @@
     BOOL _wroteKV;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property NSObject<_PFUbiquityRecordImportOperationDelegate> * delegate;
-@property(readonly) NSMutableSet * deletedObjectIDs;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PFUbiquityImportContext * importContext;
-@property(readonly) PFUbiquityKnowledgeVector * initialStoreKnowledgeVector;
-@property(readonly) NSMutableSet * insertedObjectIDs;
+@property (readonly, copy) NSString *debugDescription;
+@property NSObject<_PFUbiquityRecordImportOperationDelegate> *delegate;
+@property (nonatomic, readonly) NSMutableSet *deletedObjectIDs;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PFUbiquityImportContext *importContext;
+@property (readonly) PFUbiquityKnowledgeVector *initialStoreKnowledgeVector;
+@property (nonatomic, readonly) NSMutableSet *insertedObjectIDs;
 @property BOOL lockedExistingCoord;
-@property(retain) PFUbiquityKnowledgeVector * logScore;
-@property(readonly) NSManagedObjectContext * moc;
-@property(readonly) NSError * operationError;
-@property(readonly) NSPersistentStoreCoordinator * psc;
-@property(readonly) NSMutableDictionary * resolvedConflicts;
-@property(readonly) BOOL success;
-@property(readonly) Class superclass;
-@property(readonly) BOOL transactionDidRollBack;
-@property(readonly) PFUbiquityTransactionLog * transactionLog;
-@property(readonly) NSMutableSet * updatedObjectIDs;
-@property(retain) PFUbiquityKnowledgeVector * updatedStoreKnowledgeVector;
-@property(readonly) BOOL wroteKV;
+@property (nonatomic, retain) PFUbiquityKnowledgeVector *logScore;
+@property (readonly) NSManagedObjectContext *moc;
+@property (nonatomic, readonly) NSError *operationError;
+@property (readonly) NSPersistentStoreCoordinator *psc;
+@property (nonatomic, readonly) NSMutableDictionary *resolvedConflicts;
+@property (nonatomic, readonly) BOOL success;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL transactionDidRollBack;
+@property (nonatomic, readonly) PFUbiquityTransactionLog *transactionLog;
+@property (nonatomic, readonly) NSMutableSet *updatedObjectIDs;
+@property (nonatomic, retain) PFUbiquityKnowledgeVector *updatedStoreKnowledgeVector;
+@property (nonatomic, readonly) BOOL wroteKV;
 
 - (BOOL)applyChangesFromStoreSaveSnapshot:(id)arg1 withImportContext:(id)arg2 withError:(id*)arg3;
 - (void)cancel;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary, NSNumber, NSString, NSURL, SSVPlatformContext;
-
 @interface RadioStoreBag : NSObject {
     NSDictionary *_mescalRequestWhitelist;
     NSDictionary *_mescalResponseWhitelist;
@@ -15,14 +13,14 @@
     NSDictionary *_tiltDictionary;
 }
 
-@property(getter=isAdFreeRadioEnabled,readonly) BOOL adFreeRadioEnabled;
-@property(readonly) NSURL * baseURL;
-@property(readonly) NSString * mescalCertificateURLString;
-@property(readonly) NSString * mescalSetupURLString;
-@property(readonly) NSString * platformLookupURLString;
-@property(readonly) NSDictionary * radioConfigurationDictionary;
-@property(readonly) BOOL shouldSendKBSyncData;
-@property(readonly) NSString * streamingDownloadURLString;
+@property (getter=isAdFreeRadioEnabled, nonatomic, readonly) BOOL adFreeRadioEnabled;
+@property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic, readonly) NSString *mescalCertificateURLString;
+@property (nonatomic, readonly) NSString *mescalSetupURLString;
+@property (nonatomic, readonly) NSString *platformLookupURLString;
+@property (nonatomic, readonly) NSDictionary *radioConfigurationDictionary;
+@property (nonatomic, readonly) BOOL shouldSendKBSyncData;
+@property (nonatomic, readonly) NSString *streamingDownloadURLString;
 
 - (void).cxx_destruct;
 - (id)_cacheRepresentation;

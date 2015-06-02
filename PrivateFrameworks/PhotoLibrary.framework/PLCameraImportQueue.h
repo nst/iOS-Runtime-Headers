@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableArray;
-
 @interface PLCameraImportQueue : NSObject {
     unsigned int _index;
     NSMutableArray *_items;

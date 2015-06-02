@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyEventMap : NSObject <NSSecureCoding> {
-}
+@interface TIKeyEventMap : NSObject <NSSecureCoding>
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class NSDate, NSString, UIImage;
-
 @interface AAUIServerSuppliedProfilePictureCacheEntry : NSObject {
     NSDate *_expirationDate;
     UIImage *_picture;
@@ -11,10 +9,10 @@
     BOOL _updating;
 }
 
-@property(readonly) BOOL expired;
-@property(retain) UIImage * picture;
-@property(copy) NSString * serverCacheTag;
-@property BOOL updating;
+@property (nonatomic, readonly) BOOL expired;
+@property (nonatomic, retain) UIImage *picture;
+@property (nonatomic, copy) NSString *serverCacheTag;
+@property (nonatomic) BOOL updating;
 
 - (void).cxx_destruct;
 - (id)description;

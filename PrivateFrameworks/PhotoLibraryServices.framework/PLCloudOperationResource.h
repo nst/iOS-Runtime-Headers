@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CPLResource, NSString;
-
 @interface PLCloudOperationResource : NSObject {
     CPLResource *_resource;
     NSString *_targetAssetUuid;
 }
 
-@property(retain) CPLResource * resource;
-@property(copy) NSString * targetAssetUuid;
+@property (nonatomic, retain) CPLResource *resource;
+@property (nonatomic, copy) NSString *targetAssetUuid;
 
 - (void)dealloc;
 - (unsigned int)hash;

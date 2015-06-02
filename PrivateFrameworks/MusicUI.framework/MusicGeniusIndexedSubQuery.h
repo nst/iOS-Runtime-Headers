@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaQuery;
-
 @interface MusicGeniusIndexedSubQuery : NSObject {
     unsigned int _index;
     MPMediaQuery *_itemsQuery;
 }
 
-@property(readonly) unsigned int index;
-@property(readonly) MPMediaQuery * itemsQuery;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) MPMediaQuery *itemsQuery;
 
 - (void).cxx_destruct;
 - (unsigned int)index;

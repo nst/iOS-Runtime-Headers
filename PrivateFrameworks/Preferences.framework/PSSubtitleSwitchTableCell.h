@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSubtitleSwitchTableCell : PSSwitchTableCell {
-}
+@interface PSSubtitleSwitchTableCell : PSSwitchTableCell
 
 + (int)cellStyle;
 

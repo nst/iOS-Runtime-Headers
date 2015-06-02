@@ -10,8 +10,8 @@
     } _size;
 }
 
-@property(readonly) unsigned long long persistentID;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (unsigned int)hash;
 - (id)initWithPersistentID:(unsigned long long)arg1 size:(struct CGSize { float x1; float x2; })arg2;

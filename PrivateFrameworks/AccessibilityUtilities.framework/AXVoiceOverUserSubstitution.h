@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSSet, NSString, NSUUID;
-
 @interface AXVoiceOverUserSubstitution : NSObject <NSCopying, NSSecureCoding> {
     BOOL _active;
     BOOL _appliesToAllApps;
@@ -16,15 +14,15 @@
     NSUUID *_uuid;
 }
 
-@property BOOL active;
-@property BOOL appliesToAllApps;
-@property(copy) NSSet * bundleIdentifiers;
-@property BOOL ignoreCase;
-@property(readonly) BOOL isReplacementTextAllPunctuation;
-@property(readonly) BOOL isReplacementTextSurroundedByPunctuation;
-@property(copy) NSString * originalString;
-@property(copy) NSString * replacementString;
-@property(retain) NSUUID * uuid;
+@property (nonatomic) BOOL active;
+@property (nonatomic) BOOL appliesToAllApps;
+@property (nonatomic, copy) NSSet *bundleIdentifiers;
+@property (nonatomic) BOOL ignoreCase;
+@property (nonatomic, readonly) BOOL isReplacementTextAllPunctuation;
+@property (nonatomic, readonly) BOOL isReplacementTextSurroundedByPunctuation;
+@property (nonatomic, copy) NSString *originalString;
+@property (nonatomic, copy) NSString *replacementString;
+@property (nonatomic, retain) NSUUID *uuid;
 
 + (BOOL)supportsSecureCoding;
 

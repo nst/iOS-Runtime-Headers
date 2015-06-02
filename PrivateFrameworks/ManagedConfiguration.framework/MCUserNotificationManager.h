@@ -2,20 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCUserNotificationManager : NSObject {
-}
+@interface MCUserNotificationManager : NSObject
 
-@property(readonly) BOOL hasOutstandingNotifications;
+@property (nonatomic, readonly) BOOL hasOutstandingNotifications;
 
 + (id)sharedManager;
 
-- (void)cancelAllNotificationsCompletionBlock:(id)arg1;
+- (void)cancelAllNotificationsCompletionBlock:(id /* block */)arg1;
 - (void)dealloc;
-- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 otherButtonText:(id)arg5 displayOnLockScreen:(BOOL)arg6 displayInAppWhitelistModes:(BOOL)arg7 dismissAfterTimeInterval:(double)arg8 assertion:(id)arg9 completionBlock:(id)arg10;
+- (void)displayUserNotificationWithTitle:(id)arg1 message:(id)arg2 defaultButtonText:(id)arg3 alternateButtonText:(id)arg4 otherButtonText:(id)arg5 displayOnLockScreen:(BOOL)arg6 displayInAppWhitelistModes:(BOOL)arg7 dismissAfterTimeInterval:(double)arg8 assertion:(id)arg9 completionBlock:(id /* block */)arg10;
 - (BOOL)hasOutstandingNotifications;
 - (id)init;
-- (void)inviteUserToVPPWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id)arg4;
+- (void)inviteUserToVPPWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)mainQueueDidReceiveAppWhitelistChangedNotification;
-- (void)promptUserToLogIntoiTunesWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id)arg4;
+- (void)promptUserToLogIntoiTunesWithTitle:(id)arg1 message:(id)arg2 assertion:(id)arg3 completionBlock:(id /* block */)arg4;
 
 @end

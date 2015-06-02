@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISlideshowViewControllerDataSource>, <SKUISlideshowViewControllerDelegate>, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIGiftThemeCollectionView, SKUIScreenshotDataConsumer, UIPageControl;
-
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
     SKUIGiftThemeCollectionView *_collectionView;
@@ -21,14 +19,14 @@
     SKUIScreenshotDataConsumer *_screenshotConsumer;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property int currentIndex;
-@property <SKUISlideshowViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUISlideshowViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) int currentIndex;
+@property (nonatomic) <SKUISlideshowViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUISlideshowViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;

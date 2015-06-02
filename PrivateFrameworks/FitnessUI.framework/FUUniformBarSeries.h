@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSArray, NSDate;
-
 @interface FUUniformBarSeries : FUChartSeries {
     struct CGGradient { } *_barGradient;
     float _barHeight;
@@ -13,12 +11,12 @@
     float _roundedCornerRadius;
 }
 
-@property struct CGGradient { }* barGradient;
-@property float barHeight;
-@property float barWidth;
-@property NSDate * minDate;
-@property(retain) NSArray * plotPoints;
-@property float roundedCornerRadius;
+@property (nonatomic) struct CGGradient { }*barGradient;
+@property (nonatomic) float barHeight;
+@property (nonatomic) float barWidth;
+@property (nonatomic) NSDate *minDate;
+@property (nonatomic, retain) NSArray *plotPoints;
+@property (nonatomic) float roundedCornerRadius;
 
 - (void).cxx_destruct;
 - (float)_getXValueForPointFromChartPoint:(id)arg1;

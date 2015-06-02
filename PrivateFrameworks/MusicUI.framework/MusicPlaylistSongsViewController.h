@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MusicPlaylistActionsView, NSOperationQueue, NSString, UIActionSheet;
-
 @interface MusicPlaylistSongsViewController : MusicSongsViewController <MusicPickerOverlayDelegate, MusicViewControllerKeepLocalContainer, UIActionSheetDelegate> {
     MusicPlaylistActionsView *_actionsView;
     struct UIEdgeInsets { 
@@ -21,12 +19,12 @@
     BOOL _isTransitioning;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int downloadableSongCount;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDownloading;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int downloadableSongCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isDownloading;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldDisplayActions;
 + (BOOL)_shouldPopWhenEmpty;

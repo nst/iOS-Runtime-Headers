@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStoryboard;
-
 @interface _UIStoryboardProxy : NSObject {
     UIStoryboard *_storyboard;
 }

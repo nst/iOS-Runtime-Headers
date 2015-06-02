@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIReflectingView : UIView {
     UIView *_containerView;
     UIView *_gradientView;
     float _reflectionAlpha;
 }
 
-@property(retain,readonly) UIView * containerView;
-@property float reflectionAlpha;
-@property float reflectionFraction;
+@property (nonatomic, readonly, retain) UIView *containerView;
+@property (nonatomic) float reflectionAlpha;
+@property (nonatomic) float reflectionFraction;
 
 - (id)_gradientLayer;
 - (void)_updateGradientColors;

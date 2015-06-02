@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface ISURLBagCache : NSObject {
     NSMutableDictionary *_cachedBags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;

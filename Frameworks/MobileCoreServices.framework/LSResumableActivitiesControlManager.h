@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSXPCConnection;
-
 @interface LSResumableActivitiesControlManager : NSObject {
     id _delegate;
     NSXPCConnection *connection;
 }
 
-@property(retain) NSXPCConnection * connection;
+@property (retain) NSXPCConnection *connection;
 @property id delegate;
 
 + (id)resumableActivitiesControlManager;
@@ -18,7 +16,7 @@
 - (id)allUUIDsOfType:(unsigned int)arg1;
 - (void)callDidSaveDelegate:(id)arg1;
 - (void)callWillSaveDelegate:(id)arg1;
-- (void)callWillSaveDelegate:(id)arg1 completionHandler:(id)arg2;
+- (void)callWillSaveDelegate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)connection;
 - (id)currentAdvertisedItemUUID;
 - (void)dealloc;

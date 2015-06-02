@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSString, NSURL;
-
 @interface MPTimeMarker : NSObject {
     double _duration;
     unsigned int _index;
@@ -14,16 +12,16 @@
     NSURL *_url;
 }
 
-@property(readonly) double comparableTime;
-@property double duration;
-@property(readonly) BOOL hasArtworkAtPlaybackTime;
-@property unsigned int index;
-@property(readonly) int markerType;
-@property(readonly) double maxTime;
-@property(retain) NSDictionary * metadata;
-@property double time;
-@property(retain) NSString * title;
-@property(retain) NSURL * url;
+@property (nonatomic, readonly) double comparableTime;
+@property (nonatomic) double duration;
+@property (nonatomic, readonly) BOOL hasArtworkAtPlaybackTime;
+@property (nonatomic) unsigned int index;
+@property (nonatomic, readonly) int markerType;
+@property (nonatomic, readonly) double maxTime;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic) double time;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSURL *url;
 
 - (void).cxx_destruct;
 - (double)comparableTime;

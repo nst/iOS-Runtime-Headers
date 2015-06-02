@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <_MFSearchResultsConsumer>, NSArray;
-
 @interface _MFSearchAddResultsOperation : NSOperation {
     <_MFSearchResultsConsumer> *_consumer;
     NSArray *_results;

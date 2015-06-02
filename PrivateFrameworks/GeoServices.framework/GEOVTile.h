@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOVConnectivity, NSData, NSMutableArray;
-
 @interface GEOVTile : PBCodable <NSCopying> {
     NSMutableArray *_coastlines;
     GEOVConnectivity *_connectivity;
@@ -25,25 +23,25 @@
     int _zBits;
 }
 
-@property(retain) NSMutableArray * coastlines;
-@property(retain) GEOVConnectivity * connectivity;
-@property(readonly) BOOL hasConnectivity;
-@property(readonly) BOOL hasLabels;
-@property BOOL hasMinZ;
-@property BOOL hasSectionDeltaLengthBits;
-@property BOOL hasVertexBits;
-@property(readonly) BOOL hasVertices;
-@property BOOL hasZBits;
-@property(retain) NSMutableArray * labelLanguages;
-@property(retain) NSData * labels;
-@property(retain) NSMutableArray * lines;
-@property int minZ;
-@property(retain) NSMutableArray * points;
-@property(retain) NSMutableArray * polygons;
-@property unsigned int sectionDeltaLengthBits;
-@property unsigned int vertexBits;
-@property(retain) NSData * vertices;
-@property int zBits;
+@property (nonatomic, retain) NSMutableArray *coastlines;
+@property (nonatomic, retain) GEOVConnectivity *connectivity;
+@property (nonatomic, readonly) BOOL hasConnectivity;
+@property (nonatomic, readonly) BOOL hasLabels;
+@property (nonatomic) BOOL hasMinZ;
+@property (nonatomic) BOOL hasSectionDeltaLengthBits;
+@property (nonatomic) BOOL hasVertexBits;
+@property (nonatomic, readonly) BOOL hasVertices;
+@property (nonatomic) BOOL hasZBits;
+@property (nonatomic, retain) NSMutableArray *labelLanguages;
+@property (nonatomic, retain) NSData *labels;
+@property (nonatomic, retain) NSMutableArray *lines;
+@property (nonatomic) int minZ;
+@property (nonatomic, retain) NSMutableArray *points;
+@property (nonatomic, retain) NSMutableArray *polygons;
+@property (nonatomic) unsigned int sectionDeltaLengthBits;
+@property (nonatomic) unsigned int vertexBits;
+@property (nonatomic, retain) NSData *vertices;
+@property (nonatomic) int zBits;
 
 - (void)addCoastlines:(id)arg1;
 - (void)addLabelLanguage:(id)arg1;

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMCounter : DOMObject
 
-@interface DOMCounter : DOMObject {
-}
-
-@property(copy,readonly) NSString * identifier;
-@property(copy,readonly) NSString * listStyle;
-@property(copy,readonly) NSString * separator;
+@property (readonly, copy) NSString *identifier;
+@property (readonly, copy) NSString *listStyle;
+@property (readonly, copy) NSString *separator;
 
 - (void)dealloc;
 - (void)finalize;

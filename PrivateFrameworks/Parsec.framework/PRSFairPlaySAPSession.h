@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString;
-
 @interface PRSFairPlaySAPSession : NSObject {
     NSString *_SAPVersion;
     BOOL _complete;
@@ -14,8 +12,8 @@
     struct FPSAPContextOpaque_ { } *_session;
 }
 
-@property(retain) NSString * SAPVersion;
-@property(getter=isComplete,readonly) BOOL complete;
+@property (retain) NSString *SAPVersion;
+@property (getter=isComplete, nonatomic, readonly) BOOL complete;
 
 - (void).cxx_destruct;
 - (id)SAPVersion;

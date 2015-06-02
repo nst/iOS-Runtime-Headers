@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAStartStructuredDictationRequest : SAStartRequest
 
-@interface SAStartStructuredDictationRequest : SAStartRequest {
-}
-
-@property(copy) NSString * structuredDictationType;
+@property (nonatomic, copy) NSString *structuredDictationType;
 
 + (id)startStructuredDictationRequest;
 + (id)startStructuredDictationRequestWithDictionary:(id)arg1 context:(id)arg2;

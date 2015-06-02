@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetRepresentationPrivate;
-
 @interface ALAssetRepresentation : NSObject {
     BOOL _ignoreRead;
     id _internal;
 }
 
 @property BOOL ignoreRead;
-@property(retain) ALAssetRepresentationPrivate * internal;
+@property (nonatomic, retain) ALAssetRepresentationPrivate *internal;
 
 + (void)_enableImageDataUsesMap;
 

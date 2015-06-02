@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPService, HMDAccessory, NSArray, NSNumber, NSString;
-
 @interface HMDService : NSObject <NSSecureCoding> {
     HMDAccessory *_accessory;
     NSString *_associatedServiceType;
@@ -15,15 +13,15 @@
     NSString *_serviceType;
 }
 
-@property(readonly) HMDAccessory * accessory;
-@property(readonly) NSString * associatedServiceType;
-@property(copy,readonly) NSArray * characteristics;
-@property(retain) HAPService * hapService;
-@property(copy) NSNumber * instanceID;
-@property(getter=getName,copy) NSString * name;
-@property(retain) NSString * providedName;
-@property(retain) NSString * serviceType;
-@property(copy,readonly) NSString * type;
+@property (nonatomic, readonly) HMDAccessory *accessory;
+@property (nonatomic, readonly) NSString *associatedServiceType;
+@property (nonatomic, readonly, copy) NSArray *characteristics;
+@property (nonatomic, retain) HAPService *hapService;
+@property (nonatomic, copy) NSNumber *instanceID;
+@property (getter=getName, nonatomic, copy) NSString *name;
+@property (nonatomic, retain) NSString *providedName;
+@property (nonatomic, retain) NSString *serviceType;
+@property (nonatomic, readonly, copy) NSString *type;
 
 + (BOOL)supportsSecureCoding;
 

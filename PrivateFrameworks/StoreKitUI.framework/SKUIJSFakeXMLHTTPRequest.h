@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKJSXMLDocument, NSData, NSDictionary, NSHTTPURLResponse, NSString;
-
 @interface SKUIJSFakeXMLHTTPRequest : IKJSObject <SKUIJSFakeXMLHTTPRequest> {
     NSData *_data;
     NSDictionary *_performanceMetrics;
     NSHTTPURLResponse *_response;
 }
 
-@property(readonly) NSDictionary * metrics;
-@property(readonly) unsigned int readyState;
-@property(readonly) id response;
-@property(readonly) NSString * responseText;
-@property(readonly) unsigned int responseType;
-@property(readonly) IKJSXMLDocument * responseXML;
-@property(readonly) unsigned int status;
-@property(retain,readonly) NSString * statusText;
+@property (readonly) NSDictionary *metrics;
+@property (readonly) unsigned int readyState;
+@property (readonly) id response;
+@property (readonly) NSString *responseText;
+@property (readonly) unsigned int responseType;
+@property (readonly) IKJSXMLDocument *responseXML;
+@property (readonly) unsigned int status;
+@property (readonly, retain) NSString *statusText;
 
 - (void).cxx_destruct;
 - (id)getAllResponseHeaders;

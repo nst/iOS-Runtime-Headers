@@ -6,13 +6,13 @@
     void *_impl;
 }
 
-@property(readonly) int bytesCapacity;
+@property (readonly) int bytesCapacity;
 @property int bytesDataSize;
-@property(readonly) int channels;
-@property(readonly) void* data;
-@property(readonly) int packetDescriptionCapacity;
-@property(readonly) int packetDescriptionCount;
-@property(readonly) struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }* packetDescriptions;
+@property (readonly) int channels;
+@property (readonly) void*data;
+@property (readonly) int packetDescriptionCapacity;
+@property (readonly) int packetDescriptionCount;
+@property (readonly) struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*packetDescriptions;
 
 - (int)bytesCapacity;
 - (int)bytesDataSize;

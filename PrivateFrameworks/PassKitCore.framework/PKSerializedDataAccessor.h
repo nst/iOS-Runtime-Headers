@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSData;
-
 @interface PKSerializedDataAccessor : PKFileDataAccessor {
     NSData *_archiveData;
 }
@@ -11,7 +9,7 @@
 - (void)_removeDiskRepresentation;
 - (id)archiveData;
 - (void)dealloc;
-- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id)arg3;
+- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIView, _UIBadgeView, _UISegmentedControlAppearanceStorage;
-
 @interface UISegment : UIImageView {
     _UISegmentedControlAppearanceStorage *_appearanceStorage;
     NSString *_badgeValue;
@@ -34,15 +32,15 @@
     float _width;
 }
 
-@property(setter=_setInfoConstraints:,copy) NSArray * _infoConstraints;
-@property(copy) NSString * badgeValue;
-@property(readonly) UIView * badgeView;
+@property (setter=_setInfoConstraints:, nonatomic, copy) NSArray *_infoConstraints;
+@property (nonatomic, copy) NSString *badgeValue;
+@property (readonly) UIView *badgeView;
 @property int controlSize;
-@property(getter=isMomentary) BOOL momentary;
-@property float requestedScaleFactor;
-@property(getter=isSelected) BOOL selected;
+@property (getter=isMomentary) BOOL momentary;
+@property (nonatomic) float requestedScaleFactor;
+@property (getter=isSelected) BOOL selected;
 
-+ (id)_backgroundImageWithStorage:(id)arg1 style:(int)arg2 mini:(BOOL)arg3 state:(unsigned int)arg4 position:(unsigned int)arg5 drawMode:(int*)arg6 defaultBlock:(id)arg7;
++ (id)_backgroundImageWithStorage:(id)arg1 style:(int)arg2 mini:(BOOL)arg3 state:(unsigned int)arg4 position:(unsigned int)arg5 drawMode:(int*)arg6 defaultBlock:(id /* block */)arg7;
 
 - (id)_attributedTextForState:(unsigned int)arg1 selected:(BOOL)arg2;
 - (float)_barHeight;

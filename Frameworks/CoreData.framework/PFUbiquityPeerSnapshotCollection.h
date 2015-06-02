@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface PFUbiquityPeerSnapshotCollection : NSObject {
     NSMutableDictionary *_kvToSnapshot;
     BOOL _needSort;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TPPaginatedPageInfo;
-
 @interface TPHeaderRep : TSWPHeaderRep {
     BOOL _hideKnobs;
 }
 
-@property BOOL hideKnobs;
-@property(readonly) TPPaginatedPageInfo * pageInfo;
+@property (nonatomic) BOOL hideKnobs;
+@property (nonatomic, readonly) TPPaginatedPageInfo *pageInfo;
 
 - (BOOL)hideKnobs;
 - (BOOL)p_isInDocumentSetup;

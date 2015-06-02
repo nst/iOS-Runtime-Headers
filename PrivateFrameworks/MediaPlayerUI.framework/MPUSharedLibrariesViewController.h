@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UINavigationController, _MPUSharedLibrariesViewController;
-
 @interface MPUSharedLibrariesViewController : UIViewController {
     UINavigationController *_navigationController;
     _MPUSharedLibrariesViewController *_sharedLibariesViewController;
     BOOL _showsCancelButton;
 }
 
-@property BOOL showsCancelButton;
-@property BOOL showsLocalLibrary;
+@property (nonatomic) BOOL showsCancelButton;
+@property (nonatomic) BOOL showsLocalLibrary;
 
 - (void).cxx_destruct;
 - (void)dismissSharedLibrariesViewController:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, TSCHChartPieElementsRenderer;
-
 @interface TSCHPieChartRep : TSCHChartRep {
     BOOL mHasDrawnSinceWedgeKnobTrackerCreated;
     TSCHChartPieElementsRenderer *mPieElementRenderer;

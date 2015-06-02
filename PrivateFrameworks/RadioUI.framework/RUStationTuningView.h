@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RUStationTuningSlider, RadioStation, UIImageView, UILabel, UITapGestureRecognizer;
-
 @interface RUStationTuningView : UIView {
     RadioStation *_station;
     UITapGestureRecognizer *_tapGestureRecognizer;
@@ -15,7 +13,7 @@
     UILabel *_tuningType3Label;
 }
 
-@property(retain) RadioStation * station;
+@property (nonatomic, retain) RadioStation *station;
 
 + (id)_tuningTypeLabelFont;
 + (float)defaultHeightForTraitCollection:(id)arg1;

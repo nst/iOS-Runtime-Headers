@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class UIImage;
+@interface MusicPartialPlaybackTableViewCell : MusicStandardMediaTableViewCell
 
-@interface MusicPartialPlaybackTableViewCell : MusicStandardMediaTableViewCell {
-}
-
-@property(retain) UIImage * unplayedIndicatorHighlightedImage;
-@property(retain) UIImage * unplayedIndicatorImage;
+@property (nonatomic, retain) UIImage *unplayedIndicatorHighlightedImage;
+@property (nonatomic, retain) UIImage *unplayedIndicatorImage;
 
 + (Class)contentViewClass;
 

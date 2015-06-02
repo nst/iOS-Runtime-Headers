@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHTextBox : GQHParagraphStyle {
-}
+@interface GQHTextBox : GQHParagraphStyle
 
 + (void)createExternalWrapSandbagStyles:(id)arg1;
 + (int)handleLayoutStorage:(id)arg1 state:(id)arg2;

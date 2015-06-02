@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADSubBlip;
-
 @interface OADBlip : NSObject {
     OADSubBlip *mAltSubBlip;
     OADSubBlip *mMainSubBlip;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIColor, UIView;
-
 @interface MKViewWithHairline : UIView {
     UIView *_bottomHairline;
     UIColor *_hairlineColor;
@@ -11,10 +9,10 @@
     UIView *_topHairline;
 }
 
-@property(getter=isBottomHairlineHidden) BOOL bottomHairlineHidden;
-@property(retain) UIColor * hairlineColor;
-@property float leftHairlineInset;
-@property(getter=isTopHairlineHidden) BOOL topHairlineHidden;
+@property (getter=isBottomHairlineHidden, nonatomic) BOOL bottomHairlineHidden;
+@property (nonatomic, retain) UIColor *hairlineColor;
+@property (nonatomic) float leftHairlineInset;
+@property (getter=isTopHairlineHidden, nonatomic) BOOL topHairlineHidden;
 
 - (void).cxx_destruct;
 - (id)hairlineColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <MDRenderTarget>, <VKCameraControllerDelegate>, VKCamera;
-
 @interface VKCameraController : NSObject {
     VKCamera *_camera;
     <MDRenderTarget> *_canvas;
@@ -13,11 +11,11 @@
     unsigned int _regionChangeCount;
 }
 
-@property(getter=isAnimating,readonly) BOOL animating;
-@property(retain) VKCamera * camera;
-@property <MDRenderTarget> * canvas;
-@property <VKCameraControllerDelegate> * delegate;
-@property(getter=isGesturing) BOOL gesturing;
+@property (getter=isAnimating, nonatomic, readonly) BOOL animating;
+@property (nonatomic, retain) VKCamera *camera;
+@property (nonatomic) <MDRenderTarget> *canvas;
+@property (nonatomic) <VKCameraControllerDelegate> *delegate;
+@property (getter=isGesturing, nonatomic) BOOL gesturing;
 
 - (void)beginRegionChange:(BOOL)arg1;
 - (id)camera;

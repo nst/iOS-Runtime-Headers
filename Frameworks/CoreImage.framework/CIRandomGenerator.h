@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIRandomGenerator : CIFilter {
-}
+@interface CIRandomGenerator : CIFilter
 
 + (id)customAttributes;
 

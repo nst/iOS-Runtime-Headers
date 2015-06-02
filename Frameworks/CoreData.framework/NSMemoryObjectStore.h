@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSMemoryObjectStore : NSMappedObjectStore {
-}
+@interface NSMemoryObjectStore : NSMappedObjectStore
 
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;

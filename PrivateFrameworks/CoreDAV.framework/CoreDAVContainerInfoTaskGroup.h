@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVContainerInfoTaskGroupDelegate>, NSMutableSet, NSSet, NSString;
-
 @interface CoreDAVContainerInfoTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
     NSString *_appSpecificHomeSetPropName;
     NSString *_appSpecificHomeSetPropNameSpace;
@@ -13,13 +11,13 @@
     int _phase;
 }
 
-@property int containerInfoDepth;
-@property(readonly) NSSet * containerURLs;
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreDAVContainerInfoTaskGroupDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) int containerInfoDepth;
+@property (nonatomic, readonly) NSSet *containerURLs;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreDAVContainerInfoTaskGroupDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_copyContainerParserMappings;
 - (id)_copyContainerWithURL:(id)arg1 andProperties:(id)arg2;

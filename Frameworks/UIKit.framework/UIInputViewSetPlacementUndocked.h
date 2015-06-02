@@ -12,8 +12,8 @@
     float _normalizedOffset;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } chromeBuffer;
-@property float normalizedOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } chromeBuffer;
+@property (nonatomic) float normalizedOffset;
 
 + (id)placementWithUndockedOffset:(float)arg1 chromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 

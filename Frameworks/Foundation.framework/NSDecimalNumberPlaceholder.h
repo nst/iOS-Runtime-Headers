@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDecimalNumberPlaceholder : NSDecimalNumber {
-}
+@interface NSDecimalNumberPlaceholder : NSDecimalNumber
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)supportsSecureCoding;

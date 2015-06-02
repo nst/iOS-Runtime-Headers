@@ -2,54 +2,40 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary, NSMutableSet;
-
 @interface CKFetchUserIdentitiesOperation : CKOperation {
     NSMutableSet *_discoveredUserIdentities;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchIdentitiesCompletionBlock;
-
+    id /* block */ _fetchIdentitiesCompletionBlock;
     NSArray *_identities;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _identityFetchedBlock;
-
+    id /* block */ _identityFetchedBlock;
     NSMutableDictionary *_lookupErrors;
     NSMutableDictionary *_lookupInfoToUserIdentities;
 }
 
-@property(retain) NSMutableSet * discoveredUserIdentities;
-@property(copy) id fetchIdentitiesCompletionBlock;
-@property(retain) NSArray * identities;
-@property(copy) id identityFetchedBlock;
-@property(retain) NSMutableDictionary * lookupErrors;
-@property(retain) NSMutableDictionary * lookupInfoToUserIdentities;
+@property (nonatomic, retain) NSMutableSet *discoveredUserIdentities;
+@property (nonatomic, copy) id /* block */ fetchIdentitiesCompletionBlock;
+@property (nonatomic, retain) NSArray *identities;
+@property (nonatomic, copy) id /* block */ identityFetchedBlock;
+@property (nonatomic, retain) NSMutableDictionary *lookupErrors;
+@property (nonatomic, retain) NSMutableDictionary *lookupInfoToUserIdentities;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)discoveredUserIdentities;
-- (id)fetchIdentitiesCompletionBlock;
+- (id /* block */)fetchIdentitiesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)identities;
-- (id)identityFetchedBlock;
+- (id /* block */)identityFetchedBlock;
 - (id)init;
 - (id)initWithIdentitiesToFetch:(id)arg1;
 - (id)lookupErrors;
 - (id)lookupInfoToUserIdentities;
 - (void)performCKOperation;
 - (void)setDiscoveredUserIdentities:(id)arg1;
-- (void)setFetchIdentitiesCompletionBlock:(id)arg1;
+- (void)setFetchIdentitiesCompletionBlock:(id /* block */)arg1;
 - (void)setIdentities:(id)arg1;
-- (void)setIdentityFetchedBlock:(id)arg1;
+- (void)setIdentityFetchedBlock:(id /* block */)arg1;
 - (void)setLookupErrors:(id)arg1;
 - (void)setLookupInfoToUserIdentities:(id)arg1;
 

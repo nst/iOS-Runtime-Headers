@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIButton;
-
 @interface PTSDrillDownRowTableViewCell : PTSRowTableViewCell {
     UIButton *_actionButton;
 }

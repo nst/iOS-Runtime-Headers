@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MSVStreamWriter, NSString;
-
 @interface ML3ProtoSyncExportSession : ML3ExportSession {
     NSString *_libraryUUID;
     double _sessionStartTime;

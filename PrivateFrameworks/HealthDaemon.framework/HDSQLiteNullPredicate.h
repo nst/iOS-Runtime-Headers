@@ -6,7 +6,7 @@
     BOOL _matchesNull;
 }
 
-@property(readonly) BOOL matchesNull;
+@property (nonatomic, readonly) BOOL matchesNull;
 
 + (id)isNotNullPredicateWithProperty:(id)arg1;
 + (id)isNullPredicateWithProperty:(id)arg1;

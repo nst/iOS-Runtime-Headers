@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAVPlayer : RURadioAVPlayer {
-}
+@interface MusicAVPlayer : RURadioAVPlayer
 
 + (id)sharedAVPlayer;
 

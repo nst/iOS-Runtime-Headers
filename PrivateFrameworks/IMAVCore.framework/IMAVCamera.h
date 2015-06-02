@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSString;
-
 @interface IMAVCamera : NSObject {
     id _internalDevice;
 }
 
-@property(readonly) int cameraStyle;
-@property(readonly) BOOL hasShutter;
-@property(readonly) BOOL isShutterOpen;
-@property(readonly) BOOL isSuspended;
-@property(readonly) BOOL isWideScreen;
-@property(retain,readonly) NSString * name;
-@property(retain,readonly) NSString * uniqueID;
+@property (nonatomic, readonly) int cameraStyle;
+@property (nonatomic, readonly) BOOL hasShutter;
+@property (nonatomic, readonly) BOOL isShutterOpen;
+@property (nonatomic, readonly) BOOL isSuspended;
+@property (nonatomic, readonly) BOOL isWideScreen;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly, retain) NSString *uniqueID;
 
 - (id)_AVCamera;
 - (id)_initWithAVCamera:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPopoverPresentationControllerDelegate>, <_UIRotatingAlertControllerDelegate>, UIViewController;
-
 @interface _UIRotatingAlertController : UIAlertController {
     unsigned int _arrowDirections;
     BOOL _isRotating;
@@ -13,8 +11,8 @@
     <_UIRotatingAlertControllerDelegate> *_rotatingSheetDelegate;
 }
 
-@property unsigned int arrowDirections;
-@property <_UIRotatingAlertControllerDelegate> * rotatingSheetDelegate;
+@property (nonatomic) unsigned int arrowDirections;
+@property (nonatomic) <_UIRotatingAlertControllerDelegate> *rotatingSheetDelegate;
 
 - (void)_didRotateAndLayout;
 - (void)_updateSheetPositionAfterRotation;

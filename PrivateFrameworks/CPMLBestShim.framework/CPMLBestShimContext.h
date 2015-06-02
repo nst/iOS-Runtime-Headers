@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CPMLBestShim.framework/CPMLBestShim
  */
 
-@class NSArray;
-
 @interface CPMLBestShimContext : NSObject {
     NSArray *orderedSuggestions;
 }
 
-@property(retain) NSArray * orderedSuggestions;
+@property (retain) NSArray *orderedSuggestions;
 
 - (void).cxx_destruct;
 - (id)orderedSuggestions;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WeatherJSONHTTPRequest : WeatherHTTPRequest {
-}
+@interface WeatherJSONHTTPRequest : WeatherHTTPRequest
 
 - (id)aggregateDictionaryDomain;
 - (void)didProcessJSONObject;

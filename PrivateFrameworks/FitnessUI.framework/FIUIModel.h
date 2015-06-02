@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class FIUIAchievementsModel, FIUIWeeklyGoalModel, HKActivityCache, HKCurrentActivityCacheQuery, HKHealthStore, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPredicate, NSString;
-
 @interface FIUIModel : NSObject <FIUIAchievementsModelDelegate> {
     FIUIAchievementsModel *_achievementsModel;
     NSObject<OS_dispatch_queue> *_activityCacheQueryClientQueue;
@@ -18,36 +16,36 @@
     FIUIWeeklyGoalModel *_weeklyGoalModel;
 }
 
-@property(readonly) FIUIAchievementsModel * achievementsModel;
-@property(readonly) double arcPercentPerHour;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSPredicate * sourcesPredicate;
-@property(readonly) Class superclass;
-@property(readonly) FIUIWeeklyGoalModel * weeklyGoalModel;
+@property (nonatomic, readonly) FIUIAchievementsModel *achievementsModel;
+@property (nonatomic, readonly) double arcPercentPerHour;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSPredicate *sourcesPredicate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) FIUIWeeklyGoalModel *weeklyGoalModel;
 
-+ (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id)arg6;
-+ (void)_fakeActiveAndGoalHoursDataWithCompletion:(id)arg1;
++ (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
++ (void)_fakeActiveAndGoalHoursDataWithCompletion:(id /* block */)arg1;
 + (id)_fakeCollectionForUnit:(id)arg1;
-+ (id)_statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id)arg7;
++ (id)_statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id /* block */)arg7;
 + (id)_unitForDataType:(id)arg1;
-+ (id)activeAndIdleAndGoalHoursSampleQueryForDate:(id)arg1 predicate:(id)arg2 needsHourlyChartInfo:(BOOL)arg3 withCompletion:(id)arg4;
-+ (id)activeAndIdleAndGoalHoursSampleQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 needsHourlyChartInfo:(BOOL)arg4 withCompletion:(id)arg5;
-+ (id)activeAndIdleHoursObserverQueryForDate:(id)arg1 predicate:(id)arg2 withCompletion:(id)arg3;
-+ (id)activeAndIdleHoursObserverQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 withCompletion:(id)arg4;
++ (id)activeAndIdleAndGoalHoursSampleQueryForDate:(id)arg1 predicate:(id)arg2 needsHourlyChartInfo:(BOOL)arg3 withCompletion:(id /* block */)arg4;
++ (id)activeAndIdleAndGoalHoursSampleQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 needsHourlyChartInfo:(BOOL)arg4 withCompletion:(id /* block */)arg5;
++ (id)activeAndIdleHoursObserverQueryForDate:(id)arg1 predicate:(id)arg2 withCompletion:(id /* block */)arg3;
++ (id)activeAndIdleHoursObserverQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 withCompletion:(id /* block */)arg4;
 + (id)activeHourQuantityType;
 + (id)activeHourUnit;
 + (id)briskActivityQuantityType;
 + (id)briskActivityUnit;
 + (id)calorieQuantityType;
 + (id)calorieUnit;
-+ (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(BOOL)arg4 handler:(id)arg5;
-+ (id)dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id)arg6;
++ (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(BOOL)arg4 handler:(id /* block */)arg5;
++ (id)dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
 + (id)distanceQuantityType;
 + (id)distanceUnit;
-+ (id)statisticsCollectionQueryForDate:(id)arg1 intervalSize:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id)arg6;
-+ (id)statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id)arg7;
++ (id)statisticsCollectionQueryForDate:(id)arg1 intervalSize:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
++ (id)statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id /* block */)arg7;
 + (id)stepQuantityType;
 + (id)stepUnit;
 
@@ -68,7 +66,7 @@
 - (id)initWithHealthStore:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)sourcesPredicate;
-- (id)startCurrentActivityCacheQueryWithHandler:(id)arg1;
+- (id)startCurrentActivityCacheQueryWithHandler:(id /* block */)arg1;
 - (void)stopCurrentActivityCacheQueryForClientToken:(id)arg1;
 - (void)stopQuery:(id)arg1;
 - (id)weeklyGoalModel;

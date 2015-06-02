@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDTCCUtilities : NSObject {
-}
+@interface ACDTCCUtilities : NSObject
 
 + (int)TCCStateForClient:(id)arg1 accountTypeID:(id)arg2;
 + (BOOL)TCCSupportedForAccountTypeID:(id)arg1;

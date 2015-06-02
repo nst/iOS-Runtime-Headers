@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int callStatus;
-@property unsigned int callType;
-@property BOOL hasCallStatus;
-@property BOOL hasCallType;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int callStatus;
+@property (nonatomic) unsigned int callType;
+@property (nonatomic) BOOL hasCallStatus;
+@property (nonatomic) BOOL hasCallType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)callStatus;
 - (unsigned int)callType;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableArray;
-
 @interface NPKProtoSecureElementGetCardsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int *list; 
@@ -22,13 +20,13 @@
     BOOL _pending;
 }
 
-@property(readonly) unsigned int* activationStates;
-@property(readonly) unsigned int activationStatesCount;
-@property(retain) NSMutableArray * cardAIDs;
-@property BOOL hasPending;
-@property(readonly) unsigned int* lifecycleStates;
-@property(readonly) unsigned int lifecycleStatesCount;
-@property BOOL pending;
+@property (nonatomic, readonly) unsigned int*activationStates;
+@property (nonatomic, readonly) unsigned int activationStatesCount;
+@property (nonatomic, retain) NSMutableArray *cardAIDs;
+@property (nonatomic) BOOL hasPending;
+@property (nonatomic, readonly) unsigned int*lifecycleStates;
+@property (nonatomic, readonly) unsigned int lifecycleStatesCount;
+@property (nonatomic) BOOL pending;
 
 - (void).cxx_destruct;
 - (unsigned int*)activationStates;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSDictionary;
-
 @interface SKUIAttributedStringIndexBarEntry : SKUIIndexBarEntry {
     NSAttributedString *_attributedString;
     NSDictionary *_defaultTextAttributes;
@@ -11,8 +9,8 @@
     NSAttributedString *_synthesizedAttributedString;
 }
 
-@property(copy,readonly) NSAttributedString * attributedString;
-@property(copy) NSDictionary * defaultTextAttributes;
+@property (nonatomic, readonly, copy) NSAttributedString *attributedString;
+@property (nonatomic, copy) NSDictionary *defaultTextAttributes;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_calculatedContentSize;

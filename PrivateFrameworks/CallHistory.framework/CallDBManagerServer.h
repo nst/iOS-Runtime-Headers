@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CallDBManagerServer : CallDBManager {
-}
+@interface CallDBManagerServer : CallDBManager
 
 + (id)getDestinationModel:(int)arg1;
 + (id)getDestinationModelForVersion:(int)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CMNatalimeterInternal;
-
 @interface CMNatalimeter : NSObject {
     CMNatalimeterInternal *_internal;
 }
 
-@property(readonly) CMNatalimeterInternal * _internal;
+@property (nonatomic, readonly) CMNatalimeterInternal *_internal;
 
 + (id)defaultUserProfile;
 + (BOOL)isNatalimeterAvailable;
@@ -20,10 +18,10 @@
 - (void)dealloc;
 - (unsigned int)getSupportedMetricsForSession:(int)arg1;
 - (id)init;
-- (void)queryAbsoluteNatalimetryDataSinceDataRecord:(id)arg1 withHandler:(id)arg2;
-- (void)queryAbsoluteNatalimetryDataSinceRecord:(int)arg1 withHandler:(id)arg2;
-- (void)setSession:(int)arg1 withCompletionHandler:(id)arg2;
-- (void)startAbsoluteNatalimetryDataUpdatesWithHandler:(id)arg1;
+- (void)queryAbsoluteNatalimetryDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)queryAbsoluteNatalimetryDataSinceRecord:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)setSession:(int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)startAbsoluteNatalimetryDataUpdatesWithHandler:(id /* block */)arg1;
 - (void)stopAbsoluteNatalimetryDataUpdates;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSError, NSMapTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, NSURL, NSUUID, TSPDocumentResourceDataProvider, TSPDocumentRevision, TSPFinalizeHandlerQueue, TSPObject, TSPObjectContext, TSPPackage, TSPPackageMetadata, TSPPersistedObjectUUIDMap;
-
 @interface TSPPackageReadCoordinator : TSPReadCoordinatorBase <TSPReadCoordinator> {
     BOOL _areExternalDataReferencesAllowed;
     TSPPackageMetadata *_cachedMetadata;
@@ -92,18 +90,18 @@
     unsigned long long _writeVersion;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL didRequireUpgrade;
-@property(readonly) TSPDocumentRevision * documentRevision;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isReadingFromDocument;
-@property(readonly) TSPObject * metadataObject;
-@property(readonly) int preferredPackageType;
-@property(readonly) unsigned long long readVersion;
-@property(readonly) unsigned long long saveToken;
-@property(readonly) Class superclass;
-@property(readonly) unsigned long long writeVersion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL didRequireUpgrade;
+@property (nonatomic, readonly) TSPDocumentRevision *documentRevision;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isReadingFromDocument;
+@property (nonatomic, readonly) TSPObject *metadataObject;
+@property (nonatomic, readonly) int preferredPackageType;
+@property (nonatomic, readonly) unsigned long long readVersion;
+@property (nonatomic, readonly) unsigned long long saveToken;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long writeVersion;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -129,19 +127,19 @@
 - (int)preferredPackageType;
 - (void)prepareForFullDocumentUpgrade;
 - (void)prepareForFullDocumentUpgradeImpl;
-- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)processMetadata:(id)arg1;
-- (void)readComponent:(id)arg1 additionalComponents:(id)arg2 requireUpgrade:(BOOL)arg3 completionQueue:(id)arg4 completion:(id)arg5;
-- (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
+- (void)readComponent:(id)arg1 additionalComponents:(id)arg2 requireUpgrade:(BOOL)arg3 completionQueue:(id)arg4 completion:(id /* block */)arg5;
+- (void)readComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)readComponentAsync:(id)arg1;
 - (BOOL)readComponentIfNeededAsync:(id)arg1;
 - (void)readExternalReferenceComponentIfNeededAsyncForObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(BOOL)arg3 fromComponent:(id)arg4;
-- (void)readPackageMetadataWithComponent:(id)arg1 completionQueue:(id)arg2 completion:(id)arg3;
+- (void)readPackageMetadataWithComponent:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (id)readPackageMetadataWithError:(id*)arg1;
-- (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id)arg2;
+- (void)readRootObjectWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)readVersion;
-- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id)arg7;
-- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id)arg6;
+- (void)reader:(id)arg1 didFindExternalReferenceToObjectIdentifier:(long long)arg2 componentIdentifier:(long long)arg3 isWeak:(BOOL)arg4 allowUnknownObject:(BOOL)arg5 fromParentObject:(id)arg6 completion:(id /* block */)arg7;
+- (void)reader:(id)arg1 didFindExternalRepeatedReference:(id)arg2 isWeak:(BOOL)arg3 allowUnknownObject:(BOOL)arg4 fromParentObject:(id)arg5 completion:(id /* block */)arg6;
 - (void)reader:(id)arg1 didResetObjectIdentifierForObject:(id)arg2 originalObjectIdentifier:(long long)arg3;
 - (void)reader:(id)arg1 didResetObjectUUID:(id)arg2 forObjectIdentifier:(long long)arg3 originalObjectUUID:(id)arg4;
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;

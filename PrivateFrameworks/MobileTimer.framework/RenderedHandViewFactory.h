@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSBundle, NSMutableDictionary, NSString;
-
 @interface RenderedHandViewFactory : NSObject {
     BOOL _allowCaching;
     NSMutableDictionary *_angleCache;
@@ -25,9 +23,9 @@
     } _viewSize;
 }
 
-@property(readonly) BOOL allowCaching;
-@property(readonly) NSString * key;
-@property unsigned int registeredClientsCount;
+@property (nonatomic, readonly) BOOL allowCaching;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic) unsigned int registeredClientsCount;
 
 + (void)flushAllCaches;
 + (id)keyForBundle:(id)arg1 imagePath:(id)arg2 offset:(struct CGPoint { float x1; float x2; })arg3 scale:(struct CGSize { float x1; float x2; })arg4;

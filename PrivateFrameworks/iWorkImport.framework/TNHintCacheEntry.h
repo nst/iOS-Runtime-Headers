@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDHint>;
-
 @interface TNHintCacheEntry : NSObject {
     <TSDHint> *mHint;
     BOOL mIsValid;
@@ -13,9 +11,9 @@
     } mOrigin;
 }
 
-@property(retain) <TSDHint> * hint;
+@property (retain) <TSDHint> *hint;
 @property struct CGPoint { float x1; float x2; } origin;
-@property(getter=isValid) BOOL valid;
+@property (getter=isValid) BOOL valid;
 
 - (id)hint;
 - (id)initWithHint:(id)arg1 origin:(struct CGPoint { float x1; float x2; })arg2;

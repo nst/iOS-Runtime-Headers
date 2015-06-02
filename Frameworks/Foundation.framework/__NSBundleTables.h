@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock, NSMutableDictionary, NSMutableSet;
-
 @interface __NSBundleTables : NSObject {
     struct __CFDictionary { } *_bundleForClassMap;
     NSMutableSet *_loadedBundles;

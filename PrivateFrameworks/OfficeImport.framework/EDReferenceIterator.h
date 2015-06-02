@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDReference, EDRowBlock, EDRowBlocks, EDWorkbook, EDWorksheet;
-
 @interface EDReferenceIterator : NSObject {
     unsigned int mCellIndex;
     int mCurrentCellIndex;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKPassSnapshotter, UIColor, UIImageView, UILabel;
-
 @interface PKPaymentOptionGroupItemCardCell : PKPaymentOptionGroupItemCell {
     UIImageView *_cardArtView;
     UILabel *_censoredPANLabel;
@@ -15,11 +13,11 @@
     UIColor *_subTextLabelColor;
 }
 
-@property UIColor * highlightColor;
-@property(retain) UIColor * mainLabelColor;
-@property(retain) PKPassSnapshotter * passSnapshotter;
-@property BOOL showBillingAddress;
-@property(retain) UIColor * subTextLabelColor;
+@property (nonatomic) UIColor *highlightColor;
+@property (nonatomic, retain) UIColor *mainLabelColor;
+@property (nonatomic, retain) PKPassSnapshotter *passSnapshotter;
+@property (nonatomic) BOOL showBillingAddress;
+@property (nonatomic, retain) UIColor *subTextLabelColor;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cardArtFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_censoredPANLabelFrame;

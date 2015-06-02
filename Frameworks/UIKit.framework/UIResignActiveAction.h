@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIResignActiveAction : BSAction {
-}
+@interface UIResignActiveAction : BSAction
 
-@property(readonly) int reason;
+@property (nonatomic, readonly) int reason;
 
 - (int)UIActionType;
-- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
+- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
 - (id)initWithReason:(int)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (int)reason;

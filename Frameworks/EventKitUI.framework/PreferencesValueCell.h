@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCellShortener>;
-
 @interface PreferencesValueCell : EKUIConstrainedFontsTableViewCell {
     <EKCellShortener> *_shortener;
 }
 
-@property <EKCellShortener> * shortener;
+@property (nonatomic) <EKCellShortener> *shortener;
 
 - (void).cxx_destruct;
 - (void)_checkValueWidth;

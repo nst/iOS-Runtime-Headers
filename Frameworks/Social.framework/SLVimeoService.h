@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLVimeoService : SLService {
-}
+@interface SLVimeoService : SLService
 
 - (id)accountTypeIdentifier;
 - (id)activityImage;

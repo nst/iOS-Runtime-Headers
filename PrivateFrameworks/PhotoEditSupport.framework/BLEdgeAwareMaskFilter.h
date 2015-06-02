@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIFilter;
-
 @interface BLEdgeAwareMaskFilter : CIFilter {
     CIFilter *_ciColorCubeFilter;
     float *_cubeData;

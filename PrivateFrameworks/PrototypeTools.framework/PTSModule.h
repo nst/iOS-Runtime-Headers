@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSHashTable, NSMutableArray, NSString, _UISettings;
-
 @interface PTSModule : NSObject <PTSSectionObserver, _UISettingsKeyPathObserver> {
     NSMutableArray *_allSections;
     NSMutableArray *_enabledSections;
@@ -12,14 +10,14 @@
     NSString *_title;
 }
 
-@property(retain) NSMutableArray * allSections;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableArray * enabledSections;
-@property(readonly) unsigned int hash;
-@property(retain) _UISettings * settings;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSMutableArray *allSections;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *enabledSections;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UISettings *settings;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
 
 + (id)moduleWithSettings:(id)arg1;
 + (id)moduleWithTitle:(id)arg1 contents:(id)arg2;
@@ -42,8 +40,8 @@
 - (void)deleteRowAtIndexPath:(id)arg1;
 - (id)destinationForRowAtIndexPath:(id)arg1 withProposedDestination:(id)arg2;
 - (id)enabledSections;
-- (void)enumerateAllRowsUsingBlock:(id)arg1;
-- (void)enumerateEnabledRowsUsingBlock:(id)arg1;
+- (void)enumerateAllRowsUsingBlock:(id /* block */)arg1;
+- (void)enumerateEnabledRowsUsingBlock:(id /* block */)arg1;
 - (BOOL)hasEnabledEditableRows;
 - (id)indexPathForRow:(id)arg1;
 - (id)initWithContents:(id)arg1;

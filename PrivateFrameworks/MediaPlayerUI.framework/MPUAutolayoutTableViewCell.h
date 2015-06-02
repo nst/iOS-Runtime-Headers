@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUArtworkView, NSArray, NSString, UILabel, UIView;
-
 @interface MPUAutolayoutTableViewCell : UITableViewCell {
     BOOL _alignsSeparatorInsetsWithLabels;
     struct UIEdgeInsets { 
@@ -38,22 +36,22 @@
     NSString *_textLabelFontStyle;
 }
 
-@property BOOL alignsSeparatorInsetsWithLabels;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkInsets;
-@property(readonly) id artworkLayoutGuide;
-@property float artworkMaxWidth;
-@property(readonly) MPUArtworkView * artworkView;
-@property(readonly) id contentLayoutGuide;
-@property(readonly) UILabel * detailTextLabel;
-@property float detailTextLabelFirstLineLeading;
-@property(copy) NSString * detailTextLabelFontStyle;
-@property(getter=isExpanded) BOOL expanded;
-@property(readonly) UIView * expansionView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } labelContentViewInsets;
-@property(readonly) id labelLayoutGuide;
-@property BOOL skipSeparatorInsetUpdates;
-@property(readonly) UILabel * textLabel;
-@property(copy) NSString * textLabelFontStyle;
+@property (nonatomic) BOOL alignsSeparatorInsetsWithLabels;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } artworkInsets;
+@property (nonatomic, readonly) id artworkLayoutGuide;
+@property (nonatomic) float artworkMaxWidth;
+@property (nonatomic, readonly) MPUArtworkView *artworkView;
+@property (nonatomic, readonly) id contentLayoutGuide;
+@property (nonatomic, readonly) UILabel *detailTextLabel;
+@property (nonatomic) float detailTextLabelFirstLineLeading;
+@property (nonatomic, copy) NSString *detailTextLabelFontStyle;
+@property (getter=isExpanded, nonatomic) BOOL expanded;
+@property (nonatomic, readonly) UIView *expansionView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } labelContentViewInsets;
+@property (nonatomic, readonly) id labelLayoutGuide;
+@property (nonatomic) BOOL skipSeparatorInsetUpdates;
+@property (nonatomic, readonly) UILabel *textLabel;
+@property (nonatomic, copy) NSString *textLabelFontStyle;
 
 + (Class)artworkViewClass;
 + (Class)labelClass;

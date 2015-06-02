@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLiteDatabase, NSMutableDictionary;
-
 @interface HDDataDeletionContext : NSObject {
     HDSQLiteDatabase *_database;
     NSMutableDictionary *_deleteStatementsByClassName;
 }
 
-@property(readonly) HDSQLiteDatabase * database;
-@property(retain) NSMutableDictionary * deleteStatementsByClassName;
+@property (nonatomic, readonly) HDSQLiteDatabase *database;
+@property (nonatomic, retain) NSMutableDictionary *deleteStatementsByClassName;
 
 - (void).cxx_destruct;
 - (id)database;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSMutableData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATLegacyMessageLink : ATLockdownMessageLink <ATLegacyMessageLink, ATSocketDelegate> {
     int _expectedBytesRemaining;
     NSMutableData *_incomingData;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_requestHandlerTable;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handlePingMessage:(id)arg1 fromLink:(id)arg2;
@@ -27,8 +25,8 @@
 - (id)initWithSocket:(id)arg1;
 - (BOOL)open;
 - (void)removeHandlerForMessage:(id)arg1;
-- (void)sendMessage:(id)arg1 withCompletion:(id)arg2;
-- (void)setHandlerForMessage:(id)arg1 handler:(id)arg2;
+- (void)sendMessage:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setHandlerForMessage:(id)arg1 handler:(id /* block */)arg2;
 - (void)socket:(id)arg1 hasDataAvailable:(const char *)arg2 length:(long)arg3;
 - (void)socketDidClose:(id)arg1;
 

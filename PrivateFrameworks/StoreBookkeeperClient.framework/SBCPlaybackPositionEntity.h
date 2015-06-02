@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@class NSString, SBCPlaybackPositionDomain;
-
 @interface SBCPlaybackPositionEntity : NSObject <NSCopying, NSSecureCoding> {
     double _bookmarkTime;
     double _bookmarkTimestamp;
@@ -14,13 +12,13 @@
     unsigned int _userPlayCount;
 }
 
-@property double bookmarkTime;
-@property double bookmarkTimestamp;
-@property(readonly) long long foreignDatabaseEntityID;
-@property BOOL hasBeenPlayed;
-@property(readonly) SBCPlaybackPositionDomain * playbackPositionDomain;
-@property(readonly) NSString * ubiquitousIdentifier;
-@property unsigned int userPlayCount;
+@property (nonatomic) double bookmarkTime;
+@property (nonatomic) double bookmarkTimestamp;
+@property (nonatomic, readonly) long long foreignDatabaseEntityID;
+@property (nonatomic) BOOL hasBeenPlayed;
+@property (nonatomic, readonly) SBCPlaybackPositionDomain *playbackPositionDomain;
+@property (nonatomic, readonly) NSString *ubiquitousIdentifier;
+@property (nonatomic) unsigned int userPlayCount;
 
 + (BOOL)supportsSecureCoding;
 + (id)ubiquitousIdentifierWithItemTitle:(id)arg1 albumName:(id)arg2 itemArtistName:(id)arg3;

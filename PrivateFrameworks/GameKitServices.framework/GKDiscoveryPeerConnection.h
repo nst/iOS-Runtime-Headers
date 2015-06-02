@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKAsyncSocket, GKSimpleTimer, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKDiscoveryPeerConnection : NSObject <GKSimpleTimerDelegate> {
     BOOL _connected;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _connectedHandler;
-
+    id /* block */ _connectedHandler;
     GKAsyncSocket *_connectionSocket;
     double _connectionTimeoutInSeconds;
     unsigned int _currentSequenceNumber;
@@ -27,11 +17,7 @@
     NSMutableArray *_messageReceiptHandlerHoldingQueue;
     NSMutableArray *_messageReceiptHandlerList;
     id _peer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _receiveDataHandler;
-
+    id /* block */ _receiveDataHandler;
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;
     NSObject<OS_dispatch_queue> *_syncQueue;
@@ -39,12 +25,12 @@
     GKSimpleTimer *_timeoutTimer;
 }
 
-@property(copy) id connectedHandler;
-@property(copy) NSString * localServiceName;
-@property(copy) id receiveDataHandler;
-@property(copy) NSString * remoteServiceName;
-@property NSObject<OS_dispatch_queue> * syncQueue;
-@property NSObject<OS_dispatch_queue> * targetQueue;
+@property (nonatomic, copy) id /* block */ connectedHandler;
+@property (nonatomic, copy) NSString *localServiceName;
+@property (nonatomic, copy) id /* block */ receiveDataHandler;
+@property (nonatomic, copy) NSString *remoteServiceName;
+@property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (void)checkConstants;
 + (unsigned int)receiveDataLimit;
@@ -52,17 +38,17 @@
 
 - (void)attachSocketDescriptor:(int)arg1;
 - (void)connectToSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 port:(unsigned short)arg2;
-- (id)connectedHandler;
+- (id /* block */)connectedHandler;
 - (void)dealloc;
 - (id)initWithLocalServiceName:(id)arg1;
 - (void)invalidate;
 - (id)localServiceName;
-- (id)receiveDataHandler;
+- (id /* block */)receiveDataHandler;
 - (id)remoteServiceName;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setConnectedHandler:(id)arg1;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setConnectedHandler:(id /* block */)arg1;
 - (void)setLocalServiceName:(id)arg1;
-- (void)setReceiveDataHandler:(id)arg1;
+- (void)setReceiveDataHandler:(id /* block */)arg1;
 - (void)setRemoteServiceName:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
@@ -75,7 +61,7 @@
 - (void)syncReceivedData:(id)arg1 error:(id)arg2;
 - (void)syncSendAccept;
 - (void)syncSendHello;
-- (void)syncSendMessage:(int)arg1 data:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)syncSendMessage:(int)arg1 data:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)syncSendMessageReceipt:(int)arg1 sequenceNumber:(unsigned int)arg2;
 - (BOOL)syncSetupNewSocket;
 - (id)targetQueue;

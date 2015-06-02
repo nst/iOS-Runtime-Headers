@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSData;
-
 @interface BLTPBSectionIconVariant : PBCodable <NSCopying> {
     unsigned int _format;
     struct { 
@@ -13,11 +11,11 @@
     BOOL _precomposed;
 }
 
-@property unsigned int format;
-@property(readonly) BOOL hasImageData;
-@property BOOL hasPrecomposed;
-@property(retain) NSData * imageData;
-@property BOOL precomposed;
+@property (nonatomic) unsigned int format;
+@property (nonatomic, readonly) BOOL hasImageData;
+@property (nonatomic) BOOL hasPrecomposed;
+@property (nonatomic, retain) NSData *imageData;
+@property (nonatomic) BOOL precomposed;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

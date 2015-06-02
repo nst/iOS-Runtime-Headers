@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary;
-
 @interface AVSafePerformOnMainThreadTargetDict : NSObject {
     NSMutableDictionary *_obj;
 }

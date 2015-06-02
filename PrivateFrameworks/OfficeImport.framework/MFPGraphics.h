@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFPGraphicsState, MFPObjectTable, NSMutableArray, NSMutableDictionary;
-
 @interface MFPGraphics : NSObject {
     NSMutableDictionary *mAvailableFonts;
     struct CGRect { 

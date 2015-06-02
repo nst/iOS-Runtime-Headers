@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SASettingFloatEntity : SASettingNumericEntity
 
-@interface SASettingFloatEntity : SASettingNumericEntity {
-}
-
-@property(copy) NSNumber * previousValue;
-@property float value;
+@property (nonatomic, copy) NSNumber *previousValue;
+@property (nonatomic) float value;
 
 + (id)floatEntity;
 + (id)floatEntityWithDictionary:(id)arg1 context:(id)arg2;

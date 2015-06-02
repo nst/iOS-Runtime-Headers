@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSMutableDictionary, NSMutableIndexSet, NSString, SKUIClientContext, SKUIGridComponent, SKUIMissingItemLoader, SKUIProductPageOverlayController, SKUIVideoImageDataConsumer;
-
 @interface SKUIGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
     NSMapTable *_artworkRequests;
     SKUIClientContext *_clientContext;
@@ -27,11 +25,11 @@
     NSMutableDictionary *_videoPlaceholderImages;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUIGridComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUIGridComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkContextForLockupSize:(int)arg1;
@@ -42,9 +40,9 @@
 - (id)_editorialLayoutForEditorial:(id)arg1;
 - (id)_editorialLayoutForLockup:(id)arg1;
 - (id)_editorialLockupCellWithLockups:(id)arg1 indexPath:(id)arg2;
-- (void)_enumerateItemsFromStartIndex:(int)arg1 withBlock:(id)arg2;
-- (void)_enumerateVisibleIndexPathsWithBlock:(id)arg1;
-- (void)_enumerateVisibleItemsWithBlock:(id)arg1;
+- (void)_enumerateItemsFromStartIndex:(int)arg1 withBlock:(id /* block */)arg2;
+- (void)_enumerateVisibleIndexPathsWithBlock:(id /* block */)arg1;
+- (void)_enumerateVisibleItemsWithBlock:(id /* block */)arg1;
 - (float)_heightForEditorialAtIndexPath:(id)arg1;
 - (float)_heightForEditorialLockup:(id)arg1;
 - (float)_heightForEditorialLockupAtIndexPath:(id)arg1;

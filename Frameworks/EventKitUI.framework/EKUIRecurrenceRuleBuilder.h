@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray;
-
 @interface EKUIRecurrenceRuleBuilder : NSObject {
     unsigned int _count;
     NSArray *_dayNumbers;
@@ -15,11 +13,11 @@
 }
 
 @property unsigned int count;
-@property(retain) NSArray * dayNumbers;
+@property (retain) NSArray *dayNumbers;
 @property int days;
 @property int frequency;
 @property int interval;
-@property(retain) NSArray * monthNumbers;
+@property (retain) NSArray *monthNumbers;
 @property int ordinalValue;
 
 - (void).cxx_destruct;

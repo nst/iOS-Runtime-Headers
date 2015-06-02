@@ -6,7 +6,7 @@
     int _environment;
 }
 
-@property int environment;
+@property (nonatomic) int environment;
 
 - (BOOL)allowsAnonymousAccount;
 - (BOOL)allowsAuthedAccount;

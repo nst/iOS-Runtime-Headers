@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CISharpenLuminance : CIFilter {
     CIImage *inputImage;
     NSNumber *inputSharpness;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputSharpness;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputSharpness;
 
 + (id)customAttributes;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenAccessibility : SASettingOpenSettings {
-}
+@interface SASettingOpenAccessibility : SASettingOpenSettings
 
 + (id)openAccessibility;
 + (id)openAccessibilityWithDictionary:(id)arg1 context:(id)arg2;

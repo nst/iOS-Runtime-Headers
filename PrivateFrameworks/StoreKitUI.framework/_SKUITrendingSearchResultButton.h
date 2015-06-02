@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface _SKUITrendingSearchResultButton : UIButton {
-}
+@interface _SKUITrendingSearchResultButton : UIButton
 
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 

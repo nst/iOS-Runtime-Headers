@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKRemoteUIController, NSString;
-
 @interface GKRemoteUINavigationController : UINavigationController <GKBubbleFlowableViewController> {
     GKRemoteUIController *_remoteUIController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) GKRemoteUIController * remoteUIController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GKRemoteUIController *remoteUIController;
+@property (readonly) Class superclass;
 
 - (BOOL)_gkCanBeRemovedFromParentWhenCovered;
 - (BOOL)_gkUsesBubbleFlowModalPresentation;

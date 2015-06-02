@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSMachSendRight : BSMachPort {
-}
+@interface BSMachSendRight : BSMachPort
 
 - (unsigned int)sendRight;
 

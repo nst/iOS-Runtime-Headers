@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, _PFArray;
-
 @interface _PFMutableProxyArray : NSMutableArray {
     int _cd_rc;
     unsigned int _editCount;

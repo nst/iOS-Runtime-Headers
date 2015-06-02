@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSDictionary, NSError, NSString, NSURL, NSURLRequest, NSURLResponse;
-
 @interface __NSCFURLSessionTaskInfo : NSObject <NSSecureCoding> {
     unsigned long long _AVAssetDownloadToken;
     NSURL *_URL;
@@ -41,38 +39,38 @@
 }
 
 @property unsigned long long AVAssetDownloadToken;
-@property(copy) NSURL * URL;
-@property(copy) NSDictionary * _backgroundTaskTimingData;
+@property (copy) NSURL *URL;
+@property (copy) NSDictionary *_backgroundTaskTimingData;
 @property long long basePriority;
-@property(retain) NSString * bundleID;
+@property (retain) NSString *bundleID;
 @property long long countOfBytesExpectedToReceive;
 @property long long countOfBytesExpectedToSend;
 @property long long countOfBytesReceived;
 @property long long countOfBytesSent;
 @property double creationTime;
-@property(copy) NSURLRequest * currentRequest;
-@property(copy) NSURL * destinationURL;
+@property (copy) NSURLRequest *currentRequest;
+@property (copy) NSURL *destinationURL;
 @property BOOL disablesRetry;
-@property(getter=isDiscretionary) BOOL discretionary;
-@property(retain) NSURL * downloadFileURL;
-@property(copy) NSError * error;
+@property (getter=isDiscretionary) BOOL discretionary;
+@property (retain) NSURL *downloadFileURL;
+@property (copy) NSError *error;
 @property BOOL establishedConnection;
 @property BOOL expectingResumeCallback;
-@property(retain) NSURL * fileURL;
+@property (retain) NSURL *fileURL;
 @property BOOL hasStarted;
 @property unsigned int identifier;
 @property unsigned int lowThroughputTimerRetryCount;
-@property(retain) NSDictionary * options;
-@property(copy) NSURLRequest * originalRequest;
-@property(copy) NSURLResponse * response;
+@property (retain) NSDictionary *options;
+@property (copy) NSURLRequest *originalRequest;
+@property (copy) NSURLResponse *response;
 @property unsigned int retryCount;
-@property(retain) NSString * sessionID;
+@property (retain) NSString *sessionID;
 @property BOOL shouldCancelOnDisconnect;
 @property int state;
 @property unsigned int suspendCount;
-@property(copy) NSString * taskDescription;
+@property (copy) NSString *taskDescription;
 @property unsigned int taskKind;
-@property(retain) NSString * uniqueIdentifier;
+@property (retain) NSString *uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

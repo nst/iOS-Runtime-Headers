@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSObject<OS_dispatch_queue>, RadioStation;
-
 @interface RURadioAVPlayer : MPAVController {
     BOOL _checkedDefaultsForLastPlayedStation;
     RadioStation *_lastPlayedStation;
@@ -12,8 +10,8 @@
     NSObject<OS_dispatch_queue> *_radioUIAccessQueue;
 }
 
-@property(readonly) RadioStation * currentStation;
-@property(retain) RadioStation * lastPlayedStation;
+@property (nonatomic, readonly) RadioStation *currentStation;
+@property (nonatomic, retain) RadioStation *lastPlayedStation;
 
 - (void).cxx_destruct;
 - (void)_currentStationDidChangeNotification:(id)arg1;

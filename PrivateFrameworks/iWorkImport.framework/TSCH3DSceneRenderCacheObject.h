@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSCH3DSceneRenderCacheObject : NSObject {
     BOOL mCachingEnabled;
     NSMutableArray *mChildCacheObjects;
     NSMutableArray *mDynamicResources;
 }
 
-@property BOOL cachingEnabled;
+@property (nonatomic) BOOL cachingEnabled;
 
 + (id)cacheObject;
 
@@ -23,7 +21,7 @@
 - (int)p_resourceUpdateFlag;
 - (void)p_updateResourceUpdateFlags:(int)arg1;
 - (id)resourceAtIndex:(unsigned int)arg1;
-- (id)resourceAtIndex:(unsigned int)arg1 created:(BOOL*)arg2 ifAbsent:(id)arg3;
+- (id)resourceAtIndex:(unsigned int)arg1 created:(BOOL*)arg2 ifAbsent:(id /* block */)arg3;
 - (unsigned int)resourceCount;
 - (void)setCachingEnabled:(BOOL)arg1;
 

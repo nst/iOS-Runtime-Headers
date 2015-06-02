@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDate, NSDateComponents, NSNumberFormatter, NSString, UIColor, UIFont, _UIDatePickerView;
-
 @interface _UIDatePickerMode : NSObject {
     UIFont *_amPmFont;
     NSString *_amString;
@@ -40,35 +38,35 @@
     int _yearsSinceBaseDate;
 }
 
-@property(readonly) UIFont * amPmFont;
-@property(readonly) NSString * amString;
-@property(retain) NSDate * baseDate;
-@property(retain) NSDateComponents * baseDateComponents;
-@property(readonly) int datePickerMode;
-@property _UIDatePickerView * datePickerView;
-@property(readonly) UIFont * defaultTimeFont;
-@property(readonly) int displayedCalendarUnits;
-@property unsigned int* elements;
-@property(readonly) UIFont * font;
-@property(getter=is24Hour,readonly) BOOL is24Hour;
-@property(getter=isTimeIntervalMode,readonly) BOOL isTimeIntervalMode;
-@property(retain) NSString * localizedFormatString;
-@property(readonly) NSDate * maximumDate;
-@property(readonly) NSDateComponents * maximumDateComponents;
-@property(readonly) NSDate * minimumDate;
-@property(readonly) NSDateComponents * minimumDateComponents;
-@property int minuteInterval;
-@property unsigned int numberOfComponents;
-@property(retain) NSDate * originatingDate;
-@property(readonly) NSString * pmString;
-@property(readonly) float rowHeight;
-@property(retain) NSDateComponents * selectedDateComponents;
-@property(readonly) UIFont * sizedFont;
-@property(retain) NSDateComponents * todayDateComponents;
-@property double todaySinceReferenceDate;
-@property(readonly) UIColor * todayTextColor;
-@property(readonly) float totalComponentWidth;
-@property int yearsSinceBaseDate;
+@property (nonatomic, readonly) UIFont *amPmFont;
+@property (nonatomic, readonly) NSString *amString;
+@property (nonatomic, retain) NSDate *baseDate;
+@property (nonatomic, retain) NSDateComponents *baseDateComponents;
+@property (nonatomic, readonly) int datePickerMode;
+@property (nonatomic) _UIDatePickerView *datePickerView;
+@property (nonatomic, readonly) UIFont *defaultTimeFont;
+@property (nonatomic, readonly) int displayedCalendarUnits;
+@property (nonatomic) unsigned int*elements;
+@property (nonatomic, readonly) UIFont *font;
+@property (getter=is24Hour, nonatomic, readonly) BOOL is24Hour;
+@property (getter=isTimeIntervalMode, nonatomic, readonly) BOOL isTimeIntervalMode;
+@property (nonatomic, retain) NSString *localizedFormatString;
+@property (nonatomic, readonly) NSDate *maximumDate;
+@property (nonatomic, readonly) NSDateComponents *maximumDateComponents;
+@property (nonatomic, readonly) NSDate *minimumDate;
+@property (nonatomic, readonly) NSDateComponents *minimumDateComponents;
+@property (nonatomic) int minuteInterval;
+@property (nonatomic) unsigned int numberOfComponents;
+@property (nonatomic, retain) NSDate *originatingDate;
+@property (nonatomic, readonly) NSString *pmString;
+@property (nonatomic, readonly) float rowHeight;
+@property (nonatomic, retain) NSDateComponents *selectedDateComponents;
+@property (nonatomic, readonly) UIFont *sizedFont;
+@property (nonatomic, retain) NSDateComponents *todayDateComponents;
+@property (nonatomic) double todaySinceReferenceDate;
+@property (nonatomic, readonly) UIColor *todayTextColor;
+@property (nonatomic, readonly) float totalComponentWidth;
+@property (nonatomic) int yearsSinceBaseDate;
 
 + (id)_datePickerModeWithFormatString:(id)arg1 datePickerView:(id)arg2;
 + (id)_datePickerModeWithMode:(int)arg1 datePickerView:(id)arg2;

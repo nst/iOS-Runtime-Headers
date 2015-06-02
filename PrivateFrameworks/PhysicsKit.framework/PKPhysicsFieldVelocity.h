@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsFieldVelocity : PKPhysicsField {
-}
+@interface PKPhysicsFieldVelocity : PKPhysicsField
 
 + (id)fieldWithGrid:(id)arg1;
 

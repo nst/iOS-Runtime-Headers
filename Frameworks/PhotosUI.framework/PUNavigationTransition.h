@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UINavigationController;
-
 @interface PUNavigationTransition : PUViewControllerTransition {
     int __operation;
     UINavigationController *_navigationController;
@@ -12,11 +10,11 @@
     BOOL _wasStatusBarHiddenBeforeTransition;
 }
 
-@property(setter=_setOperation:) int _operation;
-@property UINavigationController * navigationController;
-@property(readonly) double popDuration;
-@property(readonly) double pushDuration;
-@property BOOL wasStatusBarHiddenBeforeTransition;
+@property (setter=_setOperation:, nonatomic) int _operation;
+@property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic, readonly) double popDuration;
+@property (nonatomic, readonly) double pushDuration;
+@property (nonatomic) BOOL wasStatusBarHiddenBeforeTransition;
 
 + (id)animationControllerForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 inNavigationController:(id)arg4;
 + (BOOL)shouldCrossFadeBottomBarsForNavigationController:(id)arg1;

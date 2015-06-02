@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData, NSDictionary, RadioPlayEventCollection, RadioPlaybackContext, RadioStation, SSURLConnectionRequest;
-
 @interface RadioGetTracksRequest : RadioRequest {
     NSDictionary *_additionalRequestParameters;
     unsigned long long _globalVersion;
@@ -19,15 +17,15 @@
     RadioStation *_station;
 }
 
-@property(copy) NSDictionary * additionalRequestParameters;
-@property(copy) NSData * heartbeatTokenData;
-@property BOOL includeCleanTracksOnly;
-@property unsigned int numberOfTracks;
-@property(copy) RadioPlayEventCollection * playEventCollection;
-@property(copy) RadioPlaybackContext * playbackContext;
-@property int reasonType;
-@property BOOL shouldIncludeAsset;
-@property BOOL skipPromptForSeamlessPlayback;
+@property (nonatomic, copy) NSDictionary *additionalRequestParameters;
+@property (nonatomic, copy) NSData *heartbeatTokenData;
+@property (nonatomic) BOOL includeCleanTracksOnly;
+@property (nonatomic) unsigned int numberOfTracks;
+@property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
+@property (nonatomic, copy) RadioPlaybackContext *playbackContext;
+@property (nonatomic) int reasonType;
+@property (nonatomic) BOOL shouldIncludeAsset;
+@property (nonatomic) BOOL skipPromptForSeamlessPlayback;
 
 - (void).cxx_destruct;
 - (id)additionalRequestParameters;
@@ -51,6 +49,6 @@
 - (void)setSkipPromptForSeamlessPlayback:(BOOL)arg1;
 - (BOOL)shouldIncludeAsset;
 - (BOOL)skipPromptForSeamlessPlayback;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNMacMutableUILayout : KNMacUILayout {
-}
+@interface KNMacMutableUILayout : KNMacUILayout
 
-@property int inspectorPaneViewMode;
-@property(getter=isShowingInspectorPane) BOOL showingInspectorPane;
-@property(getter=isShowingLightTable) BOOL showingLightTable;
-@property(getter=isShowingMasterSlides) BOOL showingMasterSlides;
-@property(getter=isShowingPresenterNotes) BOOL showingPresenterNotes;
-@property(getter=isShowingSidebar) BOOL showingSidebar;
-@property int sidebarViewMode;
+@property (nonatomic) int inspectorPaneViewMode;
+@property (getter=isShowingInspectorPane, nonatomic) BOOL showingInspectorPane;
+@property (getter=isShowingLightTable, nonatomic) BOOL showingLightTable;
+@property (getter=isShowingMasterSlides, nonatomic) BOOL showingMasterSlides;
+@property (getter=isShowingPresenterNotes, nonatomic) BOOL showingPresenterNotes;
+@property (getter=isShowingSidebar, nonatomic) BOOL showingSidebar;
+@property (nonatomic) int sidebarViewMode;
 
 - (void)setInspectorPaneViewMode:(int)arg1;
 - (void)setShowingInspectorPane:(BOOL)arg1;

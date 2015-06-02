@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, NSMutableArray, NSString;
-
 @interface NSDirectoryTraversalOperation : NSOperation {
     id _delegate;
     NSMutableArray *_deviceEntryPoints;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber, NSString;
-
 @interface AAFamilyInvite : NSObject {
     NSString *_childFirstName;
     NSString *_childLastName;
@@ -16,15 +14,15 @@
     NSNumber *_recepientDSID;
 }
 
-@property(copy) NSString * childFirstName;
-@property(copy) NSString * childLastName;
-@property(copy) NSString * code;
-@property BOOL isChildTransferInvite;
-@property(copy) NSNumber * organizerDSID;
-@property(copy) NSString * organizerEmail;
-@property(copy) NSString * organizerFirstName;
-@property(copy) NSString * organizerLastName;
-@property(copy) NSNumber * recepientDSID;
+@property (nonatomic, copy) NSString *childFirstName;
+@property (nonatomic, copy) NSString *childLastName;
+@property (nonatomic, copy) NSString *code;
+@property (nonatomic) BOOL isChildTransferInvite;
+@property (nonatomic, copy) NSNumber *organizerDSID;
+@property (nonatomic, copy) NSString *organizerEmail;
+@property (nonatomic, copy) NSString *organizerFirstName;
+@property (nonatomic, copy) NSString *organizerLastName;
+@property (nonatomic, copy) NSNumber *recepientDSID;
 
 - (void).cxx_destruct;
 - (id)childFirstName;

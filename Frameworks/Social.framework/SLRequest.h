@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL, OACredential, SLService;
-
 @interface SLRequest : NSObject {
     OACredential *_OAuthCredential;
     ACAccount *_account;
@@ -20,10 +18,10 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(retain) ACAccount * account;
-@property(readonly) NSDictionary * parameters;
-@property(readonly) int requestMethod;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, readonly) NSDictionary *parameters;
+@property (nonatomic, readonly) int requestMethod;
 
 + (id)requestForServiceType:(id)arg1 requestMethod:(int)arg2 URL:(id)arg3 parameters:(id)arg4;
 
@@ -56,9 +54,9 @@
 - (unsigned int)networkServiceType;
 - (id)parameterForKey:(id)arg1;
 - (id)parameters;
-- (void)performJSONRequestWithHandler:(id)arg1;
-- (void)performJSONRequestWithHandler:(id)arg1 retryCount:(int)arg2;
-- (void)performRequestWithHandler:(id)arg1;
+- (void)performJSONRequestWithHandler:(id /* block */)arg1;
+- (void)performJSONRequestWithHandler:(id /* block */)arg1 retryCount:(int)arg2;
+- (void)performRequestWithHandler:(id /* block */)arg1;
 - (id)preparedURLRequest;
 - (void)removeParameterForKey:(id)arg1;
 - (int)requestMethod;

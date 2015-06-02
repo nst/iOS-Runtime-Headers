@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSUpdatesDatabaseTransaction : SSUpdatesDatabaseSession {
-}
+@interface SSUpdatesDatabaseTransaction : SSUpdatesDatabaseSession
 
 - (id)_newUpdateEntityPropertiesWithUpdate:(id)arg1;
 - (BOOL)deleteUpdatesInstalledBefore:(double)arg1;

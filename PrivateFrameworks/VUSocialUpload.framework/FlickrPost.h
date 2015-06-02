@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class NSArray, NSData, NSString, NSURL;
-
 @interface FlickrPost : FlickrRequest <NSURLConnectionDelegate> {
     NSURL *_assetURL;
     int _contentType;
@@ -17,25 +15,25 @@
     unsigned int _visibility;
 }
 
-@property(retain) NSURL * assetURL;
-@property int contentType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hidden;
-@property(retain) NSData * photoData;
-@property long long photoSetID;
-@property(retain) NSString * postDescription;
-@property int safetyLevel;
-@property(readonly) Class superclass;
-@property(retain) NSArray * tags;
-@property(retain) NSString * title;
-@property unsigned int visibility;
+@property (nonatomic, retain) NSURL *assetURL;
+@property (nonatomic) int contentType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSData *photoData;
+@property (nonatomic) long long photoSetID;
+@property (nonatomic, retain) NSString *postDescription;
+@property (nonatomic) int safetyLevel;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *tags;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) unsigned int visibility;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_uploadData:(id)arg1 toAccount:(id)arg2 completion:(id)arg3;
+- (void)_uploadData:(id)arg1 toAccount:(id)arg2 completion:(id /* block */)arg3;
 - (id)assetURL;
 - (int)contentType;
 - (BOOL)hidden;
@@ -57,7 +55,7 @@
 - (void)setVisibility:(unsigned int)arg1;
 - (id)tags;
 - (id)title;
-- (BOOL)uploadToAccount:(id)arg1 completion:(id)arg2;
+- (BOOL)uploadToAccount:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)visibility;
 
 @end

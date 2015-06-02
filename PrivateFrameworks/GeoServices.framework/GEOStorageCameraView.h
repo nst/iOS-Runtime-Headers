@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOURLCamera, PBUnknownFields;
-
 @interface GEOStorageCameraView : PBCodable <NSCopying> {
     GEOURLCamera *_camera;
     struct { 
@@ -13,11 +11,11 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) GEOURLCamera * camera;
-@property(readonly) BOOL hasCamera;
-@property BOOL hasMapType;
-@property int mapType;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) GEOURLCamera *camera;
+@property (nonatomic, readonly) BOOL hasCamera;
+@property (nonatomic) BOOL hasMapType;
+@property (nonatomic) int mapType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (id)camera;
 - (void)copyTo:(id)arg1;

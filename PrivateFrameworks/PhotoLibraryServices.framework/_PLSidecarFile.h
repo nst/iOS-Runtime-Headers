@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSNumber, NSString, PLManagedAsset;
+@interface _PLSidecarFile : PLManagedObject
 
-@interface _PLSidecarFile : PLManagedObject {
-}
-
-@property(retain) PLManagedAsset * asset;
-@property(retain) NSDate * captureDate;
-@property(retain) NSNumber * compressedSize;
+@property (nonatomic, retain) PLManagedAsset *asset;
+@property (nonatomic, retain) NSDate *captureDate;
+@property (nonatomic, retain) NSNumber *compressedSize;
 @property int compressedSizeValue;
-@property(retain) NSString * filename;
-@property(retain) NSNumber * index;
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic, retain) NSNumber *index;
 @property short indexValue;
-@property(retain) NSDate * modificationDate;
-@property(retain) NSString * originalFilename;
-@property(retain) NSString * uniformTypeIdentifier;
+@property (nonatomic, retain) NSDate *modificationDate;
+@property (nonatomic, retain) NSString *originalFilename;
+@property (nonatomic, retain) NSString *uniformTypeIdentifier;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

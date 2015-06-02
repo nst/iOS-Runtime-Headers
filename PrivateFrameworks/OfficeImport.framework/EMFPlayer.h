@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EMFPlusPlayer, MFGraphicsDevice;
-
 @interface EMFPlayer : NSObject {
     EMFPlusPlayer *m_emfPlusPlayer;
     MFGraphicsDevice *m_gdi;

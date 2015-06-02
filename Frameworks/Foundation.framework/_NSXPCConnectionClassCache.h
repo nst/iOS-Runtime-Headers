@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableSet;
-
 @interface _NSXPCConnectionClassCache : NSObject {
     NSMutableSet *_cache;
     int _lock;

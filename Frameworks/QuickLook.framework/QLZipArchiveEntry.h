@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSData, NSError, NSURL, QLZipArchive;
-
 @interface QLZipArchiveEntry : NSObject {
     QLZipArchive *_archive;
     NSData *_data;
@@ -12,10 +10,10 @@
     NSURL *_url;
 }
 
-@property QLZipArchive * archive;
-@property NSData * data;
-@property struct archive_entry { }* entry;
-@property NSURL * url;
+@property QLZipArchive *archive;
+@property NSData *data;
+@property struct archive_entry { }*entry;
+@property (nonatomic) NSURL *url;
 
 - (id)archive;
 - (id)data;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSOrderedSet;
-
 @interface _UIRelationshipTraitStorage : _UITraitStorage {
     NSOrderedSet *_relationshipCandidates;
 }

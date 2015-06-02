@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSSStyle, TSSStylePropertyChangeSet, TSWPCharacterStylePropertyChangeSet;
-
 @interface TSWPStyleDiff : TSPObject {
     TSWPCharacterStylePropertyChangeSet *_changeSet;
     BOOL _definedChangeSet;
@@ -17,9 +10,9 @@
     TSSStyle *_style;
 }
 
-@property(retain) TSSStylePropertyChangeSet * changeSet;
-@property(retain) TSSStylePropertyChangeSet * previouslyAppliedChangeSet;
-@property(retain) TSSStyle * style;
+@property (nonatomic, retain) TSSStylePropertyChangeSet *changeSet;
+@property (nonatomic, retain) TSSStylePropertyChangeSet *previouslyAppliedChangeSet;
+@property (nonatomic, retain) TSSStyle *style;
 
 - (id)changeSet;
 - (id)changedPropertyNames;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSString;
-
 @interface HSTemporaryFile : NSObject {
     NSString *_path;
 }

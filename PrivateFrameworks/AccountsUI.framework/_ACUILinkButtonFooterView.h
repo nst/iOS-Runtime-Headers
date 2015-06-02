@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACUILinkButton;
-
 @interface _ACUILinkButtonFooterView : UIView <PSHeaderFooterView> {
     int _desiredTextAlignment;
     ACUILinkButton *_linkButton;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSHashTable, NSString, UIView;
-
 @interface FBRootWindow : FBWindow <FBSceneTransformTarget> {
     BOOL _mainDisplay;
     UIView *_sceneContainerView;
     NSHashTable *_transforms;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_isSecure;
 

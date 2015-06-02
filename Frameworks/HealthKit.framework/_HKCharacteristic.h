@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKCharacteristic : NSObject {
-}
+@interface _HKCharacteristic : NSObject
 
 + (id)_canoncialUnitForCharacteristicType:(id)arg1;
 + (id)_quantityTypeForCharacteristicType:(id)arg1;

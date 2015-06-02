@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, MPStoreCollectionCompletionOffering, MPStoreCompletionOfferResponse, MPStoreOfferMediaItemCollection, NSURL;
-
 @interface MPStoreCompletionOffering : NSObject <NSCopying> {
     MPStoreCollectionCompletionOffering *_collectionWithCompletionItemsOffering;
     MPMediaQuery *_localItemsQuery;
@@ -13,10 +11,10 @@
     NSURL *_storeURL;
 }
 
-@property(readonly) MPStoreOfferMediaItemCollection * collectionWithCompletionItems;
-@property int preferredStoreOfferVariant;
-@property(readonly) int presentationStyle;
-@property(copy,readonly) NSURL * storeURL;
+@property (nonatomic, readonly) MPStoreOfferMediaItemCollection *collectionWithCompletionItems;
+@property (nonatomic) int preferredStoreOfferVariant;
+@property (nonatomic, readonly) int presentationStyle;
+@property (nonatomic, readonly, copy) NSURL *storeURL;
 
 + (int)defaultOfferVariant;
 + (id)offeringWithResponse:(id)arg1 localItemsQuery:(id)arg2;

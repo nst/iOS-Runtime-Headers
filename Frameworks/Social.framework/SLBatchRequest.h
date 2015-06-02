@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSMutableArray;
-
 @interface SLBatchRequest : SLRequest {
     NSMutableArray *_requests;
 }

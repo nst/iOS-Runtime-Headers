@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOResourceManifestConfiguration : NSObject {
     NSString *_applicationIdentifier;
     NSString *_applicationVersion;
@@ -17,17 +15,17 @@
     unsigned int _tileGroupIdentifier;
 }
 
-@property(copy) NSString * applicationIdentifier;
-@property(copy) NSString * applicationVersion;
-@property(copy) NSString * countryCode;
-@property(copy) NSString * dataDirectory;
-@property(readonly) NSString * directorySuffix;
-@property(copy) NSString * environment;
-@property(copy) NSString * hardwareIdentifier;
-@property(copy) NSString * os;
-@property(copy) NSString * osBuild;
-@property(copy) NSString * osVersion;
-@property unsigned int tileGroupIdentifier;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (nonatomic, copy) NSString *applicationVersion;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, copy) NSString *dataDirectory;
+@property (nonatomic, readonly) NSString *directorySuffix;
+@property (nonatomic, copy) NSString *environment;
+@property (nonatomic, copy) NSString *hardwareIdentifier;
+@property (nonatomic, copy) NSString *os;
+@property (nonatomic, copy) NSString *osBuild;
+@property (nonatomic, copy) NSString *osVersion;
+@property (nonatomic) unsigned int tileGroupIdentifier;
 
 - (id)applicationIdentifier;
 - (id)applicationVersion;

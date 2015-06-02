@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSCache;
-
 @interface _MFLibraryContentIndexResultsCache : NSObject {
     NSCache *_storage;
 }
@@ -12,6 +10,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)removeAllObjects;
-- (id)valueForKey:(id)arg1 valueGenerator:(id)arg2;
+- (id)valueForKey:(id)arg1 valueGenerator:(id /* block */)arg2;
 
 @end

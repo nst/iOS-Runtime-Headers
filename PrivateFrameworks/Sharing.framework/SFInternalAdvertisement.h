@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSData, NSDictionary;
-
 @interface SFInternalAdvertisement : NSObject {
     NSData *_advertisementPayload;
     NSDictionary *_options;
 }
 
-@property(copy) NSData * advertisementPayload;
-@property(copy) NSDictionary * options;
+@property (copy) NSData *advertisementPayload;
+@property (copy) NSDictionary *options;
 
 - (id)advertisementPayload;
 - (void)dealloc;

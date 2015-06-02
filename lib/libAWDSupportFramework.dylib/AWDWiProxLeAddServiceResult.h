@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWiProxLeAddServiceResult : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -16,16 +14,16 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasResult;
-@property(readonly) BOOL hasResultString;
-@property(readonly) BOOL hasServiceUUID;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property unsigned int result;
-@property(retain) NSString * resultString;
-@property(retain) NSString * serviceUUID;
-@property(retain) NSString * sessionId;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasResult;
+@property (nonatomic, readonly) BOOL hasResultString;
+@property (nonatomic, readonly) BOOL hasServiceUUID;
+@property (nonatomic, readonly) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int result;
+@property (nonatomic, retain) NSString *resultString;
+@property (nonatomic, retain) NSString *serviceUUID;
+@property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

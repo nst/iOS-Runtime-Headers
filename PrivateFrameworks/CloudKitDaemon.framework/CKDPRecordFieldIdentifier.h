@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPRecordFieldIdentifier : PBCodable <NSCopying> {
     NSString *_name;
 }
 
-@property(readonly) BOOL hasName;
-@property(retain) NSString * name;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, retain) NSString *name;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

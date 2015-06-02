@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPContactInformation, CKDPIdentifier, CKDPProtectionInfo;
-
 @interface CKDPParticipant : PBCodable <NSCopying> {
     CKDPContactInformation *_contactInformation;
     BOOL _createdOutOfProcess;
@@ -22,24 +20,24 @@
     CKDPIdentifier *_userId;
 }
 
-@property(retain) CKDPContactInformation * contactInformation;
-@property BOOL createdOutOfProcess;
-@property(readonly) BOOL hasContactInformation;
-@property BOOL hasCreatedOutOfProcess;
-@property(readonly) BOOL hasInviterId;
-@property(readonly) BOOL hasParticipantId;
-@property BOOL hasParticipantType;
-@property BOOL hasPermission;
-@property(readonly) BOOL hasPublicKey;
-@property BOOL hasState;
-@property(readonly) BOOL hasUserId;
-@property(retain) CKDPIdentifier * inviterId;
-@property(retain) CKDPIdentifier * participantId;
-@property int participantType;
-@property int permission;
-@property(retain) CKDPProtectionInfo * publicKey;
-@property int state;
-@property(retain) CKDPIdentifier * userId;
+@property (nonatomic, retain) CKDPContactInformation *contactInformation;
+@property (nonatomic) BOOL createdOutOfProcess;
+@property (nonatomic, readonly) BOOL hasContactInformation;
+@property (nonatomic) BOOL hasCreatedOutOfProcess;
+@property (nonatomic, readonly) BOOL hasInviterId;
+@property (nonatomic, readonly) BOOL hasParticipantId;
+@property (nonatomic) BOOL hasParticipantType;
+@property (nonatomic) BOOL hasPermission;
+@property (nonatomic, readonly) BOOL hasPublicKey;
+@property (nonatomic) BOOL hasState;
+@property (nonatomic, readonly) BOOL hasUserId;
+@property (nonatomic, retain) CKDPIdentifier *inviterId;
+@property (nonatomic, retain) CKDPIdentifier *participantId;
+@property (nonatomic) int participantType;
+@property (nonatomic) int permission;
+@property (nonatomic, retain) CKDPProtectionInfo *publicKey;
+@property (nonatomic) int state;
+@property (nonatomic, retain) CKDPIdentifier *userId;
 
 - (void).cxx_destruct;
 - (id)contactInformation;

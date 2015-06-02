@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface ML3DatabaseValidationClient : NSObject {
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSMutableDictionary *_validatableDatabases;

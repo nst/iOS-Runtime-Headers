@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKShareID, NSData, NSString;
-
 @interface CKDModifyShareTokenInfo : NSObject {
     NSString *_baseToken;
     NSData *_encryptedFullTokenData;
@@ -11,10 +9,10 @@
     NSData *_shortSharingTokenHashData;
 }
 
-@property(retain) NSString * baseToken;
-@property(retain) NSData * encryptedFullTokenData;
-@property(retain) CKShareID * shareID;
-@property(retain) NSData * shortSharingTokenHashData;
+@property (nonatomic, retain) NSString *baseToken;
+@property (nonatomic, retain) NSData *encryptedFullTokenData;
+@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic, retain) NSData *shortSharingTokenHashData;
 
 - (void).cxx_destruct;
 - (id)baseToken;

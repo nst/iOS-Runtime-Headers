@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUReplyWithMessageStore : NSObject {
-}
+@interface TUReplyWithMessageStore : NSObject
 
 - (id)_cannedRepliesForSending:(BOOL)arg1;
 - (id)_defaultRepliesForSending:(BOOL)arg1;

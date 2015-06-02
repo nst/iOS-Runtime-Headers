@@ -8,7 +8,7 @@
     double _thresholdValue;
 }
 
-@property double thresholdValue;
+@property (nonatomic) double thresholdValue;
 
 - (void)setThresholdValue:(double)arg1;
 - (double)thresholdValue;

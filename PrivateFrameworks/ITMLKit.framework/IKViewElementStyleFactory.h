@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKStyleFactory, NSMutableDictionary;
-
 @interface IKViewElementStyleFactory : NSObject {
     NSMutableDictionary *_styleByITMLID;
     IKStyleFactory *_styleFactory;
 }
 
-@property(retain,readonly) NSMutableDictionary * styleByITMLID;
-@property(retain,readonly) IKStyleFactory * styleFactory;
+@property (nonatomic, readonly, retain) NSMutableDictionary *styleByITMLID;
+@property (nonatomic, readonly, retain) IKStyleFactory *styleFactory;
 
 - (void).cxx_destruct;
 - (id)initWithDocumentStyles:(id)arg1;

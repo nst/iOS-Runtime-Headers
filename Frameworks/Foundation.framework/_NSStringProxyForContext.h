@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSCopying><NSSecureCoding><NSObject>, NSFormatter, NSString;
-
 @interface _NSStringProxyForContext : NSString {
     NSFormatter *_formatter;
     <NSCopying><NSSecureCoding><NSObject> *_item;
     NSString *_string;
 }
 
-@property(copy) NSFormatter * formatter;
-@property(copy) id item;
-@property(copy) NSString * string;
+@property (copy) NSFormatter *formatter;
+@property (copy) id item;
+@property (copy) NSString *string;
 
 - (id)_dynamicContextEvaluation:(id)arg1 patternString:(id)arg2;
 - (void)_retainFormatter:(id)arg1;

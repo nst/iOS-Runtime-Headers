@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString;
-
 @interface PTSDrillDownRowAction : PTSPushViewControllerRowAction {
     NSString *_settingsKeyPath;
 }
 
-@property(copy) NSString * settingsKeyPath;
+@property (nonatomic, copy) NSString *settingsKeyPath;
 
 + (id)actionWithSettingsKeyPath:(id)arg1;
 

@@ -7,8 +7,8 @@
     int _hideAnimation;
 }
 
-@property float additionalSlideHeight;
-@property int hideAnimation;
+@property (nonatomic) float additionalSlideHeight;
+@property (nonatomic) int hideAnimation;
 
 - (float)additionalSlideHeight;
 - (int)hideAnimation;

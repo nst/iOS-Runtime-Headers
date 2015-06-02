@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SASportsLeague, SAUIAppPunchOut;
+@interface SASportsEntity : SADomainObject
 
-@interface SASportsEntity : SADomainObject {
-}
-
-@property(copy) NSURL * image;
-@property(copy) NSURL * largeImage;
-@property(retain) SASportsLeague * league;
-@property(copy) NSURL * listImage;
-@property(copy) NSString * name;
-@property(retain) SAUIAppPunchOut * punchout;
+@property (nonatomic, copy) NSURL *image;
+@property (nonatomic, copy) NSURL *largeImage;
+@property (nonatomic, retain) SASportsLeague *league;
+@property (nonatomic, copy) NSURL *listImage;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SAUIAppPunchOut *punchout;
 
 + (id)entity;
 + (id)entityWithDictionary:(id)arg1 context:(id)arg2;

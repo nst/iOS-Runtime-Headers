@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSPublishStorageProtocol>, <MSPublisherDelegate>, MSMediaStreamDaemon, MSObjectQueue, MSPublishStreamsProtocol, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSURL;
-
 @interface MSPublisher : MSCupidStateMachine <MSPublishStorageProtocolDelegate, MSPublishStreamsProtocolDelegate, MSPublisher> {
     MSMediaStreamDaemon *_daemon;
     <MSPublisherDelegate> *_delegate;
@@ -26,15 +24,15 @@
     MSObjectQueue *_uploadQueue;
 }
 
-@property MSMediaStreamDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property <MSPublisherDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int publishBatchSize;
-@property long long publishTargetByteCount;
-@property(retain) NSURL * storageProtocolURL;
-@property(readonly) Class superclass;
+@property (nonatomic) MSMediaStreamDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MSPublisherDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int publishBatchSize;
+@property (nonatomic) long long publishTargetByteCount;
+@property (nonatomic, retain) NSURL *storageProtocolURL;
+@property (readonly) Class superclass;
 
 + (id)_clearInstantiatedPublishersByPersonID;
 + (void)_setMasterNextActivityDate:(id)arg1 forPersonID:(id)arg2;

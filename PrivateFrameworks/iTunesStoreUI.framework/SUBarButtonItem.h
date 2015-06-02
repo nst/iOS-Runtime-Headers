@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUTouchCaptureView, SUUIAppearance, UINavigationItem, UIView;
-
 @interface SUBarButtonItem : UIBarButtonItem {
     UIView *_accessoryView;
     struct UIEdgeInsets { 
@@ -18,10 +16,10 @@
     SUTouchCaptureView *_touchCaptureView;
 }
 
-@property(retain) UIView * accessoryView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
-@property(getter=isLoading) BOOL loading;
-@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
+@property (getter=isLoading, nonatomic) BOOL loading;
+@property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
 
 + (Class)classForNavigationButton;
 

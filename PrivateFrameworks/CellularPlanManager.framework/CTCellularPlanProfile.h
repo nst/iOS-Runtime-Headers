@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-@class NSData, NSString;
-
 @interface CTCellularPlanProfile : NSObject <NSCopying, NSSecureCoding> {
     NSString *_iccid;
     BOOL _isBootstrap;
@@ -11,10 +9,10 @@
     NSData *_profileId;
 }
 
-@property(copy) NSString * iccid;
-@property BOOL isBootstrap;
-@property BOOL isSelected;
-@property(copy) NSData * profileId;
+@property (nonatomic, copy) NSString *iccid;
+@property (nonatomic) BOOL isBootstrap;
+@property (nonatomic) BOOL isSelected;
+@property (nonatomic, copy) NSData *profileId;
 
 + (BOOL)supportsSecureCoding;
 

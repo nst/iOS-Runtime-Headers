@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@interface MSSuggestionsHints : MSXPCService {
-}
+@interface MSSuggestionsHints : MSXPCService
 
 - (void)extendLifetimeOfMessagesWithReferences:(id)arg1;
 - (id)init;

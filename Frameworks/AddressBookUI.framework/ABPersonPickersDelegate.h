@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABImagePickerController, ABPersonTableViewDataSource, ABPersonViewControllerHelper, ABStyleProvider, NSString;
-
 @interface ABPersonPickersDelegate : NSObject <ABImagePickerControllerDelegate, ABPickerViewControllerDelegate> {
     ABPersonTableViewDataSource *_dataSource;
     ABPersonViewControllerHelper *_helper;
@@ -11,15 +9,15 @@
     ABStyleProvider *_styleProvider;
 }
 
-@property ABPersonTableViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property ABPersonViewControllerHelper * helper;
-@property(readonly) ABImagePickerController * imagePicker;
-@property BOOL popoverSizeUpdatesDisabled;
-@property(retain) ABStyleProvider * styleProvider;
-@property(readonly) Class superclass;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) ABPersonViewControllerHelper *helper;
+@property (nonatomic, readonly) ABImagePickerController *imagePicker;
+@property (nonatomic) BOOL popoverSizeUpdatesDisabled;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
+@property (readonly) Class superclass;
 
 - (id)_contentViewForPicker:(id)arg1;
 - (void)_dismissCountryPicker:(id)arg1 afterSelectingItem:(id)arg2;

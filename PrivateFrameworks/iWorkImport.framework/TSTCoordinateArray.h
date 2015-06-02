@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableIndexSet;
-
 @interface TSTCoordinateArray : NSObject {
     float mAverage;
     float *mCoordinates;

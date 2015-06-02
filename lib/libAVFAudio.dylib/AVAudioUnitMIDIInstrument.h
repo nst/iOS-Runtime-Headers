@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitMIDIInstrument : AVAudioUnit {
-}
+@interface AVAudioUnitMIDIInstrument : AVAudioUnit
 
 - (id)initWithAudioComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
 - (void)sendController:(unsigned char)arg1 withValue:(unsigned char)arg2 onChannel:(unsigned char)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSArray, NSAttributedString, NSData, NSDate, NSString;
-
 @interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSAttributedString *_body;
     NSData *_bodyData;
@@ -19,46 +17,43 @@
     NSDate *_timeRead;
 }
 
-@property(retain) NSAttributedString * body;
-@property(retain) NSData * bodyData;
-@property unsigned int errorCode;
-@property long long expireState;
-@property(retain) NSArray * fileTransferGUIDs;
-@property unsigned long long flags;
-@property BOOL hasDataDetectorResults;
-@property(readonly) BOOL isAlert;
-@property(readonly) BOOL isAudioMessage;
-@property(readonly) BOOL isDelivered;
-@property(readonly) BOOL isEmote;
-@property(readonly) BOOL isEmpty;
-@property(readonly) BOOL isExpirable;
-@property(readonly) BOOL isFinished;
-@property(readonly) BOOL isFromExternalSource;
-@property(readonly) BOOL isLocatingMessage;
-@property(readonly) BOOL isPlayed;
-@property(readonly) BOOL isPrepared;
-@property(readonly) BOOL isRead;
-@property(readonly) BOOL isSent;
-@property(readonly) BOOL isTypingMessage;
-@property(retain) NSString * plainBody;
-@property long long replaceID;
-@property(retain) NSString * subject;
-@property(retain) NSDate * timeDelivered;
-@property(retain) NSDate * timePlayed;
-@property(retain) NSDate * timeRead;
-@property(readonly) BOOL wasDataDetected;
-@property(readonly) BOOL wasDowngraded;
+@property (nonatomic, retain) NSAttributedString *body;
+@property (nonatomic, retain) NSData *bodyData;
+@property (nonatomic) unsigned int errorCode;
+@property (nonatomic) long long expireState;
+@property (nonatomic, retain) NSArray *fileTransferGUIDs;
+@property (nonatomic) unsigned long long flags;
+@property (nonatomic) BOOL hasDataDetectorResults;
+@property (nonatomic, readonly) BOOL isAlert;
+@property (nonatomic, readonly) BOOL isAudioMessage;
+@property (nonatomic, readonly) BOOL isDelivered;
+@property (nonatomic, readonly) BOOL isEmote;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) BOOL isExpirable;
+@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic, readonly) BOOL isFromExternalSource;
+@property (nonatomic, readonly) BOOL isLocatingMessage;
+@property (nonatomic, readonly) BOOL isPlayed;
+@property (nonatomic, readonly) BOOL isPrepared;
+@property (nonatomic, readonly) BOOL isRead;
+@property (nonatomic, readonly) BOOL isSent;
+@property (nonatomic, readonly) BOOL isTypingMessage;
+@property (nonatomic, retain) NSString *plainBody;
+@property (nonatomic) long long replaceID;
+@property (nonatomic, retain) NSString *subject;
+@property (nonatomic, retain) NSDate *timeDelivered;
+@property (nonatomic, retain) NSDate *timePlayed;
+@property (nonatomic, retain) NSDate *timeRead;
+@property (nonatomic, readonly) BOOL wasDataDetected;
+@property (nonatomic, readonly) BOOL wasDowngraded;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)_clearBodyData;
 - (void)_generateBodyDataIfNeeded;
 - (void)_generateBodyTextIfNeeded;
-- (BOOL)_hasMessageChatItem;
-- (id)_newChatItems;
-- (id)_otherHandle;
 - (void)_regenerateBodyData;
 - (void)_regenerateBodyText;
-- (id)_senderHandle;
-- (id)_service;
 - (void)_updateFlags:(unsigned long long)arg1;
 - (void)adjustIsEmptyFlag;
 - (id)body;
@@ -97,7 +92,6 @@
 - (BOOL)isRead;
 - (BOOL)isSent;
 - (BOOL)isTypingMessage;
-- (id)message;
 - (id)plainBody;
 - (long long)replaceID;
 - (id)sender;
@@ -121,5 +115,14 @@
 - (id)timeRead;
 - (BOOL)wasDataDetected;
 - (BOOL)wasDowngraded;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (BOOL)_hasMessageChatItem;
+- (id)_newChatItems;
+- (id)_otherHandle;
+- (id)_senderHandle;
+- (id)_service;
+- (id)message;
 
 @end

@@ -10,8 +10,8 @@
     float _yOffset;
 }
 
-@property struct CGPoint { float x1; float x2; } offset;
-@property float yOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) float yOffset;
 
 + (id)sharedCaretMagnifier;
 

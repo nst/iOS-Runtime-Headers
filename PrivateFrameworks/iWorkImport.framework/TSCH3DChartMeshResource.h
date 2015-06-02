@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartMeshSharedChildResource;
-
 @interface TSCH3DChartMeshResource : TSCH3DResource {
     TSCH3DChartMeshSharedChildResource *mShared;
 }

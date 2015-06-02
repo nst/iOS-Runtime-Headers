@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface HSConnectionStream : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
     struct __CFReadStream { } *_readStream;
@@ -12,6 +10,6 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 isConcurrent:(BOOL)arg2 timeoutInterval:(double)arg3 withResponseHandler:(id)arg4;
+- (void)sendCFHTTPMessage:(struct __CFHTTPMessage { }*)arg1 isConcurrent:(BOOL)arg2 timeoutInterval:(double)arg3 withResponseHandler:(id /* block */)arg4;
 
 @end

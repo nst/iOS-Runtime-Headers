@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UIImageView;
-
 @interface SUReviewsButton : SUGradientButton {
     UIImageView *_disclosureView;
     float _userRating;
@@ -11,9 +9,9 @@
     NSString *_userRatingCountString;
 }
 
-@property float userRating;
-@property int userRatingCount;
-@property(retain) NSString * userRatingCountString;
+@property (nonatomic) float userRating;
+@property (nonatomic) int userRatingCount;
+@property (nonatomic, retain) NSString *userRatingCountString;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInput_FigRecorder, AVMetadataObject_FigRecorder, NSString;
-
 @interface AVMetadataObjectInternal_FigRecorder : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -34,10 +32,10 @@
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
-@property(retain) AVCaptureInput_FigRecorder * input;
-@property(retain) AVMetadataObject_FigRecorder * originalMetadataObject;
+@property (retain) AVCaptureInput_FigRecorder *input;
+@property (retain) AVMetadataObject_FigRecorder *originalMetadataObject;
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
-@property(retain) NSString * type;
+@property (retain) NSString *type;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (void)dealloc;

@@ -2,13 +2,8 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface SCNFloor : SCNGeometry {
-    unsigned int _isPresentationInstance : 1;
+    unsigned int _isPresentationInstance;
     float _reflectionFalloffEnd;
     float _reflectionFalloffStart;
     float _reflectionResolutionScaleFactor;
@@ -17,10 +12,10 @@
     id _reserved;
 }
 
-@property float reflectionFalloffEnd;
-@property float reflectionFalloffStart;
-@property float reflectionResolutionScaleFactor;
-@property float reflectivity;
+@property (nonatomic) float reflectionFalloffEnd;
+@property (nonatomic) float reflectionFalloffStart;
+@property (nonatomic) float reflectionResolutionScaleFactor;
+@property (nonatomic) float reflectivity;
 
 + (id)SCNJSExportProtocol;
 + (id)floor;

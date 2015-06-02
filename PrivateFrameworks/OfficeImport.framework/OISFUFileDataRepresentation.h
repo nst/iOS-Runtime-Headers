@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUInputStream>, NSString, OISFUCryptoKey;
-
 @interface OISFUFileDataRepresentation : OISFUDataRepresentation {
     OISFUCryptoKey *mCryptoKey;
     BOOL mDeleteFileWhenDone;

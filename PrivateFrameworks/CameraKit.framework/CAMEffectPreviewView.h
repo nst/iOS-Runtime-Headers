@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString, UILabel, UIView;
-
 @interface CAMEffectPreviewView : UICollectionViewCell {
     UIView *_dimmingView;
     UILabel *_nameLabel;
@@ -14,9 +12,9 @@
     UIView *_thumbnailView;
 }
 
-@property(copy) NSString * text;
-@property struct CGSize { float x1; float x2; } thumbnailSize;
-@property(retain) UIView * thumbnailView;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) struct CGSize { float x1; float x2; } thumbnailSize;
+@property (nonatomic, retain) UIView *thumbnailView;
 
 + (float)defaultSpacing;
 + (struct CGSize { float x1; float x2; })sizeForImageSize:(struct CGSize { float x1; float x2; })arg1;

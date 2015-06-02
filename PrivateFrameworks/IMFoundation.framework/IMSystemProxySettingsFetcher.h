@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMSystemProxySettingsFetcher : NSObject {
     id _delegate;
     NSString *_host;
@@ -15,13 +13,13 @@
     int _proxyProtocol;
 }
 
-@property(copy) NSString * _host;
-@property unsigned short _port;
-@property(copy) NSString * _proxyAccount;
-@property(copy) NSString * _proxyHost;
-@property(copy) NSString * _proxyPassword;
-@property unsigned short _proxyPort;
-@property int _proxyProtocol;
+@property (nonatomic, copy) NSString *_host;
+@property (nonatomic) unsigned short _port;
+@property (nonatomic, copy) NSString *_proxyAccount;
+@property (nonatomic, copy) NSString *_proxyHost;
+@property (nonatomic, copy) NSString *_proxyPassword;
+@property (nonatomic) unsigned short _proxyPort;
+@property (nonatomic) int _proxyProtocol;
 @property id delegate;
 
 - (void)_callAccountSettingsDelegateMethod;

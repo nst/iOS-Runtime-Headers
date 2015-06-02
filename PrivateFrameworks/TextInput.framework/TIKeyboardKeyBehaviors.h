@@ -7,8 +7,8 @@
     unsigned int _spaceKeyBehavior;
 }
 
-@property unsigned int returnKeyBehavior;
-@property unsigned int spaceKeyBehavior;
+@property (nonatomic) unsigned int returnKeyBehavior;
+@property (nonatomic) unsigned int spaceKeyBehavior;
 
 + (id)behaviorForSpaceKey:(unsigned int)arg1 forReturnKey:(unsigned int)arg2;
 

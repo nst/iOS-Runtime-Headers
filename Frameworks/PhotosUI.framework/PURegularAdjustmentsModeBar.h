@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMapTable, NSString, PUAdjustmentsMode, PUSlidersCollectionView, UIButton, UIView;
-
 @interface PURegularAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource> {
     NSArray *__availableSupermodes;
     NSArray *__visibleSliderModes;
@@ -19,11 +17,11 @@
     NSMapTable *_supermodeTitleBackgroundByMode;
 }
 
-@property(readonly) PUAdjustmentsMode * _expandedSupermode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) PUAdjustmentsMode *_expandedSupermode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_availableSupermodes;

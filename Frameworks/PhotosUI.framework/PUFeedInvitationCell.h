@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UIButton, UILabel, UIView;
-
 @interface PUFeedInvitationCell : PUFeedCell {
     UIButton *__acceptButon;
     UIView *__bottomSeparatorView;
@@ -14,13 +12,13 @@
     NSString *_title;
 }
 
-@property(setter=_setAcceptButton:,retain) UIButton * _acceptButon;
-@property(setter=_setBottomSeparatorView:,retain) UIView * _bottomSeparatorView;
-@property(setter=_setDeclineButton:,retain) UIButton * _declineButton;
-@property(setter=_setSubtitleLabel:,retain) UILabel * _subtitleLabel;
-@property(setter=_setTitleLabel:,retain) UILabel * _titleLabel;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (setter=_setAcceptButton:, nonatomic, retain) UIButton *_acceptButon;
+@property (setter=_setBottomSeparatorView:, nonatomic, retain) UIView *_bottomSeparatorView;
+@property (setter=_setDeclineButton:, nonatomic, retain) UIButton *_declineButton;
+@property (setter=_setSubtitleLabel:, nonatomic, retain) UILabel *_subtitleLabel;
+@property (setter=_setTitleLabel:, nonatomic, retain) UILabel *_titleLabel;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_acceptButon;

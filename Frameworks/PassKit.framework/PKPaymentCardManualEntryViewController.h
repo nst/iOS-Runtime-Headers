@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSDateFormatter, NSString, UIButton, UIDatePicker, UITableViewCell, UITextField;
-
 @interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <PKPaymentCameraCaptureViewControllerDelegate, UITextFieldDelegate> {
     UITableViewCell *_cardHolderNameCell;
     UITableViewCell *_cardNumberCell;
@@ -23,10 +21,10 @@
     void *_unifiedMeCard;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_cameraCaptureCancelButtonPressed:(id)arg1;
 - (void)_captureFromCamera:(id)arg1;

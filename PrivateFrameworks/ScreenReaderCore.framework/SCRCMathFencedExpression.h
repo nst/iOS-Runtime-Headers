@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSString;
-
 @interface SCRCMathFencedExpression : SCRCMathRowExpression {
     NSString *_closeString;
     NSString *_openString;
 }
 
-@property(copy) NSString * closeString;
-@property(copy) NSString * openString;
+@property (nonatomic, copy) NSString *closeString;
+@property (nonatomic, copy) NSString *openString;
 
 - (id)_binomialCoefficientContent;
 - (BOOL)_isBinomialCoefficient;

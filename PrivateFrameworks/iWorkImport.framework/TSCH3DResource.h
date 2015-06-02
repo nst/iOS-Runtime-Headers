@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DDataBuffer;
-
 @interface TSCH3DResource : NSObject <NSCopying> {
     TSCH3DDataBuffer *mCache;
     BOOL mCached;
@@ -21,13 +19,13 @@
     int mUpdate;
 }
 
-@property(readonly) TSCH3DDataBuffer * buffer;
-@property(readonly) struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } bufferInfo;
-@property int caching;
-@property BOOL changed;
-@property(readonly) BOOL isTexturable;
-@property(readonly) unsigned long long uniqueIdentifier;
-@property int update;
+@property (nonatomic, readonly) TSCH3DDataBuffer *buffer;
+@property (nonatomic, readonly) struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } bufferInfo;
+@property (nonatomic) int caching;
+@property (nonatomic) BOOL changed;
+@property (nonatomic, readonly) BOOL isTexturable;
+@property (nonatomic, readonly) unsigned long long uniqueIdentifier;
+@property (nonatomic) int update;
 
 + (unsigned long long)allocateResourceUniqueIdentifier;
 + (void)deallocateResourceUniqueIdentifier:(unsigned long long)arg1;

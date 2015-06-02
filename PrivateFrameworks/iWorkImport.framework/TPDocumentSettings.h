@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TPDocumentSettings : TSPObject {
     BOOL _annotationsVisible;
     NSString *_bibliographyFormat;
@@ -37,37 +35,37 @@
     BOOL _tocLinksEnabled;
 }
 
-@property BOOL annotationsVisible;
-@property BOOL autoHyphenation;
-@property(readonly) int basicFootnoteFormat;
-@property(copy) NSString * bibliographyFormat;
-@property BOOL changeBarsVisible;
-@property BOOL copyMovies;
-@property BOOL copyTemplateAssets;
-@property(copy) NSString * creationDate;
-@property(copy) NSString * creationLocale;
-@property long ctBubblesVisibility;
-@property(copy) NSString * decimalTab;
-@property BOOL documentIsRTL;
-@property int footnoteFormat;
-@property int footnoteGap;
-@property int footnoteKind;
-@property int footnoteNumbering;
-@property BOOL formatChangesVisible;
-@property BOOL hasBody;
-@property BOOL hasFooters;
-@property BOOL hasHeaders;
-@property BOOL hyperlinksEnabled;
-@property(copy) NSString * hyphenationLanguage;
-@property(copy) NSString * language;
-@property(copy) NSString * originalTemplate;
-@property BOOL placeholderAuthoring;
-@property BOOL quickLookPreview;
-@property BOOL sectionAuthoring;
-@property BOOL showCTDeletions;
-@property BOOL showCTMarkup;
-@property BOOL tocLinksEnabled;
-@property BOOL useLigatures;
+@property (nonatomic) BOOL annotationsVisible;
+@property (nonatomic) BOOL autoHyphenation;
+@property (nonatomic, readonly) int basicFootnoteFormat;
+@property (nonatomic, copy) NSString *bibliographyFormat;
+@property (nonatomic) BOOL changeBarsVisible;
+@property (nonatomic) BOOL copyMovies;
+@property (nonatomic) BOOL copyTemplateAssets;
+@property (nonatomic, copy) NSString *creationDate;
+@property (nonatomic, copy) NSString *creationLocale;
+@property (nonatomic) long ctBubblesVisibility;
+@property (nonatomic, copy) NSString *decimalTab;
+@property (nonatomic) BOOL documentIsRTL;
+@property (nonatomic) int footnoteFormat;
+@property (nonatomic) int footnoteGap;
+@property (nonatomic) int footnoteKind;
+@property (nonatomic) int footnoteNumbering;
+@property (nonatomic) BOOL formatChangesVisible;
+@property (nonatomic) BOOL hasBody;
+@property (nonatomic) BOOL hasFooters;
+@property (nonatomic) BOOL hasHeaders;
+@property (nonatomic) BOOL hyperlinksEnabled;
+@property (nonatomic, copy) NSString *hyphenationLanguage;
+@property (nonatomic, copy) NSString *language;
+@property (nonatomic, copy) NSString *originalTemplate;
+@property (nonatomic) BOOL placeholderAuthoring;
+@property (nonatomic) BOOL quickLookPreview;
+@property (nonatomic) BOOL sectionAuthoring;
+@property (nonatomic) BOOL showCTDeletions;
+@property (nonatomic) BOOL showCTMarkup;
+@property (nonatomic) BOOL tocLinksEnabled;
+@property (nonatomic) BOOL useLigatures;
 
 - (BOOL)annotationsVisible;
 - (BOOL)autoHyphenation;

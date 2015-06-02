@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray;
-
 @interface MCAPNPayload : MCPayload {
     NSArray *_apnInfos;
     BOOL _wasInstalled;
 }
 
-@property BOOL wasInstalled;
+@property (nonatomic) BOOL wasInstalled;
 
 + (id)apnDomainName;
 + (id)localizedPluralForm;

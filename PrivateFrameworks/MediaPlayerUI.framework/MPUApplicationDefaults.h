@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MPUApplicationDefaults : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSString *_applicationIdentifier;

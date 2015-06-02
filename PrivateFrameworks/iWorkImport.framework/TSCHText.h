@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUCache;
-
 @interface TSCHText : NSObject {
     TSUCache *mDigitWidthFonts;
     TSUCache *mNumberWidthCache;

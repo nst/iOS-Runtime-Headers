@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDCarDisplayServiceProvider>, MPAVController, NSMapTable, NSString, UIAlertView, UIButton, UITabBarController;
-
 @interface MCDBrowserViewController : UINavigationController <RUCarPlayAlertViewDelegate, UITabBarControllerDelegate> {
     UITabBarController *_hostTabBarController;
     BOOL _libraryHasSongs;
@@ -16,13 +14,13 @@
     BOOL _viewHasAppeared;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UITabBarController * hostTabBarController;
-@property(retain) MPAVController * player;
-@property <MCDCarDisplayServiceProvider> * serviceProvider;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UITabBarController *hostTabBarController;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic) <MCDCarDisplayServiceProvider> *serviceProvider;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)MCD_pushNowPlayingViewControllerAnimated:(BOOL)arg1;

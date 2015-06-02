@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet;
-
 @interface PLMomentTemporalSnapshot : NSObject {
     double __distance;
     NSMutableSet *__nodes;
     double __range;
 }
 
-@property(readonly) double distance;
-@property(readonly) NSMutableSet * nodes;
-@property(readonly) double range;
+@property (nonatomic, readonly) double distance;
+@property (nonatomic, readonly) NSMutableSet *nodes;
+@property (nonatomic, readonly) double range;
 
 - (double)distance;
 - (id)initWithNodes:(id)arg1 inRange:(double)arg2;

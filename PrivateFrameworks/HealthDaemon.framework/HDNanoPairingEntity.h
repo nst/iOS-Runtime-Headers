@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDNanoPairingEntity : HDHealthEntity {
-}
+@interface HDNanoPairingEntity : HDHealthEntity
 
 + (BOOL)_insertNanoPairingRecord:(id)arg1 replaceExisting:(BOOL)arg2 database:(id)arg3 error:(id*)arg4;
 + (id)_nanoPairingRecordPropertySetters;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPodcastDetailsViewController : MusicSongsViewController {
-}
+@interface MusicPodcastDetailsViewController : MusicSongsViewController
 
 + (id)actionCellConfigurationClasses;
 

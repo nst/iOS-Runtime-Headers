@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface MSVSystemDialogManager : NSObject {
     struct __CFDictionary { } *_registeredSystemDialogs;
     NSObject<OS_dispatch_queue> *_serialQueue;

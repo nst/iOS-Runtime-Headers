@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface _CUIMacOSThemeSchema : CUIThemeSchema {
-}
+@interface _CUIMacOSThemeSchema : CUIThemeSchema
 
 @end

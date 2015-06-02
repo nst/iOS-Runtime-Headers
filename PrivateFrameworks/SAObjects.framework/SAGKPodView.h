@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAGKPodView : SAAceView
 
-@interface SAGKPodView : SAAceView {
-}
-
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
 + (id)podView;
 + (id)podViewWithDictionary:(id)arg1 context:(id)arg2;

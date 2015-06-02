@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKQuery, CKQueryCursor, CKRecordZoneID, NSSet;
-
 @interface CKDQueryOperation : CKDDatabaseOperation {
     CKQueryCursor *_cursor;
     NSSet *_desiredKeySet;
     CKQuery *_query;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordFetchedBlock;
-
+    id /* block */ _recordFetchedBlock;
     CKQueryCursor *_resultsCursor;
     unsigned int _resultsLimit;
     BOOL _shouldFetchAssetContent;
     CKRecordZoneID *_zoneID;
 }
 
-@property(readonly) CKQueryCursor * cursor;
-@property(retain) NSSet * desiredKeySet;
-@property(readonly) CKQuery * query;
-@property(copy) id recordFetchedBlock;
-@property(retain) CKQueryCursor * resultsCursor;
-@property(readonly) unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContent;
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic, readonly) CKQueryCursor *cursor;
+@property (nonatomic, retain) NSSet *desiredKeySet;
+@property (nonatomic, readonly) CKQuery *query;
+@property (nonatomic, copy) id /* block */ recordFetchedBlock;
+@property (nonatomic, retain) CKQueryCursor *resultsCursor;
+@property (nonatomic, readonly) unsigned int resultsLimit;
+@property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -42,11 +32,11 @@
 - (void)main;
 - (Class)operationResultClass;
 - (id)query;
-- (id)recordFetchedBlock;
+- (id /* block */)recordFetchedBlock;
 - (id)resultsCursor;
 - (unsigned int)resultsLimit;
 - (void)setDesiredKeySet:(id)arg1;
-- (void)setRecordFetchedBlock:(id)arg1;
+- (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setResultsCursor:(id)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setZoneID:(id)arg1;

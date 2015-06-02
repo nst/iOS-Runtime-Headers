@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOFeatureStyleAttributes;
-
 @interface GEOFeatureStyleAttributes : NSObject <NSCopying> {
     GEOFeatureStyleAttributes *_sharedAttributes;
     unsigned char countAttrs;

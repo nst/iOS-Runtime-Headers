@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, SKUIColorScheme, SKUILockupSwooshArtworkLoader, SKUILockupSwooshViewController, SKUIMissingItemLoader, SKUIResourceLoader, SKUISwooshPageComponent, UIViewController;
-
 @interface SKUIProductPageTableSwooshSection : SKUIProductPageTableSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _actionBlock;
-
+    id /* block */ _actionBlock;
     SKUILockupSwooshArtworkLoader *_artworkLoader;
     SKUIMissingItemLoader *_missingItemLoader;
     SKUIResourceLoader *_resourceLoader;
@@ -21,20 +11,20 @@
     SKUILockupSwooshViewController *_swooshViewController;
 }
 
-@property(copy) id actionBlock;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIResourceLoader * resourceLoader;
-@property(readonly) Class superclass;
-@property(readonly) UIViewController * swooshViewController;
+@property (nonatomic, copy) id /* block */ actionBlock;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIViewController *swooshViewController;
 
 - (void).cxx_destruct;
 - (id)_artworkLoader;
 - (id)_missingItemLoader;
 - (id)_swooshViewController;
-- (id)actionBlock;
+- (id /* block */)actionBlock;
 - (id)colorScheme;
 - (void)dealloc;
 - (id)headerViewForTableView:(id)arg1;
@@ -42,7 +32,7 @@
 - (id)initWithLockups:(id)arg1 title:(id)arg2;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
 - (id)resourceLoader;
-- (void)setActionBlock:(id)arg1;
+- (void)setActionBlock:(id /* block */)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setResourceLoader:(id)arg1;
 - (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;

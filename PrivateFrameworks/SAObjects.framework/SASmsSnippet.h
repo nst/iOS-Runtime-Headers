@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASmsSnippet : SAUISnippet
 
-@interface SASmsSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * smss;
+@property (nonatomic, copy) NSArray *smss;
 
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface PUBadgeView : UIView {
     UIImageView *__backgroundImageView;
     UIImage *__badgeImage;
@@ -15,14 +13,14 @@
     double _videoDuration;
 }
 
-@property(setter=_setBackgroundImageView:,retain) UIImageView * _backgroundImageView;
-@property(setter=_setBadgeImage:,retain) UIImage * _badgeImage;
-@property(setter=_setBadgeImageView:,retain) UIImageView * _badgeImageView;
-@property(setter=_setBannerText:,retain) NSString * _bannerText;
-@property(setter=_setTextLabel:,retain) UILabel * _textLabel;
-@property int badgeType;
-@property BOOL flattensSubviews;
-@property double videoDuration;
+@property (setter=_setBackgroundImageView:, nonatomic, retain) UIImageView *_backgroundImageView;
+@property (setter=_setBadgeImage:, nonatomic, retain) UIImage *_badgeImage;
+@property (setter=_setBadgeImageView:, nonatomic, retain) UIImageView *_badgeImageView;
+@property (setter=_setBannerText:, nonatomic, retain) NSString *_bannerText;
+@property (setter=_setTextLabel:, nonatomic, retain) UILabel *_textLabel;
+@property (nonatomic) int badgeType;
+@property (nonatomic) BOOL flattensSubviews;
+@property (nonatomic) double videoDuration;
 
 - (void).cxx_destruct;
 - (id)_backgroundImageView;

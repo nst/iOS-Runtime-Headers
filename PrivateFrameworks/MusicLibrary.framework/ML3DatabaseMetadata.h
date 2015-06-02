@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3DatabaseMetadata : ML3Entity {
-}
+@interface ML3DatabaseMetadata : ML3Entity
 
 + (id)allProperties;
 + (id)databaseTable;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, SUScriptAppleAccountType;
-
 @interface SUScriptACClientAccessInfo : SUScriptObject {
     SUScriptAppleAccountType *_accountType;
     NSMutableDictionary *_dictionary;
 }
 
-@property(readonly) NSDictionary * accessInfoDictionary;
-@property(readonly) NSString * accessKeyFacebookAppID;
-@property(readonly) NSString * accessKeyFacebookPermissions;
-@property(readonly) NSString * accessKeyPurposeStatement;
-@property(retain) SUScriptAppleAccountType * accountType;
+@property (readonly) NSDictionary *accessInfoDictionary;
+@property (readonly) NSString *accessKeyFacebookAppID;
+@property (readonly) NSString *accessKeyFacebookPermissions;
+@property (readonly) NSString *accessKeyPurposeStatement;
+@property (retain) SUScriptAppleAccountType *accountType;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

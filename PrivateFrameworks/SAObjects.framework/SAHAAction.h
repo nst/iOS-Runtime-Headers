@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAHAAttributeValue;
+@interface SAHAAction : SADomainObject
 
-@interface SAHAAction : SADomainObject {
-}
-
-@property(copy) NSString * actionType;
-@property(copy) NSString * attribute;
-@property(retain) SAHAAttributeValue * value;
+@property (nonatomic, copy) NSString *actionType;
+@property (nonatomic, copy) NSString *attribute;
+@property (nonatomic, retain) SAHAAttributeValue *value;
 
 + (id)action;
 + (id)actionWithDictionary:(id)arg1 context:(id)arg2;

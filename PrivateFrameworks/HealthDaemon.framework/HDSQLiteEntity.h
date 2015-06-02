@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
-
 @interface HDSQLiteEntity : NSObject <HDSQLiteEntity> {
     long long _persistentID;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) long long persistentID;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long persistentID;
+@property (readonly) Class superclass;
 
 + (id)_copyDeleteSQLWithTableName:(id)arg1 columnName:(id)arg2;
 + (id)_generateDisambiguatedDatabaseTableName;
@@ -39,8 +37,8 @@
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (id)entityWithPersistentID:(id)arg1;
-+ (void)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 usingBlock:(id)arg3;
-+ (void)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 database:(id)arg4 usingBlock:(id)arg5;
++ (void)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 database:(id)arg4 usingBlock:(id /* block */)arg5;
 + (id)foreignDatabaseColumnForProperty:(id)arg1;
 + (id)foreignDatabaseTableForProperty:(id)arg1;
 + (id)foreignDatabaseTablesToDelete;
@@ -64,7 +62,7 @@
 - (BOOL)deleteFromDatabase:(id)arg1 error:(id*)arg2;
 - (BOOL)existsInDatabase:(id)arg1;
 - (BOOL)getValues:(id*)arg1 forProperties:(id*)arg2 count:(unsigned int)arg3 database:(id)arg4;
-- (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id)arg3;
+- (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id /* block */)arg3;
 - (id)initWithPersistentID:(long long)arg1;
 - (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(BOOL)arg3;
 - (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2 replaceExisting:(BOOL)arg3 error:(id*)arg4;

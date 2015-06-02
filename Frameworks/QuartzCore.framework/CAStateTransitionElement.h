@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CAAnimation, CALayer, NSString;
-
 @interface CAStateTransitionElement : NSObject <NSCoding, NSCopying> {
     CAAnimation *_animation;
     BOOL _enabled;
@@ -11,12 +9,12 @@
     CALayer *_target;
 }
 
-@property(retain) CAAnimation * animation;
-@property double beginTime;
-@property double duration;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * key;
-@property CALayer * target;
+@property (nonatomic, retain) CAAnimation *animation;
+@property (nonatomic) double beginTime;
+@property (nonatomic) double duration;
+@property (getter=isEnabled) BOOL enabled;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic) CALayer *target;
 
 + (void)CAMLParserStartElement:(id)arg1;
 

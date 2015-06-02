@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeViewDelegate>, DOMHTMLDocument, DOMHTMLElement, NSArray;
-
 @interface MFComposeBodyField : UIWebDocumentView {
     NSArray *_attachmentURLsToReplaceWithFilenames;
     DOMHTMLElement *_blockquote;
     DOMHTMLElement *_body;
     DOMHTMLDocument *_document;
-    unsigned int _forwardingNotification : 1;
+    unsigned int _forwardingNotification;
     unsigned int _imageCount;
-    unsigned int _isDirty : 1;
-    unsigned int _isLoading : 1;
+    unsigned int _isDirty;
+    unsigned int _isLoading;
     struct CGSize { 
         float width; 
         float height; 
     } _layoutSize;
     <MFMailComposeViewDelegate> *_mailComposeViewDelegate;
-    unsigned int _needsReplaceImages : 1;
+    unsigned int _needsReplaceImages;
     struct CGSize { 
         float width; 
         float height; 

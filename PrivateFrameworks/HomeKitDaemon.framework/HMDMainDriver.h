@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDAccessoryBrowser, HMDAccessoryManager, HMDCloudDataSyncManager, HMDHomeManager, HMDIDSMessageDispatcher, HMDIDSMessageTransport, HMDIdentityRegistry, HMDMessageFilterChain, HMDXpcServer, HMMessageDispatcher, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface HMDMainDriver : NSObject {
     HMDAccessoryBrowser *_accessoryBrowser;
     HMDAccessoryManager *_accessoryManager;
@@ -19,18 +17,18 @@
     HMDXpcServer *_xpcServer;
 }
 
-@property(retain) HMDAccessoryBrowser * accessoryBrowser;
-@property(retain) HMDAccessoryManager * accessoryManager;
-@property(retain) HMDCloudDataSyncManager * cloudDataSyncManager;
-@property(retain) HMDHomeManager * homeManager;
-@property(retain) HMDIdentityRegistry * identityRegistry;
-@property(retain) HMDIDSMessageTransport * idsTransport;
-@property(retain) HMDIDSMessageDispatcher * messageDispatcher;
-@property(retain) HMDMessageFilterChain * msgFilterChain;
-@property(retain) HMMessageDispatcher * notificationRelayDispatcher;
-@property(retain) NSMutableArray * unpairedAccessories;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
-@property(retain) HMDXpcServer * xpcServer;
+@property (nonatomic, retain) HMDAccessoryBrowser *accessoryBrowser;
+@property (nonatomic, retain) HMDAccessoryManager *accessoryManager;
+@property (nonatomic, retain) HMDCloudDataSyncManager *cloudDataSyncManager;
+@property (nonatomic, retain) HMDHomeManager *homeManager;
+@property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
+@property (nonatomic, retain) HMDIDSMessageTransport *idsTransport;
+@property (nonatomic, retain) HMDIDSMessageDispatcher *messageDispatcher;
+@property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
+@property (nonatomic, retain) HMMessageDispatcher *notificationRelayDispatcher;
+@property (nonatomic, retain) NSMutableArray *unpairedAccessories;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, retain) HMDXpcServer *xpcServer;
 
 + (id)driver;
 

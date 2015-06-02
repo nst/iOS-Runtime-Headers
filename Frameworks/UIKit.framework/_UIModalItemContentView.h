@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIButton, UILabel, UITableView, UITextField, UIView, UIViewController, _UIModalItem, _UIModalItemsPresentingViewController;
-
 @interface _UIModalItemContentView : UIView <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     UIViewController *_accessoryViewController;
     UIView *_accessoryViewControllerContrainerView;
@@ -38,29 +36,29 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly) UIViewController * accessoryViewController;
-@property(readonly) UIView * accessoryViewControllerContrainerView;
-@property(readonly) struct CGSize { float x1; float x2; } accessoryViewControllerSize;
-@property struct CGSize { float x1; float x2; } actualViewControllerSize;
-@property(readonly) UITableView * buttonTable;
-@property(retain) UIButton * cancelButton;
-@property(readonly) int cancelButtonIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) UIButton * defaultButton;
-@property(readonly) int defaultButtonIndex;
-@property(copy,readonly) NSString * description;
-@property BOOL enableFirstOtherButton;
-@property(readonly) unsigned int hash;
-@property(readonly) UITextField * loginTextField;
-@property struct CGSize { float x1; float x2; } maxSize;
-@property(readonly) UILabel * messageLabel;
-@property _UIModalItem * modalItem;
-@property(readonly) UITextField * passwordTextField;
-@property struct CGSize { float x1; float x2; } presentingSize;
-@property _UIModalItemsPresentingViewController * presentingViewController;
-@property(readonly) UILabel * subtitleLabel;
-@property(readonly) Class superclass;
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, readonly) UIViewController *accessoryViewController;
+@property (nonatomic, readonly) UIView *accessoryViewControllerContrainerView;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } accessoryViewControllerSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } actualViewControllerSize;
+@property (nonatomic, readonly) UITableView *buttonTable;
+@property (nonatomic, retain) UIButton *cancelButton;
+@property (nonatomic, readonly) int cancelButtonIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) UIButton *defaultButton;
+@property (nonatomic, readonly) int defaultButtonIndex;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enableFirstOtherButton;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UITextField *loginTextField;
+@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic, readonly) UILabel *messageLabel;
+@property (nonatomic) _UIModalItem *modalItem;
+@property (nonatomic, readonly) UITextField *passwordTextField;
+@property (nonatomic) struct CGSize { float x1; float x2; } presentingSize;
+@property (nonatomic) _UIModalItemsPresentingViewController *presentingViewController;
+@property (nonatomic, readonly) UILabel *subtitleLabel;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void)_createAndConfigureButtonTable;
 - (void)_createAndConfigureMessageLabel;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface BSXPCReply : NSObject {
     NSObject<OS_xpc_object> *_message;
 }
@@ -14,6 +12,6 @@
 - (id)initWithReply:(id)arg1;
 - (id)message;
 - (long long)messageKind;
-- (void)sendReply:(id)arg1;
+- (void)sendReply:(id /* block */)arg1;
 
 @end

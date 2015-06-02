@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DBarExtrusionGeometry, TSCH3DTexCoordGeneration;
-
 @interface TSCH3DBarTexCoordResource : TSCH3DAbstractBarTexCoordResource {
     TSCH3DTexCoordGeneration *mGenerator;
     TSCH3DBarExtrusionGeometry *mGeometry;

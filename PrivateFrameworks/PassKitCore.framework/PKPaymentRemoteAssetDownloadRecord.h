@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDictionary, NSURL;
-
 @interface PKPaymentRemoteAssetDownloadRecord : PKPaymentBackgroundDownloadRecord <NSSecureCoding> {
     NSURL *_passURL;
     NSDictionary *_remoteAssetsByTaskIdentifier;
 }
 
-@property(retain) NSURL * passURL;
-@property(retain) NSDictionary * remoteAssetsByTaskIdentifier;
+@property (nonatomic, retain) NSURL *passURL;
+@property (nonatomic, retain) NSDictionary *remoteAssetsByTaskIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

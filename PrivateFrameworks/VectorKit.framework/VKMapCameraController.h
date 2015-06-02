@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOMapRegion, NSString, VKAnimation, VKMapCanvas, VKMapModel, VKTrackingCameraController;
-
 @interface VKMapCameraController : VKScreenCameraController <VKInteractiveCameraController, VKTrackingCameraControllerDelegate> {
     double _cameraHorizontalOffset;
     double _canonicalSkyHeight;
@@ -35,39 +33,39 @@
     double _userZoomFocusStyleMinGroundspanMeters;
 }
 
-@property BOOL allowDatelineWraparound;
-@property int annotationTrackingZoomStyle;
-@property double canonicalSkyHeight;
-@property(readonly) struct { double x1; double x2; double x3; } centerCoordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property VKMapCanvas * mapCanvas;
-@property(retain) VKMapModel * mapModel;
-@property(readonly) GEOMapRegion * mapRegion;
-@property(readonly) GEOMapRegion * mapRegionOfInterest;
-@property float navigationPuckSize;
-@property(readonly) double pitch;
-@property(readonly) double presentationYaw;
-@property BOOL shouldLimitTrackingCameraHeight;
-@property(readonly) Class superclass;
-@property double tracePlaybackSpeedMultiplier;
-@property int trackingCameraPanStyle;
-@property double trackingZoomScale;
-@property double userZoomFocusStyleGroundspanMeters;
-@property double userZoomFocusStyleMaxGroundspanMeters;
-@property double userZoomFocusStyleMinGroundspanMeters;
-@property(readonly) double yaw;
+@property (nonatomic) BOOL allowDatelineWraparound;
+@property (nonatomic) int annotationTrackingZoomStyle;
+@property (nonatomic) double canonicalSkyHeight;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } centerCoordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) VKMapCanvas *mapCanvas;
+@property (nonatomic, retain) VKMapModel *mapModel;
+@property (nonatomic, readonly) GEOMapRegion *mapRegion;
+@property (nonatomic, readonly) GEOMapRegion *mapRegionOfInterest;
+@property (nonatomic) float navigationPuckSize;
+@property (nonatomic, readonly) double pitch;
+@property (nonatomic, readonly) double presentationYaw;
+@property (nonatomic) BOOL shouldLimitTrackingCameraHeight;
+@property (readonly) Class superclass;
+@property (nonatomic) double tracePlaybackSpeedMultiplier;
+@property (nonatomic) int trackingCameraPanStyle;
+@property (nonatomic) double trackingZoomScale;
+@property (nonatomic) double userZoomFocusStyleGroundspanMeters;
+@property (nonatomic) double userZoomFocusStyleMaxGroundspanMeters;
+@property (nonatomic) double userZoomFocusStyleMinGroundspanMeters;
+@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
-- (void)_animateToPosition:(struct VKPoint { double x1; double x2; double x3; })arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 timingCurve:(id)arg5 completion:(id)arg6;
+- (void)_animateToPosition:(struct VKPoint { double x1; double x2; double x3; })arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 timingCurve:(id /* block */)arg5 completion:(id /* block */)arg6;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
 - (id)_mapRegionIgnoringFarAmount:(double)arg1;
 - (struct { double x1; double x2; })_mercatorCenterCoordinateForMapRegion:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_scaledScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)allowDatelineWraparound;
 - (double)altitude;
-- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
+- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
 - (BOOL)canEnter3DMode;
 - (BOOL)canEnter3DModeNoUpdate;
 - (double)canonicalSkyHeight;
@@ -108,7 +106,7 @@
 - (float)navigationPuckSize;
 - (float)normalizedZoomLevelAdjustmentForTileSize:(int)arg1;
 - (void)pan:(struct CGPoint { float x1; float x2; })arg1;
-- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
+- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)pauseCameraMotion;
 - (void)pinch:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (double)pitch;
@@ -124,13 +122,13 @@
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setMapCanvas:(id)arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)setNavigationPuckSize:(float)arg1;
 - (void)setShouldLimitTrackingCameraHeight:(BOOL)arg1;
 - (void)setTracePlaybackSpeedMultiplier:(double)arg1;
@@ -142,7 +140,7 @@
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldLimitTrackingCameraHeight;
 - (BOOL)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
-- (void)startCameraMotionAnimated:(BOOL)arg1 pounceCompletionHandler:(id)arg2;
+- (void)startCameraMotionAnimated:(BOOL)arg1 pounceCompletionHandler:(id /* block */)arg2;
 - (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -153,7 +151,7 @@
 - (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id)arg3;
+- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
 - (int)tileSize;
 - (double)tracePlaybackSpeedMultiplier;
 - (void)trackingCameraController:(id)arg1 updatedStartAnimationTargetPosition:(struct VKPoint { double x1; double x2; double x3; })arg2 orientation:(const struct { double x1[4][4]; }*)arg3;
@@ -174,8 +172,8 @@
 - (double)userZoomFocusStyleMinGroundspanMeters;
 - (id)viewportInfo;
 - (double)yaw;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
-- (void)zoom:(double)arg1 withPoint:(struct VKPoint { double x1; double x2; double x3; })arg2 completionHandler:(id)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)zoom:(double)arg1 withPoint:(struct VKPoint { double x1; double x2; double x3; })arg2 completionHandler:(id /* block */)arg3;
 - (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)zoomToLevel:(double)arg1 withPoint:(struct VKPoint { double x1; double x2; double x3; })arg2;
 

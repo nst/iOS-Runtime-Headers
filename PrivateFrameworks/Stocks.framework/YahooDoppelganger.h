@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <NSURLConnectionDelegate>, NSData, NSString;
-
 @interface YahooDoppelganger : NSObject {
     BOOL _cancelled;
     <NSURLConnectionDelegate> *_delegate;
@@ -15,12 +13,12 @@
     unsigned int _responseOffset;
 }
 
-@property <NSURLConnectionDelegate> * delegate;
-@property(retain) NSString * expectedRequestPattern;
-@property(retain) NSData * response;
-@property unsigned int responseChunkDelay;
-@property unsigned int responseChunkInitialDelay;
-@property unsigned int responseChunkSize;
+@property (nonatomic) <NSURLConnectionDelegate> *delegate;
+@property (nonatomic, retain) NSString *expectedRequestPattern;
+@property (nonatomic, retain) NSData *response;
+@property (nonatomic) unsigned int responseChunkDelay;
+@property (nonatomic) unsigned int responseChunkInitialDelay;
+@property (nonatomic) unsigned int responseChunkSize;
 
 + (void)_doppelgangerFinished:(id)arg1;
 + (void)_spewDoppelgangerArray:(id)arg1 named:(id)arg2;

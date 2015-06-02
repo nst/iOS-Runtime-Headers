@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPWebAuthTokenRetrieveRequest : PBRequest <NSCopying> {
-}
+@interface CKDPWebAuthTokenRetrieveRequest : PBRequest <NSCopying>
 
 + (id)options;
 

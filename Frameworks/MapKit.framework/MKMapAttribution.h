@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSAttributedString, NSURL;
-
 @interface MKMapAttribution : NSObject {
     NSAttributedString *_string;
     NSURL *_url;
 }
 
-@property(readonly) NSAttributedString * disclosureArrow;
-@property(readonly) NSAttributedString * string;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSAttributedString *disclosureArrow;
+@property (nonatomic, readonly) NSAttributedString *string;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)attributedStringWithImage:(id)arg1;

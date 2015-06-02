@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFComposeTypeFactory : NSObject {
-}
+@interface MFComposeTypeFactory : NSObject
 
 + (id)_markupForInlineAttachment:(id)arg1 willBeIncluded:(BOOL)arg2 prependBlankLine:(BOOL)arg3 delegate:(id)arg4;
 + (id)_markupStringForExcludedInlineAttachmentWithFilename:(id)arg1;

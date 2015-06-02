@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, OISFUZipArchive;
-
 @interface TCBundleResourcePackage : NSObject {
     NSMutableDictionary *mEntryMap;
     OISFUZipArchive *mZipArchive;

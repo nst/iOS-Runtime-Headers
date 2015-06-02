@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKGameMatch, GKPlayer, NSAttributedString, NSDate;
-
 @interface GKPlayerPickerInfo : NSObject {
     NSAttributedString *_achievementString;
     BOOL _canSelectPlayer;
@@ -17,17 +15,17 @@
     NSDate *_sortDate;
 }
 
-@property(retain) NSAttributedString * achievementString;
-@property(readonly) BOOL canSelectPlayer;
-@property(retain) GKGameMatch * gameMatch;
-@property BOOL hasAchievement;
-@property BOOL hasRank;
-@property BOOL nearby;
-@property(readonly) BOOL playedGame;
-@property(retain) GKPlayer * player;
-@property(retain) NSAttributedString * rankString;
-@property(readonly) unsigned int selectionStatus;
-@property(retain) NSDate * sortDate;
+@property (nonatomic, retain) NSAttributedString *achievementString;
+@property (nonatomic, readonly) BOOL canSelectPlayer;
+@property (nonatomic, retain) GKGameMatch *gameMatch;
+@property (nonatomic) BOOL hasAchievement;
+@property (nonatomic) BOOL hasRank;
+@property (nonatomic) BOOL nearby;
+@property (nonatomic, readonly) BOOL playedGame;
+@property (nonatomic, retain) GKPlayer *player;
+@property (nonatomic, retain) NSAttributedString *rankString;
+@property (nonatomic, readonly) unsigned int selectionStatus;
+@property (nonatomic, retain) NSDate *sortDate;
 
 - (void)_setSelectionStatus:(unsigned int)arg1;
 - (id)achievementString;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CMGestureManager;
-
 @interface CKRaiseGesture : NSObject {
     SEL _action;
     BOOL _enabled;
@@ -13,13 +11,13 @@
     id _target;
 }
 
-@property SEL action;
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) CMGestureManager * gestureManager;
-@property int gestureState;
-@property BOOL proximityState;
-@property(getter=isRecognized,readonly) BOOL recognized;
-@property id target;
+@property (nonatomic) SEL action;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, retain) CMGestureManager *gestureManager;
+@property (nonatomic) int gestureState;
+@property (nonatomic) BOOL proximityState;
+@property (getter=isRecognized, nonatomic, readonly) BOOL recognized;
+@property (nonatomic) id target;
 
 + (BOOL)isRaiseGestureEnabled;
 + (BOOL)isRaiseGestureSupported;

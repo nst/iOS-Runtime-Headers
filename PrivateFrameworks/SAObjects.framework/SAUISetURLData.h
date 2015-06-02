@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAUISetURLData : SABaseClientBoundCommand
 
-@interface SAUISetURLData : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * urlData;
+@property (nonatomic, copy) NSArray *urlData;
 
 + (id)setURLData;
 + (id)setURLDataWithDictionary:(id)arg1 context:(id)arg2;

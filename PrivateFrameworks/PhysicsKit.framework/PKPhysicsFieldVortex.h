@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsFieldVortex : PKPhysicsField {
-}
+@interface PKPhysicsFieldVortex : PKPhysicsField
 
 + (id)field;
 

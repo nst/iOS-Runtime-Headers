@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIButton;
-
 @interface UIKeyboardCandidateFloatingArrowView : UICollectionReusableView {
     UIButton *_arrowButton;
 }
 
-@property(retain) UIButton * arrowButton;
+@property (nonatomic, retain) UIButton *arrowButton;
 
 + (id)collectionViewKind;
 + (id)reuseIdentifier;

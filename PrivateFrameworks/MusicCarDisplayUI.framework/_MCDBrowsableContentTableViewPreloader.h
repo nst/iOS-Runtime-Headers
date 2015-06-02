@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MCDBrowsableContentModel, NSIndexPath, NSString, UINavigationController, UIViewController;
-
 @interface _MCDBrowsableContentTableViewPreloader : NSObject <MCDBrowsableContentModelListener> {
     BOOL _cancelled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelledBlock;
-
+    id /* block */ _cancelledBlock;
     NSIndexPath *_indexPath;
     MCDBrowsableContentModel *_model;
     UINavigationController *_navigationController;
@@ -23,23 +13,23 @@
     UIViewController *_sourceViewController;
 }
 
-@property(getter=isCancelled) BOOL cancelled;
-@property(copy,readonly) id cancelledBlock;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSIndexPath * indexPath;
-@property(readonly) MCDBrowsableContentModel * model;
-@property(readonly) UINavigationController * navigationController;
-@property(readonly) UIViewController * sourceViewController;
-@property(readonly) Class superclass;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic, readonly, copy) id /* block */ cancelledBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSIndexPath *indexPath;
+@property (nonatomic, readonly) MCDBrowsableContentModel *model;
+@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (nonatomic, readonly) UIViewController *sourceViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_deregister;
-- (id)cancelledBlock;
+- (id /* block */)cancelledBlock;
 - (void)dealloc;
 - (id)indexPath;
-- (id)initWithModel:(id)arg1 indexPath:(id)arg2 sourceViewController:(id)arg3 navigationController:(id)arg4 cancelledBlock:(id)arg5;
+- (id)initWithModel:(id)arg1 indexPath:(id)arg2 sourceViewController:(id)arg3 navigationController:(id)arg4 cancelledBlock:(id /* block */)arg5;
 - (BOOL)isCancelled;
 - (void)loadAndPush;
 - (id)model;

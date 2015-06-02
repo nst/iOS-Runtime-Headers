@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRuleList;
+@interface DOMWebKitCSSRegionRule : DOMCSSRule
 
-@interface DOMWebKitCSSRegionRule : DOMCSSRule {
-}
-
-@property(readonly) DOMCSSRuleList * cssRules;
+@property (readonly) DOMCSSRuleList *cssRules;
 
 - (id)cssRules;
 

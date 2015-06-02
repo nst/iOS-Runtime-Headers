@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSString;
-
 @interface DADAMContainerIDCacheKey : NSObject <NSCopying> {
     NSString *_accountID;
     int _dataclass;
 }
 
-@property(readonly) NSString * accountID;
-@property(readonly) int dataclass;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) int dataclass;
 
 - (void).cxx_destruct;
 - (id)accountID;

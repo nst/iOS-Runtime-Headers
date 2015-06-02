@@ -2,65 +2,39 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface HAPRemoteSession : NSObject {
-    unsigned char _cipherReadKey[32];
-    unsigned char _cipherReadNonce[8];
-    unsigned char _cipherWriteKey[32];
-    unsigned char _cipherWriteNonce[8];
+    unsigned char _cipherReadKey;
+    unsigned char _cipherReadNonce;
+    unsigned char _cipherWriteKey;
+    unsigned char _cipherWriteNonce;
     BOOL _commitResponded;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _findPeerHandler;
-
+    id /* block */ _findPeerHandler;
     NSObject<OS_dispatch_source> *_idleTimer;
     NSObject<OS_dispatch_queue> *_internalQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _internalRequestHandler;
-
+    id /* block */ _internalRequestHandler;
     const char *_label;
     unsigned char _pairVerifyDone;
     struct PairingSessionPrivate { } *_pairVerifySession;
     NSMutableDictionary *_prepareRequests;
     BOOL _prepareResponded;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _requestHandler;
-
+    id /* block */ _requestHandler;
     NSString *_sessionID;
     BOOL _started;
     int _state;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stoppedHandler;
-
+    id /* block */ _stoppedHandler;
     NSMutableDictionary *_transactions;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _transportSendMessage;
-
+    id /* block */ _transportSendMessage;
     int _type;
     NSObject<OS_dispatch_queue> *_userQueue;
     NSMutableArray *_userTransactions;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property(copy) id findPeerHandler;
-@property(copy) id internalRequestHandler;
-@property(copy) id requestHandler;
-@property(copy) id stoppedHandler;
-@property(copy) id transportSendMessage;
+@property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (copy) id /* block */ findPeerHandler;
+@property (copy) id /* block */ internalRequestHandler;
+@property (copy) id /* block */ requestHandler;
+@property (copy) id /* block */ stoppedHandler;
+@property (copy) id /* block */ transportSendMessage;
 
 - (void).cxx_destruct;
 - (long)_clientHandleCommitResponse:(id)arg1;
@@ -72,13 +46,13 @@
 - (void)_completeTransaction:(id)arg1 response:(id)arg2 status:(long)arg3;
 - (void)_completeUserTransaction:(id)arg1 response:(id)arg2 status:(long)arg3;
 - (void)_runStateMachine;
-- (void)_sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id)arg3;
-- (void)_sendUserRequest:(id)arg1 options:(id)arg2 responseHandler:(id)arg3;
+- (void)_sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
+- (void)_sendUserRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)_serverCompletePrepareRequest:(id)arg1;
-- (long)_serverHandleCommitRequest:(id)arg1 responseHandler:(id)arg2;
-- (long)_serverHandleDecryptedRequest:(id)arg1 responseHandler:(id)arg2;
+- (long)_serverHandleCommitRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (long)_serverHandleDecryptedRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)_serverHandleEncryptedRequest:(id)arg1;
-- (long)_serverHandlePrepareRequest:(id)arg1 responseHandler:(id)arg2;
+- (long)_serverHandlePrepareRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)_serverPairVerifyExchange:(id)arg1;
 - (void)_serverRunStateMachine;
 - (long)_setupEncryption;
@@ -88,22 +62,22 @@
 - (long)_updateIdleTimer;
 - (void)dealloc;
 - (id)dispatchQueue;
-- (id)findPeerHandler;
+- (id /* block */)findPeerHandler;
 - (id)init;
 - (id)initWithType:(int)arg1;
-- (id)internalRequestHandler;
-- (id)requestHandler;
-- (void)sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id)arg3;
+- (id /* block */)internalRequestHandler;
+- (id /* block */)requestHandler;
+- (void)sendRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setFindPeerHandler:(id)arg1;
-- (void)setInternalRequestHandler:(id)arg1;
-- (void)setRequestHandler:(id)arg1;
-- (void)setStoppedHandler:(id)arg1;
-- (void)setTransportSendMessage:(id)arg1;
+- (void)setFindPeerHandler:(id /* block */)arg1;
+- (void)setInternalRequestHandler:(id /* block */)arg1;
+- (void)setRequestHandler:(id /* block */)arg1;
+- (void)setStoppedHandler:(id /* block */)arg1;
+- (void)setTransportSendMessage:(id /* block */)arg1;
 - (void)start;
 - (void)stop;
-- (id)stoppedHandler;
+- (id /* block */)stoppedHandler;
 - (void)transportReceivedMessage:(id)arg1;
-- (id)transportSendMessage;
+- (id /* block */)transportSendMessage;
 
 @end

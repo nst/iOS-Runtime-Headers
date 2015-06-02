@@ -7,8 +7,8 @@
     unsigned int _sectionIndex;
 }
 
-@property unsigned int pageIndex;
-@property unsigned int sectionIndex;
+@property (nonatomic) unsigned int pageIndex;
+@property (nonatomic) unsigned int sectionIndex;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

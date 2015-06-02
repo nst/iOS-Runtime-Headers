@@ -7,8 +7,8 @@
     float _width;
 }
 
-@property(readonly) float height;
-@property(readonly) float width;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) float width;
 
 + (id)gridFromOccupancyArray:(const char *)arg1 width:(int)arg2 height:(int)arg3;
 + (id)gridFromTexture:(id)arg1 alphaThreshold:(float)arg2 accuracy:(float)arg3;

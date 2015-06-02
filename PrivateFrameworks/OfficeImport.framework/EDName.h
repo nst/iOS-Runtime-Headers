@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDFormula, EDString, NSString, OITSUPointerKeyDictionary;
-
 @interface EDName : NSObject {
     EDFormula *_formula;
     NSString *_formulaString;
@@ -12,12 +10,12 @@
     unsigned int _sheetIndex;
 }
 
-@property(readonly) EDFormula * formula;
-@property(readonly) NSString * internalFunctionName;
-@property(readonly) BOOL isInternalFunction;
-@property(readonly) OITSUPointerKeyDictionary * maxWorksheetReferences;
-@property(retain) EDString * nameString;
-@property unsigned int sheetIndex;
+@property (nonatomic, readonly) EDFormula *formula;
+@property (nonatomic, readonly) NSString *internalFunctionName;
+@property (nonatomic, readonly) BOOL isInternalFunction;
+@property (nonatomic, readonly) OITSUPointerKeyDictionary *maxWorksheetReferences;
+@property (nonatomic, retain) EDString *nameString;
+@property (nonatomic) unsigned int sheetIndex;
 
 + (id)name;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSData;
-
 @interface IDSSocketPairEncryptedMessage : IDSSocketPairMessage {
     NSData *_data;
 }
 
-@property(retain,readonly) NSData * data;
+@property (nonatomic, readonly, retain) NSData *data;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;

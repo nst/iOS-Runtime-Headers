@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class NSString;
-
 @interface CNFRegLearnMoreButton : UIButton {
     BOOL _alwaysUnderline;
     NSString *_buttonText;
@@ -11,10 +9,10 @@
     BOOL _usesImage;
 }
 
-@property BOOL alwaysUnderline;
-@property(copy) NSString * buttonText;
-@property int style;
-@property BOOL usesImage;
+@property (nonatomic) BOOL alwaysUnderline;
+@property (nonatomic, copy) NSString *buttonText;
+@property (nonatomic) int style;
+@property (nonatomic) BOOL usesImage;
 
 + (id)roundedButtonWithText:(id)arg1 color:(id)arg2;
 

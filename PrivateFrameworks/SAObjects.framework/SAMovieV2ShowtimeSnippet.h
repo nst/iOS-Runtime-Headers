@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SALocalSearchBusiness2, SAUIImageResource;
+@interface SAMovieV2ShowtimeSnippet : SAUISnippet
 
-@interface SAMovieV2ShowtimeSnippet : SAUISnippet {
-}
-
-@property(retain) SAUIImageResource * attributionLogo;
-@property(copy) NSString * movieName;
-@property(copy) NSArray * showtimes;
-@property(retain) SALocalSearchBusiness2 * theater;
-@property(copy) NSString * theaterName;
+@property (nonatomic, retain) SAUIImageResource *attributionLogo;
+@property (nonatomic, copy) NSString *movieName;
+@property (nonatomic, copy) NSArray *showtimes;
+@property (nonatomic, retain) SALocalSearchBusiness2 *theater;
+@property (nonatomic, copy) NSString *theaterName;
 
 + (id)showtimeSnippet;
 + (id)showtimeSnippetWithDictionary:(id)arg1 context:(id)arg2;

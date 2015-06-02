@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartGridConstantAdapter : TSCHChartGridCountAdapter {
-}
+@interface TSCHChartGridConstantAdapter : TSCHChartGridCountAdapter
 
 - (id)valueAtIndex:(unsigned int)arg1;
 

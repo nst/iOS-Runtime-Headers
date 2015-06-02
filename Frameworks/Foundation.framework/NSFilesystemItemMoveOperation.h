@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, NSString;
-
 @interface NSFilesystemItemMoveOperation : NSOperation {
     id _delegate;
     NSString *_destinationPath;

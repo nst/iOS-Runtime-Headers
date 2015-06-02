@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputMediaDataRequester, AVAssetWriterInputPassDescription, AVFigAssetWriterTrack, NSString;
-
 @interface AVAssetWriterInputWritingHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate> {
     AVFigAssetWriterTrack *_assetWriterTrack;
     AVAssetWriterInputPassDescription *_currentPassDescription;
@@ -11,12 +9,12 @@
     struct __CVPixelBufferPool { } *_pixelBufferPool;
 }
 
-@property(getter=_assetWriterTrack,readonly) AVFigAssetWriterTrack * assetWriterTrack;
-@property(retain) AVAssetWriterInputPassDescription * currentPassDescription;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=_assetWriterTrack, nonatomic, readonly) AVFigAssetWriterTrack *assetWriterTrack;
+@property (nonatomic, retain) AVAssetWriterInputPassDescription *currentPassDescription;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)keyPathsForValuesAffectingReadyForMoreMediaData;
 
@@ -43,7 +41,7 @@
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (void)prepareToEndSession;
 - (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
-- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)setCurrentPassDescription:(id)arg1;
 - (int)status;
 - (int)trackID;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray, NSString, UILabel, UIView;
-
 @interface EKCalendarShareesEditItem : EKCalendarEditItem <EKShareePickerViewControllerDelegate, EKShareeViewControllerDelegate> {
     UILabel *_descriptionLabel;
     UIView *_footerView;
     NSMutableArray *_shareeCells;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * shareeCells;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *shareeCells;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_addPersonCell;

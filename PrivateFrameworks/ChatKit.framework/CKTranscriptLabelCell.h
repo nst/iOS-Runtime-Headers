@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString, UILabel;
-
 @interface CKTranscriptLabelCell : CKTranscriptCell {
     UILabel *_label;
     BOOL _wantsContactImageLayout;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property(retain) UILabel * label;
-@property BOOL wantsContactImageLayout;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic) BOOL wantsContactImageLayout;
 
 + (id)label;
 

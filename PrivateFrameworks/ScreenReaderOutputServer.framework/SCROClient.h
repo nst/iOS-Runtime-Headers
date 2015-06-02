@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSLock;
-
 @interface SCROClient : NSObject {
     struct __CFSet { } *_callbackSet;
     unsigned int _identifier;

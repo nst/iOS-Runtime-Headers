@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDayOccurrenceView, UIColor;
-
 @interface EKDayOccurrenceResizeHandleView : UIView {
     UIColor *_baseColor;
     EKDayOccurrenceView *_occurrenceView;
 }
 
-@property(retain) UIColor * baseColor;
-@property(readonly) EKDayOccurrenceView * occurrenceView;
+@property (nonatomic, retain) UIColor *baseColor;
+@property (nonatomic, readonly) EKDayOccurrenceView *occurrenceView;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_circleRect;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCSharedServerZone, NSString;
-
 @interface BRCSharedLocalContainer : BRCLocalContainer {
     NSString *_ownerName;
 }
 
-@property(readonly) BOOL isPrivateContainer;
-@property(readonly) BOOL isSharedContainer;
-@property(readonly) BRCSharedServerZone * sharedZone;
+@property (nonatomic, readonly) BOOL isPrivateContainer;
+@property (nonatomic, readonly) BOOL isSharedContainer;
+@property (nonatomic, readonly) BRCSharedServerZone *sharedZone;
 
 - (void).cxx_destruct;
 - (void)_setup;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UILabel;
-
 @interface PUPhotoEditOverlayBadge : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,9 +13,9 @@
     NSString *_text;
 }
 
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property(readonly) UILabel * label;
-@property(copy) NSString * text;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (void)_updateLabel;

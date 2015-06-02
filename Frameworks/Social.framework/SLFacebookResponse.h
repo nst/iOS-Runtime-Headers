@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSData, NSDictionary, NSHTTPURLResponse;
-
 @interface SLFacebookResponse : NSObject <NSCoding> {
     int _httpErrorCode;
     NSData *_responseData;
@@ -11,10 +9,10 @@
     NSHTTPURLResponse *_urlResponse;
 }
 
-@property(readonly) int APIresponseErrorCode;
-@property(readonly) int httpErrorCode;
-@property(readonly) NSDictionary * responseParameters;
-@property(readonly) NSHTTPURLResponse * urlResponse;
+@property (readonly) int APIresponseErrorCode;
+@property (readonly) int httpErrorCode;
+@property (readonly) NSDictionary *responseParameters;
+@property (readonly) NSHTTPURLResponse *urlResponse;
 
 - (void).cxx_destruct;
 - (int)APIresponseErrorCode;

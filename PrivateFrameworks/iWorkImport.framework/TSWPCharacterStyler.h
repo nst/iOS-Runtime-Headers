@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPCharacterStyler : TSWPStorageStyler {
-}
+@interface TSWPCharacterStyler : TSWPStorageStyler
 
 - (void)applyStyle:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 undoTransaction:(struct TSWPStorageTransaction { }*)arg3;
 - (id)initWithStorage:(id)arg1;

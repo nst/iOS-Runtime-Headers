@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class CUTWeakReference, IDSBaseSocketPairConnection, NSObject<OS_dispatch_queue>, NSSet, NSString;
-
 @interface _IDSSession : NSObject <IDSBaseSocketPairConnectionDelegate, IDSDaemonListenerProtocol> {
     NSString *_accountID;
     id _boostContext;
@@ -23,18 +21,18 @@
     IDSBaseSocketPairConnection *_unreliableSocketPairConnection;
 }
 
-@property(retain) id boostContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int inviteTimeout;
-@property(readonly) unsigned int sessionEndedReason;
-@property(readonly) int socket;
-@property(readonly) unsigned int state;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) id boostContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int inviteTimeout;
+@property (nonatomic, readonly) unsigned int sessionEndedReason;
+@property (nonatomic, readonly) int socket;
+@property (nonatomic, readonly) unsigned int state;
+@property (readonly) Class superclass;
 
 - (void)_broadcastNewSessionToDaemon;
-- (void)_callDelegateWithBlock:(id)arg1;
+- (void)_callDelegateWithBlock:(id /* block */)arg1;
 - (void)_cleanupSocketPairConnections;
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3 uniqueID:(id)arg4 delegateContext:(id)arg5;
 - (void)_setupSocketPairToDaemon;

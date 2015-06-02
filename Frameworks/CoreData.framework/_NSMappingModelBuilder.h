@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSEntityMapping, NSError, NSManagedObjectModel;
-
 @interface _NSMappingModelBuilder : NSObject {
     NSEntityMapping *_currentEntityMapping;
     NSManagedObjectModel *_destinationModel;

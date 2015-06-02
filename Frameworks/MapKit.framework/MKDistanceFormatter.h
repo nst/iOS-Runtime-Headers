@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSLocale;
-
 @interface MKDistanceFormatter : NSFormatter {
     NSLocale *_locale;
     unsigned int _unitStyle;
     unsigned int _units;
 }
 
-@property(copy) NSLocale * locale;
-@property unsigned int unitStyle;
-@property unsigned int units;
+@property (nonatomic, copy) NSLocale *locale;
+@property (nonatomic) unsigned int unitStyle;
+@property (nonatomic) unsigned int units;
 
 - (void).cxx_destruct;
 - (BOOL)_useMetric;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxisSeriesLabelsLayoutItem, TSCHChartCategoryAxisLabelsLayoutItem;
-
 @interface TSCHChartCategoryAxisLayoutItem : TSCHChartAxisLayoutItem {
     TSCHChartCategoryAxisLabelsLayoutItem *mCategoryLabels;
     TSCHChartAxisSeriesLabelsLayoutItem *mSeriesLabels;
 }
 
-@property(readonly) TSCHChartCategoryAxisLabelsLayoutItem * axisCategoryLabelsLayoutItem;
-@property(readonly) TSCHChartAxisSeriesLabelsLayoutItem * axisSeriesLabelsLayoutItem;
+@property (nonatomic, readonly) TSCHChartCategoryAxisLabelsLayoutItem *axisCategoryLabelsLayoutItem;
+@property (nonatomic, readonly) TSCHChartAxisSeriesLabelsLayoutItem *axisSeriesLabelsLayoutItem;
 
 - (id)axisCategoryLabelsLayoutItem;
 - (id)axisSeriesLabelsLayoutItem;

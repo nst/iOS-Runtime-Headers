@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString, VKGenericShieldDrawStyle, VKPGlobalProperties, VKSharedResources, VKStylesheet;
-
 @interface VKStyleManager : NSObject {
     float _blendingFactor;
     BOOL _canSelectIcons;
@@ -47,26 +45,26 @@
     unsigned int _updateStamp;
 }
 
-@property(readonly) unsigned int activeMapDisplayStyle;
-@property float blendingFactor;
-@property BOOL canSelectIcons;
-@property(readonly) VKGenericShieldDrawStyle * defaultGenericShieldStyle;
-@property(getter=isFinishedDecoding,readonly) BOOL finishedDecoding;
-@property(readonly) BOOL isDevResource;
-@property unsigned int mapDisplayStyle;
-@property unsigned int mapDisplayStyleVariant;
-@property int mapMode;
-@property(readonly) NSString * sheetName;
-@property(readonly) VKPGlobalProperties * styleGlobalProperties;
-@property(readonly) BOOL supportsNightMode;
-@property(readonly) int targetDisplay;
-@property(readonly) unsigned int updateStamp;
+@property (nonatomic, readonly) unsigned int activeMapDisplayStyle;
+@property (nonatomic) float blendingFactor;
+@property (nonatomic) BOOL canSelectIcons;
+@property (nonatomic, readonly) VKGenericShieldDrawStyle *defaultGenericShieldStyle;
+@property (getter=isFinishedDecoding, nonatomic, readonly) BOOL finishedDecoding;
+@property (nonatomic, readonly) BOOL isDevResource;
+@property (nonatomic) unsigned int mapDisplayStyle;
+@property (nonatomic) unsigned int mapDisplayStyleVariant;
+@property (nonatomic) int mapMode;
+@property (nonatomic, readonly) NSString *sheetName;
+@property (nonatomic, readonly) VKPGlobalProperties *styleGlobalProperties;
+@property (nonatomic, readonly) BOOL supportsNightMode;
+@property (nonatomic, readonly) int targetDisplay;
+@property (readonly) unsigned int updateStamp;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)_nightShieldBrightnessForVectorType:(int)arg1;
 - (unsigned int)activeMapDisplayStyle;
-- (void)addFinishedDecodingCallback:(id)arg1;
+- (void)addFinishedDecodingCallback:(id /* block */)arg1;
 - (float)blendingFactor;
 - (float*)blendingFactorPointer;
 - (BOOL)canSelectIcons;

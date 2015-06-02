@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSDate, NSMutableSet, NSString;
-
 @interface NNMKSyncedMessage : NSObject {
     NSMutableSet *_attachmentsContentIdsNotYetSynced;
     BOOL _contentRequestedByUser;
@@ -22,21 +20,21 @@
     BOOL _usedProtectedChannelForMessageSync;
 }
 
-@property(retain) NSMutableSet * attachmentsContentIdsNotYetSynced;
-@property BOOL contentRequestedByUser;
-@property unsigned int contentResendInterval;
-@property BOOL contentSynced;
-@property BOOL contentSyncedBecauseUserRequested;
-@property BOOL contentSyncedUsingNotificationPriority;
-@property(retain) NSString * conversationId;
-@property(retain) NSDate * dateReceived;
-@property(retain) NSString * messageId;
-@property unsigned int resendInterval;
-@property BOOL resendRequested;
-@property unsigned int status;
-@property unsigned int statusVersion;
-@property BOOL usedNotificationPriorityForMessageSync;
-@property BOOL usedProtectedChannelForMessageSync;
+@property (nonatomic, retain) NSMutableSet *attachmentsContentIdsNotYetSynced;
+@property (nonatomic) BOOL contentRequestedByUser;
+@property (nonatomic) unsigned int contentResendInterval;
+@property (nonatomic) BOOL contentSynced;
+@property (nonatomic) BOOL contentSyncedBecauseUserRequested;
+@property (nonatomic) BOOL contentSyncedUsingNotificationPriority;
+@property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic, retain) NSDate *dateReceived;
+@property (nonatomic, retain) NSString *messageId;
+@property (nonatomic) unsigned int resendInterval;
+@property (nonatomic) BOOL resendRequested;
+@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned int statusVersion;
+@property (nonatomic) BOOL usedNotificationPriorityForMessageSync;
+@property (nonatomic) BOOL usedProtectedChannelForMessageSync;
 
 - (void).cxx_destruct;
 - (id)attachmentsContentIdsNotYetSynced;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISURLOperationPool, MFMailComposeViewController, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SUClientInterface, SUImageCache, SUScriptExecutionContext, UIViewController;
-
 @interface SUClientController : NSObject <MFMailComposeViewControllerDelegate, SUClientInterfaceDelegate, SUPurchaseManagerDelegate> {
     BOOL _active;
     SUClientInterface *_clientInterface;
@@ -20,19 +18,19 @@
     NSMutableDictionary *_urlBagKeys;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(copy) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SUImageCache * imageCache;
-@property(retain) ISURLOperationPool * imageOperationPool;
-@property(retain) UIViewController * rootViewController;
-@property(readonly) SUScriptExecutionContext * scriptExecutionContext;
-@property(readonly) NSString * storeContentLanguage;
-@property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
-@property(readonly) BOOL storeFrontDidChangeSinceLastSuspend;
-@property(readonly) Class superclass;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (copy) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SUImageCache *imageCache;
+@property (nonatomic, retain) ISURLOperationPool *imageOperationPool;
+@property (nonatomic, retain) UIViewController *rootViewController;
+@property (nonatomic, readonly) SUScriptExecutionContext *scriptExecutionContext;
+@property (nonatomic, readonly) NSString *storeContentLanguage;
+@property (getter=isStoreEnabled, nonatomic, readonly) BOOL storeEnabled;
+@property (nonatomic, readonly) BOOL storeFrontDidChangeSinceLastSuspend;
+@property (readonly) Class superclass;
 
 + (void)setSharedController:(id)arg1;
 + (id)sharedController;
@@ -48,7 +46,7 @@
 - (void)_reloadOverlayConfigurationsFromURLBag;
 - (void)_reloadScriptExecutionContextFromURLBag;
 - (void)_reloadUserDefaultsFromURLBag;
-- (void)autosaveMessageWithCompletionBlock:(id)arg1;
+- (void)autosaveMessageWithCompletionBlock:(id /* block */)arg1;
 - (void)bagDidLoadNotification:(id)arg1;
 - (void)becomeActive;
 - (void)cancelAllOperations;

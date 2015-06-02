@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@interface _MPUStackItemReuseCache : NSObject {
-}
+@interface _MPUStackItemReuseCache : NSObject
 
 + (id)dequeueReusableStackItemWithIdentifier:(id)arg1;
 + (void)enqueueReusableStackItem:(id)arg1 forReuseIdentifier:(id)arg2;

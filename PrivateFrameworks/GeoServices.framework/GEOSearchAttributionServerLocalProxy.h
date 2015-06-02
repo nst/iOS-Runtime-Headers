@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMapTable, NSMutableArray, NSString;
-
 @interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
     NSMapTable *_listeners;
     NSMutableArray *_updateManifestCompletionHandlers;
@@ -11,18 +9,18 @@
     BOOL _updatingManifest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_loadAttributionInfoForListener:(id)arg1 hasUpdatedManifest:(BOOL)arg2;
 - (void)_pruneOldAttributionLogos;
 - (void)_sendError:(id)arg1 toListener:(id)arg2;
 - (void)_sendInfo:(id)arg1 updatedManifest:(BOOL)arg2 toListener:(id)arg3;
-- (void)_updateManifestWithCompletionHandler:(id)arg1 errorHandler:(id)arg2;
+- (void)_updateManifestWithCompletionHandler:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4;
+- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
 
 @end

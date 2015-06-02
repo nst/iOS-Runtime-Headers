@@ -2,15 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface CHDrawing : NSObject <NSCopying> {
     struct CJKChar { 
         struct vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { 
@@ -32,7 +23,7 @@
     } _drawing;
 }
 
-@property /* Warning: unhandled struct encoding: '{CJKChar={vector<std::__1::vector<double' */ struct  drawing; /* unknown property attribute:  std::__1::allocator<double> >}}}II{Matrix<double>=^^?^dII}d} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{CJKChar={vector<std::__1::vector<double' */ struct  drawing; /* unknown property attribute:  std::__1::allocator<double> >}}}II{Matrix<double>=^^?^dII}d} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

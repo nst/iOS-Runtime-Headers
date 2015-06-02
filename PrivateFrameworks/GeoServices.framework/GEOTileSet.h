@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOTileSet : PBCodable <NSCopying> {
     NSString *_baseURL;
     struct { 
@@ -21,21 +19,21 @@
     NSMutableArray *_validVersions;
 }
 
-@property(retain) NSString * baseURL;
-@property(readonly) BOOL hasBaseURL;
-@property(readonly) BOOL hasLocalizationURL;
-@property(readonly) BOOL hasMultiTileURL;
-@property BOOL hasMultiTileURLUsesStatusCodes;
-@property BOOL hasUpdateBehavior;
-@property(retain) NSString * localizationURL;
-@property(retain) NSString * multiTileURL;
-@property BOOL multiTileURLUsesStatusCodes;
-@property int scale;
-@property int size;
-@property int style;
-@property(retain) NSMutableArray * supportedLanguages;
-@property int updateBehavior;
-@property(retain) NSMutableArray * validVersions;
+@property (nonatomic, retain) NSString *baseURL;
+@property (nonatomic, readonly) BOOL hasBaseURL;
+@property (nonatomic, readonly) BOOL hasLocalizationURL;
+@property (nonatomic, readonly) BOOL hasMultiTileURL;
+@property (nonatomic) BOOL hasMultiTileURLUsesStatusCodes;
+@property (nonatomic) BOOL hasUpdateBehavior;
+@property (nonatomic, retain) NSString *localizationURL;
+@property (nonatomic, retain) NSString *multiTileURL;
+@property (nonatomic) BOOL multiTileURLUsesStatusCodes;
+@property (nonatomic) int scale;
+@property (nonatomic) int size;
+@property (nonatomic) int style;
+@property (nonatomic, retain) NSMutableArray *supportedLanguages;
+@property (nonatomic) int updateBehavior;
+@property (nonatomic, retain) NSMutableArray *validVersions;
 
 - (void)addSupportedLanguage:(id)arg1;
 - (void)addValidVersion:(id)arg1;

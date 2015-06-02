@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIBadgeLabel, SKUISearchAppBundleView, UIImage, UIImageView, UILabel;
-
 @interface SKUICardCellLayout : SKUIItemCellLayout {
     BOOL _appBundle;
     SKUISearchAppBundleView *_appBundleView;
@@ -19,15 +17,15 @@
     UILabel *_userRatingLabel;
 }
 
-@property BOOL appBundle;
-@property(readonly) SKUISearchAppBundleView * appBundleView;
-@property(copy) NSString * artistName;
-@property(copy) NSString * editorialBadge;
-@property BOOL hasInAppPurchases;
-@property int numberOfUserRatings;
-@property(retain) UIImage * screenshotImage;
-@property(copy) NSString * title;
-@property float userRating;
+@property (nonatomic) BOOL appBundle;
+@property (nonatomic, readonly) SKUISearchAppBundleView *appBundleView;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, copy) NSString *editorialBadge;
+@property (nonatomic) BOOL hasInAppPurchases;
+@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic, retain) UIImage *screenshotImage;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (BOOL)appBundle;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarLockScreenForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes {
-}
+@interface UIStatusBarLockScreenForegroundStyleAttributes : UIStatusBarForegroundStyleAttributes
 
 - (int)activityIndicatorStyleWithSyncActivity:(BOOL)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;

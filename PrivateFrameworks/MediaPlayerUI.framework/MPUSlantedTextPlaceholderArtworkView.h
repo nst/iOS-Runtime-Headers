@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, UIColor, UIImage;
-
 @interface MPUSlantedTextPlaceholderArtworkView : UIImageView {
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _drawsArtworkAsynchronously;
@@ -31,16 +29,16 @@
     unsigned int _placeholderVersion;
 }
 
-@property BOOL drawsArtworkAsynchronously;
-@property(retain) UIColor * placeholderBackgroundColor;
-@property int placeholderContentMode;
-@property(retain) UIImage * placeholderImage;
-@property struct CGSize { float x1; float x2; } placeholderSize;
-@property(retain) UIColor * placeholderStrokeColor;
-@property float placeholderStrokeLineWidth;
-@property int placeholderStyle;
-@property(copy) NSString * placeholderSubtitle;
-@property(copy) NSString * placeholderTitle;
+@property (nonatomic) BOOL drawsArtworkAsynchronously;
+@property (nonatomic, retain) UIColor *placeholderBackgroundColor;
+@property (nonatomic) int placeholderContentMode;
+@property (nonatomic, retain) UIImage *placeholderImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } placeholderSize;
+@property (nonatomic, retain) UIColor *placeholderStrokeColor;
+@property (nonatomic) float placeholderStrokeLineWidth;
+@property (nonatomic) int placeholderStyle;
+@property (nonatomic, copy) NSString *placeholderSubtitle;
+@property (nonatomic, copy) NSString *placeholderTitle;
 
 - (void).cxx_destruct;
 - (void)_drawPlaceholderWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 displayScale:(float)arg2;

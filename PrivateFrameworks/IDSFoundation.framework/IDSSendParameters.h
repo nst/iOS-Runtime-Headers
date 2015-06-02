@@ -2,55 +2,53 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSNumber, NSString;
-
 @interface IDSSendParameters : NSObject <NSCopying> {
     NSMutableDictionary *_params;
 }
 
-@property(retain) NSString * accountUUID;
-@property BOOL activityContinuation;
-@property(retain) NSString * alternateCallbackID;
-@property(retain) NSArray * bulkedPayload;
-@property BOOL bypassDuet;
-@property BOOL bypassSizeCheck;
-@property BOOL bypassStorage;
-@property(retain) NSNumber * command;
-@property BOOL compressPayload;
-@property BOOL compressed;
-@property BOOL daemonDeathResend;
-@property(retain) NSData * data;
-@property(retain) NSData * dataToEncrypt;
-@property(retain) NSDictionary * deliveryStatusContext;
-@property(retain) NSArray * destinations;
-@property(retain,readonly) NSDictionary * dictionaryRepresentation;
-@property(retain) NSArray * duetIdentifiersOverride;
-@property BOOL encryptPayload;
-@property BOOL enforceRemoteTimeouts;
-@property BOOL expectsPeerResponse;
-@property(retain,readonly) NSDate * expirationDate;
-@property BOOL fireAndForget;
-@property(retain) NSString * fromID;
-@property(retain) NSString * identifier;
-@property(retain) NSArray * interestingRegistrationProperties;
-@property BOOL isProxiedOutgoingMessage;
-@property BOOL localDelivery;
-@property(retain) NSDictionary * message;
-@property(retain) NSData * messageUUID;
-@property BOOL nonWaking;
-@property(retain) NSString * peerResponseIdentifier;
-@property int priority;
-@property(retain) NSDictionary * protobuf;
-@property(retain) NSString * queueOneIdentifier;
-@property(retain) NSArray * requireAllRegistrationProperties;
-@property BOOL requireBluetooth;
-@property(retain) NSDictionary * resourceMetadata;
-@property(retain) NSString * resourcePath;
-@property double timeout;
-@property BOOL useDictAsTopLevel;
-@property BOOL wantsAppAck;
-@property BOOL wantsDeliveryStatus;
-@property BOOL wantsResponse;
+@property (nonatomic, retain) NSString *accountUUID;
+@property (nonatomic) BOOL activityContinuation;
+@property (nonatomic, retain) NSString *alternateCallbackID;
+@property (nonatomic, retain) NSArray *bulkedPayload;
+@property (nonatomic) BOOL bypassDuet;
+@property (nonatomic) BOOL bypassSizeCheck;
+@property (nonatomic) BOOL bypassStorage;
+@property (nonatomic, retain) NSNumber *command;
+@property (nonatomic) BOOL compressPayload;
+@property (nonatomic) BOOL compressed;
+@property (nonatomic) BOOL daemonDeathResend;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSData *dataToEncrypt;
+@property (nonatomic, retain) NSDictionary *deliveryStatusContext;
+@property (nonatomic, retain) NSArray *destinations;
+@property (nonatomic, readonly, retain) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, retain) NSArray *duetIdentifiersOverride;
+@property (nonatomic) BOOL encryptPayload;
+@property (nonatomic) BOOL enforceRemoteTimeouts;
+@property (nonatomic) BOOL expectsPeerResponse;
+@property (nonatomic, readonly, retain) NSDate *expirationDate;
+@property (nonatomic) BOOL fireAndForget;
+@property (nonatomic, retain) NSString *fromID;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSArray *interestingRegistrationProperties;
+@property (nonatomic) BOOL isProxiedOutgoingMessage;
+@property (nonatomic) BOOL localDelivery;
+@property (nonatomic, retain) NSDictionary *message;
+@property (nonatomic, retain) NSData *messageUUID;
+@property (nonatomic) BOOL nonWaking;
+@property (nonatomic, retain) NSString *peerResponseIdentifier;
+@property (nonatomic) int priority;
+@property (nonatomic, retain) NSDictionary *protobuf;
+@property (nonatomic, retain) NSString *queueOneIdentifier;
+@property (nonatomic, retain) NSArray *requireAllRegistrationProperties;
+@property (nonatomic) BOOL requireBluetooth;
+@property (nonatomic, retain) NSDictionary *resourceMetadata;
+@property (nonatomic, retain) NSString *resourcePath;
+@property (nonatomic) double timeout;
+@property (nonatomic) BOOL useDictAsTopLevel;
+@property (nonatomic) BOOL wantsAppAck;
+@property (nonatomic) BOOL wantsDeliveryStatus;
+@property (nonatomic) BOOL wantsResponse;
 
 - (id)accountUUID;
 - (BOOL)activityContinuation;

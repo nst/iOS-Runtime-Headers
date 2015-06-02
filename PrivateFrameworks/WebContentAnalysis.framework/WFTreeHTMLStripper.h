@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFTreeHTMLStripper : WFTreeXMLDocumentStripper {
-}
+@interface WFTreeHTMLStripper : WFTreeXMLDocumentStripper
 
 + (id)treeStripperWithData:(id)arg1;
 + (id)treeStripperWithString:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendar, EKGroupInfo, NSString, UIColor, UIImage;
-
 @interface EKCalendarInfo : NSObject {
     EKCalendar *_calendar;
     UIColor *_color;
@@ -13,20 +11,20 @@
     NSString *_title;
 }
 
-@property(retain) EKCalendar * calendar;
-@property(retain) UIColor * color;
-@property int customGroupType;
-@property(readonly) int displayOrder;
-@property(readonly) BOOL excludeFromSelectAll;
-@property EKGroupInfo * group;
-@property(readonly) UIImage * highlightedIcon;
-@property(readonly) UIImage * icon;
-@property(readonly) BOOL isEditable;
-@property(readonly) BOOL isPublished;
-@property(readonly) BOOL isShared;
-@property(readonly) BOOL isSubscribed;
-@property BOOL selected;
-@property(copy,readonly) NSString * title;
+@property (nonatomic, retain) EKCalendar *calendar;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) int customGroupType;
+@property (nonatomic, readonly) int displayOrder;
+@property (nonatomic, readonly) BOOL excludeFromSelectAll;
+@property (nonatomic) EKGroupInfo *group;
+@property (nonatomic, readonly) UIImage *highlightedIcon;
+@property (nonatomic, readonly) UIImage *icon;
+@property (nonatomic, readonly) BOOL isEditable;
+@property (nonatomic, readonly) BOOL isPublished;
+@property (nonatomic, readonly) BOOL isShared;
+@property (nonatomic, readonly) BOOL isSubscribed;
+@property (nonatomic) BOOL selected;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_updateCustomGroupType;

@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSString;
-
 @interface UIPDFParserDelegate : NSObject <NSXMLParserDelegate> {
     struct CGPoint { 
         float x; 
         float y; 
-    } _p[4];
+    } _p;
     BOOL _parserError;
     struct CGPath { } *_path;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL parserError;
-@property(readonly) struct CGPath { }* path;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL parserError;
+@property (readonly) struct CGPath { }*path;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)init;

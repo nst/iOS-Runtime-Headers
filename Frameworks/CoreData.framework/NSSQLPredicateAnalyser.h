@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray;
-
 @interface NSSQLPredicateAnalyser : NSObject <NSPredicateVisitor> {
     NSMutableArray *_allModifierPredicates;
     BOOL _compoundPredicate;

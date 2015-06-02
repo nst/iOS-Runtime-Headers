@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBezierPath;
-
 @interface SUBezierPathMaskProvider : SUMaskProvider {
     UIBezierPath *_bezierPath;
 }
 
-@property(retain) UIBezierPath * bezierPath;
+@property (nonatomic, retain) UIBezierPath *bezierPath;
 
 - (id)bezierPath;
 - (struct CGPath { }*)copyPathForMaskWithSize:(struct CGSize { float x1; float x2; })arg1;

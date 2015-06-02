@@ -6,7 +6,7 @@
     unsigned int _limit;
 }
 
-@property unsigned int limit;
+@property (nonatomic) unsigned int limit;
 
 - (void)dealloc;
 - (id)init;

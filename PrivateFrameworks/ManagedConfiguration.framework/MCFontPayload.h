@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSString, NSURL;
-
 @interface MCFontPayload : MCPayload {
     NSData *_fontData;
     NSString *_name;
     NSURL *_persistentURL;
 }
 
-@property(retain) NSData * fontData;
-@property(retain) NSString * name;
-@property(retain) NSURL * persistentURL;
+@property (nonatomic, retain) NSData *fontData;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSURL *persistentURL;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

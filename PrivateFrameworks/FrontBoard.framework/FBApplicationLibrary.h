@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class LSApplicationWorkspace, NSHashTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FBApplicationLibrary : NSObject <LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace *_applicationWorkspace;
     NSObject<OS_dispatch_queue> *_callOutQueue;
@@ -19,16 +17,16 @@
     BOOL _workQueue_usingNetwork;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (getter=isUsingNetwork, nonatomic, readonly) BOOL usingNetwork;
 
-+ (void)setBundleExtendedInfoGenerationHandler:(id)arg1;
++ (void)setBundleExtendedInfoGenerationHandler:(id /* block */)arg1;
 + (id)sharedInstance;
 
-- (void)_dispatchToObservers:(id)arg1 synchronously:(BOOL)arg2 preBlock:(id)arg3 block:(id)arg4;
+- (void)_dispatchToObservers:(id)arg1 synchronously:(BOOL)arg2 preBlock:(id /* block */)arg3 block:(id /* block */)arg4;
 - (id)_observers;
 - (void)_reload;
 - (void)_sendToObservers:(id)arg1 didAddApplications:(id)arg2;
@@ -41,7 +39,7 @@
 - (id)_workQueue_applicationInfoForProxy:(id)arg1 createIfNecessary:(BOOL)arg2 wasCreated:(BOOL*)arg3;
 - (id)_workQueue_applicationsForProxies:(id)arg1 createIfNecessary:(BOOL)arg2 createdPlaceholders:(const id*)arg3 existingApplications:(const id*)arg4 unmappedProxies:(const id*)arg5;
 - (void)_workQueue_decrementSynchronizationActionCount;
-- (void)_workQueue_executeInstallSynchronizationBlock:(id)arg1;
+- (void)_workQueue_executeInstallSynchronizationBlock:(id /* block */)arg1;
 - (void)_workQueue_generateExtendedInfoForBundleInfo:(id)arg1;
 - (void)_workQueue_incrementSynchronizationActionCount;
 - (void)_workQueue_notePlaceholdersModifiedSignificantly:(id)arg1;
@@ -66,13 +64,13 @@
 - (void)applicationsWillUninstall:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)executeOrPendInstallSynchronizationBlock:(id)arg1;
+- (void)executeOrPendInstallSynchronizationBlock:(id /* block */)arg1;
 - (id)init;
 - (id)installedApplicationWithBundleIdentifier:(id)arg1;
 - (BOOL)isUsingNetwork;
 - (void)networkUsageChanged:(BOOL)arg1;
 - (id)placeholderWithBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)uninstallApplication:(id)arg1 completion:(id)arg2;
+- (void)uninstallApplication:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSHomeSharingVerifyRequest : HSRequest {
-}
+@interface HSHomeSharingVerifyRequest : HSRequest
 
 - (id)init;
 

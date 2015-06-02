@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSURLCompletionMatchData>;
-
 @interface WBSBookmarkAndHistoryCompletionMatch : WBSURLCompletionMatch {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch> { 
         struct BookmarkAndHistoryCompletionMatch {} *m_ptr; 
     } _match;
 }
 
-@property(readonly) <WBSURLCompletionMatchData> * data;
-@property(readonly) float weight;
+@property (nonatomic, readonly) <WBSURLCompletionMatchData> *data;
+@property (nonatomic, readonly) float weight;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

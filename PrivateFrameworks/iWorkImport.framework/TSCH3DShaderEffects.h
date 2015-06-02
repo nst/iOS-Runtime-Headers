@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSSet;
-
 @interface TSCH3DShaderEffects : NSObject {
     NSArray *mCacheList;
-    NSMutableArray *mSections[4];
+    NSMutableArray *mSections;
 }
 
-@property(readonly) NSSet * identifier;
+@property (nonatomic, readonly) NSSet *identifier;
 
 - (void)addEffect:(id)arg1;
 - (void)addEffect:(id)arg1 toSection:(int)arg2;
@@ -20,7 +18,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)effects;
-- (void)enumerateEffectsUsingBlock:(id)arg1;
+- (void)enumerateEffectsUsingBlock:(id /* block */)arg1;
 - (id)identifier;
 - (id)init;
 - (void)inject:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGDataDetectorMatch : NSObject {
     struct _NSRange { 
         unsigned int location; 
@@ -21,11 +19,11 @@
     NSString *_valueString;
 }
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } labelRange;
-@property(readonly) unsigned int matchType;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } valueRange;
-@property(readonly) NSString * valueString;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } labelRange;
+@property (nonatomic, readonly) unsigned int matchType;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } valueRange;
+@property (nonatomic, readonly) NSString *valueString;
 
 - (void).cxx_destruct;
 - (id)description;

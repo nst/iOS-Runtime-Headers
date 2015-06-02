@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartInfo, TSCHChartModel;
-
 @interface TSCHChartLayout : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -28,19 +26,19 @@
     BOOL mNeedsLayout;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartAreaFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrame;
-@property(readonly) TSCHChartInfo * chartInfo;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartAreaFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chartBodyFrame;
+@property (readonly) TSCHChartInfo *chartInfo;
 @property unsigned int dataSetIndex;
 @property struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } layoutSettings;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendDrawingFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendDrawingFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendGeometryFrame;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } legendModelGeometryFrame;
-@property(readonly) TSCHChartModel * model;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } outerLayoutFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } outerShadowFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } titleFrame;
+@property (readonly) TSCHChartModel *model;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } outerLayoutFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } outerShadowFrame;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } titleFrame;
 
 + (id)chartLayoutWithChartInfo:(id)arg1;
 + (struct CGSize { float x1; float x2; })legendSizeForChartInfo:(id)arg1 initialWidth:(float)arg2;
@@ -60,7 +58,7 @@
 - (void)dealloc;
 - (void)endDynamicOperation;
 - (void)endResize;
-- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id)arg2;
+- (id)hitChartElements:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidate;
 - (void)invalidateCachedOriginRelativeToChartAreaFrame;

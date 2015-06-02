@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, PLImageCache, PLPhotoLibrary;
-
 @interface PLImageLoadingThread : NSObject {
     BOOL _canceled;
     NSObject<OS_dispatch_queue> *_highPriorityQueue;
@@ -35,7 +33,7 @@
 - (void)cancelLoadFromSource:(id)arg1 asset:(id)arg2 imageLoadingQueue:(id)arg3;
 - (void)dealloc;
 - (id)initWithImageCache:(id)arg1;
-- (id)loadImageFromSource:(id)arg1 asset:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 completion:(id)arg6;
+- (id)loadImageFromSource:(id)arg1 asset:(id)arg2 forImageLoadingQueue:(id)arg3 synchronously:(BOOL)arg4 priority:(int)arg5 completion:(id /* block */)arg6;
 - (void)pause;
 - (void)removeImageLoadingQueue:(id)arg1;
 - (void)resume;

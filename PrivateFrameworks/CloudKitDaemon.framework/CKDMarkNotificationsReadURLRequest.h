@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDMarkNotificationsReadURLRequest : CKDURLRequest {
     NSArray *_notificationIDs;
     NSMutableDictionary *_notificationIDsByRequestID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _notificationMarkedReadProgressBlock;
-
+    id /* block */ _notificationMarkedReadProgressBlock;
 }
 
-@property(retain) NSArray * notificationIDs;
-@property(retain) NSMutableDictionary * notificationIDsByRequestID;
-@property(copy) id notificationMarkedReadProgressBlock;
+@property (nonatomic, retain) NSArray *notificationIDs;
+@property (nonatomic, retain) NSMutableDictionary *notificationIDsByRequestID;
+@property (nonatomic, copy) id /* block */ notificationMarkedReadProgressBlock;
 
 - (void).cxx_destruct;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
 - (id)notificationIDs;
 - (id)notificationIDsByRequestID;
-- (id)notificationMarkedReadProgressBlock;
+- (id /* block */)notificationMarkedReadProgressBlock;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
@@ -34,7 +24,7 @@
 - (id)requestOperations;
 - (void)setNotificationIDs:(id)arg1;
 - (void)setNotificationIDsByRequestID:(id)arg1;
-- (void)setNotificationMarkedReadProgressBlock:(id)arg1;
+- (void)setNotificationMarkedReadProgressBlock:(id /* block */)arg1;
 - (id)zoneIDsToLock;
 
 @end

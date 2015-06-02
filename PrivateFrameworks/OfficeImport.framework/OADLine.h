@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADLine : OADShape {
-}
+@interface OADLine : OADShape
 
 - (id)description;
 - (id)init;

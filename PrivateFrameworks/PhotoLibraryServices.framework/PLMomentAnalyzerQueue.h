@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet;
-
 @interface PLMomentAnalyzerQueue : NSObject {
     double _firstPingSinceReset;
     double _lastPingSinceReset;
@@ -12,10 +10,10 @@
     NSMutableSet *_momentListIdsToProcess;
 }
 
-@property(readonly) BOOL hasWork;
-@property double maximumInterval;
-@property double minimumInterval;
-@property(readonly) BOOL shouldProcessWork;
+@property (nonatomic, readonly) BOOL hasWork;
+@property (nonatomic) double maximumInterval;
+@property (nonatomic) double minimumInterval;
+@property (nonatomic, readonly) BOOL shouldProcessWork;
 
 - (void)dealloc;
 - (id)dequeueMomentListIdsForProcessing;

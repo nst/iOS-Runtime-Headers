@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLStorageOperator : PLOperator {
-}
+@interface PLStorageOperator : PLOperator
 
 + (id)entryEventForwardDefinitionConfiguration;
 + (id)entryEventForwardDefinitionSchemaChange;

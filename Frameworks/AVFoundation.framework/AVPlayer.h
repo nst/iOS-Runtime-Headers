@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerInternal, NSArray, NSError, NSString;
-
 @interface AVPlayer : NSObject {
     AVPlayerInternal *_player;
 }
 
-@property(setter=_setDisplaysUsedForPlayback:,copy) NSArray * _displaysUsedForPlayback;
-@property(readonly) int _externalProtectionStatus;
-@property BOOL allowsOutOfBandTextTrackRendering;
-@property BOOL allowsPixelBufferPoolSharing;
-@property BOOL appliesMediaSelectionCriteriaAutomatically;
-@property(copy) NSString * audioOutputDeviceUniqueID;
-@property(getter=isAudioPlaybackEnabledAtAllRates,readonly) BOOL audioPlaybackEnabledAtAllRates;
-@property BOOL disallowsAMRAudio;
-@property(readonly) NSError * error;
-@property float maxRateForAudioPlayback;
-@property float minRateForAudioPlayback;
-@property(readonly) int status;
+@property (setter=_setDisplaysUsedForPlayback:, nonatomic, copy) NSArray *_displaysUsedForPlayback;
+@property (nonatomic, readonly) int _externalProtectionStatus;
+@property (nonatomic) BOOL allowsOutOfBandTextTrackRendering;
+@property (nonatomic) BOOL allowsPixelBufferPoolSharing;
+@property (nonatomic) BOOL appliesMediaSelectionCriteriaAutomatically;
+@property (nonatomic, copy) NSString *audioOutputDeviceUniqueID;
+@property (getter=isAudioPlaybackEnabledAtAllRates, nonatomic, readonly) BOOL audioPlaybackEnabledAtAllRates;
+@property (nonatomic) BOOL disallowsAMRAudio;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic) float maxRateForAudioPlayback;
+@property (nonatomic) float minRateForAudioPlayback;
+@property (nonatomic, readonly) int status;
 
 + (BOOL)automaticallyNotifiesObserversOfActionAtItemEnd;
 + (BOOL)automaticallyNotifiesObserversOfAirPlayVideoActive;
@@ -57,7 +55,7 @@
 - (id)_audioOutputDeviceUniqueID;
 - (id)_avPlayerLayers;
 - (id)_cachedValueForKey:(id)arg1;
-- (int)_cancelPendingPrerollAndRegisterPrerollCompletionHandler:(id)arg1;
+- (int)_cancelPendingPrerollAndRegisterPrerollCompletionHandler:(id /* block */)arg1;
 - (BOOL)_carplayIsActive;
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (void)_checkDefaultsWriteForPerformanceLogging;
@@ -68,7 +66,7 @@
 - (void)_coordinateWithRemovalOfItem:(id)arg1;
 - (struct OpaqueFigPlayer { }*)_copyFigPlayer;
 - (id)_copyPerformanceDataForCurrentItem;
-- (void)_createPlayer:(int)arg1 item:(id)arg2 preparationRequested:(BOOL)arg3 completionHandler:(id)arg4;
+- (void)_createPlayer:(int)arg1 item:(id)arg2 preparationRequested:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (int)_createPrerollID;
 - (void)_currentItemStatusIsReadyToPlay;
 - (int)_defaultActionAtItemEnd;
@@ -80,7 +78,7 @@
 - (BOOL)_disallowsAMRAudio;
 - (BOOL)_disallowsHardwareAcceleratedVideoDecoder;
 - (id)_displaysUsedForPlayback;
-- (void)_enumerateItemsUsingBlock:(id)arg1;
+- (void)_enumerateItemsUsingBlock:(id /* block */)arg1;
 - (BOOL)_externalPlaybackActive;
 - (int)_externalProtectionStatus;
 - (int)_extractVerifiedFPExternalProtectionStatus:(id)arg1;
@@ -131,7 +129,7 @@
 - (id)_stateDispatchQueue;
 - (void)_stopObservingPropertiesOfCurrentItem:(id)arg1;
 - (id)_subtitleLayers;
-- (id)_unregisterAndReturnRetainedPrerollCompletionHandler;
+- (id /* block */)_unregisterAndReturnRetainedPrerollCompletionHandler;
 - (void)_updateClosedCaptionLayerBounds:(id)arg1;
 - (void)_updateCurrentItemPreferredPixelBufferAttributesAndVideoLayerSuppression;
 - (void)_updateDecoderPixelBufferAttributes:(id)arg1 onFigPlayer:(struct OpaqueFigPlayer { }*)arg2;
@@ -143,9 +141,9 @@
 - (void)_willAccessKVOForKey:(id)arg1;
 - (void)_willEnterForeground:(id)arg1;
 - (int)actionAtItemEnd;
-- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
+- (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
-- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id)arg3;
+- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
 - (BOOL)allowsAirPlayVideo;
 - (BOOL)allowsExternalPlayback;
 - (BOOL)allowsOutOfBandTextTrackRendering;
@@ -186,20 +184,20 @@
 - (void)pause;
 - (void)play;
 - (id)playerAVAudioSession;
-- (void)prepareItem:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)prepareItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)preparesItemsForPlaybackAsynchronously;
-- (void)prerollAtRate:(float)arg1 completionHandler:(id)arg2;
+- (void)prerollAtRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)prerollOperationDidComplete:(BOOL)arg1 notificationPayload:(struct __CFDictionary { }*)arg2;
 - (float)rate;
 - (void)removeAudioPlaybackRateLimits;
 - (void)removeTimeObserver:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)seekToDate:(id)arg1;
-- (void)seekToDate:(id)arg1 completionHandler:(id)arg2;
+- (void)seekToDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id)arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id)arg4;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setActionAtItemEnd:(int)arg1;
 - (void)setAllowsAirPlayVideo:(BOOL)arg1;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTRichTextPayload;
-
 @interface TSTTableDataRichTextPayload : TSTTableDataObject {
     TSTRichTextPayload *mPayload;
 }

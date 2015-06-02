@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSNumber;
-
 @interface ICSByDayValue : NSObject <NSCoding> {
     NSNumber *_number;
     int _weekday;
 }
 
-@property(retain) NSNumber * number;
+@property (nonatomic, retain) NSNumber *number;
 @property int weekday;
 
 + (id)byDayValueFromICSString:(id)arg1;

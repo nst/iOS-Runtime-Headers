@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
-
 @interface PSTextFieldSpecifier : PSSpecifier {
     NSString *_placeholder;
     SEL bestGuess;

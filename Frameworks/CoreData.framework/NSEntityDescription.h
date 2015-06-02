@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSData, NSDictionary, NSEntityDescription, NSManagedObjectModel, NSMutableDictionary, NSString;
-
 @interface NSEntityDescription : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     int _cd_rc;
     NSString *_classNameForEntity;
@@ -39,22 +37,22 @@
     NSString *_versionHashModifier;
 }
 
-@property(getter=isAbstract) BOOL abstract;
-@property(copy,readonly) NSDictionary * attributesByName;
-@property(retain) NSArray * compoundIndexes;
-@property(copy) NSString * managedObjectClassName;
-@property(readonly) NSManagedObjectModel * managedObjectModel;
-@property(copy) NSString * name;
-@property(retain) NSArray * properties;
-@property(copy,readonly) NSDictionary * propertiesByName;
-@property(copy,readonly) NSDictionary * relationshipsByName;
-@property(copy) NSString * renamingIdentifier;
-@property(retain) NSArray * subentities;
-@property(copy,readonly) NSDictionary * subentitiesByName;
-@property(readonly) NSEntityDescription * superentity;
-@property(retain) NSDictionary * userInfo;
-@property(copy,readonly) NSData * versionHash;
-@property(copy) NSString * versionHashModifier;
+@property (getter=isAbstract) BOOL abstract;
+@property (readonly, copy) NSDictionary *attributesByName;
+@property (retain) NSArray *compoundIndexes;
+@property (copy) NSString *managedObjectClassName;
+@property (readonly) NSManagedObjectModel *managedObjectModel;
+@property (copy) NSString *name;
+@property (retain) NSArray *properties;
+@property (readonly, copy) NSDictionary *propertiesByName;
+@property (readonly, copy) NSDictionary *relationshipsByName;
+@property (copy) NSString *renamingIdentifier;
+@property (retain) NSArray *subentities;
+@property (readonly, copy) NSDictionary *subentitiesByName;
+@property (readonly) NSEntityDescription *superentity;
+@property (nonatomic, retain) NSDictionary *userInfo;
+@property (readonly, copy) NSData *versionHash;
+@property (copy) NSString *versionHashModifier;
 
 + (id)_MOClassName;
 + (id)entityForName:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -123,7 +121,7 @@
 - (id)attributesByName;
 - (id)compoundIndexes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)elementID;

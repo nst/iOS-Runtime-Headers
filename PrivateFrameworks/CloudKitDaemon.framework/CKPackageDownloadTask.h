@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKAsset, CKDCancelTokenGroup, CKDMMCSRequestOptions, CKDProgressTracker, CKPackage, NSArray, NSError, NSIndexSet, NSObject<OS_dispatch_group>;
-
 @interface CKPackageDownloadTask : NSObject <CKDCancelling> {
     CKDMMCSRequestOptions *_MMCSRequestOptions;
     CKDCancelTokenGroup *_cancelTokens;
@@ -17,16 +15,16 @@
     NSIndexSet *_sectionIndices;
 }
 
-@property(retain) CKDMMCSRequestOptions * MMCSRequestOptions;
-@property(retain) CKDCancelTokenGroup * cancelTokens;
-@property(retain) NSError * error;
-@property(retain) NSObject<OS_dispatch_group> * group;
-@property(retain) id itemIndices;
-@property(retain) CKAsset * manifestAsset;
-@property(readonly) CKPackage * package;
-@property(retain) CKDProgressTracker * progressTracker;
-@property(retain) NSArray * sectionAssets;
-@property(retain) NSIndexSet * sectionIndices;
+@property (nonatomic, retain) CKDMMCSRequestOptions *MMCSRequestOptions;
+@property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
+@property (retain) NSError *error;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *group;
+@property (nonatomic, retain) id itemIndices;
+@property (nonatomic, retain) CKAsset *manifestAsset;
+@property (nonatomic, readonly) CKPackage *package;
+@property (nonatomic, retain) CKDProgressTracker *progressTracker;
+@property (nonatomic, retain) NSArray *sectionAssets;
+@property (nonatomic, retain) NSIndexSet *sectionIndices;
 
 - (void).cxx_destruct;
 - (id)MMCSRequestOptions;

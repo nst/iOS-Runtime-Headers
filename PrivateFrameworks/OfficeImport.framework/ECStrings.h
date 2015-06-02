@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ECStrings : NSObject {
-}
+@interface ECStrings : NSObject
 
 + (void)initialize;
 

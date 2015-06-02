@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSUReadChannel>, NSObject<OS_dispatch_queue>, NSString, TSPData;
-
 @interface TSPAVAssetResourceLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate> {
     TSPData *_data;
     long long _dataLength;
@@ -12,15 +10,15 @@
     NSObject<OS_dispatch_queue> *_requestHandlingQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_provideContentInformationToLoadingRequest:(id)arg1;
 - (void)_provideDataToLoadingRequest:(id)arg1;
-- (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id)arg2;
+- (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegateQueue;
 - (id)initWithData:(id)arg1;

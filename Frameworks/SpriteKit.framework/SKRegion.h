@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class PKRegion;
-
 @interface SKRegion : NSObject <NSCoding, NSCopying> {
     PKRegion *_region;
 }
 
-@property(readonly) struct CGPath { }* path;
+@property (nonatomic, readonly) struct CGPath { }*path;
 
 + (id)infiniteRegion;
 

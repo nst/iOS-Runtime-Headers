@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCHacks : NSObject {
-}
+@interface MCHacks : NSObject
 
 + (id)sharedHacks;
 

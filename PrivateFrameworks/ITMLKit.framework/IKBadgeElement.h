@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSString;
+@interface IKBadgeElement : IKImageElement
 
-@interface IKBadgeElement : IKImageElement {
-}
-
-@property(retain,readonly) NSString * textContent;
+@property (nonatomic, readonly, retain) NSString *textContent;
 
 + (BOOL)shouldParseChildDOMElements;
 

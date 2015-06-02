@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKSwitchTableViewCellDelegate>, UIImageView, UILabel, UISwitch;
-
 @interface HKSwitchTableViewCell : UITableViewCell {
     BOOL _centersIcon;
     <HKSwitchTableViewCellDelegate> *_delegate;
@@ -13,11 +11,11 @@
     UISwitch *_switch;
 }
 
-@property BOOL centersIcon;
-@property <HKSwitchTableViewCellDelegate> * delegate;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) struct CGSize { float x1; float x2; } iconSize;
-@property(getter=isOn) BOOL on;
+@property (nonatomic) BOOL centersIcon;
+@property (nonatomic) <HKSwitchTableViewCellDelegate> *delegate;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } iconSize;
+@property (getter=isOn, nonatomic) BOOL on;
 
 - (void).cxx_destruct;
 - (void)_setupUI;

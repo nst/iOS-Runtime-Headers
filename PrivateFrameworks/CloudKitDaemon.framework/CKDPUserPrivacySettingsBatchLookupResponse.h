@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPUserPrivacySettingsBatchLookupResponse : PBCodable <NSCopying> {
     NSMutableArray *_containerPrivacySettings;
 }
 
-@property(retain) NSMutableArray * containerPrivacySettings;
+@property (nonatomic, retain) NSMutableArray *containerPrivacySettings;
 
 - (void).cxx_destruct;
 - (void)addContainerPrivacySettings:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface SSMemoryEntity : NSObject <NSCopying> {
     long long _databaseID;
     NSMutableDictionary *_externalPropertyValues;
     NSMutableDictionary *_propertyValues;
 }
 
-@property long long databaseID;
-@property(copy,readonly) NSDictionary * externalPropertyValues;
-@property(copy,readonly) NSDictionary * propertyValues;
+@property (nonatomic) long long databaseID;
+@property (nonatomic, readonly, copy) NSDictionary *externalPropertyValues;
+@property (nonatomic, readonly, copy) NSDictionary *propertyValues;
 
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (Class)databaseEntityClass;

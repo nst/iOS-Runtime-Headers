@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPlaylistCellConfiguration : MusicStandardMediaCellConfiguration {
-}
+@interface MusicPlaylistCellConfiguration : MusicStandardMediaCellConfiguration
 
 + (id)_detailEmphasizedTextWithCount:(unsigned int)arg1 duration:(double)arg2;
 + (void)configureCell:(id)arg1 withViewController:(id)arg2 entity:(id)arg3 atIndex:(unsigned int)arg4 animated:(BOOL)arg5;

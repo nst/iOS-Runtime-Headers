@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface OABTableSortedIntArray : NSObject {
     NSArray *mIntArray;
 }

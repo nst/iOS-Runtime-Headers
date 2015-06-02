@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GKVoiceChatServiceFocus : GKVoiceChatServicePrivate {
     NSString *currentFocus;
     BOOL hasMic;
@@ -13,7 +11,7 @@
     int packetsPerBundle;
 }
 
-@property(copy) NSString * currentFocus;
+@property (nonatomic, copy) NSString *currentFocus;
 @property BOOL hasMic;
 @property int packetsPerBundle;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSDictionary;
-
 @interface BLRedEyeBrushTap : AutoEncodeDecodeObject {
     int _destinationWidth;
     NSDictionary *_eyeRepairData;
@@ -14,10 +12,10 @@
     double _timestamp;
 }
 
-@property int destinationWidth;
-@property(retain) NSDictionary * eyeRepairData;
-@property struct CGPoint { float x1; float x2; } point;
-@property double timestamp;
+@property (nonatomic) int destinationWidth;
+@property (nonatomic, retain) NSDictionary *eyeRepairData;
+@property (nonatomic) struct CGPoint { float x1; float x2; } point;
+@property (nonatomic) double timestamp;
 
 - (void)dealloc;
 - (int)destinationWidth;

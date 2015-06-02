@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPhoto, NSString;
-
 @interface GEOUser : PBCodable <NSCopying> {
     GEOPhoto *_image;
     NSString *_name;
 }
 
-@property(readonly) BOOL hasImage;
-@property(readonly) BOOL hasName;
-@property(retain) GEOPhoto * image;
-@property(retain) NSString * name;
+@property (nonatomic, readonly) BOOL hasImage;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, retain) GEOPhoto *image;
+@property (nonatomic, retain) NSString *name;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

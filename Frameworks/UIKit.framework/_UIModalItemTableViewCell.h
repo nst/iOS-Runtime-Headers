@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
-
 @interface _UIModalItemTableViewCell : UITableViewCell {
     UIView *_fullWidthSeparatorView;
     UIColor *_fullWitdhSeparatorColor;
@@ -12,10 +10,10 @@
     UIView *_topSeparatorView;
 }
 
-@property(retain) UIColor * fullWidthSeparatorColor;
-@property BOOL isEnabled;
-@property BOOL showFullWidthSeparator;
-@property(retain,readonly) UIView * topSeparatorView;
+@property (nonatomic, retain) UIColor *fullWidthSeparatorColor;
+@property (nonatomic) BOOL isEnabled;
+@property (nonatomic) BOOL showFullWidthSeparator;
+@property (nonatomic, readonly, retain) UIView *topSeparatorView;
 
 - (void)dealloc;
 - (id)fullWidthSeparatorColor;

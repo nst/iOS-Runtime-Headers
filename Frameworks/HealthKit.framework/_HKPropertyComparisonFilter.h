@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface _HKPropertyComparisonFilter : _HKFilter {
     NSString *_lhPropertyName;
     unsigned int _operatorType;
     NSString *_rhPropertyName;
 }
 
-@property(readonly) NSString * lhPropertyName;
-@property(readonly) unsigned int operatorType;
-@property(readonly) NSString * rhPropertyName;
+@property (nonatomic, readonly) NSString *lhPropertyName;
+@property (nonatomic, readonly) unsigned int operatorType;
+@property (nonatomic, readonly) NSString *rhPropertyName;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)filterWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
@@ -24,7 +24,10 @@
 - (id)initWithLeftHandPropertyName:(id)arg1 rightHandPropertyName:(id)arg2 operator:(unsigned int)arg3;
 - (id)lhPropertyName;
 - (unsigned int)operatorType;
-- (id)predicateWithHealthDaemon:(id)arg1;
 - (id)rhPropertyName;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

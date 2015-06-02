@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AXAccessQueue, NSMutableArray, NSMutableDictionary;
-
 @interface AXSpringBoardServer : AXServer {
     AXAccessQueue *_accessQueue;
     NSMutableArray *_actionHandlers;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _currentAlertHandler;
-
+    id /* block */ _currentAlertHandler;
     NSMutableArray *_gestureOverrides;
     NSMutableDictionary *_reachabilityHandlers;
 }
 
-@property(retain) AXAccessQueue * accessQueue;
-@property(retain) NSMutableArray * actionHandlers;
-@property(copy) id currentAlertHandler;
-@property(retain) NSMutableArray * gestureOverrides;
-@property(retain) NSMutableDictionary * reachabilityHandlers;
+@property (nonatomic, retain) AXAccessQueue *accessQueue;
+@property (nonatomic, retain) NSMutableArray *actionHandlers;
+@property (nonatomic, copy) id /* block */ currentAlertHandler;
+@property (nonatomic, retain) NSMutableArray *gestureOverrides;
+@property (nonatomic, retain) NSMutableDictionary *reachabilityHandlers;
 
 + (id)server;
 
@@ -53,7 +43,7 @@
 - (void)cancelReachabilityDetection;
 - (void)cleanupAlertHandler;
 - (void)copyStringToPasteboard:(id)arg1;
-- (id)currentAlertHandler;
+- (id /* block */)currentAlertHandler;
 - (void)dealloc;
 - (void)dismissAppSwitcher;
 - (void)dismissSiri;
@@ -101,9 +91,9 @@
 - (int)purpleBuddyPID;
 - (id)reachabilityHandlers;
 - (float)reachabilityOffset;
-- (void)registerOverrideIntentForGesture:(unsigned int)arg1 withHandler:(id)arg2 withIdentifierCallback:(id)arg3;
-- (void)registerReachabilityHandler:(id)arg1 withIdentifierCallback:(id)arg2;
-- (void)registerSpringBoardActionHandler:(id)arg1 withIdentifierCallback:(id)arg2;
+- (void)registerOverrideIntentForGesture:(unsigned int)arg1 withHandler:(id /* block */)arg2 withIdentifierCallback:(id /* block */)arg3;
+- (void)registerReachabilityHandler:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
+- (void)registerSpringBoardActionHandler:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
 - (void)removeActionHandler:(id)arg1;
 - (void)removeOverrideIntent:(id)arg1;
 - (void)removeReachabilityHandler:(id)arg1;
@@ -114,7 +104,7 @@
 - (void)setAccessQueue:(id)arg1;
 - (void)setActionHandlers:(id)arg1;
 - (void)setCancelGestureActivation:(unsigned int)arg1 cancelEnabled:(BOOL)arg2;
-- (void)setCurrentAlertHandler:(id)arg1;
+- (void)setCurrentAlertHandler:(id /* block */)arg1;
 - (void)setGestureOverrides:(id)arg1;
 - (void)setHearingAidControlVisible:(BOOL)arg1;
 - (void)setOrientationLocked:(BOOL)arg1;
@@ -123,8 +113,8 @@
 - (void)setShowSpeechPlaybackControls:(BOOL)arg1;
 - (void)setSiriIsTalking:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
-- (void)showAlert:(int)arg1 withHandler:(id)arg2;
-- (void)showAlert:(int)arg1 withHandler:(id)arg2 withData:(id)arg3;
+- (void)showAlert:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)showAlert:(int)arg1 withHandler:(id /* block */)arg2 withData:(id)arg3;
 - (void)showControlCenter:(BOOL)arg1;
 - (void)showNotificationCenter;
 - (BOOL)showNotificationCenter:(BOOL)arg1;

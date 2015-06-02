@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSTokenizer, NSData;
-
 @interface ICSParser : NSObject {
     NSData *_data;
     ICSTokenizer *_lexer;
     int _options;
 }
 
-@property(readonly) ICSTokenizer * lexer;
+@property (readonly) ICSTokenizer *lexer;
 
 + (id)entitiesFromNSData:(id)arg1 options:(int)arg2;
 

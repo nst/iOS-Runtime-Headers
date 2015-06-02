@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@interface NACVolumeController : NSObject {
-}
+@interface NACVolumeController : NSObject
 
 + (id)demoVolumeControllerWithAudioCategory:(id)arg1;
 + (id)localVolumeControllerWithAudioCategory:(id)arg1;

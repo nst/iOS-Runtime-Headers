@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class <SBKSyncTransactionProcessing>, NSArray, NSString, NSURL;
-
 @interface SBKSyncTransaction : SBKTransaction {
     int _conflictDetectionType;
     NSString *_domain;
@@ -15,13 +13,13 @@
     int _type;
 }
 
-@property(readonly) int conflictDetectionType;
-@property(readonly) NSArray * keysToDelete;
-@property(readonly) NSArray * keysToUpdate;
-@property(copy,readonly) NSString * syncAnchor;
-@property(readonly) NSURL * syncRequestURL;
-@property <SBKSyncTransactionProcessing> * transactionProcessor;
-@property(readonly) int type;
+@property (readonly) int conflictDetectionType;
+@property (readonly) NSArray *keysToDelete;
+@property (readonly) NSArray *keysToUpdate;
+@property (readonly, copy) NSString *syncAnchor;
+@property (readonly) NSURL *syncRequestURL;
+@property <SBKSyncTransactionProcessing> *transactionProcessor;
+@property (readonly) int type;
 
 - (void).cxx_destruct;
 - (void)_validateTransactionProcessor:(id)arg1;
@@ -36,7 +34,7 @@
 - (id)keysToDelete;
 - (id)keysToUpdate;
 - (id)newRequest;
-- (void)processDataInResponse:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)processDataInResponse:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)requestURL;
 - (void)setTransactionProcessor:(id)arg1;
 - (id)syncAnchor;

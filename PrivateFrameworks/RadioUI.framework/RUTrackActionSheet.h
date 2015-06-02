@@ -8,9 +8,9 @@
     BOOL _disableLike;
 }
 
-@property BOOL disableAddToWishList;
-@property BOOL disableBan;
-@property BOOL disableLike;
+@property (nonatomic) BOOL disableAddToWishList;
+@property (nonatomic) BOOL disableBan;
+@property (nonatomic) BOOL disableLike;
 
 - (BOOL)disableAddToWishList;
 - (BOOL)disableBan;

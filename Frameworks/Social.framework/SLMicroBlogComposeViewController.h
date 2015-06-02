@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSArray, NSObject<SLMicroBlogSheetDelegate>, NSString, SLComposeSheetConfigurationItem, SLMicroBlogAccountsTableViewController, SLMicroBlogMentionsViewController, SLMicroBlogUserRecord, SLPlace, SLSheetPlaceViewController;
-
 @interface SLMicroBlogComposeViewController : SLComposeServiceViewController <SLMicroBlogAccountsTableViewControllerDelegate, SLMicroBlogMentionsDelegate, SLSheetPlaceViewControllerDelegate, UITextViewDelegate> {
     SLComposeSheetConfigurationItem *_accountConfigurationItem;
     NSArray *_accountIdentifiers;
@@ -25,11 +23,11 @@
     BOOL _usingLocationOverride;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSObject<SLMicroBlogSheetDelegate> * microBlogSheetDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property NSObject<SLMicroBlogSheetDelegate> *microBlogSheetDelegate;
+@property (readonly) Class superclass;
 
 + (id)serviceBundle;
 

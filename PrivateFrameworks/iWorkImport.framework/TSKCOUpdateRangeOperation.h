@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSKCORangeAddress;
-
 @interface TSKCOUpdateRangeOperation : TSKCOUpdateOperation <TSKCORangeOperation, TSKCOTransforming, TSKCOUpdateRangeOperationSubset> {
     TSKCORangeAddress *mAddress;
     int mTransformBehavior;
 }
 
-@property(readonly) TSKCORangeAddress * address;
-@property(readonly) int transformBehavior;
+@property (nonatomic, readonly) TSKCORangeAddress *address;
+@property (nonatomic, readonly) int transformBehavior;
 
 - (id)address;
 - (void)dealloc;

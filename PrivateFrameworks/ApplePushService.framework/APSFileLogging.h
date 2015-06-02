@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@interface APSFileLogging : NSObject {
-}
+@interface APSFileLogging : NSObject
 
 + (id)dateFormatter;
 + (id)getMainBundleId;

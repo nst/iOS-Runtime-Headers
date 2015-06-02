@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKSampleType, _HKFilter;
-
 @interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
     _HKFilter *_filter;
     HKSampleType *_sampleType;
     BOOL _shouldStayAliveAfterInitialResults;
 }
 
-@property(retain) _HKFilter * filter;
-@property(retain) HKSampleType * sampleType;
-@property BOOL shouldStayAliveAfterInitialResults;
+@property (nonatomic, retain) _HKFilter *filter;
+@property (nonatomic, retain) HKSampleType *sampleType;
+@property (nonatomic) BOOL shouldStayAliveAfterInitialResults;
 
 + (BOOL)supportsSecureCoding;
 

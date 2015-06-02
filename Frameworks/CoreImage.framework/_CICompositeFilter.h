@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage;
-
 @interface _CICompositeFilter : CIFilter {
     CIImage *inputBackgroundImage;
     CIImage *inputImage;
 }
 
-@property(retain) CIImage * inputBackgroundImage;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) CIImage *inputBackgroundImage;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)_filter_display_name;
 + (id)_kernel;

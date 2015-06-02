@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, TextLinkButton, UIView;
-
 @interface AssistantDiagsUsageStatsUIViewController : AssistantSubUIViewController <TableViewManagerDelegate, TextLinkButtonDelegate, UINavigationControllerDelegate> {
     UIView *_linkContainerView;
     TextLinkButton *linkButton;
     id previousNavDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * linkContainerView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *linkContainerView;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)handleTextLinkTap;

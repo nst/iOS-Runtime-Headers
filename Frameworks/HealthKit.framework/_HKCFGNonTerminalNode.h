@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSArray, _HKCFGReplacementRule;
-
 @interface _HKCFGNonTerminalNode : _HKCFGNode {
     NSArray *_nodes;
     _HKCFGReplacementRule *_rule;
     id _value;
 }
 
-@property(readonly) _HKCFGReplacementRule * rule;
+@property (nonatomic, readonly) _HKCFGReplacementRule *rule;
 
 + (id)nodeWithChildren:(id)arg1 rule:(id)arg2 rangeOfString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 

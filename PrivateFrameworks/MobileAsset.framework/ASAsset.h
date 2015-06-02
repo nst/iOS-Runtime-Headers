@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSString, NSURL;
-
 @interface ASAsset : NSObject {
     NSString *_assetType;
     NSDictionary *_attributes;
@@ -15,36 +9,30 @@
     NSString *_clientName;
     NSDictionary *_downloadOptions;
     NSString *_identifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _progressHandler;
 }
 
-@property(readonly) NSString * assetType;
-@property(readonly) NSDictionary * attributes;
-@property(retain) NSString * clientName;
-@property(retain) NSDictionary * downloadOptions;
-@property(readonly) NSDictionary * fullAttributes;
-@property int garbageCollectionBehavior;
-@property(readonly) NSURL * localURL;
-@property(copy) id progressHandler;
-@property(readonly) int state;
+@property (nonatomic, readonly) NSString *assetType;
+@property (nonatomic, readonly) NSDictionary *attributes;
+@property (nonatomic, retain) NSString *clientName;
+@property (nonatomic, retain) NSDictionary *downloadOptions;
+@property (nonatomic, readonly) NSDictionary *fullAttributes;
+@property (nonatomic) int garbageCollectionBehavior;
+@property (nonatomic, readonly) NSURL *localURL;
+@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, readonly) int state;
 
-- (int)_contentVersion;
+// Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
+
 - (void)_downloadWithOptions:(id)arg1 shouldFireCallback:(BOOL)arg2;
-- (int)_formatVersion;
 - (id)_getLocalAttribute:(id)arg1;
-- (void)adjustDownloadOptions:(id)arg1 completion:(id)arg2;
+- (void)adjustDownloadOptions:(id)arg1 completion:(id /* block */)arg2;
 - (int)assetStateForStateString:(id)arg1;
 - (id)assetType;
 - (id)attributes;
 - (void)beginDownloadWithOptions:(id)arg1;
-- (void)cancelDownload:(id)arg1;
+- (void)cancelDownload:(id /* block */)arg1;
 - (BOOL)cancelDownloadAndReturnError:(id*)arg1;
-- (void)cancelDownloadIfNecessary;
-- (void)cleanupAsset;
 - (id)clientName;
 - (void)dealloc;
 - (id)description;
@@ -54,27 +42,37 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithAssetType:(id)arg1 attributes:(id)arg2;
-- (BOOL)isDownloading;
-- (BOOL)isDownloadingOrInstalled;
-- (BOOL)isEmergencyUpdate;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isInstalled;
 - (BOOL)isPresentOnDisk;
 - (id)localURL;
 - (struct __MobileAsset { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; struct __CFDictionary {} *x3; struct __MobileAssetQuery {} *x4; struct __MobileAssetQuery {} *x5; unsigned char x6; }*)mobileAsset;
-- (void)pauseDownload:(id)arg1;
+- (void)pauseDownload:(id /* block */)arg1;
 - (BOOL)pauseDownloadAndReturnError:(id*)arg1;
-- (id)progressHandler;
-- (void)purge:(id)arg1;
+- (id /* block */)progressHandler;
+- (void)purge:(id /* block */)arg1;
 - (BOOL)purgeAndReturnError:(id*)arg1;
 - (BOOL)requiredDiskSpaceIsAvailable:(long long*)arg1 error:(id*)arg2;
 - (BOOL)requiredDiskSpaceIsAvailableForDownloadOptions:(id)arg1 requiredBytes:(long long*)arg2 error:(id*)arg3;
-- (void)resumeDownload:(id)arg1;
+- (void)resumeDownload:(id /* block */)arg1;
 - (BOOL)resumeDownloadAndReturnError:(id*)arg1;
 - (void)setClientName:(id)arg1;
 - (void)setDownloadOptions:(id)arg1;
 - (void)setGarbageCollectionBehavior:(int)arg1;
-- (void)setProgressHandler:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 - (int)state;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (int)_contentVersion;
+- (int)_formatVersion;
+
+// Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
+
+- (void)cancelDownloadIfNecessary;
+- (void)cleanupAsset;
+- (BOOL)isDownloading;
+- (BOOL)isDownloadingOrInstalled;
+- (BOOL)isEmergencyUpdate;
+- (BOOL)isInstalled;
 
 @end

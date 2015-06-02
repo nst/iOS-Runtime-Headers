@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData, NSDate, NSDictionary, NSString;
-
 @interface RadioPlayEvent : NSObject <NSCopying, NSMutableCopying> {
     NSDate *_datePlayed;
     int _endReason;
@@ -16,15 +14,15 @@
     int _type;
 }
 
-@property(readonly) NSDate * datePlayed;
-@property(readonly) int endReason;
-@property(readonly) double endTimeInTrack;
-@property(copy,readonly) NSString * externalIdentifier;
-@property(readonly) double startTimeInTrack;
-@property(readonly) long long storeID;
-@property(copy,readonly) NSData * timedMetadata;
-@property(copy,readonly) NSDictionary * trackInfo;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSDate *datePlayed;
+@property (nonatomic, readonly) int endReason;
+@property (nonatomic, readonly) double endTimeInTrack;
+@property (nonatomic, readonly, copy) NSString *externalIdentifier;
+@property (nonatomic, readonly) double startTimeInTrack;
+@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly, copy) NSData *timedMetadata;
+@property (nonatomic, readonly, copy) NSDictionary *trackInfo;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRealisticLabelTileSource : VKLabelTileSource {
-}
+@interface VKRealisticLabelTileSource : VKLabelTileSource
 
 - (unsigned char)_labelTileType;
 - (int)minimumZoomLevel;

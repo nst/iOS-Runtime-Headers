@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLInputElement, NSString, UIDatePicker;
-
 @interface UIWebDefaultDateTimePicker : NSObject <UIWebFormControl> {
     UIDatePicker *_datePicker;
     NSString *_formatString;
@@ -12,8 +10,8 @@
     BOOL _shouldRemoveTimeZoneInformation;
 }
 
-@property(retain) UIDatePicker * _datePicker;
-@property(retain) DOMHTMLInputElement * _inputElement;
+@property (nonatomic, retain) UIDatePicker *_datePicker;
+@property (nonatomic, retain) DOMHTMLInputElement *_inputElement;
 
 - (void)_dateChangeHandler:(id)arg1;
 - (void)_dateChanged;

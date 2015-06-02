@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, NSArray;
-
 @interface AAEmailLookupRequest : AARequest {
     ACAccount *_account;
     NSArray *_emailAddresses;
 }
 
-@property(retain) ACAccount * account;
-@property(retain) NSArray * emailAddresses;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) NSArray *emailAddresses;
 
 + (Class)responseClass;
 

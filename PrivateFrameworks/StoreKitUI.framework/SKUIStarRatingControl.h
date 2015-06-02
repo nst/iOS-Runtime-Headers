@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, UIImageView;
-
 @interface SKUIStarRatingControl : UIControl {
     UIImageView *_emptyStarsImageView;
     UIImageView *_filledStarsImageView;
@@ -13,11 +11,11 @@
     int _userRating;
 }
 
-@property(retain) UIImage * emptyStarsImage;
-@property(retain) UIImage * filledStarsImage;
-@property float starSpacing;
-@property float starWidth;
-@property int userRating;
+@property (nonatomic, retain) UIImage *emptyStarsImage;
+@property (nonatomic, retain) UIImage *filledStarsImage;
+@property (nonatomic) float starSpacing;
+@property (nonatomic) float starWidth;
+@property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
 - (void)_updateUserRatingWithTouch:(id)arg1;

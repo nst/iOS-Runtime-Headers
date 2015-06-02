@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface CAMatchMoveAnimation : CAAnimation
 
-@class CALayer, NSArray, NSString;
-
-@interface CAMatchMoveAnimation : CAAnimation {
-}
-
-@property(getter=isAdditive) BOOL additive;
+@property (getter=isAdditive) BOOL additive;
 @property BOOL appliesRotation;
 @property BOOL appliesScale;
 @property BOOL appliesX;
 @property BOOL appliesY;
-@property(copy) NSString * keyPath;
-@property CALayer * sourceLayer;
-@property(copy) NSArray * sourcePoints;
+@property (copy) NSString *keyPath;
+@property CALayer *sourceLayer;
+@property (copy) NSArray *sourcePoints;
 @property BOOL targetsSuperlayer;
 
 + (id)defaultValueForKey:(id)arg1;

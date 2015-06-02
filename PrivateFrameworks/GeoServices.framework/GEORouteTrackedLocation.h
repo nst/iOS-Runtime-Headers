@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedRoute, GEOLocation, GEORouteMatch, NSDate;
-
 @interface GEORouteTrackedLocation : NSObject {
     struct PolylineCoordinate { 
         unsigned int index; 
@@ -25,16 +23,16 @@
     GEORouteMatch *_routeMatch;
 }
 
-@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } lastGoodMatchCoordinate;
-@property(retain) NSDate * lastTimeInTunnel;
-@property(readonly) double newStepDistanceTraveled;
-@property(readonly) struct { double x1; double x2; } newStepLastGeoCoord;
-@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; } newStepLastRouteCoord;
-@property(readonly) unsigned int newStepProgressions;
-@property(readonly) GEOLocation * rawLocation;
-@property(readonly) GEOComposedRoute * route;
-@property(readonly) GEORouteMatch * routeMatch;
-@property(readonly) double timeSinceTunnel;
+@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } lastGoodMatchCoordinate;
+@property (nonatomic, retain) NSDate *lastTimeInTunnel;
+@property (nonatomic, readonly) double newStepDistanceTraveled;
+@property (nonatomic, readonly) struct { double x1; double x2; } newStepLastGeoCoord;
+@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; } newStepLastRouteCoord;
+@property (nonatomic, readonly) unsigned int newStepProgressions;
+@property (nonatomic, readonly) GEOLocation *rawLocation;
+@property (nonatomic, readonly) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEORouteMatch *routeMatch;
+@property (nonatomic, readonly) double timeSinceTunnel;
 
 - (id).cxx_construct;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@interface PLSCDynamicStoreAgent : PLAgent {
-}
+@interface PLSCDynamicStoreAgent : PLAgent
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

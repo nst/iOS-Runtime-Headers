@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRule, DOMCSSStyleSheet, NSString;
+@interface DOMCSSRule : DOMObject
 
-@interface DOMCSSRule : DOMObject {
-}
-
-@property(copy) NSString * cssText;
-@property(readonly) DOMCSSRule * parentRule;
-@property(readonly) DOMCSSStyleSheet * parentStyleSheet;
-@property(readonly) unsigned short type;
+@property (copy) NSString *cssText;
+@property (readonly) DOMCSSRule *parentRule;
+@property (readonly) DOMCSSStyleSheet *parentStyleSheet;
+@property (readonly) unsigned short type;
 
 - (id)cssText;
 - (void)dealloc;

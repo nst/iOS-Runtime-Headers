@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUMetricsController : SKUIMetricsController {
-}
+@interface RUMetricsController : SKUIMetricsController
 
-+ (void)getDefaultRadioMetricsControllerWithCompletionHandler:(id)arg1;
++ (void)getDefaultRadioMetricsControllerWithCompletionHandler:(id /* block */)arg1;
 
 - (void)_statusBarOrientationDidChange:(id)arg1;
 - (void)_updateWindowOrientation;

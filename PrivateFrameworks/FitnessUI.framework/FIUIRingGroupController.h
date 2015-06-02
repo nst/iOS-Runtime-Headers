@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FIUIRingGroupAnimationStatusDelegate>, NSArray;
-
 @interface FIUIRingGroupController : FIUIAnimatableObject {
     float _additionalSpacingAtIndex;
     <FIUIRingGroupAnimationStatusDelegate> *_animationStatusDelegate;
@@ -23,17 +21,17 @@
     NSArray *_rings;
 }
 
-@property float additionalSpacingAtIndex;
-@property <FIUIRingGroupAnimationStatusDelegate> * animationStatusDelegate;
-@property float backingOrigin;
-@property struct CGPoint { float x1; float x2; } center;
-@property(readonly) int numberOfRings;
-@property float ringDiameter;
-@property float ringIconSize;
-@property float ringInterspacing;
-@property float ringScale;
-@property float ringThickness;
-@property(retain) NSArray * rings;
+@property (nonatomic) float additionalSpacingAtIndex;
+@property (nonatomic) <FIUIRingGroupAnimationStatusDelegate> *animationStatusDelegate;
+@property (nonatomic) float backingOrigin;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic, readonly) int numberOfRings;
+@property (nonatomic) float ringDiameter;
+@property (nonatomic) float ringIconSize;
+@property (nonatomic) float ringInterspacing;
+@property (nonatomic) float ringScale;
+@property (nonatomic) float ringThickness;
+@property (nonatomic, retain) NSArray *rings;
 
 + (id)animationTimingFunction;
 + (double)defaultAnimationDuration;
@@ -78,8 +76,8 @@
 - (void)setIconFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1 frameSize:(struct CGSize { float x1; float x2; })arg2 frameCount:(int)arg3 columns:(int)arg4 ofRingAtIndex:(int)arg5;
 - (void)setOpacity:(float)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3;
-- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
-- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 duration:(double)arg4 timingFunction:(id)arg5 completion:(id)arg6;
+- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)setPercentage:(double)arg1 ofRingAtIndex:(int)arg2 animated:(BOOL)arg3 duration:(double)arg4 timingFunction:(id)arg5 completion:(id /* block */)arg6;
 - (void)setRingDiameter:(float)arg1;
 - (void)setRingIconSize:(float)arg1;
 - (void)setRingInterspacing:(float)arg1;

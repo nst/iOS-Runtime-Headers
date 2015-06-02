@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class NSSet;
+@interface FBSMutableSceneClientSettings : FBSSceneClientSettings
 
-@interface FBSMutableSceneClientSettings : FBSSceneClientSettings {
-}
-
-@property(copy) NSSet * occlusions;
-@property int preferredInterfaceOrientation;
-@property float preferredLevel;
+@property (nonatomic, copy) NSSet *occlusions;
+@property (nonatomic) int preferredInterfaceOrientation;
+@property (nonatomic) float preferredLevel;
 
 + (BOOL)_isMutable;
 

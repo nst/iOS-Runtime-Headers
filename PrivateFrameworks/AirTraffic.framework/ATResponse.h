@@ -2,28 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSError;
-
 @interface ATResponse : ATMessage <NSSecureCoding> {
     NSError *_error;
     BOOL _partial;
 }
 
-@property(retain) NSError * error;
-@property(getter=isPartial) BOOL partial;
+@property (nonatomic, retain) NSError *error;
+@property (getter=isPartial, nonatomic) BOOL partial;
+
+// Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)ATPMessage;
-- (id)ATPMessageWithPayloadData:(id)arg1;
 - (id)additionalDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
-- (id)initWithATPMessage:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isPartial;
 - (void)setError:(id)arg1;
 - (void)setPartial:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
+
+- (id)ATPMessage;
+- (id)ATPMessageWithPayloadData:(id)arg1;
+- (id)initWithATPMessage:(id)arg1;
 
 @end

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <GEORoutePreloadSession>, GEOMapAccess, NSString;
-
 @interface VKMapMatcher : NSObject <GEOMapAccessRestrictions> {
     GEOMapAccess *_map;
     <GEORoutePreloadSession> *_routePreloader;
 }
 
-@property(readonly) BOOL allowsNetworkTileLoad;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <GEORoutePreloadSession> * routePreloader;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL allowsNetworkTileLoad;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <GEORoutePreloadSession> *routePreloader;
+@property (readonly) Class superclass;
 
 + (id)mapMatcherOfType:(id)arg1;
 

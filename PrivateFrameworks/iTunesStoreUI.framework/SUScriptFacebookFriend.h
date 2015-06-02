@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary, NSString;
-
 @interface SUScriptFacebookFriend : SUScriptObject {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * name;
+@property (readonly) NSString *identifier;
+@property (readonly) NSString *name;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

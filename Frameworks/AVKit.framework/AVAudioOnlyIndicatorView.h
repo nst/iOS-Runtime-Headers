@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class UIImageView;
-
 @interface AVAudioOnlyIndicatorView : UIView {
     UIImageView *_imageView;
 }

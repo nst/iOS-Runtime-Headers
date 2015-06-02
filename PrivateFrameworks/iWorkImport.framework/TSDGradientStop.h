@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSUColor;
-
 @interface TSDGradientStop : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
     TSUColor *mColor;
     float mFraction;
     float mInflection;
 }
 
-@property(copy,readonly) TSUColor * color;
-@property(readonly) float fraction;
-@property(readonly) float inflection;
+@property (nonatomic, readonly, copy) TSUColor *color;
+@property (nonatomic, readonly) float fraction;
+@property (nonatomic, readonly) float inflection;
 
 + (id)gradientStopWithColor:(id)arg1 fraction:(float)arg2;
 + (id)gradientStopWithColor:(id)arg1 fraction:(float)arg2 inflection:(float)arg3;

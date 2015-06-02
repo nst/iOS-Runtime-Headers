@@ -2,23 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UIModalItemDelegate>, NSArray, NSAttributedString, NSMutableArray, NSString, UITextInputTraits, UIView, UIViewController, _UIModalItemBackgroundView, _UIModalItemContentView, _UIModalItemRepresentationView;
-
 @interface _UIModalItem : NSObject {
     UIViewController *_anchorViewController;
     _UIModalItemBackgroundView *_backgroundView;
     NSArray *_buttonTitles;
     int _cancelButtonIndex;
     NSString *_cancelButtonTitle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     _UIModalItemContentView *_contentView;
     UIViewController *_contentViewController;
     struct CGSize { 
@@ -75,46 +65,46 @@
     int cancelButtonIndex;
 }
 
-@property(getter=_viewController,setter=_setViewController:,retain) UIViewController * _viewController;
-@property(retain) _UIModalItemBackgroundView * backgroundView;
-@property(copy) NSArray * buttonTitles;
-@property int cancelButtonIndex;
-@property(retain) _UIModalItemContentView * contentView;
-@property(retain) UIViewController * contentViewController;
-@property struct CGSize { float x1; float x2; } contentViewControllerSize;
-@property int defaultButtonIndex;
-@property <UIModalItemDelegate> * delegate;
-@property int dismissAnimationType;
-@property int dismissIndex;
-@property BOOL dontUpdateFrameForKBChanges;
-@property BOOL enableFirstOtherButton;
-@property BOOL forceVerticalLayout;
-@property BOOL isBeingDismissed;
-@property BOOL isHidden;
-@property(readonly) BOOL isPresented;
-@property(copy) NSString * loginPlaceholderString;
-@property(copy) NSString * loginString;
-@property(copy) NSString * message;
-@property(copy) NSAttributedString * messageAttributedString;
-@property int messageMaxLineNumber;
-@property int modalItemInputStyle;
-@property int numberOfButtonsRows;
-@property(copy) NSString * passwordPlaceholderString;
-@property(copy) NSString * passwordString;
-@property int presentAnimationType;
-@property(copy) NSString * subtitleString;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
-@property UIView * targetView;
-@property BOOL textFieldsHidden;
-@property(copy) NSString * title;
-@property(copy) NSAttributedString * titleAttributedString;
-@property int titleMaxLineNumber;
-@property int type;
-@property BOOL useUndoStyle;
-@property BOOL useWifiPickerLayout;
-@property(readonly) UIViewController * viewController;
+@property (getter=_viewController, setter=_setViewController:, nonatomic, retain) UIViewController *_viewController;
+@property (nonatomic, retain) _UIModalItemBackgroundView *backgroundView;
+@property (nonatomic, copy) NSArray *buttonTitles;
+@property (nonatomic) int cancelButtonIndex;
+@property (nonatomic, retain) _UIModalItemContentView *contentView;
+@property (nonatomic, retain) UIViewController *contentViewController;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentViewControllerSize;
+@property (nonatomic) int defaultButtonIndex;
+@property (nonatomic) <UIModalItemDelegate> *delegate;
+@property (nonatomic) int dismissAnimationType;
+@property (nonatomic) int dismissIndex;
+@property (nonatomic) BOOL dontUpdateFrameForKBChanges;
+@property (nonatomic) BOOL enableFirstOtherButton;
+@property (nonatomic) BOOL forceVerticalLayout;
+@property (nonatomic) BOOL isBeingDismissed;
+@property (nonatomic) BOOL isHidden;
+@property (readonly) BOOL isPresented;
+@property (nonatomic, copy) NSString *loginPlaceholderString;
+@property (nonatomic, copy) NSString *loginString;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSAttributedString *messageAttributedString;
+@property (nonatomic) int messageMaxLineNumber;
+@property (nonatomic) int modalItemInputStyle;
+@property (nonatomic) int numberOfButtonsRows;
+@property (nonatomic, copy) NSString *passwordPlaceholderString;
+@property (nonatomic, copy) NSString *passwordString;
+@property (nonatomic) int presentAnimationType;
+@property (nonatomic, copy) NSString *subtitleString;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
+@property (nonatomic) UIView *targetView;
+@property (nonatomic) BOOL textFieldsHidden;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSAttributedString *titleAttributedString;
+@property (nonatomic) int titleMaxLineNumber;
+@property (nonatomic) int type;
+@property (nonatomic) BOOL useUndoStyle;
+@property (nonatomic) BOOL useWifiPickerLayout;
+@property (nonatomic, readonly) UIViewController *viewController;
 
-+ (id)modalItemWithType:(int)arg1 title:(id)arg2 message:(id)arg3 buttonTitles:(id)arg4 completion:(id)arg5;
++ (id)modalItemWithType:(int)arg1 title:(id)arg2 message:(id)arg3 buttonTitles:(id)arg4 completion:(id /* block */)arg5;
 
 - (id)_anchorViewController;
 - (id)_backgroundView;
@@ -154,7 +144,7 @@
 - (BOOL)dontUpdateFrameForKBChanges;
 - (BOOL)enableFirstOtherButton;
 - (BOOL)forceVerticalLayout;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 otherButtonTitles:(id)arg3 completion:(id)arg4 delegate:(id)arg5;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 otherButtonTitles:(id)arg3 completion:(id /* block */)arg4 delegate:(id)arg5;
 - (BOOL)isBeingDismissed;
 - (BOOL)isHidden;
 - (BOOL)isPresented;

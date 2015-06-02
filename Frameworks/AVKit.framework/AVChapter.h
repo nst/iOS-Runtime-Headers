@@ -2,41 +2,31 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIImage;
-
 @interface AVChapter : NSObject <NSCopying> {
     double _duration;
     UIImage *_image;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _imageBlock;
-
+    id /* block */ _imageBlock;
     unsigned int _number;
     double _startTime;
     NSString *_title;
 }
 
-@property(readonly) double duration;
-@property(readonly) UIImage * image;
-@property(readonly) unsigned int number;
-@property(readonly) double startTime;
-@property(copy,readonly) NSString * title;
+@property (readonly) double duration;
+@property (readonly) UIImage *image;
+@property (readonly) unsigned int number;
+@property (readonly) double startTime;
+@property (readonly, copy) NSString *title;
 
 + (id)chapterAtTime:(double)arg1 inChapters:(id)arg2;
 + (void)initialize;
-+ (id)playbackChapterWithStartTime:(double)arg1 duration:(double)arg2 number:(unsigned int)arg3 title:(id)arg4 imageFaultBlock:(id)arg5;
++ (id)playbackChapterWithStartTime:(double)arg1 duration:(double)arg2 number:(unsigned int)arg3 title:(id)arg4 imageFaultBlock:(id /* block */)arg5;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)duration;
 - (unsigned int)hash;
 - (id)image;
-- (id)initWithStartTime:(double)arg1 duration:(double)arg2 number:(unsigned int)arg3 title:(id)arg4 imageFaultBlock:(id)arg5;
+- (id)initWithStartTime:(double)arg1 duration:(double)arg2 number:(unsigned int)arg3 title:(id)arg4 imageFaultBlock:(id /* block */)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)number;
 - (double)startTime;

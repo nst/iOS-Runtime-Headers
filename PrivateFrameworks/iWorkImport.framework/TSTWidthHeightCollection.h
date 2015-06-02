@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)addFittingHeight:(float)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)addResetHeightForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)enumerateFittingHeightsUsingBlock:(id)arg1;
-- (void)enumerateResetHeightsUsingBlock:(id)arg1;
+- (void)enumerateFittingHeightsUsingBlock:(id /* block */)arg1;
+- (void)enumerateResetHeightsUsingBlock:(id /* block */)arg1;
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGEmailAddress : SGLabeledObject {
     NSString *_emailAddress;
 }
 
-@property(readonly) NSString * emailAddress;
+@property (nonatomic, readonly) NSString *emailAddress;
 
 + (id)emailAddress:(id)arg1 label:(id)arg2;
 + (BOOL)supportsSecureCoding;

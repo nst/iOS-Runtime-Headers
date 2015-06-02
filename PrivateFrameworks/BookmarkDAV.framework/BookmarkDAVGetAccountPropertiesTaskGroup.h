@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
  */
 
-@class NSSet;
-
 @interface BookmarkDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
     NSSet *_bookmarkHomes;
 }
 
-@property(readonly) NSSet * bookmarkHomes;
+@property (nonatomic, readonly) NSSet *bookmarkHomes;
 
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;

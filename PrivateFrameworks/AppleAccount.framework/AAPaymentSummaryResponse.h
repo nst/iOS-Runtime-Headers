@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSDictionary, NSString;
-
 @interface AAPaymentSummaryResponse : AAResponse {
     NSDictionary *_responseParameters;
 }
 
-@property(readonly) NSString * description;
-@property(readonly) unsigned int numberOfCards;
+@property (nonatomic, readonly) NSString *description;
+@property (nonatomic, readonly) unsigned int numberOfCards;
 
 - (void).cxx_destruct;
 - (id)description;

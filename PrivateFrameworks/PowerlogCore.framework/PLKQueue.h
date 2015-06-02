@@ -2,43 +2,33 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface PLKQueue : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _enabled;
     int _fileDescriptor;
     int _kQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _kQueueBlock;
-
+    id /* block */ _kQueueBlock;
     struct __CFFileDescriptor { } *_kqueueDescriptorRef;
     struct __CFRunLoopSource { } *_kqueueDescriptorSource;
     NSString *_path;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * dispatchQueue;
-@property BOOL enabled;
+@property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic) BOOL enabled;
 @property int fileDescriptor;
 @property int kQueue;
-@property(copy) id kQueueBlock;
-@property struct __CFFileDescriptor { }* kqueueDescriptorRef;
-@property struct __CFRunLoopSource { }* kqueueDescriptorSource;
-@property(copy) NSString * path;
+@property (nonatomic, copy) id /* block */ kQueueBlock;
+@property struct __CFFileDescriptor { }*kqueueDescriptorRef;
+@property struct __CFRunLoopSource { }*kqueueDescriptorSource;
+@property (copy) NSString *path;
 
 - (void).cxx_destruct;
 - (id)dispatchQueue;
 - (BOOL)enabled;
 - (int)fileDescriptor;
-- (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(id)arg3;
+- (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(id /* block */)arg3;
 - (int)kQueue;
-- (id)kQueueBlock;
+- (id /* block */)kQueueBlock;
 - (struct __CFFileDescriptor { }*)kqueueDescriptorRef;
 - (struct __CFRunLoopSource { }*)kqueueDescriptorSource;
 - (id)path;
@@ -46,7 +36,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (void)setKQueue:(int)arg1;
-- (void)setKQueueBlock:(id)arg1;
+- (void)setKQueueBlock:(id /* block */)arg1;
 - (void)setKqueueDescriptorRef:(struct __CFFileDescriptor { }*)arg1;
 - (void)setKqueueDescriptorSource:(struct __CFRunLoopSource { }*)arg1;
 - (void)setPath:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhoneTruffle : UIKBRenderFactoryiPhone {
-}
+@interface UIKBRenderFactoryiPhoneTruffle : UIKBRenderFactoryiPhone
 
 - (struct CGPoint { float x1; float x2; })deleteKeyOffset;
 - (struct CGPoint { float x1; float x2; })dictationKeyOffset;

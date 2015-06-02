@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISDialogOperationDelegate>, ISDialog, ISDialogButton, NSArray;
-
 @interface ISDialogOperation : ISOperation {
     ISDialog *_dialog;
     BOOL _performDefaultActions;
@@ -12,12 +10,12 @@
     id _userNotification;
 }
 
-@property <ISDialogOperationDelegate> * delegate;
-@property(retain) ISDialog * dialog;
+@property <ISDialogOperationDelegate> *delegate;
+@property (retain) ISDialog *dialog;
 @property BOOL performDefaultActions;
-@property(retain) ISDialogButton * selectedButton;
-@property(readonly) NSArray * textFieldValues;
-@property(retain) id userNotification;
+@property (retain) ISDialogButton *selectedButton;
+@property (readonly) NSArray *textFieldValues;
+@property (retain) id userNotification;
 
 + (id)operationWithDialog:(id)arg1;
 + (id)operationWithError:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSString;
-
 @interface SCRCMathSimpleExpression : SCRCMathExpression {
     NSString *_content;
 }
 
-@property(copy) NSString * content;
+@property (nonatomic, copy) NSString *content;
 
 - (id)_functionNames;
 - (BOOL)canBeUsedWithBase;

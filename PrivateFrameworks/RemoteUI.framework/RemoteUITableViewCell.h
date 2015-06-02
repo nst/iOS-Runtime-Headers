@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIButton, UIColor, UIImageView, UIView;
-
 @interface RemoteUITableViewCell : UITableViewCell {
     UIColor *_accessoryColor;
     UIButton *_detailLinkButton;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _detailLinkHandler;
-
+    id /* block */ _detailLinkHandler;
     BOOL _forceFullSizeDetailLabel;
     UIImageView *_invalidRowView;
     BOOL _leftAlignDetailLabel;
@@ -23,10 +13,10 @@
     UIView *_remoteUIAccessoryView;
 }
 
-@property BOOL forceFullSizeDetailLabel;
-@property BOOL leftAlignDetailLabel;
-@property int remoteUIAccessoryType;
-@property(retain) UIView * remoteUIAccessoryView;
+@property (nonatomic) BOOL forceFullSizeDetailLabel;
+@property (nonatomic) BOOL leftAlignDetailLabel;
+@property (nonatomic) int remoteUIAccessoryType;
+@property (nonatomic, retain) UIView *remoteUIAccessoryView;
 
 - (void).cxx_destruct;
 - (void)_accessoriesChanged;
@@ -40,7 +30,7 @@
 - (void)prepareForReuse;
 - (int)remoteUIAccessoryType;
 - (id)remoteUIAccessoryView;
-- (void)setDetailLinkText:(id)arg1 handler:(id)arg2;
+- (void)setDetailLinkText:(id)arg1 handler:(id /* block */)arg2;
 - (void)setForceFullSizeDetailLabel:(BOOL)arg1;
 - (void)setLeftAlignDetailLabel:(BOOL)arg1;
 - (void)setRemoteUIAccessoryType:(int)arg1;

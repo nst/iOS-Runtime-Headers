@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVValueTiming : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-}
+@interface AVValueTiming : NSObject <NSCoding, NSCopying, NSMutableCopying>
 
-@property(readonly) double anchorTimeStamp;
-@property(readonly) double anchorValue;
-@property(readonly) double currentValue;
-@property(readonly) double rate;
+@property (nonatomic, readonly) double anchorTimeStamp;
+@property (nonatomic, readonly) double anchorValue;
+@property (nonatomic, readonly) double currentValue;
+@property (nonatomic, readonly) double rate;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (double)currentTimeStamp;

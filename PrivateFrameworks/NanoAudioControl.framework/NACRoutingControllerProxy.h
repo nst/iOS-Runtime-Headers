@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class <NACRoutingControllerDelegate>, NACAudioRoute, NACXPCClient, NSArray, NSString;
-
 @interface NACRoutingControllerProxy : NSObject <NACRoutingController> {
     NSArray *_availableAudioRoutes;
     NSString *_category;
@@ -13,13 +11,13 @@
     NACXPCClient *_xpcClient;
 }
 
-@property(readonly) NSArray * availableAudioRoutes;
-@property(copy,readonly) NSString * debugDescription;
-@property <NACRoutingControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NACAudioRoute * pickedRoute;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *availableAudioRoutes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NACRoutingControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NACAudioRoute *pickedRoute;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;

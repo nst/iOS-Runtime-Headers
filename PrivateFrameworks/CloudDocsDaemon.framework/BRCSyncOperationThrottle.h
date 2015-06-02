@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRCSyncOperationThrottle : NSObject <NSSecureCoding> {
     NSString *_containerID;
     double _delay;
@@ -11,10 +9,10 @@
     double _nextTry;
 }
 
-@property(retain) NSString * containerID;
-@property(readonly) double delay;
-@property(readonly) int lastErrorKind;
-@property(readonly) double nextTry;
+@property (nonatomic, retain) NSString *containerID;
+@property (nonatomic, readonly) double delay;
+@property (nonatomic, readonly) int lastErrorKind;
+@property (nonatomic, readonly) double nextTry;
 
 + (BOOL)supportsSecureCoding;
 

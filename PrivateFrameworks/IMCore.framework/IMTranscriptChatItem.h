@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString;
-
 @interface IMTranscriptChatItem : IMChatItem {
     unsigned char _attachmentContiguousType;
-    unsigned int _contiguousLoaded : 1;
+    unsigned int _contiguousLoaded;
     unsigned char _contiguousType;
     NSString *_guid;
 }
 
-@property(readonly) unsigned char attachmentContiguousType;
-@property(getter=isContiguous,readonly) BOOL contiguous;
-@property(readonly) unsigned char contiguousType;
-@property(copy) NSString * guid;
+@property (nonatomic, readonly) unsigned char attachmentContiguousType;
+@property (getter=isContiguous, nonatomic, readonly) BOOL contiguous;
+@property (nonatomic, readonly) unsigned char contiguousType;
+@property (nonatomic, copy) NSString *guid;
 
-- (Class)__ck_chatItemClass;
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (BOOL)_isContiguousLoaded;
 - (void)_setAttachmentContiguousType:(unsigned char)arg1;
 - (void)_setContiguousLoaded:(BOOL)arg1;
@@ -33,5 +32,9 @@
 - (BOOL)isContiguous;
 - (BOOL)isContiguousWithChatItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (Class)__ck_chatItemClass;
 
 @end

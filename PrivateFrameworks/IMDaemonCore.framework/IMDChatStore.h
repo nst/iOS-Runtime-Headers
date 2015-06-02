@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSString;
-
 @interface IMDChatStore : NSObject {
     NSString *_lastModificationStamp;
 }
 
-@property(retain) NSString * modificationStamp;
+@property (retain) NSString *modificationStamp;
 
 + (id)sharedInstance;
 

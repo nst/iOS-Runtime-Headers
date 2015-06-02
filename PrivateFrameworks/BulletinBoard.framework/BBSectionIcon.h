@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSSet;
-
 @interface BBSectionIcon : NSObject <NSCopying, NSSecureCoding> {
     NSSet *_variants;
 }
 
-@property(copy) NSSet * variants;
+@property (nonatomic, copy) NSSet *variants;
 
 + (BOOL)supportsSecureCoding;
 

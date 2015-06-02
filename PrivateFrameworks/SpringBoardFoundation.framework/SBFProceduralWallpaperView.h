@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class <SBFProceduralWallpaper>, NSDictionary, NSString, NSTimer, UIImage;
-
 @interface SBFProceduralWallpaperView : SBFWallpaperView <SBFProceduralWallpaperDelegate> {
     UIImage *_blur;
     NSTimer *_colorSampleTimer;
@@ -13,10 +11,10 @@
     int _thermalNotificationToken;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_allowsParallax;
 + (BOOL)_allowsRasterization;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DCamera, TSCH3DDataBufferResource, TSCH3DLabelResource, TSCH3DLabelResources, TSCH3DLabelsMeshRenderer, TSCH3DLabelsRendererTransforms, TSCH3DResource, TSCH3DSceneRenderPipeline;
-
 @interface TSCH3DLabelsRenderer : NSObject {
     struct LabelRenderInfo { 
         struct tvec2<float> { 
@@ -66,14 +64,14 @@
     BOOL mUseLabelBounds;
 }
 
-@property(retain) TSCH3DLabelResource * label;
-@property(readonly) TSCH3DCamera * labelCamera;
-@property(retain) TSCH3DDataBufferResource * mesh;
-@property(retain) TSCH3DLabelsMeshRenderer * meshRenderer;
-@property(retain) TSCH3DSceneRenderPipeline * pipeline;
-@property(readonly) struct LabelRenderInfo { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_3_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_3_1_2; } x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; } renderInfo;
-@property(retain) TSCH3DLabelResources * resources;
-@property BOOL useLabelBounds;
+@property (nonatomic, retain) TSCH3DLabelResource *label;
+@property (nonatomic, readonly) TSCH3DCamera *labelCamera;
+@property (nonatomic, retain) TSCH3DDataBufferResource *mesh;
+@property (nonatomic, retain) TSCH3DLabelsMeshRenderer *meshRenderer;
+@property (nonatomic, retain) TSCH3DSceneRenderPipeline *pipeline;
+@property (nonatomic, readonly) struct LabelRenderInfo { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_3_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_3_1_2; } x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; } renderInfo;
+@property (nonatomic, retain) TSCH3DLabelResources *resources;
+@property (nonatomic) BOOL useLabelBounds;
 
 + (id)renderCacheKey;
 + (id)renderer;
@@ -100,7 +98,7 @@
 - (void)postrender:(id)arg1;
 - (void)prepareCachedIndex:(const struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; }*)arg1 string:(id)arg2 alignmentPadding:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg3 width:(float)arg4 bitmapContextInfo:(id)arg5;
 - (void)prerender:(id)arg1;
-- (void)renderAtPosition:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 offset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg2 alignment:(unsigned int)arg3 offset2D:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg4 rotation:(float)arg5 externalAttribute:(const struct ExternalLabelAttribute { id x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg6;
+- (void)renderAtPosition:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 offset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg2 alignment:(unsigned int)arg3 offset2D:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg4 rotation:(float)arg5 externalAttribute:(const struct ExternalLabelAttribute { id x1; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x2; void x3; void*x4; BOOL x5; void*x6; void*x7; float x8; long x9; out void*x10; void*x11; void*x12; void*x13; union { float x_14_1_1; float x_14_1_2; float x_14_1_3; } x14; union { float x_15_1_1; float x_15_1_2; float x_15_1_3; } x15; }*)arg6;
 - (struct LabelRenderInfo { struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_3_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_3_1_2; } x3; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; } x4; })renderInfo;
 - (id)resources;
 - (void)setLabel:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TPPageMaster;
-
 @interface TPHeaderFooterFragmentEnumerator : NSEnumerator {
     int _fragmentIndex;
     int _headerFooterType;
     TPPageMaster *_pageMaster;
 }
 
-@property int fragmentIndex;
-@property int headerFooterType;
-@property(retain) TPPageMaster * pageMaster;
+@property (nonatomic) int fragmentIndex;
+@property (nonatomic) int headerFooterType;
+@property (nonatomic, retain) TPPageMaster *pageMaster;
 
 - (void)dealloc;
 - (int)fragmentIndex;

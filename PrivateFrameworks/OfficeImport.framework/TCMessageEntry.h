@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSMutableArray, NSString;
-
 @interface TCMessageEntry : NSObject {
     NSMutableArray *m_affectedObjects;
     int m_count;
@@ -13,7 +11,7 @@
     unsigned int m_timeStamp;
 }
 
-@property unsigned int timeStamp;
+@property (nonatomic) unsigned int timeStamp;
 
 + (void)initialize;
 

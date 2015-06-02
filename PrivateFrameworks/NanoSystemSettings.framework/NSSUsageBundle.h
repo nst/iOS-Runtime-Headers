@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoSystemSettings.framework/NanoSystemSettings
  */
 
-@class NSArray, NSString;
-
 @interface NSSUsageBundle : NSObject <NSSecureCoding> {
     NSString *_bundleIdentifier;
     NSArray *_categories;
@@ -12,11 +10,11 @@
     unsigned long long _totalSize;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSArray * categories;
-@property(retain) NSString * name;
-@property(getter=isPurgeable) BOOL purgeable;
-@property unsigned long long totalSize;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) NSArray *categories;
+@property (nonatomic, retain) NSString *name;
+@property (getter=isPurgeable, nonatomic) BOOL purgeable;
+@property (nonatomic) unsigned long long totalSize;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNInstantMessageAddress, NSString;
+@interface ABPropertyInstantMessageEditingCell : ABPropertySimpleEditingCell <ABPickerControllerDelegate>
 
-@interface ABPropertyInstantMessageEditingCell : ABPropertySimpleEditingCell <ABPickerControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CNInstantMessageAddress * profile;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CNInstantMessageAddress *profile;
+@property (readonly) Class superclass;
 
 - (void)labelButtonClicked:(id)arg1;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;

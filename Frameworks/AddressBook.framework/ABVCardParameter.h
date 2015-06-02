@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSMutableArray, NSString;
-
 @interface ABVCardParameter : NSObject {
     NSString *_grouping;
     NSString *_name;

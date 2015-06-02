@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, NSURL;
-
 @interface TSPDatabaseObjectWithFileState : TSPDatabaseObject {
     NSString *_fileState;
     NSURL *_packageURL;

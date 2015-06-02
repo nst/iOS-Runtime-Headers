@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSString, SSMetricsController, SSURLBag;
-
 @interface MKPlaceNearbyAppsMetricsCoordinator : NSObject {
     NSMutableArray *_callbacks;
     BOOL _controllerReady;
@@ -13,16 +11,16 @@
     SSURLBag *_urlBag;
 }
 
-@property(readonly) NSMutableArray * callbacks;
-@property BOOL controllerReady;
-@property(copy) NSString * pageContext;
-@property(copy) NSString * topic;
-@property(readonly) SSURLBag * urlBag;
+@property (nonatomic, readonly) NSMutableArray *callbacks;
+@property (nonatomic) BOOL controllerReady;
+@property (nonatomic, copy) NSString *pageContext;
+@property (nonatomic, copy) NSString *topic;
+@property (nonatomic, readonly) SSURLBag *urlBag;
 
 - (void).cxx_destruct;
 - (id)callbacks;
 - (BOOL)controllerReady;
-- (void)getMetricsControllerWithCompletionHandler:(id)arg1;
+- (void)getMetricsControllerWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithConfigurationIdentifier:(id)arg1;
 - (id)pageContext;
 - (void)performCallbacks;

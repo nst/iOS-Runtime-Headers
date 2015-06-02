@@ -2,38 +2,26 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface FMFWildcardGestureRecognizer : UIGestureRecognizer {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _touchesBeganCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _touchesEndedCallback;
-
+    id /* block */ _touchesBeganCallback;
+    id /* block */ _touchesEndedCallback;
 }
 
-@property(copy) id touchesBeganCallback;
-@property(copy) id touchesEndedCallback;
+@property (nonatomic, copy) id /* block */ touchesBeganCallback;
+@property (nonatomic, copy) id /* block */ touchesEndedCallback;
 
 - (void).cxx_destruct;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (id)init;
 - (void)reset;
-- (void)setTouchesBeganCallback:(id)arg1;
-- (void)setTouchesEndedCallback:(id)arg1;
+- (void)setTouchesBeganCallback:(id /* block */)arg1;
+- (void)setTouchesEndedCallback:(id /* block */)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (id)touchesBeganCallback;
+- (id /* block */)touchesBeganCallback;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id)touchesEndedCallback;
+- (id /* block */)touchesEndedCallback;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

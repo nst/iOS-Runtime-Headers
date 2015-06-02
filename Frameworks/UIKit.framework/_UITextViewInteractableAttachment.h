@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTextAttachment;
-
 @interface _UITextViewInteractableAttachment : _UITextViewInteractableItem {
     NSTextAttachment *_attachment;
 }
 
-@property(retain) NSTextAttachment * attachment;
+@property (nonatomic, retain) NSTextAttachment *attachment;
 
 + (id)interactableLinkWithAttachment:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 

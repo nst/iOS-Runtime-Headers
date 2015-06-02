@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICollectionViewDelegate>, <UIKeyboardCandidateListDelegate>, NSArray, NSMutableDictionary, NSString, TIKeyboardCandidateResultSet, UIImageView, UIKBBackdropView, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateGridHeader, UIKeyboardCandidateRowViewController, UIKeyboardCandidateSortControl, UIView;
-
 @interface UIKeyboardCandidateGrid : UIView <UIKeyboardCandidateGridCollectionViewControllerDelegate, UIKeyboardCandidateList, UIKeyboardCandidateListDelegate, UIKeyboardCandidateRowViewControllerDelegate> {
     UIKBBackdropView *_backdropView;
     UIImageView *_backgroundView;
@@ -26,26 +24,26 @@
     UIView *_topBarShadow;
 }
 
-@property(retain) UIKBBackdropView * backdropView;
-@property <UIKeyboardCandidateListDelegate> * candidateListDelegate;
-@property(retain) TIKeyboardCandidateResultSet * candidateSet;
-@property int candidatesVisualStyle;
-@property(retain) UIKeyboardCandidateGridCollectionViewController * collectionViewController;
-@property(readonly) NSMutableDictionary * collectionViewControllers;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL drawBottomShadow;
-@property BOOL drawTopShadow;
-@property UIKeyboardCandidateGridHeader * gridHeader;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * inlineText;
-@property unsigned int numberOfColumns;
-@property <UICollectionViewDelegate> * scrollViewDelegate;
-@property(retain) UIKeyboardCandidateRowViewController * secondaryCandidatesViewController;
-@property BOOL secondaryCandidatesViewIsCurrent;
-@property UIKeyboardCandidateSortControl * sortBar;
-@property(retain) NSArray * sortedCandidates;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIKBBackdropView *backdropView;
+@property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;
+@property (nonatomic, retain) TIKeyboardCandidateResultSet *candidateSet;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic, retain) UIKeyboardCandidateGridCollectionViewController *collectionViewController;
+@property (nonatomic, readonly) NSMutableDictionary *collectionViewControllers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL drawBottomShadow;
+@property (nonatomic) BOOL drawTopShadow;
+@property (nonatomic) UIKeyboardCandidateGridHeader *gridHeader;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *inlineText;
+@property (nonatomic) unsigned int numberOfColumns;
+@property (nonatomic) <UICollectionViewDelegate> *scrollViewDelegate;
+@property (nonatomic, retain) UIKeyboardCandidateRowViewController *secondaryCandidatesViewController;
+@property (nonatomic) BOOL secondaryCandidatesViewIsCurrent;
+@property (nonatomic) UIKeyboardCandidateSortControl *sortBar;
+@property (nonatomic, retain) NSArray *sortedCandidates;
+@property (readonly) Class superclass;
 
 - (id)backdropView;
 - (void)candidateAcceptedAtIndex:(unsigned int)arg1;

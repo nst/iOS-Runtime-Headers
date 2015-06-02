@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMDocument, ISURLOperation, JSManagedValue, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableData, NSMutableURLRequest, NSString, NSURLConnection;
-
 @interface IKJSXMLHTTPRequest : IKJSObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate> {
     BOOL _async;
     BOOL _inProgress;
@@ -31,35 +29,35 @@
     unsigned long timeout;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property ISURLOperation * jingleOperation;
-@property BOOL jingleRequest;
-@property(retain) JSManagedValue * managedSelf;
-@property(readonly) NSDictionary * metrics;
-@property(retain) NSMutableArray * onReadyStateChangeMessageQueue;
-@property(retain) NSString * password;
-@property(retain) NSDictionary * performanceMetrics;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) ISURLOperation *jingleOperation;
+@property (nonatomic) BOOL jingleRequest;
+@property (nonatomic, retain) JSManagedValue *managedSelf;
+@property (readonly) NSDictionary *metrics;
+@property (nonatomic, retain) NSMutableArray *onReadyStateChangeMessageQueue;
+@property (nonatomic, retain) NSString *password;
+@property (retain) NSDictionary *performanceMetrics;
 @property unsigned int readyState;
-@property(retain) NSMutableData * receivedData;
-@property(retain) NSError * requestError;
-@property int requestReadyState;
-@property int requestResponseType;
-@property unsigned int requestStatusCode;
-@property(retain) NSString * requestStatusText;
-@property(readonly) id response;
-@property(readonly) NSString * responseText;
+@property (nonatomic, retain) NSMutableData *receivedData;
+@property (nonatomic, retain) NSError *requestError;
+@property (nonatomic) int requestReadyState;
+@property (nonatomic) int requestResponseType;
+@property (nonatomic) unsigned int requestStatusCode;
+@property (nonatomic, retain) NSString *requestStatusText;
+@property (readonly) id response;
+@property (readonly) NSString *responseText;
 @property unsigned int responseType;
-@property(readonly) IKDOMDocument * responseXML;
+@property (readonly) IKDOMDocument *responseXML;
 @property unsigned int status;
-@property(retain) NSString * statusText;
-@property(readonly) Class superclass;
+@property (retain) NSString *statusText;
+@property (readonly) Class superclass;
 @property unsigned long timeout;
-@property(retain) NSURLConnection * urlConnection;
-@property(retain) NSMutableURLRequest * urlRequest;
-@property(retain) NSHTTPURLResponse * urlResponse;
-@property(retain) NSString * user;
+@property (nonatomic, retain) NSURLConnection *urlConnection;
+@property (nonatomic, retain) NSMutableURLRequest *urlRequest;
+@property (nonatomic, retain) NSHTTPURLResponse *urlResponse;
+@property (nonatomic, retain) NSString *user;
 
 + (id)xhrOperationQueue;
 

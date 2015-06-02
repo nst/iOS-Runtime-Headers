@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIAppearanceCustomizableClassInfo : NSObject {
     NSString *_appearanceNodeKey;
     Class _customizableViewClass;
@@ -13,10 +11,10 @@
     BOOL _isGuideClassRoot;
 }
 
-@property(readonly) NSString * _appearanceNodeKey;
-@property(readonly) Class _customizableViewClass;
-@property(readonly) Class _guideClass;
-@property(readonly) unsigned int _hash;
+@property (nonatomic, readonly) NSString *_appearanceNodeKey;
+@property (nonatomic, readonly) Class _customizableViewClass;
+@property (nonatomic, readonly) Class _guideClass;
+@property (nonatomic, readonly) unsigned int _hash;
 
 + (id)_customizableClassInfoForViewClass:(Class)arg1 withGuideClass:(Class)arg2;
 

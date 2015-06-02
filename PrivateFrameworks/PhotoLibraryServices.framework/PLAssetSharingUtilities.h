@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLAssetSharingUtilities : NSObject {
-}
+@interface PLAssetSharingUtilities : NSObject
 
 + (double)_durationForVideoAssetURL:(id)arg1;
 + (double)_durationForVideoFilePath:(id)arg1;

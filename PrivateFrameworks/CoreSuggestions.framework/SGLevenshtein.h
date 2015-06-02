@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGLevenshtein : NSObject {
-}
+@interface SGLevenshtein : NSObject
 
 + (unsigned long)distanceBetweenStrings:(id)arg1 and:(id)arg2;
 

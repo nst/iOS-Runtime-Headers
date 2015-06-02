@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class <CityUpdaterDelegate>, CLLocation, MKSearchCompletion, NSDate, NSMutableArray, NSString, NSTimer;
-
 @interface City : NSObject {
     BOOL _autoUpdate;
     NSTimer *_autoUpdateTimer;
@@ -51,49 +49,49 @@
     float _windSpeed;
 }
 
-@property(retain) NSTimer * autoUpdateTimer;
-@property unsigned int conditionCode;
-@property(getter=isDataCelsius) BOOL dataCelsius;
-@property(copy) NSString * deeplink;
-@property <CityUpdaterDelegate> * delegate;
-@property float dewPoint;
-@property float feelsLike;
-@property(copy) NSString * fullName;
-@property float heatIndex;
-@property float humidity;
-@property BOOL isDay;
-@property BOOL isHourlyDataCelsius;
-@property BOOL isLocalWeatherCity;
-@property BOOL isRequestedByFrameworkClient;
-@property BOOL isUpdating;
-@property unsigned int lastUpdateDetail;
-@property int lastUpdateStatus;
-@property float latitude;
-@property(copy) NSString * link;
-@property(retain) CLLocation * location;
-@property(copy) NSString * locationID;
-@property BOOL lockedForDemoMode;
-@property float longitude;
-@property unsigned int moonPhase;
-@property(copy) NSString * name;
-@property unsigned int observationTime;
-@property float precipitationPast24Hours;
-@property float pressure;
-@property int pressureRising;
-@property(retain) MKSearchCompletion * searchCompletion;
-@property int secondsFromGMT;
-@property(copy) NSString * state;
-@property unsigned int sunriseTime;
-@property unsigned int sunsetTime;
-@property(copy) NSString * temperature;
-@property int updateInterval;
-@property(retain) NSDate * updateTime;
-@property(setter=setUVIndex:) unsigned int uvIndex;
-@property float visibility;
-@property float windChill;
-@property float windDirection;
-@property float windSpeed;
-@property(copy) NSString * woeid;
+@property (nonatomic, retain) NSTimer *autoUpdateTimer;
+@property (nonatomic) unsigned int conditionCode;
+@property (getter=isDataCelsius, nonatomic) BOOL dataCelsius;
+@property (nonatomic, copy) NSString *deeplink;
+@property (nonatomic) <CityUpdaterDelegate> *delegate;
+@property (nonatomic) float dewPoint;
+@property (nonatomic) float feelsLike;
+@property (nonatomic, copy) NSString *fullName;
+@property (nonatomic) float heatIndex;
+@property (nonatomic) float humidity;
+@property (nonatomic) BOOL isDay;
+@property (nonatomic) BOOL isHourlyDataCelsius;
+@property (nonatomic) BOOL isLocalWeatherCity;
+@property (nonatomic) BOOL isRequestedByFrameworkClient;
+@property (nonatomic) BOOL isUpdating;
+@property (nonatomic) unsigned int lastUpdateDetail;
+@property (nonatomic) int lastUpdateStatus;
+@property (nonatomic) float latitude;
+@property (nonatomic, copy) NSString *link;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, copy) NSString *locationID;
+@property (nonatomic) BOOL lockedForDemoMode;
+@property (nonatomic) float longitude;
+@property (nonatomic) unsigned int moonPhase;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) unsigned int observationTime;
+@property (nonatomic) float precipitationPast24Hours;
+@property (nonatomic) float pressure;
+@property (nonatomic) int pressureRising;
+@property (nonatomic, retain) MKSearchCompletion *searchCompletion;
+@property (nonatomic) int secondsFromGMT;
+@property (nonatomic, copy) NSString *state;
+@property (nonatomic) unsigned int sunriseTime;
+@property (nonatomic) unsigned int sunsetTime;
+@property (nonatomic, copy) NSString *temperature;
+@property (nonatomic) int updateInterval;
+@property (nonatomic, retain) NSDate *updateTime;
+@property (setter=setUVIndex:, nonatomic) unsigned int uvIndex;
+@property (nonatomic) float visibility;
+@property (nonatomic) float windChill;
+@property (nonatomic) float windDirection;
+@property (nonatomic) float windSpeed;
+@property (nonatomic, copy) NSString *woeid;
 
 + (id)descriptionForWeatherUpdateDetail:(unsigned int)arg1;
 

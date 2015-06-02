@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class UIImage, UIImageView;
-
 @interface MusicPartialPlaybackTableViewCellContentView : MusicStandardMediaTableViewCellContentView {
     UIImage *_tintedUnplayedIndicatorImage;
     UIImage *_unplayedIndicatorHighlightedImage;
@@ -11,8 +9,8 @@
     UIImageView *_unplayedIndicatorImageView;
 }
 
-@property(retain) UIImage * unplayedIndicatorHighlightedImage;
-@property(retain) UIImage * unplayedIndicatorImage;
+@property (nonatomic, retain) UIImage *unplayedIndicatorHighlightedImage;
+@property (nonatomic, retain) UIImage *unplayedIndicatorImage;
 
 + (float)textLeadingDistanceFromArtwork;
 

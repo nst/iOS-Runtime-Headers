@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDAccessoryManager, HMMessageDispatcher, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMDAccessoryBrowser : NSObject <HMDAccessoryManagerDelegate, HMMessageReceiver> {
     HMDAccessoryManager *_accessoryManager;
     NSMutableSet *_browsingXPCConnections;
@@ -13,18 +11,18 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) HMDAccessoryManager * accessoryManager;
-@property(retain) NSMutableSet * browsingXPCConnections;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int generationCounter;
-@property(readonly) unsigned int hash;
-@property(retain) HMMessageDispatcher * messageDispatcher;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) HMDAccessoryManager *accessoryManager;
+@property (nonatomic, retain) NSMutableSet *browsingXPCConnections;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int generationCounter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HMMessageDispatcher *messageDispatcher;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_handleInvalidatedXPCConnection:(id)arg1;

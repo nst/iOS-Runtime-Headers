@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetAirplaneMode : SASettingGetBool {
-}
+@interface SASettingGetAirplaneMode : SASettingGetBool
 
 + (id)getAirplaneMode;
 + (id)getAirplaneModeWithDictionary:(id)arg1 context:(id)arg2;

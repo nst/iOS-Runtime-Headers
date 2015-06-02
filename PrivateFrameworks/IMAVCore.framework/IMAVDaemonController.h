@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVDaemonListener, IMLocalObject, IMRemoteObject<IMAVDaemonProtocol>, NSLock, NSMutableArray, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSString;
-
 @interface IMAVDaemonController : NSObject {
     BOOL _acquiringDaemonConnection;
     NSLock *_connectionLock;
@@ -21,8 +19,8 @@
     struct __CFRunLoopSource { } *_runLoopSource;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
-@property(readonly) IMAVDaemonListener * listener;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_remoteMessageQueue;
+@property (nonatomic, readonly) IMAVDaemonListener *listener;
 
 + (id)sharedInstance;
 
@@ -34,7 +32,7 @@
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
 - (void)_localObjectDiedNotification:(id)arg1;
-- (BOOL)_makeConnectionWithCompletionBlock:(id)arg1;
+- (BOOL)_makeConnectionWithCompletionBlock:(id /* block */)arg1;
 - (void)_noteSetupComplete;
 - (id)_remoteMessageQueue;
 - (void)_remoteObjectCleanup;

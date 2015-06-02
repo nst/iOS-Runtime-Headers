@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhonePasscodeTruffle : UIKBRenderFactoryiPhonePasscode {
-}
+@interface UIKBRenderFactoryiPhonePasscodeTruffle : UIKBRenderFactoryiPhonePasscode
 
 - (BOOL)isTallPopup;
 - (id)lightKeycapsFontName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSString;
-
 @interface RadioTrackHistorySectionInfo : NSObject <NSCopying, NSFetchedResultsSectionInfo, NSMutableCopying> {
     NSString *_indexTitle;
     NSString *_name;
@@ -11,10 +9,10 @@
     NSArray *_objects;
 }
 
-@property(readonly) NSString * indexTitle;
-@property(readonly) NSString * name;
-@property(readonly) unsigned int numberOfObjects;
-@property(readonly) NSArray * objects;
+@property (nonatomic, readonly) NSString *indexTitle;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned int numberOfObjects;
+@property (nonatomic, readonly) NSArray *objects;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

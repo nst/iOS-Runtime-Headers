@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCProgress, CKRecord, CKRecordID, GSPermanentStorage, NSError;
-
 @interface BRCDownloadVersionEntry : BRCDownloadEntry {
     NSError *_gsError;
     BOOL _isLoser;
@@ -13,10 +11,10 @@
     GSPermanentStorage *_storage;
 }
 
-@property(readonly) NSError * gsError;
-@property(readonly) BOOL isLoser;
-@property(retain) BRCProgress * progress;
-@property(readonly) GSPermanentStorage * storage;
+@property (nonatomic, readonly) NSError *gsError;
+@property (nonatomic, readonly) BOOL isLoser;
+@property (nonatomic, retain) BRCProgress *progress;
+@property (nonatomic, readonly) GSPermanentStorage *storage;
 
 - (void).cxx_destruct;
 - (id)_stageContentWithSession:(id)arg1 error:(id*)arg2;

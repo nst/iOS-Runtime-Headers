@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AANewAccountRequest : AARequest {
-}
+@interface AANewAccountRequest : AARequest
 
 - (id)urlRequest;
 - (id)urlString;

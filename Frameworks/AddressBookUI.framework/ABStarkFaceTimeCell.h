@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>, ABTransportButton, NSDictionary, UILabel;
-
 @interface ABStarkFaceTimeCell : ABContactCell {
     <ABPropertyCellDelegate> *_delegate;
     UILabel *_faceTimeLabel;
@@ -11,10 +9,10 @@
     ABTransportButton *_transportIcon;
 }
 
-@property <ABPropertyCellDelegate> * delegate;
-@property(retain) UILabel * faceTimeLabel;
-@property(copy) NSDictionary * labelTextAttributes;
-@property(readonly) ABTransportButton * transportIcon;
+@property (nonatomic) <ABPropertyCellDelegate> *delegate;
+@property (nonatomic, retain) UILabel *faceTimeLabel;
+@property (nonatomic, copy) NSDictionary *labelTextAttributes;
+@property (nonatomic, readonly) ABTransportButton *transportIcon;
 
 + (BOOL)requiresConstraintBasedLayout;
 

@@ -2,33 +2,23 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSFileAccessNode, NSObject<OS_xpc_object>;
-
 @interface NSFileReactorProxy : NSObject {
     NSObject<OS_xpc_object> *_client;
     NSFileAccessNode *_itemLocation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _messageSender;
-
+    id /* block */ _messageSender;
     id _reactorID;
 }
 
 - (id)client;
-- (void)collectDebuggingInformationWithCompletionHandler:(id)arg1;
+- (void)collectDebuggingInformationWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndenting:(id)arg1;
 - (void)finalize;
-- (void)forwardUsingMessageSender:(id)arg1;
-- (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id)arg3;
+- (void)forwardUsingMessageSender:(id /* block */)arg1;
+- (id)initWithClient:(id)arg1 reactorID:(id)arg2 messageSender:(id /* block */)arg3;
 - (id)itemLocation;
-- (id)messageSender;
+- (id /* block */)messageSender;
 - (id)reactorID;
 - (void)setItemLocation:(id)arg1;
 

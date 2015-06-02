@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFSiriContext;
-
 @interface AFContextResponse : AFSiriResponse {
     AFSiriContext *_context;
 }

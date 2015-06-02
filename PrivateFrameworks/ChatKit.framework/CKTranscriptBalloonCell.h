@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKBalloonView, NSAttributedString, UILabel;
-
 @interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
     CKBalloonView *_balloonView;
     UILabel *_drawerLabel;
@@ -16,12 +14,12 @@
     BOOL _drawerWasVisible;
 }
 
-@property(retain) CKBalloonView * balloonView;
-@property(retain) UILabel * drawerLabel;
-@property(copy) NSAttributedString * drawerText;
-@property BOOL drawerTextChanged;
-@property struct CGSize { float x1; float x2; } drawerTextSize;
-@property BOOL drawerWasVisible;
+@property (nonatomic, retain) CKBalloonView *balloonView;
+@property (nonatomic, retain) UILabel *drawerLabel;
+@property (nonatomic, copy) NSAttributedString *drawerText;
+@property (nonatomic) BOOL drawerTextChanged;
+@property (nonatomic) struct CGSize { float x1; float x2; } drawerTextSize;
+@property (nonatomic) BOOL drawerWasVisible;
 
 - (id)balloonView;
 - (void)configureForChatItem:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
-
 @interface SSApplicationVersionCondition : SSProtocolCondition {
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;

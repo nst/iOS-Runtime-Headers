@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFPEffect : NSObject {
-}
+@interface MFPEffect : NSObject
 
 + (id)GUID;
 

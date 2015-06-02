@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class GEOMapRegion, NSString, PBUnknownFields;
-
 @interface MSPRegionBookmark : PBCodable <NSCopying> {
     GEOMapRegion *_region;
     NSString *_title;
     PBUnknownFields *_unknownFields;
 }
 
-@property(readonly) BOOL hasRegion;
-@property(readonly) BOOL hasTitle;
-@property(retain) GEOMapRegion * region;
-@property(retain) NSString * title;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, readonly) BOOL hasRegion;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, retain) GEOMapRegion *region;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

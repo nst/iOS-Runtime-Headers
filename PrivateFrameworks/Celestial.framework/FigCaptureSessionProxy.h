@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <FigCaptureSessionPreviewTapDelegate>;
-
 @interface FigCaptureSessionProxy : NSObject {
     long long _identifier;
     <FigCaptureSessionPreviewTapDelegate> *_previewTapDelegate;
@@ -11,7 +9,7 @@
     struct OpaqueFigCaptureSession { } *_session;
 }
 
-@property(readonly) long long identifier;
+@property (readonly) long long identifier;
 
 + (void)initialize;
 

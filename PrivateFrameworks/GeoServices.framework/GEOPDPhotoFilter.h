@@ -8,8 +8,8 @@
     unsigned int _photoSizeFiltersSpace;
 }
 
-@property(readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* photoSizeFilters;
-@property(readonly) unsigned int photoSizeFiltersCount;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*photoSizeFilters;
+@property (nonatomic, readonly) unsigned int photoSizeFiltersCount;
 
 - (void)addPhotoSizeFilter:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)clearPhotoSizeFilters;

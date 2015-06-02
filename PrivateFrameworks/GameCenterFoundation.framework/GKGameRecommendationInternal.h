@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString;
-
 @interface GKGameRecommendationInternal : GKGameInternal {
     NSString *_engineID;
     NSString *_reason;
 }
 
-@property(retain) NSString * engineID;
-@property(retain) NSString * reason;
+@property (nonatomic, retain) NSString *engineID;
+@property (nonatomic, retain) NSString *reason;
 
 + (id)secureCodedPropertyKeys;
 

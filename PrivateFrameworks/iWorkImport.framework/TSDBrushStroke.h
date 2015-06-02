@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDBrushStroke : TSDSmartStroke {
-}
+@interface TSDBrushStroke : TSDSmartStroke
 
 + (void)applicationDidBecomeActive;
 + (void)applicationWillResignActive;

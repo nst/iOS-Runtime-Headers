@@ -8,7 +8,7 @@
     BOOL _restoring;
 }
 
-@property(getter=isRestoring) BOOL restoring;
+@property (getter=isRestoring, nonatomic) BOOL restoring;
 
 + (id)sharedInstance;
 

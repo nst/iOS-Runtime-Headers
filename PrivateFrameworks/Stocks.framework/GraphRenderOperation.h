@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class <GraphRenderOperationDelegate>, NSArray, StockChartDisplayMode, StockGraphImageSet;
-
 @interface GraphRenderOperation : NSObject {
     BOOL _cancelled;
     <GraphRenderOperationDelegate> *_delegate;
@@ -34,22 +32,22 @@
     } _volumeGraphSize;
 }
 
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property <GraphRenderOperationDelegate> * delegate;
-@property(retain) StockChartDisplayMode * displayMode;
-@property(retain) NSArray * dottedLinePositions;
-@property(retain) NSArray * dottedLinePositionsForStyleOnly;
-@property(retain) StockGraphImageSet * graphImageSet;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
-@property struct CGSize { float x1; float x2; } graphSize;
-@property(retain) NSArray * linePointCounts;
-@property unsigned long long maxVolume;
-@property struct CGPoint { float x1; float x2; }* points;
-@property BOOL roundLineCaps;
-@property float volumeBarWidth;
-@property struct { float x1; unsigned long long x2; }* volumeBars;
-@property unsigned int volumeCount;
-@property struct CGSize { float x1; float x2; } volumeGraphSize;
+@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (nonatomic) <GraphRenderOperationDelegate> *delegate;
+@property (nonatomic, retain) StockChartDisplayMode *displayMode;
+@property (nonatomic, retain) NSArray *dottedLinePositions;
+@property (nonatomic, retain) NSArray *dottedLinePositionsForStyleOnly;
+@property (nonatomic, retain) StockGraphImageSet *graphImageSet;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } graphInsets;
+@property (nonatomic) struct CGSize { float x1; float x2; } graphSize;
+@property (nonatomic, retain) NSArray *linePointCounts;
+@property (nonatomic) unsigned long long maxVolume;
+@property (nonatomic) struct CGPoint { float x1; float x2; }*points;
+@property (nonatomic) BOOL roundLineCaps;
+@property (nonatomic) float volumeBarWidth;
+@property (nonatomic) struct { float x1; unsigned long long x2; }*volumeBars;
+@property (nonatomic) unsigned int volumeCount;
+@property (nonatomic) struct CGSize { float x1; float x2; } volumeGraphSize;
 
 - (void).cxx_destruct;
 - (void)cancel;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBarForegroundStyleAttributes, UIStatusBarItem, UIStatusBarLayoutManager, _UILegibilityView;
-
 @interface UIStatusBarItemView : UIView {
     BOOL _allowsUpdates;
     float _currentOverlap;
@@ -16,11 +14,11 @@
     BOOL _visible;
 }
 
-@property BOOL allowsUpdates;
-@property(readonly) UIStatusBarForegroundStyleAttributes * foregroundStyle;
-@property(readonly) UIStatusBarItem * item;
-@property UIStatusBarLayoutManager * layoutManager;
-@property(getter=isVisible) BOOL visible;
+@property (nonatomic) BOOL allowsUpdates;
+@property (nonatomic, readonly) UIStatusBarForegroundStyleAttributes *foregroundStyle;
+@property (nonatomic, readonly) UIStatusBarItem *item;
+@property (nonatomic) UIStatusBarLayoutManager *layoutManager;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 

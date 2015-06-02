@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString, PFUbiquityPeer, PFUbiquityStoreMetadata;
+@interface PFUbiquityPeerState : NSManagedObject
 
-@interface PFUbiquityPeerState : NSManagedObject {
-}
-
-@property(retain) NSString * lastProcessedTransactionLogURL;
-@property(retain) PFUbiquityPeer * peer;
-@property(retain) PFUbiquityStoreMetadata * storeMetadata;
-@property(retain) NSString * storeName;
-@property(retain) NSNumber * transactionNumber;
+@property (nonatomic, retain) NSString *lastProcessedTransactionLogURL;
+@property (nonatomic, retain) PFUbiquityPeer *peer;
+@property (nonatomic, retain) PFUbiquityStoreMetadata *storeMetadata;
+@property (nonatomic, retain) NSString *storeName;
+@property (nonatomic, retain) NSNumber *transactionNumber;
 
 + (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3 createIfMissing:(BOOL)arg4;

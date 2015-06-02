@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMStyleMedia : DOMObject
 
-@interface DOMStyleMedia : DOMObject {
-}
-
-@property(copy,readonly) NSString * type;
+@property (readonly, copy) NSString *type;
 
 - (void)dealloc;
 - (void)finalize;

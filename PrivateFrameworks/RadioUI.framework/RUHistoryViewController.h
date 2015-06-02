@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUHistoryViewControllerDelegate>, MPAVItem, MPMoviePlayerController, NSArray, NSMutableArray, NSString, RUHistoryDataSource, RUPreviewSession, RURadioAdTrack, RUWishlistDataSource, RadioHistoryCategory, SKUICircleProgressIndicator, UIActionSheet, UILabel, UITableView;
-
 @interface RUHistoryViewController : UIViewController <RUAudioPreviewViewDelegate, RUHistoryDataSourceDelegate, RUPreviewSessionObserver, RUWishlistDataSourceDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     SKUICircleProgressIndicator *_activityIndicator;
     UIActionSheet *_confirmationActionSheet;
@@ -23,12 +21,12 @@
     NSMutableArray *_wishlistedTracks;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUHistoryViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int historyType;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUHistoryViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int historyType;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_clearAction:(id)arg1;

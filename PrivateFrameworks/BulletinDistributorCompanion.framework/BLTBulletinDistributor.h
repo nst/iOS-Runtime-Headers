@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BBObserver, BLTAttachmentHashCache, BLTBulletinDistributorSubscriberList, BLTRemoteGizmoClient, BLTSettingSync, BLTWatchKitAppList, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface BLTBulletinDistributor : NSObject <BBObserverDelegate, BLTCompanionServer, NSXPCListenerDelegate> {
     BLTAttachmentHashCache *_attachmentHashCache;
     BBObserver *_bbObserver;
@@ -17,19 +15,19 @@
     BLTWatchKitAppList *_watchKitAppList;
 }
 
-@property(retain) BLTAttachmentHashCache * attachmentHashCache;
-@property(retain) BBObserver * bbObserver;
-@property(retain) NSMutableDictionary * bulletins;
-@property(copy) NSString * bundleRootPath;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) BLTRemoteGizmoClient * gizmoConnection;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableSet * lockScreenFeed;
-@property(retain) NSMutableSet * noticesFeed;
-@property(retain) BLTBulletinDistributorSubscriberList * subscribers;
-@property(readonly) Class superclass;
-@property(retain) BLTWatchKitAppList * watchKitAppList;
+@property (nonatomic, retain) BLTAttachmentHashCache *attachmentHashCache;
+@property (nonatomic, retain) BBObserver *bbObserver;
+@property (nonatomic, retain) NSMutableDictionary *bulletins;
+@property (nonatomic, copy) NSString *bundleRootPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) BLTRemoteGizmoClient *gizmoConnection;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableSet *lockScreenFeed;
+@property (nonatomic, retain) NSMutableSet *noticesFeed;
+@property (nonatomic, retain) BLTBulletinDistributorSubscriberList *subscribers;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) BLTWatchKitAppList *watchKitAppList;
 
 + (id)sharedDistributor;
 
@@ -50,8 +48,8 @@
 - (id)bulletins;
 - (id)bundleRootPath;
 - (void)dealloc;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id)arg2;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (id)gizmoConnection;
 - (void)handleAcknowledgeActionForPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (void)handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5;
@@ -63,7 +61,7 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)lockScreenFeed;
 - (id)noticesFeed;
-- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id)arg5;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id /* block */)arg5;
 - (id)observer:(id)arg1 composedAttachmentImageForType:(int)arg2 thumbnailData:(id)arg3 key:(id)arg4;
 - (struct CGSize { float x1; float x2; })observer:(id)arg1 composedAttachmentSizeForType:(int)arg2 thumbnailWidth:(float)arg3 height:(float)arg4 key:(id)arg5;
 - (void)observer:(id)arg1 modifyBulletin:(id)arg2 forFeed:(unsigned int)arg3;
@@ -81,7 +79,7 @@
 - (void)setGizmoConnection:(id)arg1;
 - (void)setLockScreenFeed:(id)arg1;
 - (void)setNoticesFeed:(id)arg1;
-- (void)setReplyBlock:(id)arg1 forSection:(id)arg2 bulletin:(id)arg3 publicationDate:(id)arg4;
+- (void)setReplyBlock:(id /* block */)arg1 forSection:(id)arg2 bulletin:(id)arg3 publicationDate:(id)arg4;
 - (void)setSubscribers:(id)arg1;
 - (void)setWatchKitAppList:(id)arg1;
 - (id)subscribers;

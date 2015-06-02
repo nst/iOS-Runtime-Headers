@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CALayer, CAReplicatorLayer;
-
 @interface CKTypingIndicatorLayer : CALayer {
     CALayer *_largeBubble;
     CALayer *_mediumBubble;
@@ -12,11 +10,11 @@
     CAReplicatorLayer *_thinkingDots;
 }
 
-@property(retain) CALayer * largeBubble;
-@property(retain) CALayer * mediumBubble;
-@property(retain) CALayer * smallBubble;
-@property(retain) CALayer * thinkingDot;
-@property(retain) CAReplicatorLayer * thinkingDots;
+@property (nonatomic, retain) CALayer *largeBubble;
+@property (nonatomic, retain) CALayer *mediumBubble;
+@property (nonatomic, retain) CALayer *smallBubble;
+@property (nonatomic, retain) CALayer *thinkingDot;
+@property (nonatomic, retain) CAReplicatorLayer *thinkingDots;
 
 - (void)_buildThinkingDots;
 - (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;

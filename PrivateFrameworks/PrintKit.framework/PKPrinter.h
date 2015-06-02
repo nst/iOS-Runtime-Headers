@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSURL, PKPaperList;
-
 @interface PKPrinter : NSObject {
     PKPaperList *_paperList;
     int accessState;
@@ -20,10 +9,7 @@
     BOOL hasIdentifyPrinterOp;
     BOOL isFromMCProfile;
     BOOL isLocal;
-
-  /* Error parsing encoded ivar type info: ^{_http_s=iiiiiiii{sockaddr_in=CCS{in_addr=I}[8c]}[256c][27[256c]]*iii[2048c]i{_cups_md5_state_s=[2I][4I][64C]}[256c]i^{SSLContext}i^{fd_set}i*[256c][256c]iq^(_http_addr_u)^{http_addrlist_s}[2048c]i**^{__CFArray}^?^vdiii******i{z_stream_s=*II*II*^{internal_state}^?^?^viII}*} */
     struct _http_s { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8; struct sockaddr_in { unsigned char x_9_1_1; unsigned char x_9_1_2; unsigned short x_9_1_3; struct in_addr { unsigned int x_4_2_1; } x_9_1_4; BOOL x_9_1_5[8]; } x9; BOOL x10[256]; BOOL x11[27][256]; char *x12; int x13; int x14; int x15; BOOL x16[2048]; int x17; struct _cups_md5_state_s { unsigned int x_18_1_1[2]; unsigned int x_18_1_2[4]; unsigned char x_18_1_3[64]; } x18; BOOL x19[256]; int x20; struct SSLContext {} *x21; int x22; struct fd_set {} *x23; int x24; char *x25; BOOL x26[256]; BOOL x27[256]; int x28; long long x29; union { /* Warning: Unrecognized filer type: '_' using 'void*' */ void*x_30_1_1; void*x_30_1_2; void*x_30_1_3; void*x_30_1_4; void*x_30_1_5; void*x_30_1_6; void*x_30_1_7; double x_30_1_8; double x_30_1_9; const void*x_30_1_10; void*x_30_1_11; } *x30; struct http_addrlist_s {} *x31; BOOL x32[2048]; int x33; char *x34; char *x35; struct __CFArray {} *x36; int (*x37)(); void *x38; double x39; int x40; int x41; int x42; char *x43; char *x44; char *x45; char *x46; char *x47; char *x48; int x49; struct z_stream_s { char *x_50_1_1; unsigned int x_50_1_2; unsigned int x_50_1_3; char *x_50_1_4; unsigned int x_50_1_5; unsigned int x_50_1_6; char *x_50_1_7; struct internal_state {} *x_50_1_8; int (*x_50_1_9)(); int (*x_50_1_10)(); void *x_50_1_11; int x_50_1_12; unsigned int x_50_1_13; unsigned int x_50_1_14; } x50; char *x51; } *job_http;
-
     int kind;
     NSArray *mandatoryJobAttributes;
     int maxCopies;
@@ -42,28 +28,28 @@
     int type;
 }
 
-@property(retain) NSDictionary * TXTRecord;
+@property (retain) NSDictionary *TXTRecord;
 @property int accessState;
-@property(readonly) int accessState;
-@property(readonly) BOOL hasIdentifyPrinterOp;
-@property(readonly) BOOL hasPrintInfoSupported;
-@property(retain) NSString * hostname;
-@property(readonly) BOOL isAdobeRGBSupported;
+@property (readonly) int accessState;
+@property (readonly) BOOL hasIdentifyPrinterOp;
+@property (readonly) BOOL hasPrintInfoSupported;
+@property (retain) NSString *hostname;
+@property (readonly) BOOL isAdobeRGBSupported;
 @property BOOL isFromMCProfile;
-@property(readonly) BOOL isIPPS;
+@property (readonly) BOOL isIPPS;
 @property BOOL isLocal;
-@property(readonly) int jobTypesSupported;
-@property(readonly) int kind;
-@property(readonly) NSString * name;
-@property(readonly) BOOL needsSetup;
-@property(retain) PKPaperList * paperList;
-@property(retain) NSNumber * port;
-@property(readonly) NSDictionary * printInfoSupported;
-@property(readonly) NSURL * printerURL;
-@property(retain,readonly) NSString * scheme;
-@property(readonly) BOOL setupSupportsPasswordScope;
-@property(readonly) int type;
-@property(readonly) NSString * uuid;
+@property (readonly) int jobTypesSupported;
+@property (readonly) int kind;
+@property (readonly) NSString *name;
+@property (readonly) BOOL needsSetup;
+@property (retain) PKPaperList *paperList;
+@property (retain) NSNumber *port;
+@property (readonly) NSDictionary *printInfoSupported;
+@property (readonly) NSURL *printerURL;
+@property (readonly, retain) NSString *scheme;
+@property (readonly) BOOL setupSupportsPasswordScope;
+@property (readonly) int type;
+@property (readonly) NSString *uuid;
 
 + (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; int x9; int x10; }*)getAttributes:(const char **)arg1 count:(int)arg2 fromURI:(id)arg3;
 + (id)hardcodedURIs;
@@ -141,14 +127,14 @@
 - (void)setPrivateObject:(id)arg1 forKey:(id)arg2;
 - (void)setTXTRecord:(id)arg1;
 - (BOOL)setupSupportsPasswordScope;
-- (void)setupWithOptions:(id)arg1 completionHandler:(id)arg2;
-- (void)showPassCodeForSetupWithCompletionHandler:(id)arg1;
+- (void)setupWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)showPassCodeForSetupWithCompletionHandler:(id /* block */)arg1;
 - (int)startJob:(id)arg1 ofType:(id)arg2;
 - (id)txtRecordObjectForKey:(id)arg1;
 - (int)type;
-- (void)unlockWithCompletionHandler:(id)arg1;
+- (void)unlockWithCompletionHandler:(id /* block */)arg1;
 - (void)updateType;
 - (id)uuid;
-- (void)validatePassCode:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)validatePassCode:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

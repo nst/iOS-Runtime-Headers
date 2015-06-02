@@ -6,7 +6,7 @@
     int _keyboardButtonStyle;
 }
 
-@property(readonly) int keyboardButtonStyle;
+@property (nonatomic, readonly) int keyboardButtonStyle;
 
 - (id)initWithKeyboardButtonStyle:(int)arg1;
 - (int)keyboardButtonStyle;

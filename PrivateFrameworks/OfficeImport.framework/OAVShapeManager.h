@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDictionary, OAVReadState, OCPPackagePart;
-
 @interface OAVShapeManager : NSObject {
     OAVReadState *mOAVState;
     OCPPackagePart *mPackagePart;

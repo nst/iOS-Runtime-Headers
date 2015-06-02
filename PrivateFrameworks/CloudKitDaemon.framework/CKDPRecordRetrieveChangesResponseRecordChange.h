@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord, CKDPRecordIdentifier, CKDPRecordType, NSString;
-
 @interface CKDPRecordRetrieveChangesResponseRecordChange : PBCodable <NSCopying> {
     NSString *_etag;
     struct { 
@@ -15,16 +13,16 @@
     int _type;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasRecord;
-@property(readonly) BOOL hasRecordIdentifier;
-@property(readonly) BOOL hasRecordType;
-@property BOOL hasType;
-@property(retain) CKDPRecord * record;
-@property(retain) CKDPRecordIdentifier * recordIdentifier;
-@property(retain) CKDPRecordType * recordType;
-@property int type;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasRecord;
+@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) BOOL hasRecordType;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) CKDPRecord *record;
+@property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
+@property (nonatomic, retain) CKDPRecordType *recordType;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

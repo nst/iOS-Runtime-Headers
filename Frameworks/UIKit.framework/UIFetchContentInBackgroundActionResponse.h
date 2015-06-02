@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIFetchContentInBackgroundActionResponse : BSActionResponse {
-}
+@interface UIFetchContentInBackgroundActionResponse : BSActionResponse
 
-@property(readonly) unsigned int result;
+@property (nonatomic, readonly) unsigned int result;
 
 + (id)responseWithResult:(unsigned int)arg1;
 

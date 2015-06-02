@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIButton;
+@interface CKTranscriptGroupHeaderViewController : CKTranscriptHeaderViewController
 
-@interface CKTranscriptGroupHeaderViewController : CKTranscriptHeaderViewController {
-}
-
-@property(retain,readonly) UIButton * headerButton;
+@property (nonatomic, readonly, retain) UIButton *headerButton;
 
 - (id)_groupHeaderComposeRecipients;
 - (void)_handleConversationRecipientsChanged:(id)arg1;

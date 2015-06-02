@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSASAssetDownloaderDelegate>, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface MSASAssetDownloader : MSASAssetTransferer {
     NSMutableDictionary *_assetToItemInFlightMap;
     NSString *_currentFocusAlbumGUID;
@@ -18,18 +16,18 @@
     int _state;
 }
 
-@property(retain) NSMutableDictionary * assetToItemInFlightMap;
-@property(retain) NSString * currentFocusAlbumGUID;
-@property(retain) NSString * currentFocusAssetCollectionGUID;
-@property <MSASAssetDownloaderDelegate> * delegate;
-@property BOOL didEncounterNetworkConditionError;
-@property(retain) NSString * downloadBatchPerfGUID;
-@property(retain) NSMutableArray * finishedAssets;
-@property BOOL isDownloadingThumbnails;
-@property BOOL isWaitingForFirstDownloadEvent;
-@property(retain) NSMutableArray * itemsInFlight;
-@property(retain) NSString * objectGUID;
-@property int state;
+@property (nonatomic, retain) NSMutableDictionary *assetToItemInFlightMap;
+@property (nonatomic, retain) NSString *currentFocusAlbumGUID;
+@property (nonatomic, retain) NSString *currentFocusAssetCollectionGUID;
+@property (nonatomic) <MSASAssetDownloaderDelegate> *delegate;
+@property (nonatomic) BOOL didEncounterNetworkConditionError;
+@property (nonatomic, retain) NSString *downloadBatchPerfGUID;
+@property (nonatomic, retain) NSMutableArray *finishedAssets;
+@property (nonatomic) BOOL isDownloadingThumbnails;
+@property (nonatomic) BOOL isWaitingForFirstDownloadEvent;
+@property (nonatomic, retain) NSMutableArray *itemsInFlight;
+@property (nonatomic, retain) NSString *objectGUID;
+@property (nonatomic) int state;
 
 - (void).cxx_destruct;
 - (void)MMCSEngine:(id)arg1 didCreateRequestorContext:(id)arg2 forAssets:(id)arg3;
@@ -55,7 +53,7 @@
 - (BOOL)isWaitingForFirstDownloadEvent;
 - (id)itemsInFlight;
 - (id)objectGUID;
-- (void)registerAssets:(id)arg1 completionBlock:(id)arg2;
+- (void)registerAssets:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setAssetToItemInFlightMap:(id)arg1;
 - (void)setCurrentFocusAlbumGUID:(id)arg1;
 - (void)setCurrentFocusAssetCollectionGUID:(id)arg1;
@@ -72,9 +70,9 @@
 - (void)workQueueCancel;
 - (void)workQueueDownloadNextBatch;
 - (id)workQueueObjectGUID;
-- (void)workQueueRegisterAssets:(id)arg1 completionBlock:(id)arg2;
+- (void)workQueueRegisterAssets:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)workQueueRetryOutstandingActivities;
-- (void)workQueueShutDownCompletionBlock:(id)arg1;
+- (void)workQueueShutDownCompletionBlock:(id /* block */)arg1;
 - (void)workQueueStop;
 - (void)workQueueUnregisterAssets:(id)arg1;
 

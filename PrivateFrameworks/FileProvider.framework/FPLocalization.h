@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FileProvider.framework/FileProvider
  */
 
-@interface FPLocalization : NSObject {
-}
+@interface FPLocalization : NSObject
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROBrailleTranslatorProtocol>, NSBundle, NSLock;
-
 @interface SCROBrailleTranslationManager : NSObject {
     BOOL _alwaysUsesNemethCodeForTechnicalText;
     BOOL _auxTableSupportsContractedBraille;
@@ -18,11 +16,11 @@
     NSBundle *_translatorBundle;
 }
 
-@property BOOL alwaysUsesNemethCodeForTechnicalText;
-@property(readonly) BOOL auxiliaryTableSupportsContractedBraille;
-@property(readonly) BOOL auxiliaryTableSupportsEightDotBraille;
-@property(readonly) BOOL primaryTableSupportsContractedBraille;
-@property(readonly) BOOL primaryTableSupportsEightDotBraille;
+@property (nonatomic) BOOL alwaysUsesNemethCodeForTechnicalText;
+@property (nonatomic, readonly) BOOL auxiliaryTableSupportsContractedBraille;
+@property (nonatomic, readonly) BOOL auxiliaryTableSupportsEightDotBraille;
+@property (nonatomic, readonly) BOOL primaryTableSupportsContractedBraille;
+@property (nonatomic, readonly) BOOL primaryTableSupportsEightDotBraille;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;

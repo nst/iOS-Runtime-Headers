@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMFocusPointView : CAMFocusView {
-}
+@interface CAMFocusPointView : CAMFocusView
 
 - (double)dimAfterInteractionDelay;
 - (id)nameForDarkImage;

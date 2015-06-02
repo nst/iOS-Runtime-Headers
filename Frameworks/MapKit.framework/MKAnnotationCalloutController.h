@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKAnnotationCalloutControllerDelegate>, MKAnnotationView;
-
 @interface MKAnnotationCalloutController : NSObject {
     MKAnnotationView *_annotationView;
     <MKAnnotationCalloutControllerDelegate> *_delegate;
     unsigned int _mapDisplayStyle;
 }
 
-@property(retain) MKAnnotationView * annotationView;
-@property <MKAnnotationCalloutControllerDelegate> * delegate;
-@property unsigned int mapDisplayStyle;
+@property (nonatomic, retain) MKAnnotationView *annotationView;
+@property (nonatomic) <MKAnnotationCalloutControllerDelegate> *delegate;
+@property (nonatomic) unsigned int mapDisplayStyle;
 
 - (void).cxx_destruct;
 - (void)_addAccessoryTargetForView:(id)arg1;

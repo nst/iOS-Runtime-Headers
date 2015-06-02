@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQZArchiveInputStream>;
-
 @interface GQZEntry : NSObject {
     unsigned long long mCompressedSize;
     int mCompressionMethod;

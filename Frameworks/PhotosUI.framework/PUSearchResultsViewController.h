@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PUSearchResultDataSource;
-
 @interface PUSearchResultsViewController : PUPhotosGridViewController <PUPhotosSectionHeaderViewDelegate, PUSearchResultDelegate> {
     PUSearchResultDataSource *_searchResultDataSource;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PUSearchResultDataSource * searchResultDataSource;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PUSearchResultDataSource *searchResultDataSource;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reloadVisibleMomentHeadersAnimated:(BOOL)arg1;

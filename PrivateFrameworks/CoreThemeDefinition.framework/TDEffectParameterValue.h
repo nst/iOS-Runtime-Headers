@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSNumber, TDEffectComponent, TDEffectParameterType;
+@interface TDEffectParameterValue : NSManagedObject
 
-@interface TDEffectParameterValue : NSManagedObject {
-}
-
-@property(retain) NSNumber * angleValue;
-@property(retain) NSNumber * colorValue;
-@property(retain) TDEffectComponent * component;
-@property(retain) NSNumber * floatValue;
-@property(retain) NSNumber * intValue;
-@property(retain) TDEffectParameterType * parameterType;
+@property (nonatomic, retain) NSNumber *angleValue;
+@property (nonatomic, retain) NSNumber *colorValue;
+@property (nonatomic, retain) TDEffectComponent *component;
+@property (nonatomic, retain) NSNumber *floatValue;
+@property (nonatomic, retain) NSNumber *intValue;
+@property (nonatomic, retain) TDEffectParameterType *parameterType;
 
 @end

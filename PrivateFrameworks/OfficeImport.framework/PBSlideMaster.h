@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PBSlideMaster : PBSlideBase {
-}
+@interface PBSlideMaster : PBSlideBase
 
 + (id)createMasterStyleMap:(id)arg1 state:(id)arg2;
 + (void)flattenBaseMasterStyleType:(int)arg1 masterStyleMap:(id)arg2;

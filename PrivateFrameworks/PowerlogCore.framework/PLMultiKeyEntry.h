@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary;
-
 @interface PLMultiKeyEntry : PLEntry {
     NSMutableDictionary *_multiKeys;
 }
 
-@property(retain) NSMutableDictionary * multiKeys;
+@property (retain) NSMutableDictionary *multiKeys;
 
 + (void)load;
 

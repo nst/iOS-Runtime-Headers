@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UIColor, UIView;
-
 @interface RUInnerShadowHeaderFooterView : UITableViewHeaderFooterView {
     UIView *_shadowBackgroundView;
     struct UIEdgeInsets { 
@@ -15,8 +13,8 @@
     UIView *_shadowView;
 }
 
-@property(retain) UIColor * shadowBackgroundColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } shadowEdgeInsets;
+@property (nonatomic, retain) UIColor *shadowBackgroundColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } shadowEdgeInsets;
 
 + (float)defaultInnerShadowRadius;
 

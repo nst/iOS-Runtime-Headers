@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSDictionary;
-
 @interface BLTSectionConfiguration : NSObject {
     NSDictionary *_configurations;
 }

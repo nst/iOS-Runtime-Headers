@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface AppLaunchStatsDiag : NSObject {
     NSObject<OS_dispatch_queue> *APLSDiagQueue;
     NSObject<OS_dispatch_source> *APLSDiagTimer;

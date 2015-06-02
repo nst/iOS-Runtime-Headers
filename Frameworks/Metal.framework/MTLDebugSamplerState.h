@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLSamplerDescriptor;
-
 @interface MTLDebugSamplerState : MTLToolsSamplerState {
     MTLSamplerDescriptor *_descriptor;
 }
 
-@property(copy,readonly) MTLSamplerDescriptor * descriptor;
+@property (nonatomic, readonly, copy) MTLSamplerDescriptor *descriptor;
 
 - (void).cxx_destruct;
 - (id)description;

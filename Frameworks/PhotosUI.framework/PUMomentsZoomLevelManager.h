@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMutableArray, NSString, PUCollectionViewIntermediateDataSource, PUPhotosDataSource, PUSessionInfo, PUZoomableGridViewControllerSpec;
-
 @interface PUMomentsZoomLevelManager : NSObject <PUPhotosDataSourceChangeObserver> {
     NSMutableArray *_allLevelInfos;
     BOOL _isInvalidatingLayoutOfZoomLevels;
@@ -13,16 +11,16 @@
     PUZoomableGridViewControllerSpec *_zoomableGridSpec;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int highestZoomLevel;
-@property(readonly) unsigned int lowestZoomLevel;
-@property(readonly) unsigned int preferredDefaultZoomLevel;
-@property(retain) PUSessionInfo * sessionInfo;
-@property(readonly) PUCollectionViewIntermediateDataSource * sharedIntermediateDataSource;
-@property(readonly) Class superclass;
-@property(readonly) PUZoomableGridViewControllerSpec * zoomableGridSpec;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int highestZoomLevel;
+@property (nonatomic, readonly) unsigned int lowestZoomLevel;
+@property (nonatomic, readonly) unsigned int preferredDefaultZoomLevel;
+@property (nonatomic, retain) PUSessionInfo *sessionInfo;
+@property (nonatomic, readonly) PUCollectionViewIntermediateDataSource *sharedIntermediateDataSource;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PUZoomableGridViewControllerSpec *zoomableGridSpec;
 
 - (void).cxx_destruct;
 - (void)_defaultsDidChange:(id)arg1;

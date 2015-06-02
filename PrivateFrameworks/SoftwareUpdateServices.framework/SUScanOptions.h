@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSMutableSet, NSSet, NSString;
-
 @interface SUScanOptions : NSObject <NSSecureCoding> {
     BOOL _forced;
     NSString *_identifier;
     NSMutableSet *_types;
 }
 
-@property(getter=isForced) BOOL forced;
-@property(retain) NSString * identifier;
-@property(retain) NSSet * types;
+@property (getter=isForced, nonatomic) BOOL forced;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSSet *types;
 
 + (BOOL)supportsSecureCoding;
 

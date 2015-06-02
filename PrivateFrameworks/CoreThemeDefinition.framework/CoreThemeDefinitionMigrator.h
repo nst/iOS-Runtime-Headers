@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSMigrationManager, NSString, NSURL;
-
 @interface CoreThemeDefinitionMigrator : NSObject {
     NSURL *_documentURL;
     NSMigrationManager *_migrationManager;
@@ -12,7 +10,7 @@
     NSString *temporaryMigrationPath;
 }
 
-@property(copy) NSString * temporaryMigrationPath;
+@property (copy) NSString *temporaryMigrationPath;
 
 - (BOOL)_checkDiskSpace:(id*)arg1;
 - (BOOL)_updateMetadata:(id*)arg1;

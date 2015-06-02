@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface PSYDeviceSyncStateProvider : NSObject {
     unsigned long long _notifyState;
     int _notifyToken;
@@ -21,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
 - (void)deviceSyncStateChangedRemotely;
-- (void)enumerateObserversWithBlock:(id)arg1;
+- (void)enumerateObserversWithBlock:(id /* block */)arg1;
 - (id)init;
 - (void)removeObserver:(id)arg1;
 - (unsigned int)syncState;

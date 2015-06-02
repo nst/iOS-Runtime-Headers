@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDShowCalendarAction : DDAction {
-}
+@interface DDShowCalendarAction : DDAction
 
 - (id)localizedName;
 - (void)perform;

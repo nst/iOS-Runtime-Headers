@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface _PLFetchingAlbum : PLGenericAlbum {
-}
+@interface _PLFetchingAlbum : PLGenericAlbum
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

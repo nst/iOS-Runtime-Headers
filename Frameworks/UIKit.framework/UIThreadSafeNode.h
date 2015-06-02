@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMNode;
-
 @interface UIThreadSafeNode : NSObject {
     DOMNode *_node;
 }

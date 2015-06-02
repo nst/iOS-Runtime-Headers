@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCManagedMediaManagerReader : NSObject {
-}
+@interface MCManagedMediaManagerReader : NSObject
 
 + (id)managedBooks;
 

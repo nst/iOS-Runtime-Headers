@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIGlintyStringViewDelegate>, NSMutableSet, NSString, UIColor, UIFont, UIImage, UILabel, UIView, _UILegibilitySettings, _UIVibrantSettings;
-
 @interface _UIGlintyStringView : UIView {
     BOOL _adjustsFontSizeToFitWidth;
     BOOL _allowsLuminanceAdjustments;
@@ -53,41 +51,41 @@
     _UIVibrantSettings *_vibrantSettings;
 }
 
-@property BOOL adjustsFontSizeToFitWidth;
-@property BOOL allowsLuminanceAdjustments;
-@property BOOL animating;
-@property BOOL animationRepeats;
-@property(retain) UIColor * backgroundColor;
-@property(retain) UIView * backgroundView;
-@property float blurAlpha;
-@property(retain) NSMutableSet * blurHiddenRequesters;
-@property(retain) UIView * blurView;
-@property(retain) UIImage * chevron;
-@property(retain) UIColor * chevronBackgroundColor;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chevronFrame;
-@property int chevronStyle;
-@property <_UIGlintyStringViewDelegate> * delegate;
-@property(retain) UIView * effectView;
-@property BOOL fading;
-@property(retain) UIFont * font;
-@property BOOL hasCustomBackgroundColor;
-@property BOOL highlight;
-@property(retain) UIView * highlightView;
-@property float horizontalPadding;
-@property(retain) UILabel * label;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } labelFrame;
-@property struct CGSize { float x1; float x2; } labelSize;
-@property(retain) _UILegibilitySettings * legibilitySettings;
-@property BOOL needsTextUpdate;
-@property(retain) UIView * reflectionImageView;
-@property(retain) UIView * shimmerImageView;
-@property BOOL showing;
-@property(retain) UIView * spotlightView;
-@property(copy) NSString * text;
-@property int textIndex;
-@property(copy) NSString * textLanguage;
-@property BOOL usesBackgroundDimming;
-@property(retain) _UIVibrantSettings * vibrantSettings;
+@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
+@property (nonatomic) BOOL allowsLuminanceAdjustments;
+@property (nonatomic) BOOL animating;
+@property (nonatomic) BOOL animationRepeats;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic) float blurAlpha;
+@property (nonatomic, retain) NSMutableSet *blurHiddenRequesters;
+@property (nonatomic, retain) UIView *blurView;
+@property (nonatomic, retain) UIImage *chevron;
+@property (nonatomic, retain) UIColor *chevronBackgroundColor;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } chevronFrame;
+@property (nonatomic) int chevronStyle;
+@property (nonatomic) <_UIGlintyStringViewDelegate> *delegate;
+@property (nonatomic, retain) UIView *effectView;
+@property (nonatomic) BOOL fading;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic) BOOL hasCustomBackgroundColor;
+@property (nonatomic) BOOL highlight;
+@property (nonatomic, retain) UIView *highlightView;
+@property (nonatomic) float horizontalPadding;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } labelFrame;
+@property (nonatomic) struct CGSize { float x1; float x2; } labelSize;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic) BOOL needsTextUpdate;
+@property (nonatomic, retain) UIView *reflectionImageView;
+@property (nonatomic, retain) UIView *shimmerImageView;
+@property (nonatomic) BOOL showing;
+@property (nonatomic, retain) UIView *spotlightView;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textIndex;
+@property (nonatomic, copy) NSString *textLanguage;
+@property (nonatomic) BOOL usesBackgroundDimming;
+@property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
 - (float)_chevronHeightWithMaxOffset;
 - (id)_chevronImageForStyle:(int)arg1;

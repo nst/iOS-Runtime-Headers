@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CPLEngineStoreUserIdentifier>, <CPLEngineTransportSetupTask>, CPLBackgroundDownloadsTask, CPLBackgroundUploadsTask, CPLEngineLibrary, CPLEngineSyncEmergencyTask, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPushToTransportTask, NSError, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CPLEngineSyncManager : NSObject <CPLAbstractObject, CPLBackgroundDownloadsTaskDelegate, CPLBackgroundUploadsTaskDelegate, CPLEngineComponent, CPLEngineSyncEmergencyTaskDelegate, CPLMinglePulledChangesTaskDelegate, CPLPullFromTransportTaskDelegate, CPLPushToTransportTaskDelegate> {
     NSMutableArray *_archivedManagementTasks;
     CPLBackgroundDownloadsTask *_backgroundDownloadsTask;
     CPLBackgroundUploadsTask *_backgroundUploadsTask;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _closingCompletionHandler;
-
+    id /* block */ _closingCompletionHandler;
     NSMutableDictionary *_completionHandlerPerTaskIdentifier;
     CPLEngineLibrary *_engineLibrary;
     BOOL _foreground;
@@ -40,14 +30,14 @@
     <CPLEngineStoreUserIdentifier> *_transportUserIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) CPLEngineLibrary * engineLibrary;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property BOOL shouldTryToMingleImmediately;
-@property(setter=_setState:) unsigned int state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CPLEngineLibrary *engineLibrary;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (nonatomic) BOOL shouldTryToMingleImmediately;
+@property (setter=_setState:, nonatomic) unsigned int state;
+@property (readonly) Class superclass;
 
 + (id)descriptionForState:(unsigned int)arg1;
 + (id)platformImplementationProtocol;
@@ -101,29 +91,29 @@
 - (void)_saveManagementTasks;
 - (void)_setErrorForSyncSession:(id)arg1;
 - (void)_setState:(unsigned int)arg1;
-- (void)addSetupBarrier:(id)arg1;
+- (void)addSetupBarrier:(id /* block */)arg1;
 - (void)beginClientWork:(id)arg1;
 - (void)cancelCurrentSyncSession;
-- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)componentName;
 - (void)endClientWork:(id)arg1;
 - (id)engineLibrary;
-- (void)getStatusDictionaryWithCompletionHandler:(id)arg1;
-- (void)getStatusWithCompletionHandler:(id)arg1;
+- (void)getStatusDictionaryWithCompletionHandler:(id /* block */)arg1;
+- (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)kickOffSyncSession;
-- (void)openWithCompletionHandler:(id)arg1;
+- (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
 - (void)resetTransportUserIdentifierAndRestartSync:(BOOL)arg1;
 - (void)setShouldTryToMingleImmediately:(BOOL)arg1;
 - (void)setSyncSessionShouldBeForeground:(BOOL)arg1;
 - (BOOL)shouldTryToMingleImmediately;
-- (void)startEmergencyTask:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)startEmergencyTask:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)startSyncSessionWithMinimalPhase:(unsigned int)arg1;
 - (unsigned int)state;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
-- (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 completionHandler:(id)arg3;
-- (id)task:(id)arg1 wantsToPushBatch:(id)arg2 continuationBlock:(id)arg3;
+- (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)task:(id)arg1 wantsToPushBatch:(id)arg2 continuationBlock:(id /* block */)arg3;
 
 @end

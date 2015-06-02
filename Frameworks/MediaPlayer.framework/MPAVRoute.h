@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVRoute, NSDictionary, NSString;
-
 @interface MPAVRoute : NSObject {
     NSDictionary *_avRouteDescription;
     int _displayRouteType;
@@ -17,19 +15,21 @@
     MPAVRoute *_wirelessDisplayRoute;
 }
 
-@property(readonly) BOOL displayIsPicked;
-@property(readonly) int displayRouteType;
-@property(readonly) int passwordType;
-@property(readonly) int pickableRouteType;
-@property(getter=isPicked,readonly) BOOL picked;
-@property(readonly) int rc_audioRouteType;
-@property(readonly) BOOL rc_shouldExpectFaceContact;
-@property(readonly) BOOL requiresPassword;
-@property(readonly) NSString * routeName;
-@property(readonly) int routeSubtype;
-@property(readonly) int routeType;
-@property(readonly) NSString * routeUID;
-@property(readonly) MPAVRoute * wirelessDisplayRoute;
+@property (nonatomic, readonly) BOOL displayIsPicked;
+@property (nonatomic, readonly) int displayRouteType;
+@property (nonatomic, readonly) int passwordType;
+@property (nonatomic, readonly) int pickableRouteType;
+@property (getter=isPicked, nonatomic, readonly) BOOL picked;
+@property (nonatomic, readonly) int rc_audioRouteType;
+@property (nonatomic, readonly) BOOL rc_shouldExpectFaceContact;
+@property (nonatomic, readonly) BOOL requiresPassword;
+@property (nonatomic, readonly) NSString *routeName;
+@property (nonatomic, readonly) int routeSubtype;
+@property (nonatomic, readonly) int routeType;
+@property (nonatomic, readonly) NSString *routeUID;
+@property (nonatomic, readonly) MPAVRoute *wirelessDisplayRoute;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (void).cxx_destruct;
 - (id)_initWithAVRouteDescription:(id)arg1;
@@ -44,8 +44,6 @@
 - (BOOL)isPicked;
 - (int)passwordType;
 - (int)pickableRouteType;
-- (int)rc_audioRouteType;
-- (BOOL)rc_shouldExpectFaceContact;
 - (BOOL)requiresPassword;
 - (id)routeName;
 - (int)routeSubtype;
@@ -57,5 +55,10 @@
 - (void)setRouteName:(id)arg1;
 - (void)setWirelessDisplayRoute:(id)arg1;
 - (id)wirelessDisplayRoute;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (int)rc_audioRouteType;
+- (BOOL)rc_shouldExpectFaceContact;
 
 @end

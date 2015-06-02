@@ -11,10 +11,10 @@
     } _has;
 }
 
-@property unsigned int componentIndex;
-@property unsigned int componentValueIndex;
-@property BOOL hasComponentIndex;
-@property BOOL hasComponentValueIndex;
+@property (nonatomic) unsigned int componentIndex;
+@property (nonatomic) unsigned int componentValueIndex;
+@property (nonatomic) BOOL hasComponentIndex;
+@property (nonatomic) BOOL hasComponentValueIndex;
 
 - (unsigned int)componentIndex;
 - (unsigned int)componentValueIndex;

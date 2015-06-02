@@ -2,21 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIApplicationSceneClientSettingsDiffInspector : FBSSceneClientSettingsDiffInspector {
-}
+@interface UIApplicationSceneClientSettingsDiffInspector : FBSSceneClientSettingsDiffInspector
 
-- (void)_observeOtherSetting:(unsigned int)arg1 withBlock:(id)arg2;
-- (void)observeCompatibilityModeWithBlock:(id)arg1;
-- (void)observeControlCenterRevealModeWithBlock:(id)arg1;
-- (void)observeDefaultPNGExpirationTimeWithBlock:(id)arg1;
-- (void)observeDefaultPNGNameWithBlock:(id)arg1;
-- (void)observeDefaultStatusBarHiddenWithBlock:(id)arg1;
-- (void)observeDefaultStatusBarStyleWithBlock:(id)arg1;
-- (void)observeIdleTimerDisabledWithBlock:(id)arg1;
-- (void)observeNotificationCenterRevealModeWithBlock:(id)arg1;
-- (void)observeOrientationEnabledWithBlock:(id)arg1;
-- (void)observeProximityDetectionModesWithBlock:(id)arg1;
-- (void)observeStatusBarHiddenWithBlock:(id)arg1;
-- (void)observeStatusBarStyleWithBlock:(id)arg1;
+- (void)_observeOtherSetting:(unsigned int)arg1 withBlock:(id /* block */)arg2;
+- (void)observeCompatibilityModeWithBlock:(id /* block */)arg1;
+- (void)observeControlCenterRevealModeWithBlock:(id /* block */)arg1;
+- (void)observeDefaultPNGExpirationTimeWithBlock:(id /* block */)arg1;
+- (void)observeDefaultPNGNameWithBlock:(id /* block */)arg1;
+- (void)observeDefaultStatusBarHiddenWithBlock:(id /* block */)arg1;
+- (void)observeDefaultStatusBarStyleWithBlock:(id /* block */)arg1;
+- (void)observeIdleTimerDisabledWithBlock:(id /* block */)arg1;
+- (void)observeNotificationCenterRevealModeWithBlock:(id /* block */)arg1;
+- (void)observeOrientationEnabledWithBlock:(id /* block */)arg1;
+- (void)observeProximityDetectionModesWithBlock:(id /* block */)arg1;
+- (void)observeStatusBarHiddenWithBlock:(id /* block */)arg1;
+- (void)observeStatusBarStyleWithBlock:(id /* block */)arg1;
 
 @end

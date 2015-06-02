@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MIPMultiverseIdentifier;
-
 @interface _MPUProtoBufUserActivityContainerItem : PBCodable <NSCopying> {
     int _containerItemType;
     struct { 
@@ -13,12 +11,12 @@
     MIPMultiverseIdentifier *_visualReferenceMultiverseIdentifier;
 }
 
-@property int containerItemType;
-@property BOOL hasContainerItemType;
-@property(readonly) BOOL hasSelectedMultiverseIdentifier;
-@property(readonly) BOOL hasVisualReferenceMultiverseIdentifier;
-@property(retain) MIPMultiverseIdentifier * selectedMultiverseIdentifier;
-@property(retain) MIPMultiverseIdentifier * visualReferenceMultiverseIdentifier;
+@property (nonatomic) int containerItemType;
+@property (nonatomic) BOOL hasContainerItemType;
+@property (nonatomic, readonly) BOOL hasSelectedMultiverseIdentifier;
+@property (nonatomic, readonly) BOOL hasVisualReferenceMultiverseIdentifier;
+@property (nonatomic, retain) MIPMultiverseIdentifier *selectedMultiverseIdentifier;
+@property (nonatomic, retain) MIPMultiverseIdentifier *visualReferenceMultiverseIdentifier;
 
 - (void).cxx_destruct;
 - (int)containerItemType;

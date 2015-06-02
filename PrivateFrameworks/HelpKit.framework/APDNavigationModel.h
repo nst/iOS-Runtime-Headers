@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class APDNavigationTopic, NSArray, NSMutableDictionary, NSString;
-
 @interface APDNavigationModel : APDGenericModel {
     NSString *_copyrightText;
     NSString *_copyrightTopicId;
@@ -18,17 +16,17 @@
     NSString *_version;
 }
 
-@property(copy) NSString * copyrightText;
-@property(copy,readonly) APDNavigationTopic * copyrightTopic;
-@property(copy) NSString * copyrightTopicId;
-@property(copy) NSString * framework;
-@property BOOL hasSectionIcon;
-@property(copy) NSString * landingTopicID;
-@property(copy) NSArray * sections;
-@property BOOL showFeedbackLinks;
-@property(copy) NSString * sourceSchema;
-@property(copy) NSString * title;
-@property(copy) NSString * version;
+@property (nonatomic, copy) NSString *copyrightText;
+@property (nonatomic, readonly, copy) APDNavigationTopic *copyrightTopic;
+@property (nonatomic, copy) NSString *copyrightTopicId;
+@property (nonatomic, copy) NSString *framework;
+@property (nonatomic) BOOL hasSectionIcon;
+@property (nonatomic, copy) NSString *landingTopicID;
+@property (nonatomic, copy) NSArray *sections;
+@property (nonatomic) BOOL showFeedbackLinks;
+@property (nonatomic, copy) NSString *sourceSchema;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *version;
 
 - (void).cxx_destruct;
 - (id)copyrightText;

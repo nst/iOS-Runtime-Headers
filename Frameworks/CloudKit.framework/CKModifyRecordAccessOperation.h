@@ -2,43 +2,25 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKModifyRecordAccessOperation : CKDatabaseOperation {
     NSMutableArray *_grantedRecordIDs;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordAccessCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordAccessGrantedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordAccessRevokedBlock;
-
+    id /* block */ _recordAccessCompletionBlock;
+    id /* block */ _recordAccessGrantedBlock;
+    id /* block */ _recordAccessRevokedBlock;
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDsToGrant;
     NSArray *_recordIDsToRevoke;
     NSMutableArray *_revokedRecordIDs;
 }
 
-@property(retain) NSMutableArray * grantedRecordIDs;
-@property(copy) id recordAccessCompletionBlock;
-@property(copy) id recordAccessGrantedBlock;
-@property(copy) id recordAccessRevokedBlock;
-@property(retain) NSMutableDictionary * recordErrors;
-@property(retain) NSArray * recordIDsToGrant;
-@property(retain) NSArray * recordIDsToRevoke;
-@property(retain) NSMutableArray * revokedRecordIDs;
+@property (nonatomic, retain) NSMutableArray *grantedRecordIDs;
+@property (nonatomic, copy) id /* block */ recordAccessCompletionBlock;
+@property (nonatomic, copy) id /* block */ recordAccessGrantedBlock;
+@property (nonatomic, copy) id /* block */ recordAccessRevokedBlock;
+@property (nonatomic, retain) NSMutableDictionary *recordErrors;
+@property (nonatomic, retain) NSArray *recordIDsToGrant;
+@property (nonatomic, retain) NSArray *recordIDsToRevoke;
+@property (nonatomic, retain) NSMutableArray *revokedRecordIDs;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -48,17 +30,17 @@
 - (id)grantedRecordIDs;
 - (id)initWithRecordIDsToGrantAccess:(id)arg1 recordIDsToRevokeAccess:(id)arg2;
 - (void)performCKOperation;
-- (id)recordAccessCompletionBlock;
-- (id)recordAccessGrantedBlock;
-- (id)recordAccessRevokedBlock;
+- (id /* block */)recordAccessCompletionBlock;
+- (id /* block */)recordAccessGrantedBlock;
+- (id /* block */)recordAccessRevokedBlock;
 - (id)recordErrors;
 - (id)recordIDsToGrant;
 - (id)recordIDsToRevoke;
 - (id)revokedRecordIDs;
 - (void)setGrantedRecordIDs:(id)arg1;
-- (void)setRecordAccessCompletionBlock:(id)arg1;
-- (void)setRecordAccessGrantedBlock:(id)arg1;
-- (void)setRecordAccessRevokedBlock:(id)arg1;
+- (void)setRecordAccessCompletionBlock:(id /* block */)arg1;
+- (void)setRecordAccessGrantedBlock:(id /* block */)arg1;
+- (void)setRecordAccessRevokedBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDsToGrant:(id)arg1;
 - (void)setRecordIDsToRevoke:(id)arg1;

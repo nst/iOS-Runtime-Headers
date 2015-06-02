@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class _NSFaultingMutableSetMutationMethods;
-
 @interface _NSProxyWrapperMutableSet : _NSNotifyingWrapperMutableSet {
     _NSFaultingMutableSetMutationMethods *_mutationMethods;
 }

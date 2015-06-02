@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMCharacteristic;
-
 @interface HMCharacteristicWriteAction : HMAction <NSSecureCoding> {
     HMCharacteristic *_characteristic;
     id _targetValue;
 }
 
-@property(readonly) HMCharacteristic * characteristic;
-@property(copy) id targetValue;
+@property (nonatomic, readonly) HMCharacteristic *characteristic;
+@property (nonatomic, copy) id targetValue;
 
 + (id)actionWithInfo:(id)arg1 home:(id)arg2;
 + (id)lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
@@ -26,6 +24,6 @@
 - (id)serializeForAdd;
 - (void)setTargetValue:(id)arg1;
 - (id)targetValue;
-- (void)updateTargetValue:(id)arg1 completionHandler:(id)arg2;
+- (void)updateTargetValue:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

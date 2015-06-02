@@ -2,38 +2,35 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, SASportsEntity, SAUIAppPunchOut;
+@interface SASportsMatchup : SADomainObject
 
-@interface SASportsMatchup : SADomainObject {
-}
-
-@property(retain) SASportsEntity * awayEntity;
-@property(copy) NSArray * awayLineScores;
-@property(copy) NSString * awayScore;
-@property(copy) NSNumber * awayShootoutPoints;
-@property(copy) NSString * currentPeriod;
-@property(copy) NSNumber * expectedLineScoreCount;
-@property(copy) NSString * favoredEntity;
-@property(retain) SASportsEntity * homeEntity;
-@property(copy) NSArray * homeLineScores;
-@property(copy) NSString * homeScore;
-@property(copy) NSNumber * homeShootoutPoints;
-@property(copy) NSString * line;
-@property(copy) NSString * location;
-@property(copy) NSString * locationName;
-@property(copy) NSString * matchupOrder;
-@property(copy) NSString * overUnder;
-@property(copy) NSString * periodDescription;
-@property(copy) NSArray * playSummaries;
-@property(retain) SAUIAppPunchOut * punchout;
-@property(copy) NSDate * startTime;
-@property(copy) NSString * status;
-@property(copy) NSString * timeRemaining;
-@property(copy) NSNumber * timeTBD;
-@property(copy) NSString * title;
-@property(copy) NSString * tournamentSeriesDescription;
-@property(copy) NSArray * tvChannels;
-@property(copy) NSString * winningEntity;
+@property (nonatomic, retain) SASportsEntity *awayEntity;
+@property (nonatomic, copy) NSArray *awayLineScores;
+@property (nonatomic, copy) NSString *awayScore;
+@property (nonatomic, copy) NSNumber *awayShootoutPoints;
+@property (nonatomic, copy) NSString *currentPeriod;
+@property (nonatomic, copy) NSNumber *expectedLineScoreCount;
+@property (nonatomic, copy) NSString *favoredEntity;
+@property (nonatomic, retain) SASportsEntity *homeEntity;
+@property (nonatomic, copy) NSArray *homeLineScores;
+@property (nonatomic, copy) NSString *homeScore;
+@property (nonatomic, copy) NSNumber *homeShootoutPoints;
+@property (nonatomic, copy) NSString *line;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, copy) NSString *locationName;
+@property (nonatomic, copy) NSString *matchupOrder;
+@property (nonatomic, copy) NSString *overUnder;
+@property (nonatomic, copy) NSString *periodDescription;
+@property (nonatomic, copy) NSArray *playSummaries;
+@property (nonatomic, retain) SAUIAppPunchOut *punchout;
+@property (nonatomic, copy) NSDate *startTime;
+@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *timeRemaining;
+@property (nonatomic, copy) NSNumber *timeTBD;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *tournamentSeriesDescription;
+@property (nonatomic, copy) NSArray *tvChannels;
+@property (nonatomic, copy) NSString *winningEntity;
 
 + (id)matchup;
 + (id)matchupWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSURL, SUImageDataProvider;
-
 @interface SUImageCacheKey : NSObject <NSCopying> {
     SUImageDataProvider *_dataProvider;
     NSURL *_url;

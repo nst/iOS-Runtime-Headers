@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItem, NSArray, NSDate;
-
 @interface MKDirectionsRequest : NSObject <NSCopying> {
     NSArray *_additionalTransportTypesRequested;
     NSDate *_arrivalDate;
@@ -20,16 +18,16 @@
     unsigned int _transportType;
 }
 
-@property(readonly) BOOL _includeBasicRoutePoints;
-@property(readonly) BOOL _includeEntryPoints;
-@property(readonly) BOOL _includeTrafficIncidents;
-@property(readonly) BOOL _includeTravelTimes;
-@property(readonly) BOOL _includeTypicalRouteDuration;
-@property(readonly) BOOL _includeZilchRoutePoints;
-@property(getter=_additionalTransportTypesRequested,setter=_setAdditionalTransportTypesRequested:,retain) NSArray * additionalTransportTypesRequested;
-@property(retain) MKMapItem * destination;
-@property(getter=_includeDistanceInETA,setter=_setIncludeDistanceInETA:) BOOL includeDistanceInETA;
-@property(retain) MKMapItem * source;
+@property (nonatomic, readonly) BOOL _includeBasicRoutePoints;
+@property (nonatomic, readonly) BOOL _includeEntryPoints;
+@property (nonatomic, readonly) BOOL _includeTrafficIncidents;
+@property (nonatomic, readonly) BOOL _includeTravelTimes;
+@property (nonatomic, readonly) BOOL _includeTypicalRouteDuration;
+@property (nonatomic, readonly) BOOL _includeZilchRoutePoints;
+@property (getter=_additionalTransportTypesRequested, setter=_setAdditionalTransportTypesRequested:, nonatomic, retain) NSArray *additionalTransportTypesRequested;
+@property (nonatomic, retain) MKMapItem *destination;
+@property (getter=_includeDistanceInETA, setter=_setIncludeDistanceInETA:, nonatomic) BOOL includeDistanceInETA;
+@property (nonatomic, retain) MKMapItem *source;
 
 + (BOOL)isDirectionsRequestURL:(id)arg1;
 

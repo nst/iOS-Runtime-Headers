@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKSource, NSArray, NSMutableArray, NSSet, NSString;
-
 @interface EKGroupInfo : NSObject {
     NSMutableArray *_calendars;
     int _customGroupType;
@@ -17,21 +15,21 @@
     NSString *_typeTitle;
 }
 
-@property(retain,readonly) NSArray * calendarInfos;
-@property(copy,readonly) NSSet * calendarSet;
-@property(readonly) BOOL isSubscribed;
-@property(readonly) unsigned int numCalendars;
-@property(readonly) unsigned int numSelectableCalendars;
-@property(readonly) unsigned int numSelectedCalendars;
-@property BOOL selected;
-@property(copy,readonly) NSSet * selectedCalendarSet;
-@property(readonly) BOOL showAddCalendarButton;
-@property(readonly) BOOL showCalendarNameIfSolitary;
-@property BOOL showSelectAllButton;
-@property(readonly) int sortOrder;
-@property(retain) EKSource * source;
-@property(copy,readonly) NSString * title;
-@property(copy,readonly) NSString * typeTitle;
+@property (nonatomic, readonly, retain) NSArray *calendarInfos;
+@property (nonatomic, readonly, copy) NSSet *calendarSet;
+@property (nonatomic, readonly) BOOL isSubscribed;
+@property (nonatomic, readonly) unsigned int numCalendars;
+@property (nonatomic, readonly) unsigned int numSelectableCalendars;
+@property (nonatomic, readonly) unsigned int numSelectedCalendars;
+@property (nonatomic) BOOL selected;
+@property (nonatomic, readonly, copy) NSSet *selectedCalendarSet;
+@property (nonatomic, readonly) BOOL showAddCalendarButton;
+@property (nonatomic, readonly) BOOL showCalendarNameIfSolitary;
+@property (nonatomic) BOOL showSelectAllButton;
+@property (nonatomic, readonly) int sortOrder;
+@property (nonatomic, retain) EKSource *source;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *typeTitle;
 
 - (void).cxx_destruct;
 - (id)calendarAtIndex:(unsigned int)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DResources : NSObject {
-}
+@interface TSCH3DResources : NSObject
 
 @end

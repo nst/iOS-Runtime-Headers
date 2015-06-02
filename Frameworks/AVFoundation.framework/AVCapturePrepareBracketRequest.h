@@ -2,28 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class FigCaptureStillImageSettings;
-
 @interface AVCapturePrepareBracketRequest : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     FigCaptureStillImageSettings *_settings;
 }
 
-@property(readonly) id completionBlock;
-@property(readonly) FigCaptureStillImageSettings * settings;
+@property (readonly) id /* block */ completionBlock;
+@property (readonly) FigCaptureStillImageSettings *settings;
 
-+ (id)prepareBracketRequestWithCompletionBlock:(id)arg1 settings:(id)arg2;
++ (id)prepareBracketRequestWithCompletionBlock:(id /* block */)arg1 settings:(id)arg2;
 
-- (id)_initWithCompletionBlock:(id)arg1 settings:(id)arg2;
-- (id)completionBlock;
+- (id)_initWithCompletionBlock:(id /* block */)arg1 settings:(id)arg2;
+- (id /* block */)completionBlock;
 - (void)dealloc;
 - (id)settings;
 

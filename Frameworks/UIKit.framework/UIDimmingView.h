@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIBarButtonItem, UIColor, UIImageView, UITapGestureRecognizer;
-
 @interface UIDimmingView : UIView <UIGestureRecognizerDelegate> {
     UIImageView *_backgroundGlow;
     id _delegate;
@@ -18,17 +16,17 @@
     BOOL _suppressesBackdrops;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIColor * dimmingColor;
-@property BOOL displayed;
-@property(readonly) unsigned int hash;
-@property(retain) UIBarButtonItem * highlightedBarButtonItem;
-@property BOOL ignoresTouches;
-@property(retain) NSArray * passthroughViews;
-@property(readonly) Class superclass;
-@property BOOL suppressesBackdrops;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIColor *dimmingColor;
+@property (nonatomic) BOOL displayed;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIBarButtonItem *highlightedBarButtonItem;
+@property (nonatomic) BOOL ignoresTouches;
+@property (nonatomic, retain) NSArray *passthroughViews;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressesBackdrops;
 
 + (id)defaultDimmingColor;
 

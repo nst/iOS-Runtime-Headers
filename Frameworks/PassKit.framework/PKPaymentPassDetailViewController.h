@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassDeleteHandler>, <PKPassLibraryDataProvider>, <PKPaymentVerificationEntryDelegate>, NSArray, NSNumberFormatter, NSObject<OS_dispatch_source>, NSString, PKPaymentPass, PKPaymentPassDetailActivationFooterView, PKPaymentService, PKPaymentVerificationPresentationController, PKPaymentWebService, PKSettingTableCell, PKVerificationRequestRecord, UIColor;
-
 @interface PKPaymentPassDetailViewController : UITableViewController <MFMailComposeViewControllerDelegate, PKPaymentServiceDelegate, PKPaymentVerificationPresentationDelegate, UITableViewDataSource, UITableViewDelegate> {
     PKPaymentPassDetailActivationFooterView *_activationFooter;
     <PKPassLibraryDataProvider> *_dataProvider;
@@ -29,18 +27,18 @@
     PKPaymentWebService *_webService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassDeleteHandler> * deleteOverrider;
-@property(copy,readonly) NSString * description;
-@property UIColor * detailTextColor;
-@property(readonly) unsigned int hash;
-@property UIColor * highlightColor;
-@property UIColor * linkTextColor;
-@property UIColor * primaryTextColor;
-@property(readonly) Class superclass;
-@property(copy) NSArray * transactions;
-@property <PKPaymentVerificationEntryDelegate> * verificationDelegate;
-@property UIColor * warningTextColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassDeleteHandler> *deleteOverrider;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) UIColor *detailTextColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIColor *highlightColor;
+@property (nonatomic) UIColor *linkTextColor;
+@property (nonatomic) UIColor *primaryTextColor;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *transactions;
+@property (nonatomic) <PKPaymentVerificationEntryDelegate> *verificationDelegate;
+@property (nonatomic) UIColor *warningTextColor;
 
 - (void)_activationFooterPressed:(id)arg1;
 - (id)_activationFooterView;
@@ -77,7 +75,7 @@
 - (int)_numberOfRowsForPassStateSection;
 - (void)_openIssuerWebsite;
 - (id)_privacyTermsCells;
-- (void)_reloadTransactionsWithCompletion:(id)arg1;
+- (void)_reloadTransactionsWithCompletion:(id /* block */)arg1;
 - (void)_reloadView;
 - (void)_setPlaceholderColorForCell:(id)arg1;
 - (void)_setupSections;
@@ -98,7 +96,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(BOOL)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
-- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)primaryTextColor;
 - (void)setDeleteOverrider:(id)arg1;
 - (void)setDetailTextColor:(id)arg1;

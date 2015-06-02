@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSURL;
-
 @interface ISStoreVersion : NSObject {
     NSURL *_redirectURL;
 }
 
-@property(retain) NSURL * redirectURL;
+@property (nonatomic, retain) NSURL *redirectURL;
 
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;

@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFPlainTextDocument, NSMutableString;
-
 @interface _MFFormatFlowedWriter : NSObject {
-    unsigned int _addedTrailingSpaces : 1;
+    unsigned int _addedTrailingSpaces;
     unsigned long _encoding;
     MFPlainTextDocument *_inputDocument;
     NSMutableString *_lineString;

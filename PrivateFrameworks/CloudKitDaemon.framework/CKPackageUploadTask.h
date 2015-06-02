@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDCancelTokenGroup, CKDMMCSItem, CKDMMCSRequestOptions, CKDProgressTracker, CKPackage, NSArray, NSError, NSObject<OS_dispatch_group>;
-
 @interface CKPackageUploadTask : NSObject <CKDCancelling> {
     CKDMMCSItem *_MMCSManifestItem;
     CKDMMCSRequestOptions *_MMCSRequestOptions;
@@ -15,14 +13,14 @@
     CKDProgressTracker *_progressTracker;
 }
 
-@property(retain) CKDMMCSItem * MMCSManifestItem;
-@property(retain) CKDMMCSRequestOptions * MMCSRequestOptions;
-@property(retain) NSArray * MMCSSectionItems;
-@property(retain) CKDCancelTokenGroup * cancelTokens;
-@property(retain) NSError * error;
-@property(retain) NSObject<OS_dispatch_group> * group;
-@property(readonly) CKPackage * package;
-@property(retain) CKDProgressTracker * progressTracker;
+@property (nonatomic, retain) CKDMMCSItem *MMCSManifestItem;
+@property (nonatomic, retain) CKDMMCSRequestOptions *MMCSRequestOptions;
+@property (nonatomic, retain) NSArray *MMCSSectionItems;
+@property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
+@property (retain) NSError *error;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *group;
+@property (nonatomic, readonly) CKPackage *package;
+@property (nonatomic, retain) CKDProgressTracker *progressTracker;
 
 - (void).cxx_destruct;
 - (id)MMCSManifestItem;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPParagraphStyle;
-
 @interface TSCHLegendCellMetrics : NSObject {
     float mBadgeSize;
     float mBaseline;
@@ -14,13 +12,13 @@
     float mTrueTitleHeight;
 }
 
-@property(readonly) float badgeSize;
-@property(readonly) float baseline;
-@property(readonly) struct __CTFont { }* font;
-@property(readonly) float lineGap;
-@property(readonly) TSWPParagraphStyle * paragraphStyle;
-@property(readonly) float symbolGap;
-@property(readonly) float titleHeight;
+@property (nonatomic, readonly) float badgeSize;
+@property (nonatomic, readonly) float baseline;
+@property (nonatomic, readonly) struct __CTFont { }*font;
+@property (nonatomic, readonly) float lineGap;
+@property (nonatomic, readonly) TSWPParagraphStyle *paragraphStyle;
+@property (nonatomic, readonly) float symbolGap;
+@property (nonatomic, readonly) float titleHeight;
 
 - (float)badgeSize;
 - (float)baseline;

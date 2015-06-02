@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, NSString;
-
 @interface GKRemoteUIFooterView : UIView <RemoteUITableFooter> {
     float _bottomMargin;
     int _layoutStyle;
@@ -14,17 +12,17 @@
     GKLabel *_textLabel;
 }
 
-@property float bottomMargin;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int layoutStyle;
-@property float leftMargin;
-@property float paragraphMargin;
-@property float rightMargin;
-@property BOOL shouldApplyGameCenterTheme;
-@property(readonly) Class superclass;
-@property(retain) GKLabel * textLabel;
+@property (nonatomic) float bottomMargin;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic) float leftMargin;
+@property (nonatomic) float paragraphMargin;
+@property (nonatomic) float rightMargin;
+@property (nonatomic) BOOL shouldApplyGameCenterTheme;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) GKLabel *textLabel;
 
 - (id)attributedStringForString:(id)arg1 withStyle:(id)arg2;
 - (float)bottomMargin;

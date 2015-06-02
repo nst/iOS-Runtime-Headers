@@ -9,6 +9,6 @@
 - (unsigned int)cost;
 - (id)description;
 - (void)requestCancel;
-- (void)runOperationWithCompletionHandler:(id)arg1;
+- (void)runOperationWithCompletionHandler:(id /* block */)arg1;
 
 @end

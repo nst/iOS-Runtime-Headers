@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUISpacePageComponent;
+@interface SKUISpacePageSection : SKUIStorePageSection
 
-@interface SKUISpacePageSection : SKUIStorePageSection {
-}
-
-@property(readonly) SKUISpacePageComponent * pageComponent;
+@property (nonatomic, readonly) SKUISpacePageComponent *pageComponent;
 
 - (id)cellForIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;

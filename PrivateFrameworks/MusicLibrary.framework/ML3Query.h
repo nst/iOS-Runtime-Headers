@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3AggregateQuery, ML3MusicLibrary, ML3Predicate, NSArray, NSString;
-
 @interface ML3Query : NSObject <NSCoding, NSCopying> {
     Class _entityClass;
     BOOL _filtersOnDynamicProperties;
@@ -17,24 +15,24 @@
     BOOL _usingSections;
 }
 
-@property(readonly) long long anyEntityPersistentID;
-@property(readonly) unsigned int countOfEntities;
-@property(readonly) Class entityClass;
-@property(readonly) BOOL filtersOnDynamicProperties;
-@property(readonly) BOOL hasEntities;
-@property BOOL ignoreRestrictionsPredicates;
-@property BOOL ignoreSystemFilterPredicates;
-@property(readonly) ML3MusicLibrary * library;
-@property(readonly) ML3AggregateQuery * nonDirectAggregateQuery;
-@property(readonly) NSArray * orderingTerms;
-@property(readonly) NSString * persistentIDProperty;
-@property(readonly) ML3Predicate * predicate;
-@property(readonly) ML3Predicate * predicateIncludingSystemwidePredicates;
-@property(readonly) NSString * propertyToCount;
-@property(readonly) NSString * sectionProperty;
-@property(readonly) NSString * selectCountSQL;
-@property(readonly) NSString * selectPersistentIDsSQL;
-@property(readonly) BOOL usingSections;
+@property (nonatomic, readonly) long long anyEntityPersistentID;
+@property (nonatomic, readonly) unsigned int countOfEntities;
+@property (nonatomic, readonly) Class entityClass;
+@property (nonatomic, readonly) BOOL filtersOnDynamicProperties;
+@property (nonatomic, readonly) BOOL hasEntities;
+@property (nonatomic) BOOL ignoreRestrictionsPredicates;
+@property (nonatomic) BOOL ignoreSystemFilterPredicates;
+@property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (nonatomic, readonly) ML3AggregateQuery *nonDirectAggregateQuery;
+@property (nonatomic, readonly) NSArray *orderingTerms;
+@property (nonatomic, readonly) NSString *persistentIDProperty;
+@property (nonatomic, readonly) ML3Predicate *predicate;
+@property (nonatomic, readonly) ML3Predicate *predicateIncludingSystemwidePredicates;
+@property (nonatomic, readonly) NSString *propertyToCount;
+@property (nonatomic, readonly) NSString *sectionProperty;
+@property (nonatomic, readonly) NSString *selectCountSQL;
+@property (nonatomic, readonly) NSString *selectPersistentIDsSQL;
+@property (nonatomic, readonly) BOOL usingSections;
 
 - (void).cxx_destruct;
 - (long long)anyEntityPersistentID;
@@ -48,13 +46,13 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)entityClass;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 cancelBlock:(id)arg3 usingBlock:(id)arg4;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 sectionProperty:(id)arg3 cancelBlock:(id)arg4 usingBlock:(id)arg5;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 usingBlock:(id)arg3;
-- (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id)arg2;
-- (void)enumeratePersistentIDsAndSectionsWithProperty:(id)arg1 usingBlock:(id)arg2;
-- (void)enumeratePersistentIDsUsingBlock:(id)arg1;
-- (void)enumerateSectionsUsingBlock:(id)arg1;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 cancelBlock:(id /* block */)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 sectionProperty:(id)arg3 cancelBlock:(id /* block */)arg4 usingBlock:(id /* block */)arg5;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 ordered:(BOOL)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumeratePersistentIDsAndProperties:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersistentIDsAndSectionsWithProperty:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePersistentIDsUsingBlock:(id /* block */)arg1;
+- (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
 - (id)enumerationDatabaseResultForSQL:(id)arg1 onConnection:(id)arg2 withParameters:(id)arg3;
 - (BOOL)filtersOnDynamicProperties;
 - (BOOL)hasEntities;
@@ -65,7 +63,7 @@
 - (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
-- (void)loadNamesFromLibrary:(id)arg1 onConnection:(id)arg2 forPredicate:(id)arg3 loadAllNames:(BOOL)arg4 cancelHandler:(id)arg5;
+- (void)loadNamesFromLibrary:(id)arg1 onConnection:(id)arg2 forPredicate:(id)arg3 loadAllNames:(BOOL)arg4 cancelHandler:(id /* block */)arg5;
 - (id)lowerBoundParametersForOrderingTerms:(id)arg1 lowerBoundPersistentID:(long long)arg2;
 - (id)nameOrderPropertyForProperty:(id)arg1;
 - (id)nonDirectAggregateQuery;

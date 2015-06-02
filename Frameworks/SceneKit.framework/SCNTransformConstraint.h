@@ -7,10 +7,10 @@
 }
 
 + (id)SCNJSExportProtocol;
-+ (id)transformConstraintInWorldSpace:(BOOL)arg1 withBlock:(id)arg2;
++ (id)transformConstraintInWorldSpace:(BOOL)arg1 withBlock:(id /* block */)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initInWorld:(BOOL)arg1 withBlock:(id)arg2;
+- (id)initInWorld:(BOOL)arg1 withBlock:(id /* block */)arg2;
 - (id)initWithCoder:(id)arg1;
 
 @end

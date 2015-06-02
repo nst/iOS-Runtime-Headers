@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSScanner;
-
 @interface MFMessageBodyHTMLParser : MFMessageBodyParser {
     NSScanner *_scanner;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSMutableArray, SKNode;
-
 @interface SKReach : SKAction {
     struct CGPoint { 
         float x; 

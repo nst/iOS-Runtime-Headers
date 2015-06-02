@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSHashTable;
-
 @interface TSPObjectInfo : NSObject {
     NSArray *_referencedData;
     NSHashTable *_referencedDataHashTable;
@@ -11,8 +9,8 @@
     NSHashTable *_referencedObjectsHashTable;
 }
 
-@property(readonly) NSArray * referencedData;
-@property(readonly) NSArray * referencedObjects;
+@property (nonatomic, readonly) NSArray *referencedData;
+@property (nonatomic, readonly) NSArray *referencedObjects;
 
 - (void).cxx_destruct;
 - (id)init;

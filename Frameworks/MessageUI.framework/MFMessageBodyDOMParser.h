@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class DOMDocument;
-
 @interface MFMessageBodyDOMParser : MFMessageBodyParser {
     DOMDocument *_document;
 }

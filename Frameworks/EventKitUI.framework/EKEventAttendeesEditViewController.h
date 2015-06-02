@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, EKEventAttendeePicker, NSArray;
-
 @interface EKEventAttendeesEditViewController : EKEditItemViewController {
     BOOL _cancelTapped;
     BOOL _disableShowingButtons;
@@ -11,8 +9,8 @@
     EKEventAttendeePicker *_picker;
 }
 
-@property(copy) NSArray * attendees;
-@property BOOL disableShowingButtons;
+@property (nonatomic, copy) NSArray *attendees;
+@property (nonatomic) BOOL disableShowingButtons;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

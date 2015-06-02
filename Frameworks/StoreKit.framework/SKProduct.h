@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSArray, NSDecimalNumber, NSLocale, NSString;
-
 @interface SKProduct : NSObject {
     id _internal;
 }
 
-@property(getter=_localeIdentifier,setter=_setLocaleIdentifier:,copy) NSString * _localeIdentifier;
-@property(readonly) NSArray * downloadContentLengths;
-@property(readonly) NSString * downloadContentVersion;
-@property(getter=isDownloadable,readonly) BOOL downloadable;
-@property(readonly) NSString * localizedDescription;
-@property(readonly) NSString * localizedTitle;
-@property(readonly) NSDecimalNumber * price;
-@property(readonly) NSLocale * priceLocale;
-@property(readonly) NSString * productIdentifier;
+@property (getter=_localeIdentifier, setter=_setLocaleIdentifier:, nonatomic, copy) NSString *_localeIdentifier;
+@property (nonatomic, readonly) NSArray *downloadContentLengths;
+@property (nonatomic, readonly) NSString *downloadContentVersion;
+@property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
+@property (nonatomic, readonly) NSString *localizedDescription;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic, readonly) NSDecimalNumber *price;
+@property (nonatomic, readonly) NSLocale *priceLocale;
+@property (nonatomic, readonly) NSString *productIdentifier;
 
 - (id)_localeIdentifier;
 - (void)_setContentVersion:(id)arg1;

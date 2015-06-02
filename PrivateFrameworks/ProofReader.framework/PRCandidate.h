@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSString;
-
 @interface PRCandidate : NSObject {
     BOOL _blacklisted;
     double _errorScore;

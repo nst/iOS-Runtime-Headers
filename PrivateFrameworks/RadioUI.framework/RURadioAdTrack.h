@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class ADBannerView, NSDictionary, NSString, NSURL;
-
 @interface RURadioAdTrack : NSObject <ADBannerViewDelegate, NSCopying> {
     NSURL *_URL;
     int _adType;
@@ -11,18 +9,18 @@
     NSDictionary *_loudnessInfo;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) int actionType;
-@property(readonly) int adType;
-@property(readonly) ADBannerView * adView;
-@property(readonly) NSURL * artworkURL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasAction;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSDictionary * loudnessInfo;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * uniqueIdentifier;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) int actionType;
+@property (nonatomic, readonly) int adType;
+@property (nonatomic, readonly) ADBannerView *adView;
+@property (nonatomic, readonly) NSURL *artworkURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasAction;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSDictionary *loudnessInfo;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)URL;

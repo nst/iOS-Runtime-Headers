@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface MFOfflineCacheReplayContext : NSObject {
     NSMutableDictionary *_failureSnapshotsByTemporaryID;
     NSString *_selectedMailboxID;
     NSMutableDictionary *_translatedIDsByTemporaryID;
 }
 
-@property(readonly) NSMutableDictionary * failureSnapshotsByTemporaryID;
-@property(copy) NSString * selectedMailboxID;
-@property(readonly) NSMutableDictionary * translatedIDsByTemporaryID;
+@property (nonatomic, readonly) NSMutableDictionary *failureSnapshotsByTemporaryID;
+@property (nonatomic, copy) NSString *selectedMailboxID;
+@property (nonatomic, readonly) NSMutableDictionary *translatedIDsByTemporaryID;
 
 - (void)dealloc;
 - (id)failureSnapshotsByTemporaryID;

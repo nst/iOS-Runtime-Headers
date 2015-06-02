@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTPopUpMenuModel;
-
 @interface TSTTableDataMultipleChoiceList : TSTTableDataObject {
     TSTPopUpMenuModel *mPopUpMenuModel;
 }

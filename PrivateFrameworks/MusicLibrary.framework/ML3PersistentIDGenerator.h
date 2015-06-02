@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection;
-
 @interface ML3PersistentIDGenerator : NSObject {
     ML3DatabaseConnection *_connection;
     long long _currentPersistentID;

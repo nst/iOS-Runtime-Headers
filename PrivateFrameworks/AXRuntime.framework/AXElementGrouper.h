@@ -9,10 +9,10 @@
     float _thresholdForDeterminingEqualSize;
 }
 
-@property unsigned int maximumGroupSize;
-@property unsigned int minimumGroupSize;
-@property unsigned int preferredGroupSize;
-@property float thresholdForDeterminingEqualSize;
+@property (nonatomic) unsigned int maximumGroupSize;
+@property (nonatomic) unsigned int minimumGroupSize;
+@property (nonatomic) unsigned int preferredGroupSize;
+@property (nonatomic) float thresholdForDeterminingEqualSize;
 
 - (id)_buildHierarchyForGroup:(id)arg1 indexOfKeyboard:(unsigned int*)arg2;
 - (id)_flattenHierarchyForGroup:(id)arg1 rootLevel:(BOOL)arg2;

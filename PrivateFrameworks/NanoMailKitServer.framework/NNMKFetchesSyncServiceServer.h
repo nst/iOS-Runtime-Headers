@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKFetchesSyncServiceServerDelegate>;
-
 @interface NNMKFetchesSyncServiceServer : NNMKSyncServiceEndpoint {
     <NNMKFetchesSyncServiceServerDelegate> *_delegate;
 }
 
-@property <NNMKFetchesSyncServiceServerDelegate> * delegate;
+@property (nonatomic) <NNMKFetchesSyncServiceServerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

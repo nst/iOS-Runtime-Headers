@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentRewrapRequest : PKPaymentWebServiceRequest {
-}
+@interface PKPaymentRewrapRequest : PKPaymentWebServiceRequest
 
 + (id)requestWithServiceURL:(id)arg1 deviceData:(id)arg2 paymentData:(id)arg3 pass:(id)arg4 merchantIdentifier:(id)arg5 applicationData:(id)arg6 account:(id)arg7;
 

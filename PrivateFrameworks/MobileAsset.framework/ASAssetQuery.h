@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
  */
 
-@class NSArray, NSPredicate, NSString;
-
 @interface ASAssetQuery : NSObject {
     NSString *_assetType;
     double _networkTimeout;
@@ -12,11 +10,11 @@
     NSArray *_results;
 }
 
-@property(copy) NSString * assetType;
-@property double networkTimeout;
-@property(retain) NSPredicate * predicate;
-@property BOOL queriesLocalAssetInformationOnly;
-@property(retain) NSArray * results;
+@property (nonatomic, copy) NSString *assetType;
+@property (nonatomic) double networkTimeout;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic) BOOL queriesLocalAssetInformationOnly;
+@property (nonatomic, retain) NSArray *results;
 
 + (id)queryPredicateForProperties:(id)arg1;
 
@@ -33,7 +31,7 @@
 - (void)setPredicate:(id)arg1;
 - (void)setQueriesLocalAssetInformationOnly:(BOOL)arg1;
 - (void)setResults:(id)arg1;
-- (void)startQuery:(id)arg1;
+- (void)startQuery:(id /* block */)arg1;
 - (void)stopQuery;
 
 @end

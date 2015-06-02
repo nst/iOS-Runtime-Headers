@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSAppleTVServiceProvider : RMSHomeSharingServiceProvider {
-}
+@interface RMSAppleTVServiceProvider : RMSHomeSharingServiceProvider
 
 - (id)searchType;
 - (int)serviceLegacyFlagsFromTXTDictionary:(id)arg1;

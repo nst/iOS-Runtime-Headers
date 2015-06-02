@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface _NSDispatchData : NSData {
-}
+@interface _NSDispatchData : NSData
 
 + (BOOL)supportsSecureCoding;
 
@@ -13,7 +12,7 @@
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateByteRangesUsingBlock:(id)arg1;
+- (void)enumerateByteRangesUsingBlock:(id /* block */)arg1;
 - (void)getBytes:(void*)arg1;
 - (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

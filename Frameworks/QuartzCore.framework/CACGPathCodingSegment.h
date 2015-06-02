@@ -6,7 +6,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _points[3];
+    } _points;
     int _type;
 }
 

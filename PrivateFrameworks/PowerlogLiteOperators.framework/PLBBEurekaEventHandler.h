@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@interface PLBBEurekaEventHandler : PLBBMsgHandler {
-}
+@interface PLBBEurekaEventHandler : PLBBMsgHandler
 
 @end

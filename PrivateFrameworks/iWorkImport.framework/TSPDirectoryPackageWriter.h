@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, TSPDirectoryPackageDataWriter;
-
 @interface TSPDirectoryPackageWriter : TSPPackageWriter {
     NSObject<OS_dispatch_queue> *_componentFileIOQueue;
     TSPDirectoryPackageDataWriter *_dataWriter;

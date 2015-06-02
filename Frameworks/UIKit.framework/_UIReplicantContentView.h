@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIReplicantContentView : UIView {
-}
+@interface _UIReplicantContentView : UIView
 
 + (Class)layerClass;
 

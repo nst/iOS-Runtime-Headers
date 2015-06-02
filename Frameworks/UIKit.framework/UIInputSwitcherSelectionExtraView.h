@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKeyboardMenuView;
-
 @interface UIInputSwitcherSelectionExtraView : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -20,10 +18,10 @@
     float m_pointerOffset;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyRect;
-@property UIKeyboardMenuView * menu;
-@property float pointerOffset;
-@property int roundedCorners;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyRect;
+@property (nonatomic) UIKeyboardMenuView *menu;
+@property (nonatomic) float pointerOffset;
+@property (nonatomic) int roundedCorners;
 
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

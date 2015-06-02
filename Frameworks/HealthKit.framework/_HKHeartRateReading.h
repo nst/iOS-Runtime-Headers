@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity;
-
 @interface _HKHeartRateReading : NSObject <NSSecureCoding> {
     int _confidence;
     HKQuantity *_heartRate;
 }
 
-@property int confidence;
-@property(retain) HKQuantity * heartRate;
+@property (nonatomic) int confidence;
+@property (nonatomic, retain) HKQuantity *heartRate;
 
 + (id)readingWithHeartRate:(id)arg1 confidence:(int)arg2;
 + (BOOL)supportsSecureCoding;

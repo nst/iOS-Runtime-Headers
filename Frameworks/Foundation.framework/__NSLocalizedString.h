@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSMutableString;
-
 @interface __NSLocalizedString : NSMutableString {
     NSDictionary *config;
     NSMutableString *original;

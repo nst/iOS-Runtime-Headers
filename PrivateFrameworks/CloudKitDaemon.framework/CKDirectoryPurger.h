@@ -2,29 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray;
-
 @interface CKDirectoryPurger : NSObject {
     NSArray *_paths;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shouldRemoveFileBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shouldSkipFileBlock;
-
+    id /* block */ _shouldRemoveFileBlock;
+    id /* block */ _shouldSkipFileBlock;
 }
 
-@property(retain) NSArray * paths;
-@property(copy) id shouldRemoveFileBlock;
-@property(copy) id shouldSkipFileBlock;
+@property (nonatomic, retain) NSArray *paths;
+@property (nonatomic, copy) id /* block */ shouldRemoveFileBlock;
+@property (nonatomic, copy) id /* block */ shouldSkipFileBlock;
 
 + (void)purgeDirectoryAtPath:(id)arg1;
 
@@ -33,9 +19,9 @@
 - (id)paths;
 - (void)purge;
 - (void)setPaths:(id)arg1;
-- (void)setShouldRemoveFileBlock:(id)arg1;
-- (void)setShouldSkipFileBlock:(id)arg1;
-- (id)shouldRemoveFileBlock;
-- (id)shouldSkipFileBlock;
+- (void)setShouldRemoveFileBlock:(id /* block */)arg1;
+- (void)setShouldSkipFileBlock:(id /* block */)arg1;
+- (id /* block */)shouldRemoveFileBlock;
+- (id /* block */)shouldSkipFileBlock;
 
 @end

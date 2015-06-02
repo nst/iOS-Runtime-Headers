@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAHAEntity : SADomainObject
 
-@interface SAHAEntity : SADomainObject {
-}
-
-@property(copy) NSString * entityType;
-@property(copy) NSString * home;
-@property(copy) NSString * name;
-@property(copy) NSString * room;
-@property(copy) NSString * serviceType;
-@property(copy) NSString * zone;
+@property (nonatomic, copy) NSString *entityType;
+@property (nonatomic, copy) NSString *home;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *room;
+@property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic, copy) NSString *zone;
 
 + (id)entity;
 + (id)entityWithDictionary:(id)arg1 context:(id)arg2;

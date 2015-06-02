@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface SYLogs : NSObject {
-}
+@interface SYLogs : NSObject
 
 + (void)adjustLoggingForPrefsUpdate:(struct __CFString { }*)arg1;
 + (struct __CFString { }*)facility;

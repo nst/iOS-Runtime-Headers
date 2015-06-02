@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVButton : UIButton {
-}
+@interface AVButton : UIButton
 
 - (BOOL)_drawingAsSelected;
 - (void)_updateForStateChangeAnimated:(BOOL)arg1;

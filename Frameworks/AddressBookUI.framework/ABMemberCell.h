@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABStyleProvider, ABUIPerson;
-
 @interface ABMemberCell : UITableViewCell {
     BOOL _isMeCard;
     ABUIPerson *_person;
     ABStyleProvider *_styleProvider;
 }
 
-@property BOOL isMeCard;
-@property(retain) ABUIPerson * person;
-@property(readonly) <ABStyleProvider> * styleProvider;
+@property (nonatomic) BOOL isMeCard;
+@property (nonatomic, retain) ABUIPerson *person;
+@property (nonatomic, readonly) <ABStyleProvider> *styleProvider;
 
 - (id)_attributedNameWithNameComponents:(id)arg1 delimiter:(id)arg2 highlightedIndex:(int)arg3 romanName:(BOOL)arg4;
 - (id)_cachedBoldTextAttributes;

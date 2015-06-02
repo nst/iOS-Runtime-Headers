@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UIPrintPanelTableViewControllerAccessibility : __UIPrintPanelTableViewControllerAccessibility_super {
-}
+@interface UIPrintPanelTableViewControllerAccessibility : __UIPrintPanelTableViewControllerAccessibility_super
 
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryTargetClass;

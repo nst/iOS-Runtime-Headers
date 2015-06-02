@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPGraphicRegion : CPRegion {
-}
+@interface CPGraphicRegion : CPRegion
 
 @end

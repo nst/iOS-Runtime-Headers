@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MRMediaRemoteOriginClientManager : NSObject {
     NSMutableDictionary *_originClients;
     NSObject<OS_dispatch_queue> *_serialQueue;

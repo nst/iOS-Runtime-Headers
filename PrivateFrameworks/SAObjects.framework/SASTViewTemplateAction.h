@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SASTItemGroup;
+@interface SASTViewTemplateAction : AceObject <SASTTemplateAction>
 
-@interface SASTViewTemplateAction : AceObject <SASTTemplateAction> {
-}
-
-@property(copy) NSArray * commands;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SASTItemGroup * itemGroupView;
-@property(readonly) Class superclass;
-@property(copy) NSString * viewTitle;
+@property (nonatomic, copy) NSArray *commands;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SASTItemGroup *itemGroupView;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *viewTitle;
 
 + (id)viewTemplateAction;
 + (id)viewTemplateActionWithDictionary:(id)arg1 context:(id)arg2;

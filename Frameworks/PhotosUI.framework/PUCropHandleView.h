@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSLayoutConstraint, UIView;
-
 @interface PUCropHandleView : UIView {
     UIView *__layoutReferenceView;
     NSArray *__lineViews;
@@ -14,22 +12,22 @@
     BOOL _overlayHidden;
 }
 
-@property(setter=_setLayoutReferenceView:,retain) UIView * _layoutReferenceView;
-@property(setter=_setLineViews:,retain) NSArray * _lineViews;
-@property(setter=_setLineWidthConstraint:,retain) NSLayoutConstraint * _lineWidthConstraint;
-@property(setter=_setOverlayViews:,retain) NSArray * _overlayViews;
-@property(readonly) NSArray * adjacentHandles;
-@property(getter=isBottom,readonly) BOOL bottom;
-@property(getter=isCorner,readonly) BOOL corner;
-@property(readonly) unsigned int handle;
-@property(getter=isLateral,readonly) BOOL lateral;
-@property(readonly) id layoutReferenceItem;
-@property(getter=isLeft,readonly) BOOL left;
-@property(getter=isLineWeightHeavy) BOOL lineWeightHeavy;
-@property(readonly) unsigned int oppositeHandle;
-@property(getter=isOverlayHidden) BOOL overlayHidden;
-@property(getter=isRight,readonly) BOOL right;
-@property(getter=isTop,readonly) BOOL top;
+@property (setter=_setLayoutReferenceView:, nonatomic, retain) UIView *_layoutReferenceView;
+@property (setter=_setLineViews:, nonatomic, retain) NSArray *_lineViews;
+@property (setter=_setLineWidthConstraint:, nonatomic, retain) NSLayoutConstraint *_lineWidthConstraint;
+@property (setter=_setOverlayViews:, nonatomic, retain) NSArray *_overlayViews;
+@property (nonatomic, readonly) NSArray *adjacentHandles;
+@property (getter=isBottom, nonatomic, readonly) BOOL bottom;
+@property (getter=isCorner, nonatomic, readonly) BOOL corner;
+@property (nonatomic, readonly) unsigned int handle;
+@property (getter=isLateral, nonatomic, readonly) BOOL lateral;
+@property (nonatomic, readonly) id layoutReferenceItem;
+@property (getter=isLeft, nonatomic, readonly) BOOL left;
+@property (getter=isLineWeightHeavy, nonatomic) BOOL lineWeightHeavy;
+@property (nonatomic, readonly) unsigned int oppositeHandle;
+@property (getter=isOverlayHidden, nonatomic) BOOL overlayHidden;
+@property (getter=isRight, nonatomic, readonly) BOOL right;
+@property (getter=isTop, nonatomic, readonly) BOOL top;
 
 + (id)allHandles;
 

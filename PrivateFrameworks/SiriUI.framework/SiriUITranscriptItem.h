@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class AceObject, NSUUID, UIViewController<SiriUIViewController>;
-
 @interface SiriUITranscriptItem : NSObject {
     AceObject *_aceObject;
     NSUUID *_itemIdentifier;
     UIViewController<SiriUIViewController> *_viewController;
 }
 
-@property(retain) AceObject * aceObject;
-@property(copy) NSUUID * itemIdentifier;
-@property(retain) UIViewController<SiriUIViewController> * viewController;
+@property (nonatomic, retain) AceObject *aceObject;
+@property (nonatomic, copy) NSUUID *itemIdentifier;
+@property (nonatomic, retain) UIViewController<SiriUIViewController> *viewController;
 
 + (id)transcriptItemWithAceObject:(id)arg1;
 

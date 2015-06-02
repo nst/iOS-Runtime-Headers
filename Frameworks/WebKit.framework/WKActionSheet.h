@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKActionSheetDelegate>;
-
 @interface WKActionSheet : UIAlertController {
     unsigned int _arrowDirections;
     BOOL _isRotating;
@@ -17,8 +15,8 @@
     <WKActionSheetDelegate> *_sheetDelegate;
 }
 
-@property unsigned int arrowDirections;
-@property <WKActionSheetDelegate> * sheetDelegate;
+@property (nonatomic) unsigned int arrowDirections;
+@property (nonatomic) <WKActionSheetDelegate> *sheetDelegate;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

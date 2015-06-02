@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDDataValuesCollection, CHDFormula, EDResources;
-
 @interface CHDData : NSObject {
     unsigned int mContentFormatId;
     unsigned int mDataValueIndexCount;

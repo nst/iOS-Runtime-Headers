@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSLayoutConstraint, NSString, PUAdjustmentsMode, UIView;
-
 @interface PUPhotoEditLevelSlider : UIView <PUPhotoEditLayoutStaticAdaptable> {
     UIView *__sliderContentView;
     PUAdjustmentsMode *_adjustmentsMode;
@@ -34,22 +32,22 @@
     BOOL _scaleFactorsAreValid;
 }
 
-@property(retain) PUAdjustmentsMode * adjustmentsMode;
-@property float baseValue;
-@property(getter=isBaseValueIndicatorHidden) BOOL baseValueIndicatorHidden;
-@property struct CGSize { float x1; float x2; } contentSize;
-@property float currentValue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDirectionReversed) BOOL directionReversed;
-@property(readonly) unsigned int hash;
-@property(readonly) float identityOffset;
-@property float identityValue;
-@property(readonly) int layoutOrientation;
-@property float maxValue;
-@property float minValue;
-@property(readonly) Class superclass;
-@property(readonly) BOOL wantsLevelIndicator;
+@property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;
+@property (nonatomic) float baseValue;
+@property (getter=isBaseValueIndicatorHidden, nonatomic) BOOL baseValueIndicatorHidden;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) float currentValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDirectionReversed, nonatomic) BOOL directionReversed;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float identityOffset;
+@property (nonatomic) float identityValue;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (nonatomic) float maxValue;
+@property (nonatomic) float minValue;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL wantsLevelIndicator;
 
 - (void).cxx_destruct;
 - (float)_baseValueIndicatorOffset;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCloudPhotoWelcomeNavigationController : UINavigationController {
-}
+@interface PUCloudPhotoWelcomeNavigationController : UINavigationController
 
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotate;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPUEmphasizedText, NSDictionary, UILabel;
-
 @interface MusicTableSectionHeaderView : UITableViewHeaderFooterView {
     float _backgroundTransitionWeighting;
     BOOL _needsTitleLabelUpdate;
@@ -13,8 +11,8 @@
     NSDictionary *_titleRegularTextAttributes;
 }
 
-@property float backgroundTransitionWeighting;
-@property(copy) MPUEmphasizedText * titleEmphasizedText;
+@property (nonatomic) float backgroundTransitionWeighting;
+@property (nonatomic, copy) MPUEmphasizedText *titleEmphasizedText;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

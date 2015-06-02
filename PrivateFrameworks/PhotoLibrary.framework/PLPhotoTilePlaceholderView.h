@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, UIActivityIndicatorView, UILabel, UIView;
-
 @interface PLPhotoTilePlaceholderView : UIView <PLTilePlaceholderView> {
     BOOL _indicatorIsVisible;
     double _lastViewPhaseChangeDate;
@@ -12,10 +10,10 @@
     UILabel *_loadingLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)fadeOutSoonIfNeededAndRemoveFromSuperview:(BOOL)arg1;

@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class CIFilter, SKShader;
+@interface SKEffectNode : SKNode
 
-@interface SKEffectNode : SKNode {
-}
-
-@property int blendMode;
-@property(retain) CIFilter * filter;
-@property(retain) SKShader * shader;
-@property BOOL shouldCenterFilter;
-@property BOOL shouldEnableEffects;
-@property BOOL shouldRasterize;
+@property (nonatomic) int blendMode;
+@property (nonatomic, retain) CIFilter *filter;
+@property (nonatomic, retain) SKShader *shader;
+@property (nonatomic) BOOL shouldCenterFilter;
+@property (nonatomic) BOOL shouldEnableEffects;
+@property (nonatomic) BOOL shouldRasterize;
 
 - (void)_flippedChangedFrom:(BOOL)arg1 to:(BOOL)arg2;
 - (void)_scaleFactorChangedFrom:(float)arg1 to:(float)arg2;

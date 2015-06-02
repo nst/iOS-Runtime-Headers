@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PXPresentationState;
-
 @interface PXOfficeArtClient : OAXClient {
     PXPresentationState *mPresentationState;
 }

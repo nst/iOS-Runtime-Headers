@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDOpenMapsAction : DDAction {
-}
+@interface DDOpenMapsAction : DDAction
 
 - (id)localizedName;
 - (void)perform;

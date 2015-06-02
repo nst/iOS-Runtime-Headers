@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class <AXHAServerDelegate>, NSArray, NSMutableDictionary, NSObject<OS_xpc_object>, NSString;
-
 @interface AXHAServer : NSObject <AXHARemoteUpdateProtocol> {
     NSArray *_availableControllers;
     NSArray *_availableHearingAids;
@@ -13,16 +11,16 @@
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
-@property(retain) NSArray * availableControllers;
-@property(retain) NSArray * availableHearingAids;
-@property(copy,readonly) NSString * debugDescription;
-@property <AXHAServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hearingAidReachable;
-@property(readonly) Class superclass;
-@property(retain) NSMutableDictionary * updates;
-@property(retain) NSObject<OS_xpc_object> * xpcConnection;
+@property (nonatomic, retain) NSArray *availableControllers;
+@property (nonatomic, retain) NSArray *availableHearingAids;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXHAServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hearingAidReachable;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *updates;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *xpcConnection;
 
 + (id)sharedInstance;
 
@@ -38,9 +36,9 @@
 - (BOOL)hearingAidReachable;
 - (id)init;
 - (void)liveListenDidUpdate:(id)arg1;
-- (void)registerListener:(id)arg1 forAvailableDeviceHandler:(id)arg2;
-- (void)registerListener:(id)arg1 forLiveListenLevelsHandler:(id)arg2;
-- (void)registerListener:(id)arg1 forPropertyUpdateHandler:(id)arg2;
+- (void)registerListener:(id)arg1 forAvailableDeviceHandler:(id /* block */)arg2;
+- (void)registerListener:(id)arg1 forLiveListenLevelsHandler:(id /* block */)arg2;
+- (void)registerListener:(id)arg1 forPropertyUpdateHandler:(id /* block */)arg2;
 - (void)registerUpdateBlock:(void*)arg1 forIdentier:(unsigned long long)arg2 withListener:(id)arg3;
 - (void)requestHearingAidConnection;
 - (void)resetConnection;

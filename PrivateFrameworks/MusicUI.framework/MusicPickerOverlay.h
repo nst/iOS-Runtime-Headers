@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicPickerOverlayDelegate>, NSString, UIBarButtonItem, UIViewController;
-
 @interface MusicPickerOverlay : NSObject {
     BOOL _allowsMultipleSelections;
     <MusicPickerOverlayDelegate> *_delegate;
     UIViewController *_viewController;
 }
 
-@property BOOL allowsMultipleSelections;
-@property <MusicPickerOverlayDelegate> * delegate;
-@property(readonly) UIBarButtonItem * rightBarButtonItem;
-@property(readonly) NSString * title;
-@property(retain) UIViewController * viewController;
+@property (nonatomic) BOOL allowsMultipleSelections;
+@property (nonatomic) <MusicPickerOverlayDelegate> *delegate;
+@property (nonatomic, readonly) UIBarButtonItem *rightBarButtonItem;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
 - (BOOL)allowsMultipleSelections;

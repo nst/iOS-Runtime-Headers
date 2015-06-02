@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableData;
-
 @interface MLGeniusPlaylistController : NSObject {
     void *_echo;
     void *_echo_cluster_playlist;
@@ -17,7 +15,7 @@
 + (BOOL)hasGeniusFeatureEnabled;
 + (void)ignoreUnusedWarnings;
 + (id)playlistControllerWithSeedTracks:(id)arg1 error:(id*)arg2;
-+ (void)populateContainer:(id)arg1 withSeedTrack:(id)arg2 completionBlock:(id)arg3;
++ (void)populateContainer:(id)arg1 withSeedTrack:(id)arg2 completionBlock:(id /* block */)arg3;
 + (BOOL)useFakeGeniusData;
 
 - (void).cxx_destruct;

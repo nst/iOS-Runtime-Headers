@@ -9,7 +9,7 @@
     } _placeholderSize;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } placeholderSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } placeholderSize;
 
 - (struct CGSize { float x1; float x2; })_calculatedContentSize;
 - (id)description;

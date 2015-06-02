@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNObjectPlaceholderInfo : KNPlaceholderInfo {
-}
+@interface KNObjectPlaceholderInfo : KNPlaceholderInfo
 
 - (BOOL)displaysInstructionalText;
 - (id)instructionalText;

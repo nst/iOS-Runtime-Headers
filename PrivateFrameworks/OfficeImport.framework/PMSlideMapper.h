@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDSlide;
-
 @interface PMSlideMapper : CMMapper {
     struct CGRect { 
         struct CGPoint { 

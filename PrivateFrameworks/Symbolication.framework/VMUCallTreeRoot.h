@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSArray, NSHashTable, NSMapTable, NSString, VMUSampler;
-
 @interface VMUCallTreeRoot : VMUCallTreeNode {
     NSMapTable *_addressToLeafSymbolNameMap;
     NSMapTable *_addressToSymbolNameMap;

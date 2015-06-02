@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, PDAnimationTarget;
+@interface PDSequentialTimeNode : PDTimeNode
 
-@interface PDSequentialTimeNode : PDTimeNode {
-}
-
-@property double delay;
-@property double direction;
-@property(retain) NSString * groupId;
-@property int iterateType;
-@property int presetClass;
-@property int presetId;
-@property(retain) PDAnimationTarget * target;
-@property int triggerType;
+@property (nonatomic) double delay;
+@property (nonatomic) double direction;
+@property (nonatomic, retain) NSString *groupId;
+@property (nonatomic) int iterateType;
+@property (nonatomic) int presetClass;
+@property (nonatomic) int presetId;
+@property (nonatomic, retain) PDAnimationTarget *target;
+@property (nonatomic) int triggerType;
 
 + (unsigned int)buildPartsFromTarget:(id)arg1;
 + (id)newSequentialTimeNodeGroupForAnimationInfo;
@@ -35,7 +32,7 @@
 - (void)setDirection:(double)arg1;
 - (void)setGroupId:(id)arg1;
 - (void)setIterateType:(int)arg1;
-- (void)setLevel2ParallelAttribute:(id)arg1;
+- (void)setLevel2ParallelAttribute:(id /* block */)arg1;
 - (void)setPresetClass:(int)arg1;
 - (void)setPresetId:(int)arg1;
 - (void)setTarget:(id)arg1;

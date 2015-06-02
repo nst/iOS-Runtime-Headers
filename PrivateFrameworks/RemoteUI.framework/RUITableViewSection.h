@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUITableViewSectionDelegate>, NSArray, NSDictionary, NSMutableArray, NSNumber, NSString, RUITableViewRow, UIView<RemoteUITableFooter>, UIView<RemoteUITableHeader>;
-
 @interface RUITableViewSection : RUIElement <RUITableFooterDelegate, RUITableHeaderDelegate> {
     NSString *_HTMLFooterContent;
     NSString *_HTMLHeaderContent;
@@ -26,23 +24,23 @@
     NSString *_subHeaderText;
 }
 
-@property(copy) NSString * HTMLFooterContent;
-@property(copy) NSString * HTMLHeaderContent;
-@property BOOL configured;
-@property <RUITableViewSectionDelegate> * delegate;
-@property(copy) NSString * detailHeaderText;
-@property BOOL drawTopSeparator;
-@property(copy) NSDictionary * footerAttributes;
-@property float footerHeight;
-@property(copy) NSString * footerText;
-@property(retain) UIView<RemoteUITableFooter> * footerView;
-@property(copy) NSDictionary * headerAttributes;
-@property float headerHeight;
-@property(copy) NSString * headerText;
-@property(retain) UIView<RemoteUITableHeader> * headerView;
-@property(readonly) NSArray * rows;
-@property(copy) NSDictionary * subHeaderAttributes;
-@property(copy) NSString * subHeaderText;
+@property (nonatomic, copy) NSString *HTMLFooterContent;
+@property (nonatomic, copy) NSString *HTMLHeaderContent;
+@property (nonatomic) BOOL configured;
+@property (nonatomic) <RUITableViewSectionDelegate> *delegate;
+@property (nonatomic, copy) NSString *detailHeaderText;
+@property (nonatomic) BOOL drawTopSeparator;
+@property (nonatomic, copy) NSDictionary *footerAttributes;
+@property (nonatomic) float footerHeight;
+@property (nonatomic, copy) NSString *footerText;
+@property (nonatomic, retain) UIView<RemoteUITableFooter> *footerView;
+@property (nonatomic, copy) NSDictionary *headerAttributes;
+@property (nonatomic) float headerHeight;
+@property (nonatomic, copy) NSString *headerText;
+@property (nonatomic, retain) UIView<RemoteUITableHeader> *headerView;
+@property (nonatomic, readonly) NSArray *rows;
+@property (nonatomic, copy) NSDictionary *subHeaderAttributes;
+@property (nonatomic, copy) NSString *subHeaderText;
 
 - (void).cxx_destruct;
 - (id)HTMLFooterContent;

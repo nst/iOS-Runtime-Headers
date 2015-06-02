@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData;
+@interface SAGetSessionCertificateResponse : SABaseClientBoundCommand
 
-@interface SAGetSessionCertificateResponse : SABaseClientBoundCommand {
-}
-
-@property(copy) NSData * certificate;
+@property (nonatomic, copy) NSData *certificate;
 
 + (id)getSessionCertificateResponse;
 + (id)getSessionCertificateResponseWithDictionary:(id)arg1 context:(id)arg2;

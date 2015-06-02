@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSMutableIndexSet, UITableView, UITableViewRowData;
-
 @interface _UITableViewUpdateSupport : NSObject {
     id _context;
     id *animatedCells;

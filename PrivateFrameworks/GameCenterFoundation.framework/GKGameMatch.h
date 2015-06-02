@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKGame, GKPlayer, GKRecentMatchInternal, NSDate;
-
 @interface GKGameMatch : NSObject {
     GKGame *_game;
     GKRecentMatchInternal *_internal;
     GKPlayer *_player;
 }
 
-@property(retain) NSDate * date;
-@property(readonly) GKGame * game;
-@property(retain) GKRecentMatchInternal * internal;
-@property(readonly) GKPlayer * player;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) GKGame *game;
+@property (retain) GKRecentMatchInternal *internal;
+@property (nonatomic, readonly) GKPlayer *player;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;

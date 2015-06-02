@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDeclinedCalendarItemInfo : EKCalendarInfo {
-}
+@interface EKDeclinedCalendarItemInfo : EKCalendarInfo
 
 - (id)description;
 - (BOOL)excludeFromSelectAll;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSArray;
-
 @interface GKBrushList : GKThemeBrush {
     NSArray *_brushList;
 }
 
-@property(retain) NSArray * brushList;
+@property (nonatomic, retain) NSArray *brushList;
 
 + (id)brushListWithBrushes:(id)arg1;
 

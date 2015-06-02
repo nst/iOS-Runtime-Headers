@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface _MFNetworkObserver : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void)dealloc;
 - (void)execute;
-- (id)initWithBlock:(id)arg1 queue:(id)arg2;
+- (id)initWithBlock:(id /* block */)arg1 queue:(id)arg2;
 
 @end

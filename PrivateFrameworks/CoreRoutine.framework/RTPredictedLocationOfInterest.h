@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDate, RTLocationOfInterest, RTRoute, RTSource;
-
 @interface RTPredictedLocationOfInterest : NSObject <NSSecureCoding> {
     double _confidence;
     RTLocationOfInterest *_locationOfInterest;
@@ -13,12 +11,12 @@
     RTSource *_source;
 }
 
-@property(readonly) double confidence;
-@property(readonly) RTLocationOfInterest * locationOfInterest;
-@property int modeOfTransportation;
-@property(readonly) NSDate * nextEntryTime;
-@property(readonly) RTRoute * route;
-@property(readonly) RTSource * source;
+@property (nonatomic, readonly) double confidence;
+@property (nonatomic, readonly) RTLocationOfInterest *locationOfInterest;
+@property (nonatomic) int modeOfTransportation;
+@property (nonatomic, readonly) NSDate *nextEntryTime;
+@property (nonatomic, readonly) RTRoute *route;
+@property (nonatomic, readonly) RTSource *source;
 
 + (BOOL)supportsSecureCoding;
 

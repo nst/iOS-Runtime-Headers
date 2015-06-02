@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CPDistributedNotificationCenter : NSObject {
     NSString *_centerName;
     BOOL _isServer;

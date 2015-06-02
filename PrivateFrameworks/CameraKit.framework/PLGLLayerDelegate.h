@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface PLGLLayerDelegate : NSObject {
-}
+@interface PLGLLayerDelegate : NSObject
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

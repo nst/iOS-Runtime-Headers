@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSMutableSet, NSString;
-
 @interface CalPreferences : NSObject {
     NSString *_domain;
     NSMutableSet *_registeredNotificationsToReflect;

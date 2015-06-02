@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
-
 @interface HDIDSPersistentDictionary : NSObject {
     struct sqlite3_stmt { } *_byDate;
     struct sqlite3 { } *_db;
@@ -20,7 +18,7 @@
 - (id)_objectFromData:(id)arg1;
 - (void)_openDBForceRecreate:(BOOL)arg1;
 - (void)dealloc;
-- (void)enumerateObjectsSortedByExpirationDate:(id)arg1;
+- (void)enumerateObjectsSortedByExpirationDate:(id /* block */)arg1;
 - (id)initWithPath:(id)arg1 objectClass:(Class)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;

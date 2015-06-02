@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADLineJoin : OADProperties <NSCopying> {
-}
+@interface OADLineJoin : OADProperties <NSCopying>
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

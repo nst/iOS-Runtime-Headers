@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSRemoteNotificationClient : NSObject {
-}
+@interface SBSRemoteNotificationClient : NSObject
 
 + (unsigned int)_remoteNotificationServerPort;
 + (id)getNotificationUserInfoForToken:(int)arg1;

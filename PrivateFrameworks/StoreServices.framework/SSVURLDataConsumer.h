@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVURLDataConsumer : NSObject {
-}
+@interface SSVURLDataConsumer : NSObject
 
 + (id)consumer;
 

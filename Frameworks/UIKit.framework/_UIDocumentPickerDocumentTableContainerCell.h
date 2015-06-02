@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView;
-
 @interface _UIDocumentPickerDocumentTableContainerCell : _UIDocumentPickerDocumentTableCell {
     UIImageView *_containerIconView;
 }
 
-@property(retain) UIImageView * containerIconView;
+@property (nonatomic, retain) UIImageView *containerIconView;
 
 - (id)containerIconView;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;

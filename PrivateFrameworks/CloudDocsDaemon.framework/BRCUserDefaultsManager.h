@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSMutableDictionary, NSOperationQueue, NSString, NSURL, NSURLSession;
-
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _configurationPlistDidUpdateBlock;
-
+    id /* block */ _configurationPlistDidUpdateBlock;
     NSOperationQueue *_downloadQueue;
     NSDictionary *_serverConfigurationDict;
     NSURL *_serverConfigurationURL;
@@ -21,10 +11,10 @@
     NSMutableDictionary *_userDefaultsCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
@@ -38,6 +28,6 @@
 - (id)defaultsForContainerIdentifier:(id)arg1;
 - (id)init;
 - (void)reset;
-- (void)setServerConfigurationURL:(id)arg1 whenLoaded:(id)arg2;
+- (void)setServerConfigurationURL:(id)arg1 whenLoaded:(id /* block */)arg2;
 
 @end

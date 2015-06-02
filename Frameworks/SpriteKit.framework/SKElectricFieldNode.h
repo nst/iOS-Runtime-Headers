@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKElectricFieldNode : SKFieldNode {
-}
+@interface SKElectricFieldNode : SKFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

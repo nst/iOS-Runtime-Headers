@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray;
-
 @interface PLCloudSchedulerConfiguration : NSObject {
     unsigned int _concurrencyLevel;
     NSArray *_scenarioProducers;
     NSArray *_triggers;
 }
 
-@property unsigned int concurrencyLevel;
-@property(retain) NSArray * scenarioProducers;
-@property(retain) NSArray * triggers;
+@property (nonatomic) unsigned int concurrencyLevel;
+@property (nonatomic, retain) NSArray *scenarioProducers;
+@property (nonatomic, retain) NSArray *triggers;
 
 - (unsigned int)concurrencyLevel;
 - (id)scenarioProducers;

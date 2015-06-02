@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <MSDeleteStreamsProtocolDelegate>, NSMutableArray;
-
 @interface MSDeleteStreamsProtocol : MSStreamsProtocol {
     NSMutableArray *_collectionsInFlight;
     struct _MSDSPCContext { 
@@ -37,7 +30,7 @@
     } _context;
 }
 
-@property <MSDeleteStreamsProtocolDelegate> * delegate;
+@property (nonatomic) <MSDeleteStreamsProtocolDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;

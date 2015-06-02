@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMComment : DOMCharacterData {
-}
+@interface DOMComment : DOMCharacterData
 
 @end

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKAudioElement : IKMediaElement {
-}
+@interface IKAudioElement : IKMediaElement
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CarKit.framework/CarKit
  */
 
-@class NSData, NSString, NSUUID;
-
 @interface CRVehicle : NSObject <NSSecureCoding> {
     NSString *_bluetoothAddress;
     NSString *_carplayWiFiUUID;
@@ -13,13 +11,13 @@
     NSString *_vehicleName;
 }
 
-@property(retain) NSString * bluetoothAddress;
-@property(retain) NSString * carplayWiFiUUID;
-@property(retain) NSData * certificateSerialNumber;
-@property(retain) NSUUID * identifier;
-@property(readonly) BOOL isPaired;
-@property unsigned int pairingStatus;
-@property(retain) NSString * vehicleName;
+@property (nonatomic, retain) NSString *bluetoothAddress;
+@property (nonatomic, retain) NSString *carplayWiFiUUID;
+@property (nonatomic, retain) NSData *certificateSerialNumber;
+@property (nonatomic, retain) NSUUID *identifier;
+@property (nonatomic, readonly) BOOL isPaired;
+@property (nonatomic) unsigned int pairingStatus;
+@property (nonatomic, retain) NSString *vehicleName;
 
 + (BOOL)supportsSecureCoding;
 + (id)vehicleForVehicleAccessory:(id)arg1;

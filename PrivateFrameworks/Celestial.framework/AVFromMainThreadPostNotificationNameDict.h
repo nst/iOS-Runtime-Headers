@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSMutableDictionary;
-
 @interface AVFromMainThreadPostNotificationNameDict : NSObject {
     NSMutableDictionary *_obj;
 }

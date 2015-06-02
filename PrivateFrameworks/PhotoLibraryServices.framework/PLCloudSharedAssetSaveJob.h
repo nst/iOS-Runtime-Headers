@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class AssetCollectionInfo, MSASAssetCollection, NSArray, NSDictionary, NSString;
-
 @interface PLCloudSharedAssetSaveJob : PLCloudSharingJob {
     NSArray *_assetCollectionInfos;
     NSString *_cloudAlbumGUID;
@@ -20,17 +18,17 @@
     BOOL _replacingOriginalWithDerivative;
 }
 
-@property(retain) NSArray * assetCollectionInfos;
-@property(retain) NSString * cloudAlbumGUID;
-@property(retain) NSArray * cloudAssetGUIDsToDelete;
-@property(retain) NSString * cloudPersonID;
-@property(retain) MSASAssetCollection * currentCloudAssetCollection;
-@property(retain) NSString * currentCloudAssetGUID;
-@property unsigned int currentCloudAssetMediaAssetType;
-@property(retain) NSString * currentFilePath;
-@property BOOL isVideo;
-@property long long jobType;
-@property(retain) NSDictionary * mstreamdInfoDictionary;
+@property (nonatomic, retain) NSArray *assetCollectionInfos;
+@property (nonatomic, retain) NSString *cloudAlbumGUID;
+@property (nonatomic, retain) NSArray *cloudAssetGUIDsToDelete;
+@property (nonatomic, retain) NSString *cloudPersonID;
+@property (nonatomic, retain) MSASAssetCollection *currentCloudAssetCollection;
+@property (nonatomic, retain) NSString *currentCloudAssetGUID;
+@property (nonatomic) unsigned int currentCloudAssetMediaAssetType;
+@property (nonatomic, retain) NSString *currentFilePath;
+@property (nonatomic) BOOL isVideo;
+@property (nonatomic) long long jobType;
+@property (nonatomic, retain) NSDictionary *mstreamdInfoDictionary;
 
 + (id)_dcimDirectoryForFileURL:(id)arg1;
 + (BOOL)_lightweightReimportCacheDirectoryExists;

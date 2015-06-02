@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class UIImage;
-
 @interface SLSheetPreComposedAppIconImageView : SLSheetImagePreviewView {
     UIImage *_shadowImage;
 }

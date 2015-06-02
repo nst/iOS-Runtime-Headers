@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData, NSDate, NSString, _NMRMediaRemoteSetArtworkMessage;
-
 @interface NMRMediaRemoteSetArtworkMessage : NSObject <NMRMediaRemoteProtobufCodable> {
     _NMRMediaRemoteSetArtworkMessage *_protobuf;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * jpegArtwork;
-@property(readonly) NSData * originalDigest;
-@property(readonly) NSDate * serializationDate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *jpegArtwork;
+@property (nonatomic, readonly) NSData *originalDigest;
+@property (nonatomic, readonly) NSDate *serializationDate;
+@property (readonly) Class superclass;
 
 + (id)messageWithJPEGArtwork:(id)arg1 originalDigest:(id)arg2;
 

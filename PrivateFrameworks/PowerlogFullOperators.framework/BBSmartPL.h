@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
  */
 
-@class NSDate, PLEntryNotificationOperatorComposition, PLSmartPLService, PLTelephonyConnection;
-
 @interface BBSmartPL : NSObject {
     PLEntryNotificationOperatorComposition *_bbHwOtherCallback;
     PLTelephonyConnection *_connection;
@@ -13,12 +11,12 @@
     PLSmartPLService *_operator;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * bbHwOtherCallback;
-@property PLTelephonyConnection * connection;
+@property (retain) PLEntryNotificationOperatorComposition *bbHwOtherCallback;
+@property PLTelephonyConnection *connection;
 @property double cxoDuration;
-@property(retain) NSDate * lastLogDate;
+@property (retain) NSDate *lastLogDate;
 @property double logDuration;
-@property PLSmartPLService * operator;
+@property PLSmartPLService *operator;
 
 - (void).cxx_destruct;
 - (id)bbHwOtherCallback;

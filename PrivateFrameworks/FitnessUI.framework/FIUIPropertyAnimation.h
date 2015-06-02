@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CAMediaTimingFunction;
-
 @interface FIUIPropertyAnimation : NSObject {
     CAMediaTimingFunction *_animationTimingFunction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     double _currentAnimationTime;
     double _duration;
 }
 
-@property(readonly) CAMediaTimingFunction * animationTimingFunction;
-@property(readonly) id completionHandler;
-@property(readonly) double duration;
+@property (nonatomic, readonly) CAMediaTimingFunction *animationTimingFunction;
+@property (nonatomic, readonly) id /* block */ completionHandler;
+@property (nonatomic, readonly) double duration;
 
-+ (id)animationWithDuration:(double)arg1 timingFunction:(id)arg2 completion:(id)arg3;
++ (id)animationWithDuration:(double)arg1 timingFunction:(id)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)_currentValue;
@@ -35,7 +25,7 @@
 - (void)_updateWithProgress:(float)arg1;
 - (id)animationTimingFunction;
 - (void)callAndReleaseCompletionHandler;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (double)duration;
 - (BOOL)isFinishedAnimating;
 - (void)update:(double)arg1;

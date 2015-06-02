@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@class NSUUID;
-
 @interface NRFrameworkDevice : NRDevice {
     NSUUID *_deviceID;
 }
 
-@property(retain) NSUUID * deviceID;
+@property (nonatomic, retain) NSUUID *deviceID;
 
 - (void).cxx_destruct;
 - (BOOL)_setValue:(id)arg1 forProperty:(id)arg2;

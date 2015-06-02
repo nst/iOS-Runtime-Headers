@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UISiriWaveyViewDelegate>, CADisplayLink, EAGLContext, UIScreen;
-
 @interface _UISiriWaveyView : UIView {
     int _attribPosition;
     <_UISiriWaveyViewDelegate> *_delegate;
@@ -44,7 +42,7 @@
     } _projection;
     float _projection11;
     unsigned int _renderbufferHandle;
-    float _runningPowerLevels[5];
+    float _runningPowerLevels;
     UIScreen *_screen;
     double _startTime;
     int _state;
@@ -61,8 +59,8 @@
     int _viewWidth;
 }
 
-@property <_UISiriWaveyViewDelegate> * delegate;
-@property int mode;
+@property (nonatomic) <_UISiriWaveyViewDelegate> *delegate;
+@property (nonatomic) int mode;
 
 + (Class)layerClass;
 

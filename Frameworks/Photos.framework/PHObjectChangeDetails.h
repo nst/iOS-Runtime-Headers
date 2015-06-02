@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class PHObject;
-
 @interface PHObjectChangeDetails : NSObject {
     BOOL _assetContentChanged;
     PHObject *_objectAfterChanges;
     PHObject *_objectBeforeChanges;
 }
 
-@property(readonly) BOOL assetContentChanged;
-@property(readonly) id objectAfterChanges;
-@property(readonly) id objectBeforeChanges;
-@property(readonly) BOOL objectWasDeleted;
+@property (readonly) BOOL assetContentChanged;
+@property (readonly) id objectAfterChanges;
+@property (readonly) id objectBeforeChanges;
+@property (readonly) BOOL objectWasDeleted;
 
 - (void).cxx_destruct;
 - (void)_calculateDiffs;

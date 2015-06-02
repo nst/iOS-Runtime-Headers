@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKIMComposeRecipient, NSArray, NSDate, NSString;
-
 @interface CKIMGroupComposeRecipient : MFComposeRecipient {
     NSArray *_composeRecipients;
     NSString *_conversationGUID;
@@ -14,13 +12,13 @@
     CKIMComposeRecipient *_matchingRecipient;
 }
 
-@property(retain) NSArray * composeRecipients;
-@property(retain) NSString * conversationGUID;
-@property(retain) NSString * detailsString;
-@property(retain) NSString * displayString;
-@property(retain) NSArray * handles;
-@property(retain) NSDate * lastMessageDate;
-@property(retain) CKIMComposeRecipient * matchingRecipient;
+@property (nonatomic, retain) NSArray *composeRecipients;
+@property (nonatomic, retain) NSString *conversationGUID;
+@property (nonatomic, retain) NSString *detailsString;
+@property (nonatomic, retain) NSString *displayString;
+@property (nonatomic, retain) NSArray *handles;
+@property (nonatomic, retain) NSDate *lastMessageDate;
+@property (nonatomic, retain) CKIMComposeRecipient *matchingRecipient;
 
 + (id)composeRecipientWithConversation:(id)arg1 searchTerm:(id)arg2 matchingRecipient:(id)arg3;
 

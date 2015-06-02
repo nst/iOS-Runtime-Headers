@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class CPLRUDictionary;
-
 @interface SUImageCache : NSObject {
     CPLRUDictionary *_dictionary;
 }

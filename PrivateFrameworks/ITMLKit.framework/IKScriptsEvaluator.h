@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAppContext, JSManagedValue, NSArray, NSMutableArray, NSString;
-
 @interface IKScriptsEvaluator : NSObject <ISURLOperationDelegate> {
     IKAppContext *_appContext;
     JSManagedValue *_callback;
@@ -13,16 +11,16 @@
     BOOL _success;
 }
 
-@property IKAppContext * appContext;
-@property(retain) JSManagedValue * callback;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isJingleRequest;
-@property(retain) NSMutableArray * records;
-@property(retain) NSArray * scripts;
-@property BOOL success;
-@property(readonly) Class superclass;
+@property (nonatomic) IKAppContext *appContext;
+@property (nonatomic, retain) JSManagedValue *callback;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isJingleRequest;
+@property (nonatomic, retain) NSMutableArray *records;
+@property (nonatomic, retain) NSArray *scripts;
+@property (nonatomic) BOOL success;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_operation:(id)arg1 finishedWithResult:(id)arg2 error:(id)arg3;

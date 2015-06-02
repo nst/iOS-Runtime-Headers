@@ -11,12 +11,12 @@
     int _width;
 }
 
-@property BOOL hasSpeed;
-@property BOOL hasWidth;
-@property int speed;
-@property(readonly) int vertexCount;
-@property(readonly) struct { int x1; int x2; }* vertices;
-@property int width;
+@property (nonatomic) BOOL hasSpeed;
+@property (nonatomic) BOOL hasWidth;
+@property (nonatomic) int speed;
+@property (nonatomic, readonly) int vertexCount;
+@property (nonatomic, readonly) struct { int x1; int x2; }*vertices;
+@property (nonatomic) int width;
 
 - (BOOL)hasSpeed;
 - (BOOL)hasWidth;

@@ -6,7 +6,7 @@
     BOOL _enabled;
 }
 
-@property BOOL enabled;
+@property (nonatomic) BOOL enabled;
 
 - (void)disable;
 - (BOOL)enabled;

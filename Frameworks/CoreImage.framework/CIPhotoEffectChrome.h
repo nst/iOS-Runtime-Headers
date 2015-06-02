@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIPhotoEffectChrome : CIPhotoEffect {
-}
+@interface CIPhotoEffectChrome : CIPhotoEffect
 
 + (id)customAttributes;
 

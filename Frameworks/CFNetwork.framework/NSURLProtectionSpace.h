@@ -2,22 +2,21 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSString, NSURLProtectionSpaceInternal;
-
 @interface NSURLProtectionSpace : NSObject <NSCopying, NSSecureCoding> {
     NSURLProtectionSpaceInternal *_internal;
 }
 
-@property(copy,readonly) NSString * authenticationMethod;
-@property(copy,readonly) NSString * host;
-@property(readonly) BOOL isProxy;
-@property(readonly) int port;
-@property(copy,readonly) NSString * protocol;
-@property(copy,readonly) NSString * proxyType;
-@property(copy,readonly) NSString * realm;
-@property(readonly) BOOL receivesCredentialSecurely;
+@property (readonly, copy) NSString *authenticationMethod;
+@property (readonly, copy) NSString *host;
+@property (readonly) BOOL isProxy;
+@property (readonly) int port;
+@property (readonly, copy) NSString *protocol;
+@property (readonly, copy) NSString *proxyType;
+@property (readonly, copy) NSString *realm;
+@property (readonly) BOOL receivesCredentialSecurely;
 
-+ (id)safari_HTMLFormProtectionSpaceForURL:(id)arg1;
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+
 + (BOOL)supportsSecureCoding;
 
 - (struct _CFURLProtectionSpace { }*)_CFURLProtectionSpace;
@@ -43,10 +42,15 @@
 - (id)proxyType;
 - (id)realm;
 - (BOOL)receivesCredentialSecurely;
+- (struct __SecTrust { }*)serverTrust;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
++ (id)safari_HTMLFormProtectionSpaceForURL:(id)arg1;
+
 - (id)safari_URL;
 - (id)safari_addressString;
 - (BOOL)safari_allowsCredentialSaving;
 - (id)safari_protectionSpaceByReplacingHostWithHighlevelDomain;
-- (struct __SecTrust { }*)serverTrust;
 
 @end

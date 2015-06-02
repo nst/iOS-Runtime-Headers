@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSError, NSObject<OS_dispatch_queue>, NSOperationQueue, NSURL, RCComposition, RCTrimAudioFileOperation;
-
 @interface RCTrimCompositionOperation : RCTrimTimeRangeOperation {
     NSURL *_destinationComposedAVURL;
     double _durationOfFragmentsBeingTrimmed;
@@ -13,20 +11,20 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
     RCComposition *_sourceComposition;
     NSOperationQueue *_subOperationQueue;
-    double _subTaskProgressAmounts[2];
+    double _subTaskProgressAmounts;
     BOOL _success;
     RCTrimAudioFileOperation *_trimAudioFileSubOperation;
 }
 
-@property(copy,readonly) NSURL * destinationComposedAVURL;
-@property(copy,readonly) RCComposition * sourceComposition;
+@property (nonatomic, readonly, copy) NSURL *destinationComposedAVURL;
+@property (nonatomic, readonly, copy) RCComposition *sourceComposition;
 
 + (id)_intermediateTrimmedAVOutputURLForFragment:(id)arg1;
 + (id)_intermediateTrimmedWaveformURLForFragment:(id)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_isSaveToCopyOperation;
-- (void)_performSyncOnSerialQueue:(id)arg1;
+- (void)_performSyncOnSerialQueue:(id /* block */)arg1;
 - (void)cancel;
 - (id)destinationComposedAVURL;
 - (id)error;

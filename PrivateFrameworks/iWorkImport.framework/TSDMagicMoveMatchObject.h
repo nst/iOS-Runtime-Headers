@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString, TSDRep;
-
 @interface TSDMagicMoveMatchObject : NSObject {
     NSMutableDictionary *_attributes;
     NSString *_name;
@@ -20,13 +18,13 @@
     int _zOrder;
 }
 
-@property(retain) NSMutableDictionary * attributes;
-@property(retain) NSString * name;
-@property struct CGPoint { float x1; float x2; } position;
-@property(retain) TSDRep * rep;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } stringRange;
-@property(retain) NSString * stringValue;
-@property int zOrder;
+@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, retain) TSDRep *rep;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } stringRange;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic) int zOrder;
 
 + (id)matchObjectWithRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2;
 + (id)matchObjectWithTextRep:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 stringValue:(id)arg3 stringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;

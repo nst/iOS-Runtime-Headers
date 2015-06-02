@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPAVRoutingControllerDelegate>, MPAVRoute, NSArray, NSMutableArray, NSString;
-
 @interface MPAVRoutingController : NSObject {
     NSMutableArray *_asyncFetchingCompletionHandlers;
     BOOL _asyncFetchingRoutes;
@@ -22,14 +20,14 @@
     BOOL _scheduledSendDelegateRoutesChanged;
 }
 
-@property(copy,readonly) NSArray * availableRoutes;
-@property(copy) NSString * category;
-@property <MPAVRoutingControllerDelegate> * delegate;
-@property int discoveryMode;
-@property(readonly) int externalScreenType;
-@property(copy) NSString * name;
-@property(readonly) MPAVRoute * pickedRoute;
-@property(readonly) BOOL volumeControlIsAvailable;
+@property (nonatomic, readonly, copy) NSArray *availableRoutes;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic) <MPAVRoutingControllerDelegate> *delegate;
+@property (nonatomic) int discoveryMode;
+@property (nonatomic, readonly) int externalScreenType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) MPAVRoute *pickedRoute;
+@property (nonatomic, readonly) BOOL volumeControlIsAvailable;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChangeNotification:(id)arg1;
@@ -52,7 +50,7 @@
 - (id)description;
 - (int)discoveryMode;
 - (int)externalScreenType;
-- (void)fetchAvailableRoutesWithCompletionHandler:(id)arg1;
+- (void)fetchAvailableRoutesWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)handsetRouteIsPicked;
 - (id)init;
 - (id)initWithName:(id)arg1;

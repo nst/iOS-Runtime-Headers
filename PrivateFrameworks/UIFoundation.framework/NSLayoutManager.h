@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class <NSLayoutManagerDelegate>, NSArray, NSFont, NSGlyphGenerator, NSMutableArray, NSRunStorage, NSStorage, NSTextContainer, NSTextStorage, NSTypesetter;
-
 @interface NSLayoutManager : NSObject <NSCoding> {
     NSFont *_cachedFont;
     struct _NSRange { 
@@ -79,20 +77,22 @@
     NSTypesetter *_typesetter;
 }
 
-@property BOOL allowsNonContiguousLayout;
+@property (nonatomic) BOOL allowsNonContiguousLayout;
 @property BOOL allowsOriginalFontMetricsOverride;
-@property <NSLayoutManagerDelegate> * delegate;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } extraLineFragmentRect;
-@property(readonly) NSTextContainer * extraLineFragmentTextContainer;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } extraLineFragmentUsedRect;
-@property(readonly) BOOL hasNonContiguousLayout;
-@property float hyphenationFactor;
-@property(readonly) unsigned int numberOfGlyphs;
-@property BOOL showsControlCharacters;
-@property BOOL showsInvisibleCharacters;
-@property(readonly) NSArray * textContainers;
-@property NSTextStorage * textStorage;
-@property BOOL usesFontLeading;
+@property (nonatomic) <NSLayoutManagerDelegate> *delegate;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } extraLineFragmentRect;
+@property (nonatomic, readonly) NSTextContainer *extraLineFragmentTextContainer;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } extraLineFragmentUsedRect;
+@property (nonatomic, readonly) BOOL hasNonContiguousLayout;
+@property (nonatomic) float hyphenationFactor;
+@property (nonatomic, readonly) unsigned int numberOfGlyphs;
+@property (nonatomic) BOOL showsControlCharacters;
+@property (nonatomic) BOOL showsInvisibleCharacters;
+@property (nonatomic, readonly) NSArray *textContainers;
+@property (nonatomic) NSTextStorage *textStorage;
+@property (nonatomic) BOOL usesFontLeading;
+
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 + (id)_defaultLinkAttributes;
 + (BOOL)_ignoresViewTransformations;
@@ -118,7 +118,6 @@
 - (void)_clearTemporaryAttributes;
 - (void)_clearTemporaryAttributesForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeInLength:(int)arg2;
 - (void)_commonInit;
-- (id)_commonTextViewController;
 - (id)_containerDescription;
 - (unsigned int)_currentAttachmentIndex;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_currentAttachmentRect;
@@ -226,7 +225,7 @@
 - (unsigned int)characterIndexForPoint:(struct CGPoint { float x1; float x2; })arg1 inTextContainer:(id)arg2 fractionOfDistanceBetweenInsertionPoints:(float*)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })characterRangeForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 actualGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)circleImageWithSize:(struct CGSize { float x1; float x2; })arg1 bufferWidth:(float)arg2 usingColor:(id)arg3;
-- (void)coordinateAccess:(id)arg1;
+- (void)coordinateAccess:(id /* block */)arg1;
 - (void)dealloc;
 - (float)defaultBaselineOffsetForFont:(id)arg1;
 - (float)defaultLineHeightForFont:(id)arg1;
@@ -246,9 +245,9 @@
 - (void)ensureLayoutForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)ensureLayoutForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)ensureLayoutForTextContainer:(id)arg1;
-- (void)enumerateEnclosingRectsForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withinSelectedCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextContainer:(id)arg3 usingBlock:(id)arg4;
-- (void)enumerateEnclosingRectsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withinSelectedGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextContainer:(id)arg3 usingBlock:(id)arg4;
-- (void)enumerateLineFragmentsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateEnclosingRectsForCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withinSelectedCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextContainer:(id)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateEnclosingRectsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withinSelectedGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextContainer:(id)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateLineFragmentsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extraLineFragmentRect;
 - (id)extraLineFragmentTextContainer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extraLineFragmentUsedRect;
@@ -376,5 +375,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
 - (BOOL)usesFontLeading;
 - (BOOL)usesScreenFonts;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)_commonTextViewController;
 
 @end

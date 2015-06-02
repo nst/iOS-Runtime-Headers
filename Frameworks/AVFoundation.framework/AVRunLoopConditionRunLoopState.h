@@ -8,9 +8,9 @@
     BOOL _signaled;
 }
 
-@property(readonly) struct __CFRunLoop { }* runLoop;
-@property struct __CFRunLoopSource { }* signalSource;
-@property BOOL signaled;
+@property (nonatomic, readonly) struct __CFRunLoop { }*runLoop;
+@property (nonatomic) struct __CFRunLoopSource { }*signalSource;
+@property (nonatomic) BOOL signaled;
 
 + (id)runLoopStateWithRunLoop:(struct __CFRunLoop { }*)arg1;
 

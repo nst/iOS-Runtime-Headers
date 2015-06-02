@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseTable, NSArray;
-
 @interface ML3DatabaseForeignKeyConstraint : NSObject {
     NSArray *_foreignColumns;
     ML3DatabaseTable *_foreignTable;
     NSArray *_localColumns;
 }
 
-@property(readonly) NSArray * foreignColumns;
-@property(readonly) ML3DatabaseTable * foreignTable;
-@property(readonly) NSArray * localColumns;
+@property (nonatomic, readonly) NSArray *foreignColumns;
+@property (nonatomic, readonly) ML3DatabaseTable *foreignTable;
+@property (nonatomic, readonly) NSArray *localColumns;
 
 - (void).cxx_destruct;
 - (id)_foreignKeyClauseSQL;

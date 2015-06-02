@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString, SGEvent;
-
 @interface SGRealtimeEvent : NSObject <NSCopying, NSSecureCoding> {
     SGEvent *_event;
     NSString *_eventIdentifier;
     int _state;
 }
 
-@property(readonly) SGEvent * event;
-@property(readonly) NSString * eventIdentifier;
-@property(readonly) int state;
+@property (nonatomic, readonly) SGEvent *event;
+@property (nonatomic, readonly) NSString *eventIdentifier;
+@property (nonatomic, readonly) int state;
 
 + (id)realtimeEventForCanceledEvent:(id)arg1 eventIdentifier:(id)arg2;
 + (id)realtimeEventForDuplicateEvent:(id)arg1;

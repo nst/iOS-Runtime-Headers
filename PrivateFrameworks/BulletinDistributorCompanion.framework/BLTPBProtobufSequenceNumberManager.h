@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTCircularBitBuffer, NSLock, NSString;
-
 @interface BLTPBProtobufSequenceNumberManager : NSObject {
     BLTCircularBitBuffer *_duplicateEntries;
     BOOL _isInitialSendSequenceNumber;
@@ -13,8 +11,8 @@
     NSString *_serviceName;
 }
 
-@property BOOL isInitialSendSequenceNumber;
-@property(copy,readonly) NSString * serviceName;
+@property (nonatomic) BOOL isInitialSendSequenceNumber;
+@property (nonatomic, readonly, copy) NSString *serviceName;
 
 - (void).cxx_destruct;
 - (BOOL)_isSequenceNumberInOrder:(unsigned long long)arg1;

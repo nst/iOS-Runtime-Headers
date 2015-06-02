@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPDetailSliderDelegate>, MPDetailScrubController, NSString, NSTimer, UIImageView, UILabel, UIView;
-
 @interface MPDetailSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing> {
     BOOL _allowsScrubbing;
     BOOL _autoscrubActive;
@@ -32,20 +30,20 @@
     float _trackInset;
 }
 
-@property BOOL allowsDetailScrubbing;
-@property BOOL allowsScrubbing;
-@property double availableDuration;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPDetailSliderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL detailScrubbingAvailableForCurrentDuration;
-@property float detailScrubbingVerticalRange;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * localizedScrubSpeedText;
-@property float minTimeLabelWidth;
-@property(readonly) Class superclass;
-@property int timeLabelStyle;
+@property (nonatomic) BOOL allowsDetailScrubbing;
+@property (nonatomic) BOOL allowsScrubbing;
+@property (nonatomic) double availableDuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPDetailSliderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL detailScrubbingAvailableForCurrentDuration;
+@property (nonatomic) float detailScrubbingVerticalRange;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *localizedScrubSpeedText;
+@property (nonatomic) float minTimeLabelWidth;
+@property (readonly) Class superclass;
+@property (nonatomic) int timeLabelStyle;
 
 + (Class)labelClass;
 

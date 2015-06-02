@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultFrameLoadDelegate : NSObject {
-}
+@interface WebDefaultFrameLoadDelegate : NSObject
 
 + (id)sharedFrameLoadDelegate;
 

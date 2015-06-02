@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLSyncIndicator : NSObject {
-}
+@interface CPLSyncIndicator : NSObject
 
-+ (void)_doProtected:(id)arg1;
++ (void)_doProtected:(id /* block */)arg1;
 + (void)_reallyHideSyncIndicator;
 + (void)_reallyShowSyncIndicator;
 + (void)hideSyncIndicator;

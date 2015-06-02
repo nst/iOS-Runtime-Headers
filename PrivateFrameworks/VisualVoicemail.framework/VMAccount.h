@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface VMAccount : NSObject {
     NSMutableDictionary *_cache;
     NSObject<OS_dispatch_queue> *_cacheQueue;
-    NSMutableArray *_voicemailSummaries[256];
+    NSMutableArray *_voicemailSummaries;
 }
 
-@property(readonly) NSString * identifier;
+@property (readonly) NSString *identifier;
 
 - (id)_bucketSummary;
 - (void)_forceUpdateCache;

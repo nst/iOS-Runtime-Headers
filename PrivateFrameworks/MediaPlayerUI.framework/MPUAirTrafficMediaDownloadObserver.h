@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSString;
-
 @interface MPUAirTrafficMediaDownloadObserver : MPUMediaDownloadObserver {
     NSString *_assetIdentifier;
     double _lastDownloadProgress;

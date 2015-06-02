@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PKPassGroupStackViewDatasource>, <PKPassGroupStackViewDelegate><UIScrollViewDelegate>, NSMutableArray, NSMutableDictionary, NSString, NSTimer, PKGroup, PKPGSVHeaderContext, PKPass, PKPassGroupView, PKPassPaymentFooterView, PKPaymentService, PKReusablePassViewQueue, UIView;
-
 @interface PKPassGroupStackView : UIScrollView <PKPassDeleteDelegate, PKPassDeleteHandler, PKPassGroupViewDelegate, PKPaymentServiceDelegate> {
     NSMutableDictionary *_animatorsByGroupID;
     NSTimer *_autoscrollTimer;
@@ -68,28 +62,24 @@
     UIView *_subheaderContainerView;
     int _suspendedNextState;
     NSMutableArray *_suspendedTransitionCompletionHandlers;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _transitionCanceller;
-
+    id /* block */ _transitionCanceller;
     NSMutableArray *_transitionCompletionHandlers;
     unsigned int _userInteractionCounter;
 }
 
-@property <PKPassGroupStackViewDatasource> * datasource;
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPassGroupStackViewDelegate><UIScrollViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isPresentingPassViewFront;
-@property(readonly) BOOL isReordering;
-@property(readonly) PKPass * modalGroupFrontmostPass;
-@property unsigned int modalGroupIndex;
-@property BOOL paymentFooterSuppressed;
-@property(readonly) float pileHeight;
-@property int presentationState;
-@property(readonly) Class superclass;
+@property (nonatomic) <PKPassGroupStackViewDatasource> *datasource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPassGroupStackViewDelegate><UIScrollViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isPresentingPassViewFront;
+@property (nonatomic, readonly) BOOL isReordering;
+@property (nonatomic, readonly) PKPass *modalGroupFrontmostPass;
+@property (nonatomic) unsigned int modalGroupIndex;
+@property (nonatomic) BOOL paymentFooterSuppressed;
+@property (nonatomic, readonly) float pileHeight;
+@property (nonatomic) int presentationState;
+@property (readonly) Class superclass;
 
 - (void)_addDimmingToPileWithAnimation:(BOOL)arg1;
 - (void)_addGroupViewAsSubview:(id)arg1 forIndex:(unsigned int)arg2;
@@ -115,7 +105,7 @@
 - (int)_edgeStylesObscuredByTopCornersOfPassStyle:(int)arg1;
 - (int)_edgeStylesObscuredByTopMiddleOfPassStyle:(int)arg1;
 - (void)_endGroupPanWithGestureRecognizer:(id)arg1;
-- (void)_enumerateLoadedGroupViews:(id)arg1;
+- (void)_enumerateLoadedGroupViews:(id /* block */)arg1;
 - (void)_executeCompletionHandlers:(id)arg1 cancelled:(BOOL)arg2;
 - (void)_fanAndPageGroupView:(id)arg1 animated:(BOOL)arg2;
 - (id)_firstHeaderContext;
@@ -153,13 +143,13 @@
 - (float)_pileBaseHeight;
 - (float)_pileSeparationHeight;
 - (struct CGPoint { float x1; float x2; })_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
-- (void)_presentFlippedModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)_presentGroupStackViewWithAnimation:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)_presentModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (void)_presentFlippedModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_presentGroupStackViewWithAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_presentModalGroupView:(id)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_presentModalGroupViewPostAnimationActions;
-- (void)_presentOffscreenAnimated:(BOOL)arg1 split:(BOOL)arg2 withCompletionHandler:(id)arg3;
-- (void)_presentPassIngestionAcceptanceWithAnimation:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)_presentPassIngestionWithAnimation:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)_presentOffscreenAnimated:(BOOL)arg1 split:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_presentPassIngestionAcceptanceWithAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_presentPassIngestionWithAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfEagerLoadedIndexes;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfVisibleIndexes;
 - (BOOL)_recomputeLayoutState;
@@ -168,13 +158,13 @@
 - (void)_removeMotionEffectsFromModalPile;
 - (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_resumeSuspendedTransition;
-- (void)_reverseEnumerateLoadedGroupViews:(id)arg1;
+- (void)_reverseEnumerateLoadedGroupViews:(id /* block */)arg1;
 - (float)_scaleForGroupView:(id)arg1 forState:(int)arg2;
 - (id)_separatorGroup;
 - (void)_setModalGroupView:(id)arg1;
 - (void)_setScrollEnabled:(BOOL)arg1;
 - (double)_setupSpringFactory:(id)arg1 forPileAnimationToPresentationState:(int)arg2 reverse:(BOOL)arg3;
-- (void)_showPaymentFooterView:(BOOL)arg1 forPassView:(id)arg2 animated:(BOOL)arg3 delay:(float)arg4 completion:(id)arg5;
+- (void)_showPaymentFooterView:(BOOL)arg1 forPassView:(id)arg2 animated:(BOOL)arg3 delay:(float)arg4 completion:(id /* block */)arg5;
 - (id)_sortedAscendingGroupViewIndexes;
 - (id)_sortedDescendingGroupViewIndexes;
 - (unsigned int)_startVisibleIndex;
@@ -257,7 +247,7 @@
 - (void)paymentDeviceDidLeaveRestrictedMode;
 - (BOOL)paymentFooterSuppressed;
 - (float)pileHeight;
-- (void)presentDiff:(id)arg1 completion:(id)arg2;
+- (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentPassWithUniqueID:(id)arg1;
 - (int)presentationState;
 - (void)reloadData;
@@ -270,7 +260,7 @@
 - (void)setPaymentFooterSuppressed:(BOOL)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
-- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 withCompletionHandler:(id)arg3;
+- (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)stageGroupInPresentationState:(int)arg1 atIndex:(unsigned int)arg2;
 - (id)subheaderForPassType:(unsigned int)arg1;
 - (void)testFlipToBack;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPadLandscapePasscode : UIKBRenderFactoryiPadLandscape {
-}
+@interface UIKBRenderFactoryiPadLandscapePasscode : UIKBRenderFactoryiPadLandscape
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeControlKeyTraits;

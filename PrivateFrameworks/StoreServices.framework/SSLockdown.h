@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSLockdown : NSObject {
-}
+@interface SSLockdown : NSObject
 
 + (id)sharedInstance;
 

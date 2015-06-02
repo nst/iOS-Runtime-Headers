@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMultiCellContentViewUpdateDelegate>, ABAbstractPropertyGroup, UITableViewCell, UIView;
-
 @interface ABMultiCellContentView : ABPersonCellContentView <ABResponderDelegate> {
     int _abCellStyle;
     BOOL _allowsEditing;
@@ -23,17 +21,17 @@
     BOOL _usesCustomPropertyCell;
 }
 
-@property int abCellStyle;
-@property BOOL allowsEditing;
-@property UITableViewCell * cell;
-@property(getter=isEditing) BOOL editing;
-@property(getter=isEmphasized) BOOL emphasized;
-@property(getter=isImportant) BOOL important;
-@property(readonly) ABAbstractPropertyGroup * propertyGroup;
-@property(retain) id propertyGroupInfo;
-@property BOOL shouldIgnoreEndEditing;
-@property <ABMultiCellContentViewUpdateDelegate> * updateDelegate;
-@property BOOL usesCustomPropertyCell;
+@property (nonatomic) int abCellStyle;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) UITableViewCell *cell;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (getter=isEmphasized, nonatomic) BOOL emphasized;
+@property (getter=isImportant, nonatomic) BOOL important;
+@property (nonatomic, readonly) ABAbstractPropertyGroup *propertyGroup;
+@property (nonatomic, retain) id propertyGroupInfo;
+@property (nonatomic) BOOL shouldIgnoreEndEditing;
+@property (nonatomic) <ABMultiCellContentViewUpdateDelegate> *updateDelegate;
+@property (nonatomic) BOOL usesCustomPropertyCell;
 
 + (Class)classForProperty:(int)arg1;
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSNumber;
-
 @interface HAPMetadataCharacteristicValue : NSObject {
     NSNumber *_maxLength;
     NSNumber *_maxValue;
@@ -12,11 +10,11 @@
     NSNumber *_stepValue;
 }
 
-@property(retain) NSNumber * maxLength;
-@property(retain) NSNumber * maxValue;
-@property(retain) NSNumber * minLength;
-@property(retain) NSNumber * minValue;
-@property(retain) NSNumber * stepValue;
+@property (nonatomic, retain) NSNumber *maxLength;
+@property (nonatomic, retain) NSNumber *maxValue;
+@property (nonatomic, retain) NSNumber *minLength;
+@property (nonatomic, retain) NSNumber *minValue;
+@property (nonatomic, retain) NSNumber *stepValue;
 
 + (id)initWithDictionary:(id)arg1;
 

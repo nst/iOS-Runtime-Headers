@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OABWriterClient : NSObject {
-}
+@interface OABWriterClient : NSObject
 
 - (void)writeClientAnchorFromDrawable:(id)arg1 toObject:(id)arg2 state:(id)arg3;
 - (void)writeClientDataFromDrawable:(id)arg1 toObject:(id)arg2 state:(id)arg3;

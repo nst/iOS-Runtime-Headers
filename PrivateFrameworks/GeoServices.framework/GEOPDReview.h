@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDRating, GEOPDUser, NSMutableArray, NSString;
-
 @interface GEOPDReview : PBCodable <NSCopying> {
     struct { 
         unsigned int reviewTime : 1; 
@@ -15,15 +13,15 @@
     NSMutableArray *_snippets;
 }
 
-@property(readonly) BOOL hasRating;
-@property(readonly) BOOL hasReviewId;
-@property BOOL hasReviewTime;
-@property(readonly) BOOL hasReviewer;
-@property(retain) GEOPDRating * rating;
-@property(retain) NSString * reviewId;
-@property double reviewTime;
-@property(retain) GEOPDUser * reviewer;
-@property(retain) NSMutableArray * snippets;
+@property (nonatomic, readonly) BOOL hasRating;
+@property (nonatomic, readonly) BOOL hasReviewId;
+@property (nonatomic) BOOL hasReviewTime;
+@property (nonatomic, readonly) BOOL hasReviewer;
+@property (nonatomic, retain) GEOPDRating *rating;
+@property (nonatomic, retain) NSString *reviewId;
+@property (nonatomic) double reviewTime;
+@property (nonatomic, retain) GEOPDUser *reviewer;
+@property (nonatomic, retain) NSMutableArray *snippets;
 
 - (void)addSnippet:(id)arg1;
 - (id)bestLocalizedSnippet;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSString, SSMetricsConfiguration, SSMetricsPageEvent;
-
 @interface RUSearchResult : NSObject {
     SSMetricsConfiguration *_metricsConfiguration;
     SSMetricsPageEvent *_metricsPageEvent;
@@ -11,10 +9,10 @@
     NSString *_searchTerm;
 }
 
-@property(retain) SSMetricsConfiguration * metricsConfiguration;
-@property(retain) SSMetricsPageEvent * metricsPageEvent;
-@property(copy) NSArray * resultCategories;
-@property(copy) NSString * searchTerm;
+@property (nonatomic, retain) SSMetricsConfiguration *metricsConfiguration;
+@property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
+@property (nonatomic, copy) NSArray *resultCategories;
+@property (nonatomic, copy) NSString *searchTerm;
 
 - (void).cxx_destruct;
 - (id)metricsConfiguration;

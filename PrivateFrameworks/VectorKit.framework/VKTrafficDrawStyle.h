@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKTrafficDrawStyle : VKRenderStyle {
-}
+@interface VKTrafficDrawStyle : VKRenderStyle
 
 + (int)renderStyleID;
 

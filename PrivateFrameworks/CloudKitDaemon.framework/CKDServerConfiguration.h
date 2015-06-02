@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSDate, NSMutableDictionary, NSString;
-
 @interface CKDServerConfiguration : NSObject <CKPropertyCoding> {
     NSMutableDictionary *_allowedAppVersionsCache;
     NSDate *_expiry;
     NSMutableDictionary *_values;
 }
 
-@property(retain) NSMutableDictionary * allowedAppVersionsCache;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDate * expiry;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSMutableDictionary * values;
+@property (nonatomic, retain) NSMutableDictionary *allowedAppVersionsCache;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDate *expiry;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *values;
 
 - (void).cxx_destruct;
 - (id)allowedAppVersionsCache;

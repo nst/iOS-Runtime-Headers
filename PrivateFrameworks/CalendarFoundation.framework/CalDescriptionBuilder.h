@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface CalDescriptionBuilder : NSObject {
     NSMutableDictionary *_descriptionUnderConstruction;
     NSString *_keyDelimiter;
@@ -11,10 +9,10 @@
     NSString *_superclassDescription;
 }
 
-@property(retain) NSMutableDictionary * descriptionUnderConstruction;
-@property(copy) NSString * keyDelimiter;
-@property BOOL sortedByKey;
-@property(copy) NSString * superclassDescription;
+@property (nonatomic, retain) NSMutableDictionary *descriptionUnderConstruction;
+@property (nonatomic, copy) NSString *keyDelimiter;
+@property (nonatomic) BOOL sortedByKey;
+@property (nonatomic, copy) NSString *superclassDescription;
 
 - (void).cxx_destruct;
 - (id)build;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPeoplePickerNavigationController, CNContact, NSString;
-
 @interface ABContactAddToExistingContactAction : ABContactAction <ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate> {
     CNContact *_chosenContact;
     ABPeoplePickerNavigationController *_peoplePicker;
 }
 
-@property(retain) CNContact * chosenContact;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ABPeoplePickerNavigationController * peoplePicker;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CNContact *chosenContact;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePicker;
+@property (readonly) Class superclass;
 
 - (id)chosenContact;
 - (void)dealloc;

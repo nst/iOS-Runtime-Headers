@@ -19,20 +19,20 @@
     double _timeTransform;
 }
 
-@property int binarizerLimit;
-@property BOOL createFeaturesForAllConcomps;
-@property BOOL detectDiacritics;
-@property BOOL enableBinarizerFiltering;
-@property BOOL measureTime;
-@property int minimumCharacterHeight;
-@property BOOL returnSubFeatures;
-@property struct { int x1; int x2; int x3; int x4; char *x5; char *x6; int x7; int x8; int x9; struct lineseg {} *x10; int x11; int x12; int x13; struct concomp {} *x14; int x15; int x16; int x17; int x18; struct sequence {} *x19; int x20; int x21; }* session;
-@property int thresholdingAlgorithm;
-@property double timeBinarizer;
-@property double timeConcomps;
-@property double timeRecognizer;
-@property double timeSequences;
-@property double timeTransform;
+@property (nonatomic) int binarizerLimit;
+@property (nonatomic) BOOL createFeaturesForAllConcomps;
+@property (nonatomic) BOOL detectDiacritics;
+@property (nonatomic) BOOL enableBinarizerFiltering;
+@property (nonatomic) BOOL measureTime;
+@property (nonatomic) int minimumCharacterHeight;
+@property (nonatomic) BOOL returnSubFeatures;
+@property (nonatomic) struct { int x1; int x2; int x3; int x4; char *x5; char *x6; int x7; int x8; int x9; struct lineseg {} *x10; int x11; int x12; int x13; struct concomp {} *x14; int x15; int x16; int x17; int x18; struct sequence {} *x19; int x20; int x21; }*session;
+@property (nonatomic) int thresholdingAlgorithm;
+@property (nonatomic) double timeBinarizer;
+@property (nonatomic) double timeConcomps;
+@property (nonatomic) double timeRecognizer;
+@property (nonatomic) double timeSequences;
+@property (nonatomic) double timeTransform;
 
 - (int)binarizerLimit;
 - (BOOL)createFeaturesForAllConcomps;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class CLLatLonPolygon, NSMutableArray;
-
 @interface CLVenueBounds : PBCodable <NSCopying> {
     CLLatLonPolygon *_exterior;
     NSMutableArray *_exteriors;
     NSMutableArray *_ids;
 }
 
-@property(retain) CLLatLonPolygon * exterior;
-@property(retain) NSMutableArray * exteriors;
-@property(readonly) BOOL hasExterior;
-@property(retain) NSMutableArray * ids;
+@property (nonatomic, retain) CLLatLonPolygon *exterior;
+@property (nonatomic, retain) NSMutableArray *exteriors;
+@property (nonatomic, readonly) BOOL hasExterior;
+@property (nonatomic, retain) NSMutableArray *ids;
 
 - (void).cxx_destruct;
 - (void)addExteriors:(id)arg1;

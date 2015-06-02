@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEODownloadMetadata : PBCodable <NSCopying> {
     NSString *_etag;
     double _timestamp;
     NSString *_url;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasUrl;
-@property double timestamp;
-@property(retain) NSString * url;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic) double timestamp;
+@property (nonatomic, retain) NSString *url;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

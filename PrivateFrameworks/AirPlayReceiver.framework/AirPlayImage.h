@@ -16,12 +16,12 @@
     } _unadjustedSize;
 }
 
-@property(readonly) struct CGImage { }* CGImage;
-@property(readonly) int imageOrientation;
-@property(readonly) void* ioSurface;
-@property(readonly) id layerContents;
-@property struct CGSize { float x1; float x2; } scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGImage { }*CGImage;
+@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) void*ioSurface;
+@property (nonatomic, readonly) id layerContents;
+@property (nonatomic) struct CGSize { float x1; float x2; } scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (struct CGImage { }*)CGImage;
 - (void)_setCGImage:(struct CGImage { }*)arg1;

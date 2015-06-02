@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString, SFUCryptoKey;
+@interface TSPMutableCryptoInfoInternal : TSPCryptoInfoInternal <TSPMutableCryptoInfo>
 
-@interface TSPMutableCryptoInfoInternal : TSPCryptoInfoInternal <TSPMutableCryptoInfo> {
-}
-
-@property(readonly) NSArray * blockInfos;
-@property(readonly) SFUCryptoKey * cryptoKey;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) unsigned long decodedLength;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned long preferredBlockSize;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *blockInfos;
+@property (nonatomic, readonly) SFUCryptoKey *cryptoKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) unsigned long decodedLength;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long preferredBlockSize;
+@property (readonly) Class superclass;
 
 - (void)addBlockInfo:(id)arg1;
 - (void)incrementDecodedLengthBy:(unsigned long)arg1;

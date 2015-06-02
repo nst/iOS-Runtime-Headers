@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, GKTextBubbleControl, GKTurnBasedMatch, NSLayoutConstraint, NSString;
-
 @interface GKTurnBasedMatchDetailHeaderView : UICollectionReusableView {
     GKTextBubbleControl *_actionBubble;
     SEL _bubbleAction;
@@ -19,21 +17,21 @@
     GKLabel *_startedLabel;
 }
 
-@property(retain) GKTextBubbleControl * actionBubble;
-@property SEL bubbleAction;
-@property id bubbleTarget;
-@property(retain) NSString * bubbleText;
-@property NSLayoutConstraint * bubbleToLastConstraint;
-@property int bubbleType;
-@property BOOL compactHeight;
-@property(retain) GKLabel * infoLabel;
-@property(retain) NSString * infoText;
-@property(retain) GKLabel * lastTurnLabel;
-@property(retain) GKTurnBasedMatch * match;
-@property NSLayoutConstraint * playingToTopConstraint;
-@property(retain) GKLabel * playingWithLabel;
-@property(readonly) NSString * playingWithString;
-@property(retain) GKLabel * startedLabel;
+@property (nonatomic, retain) GKTextBubbleControl *actionBubble;
+@property (nonatomic) SEL bubbleAction;
+@property (nonatomic) id bubbleTarget;
+@property (nonatomic, retain) NSString *bubbleText;
+@property (nonatomic) NSLayoutConstraint *bubbleToLastConstraint;
+@property (nonatomic) int bubbleType;
+@property (nonatomic) BOOL compactHeight;
+@property (nonatomic, retain) GKLabel *infoLabel;
+@property (nonatomic, retain) NSString *infoText;
+@property (nonatomic, retain) GKLabel *lastTurnLabel;
+@property (nonatomic, retain) GKTurnBasedMatch *match;
+@property (nonatomic) NSLayoutConstraint *playingToTopConstraint;
+@property (nonatomic, retain) GKLabel *playingWithLabel;
+@property (nonatomic, readonly) NSString *playingWithString;
+@property (nonatomic, retain) GKLabel *startedLabel;
 
 + (BOOL)requiresConstraintBasedLayout;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
  */
 
-@interface CNFUIUtilities : NSObject {
-}
+@interface CNFUIUtilities : NSObject
 
 + (id)callDurationStringForChat:(id)arg1;
 + (id)currentCallDurationString;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPData, TSUFlushingManager;
-
 @interface TSDImageProvider : NSObject {
     TSUFlushingManager *mFlushingManager;
     TSPData *mImageData;

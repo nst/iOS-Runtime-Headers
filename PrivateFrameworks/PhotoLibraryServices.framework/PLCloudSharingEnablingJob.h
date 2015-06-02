@@ -6,7 +6,7 @@
     BOOL _enableSharing;
 }
 
-@property BOOL enableSharing;
+@property (nonatomic) BOOL enableSharing;
 
 + (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(BOOL)arg2 withReason:(id)arg3;
 + (void)enableCloudSharing:(BOOL)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@interface ACUIAccountCollectionLinkCell : PSTableCell {
-}
+@interface ACUIAccountCollectionLinkCell : PSTableCell
 
 + (id)specifierWithTitle:(id)arg1 accounts:(id)arg2;
 

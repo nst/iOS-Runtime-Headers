@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDMescalSession;
-
 @interface CKDMescalSessionOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     int _serverVersion;
     CKDMescalSession *_session;
 }
 
-@property int serverVersion;
-@property(retain) CKDMescalSession * session;
+@property (nonatomic) int serverVersion;
+@property (nonatomic, retain) CKDMescalSession *session;
 
 - (void).cxx_destruct;
 - (int)serverVersion;

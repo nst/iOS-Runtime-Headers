@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSError, NSString, SSAccount;
-
 @interface SSAuthenticateResponse : NSObject <SSXPCCoding> {
     SSAccount *_authenticatedAccount;
     NSError *_error;
@@ -11,14 +9,14 @@
     int _responseType;
 }
 
-@property int authenticateResponseType;
-@property(retain) SSAccount * authenticatedAccount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * responseDictionary;
-@property(readonly) Class superclass;
+@property (nonatomic) int authenticateResponseType;
+@property (nonatomic, retain) SSAccount *authenticatedAccount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *responseDictionary;
+@property (readonly) Class superclass;
 
 - (void)_setError:(id)arg1;
 - (int)authenticateResponseType;

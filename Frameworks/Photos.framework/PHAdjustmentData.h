@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, NSString;
-
 @interface PHAdjustmentData : NSObject <NSSecureCoding> {
     int _baseVersion;
     NSData *_data;
@@ -11,11 +9,11 @@
     NSString *_formatVersion;
 }
 
-@property int baseVersion;
-@property(readonly) NSData * data;
-@property(copy) NSString * formatIdentifier;
-@property(copy) NSString * formatVersion;
-@property(getter=isOpaque,readonly) BOOL opaque;
+@property (nonatomic) int baseVersion;
+@property (readonly) NSData *data;
+@property (copy) NSString *formatIdentifier;
+@property (copy) NSString *formatVersion;
+@property (getter=isOpaque, readonly) BOOL opaque;
 
 + (int)adjustmentBaseVersionFromImageRequestVersion:(int)arg1;
 + (int)adjustmentBaseVersionFromVideoRequestVersion:(int)arg1;

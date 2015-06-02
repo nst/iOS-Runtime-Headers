@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKMultiTableRemapping>;
+@interface TSKAddedToDocumentContext : NSObject
 
-@interface TSKAddedToDocumentContext : NSObject {
-}
-
-@property(retain) <TSKMultiTableRemapping> * multiTableRemapper;
+@property (retain) <TSKMultiTableRemapping> *multiTableRemapper;
 
 + (id)changeTrackingSubstorageForCopyContext;
 + (id)dragCopyContext;

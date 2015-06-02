@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class <IMConnectionMonitorDelegate>, NSString;
-
 @interface IMConnectionMonitor : NSObject {
     <IMConnectionMonitorDelegate> *_delegate;
     NSString *_remoteHost;
 }
 
-@property <IMConnectionMonitorDelegate> * delegate;
-@property(setter=setDataConnectionActive:) BOOL isDataConnectionActive;
-@property(readonly) BOOL isImmediatelyReachable;
-@property(readonly) NSString * remoteHost;
-@property(readonly) BOOL requiresDataConnectionActivation;
+@property (nonatomic) <IMConnectionMonitorDelegate> *delegate;
+@property (setter=setDataConnectionActive:, nonatomic) BOOL isDataConnectionActive;
+@property (nonatomic, readonly) BOOL isImmediatelyReachable;
+@property (nonatomic, readonly) NSString *remoteHost;
+@property (nonatomic, readonly) BOOL requiresDataConnectionActivation;
 
 + (id)alloc;
 

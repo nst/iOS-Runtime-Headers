@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMapViewNavigationController : UINavigationController {
-}
+@interface CKMapViewNavigationController : UINavigationController
 
 - (BOOL)ckCanDismissWhenSuspending;
 

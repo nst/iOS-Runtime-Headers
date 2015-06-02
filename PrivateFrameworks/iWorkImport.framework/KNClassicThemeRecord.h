@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNClassicStylesheetRecord, NSArray, NSMutableArray, NSString;
-
 @interface KNClassicThemeRecord : TSPObject {
     NSMutableArray *mMasters;
     KNClassicStylesheetRecord *mStylesheetRecord;
     NSString *mUUID;
 }
 
-@property(copy) NSString * UUID;
-@property(readonly) NSArray * masters;
-@property(retain) KNClassicStylesheetRecord * stylesheetRecord;
+@property (nonatomic, copy) NSString *UUID;
+@property (nonatomic, readonly) NSArray *masters;
+@property (nonatomic, retain) KNClassicStylesheetRecord *stylesheetRecord;
 
 - (id)UUID;
 - (void)addMaster:(id)arg1;

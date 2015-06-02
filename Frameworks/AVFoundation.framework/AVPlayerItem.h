@@ -2,34 +2,34 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItemInternal, MPAVItem, NSArray, NSDate, NSError, NSString;
-
 @interface AVPlayerItem : NSObject <NSCopying> {
     AVPlayerItemInternal *_playerItem;
 }
 
-@property(retain) MPAVItem * MPAVItem;
-@property(getter=_isExternalProtectionRequiredForPlayback,setter=_setExternalProtectionRequiredForPlayback:) BOOL _externalProtectionRequiredForPlayback;
-@property(getter=_isRental,readonly) BOOL _rental;
-@property(readonly) NSDate * _rentalExpirationDate;
-@property(readonly) NSDate * _rentalPlaybackExpirationDate;
-@property(getter=_isRentalPlaybackStarted,readonly) BOOL _rentalPlaybackStarted;
-@property(readonly) NSDate * _rentalPlaybackStartedDate;
-@property(readonly) NSDate * _rentalStartDate;
-@property(getter=isApplicationAuthorizedForPlayback,readonly) BOOL applicationAuthorizedForPlayback;
-@property(getter=isAuthorizationRequiredForPlayback,readonly) BOOL authorizationRequiredForPlayback;
-@property(getter=isContentAuthorizedForPlayback,readonly) BOOL contentAuthorizedForPlayback;
-@property(copy) NSString * dataYouTubeID;
-@property(readonly) NSError * error;
-@property(copy) NSString * mediaKind;
-@property(readonly) NSArray * outputs;
-@property(readonly) double rc_durationInSeconds;
-@property(readonly) BOOL rc_isDurationAvailable;
-@property(readonly) struct { double x1; double x2; } rc_playableTimeRange;
-@property(setter=rc_setPreviewTimeRange:) struct { double x1; double x2; } rc_previewTimeRange;
-@property unsigned int restrictions;
-@property(copy) NSString * serviceIdentifier;
-@property(readonly) int status;
+@property (nonatomic, retain) MPAVItem *MPAVItem;
+@property (getter=_isExternalProtectionRequiredForPlayback, setter=_setExternalProtectionRequiredForPlayback:, nonatomic) BOOL _externalProtectionRequiredForPlayback;
+@property (getter=_isRental, nonatomic, readonly) BOOL _rental;
+@property (nonatomic, readonly) NSDate *_rentalExpirationDate;
+@property (nonatomic, readonly) NSDate *_rentalPlaybackExpirationDate;
+@property (getter=_isRentalPlaybackStarted, nonatomic, readonly) BOOL _rentalPlaybackStarted;
+@property (nonatomic, readonly) NSDate *_rentalPlaybackStartedDate;
+@property (nonatomic, readonly) NSDate *_rentalStartDate;
+@property (getter=isApplicationAuthorizedForPlayback, nonatomic, readonly) BOOL applicationAuthorizedForPlayback;
+@property (getter=isAuthorizationRequiredForPlayback, nonatomic, readonly) BOOL authorizationRequiredForPlayback;
+@property (getter=isContentAuthorizedForPlayback, nonatomic, readonly) BOOL contentAuthorizedForPlayback;
+@property (nonatomic, copy) NSString *dataYouTubeID;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, copy) NSString *mediaKind;
+@property (nonatomic, readonly) NSArray *outputs;
+@property (nonatomic, readonly) double rc_durationInSeconds;
+@property (nonatomic, readonly) BOOL rc_isDurationAvailable;
+@property (nonatomic, readonly) struct { double x1; double x2; } rc_playableTimeRange;
+@property (setter=rc_setPreviewTimeRange:, nonatomic) struct { double x1; double x2; } rc_previewTimeRange;
+@property (nonatomic) unsigned int restrictions;
+@property (nonatomic, copy) NSString *serviceIdentifier;
+@property (nonatomic, readonly) int status;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (struct OpaqueCMTimebase { }*)_copyTimebaseFromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 + (BOOL)_forNonStreamingURLsFireKVOForAssetWhenReadyForInspection;
@@ -56,7 +56,6 @@
 + (id)playerItemWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 + (id)playerItemWithURL:(id)arg1;
 
-- (id)MPAVItem;
 - (unsigned int)RTCReportingFlags;
 - (int)_CreateSeekID;
 - (id)_URL;
@@ -86,7 +85,7 @@
 - (BOOL)_canPlaySlowReverse;
 - (BOOL)_canStepBackward;
 - (BOOL)_canStepForward;
-- (int)_cancelPendingSeekAndRegisterSeekCompletionHandler:(id)arg1;
+- (int)_cancelPendingSeekAndRegisterSeekCompletionHandler:(id /* block */)arg1;
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (void)_clearCachedMediaSelectionGroup:(id)arg1;
 - (void)_configurePlaybackItem;
@@ -133,7 +132,7 @@
 - (id)_loadedTimeRanges;
 - (id)_loadedTimeRangesFromFPPlaybableTimeIntervals:(id)arg1;
 - (void)_makeNewAssetWithFigPlaybackItem;
-- (void)_makeReadyForEnqueueingWithCompletionHandler:(id)arg1;
+- (void)_makeReadyForEnqueueingWithCompletionHandler:(id /* block */)arg1;
 - (id)_mediaKind;
 - (id)_metadataOutputForKey:(id)arg1;
 - (id)_metadataOutputsForKeys;
@@ -172,7 +171,6 @@
 - (void)_quietlySetVariantIndex:(int)arg1;
 - (void)_quietlySetVolumeAdjustment:(float)arg1;
 - (void)_quietlySetWillNeverSeekBackwardsHint:(BOOL)arg1;
-- (double)_rawDurationInSeconds;
 - (void)_removeFAListeners;
 - (void)_removeFPListeners;
 - (void)_removeFromItems;
@@ -295,22 +293,17 @@
 - (double)preferredPeakBitRate;
 - (struct CGSize { float x1; float x2; })presentationSize;
 - (float)progressTowardsPlaybackLikelyToKeepUp;
-- (double)rc_durationInSeconds;
-- (BOOL)rc_isDurationAvailable;
-- (struct { double x1; double x2; })rc_playableTimeRange;
-- (struct { double x1; double x2; })rc_previewTimeRange;
-- (void)rc_setPreviewTimeRange:(struct { double x1; double x2; })arg1;
 - (void)removeOutput:(id)arg1;
 - (BOOL)requiresAccessLog;
 - (unsigned int)restrictions;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })reversePlaybackEndTime;
 - (BOOL)savesDownloadedDataToDiskWhenDone;
 - (BOOL)seekToDate:(id)arg1;
-- (BOOL)seekToDate:(id)arg1 completionHandler:(id)arg2;
+- (BOOL)seekToDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id)arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id)arg4;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (id)seekableTimeRanges;
 - (BOOL)seekingWaitsForVideoCompositionRendering;
 - (void)selectMediaOption:(id)arg1 inMediaSelectionGroup:(id)arg2;
@@ -331,7 +324,6 @@
 - (void)setInitialDate:(id)arg1;
 - (void)setInitialEstimatedDate:(id)arg1;
 - (void)setLimitReadAhead:(BOOL)arg1;
-- (void)setMPAVItem:(id)arg1;
 - (void)setMaximumBitRate:(float)arg1;
 - (void)setMaximumTrailingBufferDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMediaKind:(id)arg1;
@@ -370,5 +362,19 @@
 - (float)volumeAdjustment;
 - (void)willChangeValueForKey:(id)arg1;
 - (BOOL)willNeverSeekBackwardsHint;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
+- (id)MPAVItem;
+- (void)setMPAVItem:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (double)_rawDurationInSeconds;
+- (double)rc_durationInSeconds;
+- (BOOL)rc_isDurationAvailable;
+- (struct { double x1; double x2; })rc_playableTimeRange;
+- (struct { double x1; double x2; })rc_previewTimeRange;
+- (void)rc_setPreviewTimeRange:(struct { double x1; double x2; })arg1;
 
 @end

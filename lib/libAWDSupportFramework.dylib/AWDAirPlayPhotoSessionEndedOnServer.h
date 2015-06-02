@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayPhotoSessionEndedOnServer : PBCodable <NSCopying> {
     unsigned int _duration;
     struct { 
@@ -26,24 +24,24 @@
     unsigned int _totalPhotos;
 }
 
-@property unsigned int duration;
-@property BOOL hasDuration;
-@property BOOL hasMaxBPS;
-@property BOOL hasMaxPhotoBytes;
-@property BOOL hasMinBPS;
-@property BOOL hasMinPhotoBytes;
-@property BOOL hasReason;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasTimestamp;
-@property BOOL hasTotalPhotos;
-@property unsigned int maxBPS;
-@property unsigned int maxPhotoBytes;
-@property unsigned int minBPS;
-@property unsigned int minPhotoBytes;
-@property int reason;
-@property(retain) NSString * sessionUUID;
-@property unsigned long long timestamp;
-@property unsigned int totalPhotos;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasMaxBPS;
+@property (nonatomic) BOOL hasMaxPhotoBytes;
+@property (nonatomic) BOOL hasMinBPS;
+@property (nonatomic) BOOL hasMinPhotoBytes;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTotalPhotos;
+@property (nonatomic) unsigned int maxBPS;
+@property (nonatomic) unsigned int maxPhotoBytes;
+@property (nonatomic) unsigned int minBPS;
+@property (nonatomic) unsigned int minPhotoBytes;
+@property (nonatomic) int reason;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int totalPhotos;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

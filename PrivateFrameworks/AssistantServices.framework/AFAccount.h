@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface AFAccount : NSObject {
     NSString *_aceHost;
     NSString *_assistantIdentifier;
@@ -21,20 +19,20 @@
     NSString *_speechIdentifier;
 }
 
-@property(copy) NSString * aceHost;
-@property(copy) NSString * assistantIdentifier;
-@property(copy) NSDictionary * connectionPolicy;
-@property(copy) NSDate * connectionPolicyDate;
-@property(copy) NSString * connectionPolicyHostname;
-@property(copy) NSString * group;
-@property(copy) NSString * hostname;
-@property(copy) NSString * identifier;
-@property(readonly) BOOL isActive;
-@property(copy) NSString * label;
-@property(copy) NSDictionary * lastSyncDates;
-@property(copy) NSString * localeIdentifier;
-@property(copy) NSString * predefinedServer;
-@property(copy) NSString * speechIdentifier;
+@property (nonatomic, copy) NSString *aceHost;
+@property (nonatomic, copy) NSString *assistantIdentifier;
+@property (nonatomic, copy) NSDictionary *connectionPolicy;
+@property (nonatomic, copy) NSDate *connectionPolicyDate;
+@property (nonatomic, copy) NSString *connectionPolicyHostname;
+@property (nonatomic, copy) NSString *group;
+@property (nonatomic, copy) NSString *hostname;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSDictionary *lastSyncDates;
+@property (nonatomic, copy) NSString *localeIdentifier;
+@property (nonatomic, copy) NSString *predefinedServer;
+@property (nonatomic, copy) NSString *speechIdentifier;
 
 - (void).cxx_destruct;
 - (id)aceHost;

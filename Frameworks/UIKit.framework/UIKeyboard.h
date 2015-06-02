@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextInputTraits, UIView;
-
 @interface UIKeyboard : UIView <UIKeyboardImplGeometryDelegate> {
     UITextInputTraits *m_defaultTraits;
     BOOL m_hasExplicitOrientation;
@@ -15,12 +13,12 @@
     BOOL m_typingDisabled;
 }
 
-@property BOOL caretBlinks;
-@property BOOL caretVisible;
-@property int keyboardIdiom;
-@property(getter=isMinimized) BOOL minimized;
-@property BOOL showsCandidatesInline;
-@property BOOL typingEnabled;
+@property (nonatomic) BOOL caretBlinks;
+@property (nonatomic) BOOL caretVisible;
+@property (nonatomic) int keyboardIdiom;
+@property (getter=isMinimized, nonatomic) BOOL minimized;
+@property (nonatomic) BOOL showsCandidatesInline;
+@property (nonatomic) BOOL typingEnabled;
 
 + (void)_clearActiveKeyboard;
 + (id)activeKeyboard;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray;
-
 @interface CKDBatchGetUserPrivacySettingsOperation : CKDOperation {
     NSArray *_containerPrivacySettings;
 }
 
-@property(copy) NSArray * containerPrivacySettings;
+@property (nonatomic, copy) NSArray *containerPrivacySettings;
 
 + (id)appPermissionGroupsFromContainerPrivacySettings:(id)arg1;
 

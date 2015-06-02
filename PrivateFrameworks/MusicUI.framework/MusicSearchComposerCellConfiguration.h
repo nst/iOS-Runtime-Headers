@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicSearchComposerCellConfiguration : MusicSearchCellConfiguration {
-}
+@interface MusicSearchComposerCellConfiguration : MusicSearchCellConfiguration
 
 + (id)mediaEntityPropertiesToFetch;
 + (id)titleForMediaEntity:(id)arg1 valuesForProperties:(id)arg2;

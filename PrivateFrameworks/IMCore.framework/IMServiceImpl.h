@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMAccount, NSArray, NSData, NSDictionary, NSMutableDictionary, NSString;
-
 @interface IMServiceImpl : IMService {
     NSArray *_abProperties;
     BOOL _allowsMultipleConnections;
@@ -42,43 +40,43 @@
     BOOL _supportsSMS;
 }
 
-@property(readonly) unsigned int IDSensitivity;
-@property(readonly) BOOL _supportsDatabaseStorage;
-@property(readonly) BOOL _wantsInternationizedNumbers;
-@property(readonly) Class accountClass;
-@property(retain,readonly) NSArray * accountIDs;
-@property(retain,readonly) NSArray * addressBookProperties;
-@property(retain,readonly) NSString * addressBookProperty;
-@property(readonly) BOOL allowsMultipleConnections;
-@property(readonly) int buddyNotesMaxByteLength;
-@property(retain,readonly) NSDictionary * cardMap;
-@property(retain) NSString * countryCode;
-@property(retain) NSDictionary * defaultAccountSettings;
-@property(retain,readonly) NSArray * emailDomains;
-@property(readonly) BOOL handlesChatInvites;
-@property(readonly) BOOL ignoresNetworkConnectivity;
-@property(retain,readonly) NSString * internalName;
-@property(readonly) BOOL isPersistent;
-@property(readonly) BOOL isPlugInService;
-@property(readonly) int maxAttachmentSize;
-@property(readonly) int maxChatParticipants;
-@property(retain,readonly) NSString * name;
-@property(retain) NSDictionary * serviceDefaults;
-@property(retain,readonly) NSData * serviceImageData;
-@property(retain) NSDictionary * serviceProperties;
-@property(retain,readonly) NSString * shortName;
-@property(readonly) BOOL shouldDisableDeactivation;
-@property(retain,readonly) NSArray * siblingServices;
-@property(readonly) BOOL supportsAdding;
-@property(readonly) BOOL supportsAudioMessages;
-@property(readonly) BOOL supportsAuthorization;
-@property(readonly) BOOL supportsGroupAttachments;
-@property(readonly) BOOL supportsIDStatusLookup;
-@property(readonly) BOOL supportsMutatingGroupMembers;
-@property(readonly) BOOL supportsOfflineTransfers;
-@property(readonly) BOOL supportsPhoneNumberMapping;
-@property(readonly) BOOL supportsPresence;
-@property(readonly) BOOL supportsRegistration;
+@property (nonatomic, readonly) unsigned int IDSensitivity;
+@property (nonatomic, readonly) BOOL _supportsDatabaseStorage;
+@property (nonatomic, readonly) BOOL _wantsInternationizedNumbers;
+@property (nonatomic, readonly) Class accountClass;
+@property (nonatomic, readonly, retain) NSArray *accountIDs;
+@property (nonatomic, readonly, retain) NSArray *addressBookProperties;
+@property (nonatomic, readonly, retain) NSString *addressBookProperty;
+@property (nonatomic, readonly) BOOL allowsMultipleConnections;
+@property (nonatomic, readonly) int buddyNotesMaxByteLength;
+@property (nonatomic, readonly, retain) NSDictionary *cardMap;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic, retain) NSDictionary *defaultAccountSettings;
+@property (nonatomic, readonly, retain) NSArray *emailDomains;
+@property (nonatomic, readonly) BOOL handlesChatInvites;
+@property (nonatomic, readonly) BOOL ignoresNetworkConnectivity;
+@property (nonatomic, readonly, retain) NSString *internalName;
+@property (nonatomic, readonly) BOOL isPersistent;
+@property (nonatomic, readonly) BOOL isPlugInService;
+@property (nonatomic, readonly) int maxAttachmentSize;
+@property (nonatomic, readonly) int maxChatParticipants;
+@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, retain) NSDictionary *serviceDefaults;
+@property (nonatomic, readonly, retain) NSData *serviceImageData;
+@property (nonatomic, retain) NSDictionary *serviceProperties;
+@property (nonatomic, readonly, retain) NSString *shortName;
+@property (nonatomic, readonly) BOOL shouldDisableDeactivation;
+@property (nonatomic, readonly, retain) NSArray *siblingServices;
+@property (nonatomic, readonly) BOOL supportsAdding;
+@property (nonatomic, readonly) BOOL supportsAudioMessages;
+@property (nonatomic, readonly) BOOL supportsAuthorization;
+@property (nonatomic, readonly) BOOL supportsGroupAttachments;
+@property (nonatomic, readonly) BOOL supportsIDStatusLookup;
+@property (nonatomic, readonly) BOOL supportsMutatingGroupMembers;
+@property (nonatomic, readonly) BOOL supportsOfflineTransfers;
+@property (nonatomic, readonly) BOOL supportsPhoneNumberMapping;
+@property (nonatomic, readonly) BOOL supportsPresence;
+@property (nonatomic, readonly) BOOL supportsRegistration;
 
 + (id)activeServices;
 + (id)allServices;

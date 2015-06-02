@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSData, NSDate, NSNumber, PLAgent;
-
 @interface PLBBMsgHandler : NSObject {
     PLAgent *_agent;
     NSDate *_apTimestamp;
@@ -17,16 +15,16 @@
     NSDate *_timestamp;
 }
 
-@property(retain) PLAgent * agent;
-@property(retain,readonly) NSDate * apTimestamp;
-@property(retain,readonly) NSDate * calibratedTimestamp;
-@property(retain) NSDate * date;
-@property(retain) NSData * rawData;
-@property(retain) NSNumber * seqNum;
-@property(readonly) unsigned int ticksInGPSONState;
-@property(readonly) unsigned int ticksInGoodState;
-@property double timeCalibration;
-@property(retain,readonly) NSDate * timestamp;
+@property (nonatomic, retain) PLAgent *agent;
+@property (nonatomic, readonly, retain) NSDate *apTimestamp;
+@property (nonatomic, readonly, retain) NSDate *calibratedTimestamp;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, retain) NSData *rawData;
+@property (nonatomic, retain) NSNumber *seqNum;
+@property (nonatomic, readonly) unsigned int ticksInGPSONState;
+@property (nonatomic, readonly) unsigned int ticksInGoodState;
+@property (nonatomic) double timeCalibration;
+@property (nonatomic, readonly, retain) NSDate *timestamp;
 
 + (id)getMsgHandler;
 

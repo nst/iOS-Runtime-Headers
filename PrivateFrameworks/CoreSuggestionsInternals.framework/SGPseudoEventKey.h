@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGPseudoEventKey : NSObject <SGEntityKey> {
     NSString *_domain;
     NSString *_groupId;
     NSString *_serialized;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * domain;
-@property(readonly) NSString * groupId;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *domain;
+@property (nonatomic, readonly) NSString *groupId;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
 

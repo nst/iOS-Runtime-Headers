@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface _MCDBrowsableTableView : UITableView {
-}
+@interface _MCDBrowsableTableView : UITableView
 
 - (BOOL)canBecomeFirstResponder;
 

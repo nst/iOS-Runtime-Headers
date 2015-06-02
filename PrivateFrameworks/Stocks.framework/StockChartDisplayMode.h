@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString, UIColor;
-
 @interface StockChartDisplayMode : NSObject <NSCopying> {
     BOOL _HUDEnabled;
     UIColor *_axisLabelsColor;
@@ -35,27 +33,27 @@
     unsigned int _yAxisLabelCount;
 }
 
-@property BOOL HUDEnabled;
-@property(retain) UIColor * axisLabelsColor;
-@property struct CGGradient { }* backgroundGradient;
-@property(retain) UIColor * backgroundLinesColor;
-@property struct CGSize { float x1; float x2; } chartSize;
-@property BOOL graphOverlapsYAxisLabels;
-@property(readonly) float gutterHeight;
-@property unsigned int horizontalGridlineCount;
-@property float intervalRowHeight;
-@property(retain) UIColor * lineColor;
-@property(readonly) float lineGraphBottomPadding;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lineGraphInsets;
-@property float lineWidth;
-@property int maxInterval;
-@property BOOL showsPriceLabelForPreviousClose;
-@property float showsTitle;
-@property BOOL showsVolume;
-@property BOOL usesDetailedAxisLabels;
-@property float volumeHeight;
-@property(retain) UIColor * xAxisKeylineColor;
-@property unsigned int yAxisLabelCount;
+@property (nonatomic) BOOL HUDEnabled;
+@property (nonatomic, retain) UIColor *axisLabelsColor;
+@property (nonatomic) struct CGGradient { }*backgroundGradient;
+@property (nonatomic, retain) UIColor *backgroundLinesColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } chartSize;
+@property (nonatomic) BOOL graphOverlapsYAxisLabels;
+@property (nonatomic, readonly) float gutterHeight;
+@property (nonatomic) unsigned int horizontalGridlineCount;
+@property (nonatomic) float intervalRowHeight;
+@property (nonatomic, retain) UIColor *lineColor;
+@property (nonatomic, readonly) float lineGraphBottomPadding;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lineGraphInsets;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) int maxInterval;
+@property (nonatomic) BOOL showsPriceLabelForPreviousClose;
+@property (nonatomic) float showsTitle;
+@property (nonatomic) BOOL showsVolume;
+@property (nonatomic) BOOL usesDetailedAxisLabels;
+@property (nonatomic) float volumeHeight;
+@property (nonatomic, retain) UIColor *xAxisKeylineColor;
+@property (nonatomic) unsigned int yAxisLabelCount;
 
 + (id)defaultDisplayMode;
 

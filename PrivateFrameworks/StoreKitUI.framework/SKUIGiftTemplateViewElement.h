@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIItem;
-
 @interface SKUIGiftTemplateViewElement : SKUIViewElement {
     int _giftType;
     NSString *_productBuyParams;
     long long _productItemIdentifier;
 }
 
-@property(readonly) int giftType;
-@property(readonly) SKUIItem * productItem;
+@property (nonatomic, readonly) int giftType;
+@property (nonatomic, readonly) SKUIItem *productItem;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
     NSMutableArray *_actionComponentMapEntries;
     NSMutableArray *_searchAttributionSources;
 }
 
-@property(retain) NSMutableArray * actionComponentMapEntries;
-@property(retain) NSMutableArray * searchAttributionSources;
+@property (nonatomic, retain) NSMutableArray *actionComponentMapEntries;
+@property (nonatomic, retain) NSMutableArray *searchAttributionSources;
 
 - (id)actionComponentMapEntries;
 - (id)actionComponentMapEntriesAtIndex:(unsigned int)arg1;

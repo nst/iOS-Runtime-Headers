@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMMutableVideoCaptureRequest : CAMVideoCaptureRequest {
-}
+@interface CAMMutableVideoCaptureRequest : CAMVideoCaptureRequest
 
-@property int captureDevice;
-@property int deviceOrientation;
-@property int torchMode;
+@property (nonatomic) int captureDevice;
+@property (nonatomic) int deviceOrientation;
+@property (nonatomic) int torchMode;
 
 - (void)setCaptureDevice:(int)arg1;
 - (void)setDeviceOrientation:(int)arg1;

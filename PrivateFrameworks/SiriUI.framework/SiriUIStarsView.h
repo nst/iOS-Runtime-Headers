@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIImage;
-
 @interface SiriUIStarsView : UIView {
     double _maxRating;
     int _numberOfStars;
@@ -13,8 +11,8 @@
     int _style;
 }
 
-@property BOOL snapsToHalfStar;
-@property int style;
+@property (nonatomic) BOOL snapsToHalfStar;
+@property (nonatomic) int style;
 
 + (id)_starsImageCache;
 

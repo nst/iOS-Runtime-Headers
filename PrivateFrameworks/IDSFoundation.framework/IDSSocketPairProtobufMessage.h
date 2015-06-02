@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSData, NSDate, NSString;
-
 @interface IDSSocketPairProtobufMessage : IDSSocketPairMessage {
     BOOL _compressed;
     NSData *_data;
@@ -20,17 +18,17 @@
     BOOL _wantsAppAck;
 }
 
-@property BOOL compressed;
-@property(readonly) NSData * data;
-@property(readonly) BOOL expectsPeerResponse;
-@property NSDate * expiryDate;
-@property(readonly) unsigned short isResponse;
-@property(retain,readonly) NSString * messageUUID;
-@property(retain,readonly) NSString * peerResponseIdentifier;
-@property unsigned int sequenceNumber;
-@property(readonly) unsigned short streamID;
-@property(readonly) unsigned short type;
-@property(readonly) BOOL wantsAppAck;
+@property (nonatomic) BOOL compressed;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) BOOL expectsPeerResponse;
+@property (nonatomic) NSDate *expiryDate;
+@property (nonatomic, readonly) unsigned short isResponse;
+@property (nonatomic, readonly, retain) NSString *messageUUID;
+@property (nonatomic, readonly, retain) NSString *peerResponseIdentifier;
+@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic, readonly) unsigned short streamID;
+@property (nonatomic, readonly) unsigned short type;
+@property (nonatomic, readonly) BOOL wantsAppAck;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;

@@ -2,28 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber;
+@interface CDDMForecast : NSManagedObject
 
-@interface CDDMForecast : NSManagedObject {
-}
-
-@property(retain) NSNumber * attributeId;
-@property(retain) NSNumber * basisCount;
-@property(retain) NSNumber * basisFilled;
-@property(retain) NSNumber * clientId;
-@property(retain) NSDate * creationDate;
-@property(retain) NSNumber * forecastFormat;
-@property(retain) NSDate * forecastGeneratedOn;
-@property(retain) NSNumber * forecastGranularity;
-@property(retain) NSNumber * forecastGroupId;
-@property(retain) NSNumber * forecastType;
-@property(retain) NSDate * historyWindowEnd;
-@property(retain) NSNumber * historyWindowRecurrenceDelta;
-@property(retain) NSNumber * historyWindowRecurrenceWidth;
-@property(retain) NSDate * historyWindowStart;
-@property(retain) NSNumber * integerId;
-@property(retain) NSNumber * limitCount;
-@property(retain) NSDate * oldestEntryDate;
-@property(retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber *attributeId;
+@property (nonatomic, retain) NSNumber *basisCount;
+@property (nonatomic, retain) NSNumber *basisFilled;
+@property (nonatomic, retain) NSNumber *clientId;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSNumber *forecastFormat;
+@property (nonatomic, retain) NSDate *forecastGeneratedOn;
+@property (nonatomic, retain) NSNumber *forecastGranularity;
+@property (nonatomic, retain) NSNumber *forecastGroupId;
+@property (nonatomic, retain) NSNumber *forecastType;
+@property (nonatomic, retain) NSDate *historyWindowEnd;
+@property (nonatomic, retain) NSNumber *historyWindowRecurrenceDelta;
+@property (nonatomic, retain) NSNumber *historyWindowRecurrenceWidth;
+@property (nonatomic, retain) NSDate *historyWindowStart;
+@property (nonatomic, retain) NSNumber *integerId;
+@property (nonatomic, retain) NSNumber *limitCount;
+@property (nonatomic, retain) NSDate *oldestEntryDate;
+@property (nonatomic, retain) NSNumber *userId;
 
 @end

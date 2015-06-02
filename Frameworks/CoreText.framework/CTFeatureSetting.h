@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreText.framework/CoreText
  */
 
-@class NSDictionary;
-
 @interface CTFeatureSetting : NSDictionary {
     NSDictionary *_dictionary;
 }

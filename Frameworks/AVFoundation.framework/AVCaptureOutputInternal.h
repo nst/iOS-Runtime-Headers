@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSession, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVCaptureOutputInternal : NSObject {
     int changeSeed;
     NSMutableArray *connections;

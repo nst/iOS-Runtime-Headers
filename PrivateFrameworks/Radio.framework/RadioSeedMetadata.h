@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString;
-
 @interface RadioSeedMetadata : NSObject <NSCopying, NSMutableCopying> {
     NSString *_seedDescription;
     NSString *_subtitle;
     NSString *_title;
 }
 
-@property(copy,readonly) NSString * seedDescription;
-@property(copy,readonly) NSString * subtitle;
-@property(copy,readonly) NSString * title;
+@property (nonatomic, readonly, copy) NSString *seedDescription;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

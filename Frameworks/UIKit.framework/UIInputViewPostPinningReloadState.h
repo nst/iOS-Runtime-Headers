@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder;
-
 @interface UIInputViewPostPinningReloadState : NSObject {
     UIResponder *_responderPreventedFromSettingInputViews;
 }
 
-@property(retain) UIResponder * responderToReload;
+@property (nonatomic, retain) UIResponder *responderToReload;
 
 + (id)stateWithResponder:(id)arg1;
 

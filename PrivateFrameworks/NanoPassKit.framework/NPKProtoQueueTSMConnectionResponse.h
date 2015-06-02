@@ -9,8 +9,8 @@
     BOOL _pending;
 }
 
-@property BOOL hasPending;
-@property BOOL pending;
+@property (nonatomic) BOOL hasPending;
+@property (nonatomic) BOOL pending;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

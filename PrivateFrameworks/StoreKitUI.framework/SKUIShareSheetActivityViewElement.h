@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, SKUIImageViewElement, SKUILabelViewElement, SKUIURLViewElement;
-
 @interface SKUIShareSheetActivityViewElement : SKUIViewElement {
     NSString *_activityType;
     NSURL *_contentSourceURL;
 }
 
-@property(readonly) SKUIURLViewElement * URL;
-@property(readonly) NSString * activityType;
-@property(readonly) NSURL * contentSourceURL;
-@property(readonly) SKUIImageViewElement * image;
-@property(readonly) SKUILabelViewElement * message;
-@property(readonly) SKUILabelViewElement * title;
+@property (nonatomic, readonly) SKUIURLViewElement *URL;
+@property (nonatomic, readonly) NSString *activityType;
+@property (nonatomic, readonly) NSURL *contentSourceURL;
+@property (nonatomic, readonly) SKUIImageViewElement *image;
+@property (nonatomic, readonly) SKUILabelViewElement *message;
+@property (nonatomic, readonly) SKUILabelViewElement *title;
 
 - (void).cxx_destruct;
 - (id)URL;

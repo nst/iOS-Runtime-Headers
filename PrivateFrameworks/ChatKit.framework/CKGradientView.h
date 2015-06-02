@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, UIView, UIView<CKGradientReferenceView>;
-
 @interface CKGradientView : UIView {
     NSArray *_colors;
     UIView *_effectView;
@@ -20,10 +18,10 @@
     UIView<CKGradientReferenceView> *_referenceView;
 }
 
-@property(retain) NSArray * colors;
-@property(retain) UIView * effectView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
-@property UIView<CKGradientReferenceView> * referenceView;
+@property (nonatomic, retain) NSArray *colors;
+@property (nonatomic, retain) UIView *effectView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
+@property (nonatomic) UIView<CKGradientReferenceView> *referenceView;
 
 + (id)gradientViews;
 

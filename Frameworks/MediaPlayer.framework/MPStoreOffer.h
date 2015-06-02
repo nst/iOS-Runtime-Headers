@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPStoreOffer, NSDictionary, NSString, NSURL;
-
 @interface MPStoreOffer : NSObject {
     unsigned long long _entityPersistentID;
     NSString *_entityTitle;
@@ -14,21 +12,21 @@
     MPStoreOffer *_regularPriceOffer;
 }
 
-@property(copy,readonly) NSString * actionDisplayTitle;
-@property(copy,readonly) NSString * buyParameters;
-@property(readonly) int buyType;
-@property(copy,readonly) NSString * displayPrice;
-@property(copy,readonly) NSString * displayTitle;
-@property(readonly) unsigned long long downloadSize;
-@property(readonly) unsigned long long entityPersistentID;
-@property(copy,readonly) NSString * entityTitle;
-@property(readonly) unsigned int entityType;
-@property(readonly) int passType;
-@property(readonly) double previewDuration;
-@property(copy,readonly) NSURL * previewURL;
-@property(readonly) float price;
-@property(copy,readonly) NSString * regularPriceDisplayPrice;
-@property(readonly) BOOL requiresConfirmation;
+@property (nonatomic, readonly, copy) NSString *actionDisplayTitle;
+@property (nonatomic, readonly, copy) NSString *buyParameters;
+@property (nonatomic, readonly) int buyType;
+@property (nonatomic, readonly, copy) NSString *displayPrice;
+@property (nonatomic, readonly, copy) NSString *displayTitle;
+@property (nonatomic, readonly) unsigned long long downloadSize;
+@property (nonatomic, readonly) unsigned long long entityPersistentID;
+@property (nonatomic, readonly, copy) NSString *entityTitle;
+@property (nonatomic, readonly) unsigned int entityType;
+@property (nonatomic, readonly) int passType;
+@property (nonatomic, readonly) double previewDuration;
+@property (nonatomic, readonly, copy) NSURL *previewURL;
+@property (nonatomic, readonly) float price;
+@property (nonatomic, readonly, copy) NSString *regularPriceDisplayPrice;
+@property (nonatomic, readonly) BOOL requiresConfirmation;
 
 + (id)_priceForOfferDictionary:(id)arg1;
 + (int)bestOfferVariantInOfferDictionaries:(id)arg1 withPreferredVariant:(int)arg2;

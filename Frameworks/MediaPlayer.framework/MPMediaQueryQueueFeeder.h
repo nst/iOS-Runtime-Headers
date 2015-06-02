@@ -2,35 +2,33 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPMediaQueryShuffledItems, NSArray, NSString;
-
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate> {
     MPMediaItem *_cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion *_connectionAssertion;
     MPMediaItem *_focusedItem;
-    unsigned int _hasPendingLibraryChanges : 1;
+    unsigned int _hasPendingLibraryChanges;
     int _ignoreShuffleTypeChangesCount;
     MPMediaQueryShuffledItems *_items;
-    unsigned int _itemsChanged : 1;
+    unsigned int _itemsChanged;
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
 }
 
-@property(retain) MPMediaItem * cloudDialogAllowedMediaItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) MPMediaItem * focusedItem;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * prefixMediaItems;
-@property(copy) MPMediaQuery * query;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) MPMediaItem *cloudDialogAllowedMediaItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) MPMediaItem *focusedItem;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *prefixMediaItems;
+@property (nonatomic, copy) MPMediaQuery *query;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_handleMediaLibraryDidChange;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_libraryDidChangeNotification:(id)arg1;
-- (void)_performWhileIgnoringShuffleChanges:(id)arg1;
+- (void)_performWhileIgnoringShuffleChanges:(id /* block */)arg1;
 - (unsigned int)_shuffleItemsInFeederQueryWithShuffleType:(unsigned int)arg1 initialIndex:(unsigned int)arg2 canInvalidateFeederContents:(BOOL)arg3;
 - (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
 - (id)cloudDialogAllowedMediaItem;

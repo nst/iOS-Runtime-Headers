@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentWelcomeView : PKWelcomeView {
-}
+@interface PKPaymentWelcomeView : PKWelcomeView
 
 + (BOOL)isAvailable;
 

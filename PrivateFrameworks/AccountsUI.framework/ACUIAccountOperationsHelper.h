@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class <ACUIAccountOperationsDelegate>, ACAccountStore, NSObject<OS_dispatch_queue>;
-
 @interface ACUIAccountOperationsHelper : NSObject {
     NSObject<OS_dispatch_queue> *_accountOperationsQueue;
     ACAccountStore *_accountStore;
@@ -12,7 +10,7 @@
     BOOL _isSavingAccount;
 }
 
-@property <ACUIAccountOperationsDelegate> * delegate;
+@property (nonatomic) <ACUIAccountOperationsDelegate> *delegate;
 @property BOOL isRemovingAccount;
 @property BOOL isSavingAccount;
 

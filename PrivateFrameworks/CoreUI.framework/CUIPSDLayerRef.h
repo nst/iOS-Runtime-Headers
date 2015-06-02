@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIPSDLayerRef : CUIPSDLayerBaseRef {
-}
+@interface CUIPSDLayerRef : CUIPSDLayerBaseRef
 
 - (id)colorFill;
 - (struct CGImage { }*)createCGImage;

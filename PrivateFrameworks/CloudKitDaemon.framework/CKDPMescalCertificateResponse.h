@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPMescalCertificateResponse : PBCodable <NSCopying> {
     NSData *_certificate;
 }
 
-@property(retain) NSData * certificate;
-@property(readonly) BOOL hasCertificate;
+@property (nonatomic, retain) NSData *certificate;
+@property (nonatomic, readonly) BOOL hasCertificate;
 
 - (void).cxx_destruct;
 - (id)certificate;

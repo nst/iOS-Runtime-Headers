@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSDictionary, NSString;
-
 @interface NEVPNProtocolPlugin : NEVPNProtocol {
     int _authenticationMethod;
     NSString *_authenticationPluginType;
@@ -14,11 +12,11 @@
 }
 
 @property int authenticationMethod;
-@property(copy) NSString * authenticationPluginType;
-@property(readonly) NSString * pluginType;
+@property (copy) NSString *authenticationPluginType;
+@property (readonly) NSString *pluginType;
 @property int reassertTimeout;
-@property(copy) NSDictionary * vendorConfiguration;
-@property(copy) NSDictionary * vendorInfo;
+@property (copy) NSDictionary *vendorConfiguration;
+@property (copy) NSDictionary *vendorInfo;
 
 + (BOOL)supportsSecureCoding;
 

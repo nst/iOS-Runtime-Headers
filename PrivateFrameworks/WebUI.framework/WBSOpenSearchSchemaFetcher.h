@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableSet;
-
 @interface WBSOpenSearchSchemaFetcher : NSObject {
     NSMutableSet *_openSearchDescriptionURLs;
 }

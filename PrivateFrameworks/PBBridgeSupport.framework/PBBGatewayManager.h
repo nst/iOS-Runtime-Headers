@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class BBSettingsGateway, NSArray, NSDateComponents, NSString;
-
 @interface PBBGatewayManager : NSObject {
     NSString *_allowedGroupName;
     NSArray *_bbSections;
@@ -14,13 +12,13 @@
     BBSettingsGateway *_settingsGateway;
 }
 
-@property(readonly) NSString * allowedGroupName;
-@property(retain) NSArray * bbSections;
-@property(readonly) NSDateComponents * dndFromComponents;
-@property(readonly) NSDateComponents * dndToComponents;
-@property(readonly) BOOL isScheduled;
-@property(readonly) unsigned int privilegedSenderType;
-@property(retain) BBSettingsGateway * settingsGateway;
+@property (nonatomic, readonly) NSString *allowedGroupName;
+@property (nonatomic, retain) NSArray *bbSections;
+@property (nonatomic, readonly) NSDateComponents *dndFromComponents;
+@property (nonatomic, readonly) NSDateComponents *dndToComponents;
+@property (nonatomic, readonly) BOOL isScheduled;
+@property (nonatomic, readonly) unsigned int privilegedSenderType;
+@property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 
 + (id)sharedManager;
 

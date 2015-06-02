@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSKAccessController, TSSStyle;
-
 @interface TSDStyleWarmingOperation : NSOperation {
     TSKAccessController *mAccessController;
     int mProperty;

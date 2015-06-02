@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSBundle, NSDictionary, NSString, NSURL;
-
 @interface NSValidationErrorLocalizationPolicy : NSObject <NSCopying> {
     BOOL _hasSetLocalizationDictionary;
     NSBundle *_localizationBundle;

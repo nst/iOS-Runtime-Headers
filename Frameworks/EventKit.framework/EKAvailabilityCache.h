@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface EKAvailabilityCache : NSObject {
     NSString *_accountID;
     NSMutableDictionary *_addressesToCachedSpanRanges;
@@ -20,11 +18,11 @@
 + (void)_logRequestElapsedTime:(double)arg1 forNumberOfAddresses:(unsigned int)arg2;
 
 - (id)_dictionaryForIgnoredEventID:(id)arg1;
-- (void)_handleResults:(id)arg1 resultsBlock:(id)arg2 ignoredEventID:(id)arg3;
+- (void)_handleResults:(id)arg1 resultsBlock:(id /* block */)arg2 ignoredEventID:(id)arg3;
 - (void)cancelAvailabilityRequestWithID:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithSource:(id)arg1;
-- (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(id)arg5 completionBlock:(id)arg6;
+- (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 
 @end

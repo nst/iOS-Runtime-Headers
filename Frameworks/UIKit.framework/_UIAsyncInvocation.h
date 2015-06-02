@@ -2,24 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class _UIAsyncInvocationObserver;
-
 @interface _UIAsyncInvocation : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _invocationBlock;
-
+    id /* block */ _invocationBlock;
     BOOL _invocationBlockHasBeenCalled;
     _UIAsyncInvocationObserver *_observer;
 }
 
 + (id)emptyInvocation;
-+ (id)invocationWithBlock:(id)arg1;
++ (id)invocationWithBlock:(id /* block */)arg1;
 
 - (void)dealloc;
 - (id)invoke;

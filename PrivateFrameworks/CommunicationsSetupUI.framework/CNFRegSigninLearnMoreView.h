@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class CNFRegSplashSignInController, PSSpecifier, UIButton, UIImageView, UILabel, UIProgressIndicator, UITextField, UserPassBox;
-
 @interface CNFRegSigninLearnMoreView : UIView <PSHeaderFooterView> {
     UILabel *_appleIDLabel;
     CNFRegSplashSignInController *_controller;
@@ -23,8 +21,8 @@
     UILabel *_verbiageLabel;
 }
 
-@property CNFRegSplashSignInController * controller;
-@property int serviceType;
+@property (nonatomic) CNFRegSplashSignInController *controller;
+@property (nonatomic) int serviceType;
 
 - (void)_learnMorePressed:(id)arg1;
 - (id)_splashImage;

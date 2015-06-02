@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegEmailLinkListCell : PSTableCell {
-}
+@interface CNFRegEmailLinkListCell : PSTableCell
 
 - (BOOL)canReload;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

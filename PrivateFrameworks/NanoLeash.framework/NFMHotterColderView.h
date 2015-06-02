@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@class GraphView, NFMLeashManager, UILabel, UIView;
-
 @interface NFMHotterColderView : UIView {
     UIView *_babyBar;
     int _bufferIndex;
@@ -17,16 +15,16 @@
     UILabel *_rssiStats;
 }
 
-@property(retain) UIView * babyBar;
-@property int bufferIndex;
-@property BOOL freshBuffer;
-@property(retain) GraphView * graph;
-@property(retain) UIView * graphClippingView;
-@property(retain) NFMLeashManager * leashManager;
-@property(retain) UIView * mamaBar;
-@property int miniBufferIndex;
-@property(retain) UIView * papaBar;
-@property(retain) UILabel * rssiStats;
+@property (nonatomic, retain) UIView *babyBar;
+@property (nonatomic) int bufferIndex;
+@property (nonatomic) BOOL freshBuffer;
+@property (nonatomic, retain) GraphView *graph;
+@property (nonatomic, retain) UIView *graphClippingView;
+@property (nonatomic, retain) NFMLeashManager *leashManager;
+@property (nonatomic, retain) UIView *mamaBar;
+@property (nonatomic) int miniBufferIndex;
+@property (nonatomic, retain) UIView *papaBar;
+@property (nonatomic, retain) UILabel *rssiStats;
 
 - (void).cxx_destruct;
 - (id)babyBar;

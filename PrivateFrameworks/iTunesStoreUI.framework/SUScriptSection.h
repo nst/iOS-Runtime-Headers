@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUScriptViewController;
-
 @interface SUScriptSection : SUScriptObject {
     NSString *_badgeValue;
     NSString *_identifier;
@@ -11,10 +9,10 @@
     SUScriptViewController *_viewController;
 }
 
-@property(retain) NSString * badgeValue;
-@property(readonly) NSString * identifier;
-@property(readonly) BOOL transient;
-@property(readonly) SUScriptViewController * viewController;
+@property (retain) NSString *badgeValue;
+@property (readonly) NSString *identifier;
+@property (readonly) BOOL transient;
+@property (readonly) SUScriptViewController *viewController;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

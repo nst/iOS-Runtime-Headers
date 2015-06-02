@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDate, NSError;
-
 @interface MBStateInfo : NSObject <NSCoding, NSCopying> {
     NSDate *_date;
     NSError *_error;
@@ -12,11 +10,11 @@
     int _state;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int estimatedTimeRemaining;
-@property(readonly) float progress;
-@property(readonly) int state;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) unsigned int estimatedTimeRemaining;
+@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) int state;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;

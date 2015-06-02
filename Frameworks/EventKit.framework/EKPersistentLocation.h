@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSNumber, NSString;
+@interface EKPersistentLocation : EKPersistentObject <NSCopying>
 
-@interface EKPersistentLocation : EKPersistentObject <NSCopying> {
-}
-
-@property(copy) NSString * address;
-@property(copy) NSString * addressBookEntityID;
-@property(copy) NSNumber * latitude;
-@property(copy) NSNumber * longitude;
-@property(copy) NSNumber * radius;
-@property(copy) NSString * routing;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *address;
+@property (nonatomic, copy) NSString *addressBookEntityID;
+@property (nonatomic, copy) NSNumber *latitude;
+@property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSNumber *radius;
+@property (nonatomic, copy) NSString *routing;
+@property (nonatomic, copy) NSString *title;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;

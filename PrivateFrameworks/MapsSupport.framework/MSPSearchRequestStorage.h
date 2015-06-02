@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class MSPDirectionsSearch, MSPQuerySearch, NSString, PBUnknownFields;
-
 @interface MSPSearchRequestStorage : PBCodable <NSCopying> {
     MSPDirectionsSearch *_directionsSearch;
     struct { 
@@ -19,19 +17,19 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) MSPDirectionsSearch * directionsSearch;
-@property(readonly) BOOL hasDirectionsSearch;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasPosition;
-@property(readonly) BOOL hasQuerySearch;
-@property BOOL hasSearchType;
-@property BOOL hasTimestamp;
-@property(retain) NSString * identifier;
-@property double position;
-@property(retain) MSPQuerySearch * querySearch;
-@property int searchType;
-@property double timestamp;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) MSPDirectionsSearch *directionsSearch;
+@property (nonatomic, readonly) BOOL hasDirectionsSearch;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasPosition;
+@property (nonatomic, readonly) BOOL hasQuerySearch;
+@property (nonatomic) BOOL hasSearchType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) double position;
+@property (nonatomic, retain) MSPQuerySearch *querySearch;
+@property (nonatomic) int searchType;
+@property (nonatomic) double timestamp;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

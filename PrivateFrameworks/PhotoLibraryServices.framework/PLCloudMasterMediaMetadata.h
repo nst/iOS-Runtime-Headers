@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSData, PLCloudMaster;
+@interface PLCloudMasterMediaMetadata : PLManagedObject
 
-@interface PLCloudMasterMediaMetadata : PLManagedObject {
-}
-
-@property(retain) PLCloudMaster * cloudMaster;
-@property(retain) NSData * data;
+@property (nonatomic, retain) PLCloudMaster *cloudMaster;
+@property (nonatomic, retain) NSData *data;
 
 @end

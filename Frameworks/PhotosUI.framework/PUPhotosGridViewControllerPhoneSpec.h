@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridViewControllerPhoneSpec : PUPhotosGridViewControllerSpec {
-}
+@interface PUPhotosGridViewControllerPhoneSpec : PUPhotosGridViewControllerSpec
 
 + (struct CGSize { float x1; float x2; })bestItemSizeForAvailableWidth:(float)arg1 screenScale:(float)arg2 bestSpacing:(float*)arg3 bestInset:(float*)arg4;
 

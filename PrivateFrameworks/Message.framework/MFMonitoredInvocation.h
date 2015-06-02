@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFActivityMonitor;
-
 @interface MFMonitoredInvocation : NSInvocation {
     BOOL _isLowPriority;
     MFActivityMonitor *_monitor;
     BOOL _shouldLogInvocation;
 }
 
-@property BOOL isLowPriority;
-@property(readonly) MFActivityMonitor * monitor;
+@property (nonatomic) BOOL isLowPriority;
+@property (nonatomic, readonly) MFActivityMonitor *monitor;
 
 + (id)invocationWithMethodSignature:(id)arg1;
 + (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 taskName:(id)arg5 priority:(int)arg6 canBeCancelled:(BOOL)arg7;

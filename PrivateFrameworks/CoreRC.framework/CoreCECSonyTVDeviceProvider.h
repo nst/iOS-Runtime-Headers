@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreCECSonyTVDeviceProvider : CoreCECDeviceProvider {
-}
+@interface CoreCECSonyTVDeviceProvider : CoreCECDeviceProvider
 
 - (void)readyToSend;
 

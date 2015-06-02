@@ -2,24 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, NSMutableDictionary;
-
 @interface MFWeakObjectCache : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     NSMutableDictionary *_dictionary;
     NSLock *_lock;
 }
 
 - (void)dealloc;
-- (id)initWithBlock:(id)arg1;
+- (id)initWithBlock:(id /* block */)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 wasCached:(BOOL*)arg2;
 - (void)removeObjectForKey:(id)arg1;

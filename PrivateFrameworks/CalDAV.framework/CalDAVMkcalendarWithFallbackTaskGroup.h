@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSDictionary, NSSet, NSURL;
-
 @interface CalDAVMkcalendarWithFallbackTaskGroup : CoreDAVTaskGroup {
     NSSet *_fallbackElements;
     NSDictionary *_headersToOverride;
@@ -14,10 +12,10 @@
     NSURL *_url;
 }
 
-@property(retain) NSDictionary * headersToOverride;
-@property(retain) NSDictionary * responseHeaders;
-@property BOOL shouldSupportVEVENT;
-@property BOOL shouldSupportVTODO;
+@property (nonatomic, retain) NSDictionary *headersToOverride;
+@property (nonatomic, retain) NSDictionary *responseHeaders;
+@property (nonatomic) BOOL shouldSupportVEVENT;
+@property (nonatomic) BOOL shouldSupportVTODO;
 
 - (void)_mkcalendarAfterFailureCount:(unsigned int)arg1;
 - (void)dealloc;

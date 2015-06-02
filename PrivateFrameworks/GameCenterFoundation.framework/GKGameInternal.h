@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKStoreItemInternal, NSDictionary, NSString;
-
 @interface GKGameInternal : GKGameDescriptor {
     NSString *_defaultLeaderboardIdentifier;
     union { 
@@ -31,24 +29,24 @@
     GKStoreItemInternal *_storeItem;
 }
 
-@property(retain) NSString * defaultLeaderboardIdentifier;
-@property unsigned int flags;
-@property BOOL hasAggregateLeaderboard;
-@property(retain) NSDictionary * icons;
-@property unsigned short maxAchievementPoints;
-@property(retain) NSString * name;
-@property unsigned short numberOfAchievements;
-@property unsigned short numberOfLeaderboardSets;
-@property unsigned short numberOfLeaderboards;
-@property unsigned char platform;
-@property(getter=isPrerendered) BOOL prerendered;
-@property(retain) GKStoreItemInternal * storeItem;
-@property BOOL supportsAchievements;
-@property BOOL supportsLeaderboardSets;
-@property BOOL supportsLeaderboards;
-@property BOOL supportsMultiplayer;
-@property BOOL supportsTurnBasedMultiplayer;
-@property(getter=isValid) BOOL valid;
+@property (nonatomic, retain) NSString *defaultLeaderboardIdentifier;
+@property (nonatomic) unsigned int flags;
+@property (nonatomic) BOOL hasAggregateLeaderboard;
+@property (nonatomic, retain) NSDictionary *icons;
+@property (nonatomic) unsigned short maxAchievementPoints;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) unsigned short numberOfAchievements;
+@property (nonatomic) unsigned short numberOfLeaderboardSets;
+@property (nonatomic) unsigned short numberOfLeaderboards;
+@property (nonatomic) unsigned char platform;
+@property (getter=isPrerendered, nonatomic) BOOL prerendered;
+@property (nonatomic, retain) GKStoreItemInternal *storeItem;
+@property (nonatomic) BOOL supportsAchievements;
+@property (nonatomic) BOOL supportsLeaderboardSets;
+@property (nonatomic) BOOL supportsLeaderboards;
+@property (nonatomic) BOOL supportsMultiplayer;
+@property (nonatomic) BOOL supportsTurnBasedMultiplayer;
+@property (getter=isValid, nonatomic) BOOL valid;
 
 + (id)secureCodedPropertyKeys;
 

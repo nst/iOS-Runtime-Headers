@@ -6,7 +6,7 @@
     BOOL disappearsOnHighlight;
 }
 
-@property BOOL disappearsOnHighlight;
+@property (nonatomic) BOOL disappearsOnHighlight;
 
 - (BOOL)disappearsOnHighlight;
 - (void)forceSetBackgroundColor:(id)arg1;

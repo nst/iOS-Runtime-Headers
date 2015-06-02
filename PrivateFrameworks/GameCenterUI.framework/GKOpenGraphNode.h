@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSError, NSURL;
-
 @interface GKOpenGraphNode : NSObject {
     NSError *_error;
     BOOL _liked;
@@ -12,31 +10,31 @@
     NSURL *_url;
 }
 
-@property(retain) NSError * error;
+@property (retain) NSError *error;
 @property BOOL liked;
 @property unsigned int numberOfFriendLikes;
 @property unsigned int numberOfLikes;
-@property(readonly) NSURL * url;
+@property (readonly) NSURL *url;
 
 + (id)openGraphNodeAccessQueue;
-+ (void)openGraphNodeForURL:(id)arg1 handler:(id)arg2;
++ (void)openGraphNodeForURL:(id)arg1 handler:(id /* block */)arg2;
 
-- (void)clearErrorAndRefetchLikeStatusWithCompletionHandler:(id)arg1;
+- (void)clearErrorAndRefetchLikeStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (void)fetchLikeStatusWithCompletionHandler:(id)arg1;
+- (void)fetchLikeStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithOpenGraphURL:(id)arg1;
 - (BOOL)liked;
 - (unsigned int)numberOfFriendLikes;
 - (unsigned int)numberOfLikes;
-- (void)sendDislikeEventWithCompletionHandler:(id)arg1;
-- (void)sendLikeEventWithCompletionHandler:(id)arg1;
+- (void)sendDislikeEventWithCompletionHandler:(id /* block */)arg1;
+- (void)sendLikeEventWithCompletionHandler:(id /* block */)arg1;
 - (void)setError:(id)arg1;
 - (void)setLiked:(BOOL)arg1;
 - (void)setNumberOfFriendLikes:(unsigned int)arg1;
 - (void)setNumberOfLikes:(unsigned int)arg1;
-- (void)toggleLikeStatusWithCompletionHandler:(id)arg1;
+- (void)toggleLikeStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)url;
 
 @end

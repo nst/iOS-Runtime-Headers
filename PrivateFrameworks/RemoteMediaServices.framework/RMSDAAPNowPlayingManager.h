@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSDAAPNowPlayingManagerDelegate>, NSArray, NSNumber, NSObject<OS_dispatch_source>, NSString, NSURLSessionDataTask, RMSControlInterface, RMSDAAPRequestManager, RMSNowPlayingInfo;
-
 @interface RMSDAAPNowPlayingManager : NSObject {
     NSURLSessionDataTask *_artworkRequest;
     int _artworkRequestBackoffInterval;
@@ -23,9 +21,9 @@
     NSURLSessionDataTask *_volumeRequest;
 }
 
-@property(retain) RMSControlInterface * controlInterface;
-@property <RMSDAAPNowPlayingManagerDelegate> * delegate;
-@property(getter=isObserving,readonly) BOOL observing;
+@property (nonatomic, retain) RMSControlInterface *controlInterface;
+@property (nonatomic) <RMSDAAPNowPlayingManagerDelegate> *delegate;
+@property (getter=isObserving, nonatomic, readonly) BOOL observing;
 
 - (void).cxx_destruct;
 - (BOOL)_audioRoutes:(id)arg1 equalAudioRoutes:(id)arg2;
@@ -33,7 +31,7 @@
 - (void)_refreshNowPlayingInfoRequest;
 - (void)_requestArtworkDataIfNecessaryForNowPlayingInfo:(id)arg1;
 - (void)_requestAudioRoutes;
-- (void)_requestNowPlayingInfoWithCompletionHandler:(id)arg1;
+- (void)_requestNowPlayingInfoWithCompletionHandler:(id /* block */)arg1;
 - (void)_requestVolume;
 - (void)_scheduleArtworkRetryForNowPlayingInfo:(id)arg1 delay:(double)arg2;
 - (void)beginObservingNowPlaying;

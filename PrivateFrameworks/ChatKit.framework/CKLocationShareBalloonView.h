@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKLocationShareBalloonViewDelegate>, NSString, UIButton, UIImageView, UILabel, UIView;
-
 @interface CKLocationShareBalloonView : CKImageBalloonView {
     UIImageView *_chevron;
     UIView *_horizontalSeparator;
@@ -17,17 +15,17 @@
     UIView *_verticalSeparator;
 }
 
-@property(retain) UIImageView * chevron;
-@property <CKLocationShareBalloonViewDelegate> * delegate;
-@property(retain) UIView * horizontalSeparator;
-@property(retain) UIButton * ignoreButton;
-@property(retain) UILabel * locationLabel;
-@property(copy) NSString * locationString;
-@property int offerState;
-@property(retain) UIButton * startSharingButton;
-@property(retain) UILabel * titleLabel;
-@property(copy) NSString * titleString;
-@property(retain) UIView * verticalSeparator;
+@property (nonatomic, retain) UIImageView *chevron;
+@property (nonatomic) <CKLocationShareBalloonViewDelegate> *delegate;
+@property (nonatomic, retain) UIView *horizontalSeparator;
+@property (nonatomic, retain) UIButton *ignoreButton;
+@property (nonatomic, retain) UILabel *locationLabel;
+@property (nonatomic, copy) NSString *locationString;
+@property (nonatomic) int offerState;
+@property (nonatomic, retain) UIButton *startSharingButton;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, copy) NSString *titleString;
+@property (nonatomic, retain) UIView *verticalSeparator;
 
 - (void)_ignoreButtonHit:(id)arg1;
 - (void)_shareButtonHit:(id)arg1;

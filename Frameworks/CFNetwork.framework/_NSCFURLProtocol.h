@@ -2,13 +2,8 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface _NSCFURLProtocol : NSURLProtocol {
-    struct NSCFURLProtocolClient { int (**x1)(); int (**x2)(); id x3; id x4; } *_client;
+    struct NSCFURLProtocolClient { int (**x1)(); int (**x2)(); id x3; } *_client;
     struct _CFURLProtocol { } *_prot;
 }
 

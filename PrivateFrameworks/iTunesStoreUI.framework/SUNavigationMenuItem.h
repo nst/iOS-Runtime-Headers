@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, NSURL, SUItemContentRating;
-
 @interface SUNavigationMenuItem : NSObject <NSCopying> {
     SUItemContentRating *_contentRating;
     NSString *_title;
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) SUItemContentRating * contentRating;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) SUItemContentRating *contentRating;
+@property (nonatomic, readonly) NSString *title;
 
 - (id)URL;
 - (id)contentRating;

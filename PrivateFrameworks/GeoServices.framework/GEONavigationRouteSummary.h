@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedWaypoint, NSString;
-
 @interface GEONavigationRouteSummary : PBCodable <NSCopying> {
     GEOComposedWaypoint *_destination;
     NSString *_destinationName;
@@ -14,14 +12,14 @@
     int _transportType;
 }
 
-@property(retain) GEOComposedWaypoint * destination;
-@property(retain) NSString * destinationName;
-@property(readonly) BOOL hasDestination;
-@property(readonly) BOOL hasDestinationName;
-@property(readonly) BOOL hasOrigin;
-@property BOOL hasTransportType;
-@property(retain) GEOComposedWaypoint * origin;
-@property int transportType;
+@property (nonatomic, retain) GEOComposedWaypoint *destination;
+@property (nonatomic, retain) NSString *destinationName;
+@property (nonatomic, readonly) BOOL hasDestination;
+@property (nonatomic, readonly) BOOL hasDestinationName;
+@property (nonatomic, readonly) BOOL hasOrigin;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic, retain) GEOComposedWaypoint *origin;
+@property (nonatomic) int transportType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

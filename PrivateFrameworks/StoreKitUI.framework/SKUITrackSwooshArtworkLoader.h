@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemArtworkContext, SKUITrackSwooshViewController;
-
 @interface SKUITrackSwooshArtworkLoader : SKUISwooshArtworkLoader {
     SKUIItemArtworkContext *_artworkContext;
 }
 
-@property(retain) SKUIItemArtworkContext * artworkContext;
-@property(readonly) SKUITrackSwooshViewController * swooshViewController;
+@property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;
+@property (nonatomic, readonly) SKUITrackSwooshViewController *swooshViewController;
 
 - (void).cxx_destruct;
 - (id)artworkContext;

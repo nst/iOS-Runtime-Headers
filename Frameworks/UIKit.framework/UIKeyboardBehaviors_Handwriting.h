@@ -6,7 +6,7 @@
     BOOL _usesCandidateSelection;
 }
 
-@property BOOL usesCandidateSelection;
+@property (nonatomic) BOOL usesCandidateSelection;
 
 - (id)keyBehaviorsForState:(id)arg1;
 - (void)setUsesCandidateSelection:(BOOL)arg1;

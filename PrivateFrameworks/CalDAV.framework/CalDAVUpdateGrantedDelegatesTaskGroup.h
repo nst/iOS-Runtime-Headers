@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet, NSString;
-
 @interface CalDAVUpdateGrantedDelegatesTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSSet *_addReadURLs;
     NSSet *_addWriteURLs;
@@ -13,16 +11,16 @@
     NSSet *_updatedWriteURLs;
 }
 
-@property(retain) NSSet * addReadURLs;
-@property(retain) NSSet * addWriteURLs;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSSet * removeURLs;
-@property int state;
-@property(readonly) Class superclass;
-@property(retain) NSSet * updatedReadURLs;
-@property(retain) NSSet * updatedWriteURLs;
+@property (nonatomic, retain) NSSet *addReadURLs;
+@property (nonatomic, retain) NSSet *addWriteURLs;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSSet *removeURLs;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSSet *updatedReadURLs;
+@property (nonatomic, retain) NSSet *updatedWriteURLs;
 
 - (void)_fetchExistingGrantedDelegates;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;

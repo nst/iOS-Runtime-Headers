@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class AFMessage;
-
 @interface STSendDraftMessageRequest : AFSiriRequest {
     AFMessage *_message;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSDictionary, NSNumber, NSString, PLAgent;
-
 @interface PLBBMsgRoot : NSObject {
     PLAgent *_agent;
     NSDate *_msgDate;
@@ -15,14 +13,14 @@
     NSNumber *_msgType;
 }
 
-@property(retain) PLAgent * agent;
-@property(retain) NSDate * msgDate;
-@property(retain) NSDictionary * msgEntry;
-@property(retain) NSDictionary * msgKVPairs;
-@property(retain) NSString * msgName;
-@property(retain) NSString * msgPayload;
-@property(retain) NSString * msgProcErr;
-@property(retain) NSNumber * msgType;
+@property (nonatomic, retain) PLAgent *agent;
+@property (nonatomic, retain) NSDate *msgDate;
+@property (nonatomic, retain) NSDictionary *msgEntry;
+@property (nonatomic, retain) NSDictionary *msgKVPairs;
+@property (nonatomic, retain) NSString *msgName;
+@property (nonatomic, retain) NSString *msgPayload;
+@property (nonatomic, retain) NSString *msgProcErr;
+@property (nonatomic, retain) NSNumber *msgType;
 
 - (void).cxx_destruct;
 - (id)agent;

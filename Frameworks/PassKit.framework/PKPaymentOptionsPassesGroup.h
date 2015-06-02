@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentOptionsPassesGroup : PKPaymentOptionGroup {
-}
+@interface PKPaymentOptionsPassesGroup : PKPaymentOptionGroup
 
 - (id)groupDisplayName;
 

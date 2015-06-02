@@ -2,32 +2,20 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface PKUIAnimationDelegate : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didStartHandler;
-
+    id /* block */ _completionHandler;
+    id /* block */ _didStartHandler;
 }
 
-@property(copy) id completionHandler;
-@property(copy) id didStartHandler;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id /* block */ didStartHandler;
 
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
-- (id)didStartHandler;
-- (void)setCompletionHandler:(id)arg1;
-- (void)setDidStartHandler:(id)arg1;
+- (id /* block */)didStartHandler;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setDidStartHandler:(id /* block */)arg1;
 
 @end

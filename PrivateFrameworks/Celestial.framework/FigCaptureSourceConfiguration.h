@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCaptureSourceFormat, NSDictionary, NSString;
-
 @interface FigCaptureSourceConfiguration : NSObject <FigXPCCoding, NSCopying> {
     BOOL _applyMaxIntegrationTimeOverrideWhenAvailable;
     BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
@@ -21,24 +19,24 @@
     float _videoZoomRampAcceleration;
 }
 
-@property BOOL applyMaxIntegrationTimeOverrideWhenAvailable;
-@property BOOL automaticallyEnablesLowLightBoostWhenAvailable;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSDictionary * faceDetectionConfiguration;
-@property(readonly) unsigned int hash;
-@property int imageControlMode;
-@property(retain) FigCaptureSourceFormat * requiredFormat;
-@property float requiredMaxFrameRate;
-@property float requiredMinFrameRate;
-@property BOOL sensorHDREnabled;
-@property(readonly) struct OpaqueFigCaptureSource { }* source;
-@property(copy) NSString * sourceID;
-@property(readonly) int sourcePosition;
-@property(readonly) int sourceType;
-@property(readonly) Class superclass;
-@property float videoZoomFactor;
-@property float videoZoomRampAcceleration;
+@property (nonatomic) BOOL applyMaxIntegrationTimeOverrideWhenAvailable;
+@property (nonatomic) BOOL automaticallyEnablesLowLightBoostWhenAvailable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDictionary *faceDetectionConfiguration;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int imageControlMode;
+@property (nonatomic, retain) FigCaptureSourceFormat *requiredFormat;
+@property (nonatomic) float requiredMaxFrameRate;
+@property (nonatomic) float requiredMinFrameRate;
+@property (nonatomic) BOOL sensorHDREnabled;
+@property (nonatomic, readonly) struct OpaqueFigCaptureSource { }*source;
+@property (nonatomic, copy) NSString *sourceID;
+@property (nonatomic, readonly) int sourcePosition;
+@property (nonatomic, readonly) int sourceType;
+@property (readonly) Class superclass;
+@property (nonatomic) float videoZoomFactor;
+@property (nonatomic) float videoZoomRampAcceleration;
 
 + (void)initialize;
 + (int)sourceTypeForString:(id)arg1;

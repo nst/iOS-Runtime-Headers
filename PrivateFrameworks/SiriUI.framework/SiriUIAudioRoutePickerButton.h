@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIAudioRoutePickerButton : UIButton {
-}
+@interface SiriUIAudioRoutePickerButton : UIButton
 
 - (id)_baseBluetoothImage;
 - (id)_bluetoothImage;

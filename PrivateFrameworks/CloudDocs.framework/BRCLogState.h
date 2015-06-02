@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSObject<OS_dispatch_source>, NSString, NSURL;
-
 @interface BRCLogState : NSObject {
     struct __asl_object_s { } *_asl_client;
     struct __asl_object_s { } *_asl_store;
@@ -13,8 +11,8 @@
     NSObject<OS_dispatch_source> *_fdDeletionWatcher;
 }
 
-@property(retain) NSString * basename;
-@property(retain) NSURL * directory;
+@property (nonatomic, retain) NSString *basename;
+@property (nonatomic, retain) NSURL *directory;
 
 + (id)defaultLogState;
 

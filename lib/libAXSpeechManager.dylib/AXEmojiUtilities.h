@@ -2,8 +2,7 @@
    Image: /usr/lib/libAXSpeechManager.dylib
  */
 
-@interface AXEmojiUtilities : NSObject {
-}
+@interface AXEmojiUtilities : NSObject
 
 + (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1 stringForPauses:(id)arg2 language:(id)arg3 rangeReplacements:(id)arg4;
 

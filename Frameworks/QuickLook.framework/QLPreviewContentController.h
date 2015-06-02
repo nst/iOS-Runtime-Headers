@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString, QLAirPlayController, UIColor, UILongPressGestureRecognizer, UIPageViewController, UISegmentedControl, UITapGestureRecognizer;
-
 @interface QLPreviewContentController : UIViewController <QLPreviewContentControllerProtocol, QLPreviewItemInteractionDelegate> {
     QLAirPlayController *_airPlayController;
     UIColor *_backgroundColor;
@@ -46,15 +44,15 @@
     } clientContext;
 }
 
-@property(copy) UIColor * backgroundColor;
+@property (copy) UIColor *backgroundColor;
 @property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
-@property <QLPreviewContentDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <QLPreviewContentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property <QLPreviewContentDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property <QLPreviewContentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int previewMode;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void)_activateAirPlayOnRemoteScreen:(id)arg1;
 - (void)_cachePreviewViewController:(id)arg1;
@@ -135,7 +133,7 @@
 - (void)setNavigationBarVerticalOffset:(float)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewMode:(int)arg1;
-- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id /* block */)arg2;
 - (void)showContentsWasTappedForPreviewItem:(id)arg1;
 - (id)snapshotView;
 - (void)stopLoadingCurrentPreviewItem;

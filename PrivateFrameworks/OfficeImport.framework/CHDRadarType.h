@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDRadarType : CHDUnsupportedType {
-}
+@interface CHDRadarType : CHDUnsupportedType
 
 @end

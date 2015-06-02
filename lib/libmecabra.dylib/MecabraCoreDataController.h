@@ -2,8 +2,6 @@
    Image: /usr/lib/libmecabra.dylib
  */
 
-@class NSArray, NSEntityDescription, NSManagedObjectContext, NSManagedObjectModel, NSPersistentStoreCoordinator, NSString, NSURL;
-
 @interface MecabraCoreDataController : NSObject {
     NSEntityDescription *_entityDescription;
     NSURL *_localInfoPlistURL;
@@ -18,16 +16,16 @@
     NSString *_type;
 }
 
-@property(readonly) NSEntityDescription * entityDescription;
-@property(readonly) NSURL * localInfoPlistURL;
-@property(retain) NSURL * localStoreURL;
-@property(retain) NSURL * localURL;
-@property(retain) NSManagedObjectContext * managedObjectContext;
-@property(retain) NSManagedObjectModel * managedObjectModel;
-@property(retain) NSPersistentStoreCoordinator * persistentStoreCoordinator;
-@property(retain) NSURL * storeURL;
-@property(retain) NSArray * storedElementsForMerge;
-@property(retain) NSString * type;
+@property (nonatomic, readonly) NSEntityDescription *entityDescription;
+@property (nonatomic, readonly) NSURL *localInfoPlistURL;
+@property (nonatomic, retain) NSURL *localStoreURL;
+@property (nonatomic, retain) NSURL *localURL;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain) NSURL *storeURL;
+@property (nonatomic, retain) NSArray *storedElementsForMerge;
+@property (nonatomic, retain) NSString *type;
 
 + (void)resetDatabaseWithType:(id)arg1 URL:(id)arg2;
 

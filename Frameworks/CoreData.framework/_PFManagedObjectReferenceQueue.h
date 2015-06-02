@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext;
-
 @interface _PFManagedObjectReferenceQueue : NSObject {
     int _cd_rc;
     NSManagedObjectContext *_context;

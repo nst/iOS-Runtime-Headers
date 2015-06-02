@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSUTemporaryDirectory : NSObject {
     BOOL _leak;
     NSString *_path;

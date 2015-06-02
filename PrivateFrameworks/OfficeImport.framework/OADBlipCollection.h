@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface OADBlipCollection : NSObject {
     NSMutableArray *mBlips;
 }
 
-@property(retain) NSMutableArray * blips;
+@property (nonatomic, retain) NSMutableArray *blips;
 
 - (unsigned long)addBlip:(id)arg1;
 - (id)blipAtIndex:(long)arg1;

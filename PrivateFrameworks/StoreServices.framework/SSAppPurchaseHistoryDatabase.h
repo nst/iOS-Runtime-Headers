@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSQLiteDatabase;
-
 @interface SSAppPurchaseHistoryDatabase : NSObject {
     SSSQLiteDatabase *_database;
 }
@@ -20,9 +18,9 @@
 - (id)init;
 - (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
 - (int)localRevisionForAccountUniqueIdentifier:(id)arg1;
-- (void)modifyUsingAppPurchaseHistoryTransactionBlock:(id)arg1;
-- (void)readAsyncUsingTransactionBlock:(id)arg1;
-- (void)readUsingTransactionBlock:(id)arg1;
+- (void)modifyUsingAppPurchaseHistoryTransactionBlock:(id /* block */)arg1;
+- (void)readAsyncUsingTransactionBlock:(id /* block */)arg1;
+- (void)readUsingTransactionBlock:(id /* block */)arg1;
 - (BOOL)removeValueForDatabaseProperty:(id)arg1;
 - (BOOL)resetCacheForNewAccountID:(id)arg1;
 - (BOOL)setCurrentAccountUniqueIdentifier:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKModalTranscriptController, NSString;
-
 @interface CKSMSComposeViewServiceController : UINavigationController <CKSMSComposeViewServiceProtocol, CKTranscriptComposeDelegate> {
     BOOL _canEditRecipients;
     BOOL _disableCameraAttachments;
@@ -13,13 +11,13 @@
     BOOL _supportsMessageInspection;
 }
 
-@property BOOL canEditRecipients;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CKModalTranscriptController * modalTranscriptController;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL canEditRecipients;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKModalTranscriptController *modalTranscriptController;
+@property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (BOOL)_isSecureForRemoteViewService;

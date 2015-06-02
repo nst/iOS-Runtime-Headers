@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
-
 @interface EKPlaceholderTextView : UITextView {
     UILabel *_placeholder;
     BOOL _showingPlaceholder;

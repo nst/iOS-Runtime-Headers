@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSArray, NSString;
-
 @interface ML3SearchStringPredicate : ML3Predicate {
     NSArray *_properties;
     NSString *_searchString;
 }
 
-@property(copy) NSArray * properties;
-@property(copy) NSString * searchString;
+@property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, copy) NSString *searchString;
 
 + (id)predicateWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
 

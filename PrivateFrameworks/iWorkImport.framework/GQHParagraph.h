@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHParagraph : NSObject {
-}
+@interface GQHParagraph : NSObject
 
 + (id)getBulletStyle:(id)arg1 level:(int)arg2;
 + (int)handleBookmark:(id)arg1 state:(id)arg2;

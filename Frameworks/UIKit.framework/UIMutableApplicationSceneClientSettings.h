@@ -2,27 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@interface UIMutableApplicationSceneClientSettings : FBSMutableSceneClientSettings <UIApplicationSceneClientSettings>
 
-@interface UIMutableApplicationSceneClientSettings : FBSMutableSceneClientSettings <UIApplicationSceneClientSettings> {
-}
-
-@property int compatibilityMode;
-@property int controlCenterRevealMode;
-@property(copy,readonly) NSString * debugDescription;
-@property double defaultPNGExpirationTime;
-@property(copy) NSString * defaultPNGName;
-@property BOOL defaultStatusBarHidden;
-@property int defaultStatusBarStyle;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL idleTimerDisabled;
-@property int notificationCenterRevealMode;
-@property BOOL orientationEnabled;
-@property unsigned int proximityDetectionModes;
-@property BOOL statusBarHidden;
-@property int statusBarStyle;
-@property(readonly) Class superclass;
+@property (nonatomic) int compatibilityMode;
+@property (nonatomic) int controlCenterRevealMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double defaultPNGExpirationTime;
+@property (nonatomic, copy) NSString *defaultPNGName;
+@property (nonatomic) BOOL defaultStatusBarHidden;
+@property (nonatomic) int defaultStatusBarStyle;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL idleTimerDisabled;
+@property (nonatomic) int notificationCenterRevealMode;
+@property (nonatomic) BOOL orientationEnabled;
+@property (nonatomic) unsigned int proximityDetectionModes;
+@property (nonatomic) BOOL statusBarHidden;
+@property (nonatomic) int statusBarStyle;
+@property (readonly) Class superclass;
 
 - (int)compatibilityMode;
 - (int)controlCenterRevealMode;

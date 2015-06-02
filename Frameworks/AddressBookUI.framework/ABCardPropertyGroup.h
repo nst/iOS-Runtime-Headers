@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSString;
-
 @interface ABCardPropertyGroup : ABCardGroup {
     NSArray *_contacts;
     NSArray *_deletedItems;
@@ -16,18 +14,18 @@
     BOOL _showActionsWhenEmpty;
 }
 
-@property(readonly) BOOL allowsAdding;
-@property(copy) NSArray * contacts;
-@property(retain) NSArray * deletedItems;
-@property(retain) NSArray * editingItems;
-@property(getter=isFixedValue,readonly) BOOL fixedValue;
-@property BOOL isAdded;
-@property(readonly) BOOL modified;
-@property(getter=isMultiLine,readonly) BOOL multiLine;
-@property(getter=isMultiValue,readonly) BOOL multiValue;
-@property(readonly) NSString * property;
-@property(readonly) NSArray * propertyItems;
-@property BOOL showActionsWhenEmpty;
+@property (nonatomic, readonly) BOOL allowsAdding;
+@property (nonatomic, copy) NSArray *contacts;
+@property (nonatomic, retain) NSArray *deletedItems;
+@property (nonatomic, retain) NSArray *editingItems;
+@property (getter=isFixedValue, nonatomic, readonly) BOOL fixedValue;
+@property (nonatomic) BOOL isAdded;
+@property (nonatomic, readonly) BOOL modified;
+@property (getter=isMultiLine, nonatomic, readonly) BOOL multiLine;
+@property (getter=isMultiValue, nonatomic, readonly) BOOL multiValue;
+@property (nonatomic, readonly) NSString *property;
+@property (nonatomic, readonly) NSArray *propertyItems;
+@property (nonatomic) BOOL showActionsWhenEmpty;
 
 + (id)groupForProperty:(id)arg1 contact:(id)arg2 withLinkedContacts:(id)arg3;
 

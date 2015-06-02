@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, NSManagedObjectContext, NSProgress;
-
 @interface NSPersistentStoreAsynchronousResult : NSPersistentStoreResult {
     int _flags;
     id _requestCompletionBlock;
@@ -12,10 +10,10 @@
     NSProgress *_requestProgress;
 }
 
-@property(readonly) NSManagedObjectContext * managedObjectContext;
-@property(retain) NSError * operationError;
-@property(retain) NSProgress * progress;
-@property(copy) id requestCompletionBlock;
+@property (readonly) NSManagedObjectContext *managedObjectContext;
+@property (retain) NSError *operationError;
+@property (retain) NSProgress *progress;
+@property (copy) id requestCompletionBlock;
 
 - (void)_cancelProgress;
 - (BOOL)_isCancelled;

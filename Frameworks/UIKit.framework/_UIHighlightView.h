@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIColor;
-
 @interface _UIHighlightView : UIView {
     UIColor *_color;
     NSArray *_cornerRadii;

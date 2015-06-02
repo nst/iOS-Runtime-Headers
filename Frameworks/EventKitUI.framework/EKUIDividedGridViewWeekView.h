@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSLayoutConstraint, NSMutableArray;
-
 @interface EKUIDividedGridViewWeekView : UIView {
     NSMutableArray *_buttonViews;
     NSLayoutConstraint *_heightConstraint;
 }
 
-@property(retain) NSMutableArray * buttonViews;
-@property NSLayoutConstraint * heightConstraint;
+@property (retain) NSMutableArray *buttonViews;
+@property NSLayoutConstraint *heightConstraint;
 
 - (void).cxx_destruct;
 - (id)buttonViews;

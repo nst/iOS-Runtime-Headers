@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface GKObserverTrampoline : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     int _cancellationPredicate;
     NSString *_keyPath;
     id _observee;
     unsigned int _options;
 }
 
-@property(readonly) id token;
+@property (readonly) id token;
 
 - (void)cancelObservation;
 - (void)dealloc;
-- (id)initObservingObject:(id)arg1 keyPath:(id)arg2 options:(unsigned int)arg3 block:(id)arg4;
+- (id)initObservingObject:(id)arg1 keyPath:(id)arg2 options:(unsigned int)arg3 block:(id /* block */)arg4;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)startObserving;
 - (id)token;

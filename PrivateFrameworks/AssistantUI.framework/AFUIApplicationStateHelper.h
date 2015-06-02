@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class BKSApplicationStateMonitor, NSMutableArray;
-
 @interface AFUIApplicationStateHelper : NSObject {
     BKSApplicationStateMonitor *_appStateMonitor;
     NSMutableArray *_foregroundAppInfos;

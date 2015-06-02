@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASetContextConfiguration : SABaseClientBoundCommand {
-}
+@interface SASetContextConfiguration : SABaseClientBoundCommand
 
-@property int contextTimeoutSeconds;
+@property (nonatomic) int contextTimeoutSeconds;
 
 + (id)setContextConfiguration;
 + (id)setContextConfigurationWithDictionary:(id)arg1 context:(id)arg2;

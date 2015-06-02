@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class NSMutableArray;
-
 @interface CSLUIPBUIPluginListResponse : PBCodable <NSCopying> {
     NSMutableArray *_names;
     NSMutableArray *_usages;
 }
 
-@property(retain) NSMutableArray * names;
-@property(retain) NSMutableArray * usages;
+@property (nonatomic, retain) NSMutableArray *names;
+@property (nonatomic, retain) NSMutableArray *usages;
 
 - (void).cxx_destruct;
 - (void)addName:(id)arg1;

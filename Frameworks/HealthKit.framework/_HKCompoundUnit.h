@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class _HKDimension, _HKFactorization;
-
 @interface _HKCompoundUnit : HKUnit {
     _HKFactorization *_baseUnits;
     _HKDimension *_dimension;

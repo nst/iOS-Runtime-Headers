@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSString, UILabel;
-
 @interface _MCDAlbumTracksCell : UITableViewCell {
     UILabel *_durationLabel;
     float _maximumDurationWidth;
@@ -11,10 +9,10 @@
     UILabel *_trackNumberLabel;
 }
 
-@property(copy) NSString * durationText;
-@property float maximumDurationWidth;
-@property(copy) NSString * title;
-@property(copy) NSString * trackNumberText;
+@property (nonatomic, copy) NSString *durationText;
+@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *trackNumberText;
 
 - (void).cxx_destruct;
 - (id)durationText;

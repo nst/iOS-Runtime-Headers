@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInput, NSString;
-
 @interface AVCaptureInputPortInternal : NSObject {
     int changeSeed;
     struct OpaqueCMClock { } *clock;

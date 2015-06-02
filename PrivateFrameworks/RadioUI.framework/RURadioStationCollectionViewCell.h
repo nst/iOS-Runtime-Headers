@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPImageCacheRequest, MPUBorderConfiguration, MPUStackView, NSMutableDictionary, NSString, RURadioStationsCollectionViewTemplate, UIImage, UIView;
-
 @interface RURadioStationCollectionViewCell : UICollectionViewCell <MPUStackViewDataSource, MPUTextDrawingCacheInvalidationObserver> {
     BOOL _adjustsArtworkImageWhenHighlighted;
     UIImage *_artworkImage;
@@ -18,19 +16,19 @@
     NSMutableDictionary *_textImageViews;
 }
 
-@property BOOL adjustsArtworkImageWhenHighlighted;
-@property(retain) UIImage * artworkImage;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL displaysAsStack;
-@property(readonly) unsigned int hash;
-@property(retain) MPImageCacheRequest * imageRequest;
-@property(getter=isNowPlaying) BOOL nowPlaying;
-@property(retain) RURadioStationsCollectionViewTemplate * radioStationsCollectionViewTemplate;
-@property UIView * stackPerspectiveTargetView;
-@property(copy) NSString * subtitle;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
+@property (nonatomic) BOOL adjustsArtworkImageWhenHighlighted;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displaysAsStack;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPImageCacheRequest *imageRequest;
+@property (getter=isNowPlaying, nonatomic) BOOL nowPlaying;
+@property (nonatomic, retain) RURadioStationsCollectionViewTemplate *radioStationsCollectionViewTemplate;
+@property (nonatomic) UIView *stackPerspectiveTargetView;
+@property (nonatomic, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_setText:(id)arg1 forElementNamed:(id)arg2;
@@ -49,8 +47,8 @@
 - (BOOL)isNowPlaying;
 - (void)layoutSubviews;
 - (int)numberOfItemsInStackView:(id)arg1;
-- (void)performCompressionAnimationWithCompletionHandler:(id)arg1;
-- (void)performInsertionAnimationWithCompletionHandler:(id)arg1;
+- (void)performCompressionAnimationWithCompletionHandler:(id /* block */)arg1;
+- (void)performInsertionAnimationWithCompletionHandler:(id /* block */)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (id)radioStationsCollectionViewTemplate;
 - (void)setAdjustsArtworkImageWhenHighlighted:(BOOL)arg1;

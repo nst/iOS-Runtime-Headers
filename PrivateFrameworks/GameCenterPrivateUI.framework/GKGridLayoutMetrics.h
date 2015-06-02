@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface GKGridLayoutMetrics : NSObject <NSCopying> {
     NSMutableDictionary *_keyToMetrics;
     NSString *_layoutKey;
     NSMutableDictionary *_locationToKeyList;
 }
 
-@property(retain) NSMutableDictionary * keyToMetrics;
-@property(retain) NSString * layoutKey;
-@property(retain) NSMutableDictionary * locationToKeyList;
+@property (nonatomic, retain) NSMutableDictionary *keyToMetrics;
+@property (nonatomic, retain) NSString *layoutKey;
+@property (nonatomic, retain) NSMutableDictionary *locationToKeyList;
 
 + (id)metrics;
 
@@ -23,8 +21,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateSupplementaryLocations:(id)arg1;
-- (void)enumerateSupplementaryMetricsUsingBlock:(id)arg1;
+- (void)enumerateSupplementaryLocations:(id /* block */)arg1;
+- (void)enumerateSupplementaryMetricsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (void)insertSupplementaryMetrics:(id)arg1 forKey:(id)arg2 atLocation:(unsigned int)arg3;
 - (id)keyListForLocation:(unsigned int)arg1;

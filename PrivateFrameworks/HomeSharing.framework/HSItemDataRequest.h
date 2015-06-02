@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSItemDataRequest : HSRequest {
-}
+@interface HSItemDataRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2 format:(id)arg3;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSNumberFormatter, NSOperationQueue, NSTimer, SKUIClientContext, SKUICountdown, SKUICountdownViewTimerTarget, UIImage, UIImageView, UILabel;
-
 @interface SKUICountdownView : UIView {
     SKUIClientContext *_clientContext;
     SKUICountdown *_countdown;
@@ -27,9 +25,9 @@
     SKUICountdownViewTimerTarget *_timerTarget;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(readonly) SKUIClientContext * clientContext;
-@property(readonly) SKUICountdown * countdown;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) SKUICountdown *countdown;
 
 - (void).cxx_destruct;
 - (void)_currentRemainingDays:(int*)arg1 hours:(int*)arg2 minutes:(int*)arg3 seconds:(int*)arg4;

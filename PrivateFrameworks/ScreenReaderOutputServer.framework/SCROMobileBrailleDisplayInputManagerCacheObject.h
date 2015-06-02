@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSBundle, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface SCROMobileBrailleDisplayInputManagerCacheObject : NSObject {
     int _brailleInputMode;
     NSBundle *_bundle;
@@ -13,12 +11,12 @@
     NSMutableArray *_orderedIdentifiers;
 }
 
-@property int brailleInputMode;
-@property(retain) NSBundle * bundle;
-@property(retain) NSMutableDictionary * commandDictionary;
-@property(retain) NSString * driverIdentifier;
-@property(retain) NSString * modelIdentifier;
-@property(retain) NSMutableArray * orderedIdentifiers;
+@property (nonatomic) int brailleInputMode;
+@property (nonatomic, retain) NSBundle *bundle;
+@property (nonatomic, retain) NSMutableDictionary *commandDictionary;
+@property (nonatomic, retain) NSString *driverIdentifier;
+@property (nonatomic, retain) NSString *modelIdentifier;
+@property (nonatomic, retain) NSMutableArray *orderedIdentifiers;
 
 - (int)brailleInputMode;
 - (id)bundle;

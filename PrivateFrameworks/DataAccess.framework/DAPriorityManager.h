@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSMapTable;
-
 @interface DAPriorityManager : NSObject {
     NSMapTable *_clientsToPriorityRequests;
     int _currentPriority;
     int _foregroundDataclasses;
 }
 
-@property(retain) NSMapTable * clientsToPriorityRequests;
-@property(readonly) int currentPriority;
-@property int foregroundDataclasses;
+@property (nonatomic, retain) NSMapTable *clientsToPriorityRequests;
+@property (nonatomic, readonly) int currentPriority;
+@property (nonatomic) int foregroundDataclasses;
 
 + (id)sharedManager;
 + (void)vendPriorityManagers;

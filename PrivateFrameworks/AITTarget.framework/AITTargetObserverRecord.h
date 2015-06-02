@@ -2,30 +2,20 @@
    Image: /System/Library/PrivateFrameworks/AITTarget.framework/AITTarget
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface AITTargetObserverRecord : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     id _observer;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) id handler;
-@property(readonly) id observer;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (readonly) id /* block */ handler;
+@property (readonly) id observer;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)recordForObserver:(id)arg1 queue:(id)arg2 block:(id)arg3;
++ (id)recordForObserver:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
 
 - (void)dealloc;
-- (id)handler;
+- (id /* block */)handler;
 - (id)observer;
 - (id)queue;
 

@@ -11,10 +11,10 @@
     unsigned int _width;
 }
 
-@property BOOL hasHeight;
-@property BOOL hasWidth;
-@property unsigned int height;
-@property unsigned int width;
+@property (nonatomic) BOOL hasHeight;
+@property (nonatomic) BOOL hasWidth;
+@property (nonatomic) unsigned int height;
+@property (nonatomic) unsigned int width;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

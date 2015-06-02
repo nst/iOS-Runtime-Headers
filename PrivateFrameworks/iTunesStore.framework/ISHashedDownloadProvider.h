@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISHashError, NSArray, NSString;
-
 @interface ISHashedDownloadProvider : ISDataProvider <NSCopying> {
     int _fileDescriptor;
     NSArray *_hashes;
@@ -25,9 +23,9 @@
     long long _validatedBytes;
 }
 
-@property(retain) NSArray * hashes;
-@property(copy) ISHashError * lastHashError;
-@property(retain) NSString * localFilePath;
+@property (retain) NSArray *hashes;
+@property (copy) ISHashError *lastHashError;
+@property (retain) NSString *localFilePath;
 @property long long numberOfBytesToHash;
 @property BOOL shouldResumeFromLocalBytes;
 @property long long streamedBytes;

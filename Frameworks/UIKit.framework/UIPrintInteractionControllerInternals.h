@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class PKPrintSettings, PKPrinter, UIPrintInfo, UIPrintPageRenderer, UIPrintPanelViewController, UIPrintPaper, UIPrintingProgress;
-
 @interface UIPrintInteractionControllerInternals : NSObject {
     UIPrintInfo *_activePrintInfo;
     int _currentPage;

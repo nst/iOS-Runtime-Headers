@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3PropertyPredicate : ML3Predicate {
     NSString *_property;
 }
 
-@property(copy) NSString * property;
+@property (nonatomic, copy) NSString *property;
 
 + (id)predicateWithProperty:(id)arg1;
 

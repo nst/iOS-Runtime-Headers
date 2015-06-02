@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class CALayer, NSString;
-
 @interface MCDButton : UIButton {
     CALayer *_focusColorLayer;
     NSString *_labelTemplateString;
     BOOL _showBezelInTouch;
 }
 
-@property(copy) NSString * labelTemplateString;
-@property(getter=isSelected) BOOL selected;
-@property BOOL showBezelInTouch;
+@property (nonatomic, copy) NSString *labelTemplateString;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) BOOL showBezelInTouch;
 
 + (id)buttonWithType:(int)arg1;
 

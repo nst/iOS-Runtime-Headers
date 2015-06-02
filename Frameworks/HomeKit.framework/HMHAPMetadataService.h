@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSString;
-
 @interface HMHAPMetadataService : NSObject <NSSecureCoding> {
     NSString *_localizedDescription;
     NSString *_name;
@@ -11,10 +9,10 @@
     NSString *_type;
 }
 
-@property(retain) NSString * localizedDescription;
-@property(retain) NSString * name;
-@property(retain) NSString * svcDescription;
-@property(retain) NSString * type;
+@property (nonatomic, retain) NSString *localizedDescription;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *svcDescription;
+@property (nonatomic, retain) NSString *type;
 
 + (BOOL)supportsSecureCoding;
 

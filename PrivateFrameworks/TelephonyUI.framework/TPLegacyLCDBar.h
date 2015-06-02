@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIImage, UIImageView;
-
 @interface TPLegacyLCDBar : UIImageView {
     UIImage *_barBackground;
     UIImageView *_shadowView;
 }
 
-@property(retain) UIImage * barBackground;
-@property(readonly) UIImageView * shadowView;
+@property (nonatomic, retain) UIImage *barBackground;
+@property (readonly) UIImageView *shadowView;
 
 + (id)backgroundImage;
 + (float)defaultHeight;

@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, PKPaymentAuthorizationDataModel;
-
 @interface PKPaymentDataItem : NSObject <PKPaymentValidating> {
     PKPaymentAuthorizationDataModel *_model;
     int _status;
     int _type;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property PKPaymentAuthorizationDataModel * model;
-@property(getter=isRejected,readonly) BOOL rejected;
-@property int status;
-@property(readonly) Class superclass;
-@property int type;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) PKPaymentAuthorizationDataModel *model;
+@property (getter=isRejected, nonatomic, readonly) BOOL rejected;
+@property (nonatomic) int status;
+@property (readonly) Class superclass;
+@property (nonatomic) int type;
 
 + (int)dataType;
 

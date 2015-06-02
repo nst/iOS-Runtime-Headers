@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, WBSAutomaticReadingListRecordRange;
-
 @interface WBSAutomaticReadingListTrackedRecordsInfo : NSObject {
     NSArray *_items;
     WBSAutomaticReadingListRecordRange *_rangeOfTrackedRecords;
 }
 
-@property(copy) NSArray * items;
-@property(copy) WBSAutomaticReadingListRecordRange * rangeOfTrackedRecords;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) WBSAutomaticReadingListRecordRange *rangeOfTrackedRecords;
 
 - (void).cxx_destruct;
 - (id)items;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIServiceWebViewController;
-
 @interface _UIServiceWebView : UIWebView {
     _UIServiceWebViewController *_serviceWebViewController;
     BOOL _shouldDecidePolicyRemotely;
 }
 
-@property _UIServiceWebViewController * serviceWebViewController;
-@property BOOL shouldDecidePolicyRemotely;
+@property (nonatomic) _UIServiceWebViewController *serviceWebViewController;
+@property (nonatomic) BOOL shouldDecidePolicyRemotely;
 
 - (id)_makeAlertView;
-- (void)_webView:(id)arg1 dismissViewControllerAnimated:(BOOL)arg2 completion:(id)arg3;
-- (BOOL)_webView:(id)arg1 presentViewController:(id)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)_webView:(id)arg1 dismissViewControllerAnimated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (BOOL)_webView:(id)arg1 presentViewController:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (id)serviceWebViewController;
 - (void)setServiceWebViewController:(id)arg1;
 - (void)setShouldDecidePolicyRemotely:(BOOL)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLSharingController : NSObject {
-}
+@interface PLSharingController : NSObject
 
 + (BOOL)allowedToModifyEmailAccounts;
 + (BOOL)canSendEmail;

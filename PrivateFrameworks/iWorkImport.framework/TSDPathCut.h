@@ -8,9 +8,9 @@
     float mT;
 }
 
-@property(readonly) int segment;
-@property(readonly) float skew;
-@property(readonly) float t;
+@property (nonatomic, readonly) int segment;
+@property (nonatomic, readonly) float skew;
+@property (nonatomic, readonly) float t;
 
 - (id)description;
 - (id)initWithSegment:(int)arg1 atT:(float)arg2 withSkew:(float)arg3;

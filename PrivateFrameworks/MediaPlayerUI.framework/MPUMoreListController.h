@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@interface MPUMoreListController : UIMoreListController {
-}
+@interface MPUMoreListController : UIMoreListController
 
 - (id)_configurationForViewControllerAtIndexPath:(id)arg1;
 - (id)_existingViewControllerAtIndexPath:(id)arg1;

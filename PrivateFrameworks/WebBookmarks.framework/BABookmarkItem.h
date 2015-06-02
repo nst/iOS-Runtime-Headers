@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class WebBookmark, WebBookmarkCollection;
-
 @interface BABookmarkItem : NSObject {
     WebBookmark *_bookmark;
     WebBookmarkCollection *_collection;
 }
 
-@property(retain) WebBookmark * bookmark;
-@property(readonly) WebBookmarkCollection * collection;
+@property (nonatomic, retain) WebBookmark *bookmark;
+@property (nonatomic, readonly) WebBookmarkCollection *collection;
 
 - (id)bookmark;
 - (id)collection;

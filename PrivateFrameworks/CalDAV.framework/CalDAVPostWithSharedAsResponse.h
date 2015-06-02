@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVPostWithSharedAsResponse : CoreDAVPostTask {
-}
+@interface CalDAVPostWithSharedAsResponse : CoreDAVPostTask
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 

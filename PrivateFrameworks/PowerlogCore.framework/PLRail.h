@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSArray, NSString, PLEntry;
-
 @interface PLRail : PLOperator {
     BOOL _cacheOn;
     NSArray *_cacheResults;
@@ -20,14 +18,14 @@
 }
 
 @property BOOL cacheOn;
-@property(retain) NSArray * cacheResults;
+@property (retain) NSArray *cacheResults;
 @property struct _PLTimeIntervalRange { double x1; double x2; } cacheTimeRange;
-@property(readonly) BOOL isNegativePowerSupported;
-@property(retain) PLEntry * lastSnapshot;
+@property (readonly) BOOL isNegativePowerSupported;
+@property (nonatomic, retain) PLEntry *lastSnapshot;
 @property BOOL logRail;
-@property(readonly) short railDirection;
-@property(retain,readonly) NSString * railName;
-@property(readonly) double selfAdjustedSafeTimeForModeling;
+@property (readonly) short railDirection;
+@property (readonly, retain) NSString *railName;
+@property (readonly) double selfAdjustedSafeTimeForModeling;
 
 + (id)entryEventNoneDefinitionRail;
 + (id)entryEventNoneDefinitions;

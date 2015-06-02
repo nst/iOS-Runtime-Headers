@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassGroupViewDelegate>, NSMutableDictionary, NSString, PKGroup, PKPassView, PKReusablePassViewQueue, UIInterpolatingMotionEffect, UILongPressGestureRecognizer, UIPageControl, UIPanGestureRecognizer, UIScrollView, UIView;
-
 @interface PKPassGroupView : UIView <PKGroupDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WLCardViewDelegate> {
     BOOL _canPan;
     <PKPassGroupViewDelegate> *_delegate;
@@ -26,25 +24,25 @@
     float _verticalMotionRelativeValue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <PKPassGroupViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int displayIndex;
-@property PKPassView * frontmostPassView;
-@property(retain) PKGroup * group;
-@property(readonly) unsigned int hash;
-@property float horizontalMotionRelativeValue;
-@property(readonly) struct UIOffset { float x1; float x2; } offsetForFrontmostPassWhileStacked;
-@property(readonly) UIPageControl * pageControl;
-@property PKReusablePassViewQueue * passViewQueue;
-@property int presentationState;
-@property(readonly) Class superclass;
-@property float verticalMotionRelativeValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <PKPassGroupViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int displayIndex;
+@property (nonatomic) PKPassView *frontmostPassView;
+@property (nonatomic, retain) PKGroup *group;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float horizontalMotionRelativeValue;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } offsetForFrontmostPassWhileStacked;
+@property (nonatomic, readonly) UIPageControl *pageControl;
+@property (nonatomic) PKReusablePassViewQueue *passViewQueue;
+@property (nonatomic) int presentationState;
+@property (readonly) Class superclass;
+@property (nonatomic) float verticalMotionRelativeValue;
 
 - (void)_addPanAndLongPressGestureRecognizers;
 - (struct CGSize { float x1; float x2; })_contentSize;
 - (int)_defaultContentModeForIndex:(unsigned int)arg1;
-- (void)_enumerateCardViewsByStackOrderWithBlock:(id)arg1;
+- (void)_enumerateCardViewsByStackOrderWithBlock:(id /* block */)arg1;
 - (void)_evictUnusedViews;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fanningFrameForCardView:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_handleLongPress:(id)arg1;
@@ -94,7 +92,7 @@
 - (id)passViewQueue;
 - (BOOL)passViewShouldFlip:(id)arg1;
 - (void)passViewTapped:(id)arg1;
-- (void)presentDiff:(id)arg1 completion:(id)arg2;
+- (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentPassWithUniqueID:(id)arg1;
 - (int)presentationState;
 - (void)removeFromSuperview;

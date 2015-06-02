@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString;
-
 @interface PTXLiveView : UIView {
     NSString *_resourceName;
 }

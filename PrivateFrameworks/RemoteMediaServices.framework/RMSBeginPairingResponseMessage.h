@@ -11,10 +11,10 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasResponseCode;
-@property BOOL hasSessionIdentifier;
-@property int responseCode;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasResponseCode;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int responseCode;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

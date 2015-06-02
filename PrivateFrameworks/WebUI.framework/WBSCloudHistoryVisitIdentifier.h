@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, WBSHistoryItem, WBSHistoryVisit;
-
 @interface WBSCloudHistoryVisitIdentifier : NSObject <NSCopying> {
     WBSHistoryItem *_associatedHistoryItem;
     WBSHistoryVisit *_associatedHistoryVisit;
@@ -12,10 +10,10 @@
     double _visitTime;
 }
 
-@property(retain) WBSHistoryItem * associatedHistoryItem;
-@property(retain) WBSHistoryVisit * associatedHistoryVisit;
-@property(copy,readonly) NSString * urlString;
-@property(readonly) double visitTime;
+@property (nonatomic, retain) WBSHistoryItem *associatedHistoryItem;
+@property (nonatomic, retain) WBSHistoryVisit *associatedHistoryVisit;
+@property (nonatomic, readonly, copy) NSString *urlString;
+@property (nonatomic, readonly) double visitTime;
 
 - (void).cxx_destruct;
 - (id)associatedHistoryItem;

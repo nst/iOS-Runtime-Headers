@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSData, NSString, SPAssetCacheSyncData;
-
 @interface SPCacheMessage : NSObject {
     NSData *_assetData;
     NSString *_assetKey;
@@ -14,13 +12,13 @@
     SPAssetCacheSyncData *_syncData;
 }
 
-@property(retain) NSData * assetData;
-@property(retain) NSString * assetKey;
-@property unsigned int cacheType;
-@property unsigned int error;
-@property(retain) NSString * gizmoCacheIdentifier;
-@property long messageType;
-@property(retain) SPAssetCacheSyncData * syncData;
+@property (nonatomic, retain) NSData *assetData;
+@property (nonatomic, retain) NSString *assetKey;
+@property (nonatomic) unsigned int cacheType;
+@property (nonatomic) unsigned int error;
+@property (nonatomic, retain) NSString *gizmoCacheIdentifier;
+@property (nonatomic) long messageType;
+@property (nonatomic, retain) SPAssetCacheSyncData *syncData;
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;

@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class VKMapRasterizer;
-
 @interface VKMapRasterizerRoot : VKModelObject {
     struct ClearItem { 
         unsigned char colorMask; 
@@ -36,7 +25,7 @@
     VKMapRasterizer *_mapRasterizer;
 }
 
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

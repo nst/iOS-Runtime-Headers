@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIRenditionMetrics, CUIRenditionSliceInformation;
-
 @interface CUIMutableThemeRendition : CUIThemeRendition {
     struct CGImage { } *_image;
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_renditionKey;

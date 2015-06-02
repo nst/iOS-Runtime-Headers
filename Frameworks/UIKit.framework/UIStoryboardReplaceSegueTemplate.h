@@ -7,8 +7,8 @@
     int _splitViewControllerIndex;
 }
 
-@property int destinationContainmentContext;
-@property int splitViewControllerIndex;
+@property (nonatomic) int destinationContainmentContext;
+@property (nonatomic) int splitViewControllerIndex;
 
 - (id)defaultSegueClassName;
 - (int)destinationContainmentContext;

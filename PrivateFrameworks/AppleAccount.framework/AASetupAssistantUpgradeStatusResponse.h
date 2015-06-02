@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber;
+@interface AASetupAssistantUpgradeStatusResponse : AAResponse
 
-@interface AASetupAssistantUpgradeStatusResponse : AAResponse {
-}
-
-@property(readonly) NSNumber * upgradeStatus;
+@property (nonatomic, readonly) NSNumber *upgradeStatus;
 
 - (id)upgradeStatus;
 

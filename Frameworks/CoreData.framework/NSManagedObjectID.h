@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSEntityDescription, NSPersistentStore;
+@interface NSManagedObjectID : NSObject <NSCopying>
 
-@interface NSManagedObjectID : NSObject <NSCopying> {
-}
+@property (readonly) NSEntityDescription *entity;
+@property (readonly) NSPersistentStore *persistentStore;
+@property (getter=isTemporaryID, readonly) BOOL temporaryID;
 
-@property(readonly) NSEntityDescription * entity;
-@property(readonly) NSPersistentStore * persistentStore;
-@property(getter=isTemporaryID,readonly) BOOL temporaryID;
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
@@ -31,6 +30,9 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isTemporaryID;
 - (id)persistentStore;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
 - (id)pl_shortURI;
 
 @end

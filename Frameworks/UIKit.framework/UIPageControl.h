@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIColor, UIImage, _UILegibilitySettings;
-
 @interface UIPageControl : UIControl {
     int _currentPage;
     UIImage *_currentPageImage;
@@ -20,14 +18,14 @@
     UIColor *_pageIndicatorTintColor;
 }
 
-@property int currentPage;
-@property(retain) UIColor * currentPageIndicatorTintColor;
-@property BOOL defersCurrentPageDisplay;
-@property BOOL hidesForSinglePage;
-@property(getter=_legibilitySettings,setter=_setLegibilitySettings:) _UILegibilitySettings * legibilitySettings;
-@property(getter=_legibilityStyle,setter=_setLegibilityStyle:) int legibilityStyle;
-@property int numberOfPages;
-@property(retain) UIColor * pageIndicatorTintColor;
+@property (nonatomic) int currentPage;
+@property (nonatomic, retain) UIColor *currentPageIndicatorTintColor;
+@property (nonatomic) BOOL defersCurrentPageDisplay;
+@property (nonatomic) BOOL hidesForSinglePage;
+@property (getter=_legibilitySettings, setter=_setLegibilitySettings:, nonatomic) _UILegibilitySettings *legibilitySettings;
+@property (getter=_legibilityStyle, setter=_setLegibilityStyle:, nonatomic) int legibilityStyle;
+@property (nonatomic) int numberOfPages;
+@property (nonatomic, retain) UIColor *pageIndicatorTintColor;
 
 - (id)_activePageIndicatorImage;
 - (void)_commonPageControlInit;

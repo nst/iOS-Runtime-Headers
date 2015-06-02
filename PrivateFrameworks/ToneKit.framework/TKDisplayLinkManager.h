@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class CADisplayLink, NSMutableSet;
-
 @interface TKDisplayLinkManager : NSObject {
     NSMutableSet *_activeTargetActions;
     BOOL _handlingDisplayRefresh;
@@ -13,18 +11,18 @@
     unsigned int _warmUpModeRequirementsCount;
 }
 
-@property(setter=_setActiveTargetActions:,retain) NSMutableSet * _activeTargetActions;
-@property(setter=_setDisplayLink:,retain) CADisplayLink * _displayLink;
-@property(getter=_isHandlingDisplayRefresh,setter=_setHandlingDisplayRefresh:) BOOL _handlingDisplayRefresh;
-@property(setter=_setHasUpdatedTargetActions:) BOOL _hasUpdatedTargetActions;
-@property(setter=_setStoredDisplayLink:,retain) CADisplayLink * _storedDisplayLink;
-@property(setter=_setUpdatedTargetActions:,retain) NSMutableSet * _updatedTargetActions;
-@property(getter=_isWarmUpModeEnabled,readonly) BOOL _warmUpModeEnabled;
-@property(setter=_setWarmUpModeRequirementsCount:) unsigned int _warmUpModeRequirementsCount;
-@property(readonly) double duration;
-@property(readonly) unsigned int frameInterval;
-@property(getter=isPaused,readonly) BOOL paused;
-@property(readonly) double timestamp;
+@property (setter=_setActiveTargetActions:, nonatomic, retain) NSMutableSet *_activeTargetActions;
+@property (setter=_setDisplayLink:, nonatomic, retain) CADisplayLink *_displayLink;
+@property (getter=_isHandlingDisplayRefresh, setter=_setHandlingDisplayRefresh:, nonatomic) BOOL _handlingDisplayRefresh;
+@property (setter=_setHasUpdatedTargetActions:, nonatomic) BOOL _hasUpdatedTargetActions;
+@property (setter=_setStoredDisplayLink:, nonatomic, retain) CADisplayLink *_storedDisplayLink;
+@property (setter=_setUpdatedTargetActions:, nonatomic, retain) NSMutableSet *_updatedTargetActions;
+@property (getter=_isWarmUpModeEnabled, nonatomic, readonly) BOOL _warmUpModeEnabled;
+@property (setter=_setWarmUpModeRequirementsCount:, nonatomic) unsigned int _warmUpModeRequirementsCount;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) unsigned int frameInterval;
+@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (nonatomic, readonly) double timestamp;
 
 + (void)_releaseCurrentDisplayLinkManager;
 + (id)currentDisplayLinkManager;

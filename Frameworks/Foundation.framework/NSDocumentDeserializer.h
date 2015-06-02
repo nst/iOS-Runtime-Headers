@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDocumentDeserializer : NSAKDeserializer {
-}
+@interface NSDocumentDeserializer : NSAKDeserializer
 
 - (id)deserializeNewData;
 - (id)deserializeNewPList;

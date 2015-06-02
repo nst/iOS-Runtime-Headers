@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLCDSubImageView, TPLCDTextView, UIView;
-
 @interface TPLCDView : TPLCDBar {
     UIView *_contentView;
     TPLCDSubImageView *_imageView;
     TPLCDTextView *_labelView;
-    unsigned int _layoutAsLabelled : 1;
+    unsigned int _layoutAsLabelled;
     TPLCDTextView *_textView;
     BOOL _verticallyCenterTextViewIfLabelless;
 }

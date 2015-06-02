@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
  */
 
-@class NSMutableDictionary;
-
 @interface SYDJournal : NSObject {
     NSMutableDictionary *journal;
     BOOL readonly;

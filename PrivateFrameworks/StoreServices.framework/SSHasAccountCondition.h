@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSHasAccountCondition : SSProtocolCondition {
-}
+@interface SSHasAccountCondition : SSProtocolCondition
 
 - (BOOL)evaluateWithContext:(id)arg1;
 

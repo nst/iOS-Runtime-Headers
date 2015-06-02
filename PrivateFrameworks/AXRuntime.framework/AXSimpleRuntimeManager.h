@@ -2,82 +2,46 @@
    Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AXSimpleRuntimeManager : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _applicationElementCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _attributeCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _clientObserverCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _hitTestCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _outgoingValuePreprocessor;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _parameterizedAttributeCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _performActionCallback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _setAttributeCallback;
-
+    id /* block */ _applicationElementCallback;
+    id /* block */ _attributeCallback;
+    id /* block */ _clientObserverCallback;
+    id /* block */ _hitTestCallback;
+    id /* block */ _outgoingValuePreprocessor;
+    id /* block */ _parameterizedAttributeCallback;
+    id /* block */ _performActionCallback;
+    id /* block */ _setAttributeCallback;
     BOOL _systemWideServer;
 }
 
-@property(copy) id applicationElementCallback;
-@property(copy) id attributeCallback;
-@property(copy) id clientObserverCallback;
-@property(copy) id hitTestCallback;
-@property(copy) id outgoingValuePreprocessor;
-@property(copy) id parameterizedAttributeCallback;
-@property(copy) id performActionCallback;
-@property(copy) id setAttributeCallback;
-@property BOOL systemWideServer;
+@property (nonatomic, copy) id /* block */ applicationElementCallback;
+@property (nonatomic, copy) id /* block */ attributeCallback;
+@property (nonatomic, copy) id /* block */ clientObserverCallback;
+@property (nonatomic, copy) id /* block */ hitTestCallback;
+@property (nonatomic, copy) id /* block */ outgoingValuePreprocessor;
+@property (nonatomic, copy) id /* block */ parameterizedAttributeCallback;
+@property (nonatomic, copy) id /* block */ performActionCallback;
+@property (nonatomic, copy) id /* block */ setAttributeCallback;
+@property (nonatomic) BOOL systemWideServer;
 
 + (id)sharedManager;
 
-- (id)applicationElementCallback;
-- (id)attributeCallback;
-- (id)clientObserverCallback;
-- (id)hitTestCallback;
-- (id)outgoingValuePreprocessor;
-- (id)parameterizedAttributeCallback;
-- (id)performActionCallback;
-- (void)setApplicationElementCallback:(id)arg1;
-- (id)setAttributeCallback;
-- (void)setAttributeCallback:(id)arg1;
-- (void)setClientObserverCallback:(id)arg1;
-- (void)setHitTestCallback:(id)arg1;
-- (void)setOutgoingValuePreprocessor:(id)arg1;
-- (void)setParameterizedAttributeCallback:(id)arg1;
-- (void)setPerformActionCallback:(id)arg1;
-- (void)setSetAttributeCallback:(id)arg1;
+- (id /* block */)applicationElementCallback;
+- (id /* block */)attributeCallback;
+- (id /* block */)clientObserverCallback;
+- (id /* block */)hitTestCallback;
+- (id /* block */)outgoingValuePreprocessor;
+- (id /* block */)parameterizedAttributeCallback;
+- (id /* block */)performActionCallback;
+- (void)setApplicationElementCallback:(id /* block */)arg1;
+- (id /* block */)setAttributeCallback;
+- (void)setAttributeCallback:(id /* block */)arg1;
+- (void)setClientObserverCallback:(id /* block */)arg1;
+- (void)setHitTestCallback:(id /* block */)arg1;
+- (void)setOutgoingValuePreprocessor:(id /* block */)arg1;
+- (void)setParameterizedAttributeCallback:(id /* block */)arg1;
+- (void)setPerformActionCallback:(id /* block */)arg1;
+- (void)setSetAttributeCallback:(id /* block */)arg1;
 - (void)setSystemWideServer:(BOOL)arg1;
 - (void)start;
 - (BOOL)systemWideServer;

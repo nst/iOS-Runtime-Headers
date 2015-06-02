@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKAbbreviatedNumberFormatter : NSNumberFormatter {
-}
+@interface GKAbbreviatedNumberFormatter : NSNumberFormatter
 
 - (id)abbreviationForBillions;
 - (id)abbreviationForMillions;

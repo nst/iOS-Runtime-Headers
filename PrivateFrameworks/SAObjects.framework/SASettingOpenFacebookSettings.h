@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenFacebookSettings : SASettingOpenAppSettings {
-}
+@interface SASettingOpenFacebookSettings : SASettingOpenAppSettings
 
 + (id)openFacebookSettings;
 + (id)openFacebookSettingsWithDictionary:(id)arg1 context:(id)arg2;

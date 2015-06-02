@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayerController, AVVideoLayerDelegate, CALayer<AVVideoLayer>;
-
 @interface AVVideoLayerView : UIView {
     AVPlayerController *_playerController;
     CALayer<AVVideoLayer> *_videoLayer;
     AVVideoLayerDelegate *_videoLayerDelegate;
 }
 
-@property(retain) AVPlayerController * playerController;
-@property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
-@property int videoLayerGravity;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
-@property(getter=isVideoScaled) BOOL videoScaled;
+@property (nonatomic, retain) AVPlayerController *playerController;
+@property (getter=isReadyForDisplay, nonatomic, readonly) BOOL readyForDisplay;
+@property (nonatomic) int videoLayerGravity;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property (getter=isVideoScaled, nonatomic) BOOL videoScaled;
 
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;

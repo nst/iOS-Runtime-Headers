@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class AAFamilyMember, NSArray, NSString;
-
 @interface AAFamilyDetailsResponse : AAResponse {
     BOOL _canAddChildMembers;
     BOOL _canAddMembers;
@@ -16,19 +14,19 @@
     NSArray *_pendingMembers;
 }
 
-@property(readonly) BOOL canAddChildMembers;
-@property(readonly) BOOL canAddMembers;
-@property(readonly) NSString * childAccountButtonTitle;
-@property(readonly) NSString * childAccountPrompt;
-@property(readonly) NSArray * firstNames;
-@property(readonly) NSArray * invites;
-@property(readonly) AAFamilyMember * me;
-@property(readonly) int memberCount;
-@property(readonly) NSArray * members;
-@property(readonly) AAFamilyMember * organizer;
-@property(readonly) int pendingInviteCount;
-@property(readonly) int pendingMemberCount;
-@property(readonly) NSArray * pendingMembers;
+@property (nonatomic, readonly) BOOL canAddChildMembers;
+@property (nonatomic, readonly) BOOL canAddMembers;
+@property (nonatomic, readonly) NSString *childAccountButtonTitle;
+@property (nonatomic, readonly) NSString *childAccountPrompt;
+@property (nonatomic, readonly) NSArray *firstNames;
+@property (nonatomic, readonly) NSArray *invites;
+@property (nonatomic, readonly) AAFamilyMember *me;
+@property (nonatomic, readonly) int memberCount;
+@property (nonatomic, readonly) NSArray *members;
+@property (nonatomic, readonly) AAFamilyMember *organizer;
+@property (nonatomic, readonly) int pendingInviteCount;
+@property (nonatomic, readonly) int pendingMemberCount;
+@property (nonatomic, readonly) NSArray *pendingMembers;
 
 - (void).cxx_destruct;
 - (BOOL)canAddChildMembers;

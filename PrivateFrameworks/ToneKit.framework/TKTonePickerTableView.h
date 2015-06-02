@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKTonePickerTableViewLayoutMarginsObserver>;
-
 @interface TKTonePickerTableView : UITableView {
     <TKTonePickerTableViewLayoutMarginsObserver> *_layoutMarginsObserver;
 }
 
-@property <TKTonePickerTableViewLayoutMarginsObserver> * layoutMarginsObserver;
+@property (nonatomic) <TKTonePickerTableViewLayoutMarginsObserver> *layoutMarginsObserver;
 
 - (void)layoutMarginsDidChange;
 - (id)layoutMarginsObserver;

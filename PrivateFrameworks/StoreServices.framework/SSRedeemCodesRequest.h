@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, SSAuthenticationContext;
-
 @interface SSRedeemCodesRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
     BOOL _cameraRecognized;
@@ -11,14 +9,14 @@
     NSArray *_redeemCodes;
 }
 
-@property(copy) SSAuthenticationContext * authenticationContext;
+@property (copy) SSAuthenticationContext *authenticationContext;
 @property BOOL cameraRecognized;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL headless;
-@property(readonly) NSArray * redeemCodes;
-@property(readonly) Class superclass;
+@property (readonly) NSArray *redeemCodes;
+@property (readonly) Class superclass;
 
 - (id)authenticationContext;
 - (BOOL)cameraRecognized;
@@ -31,7 +29,7 @@
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setCameraRecognized:(BOOL)arg1;
 - (void)setHeadless:(BOOL)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithRedeemResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithRedeemResponseBlock:(id /* block */)arg1;
 
 @end

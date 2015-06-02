@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory_Emoji : UIKBRenderFactory {
-}
+@interface UIKBRenderFactory_Emoji : UIKBRenderFactory
 
 - (id)_emojiBorderColor;
 - (id)_emojiCategoryControlKeyActiveTraits;

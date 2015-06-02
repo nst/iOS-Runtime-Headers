@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCAudioTrimmingModalItemDelegate>, AVAssetExportSession, NSOperationQueue, NSString, RCActionSheetController, RCAudioTrimmingModalItemViewController, RCSavedRecording, RCTrimTimeRangeOperation;
-
 @interface RCAudioTrimmingModalItem : NSObject {
     BOOL _cancelTrimRequested;
     <RCAudioTrimmingModalItemDelegate> *_delegate;
@@ -21,19 +19,19 @@
     RCAudioTrimmingModalItemViewController *_trimmingViewController;
 }
 
-@property <RCAudioTrimmingModalItemDelegate> * delegate;
-@property BOOL deletesDestinationPathWhenDone;
-@property(copy,readonly) NSString * destinationPath;
-@property double maximumTrimmedDuration;
-@property(readonly) RCSavedRecording * recording;
-@property(copy,readonly) NSString * sourcePath;
+@property (nonatomic) <RCAudioTrimmingModalItemDelegate> *delegate;
+@property (nonatomic) BOOL deletesDestinationPathWhenDone;
+@property (nonatomic, readonly, copy) NSString *destinationPath;
+@property (nonatomic) double maximumTrimmedDuration;
+@property (nonatomic, readonly) RCSavedRecording *recording;
+@property (nonatomic, readonly, copy) NSString *sourcePath;
 
 + (id)exportableAudioFormatPathExtensionWithSourceURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_dismissAnimated:(BOOL)arg1;
-- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned int)arg1 completionBlock:(id)arg2;
+- (void)_handleTrimSheetActionWithClickedButtonIndex:(unsigned int)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)deletesDestinationPathWhenDone;
@@ -46,7 +44,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDeletesDestinationPathWhenDone:(BOOL)arg1;
 - (void)setMaximumTrimmedDuration:(double)arg1;
-- (void)showWithPresentationViewController:(id)arg1 message:(id)arg2 trimButtonTitle:(id)arg3 completionBlock:(id)arg4;
+- (void)showWithPresentationViewController:(id)arg1 message:(id)arg2 trimButtonTitle:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)sourcePath;
 
 @end

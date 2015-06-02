@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSArray;
-
 @interface MTLComputePipelineReflection : NSObject {
     NSArray *_arguments;
     NSArray *_builtInArguments;
@@ -16,7 +14,7 @@
     } _flags;
 }
 
-@property(readonly) NSArray * arguments;
+@property (readonly) NSArray *arguments;
 
 - (id).cxx_construct;
 - (id)arguments;

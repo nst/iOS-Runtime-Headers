@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class <NSObject><NSCopying><NSCoding>, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSPersistentStore, NSPersistentStoreCoordinator, NSString, NSURL, PFUbiquityBaseline, PFUbiquityContainerIdentifier, PFUbiquityKnowledgeVector, PFUbiquityLocation, PFUbiquityMigrationAssistant, PFUbiquityMigrationManager, PFUbiquityPeerReceipt, PFUbiquityPeerState, PFUbiquityStoreMetadata, PFUbiquitySwitchboardEntry, _PFUbiquityStack;
-
 @interface PFUbiquitySetupAssistant : NSObject {
     BOOL _abortSetup;
     NSURL *_actualStoreFileURL;
@@ -80,23 +78,23 @@
     BOOL _votedOffIsland;
 }
 
-@property BOOL abortSetup;
-@property(readonly) NSURL * actualStoreFileURL;
-@property BOOL cacheFilePresenterForUbiquityRoot;
-@property(readonly) PFUbiquityContainerIdentifier * containerIdentifier;
-@property BOOL failSetup;
-@property(retain) NSError * failSetupError;
-@property(readonly) NSString * localPeerID;
-@property(readonly) PFUbiquityLocation * localRootLocation;
-@property(readonly) BOOL needsMetadataRecovery;
-@property(readonly) NSDictionary * options;
-@property unsigned int retryDelaySec;
-@property(readonly) PFUbiquityKnowledgeVector * storeKV;
-@property BOOL storeWasMigrated;
-@property(readonly) BOOL ubiquityEnabled;
-@property(readonly) PFUbiquityLocation * ubiquityRootLocation;
-@property(readonly) NSURL * ubiquityRootURL;
-@property(readonly) BOOL useLocalAccount;
+@property (nonatomic) BOOL abortSetup;
+@property (nonatomic, readonly) NSURL *actualStoreFileURL;
+@property (nonatomic) BOOL cacheFilePresenterForUbiquityRoot;
+@property (nonatomic, readonly) PFUbiquityContainerIdentifier *containerIdentifier;
+@property (nonatomic) BOOL failSetup;
+@property (nonatomic, retain) NSError *failSetupError;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) PFUbiquityLocation *localRootLocation;
+@property (nonatomic, readonly) BOOL needsMetadataRecovery;
+@property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic) unsigned int retryDelaySec;
+@property (nonatomic, readonly) PFUbiquityKnowledgeVector *storeKV;
+@property (nonatomic) BOOL storeWasMigrated;
+@property (nonatomic, readonly) BOOL ubiquityEnabled;
+@property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
+@property (nonatomic, readonly) NSURL *ubiquityRootURL;
+@property (nonatomic, readonly) BOOL useLocalAccount;
 
 + (void)cleanUserDefaultsForStore:(id)arg1;
 + (id)createActualStoreURLForStoreURL:(id)arg1 localPeerID:(id)arg2 containerIdentifier:(id)arg3 andStoreName:(id)arg4;

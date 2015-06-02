@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSString, NSThread, SCRCStackQueue;
-
 @interface SCRCThread : NSObject {
     NSString *_description;
     BOOL _descriptionChanged;

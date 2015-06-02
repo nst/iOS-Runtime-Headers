@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class <HKQueryDelegate>, <NSXPCProxyCreating>, HKSampleType, NSObject<OS_dispatch_queue>, NSPredicate, NSString, NSUUID, _HKFilter;
-
 @interface HKQuery : NSObject <HKQueryClient> {
     NSObject<OS_dispatch_queue> *_activationQueue;
     NSUUID *_activationUUID;
@@ -17,28 +15,27 @@
     <NSXPCProxyCreating> *_serverProxy;
 }
 
-@property(readonly) NSUUID * activationUUID;
-@property(retain) NSObject<OS_dispatch_queue> * clientQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <HKQueryDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=_filter,retain) _HKFilter * filter;
-@property(readonly) BOOL hasBeenExecuted;
-@property(readonly) unsigned int hash;
-@property(readonly) NSPredicate * predicate;
-@property(getter=_hasReceivedInitialResults,readonly) BOOL receivedInitialResults;
-@property(readonly) HKSampleType * sampleType;
-@property(retain) <NSXPCProxyCreating> * serverProxy;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSUUID *activationUUID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <HKQueryDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=_filter, nonatomic, retain) _HKFilter *filter;
+@property (nonatomic, readonly) BOOL hasBeenExecuted;
+@property (readonly) unsigned int hash;
+@property (readonly) NSPredicate *predicate;
+@property (getter=_hasReceivedInitialResults, nonatomic, readonly) BOOL receivedInitialResults;
+@property (readonly) HKSampleType *sampleType;
+@property (nonatomic, retain) <NSXPCProxyCreating> *serverProxy;
+@property (readonly) Class superclass;
 
-+ (id)FU_predicateForWorkoutsWithMetadataIndoor:(BOOL)arg1;
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 + (id)_clientInterfaceProtocol;
 + (void)_configureClientInterface:(id)arg1;
 + (Class)_queryServerDataObjectClass;
 + (id)_serverInterfaceProtocol;
 + (id)clientInterface;
-+ (Class)hd_queryServerClass;
-+ (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 + (id)predicateForCategorySamplesWithOperatorType:(unsigned int)arg1 value:(int)arg2;
 + (id)predicateForObjectWithUUID:(id)arg1;
 + (id)predicateForObjectsFromSource:(id)arg1;
@@ -59,25 +56,25 @@
 
 - (void).cxx_destruct;
 - (void)_client_receivedInitialResults;
-- (void)_dispatchAsyncToResourceQueue:(id)arg1;
-- (void)_dispatchSyncToResourceQueue:(id)arg1;
-- (void)_dispatchToClientForUUID:(id)arg1 block:(id)arg2;
+- (void)_dispatchAsyncToResourceQueue:(id /* block */)arg1;
+- (void)_dispatchSyncToResourceQueue:(id /* block */)arg1;
+- (void)_dispatchToClientForUUID:(id)arg1 block:(id /* block */)arg2;
 - (id)_filter;
 - (BOOL)_hasReceivedInitialResults;
 - (id)_initWithDataType:(id)arg1 predicate:(id)arg2;
 - (id)_predicateFilterClasses;
-- (void)_queue_activateWithConnection:(id)arg1 isReactivation:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)_queue_activateWithConnection:(id)arg1 isReactivation:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (void)_queue_deactivate;
 - (void)_queue_deliverErrorAndDeactivate:(id)arg1;
-- (id)_queue_errorHandler;
-- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id)arg3;
+- (id /* block */)_queue_errorHandler;
+- (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id /* block */)arg3;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (BOOL)_shouldStayAliveAfterInitialResults;
 - (void)_throwInvalidArgumentExceptionIfHasBeenExecuted:(SEL)arg1;
-- (void)activateWithClientQueue:(id)arg1 connection:(id)arg2 delegate:(id)arg3 withCompletion:(id)arg4;
+- (void)activateWithClientQueue:(id)arg1 connection:(id)arg2 delegate:(id)arg3 withCompletion:(id /* block */)arg4;
 - (id)activationUUID;
 - (id)clientQueue;
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
@@ -102,5 +99,17 @@
 - (void)setClientQueue:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setServerProxy:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (id)FU_predicateForWorkoutsWithMetadataIndoor:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
+
++ (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 
 @end

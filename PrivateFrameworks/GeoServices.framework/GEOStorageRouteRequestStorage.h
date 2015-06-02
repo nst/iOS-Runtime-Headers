@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOURLRouteHandle, NSMutableArray, PBUnknownFields;
-
 @interface GEOStorageRouteRequestStorage : PBCodable <NSCopying> {
     struct { 
         unsigned int transportType : 1; 
@@ -14,12 +12,12 @@
     NSMutableArray *_waypoints;
 }
 
-@property(readonly) BOOL hasRouteHandle;
-@property BOOL hasTransportType;
-@property(retain) GEOURLRouteHandle * routeHandle;
-@property int transportType;
-@property(readonly) PBUnknownFields * unknownFields;
-@property(retain) NSMutableArray * waypoints;
+@property (nonatomic, readonly) BOOL hasRouteHandle;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic, retain) GEOURLRouteHandle *routeHandle;
+@property (nonatomic) int transportType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, retain) NSMutableArray *waypoints;
 
 - (void)addWaypoints:(id)arg1;
 - (void)clearWaypoints;

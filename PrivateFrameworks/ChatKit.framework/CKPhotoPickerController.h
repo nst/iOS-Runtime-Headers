@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKPhotoPickerControllerDelegate>, CKPhotoPickerCollectionViewController, CKPhotoPickerWindow, NSString, UITableView, UITapGestureRecognizer;
-
 @interface CKPhotoPickerController : UIViewController <CKPhotoPickerCollectionViewDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UITableView *_alertTableView;
     NSString *_captureLabelText;
@@ -23,23 +21,23 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(retain) UITableView * alertTableView;
-@property(retain) NSString * captureLabelText;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKPhotoPickerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CKPhotoPickerWindow * photoPickerWindow;
-@property(retain) CKPhotoPickerCollectionViewController * photosCollectionView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceViewRect;
-@property(readonly) Class superclass;
-@property(retain) UITapGestureRecognizer * tapGestureRecognizer;
+@property (nonatomic, retain) UITableView *alertTableView;
+@property (nonatomic, retain) NSString *captureLabelText;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKPhotoPickerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKPhotoPickerWindow *photoPickerWindow;
+@property (nonatomic, retain) CKPhotoPickerCollectionViewController *photosCollectionView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceViewRect;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 
 - (id)alertTableView;
 - (id)captureLabelText;
 - (void)dealloc;
 - (id)delegate;
-- (void)dismissPhotoPicker:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissPhotoPicker:(BOOL)arg1 completion:(id /* block */)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)handleTap:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;

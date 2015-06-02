@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKMockRasterTileRequester : GEOTileRequester {
-}
+@interface VKMockRasterTileRequester : GEOTileRequester
 
 + (unsigned char)tileProviderIdentifier;
 

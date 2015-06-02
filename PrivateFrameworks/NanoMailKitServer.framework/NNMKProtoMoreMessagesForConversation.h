@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface NNMKProtoMoreMessagesForConversation : PBCodable <NSCopying> {
     NSMutableArray *_addedMessages;
     NSString *_conversationId;
@@ -14,13 +12,13 @@
     } _has;
 }
 
-@property(retain) NSMutableArray * addedMessages;
-@property(retain) NSString * conversationId;
-@property(retain) NSData * dateSynced;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasConversationId;
-@property(readonly) BOOL hasDateSynced;
-@property BOOL hasFullSyncVersion;
+@property (nonatomic, retain) NSMutableArray *addedMessages;
+@property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasConversationId;
+@property (nonatomic, readonly) BOOL hasDateSynced;
+@property (nonatomic) BOOL hasFullSyncVersion;
 
 - (void).cxx_destruct;
 - (void)addAddedMessage:(id)arg1;

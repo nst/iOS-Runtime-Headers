@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface _SKUIVideoPreviewNotificationObserver : NSObject {
     NSArray *_observers;
 }

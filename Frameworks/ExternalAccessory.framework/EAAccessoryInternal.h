@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class <EAAccessoryDelegate>, NSArray, NSDictionary, NSMutableArray, NSString;
-
 @interface EAAccessoryInternal : NSObject {
     NSDictionary *_audioPorts;
     NSString *_bonjourName;
@@ -34,33 +32,33 @@
     NSDictionary *_vehicleInfoSupportedTypes;
 }
 
-@property(retain) NSDictionary * audioPorts;
-@property(copy) NSString * bonjourName;
-@property unsigned int capabilities;
-@property int classType;
-@property BOOL connected;
-@property unsigned int connectionID;
-@property <EAAccessoryDelegate> * delegate;
-@property unsigned int eqIndex;
-@property(retain) NSArray * eqNames;
-@property(copy) NSString * firmwareRevision;
-@property(copy) NSString * hardwareRevision;
-@property BOOL hasIPConnection;
-@property BOOL isAvailableOverBonjour;
-@property int locationSentenceTypesMask;
-@property(copy) NSString * macAddress;
-@property(copy) NSString * manufacturer;
-@property(copy) NSString * modelNumber;
-@property(copy) NSString * name;
-@property BOOL notPresentInIAPAccessoriesArray;
+@property (nonatomic, retain) NSDictionary *audioPorts;
+@property (nonatomic, copy) NSString *bonjourName;
+@property (nonatomic) unsigned int capabilities;
+@property (nonatomic) int classType;
+@property (nonatomic) BOOL connected;
+@property (nonatomic) unsigned int connectionID;
+@property (nonatomic) <EAAccessoryDelegate> *delegate;
+@property (nonatomic) unsigned int eqIndex;
+@property (nonatomic, retain) NSArray *eqNames;
+@property (nonatomic, copy) NSString *firmwareRevision;
+@property (nonatomic, copy) NSString *hardwareRevision;
+@property (nonatomic) BOOL hasIPConnection;
+@property (nonatomic) BOOL isAvailableOverBonjour;
+@property (nonatomic) int locationSentenceTypesMask;
+@property (nonatomic, copy) NSString *macAddress;
+@property (nonatomic, copy) NSString *manufacturer;
+@property (nonatomic, copy) NSString *modelNumber;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) BOOL notPresentInIAPAccessoriesArray;
 @property unsigned int pointOfInterestDataFormatMaximumSupportedVersion;
 @property BOOL pointOfInterestHandoffEnabled;
-@property(copy) NSString * preferredApp;
-@property(retain) NSDictionary * protocols;
-@property(copy) NSString * serialNumber;
-@property(readonly) NSArray * sessionsList;
-@property(retain) NSDictionary * vehicleInfoInitialData;
-@property(retain) NSDictionary * vehicleInfoSupportedTypes;
+@property (nonatomic, copy) NSString *preferredApp;
+@property (nonatomic, retain) NSDictionary *protocols;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic, readonly) NSArray *sessionsList;
+@property (nonatomic, retain) NSDictionary *vehicleInfoInitialData;
+@property (nonatomic, retain) NSDictionary *vehicleInfoSupportedTypes;
 
 - (void)addSession:(id)arg1;
 - (id)audioPorts;

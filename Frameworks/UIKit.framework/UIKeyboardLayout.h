@@ -2,25 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSString, UIKBScreenTraits, UIKBTextEditingTraits, UIKeyboardTaskQueue, UITextInputTraits, UITouch, _UIScreenEdgePanRecognizer;
-
 @interface UIKeyboardLayout : UIView <_UIScreenEdgePanRecognizerDelegate> {
     UITouch *_activeTouch;
     int _cursorLocation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deferredTouchDownTask;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deferredTouchMovedTask;
-
+    id /* block */ _deferredTouchDownTask;
+    id /* block */ _deferredTouchMovedTask;
     BOOL _disableInteraction;
     UITextInputTraits *_inputTraits;
     BOOL _isExecutingDeferredTouchTasks;
@@ -34,24 +20,24 @@
     double lastTouchUpTime;
 }
 
-@property(retain) UITouch * activeTouch;
-@property int cursorLocation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) id deferredTouchDownTask;
-@property(copy) id deferredTouchMovedTask;
-@property(copy,readonly) NSString * description;
-@property BOOL disableInteraction;
-@property(readonly) unsigned int hash;
-@property BOOL hideKeysUnderIndicator;
-@property(readonly) int idiom;
-@property BOOL isExecutingDeferredTouchTasks;
-@property double lastTouchUpTime;
-@property(retain) NSString * layoutTag;
-@property(readonly) int orientation;
-@property(retain) _UIScreenEdgePanRecognizer * screenEdgePanRecognizer;
-@property(retain) UITouch * shiftKeyTouch;
-@property(readonly) Class superclass;
-@property(retain) UIKeyboardTaskQueue * taskQueue;
+@property (nonatomic, retain) UITouch *activeTouch;
+@property (nonatomic) int cursorLocation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) id /* block */ deferredTouchDownTask;
+@property (nonatomic, copy) id /* block */ deferredTouchMovedTask;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableInteraction;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideKeysUnderIndicator;
+@property (nonatomic, readonly) int idiom;
+@property (nonatomic) BOOL isExecutingDeferredTouchTasks;
+@property (nonatomic) double lastTouchUpTime;
+@property (nonatomic, retain) NSString *layoutTag;
+@property (nonatomic, readonly) int orientation;
+@property (nonatomic, retain) _UIScreenEdgePanRecognizer *screenEdgePanRecognizer;
+@property (nonatomic, retain) UITouch *shiftKeyTouch;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIKeyboardTaskQueue *taskQueue;
 
 + (Class)_subclassForScreenTraits:(id)arg1;
 
@@ -83,8 +69,8 @@
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(BOOL)arg1 clearingDimming:(BOOL)arg2;
 - (void)dealloc;
-- (id)deferredTouchDownTask;
-- (id)deferredTouchMovedTask;
+- (id /* block */)deferredTouchDownTask;
+- (id /* block */)deferredTouchMovedTask;
 - (void)didClearInput;
 - (void)didCommitTouch:(id)arg1;
 - (void)didFinishScreenGestureRecognition;
@@ -125,8 +111,8 @@
 - (void)setActiveTouch:(id)arg1;
 - (void)setAutoshift:(BOOL)arg1;
 - (void)setCursorLocation:(int)arg1;
-- (void)setDeferredTouchDownTask:(id)arg1;
-- (void)setDeferredTouchMovedTask:(id)arg1;
+- (void)setDeferredTouchDownTask:(id /* block */)arg1;
+- (void)setDeferredTouchMovedTask:(id /* block */)arg1;
 - (void)setDisableInteraction:(BOOL)arg1;
 - (void)setHideKeysUnderIndicator:(BOOL)arg1;
 - (void)setIsExecutingDeferredTouchTasks:(BOOL)arg1;

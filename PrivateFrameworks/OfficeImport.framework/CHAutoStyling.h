@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart, OADDrawingTheme;
-
 @interface CHAutoStyling : NSObject {
     CHDChart *mChart;
     OADDrawingTheme *mDrawingTheme;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSRingtonePurchase : SSTonePurchase {
-}
+@interface SSRingtonePurchase : SSTonePurchase
 
 @end

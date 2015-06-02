@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIScrollView;
-
 @interface CKNavigationItem : UINavigationItem {
     UIScrollView *_contentScrollView;
 }
 
-@property UIScrollView * contentScrollView;
+@property (nonatomic) UIScrollView *contentScrollView;
 
 - (id)contentScrollView;
 - (void)setContentScrollView:(id)arg1;

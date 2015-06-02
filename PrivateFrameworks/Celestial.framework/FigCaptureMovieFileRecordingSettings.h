@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface FigCaptureMovieFileRecordingSettings : FigCaptureRecordingSettings <NSCoding> {
     NSDictionary *_audioSettings;
     struct { 
@@ -19,13 +17,13 @@
     NSDictionary *_videoSettings;
 }
 
-@property(copy) NSDictionary * audioSettings;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
-@property(copy) NSDictionary * movieLevelMetadata;
-@property BOOL sendThumbnailIOSurface;
-@property BOOL videoMirrored;
-@property int videoOrientation;
-@property(copy) NSDictionary * videoSettings;
+@property (nonatomic, copy) NSDictionary *audioSettings;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property (nonatomic, copy) NSDictionary *movieLevelMetadata;
+@property (nonatomic) BOOL sendThumbnailIOSurface;
+@property (nonatomic) BOOL videoMirrored;
+@property (nonatomic) int videoOrientation;
+@property (nonatomic, copy) NSDictionary *videoSettings;
 
 - (id)audioSettings;
 - (void)dealloc;

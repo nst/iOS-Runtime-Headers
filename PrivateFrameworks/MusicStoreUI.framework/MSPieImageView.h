@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class UIBezierPath, UIImage;
-
 @interface MSPieImageView : UIView {
     UIImage *_backgroundImage;
     UIBezierPath *_clipPath;
@@ -12,10 +10,10 @@
     float _pieRadius;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(retain) UIImage * foregroundImage;
-@property float pieFraction;
-@property float pieRadius;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, retain) UIImage *foregroundImage;
+@property (nonatomic) float pieFraction;
+@property (nonatomic) float pieRadius;
 
 - (void)_reloadClipPath;
 - (id)backgroundImage;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression, NSVariableExpression;
-
 @interface NSVariableAssignmentExpression : NSExpression {
     NSVariableExpression *_assignmentVariable;
     NSExpression *_subexpression;

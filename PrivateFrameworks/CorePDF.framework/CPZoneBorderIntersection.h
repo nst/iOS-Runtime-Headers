@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPZoneBorder;
-
 @interface CPZoneBorderIntersection : NSObject <CPCopying, NSCopying> {
     BOOL backwardVector;
     BOOL forwardVector;

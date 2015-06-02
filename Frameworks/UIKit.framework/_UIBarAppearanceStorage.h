@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary;
-
 @interface _UIBarAppearanceStorage : NSObject {
     NSMutableDictionary *backgroundImages;
 }

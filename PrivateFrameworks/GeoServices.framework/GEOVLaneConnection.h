@@ -9,10 +9,10 @@
     unsigned int _secondRoadIndex;
 }
 
-@property unsigned int firstLaneIndex;
-@property unsigned int firstRoadIndex;
-@property unsigned int secondLaneIndex;
-@property unsigned int secondRoadIndex;
+@property (nonatomic) unsigned int firstLaneIndex;
+@property (nonatomic) unsigned int firstRoadIndex;
+@property (nonatomic) unsigned int secondLaneIndex;
+@property (nonatomic) unsigned int secondRoadIndex;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

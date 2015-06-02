@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSData;
-
 @interface TSMTraceFileParser : NSObject {
     NSData *mData;
     unsigned int mDataLength;

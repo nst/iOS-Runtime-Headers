@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSKeyedArchiver, NSString;
-
 @interface HMDKeyedRemoteArchiver : NSObject {
     NSKeyedArchiver *_archiver;
     NSString *_transportType;
 }
 
-@property(retain) NSKeyedArchiver * archiver;
-@property(retain) NSString * transportType;
+@property (nonatomic, retain) NSKeyedArchiver *archiver;
+@property (nonatomic, retain) NSString *transportType;
 
 - (void).cxx_destruct;
 - (id)archiver;

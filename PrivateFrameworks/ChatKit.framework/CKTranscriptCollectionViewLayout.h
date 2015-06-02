@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CADisplayLink, NSArray;
-
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout {
     float _anchorYPosition;
     struct CGSize { 
@@ -35,19 +33,19 @@
     } _visibleBounds;
 }
 
-@property float anchorYPosition;
-@property struct CGSize { float x1; float x2; } contentSize;
-@property(retain) CADisplayLink * displayLink;
-@property BOOL easingUp;
-@property BOOL hasLoadMore;
-@property(getter=isHoldingBoundsInvalidation) BOOL holdingBoundsInvalidation;
-@property BOOL isResting;
-@property(copy) NSArray * layoutAttributes;
-@property double prevTimestamp;
-@property BOOL shouldDisplayLinkInvalidateLayout;
-@property struct CGPoint { float x1; float x2; } targetContentOffset;
-@property(getter=isUsingInitialLayoutAttributesForRotation) BOOL useInitialLayoutAttributesForRotation;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
+@property (nonatomic) float anchorYPosition;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic) BOOL easingUp;
+@property (nonatomic) BOOL hasLoadMore;
+@property (getter=isHoldingBoundsInvalidation, nonatomic) BOOL holdingBoundsInvalidation;
+@property (nonatomic) BOOL isResting;
+@property (nonatomic, copy) NSArray *layoutAttributes;
+@property (nonatomic) double prevTimestamp;
+@property (nonatomic) BOOL shouldDisplayLinkInvalidateLayout;
+@property (nonatomic) struct CGPoint { float x1; float x2; } targetContentOffset;
+@property (getter=isUsingInitialLayoutAttributesForRotation, nonatomic) BOOL useInitialLayoutAttributesForRotation;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 
 + (Class)layoutAttributesClass;
 

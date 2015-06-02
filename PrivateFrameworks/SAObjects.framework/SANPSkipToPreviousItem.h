@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANPSkipToPreviousItem : SADomainCommand {
-}
+@interface SANPSkipToPreviousItem : SADomainCommand
 
 + (id)skipToPreviousItem;
 + (id)skipToPreviousItemWithDictionary:(id)arg1 context:(id)arg2;

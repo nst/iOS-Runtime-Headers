@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
-
 @interface PLClientServerTransaction : NSObject {
     NSString *_transactionToken;
 }
 
-@property(copy) NSString * transactionToken;
+@property (nonatomic, copy) NSString *transactionToken;
 
 + (id)_fileManager;
 + (id)_outstandingTransactionPaths;
@@ -18,7 +16,7 @@
 + (void)addTransaction:(id)arg1 toUserInfo:(id)arg2;
 + (id)beginClientTransaction;
 + (id)beginServerTransactionWithToken:(id)arg1;
-+ (void)handleOutstandingTransactions:(id)arg1;
++ (void)handleOutstandingTransactions:(id /* block */)arg1;
 + (void)removeTransactionFromUserInfo:(id)arg1;
 + (id)transactionFromUserInfo:(id)arg1;
 + (id)transactionTokenFromXPCDictionary:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIImageView, UILabel;
-
 @interface ABStarkContactNameView : UIView {
     UILabel *_nameLabel;
     UIImageView *_photoImageView;
 }
 
-@property(retain) UILabel * nameLabel;
-@property(retain) UIImageView * photoImageView;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UIImageView *photoImageView;
 
 - (void)dealloc;
 - (id)initWithName:(id)arg1;

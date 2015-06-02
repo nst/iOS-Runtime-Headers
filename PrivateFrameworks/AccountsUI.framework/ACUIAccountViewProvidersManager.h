@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface ACUIAccountViewProvidersManager : NSObject {
     NSDictionary *_accountTypeToPluginNameMap;
     NSMutableDictionary *_pluginCache;

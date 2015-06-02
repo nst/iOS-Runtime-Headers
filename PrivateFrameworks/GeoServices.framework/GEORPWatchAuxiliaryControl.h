@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEORPWatchAuxiliaryControl : PBCodable <NSCopying> {
     NSString *_hardwareIdentifier;
     NSString *_osBuild;
     NSString *_osVersion;
 }
 
-@property(retain) NSString * hardwareIdentifier;
-@property(readonly) BOOL hasHardwareIdentifier;
-@property(readonly) BOOL hasOsBuild;
-@property(readonly) BOOL hasOsVersion;
-@property(retain) NSString * osBuild;
-@property(retain) NSString * osVersion;
+@property (nonatomic, retain) NSString *hardwareIdentifier;
+@property (nonatomic, readonly) BOOL hasHardwareIdentifier;
+@property (nonatomic, readonly) BOOL hasOsBuild;
+@property (nonatomic, readonly) BOOL hasOsVersion;
+@property (nonatomic, retain) NSString *osBuild;
+@property (nonatomic, retain) NSString *osVersion;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

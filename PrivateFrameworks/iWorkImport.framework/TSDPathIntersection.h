@@ -13,11 +13,11 @@
     float mTB;
 }
 
-@property struct CGPoint { float x1; float x2; } point;
-@property(readonly) int segment;
-@property(readonly) int segmentB;
-@property(readonly) float t;
-@property(readonly) float tB;
+@property (nonatomic) struct CGPoint { float x1; float x2; } point;
+@property (nonatomic, readonly) int segment;
+@property (nonatomic, readonly) int segmentB;
+@property (nonatomic, readonly) float t;
+@property (nonatomic, readonly) float tB;
 
 - (int)compareSegmentAndT:(id)arg1;
 - (int)compareT:(id)arg1;

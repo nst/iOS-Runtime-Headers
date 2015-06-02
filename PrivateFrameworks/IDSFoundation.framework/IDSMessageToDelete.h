@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSString;
-
 @interface IDSMessageToDelete : NSObject {
     NSString *_alternateGUID;
     unsigned int _dataProtectionClass;
     NSString *_guid;
 }
 
-@property(setter=setAlternateGUID:,retain) NSString * alternateGUID;
+@property (setter=setAlternateGUID:, retain) NSString *alternateGUID;
 @property unsigned int dataProtectionClass;
-@property(setter=setGUID:,retain) NSString * guid;
+@property (setter=setGUID:, retain) NSString *guid;
 
 - (id)alternateGUID;
 - (unsigned int)dataProtectionClass;

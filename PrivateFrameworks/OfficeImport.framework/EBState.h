@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TCCancelDelegate>, EDResources, EDWorkbook, TCTracing;
-
 @interface EBState : NSObject {
     <TCCancelDelegate> *mCancelDelegate;
     EDResources *mResources;
@@ -20,7 +13,7 @@
     struct XlNameTable { int (**x1)(); struct CsSimpleHeapVector<XlRecord> { struct ChVector<XlRecord *> { struct XlRecord {} **x_1_2_1; struct XlRecord {} **x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_2_1_1; } x2; struct OcText { int (**x_3_1_1)(); int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; char *x_3_1_6; char *x_3_1_7; bool x_3_1_8; } x3[14]; } *mXlNameTable;
 }
 
-@property(readonly) <TCCancelDelegate> * cancelDelegate;
+@property (nonatomic, readonly) <TCCancelDelegate> *cancelDelegate;
 
 - (id)cancelDelegate;
 - (void)dealloc;

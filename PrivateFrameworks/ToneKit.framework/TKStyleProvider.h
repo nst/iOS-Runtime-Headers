@@ -2,51 +2,49 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class NSBundle, NSMutableDictionary, NSString, UIColor, UIFont, UIImage, UIScreen;
-
 @interface TKStyleProvider : NSObject <TKVibrationRecorderStyleProvider> {
     NSBundle *_bundle;
     NSMutableDictionary *_cachedStyleProperties;
     UIScreen *_screen;
 }
 
-@property(setter=_setBundle:,retain) NSBundle * _bundle;
-@property(setter=_setCachedStyleProperties:,retain) NSMutableDictionary * _cachedStyleProperties;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) double defaultAnimationDuration;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIScreen * screen;
-@property(readonly) Class superclass;
-@property(readonly) UIColor * vibrationRecorderBarsBackgroundColor;
-@property(readonly) float vibrationRecorderControlsToolbarAdditionalHeight;
-@property(readonly) float vibrationRecorderControlsToolbarItemsHorizontalOffsetFromEdge;
-@property(readonly) float vibrationRecorderControlsToolbarVerticalOffset;
-@property(readonly) UIColor * vibrationRecorderInstructionsLabelBackgroundColor;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } vibrationRecorderInstructionsLabelEdgeInsets;
-@property(readonly) double vibrationRecorderInstructionsLabelFadeAnimationDuration;
-@property(readonly) UIFont * vibrationRecorderInstructionsLabelFont;
-@property(readonly) struct UIOffset { float x1; float x2; } vibrationRecorderInstructionsLabelPositionOffset;
-@property(readonly) UIColor * vibrationRecorderInstructionsLabelTextColor;
-@property(readonly) float vibrationRecorderProgressToolbarAdditionalHeight;
-@property(readonly) float vibrationRecorderProgressToolbarVerticalOffset;
-@property(readonly) float vibrationRecorderProgressViewAccessibilityAdditionalHeight;
-@property(readonly) float vibrationRecorderProgressViewDotHorizontalInset;
-@property(readonly) float vibrationRecorderProgressViewHeight;
-@property(readonly) float vibrationRecorderProgressViewHorizontalOffsetFromEdge;
-@property(readonly) UIImage * vibrationRecorderProgressViewResizableDotImage;
-@property(readonly) UIColor * vibrationRecorderProgressViewTrackColor;
-@property(readonly) float vibrationRecorderRippleFinalRadius;
-@property(readonly) float vibrationRecorderRippleFingerMovingSpeed;
-@property(readonly) float vibrationRecorderRippleFingerStillSpeed;
-@property(readonly) float vibrationRecorderRippleInitialRadius;
-@property(readonly) float vibrationRecorderRippleRingLineWidth;
-@property(readonly) UIColor * vibrationRecorderRippleViewBackgroundColor;
+@property (setter=_setBundle:, nonatomic, retain) NSBundle *_bundle;
+@property (setter=_setCachedStyleProperties:, nonatomic, retain) NSMutableDictionary *_cachedStyleProperties;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double defaultAnimationDuration;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIScreen *screen;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIColor *vibrationRecorderBarsBackgroundColor;
+@property (nonatomic, readonly) float vibrationRecorderControlsToolbarAdditionalHeight;
+@property (nonatomic, readonly) float vibrationRecorderControlsToolbarItemsHorizontalOffsetFromEdge;
+@property (nonatomic, readonly) float vibrationRecorderControlsToolbarVerticalOffset;
+@property (nonatomic, readonly) UIColor *vibrationRecorderInstructionsLabelBackgroundColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } vibrationRecorderInstructionsLabelEdgeInsets;
+@property (nonatomic, readonly) double vibrationRecorderInstructionsLabelFadeAnimationDuration;
+@property (nonatomic, readonly) UIFont *vibrationRecorderInstructionsLabelFont;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } vibrationRecorderInstructionsLabelPositionOffset;
+@property (nonatomic, readonly) UIColor *vibrationRecorderInstructionsLabelTextColor;
+@property (nonatomic, readonly) float vibrationRecorderProgressToolbarAdditionalHeight;
+@property (nonatomic, readonly) float vibrationRecorderProgressToolbarVerticalOffset;
+@property (nonatomic, readonly) float vibrationRecorderProgressViewAccessibilityAdditionalHeight;
+@property (nonatomic, readonly) float vibrationRecorderProgressViewDotHorizontalInset;
+@property (nonatomic, readonly) float vibrationRecorderProgressViewHeight;
+@property (nonatomic, readonly) float vibrationRecorderProgressViewHorizontalOffsetFromEdge;
+@property (nonatomic, readonly) UIImage *vibrationRecorderProgressViewResizableDotImage;
+@property (nonatomic, readonly) UIColor *vibrationRecorderProgressViewTrackColor;
+@property (nonatomic, readonly) float vibrationRecorderRippleFinalRadius;
+@property (nonatomic, readonly) float vibrationRecorderRippleFingerMovingSpeed;
+@property (nonatomic, readonly) float vibrationRecorderRippleFingerStillSpeed;
+@property (nonatomic, readonly) float vibrationRecorderRippleInitialRadius;
+@property (nonatomic, readonly) float vibrationRecorderRippleRingLineWidth;
+@property (nonatomic, readonly) UIColor *vibrationRecorderRippleViewBackgroundColor;
 
 - (id)_bundle;
-- (id)_cachedImageForPropertyWithSelector:(SEL)arg1 size:(struct CGSize { float x1; float x2; })arg2 opaque:(BOOL)arg3 withDrawingBlock:(id)arg4;
+- (id)_cachedImageForPropertyWithSelector:(SEL)arg1 size:(struct CGSize { float x1; float x2; })arg2 opaque:(BOOL)arg3 withDrawingBlock:(id /* block */)arg4;
 - (id)_cachedImageWithName:(id)arg1 forPropertyWithSelector:(SEL)arg2;
-- (id)_cachedResizableImageForPropertyWithSelector:(SEL)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 size:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 withDrawingBlock:(id)arg5;
+- (id)_cachedResizableImageForPropertyWithSelector:(SEL)arg1 capInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 size:(struct CGSize { float x1; float x2; })arg3 opaque:(BOOL)arg4 withDrawingBlock:(id /* block */)arg5;
 - (id)_cachedStyleObjectForPropertyWithSelector:(SEL)arg1;
 - (id)_cachedStyleProperties;
 - (void)_didReceiveMemoryWarning:(id)arg1;

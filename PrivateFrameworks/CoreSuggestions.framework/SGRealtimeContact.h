@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class SGContact;
-
 @interface SGRealtimeContact : NSObject <NSCopying, NSSecureCoding> {
     int _abPersonId;
     SGContact *_contact;
     int _state;
 }
 
-@property(readonly) int abPersonId;
-@property(readonly) SGContact * contact;
-@property(readonly) int state;
+@property (nonatomic, readonly) int abPersonId;
+@property (nonatomic, readonly) SGContact *contact;
+@property (nonatomic, readonly) int state;
 
 + (id)realtimeContactForFields:(id)arg1 addedToCuratedContact:(int)arg2;
 + (id)realtimeContactForNewContact:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface _NMRClient : NSObject {
     NSXPCConnection *_serverConnection;
     NSObject<OS_dispatch_queue> *_serverConnectionQueue;
@@ -15,6 +13,6 @@
 - (id)_proxy;
 - (id)init;
 - (void)refreshMediaRemoteStateIfNecessary;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 withCommandOptions:(id)arg2 commandResultHandler:(id)arg3;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 withCommandOptions:(id)arg2 commandResultHandler:(id /* block */)arg3;
 
 @end

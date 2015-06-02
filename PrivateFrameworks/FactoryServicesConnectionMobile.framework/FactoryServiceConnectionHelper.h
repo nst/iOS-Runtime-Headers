@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FactoryServicesConnectionMobile.framework/FactoryServicesConnectionMobile
  */
 
-@class NSDictionary;
-
 @interface FactoryServiceConnectionHelper : NSObject {
     NSDictionary *_activeServiceConnectionList;
 }
 
-@property(retain) NSDictionary * activeServiceConnectionList;
+@property (retain) NSDictionary *activeServiceConnectionList;
 
 + (id)createErrorDictionaryWithErrorCode:(int)arg1 andErrMsg:(id)arg2;
 

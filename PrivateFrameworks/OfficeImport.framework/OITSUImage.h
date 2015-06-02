@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class UIImage;
-
 @interface OITSUImage : NSObject {
     long mCachedImageLock;
     struct CGImage { } *mCachedSliceableImage;
@@ -12,11 +10,11 @@
     struct __CFDictionary { } *mImageSlices;
 }
 
-@property(readonly) struct CGImage { }* CGImage;
-@property(readonly) UIImage * UIImage;
-@property(readonly) int imageOrientation;
-@property(readonly) float scale;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGImage { }*CGImage;
+@property (nonatomic, readonly) UIImage *UIImage;
+@property (nonatomic, readonly) int imageOrientation;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)imageNamed:(id)arg1;

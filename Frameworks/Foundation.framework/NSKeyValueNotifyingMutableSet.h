@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableSet;
-
 @interface NSKeyValueNotifyingMutableSet : NSKeyValueMutableSet {
     NSMutableSet *_mutableSet;
 }
 
-+ (struct { unsigned int x1; id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned int x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; oneway void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; long doublex26; void*x27; void*x28; void*x29; void*x30; double x31; void*x32; void*x33; unsigned char x34; void*x35; BOOL x36; void*x37; int x38; void x39; void*x40; const void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; oneway void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; long doublex87; void*x88; void*x89; void*x90; void*x91; double x92; void*x93; void*x94; unsigned char x95; void*x96; BOOL x97; void*x98; int x99; void x100; void*x101; const void*x102; void*x103; void*x104; void*x105; void*x106; oneway void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; unsigned short x115; void*x116; short x117; void*x118; void*x119; void*x120; void*x121; unsigned long x122; int x123; unsigned int x124/* : ? */; const void*x125; const void*x126; void*x127; void*x128; const int x129; void x130; void*x131; void*x132; void*x133; void*x134; const void*x135; void*x136; void*x137; void*x138; out const void*x139; short x140; void*x141; void*x142; out void*x143; void*x144; void*x145; int x146; void*x147; long doublex148; void*x149; void*x150; void*x151; out in void*x152; float x153; const void*x154; void*x155; void*x156; void*x157; out const void*x158; void*x159; void*x160; out void*x161; void*x162; void*x163; int x164; void*x165; long doublex166; void*x167; void*x168; void*x169; out in void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; bycopy void*x218; }*)_proxyNonGCPoolPointer;
 + (id)_proxyShare;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;

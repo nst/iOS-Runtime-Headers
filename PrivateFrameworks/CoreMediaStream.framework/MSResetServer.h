@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSMediaStreamDaemon, MSResetServerProtocol, NSString;
-
 @interface MSResetServer : NSObject <MSResetServerProtocolDelegate> {
     MSMediaStreamDaemon *_daemon;
     NSString *_personID;
@@ -11,12 +9,12 @@
     id _selfReference;
 }
 
-@property MSMediaStreamDaemon * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * personID;
-@property(readonly) Class superclass;
+@property (nonatomic) MSMediaStreamDaemon *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *personID;
+@property (readonly) Class superclass;
 
 + (id)resetServerObjectWithPersonID:(id)arg1 baseURL:(id)arg2;
 

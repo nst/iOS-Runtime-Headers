@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKLockupElement, MPUExtrasVideoTimelineEvent, NSString, UIImage;
-
 @interface MPUExtrasVideoTimelineEvent : NSObject {
     double _duration;
     UIImage *_image;
@@ -14,20 +12,20 @@
     MPUExtrasVideoTimelineEvent *_previous;
 }
 
-@property(readonly) double duration;
-@property BOOL isFirstEvent;
-@property MPUExtrasVideoTimelineEvent * next;
-@property(readonly) double offset;
-@property(readonly) MPUExtrasVideoTimelineEvent * previous;
-@property(readonly) NSString * subHeader;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic) BOOL isFirstEvent;
+@property (nonatomic) MPUExtrasVideoTimelineEvent *next;
+@property (nonatomic, readonly) double offset;
+@property (nonatomic, readonly) MPUExtrasVideoTimelineEvent *previous;
+@property (nonatomic, readonly) NSString *subHeader;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (id)description;
 - (double)duration;
 - (id)initWithElement:(id)arg1 prev:(id)arg2;
 - (BOOL)isFirstEvent;
-- (void)loadImage:(id)arg1;
+- (void)loadImage:(id /* block */)arg1;
 - (id)next;
 - (double)offset;
 - (id)previous;

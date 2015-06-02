@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAReminderRecurrence : AceObject <SAAceSerializable>
 
-@interface SAReminderRecurrence : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSArray * daysOfTheMonth;
-@property(copy) NSArray * daysOfTheWeek;
-@property(copy) NSArray * daysOfTheYear;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * frequencyTimeUnit;
-@property(readonly) unsigned int hash;
-@property int interval;
-@property(copy) NSArray * monthsOfTheYear;
-@property(readonly) Class superclass;
-@property(copy) NSArray * weeksOfTheYear;
+@property (nonatomic, copy) NSArray *daysOfTheMonth;
+@property (nonatomic, copy) NSArray *daysOfTheWeek;
+@property (nonatomic, copy) NSArray *daysOfTheYear;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *frequencyTimeUnit;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int interval;
+@property (nonatomic, copy) NSArray *monthsOfTheYear;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *weeksOfTheYear;
 
 + (id)recurrence;
 + (id)recurrenceWithDictionary:(id)arg1 context:(id)arg2;

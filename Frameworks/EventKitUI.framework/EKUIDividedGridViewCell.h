@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKUIDividedGridViewController, NSLayoutConstraint, UITextLabel;
-
 @interface EKUIDividedGridViewCell : UIView {
     UITextLabel *_label;
     BOOL _selected;
@@ -11,10 +9,10 @@
     NSLayoutConstraint *_widthConstraint;
 }
 
-@property(retain) UITextLabel * label;
-@property BOOL selected;
-@property EKUIDividedGridViewController * viewController;
-@property NSLayoutConstraint * widthConstraint;
+@property (retain) UITextLabel *label;
+@property (nonatomic) BOOL selected;
+@property EKUIDividedGridViewController *viewController;
+@property NSLayoutConstraint *widthConstraint;
 
 - (void).cxx_destruct;
 - (id)init;

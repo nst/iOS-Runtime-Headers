@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayVideoSessionEndedOnClient : PBCodable <NSCopying> {
     double _bandwidthMax;
     double _bandwidthMean;
@@ -34,32 +32,32 @@
     unsigned long long _timestamp;
 }
 
-@property double bandwidthMax;
-@property double bandwidthMean;
-@property double bandwidthStdDev;
-@property unsigned int duration;
-@property BOOL hasBandwidthMax;
-@property BOOL hasBandwidthMean;
-@property BOOL hasBandwidthStdDev;
-@property BOOL hasDuration;
-@property BOOL hasLocalFairPlayCount;
-@property BOOL hasLocalNonFairPlayCount;
-@property BOOL hasReadyToPlayMs;
-@property BOOL hasReason;
-@property BOOL hasRemoteFairPlayCount;
-@property BOOL hasRemoteNonFairPlayCount;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStallCount;
-@property BOOL hasTimestamp;
-@property unsigned int localFairPlayCount;
-@property unsigned int localNonFairPlayCount;
-@property unsigned int readyToPlayMs;
-@property int reason;
-@property unsigned int remoteFairPlayCount;
-@property unsigned int remoteNonFairPlayCount;
-@property(retain) NSString * sessionUUID;
-@property unsigned int stallCount;
-@property unsigned long long timestamp;
+@property (nonatomic) double bandwidthMax;
+@property (nonatomic) double bandwidthMean;
+@property (nonatomic) double bandwidthStdDev;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) BOOL hasBandwidthMax;
+@property (nonatomic) BOOL hasBandwidthMean;
+@property (nonatomic) BOOL hasBandwidthStdDev;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasLocalFairPlayCount;
+@property (nonatomic) BOOL hasLocalNonFairPlayCount;
+@property (nonatomic) BOOL hasReadyToPlayMs;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic) BOOL hasRemoteFairPlayCount;
+@property (nonatomic) BOOL hasRemoteNonFairPlayCount;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStallCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int localFairPlayCount;
+@property (nonatomic) unsigned int localNonFairPlayCount;
+@property (nonatomic) unsigned int readyToPlayMs;
+@property (nonatomic) int reason;
+@property (nonatomic) unsigned int remoteFairPlayCount;
+@property (nonatomic) unsigned int remoteNonFairPlayCount;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int stallCount;
+@property (nonatomic) unsigned long long timestamp;
 
 - (double)bandwidthMax;
 - (double)bandwidthMean;

@@ -7,8 +7,8 @@
     double _longitude;
 }
 
-@property double latitude;
-@property double longitude;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 
 + (BOOL)supportsSecureCoding;
 

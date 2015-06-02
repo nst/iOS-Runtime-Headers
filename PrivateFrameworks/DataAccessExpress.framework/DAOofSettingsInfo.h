@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class <DAOofResponseDelegate>, NSString;
-
 @interface DAOofSettingsInfo : DAOofParams {
     <DAOofResponseDelegate> *_consumer;
     NSString *_requestID;
 }
 
-@property <DAOofResponseDelegate> * consumer;
-@property(retain) NSString * requestID;
+@property (nonatomic) <DAOofResponseDelegate> *consumer;
+@property (nonatomic, retain) NSString *requestID;
 
 - (void).cxx_destruct;
 - (id)consumer;

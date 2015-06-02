@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKRecipientSelectionControllerDelegate>, ABPeoplePickerNavigationController, CKComposeRecipientView, CKPendingConversation, CKRecipientSearchListController, MFComposeRecipient, NSArray, NSMutableDictionary, NSString, UIScrollView, UIView;
-
 @interface CKRecipientSelectionController : CKViewController <ABPeoplePickerNavigationControllerDelegate, CKRecipientSearchListControllerDelegate, MFComposeRecipientTextViewDelegate, MFGroupDetailViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
     NSArray *_addressBookProperties;
     CKPendingConversation *_conversation;
@@ -26,31 +24,31 @@
     UIScrollView *_toFieldScrollingView;
 }
 
-@property(retain) NSArray * addressBookProperties;
-@property(readonly) float collapsedHeight;
-@property(retain) CKPendingConversation * conversation;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKRecipientSelectionControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didShowOneTimeErrorAlert;
-@property(getter=isEditable) BOOL editable;
-@property BOOL forceMMS;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL homogenizePreferredServiceForiMessage;
-@property(retain) ABPeoplePickerNavigationController * peoplePickerController;
-@property(getter=isPeoplePickerHidden) BOOL peoplePickerHidden;
-@property BOOL preventAtomization;
-@property(retain) MFComposeRecipient * recentContactForPresentedABCard;
-@property(retain) NSMutableDictionary * recipientAvailabilities;
-@property(retain) NSMutableDictionary * recipientAvailibityTimers;
-@property(retain) CKRecipientSearchListController * searchListController;
-@property(getter=isSearchResultsHidden) BOOL searchResultsHidden;
-@property(readonly) BOOL shouldSuppressSearchResultsTable;
-@property(readonly) Class superclass;
-@property(retain) CKComposeRecipientView * toField;
-@property(retain) UIView * toFieldContainerView;
-@property(readonly) BOOL toFieldIsFirstResponder;
-@property(retain) UIScrollView * toFieldScrollingView;
+@property (nonatomic, retain) NSArray *addressBookProperties;
+@property (nonatomic, readonly) float collapsedHeight;
+@property (nonatomic, retain) CKPendingConversation *conversation;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKRecipientSelectionControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didShowOneTimeErrorAlert;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (nonatomic) BOOL forceMMS;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL homogenizePreferredServiceForiMessage;
+@property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePickerController;
+@property (getter=isPeoplePickerHidden, nonatomic) BOOL peoplePickerHidden;
+@property (nonatomic) BOOL preventAtomization;
+@property (nonatomic, retain) MFComposeRecipient *recentContactForPresentedABCard;
+@property (nonatomic, retain) NSMutableDictionary *recipientAvailabilities;
+@property (nonatomic, retain) NSMutableDictionary *recipientAvailibityTimers;
+@property (nonatomic, retain) CKRecipientSearchListController *searchListController;
+@property (getter=isSearchResultsHidden, nonatomic) BOOL searchResultsHidden;
+@property (nonatomic, readonly) BOOL shouldSuppressSearchResultsTable;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CKComposeRecipientView *toField;
+@property (nonatomic, retain) UIView *toFieldContainerView;
+@property (nonatomic, readonly) BOOL toFieldIsFirstResponder;
+@property (nonatomic, retain) UIScrollView *toFieldScrollingView;
 
 - (void)_adjustToFieldPositionIfNecessary;
 - (id)_alternateAddressesForRecipient:(id)arg1;
@@ -140,7 +138,7 @@
 - (void)recipientViewDidResignFirstResponder:(id)arg1;
 - (BOOL)recipientViewShouldIgnoreFirstResponderChanges:(id)arg1;
 - (id)recipients;
-- (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)removeRecipient:(id)arg1;
 - (void)reset;
 - (id)searchListController;

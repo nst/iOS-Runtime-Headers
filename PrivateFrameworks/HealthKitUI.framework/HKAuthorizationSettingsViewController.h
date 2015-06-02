@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKAuthorizationSettingsViewControllerDelegate>, HKDataCategoryController, HKHealthStore, HKSource, HKSourceAuthorizationController, NSString, UIBarButtonItem;
-
 @interface HKAuthorizationSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
     UIBarButtonItem *_cancelButtonItem;
     HKDataCategoryController *_dataCategoryController;
@@ -17,16 +15,16 @@
     NSString *_updateDescription;
 }
 
-@property(retain) UIBarButtonItem * cancelButtonItem;
-@property(retain) HKDataCategoryController * dataCategoryController;
-@property <HKAuthorizationSettingsViewControllerDelegate> * delegate;
-@property(retain) UIBarButtonItem * doneButtonItem;
-@property(readonly) HKHealthStore * healthStore;
-@property(copy) NSString * shareDescription;
-@property(retain) HKSource * source;
-@property(retain) HKSourceAuthorizationController * sourceAuthorizationController;
-@property(readonly) int style;
-@property(copy) NSString * updateDescription;
+@property (nonatomic, retain) UIBarButtonItem *cancelButtonItem;
+@property (nonatomic, retain) HKDataCategoryController *dataCategoryController;
+@property (nonatomic) <HKAuthorizationSettingsViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UIBarButtonItem *doneButtonItem;
+@property (nonatomic, readonly) HKHealthStore *healthStore;
+@property (nonatomic, copy) NSString *shareDescription;
+@property (nonatomic, retain) HKSource *source;
+@property (nonatomic, retain) HKSourceAuthorizationController *sourceAuthorizationController;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, copy) NSString *updateDescription;
 
 - (void).cxx_destruct;
 - (void)_addCancelAndDoneButtons;

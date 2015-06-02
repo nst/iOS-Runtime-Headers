@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSString, NSXPCListener, NSXPCListenerEndpoint;
-
 @interface ACDTestManager : NSObject {
     NSXPCListener *_accountStoreConnectionListener;
     NSXPCListener *_authenticationDialogConnectionListener;
@@ -11,8 +9,8 @@
     NSString *_storePath;
 }
 
-@property(readonly) NSXPCListenerEndpoint * remoteAccountStoreEndpoint;
-@property(readonly) NSXPCListenerEndpoint * remoteOAuthSignerEndpoint;
+@property (nonatomic, readonly) NSXPCListenerEndpoint *remoteAccountStoreEndpoint;
+@property (nonatomic, readonly) NSXPCListenerEndpoint *remoteOAuthSignerEndpoint;
 
 + (id)testServer;
 

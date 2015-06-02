@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface OITSUNumberFormatter : NSObject {
     struct __CFString { } *mAdditionalCurrencyCode;
     struct __CFArray { } *mAdditionalCurrencyCodeFormatters;

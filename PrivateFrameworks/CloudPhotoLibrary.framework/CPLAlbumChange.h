@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString;
-
 @interface CPLAlbumChange : CPLContainerChange <NSCopying, NSSecureCoding> {
     BOOL _albumSortAscending;
     unsigned int _albumSortType;
@@ -14,12 +12,12 @@
     int _position;
 }
 
-@property BOOL albumSortAscending;
-@property unsigned int albumSortType;
-@property unsigned int albumType;
-@property(copy) NSString * name;
-@property(copy) NSString * parentIdentifier;
-@property int position;
+@property (nonatomic) BOOL albumSortAscending;
+@property (nonatomic) unsigned int albumSortType;
+@property (nonatomic) unsigned int albumType;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *parentIdentifier;
+@property (nonatomic) int position;
 
 - (void).cxx_destruct;
 - (BOOL)albumSortAscending;

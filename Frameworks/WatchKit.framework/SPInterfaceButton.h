@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPInterfaceButton : SPInterfaceObject {
-}
+@interface SPInterfaceButton : SPInterfaceObject
 
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;

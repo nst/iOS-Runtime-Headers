@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDGlossaryViewControllerDelegate>, APDDataManager, APDNavigationTopic, APDTopicViewController, NSArray, NSString, UIButton, UIView;
-
 @interface APDGlossaryViewController : UIViewController <UIToolbarDelegate> {
     UIView *_bottomSeparator;
     APDDataManager *_dataManager;
@@ -16,18 +14,18 @@
     UIView *_webViewContainer;
 }
 
-@property UIView * bottomSeparator;
-@property(retain) APDDataManager * dataManager;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDGlossaryViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL displayAsModal;
-@property UIButton * doneButton;
-@property(readonly) unsigned int hash;
-@property(retain) APDNavigationTopic * navigationTopic;
-@property(readonly) Class superclass;
-@property(retain) NSArray * viewInterfaceOrientations;
-@property UIView * webViewContainer;
+@property (nonatomic) UIView *bottomSeparator;
+@property (nonatomic, retain) APDDataManager *dataManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDGlossaryViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displayAsModal;
+@property (nonatomic) UIButton *doneButton;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) APDNavigationTopic *navigationTopic;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *viewInterfaceOrientations;
+@property (nonatomic) UIView *webViewContainer;
 
 - (void).cxx_destruct;
 - (id)bottomSeparator;

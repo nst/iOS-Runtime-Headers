@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString, TSTLayoutHint, TSTLayoutSpaceBundle, TSTMasterLayout, TSTTableInfo, TSTTableModel, TSWPLayout, TSWPPadding;
-
 @interface TSTLayout : TSWPTextHostLayout <TSKSearchTarget, TSWPColumnMetrics, TSWPLayoutParent, TSWPStorageObserver> {
     struct CGSize { 
         float width; 
@@ -120,33 +118,33 @@
     BOOL mTabsVisible;
 }
 
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } computedEditingCellContentFrame;
-@property(retain) TSWPLayout * containedTextEditingLayout;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } editingSpillingTextRange;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL layoutDirectionIsLeftToRight;
-@property(retain) TSTLayoutHint * layoutHint;
-@property(readonly) TSWPPadding * layoutMargins;
-@property TSTMasterLayout * masterLayout;
-@property BOOL newCanvasRevealedHorizontally;
-@property BOOL newCanvasRevealedVertically;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingForEditingCell;
-@property(readonly) unsigned int pageCount;
-@property(readonly) unsigned int pageNumber;
-@property struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } prevEditingSpillingTextRange;
-@property BOOL processChangesFiltering;
-@property struct CGSize { float x1; float x2; } scaleToFit;
-@property(readonly) BOOL shrinkTextToFit;
-@property(retain) TSTLayoutSpaceBundle * spaceBundle;
-@property(readonly) Class superclass;
-@property(readonly) TSTTableInfo * tableInfo;
-@property(readonly) TSTTableModel * tableModel;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } computedEditingCellContentFrame;
+@property (nonatomic, retain) TSWPLayout *containedTextEditingLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } editingSpillingTextRange;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL layoutDirectionIsLeftToRight;
+@property (nonatomic, retain) TSTLayoutHint *layoutHint;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic) TSTMasterLayout *masterLayout;
+@property (nonatomic) BOOL newCanvasRevealedHorizontally;
+@property (nonatomic) BOOL newCanvasRevealedVertically;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingForEditingCell;
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (nonatomic, readonly) unsigned int pageNumber;
+@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } prevEditingSpillingTextRange;
+@property (nonatomic) BOOL processChangesFiltering;
+@property (nonatomic) struct CGSize { float x1; float x2; } scaleToFit;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, retain) TSTLayoutSpaceBundle *spaceBundle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TSTTableInfo *tableInfo;
+@property (nonatomic, readonly) TSTTableModel *tableModel;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (id).cxx_construct;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
@@ -154,7 +152,7 @@
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)bezierPathsForCellRegion:(id)arg1 selectionMask:(unsigned int)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 viewScale:(float)arg4 inset:(float)arg5 clipToVisibleRect:(BOOL)arg6 block:(id)arg7;
+- (void)bezierPathsForCellRegion:(id)arg1 selectionMask:(unsigned int)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 viewScale:(float)arg4 inset:(float)arg5 clipToVisibleRect:(BOOL)arg6 block:(id /* block */)arg7;
 - (struct CGPoint { float x1; float x2; })calculatePointFromSearchReference:(id)arg1;
 - (BOOL)canAspectRatioLockBeChangedByUser;
 - (BOOL)canRotateChildLayout:(id)arg1;
@@ -193,9 +191,9 @@
 - (id)layoutGeometryFromInfo;
 - (id)layoutHint;
 - (id)layoutMargins;
-- (void)layoutSearchForAnnotationWithHitBlock:(id)arg1;
-- (void)layoutSearchForSpellingErrorsWithHitBlock:(id)arg1 stop:(BOOL*)arg2;
-- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id)arg3;
+- (void)layoutSearchForAnnotationWithHitBlock:(id /* block */)arg1;
+- (void)layoutSearchForSpellingErrorsWithHitBlock:(id /* block */)arg1 stop:(BOOL*)arg2;
+- (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskRectForTextLayout:(id)arg1;
 - (id)masterLayout;
 - (float)maxAutoGrowWidthForTextLayout:(id)arg1;

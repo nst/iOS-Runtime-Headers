@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKModifyRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     BOOL _allowDefaultZoneSave;
     BOOL _markZonesAsUserPurged;
@@ -11,10 +9,10 @@
     NSArray *_recordZonesToSave;
 }
 
-@property BOOL allowDefaultZoneSave;
-@property BOOL markZonesAsUserPurged;
-@property(retain) NSArray * recordZoneIDsToDelete;
-@property(retain) NSArray * recordZonesToSave;
+@property (nonatomic) BOOL allowDefaultZoneSave;
+@property (nonatomic) BOOL markZonesAsUserPurged;
+@property (nonatomic, retain) NSArray *recordZoneIDsToDelete;
+@property (nonatomic, retain) NSArray *recordZonesToSave;
 
 + (BOOL)supportsSecureCoding;
 

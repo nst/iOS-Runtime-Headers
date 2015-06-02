@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPChunk, CPCluster;
-
 @interface CPCompoundGraphicMaker : NSObject <CPDisposable> {
     CPCluster *cluster;
     BOOL disposed;

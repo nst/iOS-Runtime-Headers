@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIWindowAutoresizingConstraint : NSAutoresizingMaskLayoutConstraint {
-}
+@interface _UIWindowAutoresizingConstraint : NSAutoresizingMaskLayoutConstraint
 
 @end

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSString;
-
 @interface PBBProtoGizmoActivationFailed : PBCodable <NSCopying> {
     NSString *_failureDescription;
 }
 
-@property(retain) NSString * failureDescription;
+@property (nonatomic, retain) NSString *failureDescription;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

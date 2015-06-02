@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSData, NSString;
-
 @interface SBKPushValueResponse : SBKResponse {
     NSString *_conflictItemKey;
     NSData *_conflictItemValuePayload;
@@ -11,10 +9,10 @@
     NSString *_domainVersion;
 }
 
-@property(readonly) NSString * conflictItemKey;
-@property(readonly) NSData * conflictItemValuePayload;
-@property(readonly) NSString * conflictItemVersionAnchor;
-@property(readonly) NSString * domainVersion;
+@property (readonly) NSString *conflictItemKey;
+@property (readonly) NSData *conflictItemValuePayload;
+@property (readonly) NSString *conflictItemVersionAnchor;
+@property (readonly) NSString *domainVersion;
 
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
 

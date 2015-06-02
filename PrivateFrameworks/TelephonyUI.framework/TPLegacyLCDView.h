@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLegacyLCDSubImageView, TPLegacyLCDTextView, UIView;
-
 @interface TPLegacyLCDView : TPLegacyLCDBar {
     UIView *_backgroundGradientView;
     UIView *_contentView;
     BOOL _hasBackgroundGradient;
     TPLegacyLCDSubImageView *_imageView;
     TPLegacyLCDTextView *_labelView;
-    unsigned int _layoutAsLabelled : 1;
+    unsigned int _layoutAsLabelled;
     TPLegacyLCDTextView *_secondLineTextView;
     TPLegacyLCDTextView *_textView;
 }
 
-@property(retain) UIView * backgroundGradientView;
-@property BOOL hasBackgroundGradient;
+@property (nonatomic, retain) UIView *backgroundGradientView;
+@property (nonatomic) BOOL hasBackgroundGradient;
 
 + (float)labelFontSize;
 + (float)textFontSize;

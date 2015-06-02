@@ -11,12 +11,12 @@
     int _type;
 }
 
-@property BOOL acceptsTapsWhenDisabled;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) int group;
-@property(getter=isHighlighted) BOOL highlighted;
-@property BOOL supportsLongPress;
-@property(readonly) int type;
+@property (nonatomic) BOOL acceptsTapsWhenDisabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) int group;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL supportsLongPress;
+@property (nonatomic, readonly) int type;
 
 + (int)_groupForTransportControlType:(int)arg1;
 + (int)_ordinalForTransportControlType:(int)arg1;

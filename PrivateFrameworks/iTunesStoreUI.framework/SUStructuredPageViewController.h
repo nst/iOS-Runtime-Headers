@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUStructuredPage, UILabel;
-
 @interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate> {
     Class _dataSourceClass;
     UILabel *_noItemsLabel;
     SUStructuredPage *_structuredPage;
 }
 
-@property(retain) Class dataSourceClass;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SUStructuredPage * structuredPage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) Class dataSourceClass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SUStructuredPage *structuredPage;
+@property (readonly) Class superclass;
 
 - (BOOL)_gotoURLForItem:(id)arg1 withURLIndex:(int)arg2;
 - (BOOL)_handleLoadMoreForIndexPath:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainerID, CKShareID, CKShareParticipant, NSArray, NSData, NSMutableArray, NSString, NSURL;
-
 @interface CKShare : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray *_addedParticipants;
     NSString *_baseToken;
@@ -25,31 +23,33 @@
     NSURL *_shareURL;
 }
 
-@property(retain) NSMutableArray * addedParticipants;
-@property(readonly) NSArray * allParticipants;
-@property(retain) NSString * baseToken;
-@property(retain) CKContainerID * containerID;
-@property(readonly) CKShareParticipant * currentUserParticipant;
-@property(readonly) NSData * encryptedFullTokenData;
-@property(copy) NSString * etag;
-@property(readonly) NSString * fullToken;
-@property BOOL isKnownToServer;
-@property(readonly) CKShareParticipant * owner;
-@property(retain) NSMutableArray * participants;
-@property(retain) NSString * previousProtectionEtag;
-@property(retain) NSString * previousPublicProtectionEtag;
-@property(retain) NSData * protectionData;
-@property(retain) NSString * protectionEtag;
-@property int publicPermission;
-@property(retain) NSData * publicProtectionData;
-@property(retain) NSString * publicProtectionEtag;
-@property(retain) NSData * publicSharingIdentity;
-@property(retain) NSMutableArray * removedParticipants;
-@property(retain) NSString * routingKey;
-@property(copy) CKShareID * shareID;
-@property(copy,readonly) NSURL * shareURL;
-@property(readonly) NSData * shortSharingTokenData;
-@property(readonly) NSData * shortSharingTokenHashData;
+@property (nonatomic, retain) NSMutableArray *addedParticipants;
+@property (nonatomic, readonly) NSArray *allParticipants;
+@property (nonatomic, retain) NSString *baseToken;
+@property (nonatomic, retain) CKContainerID *containerID;
+@property (nonatomic, readonly) CKShareParticipant *currentUserParticipant;
+@property (nonatomic, readonly) NSData *encryptedFullTokenData;
+@property (nonatomic, copy) NSString *etag;
+@property (nonatomic, readonly) NSString *fullToken;
+@property (nonatomic) BOOL isKnownToServer;
+@property (nonatomic, readonly) CKShareParticipant *owner;
+@property (nonatomic, retain) NSMutableArray *participants;
+@property (nonatomic, retain) NSString *previousProtectionEtag;
+@property (nonatomic, retain) NSString *previousPublicProtectionEtag;
+@property (nonatomic, retain) NSData *protectionData;
+@property (nonatomic, retain) NSString *protectionEtag;
+@property (nonatomic) int publicPermission;
+@property (nonatomic, retain) NSData *publicProtectionData;
+@property (nonatomic, retain) NSString *publicProtectionEtag;
+@property (nonatomic, retain) NSData *publicSharingIdentity;
+@property (nonatomic, retain) NSMutableArray *removedParticipants;
+@property (nonatomic, retain) NSString *routingKey;
+@property (nonatomic, copy) CKShareID *shareID;
+@property (nonatomic, readonly, copy) NSURL *shareURL;
+@property (nonatomic, readonly) NSData *shortSharingTokenData;
+@property (nonatomic, readonly) NSData *shortSharingTokenHashData;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (id)decryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)encryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
@@ -85,11 +85,9 @@
 - (id)participants;
 - (id)previousProtectionEtag;
 - (id)previousPublicProtectionEtag;
-- (struct _OpaquePCSShareProtection { }*)privatePCS;
 - (id)privateToken;
 - (id)protectionData;
 - (id)protectionEtag;
-- (struct _OpaquePCSShareProtection { }*)publicPCS;
 - (int)publicPermission;
 - (id)publicProtectionData;
 - (id)publicProtectionEtag;
@@ -105,10 +103,8 @@
 - (void)setParticipants:(id)arg1;
 - (void)setPreviousProtectionEtag:(id)arg1;
 - (void)setPreviousPublicProtectionEtag:(id)arg1;
-- (void)setPrivatePCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setProtectionData:(id)arg1;
 - (void)setProtectionEtag:(id)arg1;
-- (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPublicPermission:(int)arg1;
 - (void)setPublicProtectionData:(id)arg1;
 - (void)setPublicProtectionEtag:(id)arg1;
@@ -116,8 +112,6 @@
 - (void)setRemovedParticipants:(id)arg1;
 - (void)setRoutingKey:(id)arg1;
 - (void)setShareID:(id)arg1;
-- (void)setSharePCSData:(id)arg1;
-- (void)setSharePCSData:(id)arg1 isUnitTestAccount:(BOOL)arg2;
 - (id)shareID;
 - (id)shareURL;
 - (id)shortSharingToken;
@@ -125,5 +119,14 @@
 - (id)shortSharingTokenHashData;
 - (id)shortToken;
 - (void)updateFromServerShare:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (struct _OpaquePCSShareProtection { }*)privatePCS;
+- (struct _OpaquePCSShareProtection { }*)publicPCS;
+- (void)setPrivatePCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
+- (void)setSharePCSData:(id)arg1;
+- (void)setSharePCSData:(id)arg1 isUnitTestAccount:(BOOL)arg2;
 
 @end

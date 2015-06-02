@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAReminderDateTimeTrigger, SAReminderLocationTrigger;
+@interface SAReminderCompositeTrigger : SAReminderTrigger
 
-@interface SAReminderCompositeTrigger : SAReminderTrigger {
-}
-
-@property(retain) SAReminderDateTimeTrigger * dateTimeTrigger;
-@property(retain) SAReminderLocationTrigger * locationTrigger;
+@property (nonatomic, retain) SAReminderDateTimeTrigger *dateTimeTrigger;
+@property (nonatomic, retain) SAReminderLocationTrigger *locationTrigger;
 
 + (id)compositeTrigger;
 + (id)compositeTriggerWithDictionary:(id)arg1 context:(id)arg2;

@@ -7,8 +7,8 @@
     bool fWantsPowerConservativeDeviceMotion;
 }
 
-@property int mode;
-@property(readonly) bool wantsPowerConservativeDeviceMotion;
+@property (nonatomic) int mode;
+@property (nonatomic, readonly) bool wantsPowerConservativeDeviceMotion;
 
 - (id)description;
 - (id)initWithMode:(int)arg1 andPowerConservation:(bool)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSString;
-
 @interface HistogramElement : NSObject <NSCoding> {
     unsigned long long count;
     double probability;
@@ -11,10 +9,10 @@
     NSString *stringkey;
 }
 
-@property unsigned long long count;
-@property double probability;
-@property unsigned long long queryID;
-@property(retain) NSString * stringkey;
+@property (nonatomic) unsigned long long count;
+@property (nonatomic) double probability;
+@property (nonatomic) unsigned long long queryID;
+@property (nonatomic, retain) NSString *stringkey;
 
 - (void).cxx_destruct;
 - (unsigned long long)count;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSSwitchRow : PTSRow {
-}
+@interface PTSSwitchRow : PTSRow
 
 - (Class)rowTableViewCellClass;
 

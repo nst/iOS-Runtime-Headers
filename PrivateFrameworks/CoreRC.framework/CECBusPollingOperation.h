@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CECBusPollingOperationDelegate>, CECInterface, NSObject<OS_dispatch_queue>;
-
 @interface CECBusPollingOperation : NSObject {
     <CECBusPollingOperationDelegate> *_delegate;
     unsigned char _initiatorAddress;
@@ -12,7 +10,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property <CECBusPollingOperationDelegate> * delegate;
+@property (nonatomic) <CECBusPollingOperationDelegate> *delegate;
 
 - (void)continuePolling;
 - (void)dealloc;

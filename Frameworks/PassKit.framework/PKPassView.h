@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <WLCardViewDelegate>, NSString, PKPass, PKPassBackFaceView, PKPassColorProfile, PKPassFaceView, PKPassFrontFaceView, UITapGestureRecognizer;
-
 @interface PKPassView : UIView <PKPassFaceDelegate, UIGestureRecognizerDelegate> {
     PKPassBackFaceView *_backFace;
     BOOL _backFaceIsTall;
     PKPassColorProfile *_colorProfile;
     int _contentMode;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _delayedContentModeCanceller;
-
+    id /* block */ _delayedContentModeCanceller;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -42,19 +32,19 @@
     PKPassFaceView *_visibleFace;
 }
 
-@property BOOL backFaceIsTall;
-@property int contentMode;
-@property(copy,readonly) NSString * debugDescription;
-@property <WLCardViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL frontFaceBodyContentCreated;
-@property(readonly) unsigned int hash;
-@property BOOL isFrontmostPassView;
-@property(retain,readonly) PKPass * pass;
-@property(readonly) BOOL showingFront;
-@property(readonly) Class superclass;
-@property unsigned int suppressedContent;
-@property(readonly) NSString * uniqueID;
+@property (nonatomic) BOOL backFaceIsTall;
+@property (nonatomic) int contentMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WLCardViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL frontFaceBodyContentCreated;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isFrontmostPassView;
+@property (nonatomic, readonly, retain) PKPass *pass;
+@property (nonatomic, readonly) BOOL showingFront;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int suppressedContent;
+@property (nonatomic, readonly) NSString *uniqueID;
 
 - (void)_applyContentMode:(BOOL)arg1;
 - (void)_flipPass:(BOOL)arg1 fromLeft:(BOOL)arg2 notify:(BOOL)arg3;
@@ -88,7 +78,7 @@
 - (void)passFaceFlipButtonPressed:(id)arg1;
 - (void)passFaceShareButtonPressed:(id)arg1;
 - (void)prepareForFlip;
-- (void)presentDiff:(id)arg1 completion:(id)arg2;
+- (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)registerForEnterBackgroundNotification;
 - (void)setBackFaceIsTall:(BOOL)arg1;
 - (void)setContentMode:(int)arg1;

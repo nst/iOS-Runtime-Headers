@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel, UIView;
-
 @interface SKUIDeveloperInfoLineItemView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -16,7 +14,7 @@
     UILabel *_valueLabel;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;

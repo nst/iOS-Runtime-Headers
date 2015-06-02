@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPPage;
-
 @interface CPZoneFilter : NSObject {
     double minArea;
     CPPage *page;

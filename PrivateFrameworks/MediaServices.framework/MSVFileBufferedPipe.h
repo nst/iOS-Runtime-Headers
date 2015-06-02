@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSData, NSFileHandle, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSPipe;
-
 @interface MSVFileBufferedPipe : NSObject {
     unsigned int _dataPendingOffset;
     NSData *_dataPendingWrite;
@@ -21,8 +19,8 @@
     NSObject<OS_dispatch_source> *_writeSource;
 }
 
-@property(retain,readonly) NSFileHandle * fileHandleForReading;
-@property(retain,readonly) NSFileHandle * fileHandleForWriting;
+@property (readonly, retain) NSFileHandle *fileHandleForReading;
+@property (readonly, retain) NSFileHandle *fileHandleForWriting;
 
 + (id)pipe;
 

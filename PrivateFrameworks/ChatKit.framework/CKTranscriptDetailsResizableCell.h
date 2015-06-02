@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptDetailsResizableCell : UITableViewCell {
-}
+@interface CKTranscriptDetailsResizableCell : UITableViewCell
 
 + (id)identifier;
 

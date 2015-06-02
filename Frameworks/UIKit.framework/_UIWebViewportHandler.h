@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIWebViewportHandlerDelegate>;
-
 @interface _UIWebViewportHandler : NSObject {
     struct CGSize { 
         float width; 
@@ -45,16 +43,16 @@
     unsigned int _webkitDefinedConfigurationFlags;
 }
 
-@property(readonly) BOOL allowsUserScaling;
-@property(readonly) struct CGSize { float x1; float x2; } availableViewSize;
-@property(getter=isClassicViewportMode,readonly) BOOL classicViewportMode;
-@property <_UIWebViewportHandlerDelegate> * delegate;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
-@property(readonly) float initialScale;
-@property(readonly) float maximumScale;
-@property(readonly) float minimumScale;
-@property(readonly) struct _UIWebViewportConfiguration { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; bool x5; } rawViewConfiguration;
-@property(readonly) unsigned int webkitDefinedConfigurationFlags;
+@property (nonatomic, readonly) BOOL allowsUserScaling;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } availableViewSize;
+@property (getter=isClassicViewportMode, nonatomic, readonly) BOOL classicViewportMode;
+@property (nonatomic) <_UIWebViewportHandlerDelegate> *delegate;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property (nonatomic, readonly) float initialScale;
+@property (nonatomic, readonly) float maximumScale;
+@property (nonatomic, readonly) float minimumScale;
+@property (nonatomic, readonly) struct _UIWebViewportConfiguration { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; float x2; float x3; float x4; bool x5; } rawViewConfiguration;
+@property (nonatomic, readonly) unsigned int webkitDefinedConfigurationFlags;
 
 - (id).cxx_construct;
 - (BOOL)allowsUserScaling;
@@ -76,7 +74,7 @@
 - (void)setAvailableViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDocumentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)update:(id)arg1;
+- (void)update:(id /* block */)arg1;
 - (float)viewportHeight;
 - (float)viewportWidth;
 - (unsigned int)webkitDefinedConfigurationFlags;

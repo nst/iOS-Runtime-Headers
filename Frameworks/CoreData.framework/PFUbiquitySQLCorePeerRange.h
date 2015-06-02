@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSNumber, NSString;
-
 @interface PFUbiquitySQLCorePeerRange : NSObject {
     NSString *_entityName;
     NSString *_owningPeerID;
@@ -13,12 +11,12 @@
     NSNumber *_rangeStart;
 }
 
-@property(readonly) NSString * entityName;
-@property(readonly) NSString * owningPeerID;
-@property(readonly) NSNumber * peerEnd;
-@property(readonly) NSNumber * peerStart;
-@property(readonly) NSNumber * rangeEnd;
-@property(readonly) NSNumber * rangeStart;
+@property (nonatomic, readonly) NSString *entityName;
+@property (nonatomic, readonly) NSString *owningPeerID;
+@property (nonatomic, readonly) NSNumber *peerEnd;
+@property (nonatomic, readonly) NSNumber *peerStart;
+@property (nonatomic, readonly) NSNumber *rangeEnd;
+@property (nonatomic, readonly) NSNumber *rangeStart;
 
 - (void)dealloc;
 - (id)description;

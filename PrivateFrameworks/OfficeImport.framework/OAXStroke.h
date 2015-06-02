@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXStroke : NSObject {
-}
+@interface OAXStroke : NSObject
 
 + (id)compoundLineEnumMap;
 + (id)lineCapEnumMap;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDEventKitSyncIsNotifiableEvent : PBCodable <NSCopying> {
     unsigned long long _deltaProcessingTime;
     unsigned long long _deltaTransitTime;
@@ -18,16 +16,16 @@
     BOOL _willTriggerNotification;
 }
 
-@property unsigned long long deltaProcessingTime;
-@property unsigned long long deltaTransitTime;
-@property BOOL hasDeltaProcessingTime;
-@property BOOL hasDeltaTransitTime;
-@property(readonly) BOOL hasReason;
-@property BOOL hasTimestamp;
-@property BOOL hasWillTriggerNotification;
-@property(retain) NSString * reason;
-@property unsigned long long timestamp;
-@property BOOL willTriggerNotification;
+@property (nonatomic) unsigned long long deltaProcessingTime;
+@property (nonatomic) unsigned long long deltaTransitTime;
+@property (nonatomic) BOOL hasDeltaProcessingTime;
+@property (nonatomic) BOOL hasDeltaTransitTime;
+@property (nonatomic, readonly) BOOL hasReason;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasWillTriggerNotification;
+@property (nonatomic, retain) NSString *reason;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) BOOL willTriggerNotification;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

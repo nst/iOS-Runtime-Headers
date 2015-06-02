@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MFAccount, MFActivityMonitor, MFError, MFMonitoredInvocation, NSArray;
-
 @interface MFAccountValidator : NSObject {
     MFAccount *_account;
     MFActivityMonitor *_accountValidationActivity;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     id _delegate;
     struct { 
         unsigned int useSSL : 1; 
@@ -32,13 +22,13 @@
     MFMonitoredInvocation *_validationInvocation;
 }
 
-@property(readonly) MFAccount * account;
-@property(readonly) BOOL accountIsValid;
-@property(readonly) BOOL accountSupportsSSL;
-@property id delegate;
-@property(readonly) MFError * error;
-@property(readonly) BOOL performsValidationInBackground;
-@property(readonly) MFMonitoredInvocation * validationInvocation;
+@property (nonatomic, readonly) MFAccount *account;
+@property (nonatomic, readonly) BOOL accountIsValid;
+@property (nonatomic, readonly) BOOL accountSupportsSSL;
+@property (nonatomic) id delegate;
+@property (nonatomic, readonly) MFError *error;
+@property (nonatomic, readonly) BOOL performsValidationInBackground;
+@property (nonatomic, readonly) MFMonitoredInvocation *validationInvocation;
 
 - (void)_backgroundValidateAccountFinished:(id)arg1 authSchemes:(id)arg2;
 - (BOOL)_incomingServerValid;
@@ -61,9 +51,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)stop;
 - (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2;
-- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id)arg3;
+- (void)validateAccount:(id)arg1 useSSL:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)validateAccountWithoutFallbacks:(id)arg1;
-- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id)arg2;
+- (void)validateAccountWithoutFallbacks:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)validationInvocation;
 
 @end

@@ -7,11 +7,11 @@
     struct __CFData { } *mPackedData;
 }
 
-@property(readonly) unsigned int firstRowNumber;
-@property(readonly) unsigned int lastRowNumber;
-@property(readonly) unsigned int maxRowNumber;
-@property(readonly) unsigned int minRowNumber;
-@property(readonly) unsigned int rowCount;
+@property (nonatomic, readonly) unsigned int firstRowNumber;
+@property (nonatomic, readonly) unsigned int lastRowNumber;
+@property (nonatomic, readonly) unsigned int maxRowNumber;
+@property (nonatomic, readonly) unsigned int minRowNumber;
+@property (nonatomic, readonly) unsigned int rowCount;
 
 + (id)rowBlock;
 

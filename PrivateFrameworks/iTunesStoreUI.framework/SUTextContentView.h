@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, UILabel;
-
 @interface SUTextContentView : UITextContentView {
     UILabel *_placeholderLabel;
 }
 
-@property(retain) NSString * placeholder;
+@property (nonatomic, retain) NSString *placeholder;
 
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDictionary;
-
 @interface TSPDeepCopyMetadata : TSPObject {
     NSDictionary *_cachedDataMap;
     NSDictionary *_objectUUIDToIdentifierDictionary;
@@ -11,10 +9,10 @@
     unsigned long long _version;
 }
 
-@property(readonly) NSDictionary * cachedDataMap;
-@property(readonly) NSDictionary * objectUUIDToIdentifierDictionary;
-@property(readonly) long long rootObjectIdentifier;
-@property(readonly) unsigned long long version;
+@property (nonatomic, readonly) NSDictionary *cachedDataMap;
+@property (nonatomic, readonly) NSDictionary *objectUUIDToIdentifierDictionary;
+@property (nonatomic, readonly) long long rootObjectIdentifier;
+@property (nonatomic, readonly) unsigned long long version;
 
 - (void).cxx_destruct;
 - (id)cachedDataMap;

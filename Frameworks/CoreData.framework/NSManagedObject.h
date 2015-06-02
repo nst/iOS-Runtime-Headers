@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSEntityDescription, NSManagedObjectContext, NSManagedObjectID;
-
 @interface NSManagedObject : NSObject {
     id _cd_entity;
     unsigned long _cd_extraFlags;
@@ -23,17 +16,19 @@
     unsigned long _cd_stateFlags;
 }
 
-@property(getter=isDeleted,readonly) BOOL deleted;
-@property(readonly) NSEntityDescription * entity;
-@property(getter=isFault,readonly) BOOL fault;
-@property(readonly) unsigned int faultingState;
-@property(readonly) BOOL hasChanges;
-@property(getter=isInserted,readonly) BOOL inserted;
-@property(readonly) NSManagedObjectContext * managedObjectContext;
-@property(readonly) NSManagedObjectID * objectID;
-@property(getter=isUpdated,readonly) BOOL updated;
+@property (getter=isDeleted, nonatomic, readonly) BOOL deleted;
+@property (nonatomic, readonly) NSEntityDescription *entity;
+@property (getter=isFault, nonatomic, readonly) BOOL fault;
+@property (nonatomic, readonly) unsigned int faultingState;
+@property (nonatomic, readonly) BOOL hasChanges;
+@property (getter=isInserted, nonatomic, readonly) BOOL inserted;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (getter=isUpdated, nonatomic, readonly) BOOL updated;
 
-+ (struct { int x1; void *x2; unsigned long x3; unsigned char x4; unsigned int x5; void *x6; id x7; char *x8; struct _moFactoryClassFlags { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 26; } x9; }*)_PFMOClassFactoryData;
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
++ (struct { int x1; void *x2; unsigned long x3; unsigned char x4; unsigned int x5; void *x6; id x7; struct _moFactoryClassFlags { unsigned int x_8_1_1 : 1; unsigned int x_8_1_2 : 1; unsigned int x_8_1_3 : 1; unsigned int x_8_1_4 : 1; unsigned int x_8_1_5 : 1; unsigned int x_8_1_6 : 1; unsigned int x_8_1_7 : 26; } x8; }*)_PFMOClassFactoryData;
 + (id)_PFPlaceHolderSingleton;
 + (id)_PFPlaceHolderSingleton_core;
 + (void)_entityDeallocated;
@@ -57,7 +52,6 @@
 + (Class)classForEntity:(id)arg1;
 + (BOOL)contextShouldIgnoreUnmodeledPropertyChanges;
 + (void)initialize;
-+ (BOOL)isTracked;
 + (void)release;
 + (BOOL)resolveClassMethod:(SEL)arg1;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
@@ -116,7 +110,6 @@
 - (id)_newSetFromSet:(id)arg1 byApplyingDiffs:(id)arg2;
 - (id)_newSnapshotForUndo__;
 - (void)_nilOutReservedCurrentEventSnapshot__;
-- (id)_obsoleteAttributes;
 - (id)_orderKeysForRelationshipWithName__:(id)arg1;
 - (id)_originalSnapshot__;
 - (id)_persistentProperties__;
@@ -124,7 +117,6 @@
 - (void)_propagateDelete;
 - (void)_propagateDelete:(unsigned int)arg1;
 - (id)_referenceQueue__;
-- (id)_removeObsoleteKeysFromDictionary:(id)arg1;
 - (id)_reservedCurrentEventSnapshot;
 - (void)_setGenericValue:(id)arg1 forKey:(id)arg2 withIndex:(long)arg3 flags:(long)arg4;
 - (void)_setHasRetainedStoreResources__:(BOOL)arg1;
@@ -171,7 +163,6 @@
 - (void)didSave;
 - (void)didTurnIntoFault;
 - (void)diffOrderedSets:(id)arg1 :(id)arg2 :(id*)arg3 :(id*)arg4 :(id*)arg5 :(id*)arg6 :(id*)arg7;
-- (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (unsigned int)faultingState;
 - (void)finalize;
@@ -188,7 +179,7 @@
 - (BOOL)isInserted;
 - (BOOL)isUpdated;
 - (id)managedObjectContext;
-- (int (*)())methodForSelector:(SEL)arg1;
+- (int (*)methodForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)mutableArrayValueForKey:(id)arg1;
 - (id)mutableOrderedSetValueForKey:(id)arg1;
@@ -208,11 +199,9 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
-- (void)setValuesWithObject:(id)arg1;
 - (BOOL)validateForDelete:(id*)arg1;
 - (BOOL)validateForInsert:(id*)arg1;
 - (BOOL)validateForUpdate:(id*)arg1;
-- (BOOL)validateRequiredAttributesForObject:(id)arg1 error:(id*)arg2;
 - (BOOL)validateValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)valueForKey:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
@@ -225,5 +214,17 @@
 - (void)willRefresh:(BOOL)arg1;
 - (void)willSave;
 - (void)willTurnIntoFault;
+
+// Image: /System/Library/Frameworks/Accounts.framework/Accounts
+
+- (id)_obsoleteAttributes;
+- (id)_removeObsoleteKeysFromDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (void)setValuesWithObject:(id)arg1;
+- (BOOL)validateRequiredAttributesForObject:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
+
++ (BOOL)isTracked;
 
 @end

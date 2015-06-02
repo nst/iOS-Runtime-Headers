@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOExperimentServerProxy>, GEOABExperimentResponse, NSLock, NSMutableArray, NSString;
-
 @interface GEOExperimentConfiguration : NSObject <GEOExperimentServerProxyDelegate> {
     NSMutableArray *_experimentObservers;
     NSLock *_experimentObserversLock;
@@ -12,10 +10,10 @@
     <GEOExperimentServerProxy> *_serverProxy;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)setServerProxyClass:(Class)arg1;
 + (id)sharedConfiguration;
@@ -23,7 +21,7 @@
 - (id)_debug_configurationDate;
 - (id)_debug_customQuerySubstringForType:(int)arg1 dispatcherRequestType:(int)arg2;
 - (id)_debug_defaultQuerySubstringForType:(int)arg1 dispatcherRequestType:(int)arg2;
-- (void)_debug_forEachExperimentType:(id)arg1;
+- (void)_debug_forEachExperimentType:(id /* block */)arg1;
 - (void)_debug_forceUpdate;
 - (void)_debug_setCustomQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
 - (void)addExperimentObserver:(id)arg1 queue:(id)arg2;

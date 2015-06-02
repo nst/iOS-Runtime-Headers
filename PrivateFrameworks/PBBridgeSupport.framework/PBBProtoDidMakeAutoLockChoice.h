@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property BOOL accept;
-@property BOOL hasAccept;
+@property (nonatomic) BOOL accept;
+@property (nonatomic) BOOL hasAccept;
 
 - (BOOL)accept;
 - (void)copyTo:(id)arg1;

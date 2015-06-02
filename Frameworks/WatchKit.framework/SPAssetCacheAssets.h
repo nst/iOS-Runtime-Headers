@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSMutableArray;
-
 @interface SPAssetCacheAssets : NSObject {
     NSMutableArray *_assets;
 }
 
-@property(retain) NSMutableArray * assets;
+@property (nonatomic, retain) NSMutableArray *assets;
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;

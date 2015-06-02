@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSDictionary;
-
 @interface SCNKeyedUnarchiver : NSKeyedUnarchiver {
     NSDictionary *_context;
 }
 
-@property(retain) NSDictionary * context;
+@property (nonatomic, retain) NSDictionary *context;
 
 - (id)context;
 - (void)dealloc;

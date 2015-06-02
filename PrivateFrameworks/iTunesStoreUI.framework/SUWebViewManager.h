@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUWebViewManagerDelegate>, ISURLRequestPerformance, NSLock, NSMapTable, NSSet, NSString, SSAuthenticationContext, SUClientInterface, SUScriptWindowContext, UIWebView;
-
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate> {
     SSAuthenticationContext *_authenticationContext;
     SUClientInterface *_clientInterface;
@@ -23,19 +21,19 @@
     UIWebView *_webView;
 }
 
-@property(copy) SSAuthenticationContext * authenticationContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SUWebViewManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ISURLRequestPerformance * initialRequestPerformance;
-@property(retain) id originalFrameLoadDelegate;
-@property(retain) id originalPolicyDelegate;
-@property(retain) id originalResourceLoadDelegate;
-@property(retain) id originalUIDelegate;
-@property(retain) SUScriptWindowContext * scriptWindowContext;
-@property(readonly) Class superclass;
-@property(readonly) UIWebView * webView;
+@property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUWebViewManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ISURLRequestPerformance *initialRequestPerformance;
+@property (nonatomic, retain) id originalFrameLoadDelegate;
+@property (nonatomic, retain) id originalPolicyDelegate;
+@property (nonatomic, retain) id originalResourceLoadDelegate;
+@property (nonatomic, retain) id originalUIDelegate;
+@property (nonatomic, retain) SUScriptWindowContext *scriptWindowContext;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIWebView *webView;
 
 + (id)defaultLocalStoragePath;
 
@@ -44,7 +42,7 @@
 - (void)_cancelUsingNetwork;
 - (id)_delegate;
 - (void)_endUsingNetwork;
-- (void)_enumerateScriptInterfacesWithBlock:(id)arg1;
+- (void)_enumerateScriptInterfacesWithBlock:(id /* block */)arg1;
 - (id)_newAlertWithMessage:(id)arg1;
 - (id)_userIdentifier;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;

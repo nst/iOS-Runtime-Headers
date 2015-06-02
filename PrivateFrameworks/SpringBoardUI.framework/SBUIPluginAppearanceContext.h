@@ -7,8 +7,8 @@
     unsigned int _uiEnvironment;
 }
 
-@property BOOL hideOtherWindowsDuringAppearance;
-@property unsigned int uiEnvironment;
+@property (nonatomic) BOOL hideOtherWindowsDuringAppearance;
+@property (nonatomic) unsigned int uiEnvironment;
 
 - (BOOL)hideOtherWindowsDuringAppearance;
 - (void)setHideOtherWindowsDuringAppearance:(BOOL)arg1;

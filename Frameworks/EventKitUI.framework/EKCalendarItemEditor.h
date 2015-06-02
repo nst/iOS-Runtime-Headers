@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKCalendarItemEditorDelegate>, EKCalendarItem, EKCalendarItemEditItem, EKEventStore, EKUIRecurrenceAlertController, NSArray, NSMutableSet, NSString, UIBarButtonItem, UIResponder, _UIAccessDeniedView;
-
 @interface EKCalendarItemEditor : UITableViewController <EKCalendarItemEditItemDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     _UIAccessDeniedView *_accessDeniedView;
     EKCalendarItem *_calendarItem;
@@ -35,22 +33,22 @@
     unsigned int _visibleSectionToRestoreOnAppearence;
 }
 
-@property(retain) _UIAccessDeniedView * accessDeniedView;
-@property(retain) EKCalendarItem * calendarItem;
-@property BOOL canHideDoneAndCancelButtons;
-@property(readonly) EKCalendarItemEditItem * currentEditItem;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <EKCalendarItemEditorDelegate> * editorDelegate;
-@property(readonly) unsigned int hash;
-@property float navBarLeftContentInset;
-@property float navBarRightContentInset;
-@property(retain) UIResponder * responderToRestoreOnAppearence;
-@property BOOL scrollToNotes;
-@property BOOL showsTimeZone;
-@property(retain) EKEventStore * store;
-@property(readonly) Class superclass;
-@property unsigned int visibleSectionToRestoreOnAppearence;
+@property (nonatomic, retain) _UIAccessDeniedView *accessDeniedView;
+@property (nonatomic, retain) EKCalendarItem *calendarItem;
+@property (nonatomic) BOOL canHideDoneAndCancelButtons;
+@property (readonly) EKCalendarItemEditItem *currentEditItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <EKCalendarItemEditorDelegate> *editorDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float navBarLeftContentInset;
+@property (nonatomic) float navBarRightContentInset;
+@property (nonatomic, retain) UIResponder *responderToRestoreOnAppearence;
+@property (nonatomic) BOOL scrollToNotes;
+@property (nonatomic) BOOL showsTimeZone;
+@property (nonatomic, retain) EKEventStore *store;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int visibleSectionToRestoreOnAppearence;
 
 - (void).cxx_destruct;
 - (BOOL)_canDetachSingleOccurrence;
@@ -98,7 +96,7 @@
 - (void)deleteClicked:(id)arg1;
 - (void)done:(id)arg1;
 - (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
-- (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned int)arg2 actions:(id)arg3;
+- (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned int)arg2 actions:(id /* block */)arg3;
 - (void)editItem:(id)arg1 textViewShouldReturn:(id)arg2;
 - (void)editItem:(id)arg1 wantsDoneButtonDisabled:(BOOL)arg2;
 - (void)editItem:(id)arg1 wantsKeyboardPinned:(BOOL)arg2;

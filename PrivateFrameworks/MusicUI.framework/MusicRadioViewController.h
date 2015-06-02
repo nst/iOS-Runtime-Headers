@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicRadioViewController : RURadioViewController {
-}
+@interface MusicRadioViewController : RURadioViewController
 
 - (Class)_nowPlayingViewControllerClass;
 - (id)initWithDataSource:(id)arg1;

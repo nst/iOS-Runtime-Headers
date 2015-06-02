@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WPAWDLDelegate>, NSObject<OS_xpc_object>, NSString, XPCClient;
-
 @interface WPAWDL : NSObject <XPCClientDelegate> {
     XPCClient *_connection;
     <WPAWDLDelegate> *_delegate;
@@ -11,14 +9,14 @@
     int _state;
 }
 
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <WPAWDLDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_xpc_object> * server;
+@property (nonatomic, retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WPAWDLDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSObject<OS_xpc_object> *server;
 @property int state;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (id)generateDataFromEmails:(id)arg1;
 + (id)hashEmail:(id)arg1;

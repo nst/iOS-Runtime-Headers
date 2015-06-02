@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSArray, NSString;
-
 @interface RKClassification : NSObject {
     NSArray *_customResponses;
     unsigned int _gender;
@@ -13,12 +11,12 @@
     NSString *_taggedText;
 }
 
-@property(retain) NSArray * customResponses;
+@property (retain) NSArray *customResponses;
 @property unsigned int gender;
-@property(retain) NSString * language;
-@property(getter=isSensitive) int sensitive;
+@property (retain) NSString *language;
+@property (getter=isSensitive) int sensitive;
 @property unsigned int sentenceType;
-@property(retain) NSString * taggedText;
+@property (retain) NSString *taggedText;
 
 - (void).cxx_destruct;
 - (id)customResponses;

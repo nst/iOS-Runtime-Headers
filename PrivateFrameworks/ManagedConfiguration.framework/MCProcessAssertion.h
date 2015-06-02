@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCProcessAssertion : NSObject {
-}
+@interface MCProcessAssertion : NSObject
 
 + (id)assertion;
 + (id)executionQueue;

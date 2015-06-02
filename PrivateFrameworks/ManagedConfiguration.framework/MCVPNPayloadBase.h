@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class <NEProfilePayloadBaseDelegate>, NSMutableDictionary, NSString;
-
 @interface MCVPNPayloadBase : MCPayload {
     NSMutableDictionary *_configurationDictionary;
     <NEProfilePayloadBaseDelegate> *_nePayloadBase;
@@ -17,16 +15,16 @@
     NSString *_vpnType;
 }
 
-@property(retain) NSMutableDictionary * configurationDictionary;
-@property(retain) <NEProfilePayloadBaseDelegate> * nePayloadBase;
-@property(retain) NSString * passwordKey;
-@property(retain) NSString * pinKey;
-@property(retain) NSString * proxyPasswordKey;
-@property(retain) NSString * proxyUserNameKey;
-@property(copy) NSString * serviceName;
-@property(retain) NSString * sharedSecretKey;
-@property(retain) NSString * userNameKey;
-@property(copy) NSString * vpnType;
+@property (nonatomic, retain) NSMutableDictionary *configurationDictionary;
+@property (nonatomic, retain) <NEProfilePayloadBaseDelegate> *nePayloadBase;
+@property (nonatomic, retain) NSString *passwordKey;
+@property (nonatomic, retain) NSString *pinKey;
+@property (nonatomic, retain) NSString *proxyPasswordKey;
+@property (nonatomic, retain) NSString *proxyUserNameKey;
+@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, retain) NSString *sharedSecretKey;
+@property (nonatomic, retain) NSString *userNameKey;
+@property (nonatomic, copy) NSString *vpnType;
 
 + (id)NEAlwaysOnVPNPayloadBaseDelegateWithConfigurationDict:(id)arg1;
 + (id)NEVPNPayloadBaseDelegateWithConfigurationDict:(id)arg1;

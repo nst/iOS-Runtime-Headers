@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
-
 @interface PSRegion : NSObject {
     NSString *_regionCode;
     NSString *_regionName;
 }
 
-@property(retain) NSString * regionCode;
-@property(retain) NSString * regionName;
+@property (nonatomic, retain) NSString *regionCode;
+@property (nonatomic, retain) NSString *regionName;
 
 + (id)regionWithName:(id)arg1 code:(id)arg2;
 

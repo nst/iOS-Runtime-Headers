@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSPort;
-
 @interface PLMomentAnalyzerWorkThread : NSThread {
     NSPort *_dummyPort;
 }

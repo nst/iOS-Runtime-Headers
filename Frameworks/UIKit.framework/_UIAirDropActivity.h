@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class SFAirDropActivityViewController;
-
 @interface _UIAirDropActivity : UIActivity {
     SFAirDropActivityViewController *_airDropViewController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _airdropCompletion;
-
+    id /* block */ _airdropCompletion;
 }
 
-@property(retain) SFAirDropActivityViewController * airDropViewController;
-@property(copy) id airdropCompletion;
+@property (nonatomic, retain) SFAirDropActivityViewController *airDropViewController;
+@property (nonatomic, copy) id /* block */ airdropCompletion;
 
 - (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (id)activityType;
 - (id)airDropViewController;
-- (id)airdropCompletion;
+- (id /* block */)airdropCompletion;
 - (void)dealloc;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setAirDropViewController:(id)arg1;
-- (void)setAirdropCompletion:(id)arg1;
+- (void)setAirdropCompletion:(id /* block */)arg1;
 
 @end

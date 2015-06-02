@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber;
-
 @interface AACloudKitStartMigrationResponse : AAResponse {
     NSNumber *_status;
 }
 
-@property(readonly) NSNumber * status;
+@property (nonatomic, readonly) NSNumber *status;
 
 - (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

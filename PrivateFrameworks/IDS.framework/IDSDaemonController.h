@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSDaemonListener, IMLocalObject, IMRemoteObject<IDSDaemonProtocol>, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSProtocolChecker, NSSet, NSString;
-
 @interface IDSDaemonController : NSObject <IDSDaemonProtocol> {
     BOOL _acquiringDaemonConnection;
     BOOL _autoReconnect;
@@ -33,17 +31,17 @@
     NSSet *_services;
 }
 
-@property(setter=_setAutoReconnect:) BOOL _autoReconnect;
-@property(readonly) NSObject<OS_dispatch_queue> * _remoteMessageQueue;
-@property int curXPCMessagePriority;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isConnecting;
-@property(readonly) IDSDaemonListener * listener;
-@property(readonly) NSString * listenerID;
-@property(readonly) Class superclass;
+@property (setter=_setAutoReconnect:) BOOL _autoReconnect;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_remoteMessageQueue;
+@property (nonatomic) int curXPCMessagePriority;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isConnecting;
+@property (nonatomic, readonly) IDSDaemonListener *listener;
+@property (nonatomic, readonly) NSString *listenerID;
+@property (readonly) Class superclass;
 
 + (BOOL)_applicationWillTerminate;
 + (void)_blockUntilSendQueueIsEmpty;
@@ -58,11 +56,11 @@
 - (void)_handleDaemonException:(id)arg1;
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
-- (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id)arg2;
+- (BOOL)_makeConnectionWithLaunch:(BOOL)arg1 completionBlock:(id /* block */)arg2;
 - (void)_noteDisconnected;
 - (void)_noteSetupComplete;
-- (void)_performBlock:(id)arg1;
-- (void)_performBlock:(id)arg1 wait:(BOOL)arg2;
+- (void)_performBlock:(id /* block */)arg1;
+- (void)_performBlock:(id /* block */)arg1 wait:(BOOL)arg2;
 - (id)_remoteMessageQueue;
 - (void)_remoteObjectCleanup;
 - (void)_setAutoReconnect:(BOOL)arg1;

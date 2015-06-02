@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPPulseData, CKDPShareIdentifier, NSData, NSString;
-
 @interface CKDPPulseRequest : PBRequest <NSCopying> {
     int _apnsEnv;
     NSString *_etag;
@@ -19,20 +17,20 @@
     CKDPShareIdentifier *_shareId;
 }
 
-@property int apnsEnv;
-@property(retain) NSString * etag;
-@property BOOL hasApnsEnv;
-@property(readonly) BOOL hasEtag;
-@property BOOL hasLookbackWindowMillis;
-@property(readonly) BOOL hasPulseData;
-@property(readonly) BOOL hasPushToken;
-@property BOOL hasReset;
-@property(readonly) BOOL hasShareId;
-@property long long lookbackWindowMillis;
-@property(retain) CKDPPulseData * pulseData;
-@property(retain) NSData * pushToken;
-@property BOOL reset;
-@property(retain) CKDPShareIdentifier * shareId;
+@property (nonatomic) int apnsEnv;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic) BOOL hasApnsEnv;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic) BOOL hasLookbackWindowMillis;
+@property (nonatomic, readonly) BOOL hasPulseData;
+@property (nonatomic, readonly) BOOL hasPushToken;
+@property (nonatomic) BOOL hasReset;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic) long long lookbackWindowMillis;
+@property (nonatomic, retain) CKDPPulseData *pulseData;
+@property (nonatomic, retain) NSData *pushToken;
+@property (nonatomic) BOOL reset;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 + (id)options;
 

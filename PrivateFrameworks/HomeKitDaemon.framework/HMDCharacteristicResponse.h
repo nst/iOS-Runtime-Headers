@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDCharacteristicRequest, NSError;
-
 @interface HMDCharacteristicResponse : NSObject {
     NSError *_error;
     HMDCharacteristicRequest *_request;
     id _value;
 }
 
-@property(readonly) NSError * error;
-@property(readonly) HMDCharacteristicRequest * request;
-@property(readonly) id value;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) HMDCharacteristicRequest *request;
+@property (nonatomic, readonly) id value;
 
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
 

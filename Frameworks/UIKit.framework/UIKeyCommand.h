@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexSet, NSString, UIEvent, UIViewController;
-
 @interface UIKeyCommand : NSObject <NSCopying, NSSecureCoding> {
     SEL _action;
     int _buttonType;
@@ -15,8 +13,8 @@
     UIEvent *_triggeringEvent;
 }
 
-@property(readonly) NSString * input;
-@property(readonly) int modifierFlags;
+@property (nonatomic, readonly) NSString *input;
+@property (nonatomic, readonly) int modifierFlags;
 
 + (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 action:(SEL)arg3;
 + (id)keyCommandWithInput:(id)arg1 modifierFlags:(int)arg2 buttonType:(int)arg3;

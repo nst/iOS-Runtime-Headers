@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPickerTableViewController : UITableViewController {
-}
+@interface ABPickerTableViewController : UITableViewController
 
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 

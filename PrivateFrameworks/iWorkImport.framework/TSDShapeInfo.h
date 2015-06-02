@@ -2,38 +2,31 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<TSDContainerInfo>, NSString, TSDFill, TSDInfoGeometry, TSDLineEnd, TSDPathSource, TSDShapeStyle, TSPObject<TSDOwningAttachment>;
-
 @interface TSDShapeInfo : TSDStyledInfo <TSDInfoWithPathSource, TSDMixing, TSDReducableInfo, TSKSearchable> {
     TSDPathSource *mPathSource;
     TSDShapeStyle *mStyle;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) TSDFill * fill;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(copy) TSDLineEnd * headLineEnd;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property(retain) TSDPathSource * pathSource;
-@property(readonly) TSDShapeStyle * shapeStyle;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsShrinkTextToFit;
-@property(readonly) BOOL supportsTextInset;
-@property(copy) TSDLineEnd * tailLineEnd;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) TSDFill *fill;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) TSDLineEnd *headLineEnd;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, retain) TSDPathSource *pathSource;
+@property (nonatomic, readonly) TSDShapeStyle *shapeStyle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsShrinkTextToFit;
+@property (nonatomic, readonly) BOOL supportsTextInset;
+@property (nonatomic, copy) TSDLineEnd *tailLineEnd;
 
 - (id)animationFilters;
 - (id)copyWithContext:(id)arg1;

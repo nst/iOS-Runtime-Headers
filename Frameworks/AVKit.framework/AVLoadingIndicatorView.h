@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface AVLoadingIndicatorView : UIView {
     UIActivityIndicatorView *_activityIndicatorView;
     UILabel *_label;

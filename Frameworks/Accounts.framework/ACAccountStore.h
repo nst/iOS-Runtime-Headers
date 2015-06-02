@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class ACRemoteAccountStoreSession, NSArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ACAccountStore : NSObject {
     NSString *_clientBundleID;
     id _daemonAccountStoreDidChangeObserver;
@@ -11,63 +9,36 @@
     NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
-@property(readonly) NSArray * accounts;
-@property(readonly) NSString * effectiveBundleID;
-@property(retain) ACRemoteAccountStoreSession * remoteAccountStoreSession;
+@property (nonatomic, readonly) NSArray *accounts;
+@property (readonly) NSString *effectiveBundleID;
+@property (nonatomic, retain) ACRemoteAccountStoreSession *remoteAccountStoreSession;
+
+// Image: /System/Library/Frameworks/Accounts.framework/Accounts
 
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
 + (BOOL)canSaveAccountsOfAccountTypeIdentifier:(id)arg1;
 + (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3 withCompletion:(id)arg4;
-- (id)_mailAccountTypeIdentifiers;
-- (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id)arg2;
-- (id)_primaryiCloudAccount;
-- (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id)arg4;
-- (id)aa_accountsEnabledForDataclass:(id)arg1;
-- (id)aa_appleAccountType;
-- (id)aa_appleAccountWithPersonID:(id)arg1;
-- (id)aa_appleAccountWithUsername:(id)arg1;
-- (id)aa_appleAccounts;
-- (id)aa_grandSlamAccountWithUsername:(id)arg1;
-- (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id)arg3;
-- (id)aa_primaryAppleAccount;
-- (id)aa_primaryAppleAccountWithPreloadedDataclasses;
-- (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
-- (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id)arg2;
-- (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id)arg2;
-- (void)aa_registerAppleAccountWithHSA:(id)arg1 usingCookieHeaders:(id)arg2 completion:(id)arg3;
-- (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id)arg2;
-- (id)aaui_accountDescriptionFromEmailAddress:(id)arg1;
+- (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id /* block */)arg4;
 - (id)accessKeysForAccountType:(id)arg1;
 - (id)accountIdentifiersEnabledForDataclass:(id)arg1;
-- (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id)arg3;
+- (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id /* block */)arg3;
 - (id)accountIdentifiersEnabledToSyncDataclass:(id)arg1;
 - (id)accountTypeWithAccountTypeIdentifier:(id)arg1;
-- (void)accountTypeWithIdentifier:(id)arg1 completion:(id)arg2;
-- (id)accountWithAppleID:(id)arg1;
+- (void)accountTypeWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)accountWithIdentifier:(id)arg1;
-- (void)accountWithIdentifier:(id)arg1 completion:(id)arg2;
+- (void)accountWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)accounts;
 - (id)accountsWithAccountType:(id)arg1;
-- (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
-- (void)accountsWithAccountType:(id)arg1 completion:(id)arg2;
-- (void)accountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
-- (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id)arg3;
+- (void)accountsWithAccountType:(id)arg1 completion:(id /* block */)arg2;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)addClientToken:(id)arg1 forAccount:(id)arg2;
-- (id)aida_AppleIDAuthenticationAccountType;
-- (id)aida_AppleIDAuthenticationAccounts;
-- (id)aida_accountForPrimaryiCloudAccount;
-- (id)aida_accountForiCloudAccount:(id)arg1;
-- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id)arg3;
-- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 force:(BOOL)arg3 completion:(id)arg4;
 - (id)allAccountTypes;
 - (id)allDataclasses;
 - (id)appPermissionsForAccountType:(id)arg1;
-- (id)br_appleAccountWithPersonID:(id)arg1;
-- (id)br_primaryAppleAccount;
-- (void)canSaveAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)canSaveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)childAccountsForAccount:(id)arg1;
 - (id)childAccountsForAccount:(id)arg1 withTypeIdentifier:(id)arg2;
 - (void)clearAllPermissionsGrantedForAccountType:(id)arg1;
@@ -78,14 +49,6 @@
 - (id)credentialForAccount:(id)arg1 bundleID:(id)arg2;
 - (id)credentialForAccount:(id)arg1 error:(id*)arg2;
 - (id)credentialForAccount:(id)arg1 serviceID:(id)arg2;
-- (id)da_accounts;
-- (id)da_accountsEnabledForDADataclasses:(int)arg1;
-- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
-- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
-- (void)da_loadDAAccountsEnabledForDADataclasses:(int)arg1 withCompletion:(id)arg2;
-- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 withCompletion:(id)arg3;
-- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 withCompletion:(id)arg2;
-- (void)da_loadDAAccountsWithCompletion:(id)arg1;
 - (id)dataclassActionsForAccountDeletion:(id)arg1;
 - (id)dataclassActionsForAccountSave:(id)arg1;
 - (void)dealloc;
@@ -96,58 +59,116 @@
 - (id)grantedPermissionsForAccountType:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (BOOL)hasAccountWithDescription:(id)arg1;
-- (BOOL)hasMailAccountsForSync;
 - (id)init;
 - (id)initWithEffectiveBundleID:(id)arg1;
 - (id)initWithRemoteEndpoint:(id)arg1;
 - (id)initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
-- (void)insertAccountType:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)insertAccountType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)isPerformingDataclassActionsForAccount:(id)arg1;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
 - (BOOL)isTetheredSyncingEnabledForDataclass:(id)arg1;
-- (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id)arg2;
-- (id)mailAccountsForSync;
+- (void)kerberosAccountsForDomainFromURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)notifyRemoteDevicesOfModifiedAccount:(id)arg1;
 - (void)notifyRemoteDevicesOfNewAccount:(id)arg1;
-- (void)notifyRemoteDevicesOfNewAccount:(id)arg1 withCompletion:(id)arg2;
-- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id)arg4;
-- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(id)arg5;
+- (void)notifyRemoteDevicesOfNewAccount:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)parentAccountForAccount:(id)arg1;
 - (BOOL)permissionForAccountType:(id)arg1;
 - (id)provisionedDataclassesForAccount:(id)arg1;
 - (id)remoteAccountStoreSession;
-- (void)removeAccount:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
-- (void)removeAccountType:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)removeAccountsFromPairedDeviceWithCompletion:(id)arg1;
-- (void)renewCredentialsForAccount:(id)arg1 completion:(id)arg2;
-- (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id)arg4;
-- (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
-- (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id)arg3;
-- (void)renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id)arg3;
-- (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id)arg3;
-- (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id)arg3;
-- (void)saveAccount:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id)arg3;
-- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(BOOL)arg3 completion:(id)arg4;
-- (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)removeAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id /* block */)arg3;
+- (void)removeAccountType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)removeAccountsFromPairedDeviceWithCompletion:(id /* block */)arg1;
+- (void)renewCredentialsForAccount:(id)arg1 completion:(id /* block */)arg2;
+- (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id /* block */)arg4;
+- (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
+- (void)renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id /* block */)arg3;
+- (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)saveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id /* block */)arg3;
+- (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (void)setRemoteAccountStoreSession:(id)arg1;
-- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id)arg3;
-- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 delegateClassName:(id)arg3 completion:(id)arg4;
-- (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id)arg2;
-- (void)sl_openYouTubeAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id)arg2;
-- (void)sl_openYouTubeAuthenticationSheetWithUsername:(id)arg1 accountDescription:(id)arg2 completion:(id)arg3;
 - (id)supportedDataclassesForAccountType:(id)arg1;
 - (id)syncableDataclassesForAccountType:(id)arg1;
 - (id)tetheredSyncSourceTypeForDataclass:(id)arg1;
 - (id)typeIdentifierForDomain:(id)arg1;
 - (int)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1;
-- (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id)arg3;
-- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id)arg3;
-- (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id)arg2;
-- (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id)arg2;
+- (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(BOOL)arg2 withHandler:(id /* block */)arg3;
+- (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 delegateClassName:(id)arg3 completion:(id /* block */)arg4;
+- (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithUsername:(id)arg1 accountDescription:(id)arg2 completion:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id /* block */)arg2;
+- (id)aa_accountsEnabledForDataclass:(id)arg1;
+- (id)aa_appleAccountType;
+- (id)aa_appleAccountWithPersonID:(id)arg1;
+- (id)aa_appleAccountWithUsername:(id)arg1;
+- (id)aa_appleAccounts;
+- (id)aa_grandSlamAccountWithUsername:(id)arg1;
+- (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id /* block */)arg3;
+- (id)aa_primaryAppleAccount;
+- (id)aa_primaryAppleAccountWithPreloadedDataclasses;
+- (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
+- (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 completion:(id /* block */)arg2;
+- (void)aa_registerAppleAccountWithHSA:(id)arg1 usingCookieHeaders:(id)arg2 completion:(id /* block */)arg3;
+- (void)aa_updatePropertiesForAppleAccount:(id)arg1 completion:(id /* block */)arg2;
+- (id)accountWithAppleID:(id)arg1;
+- (id)accountsWithAccountType:(id)arg1 appleID:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
+
+- (id)aaui_accountDescriptionFromEmailAddress:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/AppleIDSSOAuthentication
+
+- (id)_primaryiCloudAccount;
+- (id)aida_AppleIDAuthenticationAccountType;
+- (id)aida_AppleIDAuthenticationAccounts;
+- (id)aida_accountForPrimaryiCloudAccount;
+- (id)aida_accountForiCloudAccount:(id)arg1;
+- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id /* block */)arg3;
+- (void)aida_renewCredentialsForAccount:(id)arg1 services:(id)arg2 force:(BOOL)arg3 completion:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
+- (id)br_appleAccountWithPersonID:(id)arg1;
+- (id)br_primaryAppleAccount;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
+- (void)_daAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 filterOnDataclasses:(BOOL)arg3 withCompletion:(id /* block */)arg4;
+- (id)da_accounts;
+- (id)da_accountsEnabledForDADataclasses:(int)arg1;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1;
+- (id)da_accountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2;
+- (void)da_loadDAAccountsEnabledForDADataclasses:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 enabledForDADataclasses:(int)arg2 withCompletion:(id /* block */)arg3;
+- (void)da_loadDAAccountsWithAccountTypeIdentifiers:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)da_loadDAAccountsWithCompletion:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MobileSync.framework/MobileSync
+
+- (id)_mailAccountTypeIdentifiers;
+- (BOOL)hasMailAccountsForSync;
+- (id)mailAccountsForSync;
 
 @end

@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASTTemplatePercentageRating;
+@interface SASTMovieStatItem : AceObject <SASTTemplateItem>
 
-@interface SASTMovieStatItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy) NSString * contentRating;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SASTTemplatePercentageRating * reviewerRating;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *contentRating;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SASTTemplatePercentageRating *reviewerRating;
+@property (readonly) Class superclass;
 
 + (id)movieStatItem;
 + (id)movieStatItemWithDictionary:(id)arg1 context:(id)arg2;

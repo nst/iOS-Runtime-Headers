@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAVAudioSettingsAudioOutputSettings : AVAudioOutputSettings <AVDecodedAudioSettingsForFig, AVReencodedAudioSettingsForFig> {
-}
+@interface AVAVAudioSettingsAudioOutputSettings : AVAudioOutputSettings <AVDecodedAudioSettingsForFig, AVReencodedAudioSettingsForFig>
 
 + (id)_audioOutputSettingsWithAudioSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;

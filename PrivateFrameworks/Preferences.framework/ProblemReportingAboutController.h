@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface ProblemReportingAboutController : UIViewController {
-}
+@interface ProblemReportingAboutController : UIViewController
 
 - (void)donePressed;
 - (id)initWithTitle:(id)arg1 content:(id)arg2;

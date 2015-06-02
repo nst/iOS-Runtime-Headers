@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIViewControllerKeyboardAnimationStyleInfo, _UIViewControllerTransitionContext;
-
 @interface _UIViewControllerKeyboardAnimationStyle : UIInputViewAnimationStyleDirectional {
     BOOL _allowCustomTransition;
     _UIViewControllerTransitionContext *_context;
@@ -11,10 +9,10 @@
     _UIViewControllerKeyboardAnimationStyleInfo *_info;
 }
 
-@property BOOL allowCustomTransition;
-@property(readonly) _UIViewControllerTransitionContext * context;
-@property BOOL disableAlongsideView;
-@property(readonly) _UIViewControllerKeyboardAnimationStyleInfo * info;
+@property (nonatomic) BOOL allowCustomTransition;
+@property (nonatomic, readonly) _UIViewControllerTransitionContext *context;
+@property (nonatomic) BOOL disableAlongsideView;
+@property (nonatomic, readonly) _UIViewControllerKeyboardAnimationStyleInfo *info;
 
 + (id)animationStyleWithContext:(id)arg1;
 + (id)animationStyleWithContext:(id)arg1 useCustomTransition:(BOOL)arg2;
@@ -30,7 +28,7 @@
 - (id)initWithContext:(id)arg1;
 - (BOOL)isAnimationCompleted;
 - (BOOL)isEqual:(id)arg1;
-- (void)launchAnimation:(id)arg1 afterStarted:(id)arg2 completion:(id)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
+- (void)launchAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 completion:(id /* block */)arg3 forHost:(id)arg4 fromCurrentPosition:(BOOL)arg5;
 - (void)setAllowCustomTransition:(BOOL)arg1;
 - (void)setDisableAlongsideView:(BOOL)arg1;
 

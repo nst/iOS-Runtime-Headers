@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapSnapshotRequest, NSLock, NSMutableArray, NSString, UIImage;
-
 @interface MKMapSnapshotCreator : NSObject <MKMapViewDelegate> {
     NSString *_lastAttributionString;
     UIImage *_lastSnapshot;
@@ -12,11 +10,11 @@
     MKMapSnapshotRequest *_servingRequest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapSnapshotRequest * servingRequest;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapSnapshotRequest *servingRequest;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsHighResolutionSnapshots;
 + (BOOL)supportsSharingThumbnails;
@@ -25,7 +23,7 @@
 - (id)_newSnapshotWithView:(id)arg1;
 - (void)_processRequest;
 - (void)_respondWithSnapshot;
-- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id)arg4;
+- (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 handler:(id /* block */)arg4;
 - (void)createSnapShotWithCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(unsigned int)arg2 size:(struct CGSize { float x1; float x2; })arg3 requester:(id)arg4 context:(id)arg5;
 - (void)dealloc;
 - (void)flushRequestQueue;

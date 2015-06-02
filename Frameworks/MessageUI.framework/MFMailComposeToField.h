@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMailComposeToFieldDelegate>, MFComposeSMIMELockButton;
-
 @interface MFMailComposeToField : MFMailComposeRecipientView {
     MFComposeSMIMELockButton *_smimeButton;
     BOOL _smimeButtonVisible;
     <MFMailComposeToFieldDelegate> *_toFieldDelegate;
 }
 
-@property(readonly) MFComposeSMIMELockButton * SMIMEButton;
-@property BOOL smimeButtonVisible;
-@property <MFMailComposeToFieldDelegate> * toFieldDelegate;
+@property (nonatomic, readonly) MFComposeSMIMELockButton *SMIMEButton;
+@property (nonatomic) BOOL smimeButtonVisible;
+@property (nonatomic) <MFMailComposeToFieldDelegate> *toFieldDelegate;
 
 - (id)SMIMEButton;
 - (void)_setSMIMEButtonVisible:(BOOL)arg1 animated:(BOOL)arg2;

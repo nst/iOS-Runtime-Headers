@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSTimer, UIScrollView;
-
 @interface ABAdjusterRecord : NSObject {
     float _adjustment;
     NSTimer *_delayedScrollTimer;
@@ -11,10 +9,10 @@
     UIScrollView *_scrollView;
 }
 
-@property float adjustment;
-@property(retain) NSTimer * delayedScrollTimer;
-@property BOOL manuallyAdjusted;
-@property(retain) UIScrollView * scrollView;
+@property (nonatomic) float adjustment;
+@property (nonatomic, retain) NSTimer *delayedScrollTimer;
+@property (nonatomic) BOOL manuallyAdjusted;
+@property (nonatomic, retain) UIScrollView *scrollView;
 
 + (id)recordWithScrollView:(id)arg1;
 

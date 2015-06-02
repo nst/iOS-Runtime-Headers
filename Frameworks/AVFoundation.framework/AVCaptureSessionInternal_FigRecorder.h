@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureFigAudioDevice_FigRecorder, AVCaptureFigVideoDevice_FigRecorder, AVCaptureVideoPreviewLayer_FigRecorder, AVRunLoopCondition, AVWeakReference, NSError, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface AVCaptureSessionInternal_FigRecorder : NSObject {
     BOOL adjustingDeviceActiveFormat;
     AVCaptureFigAudioDevice_FigRecorder *audioDevice;

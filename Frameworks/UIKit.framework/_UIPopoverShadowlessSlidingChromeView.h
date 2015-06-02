@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIPopoverShadowlessSlidingChromeView : _UIPopoverSlidingChromeView {
-}
+@interface _UIPopoverShadowlessSlidingChromeView : _UIPopoverSlidingChromeView
 
 + (float)cornerRadius;
 

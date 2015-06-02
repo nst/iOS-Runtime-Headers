@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAFilter, UIImage, UIImageView, _UILegibilitySettings;
-
 @interface _UILegibilityView : UIView {
     BOOL _hidesImage;
     UIImage *_image;
@@ -17,18 +15,18 @@
     float _strength;
 }
 
-@property BOOL hidesImage;
-@property(retain) UIImage * image;
-@property(retain) CAFilter * imageColorFilter;
-@property(retain) UIImageView * imageView;
-@property int options;
-@property(retain) _UILegibilitySettings * settings;
-@property(retain) UIImage * shadowImage;
-@property(retain) CAFilter * shadowImageColorFilter;
-@property(retain) UIImageView * shadowImageView;
-@property float strength;
-@property(readonly) int style;
-@property(readonly) BOOL usesColorFilters;
+@property (nonatomic) BOOL hidesImage;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) CAFilter *imageColorFilter;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) int options;
+@property (nonatomic, retain) _UILegibilitySettings *settings;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (nonatomic, retain) CAFilter *shadowImageColorFilter;
+@property (nonatomic, retain) UIImageView *shadowImageView;
+@property (nonatomic) float strength;
+@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) BOOL usesColorFilters;
 
 - (void)dealloc;
 - (id)drawingColor;

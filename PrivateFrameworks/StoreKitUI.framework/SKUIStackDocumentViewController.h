@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMapTable, NSString, SKUIIndexBarControlController, SKUIResourceLoader, SKUIStackTemplateElement, SKUIStorePageSectionsViewController;
-
 @interface SKUIStackDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate, SKUIIndexBarEntryListControllerDelegate, SKUIModalSourceViewProvider, SKUIViewControllerTesting> {
     NSArray *_entryListControllers;
     SKUIIndexBarControlController *_indexBarControlController;
@@ -14,10 +12,10 @@
     NSMapTable *_viewElementToEntryListController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -39,7 +37,7 @@
 - (void)_updateIndexBarVisibility;
 - (void)dealloc;
 - (void)documentDidUpdate:(id)arg1;
-- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
+- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)impressionableViewElements;
 - (void)indexBarControlController:(id)arg1 didSelectEntryDescriptorAtIndexPath:(id)arg2;
 - (id)indexBarControlController:(id)arg1 entryDescriptorAtIndexPath:(id)arg2;

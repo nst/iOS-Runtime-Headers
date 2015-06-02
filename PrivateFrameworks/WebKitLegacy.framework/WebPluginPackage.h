@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSBundle;
-
 @interface WebPluginPackage : WebBasePluginPackage {
     NSBundle *nsBundle;
 }

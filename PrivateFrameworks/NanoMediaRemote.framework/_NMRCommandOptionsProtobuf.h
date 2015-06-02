@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData, NSString;
-
 @interface _NMRCommandOptionsProtobuf : PBCodable <NSCopying> {
     NSString *_destinationAppDisplayID;
     BOOL _externalPlayerCommand;
@@ -38,40 +36,40 @@
     unsigned long long _trackID;
 }
 
-@property(retain) NSString * destinationAppDisplayID;
-@property BOOL externalPlayerCommand;
-@property(readonly) BOOL hasDestinationAppDisplayID;
-@property BOOL hasExternalPlayerCommand;
-@property(readonly) BOOL hasMediaType;
-@property BOOL hasNegative;
-@property BOOL hasPlaybackPosition;
-@property BOOL hasPlaybackRate;
-@property(readonly) BOOL hasRadioStationHash;
-@property BOOL hasRadioStationID;
-@property BOOL hasRating;
-@property BOOL hasRepeatMode;
-@property BOOL hasRequestDefermentToPlaybackQueuePosition;
-@property BOOL hasSendOptions;
-@property BOOL hasShuffleMode;
-@property BOOL hasSkipInterval;
-@property(readonly) BOOL hasSourceID;
-@property(readonly) BOOL hasSystemAppPlaybackQueueData;
-@property BOOL hasTrackID;
-@property(retain) NSString * mediaType;
-@property BOOL negative;
-@property double playbackPosition;
-@property float playbackRate;
-@property(retain) NSString * radioStationHash;
-@property long long radioStationID;
-@property float rating;
-@property int repeatMode;
-@property BOOL requestDefermentToPlaybackQueuePosition;
-@property unsigned int sendOptions;
-@property int shuffleMode;
-@property float skipInterval;
-@property(retain) NSString * sourceID;
-@property(retain) NSData * systemAppPlaybackQueueData;
-@property unsigned long long trackID;
+@property (nonatomic, retain) NSString *destinationAppDisplayID;
+@property (nonatomic) BOOL externalPlayerCommand;
+@property (nonatomic, readonly) BOOL hasDestinationAppDisplayID;
+@property (nonatomic) BOOL hasExternalPlayerCommand;
+@property (nonatomic, readonly) BOOL hasMediaType;
+@property (nonatomic) BOOL hasNegative;
+@property (nonatomic) BOOL hasPlaybackPosition;
+@property (nonatomic) BOOL hasPlaybackRate;
+@property (nonatomic, readonly) BOOL hasRadioStationHash;
+@property (nonatomic) BOOL hasRadioStationID;
+@property (nonatomic) BOOL hasRating;
+@property (nonatomic) BOOL hasRepeatMode;
+@property (nonatomic) BOOL hasRequestDefermentToPlaybackQueuePosition;
+@property (nonatomic) BOOL hasSendOptions;
+@property (nonatomic) BOOL hasShuffleMode;
+@property (nonatomic) BOOL hasSkipInterval;
+@property (nonatomic, readonly) BOOL hasSourceID;
+@property (nonatomic, readonly) BOOL hasSystemAppPlaybackQueueData;
+@property (nonatomic) BOOL hasTrackID;
+@property (nonatomic, retain) NSString *mediaType;
+@property (nonatomic) BOOL negative;
+@property (nonatomic) double playbackPosition;
+@property (nonatomic) float playbackRate;
+@property (nonatomic, retain) NSString *radioStationHash;
+@property (nonatomic) long long radioStationID;
+@property (nonatomic) float rating;
+@property (nonatomic) int repeatMode;
+@property (nonatomic) BOOL requestDefermentToPlaybackQueuePosition;
+@property (nonatomic) unsigned int sendOptions;
+@property (nonatomic) int shuffleMode;
+@property (nonatomic) float skipInterval;
+@property (nonatomic, retain) NSString *sourceID;
+@property (nonatomic, retain) NSData *systemAppPlaybackQueueData;
+@property (nonatomic) unsigned long long trackID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

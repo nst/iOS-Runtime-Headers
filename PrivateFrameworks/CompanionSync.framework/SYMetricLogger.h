@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class AWDServerConnection;
-
 @interface SYMetricLogger : NSObject {
     AWDServerConnection *_connection;
 }

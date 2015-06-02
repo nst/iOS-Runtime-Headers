@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSArray, NSString;
-
 @interface HDSQLiteCompoundPredicate : HDSQLitePredicate <NSCopying> {
     NSString *_combinationOperation;
     NSArray *_predicates;
@@ -11,7 +9,7 @@
     BOOL _unary;
 }
 
-@property(readonly) NSArray * predicates;
+@property (nonatomic, readonly) NSArray *predicates;
 
 + (id)negatedPredicate:(id)arg1;
 + (id)predicateMatchingAllPredicates:(id)arg1;

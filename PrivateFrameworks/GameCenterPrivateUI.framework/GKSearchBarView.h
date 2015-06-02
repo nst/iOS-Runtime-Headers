@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <UISearchBarDelegate>, GKSearchBar, NSArray, NSNumber, NSString;
-
 @interface GKSearchBarView : UICollectionReusableView <UISearchBarDelegate> {
     <UISearchBarDelegate> *_delegate;
     float _leadingMargin;
@@ -13,16 +11,16 @@
     NSNumber *_usePadConstraints;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <UISearchBarDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float leadingMargin;
-@property(retain) GKSearchBar * searchBar;
-@property(retain) NSArray * searchBarConstraints;
-@property(readonly) Class superclass;
-@property float trailingMargin;
-@property NSNumber * usePadConstraints;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UISearchBarDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float leadingMargin;
+@property (nonatomic, retain) GKSearchBar *searchBar;
+@property (nonatomic, retain) NSArray *searchBarConstraints;
+@property (readonly) Class superclass;
+@property (nonatomic) float trailingMargin;
+@property (nonatomic) NSNumber *usePadConstraints;
 
 + (float)defaultHeight;
 + (void)initialize;

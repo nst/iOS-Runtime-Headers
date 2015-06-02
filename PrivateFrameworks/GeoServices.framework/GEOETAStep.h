@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOTimeCheckpoints;
-
 @interface GEOETAStep : PBCodable <NSCopying> {
     unsigned int _distanceRemaining;
     unsigned int _expectedTime;
@@ -18,16 +16,16 @@
     int _zilchPointIndex;
 }
 
-@property unsigned int distanceRemaining;
-@property unsigned int expectedTime;
-@property BOOL hasDistanceRemaining;
-@property BOOL hasExpectedTime;
-@property BOOL hasStepID;
-@property(readonly) BOOL hasTimeCheckpoints;
-@property BOOL hasZilchPointIndex;
-@property unsigned int stepID;
-@property(retain) GEOTimeCheckpoints * timeCheckpoints;
-@property int zilchPointIndex;
+@property (nonatomic) unsigned int distanceRemaining;
+@property (nonatomic) unsigned int expectedTime;
+@property (nonatomic) BOOL hasDistanceRemaining;
+@property (nonatomic) BOOL hasExpectedTime;
+@property (nonatomic) BOOL hasStepID;
+@property (nonatomic, readonly) BOOL hasTimeCheckpoints;
+@property (nonatomic) BOOL hasZilchPointIndex;
+@property (nonatomic) unsigned int stepID;
+@property (nonatomic, retain) GEOTimeCheckpoints *timeCheckpoints;
+@property (nonatomic) int zilchPointIndex;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

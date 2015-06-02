@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSSQLiteDatabase;
-
 @interface SSMetricsEventTable : NSObject {
     SSSQLiteDatabase *_database;
 }
@@ -14,6 +12,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;
-- (void)performTransactionWithBlock:(id)arg1;
+- (void)performTransactionWithBlock:(id /* block */)arg1;
 
 @end

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKBackgroundTileImageView : UIImageView {
-}
+@interface GKBackgroundTileImageView : UIImageView
 
 @end

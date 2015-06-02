@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteEntry, PBUnknownFields;
-
 @interface GEOStorageCompletion : PBCodable <NSCopying> {
     GEOPDAutocompleteEntry *_autocompleteEntry;
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) GEOPDAutocompleteEntry * autocompleteEntry;
-@property(readonly) BOOL hasAutocompleteEntry;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) GEOPDAutocompleteEntry *autocompleteEntry;
+@property (nonatomic, readonly) BOOL hasAutocompleteEntry;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)storageForCompletionItem:(id)arg1;
 

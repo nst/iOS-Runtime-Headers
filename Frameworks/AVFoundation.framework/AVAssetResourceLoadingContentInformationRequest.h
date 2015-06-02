@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetResourceLoadingContentInformationRequestInternal, NSDate, NSString;
-
 @interface AVAssetResourceLoadingContentInformationRequest : NSObject {
     AVAssetResourceLoadingContentInformationRequestInternal *_contentInformationRequest;
 }
 
-@property(getter=isByteRangeAccessSupported) BOOL byteRangeAccessSupported;
-@property long long contentLength;
-@property(copy) NSString * contentType;
-@property(copy) NSDate * renewalDate;
+@property (getter=isByteRangeAccessSupported, nonatomic) BOOL byteRangeAccessSupported;
+@property (nonatomic) long long contentLength;
+@property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, copy) NSDate *renewalDate;
 
 - (long long)contentLength;
 - (id)contentType;

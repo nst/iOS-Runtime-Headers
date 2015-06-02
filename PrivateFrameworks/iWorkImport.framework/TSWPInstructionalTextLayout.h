@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPStorage;
+@interface TSWPInstructionalTextLayout : TSWPLayout
 
-@interface TSWPInstructionalTextLayout : TSWPLayout {
-}
-
-@property(retain) TSWPStorage * storage;
+@property (nonatomic, retain) TSWPStorage *storage;
 
 - (id)initWithInfo:(id)arg1 storage:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (BOOL)isInstructional;

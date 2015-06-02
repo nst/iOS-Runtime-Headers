@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <XPCProxyTarget>, NSArray, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, Protocol;
-
 @interface XPCProxy : NSObject <NSCopying> {
     NSObject<OS_xpc_object> *_connection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _errorHandler;
-
+    id /* block */ _errorHandler;
     NSObject<OS_dispatch_queue> *_internalQueue;
     BOOL _invalidated;
     NSObject<OS_dispatch_queue> *_queue;
@@ -25,19 +15,19 @@
     NSArray *_whitelistedClassNames;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * connection;
-@property(copy) id errorHandler;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
+@property (copy) id /* block */ errorHandler;
 @property Class remoteClass;
-@property Protocol * remoteProtocol;
-@property <XPCProxyTarget> * target;
-@property BOOL useTraditionalEncoder;
+@property Protocol *remoteProtocol;
+@property <XPCProxyTarget> *target;
+@property (nonatomic) BOOL useTraditionalEncoder;
 
 + (void)initialize;
 
 - (id)_errorForXpcError:(id)arg1;
 - (void)_getInvocationArgument:(void*)arg1 argumentType:(const char *)arg2 class:(Class*)arg3 forXpcArgument:(id)arg4 message:(id)arg5;
 - (id)_invocationForMessage:(id)arg1;
-- (id)_newMessageAndReplyHandler:(id*)arg1 forInvocation:(id)arg2;
+- (id)_newMessageAndReplyHandler:(id /* block */*)arg1 forInvocation:(id)arg2;
 - (id)_newXpcArgumentForInvocationArgumentAt:(void*)arg1 ofType:(const char *)arg2;
 - (id)_newXpcEncodingForObject:(id)arg1;
 - (id)_objectForXpcEncoding:(id)arg1;
@@ -46,7 +36,7 @@
 - (id)connection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)errorHandler;
+- (id /* block */)errorHandler;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 target:(id)arg3;
 - (void)invalidate;
@@ -54,7 +44,7 @@
 - (Class)remoteClass;
 - (id)remoteProtocol;
 - (void)restrictDecodingToWhitelistedClassNames:(id)arg1;
-- (void)setErrorHandler:(id)arg1;
+- (void)setErrorHandler:(id /* block */)arg1;
 - (void)setRemoteClass:(Class)arg1;
 - (void)setRemoteProtocol:(id)arg1;
 - (void)setTarget:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEDNSSettings, NEIPv4Settings, NEIPv6Settings;
-
 @interface NEVPNProtocolPPP : NEVPNProtocol {
     NEDNSSettings *_DNSSettings;
     NEIPv4Settings *_IPv4Settings;
@@ -12,9 +10,9 @@
     BOOL _verboseLoggingEnabled;
 }
 
-@property(copy) NEDNSSettings * DNSSettings;
-@property(copy) NEIPv4Settings * IPv4Settings;
-@property(copy) NEIPv6Settings * IPv6Settings;
+@property (copy) NEDNSSettings *DNSSettings;
+@property (copy) NEIPv4Settings *IPv4Settings;
+@property (copy) NEIPv6Settings *IPv6Settings;
 @property int authenticationMethod;
 @property BOOL verboseLoggingEnabled;
 

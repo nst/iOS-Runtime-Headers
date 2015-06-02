@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIView, _UIKeyboardLayoutAlignmentView;
-
 @interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
     BOOL __isCurrentContext;
     BOOL __shouldRespectNearestCurrentContextPresenter;
@@ -14,14 +12,14 @@
     _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
 }
 
-@property(getter=_isChromeHidden,setter=_setChromeHidden:) BOOL _chromeHidden;
-@property(readonly) UIView * _dimmingView;
-@property(setter=_setIsCurrentContext:) BOOL _isCurrentContext;
-@property(setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=_isChromeHidden, setter=_setChromeHidden:, nonatomic) BOOL _chromeHidden;
+@property (readonly) UIView *_dimmingView;
+@property (setter=_setIsCurrentContext:) BOOL _isCurrentContext;
+@property (setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_containerViewWillLayoutSubviews;
 - (id)_dimmingView;

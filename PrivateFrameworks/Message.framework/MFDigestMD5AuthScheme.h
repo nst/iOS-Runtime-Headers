@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFDigestMD5AuthScheme : MFAuthScheme {
-}
+@interface MFDigestMD5AuthScheme : MFAuthScheme
 
 - (Class)authenticatorClass;
 - (BOOL)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;

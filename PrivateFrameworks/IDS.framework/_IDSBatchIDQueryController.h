@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class CUTWeakReference, NSArray, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSTimer;
-
 @interface _IDSBatchIDQueryController : NSObject <IDSIDQueryControllerDelegate> {
     CUTWeakReference *_delegate;
     NSArray *_destinations;
@@ -17,10 +15,10 @@
     NSDate *_timeOfDeath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_invalidateNextQueryTimer;
 - (void)_nextQuery:(id)arg1;

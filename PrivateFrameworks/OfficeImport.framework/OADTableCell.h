@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableCellProperties, OADTextBody;
-
 @interface OADTableCell : NSObject {
     int mGridSpan;
     BOOL mHorzMerge;

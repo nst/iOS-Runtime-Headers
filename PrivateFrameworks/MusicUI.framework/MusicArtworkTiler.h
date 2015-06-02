@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, UIImage;
-
 @interface MusicArtworkTiler : NSObject {
     NSString *_cacheIdentifier;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -15,11 +13,11 @@
     UIImage *_placeholderImage;
 }
 
-@property(copy) NSString * cacheIdentifier;
-@property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
-@property id context;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property(retain) UIImage * placeholderImage;
+@property (nonatomic, copy) NSString *cacheIdentifier;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic) id context;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, retain) UIImage *placeholderImage;
 
 - (void).cxx_destruct;
 - (id)cacheIdentifier;
@@ -27,8 +25,8 @@
 - (id)context;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)placeholderImage;
-- (void)requestTiledArtworkForCatalogs:(id)arg1 completionHandler:(id)arg2;
-- (void)requestTiledArtworkForPlaylist:(id)arg1 tileCount:(int)arg2 completionHandler:(id)arg3;
+- (void)requestTiledArtworkForCatalogs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestTiledArtworkForPlaylist:(id)arg1 tileCount:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCacheIdentifier:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;

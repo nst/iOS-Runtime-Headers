@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKRoutePolyline : MKPolyline {
-}
+@interface MKRoutePolyline : MKPolyline
 
 - (id)_stepWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 

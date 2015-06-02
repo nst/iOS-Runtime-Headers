@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UIView;
-
 @interface CAMPanoramaLevelView : UIView {
     UIView *_lineView;
 }

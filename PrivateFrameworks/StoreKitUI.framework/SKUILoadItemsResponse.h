@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, NSSet;
-
 @interface SKUILoadItemsResponse : NSObject {
     NSSet *_invalidItemIdentifiers;
     NSDictionary *_loadedItems;
 }
 
-@property(copy) NSSet * invalidItemIdentifiers;
-@property(copy) NSDictionary * loadedItems;
+@property (nonatomic, copy) NSSet *invalidItemIdentifiers;
+@property (nonatomic, copy) NSDictionary *loadedItems;
 
 - (void).cxx_destruct;
 - (id)invalidItemIdentifiers;

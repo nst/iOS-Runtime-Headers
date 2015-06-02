@@ -9,7 +9,7 @@
     } _range;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
 + (BOOL)supportsSecureCoding;
 

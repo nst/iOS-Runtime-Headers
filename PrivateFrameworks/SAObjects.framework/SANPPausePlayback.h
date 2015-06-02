@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANPPausePlayback : SADomainCommand {
-}
+@interface SANPPausePlayback : SADomainCommand
 
 + (id)pausePlayback;
 + (id)pausePlaybackWithDictionary:(id)arg1 context:(id)arg2;

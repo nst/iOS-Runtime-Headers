@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCControlsViewDelegate>, NSLayoutConstraint, RCAVState, RCLayoutMetrics, RCRecorderStateButton, UIAlertController, UIButton, UIColor;
-
 @interface RCControlsView : UIView {
     RCAVState *_AVState;
     UIColor *_bottomSeparatorLineColor;
@@ -23,22 +21,22 @@
     NSLayoutConstraint *_topPaddingCn;
 }
 
-@property(copy) RCAVState * AVState;
-@property(readonly) UIColor * bottomSeparatorLineColor;
-@property BOOL canEnableCaptureButton;
-@property BOOL canEnableDoneButton;
-@property BOOL canEnablePreviewButton;
-@property BOOL canRecord;
-@property int controlsConfiguration;
-@property <RCControlsViewDelegate> * delegate;
-@property(readonly) UIButton * doneButton;
-@property(retain) RCLayoutMetrics * layoutMetrics;
-@property(readonly) UIButton * leftPlayStateButton;
-@property(readonly) UIAlertController * noMicAlertViewController;
-@property(readonly) RCRecorderStateButton * recordingStateButton;
-@property BOOL showsBottomSeparatorLine;
-@property float topPadding;
-@property(readonly) NSLayoutConstraint * topPaddingCn;
+@property (nonatomic, copy) RCAVState *AVState;
+@property (nonatomic, readonly) UIColor *bottomSeparatorLineColor;
+@property (nonatomic) BOOL canEnableCaptureButton;
+@property (nonatomic) BOOL canEnableDoneButton;
+@property (nonatomic) BOOL canEnablePreviewButton;
+@property (nonatomic) BOOL canRecord;
+@property (nonatomic) int controlsConfiguration;
+@property (nonatomic) <RCControlsViewDelegate> *delegate;
+@property (nonatomic, readonly) UIButton *doneButton;
+@property (nonatomic, retain) RCLayoutMetrics *layoutMetrics;
+@property (nonatomic, readonly) UIButton *leftPlayStateButton;
+@property (nonatomic, readonly) UIAlertController *noMicAlertViewController;
+@property (nonatomic, readonly) RCRecorderStateButton *recordingStateButton;
+@property (nonatomic) BOOL showsBottomSeparatorLine;
+@property (nonatomic) float topPadding;
+@property (nonatomic, readonly) NSLayoutConstraint *topPaddingCn;
 
 - (void).cxx_destruct;
 - (id)AVState;

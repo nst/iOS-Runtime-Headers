@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSString;
+@interface AVSpeechSynthesisVoice : NSObject <NSSecureCoding>
 
-@interface AVSpeechSynthesisVoice : NSObject <NSSecureCoding> {
-}
-
-@property(copy) NSString * language;
+@property (nonatomic, copy) NSString *language;
 
 + (id)currentLanguageCode;
 + (void)initialize;

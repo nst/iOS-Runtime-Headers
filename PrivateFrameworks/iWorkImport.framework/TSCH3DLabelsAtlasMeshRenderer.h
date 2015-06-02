@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DTextureAtlas, TSUNoCopyDictionary;
-
 @interface TSCH3DLabelsAtlasMeshRenderer : TSCH3DLabelsMeshRenderer {
     TSCH3DTextureAtlas *mAtlas;
     TSUNoCopyDictionary *mExternalAttributeVariables;
@@ -14,14 +12,14 @@
 - (void)dealloc;
 - (void)flushCache;
 - (id)init;
-- (unsigned int)p_indexForExternalAttribute:(const struct ExternalLabelAttribute { id x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg1;
+- (unsigned int)p_indexForExternalAttribute:(const struct ExternalLabelAttribute { id x1; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x2; void x3; void*x4; BOOL x5; void*x6; void*x7; float x8; long x9; out void*x10; void*x11; void*x12; void*x13; union { float x_14_1_1; float x_14_1_2; float x_14_1_3; } x14; union { float x_15_1_1; float x_15_1_2; float x_15_1_3; } x15; }*)arg1;
 - (id)p_resourceAtIndex:(unsigned int)arg1 childIndex:(unsigned int)arg2 dimension:(unsigned int)arg3 createIfAbsent:(BOOL)arg4;
 - (unsigned int)p_resourceCount;
-- (id)p_resourceForExternalLabelAttribute:(const struct ExternalLabelAttribute { id x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; }*)arg1 index:(unsigned int)arg2 createIfAbsent:(BOOL)arg3;
+- (id)p_resourceForExternalLabelAttribute:(const struct ExternalLabelAttribute { id x1; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x2; void x3; void*x4; BOOL x5; void*x6; void*x7; float x8; long x9; out void*x10; void*x11; void*x12; void*x13; union { float x_14_1_1; float x_14_1_2; float x_14_1_3; } x14; union { float x_15_1_1; float x_15_1_2; float x_15_1_3; } x15; }*)arg1 index:(unsigned int)arg2 createIfAbsent:(BOOL)arg3;
 - (void)p_submitExternalAttributesForIndex:(unsigned int)arg1 processor:(id)arg2;
 - (id)p_texcoordResourceAtIndex:(unsigned int)arg1 createIfAbsent:(BOOL)arg2;
 - (id)p_vertexResourceAtIndex:(unsigned int)arg1 createIfAbsent:(BOOL)arg2;
-- (void)renderWithMeshRenderLabelInfo:(const struct LabelsMeshRendererLabelInfo { id x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_3_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_3_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_3_1_3; } x3; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_4_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_4_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_4_1_3; } x4; float x5; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_6_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_6_1_2; } x6; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_7_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_7_1_2; } x7; struct ExternalLabelAttribute {} *x8; }*)arg1;
+- (void)renderWithMeshRenderLabelInfo:(const struct LabelsMeshRendererLabelInfo { id x1; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x2; void x3; void*x4; BOOL x5; void*x6; void*x7; float x8; long x9; out void*x10; void*x11; void*x12; void*x13; union { float x_14_1_1; float x_14_1_2; float x_14_1_3; } x14; union { float x_15_1_1; float x_15_1_2; float x_15_1_3; } x15; union { float x_16_1_1; float x_16_1_2; float x_16_1_3; } x16; }*)arg1;
 - (void)submitResourcesWithProcessor:(id)arg1;
 
 @end

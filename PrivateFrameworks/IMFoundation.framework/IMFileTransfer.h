@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSData, NSDate, NSDictionary, NSString, NSURL;
-
 @interface IMFileTransfer : NSObject {
     NSString *_accountID;
     unsigned long long _averageTransferRate;
@@ -40,45 +38,45 @@
     BOOL _wasRegisteredAsStandalone;
 }
 
-@property(readonly) unsigned long long _lastAveragedBytes;
-@property(setter=_setLastAveragedInterval:) double _lastAveragedInterval;
-@property(setter=_setLastUpdatedInterval:) double _lastUpdatedInterval;
-@property(setter=_setNeedsWrapper:) BOOL _needsWrapper;
-@property(retain) NSString * accountID;
-@property unsigned long long averageTransferRate;
-@property(readonly) BOOL canBeAccepted;
-@property(retain) NSDate * createdDate;
-@property unsigned long long currentBytes;
-@property(retain,readonly) NSString * displayName;
-@property int error;
-@property(retain) NSString * errorDescription;
-@property(readonly) BOOL existsAtLocalPath;
-@property(retain) NSString * filename;
-@property(retain) NSString * guid;
-@property unsigned long hfsCreator;
-@property unsigned short hfsFlags;
-@property unsigned long hfsType;
-@property BOOL isDirectory;
-@property(readonly) BOOL isFinished;
-@property BOOL isIncoming;
-@property(retain) NSData * localBookmark;
-@property(retain) NSString * localPath;
-@property(retain) NSURL * localURL;
-@property(retain,readonly) NSURL * localURLWithoutBookmarkResolution;
-@property(retain) NSString * messageGUID;
-@property(retain,readonly) NSString * mimeType;
-@property(retain) NSString * otherPerson;
-@property BOOL shouldAttemptToResume;
-@property BOOL shouldForceArchive;
-@property(retain) NSDate * startDate;
-@property unsigned long long totalBytes;
-@property(retain) NSDictionary * transcoderUserInfo;
-@property(retain) NSURL * transferDataURL;
-@property int transferState;
-@property(retain) NSString * transferredFilename;
-@property(retain) NSString * type;
-@property(retain) NSDictionary * userInfo;
-@property(setter=setRegisteredAsStandalone:) BOOL wasRegisteredAsStandalone;
+@property (nonatomic, readonly) unsigned long long _lastAveragedBytes;
+@property (setter=_setLastAveragedInterval:, nonatomic) double _lastAveragedInterval;
+@property (setter=_setLastUpdatedInterval:, nonatomic) double _lastUpdatedInterval;
+@property (setter=_setNeedsWrapper:, nonatomic) BOOL _needsWrapper;
+@property (nonatomic, retain) NSString *accountID;
+@property (nonatomic) unsigned long long averageTransferRate;
+@property (nonatomic, readonly) BOOL canBeAccepted;
+@property (nonatomic, retain) NSDate *createdDate;
+@property (nonatomic) unsigned long long currentBytes;
+@property (nonatomic, readonly, retain) NSString *displayName;
+@property (nonatomic) int error;
+@property (nonatomic, retain) NSString *errorDescription;
+@property (nonatomic, readonly) BOOL existsAtLocalPath;
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) unsigned long hfsCreator;
+@property (nonatomic) unsigned short hfsFlags;
+@property (nonatomic) unsigned long hfsType;
+@property (nonatomic) BOOL isDirectory;
+@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic) BOOL isIncoming;
+@property (nonatomic, retain) NSData *localBookmark;
+@property (nonatomic, retain) NSString *localPath;
+@property (nonatomic, retain) NSURL *localURL;
+@property (nonatomic, readonly, retain) NSURL *localURLWithoutBookmarkResolution;
+@property (nonatomic, retain) NSString *messageGUID;
+@property (nonatomic, readonly, retain) NSString *mimeType;
+@property (nonatomic, retain) NSString *otherPerson;
+@property (nonatomic) BOOL shouldAttemptToResume;
+@property (nonatomic) BOOL shouldForceArchive;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) unsigned long long totalBytes;
+@property (nonatomic, retain) NSDictionary *transcoderUserInfo;
+@property (nonatomic, retain) NSURL *transferDataURL;
+@property (nonatomic) int transferState;
+@property (nonatomic, retain) NSString *transferredFilename;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSDictionary *userInfo;
+@property (setter=setRegisteredAsStandalone:, nonatomic) BOOL wasRegisteredAsStandalone;
 
 + (BOOL)_doesLocalURLRequireArchiving:(id)arg1;
 + (id)_invalidCharactersForFileTransferName;

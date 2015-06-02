@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKGroupActionChatItem : CKMultilineStampChatItem {
-}
+@interface CKGroupActionChatItem : CKMultilineStampChatItem
 
 - (long long)actionType;
 - (id)loadTranscriptText;

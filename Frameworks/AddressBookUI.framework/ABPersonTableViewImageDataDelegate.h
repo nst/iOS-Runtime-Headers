@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPersonTableViewDataSource, ABUIPerson, NSMutableDictionary;
-
 @interface ABPersonTableViewImageDataDelegate : NSObject <ABPersonImageDataDelegate> {
     NSMutableDictionary *_currentImageData;
     ABPersonTableViewDataSource *_dataSource;
@@ -12,7 +10,7 @@
     ABUIPerson *_personForImageData;
 }
 
-@property ABPersonTableViewDataSource * dataSource;
+@property (nonatomic) ABPersonTableViewDataSource *dataSource;
 
 - (id)currentImageData;
 - (id)dataSource;

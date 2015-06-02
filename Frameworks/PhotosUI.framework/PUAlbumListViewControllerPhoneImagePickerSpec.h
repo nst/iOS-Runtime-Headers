@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumListViewControllerPhoneImagePickerSpec : PUAlbumListViewControllerPhoneSpec {
-}
+@interface PUAlbumListViewControllerPhoneImagePickerSpec : PUAlbumListViewControllerPhoneSpec
 
 - (id)gridViewControllerSpec;
 

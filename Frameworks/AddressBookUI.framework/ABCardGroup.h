@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, NSArray, NSMutableArray, NSString;
-
 @interface ABCardGroup : NSObject <NSCopying> {
     NSArray *_actionItems;
     NSMutableArray *_actions;
@@ -14,14 +12,14 @@
     BOOL _useSplitActions;
 }
 
-@property(readonly) NSArray * actionItems;
-@property(readonly) NSArray * actions;
-@property BOOL addSpacerFromPreviousGroup;
-@property(retain) CNContact * contact;
-@property(readonly) NSArray * displayItems;
-@property(readonly) NSArray * editingItems;
-@property(readonly) NSString * title;
-@property BOOL useSplitActions;
+@property (nonatomic, readonly) NSArray *actionItems;
+@property (nonatomic, readonly) NSArray *actions;
+@property (nonatomic) BOOL addSpacerFromPreviousGroup;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, readonly) NSArray *displayItems;
+@property (nonatomic, readonly) NSArray *editingItems;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic) BOOL useSplitActions;
 
 + (id)groupForContact:(id)arg1;
 

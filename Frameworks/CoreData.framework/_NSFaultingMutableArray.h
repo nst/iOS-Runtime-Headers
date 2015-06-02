@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSMutableArray, NSPropertyDescription;
-
 @interface _NSFaultingMutableArray : NSMutableArray {
     int _cd_rc;
     struct _NSFaultingMutableArrayFlags { 
@@ -15,9 +13,9 @@
     NSManagedObject *_source;
 }
 
-@property(getter=isFault,readonly) BOOL fault;
-@property(readonly) NSPropertyDescription * relationship;
-@property(readonly) NSManagedObject * source;
+@property (getter=isFault, nonatomic, readonly) BOOL fault;
+@property (nonatomic, readonly) NSPropertyDescription *relationship;
+@property (nonatomic, readonly) NSManagedObject *source;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
@@ -28,18 +26,18 @@
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned int)arg2;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)getObjects:(id*)arg1;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isFault;

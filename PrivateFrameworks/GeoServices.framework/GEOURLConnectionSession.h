@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSLock, NSMapTable;
-
 @interface GEOURLConnectionSession : NSObject {
     NSMapTable *_connectionDelegates;
     struct __CFURLConnectionSession { } *_connectionSession;

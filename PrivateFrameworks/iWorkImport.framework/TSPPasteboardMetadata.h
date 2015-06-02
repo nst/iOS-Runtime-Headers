@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSHashTable;
-
 @interface TSPPasteboardMetadata : TSPObject {
     NSHashTable *_dataReferences;
     BOOL _isCrossAppPaste;
@@ -37,9 +30,9 @@
     } _message;
 }
 
-@property(readonly) NSHashTable * dataReferences;
-@property(readonly) BOOL isCrossAppPaste;
-@property(readonly) BOOL isCrossDocumentPaste;
+@property (nonatomic, readonly) NSHashTable *dataReferences;
+@property (nonatomic, readonly) BOOL isCrossAppPaste;
+@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
 
 + (id)appNameAndVersion;
 + (id)bundleIdentifier;

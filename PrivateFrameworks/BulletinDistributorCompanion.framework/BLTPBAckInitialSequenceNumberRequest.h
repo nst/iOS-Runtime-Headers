@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property BOOL assert;
-@property BOOL hasAssert;
+@property (nonatomic) BOOL assert;
+@property (nonatomic) BOOL hasAssert;
 
 - (BOOL)assert;
 - (void)copyTo:(id)arg1;

@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MKAnnotation>, GEORouteMatch, MKAnnotationManager, MKUserLocationAnnotationViewProxy, NSString, UICalloutView, UIImage, UIView, VKAnchorWrapper, _MKAnnotationViewAnchor;
-
 @interface MKAnnotationView : UIView <MKAnnotationRepresentation, MKLocatableObject> {
     _MKAnnotationViewAnchor *_anchor;
     BOOL _animatingToCoordinate;
     <MKAnnotation> *_annotation;
     MKAnnotationManager *_annotationManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _calloutHitTest;
-
+    id /* block */ _calloutHitTest;
     struct CGPoint { 
         float x; 
         float y; 
@@ -57,11 +47,7 @@
         double latitude; 
         double longitude; 
     } _presentationCoordinate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _presentationCoordinateChangedCallback;
-
+    id /* block */ _presentationCoordinateChangedCallback;
     double _presentationCourse;
     NSString *_reuseIdentifier;
     UIView *_rightCalloutAccessoryView;
@@ -76,43 +62,43 @@
     unsigned int _zIndex;
 }
 
-@property(getter=_isAnimatingToCoordinate,setter=_setAnimatingToCoordinate:) BOOL _animatingToCoordinate;
-@property(setter=_setAnnotationManager:) MKAnnotationManager * _annotationManager;
-@property(copy) id _calloutHitTest;
-@property(setter=_setPresentationCoordinate:) struct { double x1; double x2; } _presentationCoordinate;
-@property(setter=_setPresentationCoordinateChangedCallback:,copy) id _presentationCoordinateChangedCallback;
-@property(setter=_setPresentationCourse:) double _presentationCourse;
-@property(setter=_setRouteMatch:,retain) GEORouteMatch * _routeMatch;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _significantFrame;
-@property(getter=_isTracking,setter=_setTracking:) BOOL _tracking;
-@property(readonly) MKUserLocationAnnotationViewProxy * _userLocationProxy;
-@property(readonly) VKAnchorWrapper * anchor;
-@property(retain) <MKAnnotation> * annotation;
-@property struct CGPoint { float x1; float x2; } calloutOffset;
-@property BOOL canShowCallout;
-@property struct CGPoint { float x1; float x2; } centerOffset;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * detailCalloutAccessoryView;
-@property unsigned int dragState;
-@property(getter=isDraggable) BOOL draggable;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(getter=_isHiddenForInvalidPoint,setter=_setHiddenForInvalidPoint:) BOOL hiddenForInvalidPoint;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIImage * image;
-@property(retain) UIView * leftCalloutAccessoryView;
-@property struct CGPoint { float x1; float x2; } leftCalloutOffset;
-@property(getter=_mapDisplayStyle,setter=_setMapDisplayStyle:) unsigned int mapDisplayStyle;
-@property(getter=_mapPitchRadians,setter=_setMapPitchRadians:) float mapPitchRadians;
-@property(getter=_mapRotationRadians,setter=_setMapRotationRadians:) float mapRotationRadians;
-@property(readonly) NSString * reuseIdentifier;
-@property(retain) UIView * rightCalloutAccessoryView;
-@property struct CGPoint { float x1; float x2; } rightCalloutOffset;
-@property(getter=isSelected) BOOL selected;
-@property(getter=_significantBounds,readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } significantBounds;
-@property(readonly) Class superclass;
+@property (getter=_isAnimatingToCoordinate, setter=_setAnimatingToCoordinate:, nonatomic) BOOL _animatingToCoordinate;
+@property (setter=_setAnnotationManager:, nonatomic) MKAnnotationManager *_annotationManager;
+@property (nonatomic, copy) id /* block */ _calloutHitTest;
+@property (setter=_setPresentationCoordinate:, nonatomic) struct { double x1; double x2; } _presentationCoordinate;
+@property (setter=_setPresentationCoordinateChangedCallback:, nonatomic, copy) id /* block */ _presentationCoordinateChangedCallback;
+@property (setter=_setPresentationCourse:, nonatomic) double _presentationCourse;
+@property (setter=_setRouteMatch:, nonatomic, retain) GEORouteMatch *_routeMatch;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _significantFrame;
+@property (getter=_isTracking, setter=_setTracking:, nonatomic) BOOL _tracking;
+@property (nonatomic, readonly) MKUserLocationAnnotationViewProxy *_userLocationProxy;
+@property (nonatomic, readonly) VKAnchorWrapper *anchor;
+@property (nonatomic, retain) <MKAnnotation> *annotation;
+@property (nonatomic) struct CGPoint { float x1; float x2; } calloutOffset;
+@property (nonatomic) BOOL canShowCallout;
+@property (nonatomic) struct CGPoint { float x1; float x2; } centerOffset;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *detailCalloutAccessoryView;
+@property (nonatomic) unsigned int dragState;
+@property (getter=isDraggable, nonatomic) BOOL draggable;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (getter=_isHiddenForInvalidPoint, setter=_setHiddenForInvalidPoint:, nonatomic) BOOL hiddenForInvalidPoint;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIView *leftCalloutAccessoryView;
+@property (nonatomic) struct CGPoint { float x1; float x2; } leftCalloutOffset;
+@property (getter=_mapDisplayStyle, setter=_setMapDisplayStyle:, nonatomic) unsigned int mapDisplayStyle;
+@property (getter=_mapPitchRadians, setter=_setMapPitchRadians:, nonatomic) float mapPitchRadians;
+@property (getter=_mapRotationRadians, setter=_setMapRotationRadians:, nonatomic) float mapRotationRadians;
+@property (nonatomic, readonly) NSString *reuseIdentifier;
+@property (nonatomic, retain) UIView *rightCalloutAccessoryView;
+@property (nonatomic) struct CGPoint { float x1; float x2; } rightCalloutOffset;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=_significantBounds, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } significantBounds;
+@property (readonly) Class superclass;
 
 + (id)_disclosureCalloutButton;
 + (BOOL)_followsTerrain;
@@ -125,7 +111,7 @@
 - (void).cxx_destruct;
 - (id)_annotationContainer;
 - (id)_annotationManager;
-- (id)_calloutHitTest;
+- (id /* block */)_calloutHitTest;
 - (id)_calloutView;
 - (BOOL)_canChangeOrientation;
 - (BOOL)_canDisplayDisclosureInCallout;
@@ -147,7 +133,7 @@
 - (unsigned int)_orientationCount;
 - (float)_pointsForDistance:(double)arg1;
 - (struct { double x1; double x2; })_presentationCoordinate;
-- (id)_presentationCoordinateChangedCallback;
+- (id /* block */)_presentationCoordinateChangedCallback;
 - (double)_presentationCourse;
 - (void)_resetZIndex;
 - (void)_resetZIndexNotify:(BOOL)arg1;
@@ -164,7 +150,7 @@
 - (void)_setMapRotationRadians:(float)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_setPresentationCoordinate:(struct { double x1; double x2; })arg1;
-- (void)_setPresentationCoordinateChangedCallback:(id)arg1;
+- (void)_setPresentationCoordinateChangedCallback:(id /* block */)arg1;
 - (void)_setPresentationCourse:(double)arg1;
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_setRouteMatch:(id)arg1;
@@ -222,6 +208,6 @@
 - (void)setRightCalloutOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)set_calloutHitTest:(id)arg1;
+- (void)set_calloutHitTest:(id /* block */)arg1;
 
 @end

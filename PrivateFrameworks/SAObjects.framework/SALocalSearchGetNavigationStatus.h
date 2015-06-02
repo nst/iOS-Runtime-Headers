@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SALocalSearchGetNavigationStatus : SADomainCommand
 
-@interface SALocalSearchGetNavigationStatus : SADomainCommand {
-}
-
-@property(copy) NSNumber * getRoute;
+@property (nonatomic, copy) NSNumber *getRoute;
 
 + (id)getNavigationStatus;
 + (id)getNavigationStatusWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString, NSXPCConnection;
-
 @interface BBServerConduit : NSObject <BBServerConduitClientInterface> {
     NSXPCConnection *_connection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)clientInterface;
 + (id)serverInterface;
@@ -21,7 +19,7 @@
 - (id)init;
 - (void)invalidate;
 - (void)sendMessageToDataProviderSectionID:(id)arg1 name:(id)arg2 userInfo:(id)arg3;
-- (void)weeAppWithBundleID:(id)arg1 getHiddenFromUser:(id)arg2;
+- (void)weeAppWithBundleID:(id)arg1 getHiddenFromUser:(id /* block */)arg2;
 - (void)weeAppWithBundleID:(id)arg1 setHiddenFromUser:(BOOL)arg2;
 
 @end

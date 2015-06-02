@@ -2,17 +2,15 @@
    Image: /usr/lib/libextension.dylib
  */
 
-@class NSData, NSURL;
-
 @interface _NSItemProviderSandboxedResource : NSObject <NSCopying, NSSecureCoding> {
     BOOL _accessingSecurityScopedResource;
     NSURL *_resourceURL;
     NSData *_sandboxExtensionToken;
 }
 
-@property(getter=isAccessingSecurityScopedResource) BOOL accessingSecurityScopedResource;
-@property(copy) NSURL * resourceURL;
-@property(copy) NSData * sandboxExtensionToken;
+@property (getter=isAccessingSecurityScopedResource, nonatomic) BOOL accessingSecurityScopedResource;
+@property (nonatomic, copy) NSURL *resourceURL;
+@property (nonatomic, copy) NSData *sandboxExtensionToken;
 
 + (BOOL)supportsSecureCoding;
 

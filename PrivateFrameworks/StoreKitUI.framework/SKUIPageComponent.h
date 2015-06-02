@@ -2,30 +2,28 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIViewElement;
-
 @interface SKUIPageComponent : NSObject <SSMetricsEventFieldProvider> {
     int _metricsLocationPosition;
     SKUIViewElement *_viewElement;
 }
 
-@property(readonly) int componentType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * metricsElementName;
-@property int metricsLocationPosition;
-@property(getter=isMissingItemData,readonly) BOOL missingItemData;
-@property(readonly) Class superclass;
-@property(readonly) SKUIViewElement * viewElement;
+@property (nonatomic, readonly) int componentType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *metricsElementName;
+@property (nonatomic) int metricsLocationPosition;
+@property (getter=isMissingItemData, nonatomic, readonly) BOOL missingItemData;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUIViewElement *viewElement;
 
 - (void).cxx_destruct;
-- (void)_enumerateMissingItemIdentifiersFromBricks:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
-- (void)_enumerateMissingItemIdentifiersFromLinks:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
-- (void)_enumerateMissingItemIdentifiersFromLockups:(id)arg1 startIndex:(int)arg2 usingBlock:(id)arg3;
+- (void)_enumerateMissingItemIdentifiersFromBricks:(id)arg1 startIndex:(int)arg2 usingBlock:(id /* block */)arg3;
+- (void)_enumerateMissingItemIdentifiersFromLinks:(id)arg1 startIndex:(int)arg2 usingBlock:(id /* block */)arg3;
+- (void)_enumerateMissingItemIdentifiersFromLockups:(id)arg1 startIndex:(int)arg2 usingBlock:(id /* block */)arg3;
 - (void)_setMetricsLocationPosition:(int)arg1;
 - (int)componentType;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)initWithViewElement:(id)arg1;

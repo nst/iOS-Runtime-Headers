@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSDate;
-
 @interface CLVisit : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_arrivalDate;
     struct { 
@@ -15,13 +13,13 @@
     double _horizontalAccuracy;
 }
 
-@property(copy,readonly) NSDate * arrivalDate;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSDate * departureDate;
-@property(copy,readonly) NSDate * detectionDate;
-@property(readonly) BOOL hasArrivalDate;
-@property(readonly) BOOL hasDepartureDate;
-@property(readonly) double horizontalAccuracy;
+@property (nonatomic, readonly, copy) NSDate *arrivalDate;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly, copy) NSDate *departureDate;
+@property (nonatomic, readonly, copy) NSDate *detectionDate;
+@property (nonatomic, readonly) BOOL hasArrivalDate;
+@property (nonatomic, readonly) BOOL hasDepartureDate;
+@property (nonatomic, readonly) double horizontalAccuracy;
 
 + (BOOL)supportsSecureCoding;
 

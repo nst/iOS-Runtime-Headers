@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKMessageContentSyncServiceClientDelegate>;
-
 @interface NNMKMessageContentSyncServiceClient : NNMKSyncServiceEndpoint {
     <NNMKMessageContentSyncServiceClientDelegate> *_delegate;
 }
 
-@property <NNMKMessageContentSyncServiceClientDelegate> * delegate;
+@property (nonatomic) <NNMKMessageContentSyncServiceClientDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

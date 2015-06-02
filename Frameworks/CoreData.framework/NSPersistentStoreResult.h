@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSPersistentStoreResult : NSObject {
-}
+@interface NSPersistentStoreResult : NSObject
 
 @end

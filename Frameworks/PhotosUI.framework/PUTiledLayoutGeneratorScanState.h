@@ -9,10 +9,10 @@
     id _scannedBatchID;
 }
 
-@property int scanLocation;
-@property int scanSpecialSequenceCount;
-@property BOOL scannedBatchHasCaption;
-@property(retain) id scannedBatchID;
+@property (nonatomic) int scanLocation;
+@property (nonatomic) int scanSpecialSequenceCount;
+@property (nonatomic) BOOL scannedBatchHasCaption;
+@property (nonatomic, retain) id scannedBatchID;
 
 - (void).cxx_destruct;
 - (int)scanLocation;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources;
-
 @interface EDFill : NSObject <NSCopying> {
     EDResources *mResources;
 }

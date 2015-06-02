@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSObject<OS_xpc_object>, NSString;
-
 @interface IMLocalObject : NSObject {
     id _internal;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * connection;
-@property(readonly) BOOL isValid;
-@property(readonly) NSString * portName;
-@property id target;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) NSString *portName;
+@property (nonatomic) id target;
 
 + (id)_imLocalObjectQueue;
 + (void)_registerIMLocalObject:(id)arg1;

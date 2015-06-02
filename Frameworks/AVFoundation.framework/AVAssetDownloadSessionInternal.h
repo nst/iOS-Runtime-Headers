@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSError, NSNumber, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface AVAssetDownloadSessionInternal : NSObject {
     NSURL *URL;
     struct OpaqueFigAsset { } *asset;

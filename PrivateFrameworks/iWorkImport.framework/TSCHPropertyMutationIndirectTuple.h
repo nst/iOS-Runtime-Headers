@@ -7,8 +7,8 @@
     int mStyleOwnerType;
 }
 
-@property(readonly) unsigned int index;
-@property(readonly) int type;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) int type;
 
 - (unsigned int)index;
 - (id)indirectTuple;

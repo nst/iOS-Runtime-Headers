@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasImageBrowserViewControllerDataSource>, <MPUExtrasImageBrowserViewControllerDelegate>, <MPUExtrasZoomingImageInteractiveTransitionSource>, NSString, UIPageViewController;
-
 @interface MPUExtrasImageBrowserViewController : UIViewController <MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant, UIPageViewControllerDataSource, UIPageViewControllerDelegate> {
     BOOL _allowsPinchingImageForInteractiveZoomingImageTransition;
     <MPUExtrasImageBrowserViewControllerDataSource> *_dataSource;
@@ -13,16 +11,16 @@
     <MPUExtrasZoomingImageInteractiveTransitionSource> *_zoomingImageInteractiveTransitionSource;
 }
 
-@property BOOL allowsPinchingImageForInteractiveZoomingImageTransition;
-@property <MPUExtrasImageBrowserViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUExtrasImageBrowserViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIPageViewController * pageViewController;
-@property(readonly) Class superclass;
-@property unsigned int visibleImageIndex;
-@property <MPUExtrasZoomingImageInteractiveTransitionSource> * zoomingImageInteractiveTransitionSource;
+@property (nonatomic) BOOL allowsPinchingImageForInteractiveZoomingImageTransition;
+@property (nonatomic) <MPUExtrasImageBrowserViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUExtrasImageBrowserViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIPageViewController *pageViewController;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int visibleImageIndex;
+@property (nonatomic) <MPUExtrasZoomingImageInteractiveTransitionSource> *zoomingImageInteractiveTransitionSource;
 
 - (void).cxx_destruct;
 - (void)_addPageViewForController:(id)arg1 toView:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget>, MPUApplicationDefaults, MPUNowPlayingTransportControls, MPUSkipLimitView, MPVolumeSlider, NSArray, NSString, SKUICircleProgressIndicator, UIActionSheet, UIButton, UIView;
-
 @interface MPUNowPlayingPlaybackControlsView : MPPlaybackControlsView <MPDetailSliderDelegate, MPUNowPlayingTransportControlsDelegate, UIActionSheetDelegate> {
     MPUApplicationDefaults *_applicationDefaults;
     struct CGRect { 
@@ -29,26 +27,26 @@
     MPVolumeSlider *_volumeSlider;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _boundsForCenteringCreateActivityIndicatorView;
-@property(readonly) UIView * _createButton;
-@property(readonly) float _textButtonBottomVerticalInsetBaselinePhone;
-@property(readonly) float _textButtonVerticalInsetBaselinePad;
-@property(readonly) float _titlesLastResortVerticalOffsetPhone;
-@property(readonly) float _transportControlsLastResortVerticalOffsetPhone;
-@property(readonly) float _volumeBottomVerticalInsetPhone;
-@property(retain) MPUApplicationDefaults * applicationDefaults;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } artworkFrame;
-@property(readonly) UIActionSheet * createActionSheet;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int orientation;
-@property(getter=isShowingCreateLoadingIndicator) BOOL showingCreateLoadingIndicator;
-@property(readonly) MPUSkipLimitView * skipLimitView;
-@property(readonly) Class superclass;
-@property UIView * titlesView;
-@property BOOL usesMiniProgressControl;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _boundsForCenteringCreateActivityIndicatorView;
+@property (nonatomic, readonly) UIView *_createButton;
+@property (nonatomic, readonly) float _textButtonBottomVerticalInsetBaselinePhone;
+@property (nonatomic, readonly) float _textButtonVerticalInsetBaselinePad;
+@property (nonatomic, readonly) float _titlesLastResortVerticalOffsetPhone;
+@property (nonatomic, readonly) float _transportControlsLastResortVerticalOffsetPhone;
+@property (nonatomic, readonly) float _volumeBottomVerticalInsetPhone;
+@property (nonatomic, retain) MPUApplicationDefaults *applicationDefaults;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } artworkFrame;
+@property (nonatomic, readonly) UIActionSheet *createActionSheet;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUNowPlayingPlaybackControlsViewDelegate><MPTransportControlsTarget> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int orientation;
+@property (getter=isShowingCreateLoadingIndicator, nonatomic) BOOL showingCreateLoadingIndicator;
+@property (nonatomic, readonly) MPUSkipLimitView *skipLimitView;
+@property (readonly) Class superclass;
+@property (nonatomic) UIView *titlesView;
+@property (nonatomic) BOOL usesMiniProgressControl;
 
 + (unsigned long long)defaultVisibleParts;
 

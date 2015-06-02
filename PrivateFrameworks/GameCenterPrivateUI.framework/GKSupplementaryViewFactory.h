@@ -9,10 +9,10 @@
     id _target;
 }
 
-@property(readonly) SEL configurator;
-@property(readonly) Class reusableViewClass;
-@property SEL selector;
-@property id target;
+@property (nonatomic, readonly) SEL configurator;
+@property (nonatomic, readonly) Class reusableViewClass;
+@property (nonatomic) SEL selector;
+@property (nonatomic) id target;
 
 + (id)factoryForClass:(Class)arg1 target:(id)arg2 configurator:(SEL)arg3;
 + (id)factoryForClass:(Class)arg1 target:(id)arg2 configurator:(SEL)arg3 userData:(id)arg4;

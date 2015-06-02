@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, SKUILayoutCache;
-
 @interface SKUIViewElementTextLayoutCache : NSObject {
     SKUILayoutCache *_layoutCache;
     NSMutableDictionary *_layoutMapTables;
 }
 
-@property(readonly) SKUILayoutCache * layoutCache;
+@property (nonatomic, readonly) SKUILayoutCache *layoutCache;
 
 - (void).cxx_destruct;
 - (void)_addRequest:(id)arg1 forViewElement:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSString, TSUCustomFormatData;
-
 @interface TSUCustomFormat : NSObject <NSCopying, NSMutableCopying> {
     NSMutableArray *mConditionList;
     TSUCustomFormatData *mDefaultFormatData;
@@ -12,11 +10,11 @@
     int mFormatType;
 }
 
-@property(readonly) unsigned int conditionCount;
-@property(readonly) NSMutableArray * conditionList;
-@property(readonly) TSUCustomFormatData * defaultFormatData;
-@property(retain) NSString * formatName;
-@property(readonly) int formatType;
+@property (nonatomic, readonly) unsigned int conditionCount;
+@property (nonatomic, readonly) NSMutableArray *conditionList;
+@property (nonatomic, readonly) TSUCustomFormatData *defaultFormatData;
+@property (nonatomic, retain) NSString *formatName;
+@property (nonatomic, readonly) int formatType;
 
 - (unsigned int)conditionCount;
 - (id)conditionList;

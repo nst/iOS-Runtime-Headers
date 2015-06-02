@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <_UIRemoteKeyboardControllerDelegate>, CADisplayLink, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, UIInputViewController, UIInputViewPlacementTransition, UIInputViewSet, UIInputViewSetNotificationInfo, UIInputViewSetPlacement, UIKBInputBackdropView, UIPanGestureRecognizer, UIScrollView, UIView;
-
 @interface UIInputWindowController : UIViewController <UIGestureRecognizerDelegate, UIInputViewAnimationHost, UIKeyboardKeyplaneTransitionDelegate, UIScrollViewIntersectionDelegate, _UIRemoteKeyboardViewSource> {
     NSMutableDictionary *_accessoryBackdropViewEdgeConstraints;
     NSMutableDictionary *_accessoryViewEdgeConstraints;
     NSLayoutConstraint *_accessoryViewHeightConstraint;
     NSMutableArray *_animationStyleStack;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _bounceCompletionBlock;
-
+    id /* block */ _bounceCompletionBlock;
     <_UIRemoteKeyboardControllerDelegate> *_controllerDelegate;
     UIInputViewPlacementTransition *_currentTransition;
     BOOL _didOverridePreLayoutHostViewFrame;
@@ -105,29 +95,29 @@
     BOOL _wasOnScreen;
 }
 
-@property(setter=setInputAccessoryBackdropView:,retain) UIKBInputBackdropView * _inputAccessoryBackdropView;
-@property(readonly) UIView * _inputAccessoryView;
-@property(retain) UIInputViewController * _inputAccessoryViewController;
-@property(setter=setInputBackdropView:,retain) UIKBInputBackdropView * _inputBackdropView;
-@property(readonly) UIView * _inputView;
-@property(retain) UIInputViewController * _inputViewController;
-@property(retain) NSLayoutConstraint * accessoryViewHeightConstraint;
-@property(retain) <_UIRemoteKeyboardControllerDelegate> * controllerDelegate;
-@property(retain) UIInputViewPlacementTransition * currentTransition;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIView * hostView;
-@property(retain) NSLayoutConstraint * inputViewHeightConstraint;
-@property(retain) UIInputViewSet * inputViewSet;
-@property UIInputViewSetPlacement * placement;
-@property(retain) UIInputViewSet * postRotationInputViewSet;
-@property(retain) UIInputViewSetPlacement * postRotationPlacement;
-@property BOOL shouldNotifyRemoteKeyboards;
-@property(readonly) Class superclass;
-@property(retain) UIInputViewSetNotificationInfo * templateNotificationInfo;
-@property(retain) NSLayoutConstraint * verticalVisibilityConstraint;
-@property(retain) NSArray * visibilityConstraints;
+@property (setter=setInputAccessoryBackdropView:, nonatomic, retain) UIKBInputBackdropView *_inputAccessoryBackdropView;
+@property (nonatomic, readonly) UIView *_inputAccessoryView;
+@property (nonatomic, retain) UIInputViewController *_inputAccessoryViewController;
+@property (setter=setInputBackdropView:, nonatomic, retain) UIKBInputBackdropView *_inputBackdropView;
+@property (nonatomic, readonly) UIView *_inputView;
+@property (nonatomic, retain) UIInputViewController *_inputViewController;
+@property (nonatomic, retain) NSLayoutConstraint *accessoryViewHeightConstraint;
+@property (nonatomic, retain) <_UIRemoteKeyboardControllerDelegate> *controllerDelegate;
+@property (nonatomic, retain) UIInputViewPlacementTransition *currentTransition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIView *hostView;
+@property (nonatomic, retain) NSLayoutConstraint *inputViewHeightConstraint;
+@property (nonatomic, retain) UIInputViewSet *inputViewSet;
+@property (nonatomic) UIInputViewSetPlacement *placement;
+@property (nonatomic, retain) UIInputViewSet *postRotationInputViewSet;
+@property (nonatomic, retain) UIInputViewSetPlacement *postRotationPlacement;
+@property (nonatomic) BOOL shouldNotifyRemoteKeyboards;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIInputViewSetNotificationInfo *templateNotificationInfo;
+@property (nonatomic, retain) NSLayoutConstraint *verticalVisibilityConstraint;
+@property (nonatomic, retain) NSArray *visibilityConstraints;
 
 + (BOOL)_doesOverrideLegacyFullScreenLayout;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
@@ -174,7 +164,7 @@
 - (void)extendKeyboardBackdropHeight:(float)arg1 withDuration:(float)arg2;
 - (void)fillInNotificationInfo:(id)arg1 forDismissMode:(unsigned int)arg2;
 - (void)finishScrollViewTransition;
-- (void)finishTransitionWithCompletion:(id)arg1;
+- (void)finishTransitionWithCompletion:(id /* block */)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -197,13 +187,13 @@
 - (void)keyboardHeightChangeDone;
 - (void)loadView;
 - (BOOL)mergeTransitionIfNecessaryWithTransition:(id)arg1;
-- (void)moveFromPlacement:(id)arg1 toPlacement:(id)arg2 starting:(id)arg3 completion:(id)arg4;
+- (void)moveFromPlacement:(id)arg1 toPlacement:(id)arg2 starting:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)nextAnimationStyle;
-- (void)performOperations:(id)arg1 withAnimationStyle:(id)arg2;
-- (void)performOperations:(id)arg1 withTemplateNotificationInfo:(id)arg2;
-- (void)performWithSafeTransitionFrames:(id)arg1;
-- (void)performWithoutAppearanceCallbacks:(id)arg1;
-- (void)performWithoutCallbacksOrNotifications:(id)arg1;
+- (void)performOperations:(id /* block */)arg1 withAnimationStyle:(id)arg2;
+- (void)performOperations:(id /* block */)arg1 withTemplateNotificationInfo:(id)arg2;
+- (void)performWithSafeTransitionFrames:(id /* block */)arg1;
+- (void)performWithoutAppearanceCallbacks:(id /* block */)arg1;
+- (void)performWithoutCallbacksOrNotifications:(id /* block */)arg1;
 - (id)placement;
 - (void)popAnimationStyle;
 - (void)postEndNotifications:(unsigned int)arg1 withInfo:(id)arg2;
@@ -230,7 +220,7 @@
 - (void)setInputViewsHidden:(BOOL)arg1;
 - (void)setInterfaceAutorotationDisabled:(BOOL)arg1;
 - (void)setPlacement:(id)arg1;
-- (void)setPlacement:(id)arg1 starting:(id)arg2 completion:(id)arg3;
+- (void)setPlacement:(id)arg1 starting:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)setPostRotationInputViewSet:(id)arg1;
 - (void)setPostRotationPlacement:(id)arg1;
 - (void)setRotationAwarePlacement:(id)arg1;

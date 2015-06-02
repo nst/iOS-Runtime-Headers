@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineSyncEmergencyTaskDelegate>, CPLEngineLibrary, NSString;
-
 @interface CPLEngineSyncEmergencyTask : CPLEngineSyncTask <NSCoding> {
     CPLEngineLibrary *_readwriteEngineLibrary;
     NSString *_taskIdentifier;
 }
 
-@property(retain) <CPLEngineSyncEmergencyTaskDelegate> * delegate;
-@property(retain) CPLEngineLibrary * engineLibrary;
-@property(readonly) unsigned int priority;
+@property (retain) <CPLEngineSyncEmergencyTaskDelegate> *delegate;
+@property (nonatomic, retain) CPLEngineLibrary *engineLibrary;
+@property (nonatomic, readonly) unsigned int priority;
 
 + (BOOL)shouldCoalesceTasks;
 + (id)taskIdentifier;

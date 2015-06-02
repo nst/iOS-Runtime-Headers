@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPProtectionInfo, CKDPShareIdentifier, NSData, NSString;
-
 @interface CKDPShareTokenRetrieveResponse : PBCodable <NSCopying> {
     NSString *_container;
     int _containerEnvironment;
@@ -24,28 +22,28 @@
     CKDPShareIdentifier *_shareId;
 }
 
-@property(retain) NSString * container;
-@property int containerEnvironment;
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasContainer;
-@property BOOL hasContainerEnvironment;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasOwnerFirstName;
-@property(readonly) BOOL hasOwnerLastName;
-@property BOOL hasParticipantState;
-@property BOOL hasParticipantType;
-@property BOOL hasPermission;
-@property(readonly) BOOL hasProtectedFullToken;
-@property(readonly) BOOL hasSelfAddedPcs;
-@property(readonly) BOOL hasShareId;
-@property(retain) NSString * ownerFirstName;
-@property(retain) NSString * ownerLastName;
-@property int participantState;
-@property int participantType;
-@property int permission;
-@property(retain) NSData * protectedFullToken;
-@property(retain) CKDPProtectionInfo * selfAddedPcs;
-@property(retain) CKDPShareIdentifier * shareId;
+@property (nonatomic, retain) NSString *container;
+@property (nonatomic) int containerEnvironment;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasContainer;
+@property (nonatomic) BOOL hasContainerEnvironment;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasOwnerFirstName;
+@property (nonatomic, readonly) BOOL hasOwnerLastName;
+@property (nonatomic) BOOL hasParticipantState;
+@property (nonatomic) BOOL hasParticipantType;
+@property (nonatomic) BOOL hasPermission;
+@property (nonatomic, readonly) BOOL hasProtectedFullToken;
+@property (nonatomic, readonly) BOOL hasSelfAddedPcs;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, retain) NSString *ownerFirstName;
+@property (nonatomic, retain) NSString *ownerLastName;
+@property (nonatomic) int participantState;
+@property (nonatomic) int participantType;
+@property (nonatomic) int permission;
+@property (nonatomic, retain) NSData *protectedFullToken;
+@property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 - (void).cxx_destruct;
 - (id)container;

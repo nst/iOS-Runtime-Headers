@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSRule, DOMCSSRuleList;
+@interface DOMCSSStyleSheet : DOMStyleSheet
 
-@interface DOMCSSStyleSheet : DOMStyleSheet {
-}
-
-@property(readonly) DOMCSSRuleList * cssRules;
-@property(readonly) DOMCSSRule * ownerRule;
-@property(readonly) DOMCSSRuleList * rules;
+@property (readonly) DOMCSSRuleList *cssRules;
+@property (readonly) DOMCSSRule *ownerRule;
+@property (readonly) DOMCSSRuleList *rules;
 
 - (int)addRule:(id)arg1 style:(id)arg2 index:(unsigned int)arg3;
 - (id)cssRules;

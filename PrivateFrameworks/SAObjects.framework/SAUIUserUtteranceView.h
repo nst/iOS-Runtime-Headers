@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUIUserUtteranceView : SAAceView
 
-@interface SAUIUserUtteranceView : SAAceView {
-}
-
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *text;
 
 + (id)userUtteranceView;
 + (id)userUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;

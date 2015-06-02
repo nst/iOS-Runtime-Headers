@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPPage, CPZone, NSMutableArray;
-
 @interface CPParagraphMaker : NSObject {
     NSMutableArray *avail;
     NSMutableArray *compoundedShapesOnPage;

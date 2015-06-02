@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIView;
-
 @interface UITableViewSection : NSObject <NSCoding> {
     NSString *_footerTitle;
     UIView *_footerView;
@@ -12,11 +10,11 @@
     NSArray *_rows;
 }
 
-@property(copy) NSString * footerTitle;
-@property(retain) UIView * footerView;
-@property(copy) NSString * headerTitle;
-@property(retain) UIView * headerView;
-@property(copy) NSArray * rows;
+@property (nonatomic, copy) NSString *footerTitle;
+@property (nonatomic, retain) UIView *footerView;
+@property (nonatomic, copy) NSString *headerTitle;
+@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, copy) NSArray *rows;
 
 + (id)sectionWithRows:(id)arg1;
 

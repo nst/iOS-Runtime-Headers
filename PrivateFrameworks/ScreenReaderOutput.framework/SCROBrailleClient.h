@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@class NSData, NSLock, NSMutableAttributedString, SCRCTargetSelectorTimer, SCROConnection;
-
 @interface SCROBrailleClient : NSObject {
     NSData *_aggregatedStatusCache;
     NSData *_aggregatedStatusPending;
@@ -23,8 +21,8 @@
     BOOL _wantsReconnectMessage;
 }
 
-@property int inputContractionMode;
-@property BOOL inputEightDotBraille;
+@property (nonatomic) int inputContractionMode;
+@property (nonatomic) BOOL inputEightDotBraille;
 
 + (id)statusAttributeDotText;
 

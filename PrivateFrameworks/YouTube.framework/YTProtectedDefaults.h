@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface YTProtectedDefaults : NSObject {
     NSMutableDictionary *_internalDictionary;
     NSString *_plistPath;

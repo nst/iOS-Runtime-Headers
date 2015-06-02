@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPMediaLibrary, NSArray;
-
 @interface _MPUSharedLibrariesViewController : UITableViewController {
     MPMediaLibrary *_connectingMediaLibrary;
     NSArray *_sharedMediaLibraries;
     BOOL _showsLocalLibrary;
 }
 
-@property BOOL showsLocalLibrary;
+@property (nonatomic) BOOL showsLocalLibrary;
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 

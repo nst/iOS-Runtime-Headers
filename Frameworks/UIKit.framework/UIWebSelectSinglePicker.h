@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebSelectedItemPrivate>, DOMHTMLSelectElement, NSArray, NSString;
-
 @interface UIWebSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
     int _indexToSelectWhenDone;
     NSArray *_optionItems;
@@ -13,10 +11,10 @@
     <UIWebSelectedItemPrivate> *_selectedOptionItem;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)controlBeginEditing;
 - (void)controlEndEditing;

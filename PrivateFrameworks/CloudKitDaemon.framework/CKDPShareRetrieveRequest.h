@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordZoneIdentifier, CKDPShareIdentifier;
-
 @interface CKDPShareRetrieveRequest : PBRequest <NSCopying> {
     CKDPShareIdentifier *_shareId;
     CKDPRecordZoneIdentifier *_zoneId;
 }
 
-@property(readonly) BOOL hasShareId;
-@property(readonly) BOOL hasZoneId;
-@property(retain) CKDPShareIdentifier * shareId;
-@property(retain) CKDPRecordZoneIdentifier * zoneId;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) BOOL hasZoneId;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneId;
 
 + (id)options;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <AVAudioPlayerDelegate>, NSArray, NSData, NSDictionary, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface AudioPlayerImpl : NSObject {
     NSDictionary *_actualSettings;
     NSArray *_channelAssignments;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OCCancel, OITSUTemporaryDirectory;
-
 @interface OCMapper : NSObject {
     OCCancel *mCancel;
     OITSUTemporaryDirectory *mTemporaryDirectoryObject;

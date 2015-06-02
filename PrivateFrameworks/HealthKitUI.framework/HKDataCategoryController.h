@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface HKDataCategoryController : NSObject {
     NSMutableArray *_dataCategories;
     NSMutableDictionary *_dataCategoriesByCategoryID;

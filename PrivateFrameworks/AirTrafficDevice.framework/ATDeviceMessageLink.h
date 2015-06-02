@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@interface ATDeviceMessageLink : ATConcreteMessageLink {
-}
+@interface ATDeviceMessageLink : ATConcreteMessageLink
 
 + (id)deviceMessageLink;
 

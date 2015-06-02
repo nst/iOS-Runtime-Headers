@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface PUPhotosPickerSessionInfo : PUSessionInfo {
     NSString *__targetAlbumName;
 }
 
-@property(setter=_setTargetAlbumName:,copy) NSString * _targetAlbumName;
+@property (setter=_setTargetAlbumName:, nonatomic, copy) NSString *_targetAlbumName;
 
 - (void).cxx_destruct;
 - (id)_initWithTargetAlbum:(struct NSObject { Class x1; }*)arg1 orTargetAlbumName:(id)arg2 isLocal:(BOOL)arg3;

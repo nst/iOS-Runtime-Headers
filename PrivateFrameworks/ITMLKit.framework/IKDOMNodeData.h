@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKDOMNode, NSMutableDictionary;
-
 @interface IKDOMNodeData : NSObject {
     BOOL _childrenUpdated;
     NSMutableDictionary *_featuresMap;
@@ -12,11 +10,11 @@
     BOOL _updated;
 }
 
-@property(getter=isChildrenUpdated) BOOL childrenUpdated;
-@property(retain) NSMutableDictionary * featuresMap;
-@property IKDOMNode * ownerJSNode;
-@property(getter=isSubtreeUpdated) BOOL subtreeUpdated;
-@property(getter=isUpdated) BOOL updated;
+@property (getter=isChildrenUpdated, nonatomic) BOOL childrenUpdated;
+@property (nonatomic, retain) NSMutableDictionary *featuresMap;
+@property (nonatomic) IKDOMNode *ownerJSNode;
+@property (getter=isSubtreeUpdated, nonatomic) BOOL subtreeUpdated;
+@property (getter=isUpdated, nonatomic) BOOL updated;
 
 + (id)jsNodeDataForNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 create:(BOOL)arg2;
 

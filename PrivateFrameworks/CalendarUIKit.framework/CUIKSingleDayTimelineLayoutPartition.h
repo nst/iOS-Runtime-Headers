@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSArray, NSMutableArray;
-
 @interface CUIKSingleDayTimelineLayoutPartition : NSObject {
     float _initialLeftBoundary;
     float _rightBoundary;
@@ -11,12 +9,12 @@
     double _topBoundaryTime;
 }
 
-@property(readonly) float freeSpaceLeftBoundary;
-@property(readonly) float freeSpaceWidth;
-@property float initialLeftBoundary;
-@property float rightBoundary;
-@property(readonly) NSArray * stackedOccurrences;
-@property double topBoundaryTime;
+@property (nonatomic, readonly) float freeSpaceLeftBoundary;
+@property (nonatomic, readonly) float freeSpaceWidth;
+@property (nonatomic) float initialLeftBoundary;
+@property (nonatomic) float rightBoundary;
+@property (nonatomic, readonly) NSArray *stackedOccurrences;
+@property (nonatomic) double topBoundaryTime;
 
 - (void).cxx_destruct;
 - (id)description;

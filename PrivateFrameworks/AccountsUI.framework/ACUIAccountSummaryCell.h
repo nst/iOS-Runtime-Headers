@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@class ACAccount, NSSet, NSString, UILabel;
-
 @interface ACUIAccountSummaryCell : PSTableCell {
     ACAccount *_account;
     UILabel *_dataclassesLabel;

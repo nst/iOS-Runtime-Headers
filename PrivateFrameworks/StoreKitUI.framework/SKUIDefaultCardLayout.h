@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIDefaultCardLayout : SKUICardLayout {
-}
+@interface SKUIDefaultCardLayout : SKUICardLayout
 
 - (id)attributedStringForButton:(id)arg1;
 - (id)attributedStringForLabel:(id)arg1;

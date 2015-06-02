@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <FlickrComposeOptionViewDelegate>, <FlickrPhotoSetTableDelegate>, NSArray;
-
 @interface FlickrPhotoSetManager : FlickrRequest {
     <FlickrComposeOptionViewDelegate> *_delegate;
     NSArray *_photoSets;
     <FlickrPhotoSetTableDelegate> *_tableDelegate;
 }
 
-@property <FlickrComposeOptionViewDelegate> * delegate;
-@property(readonly) NSArray * photoSets;
-@property <FlickrPhotoSetTableDelegate> * tableDelegate;
+@property (nonatomic) <FlickrComposeOptionViewDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *photoSets;
+@property (nonatomic) <FlickrPhotoSetTableDelegate> *tableDelegate;
 
 - (void).cxx_destruct;
 - (id)delegate;

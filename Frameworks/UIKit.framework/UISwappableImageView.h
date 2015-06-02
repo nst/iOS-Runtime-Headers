@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIToolbar, _UISwappableImageViewAnimationProxy;
-
 @interface UISwappableImageView : UIImageView {
     id _alternate;
     int _barButtonItemStyle;

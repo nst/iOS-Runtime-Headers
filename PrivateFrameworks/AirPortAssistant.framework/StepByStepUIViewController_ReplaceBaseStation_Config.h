@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, UILabel, UIView;
-
 @interface StepByStepUIViewController_ReplaceBaseStation_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
     UIView *justTextContainerView2;
     UILabel *justTextLabel2;
     NSString *personalizedBaseName;
 }
 
-@property(retain) UIView * justTextContainerView2;
-@property(retain) NSString * personalizedBaseName;
+@property (nonatomic, retain) UIView *justTextContainerView2;
+@property (nonatomic, retain) NSString *personalizedBaseName;
 
 - (void)dealloc;
 - (id)devicePickerLabel;

@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSString, SCNOrderedDictionary;
-
 @interface SCNTechnique : NSObject <NSCopying, NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary *_animations;
-    unsigned int _isPresentationInstance : 1;
+    unsigned int _isPresentationInstance;
     id _reserved;
     struct __C3DFXTechnique { } *_technique;
     NSMutableDictionary *_valueForSymbol;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
@@ -42,7 +40,7 @@
 - (void)dealloc;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
+- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)initPresentationTechniqueWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTechniqueRef:(struct __C3DFXTechnique { }*)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CMOutlineState : NSObject {
-    unsigned int counter[10];
+    unsigned int counter;
     unsigned int listId;
 }
 

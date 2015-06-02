@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class <CAMStillImageCaptureRequestDelegate>;
-
 @interface CAMStillImageCaptureRequest : CAMCaptureRequest <NSCopying, NSMutableCopying> {
     int _captureDevice;
     <CAMStillImageCaptureRequestDelegate> *_delegate;
@@ -15,14 +13,14 @@
     BOOL _wantsAudioForCapture;
 }
 
-@property(readonly) int captureDevice;
-@property(readonly) <CAMStillImageCaptureRequestDelegate> * delegate;
-@property(readonly) int deviceOrientation;
-@property(readonly) int flashMode;
-@property(readonly) int hdrMode;
-@property(getter=isTransient,readonly) BOOL transient;
-@property(readonly) BOOL usesStillImageStabilization;
-@property(readonly) BOOL wantsAudioForCapture;
+@property (nonatomic, readonly) int captureDevice;
+@property (nonatomic, readonly) <CAMStillImageCaptureRequestDelegate> *delegate;
+@property (nonatomic, readonly) int deviceOrientation;
+@property (nonatomic, readonly) int flashMode;
+@property (nonatomic, readonly) int hdrMode;
+@property (getter=isTransient, nonatomic, readonly) BOOL transient;
+@property (nonatomic, readonly) BOOL usesStillImageStabilization;
+@property (nonatomic, readonly) BOOL wantsAudioForCapture;
 
 - (void).cxx_destruct;
 - (int)captureDevice;

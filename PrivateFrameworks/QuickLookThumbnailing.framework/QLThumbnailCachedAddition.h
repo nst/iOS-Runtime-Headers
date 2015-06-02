@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
  */
 
-@class GSAddition;
-
 @interface QLThumbnailCachedAddition : NSObject {
     GSAddition *_addition;
     unsigned long long _fileID;
 }
 
-@property(retain) GSAddition * addition;
+@property (retain) GSAddition *addition;
 
 - (id)addition;
 - (void)dealloc;

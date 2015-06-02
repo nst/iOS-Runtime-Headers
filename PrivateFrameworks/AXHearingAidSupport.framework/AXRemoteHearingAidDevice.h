@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class <AXHARemoteUpdateProtocol>, AXHATimer, AXHearingAidMode, NSArray, NSDate, NSString;
-
 @interface AXRemoteHearingAidDevice : NSObject <AXHADeviceProtocol> {
     NSString *_deviceUUID;
     BOOL _isBluetoothPaired;
@@ -42,44 +40,44 @@
     int availableEars;
 }
 
-@property int availableEars;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * deviceUUID;
-@property(readonly) unsigned int hash;
-@property BOOL isBluetoothPaired;
-@property BOOL isConnecting;
-@property BOOL isPaired;
-@property BOOL keepInSync;
-@property float leftBatteryLevel;
-@property(retain) NSDate * leftBatteryLowDate;
-@property BOOL leftConnected;
-@property(retain) NSString * leftFirmwareVersion;
-@property(retain) NSString * leftHardwareVersion;
-@property float leftMicrophoneVolume;
-@property(retain) NSString * leftPeripheralUUID;
-@property(copy) NSArray * leftPrograms;
-@property(retain) AXHearingAidMode * leftSelectedProgram;
-@property float leftStreamVolume;
-@property(retain) NSString * leftUUID;
-@property int loadedProperties;
-@property(retain) NSString * manufacturer;
-@property(retain) NSString * model;
-@property(retain) NSString * name;
-@property int pendingPropertyWrites;
-@property float rightBatteryLevel;
-@property(retain) NSDate * rightBatteryLowDate;
-@property BOOL rightConnected;
-@property(retain) NSString * rightFirmwareVersion;
-@property(retain) NSString * rightHardwareVersion;
-@property float rightMicrophoneVolume;
-@property(retain) NSString * rightPeripheralUUID;
-@property(copy) NSArray * rightPrograms;
-@property(retain) AXHearingAidMode * rightSelectedProgram;
-@property float rightStreamVolume;
-@property(retain) NSString * rightUUID;
-@property(readonly) Class superclass;
-@property <AXHARemoteUpdateProtocol> * updateDelegate;
+@property (nonatomic) int availableEars;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *deviceUUID;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isBluetoothPaired;
+@property (nonatomic) BOOL isConnecting;
+@property (nonatomic) BOOL isPaired;
+@property (nonatomic) BOOL keepInSync;
+@property (nonatomic) float leftBatteryLevel;
+@property (nonatomic, retain) NSDate *leftBatteryLowDate;
+@property (nonatomic) BOOL leftConnected;
+@property (nonatomic, retain) NSString *leftFirmwareVersion;
+@property (nonatomic, retain) NSString *leftHardwareVersion;
+@property (nonatomic) float leftMicrophoneVolume;
+@property (nonatomic, retain) NSString *leftPeripheralUUID;
+@property (nonatomic, copy) NSArray *leftPrograms;
+@property (nonatomic, retain) AXHearingAidMode *leftSelectedProgram;
+@property (nonatomic) float leftStreamVolume;
+@property (nonatomic, retain) NSString *leftUUID;
+@property (nonatomic) int loadedProperties;
+@property (nonatomic, retain) NSString *manufacturer;
+@property (nonatomic, retain) NSString *model;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int pendingPropertyWrites;
+@property (nonatomic) float rightBatteryLevel;
+@property (nonatomic, retain) NSDate *rightBatteryLowDate;
+@property (nonatomic) BOOL rightConnected;
+@property (nonatomic, retain) NSString *rightFirmwareVersion;
+@property (nonatomic, retain) NSString *rightHardwareVersion;
+@property (nonatomic) float rightMicrophoneVolume;
+@property (nonatomic, retain) NSString *rightPeripheralUUID;
+@property (nonatomic, copy) NSArray *rightPrograms;
+@property (nonatomic, retain) AXHearingAidMode *rightSelectedProgram;
+@property (nonatomic) float rightStreamVolume;
+@property (nonatomic, retain) NSString *rightUUID;
+@property (readonly) Class superclass;
+@property (nonatomic) <AXHARemoteUpdateProtocol> *updateDelegate;
 
 - (void)_delayWriteProperties;
 - (id)_valueForProperty:(int)arg1;

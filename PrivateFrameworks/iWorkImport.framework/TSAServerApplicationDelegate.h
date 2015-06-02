@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSABaseApplicationDelegate;
-
 @interface TSAServerApplicationDelegate : NSObject {
     TSABaseApplicationDelegate *_baseApplicationDelegate;
 }
 
-@property(retain) TSABaseApplicationDelegate * baseApplicationDelegate;
+@property (nonatomic, retain) TSABaseApplicationDelegate *baseApplicationDelegate;
 
 + (id)sharedDelegate;
 

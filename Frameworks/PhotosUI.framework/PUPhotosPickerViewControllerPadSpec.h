@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPickerViewControllerPadSpec : PUPhotosPickerViewControllerSpec {
-}
+@interface PUPhotosPickerViewControllerPadSpec : PUPhotosPickerViewControllerSpec
 
 - (unsigned int)bannerViewStyle;
 - (void)configureSessionInfo:(id)arg1;

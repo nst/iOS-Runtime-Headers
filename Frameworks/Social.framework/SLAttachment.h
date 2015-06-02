@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSItemProvider, NSString, NSURL, UIImage;
-
 @interface SLAttachment : NSObject <NSSecureCoding> {
     int _downsampleStatus;
     NSString *_identifier;
@@ -16,35 +10,27 @@
     BOOL _needsAnotherPreviewGeneration;
     id _payload;
     NSURL *_payloadSourceFileURL;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _payloadUpdateObserver;
-
+    id /* block */ _payloadUpdateObserver;
     UIImage *_previewImage;
     int _previewType;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _previewUpdateObserver;
-
+    id /* block */ _previewUpdateObserver;
     BOOL _startedPayloadLoad;
     int _type;
     NSString *_typeIdentifier;
 }
 
-@property int downsampleStatus;
-@property(readonly) NSString * identifier;
-@property(retain) NSItemProvider * itemProvider;
-@property(readonly) int itemProviderPreviewType;
-@property BOOL needsAnotherPreviewGeneration;
-@property(copy) id payload;
-@property(copy) NSURL * payloadSourceFileURL;
-@property(retain) UIImage * previewImage;
+@property (nonatomic) int downsampleStatus;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) NSItemProvider *itemProvider;
+@property (nonatomic, readonly) int itemProviderPreviewType;
+@property (nonatomic) BOOL needsAnotherPreviewGeneration;
+@property (nonatomic, copy) id payload;
+@property (nonatomic, copy) NSURL *payloadSourceFileURL;
+@property (nonatomic, retain) UIImage *previewImage;
 @property int previewType;
-@property BOOL startedPayloadLoad;
-@property int type;
-@property(copy) NSString * typeIdentifier;
+@property (nonatomic) BOOL startedPayloadLoad;
+@property (nonatomic) int type;
+@property (nonatomic, copy) NSString *typeIdentifier;
 
 + (BOOL)attachmentTypeRepresentsAnImage:(int)arg1;
 + (BOOL)supportsSecureCoding;
@@ -70,10 +56,10 @@
 - (void)setNeedsAnotherPreviewGeneration:(BOOL)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayloadSourceFileURL:(id)arg1;
-- (void)setPayloadUpdateObserverWithBlock:(id)arg1;
+- (void)setPayloadUpdateObserverWithBlock:(id /* block */)arg1;
 - (void)setPreviewImage:(id)arg1;
 - (void)setPreviewType:(int)arg1;
-- (void)setPreviewUpdateObserverWithBlock:(id)arg1;
+- (void)setPreviewUpdateObserverWithBlock:(id /* block */)arg1;
 - (void)setStartedPayloadLoad:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (void)setTypeIdentifier:(id)arg1;

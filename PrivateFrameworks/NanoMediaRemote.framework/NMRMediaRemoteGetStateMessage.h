@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSData, NSDate, NSString, _NMRMediaRemoteGetStateMessageProfobuf;
-
 @interface NMRMediaRemoteGetStateMessage : NSObject <NMRMediaRemoteProtobufCodable> {
     _NMRMediaRemoteGetStateMessageProfobuf *_protobuf;
 }
 
-@property(readonly) NSData * applicationInfoDigest;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * nowPlayingInfoDigest;
-@property(readonly) NSDate * serializationDate;
-@property(readonly) Class superclass;
-@property(readonly) NSData * supportedCommandsDigest;
+@property (nonatomic, readonly) NSData *applicationInfoDigest;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *nowPlayingInfoDigest;
+@property (nonatomic, readonly) NSDate *serializationDate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSData *supportedCommandsDigest;
 
 + (id)messageWithNowPlayingInfoDigest:(id)arg1 applicationInfoDigest:(id)arg2 supportedCommandsDigest:(id)arg3;
 

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVScheduleResponseItem, NSArray, NSString;
-
 @interface CalDAVScheduleTask : CoreDAVPostTask {
     NSArray *_attendees;
     NSString *_originator;
     CalDAVScheduleResponseItem *_scheduleResponse;
 }
 
-@property(retain) NSArray * attendees;
-@property(retain) NSString * originator;
-@property(retain) CalDAVScheduleResponseItem * scheduleResponse;
+@property (nonatomic, retain) NSArray *attendees;
+@property (nonatomic, retain) NSString *originator;
+@property (nonatomic, retain) CalDAVScheduleResponseItem *scheduleResponse;
 
 - (id)additionalHeaderValues;
 - (id)attendees;

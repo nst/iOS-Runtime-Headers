@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActivityGroupViewControllerDataSource>, <UIActivityGroupViewControllerDelegate>, NSArray, NSDictionary, NSIndexPath, NSMutableDictionary, NSString, UILongPressGestureRecognizer, _UIActivityGroupActivityCell, _UIActivityUserDefaults, _UIUserDefaultsActivity;
-
 @interface UIActivityGroupViewController : UICollectionViewController <UIGestureRecognizerDelegate, _UIActivityGroupViewDelegateFlowLayout> {
     NSArray *_activities;
     int _activityCategory;
@@ -29,29 +27,29 @@
     NSArray *_visibleActivities;
 }
 
-@property(copy) NSArray * activities;
-@property int activityCategory;
-@property BOOL activityIndexDidChangeWhileDragging;
-@property BOOL allowsUserCustomization;
-@property(retain) NSMutableDictionary * cachedPreferredItemSizesByString;
-@property(copy) NSDictionary * customActivityTitles;
-@property BOOL darkStyleOnLegacyApp;
-@property <UIActivityGroupViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIActivityGroupViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UILongPressGestureRecognizer * editingGestureRecognizer;
-@property(getter=isEmbedded) BOOL embedded;
-@property BOOL hasActivities;
-@property(readonly) unsigned int hash;
-@property(copy) NSIndexPath * indexPathForMenuActivity;
-@property struct CGPoint { float x1; float x2; } initialDraggingLocation;
-@property(getter=isPicker) BOOL picker;
-@property(retain) _UIActivityGroupActivityCell * prototypeActivityCell;
-@property(readonly) Class superclass;
-@property(retain) _UIActivityUserDefaults * userDefaults;
-@property(retain) _UIUserDefaultsActivity * userDefaultsActivity;
-@property(copy) NSArray * visibleActivities;
+@property (nonatomic, copy) NSArray *activities;
+@property (nonatomic) int activityCategory;
+@property (nonatomic) BOOL activityIndexDidChangeWhileDragging;
+@property (nonatomic) BOOL allowsUserCustomization;
+@property (nonatomic, retain) NSMutableDictionary *cachedPreferredItemSizesByString;
+@property (nonatomic, copy) NSDictionary *customActivityTitles;
+@property (nonatomic) BOOL darkStyleOnLegacyApp;
+@property (nonatomic) <UIActivityGroupViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIActivityGroupViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILongPressGestureRecognizer *editingGestureRecognizer;
+@property (getter=isEmbedded, nonatomic) BOOL embedded;
+@property (nonatomic) BOOL hasActivities;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSIndexPath *indexPathForMenuActivity;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialDraggingLocation;
+@property (getter=isPicker, nonatomic) BOOL picker;
+@property (nonatomic, retain) _UIActivityGroupActivityCell *prototypeActivityCell;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
+@property (nonatomic, retain) _UIUserDefaultsActivity *userDefaultsActivity;
+@property (nonatomic, copy) NSArray *visibleActivities;
 
 - (struct CGSize { float x1; float x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_setActivities:(id)arg1 animated:(BOOL)arg2;
@@ -88,7 +86,7 @@
 - (BOOL)hasActivities;
 - (void)hideActivity:(id)arg1;
 - (void)hideItemAtIndexPath:(id)arg1;
-- (void)ignoreUserDefaultsChangesWhileUsingBlock:(id)arg1;
+- (void)ignoreUserDefaultsChangesWhileUsingBlock:(id /* block */)arg1;
 - (id)indexPathForMenuActivity;
 - (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2;
 - (id)initWithActivityCategory:(int)arg1 userDefaults:(id)arg2 userDefaultsIdentifier:(id)arg3;

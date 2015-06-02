@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIView;
-
 @interface SiriUIMapDetailsContainerView : UIView {
     BOOL _autoCenteringDisabled;
     UIView *_detailsView;
     UIView *_mapView;
 }
 
-@property BOOL autoCenteringDisabled;
-@property(retain) UIView * detailsView;
-@property(retain) UIView * mapView;
+@property (nonatomic) BOOL autoCenteringDisabled;
+@property (nonatomic, retain) UIView *detailsView;
+@property (nonatomic, retain) UIView *mapView;
 
 - (void).cxx_destruct;
 - (float)_horizontalSpacing;

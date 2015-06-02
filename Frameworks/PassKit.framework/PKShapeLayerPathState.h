@@ -17,7 +17,7 @@
 - (id)initWithStrokeStartT0:(float)arg1 strokeStartT1:(float)arg2 strokeEndT0:(float)arg3 strokeEndT1:(float)arg4;
 - (float)progressForShapeLayer:(id)arg1;
 - (void)setProgress:(float)arg1 onShapeLayer:(id)arg2;
-- (void)setProgress:(float)arg1 onShapeLayer:(id)arg2 withAnimationHandler:(id)arg3;
+- (void)setProgress:(float)arg1 onShapeLayer:(id)arg2 withAnimationHandler:(id /* block */)arg3;
 - (float)strokeEndAtProgress:(float)arg1;
 - (float)strokeStartAtProgress:(float)arg1;
 

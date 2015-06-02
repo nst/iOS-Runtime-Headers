@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSData, NSString, NSURL;
-
 @interface MLTrackImportChapter : NSObject <NSCopying> {
     NSString *_imageCacheKey;
     NSData *_imageData;
@@ -13,12 +11,12 @@
     NSString *_urlTitle;
 }
 
-@property(copy) NSURL * URL;
-@property(copy) NSString * URLTitle;
-@property(copy) NSString * imageCacheKey;
-@property(copy) NSData * imageData;
-@property unsigned int startTimeInMilliseconds;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSString *URLTitle;
+@property (nonatomic, copy) NSString *imageCacheKey;
+@property (nonatomic, copy) NSData *imageData;
+@property (nonatomic) unsigned int startTimeInMilliseconds;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)URL;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSDate;
-
 @interface GEOAlmanacRiseTransitSet : NSObject {
     double _julianDay;
     struct CAARiseTransitSetDetails { 
@@ -19,11 +17,11 @@
     NSDate *_transit;
 }
 
-@property(readonly) double julianDay;
-@property(readonly) struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; } riseTransitSet;
-@property(readonly) NSDate * sunrise;
-@property(readonly) NSDate * sunset;
-@property(readonly) NSDate * transit;
+@property (nonatomic, readonly) double julianDay;
+@property (nonatomic, readonly) struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; } riseTransitSet;
+@property (nonatomic, readonly) NSDate *sunrise;
+@property (nonatomic, readonly) NSDate *sunset;
+@property (nonatomic, readonly) NSDate *transit;
 
 - (id).cxx_construct;
 - (id)_dateFromOffset:(double)arg1 ofJulianDay:(double)arg2;

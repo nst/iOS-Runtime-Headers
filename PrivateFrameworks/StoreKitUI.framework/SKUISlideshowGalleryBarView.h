@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISlideshowGalleryBarViewDelegate>, NSMutableArray, UIToolbar, UIView;
-
 @interface SKUISlideshowGalleryBarView : UIView {
     <SKUISlideshowGalleryBarViewDelegate> *_delegate;
     NSMutableArray *_imageViews;
@@ -13,9 +11,9 @@
     UIToolbar *_toolbarView;
 }
 
-@property <SKUISlideshowGalleryBarViewDelegate> * delegate;
-@property unsigned int numberOfImages;
-@property unsigned int selectedImageIndex;
+@property (nonatomic) <SKUISlideshowGalleryBarViewDelegate> *delegate;
+@property (nonatomic) unsigned int numberOfImages;
+@property (nonatomic) unsigned int selectedImageIndex;
 
 - (void).cxx_destruct;
 - (void)_handleTouch:(id)arg1 withEvent:(id)arg2;

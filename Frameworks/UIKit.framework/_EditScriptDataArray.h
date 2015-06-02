@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface _EditScriptDataArray : NSObject <_EditScriptData> {
     NSString *_cachedStringValue;
     NSArray *_data;
 }
 
-@property(retain) NSString * cachedStringValue;
-@property(retain) NSArray * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *cachedStringValue;
+@property (nonatomic, retain) NSArray *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)EditScriptDataWithArray:(id)arg1;
 + (id)EditScriptDataWithString:(id)arg1 chunkSize:(int)arg2;

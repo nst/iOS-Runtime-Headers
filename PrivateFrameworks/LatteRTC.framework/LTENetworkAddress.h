@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSString;
-
 @interface LTENetworkAddress : NSObject {
     NSString *_interfaceName;
     NSString *_ip;
@@ -11,10 +9,10 @@
     unsigned short _port;
 }
 
-@property(copy) NSString * interfaceName;
-@property(copy) NSString * ip;
-@property BOOL isIPv6;
-@property unsigned short port;
+@property (nonatomic, copy) NSString *interfaceName;
+@property (nonatomic, copy) NSString *ip;
+@property (nonatomic) BOOL isIPv6;
+@property (nonatomic) unsigned short port;
 
 - (void)dealloc;
 - (id)init;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class <SBUIBiometricEventMonitorDelegate>, BiometricKit, NSCountedSet, NSHashTable, NSString;
-
 @interface SBUIBiometricEventMonitor : NSObject <BiometricKitDelegate> {
     NSCountedSet *_activePasscodeViews;
     BiometricKit *_biometricKit;
@@ -20,13 +18,13 @@
     BOOL _shouldSendFingerOffNotification;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SBUIBiometricEventMonitorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int lockoutState;
-@property(getter=isMatchingEnabled,readonly) BOOL matchingEnabled;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBUIBiometricEventMonitorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int lockoutState;
+@property (getter=isMatchingEnabled, nonatomic, readonly) BOOL matchingEnabled;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

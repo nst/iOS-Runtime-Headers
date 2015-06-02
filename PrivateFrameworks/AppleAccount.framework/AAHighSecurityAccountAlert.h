@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAHighSecurityAccountAlert : NSObject {
-}
+@interface AAHighSecurityAccountAlert : NSObject
 
 - (void)showAlert;
 

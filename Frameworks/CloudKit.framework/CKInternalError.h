@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKInternalError : CKPrettyError {
-}
+@interface CKInternalError : CKPrettyError
 
 + (id)_errorDomain;
 

@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSKAnnotation>;
-
 @interface TSAAnnotationReference : TSPObject {
     <TSKAnnotation> *_annotation;
     unsigned int _pageIndex;
 }
 
-@property(retain) <TSKAnnotation> * annotation;
-@property unsigned int pageIndex;
+@property (nonatomic, retain) <TSKAnnotation> *annotation;
+@property (nonatomic) unsigned int pageIndex;
 
 + (id)referenceWithObjectContext:(id)arg1 annotation:(id)arg2 searchReference:(id)arg3 pageIndex:(unsigned int)arg4;
 

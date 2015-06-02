@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSString;
-
 @interface _CPBundleIdentifierString : NSString {
     NSString *_bundleIdentifierOrProcessName;
     NSString *_executablePath;

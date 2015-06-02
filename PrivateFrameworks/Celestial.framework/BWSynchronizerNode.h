@@ -19,7 +19,7 @@
             unsigned int flags; 
             long long epoch; 
         } syncedTime; 
-    } _ptsSyncHistory[16];
+    } _ptsSyncHistory;
     struct OpaqueCMClock { } *_sourceClock;
 }
 

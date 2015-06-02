@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel, UITextView;
-
 @interface EKEventDetailURLCell : EKEventDetailCell {
     UILabel *_URLTitleView;
     UITextView *_URLView;

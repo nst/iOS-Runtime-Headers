@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADAdSpaceRemoteViewControllerDelegate>;
-
 @interface ADAdSpaceRemoteViewController : _UIRemoteViewController {
     <ADAdSpaceRemoteViewControllerDelegate> *_delegate;
 }
 
-@property <ADAdSpaceRemoteViewControllerDelegate> * delegate;
+@property (nonatomic) <ADAdSpaceRemoteViewControllerDelegate> *delegate;
 
-+ (void)adSpaceRemoteViewControllerWithCompletionHandler:(id)arg1;
++ (void)adSpaceRemoteViewControllerWithCompletionHandler:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUILayoutCacheDelegate>, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface SKUILayoutCache : NSObject {
     NSMutableArray *_batchedRequests;
     <SKUILayoutCacheDelegate> *_delegate;
@@ -12,7 +10,7 @@
     NSMutableArray *_requests;
 }
 
-@property <SKUILayoutCacheDelegate> * delegate;
+@property (nonatomic) <SKUILayoutCacheDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_addLayoutBatch:(id)arg1;

@@ -2,27 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDateTimeUTCValue, ICSStructuredLocation, ICSTrigger, NSArray, NSData, NSString;
+@interface ICSAlarm : ICSComponent
 
-@interface ICSAlarm : ICSComponent {
-}
-
-@property(retain) ICSDateTimeUTCValue * acknowledged;
-@property int action;
-@property(retain) NSArray * attach;
-@property(retain) NSArray * attendee;
-@property(retain) NSData * bookmark;
-@property(retain) NSString * description;
-@property(retain) NSString * relatedTo;
-@property(retain) NSString * summary;
-@property(retain) ICSTrigger * trigger;
-@property(retain) NSString * uid;
-@property BOOL x_apple_default_alarm;
-@property BOOL x_apple_local_default_alarm;
-@property(retain) NSString * x_apple_proximity;
-@property(retain) ICSStructuredLocation * x_apple_structured_location;
-@property BOOL x_apple_travel_default_alarm;
-@property(retain) NSString * x_wr_alarmuid;
+@property (nonatomic, retain) ICSDateTimeUTCValue *acknowledged;
+@property (nonatomic) int action;
+@property (retain) NSArray *attach;
+@property (retain) NSArray *attendee;
+@property (nonatomic, retain) NSData *bookmark;
+@property (retain) NSString *description;
+@property (nonatomic, retain) NSString *relatedTo;
+@property (retain) NSString *summary;
+@property (retain) ICSTrigger *trigger;
+@property (retain) NSString *uid;
+@property (nonatomic) BOOL x_apple_default_alarm;
+@property (nonatomic) BOOL x_apple_local_default_alarm;
+@property (nonatomic, retain) NSString *x_apple_proximity;
+@property (retain) ICSStructuredLocation *x_apple_structured_location;
+@property (nonatomic) BOOL x_apple_travel_default_alarm;
+@property (nonatomic, retain) NSString *x_wr_alarmuid;
 
 + (id)ICSStringFromAction:(int)arg1;
 + (int)actionFromICSString:(id)arg1;

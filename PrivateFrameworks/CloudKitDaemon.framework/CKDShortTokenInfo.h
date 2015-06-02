@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKShareID, NSData, NSString;
-
 @interface CKDShortTokenInfo : NSObject <NSCopying> {
     NSString *_routingKey;
     CKShareID *_shareID;
     NSData *_shortSharingTokenHashData;
 }
 
-@property(retain) NSString * routingKey;
-@property(retain) CKShareID * shareID;
-@property(retain) NSData * shortSharingTokenHashData;
+@property (nonatomic, retain) NSString *routingKey;
+@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic, retain) NSData *shortSharingTokenHashData;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class UIImage;
-
 @interface GKComposedImageBrush : GKImageBrush {
     UIImage *_backgroundImage;
     UIImage *_maskImage;
@@ -16,10 +14,10 @@
     UIImage *_overlayImage;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(retain) UIImage * maskImage;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } maskInsets;
-@property(retain) UIImage * overlayImage;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, retain) UIImage *maskImage;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } maskInsets;
+@property (nonatomic, retain) UIImage *overlayImage;
 
 - (id)backgroundImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSMediaStreamDaemonDelegate>, NSCountedSet;
-
 @interface MSMediaStreamDaemon : MSDaemon {
     <MSMediaStreamDaemonDelegate> *_delegate;
     NSCountedSet *_retainedObjects;
 }
 
-@property <MSMediaStreamDaemonDelegate> * delegate;
+@property (nonatomic) <MSMediaStreamDaemonDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)_boundDeleterForPersonID:(id)arg1;

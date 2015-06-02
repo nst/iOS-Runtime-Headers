@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDAssetCache, CKDMMCSEngineContext, NSString;
-
 @interface CKDMMCS : NSObject {
     CKDMMCSEngineContext *_MMCSEngineContext;
     CKDAssetCache *_assetCache;
     NSString *_path;
 }
 
-@property(getter=getMMCSEngine,readonly) struct __MMCSEngine { }* MMCSEngine;
-@property(retain) CKDMMCSEngineContext * MMCSEngineContext;
-@property(retain) CKDAssetCache * assetCache;
-@property(getter=getMaxChunkCountForSection,readonly) unsigned long maxChunkCountForSection;
-@property(retain) NSString * path;
+@property (getter=getMMCSEngine, nonatomic, readonly) struct __MMCSEngine { }*MMCSEngine;
+@property (nonatomic, retain) CKDMMCSEngineContext *MMCSEngineContext;
+@property (nonatomic, retain) CKDAssetCache *assetCache;
+@property (getter=getMaxChunkCountForSection, nonatomic, readonly) unsigned long maxChunkCountForSection;
+@property (nonatomic, retain) NSString *path;
 
 + (id)MMCSWrapperForApplicationBundleID:(id)arg1 path:(id)arg2 assetDbPath:(id)arg3 fileDownloadPath:(id)arg4 packageDownloadPath:(id)arg5 packageUploadPath:(id)arg6 isUTAccount:(BOOL)arg7 error:(id*)arg8;
 + (int)_commonErrorCodeWithMMCSError:(id)arg1;
@@ -30,25 +28,25 @@
 
 - (void).cxx_destruct;
 - (id)MMCSEngineContext;
-- (id)_contextToGetItemGroup:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)_contextToGetSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)_contextToPutItemGroup:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)_contextToPutSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)_contextToRegisterItemGroup:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (id)_contextToGetItemGroup:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)_contextToGetSectionItem:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)_contextToPutItemGroup:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)_contextToPutSectionItem:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)_contextToRegisterItemGroup:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_logMMCSOptions:(id)arg1;
 - (id)_referenceIdentifierFromAssetKey:(id)arg1;
 - (id)assetCache;
 - (void)dealloc;
-- (id)getItemGroupSet:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
+- (id)getItemGroupSet:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (struct __MMCSEngine { }*)getMMCSEngine;
 - (unsigned long)getMaxChunkCountForSection;
-- (id)getSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
+- (id)getSectionItem:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)initWithMMCSEngineContext:(id)arg1 path:(id)arg2;
 - (id)path;
-- (id)putItemGroupSet:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)putSectionItem:(id)arg1 options:(id)arg2 progress:(id)arg3 completionHandler:(id)arg4;
-- (id)registerItemGroupSet:(id)arg1 completionHandler:(id)arg2;
-- (id)registerItemGroupSet:(id)arg1 shouldChunk:(BOOL)arg2 completionHandler:(id)arg3;
+- (id)putItemGroupSet:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)putSectionItem:(id)arg1 options:(id)arg2 progress:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)registerItemGroupSet:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)registerItemGroupSet:(id)arg1 shouldChunk:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAssetCache:(id)arg1;
 - (void)setMMCSEngineContext:(id)arg1;
 - (void)setPath:(id)arg1;

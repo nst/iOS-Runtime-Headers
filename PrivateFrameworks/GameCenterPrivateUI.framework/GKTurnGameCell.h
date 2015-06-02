@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKContiguousContainerView, GKLabel, UIImageView;
-
 @interface GKTurnGameCell : GKBaseGameCell {
     GKLabel *_activeMatchesLabel;
     GKLabel *_localPlayerTurnsLabel;
@@ -13,12 +11,12 @@
     GKContiguousContainerView *_textContainerView;
 }
 
-@property(retain) GKLabel * activeMatchesLabel;
-@property(retain) GKLabel * localPlayerTurnsLabel;
-@property unsigned int numberOfActiveMatches;
-@property unsigned int numberOfLocalPlayerTurns;
-@property(retain) UIImageView * statusImageView;
-@property(retain) GKContiguousContainerView * textContainerView;
+@property (nonatomic, retain) GKLabel *activeMatchesLabel;
+@property (nonatomic, retain) GKLabel *localPlayerTurnsLabel;
+@property (nonatomic) unsigned int numberOfActiveMatches;
+@property (nonatomic) unsigned int numberOfLocalPlayerTurns;
+@property (nonatomic, retain) UIImageView *statusImageView;
+@property (nonatomic, retain) GKContiguousContainerView *textContainerView;
 
 + (float)defaultRowHeight;
 + (id)itemHeightList;

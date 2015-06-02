@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCCloudDocsAppsMonitor : NSObject <BRCAppListMonitorDelegate> {
     NSDictionary *_appIDsByContainerID;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -13,10 +11,10 @@
     struct br_pacer_t { } *_refetchPacer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)cloudDocsAppsMonitor;
 

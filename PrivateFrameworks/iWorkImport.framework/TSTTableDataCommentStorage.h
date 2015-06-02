@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDCommentStorage;
-
 @interface TSTTableDataCommentStorage : TSTTableDataObject {
     TSDCommentStorage *mCommentStorage;
 }

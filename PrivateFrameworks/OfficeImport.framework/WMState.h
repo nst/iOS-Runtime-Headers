@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMOutlineState, NSMutableDictionary, WDText;
-
 @interface WMState : CMState {
     CMOutlineState *currentListState;
     NSMutableDictionary *listStates;

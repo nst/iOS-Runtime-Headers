@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class TintedView, UIImage, UIView;
-
 @interface LineGraphView : UIView {
     UIImage *_lineImage;
     BOOL _showingTintedLine;

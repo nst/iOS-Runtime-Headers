@@ -8,7 +8,7 @@
     double mValue;
 }
 
-@property(getter=isIndeterminate) BOOL indeterminate;
+@property (getter=isIndeterminate) BOOL indeterminate;
 @property double maxValue;
 @property double value;
 

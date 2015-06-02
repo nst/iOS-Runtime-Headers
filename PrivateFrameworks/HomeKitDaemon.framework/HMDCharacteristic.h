@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPCharacteristic, HMDAccessory, HMDCharacteristicMetadata, HMDService, NSData, NSNumber, NSString;
-
 @interface HMDCharacteristic : NSObject <NSSecureCoding> {
     HMDAccessory *_accessory;
     NSData *_authorizationData;
@@ -16,21 +14,21 @@
     HMDService *_service;
 }
 
-@property(readonly) HMDAccessory * accessory;
-@property(copy) NSData * authorizationData;
-@property(readonly) HAPCharacteristic * characteristic;
-@property(retain) NSNumber * characteristicInstanceID;
-@property(retain) HMDCharacteristicMetadata * characteristicMetadata;
-@property int characteristicProperties;
-@property(retain) NSString * characteristicType;
-@property(retain) HAPCharacteristic * hapCharacteristic;
-@property(copy,readonly) NSNumber * instanceID;
-@property(readonly) HMDCharacteristicMetadata * metadata;
-@property BOOL notificationEnabled;
-@property(readonly) int properties;
-@property(readonly) HMDService * service;
-@property(copy,readonly) NSString * type;
-@property(copy,readonly) id value;
+@property (nonatomic, readonly) HMDAccessory *accessory;
+@property (nonatomic, copy) NSData *authorizationData;
+@property (nonatomic, readonly) HAPCharacteristic *characteristic;
+@property (nonatomic, retain) NSNumber *characteristicInstanceID;
+@property (nonatomic, retain) HMDCharacteristicMetadata *characteristicMetadata;
+@property (nonatomic) int characteristicProperties;
+@property (nonatomic, retain) NSString *characteristicType;
+@property (nonatomic, retain) HAPCharacteristic *hapCharacteristic;
+@property (nonatomic, readonly, copy) NSNumber *instanceID;
+@property (nonatomic, readonly) HMDCharacteristicMetadata *metadata;
+@property (nonatomic) BOOL notificationEnabled;
+@property (nonatomic, readonly) int properties;
+@property (nonatomic, readonly) HMDService *service;
+@property (nonatomic, readonly, copy) NSString *type;
+@property (nonatomic, readonly, copy) id value;
 
 + (BOOL)supportsSecureCoding;
 

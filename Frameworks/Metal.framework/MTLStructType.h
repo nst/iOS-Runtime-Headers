@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSArray, NSDictionary;
-
 @interface MTLStructType : NSObject {
     NSDictionary *_dictionary;
     NSArray *_members;
 }
 
-@property(readonly) NSArray * members;
+@property (readonly) NSArray *members;
 
 - (void)dealloc;
 - (id)describe;

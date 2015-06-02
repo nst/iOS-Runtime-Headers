@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSMassFormatter;
-
 @interface HKPersonWeightFormatter : NSObject {
     NSMassFormatter *_massFormatter;
 }

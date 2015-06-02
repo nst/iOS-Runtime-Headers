@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class SCNPhysicsBody, SCNPhysicsWorld;
-
 @interface SCNPhysicsHingeJoint : SCNPhysicsBehavior {
     struct btHingeConstraint { int (**x1)(); int x2; int x3; union { int x_4_1_1; void *x_4_1_2; } x4; float x5; bool x6; bool x7; int x8; struct btRigidBody {} *x9; struct btRigidBody {} *x10; float x11; float x12; struct btJointFeedback {} *x13; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_14_1_1; struct btVector3 { float x_2_2_1[4]; } x_14_1_2; struct btVector3 { float x_3_2_1[4]; } x_14_1_3; struct btVector3 { float x_4_2_1[4]; } x_14_1_4; struct btVector3 { float x_5_2_1[4]; } x_14_1_5; float x_14_1_6; } x14[3]; struct btJacobianEntry { struct btVector3 { float x_1_2_1[4]; } x_15_1_1; struct btVector3 { float x_2_2_1[4]; } x_15_1_2; struct btVector3 { float x_3_2_1[4]; } x_15_1_3; struct btVector3 { float x_4_2_1[4]; } x_15_1_4; struct btVector3 { float x_5_2_1[4]; } x_15_1_5; float x_15_1_6; } x15[3]; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_16_1_1; struct btVector3 { float x_2_2_1[4]; } x_16_1_2; } x16; struct btTransform { struct btMatrix3x3 { struct btVector3 { float x_1_3_1[4]; } x_1_2_1[3]; } x_17_1_1; struct btVector3 { float x_2_2_1[4]; } x_17_1_2; } x17; float x18; float x19; struct btAngularLimit { float x_20_1_1; float x_20_1_2; float x_20_1_3; float x_20_1_4; float x_20_1_5; float x_20_1_6; float x_20_1_7; bool x_20_1_8; } x20; float x21; float x22; float x23; float x24; bool x25; bool x26; bool x27; bool x28; bool x29; float x30; int x31; float x32; float x33; float x34; } *_constraint;
     struct { 
@@ -38,12 +31,12 @@
     SCNPhysicsWorld *_world;
 }
 
-@property struct SCNVector3 { float x1; float x2; float x3; } anchorA;
-@property struct SCNVector3 { float x1; float x2; float x3; } anchorB;
-@property struct SCNVector3 { float x1; float x2; float x3; } axisA;
-@property struct SCNVector3 { float x1; float x2; float x3; } axisB;
-@property(readonly) SCNPhysicsBody * bodyA;
-@property(readonly) SCNPhysicsBody * bodyB;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } anchorA;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } anchorB;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } axisA;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } axisB;
+@property (nonatomic, readonly) SCNPhysicsBody *bodyA;
+@property (nonatomic, readonly) SCNPhysicsBody *bodyB;
 
 + (id)SCNJSExportProtocol;
 + (id)jointWithBody:(id)arg1 axis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 anchor:(struct SCNVector3 { float x1; float x2; float x3; })arg3;

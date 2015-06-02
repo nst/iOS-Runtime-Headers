@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSData, NSString, NSURL;
-
 @interface AFLocation : NSObject <AFTranscriptionType> {
     NSURL *_addressBookID;
     NSString *_addressLabel;
@@ -12,15 +10,15 @@
     int _resultType;
 }
 
-@property(copy) NSURL * addressBookID;
-@property(copy) NSString * addressLabel;
-@property(copy) NSString * contactName;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSData * geoResult;
-@property(readonly) unsigned int hash;
-@property int resultType;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSURL *addressBookID;
+@property (nonatomic, copy) NSString *addressLabel;
+@property (nonatomic, copy) NSString *contactName;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSData *geoResult;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int resultType;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 

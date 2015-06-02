@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSIndexSet;
-
 @interface BRCDownloadContentEntry : BRCDownloadEntry {
     NSIndexSet *_desiredIndices;
     unsigned int _liveDocumentID;
@@ -13,11 +11,11 @@
     BOOL _sharedZone;
 }
 
-@property(readonly) NSIndexSet * desiredIndices;
-@property(readonly) unsigned int liveDocumentID;
-@property(readonly) unsigned long long liveFileID;
-@property(readonly) BOOL liveItemIsPackage;
-@property(readonly) BOOL requiresSecondPhase;
+@property (nonatomic, readonly) NSIndexSet *desiredIndices;
+@property (nonatomic, readonly) unsigned int liveDocumentID;
+@property (nonatomic, readonly) unsigned long long liveFileID;
+@property (nonatomic, readonly) BOOL liveItemIsPackage;
+@property (nonatomic, readonly) BOOL requiresSecondPhase;
 
 - (void).cxx_destruct;
 - (BOOL)_prepareSecondStageWithSession:(id)arg1 manifest:(id)arg2 package:(id)arg3 error:(id*)arg4;

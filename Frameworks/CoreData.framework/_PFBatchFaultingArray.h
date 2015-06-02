@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSFetchRequest, NSManagedObjectContext, _PFArray;
-
 @interface _PFBatchFaultingArray : NSArray {
     unsigned int *_LRUBatches;
     _PFArray *_array;
@@ -39,23 +32,23 @@
 - (id)arrayFromObjectIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)filteredArrayUsingPredicate:(id)arg1;
 - (void)getObjects:(id*)arg1;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
+- (unsigned int)indexOfObjectAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
-- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id)arg3;
-- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (unsigned int)indexOfObjectWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
+- (id)indexesOfObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 passingTest:(id /* block */)arg3;
+- (id)indexesOfObjectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
 - (BOOL)isEqualToArray:(id)arg1;
 - (id)managedObjectIDAtIndex:(unsigned int)arg1;
@@ -65,12 +58,12 @@
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
-- (id)sortedArrayUsingComparator:(id)arg1;
+- (id)sortedArrayUsingComparator:(id /* block */)arg1;
 - (id)sortedArrayUsingDescriptors:(id)arg1;
-- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2;
-- (id)sortedArrayUsingFunction:(int (*)())arg1 context:(void*)arg2 hint:(id)arg3;
+- (id)sortedArrayUsingFunction:(int (*)arg1 context:(void*)arg2;
+- (id)sortedArrayUsingFunction:(int (*)arg1 context:(void*)arg2 hint:(id)arg3;
 - (id)sortedArrayUsingSelector:(SEL)arg1;
-- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id)arg2;
+- (id)sortedArrayWithOptions:(unsigned int)arg1 usingComparator:(id /* block */)arg2;
 - (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;

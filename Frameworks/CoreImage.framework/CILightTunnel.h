@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CILightTunnel : CIFilter {
     CIVector *inputCenter;
     CIImage *inputImage;
@@ -11,10 +9,10 @@
     NSNumber *inputRotation;
 }
 
-@property(retain) CIVector * inputCenter;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputRadius;
-@property(retain) NSNumber * inputRotation;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputRadius;
+@property (nonatomic, retain) NSNumber *inputRotation;
 
 + (id)customAttributes;
 

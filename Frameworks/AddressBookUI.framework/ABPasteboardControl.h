@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPasteboardControl : UIControl {
-}
+@interface ABPasteboardControl : UIControl
 
 - (void)abMenuControllerWillHide;
 - (void)abMenuControllerWillShow:(id)arg1;

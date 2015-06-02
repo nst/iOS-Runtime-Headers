@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLVertexAttributeDescriptorArray, MTLVertexBufferLayoutDescriptorArray;
-
 @interface MTLVertexDescriptor : NSObject <NSCopying> {
     MTLVertexAttributeDescriptorArray *_attributeArray;
     MTLVertexBufferLayoutDescriptorArray *_vertexBufferArray;
 }
 
-@property(readonly) MTLVertexAttributeDescriptorArray * attributes;
-@property(readonly) MTLVertexBufferLayoutDescriptorArray * layouts;
+@property (readonly) MTLVertexAttributeDescriptorArray *attributes;
+@property (readonly) MTLVertexBufferLayoutDescriptorArray *layouts;
 
 + (id)vertexDescriptor;
 

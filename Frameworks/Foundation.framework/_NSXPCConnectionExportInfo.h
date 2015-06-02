@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSXPCInterface;
-
 @interface _NSXPCConnectionExportInfo : NSObject {
     long long _exportCount;
     NSXPCInterface *_exportedInterface;
@@ -11,8 +9,8 @@
 }
 
 @property long long exportCount;
-@property(retain) NSXPCInterface * exportedInterface;
-@property(retain) id exportedObject;
+@property (retain) NSXPCInterface *exportedInterface;
+@property (retain) id exportedObject;
 
 - (void)dealloc;
 - (id)description;

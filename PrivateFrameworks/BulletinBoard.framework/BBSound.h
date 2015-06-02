@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSDictionary, NSString;
-
 @interface BBSound : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     NSString *_accountIdentifier;
     int _alertType;
@@ -20,23 +18,23 @@
     NSDictionary *_vibrationPattern;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property int alertType;
-@property(copy) NSString * audioCategory;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property double maxDuration;
-@property(getter=isRepeating) BOOL repeats;
-@property(copy) NSString * ringtoneName;
-@property(copy) NSString * songPath;
-@property unsigned int soundBehavior;
-@property int soundType;
-@property(readonly) Class superclass;
-@property unsigned long systemSoundID;
-@property(copy) NSString * toneIdentifier;
-@property(copy) NSString * vibrationIdentifier;
-@property(copy) NSDictionary * vibrationPattern;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic) int alertType;
+@property (nonatomic, copy) NSString *audioCategory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double maxDuration;
+@property (getter=isRepeating, nonatomic) BOOL repeats;
+@property (nonatomic, copy) NSString *ringtoneName;
+@property (nonatomic, copy) NSString *songPath;
+@property (nonatomic) unsigned int soundBehavior;
+@property (nonatomic) int soundType;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned long systemSoundID;
+@property (nonatomic, copy) NSString *toneIdentifier;
+@property (nonatomic, copy) NSString *vibrationIdentifier;
+@property (nonatomic, copy) NSDictionary *vibrationPattern;
 
 + (id)_possiblyCachedAlertSoundForInitializedSound:(id)arg1;
 + (void)_removeCachedSound:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIWindow, _UIFallbackPresentationWindow;
-
 @interface _UIFallbackPresentationViewController : UIViewController {
     _UIFallbackPresentationWindow *_presentationWindow;
     UIWindow *_rotationDecider;
 }
 
-@property(retain) UIWindow * rotationDecider;
+@property (nonatomic, retain) UIWindow *rotationDecider;
 
 - (void)_presentViewController:(id)arg1 sendingView:(id)arg2 animated:(BOOL)arg3;
 - (void)dealloc;

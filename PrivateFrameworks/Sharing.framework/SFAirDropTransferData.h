@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class LSApplicationProxy, NSArray, NSDate, NSDictionary, NSError, NSMutableDictionary, NSNumber, NSString, NSURL, UIImage;
-
 @interface SFAirDropTransferData : NSObject <NSSecureCoding> {
     BOOL _autoAccept;
     NSString *_bundleID;
@@ -42,50 +40,50 @@
     BOOL _verifiableIdentity;
 }
 
-@property(getter=shouldAutoAccept) BOOL autoAccept;
-@property(copy) NSString * bundleID;
-@property(retain) NSNumber * bytesCopied;
-@property(copy) NSString * contentType;
-@property(readonly) NSDictionary * contentTypes;
-@property(retain) NSError * error;
-@property(retain) UIImage * fileIcon;
-@property(retain) NSArray * files;
-@property(retain) NSNumber * filesCopied;
-@property(copy,readonly) NSString * firstFileExtension;
-@property(copy,readonly) NSString * firstFileName;
-@property(copy,readonly) NSString * firstFileTypeDescription;
-@property(readonly) NSURL * firstURL;
-@property(retain) NSArray * items;
-@property(copy) NSString * itemsDescription;
-@property(retain) NSDictionary * itemsDescriptionAdvanced;
-@property(getter=isNonFileItem,readonly) BOOL nonFileItem;
-@property(retain) NSArray * possibleApplicationDestinations;
-@property(copy,readonly) NSString * progressMessage;
-@property(copy,readonly) NSString * recordID;
-@property(copy,readonly) NSString * rejectedMessage;
-@property(copy,readonly) NSString * searchAppStoreMessage;
-@property(copy,readonly) NSString * selectAppMessage;
-@property(retain) LSApplicationProxy * selectedApplicationDestination;
-@property(copy) NSString * senderComputerName;
-@property(copy) NSString * senderEmail;
-@property(copy) NSString * senderEmailHash;
-@property(copy) NSString * senderFirstName;
-@property(copy) NSString * senderID;
-@property(copy) NSString * senderLastName;
-@property(copy,readonly) NSString * senderName;
-@property BOOL soundPlayed;
-@property(retain) NSDate * timeLastUserInteraction;
-@property(retain) NSNumber * timeRemaining;
-@property(retain) NSNumber * totalBytes;
-@property(copy,readonly) NSString * transferCompleteMessage;
-@property BOOL transferCompleted;
-@property int transferState;
-@property(readonly) int transferStateResetCount;
-@property(getter=isUndesiredMixOfItems,readonly) BOOL undesiredMixOfItems;
-@property(getter=isUnknownFileType,readonly) BOOL unknownFileType;
-@property(getter=isUnknownScheme,readonly) BOOL unknownScheme;
-@property(getter=isValid,readonly) BOOL valid;
-@property(getter=isVerifiableIdentity) BOOL verifiableIdentity;
+@property (getter=shouldAutoAccept, nonatomic) BOOL autoAccept;
+@property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic, retain) NSNumber *bytesCopied;
+@property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, readonly) NSDictionary *contentTypes;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) UIImage *fileIcon;
+@property (nonatomic, retain) NSArray *files;
+@property (nonatomic, retain) NSNumber *filesCopied;
+@property (nonatomic, readonly, copy) NSString *firstFileExtension;
+@property (nonatomic, readonly, copy) NSString *firstFileName;
+@property (nonatomic, readonly, copy) NSString *firstFileTypeDescription;
+@property (nonatomic, readonly) NSURL *firstURL;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, copy) NSString *itemsDescription;
+@property (nonatomic, retain) NSDictionary *itemsDescriptionAdvanced;
+@property (getter=isNonFileItem, nonatomic, readonly) BOOL nonFileItem;
+@property (nonatomic, retain) NSArray *possibleApplicationDestinations;
+@property (nonatomic, readonly, copy) NSString *progressMessage;
+@property (nonatomic, readonly, copy) NSString *recordID;
+@property (nonatomic, readonly, copy) NSString *rejectedMessage;
+@property (nonatomic, readonly, copy) NSString *searchAppStoreMessage;
+@property (nonatomic, readonly, copy) NSString *selectAppMessage;
+@property (nonatomic, retain) LSApplicationProxy *selectedApplicationDestination;
+@property (nonatomic, copy) NSString *senderComputerName;
+@property (nonatomic, copy) NSString *senderEmail;
+@property (nonatomic, copy) NSString *senderEmailHash;
+@property (nonatomic, copy) NSString *senderFirstName;
+@property (nonatomic, copy) NSString *senderID;
+@property (nonatomic, copy) NSString *senderLastName;
+@property (nonatomic, readonly, copy) NSString *senderName;
+@property (nonatomic) BOOL soundPlayed;
+@property (nonatomic, retain) NSDate *timeLastUserInteraction;
+@property (nonatomic, retain) NSNumber *timeRemaining;
+@property (nonatomic, retain) NSNumber *totalBytes;
+@property (nonatomic, readonly, copy) NSString *transferCompleteMessage;
+@property (nonatomic) BOOL transferCompleted;
+@property (nonatomic) int transferState;
+@property (nonatomic, readonly) int transferStateResetCount;
+@property (getter=isUndesiredMixOfItems, nonatomic, readonly) BOOL undesiredMixOfItems;
+@property (getter=isUnknownFileType, nonatomic, readonly) BOOL unknownFileType;
+@property (getter=isUnknownScheme, nonatomic, readonly) BOOL unknownScheme;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isVerifiableIdentity, nonatomic) BOOL verifiableIdentity;
 
 + (id)airDropTransferDataWithRecordID:(id)arg1;
 + (id)archivedTransferName;

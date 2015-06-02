@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface FTIDSMessage : IDSBaseMessage <NSCopying> {
     NSMutableArray *_certDataArray;
     NSData *_identityCert;
@@ -19,18 +17,18 @@
     NSMutableArray *_userIDArray;
 }
 
-@property(copy) NSData * IDCertificate;
-@property(copy) NSMutableArray * certDataArray;
-@property struct __SecKey { }* identityPrivateKey;
-@property struct __SecKey { }* identityPublicKey;
-@property(copy) NSMutableArray * privateKeyArray;
-@property(copy) NSMutableArray * publicKeyArray;
-@property(copy) NSData * pushCertificate;
-@property struct __SecKey { }* pushPrivateKey;
-@property struct __SecKey { }* pushPublicKey;
-@property(copy) NSData * pushToken;
-@property(copy) NSString * selfURI;
-@property(copy) NSMutableArray * userIDArray;
+@property (nonatomic, copy) NSData *IDCertificate;
+@property (nonatomic, copy) NSMutableArray *certDataArray;
+@property (nonatomic) struct __SecKey { }*identityPrivateKey;
+@property (nonatomic) struct __SecKey { }*identityPublicKey;
+@property (nonatomic, copy) NSMutableArray *privateKeyArray;
+@property (nonatomic, copy) NSMutableArray *publicKeyArray;
+@property (nonatomic, copy) NSData *pushCertificate;
+@property (nonatomic) struct __SecKey { }*pushPrivateKey;
+@property (nonatomic) struct __SecKey { }*pushPublicKey;
+@property (nonatomic, copy) NSData *pushToken;
+@property (nonatomic, copy) NSString *selfURI;
+@property (nonatomic, copy) NSMutableArray *userIDArray;
 
 - (id)IDCertificate;
 - (void)addAuthUserID:(id)arg1 certificate:(id)arg2 privateKey:(struct __SecKey { }*)arg3 publicKey:(struct __SecKey { }*)arg4;

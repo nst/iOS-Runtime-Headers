@@ -9,9 +9,9 @@
     BOOL initialized;
 }
 
-+ (void)withSearchListForIdentifier:(struct __CFString { }*)arg1 container:(struct __CFString { }*)arg2 perform:(id)arg3;
-+ (void)withSnapshotSearchList:(id)arg1;
-+ (void)withSuiteSearchListForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 locked:(BOOL)arg3 perform:(id)arg4;
++ (void)withSearchListForIdentifier:(struct __CFString { }*)arg1 container:(struct __CFString { }*)arg2 perform:(id /* block */)arg3;
++ (void)withSnapshotSearchList:(id /* block */)arg1;
++ (void)withSuiteSearchListForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 locked:(BOOL)arg3 perform:(id /* block */)arg4;
 
 - (void)addCompatibilitySource;
 - (void)addManagedSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2;

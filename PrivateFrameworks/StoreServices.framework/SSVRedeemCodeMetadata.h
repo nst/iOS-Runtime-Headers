@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface SSVRedeemCodeMetadata : NSObject <NSCopying> {
     NSDictionary *_dictionary;
     NSString *_inputCode;
 }
 
-@property(readonly) NSString * code;
-@property(readonly) NSString * codeType;
-@property(copy) NSString * inputCode;
-@property(readonly) NSArray * items;
-@property(readonly) NSDictionary * redeemCodeDictionary;
+@property (nonatomic, readonly) NSString *code;
+@property (nonatomic, readonly) NSString *codeType;
+@property (nonatomic, copy) NSString *inputCode;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, readonly) NSDictionary *redeemCodeDictionary;
 
 - (void).cxx_destruct;
 - (id)code;

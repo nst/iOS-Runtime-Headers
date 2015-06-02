@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
+@interface GQHPagesWPFloatingTable : NSObject <GQTableGenerator>
 
-@interface GQHPagesWPFloatingTable : NSObject <GQTableGenerator> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (int)beginCells:(id)arg1 state:(id)arg2;
 + (int)beginTable:(id)arg1 state:(id)arg2;

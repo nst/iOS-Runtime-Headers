@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSString, UIImage, UILabel, _CertInfoActionButton, _CertInfoGradientLabel;
-
 @interface _CertInfoTrustSummaryHeaderCell : UITableViewCell {
     _CertInfoActionButton *_actionButton;
     UIImage *_certificateImage;
@@ -14,11 +12,11 @@
     _CertInfoGradientLabel *_trustedLabel;
 }
 
-@property(readonly) _CertInfoActionButton * actionButton;
-@property(readonly) float rowHeight;
-@property(copy) NSString * trustSubtitle;
-@property(copy) NSString * trustTitle;
-@property(getter=isTrusted) BOOL trusted;
+@property (nonatomic, readonly) _CertInfoActionButton *actionButton;
+@property (nonatomic, readonly) float rowHeight;
+@property (nonatomic, copy) NSString *trustSubtitle;
+@property (nonatomic, copy) NSString *trustTitle;
+@property (getter=isTrusted, nonatomic) BOOL trusted;
 
 - (void).cxx_destruct;
 - (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { float x1; float x2; })arg1;

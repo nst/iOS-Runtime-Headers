@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSDate, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, PCDispatchTimer;
-
 @interface PCSimpleTimer : NSObject <PCLoggingDelegate> {
     BOOL _disableSystemWaking;
     double _fireTime;
@@ -26,12 +24,12 @@
     id _userInfo;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableSystemWaking;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * loggingIdentifier;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableSystemWaking;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *loggingIdentifier;
+@property (readonly) Class superclass;
 
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
@@ -39,7 +37,7 @@
 - (void)_fireTimerFired;
 - (id)_getTimerMode;
 - (id)_getTimerRunLoop;
-- (void)_performBlockOnQueue:(id)arg1;
+- (void)_performBlockOnQueue:(id /* block */)arg1;
 - (void)_powerNotificationSleepIsImminent;
 - (void)_powerNotificationSleepIsNotImminent;
 - (void)_preventSleepFired;

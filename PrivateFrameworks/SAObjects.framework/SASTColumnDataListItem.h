@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SASTTemplateAction>, NSArray, NSString, SAUIDecoratedText, SAUINanoImageResource;
+@interface SASTColumnDataListItem : AceObject <SASTActionableTemplateItem>
 
-@interface SASTColumnDataListItem : AceObject <SASTActionableTemplateItem> {
-}
-
-@property(retain) <SASTTemplateAction> * action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSArray * decoratedRows;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUINanoImageResource * imageResource;
-@property(copy) NSString * rowLayout;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
+@property (nonatomic, retain) <SASTTemplateAction> *action;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSArray *decoratedRows;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUINanoImageResource *imageResource;
+@property (nonatomic, copy) NSString *rowLayout;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
 
 + (id)columnDataListItem;
 + (id)columnDataListItemWithDictionary:(id)arg1 context:(id)arg2;

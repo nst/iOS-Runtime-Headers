@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface OADStyleMatrix : NSObject {
     NSMutableArray *mBgFills;
     NSMutableArray *mEffects;

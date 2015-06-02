@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIComposeTextFieldConfiguration : NSObject {
     struct UIEdgeInsets { 
         float top; 
@@ -19,13 +17,13 @@
     NSString *_value;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
-@property int columnIndex;
-@property(copy) NSString * label;
-@property unsigned int maxLength;
-@property(copy) NSString * placeholder;
-@property(getter=isRequired) BOOL required;
-@property(copy) NSString * value;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
+@property (nonatomic) int columnIndex;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned int maxLength;
+@property (nonatomic, copy) NSString *placeholder;
+@property (getter=isRequired, nonatomic) BOOL required;
+@property (nonatomic, copy) NSString *value;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;

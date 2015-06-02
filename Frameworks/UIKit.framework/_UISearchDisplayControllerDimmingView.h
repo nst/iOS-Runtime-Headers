@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UISearchDisplayControllerDimmingView : UIControl {
-}
+@interface _UISearchDisplayControllerDimmingView : UIControl
 
 @end

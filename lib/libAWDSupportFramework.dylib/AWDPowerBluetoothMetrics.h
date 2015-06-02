@@ -21,20 +21,20 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int btConnectedDuration;
-@property unsigned int btOthersDuration;
-@property unsigned int btRxDuration;
-@property unsigned int btSleepDuration;
-@property unsigned int btTotalPowerMicroWatt;
-@property unsigned int btTxDuration;
-@property BOOL hasBtConnectedDuration;
-@property BOOL hasBtOthersDuration;
-@property BOOL hasBtRxDuration;
-@property BOOL hasBtSleepDuration;
-@property BOOL hasBtTotalPowerMicroWatt;
-@property BOOL hasBtTxDuration;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int btConnectedDuration;
+@property (nonatomic) unsigned int btOthersDuration;
+@property (nonatomic) unsigned int btRxDuration;
+@property (nonatomic) unsigned int btSleepDuration;
+@property (nonatomic) unsigned int btTotalPowerMicroWatt;
+@property (nonatomic) unsigned int btTxDuration;
+@property (nonatomic) BOOL hasBtConnectedDuration;
+@property (nonatomic) BOOL hasBtOthersDuration;
+@property (nonatomic) BOOL hasBtRxDuration;
+@property (nonatomic) BOOL hasBtSleepDuration;
+@property (nonatomic) BOOL hasBtTotalPowerMicroWatt;
+@property (nonatomic) BOOL hasBtTxDuration;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)btConnectedDuration;
 - (unsigned int)btOthersDuration;

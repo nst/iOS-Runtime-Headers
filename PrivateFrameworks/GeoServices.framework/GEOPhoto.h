@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPhoto : PBCodable <NSCopying> {
     struct { 
         unsigned int photoType : 1; 
@@ -13,11 +11,11 @@
     NSString *_uid;
 }
 
-@property BOOL hasPhotoType;
-@property(readonly) BOOL hasUid;
-@property(retain) NSMutableArray * photoInfos;
-@property int photoType;
-@property(retain) NSString * uid;
+@property (nonatomic) BOOL hasPhotoType;
+@property (nonatomic, readonly) BOOL hasUid;
+@property (nonatomic, retain) NSMutableArray *photoInfos;
+@property (nonatomic) int photoType;
+@property (nonatomic, retain) NSString *uid;
 
 - (id)_bestURLForSize:(int)arg1;
 - (id)_photoInfoForSize:(int)arg1 includeSmallerSizes:(BOOL)arg2;

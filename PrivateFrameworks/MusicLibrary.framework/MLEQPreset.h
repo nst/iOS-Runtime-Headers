@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MLEQPreset : NSObject {
     int _builtInPresetType;
     NSString *_localizedName;

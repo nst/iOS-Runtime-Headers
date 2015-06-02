@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSString;
-
 @interface CLRegion : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         BOOL identifier[512]; 
@@ -30,12 +28,12 @@
     } fRegion;
 }
 
-@property(readonly) struct { double x1; double x2; } center;
-@property(readonly) struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
-@property(copy,readonly) NSString * identifier;
-@property BOOL notifyOnEntry;
-@property BOOL notifyOnExit;
-@property(readonly) double radius;
+@property (nonatomic, readonly) struct { double x1; double x2; } center;
+@property (nonatomic, readonly) struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; } clientRegion;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic) BOOL notifyOnEntry;
+@property (nonatomic) BOOL notifyOnExit;
+@property (nonatomic, readonly) double radius;
 
 + (BOOL)supportsSecureCoding;
 

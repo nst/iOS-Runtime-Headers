@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFlippingLayer : CATransformLayer {
-}
+@interface _UIFlippingLayer : CATransformLayer
 
 - (void)setOpaque:(BOOL)arg1;
 

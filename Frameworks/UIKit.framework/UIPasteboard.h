@@ -2,25 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSURL, UIColor, UIImage;
-
 @interface UIPasteboard : NSObject {
     NSString *_name;
 }
 
-@property(copy) NSURL * URL;
-@property(copy) NSArray * URLs;
-@property(readonly) int changeCount;
-@property(copy) UIColor * color;
-@property(copy) NSArray * colors;
-@property(copy) UIImage * image;
-@property(copy) NSArray * images;
-@property(copy) NSArray * items;
-@property(readonly) NSString * name;
-@property(readonly) int numberOfItems;
-@property(getter=isPersistent) BOOL persistent;
-@property(copy) NSString * string;
-@property(copy) NSArray * strings;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSArray *URLs;
+@property (nonatomic, readonly) int changeCount;
+@property (nonatomic, copy) UIColor *color;
+@property (nonatomic, copy) NSArray *colors;
+@property (nonatomic, copy) UIImage *image;
+@property (nonatomic, copy) NSArray *images;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int numberOfItems;
+@property (getter=isPersistent, nonatomic) BOOL persistent;
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, copy) NSArray *strings;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_findPasteboard;
 + (id)_printPasteboard;
@@ -31,14 +31,6 @@
 
 - (id)URL;
 - (id)URLs;
-- (id)__ck_composition;
-- (id)__ck_dataForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)__ck_filenameForType:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)__ck_mediaObjectAtIndex:(unsigned int)arg1;
-- (id)__ck_mediaObjectManager;
-- (id)__ck_pasteboardTypeListRTF;
-- (id)__ck_pasteboardTypesForIndex:(unsigned int)arg1;
-- (id)__ck_valueForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)_addItems:(id)arg1 oldPasteboardTypes:(id)arg2;
 - (id)_initWithName:(id)arg1 system:(BOOL)arg2 create:(BOOL)arg3;
 - (void)_pasteboardChanged:(id)arg1;
@@ -57,22 +49,10 @@
 - (BOOL)isPersistent;
 - (id)itemSetWithPasteboardTypes:(id)arg1;
 - (id)items;
-- (void)mf_addPasteboardRepresentationsForAttachments:(id)arg1;
-- (void)mf_addPasteboardRepresentationsForTextAttachments:(id)arg1;
-- (id)mf_getAttachmentsPasteboardRepresentations;
 - (id)name;
 - (int)numberOfItems;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
-- (id)pl_assetsInPhotoLibrary:(id)arg1;
-- (BOOL)pl_containsAssets;
-- (void)pl_setAsset:(id)arg1;
-- (void)pl_setAssets:(id)arg1;
-- (id)pu_assets;
-- (BOOL)pu_containsAssets;
-- (id)pu_newPasteboardRepresentationForAsset:(id)arg1 data:(id)arg2 utiType:(id)arg3;
-- (void)pu_setAssetRepresentation:(id)arg1;
-- (void)pu_setAssetRepresentations:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColors:(id)arg1;
 - (void)setData:(id)arg1 forPasteboardType:(id)arg2;
@@ -89,5 +69,37 @@
 - (id)strings;
 - (id)valueForPasteboardType:(id)arg1;
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (void)mf_addPasteboardRepresentationsForAttachments:(id)arg1;
+- (void)mf_addPasteboardRepresentationsForTextAttachments:(id)arg1;
+- (id)mf_getAttachmentsPasteboardRepresentations;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_assets;
+- (BOOL)pu_containsAssets;
+- (id)pu_newPasteboardRepresentationForAsset:(id)arg1 data:(id)arg2 utiType:(id)arg3;
+- (void)pu_setAssetRepresentation:(id)arg1;
+- (void)pu_setAssetRepresentations:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_composition;
+- (id)__ck_dataForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)__ck_filenameForType:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)__ck_mediaObjectAtIndex:(unsigned int)arg1;
+- (id)__ck_mediaObjectManager;
+- (id)__ck_pasteboardTypeListRTF;
+- (id)__ck_pasteboardTypesForIndex:(unsigned int)arg1;
+- (id)__ck_valueForPasteboardType:(id)arg1 atIndex:(unsigned int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (id)pl_assetsInPhotoLibrary:(id)arg1;
+- (BOOL)pl_containsAssets;
+- (void)pl_setAsset:(id)arg1;
+- (void)pl_setAssets:(id)arg1;
 
 @end

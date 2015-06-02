@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSAPdfDestination : NSObject {
     NSString *_name;
     struct CGPoint { 
@@ -12,8 +10,8 @@
     } _point;
 }
 
-@property(readonly) NSString * name;
-@property(readonly) struct CGPoint { float x1; float x2; } point;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } point;
 
 + (id)pdfDestinationWithName:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2;
 

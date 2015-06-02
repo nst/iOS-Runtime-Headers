@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData, NSString, SSURLConnectionRequest;
-
 @interface RadioReportIssueRequest : RadioRequest {
     NSData *_data;
     NSString *_description;
@@ -15,6 +13,6 @@
 - (void)cancel;
 - (id)initWithIssueType:(int)arg1 description:(id)arg2;
 - (id)initWithIssueType:(int)arg1 description:(id)arg2 data:(id)arg3;
-- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithCompletionHandler:(id /* block */)arg1;
 
 @end

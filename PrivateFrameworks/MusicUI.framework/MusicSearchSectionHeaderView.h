@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSDictionary;
-
 @interface MusicSearchSectionHeaderView : MusicTableSectionHeaderView {
     NSDictionary *_titleEmphasizedTextAttributes;
     NSDictionary *_titleRegularTextAttributes;

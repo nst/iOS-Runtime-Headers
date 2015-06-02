@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCMathExpression;
-
 @interface SCRCMathLongDivisionExpression : SCRCMathArrayExpression {
     SCRCMathExpression *_divisor;
 }
 
-@property(retain) SCRCMathExpression * divisor;
+@property (nonatomic, retain) SCRCMathExpression *divisor;
 
 - (void)dealloc;
 - (id)divisor;

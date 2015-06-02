@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TSUNoCopyDictionary;
-
 @interface TSULRUCache : NSObject {
     SEL mCallback;
     id mCallbackTarget;
@@ -12,9 +10,9 @@
     NSMutableArray *mOrderedKeys;
 }
 
-@property(readonly) NSArray * allKeys;
-@property(readonly) NSArray * allValues;
-@property(readonly) unsigned int maxSize;
+@property (nonatomic, readonly) NSArray *allKeys;
+@property (nonatomic, readonly) NSArray *allValues;
+@property (nonatomic, readonly) unsigned int maxSize;
 
 - (id)allKeys;
 - (id)allValues;

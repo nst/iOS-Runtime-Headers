@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface BWNoiseReducerNode : BWNode {
     NSDictionary *_cameraTuningOptions;
     struct NoiseReductionCtx_s { } *_context;

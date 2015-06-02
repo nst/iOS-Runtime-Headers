@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class SBFPasscodeLockAssertionTracker;
-
 @interface SBFPasscodeLockAssertionManager : NSObject {
     SBFPasscodeLockAssertionTracker *_lockScreenCameraTracker;
     SBFPasscodeLockAssertionTracker *_preventLockTracker;

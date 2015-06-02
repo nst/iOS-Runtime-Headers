@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBackdropViewSettingsDarkWithZoom : _UIBackdropViewSettingsDark {
-}
+@interface _UIBackdropViewSettingsDarkWithZoom : _UIBackdropViewSettingsDark
 
 - (void)setDefaultValues;
 

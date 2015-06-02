@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector;
-
 @interface CIToneCurve : CIFilter <_CIFilterProperties> {
     CIImage *_curveImage;
     CIImage *inputImage;
@@ -14,12 +12,12 @@
     CIVector *inputPoint4;
 }
 
-@property(retain) CIImage * inputImage;
-@property(copy) CIVector * inputPoint0;
-@property(copy) CIVector * inputPoint1;
-@property(copy) CIVector * inputPoint2;
-@property(copy) CIVector * inputPoint3;
-@property(copy) CIVector * inputPoint4;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, copy) CIVector *inputPoint0;
+@property (nonatomic, copy) CIVector *inputPoint1;
+@property (nonatomic, copy) CIVector *inputPoint2;
+@property (nonatomic, copy) CIVector *inputPoint3;
+@property (nonatomic, copy) CIVector *inputPoint4;
 
 + (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
 + (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1 linear:(BOOL)arg2;

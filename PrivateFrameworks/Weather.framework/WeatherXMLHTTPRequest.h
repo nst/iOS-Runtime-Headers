@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WeatherXMLHTTPRequest : WeatherHTTPRequest {
-}
+@interface WeatherXMLHTTPRequest : WeatherHTTPRequest
 
 - (void)_forceRawDataDump:(id)arg1;
 - (id)aggregateDictionaryDomain;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIKeyboardCandidateBar, UIKeyboardCandidateGrid, UIKeyboardCandidateSortControl, UIKeyboardCandidateSplitKeyboardToggleButton, UIKeyboardCandidateUnsplitKeyboardToggleButton, UIView<UIKeyboardCandidateList>;
-
 @interface UIKeyboardCandidateView : UIInputView {
     UIKeyboardCandidateBar *_bar;
     struct { 
@@ -20,7 +18,7 @@
     UIKeyboardCandidateSortControl *_sortControl;
 }
 
-@property(retain) UIView<UIKeyboardCandidateList> * inlineView;
+@property (nonatomic, retain) UIView<UIKeyboardCandidateList> *inlineView;
 
 + (id)activeCandidateList;
 + (id)activeCandidateView;

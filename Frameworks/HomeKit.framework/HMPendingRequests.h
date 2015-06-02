@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface HMPendingRequests : NSObject {
     NSMutableArray *_contextLists;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSMutableArray * contextLists;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSMutableArray *contextLists;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_addRequest:(id)arg1 ofType:(int)arg2 forIdentifier:(id)arg3;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, UIImageView, UILabel;
-
 @interface _MFSecureMIMEPersonHeaderLabel : UIView {
     UIImageView *_imageView;
     UILabel *_label;
 }
 
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *text;
 
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 text:(id)arg2 textColor:(id)arg3;

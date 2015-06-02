@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSDate;
-
 @interface FUHourlySedentaryActivityInfo : NSObject <NSSecureCoding> {
     int _sedentaryState;
     NSDate *_startDate;
 }
 
-@property int sedentaryState;
-@property(retain) NSDate * startDate;
+@property (nonatomic) int sedentaryState;
+@property (nonatomic, retain) NSDate *startDate;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDatePickerMode_MonthDay : _UIDatePickerMode_Date {
-}
+@interface _UIDatePickerMode_MonthDay : _UIDatePickerMode_Date
 
 + (int)datePickerMode;
 + (unsigned int)extractableCalendarUnits;

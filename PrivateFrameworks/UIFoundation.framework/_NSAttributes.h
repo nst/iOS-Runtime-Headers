@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSDictionary;
-
 @interface _NSAttributes : NSObject {
     NSDictionary *_attributes;
     struct _NSRange { 

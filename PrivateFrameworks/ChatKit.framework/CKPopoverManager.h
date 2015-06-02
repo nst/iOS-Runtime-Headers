@@ -2,34 +2,20 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIPopoverController, UIViewController;
-
 @interface CKPopoverManager : NSObject <UIPopoverControllerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     UIPopoverController *_popoverController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _presenter;
-
+    id /* block */ _presenter;
 }
 
-@property(retain,readonly) UIViewController * currentContentController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id handler;
-@property(readonly) unsigned int hash;
-@property(retain) UIPopoverController * popoverController;
-@property(copy) id presenter;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, retain) UIViewController *currentContentController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ handler;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic, copy) id /* block */ presenter;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -37,17 +23,17 @@
 - (void)dealloc;
 - (void)didFinishRotating;
 - (void)dismissCurrentPopoverAnimated:(BOOL)arg1;
-- (void)dismissCurrentPopoverAnimated:(BOOL)arg1 withCompletionBlock:(id)arg2;
-- (id)handler;
+- (void)dismissCurrentPopoverAnimated:(BOOL)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id /* block */)handler;
 - (BOOL)isShowingPopover;
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (id)presenter;
+- (id /* block */)presenter;
 - (void)replaceCurrentControllerWithController:(id)arg1;
 - (void)representCurrentPopover;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setPopoverController:(id)arg1;
-- (void)setPresenter:(id)arg1;
-- (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id)arg2 withHandler:(id)arg3;
+- (void)setPresenter:(id /* block */)arg1;
+- (void)showPopoverWithContentViewController:(id)arg1 withPresenter:(id /* block */)arg2 withHandler:(id /* block */)arg3;
 
 @end

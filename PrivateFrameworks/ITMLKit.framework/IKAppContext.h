@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppContextDelegate>, <IKApplication>, IKJSFoundation, JSContext, NSError, NSMutableArray, NSString;
-
 @interface IKAppContext : NSObject <ISURLOperationDelegate> {
     <IKApplication> *_app;
     BOOL _canAccessPendingQueue;
@@ -22,23 +20,23 @@
     NSString *_responseScript;
 }
 
-@property(readonly) <IKApplication> * app;
-@property BOOL canAccessPendingQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <IKAppContextDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, readonly) <IKApplication> *app;
+@property (nonatomic) BOOL canAccessPendingQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <IKAppContextDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL isValid;
-@property(retain) JSContext * jsContext;
-@property(retain) IKJSFoundation * jsFoundation;
-@property(readonly) unsigned int mode;
-@property(retain) NSMutableArray * pendingQueue;
-@property(retain) NSMutableArray * postEvaluationBlocks;
-@property(retain) id reloadData;
-@property BOOL remoteInspectionEnabled;
-@property(retain) NSError * responseError;
-@property(copy) NSString * responseScript;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) JSContext *jsContext;
+@property (nonatomic, retain) IKJSFoundation *jsFoundation;
+@property (nonatomic, readonly) unsigned int mode;
+@property (nonatomic, retain) NSMutableArray *pendingQueue;
+@property (nonatomic, retain) NSMutableArray *postEvaluationBlocks;
+@property (nonatomic, retain) id reloadData;
+@property (nonatomic) BOOL remoteInspectionEnabled;
+@property (nonatomic, retain) NSError *responseError;
+@property (nonatomic, copy) NSString *responseScript;
+@property (readonly) Class superclass;
 
 + (id)currentAppContext;
 
@@ -46,7 +44,7 @@
 - (void)_addStopRecordToPendingQueueWithReload:(BOOL)arg1;
 - (void)_dispatchError:(id)arg1;
 - (id)_errorWithMessage:(id)arg1;
-- (void)_evaluate:(id)arg1;
+- (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
 - (void)_jsThreadMain;
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
@@ -55,12 +53,12 @@
 - (void)_startWithScript:(id)arg1;
 - (void)_startWithURL:(id)arg1 urlTrusted:(BOOL)arg2;
 - (void)_stopAndReload:(BOOL)arg1;
-- (void)addPostEvaluateBlock:(id)arg1;
+- (void)addPostEvaluateBlock:(id /* block */)arg1;
 - (id)app;
 - (BOOL)canAccessPendingQueue;
 - (id)delegate;
-- (void)evaluate:(id)arg1 completionBlock:(id)arg2;
-- (void)evaluateDelegateBlockSync:(id)arg1;
+- (void)evaluate:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
+- (void)evaluateDelegateBlockSync:(id /* block */)arg1;
 - (void)evaluateFoundationJS;
 - (void)exitAppWithOptions:(id)arg1;
 - (void)handleReloadWithUrgencyType:(unsigned int)arg1 data:(id)arg2;

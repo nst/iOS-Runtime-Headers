@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKModifySharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_shareIDsToDelete;
     NSArray *_sharesToSave;
 }
 
-@property(retain) NSArray * shareIDsToDelete;
-@property(retain) NSArray * sharesToSave;
+@property (nonatomic, retain) NSArray *shareIDsToDelete;
+@property (nonatomic, retain) NSArray *sharesToSave;
 
 + (BOOL)supportsSecureCoding;
 

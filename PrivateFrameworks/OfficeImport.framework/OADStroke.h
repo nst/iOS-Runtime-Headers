@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor, OADDash, OADFill, OADLineEnd, OADLineJoin;
-
 @interface OADStroke : OADProperties <NSCopying> {
     unsigned char mCap;
     OADColor *mColor;
@@ -11,22 +9,22 @@
     OADDash *mDash;
     OADFill *mFill;
     OADLineEnd *mHead;
-    unsigned int mIsCapOverridden : 1;
-    unsigned int mIsColorOverridden : 1;
-    unsigned int mIsCompoundTypeOverridden : 1;
-    unsigned int mIsDashOverridden : 1;
-    unsigned int mIsFillOverridden : 1;
-    unsigned int mIsJoinOverridden : 1;
-    unsigned int mIsPenAlignmentOverridden : 1;
-    unsigned int mIsWidthOverridden : 1;
+    unsigned int mIsCapOverridden;
+    unsigned int mIsColorOverridden;
+    unsigned int mIsCompoundTypeOverridden;
+    unsigned int mIsDashOverridden;
+    unsigned int mIsFillOverridden;
+    unsigned int mIsJoinOverridden;
+    unsigned int mIsPenAlignmentOverridden;
+    unsigned int mIsWidthOverridden;
     OADLineJoin *mJoin;
     unsigned char mPenAlignment;
     OADLineEnd *mTail;
     float mWidth;
 }
 
-@property(retain) OADLineEnd * head;
-@property(retain) OADLineEnd * tail;
+@property (nonatomic, retain) OADLineEnd *head;
+@property (nonatomic, retain) OADLineEnd *tail;
 
 + (id)blackStroke;
 + (id)defaultProperties;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKLazyDrawingLayer : CALayer {
-}
+@interface EKLazyDrawingLayer : CALayer
 
 - (void)didChangeValueForKey:(id)arg1;
 

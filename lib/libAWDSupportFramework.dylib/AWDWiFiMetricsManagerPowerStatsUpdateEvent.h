@@ -19,18 +19,18 @@
     unsigned int _unassociatedSleepDur;
 }
 
-@property unsigned int associatedSleepDur;
-@property BOOL hasAssociatedSleepDur;
-@property BOOL hasRoamDur;
-@property BOOL hasTimestamp;
-@property BOOL hasTotalDur;
-@property BOOL hasType;
-@property BOOL hasUnassociatedSleepDur;
-@property unsigned int roamDur;
-@property unsigned long long timestamp;
-@property unsigned int totalDur;
-@property unsigned int type;
-@property unsigned int unassociatedSleepDur;
+@property (nonatomic) unsigned int associatedSleepDur;
+@property (nonatomic) BOOL hasAssociatedSleepDur;
+@property (nonatomic) BOOL hasRoamDur;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTotalDur;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasUnassociatedSleepDur;
+@property (nonatomic) unsigned int roamDur;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int totalDur;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned int unassociatedSleepDur;
 
 - (unsigned int)associatedSleepDur;
 - (void)copyTo:(id)arg1;

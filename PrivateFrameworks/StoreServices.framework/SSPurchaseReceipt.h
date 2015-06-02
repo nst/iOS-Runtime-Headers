@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class ISPurchaseReceipt, NSDate;
-
 @interface SSPurchaseReceipt : NSObject {
     ISPurchaseReceipt *_purchaseReceipt;
 }
 
-@property(readonly) NSDate * expirationDate;
-@property(readonly) BOOL isRevoked;
-@property(readonly) BOOL isVPPLicensed;
+@property (readonly) NSDate *expirationDate;
+@property (readonly) BOOL isRevoked;
+@property (readonly) BOOL isVPPLicensed;
 
-+ (void)getReceiptPathWithCompletionBlock:(id)arg1;
++ (void)getReceiptPathWithCompletionBlock:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)expirationDate;

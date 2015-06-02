@@ -3,10 +3,10 @@
  */
 
 @interface _SCRCStackQueueEnumerator : NSEnumerator {
-    struct _SCRCStackNode { id x1; void *x2; void *x3; } *_currentListMemeber;
+    struct _SCRCStackNode { id x1; void x2; void *x3; } *_currentListMemeber;
 }
 
-- (id)initWithListMember:(struct _SCRCStackNode { id x1; void *x2; void *x3; }*)arg1;
+- (id)initWithListMember:(struct _SCRCStackNode { id x1; void x2; void *x3; }*)arg1;
 - (id)nextObject;
 
 @end

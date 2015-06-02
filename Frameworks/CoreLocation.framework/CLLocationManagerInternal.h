@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class <CLLocationManagerDelegate>, NSMutableSet, NSString;
-
 @interface CLLocationManagerInternal : NSObject {
     int fActivityType;
     BOOL fAllowsLocationPrompts;
@@ -64,7 +62,7 @@
     BOOL fUpdatingVehicleSpeed;
 }
 
-@property(readonly) NSMutableSet * rangedRegions;
+@property (nonatomic, readonly) NSMutableSet *rangedRegions;
 
 - (int)PausesLocationUpdatesAutomatically;
 - (void)cancelLocationRequest;

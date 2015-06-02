@@ -2,22 +2,8 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class SCNAction;
-
 @interface SCNActionRepeat : SCNAction {
-
-  /* Error parsing encoded ivar type info: ^{SCNCActionRepeat=^^?f@?@BddffdBB@?^{__CFString}iffff^{SCNCAction}IIc} */
-    struct SCNCActionRepeat { int (**x1)(); float x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; id x5; bool x6; double x7; double x8; float x9; float x10; double x11; bool x12; bool x13; id x14; void*x15; struct __CFString {} *x16; int x17; float x18; float x19; float x20; float x21; struct SCNCAction {} *x22; unsigned int x23; unsigned int x24; BOOL x25; } *_mycaction;
-
+    struct SCNCActionRepeat { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; struct SCNCAction {} *x19; unsigned int x20; unsigned int x21; BOOL x22; } *_mycaction;
     SCNAction *_repeatedAction;
 }
 

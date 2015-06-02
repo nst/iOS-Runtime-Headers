@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class CDAttribute, NSString;
-
 @interface DADuetReporter : NSObject {
     CDAttribute *_attribute;
     NSString *_value;

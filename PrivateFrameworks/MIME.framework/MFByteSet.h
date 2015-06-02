@@ -3,7 +3,7 @@
  */
 
 @interface MFByteSet : NSObject <NSCopying, NSMutableCopying> {
-    BOOL mySet[32];
+    BOOL mySet;
 }
 
 + (id)ASCIIByteSet;

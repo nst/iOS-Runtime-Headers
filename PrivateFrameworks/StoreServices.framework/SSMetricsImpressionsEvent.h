@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray;
+@interface SSMetricsImpressionsEvent : SSMetricsBaseEvent
 
-@interface SSMetricsImpressionsEvent : SSMetricsBaseEvent {
-}
-
-@property(retain) NSArray * impressionIdentifiers;
+@property (nonatomic, retain) NSArray *impressionIdentifiers;
 
 - (id)description;
 - (id)impressionIdentifiers;

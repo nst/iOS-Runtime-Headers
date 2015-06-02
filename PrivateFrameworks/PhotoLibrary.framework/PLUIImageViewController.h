@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, NSURL, PLCropOverlay, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset, PLPhotoTileViewController, PLVideoRemaker, PLVideoView, UIImage;
-
 @interface PLUIImageViewController : UIViewController <PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate> {
-    unsigned int _allowEditing : 1;
+    unsigned int _allowEditing;
     PLCropOverlay *_cropOverlay;
     struct CGRect { 
         struct CGPoint { 
@@ -23,22 +21,22 @@
     struct CGImage { } *_imageRef;
     PLImageSource *_imageSource;
     PLPhotoTileViewController *_imageTile;
-    unsigned int _isDisappearing : 1;
-    unsigned int _isVideo : 1;
+    unsigned int _isDisappearing;
+    unsigned int _isVideo;
     int _newStatusBarStyle;
     PLManagedAsset *_photo;
     int _previousStatusBarStyle;
     PLVideoRemaker *_remaker;
-    unsigned int _remaking : 1;
-    unsigned int _statusBarWasHidden : 1;
+    unsigned int _remaking;
+    unsigned int _statusBarWasHidden;
     NSURL *_videoURL;
     PLVideoView *_videoView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (unsigned int)_contentAutoresizingMask;
 - (BOOL)_displaysFullScreen;

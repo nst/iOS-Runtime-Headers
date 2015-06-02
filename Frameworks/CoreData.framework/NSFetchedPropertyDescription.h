@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSFetchRequest, NSString;
-
 @interface NSFetchedPropertyDescription : NSPropertyDescription {
     NSFetchRequest *_fetchRequest;
     NSString *_lazyFetchRequestEntityName;
@@ -11,7 +9,7 @@
     void *_reserved6;
 }
 
-@property(retain) NSFetchRequest * fetchRequest;
+@property (retain) NSFetchRequest *fetchRequest;
 
 - (void)_createCachesAndOptimizeState;
 - (unsigned int)_propertyType;

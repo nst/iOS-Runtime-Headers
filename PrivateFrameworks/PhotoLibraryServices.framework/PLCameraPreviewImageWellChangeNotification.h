@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, UIImage;
-
 @interface PLCameraPreviewImageWellChangeNotification : PLChangeNotification {
     UIImage *_image;
     NSString *_uuid;
 }
 
-@property(retain,readonly) NSString * assetUUID;
-@property(retain,readonly) UIImage * image;
+@property (nonatomic, readonly, retain) NSString *assetUUID;
+@property (nonatomic, readonly, retain) UIImage *image;
 
 + (id)notification;
 

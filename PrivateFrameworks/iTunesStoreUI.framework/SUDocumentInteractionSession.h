@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIDocumentInteractionController;
-
 @interface SUDocumentInteractionSession : NSObject <UIDocumentInteractionControllerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     UIDocumentInteractionController *_documentInteractionController;
 }
 
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)cancel;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)documentInteractionController:(id)arg1 willBeginSendingToApplication:(id)arg2;
 - (void)documentInteractionControllerDidDismissOpenInMenu:(id)arg1;
 - (id)initWithDocumentInteractionController:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

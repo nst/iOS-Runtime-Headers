@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface WMListLevelTextToken : NSObject {
     int m_level;
     NSString *m_string;

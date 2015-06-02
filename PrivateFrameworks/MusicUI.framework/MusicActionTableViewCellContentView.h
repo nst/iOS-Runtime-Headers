@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel;
-
 @interface MusicActionTableViewCellContentView : MusicTableViewCellContentView {
     BOOL _displayAsDisabled;
     struct UIOffset { 
@@ -14,12 +12,12 @@
     UILabel *_titleLabel;
 }
 
-@property(getter=isDisplayingAsDisabled) BOOL displayAsDisabled;
-@property(retain) UIImage * image;
-@property struct UIOffset { float x1; float x2; } imageOffset;
-@property(readonly) UIImageView * imageView;
-@property(copy) NSString * title;
-@property(readonly) UILabel * titleLabel;
+@property (getter=isDisplayingAsDisabled, nonatomic) BOOL displayAsDisabled;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct UIOffset { float x1; float x2; } imageOffset;
+@property (nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;

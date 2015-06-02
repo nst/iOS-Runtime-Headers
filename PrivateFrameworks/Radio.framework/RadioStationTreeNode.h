@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSDictionary, NSString, RadioArtworkCollection;
-
 @interface RadioStationTreeNode : NSObject <NSCopying, NSMutableCopying> {
     RadioArtworkCollection *_artworkCollection;
     int _childNodeLoadingStyle;
@@ -16,15 +14,15 @@
     NSDictionary *_stationTreeNodeDictionary;
 }
 
-@property(copy,readonly) RadioArtworkCollection * artworkCollection;
-@property(readonly) int childNodeLoadingStyle;
-@property(copy,readonly) NSArray * childNodes;
-@property(readonly) int displayStyle;
-@property(readonly) BOOL hasAdditionalChildNodes;
-@property(copy,readonly) NSString * name;
-@property(readonly) long long nodeID;
-@property(copy,readonly) NSDictionary * stationDictionary;
-@property(copy,readonly) NSDictionary * stationTreeNodeDictionary;
+@property (nonatomic, readonly, copy) RadioArtworkCollection *artworkCollection;
+@property (nonatomic, readonly) int childNodeLoadingStyle;
+@property (nonatomic, readonly, copy) NSArray *childNodes;
+@property (nonatomic, readonly) int displayStyle;
+@property (nonatomic, readonly) BOOL hasAdditionalChildNodes;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) long long nodeID;
+@property (nonatomic, readonly, copy) NSDictionary *stationDictionary;
+@property (nonatomic, readonly, copy) NSDictionary *stationTreeNodeDictionary;
 
 - (void).cxx_destruct;
 - (id)artworkCollection;

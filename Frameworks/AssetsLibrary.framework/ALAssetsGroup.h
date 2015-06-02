@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsGroupPrivate;
-
 @interface ALAssetsGroup : NSObject {
     id _internal;
 }
 
-@property(getter=isEditable,readonly) BOOL editable;
-@property(retain) ALAssetsGroupPrivate * internal;
+@property (getter=isEditable, nonatomic, readonly) BOOL editable;
+@property (nonatomic, retain) ALAssetsGroupPrivate *internal;
 
-- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)_enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (id)_typeAsString;
 - (id)_uuid;
 - (BOOL)addAsset:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateAssetsUsingBlock:(id)arg1;
-- (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateAssetsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateAssetsUsingBlock:(id /* block */)arg1;
+- (void)enumerateAssetsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithPhotoAlbum:(struct NSObject { Class x1; }*)arg1 library:(id)arg2 type:(unsigned int)arg3;
 - (id)internal;
 - (BOOL)isEditable;

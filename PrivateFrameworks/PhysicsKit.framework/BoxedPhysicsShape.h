@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@class NSArray;
-
 @interface BoxedPhysicsShape : NSObject {
     NSArray *points;
     int shapeType;

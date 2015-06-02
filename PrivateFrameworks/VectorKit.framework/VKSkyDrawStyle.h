@@ -2,15 +2,10 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
+@interface VKSkyDrawStyle : VKRenderStyle
 
-@interface VKSkyDrawStyle : VKRenderStyle {
-}
-
-@property(readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
-@property(readonly) struct  horizonColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  horizonColor; /* unknown property attribute:  1>=[4f]} */
 
 + (int)renderStyleID;
 

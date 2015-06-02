@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIKBGradient;
-
 @interface UIKBEdgeEffect : NSObject <UIKBRenderEffect> {
     NSString *_colorName;
     unsigned int _edges;
@@ -13,18 +11,18 @@
     float _weight;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int edges;
-@property(retain) UIKBGradient * gradient;
-@property(readonly) unsigned int hash;
-@property float inset;
-@property(readonly) BOOL isValid;
-@property float opacity;
-@property(readonly) SEL renderSelector;
-@property(readonly) BOOL renderUnder;
-@property(readonly) Class superclass;
-@property float weight;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int edges;
+@property (nonatomic, retain) UIKBGradient *gradient;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float inset;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic) float opacity;
+@property (nonatomic, readonly) SEL renderSelector;
+@property (nonatomic, readonly) BOOL renderUnder;
+@property (readonly) Class superclass;
+@property (nonatomic) float weight;
 
 + (id)effectWithColor:(id)arg1 edges:(unsigned int)arg2 inset:(float)arg3 weight:(float)arg4;
 

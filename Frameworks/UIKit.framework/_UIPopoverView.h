@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActionSheet, UIColor, UIImageView, UIPopoverBackgroundView, UIPopoverController, UIView;
-
 @interface _UIPopoverView : UIView {
     float __dimmingViewTopEdgeInset;
     UIPopoverBackgroundView *_backgroundView;
@@ -17,16 +15,16 @@
     UIImageView *_toolbarShine;
 }
 
-@property(setter=_setDimmingViewTopEdgeInset:) float _dimmingViewTopEdgeInset;
-@property unsigned int arrowDirection;
-@property float arrowOffset;
-@property int backgroundStyle;
-@property(copy) UIColor * popoverBackgroundColor;
-@property UIPopoverController * popoverController;
-@property(retain) UIActionSheet * presentedActionSheet;
-@property BOOL showsBackgroundComponentHighlights;
-@property BOOL showsBackgroundViewHighlight;
-@property BOOL showsContentViewHighlight;
+@property (setter=_setDimmingViewTopEdgeInset:, nonatomic) float _dimmingViewTopEdgeInset;
+@property (nonatomic) unsigned int arrowDirection;
+@property (nonatomic) float arrowOffset;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic, copy) UIColor *popoverBackgroundColor;
+@property (nonatomic) UIPopoverController *popoverController;
+@property (nonatomic, retain) UIActionSheet *presentedActionSheet;
+@property (nonatomic) BOOL showsBackgroundComponentHighlights;
+@property (nonatomic) BOOL showsBackgroundViewHighlight;
+@property (nonatomic) BOOL showsContentViewHighlight;
 
 + (id)popoverViewContainingView:(id)arg1;
 

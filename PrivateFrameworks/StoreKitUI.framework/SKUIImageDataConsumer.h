@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIImageDataConsumer : SSVURLDataConsumer {
-}
+@interface SKUIImageDataConsumer : SSVURLDataConsumer
 
 - (id)imageForColor:(id)arg1;
 - (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;

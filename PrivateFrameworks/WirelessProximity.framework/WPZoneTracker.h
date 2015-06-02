@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WPZoneTrackerDelegate>, NSString, XPCClient;
-
 @interface WPZoneTracker : NSObject <XPCClientDelegate> {
     XPCClient *_connection;
     <WPZoneTrackerDelegate> *_delegate;
@@ -12,15 +10,15 @@
     BOOL _wantExit;
 }
 
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property <WPZoneTrackerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WPZoneTrackerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int state;
-@property(readonly) Class superclass;
-@property BOOL wantEntry;
-@property BOOL wantExit;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL wantEntry;
+@property (nonatomic) BOOL wantExit;
 
 - (void).cxx_destruct;
 - (void)changeState:(int)arg1;

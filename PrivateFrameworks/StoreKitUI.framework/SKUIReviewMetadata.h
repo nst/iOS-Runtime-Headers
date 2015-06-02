@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL;
-
 @interface SKUIReviewMetadata : NSObject <NSCopying> {
     NSString *_body;
     unsigned int _bodyMaxLength;
@@ -15,14 +13,14 @@
     unsigned int _titleMaxLength;
 }
 
-@property(copy) NSString * body;
-@property(readonly) unsigned int bodyMaxLength;
-@property(copy) NSString * nickname;
-@property(readonly) unsigned int nicknameMaxLength;
-@property float rating;
-@property(readonly) NSURL * submitURL;
-@property(copy) NSString * title;
-@property(readonly) unsigned int titleMaxLength;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, readonly) unsigned int bodyMaxLength;
+@property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, readonly) unsigned int nicknameMaxLength;
+@property (nonatomic) float rating;
+@property (nonatomic, readonly) NSURL *submitURL;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) unsigned int titleMaxLength;
 
 - (void).cxx_destruct;
 - (id)body;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, WDDocument;
-
 @interface WDCitationTable : NSObject {
     NSMutableDictionary *mCitations;
     WDDocument *mDocument;

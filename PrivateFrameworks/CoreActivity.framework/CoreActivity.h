@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreActivity.framework/CoreActivity
  */
 
-@class ActivityCounts, CMMotionManager, NSOperationQueue, StepHandler;
-
 @interface CoreActivity : NSObject {
     ActivityCounts *_aCounts;
     int _accelRate;
@@ -13,12 +11,12 @@
     StepHandler *_stepHandler;
 }
 
-@property(retain) ActivityCounts * aCounts;
-@property int accelRate;
-@property(retain) CMMotionManager * motionManager;
-@property(retain) NSOperationQueue * opQueue;
-@property BOOL pedometerIsOn;
-@property(retain) StepHandler * stepHandler;
+@property (nonatomic, retain) ActivityCounts *aCounts;
+@property (nonatomic) int accelRate;
+@property (nonatomic, retain) CMMotionManager *motionManager;
+@property (nonatomic, retain) NSOperationQueue *opQueue;
+@property (nonatomic) BOOL pedometerIsOn;
+@property (nonatomic, retain) StepHandler *stepHandler;
 
 + (int)activityCountThresholdForActivityLevel:(int)arg1 epochDuration:(int)arg2;
 

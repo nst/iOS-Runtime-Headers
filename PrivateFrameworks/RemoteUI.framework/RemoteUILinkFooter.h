@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RemoteUILinkFooter : RemoteUISectionFooter {
-}
+@interface RemoteUILinkFooter : RemoteUISectionFooter
 
 @end

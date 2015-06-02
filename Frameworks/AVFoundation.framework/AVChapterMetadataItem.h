@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVChapterMetadataItemInternal;
-
 @interface AVChapterMetadataItem : AVMetadataItem {
     AVChapterMetadataItemInternal *_privChapter;
 }
@@ -30,7 +28,7 @@
 - (id)init;
 - (id)key;
 - (id)keySpace;
-- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id)arg2;
+- (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)locale;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;

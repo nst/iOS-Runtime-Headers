@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMPAlbumCollection : SAMPCollection
 
-@interface SAMPAlbumCollection : SAMPCollection {
-}
-
-@property(copy) NSString * artist;
-@property(copy) NSString * sortArtist;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, copy) NSString *sortArtist;
 
 + (id)albumCollection;
 + (id)albumCollectionWithDictionary:(id)arg1 context:(id)arg2;

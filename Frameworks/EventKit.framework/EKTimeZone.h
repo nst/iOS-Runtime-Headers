@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface EKTimeZone : NSObject <NSCopying> {
     void *_internal;
     long long _lastEnd;

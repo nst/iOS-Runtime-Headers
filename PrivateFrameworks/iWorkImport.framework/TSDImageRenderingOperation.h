@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDImageInfo;
-
 @interface TSDImageRenderingOperation : TSDSwatchRenderingOperation {
     TSDImageInfo *mImageInfo;
     BOOL mShouldClipVertically;
 }
 
-@property(retain) TSDImageInfo * imageInfo;
+@property (retain) TSDImageInfo *imageInfo;
 
 - (void)dealloc;
 - (void)doWorkWithReadLock;

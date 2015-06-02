@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSObject<OS_xpc_object>, NSString;
-
 @interface BSBasicServerClient : NSObject <BSXPCServerClient> {
     NSObject<OS_xpc_object> *_connection;
 }
 
-@property(retain) NSObject<OS_xpc_object> * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)wrapperWithConnection:(id)arg1;
 
@@ -22,8 +20,8 @@
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessageWithPacker:(id)arg1;
-- (void)sendMessageWithPacker:(id)arg1 replyHandler:(id)arg2 onQueue:(id)arg3;
+- (void)sendMessageWithPacker:(id /* block */)arg1;
+- (void)sendMessageWithPacker:(id /* block */)arg1 replyHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (void)setConnection:(id)arg1;
 
 @end

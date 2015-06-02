@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSTEphemeralFilter : NSObject {
     unsigned char mColumnIndex;
     unsigned int mFilterIndex;
     NSArray *mRules;
 }
 
-@property(readonly) unsigned char columnIndex;
-@property(readonly) unsigned int filterIndex;
-@property(readonly) unsigned int ruleCount;
+@property (nonatomic, readonly) unsigned char columnIndex;
+@property (nonatomic, readonly) unsigned int filterIndex;
+@property (nonatomic, readonly) unsigned int ruleCount;
 
 + (id)filterWithIndex:(unsigned int)arg1 columnIndex:(unsigned char)arg2 rules:(id)arg3;
 

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIColorPosterize : CIFilter {
     CIImage *inputImage;
     NSNumber *inputLevels;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputLevels;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputLevels;
 
 + (id)customAttributes;
 

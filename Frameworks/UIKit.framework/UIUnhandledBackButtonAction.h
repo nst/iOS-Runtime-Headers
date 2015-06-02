@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIUnhandledBackButtonAction : BSAction {
-}
+@interface UIUnhandledBackButtonAction : BSAction
 
 - (int)UIActionType;
 - (id)init;

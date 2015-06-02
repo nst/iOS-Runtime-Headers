@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAttributeTraitStorage : _UITraitStorage {
-}
+@interface _UIAttributeTraitStorage : _UITraitStorage
 
 - (void)addRecordWithTraitCollection:(id)arg1 value:(id)arg2;
 - (void)applyRecordsMatchingTraitCollection:(id)arg1;

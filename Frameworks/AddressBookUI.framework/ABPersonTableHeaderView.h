@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTableHeaderViewDelegate>, <ABStyleProvider>, ABMultiCell, ABMultiCellContentView, ABNamePropertyGroup, ABPersonImageView, ABPersonNameDisplayView, ABUIPerson, NSString, UIFont, UIImageView, UITableView, UIView;
-
 @interface ABPersonTableHeaderView : UIView <UITableViewDataSource, UITableViewDelegate> {
     <ABPersonTableHeaderViewDelegate> *_delegate;
     ABPersonNameDisplayView *_displayView;
@@ -21,26 +19,26 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(copy) NSString * alternateName;
-@property(retain) UIView * customMessageView;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABPersonTableHeaderViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) ABPersonNameDisplayView * displayView;
-@property(readonly) ABMultiCellContentView * editingView;
-@property(retain) UIView * extraHeaderView;
-@property BOOL extraHeaderViewAlignsToImage;
-@property(readonly) unsigned int hash;
-@property(readonly) ABPersonImageView * imageView;
-@property(copy) NSString * message;
-@property(copy) NSString * messageDetail;
-@property(retain) UIFont * messageDetailFont;
-@property(retain) UIFont * messageFont;
-@property(retain) ABNamePropertyGroup * namePropertyGroup;
-@property(retain) ABUIPerson * personForImageView;
-@property BOOL representsLinkedPeople;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *alternateName;
+@property (nonatomic, retain) UIView *customMessageView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABPersonTableHeaderViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) ABPersonNameDisplayView *displayView;
+@property (nonatomic, readonly) ABMultiCellContentView *editingView;
+@property (nonatomic, retain) UIView *extraHeaderView;
+@property (nonatomic) BOOL extraHeaderViewAlignsToImage;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) ABPersonImageView *imageView;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messageDetail;
+@property (nonatomic, retain) UIFont *messageDetailFont;
+@property (nonatomic, retain) UIFont *messageFont;
+@property (nonatomic, retain) ABNamePropertyGroup *namePropertyGroup;
+@property (nonatomic, retain) ABUIPerson *personForImageView;
+@property (nonatomic) BOOL representsLinkedPeople;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (id)_displayView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_displayViewFrameForWidth:(float)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSArray, NSDictionary, NSNumber;
-
 @interface HMHAPMetadata : NSObject <NSSecureCoding> {
     NSArray *_assistantCharacteristics;
     NSDictionary *_assistantServices;
@@ -14,13 +12,13 @@
     NSNumber *_version;
 }
 
-@property(retain) NSArray * assistantCharacteristics;
-@property(retain) NSDictionary * assistantServices;
-@property(retain) NSDictionary * assistantUnits;
-@property(retain) NSArray * hapCharacteristics;
-@property(retain) NSArray * hapServices;
-@property(retain) NSArray * hapValueUnits;
-@property(retain) NSNumber * version;
+@property (nonatomic, retain) NSArray *assistantCharacteristics;
+@property (nonatomic, retain) NSDictionary *assistantServices;
+@property (nonatomic, retain) NSDictionary *assistantUnits;
+@property (nonatomic, retain) NSArray *hapCharacteristics;
+@property (nonatomic, retain) NSArray *hapServices;
+@property (nonatomic, retain) NSArray *hapValueUnits;
+@property (nonatomic, retain) NSNumber *version;
 
 + (id)getSharedInstance;
 + (void)setSharedInstance:(id)arg1;

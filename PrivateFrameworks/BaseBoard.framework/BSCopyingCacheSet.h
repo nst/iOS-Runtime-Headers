@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSMutableSet, NSSet;
-
 @interface BSCopyingCacheSet : NSObject {
     NSSet *_immutable;
     NSMutableSet *_mutable;
 }
 
-@property(readonly) unsigned int count;
+@property (readonly) unsigned int count;
 
 - (void)addObject:(id)arg1;
 - (BOOL)containsObject:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSConcreteNotifyingMutableAttributedString;
-
 @interface NSConcreteTextStorage : NSTextStorage {
     NSConcreteNotifyingMutableAttributedString *_contents;
     struct _opaque_pthread_rwlock_t { 

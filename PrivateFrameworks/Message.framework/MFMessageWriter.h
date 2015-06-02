@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSDictionary;
-
 @interface MFMessageWriter : NSObject {
-    unsigned int _allows8BitMimeParts : 1;
-    unsigned int _allowsBinaryMimeParts : 1;
-    unsigned int _allowsQuotedPrintable : 1;
+    unsigned int _allows8BitMimeParts;
+    unsigned int _allowsBinaryMimeParts;
+    unsigned int _allowsQuotedPrintable;
     NSDictionary *_compositionSpecification;
     id _delegate;
     Class _messageClassToInstantiate;
-    unsigned int _writeSizeDispositionParameter : 1;
+    unsigned int _writeSizeDispositionParameter;
 }
 
-@property(readonly) NSDictionary * compositionSpecification;
-@property id delegate;
+@property (nonatomic, readonly) NSDictionary *compositionSpecification;
+@property (nonatomic) id delegate;
 
 - (BOOL)allows8BitMimeParts;
 - (BOOL)allowsBinaryMimeParts;

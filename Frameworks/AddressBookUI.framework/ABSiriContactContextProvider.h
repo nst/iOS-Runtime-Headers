@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact;
-
 @interface ABSiriContactContextProvider : NSObject <AFContextProvider> {
     CNContact *_contact;
 }

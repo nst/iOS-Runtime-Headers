@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSDate;
-
 @interface CKFlowControl : NSObject {
     double _budget;
     unsigned int _budgetCap;
@@ -16,8 +14,8 @@
 
 @property double budget;
 @property unsigned int budgetCap;
-@property(retain) NSDate * lastExpenditure;
-@property double maximumThrottleTime;
+@property (retain) NSDate *lastExpenditure;
+@property (nonatomic) double maximumThrottleTime;
 @property double regenerationPerSecond;
 
 + (id)flowControlWithBudgetCap:(unsigned int)arg1 withMaximumThrottleTime:(double)arg2 andRegenerationPerSecond:(double)arg3;

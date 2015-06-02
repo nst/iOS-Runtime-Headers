@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosMapGridViewControllerPhoneSpec : PUPhotosGridViewControllerPhoneSpec {
-}
+@interface PUPhotosMapGridViewControllerPhoneSpec : PUPhotosGridViewControllerPhoneSpec
 
 - (BOOL)usesStackPopTransition;
 

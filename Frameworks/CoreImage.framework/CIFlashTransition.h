@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIImage, CIVector, NSNumber;
-
 @interface CIFlashTransition : CIFilter {
     CIVector *inputCenter;
     CIColor *inputColor;
@@ -17,16 +15,16 @@
     NSNumber *inputTime;
 }
 
-@property(retain) CIVector * inputCenter;
-@property(retain) CIColor * inputColor;
-@property(retain) CIVector * inputExtent;
-@property(retain) NSNumber * inputFadeThreshold;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputMaxStriationRadius;
-@property(retain) NSNumber * inputStriationContrast;
-@property(retain) NSNumber * inputStriationStrength;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIColor *inputColor;
+@property (nonatomic, retain) CIVector *inputExtent;
+@property (nonatomic, retain) NSNumber *inputFadeThreshold;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputMaxStriationRadius;
+@property (nonatomic, retain) NSNumber *inputStriationContrast;
+@property (nonatomic, retain) NSNumber *inputStriationStrength;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
 
 + (id)customAttributes;
 

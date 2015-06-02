@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@interface MSASInvitation : MSASSharingRelationship {
-}
+@interface MSASInvitation : MSASSharingRelationship
 
 + (id)MSASPInvitationFromProtocolDictionary:(id)arg1;
 

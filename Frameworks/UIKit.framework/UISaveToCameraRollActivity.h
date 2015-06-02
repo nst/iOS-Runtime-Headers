@@ -7,8 +7,8 @@
     int _videoCount;
 }
 
-@property int imageCount;
-@property int videoCount;
+@property (nonatomic) int imageCount;
+@property (nonatomic) int videoCount;
 
 - (id)_activityImage;
 - (id)activityTitle;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSNumber;
-
 @interface WKWindowFeatures : NSObject {
     struct RetainPtr<NSNumber> { 
         void *m_ptr; 
@@ -31,14 +29,14 @@
     } _y;
 }
 
-@property(readonly) NSNumber * allowsResizing;
-@property(readonly) NSNumber * height;
-@property(readonly) NSNumber * menuBarVisibility;
-@property(readonly) NSNumber * statusBarVisibility;
-@property(readonly) NSNumber * toolbarsVisibility;
-@property(readonly) NSNumber * width;
-@property(readonly) NSNumber * x;
-@property(readonly) NSNumber * y;
+@property (nonatomic, readonly) NSNumber *allowsResizing;
+@property (nonatomic, readonly) NSNumber *height;
+@property (nonatomic, readonly) NSNumber *menuBarVisibility;
+@property (nonatomic, readonly) NSNumber *statusBarVisibility;
+@property (nonatomic, readonly) NSNumber *toolbarsVisibility;
+@property (nonatomic, readonly) NSNumber *width;
+@property (nonatomic, readonly) NSNumber *x;
+@property (nonatomic, readonly) NSNumber *y;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

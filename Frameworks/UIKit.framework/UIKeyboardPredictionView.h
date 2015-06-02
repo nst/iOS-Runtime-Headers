@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDate, NSMutableArray, NSString, NSTimer, TIKeyboardCandidate, UIKBBackgroundView, UIKBKeyView, UIKeyboardPredictionBarGrabber, UILabel, UITouch, UIView;
-
 @interface UIKeyboardPredictionView : UIView {
     UITouch *_activeTouch;
     NSDate *_lastUpdateDate;
@@ -35,13 +33,13 @@
     float m_width;
 }
 
-@property(retain) UITouch * activeTouch;
-@property(retain) NSDate * lastUpdateDate;
-@property(retain) TIKeyboardCandidate * scheduledAutocorrection;
-@property(retain) NSArray * scheduledPredictions;
-@property BOOL show;
-@property int state;
-@property(retain) NSTimer * updateTimer;
+@property (nonatomic, retain) UITouch *activeTouch;
+@property (nonatomic, retain) NSDate *lastUpdateDate;
+@property (nonatomic, retain) TIKeyboardCandidate *scheduledAutocorrection;
+@property (nonatomic, retain) NSArray *scheduledPredictions;
+@property (nonatomic) BOOL show;
+@property (nonatomic) int state;
+@property (nonatomic, retain) NSTimer *updateTimer;
 
 + (id)activeInstance;
 + (unsigned int)numberOfCandidates;

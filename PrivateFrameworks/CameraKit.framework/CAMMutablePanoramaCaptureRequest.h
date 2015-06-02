@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMMutablePanoramaCaptureRequest : CAMPanoramaCaptureRequest {
-}
+@interface CAMMutablePanoramaCaptureRequest : CAMPanoramaCaptureRequest
 
-@property int captureDevice;
-@property int deviceOrientation;
+@property (nonatomic) int captureDevice;
+@property (nonatomic) int deviceOrientation;
 
 - (void)setCaptureDevice:(int)arg1;
 - (void)setDeviceOrientation:(int)arg1;

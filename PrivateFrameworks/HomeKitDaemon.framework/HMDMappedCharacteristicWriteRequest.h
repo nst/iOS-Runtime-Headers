@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface HMDMappedCharacteristicWriteRequest : HMDCharacteristicWriteRequest {
     NSMutableArray *_requests;
 }
 
-@property(readonly) NSMutableArray * requests;
+@property (nonatomic, readonly) NSMutableArray *requests;
 
 - (void).cxx_destruct;
 - (void)addRequest:(id)arg1;

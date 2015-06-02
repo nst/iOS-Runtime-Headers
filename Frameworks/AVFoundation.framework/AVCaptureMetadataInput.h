@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureMetadataInputInternal;
-
 @interface AVCaptureMetadataInput : AVCaptureInput {
     AVCaptureMetadataInputInternal *_internal;
 }

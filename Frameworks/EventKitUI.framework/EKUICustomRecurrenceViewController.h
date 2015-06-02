@@ -2,21 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKRecurrenceChooserController, EKRecurrenceMonthChooserController, EKRecurrenceMonthlyChooserController, EKRecurrenceOrdinalChooserController, EKRecurrenceRule, EKRecurrenceWeekdayChooserController, EKUICustomRecurrenceIntervalViewController, NSDate, NSString, NSTimeZone, UIPickerView, UISwitch, UITableView, UITableViewCell;
-
 @interface EKUICustomRecurrenceViewController : UIViewController <EKRecurrenceChooserControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     int _cachedFrequency;
     int _cachedInterval;
     EKRecurrenceRule *_cachedRecurrenceRule;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     EKRecurrenceChooserController *_currentChooser;
     UIPickerView *_frequencyPickerView;
     UITableViewCell *_frequencySummaryCell;
@@ -36,26 +26,26 @@
     EKRecurrenceOrdinalChooserController *_yearlyOrdinalChooser;
 }
 
-@property(copy) id completionBlock;
-@property EKRecurrenceChooserController * currentChooser;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIPickerView * frequencyPickerView;
-@property(readonly) unsigned int hash;
-@property(retain) EKUICustomRecurrenceIntervalViewController * intervalPickerViewController;
-@property(retain) EKRecurrenceMonthlyChooserController * monthlyChooser;
-@property BOOL prohibitsMultipleDaysInMonthlyRecurrence;
-@property BOOL prohibitsMultipleMonthsInYearlyRecurrence;
+@property (copy) id /* block */ completionBlock;
+@property EKRecurrenceChooserController *currentChooser;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) UIPickerView *frequencyPickerView;
+@property (readonly) unsigned int hash;
+@property (retain) EKUICustomRecurrenceIntervalViewController *intervalPickerViewController;
+@property (retain) EKRecurrenceMonthlyChooserController *monthlyChooser;
+@property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
+@property (nonatomic) BOOL prohibitsMultipleMonthsInYearlyRecurrence;
 @property BOOL prohibitsYearlyRecurrenceInterval;
-@property(copy) NSString * recurrenceSummaryString;
-@property(retain) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) UITableView * tableView;
-@property(retain) NSTimeZone * timeZone;
-@property(retain) EKRecurrenceWeekdayChooserController * weeklyChooser;
-@property(retain) UISwitch * yearOrdinalSwitch;
-@property(retain) EKRecurrenceMonthChooserController * yearlyChooser;
-@property(retain) EKRecurrenceOrdinalChooserController * yearlyOrdinalChooser;
+@property (copy) NSString *recurrenceSummaryString;
+@property (retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (retain) UITableView *tableView;
+@property (retain) NSTimeZone *timeZone;
+@property (retain) EKRecurrenceWeekdayChooserController *weeklyChooser;
+@property (retain) UISwitch *yearOrdinalSwitch;
+@property (retain) EKRecurrenceMonthChooserController *yearlyChooser;
+@property (retain) EKRecurrenceOrdinalChooserController *yearlyOrdinalChooser;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (BOOL)isRecurrenceRuleOrdinal:(id)arg1;
@@ -80,7 +70,7 @@
 - (void)_updateSummaryLabel;
 - (void)_updateTableSectionsFromFrequency:(int)arg1 toFrequency:(int)arg2;
 - (void)_yearOrdinalSwitchChanged:(id)arg1;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)currentChooser;
 - (id)frequencyPickerView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -101,7 +91,7 @@
 - (void)recurrenceChooserWantsReload:(id)arg1;
 - (id)recurrenceRule;
 - (id)recurrenceSummaryString;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCurrentChooser:(id)arg1;
 - (void)setFrequencyPickerView:(id)arg1;
 - (void)setIntervalPickerViewController:(id)arg1;

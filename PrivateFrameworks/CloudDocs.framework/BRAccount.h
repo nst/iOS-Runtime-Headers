@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSData, NSString;
-
 @interface BRAccount : NSObject {
     NSString *_accountID;
     NSData *_perAppAccountIdentifier;
 }
 
-@property(copy) NSData * perAppAccountIdentifier;
+@property (nonatomic, copy) NSData *perAppAccountIdentifier;
 
 + (BOOL)_refreshCurrentLoggedInAccountForcingRefresh:(BOOL)arg1 error:(id*)arg2;
 + (id)currentCachedLoggedInAccountWithError:(id*)arg1;

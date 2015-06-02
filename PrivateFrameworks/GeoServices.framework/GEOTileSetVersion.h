@@ -18,15 +18,15 @@
     unsigned int _timeToLiveSeconds;
 }
 
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }* availableTiles;
-@property(readonly) unsigned int availableTilesCount;
-@property(readonly) struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* genericTiles;
-@property(readonly) unsigned int genericTilesCount;
-@property BOOL hasSupportedLanguagesVersion;
-@property BOOL hasTimeToLiveSeconds;
-@property unsigned int identifier;
-@property unsigned int supportedLanguagesVersion;
-@property unsigned int timeToLiveSeconds;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*availableTiles;
+@property (nonatomic, readonly) unsigned int availableTilesCount;
+@property (nonatomic, readonly) struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*genericTiles;
+@property (nonatomic, readonly) unsigned int genericTilesCount;
+@property (nonatomic) BOOL hasSupportedLanguagesVersion;
+@property (nonatomic) BOOL hasTimeToLiveSeconds;
+@property (nonatomic) unsigned int identifier;
+@property (nonatomic) unsigned int supportedLanguagesVersion;
+@property (nonatomic) unsigned int timeToLiveSeconds;
 
 - (void)addAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)addGenericTile:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;

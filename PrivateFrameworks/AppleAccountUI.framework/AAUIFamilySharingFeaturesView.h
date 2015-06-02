@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class UIButton, UIImageView, UILabel;
-
 @interface AAUIFamilySharingFeaturesView : UIView {
     UIImageView *_calendarIcon;
     UILabel *_calendarSharingLabel;

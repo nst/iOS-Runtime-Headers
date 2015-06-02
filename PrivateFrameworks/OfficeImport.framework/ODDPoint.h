@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADShapeProperties, OADTextBody, ODDPointPropertySet;
-
 @interface ODDPoint : NSObject {
     ODDPointPropertySet *mPropertySet;
     OADShapeProperties *mShapeProperties;

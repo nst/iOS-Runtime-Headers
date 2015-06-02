@@ -2,64 +2,38 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKRecordZoneID, CKServerChangeToken, NSArray, NSData, NSMutableDictionary;
-
 @interface CKFetchRecordChangesOperation : CKDatabaseOperation {
     NSArray *_desiredKeys;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchRecordChangesCompletionBlock;
-
+    id /* block */ _fetchRecordChangesCompletionBlock;
     CKServerChangeToken *_previousServerChangeToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordChangedBlock;
-
+    id /* block */ _recordChangedBlock;
     NSMutableDictionary *_recordErrors;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordWithIDWasDeletedBlock;
-
+    id /* block */ _recordWithIDWasDeletedBlock;
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
     unsigned int _resultsLimit;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareChangedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareWithIDWasDeletedBlock;
-
+    id /* block */ _shareChangedBlock;
+    id /* block */ _shareWithIDWasDeletedBlock;
     BOOL _shouldFetchAssetContents;
     int _status;
 }
 
-@property(copy) NSArray * desiredKeys;
-@property(copy) id fetchRecordChangesCompletionBlock;
-@property(readonly) BOOL moreComing;
-@property(copy) CKServerChangeToken * previousServerChangeToken;
-@property(copy) id recordChangedBlock;
-@property(retain) NSMutableDictionary * recordErrors;
-@property(copy) id recordWithIDWasDeletedBlock;
-@property(copy) CKRecordZoneID * recordZoneID;
-@property(retain) NSData * resultClientChangeTokenData;
-@property(retain) CKServerChangeToken * resultServerChangeToken;
-@property unsigned int resultsLimit;
-@property(copy) id shareChangedBlock;
-@property(copy) id shareWithIDWasDeletedBlock;
-@property BOOL shouldFetchAssetContents;
-@property int status;
+@property (nonatomic, copy) NSArray *desiredKeys;
+@property (nonatomic, copy) id /* block */ fetchRecordChangesCompletionBlock;
+@property (nonatomic, readonly) BOOL moreComing;
+@property (nonatomic, copy) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic, copy) id /* block */ recordChangedBlock;
+@property (nonatomic, retain) NSMutableDictionary *recordErrors;
+@property (nonatomic, copy) id /* block */ recordWithIDWasDeletedBlock;
+@property (nonatomic, copy) CKRecordZoneID *recordZoneID;
+@property (nonatomic, retain) NSData *resultClientChangeTokenData;
+@property (nonatomic, retain) CKServerChangeToken *resultServerChangeToken;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, copy) id /* block */ shareChangedBlock;
+@property (nonatomic, copy) id /* block */ shareWithIDWasDeletedBlock;
+@property (nonatomic) BOOL shouldFetchAssetContents;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -68,35 +42,35 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (int)changeTypesFromSetCallbacks;
 - (id)desiredKeys;
-- (id)fetchRecordChangesCompletionBlock;
+- (id /* block */)fetchRecordChangesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
 - (BOOL)moreComing;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
-- (id)recordChangedBlock;
+- (id /* block */)recordChangedBlock;
 - (id)recordErrors;
-- (id)recordWithIDWasDeletedBlock;
+- (id /* block */)recordWithIDWasDeletedBlock;
 - (id)recordZoneID;
 - (id)resultClientChangeTokenData;
 - (id)resultServerChangeToken;
 - (unsigned int)resultsLimit;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setFetchRecordChangesCompletionBlock:(id)arg1;
+- (void)setFetchRecordChangesCompletionBlock:(id /* block */)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setRecordChangedBlock:(id)arg1;
+- (void)setRecordChangedBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;
-- (void)setRecordWithIDWasDeletedBlock:(id)arg1;
+- (void)setRecordWithIDWasDeletedBlock:(id /* block */)arg1;
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShareChangedBlock:(id)arg1;
-- (void)setShareWithIDWasDeletedBlock:(id)arg1;
+- (void)setShareChangedBlock:(id /* block */)arg1;
+- (void)setShareWithIDWasDeletedBlock:(id /* block */)arg1;
 - (void)setShouldFetchAssetContents:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
-- (id)shareChangedBlock;
-- (id)shareWithIDWasDeletedBlock;
+- (id /* block */)shareChangedBlock;
+- (id /* block */)shareWithIDWasDeletedBlock;
 - (BOOL)shouldFetchAssetContents;
 - (int)status;
 

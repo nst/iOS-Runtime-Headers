@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOVLaneCharacteristic;
-
 @interface GEOVPointCharacteristic : PBCodable <NSCopying> {
     BOOL _brunnelEntry;
     BOOL _castShadow;
@@ -28,26 +26,26 @@
     int _zLevel;
 }
 
-@property BOOL brunnelEntry;
-@property BOOL castShadow;
-@property BOOL cropped;
-@property BOOL hasBrunnelEntry;
-@property BOOL hasCastShadow;
-@property BOOL hasCropped;
-@property(readonly) BOOL hasLaneCharacteristic;
-@property BOOL hasRoadLaneCount;
-@property BOOL hasRoadOffset;
-@property BOOL hasSectionIndex;
-@property BOOL hasShouldDrawLanes;
-@property BOOL hasVertexIndex;
-@property BOOL hasZLevel;
-@property(retain) GEOVLaneCharacteristic * laneCharacteristic;
-@property int roadLaneCount;
-@property int roadOffset;
-@property int sectionIndex;
-@property BOOL shouldDrawLanes;
-@property int vertexIndex;
-@property int zLevel;
+@property (nonatomic) BOOL brunnelEntry;
+@property (nonatomic) BOOL castShadow;
+@property (nonatomic) BOOL cropped;
+@property (nonatomic) BOOL hasBrunnelEntry;
+@property (nonatomic) BOOL hasCastShadow;
+@property (nonatomic) BOOL hasCropped;
+@property (nonatomic, readonly) BOOL hasLaneCharacteristic;
+@property (nonatomic) BOOL hasRoadLaneCount;
+@property (nonatomic) BOOL hasRoadOffset;
+@property (nonatomic) BOOL hasSectionIndex;
+@property (nonatomic) BOOL hasShouldDrawLanes;
+@property (nonatomic) BOOL hasVertexIndex;
+@property (nonatomic) BOOL hasZLevel;
+@property (nonatomic, retain) GEOVLaneCharacteristic *laneCharacteristic;
+@property (nonatomic) int roadLaneCount;
+@property (nonatomic) int roadOffset;
+@property (nonatomic) int sectionIndex;
+@property (nonatomic) BOOL shouldDrawLanes;
+@property (nonatomic) int vertexIndex;
+@property (nonatomic) int zLevel;
 
 - (BOOL)brunnelEntry;
 - (BOOL)castShadow;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class RUIObjectModel, RUIPage, RUIPasscodeField, UIColor, UILabel, UIView;
-
 @interface RUIPasscodeView : RUIElement <RUIPasscodeFieldDelegate, RUITableFooterDelegate> {
     UIView *_footer;
     UIColor *_foregroundColor;
@@ -15,11 +13,11 @@
     UIView *_view;
 }
 
-@property(retain) UIColor * foregroundColor;
-@property int keyboardAppearance;
-@property RUIObjectModel * objectModel;
-@property RUIPage * page;
-@property(readonly) RUIPasscodeField * passcodeField;
+@property (nonatomic, retain) UIColor *foregroundColor;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) RUIObjectModel *objectModel;
+@property (nonatomic) RUIPage *page;
+@property (nonatomic, readonly) RUIPasscodeField *passcodeField;
 
 - (void).cxx_destruct;
 - (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCItemID, BRFieldCKInfo, NSData, NSString;
-
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding> {
     long long _birthtime;
     BRFieldCKInfo *_ckInfo;
@@ -23,22 +16,22 @@
     NSData *_xattrSignature;
 }
 
-@property(readonly) NSString * _aliasTargetContainerID;
-@property(readonly) BRCItemID * _aliasTargetItemID;
-@property(readonly) NSString * _aliasTargetMangledID;
-@property long long birthtime;
-@property(retain) BRFieldCKInfo * ckInfo;
-@property(readonly) NSString * displayName;
-@property(retain) NSString * filename;
-@property(retain) NSData * finderTags;
-@property(getter=isHiddenExt) BOOL hiddenExt;
-@property(readonly) BOOL iWorkShareable;
-@property(retain) NSData * lazyXattr;
-@property BOOL mode;
-@property(retain) BRCItemID * parentID;
-@property BOOL state;
-@property BOOL type;
-@property(retain) NSData * xattrSignature;
+@property (nonatomic, readonly) NSString *_aliasTargetContainerID;
+@property (nonatomic, readonly) BRCItemID *_aliasTargetItemID;
+@property (nonatomic, readonly) NSString *_aliasTargetMangledID;
+@property (nonatomic) long long birthtime;
+@property (nonatomic, retain) BRFieldCKInfo *ckInfo;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic, retain) NSData *finderTags;
+@property (getter=isHiddenExt, nonatomic) BOOL hiddenExt;
+@property (nonatomic, readonly) BOOL iWorkShareable;
+@property (nonatomic, retain) NSData *lazyXattr;
+@property (nonatomic) BOOL mode;
+@property (nonatomic, retain) BRCItemID *parentID;
+@property (nonatomic) BOOL state;
+@property (nonatomic) BOOL type;
+@property (nonatomic, retain) NSData *xattrSignature;
 
 + (BOOL)supportsSecureCoding;
 

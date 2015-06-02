@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData, NSMutableDictionary, NSString, OISFUCryptoKey, OISFUDataRepresentation<SFUZipArchiveDataRepresentation>;
-
 @interface OISFUZipArchive : NSObject {
     OISFUCryptoKey *mCryptoKey;
     OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mDataRepresentation;

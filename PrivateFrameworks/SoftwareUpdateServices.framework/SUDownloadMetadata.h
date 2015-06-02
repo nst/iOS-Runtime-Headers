@@ -16,17 +16,17 @@
     int _termsAndConditionsAgreementStatus;
 }
 
-@property int activeDownloadPolicyType;
-@property(getter=isAutoDownload) BOOL autoDownload;
-@property int downloadFeeAgreementStatus;
-@property(getter=isEnabledFor2G) BOOL enabledFor2G;
-@property(getter=isEnabledFor3G) BOOL enabledFor3G;
-@property(getter=isEnabledFor4G) BOOL enabledFor4G;
-@property(getter=isEnabledForCellularRoaming) BOOL enabledForCellularRoaming;
-@property(getter=isEnabledForWifi) BOOL enabledForWifi;
-@property(getter=isEnabledOnBatteryPower) BOOL enabledOnBatteryPower;
-@property BOOL enforceWifiOnlyOverride;
-@property int termsAndConditionsAgreementStatus;
+@property (nonatomic) int activeDownloadPolicyType;
+@property (getter=isAutoDownload, nonatomic) BOOL autoDownload;
+@property (nonatomic) int downloadFeeAgreementStatus;
+@property (getter=isEnabledFor2G, nonatomic) BOOL enabledFor2G;
+@property (getter=isEnabledFor3G, nonatomic) BOOL enabledFor3G;
+@property (getter=isEnabledFor4G, nonatomic) BOOL enabledFor4G;
+@property (getter=isEnabledForCellularRoaming, nonatomic) BOOL enabledForCellularRoaming;
+@property (getter=isEnabledForWifi, nonatomic) BOOL enabledForWifi;
+@property (getter=isEnabledOnBatteryPower, nonatomic) BOOL enabledOnBatteryPower;
+@property (nonatomic) BOOL enforceWifiOnlyOverride;
+@property (nonatomic) int termsAndConditionsAgreementStatus;
 
 + (BOOL)supportsSecureCoding;
 

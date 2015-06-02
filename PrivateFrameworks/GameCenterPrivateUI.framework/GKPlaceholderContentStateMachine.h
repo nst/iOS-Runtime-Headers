@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKPlaceholderContentStateMachine : GKStateMachine {
-}
+@interface GKPlaceholderContentStateMachine : GKStateMachine
 
-@property(readonly) BOOL isInPlaceholderState;
+@property (nonatomic, readonly) BOOL isInPlaceholderState;
 
 - (id)init;
 - (BOOL)isInPlaceholderState;

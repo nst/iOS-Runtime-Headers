@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSMutableArray;
-
 @interface FBOrderedRequesters : NSObject {
-    NSMutableArray *_bands[4];
+    NSMutableArray *_bands;
 }
 
 - (void)addRequester:(id)arg1 toBand:(int)arg2;

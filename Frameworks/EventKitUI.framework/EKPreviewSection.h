@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSDate;
-
 @interface EKPreviewSection : NSObject {
     NSDate *_date;
     NSArray *_events;
 }
 
-@property(retain) NSDate * date;
-@property(readonly) NSArray * events;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) NSArray *events;
 
 + (id)sectionWithDate:(id)arg1;
 

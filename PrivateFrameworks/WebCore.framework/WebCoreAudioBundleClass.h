@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebCoreAudioBundleClass : NSObject {
-}
+@interface WebCoreAudioBundleClass : NSObject
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString, SGSqliteDatabase, SGSuggestHistory;
-
 @interface SGSqlEntityStore : NSObject {
     SGSqliteDatabase *_db;
     SGSuggestHistory *_history;
@@ -29,7 +27,7 @@
 - (id)_filterOutNotActedOnEvents:(id)arg1;
 - (id)_filterOutOlderVersionsOfPseudoEvents:(id)arg1;
 - (id)_filterOutUndisplayableEntities:(id)arg1;
-- (BOOL)_removeEntitiesWhere:(id)arg1 onPrep:(id)arg2;
+- (BOOL)_removeEntitiesWhere:(id)arg1 onPrep:(id /* block */)arg2;
 - (id)_sanitizePrefix:(id)arg1;
 - (id)_sanitizeWildcard:(id)arg1;
 - (long long)_writeEntityToDb:(id)arg1;
@@ -54,8 +52,8 @@
 - (long long)latestSchemaVersion;
 - (id)loadContactByRecordId:(id)arg1;
 - (id)loadContactDetailsForRecordId:(id)arg1 type:(unsigned int)arg2;
-- (id)loadContactDetailsWithWhereClause:(id)arg1 onPrep:(id)arg2 type:(unsigned int)arg3 dedupeAgainst:(id)arg4;
-- (id)loadEntitiesByEntityKey:(id)arg1 entityType:(long long)arg2 resolveDuplicates:(id)arg3;
+- (id)loadContactDetailsWithWhereClause:(id)arg1 onPrep:(id /* block */)arg2 type:(unsigned int)arg3 dedupeAgainst:(id)arg4;
+- (id)loadEntitiesByEntityKey:(id)arg1 entityType:(long long)arg2 resolveDuplicates:(id /* block */)arg3;
 - (id)loadEntityByKey:(id)arg1;
 - (id)loadEntityByRecordId:(id)arg1;
 - (id)loadEventByKey:(id)arg1;
@@ -68,9 +66,9 @@
 - (id)suggestContactByKey:(id)arg1;
 - (id)suggestContactByMasterEntityId:(long long)arg1;
 - (id)suggestContactByRecordId:(id)arg1;
-- (id)suggestContactsByMasterEntityQuery:(id)arg1 bindings:(id)arg2;
+- (id)suggestContactsByMasterEntityQuery:(id)arg1 bindings:(id /* block */)arg2;
 - (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 limitTo:(unsigned int)arg3;
-- (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 limitTo:(unsigned int)arg3 additionalWhereClause:(id)arg4 options:(unsigned int)arg5 onPrep:(id)arg6;
+- (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 limitTo:(unsigned int)arg3 additionalWhereClause:(id)arg4 options:(unsigned int)arg5 onPrep:(id /* block */)arg6;
 - (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 limitTo:(unsigned int)arg3 options:(unsigned int)arg4;
 - (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4;
 - (id)suggestEventsStartingAt:(double)arg1 endingAt:(double)arg2 prefix:(id)arg3 limitTo:(unsigned int)arg4 options:(unsigned int)arg5;

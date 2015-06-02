@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUnknownPersonViewController;
-
 @interface ABPersonViewControllerHelperNavigationController : UINavigationController {
     ABUnknownPersonViewController *_unknownPersonViewController;
 }

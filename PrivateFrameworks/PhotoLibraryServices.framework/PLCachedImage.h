@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, PLLoadRequestKey;
-
 @interface PLCachedImage : UIImage {
     PLLoadRequestKey *_cacheKey;
     int _format;
     NSDictionary *_metadata;
 }
 
-@property(copy) PLLoadRequestKey * cacheKey;
-@property int format;
-@property(retain) NSDictionary * metadata;
+@property (nonatomic, copy) PLLoadRequestKey *cacheKey;
+@property (nonatomic) int format;
+@property (nonatomic, retain) NSDictionary *metadata;
 
 - (id)cacheKey;
 - (void)dealloc;

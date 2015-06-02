@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, NSString, PKPaymentAuthorizationLayout, UIImageView, UILabel, UIView;
-
 @interface PKPaymentAuthorizationItemCell : UITableViewCell {
     UIImageView *_alertView;
     UIImageView *_arrowView;
@@ -16,8 +14,8 @@
     NSMutableArray *_valueViews;
 }
 
-@property(copy) NSString * label;
-@property(copy) NSString * value;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *value;
 
 - (void)_createSubviews;
 - (id)_createValueView;

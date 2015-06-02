@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABContactShareContactAction : ABContactAction {
-}
+@interface ABContactShareContactAction : ABContactAction
 
 - (BOOL)canPerformAction;
 - (void)performActionWithSender:(id)arg1;

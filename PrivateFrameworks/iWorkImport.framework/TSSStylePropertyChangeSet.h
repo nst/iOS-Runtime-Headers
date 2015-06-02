@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSSStylePropertyChangeSet : TSKSosBase {
-}
+@interface TSSStylePropertyChangeSet : TSKSosBase
 
 - (id)changedPropertyPaths;
 - (id)collectUndoForStyle:(id)arg1;
 - (id)collectUnset;
 - (id)description;
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (BOOL)isEmptyChangeSet;
 - (BOOL)isEqual:(id)arg1;

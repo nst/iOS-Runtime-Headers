@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<PLAlbumProtocol>, NSOrderedSet, NSPointerArray, NSString, PUPhotoSelectionManager;
-
 @interface PUSessionInfo : NSObject <PUPhotoSelectionManagerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _bannerGenerator;
-
+    id /* block */ _bannerGenerator;
     NSString *_localizedPrompt;
     NSPointerArray *_observers;
     PUPhotoSelectionManager *_photoSelectionManager;
@@ -27,26 +17,26 @@
     NSOrderedSet *_transferredAssets;
 }
 
-@property(copy) id bannerGenerator;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * localizedPrompt;
-@property(retain) PUPhotoSelectionManager * photoSelectionManager;
-@property int promptLocation;
-@property(getter=isSelectingAssets,readonly) BOOL selectingAssets;
-@property(getter=isSelectingTargetAlbum,readonly) BOOL selectingTargetAlbum;
-@property(retain) NSObject<PLAlbumProtocol> * sourceAlbum;
-@property int status;
-@property(readonly) Class superclass;
-@property(retain) NSObject<PLAlbumProtocol> * targetAlbum;
-@property BOOL targetAlbumIsNewLocalAlbum;
-@property(copy) NSOrderedSet * transferredAssets;
+@property (nonatomic, copy) id /* block */ bannerGenerator;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *localizedPrompt;
+@property (nonatomic, retain) PUPhotoSelectionManager *photoSelectionManager;
+@property (nonatomic) int promptLocation;
+@property (getter=isSelectingAssets, nonatomic, readonly) BOOL selectingAssets;
+@property (getter=isSelectingTargetAlbum, nonatomic, readonly) BOOL selectingTargetAlbum;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *sourceAlbum;
+@property (nonatomic) int status;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *targetAlbum;
+@property (nonatomic) BOOL targetAlbumIsNewLocalAlbum;
+@property (nonatomic, copy) NSOrderedSet *transferredAssets;
 
 - (void).cxx_destruct;
-- (void)_enumerateObserversWithBlock:(id)arg1;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)addSessionInfoObserver:(id)arg1;
-- (id)bannerGenerator;
+- (id /* block */)bannerGenerator;
 - (id)init;
 - (BOOL)isSelectingAssets;
 - (BOOL)isSelectingTargetAlbum;
@@ -55,7 +45,7 @@
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
 - (int)promptLocation;
 - (void)removeSessionInfoObserver:(id)arg1;
-- (void)setBannerGenerator:(id)arg1;
+- (void)setBannerGenerator:(id /* block */)arg1;
 - (void)setLocalizedPrompt:(id)arg1;
 - (void)setPhotoSelectionManager:(id)arg1;
 - (void)setPromptLocation:(int)arg1;

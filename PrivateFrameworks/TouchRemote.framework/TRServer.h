@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRServerDelegate>, NSNetService, NSObject<OS_dispatch_queue>, NSObject<OS_tcp_listener>, NSString, TRAdvertisingInfo;
-
 @interface TRServer : NSObject <NSNetServiceDelegate> {
     TRAdvertisingInfo *_advertisingInfo;
     <TRServerDelegate> *_delegate;
@@ -14,14 +12,14 @@
     unsigned short _port;
 }
 
-@property(copy) TRAdvertisingInfo * advertisingInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property <TRServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * name;
-@property(readonly) unsigned short port;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) TRAdvertisingInfo *advertisingInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TRServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned short port;
+@property (readonly) Class superclass;
 
 + (id)newServerWithName:(id)arg1;
 + (id)newServerWithName:(id)arg1 port:(unsigned short)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACRemoteCommandHandler, IDSService, NSLock, NSMutableDictionary, NSString;
-
 @interface ACRemoteDeviceProxy : NSObject <IDSServiceDelegate> {
     NSMutableDictionary *_completionHandlersByInternalMessageID;
     NSLock *_completionHandlersLock;
@@ -12,21 +10,21 @@
     ACRemoteCommandHandler *_remoteCommandHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dequeueCompletionHandlersForMessageWithInternalID:(id)arg1 success:(BOOL)arg2 result:(id)arg3 error:(id)arg4;
 - (void)_dequeueCompletionHandlersForMessageWithTransportID:(id)arg1 success:(BOOL)arg2 result:(id)arg3 error:(id)arg4;
-- (void)_enqueueCompletionHandler:(id)arg1 forMessageWithInternalID:(id)arg2 transportID:(id)arg3;
+- (void)_enqueueCompletionHandler:(id /* block */)arg1 forMessageWithInternalID:(id)arg2 transportID:(id)arg3;
 - (BOOL)_isValidCommandForOutgoingMessage:(id)arg1;
 - (int)_priorityForMessageCarryingCommand:(id)arg1;
 - (void)_sendReplyForMessage:(id)arg1 withSuccess:(BOOL)arg2 result:(id)arg3 error:(id)arg4;
 - (id)init;
-- (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(id)arg3;
-- (void)sendCommand:(id)arg1 withAccount:(id)arg2 options:(id)arg3 completion:(id)arg4;
+- (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(id /* block */)arg3;
+- (void)sendCommand:(id)arg1 withAccount:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 

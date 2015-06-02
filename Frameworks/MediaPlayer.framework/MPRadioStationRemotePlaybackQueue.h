@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPRadioStation;
-
 @interface MPRadioStationRemotePlaybackQueue : MPRemotePlaybackQueue {
     MPRadioStation *_radioStation;
 }
 
-@property(readonly) MPRadioStation * radioStation;
+@property (nonatomic, readonly) MPRadioStation *radioStation;
 
 - (void).cxx_destruct;
 - (id)description;

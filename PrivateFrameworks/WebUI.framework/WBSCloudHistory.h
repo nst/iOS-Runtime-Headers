@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <NSObject>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSTimer, WBSCloudHistoryPushAgentProxy, WBSCloudHistorySyncThrottler;
-
 @interface WBSCloudHistory : NSObject <WBSCloudHistorySyncThrottlerDataStore> {
     BOOL _cloudHistoryEnabled;
     NSObject<OS_dispatch_queue> *_cloudHistoryQueue;
@@ -33,12 +31,12 @@
     WBSCloudHistorySyncThrottler *_syncCircleSizeRetrievalThrottler;
 }
 
-@property(getter=isCloudHistoryEnabled) BOOL cloudHistoryEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int numberOfDevicesInSyncCircle;
-@property(readonly) Class superclass;
+@property (getter=isCloudHistoryEnabled, nonatomic) BOOL cloudHistoryEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int numberOfDevicesInSyncCircle;
+@property (readonly) Class superclass;
 
 + (id)sharedCloudHistory;
 
@@ -50,7 +48,7 @@
 - (void)_cloudHistoryConfigurationChanged:(id)arg1;
 - (id)_currentFetchChangesThrottlerPolicyString;
 - (id)_currentSyncCircleSizeRetrievalThrottlerPolicyString;
-- (void)_determineNumberOfDevicesInSyncCircleForOperation:(id)arg1 completionHandler:(id)arg2;
+- (void)_determineNumberOfDevicesInSyncCircleForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)_estimatedPriorityForPotentialSaveAttempt;
 - (void)_fetchAndMergeChangesBypassingThrottler:(BOOL)arg1;
 - (void)_fetchAndMergeChangesWithServerChangeTokenData:(id)arg1 intoHistory:(id)arg2 withPriority:(int)arg3;
@@ -59,7 +57,7 @@
 - (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_historyWasLoaded:(id)arg1;
 - (void)_initializePushNotificationSupport;
-- (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(id)arg1;
+- (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(id /* block */)arg1;
 - (void)_postSaveChangesAttemptCompletedNotificationWithAllPendingDataSaved:(BOOL)arg1;
 - (int)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
 - (void)_processPendingPushNotifications;
@@ -68,7 +66,7 @@
 - (int)_resultFromError:(id)arg1;
 - (void)_saveChangesToCloudHistoryStoreBypassingThrottler:(BOOL)arg1;
 - (void)_saveChangesWhenHistoryLoads;
-- (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 withCallback:(id)arg4;
+- (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 withCallback:(id /* block */)arg4;
 - (void)_serverBackoffTimerFired:(id)arg1;
 - (void)_setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)_updateDeviceCountInResponseToPushNotification;

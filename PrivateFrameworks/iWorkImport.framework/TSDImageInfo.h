@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<TSDContainerInfo>, NSString, TSDImageAdjustments, TSDInfoGeometry, TSDMaskInfo, TSDMediaStyle, TSPData, TSPObject<TSDOwningAttachment>, TSUBezierPath;
-
 @interface TSDImageInfo : TSDMediaInfo <TSDContainerInfo, TSDMixing, TSDReducableInfo, TSKTransformableObject, TSSPresetSource> {
     TSPData *mAdjustedImageData;
     BOOL mCurrentlyInDocument;
@@ -29,33 +22,33 @@
     TSUBezierPath *mTracedPath;
 }
 
-@property(retain) TSPData * adjustedImageData;
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(readonly) BOOL canPasteAsPDF;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) TSPData * enhancedImageData;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(copy) TSDImageAdjustments * imageAdjustments;
-@property(retain) TSPData * imageData;
-@property(readonly) TSDMediaStyle * imageStyle;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(retain) TSUBezierPath * instantAlphaPath;
-@property BOOL interpretsUntaggedImageDataAsGeneric;
-@property(retain) TSDMaskInfo * maskInfo;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property struct CGSize { float x1; float x2; } naturalSize;
-@property(retain) TSPData * originalImageData;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property(readonly) Class superclass;
-@property(retain) TSPData * thumbnailAdjustedImageData;
-@property(retain) TSPData * thumbnailImageData;
-@property(readonly) TSUBezierPath * tracedPath;
+@property (nonatomic, retain) TSPData *adjustedImageData;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, readonly) BOOL canPasteAsPDF;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) TSPData *enhancedImageData;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) TSDImageAdjustments *imageAdjustments;
+@property (nonatomic, retain) TSPData *imageData;
+@property (nonatomic, readonly) TSDMediaStyle *imageStyle;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic, retain) TSUBezierPath *instantAlphaPath;
+@property (nonatomic) BOOL interpretsUntaggedImageDataAsGeneric;
+@property (nonatomic, retain) TSDMaskInfo *maskInfo;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, retain) TSPData *originalImageData;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) TSPData *thumbnailAdjustedImageData;
+@property (nonatomic, retain) TSPData *thumbnailImageData;
+@property (nonatomic, readonly) TSUBezierPath *tracedPath;
 
 + (void)adjustIncomingImageGeometry:(id)arg1 maskGeometry:(id)arg2 forImageData:(id)arg3 maskedWithInstantAlphaPath:(id)arg4 withNaturalSize:(struct CGSize { float x1; float x2; })arg5 forTargetImageGeometry:(id)arg6 withTargetMaskGeometry:(id)arg7;
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;

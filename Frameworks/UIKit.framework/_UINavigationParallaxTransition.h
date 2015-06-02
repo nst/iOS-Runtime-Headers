@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIViewControllerContextTransitioning>, NSString, UIView, _UINavigationInteractiveTransitionBase, _UIParallaxDimmingView;
-
 @interface _UINavigationParallaxTransition : NSObject <UIViewControllerAnimatedTransitioningEx, _UIBasicAnimationFactory> {
     _UIParallaxDimmingView *_borderDimmingView;
     UIView *_clipUnderView;
@@ -19,22 +17,22 @@
     int _transitionStyle;
 }
 
-@property(retain) _UIParallaxDimmingView * borderDimmingView;
-@property(retain) UIView * clipUnderView;
-@property BOOL clipUnderlapWhileTransitioning;
-@property(retain) UIView * containerFromView;
-@property(retain) UIView * containerToView;
-@property(retain) _UIParallaxDimmingView * contentDimmingView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL interactionAborted;
-@property _UINavigationInteractiveTransitionBase * interactionController;
-@property int operation;
-@property(readonly) Class superclass;
-@property(retain) <UIViewControllerContextTransitioning> * transitionContext;
-@property float transitionGap;
-@property int transitionStyle;
+@property (nonatomic, retain) _UIParallaxDimmingView *borderDimmingView;
+@property (nonatomic, retain) UIView *clipUnderView;
+@property (nonatomic) BOOL clipUnderlapWhileTransitioning;
+@property (nonatomic, retain) UIView *containerFromView;
+@property (nonatomic, retain) UIView *containerToView;
+@property (nonatomic, retain) _UIParallaxDimmingView *contentDimmingView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL interactionAborted;
+@property (nonatomic) _UINavigationInteractiveTransitionBase *interactionController;
+@property (nonatomic) int operation;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <UIViewControllerContextTransitioning> *transitionContext;
+@property (nonatomic) float transitionGap;
+@property (nonatomic) int transitionStyle;
 
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimation;

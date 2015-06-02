@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSData, PLManagedObjectContext, PLPhotoLibrary;
-
 @interface PLWallpaperImporter : NSObject {
     NSArray *_allWallpaperURLs;
     NSData *_wallpaperFileHash;
     PLPhotoLibrary *photoLibrary;
 }
 
-@property(retain,readonly) NSArray * allWallpaperURLs;
-@property(retain,readonly) PLManagedObjectContext * managedObjectContext;
-@property(retain) PLPhotoLibrary * photoLibrary;
+@property (nonatomic, readonly, retain) NSArray *allWallpaperURLs;
+@property (nonatomic, readonly, retain) PLManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
 
 + (void)importWallpaperAssetsIntoPhotoLibrary:(id)arg1;
 + (id)posterImageURL;

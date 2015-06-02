@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CAShapeLayer, NSArray, UIColor, UIImage, UIImageView, UIView;
-
 @interface UISlider : UIControl <NSCoding> {
     float _alpha;
     BOOL _animatingWithDynamics;
@@ -41,18 +39,18 @@
     float _value;
 }
 
-@property(getter=isContinuous) BOOL continuous;
-@property(readonly) UIImage * currentMaximumTrackImage;
-@property(readonly) UIImage * currentMinimumTrackImage;
-@property(readonly) UIImage * currentThumbImage;
-@property(retain) UIColor * maximumTrackTintColor;
-@property float maximumValue;
-@property(retain) UIImage * maximumValueImage;
-@property(retain) UIColor * minimumTrackTintColor;
-@property float minimumValue;
-@property(retain) UIImage * minimumValueImage;
-@property(retain) UIColor * thumbTintColor;
-@property float value;
+@property (getter=isContinuous, nonatomic) BOOL continuous;
+@property (nonatomic, readonly) UIImage *currentMaximumTrackImage;
+@property (nonatomic, readonly) UIImage *currentMinimumTrackImage;
+@property (nonatomic, readonly) UIImage *currentThumbImage;
+@property (nonatomic, retain) UIColor *maximumTrackTintColor;
+@property (nonatomic) float maximumValue;
+@property (nonatomic, retain) UIImage *maximumValueImage;
+@property (nonatomic, retain) UIColor *minimumTrackTintColor;
+@property (nonatomic) float minimumValue;
+@property (nonatomic, retain) UIImage *minimumValueImage;
+@property (nonatomic, retain) UIColor *thumbTintColor;
+@property (nonatomic) float value;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_buildTrackArtwork;

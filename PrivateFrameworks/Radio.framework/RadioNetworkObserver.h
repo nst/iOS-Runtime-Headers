@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface RadioNetworkObserver : NSObject {
     int _networkUsageCount;
     NSObject<OS_dispatch_queue> *_networkUsageQueue;
 }
 
-@property(readonly) BOOL isCellularNetworkingAllowed;
-@property(readonly) BOOL isUsingNetwork;
+@property (nonatomic, readonly) BOOL isCellularNetworkingAllowed;
+@property (nonatomic, readonly) BOOL isUsingNetwork;
 
 + (id)sharedNetworkObserver;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIDocumentPickerSearchContainerModel : _UIDocumentPickerURLContainerModel {
     NSString *_queryString;
 }
 
-@property(copy) NSString * queryString;
+@property (nonatomic, copy) NSString *queryString;
 
 - (void)_updateObserverForQuery;
 - (void)dealloc;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MMCS.framework/MMCS
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class MMCSDuetReporter, NSDictionary, NSInputStream, NSOperationQueue, NSOutputStream, NSString, NSURLSession, NSURLSessionDataTask;
-
 @interface MMCSHTTPContext : NSObject <NSStreamDelegate, NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionTaskDelegatePrivate> {
     NSURLSessionDataTask *_dataTask;
     BOOL _didOpen;
@@ -25,34 +18,34 @@
     NSURLSession *_urlSession;
 }
 
-@property(retain) NSURLSessionDataTask * dataTask;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL didOpen;
-@property(retain) MMCSDuetReporter * duetReporter;
-@property(readonly) unsigned int hash;
-@property struct mmcs_http_context { unsigned int x1; int x2; int x3; struct __CFString {} *x4; int x5; double x6; double x7; double x8; double x9; double x10; unsigned char x11; unsigned char x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned char x16; int x17; struct __CFUUID {} *x18; double x19; double x20; int x21; long long x22; long long x23; double x24; unsigned long long x25; double x26; long long x27; double x28; unsigned long long x29; int x30; int x31; struct __CFError {} *x32; struct __CFHTTPMessage {} *x33; unsigned char x34; unsigned long long x35; struct __CFDictionary {} *x36; double x37; struct __CFHTTPMessage {} *x38; unsigned char x39; struct __CFData {} *x40; struct __sFILE {} *x41; struct __sFILE {} *x42; struct __CFString {} *x43; struct __CFString {} *x44; unsigned short x45; unsigned char x46; struct mmcs_metrics_http_info {} *x47; int (*x48)(); int (*x49)(); int (*x50)(); int (*x51)(); int (*x52)(); int (*x53)(); int (*x54)(); void *x55; void *x56; struct mmcs_read_stream_pool {} *x57; struct __CFRunLoop {} *x58; struct __CFArray {} *x59; union { struct mmcs_cfnetwork_http_context {} *x_60_1_1; struct mmcs_nsurlsession_http_context {} *x_60_1_2; struct mmcs_curl_http_context {} *x_60_1_3; } x60; }* hc;
-@property(retain) NSInputStream * inputStream;
-@property BOOL isHandlingError;
-@property BOOL isTaskDone;
-@property BOOL isValid;
-@property(retain) NSOperationQueue * operationQueue;
-@property(retain) NSOutputStream * outputStream;
-@property BOOL requestIsStreamed;
-@property(readonly) Class superclass;
-@property(retain) NSDictionary * timingData;
-@property(retain) NSURLSession * urlSession;
+@property (nonatomic, retain) NSURLSessionDataTask *dataTask;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didOpen;
+@property (nonatomic, retain) MMCSDuetReporter *duetReporter;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct mmcs_http_context { unsigned int x1; int x2; int x3; struct __CFString {} *x4; int x5; double x6; double x7; double x8; double x9; double x10; unsigned char x11; unsigned char x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned char x16; int x17; struct __CFUUID {} *x18; double x19; double x20; int x21; long long x22; long long x23; double x24; unsigned long long x25; double x26; long long x27; double x28; unsigned long long x29; int x30; int x31; struct __CFError {} *x32; struct __CFHTTPMessage {} *x33; unsigned char x34; unsigned long long x35; struct __CFDictionary {} *x36; double x37; struct __CFHTTPMessage {} *x38; unsigned char x39; struct __CFData {} *x40; struct __sFILE {} *x41; struct __sFILE {} *x42; struct __CFString {} *x43; struct __CFString {} *x44; unsigned short x45; unsigned char x46; struct mmcs_metrics_http_info {} *x47; int (*x48)(); int (*x49)(); int (*x50)(); int (*x51)(); int (*x52)(); int (*x53)(); int (*x54)(); void *x55; void *x56; struct mmcs_read_stream_pool {} *x57; struct __CFRunLoop {} *x58; struct __CFArray {} *x59; union { struct mmcs_cfnetwork_http_context {} *x_60_1_1; struct mmcs_nsurlsession_http_context {} *x_60_1_2; struct mmcs_curl_http_context {} *x_60_1_3; } x60; }*hc;
+@property (nonatomic, retain) NSInputStream *inputStream;
+@property (nonatomic) BOOL isHandlingError;
+@property (nonatomic) BOOL isTaskDone;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) NSOutputStream *outputStream;
+@property (nonatomic) BOOL requestIsStreamed;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *timingData;
+@property (nonatomic, retain) NSURLSession *urlSession;
 
 + (id)sharedMMCSHTTPSession;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 _willRetryBackgroundDataTask:(id)arg2 withError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
-- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id)arg4;
-- (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id)arg4;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
-- (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)cleanupRequest;
 - (void)cleanupResponse;
 - (long long)countOfRequestBodyBytesSent;

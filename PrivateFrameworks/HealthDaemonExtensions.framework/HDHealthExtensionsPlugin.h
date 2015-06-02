@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemonExtensions.framework/HealthDaemonExtensions
  */
 
-@class <HDHealthDaemon>, NSMutableArray, NSString, NSXPCListener;
-
 @interface HDHealthExtensionsPlugin : NSObject <HDDiagnosticObject, HDHealthPlugin, NSXPCListenerDelegate> {
     <HDHealthDaemon> *_healthDaemon;
     NSXPCListener *_listener;
     NSMutableArray *_servers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) <HDHealthDaemon> * healthDaemon;
-@property(retain) NSXPCListener * listener;
-@property(retain) NSMutableArray * servers;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
+@property (nonatomic, retain) NSXPCListener *listener;
+@property (nonatomic, retain) NSMutableArray *servers;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;

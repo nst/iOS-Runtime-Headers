@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReferencingDelegateStorage, NSArray, NSURL;
-
 @interface AVCaptureFileOutputDelegateWrapper : NSObject {
     NSArray *_connections;
     AVWeakReferencingDelegateStorage *_delegateStorage;
@@ -14,13 +12,13 @@
     long long _settingsID;
 }
 
-@property(readonly) NSArray * connections;
-@property(readonly) AVWeakReferencingDelegateStorage * delegateStorage;
-@property(retain) NSArray * metadata;
-@property(readonly) NSURL * outputFileURL;
-@property(getter=isPaused) BOOL paused;
-@property(getter=isRecording) BOOL recording;
-@property(readonly) long long settingsID;
+@property (readonly) NSArray *connections;
+@property (readonly) AVWeakReferencingDelegateStorage *delegateStorage;
+@property (retain) NSArray *metadata;
+@property (readonly) NSURL *outputFileURL;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isRecording, nonatomic) BOOL recording;
+@property (readonly) long long settingsID;
 
 + (id)wrapperWithURL:(id)arg1 delegate:(id)arg2 settingsID:(long long)arg3 connections:(id)arg4;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CKAudioMessagesExpireDurationSelectionList : CKExpireDurationSelectionList {
-}
+@interface CKAudioMessagesExpireDurationSelectionList : CKExpireDurationSelectionList
 
 - (id)expireDescription;
 

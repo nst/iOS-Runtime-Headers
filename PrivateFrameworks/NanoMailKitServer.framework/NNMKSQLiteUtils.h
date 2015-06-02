@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@interface NNMKSQLiteUtils : NSObject {
-}
+@interface NNMKSQLiteUtils : NSObject
 
 + (void)bindBool:(BOOL)arg1 intoStatement:(struct sqlite3_stmt { }*)arg2 paramIndex:(int)arg3;
 + (void)bindData:(id)arg1 intoStatement:(struct sqlite3_stmt { }*)arg2 paramIndex:(int)arg3;

@@ -2,23 +2,20 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class AVAudioEnvironmentDistanceAttenuationParameters, AVAudioEnvironmentReverbParameters, NSString;
+@interface AVAudioEnvironmentNode : AVAudioNode <AVAudioMixing>
 
-@interface AVAudioEnvironmentNode : AVAudioNode <AVAudioMixing> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) AVAudioEnvironmentDistanceAttenuationParameters * distanceAttenuationParameters;
-@property(readonly) unsigned int hash;
-@property struct AVAudio3DAngularOrientation { float x1; float x2; float x3; } listenerAngularOrientation;
-@property struct AVAudio3DPoint { float x1; float x2; float x3; } listenerPosition;
-@property struct AVAudio3DVectorOrientation { struct AVAudio3DPoint { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct AVAudio3DPoint { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } listenerVectorOrientation;
-@property(readonly) unsigned int nextAvailableInputBus;
-@property float outputVolume;
-@property(readonly) AVAudioEnvironmentReverbParameters * reverbParameters;
-@property(readonly) Class superclass;
-@property float volume;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) AVAudioEnvironmentDistanceAttenuationParameters *distanceAttenuationParameters;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct AVAudio3DAngularOrientation { float x1; float x2; float x3; } listenerAngularOrientation;
+@property (nonatomic) struct AVAudio3DPoint { float x1; float x2; float x3; } listenerPosition;
+@property (nonatomic) struct AVAudio3DVectorOrientation { struct AVAudio3DPoint { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct AVAudio3DPoint { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } listenerVectorOrientation;
+@property (nonatomic, readonly) unsigned int nextAvailableInputBus;
+@property (nonatomic) float outputVolume;
+@property (nonatomic, readonly) AVAudioEnvironmentReverbParameters *reverbParameters;
+@property (readonly) Class superclass;
+@property (nonatomic) float volume;
 
 - (id)applicableRenderingAlgorithms;
 - (id)distanceAttenuationParameters;

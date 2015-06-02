@@ -2,29 +2,19 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString;
-
 @interface PUKeyValueTableViewController : UITableViewController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSArray *_keyValues;
     NSString *_markedKey;
 }
 
-@property(copy) id completionHandler;
+@property (nonatomic, copy) id /* block */ completionHandler;
 
 - (void).cxx_destruct;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (id)initWithDictionary:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMarkedKey:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

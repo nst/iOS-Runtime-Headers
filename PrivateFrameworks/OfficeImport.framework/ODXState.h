@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CXNamespace, OAXDrawingState;
-
 @interface ODXState : OCXReadState {
     CXNamespace *mODXDiagramNamespace;
     OAXDrawingState *mOfficeArtState;
 }
 
-@property(retain) CXNamespace * ODXDiagramNamespace;
+@property (nonatomic, retain) CXNamespace *ODXDiagramNamespace;
 
 - (id)ODXDiagramNamespace;
 - (void)dealloc;

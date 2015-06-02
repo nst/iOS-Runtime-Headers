@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <GKNearbyBrowserDelegate>, NSMutableArray;
-
 @interface GKNearbyPlayersDataSource : GKBasicCollectionViewDataSource {
     BOOL _browsingForNearbyPlayers;
     <GKNearbyBrowserDelegate> *_nearbyDelegate;
     NSMutableArray *_nearbyPlayers;
 }
 
-@property BOOL browsingForNearbyPlayers;
-@property <GKNearbyBrowserDelegate> * nearbyDelegate;
-@property(retain) NSMutableArray * nearbyPlayers;
+@property (nonatomic) BOOL browsingForNearbyPlayers;
+@property (nonatomic) <GKNearbyBrowserDelegate> *nearbyDelegate;
+@property (nonatomic, retain) NSMutableArray *nearbyPlayers;
 
 - (BOOL)browsingForNearbyPlayers;
 - (void)dealloc;

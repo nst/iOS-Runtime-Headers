@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer;
-
 @interface CAPackage : NSObject {
-    struct _CAPackageData { id x1; id x2; id x3; bool x4; bool x5; id x6; id x7; } *_data;
+    struct _CAPackageData { id x1; id x2; bool x3; id x4; } *_data;
 }
 
-@property(getter=isGeometryFlipped,readonly) BOOL geometryFlipped;
-@property(readonly) CALayer * rootLayer;
+@property (getter=isGeometryFlipped, readonly) BOOL geometryFlipped;
+@property (readonly) CALayer *rootLayer;
 
 + (id)packageWithContentsOfURL:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (id)packageWithData:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
@@ -24,7 +22,7 @@
 - (void)_readFromCAMLData:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)_readFromCAMLURL:(id)arg1 type:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)dealloc;
-- (void)foreachLayer:(id)arg1;
+- (void)foreachLayer:(id /* block */)arg1;
 - (BOOL)isGeometryFlipped;
 - (id)publishedObjectNames;
 - (id)publishedObjectWithName:(id)arg1;

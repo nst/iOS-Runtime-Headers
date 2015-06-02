@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreActivity.framework/CoreActivity
  */
 
-@class <CoreActivityPedometerDelegate>;
-
 @interface StepHandler : NSObject {
     <CoreActivityPedometerDelegate> *_delegate;
 }
 
-@property <CoreActivityPedometerDelegate> * delegate;
+@property (nonatomic) <CoreActivityPedometerDelegate> *delegate;
 
 + (id)sharedStepActivityHandler;
 

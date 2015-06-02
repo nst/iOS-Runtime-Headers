@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDStyle, EDWorkbook;
-
 @interface EMCellNumberMapper : CMMapper {
     EDStyle *edStyle;
     double edValue;

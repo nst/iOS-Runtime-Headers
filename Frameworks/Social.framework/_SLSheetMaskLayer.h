@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class UIColor;
-
 @interface _SLSheetMaskLayer : CALayer {
     UIColor *_clipBackgroundColor;
     float _clipCornerRadius;
 }
 
-@property(retain) UIColor * clipBackgroundColor;
-@property float clipCornerRadius;
+@property (nonatomic, retain) UIColor *clipBackgroundColor;
+@property (nonatomic) float clipCornerRadius;
 
 - (void).cxx_destruct;
 - (id)clipBackgroundColor;

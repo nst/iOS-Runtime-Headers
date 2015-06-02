@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart;
-
 @interface CHDSeriesCollection : EDSortedCollection {
     CHDChart *mChart;
 }

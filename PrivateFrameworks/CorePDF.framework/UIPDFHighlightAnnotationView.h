@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFHighlightAnnotationView : UIPDFAnnotationView {
-}
+@interface UIPDFHighlightAnnotationView : UIPDFAnnotationView
 
 @end

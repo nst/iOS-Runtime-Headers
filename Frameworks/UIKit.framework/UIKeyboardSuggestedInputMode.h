@@ -6,7 +6,7 @@
     BOOL enabled;
 }
 
-@property BOOL enabled;
+@property (nonatomic) BOOL enabled;
 
 - (id)description;
 - (BOOL)enabled;

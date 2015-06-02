@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigStateMachine, NSMutableArray, NSString;
-
 @interface BWSinkNode : BWNode {
     struct OpaqueFigSimpleMutex { } *_configurationHandlerLock;
     NSMutableArray *_configurationLiveHandlers;
@@ -15,8 +13,8 @@
     FigStateMachine *_stateMachine;
 }
 
-@property(readonly) NSString * currentStateDebugString;
-@property(readonly) long long liveConfigurationID;
+@property (readonly) NSString *currentStateDebugString;
+@property (readonly) long long liveConfigurationID;
 
 + (void)initialize;
 
@@ -28,8 +26,8 @@
 - (id)init;
 - (long long)liveConfigurationID;
 - (id)nodeType;
-- (void)notifyWhenActive:(id)arg1;
-- (void)notifyWhenConfigurationID:(long long)arg1 becomesLive:(id)arg2;
-- (void)notifyWhenIdle:(id)arg1;
+- (void)notifyWhenActive:(id /* block */)arg1;
+- (void)notifyWhenConfigurationID:(long long)arg1 becomesLive:(id /* block */)arg2;
+- (void)notifyWhenIdle:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OABColor : NSObject {
-}
+@interface OABColor : NSObject
 
 + (unsigned short)eshSchemeColorIndexWithOADMapColorIndex:(int)arg1;
 + (int)oadMapColorIndexWithEshSchemeColorIndex:(unsigned short)arg1;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MPMediaItem;
+@interface SUScriptMediaItem : SUScriptObject
 
-@interface SUScriptMediaItem : SUScriptObject {
-}
-
-@property(readonly) MPMediaItem * nativeItem;
+@property (nonatomic, readonly) MPMediaItem *nativeItem;
 
 + (id)copyScriptMediaTypesForNativeMediaTypes:(unsigned int)arg1;
 + (void)initialize;

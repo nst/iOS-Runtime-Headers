@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCTSMConnectivityExceptionEvent : PBCodable <NSCopying> {
     unsigned int _errorCode;
     struct { 
@@ -14,12 +12,12 @@
     NSData *_uuidReference;
 }
 
-@property unsigned int errorCode;
-@property BOOL hasErrorCode;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
+@property (nonatomic) unsigned int errorCode;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

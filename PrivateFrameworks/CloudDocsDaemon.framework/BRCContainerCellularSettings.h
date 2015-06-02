@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSNumber, NSObject<OS_dispatch_queue>;
-
 @interface BRCContainerCellularSettings : NSObject {
     NSNumber *_isCellularEnabledForDocumentsAndData;
     NSObject<OS_dispatch_queue> *_queue;

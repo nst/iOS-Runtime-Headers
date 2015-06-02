@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDHealthDaemon>, NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HDUserCharacteristicsManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
     <HDHealthDaemon> *_healthDaemon;
     NSDictionary *_lastUserProfile;
@@ -14,17 +12,17 @@
     NSDate *_userProfileLastUpdated;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <HDHealthDaemon> * healthDaemon;
-@property(copy) NSDictionary * lastUserProfile;
-@property BOOL needsUpdateAfterUnlock;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) BOOL shouldUpdateQuantityCharacteristics;
-@property(readonly) BOOL shouldUpdateUserProfile;
-@property(readonly) Class superclass;
-@property(retain) NSDate * userProfileLastUpdated;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <HDHealthDaemon> *healthDaemon;
+@property (nonatomic, copy) NSDictionary *lastUserProfile;
+@property (nonatomic) BOOL needsUpdateAfterUnlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) BOOL shouldUpdateQuantityCharacteristics;
+@property (nonatomic, readonly) BOOL shouldUpdateUserProfile;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDate *userProfileLastUpdated;
 
 - (void).cxx_destruct;
 - (id)_mostRecentSampleOfType:(id)arg1 error:(id*)arg2;

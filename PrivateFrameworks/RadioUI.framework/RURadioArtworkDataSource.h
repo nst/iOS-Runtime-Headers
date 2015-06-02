@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class CPLRUDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface RURadioArtworkDataSource : NSObject <MPArtworkDataSource> {
     unsigned int _backgroundCacheSize;
     unsigned int _cacheSize;
@@ -12,10 +10,10 @@
     int _resumeToForegroundCacheSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedRadioArtworkDataSource;
 
@@ -33,6 +31,6 @@
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
-- (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id)arg2;
+- (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

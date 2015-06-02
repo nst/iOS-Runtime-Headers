@@ -8,7 +8,7 @@
     int _type;
 }
 
-@property(readonly) int serviceType;
+@property (nonatomic, readonly) int serviceType;
 
 - (void)_postAvailability:(int)arg1;
 - (void)_updateAvailability;

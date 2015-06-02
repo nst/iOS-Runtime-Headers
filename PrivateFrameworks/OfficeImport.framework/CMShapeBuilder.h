@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDictionary, OADOrientedBounds;
-
 @interface CMShapeBuilder : NSObject {
     NSDictionary *_adjustValues;
     int _format;

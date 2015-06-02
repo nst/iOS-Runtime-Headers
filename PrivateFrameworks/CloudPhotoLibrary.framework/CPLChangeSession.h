@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLLibraryManager, CPLPlatformObject, NSProgress, NSString;
-
 @interface CPLChangeSession : NSObject <CPLAbstractObject> {
     CPLLibraryManager *_libraryManager;
     CPLPlatformObject *_platformObject;
@@ -12,24 +10,24 @@
     unsigned int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLLibraryManager * libraryManager;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) NSString * sessionIdentifier;
-@property(readonly) NSProgress * sessionProgress;
-@property unsigned int state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLLibraryManager *libraryManager;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (nonatomic, readonly) NSString *sessionIdentifier;
+@property (nonatomic, readonly) NSProgress *sessionProgress;
+@property (nonatomic) unsigned int state;
+@property (readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
 + (id)stateDescriptionForState:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (id)_sessionLogDomain;
-- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
+- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
-- (void)finalizeWithCompletionHandler:(id)arg1;
+- (void)finalizeWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithLibraryManager:(id)arg1;
 - (id)libraryManager;
@@ -40,6 +38,6 @@
 - (id)sessionProgress;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;
-- (void)tearDownWithCompletionHandler:(id)arg1;
+- (void)tearDownWithCompletionHandler:(id /* block */)arg1;
 
 @end

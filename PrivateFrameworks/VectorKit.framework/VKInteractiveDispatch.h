@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKInteractiveDispatch : VKDispatch {
-}
+@interface VKInteractiveDispatch : VKDispatch
 
 + (id)defaultDispatch;
 

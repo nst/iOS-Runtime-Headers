@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSString, NSURL;
-
 @interface WFWhitelistSite : NSObject {
     NSString *domainName;
     NSString *normalizedURLString;
@@ -11,9 +9,9 @@
     NSString *urlString;
 }
 
-@property(readonly) NSString * domainName;
-@property(copy) NSURL * url;
-@property(copy) NSString * urlString;
+@property (readonly) NSString *domainName;
+@property (copy) NSURL *url;
+@property (copy) NSString *urlString;
 
 - (void)dealloc;
 - (id)description;

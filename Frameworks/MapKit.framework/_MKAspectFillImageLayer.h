@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImage;
-
 @interface _MKAspectFillImageLayer : CALayer {
     UIImage *_image;
 }
 
-@property(retain) UIImage * image;
+@property (nonatomic, retain) UIImage *image;
 
 - (void).cxx_destruct;
 - (id)image;

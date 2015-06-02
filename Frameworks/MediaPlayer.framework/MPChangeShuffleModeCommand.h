@@ -6,7 +6,7 @@
     unsigned int _currentShuffleType;
 }
 
-@property unsigned int currentShuffleType;
+@property (nonatomic) unsigned int currentShuffleType;
 
 - (id)_mediaRemoteCommandInfoOptions;
 - (unsigned int)currentShuffleType;

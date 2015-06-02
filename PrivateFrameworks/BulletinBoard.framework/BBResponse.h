@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BBAssertion, NSArray, NSDictionary, NSString;
-
 @interface BBResponse : NSObject <NSSecureCoding> {
     NSString *_actionID;
     int _actionType;
@@ -19,24 +13,20 @@
     NSArray *_lifeAssertions;
     NSString *_originID;
     NSString *_replyText;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sendBlock;
-
+    id /* block */ _sendBlock;
     BOOL _sent;
 }
 
-@property(copy) NSString * actionID;
-@property int actionType;
-@property BOOL activated;
-@property(retain) NSString * bulletinID;
-@property(copy) NSString * buttonID;
-@property(copy) NSDictionary * context;
-@property(copy) NSArray * lifeAssertions;
-@property(copy) NSString * originID;
-@property(copy) NSString * replyText;
-@property(copy) id sendBlock;
+@property (nonatomic, copy) NSString *actionID;
+@property (nonatomic) int actionType;
+@property (nonatomic) BOOL activated;
+@property (nonatomic, retain) NSString *bulletinID;
+@property (nonatomic, copy) NSString *buttonID;
+@property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic, copy) NSArray *lifeAssertions;
+@property (nonatomic, copy) NSString *originID;
+@property (nonatomic, copy) NSString *replyText;
+@property (nonatomic, copy) id /* block */ sendBlock;
 
 + (BOOL)supportsSecureCoding;
 
@@ -53,7 +43,7 @@
 - (id)originID;
 - (id)replyText;
 - (void)send;
-- (id)sendBlock;
+- (id /* block */)sendBlock;
 - (void)setActionID:(id)arg1;
 - (void)setActionType:(int)arg1;
 - (void)setActivated:(BOOL)arg1;
@@ -63,6 +53,6 @@
 - (void)setLifeAssertions:(id)arg1;
 - (void)setOriginID:(id)arg1;
 - (void)setReplyText:(id)arg1;
-- (void)setSendBlock:(id)arg1;
+- (void)setSendBlock:(id /* block */)arg1;
 
 @end

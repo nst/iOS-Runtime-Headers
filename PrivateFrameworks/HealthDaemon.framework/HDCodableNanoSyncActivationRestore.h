@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface HDCodableNanoSyncActivationRestore : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
     NSString *_deviceSourceIdentifier;
     struct { 
@@ -16,19 +14,19 @@
     int _statusCode;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * deviceSourceIdentifier;
-@property(readonly) BOOL hasDeviceSourceIdentifier;
-@property(readonly) BOOL hasRestoreIdentifier;
-@property BOOL hasSequenceNumber;
-@property BOOL hasStatusCode;
-@property(readonly) unsigned int hash;
-@property(retain) NSData * restoreIdentifier;
-@property(retain) NSMutableArray * restores;
-@property long long sequenceNumber;
-@property int statusCode;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *deviceSourceIdentifier;
+@property (nonatomic, readonly) BOOL hasDeviceSourceIdentifier;
+@property (nonatomic, readonly) BOOL hasRestoreIdentifier;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL hasStatusCode;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSData *restoreIdentifier;
+@property (nonatomic, retain) NSMutableArray *restores;
+@property (nonatomic) long long sequenceNumber;
+@property (nonatomic) int statusCode;
+@property (readonly) Class superclass;
 
 + (id)activationRestoreWithRestoreUUID:(id)arg1 sequenceNumber:(long long)arg2 statusCode:(int)arg3;
 + (id)persistentUserInfoKey;

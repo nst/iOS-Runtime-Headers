@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface CFPrefsManagedSource : CFPrefsPlistSource {
-}
+@interface CFPrefsManagedSource : CFPrefsPlistSource
 
-+ (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 perform:(id)arg3;
++ (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 perform:(id /* block */)arg3;
 
 - (void)alreadylocked_setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (id)initWithDomain:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3;

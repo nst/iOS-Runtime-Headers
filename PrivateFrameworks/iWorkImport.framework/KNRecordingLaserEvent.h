@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface KNRecordingLaserEvent : KNRecordingEvent {
     struct CGPoint { 
         float x; 
@@ -14,7 +9,7 @@
     } mUnitLocation;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } unitLocation;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } unitLocation;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

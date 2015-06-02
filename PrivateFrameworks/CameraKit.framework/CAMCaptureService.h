@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMCaptureService : NSObject {
-}
+@interface CAMCaptureService : NSObject
 
 - (void)requestWasEnqueued:(id)arg1;
 - (void)responseWasCompleted:(id)arg1 error:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EAAccessory, NSInputStream, NSOutputStream, NSString;
-
 @interface EASession : NSObject {
     EAAccessory *_accessory;
     NSInputStream *_inputStream;
@@ -14,10 +12,10 @@
     int _sock;
 }
 
-@property(readonly) EAAccessory * accessory;
-@property(readonly) NSInputStream * inputStream;
-@property(readonly) NSOutputStream * outputStream;
-@property(readonly) NSString * protocolString;
+@property (nonatomic, readonly) EAAccessory *accessory;
+@property (nonatomic, readonly) NSInputStream *inputStream;
+@property (nonatomic, readonly) NSOutputStream *outputStream;
+@property (nonatomic, readonly) NSString *protocolString;
 
 - (void)_endStreams;
 - (unsigned int)_sessionID;

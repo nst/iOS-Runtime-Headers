@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKObjCType, NSMethodSignature, NSString;
-
 @interface CKObjCProperty : NSObject {
     Class _classHandle;
     unsigned int _flags;
@@ -18,17 +16,17 @@
     CKObjCType *_type;
 }
 
-@property(readonly) Class classHandle;
-@property(readonly) unsigned int flags;
-@property(readonly) NSMethodSignature * getterMethodSignature;
-@property(readonly) SEL getterSelector;
-@property(readonly) NSString * getterSelectorName;
-@property(readonly) NSString * instanceVariableName;
-@property(readonly) NSString * name;
-@property(readonly) NSMethodSignature * setterMethodSignature;
-@property(readonly) SEL setterSelector;
-@property(readonly) NSString * setterSelectorName;
-@property(readonly) CKObjCType * type;
+@property (nonatomic, readonly) Class classHandle;
+@property (nonatomic, readonly) unsigned int flags;
+@property (nonatomic, readonly) NSMethodSignature *getterMethodSignature;
+@property (nonatomic, readonly) SEL getterSelector;
+@property (nonatomic, readonly) NSString *getterSelectorName;
+@property (nonatomic, readonly) NSString *instanceVariableName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSMethodSignature *setterMethodSignature;
+@property (nonatomic, readonly) SEL setterSelector;
+@property (nonatomic, readonly) NSString *setterSelectorName;
+@property (nonatomic, readonly) CKObjCType *type;
 
 - (void).cxx_destruct;
 - (Class)classHandle;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDTableCell;
-
 @interface WMTableCellMapper : CMMapper {
     unsigned int mColSpan;
     double mHeight;

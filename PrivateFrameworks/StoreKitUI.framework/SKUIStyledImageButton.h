@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIImageView;
-
 @interface SKUIStyledImageButton : UIControl {
     BOOL _didInitialHighlightForTouch;
     SKUIImageView *_imageView;
 }
 
-@property(readonly) SKUIImageView * imageView;
+@property (nonatomic, readonly) SKUIImageView *imageView;
 
 - (void).cxx_destruct;
 - (id)imageView;

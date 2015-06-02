@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSDInfo>, TSDConnectionLinePathSource, TSDInfoGeometry, TSDLayout, TSUBezierPath;
-
 @interface TSDConnectionLineAbstractLayout : TSDShapeLayout {
     struct CGPoint { 
         float x; 
@@ -34,25 +32,25 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } mResizeControlPoints[3];
+    } mResizeControlPoints;
     BOOL mUseDynamicOutsets;
-    BOOL mUseResizePoints[3];
+    BOOL mUseResizePoints;
     BOOL mValidConnections;
     BOOL mValidLine;
     BOOL mVisibleLine;
 }
 
-@property TSDLayout * connectedFrom;
-@property NSObject<TSDInfo> * connectedFromInfo;
-@property(readonly) TSDConnectionLinePathSource * connectedPathSource;
-@property TSDLayout * connectedTo;
-@property NSObject<TSDInfo> * connectedToInfo;
-@property float dynamicOutsetFrom;
-@property float dynamicOutsetTo;
-@property(readonly) float outsetFrom;
-@property(readonly) float outsetTo;
-@property BOOL useDynamicOutsets;
-@property(readonly) BOOL validLine;
+@property (nonatomic) TSDLayout *connectedFrom;
+@property (nonatomic) NSObject<TSDInfo> *connectedFromInfo;
+@property (nonatomic, readonly) TSDConnectionLinePathSource *connectedPathSource;
+@property (nonatomic) TSDLayout *connectedTo;
+@property (nonatomic) NSObject<TSDInfo> *connectedToInfo;
+@property (nonatomic) float dynamicOutsetFrom;
+@property (nonatomic) float dynamicOutsetTo;
+@property (nonatomic, readonly) float outsetFrom;
+@property (nonatomic, readonly) float outsetTo;
+@property (nonatomic) BOOL useDynamicOutsets;
+@property (nonatomic, readonly) BOOL validLine;
 
 - (id)additionalLayoutsForRepCreation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
@@ -70,7 +68,7 @@
 - (id)connectedToInfo;
 - (id)connectionLineInfo;
 - (struct CGPoint { float x1; float x2; })controlPointForPointA:(struct CGPoint { float x1; float x2; })arg1 pointB:(struct CGPoint { float x1; float x2; })arg2 andOriginalA:(struct CGPoint { float x1; float x2; })arg3 originalB:(struct CGPoint { float x1; float x2; })arg4;
-- (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint { float x1; float x2; }[3])arg3;
+- (id)createConnectedPathFrom:(id)arg1 to:(id)arg2 withControlPoints:(struct CGPoint { float x1; float x2; })arg3;
 - (void)dealloc;
 - (float)dynamicOutsetFrom;
 - (float)dynamicOutsetTo;

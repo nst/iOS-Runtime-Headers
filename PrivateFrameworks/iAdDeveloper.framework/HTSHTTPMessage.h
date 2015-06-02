@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
  */
 
-@class NSData, NSMutableDictionary, NSString;
-
 @interface HTSHTTPMessage : NSObject {
     NSData *_body;
     NSMutableDictionary *_headers;
     NSString *_versionString;
 }
 
-@property(retain) NSData * body;
-@property(retain) NSMutableDictionary * headers;
-@property(copy) NSString * versionString;
+@property (nonatomic, retain) NSData *body;
+@property (nonatomic, retain) NSMutableDictionary *headers;
+@property (nonatomic, copy) NSString *versionString;
 
 - (void)addHeadersToMessage:(struct __CFHTTPMessage { }*)arg1;
 - (id)body;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIITunesPassConfiguration, UIImageView, UILabel, UIView;
-
 @interface SKUIRedeemITunesPassLockup : UIControl {
     SKUIClientContext *_clientContext;
     SKUIITunesPassConfiguration *_configuration;

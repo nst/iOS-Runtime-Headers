@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary;
+@interface SASportsAthleteComparisonSnippet : SASportsAthleteSnippet
 
-@interface SASportsAthleteComparisonSnippet : SASportsAthleteSnippet {
-}
-
-@property(copy) NSDictionary * comparisonItemDetails;
+@property (nonatomic, copy) NSDictionary *comparisonItemDetails;
 
 + (id)athleteComparisonSnippet;
 + (id)athleteComparisonSnippetWithDictionary:(id)arg1 context:(id)arg2;

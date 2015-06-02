@@ -11,9 +11,9 @@
     } offset;
 }
 
-@property struct CGPath { }* borderPath;
-@property struct CGPath { }* clipPath;
-@property struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) struct CGPath { }*borderPath;
+@property (nonatomic) struct CGPath { }*clipPath;
+@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
 
 - (struct CGPath { }*)borderPath;
 - (struct CGPath { }*)clipPath;

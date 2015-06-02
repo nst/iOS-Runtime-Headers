@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAXFill : NSObject {
-}
+@interface OAXFill : NSObject
 
 + (id)pathGradientFillTypeEnumMap;
 + (id)presetPatternFillTypeEnumMap;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDictionary, PLAccountingGroup, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition, PLNSTimerOperatorComposition;
-
 @interface PLSpringBoardAgent : PLAgent {
     PLAccountingGroup *_appAccountingGroup;
     BOOL _autoLockIsNil;
@@ -19,18 +17,18 @@
     NSDictionary *_screenNumberToName;
 }
 
-@property(retain) PLAccountingGroup * appAccountingGroup;
+@property (retain) PLAccountingGroup *appAccountingGroup;
 @property BOOL autoLockIsNil;
-@property(retain) PLNSTimerOperatorComposition * dailyWallpaperPoll;
-@property(retain) PLEntryNotificationOperatorComposition * displayOffNotification;
-@property(readonly) PLNSNotificationOperatorComposition * notificationSBAutoLockTimerFiredNotification;
-@property(readonly) PLCFNotificationOperatorComposition * notificationSBBlankTrackingChanged;
-@property(readonly) PLNSNotificationOperatorComposition * notificationSBLocalNotificationFired;
-@property(readonly) PLCFNotificationOperatorComposition * notificationSBLockTrackingChanged;
-@property(readonly) PLNSNotificationOperatorComposition * notificationSBRemoteNotificationReceived;
-@property(readonly) PLNSNotificationOperatorComposition * notificationSBScreenTimeTrackingChanged;
-@property(readonly) PLNSNotificationOperatorComposition * notificationSBWallpaperTrackingChanged;
-@property(retain) NSDictionary * screenNumberToName;
+@property (retain) PLNSTimerOperatorComposition *dailyWallpaperPoll;
+@property (retain) PLEntryNotificationOperatorComposition *displayOffNotification;
+@property (readonly) PLNSNotificationOperatorComposition *notificationSBAutoLockTimerFiredNotification;
+@property (readonly) PLCFNotificationOperatorComposition *notificationSBBlankTrackingChanged;
+@property (readonly) PLNSNotificationOperatorComposition *notificationSBLocalNotificationFired;
+@property (readonly) PLCFNotificationOperatorComposition *notificationSBLockTrackingChanged;
+@property (readonly) PLNSNotificationOperatorComposition *notificationSBRemoteNotificationReceived;
+@property (readonly) PLNSNotificationOperatorComposition *notificationSBScreenTimeTrackingChanged;
+@property (readonly) PLNSNotificationOperatorComposition *notificationSBWallpaperTrackingChanged;
+@property (retain) NSDictionary *screenNumberToName;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitions;

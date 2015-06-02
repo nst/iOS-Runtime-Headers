@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSArray;
-
 @interface TSCHMultiDataChartRepMultiDataBuildAnimatedLayers : NSObject {
     CALayer *backgroundLayer;
     CALayer *dataSetNameLayer;
@@ -12,11 +10,11 @@
     NSArray *referenceLineLayers;
 }
 
-@property(retain) CALayer * backgroundLayer;
-@property(retain) CALayer * dataSetNameLayer;
-@property(copy) NSArray * elementLayers;
-@property(retain) CALayer * legendLayer;
-@property(copy) NSArray * referenceLineLayers;
+@property (nonatomic, retain) CALayer *backgroundLayer;
+@property (nonatomic, retain) CALayer *dataSetNameLayer;
+@property (nonatomic, copy) NSArray *elementLayers;
+@property (nonatomic, retain) CALayer *legendLayer;
+@property (nonatomic, copy) NSArray *referenceLineLayers;
 
 + (id)animatedLayers;
 

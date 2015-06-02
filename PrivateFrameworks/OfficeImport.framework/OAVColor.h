@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVColor : NSObject {
-}
+@interface OAVColor : NSObject
 
 + (int)readColorAdjustmentType:(id)arg1;
 + (id)readColorFromAttribute:(id)arg1 alpha:(float)arg2 manager:(id)arg3;

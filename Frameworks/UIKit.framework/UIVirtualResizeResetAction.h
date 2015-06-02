@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIVirtualResizeResetAction : BSAction {
-}
+@interface UIVirtualResizeResetAction : BSAction
 
 - (int)UIActionType;
 - (id)init;

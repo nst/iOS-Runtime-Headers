@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CALayer, NSString;
-
 @interface PKMicaView : UIView <PKMicaResizableView> {
     CALayer *_micaLayer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) CALayer * micaLayer;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CALayer *micaLayer;
+@property (readonly) Class superclass;
 
 - (struct CGSize { float x1; float x2; })boundsSizeToMatchPointScale:(float)arg1;
 - (void)dealloc;

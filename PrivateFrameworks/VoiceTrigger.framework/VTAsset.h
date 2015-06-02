@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class ASAsset, NSArray, NSNumber, NSString;
-
 @interface VTAsset : NSObject {
     ASAsset *_asset;
 }
 
-@property(getter=isInstalled,readonly) BOOL installed;
-@property(readonly) NSArray * languages;
-@property(readonly) NSString * path;
-@property(readonly) NSNumber * version;
+@property (getter=isInstalled, nonatomic, readonly) BOOL installed;
+@property (nonatomic, readonly) NSArray *languages;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSNumber *version;
 
 - (void).cxx_destruct;
 - (id)description;

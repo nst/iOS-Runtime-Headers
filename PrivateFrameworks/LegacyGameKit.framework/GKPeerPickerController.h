@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
  */
 
-@class <GKPeerPickerControllerDelegate>, GKPeerPickerViewController;
-
 @interface GKPeerPickerController : NSObject {
     id _picker;
 }
 
-@property unsigned int connectionTypesMask;
-@property <GKPeerPickerControllerDelegate> * delegate;
-@property(readonly) GKPeerPickerViewController * pickerViewController;
-@property(getter=isVisible,readonly) BOOL visible;
+@property (nonatomic) unsigned int connectionTypesMask;
+@property (nonatomic) <GKPeerPickerControllerDelegate> *delegate;
+@property (nonatomic, readonly) GKPeerPickerViewController *pickerViewController;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
 
 + (void)initialize;
 

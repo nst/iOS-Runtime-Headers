@@ -7,7 +7,7 @@
     int _associations;
 }
 
-@property float normalizedDensity;
+@property (nonatomic) float normalizedDensity;
 
 + (id)bodyWithCircleOfRadius:(float)arg1;
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;

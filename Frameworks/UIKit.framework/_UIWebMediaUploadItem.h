@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImage;
-
 @interface _UIWebMediaUploadItem : NSObject {
     NSString *_filePath;
     UIImage *_originalImage;
     BOOL _video;
 }
 
-@property(retain) NSString * filePath;
-@property(retain) UIImage * originalImage;
-@property(getter=isVideo) BOOL video;
+@property (nonatomic, retain) NSString *filePath;
+@property (nonatomic, retain) UIImage *originalImage;
+@property (getter=isVideo, nonatomic) BOOL video;
 
 + (id)mediaUploadItemWithFilePath:(id)arg1 image:(id)arg2 isVideo:(BOOL)arg3;
 

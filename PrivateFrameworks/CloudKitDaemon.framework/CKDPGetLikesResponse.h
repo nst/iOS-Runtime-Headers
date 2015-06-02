@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLikeInfo, NSMutableArray;
-
 @interface CKDPGetLikesResponse : PBCodable <NSCopying> {
     CKDPLikeInfo *_likeInfo;
     NSMutableArray *_likes;
 }
 
-@property(readonly) BOOL hasLikeInfo;
-@property(retain) CKDPLikeInfo * likeInfo;
-@property(retain) NSMutableArray * likes;
+@property (nonatomic, readonly) BOOL hasLikeInfo;
+@property (nonatomic, retain) CKDPLikeInfo *likeInfo;
+@property (nonatomic, retain) NSMutableArray *likes;
 
 - (void).cxx_destruct;
 - (void)addLike:(id)arg1;

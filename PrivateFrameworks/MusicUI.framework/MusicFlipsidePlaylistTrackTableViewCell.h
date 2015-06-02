@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPURatingControl, NSString;
-
 @interface MusicFlipsidePlaylistTrackTableViewCell : MusicSongListTableViewCell {
     MPURatingControl *_ratingControl;
     BOOL _showsRatingControl;
 }
 
-@property(copy) NSString * durationText;
-@property float maximumDurationWidth;
-@property(readonly) MPURatingControl * ratingControl;
-@property BOOL showsRatingControl;
-@property(copy) NSString * trackNumberText;
+@property (nonatomic, copy) NSString *durationText;
+@property (nonatomic) float maximumDurationWidth;
+@property (nonatomic, readonly) MPURatingControl *ratingControl;
+@property (nonatomic) BOOL showsRatingControl;
+@property (nonatomic, copy) NSString *trackNumberText;
 
 + (Class)contentViewClass;
 + (struct CGSize { float x1; float x2; })sizeForDuration:(double)arg1;

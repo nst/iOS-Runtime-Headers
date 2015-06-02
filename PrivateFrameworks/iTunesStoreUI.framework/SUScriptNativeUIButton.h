@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptNativeUIButton : SUScriptButtonNativeObject {
-}
+@interface SUScriptNativeUIButton : SUScriptButtonNativeObject
 
 + (id)objectWithDefaultButtonForScriptButton:(id)arg1;
 

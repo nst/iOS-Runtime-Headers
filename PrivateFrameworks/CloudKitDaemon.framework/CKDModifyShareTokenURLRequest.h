@@ -2,25 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableDictionary;
-
 @interface CKDModifyShareTokenURLRequest : CKDURLRequest {
     NSArray *_shareTokenInfos;
     NSMutableDictionary *_shareTokenInfosByRequestID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareTokenModifiedBlock;
-
+    id /* block */ _shareTokenModifiedBlock;
 }
 
-@property(retain) NSArray * shareTokenInfos;
-@property(retain) NSMutableDictionary * shareTokenInfosByRequestID;
-@property(copy) id shareTokenModifiedBlock;
+@property (nonatomic, retain) NSArray *shareTokenInfos;
+@property (nonatomic, retain) NSMutableDictionary *shareTokenInfosByRequestID;
+@property (nonatomic, copy) id /* block */ shareTokenModifiedBlock;
 
 - (void).cxx_destruct;
 - (id)initWithShareTokenInfos:(id)arg1;
@@ -31,9 +21,9 @@
 - (id)requestOperations;
 - (void)setShareTokenInfos:(id)arg1;
 - (void)setShareTokenInfosByRequestID:(id)arg1;
-- (void)setShareTokenModifiedBlock:(id)arg1;
+- (void)setShareTokenModifiedBlock:(id /* block */)arg1;
 - (id)shareTokenInfos;
 - (id)shareTokenInfosByRequestID;
-- (id)shareTokenModifiedBlock;
+- (id /* block */)shareTokenModifiedBlock;
 
 @end

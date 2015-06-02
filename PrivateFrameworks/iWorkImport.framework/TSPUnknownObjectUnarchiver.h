@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_data>, NSString;
-
 @interface TSPUnknownObjectUnarchiver : TSPUnarchiver {
     struct shared_ptr<TSP::ArchiveInfo> { 
         struct ArchiveInfo {} *__ptr_; 
@@ -18,8 +11,8 @@
     NSString *_packageLocator;
 }
 
-@property(readonly) NSObject<OS_dispatch_data> * messagesData;
-@property(readonly) NSString * packageLocator;
+@property (nonatomic, readonly) NSObject<OS_dispatch_data> *messagesData;
+@property (nonatomic, readonly) NSString *packageLocator;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

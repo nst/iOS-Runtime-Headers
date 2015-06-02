@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPersonTabsLayoutManager>, ABPersonViewControllerHelper, NSString, UIView;
-
 @interface ABPersonTableView : UITableView <ABPersonTabsScrollView> {
     ABPersonViewControllerHelper *_helper;
     float _minimumBottomInset;
@@ -16,14 +14,14 @@
     <ABPersonTabsLayoutManager> *_tabsLayoutManager;
 }
 
-@property(retain) UIView * backgroundView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property ABPersonViewControllerHelper * helper;
-@property float minimumBottomInset;
-@property(readonly) Class superclass;
-@property(retain) <ABPersonTabsLayoutManager> * tabsLayoutManager;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) ABPersonViewControllerHelper *helper;
+@property (nonatomic) float minimumBottomInset;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) <ABPersonTabsLayoutManager> *tabsLayoutManager;
 
 - (id)helper;
 - (void)layoutSubviews;

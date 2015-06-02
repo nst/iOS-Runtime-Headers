@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface CPLBackgroundUploadsTask : CPLEngineSyncTask {
     unsigned int _failedUploadedResourcesCount;
     BOOL _hasBadErrors;

@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@interface _UIVisualEffectSubview : UIView
 
-@interface _UIVisualEffectSubview : UIView {
-}
-
-@property(setter=_setGroupName:,copy) NSString * _groupName;
+@property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
 
 - (id)_groupName;
 - (void)_setGroupName:(id)arg1;

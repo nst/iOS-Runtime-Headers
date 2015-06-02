@@ -2,25 +2,22 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKPersistentAlarm, EKPersistentLocation, NSData, NSDate, NSSet, NSString, NSTimeZone;
+@interface EKPersistentAlarm : EKPersistentObject <NSCopying>
 
-@interface EKPersistentAlarm : EKPersistentObject <NSCopying> {
-}
-
-@property(readonly) NSString * UUID;
-@property(copy) NSDate * absoluteDate;
-@property(copy) NSDate * acknowledgedDate;
-@property int alarmType;
-@property(getter=isDefaultAlarm) BOOL defaultAlarm;
-@property(copy) NSData * externalData;
-@property(copy) NSString * externalID;
-@property(readonly) BOOL isAbsolute;
-@property(copy) EKPersistentLocation * location;
-@property(retain) EKPersistentAlarm * originalAlarm;
-@property int proximity;
-@property double relativeOffset;
-@property(copy) NSSet * snoozedAlarms;
-@property(copy) NSTimeZone * timeZone;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSDate *absoluteDate;
+@property (nonatomic, copy) NSDate *acknowledgedDate;
+@property (nonatomic) int alarmType;
+@property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
+@property (nonatomic, copy) NSData *externalData;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, readonly) BOOL isAbsolute;
+@property (nonatomic, copy) EKPersistentLocation *location;
+@property (nonatomic, retain) EKPersistentAlarm *originalAlarm;
+@property (nonatomic) int proximity;
+@property (nonatomic) double relativeOffset;
+@property (nonatomic, copy) NSSet *snoozedAlarms;
+@property (nonatomic, copy) NSTimeZone *timeZone;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;

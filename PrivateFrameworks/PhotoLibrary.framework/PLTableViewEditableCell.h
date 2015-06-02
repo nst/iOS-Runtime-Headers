@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString, PLTextView, UILabel, UITextField;
-
 @interface PLTableViewEditableCell : UITableViewCell <UITextFieldDelegate, UITextViewDelegate> {
     int _cellStyle;
     id _delegate;
@@ -13,11 +11,11 @@
     PLTextView *_textView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int style;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
 
 + (id)posterCellIdentifier;
 

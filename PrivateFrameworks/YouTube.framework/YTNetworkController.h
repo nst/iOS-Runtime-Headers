@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSTimer;
-
 @interface YTNetworkController : NSObject {
     BOOL _isCellular;
     BOOL _isReachable;

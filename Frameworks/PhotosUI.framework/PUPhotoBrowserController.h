@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUPhotoBrowserControllerDelegate>, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, PHAsset, PHAssetCollection, PHCachingImageManager, PHFetchResult, PLCloudSharedComment, PLPhotoBrowserController, PLPhotoTileViewController, PLSlalomRegionEditor, PUAirplayRoute, PUAirplayRoutePickerViewController, PUAvalancheReviewController, PUPhotoBrowserControllerSpec, PUPhotoBrowserTitleView, PUPhotoPinchGestureRecognizer, PUPhotosSharingViewController, PUSlideshowSettings, PUSlideshowSettingsViewController, PUVideoEditPluginSession, UIColor, UIImage, UIMovieScrubber, UIView, _UIContentUnavailableView, _UINavigationControllerPalette;
-
 @interface PUPhotoBrowserController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLPhotoBrowserControllerDelegate, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUEditPluginSessionDelegate, PUPhotoEditViewControllerDelegate, PUPhotoLibraryUIChangeObserver, PUPhotosSharingTransitionDelegate, PUPhotosSharingViewControllerDelegate, PUVideoEditPluginSessionDataSource, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
     PUAirplayRoutePickerViewController *__airplayPickerViewController;
     _UIContentUnavailableView *__emptyPlaceholderView;
@@ -39,11 +33,7 @@
     BOOL _overlaysVisible;
     BOOL _photoBackgroundHidden;
     PUPhotoPinchGestureRecognizer *_photoPinchGestureRecognizer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _ppt_onDidEndPagingBlock;
-
+    id /* block */ _ppt_onDidEndPagingBlock;
     PUPhotosSharingViewController *_sharingViewController;
     BOOL _shouldShowOverlaysWhenViewAppears;
     PLSlalomRegionEditor *_slalomRegionEditor;
@@ -56,38 +46,38 @@
     _UINavigationControllerPalette *_videoScrubberPalette;
 }
 
-@property(setter=_setAirplayPickerViewController:) PUAirplayRoutePickerViewController * _airplayPickerViewController;
-@property(setter=_setEmptyPlaceholderView:,retain) _UIContentUnavailableView * _emptyPlaceholderView;
-@property(setter=_setLockScreenSharingObserver:,retain) id _lockScreenSharingObserver;
-@property(setter=_setSlideshowSettingsViewController:) PUSlideshowSettingsViewController * _slideshowSettingsViewController;
-@property unsigned int allowedActions;
-@property(readonly) PHFetchResult * assetCollections;
-@property(readonly) PHFetchResult * assetCollectionsFetchResult;
-@property(readonly) PHCachingImageManager * cachingImageManager;
-@property(readonly) UIView * commentsView;
-@property(readonly) PHAsset * currentAsset;
-@property(readonly) PHAssetCollection * currentAssetContainer;
-@property(readonly) PHAssetCollection * currentAssetContainerForZoomTransition;
-@property(readonly) PHAsset * currentAssetForZoomTransition;
-@property(readonly) PLPhotoTileViewController * currentTileForTransitions;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUPhotoBrowserControllerDelegate> * delegate;
-@property BOOL deletesDuplicatesWhenNecessary;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PLCloudSharedComment * initialComment;
-@property BOOL isBrowsingFavorites;
-@property(getter=areOverlaysVisible,setter=_setOverlaysVisible:) BOOL overlaysVisible;
-@property(readonly) UIColor * photoBackgroundColor;
-@property(getter=isPhotoBackgroundHidden) BOOL photoBackgroundHidden;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } photoFrame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } photoFrameForZoomTransition;
-@property(readonly) UIImage * photoImage;
-@property(readonly) UIImage * photoImageForZoomTransition;
-@property(setter=ppt_setOnDidEndPagingBlock:,copy) id ppt_onDidEndPagingBlock;
-@property BOOL shouldPlayVideoWhenViewAppears;
-@property BOOL shouldShowOverlaysWhenViewAppears;
-@property(readonly) Class superclass;
+@property (setter=_setAirplayPickerViewController:, nonatomic) PUAirplayRoutePickerViewController *_airplayPickerViewController;
+@property (setter=_setEmptyPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_emptyPlaceholderView;
+@property (setter=_setLockScreenSharingObserver:, nonatomic, retain) id _lockScreenSharingObserver;
+@property (setter=_setSlideshowSettingsViewController:, nonatomic) PUSlideshowSettingsViewController *_slideshowSettingsViewController;
+@property (nonatomic) unsigned int allowedActions;
+@property (nonatomic, readonly) PHFetchResult *assetCollections;
+@property (nonatomic, readonly) PHFetchResult *assetCollectionsFetchResult;
+@property (nonatomic, readonly) PHCachingImageManager *cachingImageManager;
+@property (nonatomic, readonly) UIView *commentsView;
+@property (nonatomic, readonly) PHAsset *currentAsset;
+@property (nonatomic, readonly) PHAssetCollection *currentAssetContainer;
+@property (nonatomic, readonly) PHAssetCollection *currentAssetContainerForZoomTransition;
+@property (nonatomic, readonly) PHAsset *currentAssetForZoomTransition;
+@property (nonatomic, readonly) PLPhotoTileViewController *currentTileForTransitions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoBrowserControllerDelegate> *delegate;
+@property (nonatomic) BOOL deletesDuplicatesWhenNecessary;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PLCloudSharedComment *initialComment;
+@property (nonatomic) BOOL isBrowsingFavorites;
+@property (getter=areOverlaysVisible, setter=_setOverlaysVisible:, nonatomic) BOOL overlaysVisible;
+@property (nonatomic, readonly) UIColor *photoBackgroundColor;
+@property (getter=isPhotoBackgroundHidden, nonatomic) BOOL photoBackgroundHidden;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } photoFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } photoFrameForZoomTransition;
+@property (nonatomic, readonly) UIImage *photoImage;
+@property (nonatomic, readonly) UIImage *photoImageForZoomTransition;
+@property (setter=ppt_setOnDidEndPagingBlock:, nonatomic, copy) id /* block */ ppt_onDidEndPagingBlock;
+@property (nonatomic) BOOL shouldPlayVideoWhenViewAppears;
+@property (nonatomic) BOOL shouldShowOverlaysWhenViewAppears;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -113,16 +103,16 @@
 - (void)_deleteCurrentItem:(id)arg1;
 - (void)_didFinishDownloadingAssetWithIdentifier:(id)arg1 success:(BOOL)arg2 canceled:(BOOL)arg3 error:(id)arg4;
 - (BOOL)_dismissLegacyPopovers;
-- (void)_dismissSharingViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)_dismissSharingViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_displayShareSheet:(id)arg1;
-- (void)_displayShareSheet:(id)arg1 completion:(id)arg2;
-- (void)_displayShareSheet:(id)arg1 completion:(id)arg2 isLockScreenCamera:(BOOL)arg3;
+- (void)_displayShareSheet:(id)arg1 completion:(id /* block */)arg2;
+- (void)_displayShareSheet:(id)arg1 completion:(id /* block */)arg2 isLockScreenCamera:(BOOL)arg3;
 - (void)_downloadCurrentItem:(id)arg1;
 - (int)_editActionTypeForCurrentAsset;
 - (id)_emptyPlaceholderView;
 - (void)_endEditingCurrentAsset;
 - (void)_enterReviewMode:(id)arg1;
-- (void)_fetchCanRevertAsset:(id)arg1 asynchronously:(BOOL)arg2 handler:(id)arg3;
+- (void)_fetchCanRevertAsset:(id)arg1 asynchronously:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_finalizeSharingViewControllerDismiss;
 - (void)_finishSlideshowConfig:(id)arg1 withSettings:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(BOOL)arg3;
@@ -146,8 +136,8 @@
 - (void)_pushPhotoEditorForAsset:(id)arg1;
 - (void)_removeAdjacentCommentsTables;
 - (void)_removeCurrentItem:(id)arg1;
-- (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id)arg2;
-- (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id)arg4;
+- (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id /* block */)arg2;
+- (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id /* block */)arg4;
 - (void)_returnToCamera:(id)arg1;
 - (void)_revealComments;
 - (void)_saveTrimmedVideo:(id)arg1;
@@ -201,7 +191,7 @@
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)commentsView;
-- (void)commitPendingUpdatesWithCompletionHandler:(id)arg1;
+- (void)commitPendingUpdatesWithCompletionHandler:(id /* block */)arg1;
 - (id)contentScrollView;
 - (void)copy:(id)arg1;
 - (id)currentAsset;
@@ -214,11 +204,11 @@
 - (BOOL)deletesDuplicatesWhenNecessary;
 - (void)didEndNavigationOperation:(int)arg1 inNavigationController:(id)arg2;
 - (void)didMoveToParentViewController:(id)arg1;
-- (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)editPluginSession:(id)arg1 loadAdjustmentDataWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 loadPlaceholderImageWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 loadVideoURLWithHandler:(id)arg2;
-- (void)editPluginSession:(id)arg1 revertToOriginalWithCompletionHandler:(id)arg2;
+- (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)editPluginSession:(id)arg1 loadAdjustmentDataWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 loadPlaceholderImageWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 loadVideoURLWithHandler:(id /* block */)arg2;
+- (void)editPluginSession:(id)arg1 revertToOriginalWithCompletionHandler:(id /* block */)arg2;
 - (void)editPluginSessionAvailabilityDidChange:(id)arg1;
 - (BOOL)editPluginSessionCanRevertToOriginal:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -235,7 +225,7 @@
 - (void)photoBrowserController:(id)arg1 commentControllerDidExitEditMode:(id)arg2;
 - (void)photoBrowserController:(id)arg1 commentControllerWillEnterEditMode:(id)arg2;
 - (id)photoBrowserController:(id)arg1 customCenterOverlayForTileViewController:(id)arg2;
-- (void)photoBrowserController:(id)arg1 didFailToStreamPhotoToCurrentRouteWithError:(id)arg2 retryBlock:(id)arg3;
+- (void)photoBrowserController:(id)arg1 didFailToStreamPhotoToCurrentRouteWithError:(id)arg2 retryBlock:(id /* block */)arg3;
 - (BOOL)photoBrowserController:(id)arg1 isPhotoDeleteForSender:(id)arg2;
 - (void)photoBrowserController:(id)arg1 overlayVisibilityWillChangeTo:(BOOL)arg2 withDuration:(double)arg3;
 - (void)photoBrowserController:(id)arg1 photoTileViewControllerSingleTap:(id)arg2;
@@ -280,14 +270,14 @@
 - (void)photosSharingViewControllerWillCancel:(id)arg1;
 - (void)playSlideshowFromAlbumUsingOrigami:(BOOL)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (void)ppt_dismissShareSheetWithCompletion:(id)arg1;
+- (void)ppt_dismissShareSheetWithCompletion:(id /* block */)arg1;
 - (id)ppt_legacyPhotoBrowserIndexPath;
-- (id)ppt_onDidEndPagingBlock;
-- (void)ppt_presentShareSheetWithCompletion:(id)arg1;
-- (BOOL)ppt_scrollToPhotoWithRelativeIndex:(int)arg1 completion:(id)arg2;
+- (id /* block */)ppt_onDidEndPagingBlock;
+- (void)ppt_presentShareSheetWithCompletion:(id /* block */)arg1;
+- (BOOL)ppt_scrollToPhotoWithRelativeIndex:(int)arg1 completion:(id /* block */)arg2;
 - (BOOL)ppt_scrubToAbsoluteIndex:(id)arg1 immediately:(BOOL)arg2;
 - (void)ppt_setIsScrubbing:(BOOL)arg1;
-- (void)ppt_setOnDidEndPagingBlock:(id)arg1;
+- (void)ppt_setOnDidEndPagingBlock:(id /* block */)arg1;
 - (void)ppt_setOverlaysVisible:(BOOL)arg1;
 - (id)ppt_sharingViewController;
 - (int)preferredStatusBarUpdateAnimation;

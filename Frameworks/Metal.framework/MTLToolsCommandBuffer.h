@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLCommandQueue>, <MTLDevice>, MTLToolsPointerArray, NSDictionary, NSError, NSString;
-
 @interface MTLToolsCommandBuffer : MTLToolsObject <MTLCommandBufferSPI> {
     MTLToolsPointerArray *_blitCommandEncoders;
     MTLToolsPointerArray *_computeCommandEncoders;
@@ -11,27 +9,27 @@
     MTLToolsPointerArray *_renderCommandEncoders;
 }
 
-@property(readonly) MTLToolsPointerArray * blitCommandEncoders;
-@property(readonly) <MTLCommandQueue> * commandQueue;
-@property(readonly) MTLToolsPointerArray * computeCommandEncoders;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
-@property(readonly) NSError * error;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(readonly) MTLToolsPointerArray * parallelRenderCommandEncoders;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
-@property(readonly) NSDictionary * profilingResults;
-@property(readonly) MTLToolsPointerArray * renderCommandEncoders;
-@property(readonly) BOOL retainedReferences;
-@property(readonly) unsigned int status;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) MTLToolsPointerArray *blitCommandEncoders;
+@property (readonly) <MTLCommandQueue> *commandQueue;
+@property (nonatomic, readonly) MTLToolsPointerArray *computeCommandEncoders;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
+@property (readonly) NSError *error;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (nonatomic, readonly) MTLToolsPointerArray *parallelRenderCommandEncoders;
+@property (getter=isProfilingEnabled) BOOL profilingEnabled;
+@property (readonly) NSDictionary *profilingResults;
+@property (nonatomic, readonly) MTLToolsPointerArray *renderCommandEncoders;
+@property (readonly) BOOL retainedReferences;
+@property (readonly) unsigned int status;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
-- (void)addCompletedHandler:(id)arg1;
-- (void)addScheduledHandler:(id)arg1;
+- (void)addCompletedHandler:(id /* block */)arg1;
+- (void)addScheduledHandler:(id /* block */)arg1;
 - (id)blitCommandEncoder;
 - (id)blitCommandEncoders;
 - (id)commandQueue;

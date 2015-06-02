@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSRunLoop;
-
 @interface _MPNonRetainingDelayedPerformContext : NSObject {
     id argument;
     struct __CFRunLoopTimer { } *dperf;

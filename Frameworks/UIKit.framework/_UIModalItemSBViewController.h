@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIModalItemSBViewController : UIViewController {
-}
+@interface _UIModalItemSBViewController : UIViewController
 
 - (int)preferredInterfaceOrientationForPresentation;
 - (BOOL)shouldAutorotate;

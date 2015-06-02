@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
-
 @interface GEOSuggestionsOptions : PBCodable <NSCopying> {
     int _entriesType;
     struct { 
@@ -19,18 +17,18 @@
     NSData *_suggestionMetadata;
 }
 
-@property int entriesType;
-@property BOOL hasEntriesType;
-@property BOOL hasIncludeRankingFeatures;
-@property BOOL hasListType;
-@property BOOL hasNormalizePOIs;
-@property(readonly) BOOL hasSuggestionEntryMetadata;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property BOOL includeRankingFeatures;
-@property int listType;
-@property BOOL normalizePOIs;
-@property(retain) NSData * suggestionEntryMetadata;
-@property(retain) NSData * suggestionMetadata;
+@property (nonatomic) int entriesType;
+@property (nonatomic) BOOL hasEntriesType;
+@property (nonatomic) BOOL hasIncludeRankingFeatures;
+@property (nonatomic) BOOL hasListType;
+@property (nonatomic) BOOL hasNormalizePOIs;
+@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) BOOL hasSuggestionMetadata;
+@property (nonatomic) BOOL includeRankingFeatures;
+@property (nonatomic) int listType;
+@property (nonatomic) BOOL normalizePOIs;
+@property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, retain) NSData *suggestionMetadata;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

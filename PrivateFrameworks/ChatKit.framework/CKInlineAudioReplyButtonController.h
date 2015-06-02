@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKInlineAudioReplyButtonDelegate>, UIButton;
-
 @interface CKInlineAudioReplyButtonController : NSObject {
     <CKInlineAudioReplyButtonDelegate> *_delegate;
     double _holdThreshold;
@@ -13,12 +11,12 @@
     double _touchDownTime;
 }
 
-@property <CKInlineAudioReplyButtonDelegate> * delegate;
-@property double holdThreshold;
-@property(retain) UIButton * startButton;
-@property(getter=isStarted) BOOL started;
-@property(retain) UIButton * stopButton;
-@property double touchDownTime;
+@property (nonatomic) <CKInlineAudioReplyButtonDelegate> *delegate;
+@property (nonatomic) double holdThreshold;
+@property (nonatomic, retain) UIButton *startButton;
+@property (getter=isStarted, nonatomic) BOOL started;
+@property (nonatomic, retain) UIButton *stopButton;
+@property (nonatomic) double touchDownTime;
 
 - (void)dealloc;
 - (id)delegate;

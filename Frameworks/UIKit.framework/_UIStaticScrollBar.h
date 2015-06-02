@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSInvocation, UIButton, UIView;
-
 @interface _UIStaticScrollBar : UIView {
     NSArray *_buttonConstraints;
     NSArray *_dividerConstraints;
@@ -15,8 +13,8 @@
     UIButton *_upButton;
 }
 
-@property BOOL isOnLeftSide;
-@property BOOL shouldInsetButtons;
+@property (nonatomic) BOOL isOnLeftSide;
+@property (nonatomic) BOOL shouldInsetButtons;
 
 - (void)_updateButtonConstraints;
 - (void)_updateDividerConstraints;

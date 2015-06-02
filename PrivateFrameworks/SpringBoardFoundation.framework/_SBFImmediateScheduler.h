@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString;
+@interface _SBFImmediateScheduler : NSObject <SBFScheduler>
 
-@interface _SBFImmediateScheduler : NSObject <SBFScheduler> {
-}
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-
-- (id)afterDelay:(double)arg1 performBlock:(id)arg2;
-- (id)performBlock:(id)arg1;
-- (id)performCancelableBlock:(id)arg1;
+- (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
+- (id)performBlock:(id /* block */)arg1;
+- (id)performCancelableBlock:(id /* block */)arg1;
 
 @end

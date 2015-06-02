@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface _UIDocumentPickerManagementViewController : UITableViewController {
     NSArray *_allPickers;
 }
 
-@property(retain) NSArray * allPickers;
+@property (nonatomic, retain) NSArray *allPickers;
 
 - (void)_doneButtonPressed;
 - (id)allPickers;

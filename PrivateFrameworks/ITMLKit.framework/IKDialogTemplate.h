@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKTextElement, NSArray;
+@interface IKDialogTemplate : IKViewElement
 
-@interface IKDialogTemplate : IKViewElement {
-}
-
-@property(retain,readonly) NSArray * buttons;
-@property(retain,readonly) IKTextElement * descriptionText;
-@property(retain,readonly) IKTextElement * title;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly, retain) NSArray *buttons;
+@property (nonatomic, readonly, retain) IKTextElement *descriptionText;
+@property (nonatomic, readonly, retain) IKTextElement *title;
+@property (nonatomic, readonly) unsigned int type;
 
 - (id)buttons;
 - (id)descriptionText;

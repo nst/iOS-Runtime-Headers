@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface UICompositeImageElement : NSObject {
     float m_fraction;
     struct CGRect { 

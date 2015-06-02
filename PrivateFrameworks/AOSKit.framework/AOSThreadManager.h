@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AOSKit.framework/AOSKit
  */
 
-@interface AOSThreadManager : NSObject {
-}
+@interface AOSThreadManager : NSObject
 
 + (id)sharedManager;
 

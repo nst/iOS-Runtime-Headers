@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface LTEConferenceXPCClient : NSObject {
     NSObject<OS_xpc_object> *connection;
     NSObject<OS_dispatch_queue> *connectionQueue;
@@ -11,8 +9,8 @@
     NSObject<OS_dispatch_queue> *replyQueue;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * connection;
-@property(readonly) NSMutableDictionary * registeredBlocks;
+@property (readonly) NSObject<OS_xpc_object> *connection;
+@property (readonly) NSMutableDictionary *registeredBlocks;
 
 + (id)LTEConferenceXPCClientSingleton;
 + (id)dictionaryForAudioSessionConfig:(id)arg1;
@@ -29,14 +27,14 @@
 - (void)dealloc;
 - (void)deregisterFromService:(char *)arg1;
 - (id)init;
-- (void)registerBlockForService:(char *)arg1 block:(id)arg2;
-- (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
+- (void)registerBlockForService:(char *)arg1 block:(id /* block */)arg2;
+- (void)registerBlockForService:(char *)arg1 block:(id /* block */)arg2 queue:(id)arg3;
 - (id)registeredBlocks;
 - (void)sendMessageAsync:(char *)arg1;
 - (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2;
-- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id)arg3;
-- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3 reply:(id)arg4;
-- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3 reply:(id)arg4 queue:(id)arg5;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 reply:(id /* block */)arg3;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3 reply:(id /* block */)arg4;
+- (void)sendMessageAsync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3 reply:(id /* block */)arg4 queue:(id)arg5;
 - (id)sendMessageSync:(char *)arg1;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2;
 - (id)sendMessageSync:(char *)arg1 arguments:(id)arg2 xpcArguments:(id)arg3;

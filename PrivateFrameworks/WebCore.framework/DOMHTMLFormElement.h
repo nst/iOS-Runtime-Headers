@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLCollection, NSString;
+@interface DOMHTMLFormElement : DOMHTMLElement
 
-@interface DOMHTMLFormElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * acceptCharset;
-@property(copy) NSString * action;
-@property(readonly) DOMHTMLCollection * elements;
-@property(copy) NSString * encoding;
-@property(copy) NSString * enctype;
-@property(readonly) int length;
-@property(copy) NSString * method;
-@property(copy) NSString * name;
-@property(copy) NSString * target;
+@property (copy) NSString *acceptCharset;
+@property (copy) NSString *action;
+@property (readonly) DOMHTMLCollection *elements;
+@property (copy) NSString *encoding;
+@property (copy) NSString *enctype;
+@property (readonly) int length;
+@property (copy) NSString *method;
+@property (copy) NSString *name;
+@property (copy) NSString *target;
 
 - (id)acceptCharset;
 - (id)action;

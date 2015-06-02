@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKEnergyUnit : HKBaseUnit {
-}
+@interface HKEnergyUnit : HKBaseUnit
 
 - (id)dimension;
 

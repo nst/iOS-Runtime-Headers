@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSString;
-
 @interface IMLockdownManager : NSObject {
     BOOL _hasShownMismatchedSIM;
     BOOL _hasShownWaitingAlertThisSession;
@@ -15,21 +13,21 @@
     unsigned int _state;
 }
 
-@property BOOL _hasShownMismatchedSIM;
-@property BOOL _hasShownWaitingAlertThisSession;
-@property BOOL _isCarrierInstall;
-@property BOOL _isInternalInstall;
-@property BOOL _isNonUIInstall;
-@property BOOL _isVendorInstall;
-@property BOOL _settingUpActivationState;
-@property(setter=_setState:) unsigned int _state;
-@property(readonly) BOOL isActivated;
-@property(readonly) BOOL isCarrierInstall;
-@property(readonly) BOOL isExpired;
-@property(readonly) BOOL isInternalInstall;
-@property(readonly) BOOL isNonUIInstall;
-@property(readonly) BOOL isVendorInstall;
-@property(readonly) NSString * uniqueDeviceIdentifier;
+@property (nonatomic) BOOL _hasShownMismatchedSIM;
+@property (nonatomic) BOOL _hasShownWaitingAlertThisSession;
+@property (nonatomic) BOOL _isCarrierInstall;
+@property (nonatomic) BOOL _isInternalInstall;
+@property (nonatomic) BOOL _isNonUIInstall;
+@property (nonatomic) BOOL _isVendorInstall;
+@property (nonatomic) BOOL _settingUpActivationState;
+@property (setter=_setState:, nonatomic) unsigned int _state;
+@property (nonatomic, readonly) BOOL isActivated;
+@property (nonatomic, readonly) BOOL isCarrierInstall;
+@property (nonatomic, readonly) BOOL isExpired;
+@property (nonatomic, readonly) BOOL isInternalInstall;
+@property (nonatomic, readonly) BOOL isNonUIInstall;
+@property (nonatomic, readonly) BOOL isVendorInstall;
+@property (nonatomic, readonly) NSString *uniqueDeviceIdentifier;
 
 + (id)sharedInstance;
 

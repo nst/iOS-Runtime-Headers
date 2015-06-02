@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UIView;
-
 @interface MCDAlertController : UIAlertController {
     UIView *_presentingViewControllerView;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, ACAccountStore, NSString;
-
 @interface AAGrandSlamSigner : NSObject {
     NSString *_appTokenID;
     ACAccount *_appleAccount;
@@ -11,9 +9,9 @@
     ACAccountStore *_store;
 }
 
-@property(readonly) ACAccountStore * accountStore;
-@property(readonly) ACAccount * appleAccount;
-@property(readonly) ACAccount * grandSlamAccount;
+@property (nonatomic, readonly) ACAccountStore *accountStore;
+@property (nonatomic, readonly) ACAccount *appleAccount;
+@property (nonatomic, readonly) ACAccount *grandSlamAccount;
 
 - (void).cxx_destruct;
 - (id)accountStore;

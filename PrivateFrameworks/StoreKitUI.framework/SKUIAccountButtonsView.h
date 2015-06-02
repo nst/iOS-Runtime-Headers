@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUILinkButton, SKUIRoundedRectButton, UIButton, UIControl, UILabel;
-
 @interface SKUIAccountButtonsView : UIView {
     UILabel *_accountCreditsLabel;
     SKUIRoundedRectButton *_appleIDButton;
@@ -15,15 +13,15 @@
     SKUIRoundedRectButton *_usernameButton;
 }
 
-@property(readonly) UIControl * ECommerceButton;
-@property(copy) NSString * ECommerceLinkTitle;
-@property(copy) NSString * accountCredits;
-@property(readonly) UIButton * appleIDButton;
-@property(readonly) UIButton * giftingButton;
-@property(getter=isGiftingHidden) BOOL giftingHidden;
-@property(readonly) UIButton * redeemButton;
-@property(readonly) UIButton * termsAndConditionsButton;
-@property(getter=isTermsAndConditionsHidden) BOOL termsAndConditionsHidden;
+@property (nonatomic, readonly) UIControl *ECommerceButton;
+@property (nonatomic, copy) NSString *ECommerceLinkTitle;
+@property (nonatomic, copy) NSString *accountCredits;
+@property (nonatomic, readonly) UIButton *appleIDButton;
+@property (nonatomic, readonly) UIButton *giftingButton;
+@property (getter=isGiftingHidden, nonatomic) BOOL giftingHidden;
+@property (nonatomic, readonly) UIButton *redeemButton;
+@property (nonatomic, readonly) UIButton *termsAndConditionsButton;
+@property (getter=isTermsAndConditionsHidden, nonatomic) BOOL termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceButton;

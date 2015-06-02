@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSWPShapeRepStageChunk : NSObject {
     int _stageIndex;
     NSArray *_storageRanges;
 }
 
-@property int stageIndex;
-@property(retain) NSArray * storageRanges;
+@property (nonatomic) int stageIndex;
+@property (nonatomic, retain) NSArray *storageRanges;
 
 - (void)dealloc;
 - (id)description;

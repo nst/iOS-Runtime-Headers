@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface UITableViewCellUnhighlightedState : NSObject {
     UIColor *_backgroundColor;
     BOOL _highlighted;
     BOOL _opaque;
 }
 
-@property(retain) UIColor * backgroundColor;
+@property (retain) UIColor *backgroundColor;
 @property BOOL highlighted;
 @property BOOL opaque;
 

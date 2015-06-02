@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBUISnapshotContext;
+@interface SBUISnapshotAction : BSAction
 
-@interface SBUISnapshotAction : BSAction {
-}
-
-@property(readonly) SBUISnapshotContext * context;
+@property (nonatomic, readonly) SBUISnapshotContext *context;
 
 - (id)context;
-- (id)initWithContext:(id)arg1 handler:(id)arg2;
+- (id)initWithContext:(id)arg1 handler:(id /* block */)arg2;
 - (void)sendResponse:(id)arg1;
 
 @end

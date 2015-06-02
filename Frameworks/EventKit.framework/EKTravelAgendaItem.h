@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLLocation, NSDate, NSMutableArray;
-
 @interface EKTravelAgendaItem : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _adviceBlock;
-
+    id /* block */ _adviceBlock;
     NSDate *_date;
     BOOL _haveAdvised;
     double _initialDistanceFromDestination;
@@ -22,9 +12,9 @@
     int _travelMethod;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) CLLocation * location;
-@property(readonly) int travelMethod;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) CLLocation *location;
+@property (nonatomic, readonly) int travelMethod;
 
 + (BOOL)_clLocation:(id)arg1 isEqualToCLLocation:(id)arg2;
 
@@ -33,8 +23,8 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)haveAdvised;
-- (id)initWithLocation:(id)arg1 date:(id)arg2 adviceBlock:(id)arg3;
-- (id)initWithLocation:(id)arg1 date:(id)arg2 travelMethod:(int)arg3 adviceBlock:(id)arg4;
+- (id)initWithLocation:(id)arg1 date:(id)arg2 adviceBlock:(id /* block */)arg3;
+- (id)initWithLocation:(id)arg1 date:(id)arg2 travelMethod:(int)arg3 adviceBlock:(id /* block */)arg4;
 - (BOOL)isCloseToPersonAtLocation:(id)arg1;
 - (BOOL)isEqualToTravelAgendaItem:(id)arg1;
 - (id)location;

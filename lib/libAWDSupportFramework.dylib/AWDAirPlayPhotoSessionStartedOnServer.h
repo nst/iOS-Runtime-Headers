@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayPhotoSessionStartedOnServer : PBCodable <NSCopying> {
     NSString *_clientModel;
     NSString *_clientVersion;
@@ -18,18 +16,18 @@
     unsigned int _transportType;
 }
 
-@property(retain) NSString * clientModel;
-@property(retain) NSString * clientVersion;
-@property(readonly) BOOL hasClientModel;
-@property(readonly) BOOL hasClientVersion;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasStatus;
-@property BOOL hasTimestamp;
-@property BOOL hasTransportType;
-@property(retain) NSString * sessionUUID;
-@property int status;
-@property unsigned long long timestamp;
-@property unsigned int transportType;
+@property (nonatomic, retain) NSString *clientModel;
+@property (nonatomic, retain) NSString *clientVersion;
+@property (nonatomic, readonly) BOOL hasClientModel;
+@property (nonatomic, readonly) BOOL hasClientVersion;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) int status;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transportType;
 
 - (id)clientModel;
 - (id)clientVersion;

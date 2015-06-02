@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDExteriorTextWrap : NSObject <NSCopying, NSMutableCopying> {
     float _alphaThreshold;
     int _direction;
@@ -16,12 +11,12 @@
     int _type;
 }
 
-@property(readonly) float alphaThreshold;
-@property(readonly) int direction;
-@property(readonly) int fitType;
-@property(readonly) BOOL isHTMLWrap;
-@property(readonly) float margin;
-@property(readonly) int type;
+@property (nonatomic, readonly) float alphaThreshold;
+@property (nonatomic, readonly) int direction;
+@property (nonatomic, readonly) int fitType;
+@property (nonatomic, readonly) BOOL isHTMLWrap;
+@property (nonatomic, readonly) float margin;
+@property (nonatomic, readonly) int type;
 
 + (id)exteriorTextWrap;
 + (id)exteriorTextWrapWithIsHTMLWrap:(BOOL)arg1 type:(int)arg2 direction:(int)arg3 fitType:(int)arg4 margin:(float)arg5 alphaThreshold:(float)arg6;

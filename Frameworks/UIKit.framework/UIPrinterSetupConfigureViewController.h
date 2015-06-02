@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, PKPrinter, UIButton, UIPrinterSetupConnectingView;
-
 @interface UIPrinterSetupConfigureViewController : UITableViewController <UITableViewDataSource, UITextFieldDelegate> {
     BOOL _addToNetwork;
     UIPrinterSetupConnectingView *_connectingView;
@@ -13,16 +11,16 @@
     PKPrinter *_printer;
 }
 
-@property BOOL addToNetwork;
-@property(retain) UIPrinterSetupConnectingView * connectingView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * directPasscode;
-@property BOOL directPrinting;
-@property(retain) UIButton * finishButton;
-@property(readonly) unsigned int hash;
-@property(retain) PKPrinter * printer;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL addToNetwork;
+@property (nonatomic, retain) UIPrinterSetupConnectingView *connectingView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *directPasscode;
+@property (nonatomic) BOOL directPrinting;
+@property (nonatomic, retain) UIButton *finishButton;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PKPrinter *printer;
+@property (readonly) Class superclass;
 
 - (BOOL)addToNetwork;
 - (id)connectingView;

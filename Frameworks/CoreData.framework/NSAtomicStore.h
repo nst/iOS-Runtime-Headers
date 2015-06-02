@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary;
-
 @interface NSAtomicStore : NSPersistentStore {
     NSMutableDictionary *_entityCache;
     int _nextReference;

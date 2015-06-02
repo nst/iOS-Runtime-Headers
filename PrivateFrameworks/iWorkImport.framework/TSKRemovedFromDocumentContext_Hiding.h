@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKRemovedFromDocumentContext_Hiding : TSKRemovedFromDocumentContext {
-}
+@interface TSKRemovedFromDocumentContext_Hiding : TSKRemovedFromDocumentContext
 
 - (id)description;
 - (id)undoContext;

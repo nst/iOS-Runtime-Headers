@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSError, NSObject<OS_dispatch_semaphore>, NSString, PFUbiquityLocation;
-
 @interface PFUbiquitySafeSaveFile : NSObject {
     BOOL _continueCheckingDownload;
     BOOL _continueCheckingUpload;
@@ -20,21 +18,21 @@
     BOOL _safeSaveSuccess;
 }
 
-@property(readonly) BOOL continueCheckingDownload;
-@property(readonly) BOOL continueCheckingUpload;
-@property(retain) PFUbiquityLocation * currentLocation;
-@property(readonly) NSError * downloadError;
-@property(readonly) BOOL downloadSuccess;
-@property(readonly) BOOL existsAtPermanentLocation;
-@property(readonly) BOOL existsAtSafeSaveLocation;
-@property(readonly) BOOL existsInCloud;
-@property(readonly) BOOL isRegistered;
-@property(readonly) NSString * localPeerID;
-@property(readonly) BOOL moveAfterSave;
-@property(readonly) PFUbiquityLocation * permanentLocation;
-@property(readonly) NSError * safeSaveError;
-@property(readonly) PFUbiquityLocation * safeSaveLocation;
-@property(readonly) BOOL safeSaveSuccess;
+@property (nonatomic, readonly) BOOL continueCheckingDownload;
+@property (nonatomic, readonly) BOOL continueCheckingUpload;
+@property (nonatomic, retain) PFUbiquityLocation *currentLocation;
+@property (nonatomic, readonly) NSError *downloadError;
+@property (nonatomic, readonly) BOOL downloadSuccess;
+@property (nonatomic, readonly) BOOL existsAtPermanentLocation;
+@property (nonatomic, readonly) BOOL existsAtSafeSaveLocation;
+@property (nonatomic, readonly) BOOL existsInCloud;
+@property (nonatomic, readonly) BOOL isRegistered;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) BOOL moveAfterSave;
+@property (nonatomic, readonly) PFUbiquityLocation *permanentLocation;
+@property (nonatomic, readonly) NSError *safeSaveError;
+@property (nonatomic, readonly) PFUbiquityLocation *safeSaveLocation;
+@property (nonatomic, readonly) BOOL safeSaveSuccess;
 
 - (void)checkFileDownload;
 - (void)checkSafeSaveFileUpload;

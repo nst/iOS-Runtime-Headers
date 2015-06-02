@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, _UIBackdropView;
-
 @interface UICalloutBarBackground : _UIBackdropView {
     UIImageView *_blurMaskView;
     struct CGRect { 
@@ -18,13 +16,13 @@
     } _highlightRect;
     _UIBackdropView *_separatorView;
     UIImageView *_tintMaskView;
-    float m_dividerOffsets[24];
+    float m_dividerOffsets;
 }
 
-@property(retain) UIImageView * blurMaskView;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } highlightRect;
-@property(retain) _UIBackdropView * separatorView;
-@property(retain) UIImageView * tintMaskView;
+@property (nonatomic, retain) UIImageView *blurMaskView;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } highlightRect;
+@property (nonatomic, retain) _UIBackdropView *separatorView;
+@property (nonatomic, retain) UIImageView *tintMaskView;
 
 - (id)blurMaskView;
 - (void)dealloc;

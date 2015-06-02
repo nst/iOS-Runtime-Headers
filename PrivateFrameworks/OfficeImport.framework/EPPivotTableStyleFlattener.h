@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDPivotTable;
-
 @interface EPPivotTableStyleFlattener : EPStyleFlattener {
     unsigned int mColumnFieldsCount;
     long mFirstDataColumn;

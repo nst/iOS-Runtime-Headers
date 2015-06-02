@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSMutableSet, NSObject<PLAlbumProtocol>;
-
 @interface PLFileSystemImportAsset : NSObject {
     NSDate *_dateCreated;
     struct NSObject { Class x1; } *_destinationAlbum;
@@ -11,10 +9,10 @@
     int assetKind;
 }
 
-@property int assetKind;
-@property(retain) NSDate * dateCreated;
-@property(retain) NSObject<PLAlbumProtocol> * destinationAlbum;
-@property(retain) NSMutableSet * urls;
+@property (nonatomic) int assetKind;
+@property (nonatomic, retain) NSDate *dateCreated;
+@property (nonatomic, retain) NSObject<PLAlbumProtocol> *destinationAlbum;
+@property (nonatomic, retain) NSMutableSet *urls;
 
 - (int)assetKind;
 - (int)compare:(id)arg1;

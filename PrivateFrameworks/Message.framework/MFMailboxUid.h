@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageCriterion, MFWeakReferenceHolder, MailAccount, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface MFMailboxUid : NSObject <NSCopying> {
     MFWeakReferenceHolder *_account;
     unsigned int _attributes;
@@ -23,8 +21,8 @@
     NSString *uniqueId;
 }
 
-@property(retain) NSArray * extraAttributes;
-@property(retain) NSString * permanentTag;
+@property (nonatomic, retain) NSArray *extraAttributes;
+@property (nonatomic, retain) NSString *permanentTag;
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;

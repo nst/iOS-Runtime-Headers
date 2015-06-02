@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
  */
 
-@class NSString, NSURL, UIImage;
-
 @interface InterAppAudioApp : NSObject {
     UIImage *_icon;
     BOOL _isCurrentApp;
@@ -13,12 +11,12 @@
     NSURL *_url;
 }
 
-@property(readonly) UIImage * icon;
-@property(readonly) BOOL isCurrentApp;
-@property(readonly) BOOL isHost;
-@property(readonly) int key;
-@property(readonly) NSString * name;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) UIImage *icon;
+@property (nonatomic, readonly) BOOL isCurrentApp;
+@property (nonatomic, readonly) BOOL isHost;
+@property (nonatomic, readonly) int key;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSURL *url;
 
 - (void)dealloc;
 - (id)description;

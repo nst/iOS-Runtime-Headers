@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIStorePageDelegate>, NSDictionary, NSOperationQueue, NSString, NSURLRequest, SKUIClientContext, SKUIColorScheme, SKUIMetricsController, SKUIStorePage, SKUIStorePageSectionsViewController, SSMetricsPageEvent, SSVLoadURLOperation, UIRefreshControl;
-
 @interface SKUIStorePageViewController : UIViewController <SKUIMetricsViewController, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting, UIViewControllerRestoration> {
     SKUIClientContext *_clientContext;
     <SKUIStorePageDelegate> *_delegate;
@@ -22,23 +20,23 @@
     SKUIStorePage *_storePage;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIStorePageDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isLoading,readonly) BOOL loading;
-@property(retain) NSOperationQueue * operationQueue;
-@property(retain) UIRefreshControl * refreshControl;
-@property(copy) SKUIStorePage * storePage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIStorePageDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (nonatomic, copy) SKUIStorePage *storePage;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_colorScheme;
-- (void)_loadWithOperation:(id)arg1 completionBlock:(id)arg2;
+- (void)_loadWithOperation:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_metricsEnterEventNotification:(id)arg1;
 - (void)_recordMetricsPageEvent:(id)arg1 forStorePage:(id)arg2;
 - (void)_reloadStorePage;
@@ -59,12 +57,12 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isLoading;
-- (void)loadURL:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id)arg3;
-- (void)loadURLRequest:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)loadURLRequest:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id)arg3;
+- (void)loadURL:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)loadURLRequest:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)loadURLRequest:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)loadView;
-- (void)loadWithJSONData:(id)arg1 fromOperation:(id)arg2 completionBlock:(id)arg3;
+- (void)loadWithJSONData:(id)arg1 fromOperation:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)operationQueue;
 - (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (id)refreshControl;

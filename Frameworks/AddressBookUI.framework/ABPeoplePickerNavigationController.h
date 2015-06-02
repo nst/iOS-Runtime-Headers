@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPeoplePickerNavigationControllerDelegate>, <ABStyleProvider>, ABModel, CNContactPicker, NSArray, NSPredicate, UISplitViewController<ABContactViewControllerDelegate>;
-
 @interface ABPeoplePickerNavigationController : UINavigationController {
     void *_addressBook;
     BOOL _allowsContactBlocking;
@@ -41,20 +39,22 @@
     id _reserved4;
 }
 
-@property(setter=ab_setDefaultToolbarItems:,retain) NSArray * ab_defaultToolbarItems;
-@property void* addressBook;
-@property BOOL allowsContactBlocking;
-@property BOOL allowsOnlyFaceTimeActions;
-@property BOOL allowsOnlyPhoneActions;
-@property UISplitViewController<ABContactViewControllerDelegate> * contactsSplitViewPresentationDelegate;
-@property(copy) NSArray * displayedProperties;
-@property BOOL hidesPromptInLandscape;
-@property BOOL hidesSearchableSources;
-@property <ABPeoplePickerNavigationControllerDelegate> * peoplePickerDelegate;
-@property(copy) NSPredicate * predicateForEnablingPerson;
-@property(copy) NSPredicate * predicateForSelectionOfPerson;
-@property(copy) NSPredicate * predicateForSelectionOfProperty;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (setter=ab_setDefaultToolbarItems:, nonatomic, retain) NSArray *ab_defaultToolbarItems;
+@property (nonatomic) void*addressBook;
+@property (nonatomic) BOOL allowsContactBlocking;
+@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
+@property (nonatomic) BOOL allowsOnlyPhoneActions;
+@property (nonatomic) UISplitViewController<ABContactViewControllerDelegate> *contactsSplitViewPresentationDelegate;
+@property (nonatomic, copy) NSArray *displayedProperties;
+@property (nonatomic) BOOL hidesPromptInLandscape;
+@property (nonatomic) BOOL hidesSearchableSources;
+@property (nonatomic) <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate;
+@property (nonatomic, copy) NSPredicate *predicateForEnablingPerson;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfPerson;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfProperty;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
 + (void)notifyPreferencesChanged;
 
@@ -91,7 +91,6 @@
 - (id)bannerTitle;
 - (id)bannerValue;
 - (int)behavior;
-- (BOOL)ckCanDismissWhenSuspending;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(int)arg4;
 - (void)contactPickerDidCancel:(id)arg1;
@@ -141,7 +140,7 @@
 - (id)predicateForSelectionOfProperty;
 - (void)presentContactViewController:(id)arg1;
 - (void)presentGroupsViewController;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)prompt;
 - (id)promptForViewControllerType:(int)arg1 orientation:(int)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
@@ -199,5 +198,9 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (BOOL)ckCanDismissWhenSuspending;
 
 @end

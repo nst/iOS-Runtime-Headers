@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSPointerArray;
-
 @interface NRDevice : NSObject <NSSecureCoding> {
     NSMutableDictionary *_changeBlocks;
     NSObject<OS_dispatch_queue> *_nrQueue;
@@ -13,12 +11,12 @@
     NSMutableDictionary *_properties;
 }
 
-@property(retain) NSMutableDictionary * changeBlocks;
-@property(retain) NSObject<OS_dispatch_queue> * nrQueue;
-@property(retain) NSMutableDictionary * observers;
-@property(retain) NSMutableArray * promiscuousChangeBlocks;
-@property(retain) NSPointerArray * promiscuousObservers;
-@property(retain) NSMutableDictionary * properties;
+@property (nonatomic, retain) NSMutableDictionary *changeBlocks;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *nrQueue;
+@property (nonatomic, retain) NSMutableDictionary *observers;
+@property (nonatomic, retain) NSMutableArray *promiscuousChangeBlocks;
+@property (nonatomic, retain) NSPointerArray *promiscuousObservers;
+@property (nonatomic, retain) NSMutableDictionary *properties;
 
 + (BOOL)supportsSecureCoding;
 
@@ -46,11 +44,11 @@
 - (void)queueAddPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (id)queueDescription;
 - (void)queueMergeWithDevice:(id)arg1;
-- (void)queueRegisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
+- (void)queueRegisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)queueRemovePropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
-- (void)queueUnregisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
+- (void)queueUnregisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)queueValueForProperty:(id)arg1;
-- (void)registerForPropertyChanges:(id)arg1 withBlock:(id)arg2;
+- (void)registerForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)removePropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (void)setChangeBlocks:(id)arg1;
 - (void)setNrQueue:(id)arg1;
@@ -59,7 +57,7 @@
 - (void)setPromiscuousObservers:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (void)unregisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
+- (void)unregisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)valueForProperty:(id)arg1;
 
 @end

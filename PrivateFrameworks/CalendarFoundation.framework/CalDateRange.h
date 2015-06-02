@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSDate, NSString;
-
 @interface CalDateRange : NSObject <CalDateRangeProtocol, NSCopying, NSSecureCoding> {
     NSDate *_endDate;
     NSDate *_startDate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(retain) NSDate * endDate;
-@property(readonly) unsigned int hash;
-@property(retain) NSDate * startDate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (retain) NSDate *endDate;
+@property (readonly) unsigned int hash;
+@property (retain) NSDate *startDate;
+@property (readonly) Class superclass;
 
 + (id)rangeByExpandingRange:(id)arg1 direction:(int)arg2 duration:(double)arg3;
 + (id)rangeByExpandingRange:(id)arg1 direction:(int)arg2 multiplier:(unsigned int)arg3;

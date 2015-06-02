@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class <MCDNowPlayingViewControllerDataSource>, <MCDNowPlayingViewControllerDelegate>, MCDNowPlayingView, MCDPlayModeControlView, MCDTransportControlView, UIColor, UITapGestureRecognizer, UIViewController;
-
 @interface MCDNowPlayingViewController : UIViewController {
     UITapGestureRecognizer *_backPressRecognizer;
     <MCDNowPlayingViewControllerDataSource> *_dataSource;
@@ -21,13 +19,13 @@
     UIViewController *_transportViewController;
 }
 
-@property(readonly) UITapGestureRecognizer * backPressRecognizer;
-@property <MCDNowPlayingViewControllerDataSource> * dataSource;
-@property <MCDNowPlayingViewControllerDelegate> * delegate;
-@property(readonly) UITapGestureRecognizer * knobPressRecognizer;
-@property(readonly) MCDNowPlayingView * nowPlayingView;
-@property(readonly) MCDPlayModeControlView * playModeControlView;
-@property(readonly) MCDTransportControlView * transportControlView;
+@property (nonatomic, readonly) UITapGestureRecognizer *backPressRecognizer;
+@property (nonatomic) <MCDNowPlayingViewControllerDataSource> *dataSource;
+@property (nonatomic) <MCDNowPlayingViewControllerDelegate> *delegate;
+@property (nonatomic, readonly) UITapGestureRecognizer *knobPressRecognizer;
+@property (nonatomic, readonly) MCDNowPlayingView *nowPlayingView;
+@property (nonatomic, readonly) MCDPlayModeControlView *playModeControlView;
+@property (nonatomic, readonly) MCDTransportControlView *transportControlView;
 
 - (void).cxx_destruct;
 - (void)_fastForwardButtonTouchDown:(id)arg1;

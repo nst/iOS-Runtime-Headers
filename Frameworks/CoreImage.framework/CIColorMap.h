@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage;
-
 @interface CIColorMap : CIFilter {
     CIImage *cachedGradientImage;
     CIImage *inputGradientImage;
     CIImage *inputImage;
 }
 
-@property(retain) CIImage * cachedGradientImage;
-@property(retain) CIImage * inputGradientImage;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, retain) CIImage *cachedGradientImage;
+@property (nonatomic, retain) CIImage *inputGradientImage;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 

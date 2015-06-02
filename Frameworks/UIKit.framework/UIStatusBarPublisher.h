@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableSet;
-
 @interface UIStatusBarPublisher : NSObject {
     struct __CFMachPort { } *_machPort;
     NSMutableSet *_statusBarItems;

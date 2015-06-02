@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKReminderEditorDelegate>, <EKStyleProvider>, EKReminder;
-
 @interface EKReminderEditor : EKCalendarItemEditor {
     <EKReminderEditorDelegate> *_reminderEditorDelegate;
     <EKStyleProvider> *_styleProvider;
 }
 
-@property(retain) EKReminder * reminder;
-@property <EKReminderEditorDelegate> * reminderEditorDelegate;
-@property(retain) <EKStyleProvider> * styleProvider;
+@property (nonatomic, retain) EKReminder *reminder;
+@property (nonatomic) <EKReminderEditorDelegate> *reminderEditorDelegate;
+@property (nonatomic, retain) <EKStyleProvider> *styleProvider;
 
 - (void).cxx_destruct;
 - (BOOL)_canDetachSingleOccurrence;

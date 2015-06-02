@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMExposureBiasSliderThumb, UIView;
-
 @interface CAMExposureBiasSlider : UIView {
     double __lastInteractionTime;
     UIView *__maxTrackMaskView;
@@ -17,17 +15,17 @@
     BOOL _suspendTrackFadeOut;
 }
 
-@property(readonly) double _lastInteractionTime;
-@property(retain,readonly) UIView * _maxTrackMaskView;
-@property(retain,readonly) UIView * _maxTrackView;
-@property(retain,readonly) UIView * _minTrackMaskView;
-@property(retain,readonly) UIView * _minTrackView;
-@property(retain,readonly) CAMExposureBiasSliderThumb * _thumbView;
-@property float exposureBiasMax;
-@property float exposureBiasMin;
-@property float exposureBiasValue;
-@property BOOL suspendTrackFadeOut;
-@property(readonly) float thumbMaxExtension;
+@property (nonatomic, readonly) double _lastInteractionTime;
+@property (nonatomic, readonly, retain) UIView *_maxTrackMaskView;
+@property (nonatomic, readonly, retain) UIView *_maxTrackView;
+@property (nonatomic, readonly, retain) UIView *_minTrackMaskView;
+@property (nonatomic, readonly, retain) UIView *_minTrackView;
+@property (nonatomic, readonly, retain) CAMExposureBiasSliderThumb *_thumbView;
+@property (nonatomic) float exposureBiasMax;
+@property (nonatomic) float exposureBiasMin;
+@property (nonatomic) float exposureBiasValue;
+@property (nonatomic) BOOL suspendTrackFadeOut;
+@property (nonatomic, readonly) float thumbMaxExtension;
 
 - (void).cxx_destruct;
 - (void)_animateTrackAlpha:(float)arg1 withDuration:(double)arg2;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSAttributedString, UILabel, _UIBackdropView;
-
 @interface RUTableSectionHeaderView : UITableViewHeaderFooterView {
     float _backdropTransitionWeighting;
     _UIBackdropView *_backdropView;
     UILabel *_titleLabel;
 }
 
-@property(copy) NSAttributedString * attributedTitle;
-@property float backdropTransitionWeighting;
+@property (nonatomic, copy) NSAttributedString *attributedTitle;
+@property (nonatomic) float backdropTransitionWeighting;
 
 - (void).cxx_destruct;
 - (id)attributedTitle;

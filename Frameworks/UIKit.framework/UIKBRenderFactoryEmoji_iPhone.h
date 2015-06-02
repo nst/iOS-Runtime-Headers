@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryEmoji_iPhone : UIKBRenderFactory_Emoji {
-}
+@interface UIKBRenderFactoryEmoji_iPhone : UIKBRenderFactory_Emoji
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (struct CGPoint { float x1; float x2; })emojiInternationalKeyOffset;

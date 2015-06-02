@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ACTFramework.framework/ACTFramework
  */
 
-@class EAGLContext, NSString;
-
 @interface EGLBase : NSObject <ESRenderer> {
     unsigned int mFramebuffer;
     EAGLContext *mGLBackupContext;
     EAGLContext *mGLContext;
-    unsigned int mTextureArray[32];
+    unsigned int mTextureArray;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)backupContext;
 - (int)checkCompileStatusForShader:(unsigned int)arg1;

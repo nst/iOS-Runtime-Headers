@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebGeolocationPositionInternal;
-
 @interface WebGeolocationPosition : NSObject {
     WebGeolocationPositionInternal *_internal;
 }

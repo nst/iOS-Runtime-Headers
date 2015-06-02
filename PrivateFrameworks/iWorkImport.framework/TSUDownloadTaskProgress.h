@@ -8,9 +8,9 @@
     long long _totalBytesExpectedToBeDownloaded;
 }
 
-@property BOOL isActive;
-@property long long totalBytesDownloaded;
-@property long long totalBytesExpectedToBeDownloaded;
+@property (nonatomic) BOOL isActive;
+@property (nonatomic) long long totalBytesDownloaded;
+@property (nonatomic) long long totalBytesExpectedToBeDownloaded;
 
 - (id)description;
 - (BOOL)isActive;

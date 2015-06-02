@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKAttributesTileSource : VKVectorTileSource {
-}
+@interface VKAttributesTileSource : VKVectorTileSource
 
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
 - (unsigned int)maximumDownloadZoomLevel;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapItemVendorDeal>, <MKPlaceInfoViewControllerDelegate>, ABCardGroup, MKMapItem, NSArray, NSAttributedString, NSString, UIImage, _MKPlaceInfoViewControllerRouter, _MKPlaceViewController;
-
 @interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
@@ -18,20 +16,20 @@
     BOOL _showAttribution;
 }
 
-@property(retain) _MKPlaceInfoViewControllerRouter * actionsProxy;
-@property(retain) NSArray * businessInfoOrder;
-@property(retain) <MKMapItemVendorDeal> * deal;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSAttributedString * infoAttributionString;
-@property <MKPlaceInfoViewControllerDelegate> * infoDelegate;
-@property(retain) UIImage * inlineMap;
-@property(retain) MKMapItem * mapItem;
-@property _MKPlaceViewController * owner;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property BOOL showAttribution;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) _MKPlaceInfoViewControllerRouter *actionsProxy;
+@property (nonatomic, retain) NSArray *businessInfoOrder;
+@property (nonatomic, retain) <MKMapItemVendorDeal> *deal;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSAttributedString *infoAttributionString;
+@property (nonatomic) <MKPlaceInfoViewControllerDelegate> *infoDelegate;
+@property (nonatomic, retain) UIImage *inlineMap;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) _MKPlaceViewController *owner;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic) BOOL showAttribution;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_directionsFromAddress:(id)arg1;

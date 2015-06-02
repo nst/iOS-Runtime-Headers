@@ -2,25 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary, PKPaymentOptionsRecents;
-
 @interface PKPaymentOptionsModel : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _modelChangedHandler;
-
+    id /* block */ _modelChangedHandler;
     NSMutableDictionary *_optionGroupMap;
     NSMutableArray *_optionGroups;
     PKPaymentOptionsRecents *_recents;
 }
 
-@property(copy) id modelChangedHandler;
-@property(readonly) NSArray * optionGroups;
+@property (nonatomic, copy) id /* block */ modelChangedHandler;
+@property (nonatomic, readonly) NSArray *optionGroups;
 
 + (id)_detailForReferenceObject:(id)arg1 withGroupType:(id)arg2;
 + (int)_propertyIDForGroupType:(id)arg1;
@@ -33,12 +23,12 @@
 - (void)addPeoplePickedLabeledValue:(id)arg1 contact:(id)arg2 propertyID:(int)arg3 toOptionsGroup:(id)arg4;
 - (void)dealloc;
 - (id)init;
-- (id)modelChangedHandler;
+- (id /* block */)modelChangedHandler;
 - (id)optionGroupForGroupType:(id)arg1;
 - (id)optionGroups;
-- (void)setModelChangedHandler:(id)arg1;
-- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 displayName:(id)arg5 editable:(BOOL)arg6 newItemHandler:(id)arg7 pickedItemHandler:(id)arg8 selectedValueChangedHandler:(id)arg9;
-- (void)setPaymentPasses:(id)arg1 selectedIndex:(int)arg2 selectedValueChangedHandler:(id)arg3;
-- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 selectedValueChangedHandler:(id)arg5;
+- (void)setModelChangedHandler:(id /* block */)arg1;
+- (void)setOptionGroupType:(id)arg1 options:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 displayName:(id)arg5 editable:(BOOL)arg6 newItemHandler:(id /* block */)arg7 pickedItemHandler:(id /* block */)arg8 selectedValueChangedHandler:(id /* block */)arg9;
+- (void)setPaymentPasses:(id)arg1 selectedIndex:(int)arg2 selectedValueChangedHandler:(id /* block */)arg3;
+- (void)setShippingMethods:(id)arg1 currencyCode:(id)arg2 selectedIndex:(int)arg3 displayMode:(id)arg4 selectedValueChangedHandler:(id /* block */)arg5;
 
 @end

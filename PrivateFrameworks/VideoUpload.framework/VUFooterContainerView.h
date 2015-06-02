@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class UIButton;
-
 @interface VUFooterContainerView : UIView {
     id _delegate;
     UIButton *_termsButton;
 }
 
-@property id delegate;
-@property(retain) UIButton * termsButton;
+@property (nonatomic) id delegate;
+@property (nonatomic, retain) UIButton *termsButton;
 
 - (void).cxx_destruct;
 - (id)delegate;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
  */
 
-@class NSDictionary, NSMutableArray;
-
 @interface IntlUtility : NSObject {
     NSMutableArray *mBidiLanguagesArray;
     NSMutableArray *mBidiTestedLanguagesArray;
@@ -17,7 +15,7 @@
 + (id)alternateContinentOfRegion:(id)arg1;
 + (id)capitalizeFirstWordOfName:(id)arg1 accordingToLanguage:(id)arg2;
 + (id)defaultCalendarForLocaleID:(id)arg1;
-+ (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id)arg2;
++ (void)enumeratePreferredCalendarsForLocaleID:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
 + (id)importAppleLanguages;
 + (id)importAppleLanguagesLegacy;

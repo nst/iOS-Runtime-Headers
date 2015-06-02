@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMImplementationRegistry : IKJSObject <IKJSDOMImplementationRegistry> {
-}
+@interface IKDOMImplementationRegistry : IKJSObject <IKJSDOMImplementationRegistry>
 
 - (id)getDOMImplementation:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoBrowserControllerPadSpec : PUPhotoBrowserControllerSpec {
-}
+@interface PUPhotoBrowserControllerPadSpec : PUPhotoBrowserControllerSpec
 
 - (id)avalancheReviewControllerSpec;
 - (id)newPhotoBrowserControllerForPhotoAtIndexPath:(id)arg1 assetCollections:(id)arg2 dataSource:(id)arg3;

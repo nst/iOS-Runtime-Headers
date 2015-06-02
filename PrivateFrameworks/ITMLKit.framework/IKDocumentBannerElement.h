@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBackgroundElement, IKLockupElement, IKTextElement, NSArray, UIColor;
-
 @interface IKDocumentBannerElement : IKViewElement {
     BOOL _fixed;
 }
 
-@property(retain,readonly) IKBackgroundElement * background;
-@property(readonly) UIColor * backgroundColor;
-@property(retain,readonly) NSArray * buttons;
-@property(getter=isFixed,readonly) BOOL fixed;
-@property(retain,readonly) IKLockupElement * lockup;
-@property(retain,readonly) IKTextElement * subtitle;
-@property(retain,readonly) IKTextElement * title;
+@property (nonatomic, readonly, retain) IKBackgroundElement *background;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly, retain) NSArray *buttons;
+@property (getter=isFixed, nonatomic, readonly) BOOL fixed;
+@property (nonatomic, readonly, retain) IKLockupElement *lockup;
+@property (nonatomic, readonly, retain) IKTextElement *subtitle;
+@property (nonatomic, readonly, retain) IKTextElement *title;
 
 - (id)background;
 - (id)backgroundColor;

@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel;
-
 @interface RegionFormatSampleView : UIView <PSHeaderFooterView> {
-    float _labelTopPadding[4];
-    UILabel *_labels[4];
+    float _labelTopPadding;
+    UILabel *_labels;
     float _sized;
 }
 

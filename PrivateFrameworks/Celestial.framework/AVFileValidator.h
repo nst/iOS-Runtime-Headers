@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString;
-
 @interface AVFileValidator : NSObject {
-    struct AVFileValidatorPrivate { id x1; id x2; struct FigOpaqueMediaValidator {} *x3; struct FigMediaValidatorDataLocation { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; struct OpaqueCMByteStream {} *x5; BOOL x6; BOOL x7; id x8; } *_priv;
+    struct AVFileValidatorPrivate { id x1; struct FigOpaqueMediaValidator {} *x2; struct FigMediaValidatorDataLocation { unsigned long long x_3_1_1; unsigned long long x_3_1_2; } x3; struct OpaqueCMByteStream {} *x4; BOOL x5; BOOL x6; id x7; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; oneway void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; SEL x22; void*x23; unsigned short x24; void*x25; short x26; void*x27; void*x28; void*x29; void*x30; unsigned long x31; int x32; unsigned int x33/* : ? */; const void*x34; const void*x35; void*x36; void*x37; const void*x38; void*x39; void*x40; void*x41; out const void*x42; short x43; void*x44; void*x45; out void*x46; in double x47; void*x48; void*x49; int x50; out in void*x51; float x52; const void*x53; void*x54; void*x55; void*x56; out const void*x57; void*x58; void*x59; out void*x60; in double x61; void*x62; void*x63; int x64; out in void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; oneway void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; bool x86; void*x87; unsigned short x88; void*x89; const out BOOL x90; void*x91; short x92; short x93; short x94; short x95; void*x96; const void*x97; int x98; out in void*x99; void*x100; double x101; void*x102; void*x103; void*x104; void*x105; void x106; void*x107; in void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; unsigned long long x125; void*x126; void*x127; unsigned char x128; void*x129; void*x130; out int x131; in void*x132; void*x133; float x134; float x135; } *_priv;
     NSString *_validationRules;
 }
 
-@property(retain) NSString * validationRules;
+@property (retain) NSString *validationRules;
 
 - (void)cancel;
 - (void)dealloc;

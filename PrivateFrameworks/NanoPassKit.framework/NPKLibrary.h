@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, NSTimer, NSXPCConnection;
-
 @interface NPKLibrary : NSObject <NPKGizmoClientProtocol> {
     NSObject<OS_dispatch_semaphore> *_connectionSemaphore;
     NSDate *_dateOfLastInvalidation;
@@ -26,45 +24,45 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableCaching;
-@property(readonly) unsigned int hash;
-@property BOOL initialLoadComplete;
-@property(retain) NSArray * lastSeenRelevantPassTuples;
-@property BOOL needsRelevancyInformation;
-@property BOOL needsUpdatePassDescriptions;
-@property(readonly) NSArray * nonPaymentPassDescriptions;
-@property(retain) NSMutableDictionary * passCache;
-@property(retain) NSArray * passDescriptions;
-@property(retain) NSTimer * passLibraryChangedCoalescingTimer;
-@property(retain) NSObject<OS_dispatch_queue> * passesQueue;
-@property(readonly) NSArray * paymentPassDescriptions;
-@property(readonly) NSArray * relevantPassTuples;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableCaching;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL initialLoadComplete;
+@property (nonatomic, retain) NSArray *lastSeenRelevantPassTuples;
+@property (nonatomic) BOOL needsRelevancyInformation;
+@property (nonatomic) BOOL needsUpdatePassDescriptions;
+@property (nonatomic, readonly) NSArray *nonPaymentPassDescriptions;
+@property (nonatomic, retain) NSMutableDictionary *passCache;
+@property (nonatomic, retain) NSArray *passDescriptions;
+@property (nonatomic, retain) NSTimer *passLibraryChangedCoalescingTimer;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *passesQueue;
+@property (nonatomic, readonly) NSArray *paymentPassDescriptions;
+@property (nonatomic, readonly) NSArray *relevantPassTuples;
 @property BOOL serverHasPasses;
 @property BOOL serverHasPotentiallyRelevantPasses;
-@property(readonly) Class superclass;
-@property BOOL updatingPassDescriptions;
-@property(retain) NSMutableArray * workToPerformAfterInitialLoad;
-@property(readonly) NSXPCConnection * xpcConnection;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL updatingPassDescriptions;
+@property (nonatomic, retain) NSMutableArray *workToPerformAfterInitialLoad;
+@property (readonly) NSXPCConnection *xpcConnection;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)_descriptionsWithFilter:(id)arg1;
+- (id)_descriptionsWithFilter:(id /* block */)arg1;
 - (id)_init;
 - (void)_nukeConnectionBecauseOfInvalidation;
 - (void)_updatePassDescriptions;
 - (void)_updateRelevantPassIDs;
-- (void)boostDaemonUntilPassDBAvailable:(id)arg1;
+- (void)boostDaemonUntilPassDBAvailable:(id /* block */)arg1;
 - (id)cachedPassWithID:(id)arg1;
 - (void)dealloc;
 - (void)deletePaymentPassWithID:(id)arg1;
 - (BOOL)disableCaching;
-- (void)getDeviceHasAnyPaymentPassesWithCompletion:(id)arg1;
-- (void)getDiffForPassWithID:(id)arg1 reply:(id)arg2;
-- (void)getPassWithID:(id)arg1 reply:(id)arg2;
-- (void)getPassWithID:(id)arg1 reply:(id)arg2 queue:(id)arg3;
+- (void)getDeviceHasAnyPaymentPassesWithCompletion:(id /* block */)arg1;
+- (void)getDiffForPassWithID:(id)arg1 reply:(id /* block */)arg2;
+- (void)getPassWithID:(id)arg1 reply:(id /* block */)arg2;
+- (void)getPassWithID:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3;
 - (void)handlePassLibraryChangedNotification:(id)arg1;
 - (void)handleRelevancyCheckCompletedNotification:(id)arg1;
 - (void)handleRelevancyPotentialChangedNotification:(id)arg1;
@@ -82,7 +80,7 @@
 - (id)passLibraryChangedCoalescingTimer;
 - (id)passesQueue;
 - (id)paymentPassDescriptions;
-- (void)performWorkAfterFirstLibraryLoad:(id)arg1;
+- (void)performWorkAfterFirstLibraryLoad:(id /* block */)arg1;
 - (id)relevantPassTuples;
 - (BOOL)serverHasPasses;
 - (BOOL)serverHasPotentiallyRelevantPasses;

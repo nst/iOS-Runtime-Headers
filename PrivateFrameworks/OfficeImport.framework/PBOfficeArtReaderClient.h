@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface PBOfficeArtReaderClient : NSObject <OABReaderClient> {
-}
+@interface PBOfficeArtReaderClient : NSObject <OABReaderClient>
 
 + (void)addRecolorSpec:(const struct PptRecolorSpec { int (**x1)(); struct EshColor { struct Data { int x_1_2_1; union Value { struct RGB { unsigned char x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_2_3_1; unsigned short x_2_3_2; unsigned short x_2_3_3; struct AdjustedColor { unsigned char x_4_4_1; unsigned char x_4_4_2; unsigned int x_4_4_3 : 4; unsigned int x_4_4_4 : 1; unsigned int x_4_4_5 : 1; unsigned int x_4_4_6 : 1; } x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; struct EshColor { struct Data { int x_1_2_1; union Value { struct RGB { unsigned char x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_2_3_1; unsigned short x_2_3_2; unsigned short x_2_3_3; struct AdjustedColor { unsigned char x_4_4_1; unsigned char x_4_4_2; unsigned int x_4_4_3 : 4; unsigned int x_4_4_4 : 1; unsigned int x_4_4_5 : 1; unsigned int x_4_4_6 : 1; } x_2_3_4; } x_1_2_2; } x_3_1_1; } x3; bool x4; bool x5; }*)arg1 toDictionary:(id)arg2;
 + (int)directionFromFlyDirection:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSCharacterSet, NSMutableArray, NSString;
-
 @interface TSUDurationLocaleSpecificStorage : NSObject {
     NSCharacterSet *_alphabeticCharacterSet;
     NSString *_dayLongPluralString;
@@ -46,45 +44,45 @@
     NSCharacterSet *_whitespaceCharacterSet;
 }
 
-@property(readonly) NSCharacterSet * alphabeticCharacterSet;
-@property(readonly) NSString * dayLongPluralString;
-@property(readonly) NSString * dayLongSingularString;
-@property(readonly) NSString * dayMediumPluralString;
-@property(readonly) NSString * dayMediumSingularString;
-@property(readonly) NSString * dayShortString;
-@property(readonly) NSCharacterSet * decimalDigitAndSeperatorsCharacterSet;
-@property(readonly) NSCharacterSet * decimalDigitCharacterSet;
-@property(readonly) NSCharacterSet * emptyCharacterSet;
-@property(readonly) NSArray * fullStopDurationUnitStrings;
-@property(readonly) NSString * hourLongPluralString;
-@property(readonly) NSString * hourLongSingularString;
-@property(readonly) NSString * hourMediumPluralString;
-@property(readonly) NSString * hourMediumSingularString;
-@property(readonly) NSString * hourShortString;
-@property(readonly) NSString * millisecondLongPluralString;
-@property(readonly) NSString * millisecondLongSingularString;
-@property(readonly) NSString * millisecondShortString;
-@property(readonly) NSCharacterSet * minusSignCharacterSet;
-@property(readonly) NSString * minuteLongPluralString;
-@property(readonly) NSString * minuteLongSingularString;
-@property(readonly) NSString * minuteMediumPluralString;
-@property(readonly) NSString * minuteMediumSingularString;
-@property(readonly) NSString * minuteShortString;
-@property(readonly) NSArray * multiWordDurationUnitStrings;
-@property(readonly) NSString * secondLongPluralString;
-@property(readonly) NSString * secondLongSingularString;
-@property(readonly) NSString * secondMediumPluralString;
-@property(readonly) NSString * secondMediumSingularString;
-@property(readonly) NSString * secondShortString;
-@property(readonly) NSCharacterSet * separatorPunctuationCharacterSet;
-@property(readonly) NSCharacterSet * specialDurationFormatCharacters;
-@property(readonly) NSString * weekLongPluralString;
-@property(readonly) NSString * weekLongSingularString;
-@property(readonly) NSString * weekMediumPluralString;
-@property(readonly) NSString * weekMediumSingularString;
-@property(readonly) NSString * weekShortString;
-@property(readonly) NSCharacterSet * whitespaceAndNewlineCharacterSet;
-@property(readonly) NSCharacterSet * whitespaceCharacterSet;
+@property (readonly) NSCharacterSet *alphabeticCharacterSet;
+@property (readonly) NSString *dayLongPluralString;
+@property (readonly) NSString *dayLongSingularString;
+@property (readonly) NSString *dayMediumPluralString;
+@property (readonly) NSString *dayMediumSingularString;
+@property (readonly) NSString *dayShortString;
+@property (readonly) NSCharacterSet *decimalDigitAndSeperatorsCharacterSet;
+@property (readonly) NSCharacterSet *decimalDigitCharacterSet;
+@property (readonly) NSCharacterSet *emptyCharacterSet;
+@property (readonly) NSArray *fullStopDurationUnitStrings;
+@property (readonly) NSString *hourLongPluralString;
+@property (readonly) NSString *hourLongSingularString;
+@property (readonly) NSString *hourMediumPluralString;
+@property (readonly) NSString *hourMediumSingularString;
+@property (readonly) NSString *hourShortString;
+@property (readonly) NSString *millisecondLongPluralString;
+@property (readonly) NSString *millisecondLongSingularString;
+@property (readonly) NSString *millisecondShortString;
+@property (readonly) NSCharacterSet *minusSignCharacterSet;
+@property (readonly) NSString *minuteLongPluralString;
+@property (readonly) NSString *minuteLongSingularString;
+@property (readonly) NSString *minuteMediumPluralString;
+@property (readonly) NSString *minuteMediumSingularString;
+@property (readonly) NSString *minuteShortString;
+@property (readonly) NSArray *multiWordDurationUnitStrings;
+@property (readonly) NSString *secondLongPluralString;
+@property (readonly) NSString *secondLongSingularString;
+@property (readonly) NSString *secondMediumPluralString;
+@property (readonly) NSString *secondMediumSingularString;
+@property (readonly) NSString *secondShortString;
+@property (readonly) NSCharacterSet *separatorPunctuationCharacterSet;
+@property (readonly) NSCharacterSet *specialDurationFormatCharacters;
+@property (readonly) NSString *weekLongPluralString;
+@property (readonly) NSString *weekLongSingularString;
+@property (readonly) NSString *weekMediumPluralString;
+@property (readonly) NSString *weekMediumSingularString;
+@property (readonly) NSString *weekShortString;
+@property (readonly) NSCharacterSet *whitespaceAndNewlineCharacterSet;
+@property (readonly) NSCharacterSet *whitespaceCharacterSet;
 
 + (id)localeSpecificStorageForLocale:(id)arg1;
 

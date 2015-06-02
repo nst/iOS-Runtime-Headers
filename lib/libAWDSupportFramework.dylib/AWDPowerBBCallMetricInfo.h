@@ -23,16 +23,16 @@
     unsigned int _threshold;
 }
 
-@property unsigned int callDuration;
-@property BOOL hasCallDuration;
-@property BOOL hasPowerMicroWatt;
-@property BOOL hasThreshold;
-@property unsigned int powerMicroWatt;
-@property(readonly) unsigned int* rxTxDurations;
-@property(readonly) unsigned int rxTxDurationsCount;
-@property(readonly) unsigned int* sleepStateDurations;
-@property(readonly) unsigned int sleepStateDurationsCount;
-@property unsigned int threshold;
+@property (nonatomic) unsigned int callDuration;
+@property (nonatomic) BOOL hasCallDuration;
+@property (nonatomic) BOOL hasPowerMicroWatt;
+@property (nonatomic) BOOL hasThreshold;
+@property (nonatomic) unsigned int powerMicroWatt;
+@property (nonatomic, readonly) unsigned int*rxTxDurations;
+@property (nonatomic, readonly) unsigned int rxTxDurationsCount;
+@property (nonatomic, readonly) unsigned int*sleepStateDurations;
+@property (nonatomic, readonly) unsigned int sleepStateDurationsCount;
+@property (nonatomic) unsigned int threshold;
 
 - (void)addRxTxDurations:(unsigned int)arg1;
 - (void)addSleepStateDurations:(unsigned int)arg1;

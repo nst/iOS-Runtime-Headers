@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDictionary, NSString, WBSCloudHistoryVisit, WBSCloudHistoryVisitIdentifier;
-
 @interface WBSCloudHistoryVisit : NSObject {
     BOOL _httpNonGet;
     BOOL _loadSuccessful;
@@ -15,15 +13,15 @@
     WBSCloudHistoryVisitIdentifier *_visitIdentifier;
 }
 
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(getter=wasHTTPNonGet) BOOL httpNonGet;
-@property(getter=loadWasSuccessful) BOOL loadSuccessful;
-@property WBSCloudHistoryVisit * redirectDestinationVisit;
-@property(copy) WBSCloudHistoryVisitIdentifier * redirectDestinationVisitIdentifier;
-@property WBSCloudHistoryVisit * redirectSourceVisit;
-@property(copy) WBSCloudHistoryVisitIdentifier * redirectSourceVisitIdentifier;
-@property(copy) NSString * title;
-@property(copy) WBSCloudHistoryVisitIdentifier * visitIdentifier;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (getter=wasHTTPNonGet, nonatomic) BOOL httpNonGet;
+@property (getter=loadWasSuccessful, nonatomic) BOOL loadSuccessful;
+@property (nonatomic) WBSCloudHistoryVisit *redirectDestinationVisit;
+@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *redirectDestinationVisitIdentifier;
+@property (nonatomic) WBSCloudHistoryVisit *redirectSourceVisit;
+@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *redirectSourceVisitIdentifier;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *visitIdentifier;
 
 - (void).cxx_destruct;
 - (id)description;

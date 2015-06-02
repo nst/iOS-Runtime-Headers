@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSArray, NSNumber, UIColor;
-
 @interface FUBaselinedBarSeries : FUChartSeries {
     UIColor *_barColor;
     NSArray *_barViews;
@@ -15,14 +13,14 @@
     NSArray *_plotPoints;
 }
 
-@property(retain) UIColor * barColor;
-@property(retain) NSArray * barViews;
-@property float barWidth;
-@property(retain) NSNumber * baselineAbsoluteYPos;
-@property float baselineGraphHeightPercent;
-@property float baselineValue;
-@property BOOL hideBarsBelowThreshold;
-@property(retain) NSArray * plotPoints;
+@property (nonatomic, retain) UIColor *barColor;
+@property (nonatomic, retain) NSArray *barViews;
+@property (nonatomic) float barWidth;
+@property (nonatomic, retain) NSNumber *baselineAbsoluteYPos;
+@property (nonatomic) float baselineGraphHeightPercent;
+@property (nonatomic) float baselineValue;
+@property (nonatomic) BOOL hideBarsBelowThreshold;
+@property (nonatomic, retain) NSArray *plotPoints;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_baselinedRectBoundsForYValue:(float)arg1;

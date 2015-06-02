@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSPersistentStoreCoordinator, PLManagedAlbum, PLManagedObjectContext, PLPhotoLibrary;
-
 @interface PLReplaceAssetsWithCameraRollCopiesJob : PLDaemonJob {
     PLManagedAlbum *_album;
     NSArray *_assets;
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(retain) PLManagedAlbum * album;
-@property(copy) NSArray * assets;
-@property(retain,readonly) NSPersistentStoreCoordinator * coordinator;
-@property(retain,readonly) PLManagedObjectContext * managedObjectContext;
-@property(retain) PLPhotoLibrary * photoLibrary;
+@property (nonatomic, retain) PLManagedAlbum *album;
+@property (nonatomic, copy) NSArray *assets;
+@property (nonatomic, readonly, retain) NSPersistentStoreCoordinator *coordinator;
+@property (nonatomic, readonly, retain) PLManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
 
 + (void)replaceAssets:(id)arg1 withCameraRollCopiesInAlbum:(id)arg2;
 

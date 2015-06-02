@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIViewCALayerKeyValueMapper : NSObject {
-}
+@interface _UIViewCALayerKeyValueMapper : NSObject
 
 + (id)CALayerKeyPathForUIViewKeyPath:(id)arg1;
 + (id)CALayerValueForUIViewValue:(id)arg1 forUIViewKey:(id)arg2;

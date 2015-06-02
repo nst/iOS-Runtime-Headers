@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3Container, ML3Predicate, NSArray;
-
 @interface ML3ContainerQuery : ML3Query {
     ML3Container *_container;
     ML3Predicate *_containerPredicate;
     NSArray *_limitedPersistentIDs;
 }
 
-@property(readonly) ML3Container * container;
-@property(readonly) NSArray * limitedPersistentIDs;
-@property(readonly) BOOL requiresSmartLimiting;
+@property (nonatomic, readonly) ML3Container *container;
+@property (nonatomic, readonly) NSArray *limitedPersistentIDs;
+@property (nonatomic, readonly) BOOL requiresSmartLimiting;
 
 - (void).cxx_destruct;
 - (id)container;

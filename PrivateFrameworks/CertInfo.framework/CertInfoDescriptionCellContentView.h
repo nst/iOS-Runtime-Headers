@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertInfoDescriptionCellContentView : UIView {
     float _idealHeight;
     NSArray *_labelsAndValues;

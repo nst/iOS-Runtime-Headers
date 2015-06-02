@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MCRestrictionManager : NSObject {
     NSObject<OS_dispatch_queue> *_memberQueue;
     NSMutableDictionary *_memberQueueClientRestrictions;
@@ -13,24 +11,24 @@
     NSMutableDictionary *_memberQueueUserSettings;
 }
 
-@property(copy,readonly) NSDictionary * combinedProfileRestrictions;
-@property(readonly) NSDictionary * currentRestrictions;
-@property(readonly) NSDictionary * defaultRestrictions;
-@property(readonly) NSDictionary * defaultSettings;
-@property(copy,readonly) NSDictionary * effectiveUserSettings;
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property(retain) NSMutableDictionary * memberQueueClientRestrictions;
-@property(readonly) NSMutableDictionary * memberQueueCombinedProfileRestrictions;
-@property(retain) NSMutableDictionary * memberQueueEffectiveUserSettings;
-@property(retain) NSMutableDictionary * memberQueueProfileRestrictions;
-@property(retain) NSMutableDictionary * memberQueueRestrictions;
-@property(retain) NSMutableDictionary * memberQueueUserSettings;
-@property(copy,readonly) NSDictionary * profileRestrictions;
-@property(copy,readonly) NSDictionary * userSettings;
+@property (nonatomic, readonly, copy) NSDictionary *combinedProfileRestrictions;
+@property (nonatomic, readonly) NSDictionary *currentRestrictions;
+@property (nonatomic, readonly) NSDictionary *defaultRestrictions;
+@property (nonatomic, readonly) NSDictionary *defaultSettings;
+@property (nonatomic, readonly, copy) NSDictionary *effectiveUserSettings;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueClientRestrictions;
+@property (nonatomic, readonly) NSMutableDictionary *memberQueueCombinedProfileRestrictions;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueEffectiveUserSettings;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueProfileRestrictions;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueRestrictions;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueUserSettings;
+@property (nonatomic, readonly, copy) NSDictionary *profileRestrictions;
+@property (nonatomic, readonly, copy) NSDictionary *userSettings;
 
-+ (id)allowedImportFromAppBundleIDsWithOriginalAppBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 localAppBundleID:(id)arg3 localAccountIsManaged:(BOOL)arg4 mayOpenFromUnmanagedToManaged:(BOOL)arg5 mayOpenFromManagedToUnmanaged:(BOOL)arg6 isAppBundleIDExemptBlock:(id)arg7 isAppBundleIDAccountBasedBlock:(id)arg8;
++ (id)allowedImportFromAppBundleIDsWithOriginalAppBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 localAppBundleID:(id)arg3 localAccountIsManaged:(BOOL)arg4 mayOpenFromUnmanagedToManaged:(BOOL)arg5 mayOpenFromManagedToUnmanaged:(BOOL)arg6 isAppBundleIDExemptBlock:(id /* block */)arg7 isAppBundleIDAccountBasedBlock:(id /* block */)arg8;
 + (id)allowedKeyboardBundleIDsAfterApplyingFilterToBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 hostAppIsManaged:(BOOL)arg3 mayOpenFromUnmanagedToManaged:(BOOL)arg4 mayOpenFromManagedToUnmanaged:(BOOL)arg5;
-+ (id)allowedOpenInAppBundleIDsWithOriginalAppBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 localAppBundleID:(id)arg3 localAccountIsManaged:(BOOL)arg4 mayOpenFromUnmanagedToManaged:(BOOL)arg5 mayOpenFromManagedToUnmanaged:(BOOL)arg6 isAppBundleIDExemptBlock:(id)arg7 isAppBundleIDAccountBasedBlock:(id)arg8;
++ (id)allowedOpenInAppBundleIDsWithOriginalAppBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 localAppBundleID:(id)arg3 localAccountIsManaged:(BOOL)arg4 mayOpenFromUnmanagedToManaged:(BOOL)arg5 mayOpenFromManagedToUnmanaged:(BOOL)arg6 isAppBundleIDExemptBlock:(id /* block */)arg7 isAppBundleIDAccountBasedBlock:(id /* block */)arg8;
 + (int)appWhitelistStateWithSettingsDictionary:(id)arg1;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
 + (int)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSMutableDictionary, NSNumberFormatter;
-
 @interface IKFormatting : NSObject {
     NSMutableDictionary *_dateFormatters;
     NSNumberFormatter *_durationFormatter;

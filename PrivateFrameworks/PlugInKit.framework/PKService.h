@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
  */
 
-@class <PKServiceDelegate>, NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCListener, PKServicePersonality;
-
 @interface PKService : NSObject <NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> *__sync;
     <PKServiceDelegate> *_delegate;
@@ -14,17 +12,17 @@
     NSArray *_subsystems;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * _sync;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) <PKServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * personalities;
-@property(retain) NSXPCListener * serviceListener;
+@property (retain) NSObject<OS_dispatch_queue> *_sync;
+@property (readonly, copy) NSString *debugDescription;
+@property (retain) <PKServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSMutableDictionary *personalities;
+@property (retain) NSXPCListener *serviceListener;
 @property BOOL shared;
-@property(retain) PKServicePersonality * solePersonality;
-@property(retain) NSArray * subsystems;
-@property(readonly) Class superclass;
+@property (retain) PKServicePersonality *solePersonality;
+@property (retain) NSArray *subsystems;
+@property (readonly) Class superclass;
 
 + (int)_defaultRun:(int)arg1 arguments:(const char **)arg2;
 + (id)defaultService;
@@ -35,7 +33,7 @@
 - (void)checkEnvironment:(id)arg1;
 - (id)configuredSubsystemList;
 - (id)connectionForPlugInNamed:(id)arg1;
-- (void)copyAppStoreReceipt:(id)arg1;
+- (void)copyAppStoreReceipt:(id /* block */)arg1;
 - (id)defaultsForPlugInNamed:(id)arg1;
 - (id)delegate;
 - (id)discoverSubsystemNamed:(id)arg1 logMissing:(BOOL)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABMultiCellContentView_IM : ABMultiCellContentView_DisplayAlternate {
-}
+@interface ABMultiCellContentView_IM : ABMultiCellContentView_DisplayAlternate
 
 + (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 

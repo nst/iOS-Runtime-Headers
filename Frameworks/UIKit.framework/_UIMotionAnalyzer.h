@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILabel, UIView, UIWindow, _UIMotionAnalyzerSettings, _UIViewerRelativeDevicePose;
-
 @interface _UIMotionAnalyzer : NSObject <_UISettingsKeyObserver> {
     union _GLKQuaternion { 
         struct { 
@@ -88,11 +86,11 @@
     _UIViewerRelativeDevicePose *_viewerRelativeDevicePose;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) _UIViewerRelativeDevicePose * viewerRelativeDevicePose;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) _UIViewerRelativeDevicePose *viewerRelativeDevicePose;
 
 - (void)_createDiagnosticsWindow;
 - (void)_createDirectionLockIndicators;

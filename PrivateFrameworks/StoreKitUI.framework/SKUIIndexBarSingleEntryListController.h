@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIIndexBarEntryDescriptor, SKUIIndexBarEntryViewElement, SKUIViewElement;
-
 @interface SKUIIndexBarSingleEntryListController : SKUIIndexBarEntryListController {
     SKUIViewElement *_descriptiveViewElement;
     SKUIIndexBarEntryDescriptor *_entryDescriptor;
     SKUIIndexBarEntryViewElement *_entryViewElement;
 }
 
-@property(readonly) SKUIIndexBarEntryViewElement * entryViewElement;
+@property (nonatomic, readonly) SKUIIndexBarEntryViewElement *entryViewElement;
 
 - (void).cxx_destruct;
 - (id)entryDescriptorAtIndex:(int)arg1;

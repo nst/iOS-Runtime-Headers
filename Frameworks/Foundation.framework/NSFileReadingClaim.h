@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileAccessNode, NSURL;
-
 @interface NSFileReadingClaim : NSFileAccessClaim {
     int _linkResolutionCount;
     NSFileAccessNode *_location;
@@ -17,15 +15,15 @@
 - (void)dealloc;
 - (void)devalueSelf;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
+- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
-- (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned int)arg3 claimer:(id)arg4;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id /* block */)arg3;
+- (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned int)arg3 claimer:(id /* block */)arg4;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
-- (void)resolveURLThenMaybeContinueInvokingClaimer:(id)arg1;
+- (void)resolveURLThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
 - (BOOL)shouldBeRevokedPriorToInvokingAccessor;
 
 @end

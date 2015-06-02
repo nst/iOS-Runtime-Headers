@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@interface FAPushNotificationHandler : NSObject {
-}
+@interface FAPushNotificationHandler : NSObject
 
 + (id)sharedHandler;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, UIColor, UIImageView, UIView, _MKCalloutBackgroundMaskView;
-
 @interface MKCalloutBackgroundView : UIPopoverBackgroundView {
     unsigned int _arrowDirection;
     float _arrowOffset;
@@ -15,8 +13,8 @@
     NSMutableArray *_vendedMaskViews;
 }
 
-@property(readonly) UIColor * calloutBackgroundColor;
-@property unsigned int mapDisplayStyle;
+@property (nonatomic, readonly) UIColor *calloutBackgroundColor;
+@property (nonatomic) unsigned int mapDisplayStyle;
 
 + (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
 + (float)arrowBase;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSADocumentRootDelegate>, NSArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, NSString, SFUCryptoKey, TSAAnnotationCache, TSAFunctionBrowserState, TSAShortcutController, TSCECalculationEngine, TSKCustomFormatList, TSKViewState, TSPLazyReference, TSTCustomFormatList, TSUWeakReference;
-
 @interface TSADocumentRoot : TSWPDocumentRoot <TSKImportExportDelegate> {
     TSAAnnotationCache *_annotationCache;
     NSArray *_buildVersionHistory;
@@ -35,23 +28,23 @@
     NSMutableSet *_warnings;
 }
 
-@property(copy) NSArray * buildVersionHistory;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSString * defaultDraftName;
-@property <TSADocumentRootDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didLoadDocumentFromRevert;
-@property BOOL hasPreUFFVersion;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL importingDesignDemoDoc;
-@property(readonly) BOOL isBrowsingVersions;
-@property(readonly) BOOL isClosed;
-@property(readonly) NSSet * missingFontWarningMessages;
-@property(readonly) NSString * name;
-@property BOOL needsMovieCompatibilityUpgrade;
-@property(readonly) Class superclass;
-@property(copy) NSString * templateIdentifier;
-@property(readonly) TSKViewState * viewState;
+@property (nonatomic, copy) NSArray *buildVersionHistory;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *defaultDraftName;
+@property (nonatomic) <TSADocumentRootDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didLoadDocumentFromRevert;
+@property (nonatomic) BOOL hasPreUFFVersion;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL importingDesignDemoDoc;
+@property (nonatomic, readonly) BOOL isBrowsingVersions;
+@property (nonatomic, readonly) BOOL isClosed;
+@property (nonatomic, readonly) NSSet *missingFontWarningMessages;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic) BOOL needsMovieCompatibilityUpgrade;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *templateIdentifier;
+@property (nonatomic, readonly) TSKViewState *viewState;
 
 + (id)buildVersionHistoryPath;
 + (id)buildVersionHistoryPathPreUFF;
@@ -68,8 +61,8 @@
 + (id)scaledPreviewImageForType:(unsigned int)arg1 scalableImage:(id)arg2;
 + (id)supportedPreviewImageExtensions;
 + (id)supportedScalablePreviewNames;
-+ (void)writePreviewImage:(id)arg1 group:(id)arg2 queue:(id)arg3 dataConsumerProvider:(id)arg4 completion:(id)arg5;
-+ (void)writePreviewImage:(id)arg1 toPath:(id)arg2 withIntermediateDirectories:(BOOL)arg3 name:(id)arg4 group:(id)arg5 queue:(id)arg6 completion:(id)arg7;
++ (void)writePreviewImage:(id)arg1 group:(id)arg2 queue:(id)arg3 dataConsumerProvider:(id /* block */)arg4 completion:(id /* block */)arg5;
++ (void)writePreviewImage:(id)arg1 toPath:(id)arg2 withIntermediateDirectories:(BOOL)arg3 name:(id)arg4 group:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 + (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2;
 + (BOOL)writePreviewImagesToPackageDataWriter:(id)arg1 scalableImage:(id)arg2 group:(id)arg3 queue:(id)arg4;
 + (BOOL)writePreviewImagesToPath:(id)arg1 scalableImage:(id)arg2;
@@ -101,7 +94,7 @@
 - (id)documentCachePath;
 - (void)documentCacheWasInvalidated;
 - (void)documentDidLoad;
-- (void)enumerateStylesheetsUsingBlock:(id)arg1;
+- (void)enumerateStylesheetsUsingBlock:(id /* block */)arg1;
 - (BOOL)exportToPath:(id)arg1 exporter:(id)arg2 delegate:(id)arg3 error:(id*)arg4;
 - (BOOL)exportToPath:(id)arg1 exporter:(id)arg2 error:(id*)arg3;
 - (void)fulfillPasteboardPromises;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class APDDataManager, APDNavigationItem, APDURLSession, UIColor, UIImageView, UILabel;
-
 @interface APDNavigationItemCell : UITableViewCell {
     BOOL _RTL;
     UIImageView *_accessoryImageView;
@@ -20,18 +18,18 @@
     BOOL _showFulLSeparator;
 }
 
-@property(getter=isRTL) BOOL RTL;
-@property(retain) UIImageView * accessoryImageView;
-@property(retain) UIImageView * arrowImageView;
-@property(retain) UIColor * cellHighlightedColor;
-@property BOOL closed;
-@property(retain) APDDataManager * dataManager;
-@property BOOL indentWithSectionImage;
-@property(retain) UILabel * nameLabel;
-@property(retain) APDNavigationItem * navigationItem;
-@property(retain) UIImageView * sectionImageView;
-@property BOOL shouldIndent;
-@property BOOL showFulLSeparator;
+@property (getter=isRTL, nonatomic) BOOL RTL;
+@property (nonatomic, retain) UIImageView *accessoryImageView;
+@property (nonatomic, retain) UIImageView *arrowImageView;
+@property (nonatomic, retain) UIColor *cellHighlightedColor;
+@property (nonatomic) BOOL closed;
+@property (nonatomic, retain) APDDataManager *dataManager;
+@property (nonatomic) BOOL indentWithSectionImage;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) APDNavigationItem *navigationItem;
+@property (nonatomic, retain) UIImageView *sectionImageView;
+@property (nonatomic) BOOL shouldIndent;
+@property (nonatomic) BOOL showFulLSeparator;
 
 - (void).cxx_destruct;
 - (id)accessibilityHint;

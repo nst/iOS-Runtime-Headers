@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext, SKUICountdown, SKUICountdownView, UIColor, UIImage, UIImageView, UILabel, UIView;
-
 @interface SKUIBrickCollectionViewCell : UICollectionViewCell {
     NSString *_accessibilityLabel;
     SKUIClientContext *_clientContext;
@@ -21,14 +19,14 @@
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * accessibilityLabel;
-@property(retain) SKUIClientContext * clientContext;
-@property(retain) SKUICountdown * countdown;
-@property(retain) UIImage * itemImage;
-@property(getter=isItemImageHidden) BOOL itemImageHidden;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemImageInsets;
-@property(readonly) UIView * itemImageView;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *accessibilityLabel;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, retain) SKUICountdown *countdown;
+@property (nonatomic, retain) UIImage *itemImage;
+@property (getter=isItemImageHidden, nonatomic) BOOL itemImageHidden;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } itemImageInsets;
+@property (nonatomic, readonly) UIView *itemImageView;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_reloadHighlight;

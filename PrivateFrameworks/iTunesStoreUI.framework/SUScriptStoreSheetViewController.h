@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptStoreSheetViewController : SUScriptViewController {
-}
+@interface SUScriptStoreSheetViewController : SUScriptViewController
 
 @property int productPageStyle;
-@property(readonly) int productPageStyleAutomatic;
-@property(readonly) int productPageStylePad;
-@property(readonly) int productPageStylePhone;
+@property (readonly) int productPageStyleAutomatic;
+@property (readonly) int productPageStylePad;
+@property (readonly) int productPageStylePhone;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSSpecifier, PSTableCell, UIView<UIKeyInput>;
-
 @interface KeychainSyncTextEntryController : PSKeychainSyncViewController <KeychainSyncPasscodeFieldDelegate> {
     BOOL _convertsNumeralsToASCII;
     BOOL _hidesNextButton;
@@ -16,16 +14,16 @@
     NSString *_textValue;
 }
 
-@property BOOL convertsNumeralsToASCII;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hidesNextButton;
-@property BOOL secureTextEntry;
-@property(readonly) Class superclass;
-@property int textEntryType;
-@property BOOL textFieldHasRoundBorder;
-@property(retain) NSString * textValue;
+@property (nonatomic) BOOL convertsNumeralsToASCII;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesNextButton;
+@property (nonatomic) BOOL secureTextEntry;
+@property (readonly) Class superclass;
+@property (nonatomic) int textEntryType;
+@property (nonatomic) BOOL textFieldHasRoundBorder;
+@property (nonatomic, retain) NSString *textValue;
 
 - (BOOL)becomeFirstResponder;
 - (BOOL)convertsNumeralsToASCII;

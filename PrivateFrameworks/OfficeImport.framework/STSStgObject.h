@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface STSStgObject : NSObject {
-}
+@interface STSStgObject : NSObject
 
 + (void)throwIfError:(int)arg1;
 

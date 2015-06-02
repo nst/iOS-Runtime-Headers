@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMediaObject, NSString;
-
 @interface CKAttachmentMessagePartChatItem : CKMessagePartChatItem {
     CKMediaObject *_mediaObject;
 }
 
-@property(retain) CKMediaObject * mediaObject;
-@property(copy,readonly) NSString * transferGUID;
+@property (nonatomic, retain) CKMediaObject *mediaObject;
+@property (nonatomic, readonly, copy) NSString *transferGUID;
 
 - (unsigned int)balloonCorners;
 - (Class)balloonViewClass;

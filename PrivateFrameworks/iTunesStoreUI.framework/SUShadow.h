@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIColor;
-
 @interface SUShadow : NSObject <NSCoding, NSCopying> {
     UIColor *_color;
     struct CGSize { 
@@ -14,10 +12,10 @@
     float _radius;
 }
 
-@property(retain) UIColor * color;
-@property struct CGSize { float x1; float x2; } offset;
-@property float opacity;
-@property float radius;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) struct CGSize { float x1; float x2; } offset;
+@property (nonatomic) float opacity;
+@property (nonatomic) float radius;
 
 - (void)applyToLayer:(id)arg1;
 - (id)color;

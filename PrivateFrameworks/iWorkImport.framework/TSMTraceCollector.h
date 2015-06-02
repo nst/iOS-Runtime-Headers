@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSMTraceCollector : NSObject {
-}
+@interface TSMTraceCollector : NSObject
 
-+ (id)computeAvgMinAndPrevWithTag:(id)arg1 andKeyEncode:(id)arg2 andValueEncode:(id)arg3;
++ (id)computeAvgMinAndPrevWithTag:(id)arg1 andKeyEncode:(id /* block */)arg2 andValueEncode:(id /* block */)arg3;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPStyleProvider>, TSWPStorage;
-
 @interface TSWPStoragePasteboardProxy : TSPObject {
     struct _NSRange { 
         unsigned int location; 
@@ -13,7 +11,7 @@
     <TSWPStyleProvider> *_styleProvider;
 }
 
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } storageRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } storageRange;
 
 - (id).cxx_construct;
 - (void)dealloc;

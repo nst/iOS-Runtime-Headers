@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUISnippetPlugin>, NSBundle;
-
 @interface SVSSnippetPluginBundle : NSObject {
     NSBundle *_bundle;
     <SiriUISnippetPlugin> *_snippetPlugin;
 }
 
-@property(retain) NSBundle * bundle;
-@property(retain) <SiriUISnippetPlugin> * snippetPlugin;
+@property (nonatomic, retain) NSBundle *bundle;
+@property (nonatomic, retain) <SiriUISnippetPlugin> *snippetPlugin;
 
 + (id)snippetPluginWithBundle:(id)arg1;
 

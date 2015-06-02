@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSRestrictionCondition : SSProtocolCondition {
     NSString *_restrictionName;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartValueAxisTitleSceneObject : TSCH3DChartAxisTitleSceneObject {
-}
+@interface TSCH3DChartValueAxisTitleSceneObject : TSCH3DChartAxisTitleSceneObject
 
 + (id)axisForInfo:(id)arg1;
 + (BOOL)isFixedPositionForScene:(id)arg1;

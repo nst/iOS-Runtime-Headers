@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, UIView;
-
 @interface SKUICellLayout : NSObject {
     UIView *_cell;
     SKUIClientContext *_clientContext;
@@ -11,9 +9,9 @@
     BOOL _parentWantsCellNeedsLayout;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(readonly) UIView * contentView;
-@property(readonly) UIView * parentCellView;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic, readonly) UIView *parentCellView;
 
 - (void).cxx_destruct;
 - (id)clientContext;

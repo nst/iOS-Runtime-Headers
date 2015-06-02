@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSSet, NSXPCConnection;
-
 @interface BBSystemStateProvider : NSObject {
     NSXPCConnection *_connection;
     unsigned int _currentState;

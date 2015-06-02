@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLRenderPipelineDescriptor, MTLRenderPipelineReflection;
-
 @interface MTLDebugRenderPipelineState : MTLToolsRenderPipelineState {
     MTLRenderPipelineDescriptor *_descriptor;
     MTLRenderPipelineReflection *_reflection;
 }
 
-@property(readonly) MTLRenderPipelineDescriptor * descriptor;
-@property(readonly) MTLRenderPipelineReflection * reflection;
+@property (nonatomic, readonly) MTLRenderPipelineDescriptor *descriptor;
+@property (nonatomic, readonly) MTLRenderPipelineReflection *reflection;
 
 - (void).cxx_destruct;
 - (id)description;

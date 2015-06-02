@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSWishlistDatabaseSchema : NSObject {
-}
+@interface SSWishlistDatabaseSchema : NSObject
 
 + (void)_migrate7000to7001InDatabase:(id)arg1;
 + (void)_migrate7001to7002InDatabase:(id)arg1;

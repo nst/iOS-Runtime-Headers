@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOUsageCollection : PBCodable <NSCopying> {
     int _cellWifi;
     NSString *_countryCode;
@@ -35,30 +33,30 @@
     double _timestamp;
 }
 
-@property int cellWifi;
-@property(retain) NSString * countryCode;
-@property int geoService;
-@property BOOL hasCellWifi;
-@property(readonly) BOOL hasCountryCode;
-@property BOOL hasGeoService;
-@property(readonly) BOOL hasHwMachine;
-@property BOOL hasPlaceRequestType;
-@property BOOL hasRequestDataSize;
-@property BOOL hasResponseDataSize;
-@property BOOL hasResponseTime;
-@property BOOL hasSessionID;
-@property BOOL hasSessionIDIsPersistent;
-@property BOOL hasTimestamp;
-@property(retain) NSString * hwMachine;
-@property int placeRequestType;
-@property int requestDataSize;
-@property int responseDataSize;
-@property int responseTime;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property BOOL sessionIDIsPersistent;
-@property(readonly) struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* tileUsages;
-@property(readonly) unsigned int tileUsagesCount;
-@property double timestamp;
+@property (nonatomic) int cellWifi;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic) int geoService;
+@property (nonatomic) BOOL hasCellWifi;
+@property (nonatomic, readonly) BOOL hasCountryCode;
+@property (nonatomic) BOOL hasGeoService;
+@property (nonatomic, readonly) BOOL hasHwMachine;
+@property (nonatomic) BOOL hasPlaceRequestType;
+@property (nonatomic) BOOL hasRequestDataSize;
+@property (nonatomic) BOOL hasResponseDataSize;
+@property (nonatomic) BOOL hasResponseTime;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasSessionIDIsPersistent;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *hwMachine;
+@property (nonatomic) int placeRequestType;
+@property (nonatomic) int requestDataSize;
+@property (nonatomic) int responseDataSize;
+@property (nonatomic) int responseTime;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) BOOL sessionIDIsPersistent;
+@property (nonatomic, readonly) struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*tileUsages;
+@property (nonatomic, readonly) unsigned int tileUsagesCount;
+@property (nonatomic) double timestamp;
 
 - (void)addTileUsage:(struct { unsigned int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (int)cellWifi;

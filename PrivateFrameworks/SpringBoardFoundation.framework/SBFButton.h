@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFButton : UIButton {
-}
+@interface SBFButton : UIButton
 
 - (BOOL)_drawingAsSelected;
 - (void)_touchUpInside;

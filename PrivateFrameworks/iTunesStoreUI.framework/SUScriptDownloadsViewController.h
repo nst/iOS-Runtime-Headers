@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptDownloadsViewController : SUScriptViewController {
-}
+@interface SUScriptDownloadsViewController : SUScriptViewController
 
-@property(retain) id buttons;
+@property (retain) id buttons;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

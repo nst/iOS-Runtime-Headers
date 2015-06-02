@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDate;
-
 @interface CKDPDateStatistics : PBCodable <NSCopying> {
     CKDPDate *_creation;
     CKDPDate *_modification;
 }
 
-@property(retain) CKDPDate * creation;
-@property(readonly) BOOL hasCreation;
-@property(readonly) BOOL hasModification;
-@property(retain) CKDPDate * modification;
+@property (nonatomic, retain) CKDPDate *creation;
+@property (nonatomic, readonly) BOOL hasCreation;
+@property (nonatomic, readonly) BOOL hasModification;
+@property (nonatomic, retain) CKDPDate *modification;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

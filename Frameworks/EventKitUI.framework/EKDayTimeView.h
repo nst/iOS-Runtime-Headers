@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayTimeViewDelegate>, EKCurrentTimeMarkerView, NSMutableArray, NSString, UIColor, UIView;
-
 @interface EKDayTimeView : UIView <EKCurrentTimeMarkerViewUpdating> {
     NSMutableArray *_contentViews;
     <EKDayTimeViewDelegate> *_delegate;
@@ -17,9 +15,9 @@
         unsigned int location; 
         unsigned int length; 
     } _hoursToRender;
-    unsigned int _leftBorder : 1;
+    unsigned int _leftBorder;
     int _orientation;
-    unsigned int _rightBorder : 1;
+    unsigned int _rightBorder;
     BOOL _showsTimeMarker;
     BOOL _showsTimeMarkerExtension;
     UIColor *_timeColor;
@@ -29,24 +27,24 @@
     BOOL _usesLightText;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) float defaultHeight;
-@property <EKDayTimeViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property double highlightedHour;
-@property(readonly) float hourHeight;
-@property float hourHeightScale;
-@property float hoursToPad;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } hoursToRender;
-@property BOOL showsLeftBorder;
-@property BOOL showsRightBorder;
-@property BOOL showsTimeMarker;
-@property BOOL showsTimeMarkerExtension;
-@property(readonly) Class superclass;
-@property(retain) UIColor * timeColor;
-@property(readonly) EKCurrentTimeMarkerView * timeMarker;
-@property BOOL usesLightText;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) float defaultHeight;
+@property (nonatomic) <EKDayTimeViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double highlightedHour;
+@property (nonatomic, readonly) float hourHeight;
+@property (nonatomic) float hourHeightScale;
+@property (nonatomic) float hoursToPad;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } hoursToRender;
+@property (nonatomic) BOOL showsLeftBorder;
+@property (nonatomic) BOOL showsRightBorder;
+@property (nonatomic) BOOL showsTimeMarker;
+@property (nonatomic) BOOL showsTimeMarkerExtension;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *timeColor;
+@property (nonatomic, readonly) EKCurrentTimeMarkerView *timeMarker;
+@property (nonatomic) BOOL usesLightText;
 
 + (id)_boldFontForOrientation:(int)arg1;
 + (void)_calculateWidthForOrientation:(int)arg1;

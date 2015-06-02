@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class SafariFetcherServerProxy, WebBookmark, WebBookmarkTitleWordTokenizer;
-
 @interface WebBookmarkCollection : NSObject {
     struct sqlite3 { } *_db;
     BOOL _dirty;
@@ -15,7 +13,7 @@
     WebBookmarkTitleWordTokenizer *_wordTokenizer;
 }
 
-@property(getter=isMerging) BOOL merging;
+@property (getter=isMerging, nonatomic) BOOL merging;
 
 + (id)_currentProcessContainerPath;
 + (void)_postBookmarksChangedSyncNotification;
@@ -60,7 +58,7 @@
 - (BOOL)_deleteBookmark:(id)arg1 leaveTombstone:(BOOL)arg2;
 - (BOOL)_deleteRecursively:(unsigned int)arg1;
 - (BOOL)_deleteSyncPropertyForKey:(id)arg1;
-- (void)_enumerateBookmarksForMatchStatement:(id)arg1 normalizedQuery:(id)arg2 usingBlock:(id)arg3;
+- (void)_enumerateBookmarksForMatchStatement:(id)arg1 normalizedQuery:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)_errorForMostRecentSQLiteError;
 - (id)_errorForMostRecentSQLiteErrorWithErrorCode:(int)arg1;
 - (int)_executeSQL:(id)arg1;
@@ -185,7 +183,7 @@
 - (BOOL)deleteAllFavoriteIcons;
 - (BOOL)deleteBookmark:(id)arg1;
 - (BOOL)deleteBookmark:(id)arg1 postChangeNotification:(BOOL)arg2;
-- (void)enumerateBookmarks:(BOOL)arg1 andReadingListItems:(BOOL)arg2 matchingString:(id)arg3 usingBlock:(id)arg4;
+- (void)enumerateBookmarks:(BOOL)arg1 andReadingListItems:(BOOL)arg2 matchingString:(id)arg3 usingBlock:(id /* block */)arg4;
 - (id)fastFetchBookmarksInBookmarkList:(id)arg1;
 - (id)favoritesFolder;
 - (id)favoritesFolderList;

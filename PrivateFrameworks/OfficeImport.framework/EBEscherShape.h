@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart, NSData, NSMutableArray;
-
 @interface EBEscherShape : ESDObject {
     CHDChart *mChart;
     NSMutableArray *mChartColorLocators;

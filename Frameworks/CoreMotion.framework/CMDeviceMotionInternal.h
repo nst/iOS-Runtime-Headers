@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class CMAttitude;
-
 @interface CMDeviceMotionInternal : NSObject <NSCopying> {
     CMAttitude *fAttitude;
     bool fDoingBiasEstimation;

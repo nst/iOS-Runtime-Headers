@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class <SBUIBannerSource>, <SBUIBannerTarget>, NSString, SBUIBannerAction, SBUIBannerItem;
-
 @interface SBUIBannerContext : NSObject {
     BOOL _isValid;
     SBUIBannerItem *_item;
@@ -13,13 +11,13 @@
     <SBUIBannerTarget> *_target;
 }
 
-@property(readonly) SBUIBannerAction * interactiveAction;
-@property(retain,readonly) SBUIBannerItem * item;
-@property(copy) NSString * presentingActionIdentifier;
-@property BOOL requestsModalPresentation;
-@property(retain,readonly) <SBUIBannerSource> * source;
-@property(retain,readonly) <SBUIBannerTarget> * target;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, readonly) SBUIBannerAction *interactiveAction;
+@property (nonatomic, readonly, retain) SBUIBannerItem *item;
+@property (nonatomic, copy) NSString *presentingActionIdentifier;
+@property (nonatomic) BOOL requestsModalPresentation;
+@property (nonatomic, readonly, retain) <SBUIBannerSource> *source;
+@property (nonatomic, readonly, retain) <SBUIBannerTarget> *target;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (void)dealloc;
 - (id)description;

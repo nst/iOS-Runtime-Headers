@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCAccountSession, BRCLocalContainer, BRCServerChangeState, BRCSyncContext, CKRecordZoneID, NSMutableDictionary, NSNumber, NSString, PQLConnection;
-
 @interface BRCServerZone : NSObject <BRCContainer> {
     BRCServerChangeState *_changeState;
     NSString *_containerMetadataEtag;
@@ -21,21 +14,21 @@
     NSString *_zoneName;
 }
 
-@property(readonly) BRCServerChangeState * changeState;
-@property(readonly) NSString * containerMetadataEtag;
-@property(readonly) PQLConnection * db;
-@property(retain) NSNumber * dbRowID;
-@property(readonly) BOOL isPrivateContainer;
-@property(readonly) BOOL isSharedContainer;
-@property(readonly) BOOL isSyncingDownForTheFirstTime;
-@property BRCLocalContainer * localContainer;
-@property BOOL needsSave;
-@property(readonly) NSString * ownerName;
-@property(readonly) NSMutableDictionary * plist;
-@property(retain) BRCAccountSession * session;
-@property(readonly) BRCSyncContext * syncContext;
-@property(readonly) CKRecordZoneID * zoneID;
-@property(readonly) NSString * zoneName;
+@property (readonly) BRCServerChangeState *changeState;
+@property (nonatomic, readonly) NSString *containerMetadataEtag;
+@property (nonatomic, readonly) PQLConnection *db;
+@property (nonatomic, retain) NSNumber *dbRowID;
+@property (nonatomic, readonly) BOOL isPrivateContainer;
+@property (nonatomic, readonly) BOOL isSharedContainer;
+@property (nonatomic, readonly) BOOL isSyncingDownForTheFirstTime;
+@property (nonatomic) BRCLocalContainer *localContainer;
+@property (nonatomic) BOOL needsSave;
+@property (nonatomic, readonly) NSString *ownerName;
+@property (nonatomic, readonly) NSMutableDictionary *plist;
+@property (nonatomic, retain) BRCAccountSession *session;
+@property (nonatomic, readonly) BRCSyncContext *syncContext;
+@property (nonatomic, readonly) CKRecordZoneID *zoneID;
+@property (nonatomic, readonly) NSString *zoneName;
 
 - (void).cxx_destruct;
 - (void)_collectTombstoneForRank:(unsigned long long)arg1;
@@ -58,7 +51,7 @@
 - (id)containerMetadataEtag;
 - (id)db;
 - (id)dbRowID;
-- (void)deleteAllContentsOnServerWithCompletionBlock:(id)arg1;
+- (void)deleteAllContentsOnServerWithCompletionBlock:(id /* block */)arg1;
 - (id)deleteAllContentsOperation;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;

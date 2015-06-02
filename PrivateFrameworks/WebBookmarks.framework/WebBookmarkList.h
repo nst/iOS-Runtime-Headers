@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@class NSMutableArray, NSString, WebBookmarkCollection;
-
 @interface WebBookmarkList : NSObject {
     unsigned int _bookmarkCount;
     NSMutableArray *_bookmarks;
@@ -14,7 +12,7 @@
     unsigned int _skipOffset;
 }
 
-@property(readonly) unsigned int folderID;
+@property (nonatomic, readonly) unsigned int folderID;
 
 - (void)_moveBookmarkAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (unsigned int)_reverseOrderIndex:(unsigned int)arg1;

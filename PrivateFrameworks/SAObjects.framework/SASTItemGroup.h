@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASTItemGroup : SAUISnippet
 
-@interface SASTItemGroup : SAUISnippet {
-}
-
-@property(copy) NSArray * templateItems;
+@property (nonatomic, copy) NSArray *templateItems;
 
 + (id)itemGroup;
 + (id)itemGroupWithDictionary:(id)arg1 context:(id)arg2;

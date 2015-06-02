@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireSimple3DTileRequester : GEOSimpleTileRequester {
-}
+@interface GEOVoltaireSimple3DTileRequester : GEOSimpleTileRequester
 
 + (unsigned char)tileProviderIdentifier;
 

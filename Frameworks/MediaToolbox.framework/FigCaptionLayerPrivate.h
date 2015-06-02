@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class NSMutableArray;
-
 @interface FigCaptionLayerPrivate : NSObject {
     NSMutableArray *captionElementLayers;
     struct OpaqueFigReentrantMutex { } *layoutSublayersMutex;

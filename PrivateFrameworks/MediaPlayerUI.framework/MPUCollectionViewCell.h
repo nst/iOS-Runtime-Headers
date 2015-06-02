@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUSlantedTextPlaceholderArtworkView;
-
 @interface MPUCollectionViewCell : UICollectionViewCell {
     MPUSlantedTextPlaceholderArtworkView *_artworkView;
 }

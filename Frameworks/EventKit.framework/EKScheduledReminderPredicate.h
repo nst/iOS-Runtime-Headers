@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
-
 @interface EKScheduledReminderPredicate : EKPredicate {
     NSDate *_day;
 }
 
-@property(retain) NSDate * day;
+@property (nonatomic, retain) NSDate *day;
 
 + (id)predicateForScheduledRemindersInCalendars:(id)arg1 onDay:(id)arg2;
 + (BOOL)supportsSecureCoding;

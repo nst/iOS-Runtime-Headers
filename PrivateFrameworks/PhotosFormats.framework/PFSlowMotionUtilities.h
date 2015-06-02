@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
  */
 
-@interface PFSlowMotionUtilities : NSObject {
-}
+@interface PFSlowMotionUtilities : NSObject
 
 + (BOOL)_isValidSlowMotionRate:(float)arg1;
 + (BOOL)_isValidSlowMotionTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;

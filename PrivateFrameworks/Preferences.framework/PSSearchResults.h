@@ -2,33 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface PSSearchResults : NSObject <NSCopying> {
     NSMutableDictionary *_entriesBySection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _entryComparator;
-
+    id /* block */ _entryComparator;
     NSMutableSet *_explicitlyAddedSectionEntries;
     BOOL _needsSorting;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _sectionComparator;
-
+    id /* block */ _sectionComparator;
     NSMutableArray *_sectionEntries;
     BOOL _treatSectionEntriesAsRegularEntries;
 }
 
-@property(copy) id entryComparator;
-@property(copy) id sectionComparator;
-@property BOOL treatSectionEntriesAsRegularEntries;
+@property (nonatomic, copy) id /* block */ entryComparator;
+@property (nonatomic, copy) id /* block */ sectionComparator;
+@property (nonatomic) BOOL treatSectionEntriesAsRegularEntries;
 
 - (id)_initForCopyWithSectionEntries:(id)arg1 entriesBySection:(id)arg2 explicitlyAddedSectionEntries:(id)arg3;
 - (void)addEntries:(id)arg1;
@@ -39,7 +25,7 @@
 - (id)description;
 - (id)entriesInSectionAtIndex:(unsigned int)arg1;
 - (id)entryAtIndexPath:(id)arg1;
-- (id)entryComparator;
+- (id /* block */)entryComparator;
 - (id)init;
 - (void)mergeWithResults:(id)arg1;
 - (unsigned int)numberOfEntriesInSectionAtIndex:(unsigned int)arg1;
@@ -47,10 +33,10 @@
 - (unsigned int)removeEntries:(id)arg1;
 - (BOOL)removeEntry:(id)arg1;
 - (id)resultsByMergingWithResults:(id)arg1;
-- (id)sectionComparator;
+- (id /* block */)sectionComparator;
 - (id)sectionEntryAtIndex:(unsigned int)arg1;
-- (void)setEntryComparator:(id)arg1;
-- (void)setSectionComparator:(id)arg1;
+- (void)setEntryComparator:(id /* block */)arg1;
+- (void)setSectionComparator:(id /* block */)arg1;
 - (void)setTreatSectionEntriesAsRegularEntries:(BOOL)arg1;
 - (void)sortResults;
 - (unsigned int)totalNumberOfEntries;

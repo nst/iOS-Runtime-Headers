@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class NSSet, NSString, NSURL;
-
 @interface ADAdSpaceConfiguration : NSObject <NSSecureCoding> {
     NSString *_advertisingSection;
     NSString *_authenticationUserName;
@@ -14,13 +12,13 @@
     NSURL *_serverURL;
 }
 
-@property(copy) NSString * advertisingSection;
-@property(copy) NSString * authenticationUserName;
-@property(copy) NSSet * context;
-@property int creativeType;
-@property(copy) NSString * identifier;
-@property int options;
-@property(copy) NSURL * serverURL;
+@property (nonatomic, copy) NSString *advertisingSection;
+@property (nonatomic, copy) NSString *authenticationUserName;
+@property (nonatomic, copy) NSSet *context;
+@property (nonatomic) int creativeType;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) int options;
+@property (nonatomic, copy) NSURL *serverURL;
 
 + (BOOL)supportsSecureCoding;
 

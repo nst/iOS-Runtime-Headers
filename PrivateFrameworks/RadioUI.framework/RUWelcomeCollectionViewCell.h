@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, UIImage, UIView;
-
 @interface RUWelcomeCollectionViewCell : UICollectionViewCell <MPUStackViewDataSource> {
     UIImage *_artworkImage;
     struct CGSize { 
@@ -15,15 +13,15 @@
     MPUStackView *_stackView;
 }
 
-@property(retain) UIImage * artworkImage;
-@property struct CGSize { float x1; float x2; } artworkSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * perspectiveTargetView;
-@property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
-@property(readonly) Class superclass;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property (nonatomic, retain) UIImage *artworkImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } artworkSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *perspectiveTargetView;
+@property (nonatomic, retain) MPUBorderDrawingCache *stackItemBorderDrawingCache;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGPoint { float x1; float x2; } vanishingPoint;
 
 + (struct CGSize { float x1; float x2; })artworkSizeForOrientation:(int)arg1;
 

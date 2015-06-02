@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UIColor;
-
 @interface SBUIEmergencyCallServiceViewController : UIViewController <SBUIEmergencyCallServiceInterface> {
     int _backgroundStyle;
     UIColor *_tintColor;
 }
 
-@property int backgroundStyle;
-@property(retain,readonly) UIColor * tintColor;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic, readonly, retain) UIColor *tintColor;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
 - (int)backgroundStyle;
-- (void)backgroundStyle:(id)arg1;
+- (void)backgroundStyle:(id /* block */)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)noteTintColorForBackgroundStyleChanged:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUMapViewControllerSpec, PUStackView, UIImageView, UILabel;
-
 @interface PUMapAnnotationView : UIView {
     struct CGSize { 
         float width; 
@@ -16,9 +14,9 @@
     PUStackView *_stackView;
 }
 
-@property unsigned int count;
-@property(readonly) float sideCapWidth;
-@property(retain,readonly) PUStackView * stackView;
+@property (nonatomic) unsigned int count;
+@property (nonatomic, readonly) float sideCapWidth;
+@property (nonatomic, readonly, retain) PUStackView *stackView;
 
 - (void).cxx_destruct;
 - (void)cleanUpAnimatedState;

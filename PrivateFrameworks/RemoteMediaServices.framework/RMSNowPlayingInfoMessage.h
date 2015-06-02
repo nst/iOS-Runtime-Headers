@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSNowPlayingInfoMessage : PBCodable <NSCopying> {
     NSString *_albumName;
     NSString *_artistName;
@@ -42,42 +40,42 @@
     NSString *_trackName;
 }
 
-@property(retain) NSString * albumName;
-@property(retain) NSString * artistName;
-@property BOOL canSkipNext;
-@property BOOL canSkipPrevious;
-@property BOOL canWishlist;
-@property unsigned long long databaseID;
-@property(readonly) BOOL hasAlbumName;
-@property(readonly) BOOL hasArtistName;
-@property BOOL hasCanSkipNext;
-@property BOOL hasCanSkipPrevious;
-@property BOOL hasCanWishlist;
-@property BOOL hasChapterData;
-@property BOOL hasDatabaseID;
-@property BOOL hasHasChapterData;
-@property BOOL hasItemID;
-@property BOOL hasLikeable;
-@property BOOL hasLikedState;
-@property BOOL hasMediaKind;
-@property BOOL hasPlaybackState;
-@property BOOL hasRevisionNumber;
-@property BOOL hasScrubbableState;
-@property BOOL hasTimeRemaining;
-@property BOOL hasTimestamp;
-@property BOOL hasTotalDuration;
-@property(readonly) BOOL hasTrackName;
-@property unsigned long long itemID;
-@property BOOL likeable;
-@property int likedState;
-@property int mediaKind;
-@property int playbackState;
-@property unsigned int revisionNumber;
-@property int scrubbableState;
-@property double timeRemaining;
-@property double timestamp;
-@property double totalDuration;
-@property(retain) NSString * trackName;
+@property (nonatomic, retain) NSString *albumName;
+@property (nonatomic, retain) NSString *artistName;
+@property (nonatomic) BOOL canSkipNext;
+@property (nonatomic) BOOL canSkipPrevious;
+@property (nonatomic) BOOL canWishlist;
+@property (nonatomic) unsigned long long databaseID;
+@property (nonatomic, readonly) BOOL hasAlbumName;
+@property (nonatomic, readonly) BOOL hasArtistName;
+@property (nonatomic) BOOL hasCanSkipNext;
+@property (nonatomic) BOOL hasCanSkipPrevious;
+@property (nonatomic) BOOL hasCanWishlist;
+@property (nonatomic) BOOL hasChapterData;
+@property (nonatomic) BOOL hasDatabaseID;
+@property (nonatomic) BOOL hasHasChapterData;
+@property (nonatomic) BOOL hasItemID;
+@property (nonatomic) BOOL hasLikeable;
+@property (nonatomic) BOOL hasLikedState;
+@property (nonatomic) BOOL hasMediaKind;
+@property (nonatomic) BOOL hasPlaybackState;
+@property (nonatomic) BOOL hasRevisionNumber;
+@property (nonatomic) BOOL hasScrubbableState;
+@property (nonatomic) BOOL hasTimeRemaining;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTotalDuration;
+@property (nonatomic, readonly) BOOL hasTrackName;
+@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) BOOL likeable;
+@property (nonatomic) int likedState;
+@property (nonatomic) int mediaKind;
+@property (nonatomic) int playbackState;
+@property (nonatomic) unsigned int revisionNumber;
+@property (nonatomic) int scrubbableState;
+@property (nonatomic) double timeRemaining;
+@property (nonatomic) double timestamp;
+@property (nonatomic) double totalDuration;
+@property (nonatomic, retain) NSString *trackName;
 
 - (void).cxx_destruct;
 - (id)albumName;

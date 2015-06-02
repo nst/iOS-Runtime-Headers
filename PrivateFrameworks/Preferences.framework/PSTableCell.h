@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSSpecifier, PSTableCellHighlightContext, UIImageView, UILongPressGestureRecognizer;
-
 @interface PSTableCell : UITableViewCell {
     int _alignment;
     BOOL _cellEnabled;
@@ -27,12 +25,12 @@
     id _value;
 }
 
-@property BOOL forceHideDisclosureIndicator;
-@property BOOL isCopyable;
-@property(retain) UILongPressGestureRecognizer * longTapRecognizer;
-@property BOOL reusedCell;
-@property(retain) PSSpecifier * specifier;
-@property int type;
+@property (nonatomic) BOOL forceHideDisclosureIndicator;
+@property (nonatomic) BOOL isCopyable;
+@property (nonatomic, retain) UILongPressGestureRecognizer *longTapRecognizer;
+@property (nonatomic) BOOL reusedCell;
+@property (nonatomic, retain) PSSpecifier *specifier;
+@property (nonatomic) int type;
 
 + (Class)cellClassForSpecifier:(id)arg1;
 + (int)cellStyle;

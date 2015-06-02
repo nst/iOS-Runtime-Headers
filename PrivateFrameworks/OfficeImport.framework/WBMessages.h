@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBMessages : NSObject {
-}
+@interface WBMessages : NSObject
 
 + (void)initialize;
 

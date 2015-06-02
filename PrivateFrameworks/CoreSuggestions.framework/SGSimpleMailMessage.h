@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSArray, NSDate, NSNumber, NSString, SGSimpleNamedEmailAddress;
-
 @interface SGSimpleMailMessage : NSObject <NSCopying, NSSecureCoding> {
     NSArray *_bcc;
     NSString *_body;
@@ -20,21 +18,21 @@
     NSArray *_to;
 }
 
-@property(copy) NSArray * bcc;
-@property(copy) NSString * body;
-@property(copy) NSArray * cc;
-@property(copy) NSDate * date;
-@property(copy) SGSimpleNamedEmailAddress * from;
-@property(readonly) NSArray * headers;
-@property(copy) NSString * htmlBody;
-@property BOOL isInhuman;
-@property(readonly) SGSimpleNamedEmailAddress * mailingList;
-@property(copy) NSString * messageId;
-@property(copy) NSNumber * received;
-@property(copy) SGSimpleNamedEmailAddress * replyTo;
-@property(copy) NSString * subject;
-@property(copy) NSArray * to;
-@property(readonly) NSString * uniqueId;
+@property (nonatomic, copy) NSArray *bcc;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, copy) NSArray *cc;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, copy) SGSimpleNamedEmailAddress *from;
+@property (nonatomic, readonly) NSArray *headers;
+@property (nonatomic, copy) NSString *htmlBody;
+@property (nonatomic) BOOL isInhuman;
+@property (nonatomic, readonly) SGSimpleNamedEmailAddress *mailingList;
+@property (nonatomic, copy) NSString *messageId;
+@property (nonatomic, copy) NSNumber *received;
+@property (nonatomic, copy) SGSimpleNamedEmailAddress *replyTo;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSArray *to;
+@property (nonatomic, readonly) NSString *uniqueId;
 
 + (id)fromDictionary:(id)arg1;
 + (id)parseRfc822Headers:(id)arg1 htmlContent:(id)arg2;

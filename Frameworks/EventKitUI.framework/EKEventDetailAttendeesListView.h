@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, UIColor;
-
 @interface EKEventDetailAttendeesListView : UIView {
     NSArray *_acceptedNames;
     NSArray *_declinedNames;
@@ -16,15 +14,15 @@
     NSArray *_ungroupedNames;
 }
 
-@property(retain) NSArray * acceptedNames;
-@property(retain) NSArray * declinedNames;
-@property BOOL groupsNames;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIColor * highlightedTextColor;
-@property(retain) NSArray * maybeNames;
-@property(retain) NSArray * noReplyNames;
-@property(retain) UIColor * textColor;
-@property(retain) NSArray * ungroupedNames;
+@property (nonatomic, retain) NSArray *acceptedNames;
+@property (nonatomic, retain) NSArray *declinedNames;
+@property (nonatomic) BOOL groupsNames;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIColor *highlightedTextColor;
+@property (nonatomic, retain) NSArray *maybeNames;
+@property (nonatomic, retain) NSArray *noReplyNames;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) NSArray *ungroupedNames;
 
 - (void).cxx_destruct;
 - (void)_drawColumnOfStrings:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 startingAtPoint:(struct CGPoint { float x1; float x2; })arg3 givenWidth:(float)arg4;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRoadTileSource : VKVectorTileSource {
-}
+@interface VKRoadTileSource : VKVectorTileSource
 
 - (unsigned long long)mapLayerForZoomLevelRange;
 - (BOOL)minimumZoomLevelBoundsCamera;

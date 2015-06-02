@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIDatePickerComponent : NSObject {
     unsigned int _calendarUnit;
     unsigned int _equivalentUnit;
@@ -15,11 +13,11 @@
     float _width;
 }
 
-@property(readonly) unsigned int calendarUnit;
-@property(readonly) unsigned int equivalentUnit;
-@property(readonly) NSString * formatString;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } unitRange;
-@property float width;
+@property (nonatomic, readonly) unsigned int calendarUnit;
+@property (nonatomic, readonly) unsigned int equivalentUnit;
+@property (nonatomic, readonly) NSString *formatString;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } unitRange;
+@property (nonatomic) float width;
 
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;

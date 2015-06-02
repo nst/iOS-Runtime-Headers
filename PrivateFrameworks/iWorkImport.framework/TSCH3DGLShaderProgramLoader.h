@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DGLShaderProgramLoader : TSCH3DResourceLoader {
-}
+@interface TSCH3DGLShaderProgramLoader : TSCH3DResourceLoader
 
 + (id)loader;
 

@@ -2,21 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface NSProxy <NSObject> {
     Class isa;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)_copyDescription;
 + (BOOL)_isDeallocating;
@@ -39,7 +34,7 @@
 + (unsigned int)hash;
 + (id)init;
 + (void)initialize;
-+ (int (*)())instanceMethodForSelector:(SEL)arg1;
++ (int (*)instanceMethodForSelector:(SEL)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (BOOL)isAncestorOfObject:(id)arg1;
@@ -49,7 +44,7 @@
 + (BOOL)isMemberOfClass:(Class)arg1;
 + (BOOL)isProxy;
 + (BOOL)isSubclassOfClass:(Class)arg1;
-+ (int (*)())methodForSelector:(SEL)arg1;
++ (int (*)methodForSelector:(SEL)arg1;
 + (id)methodSignatureForSelector:(SEL)arg1;
 + (id)mutableCopy;
 + (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -65,17 +60,6 @@
 + (Class)superclass;
 + (struct _NSZone { }*)zone;
 
-- (BOOL)_accessibilityBoolValueForKey:(id)arg1;
-- (int)_accessibilityIntegerValueForKey:(id)arg1;
-- (void)_accessibilityRemoveValueForKey:(id)arg1;
-- (void)_accessibilitySetAssignedValue:(id)arg1 forKey:(id)arg2;
-- (void)_accessibilitySetBoolValue:(BOOL)arg1 forKey:(id)arg2;
-- (void)_accessibilitySetIntegerValue:(int)arg1 forKey:(id)arg2;
-- (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
-- (void)_accessibilitySetUnsignedIntegerValue:(unsigned int)arg1 forKey:(id)arg2;
-- (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
-- (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
-- (id)_accessibilityValueForKey:(id)arg1;
 - (BOOL)_allowsDirectEncoding;
 - (id)_copyDescription;
 - (BOOL)_isDeallocating;
@@ -109,5 +93,19 @@
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+
+- (BOOL)_accessibilityBoolValueForKey:(id)arg1;
+- (int)_accessibilityIntegerValueForKey:(id)arg1;
+- (void)_accessibilityRemoveValueForKey:(id)arg1;
+- (void)_accessibilitySetAssignedValue:(id)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetBoolValue:(BOOL)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetIntegerValue:(int)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetRetainedValue:(id)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetUnsignedIntegerValue:(unsigned int)arg1 forKey:(id)arg2;
+- (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
+- (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
+- (id)_accessibilityValueForKey:(id)arg1;
 
 @end

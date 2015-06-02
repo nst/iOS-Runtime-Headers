@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareBehaviorServices.framework/SoftwareBehaviorServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, NSMutableDictionary;
-
 @interface SBManagerClientCache : NSObject {
     BOOL _behaviorBundleSupport;
     BOOL _behaviorBundleSupportKnown;
@@ -31,9 +25,9 @@
 
 @property BOOL behaviorBundleSupport;
 @property BOOL behaviorBundleSupportKnown;
-@property NSLock * cacheLock;
-@property NSMutableDictionary * keyValueCache;
-@property struct dispatch_queue_s { }* queue;
+@property NSLock *cacheLock;
+@property NSMutableDictionary *keyValueCache;
+@property struct dispatch_queue_s { }*queue;
 
 + (id)sharedInstance;
 
@@ -45,15 +39,11 @@
 - (void)cacheValue:(id)arg1 forKey:(id)arg2;
 - (void)callCallbacksForEvent:(id)arg1;
 - (id)copyCachedValueFor:(id)arg1;
-- (bool)deregisterCallbackForEvent:(struct EventCallbackData { struct dispatch_queue_s {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; }*)arg1;
-     /* Encoded args for previous method: B12@0:4^{EventCallbackData=^{dispatch_queue_s}@?}8 */
-
+- (bool)deregisterCallbackForEvent:(struct EventCallbackData { struct dispatch_queue_s {} *x1; id /* block */ x2; }*)arg1;
 - (id)init;
 - (id)keyValueCache;
 - (struct dispatch_queue_s { }*)queue;
-- (void)registerCallbackForEvent:(id)arg1 with:(struct EventCallbackData { struct dispatch_queue_s {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; }*)arg2;
-     /* Encoded args for previous method: v16@0:4@8^{EventCallbackData=^{dispatch_queue_s}@?}12 */
-
+- (void)registerCallbackForEvent:(id)arg1 with:(struct EventCallbackData { struct dispatch_queue_s {} *x1; id /* block */ x2; }*)arg2;
 - (void)resetKeyValueCache;
 - (void)saveBehaviorBundleSupport:(BOOL)arg1 withValue:(BOOL)arg2;
 - (void)setBehaviorBundleSupport:(BOOL)arg1;

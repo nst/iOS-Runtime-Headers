@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSFileSecurity : NSObject <NSCoding, NSCopying> {
-}
+@interface NSFileSecurity : NSObject <NSCoding, NSCopying>
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

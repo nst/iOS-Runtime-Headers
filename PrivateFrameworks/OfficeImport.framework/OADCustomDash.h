@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray;
-
 @interface OADCustomDash : OADDash {
-    unsigned int mAreStopsOverridden : 1;
+    unsigned int mAreStopsOverridden;
     NSMutableArray *mStops;
 }
 

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSURL;
+@interface RadioAudioClip : RadioTrack
 
-@interface RadioAudioClip : RadioTrack {
-}
-
-@property(copy,readonly) NSURL * assetURL;
-@property(readonly) long long purchaseID;
-@property(getter=isSkipable,readonly) BOOL skipable;
+@property (nonatomic, readonly, copy) NSURL *assetURL;
+@property (nonatomic, readonly) long long purchaseID;
+@property (getter=isSkipable, nonatomic, readonly) BOOL skipable;
 
 - (id)assetURL;
 - (BOOL)isSkipable;

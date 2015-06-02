@@ -11,10 +11,10 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasPlaybackCommand;
-@property BOOL hasSessionIdentifier;
-@property int playbackCommand;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasPlaybackCommand;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) int playbackCommand;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

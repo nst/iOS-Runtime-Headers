@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSNumber, TSCH3DLightingModel;
-
 @interface TSCH3DRenderingLightingModel : NSObject {
     BOOL mHasTransparency;
     TSCH3DLightingModel *mLightingModel;
     NSNumber *mPercentage;
 }
 
-@property(readonly) BOOL hasTransparency;
-@property(readonly) TSCH3DLightingModel * lightingModel;
+@property (nonatomic, readonly) BOOL hasTransparency;
+@property (nonatomic, readonly) TSCH3DLightingModel *lightingModel;
 
 + (id)p_lightingModelFromFill:(id)arg1 lightings:(id)arg2 returningTransparency:(BOOL*)arg3;
 + (id)renderingLightingModelWithFill:(id)arg1 lightings:(id)arg2;

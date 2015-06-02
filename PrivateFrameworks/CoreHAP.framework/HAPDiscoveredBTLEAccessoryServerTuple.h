@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPAccessoryServerBTLE;
-
 @interface HAPDiscoveredBTLEAccessoryServerTuple : NSObject {
     HAPAccessoryServerBTLE *_accessoryServer;
     double _lastSeen;
 }
 
-@property(retain) HAPAccessoryServerBTLE * accessoryServer;
-@property double lastSeen;
+@property (nonatomic, retain) HAPAccessoryServerBTLE *accessoryServer;
+@property (nonatomic) double lastSeen;
 
 + (id)discoveredAccessoryServerTupleWithAccessoryServer:(id)arg1;
 

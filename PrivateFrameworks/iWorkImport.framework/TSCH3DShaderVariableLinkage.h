@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableSet, TSCH3DShaderVariable;
-
 @interface TSCH3DShaderVariableLinkage : NSObject {
     struct TSCH3DShaderVariableScopes { 
         struct array<TSCH3DShaderVariableScopeType, 2> { 
@@ -31,30 +25,30 @@
     TSCH3DShaderVariable *mVariable;
 }
 
-@property(readonly) BOOL canHaveFragment;
-@property(readonly) struct  declaredScope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
-@property(readonly) NSMutableSet * dependees;
-@property(readonly) BOOL hasAttribute;
-@property(readonly) BOOL hasFragment;
-@property(readonly) unsigned int hasGlobal;
-@property(readonly) BOOL hasVertex;
-@property(readonly) BOOL isAttribute;
-@property(readonly) BOOL isFragment;
-@property(readonly) BOOL isFragmentLinkable;
-@property(readonly) BOOL isLinked;
-@property(readonly) BOOL isSpecial;
-@property(readonly) BOOL isUniform;
-@property BOOL isUsed;
-@property(readonly) BOOL isVertex;
-@property(readonly) BOOL isVertexLinkable;
-@property(readonly) BOOL isVertexVarying;
-@property(readonly) struct TSCH3DShaderType { unsigned int x1; } linked;
-@property(readonly) BOOL notLinked;
-@property(readonly) /* Warning: unhandled struct encoding: '{TSCH3DShaderVariableScopes={array<TSCH3DShaderVariableScopeType' */ struct  scope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
-@property(readonly) BOOL scopeHasFragment;
-@property(readonly) BOOL scopedInAll;
-@property(readonly) struct TSCH3DShaderType { unsigned int x1; } shaderType;
-@property(readonly) TSCH3DShaderVariable * variable;
+@property (nonatomic, readonly) BOOL canHaveFragment;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{TSCH3DShaderVariableScopes={array<TSCH3DShaderVariableScopeType' */ struct  declaredScope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
+@property (nonatomic, readonly) NSMutableSet *dependees;
+@property (nonatomic, readonly) BOOL hasAttribute;
+@property (nonatomic, readonly) BOOL hasFragment;
+@property (nonatomic, readonly) unsigned int hasGlobal;
+@property (nonatomic, readonly) BOOL hasVertex;
+@property (nonatomic, readonly) BOOL isAttribute;
+@property (nonatomic, readonly) BOOL isFragment;
+@property (nonatomic, readonly) BOOL isFragmentLinkable;
+@property (nonatomic, readonly) BOOL isLinked;
+@property (nonatomic, readonly) BOOL isSpecial;
+@property (nonatomic, readonly) BOOL isUniform;
+@property (nonatomic) BOOL isUsed;
+@property (nonatomic, readonly) BOOL isVertex;
+@property (nonatomic, readonly) BOOL isVertexLinkable;
+@property (nonatomic, readonly) BOOL isVertexVarying;
+@property (nonatomic, readonly) struct TSCH3DShaderType { unsigned int x1; } linked;
+@property (nonatomic, readonly) BOOL notLinked;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{TSCH3DShaderVariableScopes={array<TSCH3DShaderVariableScopeType' */ struct  scope; /* unknown property attribute:  2>=[2{TSCH3DShaderVariableScopeType=I}]}} */
+@property (nonatomic, readonly) BOOL scopeHasFragment;
+@property (nonatomic, readonly) BOOL scopedInAll;
+@property (nonatomic, readonly) struct TSCH3DShaderType { unsigned int x1; } shaderType;
+@property (nonatomic, readonly) TSCH3DShaderVariable *variable;
 
 + (id)linkageWithVariable:(id)arg1;
 

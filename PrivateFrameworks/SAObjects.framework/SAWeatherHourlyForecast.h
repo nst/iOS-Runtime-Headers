@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SAWeatherHourlyForecast : SAWeatherForecast
 
-@interface SAWeatherHourlyForecast : SAWeatherForecast {
-}
-
-@property(copy) NSNumber * temperature;
+@property (nonatomic, copy) NSNumber *temperature;
 
 + (id)hourlyForecast;
 + (id)hourlyForecastWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUISortDataRequestDelegate>, NSURL;
-
 @interface SKUISortDataRequest : SKUIResourceRequest <NSCopying> {
     <SKUISortDataRequestDelegate> *_delegate;
     NSURL *_sortURL;
 }
 
-@property <SKUISortDataRequestDelegate> * delegate;
-@property(readonly) NSURL * sortURL;
+@property (nonatomic) <SKUISortDataRequestDelegate> *delegate;
+@property (nonatomic, readonly) NSURL *sortURL;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

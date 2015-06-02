@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSLocale, NSString;
+@interface SASPronunciationData : AceObject <SAAceSerializable>
 
-@interface SASPronunciationData : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * apgId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSLocale * language;
-@property(copy) NSString * orthography;
-@property(readonly) Class superclass;
-@property int tokenOffset;
-@property(copy) NSArray * ttsPronunciations;
-@property(copy) NSString * ttsVersion;
+@property (nonatomic, copy) NSString *apgId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSLocale *language;
+@property (nonatomic, copy) NSString *orthography;
+@property (readonly) Class superclass;
+@property (nonatomic) int tokenOffset;
+@property (nonatomic, copy) NSArray *ttsPronunciations;
+@property (nonatomic, copy) NSString *ttsVersion;
 
 + (id)pronunciationData;
 + (id)pronunciationDataWithDictionary:(id)arg1 context:(id)arg2;

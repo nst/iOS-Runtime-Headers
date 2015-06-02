@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString;
-
 @interface SPStockComplicationData : SPComplicationData <NSSecureCoding> {
     unsigned int _changeDirection;
     NSString *_changeInPercentText;
@@ -14,13 +12,13 @@
     NSString *_tickerSymbolText;
 }
 
-@property unsigned int changeDirection;
-@property(retain) NSString * changeInPercentText;
-@property(retain) NSString * changeInPointsText;
-@property(retain) NSString * changeText;
-@property(retain) NSString * marketCapText;
-@property(retain) NSString * priceText;
-@property(retain) NSString * tickerSymbolText;
+@property (nonatomic) unsigned int changeDirection;
+@property (nonatomic, retain) NSString *changeInPercentText;
+@property (nonatomic, retain) NSString *changeInPointsText;
+@property (nonatomic, retain) NSString *changeText;
+@property (nonatomic, retain) NSString *marketCapText;
+@property (nonatomic, retain) NSString *priceText;
+@property (nonatomic, retain) NSString *tickerSymbolText;
 
 + (BOOL)supportsSecureCoding;
 

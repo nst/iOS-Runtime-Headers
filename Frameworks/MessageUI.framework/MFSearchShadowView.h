@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFSearchShadowView : UIImageView {
-}
+@interface MFSearchShadowView : UIImageView
 
 + (id)_shadowImage;
 + (float)defaultHeight;

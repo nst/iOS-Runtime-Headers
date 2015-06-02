@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosSearchGridViewControllerSpec : PUPhotosGridViewControllerPhoneSpec {
-}
+@interface PUPhotosSearchGridViewControllerSpec : PUPhotosGridViewControllerPhoneSpec
 
 - (BOOL)canDisplaySearchActionInNavigationBar;
 

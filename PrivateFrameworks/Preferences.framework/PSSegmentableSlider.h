@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIColor;
-
 @interface PSSegmentableSlider : UISlider {
     unsigned int _segmentCount;
     BOOL _segmented;
     UIColor *_trackMarkersColor;
 }
 
-@property unsigned int segmentCount;
-@property(getter=isSegmented) BOOL segmented;
+@property (nonatomic) unsigned int segmentCount;
+@property (getter=isSegmented, nonatomic) BOOL segmented;
 
 - (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

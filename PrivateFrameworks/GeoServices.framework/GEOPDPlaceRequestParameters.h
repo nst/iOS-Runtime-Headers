@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAutocompleteParameters, GEOPDCanonicalLocationSearchParameters, GEOPDGeocodingParameters, GEOPDLocationDirectedSearchParameters, GEOPDMerchantLookupParameters, GEOPDPlaceLookupParameters, GEOPDPlaceRefinementParameters, GEOPDReverseGeocodingParameters, GEOPDSearchParameters, GEOPDSiriSearchParameters;
-
 @interface GEOPDPlaceRequestParameters : PBCodable <NSCopying> {
     GEOPDAutocompleteParameters *_autocompleteParameters;
     GEOPDCanonicalLocationSearchParameters *_canonicalLocationSearchParameters;
@@ -17,26 +15,26 @@
     GEOPDSiriSearchParameters *_siriSearchParameters;
 }
 
-@property(retain) GEOPDAutocompleteParameters * autocompleteParameters;
-@property(retain) GEOPDCanonicalLocationSearchParameters * canonicalLocationSearchParameters;
-@property(retain) GEOPDGeocodingParameters * geocodingParameters;
-@property(readonly) BOOL hasAutocompleteParameters;
-@property(readonly) BOOL hasCanonicalLocationSearchParameters;
-@property(readonly) BOOL hasGeocodingParameters;
-@property(readonly) BOOL hasLocationDirectedSearchParameters;
-@property(readonly) BOOL hasMerchantLookupParameters;
-@property(readonly) BOOL hasPlaceLookupParameters;
-@property(readonly) BOOL hasPlaceRefinementParameters;
-@property(readonly) BOOL hasReverseGeocodingParameters;
-@property(readonly) BOOL hasSearchParameters;
-@property(readonly) BOOL hasSiriSearchParameters;
-@property(retain) GEOPDLocationDirectedSearchParameters * locationDirectedSearchParameters;
-@property(retain) GEOPDMerchantLookupParameters * merchantLookupParameters;
-@property(retain) GEOPDPlaceLookupParameters * placeLookupParameters;
-@property(retain) GEOPDPlaceRefinementParameters * placeRefinementParameters;
-@property(retain) GEOPDReverseGeocodingParameters * reverseGeocodingParameters;
-@property(retain) GEOPDSearchParameters * searchParameters;
-@property(retain) GEOPDSiriSearchParameters * siriSearchParameters;
+@property (nonatomic, retain) GEOPDAutocompleteParameters *autocompleteParameters;
+@property (nonatomic, retain) GEOPDCanonicalLocationSearchParameters *canonicalLocationSearchParameters;
+@property (nonatomic, retain) GEOPDGeocodingParameters *geocodingParameters;
+@property (nonatomic, readonly) BOOL hasAutocompleteParameters;
+@property (nonatomic, readonly) BOOL hasCanonicalLocationSearchParameters;
+@property (nonatomic, readonly) BOOL hasGeocodingParameters;
+@property (nonatomic, readonly) BOOL hasLocationDirectedSearchParameters;
+@property (nonatomic, readonly) BOOL hasMerchantLookupParameters;
+@property (nonatomic, readonly) BOOL hasPlaceLookupParameters;
+@property (nonatomic, readonly) BOOL hasPlaceRefinementParameters;
+@property (nonatomic, readonly) BOOL hasReverseGeocodingParameters;
+@property (nonatomic, readonly) BOOL hasSearchParameters;
+@property (nonatomic, readonly) BOOL hasSiriSearchParameters;
+@property (nonatomic, retain) GEOPDLocationDirectedSearchParameters *locationDirectedSearchParameters;
+@property (nonatomic, retain) GEOPDMerchantLookupParameters *merchantLookupParameters;
+@property (nonatomic, retain) GEOPDPlaceLookupParameters *placeLookupParameters;
+@property (nonatomic, retain) GEOPDPlaceRefinementParameters *placeRefinementParameters;
+@property (nonatomic, retain) GEOPDReverseGeocodingParameters *reverseGeocodingParameters;
+@property (nonatomic, retain) GEOPDSearchParameters *searchParameters;
+@property (nonatomic, retain) GEOPDSiriSearchParameters *siriSearchParameters;
 
 - (id)autocompleteParameters;
 - (id)canonicalLocationSearchParameters;

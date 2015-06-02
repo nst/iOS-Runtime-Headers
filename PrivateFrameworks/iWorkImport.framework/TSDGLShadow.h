@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDGLShadow : NSObject {
-}
+@interface TSDGLShadow : NSObject
 
 + (id)renderQueue;
 + (id)sharedContext;

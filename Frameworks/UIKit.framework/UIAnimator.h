@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface UIAnimator : NSObject {
     NSMutableArray *_animations;
-    id _heartbeat[3];
-    int _heartbeatClientCount[3];
+    /* Warning: unhandled array encoding: '[3@]' */ id _heartbeat;
+    int _heartbeatClientCount;
     double _lastUpdateTime;
 }
 

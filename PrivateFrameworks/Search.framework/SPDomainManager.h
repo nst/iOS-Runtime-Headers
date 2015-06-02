@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@interface SPDomainManager : NSObject {
-}
+@interface SPDomainManager : NSObject
 
 + (id)defaultManager;
 

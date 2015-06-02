@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DShaderVariable;
-
 @interface TSCH3DGaussianBlurShaderEffect : TSCH3DShaderEffect {
     TSCH3DShaderVariable *mSamplingTexcoords;
 }

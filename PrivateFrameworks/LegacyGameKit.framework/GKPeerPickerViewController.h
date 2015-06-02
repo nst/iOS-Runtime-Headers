@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LegacyGameKit.framework/LegacyGameKit
  */
 
-@class GKContentView, GKSession, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UITableView;
-
 @interface GKPeerPickerViewController : UIViewController {
     BOOL _alertCancelled;
     BOOL _alertPresented;
@@ -31,31 +29,31 @@
     BOOL _updating;
 }
 
-@property BOOL alertCancelled;
-@property BOOL alertPresented;
-@property(getter=isAnimating) BOOL animating;
-@property int bluetoothStatus;
-@property(retain) GKContentView * btView;
-@property(retain) GKContentView * connectTypeView;
+@property (nonatomic) BOOL alertCancelled;
+@property (nonatomic) BOOL alertPresented;
+@property (getter=isAnimating, nonatomic) BOOL animating;
+@property (nonatomic) int bluetoothStatus;
+@property (nonatomic, retain) GKContentView *btView;
+@property (nonatomic, retain) GKContentView *connectTypeView;
 @property unsigned int connectionTypesMask;
-@property NSString * currentConnectionTypeKey;
-@property(readonly) GKSession * currentSession;
-@property(readonly) GKContentView * currentView;
+@property (nonatomic) NSString *currentConnectionTypeKey;
+@property (nonatomic, readonly) GKSession *currentSession;
+@property (nonatomic, readonly) GKContentView *currentView;
 @property id delegate;
-@property(retain) NSTimer * invitationWaitTimer;
-@property(retain) GKContentView * inviteView;
-@property(retain) GKContentView * listView;
-@property(retain) NSMutableArray * menuQueue;
-@property(retain) GKContentView * noPeersView;
-@property(retain) UITableView * peerTableView;
-@property(retain) NSMutableArray * peers;
-@property int pendingState;
-@property(copy) NSString * searchingForServicesString;
-@property(retain) NSMutableDictionary * sessionMap;
-@property int state;
-@property(retain) GKContentView * statusView;
-@property BOOL updating;
-@property(getter=isVisible,readonly) BOOL visible;
+@property (nonatomic, retain) NSTimer *invitationWaitTimer;
+@property (nonatomic, retain) GKContentView *inviteView;
+@property (nonatomic, retain) GKContentView *listView;
+@property (nonatomic, retain) NSMutableArray *menuQueue;
+@property (nonatomic, retain) GKContentView *noPeersView;
+@property (nonatomic, retain) UITableView *peerTableView;
+@property (nonatomic, retain) NSMutableArray *peers;
+@property (nonatomic) int pendingState;
+@property (nonatomic, copy) NSString *searchingForServicesString;
+@property (nonatomic, retain) NSMutableDictionary *sessionMap;
+@property (nonatomic) int state;
+@property (nonatomic, retain) GKContentView *statusView;
+@property (nonatomic) BOOL updating;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
 
 - (void)_acceptInvitation:(id)arg1;
 - (void)_btPowerStateChanged:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSDictionary, NSString;
-
 @interface ALCity : NSObject {
     NSString *_countryName;
     NSString *_countryOverride;
@@ -21,20 +19,20 @@
     NSString *_yahooCode;
 }
 
-@property(readonly) NSString * classicIdentifier;
-@property(retain) NSString * countryName;
-@property(retain) NSString * countryOverride;
-@property int identifier;
-@property float latitude;
-@property(retain) NSString * localeCode;
-@property float longitude;
-@property(retain) NSString * name;
-@property(readonly) NSDictionary * properties;
-@property(retain) NSString * timeZone;
-@property(retain) NSString * unlocalizedCountryName;
-@property(retain) NSString * unlocalizedCountryOverride;
-@property(retain) NSString * unlocalizedName;
-@property(retain) NSString * yahooCode;
+@property (nonatomic, readonly) NSString *classicIdentifier;
+@property (nonatomic, retain) NSString *countryName;
+@property (nonatomic, retain) NSString *countryOverride;
+@property (nonatomic) int identifier;
+@property (nonatomic) float latitude;
+@property (nonatomic, retain) NSString *localeCode;
+@property (nonatomic) float longitude;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) NSDictionary *properties;
+@property (nonatomic, retain) NSString *timeZone;
+@property (nonatomic, retain) NSString *unlocalizedCountryName;
+@property (nonatomic, retain) NSString *unlocalizedCountryOverride;
+@property (nonatomic, retain) NSString *unlocalizedName;
+@property (nonatomic, retain) NSString *yahooCode;
 
 - (id)classicIdentifier;
 - (id)countryName;

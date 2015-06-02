@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, CKDPCSCache, CKDPCSFetchAggregator, NSData, NSMutableDictionary, NSOperationQueue, NSString;
-
 @interface CKDPCSManager : NSObject <CKDProtocolTranslatorIdentityDelegate> {
     NSMutableDictionary *_backgroundRecordCacheByPrivateZoneID;
     CKDPCSCache *_backgroundShareCache;
@@ -20,23 +18,23 @@
     CKDPCSCache *_zoneCache;
 }
 
-@property(retain) NSMutableDictionary * backgroundRecordCacheByPrivateZoneID;
-@property(retain) CKDPCSCache * backgroundShareCache;
-@property(retain) CKDPCSCache * backgroundZoneCache;
-@property(readonly) CKDClientContext * context;
-@property(retain) NSString * currentAccountIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSOperationQueue * operationQueue;
-@property(retain) CKDPCSFetchAggregator * pcsFetchAggregator;
-@property(retain) NSMutableDictionary * recordCacheByPrivateZoneID;
-@property(retain) NSString * serviceName;
-@property(retain) CKDPCSCache * shareCache;
-@property struct _PCSIdentityData { }* sharingIdentity;
-@property(readonly) Class superclass;
-@property(retain) NSData * userIdentityFingerprint;
-@property(retain) CKDPCSCache * zoneCache;
+@property (nonatomic, retain) NSMutableDictionary *backgroundRecordCacheByPrivateZoneID;
+@property (nonatomic, retain) CKDPCSCache *backgroundShareCache;
+@property (nonatomic, retain) CKDPCSCache *backgroundZoneCache;
+@property (nonatomic, readonly) CKDClientContext *context;
+@property (retain) NSString *currentAccountIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) CKDPCSFetchAggregator *pcsFetchAggregator;
+@property (nonatomic, retain) NSMutableDictionary *recordCacheByPrivateZoneID;
+@property (nonatomic, retain) NSString *serviceName;
+@property (nonatomic, retain) CKDPCSCache *shareCache;
+@property (nonatomic) struct _PCSIdentityData { }*sharingIdentity;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSData *userIdentityFingerprint;
+@property (nonatomic, retain) CKDPCSCache *zoneCache;
 
 - (void).cxx_destruct;
 - (struct _OpaquePCSShareProtection { }*)_addPublicSharingIdentityToSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 withError:(id*)arg2;
@@ -88,9 +86,9 @@
 - (id)etagFromRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)etagFromSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)etagFromZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
-- (void)fetchPCSForRecordWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)fetchPCSForRecordWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithClientContext:(id)arg1;
 - (id)newAssetKey;
 - (id)operationQueue;

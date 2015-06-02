@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FindMyDeviceUI.framework/FindMyDeviceUI
  */
 
-@class ACAccount, PSSpecifier, RemoteUIController, UIProgressHUD;
-
 @interface FMDUIFMIPiCloudSettingsViewController : PSListController {
     ACAccount *_account;
     BOOL _activityInProgress;
@@ -15,14 +13,14 @@
     BOOL _togglingFMIPSwitch;
 }
 
-@property(retain) ACAccount * account;
-@property BOOL activityInProgress;
-@property BOOL firstTimeSetup;
-@property(retain) PSSpecifier * fmipSpecifier;
-@property(retain) UIProgressHUD * hud;
-@property(retain) RemoteUIController * ruiController;
-@property(retain) PSSpecifier * sendLastLocationSpecifier;
-@property BOOL togglingFMIPSwitch;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic) BOOL activityInProgress;
+@property (nonatomic) BOOL firstTimeSetup;
+@property (nonatomic, retain) PSSpecifier *fmipSpecifier;
+@property (nonatomic, retain) UIProgressHUD *hud;
+@property (nonatomic, retain) RemoteUIController *ruiController;
+@property (nonatomic, retain) PSSpecifier *sendLastLocationSpecifier;
+@property (nonatomic) BOOL togglingFMIPSwitch;
 
 - (void).cxx_destruct;
 - (id)_clientInfoHeader;

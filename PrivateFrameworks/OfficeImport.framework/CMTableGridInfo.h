@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMTableGridInfo : NSObject {
-}
+@interface CMTableGridInfo : NSObject
 
 @end

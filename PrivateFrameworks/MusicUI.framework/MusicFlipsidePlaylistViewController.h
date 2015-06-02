@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MPURatingControlDelegate>, NSIndexPath, NSString;
-
 @interface MusicFlipsidePlaylistViewController : MusicPlaylistSongsViewController <MPURatingControlDelegate, MusicFlipsideRating> {
     float _maximumDurationWidth;
     <MPURatingControlDelegate> *_ratingDelegate;
     NSIndexPath *_ratingItemIndexPath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float maximumDurationWidth;
-@property <MPURatingControlDelegate> * ratingDelegate;
-@property BOOL showingRating;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float maximumDurationWidth;
+@property (nonatomic) <MPURatingControlDelegate> *ratingDelegate;
+@property (nonatomic) BOOL showingRating;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldDisplayActions;
 + (BOOL)_shouldShowActions;

@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFFromAddressViewController : UIViewController {
-}
+@interface MFFromAddressViewController : UIViewController
 
 @end

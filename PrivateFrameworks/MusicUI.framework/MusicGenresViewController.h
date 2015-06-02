@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicGenresViewController : MusicTableViewController {
-}
+@interface MusicGenresViewController : MusicTableViewController
 
 - (id)_viewControllerForSelectedMediaEntity:(id)arg1 containerItemType:(int)arg2;
 - (BOOL)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;

@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCXPCTokenClient : BRCXPCClient <BRTokenProtocol> {
-}
+@interface BRCXPCTokenClient : BRCXPCClient <BRTokenProtocol>
 
-- (void)currentAccountCopyTokenWithBundleID:(id)arg1 version:(id)arg2 reply:(id)arg3;
-- (void)currentAccountIsUsingUbiquityWithReply:(id)arg1;
+- (void)currentAccountCopyTokenWithBundleID:(id)arg1 version:(id)arg2 reply:(id /* block */)arg3;
+- (void)currentAccountIsUsingUbiquityWithReply:(id /* block */)arg1;
 - (id)description;
 
 @end

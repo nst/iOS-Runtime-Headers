@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class MSPPlaceBookmark, MSPRegionBookmark, MSPRouteBookmark, NSString, PBUnknownFields;
-
 @interface MSPBookmarkStorage : PBCodable <NSCopying> {
     struct { 
         unsigned int position : 1; 
@@ -20,21 +18,21 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasPlaceBookmark;
-@property BOOL hasPosition;
-@property(readonly) BOOL hasRegionBookmark;
-@property(readonly) BOOL hasRouteBookmark;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property(retain) NSString * identifier;
-@property(retain) MSPPlaceBookmark * placeBookmark;
-@property double position;
-@property(retain) MSPRegionBookmark * regionBookmark;
-@property(retain) MSPRouteBookmark * routeBookmark;
-@property double timestamp;
-@property int type;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasPlaceBookmark;
+@property (nonatomic) BOOL hasPosition;
+@property (nonatomic, readonly) BOOL hasRegionBookmark;
+@property (nonatomic, readonly) BOOL hasRouteBookmark;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) MSPPlaceBookmark *placeBookmark;
+@property (nonatomic) double position;
+@property (nonatomic, retain) MSPRegionBookmark *regionBookmark;
+@property (nonatomic, retain) MSPRouteBookmark *routeBookmark;
+@property (nonatomic) double timestamp;
+@property (nonatomic) int type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

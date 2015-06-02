@@ -17,9 +17,9 @@
     } _size;
 }
 
-@property float outputBorderTrim;
-@property BOOL outputMirrored;
-@property float outputScale;
+@property (nonatomic) float outputBorderTrim;
+@property (nonatomic) BOOL outputMirrored;
+@property (nonatomic) float outputScale;
 
 + (id)constraintsWithFixedHeight:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
 + (id)constraintsWithFixedLargeDimenstion:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;

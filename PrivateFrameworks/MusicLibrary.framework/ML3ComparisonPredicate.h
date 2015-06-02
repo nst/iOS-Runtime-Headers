@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3ComparisonPredicate : ML3PropertyPredicate {
     BOOL _caseInsensitive;
     int _comparison;
@@ -12,12 +10,12 @@
     id _value;
 }
 
-@property BOOL caseInsensitive;
-@property int comparison;
-@property(copy,readonly) NSString * operator;
-@property(copy) NSString * transformFunction;
-@property(copy) NSString * treatNullAsString;
-@property(retain) id value;
+@property (nonatomic) BOOL caseInsensitive;
+@property (nonatomic) int comparison;
+@property (nonatomic, readonly, copy) NSString *operator;
+@property (nonatomic, copy) NSString *transformFunction;
+@property (nonatomic, copy) NSString *treatNullAsString;
+@property (nonatomic, retain) id value;
 
 + (id)predicateWithProperty:(id)arg1 equalToInt64:(long long)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToInteger:(int)arg2;

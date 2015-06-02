@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <BRNonLocalVersionSending>, GSPermanentStorage, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
-
 @interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving> {
     NSURL *_documentURL;
     BOOL _executing;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchingVersionsDoneBlock;
-
+    id /* block */ _fetchingVersionsDoneBlock;
     BOOL _finished;
     BOOL _includeCachedVersions;
     <BRNonLocalVersionSending> *_sender;
@@ -25,16 +15,16 @@
     GSPermanentStorage *_versionsStore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(getter=isExecuting) BOOL executing;
-@property(copy) id fetchingVersionsDoneBlock;
-@property(getter=isFinished) BOOL finished;
-@property(readonly) unsigned int hash;
-@property BOOL includeCachedVersions;
-@property(readonly) Class superclass;
-@property(readonly) NSMutableArray * versions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (getter=isExecuting, nonatomic) BOOL executing;
+@property (nonatomic, copy) id /* block */ fetchingVersionsDoneBlock;
+@property (getter=isFinished, nonatomic) BOOL finished;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL includeCachedVersions;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSMutableArray *versions;
 
 - (BOOL)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (BOOL)__finishIfCancelled;
@@ -46,7 +36,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (id)fetchingVersionsDoneBlock;
+- (id /* block */)fetchingVersionsDoneBlock;
 - (BOOL)includeCachedVersions;
 - (id)initWithDocumentURL:(id)arg1;
 - (BOOL)isConcurrent;
@@ -57,7 +47,7 @@
 - (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setExecuting:(BOOL)arg1;
-- (void)setFetchingVersionsDoneBlock:(id)arg1;
+- (void)setFetchingVersionsDoneBlock:(id /* block */)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setIncludeCachedVersions:(BOOL)arg1;
 - (void)start;

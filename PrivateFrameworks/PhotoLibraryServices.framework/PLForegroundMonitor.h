@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSCountedSet, NSMapTable, NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface PLForegroundMonitor : NSObject {
     NSMutableSet *_foregroundApplications;
     NSCountedSet *_interestingApplications;

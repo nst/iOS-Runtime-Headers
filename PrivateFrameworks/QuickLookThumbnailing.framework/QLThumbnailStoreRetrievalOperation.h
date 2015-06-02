@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
  */
 
-@class NSData, NSDictionary, NSError, NSURL, QLThumbnailAddition;
-
 @interface QLThumbnailStoreRetrievalOperation : NSOperation {
     QLThumbnailAddition *_addition;
     BOOL _allowsThumbnailGeneration;
@@ -14,11 +12,11 @@
 }
 
 @property BOOL allowsThumbnailGeneration;
-@property(retain) NSError * error;
-@property(getter=isExecuting) BOOL executing;
-@property(getter=isFinished) BOOL finished;
-@property(readonly) NSData * serializedQuickLookMetadataDictionary;
-@property(readonly) NSDictionary * thumbnailImagesDictionary;
+@property (retain) NSError *error;
+@property (getter=isExecuting, nonatomic) BOOL executing;
+@property (getter=isFinished, nonatomic) BOOL finished;
+@property (readonly) NSData *serializedQuickLookMetadataDictionary;
+@property (readonly) NSDictionary *thumbnailImagesDictionary;
 
 - (BOOL)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;

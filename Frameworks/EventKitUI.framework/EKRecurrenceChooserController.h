@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKRecurrenceChooserControllerDelegate>, NSDate;
-
 @interface EKRecurrenceChooserController : NSObject {
     NSDate *_date;
     <EKRecurrenceChooserControllerDelegate> *_delegate;
 }
 
-@property(copy) NSDate * date;
-@property <EKRecurrenceChooserControllerDelegate> * delegate;
-@property(readonly) int frequency;
+@property (copy) NSDate *date;
+@property <EKRecurrenceChooserControllerDelegate> *delegate;
+@property (nonatomic, readonly) int frequency;
 
 + (int)dayFromNumber:(int)arg1;
 

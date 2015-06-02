@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIWishlistDelegate>, NSString, SKUIItemListTableViewController, SKUISyncWishlistOperation, SKUIWishlist, UIBarButtonItem, _UIBackdropView, _UIContentUnavailableView;
-
 @interface SKUIWishlistViewController : SKUIViewController <SKUIItemListTableDelegate> {
     _UIBackdropView *_backdropView;
     <SKUIWishlistDelegate> *_delegate;
@@ -17,11 +15,11 @@
     int _wishlistState;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIWishlistDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIWishlistDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)wishlistBarButtonItemWithClientContext:(id)arg1;
 

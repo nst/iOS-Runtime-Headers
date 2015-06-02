@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFContactsSearchConsumer>, NSMutableSet, NSString;
-
 @interface MFContactsSearchTaskContext : NSObject {
     <MFContactsSearchConsumer> *_consumer;
     NSMutableSet *_operations;
@@ -11,10 +9,10 @@
     NSString *_text;
 }
 
-@property(readonly) <MFContactsSearchConsumer> * consumer;
-@property(readonly) NSMutableSet * operations;
-@property(readonly) NSMutableSet * searchQueries;
-@property(readonly) NSString * text;
+@property (nonatomic, readonly) <MFContactsSearchConsumer> *consumer;
+@property (nonatomic, readonly) NSMutableSet *operations;
+@property (nonatomic, readonly) NSMutableSet *searchQueries;
+@property (nonatomic, readonly) NSString *text;
 
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 

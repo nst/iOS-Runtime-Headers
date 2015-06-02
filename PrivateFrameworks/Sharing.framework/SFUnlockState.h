@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSNumber;
-
 @interface SFUnlockState : NSObject <NSSecureCoding> {
     NSNumber *_remotePasscodeEnabled;
     NSNumber *_unlockEnabled;
 }
 
-@property(readonly) NSNumber * remotePasscodeEnabled;
-@property(readonly) NSNumber * unlockEnabled;
+@property (readonly) NSNumber *remotePasscodeEnabled;
+@property (readonly) NSNumber *unlockEnabled;
 
 + (BOOL)supportsSecureCoding;
 

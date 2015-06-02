@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFLocale : NSLocale {
-}
+@interface __NSCFLocale : NSLocale
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

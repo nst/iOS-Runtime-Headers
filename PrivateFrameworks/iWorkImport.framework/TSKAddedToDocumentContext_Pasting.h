@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSKMultiTableRemapping>, NSMutableArray;
-
 @interface TSKAddedToDocumentContext_Pasting : TSKAddedToDocumentContext {
     NSMutableArray *mAddedDrawables;
     <TSKMultiTableRemapping> *mMultiTableRemapper;

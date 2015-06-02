@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSULinkedPointerSetEntry;
-
 @interface TSULinkedPointerSetEnumerator : NSEnumerator {
     TSULinkedPointerSetEntry *mHead;
     TSULinkedPointerSetEntry *mLastUsed;

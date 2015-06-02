@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RURadioAdArtworkDataSource : MPAbstractNetworkArtworkDataSource {
-}
+@interface RURadioAdArtworkDataSource : MPAbstractNetworkArtworkDataSource
 
 + (id)sharedRadioAdArtworkDataSource;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSCloudArtworkInfoRequest : HSRequest {
-}
+@interface HSCloudArtworkInfoRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2;
 + (id)requestWithDatabaseID:(unsigned int)arg1 itemID:(unsigned long long)arg2 sessionID:(unsigned int)arg3;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSClientProcessReceivedMessage : PBCodable <NSCopying> {
     unsigned long long _deltaTime;
     struct { 
@@ -22,20 +20,20 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned long long deltaTime;
-@property BOOL hasDeltaTime;
-@property BOOL hasPayloadSize;
-@property BOOL hasPriority;
-@property BOOL hasQos;
-@property(readonly) BOOL hasService;
-@property BOOL hasThreadPriority;
-@property BOOL hasTimestamp;
-@property unsigned long long payloadSize;
-@property unsigned long long priority;
-@property unsigned long long qos;
-@property(retain) NSString * service;
-@property unsigned long long threadPriority;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned long long deltaTime;
+@property (nonatomic) BOOL hasDeltaTime;
+@property (nonatomic) BOOL hasPayloadSize;
+@property (nonatomic) BOOL hasPriority;
+@property (nonatomic) BOOL hasQos;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasThreadPriority;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long payloadSize;
+@property (nonatomic) unsigned long long priority;
+@property (nonatomic) unsigned long long qos;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long threadPriority;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -10,11 +10,11 @@
     int _statusBarStyle;
 }
 
-@property int backgroundStyle;
-@property int interfaceOrientation;
-@property BOOL statusBarHidden;
-@property BOOL statusBarHiddenWhenVerticallyCompact;
-@property int statusBarStyle;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic) int interfaceOrientation;
+@property (nonatomic) BOOL statusBarHidden;
+@property (nonatomic) BOOL statusBarHiddenWhenVerticallyCompact;
+@property (nonatomic) int statusBarStyle;
 
 - (int)backgroundStyle;
 - (id)init;

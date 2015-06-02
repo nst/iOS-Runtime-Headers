@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSMutableData, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NNMKSQLJournal : NSObject {
     NSMutableData *_currentFileData;
     NSString *_directoryPath;
@@ -11,10 +9,10 @@
     NSObject<OS_dispatch_queue> *_journalQueue;
 }
 
-@property(retain) NSMutableData * currentFileData;
-@property(retain) NSString * directoryPath;
-@property unsigned int filesCount;
-@property(retain) NSObject<OS_dispatch_queue> * journalQueue;
+@property (nonatomic, retain) NSMutableData *currentFileData;
+@property (nonatomic, retain) NSString *directoryPath;
+@property (nonatomic) unsigned int filesCount;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *journalQueue;
 
 - (void).cxx_destruct;
 - (unsigned int)_currentFilesCount;
@@ -28,7 +26,7 @@
 - (void)flushIfNeeded;
 - (id)initWithPath:(id)arg1;
 - (id)journalQueue;
-- (void)mergeUsingBlock:(id)arg1;
+- (void)mergeUsingBlock:(id /* block */)arg1;
 - (void)setCurrentFileData:(id)arg1;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setFilesCount:(unsigned int)arg1;

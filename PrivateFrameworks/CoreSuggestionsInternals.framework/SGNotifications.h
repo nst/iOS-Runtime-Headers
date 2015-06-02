@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGNotifications : NSObject {
-}
+@interface SGNotifications : NSObject
 
 + (void)notifyGlobalChanges;
 

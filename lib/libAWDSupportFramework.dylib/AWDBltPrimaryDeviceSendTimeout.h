@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int connectionType;
-@property BOOL hasConnectionType;
-@property BOOL hasOrigConnectionType;
-@property BOOL hasTimestamp;
-@property unsigned int origConnectionType;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasOrigConnectionType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int origConnectionType;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;

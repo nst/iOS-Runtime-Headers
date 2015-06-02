@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSObject<OS_dispatch_queue>;
-
 @interface TSUProgressGroup : TSUProgress {
     NSArray *mChildren;
     NSArray *mChildrenProgressObservers;
     NSObject<OS_dispatch_queue> *mChildrenProgressObserversQueue;
 }
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)initWithChildren:(id)arg1;
 - (BOOL)isIndeterminate;

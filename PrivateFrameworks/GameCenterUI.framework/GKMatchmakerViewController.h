@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKMatchmakerViewControllerDelegate>, GKHostedMatchmakerViewController, GKInvite, GKMatch, GKMatchRequest, GKRemoteMatchmakerViewController, NSMutableArray, NSString, UIAlertController;
-
 @interface GKMatchmakerViewController : UINavigationController <GKMatchDelegate> {
     GKInvite *_acceptedInvite;
     UIAlertController *_alertController;
@@ -16,20 +14,20 @@
     GKRemoteMatchmakerViewController *_remoteViewController;
 }
 
-@property(retain) GKInvite * acceptedInvite;
-@property(retain) UIAlertController * alertController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSString * defaultInvitationMessage;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isHosted) BOOL hosted;
-@property(retain) NSMutableArray * hostedPlayers;
-@property(retain) GKHostedMatchmakerViewController * hostedViewController;
-@property(retain) GKMatch * match;
-@property(retain,readonly) GKMatchRequest * matchRequest;
-@property <GKMatchmakerViewControllerDelegate> * matchmakerDelegate;
-@property(retain) GKRemoteMatchmakerViewController * remoteViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) GKInvite *acceptedInvite;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSString *defaultInvitationMessage;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isHosted, nonatomic) BOOL hosted;
+@property (nonatomic, retain) NSMutableArray *hostedPlayers;
+@property (nonatomic, retain) GKHostedMatchmakerViewController *hostedViewController;
+@property (nonatomic, retain) GKMatch *match;
+@property (nonatomic, readonly, retain) GKMatchRequest *matchRequest;
+@property (nonatomic) <GKMatchmakerViewControllerDelegate> *matchmakerDelegate;
+@property (nonatomic, retain) GKRemoteMatchmakerViewController *remoteViewController;
+@property (readonly) Class superclass;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 

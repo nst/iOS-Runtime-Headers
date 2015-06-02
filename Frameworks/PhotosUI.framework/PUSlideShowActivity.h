@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSlideShowActivity : PUActivity {
-}
+@interface PUSlideShowActivity : PUActivity
 
 - (id)activityImage;
 - (id)activityTitle;

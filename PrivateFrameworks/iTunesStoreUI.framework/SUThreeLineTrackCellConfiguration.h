@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUThreeLineTrackCellConfiguration : SUMediaItemCellConfiguration {
-}
+@interface SUThreeLineTrackCellConfiguration : SUMediaItemCellConfiguration
 
 + (id)copyDefaultContext;
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;

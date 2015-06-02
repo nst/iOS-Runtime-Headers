@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEvent, EKEventDateEditItem, UIColor;
-
 @interface EKEventEditor : EKCalendarItemEditor {
     UIColor *_backgroundColor;
     EKEventDateEditItem *_dateItem;
@@ -11,9 +9,9 @@
     BOOL _showAttachments;
 }
 
-@property(retain) UIColor * backgroundColor;
-@property(retain) EKEvent * event;
-@property BOOL showAttachments;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) EKEvent *event;
+@property (nonatomic) BOOL showAttachments;
 
 - (void).cxx_destruct;
 - (id)_calendarItemIndexSet;

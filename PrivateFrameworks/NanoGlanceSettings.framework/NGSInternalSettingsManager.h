@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoGlanceSettings.framework/NanoGlanceSettings
  */
 
-@class NPSManager, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NGSInternalSettingsManager : NSObject {
     NSMutableArray *_glanceDefinitions;
     NSObject<OS_dispatch_queue> *_queue;
@@ -12,17 +10,17 @@
     NPSManager *_syncManager;
 }
 
-@property(readonly) BOOL hasSettings;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(copy) NSString * selectedGlanceIdentifier;
+@property (nonatomic, readonly) BOOL hasSettings;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) NSString *selectedGlanceIdentifier;
 
 - (void).cxx_destruct;
 - (id)_localizedNameForGlance:(id)arg1;
 - (unsigned int)_numberOfActiveGlances;
 - (void)_saveSettings;
 - (void)addGlanceDefinition:(id)arg1;
-- (void)enumerateAllGlanceDefinitionsUsingBlock:(id)arg1;
-- (void)enumerateGlanceDefinitionsUsingBlock:(id)arg1;
+- (void)enumerateAllGlanceDefinitionsUsingBlock:(id /* block */)arg1;
+- (void)enumerateGlanceDefinitionsUsingBlock:(id /* block */)arg1;
 - (id)glanceDefinitionForAppBundleIdentifier:(id)arg1;
 - (id)glanceDefinitionForGlanceIdentifier:(id)arg1;
 - (id)glanceDefinitionForWatchKitIdentifier:(id)arg1;

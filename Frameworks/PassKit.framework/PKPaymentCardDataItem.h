@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class CNContact, PKPaymentApplication, PKPaymentPass;
+@interface PKPaymentCardDataItem : PKPaymentDataItem
 
-@interface PKPaymentCardDataItem : PKPaymentDataItem {
-}
-
-@property(readonly) CNContact * billingAddress;
-@property(readonly) PKPaymentPass * pass;
-@property(readonly) PKPaymentApplication * paymentApplication;
-@property(readonly) BOOL requiresBillingAddress;
+@property (nonatomic, readonly) CNContact *billingAddress;
+@property (nonatomic, readonly) PKPaymentPass *pass;
+@property (nonatomic, readonly) PKPaymentApplication *paymentApplication;
+@property (nonatomic, readonly) BOOL requiresBillingAddress;
 
 + (int)dataType;
 

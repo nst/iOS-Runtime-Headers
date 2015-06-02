@@ -2,26 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, SASiriSupport, SAStarkSupport;
+@interface SAAppInfo : SADomainObject
 
-@interface SAAppInfo : SADomainObject {
-}
-
-@property(copy) NSString * appId;
-@property(copy) NSString * appName;
-@property(copy) NSDictionary * appNameMap;
-@property(copy) NSString * appVersion;
-@property(copy) NSString * displayAppName;
-@property(copy) NSDictionary * displayAppNameMap;
-@property(copy) NSNumber * isNanoApp;
-@property(copy) NSNumber * nowPlayingAppWithBrowsableContent;
-@property(copy) NSString * providerName;
-@property(retain) SASiriSupport * siriSupport;
-@property(copy) NSString * spotlightName;
-@property(copy) NSDictionary * spotlightNameMap;
-@property(retain) SAStarkSupport * starkSupport;
-@property(copy) NSArray * supportedCommands;
-@property(copy) NSArray * supportedSchemes;
+@property (nonatomic, copy) NSString *appId;
+@property (nonatomic, copy) NSString *appName;
+@property (nonatomic, copy) NSDictionary *appNameMap;
+@property (nonatomic, copy) NSString *appVersion;
+@property (nonatomic, copy) NSString *displayAppName;
+@property (nonatomic, copy) NSDictionary *displayAppNameMap;
+@property (nonatomic, copy) NSNumber *isNanoApp;
+@property (nonatomic, copy) NSNumber *nowPlayingAppWithBrowsableContent;
+@property (nonatomic, copy) NSString *providerName;
+@property (nonatomic, retain) SASiriSupport *siriSupport;
+@property (nonatomic, copy) NSString *spotlightName;
+@property (nonatomic, copy) NSDictionary *spotlightNameMap;
+@property (nonatomic, retain) SAStarkSupport *starkSupport;
+@property (nonatomic, copy) NSArray *supportedCommands;
+@property (nonatomic, copy) NSArray *supportedSchemes;
 
 + (id)appInfo;
 + (id)appInfoWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSHashTable, NSPredicate, NSString, PTSRowAction, PTSSection, UIImage, _UISettings;
-
 @interface PTSRow : NSObject <_UISettingsKeyPathObserver> {
     PTSRowAction *_action;
     int _allowedEditingTypes;
@@ -21,38 +15,32 @@
     UIImage *_staticImage;
     NSString *_staticTitle;
     NSString *_titleKeyPath;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _valueFormatter;
-
+    id /* block */ _valueFormatter;
     NSString *_valueKeyPath;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _valueValidatator;
-
+    id /* block */ _valueValidatator;
 }
 
-@property(copy) PTSRowAction * action;
-@property int allowedEditingTypes;
-@property(copy) NSPredicate * condition;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) _UISettings * groupChild;
-@property(retain) NSString * groupKeyPath;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * imageKeyPath;
-@property PTSSection * section;
-@property(retain) _UISettings * settings;
-@property(retain) UIImage * staticImage;
-@property(copy) NSString * staticTitle;
-@property(readonly) Class superclass;
-@property(copy) NSString * titleKeyPath;
-@property(retain) id value;
-@property(copy) id valueFormatter;
-@property(copy) NSString * valueKeyPath;
-@property(copy) id valueValidatator;
+@property (nonatomic, copy) PTSRowAction *action;
+@property (nonatomic) int allowedEditingTypes;
+@property (nonatomic, copy) NSPredicate *condition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _UISettings *groupChild;
+@property (nonatomic, retain) NSString *groupKeyPath;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *imageKeyPath;
+@property (nonatomic) PTSSection *section;
+@property (nonatomic, retain) _UISettings *settings;
+@property (nonatomic, retain) UIImage *staticImage;
+@property (nonatomic, copy) NSString *staticTitle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *titleKeyPath;
+@property (nonatomic, retain) id value;
+@property (nonatomic, copy) id /* block */ valueFormatter;
+@property (nonatomic, copy) NSString *valueKeyPath;
+@property (nonatomic, copy) id /* block */ valueValidatator;
+
+// Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
 
 + (id)row;
 + (id)rowWithTitle:(id)arg1 valueKeyPath:(id)arg2;
@@ -84,7 +72,6 @@
 - (id)imageKeyPath;
 - (id)imageKeyPath:(id)arg1;
 - (id)init;
-- (id)pu_increment:(float)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)resolveTemplatesWithIndex:(unsigned int)arg1;
 - (Class)rowTableViewCellClass;
@@ -101,9 +88,9 @@
 - (void)setStaticTitle:(id)arg1;
 - (void)setTitleKeyPath:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValueFormatter:(id)arg1;
+- (void)setValueFormatter:(id /* block */)arg1;
 - (void)setValueKeyPath:(id)arg1;
-- (void)setValueValidatator:(id)arg1;
+- (void)setValueValidatator:(id /* block */)arg1;
 - (id)settings;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)staticImage;
@@ -115,11 +102,15 @@
 - (id)titleKeyPath:(id)arg1;
 - (void)updateWithRow:(id)arg1;
 - (id)value;
-- (id)valueFormatter;
-- (id)valueFormatter:(id)arg1;
+- (id /* block */)valueFormatter;
+- (id)valueFormatter:(id /* block */)arg1;
 - (id)valueKeyPath;
 - (id)valueKeyPath:(id)arg1;
-- (id)valueValidatator;
-- (id)valueValidator:(id)arg1;
+- (id /* block */)valueValidatator;
+- (id)valueValidator:(id /* block */)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_increment:(float)arg1;
 
 @end

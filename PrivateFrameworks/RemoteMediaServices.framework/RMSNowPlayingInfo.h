@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSNowPlayingInfo : NSObject {
     NSString *_albumName;
     NSString *_artistName;
@@ -25,26 +23,26 @@
     NSString *_trackName;
 }
 
-@property(retain) NSString * albumName;
-@property(retain) NSString * artistName;
-@property(readonly) NSString * artworkIdentifier;
-@property BOOL canSkipNext;
-@property BOOL canSkipPrevious;
-@property BOOL canWishlist;
-@property unsigned long long databaseID;
-@property BOOL hasChapterData;
-@property unsigned long long itemID;
-@property(getter=isLikeable) BOOL likeable;
-@property int likedState;
-@property int mediaKind;
-@property int playbackState;
-@property(getter=isPlaying,readonly) BOOL playing;
-@property int revisionNumber;
-@property int scrubbableState;
-@property double timeRemaining;
-@property double timestamp;
-@property double totalDuration;
-@property(retain) NSString * trackName;
+@property (nonatomic, retain) NSString *albumName;
+@property (nonatomic, retain) NSString *artistName;
+@property (nonatomic, readonly) NSString *artworkIdentifier;
+@property (nonatomic) BOOL canSkipNext;
+@property (nonatomic) BOOL canSkipPrevious;
+@property (nonatomic) BOOL canWishlist;
+@property (nonatomic) unsigned long long databaseID;
+@property (nonatomic) BOOL hasChapterData;
+@property (nonatomic) unsigned long long itemID;
+@property (getter=isLikeable, nonatomic) BOOL likeable;
+@property (nonatomic) int likedState;
+@property (nonatomic) int mediaKind;
+@property (nonatomic) int playbackState;
+@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (nonatomic) int revisionNumber;
+@property (nonatomic) int scrubbableState;
+@property (nonatomic) double timeRemaining;
+@property (nonatomic) double timestamp;
+@property (nonatomic) double totalDuration;
+@property (nonatomic, retain) NSString *trackName;
 
 - (void).cxx_destruct;
 - (id)albumName;

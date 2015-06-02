@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVCaptureBracketedStillImageSettings : NSObject {
-}
+@interface AVCaptureBracketedStillImageSettings : NSObject
 
 - (id)init;
 

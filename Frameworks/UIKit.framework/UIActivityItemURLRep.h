@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSURL, UIImage;
-
 @interface UIActivityItemURLRep : NSObject {
     NSURL *_URL;
     int _attachmentURLType;
     UIImage *_thumbnail;
 }
 
-@property(retain) NSURL * URL;
-@property int attachmentURLType;
-@property(retain) UIImage * thumbnail;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic) int attachmentURLType;
+@property (nonatomic, retain) UIImage *thumbnail;
 
 - (id)URL;
 - (int)attachmentURLType;

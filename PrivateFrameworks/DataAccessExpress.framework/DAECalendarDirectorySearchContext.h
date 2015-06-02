@@ -2,26 +2,14 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface DAECalendarDirectorySearchContext : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resultsBlock;
-
+    id /* block */ _completionBlock;
+    id /* block */ _resultsBlock;
 }
 
 - (void).cxx_destruct;
 - (void)finishedWithError:(id)arg1 exceededResultLimit:(BOOL)arg2;
-- (id)initWithResultsBlock:(id)arg1 completionBlock:(id)arg2;
+- (id)initWithResultsBlock:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
 - (void)resultsReturned:(id)arg1;
 
 @end

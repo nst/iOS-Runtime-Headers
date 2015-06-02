@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NSNetServiceBrowserDelegate>;
-
 @interface NSNetServiceBrowser : NSObject {
     id _delegate;
     BOOL _includesPeerToPeer;
@@ -11,7 +9,7 @@
     void *_reserved;
 }
 
-@property <NSNetServiceBrowserDelegate> * delegate;
+@property <NSNetServiceBrowserDelegate> *delegate;
 @property BOOL includesPeerToPeer;
 
 - (void)_dispatchCallBack:(void*)arg1 flags:(unsigned long)arg2 error:(struct { int x1; int x2; })arg3;

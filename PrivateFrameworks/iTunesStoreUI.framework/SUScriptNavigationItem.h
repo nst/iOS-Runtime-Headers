@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUScriptNavigationItem>, NSString, UINavigationItem;
+@interface SUScriptNavigationItem : SUScriptObject
 
-@interface SUScriptNavigationItem : SUScriptObject {
-}
-
-@property(copy) NSString * backButtonTitle;
+@property (copy) NSString *backButtonTitle;
 @property id hidesBackButton;
-@property(retain) <SUScriptNavigationItem> * leftItem;
+@property (retain) <SUScriptNavigationItem> *leftItem;
 @property id leftItemsSupplementBackButton;
-@property(retain) <SUScriptNavigationItem> * leftMostItem;
-@property(readonly) UINavigationItem * nativeNavigationItem;
-@property(retain) NSString * prompt;
-@property(retain) <SUScriptNavigationItem> * rightItem;
-@property(retain) NSString * title;
-@property(retain) id titleView;
+@property (retain) <SUScriptNavigationItem> *leftMostItem;
+@property (nonatomic, readonly) UINavigationItem *nativeNavigationItem;
+@property (retain) NSString *prompt;
+@property (retain) <SUScriptNavigationItem> *rightItem;
+@property (retain) NSString *title;
+@property (retain) id titleView;
 
 + (void)_disconnectNavigationItem:(id)arg1 scriptObject:(id)arg2;
 + (id)_rootScriptObjectForObject:(id)arg1;

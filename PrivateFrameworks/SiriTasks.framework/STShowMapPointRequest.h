@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class NSData;
-
 @interface STShowMapPointRequest : AFSiriRequest {
     BOOL _isCurrentLocation;
     NSData *_placeData;
 }
 
-@property BOOL isCurrentLocation;
+@property (nonatomic) BOOL isCurrentLocation;
 
 + (BOOL)supportsSecureCoding;
 

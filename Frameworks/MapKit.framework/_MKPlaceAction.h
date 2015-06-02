@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
-
 @interface _MKPlaceAction : NSObject {
     SEL _action;
     NSString *_title;
 }
 
-@property SEL action;
-@property(copy) NSString * title;
+@property (nonatomic) SEL action;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (SEL)action;

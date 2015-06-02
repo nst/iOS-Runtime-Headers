@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSLoginRequest : HSRequest {
-}
+@interface HSLoginRequest : HSRequest
 
 + (id)supportedVideoQualities;
 

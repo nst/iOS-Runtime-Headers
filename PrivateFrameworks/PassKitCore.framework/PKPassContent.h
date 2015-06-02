@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSArray, NSString, PKImage;
-
 @interface PKPassContent : PKContent <NSSecureCoding> {
     NSArray *_backFieldBuckets;
     PKImage *_footerImage;
@@ -12,11 +10,11 @@
     int _transitType;
 }
 
-@property(copy) NSArray * backFieldBuckets;
-@property(retain) PKImage * footerImage;
-@property(copy) NSArray * frontFieldBuckets;
-@property(copy) NSString * logoText;
-@property int transitType;
+@property (nonatomic, copy) NSArray *backFieldBuckets;
+@property (nonatomic, retain) PKImage *footerImage;
+@property (nonatomic, copy) NSArray *frontFieldBuckets;
+@property (nonatomic, copy) NSString *logoText;
+@property (nonatomic) int transitType;
 
 + (BOOL)supportsSecureCoding;
 

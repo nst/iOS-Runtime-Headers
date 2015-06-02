@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAliasItem, BRCDirectoryItem, BRCDocumentItem;
+@interface BRCDirectoryItem : BRCLocalItem
 
-@interface BRCDirectoryItem : BRCLocalItem {
-}
-
-@property(readonly) BRCAliasItem * asAlias;
-@property(readonly) BRCDirectoryItem * asDirectory;
-@property(readonly) BRCDocumentItem * asDocument;
+@property (nonatomic, readonly) BRCAliasItem *asAlias;
+@property (nonatomic, readonly) BRCDirectoryItem *asDirectory;
+@property (nonatomic, readonly) BRCDocumentItem *asDocument;
 
 - (BOOL)_deleteFromDB:(id)arg1 diffs:(unsigned long long)arg2 keepAliases:(BOOL)arg3;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;

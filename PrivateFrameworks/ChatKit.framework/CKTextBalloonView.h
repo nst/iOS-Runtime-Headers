@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKBalloonTextView, NSAttributedString;
-
 @interface CKTextBalloonView : CKColoredBalloonView {
     NSAttributedString *_attributedText;
     BOOL _centerTextWhenSkinny;
     CKBalloonTextView *_textView;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property BOOL centerTextWhenSkinny;
-@property(retain) CKBalloonTextView * textView;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) BOOL centerTextWhenSkinny;
+@property (nonatomic, retain) CKBalloonTextView *textView;
 
 - (id)attributedText;
 - (BOOL)centerTextWhenSkinny;

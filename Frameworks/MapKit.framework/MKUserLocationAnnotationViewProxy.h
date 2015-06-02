@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEORouteMatch, MKAnnotationView, NSHashTable, NSString;
-
 @interface MKUserLocationAnnotationViewProxy : NSObject <VKPuckAnimatorTarget, VKRouteMatchedAnnotationPresentation, VKTrackableAnnotationPresentation> {
     MKAnnotationView *_annotationView;
     NSHashTable *_presentationCoordinateObservers;
 }
 
-@property MKAnnotationView * annotationView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct { double x1; double x2; } presentationCoordinate;
-@property double presentationCourse;
-@property(retain) GEORouteMatch * routeMatch;
-@property(readonly) Class superclass;
-@property(getter=isTracking) BOOL tracking;
+@property (nonatomic) MKAnnotationView *annotationView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct { double x1; double x2; } presentationCoordinate;
+@property (nonatomic) double presentationCourse;
+@property (nonatomic, retain) GEORouteMatch *routeMatch;
+@property (readonly) Class superclass;
+@property (getter=isTracking, nonatomic) BOOL tracking;
 
 - (void).cxx_destruct;
 - (void)addPresentationCoordinateChangedObserver:(id)arg1;

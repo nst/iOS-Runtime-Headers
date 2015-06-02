@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RUWelcomeViewController;
-
 @interface _RUWelcomeTicker : NSObject {
     RUWelcomeViewController *_welcomeViewController;
 }
 
-@property RUWelcomeViewController * welcomeViewController;
+@property (nonatomic) RUWelcomeViewController *welcomeViewController;
 
 - (void).cxx_destruct;
 - (void)_displayLinkAction:(id)arg1;

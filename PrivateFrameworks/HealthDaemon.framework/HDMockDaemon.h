@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDDaemonDeviceManager>, <HDHealthDataCollectionManager>, <HDHealthDataManager>, <HDHealthDatabase>, <HDHealthMetadataManager>, <HDHealthSourceManager>, <HDSyncEngine>, HDBackgroundTaskScheduler, HDContentProtectionManager, HDProcessStateManager, HDUserCharacteristicsManager, NSString;
-
 @interface HDMockDaemon : NSObject <HDHealthDaemon> {
     HDBackgroundTaskScheduler *_backgroundTaskScheduler;
     HDContentProtectionManager *_contentProtectionManager;
@@ -18,22 +16,22 @@
     HDProcessStateManager *processStateManager;
 }
 
-@property(retain) HDBackgroundTaskScheduler * backgroundTaskScheduler;
-@property(retain) HDContentProtectionManager * contentProtectionManager;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <HDHealthDataCollectionManager> * healthDataCollectionManager;
-@property(retain) <HDHealthDataManager> * healthDataManager;
-@property(retain) <HDHealthDatabase> * healthDatabase;
-@property(retain) <HDDaemonDeviceManager> * healthDeviceManager;
-@property(retain) <HDHealthMetadataManager> * healthMetadataManager;
-@property(retain) <HDHealthSourceManager> * healthSourceManager;
-@property(readonly) NSString * homeDirectoryPath;
-@property(readonly) HDProcessStateManager * processStateManager;
-@property(readonly) Class superclass;
-@property(retain) <HDSyncEngine> * syncEngine;
-@property(retain) HDUserCharacteristicsManager * userCharacteristicsManager;
+@property (retain) HDBackgroundTaskScheduler *backgroundTaskScheduler;
+@property (retain) HDContentProtectionManager *contentProtectionManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) <HDHealthDataCollectionManager> *healthDataCollectionManager;
+@property (retain) <HDHealthDataManager> *healthDataManager;
+@property (retain) <HDHealthDatabase> *healthDatabase;
+@property (retain) <HDDaemonDeviceManager> *healthDeviceManager;
+@property (retain) <HDHealthMetadataManager> *healthMetadataManager;
+@property (retain) <HDHealthSourceManager> *healthSourceManager;
+@property (readonly) NSString *homeDirectoryPath;
+@property (readonly) HDProcessStateManager *processStateManager;
+@property (readonly) Class superclass;
+@property (retain) <HDSyncEngine> *syncEngine;
+@property (retain) HDUserCharacteristicsManager *userCharacteristicsManager;
 
 - (void).cxx_destruct;
 - (id)backgroundTaskScheduler;
@@ -49,8 +47,8 @@
 - (id)healthSourceManager;
 - (id)homeDirectoryPath;
 - (void)invalidateActivityAlertSuppressionForBundleIdentifier:(id)arg1;
-- (void)pauseActiveWorkoutsWithCompletion:(id)arg1;
-- (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id)arg4;
+- (void)pauseActiveWorkoutsWithCompletion:(id /* block */)arg1;
+- (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id /* block */)arg4;
 - (BOOL)persistAndNotifyDataObject:(id)arg1 error:(id*)arg2;
 - (id)processStateManager;
 - (void)registerForDaemonReady:(id)arg1;

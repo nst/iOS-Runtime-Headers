@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBColumnTable : NSObject {
-}
+@interface EBColumnTable : NSObject
 
 + (void)readWithState:(id)arg1;
 

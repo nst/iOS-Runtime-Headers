@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RDSupport.framework/RDSupport
  */
 
-@interface RDSetupSupport : NSObject {
-}
+@interface RDSetupSupport : NSObject
 
 + (void)changeGizmoLanguage:(id)arg1 locale:(id)arg2;
 + (id)disableNanoDaemons;

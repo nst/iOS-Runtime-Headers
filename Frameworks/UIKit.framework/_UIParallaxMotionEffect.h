@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInterpolatingMotionEffect, UIMotionEffectGroup, _UITiltMotionEffect;
-
 @interface _UIParallaxMotionEffect : UIMotionEffect {
     UIMotionEffectGroup *_group;
     UIInterpolatingMotionEffect *_horizontalSlideEffect;
@@ -15,12 +13,12 @@
     UIInterpolatingMotionEffect *_verticalSlideEffect;
 }
 
-@property float horizontalSlideAccelerationBoostFactor;
-@property float maximumHorizontalTiltAngle;
-@property float maximumVerticalTiltAngle;
-@property float rotatingSphereRadius;
-@property struct UIOffset { float x1; float x2; } slideMagnitude;
-@property float verticalSlideAccelerationBoostFactor;
+@property (nonatomic) float horizontalSlideAccelerationBoostFactor;
+@property (nonatomic) float maximumHorizontalTiltAngle;
+@property (nonatomic) float maximumVerticalTiltAngle;
+@property (nonatomic) float rotatingSphereRadius;
+@property (nonatomic) struct UIOffset { float x1; float x2; } slideMagnitude;
+@property (nonatomic) float verticalSlideAccelerationBoostFactor;
 
 - (void)_activateTiltEffectIfNecessary;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;

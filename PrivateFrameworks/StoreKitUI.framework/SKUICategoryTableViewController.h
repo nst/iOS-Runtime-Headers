@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUICategoryTableViewControllerDelegate>, NSArray, NSString, NSURL, SKUICategory, SKUICategoryArtworkLoader, SKUIClientContext;
-
 @interface SKUICategoryTableViewController : UITableViewController <SKUICategoryArtworkLoaderObserver, SKUICategoryTableViewControllerDelegate> {
     SKUICategoryArtworkLoader *_artworkLoader;
     SKUICategory *_category;
@@ -17,19 +15,19 @@
     NSURL *_selectedURL;
 }
 
-@property(retain) SKUICategoryArtworkLoader * artworkLoader;
-@property(retain) SKUICategory * category;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSURL * defaultURL;
-@property <SKUICategoryTableViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * metricsLocations;
-@property int numberOfHiddenRows;
-@property(getter=isRoot) BOOL root;
-@property(retain) NSURL * selectedURL;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUICategoryArtworkLoader *artworkLoader;
+@property (nonatomic, retain) SKUICategory *category;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSURL *defaultURL;
+@property (nonatomic) <SKUICategoryTableViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *metricsLocations;
+@property (nonatomic) int numberOfHiddenRows;
+@property (getter=isRoot, nonatomic) BOOL root;
+@property (nonatomic, retain) NSURL *selectedURL;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_categoryAtIndexPath:(id)arg1;

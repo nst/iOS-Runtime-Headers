@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableArray;
-
 @interface ABPersonTableActionDataSource : NSObject {
     struct __CFDictionary { } *_actionGroupingsByProperty;
     struct __CFDictionary { } *_actionsByProperty;

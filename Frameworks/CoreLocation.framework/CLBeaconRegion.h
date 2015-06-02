@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSNumber, NSUUID;
-
 @interface CLBeaconRegion : CLRegion {
     NSNumber *_major;
     NSNumber *_minor;
     NSUUID *_proximityUUID;
 }
 
-@property(readonly) NSNumber * major;
-@property(readonly) NSNumber * minor;
-@property BOOL notifyEntryStateOnDisplay;
-@property(readonly) NSUUID * proximityUUID;
+@property (nonatomic, readonly) NSNumber *major;
+@property (nonatomic, readonly) NSNumber *minor;
+@property (nonatomic) BOOL notifyEntryStateOnDisplay;
+@property (nonatomic, readonly) NSUUID *proximityUUID;
 
 + (id)any;
 + (BOOL)supportsSecureCoding;

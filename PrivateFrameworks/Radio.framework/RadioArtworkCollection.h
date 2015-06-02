@@ -2,17 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray;
-
 @interface RadioArtworkCollection : NSObject {
     NSArray *_artworks;
 }
 
-@property(readonly) NSArray * artworks;
+@property (nonatomic, readonly) NSArray *artworks;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 - (void).cxx_destruct;
 - (id)_artworksBySortingArtworks:(id)arg1;
-- (id)artworkCatalog;
 - (id)artworks;
 - (id)bestArtworkForPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)bestArtworkForPointSize:(struct CGSize { float x1; float x2; })arg1;
@@ -21,5 +20,9 @@
 - (id)initWithArtworkVariants:(id)arg1;
 - (id)initWithArtworks:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+
+- (id)artworkCatalog;
 
 @end

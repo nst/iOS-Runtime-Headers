@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObject, NSPropertyDescription;
-
 @interface _NSFaultingMutableSet : NSMutableSet {
     int _cd_rc;
     struct _NSFaultingMutableSetFlags { 
@@ -16,9 +14,9 @@
     NSManagedObject *_source;
 }
 
-@property(getter=isFault,readonly) BOOL fault;
-@property(readonly) NSPropertyDescription * relationship;
-@property(readonly) NSManagedObject * source;
+@property (getter=isFault, nonatomic, readonly) BOOL fault;
+@property (nonatomic, readonly) NSPropertyDescription *relationship;
+@property (nonatomic, readonly) NSManagedObject *source;
 
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)alloc;
@@ -37,11 +35,11 @@
 - (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)getObjects:(id*)arg1;
 - (id)initWithSource:(id)arg1 destinations:(id)arg2 forRelationship:(id)arg3 inContext:(id)arg4;
 - (id)initWithSource:(id)arg1 forRelationship:(id)arg2 asFault:(BOOL)arg3;
@@ -57,7 +55,7 @@
 - (void)minusSet:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
-- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id)arg2;
+- (id)objectsWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (id)relationship;
 - (oneway void)release;
 - (void)removeAllObjects;

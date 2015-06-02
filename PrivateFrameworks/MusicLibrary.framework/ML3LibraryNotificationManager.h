@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3MusicLibrary, NSMutableArray, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ML3LibraryNotificationManager : NSObject <MSVDistributedNotificationObserverDelegate> {
     ML3MusicLibrary *_library;
     NSString *_libraryPath;
@@ -13,11 +11,11 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) ML3MusicLibrary * library;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_observerForDistributedName:(id)arg1;

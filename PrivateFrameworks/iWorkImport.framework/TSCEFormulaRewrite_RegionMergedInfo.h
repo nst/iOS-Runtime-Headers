@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCEFormulaRewrite_RegionInfo;
-
 @interface TSCEFormulaRewrite_RegionMergedInfo : NSObject {
     TSCEFormulaRewrite_RegionInfo *_mergeRegion;
     struct { 
@@ -13,8 +11,8 @@
     } _mergeSource;
 }
 
-@property(readonly) TSCEFormulaRewrite_RegionInfo * mergeRegion;
-@property const struct { unsigned short x1; unsigned char x2; unsigned char x3; }* mergeSource;
+@property (nonatomic, readonly) TSCEFormulaRewrite_RegionInfo *mergeRegion;
+@property (nonatomic) const struct { unsigned short x1; unsigned char x2; unsigned char x3; }*mergeSource;
 
 - (id).cxx_construct;
 - (void)dealloc;

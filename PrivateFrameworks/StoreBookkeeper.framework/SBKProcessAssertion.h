@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BKSProcessAssertion, NSObject<OS_dispatch_queue>;
-
 @interface SBKProcessAssertion : NSObject {
     BKSProcessAssertion *_bkProcessAssertion;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _expirationBlock;
-
+    id /* block */ _expirationBlock;
     id _expirationObserver;
     unsigned int _identifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) BKSProcessAssertion * bkProcessAssertion;
-@property(retain) id expirationObserver;
-@property(readonly) unsigned int identifier;
+@property (retain) BKSProcessAssertion *bkProcessAssertion;
+@property (retain) id expirationObserver;
+@property (readonly) unsigned int identifier;
 
 - (void).cxx_destruct;
 - (void)_expireBackgroundTask;
@@ -32,7 +22,7 @@
 - (id)description;
 - (id)expirationObserver;
 - (unsigned int)identifier;
-- (id)initWithExpirationBlock:(id)arg1 debugDescription:(id)arg2;
+- (id)initWithExpirationBlock:(id /* block */)arg1 debugDescription:(id)arg2;
 - (void)invalidate;
 - (void)setBkProcessAssertion:(id)arg1;
 - (void)setExpirationObserver:(id)arg1;

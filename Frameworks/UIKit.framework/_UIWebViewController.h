@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIWebViewControllerDelegate>, NSString, UIBarButtonItem, _UIAsyncInvocation, _UIQueueingServiceWebViewControllerProxy, _UIRemoteWebViewController;
-
 @interface _UIWebViewController : UIViewController {
     NSString *_URLString;
     UIBarButtonItem *_backBarButtonItem;
@@ -21,22 +19,22 @@
     _UIQueueingServiceWebViewControllerProxy *_serviceProxy;
 }
 
-@property(copy) NSString * URLString;
-@property(retain,readonly) UIBarButtonItem * backBarButtonItem;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
-@property <_UIWebViewControllerDelegate> * delegate;
-@property(readonly) float estimatedProgress;
-@property(retain,readonly) UIBarButtonItem * forwardBarButtonItem;
-@property(getter=isLoading,readonly) BOOL loading;
-@property(copy,readonly) NSString * pageTitle;
+@property (nonatomic, copy) NSString *URLString;
+@property (nonatomic, readonly, retain) UIBarButtonItem *backBarButtonItem;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic) <_UIWebViewControllerDelegate> *delegate;
+@property (nonatomic, readonly) float estimatedProgress;
+@property (nonatomic, readonly, retain) UIBarButtonItem *forwardBarButtonItem;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly, copy) NSString *pageTitle;
 
 - (id)URLString;
 - (void)_addRemoteView;
 - (void)_connectToService;
-- (void)_decidePolicyForEncodedRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 replyHandler:(id)arg4;
+- (void)_decidePolicyForEncodedRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 replyHandler:(id /* block */)arg4;
 - (void)_dispatchDidDismissViewController;
-- (void)_dispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
+- (void)_dispatchWillPresentViewControllerWithCompletionHandler:(id /* block */)arg1;
 - (void)_sendBeginAppearanceTransitionIfReadyAnimated:(BOOL)arg1;
 - (void)_sendEndAppearanceTransitionIfReady;
 - (void)_setCanGoBack:(BOOL)arg1 canGoForward:(BOOL)arg2;
@@ -45,7 +43,7 @@
 - (void)_setTitle:(id)arg1;
 - (void)_setURLString:(id)arg1;
 - (void)_updateBarButtonItems;
-- (void)_webContentSizeWithReplyHandler:(id)arg1;
+- (void)_webContentSizeWithReplyHandler:(id /* block */)arg1;
 - (id)backBarButtonItem;
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;

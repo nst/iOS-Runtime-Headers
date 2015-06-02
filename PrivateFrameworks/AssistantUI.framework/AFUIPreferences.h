@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUIPreferencesDelegate>, NSUserDefaults;
-
 @interface AFUIPreferences : NSObject {
     <AFUIPreferencesDelegate> *_delegate;
     NSUserDefaults *_userDefaults;
 }
 
-@property <AFUIPreferencesDelegate> * delegate;
+@property (nonatomic) <AFUIPreferencesDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_mutateValueForKey:(id)arg1 block:(id)arg2;
+- (void)_mutateValueForKey:(id)arg1 block:(id /* block */)arg2;
 - (BOOL)boolForKey:(id)arg1;
 - (id)delegate;
 - (double)doubleForKey:(id)arg1;

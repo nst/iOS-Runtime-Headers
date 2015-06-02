@@ -2,42 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<TSDContainerInfo>, NSString, TSDInfoGeometry, TSPObject<TSDOwningAttachment>, TSWPColumns, TSWPPadding, TSWPShapeStyle, TSWPStorage;
-
 @interface TSWPShapeInfo : TSDShapeInfo <TSDContainerInfo, TSDMixing, TSDSelectionStatisticsContributor, TSWPStorageParent> {
     TSWPStorage *_containedStorage;
 }
 
-@property(getter=isAnchoredToText,readonly) BOOL anchoredToText;
-@property(getter=isAttachedToBodyText,readonly) BOOL attachedToBodyText;
-@property(readonly) int columnDirection;
-@property(retain) TSWPColumns * columns;
-@property(retain) TSWPStorage * containedStorage;
-@property int contentWritingDirection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL displaysInstructionalText;
-@property(getter=isFloatingAboveText,readonly) BOOL floatingAboveText;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) unsigned int hash;
-@property(getter=isInlineWithText,readonly) BOOL inlineWithText;
-@property(readonly) NSString * instructionalText;
-@property(readonly) BOOL isTextBox;
-@property BOOL matchesObjectPlaceholderGeometry;
-@property TSPObject<TSDOwningAttachment> * owningAttachment;
-@property(readonly) TSPObject<TSDOwningAttachment> * owningAttachmentNoRecurse;
-@property(retain) TSWPPadding * padding;
-@property NSObject<TSDContainerInfo> * parentInfo;
-@property BOOL shrinkTextToFit;
-@property(readonly) Class superclass;
-@property BOOL textIsVertical;
-@property(readonly) TSWPShapeStyle * tswpShapeStyle;
-@property int verticalAlignment;
+@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, readonly) int columnDirection;
+@property (nonatomic, retain) TSWPColumns *columns;
+@property (nonatomic, retain) TSWPStorage *containedStorage;
+@property (nonatomic) int contentWritingDirection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL displaysInstructionalText;
+@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (readonly) unsigned int hash;
+@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (nonatomic, readonly) NSString *instructionalText;
+@property (nonatomic, readonly) BOOL isTextBox;
+@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
+@property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
+@property (nonatomic, retain) TSWPPadding *padding;
+@property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic) BOOL shrinkTextToFit;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL textIsVertical;
+@property (nonatomic, readonly) TSWPShapeStyle *tswpShapeStyle;
+@property (nonatomic) int verticalAlignment;
 
 + (unsigned int)numberOfDifferencesBetweenStyleProperties:(id)arg1 betweenOutgoingStorage:(id)arg2 outgoingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 incomingStorage:(id)arg4 incomingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 maxDifferencesBeforeReturning:(unsigned int)arg6;
 + (void)setDefaultInstructionalText:(id)arg1;

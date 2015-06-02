@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDate, NSObject<OS_dispatch_group>, NSString;
-
 @interface CKPlaceholderOperation : NSOperation {
     id _context;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _daemonInvokeBlock;
-
+    id /* block */ _daemonInvokeBlock;
     NSObject<OS_dispatch_group> *_group;
     BOOL _isExecuting;
     BOOL _isFinished;
@@ -23,21 +13,21 @@
     NSDate *_startDate;
 }
 
-@property(retain) id context;
-@property(readonly) id daemonInvokeBlock;
-@property BOOL isExecuting;
-@property BOOL isFinished;
-@property(readonly) NSString * operationID;
-@property(retain) NSString * sectionID;
-@property(retain) NSDate * startDate;
+@property (nonatomic, retain) id context;
+@property (nonatomic, readonly) id /* block */ daemonInvokeBlock;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic, readonly) NSString *operationID;
+@property (nonatomic, retain) NSString *sectionID;
+@property (nonatomic, retain) NSDate *startDate;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)cancel;
 - (id)context;
-- (id)daemonInvokeBlock;
+- (id /* block */)daemonInvokeBlock;
 - (id)description;
-- (id)initWithOperation:(id)arg1 daemonInvocationBlock:(id)arg2;
+- (id)initWithOperation:(id)arg1 daemonInvocationBlock:(id /* block */)arg2;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMDOMTokenList : DOMObject {
-}
+@interface DOMDOMTokenList : DOMObject
 
-@property(readonly) unsigned int length;
+@property (readonly) unsigned int length;
 
 - (void)add:(id)arg1;
 - (BOOL)contains:(id)arg1;

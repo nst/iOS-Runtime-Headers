@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNJSBasicAnimation : CABasicAnimation {
-}
+@interface SCNJSBasicAnimation : CABasicAnimation
 
 + (id)SCNJSExportProtocol;
 + (id)basicAnimationWithKeyPath:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString, UIAlertController, UIWindow;
-
 @interface MPVolumeSettingsController : UIViewController {
     UIAlertController *_alertController;
     NSString *_audioCategory;
@@ -11,8 +9,8 @@
     UIWindow *_previousWindow;
 }
 
-@property UIWindow * hostingWindow;
-@property UIWindow * previousWindow;
+@property (nonatomic) UIWindow *hostingWindow;
+@property (nonatomic) UIWindow *previousWindow;
 
 - (void).cxx_destruct;
 - (void)_flip;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSMutableArray, NSTextTable;
-
 @interface NSRTFReaderTableState : NSObject {
     int _currentColumn;
     int _currentDefinitionColumn;

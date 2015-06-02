@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OISFUZipEntry;
-
 @interface OCPZipPackagePart : OCPPackagePart {
     OISFUZipEntry *mEntry;
 }
 
-@property(readonly) OISFUZipEntry * zipEntry;
+@property (nonatomic, readonly) OISFUZipEntry *zipEntry;
 
 - (void)copyToFile:(id)arg1;
 - (id)data;

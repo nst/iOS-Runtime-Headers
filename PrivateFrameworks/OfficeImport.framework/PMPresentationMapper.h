@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMArchiveManager, NSMutableArray, NSString, OIXMLDocument, OIXMLElement, PDPresentation;
-
 @interface PMPresentationMapper : CMMapper <CMMapperRoot> {
     CMArchiveManager *mArchiver;
     OIXMLElement *mBodyElement;

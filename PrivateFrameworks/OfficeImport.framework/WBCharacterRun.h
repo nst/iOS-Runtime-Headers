@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface WBCharacterRun : NSObject {
-}
+@interface WBCharacterRun : NSObject
 
 + (void)readFrom:(id)arg1 wrdTextRun:(struct WrdCharacterTextRun { int (**x1)(); int x2; unsigned int x3; unsigned int x4; struct WrdCharacterProperties {} *x5; struct WrdCharacterProperties {} *x6; }*)arg2 run:(id)arg3 paragraph:(id)arg4;
 

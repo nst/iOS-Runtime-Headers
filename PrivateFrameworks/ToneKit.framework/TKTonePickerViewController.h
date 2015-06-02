@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class <TKTonePickerStyleProvider>, <TKTonePickerViewControllerDelegate>, MPMediaPickerController, MPMusicPlayerController, NSMutableArray, NSNumber, NSString, TKToneClassicsTableViewController, TKTonePickerController, TKTonePickerTableViewCellLayoutManager, TKVibrationPickerViewController, UIBarButtonItem, UIImage, UIView;
-
 @interface TKTonePickerViewController : UITableViewController <MPMediaPickerControllerDelegate, TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate> {
     UIImage *_checkmarkImage;
     UIView *_defaultSectionHeaderView;
@@ -24,43 +22,43 @@
     TKVibrationPickerViewController *_vibrationPickerViewController;
 }
 
-@property(setter=_setCheckmarkImage:,retain) UIImage * _checkmarkImage;
-@property(setter=_setDefaultSectionHeaderView:,retain) UIView * _defaultSectionHeaderView;
-@property(setter=_setMediaItems:,retain) NSMutableArray * _mediaItems;
-@property(setter=_setMediaPickerController:,retain) MPMediaPickerController * _mediaPickerController;
-@property(setter=_setMediaSectionHeaderView:,retain) UIView * _mediaSectionHeaderView;
-@property(readonly) MPMusicPlayerController * _musicPlayer;
-@property(setter=_setNeedsScrollPositionReset:) BOOL _needsScrollPositionReset;
-@property(setter=_setRegularToneSectionHeaderViews:,retain) NSMutableArray * _regularToneSectionHeaderViews;
-@property(setter=_setShowsStoreButtonInNavigationBar:) BOOL _showsStoreButtonInNavigationBar;
-@property(setter=_setStoreBarButtonItem:,retain) UIBarButtonItem * _storeBarButtonItem;
-@property(setter=_setStoredMusicPlayer:,retain) MPMusicPlayerController * _storedMusicPlayer;
-@property(setter=_setStyleProvider:,retain) <TKTonePickerStyleProvider> * _styleProvider;
-@property(setter=_setTableViewCellLayoutManager:,retain) TKTonePickerTableViewCellLayoutManager * _tableViewCellLayoutManager;
-@property(setter=_setToneClassicsTableViewController:,retain) TKToneClassicsTableViewController * _toneClassicsTableViewController;
-@property(setter=_setTonePickerController:,retain) TKTonePickerController * _tonePickerController;
-@property(setter=_setVibrationPickerViewController:,retain) TKVibrationPickerViewController * _vibrationPickerViewController;
-@property(copy) NSString * accountIdentifier;
-@property(readonly) int alertType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSString * defaultToneIdentifier;
-@property <TKTonePickerViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isMediaAtTop) BOOL mediaAtTop;
-@property(getter=isNoneAtTop) BOOL noneAtTop;
-@property(copy) NSString * noneString;
-@property(copy) NSNumber * selectedMediaIdentifier;
-@property(copy) NSString * selectedToneIdentifier;
-@property(copy) NSString * selectedVibrationIdentifier;
-@property BOOL showsDefault;
-@property BOOL showsMedia;
-@property BOOL showsNone;
-@property BOOL showsNothingSelected;
-@property BOOL showsStoreButtonInNavigationBar;
-@property BOOL showsVibrations;
-@property(retain) <TKTonePickerStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (setter=_setCheckmarkImage:, nonatomic, retain) UIImage *_checkmarkImage;
+@property (setter=_setDefaultSectionHeaderView:, nonatomic, retain) UIView *_defaultSectionHeaderView;
+@property (setter=_setMediaItems:, nonatomic, retain) NSMutableArray *_mediaItems;
+@property (setter=_setMediaPickerController:, nonatomic, retain) MPMediaPickerController *_mediaPickerController;
+@property (setter=_setMediaSectionHeaderView:, nonatomic, retain) UIView *_mediaSectionHeaderView;
+@property (nonatomic, readonly) MPMusicPlayerController *_musicPlayer;
+@property (setter=_setNeedsScrollPositionReset:, nonatomic) BOOL _needsScrollPositionReset;
+@property (setter=_setRegularToneSectionHeaderViews:, nonatomic, retain) NSMutableArray *_regularToneSectionHeaderViews;
+@property (setter=_setShowsStoreButtonInNavigationBar:, nonatomic) BOOL _showsStoreButtonInNavigationBar;
+@property (setter=_setStoreBarButtonItem:, nonatomic, retain) UIBarButtonItem *_storeBarButtonItem;
+@property (setter=_setStoredMusicPlayer:, nonatomic, retain) MPMusicPlayerController *_storedMusicPlayer;
+@property (setter=_setStyleProvider:, nonatomic, retain) <TKTonePickerStyleProvider> *_styleProvider;
+@property (setter=_setTableViewCellLayoutManager:, nonatomic, retain) TKTonePickerTableViewCellLayoutManager *_tableViewCellLayoutManager;
+@property (setter=_setToneClassicsTableViewController:, nonatomic, retain) TKToneClassicsTableViewController *_toneClassicsTableViewController;
+@property (setter=_setTonePickerController:, nonatomic, retain) TKTonePickerController *_tonePickerController;
+@property (setter=_setVibrationPickerViewController:, nonatomic, retain) TKVibrationPickerViewController *_vibrationPickerViewController;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic, readonly) int alertType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSString *defaultToneIdentifier;
+@property (nonatomic) <TKTonePickerViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isMediaAtTop, nonatomic) BOOL mediaAtTop;
+@property (getter=isNoneAtTop, nonatomic) BOOL noneAtTop;
+@property (nonatomic, copy) NSString *noneString;
+@property (nonatomic, copy) NSNumber *selectedMediaIdentifier;
+@property (nonatomic, copy) NSString *selectedToneIdentifier;
+@property (nonatomic, copy) NSString *selectedVibrationIdentifier;
+@property (nonatomic) BOOL showsDefault;
+@property (nonatomic) BOOL showsMedia;
+@property (nonatomic) BOOL showsNone;
+@property (nonatomic) BOOL showsNothingSelected;
+@property (nonatomic) BOOL showsStoreButtonInNavigationBar;
+@property (nonatomic) BOOL showsVibrations;
+@property (nonatomic, retain) <TKTonePickerStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (unsigned int)_addMediaIdentifierToList:(id)arg1;
 - (id)_checkmarkImage;

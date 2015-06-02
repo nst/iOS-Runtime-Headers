@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSTrackListLinkCellConfiguration : SUItemCellConfiguration {
-}
+@interface MSTrackListLinkCellConfiguration : SUItemCellConfiguration
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 

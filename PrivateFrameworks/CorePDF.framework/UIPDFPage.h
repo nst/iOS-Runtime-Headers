@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableArray, NSString, UIImage, UIPDFDocument, UIPDFSelection;
-
 @interface UIPDFPage : NSObject {
     NSMutableArray *_annotations;
     struct CGPDFPage { } *_cgPage;
@@ -16,13 +14,13 @@
     NSString *_stringInReadingOrder;
 }
 
-@property(readonly) struct CGPDFPage { }* CGPage;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropBox;
-@property(readonly) UIPDFDocument * document;
-@property(retain) UIImage * pageImage;
-@property(readonly) unsigned int pageIndex;
-@property(readonly) unsigned int pageNumber;
-@property(retain) UIPDFSelection * selection;
+@property (readonly) struct CGPDFPage { }*CGPage;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropBox;
+@property (readonly) UIPDFDocument *document;
+@property (retain) UIImage *pageImage;
+@property (readonly) unsigned int pageIndex;
+@property (readonly) unsigned int pageNumber;
+@property (retain) UIPDFSelection *selection;
 
 - (struct CGPDFPage { }*)CGPage;
 - (void)addAnnotation:(id)arg1;

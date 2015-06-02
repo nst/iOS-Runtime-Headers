@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UIActivityIndicatorView, UILabel;
-
 @interface SKUILoadingView : UIView {
     SKUIColorScheme *_colorScheme;
     UILabel *_label;
     UIActivityIndicatorView *_spinner;
 }
 
-@property(copy) SKUIColorScheme * colorScheme;
-@property(copy) NSString * loadingText;
+@property (nonatomic, copy) SKUIColorScheme *colorScheme;
+@property (nonatomic, copy) NSString *loadingText;
 
 + (id)defaultLoadingTextWithClientContext:(id)arg1;
 

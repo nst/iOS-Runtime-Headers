@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSString;
-
 @interface YTSubscriptionsVideoDataSource : YTVideoDataSource {
     BOOL _requiresAuth;
     NSString *_subscriptionURL;

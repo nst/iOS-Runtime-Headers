@@ -31,7 +31,7 @@
     } _indexToClass;
 }
 
-+ (void)setIntializationHandler:(id)arg1;
++ (void)setIntializationHandler:(id /* block */)arg1;
 + (id)sharedRegistry;
 
 - (id).cxx_construct;

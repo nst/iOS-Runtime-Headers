@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSData;
-
 @interface RCWaveformSegment : NSObject <NSCoding> {
     NSData *_averagePowerLevelData;
     struct { 
@@ -12,9 +10,9 @@
     } _timeRange;
 }
 
-@property(readonly) const float* averagePowerLevels;
-@property(readonly) int averagePowerLevelsCount;
-@property(readonly) struct { double x1; double x2; } timeRange;
+@property (nonatomic, readonly) const float*averagePowerLevels;
+@property (nonatomic, readonly) int averagePowerLevelsCount;
+@property (nonatomic, readonly) struct { double x1; double x2; } timeRange;
 
 + (id)_discontinuityRepairedSegmentsByGrowingToFillGapsInSegments:(id)arg1;
 + (id)_mergedSegmentByFastMergingWithMergeableSegments:(id)arg1 mergedLevelsDuration:(double)arg2;

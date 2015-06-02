@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKProductPageViewController, SUBarButtonItem;
-
 @interface SKUIITunesStoreUIPageViewController : SUStorePageViewController {
     SUBarButtonItem *_cancelButtonItem;
     NSString *_cancelButtonTitle;
@@ -11,9 +9,9 @@
     BOOL _showsCancelButton;
 }
 
-@property(copy) NSString * cancelButtonTitle;
-@property SKProductPageViewController * productPageViewController;
-@property BOOL showsCancelButton;
+@property (nonatomic, copy) NSString *cancelButtonTitle;
+@property (nonatomic) SKProductPageViewController *productPageViewController;
+@property (nonatomic) BOOL showsCancelButton;
 
 - (void).cxx_destruct;
 - (void)_addCancelButtonToNavigationItem:(id)arg1;

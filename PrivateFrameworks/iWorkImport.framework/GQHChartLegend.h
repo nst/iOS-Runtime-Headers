@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHChartLegend : GQHChart {
-}
+@interface GQHChartLegend : GQHChart
 
 + (id)geometry:(id)arg1;
 + (int)handleFloatingLegend:(id)arg1 state:(id)arg2;

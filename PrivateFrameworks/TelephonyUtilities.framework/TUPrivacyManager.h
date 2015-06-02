@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUPrivacyManager : NSObject {
-}
+@interface TUPrivacyManager : NSObject
 
 + (id)sharedPrivacyManager;
 

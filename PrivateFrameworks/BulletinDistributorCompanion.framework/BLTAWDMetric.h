@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class AWDMetricContainer;
-
 @interface BLTAWDMetric : NSObject {
     id _metric;
     AWDMetricContainer *_metricContainer;
 }
 
-@property(retain,readonly) id metric;
+@property (nonatomic, readonly, retain) id metric;
 
 - (void).cxx_destruct;
 - (id)initWithMetricID:(unsigned long)arg1 class:(Class)arg2;

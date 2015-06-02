@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSArray, NSDate, NSString, _NMRSendCommandResultMessageProtobuf;
-
 @interface NMRSendCommandResultMessage : NSObject <NMRMediaRemoteProtobufCodable> {
     _NMRSendCommandResultMessageProtobuf *_protobuf;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int errorCode;
-@property(readonly) NSArray * handlerReturnStatuses;
-@property(readonly) unsigned int hash;
-@property(readonly) NSDate * serializationDate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int errorCode;
+@property (nonatomic, readonly) NSArray *handlerReturnStatuses;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDate *serializationDate;
+@property (readonly) Class superclass;
 
 + (id)messageWithErrorCode:(unsigned int)arg1 handlerReturnStatuses:(id)arg2;
 

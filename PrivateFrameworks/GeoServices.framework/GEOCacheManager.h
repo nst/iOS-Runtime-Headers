@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOCacheManaging>;
-
 @interface GEOCacheManager : NSObject {
     <GEOCacheManaging> *_proxy;
 }
@@ -13,10 +11,10 @@
 + (void)useLocalProxy;
 + (void)useRemoteProxy;
 
-- (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id)arg2;
+- (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (int)invalidationStateForPlace:(id)arg1;
-- (void)versionsForDomains:(id)arg1 handler:(id)arg2;
+- (void)versionsForDomains:(id)arg1 handler:(id /* block */)arg2;
 
 @end

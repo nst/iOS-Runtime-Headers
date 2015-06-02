@@ -8,9 +8,9 @@
     id _toValue;
 }
 
-@property(readonly) id fromValue;
-@property(readonly) BOOL isObjectTypeCGColor;
-@property(readonly) id toValue;
+@property (nonatomic, readonly) id fromValue;
+@property (nonatomic, readonly) BOOL isObjectTypeCGColor;
+@property (nonatomic, readonly) id toValue;
 
 - (id)fromValue;
 - (id)initWithAnimation:(id)arg1;

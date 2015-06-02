@@ -2,29 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSCachedURLResponse, NSData, NSHTTPURLResponse, NSMutableData, NSMutableSet, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, NSURL, NSURLRequest, SSMetricsPageEvent, SSVURLDataConsumer;
-
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
     NSMutableData *_dataBuffer;
     SSVURLDataConsumer *_dataConsumer;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _expiredOutputBlock;
-
+    id /* block */ _expiredOutputBlock;
     BOOL _iTunesStoreRequest;
     NSData *_inputData;
     SSMetricsPageEvent *_metricsPageEvent;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _outputBlock;
-
+    id /* block */ _outputBlock;
     NSMutableSet *_protocolRedirectURLs;
     BOOL _recordsMetrics;
     NSURL *_redirectURL;
@@ -37,22 +23,22 @@
     NSURLRequest *_urlRequest;
 }
 
-@property(getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
-@property(readonly) NSURL * URL;
-@property(readonly) NSURLRequest * URLRequest;
-@property(readonly) NSCachedURLResponse * cachedURLResponse;
-@property(retain) SSVURLDataConsumer * dataConsumer;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id expiredOutputBlock;
-@property(readonly) unsigned int hash;
-@property(readonly) SSMetricsPageEvent * metricsPageEvent;
-@property(copy) id outputBlock;
+@property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property (readonly) NSURL *URL;
+@property (readonly) NSURLRequest *URLRequest;
+@property (readonly) NSCachedURLResponse *cachedURLResponse;
+@property (retain) SSVURLDataConsumer *dataConsumer;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (copy) id /* block */ expiredOutputBlock;
+@property (readonly) unsigned int hash;
+@property (readonly) SSMetricsPageEvent *metricsPageEvent;
+@property (copy) id /* block */ outputBlock;
 @property BOOL recordsMetrics;
-@property(copy) NSString * referrerApplicationName;
-@property(copy) NSString * referrerURLString;
-@property(copy) NSString * storeFrontSuffix;
-@property(readonly) Class superclass;
+@property (copy) NSString *referrerApplicationName;
+@property (copy) NSString *referrerURLString;
+@property (copy) NSString *storeFrontSuffix;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -78,9 +64,9 @@
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)dataConsumer;
-- (void)dispatchAsync:(id)arg1;
-- (void)dispatchSync:(id)arg1;
-- (id)expiredOutputBlock;
+- (void)dispatchAsync:(id /* block */)arg1;
+- (void)dispatchSync:(id /* block */)arg1;
+- (id /* block */)expiredOutputBlock;
 - (id)init;
 - (id)initWithData:(id)arg1 fromOperation:(id)arg2;
 - (id)initWithURL:(id)arg1;
@@ -89,14 +75,14 @@
 - (BOOL)isITunesStoreRequest;
 - (void)main;
 - (id)metricsPageEvent;
-- (id)outputBlock;
+- (id /* block */)outputBlock;
 - (BOOL)recordsMetrics;
 - (id)referrerApplicationName;
 - (id)referrerURLString;
 - (void)setDataConsumer:(id)arg1;
-- (void)setExpiredOutputBlock:(id)arg1;
+- (void)setExpiredOutputBlock:(id /* block */)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
-- (void)setOutputBlock:(id)arg1;
+- (void)setOutputBlock:(id /* block */)arg1;
 - (void)setRecordsMetrics:(BOOL)arg1;
 - (void)setReferrerApplicationName:(id)arg1;
 - (void)setReferrerURLString:(id)arg1;

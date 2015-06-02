@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FindMyDevice.framework/FindMyDevice
  */
 
-@class NSString;
-
 @interface FMDLostModeInfo : NSObject <NSSecureCoding> {
     BOOL _lostModeEnabled;
     NSString *_message;
     NSString *_phoneNumber;
 }
 
-@property BOOL lostModeEnabled;
-@property(retain) NSString * message;
-@property(retain) NSString * phoneNumber;
+@property (nonatomic) BOOL lostModeEnabled;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) NSString *phoneNumber;
 
 + (BOOL)supportsSecureCoding;
 

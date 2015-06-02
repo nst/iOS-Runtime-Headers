@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class _MKMapLayerHostingView;
-
 @interface _MKMapLayerHostingLayer : CALayer {
     _MKMapLayerHostingView *_hostView;
 }
 
-@property _MKMapLayerHostingView * hostView;
+@property (nonatomic) _MKMapLayerHostingView *hostView;
 
 - (void).cxx_destruct;
 - (id)hostView;

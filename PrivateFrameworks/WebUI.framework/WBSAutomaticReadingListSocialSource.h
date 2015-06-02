@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString, NSTimer, NSXPCConnection;
-
 @interface WBSAutomaticReadingListSocialSource : NSObject {
     NSArray *_accounts;
     NSMutableDictionary *_accountsToNumberOfRequestsInProgressForOlderItems;
@@ -16,18 +14,18 @@
     NSXPCConnection *_socialHelperConnection;
 }
 
-@property(readonly) NSString * accountTypeIdentifier;
-@property(copy) NSArray * accounts;
-@property(retain) NSDictionary * accountsToTrackedRecordsInfoMap;
-@property(getter=isActive,readonly) BOOL active;
-@property(copy,readonly) NSArray * activeAccounts;
-@property(retain) Class fallbackIconProviderClass;
-@property(retain) NSTimer * minimumTimeBetweenRequestsTimer;
-@property unsigned int numberOfRequestsInProgressForNewerItems;
-@property(readonly) id serviceImage;
-@property(readonly) NSString * serviceName;
-@property(readonly) NSString * serviceType;
-@property(retain) NSXPCConnection * socialHelperConnection;
+@property (nonatomic, readonly) NSString *accountTypeIdentifier;
+@property (nonatomic, copy) NSArray *accounts;
+@property (nonatomic, retain) NSDictionary *accountsToTrackedRecordsInfoMap;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly, copy) NSArray *activeAccounts;
+@property (nonatomic, retain) Class fallbackIconProviderClass;
+@property (nonatomic, retain) NSTimer *minimumTimeBetweenRequestsTimer;
+@property (nonatomic) unsigned int numberOfRequestsInProgressForNewerItems;
+@property (nonatomic, readonly) id serviceImage;
+@property (nonatomic, readonly) NSString *serviceName;
+@property (nonatomic, readonly) NSString *serviceType;
+@property (nonatomic, retain) NSXPCConnection *socialHelperConnection;
 
 + (id)allSocialSources;
 + (id)itemsFromAllSocialSourcesByDate;
@@ -44,7 +42,7 @@
 - (id)_findAccounts;
 - (void)_invalidateSocialHelperConnectionIfPossible;
 - (void)_minimumTimeBetweenRequestsTimerFired:(id)arg1;
-- (void)_performRequestForMoreItemsWithAge:(int)arg1 accountIdentifier:(id)arg2 successHandler:(id)arg3;
+- (void)_performRequestForMoreItemsWithAge:(int)arg1 accountIdentifier:(id)arg2 successHandler:(id /* block */)arg3;
 - (void)_requestOlderItemsIfNecessaryToReachMaximumForAccountWithIdentifier:(id)arg1;
 - (id)accountTypeIdentifier;
 - (id)accounts;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class FBSContext;
-
 @interface FBSWorkspaceSceneContextEvent : FBSWorkspaceSceneEvent {
     FBSContext *_context;
     BOOL _orderOut;
 }
 
-@property(retain) FBSContext * context;
-@property BOOL orderOut;
+@property (nonatomic, retain) FBSContext *context;
+@property (nonatomic) BOOL orderOut;
 
 - (id)context;
 - (void)dealloc;

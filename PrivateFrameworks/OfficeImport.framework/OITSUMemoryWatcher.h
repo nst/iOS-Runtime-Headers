@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUFlushingManager;
-
 @interface OITSUMemoryWatcher : NSObject {
     OITSUFlushingManager *_flushingManager;
     BOOL _going;

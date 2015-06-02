@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CIGlassDistortion : CIFilter {
     CIVector *inputCenter;
     CIImage *inputImage;
@@ -11,10 +9,10 @@
     CIImage *inputTexture;
 }
 
-@property(retain) CIVector * inputCenter;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputScale;
-@property(retain) CIImage * inputTexture;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputScale;
+@property (nonatomic, retain) CIImage *inputTexture;
 
 + (id)customAttributes;
 

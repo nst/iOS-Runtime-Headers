@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLCFNotificationOperatorComposition;
-
 @interface PLAccessibilityAgent : PLAgent {
     PLCFNotificationOperatorComposition *_notificationBackgroundContrastChanged;
     PLCFNotificationOperatorComposition *_notificationReduceMotionChanged;
 }
 
-@property(readonly) PLCFNotificationOperatorComposition * notificationBackgroundContrastChanged;
-@property(readonly) PLCFNotificationOperatorComposition * notificationReduceMotionChanged;
+@property (readonly) PLCFNotificationOperatorComposition *notificationBackgroundContrastChanged;
+@property (readonly) PLCFNotificationOperatorComposition *notificationReduceMotionChanged;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitions;

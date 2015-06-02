@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData;
-
 @interface NPKProtoRemoteAdminPerformResponse : PBCodable <NSCopying> {
     NSData *_responseDictionary;
     unsigned int _resultCode;
 }
 
-@property(readonly) BOOL hasResponseDictionary;
-@property(retain) NSData * responseDictionary;
-@property unsigned int resultCode;
+@property (nonatomic, readonly) BOOL hasResponseDictionary;
+@property (nonatomic, retain) NSData *responseDictionary;
+@property (nonatomic) unsigned int resultCode;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrackInspector, AVWeakReference;
-
 @interface AVAssetTrackInternal : NSObject {
     AVWeakReference *assetWeakReference;
     AVAssetTrackInspector *trackInspector;

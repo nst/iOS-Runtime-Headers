@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSManagedObjectID;
-
 @interface PLLoadRequestKey : NSObject <NSCopying> {
     unsigned int _hash;
     NSManagedObjectID *_objectID;

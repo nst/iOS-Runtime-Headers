@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSError, NSURL;
-
 @interface CAMLParser : NSObject {
     struct _CAMLParserData { } *_data;
 }
 
-@property(retain) NSURL * baseURL;
+@property (retain) NSURL *baseURL;
 @property id delegate;
-@property(readonly) NSError * error;
-@property(readonly) id result;
+@property (readonly) NSError *error;
+@property (readonly) id result;
 
 + (id)parseContentsOfURL:(id)arg1;
 + (id)parser;

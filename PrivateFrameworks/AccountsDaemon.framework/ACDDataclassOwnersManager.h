@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class <ACDDataclassOwnersManagerProtocol>, NSXPCConnection;
-
 @interface ACDDataclassOwnersManager : NSObject {
     NSXPCConnection *_connection;
     <ACDDataclassOwnersManagerProtocol> *_remoteDOM;

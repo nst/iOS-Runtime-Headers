@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface __AXVisualAlertSBLockScreenNotificationListController_super : UIAccessibilitySafeCategory {
-}
+@interface __AXVisualAlertSBLockScreenNotificationListController_super : UIAccessibilitySafeCategory
 
 @end

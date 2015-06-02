@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class _IDSContinuity;
-
 @interface IDSContinuity : NSObject {
     _IDSContinuity *_internal;
 }
 
-@property(readonly) int state;
+@property (readonly) int state;
 
 - (void)connectToPeer:(id)arg1;
 - (void)dealloc;

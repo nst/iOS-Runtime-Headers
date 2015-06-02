@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPProtectionInfo, CKDPShareIdentifier, NSData, NSMutableArray, NSString;
-
 @interface CKDPShare : PBCodable <NSCopying> {
     NSString *_etag;
     struct { 
@@ -19,23 +17,23 @@
     NSString *_shortTokenRoutingKey;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasInternalAppSpecificMetadata;
-@property(readonly) BOOL hasInvitedPcs;
-@property BOOL hasPublicAccess;
-@property(readonly) BOOL hasSelfAddedPcs;
-@property(readonly) BOOL hasShareId;
-@property(readonly) BOOL hasShortTokenHash;
-@property(readonly) BOOL hasShortTokenRoutingKey;
-@property(retain) NSData * internalAppSpecificMetadata;
-@property(retain) CKDPProtectionInfo * invitedPcs;
-@property(retain) NSMutableArray * participants;
-@property int publicAccess;
-@property(retain) CKDPProtectionInfo * selfAddedPcs;
-@property(retain) CKDPShareIdentifier * shareId;
-@property(retain) NSData * shortTokenHash;
-@property(retain) NSString * shortTokenRoutingKey;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasInternalAppSpecificMetadata;
+@property (nonatomic, readonly) BOOL hasInvitedPcs;
+@property (nonatomic) BOOL hasPublicAccess;
+@property (nonatomic, readonly) BOOL hasSelfAddedPcs;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic, readonly) BOOL hasShortTokenRoutingKey;
+@property (nonatomic, retain) NSData *internalAppSpecificMetadata;
+@property (nonatomic, retain) CKDPProtectionInfo *invitedPcs;
+@property (nonatomic, retain) NSMutableArray *participants;
+@property (nonatomic) int publicAccess;
+@property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
+@property (nonatomic, retain) NSData *shortTokenHash;
+@property (nonatomic, retain) NSString *shortTokenRoutingKey;
 
 - (void).cxx_destruct;
 - (void)addParticipant:(id)arg1;

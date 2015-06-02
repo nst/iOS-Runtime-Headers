@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString, NSURL;
-
 @interface SSVServerAuthenticateResponse : NSObject <SSXPCCoding> {
     NSNumber *_authenticatedAccountIdentifier;
     int _performedButtonIndex;
@@ -11,14 +9,14 @@
     int _selectedButtonIndex;
 }
 
-@property(copy) NSNumber * authenticatedAccountIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int performedButtonIndex;
-@property(copy) NSURL * redirectURL;
-@property int selectedButtonIndex;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *authenticatedAccountIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int performedButtonIndex;
+@property (nonatomic, copy) NSURL *redirectURL;
+@property (nonatomic) int selectedButtonIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)authenticatedAccountIdentifier;

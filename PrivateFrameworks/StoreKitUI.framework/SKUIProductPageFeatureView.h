@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIColorScheme, UIImage, UIImageView, UILabel;
-
 @interface SKUIProductPageFeatureView : UIView {
     SKUIColorScheme *_colorScheme;
     UIImageView *_iconView;
@@ -11,10 +9,10 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property(copy) UIImage * icon;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, copy) UIImage *icon;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)colorScheme;

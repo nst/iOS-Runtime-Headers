@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecord, CKRecordID, NSData, NSDate, NSNumber, NSString, NSURL;
-
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
     int _arrayIndex;
     NSString *_assetHandleUUID;
@@ -35,38 +33,38 @@
     NSData *_wrappedAssetKey;
 }
 
-@property int arrayIndex;
-@property(retain) NSString * assetHandleUUID;
-@property(retain) NSData * assetKey;
-@property(copy) NSData * authRequest;
-@property(copy) NSString * authToken;
-@property(retain) NSURL * contentBaseURL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSNumber * deviceID;
-@property(retain) NSString * downloadBaseURL;
-@property(retain) NSURL * downloadURL;
-@property(retain) NSDate * downloadURLExpiration;
-@property BOOL downloaded;
-@property(readonly) NSNumber * fileID;
-@property(copy) NSURL * fileURL;
-@property(retain) NSNumber * generationCountToSave;
-@property BOOL hasSize;
-@property(readonly) unsigned int hash;
-@property(copy) NSData * inlineData;
-@property(retain) NSString * owner;
-@property CKRecord * record;
-@property(retain) CKRecordID * recordID;
-@property(copy) NSString * recordKey;
-@property(retain) NSData * referenceSignature;
-@property(retain) NSString * requestor;
-@property(copy) NSData * signature;
-@property unsigned long long size;
-@property(readonly) Class superclass;
-@property(copy) NSString * uploadReceipt;
-@property BOOL uploaded;
-@property BOOL wasCached;
-@property(retain) NSData * wrappedAssetKey;
+@property (nonatomic) int arrayIndex;
+@property (nonatomic, retain) NSString *assetHandleUUID;
+@property (nonatomic, retain) NSData *assetKey;
+@property (nonatomic, copy) NSData *authRequest;
+@property (nonatomic, copy) NSString *authToken;
+@property (nonatomic, retain) NSURL *contentBaseURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSNumber *deviceID;
+@property (nonatomic, retain) NSString *downloadBaseURL;
+@property (nonatomic, retain) NSURL *downloadURL;
+@property (nonatomic, retain) NSDate *downloadURLExpiration;
+@property (nonatomic) BOOL downloaded;
+@property (nonatomic, readonly) NSNumber *fileID;
+@property (nonatomic, copy) NSURL *fileURL;
+@property (nonatomic, retain) NSNumber *generationCountToSave;
+@property (nonatomic) BOOL hasSize;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSData *inlineData;
+@property (nonatomic, retain) NSString *owner;
+@property (nonatomic) CKRecord *record;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, copy) NSString *recordKey;
+@property (nonatomic, retain) NSData *referenceSignature;
+@property (nonatomic, retain) NSString *requestor;
+@property (nonatomic, copy) NSData *signature;
+@property (nonatomic) unsigned long long size;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *uploadReceipt;
+@property (nonatomic) BOOL uploaded;
+@property (nonatomic) BOOL wasCached;
+@property (nonatomic, retain) NSData *wrappedAssetKey;
 
 + (id)assetWithFileURL:(id)arg1;
 + (BOOL)supportsSecureCoding;

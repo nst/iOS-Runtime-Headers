@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel;
-
 @interface KeychainSyncHeaderView : UIView <PSHeaderFooterView> {
     UILabel *_detailLabel;
     UILabel *_titleLabel;
     BOOL _usesCompactLayout;
 }
 
-@property BOOL usesCompactLayout;
+@property (nonatomic) BOOL usesCompactLayout;
 
 - (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;

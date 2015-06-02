@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPlayReceiver.framework/AirPlayReceiver
  */
 
-@class CALayer, MPDocument, MRMarimbaLayer, MediaControlServer, NSData, NSDictionary, NSLock, NSMutableDictionary, NSString;
-
 @interface AirPlayLocalSlideshow : NSObject <MPAssetKeyDelegate> {
     NSMutableDictionary *_assets;
     BOOL _endPending;
@@ -19,16 +17,16 @@
     CALayer *_presentationLayer;
     MediaControlServer *_server;
     unsigned int _serverSessionID;
-    unsigned char _sessionUUID[16];
+    unsigned char _sessionUUID;
     NSDictionary *_settings;
     double _startTime;
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)slideshowFeaturesWithLanguage:(id)arg1;
 

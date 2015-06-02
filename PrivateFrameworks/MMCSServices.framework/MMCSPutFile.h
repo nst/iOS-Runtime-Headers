@@ -2,31 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MMCSServices.framework/MMCSServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface MMCSPutFile : MMCSSimpleFile {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateBlock;
-
+    id /* block */ _block;
+    id /* block */ _updateBlock;
 }
 
-@property(copy) id completionBlock;
-@property(copy) id progressUpdateBlock;
+@property (copy) id /* block */ completionBlock;
+@property (copy) id /* block */ progressUpdateBlock;
 
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)dealloc;
-- (id)progressUpdateBlock;
-- (void)setCompletionBlock:(id)arg1;
+- (id /* block */)progressUpdateBlock;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setProgress:(double)arg1;
-- (void)setProgressUpdateBlock:(id)arg1;
+- (void)setProgressUpdateBlock:(id /* block */)arg1;
 
 @end

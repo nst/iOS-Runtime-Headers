@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIModalDocumentDelegate>, <SKUIModalSourceViewProvider>, <UINavigationControllerDelegate>, NSArray, NSMutableArray, NSString, SKUIClientContext, SKUIOverlayContainerViewController, UINavigationController, UIPopoverController, UIViewController;
-
 @interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, SKUIGiftViewControllerDelegate, UIPopoverControllerDelegate> {
     SKUIClientContext *_clientContext;
     NSMutableArray *_composeReviewViewControllers;
@@ -18,16 +16,16 @@
     NSMutableArray *_stackItems;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIModalDocumentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * documents;
-@property(readonly) unsigned int hash;
-@property <SKUIModalSourceViewProvider> * modalSourceViewProvider;
-@property <UINavigationControllerDelegate> * navigationControllerDelegate;
-@property(retain) UIViewController * rootViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIModalDocumentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *documents;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <SKUIModalSourceViewProvider> *modalSourceViewProvider;
+@property (nonatomic) <UINavigationControllerDelegate> *navigationControllerDelegate;
+@property (nonatomic, retain) UIViewController *rootViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(BOOL)arg2;

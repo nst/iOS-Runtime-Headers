@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class NSString;
-
 @interface FlickrPhotoSet : NSObject {
     long long _farmID;
     long long _identifier;
@@ -14,13 +12,13 @@
     NSString *_title;
 }
 
-@property long long farmID;
-@property long long identifier;
-@property(copy) NSString * photoSetDescription;
-@property long long primaryPhotoID;
-@property(copy) NSString * secret;
-@property long long serverID;
-@property(copy) NSString * title;
+@property (nonatomic) long long farmID;
+@property (nonatomic) long long identifier;
+@property (nonatomic, copy) NSString *photoSetDescription;
+@property (nonatomic) long long primaryPhotoID;
+@property (nonatomic, copy) NSString *secret;
+@property (nonatomic) long long serverID;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)description;

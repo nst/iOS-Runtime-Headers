@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSKDocumentRoot;
-
 @interface TSKDocumentSelection : TSKSelection {
     TSKDocumentRoot *mDocumentRoot;
 }
 
-@property(readonly) TSKDocumentRoot * documentRoot;
+@property (nonatomic, readonly) TSKDocumentRoot *documentRoot;
 
 + (Class)archivedSelectionClass;
 

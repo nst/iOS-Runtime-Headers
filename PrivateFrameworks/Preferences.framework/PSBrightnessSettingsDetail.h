@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
+@interface PSBrightnessSettingsDetail : NSObject <PSSettingsDetail>
 
-@interface PSBrightnessSettingsDetail : NSObject <PSSettingsDetail> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)autoBrightnessEnabled;
 + (void)beginBrightnessAdjustmentTransaction;
-+ (void)beginObservingExternalBrightnessChanges:(id)arg1 changedAction:(id)arg2;
++ (void)beginObservingExternalBrightnessChanges:(id /* block */)arg1 changedAction:(id /* block */)arg2;
 + (float)currentValue;
 + (BOOL)deviceSupportsAutoBrightness;
 + (void)endBrightnessAdjustmentTransaction;

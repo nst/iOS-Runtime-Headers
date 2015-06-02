@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSMutableArray, NSString, RUAddSeedViewController, RUMetricsController, RUParallelScrollView, RUStationTuningView, RadioStation, UIAlertView, UIImage, UITableViewCell, UITextField, UIView, _RUStationSettingsTableView;
-
 @interface RUStationSettingsViewController : UIViewController <RUAddSeedViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIImage *_addLikeBanImage;
     RUAddSeedViewController *_addSeedViewController;
@@ -27,14 +25,14 @@
     int _tuningRow;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_addLikeBanImage;
-- (void)_addMetricsControllerOperationBlock:(id)arg1;
+- (void)_addMetricsControllerOperationBlock:(id /* block */)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (int)_countOfSettingsSections;
@@ -65,7 +63,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)contentScrollView;
 - (void)dealloc;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)initWithStation:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;

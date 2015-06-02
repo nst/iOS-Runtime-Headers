@@ -6,7 +6,7 @@
     int _type;
 }
 
-@property(readonly) int type;
+@property (nonatomic, readonly) int type;
 
 + (Class)classForDisplayProfileType:(int)arg1;
 + (id)displayProfileOfType:(int)arg1 withDictionary:(id)arg2 bundle:(id)arg3;

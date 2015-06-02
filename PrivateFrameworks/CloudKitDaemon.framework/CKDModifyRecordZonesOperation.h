@@ -2,41 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface CKDModifyRecordZonesOperation : CKDDatabaseOperation {
     BOOL _allowDefaultZoneSave;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deleteCompletionBlock;
-
+    id /* block */ _deleteCompletionBlock;
     BOOL _markZonesAsUserPurged;
     int _numZoneSaveAttempts;
     NSMutableDictionary *_pcsOplockFailureCountByZoneID;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneID;
     NSMutableArray *_recordZonesToSave;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveCompletionBlock;
-
+    id /* block */ _saveCompletionBlock;
 }
 
-@property BOOL allowDefaultZoneSave;
-@property(copy) id deleteCompletionBlock;
-@property BOOL markZonesAsUserPurged;
-@property int numZoneSaveAttempts;
-@property(retain) NSMutableDictionary * pcsOplockFailureCountByZoneID;
-@property(retain) NSArray * recordZoneIDsToDelete;
-@property(retain) NSMutableDictionary * recordZonesByZoneID;
-@property(retain) NSMutableArray * recordZonesToSave;
-@property(copy) id saveCompletionBlock;
+@property (nonatomic) BOOL allowDefaultZoneSave;
+@property (nonatomic, copy) id /* block */ deleteCompletionBlock;
+@property (nonatomic) BOOL markZonesAsUserPurged;
+@property (nonatomic) int numZoneSaveAttempts;
+@property (nonatomic, retain) NSMutableDictionary *pcsOplockFailureCountByZoneID;
+@property (nonatomic, retain) NSArray *recordZoneIDsToDelete;
+@property (nonatomic, retain) NSMutableDictionary *recordZonesByZoneID;
+@property (nonatomic, retain) NSMutableArray *recordZonesToSave;
+@property (nonatomic, copy) id /* block */ saveCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_checkAndPrepareZones;
@@ -48,7 +34,7 @@
 - (BOOL)_saveZonesToServer;
 - (void)_sendErrorForFailedZones;
 - (BOOL)allowDefaultZoneSave;
-- (id)deleteCompletionBlock;
+- (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;
@@ -59,15 +45,15 @@
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesByZoneID;
 - (id)recordZonesToSave;
-- (id)saveCompletionBlock;
+- (id /* block */)saveCompletionBlock;
 - (void)setAllowDefaultZoneSave:(BOOL)arg1;
-- (void)setDeleteCompletionBlock:(id)arg1;
+- (void)setDeleteCompletionBlock:(id /* block */)arg1;
 - (void)setMarkZonesAsUserPurged:(BOOL)arg1;
 - (void)setNumZoneSaveAttempts:(int)arg1;
 - (void)setPcsOplockFailureCountByZoneID:(id)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZonesByZoneID:(id)arg1;
 - (void)setRecordZonesToSave:(id)arg1;
-- (void)setSaveCompletionBlock:(id)arg1;
+- (void)setSaveCompletionBlock:(id /* block */)arg1;
 
 @end

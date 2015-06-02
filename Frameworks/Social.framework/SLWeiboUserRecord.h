@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSNumber, NSURL;
-
 @interface SLWeiboUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
     NSURL *_objectID;
     NSNumber *_uid;
 }
 
-@property(retain) NSURL * objectID;
-@property(copy) NSNumber * uid;
+@property (nonatomic, retain) NSURL *objectID;
+@property (nonatomic, copy) NSNumber *uid;
 
 + (BOOL)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;

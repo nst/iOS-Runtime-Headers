@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, UIImageView, UILabel;
-
 @interface SKUIProductPagePlaceholderView : UIView {
     UIImageView *_imageView;
     UILabel *_label;
     UIColor *_textColor;
 }
 
-@property(retain) UIColor * textColor;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)initWithPlaceholderString:(id)arg1 isPad:(BOOL)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UISearchBarContainerView : UIView {
     int _resizingMask;
     UIView *_subview;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSPhoneNumberCheckingResult : NSTextCheckingResult {
     NSString *_phoneNumber;
     struct _NSRange { 
@@ -13,7 +11,7 @@
     id _underlyingResult;
 }
 
-@property(readonly) void* underlyingResult;
+@property (readonly) void*underlyingResult;
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UIColor;
-
 @interface SKUIStorePagePinnedBackdropLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor *_backdropColor;
     NSString *_backdropGroupName;
@@ -12,11 +10,11 @@
     float _transitionProgress;
 }
 
-@property(retain) UIColor * backdropColor;
-@property(copy) NSString * backdropGroupName;
-@property int backdropStyle;
-@property BOOL hidesBackdropView;
-@property float transitionProgress;
+@property (nonatomic, retain) UIColor *backdropColor;
+@property (nonatomic, copy) NSString *backdropGroupName;
+@property (nonatomic) int backdropStyle;
+@property (nonatomic) BOOL hidesBackdropView;
+@property (nonatomic) float transitionProgress;
 
 - (void).cxx_destruct;
 - (id)backdropColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBTree, UITouch;
-
 @interface UIKeyboardTouchInfo : NSObject {
     BOOL _dragged;
     struct CGPoint { 
@@ -23,16 +21,16 @@
     UITouch *_touch;
 }
 
-@property BOOL dragged;
-@property struct CGPoint { float x1; float x2; } initialDragPoint;
-@property int initialKeyState;
-@property struct CGPoint { float x1; float x2; } initialPoint;
-@property(retain) UIKBTree * key;
-@property(retain) UIKBTree * keyplane;
-@property BOOL maySuppressUpAction;
-@property(retain) UIKBTree * slidOffKey;
-@property int stage;
-@property(retain) UITouch * touch;
+@property (nonatomic) BOOL dragged;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialDragPoint;
+@property (nonatomic) int initialKeyState;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialPoint;
+@property (nonatomic, retain) UIKBTree *key;
+@property (nonatomic, retain) UIKBTree *keyplane;
+@property (nonatomic) BOOL maySuppressUpAction;
+@property (nonatomic, retain) UIKBTree *slidOffKey;
+@property (nonatomic) int stage;
+@property (nonatomic, retain) UITouch *touch;
 
 - (void)dealloc;
 - (BOOL)dragged;

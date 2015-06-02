@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtworkList, SKUILink;
-
 @interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
     NSString *_accessibilityLabel;
     int _alignment;
@@ -19,22 +17,22 @@
     int _titleFontWeight;
 }
 
-@property(readonly) NSString * accessibilityLabel;
-@property(readonly) int alignment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUILink * link;
-@property(readonly) int mediaAppearance;
-@property(readonly) long long mediaIdentifier;
-@property(readonly) int mediaType;
-@property(readonly) NSString * mediaURLString;
-@property(readonly) Class superclass;
-@property(readonly) SKUIArtworkList * thumbnailArtworkList;
-@property(readonly) NSString * title;
-@property(readonly) float titleFontSize;
-@property(readonly) int titleFontWeight;
+@property (nonatomic, readonly) NSString *accessibilityLabel;
+@property (nonatomic, readonly) int alignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUILink *link;
+@property (nonatomic, readonly) int mediaAppearance;
+@property (nonatomic, readonly) long long mediaIdentifier;
+@property (nonatomic, readonly) int mediaType;
+@property (nonatomic, readonly) NSString *mediaURLString;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUIArtworkList *thumbnailArtworkList;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) float titleFontSize;
+@property (nonatomic, readonly) int titleFontWeight;
 
 - (void).cxx_destruct;
 - (id)accessibilityLabel;

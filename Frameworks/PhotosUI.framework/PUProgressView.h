@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIActivityIndicatorView;
-
 @interface PUProgressView : UIView {
     UIActivityIndicatorView *_spinner;
     int _style;
 }
 
-@property(readonly) int style;
+@property (readonly) int style;
 
 - (void).cxx_destruct;
 - (void)hideAnimated:(BOOL)arg1;

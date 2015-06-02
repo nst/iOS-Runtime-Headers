@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKDDeviceManager : NSObject {
     NSMutableDictionary *_callbackGroups;
     NSMutableDictionary *_deviceIDs;
@@ -12,11 +10,11 @@
     NSMutableDictionary *_requests;
 }
 
-@property(retain) NSMutableDictionary * callbackGroups;
-@property(retain) NSMutableDictionary * deviceIDs;
-@property(readonly) NSString * deviceIdentifier;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableDictionary * requests;
+@property (nonatomic, retain) NSMutableDictionary *callbackGroups;
+@property (nonatomic, retain) NSMutableDictionary *deviceIDs;
+@property (nonatomic, readonly) NSString *deviceIdentifier;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableDictionary *requests;
 
 + (id)sharedManager;
 
@@ -28,7 +26,7 @@
 - (id)callbackGroups;
 - (id)deviceIDs;
 - (id)deviceIdentifier;
-- (void)fetchDeviceIdentifierForContext:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)fetchDeviceIdentifierForContext:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)queue;
 - (id)requests;

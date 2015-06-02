@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGWords : NSObject {
-}
+@interface SGWords : NSObject
 
 + (id)normalizeWord:(id)arg1;
 

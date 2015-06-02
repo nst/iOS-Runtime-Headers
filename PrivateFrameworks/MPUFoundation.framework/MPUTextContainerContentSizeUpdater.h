@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class <MPUTextContainer>, NSString;
-
 @interface MPUTextContainerContentSizeUpdater : NSObject {
     NSString *_lastSeenPreferredContentSizeCategory;
     <MPUTextContainer> *_textContainer;
 }
 
-@property(retain) NSString * lastSeenPreferredContentSizeCategory;
-@property <MPUTextContainer> * textContainer;
+@property (nonatomic, retain) NSString *lastSeenPreferredContentSizeCategory;
+@property (nonatomic) <MPUTextContainer> *textContainer;
 
 - (void).cxx_destruct;
 - (void)_preferredContentSizeCategoryDidChange:(id)arg1;

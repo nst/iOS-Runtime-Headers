@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUScrollViewSpeedometerDelegate>, NSTimer, UIScrollView;
-
 @interface PUScrollViewSpeedometer : NSObject {
     struct CGPoint { 
         float x; 
@@ -31,20 +29,20 @@
     } _scrollSpeed;
 }
 
-@property(setter=_setLastContentOffset:) struct CGPoint { float x1; float x2; } _lastContentOffset;
-@property(setter=_setLastContentSize:) struct CGSize { float x1; float x2; } _lastContentSize;
-@property(setter=_setLastScrollView:) UIScrollView * _lastScrollView;
-@property(setter=_setLastTime:) double _lastTime;
-@property(setter=_setNextRegime:) int _nextRegime;
-@property(setter=_setNextRegimeCount:) int _nextRegimeCount;
-@property(setter=_setTimeoutTimer:,retain) NSTimer * _timeoutTimer;
-@property <PUScrollViewSpeedometerDelegate> * delegate;
-@property float fastLowerThreshold;
-@property float fastUpperThreshold;
-@property float mediumLowerThreshold;
-@property float mediumUpperThreshold;
-@property int regime;
-@property struct CGPoint { float x1; float x2; } scrollSpeed;
+@property (setter=_setLastContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _lastContentOffset;
+@property (setter=_setLastContentSize:, nonatomic) struct CGSize { float x1; float x2; } _lastContentSize;
+@property (setter=_setLastScrollView:, nonatomic) UIScrollView *_lastScrollView;
+@property (setter=_setLastTime:, nonatomic) double _lastTime;
+@property (setter=_setNextRegime:, nonatomic) int _nextRegime;
+@property (setter=_setNextRegimeCount:, nonatomic) int _nextRegimeCount;
+@property (setter=_setTimeoutTimer:, nonatomic, retain) NSTimer *_timeoutTimer;
+@property (nonatomic) <PUScrollViewSpeedometerDelegate> *delegate;
+@property (nonatomic) float fastLowerThreshold;
+@property (nonatomic) float fastUpperThreshold;
+@property (nonatomic) float mediumLowerThreshold;
+@property (nonatomic) float mediumUpperThreshold;
+@property (nonatomic) int regime;
+@property (nonatomic) struct CGPoint { float x1; float x2; } scrollSpeed;
 
 - (void).cxx_destruct;
 - (void)_handleTimeoutTimer:(id)arg1;

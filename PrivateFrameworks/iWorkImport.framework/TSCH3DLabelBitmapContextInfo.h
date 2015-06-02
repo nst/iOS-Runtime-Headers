@@ -8,9 +8,9 @@
     BOOL mIsPrinting;
 }
 
-@property(readonly) BOOL hasSuppressedBackgrounds;
-@property(readonly) BOOL isPDF;
-@property(readonly) BOOL isPrinting;
+@property (nonatomic, readonly) BOOL hasSuppressedBackgrounds;
+@property (nonatomic, readonly) BOOL isPDF;
+@property (nonatomic, readonly) BOOL isPrinting;
 
 + (id)context;
 + (id)contextInfoForScene:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, UIScrollView, UIView, WKWebView;
-
 @interface WKPDFView : UIView <UIPDFAnnotationControllerDelegate, UIPDFPageViewDelegate, WKActionSheetAssistantDelegate, WKWebViewContentProvider> {
     struct RetainPtr<WKActionSheetAssistant> { 
         void *m_ptr; 
@@ -76,19 +74,19 @@
     WKWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGPDFDocument { }* pdfDocument;
-@property(readonly) NSString * suggestedFilename;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGPDFDocument { }*pdfDocument;
+@property (nonatomic, readonly) NSString *suggestedFilename;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_URLForLinkAnnotation:(id)arg1;
 - (void)_clearPages;
 - (void)_computePageAndDocumentFrames;
-- (void)_highlightLinkAnnotation:(id)arg1 forDuration:(double)arg2 completionHandler:(id)arg3;
+- (void)_highlightLinkAnnotation:(id)arg1 forDuration:(double)arg2 completionHandler:(id /* block */)arg3;
 - (struct CGPoint { float x1; float x2; })_offsetForPageNumberIndicator;
 - (void)_resetZoomAnimated:(BOOL)arg1;
 - (void)_revalidateViews;

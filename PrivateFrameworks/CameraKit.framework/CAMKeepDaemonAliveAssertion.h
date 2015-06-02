@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface CAMKeepDaemonAliveAssertion : NSObject {
     NSObject<OS_xpc_object> *_keepaliveConnection;
 }

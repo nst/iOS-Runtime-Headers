@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableSource, NSMutableArray, NSString;
-
 @interface HDCodableObjectCollection : PBCodable <NSCopying> {
     NSMutableArray *_activityCaches;
     NSMutableArray *_categorySamples;
@@ -14,15 +12,15 @@
     NSMutableArray *_workouts;
 }
 
-@property(retain) NSMutableArray * activityCaches;
-@property(retain) NSMutableArray * categorySamples;
-@property(retain) NSMutableArray * correlations;
-@property(readonly) BOOL hasSource;
-@property(readonly) BOOL hasSourceBundleIdentifier;
-@property(retain) NSMutableArray * quantitySamples;
-@property(retain) HDCodableSource * source;
-@property(retain) NSString * sourceBundleIdentifier;
-@property(retain) NSMutableArray * workouts;
+@property (nonatomic, retain) NSMutableArray *activityCaches;
+@property (nonatomic, retain) NSMutableArray *categorySamples;
+@property (nonatomic, retain) NSMutableArray *correlations;
+@property (nonatomic, readonly) BOOL hasSource;
+@property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
+@property (nonatomic, retain) NSMutableArray *quantitySamples;
+@property (nonatomic, retain) HDCodableSource *source;
+@property (nonatomic, retain) NSString *sourceBundleIdentifier;
+@property (nonatomic, retain) NSMutableArray *workouts;
 
 - (void).cxx_destruct;
 - (id)activityCaches;

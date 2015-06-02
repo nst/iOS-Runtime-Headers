@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UIColor, _UIBackdropView;
-
 @interface SBUIEmergencyCallHostViewController : _UIRemoteViewController <SBUIEmergencyCallHostInterface> {
     int _backgroundStyle;
     float _blurRadius;
@@ -12,13 +10,13 @@
     UIColor *_tintColor;
 }
 
-@property int backgroundStyle;
-@property float blurRadius;
-@property BOOL blursSelf;
-@property(retain) UIColor * tintColor;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic) float blurRadius;
+@property (nonatomic) BOOL blursSelf;
+@property (nonatomic, retain) UIColor *tintColor;
 
 + (id)exportedInterface;
-+ (void)requestEmergencyCallControllerWithCompletion:(id)arg1;
++ (void)requestEmergencyCallControllerWithCompletion:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void)_createAndAddBlurViewIfNecessary;

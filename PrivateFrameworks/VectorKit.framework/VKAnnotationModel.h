@@ -2,24 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSMutableArray, NSMutableSet, NSString, VKAnnotationMarker, VKMapModel, VKStyleManager;
-
 @interface VKAnnotationModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
     NSMutableSet *_animatingMarkers;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _annotationMarkerDeselectionCallback;
-
+    id /* block */ _annotationMarkerDeselectionCallback;
     NSMutableArray *_annotationMarkers;
     BOOL _didDragMarker;
     VKAnnotationMarker *_draggingAnnotationMarker;
@@ -36,28 +21,28 @@
     } _styleTransitionState;
 }
 
-@property(copy) id annotationMarkerDeselectionCallback;
-@property(readonly) NSArray * annotationMarkers;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property VKMapModel * mapModel;
-@property(readonly) BOOL needsLayout;
-@property(readonly) VKAnnotationMarker * selectedAnnotationMarker;
-@property(readonly) VKStyleManager * styleManager;
-@property struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; } styleTransitionState;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ annotationMarkerDeselectionCallback;
+@property (nonatomic, readonly) NSArray *annotationMarkers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) VKMapModel *mapModel;
+@property (nonatomic, readonly) BOOL needsLayout;
+@property (nonatomic, readonly) VKAnnotationMarker *selectedAnnotationMarker;
+@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; } styleTransitionState;
+@property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void)addAnnotationMarker:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)anchorPositionChangedForMarker:(id)arg1;
-- (id)annotationCoordinateTest;
-- (id)annotationMarkerDeselectionCallback;
+- (id /* block */)annotationCoordinateTest;
+- (id /* block */)annotationMarkerDeselectionCallback;
 - (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(BOOL)arg2 canvasSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)annotationMarkers;
-- (id)annotationRectTest;
+- (id /* block */)annotationRectTest;
 - (void)dealloc;
 - (void)deselectAnnotationMarker:(id)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
@@ -68,7 +53,7 @@
 - (void)removeAnnotationMarker:(id)arg1;
 - (void)selectAnnotationMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
-- (void)setAnnotationMarkerDeselectionCallback:(id)arg1;
+- (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setMapModel:(id)arg1;
 - (void)setStyleTransitionState:(struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; })arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;

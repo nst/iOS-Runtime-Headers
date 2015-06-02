@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class <NNMKAccountsSyncServiceServerDelegate>;
-
 @interface NNMKAccountsSyncServiceServer : NNMKSyncServiceEndpoint {
     <NNMKAccountsSyncServiceServerDelegate> *_delegate;
 }
 
-@property <NNMKAccountsSyncServiceServerDelegate> * delegate;
+@property (nonatomic) <NNMKAccountsSyncServiceServerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)addOrUpdateAccount:(id)arg1;

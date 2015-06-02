@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary;
-
 @interface _UIBarItemAppearanceStorage : NSObject {
     NSMutableDictionary *textAttributesForState;
 }

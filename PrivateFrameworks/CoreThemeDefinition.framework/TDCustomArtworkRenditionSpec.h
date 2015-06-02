@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDCustomArtworkRenditionSpec : TDSimpleArtworkRenditionSpec {
-}
+@interface TDCustomArtworkRenditionSpec : TDSimpleArtworkRenditionSpec
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <UIViewControllerContextTransitioning>, NSIndexPath, NSString, PUMomentsZoomLevelManager, UICollectionView, UICollectionViewTransitionLayout;
-
 @interface PUZoomableGridTransition : NSObject <UIViewControllerInteractiveTransitioning> {
     UICollectionViewTransitionLayout *__transitionLayout;
     NSIndexPath *_anchorItemIndexPath;
@@ -21,20 +19,20 @@
     PUMomentsZoomLevelManager *_zoomLevelManager;
 }
 
-@property(setter=_setTransitionLayout:,retain) UICollectionViewTransitionLayout * _transitionLayout;
-@property(retain) NSIndexPath * anchorItemIndexPath;
-@property struct CGSize { float x1; float x2; } currentInteractiveCenterOffset;
-@property float currentInteractiveProgress;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isInteractive,readonly) BOOL interactive;
-@property unsigned int originZoomLevel;
-@property(readonly) Class superclass;
-@property unsigned int targetZoomLevel;
-@property(retain) <UIViewControllerContextTransitioning> * transitionContext;
-@property unsigned int transitionState;
-@property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;
+@property (setter=_setTransitionLayout:, nonatomic, retain) UICollectionViewTransitionLayout *_transitionLayout;
+@property (nonatomic, retain) NSIndexPath *anchorItemIndexPath;
+@property (nonatomic) struct CGSize { float x1; float x2; } currentInteractiveCenterOffset;
+@property (nonatomic) float currentInteractiveProgress;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isInteractive, nonatomic, readonly) BOOL interactive;
+@property (nonatomic) unsigned int originZoomLevel;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int targetZoomLevel;
+@property (nonatomic, retain) <UIViewControllerContextTransitioning> *transitionContext;
+@property (nonatomic) unsigned int transitionState;
+@property (nonatomic, readonly) PUMomentsZoomLevelManager *zoomLevelManager;
 
 - (void).cxx_destruct;
 - (void)_setCurrentInteractiveCenterOffset:(struct CGSize { float x1; float x2; })arg1;

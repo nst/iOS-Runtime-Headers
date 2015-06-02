@@ -6,7 +6,7 @@
     BOOL _disableNavigationItemRemoval;
 }
 
-@property BOOL disableNavigationItemRemoval;
+@property (nonatomic) BOOL disableNavigationItemRemoval;
 
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (id)_existingViewControllerAtIndexPath:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetReaderOutputMetadataAdaptorInternal, AVAssetReaderTrackOutput;
-
 @interface AVAssetReaderOutputMetadataAdaptor : NSObject {
     AVAssetReaderOutputMetadataAdaptorInternal *_internal;
 }
 
-@property(readonly) AVAssetReaderTrackOutput * assetReaderTrackOutput;
+@property (nonatomic, readonly) AVAssetReaderTrackOutput *assetReaderTrackOutput;
 
 + (id)assetReaderOutputMetadataAdaptorWithAssetReaderTrackOutput:(id)arg1;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIActivityGroupListViewLayout : UICollectionViewFlowLayout {
-}
+@interface _UIActivityGroupListViewLayout : UICollectionViewFlowLayout
 
 - (void)adjustLayoutAttributesIfNeeded:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;

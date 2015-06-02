@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSDictionary, NSSet, NSString;
-
 @interface MBDomain : NSObject {
     int _fileDescriptor;
     int _fileDescriptorRefCount;
@@ -32,38 +30,38 @@
     BOOL _shouldDigest;
 }
 
-@property(getter=isAppDomain,readonly) BOOL appDomain;
-@property(readonly) NSString * containerID;
-@property(readonly) int containerType;
-@property(getter=isGroupAppDomain,readonly) BOOL groupAppDomain;
-@property(getter=isUninstalledAppDomain,readonly) BOOL installedAppDomain;
-@property(readonly) NSString * name;
-@property(getter=isPlaceholderAppDomain,readonly) BOOL placeholderAppDomain;
-@property(getter=isPluginAppDomain,readonly) BOOL pluginAppDomain;
-@property(retain) NSDictionary * relativePathAggregateDictionaryGroups;
-@property(retain) NSDictionary * relativePathDomainRedirects;
-@property(retain) NSSet * relativePathsNotToBackup;
-@property(retain) NSSet * relativePathsNotToBackupAndRestoreToAppleTVs;
-@property(retain) NSSet * relativePathsNotToBackupToDrive;
-@property(retain) NSSet * relativePathsNotToBackupToService;
-@property(retain) NSSet * relativePathsNotToCheckIfModifiedDuringBackup;
-@property(retain) NSSet * relativePathsNotToMigrate;
-@property(retain) NSSet * relativePathsNotToRemoveIfNotRestored;
-@property(retain) NSSet * relativePathsNotToRestore;
-@property(retain) NSSet * relativePathsNotToRestoreToIPods;
-@property(retain) NSSet * relativePathsOfSystemFilesToAlwaysRemoveOnRestore;
-@property(retain) NSSet * relativePathsOfSystemFilesToAlwaysRestore;
-@property(retain) NSSet * relativePathsToBackgroundRestore;
-@property(readonly) NSSet * relativePathsToBackup;
-@property(retain) NSSet * relativePathsToBackupAndRestore;
-@property(retain) NSSet * relativePathsToBackupIgnoringProtectionClass;
-@property(retain) NSSet * relativePathsToOnlyBackupEncrypted;
-@property(retain) NSSet * relativePathsToRemoveOnRestore;
-@property(readonly) NSSet * relativePathsToRestore;
-@property(retain) NSSet * relativePathsToRestoreOnly;
-@property(retain) NSSet * relativePathsToRestoreOnlyFromService;
-@property(readonly) NSString * rootPath;
-@property BOOL shouldDigest;
+@property (getter=isAppDomain, nonatomic, readonly) BOOL appDomain;
+@property (nonatomic, readonly) NSString *containerID;
+@property (nonatomic, readonly) int containerType;
+@property (getter=isGroupAppDomain, nonatomic, readonly) BOOL groupAppDomain;
+@property (getter=isUninstalledAppDomain, nonatomic, readonly) BOOL installedAppDomain;
+@property (nonatomic, readonly) NSString *name;
+@property (getter=isPlaceholderAppDomain, nonatomic, readonly) BOOL placeholderAppDomain;
+@property (getter=isPluginAppDomain, nonatomic, readonly) BOOL pluginAppDomain;
+@property (nonatomic, retain) NSDictionary *relativePathAggregateDictionaryGroups;
+@property (nonatomic, retain) NSDictionary *relativePathDomainRedirects;
+@property (nonatomic, retain) NSSet *relativePathsNotToBackup;
+@property (nonatomic, retain) NSSet *relativePathsNotToBackupAndRestoreToAppleTVs;
+@property (nonatomic, retain) NSSet *relativePathsNotToBackupToDrive;
+@property (nonatomic, retain) NSSet *relativePathsNotToBackupToService;
+@property (nonatomic, retain) NSSet *relativePathsNotToCheckIfModifiedDuringBackup;
+@property (nonatomic, retain) NSSet *relativePathsNotToMigrate;
+@property (nonatomic, retain) NSSet *relativePathsNotToRemoveIfNotRestored;
+@property (nonatomic, retain) NSSet *relativePathsNotToRestore;
+@property (nonatomic, retain) NSSet *relativePathsNotToRestoreToIPods;
+@property (nonatomic, retain) NSSet *relativePathsOfSystemFilesToAlwaysRemoveOnRestore;
+@property (nonatomic, retain) NSSet *relativePathsOfSystemFilesToAlwaysRestore;
+@property (nonatomic, retain) NSSet *relativePathsToBackgroundRestore;
+@property (nonatomic, readonly) NSSet *relativePathsToBackup;
+@property (nonatomic, retain) NSSet *relativePathsToBackupAndRestore;
+@property (nonatomic, retain) NSSet *relativePathsToBackupIgnoringProtectionClass;
+@property (nonatomic, retain) NSSet *relativePathsToOnlyBackupEncrypted;
+@property (nonatomic, retain) NSSet *relativePathsToRemoveOnRestore;
+@property (nonatomic, readonly) NSSet *relativePathsToRestore;
+@property (nonatomic, retain) NSSet *relativePathsToRestoreOnly;
+@property (nonatomic, retain) NSSet *relativePathsToRestoreOnlyFromService;
+@property (nonatomic, readonly) NSString *rootPath;
+@property (nonatomic) BOOL shouldDigest;
 
 + (BOOL)_boolFromValue:(id)arg1 forKey:(id)arg2;
 + (id)_dictionaryOfStringsToStringFromValue:(id)arg1 forKey:(id)arg2;

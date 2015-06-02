@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDArrayedFormula : EDSharedFormula {
-}
+@interface EDArrayedFormula : EDSharedFormula
 
 - (id)init;
 

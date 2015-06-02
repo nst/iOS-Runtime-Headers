@@ -2,42 +2,36 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface NSPointerFunctions : NSObject <NSCopying>
 
-@interface NSPointerFunctions : NSObject <NSCopying> {
-}
-
-@property int (* acquireFunction;
-@property int (* descriptionFunction;
-@property int (* hashFunction;
-@property int (* isEqualFunction;
-@property int (* relinquishFunction;
-@property int (* sizeFunction;
+@property int (*acquireFunction;
+@property int (*descriptionFunction;
+@property int (*hashFunction;
+@property int (*isEqualFunction;
+@property int (*relinquishFunction;
+@property int (*sizeFunction;
 @property BOOL usesStrongWriteBarrier;
 @property BOOL usesWeakReadAndWriteBarriers;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)pointerFunctionsWithOptions:(unsigned int)arg1;
 
-- (int (*)())acquireFunction;
+- (int (*)acquireFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int (*)())descriptionFunction;
-- (int (*)())hashFunction;
+- (int (*)descriptionFunction;
+- (int (*)hashFunction;
 - (id)initWithOptions:(unsigned int)arg1;
-- (int (*)())isEqualFunction;
-- (int (*)())relinquishFunction;
-- (void)setAcquireFunction:(int (*)())arg1;
-- (void)setDescriptionFunction:(int (*)())arg1;
-- (void)setHashFunction:(int (*)())arg1;
-- (void)setIsEqualFunction:(int (*)())arg1;
-- (void)setRelinquishFunction:(int (*)())arg1;
-- (void)setSizeFunction:(int (*)())arg1;
+- (int (*)isEqualFunction;
+- (int (*)relinquishFunction;
+- (void)setAcquireFunction:(int (*)arg1;
+- (void)setDescriptionFunction:(int (*)arg1;
+- (void)setHashFunction:(int (*)arg1;
+- (void)setIsEqualFunction:(int (*)arg1;
+- (void)setRelinquishFunction:(int (*)arg1;
+- (void)setSizeFunction:(int (*)arg1;
 - (void)setUsesStrongWriteBarrier:(BOOL)arg1;
 - (void)setUsesWeakReadAndWriteBarriers:(BOOL)arg1;
-- (int (*)())sizeFunction;
+- (int (*)sizeFunction;
 - (BOOL)usesStrongWriteBarrier;
 - (BOOL)usesWeakReadAndWriteBarriers;
 

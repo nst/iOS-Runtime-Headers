@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class DeviceManager, NSString;
-
 @interface ICDeviceProperties : NSObject {
     NSString *_UUIDString;
     BOOL _autoOpenSession;
@@ -21,17 +19,17 @@
     int _usbVendorID;
 }
 
-@property(retain) NSString * UUIDString;
+@property (retain) NSString *UUIDString;
 @property BOOL autoOpenSession;
 @property BOOL closeSessionPending;
 @property id delegate;
-@property DeviceManager * deviceManager;
+@property DeviceManager *deviceManager;
 @property BOOL hasOpenSession;
-@property struct CGImage { }* icon;
-@property(retain) NSString * name;
+@property struct CGImage { }*icon;
+@property (retain) NSString *name;
 @property BOOL openSessionPending;
-@property(retain) NSString * productKind;
-@property(retain) NSString * transportType;
+@property (retain) NSString *productKind;
+@property (retain) NSString *transportType;
 @property int usbLocationID;
 @property int usbProductID;
 @property int usbVendorID;

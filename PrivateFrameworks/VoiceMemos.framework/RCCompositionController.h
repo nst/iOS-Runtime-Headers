@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSMutableArray, NSMutableDictionary, NSURL, RCCaptureSession, RCComposition;
-
 @interface RCCompositionController : NSObject {
     NSMutableDictionary *_accessTokensByName;
     RCCaptureSession *_activeCaptureSession;
@@ -12,11 +10,11 @@
     NSMutableArray *_undoableCompositionItemStack;
 }
 
-@property(readonly) RCCaptureSession * activeCaptureSession;
-@property(retain) RCComposition * composition;
-@property(readonly) unsigned int countOfUndoableCompositions;
-@property(readonly) BOOL isTopUndoableCompositionFromCapture;
-@property(readonly) NSURL * savedRecordingURI;
+@property (nonatomic, readonly) RCCaptureSession *activeCaptureSession;
+@property (nonatomic, retain) RCComposition *composition;
+@property (nonatomic, readonly) unsigned int countOfUndoableCompositions;
+@property (nonatomic, readonly) BOOL isTopUndoableCompositionFromCapture;
+@property (nonatomic, readonly) NSURL *savedRecordingURI;
 
 + (id)compositionControllerForComposedAVURL:(id)arg1;
 
@@ -36,10 +34,10 @@
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
-- (void)beginAccessSessionToExportWithAssetReadyBlock:(id)arg1;
-- (void)beginAccessSessionToPlayTimeRange:(struct { double x1; double x2; })arg1 readyToPlayBlock:(id)arg2;
-- (void)beginAccessSessionToTrimAsCopy:(BOOL)arg1 assetReadyBlock:(id)arg2;
-- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(BOOL)arg3 isOverdub:(BOOL)arg4 sessionPreparedBlock:(id)arg5 sessionFinishedBlock:(id)arg6;
+- (void)beginAccessSessionToExportWithAssetReadyBlock:(id /* block */)arg1;
+- (void)beginAccessSessionToPlayTimeRange:(struct { double x1; double x2; })arg1 readyToPlayBlock:(id /* block */)arg2;
+- (void)beginAccessSessionToTrimAsCopy:(BOOL)arg1 assetReadyBlock:(id /* block */)arg2;
+- (void)beginRecordingWithInputDevice:(id)arg1 captureInsertionRange:(struct { double x1; double x2; })arg2 isUndoable:(BOOL)arg3 isOverdub:(BOOL)arg4 sessionPreparedBlock:(id /* block */)arg5 sessionFinishedBlock:(id /* block */)arg6;
 - (id)composition;
 - (unsigned int)countOfUndoableCompositions;
 - (void)deleteCompositionFromFileSystem;
@@ -48,16 +46,16 @@
 - (void)endEditing;
 - (void)endPreviewAccessSession;
 - (void)endTrimAccessSession;
-- (void)finalizingComposedAssetWithCompletionHandler:(id)arg1;
+- (void)finalizingComposedAssetWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithComposition:(id)arg1;
 - (BOOL)isTopUndoableCompositionFromCapture;
-- (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(id)arg2;
-- (void)performCompositionUndoWithCompletionBlock:(id)arg1;
-- (void)prepareToBeginEditingWithReadyBlock:(id)arg1;
-- (void)rcs_composeToFinalDestinationAndDeleteDecomposedFragments:(BOOL)arg1 composeWaveform:(BOOL)arg2 canGenerateWaveformByProcessingAVURL:(BOOL)arg3 completionBlock:(id)arg4;
+- (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)performCompositionUndoWithCompletionBlock:(id /* block */)arg1;
+- (void)prepareToBeginEditingWithReadyBlock:(id /* block */)arg1;
+- (void)rcs_composeToFinalDestinationAndDeleteDecomposedFragments:(BOOL)arg1 composeWaveform:(BOOL)arg2 canGenerateWaveformByProcessingAVURL:(BOOL)arg3 completionBlock:(id /* block */)arg4;
 - (void)rcs_repairDecomposedFragmentMetadataIfNecessary;
-- (void)sanitizeWithCompletionBlock:(id)arg1;
+- (void)sanitizeWithCompletionBlock:(id /* block */)arg1;
 - (id)savedRecordingURI;
 - (void)setComposition:(id)arg1;
 

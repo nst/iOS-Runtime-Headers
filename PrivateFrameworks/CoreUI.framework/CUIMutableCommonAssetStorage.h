@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIMutableCommonAssetStorage : CUICommonAssetStorage {
-}
+@interface CUIMutableCommonAssetStorage : CUICommonAssetStorage
 
 - (void)_setConstantName:(id)arg1 displayName:(id)arg2 forID:(unsigned int)arg3 inDebugTree:(void*)arg4;
 - (void)_setZeroCodeInfo:(struct { unsigned int x1; unsigned int x2; })arg1 forKey:(const void*)arg2 withLength:(unsigned long)arg3 inTree:(const void*)arg4;

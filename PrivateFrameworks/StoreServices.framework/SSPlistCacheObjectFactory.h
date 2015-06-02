@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
+@interface SSPlistCacheObjectFactory : NSObject <SSCacheObjectFactory>
 
-@interface SSPlistCacheObjectFactory : NSObject <SSCacheObjectFactory> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)cachedObjectWithDataRepresentation:(id)arg1 typeIdentifier:(id)arg2;
 - (BOOL)supportsTypeIdentifier:(id)arg1;

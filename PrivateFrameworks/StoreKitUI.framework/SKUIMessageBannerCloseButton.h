@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIMessageBannerCloseButton : UIButton {
-}
+@interface SKUIMessageBannerCloseButton : UIButton
 
 - (void)layoutSubviews;
 - (void)setHighlighted:(BOOL)arg1;

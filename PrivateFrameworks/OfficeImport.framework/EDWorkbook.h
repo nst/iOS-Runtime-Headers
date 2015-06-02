@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString, OADTheme;
-
 @interface EDWorkbook : OCDDocument {
     unsigned int mActiveSheetIndex;
     NSMutableArray *mBulletBlips;

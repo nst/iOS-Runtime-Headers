@@ -2,32 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
-
 @interface MBProperties : NSObject {
     NSMutableDictionary *_plist;
     BOOL _protect;
     BOOL _protected;
 }
 
-@property(retain) NSString * activeAppleID;
-@property(readonly) NSDictionary * appleIDs;
-@property(readonly) NSString * buildVersion;
-@property(readonly) NSDictionary * containers;
-@property(retain) NSDate * date;
-@property(readonly) NSString * deviceID;
-@property(readonly) NSString * deviceName;
-@property(getter=isEncrypted) BOOL encrypted;
-@property(readonly) BOOL hasCorruptSQLiteDBs;
-@property(retain) NSData * keybagData;
-@property(retain) NSDictionary * lockdownKeys;
-@property(getter=wasPasscodeSet) BOOL passcodeSet;
-@property(readonly) NSString * productType;
-@property(readonly) id propertyList;
-@property(getter=isProtected) BOOL protected;
-@property(readonly) NSString * serialNumber;
-@property double systemDomainsVersion;
-@property double version;
+@property (nonatomic, retain) NSString *activeAppleID;
+@property (nonatomic, readonly) NSDictionary *appleIDs;
+@property (nonatomic, readonly) NSString *buildVersion;
+@property (nonatomic, readonly) NSDictionary *containers;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) NSString *deviceID;
+@property (nonatomic, readonly) NSString *deviceName;
+@property (getter=isEncrypted, nonatomic) BOOL encrypted;
+@property (nonatomic, readonly) BOOL hasCorruptSQLiteDBs;
+@property (nonatomic, retain) NSData *keybagData;
+@property (nonatomic, retain) NSDictionary *lockdownKeys;
+@property (getter=wasPasscodeSet, nonatomic) BOOL passcodeSet;
+@property (nonatomic, readonly) NSString *productType;
+@property (nonatomic, readonly) id propertyList;
+@property (getter=isProtected, nonatomic) BOOL protected;
+@property (nonatomic, readonly) NSString *serialNumber;
+@property (nonatomic) double systemDomainsVersion;
+@property (nonatomic) double version;
 
 + (id)properties;
 + (id)propertiesWithFile:(id)arg1 error:(id*)arg2;

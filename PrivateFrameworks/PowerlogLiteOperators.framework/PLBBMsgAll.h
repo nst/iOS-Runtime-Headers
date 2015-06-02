@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMsgAll : PLBBMsgRoot {
     NSDate *_bbDate;
     NSString *_error;
@@ -17,16 +15,16 @@
     NSNumber *_seqNum;
 }
 
-@property(retain) NSDate * bbDate;
-@property(retain) NSString * error;
-@property(retain) NSDate * ibbDate;
-@property(retain) NSString * ierror;
-@property(retain) NSString * ieventCode;
-@property(retain) NSMutableDictionary * info;
-@property(retain) NSString * ipayload;
-@property(retain) NSNumber * iseqNum;
-@property(retain) NSString * payload;
-@property(retain) NSNumber * seqNum;
+@property (retain) NSDate *bbDate;
+@property (retain) NSString *error;
+@property (retain) NSDate *ibbDate;
+@property (retain) NSString *ierror;
+@property (retain) NSString *ieventCode;
+@property (retain) NSMutableDictionary *info;
+@property (retain) NSString *ipayload;
+@property (retain) NSNumber *iseqNum;
+@property (retain) NSString *payload;
+@property (retain) NSNumber *seqNum;
 
 + (id)entryEventNoneBBMsgAll;
 

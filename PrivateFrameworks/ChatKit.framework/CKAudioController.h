@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKAudioControllerDelegate>, CKAudioPlayer, CKMediaObject, NSArray, NSMutableArray, NSString;
-
 @interface CKAudioController : NSObject <CKAudioPlayerDelegate> {
     CKAudioPlayer *_audioPlayer;
     unsigned int _currentIndex;
@@ -15,21 +13,21 @@
     BOOL _shouldUseSpeaker;
 }
 
-@property(setter=_setMediaObjects:,retain) NSMutableArray * _mediaObjects;
-@property(retain) CKAudioPlayer * audioPlayer;
-@property(retain,readonly) CKMediaObject * currentMediaObject;
-@property(readonly) double currentMediaObjectDuration;
-@property(readonly) double currentMediaObjectTime;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKAudioControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL interrupted;
-@property(retain,readonly) NSArray * mediaObjects;
-@property(getter=isPaused) BOOL paused;
-@property(getter=isPlaying) BOOL playing;
-@property BOOL shouldUseSpeaker;
-@property(readonly) Class superclass;
+@property (setter=_setMediaObjects:, nonatomic, retain) NSMutableArray *_mediaObjects;
+@property (nonatomic, retain) CKAudioPlayer *audioPlayer;
+@property (nonatomic, readonly, retain) CKMediaObject *currentMediaObject;
+@property (nonatomic, readonly) double currentMediaObjectDuration;
+@property (nonatomic, readonly) double currentMediaObjectTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKAudioControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL interrupted;
+@property (nonatomic, readonly, retain) NSArray *mediaObjects;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic) BOOL shouldUseSpeaker;
+@property (readonly) Class superclass;
 
 - (id)_mediaObjects;
 - (void)_setMediaObjects:(id)arg1;
@@ -51,8 +49,8 @@
 - (id)mediaObjects;
 - (void)pause;
 - (void)play;
-- (void)playListenEndSound:(id)arg1;
-- (void)playListenSound:(id)arg1;
+- (void)playListenEndSound:(id /* block */)arg1;
+- (void)playListenSound:(id /* block */)arg1;
 - (void)setAudioPlayer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInterrupted:(BOOL)arg1;

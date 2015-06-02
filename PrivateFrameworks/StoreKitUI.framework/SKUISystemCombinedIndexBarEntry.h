@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUISystemCombinedIndexBarEntry : SKUIIndexBarEntry {
-}
+@interface SKUISystemCombinedIndexBarEntry : SKUIIndexBarEntry
 
 + (float)_dotDiameter;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSSQLEntity, NSString;
-
 @interface NSSQLSelectIntermediate : NSSQLIntermediate {
     NSString *_columnAlias;
     NSString *_correlationTarget;

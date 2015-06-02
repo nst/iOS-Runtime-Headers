@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSMutableArray, NSString, TPDocumentRoot, TPFootnoteLayoutController, TPPageLayoutState, TPSearchCanvasDelegate, TSUMutablePointerSet, TSWPLayoutManager;
-
 @interface TPPageController : NSObject <TPLayoutStateConsumer, TPLayoutStateProvider, TPPageLayoutInfoProvider, TSWPLayoutOwner> {
     int _backgroundLayoutEnabled;
     int _backgroundLayoutSuspendCount;
@@ -40,17 +38,17 @@
     BOOL _shouldUpdatePageCount;
 }
 
-@property BOOL backgroundLayoutEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int firstPageIndexNeedingLayout;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int pageCount;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL backgroundLayoutEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int firstPageIndexNeedingLayout;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)accquireLockAndPerformAction:(id)arg1;
+- (void)accquireLockAndPerformAction:(id /* block */)arg1;
 - (void)addLayoutObserver:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })anchoredRangeForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (BOOL)archivedLayoutState:(id)arg1 setBodyLength:(unsigned int)arg2;
@@ -169,7 +167,7 @@
 - (void)p_updateNonTextHintAtPageIndexPath:(id)arg1;
 - (void)p_updatePageCount;
 - (void)p_updateTextHintAtPageIndexPath:(id)arg1 withTarget:(id)arg2;
-- (void)p_withPageLayoutAtIndex:(unsigned int)arg1 preferredLayoutController:(id)arg2 executeBlock:(id)arg3;
+- (void)p_withPageLayoutAtIndex:(unsigned int)arg1 preferredLayoutController:(id)arg2 executeBlock:(id /* block */)arg3;
 - (BOOL)pageAtIndexHasBody:(unsigned int)arg1;
 - (BOOL)pageBeginsWithPaginatedAttachment:(unsigned int)arg1;
 - (unsigned int)pageCount;
@@ -201,7 +199,7 @@
 - (id)textWrapper;
 - (void)willScroll:(id)arg1;
 - (void)willZoom:(id)arg1;
-- (void)withPageLayoutAtIndex:(unsigned int)arg1 executeBlock:(id)arg2;
-- (void)withPageLayoutAtIndex:(unsigned int)arg1 preferredLayoutController:(id)arg2 executeBlock:(id)arg3;
+- (void)withPageLayoutAtIndex:(unsigned int)arg1 executeBlock:(id /* block */)arg2;
+- (void)withPageLayoutAtIndex:(unsigned int)arg1 preferredLayoutController:(id)arg2 executeBlock:(id /* block */)arg3;
 
 @end

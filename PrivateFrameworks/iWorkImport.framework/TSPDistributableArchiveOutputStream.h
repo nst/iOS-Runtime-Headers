@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUSimpleOutputStream>;
-
 @interface TSPDistributableArchiveOutputStream : NSObject {
     BOOL _descriptorsEnabled;
     BOOL _doneWritingClassInfoMap;

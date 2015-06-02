@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
  */
 
-@class PLEntryNotificationOperatorComposition, PLSemaphore;
-
 @interface PLScheduledWakeAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_canSleepNotification;
     PLSemaphore *_canSleepSemaphore;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
-@property(retain) PLSemaphore * canSleepSemaphore;
+@property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
+@property (retain) PLSemaphore *canSleepSemaphore;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADBulletSizeFollowText : OADBulletSize {
-}
+@interface OADBulletSizeFollowText : OADBulletSize
 
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

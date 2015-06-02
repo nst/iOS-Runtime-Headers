@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetTrack, AVWeakReference, NSDictionary;
-
 @interface AVMediaSelectionTrackOption : AVMediaSelectionOption {
     NSDictionary *_dictionary;
     BOOL _displaysNonForcedSubtitles;

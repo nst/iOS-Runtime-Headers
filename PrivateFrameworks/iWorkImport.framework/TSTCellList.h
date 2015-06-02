@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSPointerArray;
-
 @interface TSTCellList : TSPObject <NSCopying> {
     NSPointerArray *_cells;
 }
 
-@property(retain) NSPointerArray * cells;
+@property (nonatomic, retain) NSPointerArray *cells;
 
 - (id)addCell:(id)arg1;
 - (id)cellAtIndex:(unsigned int)arg1;

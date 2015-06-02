@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAnimatedEmojiMediaObject : CKAnimatedImageMediaObject {
-}
+@interface CKAnimatedEmojiMediaObject : CKAnimatedImageMediaObject
 
 + (id)UTITypes;
 + (id)attachmentSummary:(unsigned int)arg1;

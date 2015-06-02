@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCTSMEndEvent : PBCodable <NSCopying> {
     NSData *_aid;
     BOOL _authEnable;
@@ -26,26 +24,26 @@
     NSData *_uuidReference;
 }
 
-@property(retain) NSData * aid;
-@property BOOL authEnable;
-@property(retain) NSData * discretionaryData;
-@property(readonly) BOOL hasAid;
-@property BOOL hasAuthEnable;
-@property(readonly) BOOL hasDiscretionaryData;
-@property BOOL hasLcState;
-@property BOOL hasMfdEnable;
-@property BOOL hasRestricted;
-@property BOOL hasStatus;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned int lcState;
-@property BOOL mfdEnable;
-@property BOOL restricted;
-@property unsigned int status;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
+@property (nonatomic, retain) NSData *aid;
+@property (nonatomic) BOOL authEnable;
+@property (nonatomic, retain) NSData *discretionaryData;
+@property (nonatomic, readonly) BOOL hasAid;
+@property (nonatomic) BOOL hasAuthEnable;
+@property (nonatomic, readonly) BOOL hasDiscretionaryData;
+@property (nonatomic) BOOL hasLcState;
+@property (nonatomic) BOOL hasMfdEnable;
+@property (nonatomic) BOOL hasRestricted;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned int lcState;
+@property (nonatomic) BOOL mfdEnable;
+@property (nonatomic) BOOL restricted;
+@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (id)aid;
 - (BOOL)authEnable;

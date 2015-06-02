@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCStringLocalizedMessages : NSObject {
-}
+@interface TCStringLocalizedMessages : NSObject
 
 + (void)initialize;
 

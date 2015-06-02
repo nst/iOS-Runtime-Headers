@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableIndexSet, NSString, SKUISwooshView, UICollectionView;
-
 @interface SKUIBrickSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     NSArray *_bricks;
     UICollectionView *_collectionView;
@@ -19,11 +17,11 @@
     SKUISwooshView *_swooshView;
 }
 
-@property(copy) NSArray * bricks;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *bricks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (struct { float x1; float x2; float x3; })_brickSwooshMetrics;

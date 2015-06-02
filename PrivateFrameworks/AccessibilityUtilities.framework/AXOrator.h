@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class <AXOratorDelegate>, AVSpeechSynthesizer, AVSpeechUtterance, AXLanguageTag, AXLanguageTaggedContent, NSArray, NSMutableArray, NSString;
-
 @interface AXOrator : NSObject <AVSpeechSynthesizerDelegate> {
     BOOL _contentIsSpeakable;
     <AXOratorDelegate> *_delegate;
@@ -36,32 +34,32 @@
     BOOL _wasSpeakingBeforeAudioInterruption;
 }
 
-@property(copy) NSString * content;
-@property(copy,readonly) NSString * debugDescription;
-@property <AXOratorDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didRequestPauseSpeakingDuringAudioInterruption;
-@property BOOL didRequestResumeSpeakingDuringAudioInterruption;
-@property BOOL didRequestStartSpeakingDuringAudioInterruption;
-@property(readonly) unsigned int hash;
-@property BOOL isAudioSessionActive;
-@property BOOL isInAudioInterruption;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } lastSpokenSubstringRange;
-@property(retain) AVSpeechUtterance * lastUtterance;
-@property(retain) NSString * lastUtteranceLanguageCode;
-@property(retain) AXLanguageTag * lastUtteranceLanguageTag;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } lastUtteranceSubstringRange;
-@property unsigned int numberOfTokensToSkip;
-@property(copy) NSString * requestedLanguageCodeDuringAudioInterruption;
-@property(retain) AXLanguageTaggedContent * selectedContent;
-@property BOOL shouldSpeakNextItemOnResume;
-@property(retain) AXLanguageTaggedContent * speakingContent;
-@property(retain) NSArray * speakingContentTokenRanges;
-@property(retain) NSMutableArray * speechSequenceItems;
-@property(retain) AVSpeechSynthesizer * speechSynthesizer;
-@property(readonly) Class superclass;
-@property(retain) NSString * voiceIdentifier;
-@property BOOL wasSpeakingBeforeAudioInterruption;
+@property (nonatomic, copy) NSString *content;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXOratorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didRequestPauseSpeakingDuringAudioInterruption;
+@property (nonatomic) BOOL didRequestResumeSpeakingDuringAudioInterruption;
+@property (nonatomic) BOOL didRequestStartSpeakingDuringAudioInterruption;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isAudioSessionActive;
+@property (nonatomic) BOOL isInAudioInterruption;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } lastSpokenSubstringRange;
+@property (nonatomic, retain) AVSpeechUtterance *lastUtterance;
+@property (nonatomic, retain) NSString *lastUtteranceLanguageCode;
+@property (nonatomic, retain) AXLanguageTag *lastUtteranceLanguageTag;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } lastUtteranceSubstringRange;
+@property (nonatomic) unsigned int numberOfTokensToSkip;
+@property (nonatomic, copy) NSString *requestedLanguageCodeDuringAudioInterruption;
+@property (nonatomic, retain) AXLanguageTaggedContent *selectedContent;
+@property (nonatomic) BOOL shouldSpeakNextItemOnResume;
+@property (nonatomic, retain) AXLanguageTaggedContent *speakingContent;
+@property (nonatomic, retain) NSArray *speakingContentTokenRanges;
+@property (nonatomic, retain) NSMutableArray *speechSequenceItems;
+@property (nonatomic, retain) AVSpeechSynthesizer *speechSynthesizer;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *voiceIdentifier;
+@property (nonatomic) BOOL wasSpeakingBeforeAudioInterruption;
 
 - (BOOL)_canSpeakTaggedContent:(id)arg1;
 - (BOOL)_changeSpeakingSpeed:(BOOL)arg1;

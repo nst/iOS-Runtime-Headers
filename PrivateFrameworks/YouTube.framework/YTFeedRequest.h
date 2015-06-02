@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSURL;
-
 @interface YTFeedRequest : YTXMLHTTPRequest {
     NSURL *_batchURL;
     id _delegate;

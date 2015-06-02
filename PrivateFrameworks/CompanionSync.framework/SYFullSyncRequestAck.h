@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString, SYErrorInfo, SYMessageHeader;
-
 @interface SYFullSyncRequestAck : PBCodable <NSCopying> {
     BOOL _accepted;
     SYErrorInfo *_error;
@@ -12,13 +10,13 @@
     NSString *_requestSyncID;
 }
 
-@property BOOL accepted;
-@property(retain) SYErrorInfo * error;
-@property(readonly) BOOL hasError;
-@property(readonly) BOOL hasInProgressSyncID;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSString * inProgressSyncID;
-@property(retain) NSString * requestSyncID;
+@property (nonatomic) BOOL accepted;
+@property (nonatomic, retain) SYErrorInfo *error;
+@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic, readonly) BOOL hasInProgressSyncID;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSString *inProgressSyncID;
+@property (nonatomic, retain) NSString *requestSyncID;
 
 - (void).cxx_destruct;
 - (BOOL)accepted;

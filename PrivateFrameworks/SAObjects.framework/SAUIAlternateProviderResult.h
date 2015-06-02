@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, SAUIImageResource;
+@interface SAUIAlternateProviderResult : SADomainObject
 
-@interface SAUIAlternateProviderResult : SADomainObject {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSNumber * numberOfResults;
-@property(retain) SAUIImageResource * providerImage;
-@property(copy) NSString * providerName;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSNumber *numberOfResults;
+@property (nonatomic, retain) SAUIImageResource *providerImage;
+@property (nonatomic, copy) NSString *providerName;
 
 + (id)alternateProviderResult;
 + (id)alternateProviderResultWithDictionary:(id)arg1 context:(id)arg2;

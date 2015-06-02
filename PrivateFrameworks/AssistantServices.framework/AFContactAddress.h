@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFContactAddress : AFSiriModelObject {
     NSString *_stringValue;
     int _type;

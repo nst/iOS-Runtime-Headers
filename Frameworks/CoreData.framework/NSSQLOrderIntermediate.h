@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray;
-
 @interface NSSQLOrderIntermediate : NSSQLIntermediate {
     NSArray *_sortDescriptors;
 }

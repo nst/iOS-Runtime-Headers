@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CDXClientSessionDelegate>, CDXClient, NSData, NSIndexSet, NSMutableIndexSet, NSObject<OS_dispatch_source>;
-
 @interface CDXClientSession : NSObject {
     CDXClient *CDXClient_;
     unsigned short *ack_;
     <CDXClientSessionDelegate> *delegate_;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id inboundHandler_;
-
+    id /* block */ inboundHandler_;
     NSData *lastSent_;
     NSMutableIndexSet *participantsInFlight_;
     unsigned char pid_;
@@ -28,19 +18,19 @@
     NSData *ticket_;
 }
 
-@property(retain,readonly) CDXClient * CDXClient;
-@property <CDXClientSessionDelegate> * delegate;
-@property(copy) id inboundHandler;
-@property(copy,readonly) NSIndexSet * participantsInFlight;
-@property(copy,readonly) NSData * sessionKey;
-@property(copy) NSData * ticket;
+@property (nonatomic, readonly, retain) CDXClient *CDXClient;
+@property (nonatomic) <CDXClientSessionDelegate> *delegate;
+@property (nonatomic, copy) id /* block */ inboundHandler;
+@property (nonatomic, readonly, copy) NSIndexSet *participantsInFlight;
+@property (nonatomic, readonly, copy) NSData *sessionKey;
+@property (nonatomic, copy) NSData *ticket;
 
 - (id)CDXClient;
 - (void)dealloc;
 - (id)decrypt:(id)arg1 ticket:(id)arg2;
 - (id)delegate;
 - (id)encrypt:(id)arg1;
-- (id)inboundHandler;
+- (id /* block */)inboundHandler;
 - (id)initWithCDXClient:(id)arg1 ticket:(id)arg2 sessionKey:(id)arg3;
 - (void)invalidate;
 - (id)participantsInFlight;
@@ -52,7 +42,7 @@
 - (BOOL)sendRaw:(id)arg1 toParticipants:(id)arg2;
 - (id)sessionKey;
 - (void)setDelegate:(id)arg1;
-- (void)setInboundHandler:(id)arg1;
+- (void)setInboundHandler:(id /* block */)arg1;
 - (void)setTicket:(id)arg1;
 - (void)stopRetransmitTimer;
 - (id)ticket;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSMutableDictionary, PLAccountingGroup, PLXPCListenerOperatorComposition;
-
 @interface PLIdentityServicesAgent : PLAgent {
     PLAccountingGroup *_IDSAccountingGroup;
     PLAccountingGroup *_bluetoothAccountingGroup;
@@ -17,16 +15,16 @@
     PLXPCListenerOperatorComposition *_xpcHandler;
 }
 
-@property(readonly) PLAccountingGroup * IDSAccountingGroup;
-@property(readonly) PLAccountingGroup * bluetoothAccountingGroup;
-@property(retain) PLXPCListenerOperatorComposition * infraWiFiRequestHandler;
-@property(retain) NSDate * initialEntryDate;
-@property(retain) NSMutableDictionary * lastEntryDatePerCategory;
-@property(retain) NSDate * lastLocalDeliveryLogDate;
-@property(retain) PLXPCListenerOperatorComposition * localLinkTypeHandler;
-@property(retain) PLXPCListenerOperatorComposition * networkStatsHandler;
-@property(retain) NSMutableDictionary * previousStatsByPriority;
-@property(retain) PLXPCListenerOperatorComposition * xpcHandler;
+@property (readonly) PLAccountingGroup *IDSAccountingGroup;
+@property (readonly) PLAccountingGroup *bluetoothAccountingGroup;
+@property (retain) PLXPCListenerOperatorComposition *infraWiFiRequestHandler;
+@property (retain) NSDate *initialEntryDate;
+@property (retain) NSMutableDictionary *lastEntryDatePerCategory;
+@property (retain) NSDate *lastLocalDeliveryLogDate;
+@property (retain) PLXPCListenerOperatorComposition *localLinkTypeHandler;
+@property (retain) PLXPCListenerOperatorComposition *networkStatsHandler;
+@property (retain) NSMutableDictionary *previousStatsByPriority;
+@property (retain) PLXPCListenerOperatorComposition *xpcHandler;
 
 + (id)accountingGroupDefinitions;
 + (id)entryDefinitionIDSLocalLink;

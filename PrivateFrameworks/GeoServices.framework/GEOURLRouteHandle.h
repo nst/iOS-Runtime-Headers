@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
-
 @interface GEOURLRouteHandle : PBCodable <NSCopying> {
     NSData *_directionsResponseID;
     NSData *_routeID;
     NSData *_zilchPoints;
 }
 
-@property(retain) NSData * directionsResponseID;
-@property(readonly) BOOL hasDirectionsResponseID;
-@property(readonly) BOOL hasRouteID;
-@property(readonly) BOOL hasZilchPoints;
-@property(retain) NSData * routeID;
-@property(retain) NSData * zilchPoints;
+@property (nonatomic, retain) NSData *directionsResponseID;
+@property (nonatomic, readonly) BOOL hasDirectionsResponseID;
+@property (nonatomic, readonly) BOOL hasRouteID;
+@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic, retain) NSData *routeID;
+@property (nonatomic, retain) NSData *zilchPoints;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

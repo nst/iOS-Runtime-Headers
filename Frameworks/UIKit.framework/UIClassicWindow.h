@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIClassicWindow : UIWindow {
-}
+@interface UIClassicWindow : UIWindow
 
 - (BOOL)_isConstrainedByScreenJail;
 - (BOOL)_shouldZoom;

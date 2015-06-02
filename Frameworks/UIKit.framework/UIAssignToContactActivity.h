@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class ABPeoplePickerNavigationController, NSString, UIImage, UIImagePickerController;
-
 @interface UIAssignToContactActivity : UIActivity <ABPeoplePickerNavigationControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImage *_image;
     UIImagePickerController *_imagePickerController;
@@ -11,14 +9,14 @@
     void *_person;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property(retain) UIImagePickerController * imagePickerController;
-@property(retain) ABPeoplePickerNavigationController * peoplePicker;
-@property void* person;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImagePickerController *imagePickerController;
+@property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePicker;
+@property (nonatomic) void*person;
+@property (readonly) Class superclass;
 
 - (id)_activityImage;
 - (void)_cleanup;

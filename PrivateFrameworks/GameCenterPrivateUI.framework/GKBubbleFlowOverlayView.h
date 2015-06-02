@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleSet;
+@interface GKBubbleFlowOverlayView : GKBubbleFlowContainerView
 
-@interface GKBubbleFlowOverlayView : GKBubbleFlowContainerView {
-}
-
-@property(readonly) GKBubbleSet * secondaryBubbleControls;
+@property (nonatomic, readonly) GKBubbleSet *secondaryBubbleControls;
 
 + (id)sharedBubbleOverlayView;
 + (id)sharedBubbleOverlayViewForWindow:(id)arg1;

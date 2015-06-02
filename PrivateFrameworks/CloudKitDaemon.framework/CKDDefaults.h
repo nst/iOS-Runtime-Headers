@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDDefaults : NSObject {
-}
+@interface CKDDefaults : NSObject
 
 + (id)sharedDefaults;
 

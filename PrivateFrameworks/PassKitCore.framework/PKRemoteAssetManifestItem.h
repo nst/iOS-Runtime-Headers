@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSNumber, NSString, NSURL;
-
 @interface PKRemoteAssetManifestItem : NSObject <NSSecureCoding> {
     NSURL *_localURL;
     NSURL *_passURL;
@@ -12,12 +10,12 @@
     NSNumber *_size;
 }
 
-@property(copy) NSURL * localURL;
-@property(copy) NSURL * passURL;
-@property(readonly) NSString * relativeLocalPath;
-@property(copy) NSURL * remoteURL;
-@property(copy) NSString * sha1Hex;
-@property(copy) NSNumber * size;
+@property (nonatomic, copy) NSURL *localURL;
+@property (nonatomic, copy) NSURL *passURL;
+@property (nonatomic, readonly) NSString *relativeLocalPath;
+@property (nonatomic, copy) NSURL *remoteURL;
+@property (nonatomic, copy) NSString *sha1Hex;
+@property (nonatomic, copy) NSNumber *size;
 
 + (id)itemWithLocalURL:(id)arg1 passURL:(id)arg2 dictionary:(id)arg3 error:(id*)arg4;
 + (BOOL)supportsSecureCoding;

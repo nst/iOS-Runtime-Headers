@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@interface MFMimeTextAttachment : MFMessageTextAttachment {
-}
+@interface MFMimeTextAttachment : MFMessageTextAttachment
 
 - (id)_displayedMimePart;
 - (unsigned int)approximateSize;

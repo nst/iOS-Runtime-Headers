@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLQuoteElement : DOMHTMLElement
 
-@interface DOMHTMLQuoteElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * cite;
+@property (copy) NSString *cite;
 
 - (id)cite;
 - (void)setCite:(id)arg1;

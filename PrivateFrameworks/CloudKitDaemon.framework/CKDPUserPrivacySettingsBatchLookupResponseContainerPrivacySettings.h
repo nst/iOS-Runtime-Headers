@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPUserPrivacySettings, NSMutableArray, NSString;
-
 @interface CKDPUserPrivacySettingsBatchLookupResponseContainerPrivacySettings : PBCodable <NSCopying> {
     NSMutableArray *_applicationBundles;
     NSString *_applicationContainer;
@@ -14,13 +12,13 @@
     CKDPUserPrivacySettings *_userPrivacySettings;
 }
 
-@property(retain) NSMutableArray * applicationBundles;
-@property(retain) NSString * applicationContainer;
-@property int applicationContainerEnvironment;
-@property(readonly) BOOL hasApplicationContainer;
-@property BOOL hasApplicationContainerEnvironment;
-@property(readonly) BOOL hasUserPrivacySettings;
-@property(retain) CKDPUserPrivacySettings * userPrivacySettings;
+@property (nonatomic, retain) NSMutableArray *applicationBundles;
+@property (nonatomic, retain) NSString *applicationContainer;
+@property (nonatomic) int applicationContainerEnvironment;
+@property (nonatomic, readonly) BOOL hasApplicationContainer;
+@property (nonatomic) BOOL hasApplicationContainerEnvironment;
+@property (nonatomic, readonly) BOOL hasUserPrivacySettings;
+@property (nonatomic, retain) CKDPUserPrivacySettings *userPrivacySettings;
 
 - (void).cxx_destruct;
 - (void)addApplicationBundle:(id)arg1;

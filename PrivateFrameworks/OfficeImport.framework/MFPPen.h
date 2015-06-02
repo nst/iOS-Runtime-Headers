@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFPBrush, MFPCustomLineCap;
-
 @interface MFPPen : NSObject {
     int mAlignment;
     MFPBrush *mBrush;

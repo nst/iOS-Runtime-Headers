@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIAcousticIDSpinnerDelegate>, UIImageView, UIVisualEffectView;
-
 @interface SiriUIAcousticIDSpinner : UIView {
     <SiriUIAcousticIDSpinnerDelegate> *_delegate;
     UIImageView *_musicNoteView;
@@ -11,7 +9,7 @@
     UIVisualEffectView *_vibrancyView;
 }
 
-@property <SiriUIAcousticIDSpinnerDelegate> * delegate;
+@property (nonatomic) <SiriUIAcousticIDSpinnerDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)_imageForSpinner;

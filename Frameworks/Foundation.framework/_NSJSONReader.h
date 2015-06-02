@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError;
-
 @interface _NSJSONReader : NSObject {
     NSError *error;
     id input;

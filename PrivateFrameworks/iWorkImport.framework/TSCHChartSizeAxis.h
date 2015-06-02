@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSizeAxis : TSCHChartAxis {
-}
+@interface TSCHChartSizeAxis : TSCHChartAxis
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;

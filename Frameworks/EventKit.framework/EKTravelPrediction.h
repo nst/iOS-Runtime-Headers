@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class <EKTravelAdvice>, CLLocation, NSDate;
-
 @interface EKTravelPrediction : NSObject <NSSecureCoding> {
     NSDate *_arrivalDate;
     NSDate *_departureDate;
@@ -13,13 +11,13 @@
     double _validRadius;
 }
 
-@property(readonly) <EKTravelAdvice> * advice;
-@property(readonly) NSDate * arrivalDate;
-@property(readonly) NSDate * departureDate;
-@property(readonly) NSDate * predictionDate;
-@property(readonly) CLLocation * startingLocation;
-@property(readonly) double ttl;
-@property(readonly) double validRadius;
+@property (nonatomic, readonly) <EKTravelAdvice> *advice;
+@property (nonatomic, readonly) NSDate *arrivalDate;
+@property (nonatomic, readonly) NSDate *departureDate;
+@property (nonatomic, readonly) NSDate *predictionDate;
+@property (nonatomic, readonly) CLLocation *startingLocation;
+@property (nonatomic, readonly) double ttl;
+@property (nonatomic, readonly) double validRadius;
 
 + (BOOL)supportsSecureCoding;
 

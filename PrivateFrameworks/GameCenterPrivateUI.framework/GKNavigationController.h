@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSMutableArray, NSString;
-
 @interface GKNavigationController : UINavigationController <UINavigationBarDelegate, UIViewControllerRestoration> {
     NSMutableArray *_deferredTransitions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSMutableArray * deferredTransitions;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSMutableArray *deferredTransitions;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;

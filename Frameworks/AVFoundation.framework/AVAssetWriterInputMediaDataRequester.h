@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AVAssetWriterInputMediaDataRequesterDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface AVAssetWriterInputMediaDataRequester : NSObject {
     <AVAssetWriterInputMediaDataRequesterDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _requestBlock;
-
+    id /* block */ _requestBlock;
     NSObject<OS_dispatch_queue> *_requestQueue;
 }
 
-@property <AVAssetWriterInputMediaDataRequesterDelegate> * delegate;
-@property(readonly) NSObject<OS_dispatch_queue> * requestQueue;
+@property <AVAssetWriterInputMediaDataRequesterDelegate> *delegate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *requestQueue;
 
 - (void)_collectUncollectables_invokedFromDeallocAndFinalize;
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;
 - (id)init;
-- (id)initWithRequestQueue:(id)arg1 requestBlock:(id)arg2;
+- (id)initWithRequestQueue:(id)arg1 requestBlock:(id /* block */)arg2;
 - (void)requestMediaDataIfNecessary;
 - (id)requestQueue;
 - (void)setDelegate:(id)arg1;

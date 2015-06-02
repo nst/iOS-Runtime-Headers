@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSArray, NSDictionary, NSString, NSURL, NSUUID;
-
 @interface LSBundleProxy : LSResourceProxy {
     NSURL *_appStoreReceiptURL;
     NSString *_bundleExecutable;
@@ -23,24 +21,24 @@
     NSString *_signerIdentity;
 }
 
-@property(readonly) NSURL * appStoreReceiptURL;
-@property(readonly) NSURL * bundleContainerURL;
-@property(readonly) NSString * bundleExecutable;
-@property(readonly) NSString * bundleIdentifier;
-@property(readonly) NSString * bundleType;
-@property(readonly) NSURL * bundleURL;
-@property(readonly) NSString * bundleVersion;
-@property(readonly) NSUUID * cacheGUID;
-@property(readonly) NSURL * containerURL;
-@property(readonly) NSURL * dataContainerURL;
-@property(readonly) NSDictionary * entitlements;
-@property(readonly) NSDictionary * environmentVariables;
-@property(readonly) BOOL foundBackingBundle;
-@property(readonly) NSDictionary * groupContainerURLs;
-@property(readonly) NSString * localizedShortName;
-@property(readonly) NSArray * machOUUIDs;
-@property(readonly) unsigned int sequenceNumber;
-@property(readonly) NSString * signerIdentity;
+@property (nonatomic, readonly) NSURL *appStoreReceiptURL;
+@property (nonatomic, readonly) NSURL *bundleContainerURL;
+@property (nonatomic, readonly) NSString *bundleExecutable;
+@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) NSString *bundleType;
+@property (nonatomic, readonly) NSURL *bundleURL;
+@property (nonatomic, readonly) NSString *bundleVersion;
+@property (nonatomic, readonly) NSUUID *cacheGUID;
+@property (nonatomic, readonly) NSURL *containerURL;
+@property (nonatomic, readonly) NSURL *dataContainerURL;
+@property (nonatomic, readonly) NSDictionary *entitlements;
+@property (nonatomic, readonly) NSDictionary *environmentVariables;
+@property (nonatomic, readonly) BOOL foundBackingBundle;
+@property (nonatomic, readonly) NSDictionary *groupContainerURLs;
+@property (nonatomic, readonly) NSString *localizedShortName;
+@property (nonatomic, readonly) NSArray *machOUUIDs;
+@property (nonatomic, readonly) unsigned int sequenceNumber;
+@property (nonatomic, readonly) NSString *signerIdentity;
 
 + (id)bundleProxyForIdentifier:(id)arg1;
 + (id)bundleProxyForURL:(id)arg1;

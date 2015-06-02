@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUInterfaceManager : NSObject {
-}
+@interface PUInterfaceManager : NSObject
 
 + (void)_disabledUserInteractionRequestDidTimeOut:(id)arg1;
 + (void)_handleInteractionDisablingTimeout;

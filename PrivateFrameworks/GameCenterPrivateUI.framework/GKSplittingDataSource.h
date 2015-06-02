@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBasicCollectionViewDataSource, NSMutableDictionary;
-
 @interface GKSplittingDataSource : GKCollectionViewDataSource {
     NSMutableDictionary *_sectionToSectionInfo;
     GKBasicCollectionViewDataSource *_underlyingDataSource;
 }
 
-@property(readonly) int sectionCount;
-@property(retain) NSMutableDictionary * sectionToSectionInfo;
-@property(retain) GKBasicCollectionViewDataSource * underlyingDataSource;
+@property (nonatomic, readonly) int sectionCount;
+@property (nonatomic, retain) NSMutableDictionary *sectionToSectionInfo;
+@property (nonatomic, retain) GKBasicCollectionViewDataSource *underlyingDataSource;
 
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (void)addSectionWithTitle:(id)arg1 sortDescriptors:(id)arg2;
@@ -28,7 +26,7 @@
 - (void)refreshAdditionalInfoForDataType:(unsigned int)arg1 updateNotifier:(id)arg2;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)removeAllSections;
-- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (void)removeItemAtIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeSection:(int)arg1;
 - (int)sectionCount;
 - (id)sectionInfoForSection:(int)arg1;

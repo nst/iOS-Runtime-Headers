@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAGetClientState : SABaseClientBoundCommand
 
-@interface SAGetClientState : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * statesToGet;
+@property (nonatomic, copy) NSArray *statesToGet;
 
 + (id)getClientState;
 + (id)getClientStateWithDictionary:(id)arg1 context:(id)arg2;

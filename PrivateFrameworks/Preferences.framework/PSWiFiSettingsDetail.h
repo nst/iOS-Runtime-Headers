@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString;
+@interface PSWiFiSettingsDetail : NSObject <PSSettingsBoolDetail>
 
-@interface PSWiFiSettingsDetail : NSObject <PSSettingsBoolDetail> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)iconImage;
 + (BOOL)isEnabled;

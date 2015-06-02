@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDateValue, NSString;
+@interface ICSAttendeeComment : ICSProperty
 
-@interface ICSAttendeeComment : ICSProperty {
-}
-
-@property(retain) NSString * x_calendarserver_attendee_ref;
-@property(retain) ICSDateValue * x_calendarserver_dtstamp;
+@property (nonatomic, retain) NSString *x_calendarserver_attendee_ref;
+@property (nonatomic, retain) ICSDateValue *x_calendarserver_dtstamp;
 
 - (id)initWithComment:(id)arg1;
 - (id)parametersToObscure;

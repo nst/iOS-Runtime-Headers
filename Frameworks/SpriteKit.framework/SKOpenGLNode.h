@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKOpenGLNode : SKNode {
-}
+@interface SKOpenGLNode : SKNode
 
 @property struct CGSize { float x1; float x2; } viewportSize;
 

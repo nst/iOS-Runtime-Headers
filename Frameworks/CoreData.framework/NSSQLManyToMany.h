@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLManyToMany : NSSQLRelationship {
     NSString *_columnName;
     NSString *_correlationTableName;

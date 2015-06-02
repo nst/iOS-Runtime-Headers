@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString;
-
 @interface TSDGLShader : NSObject {
     NSMutableDictionary *_attributeLocations;
     BOOL _isActive;
@@ -13,9 +11,9 @@
     NSMutableSet *_uniformsNeedingUpdate;
 }
 
-@property(readonly) BOOL isActive;
-@property(copy) NSString * name;
-@property(readonly) unsigned int programObject;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) unsigned int programObject;
 
 - (void)activate;
 - (void)deactivate;

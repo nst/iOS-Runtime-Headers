@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class <MTLDevice>;
-
 @interface CAMetalLayer : CALayer {
     BOOL _presentsWithTransaction;
-    struct _CAMetalLayerPrivate { struct x_list_struct {} *x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Atomic { struct { int x_1_2_1; } x_3_1_1; } x3; struct SpinLock { struct { int x_1_2_1; } x_4_1_1; } x4; struct _CAImageQueue {} *x5; id x6; struct x_list_struct {} *x7; unsigned int x8; struct _CAMetalDrawablePrivate {} *x9; id x10; unsigned int x11; struct CGSize { float x_12_1_1; float x_12_1_2; } x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; id x17; struct Atomic { struct { int x_1_2_1; } x_18_1_1; } x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; } *_priv;
+    struct _CAMetalLayerPrivate { struct x_list_struct {} *x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Atomic { struct { int x_1_2_1; } x_3_1_1; } x3; struct SpinLock { struct { int x_1_2_1; } x_4_1_1; } x4; struct _CAImageQueue {} *x5; id x6; struct x_list_struct {} x7; unsigned int x8; struct _CAMetalDrawablePrivate {} *x9; id x10; struct CGSize { float x_11_1_1; float x_11_1_2; } x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } *_priv;
 }
 
-@property(retain) <MTLDevice> * device;
+@property (retain) <MTLDevice> *device;
 @property struct CGSize { float x1; float x2; } drawableSize;
 @property BOOL framebufferOnly;
 @property unsigned long maximumDrawableCount;
 @property unsigned int pixelFormat;
-@property(getter=presentsWithTransaction) BOOL presentsWithTransaction;
+@property (getter=presentsWithTransaction) BOOL presentsWithTransaction;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;

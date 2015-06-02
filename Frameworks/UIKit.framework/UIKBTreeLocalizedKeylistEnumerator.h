@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSEnumerator;
-
 @interface UIKBTreeLocalizedKeylistEnumerator : NSEnumerator {
     NSDictionary *_keyplaneCache;
     NSEnumerator *_nameEnum;

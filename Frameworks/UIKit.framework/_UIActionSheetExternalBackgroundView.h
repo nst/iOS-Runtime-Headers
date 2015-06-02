@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIActionSheetExternalBackgroundView : UIView {
-}
+@interface _UIActionSheetExternalBackgroundView : UIView
 
 - (void)layoutSubviews;
 - (void)setMaskImage:(id)arg1;

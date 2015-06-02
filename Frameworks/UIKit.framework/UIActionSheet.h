@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIActionSheetDelegate>, NSMutableArray, NSString, UIAlertController, _UIAlertControllerShimPresenter, _UIWeakRef;
-
 @interface UIActionSheet : UIView <UIPopoverControllerDelegate> {
     int _actionSheetStyle;
     NSMutableArray *_actions;
@@ -21,19 +19,19 @@
     _UIWeakRef *_weakDelegate;
 }
 
-@property int actionSheetStyle;
-@property int cancelButtonIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIActionSheetDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property int destructiveButtonIndex;
-@property(readonly) int firstOtherButtonIndex;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfButtons;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(getter=isVisible,readonly) BOOL visible;
-@property(retain) _UIWeakRef * weakDelegate;
+@property (nonatomic) int actionSheetStyle;
+@property (nonatomic) int cancelButtonIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIActionSheetDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int destructiveButtonIndex;
+@property (nonatomic, readonly) int firstOtherButtonIndex;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int numberOfButtons;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
+@property (nonatomic, retain) _UIWeakRef *weakDelegate;
 
 + (BOOL)_isAlertControllerShimClass;
 + (Class)_popoverControllerClass;

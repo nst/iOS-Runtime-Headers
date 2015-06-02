@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class <ATAssetLinkDelegate>, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSDownloadManager;
-
 @interface ATStoreAssetLink : NSObject <ATAssetLink, SSDownloadHandlerDelegate, SSDownloadManagerObserver> {
     NSMutableDictionary *_assetsByStoreID;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -14,13 +12,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property <ATAssetLinkDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isOpen,readonly) BOOL open;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ATAssetLinkDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_assetForDownload:(id)arg1;

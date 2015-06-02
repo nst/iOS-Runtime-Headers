@@ -6,7 +6,7 @@
     unsigned int _activityType;
 }
 
-@property(readonly) unsigned int activityType;
+@property (nonatomic, readonly) unsigned int activityType;
 
 + (BOOL)supportsSecureCoding;
 

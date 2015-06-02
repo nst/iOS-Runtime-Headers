@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class IDSService, NSMutableDictionary, NSString, RMSSessionManager;
-
 @interface RMSIDSServer : NSObject <IDSServiceDelegate, RMSDAAPControlSessionDelegate, RMSDiscoverySessionDelegate, RMSPairingSessionDelegate, RMSSessionManagerDelegate> {
     IDSService *_idsService;
     NSMutableDictionary *_nowPlayingSessions;
@@ -12,10 +10,10 @@
     NSMutableDictionary *_touchRemoteSessions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)server;
 

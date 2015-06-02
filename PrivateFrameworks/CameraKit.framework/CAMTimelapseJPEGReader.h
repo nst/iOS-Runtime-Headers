@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMTimelapseJPEGReader : NSObject {
-}
+@interface CAMTimelapseJPEGReader : NSObject
 
 + (id)_decodeOptionsWithMaxPixelSize:(int)arg1 applyTransform:(BOOL)arg2 useBGRA:(BOOL)arg3;
 + (struct CGImage { }*)createCGImageFromData:(id)arg1 applyTransform:(BOOL)arg2 maxPixelSize:(int)arg3 useBGRA:(BOOL)arg4;

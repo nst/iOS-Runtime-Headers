@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class <AXValidationReportingServices>, NSMutableArray, NSString;
-
 @interface AXValidationManager : NSObject {
     NSMutableArray *_consoleErrorMessages;
     BOOL _debugBuild;
@@ -17,16 +15,16 @@
     NSString *_validationTargetName;
 }
 
-@property(retain) NSMutableArray * consoleErrorMessages;
-@property(getter=isDebugBuild) BOOL debugBuild;
-@property BOOL forceDoNotReport;
-@property unsigned int numberOfValidationErrors;
-@property(copy) NSString * overrideProcessName;
-@property BOOL shouldCrashOnError;
-@property BOOL shouldLogToConsole;
-@property BOOL shouldReportToServer;
-@property(retain) <AXValidationReportingServices> * validateionReportingServices;
-@property(copy) NSString * validationTargetName;
+@property (nonatomic, retain) NSMutableArray *consoleErrorMessages;
+@property (getter=isDebugBuild, nonatomic) BOOL debugBuild;
+@property (nonatomic) BOOL forceDoNotReport;
+@property (nonatomic) unsigned int numberOfValidationErrors;
+@property (nonatomic, copy) NSString *overrideProcessName;
+@property (nonatomic) BOOL shouldCrashOnError;
+@property (nonatomic) BOOL shouldLogToConsole;
+@property (nonatomic) BOOL shouldReportToServer;
+@property (nonatomic, retain) <AXValidationReportingServices> *validateionReportingServices;
+@property (nonatomic, copy) NSString *validationTargetName;
 
 + (id)sharedInstance;
 
@@ -37,15 +35,15 @@
 - (void)dealloc;
 - (BOOL)forceDoNotReport;
 - (id)init;
-- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
-- (void)installSafeCategories:(id)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(BOOL)arg5;
+- (void)installSafeCategories:(id /* block */)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
+- (void)installSafeCategories:(id /* block */)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(BOOL)arg5;
 - (BOOL)installSafeCategory:(id)arg1;
 - (BOOL)installSafeCategory:(id)arg1 canInteractWithTargetClass:(BOOL)arg2;
 - (BOOL)isDebugBuild;
 - (unsigned int)numberOfValidationErrors;
 - (id)overrideProcessName;
-- (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3;
-- (void)performValidations:(id)arg1 withPreValidationHandler:(id)arg2 postValidationHandler:(id)arg3 safeCategoryInstallationHandler:(id)arg4;
+- (void)performValidations:(id /* block */)arg1 withPreValidationHandler:(id /* block */)arg2 postValidationHandler:(id /* block */)arg3;
+- (void)performValidations:(id /* block */)arg1 withPreValidationHandler:(id /* block */)arg2 postValidationHandler:(id /* block */)arg3 safeCategoryInstallationHandler:(id /* block */)arg4;
 - (void)sendExceptionForInstallingSafeCategory:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;
 - (void)sendExceptionForSafeBlock:(id)arg1 overrideProcessName:(id)arg2;
 - (void)sendExceptionForSafeIVarKey:(id)arg1 onTarget:(id)arg2 overrideProcessName:(id)arg3;

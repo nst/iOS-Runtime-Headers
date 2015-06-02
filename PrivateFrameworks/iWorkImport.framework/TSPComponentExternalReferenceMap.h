@@ -9,7 +9,7 @@
 - (void)addExternalReferenceToObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isWeak:(BOOL)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)enumerateExternalReferences:(id)arg1;
+- (void)enumerateExternalReferences:(id /* block */)arg1;
 - (struct ComponentExternalReferenceInfo { long long x1; BOOL x2; })externalReferenceInfoForObjectIdentifier:(long long)arg1;
 - (id)init;
 - (id)initFromMessage:(const struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x1; int x2; int x3; int x4; }*)arg1;

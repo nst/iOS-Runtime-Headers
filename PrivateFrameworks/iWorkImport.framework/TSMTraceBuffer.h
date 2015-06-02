@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSFileHandle, NSString, TSMTraceController;
-
 @interface TSMTraceBuffer : NSObject {
     BOOL mActive;
     long mBufferID;
@@ -12,7 +10,7 @@
     long mCurrentIndex;
     struct __CFData { } *mData;
     NSFileHandle *mFileHandle;
-    unsigned long mFilters[256];
+    unsigned long mFilters;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
@@ -21,14 +19,14 @@
     NSString *mTag;
 }
 
-@property(readonly) BOOL active;
-@property(readonly) long bufferID;
-@property(readonly) long bufferSize;
-@property(retain) TSMTraceController * controller;
-@property(retain) NSFileHandle * fileHandle;
-@property(readonly) unsigned int* filters;
-@property BOOL synchronizedAccess;
-@property(readonly) NSString * tag;
+@property (nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) long bufferID;
+@property (nonatomic, readonly) long bufferSize;
+@property (nonatomic, retain) TSMTraceController *controller;
+@property (nonatomic, retain) NSFileHandle *fileHandle;
+@property (nonatomic, readonly) unsigned int*filters;
+@property (nonatomic) BOOL synchronizedAccess;
+@property (nonatomic, readonly) NSString *tag;
 
 + (id)bufferWithTag:(id)arg1 size:(long)arg2;
 

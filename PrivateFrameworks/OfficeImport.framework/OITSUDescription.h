@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSString;
-
 @interface OITSUDescription : NSObject {
     void *_cfType;
     Class _class;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebTouchEventsGestureRecognizerDelegate>, NSMutableArray;
-
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer {
     BOOL _defaultPrevented;
     BOOL _dispatchingTouchEvents;
@@ -32,17 +30,17 @@
     <UIWebTouchEventsGestureRecognizerDelegate> *_webTouchDelegate;
 }
 
-@property(getter=isDefaultPrevented) BOOL defaultPrevented;
-@property(getter=isDispatchingTouchEvents,readonly) BOOL dispatchingTouchEvents;
-@property(readonly) BOOL inJavaScriptGesture;
-@property(readonly) const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; }* lastTouchEvent;
-@property(readonly) struct CGPoint { float x1; float x2; } locationInWindow;
-@property(readonly) float rotation;
-@property(readonly) float scale;
-@property(readonly) NSMutableArray * touchIdentifiers;
-@property(readonly) NSMutableArray * touchLocations;
-@property(readonly) NSMutableArray * touchPhases;
-@property(readonly) int type;
+@property (getter=isDefaultPrevented, nonatomic) BOOL defaultPrevented;
+@property (getter=isDispatchingTouchEvents, nonatomic, readonly) BOOL dispatchingTouchEvents;
+@property (nonatomic, readonly) BOOL inJavaScriptGesture;
+@property (nonatomic, readonly) const struct _UIWebTouchEvent { int x1; double x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; float x5; float x6; bool x7; struct _UIWebTouchPoint {} *x8; unsigned int x9; }*lastTouchEvent;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } locationInWindow;
+@property (nonatomic, readonly) float rotation;
+@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) NSMutableArray *touchIdentifiers;
+@property (nonatomic, readonly) NSMutableArray *touchLocations;
+@property (nonatomic, readonly) NSMutableArray *touchPhases;
+@property (nonatomic, readonly) int type;
 
 + (void)initialize;
 

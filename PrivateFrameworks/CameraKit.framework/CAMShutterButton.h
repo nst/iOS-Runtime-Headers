@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMTimelapseShutterRingView, UIActivityIndicatorView, UIImageView, UIView;
-
 @interface CAMShutterButton : UIButton {
     UIView *__innerView;
     UIImageView *__outerImageView;
@@ -22,16 +20,16 @@
     BOOL _spinning;
 }
 
-@property(readonly) UIView * _innerView;
-@property(readonly) UIImageView * _outerImageView;
-@property(readonly) UIView * _outerView;
-@property(readonly) UIActivityIndicatorView * _progressActivityIndicatorView;
-@property(readonly) CAMTimelapseShutterRingView * _timelapseOuterView;
-@property int mode;
-@property(getter=isPulsing) BOOL pulsing;
-@property BOOL showDisabled;
-@property struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
-@property(getter=isSpinning) BOOL spinning;
+@property (nonatomic, readonly) UIView *_innerView;
+@property (nonatomic, readonly) UIImageView *_outerImageView;
+@property (nonatomic, readonly) UIView *_outerView;
+@property (nonatomic, readonly) UIActivityIndicatorView *_progressActivityIndicatorView;
+@property (nonatomic, readonly) CAMTimelapseShutterRingView *_timelapseOuterView;
+@property (nonatomic) int mode;
+@property (getter=isPulsing, nonatomic) BOOL pulsing;
+@property (nonatomic) BOOL showDisabled;
+@property (nonatomic) struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
+@property (getter=isSpinning, nonatomic) BOOL spinning;
 
 + (id)shutterButton;
 + (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;

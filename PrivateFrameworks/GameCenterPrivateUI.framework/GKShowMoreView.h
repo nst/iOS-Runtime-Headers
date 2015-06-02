@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, NSLayoutConstraint, UIActivityIndicatorView, UICollectionView;
-
 @interface GKShowMoreView : UICollectionReusableView {
     UICollectionView *_collectionView;
     NSLayoutConstraint *_horizontalContraint;
@@ -18,17 +16,17 @@
     NSLayoutConstraint *_verticalContraint;
 }
 
-@property(retain) UICollectionView * collectionView;
-@property(retain) NSLayoutConstraint * horizontalContraint;
-@property(retain) GKLabel * label;
-@property BOOL loading;
-@property int numberToShow;
-@property int sectionIndex;
-@property SEL showMoreAction;
-@property BOOL showShowAll;
-@property(retain) UIActivityIndicatorView * spinner;
-@property float textAlignmentOffset;
-@property(retain) NSLayoutConstraint * verticalContraint;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic, retain) NSLayoutConstraint *horizontalContraint;
+@property (nonatomic, retain) GKLabel *label;
+@property (nonatomic) BOOL loading;
+@property (nonatomic) int numberToShow;
+@property (nonatomic) int sectionIndex;
+@property (nonatomic) SEL showMoreAction;
+@property (nonatomic) BOOL showShowAll;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (nonatomic) float textAlignmentOffset;
+@property (nonatomic, retain) NSLayoutConstraint *verticalContraint;
 
 + (BOOL)requiresConstraintBasedLayout;
 

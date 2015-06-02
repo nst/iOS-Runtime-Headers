@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUOutputStream>, NSData, NSMutableArray, NSString, OISFUCryptoKey, OISFUMoveableFileOutputStream, OISFUZipFreeSpaceEntry, OISFUZipOutputEntry;
-
 @interface OISFUZipArchiveOutputStream : NSObject <SFUSimpleOutputStream> {
     char *mBuffer;
     OISFUCryptoKey *mCryptoKey;
@@ -19,10 +17,10 @@
     NSData *mPassphraseHint;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (unsigned long)approximateBytesForEntryHeaderWithName:(id)arg1;
 

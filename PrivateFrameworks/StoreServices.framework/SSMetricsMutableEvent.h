@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface SSMetricsMutableEvent : SSMetricsEvent <NSMutableCopying> {
     NSMutableDictionary *_mutableBody;
 }
 
-@property(copy,readonly) NSDictionary * bodyDictionary;
+@property (nonatomic, readonly, copy) NSDictionary *bodyDictionary;
 
 - (void)addPropertiesWithDictionary:(id)arg1;
 - (void)appendPropertiesToBody:(id)arg1;

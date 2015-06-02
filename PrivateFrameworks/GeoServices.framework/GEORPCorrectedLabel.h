@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOMapRegion, NSMutableArray, NSString;
-
 @interface GEORPCorrectedLabel : PBCodable <NSCopying> {
     GEOLatLng *_coordinate;
     NSString *_correctedValue;
@@ -18,19 +16,19 @@
     unsigned long long _uid;
 }
 
-@property(retain) GEOLatLng * coordinate;
-@property(retain) NSString * correctedValue;
-@property(retain) NSMutableArray * featureHandles;
-@property(retain) GEOMapRegion * featureRegion;
-@property(readonly) BOOL hasCoordinate;
-@property(readonly) BOOL hasCorrectedValue;
-@property(readonly) BOOL hasFeatureRegion;
-@property BOOL hasLocalizedLabels;
-@property(readonly) BOOL hasOriginalValue;
-@property BOOL hasUid;
-@property BOOL localizedLabels;
-@property(retain) NSString * originalValue;
-@property unsigned long long uid;
+@property (nonatomic, retain) GEOLatLng *coordinate;
+@property (nonatomic, retain) NSString *correctedValue;
+@property (nonatomic, retain) NSMutableArray *featureHandles;
+@property (nonatomic, retain) GEOMapRegion *featureRegion;
+@property (nonatomic, readonly) BOOL hasCoordinate;
+@property (nonatomic, readonly) BOOL hasCorrectedValue;
+@property (nonatomic, readonly) BOOL hasFeatureRegion;
+@property (nonatomic) BOOL hasLocalizedLabels;
+@property (nonatomic, readonly) BOOL hasOriginalValue;
+@property (nonatomic) BOOL hasUid;
+@property (nonatomic) BOOL localizedLabels;
+@property (nonatomic, retain) NSString *originalValue;
+@property (nonatomic) unsigned long long uid;
 
 - (void)addFeatureHandle:(id)arg1;
 - (void)clearFeatureHandles;

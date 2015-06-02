@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface _HKSecTaskEntitlements : _HKEntitlements {
     NSString *_applicationIdentifier;
     struct __SecTask { } *_secTask;

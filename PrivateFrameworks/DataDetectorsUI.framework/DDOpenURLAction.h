@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDOpenURLAction : DDAction {
-}
+@interface DDOpenURLAction : DDAction
 
 - (void)perform;
 

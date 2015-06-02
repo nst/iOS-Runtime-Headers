@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface MCEmailAccountPayloadBase : MCPayload {
     BOOL _SMIMEEnabled;
     NSNumber *_SMIMEEnabledNum;
@@ -21,20 +19,20 @@
     NSNumber *_preventMoveNum;
 }
 
-@property BOOL SMIMEEnabled;
-@property(retain) NSNumber * SMIMEEnabledNum;
-@property(retain) NSData * SMIMEEncryptionIdentityPersistentID;
-@property(retain) NSString * SMIMEEncryptionIdentityUUID;
-@property BOOL SMIMEPerMessageSwitchEnabled;
-@property(retain) NSNumber * SMIMEPerMessageSwitchEnabledNum;
-@property(retain) NSData * SMIMESigningIdentityPersistentID;
-@property(retain) NSString * SMIMESigningIdentityUUID;
-@property BOOL isRecentsSyncingDisabled;
-@property(retain) NSNumber * isRecentsSyncingDisabledNum;
-@property BOOL preventAppSheet;
-@property(retain) NSNumber * preventAppSheetNum;
-@property BOOL preventMove;
-@property(retain) NSNumber * preventMoveNum;
+@property (nonatomic) BOOL SMIMEEnabled;
+@property (nonatomic, retain) NSNumber *SMIMEEnabledNum;
+@property (nonatomic, retain) NSData *SMIMEEncryptionIdentityPersistentID;
+@property (nonatomic, retain) NSString *SMIMEEncryptionIdentityUUID;
+@property (nonatomic) BOOL SMIMEPerMessageSwitchEnabled;
+@property (nonatomic, retain) NSNumber *SMIMEPerMessageSwitchEnabledNum;
+@property (nonatomic, retain) NSData *SMIMESigningIdentityPersistentID;
+@property (nonatomic, retain) NSString *SMIMESigningIdentityUUID;
+@property (nonatomic) BOOL isRecentsSyncingDisabled;
+@property (nonatomic, retain) NSNumber *isRecentsSyncingDisabledNum;
+@property (nonatomic) BOOL preventAppSheet;
+@property (nonatomic, retain) NSNumber *preventAppSheetNum;
+@property (nonatomic) BOOL preventMove;
+@property (nonatomic, retain) NSNumber *preventMoveNum;
 
 - (void).cxx_destruct;
 - (BOOL)SMIMEEnabled;

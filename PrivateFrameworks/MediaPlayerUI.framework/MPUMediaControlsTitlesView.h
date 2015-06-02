@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUMediaControlsTitlesViewDelegate>, CALayer, NSString;
-
 @interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <MPUContentSizeCategoryChanging, SBUIControlCenterControlObserver> {
     NSString *_appDisplayName;
     <MPUMediaControlsTitlesViewDelegate> *_delegate;
@@ -14,13 +12,13 @@
     CALayer *_titleEdgesLayerMask;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MPUMediaControlsTitlesViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(readonly) int mediaControlsStyle;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPUMediaControlsTitlesViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, readonly) int mediaControlsStyle;
+@property (readonly) Class superclass;
 
 + (id)detailTextColorForMediaControlsStyle:(int)arg1 highlighted:(BOOL)arg2;
 

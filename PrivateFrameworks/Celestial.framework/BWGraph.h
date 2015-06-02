@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <BWGraphStatusDelegate>, NSMutableArray, NSObject<OS_dispatch_group>;
-
 @interface BWGraph : NSObject {
     BOOL _beingConfigured;
     BOOL _classicRetainedBufferCount;
@@ -22,8 +20,8 @@
 }
 
 @property long errorStatus;
-@property <BWGraphStatusDelegate> * statusDelegate;
-@property(readonly) BOOL supportsLiveReconfiguration;
+@property (nonatomic) <BWGraphStatusDelegate> *statusDelegate;
+@property (nonatomic, readonly) BOOL supportsLiveReconfiguration;
 
 + (void)initialize;
 

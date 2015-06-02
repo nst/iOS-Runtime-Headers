@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class <EAWiFiUnconfiguredAccessoryBrowserDelegate>, NSObject<OS_dispatch_queue>, NSPredicate, NSSet;
-
 @interface EAWiFiUnconfiguredAccessoryBrowser : NSObject {
     BOOL __debugLog;
     NSPredicate *_accessorySearchPredicate;
@@ -12,10 +10,10 @@
     NSSet *_unconfiguredAccessories;
 }
 
-@property(retain) NSPredicate * accessorySearchPredicate;
-@property <EAWiFiUnconfiguredAccessoryBrowserDelegate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSSet * unconfiguredAccessories;
+@property (retain) NSPredicate *accessorySearchPredicate;
+@property (nonatomic) <EAWiFiUnconfiguredAccessoryBrowserDelegate> *delegate;
+@property (retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSSet *unconfiguredAccessories;
 
 - (void).cxx_destruct;
 - (void)_handleBrowserDidUpdateState:(id)arg1;

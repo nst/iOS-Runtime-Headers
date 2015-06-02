@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKUIBehaviorPhone : CKUIBehavior {
-}
+@interface CKUIBehaviorPhone : CKUIBehavior
 
 @end

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, NSURL;
+@interface SAAnswerDictionaryStructuredAnswer : AceObject <SAAnswerStructuredAnswer>
 
-@interface SAAnswerDictionaryStructuredAnswer : AceObject <SAAnswerStructuredAnswer> {
-}
-
-@property(copy) NSString * category;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSArray * definitionGroups;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * phoneticPronunciation;
-@property(copy) NSURL * sound;
-@property(readonly) Class superclass;
-@property(copy) NSArray * syllables;
-@property(copy) NSString * word;
+@property (nonatomic, copy) NSString *category;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSArray *definitionGroups;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *phoneticPronunciation;
+@property (nonatomic, copy) NSURL *sound;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *syllables;
+@property (nonatomic, copy) NSString *word;
 
 + (id)dictionaryStructuredAnswer;
 + (id)dictionaryStructuredAnswerWithDictionary:(id)arg1 context:(id)arg2;

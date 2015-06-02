@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKImageElement, IKTextElement;
+@interface IKHeaderElement : IKViewElement
 
-@interface IKHeaderElement : IKViewElement {
-}
-
-@property(retain,readonly) IKTextElement * descriptionText;
-@property(retain,readonly) IKImageElement * image;
-@property(readonly) int separator;
-@property(retain,readonly) IKTextElement * subtitle;
-@property(retain,readonly) IKTextElement * title;
+@property (nonatomic, readonly, retain) IKTextElement *descriptionText;
+@property (nonatomic, readonly, retain) IKImageElement *image;
+@property (nonatomic, readonly) int separator;
+@property (nonatomic, readonly, retain) IKTextElement *subtitle;
+@property (nonatomic, readonly, retain) IKTextElement *title;
 
 - (id)descriptionText;
 - (id)image;

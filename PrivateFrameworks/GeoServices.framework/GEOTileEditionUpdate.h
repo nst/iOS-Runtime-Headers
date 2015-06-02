@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOTileEditionUpdate : NSObject {
     NSMutableArray *_entries;
     BOOL _flushEverything;
     BOOL _invalidateEverything;
 }
 
-@property BOOL flushEverything;
-@property BOOL invalidateEverything;
+@property (nonatomic) BOOL flushEverything;
+@property (nonatomic) BOOL invalidateEverything;
 
 - (void)addTileset:(unsigned int)arg1 edition:(unsigned int)arg2 provider:(unsigned int)arg3 invalidateOnly:(BOOL)arg4;
 - (void)dealloc;

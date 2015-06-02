@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVPutStreamTask : CoreDAVPutTask {
-}
+@interface CoreDAVPutStreamTask : CoreDAVPutTask
 
 - (id)requestBody;
 - (id)requestBodyStream;

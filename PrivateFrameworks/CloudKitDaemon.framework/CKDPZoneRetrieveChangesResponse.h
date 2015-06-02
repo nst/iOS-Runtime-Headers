@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSMutableArray;
-
 @interface CKDPZoneRetrieveChangesResponse : PBCodable <NSCopying> {
     NSMutableArray *_changedZones;
     struct { 
@@ -13,11 +11,11 @@
     NSData *_syncContinuationToken;
 }
 
-@property(retain) NSMutableArray * changedZones;
-@property BOOL hasStatus;
-@property(readonly) BOOL hasSyncContinuationToken;
-@property int status;
-@property(retain) NSData * syncContinuationToken;
+@property (nonatomic, retain) NSMutableArray *changedZones;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
+@property (nonatomic) int status;
+@property (nonatomic, retain) NSData *syncContinuationToken;
 
 - (void).cxx_destruct;
 - (void)addChangedZones:(id)arg1;

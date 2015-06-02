@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, SSDownloadManager, SUClientInterface;
-
 @interface SUDownloadManager : NSObject {
     NSArray *_cachedDownloads;
     SUClientInterface *_clientInterface;
@@ -12,10 +10,10 @@
     NSMutableDictionary *_downloadsByID;
 }
 
-@property(readonly) SSDownloadManager * downloadManager;
-@property(readonly) NSArray * downloads;
+@property (nonatomic, readonly) SSDownloadManager *downloadManager;
+@property (nonatomic, readonly) NSArray *downloads;
 
-- (void)_finishPreflightWithCompletionBlock:(id)arg1;
+- (void)_finishPreflightWithCompletionBlock:(id /* block */)arg1;
 - (void)_reloadDownloadManager;
 - (void)_removeObject:(id)arg1 fromArray:(id*)arg2;
 - (void)dealloc;
@@ -25,7 +23,7 @@
 - (id)downloads;
 - (id)initWithDownloadManager:(id)arg1;
 - (id)initWithDownloadManager:(id)arg1 clientInterface:(id)arg2;
-- (void)preflightWithCompletionBlock:(id)arg1;
+- (void)preflightWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadDownloadManager;
 
 @end

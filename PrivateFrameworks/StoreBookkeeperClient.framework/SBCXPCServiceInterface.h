@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@interface SBCXPCServiceInterface : NSObject {
-}
+@interface SBCXPCServiceInterface : NSObject
 
 + (id)newListener;
 + (id)serviceClientInterface;

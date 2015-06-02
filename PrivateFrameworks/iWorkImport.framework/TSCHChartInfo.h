@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSCHStyleActAlike>, NSArray, NSMutableArray, NSMutableDictionary, NSString, TSCHChartDrawableInfo, TSCHChartLayoutCache, TSCHChartMediator, TSCHChartModel, TSCHChartStylePreset, TSCHChartType, TSCHLegendModel, TSDInfoGeometry, TSKCustomFormatList, TSPLazyReference, TSSStylesheet;
-
 @interface TSCHChartInfo : NSObject <NSCopying, TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent, TSDMixing> {
     NSMutableArray *mCategoryAxisNonStyles;
     NSMutableArray *mCategoryAxisStyles;
@@ -58,31 +51,31 @@
     NSMutableArray *mValueAxisStyles;
 }
 
-@property(retain,readonly) TSCHChartType * chartType;
-@property(copy,readonly) NSString * debugDescription;
-@property struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } defaultLayoutSettings;
-@property(copy,readonly) NSString * description;
-@property BOOL displayMessageOnRepCreation;
-@property(readonly) TSSStylesheet * documentStylesheet;
-@property(readonly) TSCHChartDrawableInfo * drawableInfo;
-@property(copy) TSDInfoGeometry * geometry;
-@property(readonly) int gridDirection;
-@property(readonly) BOOL hasSetDefaultLayoutSettings;
-@property(readonly) unsigned int hash;
-@property double informationalMessageDuration;
-@property(retain) NSString * informationalMessageString;
-@property(readonly) BOOL isPhantom;
-@property(copy) NSString * lastAppliedFillSetLookupString;
-@property(retain) TSCHLegendModel * legend;
-@property(retain) TSCHChartMediator * mediator;
-@property(readonly) struct CGSize { float x1; float x2; } minimumChartBodySize;
-@property(retain) TSCHChartModel * model;
-@property(readonly) unsigned int multiDataSetIndex;
-@property(readonly) TSCHChartStylePreset * preset;
-@property struct CGPoint { float x1; float x2; } previewOrigin;
-@property(readonly) TSCHChartLayoutCache * sceneAreaLayoutItemCache;
-@property(readonly) Class superclass;
-@property(readonly) BOOL wantsDeferredUpgradeOrImport;
+@property (nonatomic, readonly, retain) TSCHChartType *chartType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; } defaultLayoutSettings;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displayMessageOnRepCreation;
+@property (nonatomic, readonly) TSSStylesheet *documentStylesheet;
+@property (nonatomic, readonly) TSCHChartDrawableInfo *drawableInfo;
+@property (nonatomic, copy) TSDInfoGeometry *geometry;
+@property (nonatomic, readonly) int gridDirection;
+@property (nonatomic, readonly) BOOL hasSetDefaultLayoutSettings;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double informationalMessageDuration;
+@property (nonatomic, retain) NSString *informationalMessageString;
+@property (nonatomic, readonly) BOOL isPhantom;
+@property (nonatomic, copy) NSString *lastAppliedFillSetLookupString;
+@property (nonatomic, retain) TSCHLegendModel *legend;
+@property (nonatomic, retain) TSCHChartMediator *mediator;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minimumChartBodySize;
+@property (nonatomic, retain) TSCHChartModel *model;
+@property (nonatomic, readonly) unsigned int multiDataSetIndex;
+@property (nonatomic, readonly) TSCHChartStylePreset *preset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } previewOrigin;
+@property (nonatomic, readonly) TSCHChartLayoutCache *sceneAreaLayoutItemCache;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL wantsDeferredUpgradeOrImport;
 
 + (int)adjustNumberFormatType:(int)arg1 forChartModel:(id)arg2 gridValueType:(int)arg3 hasCustomFormat:(BOOL)arg4;
 + (id)adjustNumberFormatTypeValue:(id)arg1 forChartModel:(id)arg2 gridValueType:(int)arg3 hasCustomFormat:(BOOL)arg4;
@@ -108,7 +101,7 @@
 + (id)paragraphStylePropertiesChartsUse;
 + (id)propertiesThatInvalidateModel;
 + (id)referenceLineStyleIdentifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
-+ (id)scale3DPropertyToConstantDepthInfoChartScaleMappingsWithBarShape:(int)arg1 conversionBlock:(id)arg2;
++ (id)scale3DPropertyToConstantDepthInfoChartScaleMappingsWithBarShape:(int)arg1 conversionBlock:(id /* block */)arg2;
 + (id)seriesStyleIdentifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
 + (void)setCurrentThreadSceneAreaLayoutCache:(id)arg1;
 + (id)specificNumberFormatTypeProperties;

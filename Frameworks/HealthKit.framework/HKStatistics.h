@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity, HKQuantityType, NSArray, NSDate, NSDictionary;
-
 @interface HKStatistics : NSObject <NSCopying, NSSecureCoding> {
     HKQuantity *_averageQuantity;
     NSDictionary *_averageQuantityBySource;
@@ -21,20 +19,20 @@
     NSDictionary *_sumQuantityBySource;
 }
 
-@property(retain) HKQuantity * averageQuantity;
-@property(retain) NSDictionary * averageQuantityBySource;
-@property unsigned int dataCount;
-@property(retain) NSDictionary * dataCountBySource;
-@property(readonly) NSDate * endDate;
-@property(retain) HKQuantity * maximumQuantity;
-@property(retain) NSDictionary * maximumQuantityBySource;
-@property(retain) HKQuantity * minimumQuantity;
-@property(retain) NSDictionary * minimumQuantityBySource;
-@property(readonly) HKQuantityType * quantityType;
-@property(readonly) NSArray * sources;
-@property(readonly) NSDate * startDate;
-@property(retain) HKQuantity * sumQuantity;
-@property(retain) NSDictionary * sumQuantityBySource;
+@property (nonatomic, retain) HKQuantity *averageQuantity;
+@property (nonatomic, retain) NSDictionary *averageQuantityBySource;
+@property (nonatomic) unsigned int dataCount;
+@property (nonatomic, retain) NSDictionary *dataCountBySource;
+@property (readonly) NSDate *endDate;
+@property (nonatomic, retain) HKQuantity *maximumQuantity;
+@property (nonatomic, retain) NSDictionary *maximumQuantityBySource;
+@property (nonatomic, retain) HKQuantity *minimumQuantity;
+@property (nonatomic, retain) NSDictionary *minimumQuantityBySource;
+@property (readonly) HKQuantityType *quantityType;
+@property (readonly) NSArray *sources;
+@property (readonly) NSDate *startDate;
+@property (nonatomic, retain) HKQuantity *sumQuantity;
+@property (nonatomic, retain) NSDictionary *sumQuantityBySource;
 
 + (void)_validateOptions:(unsigned int)arg1 forDataType:(id)arg2;
 + (BOOL)supportsSecureCoding;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKEventNotesInlineEditItem, EKEventURLInlineEditItem;
-
 @interface EKEventURLAndNotesInlineEditItem : EKEventEditItem {
     EKEventNotesInlineEditItem *_notesEditItem;
     EKEventURLInlineEditItem *_urlEditItem;

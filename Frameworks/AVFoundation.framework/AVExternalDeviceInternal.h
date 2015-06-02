@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVExternalDeviceDelegate>, AVWeakReference, NSArray, NSData, NSObject<OS_dispatch_queue>;
-
 @interface AVExternalDeviceInternal : NSObject {
     NSArray *_HIDs;
     NSData *_MFiCertSerial;

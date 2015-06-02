@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKImage;
-
 @interface PKPassLogoImageSet : PKPassImageSet {
     PKImage *_backgroundImage;
     PKImage *_bankLogoImage;
@@ -16,15 +14,17 @@
     PKImage *_stripImage;
 }
 
-@property(retain) PKImage * backgroundImage;
-@property(retain) PKImage * bankLogoImage;
-@property(retain) PKImage * cardBackgroundCombinedImage;
-@property(retain) PKImage * cardBackgroundImage;
-@property(retain) PKImage * cobrandLogoImage;
-@property(retain) PKImage * footerImage;
-@property(retain) PKImage * logoImage;
-@property(retain) PKImage * networkLogoImage;
-@property(retain) PKImage * stripImage;
+@property (nonatomic, retain) PKImage *backgroundImage;
+@property (nonatomic, retain) PKImage *bankLogoImage;
+@property (nonatomic, retain) PKImage *cardBackgroundCombinedImage;
+@property (nonatomic, retain) PKImage *cardBackgroundImage;
+@property (nonatomic, retain) PKImage *cobrandLogoImage;
+@property (nonatomic, retain) PKImage *footerImage;
+@property (nonatomic, retain) PKImage *logoImage;
+@property (nonatomic, retain) PKImage *networkLogoImage;
+@property (nonatomic, retain) PKImage *stripImage;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (int)imageSetType;
 + (BOOL)shouldCache;
@@ -42,11 +42,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
-- (void)loadPDFArtFromBundle:(id)arg1;
 - (id)logoImage;
 - (id)networkLogoImage;
 - (void)preheatImages;
-- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBankLogoImage:(id)arg1;
 - (void)setCardBackgroundCombinedImage:(id)arg1;
@@ -57,5 +55,10 @@
 - (void)setNetworkLogoImage:(id)arg1;
 - (void)setStripImage:(id)arg1;
 - (id)stripImage;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (void)loadPDFArtFromBundle:(id)arg1;
+- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDate, CKDPIdentifier;
-
 @interface CKDPPulseData : PBCodable <NSCopying> {
     long long _customState;
     struct { 
@@ -20,22 +18,22 @@
     CKDPIdentifier *_user;
 }
 
-@property long long customState;
-@property BOOL hasCustomState;
-@property(readonly) BOOL hasLastCustom;
-@property(readonly) BOOL hasLastEdited;
-@property(readonly) BOOL hasLastInvisible;
-@property(readonly) BOOL hasLastViewed;
-@property BOOL hasState;
-@property BOOL hasStateTTLMillis;
-@property(readonly) BOOL hasUser;
-@property(retain) CKDPDate * lastCustom;
-@property(retain) CKDPDate * lastEdited;
-@property(retain) CKDPDate * lastInvisible;
-@property(retain) CKDPDate * lastViewed;
-@property int state;
-@property long long stateTTLMillis;
-@property(retain) CKDPIdentifier * user;
+@property (nonatomic) long long customState;
+@property (nonatomic) BOOL hasCustomState;
+@property (nonatomic, readonly) BOOL hasLastCustom;
+@property (nonatomic, readonly) BOOL hasLastEdited;
+@property (nonatomic, readonly) BOOL hasLastInvisible;
+@property (nonatomic, readonly) BOOL hasLastViewed;
+@property (nonatomic) BOOL hasState;
+@property (nonatomic) BOOL hasStateTTLMillis;
+@property (nonatomic, readonly) BOOL hasUser;
+@property (nonatomic, retain) CKDPDate *lastCustom;
+@property (nonatomic, retain) CKDPDate *lastEdited;
+@property (nonatomic, retain) CKDPDate *lastInvisible;
+@property (nonatomic, retain) CKDPDate *lastViewed;
+@property (nonatomic) int state;
+@property (nonatomic) long long stateTTLMillis;
+@property (nonatomic, retain) CKDPIdentifier *user;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

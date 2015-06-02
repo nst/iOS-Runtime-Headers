@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SACalendarEventSnippet : SAUISnippet
 
-@interface SACalendarEventSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * events;
+@property (nonatomic, copy) NSArray *events;
 
 + (id)eventSnippet;
 + (id)eventSnippetWithDictionary:(id)arg1 context:(id)arg2;

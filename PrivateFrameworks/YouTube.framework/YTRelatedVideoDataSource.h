@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class YTVideo;
-
 @interface YTRelatedVideoDataSource : YTVideoDataSource {
     YTVideo *_video;
 }

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUITableViewSectionDelegate>;
-
 @interface SKUITableViewSection : NSObject {
     <SKUITableViewSectionDelegate> *_delegate;
     BOOL _hidesHeaderView;
     int _sectionIndex;
 }
 
-@property <SKUITableViewSectionDelegate> * delegate;
-@property BOOL hidesHeaderView;
-@property(readonly) int numberOfRowsInSection;
-@property int sectionIndex;
+@property (nonatomic) <SKUITableViewSectionDelegate> *delegate;
+@property (nonatomic) BOOL hidesHeaderView;
+@property (nonatomic, readonly) int numberOfRowsInSection;
+@property (nonatomic) int sectionIndex;
 
 - (void).cxx_destruct;
 - (id)delegate;

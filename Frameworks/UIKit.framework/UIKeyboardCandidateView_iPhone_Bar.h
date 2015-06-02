@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateView_iPhone_Bar : UIKeyboardCandidateView_iPhone {
-}
+@interface UIKeyboardCandidateView_iPhone_Bar : UIKeyboardCandidateView_iPhone
 
 - (struct CGSize { float x1; float x2; })_defaultSize;
 - (unsigned int)_numberOfColumns:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSPersistentStoreCoordinator, NSString, NSURL;
-
 @interface NSPersistentStore : NSObject {
     NSString *_configurationName;
     NSPersistentStoreCoordinator *_coordinator;
@@ -22,14 +20,14 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * URL;
-@property(copy,readonly) NSString * configurationName;
-@property(copy) NSString * identifier;
-@property(retain) NSDictionary * metadata;
-@property(readonly) NSDictionary * options;
-@property(readonly) NSPersistentStoreCoordinator * persistentStoreCoordinator;
-@property(getter=isReadOnly) BOOL readOnly;
-@property(copy,readonly) NSString * type;
+@property (retain) NSURL *URL;
+@property (readonly, copy) NSString *configurationName;
+@property (copy) NSString *identifier;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (readonly) NSDictionary *options;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (getter=isReadOnly) BOOL readOnly;
+@property (readonly, copy) NSString *type;
 
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;

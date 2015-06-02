@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCell;
-
 @interface UITableViewCellReorderControl : UIControl {
     UITableViewCell *_cell;
     struct CGPoint { 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference;
-
 @interface AVWeakKeyValueObserverProxy : NSObject {
     AVWeakReference *_weakReferenceToObserver;
 }

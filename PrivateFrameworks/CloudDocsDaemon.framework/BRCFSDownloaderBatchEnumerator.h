@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCSyncContext, PQLResultSet;
-
 @interface BRCFSDownloaderBatchEnumerator : NSObject {
     long long _now;
     long long *_retryQueueKick;
@@ -11,7 +9,7 @@
     BRCSyncContext *_syncContext;
 }
 
-@property(readonly) BRCSyncContext * syncContext;
+@property (nonatomic, readonly) BRCSyncContext *syncContext;
 
 - (void).cxx_destruct;
 - (void)close;

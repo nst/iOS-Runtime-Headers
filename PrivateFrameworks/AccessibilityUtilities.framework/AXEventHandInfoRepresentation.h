@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSArray;
-
 @interface AXEventHandInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
     unsigned short _currentFingerCount;
     unsigned int _eventType;
@@ -20,16 +18,16 @@
     unsigned char _systemGesturePossible;
 }
 
-@property unsigned short currentFingerCount;
-@property unsigned int eventType;
-@property unsigned int handEventMask;
-@property unsigned int handIdentity;
-@property unsigned int handIndex;
-@property struct CGPoint { float x1; float x2; } handPosition;
-@property unsigned short initialFingerCount;
-@property(retain) NSArray * paths;
-@property unsigned char swipe;
-@property unsigned char systemGesturePossible;
+@property (nonatomic) unsigned short currentFingerCount;
+@property (nonatomic) unsigned int eventType;
+@property (nonatomic) unsigned int handEventMask;
+@property (nonatomic) unsigned int handIdentity;
+@property (nonatomic) unsigned int handIndex;
+@property (nonatomic) struct CGPoint { float x1; float x2; } handPosition;
+@property (nonatomic) unsigned short initialFingerCount;
+@property (nonatomic, retain) NSArray *paths;
+@property (nonatomic) unsigned char swipe;
+@property (nonatomic) unsigned char systemGesturePossible;
 
 + (id)representationWithHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; float x_13_1_4; float x_13_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDPhoto : PBCodable <NSCopying> {
     NSString *_photoId;
     NSMutableArray *_photoVersions;
 }
 
-@property(readonly) BOOL hasPhotoId;
-@property(retain) NSString * photoId;
-@property(retain) NSMutableArray * photoVersions;
+@property (nonatomic, readonly) BOOL hasPhotoId;
+@property (nonatomic, retain) NSString *photoId;
+@property (nonatomic, retain) NSMutableArray *photoVersions;
 
 - (void)addPhotoVersion:(id)arg1;
 - (void)clearPhotoVersions;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPersonAdditions : NSObject {
-}
+@interface ABPersonAdditions : NSObject
 
 + (id)arrayByWrappingIntegersInCFArray:(struct __CFArray { }*)arg1;
 + (void)cloneNamePropertiesFromPerson:(void*)arg1 toPerson:(void*)arg2;

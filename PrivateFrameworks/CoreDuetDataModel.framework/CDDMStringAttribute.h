@@ -2,34 +2,31 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber, NSString;
+@interface CDDMStringAttribute : NSManagedObject
 
-@interface CDDMStringAttribute : NSManagedObject {
-}
-
-@property(retain) NSNumber * anonymizedBeacon;
-@property(retain) NSNumber * anonymizedLocation;
-@property(retain) NSNumber * category;
-@property(retain) NSNumber * clientId;
-@property(retain) NSDate * creationDate;
-@property(retain) NSNumber * cumulativeComputeUtilizationGauge;
-@property(retain) NSNumber * cumulativeIoReadBytesGauge;
-@property(retain) NSNumber * cumulativeIoWriteBytesGauge;
-@property(retain) NSNumber * cumulativeMillijoulesGauge;
-@property(retain) NSNumber * cumulativeNetworkBytesGauge;
-@property(retain) NSNumber * fallingEdge;
-@property(retain) NSNumber * forecastFlavor;
-@property(retain) NSNumber * forecastPeerScore;
-@property(retain) NSNumber * forecastScoresValid;
-@property(retain) NSNumber * forecastTemporalScore;
-@property(retain) NSNumber * forecastWindowVariant;
-@property(retain) NSNumber * integerId;
-@property(retain) NSNumber * localDaysSinceSunday;
-@property(retain) NSNumber * localTime;
-@property(retain) NSNumber * localTimeQuarterHourSlot;
-@property(retain) NSNumber * networkQuality;
-@property(retain) NSNumber * risingEdge;
-@property(retain) NSNumber * userId;
-@property(retain) NSString * value;
+@property (nonatomic, retain) NSNumber *anonymizedBeacon;
+@property (nonatomic, retain) NSNumber *anonymizedLocation;
+@property (nonatomic, retain) NSNumber *category;
+@property (nonatomic, retain) NSNumber *clientId;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSNumber *cumulativeComputeUtilizationGauge;
+@property (nonatomic, retain) NSNumber *cumulativeIoReadBytesGauge;
+@property (nonatomic, retain) NSNumber *cumulativeIoWriteBytesGauge;
+@property (nonatomic, retain) NSNumber *cumulativeMillijoulesGauge;
+@property (nonatomic, retain) NSNumber *cumulativeNetworkBytesGauge;
+@property (nonatomic, retain) NSNumber *fallingEdge;
+@property (nonatomic, retain) NSNumber *forecastFlavor;
+@property (nonatomic, retain) NSNumber *forecastPeerScore;
+@property (nonatomic, retain) NSNumber *forecastScoresValid;
+@property (nonatomic, retain) NSNumber *forecastTemporalScore;
+@property (nonatomic, retain) NSNumber *forecastWindowVariant;
+@property (nonatomic, retain) NSNumber *integerId;
+@property (nonatomic, retain) NSNumber *localDaysSinceSunday;
+@property (nonatomic, retain) NSNumber *localTime;
+@property (nonatomic, retain) NSNumber *localTimeQuarterHourSlot;
+@property (nonatomic, retain) NSNumber *networkQuality;
+@property (nonatomic, retain) NSNumber *risingEdge;
+@property (nonatomic, retain) NSNumber *userId;
+@property (nonatomic, retain) NSString *value;
 
 @end

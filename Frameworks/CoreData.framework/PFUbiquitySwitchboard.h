@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSRecursiveLock;
-
 @interface PFUbiquitySwitchboard : NSObject {
     NSRecursiveLock *_registrationLock;
     NSMutableDictionary *_rootLocationToLocalPeerIDToFilePresenters;

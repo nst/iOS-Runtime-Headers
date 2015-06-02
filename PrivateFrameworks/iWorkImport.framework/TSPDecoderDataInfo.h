@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSPDigest;
-
 @interface TSPDecoderDataInfo : NSObject <TSPDecoderDataInfo> {
     TSPDigest *_digest;
     NSString *_externalFilePath;
@@ -16,14 +9,14 @@
     NSString *_preferredFilename;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) TSPDigest * digest;
-@property(readonly) NSString * externalFilePath;
-@property(readonly) unsigned int hash;
-@property(readonly) long long identifier;
-@property(readonly) NSString * preferredFilename;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TSPDigest *digest;
+@property (nonatomic, readonly) NSString *externalFilePath;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long identifier;
+@property (nonatomic, readonly) NSString *preferredFilename;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)digest;

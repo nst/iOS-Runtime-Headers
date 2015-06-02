@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVPrincipalSearchSupport : NSObject {
-}
+@interface CalDAVPrincipalSearchSupport : NSObject
 
 + (id)nameForWellKnownType:(int)arg1;
 + (id)namespaceAndNameForWellKnownType:(int)arg1;

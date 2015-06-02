@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImage, UIImageView, UIView;
-
 @interface PUCroppingImageView : UIView {
     UIView *_accessoryView;
     struct UIEdgeInsets { 
@@ -17,11 +15,11 @@
     UIImageView *_imageView;
 }
 
-@property(retain) UIView * accessoryView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
-@property BOOL antialiasEdges;
-@property(retain) UIImage * image;
-@property unsigned int imageFillMode;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } accessoryViewInsets;
+@property (nonatomic) BOOL antialiasEdges;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) unsigned int imageFillMode;
 
 - (void).cxx_destruct;
 - (void)_configure;

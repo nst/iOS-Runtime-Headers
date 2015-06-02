@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSArray;
-
 @interface WLOHomeKitResult : NSObject {
     NSArray *_characteristicTypes;
     unsigned int _duration;
@@ -14,13 +12,13 @@
     unsigned int _transportType;
 }
 
-@property(retain) NSArray * characteristicTypes;
-@property unsigned int duration;
-@property unsigned int isClient;
-@property int resultCode;
-@property unsigned int resultType;
-@property(retain) NSArray * serviceTypes;
-@property unsigned int transportType;
+@property (nonatomic, retain) NSArray *characteristicTypes;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned int isClient;
+@property (nonatomic) int resultCode;
+@property (nonatomic) unsigned int resultType;
+@property (nonatomic, retain) NSArray *serviceTypes;
+@property (nonatomic) unsigned int transportType;
 
 - (void).cxx_destruct;
 - (id)characteristicTypes;

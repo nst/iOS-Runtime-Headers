@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSArray, NSNumber, NSObject<OS_dispatch_queue>;
-
 @interface TUAudioSystemController : TUAudioController {
     NSObject<OS_dispatch_queue> *_downlinkMutedQueue;
     NSNumber *_isDownlinkMutedCached;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSTextTableBlock;
-
 @interface NSTextBlockLayoutHelper : NSObject {
     float _bBorder;
     float _bMargin;
@@ -50,7 +48,7 @@
     float _width;
 }
 
-@property(readonly) NSTextTableBlock * block;
+@property (readonly) NSTextTableBlock *block;
 
 - (id)block;
 - (void)dealloc;

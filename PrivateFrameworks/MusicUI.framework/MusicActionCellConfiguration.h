@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicActionCellConfiguration : MPUActionCellConfiguration {
-}
+@interface MusicActionCellConfiguration : MPUActionCellConfiguration
 
 + (void)configureCellForSizing:(id)arg1;
 + (Class)tableViewCellClass;

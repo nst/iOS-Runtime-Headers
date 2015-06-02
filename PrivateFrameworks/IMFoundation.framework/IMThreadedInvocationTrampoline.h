@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSThread;
-
 @interface IMThreadedInvocationTrampoline : IMInvocationTrampoline {
     BOOL _immediateForMatchingThread;
     NSThread *_thread;

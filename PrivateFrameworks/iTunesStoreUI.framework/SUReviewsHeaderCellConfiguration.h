@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUReviewsHeaderCellConfiguration : SUItemCellConfiguration {
-}
+@interface SUReviewsHeaderCellConfiguration : SUItemCellConfiguration
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 

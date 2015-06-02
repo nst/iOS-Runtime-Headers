@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
-
 @interface PKPaymentDeviceRewrapData : NSObject <NSSecureCoding> {
     NSString *_CASDECCCertificate;
     NSString *_CASDRSACertificate;
     NSString *_deviceIdentifier;
 }
 
-@property(copy) NSString * CASDECCCertificate;
-@property(copy) NSString * CASDRSACertificate;
-@property(copy) NSString * deviceIdentifier;
+@property (nonatomic, copy) NSString *CASDECCCertificate;
+@property (nonatomic, copy) NSString *CASDRSACertificate;
+@property (nonatomic, copy) NSString *deviceIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

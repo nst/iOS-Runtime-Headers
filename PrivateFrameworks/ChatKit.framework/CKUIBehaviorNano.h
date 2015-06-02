@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKUIBehaviorNano : CKUIBehavior {
-}
+@interface CKUIBehaviorNano : CKUIBehavior
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })attachmentBalloonAlignmentRectInsets;
 - (struct CGSize { float x1; float x2; })attachmentBalloonSize;

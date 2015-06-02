@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBPeripheralDelegate>, CBCentralManager, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface CBPeripheral : CBPeer {
     NSNumber *_RSSI;
     NSMutableDictionary *_attributes;
@@ -32,12 +30,12 @@
     int _state;
 }
 
-@property(retain) NSNumber * RSSI;
-@property <CBPeripheralDelegate> * delegate;
-@property(readonly) BOOL isConnected;
-@property(readonly) BOOL isConnectedToSystem;
-@property(retain) NSString * name;
-@property(retain) NSArray * services;
+@property (retain) NSNumber *RSSI;
+@property (nonatomic) <CBPeripheralDelegate> *delegate;
+@property (readonly) BOOL isConnected;
+@property (nonatomic, readonly) BOOL isConnectedToSystem;
+@property (retain) NSString *name;
+@property (retain) NSArray *services;
 @property int state;
 
 - (id)RSSI;

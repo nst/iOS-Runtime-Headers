@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUIErrorSnippet : SAUISnippet
 
-@interface SAUIErrorSnippet : SAUISnippet {
-}
-
-@property(copy) NSString * message;
+@property (nonatomic, copy) NSString *message;
 
 + (id)errorSnippet;
 + (id)errorSnippetWithDictionary:(id)arg1 context:(id)arg2;

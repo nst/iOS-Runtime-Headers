@@ -6,7 +6,7 @@
     unsigned int _precision;
 }
 
-@property unsigned int precision;
+@property (nonatomic) unsigned int precision;
 
 - (id)between:(float)arg1 and:(float)arg2;
 - (id)init;

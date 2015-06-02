@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSNumber;
-
 @interface SSRentalCheckinRequest : SSRequest {
     NSNumber *_accountIdentifier;
     NSNumber *_rentalKeyIdentifier;
     NSArray *_sinfs;
 }
 
-@property(readonly) NSNumber * accountIdentifier;
-@property(readonly) NSNumber * rentalKeyIdentifier;
-@property(readonly) NSArray * sinfs;
+@property (readonly) NSNumber *accountIdentifier;
+@property (readonly) NSNumber *rentalKeyIdentifier;
+@property (readonly) NSArray *sinfs;
 
 - (id)accountIdentifier;
 - (id)copyXPCEncoding;
@@ -23,7 +21,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)rentalKeyIdentifier;
 - (id)sinfs;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithConnectionResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
 
 @end

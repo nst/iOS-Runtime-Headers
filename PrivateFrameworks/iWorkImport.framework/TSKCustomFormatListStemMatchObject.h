@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUCustomFormat;
-
 @interface TSKCustomFormatListStemMatchObject : NSObject <NSCopying> {
     TSUCustomFormat *mCustomFormat;
 }

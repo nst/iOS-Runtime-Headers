@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFRecipientListStringsLocalizationLocator : NSObject {
-}
+@interface MFRecipientListStringsLocalizationLocator : NSObject
 
 @end

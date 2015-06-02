@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSMutableDictionary, NSMutableSet;
-
 @interface BKSEventFocusManager : NSObject {
     NSMutableSet *_currentState;
     BOOL _needsFlush;
@@ -11,14 +9,14 @@
     BOOL _systemAppControlsFocusOnMainDisplay;
 }
 
-@property(readonly) NSMutableSet * currentState;
-@property BOOL needsFlush;
-@property(readonly) NSMutableDictionary * pendingStatesByPriority;
-@property BOOL systemAppControlsFocusOnMainDisplay;
+@property (nonatomic, readonly) NSMutableSet *currentState;
+@property (nonatomic) BOOL needsFlush;
+@property (nonatomic, readonly) NSMutableDictionary *pendingStatesByPriority;
+@property (nonatomic) BOOL systemAppControlsFocusOnMainDisplay;
 
 + (id)sharedInstance;
 
-- (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(id)arg2;
+- (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(id /* block */)arg2;
 - (id)currentState;
 - (void)dealloc;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2;

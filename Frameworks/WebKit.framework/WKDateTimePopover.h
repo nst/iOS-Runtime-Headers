@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class WKContentView;
-
 @interface WKDateTimePopover : WKFormRotatingAccessoryPopover <WKFormControl> {
     WKContentView *_view;
     struct RetainPtr<WKDateTimePopoverViewController> { 

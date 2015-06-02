@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUITrendingSearchPageViewDelegate>, NSOperationQueue, SKUIClientContext, SKUILoadTrendingSearchPageOperation, SKUITrendingSearchPage, SKUITrendingSearchPageView;
-
 @interface SKUISearchFieldTableView : UITableView {
     SKUIClientContext *_clientContext;
     SKUILoadTrendingSearchPageOperation *_loadOperation;
@@ -14,9 +12,9 @@
     BOOL _trendingSearchesVisible;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property <SKUITrendingSearchPageViewDelegate> * trendingSearchDelegate;
-@property BOOL trendingSearchesVisible;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) <SKUITrendingSearchPageViewDelegate> *trendingSearchDelegate;
+@property (nonatomic) BOOL trendingSearchesVisible;
 
 - (void).cxx_destruct;
 - (void)_reloadData;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface HDCodableCategoryDomainDictionary : PBCodable <HDSyncCodable, NSCopying> {
     long long _category;
     NSString *_domain;
@@ -13,15 +11,15 @@
     NSMutableArray *_keyValuePairs;
 }
 
-@property long long category;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * domain;
-@property BOOL hasCategory;
-@property(readonly) BOOL hasDomain;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableArray * keyValuePairs;
-@property(readonly) Class superclass;
+@property (nonatomic) long long category;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic) BOOL hasCategory;
+@property (nonatomic, readonly) BOOL hasDomain;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableArray *keyValuePairs;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_validateForInsertionWithError:(id*)arg1;

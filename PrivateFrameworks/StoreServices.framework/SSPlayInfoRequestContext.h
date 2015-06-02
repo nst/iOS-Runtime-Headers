@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSData, NSNumber, NSString;
-
 @interface SSPlayInfoRequestContext : NSObject <NSCopying, SSXPCCoding> {
     NSNumber *_accountIdentifier;
     NSNumber *_contentIdentifier;
@@ -12,15 +10,15 @@
     NSArray *_sinfs;
 }
 
-@property(copy) NSData * SICData;
-@property(copy) NSNumber * accountIdentifier;
-@property(copy) NSNumber * contentIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * playerGUID;
-@property(copy) NSArray * sinfs;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSData *SICData;
+@property (nonatomic, copy) NSNumber *accountIdentifier;
+@property (nonatomic, copy) NSNumber *contentIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *playerGUID;
+@property (nonatomic, copy) NSArray *sinfs;
+@property (readonly) Class superclass;
 
 - (id)SICData;
 - (id)accountIdentifier;

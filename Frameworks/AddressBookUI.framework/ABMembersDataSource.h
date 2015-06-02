@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMembersDataSourceDelegate>, <ABStyleProvider>, ABBannerView, ABModel, ABUIPerson, NSMutableArray, NSString;
-
 @interface ABMembersDataSource : NSObject <UITableViewDataSource, UITableViewDelegate> {
     void *_addressBook;
     ABBannerView *_bannerView;
@@ -19,14 +17,14 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property void* addressBook;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABMembersDataSourceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) ABModel * model;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (nonatomic) void*addressBook;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABMembersDataSourceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) ABModel *model;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 - (void)_invalidateMeCard;
 - (void*)addressBook;

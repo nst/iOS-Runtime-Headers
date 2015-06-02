@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSMutableArray;
-
 @interface _MPUProtoBufUserActivityContext : PBCodable <NSCopying> {
     NSMutableArray *_containerItems;
     struct { 
@@ -14,11 +12,11 @@
     int _originatorVersion;
 }
 
-@property(retain) NSMutableArray * containerItems;
-@property BOOL hasOriginatorType;
-@property BOOL hasOriginatorVersion;
-@property int originatorType;
-@property int originatorVersion;
+@property (nonatomic, retain) NSMutableArray *containerItems;
+@property (nonatomic) BOOL hasOriginatorType;
+@property (nonatomic) BOOL hasOriginatorVersion;
+@property (nonatomic) int originatorType;
+@property (nonatomic) int originatorVersion;
 
 - (void).cxx_destruct;
 - (void)addContainerItems:(id)arg1;

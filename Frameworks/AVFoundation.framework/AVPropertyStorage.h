@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVPropertyStorage : NSObject {
     NSMutableDictionary *_propertyStorage;
     NSObject<OS_dispatch_queue> *_storageAccessWorkQueue;
@@ -14,7 +12,7 @@
 - (void)finalize;
 - (id)init;
 - (id)objectForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 defaultObjectBlock:(id)arg2;
+- (id)objectForKey:(id)arg1 defaultObjectBlock:(id /* block */)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (BOOL)shouldUsePropertyStorageCacheForKey:(id)arg1;
 - (void)willAccessKVOForKey:(id)arg1;

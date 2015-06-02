@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray;
-
 @interface CKDFetchSharesOperation : CKDDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareFetchedProgressBlock;
-
+    id /* block */ _shareFetchedProgressBlock;
     NSArray *_shareIDs;
     NSArray *_zoneIDs;
 }
 
-@property(copy) id shareFetchedProgressBlock;
-@property(retain) NSArray * shareIDs;
-@property(retain) NSArray * zoneIDs;
+@property (nonatomic, copy) id /* block */ shareFetchedProgressBlock;
+@property (nonatomic, retain) NSArray *shareIDs;
+@property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleShareFetched:(id)arg1 shareID:(id)arg2 zoneID:(id)arg3 operationResult:(id)arg4;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (void)setShareFetchedProgressBlock:(id)arg1;
+- (void)setShareFetchedProgressBlock:(id /* block */)arg1;
 - (void)setShareIDs:(id)arg1;
 - (void)setZoneIDs:(id)arg1;
-- (id)shareFetchedProgressBlock;
+- (id /* block */)shareFetchedProgressBlock;
 - (id)shareIDs;
 - (id)zoneIDs;
 

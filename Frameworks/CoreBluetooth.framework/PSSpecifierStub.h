@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class BluetoothDevice;
-
 @interface PSSpecifierStub : NSObject {
     BluetoothDevice *_device;
     id _userInfo;
 }
 
-@property(retain) BluetoothDevice * device;
-@property(retain) id userInfo;
+@property (nonatomic, retain) BluetoothDevice *device;
+@property (nonatomic, retain) id userInfo;
 
 - (void)dealloc;
 - (id)device;

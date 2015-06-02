@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface PLPrivacy : NSObject {
     int _authStatus;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -14,14 +12,14 @@
 + (void)enableForceOverrideTCC;
 + (id)sharedInstance;
 
-- (BOOL)_isPhotosAccessAllowedWithScope:(int)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(id)arg3;
+- (BOOL)_isPhotosAccessAllowedWithScope:(int)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isPhotoLibraryReadAccessAllowed;
 - (BOOL)isPhotoLibrarySharingOrModificationAllowed;
-- (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id)arg1;
-- (void)isPhotosAccessAllowedWithScope:(int)arg1 handler:(id)arg2;
-- (BOOL)isPhotosAccessAllowedWithScope:(int)arg1 promptIfNeededWithHandler:(id)arg2;
+- (BOOL)isPhotosAccessAllowedPromptIfNeededWithHandler:(id /* block */)arg1;
+- (void)isPhotosAccessAllowedWithScope:(int)arg1 handler:(id /* block */)arg2;
+- (BOOL)isPhotosAccessAllowedWithScope:(int)arg1 promptIfNeededWithHandler:(id /* block */)arg2;
 - (BOOL)isPhotosTCCAccessAllowed;
 - (BOOL)isPhotosTCCAccessNotAllowed;
 - (BOOL)isPhotosTCCAccessRestricted;

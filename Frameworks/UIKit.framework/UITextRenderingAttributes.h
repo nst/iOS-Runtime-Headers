@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIFont;
-
 @interface UITextRenderingAttributes : NSObject <NSCopying> {
     float _actualFontSize;
     float _actualTrackingAdjustment;

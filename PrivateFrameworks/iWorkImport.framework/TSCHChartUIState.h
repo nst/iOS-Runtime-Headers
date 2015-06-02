@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSCHChartUIState : NSObject <NSCopying> {
     unsigned int _lastColCountInCDE;
     unsigned int _lastColSelectedInCDE;
@@ -16,12 +11,12 @@
     BOOL _useFullKeyboard;
 }
 
-@property(readonly) unsigned int lastColCountInCDE;
-@property(readonly) unsigned int lastColSelectedInCDE;
-@property(readonly) unsigned int lastRowCountInCDE;
-@property(readonly) unsigned int lastRowSelectedInCDE;
-@property(readonly) unsigned int multiDataSetIndex;
-@property(readonly) BOOL useFullKeyboard;
+@property (nonatomic, readonly) unsigned int lastColCountInCDE;
+@property (nonatomic, readonly) unsigned int lastColSelectedInCDE;
+@property (nonatomic, readonly) unsigned int lastRowCountInCDE;
+@property (nonatomic, readonly) unsigned int lastRowSelectedInCDE;
+@property (nonatomic, readonly) unsigned int multiDataSetIndex;
+@property (nonatomic, readonly) BOOL useFullKeyboard;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

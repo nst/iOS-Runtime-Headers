@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface UIWebPDFSearchResult : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -22,12 +20,12 @@
     NSArray *strings;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingBox;
-@property unsigned int pageIndex;
-@property(retain) NSArray * rects;
-@property(retain) NSArray * rotationAngles;
-@property(retain) NSString * string;
-@property(retain) NSArray * strings;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } boundingBox;
+@property (nonatomic) unsigned int pageIndex;
+@property (nonatomic, retain) NSArray *rects;
+@property (nonatomic, retain) NSArray *rotationAngles;
+@property (nonatomic, retain) NSString *string;
+@property (nonatomic, retain) NSArray *strings;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingBox;
 - (void)dealloc;

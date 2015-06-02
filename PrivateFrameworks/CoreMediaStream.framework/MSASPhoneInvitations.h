@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class IDSService, MSASAlbum, MSASStateMachine, NSMutableDictionary, NSString;
-
 @interface MSASPhoneInvitations : NSObject <IDSServiceDelegate> {
     MSASAlbum *_album;
     IDSService *_idsService;
@@ -11,14 +9,14 @@
     MSASStateMachine *_stateMachine;
 }
 
-@property(retain) MSASAlbum * album;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) IDSService * idsService;
-@property(retain) NSMutableDictionary * sendMessageIdentifierToPhone;
-@property(retain) MSASStateMachine * stateMachine;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) MSASAlbum *album;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) IDSService *idsService;
+@property (nonatomic, retain) NSMutableDictionary *sendMessageIdentifierToPhone;
+@property (nonatomic, retain) MSASStateMachine *stateMachine;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addPendingPhoneInvitations:(id)arg1 toOwnedAlbum:(id)arg2 inStateMachin:(id)arg3;

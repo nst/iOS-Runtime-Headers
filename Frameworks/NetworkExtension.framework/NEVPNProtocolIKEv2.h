@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEVPNIKEv2SecurityAssociationParameters, NSString;
-
 @interface NEVPNProtocolIKEv2 : NEVPNProtocolIPSec {
     NEVPNIKEv2SecurityAssociationParameters *_IKESecurityAssociationParameters;
     int _certificateType;
@@ -14,12 +12,12 @@
     BOOL _wakeForRekey;
 }
 
-@property(readonly) NEVPNIKEv2SecurityAssociationParameters * IKESecurityAssociationParameters;
+@property (readonly) NEVPNIKEv2SecurityAssociationParameters *IKESecurityAssociationParameters;
 @property int certificateType;
-@property(readonly) NEVPNIKEv2SecurityAssociationParameters * childSecurityAssociationParameters;
+@property (readonly) NEVPNIKEv2SecurityAssociationParameters *childSecurityAssociationParameters;
 @property int deadPeerDetectionRate;
-@property(copy) NSString * serverCertificateCommonName;
-@property(copy) NSString * serverCertificateIssuerCommonName;
+@property (copy) NSString *serverCertificateCommonName;
+@property (copy) NSString *serverCertificateIssuerCommonName;
 @property BOOL wakeForRekey;
 
 + (BOOL)supportsSecureCoding;

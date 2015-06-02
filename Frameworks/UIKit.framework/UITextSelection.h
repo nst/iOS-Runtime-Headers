@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMRange, UIResponder<UITextInputPrivate>, UITextRange;
-
 @interface UITextSelection : NSObject {
     UITextRange *_base;
     UIResponder<UITextInputPrivate> *_document;
@@ -13,13 +11,13 @@
     UITextRange *_selectedRange;
 }
 
-@property(retain) UITextRange * base;
-@property(readonly) UIResponder<UITextInputPrivate> * document;
-@property(getter=_domRange,readonly) DOMRange * domRange;
-@property int granularity;
-@property(retain) UITextRange * initialExtent;
-@property(readonly) BOOL isCommitting;
-@property(retain) UITextRange * selectedRange;
+@property (nonatomic, retain) UITextRange *base;
+@property (nonatomic, readonly) UIResponder<UITextInputPrivate> *document;
+@property (getter=_domRange, nonatomic, readonly) DOMRange *domRange;
+@property (nonatomic) int granularity;
+@property (nonatomic, retain) UITextRange *initialExtent;
+@property (nonatomic, readonly) BOOL isCommitting;
+@property (nonatomic, retain) UITextRange *selectedRange;
 
 - (id)_domRange;
 - (void)aggressivelyExpandSelectionToWordContainingCaretSelection;

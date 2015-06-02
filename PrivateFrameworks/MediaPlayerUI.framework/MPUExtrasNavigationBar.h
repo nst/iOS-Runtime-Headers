@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIColor, UILabel;
-
 @interface MPUExtrasNavigationBar : UINavigationBar {
     UIColor *_dodgeColor;
     UILabel *_titleLabel;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@interface AOSPreferencesUtil : NSObject {
-}
+@interface AOSPreferencesUtil : NSObject
 
 + (id)arrayForKey:(id)arg1 inDomain:(id)arg2;
 + (BOOL)boolForKey:(id)arg1 inDomain:(id)arg2;

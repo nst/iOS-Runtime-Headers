@@ -7,8 +7,8 @@
     BOOL _shouldParseResponse;
 }
 
-@property BOOL includeHiddenItems;
-@property BOOL shouldParseResponse;
+@property (nonatomic) BOOL includeHiddenItems;
+@property (nonatomic) BOOL shouldParseResponse;
 
 + (id)requestWithDatabaseID:(unsigned int)arg1;
 + (id)requestWithDatabaseID:(unsigned int)arg1 containerID:(unsigned int)arg2;

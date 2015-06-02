@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString;
-
 @interface MCAirPlayDestination : NSObject {
     NSString *_deviceID;
     NSString *_deviceName;
     NSString *_password;
 }
 
-@property(retain) NSString * deviceID;
-@property(retain) NSString * deviceName;
-@property(retain) NSString * password;
+@property (nonatomic, retain) NSString *deviceID;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, retain) NSString *password;
 
 - (void).cxx_destruct;
 - (id)deviceID;

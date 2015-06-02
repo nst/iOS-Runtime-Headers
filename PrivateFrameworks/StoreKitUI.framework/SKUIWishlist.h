@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SSWishlist;
-
 @interface SKUIWishlist : NSObject {
     SSWishlist *_database;
 }
 
-@property(readonly) long long accountIdentifier;
-@property(copy,readonly) NSArray * items;
+@property (nonatomic, readonly) long long accountIdentifier;
+@property (nonatomic, readonly, copy) NSArray *items;
 
 + (id)activeWishlist;
 

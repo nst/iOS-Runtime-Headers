@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSATSTypesetter;
-
 @interface NSATSLineFragment : NSObject {
     struct _NSRange { 
         unsigned int location; 

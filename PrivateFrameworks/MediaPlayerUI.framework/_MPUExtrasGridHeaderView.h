@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUArtworkView, MPUContentSizeLayoutConstraint, NSArray, NSLayoutConstraint, UILabel, UIView;
-
 @interface _MPUExtrasGridHeaderView : UIView {
     NSArray *_artworkSizeConstraints;
     MPUArtworkView *_artworkView;
@@ -17,7 +15,7 @@
     MPUContentSizeLayoutConstraint *_topLabelConstraint;
 }
 
-@property(readonly) UILabel * titleLabel;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (void)configureForImage:(id)arg1 title:(id)arg2 subtitle:(id)arg3 style:(id)arg4;

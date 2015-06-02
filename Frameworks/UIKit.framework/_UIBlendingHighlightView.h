@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIView;
-
 @interface _UIBlendingHighlightView : UIView <UIAlertControllerBackgroundView> {
     UIView *_colorBurnView;
     UIView *_plusDView;
 }
 
 @property float cornerRadius;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_blendingPressedView;
 + (id)_blendingSeparatorView;

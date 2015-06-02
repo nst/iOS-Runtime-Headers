@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKRasterTile, VKTile;
-
 @interface VKMapTile : VKTile <NSCopying> {
     struct shared_ptr<vk::LabelMapTile> { 
         struct LabelMapTile {} *__ptr_; 
@@ -14,20 +12,20 @@
         float x1; 
         float y0; 
         float y1; 
-    } _localBounds[34];
+    } _localBounds;
     float _maximumStyleZ;
     BOOL _needsRasterization;
     VKRasterTile *_rasterized;
-    double _stateDates[34];
-    id _stateMetas[34];
-    unsigned int _states[34];
-    VKTile *_tiles[34];
+    double _stateDates;
+    /* Warning: unhandled array encoding: '[34@]' */ id _stateMetas;
+    unsigned int _states;
+    VKTile *_tiles;
 }
 
-@property struct shared_ptr<vk::LabelMapTile> { struct LabelMapTile {} *x1; struct __shared_weak_count {} *x2; } labelMapTile;
-@property(readonly) float maximumStyleZ;
-@property BOOL needsRasterization;
-@property(retain) VKRasterTile * rasterized;
+@property (nonatomic) struct shared_ptr<vk::LabelMapTile> { struct LabelMapTile {} *x1; struct __shared_weak_count {} *x2; } labelMapTile;
+@property (nonatomic, readonly) float maximumStyleZ;
+@property (nonatomic) BOOL needsRasterization;
+@property (nonatomic, retain) VKRasterTile *rasterized;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

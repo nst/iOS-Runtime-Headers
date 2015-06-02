@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSNumber, NSObject<OS_dispatch_source>, NSString, SKUIMetricsImpressionSession, SSMetricsConfiguration, SSMetricsController;
-
 @interface SKUIMetricsController : NSObject {
     SKUIMetricsImpressionSession *_activeImpressionsSession;
     NSString *_applicationIdentifier;
@@ -22,18 +20,18 @@
     NSString *_windowOrientation;
 }
 
-@property(readonly) NSNumber * accountIdentifier;
-@property(readonly) SKUIMetricsImpressionSession * activeImpressionsSession;
-@property(copy) NSString * applicationIdentifier;
-@property(readonly) double flushInterval;
-@property(readonly) SSMetricsConfiguration * globalConfiguration;
-@property(copy) NSString * hostApplicationIdentifier;
-@property(retain) SSMetricsConfiguration * pageConfiguration;
-@property(copy) NSString * pageContext;
-@property(copy) NSString * pageURL;
-@property(copy) NSString * topic;
-@property(copy) NSString * userAgent;
-@property(copy) NSString * windowOrientation;
+@property (nonatomic, readonly) NSNumber *accountIdentifier;
+@property (nonatomic, readonly) SKUIMetricsImpressionSession *activeImpressionsSession;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (nonatomic, readonly) double flushInterval;
+@property (nonatomic, readonly) SSMetricsConfiguration *globalConfiguration;
+@property (nonatomic, copy) NSString *hostApplicationIdentifier;
+@property (nonatomic, retain) SSMetricsConfiguration *pageConfiguration;
+@property (nonatomic, copy) NSString *pageContext;
+@property (nonatomic, copy) NSString *pageURL;
+@property (nonatomic, copy) NSString *topic;
+@property (nonatomic, copy) NSString *userAgent;
+@property (nonatomic, copy) NSString *windowOrientation;
 
 + (void)flushImmediately;
 
@@ -63,7 +61,7 @@
 - (id)performActionForItem:(id)arg1;
 - (id)performActionForItem:(id)arg1 clientContext:(id)arg2;
 - (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3;
-- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id)arg4;
+- (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)pingURLs:(id)arg1;
 - (void)pingURLs:(id)arg1 withClientContext:(id)arg2;
 - (void)recordBuyConfirmedEventsForItems:(id)arg1 purchaseResponses:(id)arg2;

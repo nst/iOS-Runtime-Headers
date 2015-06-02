@@ -2,42 +2,24 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKDiscoveryBonjour, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKDiscoveryManager : NSObject {
     GKDiscoveryBonjour *_bonjour;
     NSString *_deviceID;
     NSMutableDictionary *_peers;
     NSObject<OS_dispatch_queue> *_peersQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playerFoundHandler;
-
+    id /* block */ _playerFoundHandler;
     NSString *_playerID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _playerLostHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _receiveDataHandler;
-
+    id /* block */ _playerLostHandler;
+    id /* block */ _receiveDataHandler;
 }
 
-@property(retain) GKDiscoveryBonjour * bonjour;
-@property(copy) NSString * deviceID;
-@property(retain) NSMutableDictionary * peers;
-@property(copy) id playerFoundHandler;
-@property(copy) NSString * playerID;
-@property(copy) id playerLostHandler;
-@property(copy) id receiveDataHandler;
+@property (nonatomic, retain) GKDiscoveryBonjour *bonjour;
+@property (nonatomic, copy) NSString *deviceID;
+@property (nonatomic, retain) NSMutableDictionary *peers;
+@property (nonatomic, copy) id /* block */ playerFoundHandler;
+@property (nonatomic, copy) NSString *playerID;
+@property (nonatomic, copy) id /* block */ playerLostHandler;
+@property (nonatomic, copy) id /* block */ receiveDataHandler;
 
 + (id)parseDeviceIDFromServiceName:(id)arg1;
 
@@ -56,22 +38,22 @@
 - (void)passDataToGKLayer:(id)arg1 fromPeer:(id)arg2;
 - (id)peers;
 - (id)peersList;
-- (id)playerFoundHandler;
+- (id /* block */)playerFoundHandler;
 - (id)playerID;
-- (id)playerLostHandler;
+- (id /* block */)playerLostHandler;
 - (void)processEvent:(int)arg1 forPeer:(id)arg2 withUserInfo:(id)arg3;
-- (id)receiveDataHandler;
+- (id /* block */)receiveDataHandler;
 - (void)removeInterface:(unsigned int)arg1 forPeerWithServiceName:(id)arg2;
 - (void)resolveForPeer:(id)arg1;
-- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id)serviceNameforDeviceID:(id)arg1 playerID:(id)arg2;
 - (void)setBonjour:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setPeers:(id)arg1;
-- (void)setPlayerFoundHandler:(id)arg1;
+- (void)setPlayerFoundHandler:(id /* block */)arg1;
 - (void)setPlayerID:(id)arg1;
-- (void)setPlayerLostHandler:(id)arg1;
-- (void)setReceiveDataHandler:(id)arg1;
+- (void)setPlayerLostHandler:(id /* block */)arg1;
+- (void)setReceiveDataHandler:(id /* block */)arg1;
 - (id)startAdvertisingLocalPlayer:(id)arg1 discoveryInfo:(id)arg2;
 - (void)startBrowsingLocalPlayer:(id)arg1;
 - (void)stopAdvertising;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CSUIFaceTimeSetupController : NSObject {
-}
+@interface CSUIFaceTimeSetupController : NSObject
 
 + (id)sharedInstance;
 
@@ -11,6 +10,6 @@
 - (BOOL)cellularFaceTimeEnabled;
 - (void)dealloc;
 - (id)init;
-- (void)setCellularFaceTimeEnabled:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)setCellularFaceTimeEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 
 @end

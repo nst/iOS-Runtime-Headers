@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptFairPlayContext : SUScriptObject {
-}
+@interface SUScriptFairPlayContext : SUScriptObject
 
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;

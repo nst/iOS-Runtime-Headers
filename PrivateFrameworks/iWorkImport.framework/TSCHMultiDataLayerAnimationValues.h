@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSArray, NSString;
-
 @interface TSCHMultiDataLayerAnimationValues : NSObject {
     NSString *mKey;
     NSArray *mKeyTimes;
@@ -12,11 +10,11 @@
     NSArray *mValues;
 }
 
-@property(readonly) NSString * key;
-@property(readonly) NSArray * keyTimes;
-@property(readonly) CALayer * layer;
-@property(readonly) BOOL needPresentationLayerValues;
-@property(readonly) NSArray * values;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic, readonly) NSArray *keyTimes;
+@property (nonatomic, readonly) CALayer *layer;
+@property (nonatomic, readonly) BOOL needPresentationLayerValues;
+@property (nonatomic, readonly) NSArray *values;
 
 + (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3;
 + (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;

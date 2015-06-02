@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UILabel;
-
 @interface _MPUExtrasMainMenuItemCollectionViewCell : UICollectionViewCell {
     UILabel *_textLabel;
 }
 
-@property(readonly) UILabel * textLabel;
+@property (nonatomic, readonly) UILabel *textLabel;
 
 + (id)_createLabelInCell:(id)arg1;
 

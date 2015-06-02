@@ -6,7 +6,7 @@
     BOOL _negative;
 }
 
-@property(getter=isNegative,readonly) BOOL negative;
+@property (getter=isNegative, nonatomic, readonly) BOOL negative;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (BOOL)isNegative;

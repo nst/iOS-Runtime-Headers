@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIView;
-
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView {
     UIView *_providerView;
     struct UIOffset { 
@@ -18,11 +16,11 @@
     float _verticalSpaceNeededForRatingsView;
 }
 
-@property(retain) UIView * providerView;
-@property struct UIOffset { float x1; float x2; } providerViewOffset;
-@property(retain) UIView * ratingView;
-@property struct UIOffset { float x1; float x2; } ratingViewOffset;
-@property float verticalSpaceNeededForRatingsView;
+@property (nonatomic, retain) UIView *providerView;
+@property (nonatomic) struct UIOffset { float x1; float x2; } providerViewOffset;
+@property (nonatomic, retain) UIView *ratingView;
+@property (nonatomic) struct UIOffset { float x1; float x2; } ratingViewOffset;
+@property (nonatomic) float verticalSpaceNeededForRatingsView;
 
 - (void).cxx_destruct;
 - (float)desiredHeightForWidth:(float)arg1;

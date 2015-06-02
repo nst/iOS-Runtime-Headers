@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString;
-
 @interface MSVideoDerivativeSpecification : NSObject {
     float _bitRate;
     unsigned int _mediaAssetType;
@@ -12,11 +10,11 @@
     NSString *_videoType;
 }
 
-@property(readonly) float bitRate;
-@property(readonly) unsigned int mediaAssetType;
-@property(readonly) BOOL powerRequired;
-@property(readonly) BOOL useCellular;
-@property(readonly) NSString * videoType;
+@property (nonatomic, readonly) float bitRate;
+@property (nonatomic, readonly) unsigned int mediaAssetType;
+@property (nonatomic, readonly) BOOL powerRequired;
+@property (nonatomic, readonly) BOOL useCellular;
+@property (nonatomic, readonly) NSString *videoType;
 
 + (id)videoDerivativeSpecificationsWithDictionaryArray:(id)arg1;
 

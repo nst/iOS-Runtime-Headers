@@ -2,18 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString, NSURL;
+@interface EKPersistentParticipant : EKPersistentObject <NSCopying>
 
-@interface EKPersistentParticipant : EKPersistentObject <NSCopying> {
-}
-
-@property(readonly) NSString * UUID;
-@property(copy) NSURL * address;
-@property(copy) NSString * comment;
-@property(copy) NSString * displayName;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * firstName;
-@property(copy) NSString * lastName;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSURL *address;
+@property (nonatomic, copy) NSString *comment;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic, copy) NSString *lastName;
 
 + (id)defaultPropertiesToLoad;
 

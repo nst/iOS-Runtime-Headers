@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class IMLocalObject, NSObject<OS_voucher>, NSObject<OS_xpc_object>;
-
 @interface IMMessageContext : NSObject {
     BOOL _boost;
     id _context;
@@ -12,10 +10,10 @@
     NSObject<OS_xpc_object> *_xpcMessage;
 }
 
-@property(retain) id context;
-@property(retain) IMLocalObject * localObject;
+@property (retain) id context;
+@property (retain) IMLocalObject *localObject;
 @property BOOL shouldBoost;
-@property NSObject<OS_xpc_object> * xpcMessage;
+@property NSObject<OS_xpc_object> *xpcMessage;
 
 - (id)context;
 - (void)dealloc;

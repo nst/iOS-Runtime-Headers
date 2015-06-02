@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, OADHyperlink, OADOrientedBounds;
-
 @interface OADDrawableProperties : OADProperties {
-    unsigned int mAspectRatioLocked : 1;
+    unsigned int mAspectRatioLocked;
     OADHyperlink *mClickHyperlink;
     NSString *mDescription;
-    unsigned int mHasAspectRatioLocked : 1;
-    unsigned int mHasWrdInline : 1;
+    unsigned int mHasAspectRatioLocked;
+    unsigned int mHasWrdInline;
     OADHyperlink *mHoverHyperlink;
     OADOrientedBounds *mOrientedBounds;
     NSString *mTitle;
-    unsigned int mWrdInline : 1;
+    unsigned int mWrdInline;
 }
 
 - (id)altDescription;

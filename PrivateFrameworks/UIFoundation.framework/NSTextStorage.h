@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class <NSTextStorageDelegate>, NSArray, NSMutableArray;
-
 @interface NSTextStorage : NSMutableAttributedString {
     int _changeInLength;
     int _editedDelta;
@@ -22,12 +20,14 @@
     id _sideData;
 }
 
-@property int changeInLength;
-@property <NSTextStorageDelegate> * delegate;
-@property unsigned int editedMask;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } editedRange;
-@property(readonly) BOOL fixesAttributesLazily;
-@property(readonly) NSArray * layoutManagers;
+@property (nonatomic) int changeInLength;
+@property (nonatomic) <NSTextStorageDelegate> *delegate;
+@property (nonatomic) unsigned int editedMask;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } editedRange;
+@property (nonatomic, readonly) BOOL fixesAttributesLazily;
+@property (nonatomic, readonly) NSArray *layoutManagers;
+
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
@@ -43,17 +43,15 @@
 - (void)_setForceFixAttributes:(BOOL)arg1;
 - (void)_setUsesSimpleTextEffects:(BOOL)arg1;
 - (BOOL)_shouldSetOriginalFontAttribute;
-- (id)_undoRedoAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_undoRedoTextOperation:(id)arg1;
 - (void)_unlock;
 - (BOOL)_usesSimpleTextEffects;
 - (void)addLayoutManager:(id)arg1;
 - (void)beginEditing;
 - (int)changeInLength;
 - (Class)classForCoder;
-- (void)coordinateAccess:(id)arg1;
-- (void)coordinateEditing:(id)arg1;
-- (void)coordinateReading:(id)arg1;
+- (void)coordinateAccess:(id /* block */)arg1;
+- (void)coordinateEditing:(id /* block */)arg1;
+- (void)coordinateReading:(id /* block */)arg1;
 - (id)cuiCatalog;
 - (id)cuiStyleEffects;
 - (void)dealloc;
@@ -77,5 +75,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditedMask:(unsigned int)arg1;
 - (void)setEditedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)_undoRedoAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)_undoRedoTextOperation:(id)arg1;
 
 @end

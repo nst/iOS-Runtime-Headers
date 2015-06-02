@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIViewControllerFactory : SUViewControllerFactory {
-}
+@interface SKUIViewControllerFactory : SUViewControllerFactory
 
 - (id)newPlaceholderViewController;
 

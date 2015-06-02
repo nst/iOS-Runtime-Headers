@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPodcastsViewController : MusicTableViewController {
-}
+@interface MusicPodcastsViewController : MusicTableViewController
 
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

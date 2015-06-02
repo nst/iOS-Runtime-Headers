@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterRun, WDRubyProperties;
-
 @interface WDRubyRun : WDCharacterRun {
     WDCharacterRun *mPhoneticRun;
     WDRubyProperties *mRubyProperties;

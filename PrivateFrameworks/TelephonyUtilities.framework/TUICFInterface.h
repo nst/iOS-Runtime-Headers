@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUICFInterface : NSObject {
-}
+@interface TUICFInterface : NSObject
 
 + (BOOL)allowCallForDestinationID:(id)arg1 service:(int)arg2;
-+ (void)allowCallForDestinationID:(id)arg1 service:(int)arg2 completionHandler:(id)arg3;
++ (void)allowCallForDestinationID:(id)arg1 service:(int)arg2 completionHandler:(id /* block */)arg3;
 + (id)serviceIdentifierForService:(int)arg1;
 
 @end

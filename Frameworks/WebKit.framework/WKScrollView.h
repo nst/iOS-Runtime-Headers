@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <UIScrollViewDelegate>, WKScrollViewDelegateForwarder, WKWebView<UIScrollViewDelegate>;
-
 @interface WKScrollView : UIWebScrollView {
     WKScrollViewDelegateForwarder *_delegateForwarder;
     <UIScrollViewDelegate> *_externalDelegate;
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
 }
 
-@property WKWebView<UIScrollViewDelegate> * internalDelegate;
+@property (nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate;
 
 - (struct CGSize { float x1; float x2; })_currentTopLeftRubberbandAmount;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { float x1; float x2; })arg1;

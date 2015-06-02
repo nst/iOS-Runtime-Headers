@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MCDependencyReader : NSObject {
     NSObject<OS_dispatch_queue> *_memberQueue;
     NSMutableDictionary *_memberQueueDomainsDict;
 }
 
-@property(readonly) NSDictionary * domainsDict;
-@property(retain) NSObject<OS_dispatch_queue> * memberQueue;
-@property(retain) NSMutableDictionary * memberQueueDomainsDict;
+@property (nonatomic, readonly) NSDictionary *domainsDict;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
+@property (nonatomic, retain) NSMutableDictionary *memberQueueDomainsDict;
 
 + (void)setStoragePath:(id)arg1;
 + (id)sharedReader;

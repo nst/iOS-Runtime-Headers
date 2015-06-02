@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKTrackableAnnotation>, NSString, VKAnimation, VKAnnotationTrackingCameraController;
-
 @interface VKScreenCameraController : VKCameraController <VKCameraControllerDelegate> {
     VKAnnotationTrackingCameraController *_annotationTrackingCameraController;
     int _annotationTrackingHeadingAnimationDisplayRate;
@@ -36,19 +34,19 @@
     VKAnimation *_zoomAnimation;
 }
 
-@property(getter=isAnimatingToTrackAnnotation,readonly) BOOL animatingToTrackAnnotation;
-@property int annotationTrackingHeadingAnimationDisplayRate;
-@property int annotationTrackingZoomStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(readonly) unsigned int hash;
-@property BOOL isPitchable;
-@property BOOL staysCenteredDuringPinch;
-@property BOOL staysCenteredDuringRotation;
-@property(readonly) Class superclass;
-@property(readonly) <VKTrackableAnnotation> * trackingAnnotation;
-@property(getter=isTrackingHeading,readonly) BOOL trackingHeading;
+@property (getter=isAnimatingToTrackAnnotation, nonatomic, readonly) BOOL animatingToTrackAnnotation;
+@property (nonatomic) int annotationTrackingHeadingAnimationDisplayRate;
+@property (nonatomic) int annotationTrackingZoomStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isPitchable;
+@property (nonatomic) BOOL staysCenteredDuringPinch;
+@property (nonatomic) BOOL staysCenteredDuringRotation;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <VKTrackableAnnotation> *trackingAnnotation;
+@property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
 
 - (id).cxx_construct;
 - (int)annotationTrackingHeadingAnimationDisplayRate;

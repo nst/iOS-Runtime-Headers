@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface NEContentFilterPlugin : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _filterBrowsers;
     BOOL _filterSockets;
@@ -18,13 +16,13 @@
 
 @property BOOL filterBrowsers;
 @property BOOL filterSockets;
-@property(copy) NSData * identityReference;
-@property(copy) NSString * organization;
-@property(copy) NSData * passwordReference;
-@property(readonly) NSString * pluginType;
-@property(copy) NSString * serverAddress;
-@property(copy) NSString * username;
-@property(copy) NSDictionary * vendorConfiguration;
+@property (copy) NSData *identityReference;
+@property (copy) NSString *organization;
+@property (copy) NSData *passwordReference;
+@property (readonly) NSString *pluginType;
+@property (copy) NSString *serverAddress;
+@property (copy) NSString *username;
+@property (copy) NSDictionary *vendorConfiguration;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIImageView, UILabel;
-
 @interface PUPhotosSectionHeaderContentView : UIView {
     UILabel *dateLabel;
     UIImageView *locationsIconView;
@@ -11,10 +9,10 @@
     UILabel *titleLabel;
 }
 
-@property(retain) UILabel * dateLabel;
-@property(retain) UIImageView * locationsIconView;
-@property(retain) UILabel * locationsLabel;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UILabel *dateLabel;
+@property (nonatomic, retain) UIImageView *locationsIconView;
+@property (nonatomic, retain) UILabel *locationsLabel;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)dateLabel;

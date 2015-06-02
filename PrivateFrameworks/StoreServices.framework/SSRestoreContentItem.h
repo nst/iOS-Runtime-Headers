@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSMutableDictionary, NSNumber, NSString;
-
 @interface SSRestoreContentItem : NSObject {
     NSNumber *_accountID;
     NSString *_appleID;
@@ -14,20 +12,20 @@
     NSMutableDictionary *_properties;
 }
 
-@property(getter=isDRMFree) BOOL DRMFree;
-@property(copy) NSString * bundleID;
-@property(retain) NSNumber * cloudItemID;
-@property(retain) NSNumber * cloudMatchStatus;
-@property(copy) NSString * downloadKind;
-@property(copy) NSString * podcastEpisodeGUID;
-@property(copy) NSString * storeAccountAppleID;
-@property(retain) NSNumber * storeAccountID;
-@property(copy) NSString * storeFlavor;
-@property(copy) NSString * storeFrontID;
-@property(retain) NSNumber * storeItemID;
-@property(retain) NSNumber * storeOriginalPurchaserAccountID;
-@property(copy) NSString * storeSoftwareVersionID;
-@property(copy) NSString * videoDimensions;
+@property (getter=isDRMFree, nonatomic) BOOL DRMFree;
+@property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic, retain) NSNumber *cloudItemID;
+@property (nonatomic, retain) NSNumber *cloudMatchStatus;
+@property (nonatomic, copy) NSString *downloadKind;
+@property (nonatomic, copy) NSString *podcastEpisodeGUID;
+@property (nonatomic, copy) NSString *storeAccountAppleID;
+@property (nonatomic, retain) NSNumber *storeAccountID;
+@property (nonatomic, copy) NSString *storeFlavor;
+@property (nonatomic, copy) NSString *storeFrontID;
+@property (nonatomic, retain) NSNumber *storeItemID;
+@property (nonatomic, retain) NSNumber *storeOriginalPurchaserAccountID;
+@property (nonatomic, copy) NSString *storeSoftwareVersionID;
+@property (nonatomic, copy) NSString *videoDimensions;
 
 - (id)_initSSRestoreContentItem;
 - (id)_restoreKeyForAssetProperty:(id)arg1;

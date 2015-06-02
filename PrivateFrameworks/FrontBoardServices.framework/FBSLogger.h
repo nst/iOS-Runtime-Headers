@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSLogger : NSObject {
-}
+@interface FBSLogger : NSObject
 
 + (id)environment;
 + (BOOL)isEnabled;

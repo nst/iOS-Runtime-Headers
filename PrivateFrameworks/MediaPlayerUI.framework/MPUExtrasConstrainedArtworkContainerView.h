@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUArtworkView, NSArray, UIImage, UIImageView;
-
 @interface MPUExtrasConstrainedArtworkContainerView : UIView {
     MPUArtworkView *_artworkView;
     UIImage *_overlayImage;
@@ -16,15 +14,15 @@
     BOOL _shouldBottomAlignArtwork;
 }
 
-@property(retain) MPUArtworkView * artworkView;
-@property(retain) UIImage * overlayImage;
-@property unsigned int overlayPosition;
-@property(retain) NSArray * overlayPositionConstraints;
-@property float overlayScale;
-@property(retain) NSArray * overlaySizeConstraints;
-@property(retain) UIImageView * overlayView;
-@property BOOL shouldAutoresizeMaskLayerToFillBounds;
-@property BOOL shouldBottomAlignArtwork;
+@property (nonatomic, retain) MPUArtworkView *artworkView;
+@property (nonatomic, retain) UIImage *overlayImage;
+@property (nonatomic) unsigned int overlayPosition;
+@property (nonatomic, retain) NSArray *overlayPositionConstraints;
+@property (nonatomic) float overlayScale;
+@property (nonatomic, retain) NSArray *overlaySizeConstraints;
+@property (nonatomic, retain) UIImageView *overlayView;
+@property (nonatomic) BOOL shouldAutoresizeMaskLayerToFillBounds;
+@property (nonatomic) BOOL shouldBottomAlignArtwork;
 
 - (void).cxx_destruct;
 - (id)artworkView;

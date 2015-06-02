@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItemWithNoChildren, NSMutableSet;
-
 @interface CoreDAVCalendarServerEmailAddressSetItem : CoreDAVItem {
     NSMutableSet *_emailAddresses;
     CoreDAVItemWithNoChildren *_unauthenticated;
 }
 
-@property(retain) NSMutableSet * emailAddresses;
-@property(retain) CoreDAVItemWithNoChildren * unauthenticated;
+@property (nonatomic, retain) NSMutableSet *emailAddresses;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *unauthenticated;
 
 + (id)copyParseRules;
 

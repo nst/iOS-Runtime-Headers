@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface NSColor : UIColor {
-}
+@interface NSColor : UIColor
 
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithCalibratedWhite:(float)arg1 alpha:(float)arg2;

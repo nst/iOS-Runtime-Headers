@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCMDMOptionsUtilities : NSObject {
-}
+@interface MCMDMOptionsUtilities : NSObject
 
 + (id)defaultMDMOptions;
 + (void)setDefaultMDMOptions:(id)arg1;

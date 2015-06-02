@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSMutableSet;
-
 @interface MKTileOverlayRequester : GEOTileRequester {
     BOOL _cancelled;
     NSMutableArray *_errors;

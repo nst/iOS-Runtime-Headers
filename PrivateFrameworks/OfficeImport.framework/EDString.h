@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDPhoneticInfo, EDRunsCollection, NSString;
-
 @interface EDString : NSObject <EDImmutableObject, NSCopying> {
     bool mDoNotModify;
     EDPhoneticInfo *mPhoneticInfo;
@@ -11,10 +9,10 @@
     NSString *mString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)edStringWithString:(id)arg1;
 + (id)edStringWithString:(id)arg1 runs:(id)arg2;

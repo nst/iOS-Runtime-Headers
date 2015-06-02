@@ -17,10 +17,10 @@
     } _unscaledPageSize;
 }
 
-@property float footerInset;
-@property float headerInset;
-@property(readonly) float pageHeight;
-@property(readonly) float pageWidth;
+@property (nonatomic) float footerInset;
+@property (nonatomic) float headerInset;
+@property (readonly) float pageHeight;
+@property (readonly) float pageWidth;
 @property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } printMargins;
 @property struct CGSize { float x1; float x2; } unscaledPageSize;
 

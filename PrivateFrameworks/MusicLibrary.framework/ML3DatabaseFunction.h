@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3DatabaseFunction : NSObject {
     int _argumentCount;
     NSString *_name;
 }
 
-@property int argumentCount;
-@property(copy) NSString * name;
+@property (nonatomic) int argumentCount;
+@property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (int)argumentCount;

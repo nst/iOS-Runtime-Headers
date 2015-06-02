@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFSlangTag : WFTagFlyweight {
-}
+@interface WFSlangTag : WFTagFlyweight
 
 + (id)sixtyNineTag;
 

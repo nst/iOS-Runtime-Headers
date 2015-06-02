@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableArray;
-
 @interface _NSXPCInterfaceMethodInfo : NSObject {
     NSMutableArray *_arguments;
     NSMutableArray *_replyArguments;
@@ -11,8 +9,8 @@
     char *_replySignature;
 }
 
-@property(retain) NSMutableArray * arguments;
-@property(retain) NSMutableArray * replyArguments;
+@property (retain) NSMutableArray *arguments;
+@property (retain) NSMutableArray *replyArguments;
 @property int replyPosition;
 
 - (id)arguments;

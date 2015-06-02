@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class UIColor;
-
 @interface _FIUIIcon : FIUIAnimatableObject {
     float _alpha;
     UIColor *_color;
@@ -26,16 +24,16 @@
     float _size;
 }
 
-@property float alpha;
-@property(retain) UIColor * color;
-@property float coloration;
-@property int currentFrameIndex;
-@property struct CGPoint { float x1; float x2; } firstFrameOrigin;
-@property int frameColumns;
-@property int frameCount;
-@property struct CGSize { float x1; float x2; } frameSize;
-@property struct CGPoint { float x1; float x2; } position;
-@property float size;
+@property (nonatomic) float alpha;
+@property (nonatomic, retain) UIColor *color;
+@property (nonatomic) float coloration;
+@property (nonatomic) int currentFrameIndex;
+@property (nonatomic) struct CGPoint { float x1; float x2; } firstFrameOrigin;
+@property (nonatomic) int frameColumns;
+@property (nonatomic) int frameCount;
+@property (nonatomic) struct CGSize { float x1; float x2; } frameSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic) float size;
 
 - (void).cxx_destruct;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;

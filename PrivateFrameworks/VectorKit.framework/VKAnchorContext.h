@@ -20,7 +20,7 @@
 - (id)init;
 - (id)initGeocentricWithCache:(id)arg1;
 - (id)initMercator;
-- (id)initWithAnchorContext:(struct AnchorContext { bool x1; id x2; id x3; }*)arg1;
+- (id)initWithAnchorContext:(struct AnchorContext { bool x1; id x2; }*)arg1;
 - (BOOL)isMercator;
 - (id)newAnchorAtCoordinate:(struct { double x1; double x2; })arg1 followsTerrain:(BOOL)arg2;
 - (void)setMercatorTerrainHeightCache:(id)arg1;

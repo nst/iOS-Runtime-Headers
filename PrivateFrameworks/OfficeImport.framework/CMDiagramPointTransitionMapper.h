@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDictionary;
-
 @interface CMDiagramPointTransitionMapper : CMDiagramPointMapper {
     NSDictionary *mAdjustValues;
     int mShapeType;

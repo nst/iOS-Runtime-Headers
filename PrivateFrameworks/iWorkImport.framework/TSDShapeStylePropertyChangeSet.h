@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDSpecFill, TSDSpecLineEnd, TSDSpecReflection, TSDSpecShadow, TSDSpecStroke, TSSSpecDouble;
-
 @interface TSDShapeStylePropertyChangeSet : TSSStylePropertyChangeSet {
     BOOL _definedFill;
     BOOL _definedHeadLineEnd;
@@ -21,7 +19,7 @@
     TSDSpecLineEnd *_tailLineEnd;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

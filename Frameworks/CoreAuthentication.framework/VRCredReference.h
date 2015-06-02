@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/CoreAuthentication.framework/CoreAuthentication
  */
 
-@interface VRCredReference : VRCredentialReference {
-}
+@interface VRCredReference : VRCredentialReference
 
 @end

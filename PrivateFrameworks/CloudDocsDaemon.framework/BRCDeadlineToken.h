@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCDeadlineScheduler, NSObject<OS_dispatch_source>;
-
 @interface BRCDeadlineToken : NSObject {
     long long _deadline;
     BOOL _isResumed;
@@ -19,7 +17,7 @@
 - (void)resume;
 - (void)scheduleAt:(long long)arg1;
 - (void)setBottomQueue:(id)arg1;
-- (void)setEventHandler:(id)arg1;
+- (void)setEventHandler:(id /* block */)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)suspend;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class CLLocation, NSData, NSDate, NSString, NSURL, PHAdjustmentData;
-
 @interface PUEditingInitialPayload : NSObject <NSSecureCoding> {
     PHAdjustmentData *_adjustmentData;
     NSDate *_creationDate;
@@ -16,15 +14,15 @@
     NSURL *_videoURL;
 }
 
-@property(retain) PHAdjustmentData * adjustmentData;
-@property(retain) NSDate * creationDate;
-@property(retain) NSData * displaySizeImageData;
-@property(retain) CLLocation * location;
-@property unsigned int mediaSubtypes;
-@property int mediaType;
-@property(retain) NSData * placeholderImageData;
-@property(retain) NSString * videoPathSandboxExtensionToken;
-@property(retain) NSURL * videoURL;
+@property (nonatomic, retain) PHAdjustmentData *adjustmentData;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSData *displaySizeImageData;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic) unsigned int mediaSubtypes;
+@property (nonatomic) int mediaType;
+@property (nonatomic, retain) NSData *placeholderImageData;
+@property (nonatomic, retain) NSString *videoPathSandboxExtensionToken;
+@property (nonatomic, retain) NSURL *videoURL;
 
 + (BOOL)supportsSecureCoding;
 

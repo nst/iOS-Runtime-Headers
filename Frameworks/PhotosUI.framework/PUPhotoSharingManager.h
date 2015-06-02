@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMutableArray, NSTimer, PLProgressView;
-
 @interface PUPhotoSharingManager : NSObject <PLPublishingAgentDelegate> {
     int _appSuspensionCount;
     unsigned int _backgroundTaskIdentifier;
@@ -14,8 +12,8 @@
     int _videoRemakingCount;
 }
 
-@property(readonly) PLProgressView * publishingProgressView;
-@property(getter=isRemaking) BOOL remaking;
+@property (nonatomic, readonly) PLProgressView *publishingProgressView;
+@property (getter=isRemaking, nonatomic) BOOL remaking;
 
 + (id)sharedInstance;
 
@@ -26,7 +24,7 @@
 - (void)_removePublishingAgent:(id)arg1;
 - (void)_schedulePublishingProgressViewUpdate;
 - (void)_setDelaysAppSuspend:(BOOL)arg1;
-- (void)_setFlag:(BOOL)arg1 forReferenceCounter:(int*)arg2 performIfChanged:(id)arg3;
+- (void)_setFlag:(BOOL)arg1 forReferenceCounter:(int*)arg2 performIfChanged:(id /* block */)arg3;
 - (void)_setNetworkPromptShowing:(BOOL)arg1;
 - (void)_updatePublishingProgressView:(id)arg1;
 - (void)cancelPublishing;

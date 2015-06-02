@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASportsMetadata, SAUIAppPunchOut;
+@interface SASportsAthleteComparisonSnippetItemDetails : AceObject <SAAceSerializable>
 
-@interface SASportsAthleteComparisonSnippetItemDetails : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUIAppPunchOut * leagueAppPunchOut;
-@property(retain) SASportsMetadata * metadata;
-@property(retain) SAUIAppPunchOut * providerPunchOut;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUIAppPunchOut *leagueAppPunchOut;
+@property (nonatomic, retain) SASportsMetadata *metadata;
+@property (nonatomic, retain) SAUIAppPunchOut *providerPunchOut;
+@property (readonly) Class superclass;
 
 + (id)athleteComparisonSnippetItemDetails;
 + (id)athleteComparisonSnippetItemDetailsWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class CRRecentContact;
-
 @interface MFRecentComposeRecipientGroup : MFComposeRecipientGroup {
     CRRecentContact *_recentContact;
 }
 
-@property(retain,readonly) CRRecentContact * recentContact;
+@property (nonatomic, readonly, retain) CRRecentContact *recentContact;
 
 - (void)dealloc;
 - (id)initWithChildren:(id)arg1 displayString:(id)arg2 recentContact:(id)arg3;

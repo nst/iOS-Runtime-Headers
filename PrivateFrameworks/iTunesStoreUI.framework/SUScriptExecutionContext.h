@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISStoreURLOperation, NSString, SUWebView;
-
 @interface SUScriptExecutionContext : NSObject <ISStoreURLOperationDelegate, SUWebViewDelegate> {
     ISStoreURLOperation *_loadOperation;
     SUWebView *_webView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) struct OpaqueJSContext { }* globalExecutionContext;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) id windowScriptObject;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct OpaqueJSContext { }*globalExecutionContext;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) id windowScriptObject;
 
 - (void)_cancelLoadOperation;
 - (id)_newLoadOperation;

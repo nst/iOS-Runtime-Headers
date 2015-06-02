@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKAggregateMapping, UICollectionView;
-
 @interface GKAggregateCollectionViewWrapper : NSObject {
     GKAggregateMapping *_mapping;
     UICollectionView *_wrappedView;
 }
 
-@property(retain) GKAggregateMapping * mapping;
-@property(retain) UICollectionView * wrappedView;
+@property (nonatomic, retain) GKAggregateMapping *mapping;
+@property (nonatomic, retain) UICollectionView *wrappedView;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
@@ -18,7 +16,7 @@
 
 - (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
 - (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
-- (void)_gkPerformWithoutViewReuse:(id)arg1;
+- (void)_gkPerformWithoutViewReuse:(id /* block */)arg1;
 - (void)_gkRegisterCellClass:(Class)arg1;
 - (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;
 - (id)cellForItemAtIndexPath:(id)arg1;

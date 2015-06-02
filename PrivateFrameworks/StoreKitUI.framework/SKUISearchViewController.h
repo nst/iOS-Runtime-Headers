@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, NSURLRequest, SKUIIPadSearchViewController, SKUIIPhoneSearchViewController, SKUIMetricsController, SKUIProductPageOverlayController, SKUISearchFieldController, SKUISearchPage, SSMetricsPageEvent, SSMetricsSearchEvent, SSVLoadURLOperation;
-
 @interface SKUISearchViewController : SKUIViewController <SKUIMetricsViewController, SKUIProductPageOverlayDelegate, SKUISearchChildViewControllerDelegate, SKUIViewControllerTesting> {
     NSDictionary *_facetSelections;
     SKUIIPadSearchViewController *_iPadViewController;
@@ -22,11 +20,11 @@
     NSURLRequest *_urlRequest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUISearchFieldController * searchFieldController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUISearchFieldController *searchFieldController;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -38,7 +36,7 @@
 - (void)_reloadView;
 - (void)_searchWithSearchTerm:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3 baseRequest:(id)arg4;
 - (void)_searchWithURLRequest:(id)arg1 persistRelated:(BOOL)arg2 metricsEvent:(id)arg3;
-- (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
+- (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_setMetricsController:(id)arg1;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
 - (id)activeMetricsController;

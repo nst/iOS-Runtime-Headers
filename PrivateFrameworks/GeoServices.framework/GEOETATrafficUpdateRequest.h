@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOClientCapabilities, GEOLocation, GEORouteAttributes, NSData, NSMutableArray;
-
 @interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
     GEOClientCapabilities *_clientCapabilities;
     GEOLocation *_currentUserLocation;
@@ -23,21 +21,21 @@
     } _sessionID;
 }
 
-@property(retain) GEOClientCapabilities * clientCapabilities;
-@property(retain) GEOLocation * currentUserLocation;
-@property(retain) NSMutableArray * destinationWaypointTypeds;
-@property(retain) NSData * directionsResponseID;
-@property(readonly) BOOL hasClientCapabilities;
-@property(readonly) BOOL hasCurrentUserLocation;
-@property(readonly) BOOL hasDirectionsResponseID;
-@property BOOL hasIncludeBetterRouteSuggestion;
-@property(readonly) BOOL hasRouteAttributes;
-@property BOOL hasSessionID;
-@property BOOL includeBetterRouteSuggestion;
-@property(retain) GEORouteAttributes * routeAttributes;
-@property(retain) NSMutableArray * routes;
-@property(retain) NSMutableArray * serviceTags;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic, retain) GEOClientCapabilities *clientCapabilities;
+@property (nonatomic, retain) GEOLocation *currentUserLocation;
+@property (nonatomic, retain) NSMutableArray *destinationWaypointTypeds;
+@property (nonatomic, retain) NSData *directionsResponseID;
+@property (nonatomic, readonly) BOOL hasClientCapabilities;
+@property (nonatomic, readonly) BOOL hasCurrentUserLocation;
+@property (nonatomic, readonly) BOOL hasDirectionsResponseID;
+@property (nonatomic) BOOL hasIncludeBetterRouteSuggestion;
+@property (nonatomic, readonly) BOOL hasRouteAttributes;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL includeBetterRouteSuggestion;
+@property (nonatomic, retain) GEORouteAttributes *routeAttributes;
+@property (nonatomic, retain) NSMutableArray *routes;
+@property (nonatomic, retain) NSMutableArray *serviceTags;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
 
 - (void)addDestinationWaypointTyped:(id)arg1;
 - (void)addRoute:(id)arg1;

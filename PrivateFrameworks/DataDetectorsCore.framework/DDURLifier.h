@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
  */
 
-@interface DDURLifier : NSObject {
-}
+@interface DDURLifier : NSObject
 
 + (void)initialize;
 + (BOOL)urlIfyNode:(id)arg1;

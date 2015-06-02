@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSNumber, NSUUID;
-
 @interface CLBeacon : NSObject <NSCopying, NSSecureCoding> {
     double _accuracy;
     NSNumber *_major;
@@ -13,12 +11,12 @@
     int _rssi;
 }
 
-@property(readonly) double accuracy;
-@property(readonly) NSNumber * major;
-@property(readonly) NSNumber * minor;
-@property(readonly) int proximity;
-@property(readonly) NSUUID * proximityUUID;
-@property(readonly) int rssi;
+@property (nonatomic, readonly) double accuracy;
+@property (nonatomic, readonly) NSNumber *major;
+@property (nonatomic, readonly) NSNumber *minor;
+@property (nonatomic, readonly) int proximity;
+@property (nonatomic, readonly) NSUUID *proximityUUID;
+@property (nonatomic, readonly) int rssi;
 
 + (BOOL)supportsSecureCoding;
 

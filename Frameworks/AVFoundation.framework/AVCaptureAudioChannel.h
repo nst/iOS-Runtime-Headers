@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureAudioChannelInternal;
-
 @interface AVCaptureAudioChannel : NSObject {
     AVCaptureAudioChannelInternal *_internal;
 }
 
-@property(readonly) float averagePowerLevel;
-@property(readonly) float peakHoldLevel;
+@property (nonatomic, readonly) float averagePowerLevel;
+@property (nonatomic, readonly) float peakHoldLevel;
 
 - (float)averagePowerLevel;
 - (void)dealloc;

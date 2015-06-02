@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class DOMHTMLOptGroupElement;
-
 @interface UIDOMHTMLOptGroupSelectedItem : NSObject <UIWebSelectedItemPrivate> {
     DOMHTMLOptGroupElement *_node;
 }
 
-@property(retain) DOMHTMLOptGroupElement * _node;
+@property (nonatomic, retain) DOMHTMLOptGroupElement *_node;
 
 - (id)_node;
 - (void)dealloc;

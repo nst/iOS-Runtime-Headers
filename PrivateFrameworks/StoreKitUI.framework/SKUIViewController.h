@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSOperationQueue, NSString, SKUIClientContext, SKUIIPadSearchController, SKUINetworkErrorViewController, SKUIPopoverObserver, SKUIProductPageOverlayController, SKUIWishlistViewController, UIBarButtonItem;
-
 @interface SKUIViewController : UIViewController <SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUITabBarItemRootViewController, SKUIWishlistDelegate, UIPopoverControllerDelegate> {
     SKUIClientContext *_clientContext;
     SKUINetworkErrorViewController *_networkErrorViewController;
@@ -16,14 +14,14 @@
     SKUIWishlistViewController *_wishlistViewController;
 }
 
-@property(readonly) SKUIIPadSearchController * IPadSearchController;
-@property(readonly) UIBarButtonItem * _wishlistButtonItem;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSOperationQueue * operationQueue;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SKUIIPadSearchController *IPadSearchController;
+@property (nonatomic, readonly) UIBarButtonItem *_wishlistButtonItem;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)IPadSearchController;

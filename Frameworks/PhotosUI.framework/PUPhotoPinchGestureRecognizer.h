@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUValueFilter;
-
 @interface PUPhotoPinchGestureRecognizer : UIPinchGestureRecognizer {
     PUValueFilter *__rotationFilter;
     BOOL __touchesNeedUpdate;
@@ -20,19 +18,19 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _initialTouchLocations[2];
+    } _initialTouchLocations;
     BOOL _initialTouchLocationsSet;
     struct CGPoint { 
         float x; 
         float y; 
-    } _latestTouchLocations[2];
+    } _latestTouchLocations;
     float _rotationHysteresisDegrees;
 }
 
-@property(setter=_setRotationFilter:,retain) PUValueFilter * _rotationFilter;
-@property(setter=_setTouchesNeedUpdate:) BOOL _touchesNeedUpdate;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialPinchRect;
-@property float rotationHysteresisDegrees;
+@property (setter=_setRotationFilter:, nonatomic, retain) PUValueFilter *_rotationFilter;
+@property (setter=_setTouchesNeedUpdate:, nonatomic) BOOL _touchesNeedUpdate;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialPinchRect;
+@property (nonatomic) float rotationHysteresisDegrees;
 
 - (void).cxx_destruct;
 - (id)_rotationFilter;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString;
-
 @interface MCWiFiPayload : MCPayload {
     NSString *_HESSID;
     NSArray *_MCCAndMNCs;
@@ -42,41 +40,41 @@
     BOOL _usernameRequired;
 }
 
-@property(retain) NSString * HESSID;
-@property(retain) NSArray * MCCAndMNCs;
-@property(retain) NSArray * NAIRealmNames;
-@property BOOL autoJoin;
-@property(retain) NSNumber * autoJoinNum;
-@property(retain) NSString * certificateUUID;
-@property(retain) NSString * credentialUUID;
-@property(retain) NSString * displayedOperatorName;
-@property(retain) NSString * domainName;
-@property(retain) NSDictionary * eapClientConfig;
-@property(retain) NSString * encryptionType;
-@property BOOL isHidden;
-@property(retain) NSNumber * isHiddenNum;
-@property BOOL isHotspot;
-@property(retain) NSNumber * isHotspotNum;
-@property BOOL isWEP;
-@property BOOL isWPA;
-@property(retain) NSString * password;
-@property BOOL passwordRequired;
-@property(retain) NSArray * payloadCertificateAnchorUUID;
-@property(retain) NSNumber * priority;
-@property BOOL proxyPACFallbackAllowed;
-@property(retain) NSNumber * proxyPACFallbackAllowedNum;
-@property(retain) NSString * proxyPACURLString;
-@property(retain) NSString * proxyPassword;
-@property(retain) NSString * proxyServer;
-@property(retain) NSNumber * proxyServerPort;
-@property int proxyType;
-@property(retain) NSString * proxyUsername;
-@property(retain) NSArray * roamingConsortiumOIs;
-@property(getter=isServiceProviderRoamingEnabled) BOOL serviceProviderRoamingEnabled;
-@property(retain) NSNumber * serviceProviderRoamingEnabledNum;
-@property(retain) NSString * ssid;
-@property(retain) NSString * username;
-@property BOOL usernameRequired;
+@property (nonatomic, retain) NSString *HESSID;
+@property (nonatomic, retain) NSArray *MCCAndMNCs;
+@property (nonatomic, retain) NSArray *NAIRealmNames;
+@property (nonatomic) BOOL autoJoin;
+@property (nonatomic, retain) NSNumber *autoJoinNum;
+@property (nonatomic, retain) NSString *certificateUUID;
+@property (nonatomic, retain) NSString *credentialUUID;
+@property (nonatomic, retain) NSString *displayedOperatorName;
+@property (nonatomic, retain) NSString *domainName;
+@property (nonatomic, retain) NSDictionary *eapClientConfig;
+@property (nonatomic, retain) NSString *encryptionType;
+@property (nonatomic) BOOL isHidden;
+@property (nonatomic, retain) NSNumber *isHiddenNum;
+@property (nonatomic) BOOL isHotspot;
+@property (nonatomic, retain) NSNumber *isHotspotNum;
+@property (nonatomic) BOOL isWEP;
+@property (nonatomic) BOOL isWPA;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic) BOOL passwordRequired;
+@property (nonatomic, retain) NSArray *payloadCertificateAnchorUUID;
+@property (nonatomic, retain) NSNumber *priority;
+@property (nonatomic) BOOL proxyPACFallbackAllowed;
+@property (nonatomic, retain) NSNumber *proxyPACFallbackAllowedNum;
+@property (nonatomic, retain) NSString *proxyPACURLString;
+@property (nonatomic, retain) NSString *proxyPassword;
+@property (nonatomic, retain) NSString *proxyServer;
+@property (nonatomic, retain) NSNumber *proxyServerPort;
+@property (nonatomic) int proxyType;
+@property (nonatomic, retain) NSString *proxyUsername;
+@property (nonatomic, retain) NSArray *roamingConsortiumOIs;
+@property (getter=isServiceProviderRoamingEnabled, nonatomic) BOOL serviceProviderRoamingEnabled;
+@property (nonatomic, retain) NSNumber *serviceProviderRoamingEnabledNum;
+@property (nonatomic, retain) NSString *ssid;
+@property (nonatomic, retain) NSString *username;
+@property (nonatomic) BOOL usernameRequired;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

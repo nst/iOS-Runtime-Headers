@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class <GKRemoteUIAuxiliaryViewDelegate>, GKButton, NSArray, NSDictionary, NSString;
-
 @interface GKRemoteUITableFooterView : UIView <RUIPageAccessory, RemoteUITableFooter> {
     NSDictionary *_attributes;
     GKButton *_button;
@@ -14,17 +12,17 @@
     NSArray *_replaceableConstraints;
 }
 
-@property(retain) NSDictionary * attributes;
-@property(retain) GKButton * button;
-@property float buttonBaselineOffset;
-@property(copy,readonly) NSString * debugDescription;
-@property <GKRemoteUIAuxiliaryViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int layoutStyle;
-@property BOOL pinToBottom;
-@property(retain) NSArray * replaceableConstraints;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *attributes;
+@property (nonatomic, retain) GKButton *button;
+@property (nonatomic) float buttonBaselineOffset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GKRemoteUIAuxiliaryViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic) BOOL pinToBottom;
+@property (nonatomic, retain) NSArray *replaceableConstraints;
+@property (readonly) Class superclass;
 
 - (void)adjustSizeToFillSuperview:(id)arg1;
 - (id)attributes;

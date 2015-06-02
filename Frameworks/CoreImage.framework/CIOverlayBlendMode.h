@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIOverlayBlendMode : CIBlendModeFilter {
-}
+@interface CIOverlayBlendMode : CIBlendModeFilter
 
 + (id)_filter_display_name;
 

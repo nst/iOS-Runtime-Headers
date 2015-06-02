@@ -2,26 +2,24 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIResponder, UIView, UIWindow;
-
 @interface UINavigationTransitionView : UIView <NSCoding> {
     id _delegate;
     UIResponder *_firstResponderToRestore;
     UIView *_fromView;
     float _fromViewAlpha;
-    unsigned int _isTransitioning : 1;
+    unsigned int _isTransitioning;
     UIWindow *_originalWindow;
-    unsigned int _popoverWillCleanUpNavigationTransition : 1;
+    unsigned int _popoverWillCleanUpNavigationTransition;
     UIView *_toView;
     int _transition;
-    unsigned int _usesRoundedCorners : 1;
+    unsigned int _usesRoundedCorners;
 }
 
-@property id delegate;
-@property(readonly) UIView * fromView;
-@property(readonly) BOOL isTransitioning;
-@property BOOL popoverWillCleanUpNavigationTransition;
-@property BOOL usesRoundedCorners;
+@property (nonatomic) id delegate;
+@property (readonly) UIView *fromView;
+@property (readonly) BOOL isTransitioning;
+@property (nonatomic) BOOL popoverWillCleanUpNavigationTransition;
+@property (nonatomic) BOOL usesRoundedCorners;
 
 + (double)defaultDurationForTransition:(int)arg1;
 

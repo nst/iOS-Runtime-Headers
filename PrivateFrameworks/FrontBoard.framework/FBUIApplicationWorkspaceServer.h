@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBUIApplicationWorkspaceServer : FBWorkspaceServer {
-}
+@interface FBUIApplicationWorkspaceServer : FBWorkspaceServer
 
 - (BOOL)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
-- (void)sendExitEventWithCompletion:(id)arg1;
-- (void)sendLaunchEvent:(id)arg1 withCompletion:(id)arg2;
+- (void)sendExitEventWithCompletion:(id /* block */)arg1;
+- (void)sendLaunchEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendProcessAssertionExpirationImminent;
 
 @end

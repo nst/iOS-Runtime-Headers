@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemBrowseCellLayout;
-
 @interface SKUIItemBrowseTableViewCell : SKUIItemTableViewCell {
     SKUIItemBrowseCellLayout *_layout;
 }
 
-@property(readonly) SKUIItemBrowseCellLayout * layout;
+@property (nonatomic, readonly) SKUIItemBrowseCellLayout *layout;
 
 - (void).cxx_destruct;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;

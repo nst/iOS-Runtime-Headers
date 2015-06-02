@@ -6,8 +6,8 @@
     BOOL _downloadAllCellForArtist;
 }
 
-@property(getter=isDownloadAllCellForArtist) BOOL downloadAllCellForArtist;
-@property int downloadableSongCount;
+@property (getter=isDownloadAllCellForArtist, nonatomic) BOOL downloadAllCellForArtist;
+@property (nonatomic) int downloadableSongCount;
 
 + (Class)contentViewClass;
 

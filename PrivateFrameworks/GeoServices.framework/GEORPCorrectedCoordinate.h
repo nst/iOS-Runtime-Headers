@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng;
-
 @interface GEORPCorrectedCoordinate : PBCodable <NSCopying> {
     GEOLatLng *_correctedCoordinate;
     GEOLatLng *_originalCoordinate;
 }
 
-@property(retain) GEOLatLng * correctedCoordinate;
-@property(readonly) BOOL hasCorrectedCoordinate;
-@property(readonly) BOOL hasOriginalCoordinate;
-@property(retain) GEOLatLng * originalCoordinate;
+@property (nonatomic, retain) GEOLatLng *correctedCoordinate;
+@property (nonatomic, readonly) BOOL hasCorrectedCoordinate;
+@property (nonatomic, readonly) BOOL hasOriginalCoordinate;
+@property (nonatomic, retain) GEOLatLng *originalCoordinate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

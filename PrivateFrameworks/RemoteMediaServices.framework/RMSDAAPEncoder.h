@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSData, NSMutableData;
-
 @interface RMSDAAPEncoder : NSObject {
     NSMutableData *_data;
 }
 
-@property(readonly) NSData * data;
+@property (nonatomic, readonly) NSData *data;
 
 - (void).cxx_destruct;
 - (id)data;

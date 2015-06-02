@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface IDSSocketPairResourceTransferReceiver : NSObject {
     BOOL _compressed;
     BOOL _done;
@@ -20,7 +18,7 @@
     BOOL _wantsAppAck;
 }
 
-@property(readonly) unsigned long long totalBytesReceived;
+@property (nonatomic, readonly) unsigned long long totalBytesReceived;
 
 - (void)abortTransfer;
 - (BOOL)appendMessage:(id)arg1;

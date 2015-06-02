@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSOperationQueue;
-
 @interface ISOperationQueue : NSObject {
     NSOperationQueue *_queue;
 }

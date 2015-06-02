@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext;
-
 @interface SKUIProductPageActivityViewController : UIActivityViewController {
     SKUIClientContext *_clientContext;
 }

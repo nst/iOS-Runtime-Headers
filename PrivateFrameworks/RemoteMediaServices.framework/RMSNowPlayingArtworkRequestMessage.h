@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSNowPlayingArtworkRequestMessage : PBCodable <NSCopying> {
     NSString *_artworkIdentifier;
     float _compressionQuality;
@@ -16,14 +14,14 @@
     unsigned int _width;
 }
 
-@property(retain) NSString * artworkIdentifier;
-@property float compressionQuality;
-@property(readonly) BOOL hasArtworkIdentifier;
-@property BOOL hasCompressionQuality;
-@property BOOL hasHeight;
-@property BOOL hasWidth;
-@property unsigned int height;
-@property unsigned int width;
+@property (nonatomic, retain) NSString *artworkIdentifier;
+@property (nonatomic) float compressionQuality;
+@property (nonatomic, readonly) BOOL hasArtworkIdentifier;
+@property (nonatomic) BOOL hasCompressionQuality;
+@property (nonatomic) BOOL hasHeight;
+@property (nonatomic) BOOL hasWidth;
+@property (nonatomic) unsigned int height;
+@property (nonatomic) unsigned int width;
 
 - (void).cxx_destruct;
 - (id)artworkIdentifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILongPressGestureRecognizer, UITapAndAHalfRecognizer, UIView, UIWebSelection, UIWebSelectionView;
-
 @interface UIWebSelectionAssistant : NSObject <UIGestureRecognizerDelegate> {
     BOOL _enabled;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
@@ -12,14 +10,14 @@
     UIView *_view;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(readonly) UIWebSelection * selection;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
-@property(readonly) UIWebSelectionView * selectionView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIWebSelection *selection;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
+@property (nonatomic, readonly) UIWebSelectionView *selectionView;
+@property (readonly) Class superclass;
 
 - (void)clearSelection;
 - (void)dealloc;

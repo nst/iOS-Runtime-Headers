@@ -2,29 +2,19 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSObject<OS_dispatch_queue>;
-
 @interface MPAVBoundaryTimeObserverInfo : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_times;
 }
 
-@property(copy,readonly) id block;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) NSArray * times;
+@property (nonatomic, readonly, copy) id /* block */ block;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSArray *times;
 
 - (void).cxx_destruct;
-- (id)block;
-- (id)initWithTimes:(id)arg1 queue:(id)arg2 block:(id)arg3;
+- (id /* block */)block;
+- (id)initWithTimes:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
 - (id)queue;
 - (id)times;
 

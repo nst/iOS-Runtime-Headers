@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDFill;
-
 @interface TSDSpecSetFill : TSDSpecFill {
     TSDFill *_fill;
     BOOL _unset;

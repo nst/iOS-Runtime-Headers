@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSObject<SGEntityKey>, NSString, SGDuplicateKey;
-
 @interface SGDuplicateKey : NSObject {
     NSObject<SGEntityKey> *_entityKey;
     long long _entityType;
     SGDuplicateKey *_parentKey;
 }
 
-@property(readonly) NSString * compositeHash;
-@property(readonly) NSObject<SGEntityKey> * entityKey;
-@property(readonly) long long entityType;
-@property(readonly) SGDuplicateKey * parentKey;
+@property (nonatomic, readonly) NSString *compositeHash;
+@property (nonatomic, readonly) NSObject<SGEntityKey> *entityKey;
+@property (nonatomic, readonly) long long entityType;
+@property (nonatomic, readonly) SGDuplicateKey *parentKey;
 
 + (id)duplicateKeyForCuratedContactWithExternalId:(int)arg1;
 + (id)duplicateKeyForCuratedEventWithExternalID:(id)arg1;

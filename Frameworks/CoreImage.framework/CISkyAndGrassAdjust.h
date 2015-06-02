@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CISkyAndGrassAdjust : CIFilter {
     NSNumber *inputGrassAmount;
     CIImage *inputImage;
     NSNumber *inputSkyAmount;
 }
 
-@property(retain) NSNumber * inputGrassAmount;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputSkyAmount;
+@property (nonatomic, retain) NSNumber *inputGrassAmount;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputSkyAmount;
 
 + (id)customAttributes;
 

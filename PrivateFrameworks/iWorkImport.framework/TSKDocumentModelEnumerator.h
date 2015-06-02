@@ -2,39 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <TSKModel>, NSMutableArray;
-
 @interface TSKDocumentModelEnumerator : NSEnumerator {
     NSMutableArray *_enumeratorStack;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _filter;
-
+    id /* block */ _filter;
     <TSKModel> *_root;
     BOOL _stop;
 }
 
-@property(retain) NSMutableArray * enumeratorStack;
-@property(copy) id filter;
-@property(retain) <TSKModel> * root;
+@property (nonatomic, retain) NSMutableArray *enumeratorStack;
+@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, retain) <TSKModel> *root;
 
 - (void)dealloc;
-- (void)enumerateReferencedStylesUsingBlock:(id)arg1;
-- (void)enumerateStyleClientsUsingBlock:(id)arg1;
-- (void)enumerateUsingBlock:(id)arg1;
+- (void)enumerateReferencedStylesUsingBlock:(id /* block */)arg1;
+- (void)enumerateStyleClientsUsingBlock:(id /* block */)arg1;
+- (void)enumerateUsingBlock:(id /* block */)arg1;
 - (id)enumeratorStack;
-- (id)filter;
-- (id)initWithEnumerator:(id)arg1 filter:(id)arg2;
-- (id)initWithRootModelObject:(id)arg1 filter:(id)arg2;
+- (id /* block */)filter;
+- (id)initWithEnumerator:(id)arg1 filter:(id /* block */)arg2;
+- (id)initWithRootModelObject:(id)arg1 filter:(id /* block */)arg2;
 - (id)nextObject;
 - (id)root;
 - (void)setEnumeratorStack:(id)arg1;
-- (void)setFilter:(id)arg1;
+- (void)setFilter:(id /* block */)arg1;
 - (void)setRoot:(id)arg1;
 
 @end

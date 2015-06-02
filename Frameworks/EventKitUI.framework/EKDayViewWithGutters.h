@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDayAllDayView, EKDayView, UIView;
-
 @interface EKDayViewWithGutters : UIView {
     float _allDayHeight;
     EKDayView *_dayView;
@@ -14,11 +12,11 @@
     UIView *_rightGutter;
 }
 
-@property float allDayHeight;
-@property(retain) EKDayView * dayView;
-@property float gutterWidth;
-@property(readonly) UIView * leftGutter;
-@property(readonly) UIView * rightGutter;
+@property (nonatomic) float allDayHeight;
+@property (nonatomic, retain) EKDayView *dayView;
+@property (nonatomic) float gutterWidth;
+@property (nonatomic, readonly) UIView *leftGutter;
+@property (nonatomic, readonly) UIView *rightGutter;
 
 - (void).cxx_destruct;
 - (id)_createAllDayView;

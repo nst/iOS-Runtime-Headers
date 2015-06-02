@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSPObjectContext;
-
 @interface TSPDeepCopyWriteAssistant : NSObject <TSPEncoderWriteCoordinatorDelegate> {
     TSPObjectContext *_context;
     BOOL _resetObjectUUIDs;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)componentWriterMode;
 - (id)createMetadataForRootObject:(id)arg1 dataArchiver:(id)arg2 objectUUIDToIdentifierDictionary:(id)arg3 externalReferences:(id)arg4 weakExternalReferences:(id)arg5 lazyReferences:(id)arg6 dataReferences:(id)arg7 error:(id*)arg8;
-- (void)encodeDeepCopyOfObject:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (void)encodeDeepCopyOfObject:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (BOOL)skipMetadataObjectSerialization;

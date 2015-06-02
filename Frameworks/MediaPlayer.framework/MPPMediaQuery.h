@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray;
-
 @interface MPPMediaQuery : PBCodable <NSCopying> {
     int _entityOrder;
     NSMutableArray *_filterPredicates;
@@ -19,16 +17,16 @@
     int _staticEntityType;
 }
 
-@property int entityOrder;
-@property(retain) NSMutableArray * filterPredicates;
-@property BOOL filteringDisabled;
-@property int groupingType;
-@property BOOL hasEntityOrder;
-@property BOOL hasFilteringDisabled;
-@property BOOL hasGroupingType;
-@property BOOL hasStaticEntityType;
-@property(retain) NSMutableArray * staticEntityIdentifiers;
-@property int staticEntityType;
+@property (nonatomic) int entityOrder;
+@property (nonatomic, retain) NSMutableArray *filterPredicates;
+@property (nonatomic) BOOL filteringDisabled;
+@property (nonatomic) int groupingType;
+@property (nonatomic) BOOL hasEntityOrder;
+@property (nonatomic) BOOL hasFilteringDisabled;
+@property (nonatomic) BOOL hasGroupingType;
+@property (nonatomic) BOOL hasStaticEntityType;
+@property (nonatomic, retain) NSMutableArray *staticEntityIdentifiers;
+@property (nonatomic) int staticEntityType;
 
 - (void).cxx_destruct;
 - (void)addFilterPredicates:(id)arg1;

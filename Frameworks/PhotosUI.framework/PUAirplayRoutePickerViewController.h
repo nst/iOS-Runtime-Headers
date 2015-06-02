@@ -2,37 +2,27 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class PUAirplayRoute, PUAirplayRouteTableViewDataSource;
-
 @interface PUAirplayRoutePickerViewController : UITableViewController {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     PUAirplayRouteTableViewDataSource *_dataSource;
     BOOL _makeRouteCurrentBeforeReturning;
     PUAirplayRoute *_markedRoute;
     BOOL _shouldShowDoneButton;
 }
 
-@property(copy) id completionHandler;
-@property BOOL makeRouteCurrentBeforeReturning;
-@property BOOL shouldShowDoneButton;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) BOOL makeRouteCurrentBeforeReturning;
+@property (nonatomic) BOOL shouldShowDoneButton;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
 - (void)_updateRoutes;
 - (void)_userSelectedRoute:(id)arg1 fromTableView:(id)arg2 atIndexPath:(id)arg3;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (id)init;
 - (BOOL)makeRouteCurrentBeforeReturning;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMakeRouteCurrentBeforeReturning:(BOOL)arg1;
 - (void)setMarkedRoute:(id)arg1;
 - (void)setShouldShowDoneButton:(BOOL)arg1;

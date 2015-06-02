@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUConcernItem;
-
 @interface SUPostConcernOperation : ISOperation <ISStoreURLOperationDelegate> {
     NSString *_commentText;
     SUConcernItem *_concern;
     unsigned long long _itemIdentifier;
 }
 
-@property(retain) NSString * commentText;
-@property(retain) SUConcernItem * concern;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (retain) NSString *commentText;
+@property (retain) SUConcernItem *concern;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property unsigned long long itemIdentifier;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (id)_httpBody;
 - (id)commentText;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@class UITextView;
-
 @interface DDTextKitOperation : DDOperation {
     int _editCount;
     struct _NSRange { 
@@ -12,7 +10,7 @@
     } _range;
 }
 
-@property(retain) UITextView * container;
+@property (nonatomic, retain) UITextView *container;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
 - (BOOL)_addResultsToAttributes;
@@ -20,7 +18,7 @@
 - (BOOL)_rangeValidForContainer;
 - (void)_updateGenerationNumber;
 - (void)cleanup;
-- (void)dispatchContainerModificationBlock:(id)arg1;
+- (void)dispatchContainerModificationBlock:(id /* block */)arg1;
 - (BOOL)doURLificationOnDocument;
 - (id)initWithContainer:(id)arg1;
 - (BOOL)needsToStartOver;

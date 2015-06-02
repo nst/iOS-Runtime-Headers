@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedWaypoint, GEOMapRegion, GEORoute, GEORouteDriveMapMatcher, GEORouteWalkMapMatcher, GEOZilchDecoder, NSArray, NSData, NSHashTable, NSMutableArray, NSString;
-
 @interface GEOComposedRoute : NSObject <GEOMapAccessRestrictions> {
     NSArray *_advisoryNotices;
     BOOL _allowsNetworkTileLoad;
@@ -35,53 +33,54 @@
     GEOZilchDecoder *_zilchDecoder;
 }
 
-@property(retain) NSArray * advisoryNotices;
-@property BOOL allowsNetworkTileLoad;
-@property(readonly) GEOMapRegion * boundingMapRegion;
-@property(readonly) void* controlPoints;
-@property unsigned int currentDisplayStep;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) GEOComposedWaypoint * destination;
-@property(readonly) unsigned int distance;
-@property unsigned int expectedTime;
-@property unsigned int firstVisiblePoint;
-@property(readonly) GEORoute * geoRoute;
-@property(readonly) BOOL hasExpectedTime;
-@property(readonly) BOOL hasHistoricTravelTime;
-@property(readonly) unsigned int hash;
-@property unsigned int historicTravelTime;
-@property(readonly) NSArray * legs;
-@property(readonly) unsigned int maneuverDisplayCount;
-@property BOOL maneuverDisplayEnabled;
-@property(retain) NSArray * maneuverDisplaySteps;
-@property(readonly) NSString * name;
-@property(retain) GEOComposedWaypoint * origin;
-@property(readonly) unsigned int pointCount;
-@property(readonly) NSData * routeID;
-@property(readonly) NSArray * routeNames;
-@property(readonly) int routeType;
-@property(readonly) NSArray * sections;
-@property unsigned int selectedLegIndex;
-@property(readonly) NSArray * steps;
-@property(readonly) unsigned int stepsCount;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int* trafficColorOffsets;
-@property(readonly) unsigned int trafficColorOffsetsCount;
-@property(readonly) unsigned int* trafficColors;
-@property(readonly) unsigned int trafficColorsCount;
-@property(readonly) int transportType;
+@property (nonatomic, retain) NSArray *advisoryNotices;
+@property (nonatomic) BOOL allowsNetworkTileLoad;
+@property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
+@property (nonatomic, readonly) void*controlPoints;
+@property (nonatomic) unsigned int currentDisplayStep;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) GEOComposedWaypoint *destination;
+@property (nonatomic, readonly) unsigned int distance;
+@property (nonatomic) unsigned int expectedTime;
+@property (nonatomic) unsigned int firstVisiblePoint;
+@property (nonatomic, readonly) GEORoute *geoRoute;
+@property (nonatomic, readonly) BOOL hasExpectedTime;
+@property (nonatomic, readonly) BOOL hasHistoricTravelTime;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int historicTravelTime;
+@property (nonatomic, readonly) NSArray *legs;
+@property (nonatomic, readonly) unsigned int maneuverDisplayCount;
+@property (nonatomic) BOOL maneuverDisplayEnabled;
+@property (nonatomic, retain) NSArray *maneuverDisplaySteps;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) GEOComposedWaypoint *origin;
+@property (nonatomic, readonly) unsigned int pointCount;
+@property (nonatomic, readonly) NSData *routeID;
+@property (nonatomic, readonly) NSArray *routeNames;
+@property (nonatomic, readonly) int routeType;
+@property (nonatomic, readonly) NSArray *sections;
+@property (nonatomic) unsigned int selectedLegIndex;
+@property (nonatomic, readonly) NSArray *steps;
+@property (nonatomic, readonly) unsigned int stepsCount;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int*trafficColorOffsets;
+@property (nonatomic, readonly) unsigned int trafficColorOffsetsCount;
+@property (nonatomic, readonly) unsigned int*trafficColors;
+@property (nonatomic, readonly) unsigned int trafficColorsCount;
+@property (nonatomic, readonly) int transportType;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 - (void)_addPaths:(id)arg1 forObserver:(id)arg2;
 - (void)_addSnappedPolylinePathsForSection:(id)arg1 toPaths:(id)arg2 rects:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 rectsCount:(unsigned long)arg4;
 - (void)_buildPointSections;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })_findRouteCoordinateWithOffset:(float)arg1 aPos:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 aCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3 bCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg4 pointOnSegment:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg5 bounds:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg6;
 - (void)_initializeManeuverDisplaySteps;
-- (struct CGImage { }*)_mapKitImage;
 - (id)_mapMatcherForTransportType:(int)arg1;
 - (BOOL)_meetsMinimumPathLengthBetweenStart:(unsigned int)arg1 end:(unsigned int)arg2;
 - (bool)_needsCornerOffsetAt:(unsigned int)arg1;
-- (void)_snapPaths:(id)arg1 completionHandler:(id)arg2;
+- (void)_snapPaths:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addObserver:(id)arg1;
 - (id)advisoryNotices;
 - (BOOL)allowsNetworkTileLoad;
@@ -106,7 +105,7 @@
 - (double)distanceFromPointIndex:(unsigned int)arg1 toPointIndex:(unsigned int)arg2;
 - (unsigned int)expectedTime;
 - (unsigned int)firstVisiblePoint;
-- (void)forEachSnappedPath:(id)arg1;
+- (void)forEachSnappedPath:(id /* block */)arg1;
 - (int)formOfWayAt:(unsigned int)arg1;
 - (id)geoRoute;
 - (void)getFormOfWay:(int*)arg1 roadClass:(int*)arg2 at:(unsigned int)arg3;
@@ -117,7 +116,6 @@
 - (unsigned int)historicTravelTime;
 - (id)initWithCompanionRoute:(id)arg1;
 - (id)initWithRoute:(id)arg1;
-- (id)instructionsForStep:(id)arg1;
 - (BOOL)isLocationCoordinate:(struct { double x1; double x2; })arg1 withinDistance:(double)arg2 alongRoute:(double)arg3 withTransportType:(int)arg4;
 - (BOOL)isSnapping;
 - (id)legForPointIndex:(unsigned int)arg1;
@@ -160,7 +158,7 @@
 - (void)setManeuverDisplaySteps:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setSelectedLegIndex:(unsigned int)arg1;
-- (void)setupRoadSegmentIdsForRouteHintFromMatch:(id)arg1 distanceAhead:(double)arg2 roadSegmentIdGenerator:(id)arg3 handler:(id)arg4;
+- (void)setupRoadSegmentIdsForRouteHintFromMatch:(id)arg1 distanceAhead:(double)arg2 roadSegmentIdGenerator:(id /* block */)arg3 handler:(id /* block */)arg4;
 - (id)stepAtIndex:(unsigned int)arg1;
 - (id)stepForPointIndex:(unsigned int)arg1;
 - (unsigned int)stepIndexForPointIndex:(unsigned int)arg1;
@@ -177,5 +175,10 @@
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1;
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (struct CGImage { }*)_mapKitImage;
+- (id)instructionsForStep:(id)arg1;
 
 @end

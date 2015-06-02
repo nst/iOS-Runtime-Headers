@@ -2,19 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetCache, AVAssetResourceLoader, AVURLAssetInternal, NSString, NSURL;
-
 @interface AVURLAsset : AVAsset {
     AVURLAssetInternal *_URLAsset;
 }
 
-@property(copy,readonly) NSURL * URL;
-@property(readonly) AVAssetCache * assetCache;
-@property(readonly) NSString * cacheKey;
-@property(readonly) double rc_durationInSeconds;
-@property(readonly) AVAssetResourceLoader * resourceLoader;
-@property(readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
-@property(readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+@property (nonatomic, readonly, copy) NSURL *URL;
+@property (nonatomic, readonly) AVAssetCache *assetCache;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, readonly) double rc_durationInSeconds;
+@property (nonatomic, readonly) AVAssetResourceLoader *resourceLoader;
+@property (nonatomic, readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
+@property (nonatomic, readonly) BOOL shouldMatchDataInCacheByURLWithoutQueryComponent;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (id)_UTTypes;
@@ -28,7 +28,6 @@
 + (id)audiovisualMIMETypes;
 + (id)audiovisualTypes;
 + (BOOL)isPlayableExtendedMIMEType:(id)arg1;
-+ (id)rc_preciseTimingAssetWithURL:(id)arg1;
 
 - (id)SHA1Digest;
 - (id)URL;
@@ -60,12 +59,17 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
-- (double)rc_durationInSeconds;
 - (unsigned int)referenceRestrictions;
 - (id)resolvedURL;
 - (id)resourceLoader;
 - (BOOL)shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (id)tracks;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
++ (id)rc_preciseTimingAssetWithURL:(id)arg1;
+
+- (double)rc_durationInSeconds;
 
 @end

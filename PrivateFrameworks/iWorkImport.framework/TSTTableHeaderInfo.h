@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCellStyle, TSWPParagraphStyle;
-
 @interface TSTTableHeaderInfo : NSObject {
     TSTCellStyle *mCellStyle;
     unsigned char mHidingState;
@@ -12,11 +10,11 @@
     TSWPParagraphStyle *mTextStyle;
 }
 
-@property(retain) TSTCellStyle * cellStyle;
-@property unsigned char hidingState;
-@property unsigned short numberOfCells;
-@property float size;
-@property(retain) TSWPParagraphStyle * textStyle;
+@property (nonatomic, retain) TSTCellStyle *cellStyle;
+@property (nonatomic) unsigned char hidingState;
+@property (nonatomic) unsigned short numberOfCells;
+@property (nonatomic) float size;
+@property (nonatomic, retain) TSWPParagraphStyle *textStyle;
 
 - (id)cellStyle;
 - (void)dealloc;

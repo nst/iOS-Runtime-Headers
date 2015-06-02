@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIShortcutConversionCandidate : TIKeyboardCandidateSingle {
-}
+@interface TIShortcutConversionCandidate : TIKeyboardCandidateSingle
 
 + (int)type;
 

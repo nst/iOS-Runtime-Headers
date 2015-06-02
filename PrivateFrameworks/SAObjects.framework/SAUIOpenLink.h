@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@interface SAUIOpenLink : SABaseClientBoundCommand
 
-@interface SAUIOpenLink : SABaseClientBoundCommand {
-}
+@property (nonatomic, copy) NSURL *ref;
 
-@property(copy) NSURL * ref;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)openLink;
 + (id)openLinkWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)ref;
 - (BOOL)requiresResponse;
 - (void)setRef:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEODirectionsResponse, GEORoute, MKMapItem, NSArray, NSString, NSURL;
-
 @interface MKDirectionsResponse : NSObject {
     MKMapItem *_destination;
     GEODirectionsResponse *_geoResponse;
@@ -13,15 +11,15 @@
     MKMapItem *_source;
 }
 
-@property(retain,readonly) GEODirectionsResponse * _geoResponse;
-@property(retain,readonly) NSString * _incidentDescription;
-@property(readonly) struct CGImage { }* _incidentImage;
-@property(retain,readonly) NSURL * _mapsURL;
-@property(retain,readonly) GEORoute * _route;
-@property(readonly) double _typicalTrafficRatio;
-@property(readonly) MKMapItem * destination;
-@property(readonly) NSArray * routes;
-@property(readonly) MKMapItem * source;
+@property (nonatomic, readonly, retain) GEODirectionsResponse *_geoResponse;
+@property (nonatomic, readonly, retain) NSString *_incidentDescription;
+@property (nonatomic, readonly) struct CGImage { }*_incidentImage;
+@property (nonatomic, readonly, retain) NSURL *_mapsURL;
+@property (nonatomic, readonly, retain) GEORoute *_route;
+@property (nonatomic, readonly) double _typicalTrafficRatio;
+@property (nonatomic, readonly) MKMapItem *destination;
+@property (nonatomic, readonly) NSArray *routes;
+@property (nonatomic, readonly) MKMapItem *source;
 
 + (id)_responseWithGEOResponse:(id)arg1 request:(id)arg2 origin:(id)arg3 destination:(id)arg4 error:(id*)arg5;
 

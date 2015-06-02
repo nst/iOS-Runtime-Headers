@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSSet;
-
 @interface UIKeyboardCandidateGridLayout : UICollectionViewLayout {
     NSArray *_candidateGroups;
     int _candidatesVisualStyle;
@@ -30,21 +28,21 @@
     } _visualStyling;
 }
 
-@property(retain) NSArray * candidateGroups;
-@property int candidatesVisualStyle;
-@property(retain) NSMutableArray * cellAttributes;
-@property unsigned int columnsCount;
-@property(retain) NSSet * emphasizedCandidates;
-@property BOOL expanded;
-@property(readonly) float groupBarWidth;
-@property BOOL hasSecondaryCandidates;
-@property float headerViewHeight;
-@property BOOL needsLayout;
-@property BOOL needsPaddingForIndexScrubber;
-@property(readonly) struct CGSize { float x1; float x2; } rowSize;
-@property(retain) NSMutableDictionary * supplementaryAttributes;
-@property BOOL supportsNumberKeySelection;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, retain) NSArray *candidateGroups;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic, retain) NSMutableArray *cellAttributes;
+@property (nonatomic) unsigned int columnsCount;
+@property (nonatomic, retain) NSSet *emphasizedCandidates;
+@property (nonatomic) BOOL expanded;
+@property (nonatomic, readonly) float groupBarWidth;
+@property (nonatomic) BOOL hasSecondaryCandidates;
+@property (nonatomic) float headerViewHeight;
+@property (nonatomic) BOOL needsLayout;
+@property (nonatomic) BOOL needsPaddingForIndexScrubber;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } rowSize;
+@property (nonatomic, retain) NSMutableDictionary *supplementaryAttributes;
+@property (nonatomic) BOOL supportsNumberKeySelection;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 + (void)deemphasizeLastItemIfNeeded:(id)arg1;
 + (id)layout;

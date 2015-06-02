@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
  */
 
-@class <SUBManagerDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface SUBManager : NSObject {
     <SUBManagerDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_serverConnection;
 }
 
-@property <SUBManagerDelegate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSObject<OS_xpc_object> * serverConnection;
+@property (nonatomic) <SUBManagerDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *serverConnection;
 
 - (void)_forwardDownloadProgress:(id)arg1;
 - (void)_forwardInstallResult:(id)arg1;
@@ -24,9 +22,9 @@
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)installUpdate:(id)arg1;
-- (void)managerState:(id)arg1;
+- (void)managerState:(id /* block */)arg1;
 - (void)performMigration;
-- (void)purgeUpdate:(id)arg1 completion:(id)arg2;
+- (void)purgeUpdate:(id)arg1 completion:(id /* block */)arg2;
 - (id)queue;
 - (void)scanForUpdates;
 - (id)serverConnection;

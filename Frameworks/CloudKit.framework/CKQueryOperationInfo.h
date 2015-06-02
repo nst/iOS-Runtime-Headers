@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKQuery, CKQueryCursor, CKRecordZoneID, NSArray;
-
 @interface CKQueryOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     CKQueryCursor *_cursor;
     NSArray *_desiredKeys;
@@ -13,12 +11,12 @@
     CKRecordZoneID *_zoneID;
 }
 
-@property(retain) CKQueryCursor * cursor;
-@property(retain) NSArray * desiredKeys;
-@property(retain) CKQuery * query;
-@property unsigned int resultsLimit;
-@property BOOL shouldFetchAssetContent;
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic, retain) CKQueryCursor *cursor;
+@property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic, retain) CKQuery *query;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (BOOL)supportsSecureCoding;
 

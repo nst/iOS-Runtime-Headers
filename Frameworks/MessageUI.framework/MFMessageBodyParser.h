@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSError, NSMutableArray;
-
 @interface MFMessageBodyParser : MFMessageBodyParserObject {
     NSMutableArray *_elementPool;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _foundMessageBodyElementBlock;
-
+    id /* block */ _foundMessageBodyElementBlock;
     struct __CFDictionary { } *_nodesLevelCache;
     struct __CFDictionary { } *_nodesQuoteLevelCache;
     struct __CFArray { } *_nodesStackCache;
@@ -24,7 +14,7 @@
     NSMutableArray *_subparsers;
 }
 
-@property unsigned int options;
+@property (nonatomic) unsigned int options;
 
 + (BOOL)isLinebreakImpliedAfterTagName:(id)arg1;
 + (BOOL)isLinebreakImpliedBeforeTagName:(id)arg1;
@@ -50,7 +40,7 @@
 - (id)parserError;
 - (unsigned int)quoteLevelForBodyNode:(id)arg1;
 - (void)removeSubparser:(id)arg1;
-- (void)setFoundMessageBodyElementBlock:(id)arg1;
+- (void)setFoundMessageBodyElementBlock:(id /* block */)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (BOOL)shouldIgnoreTagWithTagName:(id)arg1;
 - (BOOL)shouldProceedParsing;

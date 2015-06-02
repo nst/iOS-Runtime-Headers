@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotosFormats.framework/PhotosFormats
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface PFAssetAdjustments : NSObject <NSCopying> {
     NSDictionary *_propertyListDictionary;
 }
 
-@property(readonly) int adjustmentBaseVersion;
-@property(readonly) NSData * adjustmentData;
-@property(copy,readonly) NSString * adjustmentFormatIdentifier;
-@property(copy,readonly) NSString * adjustmentFormatVersion;
-@property(retain) NSDictionary * propertyListDictionary;
+@property (nonatomic, readonly) int adjustmentBaseVersion;
+@property (nonatomic, readonly) NSData *adjustmentData;
+@property (nonatomic, readonly, copy) NSString *adjustmentFormatIdentifier;
+@property (nonatomic, readonly, copy) NSString *adjustmentFormatVersion;
+@property (nonatomic, retain) NSDictionary *propertyListDictionary;
 
 - (void).cxx_destruct;
 - (int)adjustmentBaseVersion;

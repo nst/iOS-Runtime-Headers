@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface PKPhysicsJointRevolute : PKPhysicsJoint {
     struct CGPoint { 
         float x; 
@@ -37,12 +32,12 @@
     } _jointDef;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } anchor;
-@property float frictionTorque;
-@property float lowerAngleLimit;
-@property float rotationSpeed;
-@property BOOL shouldEnableLimits;
-@property float upperAngleLimit;
+@property (readonly) struct CGPoint { float x1; float x2; } anchor;
+@property (nonatomic) float frictionTorque;
+@property (nonatomic) float lowerAngleLimit;
+@property (nonatomic) float rotationSpeed;
+@property (nonatomic) BOOL shouldEnableLimits;
+@property (nonatomic) float upperAngleLimit;
 
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 

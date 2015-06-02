@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSHashTable;
-
 @interface HDDiagnosticManager : NSObject {
     int _lock;
     NSHashTable *_objects;

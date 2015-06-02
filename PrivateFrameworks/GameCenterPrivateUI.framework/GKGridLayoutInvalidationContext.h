@@ -9,10 +9,10 @@
     BOOL _invalidatePlaceholderVisibility;
 }
 
-@property BOOL invalidateBoundsChange;
-@property BOOL invalidateIncrementalReveal;
-@property BOOL invalidatePinnableAreas;
-@property BOOL invalidatePlaceholderVisibility;
+@property (nonatomic) BOOL invalidateBoundsChange;
+@property (nonatomic) BOOL invalidateIncrementalReveal;
+@property (nonatomic) BOOL invalidatePinnableAreas;
+@property (nonatomic) BOOL invalidatePlaceholderVisibility;
 
 - (BOOL)invalidateBoundsChange;
 - (BOOL)invalidateIncrementalReveal;

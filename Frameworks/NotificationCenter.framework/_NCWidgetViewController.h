@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
  */
 
-@class <UIViewControllerAnimatedTransitioning>, NSMapTable, NSObject<OS_dispatch_queue>, NSString, UIView, UIViewController<NCWidgetProviding>, _UIViewControllerTransitionContext;
-
 @interface _NCWidgetViewController : UIViewController <SBUISizeObservingViewDelegate, _NCWidgetViewController_Service_IPC> {
     _UIViewControllerTransitionContext *_activeTransitionContext;
     NSMapTable *_activeTransitionContextsByRequestID;
@@ -27,11 +25,11 @@
     NSMapTable *_wrappedAppearStatesToOpenTransactionIDs;
 }
 
-@property(getter=_contentProvidingViewController,retain) UIViewController<NCWidgetProviding> * contentProvidingViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (getter=_contentProvidingViewController, nonatomic, retain) UIViewController<NCWidgetProviding> *contentProvidingViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (void)_reduceTransparencyDidChange:(id)arg1;
@@ -41,18 +39,18 @@
 - (void)__openTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(id)arg2;
 - (void)__performOutstandingAnimationsForRequestWithIdentifier:(id)arg1;
 - (void)__performOutstandingCompletionForRequestWithIdentifier:(id)arg1;
-- (void)__performUpdateWithReplyHandler:(id)arg1;
-- (void)__requestEncodedLayerTreeWithReplyHandler:(id)arg1;
+- (void)__performUpdateWithReplyHandler:(id /* block */)arg1;
+- (void)__requestEncodedLayerTreeWithReplyHandler:(id /* block */)arg1;
 - (void)__setWidgetIdentifier:(id)arg1;
 - (void)__viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (void)_closeTransactionWithAppearState:(int)arg1;
 - (id)_contentProvidingViewController;
 - (id)_customAnimator:(BOOL)arg1;
 - (BOOL)_disableAutomaticKeyboardBehavior;
-- (void)_encodeLayerTree:(id)arg1;
-- (void)_enqueueProxyRequest:(id)arg1;
+- (void)_encodeLayerTree:(id /* block */)arg1;
+- (void)_enqueueProxyRequest:(id /* block */)arg1;
 - (void)_openURL:(id)arg1;
-- (void)_performUpdateWithCompletionHandler:(id)arg1;
+- (void)_performUpdateWithCompletionHandler:(id /* block */)arg1;
 - (void)_requestMarginInsets;
 - (void)_requestPreferredViewHeight:(float)arg1 usingAutolayout:(BOOL)arg2;
 - (float)_sanitizedClientContentWidthForProposedHostWidth:(float)arg1;

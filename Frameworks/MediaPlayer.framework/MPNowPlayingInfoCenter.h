@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDate, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MPNowPlayingInfoCenter : NSObject {
     NSDictionary *_nowPlayingInfo;
     NSDate *_pushDate;
@@ -11,7 +9,7 @@
     NSDictionary *_queuedNowPlayingInfo;
 }
 
-@property(copy) NSDictionary * nowPlayingInfo;
+@property (copy) NSDictionary *nowPlayingInfo;
 
 + (id)defaultCenter;
 

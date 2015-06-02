@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPKnockoutButton : MPButton {
-}
+@interface MPKnockoutButton : MPButton
 
 + (id)easyTouchButtonWithType:(int)arg1;
 

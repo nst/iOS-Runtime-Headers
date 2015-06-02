@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface SPInterfaceSwitch : SPInterfaceObject {
-}
+@interface SPInterfaceSwitch : SPInterfaceObject
 
 - (void)setEnabled:(BOOL)arg1;
 - (void)setOn:(BOOL)arg1;

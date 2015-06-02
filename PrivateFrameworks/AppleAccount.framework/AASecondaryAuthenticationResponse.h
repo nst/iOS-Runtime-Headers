@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData, NSString;
-
 @interface AASecondaryAuthenticationResponse : AAResponse {
     NSData *_buddyML;
     NSString *_secondFactorToken;
 }
 
-@property(readonly) NSData * buddyML;
-@property(readonly) NSString * secondFactorToken;
+@property (nonatomic, readonly) NSData *buddyML;
+@property (nonatomic, readonly) NSString *secondFactorToken;
 
 - (void).cxx_destruct;
 - (id)buddyML;

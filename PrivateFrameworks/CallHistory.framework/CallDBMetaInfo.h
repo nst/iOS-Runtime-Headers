@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CallDBMetaInfo : NSObject {
-}
+@interface CallDBMetaInfo : NSObject
 
 + (id)metInfoPlistURL;
 + (int)readDatabaseVersion:(BOOL)arg1;

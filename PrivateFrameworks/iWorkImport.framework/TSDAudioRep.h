@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSDAudioHUDController>, CALayer, TSDMovieInfo, TSKAVPlayerController;
-
 @interface TSDAudioRep : TSDMediaRep {
     <TSDAudioHUDController> *mAudioHUDController;
     CALayer *mAudioImageLayer;
@@ -14,7 +12,7 @@
     CALayer *mSpinnerLayer;
 }
 
-@property(readonly) TSDMovieInfo * movieInfo;
+@property (nonatomic, readonly) TSDMovieInfo *movieInfo;
 
 - (BOOL)canResetMediaSize;
 - (void)dealloc;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKOrdinalElement : IKTextElement {
-}
+@interface IKOrdinalElement : IKTextElement
 
-@property(readonly) unsigned int maxLength;
+@property (nonatomic, readonly) unsigned int maxLength;
 
 - (unsigned int)maxLength;
 

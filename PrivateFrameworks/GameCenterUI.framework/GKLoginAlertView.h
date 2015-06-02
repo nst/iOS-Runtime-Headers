@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString;
-
 @interface GKLoginAlertView : UIAlertView <UITextFieldDelegate> {
     unsigned int _passwordFieldIndex;
     NSString *_username;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * password;
-@property(readonly) Class superclass;
-@property(copy) NSString * username;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *password;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *username;
 
 - (void)_updateFrameForDisplay;
 - (void)dealloc;

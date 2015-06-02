@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIColor, CIVector, NSNumber;
-
 @interface CICheckerboardGenerator : CIFilter {
     CIVector *inputCenter;
     CIColor *inputColor0;
@@ -12,11 +10,11 @@
     NSNumber *inputWidth;
 }
 
-@property(retain) CIVector * inputCenter;
-@property(retain) CIColor * inputColor0;
-@property(retain) CIColor * inputColor1;
-@property(retain) NSNumber * inputSharpness;
-@property(retain) NSNumber * inputWidth;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIColor *inputColor0;
+@property (nonatomic, retain) CIColor *inputColor1;
+@property (nonatomic, retain) NSNumber *inputSharpness;
+@property (nonatomic, retain) NSNumber *inputWidth;
 
 + (id)customAttributes;
 

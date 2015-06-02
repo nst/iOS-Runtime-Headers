@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDUnsupportedType : CHDChartType {
-}
+@interface CHDUnsupportedType : CHDChartType
 
 @end

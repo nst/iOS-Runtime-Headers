@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUISizeToFitImageDataConsumer : SKUIImageDataConsumer {
     struct CGSize { 
         float width; 
@@ -14,9 +12,9 @@
     float _gradientHeight;
 }
 
-@property struct CGSize { float x1; float x2; } constraintSize;
-@property(retain) UIColor * gradientEndColor;
-@property float gradientHeight;
+@property (nonatomic) struct CGSize { float x1; float x2; } constraintSize;
+@property (nonatomic, retain) UIColor *gradientEndColor;
+@property (nonatomic) float gradientHeight;
 
 + (id)consumerWithConstraintSize2:(struct CGSize { float x1; float x2; })arg1;
 + (id)consumerWithConstraintSize:(struct CGSize { float x1; float x2; })arg1;

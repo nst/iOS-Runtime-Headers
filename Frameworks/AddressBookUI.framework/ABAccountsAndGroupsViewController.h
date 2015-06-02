@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABAccountsAndGroupDataSource, ABPeoplePickerNavigationController, NSString, UIRefreshControl;
-
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
     ABAccountsAndGroupDataSource *_dataSource;
     BOOL _needsReload;
@@ -13,12 +11,12 @@
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
-@property(readonly) ABAccountsAndGroupDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property ABPeoplePickerNavigationController * peoplePickerNavigationController;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) ABAccountsAndGroupDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) ABPeoplePickerNavigationController *peoplePickerNavigationController;
+@property (readonly) Class superclass;
 
 - (void)_updateDisplayedContactsFilterFromSelection;
 - (int)abViewControllerType;

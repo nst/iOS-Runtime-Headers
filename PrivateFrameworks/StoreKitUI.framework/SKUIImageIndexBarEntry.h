@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage;
-
 @interface SKUIImageIndexBarEntry : SKUIIndexBarEntry {
     UIImage *_image;
 }
 
-@property(readonly) UIImage * image;
+@property (nonatomic, readonly) UIImage *image;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_calculatedContentSize;

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface SKUIInAppPurchase : NSObject <SKUICacheCoding> {
     NSString *_formattedPrice;
     NSString *_name;
 }
 
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * formattedPrice;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * name;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *formattedPrice;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *name;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)cacheRepresentation;

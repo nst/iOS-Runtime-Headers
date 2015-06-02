@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAddress, GEOPDAmenities, GEOPDBounds, GEOPDBusinessClaim, GEOPDETA, GEOPDEntity, GEOPDFlyover, GEOPDHours, GEOPDPhoto, GEOPDPlaceInfo, GEOPDRating, GEOPDRawAttribute, GEOPDReview, GEOPDRoadAccessInfo, GEOPDStyleAttributes;
-
 @interface GEOPDComponentValue : PBCodable <NSCopying> {
     GEOPDRoadAccessInfo *_accessInfo;
     GEOPDAddress *_address;
@@ -22,36 +20,36 @@
     GEOPDStyleAttributes *_styleAttributes;
 }
 
-@property(retain) GEOPDRoadAccessInfo * accessInfo;
-@property(retain) GEOPDAddress * address;
-@property(retain) GEOPDAmenities * amenities;
-@property(retain) GEOPDBounds * bounds;
-@property(retain) GEOPDBusinessClaim * businessClaim;
-@property(retain) GEOPDEntity * entity;
-@property(retain) GEOPDETA * eta;
-@property(retain) GEOPDFlyover * flyover;
-@property(readonly) BOOL hasAccessInfo;
-@property(readonly) BOOL hasAddress;
-@property(readonly) BOOL hasAmenities;
-@property(readonly) BOOL hasBounds;
-@property(readonly) BOOL hasBusinessClaim;
-@property(readonly) BOOL hasEntity;
-@property(readonly) BOOL hasEta;
-@property(readonly) BOOL hasFlyover;
-@property(readonly) BOOL hasHours;
-@property(readonly) BOOL hasPhoto;
-@property(readonly) BOOL hasPlaceInfo;
-@property(readonly) BOOL hasRating;
-@property(readonly) BOOL hasRawAttribute;
-@property(readonly) BOOL hasReview;
-@property(readonly) BOOL hasStyleAttributes;
-@property(retain) GEOPDHours * hours;
-@property(retain) GEOPDPhoto * photo;
-@property(retain) GEOPDPlaceInfo * placeInfo;
-@property(retain) GEOPDRating * rating;
-@property(retain) GEOPDRawAttribute * rawAttribute;
-@property(retain) GEOPDReview * review;
-@property(retain) GEOPDStyleAttributes * styleAttributes;
+@property (nonatomic, retain) GEOPDRoadAccessInfo *accessInfo;
+@property (nonatomic, retain) GEOPDAddress *address;
+@property (nonatomic, retain) GEOPDAmenities *amenities;
+@property (nonatomic, retain) GEOPDBounds *bounds;
+@property (nonatomic, retain) GEOPDBusinessClaim *businessClaim;
+@property (nonatomic, retain) GEOPDEntity *entity;
+@property (nonatomic, retain) GEOPDETA *eta;
+@property (nonatomic, retain) GEOPDFlyover *flyover;
+@property (nonatomic, readonly) BOOL hasAccessInfo;
+@property (nonatomic, readonly) BOOL hasAddress;
+@property (nonatomic, readonly) BOOL hasAmenities;
+@property (nonatomic, readonly) BOOL hasBounds;
+@property (nonatomic, readonly) BOOL hasBusinessClaim;
+@property (nonatomic, readonly) BOOL hasEntity;
+@property (nonatomic, readonly) BOOL hasEta;
+@property (nonatomic, readonly) BOOL hasFlyover;
+@property (nonatomic, readonly) BOOL hasHours;
+@property (nonatomic, readonly) BOOL hasPhoto;
+@property (nonatomic, readonly) BOOL hasPlaceInfo;
+@property (nonatomic, readonly) BOOL hasRating;
+@property (nonatomic, readonly) BOOL hasRawAttribute;
+@property (nonatomic, readonly) BOOL hasReview;
+@property (nonatomic, readonly) BOOL hasStyleAttributes;
+@property (nonatomic, retain) GEOPDHours *hours;
+@property (nonatomic, retain) GEOPDPhoto *photo;
+@property (nonatomic, retain) GEOPDPlaceInfo *placeInfo;
+@property (nonatomic, retain) GEOPDRating *rating;
+@property (nonatomic, retain) GEOPDRawAttribute *rawAttribute;
+@property (nonatomic, retain) GEOPDReview *review;
+@property (nonatomic, retain) GEOPDStyleAttributes *styleAttributes;
 
 - (id)accessInfo;
 - (id)address;

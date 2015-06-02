@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class UIImageView;
-
 @interface TPLegacyBottomBar : UIView {
     int _orientation;
     UIImageView *_shadowView;
@@ -11,8 +9,8 @@
     BOOL _suppressDrawingBackground;
 }
 
-@property(readonly) UIImageView * shadowView;
-@property BOOL suppressDrawingBackground;
+@property (readonly) UIImageView *shadowView;
+@property (nonatomic) BOOL suppressDrawingBackground;
 
 + (id)_backgroundImage;
 + (float)defaultHeight;

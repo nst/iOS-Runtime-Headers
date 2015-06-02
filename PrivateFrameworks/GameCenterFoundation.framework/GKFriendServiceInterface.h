@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKFriendServiceInterface : GKServiceInterface {
-}
+@interface GKFriendServiceInterface : GKServiceInterface
 
 + (void)configureInterface:(id)arg1;
 + (id)interfaceProtocol;

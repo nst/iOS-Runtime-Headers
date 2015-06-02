@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPublishingAgentDelegate>, NSData, NSMutableArray, NSString, PLVideoRemaker;
-
 @interface PLPublishingAgent : NSObject <PLDataArrayInputStreamProgressDelegate, UIAlertViewDelegate> {
     BOOL _allowsHDOver3GUpload;
     long long _approximateHDUploadSize;
@@ -28,12 +26,12 @@
     BOOL _ownerIsCamera;
     float _percentComplete;
     float _progressMultiplier;
-    unsigned int _publishing : 1;
+    unsigned int _publishing;
     PLVideoRemaker *_remaker;
     int _remakerMode;
-    unsigned int _remaking : 1;
+    unsigned int _remaking;
     float _remakingPercentComplete;
-    unsigned int _remakingWasCancelled : 1;
+    unsigned int _remakingWasCancelled;
     int _selectedOption;
     BOOL _shouldCancelPublish;
     NSMutableArray *_snapshotTimes;
@@ -42,23 +40,23 @@
     id _userInfo;
 }
 
-@property(readonly) BOOL allowsCellularAccessForRequests;
-@property BOOL allowsHDOver3GUpload;
-@property long long approximateHDUploadSize;
-@property long long approximateSDUploadSize;
-@property(copy,readonly) NSString * debugDescription;
-@property <PLPublishingAgentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL enableHDUpload;
-@property(readonly) unsigned int hash;
-@property BOOL mediaIsHDVideo;
-@property BOOL needsTrimming;
-@property BOOL ownerIsCamera;
-@property float progressMultiplier;
-@property int remakerMode;
-@property int selectedOption;
-@property BOOL shouldCancelPublish;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL allowsCellularAccessForRequests;
+@property (nonatomic) BOOL allowsHDOver3GUpload;
+@property (nonatomic) long long approximateHDUploadSize;
+@property (nonatomic) long long approximateSDUploadSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLPublishingAgentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enableHDUpload;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL mediaIsHDVideo;
+@property (nonatomic) BOOL needsTrimming;
+@property (nonatomic) BOOL ownerIsCamera;
+@property (nonatomic) float progressMultiplier;
+@property (nonatomic) int remakerMode;
+@property (nonatomic) int selectedOption;
+@property (nonatomic) BOOL shouldCancelPublish;
+@property (readonly) Class superclass;
 
 + (id)publishingAgentForBundleNamed:(id)arg1 toPublishMedia:(id)arg2;
 

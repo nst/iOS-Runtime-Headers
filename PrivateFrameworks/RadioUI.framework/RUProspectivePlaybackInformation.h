@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RadioStation;
-
 @interface RUProspectivePlaybackInformation : MPUProspectivePlaybackInformation {
     RadioStation *_radioStation;
 }
 
-@property(readonly) RadioStation * radioStation;
+@property (nonatomic, readonly) RadioStation *radioStation;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

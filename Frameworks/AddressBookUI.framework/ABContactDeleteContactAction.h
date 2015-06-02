@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABContactDeleteContactAction : ABContactAction {
-}
+@interface ABContactDeleteContactAction : ABContactAction
 
 - (void)performActionWithSender:(id)arg1;
 - (void)showDeleteFailureAlert;

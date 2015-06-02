@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeStackedArea3D : TSCHChartSeriesTypeStackedArea {
-}
+@interface TSCHChartSeriesTypeStackedArea3D : TSCHChartSeriesTypeStackedArea
 
 + (Class)sceneObjectClass;
 

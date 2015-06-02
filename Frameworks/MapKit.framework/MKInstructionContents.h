@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray, NSString;
-
 @interface MKInstructionContents : NSObject {
     NSArray *_branchNames;
     NSString *_destinationName;
@@ -16,23 +14,23 @@
     int _transportType;
 }
 
-@property(retain) NSArray * branchNames;
-@property(retain) NSString * destinationName;
-@property(retain) NSString * exitNumber;
-@property(readonly) BOOL hasName;
-@property(retain) NSString * intersectionName;
-@property(readonly) BOOL isExitManeuver;
-@property int junctionAngle;
-@property int maneuverType;
-@property(readonly) NSString * primaryName;
-@property(retain) NSString * roadName;
-@property BOOL toFreeway;
-@property(retain) NSArray * towardNames;
-@property int transportType;
-@property(readonly) BOOL useDestinationName;
-@property(readonly) BOOL useIntersectionName;
-@property(readonly) BOOL useRoadName;
-@property(readonly) BOOL useTowardNames;
+@property (nonatomic, retain) NSArray *branchNames;
+@property (nonatomic, retain) NSString *destinationName;
+@property (nonatomic, retain) NSString *exitNumber;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, retain) NSString *intersectionName;
+@property (nonatomic, readonly) BOOL isExitManeuver;
+@property (nonatomic) int junctionAngle;
+@property (nonatomic) int maneuverType;
+@property (nonatomic, readonly) NSString *primaryName;
+@property (nonatomic, retain) NSString *roadName;
+@property (nonatomic) BOOL toFreeway;
+@property (nonatomic, retain) NSArray *towardNames;
+@property (nonatomic) int transportType;
+@property (nonatomic, readonly) BOOL useDestinationName;
+@property (nonatomic, readonly) BOOL useIntersectionName;
+@property (nonatomic, readonly) BOOL useRoadName;
+@property (nonatomic, readonly) BOOL useTowardNames;
 
 + (id)contentsWithManeuverType:(int)arg1 transportType:(int)arg2;
 + (id)contentsWithStep:(id)arg1 transportType:(int)arg2;

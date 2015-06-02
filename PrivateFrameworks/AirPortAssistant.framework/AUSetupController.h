@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <SetupUIConfigDelegate>, NSDate, NSDictionary, NSMutableSet, NSString;
-
 @interface AUSetupController : AssistantCallbackController <AutoGuessSetup, BaseStationSetup, SetupUIConfigDelegateResult> {
     BOOL _activeTask;
     NSString *_autoGuessSetupRecommendation;
@@ -27,23 +25,23 @@
     id _uiConfigDelegate;
 }
 
-@property BOOL activeTask;
-@property(retain) NSString * autoGuessSetupRecommendation;
-@property(retain) NSDictionary * bonjourRecord;
-@property id context;
-@property(retain) NSString * keychainBasePassword;
-@property(retain) NSString * keychainDiskPassword;
-@property(retain) NSString * keychainWiFiPassword;
-@property(retain) NSString * lastDNSName;
-@property(readonly) NSDate * lastHeardFromDevice;
-@property(retain) NSDictionary * lastInstrumentation;
-@property(retain) NSString * lastSystemName;
-@property BOOL rememberBasePassword;
-@property BOOL rememberDiskPassword;
-@property BOOL rememberWiFiPassword;
-@property(retain) NSDictionary * restoreRecommendation;
-@property(readonly) NSMutableSet * setupDelegates;
-@property <SetupUIConfigDelegate> * uiConfigDelegate;
+@property (nonatomic) BOOL activeTask;
+@property (nonatomic, retain) NSString *autoGuessSetupRecommendation;
+@property (nonatomic, retain) NSDictionary *bonjourRecord;
+@property (nonatomic) id context;
+@property (nonatomic, retain) NSString *keychainBasePassword;
+@property (nonatomic, retain) NSString *keychainDiskPassword;
+@property (nonatomic, retain) NSString *keychainWiFiPassword;
+@property (nonatomic, retain) NSString *lastDNSName;
+@property (nonatomic, readonly) NSDate *lastHeardFromDevice;
+@property (nonatomic, retain) NSDictionary *lastInstrumentation;
+@property (nonatomic, retain) NSString *lastSystemName;
+@property (nonatomic) BOOL rememberBasePassword;
+@property (nonatomic) BOOL rememberDiskPassword;
+@property (nonatomic) BOOL rememberWiFiPassword;
+@property (retain) NSDictionary *restoreRecommendation;
+@property (nonatomic, readonly) NSMutableSet *setupDelegates;
+@property (nonatomic) <SetupUIConfigDelegate> *uiConfigDelegate;
 
 + (void)initialize;
 + (id)setupController;
@@ -136,7 +134,7 @@
 - (long)snapshotPush;
 - (void)snapshotResetAll;
 - (int)stateForProblem:(unsigned int)arg1;
-- (long)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; id x7; struct _opaque_pthread_mutex_t { long x_8_1_1; BOOL x_8_1_2[40]; } x8; void *x9; int x10; }*)arg1;
+- (long)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; }*)arg1;
 - (id)targetBaseInfoDict;
 - (long)taskArchiveDiskAsync:(id)arg1;
 - (unsigned int)taskCode;

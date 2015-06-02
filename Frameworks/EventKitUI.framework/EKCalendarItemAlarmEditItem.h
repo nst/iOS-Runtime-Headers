@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarEventAlarmTable, NSArray;
-
 @interface EKCalendarItemAlarmEditItem : EKCalendarItemEditItem {
     CalendarEventAlarmTable *_alarmTable;
     NSArray *_alarms;

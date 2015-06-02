@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITouch;
-
 @interface UIRotationGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
         float x; 
@@ -17,13 +15,13 @@
     float _postRecognitionWeight;
     float _preRecognitionWeight;
     float _previousVelocity;
-    UITouch *_touches[2];
+    UITouch *_touches;
     id _transformAnalyzer;
     float _velocity;
 }
 
-@property float rotation;
-@property(readonly) float velocity;
+@property (nonatomic) float rotation;
+@property (nonatomic, readonly) float velocity;
 
 - (float)_postRecognitionWeight;
 - (float)_preRecognitionWeight;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSMTraceBuffer;
-
 @interface TSTTracingManager : NSObject {
     TSMTraceBuffer *mBuffer;
 }

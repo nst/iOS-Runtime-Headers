@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSFetchRequest, NSObject<OS_dispatch_queue>, PHBatchFetchingArray, PHQuery, _PHFetchRequestWrapper;
-
 @interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration> {
     unsigned int _audiosCount;
     int _chunkSizeForFetch;
@@ -18,13 +16,13 @@
 }
 
 @property int chunkSizeForFetch;
-@property(readonly) unsigned int count;
-@property(readonly) NSFetchRequest * fetchRequest;
-@property(readonly) NSArray * fetchedObjectIDs;
-@property(readonly) NSArray * fetchedObjects;
-@property(readonly) id firstObject;
-@property(readonly) id lastObject;
-@property(readonly) PHQuery * query;
+@property (readonly) unsigned int count;
+@property (readonly) NSFetchRequest *fetchRequest;
+@property (readonly) NSArray *fetchedObjectIDs;
+@property (readonly) NSArray *fetchedObjects;
+@property (nonatomic, readonly) id firstObject;
+@property (nonatomic, readonly) id lastObject;
+@property (readonly) PHQuery *query;
 
 + (id)_batchFetchingArrayForObjectIDs:(id)arg1 fetchResult:(id)arg2;
 + (id)cleanedAndSortedOIDsFrom:(id)arg1 usingFetchOptions:(id)arg2;
@@ -46,13 +44,13 @@
 - (id)copyWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)countOfAssetsWithMediaType:(int)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateObjectsUsingBlock:(id)arg1;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id)arg2;
+- (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)fetchRequest;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (id)fetchedObjectIDs;

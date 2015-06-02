@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMediaLibraryResultSet>, MPMediaQueryCriteria, MPMediaQuerySectionInfo, MPWeakRef, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MPMediaEntityResultSetArray : MPMediaArray <NSCopying> {
     NSMutableArray *_entities;
     NSObject<OS_dispatch_queue> *_entitiesQueue;

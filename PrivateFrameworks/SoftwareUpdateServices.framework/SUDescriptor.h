@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSString, SUDocumentation;
-
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
     BOOL _autoDownloadAllowableForCellular;
     SUDocumentation *_documentation;
@@ -23,20 +21,20 @@
     int _updateType;
 }
 
-@property BOOL autoDownloadAllowableForCellular;
-@property(retain) SUDocumentation * documentation;
-@property unsigned long long downloadSize;
-@property(getter=isDownloadable) BOOL downloadable;
-@property(getter=isDownloadableOverCellular) BOOL downloadableOverCellular;
-@property unsigned long long installationSize;
-@property(getter=_msuPrepareSize,setter=_setMsuPrepareSize:) unsigned long long msuPrepareSize;
-@property(retain) NSString * productBuildVersion;
-@property(retain) NSString * productSystemName;
-@property(retain) NSString * productVersion;
-@property(retain) NSString * publisher;
-@property(getter=_isStreamingZipCapable,setter=_setStreamingZipCapable:) BOOL streamingZipCapable;
-@property(getter=_unarchiveSize,setter=_setUnarchiveSize:) unsigned long long unarchiveSize;
-@property int updateType;
+@property (nonatomic) BOOL autoDownloadAllowableForCellular;
+@property (nonatomic, retain) SUDocumentation *documentation;
+@property (nonatomic) unsigned long long downloadSize;
+@property (getter=isDownloadable, nonatomic) BOOL downloadable;
+@property (getter=isDownloadableOverCellular, nonatomic) BOOL downloadableOverCellular;
+@property (nonatomic) unsigned long long installationSize;
+@property (getter=_msuPrepareSize, setter=_setMsuPrepareSize:, nonatomic) unsigned long long msuPrepareSize;
+@property (nonatomic, retain) NSString *productBuildVersion;
+@property (nonatomic, retain) NSString *productSystemName;
+@property (nonatomic, retain) NSString *productVersion;
+@property (nonatomic, retain) NSString *publisher;
+@property (getter=_isStreamingZipCapable, setter=_setStreamingZipCapable:, nonatomic) BOOL streamingZipCapable;
+@property (getter=_unarchiveSize, setter=_setUnarchiveSize:, nonatomic) unsigned long long unarchiveSize;
+@property (nonatomic) int updateType;
 
 + (BOOL)supportsSecureCoding;
 

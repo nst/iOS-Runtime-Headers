@@ -2,13 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@interface CHBGraphicProperties : NSObject {
-}
+@interface CHBGraphicProperties : NSObject
 
 + (int)lineWeightEnumFromWidth:(float)arg1;
 + (id)mapAssociatedEscherObjectstate:(id)arg1;

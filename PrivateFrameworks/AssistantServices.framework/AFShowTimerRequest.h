@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFShowTimerRequest : AFSiriRequest {
-}
+@interface AFShowTimerRequest : AFSiriRequest
 
 + (BOOL)supportsSecureCoding;
 

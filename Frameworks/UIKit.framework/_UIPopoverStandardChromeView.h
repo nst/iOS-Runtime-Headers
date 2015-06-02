@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, UIView, _UIBackdropView;
-
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView {
     unsigned int _arrowDirection;
     float _arrowOffset;
@@ -20,12 +18,12 @@
     BOOL useShortMode;
 }
 
-@property(getter=isArrowVisible) BOOL arrowVisible;
-@property int backgroundStyle;
-@property(getter=isDebugModeEnabled) BOOL debugModeEnabled;
-@property float dimmingViewTopEdgeInset;
-@property(copy) UIColor * popoverBackgroundColor;
-@property BOOL useShortMode;
+@property (getter=isArrowVisible, nonatomic) BOOL arrowVisible;
+@property (nonatomic) int backgroundStyle;
+@property (getter=isDebugModeEnabled, nonatomic) BOOL debugModeEnabled;
+@property (nonatomic) float dimmingViewTopEdgeInset;
+@property (nonatomic, copy) UIColor *popoverBackgroundColor;
+@property (nonatomic) BOOL useShortMode;
 
 + (float)arrowBase;
 + (float)arrowHeight;

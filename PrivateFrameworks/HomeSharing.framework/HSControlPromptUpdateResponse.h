@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class HSControlPrompt, NSDictionary;
-
 @interface HSControlPromptUpdateResponse : HSResponse {
     unsigned int _nextPromptID;
     HSControlPrompt *_prompt;
     NSDictionary *_promptDictionary;
 }
 
-@property unsigned int nextPromptID;
-@property(retain) HSControlPrompt * prompt;
-@property(copy) NSDictionary * promptDictionary;
+@property (nonatomic) unsigned int nextPromptID;
+@property (nonatomic, retain) HSControlPrompt *prompt;
+@property (nonatomic, copy) NSDictionary *promptDictionary;
 
 - (void).cxx_destruct;
 - (unsigned int)nextPromptID;

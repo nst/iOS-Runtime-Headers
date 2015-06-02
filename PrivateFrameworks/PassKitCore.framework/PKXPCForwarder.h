@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class PKWeakReference;
-
 @interface PKXPCForwarder : NSObject {
     PKWeakReference *_target;
     Class _targetClass;

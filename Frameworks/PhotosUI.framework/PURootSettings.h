@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUFeedSettings, PUMomentsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSizeSettings;
-
 @interface PURootSettings : PUSettings {
     PUFeedSettings *_feedSettings;
     int _imagePickerTestSourceType;
@@ -14,13 +12,13 @@
     PUSizeSettings *_sizeSettings;
 }
 
-@property(retain) PUFeedSettings * feedSettings;
-@property int imagePickerTestSourceType;
-@property(retain) PUMomentsSettings * momentsSettings;
-@property(retain) PUPhotoEditProtoSettings * photoEditingSettings;
-@property(retain) PUPhotosGridSettings * photosGridSettings;
-@property unsigned int settingsVersion;
-@property(retain) PUSizeSettings * sizeSettings;
+@property (nonatomic, retain) PUFeedSettings *feedSettings;
+@property (nonatomic) int imagePickerTestSourceType;
+@property (nonatomic, retain) PUMomentsSettings *momentsSettings;
+@property (nonatomic, retain) PUPhotoEditProtoSettings *photoEditingSettings;
+@property (nonatomic, retain) PUPhotosGridSettings *photosGridSettings;
+@property (nonatomic) unsigned int settingsVersion;
+@property (nonatomic, retain) PUSizeSettings *sizeSettings;
 
 + (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;

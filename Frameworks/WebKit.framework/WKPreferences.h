@@ -8,15 +8,15 @@
     } _preferences;
 }
 
-@property(setter=_setCompositingBordersVisible:) BOOL _compositingBordersVisible;
-@property(setter=_setCompositingRepaintCountersVisible:) BOOL _compositingRepaintCountersVisible;
-@property(setter=_setOfflineApplicationCacheIsEnabled:) BOOL _offlineApplicationCacheIsEnabled;
-@property(setter=_setStorageBlockingPolicy:) int _storageBlockingPolicy;
-@property(setter=_setTelephoneNumberDetectionIsEnabled:) BOOL _telephoneNumberDetectionIsEnabled;
-@property(setter=_setTiledScrollingIndicatorVisible:) BOOL _tiledScrollingIndicatorVisible;
-@property BOOL javaScriptCanOpenWindowsAutomatically;
-@property BOOL javaScriptEnabled;
-@property float minimumFontSize;
+@property (setter=_setCompositingBordersVisible:, nonatomic) BOOL _compositingBordersVisible;
+@property (setter=_setCompositingRepaintCountersVisible:, nonatomic) BOOL _compositingRepaintCountersVisible;
+@property (setter=_setOfflineApplicationCacheIsEnabled:, nonatomic) BOOL _offlineApplicationCacheIsEnabled;
+@property (setter=_setStorageBlockingPolicy:, nonatomic) int _storageBlockingPolicy;
+@property (setter=_setTelephoneNumberDetectionIsEnabled:, nonatomic) BOOL _telephoneNumberDetectionIsEnabled;
+@property (setter=_setTiledScrollingIndicatorVisible:, nonatomic) BOOL _tiledScrollingIndicatorVisible;
+@property (nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
+@property (nonatomic) BOOL javaScriptEnabled;
+@property (nonatomic) float minimumFontSize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

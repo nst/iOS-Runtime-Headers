@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableSet, NSSet, NSString, TSSStylesheet, TSURetainedPointerKeyDictionary;
-
 @interface TSSStyleMapper : NSObject <TSKStyleMapper> {
     BOOL _clientsMustRemap;
     NSMutableSet *_createdStyles;
@@ -13,14 +11,14 @@
     TSSStylesheet *_targetStylesheet;
 }
 
-@property BOOL clientsMustRemap;
-@property(readonly) NSSet * createdStyles;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL forceMatchStyle;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) TSSStylesheet * targetStylesheet;
+@property (nonatomic) BOOL clientsMustRemap;
+@property (nonatomic, readonly) NSSet *createdStyles;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL forceMatchStyle;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TSSStylesheet *targetStylesheet;
 
 - (id)_mappedStyleForStyle:(id)arg1 depth:(unsigned int)arg2;
 - (BOOL)clientsMustRemap;

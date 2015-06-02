@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaItem, MPMediaPlaylist, MPMediaQueryShuffledItems, NSString;
-
 @interface MusicCloudGeniusMixPlaybackContext : MusicQueryPlaybackContext <MusicGeniusMixQueueFeederDataSource> {
     MPMediaQueryShuffledItems *_items;
     MPMediaPlaylist *_mixPlaylist;
     MPMediaItem *_requiredInitialMediaItem;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPMediaPlaylist * mixPlaylist;
-@property(retain) MPMediaItem * requiredInitialMediaItem;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPMediaPlaylist *mixPlaylist;
+@property (nonatomic, retain) MPMediaItem *requiredInitialMediaItem;
+@property (readonly) Class superclass;
 
 + (Class)queueFeederClass;
 

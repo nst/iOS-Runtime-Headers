@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSURL;
-
 @interface IDSAutoFileDeletion : NSObject {
     int _accessedCount;
     NSURL *_fileURL;

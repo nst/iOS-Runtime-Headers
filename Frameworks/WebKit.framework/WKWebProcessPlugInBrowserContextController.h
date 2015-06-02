@@ -2,18 +2,11 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <WKWebProcessPlugInFormDelegatePrivate>, <WKWebProcessPlugInLoadDelegate>, NSString, WKBrowsingContextHandle, WKDOMDocument, WKDOMRange, WKWebProcessPlugInFrame, WKWebProcessPlugInPageGroup, _WKRemoteObjectRegistry;
-
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
-    struct WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> > { 
         id m_weakReference; 
     } _formDelegate;
-    struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKWebProcessPlugInLoadDelegate> > { 
         id m_weakReference; 
     } _loadDelegate;
     struct ObjectStorage<WebKit::WebPage> { 
@@ -26,28 +19,28 @@
     } _remoteObjectRegistry;
 }
 
-@property(readonly) struct Object { int (**x1)(); id x2; }* _apiObject;
-@property(readonly) struct OpaqueWKBundlePage { }* _bundlePageRef;
-@property(setter=_setDefersLoading:) BOOL _defersLoading;
-@property(setter=_setFormDelegate:) <WKWebProcessPlugInFormDelegatePrivate> * _formDelegate;
-@property(readonly) _WKRemoteObjectRegistry * _remoteObjectRegistry;
-@property(readonly) BOOL _usesNonPersistentWebsiteDataStore;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) WKBrowsingContextHandle * handle;
-@property(readonly) unsigned int hash;
-@property <WKWebProcessPlugInLoadDelegate> * loadDelegate;
-@property(readonly) WKWebProcessPlugInFrame * mainFrame;
-@property(readonly) WKDOMDocument * mainFrameDocument;
-@property(readonly) WKWebProcessPlugInPageGroup * pageGroup;
-@property(readonly) WKDOMRange * selectedRange;
-@property(readonly) Class superclass;
+@property (readonly) struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; id x40; void*x41; void*x42; id x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; unsigned long x63; void*x64; void*x65; void*x66; void*x67; void*x68; union { int x_69_1_1; double x_69_1_2; } x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; }*_apiObject;
+@property (nonatomic, readonly) struct OpaqueWKBundlePage { }*_bundlePageRef;
+@property (setter=_setDefersLoading:, nonatomic) BOOL _defersLoading;
+@property (setter=_setFormDelegate:) <WKWebProcessPlugInFormDelegatePrivate> *_formDelegate;
+@property (nonatomic, readonly) _WKRemoteObjectRegistry *_remoteObjectRegistry;
+@property (nonatomic, readonly) BOOL _usesNonPersistentWebsiteDataStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) WKBrowsingContextHandle *handle;
+@property (readonly) unsigned int hash;
+@property <WKWebProcessPlugInLoadDelegate> *loadDelegate;
+@property (readonly) WKWebProcessPlugInFrame *mainFrame;
+@property (readonly) WKDOMDocument *mainFrameDocument;
+@property (readonly) WKWebProcessPlugInPageGroup *pageGroup;
+@property (readonly) WKDOMRange *selectedRange;
+@property (readonly) Class superclass;
 
 + (id)lookUpBrowsingContextFromHandle:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; oneway void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; unsigned int x55; unsigned int x56; in void x57; int x58; void*x59; void*x60; void*x61; long x62; void*x63; void*x64; const in void*x65; void*x66; int x67; void x68; void*x69; void*x70; int x71; void*x72; void*x73; unsigned short x74; void*x75; void*x76; const BOOL x77; void*x78; void*x79; const void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; oneway void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; unsigned int x96; unsigned int x97; in void x98; int x99; void*x100; void*x101; void*x102; long x103; void*x104; void*x105; const in void*x106; void*x107; int x108; void x109; void*x110; void*x111; int x112; void*x113; void*x114; unsigned short x115; void*x116; void*x117; const BOOL x118; void*x119; void*x120; const void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; oneway void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; SEL x133; void*x134; unsigned short x135; void*x136; short x137; void*x138; void*x139; void*x140; void*x141; unsigned long x142; int x143; unsigned int x144/* : ? */; const void*x145; const void*x146; void*x147; void*x148; const void*x149; void*x150; void*x151; void*x152; out const void*x153; short x154; void*x155; void*x156; void x157; void*x158; in void*x159; void*x160; int x161; void*x162; void*x163; unsigned int x164; void*x165; float x166; const void*x167; void*x168; void*x169; void*x170; out const void*x171; void*x172; void*x173; void x174; void*x175; in void*x176; void*x177; int x178; void*x179; void*x180; unsigned int x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; long long x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; long long x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; char *x268; void*x269; void*x270; void*x271; char *x272; void*x273; void*x274; void*x275; char *x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; oneway void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; inout unsigned short x299; unsigned char x300; out in short x301; void*x302; void*x303; in void*x304; long doublex305; int x306; BOOL x307; void*x308; int x309; out in void*x310; const void*x311; void*x312; in void*x313; void*x314; void*x315; const void*x316; void*x317; out const void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; unsigned long long x329; }*)_apiObject;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
 - (BOOL)_defersLoading;
 - (id)_formDelegate;

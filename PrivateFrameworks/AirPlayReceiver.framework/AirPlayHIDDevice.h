@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPlayReceiver.framework/AirPlayReceiver
  */
 
-@class AirPlayReceiverContext;
-
 @interface AirPlayHIDDevice : NSObject {
     AirPlayReceiverContext *_apc;
     struct __IOHIDDevice { } *_hidDevice;

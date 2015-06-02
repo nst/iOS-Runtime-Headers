@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITraitCollection;
-
 @interface _UITraitBasedAppearance : _UIAppearance {
     UITraitCollection *_traitCollection;
 }

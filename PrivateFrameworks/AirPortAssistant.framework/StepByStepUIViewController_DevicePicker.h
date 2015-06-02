@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSArray, NSDictionary, NSString, RecommendationActionController, UIPopoverController;
-
 @interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <TableViewManagerDelegate> {
     UIPopoverController *_popover;
     NSDictionary *_selectedDevice;
@@ -17,9 +15,9 @@
     NSArray *sortedDevices;
 }
 
-@property(retain) RecommendationActionController * actionController;
-@property NSString * connectionMedium;
-@property(retain) NSArray * sortedDevices;
+@property (nonatomic, retain) RecommendationActionController *actionController;
+@property (nonatomic) NSString *connectionMedium;
+@property (nonatomic, retain) NSArray *sortedDevices;
 
 - (id)actionController;
 - (id)connectionMedium;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class AVConference, NSLock, NSMutableArray, NSMutableDictionary;
-
 @interface IMAVConferenceInterface : IMAVInterface <AVConferenceDelegate> {
     NSMutableDictionary *_avConferences;
     NSLock *_avConferencesLock;
@@ -12,7 +10,7 @@
     BOOL _pendingCleanup;
 }
 
-@property(readonly) AVConference * controller;
+@property (nonatomic, readonly) AVConference *controller;
 
 + (BOOL)_forceRelayMode;
 + (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 contentRectChanged:(BOOL)arg5 cameraWillSwitch:(BOOL)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize { float x1; float x2; })arg9 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSIndexSet, NSMutableIndexSet;
-
 @interface PLImportSessionInfo : NSObject {
     BOOL _importComplete;
     NSMutableIndexSet *_importCompleteIndexes;
@@ -14,13 +12,13 @@
     BOOL _importingSelection;
 }
 
-@property(readonly) NSIndexSet * completedIndexes;
-@property(readonly) NSIndexSet * errorIndexes;
-@property BOOL importComplete;
-@property(readonly) NSIndexSet * importIndexes;
-@property BOOL importStopped;
-@property BOOL importingSelection;
-@property(readonly) NSIndexSet * inProgressIndexes;
+@property (nonatomic, readonly) NSIndexSet *completedIndexes;
+@property (nonatomic, readonly) NSIndexSet *errorIndexes;
+@property (nonatomic) BOOL importComplete;
+@property (nonatomic, readonly) NSIndexSet *importIndexes;
+@property (nonatomic) BOOL importStopped;
+@property (nonatomic) BOOL importingSelection;
+@property (nonatomic, readonly) NSIndexSet *inProgressIndexes;
 
 - (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
 - (void)addIndexToImport:(unsigned int)arg1;

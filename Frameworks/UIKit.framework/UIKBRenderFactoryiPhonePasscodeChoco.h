@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhonePasscodeChoco : UIKBRenderFactoryiPhonePasscode {
-}
+@interface UIKBRenderFactoryiPhonePasscodeChoco : UIKBRenderFactoryiPhonePasscode
 
 - (BOOL)isTallPopup;
 - (id)lightKeycapsFontName;

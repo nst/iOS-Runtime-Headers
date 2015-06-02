@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <RURadioViewControllerDelegate>, MPUBorderDrawingCache, MPUTextButton, NSArray, NSMapTable, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, RUMiniPlayerCoordinator, RUPlaceholderView, RURadioCollectionView, RURadioPlaybackCoordinator, RUSearchViewController, RUSignInViewController, RUTermsViewController, RUWelcomeViewController, RadioStation, UIAlertView, UILabel, UIScrollView, UISearchDisplayController, UIView;
-
 @interface RURadioViewController : MPUDataSourceViewController <MPUMiniPlayerParticipant, MPUTextDrawingCacheInvalidationObserver, RUCreateStationViewControllerDelegate, RUEditStationsViewControllerDelegate, RUHistoryViewControllerDelegate, RURadioCollectionViewDelegate, RUSearchViewControllerDelegate, RUSignInViewControllerDelegate, RUStationActionsViewControllerDelegate, RUStationTreeViewControllerDelegate, RUTermsViewControllerDelegate, RUWelcomeViewControllerDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     NSMutableArray *_authenticationResponseHandlers;
     NSMapTable *_cachedStationArtworkCollections;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deferredDeselectCompletionHandler;
-
+    id /* block */ _deferredDeselectCompletionHandler;
     <RURadioViewControllerDelegate> *_delegate;
     int _deselectDeferralCount;
     NSMapTable *_dispatchSourceImpressionTimersByStation;
@@ -55,13 +45,13 @@
     RUWelcomeViewController *_welcomeViewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RURadioViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) RUMiniPlayerCoordinator * miniPlayerCoordinator;
-@property(retain) RURadioPlaybackCoordinator * playbackCoordinator;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RURadioViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) RUMiniPlayerCoordinator *miniPlayerCoordinator;
+@property (nonatomic, retain) RURadioPlaybackCoordinator *playbackCoordinator;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
@@ -76,7 +66,7 @@
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_attemptToPlayStation:(id)arg1 withPrefixItem:(id)arg2 keepPlayingCurrentItemIfPossible:(BOOL)arg3;
-- (void)_authenticateForActiveAccountWithResponseHandler:(id)arg1;
+- (void)_authenticateForActiveAccountWithResponseHandler:(id /* block */)arg1;
 - (void)_cancelHeartbeatInvalidTimer;
 - (void)_cellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_completeStationAdditionTransactionWithContext:(id)arg1 stationDidExistBeforeAdding:(BOOL)arg2;
@@ -132,9 +122,9 @@
 - (void)_updateVisibleCellsNowPlayingStates;
 - (void)_updateZOrderingForCollectionView:(id)arg1;
 - (id)_visibleFeaturedStations;
-- (void)addStationWithDictionary:(id)arg1 completionHandler:(id)arg2;
+- (void)addStationWithDictionary:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)attemptOptInWithCompletionHandler:(id)arg1;
+- (void)attemptOptInWithCompletionHandler:(id /* block */)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
@@ -150,7 +140,7 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)editStationsViewControllerDidFinish:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)historyViewControllerDidFinish:(id)arg1;
@@ -161,10 +151,10 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (id)playbackCoordinator;
 - (void)prepareToAddStation;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)radioCollectionViewDidChangeContentSize:(id)arg1;
 - (void)reloadData;
-- (void)scrollStationToVisible:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)scrollStationToVisible:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)searchViewController:(id)arg1 didSelectStation:(id)arg2;

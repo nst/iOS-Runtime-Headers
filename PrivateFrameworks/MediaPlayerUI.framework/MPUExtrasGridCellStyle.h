@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSString, UIColor;
-
 @interface MPUExtrasGridCellStyle : NSObject <NSCopying> {
     int _defaultTextAlignment;
     struct CGSize { 
@@ -22,18 +20,18 @@
     NSString *_titleTextStyle;
 }
 
-@property int defaultTextAlignment;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property(copy) NSDictionary * subtitleDefaultFontAttributes;
-@property float subtitleFirstBaselineHeight;
-@property(copy) UIColor * subtitleTextColor;
-@property(copy) NSString * subtitleTextStyle;
-@property float textFirstBaselineToBottom;
-@property float textLastBaselineToBottom;
-@property(copy) NSDictionary * titleDefaultFontAttributes;
-@property float titleFirstBaselineHeight;
-@property(copy) UIColor * titleTextColor;
-@property(copy) NSString * titleTextStyle;
+@property (nonatomic) int defaultTextAlignment;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, copy) NSDictionary *subtitleDefaultFontAttributes;
+@property (nonatomic) float subtitleFirstBaselineHeight;
+@property (nonatomic, copy) UIColor *subtitleTextColor;
+@property (nonatomic, copy) NSString *subtitleTextStyle;
+@property (nonatomic) float textFirstBaselineToBottom;
+@property (nonatomic) float textLastBaselineToBottom;
+@property (nonatomic, copy) NSDictionary *titleDefaultFontAttributes;
+@property (nonatomic) float titleFirstBaselineHeight;
+@property (nonatomic, copy) UIColor *titleTextColor;
+@property (nonatomic, copy) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

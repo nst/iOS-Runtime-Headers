@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVOle : NSObject {
-}
+@interface OAVOle : NSObject
 
 @end

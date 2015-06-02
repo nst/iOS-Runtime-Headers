@@ -10,10 +10,10 @@
 }
 
 - (void)dealloc;
-- (void)enumerateStrokesAndCapsFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateStrokesAndCapsInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateStrokesFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id)arg3;
-- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
+- (void)enumerateStrokesAndCapsFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateStrokesAndCapsInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateStrokesFrom:(unsigned int)arg1 to:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
 - (void)lockForRead;
 - (void)lockForWrite;

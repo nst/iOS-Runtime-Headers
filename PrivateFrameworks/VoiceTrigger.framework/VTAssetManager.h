@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface VTAssetManager : NSObject {
     int _assetInstalledNotificationToken;
     int _assetMetadataUpdateNotificationToken;
@@ -20,8 +18,8 @@
 - (void)_downloadAsset:(id)arg1;
 - (void)_metadataUpdated:(int)arg1;
 - (void)_onetimeRemoteQuery;
-- (void)_runAssetQuery:(id)arg1 completion:(id)arg2;
-- (void)_startDownloadingVoiceTriggerAsset:(id)arg1 progress:(id)arg2 completion:(id)arg3;
+- (void)_runAssetQuery:(id)arg1 completion:(id /* block */)arg2;
+- (void)_startDownloadingVoiceTriggerAsset:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_updateAssetForLanguage:(id)arg1 withTimeout:(double)arg2;
 - (BOOL)_updateCachesIfNecessary:(id)arg1;
 - (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(BOOL)arg3;

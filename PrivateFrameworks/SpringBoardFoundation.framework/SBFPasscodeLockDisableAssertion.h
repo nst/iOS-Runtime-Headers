@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSString, SBFWeakReference;
-
 @interface SBFPasscodeLockDisableAssertion : NSObject {
     NSString *_identifier;
     int _type;

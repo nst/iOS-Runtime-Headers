@@ -2,8 +2,7 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@interface TZDLogging : NSObject {
-}
+@interface TZDLogging : NSObject
 
 + (BOOL)canLogMessageAtLevel:(int)arg1;
 

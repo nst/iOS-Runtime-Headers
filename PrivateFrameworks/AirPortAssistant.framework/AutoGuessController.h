@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AutoGuessUIDelegate>, NSArray, NSDictionary, NSMutableDictionary, NSString, NSThread, NSTimer;
-
 @interface AutoGuessController : AssistantCallbackController {
     struct ACPBrowserSession { } *_acpBrowserSession;
     NSThread *_autoGuessThread;
@@ -29,20 +27,20 @@
     NSDictionary *unconfiguredDeviceThatIsBeingSetup;
 }
 
-@property(retain) NSTimer * _browseReadyTimer;
-@property(retain) NSMutableDictionary * _browsedBases;
-@property(retain) NSArray * _wifiScanInfos;
+@property (retain) NSTimer *_browseReadyTimer;
+@property (retain) NSMutableDictionary *_browsedBases;
+@property (retain) NSArray *_wifiScanInfos;
 @property int currentAutoGuessUISelector;
-@property(retain) NSString * currentParamString;
-@property <AutoGuessUIDelegate> * delegate;
-@property(retain) NSDictionary * guessCompletionDict;
+@property (retain) NSString *currentParamString;
+@property <AutoGuessUIDelegate> *delegate;
+@property (nonatomic, retain) NSDictionary *guessCompletionDict;
 @property int lastAutoGuessUISelector;
-@property(retain) NSDictionary * lastInstrumentation;
-@property(retain) NSString * lastParamString;
-@property(retain) NSDictionary * targetBrowseRecord;
-@property(retain) NSString * targetMACAddress;
-@property(retain) NSDictionary * targetScanRecord;
-@property(retain) NSDictionary * unconfiguredDeviceThatIsBeingSetup;
+@property (retain) NSDictionary *lastInstrumentation;
+@property (retain) NSString *lastParamString;
+@property (retain) NSDictionary *targetBrowseRecord;
+@property (retain) NSString *targetMACAddress;
+@property (retain) NSDictionary *targetScanRecord;
+@property (retain) NSDictionary *unconfiguredDeviceThatIsBeingSetup;
 
 + (id)fullAutoGuessDictionaryFromCompletionDict:(id)arg1;
 + (BOOL)isRestoreAnOptionForTheRecommendations:(id)arg1;

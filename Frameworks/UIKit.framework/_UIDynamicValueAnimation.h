@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray;
-
 @interface _UIDynamicValueAnimation : _UIDynamicAnimation {
     NSMutableArray *_activeValues;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _applier;
-
+    id /* block */ _applier;
     double _decelerationFactor;
     double _decelerationLnFactor;
     double _friction;
@@ -23,20 +13,17 @@
     double _unitSize;
     double _value;
     double _velocity;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _viewApplier;
-
+    id /* block */ _viewApplier;
 }
 
-@property(copy) NSArray * activeValues;
-@property double friction;
-@property double value;
-@property double velocity;
+@property (nonatomic, copy) NSArray *activeValues;
+@property (nonatomic) double friction;
+@property (nonatomic) double value;
+@property (nonatomic) double velocity;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_dynamicValueAnimationMatchingCASpringAnimationWithMass:(double)arg1 stiffness:(double)arg2 damping:(float)arg3 velocity:(float)arg4 fromValue:(double)arg5 toValue:(double)arg6;
-+ (id)pu_dynamicValueAnimationWithInitialValue:(double)arg1 initialVelocity:(double)arg2 targetValue:(double)arg3 stiffness:(double)arg4 dampingFactor:(double)arg5 epsilon:(double)arg6;
 
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
@@ -54,14 +41,18 @@
 - (id)initWithValue:(double)arg1 velocity:(double)arg2 unitSize:(double)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeActiveValue:(id)arg1;
-- (void)runWithCompletion:(id)arg1;
-- (void)runWithValueApplier:(id)arg1 completion:(id)arg2;
-- (void)runWithValueApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
+- (void)runWithCompletion:(id /* block */)arg1;
+- (void)runWithValueApplier:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)runWithValueApplier:(id /* block */)arg1 completion:(id /* block */)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)setActiveValues:(id)arg1;
 - (void)setFriction:(double)arg1;
 - (void)setValue:(double)arg1;
 - (void)setVelocity:(double)arg1;
 - (double)value;
 - (double)velocity;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_dynamicValueAnimationWithInitialValue:(double)arg1 initialVelocity:(double)arg2 targetValue:(double)arg3 stiffness:(double)arg4 dampingFactor:(double)arg5 epsilon:(double)arg6;
 
 @end

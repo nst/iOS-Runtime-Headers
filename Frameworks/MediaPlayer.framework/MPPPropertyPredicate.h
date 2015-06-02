@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPPMediaPredicateValue, NSString;
-
 @interface MPPPropertyPredicate : PBCodable <NSCopying> {
     int _comparisonType;
     struct { 
@@ -13,12 +11,12 @@
     MPPMediaPredicateValue *_value;
 }
 
-@property int comparisonType;
-@property BOOL hasComparisonType;
-@property(readonly) BOOL hasProperty;
-@property(readonly) BOOL hasValue;
-@property(retain) NSString * property;
-@property(retain) MPPMediaPredicateValue * value;
+@property (nonatomic) int comparisonType;
+@property (nonatomic) BOOL hasComparisonType;
+@property (nonatomic, readonly) BOOL hasProperty;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) NSString *property;
+@property (nonatomic, retain) MPPMediaPredicateValue *value;
 
 - (void).cxx_destruct;
 - (int)comparisonType;

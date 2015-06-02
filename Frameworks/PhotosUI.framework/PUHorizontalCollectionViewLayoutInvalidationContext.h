@@ -6,7 +6,7 @@
     BOOL _invalidateCachedLayout;
 }
 
-@property BOOL invalidateCachedLayout;
+@property (nonatomic) BOOL invalidateCachedLayout;
 
 - (void)_setInvalidateCachedLayout:(BOOL)arg1;
 - (BOOL)invalidateCachedLayout;

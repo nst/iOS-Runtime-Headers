@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubblePathAnimator, GKBubbleSet, UIViewController, UIViewController<GKBubbleFlowableViewController>, _GKBubbleFlowPathTransitionInfo;
-
 @interface _GKBubbleFlowTransitionInfo : NSObject <NSCopying> {
     UIViewController *_containingViewController;
     double _crossfadeDuration;
@@ -94,41 +92,41 @@
     int _transitionType;
 }
 
-@property(readonly) BOOL animated;
-@property(retain) UIViewController * containingViewController;
-@property double crossfadeDuration;
-@property BOOL disableInteractionDuringTransition;
-@property double duration;
-@property double fadeInDuration;
-@property double fadeOutDuration;
-@property BOOL fadedOutRealFromView;
-@property(retain) GKBubbleSet * fromBubbles;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } fromFlags;
-@property int fromFocusBubbleType;
-@property(retain) GKBubblePathAnimator * fromPathAnimator;
-@property(retain) _GKBubbleFlowPathTransitionInfo * fromPathTransitionInfo;
-@property(retain) UIViewController<GKBubbleFlowableViewController> * fromVC;
-@property(retain) UIViewController * fromWrapperVC;
-@property(readonly) BOOL hasNonFallbackPathAnimator;
-@property(retain) GKBubblePathAnimator * onlyPathAnimator;
-@property(retain) _GKBubbleFlowPathTransitionInfo * onlyPathTransitionInfo;
-@property(readonly) UIViewController * realFromVC;
-@property(readonly) UIViewController * realToVC;
-@property double relativeCrossfadeDuration;
-@property double relativeDuration;
-@property double relativeFadeInDuration;
-@property double relativeFadeOutDuration;
-@property double relativeStartTime;
-@property double startTime;
-@property(retain) GKBubbleSet * toBubbles;
-@property struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } toFlags;
-@property int toFocusBubbleType;
-@property(retain) GKBubblePathAnimator * toPathAnimator;
-@property(retain) _GKBubbleFlowPathTransitionInfo * toPathTransitionInfo;
-@property(retain) UIViewController<GKBubbleFlowableViewController> * toVC;
-@property(retain) UIViewController * toWrapperVC;
-@property int transitionPhase;
-@property int transitionType;
+@property (nonatomic, readonly) BOOL animated;
+@property (nonatomic, retain) UIViewController *containingViewController;
+@property (nonatomic) double crossfadeDuration;
+@property (nonatomic) BOOL disableInteractionDuringTransition;
+@property (nonatomic) double duration;
+@property (nonatomic) double fadeInDuration;
+@property (nonatomic) double fadeOutDuration;
+@property (nonatomic) BOOL fadedOutRealFromView;
+@property (nonatomic, retain) GKBubbleSet *fromBubbles;
+@property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } fromFlags;
+@property (nonatomic) int fromFocusBubbleType;
+@property (nonatomic, retain) GKBubblePathAnimator *fromPathAnimator;
+@property (nonatomic, retain) _GKBubbleFlowPathTransitionInfo *fromPathTransitionInfo;
+@property (nonatomic, retain) UIViewController<GKBubbleFlowableViewController> *fromVC;
+@property (nonatomic, retain) UIViewController *fromWrapperVC;
+@property (nonatomic, readonly) BOOL hasNonFallbackPathAnimator;
+@property (nonatomic, retain) GKBubblePathAnimator *onlyPathAnimator;
+@property (nonatomic, retain) _GKBubbleFlowPathTransitionInfo *onlyPathTransitionInfo;
+@property (nonatomic, readonly) UIViewController *realFromVC;
+@property (nonatomic, readonly) UIViewController *realToVC;
+@property (nonatomic) double relativeCrossfadeDuration;
+@property (nonatomic) double relativeDuration;
+@property (nonatomic) double relativeFadeInDuration;
+@property (nonatomic) double relativeFadeOutDuration;
+@property (nonatomic) double relativeStartTime;
+@property (nonatomic) double startTime;
+@property (nonatomic, retain) GKBubbleSet *toBubbles;
+@property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; } toFlags;
+@property (nonatomic) int toFocusBubbleType;
+@property (nonatomic, retain) GKBubblePathAnimator *toPathAnimator;
+@property (nonatomic, retain) _GKBubbleFlowPathTransitionInfo *toPathTransitionInfo;
+@property (nonatomic, retain) UIViewController<GKBubbleFlowableViewController> *toVC;
+@property (nonatomic, retain) UIViewController *toWrapperVC;
+@property (nonatomic) int transitionPhase;
+@property (nonatomic) int transitionType;
 
 - (void)adjustDuration:(double)arg1;
 - (BOOL)animated;

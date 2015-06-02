@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSObject>;
-
 @interface NSXPCCoder : NSCoder {
     id _reserved1;
     <NSObject> *_userInfo;
 }
 
-@property(retain) <NSObject> * userInfo;
+@property (retain) <NSObject> *userInfo;
 
 - (void)dealloc;
 - (id)decodeXPCObjectForKey:(id)arg1;

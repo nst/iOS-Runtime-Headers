@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMapTable, NSString;
-
 @interface PKTunablePref : NSObject {
     NSMapTable *_handlers;
     NSString *_prefName;
     id _prefValue;
 }
 
-@property(retain) NSMapTable * handlers;
-@property(retain) NSString * prefName;
-@property(retain) id prefValue;
+@property (retain) NSMapTable *handlers;
+@property (retain) NSString *prefName;
+@property (retain) id prefValue;
 
-- (void)addObserver:(id)arg1 handler:(id)arg2;
+- (void)addObserver:(id)arg1 handler:(id /* block */)arg2;
 - (id)codeDescription;
 - (void)dealloc;
 - (id)handlers;

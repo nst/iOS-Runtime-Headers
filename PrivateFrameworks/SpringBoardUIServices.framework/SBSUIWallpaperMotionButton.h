@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UILabel, _UIBackdropView;
-
 @interface SBSUIWallpaperMotionButton : SBFButton {
     _UIBackdropView *_backdropView;
     UILabel *_leftLabel;

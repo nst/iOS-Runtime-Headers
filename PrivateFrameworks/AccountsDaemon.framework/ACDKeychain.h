@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDKeychain : NSObject {
-}
+@interface ACDKeychain : NSObject
 
 + (id)_knownMissingKeychainItems;
 + (id)_missingKeychainItemSpecifierForService:(id)arg1 username:(id)arg2;

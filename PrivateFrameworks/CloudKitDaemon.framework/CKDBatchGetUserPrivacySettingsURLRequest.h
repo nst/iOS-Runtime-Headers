@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray;
-
 @interface CKDBatchGetUserPrivacySettingsURLRequest : CKDURLRequest {
     NSArray *_containerPrivacySettings;
 }
 
-@property(retain) NSArray * containerPrivacySettings;
+@property (nonatomic, retain) NSArray *containerPrivacySettings;
 
 - (void).cxx_destruct;
 - (id)containerPrivacySettings;

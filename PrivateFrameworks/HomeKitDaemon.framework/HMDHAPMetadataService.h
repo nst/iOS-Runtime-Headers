@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HAPMetadataService, NSArray;
-
 @interface HMDHAPMetadataService : NSObject <NSSecureCoding> {
     HAPMetadataService *_hapServiceMetadata;
     NSArray *_mandatoryCharacteristics;
     NSArray *_optionalCharacteristics;
 }
 
-@property(retain) HAPMetadataService * hapServiceMetadata;
-@property(retain) NSArray * mandatoryCharacteristics;
-@property(retain) NSArray * optionalCharacteristics;
+@property (nonatomic, retain) HAPMetadataService *hapServiceMetadata;
+@property (nonatomic, retain) NSArray *mandatoryCharacteristics;
+@property (nonatomic, retain) NSArray *optionalCharacteristics;
 
 + (BOOL)supportsSecureCoding;
 

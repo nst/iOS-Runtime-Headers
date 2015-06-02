@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord, CKDPRecordIdentifier, NSString;
-
 @interface CKDPQueryRetrieveResponseQueryResult : PBCodable <NSCopying> {
     NSString *_etag;
     struct { 
@@ -14,14 +12,14 @@
     int _type;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasRecord;
-@property BOOL hasType;
-@property(retain) CKDPRecordIdentifier * identifier;
-@property(retain) CKDPRecord * record;
-@property int type;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasRecord;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) CKDPRecordIdentifier *identifier;
+@property (nonatomic, retain) CKDPRecord *record;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

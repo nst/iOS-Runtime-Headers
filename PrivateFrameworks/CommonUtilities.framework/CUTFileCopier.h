@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class <CUTFileCopierDelegate>, NSURL;
-
 @interface CUTFileCopier : NSObject {
     void *_BOMCopier;
     <CUTFileCopierDelegate> *_delegate;
@@ -16,15 +14,15 @@
     BOOL _shouldCancel;
 }
 
-@property void* _BOMCopier;
-@property <CUTFileCopierDelegate> * delegate;
-@property(readonly) BOOL didErrorOccur;
-@property(readonly) id identifier;
+@property void*_BOMCopier;
+@property <CUTFileCopierDelegate> *delegate;
+@property (nonatomic, readonly) BOOL didErrorOccur;
+@property (readonly) id identifier;
 @property BOOL inProgress;
-@property(readonly) NSURL * inputURL;
+@property (readonly) NSURL *inputURL;
 @property unsigned int operation;
-@property(readonly) NSURL * outputURL;
-@property(readonly) BOOL wasCancelled;
+@property (readonly) NSURL *outputURL;
+@property (nonatomic, readonly) BOOL wasCancelled;
 
 - (void*)_BOMCopier;
 - (void)_fillOutputURLFromInputURL;

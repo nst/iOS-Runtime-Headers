@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSKeyValueNilOrderedSetEnumerator : NSEnumerator {
-}
+@interface NSKeyValueNilOrderedSetEnumerator : NSEnumerator
 
 - (id)nextObject;
 

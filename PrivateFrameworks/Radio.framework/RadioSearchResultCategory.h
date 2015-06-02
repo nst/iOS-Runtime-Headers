@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface RadioSearchResultCategory : NSObject <NSCopying, NSMutableCopying> {
     int _categoryType;
     BOOL _hasMoreResults;
@@ -12,11 +10,11 @@
     NSArray *_stationResults;
 }
 
-@property(readonly) int categoryType;
-@property(readonly) BOOL hasMoreResults;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSDictionary * responseDictionary;
-@property(copy,readonly) NSArray * stationResults;
+@property (nonatomic, readonly) int categoryType;
+@property (nonatomic, readonly) BOOL hasMoreResults;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
+@property (nonatomic, readonly, copy) NSArray *stationResults;
 
 - (void).cxx_destruct;
 - (id)_initWithResponseDictionary:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVVideoCompositionInstruction>, AVVideoCompositionRenderContext, AVWeakReference, NSArray, NSDictionary;
-
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject {
     struct OpaqueFigVideoCompositorFrame { } *_compositionFrame;
     struct { 
@@ -20,14 +18,14 @@
     NSDictionary *_sourcesByTrackID;
 }
 
-@property struct OpaqueFigVideoCompositorFrame { }* compositionFrame;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
-@property(retain) <AVVideoCompositionInstruction> * instruction;
-@property BOOL isFinished;
-@property(retain) AVVideoCompositionRenderContext * renderContext;
-@property(retain) AVWeakReference * session;
-@property(retain) NSArray * sourceTrackIDsInClientOrder;
-@property(retain) NSDictionary * sourcesByTrackID;
+@property (nonatomic) struct OpaqueFigVideoCompositorFrame { }*compositionFrame;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
+@property (nonatomic, retain) <AVVideoCompositionInstruction> *instruction;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic, retain) AVVideoCompositionRenderContext *renderContext;
+@property (nonatomic, retain) AVWeakReference *session;
+@property (nonatomic, retain) NSArray *sourceTrackIDsInClientOrder;
+@property (nonatomic, retain) NSDictionary *sourcesByTrackID;
 
 - (struct OpaqueFigVideoCompositorFrame { }*)compositionFrame;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })compositionTime;

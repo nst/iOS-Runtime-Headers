@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDSymptomsNetworkAnalyticsInstant : PBCodable <NSCopying> {
     unsigned long long _bytesIn;
     unsigned long long _bytesOut;
@@ -36,34 +34,34 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned long long bytesIn;
-@property unsigned long long bytesOut;
-@property unsigned long long connAttempts;
-@property unsigned long long connSuccess;
-@property unsigned long long cumulInternetOutageSecs;
-@property unsigned int dnsServers;
-@property BOOL hasBytesIn;
-@property BOOL hasBytesOut;
-@property BOOL hasConnAttempts;
-@property BOOL hasConnSuccess;
-@property BOOL hasCumulInternetOutageSecs;
-@property BOOL hasDnsServers;
-@property BOOL hasHasInternetConn;
-@property(readonly) BOOL hasIdentifier;
-@property BOOL hasInternetConn;
-@property BOOL hasNetworkType;
-@property BOOL hasPacketsIn;
-@property BOOL hasPacketsOut;
-@property BOOL hasPenalizedDnsServers;
-@property BOOL hasRttMinUsecs;
-@property BOOL hasTimestamp;
-@property(retain) NSString * identifier;
-@property int networkType;
-@property unsigned long long packetsIn;
-@property unsigned long long packetsOut;
-@property unsigned int penalizedDnsServers;
-@property unsigned long long rttMinUsecs;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned long long bytesIn;
+@property (nonatomic) unsigned long long bytesOut;
+@property (nonatomic) unsigned long long connAttempts;
+@property (nonatomic) unsigned long long connSuccess;
+@property (nonatomic) unsigned long long cumulInternetOutageSecs;
+@property (nonatomic) unsigned int dnsServers;
+@property (nonatomic) BOOL hasBytesIn;
+@property (nonatomic) BOOL hasBytesOut;
+@property (nonatomic) BOOL hasConnAttempts;
+@property (nonatomic) BOOL hasConnSuccess;
+@property (nonatomic) BOOL hasCumulInternetOutageSecs;
+@property (nonatomic) BOOL hasDnsServers;
+@property (nonatomic) BOOL hasHasInternetConn;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasInternetConn;
+@property (nonatomic) BOOL hasNetworkType;
+@property (nonatomic) BOOL hasPacketsIn;
+@property (nonatomic) BOOL hasPacketsOut;
+@property (nonatomic) BOOL hasPenalizedDnsServers;
+@property (nonatomic) BOOL hasRttMinUsecs;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) int networkType;
+@property (nonatomic) unsigned long long packetsIn;
+@property (nonatomic) unsigned long long packetsOut;
+@property (nonatomic) unsigned int penalizedDnsServers;
+@property (nonatomic) unsigned long long rttMinUsecs;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned long long)bytesIn;
 - (unsigned long long)bytesOut;

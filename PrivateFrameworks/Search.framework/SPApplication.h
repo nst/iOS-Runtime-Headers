@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableArray, NSString, SPSearchResult;
-
 @interface SPApplication : NSObject {
     NSString *_displayIdentifier;
     NSString *_displayName;
@@ -11,11 +9,11 @@
     NSString *_longDisplayName;
 }
 
-@property(retain) NSString * displayIdentifier;
-@property(retain) NSString * displayName;
-@property(retain) NSMutableArray * keywords;
-@property(retain) NSString * longDisplayName;
-@property(readonly) SPSearchResult * searchResult;
+@property (nonatomic, retain) NSString *displayIdentifier;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSMutableArray *keywords;
+@property (nonatomic, retain) NSString *longDisplayName;
+@property (nonatomic, readonly) SPSearchResult *searchResult;
 
 - (void)dealloc;
 - (id)description;

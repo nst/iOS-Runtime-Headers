@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface HDLastIntervalInfo : NSObject {
     long long _lastInterval;
     NSArray *_orderedSourceIds;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_sumsBySource;
 }
 
-@property long long lastInterval;
-@property(retain) NSArray * orderedSourceIds;
-@property double startTimeInBucket;
-@property(retain) NSMutableDictionary * sumsBySource;
+@property (nonatomic) long long lastInterval;
+@property (nonatomic, retain) NSArray *orderedSourceIds;
+@property (nonatomic) double startTimeInBucket;
+@property (nonatomic, retain) NSMutableDictionary *sumsBySource;
 
 - (void).cxx_destruct;
 - (id)initWithSources:(id)arg1;

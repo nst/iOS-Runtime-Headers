@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPStarkHardPauseButtonDelegate>;
-
 @interface TPStarkInCallHardPauseButton : UIButton {
     <TPStarkHardPauseButtonDelegate> *_delegate;
 }
 
-@property <TPStarkHardPauseButtonDelegate> * delegate;
+@property <TPStarkHardPauseButtonDelegate> *delegate;
 
 - (void)dealloc;
 - (id)delegate;

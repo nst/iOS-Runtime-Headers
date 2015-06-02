@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoAccountAdditionOrUpdate : PBCodable <NSCopying> {
     NSString *_accountId;
     NSString *_displayName;
@@ -13,12 +11,12 @@
     BOOL _shouldArchive;
 }
 
-@property(retain) NSString * accountId;
-@property(retain) NSString * displayName;
-@property(readonly) BOOL hasAccountId;
-@property(readonly) BOOL hasDisplayName;
-@property BOOL hasShouldArchive;
-@property BOOL shouldArchive;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL hasAccountId;
+@property (nonatomic, readonly) BOOL hasDisplayName;
+@property (nonatomic) BOOL hasShouldArchive;
+@property (nonatomic) BOOL shouldArchive;
 
 - (void).cxx_destruct;
 - (id)accountId;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDPicture;
-
 @interface WMPictureMapper : CMDrawableMapper {
     WDPicture *wdPicture;
 }

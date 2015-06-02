@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UICollisionBehaviorDelegate>, NSArray, NSMutableDictionary, PKExtendedPhysicsBody;
-
 @interface UICollisionBehavior : UIDynamicBehavior {
     NSMutableDictionary *_boundaryBodies;
     NSMutableDictionary *_boundaryPaths;
@@ -27,11 +25,11 @@
     BOOL _usesImplicitBounds;
 }
 
-@property(copy,readonly) NSArray * boundaryIdentifiers;
-@property <UICollisionBehaviorDelegate> * collisionDelegate;
-@property unsigned int collisionMode;
-@property(copy,readonly) NSArray * items;
-@property BOOL translatesReferenceBoundsIntoBoundary;
+@property (nonatomic, readonly, copy) NSArray *boundaryIdentifiers;
+@property (nonatomic) <UICollisionBehaviorDelegate> *collisionDelegate;
+@property (nonatomic) unsigned int collisionMode;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic) BOOL translatesReferenceBoundsIntoBoundary;
 
 - (void)_addItem:(id)arg1;
 - (void)_applySettings;

@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class CBPeripheralManager, NSString;
-
 @interface AMSBTLEAdvertisementManager : NSObject <CBPeripheralManagerDelegate> {
     CBPeripheralManager *peripheralManager;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)advertiseMIDIService;
 - (void)dealloc;

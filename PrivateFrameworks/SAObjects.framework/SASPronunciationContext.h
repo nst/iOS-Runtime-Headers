@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL;
+@interface SASPronunciationContext : AceObject <SAAceSerializable>
 
-@interface SASPronunciationContext : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSURL * domainObjectIdentifier;
-@property(copy) NSString * domainObjectPropertyIdentifier;
-@property(copy) NSString * fullName;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * orthography;
-@property(readonly) Class superclass;
-@property(copy) NSNumber * tokenOffset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSURL *domainObjectIdentifier;
+@property (nonatomic, copy) NSString *domainObjectPropertyIdentifier;
+@property (nonatomic, copy) NSString *fullName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *orthography;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *tokenOffset;
 
 + (id)pronunciationContext;
 + (id)pronunciationContextWithDictionary:(id)arg1 context:(id)arg2;

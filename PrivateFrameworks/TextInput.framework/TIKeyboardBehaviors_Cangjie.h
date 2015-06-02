@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyboardBehaviors_Cangjie : TIKeyboardBehaviors {
-}
+@interface TIKeyboardBehaviors_Cangjie : TIKeyboardBehaviors
 
 - (id)keyBehaviorsForState:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation;
-
 @interface SUScriptOperation : ISOperation {
     id _options;
     ISOperation *_wrappedOperation;

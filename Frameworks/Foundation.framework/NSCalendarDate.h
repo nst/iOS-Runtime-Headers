@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString, NSTimeZone;
-
 @interface NSCalendarDate : NSDate {
     NSString *_formatString;
     void *_reserved;
@@ -11,6 +9,8 @@
     NSTimeZone *_timeZone;
     unsigned int refCount;
 }
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)calendarDate;
@@ -35,8 +35,6 @@
 - (id)descriptionWithCalendarFormat:(id)arg1;
 - (id)descriptionWithCalendarFormat:(id)arg1 locale:(id)arg2;
 - (id)descriptionWithLocale:(id)arg1;
-- (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
-- (id)ekmsuidStringForYearMonthDay;
 - (void)encodeWithCoder:(id)arg1;
 - (int)hourOfDay;
 - (id)init;
@@ -59,5 +57,10 @@
 - (id)timeZoneDetail;
 - (int)yearOfCommonEra;
 - (void)years:(int*)arg1 months:(int*)arg2 days:(int*)arg3 hours:(int*)arg4 minutes:(int*)arg5 seconds:(int*)arg6 sinceDate:(id)arg7;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
+- (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
+- (id)ekmsuidStringForYearMonthDay;
 
 @end

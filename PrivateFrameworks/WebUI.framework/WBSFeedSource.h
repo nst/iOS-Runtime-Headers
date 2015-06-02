@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface WBSFeedSource : NSObject {
     NSURL *_feedURL;
     NSArray *_siteIconURLs;
@@ -13,13 +11,13 @@
     NSString *_title;
 }
 
-@property(readonly) NSString * displayName;
-@property(readonly) NSURL * feedURL;
-@property(readonly) NSArray * siteIconURLs;
-@property(readonly) NSURL * sourceURL;
-@property(readonly) int state;
-@property BOOL subscribedWhenSyncWasOff;
-@property(retain) NSString * title;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSURL *feedURL;
+@property (nonatomic, readonly) NSArray *siteIconURLs;
+@property (nonatomic, readonly) NSURL *sourceURL;
+@property (nonatomic, readonly) int state;
+@property (nonatomic) BOOL subscribedWhenSyncWasOff;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (id)description;

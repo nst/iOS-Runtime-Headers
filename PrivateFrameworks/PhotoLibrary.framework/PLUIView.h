@@ -6,7 +6,7 @@
     BOOL _disableViewInPopoverRule;
 }
 
-@property BOOL disableViewInPopoverRule;
+@property (nonatomic) BOOL disableViewInPopoverRule;
 
 - (void)didMoveToWindow;
 - (BOOL)disableViewInPopoverRule;

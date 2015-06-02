@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class HKMedicalIDEditorWeightCell, _HKMedicalIDMultilineStringCell;
-
 @interface HKEmergencyCardWeightTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
     _HKMedicalIDMultilineStringCell *_displayCell;
     HKMedicalIDEditorWeightCell *_editableCell;

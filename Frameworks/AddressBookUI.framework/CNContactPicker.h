@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <CNContactPickerDelegate>, NSArray, NSPredicate, NSString, UIViewController<CNContactPickerContentViewController>;
-
 @interface CNContactPicker : UIViewController <CNContactPickerContentDelegate> {
     BOOL _allowsBlocking;
     BOOL _allowsCancel;
@@ -28,30 +26,30 @@
     UIViewController<CNContactPickerContentViewController> *_viewController;
 }
 
-@property BOOL allowsBlocking;
-@property BOOL allowsCancel;
-@property BOOL allowsEditing;
-@property BOOL allowsFaceTime;
-@property BOOL allowsOnlyFaceTimeActions;
-@property BOOL allowsOnlyPhoneActions;
-@property BOOL allowsSounds;
-@property(copy) NSString * bannerTitle;
-@property(copy) NSString * bannerValue;
+@property (nonatomic) BOOL allowsBlocking;
+@property (nonatomic) BOOL allowsCancel;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) BOOL allowsFaceTime;
+@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
+@property (nonatomic) BOOL allowsOnlyPhoneActions;
+@property (nonatomic) BOOL allowsSounds;
+@property (nonatomic, copy) NSString *bannerTitle;
+@property (nonatomic, copy) NSString *bannerValue;
 @property int behavior;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDefaultViewControllerVisible,readonly) BOOL defaultViewControllerVisible;
-@property <CNContactPickerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * displayedKeys;
-@property(readonly) unsigned int hash;
-@property BOOL hidesPromptInLandscape;
-@property BOOL hidesSearchableSources;
-@property(copy) NSPredicate * predicateForEnablingContact;
-@property(copy) NSPredicate * predicateForSelectionOfContact;
-@property(copy) NSPredicate * predicateForSelectionOfProperty;
-@property(copy) NSString * prompt;
-@property(readonly) Class superclass;
-@property(retain) UIViewController<CNContactPickerContentViewController> * viewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDefaultViewControllerVisible, readonly) BOOL defaultViewControllerVisible;
+@property (nonatomic) <CNContactPickerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *displayedKeys;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesPromptInLandscape;
+@property (nonatomic) BOOL hidesSearchableSources;
+@property (nonatomic, copy) NSPredicate *predicateForEnablingContact;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfContact;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfProperty;
+@property (nonatomic, copy) NSString *prompt;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIViewController<CNContactPickerContentViewController> *viewController;
 
 - (void).cxx_destruct;
 - (void*)_addressBook;

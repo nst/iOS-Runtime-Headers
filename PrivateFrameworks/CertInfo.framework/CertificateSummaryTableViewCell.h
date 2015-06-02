@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@interface CertificateSummaryTableViewCell : CertUIItemSummaryCell {
-}
+@interface CertificateSummaryTableViewCell : CertUIItemSummaryCell
 
 - (void)setCertificateName:(id)arg1 issuer:(id)arg2 isRoot:(BOOL)arg3;
 - (void)updateWithCertificateTrust:(struct __SecTrust { }*)arg1;

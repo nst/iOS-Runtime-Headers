@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface NetTopoAirPortDeviceLayer : NetTopoObjectLayer {
-}
+@interface NetTopoAirPortDeviceLayer : NetTopoObjectLayer
 
 - (void)dealloc;
 - (id)debugDescription;

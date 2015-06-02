@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class CAMStillImageCaptureResponse, NSDictionary, NSString, PLCropOverlay, PLPhotoTileViewController, PLVideoView, UIView;
-
 @interface PLImagePickerCameraView : CAMCameraView <PLVideoViewDelegate> {
     PLCropOverlay *__cropOverlay;
     int __enabledGestures;
@@ -23,28 +21,28 @@
     BOOL _wantsImageData;
 }
 
-@property(readonly) PLCropOverlay * _cropOverlay;
-@property(setter=_setEnabledGestures:) int _enabledGestures;
-@property(getter=_isManipulatingCrop,setter=_setManipulatingCrop:) BOOL _manipulatingCrop;
-@property(readonly) CAMStillImageCaptureResponse * _mostRecentCaptureResponse;
-@property(getter=_isRetakingPhoto,setter=_setRetakingPhoto:) BOOL _retakingPhoto;
-@property(readonly) BOOL _shouldSkipPostcaptureReview;
-@property(readonly) PLVideoView * _videoView;
-@property(setter=_setWindowEdgeClip:) int _windowEdgeClip;
-@property BOOL allowsEditing;
-@property BOOL controlsAreVisible;
-@property BOOL cropOverlayUsesTelephonyUI;
-@property(retain) UIView * customOverlayView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isDisplayedInPopover) BOOL displayedInPopover;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * imagePickerOptions;
-@property int photoSavingOptions;
-@property BOOL showsCropRegion;
-@property(readonly) Class superclass;
-@property(readonly) PLPhotoTileViewController * tileViewController;
-@property BOOL wantsImageData;
+@property (nonatomic, readonly) PLCropOverlay *_cropOverlay;
+@property (setter=_setEnabledGestures:, nonatomic) int _enabledGestures;
+@property (getter=_isManipulatingCrop, setter=_setManipulatingCrop:, nonatomic) BOOL _manipulatingCrop;
+@property (nonatomic, readonly) CAMStillImageCaptureResponse *_mostRecentCaptureResponse;
+@property (getter=_isRetakingPhoto, setter=_setRetakingPhoto:, nonatomic) BOOL _retakingPhoto;
+@property (nonatomic, readonly) BOOL _shouldSkipPostcaptureReview;
+@property (nonatomic, readonly) PLVideoView *_videoView;
+@property (setter=_setWindowEdgeClip:, nonatomic) int _windowEdgeClip;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) BOOL controlsAreVisible;
+@property (nonatomic) BOOL cropOverlayUsesTelephonyUI;
+@property (nonatomic, retain) UIView *customOverlayView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisplayedInPopover, nonatomic) BOOL displayedInPopover;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *imagePickerOptions;
+@property (nonatomic) int photoSavingOptions;
+@property (nonatomic) BOOL showsCropRegion;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PLPhotoTileViewController *tileViewController;
+@property (nonatomic) BOOL wantsImageData;
 
 - (BOOL)_allowsVideoEditing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bottomBarFrame;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DChartMainTitleSceneObject : TSCH3DChartTitleSceneObject {
-}
+@interface TSCH3DChartMainTitleSceneObject : TSCH3DChartTitleSceneObject
 
 + (id)paragraphStyleForTitleFontForInfo:(id)arg1;
 + (unsigned int)styleIndexForInfo:(id)arg1;

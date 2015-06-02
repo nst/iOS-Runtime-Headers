@@ -6,7 +6,7 @@
     float _maximumDurationWidth;
 }
 
-@property(readonly) float maximumDurationWidth;
+@property (nonatomic, readonly) float maximumDurationWidth;
 
 + (id)actionCellConfigurationClasses;
 

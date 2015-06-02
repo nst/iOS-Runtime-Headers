@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKEmoteMessageChatItem : CKMultilineStampChatItem {
-}
+@interface CKEmoteMessageChatItem : CKMultilineStampChatItem
 
 - (id)loadTranscriptText;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSCalendarServerAccessValue : ICSPredefinedValue {
-}
+@interface ICSCalendarServerAccessValue : ICSPredefinedValue
 
 + (id)calendarServerAccessFromCode:(int)arg1;
 + (id)calendarServerAccessFromICSString:(id)arg1;

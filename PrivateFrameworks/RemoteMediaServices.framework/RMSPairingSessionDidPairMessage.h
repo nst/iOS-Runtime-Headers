@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSPairingSessionDidPairMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
@@ -13,12 +11,12 @@
     int _sessionIdentifier;
 }
 
-@property(readonly) BOOL hasPairingGUID;
-@property(readonly) BOOL hasServiceNetworkName;
-@property BOOL hasSessionIdentifier;
-@property(retain) NSString * pairingGUID;
-@property(retain) NSString * serviceNetworkName;
-@property int sessionIdentifier;
+@property (nonatomic, readonly) BOOL hasPairingGUID;
+@property (nonatomic, readonly) BOOL hasServiceNetworkName;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic, retain) NSString *pairingGUID;
+@property (nonatomic, retain) NSString *serviceNetworkName;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

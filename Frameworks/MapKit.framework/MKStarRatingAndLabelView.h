@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKStarRatingView, NSArray, NSString, UILabel;
-
 @interface MKStarRatingAndLabelView : UIView {
     BOOL _displaysSourceOfReviews;
     unsigned int _numberOfReviews;
@@ -13,10 +11,10 @@
     MKStarRatingView *_starRatingView;
 }
 
-@property unsigned int numberOfReviews;
-@property(readonly) UILabel * reviewsLabel;
-@property(retain) NSString * sourceName;
-@property(readonly) MKStarRatingView * starRatingView;
+@property (nonatomic) unsigned int numberOfReviews;
+@property (nonatomic, readonly) UILabel *reviewsLabel;
+@property (nonatomic, retain) NSString *sourceName;
+@property (nonatomic, readonly) MKStarRatingView *starRatingView;
 
 - (void).cxx_destruct;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;

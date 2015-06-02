@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableSet;
-
 @interface PUMapAnnotationQuadtreeMultiAddress : PUMapAnnotationQuadtreeAddress {
     NSMutableSet *_alternativeAddresses;
 }
 
-@property(readonly) NSArray * alternativeAddresses;
+@property (nonatomic, readonly) NSArray *alternativeAddresses;
 
 - (void).cxx_destruct;
 - (void)addAlternativeAddress:(id)arg1;

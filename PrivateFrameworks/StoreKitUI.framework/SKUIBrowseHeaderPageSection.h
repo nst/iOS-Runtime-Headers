@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIBrowseHeaderPageComponent;
+@interface SKUIBrowseHeaderPageSection : SKUIStorePageSection
 
-@interface SKUIBrowseHeaderPageSection : SKUIStorePageSection {
-}
-
-@property(readonly) SKUIBrowseHeaderPageComponent * pageComponent;
+@property (nonatomic, readonly) SKUIBrowseHeaderPageComponent *pageComponent;
 
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;

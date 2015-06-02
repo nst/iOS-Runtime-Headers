@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, PLOperator;
-
 @interface PLXPCListenerOperatorComposition : NSObject {
     PLOperator *_operator;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _operatorBlock;
-
+    id /* block */ _operatorBlock;
     NSDictionary *_registration;
 }
 
-@property PLOperator * operator;
-@property(copy) id operatorBlock;
-@property(readonly) NSDictionary * registration;
+@property PLOperator *operator;
+@property (nonatomic, copy) id /* block */ operatorBlock;
+@property (readonly) NSDictionary *registration;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithOperator:(id)arg1 withRegistration:(id)arg2 withBlock:(id)arg3;
+- (id)initWithOperator:(id)arg1 withRegistration:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)messageRecievedForClientID:(short)arg1 withProcessName:(id)arg2 withKey:(id)arg3 withPayload:(id)arg4;
 - (id)operator;
-- (id)operatorBlock;
+- (id /* block */)operatorBlock;
 - (id)registration;
 - (void)setOperator:(id)arg1;
-- (void)setOperatorBlock:(id)arg1;
+- (void)setOperatorBlock:(id /* block */)arg1;
 
 @end

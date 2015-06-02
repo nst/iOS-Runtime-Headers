@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardPreferencesController : NSObject {
-}
+@interface UIKeyboardPreferencesController : NSObject
 
 @property int handBias;
 

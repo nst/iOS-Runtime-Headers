@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUBufferedInputStream>;
-
 @interface SFUZipRecordInputStream : NSObject {
     const char *mBuffer;
     long long mBufferEnd;

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureFileOutputInternal, NSURL;
-
 @interface AVCaptureFileOutput : AVCaptureOutput {
     AVCaptureFileOutputInternal *_fileOutputInternal;
 }
 
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } maxRecordedDuration;
-@property long long maxRecordedFileSize;
-@property long long minFreeDiskSpaceLimit;
-@property(readonly) NSURL * outputFileURL;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } recordedDuration;
-@property(readonly) long long recordedFileSize;
-@property(getter=isRecording,readonly) BOOL recording;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } maxRecordedDuration;
+@property (nonatomic) long long maxRecordedFileSize;
+@property (nonatomic) long long minFreeDiskSpaceLimit;
+@property (nonatomic, readonly) NSURL *outputFileURL;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } recordedDuration;
+@property (nonatomic, readonly) long long recordedFileSize;
+@property (getter=isRecording, nonatomic, readonly) BOOL recording;
 
 + (void)initialize;
 

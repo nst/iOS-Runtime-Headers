@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class <NPKPaymentServiceDelegate>, NSPointerArray, NSString, NSXPCConnection;
-
 @interface NPKPaymentService : NSObject <NPKPaymentServiceClientProtocol> {
     <NPKPaymentServiceDelegate> *_delegate;
     int _fieldDetectReferenceCount;
@@ -12,15 +10,15 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <NPKPaymentServiceDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property int fieldDetectReferenceCount;
-@property(readonly) unsigned int hash;
-@property BOOL requestsPaymentSessions;
-@property(readonly) Class superclass;
-@property(retain) NSPointerArray * transientPassAssertions;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (readonly, copy) NSString *debugDescription;
+@property <NPKPaymentServiceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int fieldDetectReferenceCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL requestsPaymentSessions;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSPointerArray *transientPassAssertions;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)paymentGlobalConcurrentQueue;
 
@@ -35,7 +33,7 @@
 - (id)delegate;
 - (int)fieldDetectReferenceCount;
 - (void)fieldDetected:(BOOL)arg1 cardEmulationEnabled:(BOOL)arg2;
-- (void)getDefaultPaymentPassUniqueIdentifierWithCompletion:(id)arg1;
+- (void)getDefaultPaymentPassUniqueIdentifierWithCompletion:(id /* block */)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidate;
 - (void)markAllPaymentApplicationsForDelete;
@@ -48,7 +46,7 @@
 - (void)removalPendingForPass:(id)arg1;
 - (void)removeTransientPassAssertion:(id)arg1;
 - (BOOL)requestsPaymentSessions;
-- (void)setDefaultPaymentPass:(id)arg1 withCompletion:(id)arg2;
+- (void)setDefaultPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFieldDetectReferenceCount:(int)arg1;
 - (void)setRequestsPaymentSessions:(BOOL)arg1;

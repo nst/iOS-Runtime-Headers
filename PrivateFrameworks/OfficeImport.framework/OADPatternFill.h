@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor, OADPattern;
-
 @interface OADPatternFill : OADFill {
     OADColor *mBgColor;
     OADColor *mFgColor;

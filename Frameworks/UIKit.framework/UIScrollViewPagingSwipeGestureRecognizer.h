@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDelayedAction;
-
 @interface UIScrollViewPagingSwipeGestureRecognizer : UIGestureRecognizer {
     int _directionalFailureCount;
     struct CGPoint { 

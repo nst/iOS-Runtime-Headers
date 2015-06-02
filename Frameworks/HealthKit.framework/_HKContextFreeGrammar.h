@@ -2,35 +2,25 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSCharacterSet, NSMutableSet, _HKCFGNonTerminal;
-
 @interface _HKContextFreeGrammar : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _emptyStringEvaluator;
-
+    id /* block */ _emptyStringEvaluator;
     NSMutableSet *_nonTerminals;
     _HKCFGNonTerminal *_rootNonTerminal;
     NSCharacterSet *_terminalCharacters;
     NSMutableSet *_terminals;
 }
 
-@property(readonly) id emptyStringEvaluator;
-@property(readonly) _HKCFGNonTerminal * rootNonTerminal;
+@property (nonatomic, readonly) id /* block */ emptyStringEvaluator;
+@property (nonatomic, readonly) _HKCFGNonTerminal *rootNonTerminal;
 
 + (id)grammarWithRootNonTerminal:(id)arg1;
-+ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
++ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)_gatherExpressions;
 - (void)_gatherExpressionsStartingAt:(id)arg1;
-- (id)emptyStringEvaluator;
-- (id)initWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
+- (id /* block */)emptyStringEvaluator;
+- (id)initWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id /* block */)arg2;
 - (void)invalidate;
 - (id)parseTreeForString:(id)arg1;
 - (id)rootNonTerminal;

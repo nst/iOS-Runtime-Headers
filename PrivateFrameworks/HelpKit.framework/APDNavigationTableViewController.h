@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDNavigationTableViewControllerDelegate>, APDDataManager, NSMutableArray, NSString, UITableView, UIView;
-
 @interface APDNavigationTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     BOOL _RTL;
     APDDataManager *_dataManager;
@@ -13,15 +11,15 @@
     NSMutableArray *_tableViewDataArray;
 }
 
-@property BOOL RTL;
-@property(retain) APDDataManager * dataManager;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDNavigationTableViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) UIView * tableFooterView;
-@property UITableView * tableView;
+@property (nonatomic) BOOL RTL;
+@property (nonatomic, retain) APDDataManager *dataManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDNavigationTableViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *tableFooterView;
+@property (nonatomic) UITableView *tableView;
 
 - (void).cxx_destruct;
 - (BOOL)RTL;

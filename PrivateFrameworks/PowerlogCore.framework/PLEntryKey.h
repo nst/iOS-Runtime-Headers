@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSString, PLEntryKey;
-
 @interface PLEntryKey : NSObject {
     PLEntryKey *_baseEntryKey;
     NSString *_entryKey;
@@ -18,14 +16,14 @@
     NSString *_wildCardName;
 }
 
-@property PLEntryKey * baseEntryKey;
-@property(retain,readonly) NSString * entryKey;
-@property(retain,readonly) NSString * entryName;
-@property(retain,readonly) NSString * entryType;
-@property BOOL isDynamic;
-@property(retain,readonly) NSString * operatorName;
-@property struct _PLTimeIntervalRange { double x1; double x2; } timeIntervalRange;
-@property(copy) NSString * wildCardName;
+@property PLEntryKey *baseEntryKey;
+@property (readonly, retain) NSString *entryKey;
+@property (readonly, retain) NSString *entryName;
+@property (readonly, retain) NSString *entryType;
+@property (nonatomic) BOOL isDynamic;
+@property (readonly, retain) NSString *operatorName;
+@property (nonatomic) struct _PLTimeIntervalRange { double x1; double x2; } timeIntervalRange;
+@property (nonatomic, copy) NSString *wildCardName;
 
 + (id)PLEntryAggregateKeysForOperator:(id)arg1;
 + (id)PLEntryAggregateKeysForOperatorClass:(Class)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSSet;
-
 @interface BBBulletinRequestParameters : NSObject <NSCopying, NSSecureCoding> {
     NSSet *_enabledSectionIDs;
     int _maximumCount;
     unsigned int _publisherDestination;
 }
 
-@property(readonly) NSSet * enabledSectionIDs;
-@property(readonly) unsigned int maximumCount;
-@property(readonly) unsigned int publisherDestination;
+@property (nonatomic, readonly) NSSet *enabledSectionIDs;
+@property (nonatomic, readonly) unsigned int maximumCount;
+@property (nonatomic, readonly) unsigned int publisherDestination;
 
 + (id)requestParametersForDestination:(unsigned int)arg1 withMaximumCount:(int)arg2 enabledSectionIDs:(id)arg3;
 + (BOOL)supportsSecureCoding;

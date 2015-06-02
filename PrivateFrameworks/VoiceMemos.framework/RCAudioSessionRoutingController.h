@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class MPAVRoute, NSArray, NSString, _RCMPRoutingController;
-
 @interface RCAudioSessionRoutingController : NSObject <MPAVRoutingControllerDelegate> {
     NSArray *_cachedPickableRoutes;
     MPAVRoute *_cachedPickedRoute;
@@ -15,23 +13,23 @@
     struct __CFArray { } *_weakSessionRoutingAssertions;
 }
 
-@property(readonly) NSString * activeInputRouteName;
-@property(readonly) unsigned int availableRoutesMask;
-@property(readonly) NSArray * cachedPickableRoutes;
-@property(readonly) MPAVRoute * cachedPickedRoute;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL expectsFaceContactWhenHandsetSelected;
-@property(readonly) BOOL hasAppliedUserDefaultForRouteSetting;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isRoutingToPhoneCall;
-@property(readonly) _RCMPRoutingController * routingController;
-@property(readonly) NSString * selectedRouteName;
-@property(readonly) int selectedRouteType;
-@property(readonly) BOOL shouldReportUserDefaultForRouteSetting;
-@property(readonly) Class superclass;
-@property BOOL useVoiceMemoSettings;
-@property(readonly) struct __CFArray { }* weakSessionRoutingAssertions;
+@property (nonatomic, readonly) NSString *activeInputRouteName;
+@property (nonatomic, readonly) unsigned int availableRoutesMask;
+@property (nonatomic, readonly) NSArray *cachedPickableRoutes;
+@property (nonatomic, readonly) MPAVRoute *cachedPickedRoute;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL expectsFaceContactWhenHandsetSelected;
+@property (nonatomic, readonly) BOOL hasAppliedUserDefaultForRouteSetting;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isRoutingToPhoneCall;
+@property (nonatomic, readonly) _RCMPRoutingController *routingController;
+@property (nonatomic, readonly) NSString *selectedRouteName;
+@property (nonatomic, readonly) int selectedRouteType;
+@property (nonatomic, readonly) BOOL shouldReportUserDefaultForRouteSetting;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useVoiceMemoSettings;
+@property (nonatomic, readonly) struct __CFArray { }*weakSessionRoutingAssertions;
 
 + (id)sharedRouteController;
 
@@ -61,7 +59,7 @@
 - (id)cachedPickedRoute;
 - (void)dealloc;
 - (BOOL)expectsFaceContactWhenHandsetSelected;
-- (void)fetchActiveInputRouteWithCompletionHandler:(id)arg1;
+- (void)fetchActiveInputRouteWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)hasAppliedUserDefaultForRouteSetting;
 - (id)init;
 - (BOOL)isRoutingToPhoneCall;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSString;
+@interface RadioManagedSkipHistory : NSManagedObject
 
-@interface RadioManagedSkipHistory : NSManagedObject {
-}
-
-@property(copy) NSString * skipIdentifier;
-@property(copy) NSArray * skipTimestamps;
-@property(copy) NSString * stationHash;
-@property long long stationID;
+@property (nonatomic, copy) NSString *skipIdentifier;
+@property (nonatomic, copy) NSArray *skipTimestamps;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
 
 - (void)setSkipIdentifier:(id)arg1;
 - (void)setSkipTimestamps:(id)arg1;

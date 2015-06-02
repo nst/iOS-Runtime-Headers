@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray;
-
 @interface PLPhotoEditAggregateSession : NSObject {
     BOOL __autoCropAdjusted;
     BOOL __autoCropReset;
@@ -13,13 +11,13 @@
     BOOL _toggledOriginal;
 }
 
-@property(setter=_setAutoCropAdjusted:) BOOL _autoCropAdjusted;
-@property(readonly) NSArray * _autoCropKeys;
-@property(setter=_setAutoCropReset:) BOOL _autoCropReset;
-@property(setter=_setHasCropSuggestion:) BOOL _hasCropSuggestion;
-@property BOOL pluginSaved;
-@property BOOL pluginStarted;
-@property BOOL toggledOriginal;
+@property (setter=_setAutoCropAdjusted:, nonatomic) BOOL _autoCropAdjusted;
+@property (nonatomic, readonly) NSArray *_autoCropKeys;
+@property (setter=_setAutoCropReset:, nonatomic) BOOL _autoCropReset;
+@property (setter=_setHasCropSuggestion:, nonatomic) BOOL _hasCropSuggestion;
+@property (nonatomic) BOOL pluginSaved;
+@property (nonatomic) BOOL pluginStarted;
+@property (nonatomic) BOOL toggledOriginal;
 
 + (struct __CFString { }*)_keyForSessionEnd:(int)arg1;
 

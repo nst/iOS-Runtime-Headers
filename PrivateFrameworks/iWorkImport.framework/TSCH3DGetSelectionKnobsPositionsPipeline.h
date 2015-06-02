@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TSCH3DChartRep, TSCH3DGetSelectionKnobsPositionsPipelineDelegate;
-
 @interface TSCH3DGetSelectionKnobsPositionsPipeline : TSCH3DSceneRenderPipeline <TSCH3DSceneObjectDelegator, TSCHUnretainedParent> {
     float mNormalizedKnobRadius;
     NSMutableArray *mProjectedPoints;
@@ -12,7 +10,7 @@
     NSArray *mSelection;
 }
 
-@property(readonly) NSArray * projectedPoints;
+@property (nonatomic, readonly) NSArray *projectedPoints;
 
 + (id)pipelineWithRep:(id)arg1 scene:(id)arg2 selection:(id)arg3 normalizedKnobRadius:(float)arg4;
 

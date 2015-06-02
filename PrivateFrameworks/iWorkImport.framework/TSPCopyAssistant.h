@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPPasteboard;
-
 @interface TSPCopyAssistant : TSPPasteboardWriteAssistant {
     BOOL _didAttemptToCopy;
     TSPPasteboard *_pasteboard;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSMutableArray;
-
 @interface SPProtoCacheAssets : PBCodable <NSCopying> {
     NSMutableArray *_assets;
 }
 
-@property(retain) NSMutableArray * assets;
+@property (nonatomic, retain) NSMutableArray *assets;
 
 - (void).cxx_destruct;
 - (void)addAssets:(id)arg1;

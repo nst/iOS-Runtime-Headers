@@ -3,7 +3,7 @@
  */
 
 @interface AVFullScreenViewController : UIViewController {
-    unsigned int _statusBarWasHidden : 1;
+    unsigned int _statusBarWasHidden;
 }
 
 - (void)dealloc;

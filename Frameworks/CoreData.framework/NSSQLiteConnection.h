@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSQLEntity, NSSQLiteStatement, NSString;
-
 @interface NSSQLiteConnection : NSSQLConnection {
     NSSQLiteStatement *_beginStatement;
     struct __CFDictionary { } *_cachedEntityUpdateStatements;
@@ -12,7 +10,7 @@
     struct sqlite3 { } *_db;
     NSString *_dbPathRegisteredWithBackupd;
     unsigned long long _debugInode;
-    void *_extraBuffersForRegisteredFunctions[5];
+    void *_extraBuffersForRegisteredFunctions;
     struct sqlite3_stmt { } *_fetchPKStatement;
     NSSQLEntity *_finalEntity;
     NSSQLEntity *_lastEntity;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVAssetResourceLoaderInternal : NSObject {
     NSMutableDictionary *contentInformationCache;
     NSObject<OS_dispatch_queue> *contentInformationCachingQueue;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface EKCalendarItemsWithExternalIdentifierPredicate : EKEventPredicate <NSSecureCoding> {
     NSString *_externalIdentifier;
 }

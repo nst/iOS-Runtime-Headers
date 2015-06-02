@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UICollectionView;
-
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout {
     BOOL _backfills;
     UICollectionView *_collectionView;
@@ -17,9 +15,9 @@
     float _verticalPadding;
 }
 
-@property BOOL backfills;
-@property float horizontalPadding;
-@property float verticalPadding;
+@property (nonatomic) BOOL backfills;
+@property (nonatomic) float horizontalPadding;
+@property (nonatomic) float verticalPadding;
 
 - (void).cxx_destruct;
 - (BOOL)backfills;

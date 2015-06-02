@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CISixfoldRotatedTile : CITileFilter {
-}
+@interface CISixfoldRotatedTile : CITileFilter
 
 + (id)customAttributes;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, TSPObjectContext, TSUPathSet, TSUTemporaryDirectory;
-
 @interface TSPDataManager : NSObject {
     TSPObjectContext *_context;
     NSObject<OS_dispatch_queue> *_datasQueue;
@@ -71,11 +64,11 @@
     NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
 }
 
-@property(readonly) TSPObjectContext * context;
+@property (nonatomic, readonly) TSPObjectContext *context;
 
-+ (void)readWithChannel:(id)arg1 handler:(id)arg2;
-+ (void)readWithChannelImpl:(id)arg1 handler:(id)arg2;
-+ (void)readWithURL:(id)arg1 handler:(id)arg2;
++ (void)readWithChannel:(id)arg1 handler:(id /* block */)arg2;
++ (void)readWithChannelImpl:(id)arg1 handler:(id /* block */)arg2;
++ (void)readWithURL:(id)arg1 handler:(id /* block */)arg2;
 + (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
 
 - (id).cxx_construct;
@@ -85,37 +78,37 @@
 - (id)addNewDataForStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
 - (id)context;
-- (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id)arg2;
+- (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id /* block */)arg2;
 - (id)copyData:(id)arg1;
 - (id)dataForDigest:(id)arg1;
-- (void)dataForDigest:(id)arg1 queue:(id)arg2 completion:(id)arg3;
-- (id)dataForDigestImpl:(id)arg1 accessorBlock:(id)arg2;
-- (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id)arg3;
+- (void)dataForDigest:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (id)dataForDigestImpl:(id)arg1 accessorBlock:(id /* block */)arg2;
+- (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id /* block */)arg3;
 - (id)dataForExistingData:(id)arg1 digest:(id)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
 - (id)dataFromAssetsLibraryURL:(id)arg1;
-- (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id)arg2;
+- (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataFromExternalReferenceURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
-- (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id)arg5;
+- (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id /* block */)arg5;
 - (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
-- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 completion:(id)arg3;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 completion:(id /* block */)arg3;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3;
-- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3 completion:(id)arg4;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 linkURLOrNil:(id)arg3 completion:(id /* block */)arg4;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3;
-- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3 completion:(id)arg4;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 temporaryPath:(id)arg3 completion:(id /* block */)arg4;
 - (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
 - (id)dataOrNilForIdentifier:(long long)arg1;
-- (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id)arg5;
+- (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id /* block */)arg5;
 - (id)dataWithTemporaryPath:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (void)didCloseDocument;
 - (void)didSaveWithSaveOperationState:(id)arg1;
 - (id)documentResourceDataWithStorage:(id)arg1 digestString:(id)arg2 filename:(id)arg3;
-- (void)enumerateDatasUsingBlock:(id)arg1;
-- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 readHandler:(id)arg3 completion:(id)arg4;
-- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 temporaryPath:(id)arg3 shouldWriteIfFound:(BOOL)arg4 completion:(id)arg5;
+- (void)enumerateDatasUsingBlock:(id /* block */)arg1;
+- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 readHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 temporaryPath:(id)arg3 shouldWriteIfFound:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)initWithContext:(id)arg1;
 - (BOOL)linkTemporaryPath:(id)arg1 fromURL:(id)arg2;
 - (void)loadFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 packageMetadata:(id)arg4 areExternalReferencesAllowed:(BOOL)arg5;

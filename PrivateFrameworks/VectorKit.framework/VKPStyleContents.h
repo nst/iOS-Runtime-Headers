@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, VKPStyleProperties;
-
 @interface VKPStyleContents : PBCodable <NSCopying> {
     VKPStyleProperties *_properties;
     NSMutableArray *_zooms;
 }
 
-@property(readonly) BOOL hasProperties;
-@property(retain) VKPStyleProperties * properties;
-@property(retain) NSMutableArray * zooms;
+@property (nonatomic, readonly) BOOL hasProperties;
+@property (nonatomic, retain) VKPStyleProperties *properties;
+@property (nonatomic, retain) NSMutableArray *zooms;
 
 - (void)addZooms:(id)arg1;
 - (void)clearZooms;

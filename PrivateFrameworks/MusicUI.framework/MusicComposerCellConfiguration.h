@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicComposerCellConfiguration : MusicArtistCellConfiguration {
-}
+@interface MusicComposerCellConfiguration : MusicArtistCellConfiguration
 
 + (id)itemPersistentIDProperty;
 + (id)mediaEntityPropertiesToFetch;

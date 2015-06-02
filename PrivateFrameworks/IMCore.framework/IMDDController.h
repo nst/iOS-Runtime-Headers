@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface IMDDController : NSObject {
     NSObject<OS_dispatch_queue> *_scannerQueue;
 }
@@ -13,8 +11,8 @@
 - (BOOL)_scanMessageUsingScanner:(id)arg1 attributedString:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)scanMessage:(id)arg1 completionBlock:(id)arg2;
-- (void)scanMessage:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)scanMessage:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)scanMessage:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)scannerQueue;
 - (struct __DDScanner { }*)sharedScanner;
 

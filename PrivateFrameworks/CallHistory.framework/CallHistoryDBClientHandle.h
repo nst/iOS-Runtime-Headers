@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class CallHistoryDBHandle, NSObject<OS_dispatch_queue>;
-
 @interface CallHistoryDBClientHandle : CHSynchronizedLoggable {
     BOOL _dataStoreCreated;
     id _observerCallRecordRef;
@@ -12,9 +10,9 @@
     CallHistoryDBHandle *dbStoreHandle;
 }
 
-@property BOOL dataStoreCreated;
-@property(readonly) CallHistoryDBHandle * dbStoreHandle;
-@property(retain) NSObject<OS_dispatch_queue> * recentCallQueue;
+@property (nonatomic) BOOL dataStoreCreated;
+@property (nonatomic, readonly) CallHistoryDBHandle *dbStoreHandle;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *recentCallQueue;
 
 + (id)createForClient;
 + (id)createForServer;

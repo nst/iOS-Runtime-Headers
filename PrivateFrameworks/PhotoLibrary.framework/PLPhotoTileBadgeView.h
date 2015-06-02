@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, UILabel, UIView;
-
 @interface PLPhotoTileBadgeView : UIView {
     UIView *__backgroundView;
     UIImageView *__badgeImageView;
@@ -12,11 +10,11 @@
     int _style;
 }
 
-@property(readonly) UIView * _backgroundView;
-@property(readonly) UIImageView * _badgeImageView;
-@property(readonly) UILabel * _textLabel;
-@property int numberOfPhotos;
-@property int style;
+@property (nonatomic, readonly) UIView *_backgroundView;
+@property (nonatomic, readonly) UIImageView *_badgeImageView;
+@property (nonatomic, readonly) UILabel *_textLabel;
+@property (nonatomic) int numberOfPhotos;
+@property (nonatomic) int style;
 
 - (id)_backgroundView;
 - (id)_badgeImageView;

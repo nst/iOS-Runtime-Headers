@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetProxyInternal;
-
 @interface AVAssetProxy : AVAsset {
     AVAssetProxyInternal *_assetProxy;
 }

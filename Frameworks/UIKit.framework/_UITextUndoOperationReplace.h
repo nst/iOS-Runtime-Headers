@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSAttributedString;
-
 @interface _UITextUndoOperationReplace : NSUndoTextOperation {
     NSAttributedString *_attributedString;
     struct _NSRange { 

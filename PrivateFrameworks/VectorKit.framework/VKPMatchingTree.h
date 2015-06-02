@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKPMatchingTree : PBCodable <NSCopying> {
     struct { 
         unsigned int styleReference : 1; 
@@ -14,11 +12,11 @@
     NSMutableArray *_subTrees;
 }
 
-@property BOOL hasStyleReference;
-@property unsigned int key;
-@property unsigned int score;
-@property unsigned int styleReference;
-@property(retain) NSMutableArray * subTrees;
+@property (nonatomic) BOOL hasStyleReference;
+@property (nonatomic) unsigned int key;
+@property (nonatomic) unsigned int score;
+@property (nonatomic) unsigned int styleReference;
+@property (nonatomic, retain) NSMutableArray *subTrees;
 
 - (void)addSubTree:(id)arg1;
 - (void)clearSubTrees;

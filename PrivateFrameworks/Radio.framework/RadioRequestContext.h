@@ -6,7 +6,7 @@
     BOOL _usesLocalNetworking;
 }
 
-@property BOOL usesLocalNetworking;
+@property (nonatomic) BOOL usesLocalNetworking;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setUsesLocalNetworking:(BOOL)arg1;

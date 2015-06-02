@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class NSArray, NSString;
-
 @interface CompassShader : NSObject {
     NSString *_fragmentName;
     unsigned int _program;
@@ -24,7 +22,7 @@
     NSString *_vertexName;
 }
 
-@property unsigned int program;
+@property (nonatomic) unsigned int program;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

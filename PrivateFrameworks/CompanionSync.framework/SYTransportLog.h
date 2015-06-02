@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSString;
-
 @interface SYTransportLog : NSObject {
     NSString *_facility;
     NSString *_rootPath;
 }
 
-@property(copy) NSString * facility;
+@property (nonatomic, copy) NSString *facility;
 
 + (id)_logPath;
 + (id)sharedInstance;

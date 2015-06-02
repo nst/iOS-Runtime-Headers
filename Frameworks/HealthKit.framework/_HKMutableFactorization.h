@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKMutableFactorization : _HKFactorization {
-}
+@interface _HKMutableFactorization : _HKFactorization
 
 - (void)divideByFactorization:(id)arg1;
 - (void)multiplyByFactor:(id)arg1 exponent:(int)arg2;

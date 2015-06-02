@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGLabeledValue : NSObject {
     NSString *_label;
     NSString *_value;
 }
 
-@property(readonly) NSString * label;
-@property(readonly) NSString * value;
+@property (nonatomic, readonly) NSString *label;
+@property (nonatomic, readonly) NSString *value;
 
 - (void).cxx_destruct;
 - (id)description;

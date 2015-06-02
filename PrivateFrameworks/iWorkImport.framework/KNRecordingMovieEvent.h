@@ -2,28 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSDMovieInfo, TSPLazyReference;
-
 @interface KNRecordingMovieEvent : KNRecordingEvent {
     int mMovieEventType;
     double mMovieEventValue;
     TSPLazyReference *mMovieInfoReference;
 }
 
-@property(readonly) BOOL beginsScrubbing;
-@property(readonly) BOOL endsScrubbing;
-@property(readonly) int movieEventType;
-@property(readonly) double movieEventValue;
-@property(readonly) TSDMovieInfo * movieInfo;
-@property(readonly) double rate;
-@property(readonly) double seekTime;
-@property(readonly) BOOL startsPlayback;
-@property(readonly) BOOL stopsPlayback;
+@property (nonatomic, readonly) BOOL beginsScrubbing;
+@property (nonatomic, readonly) BOOL endsScrubbing;
+@property (nonatomic, readonly) int movieEventType;
+@property (nonatomic, readonly) double movieEventValue;
+@property (nonatomic, readonly) TSDMovieInfo *movieInfo;
+@property (nonatomic, readonly) double rate;
+@property (nonatomic, readonly) double seekTime;
+@property (nonatomic, readonly) BOOL startsPlayback;
+@property (nonatomic, readonly) BOOL stopsPlayback;
 
 - (BOOL)beginsScrubbing;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

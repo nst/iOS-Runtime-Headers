@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSDate;
-
 @interface DAECalendarAvailabilitySpan : NSObject <NSSecureCoding> {
     NSDate *_endDate;
     NSDate *_startDate;
     int _type;
 }
 
-@property(readonly) NSDate * endDate;
-@property(readonly) NSDate * startDate;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) int type;
 
 + (BOOL)supportsSecureCoding;
 

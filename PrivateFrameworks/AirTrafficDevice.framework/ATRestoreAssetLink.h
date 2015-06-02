@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class <ATAssetLinkDelegate>, <ATRestoreAssetLinkDelegate>, ATAsset, MBManager, NSArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATRestoreAssetLink : NSObject <ATAssetLink, ATEnvironmentMonitorObserver, MBManagerDelegate> {
     ATAsset *_activeAsset;
     NSArray *_allowedDataClasses;
@@ -17,14 +15,14 @@
     int _restoreState;
 }
 
-@property(copy) NSArray * allowedDataClasses;
-@property(copy,readonly) NSString * debugDescription;
-@property <ATAssetLinkDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isOpen,readonly) BOOL open;
-@property <ATRestoreAssetLinkDelegate> * restoreDelegate;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *allowedDataClasses;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ATAssetLinkDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (nonatomic) <ATRestoreAssetLinkDelegate> *restoreDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_atErrorFromMBError:(id)arg1;

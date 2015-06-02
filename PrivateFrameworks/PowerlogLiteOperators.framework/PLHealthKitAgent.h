@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLXPCListenerOperatorComposition;
-
 @interface PLHealthKitAgent : PLAgent {
     PLXPCListenerOperatorComposition *_queryHandler;
 }
 
-@property(retain) PLXPCListenerOperatorComposition * queryHandler;
+@property (retain) PLXPCListenerOperatorComposition *queryHandler;
 
 + (id)entryEventPointDefinitions;
 + (void)load;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAClockObject;
+@interface SAClockAdd : SADomainCommand
 
-@interface SAClockAdd : SADomainCommand {
-}
-
-@property(retain) SAClockObject * clockToAdd;
+@property (nonatomic, retain) SAClockObject *clockToAdd;
 
 + (id)add;
 + (id)addWithDictionary:(id)arg1 context:(id)arg2;

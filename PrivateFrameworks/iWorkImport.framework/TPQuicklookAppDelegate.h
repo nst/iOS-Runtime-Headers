@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPQuicklookAppDelegate : TSAServerApplicationDelegate {
-}
+@interface TPQuicklookAppDelegate : TSAServerApplicationDelegate
 
 - (id)init;
 

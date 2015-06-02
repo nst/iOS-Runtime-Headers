@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSString, WFWhitelistSiteBuffer;
-
 @interface WFWhitelistUserPreferences : NSObject {
     BOOL alwaysAllowHTTPS;
     WFWhitelistSiteBuffer *filterBlacklist;
@@ -15,11 +13,11 @@
 }
 
 @property BOOL alwaysAllowHTTPS;
-@property(readonly) WFWhitelistSiteBuffer * filterBlacklist;
+@property (readonly) WFWhitelistSiteBuffer *filterBlacklist;
 @property BOOL filterEnabled;
-@property(readonly) WFWhitelistSiteBuffer * filterWhitelist;
-@property(retain) NSString * username;
-@property(readonly) WFWhitelistSiteBuffer * webWhitelist;
+@property (readonly) WFWhitelistSiteBuffer *filterWhitelist;
+@property (retain) NSString *username;
+@property (readonly) WFWhitelistSiteBuffer *webWhitelist;
 @property BOOL whitelistEnabled;
 
 + (id)_arrayByConvertingLinesInStringsAtPath:(id)arg1;

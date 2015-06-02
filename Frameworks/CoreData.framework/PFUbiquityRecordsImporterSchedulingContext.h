@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSMutableSet, NSSet;
-
 @interface PFUbiquityRecordsImporterSchedulingContext : NSObject {
     NSMutableSet *_failedLogLocations;
     NSMutableSet *_ignoredLogLocations;
@@ -13,11 +11,11 @@
     NSMutableSet *_scheduledLogLocations;
 }
 
-@property(readonly) NSSet * failedLogLocations;
-@property(readonly) NSSet * ignoredLogLocations;
-@property(readonly) NSDictionary * logLocationsToEncounteredErrors;
-@property(readonly) NSSet * pendingLogLocations;
-@property(readonly) NSSet * scheduledLogLocations;
+@property (nonatomic, readonly) NSSet *failedLogLocations;
+@property (nonatomic, readonly) NSSet *ignoredLogLocations;
+@property (nonatomic, readonly) NSDictionary *logLocationsToEncounteredErrors;
+@property (nonatomic, readonly) NSSet *pendingLogLocations;
+@property (nonatomic, readonly) NSSet *scheduledLogLocations;
 
 - (void)addPendingLogLocation:(id)arg1;
 - (void)addPendingLogLocations:(id)arg1;

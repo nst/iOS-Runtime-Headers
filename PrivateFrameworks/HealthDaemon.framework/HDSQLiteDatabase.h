@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSMutableDictionary, NSURL;
-
 @interface HDSQLiteDatabase : NSObject {
     NSMutableDictionary *_attachedDatabaseURLsByName;
     struct sqlite3 { } *_db;
@@ -13,7 +11,7 @@
     int _transactionType;
 }
 
-@property(readonly) NSURL * fileURL;
+@property (nonatomic, readonly) NSURL *fileURL;
 
 + (BOOL)_stepStatement:(struct sqlite3_stmt { }*)arg1 hasRow:(BOOL*)arg2 resultCode:(int*)arg3 error:(id*)arg4;
 + (BOOL)deleteDatabaseAtPath:(id)arg1;
@@ -29,7 +27,7 @@
 - (int)_openWithPath:(id)arg1;
 - (BOOL)_setPragma:(id)arg1 integerValue:(int)arg2 withDatabaseName:(id)arg3;
 - (struct sqlite3_stmt { }*)_statementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3;
-- (void)accessDatabaseUsingBlock:(id)arg1;
+- (void)accessDatabaseUsingBlock:(id /* block */)arg1;
 - (BOOL)addColumnInTable:(id)arg1 columnSQL:(id)arg2;
 - (BOOL)alterTable:(id)arg1 removeColumns:(id)arg2 renameColumns:(id)arg3;
 - (BOOL)attachDatabaseWithName:(id)arg1 fileURL:(id)arg2 error:(id*)arg3;
@@ -46,9 +44,9 @@
 - (BOOL)insertColumns:(id)arg1 fromTableNamed:(id)arg2 toTableNamed:(id)arg3;
 - (BOOL)isDatabaseWithNameAttached:(id)arg1;
 - (int)open;
-- (BOOL)performTransactionWithType:(int)arg1 error:(id*)arg2 usingBlock:(id)arg3;
-- (void)performTransactionWithType:(int)arg1 usingBlock:(id)arg2;
-- (BOOL)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3 usingBlock:(id)arg4;
+- (BOOL)performTransactionWithType:(int)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
+- (void)performTransactionWithType:(int)arg1 usingBlock:(id /* block */)arg2;
+- (BOOL)prepareStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 - (struct sqlite3_stmt { }*)preparedStatementForSQL:(id)arg1 cache:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)removeColumnInTable:(id)arg1 name:(id)arg2;
 - (BOOL)renameColumnInTable:(id)arg1 oldName:(id)arg2 newName:(id)arg3;

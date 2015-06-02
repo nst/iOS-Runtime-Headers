@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libsystem_network.dylib
  */
 
-@interface OS_tcp_waldo_tester : OS_object {
-}
+@interface OS_tcp_waldo_tester : OS_object
 
 - (void)_dispose;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CPMLBestShim.framework/CPMLBestShim
  */
 
-@class CDAttribute, CDSession, NSDictionary, NSMutableDictionary, NSMutableString;
-
 @interface CPMLBestBadgeShim : CPMLBestShim {
     CDAttribute *cdBundleIdAttribute;
     CDSession *cdSession;
@@ -13,12 +11,12 @@
     NSMutableString *weightsPath;
 }
 
-@property(retain) CDAttribute * cdBundleIdAttribute;
-@property(retain) CDSession * cdSession;
-@property(retain) NSDictionary * configPList;
-@property(retain) NSMutableDictionary * hysteresis;
-@property(retain) NSMutableDictionary * learnedWeights;
-@property(retain) NSMutableString * weightsPath;
+@property (retain) CDAttribute *cdBundleIdAttribute;
+@property (retain) CDSession *cdSession;
+@property (retain) NSDictionary *configPList;
+@property (retain) NSMutableDictionary *hysteresis;
+@property (retain) NSMutableDictionary *learnedWeights;
+@property (retain) NSMutableString *weightsPath;
 
 + (id)bestShim;
 + (id)bestShimWithDBPath:(id)arg1 withModelPath:(id)arg2 withPListPath:(id)arg3;

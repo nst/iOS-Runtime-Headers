@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, NSURL, QLPreviewItemProxy, QLServicePreviewContentController;
-
 @interface QLPreviewRemoteItem : NSObject <QLPreviewItem> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     QLServicePreviewContentController *_contentController;
     int _index;
     QLPreviewItemProxy *_proxy;
     BOOL _resolving;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * previewItemTitle;
-@property(readonly) NSURL * previewItemURL;
-@property(readonly) QLPreviewItemProxy * proxy;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSString *previewItemTitle;
+@property (readonly) NSURL *previewItemURL;
+@property (readonly) QLPreviewItemProxy *proxy;
+@property (readonly) Class superclass;
 
 - (void)_clearCompletionBlock;
 - (double)autoPlaybackPosition;
@@ -41,6 +31,6 @@
 - (id)previewItemURL;
 - (id)previewItemURLForDisplay;
 - (id)proxy;
-- (void)resolveWithCompletionBlock:(id)arg1;
+- (void)resolveWithCompletionBlock:(id /* block */)arg1;
 
 @end

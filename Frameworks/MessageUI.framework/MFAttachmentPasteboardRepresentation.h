@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSData, NSString;
-
 @interface MFAttachmentPasteboardRepresentation : NSObject <MFAttachmentPasteboardRepresentation, NSCoding> {
     NSData *_data;
     NSString *_mimeType;
     NSString *_name;
 }
 
-@property(retain) NSData * data;
-@property(retain) NSString * mimeType;
-@property(retain) NSString * name;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSString *mimeType;
+@property (nonatomic, retain) NSString *name;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (id)data;
 - (void)dealloc;

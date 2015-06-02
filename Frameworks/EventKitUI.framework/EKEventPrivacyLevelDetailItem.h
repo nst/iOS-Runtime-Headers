@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UISwitch, UITableViewCell;
-
 @interface EKEventPrivacyLevelDetailItem : EKEventDetailItem {
     UITableViewCell *_cell;
     UISwitch *_control;

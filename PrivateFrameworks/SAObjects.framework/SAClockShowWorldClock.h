@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAClockObject;
+@interface SAClockShowWorldClock : SABaseClientBoundCommand
 
-@interface SAClockShowWorldClock : SABaseClientBoundCommand {
-}
-
-@property(retain) SAClockObject * clock;
+@property (nonatomic, retain) SAClockObject *clock;
 
 + (id)showWorldClock;
 + (id)showWorldClockWithDictionary:(id)arg1 context:(id)arg2;

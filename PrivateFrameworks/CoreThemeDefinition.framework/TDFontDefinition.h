@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSDate, NSNumber, NSString, TDMetafontSelector;
+@interface TDFontDefinition : NSManagedObject
 
-@interface TDFontDefinition : NSManagedObject {
-}
-
-@property(retain) NSNumber * baselineOffset;
-@property(retain) NSDate * dateOfLastChange;
-@property(retain) NSString * postscriptName;
-@property(retain) TDMetafontSelector * selector;
+@property (nonatomic, retain) NSNumber *baselineOffset;
+@property (nonatomic, retain) NSDate *dateOfLastChange;
+@property (nonatomic, retain) NSString *postscriptName;
+@property (nonatomic, retain) TDMetafontSelector *selector;
 
 @end

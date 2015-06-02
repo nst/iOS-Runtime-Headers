@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDMetadataKeyEntity : HDHealthEntity {
-}
+@interface HDMetadataKeyEntity : HDHealthEntity
 
 + (id)_entityForKey:(id)arg1 database:(id)arg2;
 + (id)_insertEntityWithKey:(id)arg1 database:(id)arg2;

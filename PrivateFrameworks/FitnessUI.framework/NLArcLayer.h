@@ -12,8 +12,8 @@
     float _radius;
 }
 
-@property struct CGPoint { float x1; float x2; } center;
-@property float radius;
+@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic) float radius;
 
 - (void)_regeneratePath;
 - (id)actionForKey:(id)arg1;

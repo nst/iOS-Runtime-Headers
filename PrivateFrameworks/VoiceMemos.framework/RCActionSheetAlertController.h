@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCActionSheetAlertController : UIAlertController {
-}
+@interface RCActionSheetAlertController : UIAlertController
 
 @end

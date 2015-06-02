@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSDictionary, NSNumber, NSString, NSURL, SSAccount;
-
 @interface HSConnectionConfiguration : NSObject <HSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     SSAccount *_account;
     NSURL *_baseURL;
@@ -16,19 +14,19 @@
     NSString *_userAgent;
 }
 
-@property(readonly) SSAccount * account;
-@property(readonly) NSURL * baseURL;
-@property(readonly) NSString * buildIdentifier;
-@property(readonly) NSDictionary * cookieHeaders;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSNumber * familyMemberStoreID;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * purchaseClientIdentifier;
-@property(readonly) long long requestReason;
-@property(readonly) Class superclass;
-@property(readonly) NSDictionary * urlBag;
-@property(readonly) NSString * userAgent;
+@property (nonatomic, readonly) SSAccount *account;
+@property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic, readonly) NSString *buildIdentifier;
+@property (nonatomic, readonly) NSDictionary *cookieHeaders;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSNumber *familyMemberStoreID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *purchaseClientIdentifier;
+@property (nonatomic, readonly) long long requestReason;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *urlBag;
+@property (nonatomic, readonly) NSString *userAgent;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSString, UILabel, UISwitch, _UISettings;
-
 @interface PTSSwitch : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
     SEL _action;
     int _alignment;
@@ -17,20 +15,20 @@
     NSString *_valueKeyPath;
 }
 
-@property SEL action;
-@property int alignment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(readonly) float height;
-@property _UISettings * settings;
-@property(retain) NSArray * subviewConstraints;
-@property(readonly) Class superclass;
-@property(retain) UISwitch * switchControl;
-@property id target;
-@property(retain) UILabel * titleLabel;
-@property(copy) NSString * valueKeyPath;
+@property (nonatomic) SEL action;
+@property (nonatomic) int alignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float height;
+@property (nonatomic) _UISettings *settings;
+@property (nonatomic, retain) NSArray *subviewConstraints;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UISwitch *switchControl;
+@property (nonatomic) id target;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, copy) NSString *valueKeyPath;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 + (id)switch;

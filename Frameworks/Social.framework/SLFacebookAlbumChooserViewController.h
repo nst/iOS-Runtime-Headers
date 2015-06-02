@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLFacebookAlbumChooserViewControllerDelegate>, NSArray, NSCache, SLFacebookAlbumManager, UIButton;
-
 @interface SLFacebookAlbumChooserViewController : UITableViewController <SLFacebookAlbumManagerDelegate> {
     SLFacebookAlbumManager *_albumManager;
     NSArray *_albums;
@@ -12,10 +10,10 @@
     UIButton *_flipBackButton;
 }
 
-@property(retain) SLFacebookAlbumManager * albumManager;
-@property(retain) NSArray * albums;
-@property <SLFacebookAlbumChooserViewControllerDelegate> * delegate;
-@property(retain) UIButton * flipBackButton;
+@property (retain) SLFacebookAlbumManager *albumManager;
+@property (retain) NSArray *albums;
+@property <SLFacebookAlbumChooserViewControllerDelegate> *delegate;
+@property (retain) UIButton *flipBackButton;
 
 + (id)_blankSurrogateAlbumImage;
 + (id)_squareImageFromAlbumImage:(id)arg1;

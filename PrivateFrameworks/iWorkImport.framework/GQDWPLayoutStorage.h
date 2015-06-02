@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDWPLayoutStorage : GQDWPStorage {
-}
+@interface GQDWPLayoutStorage : GQDWPStorage
 
 - (struct __CFArray { }*)body;
 

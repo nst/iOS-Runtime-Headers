@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPPlayableContentDataSource>, <MPPlayableContentDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>, NSOperationQueue;
-
 @interface MPPlayableContentManager : NSObject {
     NSOperationQueue *_artworkUpdateQueue;
     BOOL _coalescingUpdates;
@@ -14,15 +12,15 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property <MPPlayableContentDataSource> * dataSource;
-@property <MPPlayableContentDelegate> * delegate;
+@property (nonatomic) <MPPlayableContentDataSource> *dataSource;
+@property (nonatomic) <MPPlayableContentDelegate> *delegate;
 
 + (id)sharedContentManager;
 
 - (void).cxx_destruct;
 - (void)_contentItemChangedNotification:(id)arg1;
 - (BOOL)_contentItemWasSentToMediaRemote:(id)arg1;
-- (void)_enqueueArtworkUpdate:(id)arg1 forContentItem:(id)arg2 withCompletion:(id)arg3;
+- (void)_enqueueArtworkUpdate:(id)arg1 forContentItem:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_handleBeginLoadingCompletedAtIndexPath:(id)arg1 withError:(id)arg2;
 - (void)_handlePlaybackInitializationCompletedWithContext:(id)arg1 error:(id)arg2;
 - (id)_init;

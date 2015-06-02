@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class NSData;
-
 @interface IDSSocketPairOTREncryptedMessage : IDSSocketPairMessage {
     NSData *_data;
     BOOL _encrypted;
@@ -15,13 +13,13 @@
     unsigned char _versionNumber;
 }
 
-@property(retain,readonly) NSData * data;
-@property(readonly) BOOL encrypted;
-@property(readonly) BOOL fileXfer;
-@property(readonly) unsigned short priority;
-@property(readonly) unsigned int sequenceNumber;
-@property(readonly) unsigned short streamID;
-@property(readonly) unsigned char versionNumber;
+@property (nonatomic, readonly, retain) NSData *data;
+@property (nonatomic, readonly) BOOL encrypted;
+@property (nonatomic, readonly) BOOL fileXfer;
+@property (nonatomic, readonly) unsigned short priority;
+@property (nonatomic, readonly) unsigned int sequenceNumber;
+@property (nonatomic, readonly) unsigned short streamID;
+@property (nonatomic, readonly) unsigned char versionNumber;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIView;
-
 @interface CKTranscriptManagementView : UIView {
     UIView *_attachmentsCollectionView;
     float _bottomPadding;
@@ -14,13 +12,13 @@
     BOOL _suppressMapMovement;
 }
 
-@property(retain) UIView * attachmentsCollectionView;
-@property float bottomPadding;
-@property(retain) UIView * mapView;
-@property(retain) UIView * nameField;
-@property float navigationBarTopInset;
-@property float scrollYOffset;
-@property BOOL suppressMapMovement;
+@property (nonatomic, retain) UIView *attachmentsCollectionView;
+@property (nonatomic) float bottomPadding;
+@property (nonatomic, retain) UIView *mapView;
+@property (nonatomic, retain) UIView *nameField;
+@property (nonatomic) float navigationBarTopInset;
+@property (nonatomic) float scrollYOffset;
+@property (nonatomic) BOOL suppressMapMovement;
 
 - (id)attachmentsCollectionView;
 - (float)bottomPadding;

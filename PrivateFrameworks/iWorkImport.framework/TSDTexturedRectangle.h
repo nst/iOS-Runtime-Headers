@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CALayer, NSMutableArray, NSMutableDictionary, NSString, TSDBitmapRenderingQualityInfo, TSDTextureSet, TSUColor;
-
 @interface TSDTexturedRectangle : NSObject <NSCopying> {
     BOOL _isVerticalText;
     struct CGSize { 
@@ -58,11 +52,7 @@
         float y; 
     } mOriginalPosition;
     TSDTextureSet *mParent;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mRenderBlock;
-
+    id /* block */ mRenderBlock;
     BOOL mSingleTextureContainsMipmaps;
     unsigned int mSingleTextureName;
     struct CGSize { 
@@ -75,35 +65,35 @@
     int mTextureType;
 }
 
-@property(retain) TSDBitmapRenderingQualityInfo * bitmapRenderingQualityInfo;
-@property struct CGColorSpace { }* colorSpace;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frameOnCanvas;
-@property(readonly) struct CGImage { }* image;
-@property(readonly) BOOL isBackgroundTexture;
-@property BOOL isFlattened;
-@property(readonly) BOOL isImageSource;
-@property(readonly) BOOL isRenderable;
-@property BOOL isVerticalText;
-@property(readonly) CALayer * layer;
-@property struct CGPoint { float x1; float x2; } offset;
-@property struct CGPoint { float x1; float x2; } originalPosition;
-@property TSDTextureSet * parent;
-@property(readonly) CALayer * parentLayer;
-@property(readonly) unsigned int singleTextureName;
-@property(readonly) float singleTextureOpacity;
-@property(readonly) struct CGSize { float x1; float x2; } singleTextureSize;
-@property(readonly) unsigned int singleTextureTarget;
-@property struct CGSize { float x1; float x2; } size;
-@property(retain) NSMutableArray * tags;
-@property(copy) NSString * text;
-@property float textBaseline;
-@property(retain) TSUColor * textColor;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
-@property float textXHeight;
-@property float textureOpacity;
-@property int textureType;
+@property (nonatomic, retain) TSDBitmapRenderingQualityInfo *bitmapRenderingQualityInfo;
+@property (nonatomic) struct CGColorSpace { }*colorSpace;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frameOnCanvas;
+@property (nonatomic, readonly) struct CGImage { }*image;
+@property (nonatomic, readonly) BOOL isBackgroundTexture;
+@property (nonatomic) BOOL isFlattened;
+@property (nonatomic, readonly) BOOL isImageSource;
+@property (nonatomic, readonly) BOOL isRenderable;
+@property (nonatomic) BOOL isVerticalText;
+@property (nonatomic, readonly) CALayer *layer;
+@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } originalPosition;
+@property (nonatomic) TSDTextureSet *parent;
+@property (nonatomic, readonly) CALayer *parentLayer;
+@property (nonatomic, readonly) unsigned int singleTextureName;
+@property (nonatomic, readonly) float singleTextureOpacity;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } singleTextureSize;
+@property (nonatomic, readonly) unsigned int singleTextureTarget;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) float textBaseline;
+@property (nonatomic, retain) TSUColor *textColor;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
+@property (nonatomic) float textXHeight;
+@property (nonatomic) float textureOpacity;
+@property (nonatomic) int textureType;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForTextures:(id)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectOnCanvasForTextures:(id)arg1;
@@ -122,7 +112,7 @@
 - (struct CGImage { }*)image;
 - (id)initWithCGImage:(struct CGImage { }*)arg1;
 - (id)initWithLayer:(id)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 offset:(struct CGPoint { float x1; float x2; })arg2 renderBlock:(id)arg3;
+- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 offset:(struct CGPoint { float x1; float x2; })arg2 renderBlock:(id /* block */)arg3;
 - (id)initWithTextureInfo:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)isBackgroundTexture;
 - (BOOL)isFlattened;

@@ -11,9 +11,9 @@
     float _verticalPriority;
 }
 
-@property(readonly) float horizontalPriority;
-@property(readonly) struct CGSize { float x1; float x2; } targetSize;
-@property(readonly) float verticalPriority;
+@property (nonatomic, readonly) float horizontalPriority;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic, readonly) float verticalPriority;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;

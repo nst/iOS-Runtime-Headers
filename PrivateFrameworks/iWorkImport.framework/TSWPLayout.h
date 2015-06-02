@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <TSWPFootnoteHeightMeasurer>, <TSWPFootnoteMarkProvider>, <TSWPOffscreenColumn>, NSMutableArray, NSString, TSDCanvas, TSDLayout, TSPObject<TSDHint>, TSUBezierPath, TSWPLayoutManager, TSWPStorage;
-
 @interface TSWPLayout : TSDLayout <TSWPLayoutOwner, TSWPLayoutTarget> {
     NSMutableArray *_columns;
     TSWPLayoutManager *_layoutManager;
@@ -15,45 +9,45 @@
     BOOL _textLayoutValid;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } anchorPoint;
-@property(retain) NSMutableArray * anchoredDrawablesForRelayout;
-@property(readonly) unsigned int autosizeFlags;
-@property(readonly) TSDCanvas * canvas;
-@property(retain,readonly) NSMutableArray * columns;
-@property(readonly) struct CGSize { float x1; float x2; } currentSize;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <TSWPFootnoteHeightMeasurer> * footnoteHeightMeasurer;
-@property(readonly) <TSWPFootnoteMarkProvider> * footnoteMarkProvider;
-@property(readonly) unsigned int hash;
-@property(readonly) struct __CFLocale { }* hyphenationLocale;
-@property(readonly) TSUBezierPath * interiorClippingPath;
-@property(readonly) BOOL isInstructional;
-@property(readonly) BOOL layoutIsValid;
-@property(readonly) TSWPLayoutManager * layoutManager;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } maskRect;
-@property(readonly) float maxAnchorY;
-@property(readonly) struct CGSize { float x1; float x2; } maxSize;
-@property(readonly) struct CGSize { float x1; float x2; } minSize;
-@property(readonly) int naturalAlignment;
-@property(readonly) int naturalDirection;
-@property(readonly) TSPObject<TSDHint> * nextTargetFirstChildHint;
-@property(retain,readonly) <TSWPOffscreenColumn> * nextTargetFirstColumn;
-@property(readonly) const struct * nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) unsigned int pageCount;
-@property(readonly) unsigned int pageNumber;
-@property(readonly) TSDLayout * parentLayoutForInlineAttachments;
-@property(readonly) struct CGPoint { float x1; float x2; } position;
-@property(retain,readonly) <TSWPOffscreenColumn> * previousTargetLastColumn;
-@property(readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct * previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
-@property(readonly) BOOL shouldHyphenate;
-@property(readonly) BOOL shouldWrapAroundExternalDrawables;
-@property(readonly) TSWPStorage * storage;
-@property(readonly) Class superclass;
-@property(readonly) BOOL textIsVertical;
-@property(readonly) BOOL textLayoutValid;
-@property(readonly) int verticalAlignment;
-@property(readonly) BOOL wantsLineFragments;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, retain) NSMutableArray *anchoredDrawablesForRelayout;
+@property (nonatomic, readonly) unsigned int autosizeFlags;
+@property (nonatomic, readonly) TSDCanvas *canvas;
+@property (nonatomic, readonly, retain) NSMutableArray *columns;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } currentSize;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <TSWPFootnoteHeightMeasurer> *footnoteHeightMeasurer;
+@property (nonatomic, readonly) <TSWPFootnoteMarkProvider> *footnoteMarkProvider;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct __CFLocale { }*hyphenationLocale;
+@property (nonatomic, readonly) TSUBezierPath *interiorClippingPath;
+@property (nonatomic, readonly) BOOL isInstructional;
+@property (nonatomic, readonly) BOOL layoutIsValid;
+@property (nonatomic, readonly) TSWPLayoutManager *layoutManager;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } maskRect;
+@property (nonatomic, readonly) float maxAnchorY;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } minSize;
+@property (nonatomic, readonly) int naturalAlignment;
+@property (nonatomic, readonly) int naturalDirection;
+@property (nonatomic, readonly) TSPObject<TSDHint> *nextTargetFirstChildHint;
+@property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *nextTargetFirstColumn;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (nonatomic, readonly) unsigned int pageNumber;
+@property (nonatomic, readonly) TSDLayout *parentLayoutForInlineAttachments;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *previousTargetLastColumn;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, readonly) BOOL shouldHyphenate;
+@property (nonatomic, readonly) BOOL shouldWrapAroundExternalDrawables;
+@property (nonatomic, readonly) TSWPStorage *storage;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL textIsVertical;
+@property (nonatomic, readonly) BOOL textLayoutValid;
+@property (nonatomic, readonly) int verticalAlignment;
+@property (nonatomic, readonly) BOOL wantsLineFragments;
 
 - (void)addAttachmentLayout:(id)arg1;
 - (id)additionalReliedOnLayoutsForTextWrap;

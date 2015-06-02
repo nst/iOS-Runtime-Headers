@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class UIColor;
-
 @interface RCAudioRouteBarButton : UIButton {
     BOOL _needsUpdateDisplay;
     UIColor *_routeToHandsetOrHeadphoneColor;
     UIColor *_routeToSpeakerOrWirelessColor;
 }
 
-@property(retain) UIColor * routeToHandsetOrHeadphoneColor;
-@property(retain) UIColor * routeToSpeakerOrWirelessColor;
+@property (nonatomic, retain) UIColor *routeToHandsetOrHeadphoneColor;
+@property (nonatomic, retain) UIColor *routeToSpeakerOrWirelessColor;
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

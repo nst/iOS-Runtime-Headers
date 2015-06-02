@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKWorkoutType : HKSampleType {
-}
+@interface HKWorkoutType : HKSampleType
 
 @end

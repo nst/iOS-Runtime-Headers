@@ -2,45 +2,35 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MCJobQueueObserver>, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
-
 @interface MCJobQueue : NSObject {
     NSObject<OS_dispatch_queue> *_executionQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _executionQueueAbortCompletionBlock;
-
+    id /* block */ _executionQueueAbortCompletionBlock;
     NSObject<OS_dispatch_group> *_jobGroup;
     NSObject<OS_dispatch_queue> *_jobQueue;
     <MCJobQueueObserver> *_observer;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * executionQueue;
-@property(copy) id executionQueueAbortCompletionBlock;
-@property(retain) NSObject<OS_dispatch_group> * jobGroup;
-@property(retain) NSObject<OS_dispatch_queue> * jobQueue;
-@property <MCJobQueueObserver> * observer;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *executionQueue;
+@property (nonatomic, copy) id /* block */ executionQueueAbortCompletionBlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *jobGroup;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *jobQueue;
+@property (nonatomic) <MCJobQueueObserver> *observer;
 
 - (void).cxx_destruct;
-- (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
-- (void)enqueueJob:(id)arg1;
+- (void)abortEnqueuedJobsCompletionBlock:(id /* block */)arg1;
+- (void)enqueueJob:(id /* block */)arg1;
 - (id)executionQueue;
-- (id)executionQueueAbortCompletionBlock;
+- (id /* block */)executionQueueAbortCompletionBlock;
 - (id)init;
 - (void)jobDidFinish;
 - (id)jobGroup;
 - (id)jobQueue;
 - (id)observer;
 - (void)setExecutionQueue:(id)arg1;
-- (void)setExecutionQueueAbortCompletionBlock:(id)arg1;
+- (void)setExecutionQueueAbortCompletionBlock:(id /* block */)arg1;
 - (void)setJobGroup:(id)arg1;
 - (void)setJobQueue:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
+- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id /* block */)arg1;
 
 @end

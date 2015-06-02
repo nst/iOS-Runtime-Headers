@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLEntity, NSSQLLimitIntermediate, NSSQLOrderIntermediate, NSSQLWhereIntermediate, NSString;
-
 @interface NSSQLStatementIntermediate : NSSQLIntermediate {
     NSString *_correlationToken;
     NSString *_governingAlias;

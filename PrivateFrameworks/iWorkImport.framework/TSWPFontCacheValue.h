@@ -6,7 +6,7 @@
     struct __CTFont { } *_ctFont;
 }
 
-@property(readonly) struct __CTFont { }* ctFont;
+@property (nonatomic, readonly) struct __CTFont { }*ctFont;
 
 + (id)cacheValueWithCTFont:(struct __CTFont { }*)arg1;
 

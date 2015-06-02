@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class SBKTransaction;
-
 @interface SBKRequestData : NSObject {
     SBKTransaction *_transaction;
 }
 
-@property(retain) SBKTransaction * transaction;
+@property (retain) SBKTransaction *transaction;
 
 + (id)propertyListBodyWithTransaction:(id)arg1;
 

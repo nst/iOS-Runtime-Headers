@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class _NSUndoObject;
-
 @interface _NSUndoObject : NSObject {
     id _target;
     _NSUndoObject *next;

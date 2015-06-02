@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAABPersonSnippet : SAUISnippet
 
-@interface SAABPersonSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * displayProperties;
-@property(copy) NSArray * persons;
+@property (nonatomic, copy) NSArray *displayProperties;
+@property (nonatomic, copy) NSArray *persons;
 
 + (id)personSnippet;
 + (id)personSnippetWithDictionary:(id)arg1 context:(id)arg2;

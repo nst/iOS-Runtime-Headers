@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUTextDrawingCache, NSString, UIFont;
-
 @interface RURadioStationsCollectionViewTemplateTextElement : NSObject {
     float _defaultFirstBaselineOffset;
     int _defaultNumberOfLines;
@@ -18,16 +16,16 @@
     BOOL _wantsEmphasizedStationName;
 }
 
-@property(readonly) float defaultFirstBaselineOffset;
-@property(readonly) int defaultNumberOfLines;
-@property(readonly) NSString * fontTextStyle;
-@property(readonly) MPUTextDrawingCache * nowPlayingTextDrawingCache;
-@property(readonly) int numberOfLines;
-@property(readonly) float scaledFirstBaselineOffset;
-@property(readonly) UIFont * tallestFont;
-@property(readonly) MPUTextDrawingCache * textDrawingCache;
-@property(readonly) BOOL wantsAdditionalLineForExtraLargeContentSizes;
-@property(readonly) BOOL wantsEmphasizedStationName;
+@property (nonatomic, readonly) float defaultFirstBaselineOffset;
+@property (nonatomic, readonly) int defaultNumberOfLines;
+@property (nonatomic, readonly) NSString *fontTextStyle;
+@property (nonatomic, readonly) MPUTextDrawingCache *nowPlayingTextDrawingCache;
+@property (nonatomic, readonly) int numberOfLines;
+@property (nonatomic, readonly) float scaledFirstBaselineOffset;
+@property (nonatomic, readonly) UIFont *tallestFont;
+@property (nonatomic, readonly) MPUTextDrawingCache *textDrawingCache;
+@property (nonatomic, readonly) BOOL wantsAdditionalLineForExtraLargeContentSizes;
+@property (nonatomic, readonly) BOOL wantsEmphasizedStationName;
 
 - (void).cxx_destruct;
 - (id)_fontWithEmphasis:(BOOL)arg1;

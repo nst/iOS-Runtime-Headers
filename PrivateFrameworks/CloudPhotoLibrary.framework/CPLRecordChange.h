@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSData, NSDate, NSString;
-
 @interface CPLRecordChange : NSObject <NSCopying, NSSecureCoding> {
     unsigned int _alterationTypeFlags;
     unsigned int _changeType;
@@ -18,14 +16,14 @@
     BOOL _shouldFilterDefaultValuesForNewProperties;
 }
 
-@property unsigned int changeType;
-@property(copy) NSDate * dateDeleted;
-@property(copy) NSString * identifier;
-@property BOOL inExpunged;
-@property BOOL inTrash;
-@property(copy) NSString * realIdentifier;
-@property(copy) NSData * recordChangeData;
-@property(copy) NSDate * recordModificationDate;
+@property (nonatomic) unsigned int changeType;
+@property (nonatomic, copy) NSDate *dateDeleted;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) BOOL inExpunged;
+@property (nonatomic) BOOL inTrash;
+@property (nonatomic, copy) NSString *realIdentifier;
+@property (nonatomic, copy) NSData *recordChangeData;
+@property (nonatomic, copy) NSDate *recordModificationDate;
 
 + (id)_descriptionForChangeType:(unsigned int)arg1 isSparseFullChange:(BOOL)arg2;
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
@@ -46,7 +44,7 @@
 - (BOOL)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned int)arg3 updatedProperty:(id*)arg4;
 - (void)awakeFromStorage;
 - (unsigned int)changeType;
-- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
+- (id /* block */)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 usingClientCache:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cplFullDescription;

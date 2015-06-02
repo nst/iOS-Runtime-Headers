@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPassLibraryDataProvider>, <PKPaymentSetupDelegate>, NSArray, NSString, PKPaymentWebService;
-
 @interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate> {
     int _context;
     NSArray *_eligibleCardsOnFile;
@@ -13,25 +11,25 @@
     PKPaymentWebService *_webService;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * prefetchedCredentials;
-@property <PKPaymentSetupDelegate> * setupDelegate;
-@property(readonly) Class superclass;
-@property(readonly) PKPaymentWebService * webService;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *prefetchedCredentials;
+@property (nonatomic) <PKPaymentSetupDelegate> *setupDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) PKPaymentWebService *webService;
 
 + (id)viewControllerForPresentingPaymentError:(id)arg1;
 
 - (void)cancel:(id)arg1;
 - (void)dealloc;
-- (void)handleDownloadedPasses:(id)arg1 fromViewController:(id)arg2 withCompletion:(id)arg3;
+- (void)handleDownloadedPasses:(id)arg1 fromViewController:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)handlePassAlreadyProvisionedError;
 - (void)handleProvisioningError:(id)arg1 forApplicationIdentifier:(id)arg2;
 - (id)initWithPaymentWebService:(id)arg1 context:(int)arg2 libraryDataProvider:(id)arg3;
 - (id)prefetchedCredentials;
-- (void)preflightWithCompletion:(id)arg1;
-- (void)preflightWithRequirements:(int)arg1 completion:(id)arg2;
+- (void)preflightWithCompletion:(id /* block */)arg1;
+- (void)preflightWithRequirements:(int)arg1 completion:(id /* block */)arg2;
 - (void)setPrefetchedCredentials:(id)arg1;
 - (void)setSetupDelegate:(id)arg1;
 - (id)setupDelegate;

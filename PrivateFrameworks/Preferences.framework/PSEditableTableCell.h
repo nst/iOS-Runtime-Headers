@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSListController, UIColor;
-
 @interface PSEditableTableCell : PSTableCell <UITextFieldDelegate, UITextViewDelegate> {
     PSListController *_controllerDelegate;
     BOOL _delaySpecifierRelease;
@@ -16,12 +14,12 @@
     BOOL _valueChanged;
 }
 
-@property PSListController * controllerDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL returnKeyTapped;
-@property(readonly) Class superclass;
+@property (nonatomic) PSListController *controllerDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL returnKeyTapped;
+@property (readonly) Class superclass;
 
 + (int)cellStyle;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <GLKViewControllerDelegate>, CADisplayLink, GLKDisplayLinkMessenger, NSString, UIScreen;
-
 @interface GLKViewController : UIViewController <GLKViewDelegate, NSCoding> {
     <GLKViewControllerDelegate> *_delegate;
     CADisplayLink *_displayLink;
@@ -34,41 +27,41 @@
     double _timeSinceLastResumeStartTime;
     double _timeSinceLastUpdate;
     double _timeSinceLastUpdatePreviousTime;
-    int (*_updateIMP)();
+    int (*_updateIMP;
     BOOL _viewIsVisible;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <GLKViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) CADisplayLink * displayLink;
-@property(retain) GLKDisplayLinkMessenger * displayLinkMessenger;
-@property BOOL displayLinkPaused;
-@property BOOL firstResumeOccurred;
-@property int frameInterval;
-@property(readonly) int framesDisplayed;
-@property(readonly) int framesPerSecond;
-@property(readonly) unsigned int hash;
-@property BOOL lastDrawOccurred;
-@property BOOL lastResumeOccurred;
-@property BOOL lastUpdateOccurred;
-@property BOOL pauseOnWillResignActive;
-@property(getter=isPaused) BOOL paused;
-@property int preferredFramesPerSecond;
-@property BOOL resumeOnDidBecomeActive;
-@property(retain) UIScreen * screen;
-@property int screenFramesPerSecond;
-@property(readonly) Class superclass;
-@property(readonly) double timeSinceFirstResume;
-@property double timeSinceFirstResumeStartTime;
-@property(readonly) double timeSinceLastDraw;
-@property double timeSinceLastDrawPreviousTime;
-@property(readonly) double timeSinceLastResume;
-@property double timeSinceLastResumeStartTime;
-@property(readonly) double timeSinceLastUpdate;
-@property double timeSinceLastUpdatePreviousTime;
-@property int (* updateIMP;
-@property BOOL viewIsVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GLKViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic, retain) GLKDisplayLinkMessenger *displayLinkMessenger;
+@property (nonatomic) BOOL displayLinkPaused;
+@property (nonatomic) BOOL firstResumeOccurred;
+@property (nonatomic) int frameInterval;
+@property (nonatomic, readonly) int framesDisplayed;
+@property (nonatomic, readonly) int framesPerSecond;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL lastDrawOccurred;
+@property (nonatomic) BOOL lastResumeOccurred;
+@property (nonatomic) BOOL lastUpdateOccurred;
+@property (nonatomic) BOOL pauseOnWillResignActive;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic) int preferredFramesPerSecond;
+@property (nonatomic) BOOL resumeOnDidBecomeActive;
+@property (nonatomic, retain) UIScreen *screen;
+@property (nonatomic) int screenFramesPerSecond;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double timeSinceFirstResume;
+@property (nonatomic) double timeSinceFirstResumeStartTime;
+@property (nonatomic, readonly) double timeSinceLastDraw;
+@property (nonatomic) double timeSinceLastDrawPreviousTime;
+@property (nonatomic, readonly) double timeSinceLastResume;
+@property (nonatomic) double timeSinceLastResumeStartTime;
+@property (nonatomic, readonly) double timeSinceLastUpdate;
+@property (nonatomic) double timeSinceLastUpdatePreviousTime;
+@property (nonatomic) int (*updateIMP;
+@property (nonatomic) BOOL viewIsVisible;
 
 - (int)_calculateScreenFramesPerSecond:(id)arg1;
 - (void)_configureNotifications;
@@ -121,7 +114,7 @@
 - (void)setTimeSinceLastDrawPreviousTime:(double)arg1;
 - (void)setTimeSinceLastResumeStartTime:(double)arg1;
 - (void)setTimeSinceLastUpdatePreviousTime:(double)arg1;
-- (void)setUpdateIMP:(int (*)())arg1;
+- (void)setUpdateIMP:(int (*)arg1;
 - (void)setView:(id)arg1;
 - (void)setViewIsVisible:(BOOL)arg1;
 - (double)timeSinceFirstResume;
@@ -132,7 +125,7 @@
 - (double)timeSinceLastResumeStartTime;
 - (double)timeSinceLastUpdate;
 - (double)timeSinceLastUpdatePreviousTime;
-- (int (*)())updateIMP;
+- (int (*)updateIMP;
 - (void)viewDidLoad;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewDidUnload;

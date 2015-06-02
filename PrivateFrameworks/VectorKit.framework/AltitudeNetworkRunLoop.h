@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface AltitudeNetworkRunLoop : NSObject {
-}
+@interface AltitudeNetworkRunLoop : NSObject
 
-+ (void)AltitudeNetworkRun:(id)arg1;
++ (void)AltitudeNetworkRun:(id /* block */)arg1;
 + (void)_runNetworkThread:(id)arg1;
 
 @end

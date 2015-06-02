@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView<SUCellConfigurationView>;
-
 @interface SUCellConfiguration : NSObject {
     id _context;
-    unsigned int _isDeleteConfirmationVisible : 1;
+    unsigned int _isDeleteConfirmationVisible;
     struct CGSize { 
         float width; 
         float height; 
     } _layoutSize;
-    unsigned int _needsDisplay : 1;
+    unsigned int _needsDisplay;
     id _representedObject;
     UIView<SUCellConfigurationView> *_view;
 }
 
-@property(retain) id context;
-@property BOOL isDeleteConfirmationVisible;
-@property struct CGSize { float x1; float x2; } layoutSize;
-@property BOOL needsDisplay;
-@property(readonly) unsigned int numberOfImages;
-@property(readonly) unsigned int numberOfLabels;
-@property(retain) id representedObject;
-@property UIView<SUCellConfigurationView> * view;
+@property (nonatomic, retain) id context;
+@property (nonatomic) BOOL isDeleteConfirmationVisible;
+@property (nonatomic) struct CGSize { float x1; float x2; } layoutSize;
+@property (nonatomic) BOOL needsDisplay;
+@property (nonatomic, readonly) unsigned int numberOfImages;
+@property (nonatomic, readonly) unsigned int numberOfLabels;
+@property (nonatomic, retain) id representedObject;
+@property (nonatomic) UIView<SUCellConfigurationView> *view;
 
 + (id)copyDefaultContext;
 + (float)minimumRowHeight;

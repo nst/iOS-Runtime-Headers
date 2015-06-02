@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MKSmallCalloutViewController, NSString, UIPopoverController, UIView, _MKPopoverEmbeddingView;
-
 @interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <MKSmallCalloutViewControllerDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate, _MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _afterMoveToWindowBlock;
-
+    id /* block */ _afterMoveToWindowBlock;
     BOOL _allowsPopoverWhenNotInWindow;
     BOOL _animatingIn;
     MKSmallCalloutViewController *_calloutViewController;
@@ -25,12 +15,12 @@
     UIPopoverController *_popoverController;
 }
 
-@property BOOL allowsPopoverWhenNotInWindow;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIPopoverController * popoverController;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowsPopoverWhenNotInWindow;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIPopoverController *popoverController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface OAXTableStyleCache : NSObject {
     NSMutableDictionary *mCache;
     NSString *mDefaultStyleId;

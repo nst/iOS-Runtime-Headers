@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVFlashlightInternal_FigRecorder;
-
 @interface AVFlashlight_FigRecorder : NSObject {
     AVFlashlightInternal_FigRecorder *_internal;
 }
 
-@property(getter=isAvailable,readonly) BOOL available;
-@property(readonly) float flashlightLevel;
-@property(getter=isOverheated,readonly) BOOL overheated;
+@property (getter=isAvailable, nonatomic, readonly) BOOL available;
+@property (nonatomic, readonly) float flashlightLevel;
+@property (getter=isOverheated, nonatomic, readonly) BOOL overheated;
 
 + (BOOL)hasFlashlight;
 + (void)initialize;

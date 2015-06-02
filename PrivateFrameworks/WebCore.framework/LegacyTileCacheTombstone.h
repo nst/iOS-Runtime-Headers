@@ -6,7 +6,7 @@
     BOOL dead;
 }
 
-@property(getter=isDead) BOOL dead;
+@property (getter=isDead) BOOL dead;
 
 - (BOOL)isDead;
 - (void)setDead:(BOOL)arg1;

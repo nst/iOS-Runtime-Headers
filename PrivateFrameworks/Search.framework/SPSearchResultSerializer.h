@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSMutableArray;
-
 @interface SPSearchResultSerializer : NSObject {
     unsigned int _byteVector;
     unsigned int _byteVectorCapacity;
@@ -22,7 +20,7 @@
     NSMutableArray *_sections;
 }
 
-@property(readonly) BOOL completed;
+@property (nonatomic, readonly) BOOL completed;
 
 - (unsigned int)_allocateSize:(unsigned int)arg1;
 - (id)_convertConformingResult:(id)arg1;

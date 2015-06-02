@@ -6,7 +6,7 @@
     BOOL _shouldDownloadEarliestPhotosFirst;
 }
 
-@property BOOL shouldDownloadEarliestPhotosFirst;
+@property (nonatomic) BOOL shouldDownloadEarliestPhotosFirst;
 
 - (id)_commandWithMinimumIdentifier:(id)arg1 outParams:(id*)arg2 outCommandIdentifier:(long long*)arg3 outPersonID:(id*)arg4 outAlbumGUID:(id*)arg5 outAssetCollectionGUID:(id*)arg6;
 - (void)addPendingAssetCollectionGUID:(id)arg1 albumGUID:(id)arg2;
@@ -49,7 +49,7 @@
 - (id)nextItemsForUploadAlbumGUID:(id)arg1 maxPriority:(int)arg2 maxCount:(int)arg3;
 - (id)nextItemsForUploadMaxCount:(int)arg1;
 - (long long)nextMMCSItemID;
-- (void)purgeCompletionBlock:(id)arg1;
+- (void)purgeCompletionBlock:(id /* block */)arg1;
 - (void)removeAssetCollectionsFromUploadQueue:(id)arg1;
 - (void)removeAssetsFromDownloadQueue:(id)arg1;
 - (void)removeCommandIdentifier:(long long)arg1;

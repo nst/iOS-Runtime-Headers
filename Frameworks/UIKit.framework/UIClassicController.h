@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBarViewController, UIView, UIWindow, UIZoomViewController;
-
 @interface UIClassicController : NSObject {
     UIView *_chromeView;
     BOOL _hidesClassicChrome;

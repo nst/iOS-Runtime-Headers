@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class MPUStackView, NSString, UIView;
-
 @interface SKUIStackedImageView : SKUIImageView <MPUStackViewDataSource> {
     int _stackDepth;
     MPUStackView *_stackView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UIView * perspectiveTargetView;
-@property(readonly) Class superclass;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIView *perspectiveTargetView;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGPoint { float x1; float x2; } vanishingPoint;
 
 + (struct SKUIStackedImageConfiguration { struct UIOffset { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; int x3; })_configurationForSize:(struct CGSize { float x1; float x2; })arg1;
 + (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
@@ -24,7 +22,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (int)numberOfItemsInStackView:(id)arg1;
-- (void)performCompressionAnimationWithCompletionHandler:(id)arg1;
+- (void)performCompressionAnimationWithCompletionHandler:(id /* block */)arg1;
 - (id)perspectiveTargetView;
 - (void)setImage:(id)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;

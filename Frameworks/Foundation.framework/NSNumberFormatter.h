@@ -2,115 +2,79 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary, NSLocale, NSMutableDictionary, NSNumber, NSRecursiveLock, NSString;
-
 @interface NSNumberFormatter : NSFormatter {
     NSMutableDictionary *_attributes;
     unsigned int _behavior;
     unsigned int _counter;
     struct __CFNumberFormatter { } *_formatter;
     NSRecursiveLock *_lock;
-    void *_reserved[9];
+    void *_reserved;
     unsigned long _stateBitMask;
 }
 
 @property BOOL allowsFloats;
 @property BOOL alwaysShowsDecimalSeparator;
-@property(copy) NSString * currencyCode;
-@property(copy) NSString * currencyDecimalSeparator;
-@property(copy) NSString * currencyGroupingSeparator;
-@property(copy) NSString * currencySymbol;
-@property(copy) NSString * decimalSeparator;
-@property(copy) NSString * exponentSymbol;
+@property (copy) NSString *currencyCode;
+@property (copy) NSString *currencyDecimalSeparator;
+@property (copy) NSString *currencyGroupingSeparator;
+@property (copy) NSString *currencySymbol;
+@property (copy) NSString *decimalSeparator;
+@property (copy) NSString *exponentSymbol;
 @property unsigned int formatWidth;
 @property unsigned int formatterBehavior;
 @property int formattingContext;
 @property BOOL generatesDecimalNumbers;
-@property(copy) NSString * groupingSeparator;
+@property (copy) NSString *groupingSeparator;
 @property unsigned int groupingSize;
-@property(copy) NSString * internationalCurrencySymbol;
-@property(getter=isLenient) BOOL lenient;
-@property(copy) NSLocale * locale;
-@property(copy) NSNumber * maximum;
+@property (copy) NSString *internationalCurrencySymbol;
+@property (getter=isLenient) BOOL lenient;
+@property (copy) NSLocale *locale;
+@property (copy) NSNumber *maximum;
 @property unsigned int maximumFractionDigits;
 @property unsigned int maximumIntegerDigits;
 @property unsigned int maximumSignificantDigits;
-@property(copy) NSNumber * minimum;
+@property (copy) NSNumber *minimum;
 @property unsigned int minimumFractionDigits;
 @property unsigned int minimumIntegerDigits;
 @property unsigned int minimumSignificantDigits;
-@property(copy) NSString * minusSign;
-@property(copy) NSNumber * multiplier;
-@property(copy) NSString * negativeFormat;
-@property(copy) NSString * negativeInfinitySymbol;
-@property(copy) NSString * negativePrefix;
-@property(copy) NSString * negativeSuffix;
-@property(copy) NSString * nilSymbol;
-@property(copy) NSString * notANumberSymbol;
+@property (copy) NSString *minusSign;
+@property (copy) NSNumber *multiplier;
+@property (copy) NSString *negativeFormat;
+@property (copy) NSString *negativeInfinitySymbol;
+@property (copy) NSString *negativePrefix;
+@property (copy) NSString *negativeSuffix;
+@property (copy) NSString *nilSymbol;
+@property (copy) NSString *notANumberSymbol;
 @property unsigned int numberStyle;
-@property(copy) NSString * paddingCharacter;
+@property (copy) NSString *paddingCharacter;
 @property unsigned int paddingPosition;
-@property(getter=isPartialStringValidationEnabled) BOOL partialStringValidationEnabled;
-@property(copy) NSString * perMillSymbol;
-@property(copy) NSString * percentSymbol;
-@property(copy) NSString * plusSign;
-@property(copy) NSString * positiveFormat;
-@property(copy) NSString * positiveInfinitySymbol;
-@property(copy) NSString * positivePrefix;
-@property(copy) NSString * positiveSuffix;
-@property(copy) NSNumber * roundingIncrement;
+@property (getter=isPartialStringValidationEnabled) BOOL partialStringValidationEnabled;
+@property (copy) NSString *perMillSymbol;
+@property (copy) NSString *percentSymbol;
+@property (copy) NSString *plusSign;
+@property (copy) NSString *positiveFormat;
+@property (copy) NSString *positiveInfinitySymbol;
+@property (copy) NSString *positivePrefix;
+@property (copy) NSString *positiveSuffix;
+@property (copy) NSNumber *roundingIncrement;
 @property unsigned int roundingMode;
 @property unsigned int secondaryGroupingSize;
-@property(copy) NSDictionary * textAttributesForNegativeInfinity;
-@property(copy) NSDictionary * textAttributesForNegativeValues;
-@property(copy) NSDictionary * textAttributesForNil;
-@property(copy) NSDictionary * textAttributesForNotANumber;
-@property(copy) NSDictionary * textAttributesForPositiveInfinity;
-@property(copy) NSDictionary * textAttributesForPositiveValues;
-@property(copy) NSDictionary * textAttributesForZero;
+@property (copy) NSDictionary *textAttributesForNegativeInfinity;
+@property (copy) NSDictionary *textAttributesForNegativeValues;
+@property (copy) NSDictionary *textAttributesForNil;
+@property (copy) NSDictionary *textAttributesForNotANumber;
+@property (copy) NSDictionary *textAttributesForPositiveInfinity;
+@property (copy) NSDictionary *textAttributesForPositiveValues;
+@property (copy) NSDictionary *textAttributesForZero;
 @property BOOL usesGroupingSeparator;
 @property BOOL usesSignificantDigits;
-@property(copy) NSString * zeroSymbol;
+@property (copy) NSString *zeroSymbol;
 
-+ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 unitStyle:(int)arg2 usedUnit:(int*)arg3;
-+ (id)FU_decimalSeparator;
-+ (double)FU_distanceInDistanceUnit:(int)arg1 forDistanceInMeters:(double)arg2;
-+ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1;
-+ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1;
-+ (int)FU_lengthUnitForCurrentLocale;
-+ (BOOL)FU_localeUsesMetricForPersonHeight;
-+ (id)FU_localizedDisplayStringForDistanceUnit:(int)arg1;
-+ (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1;
-+ (id)FU_localizedSpeedUnit;
-+ (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
-+ (id)FU_localizedStringWithCalories:(double)arg1 unitStyle:(int)arg2;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(int)arg2 unitStyle:(int)arg3 withDecimalPrecision:(int)arg4;
-+ (id)FU_localizedStringWithDistance:(double)arg1 unitStyle:(int)arg2;
-+ (id)FU_percentStringWithNumber:(id)arg1;
-+ (void)FU_setUserDistanceUnit:(int)arg1;
-+ (id)FU_stringForHeight:(long)arg1 withUnitString:(id)arg2;
-+ (id)FU_stringForHeightInInches:(long)arg1;
-+ (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(int)arg2;
-+ (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned int)arg2;
-+ (int)FU_userDistanceUnit;
-+ (id)_FU_doubleFractionNumberFormatter;
-+ (id)_FU_integerNumberFormatter;
-+ (id)_FU_integerPercentNumberFormatter;
-+ (id)_FU_singleFractionNumberFormatter;
-+ (id)_FU_zeroPaddedIntegerNumberFormatter;
-+ (int)_defaultPrecisionForDistanceUnit:(int)arg1;
-+ (id)_formatDoubleValue:(double)arg1 withFormatString:(id)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_longStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_longStyleTitleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_shortStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (unsigned int)defaultFormatterBehavior;
-+ (id)gkRankFormatter;
-+ (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
-+ (id)gk_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
 + (void)initialize;
 + (id)localizedStringFromNumber:(id)arg1 numberStyle:(unsigned int)arg2;
-+ (id)mf_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
-+ (id)mf_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
 + (void)setDefaultFormatterBehavior:(unsigned int)arg1;
 
 - (void*)__Keynote_NOOP;
@@ -255,5 +219,50 @@
 - (BOOL)usesGroupingSeparator;
 - (BOOL)usesSignificantDigits;
 - (id)zeroSymbol;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)mf_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
++ (id)mf_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 unitStyle:(int)arg2 usedUnit:(int*)arg3;
++ (id)FU_decimalSeparator;
++ (double)FU_distanceInDistanceUnit:(int)arg1 forDistanceInMeters:(double)arg2;
++ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1;
++ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1;
++ (int)FU_lengthUnitForCurrentLocale;
++ (BOOL)FU_localeUsesMetricForPersonHeight;
++ (id)FU_localizedDisplayStringForDistanceUnit:(int)arg1;
++ (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1;
++ (id)FU_localizedSpeedUnit;
++ (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
++ (id)FU_localizedStringWithCalories:(double)arg1 unitStyle:(int)arg2;
++ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(int)arg2 unitStyle:(int)arg3 withDecimalPrecision:(int)arg4;
++ (id)FU_localizedStringWithDistance:(double)arg1 unitStyle:(int)arg2;
++ (id)FU_percentStringWithNumber:(id)arg1;
++ (void)FU_setUserDistanceUnit:(int)arg1;
++ (id)FU_stringForHeight:(long)arg1 withUnitString:(id)arg2;
++ (id)FU_stringForHeightInInches:(long)arg1;
++ (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(int)arg2;
++ (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned int)arg2;
++ (int)FU_userDistanceUnit;
++ (id)_FU_doubleFractionNumberFormatter;
++ (id)_FU_integerNumberFormatter;
++ (id)_FU_integerPercentNumberFormatter;
++ (id)_FU_singleFractionNumberFormatter;
++ (id)_FU_zeroPaddedIntegerNumberFormatter;
++ (int)_defaultPrecisionForDistanceUnit:(int)arg1;
++ (id)_formatDoubleValue:(double)arg1 withFormatString:(id)arg2 withDecimalPrecision:(int)arg3;
++ (id)_longStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
++ (id)_longStyleTitleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
++ (id)_shortStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
++ (id)gkRankFormatter;
++ (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
++ (id)gk_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
 
 @end

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface ATUserDefaults : NSObject {
     NSMutableDictionary *_defaults;
 }
 
-@property(retain) NSDictionary * diskUsageInfo;
-@property BOOL hasCompletedDataMigration;
+@property (nonatomic, retain) NSDictionary *diskUsageInfo;
+@property (nonatomic) BOOL hasCompletedDataMigration;
 
 + (id)readOnlyDefaults;
 + (void)synchronize;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBWindowContext;
-
 @interface FBLayerHost : CALayerHost {
     float _rotation;
     float _scale;
@@ -14,10 +12,10 @@
     FBWindowContext *_windowContext;
 }
 
-@property float rotation;
-@property float scale;
-@property struct CGPoint { float x1; float x2; } translation;
-@property(retain,readonly) FBWindowContext * windowContext;
+@property (nonatomic) float rotation;
+@property (nonatomic) float scale;
+@property (nonatomic) struct CGPoint { float x1; float x2; } translation;
+@property (nonatomic, readonly, retain) FBWindowContext *windowContext;
 
 - (void)dealloc;
 - (id)description;

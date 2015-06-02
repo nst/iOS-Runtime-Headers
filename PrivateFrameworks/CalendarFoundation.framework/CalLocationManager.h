@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalLocationManager : NSObject {
-}
+@interface CalLocationManager : NSObject
 
 + (void)_loadMapKit;
-+ (void)currentLocationWithCompletionBlock:(id)arg1;
-+ (void)placemarkForAddress:(id)arg1 withCompletionBlock:(id)arg2;
-+ (void)placemarkForLocation:(id)arg1 withCompletionBlock:(id)arg2;
-+ (void)strictGeocodeString:(id)arg1 withCompletionBlock:(id)arg2;
++ (void)currentLocationWithCompletionBlock:(id /* block */)arg1;
++ (void)placemarkForAddress:(id)arg1 withCompletionBlock:(id /* block */)arg2;
++ (void)placemarkForLocation:(id)arg1 withCompletionBlock:(id /* block */)arg2;
++ (void)strictGeocodeString:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 
 @end

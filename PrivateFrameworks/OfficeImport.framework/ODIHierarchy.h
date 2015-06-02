@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary, ODIState;
-
 @interface ODIHierarchy : NSObject {
     int mMaxMappableTreeDepth;
     NSMutableDictionary *mNodeInfoMap;

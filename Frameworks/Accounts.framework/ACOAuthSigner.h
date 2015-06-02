@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class <ACDOAuthSignerProtocol>, ACAccount, NSXPCConnection;
-
 @interface ACOAuthSigner : NSObject {
     ACAccount *_account;
     NSXPCConnection *_connection;
@@ -11,7 +9,7 @@
     BOOL _shouldIncludeAppIdInRequest;
 }
 
-@property BOOL shouldIncludeAppIdInRequest;
+@property (nonatomic) BOOL shouldIncludeAppIdInRequest;
 
 - (void).cxx_destruct;
 - (void)_connectToRemoteOAuthSignerUsingEndpoint:(id)arg1;

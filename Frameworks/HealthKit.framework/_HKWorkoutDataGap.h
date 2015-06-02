@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSUUID;
-
 @interface _HKWorkoutDataGap : NSObject <NSSecureCoding> {
     NSUUID *_end;
     NSUUID *_start;
 }
 
-@property(retain) NSUUID * end;
-@property(retain) NSUUID * start;
+@property (nonatomic, retain) NSUUID *end;
+@property (nonatomic, retain) NSUUID *start;
 
 + (BOOL)supportsSecureCoding;
 

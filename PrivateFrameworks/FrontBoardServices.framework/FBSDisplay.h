@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class CADisplay, NSString;
-
 @interface FBSDisplay : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     CADisplay *_caDisplay;
     struct CGRect { 
@@ -22,23 +20,24 @@
     unsigned int _type;
 }
 
-@property(retain,readonly) CADisplay * caDisplay;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float orientation;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceBounds;
-@property float scale;
-@property unsigned int seed;
-@property(readonly) Class superclass;
-@property(readonly) int tags;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly, retain) CADisplay *caDisplay;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float orientation;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceBounds;
+@property (nonatomic) float scale;
+@property (nonatomic) unsigned int seed;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int tags;
+@property (nonatomic, readonly) unsigned int type;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (id)_CADisplayForId:(unsigned int)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)_nameForDisplayType;
-- (id)_screen;
 - (unsigned int)_typeFromTags:(unsigned int)arg1;
 - (id)caDisplay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -71,5 +70,9 @@
 - (void)setSeed:(unsigned int)arg1;
 - (int)tags;
 - (unsigned int)type;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
+
+- (id)_screen;
 
 @end

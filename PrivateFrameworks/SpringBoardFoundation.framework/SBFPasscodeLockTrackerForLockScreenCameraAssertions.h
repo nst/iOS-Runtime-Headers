@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFPasscodeLockTrackerForLockScreenCameraAssertions : SBFPasscodeLockAssertionTracker {
-}
+@interface SBFPasscodeLockTrackerForLockScreenCameraAssertions : SBFPasscodeLockAssertionTracker
 
 - (id)mkbAssertionOptions;
 

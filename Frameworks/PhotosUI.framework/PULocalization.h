@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PULocalization : NSObject {
-}
+@interface PULocalization : NSObject
 
 + (id)_emptyMyPhotoStreamMessage;
 + (id)_messageForEmptyPhotoLibraryIsLockScreenCameraRoll:(BOOL)arg1;

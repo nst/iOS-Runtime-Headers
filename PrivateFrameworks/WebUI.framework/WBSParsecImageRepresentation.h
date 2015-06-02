@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString, UIImage;
-
 @interface WBSParsecImageRepresentation : NSObject {
     NSString *_dataString;
     NSString *_identifier;

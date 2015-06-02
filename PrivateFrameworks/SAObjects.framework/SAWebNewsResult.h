@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SAWebNewsResult : SAWebWebResult
 
-@interface SAWebNewsResult : SAWebWebResult {
-}
-
-@property(copy) NSDate * publicationDate;
-@property(copy) NSString * source;
+@property (nonatomic, copy) NSDate *publicationDate;
+@property (nonatomic, copy) NSString *source;
 
 + (id)newsResult;
 + (id)newsResultWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUActivity, SUScriptFunction, WebScriptObject;
-
 @interface SUScriptActivity : SUScriptObject {
     SUScriptFunction *_actionFunction;
 }
 
-@property(retain) WebScriptObject * actionFunction;
-@property(readonly) NSString * activityImageNameGiftAppStore;
-@property(readonly) NSString * activityImageNameGiftMusicStore;
-@property(readonly) NSString * activityImageNamePingAppStore;
-@property(readonly) NSString * activityImageNamePingMusicStore;
-@property(readonly) NSString * activityImageNameWishlistAppStore;
-@property(readonly) NSString * activityImageNameWishlistMusicStore;
-@property(copy) NSString * activityTitle;
-@property(copy) NSString * activityType;
-@property(readonly) SUActivity * nativeActivity;
+@property (retain) WebScriptObject *actionFunction;
+@property (readonly) NSString *activityImageNameGiftAppStore;
+@property (readonly) NSString *activityImageNameGiftMusicStore;
+@property (readonly) NSString *activityImageNamePingAppStore;
+@property (readonly) NSString *activityImageNamePingMusicStore;
+@property (readonly) NSString *activityImageNameWishlistAppStore;
+@property (readonly) NSString *activityImageNameWishlistMusicStore;
+@property (copy) NSString *activityTitle;
+@property (copy) NSString *activityType;
+@property (nonatomic, readonly) SUActivity *nativeActivity;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

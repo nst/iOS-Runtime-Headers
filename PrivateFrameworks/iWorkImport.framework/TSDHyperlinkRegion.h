@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL, TSUBezierPath;
-
 @interface TSDHyperlinkRegion : NSObject {
     TSUBezierPath *mBezierPath;
     NSURL *mURL;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) TSUBezierPath * bezierPath;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) TSUBezierPath *bezierPath;
 
 + (id)hyperlinkRegionWithURL:(id)arg1 bezierPath:(id)arg2;
 

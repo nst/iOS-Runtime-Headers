@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, ABUIPerson, NSArray;
-
 @interface ABAbstractPropertyGroup : NSObject {
     BOOL _hasChanges;
     NSArray *_people;
@@ -11,10 +9,10 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property BOOL hasChanges;
-@property(retain) NSArray * people;
-@property(retain) ABUIPerson * preinsertedPerson;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic) BOOL hasChanges;
+@property (nonatomic, retain) NSArray *people;
+@property (nonatomic, retain) ABUIPerson *preinsertedPerson;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)canSave;
 - (void)dealloc;

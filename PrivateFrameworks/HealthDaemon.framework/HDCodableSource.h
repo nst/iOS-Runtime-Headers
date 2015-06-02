@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
-
 @interface HDCodableSource : PBCodable <NSCopying> {
     NSString *_bundleIdentifier;
     struct { 
@@ -14,14 +12,14 @@
     NSString *_productType;
 }
 
-@property(retain) NSString * bundleIdentifier;
-@property(readonly) BOOL hasBundleIdentifier;
-@property(readonly) BOOL hasName;
-@property BOOL hasOptions;
-@property(readonly) BOOL hasProductType;
-@property(retain) NSString * name;
-@property long long options;
-@property(retain) NSString * productType;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, readonly) BOOL hasBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasOptions;
+@property (nonatomic, readonly) BOOL hasProductType;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long options;
+@property (nonatomic, retain) NSString *productType;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

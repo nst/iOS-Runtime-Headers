@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface TSCH3DUniformArrayShaderVariables : NSObject {
     unsigned int mArraySize;
     NSString *mPrefix;
     NSMutableDictionary *mVariables;
 }
 
-@property(readonly) unsigned int arraySize;
+@property (nonatomic, readonly) unsigned int arraySize;
 
 + (id)variablesWithPrefix:(id)arg1 arraySize:(unsigned int)arg2;
 

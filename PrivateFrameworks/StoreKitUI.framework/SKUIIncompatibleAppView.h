@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, UIImage, UIImageView, UILabel;
-
 @interface SKUIIncompatibleAppView : UIView {
     NSMutableArray *_buttons;
     UIImageView *_iconView;
@@ -11,9 +9,9 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UIImage * iconImage;
-@property(copy) NSString * message;
-@property(copy) NSString * title;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)addButtonWithTitle:(id)arg1;

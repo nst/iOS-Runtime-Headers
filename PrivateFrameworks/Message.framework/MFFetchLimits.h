@@ -8,9 +8,9 @@
     unsigned int _minBytesLeft;
 }
 
-@property unsigned int fetchMaxBytes;
-@property unsigned int fetchMinBytes;
-@property unsigned int minBytesLeft;
+@property (nonatomic) unsigned int fetchMaxBytes;
+@property (nonatomic) unsigned int fetchMinBytes;
+@property (nonatomic) unsigned int minBytesLeft;
 
 - (unsigned int)fetchMaxBytes;
 - (unsigned int)fetchMinBytes;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface AVMetadataMachineReadableCodeObjectInternal : NSObject {
     NSDictionary *basicDescriptor;
     NSArray *corners;
@@ -11,10 +9,10 @@
     NSString *stringValue;
 }
 
-@property(retain) NSDictionary * basicDescriptor;
-@property(retain) NSArray * corners;
+@property (retain) NSDictionary *basicDescriptor;
+@property (retain) NSArray *corners;
 @property BOOL decoded;
-@property(retain) NSString * stringValue;
+@property (retain) NSString *stringValue;
 
 - (id)basicDescriptor;
 - (id)corners;

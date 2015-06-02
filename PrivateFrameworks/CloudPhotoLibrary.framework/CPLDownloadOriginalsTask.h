@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLEngineTransportResourceDownloadTask>, NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURL;
-
 @interface CPLDownloadOriginalsTask : CPLEngineSyncEmergencyTask {
     NSMutableDictionary *_cloudIdentifierForLocalIdentifier;
     NSMutableArray *_cloudResources;
@@ -17,11 +15,11 @@
     NSString *_typeIdentifier;
 }
 
-@property(copy) NSURL * destinationURL;
-@property(readonly) NSArray * failedIdentifiers;
-@property(copy) NSArray * localIdentifiers;
-@property(copy) NSString * progressIdentifier;
-@property(copy) NSString * typeIdentifier;
+@property (nonatomic, copy) NSURL *destinationURL;
+@property (nonatomic, readonly) NSArray *failedIdentifiers;
+@property (nonatomic, copy) NSArray *localIdentifiers;
+@property (nonatomic, copy) NSString *progressIdentifier;
+@property (nonatomic, copy) NSString *typeIdentifier;
 
 + (BOOL)shouldCoalesceTasks;
 + (id)taskIdentifier;

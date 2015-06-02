@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUMutableNumberFormat : OITSUNumberFormat {
-}
+@interface OITSUMutableNumberFormat : OITSUNumberFormat
 
 - (void)p_copyIVarsFromNumberFormat:(id)arg1;
 - (void)setBase:(unsigned char)arg1;

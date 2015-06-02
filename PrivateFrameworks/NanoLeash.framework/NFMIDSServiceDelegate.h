@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface NFMIDSServiceDelegate : NSObject <IDSServiceDelegate> {
     NSMutableDictionary *_inflightMessages;
     NSMutableDictionary *_pendingMessages;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * inflightMessages;
-@property(retain) NSMutableDictionary * pendingMessages;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *inflightMessages;
+@property (nonatomic, retain) NSMutableDictionary *pendingMessages;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_enqueueMessage:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5 retryCount:(int)arg6 retryInterval:(double)arg7 idsIdentifier:(id)arg8;

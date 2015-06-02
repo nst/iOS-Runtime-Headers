@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLFlickrService : SLService {
-}
+@interface SLFlickrService : SLService
 
 - (id)accountTypeIdentifier;
 - (id)activityImage;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKViewElement, NSDate;
+@interface IKTimelineEventElement : IKViewElement
 
-@interface IKTimelineEventElement : IKViewElement {
-}
-
-@property(readonly) double duration;
-@property(readonly) double offset;
-@property(retain,readonly) IKViewElement * relatedContent;
-@property(retain,readonly) NSDate * startDate;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) double offset;
+@property (nonatomic, readonly, retain) IKViewElement *relatedContent;
+@property (nonatomic, readonly, retain) NSDate *startDate;
 
 - (double)duration;
 - (double)offset;

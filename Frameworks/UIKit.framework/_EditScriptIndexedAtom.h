@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _EditScriptIndexedAtom : NSObject {
     int _editOperation;
     unsigned int _indexInArrayB;
@@ -11,10 +9,10 @@
     NSString *_replacementText;
 }
 
-@property int editOperation;
-@property unsigned int indexInArrayB;
-@property unsigned int indexToEdit;
-@property(retain) NSString * replacementText;
+@property (nonatomic) int editOperation;
+@property (nonatomic) unsigned int indexInArrayB;
+@property (nonatomic) unsigned int indexToEdit;
+@property (nonatomic, retain) NSString *replacementText;
 
 + (id)atomWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 

@@ -2,24 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface ICCameraFile : ICCameraItem {
     void *_fileProperties;
 }
 
-@property(readonly) BOOL burstFavorite;
-@property(readonly) BOOL burstPicked;
-@property(readonly) NSString * burstUUID;
+@property (readonly) BOOL burstFavorite;
+@property (readonly) BOOL burstPicked;
+@property (readonly) NSString *burstUUID;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
 @property long long fileSize;
-@property(readonly) BOOL hasOverriddenOrientation;
-@property(readonly) BOOL highFramerate;
-@property(retain) NSMutableDictionary * metadata_hidden;
+@property (readonly) BOOL hasOverriddenOrientation;
+@property (readonly) BOOL highFramerate;
+@property (retain) NSMutableDictionary *metadata_hidden;
 @property unsigned int orientation;
-@property(getter=isRaw) BOOL raw;
-@property(readonly) BOOL timeLapse;
+@property (getter=isRaw) BOOL raw;
+@property (readonly) BOOL timeLapse;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
 - (BOOL)burstFavorite;
 - (BOOL)burstPicked;
@@ -29,7 +29,6 @@
 - (double)duration;
 - (BOOL)fetchingMetadata;
 - (BOOL)fetchingThumbnail;
-- (id)fileExtension;
 - (long long)fileSize;
 - (void)finalize;
 - (void)flushMetadataCache;
@@ -39,14 +38,12 @@
 - (BOOL)hasOverriddenOrientation;
 - (BOOL)hasThumbnail;
 - (BOOL)highFramerate;
-- (id)importIdentifier;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (BOOL)isRaw;
 - (id)metadata;
 - (id)metadata_hidden;
 - (unsigned int)orientation;
 - (void)overrideOrientation:(unsigned int)arg1;
-- (id)parentFolderName;
 - (void)requestMetadata;
 - (void)requestThumbnail;
 - (void)setFetchingMetadata:(BOOL)arg1;
@@ -60,5 +57,11 @@
 - (void)setRaw:(BOOL)arg1;
 - (struct CGImage { }*)thumbnail;
 - (BOOL)timeLapse;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (id)fileExtension;
+- (id)importIdentifier;
+- (id)parentFolderName;
 
 @end

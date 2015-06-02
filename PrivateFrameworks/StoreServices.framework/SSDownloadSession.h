@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, SSDownload, SSDownloadAsset, SSXPCConnection;
-
 @interface SSDownloadSession : NSObject {
     long long _assetID;
     SSXPCConnection *_controlConnection;
@@ -12,8 +10,8 @@
     long long _sessionID;
 }
 
-@property(readonly) SSDownload * download;
-@property(readonly) SSDownloadAsset * downloadAsset;
+@property (readonly) SSDownload *download;
+@property (readonly) SSDownloadAsset *downloadAsset;
 
 - (id)_copySessionPropertyWithKey:(const char *)arg1;
 - (id)_initSSDownloadSession;

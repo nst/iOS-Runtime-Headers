@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString, UIColor, UILabel, _UILegibilityView;
-
 @interface CAMButtonLabel : UIView {
     UILabel *__label;
     _UILegibilityView *__legibilityView;
@@ -14,13 +12,13 @@
     BOOL _useLegibilityView;
 }
 
-@property(retain,readonly) UILabel * _label;
-@property(retain,readonly) _UILegibilityView * _legibilityView;
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
-@property(getter=isUsingLegibilityView) BOOL useLegibilityView;
+@property (nonatomic, readonly, retain) UILabel *_label;
+@property (nonatomic, readonly, retain) _UILegibilityView *_legibilityView;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (getter=isUsingLegibilityView, nonatomic) BOOL useLegibilityView;
 
 - (void).cxx_destruct;
 - (void)_createLegibilityView;

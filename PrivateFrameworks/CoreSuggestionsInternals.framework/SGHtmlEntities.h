@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGHtmlEntities : NSObject {
-}
+@interface SGHtmlEntities : NSObject
 
 + (id)decodeEntities:(id)arg1;
 

@@ -2,66 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
-
 @interface CNFRegController : NSObject <IMSystemMonitorListener> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _accountActivationChangedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _accountAddedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _accountAuthorizationChangedBlock;
-
+    id /* block */ _accountActivationChangedBlock;
+    id /* block */ _accountAddedBlock;
+    id /* block */ _accountAuthorizationChangedBlock;
     NSMutableDictionary *_accountFilterCache;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _accountRegistrationBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _accountRemovedBlock;
-
+    id /* block */ _accountRegistrationBlock;
+    id /* block */ _accountRemovedBlock;
     NSArray *_accounts;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _aliasAddedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _aliasRemovedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _aliasStatusChangedBlock;
-
+    id /* block */ _alertHandler;
+    id /* block */ _aliasAddedBlock;
+    id /* block */ _aliasRemovedBlock;
+    id /* block */ _aliasStatusChangedBlock;
     NSDictionary *_cachedCallerIDMap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callerIdChangedBlock;
-
+    id /* block */ _callerIdChangedBlock;
     struct { 
         unsigned int listeningForAccountChanges : 1; 
         unsigned int listeningForCallerIDChanges : 1; 
@@ -77,103 +31,79 @@
     unsigned char _originalCellFlag;
     BOOL _originalUsesBackgroundNetwork;
     unsigned char _originalWifiFlag;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _profileChangedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _profileStatusChangedBlock;
-
+    id /* block */ _profileChangedBlock;
+    id /* block */ _profileStatusChangedBlock;
     int _requiredWifiCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resetBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _serviceDidBecomeUnsupportedBlock;
-
+    id /* block */ _resetBlock;
+    id /* block */ _serviceDidBecomeUnsupportedBlock;
     int _serviceType;
     NSArray *_services;
     IMAccount *_systemAccount;
     int _systemAccountType;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _vettedAliasesChangedBlock;
-
+    id /* block */ _vettedAliasesChangedBlock;
     NSTimer *_wifiAlertWatchTimer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willLaunchURLBlock;
-
+    id /* block */ _willLaunchURLBlock;
 }
 
-@property(copy) id accountActivationChangedBlock;
-@property(copy) id accountAddedBlock;
-@property(copy) id accountAuthorizationChangedBlock;
-@property(copy) id accountRegistrationBlock;
-@property(copy) id accountRemovedBlock;
-@property(copy,readonly) NSArray * accounts;
-@property(copy) id alertHandler;
-@property(copy) id aliasAddedBlock;
-@property(copy) id aliasRemovedBlock;
-@property(copy) id aliasStatusChangedBlock;
-@property(retain,readonly) NSArray * aliases;
-@property(retain,readonly) NSArray * allAvailableAliases;
-@property(copy,readonly) NSArray * appleIDAccounts;
-@property(copy,readonly) NSDictionary * cachedCallerIDMap;
-@property(copy) id callerIdChangedBlock;
-@property(retain,readonly) NSArray * emailAliases;
-@property(copy,readonly) NSArray * failedAccounts;
-@property(retain,readonly) IMServiceImpl * firstService;
-@property(copy,readonly) NSArray * phoneAccounts;
-@property(copy) id profileChangedBlock;
-@property(copy) id profileStatusChangedBlock;
-@property(copy) id resetBlock;
-@property(copy) id serviceDidBecomeUnsupportedBlock;
-@property(getter=isServiceEnabled) BOOL serviceEnabled;
-@property(retain,readonly) NSSet * serviceNames;
-@property(getter=isServiceSupported,readonly) BOOL serviceSupported;
-@property int serviceType;
-@property(copy) NSArray * services;
-@property(retain,readonly) IMAccount * systemAccount;
-@property(readonly) int systemAccountType;
-@property(retain,readonly) NSArray * useableAliases;
-@property(retain,readonly) NSArray * vettedAliases;
-@property(copy) id vettedAliasesChangedBlock;
-@property(copy) id willLaunchURLBlock;
+@property (nonatomic, copy) id /* block */ accountActivationChangedBlock;
+@property (nonatomic, copy) id /* block */ accountAddedBlock;
+@property (nonatomic, copy) id /* block */ accountAuthorizationChangedBlock;
+@property (nonatomic, copy) id /* block */ accountRegistrationBlock;
+@property (nonatomic, copy) id /* block */ accountRemovedBlock;
+@property (nonatomic, readonly, copy) NSArray *accounts;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (nonatomic, copy) id /* block */ aliasAddedBlock;
+@property (nonatomic, copy) id /* block */ aliasRemovedBlock;
+@property (nonatomic, copy) id /* block */ aliasStatusChangedBlock;
+@property (nonatomic, readonly, retain) NSArray *aliases;
+@property (nonatomic, readonly, retain) NSArray *allAvailableAliases;
+@property (nonatomic, readonly, copy) NSArray *appleIDAccounts;
+@property (nonatomic, readonly, copy) NSDictionary *cachedCallerIDMap;
+@property (nonatomic, copy) id /* block */ callerIdChangedBlock;
+@property (nonatomic, readonly, retain) NSArray *emailAliases;
+@property (nonatomic, readonly, copy) NSArray *failedAccounts;
+@property (nonatomic, readonly, retain) IMServiceImpl *firstService;
+@property (nonatomic, readonly, copy) NSArray *phoneAccounts;
+@property (nonatomic, copy) id /* block */ profileChangedBlock;
+@property (nonatomic, copy) id /* block */ profileStatusChangedBlock;
+@property (nonatomic, copy) id /* block */ resetBlock;
+@property (nonatomic, copy) id /* block */ serviceDidBecomeUnsupportedBlock;
+@property (getter=isServiceEnabled, nonatomic) BOOL serviceEnabled;
+@property (nonatomic, readonly, retain) NSSet *serviceNames;
+@property (getter=isServiceSupported, nonatomic, readonly) BOOL serviceSupported;
+@property (nonatomic) int serviceType;
+@property (nonatomic, copy) NSArray *services;
+@property (nonatomic, readonly, retain) IMAccount *systemAccount;
+@property (nonatomic, readonly) int systemAccountType;
+@property (nonatomic, readonly, retain) NSArray *useableAliases;
+@property (nonatomic, readonly, retain) NSArray *vettedAliases;
+@property (nonatomic, copy) id /* block */ vettedAliasesChangedBlock;
+@property (nonatomic, copy) id /* block */ willLaunchURLBlock;
 
 + (id)controllerForServiceType:(int)arg1;
 
 - (BOOL)__ensureSingleAppleIDAccountExistsWithLogin:(id)arg1;
-- (id)__filter_activeAccountsPredicate;
-- (id)__filter_appleIDAccountPredicate;
-- (id)__filter_failedAccountsPredicate;
-- (id)__filter_inactiveAccountsPredicate;
-- (id)__filter_operationalPredicate;
-- (id)__filter_phoneAccountPredicate;
-- (id)__filter_signInCompletePredicate;
-- (id)__filter_signedInPredicate;
-- (id)__filter_validatedAliasPredicate;
-- (id)__filter_validatedProfilePredicate;
+- (id /* block */)__filter_activeAccountsPredicate;
+- (id /* block */)__filter_appleIDAccountPredicate;
+- (id /* block */)__filter_failedAccountsPredicate;
+- (id /* block */)__filter_inactiveAccountsPredicate;
+- (id /* block */)__filter_operationalPredicate;
+- (id /* block */)__filter_phoneAccountPredicate;
+- (id /* block */)__filter_signInCompletePredicate;
+- (id /* block */)__filter_signedInPredicate;
+- (id /* block */)__filter_validatedAliasPredicate;
+- (id /* block */)__filter_validatedProfilePredicate;
 - (void)__updateSystemAccount;
 - (id)_accountForAlias:(id)arg1 accounts:(id)arg2;
 - (BOOL)_accountHasValidatedLocale:(id)arg1;
 - (BOOL)_accountIsAuthenticated:(id)arg1;
 - (id)_accountsPassingTests:(id)arg1 message:(id)arg2;
 - (BOOL)_addAliases:(id)arg1 toAccount:(id)arg2 validate:(BOOL)arg3;
-- (id)_aliasComparator;
+- (id /* block */)_aliasComparator;
 - (BOOL)_aliasIsDevicePhoneNumber:(id)arg1;
 - (id)_aliasesForAccount:(id)arg1;
-- (id)_aliasesFromAccounts:(id)arg1 passingTest:(id)arg2;
-- (id)_aliasesPassingTest:(id)arg1;
+- (id)_aliasesFromAccounts:(id)arg1 passingTest:(id /* block */)arg2;
+- (id)_aliasesPassingTest:(id /* block */)arg1;
 - (id)_allAvailableAliasesForAccount:(id)arg1;
 - (void)_clearAccountCache;
 - (void)_clearFilterCache;
@@ -199,16 +129,16 @@
 - (void)_stopWiFiAlertWatchTimer;
 - (id)_vettedAliasesForAccount:(id)arg1;
 - (void)_wifiAlertWatchTimerFired:(id)arg1;
-- (id)accountActivationChangedBlock;
+- (id /* block */)accountActivationChangedBlock;
 - (void)accountActivationStateChanged:(id)arg1;
 - (void)accountAdded:(id)arg1;
-- (id)accountAddedBlock;
-- (id)accountAuthorizationChangedBlock;
+- (id /* block */)accountAddedBlock;
+- (id /* block */)accountAuthorizationChangedBlock;
 - (id)accountForAlias:(id)arg1;
-- (id)accountRegistrationBlock;
+- (id /* block */)accountRegistrationBlock;
 - (void)accountRegistrationChanged:(id)arg1;
 - (void)accountRemoved:(id)arg1;
-- (id)accountRemovedBlock;
+- (id /* block */)accountRemovedBlock;
 - (unsigned int)accountState;
 - (unsigned int)accountState:(id)arg1;
 - (unsigned int)accountStateForAccount:(id)arg1;
@@ -221,13 +151,13 @@
 - (id)activeAccounts;
 - (BOOL)addAlias:(id)arg1;
 - (BOOL)addAlias:(id)arg1 toAccount:(id)arg2;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (id)aliasAddedBlock;
+- (id /* block */)aliasAddedBlock;
 - (id)aliasNamed:(id)arg1;
-- (id)aliasRemovedBlock;
+- (id /* block */)aliasRemovedBlock;
 - (void)aliasStatusChanged:(id)arg1;
-- (id)aliasStatusChangedBlock;
+- (id /* block */)aliasStatusChangedBlock;
 - (id)aliasSummaryString:(BOOL*)arg1;
 - (id)aliases;
 - (void)aliasesChanged:(id)arg1;
@@ -241,7 +171,7 @@
 - (id)beginAccountSetupWithLogin:(id)arg1 password:(id)arg2 foundExisting:(BOOL*)arg3;
 - (id)cachedCallerIDMap;
 - (void)callerIdChanged:(id)arg1;
-- (id)callerIdChangedBlock;
+- (id /* block */)callerIdChangedBlock;
 - (BOOL)canRemoveAlias:(id)arg1;
 - (BOOL)cellularDataEnabled;
 - (void)clearAllCaches;
@@ -281,46 +211,46 @@
 - (void)openURL:(id)arg1;
 - (id)phoneAccounts;
 - (void)profileChanged:(id)arg1;
-- (id)profileChangedBlock;
-- (id)profileStatusChangedBlock;
+- (id /* block */)profileChangedBlock;
+- (id /* block */)profileStatusChangedBlock;
 - (void)profileValidationStateChanged:(id)arg1;
 - (void)refreshSystemAccount;
 - (BOOL)removeAlias:(id)arg1 fromAccount:(id)arg2;
 - (void)removeAllHandlers;
-- (id)resetBlock;
+- (id /* block */)resetBlock;
 - (void)resetNetworkFirstRunAlert;
-- (id)serviceDidBecomeUnsupportedBlock;
+- (id /* block */)serviceDidBecomeUnsupportedBlock;
 - (id)serviceNames;
 - (int)serviceType;
 - (id)services;
-- (void)setAccountActivationChangedBlock:(id)arg1;
-- (void)setAccountAddedBlock:(id)arg1;
-- (void)setAccountAuthorizationChangedBlock:(id)arg1;
-- (void)setAccountRegistrationBlock:(id)arg1;
-- (void)setAccountRemovedBlock:(id)arg1;
-- (void)setAlertHandler:(id)arg1;
-- (void)setAliasAddedBlock:(id)arg1;
-- (void)setAliasRemovedBlock:(id)arg1;
-- (void)setAliasStatusChangedBlock:(id)arg1;
+- (void)setAccountActivationChangedBlock:(id /* block */)arg1;
+- (void)setAccountAddedBlock:(id /* block */)arg1;
+- (void)setAccountAuthorizationChangedBlock:(id /* block */)arg1;
+- (void)setAccountRegistrationBlock:(id /* block */)arg1;
+- (void)setAccountRemovedBlock:(id /* block */)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
+- (void)setAliasAddedBlock:(id /* block */)arg1;
+- (void)setAliasRemovedBlock:(id /* block */)arg1;
+- (void)setAliasStatusChangedBlock:(id /* block */)arg1;
 - (BOOL)setAliases:(id)arg1 onAccount:(id)arg2;
-- (void)setCallerIdChangedBlock:(id)arg1;
-- (void)setCellularDataEnabled:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)setCallerIdChangedBlock:(id /* block */)arg1;
+- (void)setCellularDataEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)setDisplayAlias:(id)arg1;
-- (void)setProfileChangedBlock:(id)arg1;
-- (void)setProfileStatusChangedBlock:(id)arg1;
-- (void)setResetBlock:(id)arg1;
-- (void)setServiceDidBecomeUnsupportedBlock:(id)arg1;
+- (void)setProfileChangedBlock:(id /* block */)arg1;
+- (void)setProfileStatusChangedBlock:(id /* block */)arg1;
+- (void)setResetBlock:(id /* block */)arg1;
+- (void)setServiceDidBecomeUnsupportedBlock:(id /* block */)arg1;
 - (void)setServiceEnabled:(BOOL)arg1;
 - (void)setServiceType:(int)arg1;
 - (void)setServices:(id)arg1;
-- (void)setVettedAliasesChangedBlock:(id)arg1;
-- (void)setWillLaunchURLBlock:(id)arg1;
+- (void)setVettedAliasesChangedBlock:(id /* block */)arg1;
+- (void)setWillLaunchURLBlock:(id /* block */)arg1;
 - (BOOL)shouldHandleAccountNotification:(id)arg1;
 - (BOOL)shouldShowAlertForError:(id)arg1;
 - (void)showNetworkAlert;
 - (void)showNetworkAlertIfNecessary;
 - (void)showNetworkFirstRunAlert;
-- (void)showSetupFaceTimeOverCellularAlertWithCompletion:(id)arg1;
+- (void)showSetupFaceTimeOverCellularAlertWithCompletion:(id /* block */)arg1;
 - (void)signoutAccount:(id)arg1;
 - (void)startListeningForAccountChanges;
 - (void)startRequiringWifi;
@@ -335,8 +265,8 @@
 - (BOOL)validateAlias:(id)arg1;
 - (id)vettedAliases;
 - (void)vettedAliasesChanged:(id)arg1;
-- (id)vettedAliasesChangedBlock;
+- (id /* block */)vettedAliasesChangedBlock;
 - (id)vettedAliasesForAccounts:(id)arg1;
-- (id)willLaunchURLBlock;
+- (id /* block */)willLaunchURLBlock;
 
 @end

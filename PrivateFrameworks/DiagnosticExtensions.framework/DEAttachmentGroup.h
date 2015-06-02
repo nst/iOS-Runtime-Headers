@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@class NSArray, NSURL;
-
 @interface DEAttachmentGroup : DEAttachmentItem <NSSecureCoding> {
     NSArray *_attachmentItems;
     NSURL *_rootURL;
 }
 
-@property(retain) NSArray * attachmentItems;
-@property(retain) NSURL * rootURL;
+@property (nonatomic, retain) NSArray *attachmentItems;
+@property (nonatomic, retain) NSURL *rootURL;
 
 + (id)createWithName:(id)arg1 rootURL:(id)arg2 attachmentItems:(id)arg3;
 + (BOOL)supportsSecureCoding;

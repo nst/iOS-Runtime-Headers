@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSHashTable;
-
 @interface SUNetworkMonitor : NSObject {
     int _currentNetworkType;
     NSHashTable *_observers;

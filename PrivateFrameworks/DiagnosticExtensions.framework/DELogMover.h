@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@class NSObject<OS_xpc_object>, NSString;
-
 @interface DELogMover : NSObject {
     NSObject<OS_xpc_object> *_conn;
     NSString *_serviceName;
 }
 
-@property(readonly) NSString * serviceName;
+@property (nonatomic, readonly) NSString *serviceName;
 
 + (void)moveSystemLogsWithExtensions:(id)arg1;
 

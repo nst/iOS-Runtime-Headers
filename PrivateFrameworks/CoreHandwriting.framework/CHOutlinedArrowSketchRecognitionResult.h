@@ -17,9 +17,9 @@
     } _size;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } center;
-@property(readonly) struct CGPoint { float x1; float x2; } controlPoint;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (readonly) struct CGPoint { float x1; float x2; } center;
+@property (readonly) struct CGPoint { float x1; float x2; } controlPoint;
+@property (readonly) struct CGSize { float x1; float x2; } size;
 
 - (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })center;

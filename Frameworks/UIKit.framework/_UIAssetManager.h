@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CUICatalog, CUIMutableCatalog, NSBundle, NSMapTable, NSString, UITraitCollection, _UIAssetManager, _UICache;
-
 @interface _UIAssetManager : NSObject {
     NSString *_assetManagerName;
     NSMapTable *_assetMap;
@@ -23,13 +21,13 @@
     long onceToken_runtimeCatalog;
 }
 
-@property(readonly) NSBundle * bundle;
-@property(readonly) NSString * carFileName;
-@property(getter=_managingUIKitAssets,readonly) BOOL managingUIKitAssets;
-@property(retain) _UIAssetManager * nextAssetManager;
-@property float preferredScale;
-@property(retain) UITraitCollection * preferredTraitCollection;
-@property(readonly) CUIMutableCatalog * runtimeCatalog;
+@property (nonatomic, readonly) NSBundle *bundle;
+@property (nonatomic, readonly) NSString *carFileName;
+@property (getter=_managingUIKitAssets, nonatomic, readonly) BOOL managingUIKitAssets;
+@property (nonatomic, retain) _UIAssetManager *nextAssetManager;
+@property (nonatomic) float preferredScale;
+@property (nonatomic, retain) UITraitCollection *preferredTraitCollection;
+@property (nonatomic, readonly) CUIMutableCatalog *runtimeCatalog;
 
 + (void)_convertTraitCollection:(id)arg1 toCUIScale:(float*)arg2 CUIIdiom:(int*)arg3 UIKitIdiom:(int*)arg4 subtype:(int*)arg5;
 + (int)_userInterfaceIdiomForDeviceClass:(unsigned int)arg1;

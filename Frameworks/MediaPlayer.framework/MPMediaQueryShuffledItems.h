@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, NSArray, NSMutableArray;
-
 @interface MPMediaQueryShuffledItems : NSObject <NSCopying, NSSecureCoding> {
     unsigned int _activeShuffleType;
     BOOL _dirty;
@@ -16,10 +14,10 @@
     NSArray *_sourceMediaQueryItems;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
-@property(copy,readonly) NSArray * items;
-@property(readonly) unsigned int realShuffleType;
-@property(readonly) MPMediaQuery * sourceMediaQuery;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic, readonly) unsigned int realShuffleType;
+@property (nonatomic, readonly) MPMediaQuery *sourceMediaQuery;
 
 + (BOOL)supportsSecureCoding;
 

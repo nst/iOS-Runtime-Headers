@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary;
-
 @interface CKMediaObjectManager : NSObject {
     NSDictionary *_UTITypes;
     NSArray *_classes;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_transfers;
 }
 
-@property(copy) NSDictionary * UTITypes;
-@property(copy) NSArray * classes;
-@property(copy) NSDictionary * dynTypes;
-@property(retain) NSMutableDictionary * transfers;
+@property (nonatomic, copy) NSDictionary *UTITypes;
+@property (nonatomic, copy) NSArray *classes;
+@property (nonatomic, copy) NSDictionary *dynTypes;
+@property (nonatomic, retain) NSMutableDictionary *transfers;
 
 + (id)sharedInstance;
 

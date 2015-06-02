@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUOverlayBackgroundDelegate>, NSArray, NSMutableArray, NSString, SUOverlayViewController, SUScalingFlipView, SUTouchCaptureView, UISwipeGestureRecognizer;
-
 @interface SUOverlayBackgroundViewController : SUViewController <SUScalingFlipViewDelegate, UIGestureRecognizerDelegate> {
     NSMutableArray *_actionQueue;
     SUScalingFlipView *_activeFlipView;
@@ -26,13 +24,13 @@
     NSMutableArray *_viewControllers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SUOverlayBackgroundDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SUOverlayViewController * selectedViewController;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * viewControllers;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUOverlayBackgroundDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SUOverlayViewController *selectedViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *viewControllers;
 
 - (void)_addViewController:(id)arg1;
 - (void)_backgroundAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void*)arg3;

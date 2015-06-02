@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor, OITSUImage;
-
 @interface MFPImageBrush : MFPBrush {
     OITSUImage *mPhoneImage;
     OITSUColor *mPhonePatternColor;

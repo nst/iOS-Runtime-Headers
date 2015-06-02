@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Spotlight.framework/Spotlight
  */
 
-@class NSString;
-
 @interface SPSpotlightManager : NSObject {
     NSString *_displayID;
 }

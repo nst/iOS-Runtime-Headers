@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@interface DABehaviorOptions : NSObject {
-}
+@interface DABehaviorOptions : NSObject
 
 + (id)APSEnv;
 + (BOOL)CFNetworkLogging;

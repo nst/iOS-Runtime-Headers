@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSLocalTimeZone : NSTimeZone {
-}
+@interface __NSLocalTimeZone : NSTimeZone
 
 + (BOOL)supportsSecureCoding;
 

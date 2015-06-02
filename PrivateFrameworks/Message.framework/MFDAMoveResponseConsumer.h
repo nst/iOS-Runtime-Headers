@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFError, NSMutableDictionary, NSMutableSet, NSSet;
-
 @interface MFDAMoveResponseConsumer : MFDAMailAccountConsumer <DAMessageMoveRequestConsumer> {
     MFError *_error;
     NSMutableSet *_failures;
@@ -11,7 +9,7 @@
     NSMutableDictionary *_newRemoteIDsByMessageID;
 }
 
-@property(retain) MFError * error;
+@property (nonatomic, retain) MFError *error;
 
 - (void)dealloc;
 - (id)error;

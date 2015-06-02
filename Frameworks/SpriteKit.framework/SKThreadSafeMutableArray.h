@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSArray, NSMutableArray;
-
 @interface SKThreadSafeMutableArray : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableArray *_storage;
     int _storageLock;
 }
 
-@property(readonly) NSArray * arrayRepresentation;
+@property (readonly) NSArray *arrayRepresentation;
 
 - (void).cxx_destruct;
 - (id)arrayRepresentation;

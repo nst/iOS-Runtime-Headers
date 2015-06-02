@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class <CUIKSingleDayTimelineLayoutScreenUtils>, <CUIKSingleDayTimelineViewItem>, CUIKSingleDayTimelineLayoutPartition, NSArray, NSMutableArray;
-
 @interface CUIKSingleDayTimelineOccurrenceBucket : NSObject {
     CUIKSingleDayTimelineLayoutPartition *_correspondingPartition;
     NSMutableArray *_currentOccurrences;
@@ -20,10 +18,10 @@
     BOOL _useTemporaryFitnessLevel;
 }
 
-@property(retain) CUIKSingleDayTimelineLayoutPartition * correspondingPartition;
-@property(retain) NSMutableArray * currentOccurrences;
-@property BOOL isOnlyBucket;
-@property(readonly) NSArray * occurrences;
+@property (nonatomic, retain) CUIKSingleDayTimelineLayoutPartition *correspondingPartition;
+@property (nonatomic, retain) NSMutableArray *currentOccurrences;
+@property (nonatomic) BOOL isOnlyBucket;
+@property (nonatomic, readonly) NSArray *occurrences;
 
 - (void).cxx_destruct;
 - (id)_occurrencesForFitnessLevel;

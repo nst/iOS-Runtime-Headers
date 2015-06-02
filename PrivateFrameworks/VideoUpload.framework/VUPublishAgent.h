@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class UINavigationController, VUPublishPost, VUPublishViewController;
-
 @interface VUPublishAgent : PLPublishingAgent <VUPublishPostDelegate, VUPublishViewControllerDelegate> {
     UINavigationController *_navigationController;
     VUPublishPost *_publishPost;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIProxyObject : NSObject <NSCoding> {
     NSString *proxiedObjectIdentifier;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSSet;
-
 @interface EKDirectorySearchResultSet : NSObject {
     NSSet *_groups;
     NSSet *_locations;
@@ -11,10 +9,10 @@
     NSSet *_resources;
 }
 
-@property(retain) NSSet * groups;
-@property(retain) NSSet * locations;
-@property(retain) NSSet * people;
-@property(retain) NSSet * resources;
+@property (nonatomic, retain) NSSet *groups;
+@property (nonatomic, retain) NSSet *locations;
+@property (nonatomic, retain) NSSet *people;
+@property (nonatomic, retain) NSSet *resources;
 
 - (id)groups;
 - (id)locations;

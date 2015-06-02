@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPPodcastStation : SAMPCollection {
-}
+@interface SAMPPodcastStation : SAMPCollection
 
 + (id)podcastStation;
 + (id)podcastStationWithDictionary:(id)arg1 context:(id)arg2;

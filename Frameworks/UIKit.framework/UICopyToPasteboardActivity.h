@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICopyToPasteboardActivity : UIActivity {
-}
+@interface UICopyToPasteboardActivity : UIActivity
 
 - (id)_activityImage;
 - (id)activityTitle;

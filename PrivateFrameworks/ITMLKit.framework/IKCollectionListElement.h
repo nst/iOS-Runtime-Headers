@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
+@interface IKCollectionListElement : IKViewElement
 
-@interface IKCollectionListElement : IKViewElement {
-}
-
-@property(retain,readonly) NSArray * collections;
+@property (nonatomic, readonly, retain) NSArray *collections;
 
 - (id)collections;
 

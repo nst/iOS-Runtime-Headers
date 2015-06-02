@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIMoreListController, UINavigationController, UIViewController;
-
 @interface UIMoreNavigationController : UINavigationController {
     UIMoreListController *_moreListController;
     UINavigationController *_originalNavigationController;
     UIViewController *_originalRootViewController;
 }
 
-@property BOOL allowsCustomizing;
-@property UIViewController * displayedViewController;
-@property(retain,readonly) UIViewController * moreListController;
-@property(retain) NSArray * moreViewControllers;
-@property BOOL moreViewControllersChanged;
+@property (nonatomic) BOOL allowsCustomizing;
+@property (nonatomic) UIViewController *displayedViewController;
+@property (nonatomic, readonly, retain) UIViewController *moreListController;
+@property (nonatomic, retain) NSArray *moreViewControllers;
+@property (nonatomic) BOOL moreViewControllersChanged;
 
 + (Class)_moreListControllerClass;
 

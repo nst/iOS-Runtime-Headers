@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVItemWithNoChildren;
-
 @interface CalDAVCalendarServerAccessItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_accessLevel;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * accessLevel;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *accessLevel;
 
 - (id)accessLevel;
 - (id)copyParseRules;

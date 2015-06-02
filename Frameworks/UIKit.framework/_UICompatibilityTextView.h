@@ -2,50 +2,48 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextInputDelegate>, <UITextInputTokenizer>, <UITextViewDelegate>, NSAttributedString, NSDictionary, NSString, UIColor, UIFont, UITextPosition, UITextRange, UIView;
-
 @interface _UICompatibilityTextView : UIScrollView <UITextInput, UITextLinkInteraction> {
     id _private;
     BOOL m_editing;
     UIView *m_inputView;
 }
 
-@property BOOL allowsEditingTextAttributes;
-@property(copy) NSAttributedString * attributedText;
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(readonly) UITextPosition * beginningOfDocument;
-@property BOOL clearsOnInsertion;
-@property unsigned int dataDetectorTypes;
-@property(copy,readonly) NSString * debugDescription;
-@property <UITextViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEditable) BOOL editable;
-@property(getter=isEditing) BOOL editing;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) UITextPosition * endOfDocument;
-@property(retain) UIFont * font;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * inputAccessoryView;
-@property <UITextInputDelegate> * inputDelegate;
-@property(retain) UIView * inputView;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(readonly) UITextRange * markedTextRange;
-@property(copy) NSDictionary * markedTextStyle;
-@property int returnKeyType;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
-@property(copy) UITextRange * selectedTextRange;
-@property int selectionAffinity;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
-@property(readonly) UIView * textInputView;
-@property(readonly) <UITextInputTokenizer> * tokenizer;
-@property(copy) NSDictionary * typingAttributes;
+@property (nonatomic) BOOL allowsEditingTextAttributes;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic, readonly) UITextPosition *beginningOfDocument;
+@property (nonatomic) BOOL clearsOnInsertion;
+@property (nonatomic) unsigned int dataDetectorTypes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UITextViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) UITextPosition *endOfDocument;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned int hash;
+@property (retain) UIView *inputAccessoryView;
+@property (nonatomic) <UITextInputDelegate> *inputDelegate;
+@property (retain) UIView *inputView;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, readonly) UITextRange *markedTextRange;
+@property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic) int returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
+@property (copy) UITextRange *selectedTextRange;
+@property (nonatomic) int selectionAffinity;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, readonly) UIView *textInputView;
+@property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
+@property (nonatomic, copy) NSDictionary *typingAttributes;
 
 + (id)_bestInterpretationForDictationResult:(id)arg1;
 + (BOOL)_isCompatibilityTextView;

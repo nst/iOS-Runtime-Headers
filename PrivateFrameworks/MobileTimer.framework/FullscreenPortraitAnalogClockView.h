@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface FullscreenPortraitAnalogClockView : FullscreenLandscapeAnalogClockView {
-}
+@interface FullscreenPortraitAnalogClockView : FullscreenLandscapeAnalogClockView
 
 + (float)faceRadius;
 + (struct CGPoint { float x1; float x2; })handRotationalCenterForHand:(int)arg1;

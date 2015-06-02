@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBFLockScreenDateView, SBFWallpaperView, SBSUIWallpaperMotionButton, UITapGestureRecognizer;
-
 @interface SBSUIWallpaperPreviewView : UIView {
     SBFLockScreenDateView *_dateView;
     SBSUIWallpaperMotionButton *_motionButton;
@@ -11,8 +9,8 @@
     SBFWallpaperView *_wallpaperView;
 }
 
-@property(retain) SBFLockScreenDateView * dateView;
-@property(retain) SBFWallpaperView * wallpaperView;
+@property (nonatomic, retain) SBFLockScreenDateView *dateView;
+@property (nonatomic, retain) SBFWallpaperView *wallpaperView;
 
 - (void)_layoutDateView;
 - (void)_layoutMotionButton;

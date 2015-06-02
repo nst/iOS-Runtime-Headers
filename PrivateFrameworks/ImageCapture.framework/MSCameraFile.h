@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSString;
-
 @interface MSCameraFile : ICCameraFile {
     void *_msCameraFileProperties;
 }
 
 @property int bitsPerPixel;
-@property(copy) NSString * exifCreationDateTime;
-@property(copy) NSString * exifModificationDateTime;
-@property(readonly) struct timespec { int x1; long x2; } fsCreationTime;
-@property(readonly) struct timespec { int x1; long x2; } fsModificationTime;
-@property(readonly) unsigned long long fsSN;
-@property(readonly) long long fsSize;
+@property (copy) NSString *exifCreationDateTime;
+@property (copy) NSString *exifModificationDateTime;
+@property (readonly) struct timespec { int x1; long x2; } fsCreationTime;
+@property (readonly) struct timespec { int x1; long x2; } fsModificationTime;
+@property (readonly) unsigned long long fsSN;
+@property (readonly) long long fsSize;
 @property int imgHeight;
 @property int imgWidth;
 @property int thmHeight;

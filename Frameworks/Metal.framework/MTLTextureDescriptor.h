@@ -6,15 +6,15 @@
     struct MTLTextureDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; unsigned int x11; BOOL x12; BOOL x13; } *_private;
 }
 
-@property unsigned int arrayLength;
-@property unsigned int depth;
-@property unsigned int height;
-@property unsigned int mipmapLevelCount;
-@property unsigned int pixelFormat;
-@property unsigned int resourceOptions;
-@property unsigned int sampleCount;
-@property unsigned int textureType;
-@property unsigned int width;
+@property (nonatomic) unsigned int arrayLength;
+@property (nonatomic) unsigned int depth;
+@property (nonatomic) unsigned int height;
+@property (nonatomic) unsigned int mipmapLevelCount;
+@property (nonatomic) unsigned int pixelFormat;
+@property (nonatomic) unsigned int resourceOptions;
+@property (nonatomic) unsigned int sampleCount;
+@property (nonatomic) unsigned int textureType;
+@property (nonatomic) unsigned int width;
 
 + (id)texture2DDescriptorWithPixelFormat:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 mipmapped:(BOOL)arg4;
 + (id)textureCubeDescriptorWithPixelFormat:(unsigned int)arg1 size:(unsigned int)arg2 mipmapped:(BOOL)arg3;

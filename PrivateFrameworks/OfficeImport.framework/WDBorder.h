@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface WDBorder : NSObject <NSCopying> {
     OITSUColor *mColor;
     BOOL mFrame;

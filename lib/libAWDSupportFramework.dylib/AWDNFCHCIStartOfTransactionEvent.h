@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCHCIStartOfTransactionEvent : PBCodable <NSCopying> {
     struct { 
         unsigned int timeDeltaFromReference : 1; 
@@ -18,16 +16,16 @@
     unsigned int _version;
 }
 
-@property BOOL hasStatus;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUuidReference;
-@property BOOL hasVersion;
-@property unsigned int status;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * uuidReference;
-@property unsigned int version;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *uuidReference;
+@property (nonatomic) unsigned int version;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

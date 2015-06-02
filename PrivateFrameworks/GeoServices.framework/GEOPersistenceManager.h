@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPersistenceManager : NSObject {
-}
+@interface GEOPersistenceManager : NSObject
 
 + (BOOL)createMuidMappingDirectoryForPath:(id)arg1 WithError:(id*)arg2;
 + (BOOL)phoneNumberMuidMappingFileExistsAtPath:(id)arg1;

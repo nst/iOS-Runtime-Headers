@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class BKSApplicationStateMonitor;
-
 @interface MKApplicationStateMonitor : NSObject {
     BOOL _active;
     BKSApplicationStateMonitor *_appStateMonitor;
@@ -12,9 +10,9 @@
     unsigned int _observerCount;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property BOOL forceBackboardServicesMonitoring;
-@property(getter=isInBackground,readonly) BOOL inBackground;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic) BOOL forceBackboardServicesMonitoring;
+@property (getter=isInBackground, nonatomic, readonly) BOOL inBackground;
 
 + (id)sharedInstance;
 

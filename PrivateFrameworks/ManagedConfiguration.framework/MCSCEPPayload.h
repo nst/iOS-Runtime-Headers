@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSData, NSDictionary, NSString;
-
 @interface MCSCEPPayload : MCCertificatePayload {
     NSArray *_CACaps;
     NSData *_CAFingerprint;
@@ -18,17 +16,17 @@
     int _usageFlags;
 }
 
-@property(retain,readonly) NSArray * CACaps;
-@property(retain,readonly) NSData * CAFingerprint;
-@property(retain,readonly) NSString * CAInstanceName;
-@property(retain,readonly) NSString * URLString;
-@property(retain,readonly) NSString * challenge;
-@property(readonly) unsigned int keySize;
-@property(readonly) unsigned int retries;
-@property(readonly) unsigned int retryDelay;
-@property(retain,readonly) NSArray * subject;
-@property(retain,readonly) NSDictionary * subjectAltName;
-@property(readonly) int usageFlags;
+@property (nonatomic, readonly, retain) NSArray *CACaps;
+@property (nonatomic, readonly, retain) NSData *CAFingerprint;
+@property (nonatomic, readonly, retain) NSString *CAInstanceName;
+@property (nonatomic, readonly, retain) NSString *URLString;
+@property (nonatomic, readonly, retain) NSString *challenge;
+@property (nonatomic, readonly) unsigned int keySize;
+@property (nonatomic, readonly) unsigned int retries;
+@property (nonatomic, readonly) unsigned int retryDelay;
+@property (nonatomic, readonly, retain) NSArray *subject;
+@property (nonatomic, readonly, retain) NSDictionary *subjectAltName;
+@property (nonatomic, readonly) int usageFlags;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

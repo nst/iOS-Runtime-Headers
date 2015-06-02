@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebCustomNSURLError : NSError {
-}
+@interface WebCustomNSURLError : NSError
 
 - (void)encodeWithCoder:(id)arg1;
 

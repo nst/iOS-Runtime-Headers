@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODDIteratorSpecification;
-
 @interface ODDForEach : ODDLayoutObjectList {
     ODDIteratorSpecification *mIteratorSpecification;
 }

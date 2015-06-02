@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFMultiDragDestination>, MFGobblerGestureRecognizer, NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIGestureRecognizer, UIView, UIWindow;
-
 @interface MFMultiDragManager : NSObject <UIGestureRecognizerDelegate> {
     <MFMultiDragDestination> *_currentDestination;
     UIGestureRecognizer *_currentGestureBeingProcessed;
@@ -41,10 +39,10 @@
     double _timeOfLastBigUpdate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
@@ -62,7 +60,7 @@
 - (void)addDragSource:(id)arg1;
 - (void)cancelCurrentDragOperation;
 - (void)dealloc;
-- (void)enumerateDragContextsUsingBlock:(id)arg1;
+- (void)enumerateDragContextsUsingBlock:(id /* block */)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)removeDragContext:(id)arg1;

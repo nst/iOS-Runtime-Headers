@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSOperationQueue, NSString, NSURL, PFUbiquityLocation;
-
 @interface PFUbiquityContainerIdentifier : NSObject <NSFilePresenter> {
     NSString *_localPeerID;
     NSURL *_presentedItemURL;
@@ -14,18 +12,18 @@
     NSString *_uuidString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
-@property(readonly) BOOL usedExistingUUIDFile;
-@property(readonly) PFUbiquityLocation * uuidFileLocation;
-@property(readonly) NSString * uuidString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL usedExistingUUIDFile;
+@property (nonatomic, readonly) PFUbiquityLocation *uuidFileLocation;
+@property (nonatomic, readonly) NSString *uuidString;
 
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
 - (BOOL)identifyContainer:(id*)arg1;

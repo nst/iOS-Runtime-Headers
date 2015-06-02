@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class NSArray, NSString;
-
 @interface TTSVoiceAsset : NSObject <NSSecureCoding> {
     int _footprint;
     int _gender;
@@ -12,11 +10,11 @@
     NSString *_name;
 }
 
-@property(readonly) int footprint;
-@property(readonly) int gender;
-@property(readonly) BOOL isInstalled;
-@property(readonly) NSArray * languages;
-@property(readonly) NSString * name;
+@property (nonatomic, readonly) int footprint;
+@property (nonatomic, readonly) int gender;
+@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) NSArray *languages;
+@property (nonatomic, readonly) NSString *name;
 
 + (BOOL)supportsSecureCoding;
 

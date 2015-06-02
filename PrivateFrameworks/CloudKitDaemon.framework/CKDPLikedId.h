@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, CKDPShareIdentifier, NSData;
-
 @interface CKDPLikedId : PBCodable <NSCopying> {
     CKDPIdentifier *_commentIdentifier;
     NSData *_itemId;
     CKDPShareIdentifier *_shareIdentifier;
 }
 
-@property(retain) CKDPIdentifier * commentIdentifier;
-@property(readonly) BOOL hasCommentIdentifier;
-@property(readonly) BOOL hasItemId;
-@property(readonly) BOOL hasShareIdentifier;
-@property(retain) NSData * itemId;
-@property(retain) CKDPShareIdentifier * shareIdentifier;
+@property (nonatomic, retain) CKDPIdentifier *commentIdentifier;
+@property (nonatomic, readonly) BOOL hasCommentIdentifier;
+@property (nonatomic, readonly) BOOL hasItemId;
+@property (nonatomic, readonly) BOOL hasShareIdentifier;
+@property (nonatomic, retain) NSData *itemId;
+@property (nonatomic, retain) CKDPShareIdentifier *shareIdentifier;
 
 - (void).cxx_destruct;
 - (id)commentIdentifier;

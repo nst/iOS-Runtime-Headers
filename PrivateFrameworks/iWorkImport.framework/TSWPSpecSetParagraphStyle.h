@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPParagraphStyle;
-
 @interface TSWPSpecSetParagraphStyle : TSWPSpecParagraphStyle {
     TSWPParagraphStyle *_paragraphStyle;
     BOOL _unset;

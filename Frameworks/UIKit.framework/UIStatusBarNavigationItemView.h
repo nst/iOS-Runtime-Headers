@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarNavigationItemView : UIStatusBarAppIconItemView {
-}
+@interface UIStatusBarNavigationItemView : UIStatusBarAppIconItemView
 
 - (id)_appBundleIdentifier;
 

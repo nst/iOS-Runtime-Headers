@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSData, NSDictionary, NSEntityDescription, NSMutableDictionary, NSString;
-
 @interface NSPropertyDescription : NSObject <NSCoding, NSCopying> {
     NSEntityDescription *_entity;
     long _entitysReferenceIDForProperty;
@@ -31,19 +29,19 @@
     NSString *_versionHashModifier;
 }
 
-@property(readonly) NSEntityDescription * entity;
-@property(getter=isIndexed) BOOL indexed;
-@property(getter=isIndexedBySpotlight) BOOL indexedBySpotlight;
-@property(copy) NSString * name;
-@property(getter=isOptional) BOOL optional;
-@property(copy) NSString * renamingIdentifier;
-@property(getter=isStoredInExternalRecord) BOOL storedInExternalRecord;
-@property(getter=isTransient) BOOL transient;
-@property(retain) NSDictionary * userInfo;
-@property(readonly) NSArray * validationPredicates;
-@property(readonly) NSArray * validationWarnings;
-@property(copy,readonly) NSData * versionHash;
-@property(copy) NSString * versionHashModifier;
+@property (nonatomic, readonly) NSEntityDescription *entity;
+@property (getter=isIndexed) BOOL indexed;
+@property (getter=isIndexedBySpotlight) BOOL indexedBySpotlight;
+@property (nonatomic, copy) NSString *name;
+@property (getter=isOptional) BOOL optional;
+@property (copy) NSString *renamingIdentifier;
+@property (getter=isStoredInExternalRecord) BOOL storedInExternalRecord;
+@property (getter=isTransient) BOOL transient;
+@property (nonatomic, retain) NSDictionary *userInfo;
+@property (readonly) NSArray *validationPredicates;
+@property (readonly) NSArray *validationWarnings;
+@property (readonly, copy) NSData *versionHash;
+@property (copy) NSString *versionHashModifier;
 
 + (void)initialize;
 
@@ -51,7 +49,7 @@
 - (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (long)_entitysReferenceID;
-- (struct _NSExtraPropertyIVars { id x1; long long x2; long long x3; }*)_extraIVars;
+- (struct _NSExtraPropertyIVars { id x1; long long x2; }*)_extraIVars;
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (BOOL)_isEditable;

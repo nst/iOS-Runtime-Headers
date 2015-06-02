@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVNotificationItemData : CoreDAVLeafDataPayload {
-}
+@interface CalDAVNotificationItemData : CoreDAVLeafDataPayload
 
 @end

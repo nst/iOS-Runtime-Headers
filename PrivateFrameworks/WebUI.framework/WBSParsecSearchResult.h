@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSURL, WBSParsecImageRepresentation;
-
 @interface WBSParsecSearchResult : NSObject <WBSCompletionListItem> {
     NSString *_completion;
     WBSParsecImageRepresentation *_completionIcon;
@@ -22,24 +20,24 @@
     NSString *_urlString;
 }
 
-@property(readonly) NSString * completion;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * descriptionText;
-@property(readonly) NSString * feedbackIdentifier;
-@property(readonly) unsigned int hash;
-@property(readonly) NSNumber * iTunesItemIdentifier;
-@property(readonly) NSString * identifier;
-@property(readonly) unsigned int minimumRankOfTopHitToSuppressResult;
-@property(readonly) NSString * parsecDomainIdentifier;
-@property(readonly) NSURL * reportProblemURL;
-@property(readonly) NSString * sectionHeader;
-@property(readonly) NSDictionary * styleOverrides;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * supportedStyleOverrides;
-@property(readonly) NSString * title;
-@property(readonly) unsigned int type;
-@property(readonly) NSString * urlString;
+@property (nonatomic, readonly) NSString *completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *descriptionText;
+@property (nonatomic, readonly) NSString *feedbackIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSNumber *iTunesItemIdentifier;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) unsigned int minimumRankOfTopHitToSuppressResult;
+@property (nonatomic, readonly) NSString *parsecDomainIdentifier;
+@property (nonatomic, readonly) NSURL *reportProblemURL;
+@property (nonatomic, readonly) NSString *sectionHeader;
+@property (nonatomic, readonly) NSDictionary *styleOverrides;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *supportedStyleOverrides;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) NSString *urlString;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (Class)replacementClass;

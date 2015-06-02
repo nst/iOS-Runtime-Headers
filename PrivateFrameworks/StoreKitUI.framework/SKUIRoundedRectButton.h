@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel, UIView;
-
 @interface SKUIRoundedRectButton : UIButton {
     UIView *_borderView;
     UILabel *_subtitleLabel;

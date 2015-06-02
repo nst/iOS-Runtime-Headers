@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHBounds : NSObject {
-}
+@interface GQHBounds : NSObject
 
 + (void)mapBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2 srcGraphicStyle:(id)arg3 style:(id)arg4 state:(id)arg5;
 + (void)mapPosition:(struct CGPoint { float x1; float x2; })arg1 srcGraphicStyle:(id)arg2 style:(id)arg3 state:(id)arg4;

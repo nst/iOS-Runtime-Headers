@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDictionary, NSString;
-
 @interface IMUserNotification : NSObject {
     id _reserved;
 }
 
-@property(readonly) unsigned int displayFlags;
-@property(retain,readonly) NSDictionary * displayInformation;
-@property(retain,readonly) id identifier;
-@property(retain) NSString * representedApplicationBundle;
-@property(readonly) unsigned int response;
-@property(readonly) unsigned int responseFlags;
-@property(retain,readonly) NSDictionary * responseInformation;
-@property BOOL showInLockScreen;
-@property(readonly) double timeout;
-@property(retain) NSDictionary * userInfo;
-@property BOOL usesNotificationCenter;
+@property (nonatomic, readonly) unsigned int displayFlags;
+@property (nonatomic, readonly, retain) NSDictionary *displayInformation;
+@property (nonatomic, readonly, retain) id identifier;
+@property (nonatomic, retain) NSString *representedApplicationBundle;
+@property (nonatomic, readonly) unsigned int response;
+@property (nonatomic, readonly) unsigned int responseFlags;
+@property (nonatomic, readonly, retain) NSDictionary *responseInformation;
+@property (nonatomic) BOOL showInLockScreen;
+@property (nonatomic, readonly) double timeout;
+@property (nonatomic, retain) NSDictionary *userInfo;
+@property (nonatomic) BOOL usesNotificationCenter;
 
 + (id)userNotificationWithIdentifier:(id)arg1 timeout:(double)arg2 alertLevel:(unsigned int)arg3 displayFlags:(unsigned int)arg4 displayInformation:(id)arg5;
 + (id)userNotificationWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButton:(id)arg4 alternateButton:(id)arg5 otherButton:(id)arg6;

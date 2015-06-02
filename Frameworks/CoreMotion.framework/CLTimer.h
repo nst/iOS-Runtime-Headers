@@ -2,36 +2,26 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CLTimerScheduler>, CLSilo;
-
 @interface CLTimer : NSObject {
     double _fireInterval;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     double _nextFireTime;
     <CLTimerScheduler> *_scheduler;
     CLSilo *_silo;
 }
 
-@property double fireInterval;
-@property(copy) id handler;
-@property double nextFireTime;
+@property (nonatomic) double fireInterval;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic) double nextFireTime;
 
 - (void).cxx_destruct;
 - (double)fireInterval;
-- (id)handler;
+- (id /* block */)handler;
 - (id)initInSilo:(id)arg1 withScheduler:(id)arg2;
 - (void)invalidate;
 - (double)nextFireTime;
 - (void)setFireInterval:(double)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setNextFireAfterDelay:(double)arg1;
 - (void)setNextFireAfterDelay:(double)arg1 interval:(double)arg2;
 - (void)setNextFireTime:(double)arg1;

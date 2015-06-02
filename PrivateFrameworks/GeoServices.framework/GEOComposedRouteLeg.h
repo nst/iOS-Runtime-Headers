@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedRoute, NSArray;
-
 @interface GEOComposedRouteLeg : NSObject {
     GEOComposedRoute *_composedRoute;
     struct _NSRange { 
@@ -17,18 +15,18 @@
     int _type;
 }
 
-@property GEOComposedRoute * composedRoute;
-@property(readonly) unsigned int endPointIndex;
-@property(readonly) unsigned int endStepIndex;
-@property(readonly) unsigned int pointCount;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } pointRange;
-@property(readonly) unsigned int startPointIndex;
-@property(readonly) unsigned int startStepIndex;
-@property(readonly) unsigned int stepCount;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } stepRange;
-@property(readonly) NSArray * steps;
-@property(readonly) int transportType;
-@property(readonly) int type;
+@property (nonatomic) GEOComposedRoute *composedRoute;
+@property (nonatomic, readonly) unsigned int endPointIndex;
+@property (nonatomic, readonly) unsigned int endStepIndex;
+@property (nonatomic, readonly) unsigned int pointCount;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } pointRange;
+@property (nonatomic, readonly) unsigned int startPointIndex;
+@property (nonatomic, readonly) unsigned int startStepIndex;
+@property (nonatomic, readonly) unsigned int stepCount;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } stepRange;
+@property (nonatomic, readonly) NSArray *steps;
+@property (nonatomic, readonly) int transportType;
+@property (nonatomic, readonly) int type;
 
 - (id)composedRoute;
 - (id)description;

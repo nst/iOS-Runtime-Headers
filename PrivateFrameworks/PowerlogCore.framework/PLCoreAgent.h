@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLCoreAgent : PLCoreOperator {
-}
+@interface PLCoreAgent : PLCoreOperator
 
 - (id)init;
 - (void)startAgents;

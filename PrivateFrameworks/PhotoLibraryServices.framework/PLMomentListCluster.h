@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableSet;
-
 @interface PLMomentListCluster : NSObject {
     NSMutableSet *__moments;
     unsigned int _month;
@@ -12,11 +10,11 @@
     unsigned int _year;
 }
 
-@property(readonly) NSMutableSet * _moments;
-@property(readonly) unsigned int month;
-@property(readonly) unsigned int numberOfAssets;
-@property(readonly) unsigned int numberOfMoments;
-@property(readonly) unsigned int year;
+@property (nonatomic, readonly) NSMutableSet *_moments;
+@property (nonatomic, readonly) unsigned int month;
+@property (nonatomic, readonly) unsigned int numberOfAssets;
+@property (nonatomic, readonly) unsigned int numberOfMoments;
+@property (nonatomic, readonly) unsigned int year;
 
 - (id)_moments;
 - (void)addMoment:(id)arg1;

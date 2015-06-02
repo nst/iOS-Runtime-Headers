@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSArray, NSString;
-
 @interface AAFamilyEligibilityResponse : AAResponse {
     NSArray *_familyFeaturePrimaryDescriptions;
     NSArray *_familyFeatureSecondaryDescriptions;
@@ -13,14 +11,14 @@
     NSString *_underageEligibilityAlertTitle;
 }
 
-@property(readonly) int eligibilityStatus;
-@property(readonly) BOOL eligible;
-@property(readonly) NSArray * familyFeaturePrimaryDescriptions;
-@property(readonly) NSArray * familyFeatureSecondaryDescriptions;
-@property(readonly) NSString * familyFeatureSecondaryTitle;
-@property(readonly) BOOL hasPendingInvites;
-@property(readonly) NSString * underageEligibilityAlertMessage;
-@property(readonly) NSString * underageEligibilityAlertTitle;
+@property (nonatomic, readonly) int eligibilityStatus;
+@property (nonatomic, readonly) BOOL eligible;
+@property (nonatomic, readonly) NSArray *familyFeaturePrimaryDescriptions;
+@property (nonatomic, readonly) NSArray *familyFeatureSecondaryDescriptions;
+@property (nonatomic, readonly) NSString *familyFeatureSecondaryTitle;
+@property (nonatomic, readonly) BOOL hasPendingInvites;
+@property (nonatomic, readonly) NSString *underageEligibilityAlertMessage;
+@property (nonatomic, readonly) NSString *underageEligibilityAlertTitle;
 
 - (void).cxx_destruct;
 - (int)eligibilityStatus;

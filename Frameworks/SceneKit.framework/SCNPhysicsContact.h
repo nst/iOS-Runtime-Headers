@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class SCNNode;
-
 @interface SCNPhysicsContact : NSObject {
     float _collisionImpulse;
     struct SCNVector3 { 
@@ -23,12 +21,12 @@
     int _updateCount;
 }
 
-@property(readonly) float collisionImpulse;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } contactNormal;
-@property(readonly) struct SCNVector3 { float x1; float x2; float x3; } contactPoint;
-@property(readonly) SCNNode * nodeA;
-@property(readonly) SCNNode * nodeB;
-@property(readonly) float penetrationDistance;
+@property (nonatomic, readonly) float collisionImpulse;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } contactNormal;
+@property (nonatomic, readonly) struct SCNVector3 { float x1; float x2; float x3; } contactPoint;
+@property (nonatomic, readonly) SCNNode *nodeA;
+@property (nonatomic, readonly) SCNNode *nodeB;
+@property (nonatomic, readonly) float penetrationDistance;
 
 + (id)SCNJSExportProtocol;
 + (id)_contactWithManifold:(const struct btPersistentManifold { int x1; struct btManifoldPoint { struct btVector3 { float x_1_2_1[4]; } x_2_1_1; struct btVector3 { float x_2_2_1[4]; } x_2_1_2; struct btVector3 { float x_3_2_1[4]; } x_2_1_3; struct btVector3 { float x_4_2_1[4]; } x_2_1_4; struct btVector3 { float x_5_2_1[4]; } x_2_1_5; float x_2_1_6; float x_2_1_7; float x_2_1_8; float x_2_1_9; int x_2_1_10; int x_2_1_11; int x_2_1_12; int x_2_1_13; void *x_2_1_14; bool x_2_1_15; float x_2_1_16; float x_2_1_17; float x_2_1_18; float x_2_1_19; float x_2_1_20; float x_2_1_21; float x_2_1_22; int x_2_1_23; struct btVector3 { float x_24_2_1[4]; } x_2_1_24; struct btVector3 { float x_25_2_1[4]; } x_2_1_25; } x2[4]; struct btCollisionObject {} *x3; struct btCollisionObject {} *x4; int x5; float x6; float x7; int x8; int x9; int x10; struct c3dContactCallback {} *x11; }*)arg1 index:(int)arg2;

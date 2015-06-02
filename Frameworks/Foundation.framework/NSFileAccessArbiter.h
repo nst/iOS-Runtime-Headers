@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSFileAccessNode, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface NSFileAccessArbiter : NSObject <NSFileAccessArbiter> {
     NSMutableDictionary *_accessClaimsByID;
     BOOL _isSubarbiter;
@@ -14,15 +12,15 @@
     NSObject<OS_xpc_object> *_superarbitrationServer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_addPresenter:(id)arg1 ofItemAtURL:(id)arg2 watchingFile:(BOOL)arg3 withLastEventID:(id)arg4;
 - (void)_addProvider:(id)arg1 ofItemsAtURL:(id)arg2;
 - (void)_cancelAccessClaimForID:(id)arg1;
-- (void)_getDebugInformationWithString:(id)arg1 fromPid:(int)arg2 thenContinue:(id)arg3;
+- (void)_getDebugInformationWithString:(id)arg1 fromPid:(int)arg2 thenContinue:(id /* block */)arg3;
 - (void)_grantAccessClaim:(id)arg1;
 - (void)_grantSubarbitrationClaim:(id)arg1 withServer:(id)arg2;
 - (void)_handleCanceledClient:(id)arg1;

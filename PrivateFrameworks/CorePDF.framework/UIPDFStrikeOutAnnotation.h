@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface UIPDFStrikeOutAnnotation : UIPDFMarkupAnnotation {
-}
+@interface UIPDFStrikeOutAnnotation : UIPDFMarkupAnnotation
 
 - (int)annotationType;
 

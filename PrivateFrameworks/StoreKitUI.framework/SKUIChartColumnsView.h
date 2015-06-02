@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SKUIFlexibleSegmentedControl, UIView, _UIBackdropView;
-
 @interface SKUIChartColumnsView : UIView <SKUIFlexibleSegmentedControlDelegate> {
     NSArray *_allViewControllers;
     int _animatingToNumberOfVisibleColumns;
@@ -25,14 +23,14 @@
     SKUIFlexibleSegmentedControl *_segmentedControl;
 }
 
-@property(readonly) _UIBackdropView * backdropView;
-@property(copy) NSArray * chartViewControllers;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int numberOfVisibleColumns;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) _UIBackdropView *backdropView;
+@property (nonatomic, copy) NSArray *chartViewControllers;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int numberOfVisibleColumns;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_headerViewAction:(id)arg1;

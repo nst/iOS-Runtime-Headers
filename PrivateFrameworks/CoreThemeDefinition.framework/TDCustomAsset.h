@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSString;
+@interface TDCustomAsset : TDPNGAsset
 
-@interface TDCustomAsset : TDPNGAsset {
-}
-
-@property(retain) NSString * referenceData;
+@property (nonatomic, retain) NSString *referenceData;
 
 - (struct CGSize { float x1; float x2; })sourceImageSizeWithDocument:(id)arg1;
 - (id)sourceImageWithDocument:(id)arg1;

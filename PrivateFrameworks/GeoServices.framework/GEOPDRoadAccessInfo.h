@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDRoadAccessInfo : PBCodable <NSCopying> {
     NSMutableArray *_roadAccessPoints;
 }
 
-@property(retain) NSMutableArray * roadAccessPoints;
+@property (nonatomic, retain) NSMutableArray *roadAccessPoints;
 
 + (id)roadAccessInfoForPlaceData:(id)arg1;
 

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNRecordingMovieTrack, KNRecordingSyncState, NSArray, NSDate;
-
 @interface KNRecording : TSPObject {
     double mDuration;
     NSArray *mEventTracks;
@@ -17,11 +10,11 @@
     KNRecordingSyncState *mSyncState;
 }
 
-@property(readonly) double duration;
-@property(readonly) NSArray * eventTracks;
-@property(getter=isInSyncWithShow,readonly) BOOL inSyncWithShow;
-@property(readonly) NSDate * modificationDate;
-@property(readonly) KNRecordingMovieTrack * movieTrack;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) NSArray *eventTracks;
+@property (getter=isInSyncWithShow, nonatomic, readonly) BOOL inSyncWithShow;
+@property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly) KNRecordingMovieTrack *movieTrack;
 
 - (void)dealloc;
 - (double)duration;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleFlowRootViewController, NSArray;
-
 @interface GKTabBarController : UITabBarController {
     GKBubbleFlowRootViewController *_bubbleFlowRootViewController;
     unsigned int _deferedRotationCount;
 }
 
-@property(retain) GKBubbleFlowRootViewController * bubbleFlowRootViewController;
-@property unsigned int deferedRotationCount;
-@property(readonly) NSArray * modalChildViewControllers;
-@property(readonly) BOOL tabBarCovered;
+@property (nonatomic, retain) GKBubbleFlowRootViewController *bubbleFlowRootViewController;
+@property (nonatomic) unsigned int deferedRotationCount;
+@property (nonatomic, readonly) NSArray *modalChildViewControllers;
+@property (nonatomic, readonly) BOOL tabBarCovered;
 
 - (void)_ensureWeHaveAPresentedBubbleFlowRootViewController;
 - (BOOL)_hasBubbleFlowRootViewController;
@@ -21,13 +19,13 @@
 - (id)bubbleFlowRootViewController;
 - (void)clearInterstitialViewAnimated:(BOOL)arg1;
 - (void)dealloc;
-- (id)deferRotation;
+- (id /* block */)deferRotation;
 - (unsigned int)deferedRotationCount;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)modalChildViewControllers;
-- (void)popAllModalViewControllersAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)popAllModalViewControllersAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setBubbleFlowRootViewController:(id)arg1;
 - (void)setDeferedRotationCount:(unsigned int)arg1;
 - (BOOL)shouldAutorotate;

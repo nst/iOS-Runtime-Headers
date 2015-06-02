@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int eventsSynced;
-@property BOOL hasEventsSynced;
-@property BOOL hasSuccess;
-@property BOOL hasTimestamp;
-@property BOOL success;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int eventsSynced;
+@property (nonatomic) BOOL hasEventsSynced;
+@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL success;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

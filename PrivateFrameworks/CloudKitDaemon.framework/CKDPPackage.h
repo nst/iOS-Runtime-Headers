@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPAsset, NSMutableArray;
-
 @interface CKDPPackage : PBCodable <NSCopying> {
     CKDPAsset *_manifest;
     NSMutableArray *_sections;
 }
 
-@property(readonly) BOOL hasManifest;
-@property(retain) CKDPAsset * manifest;
-@property(retain) NSMutableArray * sections;
+@property (nonatomic, readonly) BOOL hasManifest;
+@property (nonatomic, retain) CKDPAsset *manifest;
+@property (nonatomic, retain) NSMutableArray *sections;
 
 - (void).cxx_destruct;
 - (void)addSections:(id)arg1;

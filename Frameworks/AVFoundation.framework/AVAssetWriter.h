@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterHelper, AVAssetWriterInternal, NSArray, NSError, NSString, NSURL;
-
 @interface AVAssetWriter : NSObject {
     AVAssetWriterInternal *_internal;
 }
 
-@property(readonly) NSArray * availableMediaTypes;
-@property(copy) NSURL * directoryForTemporaryFiles;
-@property(readonly) NSError * error;
-@property(getter=_helper,retain,readonly) AVAssetWriterHelper * helper;
-@property(readonly) NSArray * inputs;
-@property(copy) NSArray * metadata;
-@property(copy,readonly) NSString * outputFileType;
-@property(copy,readonly) NSURL * outputURL;
-@property BOOL shouldOptimizeForNetworkUse;
-@property(readonly) int status;
+@property (nonatomic, readonly) NSArray *availableMediaTypes;
+@property (nonatomic, copy) NSURL *directoryForTemporaryFiles;
+@property (readonly) NSError *error;
+@property (getter=_helper, readonly, retain) AVAssetWriterHelper *helper;
+@property (nonatomic, readonly) NSArray *inputs;
+@property (nonatomic, copy) NSArray *metadata;
+@property (nonatomic, readonly, copy) NSString *outputFileType;
+@property (nonatomic, readonly, copy) NSURL *outputURL;
+@property (nonatomic) BOOL shouldOptimizeForNetworkUse;
+@property (readonly) int status;
 
 + (id)_errorForOSStatus:(long)arg1;
 + (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
@@ -28,7 +26,7 @@
 
 - (id)_helper;
 - (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2;
-- (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2 withBlock:(id)arg3;
+- (BOOL)_setHelper:(id)arg1 ifCurrentHelper:(id)arg2 withBlock:(id /* block */)arg3;
 - (BOOL)_supportsSampleReferencesReturningError:(id*)arg1;
 - (void)_transitionToFailedStatusWithError:(id)arg1;
 - (void)addInput:(id)arg1;
@@ -45,7 +43,7 @@
 - (id)error;
 - (void)finalize;
 - (BOOL)finishWriting;
-- (void)finishWritingWithCompletionHandler:(id)arg1;
+- (void)finishWritingWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
 - (id)inputGroups;

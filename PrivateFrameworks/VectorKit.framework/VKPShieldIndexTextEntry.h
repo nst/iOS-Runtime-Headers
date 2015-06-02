@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray, NSString;
-
 @interface VKPShieldIndexTextEntry : PBCodable <NSCopying> {
     NSString *_artworkIdentifier;
     struct { 
@@ -13,11 +11,11 @@
     int _shieldType;
 }
 
-@property(retain) NSString * artworkIdentifier;
-@property(readonly) BOOL hasArtworkIdentifier;
-@property BOOL hasShieldType;
-@property(retain) NSMutableArray * shieldTexts;
-@property int shieldType;
+@property (nonatomic, retain) NSString *artworkIdentifier;
+@property (nonatomic, readonly) BOOL hasArtworkIdentifier;
+@property (nonatomic) BOOL hasShieldType;
+@property (nonatomic, retain) NSMutableArray *shieldTexts;
+@property (nonatomic) int shieldType;
 
 - (void)addShieldText:(id)arg1;
 - (id)artworkIdentifier;

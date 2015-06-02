@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDPathSource;
-
 @interface TSDConnectionLineRep : TSDShapeRep {
     TSDPathSource *mLastPathSource;
 }

@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EABluetoothAccessoryPicker, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSTimer;
-
 @interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
     NSMutableArray *_connectedAccessories;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     EABluetoothAccessoryPicker *_picker;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pickerCompletion;
-
+    id /* block */ _pickerCompletion;
     NSTimer *_pickerTimer;
     NSString *_selectedBluetoothAddress;
     BOOL _sequesterNewAccessories;
     NSMutableArray *_sequesteredAccessories;
 }
 
-@property(readonly) NSArray * connectedAccessories;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *connectedAccessories;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)accessibilityStartListening;
 + (void)accessibilityStopListening;
@@ -83,7 +73,7 @@
 - (void)setShouldAllowInternalProtocols:(BOOL)arg1;
 - (BOOL)shouldAllowCppRuntime;
 - (BOOL)shouldAllowInternalProtocols;
-- (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id)arg2;
+- (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id /* block */)arg2;
 - (void)startIPAccessoryDiscovery;
 - (void)stopIPAccessoryDiscovery;
 - (void)unregisterForLocalNotifications;

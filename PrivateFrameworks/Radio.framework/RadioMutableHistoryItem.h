@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSString, RadioTrack;
+@interface RadioMutableHistoryItem : RadioHistoryItem
 
-@interface RadioMutableHistoryItem : RadioHistoryItem {
-}
-
-@property(retain) NSDate * datePlayed;
-@property(copy) NSString * externalIdentifier;
-@property(retain) RadioTrack * track;
-@property int type;
+@property (nonatomic, retain) NSDate *datePlayed;
+@property (nonatomic, copy) NSString *externalIdentifier;
+@property (nonatomic, retain) RadioTrack *track;
+@property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDatePlayed:(id)arg1;

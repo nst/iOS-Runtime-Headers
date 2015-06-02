@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, PKPass;
-
 @interface SUScriptPassbookPass : SUScriptObject {
     PKPass *_pass;
 }
 
-@property(readonly) NSString * passTypeIdentifier;
-@property(readonly) NSString * passURL;
-@property(readonly) NSString * serialNumber;
+@property (readonly) NSString *passTypeIdentifier;
+@property (readonly) NSString *passURL;
+@property (readonly) NSString *serialNumber;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class HKAchievement, UIImageView;
-
 @interface FUAchievementView : UIView {
     HKAchievement *_achievement;
     UIImageView *_iconView;
     int _sizeClass;
 }
 
-@property(retain) HKAchievement * achievement;
-@property int sizeClass;
+@property (nonatomic, retain) HKAchievement *achievement;
+@property (nonatomic) int sizeClass;
 
 - (void).cxx_destruct;
 - (id)achievement;

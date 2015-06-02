@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface PagingLandscapeAnalogClockView : AnalogClockView {
-}
+@interface PagingLandscapeAnalogClockView : AnalogClockView
 
 + (float)faceRadius;
 + (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;

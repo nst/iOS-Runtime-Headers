@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSHashTable, NSMutableDictionary, NSOperationQueue, NSString, NSURL, SKUIClientContext;
-
 @interface SKUIGiftConfiguration : NSObject {
     NSArray *_charities;
     NSMutableDictionary *_charityImages;
@@ -27,23 +25,23 @@
     NSArray *_themes;
 }
 
-@property(readonly) SKUIClientContext * clientContext;
-@property(readonly) NSString * currencySymbol;
-@property(readonly) int currencySymbolPosition;
-@property(readonly) NSArray * fixedGiftAmountLabels;
-@property(readonly) NSArray * fixedGiftAmountValues;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } giftAmountRange;
-@property(readonly) NSURL * giftPurchaseURL;
-@property(readonly) NSURL * giftValidationURL;
-@property(readonly) int maximumMessageLength;
-@property(readonly) NSString * senderEmailAddress;
-@property(readonly) NSString * senderName;
-@property(readonly) NSString * storeFrontName;
-@property(readonly) NSArray * themes;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic, readonly) NSString *currencySymbol;
+@property (nonatomic, readonly) int currencySymbolPosition;
+@property (nonatomic, readonly) NSArray *fixedGiftAmountLabels;
+@property (nonatomic, readonly) NSArray *fixedGiftAmountValues;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } giftAmountRange;
+@property (nonatomic, readonly) NSURL *giftPurchaseURL;
+@property (nonatomic, readonly) NSURL *giftValidationURL;
+@property (nonatomic, readonly) int maximumMessageLength;
+@property (nonatomic, readonly) NSString *senderEmailAddress;
+@property (nonatomic, readonly) NSString *senderName;
+@property (nonatomic, readonly) NSString *storeFrontName;
+@property (nonatomic, readonly) NSArray *themes;
 
 - (void).cxx_destruct;
-- (void)_finishLoadAccountInfoWithResponse:(id)arg1 error:(id)arg2 block:(id)arg3;
-- (void)_finishLoadWithResponse:(id)arg1 error:(id)arg2 block:(id)arg3;
+- (void)_finishLoadAccountInfoWithResponse:(id)arg1 error:(id)arg2 block:(id /* block */)arg3;
+- (void)_finishLoadWithResponse:(id)arg1 error:(id)arg2 block:(id /* block */)arg3;
 - (void)_loadThemeImages;
 - (void)_setHeaderImage:(id)arg1 forTheme:(id)arg2;
 - (void)_setLogoImage:(id)arg1 forCharity:(id)arg2;
@@ -59,7 +57,7 @@
 - (id)giftValidationURL;
 - (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
 - (BOOL)loadCachedConfiguration;
-- (void)loadConfigurationWithCompletionBlock:(id)arg1;
+- (void)loadConfigurationWithCompletionBlock:(id /* block */)arg1;
 - (void)loadLogoForCharity:(id)arg1;
 - (id)logoImageForCharity:(id)arg1;
 - (int)maximumMessageLength;

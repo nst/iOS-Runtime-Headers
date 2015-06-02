@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUScriptCanvasContext, UIImage, WebScriptObject;
-
 @interface SUScriptButton : SUScriptObject <SUScriptNavigationItem> {
     id _action;
     SUScriptCanvasContext *_canvas;
@@ -11,23 +9,23 @@
     WebScriptObject *_target;
 }
 
-@property(retain) id action;
-@property(retain) SUScriptCanvasContext * canvas;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (retain) id action;
+@property (retain) SUScriptCanvasContext *canvas;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
 @property BOOL loading;
-@property BOOL shouldPerformDefaultAction;
-@property(readonly) id showingConfirmation;
-@property(retain) NSString * style;
-@property(retain) NSString * subtitle;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL shouldPerformDefaultAction;
+@property (readonly) id showingConfirmation;
+@property (retain) NSString *style;
+@property (retain) NSString *subtitle;
+@property (readonly) Class superclass;
 @property int tag;
-@property(retain) WebScriptObject * target;
-@property(retain) NSString * title;
+@property (retain) WebScriptObject *target;
+@property (retain) NSString *title;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

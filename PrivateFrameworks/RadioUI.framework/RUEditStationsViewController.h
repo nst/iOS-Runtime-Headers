@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate>, MPUBorderDrawingCache, NSArray, NSIndexPath, NSString, RUCreateStationViewController, RUParallelScrollView, RUProxyTableView, UIAlertView, _UIBackdropView;
-
 @interface RUEditStationsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     _UIBackdropView *_backdropView;
     RUParallelScrollView *_containerScrollView;
@@ -25,17 +23,17 @@
     RUProxyTableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUCreateStationViewControllerDelegate><RUEditStationsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_beginIgnoringReloadData;
-- (void)_commitDeletingStationWithCompletionHandler:(id)arg1;
+- (void)_commitDeletingStationWithCompletionHandler:(id /* block */)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_didReceiveRadioAccountDidDeauthenticateNotification:(id)arg1;
 - (void)_doneAction:(id)arg1;

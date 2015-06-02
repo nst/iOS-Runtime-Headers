@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBackgroundElement, IKCarouselElement, IKDocumentBannerElement, NSArray;
+@interface IKShowcaseTemplate : IKViewElement
 
-@interface IKShowcaseTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKBackgroundElement * background;
-@property(retain,readonly) IKCarouselElement * carousel;
-@property(retain,readonly) IKDocumentBannerElement * documentBanner;
-@property(retain,readonly) NSArray * modes;
-@property(readonly) unsigned int transition;
+@property (nonatomic, readonly, retain) IKBackgroundElement *background;
+@property (nonatomic, readonly, retain) IKCarouselElement *carousel;
+@property (nonatomic, readonly, retain) IKDocumentBannerElement *documentBanner;
+@property (nonatomic, readonly, retain) NSArray *modes;
+@property (nonatomic, readonly) unsigned int transition;
 
 - (id)background;
 - (id)carousel;

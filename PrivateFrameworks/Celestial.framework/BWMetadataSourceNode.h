@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface BWMetadataSourceNode : BWSourceNode {
     struct OpaqueCMClock { } *_clock;
     NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
@@ -11,7 +9,7 @@
     BOOL _running;
 }
 
-@property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
+@property (nonatomic, readonly) struct opaqueCMFormatDescription { }*formatDescription;
 
 + (void)initialize;
 

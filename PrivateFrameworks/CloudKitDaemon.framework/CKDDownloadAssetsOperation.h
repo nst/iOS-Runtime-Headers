@@ -2,47 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKDCancelTokenGroup, NSArray, NSMapTable, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface CKDDownloadAssetsOperation : CKDDatabaseOperation {
     NSMutableArray *_MMCSItemsToDownload;
     NSArray *_assetsToDownload;
     CKDCancelTokenGroup *_cancelTokens;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadCompletionBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadPreparationBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadProgressBlock;
-
+    id /* block */ _downloadCompletionBlock;
+    id /* block */ _downloadPreparationBlock;
+    id /* block */ _downloadProgressBlock;
     NSMapTable *_downloadTasksByPackages;
     unsigned int _maxPackageDownloadsPerBatch;
     NSArray *_packageIndexSets;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSMutableArray * MMCSItemsToDownload;
-@property(retain) NSArray * assetsToDownload;
-@property(retain) CKDCancelTokenGroup * cancelTokens;
-@property(copy) id downloadCompletionBlock;
-@property(copy) id downloadPreparationBlock;
-@property(copy) id downloadProgressBlock;
-@property(retain) NSMapTable * downloadTasksByPackages;
-@property unsigned int maxPackageDownloadsPerBatch;
-@property(retain) NSArray * packageIndexSets;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, retain) NSMutableArray *MMCSItemsToDownload;
+@property (nonatomic, retain) NSArray *assetsToDownload;
+@property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
+@property (nonatomic, copy) id /* block */ downloadCompletionBlock;
+@property (nonatomic, copy) id /* block */ downloadPreparationBlock;
+@property (nonatomic, copy) id /* block */ downloadProgressBlock;
+@property (nonatomic, retain) NSMapTable *downloadTasksByPackages;
+@property (nonatomic) unsigned int maxPackageDownloadsPerBatch;
+@property (nonatomic, retain) NSArray *packageIndexSets;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
 - (id)MMCSItemsToDownload;
@@ -56,19 +38,19 @@
 - (void)_didMakeProgressForMMCSSectionItem:(id)arg1 task:(id)arg2;
 - (void)_didPrepareAsset:(id)arg1;
 - (BOOL)_download;
-- (void)_downloadPackageSectionAtIndex:(int)arg1 task:(id)arg2 completionBlock:(id)arg3;
+- (void)_downloadPackageSectionAtIndex:(int)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_downloadPackageSectionsWithPendingTasks:(id)arg1 downloadingTasks:(id)arg2 completedTasks:(id)arg3;
-- (void)_downloadPackageSectionsWithSectionEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id)arg3;
-- (void)_downloadPackageSectionsWithTask:(id)arg1 completionBlock:(id)arg2;
+- (void)_downloadPackageSectionsWithSectionEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_downloadPackageSectionsWithTask:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (BOOL)_prepareForDownload;
 - (void)_removeUntrackedMMCSItems:(id)arg1;
 - (id)assetsToDownload;
 - (void)cancel;
 - (id)cancelTokens;
-- (id)downloadCompletionBlock;
-- (id)downloadPreparationBlock;
-- (id)downloadProgressBlock;
+- (id /* block */)downloadCompletionBlock;
+- (id /* block */)downloadPreparationBlock;
+- (id /* block */)downloadProgressBlock;
 - (id)downloadTasksByPackages;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2 assetsToDownload:(id)arg3 packageIndexSets:(id)arg4;
 - (void)main;
@@ -79,9 +61,9 @@
 - (id)queue;
 - (void)setAssetsToDownload:(id)arg1;
 - (void)setCancelTokens:(id)arg1;
-- (void)setDownloadCompletionBlock:(id)arg1;
-- (void)setDownloadPreparationBlock:(id)arg1;
-- (void)setDownloadProgressBlock:(id)arg1;
+- (void)setDownloadCompletionBlock:(id /* block */)arg1;
+- (void)setDownloadPreparationBlock:(id /* block */)arg1;
+- (void)setDownloadProgressBlock:(id /* block */)arg1;
 - (void)setDownloadTasksByPackages:(id)arg1;
 - (void)setMMCSItemsToDownload:(id)arg1;
 - (void)setMaxPackageDownloadsPerBatch:(unsigned int)arg1;

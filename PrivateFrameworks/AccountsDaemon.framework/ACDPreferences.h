@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@interface ACDPreferences : NSObject {
-}
+@interface ACDPreferences : NSObject
 
 + (id)sharedPreferences;
 

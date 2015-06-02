@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class SBUIPasscodeLockViewWithKeyboard;
-
 @interface SBPasscodeKeyboard : UIKeyboard {
     SBUIPasscodeLockViewWithKeyboard *_lockView;
 }

@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSInputStream, NSMutableArray, NSMutableData, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
-
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate> {
     BOOL _connected;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _connectedHandler;
-
+    id /* block */ _connectedHandler;
     unsigned int _currentSequenceNumber;
     NSMutableData *_dataReceived;
     NSMutableData *_dataToSend;
@@ -25,11 +15,7 @@
     NSMutableArray *_messageReceiptHandlerList;
     NSOutputStream *_outputStream;
     BOOL _readyToWrite;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _receiveDataHandler;
-
+    id /* block */ _receiveDataHandler;
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;
     BOOL _shouldSendHello;
@@ -37,18 +23,18 @@
     NSObject<OS_dispatch_queue> *_targetQueue;
 }
 
-@property(copy) id connectedHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSInputStream * inputStream;
-@property(copy) NSString * localServiceName;
-@property(retain) NSOutputStream * outputStream;
-@property(copy) id receiveDataHandler;
-@property(copy) NSString * remoteServiceName;
-@property(readonly) Class superclass;
-@property NSObject<OS_dispatch_queue> * syncQueue;
-@property NSObject<OS_dispatch_queue> * targetQueue;
+@property (nonatomic, copy) id /* block */ connectedHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSInputStream *inputStream;
+@property (nonatomic, copy) NSString *localServiceName;
+@property (nonatomic, retain) NSOutputStream *outputStream;
+@property (nonatomic, copy) id /* block */ receiveDataHandler;
+@property (nonatomic, copy) NSString *remoteServiceName;
+@property (readonly) Class superclass;
+@property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (void)checkConstants;
 + (unsigned int)receiveDataLimit;
@@ -56,21 +42,21 @@
 
 - (void)attachInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)connectToNetService:(id)arg1;
-- (id)connectedHandler;
+- (id /* block */)connectedHandler;
 - (void)dealloc;
 - (id)initWithLocalServiceName:(id)arg1;
 - (id)inputStream;
 - (void)invalidate;
 - (id)localServiceName;
 - (id)outputStream;
-- (id)receiveDataHandler;
+- (id /* block */)receiveDataHandler;
 - (id)remoteServiceName;
-- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)setConnectedHandler:(id)arg1;
+- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setConnectedHandler:(id /* block */)arg1;
 - (void)setInputStream:(id)arg1;
 - (void)setLocalServiceName:(id)arg1;
 - (void)setOutputStream:(id)arg1;
-- (void)setReceiveDataHandler:(id)arg1;
+- (void)setReceiveDataHandler:(id /* block */)arg1;
 - (void)setRemoteServiceName:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
@@ -90,7 +76,7 @@
 - (void)syncSendAccept;
 - (void)syncSendData;
 - (void)syncSendHello;
-- (void)syncSendMessage:(int)arg1 data:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)syncSendMessage:(int)arg1 data:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)syncSendMessageReceipt:(int)arg1 sequenceNumber:(unsigned int)arg2;
 - (id)targetQueue;
 

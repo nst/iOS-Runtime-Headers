@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIMipmapBlur : CIFilter {
     CIImage *inputImage;
     NSNumber *inputLevel;
 }
 
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputLevel;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputLevel;
 
 + (id)customAttributes;
 

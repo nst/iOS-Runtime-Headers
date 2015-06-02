@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStyle;
-
 @interface GQHBulletInfo : NSObject {
     int mBulletIndent;
     struct __CFString { } *mChar;

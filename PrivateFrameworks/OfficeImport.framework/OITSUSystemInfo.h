@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUSystemInfo : NSObject {
-}
+@interface OITSUSystemInfo : NSObject
 
 + (id)macAddress;
 + (id)operatingSystemName;

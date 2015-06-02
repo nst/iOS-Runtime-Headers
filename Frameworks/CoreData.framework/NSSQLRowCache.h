@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLCore;
-
 @interface NSSQLRowCache : NSPersistentStoreCache {
     int _debug;
     NSSQLCore *_sqlCore;

@@ -10,11 +10,11 @@
     int _startUTCOffsetSeconds;
 }
 
-@property(readonly) double end;
-@property(readonly) int endUTCOffsetSeconds;
-@property(getter=isFloating,readonly) BOOL floating;
-@property(readonly) double start;
-@property(readonly) int startUTCOffsetSeconds;
+@property (nonatomic, readonly) double end;
+@property (nonatomic, readonly) int endUTCOffsetSeconds;
+@property (getter=isFloating, nonatomic, readonly) BOOL floating;
+@property (nonatomic, readonly) double start;
+@property (nonatomic, readonly) int startUTCOffsetSeconds;
 
 + (id)dateFromGregorianComponents:(id)arg1;
 + (id)floatingRangeWithStart:(double)arg1 end:(double)arg2;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSShare;
-
 @interface MSInvitationResponse : NSObject {
     BOOL _accept;
     MSShare *_invitation;
 }
 
-@property BOOL accept;
-@property(retain) MSShare * invitation;
+@property (nonatomic) BOOL accept;
+@property (nonatomic, retain) MSShare *invitation;
 
 + (id)responseWithInvitation:(id)arg1 accept:(BOOL)arg2;
 

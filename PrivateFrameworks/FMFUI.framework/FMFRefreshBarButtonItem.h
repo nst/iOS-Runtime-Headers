@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class FMFRefreshWrapperButton, FMFTintedActivityIndicatorView, NSSet, UIImageView;
-
 @interface FMFRefreshBarButtonItem : UIBarButtonItem {
     FMFTintedActivityIndicatorView *_aiv;
     UIImageView *_imageView;
@@ -12,11 +10,11 @@
     FMFRefreshWrapperButton *_wrapperButton;
 }
 
-@property(retain) FMFTintedActivityIndicatorView * aiv;
-@property(retain) UIImageView * imageView;
-@property(retain) id locateNotification;
-@property(retain) NSSet * locations;
-@property(retain) FMFRefreshWrapperButton * wrapperButton;
+@property (nonatomic, retain) FMFTintedActivityIndicatorView *aiv;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) id locateNotification;
+@property (nonatomic, retain) NSSet *locations;
+@property (nonatomic, retain) FMFRefreshWrapperButton *wrapperButton;
 
 - (void).cxx_destruct;
 - (void)_updateLocateInProgress;

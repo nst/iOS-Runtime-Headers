@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray, NSString, PSLanguage, PSLanguageSelector, PSLocaleSelector, UISearchBar, UITableView, UIView;
-
 @interface PSInternationalLanguageController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     PSLanguage *_checkedLanguage;
     UIView *_contentView;
@@ -19,19 +17,19 @@
     UITableView *_tableView;
 }
 
-@property(retain) PSLanguage * checkedLanguage;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * deviceLanguages;
-@property(retain) NSArray * filteredDeviceLanguages;
-@property(retain) NSArray * filteredOtherLanguages;
-@property(readonly) unsigned int hash;
-@property(retain) PSLanguageSelector * languageSelector;
-@property(retain) PSLocaleSelector * localeSelector;
-@property(retain) NSArray * otherLanguages;
-@property(retain) NSString * savedSearchTerm;
-@property BOOL searchIsActive;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PSLanguage *checkedLanguage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *deviceLanguages;
+@property (nonatomic, retain) NSArray *filteredDeviceLanguages;
+@property (nonatomic, retain) NSArray *filteredOtherLanguages;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PSLanguageSelector *languageSelector;
+@property (nonatomic, retain) PSLocaleSelector *localeSelector;
+@property (nonatomic, retain) NSArray *otherLanguages;
+@property (nonatomic, retain) NSString *savedSearchTerm;
+@property (nonatomic) BOOL searchIsActive;
+@property (readonly) Class superclass;
 
 - (id)_mainContentView;
 - (void)_removeBlackFrame;

@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitReverb : AVAudioUnitEffect {
-}
+@interface AVAudioUnitReverb : AVAudioUnitEffect
 
-@property float wetDryMix;
+@property (nonatomic) float wetDryMix;
 
 - (id)init;
 - (void)loadFactoryPreset:(int)arg1;

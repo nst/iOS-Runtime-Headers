@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSDate;
-
 @interface GEORerouteInfo : NSObject {
     double _distanceFromDestination;
     double _distancePenalty;
@@ -12,9 +10,9 @@
     NSDate *_time;
 }
 
-@property double distanceFromDestination;
-@property(readonly) double penalty;
-@property(retain) NSDate * time;
+@property (nonatomic) double distanceFromDestination;
+@property (nonatomic, readonly) double penalty;
+@property (nonatomic, retain) NSDate *time;
 
 - (double)distanceFromDestination;
 - (double)penalty;

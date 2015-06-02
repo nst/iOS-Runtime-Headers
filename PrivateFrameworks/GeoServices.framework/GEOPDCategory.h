@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDCategory : PBCodable <NSCopying> {
     NSString *_categoryId;
     struct { 
@@ -13,11 +11,11 @@
     NSMutableArray *_localizedNames;
 }
 
-@property(retain) NSString * categoryId;
-@property(readonly) BOOL hasCategoryId;
-@property BOOL hasLevel;
-@property int level;
-@property(retain) NSMutableArray * localizedNames;
+@property (nonatomic, retain) NSString *categoryId;
+@property (nonatomic, readonly) BOOL hasCategoryId;
+@property (nonatomic) BOOL hasLevel;
+@property (nonatomic) int level;
+@property (nonatomic, retain) NSMutableArray *localizedNames;
 
 + (id)_allCategoriesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (id)categoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;

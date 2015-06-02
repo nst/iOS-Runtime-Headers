@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedAlbumCreatedSectionInfo : PUFeedSectionInfo {
-}
+@interface PUFeedAlbumCreatedSectionInfo : PUFeedSectionInfo
 
 - (int)sectionType;
 - (int)typeForItemAtIndex:(int)arg1;

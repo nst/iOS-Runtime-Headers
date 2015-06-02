@@ -7,8 +7,8 @@
     double _compassHeading;
 }
 
-@property(readonly) float angle;
-@property double compassHeading;
+@property (nonatomic, readonly) float angle;
+@property (nonatomic) double compassHeading;
 
 - (float)angle;
 - (double)compassHeading;

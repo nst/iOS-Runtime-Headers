@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSUpdateMemoryEntity : SSMemoryEntity {
-}
+@interface SSUpdateMemoryEntity : SSMemoryEntity
 
 + (Class)databaseEntityClass;
 

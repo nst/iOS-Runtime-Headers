@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMutableDictionary;
-
 @interface BRCProgress : NSProgress {
     BOOL _isPublished;
     NSMutableDictionary *_progressByAliasContainerID;

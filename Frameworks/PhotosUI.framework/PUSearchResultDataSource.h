@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUSearchResultDelegate>, NSMutableOrderedSet, NSObject<OS_dispatch_queue>, NSOrderedSet, NSSet, NSString;
-
 @interface PUSearchResultDataSource : NSObject <PLDiagnosticsProvider> {
     NSSet *_assetUUIDs;
     NSOrderedSet *_containers;
@@ -16,13 +14,13 @@
     NSMutableOrderedSet *_uncommittedContainers;
 }
 
-@property(readonly) NSSet * assetUUIDs;
-@property(copy,readonly) NSString * debugDescription;
-@property <PUSearchResultDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isFinished,readonly) BOOL finished;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSSet *assetUUIDs;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUSearchResultDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isFinished, nonatomic, readonly) BOOL finished;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_inqClearPendingChanges;
@@ -35,6 +33,6 @@
 - (BOOL)isFinished;
 - (void)mergePendingChanges;
 - (void)setDelegate:(id)arg1;
-- (void)updateAssetUUIDs:(id)arg1 completion:(id)arg2;
+- (void)updateAssetUUIDs:(id)arg1 completion:(id /* block */)arg2;
 
 @end

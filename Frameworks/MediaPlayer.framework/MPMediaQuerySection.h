@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
-
 @interface MPMediaQuerySection : NSObject <NSCopying, NSSecureCoding> {
     struct _NSRange { 
         unsigned int location; 
@@ -13,9 +11,9 @@
     NSString *_title;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property unsigned int sectionIndexTitleIndex;
-@property(copy) NSString * title;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) unsigned int sectionIndexTitleIndex;
+@property (nonatomic, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 

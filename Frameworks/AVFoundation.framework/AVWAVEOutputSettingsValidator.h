@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVWAVEOutputSettingsValidator : AVMediaFileOutputSettingsValidator {
-}
+@interface AVWAVEOutputSettingsValidator : AVMediaFileOutputSettingsValidator
 
 - (id)initWithFileType:(id)arg1;
 - (BOOL)validateAudioOutputSettings:(id)arg1 reason:(id*)arg2;

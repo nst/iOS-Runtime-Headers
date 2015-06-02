@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactoryiPhoneLandscape : UIKBRenderFactoryiPhone {
-}
+@interface UIKBRenderFactoryiPhoneLandscape : UIKBRenderFactoryiPhone
 
 - (float)_row4ControlSegmentWidth;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;

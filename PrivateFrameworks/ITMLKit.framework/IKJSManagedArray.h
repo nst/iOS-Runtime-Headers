@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSArray;
-
 @interface IKJSManagedArray : NSObject {
     NSArray *_managedArray;
     id _ownerObject;
 }
 
-@property(retain) NSArray * managedArray;
-@property(retain) id ownerObject;
+@property (nonatomic, retain) NSArray *managedArray;
+@property (nonatomic, retain) id ownerObject;
 
 - (void).cxx_destruct;
 - (void)dealloc;

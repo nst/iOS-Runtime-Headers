@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
  */
 
-@interface InterAppAudioGroup : NSObject {
-}
+@interface InterAppAudioGroup : NSObject
 
 + (id)sharedInstance;
 

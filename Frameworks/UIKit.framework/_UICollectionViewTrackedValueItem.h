@@ -7,8 +7,8 @@
     float _value;
 }
 
-@property double timeStamp;
-@property float value;
+@property (nonatomic) double timeStamp;
+@property (nonatomic) float value;
 
 - (void)setTimeStamp:(double)arg1;
 - (void)setValue:(float)arg1;

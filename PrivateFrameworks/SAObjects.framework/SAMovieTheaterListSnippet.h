@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMovieTheaterListSnippet : SAMovieMovieListSnippet {
-}
+@interface SAMovieTheaterListSnippet : SAMovieMovieListSnippet
 
 + (id)theaterListSnippet;
 + (id)theaterListSnippetWithDictionary:(id)arg1 context:(id)arg2;

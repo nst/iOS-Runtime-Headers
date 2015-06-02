@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIImageView, UIView;
-
 @interface _MKCalloutBackgroundMaskView : UIView {
     UIView *_baseView;
     UIImageView *_bottomArrow;
@@ -13,12 +11,12 @@
     UIImageView *_topArrow;
 }
 
-@property(readonly) UIView * baseView;
-@property(readonly) UIImageView * bottomArrow;
-@property(readonly) UIView * currentArrowContainer;
-@property(readonly) UIImageView * leftArrow;
-@property(readonly) UIImageView * rightArrow;
-@property(readonly) UIImageView * topArrow;
+@property (nonatomic, readonly) UIView *baseView;
+@property (nonatomic, readonly) UIImageView *bottomArrow;
+@property (nonatomic, readonly) UIView *currentArrowContainer;
+@property (nonatomic, readonly) UIImageView *leftArrow;
+@property (nonatomic, readonly) UIImageView *rightArrow;
+@property (nonatomic, readonly) UIImageView *topArrow;
 
 - (void).cxx_destruct;
 - (void)_removeArrows;

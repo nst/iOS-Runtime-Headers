@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUTabBarControllerDelegate>, NSArray, NSString;
-
 @interface MPUTabBarController : UITabBarController {
     NSArray *_customizableViewControllerIdentifiers;
     Class _viewControllerFactoryClass;
     NSArray *_viewControllerIdentifiers;
 }
 
-@property(copy) NSArray * customizableViewControllerIdentifiers;
-@property <MPUTabBarControllerDelegate> * delegate;
-@property(readonly) NSArray * filteredViewControllerIdentifiers;
-@property(copy) NSString * selectedViewControllerIdentifier;
-@property(retain) Class viewControllerFactoryClass;
-@property(copy) NSArray * viewControllerIdentifiers;
+@property (nonatomic, copy) NSArray *customizableViewControllerIdentifiers;
+@property (nonatomic) <MPUTabBarControllerDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *filteredViewControllerIdentifiers;
+@property (nonatomic, copy) NSString *selectedViewControllerIdentifier;
+@property (nonatomic, retain) Class viewControllerFactoryClass;
+@property (nonatomic, copy) NSArray *viewControllerIdentifiers;
 
 + (Class)_moreNavigationControllerClass;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMCanonicalShapeBuilder : CMShapeBuilder {
-}
+@interface CMCanonicalShapeBuilder : CMShapeBuilder
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (struct CGPath { }*)copyCanWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 andAspectRatio:(float)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString;
-
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
     NSArray *_keyboardOutputs;
     NSString *_primaryLanguage;
@@ -14,13 +12,13 @@
     BOOL _shouldPostReturnKeyNotification;
 }
 
-@property(retain) NSArray * keyboardOutputs;
-@property(copy) NSString * primaryLanguage;
-@property BOOL requiresInputManagerSync;
-@property BOOL shouldAdvanceInputMode;
-@property BOOL shouldAdvanceResponder;
-@property BOOL shouldDismiss;
-@property BOOL shouldPostReturnKeyNotification;
+@property (nonatomic, retain) NSArray *keyboardOutputs;
+@property (nonatomic, copy) NSString *primaryLanguage;
+@property (nonatomic) BOOL requiresInputManagerSync;
+@property (nonatomic) BOOL shouldAdvanceInputMode;
+@property (nonatomic) BOOL shouldAdvanceResponder;
+@property (nonatomic) BOOL shouldDismiss;
+@property (nonatomic) BOOL shouldPostReturnKeyNotification;
 
 + (BOOL)supportsSecureCoding;
 

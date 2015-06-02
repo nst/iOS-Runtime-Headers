@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSString, UIPinchGestureRecognizer;
-
 @interface MPUExtrasZoomingImageInteractiveTransitionSourceContext : NSObject {
     NSString *_identifier;
     unsigned int _itemIndex;
@@ -11,10 +9,10 @@
     unsigned int _supportedZoomingImageTransitionDirections;
 }
 
-@property(copy) NSString * identifier;
-@property unsigned int itemIndex;
-@property(retain) UIPinchGestureRecognizer * pinchGestureRecognizer;
-@property unsigned int supportedZoomingImageTransitionDirections;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic, retain) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (nonatomic) unsigned int supportedZoomingImageTransitionDirections;
 
 - (void).cxx_destruct;
 - (id)identifier;

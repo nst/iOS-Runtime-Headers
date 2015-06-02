@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASmsRecipientSearch : SADomainCommand
 
-@interface SASmsRecipientSearch : SADomainCommand {
-}
-
-@property(copy) NSArray * recipients;
+@property (nonatomic, copy) NSArray *recipients;
 
 + (id)recipientSearch;
 + (id)recipientSearchWithDictionary:(id)arg1 context:(id)arg2;

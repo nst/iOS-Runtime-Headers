@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMChat, NSString;
-
 @interface IMTranscriptChatItemRules : NSObject <IMChatItemRules> {
     IMChat *_chat;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_chatItemsForItem:(id)arg1 previousItem:(id)arg2;
 - (void)_didProcessChatItems:(id)arg1;
